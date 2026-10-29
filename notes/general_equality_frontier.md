@@ -317,6 +317,89 @@ The two outstanding analytic requirements for those graphs are:
 2. A global source/alias estimate that excludes exponentially competing
    contributions outside that packet, with the original boundary data.
 
+The local branching calculation now has proved
+[odd](actual_trivalent_steinberg_central_anchor.md) and
+[even](actual_trivalent_even_central_normal_packet.md) central black
+scalars. Both are exact positive factorial sums times their specified
+root phases, with scalar asymptotic (1/4)N^(-3/2)exp(Nv8/pi).
+The even proof retains the paired derivative coefficient and an actual
+Jordan preimage with a nonzero Ward current; it does not substitute an
+odd simple channel. A
+[one-channel source packet](actual_trivalent_one_channel_source_packet.md)
+also handles every retained label on one leg with the other two
+Steinberg legs, including its exact complex continuation and strict
+physical complement gap.
+
+For three varying labels, an
+[original root-Fourier coefficient theorem](actual_trivalent_root_fourier_source_certificate.md)
+now reduces the actual scalar to a finite Jackson-difference polynomial.
+Its degree proves the saturation support sum j_i>=N-1 directly from
+the source. The
+[general positive scalar and regular-cube theorem](actual_trivalent_all_channel_positive_scalar_and_regular_cubes.md)
+now proves its exact factorial evaluation, including every phase and
+normalizer, for ALL three-channel labels at both parities. Independent
+finite square-linearization and Jackson/Newton derivations use an own
+proved finite Sears identity. Every supported scalar is nonzero.
+Consequently every surviving saturated source cube is regular, generated
+by the original nested cup, and the three-circle rank is exactly
+binom(3floor((N-1)/2)-(N-1)+3,3), with zero for an empty domain.
+The [joint scalar packet](actual_trivalent_candidate_racah_partition_geometry.md)
+therefore has an ORIGINAL-source unique four-angle saddle, global color
+gap and nonzero complex amplitude. These are scalar estimates, with
+the original phase retained; they are not full vertex norm bounds.
+
+There is an important unconditional restriction on this route. The
+[full CD normalization and magnetic calculation](actual_trivalent_full_cd_normalization_and_magnetic_growth.md)
+exhibits central BLACK entries with exponential rate (5/4)v8/pi,
+although the selected scalar has rate v8/pi. Thus the scalar-rate
+upper bound for the entire black vertex is FALSE. Magnetic indices
+must be contracted with the actual ordinary and marked white tensors,
+or controlled in a new proven metric; maximizing the positive scalar
+alone cannot establish the graph's geometric energy or survival.
+The [all-channel marked two-vertex theorem](actual_trivalent_all_channel_marked_contraction.md)
+now evaluates that compensation exactly for EVERY supported triple.
+The ordinary white/black pairing is zero, while the original physical
+mark gives an explicit positive factorial weight times R_N^2 after
+all magnetic indices are contracted. The proof uses a regular physical
+trace quotient; it never replaces the paired nilpotent image by a
+projector. The [whole-label theorem](actual_trivalent_marked_theta_label_asymptotic.md)
+retains arbitrary fixed signed edge twists and gives the nonzero raw
+asymptotic N^(3/2)exp(2Nv8/pi) times its explicit Gaussian/Cartan factor,
+on both level parities. General ordered graph contraction and its
+actual marked source normals remain separate requirements.
+
+The [literal theta-link geometry](actual_marked_theta_link_and_angle_geometry.md)
+now completes the geometric side for that source. Its ordered marked
+diagram is exactly the s=3 retained-circle pretzel source. The reversible
+face cut gives four actual regular ideal octahedra and complete cusps,
+for every fixed signed edge-twist triple. The original enhanced
+one-cut evaluation therefore has limit 4v8, equal to the ACTUAL
+hyperbolic volume. An explicit sixteen-tetrahedron positive angle
+slice realizes its entire contracted source action as V_angle=2pi E;
+only the maximizing point is asserted to solve all complete gluing
+equations. This is a fully calibrated local geometric block, not
+completion of the arbitrary-graph objective.
+
+There is also a new exact
+[arbitrary-width first-normal source reduction](actual_nc_morse_graph_first_normal_source_reduction.md)
+for EVERY original noncrossing ordered Morse graph. With all actual
+root constants C retained, its marked scalar is
+
+    Z_Gamma=C/nu_N * (S' Xi+S Xi') at t=0,
+    t=log(zeta/q), nu_N=2N(-1)^N/(q-q^-1).
+
+Here S is a product of specified original local source coefficients,
+and Xi is a completely defined ordinary magnetic spin network. The
+formula is independent of the chosen regular Hopf lift. When every
+vertex is saturated, Xi(0)=0 and only Xi'(0) remains. A sole
+unsaturated marked-white triangle instead contributes its actual
+source derivative s_mark'(0)Xi(0). This boundary term is retained;
+it is not ruled out by the ordinary source cutoff. The full graph
+growth/noncancellation problem is now an explicit network normal
+and its marked boundary current, rather than an unspecified vertex
+identification. Their sharp estimates and geometric open-block sewing
+remain unproved.
+
 The new exact inner-color continuation and squared outer-color kernel
 DO supply the complex-color and complementary-source hypotheses for
 the belt stacks. Their source-selected deformed peripheral lift and

@@ -10,6 +10,12 @@ The new **long-filling theorem** allows any subset of the n+1 auxiliary circles 
 
 At arbitrary fixed bridge width, an exact **marked multivariate Chebyshev packet** now gives a positive energy, Parseval identity, and polynomial-cost evaluation of the original source. A sharp geometric estimate for that energy remains open. The notes also retain an exact six-port counterexample showing why the unmarked three-circle norm cannot bound the marked source.
 
+The completed **all-channel trivalent scalar theorem** gives the exact positive finite factorial formula at both level parities, and proves the regular-cube structure of every supported three-circle source block. Its full magnetic tensor can have greater exponential growth than that scalar, so it is not a general graph-energy estimate.
+
+The **signed marked theta link** now has its complete original-source Gaussian asymptotic and an independently checked geometric angle certificate. For any three fixed signed edge twists its all-level Kashaev volume limit is **4v₈**, the volume of the specified four-octahedron augmented-link complement. This is a complete augmented-link result; no filled-theta or arbitrary-graph equality is inferred.
+
+For arbitrary fixed original noncrossing Morse graphs, an exact **first-normal reduction** retains the canonical ordinary magnetic spin network, its source coefficients and the sole unrestricted physical marked cut. General growth and noncancellation for those graphs remain open. A definitions-only literature comparison records related root evaluations without importing their proofs or asserting equivalence from a shared name.
+
 The unfilled complete augmented volume V_s and the filled source volume V_src,s(p) are different. The broader task—original-source control and volume equality for arbitrary hyperbolic knots or arbitrary augmented graphs—remains open. The exact trivalent complete-circle vertex kernel records progress toward branching, without asserting a new branched-graph volume limit. Exploratory calculations, counterexamples to intermediate proposals, and historical checkpoints are retained with their own scope.
 
 ## Start here
@@ -34,6 +40,16 @@ The unfilled complete augmented volume V_s and the filled source volume V_src,s(
 - [Literature coverage check for the filling route](notes/belt_stack_filling_coverage_check.md)
 - [Exact trivalent complete-circle vertex kernel](notes/actual_trivalent_complete_circle_vertex_kernel.md)
 - [Odd central Clebsch anchor and exact quartic scalar](notes/actual_trivalent_steinberg_central_anchor.md)
+- [All-channel positive scalar and regular-cube theorem](notes/actual_trivalent_all_channel_positive_scalar_and_regular_cubes.md)
+- [Full finite Euler–Racah source transform](notes/finite_trivalent_euler_racah_transform.md)
+- [Independent square-linearization proof](notes/actual_trivalent_square_linearization_bridge.md)
+- [Own finite balanced Sears identity](notes/finite_balanced_sears_operator_proof.md)
+- [Full magnetic normalization and scalar-to-tensor limitation](notes/actual_trivalent_full_cd_normalization_and_magnetic_growth.md)
+- [All-channel original marked contraction](notes/actual_trivalent_all_channel_marked_contraction.md)
+- [Whole-label signed marked-theta asymptotic](notes/actual_trivalent_marked_theta_label_asymptotic.md)
+- [Literal theta-link and sixteen-tetrahedron angle geometry](notes/actual_marked_theta_link_and_angle_geometry.md)
+- [General original NC Morse-graph first-normal reduction](notes/actual_nc_morse_graph_first_normal_source_reduction.md)
+- [Primary-source coverage of root-normal graph evaluations](notes/literature_root_normal_planar_network_coverage.md)
 - [Complete-circle boundary packet](notes/actual_complete_circle_boundary_packet.md)
 - [Arbitrary-width marked Chebyshev packet](notes/actual_marked_multiport_chebyshev_source_packet.md)
 - [Six-port support theorem](notes/actual_six_port_three_circle_support.md)
@@ -70,6 +86,12 @@ python3 experiments/audit_actual_coherent_octahedral_belt_stack_asymptotic.py
 python3 experiments/audit_actual_outer_color_squared_kernel.py
 python3 experiments/audit_actual_belt_stack_typed_character_composition.py
 python3 experiments/audit_actual_trivalent_steinberg_central_anchor.py
+python3 experiments/audit_finite_balanced_sears_operator_proof.py
+python3 experiments/audit_finite_trivalent_euler_racah_transform.py
+python3 experiments/audit_actual_trivalent_all_channel_marked_contraction.py
+python3 experiments/audit_actual_trivalent_marked_theta_label_asymptotic.py
+python3 experiments/audit_actual_marked_theta_link_and_angle_geometry.py
+python3 experiments/audit_actual_nc_morse_graph_first_normal_source_reduction.py
 ```
 
 With the optional geometry packages installed, the belt-stack script also supports `--software-only` for its separately labeled literal-diagram diagnostics. The exact geometric proof is the reversible disk/face/cusp certificate in the notes, rather than software recognition.

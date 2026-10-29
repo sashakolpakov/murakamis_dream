@@ -4,8 +4,11 @@
 source restriction: their observed joint channels lie in a tetrahedral
 simplex, rather than an independent spectral cube. This necessary support
 and a rank bound follow from the ORIGINAL saturated source, without an
-assumed regular-cube eigenframe. Nonvanishing on all remaining channels
-is a separate actual Clebsch/top-normal problem.
+assumed regular-cube eigenframe. The subsequent
+[all-channel positive scalar theorem](actual_trivalent_all_channel_positive_scalar_and_regular_cubes.md)
+now proves nonvanishing on EVERY surviving block, identifies its actual
+regular cube with the nested cup as cyclic generator, and makes the
+rank bound below an equality. The original support argument is retained.
 
 The positive all-value circle quotient is not a faithful norm for the
 whole marked source. A faithful tensor Hermite reconstruction exists on
@@ -117,11 +120,14 @@ source is zero; otherwise
     rank[L_N(A_1)L_N(A_2)L_N(A_3)|S_N]
                                  <=binom(K+3,3).       (6)
 
-It is NOT yet proved here that every allowed top product is nonzero.
-Generic rank2^r does not force that: a diagonal O-lattice with the
+The support/rank argument ALONE does not prove that every allowed top
+product is nonzero. Generic rank2^r does not force that: a diagonal O-lattice with the
 same generic corner eigenvalues specializes to zero nilpotents,
 whereas the cube coordinate order specializes to the regular module.
 The actual physical source lattice distinguishes these examples.
+The new all-channel theorem supplies the missing nonzero actual
+coefficient by an own finite positive factorial identity, at both
+parities, and consequently proves every surviving cube regular.
 
 There is one constructive nonzero family at every ODD N. Fix two axes
 at the simple Steinberg j=M. Their generic highest weight2M=d and all
@@ -133,8 +139,9 @@ H_N; its remaining pair Casimir has its full double Jordan blocks.
 The third circle consequently has rank1 at every (M,M,j), and likewise
 for the two other permutations. These give3M+1 nonzero channels,
 including their shared simple corner. No norm bound on the embedding
-or its inverse is being inferred. Interior allowed channels and the
-even-level nonvanishing still require their actual top coefficient.
+or its inverse is being inferred. This was the first nonzero family.
+The new positive scalar identity now provides the actual top coefficient
+for all interior allowed channels and at even levels as well.
 
 ## 4. Positivity, marking, and what tensor DCT does not imply
 
