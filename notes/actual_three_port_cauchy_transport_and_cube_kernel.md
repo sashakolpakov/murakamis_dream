@@ -1,0 +1,263 @@
+# Exact three-port Cauchy transport and a nontrivial projected cube kernel
+
+29 October 2026. The whole-support correlated Gram bound removes a
+local marked normalization cost. It does not by itself prove sharp
+transport through a graph. Complete-circle three-port sewing observes
+only the socle of each regular cube and hence reduces to a scalar
+weighted Cauchy pairing. This note makes that limitation precise, then
+gives an ACTUAL nontrivial positive cross-color transfer for the cube
+packet already proved, with its sharp norm and iterated source rate.
+The eight cycle projections remain in one cube; there is no full-color
+cube or arbitrary-graph volume-conjecture assertion.
+
+## 1. What the correlated Gram does under complete-circle observation
+
+On a supported source cell use the exact boundary frame
+
+    R_r=C[eta_1,...,eta_r]/eta_i^2,
+    lambda(fv)=tau[eta_all](q f), q(0)=1,
+    w_I=q^(-1/2)eta_Iv, <w_I,w_J>=delta_IJ.
+
+The [whole-support theorem](actual_whole_support_boundary_gram_envelope.md)
+proves polynomial source cost K and exact dual cost tau^2 K in this
+frame. But the complete paired-circle product itself is simply
+
+    eta_all w_empty=w_all,
+    eta_all w_I=0 for I!=empty.                    (1)
+
+Thus it has operator norm EXACTLY ONE and rank one. The simple axes
+contribute their actual scalar N, so the full three-circle product
+has norm N^(3-r). On its image the original row is
+
+    lambda(w_all)=tau,
+    lambda(eta_all f v)=tau f(0).                  (2)
+
+Equations (1),(2) keep the original marked row; they do not replace
+it by an ordinary cap. They also show that the complete observation
+does not measure the lower nilpotent coordinates of f. After this
+observation, a Cauchy estimate on one cell is an estimate of its one
+surviving scalar. Polynomial K supplies no independent geometric
+upper bound for that scalar's exterior-dependent energy.
+
+## 2. The exact weighted packet and its available transport
+
+Let D_N be the supported folded triples and put
+
+    theta_l=Z_theta(l)>0,
+    a_G(l)=Z_G(l)/theta_l,
+    F_G(l)=sqrt(theta_l)a_G(l)=Z_G(l)/sqrt(theta_l).
+
+Here Z_G(l) is the COMPLETE coherent interior source with the three
+boundary labels fixed, not an individual black vertex. For the exact
+typed vertex substitution, including the exposed mark and one circle
+per merged edge, the
+[source sewing theorem](actual_nc_three_port_source_sewing.md) gives
+
+    Z_new=sum_(l in D_N) theta_l a_A(l)a_B(l)
+         =sum_l F_A(l)F_B(l),
+    |Z_new|^2<=E_A E_B,
+    E_G=sum_l |Z_G(l)|^2/theta_l.                 (3)
+
+The bilinear sewing map has norm one in this explicitly prescribed
+Hilbert space. Its Cauchy proof conjugates the first numerical vector;
+it does NOT assume that one physical graph is the mirror of the other.
+No extra K or generic inverse-frame factor occurs in (3). The theta
+weight can be exponential and must not be called a polynomial cost.
+
+Grafting a fixed piece B onto an unsummed boundary is multiplication
+by a_B. Its norm is EXACTLY max_l |a_B(l)|. Thus sharp control of (3)
+requires the actual boundary packet or this multiplier, not just an
+estimate of the closed scalar sum_l Z_B(l). For example, for two
+supported labels l_1,l_2 the numerical packet
+a(l_1)=T/theta_(l_1), a(l_2)=-T/theta_(l_2) has closure zero and
+unbounded energy as T grows. This is a finite-space obstruction to
+deducing energy from one closure; it is not asserted to be a realizable
+knot counterexample.
+
+The proved signed-theta boundary has a_theta,e(l)=product_i omega_(l_i)^e_i.
+It is consequently an exact unitary multiplier in (3). These are
+actual source-preserving twist operations; theta substitution itself
+leaves the graph skeleton unchanged. The one-variable complete-pretzel
+circle metric is a different actual cut and polarization. A bound on
+its one closed functional does not identify a three-variable F_G or
+bound E_G without an explicit port-opening identity. No such general
+identity is inferred here.
+
+## 3. An actual two-boundary cube transfer beyond a scalar closure
+
+Now take N=2m+1 and the original ordered cube of the
+[four-rung packet](actual_cube_four_rung_positive_source.md). Fix its
+eight cycle edges to m. Keep the outer-white rung (edge 10) at j,
+the interval-black rung (edge 1) at l, and sum the other two rung
+labels (edges 4,7). Use zero rung twists. Set
+
+    p_j=P_(N,j)>0, k_j=2 except k_m=1,
+    h_j=Rturn L_j/(N k_j),
+    f=sum_(l=0)^m k_l p_l^2 h_l,
+    theta_j=Z_theta(m,j,m)=N^3 k_j p_j^2.          (4)
+
+The last normalization is exact: in the actual theta formula
+s_j s_(d-j)=N and the one-leg source has R_N(m,j,m)=p_j.
+All paired rung nilpotents and the original unrestricted mark remain.
+
+By the proved four-rung SOURCE formula and linearity, the actual
+two-boundary cube contribution is
+
+    B_(j,l)=N^12 k_j k_l p_j^2 p_l^2
+                             phi(h_j h_l f^2).    (5)
+
+This is a full coherent magnetic contraction, not a product of
+unsewn black coefficients. The exposed white boundary is (m,j,m)
+and the interval black boundary is (m,l,m), with their original
+orders. Both are supported at every j,l. For a typed graft, the
+three shared contacts are summed once using the exact denominator
+theta_l, so its relative-packet transport is
+
+    a_new(j)=sum_l B_(j,l)/theta_j *a_old(l).
+
+Equivalently in F=sqrt(theta)a coordinates its matrix is
+
+    A_(j,l)=B_(j,l)/sqrt(theta_j theta_l)
+        =N^9 sqrt(k_j k_l)p_j p_l phi(h_j h_l f^2). (6)
+
+This is an actual cross-color kernel, not the product of two known
+closed scalar values. It is real symmetric and ENTRYWISE strictly
+positive. Indeed all h_j have positive Newton coefficients through
+their degree j, while f^2 has strictly positive coefficients at every
+degree 0,...,d. The constant coefficient of h_jh_l is positive, so
+the actual phi in (6) is strictly positive. The Newton theorem
+retains the full root algebra and its first normals in this argument.
+
+Entry positivity does not make A a positive semidefinite Gram.
+At N=3, h_0=1,h_1=1+Bhat_1, p_0=1,p_1=2 and
+f=6+4Bhat_1. The exact matrix of the phi factors in (6) is
+
+    [phi(h_j h_l f^2)]_(j,l=0,1)
+            = [[16,80],[80,244]], determinant=-2496. (7)
+
+Thus A itself has determinant -19968*3^18. This is a genuine
+correlated transfer with both eigenvalue signs; no Hilbert norm
+square or physical reflection identity is being smuggled into it.
+
+## 4. Its operator norm has the sharp primitive-core increment
+
+Put h=h_m, S=p_m, W=phi(h^4)>0. Coefficientwise Newton monotonicity
+and the positive multiplication law give
+
+    h_j<=h, p_j<=S,
+    S^2 h<=f<=2(m+1)S^2 h.
+
+Consequently, with R_N=N^9 S^6 W,
+
+    R_N<=A_(m,m)<=[2(m+1)]^2 R_N,
+    0<A_(j,l)<=2A_(m,m),
+    A_(m,m)<=||A||_2<=2(m+1)A_(m,m).              (8)
+
+The last lower bound is a diagonal Rayleigh quotient. The upper
+bound is the maximum row sum for the absolute-entry matrix, or
+sqrt(||A||_1||A||_infty); symmetry makes those norms equal. It does
+not require A to be positive semidefinite. Thus (8) is a direct
+source-preserving weighted Cauchy transport estimate whose exponent
+is computed independently from positive factorial periods.
+
+The proved actual central scalar and
+[cuboctahedral period theorem](actual_positive_newton_cuboctahedral_period.md)
+give, on all odd levels,
+
+    lim (1/N)log||A||_2=6v8/pi+Vol(Q_cube)/pi.
+
+In hyperbolic-volume units this is
+
+    lim (2pi/N)log||A||_2
+        =12v8+2Vol(Q_cube)
+        =Vol(augmented cube)-Vol(augmented theta). (9)
+
+The equality with these ACTUAL complements is the independently
+proved labeled rectified-core geometry, not a volume-constant fit.
+It is the precise primitive-core increment in this projected packet.
+
+## 5. Iteration is a genuine but still projected graph-source family
+
+Start with theta, keeping its two cycle contacts at m and its third
+label j summed. Repeatedly insert the ordered cube at the interval
+black vertex (0,1,2), with outer white boundary (0,10,11). Preserve
+the original exposed mark. At each stage the two cycle contacts
+remain m and the middle contact is summed as an actual full circle.
+The exact NC substitution supplies the new Morse word and one
+circle per merged edge. Equations (3),(5),(6) give, for fixed k>=0,
+
+    Z_k^proj=u^T A^k u, u_j=sqrt(theta_j).          (10)
+
+This is the raw original partial source of the resulting graph.
+It retains ALL 1+3k rung labels and fixes the 2+6k cycle labels to
+m. The graph has b=1+3k vertices of each color. The one exposed
+physical mark is never replicated; the formula comes from the
+already normalized fixed-first-normal quotient at each graft.
+
+Every matrix entry in (10) is positive. Choosing only the central
+index at each step supplies the lower bound, while (8) and
+u_j<=sqrt(2)u_m supply the upper bound
+
+    N^(3+9k) S^(2+6k) W^k <= Z_k^proj
+       <=[2(m+1)]^(3k+1) N^(3+9k) S^(2+6k) W^k.  (11)
+
+For k=1 this is the exact four-rung packet bound; k=0 is the
+one-rung theta face. Therefore for every fixed k,
+
+    lim_(N odd) (2pi/N)log Z_k^proj
+          =(4+12k)v8+2k Vol(Q_cube).              (12)
+
+The actual graph geometry is the same sequence of triangular core
+grafts: its core is k cuboctahedra glued along triangles, with
+additive volume k Vol(Q_cube). The
+[rectified-core theorem](actual_nc_graph_rectified_core_geometry.md)
+therefore identifies (12) with its ACTUAL augmented complement
+volume. All cycle twists can be kept as one common unit character;
+different rung-twist phases do not preserve this positivity argument.
+
+The proved one-leg boundary gap also transfers, without a new
+stationary-phase assertion. For fixed delta>0,
+p_j/S<=poly(N)exp(-gamma_delta N) whenever m-j>=delta N. Resolve
+each f in (5) into its actual complete-circle color sum and iterate
+the source quotient. Every one of the 1+3k rung labels occurs with
+its factor k_jp_j^2 ONCE, while every surviving phi factor is bounded
+above by W using h_j<=h. Therefore
+
+    sum_(some rung m-j>=delta N) Z_(k,labels)^proj
+       <=poly_(k,delta)(N)exp(-2gamma_delta N)
+                       N^(3+9k)S^(2+6k)W^k.       (13)
+
+These are the whole-label one-leg estimates of the actual theta
+source transported through a specified branching kernel. They now
+control EVERY unfrozen rung channel in the projected chain, rather
+than just its scalar endpoints. The labels remain INTERNAL pair-
+Casimir channels. No auxiliary meridian interpretation, complex
+peripheral-color packet or Dehn-filling estimate follows from (13).
+
+This is an unbounded sequence of actual graph diagrams and correlated
+source transports. It remains a PARTIAL original source with many
+cycle projections and odd levels. Removing those projections and
+controlling even levels remain necessary before asserting a full
+graph invariant equality. The result does not rename the general
+scalar Cauchy inequality as a sharp energy theorem: its new energy
+bound is the independently positive two-boundary kernel (5)--(8).
+
+Audit: [literal boundary kernels and projected graph sources](../experiments/audit_actual_three_port_cauchy_transport_and_cube_kernel.py),
+with [recorded results](../experiments/actual_three_port_cauchy_transport_and_cube_kernel_results.json).
+The focused replay passes the exact N=3 non-PSD certificate, all
+three full boundary matrices at N=3,5,7 using 353 original marked
+rung contractions, and seven complete projected-chain sources,
+including the fourteen-vertex two-cube source with all seven rung
+labels summed. The source checks use the actual unrestricted mark
+and local regular generic first-normal identities. They supplement
+the all-N source/graft and positive-cone proofs, not an inference
+from measured matrix spectra or a whole-graph invariant claim.
+
+Independent internal review: the Euler-atom agent re-derived the
+socle norm, theta and cube normalizations, the non-PSD determinant,
+weighted transport, cone norm bounds, every fixed-k source count and
+the inherited rung gap, and completed a fresh focused replay: PASS.
+The distinction between the exact scalar quotient pairing and the
+independently bounded projected cross-color kernel is retained.
+This is an internal research review, not external peer review or a
+full graph invariant equality.

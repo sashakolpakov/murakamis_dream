@@ -29,6 +29,7 @@ The unfilled complete augmented volume V_s and the filled source volume V_src,s(
 - [Current general frontier](notes/general_equality_frontier.md)
 - [Recent verified advances and remaining full-source gaps](notes/recent_advances_2026_10_29.md)
 - [Extending the proved pretzel argument](notes/pretzel_to_general_source_strategy.md)
+- [Exact weighted three-port sewing and a projected transfer test](notes/actual_three_port_cauchy_transport_and_cube_kernel.md)
 - [Polynomial boundary Gram costs on the whole supported domain](notes/actual_whole_support_boundary_gram_envelope.md)
 - [Positive whole original sources for Conway trees](notes/actual_positive_complete_circle_conway_trees.md)
 - [Genuine-turn reflection obstruction and positive Cauchy repair](notes/actual_turned_circle_reflection_inertia.md)
