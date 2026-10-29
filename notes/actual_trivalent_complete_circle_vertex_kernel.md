@@ -358,6 +358,16 @@ No claim that all planar graphs admit this particular certificate
 is needed. This is an actual branching source class, not a geometric
 or survival hypothesis about an unknown invariant.
 
+Pointing qualification: to identify its bare m insertion with the
+original exposed one-cut invariant, choose the marked outer cap at
+a top-level white block, not inside another top cap. Equation(10)
+is still a tensor identity for a bare m at an inner block, but that
+different insertion is not automatically a transported pivotal cut.
+The [first-normal source theorem, section4a](actual_nc_morse_graph_first_normal_source_reduction.md)
+records an exact cube counterexample and the corrected exposure
+condition. No local invariant property of the unrestricted m permits
+moving it through enclosing caps without their pivotal transport.
+
 In particular the following certificate has the CUBE as its connected
 simple incidence graph:
 

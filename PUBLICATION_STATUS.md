@@ -6,6 +6,8 @@ For this explicit publication request, one sanctioned in-sandbox `gh auth status
 
 The intended public target is `sashakolpakov/murakamis_dream`. The prepared repository uses the account's GitHub no-reply commit identity. This refresh adds the internally reviewed all-channel trivalent finite source formulas, marked-theta source/geometry result, and arbitrary NC Morse-graph first-normal reduction, with their audits and precise limitations. Ongoing spin-one flow and six-pants sewing investigations are excluded until their owners confirm readiness. Mathematical source files were not edited by publication preparation.
 
+A subsequent adversarial audit corrected the graph theorem to an exposed/top-level marked cap. The exact nested-cap counterexample is retained in its note and regression audit. The theta volume proof already uses an exposed mark and is unchanged. This correction supersedes the preceding prepared checkpoint.
+
 The general volume conjecture and arbitrary branched-graph source survival remain open. Internal analytical reviews and finite audits are not external peer review, and a `PASS` output is not by itself an asymptotic proof.
 
 Authenticate in a user-controlled terminal without putting credentials in chat:

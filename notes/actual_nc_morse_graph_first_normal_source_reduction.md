@@ -24,8 +24,17 @@ partition is noncrossing. At a triple (a,b,c) the actual matching is
 
 Removing innermost adjacent arcs gives an original nested cup/cap
 Morse word. There is no free incidence permutation or unrecorded
-braid. Choose one white vertex v* and mark its outer arc; all other
-caps are ordinary. Its marked row is the original UNRESTRICTED m.
+braid. Choose a white vertex v* whose outer cap is EXPOSED: it is
+not contained in any other top cap. Mark that arc; all other caps
+are ordinary. Its row is the original UNRESTRICTED m. Equivalently,
+all ordinary top caps can be removed by innermost removals without
+passing over the marked arc. Every noncrossing partition has such
+a top-level block, so this leaves the arbitrary graph class intact
+while restricting its bare pointing.
+
+Replacing a NESTED cap by the same bare m is not covered. A genuine
+cut at that location requires pivotal transport through the enclosing
+caps, which is not a local unmodified m replacement.
 
 Fix labels 0<=j_e<=M=floor((N-1)/2) and signed integer exponents e_e.
 The edge coupon is the actual full-normal sector
@@ -167,8 +176,10 @@ retained in full, on the actual graph wiring.
 
 ## 4. The original marked scalar is exactly the first normal
 
-Cut the actual marked physical cap and bend with the SAME pV(t).
-Every remaining map is a generic Hopf map; hence the resulting open
+Remove all other caps in their actual innermost Morse order. Exposure
+ensures that this leaves the two marked legs as a genuine generic
+invariant physical column. Bend with the SAME pV(t). Every remaining
+map is then a generic Hopf map; hence the resulting open
 map on V_N(t) is a scalar z_Gamma(t)I. To prove scalarity directly,
 its generic K eigenvalues are distinct and all its interior F arrows
 are nonzero, so commuting with K,F forces a scalar matrix. Every
@@ -202,6 +213,26 @@ map, hence the same z_Gamma(0). Their ordinary closures differ by
 D_N(t) times a holomorphic scalar vanishing at t=0, so their first
 normals agree. Individual local source and spin-network derivatives
 may change with the lift; their complete combination in(13) does not.
+
+### 4a. Why an inner bare mark is not a movable pivotal cut
+
+The exposure hypothesis is necessary for the bare row used here. On
+the ordered cube at N=3, give all twelve edges label j=1 and zero
+twist. Reduce q to 375 in the prime field of order 1009; this has
+exact order six and every denominator is a unit. The actual physical
+contraction with bare m on the exposed white block (0,10,11) is 155.
+Putting the same bare m on the NESTED block (1,8,9), leaving all other
+coupons unchanged, gives 620. The ordinary trace and its first normal
+are unchanged, so these two bare insertions cannot both be its
+normalized pivotal cut. Their difference is an exact cyclotomic
+counterexample, not a floating-point discrepancy.
+
+The original proof's phrase allowing an arbitrary white vertex was
+therefore too broad. It has been corrected to the exposed hypothesis
+in section1, and the audit retains this negative test. Moving a
+genuine cut through an enclosing cap requires its actual pivotal
+transport. It cannot justify deleting the marked-white current in
+(15) while leaving that enclosing ordinary cap row unchanged.
 
 ## 5. Exact source support and the marked-white boundary term
 
@@ -283,11 +314,11 @@ in(15) are retained.
 General norm/nonzero/volume control for the ordinary network normal
 in(14), and for the marked-white current in(15), remains open.
 
-Independent internal review: the global audit agent read the full proof,
-re-derived all first-jet formulas and the physical trace derivative, and
-freshly replayed the audit: PASS five local jet families and sixteen
-original source cases. The review explicitly checked white reversal,
-one gamma per edge, regular-lift independence, the marked nontriangle
-argument, and retention of the sole marked-white zero-source normal.
-No correction was required. This is an internal proof check, not an
-external peer review or a geometric identification of the network.
+Internal review history: the initial review and positive tests missed
+the exposed-versus-nested bare-mark distinction. The additional test
+in section4a found it. The pointing hypothesis and the dipole fixture
+have been corrected explicitly; all local source/jet formulas remain
+unchanged. The corrected audit passes five local jet families, sixteen
+exposed original source cases and the inner-mark rejection. These are
+internal checks, not an external peer review or a geometric
+identification of the network.

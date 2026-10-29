@@ -15,7 +15,7 @@ import numpy as np
 from audit_actual_two_cut_ports import balanced_data
 from audit_actual_trivalent_complete_circle_vertex_kernel import (
     axis_apply, contract, sources, noncrossing, matching,
-    theta_graph, progressive_graph, ordered_cube_graph,
+    theta_graph, ordered_cube_graph,
 )
 
 
@@ -47,6 +47,20 @@ def const(a):
 
 def trans(a):
     return a[0].T, a[1].T
+
+
+def ordered_dipole_graph():
+    return {0:(0,1,2),1:(3,4,5),2:(0,1,5),3:(2,3,4)}, {0,1}, 2
+
+
+def exposed_mark(graph):
+    ports, black, marked = graph
+    if marked in black or any(tuple(sorted(es)) != es for es in ports.values()):
+        return False
+    a, _, c = ports[marked]
+    left, right = 2*a, 2*c+1
+    top = matching([ports[v] for v in ports if v not in black])
+    return not any(u < left < right < v for u, v in top)
 
 
 def axis_jet(A, v, index, p):
@@ -251,6 +265,7 @@ class Local:
 def graph_case(local, name, graph, labels, powers):
     p, N = local.p, local.N
     ports, black, marked_vertex = graph
+    assert exposed_mark(graph), 'A bare marked row requires an exposed cap; nested cuts need pivotal transport'
     assert noncrossing([ports[v] for v in ports if v in black])
     assert noncrossing([ports[v] for v in ports if v not in black])
     matching([ports[v] for v in ports if v in black])
@@ -314,6 +329,30 @@ def graph_case(local, name, graph, labels, powers):
             'original_physical_mark_vs_exact_first_normal': True}
 
 
+def nested_mark_rejection():
+    local = Local(3)
+    graph = ordered_cube_graph()
+    ports, black, _ = graph
+    p = local.p
+    actual = []
+    for marked in (4,5):
+        tensors = []
+        for v, es in ports.items():
+            vertex = local.vertex((1,1,1))
+            value = vertex['U'][0] if v in black else vertex['marked'] if v==marked else vertex['ordinary'][0]
+            tensors.append((value,es))
+        actual.append(pow(local.h0[1],12,p)*contract(tensors,p)%p)
+    assert local.q==375 and p==1009
+    assert actual==[155,620]
+    assert exposed_mark((ports,black,4))
+    assert not exposed_mark((ports,black,5))
+    return {'N':3,'prime':p,'q_image':local.q,
+            'exposed_white_ports':[0,10,11],'nested_white_ports':[1,8,9],
+            'bare_mark_scalar_images':actual,
+            'same_ordinary_first_normal_cannot_equal_both':True,
+            'nested_bare_mark_is_not_a_pivotal_cut_without_transport':True}
+
+
 if __name__ == '__main__':
     locals = {N: Local(N) for N in range(2, 7)}
     local_rows = []
@@ -331,7 +370,7 @@ if __name__ == '__main__':
         rows.append(graph_case(locals[N], 'theta', theta_graph(), (M,)*3, (1,-2,3)))
     for N in (3,4,5):
         M = (N-1)//2
-        rows.append(graph_case(locals[N], 'genuine_ordered_dipole', progressive_graph(),
+        rows.append(graph_case(locals[N], 'genuine_ordered_dipole', ordered_dipole_graph(),
                                (M,)*6, (0,1,-1,2,0,-2)))
         rows.append(graph_case(locals[N], 'genuine_ordered_cube', ordered_cube_graph(),
                                (M,)*12, tuple((e % 5)-2 for e in range(12))))
@@ -356,6 +395,7 @@ if __name__ == '__main__':
         rows.append(graph_case(locals[5], name, cube, labels, (0,)*12))
     result = {'status': 'PASS', 'exact_local_first_jets': local_rows,
               'literal_NC_graph_source_normal_cases': rows,
-              'scope': 'Exact original NC/Morse graph source reduction with retained marked-white boundary normal. No norm, noncancellation, geometric-volume, or arbitrary untyped planar-graph assertion.'}
+              'negative_nested_mark_test':nested_mark_rejection(),
+              'scope': 'Exact original NC/Morse graph source reduction with an exposed bare mark and retained marked-white boundary normal. A nested bare mark is explicitly rejected. No norm, noncancellation, geometric-volume, or arbitrary untyped planar-graph assertion.'}
     Path(__file__).with_name('actual_nc_morse_graph_first_normal_source_reduction_results.json').write_text(json.dumps(result, indent=2)+'\n')
-    print(f'PASS {len(local_rows)} exact local first-jet families; {len(rows)} original theta/dipole/cube graph cases including marked boundary currents')
+    print(f'PASS {len(local_rows)} exact local first-jet families; {len(rows)} exposed theta/dipole/cube sources; negative nested-mark rejection')
