@@ -33,6 +33,7 @@ The unfilled complete augmented volume V_s and the filled source volume V_src,s(
 - [Finite geometric certificate and uniform filling existence](notes/finite_geometric_certificate_uniform_filling_existence.md)
 - [Literature coverage check for the filling route](notes/belt_stack_filling_coverage_check.md)
 - [Exact trivalent complete-circle vertex kernel](notes/actual_trivalent_complete_circle_vertex_kernel.md)
+- [Odd central Clebsch anchor and exact quartic scalar](notes/actual_trivalent_steinberg_central_anchor.md)
 - [Complete-circle boundary packet](notes/actual_complete_circle_boundary_packet.md)
 - [Arbitrary-width marked Chebyshev packet](notes/actual_marked_multiport_chebyshev_source_packet.md)
 - [Six-port support theorem](notes/actual_six_port_three_circle_support.md)
@@ -68,6 +69,7 @@ python3 experiments/audit_actual_marked_multiport_chebyshev_source_packet.py
 python3 experiments/audit_actual_coherent_octahedral_belt_stack_asymptotic.py
 python3 experiments/audit_actual_outer_color_squared_kernel.py
 python3 experiments/audit_actual_belt_stack_typed_character_composition.py
+python3 experiments/audit_actual_trivalent_steinberg_central_anchor.py
 ```
 
 With the optional geometry packages installed, the belt-stack script also supports `--software-only` for its separately labeled literal-diagram diagnostics. The exact geometric proof is the reversible disk/face/cusp certificate in the notes, rather than software recognition.

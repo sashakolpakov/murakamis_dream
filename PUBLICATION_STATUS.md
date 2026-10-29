@@ -1,25 +1,26 @@
 # Publication status
 
-This snapshot is prepared locally. **No public GitHub repository was created and no push was performed in the restricted session.** The available GitHub CLI had no accessible OAuth credential, and running its authentication check outside the sandbox was rejected by the environment policy. No credential-access workaround was attempted after that rejection.
+This snapshot is prepared and committed locally. **No public repository has been created and no push has been performed.**
 
-The target is `sashakolpakov/murakamis_dream`, public. The snapshot uses the account's GitHub no-reply commit identity. The original mathematical workspace is unchanged.
+The sanctioned in-sandbox GitHub CLI check reports that the active `sashakolpakov` credential is invalid. The connected forge was also unavailable because its configured service could not be resolved. An earlier attempt to check GitHub authentication outside the sandbox was rejected by automatic approval review; it was not retried, and no credential-access workaround was attempted.
 
-From this prepared repository, authenticate in an unrestricted terminal without putting a token in chat:
+The prepared public GitHub target is `sashakolpakov/murakamis_dream`. The snapshot uses the account's GitHub no-reply commit identity. Publication preparation did not edit the mathematical workspace. Only the frozen, independently audited central-anchor note, audit and results, plus its prerequisite observed-kernel scope correction, were added at this checkpoint; ongoing even/noncentral research is excluded.
+
+Authenticate in a user-controlled terminal without putting credentials in chat:
 
 ```sh
 gh auth login --hostname github.com --git-protocol https
-gh auth status
 ```
 
-Then publish with:
+From this prepared repository, the authenticated publication command is:
 
 ```sh
 gh repo create sashakolpakov/murakamis_dream --public --source=. --remote=origin --push
 ```
 
-The create command fails if the name already exists; it does not overwrite that repository. Inspect any existing repository before choosing another name or attaching a remote. No force push is authorized by this snapshot.
+That command fails if the name already exists; it does not overwrite an existing repository. Inspect any existing target before attaching a remote. No force push is authorized.
 
-To inspect the prepared commit and validation:
+To inspect the exact prepared commit and integrity report:
 
 ```sh
 git log -1 --oneline
@@ -27,4 +28,4 @@ git status --short
 cat PUBLICATION_VALIDATION.json
 ```
 
-The accompanying Git bundle preserves the same commit and `main` branch, so it can also be cloned and published from an unrestricted environment.
+The accompanying Git bundle preserves the same `main` commit and can be cloned and published in an authenticated environment. A public URL must only be reported after the remote repository and its uploaded commit are verified.
