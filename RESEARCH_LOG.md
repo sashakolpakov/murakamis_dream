@@ -14,6 +14,33 @@ Jones is a separate question and is not required for this route.
 [The current torsor status](notes/a_polynomial_torsor_status.md)
 compares this proposal with the constructions already in this repo.
 
+29 October, [full filled-volume equality](notes/actual_long_filled_octahedral_belt_stack_volume.md)
+now holds in the research notes for every fixed nonempty signed
+octahedral belt stack and every fixed integer outer crossing power.
+ANY subset of its auxiliary circles may be filled along independently
+sufficiently long fixed signed integral slopes. The original all-level
+limit equals the actual filled hyperbolic volume. Filling every circle
+gives a knot when the outer crossing power is odd and a two-component
+link when it is even; there is no minimum stack-width restriction.
+
+The [outer-color Fourier kernel](notes/actual_outer_color_squared_kernel.md)
+cancels the dangerous endpoint alias through the retained Hermite
+derivative. Together with the
+[actual inner-color packet](notes/actual_belt_stack_auxiliary_color_inner_packet.md),
+it supplies the whole-source filling estimate. The
+[typed geometric comparison](notes/actual_belt_stack_typed_character_composition.md)
+checks the actual peripheral words, all complete face maps, and the
+absolute regulator before primitive filling completion. These are
+internally reviewed research proofs; external mathematical review
+remains necessary. Arbitrary branched graphs and general knots remain
+open. The [coverage check](notes/belt_stack_filling_coverage_check.md)
+records related literature without importing its proofs.
+
+The [finite positive geometric certificate](notes/finite_geometric_certificate_uniform_filling_existence.md)
+also supplies geometric existence for all independently long primitive
+filling slopes by a uniform contraction. This geometric statement has
+no diagram restriction, but does not itself prove quantum growth.
+
 29 October, the Fourier/source route now covers
 [octahedral belt stacks with arbitrary signs and fixed outer twists](notes/actual_balanced_octahedral_belt_stack_volume.md).
 Every fixed word of n>=1 pieces and fixed outer crossing power a has
@@ -23,8 +50,9 @@ for even a and n+2 for odd a. The
 [coherent boundary packet](notes/actual_complete_circle_boundary_packet.md)
 and its [nonzero complex Gaussian](notes/actual_coherent_octahedral_belt_stack_asymptotic.md)
 remove the earlier balance restriction while retaining the physical
-belt and all root normals. These are complete augmented links;
-their fixed fillings and general knots remain open. Possible coverage
+belt and all root normals. These are the complete augmented bases
+for the long-filling theorem above. Other fillings and general knots
+remain open. Possible coverage
 by the existing Whitehead-chain literature is recorded, and no novelty
 of this topological family is claimed.
 

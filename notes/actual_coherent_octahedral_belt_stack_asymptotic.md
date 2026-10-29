@@ -4,7 +4,7 @@
 balance restriction from the original quantum source of the literal
 octahedral belt stacks. No ordering, parity or residue subsequence is
 selected. A fixed extra signed crossing power is retained exactly;
-its geometric collar interpretation is a separate typed statement.
+its literal geometric collar certificate is linked separately below.
 
 ## 1. The exact original source and its nodal crossing phase
 
@@ -124,11 +124,15 @@ not a new claim about arbitrary bridge graphs or independently
 filled crossing circles. Its possible containment in previously
 known Whitehead-chain families retains the earlier coverage caveat.
 
-For a!=0, (1)--(5) are proved for the literal original outer R^a
-insertion with all of its source scalars. Identifying its complement
-with the same regular-cell gluing additionally requires the actual
-outer-collar puncture permutation/isometry certificate. That
-topological assertion is not inferred from the quantum rate here.
+For a!=0, (1)--(5) retain the literal original outer R^a insertion
+with all of its source scalars. The independently reviewed
+[outer-collar puncture permutation/isometry certificate](actual_balanced_octahedral_belt_stack_volume.md#3a-any-fixed-integer-outer-crossing-power)
+identifies its ACTUAL complement with the same complete regular-cell
+gluing, of volume2n v8. Its component count is n+3 for even a and
+n+2 for odd a. Thus the original volume equality holds for every
+fixed sign word and every fixed integer outer twist a. The
+topological assertion comes from that literal collar certificate,
+not from the quantum rate.
 
 Audit: [full original sign-word/outer-twist sources, high-precision nodal phase checks and coherent Gaussian calibrations](../experiments/audit_actual_coherent_octahedral_belt_stack_asymptotic.py).
 Fresh replay PASS: seven full physical levels,210 all-sign word

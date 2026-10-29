@@ -275,6 +275,16 @@ it does not manufacture them from the A-polynomial or geometry alone.
 The active goal of the most general original-invariant equality remains
 open beyond the source classes where those hypotheses are proved.
 
+The [signed octahedral belt-stack assembly](actual_long_filled_octahedral_belt_stack_volume.md)
+now supplies all these hypotheses for another class, at every fixed
+nonempty stack width and fixed outer crossing power. Its literal inner
+color continuation, squared outer Fourier kernel, global source gaps,
+typed peripheral lift and complete face anchor give full equality for
+independently long signed integral fillings of ANY subset of auxiliary
+circles. Unfilled colors remain at h=0; they are not assigned p=0.
+This application does not turn the present conditional theorem into
+an unconditional statement for arbitrary graph sources.
+
 ## 7. Independent proof audit
 
 An independent read checked the exact N powers, the Cartan kernel

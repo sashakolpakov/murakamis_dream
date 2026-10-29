@@ -70,12 +70,43 @@ The literal crossing phase is retained, including the branch
 q^(a(N-1)^2/4). Both level parities and composite levels are covered;
 n, a and the diagram remain fixed before the limit.
 
-This is a growing family of complete LINKS, not a fixed-filling or
-arbitrary-knot theorem. Literature coverage includes van der Veen's
+This complete-base calculation concerns a growing family of LINKS;
+the fixed-filling extension is recorded below. Literature coverage includes van der Veen's
 Whitehead chains; these literal stacks may lie in that earlier family.
 No novelty of the topological class is claimed without an exact clasp
 dictionary. The independently proved reusable advance is the original
 bandlimited source/energy transfer with its precise physical seam.
+
+The next source step is now proved for EVERY such fixed stack: the
+[actual inner-color packet](actual_belt_stack_auxiliary_color_inner_packet.md)
+and [outer squared Fourier kernel](actual_outer_color_squared_kernel.md)
+supply a nonzero separately even complex packet and a strict gap on
+the ENTIRE physical auxiliary-color complement. The derivative in the
+original Hermite trace cancels the dangerous outer alias exactly.
+The [full equality assembly](actual_long_filled_octahedral_belt_stack_volume.md)
+now completes the deformed marked representation and absolute regulator
+comparison too. For ANY subset I of the n+1 auxiliary circles, all
+independently sufficiently long fixed signed integral fillings satisfy
+
+    lim_N (2pi/N)log|K_N(J_(epsilon,a,I)(p))|
+                              =Vol(S^3 minus J_(epsilon,a,I)(p)).
+
+There is no minimum width. The threshold depends on the fixed source;
+both level parities and composite levels are retained. Unfilled circles
+remain literal complete-color components, not slopes p=0. Filling
+every auxiliary circle gives a knot for odd a and a two-component link
+for even a. This extends the complete-stack result to actual filled
+volumes, which differ from 2n v8 for nonempty sufficiently long fillings.
+
+The [typed global lift](actual_belt_stack_typed_character_composition.md)
+checks the exact outer dual-cup/coupon map, preferred longitude A^-1,
+every complete cut-piece face isometry and every actual collar. It
+retains the absolute regulator and primitive 2pi filling logs. Root
+and a separate agent read the full assembly and replayed the source,
+normal, face and mixed-duality checks. These are internal research
+proof audits, not external peer review or an arbitrary-knot theorem.
+[Literature coverage](belt_stack_filling_coverage_check.md) is recorded
+separately without using a quoted proof to close any of these gates.
 
 ## 2. The hyperbolic-volume identification is now general
 
@@ -94,6 +125,15 @@ triangulation restrictions from the GEOMETRIC implication. It allows
 arbitrary primitive slopes and any number of retained cusps. Existence
 of the specified selected representation is still an input; a few
 matching traces or a cusp Hessian are insufficient.
+
+When the finite positive marked triangulation certificate succeeds,
+[a uniform contraction](finite_geometric_certificate_uniform_filling_existence.md)
+now supplies that geometric existence for every independently long
+primitive slope tuple. Cusp commutation gives V_i=U_i tau_i(U), with
+the actual upper-half-plane cusp ratio at zero. The certified local
+meridian chart then solves all primitive filling equations uniformly
+over signs and unrelated slope lengths. This still requires matching
+the particular quantum source to that actual marked geometric germ.
 
 The absolute regulator is calibrated by the complete anchor and the
 peripheral differential. The resulting filled value is the actual
@@ -148,6 +188,14 @@ hyperbolic-volume equality inferred from them:
   the original marked cap. Its coefficients can still grow
   exponentially; a sharp geometric energy estimate and a nonzero
   selected contribution remain necessary.
+* [The trivalent complete-circle kernel](actual_trivalent_complete_circle_vertex_kernel.md)
+  now gives at most N coherent terms at each actual degree/channel
+  vertex. Two noncrossing triple partitions of an ordered Morse cut
+  certify an unbounded class of original graph sources, including a
+  correctly ordered cube. Plain incidence permutations do not supply
+  that certificate. A two-belt neck can force an exact even-level zero;
+  no generic branching volume estimate is inferred from positive edge
+  weights or from a final complete-circle observation of a full kernel.
 * [The three-circle metric obstruction](actual_three_belt_saturated_source_and_marked_metric.md)
   is an exact source vector with zero naive three-circle energy but
   original evaluation one. The corrected marked metric removes that
@@ -269,14 +317,14 @@ The two outstanding analytic requirements for those graphs are:
 2. A global source/alias estimate that excludes exponentially competing
    contributions outside that packet, with the original boundary data.
 
-The boundary packet supplies a fixed complex PAIR-CASIMIR disk through
-the complete spectral endpoint. It is not yet identified with the
-physical auxiliary-color or meridian continuation required by filling.
-The arbitrary-width marked Parseval formula similarly supplies an
-exact observation and positive energy, not its sharp volume rate.
-Thus the new results do not yet supply the complex-color and
-complementary-source hypotheses for arbitrary branched graphs or
-the new belt-stack fillings. The generic-meridian A-module likewise
+The new exact inner-color continuation and squared outer-color kernel
+DO supply the complex-color and complementary-source hypotheses for
+the belt stacks. Their source-selected deformed peripheral lift and
+absolute regulator comparison are now proved as well, giving the
+any-subset long-filling equality recorded above.
+For arbitrary branched graphs, the marked Parseval formula supplies
+an exact observation and positive energy, not its sharp volume rate
+or a nonzero original geometric contribution. The generic-meridian A-module likewise
 requires its actual deformation and boundary currents, beyond the
 complete-meridian Newton character slice already proved.
 

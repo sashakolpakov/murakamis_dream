@@ -4,11 +4,13 @@ Research notes, exact finite-matrix experiments, and audit results concerning Ka
 
 **The general volume conjecture is not claimed solved.** The current notes contain a claimed full-sequence volume-equality proof for a specified long-pretzel family: every fixed odd width **s ≥ 9**, with independently sufficiently large **fixed signed** twist integers p_i and the recorded source convention R^(-(2p_i+1)). The corresponding specified single-cut reduced **two-component link** statement holds at fixed even widths **s ≥ 10**. Width and slopes remain fixed before N → ∞; both level parities and composite levels are included. These are research proofs and internal analytical audits, requiring external mathematical review.
 
-A second research proof concerns **complete augmented links**: every fixed word of **n ≥ 1 octahedral belt pieces**, with arbitrary signs and any fixed integer outer crossing power a, has original all-level volume limit **2n v₈**, equal to its explicitly constructed complete hyperbolic volume. The link has **n+3 components when a is even** and **n+2 when a is odd**. The proof retains all inner crossing circles and one outer belt; a source-specific complex Gaussian removes the earlier balance restriction. Possible coverage by the earlier Whitehead-chain literature is recorded; no novelty of this topological family is claimed. Fixed fillings of these new bases are not established here.
+A second research proof concerns **complete augmented links**: every fixed word of **n ≥ 1 octahedral belt pieces**, with arbitrary signs and any fixed integer outer crossing power a, has original all-level volume limit **2n v₈**, equal to its explicitly constructed complete hyperbolic volume. The link has **n+3 components when a is even** and **n+2 when a is odd**. The proof retains all inner crossing circles and one outer belt; a source-specific complex Gaussian removes the earlier balance restriction. Possible coverage by the earlier Whitehead-chain literature is recorded; no novelty of this topological family is claimed. The filled extensions are described next.
+
+The new **long-filling theorem** allows any subset of the n+1 auxiliary circles of a fixed signed belt stack to be filled along its specified primitive slopes μᵢ+pᵢλᵢ, with independently sufficiently large **fixed signed integers** pᵢ. It identifies the original single-cut reduced Kashaev limit with the **actual filled hyperbolic volume**, on the full sequence of levels. Unfilled circles remain components. Filling all auxiliary circles gives **knots for odd a** and **two-component links for even a**. The threshold may depend on the fixed stack and chosen subset; no numerical uniform threshold or arbitrary branched-graph theorem is asserted.
 
 At arbitrary fixed bridge width, an exact **marked multivariate Chebyshev packet** now gives a positive energy, Parseval identity, and polynomial-cost evaluation of the original source. A sharp geometric estimate for that energy remains open. The notes also retain an exact six-port counterexample showing why the unmarked three-circle norm cannot bound the marked source.
 
-The unfilled complete augmented volume V_s and the filled source volume V_src,s(p) are different. The broader task—original-source control and volume equality for arbitrary hyperbolic knots or arbitrary augmented graphs—remains open. Exploratory calculations, counterexamples to intermediate proposals, and historical checkpoints are retained with their own scope.
+The unfilled complete augmented volume V_s and the filled source volume V_src,s(p) are different. The broader task—original-source control and volume equality for arbitrary hyperbolic knots or arbitrary augmented graphs—remains open. The exact trivalent complete-circle vertex kernel records progress toward branching, without asserting a new branched-graph volume limit. Exploratory calculations, counterexamples to intermediate proposals, and historical checkpoints are retained with their own scope.
 
 ## Start here
 
@@ -23,6 +25,14 @@ The unfilled complete augmented volume V_s and the filled source volume V_src,s(
 - [Bandlimited cyclotomic sampling and complete-belt energy](notes/actual_complete_circle_nodal_energy_and_belt_sewing.md)
 - [Octahedral belt stacks and marked outer collars](notes/actual_balanced_octahedral_belt_stack_volume.md)
 - [Arbitrary-sign stack source and coherent asymptotic](notes/actual_coherent_octahedral_belt_stack_asymptotic.md)
+- [Long fillings of any subset of stack auxiliary circles](notes/actual_long_filled_octahedral_belt_stack_volume.md)
+- [Inner auxiliary-color source packet](notes/actual_belt_stack_auxiliary_color_inner_packet.md)
+- [Outer-color squared kernel and whole-source estimate](notes/actual_outer_color_squared_kernel.md)
+- [Regular parabolic port chart](notes/actual_belt_stack_regular_parabolic_port_chart.md)
+- [Typed character composition and marked regulator](notes/actual_belt_stack_typed_character_composition.md)
+- [Finite geometric certificate and uniform filling existence](notes/finite_geometric_certificate_uniform_filling_existence.md)
+- [Literature coverage check for the filling route](notes/belt_stack_filling_coverage_check.md)
+- [Exact trivalent complete-circle vertex kernel](notes/actual_trivalent_complete_circle_vertex_kernel.md)
 - [Complete-circle boundary packet](notes/actual_complete_circle_boundary_packet.md)
 - [Arbitrary-width marked Chebyshev packet](notes/actual_marked_multiport_chebyshev_source_packet.md)
 - [Six-port support theorem](notes/actual_six_port_three_circle_support.md)
@@ -56,6 +66,8 @@ python3 experiments/audit_actual_complete_circle_nodal_energy_and_belt_sewing.py
 python3 experiments/audit_actual_balanced_octahedral_belt_stack_volume.py
 python3 experiments/audit_actual_marked_multiport_chebyshev_source_packet.py
 python3 experiments/audit_actual_coherent_octahedral_belt_stack_asymptotic.py
+python3 experiments/audit_actual_outer_color_squared_kernel.py
+python3 experiments/audit_actual_belt_stack_typed_character_composition.py
 ```
 
 With the optional geometry packages installed, the belt-stack script also supports `--software-only` for its separately labeled literal-diagram diagnostics. The exact geometric proof is the reversible disk/face/cusp certificate in the notes, rather than software recognition.
