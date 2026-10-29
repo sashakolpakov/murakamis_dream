@@ -21,11 +21,11 @@ proof was independently read and its algebraic certificates replayed.
 An exceptional endpoint in the uniqueness argument was repaired by a
 direct cup projection before the proof was frozen.
 
-Together with the [normal-jet envelope](central_racah_normal_jet_envelope.md),
-this establishes polynomial conditioning of the actual correlated
-boundary Gram in a fixed central corridor at both level parities.
-It does not establish a bound over the entire color domain or for
-arbitrary recoupling operators.
+Together with the [whole-support normal-jet envelope](actual_whole_support_boundary_gram_envelope.md),
+this establishes polynomial costs for the actual correlated boundary
+Gram on EVERY supported folded triple at both level parities,
+including saturation boundaries. It does not bound physical frame
+changes, arbitrary recoupling operators or the global graph energy.
 
 ## A source period equals an actual non-octahedral core volume
 
@@ -73,7 +73,7 @@ the required asymptotics for arbitrary graphs.
 
 The remaining obstacle is global control of the original growing-color
 sum: the unfixed cycle channels, possible phase cancellation, behavior
-outside the central corridor, and the even-level cube source. The
+outside the geometric corridor, and the even-level cube source. The
 general graph problem also needs the resulting global energy to recover
 the certified core volume. These are substantive missing estimates.
 

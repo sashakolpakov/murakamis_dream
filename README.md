@@ -18,7 +18,9 @@ For arbitrary fixed original noncrossing Morse graphs, an exact **first-normal r
 
 The new **positive Newton multiplication theorem** retains the full root algebra and its normal data. It gives a positive cuboctahedral period with the exact geometric rate of the **odd central cube sector**. A further exact packet sums **all four rung colors** at polynomial cost while keeping the eight cycle channels central. These are source-sector results, not a volume-limit proof for the whole cube invariant, even levels, or arbitrary branched graphs.
 
-The **generic trivalent Racah source identity** now expresses the actual nested-cup coefficient as one finite factorial sum before root specialization, including high partners and bounded normal tails. Its proof uses a typed all-input recoupling column and a finite polynomial recurrence. The accompanying central-corridor conditioning estimate does not settle conditioning on the full color support or general graph noncancellation.
+The **generic trivalent Racah source identity** now expresses the actual nested-cup coefficient as one finite factorial sum before root specialization, including high partners and bounded normal tails. Its proof uses a typed all-input recoupling column and a finite polynomial recurrence. The new **whole-support boundary Gram theorem** proves polynomial source costs on every supported folded triple at both level parities, including saturation boundaries. Physical changes of frame, recoupling norms and sharp global graph energy remain separate tasks.
+
+The main route extends the proved pretzel argument: whole-source growth control, weighted Cauchy, nonzero geometric overlap, and the full Casson–Rivin certificate. Cube calculations and alternative ideas are retained. A new exact Conway-tree construction gives strictly positive whole original sources at all levels N>=3, while a genuine-turn calculation shows why one physical reflection metric cannot propagate unchanged. Neither result is presented as a general hyperbolic-volume equality.
 
 The unfilled complete augmented volume V_s and the filled source volume V_src,s(p) are different. The broader task—original-source control and volume equality for arbitrary hyperbolic knots or arbitrary augmented graphs—remains open. The exact trivalent complete-circle vertex kernel records progress toward branching, without asserting a new branched-graph volume limit. Exploratory calculations, counterexamples to intermediate proposals, and historical checkpoints are retained with their own scope.
 
@@ -26,6 +28,10 @@ The unfilled complete augmented volume V_s and the filled source volume V_src,s(
 
 - [Current general frontier](notes/general_equality_frontier.md)
 - [Recent verified advances and remaining full-source gaps](notes/recent_advances_2026_10_29.md)
+- [Extending the proved pretzel argument](notes/pretzel_to_general_source_strategy.md)
+- [Polynomial boundary Gram costs on the whole supported domain](notes/actual_whole_support_boundary_gram_envelope.md)
+- [Positive whole original sources for Conway trees](notes/actual_positive_complete_circle_conway_trees.md)
+- [Genuine-turn reflection obstruction and positive Cauchy repair](notes/actual_turned_circle_reflection_inertia.md)
 - [Positive multiplication in the full Newton source algebra](notes/actual_positive_newton_multiplication.md)
 - [Positive cuboctahedral period and its odd central-sector geometric rate](notes/actual_positive_newton_cuboctahedral_period.md)
 - [Literal odd central cube source and marked normalization](notes/actual_odd_central_cube_reflection_packet.md)
@@ -97,6 +103,9 @@ python3 experiments/audit_actual_positive_newton_cuboctahedral_period.py
 python3 experiments/audit_actual_cube_four_rung_positive_source.py
 python3 experiments/audit_actual_generic_tetrahedral_source_as_recoupling.py
 python3 experiments/audit_actual_generic_trivalent_racah_source_identity.py
+python3 experiments/audit_actual_whole_support_boundary_gram_envelope.py
+python3 experiments/audit_actual_positive_complete_circle_conway_trees.py
+python3 experiments/audit_actual_turned_circle_reflection_inertia.py
 python3 experiments/audit_actual_six_port_divided_power_source_kernel.py
 python3 experiments/audit_general_augmented_graph_source_extension.py
 python3 experiments/audit_actual_complete_circle_nodal_energy_and_belt_sewing.py

@@ -433,9 +433,22 @@ three-color corridor, at both level parities, all actual lower moments
 satisfy |m_I/tau|<=poly(N), hence the correlated Gram source cost
 K_j<=poly(N). The proof keeps the common-phase main sum and bounds
 the second-zero tail with a strict uniform gap. This is not inferred
-from dimension or numerical conditioning samples. Whole-support
-conditioning, general recoupling norms and global core energy remain
-unproved.
+from dimension or numerical conditioning samples. The subsequent
+[whole-support envelope](actual_whole_support_boundary_gram_envelope.md)
+removes that corridor restriction: actual |m_I/tau| and K_j are
+polynomial uniformly on EVERY supported folded triple, at both
+parities. Exact half-step folding coordinates and a global sine-product
+inequality bound both root-zero bands by a positive midpoint action,
+including the saturation boundary. Independent full proof review and
+the finite algebra/source audit passed. Physical frame changes,
+general recoupling norms and global core energy remain unproved.
+
+The [pretzel-to-general strategy](pretzel_to_general_source_strategy.md)
+keeps the proved whole-source/weighted-Cauchy/Casson--Rivin route as
+the main argument. The next missing step is a sharp transported energy
+and nonzero geometric overlap; cheap local boundary costs alone do
+not imply either. Cube calculations are retained as concrete tests
+of the required global core contribution.
 
 The [graphic spin-one model](actual_nc_spin_one_flow_order_certificate.md)
 proves an exact generic flow-polynomial formula. It determines the

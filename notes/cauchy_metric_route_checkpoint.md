@@ -1,5 +1,16 @@
 # The special inner product: what Cauchy proves and what must be constructed
 
+**Whole-support update, 29 October.** The
+[actual correlated boundary Gram](actual_whole_support_boundary_gram_envelope.md)
+now has polynomial source cost on EVERY supported folded triple,
+including saturation boundaries, at both level parities. The
+[current generalization strategy](pretzel_to_general_source_strategy.md)
+keeps the proved pretzel argument as the main route. Genuine changes
+of pairing and the sharp global energy/overlap still need control.
+The filled pretzel threshold is now odd s>=9 by the
+[whole-color improvement](actual_pretzel_all_width_extension.md);
+older threshold and status paragraphs below are historical.
+
 **Full long-pretzel equality, 29 October.** The
 [geometric completion theorem](actual_long_pretzel_geometric_filling_completion.md)
 and [Casson--Rivin proof](actual_long_pretzel_casson_rivin_equality.md)
