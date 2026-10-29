@@ -154,7 +154,7 @@ The source prediction agrees: at eta=chi=0 its physical color action
 has j_chi_chi=(-1+i)/pi; with U_geom=-2i chi and the marked longitude
 log V_geom=-2 partial_(Log H)(2pi i j), the same ratio is 1+i.
 
-## 4. What is still needed for the global geometric lift
+## 4. The separate global geometric lift
 
 The old local source-to-character construction now extends regularly
 through the ACTUAL belt saddle and retains every port and auxiliary
@@ -162,26 +162,27 @@ meridian. Its six complete ideal flags and the inner peripheral word
 are also explicit. These remove a genuine singular-chart problem.
 
 They do NOT alone identify the full global stack holonomy with its
-two-octahedron face quotient. In particular one must still transport
-the actual bare R interfaces and bends in their literal orientation,
-compose the typed local maps, impose the outer auxiliary closure,
-and match its primitive meridian/longitude. A bare R eigenphase can
-give the inverse of a state-versus-observable Hurwitz graph; this
-note does not pick one by analogy. Matching six ideal flags is also
-weaker than checking all the face maps. The existing complete face
-certificate remains valid, but its DEFORMED source matching needs
-these actual interface checks.
+two-octahedron face quotient. The global argument additionally
+transports the actual bare R interfaces and bends in their literal
+orientation, composes the typed maps, imposes the outer auxiliary
+closure, and matches its primitive meridian/longitude. A bare R
+eigenphase can give the inverse of a state-versus-observable Hurwitz
+graph; it cannot select that convention by analogy. Matching six
+ideal flags is also weaker than checking all the face maps.
 
-Once that finite marked map is proved, the
+The [separate typed composition proof](actual_belt_stack_typed_character_composition.md)
+now supplies that finite marked map, including the original nested
+head snakes, incident mixed coupons and untouched auxiliary pivot.
+That proof, the
 [uniform filling-existence theorem](finite_geometric_certificate_uniform_filling_existence.md)
 and general completion/calibration theorem identify the selected
 long-filling action with the actual filled hyperbolic volume. Neither
 the local regularization nor the quantum color packet substitutes
-for this remaining marked map.
+for that independent marked-map proof.
 
-Section6 below now checks the complete CUT-PIECE face anchor as well.
-The remaining global issue is the actual outer collar and closed-leg
-peripheral dictionary, not a missing complete inner-face comparison.
+Section6 below checks the complete CUT-PIECE face anchor as well.
+The global outer collar and closed-leg peripheral dictionary are
+proved in the linked typed-composition note.
 
 ## 5. The opposite retained half twist, with its actual circle meridian
 
@@ -309,10 +310,17 @@ is A^(-1), not A. Reversing the pants orientation reverses all three
 paths together. This is an oriented face/path certificate, independent
 of any computed source Hessian.
 
-To call(20) the preferred POSITIVE auxiliary longitude one must still
-transport the actual closed auxiliary orientation and its original
-ordinary cup/pivot to this pants boundary. That last typed operation
-also determines which A-eigenflag has the positive auxiliary meridian
-eigenvalue. Neither choice is inferred just from(19). The geometric
-boundary calculation supplies its explicit path, while preserving
-that distinction.
+To call(20) the preferred POSITIVE auxiliary longitude, the actual
+closed auxiliary orientation and its original ordinary cup/pivot
+are transported to this pants boundary in the linked typed-composition
+proof. That operation also determines which A-eigenflag has the
+positive auxiliary meridian eigenvalue. Neither choice is inferred
+just from(19). The geometric boundary calculation supplies its
+explicit path, while preserving that distinction.
+
+Independent analytical review checked the regular signed local
+ports, all complete matrices and flags, and the oriented pants
+boundary word; the root independently checked the all-face anchor.
+The focused exact audit passes 52 checks. The global filled-volume
+assembly has its separate internal proof reviews; this local note
+does not replace them or describe an external peer-review process.

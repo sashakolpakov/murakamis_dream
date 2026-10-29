@@ -423,7 +423,7 @@ its n+1 auxiliary circles, independently sufficiently long fixed
 signed integral fillings on I obey
 
     lim_N (2pi/N)log|K_N(filled stack)|
-                     =Vol(S^3 minus filled main link). (18)
+                     =Vol(S^3 minus resulting partially filled link). (18)
 
 The empty subset is the already proved COMPLETE stack theorem,
 with no slope threshold or filling functional. For a nonempty
