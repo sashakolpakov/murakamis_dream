@@ -190,3 +190,5 @@ and primitive cusp ratios. The subsequent marked deformation supplies
 the actual geometric interface used in the final theorem.
 
 Completion of the geometric interface: both independent agents and the primary agent reviewed the actual marked deformation proof and replayed its exact rational-function audit. The resulting representation, primitive unit filling equation, and absolute regulator establish (11); the original quantum proof (1)--(7) is unchanged.
+
+The later [signed half-twist extension](actual_odd_conway_long_filling_volume.md) changes the original leaf connectivity and proves its separately selected source and peripheral geometry. For C(FG) with robust children it gives long-filled knot and link families at arbitrary fixed diagram branching and turn depth. The pure component obstruction in section 5 remains unchanged.

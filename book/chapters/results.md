@@ -6,6 +6,14 @@ The project seeks equality for broad classes of hyperbolic knots, with the right
 
 The broadest complete-link result starts with a crossing-circle box, turns it by a quarter turn, and calls the resulting piece $h$. Stack three such pieces to form the seed $A=h^3$. Build larger tangles by stacking previously built tangles or rotating them by a quarter turn $R$, retaining every auxiliary crossing circle. The grammar $E::=A\mid RE\mid EE$ records those operations. A cylindrical closure joins corresponding top and bottom endpoints around the outside; cap closure instead pairs endpoints on each end.
 
+The [signed Conway filling theorem](../../notes/actual_odd_conway_long_filling_volume.md) now gives a knot and link result across arbitrary finite branching and turn depth. Take a cylindrical closure $C(FG)$ with both children robust. Independently retain a positive half twist, a negative half twist, or no half twist at every leaf, then fill any subset of crossing circles with sufficiently long fixed signed integral full twists. The full original invariant satisfies
+
+$$\lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(L)|=\operatorname{Vol}(S^3\setminus L).$$
+
+For **every such expression**, a constructive parity assignment joins the main strands into one component; filling every auxiliary circle then gives knots. Both level parities and composite levels are included. No fixed diagram width is imposed, but the diagram and slopes remain fixed before the limit. The minimal $C(A)$ is excluded from this mixed-color filling theorem. The result does not identify the grammar with all alternating or all arborescent knots.
+
+The proof keeps the entire changed source, including the aliases introduced by half twists. Its selected action is the calibrated primitive of the actual marked peripheral branch, and the filling equation uses the primitive meridian of the changed link. This establishes the volume of the intended filled complement.
+
 The [cylindrical positive Conway theorem](../../notes/actual_positive_conway_hyperbolic_volume.md) covers arbitrary finite branching and turn depth in this grammar. After the exact cap-sum boundary reduction, every retained cylindrical factor has a complete hyperbolic complement and
 
 $$\lim_{N\to\infty}\frac{2\pi}{N}\log Z_{E,N}
@@ -25,7 +33,7 @@ The signed marked theta link has original-source limit $4v_8$, with a separate s
 
 For every retained cylindrical robust Conway factor, the [long-filling theorem](../../notes/actual_conway_long_filling_source_limit.md) proves the full original-invariant limit equals the actual filled hyperbolic volume. Any subset of auxiliary circles may be filled along independently sufficiently long fixed signed integral slopes. Both parities and composite levels are included. The proof controls every source color and constructs the actual marked peripheral representation, including its absolute regulator.
 
-These fillings always remain links: each pure seed has two internal main components that full twists cannot join. The knot extension needs a different strand connection pattern and its corresponding source proof. This is separate from the already established long-pretzel and belt-stack knot families above.
+These pure fillings always remain links: each pure seed has two internal main components that full twists cannot join. The signed-coupon theorem above changes the strand pattern and supplies the required new source proof, giving the broader knot subfamily. It does not alter this component obstruction for the pure diagrams.
 
 ## General identities with a smaller conclusion
 

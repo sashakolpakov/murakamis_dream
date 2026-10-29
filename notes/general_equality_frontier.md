@@ -10,6 +10,18 @@ preserves the cube constructions and other approaches, including their
 counterexamples and unresolved extensions. A narrower proved scope is
 recorded without discarding the idea.
 
+The [signed Conway knot and link theorem](actual_odd_conway_long_filling_volume.md)
+now extends the full original-source equality to every C(FG), with
+both children robust, arbitrary fixed signed half-twist patterns,
+and independently sufficiently long fixed signed integral fillings
+of any auxiliary subset. Every such expression admits a constructive
+one-main-component pattern; filling all its auxiliary circles gives
+knots with arbitrary allowed diagram branching and turn depth. Its
+rate is the ACTUAL filled hyperbolic volume, using the changed primitive
+meridians, full calibrated action, and smooth geometric completion.
+The minimal C(A), arbitrary short fillings, and arbitrary knot diagrams
+remain outside this filling theorem.
+
 The [all-partner first-normal theorem](actual_all_partner_first_normal_bound.md)
 now controls the ACTUAL generic first normal on every supported partner
 branch, with uniform relative cost O(N^2(1+log N)). It also bounds the
@@ -62,14 +74,21 @@ There is an essential KNOT-scope correction: every pure h^3 seed has
 two permanent internal main components, and full twists preserve
 them. The [component theorem](actual_conway_full_filling_component_obstruction.md)
 proves that these fillings ALWAYS remain links, with at least 2S+1
-main components for S seeds. A broader knot theorem needs different
-source connectivity, for example retained odd half twists, and the
-corresponding phase estimates. The new
+main components for S seeds. The new signed-coupon theorem changes
+that connectivity and supplies the required phase estimates; it does
+not invalidate the pure-diagram obstruction. The
 [strict quarter theorem](actual_conway_strict_leaf_quarter_bound.md)
 puts EVERY complete optimizer leaf strictly above 1/4, by an exact
-algebraic port invariant, supplying the required high-source location
-for the proposed odd-half-twist analysis. It does not replace that
-changed quantum source proof. The complete geometric theorem also
+algebraic port invariant. For C(FG), the stronger proper-seed interval
+also makes one supporting plane dominate every alias output. The
+[whole mixed-color bound](actual_odd_conway_uniform_mixed_source_gap.md)
+and [exact complex packet](actual_odd_conway_complex_color_packet.md)
+then supply every source hypothesis. The
+[actual odd deformation](actual_odd_conway_marked_peripheral_deformation.md)
+realizes the same selected action on the original link group. Its
+half-longitude shear is an integral monomial map on the marked
+double cover ell^2=L, retaining the required square root and primitive
+paths. The complete geometric theorem also
 now uses the [direct closed bowtie cut](actual_conway_bowtie_projection_cut.md),
 which repairs an overstatement identifying an open quadrilateral
 port with half of the physical four-punctured boundary.

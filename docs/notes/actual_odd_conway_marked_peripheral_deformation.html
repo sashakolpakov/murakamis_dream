@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Actual mixed peripheral geometry for arbitrary odd/pure Conway patterns · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Geometry</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">Actual signed peripheral branch and regulator</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_odd_conway_marked_peripheral_deformation.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="actual-mixed-peripheral-geometry-for-arbitrary-oddpure-conway-patterns">Actual mixed peripheral geometry for arbitrary odd/pure Conway patterns</h1>
+<p>29 October 2026. Every fixed signed odd/pure coupon pattern on a retained robust Conway factor has an actual marked representation family realizing its selected mixed-source action. The odd shaded gluings satisfy their full pointwise edge words away from completeness. The physical auxiliary meridians and preferred disk longitudes obey</p>
+<pre><code>U_i=-2pi i chi_i,       V_i=-2 partial_i phi(chi).        (1)</code></pre>
+<p>The source phase changes by an explicit canonical shear. It is not the pure packet with the same color variables. In particular the complete half-twist marking is retained in every filling equation.</p>
+<p>This supplies the geometric input for the whole original-source long-filling transfer. Its analytic source hypotheses must be supplied by the separately proved odd-coupon gap and complex packet. The present proof works for arbitrary fixed turn depth, branching and coupon signs; it is not a cyclic or pretzel-only construction.</p>
+<h2 id="an-exact-change-of-the-physical-color-coordinate">1. An exact change of the physical color coordinate</h2>
+<p>Write the pure leaf action as</p>
+<pre><code>g(x,t)=J(2x)-2J(x)-J(x-t)-J(x+t),
+J(a)=integral_0^a Log(2sin(pi u))du,
+v=g_t=Log[sin(pi(x-t))/sin(pi(x+t))].                   (2)</code></pre>
+<p>The continued marks are those of the complete positive chamber. For a coupon epsilon in {0,+1,-1} define the hidden pure parameter t=t_epsilon(x,chi) and transformed action by</p>
+<pre><code>chi=t-epsilon*v/(2pi i),
+f_epsilon(x,chi)=g(x,t)-epsilon*v^2/(4pi i).            (3)</code></pre>
+<p>For epsilon=0 this is simply the original pure leaf. At t=0 the derivative of the first equation with respect to t is</p>
+<pre><code>1-epsilon*i cot(pi x),</code></pre>
+<p>which is nonzero for 0&lt;x&lt;1/2. Thus (3) determines one holomorphic branch near every complete leaf. The function t is odd in chi; f_epsilon is even. Direct differentiation, including the implicit t dependence, gives EXACTLY</p>
+<pre><code>df_epsilon=g_x dx+v dchi.                              (4)</code></pre>
+<p>Thus the internal wire derivative remains g_x evaluated at the hidden parameter, while the derivative in the PHYSICAL color is v.</p>
+<h2 id="this-is-the-action-selected-by-the-original-odd-source">2. This is the action selected by the original odd source</h2>
+<p>The exact finite mixed half-twist source has the selected analytic action, for epsilon=-1,</p>
+<pre><code>f_src(x,chi)=g(x,chi)+S(x,pi chi)-S(x,0),
+S(x,a)=integral_x^(1/2) Log mu(s,a)ds,                 (5)</code></pre>
+<p>where mu is the source-selected root of the explicit quadratic in <a href="actual_pretzel_mixed_inner_source_wkb.html">the mixed finite-source theorem</a>, with mu(x,0)=-exp(-2pi i x). This formula keeps the original q<sup>(h</sup>2) term: in the normalized physical coefficient its phase cancels exactly against the two shifted factorial phases, as in that theorem. No order-N phase has been dropped from (5).</p>
+<p>Put E=exp(2pi i x), H=exp(2pi i chi), K=exp(-partial_x f_src). With D=(1-E/H)(1-EH), the source quadratic and its selected root give</p>
+<pre><code>K=E mu D/(1+E)^2,
+K^2(1+E)^2+K[(H+H^-1)E^2+2]+(1-E)^2=0.              (6)</code></pre>
+<p>At H=1 this polynomial factors as</p>
+<pre><code>(K+1)[K(1+E)^2+(1-E)^2].</code></pre>
+<p>The SOURCE selects K=tan(pi x)^2, not K=-1. On the fixed high-index interval x&gt;1/4 its selected eigenvalue is simple; the same regular branch continues for small complex chi.</p>
+<p>Now let T=exp(2pi i t) in (3). Since exp(v)=(E-T)/(ET-1), its epsilon=-1 equation is</p>
+<pre><code>H=T(E-T)/(ET-1),
+T^2+E(H-1)T-H=0,                                 (7)</code></pre>
+<p>with T=1 at H=1. The pure ordered port value is</p>
+<pre><code>K=(E-T)(1-ET)/[T(1+E)^2].                         (8)</code></pre>
+<p>Eliminating T between (7),(8) gives precisely (6). Its branch agrees at H=1, so (4) and the selected source have the same x derivative. This fixes the derivative, not yet the possible chi-dependent constant. That constant is fixed at x=1/2: both (5) and (3) tend to zero there, because S(1/2,a)=0, g(1/2,t)=0 and g_t(1/2,t)=0. Continue the common high branch to that endpoint. Therefore f_src=f_- EXACTLY on the selected neighborhood, with the original complete mark retained.</p>
+<p>The positive coupon is the Schwarz conjugate of the negative finite source. Conjugating (3), including i-&gt;-i, proves f_src,+ = f_+. In particular (3) is an identification with the selected finite source, not a newly proposed definition of its quantum phase.</p>
+<h2 id="universal-port-data-with-either-shaded-pairing">3. Universal port data with either shaded pairing</h2>
+<p>For arbitrary nearby complex E,R normalize a port to (0,infinity,1,R). Choose a leaf flag Z satisfying</p>
+<pre><code>Z^2-(1+E)Z+ER=0.                                  (9)</code></pre>
+<p>In the first half use apex Z, and in the second half apex Z/E. For the hidden pure parameter this means</p>
+<pre><code>Z=(1+E)/(1+T),
+R=T(1+E)^2/[E(1+T)^2]=1/(1+K).                   (10)</code></pre>
+<p>Use the same four white/completion matrices as in the pure proof:</p>
+<pre><code>W0=[[1,0],[0,E]],
+W1=[[1,E-1],[0,E]],
+W2=[[E-R,R(1-E)],[E-1,1-ER]],
+W3=[[R,0],[1-E,ER]].                             (11)</code></pre>
+<p>W0,W2 send Z to Z/E by (9). The pure shaded map is S=[[0,-ER],[1,-1-E]], pairing the two shaded triangles within one half. At an odd leaf use instead the ACTUAL cross-half pairings</p>
+<pre><code>(Z,infinity,1) -&gt; (Z/E,R,0),
+(Z,R,0) -&gt; (Z/E,infinity,1),</code></pre>
+<p>whose matrices are</p>
+<pre><code>A=[[R,-R],[1,ER-1-E]],
+B=[[R/E-1-1/E,R],[-1,R]].                        (12)</code></pre>
+<p>The second is the inverse of the first with E replaced by E^-1 and R retained. Equation (9) checks both apex correspondences. These are the same local puncture and copy permutations proved by the literal half-disk rotation in <a href="actual_conway_half_twist_partner_geometry.html">the complete half-partner proof</a>. They are not a change of the original main-wire compiler.</p>
+<p>Crucially, the three odd edge relations hold for INDEPENDENT E,R:</p>
+<pre><code>W0^-1 B W2^-1 A=identity,
+W2^-1 B W0^-1 A=identity,
+W1^-1 B W3^-1 A=identity.                         (13)</code></pre>
+<p>These are rational 2-by-2 matrix identities. No complete relation R=(1+E)^2/(4E), unit-modulus condition, or equality of edge angles is needed. The reverse words are their inverses. Thus all odd side and CAP-base edge words remain pointwise trivial, including translations and dilations, throughout the mixed deformation.</p>
+<h2 id="assemble-actual-representations-for-the-whole-grammar">4. Assemble actual representations for the whole grammar</h2>
+<p>At each leaf use (3),(10), and retain the original multiplication action m and every actual turn/final closing relation. Let</p>
+<pre><code>F(y,chi)=sum_leaves f_epsilon(x_i(y),chi_i)
+                                  +sum_products m.</code></pre>
+<p>At zero it is the pure complete action. Its wire Hessian is therefore negative definite there. The implicit-function theorem gives its one holomorphic critical branch y_<em>(chi), and phi(chi)=F(y_</em>(chi),chi).</p>
+<p>By (4), internal stationarity is exactly the old ordered port cross-ratio matching, with each pure g_x evaluated at its own hidden t_i. The nine prism transport identities, all turn identities and the final cylindrical identities from the pure marked-deformation proof are rational identities, so they continue unchanged. They supply a SINGLE Mobius map on every original white face, even if its deformed triangular pieces are not coplanar.</p>
+<p>For complex source parameters the construction uses holomorphic charts: the second prism’s coordinates invert its angle phases, as in the rational transport identities. The normalized port value R remains the same in its two charts, and the leaf apex pair is specified directly by (9). No antiholomorphic operation on the physical parameters is being used. Three-point charts are regular near the complete anchor; stationarity matches their fourth points.</p>
+<p>Use the exact pure shaded words at pure leaves and (13) at odd leaves. The actual closed bowtie quotient, with the changed local half-disk pairings, supplies the labeled fundamental-group presentation. All its face-edge words are now identities. Thus the matrices give an ACTUAL representation of the original half-twist partner link group, in a bounded framed neighborhood of its complete holonomy.</p>
+<p>The small meridian around a main segment still crosses its two white sectors and is W_(j-1)^-1 Wj at that corner. Their derivatives at the common flag are equal, so this meridian is exactly parabolic; it stays nonidentity near completeness. Its peripheral commutant consists of translations. Therefore ALL main cusps remain parabolic, including when the changed pairing joins many old main components into one knot component.</p>
+<h2 id="exact-primitive-auxiliary-meridians-and-longitude">5. Exact primitive auxiliary meridians and longitude</h2>
+<p>Define</p>
+<pre><code>rho=Z/(1+E-Z),       Q=(E-Z)/(Z-1).              (14)</code></pre>
+<p>The common longitude is the actual disk path W2^-1 W0. In the selected flag-at-infinity coordinate its multiplier is Q^2. The pure meridian is S^-1, with multiplier rho. At the two half-twist markings the primitive collar paths are</p>
+<pre><code>mu_geometric,+ = A^-1 W0,
+mu_geometric,- = W0^-1 B.</code></pre>
+<p>Direct differentiation at the finite flag Z, taking the reciprocal to get the flag-at-infinity multiplier, gives respectively</p>
+<pre><code>exp(U_plus)=rho Q,
+exp(U_minus)=rho/Q,
+exp(V)=Q^2.                                        (15)</code></pre>
+<p>These paths reduce at completeness to the primitive translations -2 and 2E, while the disk longitude translates by -2(E+1). Their primitivity and sign were independently checked on the two-rectangle cusp lattice. Thus (15) retains the original integral collar paths; it is not an arbitrary choice of eigenvalue square root.</p>
+<p>The physical coupon R^-1 uses the geometric positive-diagonal meridian, and R uses the negative-diagonal meridian. This local sign can be checked against the literal threading and Hurwitz convention, without identifying a meridian from a Hessian. Write P for its actual disk-product SL(2) matrix. At the complete negative coupon, the source-selected regular local calculation gives</p>
+<pre><code>C=I-(P+I)/(1+E),       Tr P=-2.                    (16)</code></pre>
+<p>Here C is the actual auxiliary meridian from the typed loop [2,1,1,2] followed by R^-1; the preferred PSL longitude is -P. Consequently its complete translation ratio is lambda/mu=1+E, exactly the positive-diagonal primitive path above. Formula (16) and its actual word meaning are proved by the explicit local threading calculation in <a href="actual_pretzel_mixed_regular_character_lift.html">the regular character lift</a>, sections 4–5. They concern one coupon and do not use a cyclic global pretzel gluing. Reversing the retained half twist changes the meridian by one disk longitude, giving the other path.</p>
+<p>There is also a direct algebraic check against the finite source: eliminating Z from (9) and rho Q=H^-1 gives exactly (6), with its selected complete branch. Thus the actual primitive meridian and the selected physical-color variable agree, beyond the complete translation calibration.</p>
+<p>Using (10),(14), rho=exp(-2pi i t), Q=exp(-v). Hence for the physical epsilon convention, with all small logs continued from zero,</p>
+<pre><code>U= -2pi i t-epsilon*V/2
+  =-2pi i[t-epsilon*v/(2pi i)]=-2pi i chi,
+V=-2v=-2 partial_chi f_epsilon.                   (17)</code></pre>
+<p>Equations (15)–(17) are exact on the connected local branch. In particular the framing correction is a HALF-longitude shear between different cusp lattices, not an assertion that lambda/2 itself is a primitive loop in either lattice. The actual integral paths were fixed before writing their logarithms.</p>
+<h2 id="the-full-source-primitive-regulator-and-filling-equation">6. The full source primitive, regulator and filling equation</h2>
+<p>The envelope rule in the stationary wires now gives (1) for every auxiliary component of the whole source. Unfilled auxiliary colors have chi_i=0. Separate evenness then gives V_i=0 as well, so they remain parabolic. All main components were treated in section 4.</p>
+<p>Put G=2pi i phi, retaining the known real Cartan/framing constant. Then</p>
+<pre><code>dG=(1/2)sum_i V_i dU_i.                            (18)</code></pre>
+<p>Locally the change in the leaf primitive is explicitly</p>
+<pre><code>G_epsilon=G_pure-epsilon*V^2/8.                    (19)</code></pre>
+<p>Its derivative is exactly the shear U_new=U_pure-epsilon V/2. Thus the quadratic framing term required by the odd cusp is PRESENT in the selected action, rather than appended after a volume comparison. The original SL(2) pivot spin is retained when taking eigenlogs; (1),(17) use centered PSL(2) similarity multipliers, the squares of those eigenvalues, as in the general transfer theorem.</p>
+<p>At the complete point Im G(0)=2pi phi(0) is the ACTUAL half-twist partner volume by the complete geometry theorem. The same oriented fundamental-chain boundary calculation therefore gives the absolute regulator identity</p>
+<pre><code>Vol(rho_chi)=Im G-(1/2)sum_i Re U_i Im V_i.         (20)</code></pre>
+<p>This uses the actual nearby representation just constructed, its primitive markings, and its complete geometric anchor. It does not compare unrelated Bloch cycles by equal regulators.</p>
+<p>For independently sufficiently long fixed signed integral full twists on any chosen auxiliary subset, the original transfer saddle</p>
+<pre><code>phi_i(chi)+(pi i/p_i)(chi_i-1)=0</code></pre>
+<p>is precisely U_i+p_i V_i=-2pi i. The unfilled peripheral groups remain parabolic. The general geometric completion theorem therefore makes this actual nearby representation the smooth complete hyperbolic holonomy of the correctly marked filled topology. At its saddle, (20) equals</p>
+<pre><code>2pi Re[phi(chi)+(pi i/2)sum_i(chi_i-1)^2/p_i].       (21)</code></pre>
+<p>This completion uses the ACTUAL ODD-LINK primitive basis. In the hidden pure variables its equation reads U_pure+(p_i-epsilon_i/2)V=-2pi i. Multiplying it by two would give the pure-link primitive pair (2,2p_i-epsilon_i) with right-hand side -4pi i, not the smooth primitive 2pi equation. Consequently the half-integer shear must not be replaced by an assertion about ordinary rational Dehn filling of the pure partner. It relates local marked representation branches of different face-paired topologies.</p>
+<p>Whenever the separately proved odd-source whole-color gap and exact complex packet supply the analytic transfer hypotheses, (21) is therefore the FULL ORIGINAL invariant’s actual filled hyperbolic volume limit. For retained C(FG) these are the current source inputs; the stronger all-color theorem does not include the small C(h^3) exception merely because the geometric construction also works there.</p>
+<p>Finally choose one of the constructive one-main-component patterns from the complete half-partner theorem and fill all auxiliary circles. The resulting topology is a KNOT for every integral full-twist tuple. Thus, with the stated original-source inputs, this geometry applies to arbitrarily branching long-filled knot families, rather than only links or a fixed-width twist/pretzel subclass.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_odd_conway_marked_peripheral_deformation.py">generic odd transport, actual peripheral flags and selected-source shear</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_odd_conway_marked_peripheral_deformation_results.json">results</a>. PASS for the three odd edge words over Q(E,R), both peripheral commutators, all apex and primitive multiplier formulas, the actual meridian/source resultants at both signs, and the exact implicit generating-function derivatives. No complete-R specialization or numerical phase samples are used.</p>
+<p>Independent internal reviews: the root agent read the full argument and replayed the exact audit with PASS, including the selected-source phase, bounded frames and actual collar sign. The coherent-source agent separately reviewed the full topology/peripheral construction, primitive threading calibration, implicit shear, absolute anchor and smooth-completion scope, and independently replayed the audit with PASS. Neither review substitutes a pure-link rational filling for the actual odd-link primitive equation. The local-cell/source agent independently checked the entire marked argument and replayed its audit with PASS, including Y=E in the original typed R^-1 sign calibration and the endpoint constant in the selected-source action comparison.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_odd_conway_marked_peripheral_deformation.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#an-exact-change-of-the-physical-color-coordinate">1. An exact change of the physical color coordinate</a><a href="#this-is-the-action-selected-by-the-original-odd-source">2. This is the action selected by the original odd source</a><a href="#universal-port-data-with-either-shaded-pairing">3. Universal port data with either shaded pairing</a><a href="#assemble-actual-representations-for-the-whole-grammar">4. Assemble actual representations for the whole grammar</a><a href="#exact-primitive-auxiliary-meridians-and-longitude">5. Exact primitive auxiliary meridians and longitude</a><a href="#the-full-source-primitive-regulator-and-filling-equation">6. The full source primitive, regulator and filling equation</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

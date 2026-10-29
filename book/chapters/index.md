@@ -22,7 +22,7 @@ Start with [the equality results](results.md) for the exact knot and link famili
 
 | Part of the argument | Current scope |
 | --- | --- |
-| Original invariant equals actual geometric volume | All retained cylindrical robust Conway factors and their sufficiently long signed full fillings; specified long pretzel families; signed belt stacks and their specified long fillings |
+| Original invariant equals actual geometric volume | Signed Conway $C(FG)$ families with arbitrary fixed trees and constructible knot patterns, after sufficiently long signed full fillings; pure cylindrical factors; specified pretzel and belt-stack families |
 | Exact finite source identities | General four-port recoupling, complete-circle algebra, and typed sewing identities |
 | Local quantum-volume law | Uniform supported scalar asymptotic with an actual hyperideal tetrahedron volume |
 | Whole positive source limit | Every robust Conway expression; cylindrical factors have actual hyperbolic volume, while cap products split into geometric factors |
@@ -32,4 +32,4 @@ The cube, Fourier, torsor, and alternative approaches are preserved. A failed in
 
 ## About this edition
 
-This guide organizes the research snapshot of 29 October 2026. Its chapters explain the current argument; linked technical notes contain the detailed proofs and qualifications. Historical checkpoints remain in the archive and should be read with their dates and later corrections in mind.
+This guide organizes the research snapshot of 30 October 2026. Its chapters explain the current argument; linked technical notes contain the detailed proofs and qualifications. Historical checkpoints remain in the archive and should be read with their dates and later corrections in mind.

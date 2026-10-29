@@ -91,3 +91,24 @@ details. Until they are supplied, the safe statement is the explicit
 retained-circle theorem, not a claim to settle arbitrary augmented
 links, arbitrary hyperbolic knots, or all formulations of the volume
 conjecture.
+
+## 6. Coverage check for the signed long-filling extension
+
+The stated coverage of Ce Shen's
+[September 2026 preprint, version 3](https://arxiv.org/abs/2609.11839v3)
+is long integral fillings of marked fundamental-shadow-link exteriors
+for SO(3) Turaev--Viro invariants along odd levels, with a corresponding
+Witten--Reshetikhin--Turaev asymptotic. This is directly related prior
+coverage. Its statement alone does not give the full-level original
+Kashaev invariant for the present signed Conway knot diagrams. No proof
+from that preprint is used here, and its correctness was not audited
+in this coverage check.
+
+The Ibarra--McQuire--Purcell paper cited above likewise explicitly
+distinguishes its Turaev--Viro conclusion and its octahedral class.
+The current signed-coupon construction retains the general prism and
+pyramid geometry, the selected original period, actual primitive
+odd-link meridians, and both level parities. An identification of an
+overlapping subfamily still needs the explicit diagram and invariant
+dictionary. No exhaustive novelty claim or equality of the present
+grammar with all arborescent links follows from this limited check.

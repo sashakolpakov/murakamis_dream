@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Odd half twists in the full Conway Newton source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">Full half-twist transport; complete asymptotic</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_odd_conway_newton_transport.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="odd-half-twists-in-the-full-conway-newton-source">Odd half twists in the full Conway Newton source</h1>
+<p>29 October 2026. A literal half twist has an explicit triangular transport matrix in the FULL Newton algebra. It yields a new uniform Newton-coordinate bound for every auxiliary-color alias. At complete colors, the already selected local coherent coefficient and a concave global envelope prove the original-source asymptotic for arbitrary fixed half-twist patterns in every retained robust Conway factor.</p>
+<p>This note concerns exact transport and complete colors. The later <a href="actual_odd_conway_uniform_mixed_source_gap.html">supporting-plane theorem</a> supplies the whole mixed-color gap for C(FG), with both children robust; it excludes C(A). Neither result by itself supplies a long-filling theorem. The changed source is not obtained by dropping phases from the positive source.</p>
+<h2 id="exact-full-algebra-half-twist-transport">1. Exact full-algebra half-twist transport</h2>
+<p>Use the original pair algebra H_N, actual turn T, crossing R, and Newton basis Bhat_v of the <a href="actual_pure_conway_auxiliary_color_leaf.html">pure auxiliary-color theorem</a>. Put D=N-1, q=exp(pi i/N), x=q<sup>D=-q</sup>-1, kappa=q<sup>(D</sup>2/2), with its original unreset half-Cartan mark. For epsilon=+1 or -1 define</p>
+<pre><code>T_epsilon(f)=T(R^epsilon T(f)).</code></pre>
+<p>Then, for EVERY 0&lt;=v&lt;=D, exactly in the full repeated-root algebra,</p>
+<pre><code>T_epsilon(Bhat_v)
+   =kappa^epsilon (-1)^v
+      sum_(r=0)^v q^[epsilon v(r+1)]
+                   [v choose r]_q Bhat_r,
+[v choose r]_q=s_v/[s_r s_(v-r)]&gt;0.                 (1)</code></pre>
+<p>In particular the actual odd leaf is</p>
+<pre><code>h_j^epsilon=T(R^epsilon L_j)=T_epsilon(h_j).        (2)</code></pre>
+<p>Proof. The literal continuant source identity gives T_-(Bhat_v)=kappa^-1 f_v. One can also obtain it by comparing the FULL two-band formula for every actual L_j with the pure-color formula: the L_j form a basis, so this comparison proves the linear identity on the entire algebra, not only its values at the nodes. The independently proved finite continuant expansion is</p>
+<pre><code>f_v=x^v sum_(r=0)^v (Q^-v;Q)_r Q^r P_r/F_r^3,
+P_r=q^(r^2) B_r, F_r=(Q;Q)_r, Q=q^2.</code></pre>
+<p>Insert s_r<sup>2=(-1)</sup>r q<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>F_r^2 and (Q<sup>-v;Q)_r=(-1)</sup>r Q<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>F_v/F_(v-r). The coefficient of Bhat_r becomes x^v q<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> {v choose r}_Q =(-1)^v q<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> [v choose r]_q. This proves (1) for epsilon=-1, including v&gt;D/2 and every normal coordinate.</p>
+<p>The actual inverse crossings are coefficient-conjugate polynomials in the real Newton basis: their nodal values are reciprocal unit phases and their first logarithmic derivatives are purely imaginary. Uniqueness of Hermite interpolation proves the full polynomial identity. The turn reverses this real basis, so it commutes with coefficient conjugation. Conjugating the preceding formula proves (1) for epsilon=+1. No Hermitian positivity is being asserted.</p>
+<h2 id="a-uniform-full-newton-bound-for-the-actual-color-alias">2. A uniform full-Newton bound for the actual color alias</h2>
+<p>Write the exact pure split h_j=C_j+A_j. Every A_j has support v&gt;=ceil(N/2), and each of its coefficients has modulus at most N/2. More precisely its support is v&gt;=N-h for a low complementary color 1&lt;=h&lt;=floor(N/2). The actual half-twist alias is T_epsilon(A_j). Equation (1) gives the exact coefficientwise upper bound</p>
+<pre><code>|[Bhat_r]T_epsilon(A_j)|
+   &lt;=(N/2) sum_(v=max(r,N-h))^D s_v/[s_r s_(v-r)].   (3)</code></pre>
+<p>Let J(t)=integral_0^t log(2sin(pi u))du. The endpoint-uniform factorial estimate then gives, uniformly over ALL physical colors and all Newton indices,</p>
+<pre><code>|[Bhat_r]T_epsilon(A_j)|
+   &lt;=poly(N) exp[N k(r/N)],
+k(u)=-2J(u/2), 0&lt;=u&lt;=1.                           (4)</code></pre>
+<p>Here and below a zero coefficient causes no difficulty. Indeed the largest possible exponent in (3), after relaxing its lower bound to v/N&gt;=max(u,1/2), is</p>
+<pre><code>max_(w&gt;=max(u,1/2)) [J(w)-J(u)-J(w-u)].</code></pre>
+<p>Its derivative in w is log[sin(pi w)/sin(pi(w-u))]. The maximum is at w=(1+u)/2. Reflection J(1-a)=-J(a), followed by duplication J(2a)=2J(a)-2J(1/2-a), reduces its value to -2J(u/2). The argument includes u=0,1 by continuity; the exact factorial errors are O(log N) uniformly there.</p>
+<p>The maximum of k is at u=1/3 and equals v_3/pi, where v_3 is the regular ideal tetrahedron volume. On u&gt;=1/2 it is strictly decreasing, since k’(u)=-log(2sin(pi u/2))&lt;0. In particular k(1/2)=-2J(1/4). This is a coordinate bound for the original normal source, so it may be propagated through the positive Newton product and the actual index-reversing turn. It is not a bound in a nodal quotient or an unspecified operator norm.</p>
+<p>There is a useful exact small-color estimate as well. Set v=N-t. Root factorial reflection gives</p>
+<pre><code>[N-t choose r]_q=[t+r-1 choose t-1]_q
+                  &lt;=binomial(t+r-1,t-1)
+                  &lt;=binomial(N-1,t-1).             (5)</code></pre>
+<p>The middle inequality follows from the nonnegative coefficients of the ordinary Gaussian polynomial at a unit root. Thus for 1&lt;=h&lt;=floor(N/2), every alias coefficient is at most</p>
+<pre><code>(Nh/2) binomial(N-1,h-1).                          (6)</code></pre>
+<p>In a corridor h&lt;=delta N, delta&lt;1/2, this costs at most poly(N) exp[N H(delta)], where H(delta)=-delta log delta-(1-delta)log(1-delta)-&gt;0. For h=1 each transport coefficient actually has modulus one: [D choose r]_q=1. Thus an alias can occupy ALL Newton coordinates, including their normals; it is no longer square-zero under products.</p>
+<p>A sharper color-dependent envelope is obtained by keeping chi=h/N in (3): it is</p>
+<pre><code>k_chi(u)=J(u+chi)-J(u)-J(chi),  u&lt;=1-2chi,
+k_chi(u)=-2J(u/2),               u&gt;=1-2chi.         (7)</code></pre>
+<p>These expressions agree at the joining point. This is an upper envelope, not an assertion that the signed alias attains it.</p>
+<h2 id="complete-odd-coefficients-the-exact-selected-source">3. Complete odd coefficients: the exact selected source</h2>
+<p>At j=N there is no alias. The old finite original-source transform gives, with M=floor(D/2),</p>
+<pre><code>h_N^-=exp(-i pi D/4)
+            sum_(r=0)^M a_(N,r) W_(N,r) Bhat_r,
+a_(N,r)=N^2 s_(2r)/s_r^4.                         (8)</code></pre>
+<p>For reference W is fixed by the literal finite sums, not chosen as a formal recurrence solution:</p>
+<pre><code>A_r=sum_(v=r)^M Q^(-vr) F_(2v)/(F_v^3 F_(v-r)),
+D_r=Q^(-r^2)F_(2r)/F_r^3,
+W_(N,r)=kappa^-1 exp(i pi D/4)
+                       (A_r/D_r)/[(-1)^r q^(r(r+1))].</code></pre>
+<p>The <a href="actual_pretzel_coherent_inner_gauss_elimination.html">selected high-index theorem</a> proves, uniformly on compact subintervals 1/4&lt;u&lt;1/2,</p>
+<pre><code>W_(N,r)=sqrt(sin(pi u))exp(i pi u/2)[1+O(N^-1)],
+u=r/N.                                            (9)</code></pre>
+<p>The <a href="actual_complete_circle_boundary_packet.html">actual quarter-transition theorem</a> extends this same nonzero selected expression to a fixed neighborhood of u=1/4. Its exponentially accurate source transport includes the initial second channel and all coupling errors. Distinct recurrence roots alone would not justify this extension.</p>
+<p>At ALL indices the <a href="actual_pretzel_all_index_backward_envelope.html">two-branch source bound</a> gives |W_(N,r)|&lt;=poly(N)exp[N E(pi r/N)], where</p>
+<pre><code>E(pi u)=g(1/4)-g(u),  0&lt;=u&lt;=1/4;
+E(pi u)=0,           1/4&lt;=u&lt;=1/2;
+g(u)=J(2u)-4J(u).                                 (10)</code></pre>
+<p>The first identity is exact because g’(u)=2log cot(pi u). Consequently the full coefficient envelope for a complete odd leaf is the CONCAVE function</p>
+<pre><code>g_tilde(u)=g(max(u,1/4)), 0&lt;=u&lt;=1/2.               (11)</code></pre>
+<p>It is constant below 1/4 and agrees with g above it; its derivatives join at zero. The positive-half-twist formulas are the coefficient conjugates of (8)–(9), with the same envelope. This is a coherent coefficient theorem; termwise absolute values in its original inner factorial sum would give a different bound.</p>
+<h2 id="arbitrary-fixed-half-twist-patterns-at-complete-colors">4. Arbitrary fixed half-twist patterns at complete colors</h2>
+<p>Fix any retained cylindrical robust factor and independently choose epsilon_l in {0,+1,-1} at each of its individual leaves. Replace its actual h_N leaf by T(R^epsilon_l L_N), leaving every product, turn, mark and external normalization unchanged. Let Z_N^epsilon be this literal raw closed source and Z_N^0 its pure counterpart.</p>
+<p>Let x_(l,<em>) be the unique complete positive maximizing leaf labels. The <a href="actual_conway_strict_leaf_quarter_bound.html">strict-quarter theorem</a> gives x_(l,</em>)&gt;1/4 for every leaf of every such factor. Then</p>
+<pre><code>Z_N^epsilon
+  =exp[(i pi D/4)sum_l epsilon_l]
+     a_E(0) N^(3/2) exp[N phi_E(0)]
+     product_(epsilon_l!=0)
+        [sqrt(sin(pi x_(l,*))) exp(-i epsilon_l pi x_(l,*)/2)]
+     *[1+O(N^-1)].                                (12)</code></pre>
+<p>Here a_E(0)&gt;0 and phi_E(0) are the ORIGINAL pure-source normalization and action from the finite Conway packet. The displayed leading coefficient is nonzero. Both parities, every normal direction and every fixed mixture of half-twist signs are included.</p>
+<p>Proof of the global source claim. Replace g by g_tilde only at the odd-marked leaves in the complete variational action. Each retained product action m is concave, and the support polytope is convex. The resulting majorant action is therefore concave. By the strict quarter theorem it agrees with the pure action on a neighborhood of its strict complete maximizer. That point is still stationary with negative definite Hessian in the free wire coordinates, hence is its unique GLOBAL maximizer. A second maximum would give a constant segment through that strictly concave neighborhood.</p>
+<p>The complement of any fixed small central window therefore has a strict exponential gap for the majorant. Equations (8),(10), the uniform factorial estimates and the polynomial state count bound the whole original complex sum there, before any cancellation. On the central window every odd coefficient has (9), with its original common phase in (8). The resulting smooth nonzero multiplier of the positive summand is exactly the product in (12), evaluated at the critical point. The already proved lattice Laplace argument, or its real-parameter version with this smooth complex amplitude, proves (12). There is no assumption of positivity of the odd source.</p>
+<p>Thus its exponential rate is the same complete geometric action 2pi phi_E(0) as the pure factor. Identifying this with the half-twist partner’s actual volume also uses its literal shaded-face gluing; volume invariance is not a substitute for the quantum proof above.</p>
+<h2 id="what-is-still-needed-for-odd-coupon-long-fillings">5. What is still needed for odd-coupon long fillings</h2>
+<p>The mixed half-twist CORE has its <a href="actual_pretzel_global_core_spectral_gap.html">proved uniform envelope g_tilde</a>, including colors outside a fixed corridor, by the actual selected mixed-source recurrence. Its high-index physical-color packet is also known. Equations (3)–(7) bound the changed alias in the correct FULL Newton coordinates. The subsequent <a href="actual_odd_conway_uniform_mixed_source_gap.html">supporting-plane theorem</a> proves its exponential gap after arbitrary C(FG) composition, with both children robust. The minimal C(A) remains outside that estimate.</p>
+<p>In particular the alias is not confined to output indices above one half and products containing two aliases no longer vanish. The pure source’s square-zero seed argument cannot be reused. The separately proved <a href="actual_odd_conway_complex_color_packet.html">complex packet</a> and <a href="actual_odd_conway_marked_peripheral_deformation.html">actual marked deformation</a> now complete the required interfaces for the <a href="actual_odd_conway_long_filling_volume.html">long-filled knot and link theorem</a>.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_odd_conway_newton_transport.py">full physical transport, alias bounds and complete-source calibration</a>.</p>
+<p>Independent internal analytical review by the coherent-current agent checked both full normal transport matrices and their Cartan phases, the global and retained-color alias envelopes, the concave plateau argument, and the nonzero complete-source leading multiplier. A fresh replay passed 108 physical transport columns, 243 marked mixed-sign sources, 27,900 alias checks and 30 finite complete-source diagnostics. The diagnostics are not used to infer any asymptotic theorem.</p>
+<p>Primary-agent analytical review and fresh audit replay also passed. The full-algebra transport, signed phase, uniform alias envelope and nonzero complete multiplier were checked independently of the finite rate diagnostics.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>-r(r+1)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>-vr+r(r-1)/2<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>r^2-2vr<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>-v(r+1)<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_odd_conway_newton_transport.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-full-algebra-half-twist-transport">1. Exact full-algebra half-twist transport</a><a href="#a-uniform-full-newton-bound-for-the-actual-color-alias">2. A uniform full-Newton bound for the actual color alias</a><a href="#complete-odd-coefficients-the-exact-selected-source">3. Complete odd coefficients: the exact selected source</a><a href="#arbitrary-fixed-half-twist-patterns-at-complete-colors">4. Arbitrary fixed half-twist patterns at complete colors</a><a href="#what-is-still-needed-for-odd-coupon-long-fillings">5. What is still needed for odd-coupon long fillings</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

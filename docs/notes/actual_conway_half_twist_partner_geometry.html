@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Complete half-twist partners and a general knot-connectivity construction · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Geometry</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">Complete partners and constructive knot patterns</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_conway_half_twist_partner_geometry.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="complete-half-twist-partners-and-a-general-knot-connectivity-construction">Complete half-twist partners and a general knot-connectivity construction</h1>
+<p>29 October 2026. Every fixed half-twist pattern on the leaves of a retained robust Conway factor has an actual complete hyperbolic augmented-link complement, with the SAME volume as its pure partner. This follows from explicit changed face pairings of the already proved polyhedron, including their pointwise edge words and complete cusp links. No unmarked half-twist invariance theorem is imported.</p>
+<p>Moreover EVERY robust expression has a constructible half-twist pattern whose main strands form ONE component, before or after any integral full-twist fillings. Thus the grammar has genuine arbitrarily branching knot candidates. The required odd-source mixed-color estimates and marked DEFORMED geometry remain separate from the complete theorem here.</p>
+<h2 id="the-actual-local-cut-after-one-half-twist">1. The actual local cut after one half twist</h2>
+<p>Use the original closed bowtie cut and its labels</p>
+<pre><code>S0=(O,C1,C2), S1=(O,C3,C0).</code></pre>
+<p>Superscripts + and - distinguish the two projection balls. Without a half twist the shaded gluing stays within each ball, fixing O and matching C1 to C0, C2 to C3. The white faces pair the two balls by their original projection labels.</p>
+<p>To insert a literal half twist, cut at that leaf’s original twice- punctured crossing disk and rotate one side through +pi or -pi around its normal. In coordinates on the disk this is (y,z)-&gt;(-y,-z), with the projection line z=0 and the two punctures at y=+a,-a. It exchanges the punctures AND the upper and lower half disks. Consequently the new shaded pairings are</p>
+<pre><code>S0+ -&gt; S1-: O+-&gt;O-, C1+-&gt;C3-, C2+-&gt;C0-,
+S1+ -&gt; S0-: O+-&gt;O-, C3+-&gt;C1-, C0+-&gt;C2-.          (1)</code></pre>
+<p>The reverse pairings are their inverses. The white maps are unchanged. These are maps across copies; making the same puncture swap within one copy would give the wrong boundary orientation.</p>
+<p>This is a literal reversible local cut of the original odd leaf T(R^epsilon L_N), epsilon=+1 or -1. Quarter-turning its one-crossing main tangle gives the opposite pairing (0,2),(1,3), exactly as (1). All original turns and identity strips outside this disk remain in place. The closed bowtie proof therefore identifies the resulting face quotient with the actual half-twist partner exterior.</p>
+<p>The two signs have the same boundary half-rotation and hence the same unmarked face pairing. Their collar paths differ by a full twist, which changes the primitive crossing-circle meridian by one disk longitude. Complete volume does not depend on this marking, but a future filling equation must keep the chosen sign and collar path.</p>
+<h2 id="exact-odd-edge-holonomy">2. Exact odd edge holonomy</h2>
+<p>Keep the complete stationary polyhedron of the pure source. At this leaf set E=exp(2pi i x), 0&lt;x&lt;1/2, and normalize its ordered port to</p>
+<pre><code>Q=(0,infinity,1,R),  R=(1+E)^2/(4E),
+O+=(1+E)/2, O-=(1+E)/(2E).</code></pre>
+<p>The four actual white/completion maps are the matrices W0,…,W3 in <a href="actual_conway_marked_peripheral_deformation.html">the marked pure-deformation proof</a>, equation (8). At the COMPLETE point the cross-half map in the first line of (1) is</p>
+<pre><code>T=[[R,-R],[1,ER-1-E]].                           (2)</code></pre>
+<p>It sends infinity to R, 1 to 0 and O+ to O-. The second map is T’=bar(T)^(-1), where bar(E)=E^-1 and bar(R)=R. Direct multiplication gives all three pointwise odd edge words:</p>
+<pre><code>W0^(-1) T&#39; W2^(-1) T = identity,
+W2^(-1) T&#39; W0^(-1) T = identity,
+W1^(-1) T&#39; W3^(-1) T = identity.                 (3)</code></pre>
+<p>The first two are the two pairs of bowtie sides incident to O; the third is the CAP-base pair. The reverse edge words are their inverses. Each word visits four distinct copies of an edge. Each corner still has dihedral angle pi/2, so its total is 2pi. Equation (3) additionally rules out translation or dilation along that edge; the angle count alone would not suffice.</p>
+<p>Every edge belongs to one leaf bowtie. An arbitrary mixture of even and odd leaves therefore uses the already checked pure edge word or one of (3), independently at that leaf. All white/white auxiliary seams remain the original pointwise identities. This proves every edge relation for an arbitrary fixed pattern, not just one isolated half-twist example.</p>
+<h2 id="complete-cusps-and-unchanged-actual-volume">3. Complete cusps and unchanged actual volume</h2>
+<p>Use the complete right-angled polyhedron’s canonical horosphere decoration: at each ideal vertex scale its rectangular link so that both opposite shaded sides have length one. They have equal length because they are opposite sides of a rectangle. The same decoration is placed in the other copy. Every ideal shaded triangle then has the same length-one horocycle at each of its three corners.</p>
+<p>Both the original shaded maps and the changed cross-half maps (1) preserve these horocycles, including their corner permutation. White maps preserve the copied rectangular links. Hence the new cusp links are finite Euclidean rectangle gluings without a dilation defect. Their corner angles sum to 2pi by the four-edge cycles. The literal link-exterior topology makes each connected link a torus. They give complete flat cusp tori and complete horoball ends after a uniform shrink. All finite points are smooth by (3).</p>
+<p>Thus the quotient of the two original polyhedra is the complete finite-volume hyperbolic metric on the ACTUAL half-twist partner. Its oriented volume is exactly twice the unchanged polyhedron volume:</p>
+<pre><code>Vol(S^3 minus L_E^epsilon)
+   =2 Vol(P_E)=2pi phi_E(0).                    (4)</code></pre>
+<p>Combined with the independently proved whole complete odd-source asymptotic in <a href="actual_odd_conway_newton_transport.html">the original Newton transport theorem</a>, this identifies its full-sequence exponential rate with the actual half-twist partner volume, for every fixed ±/0 pattern.</p>
+<p>This is a COMPLETE statement. The mixed pure-cell construction with opposite apex flags cannot be reused unchanged in (1): the odd cross-half equations and the correct meridian marking must be solved for the odd source’s own deformed action.</p>
+<h2 id="the-two-primitive-half-twist-markings">4. The two primitive half-twist markings</h2>
+<p>The complete crossing-circle cusp can also be computed directly. In its original local upper-half-space coordinate,</p>
+<pre><code>(C0,C1,C2,C3)=(1,E,-1,-E), O=infinity.</code></pre>
+<p>The lower and upper white maps to the reflected copy are</p>
+<pre><code>B0(z)=-z/E+(E+1)/E,
+B2(z)=-z/E-(E+1)/E.</code></pre>
+<p>The two cross-half shaded maps in (1) are</p>
+<pre><code>T0(z)=-z/E+(E-1)/E,
+T1(z)=-z/E-(E-1)/E.                             (5)</code></pre>
+<p>The disk-framed longitude still crosses the bottom white face and returns through the top, giving</p>
+<pre><code>lambda=B2^(-1)B0=-2(E+1).</code></pre>
+<p>The two signed meridian collar paths give translations</p>
+<pre><code>mu_+=-2,       mu_-=2E,       mu_+-mu_-=lambda. (6)</code></pre>
+<p>For example the elementary shaded/white paths B0^(-1)T0 and B0^(-1)T1 translate by 2 and 2E; reversing the first gives mu_+. Which collar is called + is the geometric positive-diagonal convention. Identifying it with the chosen quantum R or R^-1 requires retaining that braid convention; it is not inferred from the unmarked metric.</p>
+<p>Put c=cot(pi x)&gt;0. Relative to the pure meridian mu_0=E-1,</p>
+<pre><code>mu_+=mu_0+lambda/2,    mu_-=mu_0-lambda/2,
+tau_+=lambda/mu_+=2ic/(1+ic)=1+E,
+tau_-=lambda/mu_-=2ic/(1-ic)=-1-E^-1.             (7)</code></pre>
+<p>These relations compare Euclidean translation vectors; lambda/2 alone need not be a loop of either cusp lattice. Each pair (mu_+,lambda) or (mu_-,lambda) has area 4 sin(2pi x), exactly the total area of the two original rectangles, so each is a primitive peripheral basis. This checks the complete marking rather than merely the isometry type of an unmarked cusp.</p>
+<h2 id="literal-main-connectivity">5. Literal main connectivity</h2>
+<p>Ignore auxiliary circles only for counting the main components. For the four ports (bottom-left,bottom-right,top-right,top-left) write</p>
+<pre><code>I=(0,3)(1,2), U=(0,1)(2,3), X=(0,2)(1,3).</code></pre>
+<p>A pure leaf has pairing U. An odd leaf has pairing X by (1). A turn swaps I and U and fixes X. The literal stack table is</p>
+<table>
+<thead>
+<tr>
+<th>lower / upper</th>
+<th>I</th>
+<th>U</th>
+<th>X</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I</td>
+<td>I</td>
+<td>U</td>
+<td>X</td>
+</tr>
+<tr>
+<td>U</td>
+<td>U</td>
+<td>U plus one internal circle</td>
+<td>U</td>
+</tr>
+<tr>
+<td>X</td>
+<td>X</td>
+<td>U</td>
+<td>I</td>
+</tr>
+</tbody>
+</table>
+<p>This is obtained just by following the original two identity wires. The ONLY operation creating a new internal main circle is U times U. Once an internal component exists later operations cannot remove it. The cylindrical closure of I has two components; those of U and X have exactly one.</p>
+<p>At a robust seed h^3 choose either:</p>
+<ul>
+<li>all three leaves odd: its pairing is X, with no internal circle;</li>
+<li>exactly one leaf pure and the other two odd: its pairing is U, with no internal circle.</li>
+</ul>
+<p>Thus the seed can realize the set C={U,X} without loops. A turn permutes the three pairing types. To see that arbitrary branching never destroys the needed choices, put</p>
+<pre><code>A={I,U}, B={I,X}, C={U,X}, D={I,U,X}.</code></pre>
+<p>When the forbidden loop-creating choice U times U is excluded, the products of the three two-element sets are</p>
+<table>
+<thead>
+<tr>
+<th>lower / upper</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>A</td>
+<td>D</td>
+<td>C</td>
+</tr>
+<tr>
+<td>B</td>
+<td>D</td>
+<td>B</td>
+<td>D</td>
+</tr>
+<tr>
+<td>C</td>
+<td>C</td>
+<td>D</td>
+<td>A</td>
+</tr>
+</tbody>
+</table>
+<p>In particular at least two feasible pairing types survive every product. The statement remains true if a child already offers D. Induction proves that EVERY robust expression offers at least two types with no internal main circles. At least one is U or X. Choose that root type and backtrack the finite choices in the table: its cylindrical closure has one main component.</p>
+<p>This is a linear-time constructive parity prescription for arbitrary fixed branching and turn depth. One may choose either sign on every odd leaf; only parity affects connectivity. Subsequent full twists have even endpoint permutation and preserve it. Therefore after filling ALL auxiliary circles by any integral full-twist parameters, the resulting diagram is a KNOT in S^3. With some auxiliary circles retained it has one main component and those auxiliary components.</p>
+<p>The complete augmented partner is hyperbolic by sections 1–3. The odd mixed source estimates and the correctly marked deformed branch are separate inputs. They are now supplied in the <a href="actual_odd_conway_long_filling_volume.html">long-filled knot and link assembly</a> for C(FG) with robust children. That mixed-color filling theorem continues to exclude C(A), although the complete theorem here covers it.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_conway_half_twist_partner_geometry.py">exact odd edge words, cusp paths and constructive knot patterns</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_conway_half_twist_partner_geometry_results.json">results</a>. PASS for all three generic odd edge words, both primitive diagonal markings and their two-rectangle areas, all nine products of pairing sets, 69 literal expression witnesses and 483 signed full-twist checks.</p>
+<p>Independent internal review: the local-cell/source agent read the full actual half-disk cut, all three pointwise edge words, the complete rectangle decoration and primitive collar markings, and reported PASS. Its independent fresh audit replay also passed.</p>
+<p>Primary-agent review and fresh symbolic/topological audit: PASS. The closed half-disk cut, cross-copy orientation, complete cusp decoration, primitive marking areas, matching-set induction and preservation under full twists were checked. Complete geometry alone is not used to claim a filled quantum theorem.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_conway_half_twist_partner_geometry.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-local-cut-after-one-half-twist">1. The actual local cut after one half twist</a><a href="#exact-odd-edge-holonomy">2. Exact odd edge holonomy</a><a href="#complete-cusps-and-unchanged-actual-volume">3. Complete cusps and unchanged actual volume</a><a href="#the-two-primitive-half-twist-markings">4. The two primitive half-twist markings</a><a href="#literal-main-connectivity">5. Literal main connectivity</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>
