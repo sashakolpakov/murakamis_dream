@@ -166,9 +166,12 @@ crossing-disk seam. The [bandlimited nodal theorem](actual_complete_circle_nodal
 controls the full complete-circle channel sum, and the
 [balanced belt-stack certificate](actual_balanced_octahedral_belt_stack_volume.md)
 glues the cut two-octahedron pieces along their literal geodesic
-pants. For every fixed balanced word of \(2k\) pieces it proves
-the original complete-link limit \(4k v_8\), with \(2k+3\)
-components. It is a cyclic one-belt operation, not a claim about
+pants. The subsequent coherent boundary-source theorem extends
+this to every fixed sign word of \(n\geq1\) pieces and every fixed
+integer outer collar: the original complete-link limit is \(2n v_8\).
+There are \(n+3\) components for an even outer power and \(n+2\)
+for an odd one; the balanced positive case was the first subclass.
+It is a cyclic one-belt operation, not a claim about
 arbitrary graph vertices or the new bases' fixed Dehn fillings.
 
 In a genuinely branched construction with three paired boundary slots,

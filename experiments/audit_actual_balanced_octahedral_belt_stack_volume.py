@@ -75,7 +75,8 @@ def source_level(N):
             'balanced_words': records}
 
 
-def belt_cover(n):
+def belt_cover(n, outer_parity=0):
+    assert n>=1 and outer_parity in (0,1)
     _, vertices0, joins0 = tetrahedral_certificate()
     A, B, _ = BOWTIES[0]
     A, B = frozenset(A), frozenset(B)
@@ -87,6 +88,10 @@ def belt_cover(n):
             target_face = frozenset(vertices0[u][i] for i in range(4) if i != g)
             crossing_disk = source_face == A and target_face == B
             target_sheet = (sheet+int(crossing_disk)) % n
+            if crossing_disk and sheet==n-1 and outer_parity:
+                # The actual half collar exchanges punctures AND pants triangles.
+                # Target cell changes; Y/Z exchange leaves local permutation0132.
+                u=(u+4)%8
             joins.append((8*sheet+t, f, 8*target_sheet+u, g, p))
     size = 8*n
     tv = DSU((t, a) for t in range(size) for a in range(4))
@@ -128,7 +133,7 @@ def belt_cover(n):
             product = complex_multiply(product, shape)
         assert angle == 2 and product == (1, 0)
     cusps = tv.classes()
-    assert len(cusps) == n+3
+    assert len(cusps) == n+3-outer_parity
     for cusp in cusps:
         reached, queue = {cusp[0]}, deque([cusp[0]])
         while queue:
@@ -140,7 +145,8 @@ def belt_cover(n):
         E = len({le.find((t, a, f)) for t, a in cusp for f in range(4) if a != f})
         V = len({lv.find((t, a, b)) for t, a in cusp for b in range(4) if a != b})
         assert V-E+F == 0
-    return {'pieces': n, 'regular_octahedra': 2*n, 'positive_tetrahedra': size,
+    return {'pieces': n, 'outer_collar_parity':outer_parity,
+            'regular_octahedra': 2*n, 'positive_tetrahedra': size,
             'connected': True, 'exact_edges': len(te.classes()),
             'complete_torus_cusps': len(cusps), 'volume': f'{2*n} v8'}, vertices, joins
 
@@ -162,16 +168,20 @@ def software_diagnostic():
         return ((BraidTangle([-1], 2)*circle(-1)).rotate(1)*BraidTangle([1], 2)).rotate(2)
 
     rows = []
-    for word in ('+-', '++--', '+-+-', '+++---'):
+    for word,outer in (('+-',0),('++--',0),('+-+-',0),('+++---',0),
+                       ('+',1),('-',-1),('++',2),('+--',3),('++--',-2)):
         tangle = circle()
+        if outer:
+            tangle=tangle*BraidTangle([1 if outer>0 else -1]*abs(outer),2)
         for sign in word:
             tangle = tangle*piece(sign)
         link = tangle.denominator_closure()
         manifold = link.exterior()
-        assert len(link.link_components) == len(word)+3
+        assert len(link.link_components) == len(word)+3-(outer%2)
         v8 = 4*float(__import__('mpmath').catalan)
         assert abs(float(manifold.volume())-2*len(word)*v8) < 1e-7
-        rows.append({'word': word, 'actual_components': len(link.link_components),
+        rows.append({'word': word, 'outer_crossing_power':outer,
+                     'actual_components': len(link.link_components),
                      'software_volume': float(manifold.volume()),
                      'scope': 'supplemental literal diagram check; geometry proved by cuts'})
     return rows
@@ -190,14 +200,15 @@ if __name__ == '__main__':
             'scope': 'Supplemental literal diagrams only; run default audit for original sources.'}
         results['optional_actual_diagram_diagnostics'] = software_diagnostic()
         result_path.write_text(json.dumps(results, indent=2)+'\n')
-        print('PASS 4 literal mirrored/reversed balanced diagrams, components and geometric diagnostics')
+        print('PASS 9 literal sign/outer-collar diagrams, components and geometric diagnostics')
         raise SystemExit(0)
     results = {'status': 'PASS', 'original_balanced_sources': [source_level(N) for N in range(2, 9)],
-               'exact_regular_cell_covers': [belt_cover(n)[0] for n in (2, 3, 4, 5, 6, 8, 10)],
-               'scope': 'Full physical balanced source and exact positive cyclic belt cells; '
-                        'mixed-piece collar identification is the written reversible cut proof.'}
+               'exact_regular_cell_covers': [belt_cover(n,a)[0] for n in range(1,9) for a in (0,1)],
+               'scope': 'Full physical balanced source and exact positive cyclic belt cells at both outer-collar parities; '
+                        'mixed-piece/collar identification is the written reversible cut proof. '
+                        'The all-sign/outer-power quantum asymptotic has its separate coherent source audit.'}
     if args.software:
         results['optional_actual_diagram_diagnostics'] = software_diagnostic()
     result_path.write_text(json.dumps(results, indent=2)+'\n')
     print('PASS 7 full physical balanced source levels/196 complete words; '
-          '7 exact positive cyclic belt-cell certificates')
+          '16 exact positive cyclic belt-cell/collar certificates')

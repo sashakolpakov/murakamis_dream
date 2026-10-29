@@ -1,0 +1,282 @@
+# The complete original circle has a complex packet through the quarter transition
+
+29 October 2026. The actual complete-circle polynomial z_N has a uniform
+nonzero asymptotic on a FIXED complex neighborhood of c=-2. The source
+is continued coherently through the quarter-index modulus crossing,
+using an exponentially accurate analytic diagonalization, a genuine
+high-index source anchor, and an explicit negative cumulative action
+for the unwanted channel. No phase-sector assumption is made.
+
+This is a fixed-root spectral/color-coordinate theorem. Its parameter
+below is NOT declared to be a peripheral meridian or an independently
+changed auxiliary-circle color. Such a source identification requires
+its own exact transform. All physical Casimir normal derivatives remain
+in the same original polynomial.
+
+## 1. Statement and original finite source
+
+Keep N,d,q,Q,kappa,M,F_r,s_r and the exact A_r,D_r,U_r of
+[the coherent inner source](actual_pretzel_coherent_inner_gauss_elimination.md).
+Set u=pi r/N, nu_r=(-1)^r q^[r(r+1)] and define the EXACT chirp-normalized
+source on its physical grid by
+
+    W_(N,r)=kappa^(-1)e^(i pi d/4)U_r/nu_r.
+
+The original Newton coefficient is EXACTLY
+
+    b_(N,r)=e^(-i pi d/4) [s_(2r)/s_r^6] W_(N,r),
+    z_N(c)=N^2 sum_(r=0)^M b_(N,r) product_(a<r)(c_a-c).  (1)
+
+This follows by inserting D_r and the original factorial phases;
+no absolute value replaces the inner sum. The established source
+formula on strict high-index compact sets is
+
+    W_(N,r)=w_0(u)[1+O(1/N)],
+    w_0(u)=e^(iu/2)sqrt(sin u), u>pi/4.                 (2)
+
+There is eta_0>0 such that UNIFORMLY for |eta|<=eta_0,
+
+    z_N(-2cosh eta)=e^(-i pi d/4)a(eta)exp[N j(eta)]
+                                                   [1+O(1/N)], (3)
+    u_*(eta)=atan(cosh(eta/2)), T=2cosh eta,
+    a(eta)=e^[i u_*(eta)/2]/[2((T+2)(T+6))^(1/4)],
+    j(eta)=Psi(u_*(eta),eta),
+    Psi(u,eta)=[-Lambda(2u)+6Lambda(u)]/pi
+             +(1/(2pi))integral_0^(2u)Log(T+2cos v)dv.
+
+All branches are continued from real u=pi/4, eta=0; Lambda denotes
+its holomorphic local continuation in the displayed regular arguments.
+The amplitude is nonzero. Both a and j are even holomorphic functions
+of eta, so (3) is equivalently a holomorphic statement on a fixed disk
+in c=-2cosh eta about -2. It includes all fixed-order normal derivatives
+on a smaller disk by Cauchy's estimate.
+
+## 2. The exact direction of transport and a source barrier
+
+The original backward Ward for U gives
+
+    W_r=a_N(u)W_(r+1)+b_N(u)W_(r+2),                    (4)
+    a_N=Q^(-1)(2Q^3Y^2+Q+1)/(1-QY)^2,
+    b_N=-Q^(-1)(1-Q^3Y^2)(1+Q^2Y)
+                             /[(1-QY)^2(1-Q^2Y)], Y=e^(2iu).
+
+Thus X_r=(W_r,W_(r+1))^T propagates from HIGH r to LOW r:
+X_r=T_N(u_r)X_(r+1), T_N=[[a_N,b_N],[1,0]]. Its principal eigenvalues
+in this direction are
+
+    lambda_slow=1, lambda_fast=-cot(u)^2.                 (5)
+
+They are distinct and nonzero near pi/4, including at the modulus
+crossing. That fact alone is insufficient for a selected-source claim.
+
+Use the [proved analytic diagonalization lemma](actual_local_analytic_transport_action_barrier.md)
+on a fixed complex neighborhood of pi/4, with the shift direction in
+(4). The same proof with the reversed shift supplies bounded
+V_N=V_0+O(1/N), nonzero diagonal d_s,d_f and R_N=O(exp(-sigma N))
+such that EXACTLY
+
+    V_N(u)^(-1)T_N(u)V_N(u+pi/N)=diag(d_s,d_f)+R_N.       (6)
+
+The hypotheses here are explicit rational functions, not an unknown
+solution bound. On |Re u-pi/4|,|Im u|<=pi/32 the sine and cosine
+are bounded away from zero. The supplied eigenframe has columns
+(1,1)^T,(-cot^2u,1)^T; it and its inverse are bounded. One may use
+conservative bounds K=20, nonzero-root/gap bounds1/4 and eventual
+diagonal bound M=20, after rescaling x=u/pi and taking stadium radius
+1/256. The rational coefficients have T_N-T_0=O(1/N) there, directly
+from Q-1=O(1/N) and their nonzero denominators. Hence the lemma gives
+a COMPUTABLE fixed sigma>0. Constants may be coarse; no optimal
+conversion exponent is needed.
+
+Choose a fixed sufficiently small delta>0, h=delta/4, and a high
+anchor grid point u_b=pi/4+2delta+O(1/N). Require delta<pi/4096 and
+16delta^2/pi<sigma/4. Propagate(6) over
+[pi/4-h,u_b]. The cumulative REAL logarithmic action of the fast
+channel relative to the slow one is
+
+    A_f(u)=pi^(-1)integral_u^(u_b)2log cot v dv.           (7)
+
+This is the sign appropriate to HIGH-to-LOW transport, not its inverse.
+On this interval the total diagonal action width is at most
+16delta^2/pi+O(1/N). For every target |u-pi/4|<=h the action in(7)
+is at most -gamma_0 for a fixed gamma_0>0. For example
+-8<=d(2log cot v)/dv<=-4 on the small window; the negative contribution
+from pi/4 to pi/4+2delta exceeds the possible positive contribution
+from pi/4-h to pi/4 by a fixed multiple of delta^2.
+
+At the high anchor, the ACTUAL source vector from(2) is
+w_0(u_b)(1,1)^T+O(1/N). Its slow component in V_N is bounded away
+from zero, and its fast component is O(1/N). Both entries are literal
+finite original U sums. In the interaction picture, all off-diagonal
+terms in(6) are bounded by exp[-N(sigma-width)]. Their product is
+I+O(N exp[-N(sigma-width)]). Equations(2),(7) therefore give, on the
+whole target grid, the selected slow solution with error O(exp(-gamma N)),
+for some fixed gamma>0. The other actual source component and every
+conversion term have been estimated, not deleted. There is no assumed
+adiabatic survival across a long crossing interval.
+
+## 3. A holomorphic interpolant of the SAME selected grid packet
+
+The slow diagonal has d_s=1+O(1/N), holomorphically. Apply optimally
+truncated Euler--Maclaurin to the sum of Log d_s from u to u_b and
+multiply by the first component of V_N and its EXACT source coefficient
+at u_b. Construct it first on a fixed smaller complex tube containing
+the ENTIRE interval [pi/4-h,u_b], and then restrict to a still smaller
+tube around |u-pi/4|<=h. This defines a zero-free holomorphic function
+W_hat_N(u); its high-anchor value is part of the same interpolant,
+not an independent continuation constant. The usual analytic
+remainder is explicit: Cauchy bounds on a tube of radius a give a
+remainder bounded by C N[K/(pi aN)]^(2K); choose K=floor(cN).
+Thus, after shrinking the tube once,
+
+    W_(N,r)=W_hat_N(pi r/N)+O(exp(-gamma' N))             (8)
+
+on its physical grid. This construction uses known coefficient
+functions and the finite source anchor; its normalization is not
+defined using the unknown closed circle value.
+
+The same EM formula at u and u+pi/N gives its diagonal shift relation
+with an exponential holomorphic residual. Together with(6) this makes
+W_hat_N satisfy(4) with an exponential residual throughout the tube.
+It and its derivatives are uniformly bounded: Log d_s=O(1/N), its
+sum is O(1), and the slow eigenvector component stays near1.
+
+Its leading amplitude is explicit, not a new connection constant.
+Expanding(4), using a_0+b_0=1, gives
+
+    W_hat_N'/W_hat_N
+       =-2i [partial_Q(a_N+b_N)]_(Q=1)/(a_0+2b_0)+O(1/N)
+       =iY/(Y-1)+O(1/N).
+
+The denominator is -4Y/(1-Y)^2, so is nonzero. The high source
+anchor(2) fixes the solution of this first-order transport on the
+whole anchor-to-target tube. Integration
+on the fixed complex tube proves
+
+    W_hat_N(u)=e^(iu/2)sqrt(sin u)[1+O(1/N)]              (9)
+
+UNIFORMLY and holomorphically on the smaller tube, now through BOTH
+sides of pi/4. The exponential grid residual in(8) is separate from
+the inverse-N leading-amplitude error in(9).
+
+## 4. Coherent outer sum, retained residuals and the full complex saddle
+
+At eta=0 the old ALL-index envelope of the exact source is
+J_1(u)+E(u), where J_1'=4log cot u/pi and E'=-2log cot u/pi below
+pi/4, E=0 above it. Hence its unique maximum is j_0=v_8/pi at pi/4.
+Every index outside the fixed window in(8) has a strict exponential
+gap. This includes all lower indices; they have not been set to zero.
+
+The same gap holds uniformly for sufficiently small complex eta.
+One can bound the Newton factor on its fixed enclosing Bernstein
+ellipse. Its continuum logarithm converges uniformly to the eta=0
+logarithm as the ellipse shrinks: the only endpoint singularity is
+the integrable log(2+2cos v). Thus first choose the r-window/gap,
+then the fixed eta disk. The polynomial all-index prefactors do not
+affect the gap.
+
+On the retained window use(8), with the actual half-shift Newton
+product and sine factorials. These have zero-free holomorphic
+interpolants with exponentially small RELATIVE grid residuals. For the
+sine factorial, separate log(sin v/v), keep Gamma(k+1) exactly, and
+apply the same optimal EM bound to the regular factor. For the Newton
+product apply midpoint EM to Log(T+2cos v); its leading prefactor is
+ONE. All arguments here lie in regular compact strips.
+
+The discarded indices and ALL grid interpolation residuals are bounded
+absolutely by poly(N)exp[N(j_0-g)] for some fixed g>0, uniformly on
+a sufficiently small complex eta disk. This is not a claim inferred
+from pointwise O(1/N) continuation. The exact interpolant is used before
+its leading approximation, just as in the previous mixed-color source.
+
+For the retained finite r-sum choose half-grid vertical endpoints.
+Its exact cotangent rectangle has vertical |cot(Nu)|<=1. Their
+source phases have a fixed endpoint gap. At fixed height d_0 the
+horizontal cotangent errors are O(exp(-2Nd_0)), while the complete
+phase increases by at most C d_0^2 at eta=0. Choose d_0 small,
+then shrink the complex eta disk again. All four residual currents
+are strictly below the nearby saddle. The two constant cotangent
+parts give the same analytic integral with density N/pi; no integer
+residue or endpoint term has been discarded.
+
+The exponent is Psi in(3). At eta=0 its unique saddle is pi/4,
+with Psi_uu=-8/pi. Its analytic continuation is u_*(eta), and stays
+in the fixed interpolation tube. Ordinary analytic Gaussian expansion,
+with its fixed nonzero source density from(9), gives(3). Inserting
+the explicit sine-factorial prefactor gives exactly the stated a(eta).
+The external exp(-i pi d/4) and the unchanged Cartan normalization
+are already in(1), at both parities. Alternatively, this analytic
+leading coefficient is fixed uniquely by its agreement with the
+already proved real eta>0 formula on the nonempty overlap where the
+saddle lies strictly above pi/4. This identifies its continuation
+through eta=0 without an extra endpoint or parity factor.
+
+## 5. Nodal concentration, original normals, and a retained-belt corollary
+
+The new packet has
+
+    j(0)=j_0, j''(0)=1/(2pi),
+    a(0)=2^(-9/4)e^(i pi/8).
+
+For real theta near0 this yields the whole original nodal packet
+
+    z_N(-2cos theta)=e^(-i pi d/4)a(i theta)
+                               exp[Nj(i theta)][1+O(1/N)],
+    j(i theta)=j_0-theta^2/(4pi)+O(theta^4).              (10)
+
+There is also an exponential nodal gap outside every fixed theta
+neighborhood. For a root c_a in[-2,2], the factor at a unit w obeys
+|c_a-w-w^(-1)|<=|c_a-Rw-(Rw)^(-1)| for R>1. Apply the established
+same-angle circle envelope and let fixed R decrease toward1. Its
+continuum arc-convolution profile is continuous, has a unique maximum
+at(theta,u)=(0,pi/4), and has strictly smaller endpoint values. Compactness
+proves the gap. This uses the coherent U envelope, not a sector claim.
+
+For precision, the convolution is over the symmetric arc[-2u,2u]
+of g_1(t)=log|1-e^(it)|, centered at pi+theta. For0<u<pi/2,
+g_1 is strictly increasing with circular distance from0, so this
+arc integral has its unique maximum at theta=0. At u=0 or pi/2
+it is constant in theta, but the resulting all-index actions are
+strictly less than j_0. Moreover ||g_R-g_1||_(L^1(S^1))->0, which
+bounds the difference of ALL these arc integrals uniformly in both
+u and theta. Thus the limiting argument uses a uniform integral
+bound, not pointwise logarithmic convergence at a root.
+
+Equation(3) is holomorphic in c, so the original first-normal source
+is retained by differentiating it on a smaller disk. For example
+z_N'(-2)/z_N(-2)=-N/(4pi)+O(1). Nothing is replaced by a value-only
+semisimple trace.
+
+The [exact complete-belt source](actual_complete_circle_nodal_energy_and_belt_sewing.md)
+therefore has, for every fixed integer k>=1, the nonzero ALL-parity
+asymptotic
+
+    phi(L_N(z_N^sharp z_N)^k)
+       =N^(3/2) 2^[-(9k+1)/2]/sqrt(k)
+                                     exp(2kNj_0)[1+O(1/N)]. (11)
+
+Indeed its exact source is N sum_(a=0)^(N-1)|z_N(c_a)|^(2k).
+The nodal angles around -2 have step2pi/N, with shift0 for oddN
+and1/2 for evenN. The Gaussian in(10) gives the same leading sum
+at both shifts; all other nodes have the proved exponential gap.
+The derivative source producing this exact belt trace remains literal.
+
+This establishes a genuine complete-circle boundary packet and a
+whole original retained-belt amplitude. An independently changed
+ordinary auxiliary color, a filling transform, or a branched six-port
+sewing must still be identified with this packet by an exact source
+map. They are not inferred merely from the spectral parameter eta.
+
+Audit: [literal finite circle coefficients, quantum recurrence/chirp and boundary Gaussian](../experiments/audit_actual_complete_circle_boundary_packet.py),
+fresh replay PASS: eleven literal all-parity full sources and first
+normals, exact symbolic chirped recurrence/transport, and six growing-N
+complex-packet/normal/retained-belt calibrations. The analytic proof,
+not those finite calibrations, establishes the fixed neighborhood and
+the exponential current bounds.
+
+Independent review: the global critical-path auditor reread the exact
+transport direction, source barrier and anchor, holomorphic EM/cotangent
+argument, uniform angular gap and Gaussian constants, then freshly
+replayed the finite audit; PASS. This review concerns the stated
+spectral packet and complete retained-belt source, with the physical
+color/filling identification still separate.

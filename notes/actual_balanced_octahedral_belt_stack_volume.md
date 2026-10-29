@@ -1,12 +1,20 @@
-# Balanced stacks of the literal two-octahedron belt piece
+# Octahedral belt stacks and their marked outer collars
 
 29 October 2026. There is an infinite family of actual augmented
 link diagrams, with unbounded numbers of complete crossing circles,
 whose original Kashaev volume limits follow from the complete-circle
-nodal-energy theorem. The operation is CYCLIC stacking along one
+source packet. The balanced case has a direct positive nodal-energy
+proof; the general case uses its coherent complex Gaussian. The operation is CYCLIC stacking along one
 actual twice-punctured crossing disk. It is not branching scalar
 Frobenius multiplication. The source, the cut collars, and their
 complete metric are specified below.
+
+The later coherent boundary-packet theorem removes the balance
+restriction and allows every FIXED integer outer crossing power.
+Section 3a gives the literal collar certificate for this extension;
+section 4a links its original-source asymptotic. The filename retains
+the earlier balanced checkpoint, which remains the elementary
+positive special case.
 
 ## 1. The two typed pieces, before evaluating any invariant
 
@@ -168,6 +176,68 @@ obtained by taking n copies of the cut base and shifting the two
 outer A-to-B face pairings by one sheet. The metric proof does not
 need to identify mixed words with that particular peripheral cover.
 
+### 3a. Any fixed integer outer crossing power
+
+Let L_(epsilon,a) be the same literal stack, but insert X^a in the
+OUTER disk collar between the retained C and the first piece. Here
+a is any fixed signed integer. Its placement is part of the actual
+diagram, and its source is phi(L_N R^a product_i f_(epsilon_i)).
+The belt component is RETAINED; none of its cusps is filled.
+
+A single X exchanges the two physical punctures of the standard
+twice-punctured disk. After passing to its complete ideal pants,
+this is the isometry that fixes the belt end, exchanges the two
+physical ends, and EXCHANGES its two ideal triangles. This last
+exchange is necessary: permuting two vertices in one fixed triangle
+alone would give the wrong oriented collar map. In the canonical
+labels of section 2, put the extra power at the last cyclic seam.
+Its exact face maps are
+
+| Parity of a | Source to target | Vertex map |
+| --- | --- | --- |
+| even | A_last^+ to B_first^-, A_last^- to B_first^+ | X0 fixed, Y+ to Y-, Z+ to Z- |
+| odd | A_last^+ to B_first^+, A_last^- to B_first^- | X0 fixed, Y+ to Z-, Z+ to Y- |
+
+This is obtained by tracing the two punctures through the actual
+single collar crossing. It is also the usual two-puncture half
+rotation of the disk. Its square is a full collar twist: as an
+ideal pants map it is isotopic to the identity, while the rotations
+at its ends record a change of the BELT PERIPHERAL MARKING. Thus
+adding two crossings changes that marking without changing the
+unmarked complete face quotient. Negative a has the same parity
+description with its opposite recorded twist. No preferred meridian
+is silently kept fixed while deleting R^a from the quantum source.
+
+Every displayed triangle map still extends to an octahedral
+symmetry preserving the normalized light vectors. In the explicit
+eight-tet subdivision, a last odd seam toggles the target cell
+P_+ versus P_- while exchanging Y and Z. These two changes cancel
+in local coordinates: its gluing permutation remains 0132.
+All tetrahedra keep their positive shape i, all edge products are
+one and all edge angles are 2pi. The same canonical cusp sections
+therefore match, without dilation, at either parity.
+
+The two main components of the untwisted stack merge exactly when
+a is odd: after the circles are removed, the physical two-strand
+permutation is that of X^(2(n_- - n_+)+a). Here n_+ and n_- count
+plus and minus pieces. Each of the n inner circles and the single outer
+belt remains distinct. Consequently
+
+    components L_(epsilon,a) = n+3 for even a,
+                               n+2 for odd a.            (4a)
+
+The exact cusp links of the modified cell quotient have precisely
+these counts. They are connected orientable flat tori; for an odd
+collar the former Y and Z main links become one. The compact-core
+and matched horoball argument of section 3 applies unchanged.
+We have proved the ACTUAL geometric statement
+
+    Vol(S^3 minus L_(epsilon,a))=2n v8
+           for every fixed n>=1, epsilon and a in Z.     (4b)
+
+This is a complete augmented exterior with its marked collar, not
+a Dehn-filled exterior or a volume-continuity assertion.
+
 ## 4. Balanced words give the full original volume limit
 
 Suppose n=2k and the word has exactly k plus and k minus pieces.
@@ -205,6 +275,41 @@ or arbitrary-bridge volume limits. The quantum gluing graph here
 is a cycle along ONE retained belt; a branched tree requires its
 actual six-port tensor and cannot be substituted into (5).
 
+### 4a. Coherent source extension to every sign word and outer collar
+
+For n_+ plus and n_- minus pieces put n=n_+ + n_->0 and e=n_- - n_+.
+The full
+commutant/source calculation, with the actual typed pieces (2), is
+
+    phi(L_N R^a product_i f_(epsilon_i))
+                  =phi(L_N R^(e+a) (z#)^n_+ z^n_-).      (8)
+
+There is no absolute value inside this unbalanced channel sum.
+The [coherent original belt-stack asymptotic](actual_coherent_octahedral_belt_stack_asymptotic.md)
+proves its nonzero all-N asymptotic from the actual complex
+complete-circle boundary packet. It retains the full crossing
+phase, endpoint multiplicities, ordinary pivots and marked source.
+Its complex Gaussian has coefficient n-i(e+a), whose real part
+n is positive, so it never vanishes for these fixed integers.
+In particular
+
+    lim_N (2pi/N)log|phi(L_N R^(e+a)(z#)^n_+ z^n_-)|=2n v8. (9)
+
+Applying the SAME explicit original reduced normalization as above
+and the geometric collar certificate (4b) gives
+
+    lim_N (2pi/N)log|<L_(epsilon,a)>_N|
+                       =Vol(S^3 minus L_(epsilon,a))
+                       =2n v8.                          (10)
+
+The word, its length n and the signed outer integer a are fixed
+before N tends to infinity. Both parities and composite levels are
+included. The balanced positive source in (6) is a special case;
+the general theorem needs the coherent complex Gaussian and does
+not follow by taking magnitudes of individual channel terms.
+Arbitrary fillings of these new bases and genuinely branched
+multi-belt source graphs remain outside the statement.
+
 Coverage only: the abstract of Roland van der Veen's
 [Proof of the volume conjecture for Whitehead chains](https://arxiv.org/abs/math/0611181)
 already states a volume-conjecture theorem for an infinite link
@@ -215,12 +320,23 @@ paper's proof nor its asymptotic formula is an input above. The
 reusable result established here is the full original-source DCT
 energy bridge and its specified physical belt seam.
 
-Independent analytical review rechecked the actual opening, the
-mirror/input-output reversal and F^2 source, the labeled ideal pants,
-canonical horospheres, the SINGLE retained belt and all N normalization
-factors. A fresh replay passed seven physical levels, all 196 balanced
-source words and seven regular-cell certificates. The optional
-four literal mirror/reversed diagrams are supplemental checks only.
+Independent final publication review (29 October 2026) rechecked the
+actual opening, full mirror/F^2 source, and the odd outer collar's
+SIMULTANEOUS exchange of pants triangles and physical punctures. The
+resulting local permutation0132, canonical horospheres, component
+counts, marked collar and single retained belt agree with the complete
+source asymptotic, including its literal kappa square-root convention.
+No additional hypothesis or mathematical defect was found beyond the
+stated fixed nonempty word and fixed signed a before N tends to infinity.
+
+Fresh independent replays passed the exact source/cell audit at both
+collar parities (16 cell cases), the complete all-sign/outer-power
+source audit, and nine supplemental literal-diagram checks. The
+860 phase checks in the source audit use high-precision arithmetic;
+the phase identities themselves are proved algebraically in its note.
+Software recognition and finite profiles remain supplemental, not
+premises for the topology or asymptotic theorem. Fillings, branched
+six-port gluing and literature novelty are outside this review's claim.
 
 Audit: [literal balanced sources and exact cyclic face certificate](../experiments/audit_actual_balanced_octahedral_belt_stack_volume.py).
 The optional literal-diagram/software comparison is supplemental;

@@ -4,7 +4,9 @@ Research notes, exact finite-matrix experiments, and audit results concerning Ka
 
 **The general volume conjecture is not claimed solved.** The current notes contain a claimed full-sequence volume-equality proof for a specified long-pretzel family: every fixed odd width **s ≥ 9**, with independently sufficiently large **fixed signed** twist integers p_i and the recorded source convention R^(-(2p_i+1)). The corresponding specified single-cut reduced **two-component link** statement holds at fixed even widths **s ≥ 10**. Width and slopes remain fixed before N → ∞; both level parities and composite levels are included. These are research proofs and internal analytical audits, requiring external mathematical review.
 
-A second verified research result concerns **complete augmented links**: every fixed balanced word of **2k octahedral belt pieces**, k ≥ 1, gives a **2k+3-component** link with original all-level volume limit **4k v₈**, equal to its explicitly constructed complete hyperbolic volume. The proof retains one physical belt and uses exact cyclotomic Chebyshev sampling. Possible coverage by the earlier Whitehead-chain literature is recorded; no novelty of this topological family is claimed. Fixed fillings of these new bases are not established here.
+A second research proof concerns **complete augmented links**: every fixed word of **n ≥ 1 octahedral belt pieces**, with arbitrary signs and any fixed integer outer crossing power a, has original all-level volume limit **2n v₈**, equal to its explicitly constructed complete hyperbolic volume. The link has **n+3 components when a is even** and **n+2 when a is odd**. The proof retains all inner crossing circles and one outer belt; a source-specific complex Gaussian removes the earlier balance restriction. Possible coverage by the earlier Whitehead-chain literature is recorded; no novelty of this topological family is claimed. Fixed fillings of these new bases are not established here.
+
+At arbitrary fixed bridge width, an exact **marked multivariate Chebyshev packet** now gives a positive energy, Parseval identity, and polynomial-cost evaluation of the original source. A sharp geometric estimate for that energy remains open. The notes also retain an exact six-port counterexample showing why the unmarked three-circle norm cannot bound the marked source.
 
 The unfilled complete augmented volume V_s and the filled source volume V_src,s(p) are different. The broader task—original-source control and volume equality for arbitrary hyperbolic knots or arbitrary augmented graphs—remains open. Exploratory calculations, counterexamples to intermediate proposals, and historical checkpoints are retained with their own scope.
 
@@ -19,7 +21,12 @@ The unfilled complete augmented volume V_s and the filled source volume V_src,s(
 - [Positive Newton metric for genuine turns](notes/actual_newton_turn_positive_gram.md)
 - [Literal reflected two-circle base and its two-octahedron geometry](notes/actual_reflected_two_circle_octahedral_base.md)
 - [Bandlimited cyclotomic sampling and complete-belt energy](notes/actual_complete_circle_nodal_energy_and_belt_sewing.md)
-- [Balanced octahedral belt stacks: source and volume](notes/actual_balanced_octahedral_belt_stack_volume.md)
+- [Octahedral belt stacks and marked outer collars](notes/actual_balanced_octahedral_belt_stack_volume.md)
+- [Arbitrary-sign stack source and coherent asymptotic](notes/actual_coherent_octahedral_belt_stack_asymptotic.md)
+- [Complete-circle boundary packet](notes/actual_complete_circle_boundary_packet.md)
+- [Arbitrary-width marked Chebyshev packet](notes/actual_marked_multiport_chebyshev_source_packet.md)
+- [Six-port support theorem](notes/actual_six_port_three_circle_support.md)
+- [Marked metric and the unmarked-norm obstruction](notes/actual_three_belt_saturated_source_and_marked_metric.md)
 - [Finite real-algebraic geometric certificate](notes/finite_real_algebraic_geometric_certificate.md)
 - [Coherent turn reductions](notes/actual_newton_coherent_turn_reduction.md)
 - [Two-twist interaction packet](notes/actual_newton_two_twist_interaction_packet.md)
@@ -47,6 +54,8 @@ python3 experiments/audit_actual_six_port_divided_power_source_kernel.py
 python3 experiments/audit_general_augmented_graph_source_extension.py
 python3 experiments/audit_actual_complete_circle_nodal_energy_and_belt_sewing.py
 python3 experiments/audit_actual_balanced_octahedral_belt_stack_volume.py
+python3 experiments/audit_actual_marked_multiport_chebyshev_source_packet.py
+python3 experiments/audit_actual_coherent_octahedral_belt_stack_asymptotic.py
 ```
 
 With the optional geometry packages installed, the belt-stack script also supports `--software-only` for its separately labeled literal-diagram diagnostics. The exact geometric proof is the reversible disk/face/cusp certificate in the notes, rather than software recognition.

@@ -47,23 +47,28 @@ coherent source control stronger than the present per-alias norm bound.
 This width improvement is progress toward generality, not a declaration
 that the broad active goal is complete.
 
-There is now a second verified COMPLETE augmented-link family:
-[balanced octahedral belt stacks](actual_balanced_octahedral_belt_stack_volume.md).
-For every fixed balanced word of 2k literal cut pieces, k>=1, its
-2k+3-component link has
+There is now a second COMPLETE augmented-link family:
+[octahedral belt stacks](actual_balanced_octahedral_belt_stack_volume.md).
+For every fixed sign word epsilon of n>=1 literal cut pieces and
+every fixed signed outer crossing power a, the actual link has
 
-    lim_N (2pi/N)log|<L_epsilon>_N|
-      =Vol(S^3 minus L_epsilon)=4k v8.
+    lim_N (2pi/N)log|<L_(epsilon,a)>_N|
+      =Vol(S^3 minus L_(epsilon,a))=2n v8.
 
 Each piece is the actual cut two-octahedron base or its reflected,
-direction-reversed version. The geodesic pants collars glue to a
-complete metric with 4k regular octahedra. At the original quantum
-source, all balanced orders give exactly ONE retained-belt contraction
-N sum_c m_c |z_N(c)|^(2k). Exact discrete Chebyshev orthogonality and
-the proved nonzero fixed-ellipse packet determine its sharp rate.
-This includes both parities and composite levels; k and the diagram
-remain fixed before the level limit. Root and a separate reviewer
-read the source/collar/metric proof and replayed the physical checks.
+direction-reversed version. Geodesic pants collars, including the
+marked outer half-twist, glue to a complete metric with 2n regular
+octahedra. The link has n+3 components for even a and n+2 for odd a.
+Balanced words with a=0 give the positive retained-belt contraction
+N sum_c m_c |z_N(c)|^(2k). The new
+[fixed complex boundary packet](actual_complete_circle_boundary_packet.md)
+and [coherent Gaussian](actual_coherent_octahedral_belt_stack_asymptotic.md)
+remove that balance restriction. With e the number of minus pieces
+minus the number of plus pieces, the Gaussian parameter is
+n-i(e+a), whose positive real part gives a nonzero leading constant.
+The literal crossing phase is retained, including the branch
+q^(a(N-1)^2/4). Both level parities and composite levels are covered;
+n, a and the diagram remain fixed before the limit.
 
 This is a growing family of complete LINKS, not a fixed-filling or
 arbitrary-knot theorem. Literature coverage includes van der Veen's
@@ -136,6 +141,19 @@ is therefore not an unconditional solution for arbitrary knots.
 The next source mechanisms are now concrete, with no additional
 hyperbolic-volume equality inferred from them:
 
+* [The marked multiport Chebyshev packet](actual_marked_multiport_chebyshev_source_packet.md)
+  gives an exact polynomial representation at every fixed bridge
+  width. Its sampled positive energy has an exact Parseval formula
+  and polynomial original-evaluation cost. The transform retains
+  the original marked cap. Its coefficients can still grow
+  exponentially; a sharp geometric energy estimate and a nonzero
+  selected contribution remain necessary.
+* [The three-circle metric obstruction](actual_three_belt_saturated_source_and_marked_metric.md)
+  is an exact source vector with zero naive three-circle energy but
+  original evaluation one. The corrected marked metric removes that
+  obstruction. The [joint support theorem](actual_six_port_three_circle_support.md)
+  determines a necessary folded simplex for the naive metric; it
+  does not assert nonzero contribution at every allowed channel.
 * [Six-port bounded confluence](actual_six_port_bounded_confluent_blocks.md)
   splits the saturated original source into regular collision blocks
   of rank at most eight. Three saturation steps suffice; explicit
@@ -251,9 +269,13 @@ The two outstanding analytic requirements for those graphs are:
 2. A global source/alias estimate that excludes exponentially competing
    contributions outside that packet, with the original boundary data.
 
-The newly proved bandlimited energy and folded cubic solve specified
-root-value source problems; they do not yet supply these complex-color
-and complementary-source hypotheses for arbitrary branched graphs or
+The boundary packet supplies a fixed complex PAIR-CASIMIR disk through
+the complete spectral endpoint. It is not yet identified with the
+physical auxiliary-color or meridian continuation required by filling.
+The arbitrary-width marked Parseval formula similarly supplies an
+exact observation and positive energy, not its sharp volume rate.
+Thus the new results do not yet supply the complex-color and
+complementary-source hypotheses for arbitrary branched graphs or
 the new belt-stack fillings. The generic-meridian A-module likewise
 requires its actual deformation and boundary currents, beyond the
 complete-meridian Newton character slice already proved.

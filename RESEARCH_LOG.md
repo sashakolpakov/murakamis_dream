@@ -14,17 +14,28 @@ Jones is a separate question and is not required for this route.
 [The current torsor status](notes/a_polynomial_torsor_status.md)
 compares this proposal with the constructions already in this repo.
 
-29 October, the Fourier/source route now proves a complete augmented
-link family: [balanced stacks of the literal octahedral belt piece](notes/actual_balanced_octahedral_belt_stack_volume.md).
-Every fixed balanced word of 2k pieces has 2k+3 components and original
-all-level volume limit 4k v_8, equal to its explicitly constructed
-complete hyperbolic metric. The proof uses
-[exact cyclotomic Chebyshev sampling](notes/actual_complete_circle_nodal_energy_and_belt_sewing.md)
-and ONE retained physical belt, with all root normals included.
-This is independently checked source/geometry equality for the stated
-complete links; fixed fillings and general knots remain open. Possible
-coverage by the existing Whitehead-chain literature is recorded, and
-no novelty of this topological family is claimed.
+29 October, the Fourier/source route now covers
+[octahedral belt stacks with arbitrary signs and fixed outer twists](notes/actual_balanced_octahedral_belt_stack_volume.md).
+Every fixed word of n>=1 pieces and fixed outer crossing power a has
+original all-level volume limit 2n v_8, equal to the explicitly
+constructed complete hyperbolic volume. The link has n+3 components
+for even a and n+2 for odd a. The
+[coherent boundary packet](notes/actual_complete_circle_boundary_packet.md)
+and its [nonzero complex Gaussian](notes/actual_coherent_octahedral_belt_stack_asymptotic.md)
+remove the earlier balance restriction while retaining the physical
+belt and all root normals. These are complete augmented links;
+their fixed fillings and general knots remain open. Possible coverage
+by the existing Whitehead-chain literature is recorded, and no novelty
+of this topological family is claimed.
+
+For arbitrary fixed bridge width, an
+[exact marked Chebyshev packet](notes/actual_marked_multiport_chebyshev_source_packet.md)
+now retains the original evaluation and has an explicit positive
+Parseval energy and polynomial evaluation cost. A
+[six-port counterexample](notes/actual_three_belt_saturated_source_and_marked_metric.md)
+shows why the naive three-circle metric loses the marked source.
+The corrected packet does not yet prove the sharp geometric energy
+bound or noncancellation required for general knots.
 
 29 October, the [finite real-algebraic geometric certificate](notes/finite_real_algebraic_geometric_certificate.md)
 selects the unique positive complete shape point on any supplied actual

@@ -261,10 +261,14 @@ modified dimension is assigned to each auxiliary circle.
 
 The [two-octahedron cut certificate](actual_reflected_two_circle_octahedral_base.md)
 supplies a concrete base and its actual twice-punctured crossing
-disks. To turn (8) into a volume theorem for a family of belted
-doubles/stacks, one must still match the indicated operator sewing
-with gluing those punctured disks by the stated peripheral marking,
-and check the resulting complete geometric link.
+disks. The [literal stack and outer-collar theorem](actual_balanced_octahedral_belt_stack_volume.md)
+now matches (8) with these actual geodesic pants gluings and proves
+its balanced complete-link volume equality. It also gives the metric
+for arbitrary fixed sign words and fixed integer outer collars; the
+nonzero asymptotic in that broader case uses the separate
+[coherent source Gaussian](actual_coherent_octahedral_belt_stack_asymptotic.md),
+not the positive-energy argument alone. General tangle or branched
+graph sewings do not inherit this particular collar certificate.
 
 In particular (8) must NOT be reinterpreted as a tree of scalar
 Frobenius vertices. Such a tree inserts \(L_N^{|E|}\) and vanishes
