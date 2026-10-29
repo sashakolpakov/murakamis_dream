@@ -392,13 +392,14 @@ polynomial cost. Local error rates must survive the actual cancellation
 loss of the entire contraction; local nonzero packets alone do not
 prove a nonzero global period.
 
-The exact circle basis and full-Hermite sewing are being used to
-reduce more general Conway/arborescent source networks. The aim is
-an original-source packet and nonzero geometric contribution for
-graphs beyond a single pretzel cycle, followed by the general filling
-transfer. Octahedral fully augmented graphs provide one candidate,
-but a Turaev--Viro theorem or an isometry of exteriors cannot replace
-an exact identity for the original Kashaev source.
+The exact circle basis and full-Hermite sewing now complete this
+program for signed robust C(FG) networks, with the original-source
+packet, nonzero geometric contribution and general filling transfer
+proved above. The remaining target is graphs outside that class,
+including more general multiport cores. Octahedral fully augmented
+graphs provide one candidate, but a Turaev--Viro theorem or an isometry
+of exteriors cannot replace an exact identity for the original
+Kashaev source.
 
 The two outstanding analytic requirements for those graphs are:
 
@@ -597,10 +598,14 @@ now proves a full-sequence limit for the WHOLE original scalar:
 2pi log Z/N tends to twice a prescribed concave ideal-angle maximum.
 Its additive support semigroup and feasible states at every level
 supply the lower bound even at boundary maxima, with both parities
-and no selected color sector. Its local angle triples are not yet
-the actual face/edge incidence of the complement. Some expressions
-have exactly polynomial growth, so no universal hyperbolicity or
-manifold-volume equality is inferred from this positive class.
+and no selected color sector. That variational theorem alone did
+not establish the actual complement incidence. The subsequent actual
+prism/pyramid theorem and closed bowtie cut now do so for every
+retained cylindrical robust factor, and the signed source theorem
+extends their long fillings as stated above. Broader positive
+expressions can have polynomial growth, and cap products can give
+connected sums; no universal hyperbolicity is inferred for every
+positive circuit merely from its nonnegative coefficients.
 
 There is a primitive-core application beyond theta. The
 [literal odd central cube reduction](actual_odd_central_cube_reflection_packet.md)
