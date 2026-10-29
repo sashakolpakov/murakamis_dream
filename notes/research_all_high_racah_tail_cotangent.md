@@ -1,11 +1,22 @@
 # Archived diagnostic: a coherent all-high Racah tail and a cotangent sum
 
-29 October 2026. RESEARCH LEAD ONLY. The finite identity proposed below
-has been checked numerically at eleven specified levels. No finite
-proof, certified error bound, uniform normal estimate, or general
-partner-transport theorem is asserted. This preserves an observation
-from the investigation of the live [2N] current, rather than promoting
-root-value symmetry to a statement about generic-q germs.
+**Current status, 29 October 2026:** the cotangent identity recorded here
+is now proved by the own finite Fourier argument in
+[the coherent-tail residue theorem](actual_coherent_racah_tail_fourier_residues.md).
+That theorem also proves polynomial first-normal bounds whenever the
+maximal face sum is repeated. General unique-maximal-face residuals
+and higher generic normal jets remain open.
+
+The text below is the preserved HISTORICAL DIAGNOSTIC, written before
+that proof. Its question marks and statements that a finite proof was
+missing describe that earlier checkpoint. The eleven-level numerical
+record has not been relabeled as a proof.
+
+29 October 2026, earlier checkpoint. RESEARCH LEAD ONLY at that stage.
+The finite identity proposed below had been checked numerically at
+eleven specified levels. No finite proof, certified error bound,
+uniform normal estimate, or general partner-transport theorem was
+asserted at that checkpoint.
 
 ## 1. The actual generic normal being observed
 

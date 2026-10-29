@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A rational Bloch regulator for every positive-source volume maximum · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">A-structure and torsors</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">Rational source Bloch regulator</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_positive_source_bloch_regulator.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-rational-bloch-regulator-for-every-positive-source-volume-maximum">A rational Bloch regulator for every positive-source volume maximum</h1>
+<p>29 October 2026. The algebraic volume period of every robust positive Conway source is the regulator of an actual rational Bloch cycle. The cycle is obtained by subtracting the complex-conjugate shape symbols. Its boundary vanishes by the source’s full constrained stationarity equations. This is stronger than a formal sum of algebraic dilogarithms, but does not identify the cycle with the marked fundamental class of a link complement.</p>
+<p>The argument applies to EVERY rational affine ideal-angle volume problem in the <a href="positive_source_algebraic_volume_period.html">algebraic maximum theorem</a>, including boundary maxima and nonunique optimizers. It uses that theorem’s quotient by the exact flat Hessian kernel; it does not assume that an optimizer is isolated in the original wire coordinates.</p>
+<h2 id="the-rational-bloch-group-and-regulator-convention">1. The rational Bloch group and regulator convention</h2>
+<p>Let K be a number field with its specified complex embedding, stable under complex conjugation. Write U_K=K^times tensor_Z Q, additively, and write ell(a) for the image of a nonzero field element in U_K. Thus ell(ab)=ell(a)+ell(b); roots of unity have image zero.</p>
+<p>Let P(K)_Q be the Q-vector space on symbols [z], z in K minus {0,1}, modulo the five-term relations</p>
+<pre><code>[x]-[y]+[y/x]
+  -[(1-x^-1)/(1-y^-1)]+[(1-x)/(1-y)]=0,          (1)</code></pre>
+<p>where the displayed arguments are defined and different from 0 and 1. Use the boundary convention</p>
+<pre><code>delta[z]=ell(z) wedge ell(1-z),
+B(K)_Q=ker(delta:P(K)_Q -&gt; exterior^2 U_K).      (2)</code></pre>
+<p>This is the rational Bloch group, not an assertion of an integral lift or of a particular K_3 lattice. The five-term relation has zero boundary by direct expansion. In fact put</p>
+<pre><code>X=ell(x), Y=ell(y), A=ell(1-x), B=ell(1-y),
+C=ell(x-y).</code></pre>
+<p>The five pairs ell(z),ell(1-z) in (1) are</p>
+<pre><code>(X,A), (Y,B), (Y-X,C-X),
+(Y+A-X-B,C-X-B), (A-B,C-B).</code></pre>
+<p>Their signed wedge sum is identically zero in the free exterior algebra on X,Y,A,B,C. Thus (2) is well defined without requiring algebraic independence of the displayed field elements.</p>
+<p>Let D(z) be the Bloch-Wigner dilogarithm, normalized so that a positive ideal tetrahedron of shape z has hyperbolic volume D(z). Then D(bar z)=-D(z). The same five-term relation holds for D, so</p>
+<pre><code>R_K:P(K)_Q -&gt; R,        R_K([z])=D(z)            (3)</code></pre>
+<p>is a well-defined regulator component for the specified embedding. For completeness, the five-term identity follows from</p>
+<pre><code>dD(z)=log|z| d arg(1-z)-log|1-z| d arg(z).</code></pre>
+<p>Applying this alternating bilinear differential to the preceding zero wedge sum shows that the five-term D expression is locally constant in x,y. The complex domain with x,y different from 0,1 and from each other is connected. Letting y tend to x, all three ratio arguments tend to 1, where D has continuous value zero; the first two terms cancel. The constant is therefore zero. This also fixes the sign convention and normalization in (3).</p>
+<h2 id="the-algebraic-data-selected-by-the-source-maximum">2. The algebraic data selected by the source maximum</h2>
+<p>Use the notation of the algebraic maximum theorem. The compact rational polytope carries positive rational weights w_j and rational affine ideal-angle triples alpha_j. Let F be its smallest face containing all maxima. On F discard the atoms which are identically flat, and call the remaining set I. Those positive atoms have the SAME angle triples at every maximum.</p>
+<p>After removing their common rational flat kernel, choose rational coordinates y_l in which the positive angles read</p>
+<pre><code>alpha_jr=a_jr+sum_l b_jrl y_l,   a_jr,b_jrl in Q.</code></pre>
+<p>The proved algebraicity theorem supplies an optimum y_* for which the phases, sine values and positive shapes are algebraic. More explicitly choose a positive integer B clearing the b denominators, and put</p>
+<pre><code>u_l=exp(pi i y_*l/B),
+t_jr=exp(pi i alpha_jr),
+s_jr=2sin(pi alpha_jr)&gt;0.</code></pre>
+<p>Then</p>
+<pre><code>t_jr=eta_jr product_l u_l^(B b_jrl),
+eta_jr=exp(pi i a_jr),                           (4)</code></pre>
+<p>where eta_jr is a root of unity. Choose K to contain these finitely many algebraic numbers and their conjugates. It is a finite number field stable under the given complex conjugation. No assertion that K is the trace field of a manifold is being made.</p>
+<p>All positive angles are interior in their simplices at a relative- interior maximizer of F. Constrained stationarity in EVERY quotient tangent y_l gives</p>
+<pre><code>sum_(j in I,r) w_j b_jrl log s_jr=0.             (5)</code></pre>
+<p>For an integer C clearing the rational exponents, (5) gives the exact algebraic relation</p>
+<pre><code>product_(j,r) s_jr^(C w_j b_jrl)=1.             (6)</code></pre>
+<p>There is no winding ambiguity here: the s_jr are positive real numbers, and (6) is derived from the selected real maximum. Its image in U_K, divided by the nonzero rational C, is</p>
+<pre><code>sum_(j,r) w_j b_jrl ell(s_jr)=0.                (7)</code></pre>
+<p>Equations (4) and (7), not merely the algebraicity of the shapes, are the reason the regulator has a Bloch-cycle lift.</p>
+<h2 id="the-antisymmetric-shape-boundary">3. The antisymmetric shape boundary</h2>
+<p>For a positive angle triple (a,b,c), a+b+c=1, set</p>
+<pre><code>t_a=exp(pi i a), s_a=2sin(pi a), and cyclically,
+z=t_a s_b/s_c.</code></pre>
+<p>The Euclidean angle sine rule, or an elementary sine identity, gives</p>
+<pre><code>1-z=t_b^-1 s_a/s_c.                            (8)</code></pre>
+<p>For the elementary check multiply (8) by sin(pi c): it says sin(pi c)=exp(pi i a)sin(pi b)+exp(-pi i b)sin(pi a). The imaginary parts cancel and the real part is sin(pi(a+b)), which equals sin(pi c). In particular Im z&gt;0 and z has the prescribed ordered ideal angles.</p>
+<p>Write T_r=ell(t_r), S_r=ell(s_r). Since s_r is positive real, conjugation fixes S_r and sends T_r to -T_r. Also</p>
+<pre><code>T_a+T_b+T_c=ell(-1)=0 in U_K.</code></pre>
+<p>Using (8) to expand both shape boundaries therefore gives the exact identity</p>
+<pre><code>delta([z]-[bar z])
+    =2(T_a wedge S_a+T_b wedge S_b+T_c wedge S_c). (9)</code></pre>
+<p>For clarity, the individual unsymmetrized expansion is</p>
+<pre><code>delta[z]=-T_a wedge T_b
+  +T_a wedge(S_a-S_c)+T_b wedge(S_b-S_c)
+  +S_b wedge S_a-S_b wedge S_c-S_c wedge S_a.</code></pre>
+<p>The phase-phase and sine-sine terms are unchanged by conjugation; only the two middle phase-sine terms change sign. Their difference is (9). Thus the proof does not assume that the unsymmetrized sum of positive shape symbols already has zero boundary.</p>
+<h2 id="stationarity-kills-the-complete-rational-boundary">4. Stationarity kills the complete rational boundary</h2>
+<p>Define the source class</p>
+<pre><code>beta=(1/2) sum_(j in I) w_j([z_j]-[bar z_j])
+                in P(K)_Q.                     (10)</code></pre>
+<p>By (4), after torsion has been removed,</p>
+<pre><code>T_jr=B sum_l b_jrl U_l,     U_l=ell(u_l).</code></pre>
+<p>Equations (9) and (7) now give</p>
+<pre><code>delta beta
+  =sum_(j,r) w_j T_jr wedge S_jr
+  =B sum_l U_l wedge (sum_(j,r) w_j b_jrl S_jr)
+  =0.                                         (11)</code></pre>
+<p>Hence beta is in B(K)_Q. It is anti-invariant under complex conjugation and its regulator is EXACTLY</p>
+<pre><code>R_K(beta)=sum_(j in I) w_j D(z_j)=max_P V.        (12)</code></pre>
+<p>There is no undetermined additive multiple of a volume constant in (12): the symbols use their actual positive shapes and the regulator uses actual ideal-tetrahedron volume. If there are no positive atoms, beta=0 and the maximum is zero. If there are no quotient tangent variables, (4) makes every T_jr zero and the same proof works directly.</p>
+<p>This construction includes rational weights and affine constants of arbitrary denominators. Passing to Q coefficients removes the roots of unity in (4), the factor ell(-1) in (9), and the cleared exponent in (6). The argument does NOT remove that torsion integrally. No integral K-theory, integral Bloch boundary, or integral peripheral normalization is asserted.</p>
+<p>The ordered positive triples are uniquely selected by the maximum, even when some original wire coordinates are free. Thus (10) does not depend on choosing values for those flat coordinates. It is unchanged as a displayed symbol expression by a rational change of quotient coordinates; the coordinates are used to prove (11), not to define its shapes.</p>
+<p>There is also an elementary descent which removes the auxiliary phase field. Put</p>
+<pre><code>F_shape=Q(z_j,bar z_j : j in I) subset K.</code></pre>
+<p>The displayed expression beta already belongs to P(F_shape)_Q. The inclusion F_shape^times -&gt; K^times is injective; tensoring with Q preserves that injection. Exterior squares of vector spaces preserve injections as well (extend a basis of the smaller space to a basis of the larger one). Thus</p>
+<pre><code>exterior^2 U_(F_shape) -&gt; exterior^2 U_K</code></pre>
+<p>is injective. The image of delta beta is zero by (11), so its boundary was zero over F_shape itself. Consequently beta belongs to B(F_shape)_Q. This descent uses neither a presumed injection of Bloch groups nor a Galois or Hilbert-90 theorem. The phase coordinates merely provide a finite algebraic field in which the boundary calculation is transparent. For an empty atom list the class is zero over Q.</p>
+<h2 id="the-full-original-quantum-limit-is-a-bloch-regulator">5. The full original quantum limit is a Bloch regulator</h2>
+<p>For EVERY fixed robust actual positive Conway expression E, the <a href="actual_positive_conway_variational_limit.html">whole-source variational theorem</a> and the algebraic maximum theorem yield, along all levels and both parities,</p>
+<pre><code>lim_(N -&gt; infinity) (2pi/N)log Z_(E,N)
+    =2 max_(P_E) V_E
+    =R_(F_shape)(B_E),
+B_E=sum_(j in I_E)([z_j]-[bar z_j]) in B(F_shape)_Q. (13)</code></pre>
+<p>The weights here are all one and B_E=2 beta. Although its displayed symbol expression has integer coefficients, its proved zero-boundary statement is rational; possible integral torsion has not been checked. Z_(E,N) is the entire original source, with all colors and repeated-root normal directions retained. The class is selected by that exact source’s positive variational problem, not by choosing an arbitrary branch of an A-polynomial.</p>
+<p>The <a href="actual_conway_cap_sum_reduction.html">cap-sum reduction</a> is compatible with this construction. At a cap-closed product, the maximizing polytope is a Cartesian product, its final gate is flat, and the positive atom list is the union of the two lists. Thus, in a common number field, B_(cap FG)=B_(cap F)+B_(cap G). This agrees with the literal componentwise connected sum and exact source multiplication. It also shows why a nonzero Bloch regulator alone cannot certify a single complete hyperbolic complement.</p>
+<h2 id="the-remaining-geometric-question-is-now-more-precise">6. The remaining geometric question is now more precise</h2>
+<p>We have an actual source-selected RATIONAL BLOCH CLASS, and its regulator is the full quantum limit in (13). What is still missing for a broad hyperbolic-knot theorem is a proof that this regulator is the volume of the actual complement, for example by identifying the class with its marked geometric Bloch class or by supplying a source-compatible complete gluing certificate with the same volume.</p>
+<p>The vanishing in (11) is algebraic and global, but it is not a face pairing, an edge winding count, a cusp completeness equation, or a fundamental-class degree computation. It also does not identify K with a trace field, construct a generic-meridian A-torsor, or show that a formal source cycle is the preferred geometric representation. Those statements must not be inferred from the word “Bloch”.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_positive_source_bloch_regulator.py">formal wedge and stationarity certificates</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_positive_source_bloch_regulator_results.json">results</a>. The identities are uniform symbolic exterior-algebra calculations; finite numerical volumes are not used in their proof.</p>
+<p>Independent internal review: the primary agent read the full proof, independently expanded the conjugate-shape boundary and stationarity factorization, checked the five-term differential normalization and rational field scope, and replayed the symbolic audit successfully. The additional descent to the conjugation-stable shape field was checked separately: it uses exterior-square injectivity, not an unproved assertion that Bloch groups inject under field extension. The review leaves the marked manifold-class comparison open.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_positive_source_bloch_regulator.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-rational-bloch-group-and-regulator-convention">1. The rational Bloch group and regulator convention</a><a href="#the-algebraic-data-selected-by-the-source-maximum">2. The algebraic data selected by the source maximum</a><a href="#the-antisymmetric-shape-boundary">3. The antisymmetric shape boundary</a><a href="#stationarity-kills-the-complete-rational-boundary">4. Stationarity kills the complete rational boundary</a><a href="#the-full-original-quantum-limit-is-a-bloch-regulator">5. The full original quantum limit is a Bloch regulator</a><a href="#the-remaining-geometric-question-is-now-more-precise">6. The remaining geometric question is now more precise</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

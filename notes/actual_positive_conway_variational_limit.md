@@ -186,6 +186,16 @@ obtained from their angle sine rules, are algebraic as well. This is
 a precise finite algebraic critical-period construction. It does not
 by itself identify this circuit ideal with a knot's A-polynomial.
 
+The later [quotient-Hessian theorem](positive_source_algebraic_volume_period.md)
+removes the extra isolation hypothesis at a global maximum: after
+restricting to its minimal face and removing the rational flat kernel,
+the Hessian supplies isolation automatically. Thus all nonflat shapes
+at every robust source maximum are algebraic, even with boundary or
+nonunique wire coordinates. Its
+[conjugate-antisymmetrized symbol sum](actual_positive_source_bloch_regulator.md)
+is moreover a rational Bloch class with this maximum as regulator.
+These statements still do not provide the actual manifold incidence.
+
 Nor do (6)--(8) supply the missing global face identifications: they
 give positive angle triples, not yet the actual edge/peripheral
 equations of the diagram complement. A future geometric comparison

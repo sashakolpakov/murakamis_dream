@@ -21,6 +21,29 @@ proves forced-flat closure atoms and an explicit infinite nonhyperbolic
 meridian-insertion subfamily. These refine the critical path without
 asserting a general knot equality.
 
+The next [first-normal Ward reduction](actual_partner_first_normal_ward_reduction.md)
+first leaves at most three coherent currents for ALL supported sextuples;
+combining it with the actual Fourier partner involution reduces this
+to TWO, sharply: an exact rank-25 example retains two free components
+in the 27-dimensional Ward space. It bounds all first normals when two opposite pairs
+have equal folded labels. The independent
+[finite Fourier residue identity](actual_coherent_racah_tail_fourier_residues.md)
+controls genuine live tails with a repeated maximal face and proves
+the former all-high cotangent diagnostic. Its unique-maximal-face
+alternating residual and all higher normal orders remain open.
+
+On the geometric side the
+[cap-sum theorem](actual_conway_cap_sum_reduction.md) simultaneously
+splits actual links, original sources and whole angle polytopes at
+the appropriate two-punctured spheres. Positive-rate connected sums
+show that a nonzero maximum still does not certify hyperbolicity.
+For EVERY robust positive Conway source, the
+[quotient Hessian theorem](positive_source_algebraic_volume_period.md)
+now gives algebraic nonflat shapes even at boundary/nonunique maxima.
+The [antisymmetrized Bloch calculation](actual_positive_source_bloch_regulator.md)
+identifies its maximum with a rational Bloch regulator. This is a
+source class, not yet the marked fundamental class of the complement.
+
 ## 1. A concrete enlargement already proved
 
 The [varying-radius alias theorem](actual_pretzel_all_width_extension.md)

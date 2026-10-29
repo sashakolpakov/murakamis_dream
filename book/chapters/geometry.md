@@ -43,3 +43,18 @@ The positive Conway theorem already produces an explicit concave sum of ideal-te
 Some compiled expressions have polynomial growth and zero variational maximum. Thus positivity cannot serve as a criterion for hyperbolicity. A useful general extension must state the actual topological and geometric hypotheses under which the source polytope is the complement's angle slice.
 
 The [seam and topology analysis](../../notes/positive_conway_geometric_incidence.md) makes this obstruction explicit. Every final product closure forces three of the formal volume atoms to be flat. Moreover, the turned pure-run subfamily is an iterated meridian-insertion link: an exhibited punctured disk gives an annulus joining distinct cusp tori, excluding a complete finite-volume hyperbolic metric. These are source and topological facts, not deductions from a small quantum invariant. A broader comparison must first reduce the flat seams and state the appropriate topological restrictions.
+
+The [cap-sum reduction](../../notes/actual_conway_cap_sum_reduction.md) goes further: an actual two-punctured separating sphere splits every cap-closed product into componentwise connected sums. The quantum source factors and the angle polytope splits with it. This gives connected sums of theta links with strictly positive rate $4k v_8$, although the whole complement is not hyperbolic for $k\geq2$.
+
+## The maximum now has an algebraic source class
+
+The [algebraic optimizer theorem](../../notes/positive_source_algebraic_volume_period.md) applies to every rational affine ideal-angle problem with positive rational weights. On the smallest face containing the maxima, flat atoms contribute zero. The remaining Hessian is definite after quotienting by the rational directions that leave all nonflat angles unchanged. Exponentiated stationarity then proves that the nonflat shapes are algebraic, including boundary and nonunique maxima.
+
+The [Bloch regulator calculation](../../notes/actual_positive_source_bloch_regulator.md) makes a further distinction precise. The conjugate-antisymmetrized shape sum is a rational Bloch class, and its regulator is exactly the source maximum. The unsymmetrized sum has not been shown to be the fundamental class of the complement. Actual face pairings, winding, and peripheral marking remain necessary for that final geometric interpretation.
+
+For every fixed robust positive Conway expression, the proved full-source statement is
+
+$$\lim_{N\to\infty}\frac{2\pi}{N}\log Z_{E,N}
+=R_{F_E}(B_E),\qquad B_E=\sum_j([z_j]-[\overline{z_j}])\in B(F_E)_{\mathbb Q}.$$
+
+Here $F_E=\mathbb Q(z_j,\overline{z_j})$ is the conjugation-stable shape field. The regulator uses the specified complex embedding. Equality of this regulator with the actual complement volume remains the geometric step for a broader class.

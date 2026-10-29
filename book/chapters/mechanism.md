@@ -20,6 +20,8 @@ It does not yet bound every entry of the completed physical transport in the req
 
 An [exact partner-reflection theorem](../../notes/actual_racah_partner_reflection_identity.md) now proves that all 64 complementary color choices have the same normalized root value. It uses the actual reciprocal source coefficients and residues of channel projectors on a regular invariant lattice. The same work gives an exact counterexample to equality of first normal derivatives. Root-value symmetry therefore helps organize the source without removing the normal-transport problem.
 
+For the first derivative, the [Ward and Fourier reduction](../../notes/actual_partner_first_normal_ward_reduction.md) leaves at most two unresolved currents for any supported sextuple. The [finite Fourier identity](../../notes/actual_coherent_racah_tail_fourier_residues.md) controls nonempty tails when the largest face sum is repeated. With a unique largest face, it relates the residual to an actual complementary three-edge flip. The two remaining components are not fixed by these relations; no absolute-value estimate is substituted for their cancellation.
+
 ## Weighted Cauchy needs the right energy
 
 A useful inequality has the form

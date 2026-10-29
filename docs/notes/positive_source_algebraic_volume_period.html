@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Algebraic volume shapes at every positive-source maximum · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Positive Conway sources</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">General algebraic optimizer theorem</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/positive_source_algebraic_volume_period.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="algebraic-volume-shapes-at-every-positive-source-maximum">Algebraic volume shapes at every positive-source maximum</h1>
+<p>29 October 2026. This removes the isolated-complex-critical-point hypothesis from the algebraicity assertion for positive Conway sources. It also includes boundary maxima and nonunique optimizers. The nonflat tetrahedral shapes at the maximum are algebraic. Flat directions can remain free; they do not change this volume period.</p>
+<p>This is a theorem about the actual source’s already proved variational limit, not an identification of its atoms with the complement. The subsequent <a href="actual_positive_source_bloch_regulator.html">Bloch regulator theorem</a> uses this theorem and full constrained stationarity to prove that the conjugate-antisymmetrized shape sum has zero rational Bloch boundary. The geometric incidence and full-source transport gaps remain separate.</p>
+<h2 id="a-general-rational-angle-theorem">1. A general rational angle theorem</h2>
+<p>Let P be a nonempty compact rational polytope in a finite-dimensional real affine space. For finitely many indices j prescribe rational affine maps</p>
+<pre><code>alpha_j=(alpha_j1,alpha_j2,alpha_j3):P -&gt; closed angle simplex,
+alpha_jr&gt;=0, sum_r alpha_jr=1,</code></pre>
+<p>and positive rational weights w_j. Define</p>
+<pre><code>V(x)=sum_j w_j V_ideal(alpha_j(x)).                 (1)</code></pre>
+<p>Here V_ideal(a,b,c) is the volume of the positive ideal tetrahedron with angles pi a, pi b, pi c; its continuous extension vanishes on the boundary of the simplex. Let M be the nonempty maximum set of (1), and F the smallest face of P containing M.</p>
+<p><strong>Theorem.</strong> Let I consist of the atoms whose three angles are positive on the relative interior of F. Then:</p>
+<ol type="1">
+<li>Every atom outside I is flat throughout F and contributes zero.</li>
+<li>For each j in I, the complete angle triple is the SAME at every point of M. Its phases exp(pi i alpha_jr), and its positive ideal shape, are algebraic numbers.</li>
+<li>The maximizers form exactly the intersection of F with one affine fiber of the rational map x -&gt; (alpha_j(x))_(j in I).</li>
+<li>After choosing rational affine coordinates on the ambient space, M contains a point all of whose coordinate phases exp(pi i x_k) are algebraic. This does not assert that every optimizer has that property, or that the angles themselves are algebraic numbers.</li>
+</ol>
+<p>In particular, writing z_j for the common positive shapes,</p>
+<pre><code>max_P V = sum_(j in I) w_j D(z_j), z_j algebraic, Im z_j&gt;0. (2)</code></pre>
+<p>No actual triangulation, complete metric, or isolated critical point is an assumption of this statement. Those are different requirements for interpreting (2) as a manifold volume.</p>
+<h2 id="flat-atoms-and-the-exact-hessian-kernel">2. Flat atoms and the exact Hessian kernel</h2>
+<p>Concavity of each atom makes M convex. Choose x_* in the relative interior of M. It belongs to the relative interior of F. To see this, each defining inequality of P which vanishes at x_* vanishes throughout M: otherwise a small segment in M through its relative-interior point would cross that inequality. These are exactly the equalities defining the smallest containing face.</p>
+<p>An affine angle which is nonnegative on F and vanishes at x_* must vanish on all of F. Thus an atom with any zero angle at x_* is flat throughout F. Every other atom is positive on its relative interior.</p>
+<p>For a positive atom put c=1-a-b. Its negative Hessian in (a,b) is</p>
+<pre><code>-Hess V_ideal / pi^2
+   = [[cot(pi a)+cot(pi c), cot(pi c)],
+      [cot(pi c), cot(pi b)+cot(pi c)]].          (3)</code></pre>
+<p>Both diagonal entries are positive; for example the first is sin(pi b)/(sin(pi a)sin(pi c)). The determinant is exactly one, because cot(pi a)cot(pi b)+cot(pi b)cot(pi c) +cot(pi c)cot(pi a)=1. Thus (3) is positive definite.</p>
+<p>Let T be the rational tangent space of F and put</p>
+<pre><code>K={v in T : d alpha_j(v)=0 for every j in I}.      (4)</code></pre>
+<p>On the relative interior of F the negative Hessian of (1) has EXACTLY kernel K. Indeed it is a positive weighted sum of the positive forms (3) pulled back by the angle maps. A zero of the sum is a zero of each form. In particular K is a rational subspace independent of x.</p>
+<p>If two maximizers had different angles in an atom of I, their segment would give strict concavity for that atom and weak concavity for all others, contradicting maximality. This remains true if one endpoint is on the boundary: the segment next to x_* is positive, with the strictly negative second derivative (3). Therefore all angles in I are constant on M. Conversely any point of F with those same angles has the same value, since every other atom is flat there. This proves the exact fiber description in assertion 3.</p>
+<h2 id="remove-the-flat-kernel-before-exponentiating-stationarity">3. Remove the flat kernel before exponentiating stationarity</h2>
+<p>Choose a rational base point x_0 in the affine hull of F and rational bases of K and a complementary subspace H in T. Write</p>
+<pre><code>x=x_0+H y+K z.                                  (5)</code></pre>
+<p>The positive atoms depend only on y. At x_<em>, write these coordinates as (y_</em>,z_<em>). The critical equations in the y directions are valid: x_</em> is interior in F, so both signs of every small tangent variation are feasible. By (3),(4) the y-Hessian is negative definite.</p>
+<p>All positive angles have the form</p>
+<pre><code>alpha_jr = a_jr + sum_l b_jrl y_l,</code></pre>
+<p>with a_jr and b_jrl rational. Choose a positive integer B clearing all denominators of the b_jrl, and set u_l=exp(pi i y_l/B). Then</p>
+<pre><code>S_jr(u)=2 sin(pi alpha_jr)
+   = (eta_jr prod_l u_l^(B b_jrl)
+      -eta_jr^(-1) prod_l u_l^(-B b_jrl))/i,    (6)
+eta_jr=exp(pi i a_jr).</code></pre>
+<p>Thus S_jr is a Laurent polynomial over a cyclotomic number field. Every S_jr is strictly positive at u_*. Differentiating ideal volume gives dV=-pi sum_jr w_j log(S_jr) d alpha_jr. For an integer C clearing the rational coefficients w_j b_jrl, stationarity is</p>
+<pre><code>product_jr S_jr(u)^(C w_j b_jrl)=1, for each l.  (7)</code></pre>
+<p>Negative exponents are cleared only on the open set where all S_jr and u_l are nonzero. These are finite algebraic equations over a number field. No lost sign or logarithmic winding is used to select their solution: u_* is the point obtained from the positive maximum.</p>
+<p>The Jacobian of their left sides minus one, differentiated in y, at u_* is</p>
+<pre><code>-(C/pi) Hess_y V(y_*).                         (8)</code></pre>
+<p>It is invertible. The coordinate change y -&gt; u has invertible diagonal Jacobian, so the algebraic equations have invertible complex Jacobian in u at that point as well. Clearing the nonzero denominators only multiplies Jacobian rows by nonzero factors.</p>
+<p>For clarity, this proves algebraicity, rather than assuming it from uniqueness of a real optimum. Let k be the coefficient number field and L=k(u_<em>1,…,u_</em>h). Differentiating the algebraic equations over k and using the invertible Jacobian shows that every du_*l is zero in the module of differentials of L/k. A finitely generated field of characteristic zero with positive transcendence degree has nonzero differentials: a transcendence basis has independent differentials, and adjoining separably algebraic elements preserves that rank. Consequently L/k has transcendence degree zero and is a finite algebraic extension. The case h=0 is immediate from rational constant angles and requires no critical equations.</p>
+<p>Formula (6) now makes every visible angle phase algebraic. The ideal shape, in an ordering with angle pi a at 0 and pi b at 1, is</p>
+<pre><code>z=exp(pi i a) sin(pi b)/sin(pi c).              (9)</code></pre>
+<p>It has positive imaginary part and the prescribed angles, so (2) follows. Rational changes of the y coordinates preserve algebraicity of their phases by taking finite roots of nonzero algebraic numbers.</p>
+<p>Finally choose rational z sufficiently close to z_* that the point x_0+H y_*+K z remains in the relative interior of F. Openness there allows this choice. It is still a maximum by the exact fiber result, and all coordinate phases in (5) are algebraic. Free flat directions can equally well be chosen with transcendental phases; this explains why assertion 4 is an existence statement.</p>
+<h2 id="consequence-for-every-robust-conway-source">4. Consequence for every robust Conway source</h2>
+<p>The rational polytope, affine angle triples and positive whole-source limit are already proved in <a href="actual_positive_conway_variational_limit.html">the general Conway variational theorem</a>. Apply the theorem to its two leaf atoms and three product atoms, all with weight one. For EVERY fixed robust expression E, at both level parities and along the full sequence,</p>
+<pre><code>lim_(N -&gt; infinity) (2pi/N) log Z_(E,N)
+   = 2 sum_(j in I_E) D(z_j),
+z_j algebraic and Im z_j&gt;0.                    (10)</code></pre>
+<p>The set I_E and its shapes refer to the minimal maximizing face. They need not include every formal atom. In particular the forced-flat final seam is discarded for this period expression, without deleting any physical source term or auxiliary link component. If all atoms are flat, the right side is zero.</p>
+<p>This strengthens the earlier conditional algebraicity assertion: one need not separately assume an isolated complex solution, an interior maximum in the original polytope, or uniqueness of all wire coordinates. The definite Hessian on the quotient by K supplies the needed isolation automatically.</p>
+<p>The UNSYMMETRIZED expression sum_j [z_j] has not been proved to have zero Bloch boundary or the appropriate relative peripheral boundary. The <a href="actual_positive_source_bloch_regulator.html">separate wedge calculation</a> does prove that (1/2)sum_j([z_j]-[bar z_j]) is a rational Bloch cycle with regulator equal to the maximum. Neither this vanishing nor Hessian definiteness supplies face identifications or the marked fundamental class. The next geometric task is still to prove that the source regulator is the volume of the actual hyperbolic complement on a broad topologically specified class.</p>
+<h2 id="a-nonisolated-example-and-the-finite-checks">5. A nonisolated example and the finite checks</h2>
+<p>Consider the rational box 0&lt;=x&lt;=1/3, 0&lt;=y&lt;=1/2, 0&lt;=z&lt;=1 and the three atoms</p>
+<pre><code>(x,2x,1-3x), (y,1/2-y,1/2), (z,1-z,0).</code></pre>
+<p>The last atom is flat, so the maximum has a free z coordinate. The second has its unique maximum at y=1/4. For the first, stationarity and positivity give</p>
+<pre><code>sin(pi x) sin(2pi x)^2 = sin(3pi x)^3,
+4t=(4t-1)^3, t=cos(pi x)^2 in (1/4,1).        (11)</code></pre>
+<p>The cubic 64t<sup>3-48t</sup>2+8t-1 has exactly one root in that interval. The maximizing phase is algebraic by exp(pi i x)=sqrt(t)+i sqrt(1-t), although the whole optimizer set is a segment. Adding the rational inequality x&lt;=1/6 moves the maximum to that boundary face, with x=1/6 and the same free z. The theorem covers both cases without a global strictness assumption.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_positive_source_algebraic_volume_period.py">finite audit</a> checks the Hessian determinant identity, exact critical polynomial, its isolating interval, and the rank after removing the flat direction. These checks supplement the proof in sections 1–3; they do not identify a triangulation. An independent full analytical read by the geometry agent passed, including the boundary-face and rational-kernel steps and the absence of a claimed Bloch-cycle or manifold conclusion.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/positive_source_algebraic_volume_period.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#a-general-rational-angle-theorem">1. A general rational angle theorem</a><a href="#flat-atoms-and-the-exact-hessian-kernel">2. Flat atoms and the exact Hessian kernel</a><a href="#remove-the-flat-kernel-before-exponentiating-stationarity">3. Remove the flat kernel before exponentiating stationarity</a><a href="#consequence-for-every-robust-conway-source">4. Consequence for every robust Conway source</a><a href="#a-nonisolated-example-and-the-finite-checks">5. A nonisolated example and the finite checks</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

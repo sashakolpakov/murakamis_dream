@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A finite Fourier identity for coherent Racah normal tails · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Fourier and energy</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">Exact tail identity; repeated-face bound</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_coherent_racah_tail_fourier_residues.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-finite-fourier-identity-for-coherent-racah-normal-tails">A finite Fourier identity for coherent Racah normal tails</h1>
+<p>29 October 2026. This is an own finite algebraic identity for the actual retained <code>[2N]</code> current. It gives a uniform logarithmic relative bound when the largest face sum occurs at least twice, including genuinely nonempty high-partner tails. For arbitrary partner labels the identity retains a second alternating sum. No general bound on that residual, higher normal jets, or completed physical transport is asserted.</p>
+<h2 id="the-actual-tail-and-its-positive-core">1. The actual tail and its positive core</h2>
+<p>Use the symmetric quantum-factorial convention and the exact generic sum of <a href="actual_supported_racah_common_phase_and_normal_metric.html">the supported normal theorem</a>. Put <code>D=N-1</code>, <code>theta=pi/N</code>, <code>q=exp(i theta)</code>, <code>Q=q^2</code>, and</p>
+<pre><code>s_r=product_(u=1)^r 2 sin(u theta),  s_0=1.</code></pre>
+<p>For any partner of a supported folded sextuple let <code>F_i</code> be its four face sums and <code>Q_k</code> its three opposite sums. Assume the tail is live: <code>min Q_k&gt;2D</code>. Define</p>
+<pre><code>a_i=2D-F_i,  b_k=Q_k-2D,  c_k=D-b_k=3D-Q_k.</code></pre>
+<p>The exact face-deficit inequalities give</p>
+<pre><code>0&lt;=a_i&lt;=c_k&lt;=D-1 for EVERY i,k,
+sum_k c_k-sum_i a_i=D.                       (1)</code></pre>
+<p>Indeed <code>c_k-a_i=D-(Q_k-F_i)&gt;=0</code>; the equality follows from <code>sum F_i=sum Q_k</code>. Order the four <code>a_i</code> as</p>
+<pre><code>A=a_1&lt;=B=a_2&lt;=a_3&lt;=a_4.</code></pre>
+<p>The true positive core, indexed by <code>z=2D-v</code>, is</p>
+<pre><code>C=sum_(v=0)^A C_v,
+C_v=(1/N) product_k s_(c_k-v)
+                 /[s_v product_i s_(a_i-v)] &gt;0.              (2)</code></pre>
+<p>This is the same <code>C(q)</code> appearing in the ACTUAL generic identity</p>
+<pre><code>(-1)^D S/[N]=C(zeta)+[2N] T(zeta).             (3)</code></pre>
+<p>The true root current is</p>
+<pre><code>T(q)=-2 sin(theta) N^2 sum_(k=0)^(D-c_max-1)
+   (-1)^k s_k /
+   [product_i s_(a_i+1+k) product_j s_(D-c_j-1-k)].            (4)</code></pre>
+<p>All displayed factorial arguments are between zero and <code>D</code>. No invalid factorial has been assigned a value or silently removed.</p>
+<h2 id="exact-coherent-fourier-reduction">2. Exact coherent Fourier reduction</h2>
+<p>Write</p>
+<pre><code>H_r=sum_(u=1)^r cot(u theta), H_0=0,
+J_v=H_v+sum_k H_(c_k-v)-sum_i H_(a_i-v).</code></pre>
+<p>Then the following identity is exact at every level, of either parity:</p>
+<pre><code>T(q)=-sin(theta) sum_(v=0)^A C_v J_v
+      +(2 sin(theta)/N) sum_(v=A+1)^B (-1)^(A+v) E_v,          (5)</code></pre>
+<p>where</p>
+<pre><code>E_v=s_(v-A-1) product_k s_(c_k-v)
+                /[s_v product_(i=2)^4 s_(a_i-v)] &gt;0.         (6)</code></pre>
+<p>An empty last sum is zero. In particular it is absent when <code>A=B</code>, equivalently when the largest face sum occurs at least twice.</p>
+<p>The second sum is essential. For <code>N=5</code> and partner labels <code>(a,b,c,d,e,f)=(2,2,3,3,2,2)</code>, one has the ordered arrays <code>a_i=(0,1,1,2)</code>, <code>c_k=(2,3,3)</code>. The first sum in (5) is zero, whereas the retained residual gives <code>T(q)=-1</code>. Dropping it would incorrectly assert zero current.</p>
+<h2 id="own-finite-algebraic-proof">3. Own finite algebraic proof</h2>
+<p>This proof only uses polynomial division, finite sums of roots of unity, and the elementary sine-factorial reflection <code>s_r s_(D-r)=N</code>.</p>
+<p>Let</p>
+<pre><code>R(x)=product_k product_(u=1)^(c_k)(1-Q^u x)
+                  / product_i product_(u=1)^(a_i)(1-Q^u x),
+f(x)=x R(x)/(1-x),
+K=sum_k c_k(c_k+1)/2-sum_i a_i(a_i+1)/2,
+beta=(2 sin(theta)/N) i^(N-2) q^(-K).</code></pre>
+<p>In (4) put <code>j=k+1</code> and use the sine-factorial reflection on its three descending denominators. Converting every remaining sine by <code>2 sin(u theta)=i q^(-u)(1-Q^u)</code> gives exactly</p>
+<pre><code>T(q)=beta sum_(j=1)^(D-c_max) f(Q^j).          (7)</code></pre>
+<p>The phase is important: the alternating sign and the degree difference in (1) leave <code>q^(2j)=Q^j</code>, the numerator <code>x</code> in <code>f</code>.</p>
+<p>After cancellation, <code>f</code> has SIMPLE poles precisely at</p>
+<pre><code>r_v=Q^(-v),  0&lt;=v&lt;=A.</code></pre>
+<p>For <code>1&lt;=u&lt;=A</code> the numerator has three factors <code>1-Q^u x</code> and the denominator has four. Above <code>A</code> there are no poles because every <code>c_k</code> is at least every <code>a_i</code>. Its polynomial part has degree at most <code>D=N-1</code>: the numerator degree minus denominator degree is <code>D</code>.</p>
+<p>Let</p>
+<pre><code>B_v=[(1-x/r_v) f(x)]_(x=r_v),
+L_v(x)=(1-x/r_v) f(x).</code></pre>
+<p>Ordinary partial fractions give a polynomial <code>P</code> of degree at most <code>N-1</code> with</p>
+<pre><code>f(x)=P(x)+sum_v B_v/(1-x/r_v).</code></pre>
+<p>Since <code>f(0)=0</code>, one has <code>P(0)=-sum_v B_v</code>. Sum this identity over all <code>N</code>th roots except its pole set. For a nonconstant monomial of degree less than <code>N</code> the full root sum is zero, and</p>
+<pre><code>sum_(x^N=1,x!=r_v) 1/(1-x/r_v)=(N-1)/2.</code></pre>
+<p>The finite regular parts at the other omitted roots cancel the corresponding partial-fraction corrections. Thus</p>
+<pre><code>sum_(x^N=1,x not a pole) f(x)
+   =sum_(v=0)^A [r_v L_v&#39;(r_v)-(N+1)B_v/2].                 (8)</code></pre>
+<p>For example, the finite regular part of <code>f</code> at <code>r_v</code> is <code>-r_v L_v'(r_v)</code>. This also checks the constant <code>(N+1)/2</code> in (8).</p>
+<p>Direct conversion of the unit factors gives, for EVERY <code>v</code>,</p>
+<pre><code>B_v=i^(-D) q^K N C_v,
+r_v L_v&#39;(r_v)/B_v=(N+1)/2-(i/2)J_v.         (9)</code></pre>
+<p>Here is an explicit verification rather than an assumed residue sign. For <code>v&gt;=1</code>, set <code>(Q;Q)_r=product_(u=1)^r(1-Q^u)</code>. Cancelling the three numerator and four denominator zero factors gives</p>
+<pre><code>B_v=(-1)^v Q^[v(v-1)/2]
+       product_k (Q;Q)_(c_k-v)
+          /[(Q;Q)_v product_i (Q;Q)_(a_i-v)].</code></pre>
+<p>Converting these factorials to sines leaves the phase <code>i^(-D) q^(K-vN)(-1)^v=i^(-D)q^K</code>, proving the first part of (9). For <code>v=0</code> it is immediate from <code>R(1)</code>. The logarithmic derivative of a unit factor is</p>
+<pre><code>-Q^w/(1-Q^w)=1/2-(i/2)cot(w theta).</code></pre>
+<p>After removing the pole, the signed number of unit factors is <code>N-1</code>, and the leading factor <code>x</code> contributes one. The real part is therefore <code>(N+1)/2</code>. The negative indices <code>1-v,...,-1</code> and the factor <code>1-x</code> contribute <code>H_v</code>, while the remaining positive indices contribute the other seven sums in <code>J_v</code>. This proves the second part of (9). Since <code>beta B_v=-2i sin(theta) C_v</code>, (8) contributes exactly the first term of (5).</p>
+<p>It remains to compare (8)’s root set with (7)’s ACTUAL finite range. For roots <code>x=Q^(-v)</code> outside the range in (7), cancellation shows:</p>
+<ul>
+<li><code>0&lt;=v&lt;=A</code>: these are precisely the omitted poles;</li>
+<li><code>A&lt;v&lt;=B</code>: the regular value can be nonzero;</li>
+<li><code>B&lt;v&lt;=c_max</code>: the regular value is zero.</li>
+</ul>
+<p>The last assertion follows by counting factors: above <code>B</code>, at most two denominator factors remain while at least three numerator factors remain up to <code>a_4</code>; beyond <code>a_4</code>, no denominator factors remain, and at least one numerator factor remains up to <code>c_max</code>. For the middle range the exact unit-factor conversion gives</p>
+<pre><code>beta f(Q^(-v))=(2 sin(theta)/N)(-1)^(A+v+1) E_v.              (10)</code></pre>
+<p>One can verify (10) before conversion using</p>
+<pre><code>f(Q^(-v))=(-1)^(A+1) Q^[vA-A(A+1)/2]
+   (Q;Q)_(v-A-1) product_k (Q;Q)_(c_k-v)
+    /[(Q;Q)_v product_(i=2)^4 (Q;Q)_(a_i-v)].</code></pre>
+<p>Subtracting these extra regular nodes from (8) proves (5), including its residual sign. This is a finite proof for all arrays satisfying (1), not an inference from finitely many knots or levels.</p>
+<h2 id="a-proved-nonempty-tail-first-normal-bound">4. A proved nonempty-tail first-normal bound</h2>
+<p>Suppose <code>A=B</code>. Since <code>H_r=H_(D-r)</code> and positive cotangents obey <code>cot(u theta)&lt;=1/(u theta)</code> for <code>u&lt;N/2</code>,</p>
+<pre><code>0&lt;=H_r&lt;=(N/pi)(1+log N),  0&lt;=r&lt;=D.</code></pre>
+<p>Equations (2),(5) therefore give the uniform coherent bound</p>
+<pre><code>|T(q)| &lt;= 8(1+log N) C(q).                  (11)</code></pre>
+<p>Unlike an estimate of the absolute summands in (4), this uses the actual cancellations. The factor 8 is deliberately nonsharp. Together with the existing positive-core jet estimate and the exact normal derivative</p>
+<pre><code>dot G(q)=dot C(q)+4N/(q-q^-1) T(q),
+G=(-1)^D S/[N],  dot=D_(log zeta),</code></pre>
+<p>it proves, with an absolute constant <code>C_*</code>,</p>
+<pre><code>|dot G(q)| &lt;= C_* N^2(1+log N) C(q).         (12)</code></pre>
+<p>Indeed the sharper form before <code>sin(theta)&lt;=pi/N</code> is applied in (11) cancels the denominator in <code>4N/(q-q^-1)</code> directly. The analytic face factors have the same unit-factor logarithmic bound. Hence for this entire repeated-maximal-face class, the ACTUAL normalized squared scalar and its local positive square root satisfy</p>
+<pre><code>K(q)=W_N^2,
+|dot K(q)| &lt;= C_* N^2(1+log N) W_N^2,
+H(q)=W_N,
+|dot H(q)| &lt;= C_* N^2(1+log N) W_N.           (13)</code></pre>
+<p>Their first inverse jets have the corresponding reciprocal bounds. This conclusion includes live <code>[2N]</code> currents; it does not extend to higher generic normal orders merely by differentiating (5), which is an identity on the fixed cyclotomic fiber.</p>
+<h2 id="the-former-all-high-diagnostic-is-now-a-theorem">5. The former all-high diagnostic is now a theorem</h2>
+<p>Take <code>N=3m+1</code> and all six high spins equal to <code>2m</code>. Then <code>a_i=0</code>, <code>c_k=m</code>, <code>A=B=0</code>, and <code>C=s_m^3/N</code>. Equation (5) proves EXACTLY</p>
+<pre><code>T(q)/C(q)=-3 sin(theta) sum_(u=1)^m cot(u theta).              (14)</code></pre>
+<p>More generally, every live partner array with all four faces equal <code>2D</code> has <code>a_i=0</code>; (14) becomes</p>
+<pre><code>T(q)/C(q)=-sin(theta) sum_k sum_(u=1)^(c_k) cot(u theta).</code></pre>
+<p>Thus the finite Fourier proof is not confined to the equilateral sequence. The former numerical observations remain archived as their historical record; (14) now follows from the own uniform identity.</p>
+<h2 id="the-residual-is-an-exact-partner-involution">6. The residual is an exact partner involution</h2>
+<p>For a unique minimum <code>A&lt;B</code>, define new arrays</p>
+<pre><code>a*=(A,D-c_1+A,D-c_2+A,D-c_3+A),
+c*=(D-a_2+A,D-a_3+A,D-a_4+A).                (15)</code></pre>
+<p>They again satisfy (1), have the SAME unique minimum <code>A</code>, and applying (15) twice returns the original arrays up to permutation. Substitute <code>v=A+1+k</code> in the residual in (5), and apply <code>s_r s_(D-r)=N</code> to its three numerator factorials. The three factors of <code>N</code> cancel its prefactor exactly. The result is the ACTUAL tail formula (4) for <code>(a*,c*)</code>, with no extra factor or sign. Therefore</p>
+<pre><code>T(a,c)-T(a*,c*)=-sin(theta) sum_(v=0)^A C_v J_v.               (16)</code></pre>
+<p>Moreover the same factorial reflection proves</p>
+<pre><code>C*_v=C_(A-v),  C*=C,  J*_v=-J_(A-v).          (17)</code></pre>
+<p>The last equality also follows directly from <code>H_(D-r)=H_r</code>. Thus the difference in (16) is logarithmically bounded relative to <code>C</code>, whereas this involution alone leaves the average of the two currents undetermined. Repeated application is not a contraction.</p>
+<p>For the actual tetrahedral labels, this is an actual PARTNER move, not just a transformation of abstract factorial arrays. If the unique largest face is <code>F_1=a+b+e</code>, retain those three edges and replace its complementary edges by</p>
+<pre><code>(c,d,f) -&gt; (D-c,D-d,D-f).                    (18)</code></pre>
+<p>The unchanged face sum is <code>F_1</code>; the other new face sums are the three numbers <code>2D-Q_k+F_1</code>, and the new opposite sums are <code>2D+F_1-F_i</code> for <code>i!=1</code>. These are exactly (15). They again have the same unique largest face, because the original tail is live. The other choices follow by tetrahedral relabeling.</p>
+<p>In particular (16) controls a difference of the full ACTUAL first normals, not merely a difference of bare root tails. Both core germs have polynomial logarithmic derivatives, their root cores agree by (17), and the four face factors also have polynomial logarithmic derivatives. Differentiating (3) for each branch therefore gives</p>
+<pre><code>|dot K_B(q)-dot K_(B*)(q)|
+                   &lt;= C_* N^2(1+log N) W_N^2.               (19)</code></pre>
+<p>No equality of the two generic normal germs is asserted. Combining these controlled three-edge differences with other exact source relations is a possible next step; (16) by itself does not fix the common first-normal component.</p>
+<h2 id="what-the-general-residual-still-requires">7. What the general residual still requires</h2>
+<p>For a unique largest face, the last sum in (5) is still alternating. No polynomial relative bound on its absolute envelope has been proved here. Positivity of the residues does not authorize replacing this residual by its absolute sum. The exact formula exposes the partner involution and proves the repeated-maximal-face class, but it does not close the general first-normal transport problem. The transformed summation interval need not be shorter than the original one.</p>
+<p>The identity holds for abstract arrays (1) as well as actual partner branches. Applying it to a source retains all original generic normalization, peripheral factors and marked exterior data through the already proved coefficient theorem. It does not alone supply a positive completed recoupling metric or identify a global complement.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_coherent_racah_tail_fourier_residues.py">exact finite-field Fourier and tail checks</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_coherent_racah_tail_fourier_residues_results.json">recorded results</a>.</p>
+<p>Independent full analytical review of the Fourier residue identity, phase conversion, retained residual and first-normal scope passed. The exact audit freshly replayed 13,132 balanced arrays and 32 all-high identities. The uniform proof is the algebraic argument above; these finite checks are supplementary.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_coherent_racah_tail_fourier_residues.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-tail-and-its-positive-core">1. The actual tail and its positive core</a><a href="#exact-coherent-fourier-reduction">2. Exact coherent Fourier reduction</a><a href="#own-finite-algebraic-proof">3. Own finite algebraic proof</a><a href="#a-proved-nonempty-tail-first-normal-bound">4. A proved nonempty-tail first-normal bound</a><a href="#the-former-all-high-diagnostic-is-now-a-theorem">5. The former all-high diagnostic is now a theorem</a><a href="#the-residual-is-an-exact-partner-involution">6. The residual is an exact partner involution</a><a href="#what-the-general-residual-still-requires">7. What the general residual still requires</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>
