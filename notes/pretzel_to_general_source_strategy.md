@@ -107,3 +107,32 @@ The next decisive estimate is therefore the sharp energy of the
 coherently transported source, with a nonzero geometric overlap.
 The full-support boundary theorem is a completed input to that work;
 it is not yet the general volume equality.
+
+## New local transport and geometry inputs
+
+The [general actual inverse kernel](actual_general_four_port_single_racah_kernel.md)
+now has a source-normalized one-sum expression and an exact finite
+conversion to the seven-factorial convention. Its row/column gauge
+to the four-face scalar normalization is explicit. The
+[supported scalar theorem](actual_supported_racah_common_phase_and_normal_metric.md)
+keeps the common root phase and bounds every fixed generic normal
+of the low-fold scalar at polynomial relative cost.
+
+The [local hyperideal geometry](actual_four_port_hyperideal_angle_volume.md)
+proves the actual volume and all six length derivatives of that
+normalized action. This supplies a sharp local candidate density
+for weighted Cauchy. It is not the full confluent operator metric:
+paired coefficients have genuine poles before their partners are
+combined, and the high-partner [2N] terms have nonzero normal currents.
+
+The four supported faces alone also fail to determine a global
+geometric saddle: every interior color derivative of the normalized
+action is positive. The missing global incidence/boundary constraints
+are therefore substantive, not just a volume normalization constant.
+
+The [positive Conway variational theorem](actual_positive_conway_variational_limit.md)
+retains a complementary route with exact global support. It proves
+an all-level whole-source limit and a concave angle problem for every
+fixed robust expression. Its integer-semigroup argument gives
+every-level survival directly, but its angle problem still needs
+an actual geometric gluing certificate.

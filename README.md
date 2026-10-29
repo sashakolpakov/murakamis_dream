@@ -22,6 +22,10 @@ The **generic trivalent Racah source identity** now expresses the actual nested-
 
 The main route extends the proved pretzel argument: whole-source growth control, weighted Cauchy, nonzero geometric overlap, and the full Casson–Rivin certificate. Cube calculations and alternative ideas are retained. A new exact Conway-tree construction gives strictly positive whole original sources at all levels N>=3, while a genuine-turn calculation shows why one physical reflection metric cannot propagate unchanged. Neither result is presented as a general hyperbolic-volume equality.
 
+The latest **general four-port formula** expresses the actual inverse recoupling coefficient as a single normalized Racah sum, retaining its generic parameter dependence and root normal terms. For the supported folded scalar, an independently proved **uniform local volume theorem** identifies its logarithm with N/pi times the actual hyperideal tetrahedron volume, with O(log N) error throughout the supported domain. The local volume relationship has substantial prior literature, recorded in a coverage-only comparison. High-partner normal transport and the global source constraints remain open.
+
+For every fixed expression in the specified **positive Conway class**, the whole original source now has an all-level variational limit: (2pi/N) log Z tends to twice the maximum of an explicit concave sum of ideal-tetrahedron volumes. All colors and source normal terms are retained. Proving that this angle problem describes the actual complement is still necessary; a positive source alone does not imply hyperbolicity.
+
 The unfilled complete augmented volume V_s and the filled source volume V_src,s(p) are different. The broader task—original-source control and volume equality for arbitrary hyperbolic knots or arbitrary augmented graphs—remains open. The exact trivalent complete-circle vertex kernel records progress toward branching, without asserting a new branched-graph volume limit. Exploratory calculations, counterexamples to intermediate proposals, and historical checkpoints are retained with their own scope.
 
 ## Start here
@@ -29,6 +33,12 @@ The unfilled complete augmented volume V_s and the filled source volume V_src,s(
 - [Current general frontier](notes/general_equality_frontier.md)
 - [Recent verified advances and remaining full-source gaps](notes/recent_advances_2026_10_29.md)
 - [Extending the proved pretzel argument](notes/pretzel_to_general_source_strategy.md)
+- [Preserved research routes, including cube ideas and their limits](notes/research_routes_and_preserved_ideas.md)
+- [General actual four-port single Racah kernel](notes/actual_general_four_port_single_racah_kernel.md)
+- [Supported scalar positivity, normal bounds, and retained partner currents](notes/actual_supported_racah_common_phase_and_normal_metric.md)
+- [Uniform scalar asymptotic and actual hyperideal tetrahedron volume](notes/actual_four_port_hyperideal_angle_volume.md)
+- [Whole positive Conway source and its all-level variational limit](notes/actual_positive_conway_variational_limit.md)
+- [Coverage of local Racah and hyperideal-volume results](notes/literature_hyperideal_racah_volume_coverage.md)
 - [Exact weighted three-port sewing and a projected transfer test](notes/actual_three_port_cauchy_transport_and_cube_kernel.md)
 - [Polynomial boundary Gram costs on the whole supported domain](notes/actual_whole_support_boundary_gram_envelope.md)
 - [Positive whole original sources for Conway trees](notes/actual_positive_complete_circle_conway_trees.md)
@@ -107,6 +117,10 @@ python3 experiments/audit_actual_generic_trivalent_racah_source_identity.py
 python3 experiments/audit_actual_whole_support_boundary_gram_envelope.py
 python3 experiments/audit_actual_positive_complete_circle_conway_trees.py
 python3 experiments/audit_actual_turned_circle_reflection_inertia.py
+python3 experiments/audit_actual_general_four_port_single_racah_kernel.py
+python3 experiments/audit_actual_supported_racah_common_phase_and_normal_metric.py
+python3 experiments/audit_actual_four_port_hyperideal_angle_volume.py
+python3 experiments/audit_actual_positive_conway_variational_limit.py
 python3 experiments/audit_actual_six_port_divided_power_source_kernel.py
 python3 experiments/audit_general_augmented_graph_source_extension.py
 python3 experiments/audit_actual_complete_circle_nodal_energy_and_belt_sewing.py

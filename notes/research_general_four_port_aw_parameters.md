@@ -1,10 +1,17 @@
-# Research lead: generic four-port AW parameters, not a proved source kernel
+# Historical research lead: generic four-port AW parameters (now completed)
 
-29 October 2026. This preserves a possible extension of the completed
+29 October 2026. Completion update: the general actual source kernel
+and its exactly normalized seven-factorial conversion are now PROVED in
+[the generic all-port theorem](actual_general_four_port_single_racah_kernel.md).
+This historical research lead records the original parameter proposal;
+it is not an independent proof and does not add a positivity claim.
+
+The original proposal preserved a possible extension of the completed
 [physical tetrahedral source identity](actual_generic_trivalent_racah_source_identity.md).
-It is NOT a proved formula for a general recoupling matrix, a root
-positivity theorem, or an asymptotic input. No generic source gauge
-or normalization has yet been established here.
+At that stage it was not a source formula or an asymptotic input;
+the generic gauge and normalization were still missing. They are
+now established in the linked theorem, with root positivity and
+energy estimates still explicitly separate.
 
 Use generic q, Q=q^2, and ordinary four-port spin labels a,b,c,d.
 The actual left and right intermediate ranges are
@@ -41,7 +48,7 @@ the already PROVED generic six-head theorem. In that specialization
 the polynomial degree is b_source, and the affine operator scale is
 q^(d_phys+1)Q^b_source. This consistency check is not a general proof.
 
-The remaining concrete steps would be: prove the actual general
+At the proposal stage the remaining concrete steps were: prove the actual general
 Jacobi diagonal and off-diagonal product certificate from the typed
 Fricke relations; derive its diagonal source gauge from the true
 first-component-one Clebsch columns; and evaluate the actual endpoint
@@ -52,3 +59,10 @@ cyclic clock, which would be the independent source to compare.
 All generic high channels and pole-canceling root normals must be
 retained before any specialization. Distinct spectra, formal matching
 of (2), or named polynomial symmetry alone do not prove this bridge.
+
+Those generic source/gauge/normalization steps, including the
+seven-factorial comparison and finite normal budget, are now supplied
+by the linked completion. The next open tasks concern coherent
+high-partner metric/jet transport and actual global source incidence,
+not this finite identity. This historical proposal remains available
+to distinguish the initial heuristic from its later proof.

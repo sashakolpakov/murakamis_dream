@@ -3,6 +3,34 @@
 29 October 2026. This records the current internal research status.
 The general volume conjecture remains open.
 
+## A general local source-to-volume dictionary
+
+The [actual four-port kernel](actual_general_four_port_single_racah_kernel.md)
+now has a proved single-sum formula and seven-factorial conversion,
+including its physical normalization, phases and bounded normal order.
+The [supported scalar theorem](actual_supported_racah_common_phase_and_normal_metric.md)
+supplies common phase and the positive face normalization. The
+[hyperideal geometry theorem](actual_four_port_hyperideal_angle_volume.md)
+identifies its normalized action with an actual truncated-tetrahedron
+volume and proves all six length derivatives.
+
+This is a local geometric input to the general Cauchy route. The
+gauge can be singular on paired channels, and high partners retain
+extra normal currents. Moreover the local support inequalities alone
+maximize at the octahedral boundary. Full marked transport and the
+actual global edge/boundary constraints still need to be established.
+
+## A whole-source limit for positive Conway expressions
+
+The [variational theorem](actual_positive_conway_variational_limit.md)
+proves a full-sequence limit for every fixed robust positive Conway
+expression, with every original circle color and normal retained.
+It equals twice a specified concave ideal-angle maximum. An additive
+integer-support argument supplies the lower bound at every level,
+including boundary maxima. The angle problem has explicit algebraic
+critical equations, but its identification with the actual complement
+is not yet proved in general. Some expressions have zero growth.
+
 ## Exact positivity in the original source
 
 The [Newton multiplication theorem](actual_positive_newton_multiplication.md)

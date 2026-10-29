@@ -7,6 +7,14 @@ including high root partners. The coefficients are bilinear ribbon
 coefficients, not a unitary or positive 6j matrix. No quoted recoupling
 formula is a premise.
 
+Single-sum completion: the independent source construction below is
+now evaluated by the
+[generic all-port single Racah theorem](actual_general_four_port_single_racah_kernel.md),
+including its exact seven-factorial prefactor, half-integral-spin
+cyclic sign and retained root normals. The two-sum formula here is
+preserved as an independent actual-source proof and audit input;
+it is no longer the final unresolved summation gate.
+
 The construction supplies an exact local identity before root
 specialization. Its explicit pole bookkeeping retains the normal
 data needed in the original marked source. A positive or asymptotic

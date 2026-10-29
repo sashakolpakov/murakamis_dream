@@ -5,6 +5,11 @@ quantum equality, with the right side proved to be the actual hyperbolic
 volume. The previous long-pretzel result is an established application,
 not the endpoint of this broader goal.
 
+The [research-routes index](research_routes_and_preserved_ideas.md)
+preserves the cube constructions and other approaches, including their
+counterexamples and unresolved extensions. A narrower proved scope is
+recorded without discarding the idea.
+
 ## 1. A concrete enlargement already proved
 
 The [varying-radius alias theorem](actual_pretzel_all_width_extension.md)
@@ -450,6 +455,27 @@ and nonzero geometric overlap; cheap local boundary costs alone do
 not imply either. Cube calculations are retained as concrete tests
 of the required global core contribution.
 
+The [general four-port inverse kernel](actual_general_four_port_single_racah_kernel.md)
+now has a source-normalized single balanced sum, with a proved finite
+conversion to the seven-factorial Racah expression. It includes every
+generic external highest weight and its actual cyclic sign. The
+[supported scalar theorem](actual_supported_racah_common_phase_and_normal_metric.md)
+proves common phase, positive face normalization and polynomial
+relative fixed jets in the low-fold integer-spin chamber. The
+[local geometry theorem](actual_four_port_hyperideal_angle_volume.md)
+identifies its optimized normalized action with the actual truncated
+hyperideal tetrahedron volume, including all six edge-length
+derivatives. The diagonal source gauges are explicit, but can be
+singular on paired root channels. High partners have genuine [2N]
+normal tails, so this is not yet a whole marked recoupling norm.
+
+The geometry also locates a specific global issue: increasing any
+interior color increases this local volume. The four face supports
+alone therefore maximize at the regular octahedral corner, with no
+interior critical point. The actual edge constraints and boundary
+potentials must come from the global source; they cannot be omitted
+from the Casson--Rivin comparison.
+
 The [graphic spin-one model](actual_nc_spin_one_flow_order_certificate.md)
 proves an exact generic flow-polynomial formula. It determines the
 first-normal order for every connected original graph at N=3 and
@@ -481,6 +507,17 @@ nilpotent, belongs to its positive cone. Genuine turns, multiplication
 and both actual closures preserve the cone. A finite support rule
 decides strict nonvanishing for a supplied typed circuit. This does
 not assert that every multiport graph has such a decomposition.
+
+For the robust actual Conway class, the
+[variational limit theorem](actual_positive_conway_variational_limit.md)
+now proves a full-sequence limit for the WHOLE original scalar:
+2pi log Z/N tends to twice a prescribed concave ideal-angle maximum.
+Its additive support semigroup and feasible states at every level
+supply the lower bound even at boundary maxima, with both parities
+and no selected color sector. Its local angle triples are not yet
+the actual face/edge incidence of the complement. Some expressions
+have exactly polynomial growth, so no universal hyperbolicity or
+manifold-volume equality is inferred from this positive class.
 
 There is a primitive-core application beyond theta. The
 [literal odd central cube reduction](actual_odd_central_cube_reflection_packet.md)

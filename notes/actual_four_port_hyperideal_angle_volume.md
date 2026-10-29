@@ -1,0 +1,518 @@
+# The saturated four-port factorial action is a hyperideal tetrahedron volume
+
+29 October 2026. The positive FACE-NORMALIZED Racah partition has an
+explicit local geometric action. Six folded Casimir labels determine
+the six dihedral angles of a truncated hyperideal tetrahedron; the
+four supported face sums are precisely its four vertex-angle conditions.
+The optimized action equals its actual hyperbolic volume divided by pi.
+This is proved here from a Lorentz Gram construction, finite rational
+identities and a direct first-variation calculation. No asymptotic 6j
+volume theorem is an input.
+
+The face normalization is essential. This note does not identify an
+arbitrary physical recoupling energy with that normalization, discard
+high partners/normals, or infer a global knot triangulation from one
+local tetrahedron. The actual four-port source kernel and its weighting
+must be matched separately.
+
+## 1. The exact local angle dictionary and positive scalar action
+
+Order the six colors as (a,b,c,d,e,f). The four vertex triples and
+three opposite quadrilateral sums are
+
+    F=(a+b+e, c+d+e, a+d+f, b+c+f),
+    Q=(a+b+c+d, a+c+e+f, b+d+e+f).                (1)
+
+For the geometric theorem first take real scaled colors in
+
+    0<a,b,c,d,e,f<1/2, every F_i>1.               (2)
+
+Put alpha_a=pi-2pi a, and similarly for the other five. These angles
+are in (0,pi), and at each of the four indicated vertices
+
+    sum_incident alpha=3pi-2pi F_i<pi.            (3)
+
+Thus each vertex will be hyperideal, with a geodesic polar truncation
+triangle of area pi-sum alpha=2pi(F_i-1). All triangle deficits
+F_i-2(color in that face) are strictly between 0 and 1.
+
+The source-compatible quantum scaling is EXACTLY
+
+    a=(j_a+1/2)/N, alpha_a=pi-(2j_a+1)pi/N,
+    c_(j_a)=q^(2j_a+1)+q^(-2j_a-1)=-2cos alpha_a. (4)
+
+If the six folded integer labels are <=floor((N-1)/2) and every
+face sum is >=N-1, then (3) is at most pi-pi/N. Its truncation
+triangle area is (2pi/N)(faceSum-(N-1)+1/2). The only zero edge
+angles are the odd simple Steinberg labels. They are treated by
+continuous limiting geometry, not as strictly positive interior
+tetrahedral angles. These are internal Casimir angle coordinates;
+(4) is not an auxiliary-meridian identification.
+
+Let L(t)=integral_0^t log|2sin pi u|du, with period 1. On the
+interval max F_i<Z<min Q_k define
+
+    A(Z)=L(Z-1)-sum_(i=1)^4 L(Z-F_i)
+                         -sum_(k=1)^3 L(Q_k-Z),
+    M=(1/2)sum_faces [sum_(edges in face)L(F_i-2edge)-L(F_i-1)],
+    Psi=max_Z A(Z)+M.                            (5)
+
+The interval is nonempty: every Q_k-F_i is a positive triangle
+deficit from one of the other faces. It lies in (1,2).
+
+For reference the finite positive scalar producing (5) is
+
+    R_N=N sum_(max faceSum<=z<=min quadSum)
+       s_(z-(N-1)) /
+         {product_faces s_(z-faceSum) product_quads s_(quadSum-z)},
+    D_face=product_(edges in face)s_(faceSum-2edge)
+                                       /[N s_(faceSum-(N-1))],
+    W_N=R_N sqrt(product_faces D_face).           (6)
+
+All factors in (6) are positive. It is the root of the explicitly
+normalized squared generic factorial expression, not the bare Racah
+sum. The phase-coherent root sum follows because its numerator has
+exactly one [N] zero and its seven denominator indices are <N.
+The finite phase/metric statements are proved in
+[the supported Racah theorem](actual_supported_racah_common_phase_and_normal_metric.md).
+For the shifted scaled variables (4), use Z=(z+7/4)/N:
+
+    Z-F_i=(z-faceSum+1/4)/N,
+    Q_k-Z=(quadSum-z+1/4)/N.
+
+Uniform all-index factorial estimates then give (5) as the limiting
+logarithmic action, with O(log N) endpoint errors. The geometric
+identification of this action is independent of a proposed source
+normalization. At six colors 1/3 the bare optimized A is 3v3/pi,
+whereas Psi=v3/pi; omitting M would already give the wrong volume.
+In these conventions log W_N/N has action Psi; the SQUARED weight
+W_N^2 has action 2Psi. That factor must be retained in a later
+energy or doubled-source comparison.
+
+## 2. An own existence/uniqueness construction of the tetrahedron
+
+Number the vertices by the four triples in (1). The edge endpoints are
+
+    a:13, b:14, c:24, d:23, e:12, f:34.
+
+Let n_i be its four outward face normals, face i opposite vertex i.
+Their prescribed Lorentz Gram matrix is
+
+    G_ii=1,
+    G_12=-cos alpha_f, G_13=-cos alpha_c, G_14=-cos alpha_d,
+    G_23=-cos alpha_b, G_24=-cos alpha_a, G_34=-cos alpha_e. (7)
+
+We prove that G has signature (3,1), rather than assuming an angle
+realization theorem. Every three-by-three principal minor corresponds
+to three angles A,B,C at a vertex, A+B+C<pi. Its determinant is
+
+    -4 cos((A+B+C)/2)cos((A+B-C)/2)
+           cos((A-B+C)/2)cos((-A+B+C)/2)<0.        (8)
+
+Its two-by-two minors are sin^2(alpha)>0, so that block has signature
+(2,1) and can be realized in Lorentz three-space. Its inverse has
+all entries negative: its off-diagonal cofactors have numerator
+cos C+cos A cos B>sin A sin B>0 and its determinant is negative.
+
+If the three inner products of the fourth normal with this block
+are nonpositive, its projection to the block has nonpositive square.
+Adding a new spacelike coordinate makes its square one, with a
+nonzero fourth component. This constructs G with signature (3,1).
+
+Otherwise choose a nonacute dihedral A>=pi/2 among these products
+and call its two normals n_0,n_1. At most two dihedrals can be
+nonacute, and two such edges must be opposite, because any two
+meeting at a vertex have sum <pi. The other products of n_0
+are -cos B,-cos C, and those of n_1 are -cos D,-cos E. The three
+old normals have last mutual angle F, with D+E+F<pi. The vertex
+conditions imply
+
+    B+D<pi-A, C+E<pi-A.
+
+In n_1-perpendicular Lorentz space define
+
+    m_2=(n_2+cos D n_1)/sin D,
+    m_3=(n_3+cos E n_1)/sin E,
+    <m_2,m_3>=-(cos F+cos D cos E)/(sin D sin E)<-1.
+
+Write n_0=(-cos A)n_1+sin A u. The two required products of u
+with m_2,m_3 are both <-1: for example
+
+    <u,m_2>=(-cos B-cos A cos D)/(sin A sin D)<-1.
+
+The inverse Gram matrix of m_2,m_3 has every entry negative.
+Thus their prescribed negative-product projection of u has negative
+square. An additional spacelike coordinate again makes u^2=1 and
+constructs the fourth normal independently. This proves det G<0
+throughout (2), including the possible two opposite obtuse edges.
+
+Let C=adj(G). Its diagonal entries are negative by (8), so the
+dual vectors v_i=-sum_j(G^-1)_ij n_j have positive squares.
+Their off-diagonal products are strictly negative. Indeed Jacobi's
+minor identity gives
+
+    (G^-1)_ii(G^-1)_jj-(G^-1)_ij^2
+                       =sin^2(alpha_complement)/det G<0.
+
+No off-diagonal inverse entry can therefore vanish. The angle domain
+is convex and connected, and at a small regular angle all those
+entries are negative; continuity fixes their sign everywhere.
+
+Normalize the v_i to square one. Every pair has product <-1, so
+their projective edge crosses the Klein ball. Their sum is timelike,
+and has negative product with every v_i. It supplies an interior point
+of the four face halfspaces AND the four vertex-polar halfspaces.
+Cutting the six projective edges by those polar planes gives twelve
+finite hyperbolic vertices. Each lies strictly on the proper side of
+the other two polar planes, by the negative products. The result is
+a compact convex truncated tetrahedron, with four triangular polar
+faces and four right-angled hexagonal original faces. Its six original
+dihedrals are (7); every new truncation edge is right-angled. There
+are no assumed end or completeness conditions in this compact local
+construction. Its ordered face-normal Gram fixes it up to isometry.
+
+For an explicit compactness check, suppose a remaining point were
+ideal and write it in the vertex cone as x=sum_i t_i v_i, t_i>=0.
+The polar inequalities <x,v_i><=0 and x^2=0 force <x,v_i>=0 on
+every active coefficient. This would put the nonzero active vector
+t in the kernel of its principal vertex Gram block. All such blocks
+are nonsingular: their determinants are complementary principal
+minors of G divided by det G (size one and two were checked above;
+size three uses G_ii=1). Thus no ideal point remains after truncation.
+
+The length along original edge a, between its polar truncations, is
+
+    ell_a=arccosh[ C_13/sqrt(C_11 C_33) ]>0.       (9)
+
+The cofactor in (9) is positive since det G<0 and (G^-1)_13<0.
+The formula follows by restricting to the Lorentz plane spanned
+by its two normalized hyperideal endpoints. Other edges are obtained
+by vertex relabeling.
+
+## 3. The optimized derivative is EXACTLY that truncated edge length
+
+Here is a finite rational certificate for the derivative, with all
+branches fixed by the positive interval. Set u_a=exp(2pi i a), etc.,
+P=product_edges u. Let U_i be the four products of u on the faces
+in (1), and V_k the three products on the quads. Then
+product U_i=product V_k=P^2. Write n=exp(2pi i Z).
+The stationarity equation A'(Z)=0 is exactly
+
+    (n-1)product_k(n-V_k)-product_i(n-U_i)
+                  =n(A2 n^2+A1 n+A0)=0,
+    A2=sum U_i-1-sum V_k,
+    A1=sum_(k<l)V_kV_l+sum V_k-sum_(i<j)U_iU_j,
+    A0=sum_(i<j<l)U_iU_jU_l-P^2-sum_(k<l)V_kV_l. (10)
+
+Expansion gives the independent identity
+
+    A1^2-4A2A0=16P^2 det G.                       (11)
+
+In (11), G has off-diagonals cos(2pi color), which is exactly (7).
+Also A0=P^2 conjugate(A2) and A1/P is real. Thus the two roots of
+(10) are distinct and on the unit circle. A2 cannot vanish, since
+that would make (11)/P^2 a nonnegative real square instead of
+16det G<0. The function A' tends to +infinity at the lower positive
+interval endpoint and to -infinity at the upper one. It is continuous
+inside, and (10) permits at most two simple critical points there.
+The number is odd, so there is EXACTLY one, Z_*. It is a strict
+global maximum, with nonzero negative second derivative. This also
+fixes a smooth selected branch on the entire connected domain (2).
+
+For edge a let
+
+    B(n)=u_c (n-U_1)(n-U_3)/[(n-V_1)(n-V_2)],
+    R_a= sin pi(a+e-b)sin pi(a+b-e)
+             /[sin pi(b+e-a)sin pi(F_1-1)]
+         *sin pi(a+f-d)sin pi(a+d-f)
+             /[sin pi(d+f-a)sin pi(F_3-1)].
+
+All displayed sines in R_a are positive. Differentiating (5) at
+its selected stationary Z_* gives
+
+    E_a:=exp(partial_a Psi)=B(n_*)sqrt(R_a)>0.     (12)
+
+To verify (12), the bare derivative is the ratio of the two
+sin(Z-F) factors to the two sin(Q-Z) factors incident to a.
+Their canceled phase is u_c. The four face derivatives give R_a.
+
+Let n_+,n_- be the two roots of (10). Direct rational products give
+
+    B(n_+)B(n_-)=1/R_a,
+    B(n_+)+B(n_-)=C_13/(2K_a),
+    K_a=sin pi(a+e-b)sin pi(a+b-e)
+                    sin pi(a+f-d)sin pi(a+d-f),
+    sqrt(C_11 C_33) sqrt(R_a)=4K_a.               (13)
+
+These are uniform algebraic identities, not tests at selected colors.
+For an explicit cleared-polynomial verification, put
+
+    A=-A1-A2(U_1+U_3), B=A2 U_1U_3-A0,
+    C=-A1-A2(V_1+V_2), D=A2 V_1V_2-A0,
+    Den=C^2 A0-CD A1+D^2 A2.
+
+The sum/product of the two B(n) are respectively
+
+    u_c[2AC A0-(AD+BC)A1+2BD A2]/Den,
+    u_c^2[A^2 A0-AB A1+B^2 A2]/Den.
+
+With edge variables written a,...,f temporarily for u_a,...,u_f,
+the claimed product is
+
+    (be-a)(abe-1)(df-a)(adf-1)
+             /[(ae-b)(ab-e)(af-d)(ad-f)],
+
+and the claimed sum is
+
+    8a^2bdef C_13 /[(ae-b)(ab-e)(af-d)(ad-f)].
+
+Substitute (10), multiply these explicit denominators, and expand:
+both polynomial differences are identically zero in six independent
+variables. The final identity in (13) is the elementary three-face
+Gram determinant (8), with its sine factors. The accompanying audit
+performs these symbolic zero checks; no interpolation is involved.
+
+Consequently the two possible E_a values are reciprocal and have sum
+2C_13/sqrt(C_11C_33). They are exp(+ell_a), exp(-ell_a). Near the
+regular ideal limit all colors approach 1/3 from above; the metric
+factor in (12) diverges while its bare ratio remains finite and
+positive. Thus the selected E_a is the positive-length branch there.
+It cannot change branch on (2), since ell_a never vanishes. By
+connectedness and tetrahedral relabeling,
+
+    partial_edge Psi=ell_edge for all six edges.  (14)
+
+## 4. An elementary volume-variation proof and its constant
+
+For completeness the needed first variation can be derived directly.
+On the hyperboloid the coordinate vector restricted to a totally
+geodesic face satisfies Delta_face x=2x. It follows by differentiating
+the usual cosh/sinh coordinates on H^2. A face with moving outward
+unit normal n has normal speed -<dot n,x>. The divergence theorem
+within that face therefore gives
+
+    dot V=-(1/2)sum_faces sum_edges
+                        integral_edge <dot n,nu_edge> ds.
+
+For an edge between face normals n_i,n_j and angle alpha, the
+outward conormal within face i is
+(n_j+cos alpha n_i)/sin alpha. Adding its two face contributions
+uses d<n_i,n_j>=sin alpha d alpha, and gives
+
+    dV=-(1/2)sum_edges ell_edge d alpha_edge.     (15)
+
+The new truncation edges have fixed angle pi/2, hence contribute
+zero. Using alpha=pi-2pi color, (15) becomes
+dV=pi sum ell_edge d(color). Equations (14),(15) show that
+V-pi Psi is constant on the connected domain (2).
+
+Calibrate at the regular ideal boundary a=...=f=1/3. Then
+F_i=1, Q_k=4/3, Z_*=7/6, and
+
+    A(Z_*)=-6L(1/6)=3v3/pi,
+    M=6L(1/3)=-2v3/pi,
+    Psi=v3/pi.                                   (16)
+
+The Lobachevsky duplication identity gives
+Lambda(pi/6)=(3/2)Lambda(pi/3), so (16) has no numerical calibration.
+The Gram construction converges to the regular ideal tetrahedron,
+whose volume is v3=3Lambda(pi/3).
+
+One can justify volume convergence here without a realization or
+rigidity theorem. For the regular family take fixed Euclidean regular
+tetrahedral unit vectors t_i with mutual products -1/3 and use
+n_i=(T,S t_i), T^2=(3cos alpha-1)/4, S^2=1+T^2. At alpha=pi/3
+their Klein faces have distance 1/3 from the center, giving the four
+ideal vertices -t_i. The finite polar truncation vertices converge
+to those same vertices. Here are exact uniform end inequalities.
+Set c=cos alpha, t=T/S and
+
+    rho=3t=sqrt((9c-3)/(c+1))>1.
+
+The projective hyperideal vertex at -t_i is rho(-t_i). In a fixed
+upper-half-space frame sending w=-t_i to infinity, its polar cut is
+
+    |z|^2+y^2<=(rho+1)/(rho-1).
+
+For every incident j!=i, t_j dot w=1/3. Its original face inequality
+therefore gives exactly
+
+    2(t_j)_perp dot z
+       <=(t+1/3)+(t-1/3)(|z|^2+y^2)
+       <=2(rho+1)/3.
+
+The three fixed perpendicular normals surround the origin at angles
+120 degrees. Hence |z|<=C uniformly as rho decreases to 1. The
+cross-sectional area is bounded, and its volume above y=Y is
+<=C/Y^2. Do this in the four disjoint ideal-end frames; the remaining
+compact regions converge. This proves volume convergence to the
+ideal tetrahedron and fixes the constant in (15), with no O(epsilon)
+end estimate left as an assumption.
+
+We have therefore proved the LOCAL GEOMETRIC IDENTITY
+
+    pi Psi(a,b,c,d,e,f)=Vol(truncated hyperideal tetrahedron). (17)
+
+Both sides extend continuously to the closed angle chamber. For
+Psi this follows directly from continuity of L and maximization on
+a continuously varying compact interval. The corresponding geometric
+extension is the limit from the interior; no assertion that every
+boundary point retains a nondegenerate truncated-tetrahedron cell
+is needed. In particular at six colors 1/2, Z_*=7/4 and Psi=v8/pi;
+the six original edge lengths tend to zero at the escaping ideal
+corners. The limiting cell is the regular ideal octahedron, not a
+tetrahedron with positive edges. One can check its geometry directly:
+G=2I-J and its four normalized polar normals are
+m_i=-n_i+(1/2)sum_j n_j. Then distinct n_i,n_j and distinct m_i,m_j
+have product -1, while <n_i,m_j> is -2 for i=j and zero otherwise.
+These are exactly the eight regular-octahedron face normals
+(1,sigma_1,sigma_2,sigma_3)/sqrt(2), partitioned by the product of
+the three signs. Thus the octahedral constant is attached to an
+explicit geometric cell, not only a limiting dilogarithm number.
+
+## 5. Exact stationarity data, and what a global source still needs
+
+The local action supplies more than a constant fit. The colors give
+the actual face-normal Gram (7), its polar triangle areas are (3),
+and the optimized derivatives are the six metric edge lengths (14).
+For a specified gluing of such cells, (15) gives its first variation
+on EVERY allowed dihedral-angle tangent, not merely on a chosen
+one-parameter source family. In particular variations exchanging
+two angles around one fixed total-angle edge force equality of
+their corresponding truncated lengths. More generally a linear
+constraint matrix C gives the exact stationarity condition
+
+    length vector in image(C^T).                 (18)
+
+If the ONLY angle constraints are sums around actual common edges,
+(18) forces one common length per glued edge. Three such matched
+alternating lengths determine a right-angled hexagon by elementary
+hyperbolic cosine laws, so the prescribed original hexagonal faces
+then match isometrically. Actual angle sums, link degree/winding,
+boundary markings and end completeness must still be checked.
+Additional source constraints can reduce the tangent space, and
+then stationarity in that smaller space does not imply this full
+metric gluing. No global strict-concavity or complete-manifold
+maximum theorem is asserted solely from the local derivative identity.
+
+There is a concrete obstruction to using just the four support
+inequalities as a complete volume-maximization certificate. Equation
+(14) gives partial_edge Psi>0 at every strict point. Increasing any
+color preserves those four inequalities. Along the line toward six
+colors 1/2, Psi therefore increases to v8/pi. By continuity that is
+the maximum over the CLOSED support chamber, and there is NO interior
+stationary point under only these inequalities. A geometric interior
+critical point for a larger graph needs the actual additional edge
+constraints, boundary potentials or their full source counterparts;
+the local face supports alone do not supply them.
+
+The [generic actual four-port theorem](actual_general_four_port_single_racah_kernel.md)
+now gives an explicit separable row/column gauge relating its literal
+inverse kernel L_(G,E) to the seven-factorial sum S. Its four Delta
+face factors give exactly the normalization in (6) after root-zero
+removal. Thus this finite scalar/generic normalization is explicit;
+it is not being taken from a named 6j evaluation. But identifying
+the resulting weight with a useful FULL marked-source Cauchy energy
+still requires controlled gauge transport, complete colliding
+partners and root normals, and the graph's actual port/edge incidence
+in (18). No individual partner value or semisimple normalization
+may replace that comparison. The bare Racah term is already wrong
+at the regular ideal tetrahedron by the factor in (16).
+
+## 6. Uniform local quantum-volume theorem, including moving boundary colors
+
+The geometry identity has the following UNIFORM finite-level consequence.
+There is an absolute constant C such that, for EVERY N and every six
+folded integer labels satisfying all four face sums >=N-1, the positive
+normalized scalar W_N in (6) obeys
+
+    |log W_N-(N/pi)Vol_ext(T(a_N))|<=C log(N+1),
+    a_(N,edge)=(j_edge+1/2)/N.                    (19)
+
+The domain is empty at any level with no supported sextuple. The
+symbol Vol_ext is the continuous geometric extension of (17); at
+strict angles it is the ordinary compact truncated-tetrahedron
+volume, while zero-angle boundary cells are interpreted by their
+geometric limits. Constants in (19) do not depend on a distance
+from any face, edge, corner or the octahedral endpoint. Both level
+parities and composite N are included.
+
+Here is the full uniform estimate. Write F_i^int,Q_k^int for the
+integer forms (1), z_-=max F_i^int and z_+=min Q_k^int. All true
+factorial indices are in [0,N-1]. The elementary uniform estimate
+
+    log s_n=N L(n/N)+O(log(N+1)), 0<=n<=N-1,
+
+has an absolute constant. Applying it to the fixed eight factorials
+in each positive R_N term changes its logarithm by O(log N).
+At its actual point Z_z=(z+7/4)/N, the action arguments differ
+from those true indices divided by N by exactly
+
+    numerator: 3/(4N),
+    each of seven denominators: 1/(4N).
+
+For a face metric the three deficits and its excess differ by
+exactly 1/(2N). The shifted and original arguments are all in
+[0,1]. The uniform modulus
+
+    |L(t+epsilon)-L(t)|
+             <=C0 |epsilon|(1+|log|epsilon||)
+
+therefore changes N times these actions by O(log N), including
+when an original factorial index is zero. The explicit N factors
+in R_N and D_face add only O(log N).
+
+The geometric maximization interval is
+
+    I=[(z_-+3/2)/N,(z_++2)/N],
+
+whereas the true grid runs from (z_-+7/4)/N to (z_++7/4)/N in
+steps 1/N. Its first and last points are inset by exactly 1/(4N)
+from the two respective endpoints. Every point of I is within 1/N
+of a true grid point, even when z_-=z_+. The same modulus of L,
+now for its eight action terms, shows that the continuous maximum
+and the true-grid maximum differ by O(log N/N), uniformly. There
+are at most N positive terms: z_+-z_-<=N-1 by the complementary
+triangle-deficit bounds. The largest term bounds their sum from
+below, and N times it bounds the sum from above. Thus
+
+    log W_N=N Psi(a_N)+O(log N)
+
+with one universal error constant. Equation (17) proves (19).
+No nonzero Hessian, separation from a boundary, selected complex
+cycle or asymptotic interpolation of an unobserved normal was used
+in this argument.
+
+In particular ANY convergent supported color sequence a_N->a in
+the closed chamber satisfies
+
+    lim (pi/N)log W_N=Vol_ext(T(a)).               (20)
+
+This is a genuine broad LOCAL quantum-volume theorem for the
+explicitly gauged scalar/residue. Its squared weight has twice
+the logarithmic action. It does not turn (19) into a full marked
+recoupling norm or authorize replacing a partner germ by its
+positive value core; those source requirements in section 5 remain.
+
+Audit: [universal rational certificates and local geometry](../experiments/audit_actual_four_port_hyperideal_angle_volume.py),
+with [recorded results](../experiments/actual_four_port_hyperideal_angle_volume_results.json).
+It verifies four symbolic identities in six independent edge variables,
+all six derivative/Gram lengths in regular, unequal and opposite-obtuse
+chambers, three independent direct regular geometric volume integrals,
+and the exact half-step angle ranges at eight full physical levels.
+Finite profiles check normalization; the uniform proof is the Gram
+construction, symbolic identities and first variation above.
+The range audit also verifies all shifted factorial arguments, exact
+quarter-grid endpoint insets and the <=N positive-term count in (19).
+
+Independent internal review: root read the full argument and supplied
+the exact regular-end cap inequalities used in section 4. The
+crossing/source agent independently read the complete analytical proof
+and replayed the permanent audit: PASS, including the selected
+positive-length sheet, compactness, ideal calibration and source scope.
+These are internal research audits, not external peer review or a
+general four-port/graph energy theorem.
+The uniform scalar consequence (19) was additionally checked against
+the supported Racah theorem by the source agent, including its exact
+half-step shifts and boundary-uniform constants. It does not extend
+that theorem's low-fold jet estimate to the retained partner current.
