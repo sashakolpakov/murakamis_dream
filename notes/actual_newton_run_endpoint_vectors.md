@@ -180,8 +180,10 @@ only polynomial cost in N. They do not use an unknown knot invariant.
 Thus scalar residue-class cancellations do NOT leave unknown source
 incidence if one retains the full fixed-rank endpoint vector. These
 are resolved GAUSSIAN endpoint modes. Identifying them with a chosen
-interior Ward branch is a separate finite projection calculation,
-not a consequence of the names or of nonzero individual entries.
+interior Ward branch requires the exact boundary-to-Ward projection
+and a propagation estimate on the domain in question. Neither follows
+from the names or from nonzero individual entries; a finite endpoint
+projection alone does not control subsequent mode conversion.
 
 ## 4. What this gives a finite-depth source criterion
 
@@ -211,6 +213,11 @@ turn family. No recorded Newton clock is promoted to a peripheral
 deformation or an additional actual knot coupon without its own proof.
 
 Audit: [full original endpoint matrices and finite Gaussian data](../experiments/audit_actual_twist_endpoint_gaussian_certificate.py).
+Its modal-residue checks use exact primitive cyclotomic-root images
+in finite fields, with the prime and image recorded in the results.
+They supplement the all-k pairing/Vandermonde proof above; a successful
+specialization is not itself a proof of an identity over the complex
+cyclotomic field.
 
 Independent analytical reviews passed for the exact all-m endpoint
 identities, full fixed-h Hermite fold/asymptotic, and the universal
