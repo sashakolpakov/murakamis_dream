@@ -1,27 +1,13 @@
 # Publication status
 
-This snapshot is prepared locally. **No public repository has been created and no push has been performed. No public URL has been verified.**
+Published at [sashakolpakov/murakamis_dream](https://github.com/sashakolpakov/murakamis_dream), with public visibility confirmed by the unauthenticated GitHub repository API.
 
-The latest sanctioned in-sandbox check was `gh api user --jq .login`. It failed with `error connecting to api.github.com` and `check your internet connection or https://githubstatus.com`. The current blocker is GitHub API connectivity; this check did not establish the current authentication state and displayed no credential. An EARLIER `gh auth status` check reported an invalid token. The earlier outside-sandbox authentication check was rejected by automatic approval review; no escalation, alternate credential route, or authentication retry was performed after that rejection.
+The prepared research history was merged with the user's existing initial commit, preserving that commit and its Python ignore rules. The research snapshot was pushed normally to `main` at `700ca05cb9b702ad489970735d4ed6166c55f989`; fetching the remote branch confirmed the identical commit. No force push was used.
 
-The intended public target is `sashakolpakov/murakamis_dream`. This isolated repository uses the account's GitHub no-reply commit identity. The latest refresh includes internally reviewed positive Newton multiplication, the cuboctahedral period, the odd central/four-rung cube packets, and the actual generic recoupling/Racah source identity, with their exact scope and audits. It also retains the corrected EXPOSED-mark hypothesis and exact nested-cap regression. Mathematical source files were not edited by publication preparation.
+The snapshot contains the internally reviewed positive Newton multiplication theorem, cuboctahedral period, odd central/four-rung cube packets, generic recoupling/Racah source identity, and their dependencies and audits. It retains the corrected exposed-mark hypothesis and exact nested-cap counterexample. The recent-advances note and frontier state the precise theorem scopes.
 
-The general volume conjecture, full cube source control and arbitrary branched-graph survival remain open. Internal analytical reviews and finite audits are not external peer review; a `PASS` output is not by itself an asymptotic proof.
+The general volume conjecture, full cube source control and arbitrary branched-graph survival remain open. Internal proof reviews and finite audits are distinguished in the notes; finite checks alone do not prove an asymptotic theorem. Work still under review is retained in the research workspace until its status is ready to publish.
 
-Once normal GitHub access is available, use a user-controlled terminal to check access and inspect whether the target already exists. Do not put credentials in chat. Authentication may separately need repair; the latest connectivity failure does not decide that.
+Earlier `gh` API checks failed, and a read-only Git probe reported DNS failure. The subsequent normal Git push reached GitHub and exposed the existing remote history; fetching, merging and pushing then succeeded. These earlier connection errors no longer describe the publication status. The earlier rejected sandbox-escalation request was not retried.
 
-From this prepared repository, the creation command is:
-
-```sh
-gh repo create sashakolpakov/murakamis_dream --public --source=. --remote=origin --push
-```
-
-This command fails if the name already exists and does not overwrite an existing repository. An existing target must be inspected for owner, visibility, content and compatible ancestry before attaching a remote. No force push is authorized.
-
-```sh
-git log -1 --oneline
-git status --short
-cat PUBLICATION_VALIDATION.json
-```
-
-The accompanying Git bundle preserves the same `main` commit. Claim publication only after public visibility and the uploaded commit are independently verified.
+The local `origin` points to this repository. The accompanying Git bundle is refreshed after the publication-status commit and preserves the same committed history.
