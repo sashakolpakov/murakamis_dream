@@ -8,7 +8,7 @@ Research on Kashaev invariants, pointed quantum A-structures, and hyperbolic vol
 
 The guide explains the argument in seven chapters, with a searchable archive of the technical notes, audits, and data. Start with the equality results, then the mechanism, geometry, and current frontier.
 
-Diagrams show the research route, four-port recoupling, cube channels, a truncated tetrahedron, and the Conway cells. Each figure in the guide has SVG, PDF, and TikZ downloads.
+The [figure gallery](https://sashakolpakov.github.io/murakamis_dream/figures.html) shows the research route, four-port recoupling, cube channels, a truncated tetrahedron, and the Conway cells. Each figure has SVG, PDF, and TikZ downloads.
 
 **The general volume conjecture remains open.** The repository contains internally reviewed research proofs for specified families, general local identities, and explicit obstructions to proposed extensions. Finite audits and numerical diagnostics retain their stated scope.
 

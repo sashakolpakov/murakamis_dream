@@ -4,6 +4,8 @@
 
 Each diagram in the guide includes links to its scalable SVG, print-ready PDF, and editable TikZ source.
 
+The [figure gallery](figures.md) gathers the diagrams with explanations and links to the chapters that use them. It is built as a separate reference page, leaving the seven-chapter reading sequence intact.
+
 From the repository root, rebuild in this order:
 
 ```sh

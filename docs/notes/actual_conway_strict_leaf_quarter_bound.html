@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Every complete robust Conway leaf lies strictly above one quarter · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Positive Conway sources</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">General strict quarter bound</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_conway_strict_leaf_quarter_bound.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="every-complete-robust-conway-leaf-lies-strictly-above-one-quarter">Every complete robust Conway leaf lies strictly above one quarter</h1>
+<p>29 October 2026. For every retained cylindrical robust factor, the unique complete source optimizer satisfies x_l&gt;1/4 at EVERY h leaf. This follows from the actual g,m stationarity equations and a preserved port inequality. No circle-packing estimate is assumed. The result is about the existing positive complete source; replacement by a different quantum coupon still requires its own local and global source estimates.</p>
+<h2 id="positive-port-variables-from-the-actual-source-derivatives">1. Positive port variables from the actual source derivatives</h2>
+<p>For a proper robust expression E at output b in (0,1), let f_E(b)=v_E(b)/pi be its strictly optimized source action. Put</p>
+<pre><code>B=cot(pi b), kappa=exp(-f&#39;_E(b)),
+X=sqrt((1+B^2)/(1+kappa)), Y=sqrt(kappa) X.               (1)</code></pre>
+<p>Thus X,Y are positive and X<sup>2+Y</sup>2-B^2=1. The already proved strict maximum theorem makes these derivatives legitimate at every proper macro-port of the complete optimizer.</p>
+<p>A literal turn sends</p>
+<pre><code>(B,X,Y) -&gt; (-B,Y,X).                                    (2)</code></pre>
+<p>At a product F G with strict input/output x,y,z, write U=cot(pi x), V=cot(pi y), Z=cot(pi z), and</p>
+<pre><code>D=(U+V)Z-UV+1&gt;0.</code></pre>
+<p>The strict inequality x+y&lt;1 gives U+V&gt;0. Directly differentiating the SAME seven-factorial action m gives</p>
+<pre><code>kappa_F=exp(m_x)=(U+V)(U-Z)/D,
+kappa_G=exp(m_y)=(U+V)(V-Z)/D,
+kappa_out=exp(-m_z)=(U-Z)(V-Z)/D.                        (3)</code></pre>
+<p>Here the first two signs use f’_F=-m_x and f’_G=-m_y at the inner maximum. Since</p>
+<pre><code>1+kappa_F=(1+U^2)/D,
+1+kappa_G=(1+V^2)/D,
+1+kappa_out=(1+Z^2)/D,</code></pre>
+<p>all THREE ports have the same X=sqrt(D), and</p>
+<pre><code>Z=(UV+X^2-1)/(U+V),
+Y_out=Y_F Y_G/(U+V).                                    (4)</code></pre>
+<p>The positive square root in the last identity is fixed by U+V&gt;0. These are exact algebraic consequences of stationarity, not new gluing assumptions.</p>
+<h2 id="a-strict-inequality-preserved-by-the-entire-robust-grammar">2. A strict inequality preserved by the entire robust grammar</h2>
+<p>Every proper robust port satisfies</p>
+<pre><code>-Y &lt; B &lt; X.                                             (5)</code></pre>
+<p>First check A=h^3. At a leaf the actual action has g’(a)=2log cot(pi a). Therefore its coordinates are</p>
+<pre><code>B=X=cot(pi a)&gt;0, Y=1.</code></pre>
+<p>The common-X identity (3) makes the three stationary seed leaf coordinates equal. Composing twice using (4) gives</p>
+<pre><code>B_2=(2X^2-1)/(2X), Y_2=1/(2X),
+B_A=X(4X^2-3)/(4X^2-1), Y_A=1/(4X^2-1).                (6)</code></pre>
+<p>The second product has B_2+X&gt;0, so X&gt;1/2. Consequently</p>
+<pre><code>X-B_A=2X/(4X^2-1)&gt;0,
+B_A+Y_A=(2X-1)(X+1)/(2X+1)&gt;0,</code></pre>
+<p>which proves (5) for every interior seed output. Equation (2) preserves (5), because its two inequalities exchange.</p>
+<p>It remains to check a product of two ports satisfying (5). If the common X&gt;=1, the identities Y_F<sup>2=1+U</sup>2-X^2 and U&gt;-Y_F force U&gt;0; similarly V&gt;0. Also U&lt;X, V&lt;X and</p>
+<pre><code>U&gt;sqrt(X^2-1), V&gt;sqrt(X^2-1).</code></pre>
+<p>Hence 0&lt;X-U&lt;1 and 0&lt;X-V&lt;1 (also at X=1). Equation (4) gives Z&gt;0 and</p>
+<pre><code>Z-X=((X-U)(X-V)-1)/(U+V)&lt;0.</code></pre>
+<p>Thus -Y_out&lt;Z&lt;X.</p>
+<p>If 0&lt;X&lt;1, put h=sqrt(1-X^2), and write uniquely</p>
+<pre><code>U=h cot alpha, Y_F=h csc alpha,
+V=h cot beta,  Y_G=h csc beta,    0&lt;alpha,beta&lt;pi.</code></pre>
+<p>With alpha_0=arccos X, the upper inequalities U&lt;X,V&lt;X say alpha,beta&gt;alpha_0. The actual U+V&gt;0 says alpha+beta&lt;pi. Equation (4) is now exactly</p>
+<pre><code>Z=h cot(alpha+beta), Y_out=h csc(alpha+beta).            (7)</code></pre>
+<p>Thus Z&lt;X since alpha+beta&gt;alpha_0, while Z&gt;-Y_out follows from cot t+csc t=cot(t/2)&gt;0 for 0&lt;t&lt;pi. This proves preservation of (5), and hence proves it for all robust expressions.</p>
+<h2 id="closure-and-downward-propagation">3. Closure and downward propagation</h2>
+<p>For a retained factor C(FG), its two proper children F,G are robust. After deleting the final forced-flat gate, their outputs are b,1-b. Stationarity of f_F(b)+f_G(1-b) gives equal derivatives and therefore equal kappa. Their port data are consequently (B,X,Y) and (-B,X,Y). Applying (5) to both gives |B|&lt;min(X,Y). Since X<sup>2+Y</sup>2-B^2=1, this implies</p>
+<pre><code>0&lt;X&lt;1, 0&lt;Y&lt;1                                          (8)</code></pre>
+<p>at both root child ports.</p>
+<p>These two strict bounds propagate down the ROBUST macro-tree. They are preserved by a turn. At a product, X is common, hence already below one. Use (7). Its parent Y_out&lt;1 means</p>
+<pre><code>alpha_0&lt;alpha+beta&lt;pi-alpha_0.</code></pre>
+<p>Each robust child already has alpha,beta&gt;alpha_0 by (5), so each also lies below pi-alpha_0. Therefore sin alpha,sin beta&gt;h, which gives Y_F,Y_G&lt;1. Thus (8) holds at every robust seed port.</p>
+<p>STOP this propagation at A: its individual leaf ports have Y=1, so (8) is not asserted for those ports. Instead use (6): all three seed leaves share the seed’s X. Since this X is strictly below one,</p>
+<pre><code>cot(pi x_l)=X&lt;1, hence x_l&gt;1/4.                         (9)</code></pre>
+<p>The remaining retained factor C(A) is equally explicit. Its two closing children are h^2 and h; their cotangents are opposite. The same root matching again makes X common. Thus B_2=-X in (6), forcing X=1/2 and x_l=atan(2)/pi&gt;1/4 for all three leaves.</p>
+<p>This proves (9) for every retained cylindrical robust factor. For each FIXED expression there is a positive minimum margin above 1/4 because it has finitely many leaves. No uniform margin across all expressions is claimed or needed here.</p>
+<p>The theorem locates the whole positive-source optimizer in the strict local regime required by the proposed odd-half-twist packet. It does not itself identify that packet with the pure source or prove survival of its summed complex amplitude.</p>
+<p>Primary-agent independent analytical review: PASS. The product identities were derived directly using D=(U+V)Z-UV+1; the seed inequalities, both X&gt;=1 and X&lt;1 preservation cases, closure inequalities, macro-only downward propagation, and separate C(A) endpoint were checked. No uniform margin over all expressions or odd-coupon source theorem is inferred.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_conway_strict_leaf_quarter_bound.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#positive-port-variables-from-the-actual-source-derivatives">1. Positive port variables from the actual source derivatives</a><a href="#a-strict-inequality-preserved-by-the-entire-robust-grammar">2. A strict inequality preserved by the entire robust grammar</a><a href="#closure-and-downward-propagation">3. Closure and downward propagation</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

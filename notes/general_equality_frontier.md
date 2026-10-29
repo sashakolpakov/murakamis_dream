@@ -38,17 +38,41 @@ slow endpoint approaches. The interior optimizer is unique and analytic;
 its algebraic boundary conjugate is an actual quadrilateral face modulus.
 The Newton boundary coordinate has not been identified with a knot's
 meridian and longitude. The retained-circle diagrams are LINKS, and
-neither all alternating links nor arbitrary fillings are asserted to be
-in this theorem. [Prior coverage](positive_conway_literature_coverage.md)
+neither all alternating links nor arbitrary short fillings are asserted
+to be in this theorem. [Prior coverage](positive_conway_literature_coverage.md)
 is recorded separately without using external proofs.
 
 The [cap-sum reduction](actual_conway_cap_sum_reduction.md) still governs
 nonhyperbolic connected sums: their original sources multiply, their
 whole angle polytopes split, and their limits add the displayed geometric
-factor volumes. The next route to a broader KNOT theorem is the deformed
-auxiliary-color source packet and full complementary-color estimates
-needed by the existing general filling-transfer theorem. Complete
-positive geometry alone does not supply those quantum hypotheses.
+factor volumes. The new [uniform mixed-source gap](actual_conway_uniform_mixed_source_gap.md)
+and [complex lattice packet](actual_conway_complex_window_laplace.md)
+now supply ALL quantum hypotheses of the general long-full-twist
+transfer for these retained factors. The resulting
+[full long-filling equality](actual_conway_long_filling_source_limit.md)
+has a nonzero selected complex critical action, now proved to equal
+the ACTUAL filled hyperbolic volume. The
+[marked deformation theorem](actual_conway_marked_peripheral_deformation.md)
+constructs the original link-group representation, all pointwise edge
+returns, parabolic main cusps and primitive auxiliary logs. Its
+calibrated local action is the primitive of an actual algebraic
+peripheral branch; the complete anchor fixes the absolute regulator.
+
+There is an essential KNOT-scope correction: every pure h^3 seed has
+two permanent internal main components, and full twists preserve
+them. The [component theorem](actual_conway_full_filling_component_obstruction.md)
+proves that these fillings ALWAYS remain links, with at least 2S+1
+main components for S seeds. A broader knot theorem needs different
+source connectivity, for example retained odd half twists, and the
+corresponding phase estimates. The new
+[strict quarter theorem](actual_conway_strict_leaf_quarter_bound.md)
+puts EVERY complete optimizer leaf strictly above 1/4, by an exact
+algebraic port invariant, supplying the required high-source location
+for the proposed odd-half-twist analysis. It does not replace that
+changed quantum source proof. The complete geometric theorem also
+now uses the [direct closed bowtie cut](actual_conway_bowtie_projection_cut.md),
+which repairs an overstatement identifying an open quadrilateral
+port with half of the physical four-punctured boundary.
 
 ## 1. A concrete enlargement already proved
 

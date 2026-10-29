@@ -265,53 +265,46 @@ by the envelope identity and the local derivative formulas. Equation
 boundary conjugate variable. It does not rename that modulus as a
 knot longitude or meridian.
 
-## 5. The half-ball cut is the actual tangle compiler
+## 5. The actual CLOSED projection cut and its oriented ribbon graph
 
-Here is a topological description independent of the volume formulas.
-Put the entire main-strand diagram in its projection disk, with every
-retained complete crossing circle perpendicular to that disk. All
-main arcs have no mutual crossings in this untwisted compiler. A
-crossing circle bounds its recorded disk, which meets the two main
-arcs once each. Cut the complementary tangle ball along the projection
-disk, then cut each of the two halves along the half crossing disks.
-All ideal points denote the deleted ribbon/circle neighborhoods;
-rounding those neighborhoods yields the same compact cell cut.
+The [independent bowtie-cut proof](actual_conway_bowtie_projection_cut.md)
+identifies the closed metric polyhedron with the actual link exterior.
+It uses the original crossing disks and literal main-wire matching,
+without treating an open quadrilateral port as half of a physical
+four-punctured tangle boundary. That earlier open-port description was
+too strong: restoring its shaded pairings already identifies two pairs
+of its corners. The ordered metric port remains valid auxiliary cut
+data, but it does not alone specify the physical boundary holonomy.
 
-For the single h box the two main arcs join bottom-left to bottom-
-right and top-left to top-right. Cutting their crossing disk splits
-each arc at its one intersection, leaving four strand pieces leading
-to the four port punctures C0,C1,C2,C3. The half-circle is the ideal
-apex O. The two exposed sides of its half disk are precisely
-(O,C1,C2) and (O,C3,C0): one uses the two right strand pieces and
-the other the two left pieces. The two remaining projection regions
-are (O,C0,C1) and (O,C2,C3). The outer half of the four-punctured
-box boundary is the port quadrilateral. This is exactly the colored
-pyramid in section 3. Reversing the cuts reconstructs the two original
-main arcs and the literal threaded complete circle.
+Here is the closed argument. In each projection ball every auxiliary
+semicircle is boundary parallel by its original half crossing disk.
+Drilling these disjoint arcs and then cutting along those recorded
+half disks returns a ball. Its ideal vertices are the original
+semicircles and the main segments between consecutive disk punctures.
+Each disk contributes exactly the two shaded triangles
+(O,C1,C2) and (O,C3,C0). Its remaining boundary regions are white.
 
-For a stack, choose an empty collar between the two boxes containing
-only the two matching main identity wires. In either half of the
-projection cut, the two old port quadrilaterals and the new outside
-port bound a ball with two remaining triangular projection regions.
-Its six ideal vertices are the four outside port punctures and the
-two interface wire punctures. Its faces are precisely the two input
-quadrilaterals, one output quadrilateral and two triangles of the
-prism. The maps (3) identify the interface punctures by left and
-right wire, and retain all four outside corners in order. Hence this
-is the actual EMPTY stack collar, not an additional crossing circle
-or a replacement tangle. Its two triangular regions are white.
+The original identity stack pairs F2 with G1 and F3 with G0, and
+leaves exposed corners (F0,F1,G2,G3). Turns cyclically rotate those
+corners; the final cylindrical closure pairs 0 with 3 and 1 with 2.
+At each paired main segment the two local oriented shaded sectors
+concatenate in the original projection sphere. This determines the
+entire oriented bowtie ribbon graph and every white facial walk.
 
-If a child's white face becomes coplanar with a collar triangle,
-merging their cells deletes only an artificial cut in the projection
-region. It does not remove a main component, a crossing disk or a
-source factor. A quarter-turn rotates the actual half-ball and its
-ordered quadrilateral; its port permutation is the physical turn,
-while every original disk and shaded-face pairing is carried along.
+The metric prism maps in (3) give exactly the same segment pairings
+and cyclic orders. After closure, every nonflat edge belongs to one
+of the original shaded leaf triangles; all other edges are flat
+white/white seams and merge. Thus the stationary polyhedron has the
+same FULL oriented ribbon boundary as the actual projection cut,
+including every white face cycle and every original shaded pairing.
+The labeled sphere cellulation extends across each cut ball, and
+reversing the matching disk/projection pairings gives the actual
+closed link exterior. This establishes the required topology and
+degree one. It does not rely on matching only face or cusp counts.
 
-Induction on the expression now identifies P_E(b), with its colored
-faces and port labels, with the half-ball cut of the EXACT compiled
-tangle. This supplies face incidence and degree one. Matching only
-the numbers of faces or link components would not supply this step.
+The separate audit reconstructs this ribbon graph directly from
+original wires, without prisms, and compares all oriented face cycles
+and all vertex cyclic orders after fixing one global orientation.
 
 ## 6. The actual cylindrical closure makes a right-angled polyhedron
 
@@ -507,3 +500,5 @@ received a separate coherent-source review: it checked the common
 algebraic coordinate field, auxiliary five-term chains, matched face
 triangulations, opposite mirror orientation, and degree-one fundamental
 chain, without asserting field-extension injectivity or integral lifts.
+
+**Long-filling extension, 29 October 2026:** the [uniform mixed-source gap](actual_conway_uniform_mixed_source_gap.md), [complex packet](actual_conway_complex_window_laplace.md), and [actual marked deformation](actual_conway_marked_peripheral_deformation.md) now yield actual hyperbolic volume equality after independently sufficiently long signed integral fillings of any subset of auxiliary circles. The [assembly](actual_conway_long_filling_source_limit.md) retains all source normalizations and both parities. These full-twist fillings remain links; they cannot produce knots from the pure robust seed.

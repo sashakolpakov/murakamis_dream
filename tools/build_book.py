@@ -59,6 +59,8 @@ def page(url, title, body, active, source=None, topic="Research guide", status="
         f' class="{"active" if active == slug else ""}">{escape(label)}</a>'
         for slug, label in CHAPTERS
     )
+    nav += '<div class="nav-label">Explore the research</div>'
+    nav += f'<a href="{base}figures.html" class="{"active" if active == "figures" else ""}">Figure gallery</a>'
     nav += f'<a href="{base}archive.html" class="{"active" if active == "archive" else ""}">Search the archive</a>'
     headings = Headings(); headings.feed(body)
     toc = '<aside class="toc" aria-label="On this page"><p>On this page</p>' + "".join(
@@ -98,6 +100,7 @@ def main():
     mapping = {}
     for slug, _ in CHAPTERS:
         mapping[f"book/chapters/{slug}.md"] = "index.html" if slug == "index" else f"guide/{slug}.html"
+    mapping["book/figures.md"] = "figures.html"
     for source in sorted((ROOT / "notes").glob("*.md")):
         mapping[source.relative_to(ROOT).as_posix()] = f"notes/{source.stem}.html"
     figures = [p for p in (ROOT / "book/figures").iterdir() if p.suffix in (".png", ".svg", ".pdf", ".tex")]
@@ -175,7 +178,7 @@ def main():
         stem = Path(source).stem; is_guide = source.startswith("book/")
         topic, status = ("Research guide", "Guide") if is_guide else catalog.get(stem, ["Research archive", "See note"])
         adjacent = None
-        if is_guide:
+        if is_guide and stem in {slug for slug, _ in CHAPTERS}:
             i = [s for s, _ in CHAPTERS].index(stem); adjacent = []
             for delta in (-1, 1):
                 j = i + delta

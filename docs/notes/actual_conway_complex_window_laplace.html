@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A uniform complex packet for the actual positive Conway core · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Positive Conway sources</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">Uniform complex packet</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_conway_complex_window_laplace.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-uniform-complex-packet-for-the-actual-positive-conway-core">A uniform complex packet for the actual positive Conway core</h1>
+<p>29 October 2026. A fixed rectangular window about the unique strict complete optimizer gives an EXACT separately-even holomorphic packet for the original positive auxiliary-color core. Its complex asymptotic has a nonzero analytic amplitude at every level parity. The proof keeps the finite lattice window, its endpoint currents and all nonzero cotangent modes. It is not an inference from a real-grid asymptotic.</p>
+<p>This note concerns the core packet and its comparison with the WHOLE positive core on real physical colors. Signed alias estimates and a geometric peripheral interpretation are additional inputs; they are not supplied by the complex Laplace argument itself.</p>
+<h2 id="the-actual-lattice-and-a-fixed-strict-window">1. The actual lattice and a fixed strict window</h2>
+<p>Fix one retained cylindrical robust Conway factor. Expand its seed blocks into h leaves and products, and let H be its number of leaves. The expanded expression tree has H-1 products. Delete only the final forced-flat product, whose exact multiplication coefficient is one, and impose its exact input relation i+j=D, where D=N-1.</p>
+<p>The remaining H leaves and H-2 products have a unique strict complete optimizer by the existing boundary-barrier theorem. Every leaf index lies strictly between zero and D/2, and every retained product’s four strict inequalities hold there.</p>
+<p>There are exactly</p>
+<pre><code>d=2H-3                                                     (1)</code></pre>
+<p>free integer wire coordinates. Indeed the H leaf outputs and H-1 product outputs give 2H-1 variables before the final closure. Turn outputs are eliminated one at a time by r_out=D-r_in. Fixing the root output and its final input-sum relation removes two variables. The last relation involves variables of disjoint child subtrees with coefficients +1 or -1, so one can solve it integrally. There is no parity-dependent lattice index or omitted congruence class.</p>
+<p>Choose the remaining physical wire indices k_1,…,k_d as coordinates and put x=k/N. Every other physical wire has the exact form</p>
+<pre><code>r_w=N ell_w(x)+delta_w,                        (2)</code></pre>
+<p>where ell_w is integral affine and delta_w is a fixed integer. The constants delta_w retain every occurrence of D=N-1. They are not silently replaced by zero. Let x_0 be the strict complete optimizer in these coordinates. Choose a sufficiently small closed rectangular box B centered at x_0, entirely inside the strict source domain.</p>
+<p>Let chi_l=h_l/N be the auxiliary-color deficit of leaf l. At physical colors h_l&gt;=0, its exact positive core coefficient is</p>
+<pre><code>A_(N,r_l)(h_l)=N^2 s_(2r_l)
+          /[s_(r_l)^2 s_(r_l-h_l)s_(r_l+h_l)].              (3)</code></pre>
+<p>On a small fixed complex chi polydisk, replace every sine factorial in the SAME leaf and product weight by the <a href="exact_factorial_interpolation_and_complex_contours.html">canonical marked interpolation</a> G_N. Define the packet</p>
+<pre><code>Z_N^win(chi)=sum_(k in Z^d, k/N in B) I_N(k/N,chi),           (4)</code></pre>
+<p>where I_N is the product of the H interpolated factors (3) and the H-2 actual interpolated Newton multiplication coefficients.</p>
+<p>After shrinking B and the chi polydisk, every scaled factorial argument has real part in a fixed compact subinterval of (0,1), on a fixed complex thickening of B. Thus I_N is holomorphic and nonzero there. For large N, EVERY lattice point in (4) is an actual admissible core state at every physical color in the chosen real chi window. No support indicator changes inside this box. Formula (4) is finite and separately even in every chi_l, by the two factors r_l+-h_l in (3).</p>
+<h2 id="exact-normalization-of-the-interpolated-summand">2. Exact normalization of the interpolated summand</h2>
+<p>Write every factorial argument as N alpha_nu(x,chi)+c_nu, with integer c_nu, and let sigma_nu be its signed multiplicity. The canonical uniform expansion gives</p>
+<pre><code>G_N(N alpha+c)
+   =sqrt(2N sin(pi alpha)) exp[N J(alpha)]
+      (2sin(pi alpha))^c [1+O(N^-1)],
+J(alpha)=integral_0^alpha Log(2sin(pi u))du.                  (5)</code></pre>
+<p>Its marks are continued from positive real arguments. The remainder and its fixed derivatives are uniform on smaller complex compact sets. Equation (5) follows directly from the canonical expansion at alpha+c/N; its shift factor is ESSENTIAL when c is nonzero.</p>
+<p>Define</p>
+<pre><code>f(x,chi)=sum_nu sigma_nu J(alpha_nu(x,chi)),
+b(x,chi)=2^(3-3H) product_nu
+    sin(pi alpha_nu)^(sigma_nu/2)
+    (2sin(pi alpha_nu))^(sigma_nu c_nu).                     (6)</code></pre>
+<p>All square roots and powers are continued from the positive real complete window. A leaf has one numerator and four denominator factorials, with its extra N^2. A retained product has two numerator and five denominator factorials. Consequently</p>
+<pre><code>sum_nu sigma_nu=-3H-3(H-2)=6-6H,
+I_N(x,chi)=N^(3-H) b(x,chi) exp[Nf(x,chi)]
+                                  [1+O(N^-1)].             (7)</code></pre>
+<p>The leading amplitude b is nonzero and positive on the real complete window. It contains all D=N-1 offset factors from (2); there is no unknown periodic normalization. At chi=0, f is exactly the complete source action V_E/pi in the selected free wire coordinates. For general chi it is the sum of the actual product actions and</p>
+<pre><code>g_chi(x_l)=J(2x_l)-2J(x_l)
+                        -J(x_l-chi_l)-J(x_l+chi_l)          (8)</code></pre>
+<p>over the leaves. Here x_l=ell_l(x) is its limiting leaf coordinate.</p>
+<h2 id="a-finite-window-complex-lattice-laplace-lemma">3. A finite-window complex lattice Laplace lemma</h2>
+<p>The following elementary argument applies to (7), and more generally to a fixed-dimensional analytic summand N^a b_N exp(N f), provided:</p>
+<ul>
+<li>f is holomorphic on a fixed complex thickening of B and a parameter polydisk, real on the real slice at zero;</li>
+<li>at zero it has its unique strict nondegenerate maximum x_0 in B, with negative definite real Hessian;</li>
+<li>b_N=b+O(N^-1) uniformly holomorphically, with b(x_0,0)&gt;0;</li>
+<li>the source sum uses the entire rectangular integer lattice window.</li>
+</ul>
+<p>Shrink the box if necessary so the real Hessian stays uniformly negative definite throughout it. The implicit-function theorem gives one holomorphic critical point x_*(chi) near x_0. Put</p>
+<pre><code>phi(chi)=f(x_*(chi),chi),
+A(chi)=-f_xx(x_*(chi),chi).</code></pre>
+<p>Then uniformly on a fixed smaller complex parameter polydisk,</p>
+<pre><code>sum_(k/N in B) N^a b_N(k/N,chi) exp[Nf(k/N,chi)]
+   =N^(a+d/2) (2pi)^(d/2)
+      b(x_*(chi),chi)/sqrt(det A(chi))
+                 exp[Nphi(chi)] [1+O(N^-1)].               (9)</code></pre>
+<p>The determinant square root is positive at zero. Here is a proof that explicitly controls the discrete nonzero modes.</p>
+<p>For each coordinate enclose its retained integer interval by a rectangle whose vertical sides are halfway between consecutive lattice points, and whose horizontal sides have fixed imaginary heights +-eta. The endpoints differ from B’s endpoints by O(1/N). The product residue formula with kernels pi N cot(pi N z_j) is EXACTLY the original finite sum. On a vertical half-grid side |cot(pi N z_j)|&lt;=1. On a horizontal side,</p>
+<pre><code>cot(pi N(x+i eta))=-i+O(exp(-2pi N eta)),
+cot(pi N(x-i eta))= i+O(exp(-2pi N eta)).                    (10)</code></pre>
+<p>At parameter zero the real part of f changes by O(d eta^2) under these imaginary shifts, because its first derivatives are real. The same bound holds with a small additional parameter error after shrinking the parameter disk. The real boundary of B has a fixed strict gap below f(x_0,0).</p>
+<p>Choose eta first, small enough that O(d eta^2)&lt;pi eta and small enough to retain half the boundary gap. Then choose the fixed parameter disk sufficiently small to retain both inequalities, relative to Re phi(chi). Every contour piece with a vertical side is exponentially below the critical value. Every nonconstant cotangent-error term in the product expansion has at least the factor exp(-2pi N eta); the possible phase increase is smaller than exp(pi N eta). Polynomial prefactors cannot remove these strict exponential gaps.</p>
+<p>The 2^d constant horizontal kernel terms have coefficient N<sup>d/2</sup>d and the same orientation. Deforming their horizontal boxes to the real box only adds vertical connectors with the already established boundary gap. Thus the exact sum equals N^d times the ordinary analytic integral over B, up to a uniform exponentially smaller error. Replacing the real half-grid rectangle B_N by B changes only O(1/N)-wide boundary strips, which have the same strict exponential gap. This is the finite-window counterpart of suppressing all nonzero Poisson modes; no infinite-lattice replacement was made.</p>
+<p>Finally deform that integral to</p>
+<pre><code>x_*(chi)+(B-x_0).</code></pre>
+<p>This translation remains inside the same holomorphic tube. Its endpoint connectors have the boundary gap. On the translated box, Re(f(x_*+u,chi)-phi(chi))&lt;=-c|u|^2 uniformly for real u, since A(chi) remains close to a positive definite real matrix. Taylor expansion and Gaussian integration give the stated determinant. The nominal N^-1/2 corrections are odd in u and integrate to zero on the symmetric Gaussian domain; truncation errors are exponentially small. The remaining relative error is O(N^-1), including the uniform b_N-b error. This proves (9) for the exact finite packet, not merely for real parameter values or a selected subsequence.</p>
+<h2 id="the-conway-packet-and-its-color-hessian">4. The Conway packet and its color Hessian</h2>
+<p>Apply (9) with a=3-H and d=2H-3. There is a fixed complex chi polydisk on which</p>
+<pre><code>Z_N^win(chi)=N^(3/2) a_E(chi) exp[Nphi_E(chi)]
+                                     [1+O(N^-1)],          (11)
+a_E(chi)=(2pi)^((2H-3)/2)
+        b(x_*(chi),chi)/sqrt(det A(chi)).                  (12)</code></pre>
+<p>The amplitude is nonzero and a_E(0)&gt;0. This is the raw source normalization in the stated free integer coordinates. Any separately recorded enhancement or framing phase must still multiply it; (11) does not remove such a factor from an invariant.</p>
+<p>All statements hold on the whole sequence of sufficiently large N, including both parities. The upper leaf cutoff floor((N-1)/2) lies outside the fixed strict window. Half-grid endpoint choices affect only exponentially small boundary terms, and (2) has no parity- dependent lattice density. The canonical factorial normalization has fixed the actual square roots and the offset factors in (6).</p>
+<p>The phase and amplitude are separately even in each chi_l. Indeed f and the summand have this symmetry, and uniqueness of the local critical branch gives the same symmetry for x_*. At completeness,</p>
+<pre><code>phi_E(0)=max V_E/pi,
+partial_(chi_l) phi_E(0)=0,
+partial_(chi_l)partial_(chi_m) phi_E(0)
+   =-2pi cot(pi x_(l,*)) delta_lm.             (13)</code></pre>
+<p>To verify the last formula, f_(x chi_l)(x,0)=0 IDENTICALLY in x, because each leaf factor is even in its own parameter. Hence the usual critical-point Schur-complement correction vanishes here. The direct second derivative of (8) is -2pi cot(pi x_l). Every x_(l,*) is in (0,1/2), so this Hessian is strictly negative. Uniformity on a complex disk also supplies every fixed color parameter derivative by Cauchy estimates on a smaller disk.</p>
+<h2 id="comparison-with-the-positive-core-and-the-remaining-interfaces">5. Comparison with the positive core, and the remaining interfaces</h2>
+<p>For physical real deficits in a sufficiently small fixed window, the positive core outside B is exponentially smaller than the complete source at chi=0. Indeed each exact deformed core coefficient is at most its complete counterpart, the product coefficients are positive, and the complete action has a strict compact support gap outside B. The polynomial number of states and the uniform global factorial estimates preserve that gap. Therefore</p>
+<pre><code>|Z_N^core(h)-Z_N^win(h/N)|
+                  &lt;=poly(N) exp[N(phi_E(0)-gamma)]          (14)</code></pre>
+<p>with gamma&gt;0. Shrink the real color window so phi_E(h/N) stays above phi_E(0)-gamma/2. Equations (11),(14) then give exponential relative accuracy for the WHOLE positive core.</p>
+<p>A separate uniform estimate for the signed alias sectors can be combined with (14); the present proof does not assume such sectors are absent. Nor does the complex window argument identify chi with a geometric meridian or establish the Dehn-filling contour. It supplies the exact even analytic core packet, its nonzero marked amplitude, its all-parity normalization and its uniform complex saddle expansion, which those later steps require.</p>
+<h2 id="an-explicit-three-leaf-calibration-including-the-integer-shift">6. An explicit three-leaf calibration, including the integer shift</h2>
+<p>For the retained seed C(h^3), use the three original leaf indices i,j,k as free coordinates. The surviving gate output is EXACTLY t=D-k. Thus its limiting output is z=1-x_3, but its interpolated factorials have the additional shift -1 in t. The limiting phase is</p>
+<pre><code>F(x_1,x_2,x_3)=sum_l g(x_l)+m(x_1,x_2,1-x_3).</code></pre>
+<p>Its unique maximum occurs at all three x_l=a=atan(2)/pi. Directly,</p>
+<pre><code>sin(pi a)=2/sqrt(5), sin(2pi a)=4/5,
+sin(pi(3a-1))=2/(5sqrt(5)),
+g&#39;(a)=m_z(a,a,1-a)=-log4,
+m_x(a,a,1-a)=m_y(a,a,1-a)=log4.</code></pre>
+<p>These give stationarity in the actual three free coordinates. The negative Hessian and its positive determinant square root are</p>
+<pre><code>A=(25pi/4)(I_3+1 1^T),
+sqrt(det A)=125pi^(3/2)/4.                              (15)</code></pre>
+<p>Each unshifted leaf amplitude in (5) is sqrt(10)/8; the unshifted gate amplitude is 5sqrt(10)/16. The actual output t=N(1-x_3)-1 adds the factor exp(-m_z)=4. Equivalently its seven factorial shifts are 0,-1,0,0,-1,-1,+1 in the displayed numerator/denominator order of the exact Newton coefficient</p>
+<pre><code>mu_(N;i,j,t)=s_(i+j)s_t
+                /[s_i s_j s_(t-i)s_(t-j)s_(i+j-t)].</code></pre>
+<p>Thus</p>
+<pre><code>b(a,a,a,0)=(sqrt(10)/8)^3 (5sqrt(10)/16) 4=125/512,
+a_(h^3)(0)=(2pi)^(3/2)b/sqrt(det A)=sqrt(2)/64.          (16)</code></pre>
+<p>Omitting D=N-1’s shift would give a leading amplitude four times too small. This makes the shift convention in (2),(5) testable. The phase is F_0=3g(a)+m(a,a,1-a)=2v_8/pi, using the already proved <a href="actual_positive_conway_variational_limit.html">whole three-leaf seed evaluation</a>. Hence the theorem above and the positive-core comparison give</p>
+<pre><code>Z_(h^3,N)=(sqrt(2)/64)N^(3/2)exp(2Nv_8/pi)(1+O(N^-1)). (17)</code></pre>
+<p>The audit derives the gradient, Hessian, determinant and amplitude from the individual signed factorial arguments using exact rational and radical arithmetic. It also evaluates the original positive sum</p>
+<pre><code>sum_(0&lt;=i,j,k&lt;=M; i+j+k&gt;=D)
+    a_(N,i)a_(N,j)a_(N,k) mu_(N;i,j,D-k).</code></pre>
+<p>For N=5,8,20,40,80 its ratios to the leading term of (17) are 1.44279, 1.26530, 1.10276, 1.05067 and 1.02515. Additional levels 21,41,81 check the odd sequence. These finite values are diagnostics of the independently proved normalization, not an extrapolation argument for (17) or the complex-window theorem.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_conway_complex_window_laplace.py">exact calibration and finite positive sums</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_conway_complex_window_laplace_results.json">results</a>.</p>
+<p>Independent internal analytical review: the source-transport agent checked the full lattice count, integer-offset amplitude, tensor cotangent orientations and errors, complex saddle deformation, and positive-core comparison, and reported PASS. The root agent separately reviewed the full proof and derived the calibration (15)–(17); the present exact audit independently reproduces its constants. These proof reviews do not replace the separate source-algebra or alias audits.</p>
+<p>Primary-agent full analytical review and fresh calibration audit: PASS. The review checked the primitive integer coordinates, D=N-1 offset factors, finite tensor-cotangent contours and all boundary/mode gaps, uniform complex Gaussian remainder, and the exact H3 prefactor. The <a href="actual_conway_long_filling_source_limit.html">whole-source assembly</a> combines this packet with separately proved alias and marked geometric results.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_conway_complex_window_laplace.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-lattice-and-a-fixed-strict-window">1. The actual lattice and a fixed strict window</a><a href="#exact-normalization-of-the-interpolated-summand">2. Exact normalization of the interpolated summand</a><a href="#a-finite-window-complex-lattice-laplace-lemma">3. A finite-window complex lattice Laplace lemma</a><a href="#the-conway-packet-and-its-color-hessian">4. The Conway packet and its color Hessian</a><a href="#comparison-with-the-positive-core-and-the-remaining-interfaces">5. Comparison with the positive core, and the remaining interfaces</a><a href="#an-explicit-three-leaf-calibration-including-the-integer-shift">6. An explicit three-leaf calibration, including the integer shift</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

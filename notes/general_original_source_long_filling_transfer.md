@@ -294,3 +294,5 @@ dG=ell dz=(1/2)VdU and 2pi i T=G+sum p_i ell_i^2 up to its recorded
 REAL constant. The general theorem retains its base-source hypotheses;
 the audit does not establish them for a new diagram. The improved
 pretzel source proof currently verifies them for fixed odd s>=9.
+
+The [robust Conway filling theorem](actual_conway_long_filling_source_limit.md) now supplies every quantum hypothesis and the [actual marked peripheral branch](actual_conway_marked_peripheral_deformation.md) for all retained cylindrical robust factors. Arbitrary finite branching and turns are allowed; any subset of auxiliary circles may be filled along independently sufficiently long fixed signed integral slopes. Its complete mixed-color gap and uniform complex packet are proved separately. These pure full-twist fillings remain links with at least 2S+1 main components for S seeds, so this application is not a new knot-family claim.

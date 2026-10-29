@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "exact_symbolic_certificate": {
+    "critical_point": "x=y=k=atan(2)/pi; z=1-k",
+    "gradient_exponentials": [
+      "1",
+      "1",
+      "1"
+    ],
+    "negative_hessian_over_pi": "Matrix([[25/2, 25/4, 25/4], [25/4, 25/2, 25/4], [25/4, 25/4, 25/2]])",
+    "determinant_over_pi_cubed": "15625/16",
+    "actual_gate_output": "t=N(1-k/N)-1",
+    "integer_offset_multiplier": "4",
+    "leaf_amplitude": "sqrt(10)/8",
+    "unshifted_gate_amplitude": "5*sqrt(10)/16",
+    "summand_amplitude": "125/512",
+    "summed_gaussian_amplitude": "sqrt(2)/64",
+    "primitive_free_lattice": "Z^3 in the original indices i,j,k",
+    "missing_offset_would_change_amplitude_by": "factor 4"
+  },
+  "phase_diagnostic": {
+    "integral_value": "2.332487232246550241107075651747159350912529231886698162",
+    "difference_from_existing_2v8_over_pi_evaluation": "0.0",
+    "scope": "numerical confirmation; exact phase evaluation is an existing seed theorem"
+  },
+  "finite_positive_sum_diagnostics": [
+    {
+      "N": 5,
+      "positive_states": 10,
+      "ratio_to_leading_asymptotic": "1.442791645957272941722",
+      "N_times_relative_error": "2.213958229786364708609",
+      "scope": "finite-level diagnostic, not an asymptotic proof"
+    },
+    {
+      "N": 8,
+      "positive_states": 10,
+      "ratio_to_leading_asymptotic": "1.265297417438445273361",
+      "N_times_relative_error": "2.122379339507562186886",
+      "scope": "finite-level diagnostic, not an asymptotic proof"
+    },
+    {
+      "N": 20,
+      "positive_states": 165,
+      "ratio_to_leading_asymptotic": "1.102762983741375620551",
+      "N_times_relative_error": "2.055259674827512411024",
+      "scope": "finite-level diagnostic, not an asymptotic proof"
+    },
+    {
+      "N": 21,
+      "positive_states": 286,
+      "ratio_to_leading_asymptotic": "1.097745481229996476183",
+      "N_times_relative_error": "2.052655105829925999838",
+      "scope": "finite-level diagnostic, not an asymptotic proof"
+    },
+    {
+      "N": 40,
+      "positive_states": 1330,
+      "ratio_to_leading_asymptotic": "1.050670164347620872992",
+      "N_times_relative_error": "2.026806573904834919672",
+      "scope": "finite-level diagnostic, not an asymptotic proof"
+    },
+    {
+      "N": 41,
+      "positive_states": 1771,
+      "ratio_to_leading_asymptotic": "1.049416683259224927802",
+      "N_times_relative_error": "2.026084013628222039901",
+      "scope": "finite-level diagnostic, not an asymptotic proof"
+    },
+    {
+      "N": 80,
+      "positive_states": 10660,
+      "ratio_to_leading_asymptotic": "1.025146884209866996211",
+      "N_times_relative_error": "2.0117507367893596969",
+      "scope": "finite-level diagnostic, not an asymptotic proof"
+    },
+    {
+      "N": 81,
+      "positive_states": 12341,
+      "ratio_to_leading_asymptotic": "1.024834096061650237621",
+      "N_times_relative_error": "2.011561780993669247291",
+      "scope": "finite-level diagnostic, not an asymptotic proof"
+    }
+  ],
+  "scope": "Exact algebraic Hessian, determinant, amplitude and D=N-1 offset certificate. Finite positive sums diagnose the proved asymptotic and do not prove its limit or complex uniformity."
+}
