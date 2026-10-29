@@ -264,9 +264,15 @@ The following alternatives are valid for every graph above.
       Z_Gamma=C_Gamma [product_(v!=v*) s_v(0)]
                                s_v*'(0) Xi_Gamma(0)/nu_N.   (15)
 
-  It is not legitimate to set this term to zero merely because its
-  ordinary root coefficient vanishes. The derivative may vanish, but
-  that requires its actual finite local source current(8).
+  Its ordinary root coefficient alone does not justify deleting this
+  term. The derivative can be nonzero. A subsequent WHOLE-source
+  result now proves its value zero for the closed complete-circle
+  diagrams here: omit all three caps of the exposed marked vertex,
+  obtain a regular six-head invariant, and apply its three complete
+  circles last. Their unsupported product annihilates the saturated
+  source before the mark acts. The full typed proof is in
+  [the exposed six-port pruning theorem](actual_exposed_six_port_complete_circle_pruning.md).
+  This does not set s_v*' to zero or delete an arbitrary open current.
 
 If at least two s_v(0) vanish, holomorphy of every factor in(11)
 gives a double zero and hence Z_Gamma=0. If there is a sole black or
@@ -312,7 +318,10 @@ normal but zero exterior spin value; it therefore asserts no nonzero
 boundary contribution merely from that local current. Both factors
 in(15) are retained.
 General norm/nonzero/volume control for the ordinary network normal
-in(14), and for the marked-white current in(15), remains open.
+in(14) remains open. Equation(15)'s local current is retained, while
+its closed complete-circle source value is now annihilated by the
+separate physical support theorem. No off-complete auxiliary-color
+or arbitrary open-current cancellation is inferred.
 
 Internal review history: the initial review and positive tests missed
 the exposed-versus-nested bare-mark distinction. The additional test
@@ -322,3 +331,10 @@ unchanged. The corrected audit passes five local jet families, sixteen
 exposed original source cases and the inner-mark rejection. These are
 internal checks, not an external peer review or a geometric
 identification of the network.
+
+The corrected exposed statements and the additional whole-source
+six-port pruning were subsequently checked independently by root and
+the global audit agent. The latter also freshly replayed the typed
+sewing/pruning regressions, including its negative nested-cut case.
+The original mark-scope correction is retained above rather than
+being hidden by that later review.

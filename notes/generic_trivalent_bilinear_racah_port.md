@@ -1,0 +1,297 @@
+# A generic bilinear Euler reduction toward the actual Racah source sum
+
+29 October 2026. This records two OWN finite identities: a bilinear
+Euler linearization and a generic Euler-moment formula for the actual
+source B_abc. They hold before root specialization and include high
+fold partners. The final source-to-single-Racah identity targeted in
+section4 is now proved independently by the
+[actual source-column/Jacobi argument](actual_generic_trivalent_racah_source_identity.md).
+The finite comparisons in this note remain supporting checks, not
+the proof of that identity.
+
+Use the notation and ACTUAL source normalization of
+[the generic six-head theorem](actual_generic_six_head_tetrahedral_source.md):
+N=d+1, Q=zeta^2, F_n=(Q;Q)_n, and ordinary triangles a,b,c in 0,...,d.
+Put r=b+c-a, r1=a+b-c, r2=a+c-b. All formulas in this note are
+generic rational identities. Only the source formula already proved
+there, not a named quantum 6j evaluation, is a premise.
+
+## 1. Own bilinear finite Euler linearization
+
+For nonnegative m,n and a generic parameter V,
+
+    (U;Q)_m(UV;Q)_n
+       =sum_(k=0)^n C_(n,k) U^k(U;Q)_(m+n-k),
+    C_(n,k)=Q^[k(k-1)/2] [n choose k]_Q
+                         product_(s=0)^(k-1)(Q^(m-s)-V). (1)
+
+Proof by induction on n. For the old basis vector with L=m+n,
+
+    U^k(U)_(L-k)(1-UVQ^n)
+       =U^k(U)_(L+1-k)
+        +Q^n(Q^(m-k)-V)U^(k+1)(U)_(L-k).
+
+Thus C_(n+1,k)=C_(n,k)+Q^n(Q^(m-k+1)-V)C_(n,k-1).
+The displayed formula satisfies this by the elementary Gaussian
+Pascal identity. At n=0 the assertion is exactly (U)_m.
+No infinite product or summation formula is needed.
+
+The relevant specialization is m=n=b,V=Q^N:
+
+    (U)_b(UQ^N)_b
+       =sum_(k=0)^b Q^(bk)[b choose k]_Q
+                     (Q^(N-b);Q)_k U^k(U)_(2b-k). (2)
+
+At a root Q^N=1, (2) reduces to the previously proved finite square
+linearization. GENERICALLY its factor (Q^(N-b);Q)_k must remain;
+it cannot be replaced by its root value before taking a normal.
+
+## 2. A source-exact generic Euler-moment formula
+
+Write
+
+    c_e=[U^e](U;Q)_b(UQ^N;Q)_b,
+    M_(a,n)=sum_(k=0)^(d-a) Q^[(a+1+n)k]
+                          F_(d-k)F_(a+k)/(F_(d-a-k)F_k),
+    P=2a^2-b^2+3c^2-2ac+2bc
+                            -d(a+b+2c+1)+b+c.
+
+Then the ACTUAL analytic source sum from the generic six-head note is
+
+    B_abc=(-1)^(d+b-c) zeta^P/(F_a F_b F_c F_r1)
+       *sum_(e=0)^r c_e Q^(-ce)
+                         F_(2b-e)/F_(r-e) M_(a,r-e). (3)
+
+There is a second elementary expression for its moments:
+
+    M_(a,n)=F_a^2 [z^(d-a)]
+                       (zQ^(a+1);Q)_n/(z;Q)_(2a+2+n). (4)
+
+Proof of (4). Divide the summand by F_a^2 and use the two Gaussian
+coefficients [a+k choose a]_Q[d-k choose a]_Q. Their convolution
+is the coefficient of z^(d-a) in
+
+    1/[(z;Q)_(a+1)(zQ^(a+1+n);Q)_(a+1)]
+       =(zQ^(a+1);Q)_n/(z;Q)_(2a+2+n).
+
+The reciprocal finite-product coefficient formula is proved by
+induction on its length, so this is a finite generating-function
+calculation.
+
+Here are the source steps giving (3), including its phase. The
+generic cup/highest-vector ratio simplifies exactly to
+
+    h_j(u)/P_d(u)=Q^(-ju)[j+u choose j]_Q.
+
+Expand the middle W entry in the actual B using its physical
+coproduct formula. With k,z its two summation variables, the result is
+
+    B=zeta^C/(F_a F_b F_c) sum_(k,z)
+       (-1)^(k+z) zeta^[(k+z)^2
+                          +(2a+2c-2d+1)k+(2a-2d-1)z]
+       *F_(d-k)F_(a+k)F_(b+z)F_(d-z)
+       /[F_(d-a-k)F_k F_z F_(d-b-z)
+                       F_(a+b-d+k+z)F_(d-c-k-z)],
+    C=2a^2+2c^2-d(3a+b+2c)+d^2.                  (5)
+
+All ranges here are the true physical ranges: every factorial index
+is nonnegative. Put k+z=d-a-b+p. The last two factorials become
+F_p F_(r1-p), so 0<=p<=r1. The two ratios involving z are
+
+    (Q^(d-a-b+p-k+1);Q)_b
+                  (Q^(a+k-p+1);Q)_b.
+
+The k range extends to 0,...,d-a: each added nonphysical state is
+killed by a factor 1-Q^0 in one of these two finite products, before
+any root specialization. Reverse the second product. Up to the
+displayed overall phase it gives
+
+    f_k(T)=(TQ^(d-a-b-k+1);Q)_b(TQ^(-a-b-k);Q)_b,
+    sum_(p=0)^r1 (-1)^p Q^[p(p-1)/2-2bp]
+                                      [r1 choose p]_Q f_k(Q^p).
+
+On its monomial T^e this operator multiplies by
+(Q^(e-2b);Q)_r1. It is EXACTLY zero for r<e<=2b; for e<=r it is
+
+    (-1)^r1 Q^[(e-2b)r1+r1(r1-1)/2]
+                                      F_(2b-e)/F_(r-e).
+
+Since f_k(T)=f_0(TQ^-k) and the two starts of f_0 differ by Q^N,
+its coefficient is Q^[-(a+b)e]c_e. Its combination with Q^(er1)
+is Q^(-ce). The remaining k sum is M_(a,r-e). The outside signs
+and zeta powers simplify to those in (3). This proves (3) by finite
+Gaussian algebra, at both parities and including all high partners.
+
+## 3. The finite gap in this reduction, now closed by the source recurrence
+
+Equations (2)--(4) retain the GENERIC normal, unlike the old root
+Fourier/square reduction. But their remaining Euler coefficient and
+finite quantum-Hahn moment are not collapsed directly in this note.
+The separate generic source-column proof now establishes the desired
+single-sum identity, preserving precisely these normal terms.
+The root identity Q^N=1 turns the two Euler products into a square;
+doing that first loses the normal of their relative shift.
+
+For example, the proposed single-sum representation in the next
+section has, when a=max(a,b,c) and b+c<=d, the balanced series
+
+    4phi3(Q^-r,Q^(N+a+1),Q^-b,Q^-c;
+               Q^(N-b-c),Q^(a-b+1),Q^(a-c+1);Q,Q).
+
+The independently proved finite Sears identity transforms it to a
+series with numerator parameters
+
+    Q^-r, Q^-b, Q^(-J-1), Q^(N-b),
+
+and denominators Q^(N-b-c),Q^(-b-c),Q^(-2b).
+At the root the apparent extra termination length is delta=J-d.
+GENERICALLY its length is r, and terms k>delta carry a root zero
+whose derivative need not vanish. They cannot be removed by
+differentiating the root-short formula. This is a precise remaining
+normal-source issue, not evidence that the desired transform fails.
+
+### 3a. Exact normalization to a reciprocal polynomial of bounded color degree
+
+This subsection is a further PROVED reduction of the generic source.
+Assume a=max(a,b,c), put X=Q^N and A=Q^(a+1), and define
+
+    H_n(X)=sum_(t=0)^n [n choose t]_Q
+                                  (A;Q)_t(A;Q)_(n-t) X^t,
+    P_a(X)=(XQ^-a;Q)_(2a+1).
+
+The moment from (4) factors as
+
+    M_(a,n)=F_a^2 P_a(X)/F_(2a+n+1) *H_n(X).      (5a)
+
+For a finite proof, expand the numerator in (4). Its t-th term has
+the factor (XQ^(-a-t);Q)_(2a+n+1), whose common subproduct is
+P_a(X). The remaining two tails give
+
+    sum_(t=0)^n [n choose t]_Q
+                           X^t(A/X;Q)_t(AX;Q)_(n-t)=H_n(X).
+
+Here is an own formal-coefficient verification of the last identity,
+without infinite-product evaluation. The series with coefficients
+(B;Q)_k/F_k is the unique initial-value-one formal series G_B(z)
+with G_B(Qz)=(1-z)G_B(z)/(1-Bz), as checked coefficient by coefficient.
+Both products G_(A/X)(Xz)G_(AX)(z) and G_A(z)G_A(Xz) have the SAME
+functional equation and initial value, so their finite degree-n
+coefficients agree. Only coefficients through n are used.
+
+Define the explicit SOURCE polynomial
+
+    R_SRC(X)=sum_(e=0)^r
+       c_e(X) Q^(-ce) F_(2b-e) H_(r-e)(X)
+                            /[F_(r-e)F_(J+1-e)],
+    c_e(X)=[U^e](U;Q)_b(UX;Q)_b.                 (5b)
+
+Equations (3),(5a) give the precise actual normalization
+
+    B_abc=(-1)^(d+b-c) zeta^P F_a/(F_b F_c F_r1)
+                                      *P_a(X) R_SRC(X). (5c)
+
+Every c_e is reciprocal of degree at most e in the sense
+X^e c_e(1/X)=c_e(X). The same assertion holds for H_n of degree n.
+Consequently
+
+    deg R_SRC<=r,
+    X^r R_SRC(1/X)=R_SRC(X).                      (5d)
+
+All dependence on the physical d in the residual polynomial has
+disappeared: it enters only through X and the known outside factor.
+This is not a polynomial fit to physical data.
+
+The exact TARGET polynomial corresponding to the proposed Racah sum
+in (6) is
+
+    R_TGT(X)=Q^(br) F_b^2 F_c^2 F_r1/F_(J+1)
+       *sum_(k=0)^r (-1)^k
+         Q^[3k(k-1)/2+(a-2b-2c+1)k]
+         (XQ^(-a-r+k);Q)_(r-k)(XQ^(a+1);Q)_k
+       /[F_k F_(a-b+k)F_(a-c+k)F_(b-k)F_(c-k)F_(r-k)]. (5e)
+
+To derive the conversion, first take d>=b+c and write z=d+a+k in
+the proposed sum. Replacing each symmetric factorial by
+zeta^(-n(n-1)/2)F_n/(1-Q)^n cancels every 1-Q factor. The ratio
+F_(N+a+k)/F_(d-b-c+k) is
+(XQ^(-b-c+k);Q)_(J+1). Its common factor P_a leaves exactly the
+two tails displayed in (5e). The remaining zeta exponent, relative
+to P in (5c), is 2br+3k(k-1)+2(a-2b-2c+1)k. The signs agree.
+The needed finite polynomial identity is
+
+    R_SRC(X)=R_TGT(X)                             (5f)
+
+and is now established by the separate source recurrence, own finite
+Sears transformation and infinite-d polynomial argument. It covers d<b+c
+and high partners: in the fixed k range, a formally negative bottom
+index d-b-c+k is represented by the product
+(XQ^(-b-c+k);Q)_(J+1), which then contains the LITERAL factor
+1-Q^0 and vanishes. For every physical d>=a, P_a(Q^N) is a generic
+unit. Thus precisely the inadmissible extra k terms vanish, restoring
+the correct lower limit z>=J without assigning a nonzero factorial
+to a negative index.
+Neither matching degrees nor exact finite-field tests alone prove (5f).
+
+There is at least one exact triangular interpolation value. Substituting
+(2) in the coefficient form of (5b) gives
+
+    R_SRC(X)=sum_(k=0)^r C_k F_(2b-k)/F_(J+1-k) Q^(-ck)
+       *[U^(r-k)] (UQ^-c;Q)_c(UQ^(a+1);Q)_(b-k)
+                                      /(UX;Q)_(a+1),
+    C_k=Q^(bk)[b choose k]_Q(XQ^-b;Q)_k.          (5g)
+
+All manipulations here need only coefficients through r; the weighted
+Euler linearization agrees through that order even when its formal
+tail extends farther. At X=Q^b only k=0 survives. Canceling the common
+positive Euler interval and taking the coefficient gives
+
+    R_SRC(Q^b)=F_(2b)/F_(J+1)
+                   *Q^(br)[c choose r]_Q(Q^(-b-c);Q)_r. (5h)
+
+Explicitly the remaining coefficient is [U^r](UQ^-c)_c divided by
+(UQ^b)_(c-r+1). Expanding its numerator, the two Gaussian factors
+combine to [c choose r][r choose p]; the finite binomial theorem
+then gives (5h). At X=Q^(b-s), 0<=s<=r, the k sum in (5g)
+truncates at k=s. The exact higher interpolation values, or an
+equivalent direct coefficient certificate for (5f), are not evaluated
+here. The complete identity is supplied by the independently proved
+actual channel recurrence, rather than these interpolation values.
+
+## 4. The normalized single-Racah identity, proved by the source recurrence
+
+For symmetric quantum factorials
+
+    [n]!_zeta=zeta^[-n(n-1)/2]F_n/(1-Q)^n,
+
+define the finite sum
+
+    S_R=sum_z (-1)^z [z+1]!
+       /([z-J]! product_j[z-d-j]!
+          [d+a+b-z]![d+a+c-z]![d+b+c-z]!),
+    max(J,d+a,d+b,d+c)<=z
+                      <=min(d+a+b,d+a+c,d+b+c).
+
+The precisely normalized identity, now proved in the linked generic
+source-column theorem, is
+
+    B_abc = (-1)^J zeta^[a^2-b^2+c^2-ab-ac+bc-cd]
+                  *[a]![b]![c]!/[J+1]! *S_R.       (6)
+
+The phase and factors agree with exact generic physical calculations,
+including high partner channels. Those comparisons are NOT the proof
+of (6): the linked proof uses the actual source coefficient COLUMN,
+uniform Fricke/boundary certificates and our own finite AW/Sears
+calculation. Formula (3) remains an independent Euler source reduction.
+
+The low-fold source zero and the one [N] factor in (6)
+can be compared term by term with the existing positive root Racah
+partition. High-partner ranges that cross N still require their
+actual zero orders and coherent cancellations. Neither a general
+boundary-conditioning theorem nor arbitrary-graph growth is
+asserted here.
+
+Audit: [generic Euler identities and separately labeled target tests](../experiments/audit_generic_trivalent_bilinear_racah_port.py).
+The audit verifies (1), (3), (4), and compares (6) independently;
+its historical result schema distinguishes the separate target tests
+from the Euler identities proved by that audit. The completed generic
+identity has its own uniform symbolic certificate and source audit.

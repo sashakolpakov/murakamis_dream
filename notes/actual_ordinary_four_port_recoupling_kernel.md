@@ -1,0 +1,318 @@
+# An actual generic four-port Clebsch recoupling kernel
+
+29 October 2026. This gives a finite factorial kernel for a typed
+four-port recoupling, with the ordered unequal-pair norm and pivotal
+cyclic turn derived directly. All intermediate channels are retained,
+including high root partners. The coefficients are bilinear ribbon
+coefficients, not a unitary or positive 6j matrix. No quoted recoupling
+formula is a premise.
+
+The construction supplies an exact local identity before root
+specialization. Its explicit pole bookkeeping retains the normal
+data needed in the original marked source. A positive or asymptotic
+estimate for the primitive cube remains a separate question.
+
+## 1. Generic unequal Clebsch maps
+
+Write Q=zeta^2, F_r=(Q;Q)_r. The highest-weight L object has the
+actual balanced matrices
+
+    K|u>=zeta^L Q^-u|u>,
+    F|u>=(1-Q^(u+1))|u+1>,
+    Ecal|u>=zeta^(-L-1)(1-Q^(L+1-u))|u-1>.
+
+Its canonical cup has first coefficient one:
+
+    P_L(u)=(-1)^u zeta^[u(L-u-1)]F_u F_(L-u)/F_L,
+    p_L(u,L-u)=P_L(u), ell_L=p_L^(-1).             (1)
+
+Take physical highest weights A,B, target C=A+B-2m, with
+0<=m<=min(A,B). The first-entry-one highest vector in V_A tensor V_B
+has entries at (s,m-s)
+
+    h_s=(-1)^s zeta^[s(A-2B+2m-s-1)]
+                     F_(B-m+s)F_(A-s)/(F_(B-m)F_A),
+    0<=s<=m.                                      (2)
+
+The direct highest equation gives
+h_(s+1)/h_s=-zeta^(A-2B)Q^(m-s-1)
+                 (1-Q^(B-m+s+1))/(1-Q^(A-s)).
+Let W_AB^C[r]=Delta(F)^r h/F_r, 0<=r<=C. Its full finite entry is
+
+    W_AB^C[r](i,j)=F_i F_j sum_s
+        h_s zeta^(-A t) Q^(st)
+                     /[F_s F_(m-s)F_t F_(r-t)],
+    i+j=m+r, t=j-m+s.                             (3)
+
+All indices are required to be physical: 0<=s<=m,
+0<=i<=A,0<=j<=B,0<=t<=j,0<=r-t<=i. Otherwise the term is zero.
+Formula(3) is the direct finite coproduct binomial, with F_r canceled
+BEFORE specialization. If A,B<N, every denominator in(2),(3) has
+index<N, even if C or r is >=N. Thus W itself has no root pole.
+
+The final F endpoint follows from the commutator and injectivity of
+E above the physical middle degree, exactly as for the previously
+proved equal-pair Clebsch map. This proves generic covariance without
+assuming a decomposition or a semisimple root replacement.
+
+## 2. The ordered bilinear norm, by finite convolution
+
+The right dual of W_BA^C is a map on the ORIGINAL A,B order:
+
+    D(W_BA)=p_C^T W_BA^T(ell_B^T tensor ell_A^T)P_AB,
+
+where P_AB changes the displayed A,B input to B,A. The actual norm is
+
+    D(W_BA^C) W_AB^C=n_AB^C I,
+    n_AB^C=(-1)^m zeta^[-AB+m(m-1)]
+                   F_(A+B-m+1)/(F_m F_(C+1)).      (4)
+
+Using D(W_AB) without reversing the object labels is not a typed
+composition when A!=B. Equation(4) is a rational generic identity;
+its zeros and any canceled factors are retained.
+
+Here is an own finite derivation. The lowest F recurrence gives
+
+    W_BA^C[C](B-m+s,A-s)
+      =ell_BA zeta^[(B-A)s] h_AB(s),
+    ell_BA=zeta^[-AB+3Bm-2m^2]
+                      F_(B-m)F_A/(F_(A-m)F_B).    (5)
+
+At s=0 the coproduct entry reduces to
+
+    sum_u(-1)^u Q^[u(u-1)/2]
+         F_(B-u)/(F_u F_(m-u)F_(B-m-u))=Q^[m(B-m)].
+
+This is the elementary finite second Chu identity, proved by finite
+binomial expansion in the earlier source calculations; all endpoint
+powers give exactly(5). The recurrences then prove the entire slice.
+
+Schur's K,F equations make the composition in(4) scalar. In its
+highest entry substitute(1),(2),(5). The only remaining convolution,
+with X=B-m,Y=A-m, is
+
+    sum_s Q^[-(X+1)s]
+                   [X+s choose s]_Q[Y+m-s choose m-s]_Q
+       =Q^[-(X+1)m][X+Y+m+1 choose m]_Q.           (6)
+
+It is the coefficient of u^m in
+1/[(uQ^(-X-1);Q)_(X+1)(u;Q)_(Y+1)], a single contiguous reciprocal
+product. Its elementary finite-product coefficient formula proves(6).
+The factorials cancel to those in(4); the sign is (-1)^m and the
+remaining zeta exponent is -AB+m(m-1). The equal case A=B=d is
+exactly the independently proved physical norm of the generic
+six-head tetrahedral source.
+
+The generic projectors are consequently
+
+    Pi_AB^C=W_AB^C D(W_BA^C)/n_AB^C.               (7)
+
+Different generic Casimir eigenvalues make them mutually orthogonal,
+and the dimension identity sum_C(C+1)=(A+1)(B+1) proves completeness.
+This generic identity is not a claim that the individual projectors
+are regular or orthogonal positive projections at the root.
+
+## 3. Four-port columns and the actual cyclic turn
+
+Now use integer spin labels a,b,c,d, with external highest weights
+2a,2b,2c,2d. Let e range over
+
+    I_S=[|a-b|,a+b] intersect [|c-d|,c+d]
+
+in integer steps. Write W_ab^e for (2),(3) with highest weights
+2a,2b,2e. Define the actual invariant column
+
+    Psi_e^S=(W_ab^e tensor W_cd^e)p_(2e).          (8)
+
+The first canonical cup has to be kept, including its possible root
+pole. It is not replaced by a Euclidean Bell vector.
+
+For the other pairing let f range over
+I_T=[|b-c|,b+c] intersect [|d-a|,d+a]. First form Psi_f in the
+order B,C,D,A. Bring its last A leg to the front by the GENUINE
+pivotal cyclic map:
+
+    Psi_f^T(u,v,w,z)=K_a(u)
+              [(W_bc^f tensor W_da^f)p_(2f)](v,w,z,u).
+    K_a(u)=zeta^(2a-2u).                          (9)
+
+To prove the clock, moving a first highest-L leg to the end by the
+actual cap/cup has matrix ell_L^T p_L=(-1)^L K_L^(-1).
+The inverse move multiplies by (-1)^L K_L. Here L=2a is even,
+giving(9). It is an invariant-column identity; a plain cyclic
+permutation would give a different kernel.
+
+Let Psi_e^rev be (8) with external order d,c,b,a, and dualize it
+with those actual four cups and reverse the abstract dual order.
+The exact diagonal norm is
+
+    D(Psi_e^rev) Psi_g^S=delta_(e,g) N_e,
+    N_e=n_ab^e n_cd^e [2e+1]_zeta.                 (10)
+
+Indeed each ordered pair composition is(4), and the surviving cup
+and cap give their actual pivotal quantum dimension. No norm square
+or conjugation is used. All N_e are nonzero generic rational functions.
+
+## 4. A finite all-entry recoupling kernel
+
+The complete kernel and all-entry source identity are
+
+    R_(e,f)=D(Psi_e^rev) Psi_f^T/N_e,
+    Psi_f^T=sum_(e in I_S) R_(e,f) Psi_e^S.        (11)
+
+Equations(1)--(3),(8),(9) make every entry an explicit terminating
+factorial sum, with no quoted 6j formula. Weight conservation removes
+one external magnetic sum. More specifically, for external colors
+u,v,w,z with u+v+w+z=a+b+c+d, the S column has the single product
+
+    Psi_e^S(u,v,w,z)=W_ab^e[r](u,v) P_(2e)(r)
+                                      W_cd^e[2e-r](w,z),
+    r=u+v-(a+b-e).                                (12)
+
+The T column has the analogous product from(9). The dual in(11)
+uses the reverse complementary external colors and division by their
+canonical cup coefficients. All those entries are given in(1)--(3).
+
+For completeness, the S columns span the generic four-port invariant
+space: resolve the first pair by(7). The remaining invariant couples
+that target to the second pair; its homogeneous highest recurrence
+allows exactly the matching target e, once. Thus the dimension is
+|I_S|=|I_T| and the diagonal pairing(10) proves(11). It follows that
+the local four-port invariant tensor can be replaced by(11) against
+ANY exterior row, including a source-dependent row. A planar source
+disk with incoming ports is first bent using its actual cups; the
+inverse bends are retained when using(11) in the original network.
+
+## 5. Root partners and the necessary higher normals
+
+Suppose now 0<=a,b,c,d<=M=floor((N-1)/2). All W entries in(3) are
+holomorphic at q. The cup p_(2e) is regular for e<=M and has at most
+a simple pole for e>M. The exact norm factors give the following
+orders, without treating high partners as low ordinary simple modules.
+
+For a PAIRED low node 2e<N-1, including e=M at even N, put
+e*=N-1-e. Then
+
+    ord_q n_ab^e =1 if e* is in [|a-b|,a+b], else0.
+
+The same holds for c,d. At the odd simple 2e=N-1, each n is a unit
+and [2e+1] has a simple zero. At e>M the zero in the numerator and
+denominator factorial of(4) cancels, so each n and [2e+1] are units.
+Thus the low N_e can have order TWO, the odd simple N_e has order
+one, and high N_e have order zero. These are actual source zeros.
+
+In particular each coefficient in(11), and each summand
+R_(e,f)Psi_e^S, has a pole of order at most THREE. For low e its dual
+column is regular and N_e has at most two zeros; the input f has at
+most one pole. For high e the dual and input have at most one pole
+each, N_e is a unit, and the extra output column supplies at most
+one more. The odd simple case is smaller. Therefore a local Laurent
+identity(11) can be checked through its first normal by retaining
+Taylor ORDER FOUR (five coefficients, degrees0 through4) after
+multiplication by the cube of a local root parameter. This is a
+pole-order bound, not a magnitude bound.
+
+The pair spectral projector also has at most one pole: only its
+partner eigenvalue can collide, and that eigenvalue gap has a simple
+zero away from the odd self-paired node. Summing complete colliding
+clusters, or retaining the Laurent terms in(11), is necessary BEFORE
+specialization. Dropping high channels, taking only nodal values,
+or bounding each singular term separately changes the normal source.
+
+The finite kernel does not yet make R unitary or sign-coherent at the
+principal root. Factorial coefficients and confluence frames can be
+exponentially large. A primitive cube reduction must retain its
+entire recoupling sum and original fixed normal, rather than infer
+positivity from a diagonal norm or real spectral values.
+
+## 6. An explicit highest-chart kernel with just two terminating sums
+
+The four-port coefficient can also be evaluated without the full
+four-color magnetic pairing. Put H=a+b+c-d and use the highest chart
+
+    w_i=Psi(i,H-i,0,2d),
+    max(0,H-2b)<=i<=min(2a,H).                     (13)
+
+Bending the last leg by the actual canonical cup makes this the
+third-color-zero slice of a highest-weight-2d three-object vector.
+The original highest recurrence recovers all its other slices,
+then the ordinary F descendants recover the entire four-port column.
+Thus this chart is injective; it is not an arbitrary packet truncation.
+
+The MIDDLE-pair Casimir on a valid highest chart is the upper-bidiagonal
+operator
+
+    B e_i=lambda_i e_i+b_i e_(i-1),
+    lambda_i=zeta^(2d-2a+1)Q^i+zeta^(-2d+2a-1)Q^-i,
+    b_i=-zeta^(2b+2c-2a-1)Q^(i-H)
+                    (1-Q^(2a+1-i))(1-Q^(H-i+1)).  (14)
+
+To derive it, lift w into the third object using its actual highest
+recurrence. In the third-color-zero extraction of Omega_bc only
+third colors0 and1 can contribute. Their F_b E_b terms cancel,
+leaving -zeta^(2c)F_b E_a K_b plus the two Cartan terms, which is
+(14). If c=0 the absent color1 is not introduced; the same formula
+agrees on the valid kernel E_ab w=0. Thus (14) is always used on the
+actual highest-source subspace.
+
+For f in I_T put i0=a+f-d, and define the generic left eigenrow
+
+    ell_f(i)=0 for i<i0, ell_f(i0)=1,
+    ell_f(i)=product_(j=i0+1)^i[-b_j/(lambda_j-lambda_i0)]. (15)
+
+The row equation directly proves ell_f B=c_f ell_f. For the T_f
+column, (9) shows its chart is zero when i>i0. Its value at i0 is
+the following explicit NONZERO normalization:
+
+    beta_f=zeta^(2a-2i0) h_bc^f(b+c-f)
+          *(-1)^(d+a-f)
+          *zeta^[-4da+4d(d+a-f)-(d+a-f)(d+a-f+1)].  (16)
+
+The last factor is the lowest physical endpoint of W_da^f; it follows
+by substituting s=m in(5). There is no unspecified eigenvector scale.
+For the S_e chart, put u_e=c+e-d. Its exact scalar is
+
+    w_e(i)=chi_e W_ab^e[u_e](i,H-i),
+    chi_e=(-1)^u_e zeta^[u_e(2e-u_e-1)-2c(d-c+e)]
+                      F_(u_e)F_(2d)/(F_(c+d-e)F_(2e)). (17)
+
+This is the unique s=0 coproduct contribution at the external colors
+(third=0,fourth=2d) in (12). Hence the INVERSE recoupling has the
+explicit finite formula
+
+    Psi_e^S=sum_(f in I_T) L_(f,e)Psi_f^T,
+    L_(f,e)=chi_e/beta_f
+                *sum_(i=i0)^min(2a,H)
+                     ell_f(i) W_ab^e[u_e](i,H-i).  (18)
+
+There is one displayed magnetic sum, and each W entry is the single
+finite factorial sum(3). All remaining factors are finite products.
+To prove (18), eigenrows with different generic c_f kill the other
+right channels; the support just noted gives ell_f(w_f)=beta_f.
+Injectivity of the highest chart then proves the ALL-ENTRY identity.
+Equivalently the matrices in(11),(18) are inverse. This is a concrete
+finite two-sum Racah kernel derived from the original operators,
+not a quoted hypergeometric recoupling coefficient.
+
+It also exposes cancellations hidden in the diagonal norm. At the
+principal root beta_f is a unit: all its factorial indices are
+external physical indices <N. Chi_e has at most one pole, precisely
+from F_(2e) on a high channel. In ell_f there can be at most one
+colliding denominator, from f*=N-1-f; its zero is simple, and it is
+absent for a high f or an odd self-paired node. Therefore each
+coefficient in (18) has pole order at most TWO. The cyclically interchanged
+formula gives the same bound for(11). Its product with an output
+column still has at most three poles, so the fixed-normal instruction
+in section5 is unchanged. No pole is discarded by evaluating an
+individual partner at the root.
+
+The [focused audit](../experiments/audit_actual_ordinary_four_port_recoupling_kernel.py)
+passes 44 exact unequal Clebsch/norm channels, 61 four-port external
+families and all185 recoupling entries, the separate highest-chart
+two-sum inverse at all61 families/185 entries, and eight full-partner/root
+families N=2,...,9. The latter construct high-channel W by(3) without
+dividing by the vanished F_N, check their actual E,F,K covariance,
+and compare the uncanceled norm-factor zero count with the exact
+partner condition. Both even central PAIRED and odd central SIMPLE
+nodes are included. These checks supplement the finite proofs,
+not a growing-color asymptotic or conditioning assertion.

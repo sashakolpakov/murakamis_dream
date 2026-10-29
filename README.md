@@ -16,11 +16,26 @@ The **signed marked theta link** now has its complete original-source Gaussian a
 
 For arbitrary fixed original noncrossing Morse graphs, an exact **first-normal reduction** retains the canonical ordinary magnetic spin network, its source coefficients and a sole EXPOSED physical marked cap. A bare mark nested inside another top cap is not covered; it requires an explicitly transported current. General growth and noncancellation for those graphs remain open. A definitions-only literature comparison records related root evaluations without importing their proofs or asserting equivalence from a shared name.
 
+The new **positive Newton multiplication theorem** retains the full root algebra and its normal data. It gives a positive cuboctahedral period with the exact geometric rate of the **odd central cube sector**. A further exact packet sums **all four rung colors** at polynomial cost while keeping the eight cycle channels central. These are source-sector results, not a volume-limit proof for the whole cube invariant, even levels, or arbitrary branched graphs.
+
+The **generic trivalent Racah source identity** now expresses the actual nested-cup coefficient as one finite factorial sum before root specialization, including high partners and bounded normal tails. Its proof uses a typed all-input recoupling column and a finite polynomial recurrence. The accompanying central-corridor conditioning estimate does not settle conditioning on the full color support or general graph noncancellation.
+
 The unfilled complete augmented volume V_s and the filled source volume V_src,s(p) are different. The broader task—original-source control and volume equality for arbitrary hyperbolic knots or arbitrary augmented graphs—remains open. The exact trivalent complete-circle vertex kernel records progress toward branching, without asserting a new branched-graph volume limit. Exploratory calculations, counterexamples to intermediate proposals, and historical checkpoints are retained with their own scope.
 
 ## Start here
 
 - [Current general frontier](notes/general_equality_frontier.md)
+- [Recent verified advances and remaining full-source gaps](notes/recent_advances_2026_10_29.md)
+- [Positive multiplication in the full Newton source algebra](notes/actual_positive_newton_multiplication.md)
+- [Positive cuboctahedral period and its odd central-sector geometric rate](notes/actual_positive_newton_cuboctahedral_period.md)
+- [Literal odd central cube source and marked normalization](notes/actual_odd_central_cube_reflection_packet.md)
+- [All four rung colors with central cycle channels retained](notes/actual_cube_four_rung_positive_source.md)
+- [Actual generic source as a typed recoupling column](notes/actual_generic_tetrahedral_source_as_recoupling.md)
+- [Generic all-partner single Racah source identity](notes/actual_generic_trivalent_racah_source_identity.md)
+- [Generic unequal four-port recoupling kernel](notes/actual_ordinary_four_port_recoupling_kernel.md)
+- [Central-corridor normal-envelope theorem and its limits](notes/central_racah_normal_jet_envelope.md)
+- [Exposed six-port pruning before the mark](notes/actual_exposed_six_port_complete_circle_pruning.md)
+- [Whole-channel exact three-port source sewing](notes/actual_nc_three_port_source_sewing.md)
 - [Whole original-source survival](notes/actual_long_pretzel_full_source_survival.md)
 - [Width and even-link extension](notes/actual_pretzel_all_width_extension.md)
 - [Source-to-hyperbolic-volume certificate](notes/source_volume_casson_rivin_certificate.md)
@@ -77,6 +92,11 @@ Use Python 3. Research scripts use NumPy, SymPy, mpmath, and other packages as i
 ```sh
 python3 -m pip install -r requirements-core.txt
 python3 experiments/audit_actual_newton_turn_positive_gram.py
+python3 experiments/audit_actual_positive_newton_multiplication.py
+python3 experiments/audit_actual_positive_newton_cuboctahedral_period.py
+python3 experiments/audit_actual_cube_four_rung_positive_source.py
+python3 experiments/audit_actual_generic_tetrahedral_source_as_recoupling.py
+python3 experiments/audit_actual_generic_trivalent_racah_source_identity.py
 python3 experiments/audit_actual_six_port_divided_power_source_kernel.py
 python3 experiments/audit_general_augmented_graph_source_extension.py
 python3 experiments/audit_actual_complete_circle_nodal_energy_and_belt_sewing.py

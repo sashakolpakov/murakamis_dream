@@ -1,0 +1,275 @@
+# The actual graph complement from one rectified core and octahedra
+
+29 October 2026. This is a general GEOMETRIC theorem for the literal
+ordered noncrossing (NC) cubic sources. It gives the actual complete
+hyperbolic volume, rather than a scalar-vertex volume surrogate. Its
+input is a finite positive right-angled ideal core certificate. It does
+not prove the growing-color quantum asymptotic.
+
+Let Gamma be a connected plane cubic graph in the original NC source
+class, with b black and b white vertices and E=3b edges. Keep a crossing
+circle on each physical edge box. Suppose Q is a convex right-angled
+ideal polyhedron with the following labeled medial incidence:
+
+* Its ideal vertices x_e are the edges e of Gamma.
+* At every vertex v of Gamma there is a triangular face T_v with the
+  three incident edge labels.
+* At every face f of Gamma there is a polygon F_f following its edge
+  boundary. Every polyhedral edge separates a T_v from an F_f.
+
+The certificate includes the labeled oriented face cycles and positive
+supporting-plane inequalities. In particular a matching unlabeled
+polyhedron or cusp count is not sufficient. Such a Q will be called
+the ideal rectified core; this term means the ideal medial polyhedron,
+not the untruncated projective polyhedron used in some literature.
+
+Then the ACTUAL retained-circle source link L_Gamma(e), with any fixed
+signed edge twist integers e, has a complete hyperbolic metric and
+
+    Vol(S^3 minus L_Gamma(e)) = 4b v8 + 2 Vol(Q).       (1)
+
+The topology and peripheral crossings in this assertion are those of
+the original cups, caps and edge boxes. No quantum twist has been
+removed. Equation (1) is the target for an eventual full-source limit,
+not a proof of that limit.
+
+## 1. A finite explicit octahedron on an ideal triangle
+
+Use the Lorentz product of signature (-,+,+,+). Normalize the three
+future null lifts a,b,c of a triangular face so that their pairwise
+products are -1. This is possible uniquely by positive rescaling:
+the three scale products are prescribed positive numbers. Let n be
+its outward unit spacelike normal. The regular ideal octahedron on
+the OTHER side of this face has three further vertices
+
+    a' = b+c+sqrt(2)n,
+    b' = c+a+sqrt(2)n,
+    c' = a+b+sqrt(2)n.                               (2)
+
+These are future null vectors. Opposite pairs (a,a'), (b,b'), (c,c')
+have product -2 and every other pair has product -1. Thus the six
+vectors are Lorentz isometric to the standard regular ideal
+octahedron: four independent vectors determine an isometry by their
+Gram matrix, and the remaining two satisfy the same linear equations.
+The choice of +n places its interior outside Q.
+
+The three octahedral faces adjacent to the attaching face merge
+with the corresponding F_f faces. Indeed their third vertices have
+the form a+b+sqrt(2)n. If m is the normal of F_f along the edge ab,
+then <m,a>=<m,b>=<m,n>=0, the last equality being the right-angle
+condition. Thus all three vertices lie in that same supporting plane.
+
+The remaining boundary faces are an opposite WHITE triangle
+(a',b',c') and three SHADED triangles
+
+    S_(v,e_a)=(a,b',c'), and cyclically.              (3)
+
+Their outward unit normals are respectively
+
+    n_white=2n+(a+b+c)/sqrt(2),
+    n_a=n+sqrt(2)a, and cyclically.                 (4)
+
+Their incident products vanish. Equations (2)--(4) prove directly that
+all the surviving boundary dihedral angles are right angles.
+
+Attach an octahedron along EVERY T_v. This is an abstract gluing of
+convex cells along full ideal faces. The union is topologically a ball:
+the attaching triangles have disjoint interiors, and the same statement
+holds after small cusp truncation. We do not need to assume that all
+developed octahedra in a chosen global drawing have disjoint interiors.
+The intrinsic cell metric and the actual face identifications below
+are enough to construct the complete manifold. Flat boundary seams
+are merged only as intrinsic coplanar faces.
+
+Each original F_f is an ideal polygon. An attached coplanar triangle
+lies outside one of its sides, with its third ideal vertex on the
+empty ideal-boundary interval between that side's endpoints. Different
+sides have disjoint such intervals. These attachments therefore form
+an embedded ideal polygon with twice as many vertices. This also
+justifies the merged white-face isometries used below.
+
+## 2. The complete labeled bowtie cell
+
+Call the resulting ball P. It contains Q and exactly 2b octahedra,
+with disjoint interiors in its intrinsic cell decomposition. Hence
+
+    Vol(P)=Vol(Q)+2b v8.                             (5)
+
+It has 3E ideal vertices: E original x_e and three new vertices for
+each of the 2b original graph vertices. Its shaded faces are the 2E
+triangles S_(v,e). Its white faces are the 2b opposite octahedral
+triangles and the b+2 expanded old face polygons, hence E+2 in total.
+Every boundary edge separates a white and a shaded face. The boundary
+has 6E edges and Euler characteristic 2.
+
+For each edge e=vw, the two shaded triangles S_(v,e),S_(w,e) meet
+at x_e. They are precisely the two sides of its retained crossing
+disk. Their other vertices correspond to the two physical strand
+arcs at that end of the box. At each trivalent graph vertex the three
+original nested cup/cap arcs connect the three incident disks in a
+triangle. Consequently the white-face and cusp incidence is exactly
+the Fisher expansion T(Gamma), as independently traced in
+[the actual boundary construction](actual_six_pants_boundary_torsor_and_sewing.md).
+
+This is a reversible topological cut: shrink each opposite white
+triangle toward the original vertex cup/cap matching; trace each
+expanded F_f along the original planar region; restore each pair
+of shaded triangles as its crossing disk. It recovers the literal
+NC diagram. In particular it does not use an arbitrary incidence
+permutation in place of the original ordered ports.
+
+Take two copies P^0,P^1 with opposite orientations. Glue each WHITE
+face across the copies by its labels. At e=vw an even box twist
+glues S_(v,e) to S_(w,e) within each copy, fixing x_e and matching
+the actual two strand positions. An odd twist uses the opposite
+copy and exchanges these two outer strand positions. These are
+exactly the disk maps from the original two-strand box; the same
+orientation rule is written explicitly for theta in
+[the marked-theta geometry](actual_marked_theta_link_and_angle_geometry.md).
+
+Because every shaded face is an ideal triangle, each prescribed
+vertex bijection is an isometry. Around every actual boundary edge
+the alternating white and disk maps give four right angles. At an
+old flat seam the two copies supply two angles pi. Internal attaching
+faces already have smooth neighborhoods. Thus all finite edge and
+face neighborhoods in the glued cell metric are hyperbolic.
+
+## 3. Simultaneous horospheres and completeness
+
+Completeness requires more than the angle sums. At an original ideal
+vertex x_e the Q link is a Euclidean rectangle. Its two opposite sides
+belong to T_v and T_w, and have equal length on EVERY horosphere.
+Normalize its horosphere so that this length is 1. Do this independently
+at each original ideal vertex. On each triangular T_v, all three
+corner horocycle segments now have length 1: they are its canonical
+mutually tangent decoration. Equality of opposite rectangle sides
+shows there is no incompatibility between the two triangles at x_e.
+
+Equip each attached regular octahedron with its canonical decoration
+having side length 1 at every cusp square. Its three old vertex
+horospheres then agree with those just chosen on Q. Its new vertices
+use that same canonical decoration. Every S_(v,e) consequently has
+the canonical decoration at ALL THREE corners. Every shaded face
+pairing, including an outer-vertex exchange, preserves it. White
+pairings preserve decorations because they join identical copies.
+
+After uniformly shrinking these horospheres, they are disjoint and
+the complement of their ends is compact. The ideal links glue as
+compact nonsingular Euclidean surfaces. They are orientable, and
+the reversible link cut identifies them as the link's cusp tori.
+There is no dilation holonomy. Their ends are complete standard
+hyperbolic cusps. This proves completeness and finite volume of the
+literal link complement, with volume twice (5), establishing (1).
+
+Further full twists are crossing-disk collar homeomorphisms while the
+circle remains drilled. They change the preferred peripheral marking
+by the actual integral shear. They do not change the unmarked complete
+volume. The quantum twist phases and any later filling slopes must
+still retain that shear.
+
+## 4. Algebraic input and an explicit nondegenerate example
+
+The input is finite real-algebraic data: future null vertex lifts,
+spacelike outward face normals, incidence equalities, strict supporting
+inequalities, the labeled convex face cycles, and vanishing Lorentz
+products at adjacent faces. A finite convex-hull/incidence check
+certifies the stated Q. Formulae (2)--(4) use only arithmetic and
+positive square roots. No limiting geometric realization or a choice
+of formal peripheral series is needed for this complete anchor.
+
+For the cube graph, the core is explicitly the convex hull in the
+Klein ball of
+
+    (±1,±1,0)/sqrt(2) and their coordinate permutations. (6)
+
+Its six square planes are ±X_i=1/sqrt(2). Its eight triangular planes
+are ±X_1±X_2±X_3=sqrt(2). The corresponding Lorentz normals have
+norms squared 1/2 and 1, respectively; each incident square/triangle
+pair has product zero. Every vertex is ideal, and the strict
+nonincident supporting inequalities check directly. Thus it is a
+positive ideal right-angled cuboctahedron with the required cube
+labels. Here b=4 and
+
+    Vol(actual augmented cube link)=16v8+2Vol(Q_cube). (7)
+
+The [exact audit](../experiments/audit_actual_nc_graph_rectified_core_geometry.py)
+checks this certificate and all eight octahedral attachments, their
+merged supporting planes, right angles and the actual resulting
+36-vertex/72-edge/38-face bowtie incidence. The general proof is the
+cell construction above, not extrapolation from this example.
+
+The theta graph has a degenerate triangular core rather than a positive
+three-dimensional Q. Its separately proved four-octahedron construction
+has volume 4v8; it is not being passed through the strict hypothesis here.
+
+### The input class is closed under actual vertex grafts
+
+Two such positive cores can be glued along triangular faces by the
+specified three-port bijection, putting their interiors on opposite
+sides of the common plane. The adjacent white polygons merge because
+their dihedral angles add to pi. The resulting union is convex. For
+an explicit proof, the two convex cores lie in opposite closed
+halfspaces and intersect exactly in the common triangle T. If x,y
+are in different cores, minimize d(x,z)+d(z,y) over z in T. This
+function tends to infinity when z escapes to an ideal end, so a
+minimum is attained at a finite point. Every finite seam point is
+locally convex because the right angles add to pi; T has no finite
+vertices. The minimizing broken path therefore straightens locally
+across the seam to the ambient geodesic. It is a single geodesic,
+contained in the union. Points in the same core are already joined
+there by a geodesic. This proves convexity. Its ideal end vertices
+and the remaining right-angled boundary faces have exactly the medial
+incidence of the planar three-edge vertex sum of the two graphs.
+
+The canonical unit decorations agree at the seam. Volumes add, and
+the finite certificate is transported by the explicit face isometry.
+This gives a constructive closure operation on the geometric input
+class, not an existence assumption for every planar graph. When the
+operation uses the ordered interval/outer-face graft of
+[the NC cube insertion](actual_nc_spin_one_flow_order_certificate.md),
+it also retains the actual original source topology.
+
+In particular, start with the literal cube and repeatedly insert an
+ordered cube at any allowed interval vertex. Equivalently take the
+theta source followed by k>=1 such cube insertions. The resulting
+genuinely branching family has b=1+3k and a core formed from k copies
+of Q_cube. Its actual hyperbolic volume is
+
+    Vol(S^3 minus L_Gamma(e))
+           =(4+12k)v8+2k Vol(Q_cube).                (7a)
+
+The choices include arbitrary finite ordered binary branching trees.
+This establishes positive core existence and actual geometry throughout
+that family. The fixed-level spin-one theorem does not yet provide its
+all-N quantum limit.
+
+## 5. The precise remaining quantum target
+
+For every graph satisfying the input certificate, the desired equality
+now has a geometrically specified right side:
+
+    lim_N (2pi/N)log |K_N(L_Gamma(e))|
+                    =4b v8+2Vol(Q).                 (8)
+
+The exposed-mark first-normal source formula is exact, but it does
+not yet prove (8). The shared Q contribution is a global graph term;
+independent theta scalars cannot supply it. Growing-label control of
+the full magnetic first normal, coherent noncancellation, and the
+outer-color packet needed for fillings remain to be proved.
+
+For coverage only, the ideal medial polyhedron appears as the truncated
+rectification in [Belletti's paper](https://msp.org/agt/2025/25-2/agt-v25-n2-p01-p.pdf).
+Fully augmented right-angled cell decompositions and octahedral
+subclasses are discussed in [Purcell's exposition](https://users.monash.edu.au/~jpurcell/papers/expos-auglinks.pdf).
+No proof or quantum-invariant identification from those sources is used
+in the construction above, and no novelty of the geometric operation
+is asserted.
+
+Independent analytical review: the global audit agent checked the
+construction through sections 1--4, including all vertex formulas,
+canonical horospheres, actual Fisher incidence and odd-parity face
+maps. The exact cube audit additionally identifies its six square
+faces from the literal NC source's opposite black/white ribbon orders.
+The vertex-graft closure paragraph received a separate independent
+review; its minimizing-path proof includes the exact common triangle
+and excludes escape to an ideal end.

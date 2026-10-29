@@ -39,7 +39,46 @@ whose complete complement consists of four regular ideal octahedra.
 For arbitrary original ordered Morse graphs, the
 [first-normal reduction](notes/actual_nc_morse_graph_first_normal_source_reduction.md)
 retains the full magnetic spin network and its marked source current.
-Its general growth and noncancellation estimates remain open.
+It requires an exposed marked cap; a bare nested mark has an exact
+counterexample and needs explicit transport. Its general growth and
+noncancellation estimates remain open.
+
+The [generic six-head formula](notes/actual_generic_six_head_tetrahedral_source.md)
+now computes every actual marked cluster moment from at most eight
+fold-partner branches and at most four Taylor derivatives. The
+[correlated boundary pairing](notes/actual_six_pants_boundary_torsor_and_sewing.md)
+is nondegenerate, with explicit source and dual costs. The
+[generic single Racah identity](notes/actual_generic_trivalent_racah_source_identity.md)
+now supplies its finite source formula, including high fold partners;
+the [normal-jet envelope](notes/central_racah_normal_jet_envelope.md)
+proves polynomial conditioning in a fixed central corridor at both
+level parities. Whole-support conditioning remains open. The
+[rectified-core geometry](notes/actual_nc_graph_rectified_core_geometry.md)
+constructs the actual augmented graph complement from a supplied
+positive ideal core Q and octahedra, with volume 4b v8+2 Vol(Q).
+That shared core is a global volume contribution; the growing-color
+network estimate needed to recover it remains open.
+The [exact three-port gluing rule](notes/actual_nc_three_port_source_sewing.md)
+retains a correlated sum of products divided by the positive theta
+weight. [Six-head source pruning](notes/actual_exposed_six_port_complete_circle_pruning.md)
+proves that unsupported complete-circle seam channels vanish before
+the mark or exterior acts, so this is the whole source for the typed
+operation. It does not establish growing-color noncancellation.
+
+The [positive Newton multiplication law](notes/actual_positive_newton_multiplication.md)
+is an exact nonnegative multiplication table in the original full root
+algebra, retaining all repeated-root normal terms. Together with the
+actual turn and closures it gives positive finite sums for the typed
+two-head circuits covered by the theorem. The
+[cuboctahedral period theorem](notes/actual_positive_newton_cuboctahedral_period.md)
+proves that the odd-level central cube period has growth equal to the
+volume of the actual ideal right-angled cuboctahedron. Its unique
+maximizer satisfies tan^2(pi t)=2. The
+[four-rung extension](notes/actual_cube_four_rung_positive_source.md)
+allows all four untwisted rung colors to vary at polynomial cost, so
+this larger sector has the same augmented cube-complement volume
+limit. Eight cycle colors are still fixed; the full cube invariant,
+even levels for this cube result, and general graph growth remain open.
 
 The [outer-color Fourier kernel](notes/actual_outer_color_squared_kernel.md)
 cancels the dangerous endpoint alias through the retained Hermite

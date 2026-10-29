@@ -200,8 +200,10 @@ hyperbolic-volume equality inferred from them:
   is an exact source vector with zero naive three-circle energy but
   original evaluation one. The corrected marked metric removes that
   obstruction. The [joint support theorem](actual_six_port_three_circle_support.md)
-  determines a necessary folded simplex for the naive metric; it
-  does not assert nonzero contribution at every allowed channel.
+  and subsequent [regular-cube source proof](actual_trivalent_all_channel_positive_scalar_and_regular_cubes.md)
+  now determine the exact folded simplex and rank-one top image at
+  every supported joint cell. This still does not turn the naive
+  unmarked observation into a faithful marked norm.
 * [Six-port bounded confluence](actual_six_port_bounded_confluent_blocks.md)
   splits the saturated original source into regular collision blocks
   of rank at most eight. Three saturation steps suffice; explicit
@@ -382,8 +384,11 @@ completion of the arbitrary-graph objective.
 
 There is also a new exact
 [arbitrary-width first-normal source reduction](actual_nc_morse_graph_first_normal_source_reduction.md)
-for EVERY original noncrossing ordered Morse graph. With all actual
-root constants C retained, its marked scalar is
+for EVERY original noncrossing ordered Morse graph with an EXPOSED
+marked outer cap. A bare mark nested under another top cap is not
+covered: a literal cube counterexample distinguishes the two values.
+Such a nested cut needs an actually transported current. With all
+actual root constants C retained, the exposed marked scalar is
 
     Z_Gamma=C/nu_N * (S' Xi+S Xi') at t=0,
     t=log(zeta/q), nu_N=2N(-1)^N/(q-q^-1).
@@ -392,13 +397,116 @@ Here S is a product of specified original local source coefficients,
 and Xi is a completely defined ordinary magnetic spin network. The
 formula is independent of the chosen regular Hopf lift. When every
 vertex is saturated, Xi(0)=0 and only Xi'(0) remains. A sole
-unsaturated marked-white triangle instead contributes its actual
-source derivative s_mark'(0)Xi(0). This boundary term is retained;
-it is not ruled out by the ordinary source cutoff. The full graph
-growth/noncancellation problem is now an explicit network normal
-and its marked boundary current, rather than an unspecified vertex
-identification. Their sharp estimates and geometric open-block sewing
-remain unproved.
+unsaturated marked-white triangle instead has the formal source term
+s_mark'(0)Xi(0). The subsequent
+[exposed six-port pruning theorem](actual_exposed_six_port_complete_circle_pruning.md)
+now proves that this term vanishes COHERENTLY for the closed complete-
+circle graphs under consideration. Remove all three caps and incident
+coupons at the exposed marked vertex; the remaining regular generic
+invariant specializes into the actual saturated six-head source. Its
+three-circle top product annihilates every unsupported triple before
+the unrestricted mark acts. This does not delete local derivatives,
+unsupported open cells, auxiliary-color currents, or nested-mark
+transport. The closed full-circle sum therefore uses supported triples
+at EVERY vertex. Its growing-color network-normal estimate remains open.
+
+The [actual finite boundary pairing](actual_six_pants_boundary_torsor_and_sewing.md)
+now gives a nondegenerate marked Frobenius form on every regular
+surviving cell, with an explicit positive Gram and exact source/dual
+costs. Its lower moments are correlated: a cyclotomic counterexample
+rules out an independent three-axis product. The
+[generic all-partner formula](actual_generic_six_head_tetrahedral_source.md)
+computes ALL those original moments, including unsupported cells,
+by at most eight explicit branch sums and Taylor order at most four.
+The generic physical factorial denominators and ordinary trace zero
+are proved, rather than inferred from a root-only scalar continuation.
+The [generic single-sum identity](actual_generic_trivalent_racah_source_identity.md)
+now identifies the original double-sum source with its fully normalized
+Racah sum BEFORE root specialization. Its proof uses the actual
+mixed-highest Casimir, a source coefficient column, uniform rational
+Jacobi certificates, the exceptional zero-channel cup projection and
+an own finite polynomial/Sears argument. High folded partners and all
+normal tails remain present. The
+[central normal envelope](central_racah_normal_jet_envelope.md)
+then proves a genuine conditioning bound: throughout one fixed central
+three-color corridor, at both level parities, all actual lower moments
+satisfy |m_I/tau|<=poly(N), hence the correlated Gram source cost
+K_j<=poly(N). The proof keeps the common-phase main sum and bounds
+the second-zero tail with a strict uniform gap. This is not inferred
+from dimension or numerical conditioning samples. Whole-support
+conditioning, general recoupling norms and global core energy remain
+unproved.
+
+The [graphic spin-one model](actual_nc_spin_one_flow_order_certificate.md)
+proves an exact generic flow-polynomial formula. It determines the
+first-normal order for every connected original graph at N=3 and
+gives an exact graphic criterion at N=4. Typed cube insertions give
+unbounded genuine branching with simple zeros at both levels. These
+are fixed-level certificates, not growing-color asymptotics.
+
+The [rectified-core construction](actual_nc_graph_rectified_core_geometry.md)
+now gives a precise general geometric target. For any actual ordered
+graph with 2b vertices and a certified positive ideal right-angled
+medial core Q, its retained-circle link has complete hyperbolic volume
+
+    Vol(actual complement)=4b v8+2 Vol(Q).
+
+The proof attaches one regular octahedron to every triangular core
+face, checks the literal Fisher bowtie cut, and matches canonical
+horospheres across all actual shaded maps. An exact cuboctahedral
+certificate includes the original NC cube ribbon order. Geometric
+vertex sums construct an unbounded branching input class. The shared
+core contribution is missing from a product of local theta scalars;
+the full magnetic first normal must account for it. This geometric
+theorem therefore narrows the required quantum target without claiming
+that its general growth or noncancellation has been proved.
+
+A new [positive Newton multiplication law](actual_positive_newton_multiplication.md)
+now gives an exact NONNEGATIVE algebra for full actual two-port boxes
+at every level. Each complete-circle sector, including a paired
+nilpotent, belongs to its positive cone. Genuine turns, multiplication
+and both actual closures preserve the cone. A finite support rule
+decides strict nonvanishing for a supplied typed circuit. This does
+not assert that every multiport graph has such a decomposition.
+
+There is a primitive-core application beyond theta. The
+[literal odd central cube reduction](actual_odd_central_cube_reflection_packet.md)
+retains the exposed physical mark and identifies its central sector
+exactly as N^12 S_N^8 phi(h^4), with the recorded twist phase. All
+generic cup factorials and root normals are kept. The
+[positive cuboctahedral period theorem](actual_positive_newton_cuboctahedral_period.md)
+proves pi log(phi(h^4))/N -> Vol(Q_cube) along ALL odd levels by
+uniform sine factorials and a strictly concave real positive sum.
+An explicit fourteen-tetrahedron cone subdivision identifies this
+value with the ACTUAL core, rather than a numerically matched constant.
+Thus this original central sector has the full geometric rate
+16v8+2Vol(Q_cube).
+
+The [four-rung source packet](actual_cube_four_rung_positive_source.md)
+goes further: with the eight cycle labels still fixed at the odd
+Steinberg channel, EVERY rung label and paired circle normal is
+retained. The untwisted source is explicitly positive on precisely
+sum_r j_r>=N-1. Its whole four-color sum lies between the central
+term and 16(m+1)^4 times that term, and its macroscopic rung-color
+complement has a strict exponential gap. Hence this PARTIAL original
+source sum has the same actual cube-volume rate at every odd level.
+The remaining eight cycle-color sums and even levels are open;
+other sectors could still cancel or exceed this packet. No full cube
+volume-conjecture equality is asserted from this sector result.
+
+An [exact three-port source gluing theorem](actual_nc_three_port_source_sewing.md)
+now matches this geometric operation channel by channel. A genuine
+outer-white open column is a regular scalar multiple of the canonical
+three-leg invariant. For a supported shared triple this gives
+Z_new=Z_A Z_B/Z_theta, with all original edge and normal factors.
+The same exposed six-head pruning kills unsaturated seam channels
+before ANY exterior acts. Thus the sum of this quotient over supported
+shared triples is the WHOLE complete-circle source, with no omitted
+unsaturated seam correction.
+The geometric operation has Vol_new=Vol_A+Vol_B-4v8, and 4v8 is
+the actual theta volume. This compatibility is exact; it does not
+yet control the sum over shared colors or prove a primitive core's
+nonzero growing-color contribution.
 
 The new exact inner-color continuation and squared outer-color kernel
 DO supply the complex-color and complementary-source hypotheses for

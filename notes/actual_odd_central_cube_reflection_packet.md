@@ -1,0 +1,357 @@
+# An actual positive central-sector period for the primitive cube
+
+29 October 2026. For every odd level the all-Steinberg sector of the
+ORIGINAL ordered cube source is an explicit strictly positive Newton
+period, times its recorded edge-twist phase. The physical mark, all
+circle factors and all root normals are retained. The reduction is a
+generic pivotal contraction followed by a regular specialization; it
+does not replace the marked source by a Euclidean spin-network norm.
+
+This evaluates ONE specified joint channel of the cube. It does not
+identify the whole color sum with this sector, prove its dominance,
+handle even levels, or establish a full cube volume conjecture.
+
+## 1. The original cube, its pointing and the statement
+
+Put N=2m+1>=3, d=2m, q=exp(pi i/N), Q=q^2, x=q^d, and
+
+    s_r=product_(u=1)^r 2sin(pi u/N), s_0=1,
+    beta(m,r)=s_m/[s_r s_(m-r)],
+    S_N=sum_(r=0)^m beta(m,r)^4,
+    A_N=q^[m(2-m)] S_N,
+    omega_m=kappa(-1)^m q^[m(m+1)], kappa=q^(d^2/2).
+
+The exact A_N is the
+[original odd black source](actual_trivalent_steinberg_central_anchor.md).
+Use this actual ordered, noncrossing cube, with increasing port orders:
+
+    black 0:(0,1,2), 1:(3,4,11), 2:(5,9,10), 3:(6,7,8),
+    white 4:(0,10,11), 5:(1,8,9), 6:(2,3,7), 7:(4,5,6).
+
+The original unrestricted mark is on the EXPOSED outer cap of white
+vertex 4. A nested bare mark is not substituted for it. On every edge
+retain the actual complete-circle sector with j=m, and a fixed signed
+crossing exponent e_l. This sector is
+
+    R^(e_l)L_St=omega_m^(e_l) N E_St.
+
+Let H_N=C[z]/P_N, P_N=2T_N(z/2)+2, be the complete physical pair
+commutant, including its double-node normals. Its full original
+functional and genuine turn are denoted phi and Rturn. Define
+
+    E_St=the isolated c_m=-2 pair projector,
+    h_N=Rturn(E_St).
+
+Then the original RAW marked central-sector cube contribution is
+
+    Z_cube,St=N^12 S_N^8 phi(h_N^4)
+                   omega_m^(sum_(l=0)^11 e_l),          (1)
+
+and
+
+    phi(h_N^4)>0                                   (2)
+
+at every odd N>=3. External line/framing normalizations, if present in
+the original invariant, remain external to (1). No factor depending
+on an ordinary root quantum dimension is divided out after it has
+been specialized to zero.
+
+## 2. The generic cups, cyclic clocks and the literal rung reduction
+
+All generic statements in this section use zeta before root
+specialization, with Q=zeta^2 and F_r=(Q;Q)_r. On highest weight L
+use the canonical cup with FIRST coefficient one:
+
+    P_L(u)=(-1)^u zeta^[u(L-u-1)] F_u F_(L-u)/F_L,
+    p_L(u,L-u)=P_L(u), ell_L=p_L^(-1).
+
+The actual physical highest-d cup is instead
+
+    pV(u,d-u)=N zeta^(-d^2)P_d(u).                  (3)
+
+It specializes exactly to the recorded root physical cup. Both its
+factorials and its overall scalar are retained. In particular the
+genuine generic turn of a pair map A is
+
+    (Rturn_zeta A)_((u,b);(v,e))
+       =pV(d-e)/pV(d-u) A_((d-u,v);(b,d-e)).        (4)
+
+Its root simplification x^(u-e) is NOT continued generically. The
+global scalar in (3) cancels in (4), but its factorial ratios do not.
+
+Let W:V_d->V_d tensor V_d be the generic ordinary Clebsch map of
+spin (m,m;m), whose first highest entry is one. Put eta=D(W)W,
+where D is the genuine bilinear pivotal dual, with reversed abstract
+dual order. The finite unequal-Clebsch norm calculation in
+[the four-port kernel](actual_ordinary_four_port_recoupling_kernel.md),
+equations (4)--(6), gives
+
+    eta_m=(-1)^m zeta^[-m(3m+1)] F_(3m+1)/(F_m F_(2m+1)).
+
+That calculation is the coefficient of a single contiguous product
+of reciprocal finite Pochhammers, not a fitted norm. Write
+
+    a_m=(-1)^m zeta^[-m(m+3)],
+    Theta=(W tensor I)p_d/a_m,
+    e_m=W D(W)/eta_m,
+    c_m=eta_m/a_m^2.                               (5)
+
+Thus Theta(2m,m,0)=1, exactly the canonical ordered invariant used
+in the first-normal source theorem. Equations (3)--(5) involve two
+uses of the same highest-d object: its ordinary canonical cup in
+Theta, and its scaled physical cup in the original source. These
+are not conflated. The scale cancels in the turn and every closed
+cup/cap snake, while the physical source factors are kept below.
+
+Moving the last magnetic leg to the front by the ACTUAL snakes gives
+
+    (C Theta)(a,b,c)=K(a)Theta(b,c,a),
+    K(a)=zeta^(d-2a),  C Theta=Theta.               (6)
+
+The clock follows directly from ell_d^T p_d=K^(-1), since d is even.
+For the scalar in (6), C^3 is K_total and hence is identity on integer
+H=0 invariants. The generic invariant line has dimension one. At a
+real positive generic zeta the scalar is real, so its cube being one
+forces it to be one. All entries are rational functions of zeta;
+therefore this is a rational identity. Dualizing gives the matching
+white rotation, with inverse clock. No plain permutation of the
+three magnetic legs is substituted for (6).
+
+Here is the explicit prism cut in the ordered cube:
+
+    top cycle    (0,4,1,6), edges (0,11,3,2),
+    bottom cycle (5,2,7,3), edges (9,5,6,8),
+    rung pairs   (0,5),(4,2),(1,7),(6,3),
+    rung edges   1,10,4,7, respectively.            (7)
+
+Apply (6) only to put each indicated rung into the cup/evaluation
+slot. On a rung, substitute Theta=(W tensor I)p_d/a_m and its actual
+dual. The two intermediate cup/cap matrices cancel, and the surviving
+map on its four side legs is
+
+    W D(W)/a_m^2=c_m e_m.                          (8)
+
+This is an all-side-legs-open identity: D(W)W=eta_m I is used only
+to identify the normalized projector e_m. For example the elementary
+sum in (8) is W_(ab,r)D(W)_(r,ce)/a_m^2; when a side leg is brought
+around a bend its p_d and ell_d are the same inverses in (6). The
+opposite cyclic move contributes K^(-1), so no residual independent
+clock is removed. This proves the rung replacement before doing the
+four-side contraction.
+
+After the four replacements, (7) is precisely the cyclic four-box
+pretzel closure with e_m in each box. Its two strand orientations
+are the ones supplied by the preceding snakes. Writing its edge
+indices as a_u,b_u (u modulo 4), the remaining contraction is
+
+    sum_(a_0,b_0,...,a_3,b_3)
+      K(a_0)K(b_0) product_(u=0)^3
+        (Rturn_zeta e_m)_((a_u,b_u);(a_(u+1),b_(u+1))).
+
+This is Tr[(K tensor K)(Rturn_zeta e_m)^4]. Equivalently its entry
+in terms of the unturned box is exactly the ratio pV(d-b_(u+1)) /
+pV(d-a_u) in (4); it is the generic physical ratio, not a root
+monomial. Denoting the unmarked ordinary cube spin network by Xi,
+the result is the generic rational identity
+
+    Xi_cube=c_m^4 F_4(e_m),
+    F_4(e_m)=Tr[(K tensor K)(Rturn_zeta e_m)^4].      (9)
+
+For an explicit index check of this last closure, let t_i be the four
+top edges in (7), and b_i its four bottom edges, indices modulo 4.
+The four rung contractions, in that order and after removing c_m,
+are exactly
+
+    K(t_3)^(-1) e_((t_3,t_0);(b_3,b_0)),
+    K(t_0)      e_((b_1,b_0);(t_1,t_0)),
+    K(t_1)^(-1) e_((t_1,t_2);(b_1,b_2)),
+    K(b_2)      e_((b_3,b_2);(t_3,t_2)).             (9a)
+
+For the last row, the initial clock is K(b_3)^(-1)K(r)^(-1);
+the black vertex's H=0 condition makes it K(b_2). The other three
+rows follow directly from (6), putting the black rung in its third
+slot and the white rung in its first slot, then applying (8).
+
+The full pivotal self-duality of the channel projector reads
+
+    e_((a,b);(c,e))
+       =P_d(d-b)P_d(d-a)/[P_d(d-e)P_d(d-c)]
+          *e_((d-e,d-c);(d-b,d-a)).                (9b)
+
+It follows by dualizing W D(W)/eta (or directly from the nested
+pair cup); it includes both reversed tensor order and both cup
+ratios. Apply (9b) to rows 2 and 4 of (9a). In the four turn factors
+of (9) make the bijective index substitution
+
+    (a_0,a_1,a_2,a_3)=(d-t_3,t_0,d-t_1,t_2),
+    (b'_0,b'_1,b'_2,b'_3)=(b_3,d-b_0,b_1,d-b_2).
+
+Their four e entries are now exactly those in (9a). Their scalar
+ratios agree by P_d(d-u)=K(u)^(-1)P_d(u) and the e entry's cleared
+weight equality K(t_3)K(t_0)=K(b_3)K(b_0). The remaining clocks are
+precisely K(a_0)K(b'_0), the pivotal trace in (9). This proves (9)
+by finite substitution, without a picture-dependent cyclic trace.
+
+The vertex orders, rungs and clocks in (6)--(9b) are the source
+certificate. An unlabeled cube or a product of closed theta values
+would not establish (9).
+
+## 3. Regular specialization preserves the original physical mark
+
+At the odd root c_m=-2 is isolated from EVERY other pair node.
+Consequently the generic e_m has a regular spectral-projector lift,
+and specializes to the full E_St. This assertion includes its zero
+first normals on the OTHER double nodes; it is stronger than matching
+values at distinct nodes. Formula (4) is regular there as well.
+
+The generic ordinary trace of the four-box closure is [N]_zeta
+times its open scalar, because d is even. The original exposed
+physical mark extracts exactly the root of this scalar: m pV=1.
+Equivalently, with t=Log(zeta/q),
+
+    nu_N=(d/dt)[N]_(q exp t)|_(t=0)
+         =2N(-1)^N/(q-q^(-1)),
+    F_4(e_m)'(0)/nu_N=phi(h_N^4).                  (10)
+
+This is the genuine marked closure of the
+[full pair source algebra](actual_pair_casimir_commutant_and_rotated_trace.md).
+It is legitimate to choose the regular projector lift here: the root
+open scalar depends only on the root coupon. A change of lift alters
+the unmarked closure by [N] times a scalar vanishing at the root,
+and hence does not alter (10). It does NOT say that E_St is the
+original moving-q complete-circle germ.
+
+Since F_4(e_m)(q)=0, differentiating (9) retains no c_m' term.
+The finite ratio in (5) gives at the root
+
+    c_m(q)=(-1)^m q^[-m^2+5m]=q^[-3m^2+4m].        (11)
+
+Indeed F_(3m+1)/(F_m F_(2m+1)) reduces, after removing its COMMON
+root zero, to product_(u=1)^m(1-Q^(N+u))/F_m=1.
+No vanishing F_N is canceled by a value-only substitution.
+
+In the full original source reduction at this central label,
+
+    h0_m=N, gamma_m=q^(2-m^2)/N^2,
+    s_mmm=N^3 A_N, G_(m,r)=1.
+
+There are twelve edge factors h0 gamma and eight source coefficients.
+The [exposed first-normal theorem](actual_nc_morse_graph_first_normal_source_reduction.md)
+and (9)--(11) therefore give
+
+    Z_cube,St=(N gamma_m)^12 (N^3 A_N)^8
+                        c_m(q)^4 phi(h_N^4) product_l omega_m^(e_l).
+
+Its magnitude prefactor is N^12 S_N^8. The entire residual phase is
+q^[24-32m^2+32m]=q^[-8N(2m-3)]=1. This proves (1), including its
+absolute normalization and original marked cut.
+
+## 4. A full-root positive polynomial, with every nodal value explicit
+
+Use the real Casimir Newton basis of
+[the genuine turn theorem](actual_newton_turn_positive_gram.md):
+
+    c_j=q^(2j+1)+q^(-2j-1),
+    Bhat_r(z)=product_(j<r)(c_j-z)/s_r^2,
+    Rturn Bhat_r=Bhat_(d-r),
+    phi(Bhat_i Bhat_j)=delta_(i+j,d).               (12)
+
+The full isolated projector is
+
+    E_St=Bhat_m^2.
+
+To see this without losing normals, its polynomial has degree d,
+a DOUBLE zero at every paired node, value one at -2, and
+product_(j<m)(c_j+2)=N=s_m^2. Thus it is the full Hermite projector.
+The proved positive multiplication formula followed by (12) yields
+
+    h_N(z)=sum_(r=0)^m beta(m,r)^2 Bhat_r(z).        (13)
+
+Its half degree and all its first normal coefficients are fixed by
+this genuine polynomial identity. For every distinct node j<=m,
+direct sine factorization gives
+
+    Bhat_r(c_j)=0, r>j,
+    Bhat_r(c_j)=s_(j+r)/[s_(j-r)s_r^2], r<=j.
+
+Consequently
+
+    h_N(c_j)=sum_(r=0)^j
+       s_(j+r)/[s_(j-r)s_r^2] beta(m,r)^2
+       =P_(N,j)>0.                                (14)
+
+This is EXACTLY the positive all-node factorial sum in
+[the actual one-leg source](actual_trivalent_one_channel_source_packet.md),
+with its own source phase kept there. Equation (14) identifies the
+polynomial values with that sum; the stronger full-normal statement
+is (13). In particular h_N(-2)=S_N and h_N(c_0)=1.
+
+For clarity the positive multiplication coefficients are, when i+j<N,
+
+    mu_(i,j,k)=s_(i+j)s_k /
+        [s_i s_j s_(k-i)s_(k-j)s_(i+j-k)]>0,
+    max(i,j)<=k<=i+j;
+
+the product vanishes in the FULL algebra if i+j>=N. Write h_N^2=
+sum a_k Bhat_k. Then
+
+    a_k=sum_(i,j<=m, max(i,j)<=k<=i+j)
+              beta(m,i)^2 beta(m,j)^2 mu_(i,j,k)>0,
+    phi(h_N^4)=sum_(k=0)^d a_k a_(d-k)>0.           (15)
+
+The last strictness holds at EVERY k, since one can choose i+j=k
+with i,j<=m. This uses the original functional, so the first normals
+that define phi have not been discarded. No assertion that
+Rturn(h_N^2)=h_N^2 is needed. In fact the analogous square-turn
+identity is false generically with the full cups (3); the audit
+explicitly records this failed stronger premise.
+
+## 5. What the positive period does and does not settle
+
+At N=3, h_N=(4-z)/3 and phi(h_N^4)=11. Formula (1) then gives
+108^4 times 11 in the zero-twist central sector, agreeing with the
+independently derived exact spin-one cube source.
+
+The geometric target for the full retained-circle cube source is
+
+    Vol(actual augmented cube)=16v8+2Vol(Q_cube),
+
+where Q_cube is the explicitly labeled ideal right-angled
+cuboctahedron of the
+[rectified-core geometric theorem](actual_nc_graph_rectified_core_geometry.md).
+The period in (15) is the remaining correlated-core contribution;
+it is not a product of four independent theta-block norms. The
+[positive cuboctahedral period theorem](actual_positive_newton_cuboctahedral_period.md)
+now proves lim_(N odd) pi log(phi(h_N^4))/N=Vol(Q_cube). Combining it with
+
+    S_N=(1/4)N^(-3/2)exp(Nv8/pi)(1+O(1/N))
+
+and (1) proves that THIS central sector has rate
+16v8+2Vol(Q_cube), the actual cube-link volume. It does not
+control the other joint sectors, their interference or even levels.
+
+The accompanying profile calculation tests the more precise candidate
+
+    phi(h_N^4) ~ C_4 N^(-9/2) exp(N J_4),
+    J_4=(16/pi)[Lambda(3pi/8)+Lambda(pi/8)],
+    C_4=4^(-3) sin(pi/4) cos(pi/4)^(-1/2)/2.
+
+These growing-level values are labeled as prefactor calibrations,
+not used as a proof of this asymptotic in the present note. The exact
+source reduction (1) and strict positivity (15) are unconditional.
+
+Audit: [original generic cups, full-root kernels and literal marked cubes](../experiments/audit_actual_odd_central_cube_reflection_packet.py),
+with [recorded results](../experiments/actual_odd_central_cube_reflection_packet_results.json).
+It checks six generic cyclic/rung families at zeta=2,3; six odd full
+physical root kernels including all polynomial normals; eight literal
+marked cube sources with signed edge powers; and five multiprecision
+positive-period prefactor calibrations. Finite checks supplement the
+pivotal and full-polynomial proofs above; they do not establish a
+whole-color or all-parity source limit.
+
+Independent internal review: the crossing-period agent read the full
+analytical proof, including the clocked rung table (9a), full generic
+cup/projector identity (9b), exposed physical trace quotient and complete
+root polynomial, and independently replayed the focused audit: PASS.
+This records a separate proof check, not external peer review or a
+whole-source cube equality theorem.
