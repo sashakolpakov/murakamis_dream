@@ -1,0 +1,389 @@
+# Exact full-circle sewing beyond the cyclic pretzel source
+
+29 October 2026. There is an all-level, source-preserving circle resolution
+for every original two-port Hopf box. Its dual is a difference of TWO
+ordinary circle colors, with polynomial norm. This gives an exact alphabet
+for arbitrary finite arborescent circuits of such boxes, and a quantitative
+whole-source upper bound. It does **not** yet give a sharp geometric bound
+or nonzero geometric period for a general augmented graph.
+
+All identities below retain the first derivatives at repeated Casimir
+nodes. In particular none takes a semisimple quotient at a root of unity.
+
+## 1. The original algebra and the actual turn
+
+Put \(d=N-1, q=e^{\pi i/N}, Q=q^2, x=q^d\), and
+
+\[
+ \mathcal H_N=\mathbb C[z]/P_N(z),\qquad
+ P_N(z)=2T_N(z/2)+2,
+ \qquad L_a(z)=(-1)^{a-1}U_{a-1}(z/2),\quad1\leq a\leq N.
+ \tag{1}
+\]
+
+The [full physical commutant theorem](actual_pair_casimir_commutant_and_rotated_trace.md)
+identifies this algebra faithfully with every \(E,F,K\)-intertwiner on the
+ORIGINAL \(V_N\otimes V_N\), by \(z\mapsto\Omega\). It includes all degrees,
+even and composite levels, and the odd simple node. The operators \(L_a\)
+are the [literal auxiliary ordinary-circle traces](actual_crossing_circle_source_and_filling.md),
+with their original pivotal trace and no division by \(a\).
+
+Use the unscaled genuine turn \(\mathscr R\), with the original cup and cap
+
+\[
+ p_{ab}=Nx^{-b}\delta_{a+b,d},\qquad
+ \ell_{ab}=x^a\delta_{a+b,d}/N.
+\]
+
+For a Hopf box \(B\), its symmetry and degree support give
+
+\[
+ (\mathscr R B)_{(a,b);(c,e)}
+       =x^{a-e}B_{(d-a,c);(b,d-e)},\qquad
+ \mathscr R^2=I,\quad \mathscr R(I)=p\ell,
+ \quad \mathscr R(R^{-1})=R.                         \tag{2}
+\]
+
+The scaled \(Z_B=x^{-d}\mathscr R B\) used in the older charge-block
+conjugation is different notation. Here every turn is (2), so no
+\(x^d\) is lost. Rotation is a linear automorphism, **not** a product map.
+
+The ORIGINAL marked functional is
+
+\[
+ \phi(f)=\frac1N\operatorname{Tr}[(I\otimes K^{1-N})f(\Omega)]
+       =(-1)^dN^2[z^d](f\bmod P_N).                 \tag{3}
+\]
+
+The last equality, proved in the commutant note, is a full Hermite identity.
+In particular \(\phi(L_a)=N^2\delta_{aN}\).
+
+## 2. A sparse all-normal Frobenius inverse
+
+The ordinary polynomial product identity and its exact root reduction are
+
+\[
+ L_aL_b=\sum_{r=0}^{\min(a,b)-1}L_{a+b-1-2r},\qquad
+ L_{N+h}=L_{N-h}-2(-1)^N L_h\pmod {P_N},
+ \quad1\leq h<N.                                    \tag{4}
+\]
+
+The first follows by multiplying the two finite geometric expressions for
+\(U_{a-1}( (w+w^{-1})/2)\). For the second use
+
+\[
+ 2T_N(z/2)U_{h-1}(z/2)=U_{N+h-1}(z/2)-U_{N-h-1}(z/2)
+\]
+
+and \(2T_N=-2\) in the QUOTIENT POLYNOMIAL RING. Thus (4) retains
+normal derivatives, rather than merely agreeing on distinct nodes.
+The coefficient mass in any product of two basis elements is at most
+\(3N\). At even \(N\), the cancellations include the exact identity
+\(L_N^2=0\); omitting the high aliases would destroy it.
+
+Only a term \(L_N\) contributes to (3). The high terms in (4) cannot
+reduce to \(L_N\). Consequently
+
+\[
+ M_{ab}:=N^{-2}\phi(L_aL_b)
+  =\mathbf1_{a+b\geq N+1}\mathbf1_{a+b\equiv N+1\ (2)}.
+ \tag{5}
+\]
+
+Let \(J_{ab}=\delta_{a+b,N+1}\) and let \(S\) be the upper shift. Then
+
+\[
+ M=J(I-S^2)^{-1},\qquad M^{-1}=(I-S^2)J,
+ \qquad(M^{-1})_{ab}=\delta_{a+b,N+1}-\delta_{a+b,N-1}.
+ \tag{6}
+\]
+
+Here \((I-S^2)^{-1}\) is the finite geometric sum. In particular
+
+\[
+ L_a^\vee=\frac{L_{N+1-a}-L_{N-1-a}}{N^2},\qquad
+ \phi(L_a^\vee L_b)=\delta_{ab},                     \tag{7}
+\]
+
+with \(L_j=0\) for \(j\leq0\). This proves nondegeneracy at EVERY level.
+It also gives \(\|M\|_2\leq\lceil N/2\rceil\) and
+\(\|M^{-1}\|_2\leq2\), hence condition number at most \(N+1\).
+The Frobenius pairing is bilinear and generally indefinite; (6) is not a
+claim of a positive pivotal trace. In a positive coefficient norm its
+Riesz vector must be conjugated in the usual way.
+
+## 3. A literal all-exterior turn kernel
+
+Write
+
+\[
+ z_{N,a}=\mathscr R(R^{-1}L_a),\quad1\leq a\leq N.
+\]
+
+These are the full mixed-circle packets, including both the low core and
+the nonzero \(RP\) band. Since \(R\) is invertible in the FULL algebra,
+the bases \(R^{-1}L_a\) and \(R L_a^\vee\) are dual. For EVERY \(f\in\mathcal H_N\),
+
+\[
+ \boxed{\quad
+ \mathscr R f=\sum_{a=1}^{N}z_{N,a}\,
+                       \phi(R L_a^\vee f).
+ \quad}                                               \tag{8}
+\]
+
+This is a full physical operator identity before any exterior is attached.
+It therefore allows arbitrary adjacent physical tensors and spectator
+couplings; it is not an identity only after evaluating a knot scalar.
+All original Cartan factors and \(\kappa\) remain in the literal \(R\).
+Products are given by (4), twists by their exact signed powers, and turns
+by (8). These operations provide a finite source-independent sewing
+algorithm on any fixed two-port circuit generated by them. Every
+internal resolution uses only the sparse dual (7).
+
+Both closures also keep their original source. The denominator closure
+is (3). The original marked row is \(m_{ab}=x^b/N^2\), with NO delta.
+Directly contracting its entries with (2) gives
+
+\[
+ \boxed{\qquad
+ \phi(\mathscr R f)=m f(\Omega)p=f(c_0),\qquad c_0=q+q^{-1}.
+ \qquad}                                             \tag{9}
+\]
+
+For clarity, in the diagonal trace the coefficient of
+\(f_{(d-a,a);(b,d-b)}\) is
+\(g_bx^{a-b}/N=x^{a+b-d}/N\). This equals
+\(m_{(d-a,a)}p_{(b,d-b)}\); hence the
+first equality is the genuine unrestricted marked contraction.
+Finally \(f(\Omega)p=f(c_0)p\), and \(mp=1\). No local replacement of
+the marked row by an ordinary cap was used.
+
+## 4. A quantitative faithful norm on all normal channels
+
+For the distinct roots of \(P_N\), put
+
+\[
+ \|f\|_{\rm H}=\max_c|f(c)|+
+                   N^{-2}\max_{c\ {\rm double}}|f'(c)|.
+ \tag{10}
+\]
+
+At an odd simple node only its value occurs. This is a faithful
+submultiplicative norm. Let \(f=\sum_{a=1}^{N}\beta_aL_a\). Then
+
+\[
+ \|f\|_{\rm H}\leq\tfrac32N^{3/2}\|\beta\|_2,
+ \qquad \|\beta\|_2\leq6N^{3/2}\|f\|_{\rm H}.        \tag{11}
+\]
+
+For the first estimate use 
+\(\max_{[-2,2]}|L_a|\leq a\), and the elementary polynomial derivative
+bound \(\max|L_a'|\leq(a-1)^2a/2\). For completeness the reverse estimate
+does not invert a confluent Vandermonde: set
+\(w_k=q^{2k+1}\), \(h_k=f(w_k+w_k^{-1})\), and
+\(d_k=(w_k-w_k^{-1})f'(w_k+w_k^{-1})\), with \(d_k=0\) at the simple
+node. Write \(f=a_0+\sum_{n=1}^d a_n2T_n(z/2)\). The finite Fourier
+transforms \(H_n,D_n\) obey
+
+\[
+ a_0=H_0,\quad a_n=\{D_n+(N-n)H_n\}/N,
+ \quad\beta_{j+1}=(-1)^j(a_j-a_{j+2}).               \tag{12}
+\]
+
+Indeed the two aliases are \(H_n=a_n-a_{N-n}\) and
+\(D_n=na_n+(N-n)a_{N-n}\). Since 
+\(|h_k|\leq\|f\|_{\rm H}\) and 
+\(|d_k|\leq2N^2\|f\|_{\rm H}\), (12) proves (11), including the even
+middle Fourier index and the odd simple node.
+
+The original full crossing satisfies, for EVERY signed integer \(e\),
+
+\[
+ \|R^e\|_{\rm H}\leq1+|e|/8.                       \tag{13}
+\]
+
+Its nodal values have modulus one. The exact full-Cartan derivative is
+\( (R^e)'/R^e=-e(d-2k)/[2(w_k-w_k^{-1})]\). At a double node
+\(|\sin((2k+1)\pi/N)|\geq\sin(\pi/N)\geq2/N\); division by \(N^2\)
+gives (13). Negative powers are literal inverses, and their derivatives
+are included. Also \(\|L_a\|_{\rm H}\leq3N/2\).
+
+The [global full-colored packet bound](actual_pretzel_global_alias_and_colored_source_gap.md),
+sections 3--4, gives a sequence \(\epsilon_N\to0\), independent of \(a\),
+such that
+
+\[
+ \max_{1\leq a\leq N}\|z_{N,a}\|_{\rm H}
+         \leq\exp[N(j_0+\epsilon_N)],\qquad j_0=v_8/\pi.
+ \tag{14}
+\]
+
+This LOCAL statement needs no box-count threshold. Its proof keeps the
+full high band; that band's upper rate
+\(\tfrac12\log(4+\sqrt{15})<j_0\) is uniform over all colors.
+Apply (11) to \(Rf\), expand in \(L_a\), and apply (8). It follows that
+
+\[
+ \|\mathscr R\|_{{\rm H}\to{\rm H}}
+             \leq7N^2\exp[N(j_0+\epsilon_N)].          \tag{15}
+\]
+
+The exponential rate in (15) is exact, not an artifact of a physical
+basis condition number:
+
+\[
+ \boxed{\quad\lim_{N\to\infty}N^{-1}
+                    \log\|\mathscr R\|_{{\rm H}\to{\rm H}}=j_0.\quad}
+ \tag{16}
+\]
+
+To prove the lower bound, use \(z_N=z_{N,N}\). Its input \(R^{-1}L_N\)
+has polynomial norm. For every fixed odd \(s\geq3\), the
+[proved original complete period](actual_pretzel_coherent_circle_and_period_asymptotic.md)
+has 
+\(N^{-1}\log|\phi(z_N^s)|\to A_s=V_s/(2\pi)\), whereas
+\(|\phi(f)|\leq3N^3\|f\|_{\rm H}\) and the norm is submultiplicative.
+Hence the lower rate is at least \(A_s/s\). Its explicit volume formula
+gives \(A_s/s\to8\Lambda(\pi/4)/\pi=v_8/\pi\). First take the limit
+in \(N\) for EACH fixed \(s\), then the supremum in \(s\); no exchange
+of two growing parameters is needed.
+
+## 5. A reusable original-source upper bound, and its limitation
+
+Consider any fixed finite typed two-port syntax circuit with leaves
+\(R^{e_i}\) and ordinary circle operators \(L_{a_i}\), product vertices,
+and \(t\) genuine turns (2). Close by either ORIGINAL closure (3) or (9).
+All colors \(1\leq a_i\leq N\) are allowed. For fixed signed powers,
+
+\[
+ \limsup_{N\to\infty}\frac{2\pi}{N}\log|A_N|
+                         \leq 2t\,v_8.              \tag{17}
+\]
+
+This follows inductively from submultiplicativity, (13)--(15),
+\(|\phi|\leq3N^3\|\cdot\|_{\rm H}\), and 
+\(|f(c_0)|\leq\|f\|_{\rm H}\). The only exponential cost is an
+ACTUAL turn. No additional turn is charged for the numerator closure.
+The same proof allows growing exponents if
+\(\sum_i\log(1+|e_i|)=o(N)\).
+
+The object in (17) is the literal original marked scalar. For a diagram
+using the original reduced zero-framed convention, the explicit turn
+and [whole normalization comparison](actual_complete_augmented_source_normalization.md)
+give only the recorded unit framing character. The one-cut modified
+convention adds \(i^{N+3}/N\). These preserve (17); no unspecified
+meridian normalization is absorbed in the estimate.
+
+Thus (17) applies to any arborescent/conway presentation ACTUALLY built
+from this typed alphabet, not just a cyclic power of an identical box.
+It is a broad source upper, but generally not the sharp filled volume:
+already \(V_s<2s v_8\) for the known complete cyclic pretzel examples.
+An exact regular-octahedron decomposition whose incidence and turn
+count match (17) would make a stronger base comparison possible. Such
+an identification has not been proved here for all octahedral FALs.
+
+## 6. What a prime six-port graph still requires
+
+The circle resolution is valid on a TWO-port Hopf separator. A prime
+six-port cell is not supplied by assigning an independent commuting
+circle variable to each incident pair. The actual complete multiplicity
+space has adjacent operators \(A=\Omega_{12}\), \(B=\Omega_{23}\); they
+generate the full matrix algebra, as proved in
+[the original observable filtration](actual_adjacent_observable_source_filtration.md).
+This rules out an EXACT quotient preserving both operators by commuting
+circle coordinates. It does not rule out a geometric microlocal metric.
+
+The concrete missing kernel is the full source-selected recoupling
+\(C=V_d^{-1}JV_d\), with every Hermite channel retained, or equivalently
+the [complete-circle split-pair map](actual_complete_circle_positive_quotient.md)
+\((I\otimes\pi)(\iota\otimes I)\). A source-exact six-port octahedral
+identity, its mixed-color analytic bound, and its original marked dual
+cost would extend the present sewing beyond two-port trees. None follows
+from a positive Turaev--Viro partition function alone.
+
+For coverage only, the [abstract of Ibarra--McQuire--Purcell](https://arxiv.org/abs/2506.09296)
+identifies octahedral FAL complements with fundamental-shadow-link
+complements and reports a colored skein formula and a Turaev--Viro
+result. That abstract supplies no identity with this original marked
+Kashaev source. No proof or technique from it is used above.
+
+## 7. Complete-circle connectors: a coherent channel sum, not independent blocks
+
+There is a useful exact positive statement about a complete connector.
+Since \(P_N'=NU_{N-1}\), one has
+\(L_N=(-1)^dP_N'/N\) in the FULL algebra. At a double node,
+\(L_N(c)=0\) and
+\((4-c^2)L_N'(c)=(-1)^d2N\). At the odd simple node
+\(L_N(-2)=N\). Substitution in the ORIGINAL trace formula gives
+
+\[
+ \boxed{\quad
+  \phi(L_Nfg)=N\sum_{c\ {\rm distinct}}m_c f(c)g(c),
+  \qquad m_c=2\ {\rm(double)},\quad m_{-2}=1\ {\rm(simple)} .
+ \quad}                                                   \tag{18}
+\]
+
+Thus for coefficient reflection \(f^\sharp(z)=\overline{f(\bar z)}\),
+\(\phi(L_N f^\sharp f)=N\sum m_c|f(c)|^2\geq0\). All nodes are real.
+The positive form has rank \(\lfloor(N+1)/2\rfloor\), and its kernel is
+EXACTLY the ideal of polynomials whose values vanish at all distinct
+nodes. The derivatives of \(L_N\), rather than a discarded projective
+sector, supply the positive weights. Reflection of an actual tensor
+diagram must still use its genuine dual turns; (18) does not license
+bending an already formed positive matrix in a different bipartition.
+
+In particular the normalized connector is the JOINT channel average
+\(N^{-1}\sum m_c f(c)g(c)\), not the product of the separate averages.
+Its rank is greater than one for every \(N\geq3\). Independent block
+factorization for arbitrary exterior boxes is therefore false even
+though the connector is positive on reflected pairs.
+
+Here is an exact test of the proposed purely Frobenius tree sewing.
+Let a fixed finite tree have vertex tensor
+\(\phi(f_v\prod L_{a_{ve}})\). At each edge use the COMPLETE connector
+
+\[
+ C_{ab}=\phi(L_a^\vee L_N L_b^\vee).                       \tag{19}
+\]
+
+These are specified actual algebra/trace tensors with the original
+source normalizations, not a metric chosen from the final scalar.
+Repeatedly applying the all-exterior resolution (7) at a leaf proves
+
+\[
+ \boxed{\qquad
+ Z_{\rm tree}=\phi\!\left(L_N^{|E|}\prod_v f_v\right).
+ \qquad}                                                 \tag{20}
+\]
+
+This identity includes vertices of arbitrary valency and arbitrary
+external \(f_v\). Every leaf elimination inserts one literal \(L_N\);
+there is no inverse of a nilpotent circle operator.
+For \(|E|\geq2\), it specializes further to
+
+\[
+ Z_{\rm tree}=
+ \begin{cases}
+  0,&N\ {\rm even},\\
+  N^{|E|}\prod_v f_v(-2),&N\ {\rm odd}.
+ \end{cases}                                             \tag{21}
+\]
+
+Indeed at a double node the value and first derivative of \(L_N^e\)
+vanish for \(e\geq2\); only the odd simple node survives. This is an
+ACTUAL full-normal obstruction to replacing every internal Conway
+connector by an independent Frobenius complete-circle propagator and
+then multiplying known local geometric periods. Such a sewing is
+computable and may describe a particular diagram, but it cannot be
+identified with a new nonzero all-level augmented tree source without
+an additional physical port theorem. The true branched graph can have
+six open physical legs at a vertex; its intertwiner need not be this
+commutative multiplication tensor. Turns at intermediate vertices
+also change (20) into the nonmultiplicative kernel (8).
+
+Equations (18)--(21) locate the next constructive task: retain the
+shared channel and its actual six-port vertex tensor before estimating
+or factorizing it. They do not rule out a coherent geometric positive
+metric, or an exact larger class after that tensor has been supplied.
+
+Audit: [original matrices, all normal aliases, sparse duals and open-port sewing](../experiments/audit_general_augmented_graph_source_extension.py).

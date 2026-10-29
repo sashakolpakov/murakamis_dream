@@ -1,0 +1,379 @@
+# Exact coherent inner elimination for the original pretzel polynomial
+
+29 October 2026. Reversing the TWO ACTUAL finite sums in the complete
+pretzel box gives a balanced terminating finite transformation. It
+retains the half shift and proves a nonzero, uniformly tame inner
+packet throughout the geometric range r>=N/4, at BOTH parities.
+An explicit nonzero leading amplitude follows on compact subintervals
+of 1/4<r/N<1/2. No stationary-cycle assumption is used for this inner
+sum. The remaining outer sum and the all-r upper bound are separate.
+
+The exact all-r recurrence below retains the same original source,
+including the part below N/4 which has NOT been discarded.
+
+## 1. The unchanged source and a generic finite identity
+
+Use q=exp(pi i/N), Q=q^2, d=N-1, M=floor(d/2), F_a=(Q;Q)_a.
+In formula (11a) of [the original complete box](actual_pretzel_complete_base_casimir_polynomial.md),
+interchanging the FINITE v,r sums gives exactly
+
+    kappa z_N(z)/N^2
+      =sum_(r=0)^M (-1)^r Q^(r(r+1)/2) P_r(z) A_r/F_r^3,
+    A_r=sum_(v=r)^M Q^(-vr)F_(2v)/(F_v^3 F_(v-r)),
+    P_r(z)=(qw;Q)_r(q/w;Q)_r, z=w+w^-1.              (1)
+
+This retains every original coefficient, all half-twist and Cartan
+phases, and the full polynomial BEFORE its marked Hermite period.
+There is no removal of boundary r=v. Put n=M-r and
+
+    D_r=Q^(-r^2)F_(2r)/F_r^3, U_r=A_r/D_r.
+
+Then
+
+    U_r=sum_(k=0)^n
+       (qQ^r;Q)_k(-qQ^r;Q)_k(-Q^(r+1);Q)_k Q^(-rk)
+                         /[F_k(Q^(r+1);Q)_k^2].     (2)
+
+Exactly one of the three numerator parameters is Q^(-n):
+-qQ^r at odd N, and -Q^(r+1) at even N. All denominators are
+nonzero throughout the TRUE finite ranges.
+
+Here is the finite transformation used in both cases. For generic
+parameters with nonzero displayed denominators,
+
+    sum_(k=0)^n (Q^-n;Q)_k(a;Q)_k(b;Q)_k
+                  (cdQ^n/(ab))^k/[F_k(c;Q)_k(d;Q)_k]
+      =(c/a;Q)_n/(c;Q)_n
+        *sum_(j=0)^n (Q^-n;Q)_j(a;Q)_j(d/b;Q)_j Q^j
+                    /[F_j(d;Q)_j(aQ^(1-n)/c;Q)_j].   (3)
+
+This is proved here by finite summation, not assumed from a named
+transformation theorem. The terminating identity
+
+    sum_(j=0)^k (Q^-k;Q)_j(t;Q)_j Q^j/[F_j(d;Q)_j]
+                  =t^k(d/t;Q)_k/(d;Q)_k             (4)
+
+was proved by two finite binomial expansions in
+[the elementary q-Chu proof](actual_half_color_quadratic_source_transform.md#2-elementary-finite-q-chu-and-durfee-identities).
+Its balanced version is
+
+    sum_(j=0)^k (Q^-k;Q)_j(a;Q)_j(cQ^k/a)^j
+                      /[F_j(c;Q)_j]=(c/a;Q)_k/(c;Q)_k. (5)
+
+For completeness, reverse the summation in (5). After its last term
+is factored out, the remaining sum is (4) with parameters
+t=Q^(1-k)/c and d=Q^(1-k)/a. The factorial reversal
+(Q^(1-k)/a;Q)_k=(-a)^(-k)Q^(-k(k-1)/2)(a;Q)_k
+cancels that last-term factor and gives (5).
+
+To prove (3), expand
+
+    (b;Q)_k/(d;Q)_k
+      =(b/d)^k sum_(j=0)^k
+        (Q^-k;Q)_j(d/b;Q)_j Q^j/[F_j(d;Q)_j]
+
+using (4), interchange the finite k,j sums, and put k=j+l.
+The l sum is (5) with parameters Q^(j-n),aQ^j,cQ^j and
+argument cQ^(n-j)/a. It equals
+(c/a;Q)_(n-j)/(cQ^j;Q)_(n-j). Cancel
+(c;Q)_j(cQ^j;Q)_(n-j)=(c;Q)_n and use
+
+    (c/a;Q)_(n-j)/(c/a;Q)_n
+      =(-c/a)^(-j)Q^(-nj+j(j+1)/2)
+                           /(aQ^(1-n)/c;Q)_j.
+
+All remaining powers combine to Q^j. This proves (3) exactly,
+and rational continuation gives every root specialization used here.
+
+## 2. Odd levels: a coherent quarter-phase series
+
+Let N=2M+1, n=M-r. Substitution in (3) gives
+
+    U_r=(q;Q)_n/(Q^(r+1);Q)_n
+      *sum_(j=0)^n
+       (Q^(2r+1);Q^2)_j(-1;Q)_j Q^j
+                            /[(Q^(2r+2);Q^2)_j F_j]. (6)
+
+Every summand on the second line is EXACTLY i^j h_j, h_j>0.
+Its consecutive positive magnitudes obey, with delta=pi/N,
+
+    h_(j+1)/h_j
+      =sin((2r+1+2j)delta)/sin((2r+2+2j)delta)
+                                  *cos(j delta)/sin((j+1)delta).
+
+The prefactor has phase q^(-n(r+1/2)), so its product with i^n
+has the EXACT phase q^(n^2), using N=2M+1.
+Reverse the series. Direct cancellation of its positive products gives
+
+    U_r=q^(n^2) B_(N,n) sum_(l=0)^n (-i)^l g_l,       (7)
+
+    B_(N,n)=product_(k=0)^(n-1)
+       cos(k delta)cos((k+1)delta)/cos((k+1/2)delta)^2,
+
+    g_l=product_(k=1)^l
+       [sin((2k-1)delta)/sin(2k delta)]
+                    [sin((n-k+1)delta)/cos((n-k)delta)], g_0=1.
+
+Equation (7) holds for EVERY 0<=r<=M, not just the geometric range.
+All its factors are retained. In particular a half-shift amplitude
+has not been replaced by one before an exponentially canceling sum.
+
+Now suppose r>=ceil(N/4), hence n delta<=pi/4. Then h_j is
+strictly increasing: its sine ratio is at least one on the descending
+half of the sine interval, and cos(j delta)>sin((j+1)delta).
+Thus g_l decreases. The real part of the reversed alternating parity
+sum is at least 1-g_2 (or exactly one for n=0,1). For n>=2,
+
+    g_2 <= tan(n delta)^2/[2cos(delta)]
+         <=1/[2cos(pi/9)]<1-5/12,
+
+since then N>=9. Concavity and |(log cos)''|<=2 on [0,pi/4] give
+
+    exp(-pi^2/(8N))<=B_(N,n)<=1.
+
+These elementary bounds, with the n=0,1 cases separately, prove
+
+    1/3<=|U_r|<=N,        r>=ceil(N/4), N odd.        (8)
+
+Moreover g_l<=tan(n delta)^l. On any compact subinterval of
+1/4<r/N<1/2, put beta=n delta. The product formula gives
+
+    g_l=((1/2)_l/l!)tan(beta)^l[1+O(l^2/N)]
+
+for l in a fixed small linear fraction of N; the exact geometric
+bound controls the remaining tail. Choosing that fraction small enough
+that tan(beta)exp(C epsilon)<1, summing the errors proves UNIFORMLY
+
+    U_r=q^(n^2)[(1+i tan beta)^(-1/2)+O(1/N)].         (9)
+
+The square root is the branch with positive real part. Its modulus
+is sqrt(cos beta), so the amplitude is nonzero, with no unknown
+cycle coefficient. The error statement uses the actual discrete
+beta=n pi/N, not a reset parity-independent angle.
+
+## 3. Even levels: an alternating series with a retained small chirp
+
+Let N=2M+2, n=M-r. A different permissible ordering in (3) gives
+
+    U_r=(-q;Q)_n/(Q^(r+1);Q)_n
+       *sum_(j=0)^n
+        (-Q^(r+1);Q)_j(-qQ^r;Q)_j(q;Q)_j Q^j
+                 /[F_j(Q^(r+1);Q)_j(q^3Q^r;Q)_j].   (10)
+
+The j-th term is EXACTLY (-q^(1/2))^j h_j, h_j>0. The principal
+q^(1/2)=exp(pi i/(2N)) is retained; the series is not declared real.
+Its positive ratio is
+
+    h_(j+1)/h_j
+      =cos((r+1+j)delta)cos((r+1/2+j)delta)sin((j+1/2)delta)
+        /[sin((r+1+j)delta)sin((r+3/2+j)delta)sin((j+1)delta)].
+
+For r>=ceil(N/4), every ratio is below one and in fact
+h_j<=cot(r delta)^(2j). Pair consecutive even/odd terms. Each pair's
+real part is nonnegative because h_j decreases and the cosine of its
+retained phase decreases on the range 0<=j delta/2<=pi/8.
+The first pair alone gives Re(sum)>=1-h_1>1/3; n=0 gives one.
+Indeed h_1<=1/[2cos(delta/2)], with N>=8 when n>=1.
+
+The prefactor's positive magnitude is
+
+    R_(N,n)=product_(k=0)^(n-1)
+              cos((k+1/2)delta)/cos((k+1)delta),
+    1<=R_(N,n)<=1/cos(n delta)<=sqrt(2).
+
+Its EXACT phase is
+sigma_r=i^n q^(-n(r+1/2))=q^(n(n+1/2)). Therefore
+
+    1/3<=|U_r|<=2N,       r>=ceil(N/4), N even.       (11)
+
+On compact subintervals 1/4<r/N<1/2 the geometric domination and
+the fixed-j sine products prove, by the same summable estimate,
+
+    sum in (10)=sin(r delta)+O(1/N),
+    R_(N,n)=(cos(n delta))^(-1/2)[1+O(1/N)].
+
+Consequently, uniformly on those compact sets,
+
+    U_r=q^(n(n+1/2))[sqrt(sin(r delta))+O(1/N)].        (12)
+
+Equations (8),(11) prove the genuine all-level exponential equivalence
+|A_r|=|D_r| exp(O(log N)) throughout the geometric range. Equations
+(9),(12) sharpen it to an explicit nonzero amplitude and phase.
+
+## 4. Newton phases and the precise remaining lower-index problem
+
+For odd N, use P_r(z)=q^(r^2)product_(a<r)(c_a-z),
+c_a=qQ^a+q^(-1)Q^(-a). The factorial phases in (1),(7) cancel:
+
+    kappa z_N(z)/N^2
+      =q^(M^2) sum_(r=0)^M [s_(2r)/s_r^6]
+             B_(N,M-r) Srev_r product_(a<r)(c_a-z),
+    Srev_r=sum_(l=0)^(M-r)(-i)^l g_l.                (13)
+
+For r>=ceil(N/4), Re Srev_r>0 and Im Srev_r<=0, with the
+uniform quantitative lower bound above. Thus the high-index Newton
+packet has a common quadrant at a real z<-2, with no macroscopic
+phase cancellation. This is an EXACT coherent packet of the original
+box, not a sum of separate absolute-valued expanded states.
+
+For r<N/4 the transformed identities STILL HOLD but the monotonicity
+and geometric domination used in (8)--(12) fail. No polynomial bound
+for all such Srev_r, or a global common quadrant, is inferred here.
+In particular these lower indices remain in the original outer sum.
+Even (10) is decreasing only in the displayed high-index range.
+No sharp global circle bound, original outer-cycle survival, or full
+pretzel volume theorem has been proved by this inner calculation.
+
+## 5. An exact all-r source Ward equation
+
+There is nevertheless a low-order equation controlling the ENTIRE
+remaining sequence, including the lower-index range. With Y=Q^r,
+
+    QY^2(1-Q^2Y) A_(r+2)
+      +Y(2Q^3Y^2+Q+1) A_(r+1)
+      -Q(QY+1)(QY^2-1) A_r=0,                      (14)
+
+    A_M=Q^(-M^2)F_(2M)/F_M^3, A_(M+1)=0.
+
+Here A_r=0 for r>M. The backwards coefficient in (14) is nonzero
+for r<M at both parities, so these are the LITERAL selected endpoint
+conditions, not an unspecified solution of an annihilating equation.
+
+Proof. For t(v,r)=Q^(-vr)F_(2v)/(F_v^3F_(v-r)), z=Q^v,
+
+    t(v+1,r)/t(v,r)
+      =Y^(-1)(1-Qz^2)(1+Qz)/[(1-Qz)^2(1-Qz/Y)].
+
+The rational certificate g(z)=(1-z)^2(1-z/Y)/z^2 obeys
+
+    g(Qz)t(v+1,r)/t(v,r)-g(z)
+      =(1/(YQ^2)-1)z^-2
+        +(1/(YQ)+2+1/Y)z^-1-1/(YQ)-1-2/Y.
+
+The sum telescopes: g(Q^r)=0 and t(M+1,r)=0 by its literal root
+factor. Finally t(v,r+1)/t(v,r)=z^-1-Y^-1, so its first two
+moments are A_(r+1)+Y^-1 A_r and
+A_(r+2)+(1+Q^-1)Y^-1A_(r+1)+Y^-2A_r. Substitution yields (14).
+
+The classical characteristic ratios of (14) are
+(Y+1)^2/[Y(Y-1)] and (Y-1)/Y; their moduli cross at r/N=1/4.
+Their equality has no finite nonzero solution. This makes the
+source-calibrated continuation a concrete remaining analytic problem,
+not a reason to substitute a uniform norm or an arbitrary branch.
+
+[Audit](../experiments/audit_actual_pretzel_coherent_inner_gauss_elimination.py)
+checks (3) at independent generic parameters, both literal root sums
+for EVERY r, their exact phases, the all-input source Ward endpoints,
+the uniform high-index inequalities, and the explicit amplitude limits.
+
+## 6. Exact parity alignment and the high-packet Gaussian
+
+This section concerns the ACTUAL high packet r>=ceil(N/4) of (1);
+the lower indices are retained separately, not declared zero. Write
+z_N^hi for that partial polynomial. Its Newton coefficient before
+the outside N^2 is
+
+    b_(N,r)=kappa^(-1)(-1)^r q^(2r^2+r) A_r/F_r^3.
+
+For odd N, factorial phases and (7) give exactly
+
+    b_(N,r)=kappa^(-1)q^(M^2)
+                    [s_(2r)/s_r^6] B_(N,n) Srev_r.
+
+The leading Srev_r in (9) is sqrt(cos beta)exp(-i beta/2), where
+beta=n pi/N=pi/2-pi/(2N)-u and u=pi r/N. Since
+kappa=q^(d^2/2), M=d/2, its total leading phase is EXACTLY
+
+    kappa^(-1)q^(M^2)exp(-i beta/2)
+                         =exp(-i pi d/4)exp(iu/2).
+
+At even N the prefactor in (10) has exact phase
+q^(n(n+1/2)); the remaining factorial phases give
+kappa^(-1)q^(M^2+M/2)q^(r/2). The first two factors are
+EXACTLY exp(-i pi d/4), since d=2M+1. Together with (12) this
+proves, uniformly on every compact 1/4<r/N<1/2 at BOTH parities,
+
+    b_(N,r)=exp(-i pi d/4)[s_(2r)/s_r^6]
+                   sqrt(sin u)exp(iu/2)[1+O(1/N)].   (15)
+
+No parity-dependent sign or unknown root phase remains in (15).
+
+Fix a real T>2, eta=arcosh(T/2), R=exp eta, and define
+
+    J_T(u)=[-Lambda(2u)+6Lambda(u)]/pi
+             +(1/(2pi)) integral_0^(2u)log(T+2cos v)dv,
+    u_*=atan(sqrt(T+2)/2).
+
+Its derivative is
+pi^(-1)log[(T+2cos(2u))cos(u)^2/(4sin(u)^4)].
+The difference of the numerator and denominator in this logarithm
+has the sign of T+2-(T+6)sin(u)^2. Hence u_* is the unique strict
+maximum on 0<=u<=pi/2, and u_*>pi/4. Direct differentiation gives
+
+    J_T''(u_*)=-(T+6)^2/[pi(T+2)^(3/2)].
+
+The original sine-factorial and smooth midpoint products give uniformly
+near this maximum
+
+    s_(2r)/s_r^6=(2N)^(-5/2)
+       sqrt(sin(2u))/sin(u)^3
+          *exp{N[-Lambda(2u)+6Lambda(u)]/pi}[1+O(1/N)],
+
+    product_(a<r)(c_a+T)
+       =exp{N/(2pi) integral_0^(2u)log(T+2cos v)dv}
+                                                    *[1+O(1/N)].
+
+All other high indices have a strict profile gap, using (8),(11) and
+the uniform logarithmic endpoint factorial estimate. The real discrete
+Laplace sum has step du=pi/N. Inserting (15), its Gaussian prefactor
+is
+
+    2^(-5/2)pi^(-1)sqrt(2pi/|J_T''(u_*)|)
+                         *sqrt(sin(2u_*))/sin(u_*)^(5/2)
+       =1/[2((T+2)(T+6))^(1/4)].
+
+Thus this ENTIRE coherent high packet has the asymptotic
+
+    z_N^hi(-T)
+      =exp(-i pi d/4) exp(iu_*/2)
+        /[2((T+2)(T+6))^(1/4)]
+          *exp[N J_T(u_*)][1+O(1/N)].                 (16)
+
+It also has a uniform central-window extension without deforming its
+index contour. Let j(eta)=J_(2cosh eta)(u_*(eta)), and let tau be
+bounded real. Taylor-expand the analytic midpoint logarithm at
+eta+i tau/sqrt N and the REAL index u=u_*+x/sqrt N. Its quadratic
+part is
+
+    Nj+i sqrt N j' tau
+      +(Psi_uu/2)x^2+i Psi_(u eta)x tau
+                              -(Psi_(eta eta)/2)tau^2.
+
+The real index Gaussian dominates all x tails uniformly for bounded
+tau, and the remaining high indices retain their fixed profile gap.
+Dominated Riemann sums therefore evaluate the mixed term by the exact
+Fourier transform of this real Gaussian. The Schur complement is
+j''=Psi_(eta eta)-Psi_(u eta)^2/Psi_uu, giving
+
+    z_N^hi(-exp(eta+i tau/sqrt N)-exp(-eta-i tau/sqrt N))
+       =exp(-i pi d/4) a(eta)exp[Nj(eta)]
+          *exp[i sqrt N j'(eta)tau-j''(eta)tau^2/2][1+o(1)],
+    a(eta)=exp(iu_*/2)/[2((T+2)(T+6))^(1/4)].        (17)
+
+The error is uniform for bounded tau. The displayed limiting Gaussian
+and a(eta) are nonzero, so the error is relative as written. This is
+an actual finite-sum calculation with every coherent inner factor;
+it does not assert an unknown r-cycle incidence. To replace z_N^hi
+by the FULL z_N requires the independent all-index upper envelope and
+its strict lower-range profile gap. The
+[whole-period assembly](actual_pretzel_coherent_circle_and_period_asymptotic.md)
+states that additional gate explicitly before applying (17) to the
+original marked residue.
+
+Fresh audit replay: PASS eight independent generic finite transforms,
+39 complete root families N=2,...,40 (EVERY r, both exact transformed
+phases and the source Ward), six complex-amplitude profiles through
+N=256, and four literal high-packet central-window families at
+N=63,64,127,128. The latter compare tau=-1,0,1 with (17), retaining
+the full kappa and both parity phases. These tests supplement the
+finite and analytic proofs; convergence samples are not their premise.

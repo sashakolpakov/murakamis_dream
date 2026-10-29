@@ -1,0 +1,347 @@
+# An irregular Rees bridge from the actual Verma source to full cyclic colors
+
+Research theorem, 27 October 2026. The genuine balanced infinite
+module admits an explicit irregular and ramified transformation
+whose operator coefficients extend regularly to the root. Its
+limit is a full cyclic root color, with both E and F central powers
+generically nonzero. After one root scaling it covers a dense
+chart of the fixed-Casimir root conjugacy class.
+
+The transformed source is specified as well. Its co-source vacuum
+is unchanged by the exponential gauge, but its source vacuum is
+irregular and its head lattice is ramified. Thus regularity of
+the module limit does not prove regularity or survival of the
+original selected period.
+
+## 1. Exact block operators of the genuine common module
+
+Use the actual balanced infinite module from
+[the two-wall construction](common_verma_two_wall_source.md):
+
+    K v_a=-(M/q)Q^(-a)v_a,
+    Ecal v_a=(M Q^(-a)-M^(-1))v_(a-1), a>=1,
+    Ecal v_0=0,
+    F v_a=(1-Q^(a+1))v_(a+1), Q=q^2.
+
+Write a=rN+j, 0<=j<N, and identify
+
+    v_(rN+j)=h_j u^r/r!, B=partial_u, T=u,
+    L=T B, Z=Q^N,
+    D_Z f(u)=f(Zu).
+
+These formulas are exact before specializing Q. The clock is
+Q^j D_Z, and K is -(M/q)Q^(-j)D_(Z^-1). For Ecal, the
+nonwrap and wrap entries, respectively, are
+
+    E_j=M Q^(-j)D_(Z^-1)-M^(-1), 1<=j<N,
+    E_0=B(M D_(Z^-1)-M^(-1)).                    (1.1)
+
+The first maps h_j to h_(j-1), the second h_0 to h_(N-1).
+For F the entries are
+
+    F_j=1-Q^(j+1)D_Z, 0<=j<N-1,
+    F_(N-1)=T (1-Z^(L+1))/(L+1)
+            =u integral_Z^1 f(xu)dx on f.         (1.2)
+
+For example (1.2) on u^r/r! has the required coefficient
+1-Z^(r+1) into the next block. The apparent inverse L+1 is
+just division by the nonzero integer r+1 on that basis.
+
+## 2. The exact irregular transformation and head gauge
+
+Put epsilon=Z-1, d=N epsilon, and choose the marked local
+ramification eta^N=d. Define
+
+    G=exp(u/d), D_head h_j=eta^j h_j,
+    C=D_head G^(-1).
+
+The exponential belongs to the u-adic completion with Laurent
+eta coefficients. Each u coefficient has a finite pole; there
+is no claim of a single uniform pole bound for the whole function.
+Conjugate first by G^(-1)(-)G, then by D_head(-)D_head^(-1),
+and apply the genuine Hopf scaling Ecal->eta Ecal,F->eta^(-1)F:
+
+    Ehat=eta C Ecal C^(-1),
+    Fhat=eta^(-1) C F C^(-1), Khat=C K C^(-1).   (2.1)
+
+The direction of the head conjugation is essential. It cancels
+eta on every nonwrap E entry and contributes d on its wrap;
+it cancels eta^(-1) on every nonwrap F entry and contributes
+d^(-1) on its wrap.
+
+There is no unresolved irregular expansion in the transformed
+operators. Since
+
+    G^(-1)D_ZG=exp(u/N)D_Z,
+    G^(-1)D_(Z^-1)G=exp(-u/(NZ))D_(Z^-1),
+    G^(-1)B G=B+1/d,
+
+the exact entries become
+
+    Ehat_j=M Q^(-j)exp(-u/(NZ))D_(Z^-1)-M^(-1), j>0,
+    Ehat_0=(1+d partial_u)
+                   [M exp(-u/(NZ))D_(Z^-1)-M^(-1)],
+    Fhat_j=1-Q^(j+1)exp(u/N)D_Z, j<N-1,
+    Fhat_(N-1) f
+       =-(u/N) integral_0^1 exp(tu/N)f((1+epsilon t)u)dt,
+    Khat_j=-(M/q)Q^(-j)exp(-u/(NZ))D_(Z^-1).     (2.2)
+
+The F wrap formula follows by x=1+epsilon t in (1.2), retaining
+the reversed integration endpoints. Each coefficient of (2.2)
+is a regular formal series in epsilon,u. Integration is polynomial
+antiderivation coefficientwise, not a convergence assumption.
+
+The generic quantum-group relations hold because (2.1) is
+conjugation and Hopf scaling of a genuine module. Their regular
+specializations are therefore exact root identities.
+
+## 3. The full cyclic root module and its central chart
+
+Fix q=q_N, Q=Q_N and put y=exp(u/N), U=y^N=exp(u),
+gamma=(-1)^(N+1). Taking the regular value of (2.2) gives
+
+    K_j=-(M/q_N)y^(-1)Q_N^(-j),
+    Ecal_j=M y^(-1)Q_N^(-j)-M^(-1),
+    F_j=1-y Q_N^(j+1),                         (3.1)
+
+with j read modulo N, including both wraps. All entries act by
+multiplication. For F the wrap limit is
+-(u/N)integral_0^1 exp(tu/N)dt=1-y, including its regular u=0 value.
+The resulting entries are Laurent algebraic functions of M,y.
+Thus the module formulas extend from the marked formal y=1
+neighborhood to y in G_m. This extends the module chart, not
+a selected irregular source or its global continuation data.
+
+Direct multiplication, or specialization of the regular relations,
+gives
+
+    [Ecal,F]=rho_N(K-K^(-1)),
+    F Ecal+q_N K+q_N^(-1)K^(-1)=-M-M^(-1).
+
+The exact central powers are
+
+    k=K^N=gamma M^N/U,
+    e=Ecal^N=gamma(M^N/U-M^(-N)),
+    f=F^N=1-U.                                  (3.2)
+
+Consequently
+
+    e f=k+k^(-1)-gamma(M^N+M^(-N)).              (3.3)
+
+For U!=1 the F arrows are all units. Clock projectors followed
+by their cyclic F arrows give every matrix unit, so this is a
+genuine split regular root color, rather than a Borel-only model.
+
+Apply the additional genuine root Hopf scaling
+Ecal->lambda Ecal,F->lambda^(-1)F. Given an admissible central
+triple (k_t,e_t,f_t) satisfying (3.3), with all entries nonzero,
+choose
+
+    U=gamma M^N/k_t,
+    lambda^N=e_t/[gamma(M^N/U-M^(-N))].           (3.4)
+
+The denominator is nonzero because its product with 1-U is
+e_t f_t. On the indicated N-th-root cover, (3.4) realizes e_t,
+and (3.3) forces the realized f to be f_t. Thus the family covers
+a dense full fixed-Casimir central chart. It is not restricted
+to the triangular source locus F^N=0. It does not itself prove
+that an actual knot's selected source reaches a chosen point
+of that chart.
+
+## 4. The selected source is irregular and its lattice flags remain
+
+Let the original finite head source be i psi, with psi_j=1,
+and its co-source phi pi_0, phi_j=1/N. Its finite-rank coupon
+is Gamma=i e pi_0. Under the actual transformation C the exact
+source and co-source are
+
+    psi_new=D_head exp(-u/d)psi,
+    phi_new=phi D_head^(-1)pi_0,
+    phi_new psi_new=1.                          (4.1)
+
+Here pi_0G=pi_0, but G does not preserve the source vacuum.
+In particular
+
+    G^(-1)Gamma G=exp(-u/d)Gamma,
+
+not Gamma. The full transformed coupon has entry
+
+    (Gamma_new)_(i,j)
+      =eta^(i-j)exp(-u/d)/N times evaluation at u=0. (4.2)
+
+It is exactly idempotent by (4.1). On u jets of order at most h,
+its eta pole order is bounded by Nh+N-1, equivalently its
+d pole order by h+(N-1)/N. The head lattice has the explicit
+flags eta^j h_j, with the opposite dual flags eta^(-j)h_j^*.
+The normalized pairing does not make those flags or the essential
+source exp(-u/d) disappear.
+
+The coefficientwise head projector e tensor I is different: G
+commutes with it and only the ramified D_head changes it.
+It cannot be substituted for the original finite Gamma.
+
+The same issue occurs at every internal finite-head compression,
+not just at the final cut. For the whole-head projector
+P=i pi_0 (identity on H), one has exactly
+
+    C P C^(-1)=exp(-u/d)P.                       (4.3)
+
+On b legs the scalar is exp(-(u_1+...+u_b)/d). The actual
+off-root finite word is the product with its intermediate head
+projectors retained. Each becomes this irregular source under
+the transformation. In particular the pre-gauge two-wall word
+correction delta*w*H_beta from the common-Verma note cannot be
+discarded after taking module Rees symbols: those source poles
+and normal co-sources can compensate its vanishing factors.
+
+Thus the module has a regular full-cyclic limit while the source
+is an explicitly recorded irregular section. Equality of finite
+pairings before degeneration does not provide a regular limiting
+selected period or a Stokes coefficient.
+
+## 5. The literal pivot lift is selected, with its U adapter
+
+Conjugation preserves the identity g=K^(1-N). Since Khat has a
+regular root value, its literal power has that same regular limit:
+
+    g_lit=K_U^(1-N)=U g_red,
+    g_red=x^(1-N)A^(-1), A=yQ_N^j, x=-M/q_N.
+
+Therefore this construction selects the literal whole-clock lift,
+not the reduced root representative. Their paired defects satisfy
+D_lit=U^(-1)D_red and both products give the same cut projector;
+their separate normal derivatives differ. The exact distinction
+is retained in [the Mellin comparison](fock_cyclic_normal_mellin_map.md),
+Section 2. The whole external modified-dimension line d_N(M),
+Cartan half-character, and zero-framing phases remain marked.
+
+## 6. The actual cyclotomic-normal Poisson form
+
+There is a fixed-N normal Planck parameter already present in this
+construction: d=N(Q^N-1). The generic weight relations give
+
+    [K^N,Ecal^N]=(Q^(N^2)-1)Ecal^N K^N,
+    [K^N,F^N]=(Q^(-N^2)-1)F^N K^N.
+
+The two scalar ratios after division by d have root values +1
+and -1. Thus the actual divided-commutator Poisson bracket on
+the root center satisfies
+
+    {k,e}=ke, {k,f}=-kf.                         (6.1)
+
+It is independent of the choice of lifts: changing a lift by d
+times an operator adds a commutator with a central root element.
+The quantum Casimir is central before specialization. Its root
+Chebyshev relation (3.3), on a fixed-M leaf, consequently forces
+
+    {e,f}=k^(-1)-k.                              (6.2)
+
+This follows first where e!=0 by bracketing (3.3) with e,
+then extends as the polynomial bracket identity. The Casimir
+relation is not being declared central merely because it vanishes
+in one representation; it is the specialization of the actual
+universal central Casimir.
+
+Vary the actual irregular phase to G_p=exp(pu/d), with p!=0.
+The Rees momentum is Pi=d partial_u, so [Pi,u]=d and
+G_p^(-1)Pi G_p=Pi+p. This fixes {p,u}=1. In (2.2) replace
+u/N in the exponent by pu/N and (1+d partial_u) on the E
+wrap by (p+d partial_u). The F wrap limit is (1-y)/p,
+y=exp(pu/N). Other entries remain the corresponding nonwrap
+entries. Hence its central functions are exactly
+
+    U=exp(up),
+    k=gamma M^N/U,
+    e=p gamma(M^N/U-M^(-N)),
+    f=(1-U)/p.                                  (6.3)
+
+Direct differentiation with {p,u}=1 gives (6.1)--(6.2).
+The exact source symplectic form is
+
+    Omega=du wedge dp=dlog U wedge dlog p
+          =-dlog k wedge dlog e,                 (6.4)
+
+holding M fixed. The last equality follows from
+e=p(k-gamma M^(-N)). This is precisely the fixed-meridian
+Gauss leaf form used in the actual holonomy/moment-map proof,
+not just an unrelated symplectic parameterization. To match its
+usual balanced center coordinates set e_G=e/rho_N^N,
+f_G=-rho_N^N f. Then
+
+    G=[k e_G;k f_G k^(-1)+e_G f_G]
+
+has trace gamma(M^N+M^(-N)); the physical gamma*G has trace
+M^N+M^(-N). Constant root scalings do not change (6.4).
+Varying M requires its peripheral boundary terms and is not part
+of this fixed-leaf identity.
+
+## 7. A regular chart at the parabolic source boundary
+
+At M=1 set v=1/p and w=e/gamma. The same central chart is
+
+    U=(1+wv)^(-1),
+    k=gamma(1+wv), e=gamma w,
+    f=w v^2/(1+wv),
+    Omega=dw wedge dv/(1+wv).                    (7.1)
+
+These are algebraic identities. The form is regular and nonzero
+at v=0, including w=0. The locus w=0 maps to the identity
+central point; its v coordinate retains the exceptional direction.
+Thus (7.1) is a regular resolving chart at that collapsed point,
+not a claim of a complete global resolution without its other chart.
+
+The module entries also extend across v=0 on the marked y cover.
+Here y=(1+wv)^(-1/N), and its E wrap is
+
+    [(1+wv)^(1/N)-1]/v -> w/N,
+
+while its F wrap is v[1-(1+wv)^(-1/N)] ->0.
+The nonwrap entries tend to the actual head values. Consequently
+the v=0 module is exactly the previously constructed E-semicyclic
+source with mu=w/N, and w=0 is the actual complete head. This
+is a concrete source boundary of the full conjugacy-class chart.
+It does not prove that the selected knot period reaches a chosen
+geometric point in that chart.
+
+## 8. What has and has not been bridged
+
+The full cyclic module is obtained from the genuine actual Verma
+module by an explicit irregular Rees transformation. This supplies
+a module-level route from the original head lattice to dense root
+color charts with both central powers nonzero. Its construction
+does not assume that a generic typical finite head extends to a
+Lusztig module, nor identify the two regular wall normals.
+
+At U=1 its generic-M value is the E-semicyclic s=1 fiber,
+with wrap coefficient kappa=M-M^(-1), rather than the nilpotent
+s=0 head. They coincide at M=1. The previously proved whole
+E-semicyclic cut independence is relevant, but is a separate
+word/source comparison and is not a consequence of this module
+specialization.
+
+No regular limit of the transformed source has been asserted.
+The generator module limit alone also does not prove that a whole
+conjugated R network has a regular scalar limit with this selected
+source. The remaining tasks include its ramified flags, irregular
+source class, physical phase adapters, and actual geometric/cut
+comparison. No global regulator period or volume limit follows
+from the central-chart coverage alone.
+
+The parameter d is a local root normal for fixed N, not the
+physical large-N parameter H_N=2pi*i/N. If H=Log Q on the
+marked root sheet, then d=N^2(H-H_N)+higher order. The actual
+finite auxiliary state is regular at that fixed root. A nonzero
+polar geometric phase exp(S/d) is therefore not automatically
+its selected phase: polar pieces in a full source-preserving
+contraction must be accounted for or canceled. The root regular
+part can still have N-dependent growth. The exact module and
+Poisson maps above do not settle that separate norm problem.
+
+The uncompressed universal Verma braid has its own already proved
+root Alexander-normalized period in
+[the earlier Verma note](frobenius_verma_period.md). It is not
+identified with the compressed selected period by dropping the
+projectors (4.3); their full normal adapter remains necessary.
+
+[Exact module and source audit](../experiments/audit_irregular_rees_full_cyclic_module.py).
+[Results](../experiments/irregular_rees_full_cyclic_module_results.json).

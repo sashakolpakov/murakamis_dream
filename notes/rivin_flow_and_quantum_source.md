@@ -1,0 +1,1939 @@
+# Rivin optimization, a regularized angle flow, and the quantum source
+
+Research note, 26 October 2026, following the user's suggestion to use
+Rivin's geometrization and flow viewpoint. The classical geometric
+problem has a precise convex formulation. We give an exact constrained
+flow and prove global convergence when the triangulation is complete
+and positive geometric. We then identify the additional lift needed
+for the actual quantum period, retaining a newly computed paired
+source-normalization identity.
+
+The volume conjecture is not proved. This is not a replacement
+positive quantum state or a claim that real convexity determines
+the original finite period.
+
+Current source frontier (27 October):
+[exact complete Fourier localization](universal_resonant_fourier_source_completion.md)
+places the ORIGINAL period entirely at the resonant row; regular
+finite Fourier rows vanish exactly. The
+[all-strand Euler/Cauchy theorem](all_strand_euler_cauchy_cap.md)
+now expresses that original period as a specified finite coefficient
+or endpoint divided difference, with the whole word retained.
+Its [physical-clock equation](actual_fusion_right_euler_clock.md)
+has a nilpotent apparent denominator. The
+[full peripheral boundary calculation](resonant_boundary_blowup_and_actual_peripheral_line.md)
+proves the required first pole cancellation and corrects a raw-prefix
+half-shift. These provide exact inputs for the geometric comparison;
+Rivin uniqueness still does not prove its selected nonzero image or
+the sharp norm. The [critical-path audit](critical_path_to_original_volume_conjecture.md)
+keeps those three final gates open.
+
+## 1. Existing scope and the correct optimization problem
+
+[Rivin, Combinatorial optimization in geometry](https://arxiv.org/abs/math/9907032)
+explicitly develops linear programming and network-flow methods;
+the [journal abstract](https://doi.org/10.1016/S0196-8858(03)00093-9)
+states that scope. The triangulated Casson--Rivin formulation is
+stated in [Futer--Gueritaud, 1004.0440](https://arxiv.org/abs/1004.0440):
+linear angle equations define a convex polytope, and an interior
+critical point of volume gives the complete hyperbolic metric.
+[Luo--Yang, 1404.5365](https://arxiv.org/abs/1404.5365) uses the
+Fenchel dual of volume for decorated ideal metrics and curvature.
+For coverage of extended convergent flows on cusped triangulations,
+see the abstract of
+[Feng--Ge--Hua, 2009.05842](https://arxiv.org/abs/2009.05842).
+No published flow or rigidity proof is used as a premise below.
+
+For t tetrahedra let theta_(j,0),theta_(j,1),theta_(j,2)>0 be
+the angles on the three opposite edge pairs. Write C for the
+edge-incidence matrix: a column counts the two local edges in
+that pair, including multiplicity if their global edges coincide.
+The exact angle domain is
+
+    A={theta>0: sum_(a=0)^2 theta_(j,a)=pi,
+                      C theta=2pi*1}.              (1.1)
+
+Volume is strictly concave on A. The convex objective is its
+negative, rather than volume itself. An ideal triangulation alone
+does not guarantee an interior critical point. The positive
+complete triangulation from
+[the audited geometric input](ge_geometric_triangulation_audit.md)
+does supply one; this is where that input is decisive.
+
+## 2. An exact flow-network representation
+
+Use a bipartite incidence graph with one node for each tetrahedron,
+one node for each global edge, and one arc for each of the six
+local edge occurrences, directed from its tetrahedron to its
+global edge. Give the arc the corresponding dihedral angle.
+Every tetrahedron has total outgoing flux 2pi; every global edge
+has total incoming flux 2pi. Impose equality of the two arcs
+belonging to each local opposite edge pair. These flow constraints
+are exactly (1.1), in both directions.
+
+This graph is derived from the dual cell complex: tetrahedra are
+dual vertices and global edges are dual faces. The opposite-pair
+equalities are additional local constraints. Deleting them would
+give a different transportation problem. Likewise the bare dual
+one-skeleton does not by itself record which original edges are
+encircled or the peripheral holonomies.
+
+Let A_0 be the full integer matrix of (1.1), and let B have columns
+forming a real basis of ker A_0. This description requires no
+invertible face-matrix chart. For quantum lattice applications one
+must retain the integral kernel and its peripheral marking as well;
+a real change of coordinates is not an integral saturation theorem.
+
+## 3. Strict concavity and the geometric maximizer
+
+Set Lambda'(a)=-log(2sin a), Lambda(0)=0, and
+
+    V(theta)=sum_j [Lambda(theta_j0)+Lambda(theta_j1)
+                                      +Lambda(theta_j2)].
+
+For alpha+beta+gamma=pi the negative Hessian in alpha,beta is
+
+    [[cot alpha+cot gamma, cot gamma],
+     [cot gamma, cot beta+cot gamma]].             (3.1)
+
+Its determinant is one and its first diagonal entry is
+sin beta/(sin alpha sin gamma)>0. Thus it is positive definite.
+This proves strict concavity on every affine angle domain.
+
+The existing [positive-factorial note](quantum_a_volume.md)
+already gives the independent stationary-point argument. Choose
+compatible cusp horospheres in a complete geometric triangulation.
+The truncated length of each global edge agrees across its incident
+tetrahedra. Summing the ideal Schlaefli identity gives
+
+    dV=-(1/2)sum_e length_e d(total angle_e)=0
+
+on the angle domain; changes of decorations cancel at ideal
+vertices. Hence its geometric angle point theta_* is stationary.
+Strict concavity makes it the unique global maximizer, with
+
+    V(theta_*)=Vol(M).                            (3.2)
+
+This argument proves the direction needed here from the supplied
+geometric point. It does not assume that an arbitrary nonempty
+angle polytope has an interior maximizer.
+
+### The same optimization generates the marked A-curve
+
+This also gives a precise connection to the requested torsor
+formulation. Use logarithmic shape coordinates x=(u_j,v_j), with
+u_j=Log z_j, v_j=Log z_j'', and their already audited symplectic
+form Omega. Let E be the isotropic space of independent edge
+Hamiltonians. Tangential angle structures are E^perp. The marked
+peripheral functions identify E^perp/E with a two-dimensional
+symplectic space, with
+
+    Omega_red=-(1/2)dU wedge dV,
+    U=Log m, V=Log l, m=M^2, l=L_intr^2.
+
+All peripheral logs are centered at the chosen complete lift;
+its longitude character remains recorded separately. At a positive
+shape, the sine rule gives
+
+    dV_volume(delta theta)=Omega(Re x,delta theta). (3.3)
+
+For example, in one tetrahedron with alpha=Im u, gamma=Im v,
+beta=pi-alpha-gamma, Re u=log(sin beta/sin gamma) and
+Re v=log(sin alpha/sin beta). Differentiating its Lobachevsky
+volume gives exactly Re u dgamma-Re v dalpha.
+
+Prescribe the two real boundary angles a=Im U,b=Im V, and
+maximize volume on that affine slice of A. Its tangent space
+is E: fixing both peripheral angles removes the entire quotient
+E^perp/E. By (3.3), an interior critical point is equivalent to
+Re x in E^perp, which is precisely the real part of the edge
+gluing equations. Their imaginary part was imposed already.
+Thus the constrained maximizer solves the full complex gluing.
+Without fixing a,b, stationarity requires Re x in E, which also
+makes Re U=Re V=0 and gives completeness at a=b=0.
+
+Near the complete geometric point define the value function
+
+    V_boundary(a,b)=max_(theta in A,
+                            Im U=a,Im V=b) V(theta).
+
+The positive geometric gluing branch exists there by the earlier
+rigidity proof. Its map to (a,b) is locally invertible because
+Im(dV/dU)>0. Hence these maxima are interior, unique and smooth.
+Reduction of (3.3) gives their exact differential
+
+    dV_boundary=(1/2)(Re V da-Re U db),
+    Re U=-2 partial_b V_boundary,
+    Re V= 2 partial_a V_boundary.                (3.4)
+
+Consequently the marked geometric A-curve is locally the Legendre
+graph of this boundary volume function. This identifies the same
+regulator differential already used in the Heisenberg period
+space. It is a statement about the classical geometric branch,
+not a quantum-A symbol or selected-period theorem.
+
+For clarity its boundary Hessian can be computed explicitly. If
+tau=dV/dU=p+i q_c at the complete point, q_c>0, then
+
+    Hess V_boundary=-(1/(2q_c))
+                        [[|tau|^2,-p],[-p,1]],
+    det(Hess V_boundary)=1/4.                    (3.5)
+
+Indeed Re U=(b-p a)/q_c and
+Re V=(p b-|tau|^2 a)/q_c to first order; insert them in (3.4).
+The negative Hessian is positive definite. The same constrained
+flow below applies to each nearby fixed-(a,b) slice, giving a
+variational construction of this marked A-curve germ.
+
+There is an intrinsic boundary formulation. The calculation of
+(3.5) is pointwise on the positive gluing branch, with its varying
+tau=dV/dU and Im tau>0. Hence the convex potential
+
+    Phi(a,b)=-2 V_boundary(a,b)
+
+satisfies the real Monge--Ampere equation
+
+    det(Hess Phi)=1,
+    U=partial_b Phi+i a,
+    V=-partial_a Phi+i b.                        (3.6)
+
+Conversely a smooth strictly convex Phi with this determinant
+gives a positive complex curve by the last two formulas. Indeed
+dU wedge dV=(det(Hess Phi)-1)da wedge db=0, and Phi_bb>0
+makes U a local real coordinate pair. Therefore V is holomorphic
+in U, with
+
+    dV/dU=-Phi_ab/Phi_bb+i/Phi_bb.
+
+This is a direct local equivalence of the convex boundary
+potential and the positive marked complex A-curve germ. The
+fundamental-class mark still fixes its volume constant and the
+regulator's central period. The Monge--Ampere equation alone
+does not specify that mark, a particular A-curve, or a quantum
+period. It makes the geometric target independent of a chosen
+tetrahedral coordinate chart.
+
+## 4. A regularized flow with the exact same objective
+
+Use h(theta)=-sum_i log theta_i as a metric potential. In coordinates
+theta=theta_0+B y define the constrained flow by
+
+    dot(theta)=B [B^T diag(theta_i^(-2)) B]^(-1)
+                                     B^T grad V(theta). (4.1)
+
+The matrix is positive definite whenever B has independent columns
+and theta>0. All angle equations are preserved because A_0 B=0.
+Moreover
+
+    dV/dt=(B^T grad V)^T
+             [B^T diag(theta_i^(-2))B]^(-1)(B^T grad V)>=0. (4.2)
+
+The barrier changes the metric, not the objective or its critical
+point. There is no regularization parameter to send to zero.
+
+Here is a global convergence proof, given theta_*>0 from Section 3.
+Use the Bregman function with its arguments in the following order:
+
+    D(theta_*,theta)=sum_i [theta_*i/theta_i-1
+                                  -log(theta_*i/theta_i)]. (4.3)
+
+Differentiating (4.3) and using theta_*-theta in im B gives
+
+    dot D=-(theta_*-theta)^T grad V(theta)
+                              <=-[V(theta_*)-V(theta)]. (4.4)
+
+The inequality is the tangent inequality for a concave function.
+Thus D is nonincreasing. It tends to infinity if any theta_i tends
+to zero, because every theta_*i is positive. The angle closure is
+compact, so the solution stays in a compact subset of A. The
+smooth vector field therefore exists for all time.
+
+On a compact positive region containing this trajectory and its
+segments to theta_*, the restricted negative Hessian of V has a
+positive lower bound mu. Choose B orthonormal for this estimate.
+If theta_i>=delta there, the inverse metric in (4.2) is bounded
+below by delta^2. The strong-concavity inequality gives
+
+    ||B^T grad V||^2>=2mu [V(theta_*)-V(theta)],
+    d/dt[V(theta_*)-V(theta)]
+                   <=-2mu delta^2[V(theta_*)-V(theta)]. (4.5)
+
+Consequently the volume gap decays exponentially and theta(t)
+converges to theta_*. The constants depend on the triangulation
+and starting point; no uniform complexity estimate across knots
+is asserted. This proves a regularized geometric flow for every
+complete positive ideal triangulation, not a knot-by-knot criterion.
+
+## 5. The convex dual makes the curvature residual explicit
+
+Let Delta be the closed tetrahedral angle simplex, and define
+
+    F(lambda)=sum_j sup_(theta_j in Delta)
+            [V_j(theta_j)-lambda^T C_j theta_j]
+                            +2pi sum_e lambda_e.    (5.1)
+
+It is convex as a supremum of affine functions of lambda.
+Where its local maximizers are unique and positive, direct
+differentiation gives
+
+    grad F=2pi*1-C theta(lambda).                  (5.2)
+
+Thus the dual gradient is the edge-curvature residual. The edge
+potentials are the decorated-length variables, up to the fixed
+sign and factor from the Schlaefli formula. This is the co-volume
+viewpoint's role in the proposed flow. Degenerate local maximizers
+require an extension or nonsmooth treatment; (4.1) avoids that
+issue by staying in the positive primal domain.
+
+## 6. A paired source identity needed by a quantum flow lift
+
+The [actual cyclic-source comparison](controlled_cyclic_euler_source.md)
+has B_N(M)=gamma_N(M) J_N, with nu=M^2 and primitive center
+s=1-M^(2N). Its normalization obeys an exact inversion relation:
+
+    gamma_N(M)gamma_N(M^(-1))
+          =M^(N-1)/[N S_N(M^2)]
+          =d_N(M)/(N eta_N), eta_N=i^(N+3).        (6.1)
+
+All roots are on the cover marked at M=1. This identifies the
+paired source line with the original modified dimension, retaining
+its phase. To prove it, write a_0(nu) for the scalar coefficient
+of that note and m=N(N-1)/2. Its product formula gives
+
+    [a_0(nu)a_0(nu^(-1))]^N
+                    =nu^(-m)[S_N(nu)/N]^N.
+
+Reindex r by N-r in the second product, and use
+product_(r=1)^(N-1)(nu-Q^r)/(1-Q^r)=S_N(nu)/N.
+Both marked roots equal one at nu=1, fixing the remaining mu_N
+factor. Since S_N(nu^(-1))=nu^(-(N-1))S_N(nu), equation (6.1)
+follows with nu^((N-1)/2)=M^(N-1). The square-root meridian mark
+is essential at even N.
+
+After choosing the compatible square root of its right side,
+r_N(M)=gamma_N(M)/sqrt(d_N(M)/(N eta_N)) satisfies
+r_N(M)r_N(M^(-1))=1 and r_N(1)=1. This is a concrete local
+norm-one edge variable for a putative dual-complex transport.
+Its vertex and global period constraints have not been inferred
+from the scalar identity alone.
+
+Actual cap gluing also retains an operator, not only this scalar.
+Use the actual dual colors and caps of
+[the pivotal-duality calculation](relative_pivotal_duality.md).
+Write x=-M/q, x^vee=x^(-1)Q^(-1), and
+
+    C_x e_a=(-x)^a Q^(a(a+1)/2)e_(N-1-a).
+
+The original left cap matrix is C_x^T. Transform both source
+frames by B_N. A direct anti-diagonal multiplication gives
+
+    cap_new=B_N(M^(-1))^(-t) C_x^T B_N(M)^(-1)
+                   =[N eta_N/(Q d_N(M))] C_x.      (6.2)
+
+Here J_N^2=Q I. The reflected Gaussian and its full scalar
+are retained. Using the old cap unchanged on both new frames
+would introduce a nonscalar diagonal defect. Cups and the
+pivotal insertion transform with the same bases, so the ordinary
+snake contractions and original cut are preserved. This gives a
+local gluing requirement for a quantum lift of the classical flow.
+
+## 7. The remaining lift from geometric flow to quantum period
+
+Classical convex optimization now gives a controlled deformation
+inside the full positive angle domain, with a unique geometric
+target. The requested volume theorem would follow if this flow
+lifted to the actual quantum period realization while preserving
+its relative source, co-source, peripheral lattice and selected
+cycle, and gave a nonzero contribution at the geometric point.
+The local frame and cap identities above constrain that lift;
+they do not construct the global cycle transport.
+
+The [actual normal-period calculation](actual_geometric_normal_period.md)
+already constructs the geometric critical point and its nonzero
+formal transverse block from the original crossing action. The
+additional question here is its occurrence in the selected finite
+period. A flow of angle assignments must be lifted to that period
+realization; a geometric flow alone is not already quantum parallel
+transport.
+
+In particular a maximum of the modulus does not settle a complex
+period. The exact elementary identity
+
+    integral_R exp(-N x^2/2+i N a x)dx
+            =sqrt(2pi/N) exp(-N a^2/2)
+
+has a strictly concave modulus exponent with its maximum at zero,
+yet its phase changes the exponential rate. For the knot we need
+the actual full phase stationary on the transported geometric
+cycle, with the marked source coupling retained. A positive
+factorial model cannot replace that identification.
+
+The earlier positive-model proof already used (3.2). The additional
+work here is the exact regularized flow and its boundary-control
+proof, the explicit network constraints, convex dual residual, and
+paired actual-source calibration. No novelty is claimed for the
+Casson--Rivin program, Bregman gradient methods, or cyclic inversion.
+
+[The audit](../experiments/audit_rivin_source_flow.py) uses two exact
+Regina triangulations of the figure-eight complement, related by
+one legal 2-to-3 move, to check the flow and constraints. These are
+numerical diagnostics of the general proof, not its scope. It also
+checks the paired source normalization and actual cap formulas.
+[Results](../experiments/rivin_source_flow_results.json).
+
+Reproduce with:
+
+    python3 experiments/audit_rivin_source_flow.py
+
+## 8. The local source connection and its resonant lattice
+
+The [subsequent exact source calculation](cyclic_source_connection_and_resonant_flags.md)
+supplies a local part of the required lift. The entire comparison
+scalar is an explicit cyclic product with its marked phase and
+rational logarithmic connection. Its generating action has a
+uniform error bound on fixed norm-root charts away from the
+unit circle. These differ from the compact central charts used
+for the earlier polynomial bounds.
+
+At a nontrivial root lift z=Q^r, the regularized scalar is a
+specified phase times (Q;Q)_r/N. The full primitive operator
+has image X^r V and rank N-r. These flags must be retained in
+transport; the operation is not an invertible primitive gauge.
+The two opposite source weights sum to one, and regularizing
+their actual cap on the same cover gives finite invertible
+duality with every scalar retained. This handles the local
+resonances algebraically. Matching the flow's geometric shapes
+to the actual network and transporting its selected period
+through these flags remain necessary.
+
+In fact the regularized primitive multiplier is X^r times
+an integral unit. Exact norm-root deck transport generates
+the spectral line lattices X^r S, on which the maps are
+invertible. Their pushforwards have only first-order nonunit
+Smith factors. Opposite leading flags are orthogonal under
+the actual cap; its normal source pairing is an explicit
+finite Gaussian sum. This supplies the local normal data
+that a lift of the flow must carry, rather than replacing
+that data by only a norm or a leading fiber value.
+
+## 9. Regge transport and the distinction between two covers
+
+The [subsequent Regge calculation](regge_period_covers_and_a_curves.md)
+identifies its ideal-angle action with S_3. The logarithmic
+regulator transport has an explicit two-step Heisenberg kernel
+and finite S_3 quotient. A shape-ordering cover removes the
+finite part; an orientation twist is necessary to retain volume.
+The pointed quantum ordering adapters are explicit Gaussian
+Fourier matrices with exactly computed phases and norm ratios.
+This supplies finite ordering transport, not the selected
+period's entire geometric deformation.
+
+A finite manifold cover is a different operation. The note
+derives its geometric A-factor by peripheral monomial elimination,
+its regulator transfer by the cover degree, and its induced
+quantum module with the changed boundary parameter and root
+sectors retained. These formulas specify what descent must
+compare. Neither classical nilpotence nor an upstairs volume
+alone supplies the actual selected-state comparison.
+
+The [actual braid-source calculation](actual_braid_group_and_spectral_source.md)
+now shows why nilpotence must be restricted to an appropriate
+period extension or quotient. The entire original braid image
+has a connected subgroup with an SL_2 quotient at every level,
+detected by a nonzero pivotal moment and an ordinary-trace
+sign. Finite-index restriction does not remove it. A spectral
+cover can instead split the source matrix algebra and reduce
+its comparison to a scalar line. That relative comparison
+preserves the semisimple source, its normal lattice and the
+actual cut; identifying it with the geometric flow remains
+the additional theorem.
+
+## 10. Whole cyclotomic transport now gives a finite descent theorem
+
+The requested algebraic form of the optimizer is recorded precisely
+in [whole-period rigidity](whole_period_cyclotomic_rigidity.md).
+The marked-meridian gluing Jacobian is invertible at the complete
+positive point. Its shapes are therefore algebraic numbers there,
+and its local shape branch is algebraic over the marked A-curve,
+etale over the meridian after retaining the chosen place. Every
+nilpotent shape lift is unique by solving the same invertible
+Jacobian. At completeness M=+1 or -1 with the longitude lift
+retained; M and L obey their A-relation. These statements concern
+shape coordinates. Volume remains their marked regulator period.
+
+There is now also a direct theorem for the proposed rigidity step.
+For c(Q,Y) rational over Q, vanishing of every sufficiently large
+whole root transport
+
+    sum_(j=0)^(N-1)c(zeta_N,zeta_N^jY)=0
+
+implies a single rational solution c=sigma(b)-b. The
+[proof](additive_unipotent_cyclotomic_descent.md) allows ramified
+moving poles. Together with the full multiplicative theorem it
+solves every rational upper triangular transport with identity
+cyclic curvature. In particular finite unipotence makes the
+Heisenberg equations terminate, including their central source.
+This is independent of bridge number or knot family.
+
+The geometric formal period has the structure
+
+    exp(S_0/h) h^kappa (a_0+a_1 h+...),
+    Im S_0=Vol/2,  h_N=pi*i/N.
+
+The algebraic coefficient a_0 is its Gaussian density; the leading
+coefficient S_0 of the logarithm is the marked regulator action.
+The [uniform density theorem](quantum_source_bridge_extension.md)
+now compares that variable Gaussian density with the holonomy
+torsion for arbitrary knot braids. The actual quantum period has
+also been constructed as the exact
+[whole cyclotomic Mellin residue](cyclotomic_mellin_residue.md).
+
+The remaining quantum statement is that this selected residue
+carries the marked geometric period with its volume norm. To use
+the new descent theorem one must construct its rational comparison
+torsor and establish its whole transport identities, retaining the
+actual source, cut and peripheral factors. The optimizer and its
+unique formal shape lift supply the geometric branch of this
+comparison. They do not yet establish those quantum identities.
+
+The [applicability audit](regulator_curvature_obstruction.md) also
+proves that absolute zero curvature cannot model the marked
+regulator in a regular rational differential limit. Its dlog M
+extension has a nonzero residue, surviving finite covers. Thus
+the intended rigidity concerns a specified relative comparison
+carrying the same marked periods. Identity curvature of that
+relative object is an input to prove; equal noncentral absolute
+curvatures alone do not imply it for the entire Hom module.
+
+The [whole-source Newton theorem](whole_source_newton_transport.md)
+provides an explicit quantum boundary object before taking jets.
+Writing U=Y^N and X=Y+Y^(-1), its source lattice has basis
+v_n=(1-Y) product_(r=1)^n(X-Q^r-Q^(-r)), n<N. The invariant
+clock/shift algebra acts by three banded generators with the
+exact central corner v_N=(U+U^(-1)-2)v_0. Its conductor into the
+ordinary power lattice is U^2-1; the missing directions require
+first normal data. The actual cut is the physical derivative
+along U=Y^N and survives on the full abstract lattice fiber.
+Some source vectors have zero ambient complete-fiber image but
+nonzero cut. This is a concrete reason to construct the whole
+source object before replacing it by ordinary root values.
+
+## 11. The source chart now lifts to a whole dilogarithm connection
+
+The [actual Rees construction](irregular_rees_full_cyclic_module.md)
+now supplies a full cyclic quantum-normal chart whose root center is
+
+    k=gamma M^N/U,
+    e=p gamma(M^N/U-M^(-N)), f=(1-U)/p,
+    U=exp(up), gamma=(-1)^(N+1).
+
+Its actual divided commutators give the holonomy Poisson brackets.
+At fixed M the symplectic form is both du wedge dp and
+-dLog k wedge dLog e. This connects the source to the full
+fixed-Casimir leaf, extending the earlier reducible source charts.
+
+The [exact period transgression](rees_gauss_period_transgression.md)
+further gives the function generating the difference of the specified
+source and holonomy primitives. Write B=M^N and work with B as an
+independent coordinate first. Then
+
+    t=U/B^2, x=Log U, ell=Log(1-t),
+    W=Li_2(t)+x ell-x^2/2,
+    theta_Gauss-theta_source=dW+(x-2ell)dLog B.       (11.1)
+
+The underlying algebraic flat period object has fixed size and is
+independent of N: with mu=Log B, xi=Log t and
+H=Li_2(t)+xi ell, its equations are
+
+    dmu=dB/B, dxi=dt/t, dell=-dt/(1-t), dH=xi dell.
+
+It is a Heisenberg period torsor times one additive logarithm torsor.
+Each level is the restriction B=M^N of that same connection. On B=1,
+W-Li_2(1)=-Li_2(1-U)-(Log U)^2/2 extends across U=1, including
+the resolved parabolic source. This is a whole function identity;
+quantum jets are subsequent restrictions.
+
+The [whole crossing factorization](rees_whole_crossing_source_factorization.md)
+also derives the marked cyclic factor and resonant dilogarithm period
+directly from the actual Verma R. Its rational conjugation gives the
+full characteristic holonomy braiding. The source vacuum and every
+internal finite-head projector remain irregular, with their ramified
+lattice flags retained. Thus these identities supply concrete local
+period transport for the program. A source-preserving global quantum
+comparison with the marked geometric period and its physical N-growth
+is still required. A choice of primitive in (11.1) alone does not
+prove that comparison.
+
+The [quantum matrix/base theorem](quantum_matrix_base_intertwiner_torsor.md)
+also removes the need to guess the local matrix part. On the dense
+quantized-leaf cover it is constructed by a finite sum of matrix units.
+The resonant dilogarithm generates all six characteristic center
+formulas after the actual Cartan transport. What remains in this
+local theorem is the quantized base and the independently specified
+source residual, rather than another matrix deformation calculation.
+
+The [pointed flatness theorem](flat_pointed_torsor_and_quantum_lifting.md)
+now makes one sufficient rigidity hypothesis exact. Over R=k[[h]],
+a separated marked comparison algebra with reduced fiber k is R/I;
+if it is h-torsion-free, then I=0 and the whole formal comparison
+exists uniquely. On regular cyclic-source charts the only possible
+comparison is C=V_2 V_1^(-1), where V_i consists of successive
+transported sources. Its last cyclic relation and cut moments give
+an explicit finite obstruction ideal I. Thus the next algebraic
+question is comparison-flatness, with the actual period marking.
+Classical shape etaleness and flatness of the two individual modules
+do not imply it; the note gives exact rational counterexamples.
+
+## 12. The actual source now has a fixed compact period class
+
+The [compact coherent source theorem](compact_coherent_source_period.md)
+replaces an unspecified final functional by an exact algebraic cycle
+for the original state. Its surface is
+
+    X=(P1 times P1) minus {s_0t_0+s_1t_1=0}
+      = {h^2+ef=1},
+
+with a marked real sphere Gamma. For the actual finite head, products
+are represented by an exact finite coherent star product and
+
+    Tr(A)/N=integral_Gamma omega_A,
+    omega_A-(Tr(A)/N)omega_I=d eta_A.
+
+The primitive is a global rational form on X. This computes
+H^2_dR(X) as one algebraic line and gives source contractions with
+uniform bounds in their specified coherent metric. Both original
+wall functions and their finite endpoint rows remain explicit.
+The physical principal symbols have the actual Gauss coordinates
+and their holonomy symplectic form.
+
+The [strict relative-word transport](relative_word_green_transport.md)
+carries the whole weighted state and all least-moment Green currents
+through this same actual source. The
+[constrained Verma extension](constrained_verma_word_source_extension.md)
+retains all intermediate head constraints without either wall or
+characteristic localization. Thus these are specified whole
+current/source objects, not an arbitrary final normalization.
+
+There is a direct actual-A version as well. An order-d operator and
+its fixed initial colors give a companion product H_N, initial column
+v_0 and cut row ell. The matrix v_0 ell H_N has trace C_N(q).
+Applying the same compact calculus at matrix size d gives exactly
+K_N as a period on X with fixed pole order d+1. Its apparent
+quantum-normal poles are exact forms; sliding the source through
+H_N gives a regular representative. These statements hold before
+assuming nonvanishing of K_N. The coefficient complexity of H_N
+still grows with N.
+
+The unresolved geometric comparison is now specific: prove that the
+internal geometric reduction maps this actual compact source class
+to the marked regulator period with controlled normalization.
+Its critical framing family may degenerate or escape at the
+compactification boundary, so the local Rivin/Gaussian point alone
+does not prove that global pushforward or its selected volume norm.
+
+## 13. A nonzero geometric boundary class is now computed
+
+The [resolved centralizer calculation](springer_centralizer_boundary_source.md)
+now supplies the relevant shell geometry. The full geometric framing
+torsor PGL2 over a nonzero unipotent cut meridian has additive
+transition b_S=b_N+1/(v eta). This torsor cannot extend across the
+zero section of the Springer line O(-2). The rescaled coordinate
+a=-eta b instead has the affine transition
+
+    v'=1/v, a'=v-v^2a,
+
+which is exactly the actual compact-source cotangent torsor X.
+The resulting threefold Y has Y minus E=PGL2 and exceptional
+divisor E=X. The nontrivial Chern transition is retained.
+
+The [explicit actual gauge calculation](compact_framing_gauge_and_boundary_residue.md)
+computes its principal Gaussian class, including the extra common
+momentum p that is absent from the fixed-cut-flag B1 chart. Its
+whole classical form identity is
+
+    Omega_cut wedge dLog p
+          =-(d eta/eta) wedge dv wedge da/(1-eta v).
+
+Thus for the actual uniform geometric density, with all original
+square-root/base lines retained,
+
+    (1/(2pi*i))Res_E(Omega_(beta,0) wedge dLog p)
+          =c_beta omega_I, c_beta^2=-T_beta/2, c_beta!=0.
+
+This is a global nonzero principal boundary class on the same X
+whose cycle computes the selected finite source. It is stronger
+than specifying only a nonzero local density. The exact interior
+adapter is A_cut=1/(1-eta v), and its boundary value is one.
+
+The associated exceptional divisor is not the physical section.
+The latter obeys eta=(1-exp(-2pi*i va))/v and meets E at integer
+va (the two poles on the real source cycle). An actual relative
+cycle/source-chain map is still needed to send the selected cycle
+to this exceptional residue. Higher Green moments can contain
+normal logarithms, so dropping their relative endpoints would
+erase the very class being compared.
+
+The [actual Weyl source adapter](twisted_cotangent_source_and_weyl_gluing.md)
+also now has its exact scalar square
+c_N=N M^(N-1)/S_N(M^2), equal to the original modified-dimension
+function times its recorded phase and N factor. Its marked rational
+norm splitting keeps both even-level phases and all divisors. It
+solves this finite gluing problem, not the remaining quantum
+unipotent dressing or selected regulator norm.
+
+## 14. The cycle correction, whole flux and an actual moving-q source
+
+The [Gauss-wall calculation](gauss_wall_flux_and_actual_peripheral_character.md)
+now computes the difference between the physical and exceptional
+compact cycles. With F=1-eta v, the closed form
+
+    Xi=dlog F wedge dlog v
+
+has physical period 4pi^2 and exceptional period zero. The cycles
+differ by one nonzero tube around F=0. The actual Haar adapter
+also has an explicit global primitive, with its polar co-source
+retained. Thus replacing a local critical shell by its exceptional
+residue requires this cycle correction, even at principal order.
+
+Varying the meridian transfers the charge to its logarithm torsor.
+For H=Log Q and c=2pi*i, the inverse-flux character is the whole
+period exp[-2c Log M/H]. At H=c/N it is exactly M^(-2N), with
+marked square root M^(-N). Substitution gives the full actual
+modified dimension, including its minus sign under M->qM.
+The log-deck character is one at every root but has first
+logarithmic-Q derivative 2N^2, so root values alone lose data.
+This geometric period lift is not yet the actual off-root
+finite-source normal connection. The
+[exponential-current homotopy](compact_exponential_cech_current_detour.md)
+has a holomorphic target and also does not intertwine the clock.
+
+The [actual integral-color calculation](integral_color_coherent_symbols_and_uniform_poles.md)
+does address the latter issue. Along q=exp(pi*i lambda/N),
+M=-q^N, the head is a genuine quotient of the common Verma module.
+Exact quantum-factorial diagonal maps retain the source, every
+word, all wall functions and the full off-root pivotal adapter.
+The principal generator symbols converge uniformly on the whole
+real compact source, including both poles.
+
+In its symmetric q-factorial frame the principal eigenflag map is
+
+    v->exp(pi*i lambda(1-T))v, T=va.
+
+It preserves the compact source sphere, its symplectic form and
+the actual principal clock exp(2pi*i lambda T). There is also
+an exact finite star quantization U_j=q^[Nj-j(j+1)/2]. It commutes
+with the whole finite clock, not merely its leading symbol.
+At every root U is precisely the actual balanced frame map;
+its top phase is the original i^(N+3). The off-root factorial
+residual is explicit and remains present. The
+[frame/period theorem](quantum_factorial_frames_and_cyclotomic_source.md)
+also computes the whole dilogarithmic frame function. Another
+natural frame has conditioning exp[N(log(2pi)-1)+o(N)] at the
+root. A frame change therefore cannot discard its metric or source.
+
+The inverse eigenflag has two negative bubbles: its signed flag
+current tends to omega_Gamma-delta_north-delta_south. The smooth
+other flag is not a reason to delete this retained marking.
+These are explicit whole source and period transport data for
+the proposed algebraic optimizer/torsor program. Rivin's optimizer
+still supplies the classical branch; proving that the actual
+full knot pushforward selects its marked regulator with the
+required exponential norm remains necessary.
+
+## 15. The normal source comparison now has one whole Gamma line
+
+The [whole Gamma-source theorem](whole_gamma_frame_profile.md)
+computes the remaining actual frame factor, rather than replacing
+it by its root value. Let c=2pi*i,
+
+    Log Q=c/N+ca/N^2, M=-q^N,
+    V_(N,j)={N-1 choose j}_q/M^j, j/N->T in (0,1).
+
+Then locally uniformly in the whole complex normal a, including
+its resonance zeros,
+
+    N^a V_(N,j)->Phi_a(T)=G(T)^(-a)/Gamma(1-a),
+    G(T)=(exp(cT)-1)/c.
+
+This is a marked rank-one difference line:
+G Phi_(a+1)=-a Phi_a. Its opposite profiles have the exact norm
+
+    Phi_a Phi_(-a)=sin(pi a)/(pi a)=2sinh(ca/2)/(ca).
+
+For the actual meridian Weyl half-adapter beta_N, the middle-index
+factor has an even stronger finite comparison. With
+b=a/(1+a/N), M_tilde=exp(-cb/(2N)),
+
+    V_(N,L)(a)=u_N(a) beta_N(M_tilde),
+    u_N(0)=1, u_N=1+O(1/N).
+
+The unit is explicit, holomorphic and nonzero on every fixed
+normal compact set for sufficiently large N. Common zero factors
+cancel before defining it, so this includes the resonance zeros.
+This closes that actual scalar source comparison, not the whole
+knot-module comparison.
+
+The [centered regular-profile theorem](scaled_meridian_regular_profile.md)
+also makes the universal norm intrinsic to the original source:
+
+    H_N(z)=(1/N)Tr exp[z(J-(N-1)/2)/N]
+          =sinh(z/2)/[N sinh(z/(2N))],
+    d_N(exp(z/(2N)))=i^(N+3)/(N H_N(z)).
+
+Writing the actual F_N=S_N R_N+P_N gives exactly
+
+    F_N(exp(z/N))/K_N=H_N(z)rho_N(z)+P_N(exp(z/N))/K_N,
+    rho_N=N exp[(N-1)z/(2N)]R_N(exp(z/N))/K_N.
+
+The polynomial tail has a direct ordinary-color bound. Whenever
+it is dominated by K_N, convergence of the whole selected profile
+is equivalent to convergence of rho_N, including all fixed zeros
+of H_N, by a fixed-circle holomorphic division estimate.
+The normalized regular coefficient can therefore be algebraic
+without losing the infinite resonance zeros: the known period
+factor supplies them. Its algebraicity, geometric branch and
+selected regulator norm still require proof for the knot itself.
+
+Thus the current objects support the function-before-jets
+proposal concretely. The optimizer defines the algebraic shape
+cover; the actual source provides a Gamma-normalized period line
+and its marked Weyl norm. The remaining rigidity question concerns
+the regular knot period after these proved universal factors have
+been retained, not the critical shapes alone.
+
+## 16. The actual quantum-normal crossing response carries the regulator
+
+The [full-head source theorem](full_head_gamma_source_transport.md)
+now removes a color-range restriction in the scalar comparison.
+Writing beta_j(M)=(M^2Q_0;Q_0)_j/(Q_0;Q_0)_j, the lower chart
+uses beta_j(M_-); the upper chart uses its actual complement,
+
+    M_+^(N-1-2j) beta_(N-1-j)(M_-)
+                       =H_N(cb)/beta_j(M_+).
+
+The right-hand side is cancellation-defined at its common zeros.
+Both charts compare to the actual source residual by a single
+diagonal unit C_N=I+O(1/N), uniformly over the entire head.
+The source, dual lattice and position moments are transported;
+no separate zero or pole coordinate is dropped. A bounded
+whole quadratic chirp completes the source-frame comparison.
+
+The [actual crossing calculation](actual_crossing_q_normal_meridian_ratio.md)
+shows why the full transport is more than this source gauge.
+Changing Log Q by ca/N^2 changes quadratic index powers by
+order one. Exact coefficient ratios have a nonconstant bulk
+insertion; nonzero periodic sine walls have genuinely different
+zero divisors, and the q-normal central power retains a clock.
+Thus the scalar/source unit is not a fixed-fiber R intertwiner.
+The [independent spectral theorem](crossing_normal_spectra_obstruction.md)
+strengthens this: the generic integral crossing multiplicities
+are 1,3,...,2N-1, whereas the typical root crossing has N copies
+of each eigenvalue. No scalar-adjusted similarity on that same
+finite tensor fiber can exist, including a nondiagonal meromorphic
+one. The proposed torsor comparison must act on the selected
+period or an extended base instead.
+
+There is nevertheless a constructive whole-word result. The
+[closed bulk-response theorem](quantum_normal_crossing_bulk_response.md)
+keeps the original cut 1/N, all Cartan scalars, the auxiliary
+pivot K^(1-N), and its exact adapter to the ordinary integral
+closure. For a fixed knot braid its actual root array is
+
+    W_aux=(1/N)x^[(N-1)kappa_D]
+               Q^[(N-1)sum_closed i] product r_sign,
+    kappa_D=writhe-b_strand+1.
+
+The two original cap/twist choices differ by the exact factor
+
+    q^[N(N-1)kappa_D] (Q^N)^(sum_closed i).
+
+Retaining this factor cancels the extraneous normal position
+terms. If A_beta is the actual leading log-weight per N and
+E is the Euler field on the homogeneous free flow lattice,
+the remaining full-array multiplier is precisely
+
+    exp[a(E-1)A_beta].
+
+This comparison is uniform on compact bulk-flow charts. The
+constant kappa_D*pi*i in A_beta has integer-level exponential
+one but must stay: its Euler contribution is part of this formula.
+
+On the marked actual geometric critical chart, the permitted
+linear flattening makes dA_flat=0 without changing (E-1)A.
+Consequently the leading formal transverse block has multiplier
+
+    exp[-a A_flat]=exp[-a S_geo/(2pi*i)],
+    Re(S_geo/(2pi*i))=Vol/(2pi).
+
+For real a this has modulus exp[-a Vol/(2pi)]. The calibration
+uses the original Bloch/action normalization, not a new volume
+constant. The framing directions remain external; the action
+is constant on that marked critical framing torsor.
+
+This gives the regulator's quantum-normal character directly
+from actual crossings and the whole source, for arbitrary braid
+and bridge count. It is a formal geometric-block result. The
+real finite-array comparison does not select a complex geometric
+contour, cancel periodic endpoint sectors, or prove the coefficient
+of that block in the original selected finite period. Those are
+the required global steps toward the unchanged volume conjecture.
+
+## 17. A source-corrected normal equation removes a precise ambiguity
+
+Root equations alone leave central multipliers c(U), U=Y^N.
+The [regular-profile audit](central_source_freedom_in_regular_profiles.md)
+shows that even the same root operator, its bounded affine source
+and all color values allow such changes to a whole profile.
+The [source-corrected theorem](source_corrected_quantum_normal_connection.md)
+now supplies a constructive restriction from the actual whole
+preoperator, rather than imposing an unrelated normalization.
+
+Let Acal(Q,Z,Y,S) be that specified preoperator and freeze
+P=Acal(Q,1). The existing descended first-normal operator is
+
+    D_N:K^(T_0)->C^(T_0),
+    D_N(cv)=cD_N(v)+U c'(U)iota(v).
+
+Its actual normal source is a C(U)-linear rule mathcalR_N(v),
+obtained from -N partial_Z Acal by the literal companion map
+and cyclic average. Every root section admitting the same
+whole first-order lift satisfies
+
+    nabla_act(v)=[D_N-mathcalR_N](v)=0.
+
+If both v and c(U)v lift, this gives exactly
+
+    U c'(U)iota(v)=0.
+
+Thus iota(v)!=0 forces c to be constant; a nonzero marked
+color anchor fixes that constant. This is a whole-function
+statement on the central curve, with no regularity at the
+special complete fiber assumed to prove constancy.
+
+The theorem handles terms whose shifts disappear at Z=1 by
+a first-order Ore-unit reduction. It does not silently assume
+that the whole and frozen operators have identical orders.
+The symbol condition cannot be dropped: the note constructs
+an exact Jordan example with nonconstant same-operator lifted
+ratios and the same complete anchor. For the actual factorial
+atom, the corrected connection is exactly
+
+    U partial_U+U/(1-U),
+
+whose rational horizontals are the actual 1-U and its constants.
+This connects the whole source rule with an algebraic period
+connection. Its nonzero-symbol hypothesis and the corresponding
+geometric/selected-period comparison remain to be established
+for the knot module in the intended general theorem.
+
+## 18. The canonical Mellin source supplies the witness for every knot
+
+The [actual Mellin normal-source theorem](actual_mellin_normal_source_rigidity.md)
+now removes the selected-symbol hypothesis in that sourced
+polarization. Its original formal series satisfies
+
+    A(Q,X,S)Z=B(Q,X), B!=0, S f(X)=f(QX).
+
+B is the fixed finite-color source, not a newly chosen value.
+For the canonical homogenization (S-sigma(B)/B)A, the source
+quotient ell v=A f/B is a literal row of the companion module.
+At every sufficiently large root its actual selected section
+and monodromy satisfy
+
+    ell H_0=ell, ell v_0=1.
+
+Thus ell kills im(H_0-I) but sees v_0. This proves
+iota(v_0)!=0 without simple monodromy or any assertion about
+the complementary Jordan blocks. The actual coefficientwise
+whole-Q series gives a first lift in C((X)). A rational
+finite matrix has the same image rank after that field
+extension, so the rational normal obstruction vanishes.
+The selected Mellin line is horizontal, and compatible central
+rescalings on it are constant. Its exact residue remains K_N.
+
+The [whole-function reconstruction theorem](mellin_cyclotomic_jet_uniqueness.md)
+also handles homogeneous additions outside that line. If the
+leading color coefficient has Y-span D and s monomials, set
+
+    k=D(s-1)+1.
+
+A competing rational root function in the actual cyclotomic
+pole lattice is forced to be Z_N if it admits a lift satisfying
+the same Mellin source through orders zero to k-1. Only the
+finite source-coefficient window through X^(N-d) is needed.
+The normal order is fixed independently of N. Its proof uses
+the earlier uniform propagation budget and then the exact
+degree-N numerator lattice; it needs no minimality, rank or
+semisimplicity hypothesis.
+
+An actual nonminimal unknot operator shows why normal data
+are needed even after the root source and pole class are fixed.
+It permits adding lambda X^N/(1-X^N) at the root, changing the
+residue by lambda; the first normal cyclic equation forbids
+that addition. This is a sharp uniqueness test, not a new
+invariant or a volume estimate. A geometric candidate must
+still supply this exact pole/source lift before uniqueness
+can identify its period with the actual one.
+
+## 19. One actual framing-current boundary map is now explicit
+
+The [cut-current theorem](actual_gauss_wall_cut_current_complex.md)
+computes the two anchored Gauss-wall primitives of the original
+coherent kernel. Their Cech difference has class
+
+    (Tr C/N)[dlog v];
+
+for the actual closed knot matrix C=F_N(Y)I it is F_N(Y)dlog v.
+It is the selected source class itself, not a class to discard
+when gluing the two Weyl charts.
+
+The two actual hemisphere rows lambda_N^+,lambda_N^- have
+incomplete-beta weights and add to the normalized trace.
+On a literal zero-extended cut current J their relative versions
+satisfy
+
+    lambda_rel^+((S-1)J)=+B_N(J),
+    lambda_rel^-((S-1)J)=-B_N(J),
+    B_N(J)=[1/(N2^N)]sum_(j=0)^N binom(N,j)J_j.
+
+The head versions have the precise endpoint corrections
+-J_0/N and +J_N/N. Here J is matrix-normalized: it is N
+times the raw Green current, which already contains the cut
+1/N. The j=N tail is retained. After finite transverse sums
+this yields an exact two-current equation: the first framing
+divergence becomes the known wall row, and the second remains
+its literal finite difference.
+
+The [degree-elevated source audit](degree_elevated_wall_source_and_divided_ward.md)
+also identifies why that row is not already supplied by the
+fixed-head divided-source orbit. Its ordinary binomial entropy
+phase can change a framing critical direction, whereas the
+first divided q-binomial row has a different lattice and an
+exponentially conditioned diagonal comparison. Neither an
+abstract Borel action nor an auxiliary transfer reflection is
+the missing internal current map.
+
+The required next geometric step is therefore specific:
+carry B_N and its two endpoints, with this normal phase and
+the second framing current, through the actual Gaussian/relative
+normal family. The current theorems do not supply that map or
+prove a nonzero geometric contribution to the selected residue.
+
+## 20. The soft optimizer is algebraic in the two boundary phases
+
+The [doubled-phase theorem](doubled_phase_rivin_optimizer.md) strengthens
+Section 3's boundary potential at the whole-function level. On the
+product of the normalized geometric curve and its conjugate place put
+
+    P_mu=m_+/m_-, P_lambda=ell_+/ell_-,
+    A=m_+m_-, B=ell_+ell_-.
+
+Its log-Jacobian has determinant tau_+-tau_-, nonzero at the
+chosen complete pair since Im tau_+>0. Thus it has a selected
+etale algebraic inverse over the phase torus. On the real phase
+slice P_mu=exp(2ia),P_lambda=exp(2ib), that inverse is exactly
+the unique GLOBAL optimizer on the nearby affine angle fiber.
+There is no independent choice of complex M and L: their real
+moduli are outputs on the geometric A-curve.
+
+For Phi=-2 V_boundary the whole identities are
+
+    exp(2 Phi_b)=A, exp(-2 Phi_a)=B,
+    dPhi=[Log A dlog P_lambda-Log B dlog P_mu]/(4i).
+
+The full Hessian is algebraic on this cover, positive definite
+on the real slice and has determinant one. The displayed
+logarithmic primitive is the central coordinate of an explicit
+fixed five-dimensional Heisenberg connection. Its curvature is
+zero by the two curve equations, and its transport stops after
+double iterated integrals. The fundamental-class mark fixes
+Phi_complete=-2 Vol. Algebraicity concerns the optimizer and
+the multiplicative gradient; the period itself need not be an
+algebraic function.
+
+The normalized opposite places are essential. The raw equations
+A(m,ell)=A(m/P_mu,ell/P_lambda)=0 have the whole diagonal curve
+in their fiber at P_mu=P_lambda=1. Forgetting the places would
+lose the very etaleness used here. Original SL2 signs remain
+separately marked.
+
+## 21. A finite descended source can force the leading coefficient
+
+The [critical-source theorem](irreducible_critical_source_and_whole_norm.md)
+gives a precise source target beyond classical uniqueness.
+If the ACTUAL action-normalized source line and co-source descend
+to a fixed finite critical FIELD A/F, trace duality gives
+
+    lambda=Tr_(A/F) eta, a=eta(psi).
+
+A retained normalization lambda(psi)=1 forces a!=0. Consequently
+every conjugate critical coefficient is nonzero. Its only possible
+density is computable from finitely many moments using the
+invertible trace Gram matrix. On the fixed root-source slice
+(t,Q)=(1/N,exp(2pi*i/N)), every nonzero fixed algebraic density
+and its inverse have polynomial bounds. This removes a separate
+nonvanishing and subexponential-weight assumption IF that actual
+global source descent is constructed. A faithful normalized-trace
+critical realization supplies another exact criterion.
+
+Neither the critical field alone nor the already scalar closed
+knot matrix proves such a realization. A full period-line formula
+and dominance over its TOTAL complement remain necessary. This
+is weaker than identifying entire crossing modules, which the
+earlier spectral obstruction excludes in the naive same-fiber form.
+
+The [whole unit/level-weight theorem](whole_torsor_unit_weights_and_irregular_type.md)
+also makes normalization control finite: total character weight
+O(N^d) and units 1+O(N^(-k)) give logarithmic error divided by N
+of order N^(d-k-1), hence no rate change for k>=d. A classically
+normalized algebraic unit with weight N^2 can change the rate;
+finite type of the period connection alone does not exclude it.
+The actual bounded quantum-source certificate, not a formal WKB
+series or classical unit value, must control those factors.
+
+## 22. Actual cut clocks now have a global relative normal lift
+
+The [normal-residue/current theorem](centralizer_normal_residue_and_actual_cut_moments.md)
+constructs an actual part of the framing pushforward. On the resolved
+chart b=-a/eta,T=va, the original density has
+
+    nu_cut=-deta wedge Omega/[eta(1-eta v)],
+    Res_E[P(b)nu_cut]=-P(-T)Omega.
+
+The south representative is P(b_S-1). Its difference from the north
+representative is the differential of a finite rational two-form;
+the Gauss-wall pole cancels in this overlap homotopy. Current
+primitives nevertheless retain the EXACT endpoint class
+[P(0)-P(-1)]dlog v. This includes a nonzero degree-one class, so
+one must retain relative endpoints even for bounded moments.
+
+The paired matrix map is dual Toeplitz, not covariant-symbol
+quantization. Its monomial rows are
+
+    T_N(b^h)_j=(-1)^h (j+1)^(rising h)/(N+1)^(rising h).
+
+They pair every actual cut matrix with its residue, and their
+derivative identity has the literal adjacent-difference covariance
+and both cut endpoints. The
+[dual-clock theorem](dual_clock_normal_cut_source.md) inverts this
+map on the whole clock: T_N(P^dual_(N,w))=w^J exactly. At the scaled
+clock w=exp(z/N), its polynomials tend locally uniformly to exp(-zb)
+with factorial coefficient bounds. Every fixed normalized cut-log
+moment has a polynomial normal lift of bounded degree and pole order,
+independent of N; its unnormalized N-power is retained.
+
+Transfer clocks split exactly into input/output position clocks
+around each original crossing. Composing their co-sources requires
+the full transpose STAR action. A pointwise substitution fails at
+the actual N=2 root. The independent transfer-current Gaussian map
+therefore remains a concrete requirement, not a consequence of the
+one-clock formula or bounded unipotence.
+
+## 23. The degree-N wall source is realized on an actual high color
+
+The [high integral-color theorem](high_integral_color_frobenius_wall_source.md)
+supplies the degree-N source missing from the old fixed-head Ward
+orbit. Integral color N(r+1), in an explicit unit sign basis, has
+r+1 Steinberg blocks at q_N. Its actual regular divided powers give
+the classical Sym^r action. At r=N the normalized coherent divided
+co-source, with the marked rank-one head coupon, gives exactly
+
+    B_N(J)=[1/(N2^N)]sum_(k=0)^N binom(N,k)J_k.
+
+Its k=N entry is a genuine block entry, not a discarded tail.
+The divided source has a canonical regular whole quantum germ
+formed from the actual divided matrices and its trace-one
+idempotent. Its normal arrows are also literal: writing
+delta=1-Q^N, the ordinary cross-block F/delta and E/delta recover
+the classical lowering/raising matrices times explicit head
+matrix units and the original rho^(-1) and sign adapters.
+
+An independent full crossing calculation retains the mixed
+half-Cartan sign epsilon^(a+b). It cancels for the uninserted
+one-knot closure, with the original pivot and zero-framing twist,
+giving C_(N(r+1))(Q_N)=K_N. For r=N even the external d_N sign
+adapter is exactly one. Inserted networks still retain those
+mixed signs and block-changing normal arrows.
+
+This is an actual integral quantum color, not an arbitrary extra
+classical source. It evades the previous fixed-head nilpotence
+restriction by enlarging the source. The high and low colors have
+different whole meridian paths Y=Z^(r+1) and Y=Z; equality of their
+whole quantum jets is not asserted. The remaining task is the
+actual two-current network coupling and its marked geometric
+period image. Neither the scalar root equality nor a source group
+isomorphism supplies that coupling.
+
+## 24. The actual high-color normal source has the resolved quadric geometry
+
+The [two-clock source theorem](high_color_two_clock_normal_source.md)
+now gives more than a high-color multiplicity count. For the actual
+index J=S+NR, with S in {0,...,N-1} and R in {0,...,r},
+
+    Q^J=Q^S Z^R, Z=Q^N.
+
+The root head clock and the first-normal block clock are independent
+observables of the normalized actual whole source. Derivatives of
+its normalization cancel exactly on root observables independent
+of R; no unknown source-jet correction is omitted.
+
+Allowing both coherent source flags t,u, the actual divided moments
+are e/r=t/(1+tu), f/r=u/(1+tu), h/r=(1-tu)/(1+tu). The substitution
+
+    v=t, a=u/(1+tu)
+
+identifies their orbit with the SAME source quadric and affine
+clutch v'=1/v,a'=v-v^2a used in the Springer resolution. Its
+source connection is r a dv, with curvature -r dv wedge da.
+The tautological source line is O(-r); its dual co-source line
+is O(r) and has the opposite connection. At r=N this gives the
+integer weight N without resetting a sign or half-density.
+
+Left and right multiplication by the ACTUAL divided sl2 generators
+give explicit first-order differential operators on this source.
+Their common multiplication terms cancel only in commutators.
+Consequently a bounded enveloping-degree normal crossing can be
+transported using its full differential action, rather than
+pointwise multiplication of symbols. The theorem supplies an
+actual normal-source chart; the internal geometric frame action
+and the full relative Green-current transport still require proof.
+
+## 25. The normal crossing and coupled wall source are actual finite operators
+
+The [first-normal crossing theorem](high_color_first_normal_r_and_frobenius_degree.md)
+computes the complete first-normal integral crossing. Put delta=1-Q^N.
+Transfers k>=2N vanish to order at least two; transfers N<=k<2N
+give exactly
+
+    [R_tail/delta]_root=N(-1)^(N-1) R_root(Ediv tensor Fdiv).
+
+After factoring the full signed root crossing, all remaining first
+normal coefficients have Frobenius enveloping degree at most two.
+Nonresonant carries have degree one and the unrolled Cartan derivative
+has degree two. The bound is stable under arbitrary braid words;
+the two-flag Ward formulas make it an actual differential operator
+of order at most two on the divided source. It is not a uniform
+numerical norm estimate or an all-normal-orders theorem.
+
+The [cyclotomic diagonal source](cyclotomic_diagonal_wall_current_source.md)
+also replaces an unexplained Kronecker coupling by an intrinsic
+finite Fourier projector
+
+    P_diag=(1/N)sum_(ell=0)^(N-1)Q_N^(ell(R-S)).
+
+Its selected states have R=S plus the endpoint R=N,S=0.
+Both literal normal wrap arrows preserve it. Compensated
+divided(N+1) bulk arrows and these endpoint arrows form an exact
+sl2 ladder on its N+1 states. A controlled cyclic head shift G
+conjugates the actual Frobenius action and marked head source to
+this coupled ladder and source. Its compressed rank-one coupon
+retains the full off-diagonal co-source, not just its diagonal
+wall row.
+
+There is an explicit regular whole-quantum source correction too.
+The compression unit has root value 1/N and is retained. A rational
+matrix equal to identity at the root carries the aligned source
+and co-source to their compressed germs. Conjugating every crossing,
+pivot and coupon therefore transports the whole same-high-color
+word exactly. This supplies source transport, not equality between
+different low/high color quantum jets.
+
+The controlled shift is clock-dependent. After this gauge the
+crossing retains genuine Frobenius clock dilations; one must not
+continue claiming a pure quadratic differential operator there.
+The un-gauged quadratic theorem and the exact dilation formulas
+are complementary descriptions of the same finite source data.
+The root projector also fails to commute with a crossing: its
+mixed normal neighbors have charges +1 or -1. These actual
+charged terms remain in the relative complex. Its comparison
+with the geometric two-current Gaussian pushforward is still
+the next map to construct.
+
+The [actual memory-clock refinement](actual_memory_clock_and_normal_transfer.md)
+keeps the transfer-clock carry explicitly. With C=R-S and J=NR+S,
+a positive route has k=Delta C-(N+1)Delta R; the negative route
+has the opposite sign. At first normal order Delta R is 0 or -1
+on the positive input route and 0 or +1 on the negative route.
+For w=exp(z/N), the resulting w^(+/- (N+1)) carry tends to exp(+/-z),
+not one. The clock identity itself is the old position-clock
+factorization in these coordinates; its new role is the retained
+actual source/carry realization. It does not substitute for the
+independent geometric current map.
+
+## 26. All normal depths have a uniform finite divided-source filtration
+
+The [all-order theorem](high_color_all_normal_frobenius_filtration.md)
+now proves the stronger actual matrix statement
+
+    R_0^(-1)R_j in U_(<=2j)(sl2 direct_sum sl2) tensor End(heads).
+
+For transfer k=aN+b its exact starting normal order is
+a+epsilon_E+epsilon_F. Higher quantum-integer jets add at most
+their normal order to the block-polynomial degree. Cartan jets
+add at most twice their order. These observations prove the
+bound for both crossing signs, arbitrary words, pivotal adapters
+and ordinary knot closures without discarding a resonant tail.
+
+The actual divided source and co-source, after their fixed root
+unipotent rotations, have interaction degree at most 2j as well.
+Their Borel form restricts order-j source jets to the first 2j+1
+descendants. At any fixed depth B and large N this is a uniform
+finite source space. The clock-dependent coupled gauge still
+retains genuine dilations. This is finite algebraic control of
+the honest quantum jets, not a convergence or numerical norm
+theorem for their resummation.
+
+## 27. Physical polarization and the missing source scale are explicit
+
+The [actual current/conormal dictionary](controlled_fourier_current_and_conormal_dictionary.md)
+proves that H_0 sends the OLD physical head clock to the NEW
+shift V^(-1), not to Q^R. The transformed ordinary head currents
+have explicit finite Fourier coefficients, with their integral/
+balanced diagonal adapter retained. The whole old clock has
+additional Z^R and resonant resolvent terms. Its divided normal
+commutators couple to the actual Fr source; the reduced root
+clock alone would forget that coupling.
+
+This also yields an actual first-normal source CHARACTER. For
+the unprojectivized divided source psi(a,b), let U_s(q) denote
+its exact source/co-source pairing on the head string s. The
+common-line co-source retains every ratio U_0/U_s. Its pairing
+with the whole old clock vanishes at the root, but
+
+    [Phi_q(Q^J)/(1-Q^N)]_root
+             =((a+b)/2)^N/[N(1-Q_N)].
+
+The head factor is explicit and bounded after this normalization.
+Thus the actual normal co-source detects the full weight-N scale
+which the normalized projector erased. This scalar identity is
+not an equality of the two root clock observables, and the
+operator normal commutators must remain in a current comparison.
+
+The [clock/current/metric audit](frobenius_clock_and_internal_centralizer_map.md)
+also isolates the relevant norm scope. The selected coupled anchor
+has a polynomial coherent norm by binomial cancellation. The full
+gauge or entire real source orbit need not have such a norm. The
+[finite inserted-clock graph](finite_frobenius_clock_graph_and_marked_flux.md)
+does have the exact marked wall flux and a regular source-form
+homotopy to the known physical graph, but its inserted clock is
+still not the old physical cut without the conormal adapter above.
+
+## 28. Retaining scale and one descendant recovers the full framing form
+
+The [actual unprojectivized source theorem](actual_unprojectivized_frobenius_borel_torsor.md)
+realizes the framing Borel on the marked STANDARD cover of the
+actual high-color Sym^N source. A normalized projector loses the
+scale needed at the chosen anchor. Its ket alone can also have
+a one-dimensional Borel orbit. The paired source instead keeps
+both the ket scale alpha and the contragredient dual flag u.
+
+The actual matrices M_1=h+2f,M_2=e+f induce
+
+    Y_1=alpha partial_alpha+2u(1+u)partial_u,
+    Y_2=alpha partial_alpha+(u^2-1)partial_u.
+
+For constants C!=0,D, the map
+
+    s=C alpha^2, r=1/(1+u)+D alpha^2
+
+sends them exactly to the two original compensated framing fields.
+With C=-2,D=0 the actual anchor alpha=u=1 maps to r=1/2,s=-2,
+A=-1, so both fields are nonzero there.
+
+Two literal actual pairings supply the two-form:
+
+    U=lambda_+ psi_alpha=alpha^N,
+    m=(1/N)lambda_(alpha,u) h psi_alpha=(1-u)/(1+u),
+    Omega_cut=(A/N)dlog U wedge dm.
+
+The Berry form is N dlog alpha and is flat on this Borel; it is
+not equated with Omega_cut. The missing covector comes from the
+actual descendant m. The old-clock first-normal identity in
+Section 27 detects exactly U with its retained bounded head
+factor. At C=-2 the full character is U^2=[(A-1)/(2A)]^N.
+
+The factor 2^N and marked Kummer root are part of the data.
+The unmarked Sym^N orbit has finite mu_N isotropy; for N>2
+this is nonnormal and does not give an inherited Borel quotient
+group. The standard marked cover is the torsor, while N=2 also
+has the usual central-sign PGL2 quotient. These are actual
+source/framing data with the correct density covariance. They
+do not yet map the complete network Ward currents, charged
+neighbors and Green endpoints through internal Gaussian
+contraction. That comparison and the selected regulator norm
+remain unproved.
+
+## 29. Whole clock flow has an explicit flat endpoint lattice
+
+The [endpoint-completed current](endpoint_completed_normal_clock_euler_current.md)
+is now an exact identity of ORIGINAL whole divided matrices. Set
+Z=Q^N and C_Q=Q^S Z^R. Inverting their interior divided arrows
+gives regular e^dagger,f^dagger with complementary endpoint kernels.
+For a retained clock function g, keeping its shifted argument gives
+
+    [-e^dagger[e,g(Z C_Q)]+P_0 f^dagger[f,g(C_Q)]]/(1-Z)
+                         =[g(C_Q)-g(Z C_Q)]/(1-Z).
+
+The root is the Euler derivative A g'(A). Multiplication by
+-2(1-A) gives the common clock component of both actual compensated
+framing fields. Arbitrary head coefficients retain the explicit
+extra commutators in that theorem; a full Hopf/Gaussian map cannot
+be inferred from the scalar-character calculation.
+
+For a constant head insertion H the root correction is now
+explicitly [Sigma tensor L_h,H], where Sigma=2P_0-I and L_h is
+the diagonal sum of actual q-integer logarithmic derivatives.
+The original cut evaluates it through the known Ward homotopy:
+
+    Phi_h([L_h,H])=-Tr([B_cut,L_h][K,H]).
+
+It vanishes on actual diagonal Green arrays and Ward-closed head
+partial traces, with the Fr endpoint coefficient retained.
+For marked Green moments, Log Z=N Log Q is near 2pi*i, and the
+same WHOLE current instead gives exactly
+
+    J_Z(P(J))=[P(J)-P(J+N)]/delta.
+
+Its residue is the actual translation carry, including the shifted
+coefficient. A Cartan chirp retains its (-1)^N shift character.
+For general whole insertions the extra first-normal Fr commutators
+in equation (8d) of that theorem remain. This separates a proved
+head Ward boundary from the further network/source comparison.
+
+The [whole function-algebra audit](whole_clock_function_algebra_and_endpoint_extension.md)
+constructs its regular flow lattice. Over R=k[[delta]], Z=1-delta,
+the algebras A_L=R[x^+/-1]/product_(r=0)^L(x-cZ^r) are free, and
+
+    0 -> R*1 -> A_L --D_Z--> A_(L-1) -> 0
+
+is exact, with integral primitives. One additional endpoint is
+retained for every difference operation. Their Newton evaluation
+has Smith factors 1,delta,...,delta^L; at the root they retain
+the confluent algebra k[x]/(x-c_0)^(L+1). The last endpoint of the
+actual finite string gives a nonzero current first at order delta^N.
+Thus a whole function and its finite matrix value need different
+endpoint data even when arbitrarily many fixed low normal orders
+agree. This is a constructive clock-flow resolution before jets.
+
+The [global P1 source](global_frobenius_cech_source_and_endpoints.md)
+also retains the actual source/co-source as global sections and
+Serre residue classes. Its weighted relative interval gives an
+explicit rational whole co-source, with the ORIGINAL pairing unit
+as density and a root-identity unipotent gauge to the normalized
+uniform row. The [relative endpoint analysis](actual_frobenius_relative_endpoint_period.md)
+keeps the moving endpoint rows and their connection correction.
+These results construct additional pieces of the desired whole
+object. They do not assert full geometric-source descent, nor
+infer the selected volume norm from the algebraic Rivin optimizer.
+
+The further [degree-elevation map](degree_elevation_actual_head_ward_map.md)
+now corrects the Fr/head endpoint mismatch on ALL matrices:
+
+    (E_N C)_(ij)=((N-i)/N)C_(ij)+(i/N)C_(i-1,j-1).
+
+It preserves the full coherent symbol, the normalized trace and
+the original average cut. In particular the raw Fr interval cannot
+be identified with the old head row before this correction.
+Whole q-factorial and actual divided-arrow diagonal gauges make
+the map intertwine the actual head K/F cut complex with whole
+Cartan dilation and actual divided Fr lowering. The remaining
+original cut difference is an explicit Ward cochain homotopy;
+the omitted target corner entries vanish identically on the image.
+This supplies an actual global source/current map at the finite
+cut. The linear elevation is not multiplicative, so internal R
+products and the mixed normal coproduct need their ordered map.
+
+## 30. The missing cut component is one source-marked wall line
+
+The [highest-spin complement theorem](degree_elevation_complement_bockstein_wall.md)
+now gives an exact algebraic reduction of that remaining cut piece.
+The quotient of End(Sym^N) by the degree-elevation image is the
+2N+1 dimensional spin-N module, with global boundary polynomial
+
+    ob_N(C)(u)=sum_(i,j)(-1)^j binom(N,i) C_(ij) u^(N+i-j).
+
+Its whole memory-Cartan/F complex has explicit contractible forks.
+Only the marked two-term complex R --(Q^(-N)-1)--> R remains,
+with differential delta/(1-delta), delta=1-Q^N. This retains its
+root kernel and first-normal Bockstein. The root contraction is
+O(N) in the unitary coherent spin norm. The memory Cartan still
+differs from the old physical clock and its normal lift.
+
+An actual charged first-normal universal-R current reaches its
+normalized endpoint w=f^N/N!=E_(N,0). Its original coherent source
+value is 2^(-N); the uniform interval gives 1/(N+1). The exact
+ratio 2^N/(N+1) is a retained source power function. A Ward homotopy
+on the elevation image cannot equate the two rows on this extra
+root-closed endpoint. The literal current and both nonzero source
+values are proved in that note, not assumed from a model coupon.
+
+The [Clebsch memory theorem](clebsch_memory_dilation_and_actual_r_excursions.md)
+also strictifies degree elevation on arbitrary ordered OLD-head
+words, using Sym^N direct_sum Sym^(N-2) and a two-state auxiliary
+factor before splitting. Its lower channel is minimal and its
+clock has the explicit auxiliary offset. Full source, co-source,
+pivot, defect and peripheral factors are transported. Actual R
+enters that lower channel at every level: deleting the excursions
+changes a central inverse-pair identity from 1 to sin^2(pi/(2N))
+at even levels. No geometric Ward cancellation of those excursions
+or equality with a different high-color R is inferred.
+
+There is a positive selected-source bound in the
+[metric audit](frobenius_clock_and_internal_centralizer_map.md#7-the-selected-coupled-source-is-orthogonal-in-a-hybrid-metric):
+the Fr-coherent/flat-head metric makes the actual root controlled
+shift unitary, Fourier/N scalar-unitary, and the coupled original
+coupon an orthogonal projector of norm one. The previously computed
+exponential conditioning in the two-coherent-factor metric remains
+true. Neither norm choice removes the explicit source power above,
+nor supplies a growing-level bound for the geometric period.
+
+The remaining source-sensitive calculation is therefore on a
+specified class: transport the ACTUAL relative co-source and its
+normal/charged terms to the invariant gluing line, retaining this
+wall coefficient and all lower memory channels. The
+[whole translation/gluing test](whole_translation_gluing_source_test.md)
+records its six signed local norm characters and exact orbit
+pairing. Rivin's regular place supplies an algebraic evaluation
+point; the selected co-source value and regulator growth remain
+the theorem to prove.
+
+## 31. Actual divided words now give a whole pole-free cut contraction
+
+The [whole Ward grid theorem](whole_high_color_ward_grid_contraction.md)
+uses genuine operators on D_(N(r+1)-1), with r=N for the selected
+high-color source:
+
+    K, F, L=F^(N), H=(-1)^(Nr-1)[E^(N),F^(N)].
+
+Both K and H are diagonal whole q-functions. At the root K
+separates head residues and H has eigenvalues r-2R, separating
+the repeated Fr blocks. Their appropriate inverse gaps are units.
+Ordinary F inside each head row and divided F along a block trunk
+give a connected grid. An explicit tree-flow primitive proves
+
+    h delta=I-I*Tr/D,       D=N(r+1),
+    delta C=([K,C],[H,C],[F,C],[L,C]).
+
+This contracts the actual image Ward complex, with no division by
+1-Q^N. Its root Hilbert--Schmidt norm is O(N^(3/2)) for r=N in
+the specified hybrid metric. For the original correlated coupon,
+whose functional norm is one there, it gives the exact whole row
+Phi-Tr/D=Phi h delta with the same polynomial bound. The earlier
+memory-Borel resonance has therefore become an explicit actual
+Cartan-current endpoint. It has not been set to zero on an unsummed
+or moment-inserted operator.
+
+The [divided current/closure theorem](actual_divided_ward_closure_and_green_caps.md)
+supplies that endpoint for every actual weighted braid word.
+For coupling-moment polynomial p it retains the exact finite
+differences Delta_t p, and the frozen pivotal cap contributes
+chi^(-1)ptr_K M_(Z^J). In particular taking normal derivatives
+after freezing the root pivot misses a supplied current. The
+new actual Cartan wall inverse is a rational unit before jets.
+Its coproduct and cap images keep the ordinary/divided mixed terms.
+
+The [full old-head memory closure](clebsch_hopf_closure_and_auxiliary_wall_homotopy.md)
+is also explicit: an auxiliary two-row Ward contraction kills the
+upper wall on the represented old-head operator algebra and carries
+the literal source with normalized auxiliary trace1/2. This proves
+a global cochain cancellation in that specific extension; it does
+not identify its source with the high-color or geometric ones.
+
+## 32. The whole source itself is an actual norm-torsor trace
+
+The [Fermat-cover source theorem](whole_frobenius_source_fermat_trace.md)
+now constructs a source function from the ORIGINAL integral divided
+powers, rather than defining a new list of normal jets. On residue
+string s of high color m=N(N+1)-1 put L_s=m-s and
+
+    P_s(q,t)=sum_(k=0)^N (-1)^[k(N-1+s)]
+                                    {L_s choose kN}_q t^k.
+
+Here t is a source-flag parameter, not the knot meridian. On the
+marked N-th-root cover x^N=(-1)^(N-1+s)t the theorem proves
+
+    P_s=(1/N)Tr product_(r=0)^(L_s-1)(1+q^(L_s-1-2r)x),
+    Norm product = product_(r=0)^(L_s-1)(1+theta_s Z^(-r)t),
+    theta_s=(-1)^s q^[N(L_s-1)], Z=Q^N.
+
+It separately specifies the norm-one cyclic factor and its trace.
+At the marked root the result is EXACTLY (1+t)^N, including
+the fractional head correction from its norm line. Its first
+normal is ell_s N t(1+t)^(N-1), where ell_s is the actual head
+connection already found in the Jackson current. The whole frozen
+cap response is Z^s P_s(q,t Z^N)/P_s(q,t). Its power factors and
+pairing units are retained throughout.
+
+There is also an exact power-parameter identity: the norm product
+is the identical finite Gaussian product at q_hat=-q^N, with
+q_hat^2=Z and q_hat=1 at the marked root. Its first logarithmic
+Z-derivative vanishes, while the selected source trace retains the
+middle-string ell_s term. Thus the supplied trace is additional
+pointed data, even in this explicit norm torsor; it is not recovered
+by replacing it with its norm. This is a finite algebraic identity,
+not a claim about a modular-group action or about the knot volume.
+
+The new coupons are related to the previously specified actual
+divided-exponential coupons by an explicit root-identity rational
+pair gauge, with every inserted operator conjugated. This is a
+whole algebraic construction of the finite source and its period
+mark. It does not replace the knot period by this source trace
+or prove its hyperbolic-volume rate. The remaining geometric map
+must carry these actual current, source, cap and norm data together.
+
+## 33. Two actual physical cuts retain the whole framing input
+
+The [two-cut reconstruction](actual_two_cut_framing_port_reconstruction.md)
+now uses two literal diagram edge positions as a unimodular flow
+coordinate pair. Opening the second identity edge introduces no extra
+pivot or normalized trace. Its four-port tensor reconstructs the
+original scalar with the original factor 1/N. Its full port bands
+retain the true Hopf prefix currents; their off-diagonal source values
+cannot be replaced by the source on the double diagonal alone.
+
+The [whole Green/coherent map](two_cut_matrix_green_and_coherent_source.md)
+carries both shifts, every tail and corner, and both whole physical
+clocks to a global relative source. A bounded interior port shift
+also has a nonzero map through the same transverse Gaussian. The
+[independent audit](two_cut_port_band_current_audit.md) verifies these
+identities and the actual tensor tests. Neither theorem has yet
+identified the selected global framing cycle or its polar continuation.
+In relating geometric matrices to physical edge momenta, the actual
+developed-prefix conjugation remains necessary.
+
+## 34. The whole quantum object retains its cyclotomic and period divisors
+
+The [actual atom theorem](unfolded_atom_cyclotomic_divisors_and_two_nome_source.md)
+now proves an exact source extension before taking quantum jets.
+For the ORIGINAL unfolded Ward factorial F(Q,z)=1/(z;Q)_infinity
+retain U independently and put R=F(Q,zU)/F(Q,z). At a fixed n-th
+root, Q=zeta_n exp(epsilon), the marked normal slope
+U=exp(t n epsilon) has the whole sectorial exceptional period
+
+    R -> (1-z^n)^t.
+
+At the ACTUAL slope t=1 the exact finite Ward iteration already
+gives (z;Q)_n, whose root value is 1-z^n. First setting U=1
+generically gives one and erases this source. Rational t gives
+the specified Kummer norm by an exact telescope, with all branch
+marks retained. This is fixed-level specialization, not a
+growing-level asymptotic interchange.
+
+The same proof constructs two-nome difference transports with
+multipliers 1-z and 1-y. Their exact root formula retains the
+actual norm-one cyclic source, its determinant half-power, and the
+continuous Heisenberg period. Both the original atom and this
+completion have accumulating singular data at the physical parameter
+origin, explicitly ruling out automatic meromorphic differential-line
+descent for these local objects.
+
+The [finite polar-character theorem](whole_selected_line_polar_character.md)
+remains sufficient if a WHOLE selected meromorphic line is separately
+constructed. Its pole primitive would give the volume rate directly.
+It is not a consequence of the local atoms; the actual program
+keeps their difference transports and cyclotomic/source divisors.
+Proving the corresponding global original-source descent and
+regulator norm remains necessary.
+
+The [whole finite transport realization](whole_two_period_transport_and_actual_coefficients.md)
+now places every actual crossing coefficient in this two-period
+object without replacing the knot state. Its first-period ratios
+are exactly the finite Pochhammer products, so the extra completion
+cancels. Finite contractions, every original cap/pivot/phase and
+all normal derivatives are preserved. The full peripheral factor
+is kept separately: its denominator 1-M^(2N) and the transport norm
+(M^2;Q)_N agree at a root but require the specified whole adapter
+before differentiation. Their logarithmic Q-normal difference is
+already -1/2 at N=2,M=1. The original power graph is not equated
+with the invariant dual-nome coordinate off the root.
+
+## 35. The actual framing cover and cap have explicit whole source data
+
+The [prefix-adapted framing theorem](prefix_adapted_two_position_framing_cover.md)
+uses signed developed prefixes U,V, not a substituted local meridian.
+On the rank-one projector quadric the physical second clock is
+k=ell_U/ell_V. Together with the original cut clock it gives a
+cover of degree at most two, independently of braid length. The
+complete framing form is
+
+    Omega=ell_V/(B D) dlog A wedge dlog B.
+
+Its field trace is generally nonzero. The exact reciprocal momentum
+deck still holds at completeness, and an actual prefix clock with
+its full q/M adapter realizes the normalized orientation insertion.
+
+More strongly the [identity-cap theorem](identity_cut_orientation_cover_and_marked_source.md)
+preserves the original source by a whole rational-form identity.
+For eta the actual second-port band variable, u=eta+eta^(-1),
+v=eta-eta^(-1), the source form is exactly
+
+    F(eta)deta/(N eta) = [v F(eta)]du/[N(u^2-4)].
+
+The original mark is eta=0 over u=infinity. The full finite tail,
+its endpoint correction and whole clock connection are explicit;
+no new odd-state source has been chosen. The principal geometric
+measure agrees, after the actual prefix adapter and a rational
+Jacobian, with dlog A wedge deta/eta.
+
+The same principal boundary calculation is a useful GEOMETRIC
+test: the independent geometric coordinate eta_geo=p_e^(-1)
+has a boundary at B=1 where the bare framing density has zero
+logarithmic residue on a regular chart. This is not an image of
+the original Fourier-band cap eta_F=0. A principal incidence or
+an equality of rational forms alone did not transport that source.
+The finite band/clock theorem and the actual polarization below
+retain the two variables independently and repair that distinction.
+
+The [finite framing-density source theorem](cyclic_framing_density_source.md)
+also computes its root filter exactly as
+
+    gamma N lambda^(N-1)/(1-lambda^N)^2.
+
+Both lambda and gamma are intrinsic trace-word functions on the
+marked character/A-cover. The retained cyclic norm is 1-lambda^N.
+This exact source can have an exponential character even though
+the starting density is rational. Its identification with the
+actual Gaussian/source pairing is not assumed.
+
+## 36. The first correction is absolutely exact but retains relative data
+
+The [first actual Gaussian correction](figure_eight_first_loop_cap_residue.md)
+now gives a characteristic-zero test on the figure-eight coefficient
+model with the literal two external positions (a_0,a_2). It retains
+the actual three-dimensional transverse complement, every closed
+pivot, color half-step and all twenty compact atoms. On the stated
+s=1 framing slice the complete coefficient z_1 is regular at BOTH
+candidate geometric boundary points. Each of its six Wick contributions separately
+has a double pole; all such poles cancel in the sum.
+
+All finite poles of z_1 occur at the two ramification points of the
+actual two-position projection, with order four and zero simple
+residue. An explicit rational Hermite primitive G satisfies G'=z_1
+as an identity in the Riley function field. The pole at infinity
+and the full base-only line are separately retained.
+
+Absolute exactness does not determine the marked relative period.
+The two cap-point difference and the classical centralizer-step
+difference of G are both nonzero. Their normalized difference is
+unchanged by any base-only first-order unit and equals
+(295t-138)/112 for t^2-t+1=0. Thus a source-preserving quantum
+framing change has to carry the endpoint values of its primitive;
+it cannot erase them by declaring an exact form irrelevant.
+
+This is an exact prototype calculation guiding the general source
+theory. Its geometric momentum coordinate is not the independent
+finite band variable, and the residue calculation is not a
+pushforward of the original cap. No all-s or all-order conclusion
+is inferred.
+
+## 37. Actual Fourier polarization reduces the remaining source to one index
+
+The [whole Fourier polarization](actual_two_cut_fourier_polarization_and_cap.md)
+now makes an actual change of basis on the second identity wire.
+Its Vandermonde inverse is retained before taking normal jets,
+with the exact forced connection, both endpoint carries and
+every original phase/peripheral factor. The first source keeps
+its full output row. Its raw partial array is
+
+    Jtilde_(a,j)=sum_c T^V_(c,j;a,j),
+    original period=(1/N)sum_(a,j)Jtilde_(a,j).
+
+At a root the inverse Fourier contributes 1/N inside Jtilde.
+Old physical b and its output offset are now summed internally;
+j is a genuine new external source coordinate. A double diagonal
+at the first cut would have removed that coordinate and is not
+the chosen source. The finite Fourier/alias theorem preserves
+all independent power characters on unwrapped current tails.
+
+The [geometric Fourier theorem](actual_fourier_polarized_geometric_normal_block.md)
+uses the original macroscopic open phase S_open+vt, not an
+unbounded extrapolation of bounded-band jets. The mixed Hessian
+along the old framing tangent is dLog p_e, so the enlarged
+transverse block is nondegenerate on the new chart. Complete
+discrete-faithful holonomy makes (A,p_e) birational on that framing
+torsor; generic old projection caustics disappear. The marked
+regulator action is unchanged.
+
+The [extended partial-support proof](partial_geometric_support_theorem.md)
+applies finite proper-coefficient linear algebra and least-moment
+repair to this SAME actual root partial family. Its constructed
+operator has a geometric A-factor before the final source sum.
+The auxiliary proper root lift and whole inverse Fourier normal
+germs are explicitly distinguished.
+
+Finally the [fixed-column source theorem](actual_one_index_fourier_source_and_ward_reduction.md)
+uses actual scalar root closure to remove the a average exactly:
+
+    original period=sum_j Jtilde_(a_N,j).
+
+A generic rational phase gives a good interior sequence a_N and
+a nonzero phase-specialized partial operator on each marked
+residue class of levels. The actual whole Ward defect of this
+source change has a polynomially bounded primitive and is kept
+before differentiation; root equality is not falsely promoted
+to equality of all quantum-normal jets. The last selected source
+problem now has ONE exterior Fourier index. Its geometric survival
+and regulator norm still have to be proved.
+
+## 38. A whole rigid source frame, a Möbius fiber, and an actual cancellation test
+
+There is now a literal algebraic answer for the finite boundary
+frame before jets. For the actual clock B and cyclic repair P,
+with Z=Q^N and e=e_0 e_0^t,
+
+    BPB inverse P inverse=Q[I+(Z inverse-1)e],
+    original source matrix=e sum_(r=0)^(N-1)P^r.
+
+The [rank-one moment/source proof](actual_rank_one_multiplicative_moment_and_orbit_source.md)
+keeps its divided wall projector, the original orbit co-source
+and both actual endpoint deletions. The
+[aligned cyclic frame theorem](flat_cyclic_source_frame_and_scalar_period.md)
+classifies this whole source-cyclic chart directly: its
+endpoint-corrected function/shift algebra is Mat_N. Its unmarked
+frame ambiguity is a line bundle, removed by a vector marking.
+The defect must be aligned with the actual source; rank one and
+flatness alone do not impose that alignment. The scalar of a
+closed actual word is separate from the rigid frame.
+
+The geometric fiber also has a simpler global function. Factor
+U-V=u(a,b) and put (c,d)=(a,b)V inverse. With the original
+prefix sign sigma, the ACTUAL momentum is
+
+    p=sigma[c(1-r)-ds]/[ar+bs].
+
+The [Möbius theorem](mobius_fourier_framing_and_intrinsic_norm_pole.md)
+gives its inverse and identifies r=infinity with the intrinsic
+pole lambda=-sigma c/a, independent of the cut s. The whole
+principal density retains the norm 1-lambda^N. For the figure-eight
+prefix this pole has order six, and principal sampling is singular
+when six divides N even though the actual finite tensor is regular.
+The independent wall divisors 1-Q^N and 1-lambda^N therefore
+cannot be equated or canceled without their actual word/source map.
+
+Finally, the [actual zero-source Fourier current](actual_fourier_source_cancellation.md)
+is not an abstract countermodel. For the ORIGINAL two-cut tensor,
+
+    W=[(I tensor B)T(I tensor B inverse)-T]/(Q-1)
+
+has zero second partial trace WHOLE, preserves its index support,
+and at a root has raw partial array
+
+    J_W,j=[J_(j+1)-J_j]/(Q_N-1).
+
+Its formal geometric block on the good-A chart is nonzero, with
+the same regulator action: the leading amplitude is the derivative
+of the actual Fourier amplitude. Nevertheless its final source
+sum is exactly zero. The cyclic difference D has a centered inverse
+of norm at most one on the zero-source subspace, and
+
+    abs(sum_j J_j)=sqrt(N) dist(J,im D).
+
+Thus the last selected norm is a norm in an exact source/current
+quotient. Local geometric support and Rivin algebraicity do not
+determine that quotient class. The next required construction
+must carry the actual original class, its independent wall/norm
+divisors and the marked relative boundary to the regulator line.
+No selected nonvanishing or volume limit is inferred from frame
+rigidity or a nonzero formal block alone.
+
+## 39. The pointed source has an explicit polynomial unfolding before jets
+
+The [pointed companion theorem](pointed_companion_source_and_polynomial_hilbert90.md)
+now gives a stronger positive result than local root smoothness.
+Retain the source v,ell and aligned moment equation
+
+    Q inverse XYX inverse Y inverse=I+v w,
+    Xv=v, ell v=1, ell Y=ell.
+
+On the source-orbit chart v,Yv,...,Y^(N-1)v is a basis. Relaxing
+only the fixed finite cyclic equation Y^N=I gives an explicit
+principal open affine (N-1)-space over the whole Q-unit base.
+Y is companion with last column t_i, sum t_i=1 and t_0 a unit.
+The lower moment rows determine X by a polynomial recurrence;
+the top row then uniquely determines w. This is a scheme
+classification over arbitrary commutative bases, not a statement
+about individual jets or only field-valued points.
+
+The source forces an exact polynomial factor and its retained
+dual data. Put
+
+    chi(z)=det(zI-Y)=(z-1)chi_red(z),
+    h(z)=z^N chi(1/z)=(1-z)h_red(z),
+    G=h(L), L^N=0 the actual lowering shift.
+
+Then, without any quantum-gap division,
+
+    X=G B G inverse,
+    G inverse v=v,
+    ell G=e_0^t h_red(L).
+
+Thus clock trivialization carries the residual spectral polynomial
+into the co-source instead of deleting it. The actual fixed head
+is the regular section chi=z^N-1 and G=I, with its original
+orbit row and all peripheral factors retained.
+
+There is also a finite source-moment rigidity test. The mixed
+moments m_j=ell X Y^jv, 1<=j<N, recover all t_i by explicit
+triangular equations over the ordinary finite-head localization.
+Their Jacobian is product_(m=1)^(N-1)(1-Q^m), exactly N at a
+primitive N-th root. The pure moments ell Y^jv=1 cannot recover
+this polynomial. The theorem therefore supplies an actual finite
+algebraic test for a proposed transport/source comparison.
+
+For the original finite repair P the test recovers ONLY z^N-1.
+A geometric A-factor cannot be assigned to that same operator
+by changing its name. The actual quantum meridian transport
+must first be constructed with its full word/source and then
+tested by its own mixed moments. Neither the polynomial gauge
+nor its determinant one supplies a growing-level norm bound.
+The regulator comparison and the selected volume norm remain
+unproved. The explicit chart, gauge, retained co-source and
+moment reconstruction are the general algebraic progress here.
+
+## 40. Actual horizontal transport and a universal complete cut
+
+The [actual open meridian theorem](actual_open_meridian_horizontal_source_transport.md)
+now derives the port character q^(-ell nu) from the unwrapped
+crossing potential. An actual SECOND-wire scaled Vandermonde
+W_(j,b)=(M^ell Q^j)^b removes it. Its whole inverse, both normal
+connections, full peripheral ratio and every alias power are
+retained. Partial trace is invariant on ALL tensors, so this is
+an exact source/current map. On the unit meridian arc it is an
+isometry of the root cyclic source complex. Its remaining
+meridian operator is the literal longitude insertion, including
+its Green/current terms.
+
+An [actual inverse-pair cut normalization](universal_resonant_cut_and_actual_source.md)
+now gives a general geometric simplification. Choose the first
+initial meridian U with nonzero lower-left entry relative to J.
+The preceding upper meridians are J by discreteness. Inverse
+Hurwitz moves carry U to the first slot; inserting those moves
+followed by their inverses preserves the original braid period.
+Cutting between them gives the actual prefix V=I and ell=0.
+All added coefficient atoms have a proved common regular open;
+the inverse graph is a nondegenerate normal stabilization.
+
+Writing U=I+c[-beta;1] * (1,beta), t=r+beta s, the actual complete
+momentum and density are
+
+    p=1-1/t, r=1/(1-p)-beta s,
+    Omega_cut=-p/[s(1-p)^2] dlog A_cut wedge dlog p.
+
+Thus the principal framing pole is the single fixed resonance
+p=1 for every complete discrete-faithful knot representation
+in the stated regular geometric model. It is not a finite quantum
+pole: the actual array is regular. Near p=1-zeta/N the framing
+escapes as r=N/zeta-beta s. The full source/current completion
+in this escaping region, and the global selected geometric
+coefficient, remain unproved. No replacement of that completion
+by the sampled principal density is made.
+
+The [actual meridian/shell audit](actual_meridian_companion_source_compatibility.md)
+and [Borel divided-cap period](actual_borel_regular_fusion_and_divided_cap_period.md)
+also distinguish genuine source transport from the auxiliary
+companion chart. The latter's root-center normal is abelian-local;
+it is not the hyperbolic critical branch. The next comparison
+must retain the actual word while crossing to that branch and
+controlling the marked escaping source. The three central gates
+in [the critical-path audit](critical_path_to_original_volume_conjecture.md)
+are still open.

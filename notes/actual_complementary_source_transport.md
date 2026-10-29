@@ -1,0 +1,334 @@
+# Complementary root arcs preserve the source, but change its relative cycle
+
+28 October 2026. A long actual root arc can be replaced exactly by
+the inverse complementary arc on a regular Fermat fiber. The central
+norm is compulsory. For a homogeneous original source, the resulting
+complementary period has an explicitly determined central divisor.
+Its scalar numerator is the SAME original selected coefficient.
+
+There is also an exact global cycle check: after any nonempty set
+of these complements, its bare ordinary product-torus integral,
+enclosing all the Fermat roots, is ZERO. The original nonzero source
+is carried by additional short-arc relative residue cycles. Thus
+center freedom does not justify substituting a bare convex torus for
+the original selected cycle. A construction retaining those relative
+cycles remains possible; it is not supplied by the complement identity.
+
+## 1. Exact complementation with its original source normalizer
+
+Use the actual charged polynomial source with d=N-1,
+
+    I_N(h)=lambda_C(P_h),
+    K_N=chi_N/N sum_h W_h I_N(h),
+    deg P_h=k d, lambda_C=[X_1^d ... X_k^d] mod(X_i^N-C_i).
+
+All W_h, pivots and chi_N remain. The equality between lambda_C and
+the specified Fermat residue, and its center independence at this
+degree, were proved in the
+[actual source theorem](actual_charged_socle_and_fermat_source.md).
+Let a genuine two-anchor block be
+
+    B_L(X_i,X_j;a)=product_(r=0)^(L-1)(X_i-Q^r a X_j).
+
+For every 0<=L<=N, set
+
+    D=B_(N-L)(X_i,X_j;aQ^L),
+    F_i=X_i^N-C_i,
+    K_ij=C_i-a^N C_j.
+
+Then the ordinary polynomial identity is
+
+    B_L D=X_i^N-a^N X_j^N=K_ij+F_i-a^N F_j.       (1)
+
+If K_ij!=0, D has no zero on the Fermat fiber and is a UNIT in
+its finite algebra. Its inverse is exactly B_L/K_ij. Thus replacing
+B_L by K_ij/D is a source-exact identity. There is no numerical
+normalization chosen by the value of a knot invariant. A nonunit
+tail coefficient alpha contributes its retained factor alpha^L;
+loops have already been evaluated as scalar monomials instead.
+
+Choose any fixed collection S of block slots, with r=|S|>=1, and
+write P_h=E_h product_(e in S)B_e. Define the rational representative
+
+    R_h=E_h product_(e in S)D_e^(-1),
+    K_S=product_(e in S)K_e.
+
+On the regular central domain where all K_e!=0,
+
+    lambda_C(R_h)=I_N(h)/K_S.                       (2)
+
+The left means the SAME selected sum of local grid residues, not
+an unspecified contour integral of the rational representative.
+Equation (2) follows from (1) in the finite algebra and the original
+center independence of lambda_C(P_h). It fixes its central divisor
+exactly; its remaining scalar is the original period I_N(h).
+Knowing that divisor does not establish that this scalar is nonzero.
+
+For the actual bridge blocks a is a diagram-dependent power of x
+times an integer power of Q: the h-dependence enters only the latter.
+Consequently a^N=(x^N)^integer is a signed diagram datum, independent
+of the clocks. For a fixed choice of potential block slots, even
+when a length is zero, the same K_S can be retained through the full
+clock sum. The normalized complementary whole period is then exactly
+K_N/K_S. Choosing only the long blocks separately in each sector is
+also legitimate, but its norm product must remain inside that sum.
+
+## 2. The bare source torus of the complemented form is exactly zero
+
+Define the rational k-form
+
+    Omega_comp=K_S R_h(X) dX_1...dX_k/product_i F_i. (3)
+
+Take any ordinary product torus T with each radius larger than
+|C_i|^(1/N), and assume that no D_e vanishes anywhere on T.
+Such radii always exist: for unit arc coefficients any unequal
+endpoint radii avoid that edge's roots. The normalization of
+integrals is (2*pi*i)^(-k).
+
+Then EXACTLY
+
+    integral_T Omega_comp=0.                        (4)
+
+Proof. Complementing one block changes its homogeneous X-degree
+from L to -(N-L), a decrease of N. Thus
+
+    deg R_h=k(N-1)-rN.
+
+Dilate all radii of T by the same positive factor t>=1. No F_i
+pole is crossed, since all its roots were inside the original
+coordinate circle. The D_e are homogeneous, so their zero set
+cannot cross this common dilation either. Holomorphic top-form
+Stokes therefore makes the integral constant in t. On the dilated
+torus the k-form has size O(t^(-rN)): the numerator, dX and the
+Fermat denominators contribute respectively t^(k(N-1)-rN),t^k
+and t^(-kN). Its integral tends to zero. This proves (4), without
+an asymptotic exchange in N.
+
+For comparison, the original polynomial form
+
+    Omega_poly=P_h dX/product_i F_i
+
+integrates on this same torus to lambda_C(P_h)=I_N(h). Thus the
+chosen sum of small grid-residue tori is not homologous to T in
+the complement of the NEW short-arc divisors unless that source
+value happens to vanish. Every nonzero original source requires
+an additional relative residue cycle in this presentation.
+
+The statement includes complementing a zero-length block: in the
+finite algebra 1=K_ij/(X_i^N-a^N X_j^N). This exact unit insertion
+still creates new off-fiber poles and a zero bare-torus integral.
+One cannot infer a selected geometric cycle merely from the poles
+of a chosen rational representative.
+
+## 3. The missing source currents are explicit
+
+For one complemented block let P_h=E B_L and write
+F_other=product_(ell notin {i,j})F_ell. Equation (1) gives the EXACT
+identity of meromorphic forms
+
+    Omega_poly-Omega_comp
+      = E/D *[1/(F_j F_other)-a^N/(F_i F_other)] dX. (5)
+
+Each term has lost one Fermat denominator. It has zero local product
+residue at every original grid point because D is regular there.
+That explains why (1) preserves lambda_C. It does NOT make these
+currents zero on an enlarged torus: the short-arc divisors can
+supply the missing pole. Combining (4)--(5) gives
+
+    I_N(h)=integral_T E/D
+                 *[1/(F_j F_other)-a^N/(F_i F_other)]dX. (6)
+
+Thus these explicitly retained currents carry the ENTIRE selected
+source on that torus. They cannot be declared subleading from the
+complement identity or from central regularity. With several
+complements, expanding each K_e+F_i-a^N F_j gives the corresponding
+finite collection of mixed source currents; dependent intersections
+must remain jointly regulated if they are converted to contour
+residues.
+
+### A literal unit source cell
+
+The actual full closure/reproducing block is
+
+    B_d(X,Y;Qt)=sum_(j=0)^d X^(d-j)(tY)^j.
+
+With the permitted exterior Y^d its original selected coefficient
+is EXACTLY one. Its complement is D=X-tY and K=C_X-t^N C_Y.
+On every product torus enclosing both Fermat root grids and avoiding
+X=tY, its complemented bare integral is zero by (4), while the
+two currents in (5) have sum one. This is the original reproducing
+source normalization, not an auxiliary quantum invariant. Both
+unpivoted t=1 and actual pivotal t=Q^(-1) cases retain these values.
+
+## 4. A constructive finite forest residue formula
+
+The additional relative cycles have an exact algebraic decomposition.
+Choose ANY nonempty forest of actual two-anchor block slots and orient
+each edge from a child i to its parent p(i). Reverse a block when
+necessary using its exact identity
+
+    B_L(X,Y;a)=(-a)^L Q^[L(L-1)/2]
+                        B_L(Y,X;a^(-1)Q^(1-L)).
+
+Every such scalar and the original gamma,W_h,chi_N remain. Write the
+oriented selected blocks as B_(L_i)(X_i,X_p;a_i), and put
+
+    m_i=N-L_i,
+    S_i=B_(m_i)(X_i,X_p;a_i Q^(L_i)),
+    H_i=F_i S_i                   for a nonroot,
+    H_r=F_r                       for a forest root,
+    R=(product_i K_i) E.
+
+Here P_h=E product_i B_(L_i) includes the actual orientation scalars.
+Assume generic nonzero centers so ALL path norms
+
+    C_i-(product_(edges on i->ancestor) a_e^N) C_ancestor
+
+are nonzero. This is stronger than merely checking each adjacent K_i.
+For the actual unit-root phases, a_e^N=+1 or -1, so pairwise distinct
+centers up to sign suffice. The result extends rationally wherever
+the corresponding joint residue is defined, but colliding residues
+must not be split independently.
+
+The triangular monic system H=0 has simple zeros. At a nonroot choose
+either F_i=0, or a short root
+
+    X_i=a_i Q^(L_i+r_i)X_p, 0<=r_i<m_i.             (7)
+
+Every component of chosen short edges has one root satisfying its
+original Fermat equation. This lists ALL zeros of H, not only an
+assumed geometric branch. With standard Grothendieck orientation,
+
+    sum_(all H zeros) R(X)/det(partial H/partial X)=0. (8)
+
+Here is a direct proof of the zero. H_i is monic in its child variable,
+of degree N+m_i; a root equation has degree N. Their coefficients
+depend only on parents. Consecutive monic division in child-to-parent
+order gives a basis with child exponent <N+m_i and root exponent <N.
+Every reduction preserves or decreases TOTAL degree: the highest
+part is homogeneous and the central term decreases degree by N.
+The global sum of residues equals the coefficient of the top basis
+monomial. This follows inductively from the elementary one-variable
+identity that, for monic h, sum_(h(x)=0)A(x)/h'(x) is the highest
+coefficient of the remainder of A modulo h.
+The required top degree is
+
+    sum_i(deg_(X_i)H_i-1)=k(N-1)+sum_nonroot m_i,
+
+whereas deg R=k(N-1)-sum_nonroot L_i. Their difference is exactly
+N times the number of forest edges, which is positive. The top
+coefficient therefore vanishes, proving (8). Equivalently the leading
+homogeneous system has no projective zero: start with each root and
+propagate zero to its children. There is no omitted residue at infinity.
+
+For the EMPTY choice of short edges every F_i vanishes. At those
+points R/product S_i=P_h, so their sum of residues is EXACTLY I_N(h).
+Consequently
+
+    I_N(h)=-sum_(nonempty selected-short subsets)
+                sum_(their explicit zeros) R/J_H.     (9)
+
+All relative cycle coefficients in this complete decomposition are
+fixed, with no unknown knot scalar. For fixed diagram size its number
+of points is polynomial in N: it is at most
+product_roots N product_nonroots(N+m_i). This is a finite canonical
+residue presentation once the actual forest and orientations have
+been specified, not a positivity assertion about its terms.
+
+The triangular Jacobian is completely explicit. Its factor at i is
+
+    N X_i^d S_i(X)                 if F_i=0,
+    (X_i^N-C_i) partial_(X_i)S_i   if S_i=0,
+
+and at an original forest root it is N X_r^d. At the short root (7),
+
+    partial_(X_i)S_i
+      =(a_i Q^(L_i)X_p)^(m_i-1)
+        *(-1)^r_i Q^[r_i(m_i-1)-r_i(r_i+1)/2]
+        *F_(r_i) F_(m_i-1-r_i), F_j=(Q;Q)_j.       (10)
+
+This is obtained by splitting the other roots at r_i. Every factor
+is nonzero under the stated genericity; its possible exponential
+size is retained.
+
+For an entirely selected SPANNING tree, X_i=beta_i X_r. Homogeneity
+of E cancels all powers of X_r against (10) and the root Jacobian.
+The N identical root labels cancel its 1/N exactly, leaving an explicit
+sum of products of the factorials in (10), the evaluated remaining
+actual blocks E(beta), and the retained central path norms. This is
+an exact full-source channel, but it is generally only ONE part of
+(9). The mixed subsets must not be discarded.
+
+More generally, grouping a selected component into one root gives
+source charge d+sum_selected_internal(d-L_i), which can exceed N-1.
+Its remaining regular-Fermat root sum has genuine winding sectors.
+It cannot be called the ordinary top coefficient, or simplified by
+dropping cyclic aliases, before the stated component sums or a further
+source identity have been performed.
+
+## 5. An arbitrary-block contraction, with its changed source charge
+
+The one-edge case also has a direct ordinary-coefficient formulation.
+Put m=N-L, b_r=aQ^(L+r), and
+
+    w_r=1/product_(s!=r)(b_r-b_s), 0<=r<m.
+
+For ANY polynomial exterior E and all other original charges equal
+to d, there is the exact source identity
+
+    [X_i^d X_j^d X_other^d] B_L E
+      =sum_(r<m) w_r
+           [X_j^(2d-L) X_other^d] E(X_i=b_r X_j).  (11)
+
+Its ordinary parent charge is 2d-L=d+m-1, and must be retained.
+The root sum is essential; its individual regular-Fermat channels
+need not have the same ordinary coefficient.
+
+Proof. The Lagrange sums sum_r w_r b_r^p vanish for p<m-1 and
+equal h_(p-m+1)(b) for p>=m-1. Their generating function is
+
+    sum_(k>=0)h_k(b)t^k
+         =product_(s=0)^(L-1)(1-aQ^s t)/(1-a^N t^N).
+
+Only p<=2d-L can contribute to the coefficient on the right, hence
+k<=d. In that range h_k is exactly the kth coefficient of the
+displayed numerator, including its zero range L<k<N. These are
+precisely the coefficients of B_L needed on the left. This proves
+(11), without choosing an unknown normalization or a geometric cycle.
+
+For subsequent charges larger than d, the same short-root formula
+cannot simply be iterated: the next complete homogeneous index may
+reach N, where the denominator above produces aliases. For example
+N=3,L=2,E=X_i^3, with tail charge 2 and parent charge 3, gives zero
+on the original side but a nonzero short-root evaluation. The full
+forest formula (9) retains the necessary mixed channels; further
+charge/jet reductions require an additional explicit source identity.
+
+## 6. Consequence for a geometric cycle construction
+
+Complementation itself is fully authorized by the existing actual
+source and preserves every normalization. It can replace long arcs
+by shorter inverse factors and may provide useful geometric charts.
+But its selected relative cycle has to be transported as well.
+Equations (4)--(6) show precisely why a bare torus replacement loses
+the original source, even with arbitrary regular Fermat centers.
+
+Large N-dependent centers need extra care: K_e can itself carry an
+exponential action. It is retained in (1)--(6), and fixed-center
+tame Fourier-frame estimates do not extend automatically to it.
+Conversely on fixed compact central domains these factors may be
+tame, but the relative currents still need not vanish.
+
+A successful Rivin comparison would therefore have to map the FULL
+grid/short-arc relative cycle, or the explicit currents (5), to a
+source-compatible convex chain and compute its geometric coefficient.
+Its starting value is not determined by the known central divisor
+(2). No broad volume upper or lower bound follows from the present
+complement identity alone.
+
+[Audit](../experiments/audit_actual_complementary_source_transport.py):
+actual charged polynomials after closure contraction, ALL triangular
+forest zeros and mixed short subsets, original scalar/orientation/path
+norms, factorial Jacobians and the spanning-tree root cancellation,
+a whole original signed pivotal scalar, and the original unit closure
+cell's zero bare integral versus nonzero source currents.

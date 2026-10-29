@@ -1,0 +1,227 @@
+# Complete ordinary-cap trees have one positive angle-simplex energy
+
+29 October 2026. An arbitrary binary tree of the ORIGINAL ordinary-cap
+reassociation packets contracts exactly. Its internal factorials telescope,
+its actual phases remain explicit, and its full squared kernel is ONE
+positive angle-simplex weight. After its known row normalization the
+complete boundary packet is a coisometry; overlaps between any two such
+normalized cap trees are contractive. This holds at arbitrary fixed width,
+including all endpoint indices and arbitrary adjoining tensors.
+
+This is a constructive boundary contraction theorem. It does not say
+that a knot's interior operator preserves these source packets, that
+complete-channel Racah matrices are contractive, or that the remaining
+marked cap is an ordinary cap. No new whole-knot volume estimate follows
+from this theorem alone.
+
+## 1. The literal node and its source type
+
+Use N>=2, d=N-1, q=exp(pi i/N), Q=q^2, x=-q^-1,
+F_a=(Q;Q)_a, s_a=|F_a|, and the physical gauge
+
+    B_a=N^(1/4)/sqrt(s_a).
+
+Let A=(C'_23)^(-1)C'_12, with the original finite Euler maps.
+The [proved original pivotal-cap identity](actual_pivotal_cap_reassociation_angle_packet.md)
+uses ellhat=sqrt(N)ell, where ell is the LITERAL original ordinary
+cap including its pivot. Its gauged map Khat=(ellhat_12 tensor I)A is
+
+    Khat_(n;(a,b,c))
+      =delta_(b,d)delta_(n,a+c<=d)
+         q^[a(n-N-1)] sqrt(w_d(a,c,d-n)),
+    w_d(i,j,k)=1/(s_i s_j s_k).                              (1)
+
+The b=d selection is the result of the COMPLETE pivotal q-Pascal
+sum, not a discarded input channel. In the ungauged physical coordinates
+and with the literal ell the same node is
+
+    Kraw_(n;(a,b,c))
+      =delta_(b,d)delta_(n,a+c<=d)
+        N^(-1) p(a) F_n/(F_a F_c),
+    p(a)=(-1)^a Q^[a(a-1)/2].                               (2)
+
+The original Cartan/framing/peripheral lines on any exterior are unchanged.
+Equation (2) uses x=-q^-1; the full unreduced meridian factors in the
+local theorem must instead be retained off completeness.
+
+## 2. A source-exact complete tree, with every phase retained
+
+Choose any planar binary tree T with l>=1 ordered leaves. Its original
+physical input has 2l-1 heads: l active leaves, and one separator head
+between each two successive leaves. At an internal node, first contract
+its left and right subtrees, then apply the three-head node (1) to their
+two outputs and the original separator between them. Each separator is
+used once. These are ordinary compositions of the specified actual maps.
+
+Every nonzero input has ALL l-1 separator indices d. If the active
+indices are a_1,...,a_l, its root index is n=sum_i a_i<=d. Conversely
+every such input is allowed: all intermediate subtree sums are at most n.
+There is exactly one intermediate root index at every node. Therefore
+no unperformed internal summation or cyclic alias remains.
+
+For an internal vertex v write n_v for its subtree sum and n_L(v) for
+its left-subtree sum. The complete normalized-cap, quarter-gauged kernel is
+
+    Khat_T(n;a_1,...,a_l; separators)
+      =delta_(separators,d)delta_(n=sum a_i<=d)
+        N^(-(l-1)/2) sqrt(s_n/product_i s_(a_i)) q^(Theta_T),
+    Theta_T=sum_(v internal) n_L(v)(n_v-N-1).                 (3)
+
+Proof. Replace each square root in (1) by
+N^(-1/2)sqrt(s_(n_v)/(s_(n_L)s_(n_R))), using
+s_j s_(d-j)=N. Every internal s cancels between its output and
+its parent's input. The phases multiply to exactly the displayed sum.
+They have NOT been replaced by one, nor asserted to cancel on a cycle.
+
+There is an independent exact polynomial form for the LITERAL original
+cap tree before physical gauging:
+
+    Kraw_T=N^(-(l-1)) F_n/(product_i F_(a_i))
+                            product_(v internal) p(n_L(v)). (4)
+
+This follows by the same cancellation using (2), and specifies every
+original root phase. In particular it is not a norm-only construction.
+The literal gauged cap tree equals N^(-(l-1)/2)Khat_T: each use of
+ellhat in (3) restores its stated ell=ellhat/sqrt(N) factor.
+All input and output B gauges are explicit, and their internal inverse
+factors cancel under composition. No separator-state norm is silently
+substituted for its actual physical coordinate.
+
+## 3. Exact positive simplex incidence and all-width energy
+
+By reflection, the squared surviving entry (3) is
+
+    |Khat_T|^2=N^(2-l)/[s_(d-n) product_i s_(a_i)].            (5)
+
+Thus its true nonnegative integer charges are
+
+    (a_0,a_1,...,a_l), a_0=d-n, sum_(i=0)^l a_i=d.           (6)
+
+This is a bijection, not a relaxation: every composition in (6) is
+one allowed input/root combination of the complete tree. The internal
+subtree charges are its specified partial sums. All zero angles and
+zero-length slots are retained by s_0=1.
+
+Let
+
+    E_(l,n)=N^(-(l-1))s_n
+                   sum_(a_1+...+a_l=n) product_i s_(a_i)^(-1).
+
+Different root rows have disjoint input-degree support, hence EXACTLY
+
+    Khat_T Khat_T^*=diag(E_(l,0),...,E_(l,d)),
+    ||Khat_T||_op^2=max_n E_(l,n),
+    ||Khat_T||_HS^2=N^(2-l) Z_(l+1,N),
+    Z_(m,N)=sum_(a_0+...+a_(m-1)=d) product_i s_(a_i)^(-1). (7)
+
+These quantities are independent of the binary tree. Equations (3)--(7)
+are an exact controlled contraction for the entire ordinary-cap tree,
+not independent Cauchy bounds at its nodes.
+
+For fixed l>=2 put Lambda(theta)=-integral_0^theta log(2sin t)dt.
+The uniform factorial estimate at ALL 0<=a<N gives
+
+    log||Khat_T||_op^2=log||Khat_T||_HS^2+O(log N)
+      =N (l+1)Lambda(pi/(l+1))/pi+O_l(log N).                 (8)
+
+Here the first equality follows directly from the N rows in (7).
+To prove the second, the continuum objective on (6) is
+sum_i Lambda(pi a_i/N). On the simplex of nonnegative angles summing
+to pi its unique maximum, for m=l+1>=3, is m Lambda(pi/m).
+For completeness its Hessian on the interior is -diag(cot theta_i).
+If all angles are below pi/2 it is negative on sum-zero vectors.
+If one angle exceeds pi/2, put S=sum of the other angles<pi/2.
+Weighted Cauchy and sum tan(theta_i)<tan S=-tan(theta_big) show
+the same strict negativity on the sum-zero tangent. Equality at pi/2
+follows directly from the positive remaining cotangents. Thus the
+function is strictly concave; symmetry fixes its maximum at equal angles.
+Continuity includes the boundary. Rounding an equal composition to the
+integer sum d gives the lower bound at every sufficiently large level;
+there are only polynomially many compositions and all factorial errors
+are O_l(log N), giving the upper bound. No lattice progression is needed.
+For l=1 the map is identity, E_(1,n)=1, and its energy exponent is zero.
+
+There is a stronger UNIFORM root-conditioned formula. For every
+0<=n<=d, including both endpoints, put t=n/N. Then
+
+    log E_(l,n)=(N/pi)Phi_l(t)+O_l(log N),
+    Phi_l(t)=l Lambda(pi*t/l)-Lambda(pi*t).                 (9)
+
+The constant is independent of n. For fixed sum of the l leaf angles,
+at most pi, the concavity argument just given places their maximum at
+equal values. The case l=2 at total pi may have additional maximizers,
+without affecting this value. For the lower estimate, distribute the
+integer n among l parts differing by at most one. Each angle changes
+by O_l(1/N), whose Lambda error is O_l(log N/N) uniformly even at
+zero or pi. There are at most (N+1)^(l-1) compositions. Applying the
+uniform factorial estimate to every term in E_(l,n), and to s_n,
+therefore proves BOTH sides of (9), with the stated uniform error.
+
+For l>=2 and 0<t<1 the explicit boundary action satisfies
+
+    Phi_l'(t)=pi log[sin(pi*t)/sin(pi*t/l)],
+    Phi_l''(t)=pi^2[cot(pi*t)-(1/l)cot(pi*t/l)]<0.          (9a)
+
+Indeed x cot x is strictly decreasing on (0,pi), since its derivative
+has numerator sin(x)cos(x)-x<0. Its unique maximum is t=l/(l+1).
+Using Lambda(pi-theta)=-Lambda(theta), the maximum is exactly
+(l+1)Lambda(pi/(l+1)), giving (8). Formula (9) also includes a
+prescribed root tending to t=1, with rate l Lambda(pi/l)/pi.
+For l=1, E_(1,n)=1 and Phi_1=0 identically.
+
+## 4. Exact coherent packet overlaps are contractive
+
+Every E_(l,n) is positive and known without a knot value. Define
+
+    R_T=diag(E_(l,n)^(-1/2)) Khat_T.
+
+Then R_T R_T^*=I_N. Consequently P_T=R_T^*R_T is a specified
+orthogonal projection on the full physical input space, including its
+literal separator-d selection. For ANY two planar binary trees on the
+same ordered heads,
+
+    R_T R_U^* is diagonal and ||R_T R_U^*||<=1.              (10)
+
+The diagonal entry is the ACTUAL mixed phase sum of the two root rows,
+divided by E_(l,n); Cauchy proves its modulus at most one. This retains
+the off-diagonal leaf copies inside P_T and the full phases Theta_T.
+An arbitrary finite sequence of these packet overlaps is contractive.
+No artificial dephasing, ordinary positive pivotal trace or favorable
+choice of unknown source has been introduced.
+
+For a specified remaining row z on the root, its complete original
+boundary-functional norm remains exactly
+
+    ||z Khat_T||^2=sum_n |z_n|^2 E_(l,n).                    (11)
+
+One may not drop these root weights, replace a marked row by an ordinary
+cap, or normalize z using an unknown period. For literal caps multiply
+the energies by N^(-(l-1)) as stated after (4).
+
+## 5. What this gives for global gluing
+
+This proves a genuine positive angle incidence for a complete tree
+source: (6), including all its internal actual partial sums. It is a
+single angle simplex. It is NOT yet the edge/peripheral incidence of
+a knot ideal triangulation. The identity applies to arbitrary fixed
+width and to any polynomial or matrix exterior because it is an actual
+boundary-operator identity.
+
+The complete-channel Racah transition on an interior port has additional
+channels beyond these ordinary-cap packets. It is not the compression
+R_T R_U^*. Nor is an arbitrary interior R word proved to preserve P_T.
+The full marked packet in the local theorem must also remain. Thus
+(10) is a constructive boundary-tree overlap estimate; using it as a
+unitary or complete projection on an arbitrary knot interior would be
+an extra unproved step. The original full-source goal still needs the
+corresponding complete-channel or source-specific interior control.
+
+[Audit](../experiments/audit_actual_cap_tree_angle_energy.py): original
+coproduct-derived reassociation with the literal ordinary cap, all
+middle-index cancellations, exact complete tree q-factorial/phase
+formula, angle-simplex bijection, row energies, and coherent overlaps.
+
+Fresh replay: PASS five levels of literal original cap/reassociation
+matrices and complete tree phases, and twenty all-tree-shape families
+checking metric kernels, positive simplex incidence, full mixed overlaps
+and retained arbitrary root co-sources. Python compilation passes.

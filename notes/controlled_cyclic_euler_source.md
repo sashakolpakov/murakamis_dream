@@ -1,0 +1,443 @@
+# Controlled cyclic completion of the actual Euler source
+
+Research note, 26 October 2026. The nilpotent Euler polynomial in
+the actual R-matrix has a canonical completion by the existing
+cyclic dilogarithm. We compute its entire coefficient normalization,
+derive its boundary pentagon through the mixed central jet, and
+prove polynomial bounds for its coefficient change on marked
+compact central charts, uniformly in N. This treats a genuine
+N-dependent algebraic normalization, not a fixed-degree substitute.
+
+This is local source transport. It does not identify the global
+meridian source extension, select a geometric period of a knot,
+or prove the volume conjecture.
+
+## 1. The Euler polynomial is an actual quantum-group atom
+
+Fix N>=2, q=exp(pi*i/N), Q=q^2 and rho=q-q^(-1). Define
+
+    c_j=(-1)^j Q^(j(j-1)/2)/(Q;Q)_j,
+    P_N(X)=sum_(j=0)^(N-1)c_j X^j.                (1.1)
+
+Every denominator is nonzero. In the normalized actual uncheck
+crossing of [the semicyclic construction](semicyclic_carry_braiding.md),
+the Euler part is precisely
+
+    Theta=P_N(q rho^2 E_1 F_2).                   (1.2)
+
+Indeed [j]_q!=q^(-j(j-1)/2)(Q;Q)_j/(1-Q)^j and
+rho(1-Q)=-q rho^2. Substituting into its original coefficient
+q^(j(j-1)/2)rho^j/[j]_q! gives (1.2). The original Cartan factor,
+flip and full source wrap are retained. For the uncheck holonomy
+map the second F wrap is phi_2/K_1^N, exactly as in that note;
+for the checked map its input F wrap is phi_2. No new invariant
+or replacement crossing is defined.
+
+An exact polynomial recurrence already displays the boundary:
+
+    (1-X)P_N(QX)=P_N(X)-X^N/N.                  (1.3)
+
+The coefficients below X^N cancel by their defining recurrence.
+The top one is -Q^(N-1)c_(N-1)=-1/N, since
+
+    (Q;Q)_(N-1)=N, c_(N-1)=Q/N.
+
+Thus the familiar 1/N source is forced by the actual Euler atom.
+When X^N=0, (1.3) is its ordinary nilpotent shift identity.
+
+## 2. The uncompleted pentagon has noncentral boundary terms
+
+Let XY=QYX, U=X^N, V=Y^N. Normal order means X before Y.
+For the unmodified truncated pentagon put
+
+    D=P_N(X)P_N(-YX)P_N(Y)-P_N(Y)P_N(X).
+
+The coefficient of X^p Y^s on the first product is exactly
+
+    sum_k c_(p-k)c_(s-k)Q^(-k)/(Q;Q)_k,          (2.1)
+
+where 0<=k,p-k,s-k<N. This follows by reordering
+(-YX)^k=(-1)^k Q^(-k(k+1)/2)X^kY^k.
+For p,s<N it equals c_p c_s Q^(-ps): the generic pointed
+compact pentagon's coefficient uses only indices below N and
+can therefore be specialized without a vanishing denominator.
+Consequently D lies in the central ideal (U,V), with the exact
+three-block decomposition
+
+    D=U B_X+V B_Y+UV B_XY, deg_X,deg_Y B_*<N.    (2.2)
+
+The coefficients are (2.1) with the indicated wrapped exponents.
+Two useful nonzero coefficients are
+
+    [X^N Y]D=1/[N(1-Q)],
+    [X^(2N-2)Y^(2N-2)]D=Q^3/N^3.               (2.3)
+
+For N=2 this is exactly
+
+    D=U Y/4+V X/4-UV/8.
+
+A central scalar cannot repair this specific unmodified operator
+identity. Its U constant coefficient would have to vanish, while
+the nonzero UY coefficient in (2.3) would remain. This comparison
+retains arbitrary central scalar functions, not only their values
+at a complete point. It does not refute a differently normalized
+or source-completed move, or a particular contracted scalar identity.
+
+## 3. Use the literature cyclic completion, with its marked root
+
+The alternate cyclic dilogarithm already defined in
+[the four-atom note](four_cyclic_atoms.md) is
+
+    d_N(X)=(1-X^N)^((N-1)/(2N))
+              product_(r=1)^(N-1)(1-Q^rX)^(-r/N). (3.1)
+
+It is normalized by d_N(0)=1, with its roots continued from
+that point. Write nu=(1-U)^(1/N), nu(0)=1. Direct expansion gives
+
+    log d_N(X)=-sum_(k>=1,N does not divide k)
+                               X^k/[k(1-Q^k)].  (3.2)
+
+The terms with k divisible by N cancel between the factors of
+(3.1). In particular d_N(X)=P_N(X) when X^N=0. Finite product
+cancellation, or (3.2), gives
+
+    (1-X)d_N(QX)=nu d_N(X),
+    product_(a=0)^(N-1)d_N(Q^a X)=1.            (3.3)
+
+This is the existing cyclic function, including its determinant
+normalization. It supplies a completion of the actual atom (1.2).
+It is not a claim that each separate compact Verma factor can
+be evaluated at a root without the whole compression used there.
+
+## 4. An explicit norm-torsor formula for every coefficient
+
+Reduce d_N(X) in the free algebra with X^N=U:
+
+    d_N(X)=sum_(j=0)^(N-1)a_j(U)X^j.
+
+The coefficient equations of (3.3) give
+
+    a_j=a_0 product_(r=1)^j Q^(r-1)/(Q^r-nu).
+
+Equivalently, with the c_j of (1.1),
+
+    a_j/c_j=a_0 product_(r=1)^j
+                                 (Q^r-1)/(Q^r-nu). (4.1)
+
+The entire scalar is fixed by the following product, with a_0(0)=1:
+
+    a_0(U)^N=nu^(-N(N-1)/2)
+                  product_(r=1)^(N-1)
+                    [(nu-Q^r)/(1-Q^r)]^(N-r).      (4.2)
+
+Here is an independent determinant proof. Put
+
+    T_nu(X)=sum_j t_j X^j,
+    t_j=product_(r=1)^j Q^(r-1)/(Q^r-nu), t_0=1,
+    X e_j=e_(j+1), X e_(N-1)=U e_0,
+    S e_j=Q^j e_j.
+
+The relation is (1-X)S T_nu=nu T_nu S. The cyclic bidiagonal
+matrix (1-X)S has characteristic polynomial lambda^N-nu^N,
+by its diagonal and full cyclic determinant terms. An eigenvector
+of eigenvalue lambda normalized to have zeroth coordinate one has
+
+    v_j(lambda)=Q^(j(j-1)/2)/product_(r=1)^j(Q^r-lambda).
+
+To compute the determinant of these columns at lambda=nu Q^a,
+multiply each column by product_(r=1)^(N-1)(Q^r-lambda).
+The resulting row polynomials have degrees N-1-j. Their determinant
+is a fixed nonzero Q constant times the ordinary Vandermonde.
+The original denominator product is U^(N-1), and the zeroth
+coordinates of T_nu's columns have product U^(N-1)product_j t_j.
+Those factors cancel. Scaling the Vandermonde by nu then proves
+
+    det T_nu=nu^(N(N-1)/2)
+                    product_(r=1)^(N-1)
+                         [(1-Q^r)/(nu-Q^r)]^(N-r). (4.3)
+
+The remaining Q constant is fixed by nu=1,U=0: T_nu is then
+P_N of a nilpotent matrix and has determinant one. Equations
+(3.3) and det(a_0 T_nu)=1 give (4.2).
+
+This also proves uniqueness in the marked formal neighborhood.
+Two unit solutions of (3.3) differ by a central function f(U).
+Their norms imply f(U)^N=1; f(0)=1 forces f=1 in characteristic
+zero. The root is not independently reset at each occurrence.
+
+## 5. The first central jet is explicit and nonscalar
+
+Write a_j(U)=c_j+U r_j+O(U^2), and R_N(X)=sum_j r_j X^j.
+Differentiating (4.1)--(4.2) gives
+
+    r_0=(1/N^2)sum_(k=1)^(N-1) k/(1-Q^k),
+    r_j/c_j=r_0+(1/N)sum_(k=1)^j 1/(1-Q^k).     (5.1)
+
+For the first formula use sum_k(1-Q^k)^(-1)=(N-1)/2, obtained
+by pairing k with N-k, including its even-level middle term.
+The increments in the second formula are nonzero. Thus R_N is
+not a scalar multiple of P_N; changing only a scalar source line
+cannot replace this operator jet.
+
+For the actual complex roots, (5.1) also proves directly
+
+    max_j |r_j/c_j|=O(1+log N).                  (5.2)
+
+Indeed |1-Q^k|>=4 min(k,N-k)/N, and the resulting harmonic sum
+is O(log N). This is a coefficient estimate in the specified
+Euler frame, not a condition-number estimate for every tensor
+operator or a lower bound for a contracted knot period.
+
+## 6. The pentagon extends through the nilpotent central order
+
+Let R=K[[U,V]], with the roots of 1-U,1-V,1-U+UV marked by
+their value one. The algebra
+
+    A_R=R<X,Y>/(XY-QYX,X^N-U,Y^N-V)
+
+is free over R with basis X^iY^j, 0<=i,j<N. Formula (3.1) defines
+units there: its reduction is P_N of a nilpotent element. The
+strict cyclic pentagon proved in
+[the root pentagon note](cyclic_tetrahedron_pentagon.md) is
+
+    d_N(Y)d_N(bX)
+      =d_N(X)d_N(-YX/a)d_N(Y/h),                 (6.1)
+
+    a^N=1-U, b^N=1-V, h^N=1-U+UV.
+
+Its anchored branches are regular in this order. Localizing
+the free order to its generic central field gives the proved
+identity; torsion freeness therefore extends it to A_R itself.
+This includes its nilpotent source, rather than replacing the
+source by a generic unpointed splitting module.
+
+Here is its complete first mixed jet, modulo (U^2,V^2), which
+retains UV. Put T=-YX, P_Z=P_N(Z), R_Z=R_N(Z), and
+partial f(Z)=Z f'(Z). The three transported factors are
+
+    B_X=P_X+U R_X-(V/N)partial P_X
+                      -UV(R_X+partial R_X/N),
+    B_T=P_T+(U/N)partial P_T-UV R_T,
+    B_Y=P_Y+(U/N)partial P_Y+V R_Y
+                    +UV(-partial P_Y/N+R_Y+partial R_Y/N).
+
+Then exactly in this quotient,
+
+    (P_Y+V R_Y)B_X=(P_X+U R_X)B_T B_Y.           (6.2)
+
+These formulas follow by expanding the actual transported norm
+roots and arguments in (6.1). In particular (bX)^N=U-UV,
+(-YX/a)^N=-UV, and (Y/h)^N=V+UV in this quotient. Thus the
+corner term -UV R_T is derived, not a freely chosen correction.
+Omitting it gives a nonzero operator at every level: R_N is
+nonzero by (5.1), the powers T^j are independent in the nilpotent
+PBW basis, and the remaining P_X,P_Y factors are units.
+
+Any specified external vectors and covectors inherit (6.2),
+with their full source and co-source transported. A nonzero
+omitted corner is detectable by some exterior functional:
+coefficient extraction in the PBW basis is perfect, and pairing
+with the complementary monomial detects a chosen coefficient.
+This does not prove that a particular knot's selected cut has
+nonzero geometric coupling.
+
+The central variables here are primitive quantum-plane centers.
+They are not the earlier meridian wall coordinate or the point
+source of the scalarized A-curve. Nor is this free primitive
+order a common stable lattice for the unscaled adjacent meridian
+projectors; their double-pole obstruction remains unchanged.
+
+## 7. Uniform polynomial bounds beyond fixed algebraic degree
+
+Let D be a simply connected domain containing 0 but not 1, and
+let L(U)=Log(1-U) on D with L(0)=0. Take
+
+    nu_N(U)=exp(L(U)/N), Q_N=exp(2pi*i/N).
+
+For every compact K in D there are constants B,C, independent
+of N>=2 and 0<=j<N, such that
+
+    C^(-1)N^(-B)<=|a_j(U)/c_j|<=C N^B,
+    U in K.                                      (7.1)
+
+Proof. L is bounded on K, so |nu_N-1|<=C_K/N. For roots with
+min(r,N-r) larger than a fixed constant, the ratios
+
+    (nu_N-Q_N^r)/(1-Q_N^r)
+
+are 1+O_K(1/min(r,N-r)). Their logarithmic moduli have the
+same bound, whose sum is O_K(log N). There are only finitely
+many remaining endpoint indices. Their ratios converge uniformly
+on K to (L(U)-2pi*i*r)/(-2pi*i*r), or its negative-index version.
+These limits never vanish: L(U)=2pi*i*r, r!=0, would imply
+U=0, where the chosen L is zero. Hence their moduli and inverse
+moduli are bounded. Finitely many small N satisfy the same bound
+by compactness and the identical nonvanishing argument.
+
+Finally log|nu_N|=Re L/N. In (4.2), all product weights (N-r)/N
+are bounded by one. Thus |log|a_0||=O_K(1+log N); (4.1) gives
+the same bound for every coefficient ratio. This proves (7.1).
+
+Both ratios and their inverses are holomorphic on D with the
+marked roots. Cauchy estimates on a fixed small circle about
+zero therefore bound every fixed central Taylor jet by a power
+of N. The sharper first-jet estimate is (5.2).
+
+The bounded logarithm lift is essential. Arbitrary cut indices
+growing with N can make nu stay away from one and are not
+covered by this proof. The theorem also does not compare sums
+of complex terms from different source channels: polynomial
+entrywise factors alone do not exclude global cancellation.
+
+## 8. An exact comparison with the original factorial source and cut
+
+This completion also identifies a specified source vector, not only
+an operator normalization. Put
+
+    p_a(nu)=(Q nu;Q)_a, S_N(nu)=p_(N-1)(nu),
+    J_(j,a)=Q^(-j) delta_(a,N-1-j),
+    gamma_N(U)=a_0(U)/S_N(nu).
+
+Complementing the finite product gives exactly
+
+    t_j(nu)=Q^(-j)p_(N-1-j)(nu)/S_N(nu),
+    vector(a_j)=gamma_N J vector(p_a).            (8.1)
+
+For the product identity, the omitted factors are
+product_(k=1)^j(1-Q^(-k)nu); dividing their reciprocals by
+Q^j gives the factors Q^(k-1)/(Q^k-nu) of t_j. No endpoint
+factor is deleted. At U=0, nu=1 and gamma_N=1/N, so this is
+the literal reflection identity c_j=Q^(-j)(Q;Q)_(N-1-j)/N.
+
+The full affine source equation is transported too. Let
+
+    (L_p v)_a=v_(a+1)-(1-Q^(a+1)nu)v_a,
+    (L_a v)_j=(Q^j-nu)v_j-Q^(j-1)v_(j-1),
+
+with cyclic indices, and let R_0 be the reversal without its
+Q^(-j) phase. Direct substitution proves the matrix identity
+
+    L_a (gamma_N J)=-gamma_N R_0 L_p.             (8.2)
+
+The actual factorial source is L_p p=(1-U)e_(N-1). Its image is
+therefore L_a a=-gamma_N(1-U)e_0. Thus (8.1) identifies these
+pointed finite cyclic source presentations with their entire
+boundary coefficient. It does not merely compare their kernels.
+
+The auxiliary argument shift delta(nu)=Qnu is transported as well.
+On an overlap of its specified lifted charts it gives
+
+    delta(a_j)=[delta(gamma_N)/gamma_N]
+                  [(1-Q^(-j)nu)/(1-Qnu)] a_j.     (8.2a)
+
+This follows from the actual factorial identity
+p_a(Qnu)/p_a(nu)=(1-Q^(a+1)nu)/(1-Qnu). The ratio of gamma_N
+is fixed by (4.2) and the retained endpoint, with its root
+continued on the lifted cover. A cut change can leave the
+principal source chart and meet its polar lattice; (8.2a)
+does not assert regularity of each separate ratio there.
+For the physical argument nu=M^2, this is the squared-meridian
+shift. The full local two-direction source transport is thus
+obtained by conjugation, while its lattice arrows are retained.
+
+For any specified co-source lambda_p, set
+
+    lambda_a=lambda_p J^(-1)/gamma_N.
+
+Then lambda_a vector(a)=lambda_p vector(p) exactly. Over C,
+J is unitary; the full source change is a scalar times a
+unitary matrix, with no hidden matrix condition number.
+
+On the compact marked charts of Section 7,
+
+    C^(-1)N<=|S_N(nu_N(U))|<=C N.                (8.3)
+
+Indeed S_N(nu)=U/(1-nu), with its whole value N at U=0;
+S_N/N converges uniformly to -U/L(U), whose value at zero is
+one and which is nonzero on the chart. This and Section 7
+give polynomial upper and lower bounds for gamma_N and its
+inverse. Thus the actual vector and co-source transport has
+uniform normalization control, despite its growing algebraic
+degree. This is stronger than an entrywise estimate alone.
+
+For the physical meridian argument nu=M^2 at a root, the exact
+parameter relation is U=1-M^(2N). With the original phase
+eta_N=i^(N+3), the full ADO dimension remains
+
+    d_N(M)=eta_N M^(N-1)/S_N(M^2),
+    gamma_N/d_N=a_0/(eta_N M^(N-1)).              (8.4)
+
+The coherent source branch M=(1-U)^(1/(2N)) makes the second
+factor polynomially bounded as well. At completeness gamma_N=1/N
+while d_N(1)=eta_N/N; the phase has not been identified with one.
+The U here is the primitive center complementary to the meridian
+center, not the variable called U=M^(2N) in several earlier notes.
+
+Equations (8.1)--(8.4) give a local, source-compatible comparison
+between actual factorial data and the coefficients of the existing
+cyclic dilogarithm. They apply at each fixed root and on its marked
+central chart. They do not identify the knot's global meridian
+difference extension or its selected geometric period. Passing to
+spectral values of X at U=0 would still collapse these coefficient
+directions; the coefficient lattice and co-source are retained.
+
+The subsequent [Rivin flow and paired-source calculation](rivin_flow_and_quantum_source.md#6-a-paired-source-identity-needed-by-a-quantum-flow-lift)
+also computes the exact involutive norm of this comparison:
+
+    gamma_N(M)gamma_N(M^(-1))=d_N(M)/(N eta_N).
+
+The marked roots at M=1 fix its phase. Transforming both actual
+dual source frames therefore gives the full Gaussian cap scalar
+N eta_N/(Q d_N), with its reflected operator retained. This
+calibrates opposite source orientations and supplies a local
+norm-one edge variable for a proposed global flow lift. It does
+not identify that lift or the selected knot period.
+
+The [subsequent source-connection calculation](cyclic_source_connection_and_resonant_flags.md)
+expresses gamma_N itself as a cyclic dilogarithm times the exact
+monomial and S_N factors, with a fixed phase. Its rational
+connection gives transport beyond the compact central chart.
+At the other norm-root lifts z=Q^r of U=0, its regularized value
+is a specified phase times (Q;Q)_r/N. The corresponding primitive
+operator has image X^r V and rank N-r. The opposite source weights
+and actual caps are regularized together on their common cover.
+This retains the kernel that an invertible-frame assumption would
+miss, without inferring the knot's geometric coupling from it.
+
+## 9. Existing coverage, checks and the remaining global theorem
+
+Definition (3.1) is the alternate cyclic dilogarithm recorded by
+[Ip--Yamazaki, 1412.5777](https://arxiv.org/abs/1412.5777), not a new
+quantum definition. Cyclic Fourier analysis and coefficient-mutation
+coverage also occur in
+[Ishibashi, 2501.02316](https://arxiv.org/abs/2501.02316).
+Its [16 October correction, 2610.23572](https://arxiv.org/abs/2610.23572)
+explicitly adds lifting data on a mu_N-cover and an extra phase
+in general pentagons. Only the stated coverage was consulted;
+none of those papers' pentagon, Fourier or strict-lift proofs is
+used. Our strict identity is restricted to the already proved
+compatible anchored cover. Unrelated root choices are not equated.
+
+No novelty is claimed for cyclic completion, cyclic Fourier
+normalization or the compact pentagon. The contribution needed
+here is their explicit actual-R source calibration, mixed central
+boundary terms and uniform coefficient control in that frame.
+The determinant, jet and bound proofs above are direct.
+
+[The exact audit](../experiments/audit_controlled_cyclic_euler_source.py)
+checks the full noncommutative defect, mixed-source pentagon,
+cyclic normalization determinant, literal finite-product jet,
+and agreement with the actual crossing at both colors and wraps.
+Complex-number bound samples are labeled diagnostics; the
+uniform bound is proved in Section 7.
+[Results](../experiments/controlled_cyclic_euler_source_results.json).
+
+Reproduce with:
+
+    python3 experiments/audit_controlled_cyclic_euler_source.py
+
+This removes a local ambiguity in transporting the actual Euler
+source. A full colored geometric triangulation, its meridian
+extension class, actual selected cut and regulator norm comparison
+are still required. The coefficient bound is not promoted to
+a lower bound for the original Kashaev value.

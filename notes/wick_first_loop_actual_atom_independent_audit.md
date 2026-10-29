@@ -1,0 +1,207 @@
+# Independent first-loop audit for the actual compact coefficient model
+
+Proof audit, 27 October 2026. This checks the universal Wick coefficient
+and the original crossing, color-half-step and pivot contributions used
+in the figure-eight cap calculation. The coefficient is a transverse
+FORMAL block in the stated physical slice. Its geometric coordinate
+eta_geo=p_e^(-1) is independent of the finite band-Fourier variable
+eta. Transport of the latter's entire marked contour/endpoint is
+a separate assertion; see [the exact Fourier audit](finite_band_fourier_cap_and_independent_clock.md).
+
+## 1. Wick signs and multiplicities
+
+Write the local integral formally as exp(S/H) a_0(1+H a_1+...),
+put G=(S'')^(-1), and use Gaussian covariance -H G. Repeated
+indices below are summed. Dividing the first coefficient by its
+leading amplitude gives
+
+    z_1=a_1-G_ij a_(0,ij)/(2a_0)
+        +(a_(0,l)/a_0)S_ijk G_ij G_kl/2
+        +S_ijkl G_ij G_kl/8
+        -S_ijk S_lmn G_il G_jm G_kn/12
+        -S_ijk S_lmn G_ij G_lm G_kn/8.            (1)
+
+The amplitude second derivative contracts one covariance, giving
+the minus sign. The amplitude-linear/cubic and quartic vertices
+contract two covariances, giving the positive signs. Two cubic
+vertices contract three, giving the negative signs. Of the 15
+six-leg pairings, six have all three edges between vertices and
+nine have one self-pair at each vertex; the expansion coefficient
+1/(2(3!)^2) gives respectively 1/12 and 1/8. These prove every
+coefficient in (1).
+
+In one dimension (1) reduces independently to
+
+    z_1=a_1-a_0''/(2a_0 S'')
+       +a_0'S'''/(2a_0(S'')^2)+S''''/(8(S'')^2)
+       -5(S''')^2/(24(S'')^3).
+
+The [exact audit script](../experiments/audit_wick_first_loop_and_actual_atoms.py)
+contracts expanded polynomials by an independent recursive pairing
+rule in dimensions one, two and three, using non-diagonal Hessians
+in the latter cases. All identities pass over the rationals.
+
+## 2. The actual atoms have the stated first variable correction
+
+For P_Q(z)=(z;Q)_infinity and H=Log Q, its original logarithm is
+-sum_(m>=1) z^m/[m(1-exp(mH))]. Therefore
+
+    log P_Q(exp(alpha H)z)
+       =Li_2(z)/H+(1/2-alpha)Log(1-z)
+          +H B_2(alpha)Li_0(z)/2+O(H^2).          (2)
+
+Here B_2(alpha)=alpha^2-alpha+1/6. In particular alpha=0 and
+alpha=1 both give +H Li_0(z)/12; the exact functional equation
+P_Q(Qz)=P_Q(z)/(1-z) gives the same conclusion directly. A
+fractional half shift would instead contribute -H Li_0(z)/24,
+so the original color cancellation must be used rather than
+assuming half shifts do not matter.
+
+For the actual balanced coefficient x=-M exp(-H/2), Qx^2=M^2=Y.
+The five variable arguments and signs are
+
+    positive: (B,C,Y/A,BC,YC/A),
+    negative: (A,C,Y/B,AC,YC/B),
+    epsilon=(+1,+1,+1,-1,-1).
+
+The original compact factors have shift alpha=1 at arguments
+one, two and four, and alpha=0 at arguments three and five.
+Thus their log-a_0 coefficients are
+(-1,-1,+1,+1,-1)/2 and their VARIABLE a_1 is exactly
+
+    a_1^var=(1/12)sum_atoms epsilon Li_0(z_atom).  (3)
+
+Every fixed P_Q(Q) normalization stays in the recorded base line.
+No individual fixed compact product is evaluated at a root.
+
+Put xi_a=Ha, xi_b=Hb, xi_k=Hk. The exact original positive
+Gaussian/color monomial has H^0 coefficient (xi_a+xi_b)/2;
+the negative one has (xi_k-xi_a-xi_b)/2. Neither has a variable
+H^1 coefficient. This follows by substituting
+Log x=Log M+pi*i-H/2 in the original monomial, including the
+positive k(k+1) term, BEFORE expansion. The audit checks this
+symbolically.
+
+The closed pivot/framing source contributes -sum_closed xi to
+log a_0, in addition to M/base factors. On the physical level
+mark n=2pi*i/H-1, its remaining H^1 term is kappa_D/2, independent
+of framing variables. Common Cartan and unrolled color scalars
+also belong to the base line. A base-only addition to z_1 times
+a framing form regular at a cap has zero logarithmic cap residue.
+This does not authorize discarding that line in a whole period.
+
+## 3. Implementation and cap scope
+
+The computation in
+[the actual figure-eight first-loop script](../experiments/compute_figure_eight_first_loop_cap.py)
+uses external physical positions (a_0,a_2), with
+k_2=a_2-a_0+k_3 and transverse variables (k_1,k_3,k_4).
+Its matrix is the exact integral complement in the original flow
+lattice. Both closed pivot rows enter the amplitude gradient.
+All logarithmic flow derivatives are taken before substituting s=1.
+
+The implementation's Hessian, third and fourth derivatives use
+the rank-one tensors of the actual monomial shape arguments.
+Its amplitude second term is precisely
+-Tr(G Hess log a_0)/2-(grad log a_0)^T G(grad log a_0)/2;
+the remaining terms agree with (1). Combining opposite vector
+classes flips the cubic tensor sign and preserves the quartic
+sign, as required. No erroneous s=1 differentiation or omitted
+pivot gradient appears in that construction.
+
+Individual a_1 or Wick terms may have poles at the marked cap.
+Only their FULL sum determines the residue of the transverse
+first-loop form. Identifying that form with the literal finite
+Fourier cap first needs a source-compatible Fourier/canonical
+pushforward. The bounded-band principal relation eta p=1 is an
+incidence relation, not an ordinary base substitution transporting
+the cap. An all-order comparison also needs its ordered band/cap
+and half-density data. The exact computation
+therefore concerns the stated actual transverse-formal cap, and
+does not by itself prove survival of the selected finite period.
+
+## 4. Exact characteristic-zero cap certificate on the stated slice
+
+The
+[saved characteristic-zero calculation](../experiments/figure_eight_first_loop_cap_exact_results.json)
+now supplies z_1=a(r)+t b(r) over Q(r)[t]/(t^2-t+1), with
+t=(1-sqrt(-3))/2. Independent rational simplification of its two
+components gives the denominators
+
+    den a=216(r^2+3)^4(3r^2+6r+7)^4,
+    den b=108(r^2+3)^4(3r^2+6r+7)^4.              (4)
+
+At the candidate geometric boundary r=-2, both variable factors
+equal seven. At the other k=1 point r=1-t, the relation
+r^2-r+1=0 reduces them to
+r+2 and 9r+4, both nonzero. Thus BOTH components, and therefore
+the entire first-loop correction, are regular at both caps on
+the stated s=1 slice. This certifies more than cancellation of
+the simple residue. As a separate check, all six exact residues
+printed for the individual double-pole terms sum identically to
+zero in Q(sqrt(-3)).
+
+Since Omega_cut=-dr wedge ds/[s(1+s)] is regular there, the
+relative first-loop form z_1 Omega_cut has zero logarithmic residue
+in the SEPARATE coordinate eta_geo on this slice. This does not
+identify either point with the finite Fourier cap. Retaining only
+the variable compact-factor
+term would give a false nonzero answer. This calculation does
+not prove zero residue identically in s, all-order cap regularity,
+or the missing subprincipal finite-cap comparison.
+
+## 5. Absolute exactness retains nonzero relative endpoint data
+
+The updated characteristic-zero JSON includes a rational Hermite
+primitive. This audit reconstructs it independently in the native
+field Q(sqrt(-3))(r) from its polynomial part and the six displayed
+coefficients multiplying
+
+    r/J^3, 1/J^3, r/J^2, 1/J^2, r/J, 1/J.
+
+The literal coefficient table and polynomial part in
+[the first-loop proof note](figure_eight_first_loop_cap_residue.md),
+equation (5.1), agree with this reconstruction, including every sign
+after substituting sqrt(-3)=1-2t.
+
+Here t=(1-sqrt(-3))/2, and the actual prefix minors give
+
+    V=2+t-tr^2, U=4-t-(t+1)(r+r^2),
+    J=U'V-UV'.
+
+Direct rational differentiation proves EXACTLY G'=z_1. The two
+simple zeros of J are 2t-1 and -(1+4t)/3. At each, the coefficient
+of J^(-3) in G is nonzero, so G has order-three poles and z_1
+has order-four poles. In particular z_1 dr has zero logarithmic
+residue at both caustics. This is an absolute rational exactness
+certificate, including the nonconstant first-loop correction.
+
+It does not discard endpoints. Direct substitution in the SAME
+primitive gives
+
+    G(1-t)-G(-2)=(889-125t)/216,
+    G(-1)-G(-2)=(1076-991t)/432.                 (5)
+
+Both are nonzero. Adding an arbitrary base-only scalar kappa to
+z_1 changes G to G+kappa r+constant. It changes these two gaps
+by respectively kappa(3-t) and kappa. Their combination is fixed:
+
+    [G(1-t)-G(-2)]/(3-t)-[G(-1)-G(-2)]
+                    =(295t-138)/112 != 0.         (6)
+
+Thus no base-only first-loop normalization can eliminate BOTH
+relative gaps. Absolute exactness of the current is compatible
+with a genuine relative endpoint class. The primitive, original
+endpoint marks and source line must travel together in any
+framing comparison. Equations (5)--(6) concern this actual formal
+block on s=1; they are not an identification of the marked finite
+cap or its selected global cycle.
+
+[Saved independent exact audit results](../experiments/wick_first_loop_and_actual_atoms_results.json).
+
+The subsequent [actual wire Fourier polarization](actual_fourier_polarized_geometric_normal_block.md)
+has a nonzero geometric formal block in (A,p_e), with a different
+specified exterior source: the original finite sum over the new
+Fourier label. It resolves generic position-projection caustics.
+It does not turn the earlier eta_geo endpoint computations into
+the image of the original band-Fourier residue eta=0.

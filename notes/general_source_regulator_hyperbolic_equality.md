@@ -1,0 +1,504 @@
+# A general source-regulator equality theorem and its exact quantum scope
+
+29 October 2026. The geometric equality step extends to EVERY oriented
+complete finite-volume cusped hyperbolic three-manifold. No pretzel,
+alternating, bridge-width, polyhedral, or positive ideal-triangulation
+hypothesis is required. The proof below constructs the nearby local
+geometry explicitly by equivariant averages, rather than assuming a
+general deformation or Dehn filling theorem.
+
+This does NOT extend the proved original-source asymptotic to every knot.
+Section8 identifies the additional quantum hypotheses, their proved
+pretzel instance, and the currently missing broader source estimates.
+Neither a formal saddle nor a correct cusp Hessian supplies those inputs.
+
+## 1. General geometric completion theorem
+
+Let M be an oriented complete finite-volume hyperbolic three-manifold
+with h torus cusps and geometric holonomy rho0. Fix primitive oriented
+bases (mu_i,lambda_i) of its actual peripheral groups. On each torus fix
+the complete Euclidean cusp coordinate, so its two holonomies are
+translations by a real-linearly independent pair of complex numbers.
+
+There is a neighborhood U of the complete FRAMED representation with
+the following property. A point of U consists of an actual representation
+
+    rho: pi1(M) -> PSL(2,C)
+
+and, for each cusp, a common peripheral fixed flag close to its complete
+flag. Use a frame depending continuously on that flag to send it to
+infinity. The peripheral transformations are then complex similarities.
+Let U_i,V_i be the uniquely small logarithms of the complex similarity
+multipliers of mu_i,lambda_i, continued from zero at completeness.
+
+Select any subset F of cusps to fill. Suppose:
+
+1. Every unfilled peripheral group is parabolic, so BOTH similarity
+   multipliers are one. It remains nontrivial near rho0.
+2. For each i in F, choose an arbitrary primitive integer pair (a_i,b_i)
+   and a sign epsilon_i in {+1,-1}, and impose the ACTUAL log equation
+
+       a_i U_i+b_i V_i=2pi i epsilon_i.                 (1)
+
+Then rho descends to the Dehn filling of M along the actual slopes
+sigma_i=a_i mu_i+b_i lambda_i. The descended representation is the
+holonomy of a positively oriented COMPLETE finite-volume hyperbolic
+metric on that filled topology. In particular it is discrete and
+faithful there. Any number of cusps may remain, including zero.
+
+The neighborhood U is fixed before the slopes: the conclusion applies
+to every slope tuple and framed representation satisfying these conditions
+inside U. It does NOT assert existence of such a representation for all
+slopes. Existence is supplied by the actual source branch in the proved
+application, and must be supplied in another application. For nearby
+representations, (1) itself forces the relevant slopes to be long.
+
+The proof is independent of a graph presentation and of any geometric
+triangulation existence theorem. Sections2--5 establish it directly.
+
+## 2. A nearby equivariant developing map on every compact core
+
+Identify the universal cover of the complete M with H3, and write Gamma
+for pi1(M), acting by rho0. Choose a compact cusp-truncated core and a
+slightly larger compact collar. Cover that compact set by finitely many
+open balls which lift injectively to H3, and choose a smooth partition
+of unity subordinate to them. Write eta_(j,gamma) for the lifts using
+one chosen lift of the j-th ball. Thus
+
+    sum_(j,gamma) eta_(j,gamma)(x)=1,
+    eta_(j,gamma)(rho0(delta)x)=eta_(j,delta^-1 gamma)(x).
+
+The sum is locally finite. On a fixed compact fundamental part only
+finitely many gamma occur. No freeness of the deformed action is assumed.
+
+Use the future unit hyperboloid in Minkowski space for H3. Form
+
+    Y_rho(x)=sum_(j,gamma) eta_(j,gamma)(x)
+                         rho(gamma) rho0(gamma)^-1 x,
+    E_rho(x)=Y_rho(x)/sqrt(-<Y_rho(x),Y_rho(x)>).         (2)
+
+Every summand is future timelike unit. A convex combination with
+nonnegative weights summing to one is future timelike, so normalization
+is defined. The Lorentz action of PSL(2,C) makes (2) unambiguous without
+choosing SL signs. Reindexing gamma gives exactly
+
+    E_rho(rho0(delta)x)=rho(delta)E_rho(x).              (3)
+
+At rho=rho0 every summand in (2) equals x, so E_rho0(x)=x. On the compact
+fundamental part, only finitely many matrices and derivatives of fixed
+smooth weights occur. Consequently E_rho tends to the identity in C1
+as rho tends to rho0. For rho in one sufficiently small neighborhood,
+it is an orientation-preserving local diffeomorphism. Equivariance then
+gives this property over the whole lifted compact core and collar.
+
+This is the needed compact-core deformation proof. It uses neither an
+unproved compatible geodesic mesh nor a subdivision that could invert
+thin tetrahedra. It also does not assume local character-variety rigidity.
+
+## 3. An explicit positive similarity link and an entire cusp tail
+
+In one complete cusp write its cover as
+
+    (w,t) in C x [t0,infinity),
+    (w,t) -> (w+lambda,t), lambda in Lambda,
+    dev0(w,t)=(w,exp(t)),
+
+where Lambda is the complete translation lattice. In the moving selected
+flag frame, denote the deformed affine action by
+
+    A_rho(lambda)(z)=a_lambda z+b_lambda.
+
+It is a homomorphism from Lambda to Aff(C), tends to the original
+translation action, and all a_lambda are nonzero.
+
+Choose a smooth compactly supported nonnegative function eta on C with
+
+    sum_(lambda in Lambda) eta(w-lambda)=1.
+
+Such eta is obtained from any bump whose translates cover a fundamental
+parallelogram by dividing by its positive periodic translate sum. Define
+
+    d_rho(w)=sum_lambda eta(w-lambda)
+                                A_rho(lambda)(w-lambda). (4)
+
+Affine maps commute with convex combinations of total weight one, so
+
+    d_rho(w+nu)=A_rho(nu)d_rho(w).                       (5)
+
+At completeness every term is w. On a fixed compact fundamental domain,
+d_rho is C1-close to w; its real Jacobian is therefore positive and
+nonzero. Equivariance propagates this local-diffeomorphism property
+everywhere. Thus (4) gives a genuine nonsingular similarity structure
+on the COMPACT cusp torus, not just a formal list of peripheral matrices.
+The developed images and Euclidean lengths of fixed generator paths
+are uniformly bounded near completeness.
+
+Let chi_rho:C->R be the real-linear extension of the character
+lambda -> log|a_lambda|. The map
+
+    F_rho(w,t)=(d_rho(w),exp(t+chi_rho(w)))              (6)
+
+is exactly rho-equivariant in upper half-space: its horizontal and
+vertical coordinates transform by a_lambda z+b_lambda and |a_lambda|y.
+Its differential is triangular with positive determinant
+exp(t+chi_rho(w)) det_R Dd_rho(w). Hence it is an orientation-preserving
+local diffeomorphism for EVERY t>=t0. At completeness it is dev0.
+
+Restore the continuously varying flag frame when viewing (6) in the
+global target H3. Define it on one chosen lift of each disjoint cusp
+neighborhood and propagate by rho-equivariance to the other lifts.
+The exact peripheral equivariance makes the coset representative
+irrelevant, so this gives a well-defined map on the entire lifted end.
+On a fixed compact cusp collar it is C1-close to the
+original developing map. Interpolate E_rho and F_rho by the unique
+hyperbolic geodesic between their values, with a smooth Gamma-invariant
+cutoff in t. The interpolation is rho-equivariant and is C1-close to
+the identity on that compact collar. Thus it too is a positive local
+diffeomorphism after one further uniform shrink of U. Set it equal to
+E_rho on the compact part and F_rho on each deep tail.
+
+We have now constructed a global rho-equivariant developing LOCAL
+DIFFEOMORPHISM on the ideal-end-deleted original manifold. Pulling back
+the H3 metric yields an actual oriented curvature-minus-one metric.
+There are no polyhedral edge or vertex singularities to check: the
+map is a smooth local diffeomorphism everywhere at finite points.
+
+The construction is simultaneous at all finitely many cusps. It works
+on a single neighborhood of the complete framed representation, with
+no comparison between different deformation sizes or slopes.
+
+## 4. The small multiplier logs are the actual log-link periods
+
+At a filled cusp (1) ensures at least one multiplier is nontrivial.
+Commutativity of affine peripheral maps implies that they have a common
+finite fixed point q in addition to infinity. For a generator with
+a!=1, this is q=b/(1-a). The two original generator translations
+are nonzero. As the representation approaches completeness, at least
+one such formula therefore gives |q|->infinity, uniformly over the
+small framed neighborhood with its parabolic locus removed.
+
+The image of an ENTIRE closed fundamental parallelogram under d_rho
+is uniformly bounded by the compact C1 estimate in section3. Fixed
+generator paths also have uniformly bounded developed images and
+Euclidean lengths. For U sufficiently small the whole parallelogram
+image misses q, including its interior, not only its boundary paths.
+Equivariance and the fact that every peripheral map fixes q then
+show that the ENTIRE development misses q. On the simply connected
+link cover choose
+
+    f=Log(d_rho-q).
+
+The differential df is invariant under deck transformations and is
+invertible as a REAL two-dimensional differential: d_rho is a positive
+local diffeomorphism and the logarithm has nonzero complex derivative.
+Thus |df|^2 descends to a nonsingular Euclidean metric on
+the compact link torus. It is complete. Its lifted local isometry f
+is globally one-to-one onto C: lift every Euclidean line segment by
+completeness to get a covering of C, which is simply connected.
+Its periods therefore form an injective rank-two translation lattice.
+
+For each fixed generator path of length at most L and image in |d|<=R,
+
+    |Delta f|<=L/(|q|-R) ->0.                          (7)
+
+The endpoint affine action gives exp(Delta_mu f)=exp(U) and similarly
+for V. Their differences are integer multiples of 2pi i. Both the
+actual increments in (7) and the prescribed small multiplier logs
+tend to zero, so these integers are EXACTLY zero in U:
+
+    Delta_mu f=U, Delta_lambda f=V.                    (8)
+
+The neighborhood needed for (8) is independent of the slopes, because
+one first proves (8) for the FIXED basis before multiplying by a_i,b_i.
+No diagonalizing-frame singularity or hidden large winding is allowed.
+SL eigenvalue signs must first be centered to these projective geometric
+logs; an old longitude spin is not an extra geometric rotation.
+
+For completeness, q need not be bounded by the inverse of one chosen
+coordinate if that coordinate vanishes. Choose either generator with
+nonunit multiplier. Each numerator stays bounded away from zero, and
+max(|a_mu-1|,|a_lambda-1|) tends uniformly to zero. This proves the
+uniform |q|->infinity statement even when one generator is parabolic.
+
+## 5. Primitive filling gives a complete smooth hyperbolic manifold
+
+Translate q to zero. Then d_rho=e^f. On the compact link quotient the
+positive function
+
+    exp(t0+chi_rho(w))/|d_rho(w)-q|
+
+is bounded above: numerator and denominator transform by the same
+|a_lambda|. Thus the explicit end (6) contains the ENTIRE equivariant
+epigraph y>A|d-q| for some finite A. There is no unproved assumption
+that an abstract cusp link is realized by an actual full geometric end.
+
+About the axis 0--infinity put r=y/|d-q| and use
+
+    R=asinh(1/r), theta=Im f,
+    X=Re f+(1/2)log(1+r^2).
+
+Direct substitution into the upper-half-space metric gives
+
+    ds^2=dR^2+cosh(R)^2 dX^2+sinh(R)^2 dtheta^2.         (9)
+
+The epigraph contains the whole punctured tube 0<R<R0. A log period
+L acts by (X,theta)->(X+Re L,theta+Im L). By (1),(8), the actual
+primitive slope has period 2pi i epsilon. Choose integers c,d with
+ad-bc=1. Its complementary primitive period cU+dV has nonzero real
+part, since the log-link period lattice has real rank two.
+
+Adding R=0 in (9) is therefore an ordinary smooth hyperbolic solid
+torus, with meridian EXACTLY a mu+b lambda. The angular period is
+2pi, not a multiple or a merely exponentiated relation. The affine
+holonomy of that meridian is the identity, since it has multiplier
+one and fixes both q and infinity. Thus rho descends to the actual
+filled fundamental group. Either epsilon sign changes the orientation
+of the meridian parameter, not the positive orientation of the metric.
+
+At an unfilled cusp all a_lambda=1. Formula (4) is an ordinary
+translation-equivariant local diffeomorphism. Its compact Euclidean
+link is complete, so its lifted development is the Euclidean plane.
+Here chi=0 and (6) contains a full horoball quotient: the cusp is
+complete and has finite volume.
+
+The remaining middle region is compact. The finitely many attached
+bounded-radius solid tori and the ordinary unfilled cusps prove that
+the whole filled metric is complete and finite-volume. Its complete
+universal developing cover is H3: lift geodesic segments under its
+complete local isometry to obtain a covering of simply connected H3.
+Consequently the descended holonomy is discrete and faithful. This
+proves the theorem in section1 without importing a deformation,
+Dehn filling, discrete-faithfulness, or character-uniqueness theorem.
+
+## 6. Absolute regulator calibration for any such source branch
+
+Let rho_z now be an actual connected marked representation family
+near rho0, and use the small squared peripheral logs U_i,V_i above.
+The elementary marked Bloch boundary/fundamental-chain calculation
+used in [the general peripheral volume proof](general_peripheral_representation_volume_bound.md)
+and [the source regulator proof](actual_pretzel_marked_regulator_and_filling_action.md)
+is independent of the diagram and number of cusps. In these coordinates
+it says
+
+    d Vol(rho_z)=(1/2)sum_i [Re V_i dIm U_i
+                                      -Re U_i dIm V_i]. (10)
+
+Here Vol(rho) is the absolute representation volume of the SAME oriented
+fundamental class and cusp eigenflags. One way to check the factor is
+to use eigenlogs u=U/2,v=V/2 (with their fixed central signs): the
+boundary is -2 sum M_i wedge lambda_i, so the Bloch--Wigner differential
+is 2 sum(Re v dIm u-Re u dIm v), exactly (10). Distinct boundary tori
+have zero mutual intersection pairing. No equal-color assumption enters.
+
+Suppose a holomorphic source potential F on this marked branch has
+
+    dF=(1/2)sum_i V_i dU_i,
+    Im F(0)=Vol(M).                                    (11)
+
+These are hypotheses about the actual peripheral connection and its
+absolute COMPLETE anchor, not just about its Hessian. Define
+
+    D_F=Im F-(1/2)sum_i Re U_i Im V_i.                  (12)
+
+Direct differentiation of (11) gives the right side of (10). Both
+functions equal Vol(M) at the complete point. Therefore throughout
+the connected marked branch
+
+    D_F=Vol(rho_z).                                    (13)
+
+This is an absolute identity. It does not reset logarithms on loops,
+splice different character lifts at a projected node, or infer a
+constant from a matching stationary polynomial. Nonzero spin terms
+must be retained when converting the literal source to the centered
+form (11); they cancel only in the paired expression (12).
+
+At an actual filled point from section1, the representation volume
+in (13) is the volume of its constructed complete geometric metric.
+If comparing with any other complete hyperbolic metric on the same
+marked oriented filled topology, apply the independently proved
+representation-volume inequality in BOTH directions. Their volumes
+are equal. No unproved equality case or imported rigidity theorem is
+needed to identify (13) with its usual hyperbolic volume.
+
+The finite filling-chain normalization is also diagram-independent:
+replace the old cusp map by its axis-valued comparison, whose shared
+conical boundary homotopy has volume O(Y^-2); then extend the SAME
+finite boundary triangulation through the solid torus with every
+vertex on that axis. All added tetrahedra have zero volume. This is
+the compatible construction in the cited peripheral/source proofs;
+putting only unrelated new vertices on the axis would not suffice.
+
+## 7. Arbitrary primitive filling action, with the exact boundary term
+
+When a source branch has local U coordinates and (11), a primitive
+slope a_i mu_i+b_i lambda_i with b_i!=0 has filling potential
+
+    F_sigma(U)=F(U)+sum_(i in F)
+             [a_i U_i^2/(4b_i)-pi i epsilon_i U_i/b_i]. (14)
+
+Its U_i derivative is
+
+    (a_i U_i+b_i V_i-2pi i epsilon_i)/(2b_i).
+
+At its stationary filling point and with unfilled cusps complete,
+
+    Im F_sigma
+      =Im F-(1/2)sum_(i in F) Re U_i Im V_i
+      =Vol(rho)=Vol(M(sigma)).                         (15)
+
+Indeed Im V_i=(2pi epsilon_i-a_i Im U_i)/b_i, which proves (15)
+without deleting a complex endpoint term. Constants already known
+to be real do not affect (15), but remain in any exact period formula.
+If b=0, primitivity forces |a|=1 and (1) cannot occur with small U;
+there is therefore no omitted near-complete filling in this chart.
+Equivalently one may change the primitive basis and its potential.
+
+For the existing convention U=-z,V=-2ell,a=1,b=p,
+epsilon=-m, (14) is
+
+    G(z)+(z-2pi i m)^2/(4p)
+
+up to a REAL constant. This recovers the exact chirp/source formula,
+including its factor two and its retained longitude spin.
+
+## 8. The conditional QUANTUM bridge, and what is actually proved
+
+The geometric theorem is unconditional for every actual framed
+representation satisfying section1. To prove the volume conjecture
+for a new original knot/source family one must additionally prove:
+
+* An exact original-source construction or selected-cycle argument
+  supplies the ACTUAL near-complete representation of the base group,
+  with the literal caps, all port equations, chosen eigenflags and
+  true primitive preferred peripheral markings.
+* The selected parameter point exists in the fixed neighborhood,
+  with all unfilled cusps complete and the actual small log equations
+  (1) with unit charges. An exponentiated equation alone is insufficient.
+* The source action has the calibrated derivative and complete
+  constant (11), and its filling kernel has the boundary correction
+  (14) in the same convention.
+* The COMPLETE original finite source has a nonzero asymptotic
+  contribution with exponential action F_sigma/(2pi i), with all
+  other terms controlled. In particular its scalar has the form
+
+      K_N=exp[N F_sigma/(2pi i)] A_N,
+      (1/N)log|A_N| ->0,                               (16)
+
+  after the recorded original framing/normalization factors. This
+  must be established from the source, not assumed from a formal
+  saddle. It includes overflow and alias bands, all colors, normal
+  derivative channels, boundary currents, Stokes accessibility and
+  noncancellation, at the desired full sequence of levels.
+
+Then (15),(16) prove
+
+    lim_(N->infinity) (2pi/N)log|K_N|=Vol(M(sigma)).      (17)
+
+This bridge is transparent about which work remains quantum. It
+does not assert that a positive norm, formal gluing solution, local
+normal block or representation-volume upper bound implies (16).
+Nor does it assume every augmented diagram has a known positive
+original-source base period. Those conclusions need independent proofs.
+
+The [existing full original-source pretzel theorem](actual_long_pretzel_full_source_survival.md),
+its [literal global lift](actual_pretzel_port_lift_and_geometric_anchor.md),
+and its [marked regulator certificate](actual_pretzel_marked_regulator_and_filling_action.md)
+do supply all four inputs for fixed odd s>=25 and independently
+sufficiently long fixed signed slopes, subject to the unchanged
+quantifiers of those source theorems. The subsequently independently
+audited [varying-radius alias extension](actual_pretzel_all_width_extension.md)
+lowers that actual quantum width threshold to every fixed odd s>=9:
+its entire-color bound is B_*<.81, whereas the exact width-nine
+source margin is greater than .812633708. All other local analytic
+and geometric ingredients were already valid there. The remaining
+widths3,5,7 are not proved by this envelope. The
+[specific positive-core proof](actual_long_pretzel_geometric_filling_completion.md)
+was already sufficient for that class. The present result removes
+ALL graph/polyhedron/width restrictions from the GEOMETRIC implication,
+but does not claim a new unproved original-invariant family.
+
+For other fully augmented bases, crossing-circle source/filling
+identities are exact, but a whole-source open-corridor survival estimate
+and complete global color/alias gap have not been proved just by those
+identities. For arbitrary knots, a classical A-curve or the general
+representation-volume inequality still does not provide the missing
+selected-source asymptotic. These are specific unproved quantum inputs,
+not residual uncertainty about which hyperbolic volume (15) denotes.
+
+There is now a stronger, independently checked way to supply the last
+quantum bullet for integral crossing-circle fillings: the
+[general original-source long-filling transfer](general_original_source_long_filling_transfer.md)
+proves the filled nonzero asymptotic from an EXACT even holomorphic
+BASE color packet, its uniform complex Gaussian expansion, and a strict
+gap over the entire complementary physical color cube. Its exact
+multilinear filling identity retains every confluent normal coefficient,
+and its Fourier proof keeps the endpoint currents and all charges.
+Thus one need not assume the desired filled asymptotic in each new
+application. What remains to prove for another augmented base is that
+specified original packet and global gap, together with its actual
+bounded geometric lift and calibration. The theorem does not infer
+those base certificates from the underlying hyperbolic geometry.
+
+## 9. Adversarial scope audit of the current equality claim
+
+The existing long-pretzel equality proof passes the following geometric
+checks: its actual base holonomy is complete and positively oriented;
+its local port construction is a genuine representation, not trace
+data alone; its bounded cusp frames persist; the unfilled main cusp
+is genuinely parabolic; its geometric multiplier logs are centered
+before forming the slope; and the surviving source charges give
+primitive 2pi, rather than an accidentally killed PSL word. These are
+precisely the hypotheses used here.
+
+The following stronger statements are NOT justified by that proof:
+
+* Equality for every knot, every augmented diagram, short fillings,
+  growing width, or slopes growing with N.
+* Inferring hyperbolicity from killing a slope without the local
+  geometry and actual winding. A 4pi cone completion has the same
+  killed PSL meridian and is excluded only by the unit period.
+* Replacing framed representation convergence by convergence of a
+  few traces or cusp ratios. The finite C1 construction needs the
+  actual finite generator matrices and selected flags in a bounded
+  frame near the complete holonomy. A singular diagonalizing frame
+  is not that input; the literal bounded port lift supplies it in
+  the established application.
+* Calling the complete augmented volume Vol(M) the volume of a
+  nontrivial finite filling. The latter is (15), evaluated at its
+  actual selected parameter point.
+* Obtaining existence of a nearby representation for arbitrary
+  long slopes from the conditional wording of section1. A source
+  analytic family or an independently proved deformation theorem
+  must supply that existence.
+* Treating Casson--Rivin strict concavity on the OLD complete-cusp
+  angle slice as the filled equality proof. Its constraints differ.
+  The direct construction above does not need an all-ideal angle
+  chart or a universal positive triangulation existence claim.
+
+Thus the genuine extension here is a universal geometric completion
+and absolute calibration theorem for any ACTUAL selected near-complete
+source branch. It leaves the full-source estimates exactly where
+they belong, and does not replace the active broader equality goal
+by a generic conditional assertion.
+
+## 10. Focused construction checks
+
+[The new focused audit](../experiments/audit_general_source_regulator_hyperbolic_equality.py)
+passes exact arbitrary-slope action algebra, eight Lorentz
+normalization/reindexing-equivariance families, and sixteen explicit
+affine-cusp/primitive-slope families with both winding signs. Its
+compactly supported cubic partition checks the positive real link
+Jacobian, exact affine and height equivariance, small log increments,
+and nonzero complementary core period. This tests the NEW construction,
+not only its inherited tube-coordinate formula. The universal argument
+is the analytical C1-continuity/compactness proof above; these finite
+checks make no additional knot-source or general existence claim.
+
+Two independent analytical readers checked the equivariant geometric
+construction; the second also checked the arbitrary-slope action and
+spin conversion through section7. Both reported PASS. The review
+clarified that the ENTIRE fundamental parallelogram image must avoid
+q before equivariance is used; this follows from section3's compact
+C1 estimate and is now explicit in section4. The concrete width-nine
+source extension and the general long-filling transfer have separately
+passed independent proof reads and fresh focused audit replays.

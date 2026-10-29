@@ -1,0 +1,284 @@
+# Source-preserving weighted Fourier energy for the original plat
+
+28 October 2026. There is an exact positive factorial gauge which fixes
+every original plat turn. It gives a concrete family of weighted Fourier
+norms and a finite convex upper-bound problem for the **original** scalar.
+Its gauges can be exponentially conditioned; no such condition number
+is paid at the paired source. Whole inverse crossing pairs can be
+contracted before taking positive norms.
+
+This does not give the sharp hyperbolic-volume estimate. In particular,
+same-frame diagonal scaling cannot reduce the local crossing's flat
+Hilbert--Schmidt norm. A short exact doubled-source calculation below
+identifies the coherent sewing probability which still needs an estimate.
+
+## 1. The physical factorial gauge fixes the original paired source
+
+Put Q=exp(2 pi i/N), d=N-1, x=-exp(-pi i/N), F_a=(Q;Q)_a. The exact
+root reflection identity is
+
+    F_a F_(d-a)=N (-1)^a Q^(a(a+1)/2).                 (1)
+
+Consequently the actual middle-certificate frame and its positive part,
+
+    Gamma_a=(-1)^a Q^(-a(a-1)/2) F_a^2
+            =Q^a |F_a|^2,
+    L_a=|F_a|^2/N,
+
+obey at EVERY index
+
+    Gamma_a Gamma_(d-a)=N^2 Q^(-1),
+    L_a L_(d-a)=1.                                    (2)
+
+The second relation is an exact equality of positive real numbers.
+It is not an asymptotic bound near a selected cap index.
+
+Use the original physical cup, ordinary cap, and full marked row:
+
+    p_(a,b)=N x^(-b) delta_(a+b,d),
+    ell_(a,b)=x^b g_a/N delta_(a+b,d),
+    m_(a,b)=x^b/N^2,
+    g_a=x^(1-N)Q^(-a).
+
+For EVERY real t, positive powers defined by their real logarithm give
+
+    (L^t tensor L^t)p=p,
+    ell(L^(-t) tensor L^(-t))=ell.                    (3)
+
+The marked row has the same identity on pair degree d. It is not an
+identity of the unrestricted row m. In an assembled original k-cup
+plat the exact integer-degree argument forces the final marked pair
+to have degree d after the ordinary caps are taken. Diagonal gauges
+preserve that argument. Thus (3) holds for the full marked source in
+its legitimate whole-network scope.
+
+More generally, choose arbitrary positive numbers A_(r,a) on the odd
+head of pair r and set the even-head entries to A_(r,d-b)^(-1).
+The product gauge G fixes p^(tensor k) and its original ordinary/marked
+co-source exactly. L^t on both heads is the special case (2).
+These are physical-head transformations; they do not identify a
+fusion-relative index with a physical one.
+
+For clarity, retain the proved original whole-source normalization
+from [the actual plat Gram theorem](actual_plat_cup_cap_gram_support.md):
+
+    P_N=chi_N N^(k-1) <phi,W uhat>,
+    uhat=p^(tensor k)/||p^(tensor k)||,
+    phi=G_top^dagger uhat, ||phi||=||uhat||=1.           (4)
+
+Here G_top is the original unitary product of ordinary pivots; the
+marked pair has none. The external chi_N, framing and peripheral line
+are exactly those in that theorem. The gauge G just defined commutes
+with G_top and fixes uhat and phi. Therefore, for ANY two such endpoint
+gauges G_in,G_out,
+
+    <phi,G_out W G_in^(-1) uhat>=<phi,W uhat>.           (5)
+
+This provides a genuine source-preserving positive gauge freedom.
+It does not declare one isolated Gamma in a local five-point word
+removable; such a local replacement still needs its typed interfaces.
+
+## 2. Exact weighted Plancherel and the dual metric
+
+Let F be the normalized unitary finite Fourier matrix,
+F_(r,a)=Q^(ra)/sqrt(N). For a physical head vector v put
+
+    vhat_t=F L^t v,
+    H_t=F L^(-2t) F^dagger.
+
+Then exactly, for arbitrary v,w,
+
+    <v,w>=<vhat_t,H_t what_t>,
+    (H_t)_(r,s)=N^(-1)sum_a Q^((r-s)a)(N/|F_a|^2)^(2t). (6)
+
+H_t is positive definite. These are the compulsory dual norm weights
+of this factorial Fourier transformation. Flat Fourier energy of
+L^t v is a different norm from that of v. Equation (2) pairs the
+weights reciprocally on the original cap charge, explaining the
+source cancellation in (3); it does not make H_t the identity.
+
+The usual unitary Fourier changes can now be made at every physical
+wire, with all turns transported. In the G=L^t frame their original
+turn arrays are unchanged before the unitary Fourier transform.
+All interior inverse frames cancel literally. Thus this weighted
+duality extends to any signed original word and its doubled norm,
+including the marked pair, with no exponential source renormalization.
+
+The size of the weights remains explicit. Uniformly in a,
+
+    log L_a=2N J(a/N)+O(log N),
+    J(s)=integral_0^s log(2 sin(pi u))du.                (7)
+
+Hence (6) carries the full factorial dilogarithm action. It cannot
+be replaced by a flat positive trace merely because its source
+normalization is exact.
+
+## 3. A computable positive energy upper-bound hierarchy
+
+Partition a fixed original word into consecutive actual blocks
+
+    W=B_l ... B_1.
+
+Choose arbitrary positive diagonal tensor gauges G_j on all live
+physical heads between blocks; only the endpoint gauges are required
+to satisfy the paired-source condition of Section 1. Define
+
+    C_j=G_j B_j G_(j-1)^(-1).
+
+All factors, pivots, and sources in (4) remain original. From (5),
+ordinary Cauchy--Schwarz and submultiplicativity give the finite-N bound
+
+    |P_N| <= |chi_N|N^(k-1) product_j ||C_j||_op
+           <= |chi_N|N^(k-1) product_j ||C_j||_HS.       (8)
+
+This is not a largest-root or a favorable-source prescription.
+The right side is an explicit optimization problem in known original
+block matrices. At the finest partition the blocks are literal
+crossings, whose entries are given by the finite factorial formula.
+There is no unknown knot scalar in that objective.
+
+Write a diagonal gauge entry as exp(s_j(I)), where s_j(I) is the sum
+of its head log entries. Each summand in its logarithmic HS objective is
+
+    (1/2)log sum_(I,J) |(B_j)_(I,J)|^2
+                           exp(2s_j(I)-2s_(j-1)(J)).   (9)
+
+It is convex in every gauge logarithm: the Hessian of log-sum-exp is
+the positive covariance matrix of its exponent vectors. The paired
+endpoint conditions are linear equations in these same logarithms.
+No minimum-attainment hypothesis is needed to take the infimum in
+(8). The factorial choices in Section 1 are legitimate points of
+this feasible set, even when they depend exponentially on N.
+
+Merging neighboring blocks never worsens the best HS bound, since
+||AB||_HS <= ||A||_HS ||B||_HS with the intervening gauge cancelled.
+In particular an actual neighboring R R^(-1) block is exactly the
+identity, of polynomial HS norm N^k. Its exponential cost is zero.
+Thus one can perform exact signed-pair and other verified word
+reductions before taking norms, rather than charging their separate
+positive crossing energies. This is a constructive renormalization
+of those pairs with the original source retained.
+
+The same block principle applies to a local contraction containing an
+actual turn. In particular the defining complete ADO Markov calculation
+gives, for either sign with its own original zero-framing correction,
+
+    Tr_2[Rhat_+ (I tensor g)]=I,
+    Tr_2[Rhat_- (I tensor g)]=I.                       (9a)
+
+For arbitrary one-head exterior matrices A,B it follows that
+
+    Tr_2[(A tensor I) Rhat_sigma (B tensor I)
+                         (I tensor g)]=AB, sigma=+,-. (9b)
+
+No division by AB or by a knot period occurs. Thus a genuine curl
+subnetwork, including its original cap, can be replaced by the identity
+**before** forming its doubled positive block energy. Its doubled map
+is then the identity trace-preserving channel and has zero exponential
+cost. This works inside any larger knot word. It does not replace an
+unclosed crossing by a trace-preserving channel. More generally any
+verified exact local tensor contraction can be used as a block, with
+its original boundary source retained, before applying (8).
+
+The finest flat bound already proves an unconditional whole-period
+estimate. For a word of m crossings, the independently proved
+[actual crossing norm theorem](weighted_crossing_source_gap.md) gives
+
+    log||R_+||_HS=log||R_-||_HS
+                    =N v_8/(2pi)+O(log N).
+
+Tensoring with a fixed number of spectator identities adds only
+O(log N). All complete external lines in chi_N have polynomial
+magnitude. Therefore
+
+    limsup_(N->infinity) (2pi/N)log|P_N| <= m v_8.       (10)
+
+The same holds for the original reduced Kashaev scalar, since its
+complete modified-dimension factor is a known root phase divided
+by N. This is a crossing bound, not the desired sharp Vol(S^3-K)
+bound. The convex bound (8)--(9), including exact block reductions,
+is an operative way to improve it; no assertion is made that it
+has already reached the hyperbolic volume for a broad knot class.
+
+## 4. The remaining positive coherent sewing probability
+
+The precise cost of closure can be stated before any scalar-cut
+reduction. Let W act on one open head tensor an environment of
+dimension D=N^(b-1), and keep the original unitary environment pivot
+g. Group vec(W) by its open input/output pair and environment pair.
+Put
+
+    h_g=vec(g^dagger)/sqrt(D),
+    P_g=I_(open pair) tensor |h_g><h_g|,
+    C=Tr_env[W(I tensor g)].
+
+P_g is an orthogonal positive projector. Direct expansion of the
+matrix indices proves
+
+    ||C||_HS^2=D <vec(W),P_g vec(W)>.                   (11)
+
+This identity holds for nonscalar C. Under any unitary Fourier
+transform of the half-edge indices, BOTH vec(W) and h_g transform,
+and the right side is unchanged. It is not the same as replacing
+the projector by an identity or dephasing its channels.
+
+If the original cut is C=K_N I, the normalized projection probability
+on the free vectorized word is
+
+    p_g=N|K_N|^2/(D||W||_HS^2), 0<=p_g<=1.             (12)
+
+The positive source opening
+Pi=N g_1 E_d(Z_1Z_2)E_0(X) in
+[the exact cap Fourier theorem](actual_middle_wall_fourier_packet.md#5-the-original-affine-cap-is-a-charged-fourier-mode)
+satisfies ||(C tensor I)Pi||_HS^2=N||C||_HS^2 for arbitrary C.
+Thus it supplies a normalized local positive realization of (11),
+but leaves its exterior coherent projection in place.
+
+For a normalized single positive crossing (the unknot curl), C=I
+exactly. With b=2, (12) becomes the all-N identity
+
+    p_curl=||R_+||_HS^(-2),
+    log p_curl= -N v_8/pi+O(log N).                     (13)
+
+This uses the original residual twist and pivotal cap; they have not
+been reset. It explains why local positive energies can have a larger
+rate than the closed period. The block renormalization in Section 3
+is one exact way of contracting such source effects before bounding;
+it is not permission to discard the coherent probability for a
+general knot word.
+
+There is also a sharp restriction on improving a local block by a
+same-frame positive diagonal gauge. The actual balanced crossing is
+symmetric, R^t=R. For ANY positive diagonal D,
+
+    ||D R D^(-1)||_HS^2
+       =sum_(i,j)|R_(i,j)|^2 D_i^2/D_j^2
+       >=sum_(i,j)|R_(i,j)|^2=||R||_HS^2,              (14)
+
+by pairing i,j and j,i and using r+r^(-1)>=2. Fourier changes do not
+alter this norm. Thus isolated same-frame factorial scaling cannot
+remove the regular octahedral rate; an improvement must use actual
+coupled block contraction or a controlled whole-source estimate.
+
+## 5. Audit and current scope
+
+[The audit](../experiments/audit_actual_weighted_fourier_plat_energy.py)
+passes N=2,...,12. It checks exact factorial reflection, preservation
+of the original cup/cap and the correctly restricted marker for
+positive and negative real gauge powers, the non-flat dual Fourier
+metric, the nonscalar source projector identity, unitary transport
+of its coherent source, actual crossing symmetry, the local norm
+minimum, and the normalized unknot-curl probability. Eight complete
+original four-head plats additionally test the literal ordinary plus
+full marked source, its whole-degree reduction, unequal paired
+endpoint gauges, arbitrary internal gauges and the positive block
+energy bound. The extra external Cartan/framing lines are common
+unit phases on both sides of those source comparisons.
+[Saved results](../experiments/actual_weighted_fourier_plat_energy_results.json).
+
+The new constructive point is the original-source-preserving paired
+factorial gauge and its explicit positive convex energy hierarchy.
+The sharp geometric estimate for that hierarchy, or a direct bound
+on its remaining coherent sewing probability, has not been proved.
+No global geometric coefficient or hyperbolic-volume lower bound
+is inferred here.

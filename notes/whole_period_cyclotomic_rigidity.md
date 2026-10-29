@@ -1,0 +1,522 @@
+# Whole algebraic comparisons and their cyclotomic jets
+
+Research note, 27 October 2026. This follows the user's proposal that
+Rivin's optimizer and quantum restrictions should be treated as parts
+of a whole period object. It proves a finite reconstruction theorem
+for algebraic comparison maps, including a quantum-normal direction
+which the earlier root-only source base does not record. The argument
+is exponent separation, Vandermonde inversion and a finite-algebra
+norm. No published rigidity or arithmetic module theorem is assumed.
+
+This does not construct the missing comparison of the actual selected
+Kashaev period with the geometric regulator period. The volume
+conjecture remains unproved. In particular, the theorem below requires
+a fixed algebraic presentation or a bounded space of possible maps;
+it does not assert algebraicity of a quantum period from its classical
+saddle.
+
+## 1. What is algebraic about the Rivin optimum
+
+Let X be the nondegenerate gluing variety of a positive complete ideal
+triangulation, with shapes z_j, marked meridian M and longitude L.
+Its equations are monomial equations in z_j and 1-z_j, with integer
+exponents and the recorded peripheral signs. They define an algebraic
+variety over Q after inverting the shape denominators. Use the
+normalized geometric component, with its selected complete lift.
+
+The [positive rigidity proof](geometric_rigidity_and_cyclic_source.md)
+shows that its marked-meridian Jacobian is invertible at the complete
+geometric point. Consequently:
+
+* the complete shapes are algebraic numbers;
+* the local shape branch is algebraic over Q(M), and hence over the
+  function field of its marked A-curve;
+* after shrinking a suitable algebraic neighborhood and retaining the
+  chosen place, the branch is an etale algebraic germ over M;
+* every nilpotent thickening of that chosen place has a unique shape
+  lift once its meridian lift is specified.
+
+The last assertion follows directly by Newton lifting. At each square-
+zero extension the correction is the unique solution of J delta z=-r,
+where J is the invertible gluing Jacobian and r is the residual. Repeating
+this through powers of the nilpotent ideal proves existence and
+uniqueness, with no convergence assertion needed.
+
+The [Rivin calculation](rivin_flow_and_quantum_source.md) independently
+proves strict concavity and stationarity at this geometric point.
+Thus positivity selects the same branch among the algebraic solutions.
+At the complete lift M=+1 or -1; the specified longitude sign and
+fundamental-class mark are still retained. M and L are not independent
+parameters on this curve.
+
+These statements concern shapes. Their arguments, logarithms and
+dilogarithm periods are not thereby algebraic functions. For example,
+the algebraic Gaussian coefficient and the action exp(S/h) are distinct
+parts of the period. The already marked action has
+
+    Im S_complete=Vol(X)/2,   h_N=pi*i/N.
+
+This gives log|exp(S_complete/h_N)|=N Vol(X)/(2pi). Establishing its
+contribution to the actual selected finite period is the remaining
+quantum assertion.
+
+For coverage, [Futer--Gueritaud, 1004.0440](https://arxiv.org/abs/1004.0440)
+describes the Casson--Rivin angle polytope and its critical-point
+criterion. Our rigidity and concavity proofs are in the linked notes.
+
+## 2. Retain both power coordinates before taking quantum jets
+
+Work over any characteristic-zero coefficient field k. Put
+
+    B=Spec k[t,t^(-1),q^(+/-1),M^(+/-1),v^(+/-1),w^(+/-1)].
+
+Here t=1/N on the N-th restriction, and the power graphs are
+
+    Gamma_N: t=1/N, v=q^N, w=M^N.                 (2.1)
+
+The actual cyclotomic point on this graph is
+
+    q=q_N=exp(pi*i/N), M=1, v=-1, w=1.           (2.2)
+
+The other meridian lift is handled in the same way. The finite phase
+cover of [the source base](uniform_frobenius_source_base.md) can be
+retained component by component, using levels in its specified residue
+class modulo four. None of its phases is reset here.
+
+The exact meridian shift on B is
+
+    sigma(q)=q, sigma(M)=qM, sigma(v)=v,
+    sigma(w)=vw, sigma(t)=t.                     (2.3)
+
+It preserves every Gamma_N. The two relative logarithmic derivatives
+which preserve these graphs are
+
+    D_q=q partial_q+t^(-1)v partial_v,
+    D_M=M partial_M+t^(-1)w partial_w.           (2.4)
+
+They commute and satisfy the exact identities
+
+    D_M sigma=sigma D_M,
+    D_q sigma=sigma(D_q+D_M).                    (2.5)
+
+These follow by checking the five coordinate generators and extending
+by the product rule. Their pullbacks to Gamma_N are exactly q d/dq
+and M d/dM. Equivalently, the power coordinates are marked horizontal
+sections of the algebraic relative equations
+
+    t dlog v=dlog q,   t dlog w=dlog M,           (2.6)
+
+with t fixed. Equations (2.6) specify a connection; their horizontal
+sections need not be rational functions for nonintegral 1/t.
+
+Setting v=-1 recovers the earlier root-only action w->-w. That closed
+slice is not preserved by D_q: D_q(v+1)=-1/t on it. In particular,
+replacing q^N by -1 before differentiating destroys quantum-normal
+information. The root values of v+1 are zero at every level, while
+their first quantum derivatives are -N.
+
+This is a refinement of the old source base, not an assertion that
+an N-dimensional cyclic Weyl representation extends off its root.
+The actual whole q-germs must still be supplied by the specified
+color/quantum-period construction.
+
+## 3. Finite cyclotomic jets detect a whole bounded presentation
+
+Write a Laurent polynomial on B in the form
+
+    P=sum_(a,b,c,d) p_(a,b,c,d)(t) q^a v^b M^c w^d,
+    deg_t p_(a,b,c,d)<=D.                        (3.1)
+
+A Laurent power of t can be cleared first. Let S be the number of
+distinct pairs (a,b), R the number of distinct pairs (c,d), A the
+span of the a exponents, and C the span of the c exponents. These
+are bounds of the fixed presentation, independent of N.
+
+**Finite reconstruction theorem.** Choose D+1 distinct positive
+integers N>max(A,C). At each chosen N, suppose
+
+    (D_q^i D_M^j P)(1/N,q_N,1,-1,1)=0
+            for 0<=i<S, 0<=j<R.                 (3.2)
+
+Then P=0 on B. The same conclusion holds if these jets vanish for
+infinitely many sufficiently large N. The number of derivatives is
+independent of N. No lower bound on the algebraic degree of q_N is
+needed, and k need not be a number field.
+
+**Proof.** On Gamma_N the exponents are
+
+    lambda_(a,b)=a+Nb,   mu_(c,d)=c+Nd.
+
+The lambda values are pairwise distinct when N>A: equality with
+b!=b' would give N<=|a-a'|. The same argument separates the mu
+values when N>C. Fill missing pairs with zero coefficients and form
+the S by R matrix A_N of coefficients p_(a,b,c,d)(1/N).
+
+Let V_lambda and V_mu be the Vandermonde matrices with rows indexed
+by derivative order, and put W=diag(q_N^lambda). The rectangular jet
+matrix in (3.2) is exactly
+
+    J_N=V_lambda W A_N V_mu^t.                   (3.3)
+
+All three outer factors are invertible: characteristic is zero,
+the exponent lists are distinct, and q_N!=0. Hence J_N=0 implies
+A_N=0. Every p coefficient vanishes at D+1 distinct values 1/N;
+its degree bound makes it identically zero. This proves the theorem.
+
+If the full meridian family rather than its M=1 jets is known, its
+distinct M exponents can be compared directly; the R meridian jets
+are then unnecessary. Sparse supports can also reduce the rectangular
+test, but (3.2) gives a simple uniform sufficient bound.
+
+The theorem applies to rational residuals by clearing their fixed
+denominators. At a pole one must specify the regularized whole map
+and lattice before testing, rather than separately evaluating a
+vanishing numerator and denominator. Increasing the allowable support
+increases the required jet bound. For example (v+1)^s defeats all
+quantum jets of order less than s, and a polynomial in t vanishing
+at the tested levels defeats an insufficient number of level tests.
+
+The same proof handles any fixed number of power coordinates, including
+q^(N^2) from Gaussian phases. Write v_j=q^(N^j), w_j=M^(N^j), and use
+D_q(v_j)=t^(-j)v_j, D_M(w_j)=t^(-j)w_j. Exponents are now fixed-degree
+integer polynomials in N. Distinct such polynomials have distinct
+values for all sufficiently large N. The same two Vandermonde matrices
+and interpolation in t apply, with a fixed bound on the excluded levels.
+This retains a whole chosen phase lift; a phase's values at the roots
+alone do not determine its quantum-normal derivatives.
+
+## 4. The same detection works on a fixed algebraic shape cover
+
+Let A be a finite free integral algebra over a localization of the
+coordinate ring of B, with fraction field K. A fixed algebraic
+shape branch is of this form after suitable localization. Consider
+a regular element f of A. At each tested cyclotomic point, choose
+an etale place, so it lifts uniquely to its two-variable formal
+q,M neighborhood, as in Section 1.
+
+Take the norm n(f), the determinant of multiplication by f on A.
+It has a fixed rational presentation on B. If the chosen lift of
+f vanishes in the rectangular jet ring, then the same is true of
+n(f). Indeed that etale place splits off a rank-one factor after
+formal base change, and multiplication determinants factor as
+
+    n(f)=f_selected * det(m_f on the complementary factor).
+
+The complementary determinant is regular. Apply Section 3 with
+support and degree bounds of the cleared norm. It follows that
+n(f)=0 identically. Since K is a field, the norm of a nonzero
+element cannot be zero, and hence f=0.
+
+For a finite algebra with several integral components, apply this
+argument on the marked component; one selected component does not
+test all the others. A rational f must first have its poles cleared
+in the prescribed lattice. A finite number of shifted algebraic
+expressions can be treated in their finite compositum. We do not
+assume that the classical shape cover itself admits a finite
+algebraic lift of every q-shift.
+
+Thus algebraic shape coefficients do not require an independent
+unbounded list of Taylor coefficients. Nilpotent restrictions are
+faithful tests of a fixed whole comparison once its presentation
+and chosen algebraic place have been supplied.
+
+## 5. Consequence for a pointed quantum comparison
+
+Suppose two specified finite-rank quantum objects have algebraic
+coefficient matrices, with their actual sources, cuts and integral
+lattices. Suppose a proposed comparison C and proposed inverse E
+are given on a fixed algebraic presentation. The intertwining,
+inverse, source and cut identities have residuals such as
+
+    C B_1-B_2 sigma(C),   CE-I,   EC-I,
+    C s_1-s_2,   ell_2 C-ell_1.                  (5.1)
+
+If differential period connections are part of the specified objects,
+their residuals must also be checked:
+
+    D_i C+C Omega_(1,i)-Omega_(2,i) C,
+                      i=q,M.                    (5.2)
+
+The maps C and E must be regular as maps of the prescribed lattices
+on their marked charts. This condition retains the peripheral zero
+and pole factors; it is not inferred from nonzero fiber values.
+Each cleared residual in (5.1)--(5.2) has a fixed algebraic norm.
+The finite jet test with the resulting bounds therefore proves all
+these identities for the whole objects. This is a finite certificate
+criterion for an already constructed comparison, not an existence
+theorem for C or E.
+
+In particular, equality of all fixed-root connection restrictions
+would not test a term proportional to dq. The quantum-normal jets
+and D_q in (5.2) are what test that direction. A classical optimizer,
+or a levelwise Hilbert-90 trivialization without bounded presentation,
+does not supply (5.1)--(5.2).
+
+### A bounded family of jet intertwiners also proves generic existence
+
+There is an existence consequence which does not require proposing C
+in advance. It has a substantial uniformity hypothesis, stated here.
+Let F=k(q,t,v), and fix a finite-dimensional F-space of matrix
+functions of M,w, with a fixed Laurent support and denominator. Use
+this as the space of possible comparisons. The matrix entries of
+the two objects, their sources and cuts have fixed algebraic
+presentations. Include the meridian differential equation if it is
+specified and its unknown coefficients are constant for D_M.
+
+For rational coefficient objects, expanding the difference, source,
+cut and meridian identities in this fixed space gives a finite
+affine linear system
+
+    H(q,t,v) u=b(q,t,v).                          (5.3)
+
+All unknown coefficients u are in F; sigma fixes F. For algebraic
+coefficient objects, a system of the form (5.3) is an additional
+descent requirement: testing one algebraic place alone does not imply
+coefficientwise equality in a generic algebraic basis. The theorem
+here assumes the displayed finite system and jet solutions to it.
+Clear the fixed denominators of (5.3). The assertion concerns regular charts
+of the prescribed lattices, so the candidate map denominators are
+units on the test germs. Other boundary factors need their stated
+lattice charts first.
+
+Let r be the generic rank of H. Take bounds for the t degrees and
+q,v supports of every r-minor of H and every (r+1)-minor of [H|b].
+Such bounds are finite and can be obtained before choosing a
+comparison. Use D+1 levels for their t-degree bound and B quantum
+jets for their support bound as in Section 3. Use enough meridian
+jets to recover the coefficients in (5.3).
+
+**Bounded-comparison existence theorem.** Suppose at all these levels
+there are solutions in the fixed comparison space to order B in the
+quantum parameter, satisfying the pointing identities to that order.
+Suppose their leading matrices are invertible as rational meridian
+matrices. Then there is a generically invertible comparison in that
+space over F satisfying all of (5.3) exactly.
+
+Here order B means equality modulo epsilon^B, where
+q=q_N(1+epsilon), v=-(1+epsilon)^N. B is the number of jets, so the
+orders tested are 0 through B-1. It is enough to take B at least
+the largest number of distinct q,v exponent pairs in the stated
+minors. The size of the bound depends on the fixed comparison
+space, not on N. Maps at different levels need not be interpolated
+or assumed coherent beforehand.
+
+**Proof.** A jet solution makes every (r+1)-minor of [H|b] vanish
+modulo epsilon^B. Indeed its last column is a linear combination
+of the H columns plus a remainder of order B, and every
+(r+1)-minor of H is identically zero. Section 3, now with no
+meridian variables, makes these augmented minors identically
+zero. Therefore (5.3) is generically consistent and has a rational
+affine family of solutions, computable by Gaussian elimination.
+
+Choose a nonzero r-minor Delta of H. At one of the tested levels
+its whole power-graph pullback is nonzero; otherwise reconstruction
+would give Delta=0. Its order k at q_N is at most S_Delta-1 by
+the same sparse Vandermonde argument. In particular k<B.
+
+At that level retain the free coordinates of a jet solution and
+solve the pivot equations exactly over the Laurent-series field
+in epsilon. The pivot inverse has pole order at most k, so the
+correction is O(epsilon^(B-k)). It preserves the leading matrix.
+The exact specialized affine solution family consequently contains
+an invertible matrix. Its determinant is thus not the zero
+polynomial in its free parameters. The generic rational affine
+family has the same property. Since F is infinite, free parameters
+can be chosen in F outside that determinant's proper zero locus.
+This gives the claimed invertible rational comparison.
+
+For r=0 the same argument first gives b=0; an invertible matrix
+in the proposed space can be chosen directly. The zero-size
+pivot has order zero.
+
+This is an existence theorem for the difference/meridian/pointing
+identities encoded in (5.3). A q-direction period-connection identity
+contains derivatives of the unknown coefficients and is not an
+affine algebraic system of this form. It must be established for
+the constructed comparison by (5.2), or by a separate flatness and
+uniqueness argument with its hypotheses proved. Nor does generic
+invertibility prove regularity of C and its inverse on every
+boundary chart.
+
+There is one useful sufficient condition for the q-connection check.
+Suppose the two supplied period connections and semilinear shifts obey
+
+    nabla_M T=T nabla_M,
+    nabla_q T=T(nabla_q+nabla_M),                 (5.4)
+
+and their marked sources satisfy nabla_q s_i=0. Suppose s_1 is cyclic
+for T_1. If C already intertwines T and nabla_M and sends s_1 to s_2,
+then it automatically intertwines nabla_q. Indeed
+
+    E=nabla_(q,2) C-C nabla_(q,1)
+
+is linear over the coefficient field; (5.4) and the meridian identity
+give E T_1=T_2 E. Also E s_1=0. Hence E kills every T_1^j s_1, which
+span the module, and E=0. The same proof works if nabla_q s_i is a
+specified common expression in T_i,nabla_(M,i),s_i already respected
+by C. Existence of these connections, their compatibility and this
+source law are hypotheses; they are not inferred from an A-symbol.
+
+The unresolved knot-specific input is a bounded comparison space
+and its sufficiently deep source-preserving jet intertwiners.
+Classical etaleness alone does not provide them. If that input is
+proved, however, generic algebraic existence follows from the
+finite rank argument above; a comparison matrix need not be guessed
+from a list of knot examples.
+
+The subsequent [divisor-flow descent theorem](cyclotomic_divisor_descent.md)
+supplies such a bound for a stated rank-one class. If the comparison
+coefficient has a fixed product of linear factors in known q-shift
+orbits, equality of its full cyclic norm characters at every large
+level forces zero divisor charge in each orbit. A finite cumulative
+flow then constructs one rational generic gauge with an explicit
+degree bound. No bounds for the separate levelwise gauges are
+assumed. A second theorem treats moving algebraic zeros and poles
+under explicit unramified and nonresonance hypotheses, using uniqueness
+of exponential sequences with meromorphic coefficients. It also records
+an exact half-root alias counterexample and a direct construction of
+a nonzero actual annihilator over Q=q^2. Establishing the comparison
+line's stated hypotheses and norm compatibility remains necessary.
+
+## 6. Relation to the existing work and the volume target
+
+The earlier [uniform source base](uniform_frobenius_source_base.md)
+already proves whole-root-graph Zariski density for fixed rational
+functions of q,M,M^N and the finite phases. The
+[all-level period proof](all_level_a_period.md) already uses sparse
+Vandermonde multiplicity bounds for singular companion steps.
+The addition here is the simultaneous power-coordinate base for
+q^N and M^N, its differential/shift compatibility, and the finite
+reconstruction of whole algebraic maps from both quantum and
+meridian jets, extended to marked etale shape covers by a norm.
+The bounded-comparison theorem further gives generic existence from
+jet solutions in a fixed finite comparison space, by rank minors
+and a controlled pivot lift, without a precomputed matrix.
+No novelty claim is made for these elementary algebraic arguments.
+
+This supplies a rigorous part of the proposed functions-before-jets
+approach. The actual missing construction is the whole pointed
+quantum comparison, with its period marking. Rivin optimization
+and algebraic gluing supply its geometric place; they do not by
+themselves algebraize the quantum period or choose its global source.
+
+The [central normalization theorem](algebraic_central_normalization.md)
+already proves that a nonzero factor from a fixed finite algebraic
+central presentation has log norm O(log N), after whole-germ
+specialization. Thus a comparison of that type would have controlled
+normalization. Neither its existence nor the actual period's
+geometric exponential component is inferred here. The action and
+the nonzero algebraic principal density are established in the
+geometric notes; their selected finite-period contribution remains
+the outstanding theorem.
+
+[Exact audit](../experiments/audit_whole_period_rigidity.py).
+[Results](../experiments/whole_period_rigidity_results.json).
+
+Reproduce with:
+
+    python3 experiments/audit_whole_period_rigidity.py
+
+The subsequent [full rank-one proof](full_rank_one_cyclotomic_descent.md)
+removes the earlier unramified and nonresonance restrictions for
+rational Q-coefficients. Weighted exponential--Puiseux uniqueness
+detects all moving divisor orbits, including poles tending to zero
+or infinity at Q=1. The
+[additive/unipotent extension](additive_unipotent_cyclotomic_descent.md)
+then treats source differences and upper triangular rational
+comparison systems. Its generic gauge is constructed from whole
+cyclic transport, without a supplied bound for unrelated levelwise
+gauges. The actual comparison's transport identities and its
+source/cut lattice remain inputs rather than consequences of
+classical etaleness.
+
+## 7. Actual clock transport requires functions before finite evaluation
+
+There is now an exact instance of this distinction on the ORIGINAL
+high-color source. Put C_Q=Q^S Z^R, Z=Q^N, with Frobenius index
+0<=R<=N. Its actual whole divided matrices e_q,f_q obey
+
+    e_q C_Q=Z C_Q e_q,    f_q C_Q=Z^(-1) C_Q f_q.
+
+Their nonzero interior arrows are units at the marked root. Let
+e_q^dagger,f_q^dagger be their finite inverse arrows, retaining
+the endpoint projections P_0,P_top. Then
+
+    e_q^dagger e_q=I-P_0,    f_q^dagger f_q=I-P_top.
+
+For a retained rational function g whose denominators are invertible
+at BOTH C_Q and Z C_Q, the endpoint-completed current is exactly
+
+    [-e_q^dagger[e_q,g(Z C_Q)]
+       +P_0 f_q^dagger[f_q,g(C_Q)]]/(1-Z)
+                  =[g(C_Q)-g(Z C_Q)]/(1-Z).             (7.1)
+
+The proof and original-matrix checks are in
+[the whole Jackson-current theorem](endpoint_completed_normal_clock_euler_current.md).
+The quotient is regular at Z=1 and gives C g'(C). The shifted
+argument in the first commutator is essential. Keeping only g(C_Q)
+does not specify (7.1): the finite evaluation kernel need not be
+preserved by g(x)->g(Zx).
+
+For example, on one head string set c=Q^s and
+
+    p_N(x)=product_(R=0)^N(x-c Z^R).
+
+Then p_N(C_Q)=0 on that string, whereas
+
+    p_N(Z C_Q)=c^(N+1) Z^[N(N+1)/2]
+                    product_(k=1)^(N+1)(Z^k-1) P_top.    (7.2)
+
+After division by 1-Z its first nonzero normal order is N.
+Consequently every fixed normal depth eventually misses this
+endpoint. The degree of p_N grows with N, so this example respects
+the FIXED-presentation hypothesis of Section 3. It does not contradict
+the independent bounded-lattice Mellin uniqueness theorem either.
+
+[The function-algebra audit](whole_clock_function_algebra_and_endpoint_extension.md)
+also proves the general algebraic reason: for generic Z of infinite
+multiplicative order, the Laurent function algebra has no nonzero
+proper finite-codimension ideal preserved by x->Zx. Thus a whole
+function algebra with its relative endpoint data is the appropriate
+object for this current; a finite functional-calculus quotient loses
+part of its transport. At the cyclotomic fiber the finite matrix
+representation remains valid.
+
+The same audit supplies an explicit positive construction. Over
+R=k[[delta]], Z=1-delta, take the monic spectral lattices
+
+    A_L=R[x,x^(-1)]/product_(r=0)^L(x-cZ^r).
+
+They are free of rank L+1, and their whole Jackson maps give an
+exact primitive sequence
+
+    0 -> R*1 -> A_L -> A_(L-1) -> 0.
+
+One extra endpoint per current suffices. In their Newton bases the
+evaluation lattice has exact Smith factors 1,delta,...,delta^L;
+the root algebra is the confluent (x-c_0)^(L+1) jet algebra.
+Thus finite ambient matrix evaluation and its integral function
+lattice carry different root data. This establishes flatness and
+solvability for this clock complex. The full pointed knot/geometric
+comparison is a further complex with its own flatness condition.
+
+The source has a compatible global
+[P1/Serre model](global_frobenius_cech_source_and_endpoints.md)
+and an [actual relative interval](actual_frobenius_relative_endpoint_period.md).
+Its retained pairing density gives a rational whole comparison of
+the interval co-source with a normalized uniform row. These are
+explicit source constructions before taking any normal jets.
+The full braid coefficient currents and their Gaussian pushforward
+must still respect them. In particular an abstractly matching Borel
+action, or agreement of its root two-form, does not supply that last
+intertwining identity.
+
+At the finite cut a further
+[whole degree-elevation map](degree_elevation_actual_head_ward_map.md)
+now supplies such a current/co-source comparison for the actual
+two-row head K/F complex. Its explicit matrix formula and retained
+whole diagonal gauges preserve the image complex, while an explicit
+trace homotopy carries the original cut row. The map is linear and
+not multiplicative; equality of this cut complex does not assert
+transport of the full ordered crossing network or its geometric
+relative period.

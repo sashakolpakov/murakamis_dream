@@ -1,0 +1,471 @@
+# The closed-braid period line and the Alexander divisor
+
+Research note, 26 October 2026. This globalizes the local
+[regular holonomy line](regular_holonomy_braiding.md) to an admissible
+closed-braid fixed-point scheme. It supplies a line and a literal cut
+functional, whose nilpotent restriction is the original ADO period.
+It proves an exact equality with that period on upper triangular
+nonabelian reducible families, by quantum weight descent.
+It also identifies the normal deformation equations of the abelian
+representation family. These are classical Alexander equations.
+They explain where a continuation from that family could reach a
+nonabelian component, and why the formal neighborhood of the actual
+root augmentation alone cannot reach complete hyperbolic holonomy.
+
+No global Markov-normalized geometric invariant, quantum meridian
+source extension, or volume theorem is inferred. The Alexander
+divisor below is a divisor in the classical representation problem;
+it is not asserted to divide a specified quantum A-operator.
+
+## 1. The admissible fixed-point scheme
+
+Let beta be a braid on b strands whose closure is a knot K. Fix
+q=exp(pi*i/N), Q=q^2, N>=2. Use unrestricted quantum sl_2, the
+regular splitting modules, and the central parameters of the preceding
+note. In particular use balanced variables
+
+    k=K^N, e=rho^N E^N, f=-rho^N F^N,
+    k+k^(-1)+ef=-C_N(Omega), rho=q-q^(-1).
+
+Each checked rational algebra automorphism Psi_i=tau_i composed with
+r_i preserves the iterated coproduct. The local identities imply
+the braid relations. Its center-point map is the inverse Hurwitz
+transport, after the recorded Borel prefix change. Account for the
+reversal of composition under pullback: the center map of the actual
+operator word is the inverse of its positive classical braid action.
+They have the same fixed-point scheme.
+
+Let Z_beta be this center fixed-point scheme, also imposing the
+individual Casimir identifications. Restrict to the open charts on
+which every central divisor used by the word and its inverse is a
+unit. Pass to a cover choosing K-eigenvalue roots and the regular
+splitting charts. This is admissibility, not a choice of a new state.
+At the actual augmentation the roots and all word charts extend
+uniquely as formal germs. At other points the covers, closing
+identifications and their transitions must be retained.
+
+The explicit prefix/Gauss calculation in the
+[marked braid note](marked_braid_holonomy.md) identifies the central
+fixed equations with the braid presentation of the knot group. In
+the root convention the meridians are
+
+    mu_j=delta B_(-,j-1)^(-1)G_j B_(-,j-1),
+    delta=(-1)^(N-1),
+    G_j=[[k_j,e_j],[k_j f_j,k_j^(-1)+e_j f_j]].      (1.1)
+
+The constant delta leaves the Hurwitz conjugation rules unchanged.
+At the actual Kashaev color, k_j=delta, e_j=f_j=0, Omega_j=-2,
+and every mu_j is I. Near this point the K-root cover and Casimir
+branch are etale: C_N'(-2)=delta N^2 is a unit. Thus the completed
+central fixed scheme is precisely the completed SL_2 representation
+scheme at the trivial representation, in these coordinates.
+
+## 2. A global Hom line and a cut functional
+
+On the indicated splitting cover let V_i be the rank-N regular module
+and W=V_1 tensor ... tensor V_b. The full tensor central quotient
+is End(W), by the explicit matrix-unit argument already proved.
+Because the center and Casimirs are fixed, Psi_beta induces an
+automorphism of this matrix algebra. Define
+
+    L_(beta,N)={J in End(W):
+                 rho(Psi_beta(a))J=J rho(a) for all a}.          (2.1)
+
+This is an invertible module: two splitting representations of the
+same matrix algebra are locally intertwined by an invertible matrix,
+and all such matrices differ by a scalar. To see this without a
+Skolem--Noether citation, choose matrix units E_rs in the target.
+Their images under the other action give rank-one projectors and
+arrows. Choose a frame of the first projector's image and apply
+the arrows to obtain the columns of an invertible intertwiner.
+Every other intertwiner is determined by its first column, proving
+the rank-one assertion and the scalar transition functions.
+Invertible elements of (2.1) form its G_m frame torsor.
+
+Since Psi_beta fixes the diagonal coproduct, every J in (2.1)
+commutes with the diagonal unrestricted quantum-group action.
+Put g=K^(1-N). At the specified root S^2=Ad_g and g is group-like.
+Take the actual right pivotal trace on strands 2,...,b:
+
+    ptr(J)=Tr_(V_2...V_b)((I tensor g_2 tensor ... tensor g_b)J).
+                                                            (2.2)
+
+This is an endomorphism of V_1 as a quantum-group module. Here is
+a direct check of the closure rule. The ordinary dual has action
+u.phi=phi composed with S(u). The coevaluation sum w_j tensor w_j^*
+is invariant. The opposite evaluation is w tensor phi -> phi(gw):
+its invariance is the identity
+
+    sum S(u_2)g u_1=epsilon(u)g,
+
+which follows by substituting g u_1=S^2(u_1)g and applying S to
+sum S(u_1)u_2=epsilon(u). Inserting these two invariant maps around
+J gives exactly (2.2). Hence the cut commutes with E,F,K.
+
+The splitting quotient on V_1 is the full matrix algebra, whose
+commutant consists of scalars over the base ring. Therefore
+
+    ptr(J)=ev_(beta,N)(J) I_(V_1),
+    ev_(beta,N):L_(beta,N) -> O_(Z_beta).            (2.3)
+
+This constructs a global scalar-valued period functional on the
+line, with the source cover and matrix-unit transitions retained.
+It does not prove that the functional is nonzero at a particular
+geometric point. A line frame is invertible; its evaluated period
+can vanish. These are different assertions.
+
+The local determinant-normalized crossing frames give a specified
+formal frame of (2.1) at the actual augmentation and obey braid
+relations. The intrinsic line and functional make sense on the
+admissible fixed scheme, without extending that one frame to a
+canonical global section. Global root phases and closing maps
+are still part of a proposed comparison.
+
+## 3. Exact recovery of the actual ADO germ
+
+On the nilpotent meridian section all colors are equal:
+
+    E_i^N=F_i^N=0, x_i=x_0 M, x_0=q^(N-1).
+
+Every checked center step fixes this tuple. Write a=N-1 and R^0
+for the actual uncheck R with common Cartan factor removed. The
+previously constructed local frame is
+
+    R_bar=x^a q^(-a^2/2)R^0,
+    theta_bar=q^(-a^2/2).
+
+For a word of writhe w let J_beta be the product of these checked
+frames and their inverses. The scalar change of R^0 is precisely
+the ratio of theta_bar to its actual residual twist x^(-a).
+Consequently the crossing changes cancel the zero-framing changes:
+
+    theta_bar^(-w) ev_(beta,N)(J_beta)=F_N(M).       (3.1)
+
+This is an exact equality of the original reduced ADO germs, for
+every knot braid in the actual nilpotent section. It is not a
+choice of a different holonomy-character invariant. In particular
+the value at M=1 is the already fixed Kashaev invariant.
+
+The full period remains d_N(M)F_N(M), with
+
+    d_N(M)=i^(N+3)M^(N-1)/S_N(M^2),
+    S_N(Y)=1+Y+...+Y^(N-1).
+
+Equation (3.1) does not erase this function or replace it by its
+value i^(N+3)/N. Nor does it prove a Markov normalization off the
+nilpotent section; that would require compatible global turn/cap
+and framing data. The construction in Section 2 is for a specified
+braid and its admissible holonomy fixed scheme.
+
+The [subsequent geometric-root audit](geometric_root_holonomy_cut_nonvanishing.md)
+now proves generic nonvanishing of this ordinary cut section on
+the figure-eight geometric Riley component for every N. A positive
+actual ADO anchor at a nonabelian reducible attachment and direct
+irreducibility prove that assertion. Exact complete-point tests
+also certify nonzero values at N=2,3,4 in both embeddings. Zero
+quantum dimension alone therefore does not force the one-cut
+section to vanish. This does not imply complete-point nonvanishing
+at every level, a general-knot result, or equality of those
+interior central data with the original augmentation below.
+
+## 4. Uniform formal rigidity at the actual augmentation
+
+Let A be a local Artin C-algebra with maximal ideal m. Any knot-group
+representation with all meridians mu_i congruent to I modulo m has
+all its meridians equal. Thus it factors through the abelianization.
+
+Here is an elementary proof that also controls nonreduced fibers.
+Use a Wirtinger presentation. At a crossing the outgoing understrand
+meridian is a conjugate of the incoming one. Suppose all meridians
+are equal to mu_1 modulo m^r. Write mu_i=mu_1+D_i, D_i in m^r,
+and mu_1=I+X, X in m. Then
+
+    [mu_i,mu_j] as an additive matrix commutator lies in m^(r+1),
+
+because [X,D_i], [X,D_j] have that order and [D_i,D_j] has order
+2r>=r+1. Multiplying by the inverse matrices shows that each
+Wirtinger conjugation changes its understrand meridian only modulo
+m^(r+1). The understrand arcs form one connected cyclic sequence
+for a knot. All meridians therefore equal mu_1 modulo m^(r+1).
+The induction starts at r=1 and terminates when m is nilpotent.
+
+Conversely choosing any mu_1 in SL_2(A) congruent to I and sending
+every meridian to mu_1 satisfies all relations. The two constructions
+are inverse on all Artin test rings, hence
+
+    completed Rep(K) at trivial = completed SL_2 at I.           (4.1)
+
+This is a scheme-level assertion, including infinitesimal thickenings.
+For complete separated local bases it follows by passage to the
+Artin quotients. Since the representation scheme is of finite type,
+faithful flatness of local completion also gives a Zariski neighborhood
+of the trivial representation consisting entirely of abelian ones.
+
+Consequently the complete hyperbolic representation cannot be reached
+inside this formal germ of the closed-braid period line. Its class
+in a positive ideal triangulation is still meaningful on the geometric
+component elsewhere in the representation scheme. The existence of
+the line (2.1) at both types of points does not identify its periods
+across those components.
+
+## 5. The normal equations along the abelian family
+
+The precise classical attachment divisor can also be derived directly.
+Fix an abelian representation mu_i=D(s)=diag(s,s^(-1)). Write a
+first-order variation as mu_i=(I+X_i)D(s) and fix X_1=0. At a
+Wirtinger relation mu_k=mu_j mu_i mu_j^(-1), linearization gives
+
+    X_k=Ad_D X_i+(I-Ad_D)X_j.                      (5.1)
+
+On an eigenspace of Ad_D of eigenvalue t this is
+
+    x_k-t x_i+(t-1)x_j=0.                         (5.2)
+
+These are the ordinary Alexander equations, with the sign and
+meridian square now explicit. They can equally be obtained from
+the braid action. For the positive Hurwitz step
+(mu_1,mu_2)->(mu_1^(-1)mu_2 mu_1,mu_1), its derivative is
+
+    [[1-t^(-1), t^(-1)],[1,0]],
+
+and the inverse step has block [[0,1],[t,1-t]]. The independent
+free-word/Fox calculation gives the same matrices.
+
+For clarity, the Alexander interpretation needs no deformation
+theorem as input. In a deficiency-one meridian presentation the
+infinite cyclic cover has d_1=(t-1,...,t-1). The abelianized Fox
+matrix of the b-1 relators maps into ker(d_1), which has basis
+e_j-e_1, j>1. Its matrix in that basis is the deleted generator/
+relator minor in (5.2), or equivalently of I-B_beta(t). Thus its
+cokernel is the ordinary Alexander module, and its determinant
+is Delta_K(t) up to the recorded Laurent unit. At t=1 the braid
+matrix is the permutation of the strands. For a knot it is one
+cycle, so the deleted cofactor of I-B_beta(1) is +/-1. This also
+proves Delta_K(1)=+/-1 in this presentation.
+
+On sl_2, Ad_D has weights 1,s^2,s^(-2). The determinant of the
+normalized normal Jacobian is therefore
+
+    unit(s)*Delta_K(1)Delta_K(s^2)Delta_K(s^(-2)).   (5.3)
+
+If it is nonzero, the abelian family is the entire local formal
+representation scheme. Indeed fix the first meridian, now allowed
+to vary over an Artin base, and compare any solution with the
+abelian solution having that first meridian. At the first order
+where they differ the normalized difference solves the invertible
+Jacobian (5.3), so it vanishes. Induction proves equality at all
+orders. The argument works at a nondiagonal unipotent abelian
+meridian too: Ad_mu is triangular with all eigenvalues one, so
+the same determinant is a unit.
+
+It follows that a nonabelian component can meet the abelian
+representation family only where
+
+    Delta_K(s^2)Delta_K(s^(-2))=0.                  (5.4)
+
+This necessary condition neither proves that a given root integrates
+to an irreducible branch nor that such a branch is the geometric
+component. The cokernel of the normal matrix is a concrete torsion
+module supported on this divisor. Simple roots are candidates for
+studying the coupling there; they are not a quantum period theorem.
+
+Every root does, however, give an exact nonabelian reducible
+representation. Let t_*=s^2 be a root. It is not one, since
+Delta_K(1) is a unit. Choose a nonzero kernel vector h of the
+deleted Alexander matrix, with h_1=0. The omitted equation follows
+from preservation of the ordered product of meridians. Put
+
+    mu_i(u)=(I+u h_i E_12)D(s).                    (5.5)
+
+Multiplication in this upper triangular group is the semidirect
+rule n(a)D(s)n(b)D(s)=n(a+s^2 b)D(s)^2. Consequently its braid
+action on h is exactly the linear Alexander action, with no higher
+terms. Equation (5.5) is therefore a representation for every u.
+For u!=0 some h_i is nonzero while h_1=0, and t_*!=1 shows that
+mu_i and mu_1 do not commute. This is an exact nonabelian reducible
+family approaching the abelian representation. Its character stays
+abelian; existence of an irreducible deformation remains additional.
+
+On the actual root-central meridian section s=M^N. Hence the
+coordinate in these equations is
+
+    t=s^2=M^(2N)=U.                               (5.6)
+
+At the Kashaev specialization U=1 the Alexander cofactor is a unit.
+Its whole function Delta_K(U) must still be retained when studying
+other attachment points. This is a classical normal-deformation
+factor, not an established source factor in the actual meridian
+q-difference equation.
+
+The later [semicyclic carry-braiding calculation](semicyclic_carry_braiding.md)
+also supplies an explicit matrix proof of the reducible-period
+comparison on E^N=0. Its corrected wrap and transported centers
+give genuine holonomy braid maps globally on that locus.
+Closing all but one strand forces every contributing path to
+have no wrap, proving the whole cut operator equals F_N(M) I.
+The common fixed center line has the exact endpoint marks
+needed for the integral carry recoupling. These are explicit
+source operators and evaluations on a reducible locus; mixed
+E/F coupling to a geometric component remains unproved.
+
+## 6. Weight descent and an exact reducible period anchor
+
+The quantum line has a compatible algebraic scaling. Define
+
+    gamma_z(E)=zE, gamma_z(F)=z^(-1)F, gamma_z(K)=K.
+
+All rational crossing formulas preserve this grading. On the center
+it scales E^N by z^N and F^N by z^(-N), while fixing K^N and Omega.
+For the chain module, let D_z v_j=z^(-j)v_j. Directly on its three
+matrices one has
+
+    rho_(z^N epsilon,z^(-N)phi)(a)
+           =D_z^(-1)rho_(epsilon,phi)(gamma_z(a))D_z.            (6.1)
+
+Here epsilon,phi are raw central powers and the chosen K-root is
+unchanged. The nonwrapping entries give this identity immediately;
+at the E and F wrap entries the extra factors are precisely z^N
+and z^(-N). The a_j and P depend on epsilon*phi and are unchanged.
+
+The matrix-unit crossing frame respects (6.1). Its spectral
+projector transforms by conjugation and D_z fixes v_0. Each F'
+used in a column contributes z^(-1); the target column basis has
+exactly the compensating D_z weight. Thus
+
+    I(z^N epsilon,z^(-N)phi)
+        =(D_z tensor D_z)^(-1) I(epsilon,phi)(D_z tensor D_z).
+                                                            (6.2)
+
+The determinant and its specified anchored root are invariant, so
+the normalized frame satisfies the same equation. Checked flips
+commute with D_z tensor D_z. Products and inverses preserve (6.2).
+The pivotal matrices commute with D_z, and the cut is scalar, so
+its value is invariant under the simultaneous center scaling.
+This proves descent by this diagonal gauge torus for the specified
+local frame and cut evaluation. It is not a claim of descent by
+every change of flat-connection frame or a global Markov theorem.
+
+In formal coordinates the scalar period can depend on the central
+E and F directions only in weight zero: their mixed products,
+together with the weight-zero parameters. The invariant monomials
+are generated by epsilon_i*phi_j. In particular, on the semicyclic
+family phi_i=0 and fixed common x, the scalar period is independent
+of all positive-weight epsilon_i on any scaling-stable closed
+family regular at their zero section.
+
+For the upper triangular representations (5.5), all k_i equal
+k=delta s, all F_i^N vanish, and E_i^N=u epsilon_i^*. The Casimirs
+and all x_i=x=x_0 M_* are constant, with M_*^N=s. Every central
+crossing divisor D_c is one. Moreover the operator entering H,G
+has N-th power zero, so their inverses are finite geometric sums.
+The matrix-unit frames are polynomial in u. Equation (6.2) shows
+their determinants are independent of u and nonzero at u=0;
+hence the frames and their inverses are regular for every u.
+Their determinant normalization is the same known factor as at
+the nilpotent section. No new root or arbitrary scalar is inserted.
+
+Let f(u) be the zero-framed cut scalar in this frame. Then
+f(z^N u)=f(u). It is polynomial and regular at zero, so it is
+constant. Equation (3.1) identifies that constant exactly:
+
+    theta_bar^(-w) ev_(beta,N)(J_beta(rho_u))
+                      =F_N(M_*) for every u.        (6.3)
+
+The full period equality retains the same entire factor d_N(M_*).
+At a root of Delta_K(M_*^(2N)), this factor is regular because
+M_*^(2N)!=1. This is an explicit actual-period anchor on an exact
+nonabelian reducible family, at every level, including even and
+composite levels. It does not require a simple Alexander root.
+The right-hand side is not proved nonzero uniformly. When it
+vanishes, the value alone cannot fix a scalar comparison; the
+specified Hom frame and whole period germ remain necessary.
+
+This anchor still leaves the opposite-weight coupling undetermined.
+For example a two-parameter deformation with weights +N,-N can
+have an invariant scalar H(u*v), whose value at u*v=0 is fixed by
+(6.3) while its higher coefficients are not. Those coefficients,
+and whether an attached irreducible branch is geometric, require
+additional quantum and global data. The scaling proof supplies
+neither their regulator norm nor a meridian A-equation for them.
+
+## 7. Consequences for the proposed regulator comparison
+
+The [ideal triangulation bridge](triangulation_regulator_bridge.md)
+supplies the complete geometric fundamental class and its regulator.
+Sections 1--3 now give a closed-braid quantum line and cut functional
+whose actual nilpotent section is exactly the prescribed period.
+Sections 4--5 prevent mistaking its formal augmentation neighborhood
+for a neighborhood of complete hyperbolic holonomy.
+Section 6 supplies an exact period anchor on the nonabelian reducible
+families at Alexander roots. It leaves the mixed positive/negative
+weight dependence and a geometric irreducible branch undetermined.
+This provides attachment points for every knot with a nonunit
+Alexander polynomial. If the Alexander polynomial is a unit,
+there are no such nonabelian reducible attachment points; a
+general relative comparison cannot rely solely on this route.
+
+A comparison solely by extending the augmentation Hom frame requires
+additional global information about the components and the attachment
+divisor. If the route uses an affine meridian source extension instead,
+its source and the off-diagonal coupling must actually be constructed
+and matched to this selected cut functional. Neither the nonabelian
+branch nor the period coupling can be chosen to enforce the desired
+regulator value. A common peripheral point U=V=1 does not identify
+the two interior representations.
+
+There remains no proof of the norm identity
+
+    (4/N)log|F_N(1)| -> log||P_hyp||=2Vol(M)/pi.
+
+In particular this note proves neither geometric factor survival in
+the minimal actual operator nor noncancellation in the selected period.
+
+The subsequent [Frobenius Verma trace](frobenius_verma_period.md)
+gives these anchors a global polar interpretation. Its rational
+root value is exactly F_N(M)/Delta_K(M^(2N)), with the same quantum
+A-ideal and marked Kashaev fiber. At a simple Alexander root,
+the selected residue in the central coordinate U is the period
+in (6.3) divided by Delta_K'(U). This is actual source/pole data,
+not a proposed freely normalized comparison. The marked Bloch
+norm and transport to a geometric irreducible period remain unproved.
+
+## 8. Coverage and independent checks
+
+Alexander loci for reducible/nonabelian deformations have extensive
+prior coverage. The abstracts of
+[Heusener--Porti, math/0411365](https://arxiv.org/abs/math/0411365)
+and [Heusener--Medjerab, 1402.4294](https://arxiv.org/abs/1402.4294)
+cover such deformations and local representation varieties. They
+were consulted for scope only; their existence, smoothness and
+irreducible-deformation proofs are not used here. No novelty is
+claimed for the Alexander criterion or formal abelian rigidity.
+The purpose is to derive their exact role in this fixed root-center
+and actual cut-period construction.
+
+For quantum coverage, McPhail-Snyder's
+[dissertation, Section 1.3.2](https://escholarship.org/content/qt77z617bk/qt77z617bk_noSplash_296f2d0d7321693dbf77eb00d5ad49aa.pdf)
+distinguishes triangular semicyclic holonomy invariants from their
+decomposable ADO specialization. This is existing coverage of the
+objects involved. Its comparison and invariance proofs are not used
+here; (6.1)--(6.3) are derived directly from the regular matrices,
+the specified Hom frame and the literal cut functional. No general
+novelty claim for reducible holonomy invariants is made.
+
+[The audit](../experiments/audit_closed_braid_period_line.py) compares
+independent free-word/Fox and braid linearizations for 24 knot braids.
+It solves 24 normalized fixed fibers through third Artin order, at
+identity, noncentral unipotent and semisimple abelian base points.
+Two examples on the Alexander divisor give exact nonabelian reducible
+fixed tuples, rather than just tangent vectors; a two-component
+example verifies the scope distinction. Ten generic cyclic quantum
+cases have both central powers nonzero and test all local
+intertwinings and scalar closed cut functionals. Ten nilpotent/ideal
+cases recover thirty original ADO cut matrices, with the twist.
+Twelve changing-center semicyclic families, through level 8, check
+four parameter values each: all 48 full cut matrices equal the
+actual ADO cut at that color. They include 168 explicitly
+intertwined crossing steps and both signs. Fourteen generic cyclic
+cases check both central wrap weights and all transformed-generator
+weights. Even and composite levels are included. The
+[results](../experiments/closed_braid_period_line_results.json)
+support the uniform proofs, without asserting a volume asymptotic.

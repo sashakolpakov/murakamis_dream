@@ -1,0 +1,231 @@
+# Every regular full wall critical action has the actual representation regulator
+
+28 October 2026. The nine-atom full-Psi scalar crossing has the SAME
+Bloch--Wigner regulator as the original five-dilogarithm ADO crossing,
+for both signs, on its entire regular rational graph. This is proved
+without inferring a regulator from holonomy alone: their Bloch wedges
+are identical, the parameter chart is connected, and a real chart fixes
+the regulator constant.
+
+Integer norm/carry marks add 2*pi*i times logarithms to the action.
+At every regular FULL interior critical point these terms cancel
+from the imaginary critical value by an exact real-quadratic identity.
+Consequently the critical value is the regulator of the actual
+boundary-parabolic knot representation, after the existing marked
+fundamental-cycle comparison. This controls critical VALUES, not
+the original cycle's selected coefficient or its singular/escaping
+contributions.
+
+The [audit](../experiments/audit_actual_wall_critical_regulator.py) and
+[results](../experiments/actual_wall_critical_regulator_results.json)
+verify both rational crossing maps in all six Gauss coordinates,
+factor the Bloch wedges identically over Q(A,B,z,w), check the real
+normalization and complex regulators, and verify the off-critical
+integer-mark identity. No literature proof is used in these calculations.
+
+## 1. The actual nine atom graphs
+
+Use physical clocks A,B and head coordinates z,w at complete color
+x=-1. At a current pair (a,b,p,r), the elementary principal maps are:
+
+| Gate | Bloch contribution | Position/clock update |
+| --- | --- | --- |
+| U diagonal on i | -[1-B_i] | z_i -> z_i(1-B_i) |
+| F diagonal on i | +[1-B_i] | z_i -> z_i/(1-B_i) |
+| U_- | -[t], t=-r/p | a -> a/(1-t), b -> b(1-t) |
+| V_- | +[t], t=-r/p | a -> a(1-t), b -> b/(1-t) |
+| U_+ | -[t], t=-p/r | a -> a(1-t), b -> b/(1-t) |
+| V_+ | +[t], t=-p/r | a -> a/(1-t), b -> b(1-t) |
+| D_+ | 0 | r -> -r/b |
+| D_- | 0 | r -> -br |
+
+Read the ORIGINAL strict factorization in traversal order:
+
+    C^(-1): U_2, V_-, U_1, F_2;
+    positive center: U_+, D_+;
+    negative center: D_-, V_+;
+    C: U_2, F_1, U_-, F_2.                         (1)
+
+The nine nonzero Bloch entries define beta_9^+ or beta_9^-.
+All are explicit rational functions of A,B,z,w. This is the
+[actual scalar full-Psi action](actual_full_psi_scalar_flow_cycle.md),
+with its reflected monomials and Gaussian retained.
+
+The physical generators are
+
+    K=-1/a, e=(a^(-1)-1)/p, f=(1-a)p.              (2)
+
+Direct rational substitution in (1) gives EXACTLY the independently
+proved actual crossing maps (4.6)--(4.7) of
+[the marked braid calculation](marked_braid_holonomy.md).
+This is checked algebraically for every one of the six output Gauss
+coordinates; equality of maps is not inferred from equality of finite
+root-level matrices or from a presumed saddle selection.
+
+## 2. Regulator equality with the original coefficient symbol
+
+Let C_+=(1-e_1 f_2)^(-1), and
+C_-=1-(B/A)e_2 f_1. The original coefficient Bloch symbols are
+
+    beta_5^+=[B]+[C_+]+[1/A]-[BC_+]-[C_+/A],
+    beta_5^-=[A]+[C_-]+[1/B]-[AC_-]-[C_-/B].       (3)
+
+On the common regular rational crossing graph,
+
+    delta(beta_9^sign-beta_5^sign)=0
+               in Lambda^2(Q(A,B,z,w)^* tensor Q).    (4)
+
+There are two independent ways to check (4). For a signed dilog
+generating expression, its wedge is its incoming symplectic boundary
+minus the outgoing boundary; the internal monomial coordinates
+cancel, and symmetric real quadratic/Gaussian terms contribute zero.
+Both graph maps in Section 1 are the same actual map. In the physical
+position convention the common boundary is
+
+    z wedge A+w wedge B-z_out wedge A_out-w_out wedge B_out.
+
+In the original coefficient convention it is A wedge p_in,1 plus
+B wedge p_in,2 minus the two outgoing terms, with p=z^(-1), so these
+are identical. The complete color -1 is torsion and disappears
+rationally. Alternatively factor every rational shape and its
+complement into irreducibles; the audit verifies the full antisymmetric
+coefficient matrix of (4) is identically zero for BOTH signs. Rational
+constant factors are retained in this check, not silently discarded.
+
+The differential of the Bloch--Wigner regulator D is a homomorphism
+of the multiplicative wedge: for one shape its differential is
+log|a| dArg(1-a)-log|1-a| dArg a. Thus (4) gives
+
+    d D(beta_9^sign-beta_5^sign)=0.                 (5)
+
+The regular parameter space is a nonempty complex Zariski-open subset
+of (C^*)^4, obtained by removing finitely many rational zeros, poles
+and shapes equal to 1. It is connected: connect generic points by
+complex affine lines avoiding the finitely many excluded points on
+each line. Hence (5) is a single real constant on this space.
+
+Every rational argument in (1)--(3) has REAL coefficients. A generic
+real input avoids the finite excluded algebraic sets. Every shape is
+then real, so EVERY D value is zero. Therefore that constant is zero:
+
+    D(beta_9^+)=D(beta_5^+),
+    D(beta_9^-)=D(beta_5^-).                       (6)
+
+This fixes exactly the regulator information needed here. No claim
+is made that wedge equality alone identifies an integral Bloch class,
+an integral flattening, or a complex period torsor.
+
+## 3. Exact cancellation of integer wall marks at full critical points
+
+Use logarithmic coordinates Z=rho+i theta. Consider
+
+    W(Z)=sum_j epsilon_j Li_2(A_j(Z))
+                       +1/2 Z^t C Z+i kappa^t Z+c,
+    A_j(Z)=exp(a_j^t Z+i*pi*nu_j),                 (7)
+
+where a_j,nu_j,C,kappa are real, C is symmetric, and Im c=0.
+Branches of Li_2 and Log(1-A_j) are matched; D remains its
+single-valued Bloch--Wigner value on the recorded local sheet.
+On its ordinary unflattened local branch the exact identity is
+
+    Im W-sum_j epsilon_j D(A_j)
+                 =rho^t Im(gradient W).           (8)
+
+Indeed Im Li_2(A)=D(A)-log|A| Arg(1-A), and
+log|A_j|=a_j^t rho. Also Im(1/2 Z^t C Z)=rho^t C theta,
+while Im(i kappa^t Z)=kappa^t rho. The right side of (8)
+is precisely this difference. Consistent alternative dilog branches
+carry their explicit integer logarithmic marks into kappa and the
+real constant; one must not change the Li_2 sheet without its mark.
+
+A simple atomic negative-ray source has its retained factor A_j^N.
+In exp(W/h), h=2*pi*i/N, it adds 2*pi*i Log A_j. Transverse iterated
+wall charges add integer sums of such logarithms. They only change
+kappa by real integer multiples of 2*pi*a_j and add a REAL constant
+from i*pi*nu_j. Equation (8) remains true. At a FULL critical point,
+
+    gradient W=0  ==>  Im W=sum_j epsilon_j D(A_j). (9)
+
+The integer norm charges therefore do not create an additional
+critical exponential rate log|A_j| after the critical equations are
+imposed. Dropping full stationarity would make this conclusion false:
+the residual term on the right side of (8) is then present.
+
+The actual scalar action is of the form (7). Put
+eta_s=sqrt(2*pi*i*s)xi_s at each Gaussian. Its original Gaussian
+term -pi*i*xi_s^2 becomes -s*eta_s^2/2, a REAL quadratic. The actual
+atomic arguments are signed monomials in the head positions and
+exp(eta_s). For each coupled cap put p=2*pi*i*s_cap; its interval
+term is p Log r, a REAL bilinear form in logarithmic coordinates.
+Original reflected monomials and complete-color signs give the
+i*kappa terms. Thus Gaussian and cap variables must be retained in
+the FULL stationarity condition of (9).
+
+## 4. What regular wall stationary points represent
+
+An integer logarithmic wall mark shifts derivatives by multiples of
+2*pi*i but leaves the EXPONENTIATED canonical equations unchanged.
+At a finite regular full interior critical point these are the same
+actual rational crossing/Hurwitz maps as in Section 1 and the same
+inverse-meridian cap equations proved in
+[the coupled-cap note](actual_coupled_caps_interval_source.md).
+They define a representation of the original oriented knot group,
+with the original marked source and preferred peripheral convention.
+
+For a noncentral complete meridian the peripheral longitude commutes
+with a nontrivial unipotent matrix, whose centralizer in PSL(2,C)
+is the unipotent one-parameter group. Thus this is a genuinely
+boundary-parabolic representation. A cut wall is not generally a
+physical clock B=1: its DILOG argument A_j is negative real, and an
+auxiliary flat atom can occur over a noncentral representation.
+
+The restriction "full" includes regular wall chains whose remaining
+real tangent directions span the full complex cotangent space. Their
+interior complex stationary equation is gradient W=0. It excludes
+endpoint extrema, rank-deficient/nontransverse corner strata, escaping
+flags, and singular sources where a constrained stationary equation
+does not imply the full equation.
+
+## 5. The marked fundamental-cycle comparison extends beyond faithfulness
+
+The proof in [the crossing fundamental-cycle note](crossing_fundamental_cycle.md)
+uses unipotence, the actual Hurwitz words, oriented crossing balls,
+face cancellation and a degree-one peripheral reconstruction. None
+of its determinant/five-term certificates requires the DEVELOPING
+representation rho to be faithful. The group used in its relative
+configuration complex is the original hyperbolic knot group Gamma;
+its peripheral malnormality concerns Gamma, independently of rho.
+
+For any boundary-parabolic rho with noncentral meridians, choose its
+fixed peripheral flags and generic auxiliary flags. Forced repeated
+DEVELOPED vertices map to zero in the normalized alternating
+configuration complex. This is a chain map: repeated-vertex face
+terms cancel in pairs. The same explicit three five-term boundaries
+therefore give the rho-developed relative fundamental cycle.
+Unipotent cancellation uses a nonzero translation because the
+meridians are noncentral; central representations are handled
+separately and have trivial PSL image in the one-component case.
+
+Consequently, summing (6) over the actual word and keeping the original
+turn orientations gives
+
+    sum_crossings D(beta_9)=Vol(rho).              (10)
+
+Caps contribute their original pairing/marking, not an additional
+independently assigned tetrahedral regulator. The preferred-longitude
+correction is the same determinant-one writhe shear as in the
+fundamental-cycle proof. When a finite developed shape approaches
+0,1 or infinity, D extends continuously by zero, so normalized
+degenerate tetrahedra do not add an unknown constant. This continuity
+does not justify a quantum source limit at a singular chart.
+
+Combining (9)--(10), EVERY regular FULL interior wall critical action
+in the recorded actual source has its actual representation regulator.
+The separately proved
+[sharp representation-volume bound](regular_critical_values_and_representation_volume_bound.md)
+therefore gives |Im W_critical|<=Vol(M) for all these regular full
+critical values.
+This statement alone gives neither a global contour bound nor a
+selected geometric lower bound. Normalization ray cells can have
+the full geometric rate, as the retained source calculations already
+show; they must be grouped exactly rather than called negligible.

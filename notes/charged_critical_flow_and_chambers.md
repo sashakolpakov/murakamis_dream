@@ -1,0 +1,271 @@
+# Actual anchor critical points obey a graph flow and a cut maximum principle
+
+28 October 2026. The actual binary-factor source has a direct critical
+flow equation. Combined with its exact cut factorization, it confines
+EVERY regular anchor critical point of each residual core to polynomially
+bounded radii. A macroscopic interior cut margin gives a bound independent
+of N. Exact balance is stronger: every critical point is on the original
+unit torus, with one nondegenerate point in each angular chamber.
+
+These assertions concern each specified integer clock sector, with its
+original source. They do not assert criticality in the remaining clocks,
+nor extend unit-modulus hypotheses to complex clock deformations. The
+full invariant can still cancel between sectors or between chambers.
+
+## 1. The actual source and its exact real critical equation
+
+Take the original graph polynomial, before or after unit-factor-preserving
+source fusions,
+
+    P(X)=gamma product_f (alpha_f X_(i_f)-beta_f X_(j_f)),
+    |alpha_f|=|beta_f|=1,
+    f(X)=P(X) product_i X_i^(-q_i),
+    sum_i q_i=number of factors=M.                         (1)
+
+The q_i are the nonnegative integer source charges, possibly reduced
+by forced endpoint monomials in the
+[cut/core factorization](charged_source_cut_jets.md). The extracted
+scalar gamma stays outside. A self-loop is evaluated as its exact
+scalar times X_i; an identically zero factor kills the period. Count
+a nonzero loop twice in the incidence S_i. Put
+
+    delta_i=S_i-2q_i,              sum_i delta_i=0.
+
+A REGULAR anchor critical point has all X_i!=0, no zero factor, and
+X_i partial_i log f=0. Set rho_i=|X_i|^2. The elementary identity
+
+    Re(alpha X/(alpha X-beta Y))
+       =1/2+(|X|^2-|Y|^2)/(2|alpha X-beta Y|^2)
+
+proves the exact graph equation
+
+    sum_(f joining i,j) (rho_i-rho_j)/|alpha_f X_i-beta_f X_j|^2
+                                                   =-delta_i. (2)
+
+The equation is independent of the orientation in which an edge is
+written. A loop contributes one to the logarithmic derivative and
+two to S_i, hence no flux. This is a weighted graph Laplace equation
+with POSITIVE weights at every regular critical point, even though
+the original source coefficients are complex. It is not a positivity
+assertion about their sum.
+
+## 2. Cut inequalities give radial properness for every residual core
+
+For a proper anchor subset I, let C_I be the number of crossing
+factors and e_I=q(I)-m_I the exact source cut deficit. Counting
+incidences gives
+
+    delta(I)=C_I-2e_I.
+
+Summing (2) over I cancels all internal edges. Suppose every radius
+in I is larger than every radius outside, with separating logarithmic
+gap g=min_(i in I)log|X_i|-max_(j notin I)log|X_j|>0.
+For each crossing factor,
+
+    (rho_i-rho_j)/|alpha X_i-beta X_j|^2
+       >=(|X_i|-|X_j|)/(|X_i|+|X_j|)>=tanh(g/2).
+
+Consequently
+
+    C_I tanh(g/2)<=2e_I-C_I.                            (3)
+
+In particular a high-radius cut must have e_I>C_I/2. If e_I<C_I,
+then
+
+    g<=log(e_I/(C_I-e_I)).                             (4)
+
+Now take any nontrivial residual strongly connected core from the
+EXACT source factorization. It has no proper tight cut and admits
+a feasible endpoint assignment. The Hall inequalities and their
+complements therefore give integers
+
+    1<=e_I<=C_I-1                                    (5)
+
+at every nonempty proper subset. Sort the k core radii and apply
+(4) to each positive consecutive gap. Since C_I<=M,
+
+    max_i log|X_i|-min_i log|X_i| <=(k-1)log(M-1).     (6)
+
+Every such core has M>=2. After fixing the common C* scale,
+all its regular anchor critical radii thus lie between reciprocal
+polynomials in M. In an original fixed knot diagram, M=O(N) and
+k is bounded by the diagram, so (6) is a uniform POLYNOMIAL radius
+bound for all actual integer-clock residual cores. This uses no
+assumption that their defects are small. One-anchor cores have no
+radial variable after removing the common scale.
+
+If the stronger margin epsilon C_I<=e_I<=(1-epsilon)C_I holds
+for all proper cuts, with 0<epsilon<=1/2, (4) instead gives
+
+    max log|X|-min log|X| <=(k-1)log((1-epsilon)/epsilon). (7)
+
+Thus macroscopic interior cuts confine critical points uniformly
+even when their forcing delta is of order N. Degenerating margins
+are exactly the cut variables whose selected finite jets were
+retained in the preceding source theorem; no missing denominator
+or boundary source has been discarded here.
+
+## 3. Balance and sublinear forcing
+
+For a connected graph with delta_i=0 at every anchor, choose an
+anchor of largest radius in (2). All its summands are nonnegative,
+so every adjacent radius agrees. Connectivity propagates equality.
+Therefore EVERY regular critical point, up to common complex scale,
+has |X_i|=1. This is stronger than the pairing of conjugate critical
+points in a self-inversive polynomial.
+
+More quantitatively let lambda be the minimum nontrivial cut size
+and D=(1/2)sum_i|delta_i|. If D<lambda, (3) bounds each consecutive
+gap by 2 artanh(D/lambda), hence
+
+    oscillation(log|X|)<=2(k-1)artanh(D/lambda).        (8)
+
+In particular lambda>=cN and delta_i=o(N) force all regular critical
+radii into a shrinking tube around the unit torus. The bound does
+not give a source intersection number for a perturbed complex saddle.
+
+## 4. In the balanced case the source itself reaches every critical chamber
+
+Fix the common phase by X_k=1 and write X_i=exp(i theta_i). The exact
+sine factorization gives the ORIGINAL density on this torus as
+
+    f(exp(i theta))=C product_f 2sin((theta_i-theta_j+phi_f)/2),
+                                                        (9)
+
+with one constant complex phase C (and the retained scalar modulus).
+The signs vary across factor zeros. On each lifted arrangement
+chamber, log|f| has Hessian
+
+    H(v,v)=-(1/4)sum_f csc^2((theta_i-theta_j+phi_f)/2)
+                                      (v_i-v_j)^2.       (10)
+
+Connectivity makes this negative definite after removing the common
+phase. Each chamber is a convex bounded polytope in these lifted
+coordinates: every edge difference lies between two consecutive
+factor-zero levels, and a spanning tree bounds all differences.
+At every chamber boundary some factor vanishes, so log|f| tends to
+minus infinity. Thus each chamber has exactly one maximum, with a
+nondegenerate Hessian. The density has constant phase on that chamber;
+its angular critical point is therefore a full complex critical point.
+The maximum principle in Section 3 shows that there are no other
+regular critical points off this torus. Common-scale gauge directions
+are not counted as Hessian degeneracies here.
+
+This proves accessibility from the ACTUAL coefficient torus for this
+balanced class. It does not choose the signs of different chamber
+contributions or assert that the remaining clock sum preserves them.
+
+There is also a precise local source multiplicity. In logarithmic
+coordinates at a chamber maximum, the real tangent Hessian is
+negative definite, while its imaginary normal Hessian has the opposite
+sign. The actual torus therefore intersects the dual local Gaussian
+normal cycle transversely with degree +1 or -1, according to orientation.
+The critical point is present with local multiplicity one; its constant
+phase and Gaussian determinant are still retained. This local statement
+does not prevent cancellation between different chambers and does not
+compute a geometric coefficient of the full coupled clock sum.
+
+## 5. A quantitative selected-coefficient theorem with a checkable gap
+
+There is a useful uniform consequence for a sequence of balanced
+graphs with a fixed number r=k-1 of independent anchors and charges
+q_i=O(N). Put M_N=max_(unit torus)|f_N|. Suppose one sign chamber
+attains M_N and every chamber of the opposite sign has maximum at
+most M_N exp(-eta N), for a fixed eta>0. Chambers with the same sign
+are allowed to share the maximum. Then for all sufficiently large N,
+
+    c N^(-2r) M_N <= |[X^q]P_N| <= M_N.              (11)
+
+The constant c depends on the fixed degree bounds and r. In particular
+the selected coefficient has exactly the exponential rate of M_N.
+No geometric thimble coefficient is assumed in this conclusion.
+
+Proof. After removing its constant phase, (9) is a real trigonometric
+polynomial. Each variable has Fourier degree at most q_i: its polynomial
+degree is at most S_i=2q_i, before subtracting its source charge q_i.
+For a one-variable restriction whose sup norm is at most M_N, each
+Fourier coefficient has modulus at most M_N, so
+
+    |partial_(theta_i) f_N|<=q_i(q_i+1) M_N.
+
+At a point attaining M_N, a box of side c_0 N^(-2) therefore has
+the same sign and modulus at least M_N/2. Its positive signed mass
+is at least c N^(-2r)M_N in normalized torus measure. All same-sign
+chambers add to that mass. The ENTIRE opposite-sign part has absolute
+integral at most M_N exp(-eta N), since the full normalized measure
+is one. This proves the lower bound, after reducing c. The upper
+bound is the integral triangle inequality. A polynomially small
+opposite-sign gap can replace the exponential hypothesis if its
+total bound is o(N^(-2r)M_N).
+
+There is also an exact top-intersection statement in this balanced
+setting. Suppose the highest regular critical point is UNIQUE after
+the common-scale gauge and torus periods. By Sections 3--4 it lies
+on the original torus and is its unique global modulus maximum.
+An upward cycle of Re log f from that point has Re log f at least
+its critical height; the entire source torus has Re log f at most
+that height, with equality only at this point. Their only intersection
+is therefore this critical point. The negative-definite angular
+Hessian and holomorphy make the upward tangent space transverse to
+the angular source tangent space, giving local intersection number
++1 or -1 with the specified orientations. Thus the highest relative
+coefficient is NONZERO here; it has not been inferred from a nonzero
+local density alone. This statement does not make the quantitative
+height-gap hypothesis in (11) automatic for an N-dependent sequence,
+or remove cancellation between opposite-sign chambers at tied height.
+
+The gap is an extra hypothesis, not automatic. For example
+(X-Y)(X+Y) with charges (1,1) is balanced, has two nondegenerate
+unit-torus critical chambers of equal height and opposite sign,
+and has selected coefficient zero. Nor is an arbitrary unit-factor
+UNBALANCED core covered by (11):
+[explicit such sources](charged_torus_critical_selection.md) can
+exclude their unique highest critical action entirely.
+
+## 6. Exact scope for the original knot and its A-period
+
+Equations (2)-(8) apply to every actual fixed-clock binary-factor
+core, with the original source charges and normalizers. They give
+properness and a precise graph-theoretic condition for balanced
+torus accessibility. For an alternating one-component diagram in the
+present overbridge coordinates, exact balance forces all crossing
+clocks to agree; it is not an automatic consequence of alternation.
+The stronger [actual alternating-source theorem](actual_alternating_balanced_source.md)
+shows that every balanced sector of the original figure-eight state
+is zero. Indeed every nonzero sector before further clustering has
+max_i|delta_i|>=(N-1)/2. Thus the pointwise balanced and sublinear
+defect regimes are ABSENT from this already known prototype's
+nonzero source support in these variables. Further exact clustering
+can combine opposite defects; applying it is a distinct operation,
+not a consequence of (11).
+
+The ALL-level [original figure-eight source theorem](actual_alternating_balanced_source.md)
+makes this limitation sharp. Its nonzero fixed-clock sectors satisfy
+h_0=0 and h_1+h_3>=N-1; consequently EVERY balanced diagonal-clock
+sector is exactly zero, and at least one individual anchor defect has
+modulus >=(N-1)/2. Thus the balanced chamber theorem cannot on its own
+select that prototype's volume contribution in these coordinates.
+Further exact clustering or fusion of macroscopic defects is required;
+sublinear individual-star jets alone do not cover that source.
+
+The knot period still includes its W_h and the coupled h sum. Anchor
+criticality alone is not full gluing/holonomy criticality, so a bound
+on the latter's regulator cannot be assigned to every chamber maximum
+of a fixed h. Complex h deformations can make the factor ratios
+nonunit, and require a separate argument. A retained deficient-star
+polynomial is not generally a unit binary product; its logarithmic
+derivative must remain unless one applies this theorem separately
+to its actual monomial source channels. A norm estimate does not
+permit dropping that derivative or its source pairing.
+
+Thus this result proves a general critical flow and source-accessible
+balanced selection theorem. It does not yet prove the original
+geometric coefficient, the broad volume upper bound, or the volume
+conjecture. The exact source reductions and these bounds identify
+the remaining macroscopic forced flow and clock coupling as the
+next problem rather than an uncontrolled coordinate escape.
+
+[Audit](../experiments/audit_charged_critical_flow_and_chambers.py):
+exact radial identities on original graph metadata, complete univariate
+critical sets for balanced and unbalanced unit-factor examples, and
+the selected-coefficient distinction between a norm and its source.

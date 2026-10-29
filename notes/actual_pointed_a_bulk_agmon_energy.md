@@ -1,0 +1,199 @@
+# A source-exact bulk Agmon energy for the actual pointed quantum-A system
+
+28 October 2026. The actual bounded-jet pointed system admits a positive
+weighted energy with its ORIGINAL boundary source. On any compact arc
+whose weighted classical symbol has a fixed gap from zero, a direct
+localized Plancherel argument bounds the interior energy by that source
+and explicit boundary packets. No eigenvector diagonalization, global
+inverse bound or cancellation of source terms is assumed.
+
+This is a quantitative general theorem for the actual fixed-band system
+of EVERY knot. It is local in the color coordinate: turning-point,
+resonance and end packets remain. It does not yet give their sharp
+geometric connection estimate or a new volume-conjecture class.
+
+## 1. Actual system and exact positive weighted energy
+
+Use the uniformly scaled bounded-jet matrix and source of
+[the pointed Gram theorem](pointed_a_gram_period.md),
+
+    M_N y=b_N, R_N y=(C_(j_*),...,C_N)^t.             (1)
+
+Its block size and bandwidth are fixed independently of N, all entries
+are uniformly bounded, and b_N is supported on the prescribed fixed
+number of INITIAL IDENTITY rows. Those initial jet values are fixed
+small-color Laurent polynomials and their bounded-order jets; their
+scaled norms are uniformly bounded. Every solution has the same
+constant-color vector, even when its higher jets are not unique.
+
+Interior recurrence rows, indexed by their initial color j, have form
+
+    (M_N y)_j=sum_(i=0)^d A_(i,N)(j) y_(j+i).
+
+Uniformly on compact color intervals, their fixed-size matrix
+coefficients satisfy
+
+    A_(i,N)(j)=A_i(j/N)+O(1/N),
+    A_i are continuously differentiable.             (2)
+
+These are not assumptions about an unknown asymptotic solution. For
+the actual system they follow directly from its finite monomial and
+binomial formula (2.1) and the N^-r jet scaling. Its symbol is exactly
+the proved block polynomial A_B(x,L) of equation (5.2) there. Possible
+root-level nullspaces and the entire jet budget remain in (1).
+
+Let phi be a fixed real C2 function of x=j/N. Give each COLUMN color
+block weight exp(N phi(j/N)), calling the resulting diagonal matrix W_c.
+Give a recurrence ROW the same weight at its row label j; each initial
+identity row receives the weight of its prescribed color. Call this W_r.
+Define
+
+    u=W_c y,
+    L_(phi,N)=W_r M_N W_c^-1,
+    P_(phi,N)=L_(phi,N)^dagger L_(phi,N).              (3)
+
+Then, EXACTLY,
+
+    L_(phi,N)u=W_r b_N,
+    <u,P_(phi,N)u>=||W_r b_N||^2.                   (4)
+
+This is the full sourced Hermitian energy. No affine term or normal
+component has been discarded. Choose phi(0)=0. Since the source colors
+are fixed, their N phi(j/N) are bounded; the right side of (4) is
+uniformly bounded. The original complete color is still the selected
+constant jet in (1), not an arbitrary solution of the principal symbol.
+
+Despite the potentially exponential values of W_c and W_r themselves,
+the nonzero entries of L_(phi,N) involve only bounded local ratios.
+In an interior row their leading coefficients are
+
+    A_i(x) exp(-i phi'(x)),                          (5)
+
+where i in (5) is the INTEGER shift index, not sqrt(-1). The uniform
+error is O(1/N). Thus L_phi and P_phi still have bounded entries and
+fixed bandwidth. The Hermitian bulk symbol is the POSITIVE matrix
+
+    A_B(x,exp(-phi'(x)) L)^dagger
+                        A_B(x,exp(-phi'(x)) L), |L|=1. (6)
+
+It is not obtained by silently treating a moving eigenframe as unitary.
+
+## 2. A proved local coercivity theorem
+
+Let I be a compact color interval contained in (0,1). Suppose the
+explicit weighted block symbol satisfies
+
+    sigma_min A_B(x,exp(-phi'(x)) exp(i theta))>=eta>0
+                       for x in I, theta real.      (7)
+
+This is independently checkable from the specified finite operator.
+For the actual lower-triangular jet symbol, invertibility is equivalent
+to the scalar A_cl not vanishing on that circle. On a compact arc
+fixed dimension and continuity then give the positive eta; no
+semisimplicity or separation of different eigenvalues is needed.
+
+For vectors u supported in I and a fixed small interior margin,
+
+    ||L_(phi,N)u|| >=(eta-C N^-1/2)||u||.             (8)
+
+Here the operator includes EVERY row meeting that support. There is
+no artificial Dirichlet deletion of its boundary output rows.
+
+Proof. On the color lattice choose a bounded-overlap partition
+sum_l chi_l^2=1 with windows of length ell=floor(sqrt(N)) and
+|chi_l(j+i)-chi_l(j)|<=C/ell for bounded i. Freeze (5) at each window
+center. The full-line constant-coefficient operator has Fourier
+multiplier A_B(x_l,exp(-phi'(x_l))exp(i theta)); ordinary Plancherel
+and (7) give norm at least eta on every localized vector.
+
+The difference from the actual operator is at most C ell/N on each
+window by (2) and phi in C2. Bounded overlap gives the same bound
+after summing the squared localized norms. Its commutator with chi_l
+has summed norm at most C/ell times ||u||, by fixed bandwidth and
+the displayed difference bound. Since sum_l ||chi_l L_phi u||^2
+=||L_phi u||^2, the direct-sum triangle inequality yields
+
+    eta||u|| <=||L_phi u||+C(ell/N+1/ell)||u||.
+
+This is (8). The proof handles block coefficients, repeated roots
+away from the weighted circle, and nonnormal actual transfers.
+
+## 3. Apply it to the ORIGINAL response, keeping boundary currents
+
+Let chi be a smooth cutoff supported in I and equal to one on a
+smaller interval I'. Let B_chi contain all its transition colors and
+their fixed bandwidth neighbors. Applying (8) to chi u and using
+the EXACT equation (4) gives, for large N,
+
+    ||chi u|| <=(2/eta)[ ||chi W_r b_N||
+                      +(C/N)||u restricted to B_chi|| ]. (9)
+
+The cutoff on recurrence rows uses their original label j. On initial
+identity rows it uses their prescribed color, so the source convention
+is unchanged. Formula (9) follows from
+
+    L_phi(chi u)=chi W_r b_N+[L_phi,chi]u.
+
+The commutator is EXPLICITLY supported in B_chi and has norm at most
+C/N for a fixed scaled cutoff. A cutoff over ell lattice steps
+instead has C/ell and its corresponding retained boundary packet.
+These are the original normal/endpoint flux terms of the estimate;
+they are not asserted small without their actual source connection.
+
+Since R_N selects the constant jet and commutes with the color weight,
+(9) also bounds the weighted interior ordinary-color energy. It holds
+for every actual truncated-jet solution; higher-jet nonuniqueness is
+not removed by choosing a favorable solution. A global kernel can
+still be supported by the boundary packets, and nothing here divides
+by an unproved finite Evans or resonance determinant.
+
+## 4. A regulator barrier is a possible weight, not a free boundary estimate
+
+On a genuinely identified peripheral branch set
+
+    phi(x)=-R(x)/(2pi).
+
+In the recorded color convention dR/dx=2pi log|L_branch|, so
+exp(-phi')=|L_branch|. Exactly at that eikonal radius the symbol gap
+(7) is zero. On a compact regular arc with distinct root moduli one
+may tilt phi' by a fixed small amount so its circle lies strictly
+between adjacent root moduli. Then (7)--(9) hold. The tilt can tend
+to zero AFTER the large-N bound, while every boundary packet remains.
+
+This gives genuine controlled propagation THROUGH a forbidden bulk
+arc, rather than assuming contraction of instantaneous eigenvectors.
+It works at eigenvalue collisions away from the chosen weighted
+circle as well. At a root on that circle the estimate stops; the
+corresponding turning or interface packet must be connected by an
+additional source estimate. The original fixed initial packet and
+complete-color resonance also remain.
+
+The geometric bound |R|<=Vol(X) bounds this ABSOLUTE weight whenever
+the spectral component has actually been identified as a peripheral
+representation branch. It does not bound its omitted boundary
+packets, choose among several branches, or prove such an identification
+for an arbitrary annihilator. A general sharp upper theorem still
+needs a source-compatible connection estimate across the finite set
+of turning/interface/end packets. Equations (4) and (9) show precisely
+where their cumulative amplification enters; it cannot be replaced
+by uniqueness or by a largest-root integral.
+
+The SOURCE ANCHOR must also remain. For the polynomial initial-source
+bound following (4), normalize instead
+
+    phi(x)=-[R(x)-R(0)]/(2pi).
+
+Recovering an unweighted value then costs the regulator DIFFERENCE
+R(x)-R(0), whose geometric bound is in general 2Vol(X), not Vol(X).
+Keeping phi=-R/(2pi) simply puts the compensating exponential into
+the weighted initial source. Fixed small-color pointing does not by
+itself prove that every spectral branch has regulator zero there.
+A sharp bound needs its actual branch/source normalization as well
+as the boundary connections. No constant action shift has been used
+to conceal that factor.
+
+[Audit](../experiments/audit_actual_pointed_a_bulk_agmon.py): the actual
+figure-eight affine coefficients with fixed original source, weighted
+positive-energy identities, compact off-root-circle bulk coercivity,
+and the retained cutoff commutator equation. Numerical checks supplement
+the all-fixed-band proof (2)--(9), not a new knot-class assertion.

@@ -1,0 +1,227 @@
+# An interior five-point wall cannot be relocated by bare cut cyclicity
+
+Research note, 28 October 2026. This tests a possible simplification
+of the retained wall in
+[the literal middle five-point calculation](actual_middle_five_point_wall_factorization.md).
+At the marked endpoint that wall contributes a known polynomial
+scalar. The same assertion is **false for an untransported interior
+wall**. An original one-crossing cup and an original figure-eight
+network give explicit incompatible relocation factors.
+
+The result concerns the original actual source, not a hypothetical
+state model. It does not exclude a Ward-completed relocation with
+additional currents and its full relative co-source. It proves
+which additional data cannot be discarded.
+
+## 1. Fix the original wall and source conventions
+
+Take N>=2, Q=exp(2pi*i/N), complete color x=-q^(-1),
+lambda=x^(-1)=Qx, d=N-1, k=x^N=(-1)^(N-1).
+Use actual balanced heads K=xZ^(-1), e=q rho^2 E,
+f=F, and cyclic marks
+
+    S_1^N=mu, S_2^N=k mu,
+    X=x S_2S_1^(-1), W=E_d(Z_1)X.
+
+Equivalently,
+
+    W=x mu^(-1)|d><0| tensor S_2.                (1)
+
+The original cup and full averaged marked cap are
+
+    p=N sum_(a=0)^d x^(a-d)|a,d-a>,
+    m|a,b>=x^b/N^2, mp=1.                       (2)
+
+Let B be the original positive checked crossing, with its
+unchanged common scalar Cartan line kappa external. Thus
+the full crossing is kappa B and Bp=p. All framing and
+peripheral factors below multiply the same expressions;
+none is reset to a new numerical value.
+
+The endpoint identities, already proved in the preceding note,
+are
+
+    Xp=Q^(-1)p, mWp=Q^(-1)/N.
+
+For any actual knot cut C_N=K_N I, a defect on that marked
+endpoint therefore gives
+
+    mW(C_N tensor I)p=Q^(-1)K_N/N,
+    m(1-W)(C_N tensor I)p=(1-Q^(-1)/N)K_N.        (3)
+
+The second multiplier has modulus between 1/2 and 3/2, so
+this endpoint correction preserves every normalized volume
+exponent, without a volume conjecture premise. Equations
+(3) alone do not relocate an interior two-head coupon.
+
+## 2. The exact naturality/current condition fails
+
+The coupon (1) acts on two physical heads. Cutting its two
+ends does not leave a one-strand knot endomorphism. Moreover
+it is not a Hopf intertwiner. For the actual total lowering
+current F_tot=f_1+K_1^(-1)f_2, direct multiplication gives
+
+    [K_1K_2,W]=0,
+    [F_tot,W]=(Q^(-1)-1)mu^(-1)
+                              |d><0| tensor S_2^2 !=0.      (4)
+
+Indeed f_1W=Wf_1=0. The two remaining products are
+mu^(-1)|d><0| tensor Q^(-1)f_2S_2 and
+mu^(-1)|d><0| tensor S_2f_2; their difference is (4).
+The defect is nonzero at every N>=2 and every nonzero mu.
+Thus weight zero is insufficient for naturality.
+
+If a single-head coupon D is an actual Hopf intertwiner,
+then commuting with the distinct K eigenvalues and all
+nonzero consecutive F arrows forces D=cI. Such a coupon
+can be relocated along that strand with the original
+normalizations. For a multi-head coupon, block naturality
+requires its actual tensor-object intertwining equations,
+and its closing functional is not automatically a scalar
+one-strand cut. Coupon (1) does not even pass (4).
+
+More generally, moving an inserted coupon through a typed
+crossing R must retain the exact discrepancy
+
+    Delta_R=R D_in-D_out R.                      (5)
+
+An admissible relative Ward comparison may remove (5)
+only after exhibiting its actual typed current homotopy
+and checking its pairing with the full marked co-source.
+Vanishing of an unmarked scalar or a cyclic matrix trace
+does not provide that check. The existing
+[Ward co-source homotopy](ward_cyclic_wall_contraction_and_marked_augmentation.md)
+makes the issue explicit: if mu-ell=nu F on the relevant
+fiber, then with an inserted W the omitted term is
+nu F(AWBp). For original intertwining exteriors and Fp=0,
+this contains the term nu A[F,W]Bp. Equation (4) supplies
+the literal current that must be transported here.
+
+## 3. Two ordinary partial traces lose the actual source
+
+Retain the original pivot g=x^(1-N)Z^(-1). Both ordinary
+pivotal partial traces vanish:
+
+    Tr_2[(1 tensor g)W]=0,
+    Tr_1[(g tensor 1)W]=0.                       (6)
+
+This follows directly from (1): both |d><0| and the cyclic
+shift S_2 have zero diagonal. Nevertheless mWp=Q^(-1)/N
+is nonzero. Consequently an ordinary partial trace or an
+argument dividing by the ordinary quantum dimension cannot
+give the original marked evaluation. Indeed Tr(g)=0 at
+the same color. The original modified/relative source is
+essential, rather than an optional normalization of (6).
+
+Modified-trace cyclicity is a statement about its specified
+categorical morphisms. Extending it to all arbitrary linear
+coupons while retaining this marked functional would be
+false, as the next calculation shows.
+
+## 4. An all-level one-crossing identity
+
+Define the actual finite Euler value
+
+    U_Euler,N(1)=sum_(j=0)^d 1/F_j,
+    F_j=(Q;Q)_j.
+
+This is the Euler polynomial of the original crossing,
+not the differently named meridian norm adapter u_N in
+other notes. Then exactly
+
+    m W Bp=Q^(-1)/N,
+    m B Wp=Q^(-1)U_Euler,N(1).                  (7)
+
+To prove the second identity note Wp=NQ^(-1)|d,0>.
+The original crossing coefficient from (d,0) to (h,d-h)
+is
+
+    r(d,0,h)=N x^(-d-h)Q^(-h)/F_(d-h).
+
+Multiplication by m contributes x^(d-h)/N^2. Since
+x^(-2)=Q, the product with NQ^(-1) simplifies to
+Q^(-1)/F_(d-h). Summing h proves (7). The first identity
+uses the original Bp=p. Thus no published modified-trace
+proof or unknown scalar is involved.
+
+At N=2, Q=-1, x=i, these marked values are
+
+    mWBp=-1/2, mBWp=-3/2.                       (8)
+
+The full original crossing changes these to -kappa/2
+and -3kappa/2, with identical exterior factors. They are
+still unequal. This is an actual one-crossing source
+counterexample to bare cyclic relocation.
+
+## 5. A scalar multiplier cannot repair all exteriors
+
+Use the actual three-braid figure-eight word
+
+    T=B_1 B_2^(-1)B_1 B_2^(-1).
+
+Keep the global typed wrap marks (1,k,1), rather than
+resetting them independently at each insertion. Close
+heads 2 and 3 with the original pivots. The marked first
+cut uses the full functional N^(-1)sum_(a,b)C_(a,b) in
+the balanced basis, exactly as in the original Gauss
+source. For the uninserted scalar cut this is the original
+invariant. After inserting a nonintertwining coupon it
+is kept fixed and is not replaced by a highest entry.
+
+At N=2 the uninserted cut is 5I. Insert W on heads 1,2
+at each of the five displayed word gaps, from left to
+right. Their original marked values are
+
+    (-5/2,-3/2,-5/2,5/2,5/2).                   (9)
+
+These are exact complex-root values. The word has writhe
+zero, so the common scalar crossing factors cancel in
+the same way in all five expressions. Its original full
+peripheral normalization is also the same throughout.
+
+The gap-0 to gap-1 relocation is through the same local
+positive crossing as in (8). In (8) its ratio is 3;
+in (9) its ratio is 3/5. Consequently there is no scalar
+c_N(M), depending only on that local crossing, the root
+and peripheral color, that repairs this untransported
+wall move in every original exterior. A phase or a
+factor such as 1+M^n cannot fix this environment dependence.
+A larger current/source state must be retained.
+
+## 6. Consequence for the remaining proof
+
+The marked endpoint wall in (3) is controlled by a known
+nonzero scalar and costs no exponential uncertainty.
+That result survives. What fails is moving an arbitrary
+interior wall to that endpoint while keeping its bare
+formula and then applying (3).
+
+A possible valid route is to transport W together with
+its current (4) and the original co-source homotopy,
+including all residues and normals. The discrepancy (5)
+then has a precisely stated relative pairing to check.
+Neither ordinary trace cyclicity nor a local scalar
+adjustment supplies that transport. The computations
+here do not prove that the required completed currents
+cannot cancel across a full five-point move. They show
+that such cancellation is a genuine missing theorem.
+
+No sharp upper or lower bound relative to a selected
+geometric period follows from these relocation tests.
+In particular the exact endpoint polynomial factor does
+not select a geometric saddle of the interior period.
+
+## 7. Independent exact audit
+
+Run
+
+    python3 experiments/audit_actual_interior_wall_cut_relocation.py
+
+The audit uses original E/Cartan crossing coefficients and
+the original pivots. It checks twelve complete/wrap
+families for (4), (6), (7), and twelve original figure-eight
+gap families through N=7 over exact prime fields. A
+separate exact SymPy calculation at Q=-1,x=i proves
+(8)--(9), including the uninserted cut 5I. Highest-entry
+diagnostics are recorded separately and are never used
+to replace the full marked source after insertion.

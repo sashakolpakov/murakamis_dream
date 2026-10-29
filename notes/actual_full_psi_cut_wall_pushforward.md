@@ -1,0 +1,217 @@
+# Exact pole pushforward with the original scalar cut-wall current retained
+
+28 October 2026. The absolutely convergent
+[full-Psi flow cycle](actual_full_psi_scalar_flow_cycle.md) can be
+pushed to a bare full-function head period PLUS an explicit scalar
+current on the negative-ray atomic cut walls. The current is an
+oriented tubular boundary of a specified radius homotopy; all wall
+intersections are retained with a common regularization. It is not
+an unknown matrix normalization or an asserted zero correction.
+
+This supplies an allowed exact cycle deformation and locates its
+additional chains. It still does not prove geometric survival or a
+sharp global bound on those chains. A cycle passing through a regular
+critical point does not determine its Lefschetz intersection number.
+
+The [audit](../experiments/audit_actual_full_psi_cut_wall_pushforward.py)
+and [results](../experiments/actual_full_psi_cut_wall_pushforward_results.json)
+check full-function Cauchy pushforwards for both signs and a coupled
+two-atom source with two distinct angular cuts. The latter explicitly
+has a nonzero correction; bare-circle substitution fails.
+
+## 1. A scalar full-function Cauchy identity
+
+Use the exact moment chain M_(epsilon,R) of (3) in the flow note.
+For 0<|A|<R off the negative real ray,
+
+    M_(epsilon,R)[1/(1-A/t)]
+                      =Psi_epsilon(Log_principal A).        (1)
+
+This is an ordinary cut-disk Cauchy formula, not a formal coefficient
+expansion on its radial piece. For epsilon=+1 integrate
+Psi(Log t)dt/(t-A) around the disk cut on the negative axis, with
+an inner circle of radius delta. Its inner-circle integral tends to
+zero since Psi tends to 1 and A is fixed nonzero. On the two cut
+lips, Psi_lower=(1-t^N)Psi_upper. Their difference gives exactly
+the negative-ray term in M. The residue at t=A is Psi(Log A).
+Conjugate reflection gives epsilon=-1, including its orientation.
+
+Equation (1) cannot be applied to the original flow cycle with fixed
+head variables without moving that cycle: its head radii depend on
+the moment radii. That move is the source of the current below.
+
+## 2. A global target head torus with no hidden large source
+
+First perform the exact HEAD Hardy-forest contraction from Section 8
+of the flow note. Its continuous flow polytope is unchanged, and its
+reduced whole-source period is absolutely convergent. The remaining
+head-dependent poles are ONLY
+
+    D_j: 1-A_j(z,xi)/t_j=0.                         (2)
+
+Every A_j is a primitive ratio of distinct retained head segments,
+times its explicit color/Gaussian coefficient. In particular it is
+not a constant self-loop.
+
+Choose finite outer moment radii R_j>=1 and target head log radii
+lambda_*(xi), independent of all t_j, such that
+
+    |A_j|<=a_j^max<R_j,
+    |lambda_*|<=C(1+sum|xi|).                      (3)
+
+Such a target exists by the original reduced small-argument radius
+construction with moment radii set to one. More generally it may be
+chosen to have ANY prescribed finite head radii at a fixed Gaussian
+tuple xi_g: use that prescribed vector in a compact xi neighborhood,
+the small-argument construction outside it, and a log-convex smooth
+interpolation. Enlarge the finitely many R_j to cover the compact
+modified neighborhood. All bounds in (3) remain uniform in xi.
+
+The flow proof extends verbatim from R_j=1 to any fixed finite R_j:
+replace -log|t_j| in its bound by its positive part; on 1<=|t_j|<=R_j
+all extra radial powers are bounded by R_j^N. Thus the original
+source still has an absolute Gaussian majorant with explicit
+exp(C_word N) constants. No discarded exterior-radius estimate is
+being substituted for the exact ray chain.
+
+At the target, integrate each full moment chain first. Equation (1)
+gives the bare product of Psi_epsilon(Log_principal A_j), with exactly
+the original monomials, Gaussian and coupled K_N sources. This target
+period is well-defined as an ordinary angular cut period. Its moment
+form is locally absolutely integrable even where a radial pole meets
+the head torus: integrate its real radial distance first to obtain
+at most a logarithm of the angular distance to Arg A_j=pi.
+Products of finitely many such logarithms are integrable. Indeed
+Holder's inequality reduces this to finite powers of one logarithm
+of a nonzero torus character, whose Haar integral is finite. Each
+radial variable is separate even if some atomic angular characters
+coincide. Condition (3) prevents circle-pole intersections.
+
+The head source contributes at most exp(CN(1+sum|xi|)) times a fixed
+power of N. All A_j stay in a bounded disk, where the selected
+principal-log full function is bounded at each N, including its
+continuous limit at zero. Therefore the target period is jointly
+absolutely convergent with its Gaussian variables as well.
+
+## 3. The exact global homotopy and its correction current
+
+Let lambda_0(t,xi) be the reduced flow-dual radii, and use the single
+angle-INDEPENDENT homotopy on the FULL head-angle torus
+
+    lambda_s=(1-s)lambda_0+s lambda_*, 0<=s<=1.      (4)
+
+There is no restriction to an isolated angular box whose side prisms
+would be omitted. The form is the original scalar full-function
+form, first with the exact K_N cap kernels integrated as polynomials.
+Source interval versions can be reinserted using their exact
+relative derivative on logarithmic seams.
+
+On every moment circle, both endpoints of (4) have |A_j|<R_j.
+Log-convex interpolation preserves this, so no D_j is crossed on
+circle pieces. On a moment ray t_j=-r_j, a crossing of D_j requires
+
+    A_j=t_j<0.                                    (5)
+
+These are the only extra pole loci in the head-radius homotopy.
+All head angular boundaries are paired globally. If one instead
+partitions into angular chambers, their side prisms MUST be included;
+they cancel pairwise off (5), with the remaining pole tubes retained.
+
+For complete precision, truncate every radial variable at a common
+delta>0, truncate the Gaussian box, and remove a common small tubular
+neighborhood of the union of (2) from the homotopy (4). Apply Stokes
+to its complement. Retain the ENTIRE induced tubular boundary,
+including all its matched intersections/corners; do not replace it
+by independent unsupported simple residues. Denote its integral,
+with the complement's boundary orientation, by W_(delta,epsilon).
+The matched full-Psi logarithmic lips are exactly those in M, so
+their outer endpoints cancel using the original monodromy. On a
+fixed radial end face the full form has dt_j=0. Gaussian end faces
+vanish in the limit by its majorant. One obtains
+
+    P_original=P_bare+W,
+    W=lim_(delta->0,epsilon->0) W_(delta,epsilon),    (6)
+
+with the SAME common regularization for all tube pieces. The sign
+is fixed by the complement's boundary orientation. This aggregate
+limit exists because the initial and target periods just proved
+absolute have their corresponding limits and Stokes gives their
+difference. Separate periods for individual intersecting or divergent
+tube pieces are not assigned.
+
+The non-pole source-prefactor bound during (4) follows from convexity
+of its support function J:
+
+    J(lambda_s)<=(1-s)J(lambda_0)+s J(lambda_*)
+          <=d sum_j max(0,-log r_j)+CN(1+sum|xi|).
+
+Away from a fixed logarithmic pole tube the rational kernels are
+bounded. This justifies the finite-cutoff homotopy and its Gaussian
+limit, while the common tube regularization retains every pole term.
+No statement that W is small or zero is part of (6).
+
+## 4. The simple-wall formula fixes the retained source and sign
+
+For one primitive head coordinate u=A and a Laurent test F(u), assume
+no other pole is crossed. If its initial radius obeys |u|<rho|t| and
+the target radius is a<R, the negative-ray pole u=t is crossed for
+0<r<a. The head kernel has residue
+
+    Res_(u=t) F(u)du/[u(1-u/t)]=-F(t).
+
+The resulting correction in (6) is exactly
+
+    W=-epsilon/(2*pi*i) integral_0^a
+         Psi_epsilon(log r+i epsilon pi)
+                           (-r)^N F(-r) dr/r.      (7)
+
+Taking F(u)=u^(-b), 0<=b<N, gives precisely the original coefficient
+identity v_b=C_b-J_b. Thus this pushforward does not silently discard
+the low Cauchy moments of t^N Log t. For multiple atomic poles (6)
+retains their common tubular boundary, with (7) as its simple stratum.
+
+## 5. Actual wall geometry, and what remains on the critical path
+
+A simple wall retains the explicit charge A_j^N. Its leading action
+is W_0+2*pi*i Log A_j. Regular transverse iterations give integer
+sums of these marks. The exponentiated actual canonical/Hurwitz
+equations and the original caps are unchanged. The independently
+proved [regular critical-regulator theorem](actual_wall_critical_regulator.md)
+shows that EVERY regular FULL interior critical point of such a
+wall action has its actual boundary-parabolic representation volume.
+The atom argument on the cut is flat; it need not be a physical
+degenerate meridian clock. Normalization ray cells can still carry
+the full geometric rate and must be grouped exactly.
+
+There is also an exact branch formula on the specified principal
+angular domain. If epsilon Arg A<0, then
+
+    Psi_epsilon(Log A)
+      =(1-A^N)Psi_epsilon(Log A+epsilon*2*pi*i).     (8)
+
+The shifted logarithm is in the selected epsilon strip. Otherwise
+the principal logarithm already is in that strip. On compact
+angular cells away from the real rays, the uniform full-Psi symbol
+therefore applies to an EXACT finite integer-mark expansion. This
+does not assert that arbitrary Stokes branches in other domains are
+exhausted; positive-ray interfaces and all cut/corner chains remain
+part of the source.
+
+The Gaussian contour may also be shifted by any bounded constant
+imaginary vector, or a bounded endpoint-fixed deformation through
+a prescribed finite complex tuple. Apply the exact scalar source
+identity first: its remaining Gaussian integrand is a finite sum of
+entire exponential moments, with Gaussian decay on horizontal lines.
+The adapted flow radii satisfy the same bound with bounded imaginary
+parts, so this is an allowed full scalar cycle deformation, not an
+assumption that a fixed-circle Gaussian interchange is valid.
+
+Consequently a regular target head/Gaussian/cap chart can be specified
+through a given finite geometric point. The exact price is the
+current W in (6), not an unspecified comparison factor. Neither
+passing through that point nor the unit normal residue proves that
+the resulting whole cycle has nonzero geometric-thimble coefficient.
+Global growth near singular real-axis interfaces, non-full endpoint
+strata, approximate critical escape and the selected geometric lower
+bound still require proof. Equation (6) locates these issues in
+explicit scalar chains; it does not resolve them by notation.
