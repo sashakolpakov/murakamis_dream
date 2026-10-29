@@ -14,18 +14,30 @@ saturated by every inverted shape/frame denominator. A peripheral
 elimination polynomial alone is weaker. The following are checkable
 finite data:
 
-* The actual integer gluing/peripheral incidence and its topological
-  fundamental-class marking, including all multiplicities.
+* The actual oriented ideal manifold triangulation: face identifications,
+  circular edge links and the intended torus vertex links, with its
+  degree-one marked identification with the original exterior. Retain
+  actual integer gluing/peripheral incidence and all multiplicities.
 * An algebraic complete solution with every positively ordered shape
   in the upper half-plane. Its sign inequalities can be certified by
   real-algebraic isolating intervals, rather than by a fitted shape.
+  Require true complex edge products1, unit unwrapped edge winding,
+  and both marked peripheral linear products1. Unit winding itself is
+  a finite sign test: along ordered edge factors w_j with Im w_j>0,
+  put p_0=1,p_j=product_(k<=j)w_k. Count indices for which
+  Im p_(j-1)<0 and Im p_j>=0; the count must be1. Each factor turns
+  through strictly less than pi, so this counts exactly the positive
+  real-ray crossings, including a landing on that ray. Positive cusp
+  link triangles and unit edge winding give a nonsingular similarity
+  torus; peripheral linear products1 make it a complete flat torus.
 * Full edge rank and the marked peripheral symplectic pairing. The
   [explicit ideal certificate](actual_pretzel_positive_ideal_angle_certificate.md)
   proves these for the actual current cellulation; the general
   [stationarity audit](source_angle_stationarity_critical_audit.md)
   makes the required rank conditions explicit.
-* The nonzero marked gluing Jacobian. Positive polarization proves it
-  directly after choosing independent edge and marked peripheral
+* The marked gluing Jacobian is then nonzero, rather than an extra
+  assumed analytic input. Positive polarization proves it
+  after choosing independent edge and marked peripheral
   constraints: if (A B) has full row rank n and its n-dimensional
   row space is real Lagrangian in R^(2n), and
   tau_j=1/(z_j-1), then Im tau_j<0 and

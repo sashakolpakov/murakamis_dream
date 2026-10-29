@@ -14,6 +14,39 @@ Jones is a separate question and is not required for this route.
 [The current torsor status](notes/a_polynomial_torsor_status.md)
 compares this proposal with the constructions already in this repo.
 
+29 October, the Fourier/source route now proves a complete augmented
+link family: [balanced stacks of the literal octahedral belt piece](notes/actual_balanced_octahedral_belt_stack_volume.md).
+Every fixed balanced word of 2k pieces has 2k+3 components and original
+all-level volume limit 4k v_8, equal to its explicitly constructed
+complete hyperbolic metric. The proof uses
+[exact cyclotomic Chebyshev sampling](notes/actual_complete_circle_nodal_energy_and_belt_sewing.md)
+and ONE retained physical belt, with all root normals included.
+This is independently checked source/geometry equality for the stated
+complete links; fixed fillings and general knots remain open. Possible
+coverage by the existing Whitehead-chain literature is recorded, and
+no novelty of this topological family is claimed.
+
+29 October, the [finite real-algebraic geometric certificate](notes/finite_real_algebraic_geometric_certificate.md)
+selects the unique positive complete shape point on any supplied actual
+marked ideal triangulation. Exact partial-product signs certify unit
+edge winding; positivity forces the meridian Jacobian to be invertible.
+This is a general geometric criterion, not a quantum-growth theorem.
+The [literal reflected two-circle base](notes/actual_reflected_two_circle_octahedral_base.md)
+now has both its original-source limit and its actual four-component
+hyperbolic volume proved equal to 2v_8. Its diagram is recovered from
+the labeled two-octahedron face table, independently of census recognition.
+
+The [original Newton crossing graph](notes/actual_newton_twist_canonical_graph.md)
+now covers every four-plat word with exact source/cap data. A
+[finite Gaussian endpoint test](notes/actual_twist_endpoint_gaussian_certificate.md)
+supplies actual nonzero polynomial endpoints for broad fixed-twist
+inputs. The [rank-three folded packet](notes/actual_newton_rank_three_folded_packet.md)
+now also has a sharp original-source norm despite an interior modulus
+switch, using exact boundary vectors and certified overlapping
+envelopes. A volume interpretation for that packet and the broader
+branched-source/filling estimates remain separate. The broad equality
+goal remains active.
+
 29 October, work beyond the proved family now has an
 [exact positive Newton metric for original turns](notes/actual_newton_turn_positive_gram.md)
 and a [bounded six-port confluence theorem](notes/actual_six_port_bounded_confluent_blocks.md).

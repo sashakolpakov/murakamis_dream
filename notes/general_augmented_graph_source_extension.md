@@ -386,4 +386,14 @@ shared channel and its actual six-port vertex tensor before estimating
 or factorizing it. They do not rule out a coherent geometric positive
 metric, or an exact larger class after that tensor has been supplied.
 
+There is a source-exact nonbranched extension that avoids (20):
+[the balanced octahedral belt stack](actual_balanced_octahedral_belt_stack_volume.md)
+cuts every piece at the SAME outer belt and retains ONE complete
+circle after cyclic stacking, so its source is
+\(\phi(L_N(z_N^\sharp z_N)^k)\), not a power of \(L_N\).
+The [actual bandlimited sampling theorem](actual_complete_circle_nodal_energy_and_belt_sewing.md)
+gives its sharp energy and the literal pants/collar certificate
+gives volume \(4k v_8\). This does not replace a genuinely
+branched physical vertex by the Frobenius tensors in (19).
+
 Audit: [original matrices, all normal aliases, sparse duals and open-port sewing](../experiments/audit_general_augmented_graph_source_extension.py).

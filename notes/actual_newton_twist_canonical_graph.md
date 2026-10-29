@@ -268,6 +268,20 @@ rational words, not merely a formal cubic at each isolated crossing.
 Reducible and escaping/normal intersections are not discarded, and
 their source contributions require separate analytic control.
 
+This also gives a finite univariate character test for any specified
+word. Start with the four literal matrices(19), apply the corresponding
+signed Hurwitz substitutions (with the source adapters in(15)--(17)),
+and impose the SAME closing inverse-pair matrix equations as the cap
+pattern(19). Matrix inverses are adjugates since determinant is1, so
+these are polynomial equations in z. Saturate by z and any denominators
+introduced by a chosen auxiliary chart; the irreducible solutions are
+the zeros of an explicit ideal in C[z]. It can be computed by a gcd
+and, for reduced character support, its square-free part. This retains
+the actual group/peripheral marking without a generic-meridian
+A-polynomial elimination. The original nonreduced quantum source is
+still(16)--(18); taking this reduced ideal does not replace it in the
+finite period or prove a nonzero geometric coefficient.
+
 ## 6. Exact limits of the statement
 
 The Newton clock X is exp(2pi i times a NEWTON INDEX/N). The spectral
@@ -296,7 +310,51 @@ provides the exact finite recurrence, actual braid graph and pointed
 boundary data for that next analysis; it does not infer a new universal
 volume equality from a principal curve alone.
 
-## 7. Focused verification
+## 7. What the universal local dilogarithm does identify
+
+There is a precise useful boundary-symbol statement. On the logarithmic
+lift of the regular triangle, put S=2pi i Phi. Directly from the actual
+factorial ratio in(1), its leading action is
+
+    S=-Li_2(X)+Li_2(Y)+Li_2(X/Y)-Li_2(1)
+                  +(Log Y)^2/2+pi i Log X-pi^2.        (19a)
+
+The last real constant is the leading original kappa, not a chosen
+imaginary calibration. The q^i factor in(1) is subleading and remains
+in its exact amplitude. Differentiation gives the same actual graph:
+
+    partial_(Log X) S=Log U,
+    partial_(Log Y) S=-Log V.
+
+Thus the rational pre-Bloch symbol of this local phase is
+
+    beta_Newt=-[X]+[Y]+[X/Y],
+    delta beta_Newt=-X wedge U+Y wedge V.               (19b)
+
+For an elementary verification, ignore the torsion class of -1, write
+a=1-X, b=1-Y, c=X-Y, and expand the wedge of
+U=Ya/c and V=-b/c. Bilinearity gives exactly the boundary of the
+three displayed dilogarithms. The Bloch--Wigner identity also gives
+
+    D(beta_Newt)=Im S-log|X| Arg U+log|Y| Arg V,         (19c)
+
+on compatible logarithmic branches. Regular composed seams telescope
+in(19b); a turn preserves X wedge U.
+
+This does NOT yet identify the resulting closed symbol with the
+topological fundamental class. Boundary wedges do not fix a closed
+Bloch period, and the actual cap lies on the exceptional corner in
+section5, where a regular seam-telescoping argument cannot replace its
+normal source. A chain-level comparison with the actual signed
+crossing blocks and marked boundary is still required. Such a global
+comparison is already proved for the ORIGINAL factorial crossing
+symbols in [the fundamental-cycle note](crossing_fundamental_cycle.md),
+for arbitrary diagrams and their regular complete representations.
+It supplies the classical regulator bound, not the missing global
+source estimate. In particular(19b) alone neither supplies a generic
+meridian nor proves access or noncancellation for any new word class.
+
+## 8. Focused verification
 
 [The new exact audit](../experiments/audit_actual_newton_twist_canonical_graph.py)
 passes symbolic symplectic/Fricke/inverse-Hurwitz and resolved-cap group

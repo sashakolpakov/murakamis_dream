@@ -23,6 +23,9 @@ including every original confluent derivative. Put
 
     theta_N=kappa^3(-q)^d, |theta_N|=1.
 
+In fact theta_N=kappa, since kappa^2(-q)^d=1 at the specified root.
+Keeping the unsimplified form below displays the original phase sources.
+
 Then
 
     T P T=theta_N P T^(-1)P,

@@ -421,8 +421,11 @@ the genuine diagram \(\phi(\mathscr R(R)R^{-1})
 opposite single crossing, and the two-strand closure has two main
 components. Thus the complete reflected diagram has FOUR components.
 It must not be identified with the three-component Borromean rings
-merely from the numerical value \(2v_8\). A face/cusp/topological
-identification of its complement is a separate geometric task.
+merely from the numerical value \(2v_8\). The separate
+[literal octahedral certificate](actual_reflected_two_circle_octahedral_base.md)
+now identifies its complement by a reversible projection/disk cut,
+the actual labeled face table, and four complete torus links. This
+proves that (17) equals the actual volume of that specified link.
 The original single-cut normalization comparison changes only the
 recorded unit phase (or the optional one-cut modified factor \(1/N\)),
 so it does not alter (17).
@@ -433,6 +436,6 @@ Independent analytical review and a fresh audit replay checked the
 full physical turn, repeated-node minimal polynomials, extremal-path
 normalization, complete Frobenius divisibility, unit original closures,
 and the full-Cartan adjoint. The complete-packet rate proof in section 6
-was independently re-derived. These checks do not identify the
-four-component reflected diagram geometrically or prove a sharp
-energy bound for arbitrary words.
+was independently re-derived. Its geometric identification is supplied
+by the separate octahedral certificate above; neither proof supplies
+a sharp energy bound for arbitrary words.

@@ -47,6 +47,31 @@ coherent source control stronger than the present per-alias norm bound.
 This width improvement is progress toward generality, not a declaration
 that the broad active goal is complete.
 
+There is now a second verified COMPLETE augmented-link family:
+[balanced octahedral belt stacks](actual_balanced_octahedral_belt_stack_volume.md).
+For every fixed balanced word of 2k literal cut pieces, k>=1, its
+2k+3-component link has
+
+    lim_N (2pi/N)log|<L_epsilon>_N|
+      =Vol(S^3 minus L_epsilon)=4k v8.
+
+Each piece is the actual cut two-octahedron base or its reflected,
+direction-reversed version. The geodesic pants collars glue to a
+complete metric with 4k regular octahedra. At the original quantum
+source, all balanced orders give exactly ONE retained-belt contraction
+N sum_c m_c |z_N(c)|^(2k). Exact discrete Chebyshev orthogonality and
+the proved nonzero fixed-ellipse packet determine its sharp rate.
+This includes both parities and composite levels; k and the diagram
+remain fixed before the level limit. Root and a separate reviewer
+read the source/collar/metric proof and replayed the physical checks.
+
+This is a growing family of complete LINKS, not a fixed-filling or
+arbitrary-knot theorem. Literature coverage includes van der Veen's
+Whitehead chains; these literal stacks may lie in that earlier family.
+No novelty of the topological class is claimed without an exact clasp
+dictionary. The independently proved reusable advance is the original
+bandlimited source/energy transfer with its precise physical seam.
+
 ## 2. The hyperbolic-volume identification is now general
 
 The [general geometric theorem](general_source_regulator_hyperbolic_equality.md)
@@ -139,13 +164,70 @@ and seven complex positive Gram checks for the latter. These finite
 checks supplement the uniform proofs, not a general source asymptotic.
 
 The new norm additionally gives a proved rate 2v_8 for the explicitly
-specified complete-circle reflected circuit in its section 6. That
-diagram has four components and its complement's geometry has NOT
-been identified. This rate is therefore not entered as another
-hyperbolic-volume equality. The next concrete analytic kernel is the
-Newton sine-binomial transform with its exact half-clock phase;
-source stationarity must still be matched to actual global geometry
-and its coherent growth controlled.
+specified complete-circle reflected circuit in its section 6. The
+[literal octahedral certificate](actual_reflected_two_circle_octahedral_base.md)
+now identifies its FOUR-component complement by the actual reversible
+projection/disk cut, two regular octahedra with the listed face maps,
+unit edge winding and four complete torus cusps. Thus this specified
+complete base has full original-source volume equality. Root independently
+read the source-to-face and metric proof and replayed its exact audit
+with the optional literal-diagram cross-check; a separate agent did the
+same. This is a new calibrated base, not a theorem for arbitrary
+octahedral graphs or their fillings.
+
+The [exact canonical graph](actual_newton_twist_canonical_graph.md)
+also gives a source-exact Newton alphabet for EVERY four-plat word,
+including a literal univariate parabolic cap-matrix ideal, actual
+Hurwitz action and the exceptional normal cap. This fixes general
+classical support and all root-value source coefficients; it does
+not give generic-meridian transport or whole-word quantum growth.
+The [two-twist interaction packet](actual_newton_two_twist_interaction_packet.md)
+has its own sharp entire-source norm exponent, proved using both
+actual endpoints and the retained reflected current. Its numerical
+match to a knot volume is not yet entered as a volume equality.
+
+The [finite geometric certificate](finite_real_algebraic_geometric_certificate.md)
+is independent of diagram class: positive shapes, actual gluing and
+peripheral products, and finite partial-product sign counts certify
+the unique complete hyperbolic point. Positivity then proves the marked
+Jacobian nonzero and the geometric meridian germ algebraic and etale.
+This makes the geometric gate finite and verifiable without numerical
+logarithms. It does not supply the quantum period's source selection.
+
+There is now a [finite Gaussian endpoint certificate](actual_twist_endpoint_gaussian_certificate.md)
+for EVERY fixed signed twist power. An explicitly evaluated finite
+algebraic sum on N modulo 8k determines whether its N^(3/2) source
+coefficient stays nonzero. Powers 3, 4 and 5 pass uniformly; powers
+1 and 2 have separate exact lower-order endpoints. These are actual
+full-Hermite source values, not an eigenvalue-only trace. The next
+reduced turn word has an exact rank-three Ward equation and retained
+forcing, with both scalar endpoints evaluated by this theorem.
+The [full boundary-vector extension](actual_newton_run_endpoint_vectors.md)
+is stronger: for EVERY fixed twist power k>=3, finitely many original
+Newton insertions give a Vandermonde system with distinct algebraic
+nodes. Its N-independent inverse extracts ALL nonzero Gaussian
+boundary modes, uniformly in the residue of N. This retains the
+actual source vector when its scalar Gaussian sum cancels. These
+resolved endpoint modes still must be matched to the interior Ward
+projections of a proposed longer-word transport.
+Its distinct principal roots have an INTERIOR modulus switch, so
+the earlier gapped half-domain source argument cannot simply be reused.
+The [rank-three folded packet](actual_newton_rank_three_folded_packet.md)
+now handles that particular switch: full exact backward initial vectors,
+an algebraic dominant-root certificate, and two rigorously bounded
+spectral-profile integrals supply overlapping whole-source envelopes.
+The matching lower bound stays in a proved gapped backward domain.
+This establishes the sharp entire root-value norm for that next word;
+no volume interpretation is inferred from its numerical constant.
+
+The [general bandlimited source criterion](actual_complete_circle_nodal_energy_and_belt_sewing.md)
+provides a different reusable route. For actual polynomials of degree
+at most floor((N-1)/2), exact cyclotomic Chebyshev sampling transfers a
+nonzero fixed-ellipse rate with a continuous boundary value to the
+actual node maximum and retained-circle positive energy. The bandwidth
+restriction prevents aliasing; an explicit degree-one-higher polynomial
+vanishes at every physical node. This is an exact integral-source
+condition, not a conclusion from a localized A-curve alone.
 
 The [analytic sewing criterion](actual_six_port_analytic_sewing_criterion.md)
 locates the remaining task in an actual coherent physical-port packet
@@ -168,6 +250,13 @@ The two outstanding analytic requirements for those graphs are:
    with a nonzero geometric leading coefficient and controlled errors.
 2. A global source/alias estimate that excludes exponentially competing
    contributions outside that packet, with the original boundary data.
+
+The newly proved bandlimited energy and folded cubic solve specified
+root-value source problems; they do not yet supply these complex-color
+and complementary-source hypotheses for arbitrary branched graphs or
+the new belt-stack fillings. The generic-meridian A-module likewise
+requires its actual deformation and boundary currents, beyond the
+complete-meridian Newton character slice already proved.
 
 The active goal remains open until broader original-source hypotheses
 are established. Another conditional theorem or a sharper upper bound

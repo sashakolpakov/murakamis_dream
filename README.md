@@ -4,6 +4,8 @@ Research notes, exact finite-matrix experiments, and audit results concerning Ka
 
 **The general volume conjecture is not claimed solved.** The current notes contain a claimed full-sequence volume-equality proof for a specified long-pretzel family: every fixed odd width **s ≥ 9**, with independently sufficiently large **fixed signed** twist integers p_i and the recorded source convention R^(-(2p_i+1)). The corresponding specified single-cut reduced **two-component link** statement holds at fixed even widths **s ≥ 10**. Width and slopes remain fixed before N → ∞; both level parities and composite levels are included. These are research proofs and internal analytical audits, requiring external mathematical review.
 
+A second verified research result concerns **complete augmented links**: every fixed balanced word of **2k octahedral belt pieces**, k ≥ 1, gives a **2k+3-component** link with original all-level volume limit **4k v₈**, equal to its explicitly constructed complete hyperbolic volume. The proof retains one physical belt and uses exact cyclotomic Chebyshev sampling. Possible coverage by the earlier Whitehead-chain literature is recorded; no novelty of this topological family is claimed. Fixed fillings of these new bases are not established here.
+
 The unfilled complete augmented volume V_s and the filled source volume V_src,s(p) are different. The broader task—original-source control and volume equality for arbitrary hyperbolic knots or arbitrary augmented graphs—remains open. Exploratory calculations, counterexamples to intermediate proposals, and historical checkpoints are retained with their own scope.
 
 ## Start here
@@ -15,8 +17,16 @@ The unfilled complete augmented volume V_s and the filled source volume V_src,s(
 - [Adversarial dependency audit](notes/actual_source_casson_rivin_dependency_audit.md)
 - [General geometric completion and regulator theorem](notes/general_source_regulator_hyperbolic_equality.md)
 - [Positive Newton metric for genuine turns](notes/actual_newton_turn_positive_gram.md)
+- [Literal reflected two-circle base and its two-octahedron geometry](notes/actual_reflected_two_circle_octahedral_base.md)
+- [Bandlimited cyclotomic sampling and complete-belt energy](notes/actual_complete_circle_nodal_energy_and_belt_sewing.md)
+- [Balanced octahedral belt stacks: source and volume](notes/actual_balanced_octahedral_belt_stack_volume.md)
+- [Finite real-algebraic geometric certificate](notes/finite_real_algebraic_geometric_certificate.md)
 - [Coherent turn reductions](notes/actual_newton_coherent_turn_reduction.md)
 - [Two-twist interaction packet](notes/actual_newton_two_twist_interaction_packet.md)
+- [Run endpoint vectors and universal fixed-run mode test](notes/actual_newton_run_endpoint_vectors.md)
+- [Actual Gaussian twist endpoints](notes/actual_twist_endpoint_gaussian_certificate.md)
+- [Rank-three coherent folded packet](notes/actual_newton_rank_three_folded_packet.md)
+- [Backward dominant-source certificate](notes/actual_backward_cubic_dominant_source_certificate.md)
 - [Exact Newton kernel and canonical graph](notes/actual_newton_twist_canonical_graph.md)
 - [What algebraic source/geometry criteria certify](notes/algebraic_source_geometry_criteria_audit.md)
 - [Actual six-port divided-power source kernel](notes/actual_six_port_divided_power_source_kernel.md)
@@ -35,7 +45,11 @@ python3 -m pip install -r requirements-core.txt
 python3 experiments/audit_actual_newton_turn_positive_gram.py
 python3 experiments/audit_actual_six_port_divided_power_source_kernel.py
 python3 experiments/audit_general_augmented_graph_source_extension.py
+python3 experiments/audit_actual_complete_circle_nodal_energy_and_belt_sewing.py
+python3 experiments/audit_actual_balanced_octahedral_belt_stack_volume.py
 ```
+
+With the optional geometry packages installed, the belt-stack script also supports `--software-only` for its separately labeled literal-diagram diagnostics. The exact geometric proof is the reversible disk/face/cusp certificate in the notes, rather than software recognition.
 
 For each substantive result, read the note’s exact hypotheses and its linked audit before interpreting an output marked `PASS`.
 

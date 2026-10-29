@@ -1,7 +1,5 @@
 # The literal reflected two-circle source and its two-octahedron geometry
 
-> **Draft topology certificate.** This note had not completed its independent topology audit at snapshot time. Its referenced audit script is not included. It is not an established extension of the proved family indexed by the README.
-
 29 October 2026. The positive original circuit
 \[
  E_N=\phi\!\left(\mathscr R(RL_N)\,R^{-1}L_N\right)
@@ -10,8 +8,9 @@
 has a genuine four-component hyperbolic interpretation. The labeled
 cut-and-reglue certificate below gives two regular ideal octahedra,
 volume \(2v_8\). This is a complete-base calibration, not yet a new
-broad family of filled knots. The topology certificate should be
-reviewed independently; software recognition is not its proof.
+broad family of filled knots. The literal cut/face matching and the
+exact metric certificate have now passed independent analytical
+review and a fresh audit replay; software recognition is not their proof.
 
 ## 1. Exact source diagram and cut-open port table
 
@@ -162,6 +161,16 @@ surface, and its \(N\)-channel overlap is not a scalar product of
 independent local invariants. Two known packet norms alone do not
 control the sharp coherent overlap or its geometric critical point.
 
+There is now a separate verified extension at THIS actual outer
+crossing-disk seam. The [bandlimited nodal theorem](actual_complete_circle_nodal_energy_and_belt_sewing.md)
+controls the full complete-circle channel sum, and the
+[balanced belt-stack certificate](actual_balanced_octahedral_belt_stack_volume.md)
+glues the cut two-octahedron pieces along their literal geodesic
+pants. For every fixed balanced word of \(2k\) pieces it proves
+the original complete-link limit \(4k v_8\), with \(2k+3\)
+components. It is a cyclic one-belt operation, not a claim about
+arbitrary graph vertices or the new bases' fixed Dehn fillings.
+
 In a genuinely branched construction with three paired boundary slots,
 the original vertex is a SIX-port tensor. Its saturated source has
 dimension \((N^3+N)/2\) and the explicit divided-power kernel of
@@ -177,3 +186,10 @@ Audit: [actual tangle and exact octahedral face/edge/cusp certificate](../experi
 Software census names and numerical volumes, when requested in the
 audit, are diagnostics only; the written proof is the reversible
 disk/projection cut and the exact metric checks above.
+
+Independent analytical review rechecked the actual auxiliary disk,
+the quarter-turned four-port partitions, all shaded/white face maps,
+the inverse collar reconstruction, exact horosphere preservation,
+and the complete cusp links. The focused exact audit was separately
+replayed with its optional literal-diagram cross-check. Both passed;
+no general graph/filling scope is inferred from this base certificate.
