@@ -6,9 +6,9 @@ Research on Kashaev invariants, pointed quantum A-structures, and hyperbolic vol
 
 ![The route from the original quantum source to actual hyperbolic volume](book/figures/research-map.png)
 
-The guide explains the argument in seven chapters, with a searchable archive of the technical notes, audits, and data. Start with the equality results, then the mechanism, geometry, and current frontier.
+The guide explains the argument in seven chapters. The **[research library](https://sashakolpakov.github.io/murakamis_dream/library.html)** organizes the detailed work into seven routes, with a main argument, its scope, and supporting notes. Audits and recorded results are linked from the notes they accompany.
 
-The [figure gallery](https://sashakolpakov.github.io/murakamis_dream/figures.html) shows the research route, four-port recoupling, cube channels, a truncated tetrahedron, and the Conway cells. Each figure has SVG, PDF, and TikZ downloads.
+The [figure gallery](https://sashakolpakov.github.io/murakamis_dream/figures.html) shows the research route, recoupling, cube channels, geometric cells, and the peripheral torsor. Each figure has SVG, PDF, and TikZ downloads.
 
 **The general volume conjecture remains open.** The repository contains internally reviewed research proofs for specified families, general local identities, and explicit obstructions to proposed extensions. Finite audits and numerical diagnostics retain their stated scope.
 
@@ -17,6 +17,7 @@ The [figure gallery](https://sashakolpakov.github.io/murakamis_dream/figures.htm
 | Directory | Contents |
 | --- | --- |
 | `book/chapters/` | Readable guide: results, mechanism, geometry, frontier, notation, audits |
+| `book/collections.json` | Curated research routes and their main arguments |
 | `book/figures/` | Editable TikZ diagrams and compiled PNG, SVG, and PDF figures |
 | `docs/` | Generated website, topic navigation, and full-text search |
 | `notes/` | Detailed arguments at their original stable paths |

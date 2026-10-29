@@ -31,3 +31,11 @@ The blue triangles are polar truncation faces. The hyperbolic metric is specifie
 The source leaf is an ideal quadrangular pyramid and multiplication gives an ideal triangular prism. Blue quadrilateral ports carry the matching data; the shaded leaf triangles retain the crossing-disk pairing. The [global geometry chapter](chapters/geometry.md#the-conway-maximum-now-builds-the-actual-complement) explains their assembly into the actual complement.
 
 ![Conway source cells: the ideal leaf pyramid and multiplication prism, with their ordered quadrilateral ports.](figures/conway-cells.png)
+
+## Peripheral marking and the torsor
+
+The left panel draws a primitive filling curve on a schematic torus fundamental domain. Opposite sides are identified; the amber segments join into one loop in class $\mu+2\lambda$. The drawing does not prescribe a Euclidean cusp shape.
+
+The right panel shows the local sheets of the square-root cover $\ell^2=L$, the branch selected by the source, and the integral monomial shear on that cover. It is a local picture, not a claim that the torsor splits globally. The [peripheral geometry discussion](chapters/geometry.md#half-twists-preserve-the-marked-action-through-a-shear) explains why the primitive marking must be retained through filling.
+
+![A primitive cusp filling slope and the selected local sheet of the peripheral square-root torsor.](figures/peripheral-torsor.png)

@@ -26,6 +26,23 @@ CHAPTERS = [
     ("frontier", "Current frontier"), ("notation", "Notation"),
     ("audits", "Reproducing audits"),
 ]
+COLLECTIONS = json.loads((ROOT / "book/collections.json").read_text())
+
+
+def note_context(source, base, status):
+    stem = Path(source).stem
+    related = [c for c in COLLECTIONS if stem in [c["entry"], *c["notes"]]]
+    links = [f'<a href="{REPO}/blob/main/{quote(source)}">Markdown source</a>']
+    for filename, label in ((f"audit_{stem}.py", "Audit script"),
+                            (f"{stem}_results.json", "Recorded output")):
+        if (ROOT / "experiments" / filename).is_file():
+            links.append(f'<a href="{REPO}/blob/main/experiments/{quote(filename)}">{label}</a>')
+    routes = " · ".join(f'<a href="{base}library.html#{c["id"]}">{escape(c["title"])}</a>' for c in related)
+    return (f'<div class="note-context"><a href="{base}library.html">Research library</a>'
+            + (f' / {routes}' if routes else '')
+            + f'<p><span class="badge">{escape(status)}</span> Technical research note. Exact scope and later corrections are stated in the text.</p>'
+            + '<div class="note-resources">' + " ".join(links)
+            + f'<a href="{base}guide/frontier.html">Current frontier</a></div></div>')
 
 
 def title_of(text, fallback):
@@ -60,6 +77,7 @@ def page(url, title, body, active, source=None, topic="Research guide", status="
         for slug, label in CHAPTERS
     )
     nav += '<div class="nav-label">Explore the research</div>'
+    nav += f'<a href="{base}library.html" class="{"active" if active == "library" else ""}">Research library</a>'
     nav += f'<a href="{base}figures.html" class="{"active" if active == "figures" else ""}">Figure gallery</a>'
     nav += f'<a href="{base}archive.html" class="{"active" if active == "archive" else ""}">Search the archive</a>'
     headings = Headings(); headings.feed(body)
@@ -69,7 +87,7 @@ def page(url, title, body, active, source=None, topic="Research guide", status="
     ) + '</aside>'
     context = ""
     if source and source.startswith("notes/"):
-        context = f'<div class="note-context"><span class="badge">{escape(status)}</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="{REPO}/blob/main/{quote(source)}">Markdown source</a><a href="{base}guide/frontier.html">Read the current frontier</a></div>'
+        context = note_context(source, base, status)
     chapter_nav = ""
     if adjacent:
         chapter_nav = '<nav class="chapter-nav" aria-label="Chapter navigation">' + "".join(
@@ -97,10 +115,17 @@ def main():
     if not shutil.which("pandoc"):
         raise SystemExit("Pandoc is required. Install it, then run this script again.")
     catalog = json.loads((ROOT / "book/catalog.json").read_text())
+    for collection in COLLECTIONS:
+        for stem in [collection["entry"], *collection["notes"]]:
+            if not (ROOT / "notes" / f"{stem}.md").is_file():
+                raise SystemExit(f"Collection {collection['id']} refers to missing note {stem}")
     mapping = {}
     for slug, _ in CHAPTERS:
         mapping[f"book/chapters/{slug}.md"] = "index.html" if slug == "index" else f"guide/{slug}.html"
     mapping["book/figures.md"] = "figures.html"
+    # Authored chapters may link to these generated navigation pages.
+    mapping["book/library.html"] = "library.html"
+    mapping["book/archive.html"] = "archive.html"
     for source in sorted((ROOT / "notes").glob("*.md")):
         mapping[source.relative_to(ROOT).as_posix()] = f"notes/{source.stem}.html"
     figures = [p for p in (ROOT / "book/figures").iterdir() if p.suffix in (".png", ".svg", ".pdf", ".tex")]
@@ -208,11 +233,40 @@ def main():
                 data = json.loads(text)
                 if isinstance(data, dict): scope = str(data.get("scope", data.get("limits", "Recorded output; see the linked audit and technical note.")))
             except json.JSONDecodeError: scope = "Recorded output; inspect its format."
-        records.append({"title": source.stem.replace("_", " "), "url": REPO + "/blob/main/experiments/" + quote(source.name), "type": "Audit script" if source.suffix == ".py" else "Recorded data", "topic": "Audits and data", "status": "Check stated scope", "text": scope})
+        note_stem = source.stem.removeprefix("audit_").removesuffix("_results")
+        note_topic = catalog.get(note_stem, ["Audits and data", ""])[0]
+        records.append({"title": source.stem.replace("_", " "), "url": REPO + "/blob/main/experiments/" + quote(source.name), "type": "Audit script" if source.suffix == ".py" else "Recorded data", "topic": note_topic, "status": "Check stated scope", "text": scope})
+    records.append({"title": "Research library", "url": "library.html", "type": "Guide",
+                    "topic": "Research guide", "status": "Reading routes",
+                    "text": " ".join(c["title"] + ": " + c["summary"] for c in COLLECTIONS)})
     (OUT / "assets/search.json").write_text(json.dumps(records, ensure_ascii=False, separators=(",", ":")))
+    (OUT / "assets/browse.json").write_text(json.dumps(
+        [{**row, "text": row["text"][:260]} for row in records],
+        ensure_ascii=False, separators=(",", ":")))
+    by_url = {row["url"]: row for row in records}
+    cards = []
+    for number, collection in enumerate(COLLECTIONS, 1):
+        c = collection
+        preview = (f'<a class="collection-picture" href="guide/{c["guide"]}.html" aria-label="Read the guide to {escape(c["title"], quote=True)}">'
+                   f'<img src="assets/figures/{c["figure"]}.png" alt="{escape(c["title"], quote=True)} — explanatory diagram" loading="lazy"></a>') if c.get("figure") else ''
+        selected = ''.join(f'<li><a href="notes/{stem}.html">{escape(by_url[f"notes/{stem}.html"]["title"])}</a></li>' for stem in c["notes"])
+        cards.append(f'''<section class="collection-card" id="{c['id']}">
+<div class="collection-number">{number:02d} · {escape(c['topic'])}</div>
+<h2 id="{c['id']}-heading">{escape(c['title'])}</h2>{preview}<p>{escape(c['summary'])}</p>
+<p class="collection-scope">{escape(c['scope'])}</p>
+<a class="collection-entry" href="notes/{c['entry']}.html">{escape(c['entry_label'])} →</a>
+<details><summary>Supporting arguments ({len(c['notes'])})</summary><ul>{selected}</ul></details>
+<div class="collection-links"><a href="guide/{c['guide']}.html">Read the explanation</a><a href="archive.html?type=Note&amp;topic={quote(c['topic'])}">Browse topic</a></div></section>''')
+    library = ('<h1>Research library</h1><p>Choose a question, then follow its main argument and supporting notes. Each route states its scope; the archive keeps the full research history.</p>'
+               '<div class="library-intro"><a href="guide/results.html"><strong>Start with the results</strong><span>Families, hypotheses, and exact conclusions</span></a>'
+               '<a href="guide/frontier.html"><strong>Find the remaining gap</strong><span>What the general conjecture still needs</span></a>'
+               '<a href="figures.html"><strong>Explore the diagrams</strong><span>Geometry, source operations, and peripheral data</span></a></div>'
+               '<div class="collection-grid">' + ''.join(cards) + '</div>'
+               '<h2 id="complete-archive">The complete archive</h2><p>These routes are curated entry points. All technical notes, including uncatalogued and historical work, remain available in the <a href="archive.html">searchable archive</a>. A note’s audit and recorded output are linked beside its source when a matching pair exists.</p>')
+    (OUT / "library.html").write_text(page("library.html", "Research library", library, "library", "book/collections.json"))
     fallback = ''.join(f'<li><a href="{escape(row["url"])}">{escape(row["title"])}</a></li>' for row in records if row['type'] == 'Note')
-    body = f'''<h1>Research archive</h1><p>Search the complete technical notes, audit scripts, and recorded data. Start with the guide for the current argument; archived notes retain their own hypotheses, dates, and corrections.</p><p><strong>“PASS” in an audit is not a general proof.</strong> Uncatalogued notes carry the neutral “See note” status.</p>
-<div class="archive-controls"><input id="archive-query" type="search" aria-label="Search archive" placeholder="Search full notes or audit names…"><select id="archive-type" aria-label="Record type"><option value="">All types</option><option>Guide</option><option>Note</option><option>Audit script</option><option>Recorded data</option></select><select id="archive-topic" aria-label="Research topic"><option value="">All topics</option></select></div><p id="archive-count" class="archive-count" role="status">Loading the index…</p><div id="archive-results"></div><button id="archive-more" class="more" hidden>Show more</button><noscript><h2>Technical notes</h2><p>Enable JavaScript for search and topic filtering.</p><ul>{fallback}</ul></noscript>'''
+    body = f'''<h1>Research archive</h1><p>Search the complete technical notes, audit scripts, and recorded data. For an organized starting point, <a href="library.html">browse the research library</a>. Archived notes retain their own hypotheses, dates, and corrections.</p><p><strong>“PASS” in an audit is not a general proof.</strong> Uncatalogued notes carry the neutral “See note” status. Notes are shown first; select another record type to browse scripts or data.</p>
+<div class="archive-controls"><input id="archive-query" type="search" aria-label="Search archive" placeholder="Search full notes or audit names…"><select id="archive-type" aria-label="Record type"><option value="">All types</option><option>Guide</option><option selected>Note</option><option>Audit script</option><option>Recorded data</option></select><select id="archive-topic" aria-label="Research topic"><option value="">All topics</option></select><button id="archive-reset" type="button">Reset filters</button></div><p id="archive-count" class="archive-count" role="status">Loading the index…</p><div id="archive-results"></div><button id="archive-more" class="more" hidden>Show more</button><noscript><h2>Technical notes</h2><p>Enable JavaScript for search and topic filtering.</p><ul>{fallback}</ul></noscript>'''
     (OUT / "archive.html").write_text(page("archive.html", "Research archive", body, "archive"))
     info = {"guide_chapters": len(CHAPTERS), "technical_notes": sum(r['type'] == 'Note' for r in records), "search_records": len(records), "figures": len([f for f in figures if f.suffix == '.png']), "literal_math_links_restored": len(restored_math), "unresolved_source_links": sorted(broken, key=lambda r: (r['source'], r['link']))}
     (OUT / "build-info.json").write_text(json.dumps(info, indent=2) + "\n")

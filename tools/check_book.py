@@ -37,6 +37,12 @@ def main():
             if not image.get("alt", "").strip():
                 failures.append({"page": str(page.relative_to(root)), "missing_alt": image.get("src")})
     records = json.loads((docs / "assets/search.json").read_text())
+    browse = json.loads((docs / "assets/browse.json").read_text())
+    identity = lambda rows: [(r["url"], r["type"], r["topic"], r["status"]) for r in rows]
+    if identity(browse) != identity(records):
+        failures.append({"browse_index": "Metadata and full-text indexes disagree"})
+    if not (docs / "library.html").is_file():
+        failures.append({"library": "Research library was not built"})
     expected = {"notes/" + p.stem + ".html" for p in (root / "notes").glob("*.md")}
     indexed = {row["url"] for row in records if row["type"] == "Note"}
     if expected != indexed:
