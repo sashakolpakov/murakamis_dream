@@ -10,39 +10,45 @@ preserves the cube constructions and other approaches, including their
 counterexamples and unresolved extensions. A narrower proved scope is
 recorded without discarding the idea.
 
-The latest [partner-reflection theorem](actual_racah_partner_reflection_identity.md)
-proves all sixty-four normalized root values equal, with exact reciprocal
-source normalization and generic bilinear transport. First normals are
-not invariant. The [spectral transport analysis](actual_partner_normal_transport.md)
-adds a polynomial killed-Jacobi spectral gap and a sufficient tail-free
-normal criterion; a nonempty [2N] current still needs coherent control.
-On the geometric side, the [Conway seam analysis](positive_conway_geometric_incidence.md)
-proves forced-flat closure atoms and an explicit infinite nonhyperbolic
-meridian-insertion subfamily. These refine the critical path without
-asserting a general knot equality.
+The [all-partner first-normal theorem](actual_all_partner_first_normal_bound.md)
+now controls the ACTUAL generic first normal on every supported partner
+branch, with uniform relative cost O(N^2(1+log N)). It also bounds the
+coherent retained tail by O(log N) times its positive core. The earlier
+Ward/Fourier two-current obstruction remains valid for those relations
+alone; a positive full-source presentation supplies the missing data.
+Fixed higher normals are controlled on face-supported and tail-free
+branches. Arbitrary higher normals and completed physical recoupling
+remain separate open tasks.
 
-The next [first-normal Ward reduction](actual_partner_first_normal_ward_reduction.md)
-first leaves at most three coherent currents for ALL supported sextuples;
-combining it with the actual Fourier partner involution reduces this
-to TWO, sharply: an exact rank-25 example retains two free components
-in the 27-dimensional Ward space. It bounds all first normals when two opposite pairs
-have equal folded labels. The independent
-[finite Fourier residue identity](actual_coherent_racah_tail_fourier_residues.md)
-controls genuine live tails with a repeated maximal face and proves
-the former all-high cotangent diagnostic. Its unique-maximal-face
-alternating residual and all higher normal orders remain open.
+The [cylindrical Conway theorem](actual_positive_conway_hyperbolic_volume.md)
+now proves FULL original-source equality with actual hyperbolic volume
+for every retained cylindrical robust factor, allowing arbitrary finite
+branching and turn depth. The source maximum is automatically strict;
+[actual ideal prisms and pyramids](actual_newton_ideal_prism_and_associativity.md)
+glue by the literal ordered ports. The reversible projection/crossing-disk
+cut, pointwise four-step edge returns and matched cusp horospheres prove
+that the resulting metric is complete on the actual compiled link.
+Its rational source Bloch class equals the geometric fundamental-class
+symbol over a common number field, not merely a coincident regulator.
 
-On the geometric side the
-[cap-sum theorem](actual_conway_cap_sum_reduction.md) simultaneously
-splits actual links, original sources and whole angle polytopes at
-the appropriate two-punctured spheres. Positive-rate connected sums
-show that a nonzero maximum still does not certify hyperbolicity.
-For EVERY robust positive Conway source, the
-[quotient Hessian theorem](positive_source_algebraic_volume_period.md)
-now gives algebraic nonflat shapes even at boundary/nonunique maxima.
-The [antisymmetrized Bloch calculation](actual_positive_source_bloch_regulator.md)
-identifies its maximum with a rational Bloch regulator. This is a
-source class, not yet the marked fundamental class of the complement.
+For EVERY robust open expression the
+[boundary profile theorem](actual_conway_boundary_volume_relation.md)
+proves all prescribed-output coefficient limits, including arbitrarily
+slow endpoint approaches. The interior optimizer is unique and analytic;
+its algebraic boundary conjugate is an actual quadrilateral face modulus.
+The Newton boundary coordinate has not been identified with a knot's
+meridian and longitude. The retained-circle diagrams are LINKS, and
+neither all alternating links nor arbitrary fillings are asserted to be
+in this theorem. [Prior coverage](positive_conway_literature_coverage.md)
+is recorded separately without using external proofs.
+
+The [cap-sum reduction](actual_conway_cap_sum_reduction.md) still governs
+nonhyperbolic connected sums: their original sources multiply, their
+whole angle polytopes split, and their limits add the displayed geometric
+factor volumes. The next route to a broader KNOT theorem is the deformed
+auxiliary-color source packet and full complementary-color estimates
+needed by the existing general filling-transfer theorem. Complete
+positive geometry alone does not supply those quantum hypotheses.
 
 ## 1. A concrete enlargement already proved
 

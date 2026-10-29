@@ -22,10 +22,10 @@ Start with [the equality results](results.md) for the exact knot and link famili
 
 | Part of the argument | Current scope |
 | --- | --- |
-| Original invariant equals actual geometric volume | Specified long pretzel families, signed belt stacks and their specified long fillings, and the signed marked theta link |
+| Original invariant equals actual geometric volume | All retained cylindrical robust Conway factors; specified long pretzel families; signed belt stacks and their specified long fillings |
 | Exact finite source identities | General four-port recoupling, complete-circle algebra, and typed sewing identities |
 | Local quantum-volume law | Uniform supported scalar asymptotic with an actual hyperideal tetrahedron volume |
-| Whole positive source limit | Every fixed expression in the specified positive Conway class has an explicit variational limit |
+| Whole positive source limit | Every robust Conway expression; cylindrical factors have actual hyperbolic volume, while cap products split into geometric factors |
 | General knot or graph equality | Full source transport and the actual global geometric constraints remain unresolved |
 
 The cube, Fourier, torsor, and alternative approaches are preserved. A failed intermediate estimate is useful evidence about the argument; it is retained beside the corrected scope.

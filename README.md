@@ -8,6 +8,8 @@ Research on Kashaev invariants, pointed quantum A-structures, and hyperbolic vol
 
 The guide explains the argument in seven chapters, with a searchable archive of the technical notes, audits, and data. Start with the equality results, then the mechanism, geometry, and current frontier.
 
+Diagrams show the research route, four-port recoupling, cube channels, a truncated tetrahedron, and the Conway cells. Each figure in the guide has SVG, PDF, and TikZ downloads.
+
 **The general volume conjecture remains open.** The repository contains internally reviewed research proofs for specified families, general local identities, and explicit obstructions to proposed extensions. Finite audits and numerical diagnostics retain their stated scope.
 
 ## Repository structure
@@ -29,6 +31,6 @@ All research routes are retained, including the cube, Fourier, torsor, and pretz
 python3 -m http.server 8000 --directory docs
 ```
 
-Open `http://localhost:8000`. To rebuild the guide, install Pandoc and run `python3 tools/build_book.py`. Figure regeneration uses pdfLaTeX with TikZ and PyMuPDF. Research-audit dependencies are in `requirements-core.txt`; the guide explains the focused checks and their limits.
+Open `http://localhost:8000`. The [guide maintenance instructions](book/README.md) cover rebuilding the site and figures. Research-audit dependencies are in `requirements-core.txt`; the guide explains the focused checks and their limits.
 
 The publication manifest records source hashes and exclusions. Private manuscript inputs, credentials, environments, and agent metadata are excluded; the PDFs in `book/figures/` are generated diagrams.

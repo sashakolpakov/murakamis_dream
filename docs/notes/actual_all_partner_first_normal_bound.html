@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Full first-normal bounds for all supported Racah partners · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">All-partner first-normal theorem</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_all_partner_first_normal_bound.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="full-first-normal-bounds-for-all-supported-racah-partners">Full first-normal bounds for all supported Racah partners</h1>
+<p>29 October 2026. This proves a uniform polynomial relative bound for the ACTUAL first generic-q normal at every one of the 64 reflected branches of a supported folded sextuple. The new step is a positive finite presentation of the full generic source on face-supported branches, including branches whose seven-factorial formula has a live <code>[2N]</code> current. The already proved Fourier partner involution and exact first- normal Ward equation then cover the remaining branches.</p>
+<p>Every fixed generic normal order is controlled on the face-supported branches. The general 64-branch conclusion is FIRST ORDER ONLY. No completed physical recoupling norm or global volume equality follows merely from this local scalar theorem.</p>
+<h2 id="statement-and-source-convention">1. Statement and source convention</h2>
+<p>Fix <code>N&gt;=3</code>, <code>D=N-1</code>, <code>q=exp(pi i/N)</code>, and integer folded labels <code>j=(a,b,c,d,e,f)</code> in <code>[0,D/2]</code>, with all four face sums at least <code>D</code>. Use the SAME actual generic seven-factorial sum and normalization as in <a href="actual_racah_partner_reflection_identity.html">the reciprocal source theorem</a>:</p>
+<pre><code>K_B(zeta)=[N]^2 S_B(zeta)^2 product_faces Delta_B^2,
+k(B)=D_log(zeta) K_B(q).</code></pre>
+<p>Here B records any subset of the six changes <code>j -&gt; D-j</code>. The original actual source prefactors, peripheral factors and marking are not changed. The proved root-value identity gives <code>K_B(q)=W_N^2&gt;0</code> for all branches.</p>
+<p>There is an absolute constant C such that</p>
+<pre><code>max_B |k(B)| &lt;= C N^2(1+log N) W_N^2.         (1)</code></pre>
+<p>The local analytic square root positive at q, and the first inverse jets of K and its square root, have corresponding relative bounds. Every implicit constant below is independent of the supported labels, level parity and compositeness.</p>
+<p>A set of high bits is called face-supported if it is contained in one of the four faces</p>
+<pre><code>(a,b,e), (c,d,e), (a,d,f), (b,c,f).</code></pre>
+<p>For every such branch, and every fixed r, the stronger conclusion is</p>
+<pre><code>|D_log(zeta)^r K_B(q)| &lt;= C_r N^(c_r) W_N^2,                  (2)</code></pre>
+<p>with the analogous local square-root and inverse bounds. An opposite pair of high bits is not face-supported; that two-bit case is tail- free and is already covered by the positive-core theorem.</p>
+<h2 id="a-root-unit-presentation-of-the-full-generic-source">2. A root-unit presentation of the FULL generic source</h2>
+<p>A tail-free branch already has all fixed-jet bounds. Consider a live face-supported branch, so all three opposite sums exceed <code>2D</code>. Choose an opposite pair with maximal label sum, and use tetrahedral relabeling to call it <code>(e,f)</code>, with f its high-bit edge and e its low-bit edge. This is possible: the largest opposite sum exceeds D, whereas an opposite pair with both bits low has sum at most D. A face contains at most one edge of each opposite pair.</p>
+<p>In this labeling,</p>
+<pre><code>e&lt;=D/2&lt;=f,  e+f&gt;=max(a+c,b+d),
+min(a,b)&lt;=D/2,  min(c,d)&lt;=D/2.                (3)</code></pre>
+<p>For the last assertion, the two remaining possible high edges are in the face containing f. Each of the two faces containing e therefore has at most one high external edge. The same assertion is immediate when there are fewer than three high bits.</p>
+<p>Set</p>
+<pre><code>p=min(a+d,b+c),  s=a+b+c+d,
+h=max(|a-b|,|c-d|),  t0=s-2p,
+rA=a+b-h, rC=c+d-h,
+n=p-f, t=p+f-D.                              (4)</code></pre>
+<p>The exact elementary identity</p>
+<pre><code>p+h=max(a+c,b+d)                             (5)</code></pre>
+<p>follows by expanding the difference of the maximum and minimum: its four possibilities are <code>a-b,b-a,c-d,d-c</code>. The true triangle conditions give <code>n&gt;=0</code> and <code>h&lt;=e</code>. Equations (3),(5) imply</p>
+<pre><code>n&lt;=e-h,  h+e+n&lt;=2e&lt;=D,  n&lt;=t.                (6)</code></pre>
+<p>Furthermore</p>
+<pre><code>0&lt;=n&lt;=rA,rC&lt;=D,
+0&lt;=t&lt;=D,  0&lt;=t0,  t0+n&lt;=D.                  (7)</code></pre>
+<p>Indeed <code>rA,rC&lt;=D</code> follows from (3), and <code>n&lt;=e-h</code> together with <code>e&lt;=a+b,c+d</code> proves their lower bounds. The upper bound on t follows from <code>p+f&lt;=2D</code>, since both relevant face sums are at most <code>2D</code>. Finally <code>t0+n=max(a+d,b+c)-f</code> is a face deficit and belongs to <code>[0,D]</code>. All these are literal integer inequalities, including walls.</p>
+<p>Write <code>Q=zeta^2</code>, <code>alpha=zeta^(2h+1)</code>, <code>z=zeta^(2e+1)</code>. The already proved <a href="actual_general_four_port_single_racah_kernel.html#6-exact-conversion-to-the-seven-factorial-sum-including-its-phase">actual generic source conversion</a> is the exact identity</p>
+<pre><code>S=S0 (V_n/C_n) G_n,
+G_n=sum_(k=0)^n
+  (Q^-n,Q^(-p-f-1),alpha z,alpha/z;Q)_k Q^k
+     /(Q,Q^(t0+1),Q^-rA,Q^-rC;Q)_k.          (8)</code></pre>
+<p>This is the actual finite generic series BEFORE specializing q. By (6),(7), every numerator and denominator factor of every term in (8) is a root unit. For the second upper parameter use <code>p+f+1=N+t</code>; its root exponents are those of <code>Q^-t</code>, and <code>k&lt;=n&lt;=t</code>. For the two spectral factors, their exponent ranges are</p>
+<pre><code>h+e+1,...,h+e+k in [1,D],
+h-e,...,h-e+k-1 in [-D,-1].                  (9)</code></pre>
+<p>Thus there is no disappearing generic summand and no singular Pochhammer denominator in this presentation.</p>
+<h2 id="every-summand-has-positive-root-value">3. Every summand has positive root value</h2>
+<p>Let <code>s_r=product_(u=1)^r 2sin(pi u/N)</code> and <code>c_j=2cos((2j+1)pi/N)</code>. Direct conversion of each finite Pochhammer in (8) to sine factors gives its kth root summand as</p>
+<pre><code>A_k product_(i=0)^(k-1)(c_(h+i)-c_e),
+A_k= s_n/s_(n-k) * s_t/s_(t-k)
+     * s_(rA-k)/s_rA * s_(rC-k)/s_rC
+     * s_t0/[s_k s_(t0+k)] &gt;0.              (10)</code></pre>
+<p>For clarity this is the same finite phase calculation as in the proved folded spectral formula; it only requires the inequalities (6),(7), not that every external label is folded. The residual monomial phase is <code>q^(Nk)</code> and the residual sign is <code>(-1)^k</code>, so both cancel. The spectral factorization uses</p>
+<pre><code>(alpha z,alpha/z;Q)_k
+   = product_(i&lt;k) alpha Q^i (c_(h+i)-c_e)</code></pre>
+<p>at the root. Since <code>h+i&lt;e&lt;=D/2</code> whenever <code>i&lt;k&lt;=n</code>, every displayed cosine difference is strictly positive. The term at k=0 is one. Hence the ENTIRE true generic series has a positive common phase at q and a nonzero value <code>G_n(q)&gt;0</code>.</p>
+<p>Each term in (8) is a product of a bounded number of finite unit Pochhammers of lengths O(N), with integer exponents O(N). On the uniform disk</p>
+<pre><code>|log(zeta/q)| &lt;= c/[N^2(1+log N)],            (11)</code></pre>
+<p>every such term divided by its positive root value remains in a small sector about one. This is the elementary unit-factor harmonic estimate proved in the positive-core note: sum the logarithmic changes using <code>|sin(pi u/N)|&gt;=2 dist(u,N Z)/N</code>. The bounded number of products, including negative exponents and exponents up to <code>2N</code>, only changes the absolute constant. Their positive sum obeys the same estimate. Cauchy inequalities therefore bound every fixed jet of G_n and its inverse relative to their root values.</p>
+<h2 id="actual-prefactor-cancellation-retains-the-generic-normal">4. Actual prefactor cancellation retains the generic normal</h2>
+<p>It remains essential to check the prefactor in (8). Positivity of a substituted polynomial alone would not prove the source theorem. Choose <code>(a',b',c',d')=(a,b,c,d)</code> if <code>a+d&lt;=b+c</code>, and <code>(b,a,d,c)</code> otherwise. The actual source formula gives</p>
+<pre><code>R=(c+d-e, a+b-e, t0, a&#39;-b&#39;+e, d&#39;-c&#39;+e),
+S0=(-1)^s [s+1]!/product_(u in R)[u]!,
+V_n=zeta^n (Q^(-p-f-1);Q)_n
+        /[(Q;Q)_n(Q^(t0+1);Q)_n(Q^(-s-1);Q)_n],
+C_n=alpha^n (Q^(-p-f-1);Q)_n
+        /[(Q^(t0+1);Q)_n(Q^-rA;Q)_n(Q^-rC;Q)_n].           (12)</code></pre>
+<p>Every entry of R is in <code>[0,D]</code>: these are face deficits, together with t0, bounded by (7). Because the branch is live,</p>
+<pre><code>2N&lt;=s+1&lt;3N,
+0&lt;=s+1-2N&lt;n.                                 (13)</code></pre>
+<p>The second inequality follows from <code>max(a+d,b+c)+f&lt;=2D</code>. Consequently <code>[s+1]!</code> contains exactly <code>[N]</code> and <code>[2N]</code>, while <code>(Q^(-s-1);Q)_n</code> contains exactly one zero factor, namely <code>1-zeta^(-4N)</code>. All other factors in (12) are root units by (6),(7). Cancel the common Pochhammers in V_n/C_n GENERICALLY. Then cancel the indicated zero factor using the exact identity</p>
+<pre><code>[2N]/(1-zeta^(-4N))=zeta^(2N)/(zeta-zeta^-1).                (14)</code></pre>
+<p>If a superscript circle means omitting exactly the indicated factor, the result is the explicit analytic unit identity</p>
+<pre><code>(-1)^D S/[N]=A(zeta) G_n(zeta),
+A(zeta)=(-1)^(D+s) zeta^(2N-2hn)/(zeta-zeta^-1)
+   * [s+1]!^(omit N,2N)/product_(u in R)[u]!
+   * (Q^-rA,Q^-rC;Q)_n
+        /[(Q;Q)_n (Q^(-s-1);Q)_n^(omit -2N)].               (15)</code></pre>
+<p>Every denominator in (15) is now a root unit. No term proportional to <code>[2N]</code> in the original seven-factorial sum has been dropped: (15) is an equality of the original generic germs, obtained from the exact finite source transformation and exact cancellation (14).</p>
+<p>The same unit-factor estimate applies to A and its inverse; the additional monomial has exponent O(N^2), and the extra quantum integer denominator is a root unit. Combining it with the positive G_n gives fixed relative jet bounds for the entire original regular source <code>(-1)^D S/[N]</code>. Its root value is the positive original core C, so A(q)&gt;0 as well. The four regularized face factors are analytic units with the already proved uniform relative jet bounds. Therefore (2), its inverse version and its local square-root version follow on the SAME polynomial disk (11).</p>
+<h2 id="cover-all-first-normals-using-exact-source-relations">5. Cover all first normals using exact source relations</h2>
+<p>The <a href="actual_partner_first_normal_ward_reduction.html">first-normal Ward theorem</a> proves, for each opposite pair and every choice of the other bits,</p>
+<pre><code>k(00)-k(01)-k(10)+k(11)=0.                   (16)</code></pre>
+<p>Apply it independently to the three opposite pairs. Every branch is a signed sum of at most 27 branches having at most one high bit in each opposite pair. Thus it remains to handle high sets of size at most three, with no opposite pair.</p>
+<p>Sets of size zero, one or two are face-supported. A three-edge set with one edge of each opposite pair is either a face or the complement of a face, namely a three-edge star. Face sets satisfy (2). Consider a star set. If the branch is tail-free, use the positive-core theorem. If its maximal face sum is repeated, use the proved coherent Fourier bound. Otherwise use the exact controlled first-normal difference from the <a href="actual_coherent_racah_tail_fourier_residues.html#6-the-residual-is-an-exact-partner-involution">Fourier source involution</a>:</p>
+<pre><code>|k(B)-k(B*)| &lt;= C N^2(1+log N) W_N^2,         (17)</code></pre>
+<p>where B* flips the three edges outside its unique largest face.</p>
+<p>The unique maximal face cannot be the all-low face complementary to the high star. Every other face shares one of its low edges and replaces its two remaining low edges by their high partners; its sum is at least that of the all-low face. Equality everywhere would also contradict uniqueness. Therefore the maximal face contains two high edges and one low edge.</p>
+<p>Its complementary flip turns the third high edge low and turns its other two low edges high. In terms of opposite pairs, B* has one pair in state <code>00</code> and two pairs in state <code>11</code>: a tetrahedral face contains exactly one edge from each opposite pair. Apply (16) to those two <code>11</code> pairs. This expresses k(B*) as a signed sum of at most nine branches with at most TWO high bits, all already controlled by (2). Equation (17) controls the star branch. Finally the initial 27-term interpolation proves (1) for every original partner, with constants independent of N, labels and parity.</p>
+<p>The estimates are on the actual full generic first normals. The proof has not replaced a normal by the root core, differentiated a root-value identity, or imposed the first-order Ward equation on higher orders.</p>
+<p>The original coherent tail itself now has a uniform bound on EVERY partner branch:</p>
+<pre><code>|T_B(q)| &lt;= C(1+log N) C_B(q).                (18)</code></pre>
+<p>For a tail-free branch T is zero. Otherwise write the exact germ as <code>K_B=U_B(C_B+[2N]T_B)^2</code>, where U_B is the product of the four regularized face factors. The logarithmic derivatives of U_B and the positive core C_B are <code>O(N^2(1+log N))</code>. Divide the first normal by <code>K_B(q)=U_B(q)C_B(q)^2</code> and use (1). This bounds <code>[2N]'(q) T_B(q)/C_B(q)</code> by the same order. Finally</p>
+<pre><code>|[2N]&#39;(q)|=2N/sin(pi/N)&gt;=2N^2/pi,</code></pre>
+<p>which proves (18). Thus the contribution of the actual retained tail to the first normal is controlled through an exact positive source presentation; no absolute estimate of its alternating summands was substituted.</p>
+<h2 id="precise-remaining-scope">6. Precise remaining scope</h2>
+<p>This closes the local ALL-PARTNER FIRST-NORMAL scalar gap. Fixed higher normals are proved here for face-supported and tail-free branches. The exact first-normal Ward equation does not extend homogeneously to second order: its cluster trace contributes there. Thus arbitrary higher partner normals, the positive completed physical change-of-frame metric, shared global source constraints, and geometric overlap remain separate problems.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_all_partner_first_normal_bound.py">literal generic source transformation and support checks</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_all_partner_first_normal_bound_results.json">recorded results</a>.</p>
+<p>Independent root review checked the maximal-opposite-pair presentation, all root-unit ranges, the exact generic prefactor cancellation and the star-to-Ward covering argument. Fresh replay passed 79,649 supported face-bit classifications, 2,384 live face branches, 430 complete generic presentations through four Taylor coefficients, and 13,852 star routes. The analytic bounds follow from the proof; the finite checks supplement the source and incidence identities.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_all_partner_first_normal_bound.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#statement-and-source-convention">1. Statement and source convention</a><a href="#a-root-unit-presentation-of-the-full-generic-source">2. A root-unit presentation of the FULL generic source</a><a href="#every-summand-has-positive-root-value">3. Every summand has positive root value</a><a href="#actual-prefactor-cancellation-retains-the-generic-normal">4. Actual prefactor cancellation retains the generic normal</a><a href="#cover-all-first-normals-using-exact-source-relations">5. Cover all first normals using exact source relations</a><a href="#precise-remaining-scope">6. Precise remaining scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

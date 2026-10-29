@@ -36,13 +36,15 @@ where $Q$ is the supplied positive ideal right-angled core and the precise cut, 
 
 The cube is a useful nontrivial example of this phenomenon. Its projected quantum calculations recover the shared core contribution. Extending those estimates to the full source is still a quantum problem, even after the geometric complement has been constructed.
 
-## What remains for the Conway variational limit
+## The Conway maximum now builds the actual complement
 
-The positive Conway theorem already produces an explicit concave sum of ideal-tetrahedron volumes with shared affine angles. What it has not yet supplied in general is a face-pairing certificate showing that these tetrahedra describe the actual compiled diagram complement.
+The [global Conway geometry theorem](../../notes/actual_positive_conway_hyperbolic_volume.md) supplies the missing face-pairing certificate for every retained cylindrical robust factor. A leaf is an ideal quadrangular pyramid. A multiplication gate is a convex ideal triangular prism. Their volumes are exactly the source actions, and their ordered quadrilateral metrics are exponentials of the action derivatives.
 
-Some compiled expressions have polynomial growth and zero variational maximum. Thus positivity cannot serve as a criterion for hyperbolicity. A useful general extension must state the actual topological and geometric hypotheses under which the source polytope is the complement's angle slice.
+![The source's leaf pyramid and multiplication prism. Blue faces are ordered quadrilateral ports; the shaded leaf triangles retain the actual crossing-disk pairing.](../figures/conway-cells.png)
 
-The [seam and topology analysis](../../notes/positive_conway_geometric_incidence.md) makes this obstruction explicit. Every final product closure forces three of the formal volume atoms to be flat. Moreover, the turned pure-run subfamily is an iterated meridian-insertion link: an exhibited punctured disk gives an annulus joining distinct cusp tori, excluding a complete finite-volume hyperbolic metric. These are source and topological facts, not deductions from a small quantum invariant. A broader comparison must first reduce the flat seams and state the appropriate topological restrictions.
+Stationarity makes the shared ports isometric under the literal stack maps. A boundary barrier proves that every unforced cell at the maximum is strict. The cells assemble into a convex ideal polyhedron; the actual cylindrical closure leaves only right-angled boundary edges. Reversing the projection and crossing-disk cuts reconstructs the original link. Four-step edge cycles give angle $2\pi$ with identity return, and matched rectangular horosphere links prove cusp completeness. Thus the two-copy volume is the volume of the actual complement.
+
+The final product gate is forced flat and is removed from the geometric cell list using its exact unit source coefficient. This does not delete a quantum contribution or a link component. The [local cell proof](../../notes/actual_newton_ideal_prism_and_associativity.md) also identifies source associativity with two triangulations of one actual ideal cube.
 
 The [cap-sum reduction](../../notes/actual_conway_cap_sum_reduction.md) goes further: an actual two-punctured separating sphere splits every cap-closed product into componentwise connected sums. The quantum source factors and the angle polytope splits with it. This gives connected sums of theta links with strictly positive rate $4k v_8$, although the whole complement is not hyperbolic for $k\geq2$.
 
@@ -50,11 +52,13 @@ The [cap-sum reduction](../../notes/actual_conway_cap_sum_reduction.md) goes fur
 
 The [algebraic optimizer theorem](../../notes/positive_source_algebraic_volume_period.md) applies to every rational affine ideal-angle problem with positive rational weights. On the smallest face containing the maxima, flat atoms contribute zero. The remaining Hessian is definite after quotienting by the rational directions that leave all nonflat angles unchanged. Exponentiated stationarity then proves that the nonflat shapes are algebraic, including boundary and nonunique maxima.
 
-The [Bloch regulator calculation](../../notes/actual_positive_source_bloch_regulator.md) makes a further distinction precise. The conjugate-antisymmetrized shape sum is a rational Bloch class, and its regulator is exactly the source maximum. The unsymmetrized sum has not been shown to be the fundamental class of the complement. Actual face pairings, winding, and peripheral marking remain necessary for that final geometric interpretation.
+The [Bloch regulator calculation](../../notes/actual_positive_source_bloch_regulator.md) proves that the conjugate-antisymmetrized shape sum is a rational Bloch class with regulator equal to the source maximum. For the retained cylindrical factors, the new actual cell realization supplies its geometric interpretation. The class comparison takes place after passing to a common finite conjugation-stable number field containing the source shapes and all glued ideal vertex coordinates. The two copies have opposite mirror orientations, producing precisely the shape symbols $[z]-[\overline z]$ of the geometric fundamental chain; no identification with the geometric trace field is claimed.
 
 For every fixed robust positive Conway expression, the proved full-source statement is
 
 $$\lim_{N\to\infty}\frac{2\pi}{N}\log Z_{E,N}
 =R_{F_E}(B_E),\qquad B_E=\sum_j([z_j]-[\overline{z_j}])\in B(F_E)_{\mathbb Q}.$$
 
-Here $F_E=\mathbb Q(z_j,\overline{z_j})$ is the conjugation-stable shape field. The regulator uses the specified complex embedding. Equality of this regulator with the actual complement volume remains the geometric step for a broader class.
+Here $F_E=\mathbb Q(z_j,\overline{z_j})$ is the conjugation-stable source shape field. The regulator uses the specified complex embedding. For a retained cylindrical factor its value is now proved to be the actual complement volume. The theorem does not yet establish a generic-meridian knot A-operator or volume limits for arbitrary fillings.
+
+The [boundary profile theorem](../../notes/actual_conway_boundary_volume_relation.md) also gives a full limit for every coefficient approaching any output $b\in[0,1]$. On $(0,1)$ its optimizer is unique and analytic, and its boundary conjugate is the actual quadrilateral modulus $\exp(-v'_E(b)/\pi)$. This is a geometric meaning for the source boundary relation; the variable is not yet the knot's peripheral holonomy.

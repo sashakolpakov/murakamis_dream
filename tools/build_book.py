@@ -142,7 +142,28 @@ def main():
             if parts.query: href += "?" + parts.query
             if parts.fragment: href += "#" + parts.fragment
             return f'{attribute}="{escape(href, quote=True)}"'
-        return re.sub(r'(href|src)="([^"]*)"', replace, body)
+        body = re.sub(r'(href|src)="([^"]*)"', replace, body)
+
+        def figure_downloads(match):
+            figure = match.group(0)
+            picture = re.search(r'<img\b[^>]*\bsrc="([^"]+)"[^>]*>', figure)
+            if not picture:
+                return figure
+            image_url = unescape(picture[1])
+            stem = Path(urlsplit(image_url).path).stem
+            if not all((ROOT / "book/figures" / (stem + ext)).is_file()
+                       for ext in (".png", ".svg", ".pdf", ".tex")):
+                return figure
+            prefix = image_url.rsplit(".", 1)[0]
+            links = " · ".join(
+                f'<a href="{escape(prefix + ext, quote=True)}">{label}</a>'
+                for ext, label in ((".svg", "Open vector figure"),
+                                   (".pdf", "PDF"), (".tex", "TikZ source"))
+            )
+            return figure.replace('</figure>',
+                                  f'<p class="figure-downloads">{links}</p></figure>')
+
+        return re.sub(r'<figure\b[^>]*>.*?</figure>', figure_downloads, body, flags=re.S)
 
     md_sources = [(source, target) for source, target in mapping.items() if source.endswith(".md")]
     records = []

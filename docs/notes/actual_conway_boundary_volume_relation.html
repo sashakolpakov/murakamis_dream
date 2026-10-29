@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Boundary coefficient limits and the algebraic relation selected by the source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Positive Conway sources</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">Full boundary limit and algebraic relation</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_conway_boundary_volume_relation.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="boundary-coefficient-limits-and-the-algebraic-relation-selected-by-the-source">Boundary coefficient limits and the algebraic relation selected by the source</h1>
+<p>29 October 2026. Every coefficient of the actual positive Conway operator has a full-sequence volume profile, including coefficients approaching either endpoint at any rate. At every interior output the optimizer is unique and strictly positive. Its profile supplies one selected algebraic boundary relation and a relative Bloch boundary formula. The boundary coordinate here is the original Newton index. It has NOT been identified with the meridian eigenvalue of a knot, or with a literature quantum A-operator.</p>
+<p>This extends the closed-source theorem rather than replacing its normalization. In particular its endpoint b=1 is the original marked closure, while b=0 is the actual turned closure.</p>
+<h2 id="the-full-boundary-profile">1. The full boundary profile</h2>
+<p>For a fixed robust expression E write its ACTUAL full-normal operator</p>
+<pre><code>E_N=sum_(r=0)^d e_(E,N,r) Bhat_r,  d=N-1.</code></pre>
+<p>Every coefficient is positive for N&gt;=3. Use the wire polytope from <a href="actual_positive_conway_variational_limit.html">the Conway variational theorem</a>, but leave its final output free. Call this compact rational polytope P_E, its output coordinate b, and its sum of ideal-tetrahedron volumes V_E. Every slice P_E(b), 0&lt;=b&lt;=1, is nonempty. Indeed the constructive integer witnesses give every output r at every level d&gt;=2; their normalized limits supply every real b.</p>
+<p>Define the boundary profile</p>
+<pre><code>v_E(b)=max_(x in P_E(b)) V_E(x).                   (1)</code></pre>
+<p>Then v_E is finite, continuous and concave on the CLOSED interval [0,1]. Concavity follows by taking convex combinations of maximizing states and using concavity of V_E. Compactness makes (1) upper semicontinuous. Interior continuity follows from finite concavity; at either endpoint concavity gives the reverse lower-limit inequality by interpolation with one fixed interior point. This proves endpoint continuity as well.</p>
+<p><strong>Boundary limit theorem.</strong> For EVERY sequence of integers 0&lt;=r_N&lt;=N-1 such that r_N/(N-1)-&gt;b,</p>
+<pre><code>lim_(N -&gt; infinity) (2pi/N) log e_(E,N,r_N)=2v_E(b). (2)</code></pre>
+<p>No parity restriction, fixed-denominator subsequence, interior saddle, or speed of convergence of r_N/(N-1) is required.</p>
+<h2 id="exact-output-integer-approximation">2. Exact-output integer approximation</h2>
+<p>The existing uniform factorial estimate applies to every state before fixing its output:</p>
+<pre><code>log(weight)= (N/pi) V_E(labels/d)+O_E(log N).      (3)</code></pre>
+<p>The number of states is polynomial in N. For the upper bound in (2), choose a largest state. Any convergent subsequence of its normalized labels has output b and lies in P_E(b), by compactness and the closed linear constraints. Equations (1),(3) prove the upper bound.</p>
+<p>The lower bound needs states with the EXACT prescribed output r_N. The additive semigroup property alone, without the following output correction, would not suffice.</p>
+<p>First let 0&lt;b&lt;1 and choose a maximizing x_* in P_E(b). Fix a small epsilon&gt;0. Choose a rational point y in P_E sufficiently close to x_* that its output b_0 also satisfies</p>
+<pre><code>(1-epsilon)b_0 &lt; b &lt; (1-epsilon)b_0+epsilon.     (4)</code></pre>
+<p>This is possible because at b_0=b both inequalities have strict margins. Let D y be integral and put</p>
+<pre><code>k=floor((1-epsilon)d/D), l=d-kD,
+R=r_N-kD b_0.</code></pre>
+<p>For all sufficiently large N, (4) gives 0&lt;=R&lt;=l and l&gt;=2. The constructive full-support theorem gives an integer state a_l at level l with exactly output R. Consequently</p>
+<pre><code>n_N=kD y+a_l</code></pre>
+<p>is feasible at level d and has output EXACTLY r_N. Its normalized distance from y is at most (l/d) times the bounded diameter of P_E. Taking epsilon and the distance from y to x_* arbitrarily small, uniform continuity of V_E makes its value arbitrarily close to (1). That single positive state proves the required lower bound.</p>
+<p>For b=0 choose y rational in the rational face P_E(0), as close to x_* as desired, and let D y be integral. Choose the smallest l&gt;=r_N+2 with l=d modulo D. Then l=o(d), l&gt;=2, and the anchor of level l with output r_N gives the same construction with k=(d-l)/D. For b=1, choose y in P_E(1) and instead take the smallest l&gt;=d-r_N+2 with l=d modulo D. Its required anchor output is l-(d-r_N), which lies in [0,l]. Again l=o(d). These constructions prove (2) at both endpoints, including sublinear but unbounded deviations from them.</p>
+<h2 id="the-exact-composition-laws-survive-in-the-entire-profile">3. The exact composition laws survive in the entire profile</h2>
+<p>Let R denote the genuine physical turn and let m be the already proved Newton product action:</p>
+<pre><code>m(x,y,z)=L(x+y)+L(z)-L(x)-L(y)
+            -L(z-x)-L(z-y)-L(x+y-z),
+L(t)=integral_0^t log(2sin(pi u))du.</code></pre>
+<p>The exact turn and multiplication of the original coefficients imply the following identities on the whole closed domains:</p>
+<pre><code>v_(R E)(b)=v_E(1-b),
+v_(EF)(z)=max_[max(x,y)&lt;=z&lt;=x+y&lt;=1]
+          (v_E(x)+v_F(y)+pi m(x,y,z)).          (5)</code></pre>
+<p>They also follow directly from the source polytopes, keeping all internal variables and shared outputs. In particular</p>
+<pre><code>v_(EF)(0)=v_E(0)+v_F(0),
+v_(EF)(1)=max_(0&lt;=x&lt;=1)(v_E(x)+v_F(1-x)).        (6)</code></pre>
+<p>The last product gate is flat in both cases. The first identity is the exact cap-sum decomposition; the second is the full cylindrical pairing and does not assert a connected-sum factorization.</p>
+<h2 id="every-robust-interior-profile-has-a-unique-strict-optimizer">4. Every robust interior profile has a unique strict optimizer</h2>
+<p>Fix b in (0,1). There is a feasible state with EVERY leaf label in (0,1/2) and every product gate satisfying p,q,r,w&gt;0, where p=z-x, q=z-y, r=x+y-z, w=1-x-y. Here is a constructive induction. For a product of two robust expressions choose their input labels x=y in (b/2,min(b,1/2)) and use the induction inside both children. A turn uses the child’s output 1-b. For the seed h^3 choose a small positive c&lt;min(b/2,(1-b)/2,1/4), put t=b-c/2, and choose a in (t/2,min(t,1/2)). Give its first two leaves label a, their product output t, and its last leaf label c. Both product gates are strict, all leaves are strict, and the final output is b.</p>
+<p>Now join a maximizing state to this strict state by a straight segment. An ideal atom with boundary angles (0,a,1-a), 0&lt;a&lt;1, has directional derivative +infinity toward the strict state: its zero-angle term is -epsilon c log epsilon+O(epsilon), c&gt;0. At a simplex vertex (0,0,1), the epsilon log epsilon terms cancel, leaving a finite derivative. Positive atoms also have finite derivatives. Thus no nonvertex-flat atom can occur at a maximum.</p>
+<p>No wire can have value 0 or 1 there. A product output 0 forces both children to be 0. A product output 1 either has two interior children summing to 1, giving a nonvertex-flat first atom, or has an endpoint child. A turn interchanges the endpoints. Descending through endpoint children must reach a leaf: value 1 is infeasible there and value 0 gives its nonvertex-flat atom (0,1/2,1/2). A leaf value 1/2 gives the same obstruction with the angles exchanged.</p>
+<p>All wires are consequently interior. At a product, w=0 then makes the first atom (y,x,0) nonvertex-flat, and r=0 makes the third atom (z,0,1-z) nonvertex-flat. If p=0 and q&gt;0, the second atom is (0,q,1-q); if p=q=0, the third is (0,x,1-x). The q=0 case is the same. Therefore every product is strict at the maximum.</p>
+<p>Finally the Hessian has no kernel in the affine wire space. A zero of its negative quadratic form leaves every positive atom angle unchanged. Leaf angles first fix their wire variations to zero; the product angle p=z-x then fixes the output variation, inductively through the tree. Turn variations follow their child. This proves negative definiteness, both with b fixed and with b varying.</p>
+<p>It follows that the optimizer is UNIQUE for every b in (0,1), and the implicit function theorem makes it real analytic throughout that interval. The Schur complement of the negative definite wire Hessian gives v_E’’(b)&lt;0. There is no maximizing-face change in the interior for this robust compiler. Endpoint degenerations are still allowed and are covered by the full limit theorem (2).</p>
+<h2 id="the-algebraic-boundary-branch-and-its-scope">5. The algebraic boundary branch and its scope</h2>
+<p>Choose a face F of P_E whose projection to b is nonconstant, and a point in its relative interior which is stationary in the internal directions at fixed b. Delete the atoms identically flat on F. Choose rational affine coordinates (y,b) on F and remove the rational kernel of the internal angle map. The remaining positive angles are</p>
+<pre><code>alpha_jr=a_jr+sum_l B_jrl y_l+C_jr b.          (7)</code></pre>
+<p>All coefficients are rational; weights w_j are positive rational. The Conway case has w_j=1. The negative internal Hessian is positive definite by the <a href="positive_source_algebraic_volume_period.html">quotient-Hessian theorem</a>. Therefore the stationary point continues as a unique real analytic branch y(b), with positive atoms, for b in a small interval. It is the maximum on that face’s fixed-b slice. It represents the FULL profile v_E only where this face remains globally maximizing; the argument does not assume away a change of maximizing face.</p>
+<p>For the robust Conway compiler, section 4 proves that F is the whole wire polytope and that the selected positive branch represents v_E throughout (0,1). Thus the following algebraic relation applies to its entire interior profile. Uniqueness and the nonsingular internal Jacobian continue the same selected component along that interval; there is no exchange of stationary branches on the positive place.</p>
+<p>Choose an integer Q clearing the denominators of B and C, and put</p>
+<pre><code>U_l=exp(pi i y_l/Q), M=exp(pi i b/Q),
+t_jr=exp(pi i a_jr) product_l U_l^(Q B_jrl) M^(Q C_jr),
+s_jr=(t_jr-t_jr^-1)/i.</code></pre>
+<p>The s_jr are Laurent polynomials over a cyclotomic number field, and are strictly positive at the selected real branch. For an integer H clearing the denominators of w_j B_jrl and w_j C_jr, internal stationarity is exactly</p>
+<pre><code>product_jr s_jr^(H w_j B_jrl)=1, for every l.     (8)</code></pre>
+<p>Keep U,M and every s nonzero when clearing negative exponents. The internal Jacobian of these equations, in y, is -(H/pi) Hess_y V and hence invertible. It follows that the selected component is locally etale over M and its function field is finite algebraic over a number field’s rational function field in M. This can also be seen from differentials: (8) expresses every dU_l in terms of dM; M is a local parameter, so the component has exactly one transcendence degree. This is a selected local branch statement, not a claim that every component or every point is unramified.</p>
+<p>Define the exact boundary multiplier</p>
+<pre><code>P=product_jr s_jr^(H w_j C_jr).                (9)</code></pre>
+<p>It belongs to that algebraic function field. Thus there is a nonzero polynomial relation A_F(M,P)=0 over a number field, with a selected positive real place. On the real branch P&gt;0, and the envelope identity gives the absolute differential normalization</p>
+<pre><code>d v_F/db=-(pi/H) log P.                       (10)</code></pre>
+<p>Internal derivatives disappear by (8); no unproved differentiation of a quantum asymptotic is used. If there are no internal variables, the same statements follow directly from (7),(9).</p>
+<p>The symbol A_F denotes THIS source boundary relation. It is not called the knot A-polynomial: M exponentiates the Newton output, and P is its variational conjugate. An actual peripheral interpretation is still required before identifying them with knot holonomy variables. Earlier geometric boundary constructions start with a marked gluing variety; here the original coefficient problem produces its own algebraic relation before that geometric comparison.</p>
+<p>The subsequent <a href="actual_positive_conway_hyperbolic_volume.html">actual Conway cell construction</a> now supplies a geometric meaning throughout the robust interior: v_E(b) is the volume of an explicit convex ideal polyhedron with one quadrilateral port, and its ordered modulus is</p>
+<pre><code>kappa_E(b)=exp(-v&#39;_E(b)/pi),  P=kappa_E(b)^H.</code></pre>
+<p>Thus the boundary conjugate in (9) is an actual face modulus. The output phase M records its specified port-edge angle; this still does not identify M and P with a knot’s peripheral eigenvalues.</p>
+<h2 id="the-relative-bloch-boundary-fixes-the-period-normalization">6. The relative Bloch boundary fixes the period normalization</h2>
+<p>Work in the selected algebraic function field, enlarged by the needed roots of unity, and tensor multiplicative groups with Q. For each positive atom define two algebraic shapes</p>
+<pre><code>z_j=t_j1 s_j2/s_j3,
+z_j^dagger=t_j1^-1 s_j2/s_j3.</code></pre>
+<p>On the real branch dagger is complex conjugation. For complex parameters it is the displayed algebraic companion; no unproved conjugation involution of the selected function field is assumed. The sine identity gives both 1-z_j=t_j2^-1 s_j1/s_j3 and 1-z_j^dagger=t_j2 s_j1/s_j3. Therefore the exact wedge calculation from <a href="actual_positive_source_bloch_regulator.html">the source Bloch theorem</a> applies in the function field as well. With</p>
+<pre><code>beta_F=(1/2)sum_j w_j([z_j]-[z_j^dagger]),</code></pre>
+<p>it gives</p>
+<pre><code>delta beta_F=(Q/H) M wedge P.                  (11)</code></pre>
+<p>Indeed the internal phase wedges vanish by (8); the sole remaining row is Q M wedge sum_jr w_j C_jr s_jr, which is (Q/H)M wedge P by (9). This is a rational identity with the chosen exponent scaling visible. It makes no integral torsion or peripheral-framing claim.</p>
+<p>At any algebraic real specialization, the actual regulator is</p>
+<pre><code>D(beta_F)=v_F(b).                              (12)</code></pre>
+<p>Applying the regulator differential to (11), using |M|=1, arg M=pi b/Q and P&gt;0, gives precisely (10). Thus the algebraic boundary relation, relative Bloch boundary and actual source-volume derivative have one consistent normalization.</p>
+<p>The closed-source theorem at b=1 remains valid even where a stationary branch degenerates. This note does not infer that it is obtained by unramified continuation of one interior branch. Nor does it identify the relative class with the marked geometric class of a complement.</p>
+<h2 id="an-exact-normalization-check">7. An exact normalization check</h2>
+<p>For the single positive angle family (y,b,1-y-b), with 0&lt;b&lt;1, the internal maximum has y=(1-b)/2. Here Q=H=1 and the equations are</p>
+<pre><code>U^2 M=-1,  P=2sin(pi b/2),
+P^2=2-M-M^-1,
+z=1-M^-1, z^dagger=1-M.                       (13)</code></pre>
+<p>Thus both the algebraic boundary relation and its positive real place are explicit. Since P<sup>2=-(1-M)</sup>2/M, direct wedge expansion gives delta(([z]-[z^dagger])/2)=M wedge P, as required by (11). This is a check of the normalization, not an identification of this single-atom family with an actual knot source.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_conway_boundary_volume_relation.py">audit</a> checks exact full-output anchors and prescribed-output semigroup corrections for robust expression trees, including sublinear endpoint sequences. It also checks (13) and its relative wedge identity exactly. The all-sequence and algebraic-branch conclusions are proved above; sampled large-level growth is not used to infer them.</p>
+<p>Independent analytical review checked the arbitrary prescribed-output and endpoint constructions, closed-profile continuity, the full strict optimizer barrier, Hessian injectivity, selected algebraic branch and relative boundary normalization. Fresh audit passed 3,000 full-output anchors, 1,392 interior corrections, 1,312 sublinear endpoint corrections, 1,592 exact strict interior assignments and the symbolic normalization. The knot-peripheral A-operator comparison is not asserted by this review.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_conway_boundary_volume_relation.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-full-boundary-profile">1. The full boundary profile</a><a href="#exact-output-integer-approximation">2. Exact-output integer approximation</a><a href="#the-exact-composition-laws-survive-in-the-entire-profile">3. The exact composition laws survive in the entire profile</a><a href="#every-robust-interior-profile-has-a-unique-strict-optimizer">4. Every robust interior profile has a unique strict optimizer</a><a href="#the-algebraic-boundary-branch-and-its-scope">5. The algebraic boundary branch and its scope</a><a href="#the-relative-bloch-boundary-fixes-the-period-normalization">6. The relative Bloch boundary fixes the period normalization</a><a href="#an-exact-normalization-check">7. An exact normalization check</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

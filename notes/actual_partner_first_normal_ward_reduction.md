@@ -1,5 +1,14 @@
 # A general two-current reduction of the first Racah normal
 
+**Later result, 29 October 2026:** the
+[full all-partner first-normal theorem](actual_all_partner_first_normal_bound.md)
+now bounds the remaining actual currents, using a positive presentation
+of the complete generic source on face-supported branches. The
+reductions and sharp rank obstructions below remain valid for the
+particular Ward/Fourier relations studied here. Their undetermined
+components are not counterexamples to the later source theorem.
+General higher normals and completed physical transport remain open.
+
 29 October 2026. The exact physical cluster Ward identity first reduces
 the first normal of all sixty-four reflected Racah branches to at most
 THREE potentially live-tail currents. Combining it with the independently

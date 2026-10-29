@@ -1,5 +1,12 @@
 # A finite Fourier identity for coherent Racah normal tails
 
+**Later result, 29 October 2026:** the
+[all-partner first-normal theorem](actual_all_partner_first_normal_bound.md)
+now bounds every actual coherent tail, including the symmetric
+component left undetermined by the involution below. It uses a
+positive presentation of the full generic source in addition to
+these Fourier identities. Higher general normal orders remain open.
+
 29 October 2026. This is an own finite algebraic identity for the actual
 retained `[2N]` current. It gives a uniform logarithmic relative bound
 when the largest face sum occurs at least twice, including genuinely

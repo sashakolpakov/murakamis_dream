@@ -4,6 +4,15 @@ The project seeks equality for broad classes of hyperbolic knots, with the right
 
 ## Full original-source equalities
 
+The broadest complete-link result starts with a crossing-circle box, turns it by a quarter turn, and calls the resulting piece $h$. Stack three such pieces to form the seed $A=h^3$. Build larger tangles by stacking previously built tangles or rotating them by a quarter turn $R$, retaining every auxiliary crossing circle. The grammar $E::=A\mid RE\mid EE$ records those operations. A cylindrical closure joins corresponding top and bottom endpoints around the outside; cap closure instead pairs endpoints on each end.
+
+The [cylindrical positive Conway theorem](../../notes/actual_positive_conway_hyperbolic_volume.md) covers arbitrary finite branching and turn depth in this grammar. After the exact cap-sum boundary reduction, every retained cylindrical factor has a complete hyperbolic complement and
+
+$$\lim_{N\to\infty}\frac{2\pi}{N}\log Z_{E,N}
+=2\max_{P_E}V_E=\operatorname{Vol}(S^3\setminus L_E).$$
+
+This uses the whole original source at both parities and composite levels. Its geometric proof constructs the actual link complement from ideal pyramids and prisms and verifies complete cusps. These are retained-circle links. The theorem does not yet include their arbitrary fillings or assert that every alternating link belongs to this grammar. The [coverage comparison](../../notes/positive_conway_literature_coverage.md) records relevant antecedents without substituting external proofs.
+
 The long pretzel argument covers every fixed odd width $s\geq9$, with independently sufficiently large **fixed signed** twist integers in the recorded diagram convention. The corresponding specified single-cut two-component link result holds at fixed even widths $s\geq10$. Width and slopes are fixed before $N$ tends to infinity. Both level parities are retained. Widths $3,5,7$ are outside the present alias estimate.
 
 The proof combines control of the entire quantum source, a nonzero geometric period, and a separate geometric certificate. Its precise statements and conventions are in the [width extension](../../notes/actual_pretzel_all_width_extension.md) and [source-to-volume proof](../../notes/actual_long_pretzel_casson_rivin_equality.md).
@@ -26,7 +35,7 @@ For every fixed expression $E$ in the specified positive Conway class, the [whol
 
 $$\lim_{N\to\infty}\frac{2\pi}{N}\log Z_{E,N}=2\max_{P_E}V_E.$$
 
-Here $P_E$ is the exact rational support polytope and $V_E$ a concave sum of ideal-tetrahedron volumes. The source limit is proved. Its identification with the complement's global angle problem remains open in general.
+Here $P_E$ is the exact rational support polytope and $V_E$ a concave sum of ideal-tetrahedron volumes. The cylindrical factors now have the actual geometric interpretation above. Cap products retain their exhibited connected-sum decomposition, with additive limits; they are not asserted to have one complete hyperbolic metric.
 
 ## Cube sectors are kept separate
 

@@ -1,5 +1,14 @@
 # A whole-source variational limit for every positive Conway expression
 
+**Later geometric result, 29 October 2026:** the
+[actual cylindrical Conway theorem](actual_positive_conway_hyperbolic_volume.md)
+now identifies this maximum with the complete hyperbolic volume for
+every retained cylindrical factor after cap-sum reduction. Its proof
+supplies the actual ordered cell incidence and complete cusps.
+Cap products keep their connected-sum scope; arbitrary knots and
+fillings are not included. The earlier geometric gap below is retained
+as the scope of this original variational argument.
+
 29 October 2026. Every fixed expression in the actual complete-circle
 Conway class has a full-sequence exponential limit. The limit is the
 maximum of an explicit concave sum of ideal-tetrahedron volumes on a

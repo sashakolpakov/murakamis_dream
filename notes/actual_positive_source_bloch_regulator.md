@@ -1,5 +1,13 @@
 # A rational Bloch regulator for every positive-source volume maximum
 
+**Later geometric result, 29 October 2026:** for every retained
+cylindrical robust Conway factor, the
+[actual cell realization](actual_positive_conway_hyperbolic_volume.md)
+now identifies the source class with the geometric rational Bloch
+class over a common number field, and its regulator with the actual
+complete complement volume. The abstract rational-angle theorem below
+continues to apply more broadly and does not itself supply a manifold.
+
 29 October 2026. The algebraic volume period of every robust positive
 Conway source is the regulator of an actual rational Bloch cycle. The
 cycle is obtained by subtracting the complex-conjugate shape symbols.
