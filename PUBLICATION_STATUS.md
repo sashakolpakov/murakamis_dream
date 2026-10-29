@@ -1,5 +1,7 @@
 # Publication status
 
+The [illustrated research guide](https://sashakolpakov.github.io/murakamis_dream/) is live on GitHub Pages. The public home and geometry pages, full-text search, native math rendering and compiled figures were verified after successful deployment. The repository homepage points to this guide.
+
 Published at [sashakolpakov/murakamis_dream](https://github.com/sashakolpakov/murakamis_dream), with public visibility confirmed by the unauthenticated GitHub repository API.
 
 The latest `gh repo view` check also succeeds and reports public visibility with default branch `main`. Normal Git pushes publish the subsequent research updates; the current frontier and recent-advances notes describe their scope.
