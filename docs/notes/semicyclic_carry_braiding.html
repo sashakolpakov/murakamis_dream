@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Genuine holonomy braiding on the common carry lattice · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/semicyclic_carry_braiding.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="genuine-holonomy-braiding-on-the-common-carry-lattice">Genuine holonomy braiding on the common carry lattice</h1>
+<p>Research note, 26 October 2026. This replaces the frozen auxiliary crossing of <a href="carry_recoupling_lattice.html">the carry-lattice construction</a> by an explicit genuine semicyclic holonomy braiding. A retained central factor corrects the wrap, the transported centers obey a linear braid map, and a common fixed center line gives a braid action on every recoupled integral source and its special fiber. The entire original ADO cut operator, not just its trace, is recovered with its meridian, pivot, twist and modified dimension unchanged.</p>
+<p>These are statements on the E^N=0 semicyclic locus. This locus represents reducible knot characters. No identification with the complete irreducible geometric character or its selected regulator norm follows.</p>
+<h2 id="the-source-modules-and-their-fixed-highest-weight-flag">1. The source modules and their fixed highest-weight flag</h2>
+<p>Put q=exp(pi*i/N), Q=q^2, rho=q-q^(-1), N&gt;=2, and k=x^N. On V(x,phi), with basis v_0,…,v_(N-1), use</p>
+<pre><code>K v_a=x Q^(-a)v_a,
+E v_a=e_a v_(a-1), E v_0=0,
+e_a=[a]_q (x q^(1-a)-x^(-1)q^(a-1))/rho,
+F_phi v_a=v_(a+1), a&lt;N-1,
+F_phi v_(N-1)=phi v_0.                          (1.1)</code></pre>
+<p>These are the regular modules already constructed on the semicyclic section of <a href="regular_holonomy_braiding.html">the holonomy splitting chart</a>:</p>
+<pre><code>E^N=0, F^N=phi, K^N=k,
+Omega=rho^2 FE+qK+q^(-1)K^(-1)=qx+q^(-1)x^(-1).           (1.2)</code></pre>
+<p>The wrap of F never enters FE because E has no output v_(N-1). This directly checks that the Casimir and commutator are unchanged. For generic x the e_a, a&gt;0, are units, and K projectors together with the nonwrap E,F arrows generate every matrix unit, for every phi. The vector v_0 is a fixed highest-weight flag throughout this locus.</p>
+<p>The rational holonomy automorphism r and its center map are the independently proved formulas in that linked note. Here its central divisor is identically one because E_1^N=0. In raw F-power coordinates the uncheck center transport is</p>
+<pre><code>phi&#39;_1=phi_1/k+(1-k^(-2))phi_2,
+phi&#39;_2=phi_2/k.                                 (1.3)</code></pre>
+<p>The K roots and the individual Casimirs stay fixed.</p>
+<h2 id="an-explicit-global-intertwiner-with-the-correct-wrap-factor">2. An explicit global intertwiner, with the correct wrap factor</h2>
+<p>Let D be diagonal on the pair:</p>
+<pre><code>D v_(a,b)=x^(-a-b)Q^(ab) v_(a,b),
+c_n=q^(n(n-1)/2)rho^n/[n]_q!.</code></pre>
+<p>Define</p>
+<pre><code>R_(phi_1,phi_2)
+  =D sum_(n=0)^(N-1)c_n E_1^n F_(2,phi_2/k)^n.           (2.1)</code></pre>
+<p>It maps V(x,phi’_1) tensor V(x,phi’_2) to V(x,phi_1) tensor V(x,phi_2), intertwining the target generators with r applied in the source. In particular the wrap is phi_2/k, not phi_2. At the Kashaev color,</p>
+<pre><code>x_0=q^(N-1), k_0=(-1)^(N-1),</code></pre>
+<p>so the missing factor is -1 at even levels. Before specialization it is the whole function x^(-N).</p>
+<p>All denominators [n]_q!, n&lt;N, are nonzero. The series is a polynomial in a nilpotent operator, with constant term one; its inverse is the corresponding finite inverse Euler series. Thus (2.1) is invertible for every phi and x!=0. It fixes v_00.</p>
+<p>Here is a proof of every intertwining equation without assuming a published semicyclic R formula. Write Theta for the finite sum in (2.1), and U=q rho^2 E_1 F_(2,phi_2/k). The Euler coefficient identity gives</p>
+<pre><code>Theta(QU)=Theta(U)/(1-U), U^N=0.                (2.2)</code></pre>
+<p>Consequently its K conjugations are exact finite identities. The Cartan factor satisfies</p>
+<pre><code>D E_1 D^(-1)=E_1 K_2,
+D F_(2,phi_2/k) D^(-1)=K_1^(-1)F_(2,phi_2).    (2.3)</code></pre>
+<p>In the second equation a nonwrap has ratio x<sup>(-1)Q</sup>a; the wrap has ratio x<sup>(N-1)Q</sup>a and its factor phi_2/k restores exactly the same coefficient. This is the origin of the central correction.</p>
+<p>E_1 and F_(2,phi_2/k) commute with Theta. Combining (2.2)–(2.3) therefore intertwines E_1,F_2,K_1,K_2 with precisely their four rational holonomy images. No derivative or omitted Nth Euler coefficient is used.</p>
+<p>The remaining two generators are forced. On phi_2!=0, F_2 is invertible, so its Casimir and K determine E_2 uniquely. For the first factor, put the already matched K_1,E_1 in their standard weight-string basis. Its Casimir determines every nonwrap F_1 arrow. The weight relation allows only the remaining arrow v_(N-1)-&gt;v_0, with an arbitrary matrix on the spectator. F_1^N=phi’_1 fixes that matrix to phi’_1 times the identity. Both representations have the same Casimirs and (1.3) is the proved central map, so F_1 also agrees. This proves all six equations on a dense open set. The intertwiner and its inverse have only monomial x and fixed root denominators; the holonomy denominators are finite nilpotent inverses. Clearing them extends the identities to all phi and all defined colors, including the original nilpotent section.</p>
+<p>The uncheck determinant is independent of phi. Every wrap lowers integer residue degree, and every nonzero transfer lowers the first index before checking. Thus only the diagonal D contributes:</p>
+<pre><code>det R=x^(-N^2(N-1)) Q^((N(N-1)/2)^2).           (2.4)</code></pre>
+<p>This is the original nilpotent determinant. Its anchored scalar normalization is therefore exactly the one in the existing holonomy note, with no new phi-dependent scalar.</p>
+<h2 id="checked-maps-transport-their-centers">3. Checked maps transport their centers</h2>
+<p>Let P be the literal flip. As a map from the input pair with centers (u,v) to its transported output, the positive crossing is</p>
+<pre><code>B^+(u,v)=P D sum_(n&lt;N)c_n E_1^n F_(2,v)^n,
+(u,v) -&gt; L_-(k)(u,v),
+L_-(k)=[[0,k],[k,1-k^2]].                       (3.1)</code></pre>
+<p>This follows by applying (2.1) at the swapped output centers. Its source correction phi_2/k then equals the input v exactly. Thus the old wrapped positive matrix can be used with the proper center transport; holding arbitrary centers fixed would use a different composition rule.</p>
+<p>The inverse crossing at input (u,v) is</p>
+<pre><code>B^-(u,v)=Theta_(u/k)^(-1) D^(-1)P,
+(u,v) -&gt; L_+(k)(u,v),
+L_+(k)=[[1-k^(-2),k^(-1)],[k^(-1),0]].          (3.2)</code></pre>
+<p>The matrices L_- and L_+ are inverse. These are precisely the classical polynomial-block matrices of <a href="frobenius_verma_period.html">the Frobenius Verma calculation</a>. The quantum holonomy and Frobenius center transports now have the same explicit convention, rather than an unmarked identification.</p>
+<h2 id="strict-braid-coherence-on-the-semicyclic-locus">4. Strict braid coherence on the semicyclic locus</h2>
+<p>The rational holonomy automorphisms satisfy the three-factor identity by the earlier direct algebra proof. With (3.1)–(3.2) transporting the centers, the two braid composites intertwine the same split full matrix algebra with the same target centers. They differ by one scalar on the generic regular chart.</p>
+<p>Every crossing (2.1), checked crossing, and inverse fixes the tensor highest-weight vector v_00. Therefore the two composites both fix v_000, forcing that scalar to equal one. This proves the braid relation exactly, without an unspecified determinant phase. It holds over the entire semicyclic affine center chart by the same polynomial continuation as in Section 2, including even and composite N. Positive and negative maps are literal inverses when the intermediate centers are updated.</p>
+<p>The fixed highest-weight flag is essential to this argument. On the full cyclic locus with E^N!=0 that flag is absent; the general phase cover has not been removed by this special coherence theorem.</p>
+<h2 id="a-common-fixed-line-and-the-even-level-endpoint-mark">5. A common fixed line and the even-level endpoint mark</h2>
+<p>For b strands the line</p>
+<pre><code>phi_j=z k^(1-j), j=1,...,b,                     (5.1)</code></pre>
+<p>is fixed by every embedded L_+ and L_-. Substitution in each two-by-two matrix proves this directly. Hence on this line the matrices are endomorphisms of one ordered tensor module and obey the ordinary braid relations.</p>
+<p>Retain the unit endpoint change</p>
+<pre><code>c_j=x^(j-1), S_j v_a=c_j^a v_a,
+F_j^new=c_j F_j, E_j^new=c_j^(-1)E_j.           (5.2)</code></pre>
+<p>In the new leaf frame the F central parameters are all</p>
+<pre><code>(F_j^new)^N=c_j^N phi_j=z.</code></pre>
+<p>At M=1 these are exactly c_j=(-q)^(1-j), the previously derived actual coproduct endpoint marks. For even N their Nth powers remove the alternating raw center signs. This is an explicit root/meridian function, not a numerical choice made after evaluating M=1.</p>
+<p>Choose z=1-(1-epsilon)^N. After (5.2), all leaves have the same Borel parameter t_j=1-z=(1-epsilon)^N. The common carry theorem applies with every direction a_j=1. Every relative parameter specializes to</p>
+<pre><code>tau_I(0)=|I|/|R| !=0,1.                         (5.3)</code></pre>
+<p>The endpoint change is diagonal and a unit and thus commutes with the carry weights. Every genuine crossing and inverse preserves both leaf and carry lattices: a wrap still lowers residue degree by N and has one factor z. Therefore its conjugation to each basic recoupled source is integral.</p>
+<p>The braid identities hold over R before specialization, so they hold on every basic recoupled carry fiber as well as on its actual source sublattice. This upgrades the auxiliary trace construction to a genuine braid action in each integral recoupling chart. The arbitrary frozen-direction lift in the preceding note is not asserted to have this property; (5.1)–(5.2) supply it.</p>
+<p>The recoupling statement is a transport of linear modules and operators with the given endpoint frames. A complete assignment of colored tensor-face data to a positive geometric knot triangulation is still required.</p>
+<h2 id="the-entire-selected-cut-operator-remains-the-actual-ado-one">6. The entire selected cut operator remains the actual ADO one</h2>
+<p>The finite crossing matrices in (3.1)–(3.2) have no degree- increasing term. A wrap lowers the integer residue sum by N. This holds for any transported semicyclic parameters, not only the common fixed line. Close b-1 strands with the original diagonal pivot and keep the original open N-dimensional strand.</p>
+<p>For an entry from cut index a to a’, closing the other strands makes the total degree change equal a’-a. On the other hand it is -N times the number of wraps. Since 0&lt;=a,a’&lt;N, the only possibility is a’=a and no wraps. Thus the whole cut operator has exactly its original nilpotent entries:</p>
+<pre><code>C_(beta,N)(x;phi)=F_N(M) I_N, M=-qx.             (6.1)</code></pre>
+<p>All pivot and zero-framing twist factors are the original ones. At a closed center fixed point this is a literal semicyclic holonomy cut evaluation. The same finite matrix identity also holds before imposing center closure; that extra assertion does not define a new geometric-character invariant.</p>
+<p>Any vector/covector pair with value one can evaluate the scalar operator (6.1). This includes the original highest-weight cut and its already proved factorial/Whittaker frame. After a recoupling the corresponding insertion is transported as the full matrix; it is not reset independently in the new chart.</p>
+<p>The determinant normalization from (2.4) uses the original same-color scalar s=x<sup>(N-1)q</sup>(-(N-1)^2/2). Its compensating twist is s*x<sup>(1-N)=q</sup>(-(N-1)^2/2), exactly as on the nilpotent section. The zero-framed evaluation and its full factor remain exactly</p>
+<pre><code>F_N(M), d_N(M)F_N(M),
+d_N(M)=i^(N+3)M^(N-1)/(1+M^2+...+M^(2N-2)).     (6.2)</code></pre>
+<p>All meridian germs, the Kashaev value, and the actual all-level meridian annihilator ideal are consequently retained. The raw k=x^N, its even-level sign, and the separately known full ADO shift sign have not been discarded or identified by fiat.</p>
+<h2 id="what-this-closes-and-what-remains">7. What this closes and what remains</h2>
+<p>There is now an explicit genuine holonomy braiding through the actual semicyclic source, a common fixed center line with the correct endpoint marks, and an integral braid action compatible with every recoupling tree and the full actual cut operator. The scalar is fixed by a highest-weight flag and the wrap by its central character. These comparisons use actual operators and evaluations, not only matching algebra dimensions.</p>
+<p>The E^N=0 locus is preserved by the center maps. Its meridian holonomies are triangular after the existing prefix change, so its closed knot representations are reducible. The common fixed line does not represent complete irreducible hyperbolic holonomy. The previously constructed Alexander attachment points and mixed E/F deformation problem remain relevant. No Hilbert-90 change can remove that central-character distinction.</p>
+<p>Transport to the equivariant colored positive triangulation, identification of the meridian source with its marked Bloch period, and the selected regulator norm across N remain to be proved. The volume conjecture is not established here.</p>
+<p>The subsequent <a href="four_cyclic_atoms.html">four cyclic-atom theorem</a> now writes the explicit crossing (2.1) as four literature cyclic dilogarithm matrices in changing central frames. Their norm roots and determinant normalizations, the Cartan map and one external root are all retained. A formal source anchor fixes the remaining finite scalar. This is an actual root-level operator factorization, not separate specialization of compact infinite products. It supplies local tetrahedron data while leaving the geometric global source and selected norm open.</p>
+<h2 id="coverage-and-exact-diagnostics">8. Coverage and exact diagnostics</h2>
+<p>This lies in the existing Kashaev–Reshetikhin holonomy-braiding and semicyclic quantum-group framework, whose statement coverage is recorded in <a href="regular_holonomy_braiding.html">the regular holonomy note</a>. The abstracts of <a href="https://arxiv.org/abs/math/0202212">Kashaev–Reshetikhin, math/0202212</a> and <a href="https://arxiv.org/abs/2509.02354v2">McPhail-Snyder–Reshetikhin, 2509.02354v2</a> were checked for this coverage, including the latter’s four-dilogarithm and holonomy Yang–Baxter scope. Their proofs are not used here. The root module is the literature quantum-group module (1.1), and the actual knot invariant is unchanged. No new general semicyclic invariant or novelty claim is made. The four-generator, Casimir, center and highest-weight arguments above give the proof without importing a published R-matrix or coherence proof.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_semicyclic_carry_braiding.py">The exact audit</a> checks all six generator intertwinings in 18 cases at nine levels through 12, retaining the wrap factor k^(-1). It checks ten dynamically transported braid/inverse cases and compares freezing the wrong centers. On the common fixed line it checks the genuine braid in both three-leaf carry frames and 60 original recoupled cut periods. It separately checks 30 entire scalar cut matrices with arbitrary transported centers, at generic and Kashaev colors. All passed. Results: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/semicyclic_carry_braiding_results.json">semicyclic_carry_braiding_results.json</a>.</p>
+<pre><code>python3 experiments/audit_semicyclic_carry_braiding.py</code></pre>
+<p>The subsequent <a href="braided_source_groupoid.html">braided source atlas</a> also handles varying centers through every tree/source chart, including the line data at source infinity. For that construction the explicit inverse endpoint factors c_j=x^(-j), j starting at zero, make the normalized total Y exactly the original coproduct of F. The normalized wraps are k^(-j)a_j and their center maps depend on U=k<sup>2=M</sup>(2N), preserving their total. This is a different coordinate choice from (5.2), whose purpose was to make the fixed line have equal wraps. All inverse/source factors remain explicit. The full arrows act on the relative factors and preserve the selected original cut. The actual meridian-source equation and nontrivial pure-braid jet are derived in the companion note; the complete geometric gluing and regulator norm remain unproved.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/semicyclic_carry_braiding.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-source-modules-and-their-fixed-highest-weight-flag">1. The source modules and their fixed highest-weight flag</a><a href="#an-explicit-global-intertwiner-with-the-correct-wrap-factor">2. An explicit global intertwiner, with the correct wrap factor</a><a href="#checked-maps-transport-their-centers">3. Checked maps transport their centers</a><a href="#strict-braid-coherence-on-the-semicyclic-locus">4. Strict braid coherence on the semicyclic locus</a><a href="#a-common-fixed-line-and-the-even-level-endpoint-mark">5. A common fixed line and the even-level endpoint mark</a><a href="#the-entire-selected-cut-operator-remains-the-actual-ado-one">6. The entire selected cut operator remains the actual ADO one</a><a href="#what-this-closes-and-what-remains">7. What this closes and what remains</a><a href="#coverage-and-exact-diagnostics">8. Coverage and exact diagnostics</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

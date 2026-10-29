@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Complete actual Casimir packets and their recoupling measure · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_complete_casimir_hermite_packet.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="complete-actual-casimir-packets-and-their-recoupling-measure">Complete actual Casimir packets and their recoupling measure</h1>
+<p>29 October 2026. Every physical integer-degree block has an explicit complete Casimir frame, including all confluent derivative columns. Its inverse is determined by a closed bilinear Christoffel–Darboux measure. That measure has explicit sine-factorial profiles; at degree N-1 all its double-node weights are polynomial. No tame eigenframe is inferred from tame spectral jets.</p>
+<p>The adjacent complete-channel change has an explicit all-entry product formula before restriction to a total-three-head multiplicity module. Its entries admit finite angle-factorial envelopes, with every inverse normalizer accounted for. The original cup and both cap rows are kept. The remaining marked-source norm and coherent overlap action are not asserted to have the sharp volume bound.</p>
+<h2 id="literal-jacobi-blocks-and-the-high-degree-mirror">1. Literal Jacobi blocks and the high-degree mirror</h2>
+<p>Put <code>q=exp(pi*i/N)</code>, <code>Q=q^2</code>, <code>d=N-1</code>, <code>x=q^d=-q^-1</code>. Use the original balanced F,Ecal,K and tensor Casimir Omega as in <a href="actual_tame_c0_hermite_source_frame.html">the source Hermite theorem</a>. For total degree <code>0&lt;=T&lt;=d</code>, write physical states <code>|u,T-u&gt;</code>, <code>0&lt;=u&lt;=T</code>, and set <code>v=T-u</code>. The block J_T of Omega is COMPLEX SYMMETRIC tridiagonal. Its offdiagonal from u to u+1 is</p>
+<pre><code>A_u=Q^(-v)(1-Q^v)(1-Q^(u+1)), 0&lt;=u&lt;T.             (1)</code></pre>
+<p>Its diagonal is</p>
+<pre><code>D_u=(Q^(-u)-1)xQ^(-v)(1-Q^u)
+    +(Q^(-v)-1)x^(-1)Q^u(1-Q^v)
+    +q x^2Q^(-T)+q^(-1)x^(-2)Q^T.               (2)</code></pre>
+<p>Both formulas are direct application of F_tot E_tot and the actual Cartan. Every A_u is nonzero. The product is especially simple:</p>
+<pre><code>B_T=product_(u=0)^(T-1) A_u=(-1)^T s_T^2,
+s_a=|(Q;Q)_a|.                                   (3)</code></pre>
+<p>For <code>T&gt;d</code>, put <code>K=2d-T</code>, <code>a0=T-d</code>. Its block is the SAME J_K after translating the physical first index by a0. One proof uses the actual root Chevalley matrix <code>W|a&gt;=(-1)^a|d-a&gt;</code>: <code>W F W^-1=Ecal</code>, <code>W Ecal W^-1=F</code>, <code>W K W^-1=K^-1</code>. Chevalley followed by tensor flip commutes with Omega, and its coefficient is constant on a fixed integer degree. Thus the high blocks introduce no additional frame cost or missing channels. The same comparison follows from direct entries (1)–(2).</p>
+<h2 id="explicit-polynomial-columns-and-generic-q-confluence">2. Explicit polynomial columns and generic-q confluence</h2>
+<p>Define continuants</p>
+<pre><code>p_0(z)=1, p_1(z)=z-D_0,
+p_(u+1)(z)=(z-D_u)p_u(z)-A_(u-1)^2 p_(u-1)(z).</code></pre>
+<p>For <code>0&lt;=u&lt;=T</code> put</p>
+<pre><code>f_u(z)=p_u(z)/(A_0...A_(u-1)), f_0=1.            (4)</code></pre>
+<p>The characteristic polynomial is</p>
+<pre><code>P_T(z)=p_(T+1)(z)=product_(j=0)^T(z-c_j),
+c_j=q^(2j+1)+q^(-2j-1).                         (5)</code></pre>
+<p>There are only simple or double nodes; a collision is exactly <code>j+l=d</code>. The self-paired node j=d/2, when integral, is simple. At a simple node take the column f(c_j); at a double node take BOTH</p>
+<pre><code>f(c_j), f&#39;(c_j).                                 (6)</code></pre>
+<p>The last-row recurrence gives <code>(J_T-z)f(z)=-P_T(z)e_T/B_T</code>. Hence (6) is the exact Jordan chain <code>(J_T-c)f'=f</code> at a double node.</p>
+<p>These are normalized ACTUAL Clebsch columns and their generic-q divided differences, not an arbitrarily supplied Jordan basis. To see this, vary q to zeta near q with ordinary highest weight d. Its highest vector at degree j has coefficients b_0=1 and</p>
+<pre><code>b_a=(-1)^a x^(-a) Q^[a(j-1)-a(a-1)/2]
+          (Q^(N-j);Q)_a/(Q^(N-a);Q)_a,           (7)</code></pre>
+<p>where in (7) <code>Q=zeta^2</code>, <code>x=zeta^d</code>. The E equation directly gives its successive ratio. Its divided descendant <code>F_tot^(T-j)h_j/(Q;Q)_(T-j)</code> has eigenvalue <code>zeta^(2N-1-2j)+zeta^(-2N+1+2j)</code>. Its first physical component is <code>x^(-(T-j))[T choose j]_Q</code>, nonzero near the root because <code>T&lt;N</code>. Thus normalizing that component to one gives the unique first-row recurrence solution f(zeta,lambda_j(zeta)). This proves (5) by generic distinctness and dimension T+1.</p>
+<p>For colliding j,l the divided difference of these two normalized columns converges to f’(c); the common zeta derivative cancels. The eigenvalue gap has logarithmic derivative <code>2N</code> times <code>q^(2j+1)-q^(-2j-1)</code>, up to its order sign, and is nonzero. All denominators in (7) and in these low-degree descendants have factorial indices at most d. Exact generic-q duality is retained; no fixed-q meridian splitting is imposed on an exact dual cap.</p>
+<h2 id="the-complete-inverse-including-every-derivative-normalizer">3. The complete inverse, including every derivative normalizer</h2>
+<p>Let V_T have the columns (6), grouped by distinct nodes. Different nodes and their chains are orthogonal for the BILINEAR pairing <code>u^T v</code>, because J_T is symmetric. This is not a Hermitian positivity assertion. Define <code>nu_j=(-1)^j q^(j(j+1))</code>.</p>
+<p>At a simple node c_j, the bilinear block is the nonzero scalar</p>
+<pre><code>sigma_j=x^T nu_j P_T&#39;(c_j)/B_T.                  (8)</code></pre>
+<p>At a double node c=c_j=c_l, put <code>Q_j(z)=P_T(z)/(z-c)^2</code> and let r’_j be the derivative of the ORIGINAL normalized crossing polynomial at c. Its exact block is</p>
+<pre><code>K_j=[[0,sigma_j],[sigma_j,sigma_j eta_j]],
+sigma_j=x^T nu_j Q_j(c)/B_T,
+eta_j=r&#39;_j/nu_j+Q_j&#39;(c)/Q_j(c).                  (9)</code></pre>
+<p>In particular <code>sigma_j</code> never vanishes. The full frame and inverse are</p>
+<pre><code>V_T^T V_T=K_T=directsum K_j,
+V_T^(-1)=K_T^(-1)V_T^T,
+K_j^(-1)=sigma_j^(-1)[[-eta_j,1],[1,0]]          (10)</code></pre>
+<p>for a double block; a simple block has inverse <code>sigma_j^-1</code>. This proves completeness and gives the ENTIRE inverse, without a condition-number guess or loss of a Jordan channel.</p>
+<p>Proof of the normalizers. Christoffel–Darboux for the continuants is</p>
+<pre><code>sum_(u=0)^T f_u(z)f_u(w)
+  =[P_T(z)p_T(w)-p_T(z)P_T(w)]/[(z-w)B_T^2].</code></pre>
+<p>Its simple-node specialization gives <code>P_T'(c)p_T(c)/B_T^2</code>. At a double node it gives <code>Q_j(c)p_T(c)/B_T^2</code> for f^T f’, and <code>[Q_j(c)p_T'(c)+Q_j'(c)p_T(c)]/B_T^2</code> for f’^T f’. The first physical row of the ORIGINAL checked R in degree T has only the last column, with coefficient <code>kappa x^-T</code>. Therefore</p>
+<pre><code>f_T(c_j)=x^T nu_j,
+f_T&#39;(c_j)=x^T r&#39;_j at a double node.</code></pre>
+<p>Since <code>p_T=B_T f_T</code>, these formulas prove (8)–(9), including all phases. The actual full Cartan kappa cancels in this argument; it remains on R itself.</p>
+<h2 id="exact-sine-factorial-measures-all-parities-and-all-degrees">4. Exact sine-factorial measures, all parities and all degrees</h2>
+<p>Write <code>a_j=|1-Q^(2j+1)|</code>. For a simple UNPAIRED j (<code>j&lt;d-T</code>),</p>
+<pre><code>|sigma_j|=s_(T-j)s_(T+j+1)/(s_T^2 a_j).          (11)</code></pre>
+<p>For a double pair <code>j&lt;l=d-j&lt;=T</code>,</p>
+<pre><code>|sigma_j|=N s_(T-j)s_(T+j-d)/(s_T^2 a_j^2).      (12)</code></pre>
+<p>For the simple SELF-paired node <code>j=d/2&lt;=T</code> at odd N,</p>
+<pre><code>|sigma_j|=N s_(T-j)^2/s_T^2.                    (13)</code></pre>
+<p>Every index lies in <code>0,...,d</code>. To prove these, factor each nonzero node difference into</p>
+<pre><code>|c_j-c_k|=|1-Q^(j-k)| |1-Q^(j+k+1)|.</code></pre>
+<p>The first product gives <code>s_j s_(T-j)</code>, deleting the partner factor when present. The second is the circular interval j+1,…,j+T+1: delete its self factor, and its unique root-zero partner if present. Root complementation <code>s_d=N</code> gives exactly (11)–(13). No separate factorwise N^O(N) bound is used.</p>
+<p>At T=d this simplifies to</p>
+<pre><code>|sigma_j|=1/|1-Q^(2j+1)|^2 for EVERY double node,
+|sigma_(d/2)|=1 at the simple odd-level node.      (14)</code></pre>
+<p>Thus the full degree-d channel MEASURE is polynomial; this does not say the Clebsch frame or its Hermitian inverse is tame. For all double blocks, nonzero node gaps are at least <code>16/N^2</code> and the independently derived actual jets obey <code>|r'_j/nu_j|&lt;=N^2/8</code>. Consequently <code>|eta_j|&lt;=C N^3</code>. The inverse block in (10) has no additional exponential factor beyond its explicit <code>1/|sigma_j|</code>.</p>
+<h2 id="explicit-q-hahn-sums-and-a-quantitative-angle-profile">5. Explicit q-Hahn sums and a quantitative angle profile</h2>
+<p>For <code>T&lt;=d</code>, set <code>r=T-j</code> and <code>I={max(0,u-r),...,min(j,u)}</code>. At the actual root the value column is</p>
+<pre><code>f_u(c_j)=x^r/[T choose j]_Q * sum_(a in I)
+   (-1)^a x^[-(r-u+2a)] Q^[a(a-1)/2+a(r-u+a)]
+      [j choose a]_Q [u choose a]_Q
+                               [T-u choose j-a]_Q.       (15)</code></pre>
+<p>This follows by expanding the actual highest vector (7) at the root, then applying the divided coproduct descendant. All three binomial factors retain their true root phases. In particular it is a closed finite Clebsch/q-Hahn sum, with no unknown knot period.</p>
+<p>Let beta denote the positive sine-binomial magnitude and put</p>
+<pre><code>E_(T,j,u)=sum_(a in I) beta_(j,a)beta_(u,a)
+                      beta_(T-u,j-a)/beta_(T,j).          (16)</code></pre>
+<p>Then <code>|f_u(c_j)|&lt;=E_(T,j,u)</code>. For a double pair j,l,</p>
+<pre><code>|f_u&#39;(c_j)|&lt;=C N^2(1+log N)
+                          [E_(T,j,u)+E_(T,l,u)].         (17)</code></pre>
+<p>For (17), differentiate the ACTUAL generic-q sums before their confluence. Each factorial has index below N and <code>|D_logzeta log F_a|&lt;=N^2(1+log N)</code> at the root. There are a bounded number of factorial ratios and quadratic monomials in every summand and its endpoint normalizer. The eigenvalue-gap derivative has modulus at least eight. Thus differentiation costs only the displayed polynomial times the SAME positive factorial profiles. No exponential frame factor is put into the error term.</p>
+<p>Every beta in (16) is <code>N w_d(k,L-k,d-L)</code>, with exact sum d. Equivalently E is <code>N^2</code> times a finite sum of THREE such positive cell weights divided by the known boundary weight <code>w_d(j,T-j,d-T)</code>. Their charges and the range I are literal integer Clebsch incidence; the denominator is a compulsory boundary metric. Equations (10)–(13),(16)–(17) give a quantitative profile for the entire frame AND inverse, including every Jordan derivative. They are bounds, not assertions that the q-Hahn phases can be deleted at the sharp exponent or that these cells already form geometric edges. For high physical T extend the notation by <code>E_(T,j,u)=E_(2d-T,j,u-(T-d))</code>, and use the corresponding low-block measure sigma; inadmissible physical indices have value zero.</p>
+<h2 id="complete-adjacent-channel-kernel-at-arbitrary-width">6. Complete adjacent-channel kernel at arbitrary width</h2>
+<p>Lift the block frames to the full physical pair, preserving total T. Before restricting the THREE-head total Casimir, its complete pair coordinate change has the following exact entry. For input pair degree T, channel gamma (value or derivative type), and third physical index c, choose an output first physical index u. Put</p>
+<pre><code>b=T-u, T&#39;=b+c.</code></pre>
+<p>If the physical indices are admissible, the output pair channel delta has coefficient</p>
+<pre><code>Rcal_((u,T&#39;,delta);(T,gamma,c))
+     =V_T[u,gamma] (V_T&#39;^(-1))[delta,b].         (18)</code></pre>
+<p>Otherwise it is zero. Here high blocks use the unitary index translation from Section1. Equation (18) is simply the two ACTUAL pair frames sewn at the shared physical index; no complete channel or derivative row has been suppressed. Its entries are products of the finite q-Hahn columns and explicit inverse rows (10).</p>
+<p>For a double channel use <code>Ebar=E_j+E_l</code>, and for a simple channel use E_j. Equations (10),(16)–(17) give, uniformly in all admissible ports, an all-channel estimate of the form</p>
+<pre><code>|Rcal|&lt;=C N^5(1+log N)^2
+         Ebar_(T,gamma,u) Ebar_(T&#39;,delta,b)/|sigma_delta|. (19)</code></pre>
+<p>All exponential factors on the right are the stated sine-factorial angle profiles. Restricting (18) to a fixed total-three-head Casimir or a source-generated Hom space is the subsequent genuine Racah contraction; it cannot be assumed from (18) alone. This distinction avoids a spurious tensor-multiplicity assertion at the root.</p>
+<p>The original signed pair crossing in these frames is exactly kappa times blocks <code>nu_j</code> at simple nodes and <code>[[nu_j,r'_j],[0,nu_j]]</code> at double nodes; its literal inverse retains the inverse derivative. Thus twist phases remain coherent when (18) is used in an arbitrary original braid. This is an all-exterior operator/source coordinate change, not a replacement invariant. The original pivot, framing, modified-dimension germ and peripheral line are transported unchanged. None is divided by the spectral measure sigma or selected afterward from the knot value.</p>
+<h2 id="the-original-source-and-the-remaining-estimate">7. The original source and the remaining estimate</h2>
+<p>At degree d the c_* block may be replaced, by its explicit two-by-two adapter, with the uniformly conditioned p,t source frame of <a href="actual_tame_c0_hermite_source_frame.html">the source Hermite theorem</a>. If g_0=x^-d, its columns in the canonical f,f’ coordinates are</p>
+<pre><code>p=N g_0 f(c_*),
+t=-(mu_N/gamma_N)p+(g_0/gamma_N)f&#39;(c_*).        (20)</code></pre>
+<p>This retains the ORIGINAL cup, ordinary cap and marked row. Ordinary caps vanish on other Casimir blocks and select the corresponding source derivative row; the cup lies in the source value channel. The marked row does NOT vanish on arbitrary other channels. Its complete coefficients are the explicit sums <code>m V_T</code>; in an assembled original plat integer degree forces the final marked pair to degree d, as before. No sectorwise marked-corner substitution is made here.</p>
+<p>For example a positive spectral packet metric can be specified by giving each canonical simple/double block the positive scalar <code>|sigma_j|</code> times identity, with the source block (20) handled in its actual p,t frame. This defines a full positive Gram by pullback through the COMPLETE frame. Its original marked dual norm and its adjacent overlap energies are explicit via (10),(15),(18), but no polynomial or sharp-volume bound for them is asserted.</p>
+<p>The new result supplies the actual all-channel frame, inverse measure and factorial/angle envelopes needed to ask that question. The remaining sharp step is a coherent estimate of (18) after its actual source-generated restrictions and closure, rather than separate absolute maximization of (16) or of twist eigenvalues.</p>
+<p>The subsequent <a href="actual_complete_source_multiplicity_module.html">source-generated complete module</a> and <a href="actual_complete_channel_positive_gram.html">positive-source Gram calculation</a> do give polynomial BOTH boundary norms after the actual J recoupling. However its fixed canonical positive-channel energy is <a href="actual_figure_eight_complete_channel_energy.html">nonsharp already for the original figure-eight</a>. This does not invalidate the frames or measures above; a sharp norm estimate must retain a more selective coherent packet, such as the <a href="actual_terminal_packet_positive_gram.html">source-exact terminal construction</a>, and control its general propagation.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_complete_casimir_hermite_packet.py">Audit</a>: original generator-built blocks, all nodes and derivative columns, full inverse/bilinear measures and phases, finite Clebsch sums, high-degree mirror and original signed crossings/source adapters.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_complete_casimir_hermite_packet.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#literal-jacobi-blocks-and-the-high-degree-mirror">1. Literal Jacobi blocks and the high-degree mirror</a><a href="#explicit-polynomial-columns-and-generic-q-confluence">2. Explicit polynomial columns and generic-q confluence</a><a href="#the-complete-inverse-including-every-derivative-normalizer">3. The complete inverse, including every derivative normalizer</a><a href="#exact-sine-factorial-measures-all-parities-and-all-degrees">4. Exact sine-factorial measures, all parities and all degrees</a><a href="#explicit-q-hahn-sums-and-a-quantitative-angle-profile">5. Explicit q-Hahn sums and a quantitative angle profile</a><a href="#complete-adjacent-channel-kernel-at-arbitrary-width">6. Complete adjacent-channel kernel at arbitrary width</a><a href="#the-original-source-and-the-remaining-estimate">7. The original source and the remaining estimate</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

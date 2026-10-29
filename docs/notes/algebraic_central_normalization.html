@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fixed algebraic central factors cannot change the volume rate · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/algebraic_central_normalization.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="fixed-algebraic-central-factors-cannot-change-the-volume-rate">Fixed algebraic central factors cannot change the volume rate</h1>
+<p>Research note, 25 October 2026. This is a normalization theorem for the A-module torsor program. It retains the central variable before root specialization and evaluates whole period germs. It does not assume that an unknown comparison of the Kashaev and geometric periods is algebraic, and does not prove the volume conjecture.</p>
+<h2 id="the-specialization-theorem">1. The specialization theorem</h2>
+<p>Fix nonzero c in C and an integer k&gt;=1. At level N put</p>
+<pre><code>t_N=1/N, q_N=exp(c/N), z=M^(kN).</code></pre>
+<p>Let R be an algebraic function over the fixed field C(q,t,M,z), on any fixed finite algebraic cover. For each sufficiently large N, choose a branch after the displayed substitutions. Assume its whole germ at M=1 has a finite nonzero value r_N. A finite ramified germ is allowed, provided its value at M=1 is defined.</p>
+<p><strong>Theorem.</strong> There are constants B,C&gt;0, independent of N and of the chosen branches, such that</p>
+<pre><code>C^(-1)N^(-B) &lt;= |r_N| &lt;= C N^B.                  (1.1)</code></pre>
+<p>Consequently log|r_N|=O(log N), so multiplying an already specified period by r_N does not change its exponential volume rate.</p>
+<p>The assumption is a fixed finite algebraic presentation of the factor across levels. Being algebraic separately at every N is insufficient. The theorem also allows rational dependence on N itself, since N=1/t.</p>
+<h2 id="proof-by-bounded-central-jets">2. Proof by bounded central jets</h2>
+<p>Choose an algebraic relation, clear denominators, and write</p>
+<pre><code>P(q,t,M,z,Y)=sum_(i=0)^d G_i(q,t,M,z)Y^i=0,</code></pre>
+<p>where each G_i has finite Laurent support in M,z and rational coefficients in q,t. Introduce M=exp(y). After q=exp(ct), z=exp(ky/t), each coefficient is a finite exponential sum</p>
+<pre><code>G_i(t,y)=sum_(a,b) g_(i,a,b)(t) exp((a+kb/t)y).    (2.1)</code></pre>
+<p>The g coefficients are meromorphic germs at t=0. Its y-jets are</p>
+<pre><code>J_(i,j)(t)=sum_(a,b) g_(i,a,b)(t)(a+kb/t)^j,      (2.2)</code></pre>
+<p>also meromorphic germs. The exponent functions a+kb/t are distinct for all sufficiently small nonzero t after identical pairs are combined. A Vandermonde matrix shows that a nonzero coefficient with S monomials has some nonzero jet of order less than S.</p>
+<p>There is no hidden identically zero relation caused by q=exp(ct): a nonzero rational function in q,t cannot vanish identically on that germ. After clearing denominators such a relation would be a polynomial exponential sum sum_j p_j(t)exp(jct)=0. On a ray with ct real and tending to positive infinity, the highest exponential dominates all lower ones, contradicting a nonzero polynomial p_j.</p>
+<p>Let m be the smallest jet index for which some J_(i,m) is a nonzero meromorphic germ. All lower jets vanish identically. For sufficiently small nonzero t the order m is stable, because a nonzero meromorphic germ has no zeros accumulating at zero. Divide all coefficients in the relation by y^m and evaluate the whole branch at y=0. It follows that every r_N is a nonzero root of the same meromorphic polynomial</p>
+<pre><code>Q(t_N,Y)=sum_i J_(i,m)(t_N)Y^i.                   (2.3)</code></pre>
+<p>The common factorial m! is irrelevant. The polynomial Q is nonzero. Remove its power of Y so that its constant and leading coefficients are nonzero meromorphic germs. Ratios of its coefficients have at most a fixed power pole at t=0. The elementary root bound for a monic polynomial gives |r_N|&lt;=C N^B. Apply the same bound to its reciprocal polynomial to obtain the lower bound. This proves (1.1) uniformly for every nonzero branch value.</p>
+<p>This proof never evaluates separate vanishing numerator and denominator factors. The bounded jet m performs their common algebraic cancellation before specialization.</p>
+<h2 id="the-actual-ado-normalization-is-an-example">3. The actual ADO normalization is an example</h2>
+<p>For the literature meridian family, write f=M-M^(-1), k=2 and q_N=exp(pi*i/N). The reduced/full factor is</p>
+<pre><code>d_N(M)=eta_N f(M) M^N/(M^(2N)-1), |eta_N|=1.</code></pre>
+<p>After retaining z=M^(2N), its quotient by eta_N is the fixed algebraic function</p>
+<pre><code>R(M,z)=f(M)*sqrt(z)/(z-1),                         (3.1)</code></pre>
+<p>with the root sqrt(z)=M^N specified. Its polynomial relation is</p>
+<pre><code>Y^2(z-1)^2-f(M)^2 z=0.</code></pre>
+<p>After substitution, the lowest common y-jet is of order two and gives</p>
+<pre><code>4N^2 Y^2-4=0.</code></pre>
+<p>Thus Y=+/-1/N. The specified root germ selects +1/N and hence d_N(1)=eta_N/N, exactly as independently proved from the state definition. This is a fixed algebraic central factor despite its level-dependent powers in M.</p>
+<p>Likewise 1+M^N=1+sqrt(z) evaluates to 2 on the specified root. It remains part of an exact comparison. The theorem says that such a factor has no exponential effect after its whole nonzero germ has been correctly specified; it does not authorize omitting it from a move identity.</p>
+<h2 id="how-this-fits-the-two-torsors">4. How this fits the two torsors</h2>
+<p>The finite cyclic norm-torsor comparison permits central scalar factors. The formal A-curve connection retains the action and meromorphic connection coefficients, but actual difference periods can contain functions of the invariant</p>
+<pre><code>z=exp(2pi*i*Log M/h).</code></pre>
+<p>At h=pi*i/N this is M^(2N). The exact ADO factor illustrates this missing difference-constant datum; see <a href="formal_a_curve_period_torsor.html">the formal period construction</a>.</p>
+<p>If a genuine comparison between two selected quantum-period realizations has a factor from a fixed finite algebraic central cover, (1.1) controls that normalization uniformly. This strengthens the earlier bound for a fixed meromorphic germ in q alone.</p>
+<p>The qualification matters. The levelwise unit (z/2)^N evaluates to 2^(-N) at z=1. It has no fixed finite algebraic presentation of the kind in the theorem; its exponential behavior is exactly excluded by that hypothesis. Hilbert 90 at separate levels does not exclude it.</p>
+<p>No fixed algebraic comparison between the actual Kashaev period and a geometric quantum-period realization has been constructed here. In particular the theorem is not applied to an assumed algebraic ratio between the Kashaev invariant and the bare classical exponential of volume. The full period comparison and its geometric norm are still the outstanding theorem in <a href="a_polynomial_torsor_status.html">the primary formulation</a>.</p>
+<p><code>experiments/audit_algebraic_central_normalization.py</code> checks bounded central jets, canceled rational germs, the actual algebraic ADO factor, and its root selection. The growth bound itself is the proof above.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/algebraic_central_normalization.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-specialization-theorem">1. The specialization theorem</a><a href="#proof-by-bounded-central-jets">2. Proof by bounded central jets</a><a href="#the-actual-ado-normalization-is-an-example">3. The actual ADO normalization is an example</a><a href="#how-this-fits-the-two-torsors">4. How this fits the two torsors</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

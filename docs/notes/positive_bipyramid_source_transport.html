@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Positive bipyramid cycles and the actual reflected source charge · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/positive_bipyramid_source_transport.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="positive-bipyramid-cycles-and-the-actual-reflected-source-charge">Positive bipyramid cycles and the actual reflected source charge</h1>
+<p>28 October 2026. Two local steps are now explicit. The independently proved charged full-Phi pentagon has a genuine REAL internal cycle selecting its geometric bipyramid block with multiplicity one, uniformly on compact positive families. Separately, the ORIGINAL scalar head source has exact zero internal charge after its positive factorial orders are reflected, with an explicit full-Phi Gaussian field and OUTER-ray source retained.</p>
+<p>These facts are not yet an identification of that reflected circle/outer-ray fiber with the positive charged real contour. The remaining comparison is a definite twisted beta/Pochhammer contour problem described in Section 6. Its ORIGINAL growing source is now resolved further by the exact <a href="actual_trivalent_quantum_beta_source.html">norm-pole/Barnes cycle</a>, which retains its nonzero balanced block and normalization remainder. No global geometric cycle or original knot coefficient is assumed to exist here.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_positive_bipyramid_source_transport.py">audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/positive_bipyramid_source_transport_results.json">results</a> check the rational bipyramid equations, geometric charges and Gaussian, the actual source graph before/after reflection, exact window and full-Psi reflection, and the boundary-difference source identities.</p>
+<h2 id="an-arbitrary-positive-ordered-bipyramid">1. An arbitrary positive ordered bipyramid</h2>
+<p>Let x,y be complex and put</p>
+<pre><code>H=x+y-xy,
+s_1=x, s_3=y, s_2=H, s_0=x/H, s_4=y/H.      (1)</code></pre>
+<p>Assume ALL five s_j lie in the upper half-plane. This is the open positive bipyramid family for this ordered pentagon. No modulus restriction is imposed. On a compact subset all shapes and angles stay uniformly away from degeneration.</p>
+<p>Define its actual angle charges</p>
+<pre><code>a_j=Arg(s_j)/(2*pi),
+c_j=-Arg(1-s_j)/(2*pi),
+beta_j=1/2-a_j-c_j.</code></pre>
+<p>All are positive. The elementary identities</p>
+<pre><code>s_0 s_2=x, s_2 s_4=y,
+1-s_0=s_4(1-x), 1-s_4=s_0(1-y),
+1-s_2=(1-x)(1-y)</code></pre>
+<p>give, with the positive principal angles,</p>
+<pre><code>a_1=a_0+a_2, a_3=a_2+a_4,
+c_1=c_0+a_4, c_3=a_0+c_4, c_2=c_1+c_3.     (2)</code></pre>
+<p>These are precisely the charges of the independently proved <a href="faddeev_pentagon_audit.html">full-Phi kernel pentagon</a>. The branch equalities have no hidden 2*pi term: their two positive angles add to the indicated positive shape angle, and their negative complement arguments add to its negative principal complement argument. In particular c_2+beta_0+beta_4=1 is the new internal edge charge.</p>
+<p>The ordinary five-term relation, applied to 1-x and 1-y, gives</p>
+<pre><code>D(x)+D(y)=D(s_0)+D(s_2)+D(s_4).             (3)</code></pre>
+<h2 id="the-exact-full-phi-kernel-and-its-selected-real-normal-cycle">2. The exact full-Phi kernel and its selected real normal cycle</h2>
+<p>Use EXACTLY the charged functions from the cited independent proof:</p>
+<pre><code>f_(a,c)(t)=exp(-pi*i/12) psi_(c,beta)(t),
+psi_(a,c)(t)=nu(a-c)
+   exp[-4*pi*i*c_b*a*(t-c_b(a+c))]/Phi_b(t-2c_b(a+c)),
+nu(r)=exp[-pi*i*c_b^2*(4r+1)/6],
+c_b=i(b+b^(-1))/2.</code></pre>
+<p>With charges (2), the true kernel identity, including its contour, is</p>
+<pre><code>integral_R f_4(Y-t)f_2(t)f_0(Z-t)
+                     exp[2*pi*i*(Y-t)(Z-t)]dt
+   =mu_b f_1(Z)f_3(Y),
+mu_b=exp(pi*i*c_b^2*P/3),
+P=2(c_0+a_2+c_4)-1/2.                     (4)</code></pre>
+<p>The proof in the cited note starts with the defining full function, Fourier inversion and its two shifts; its published proof is not a premise. The positive charges give an absolutely convergent real contour. For real b, |mu_b|=1; its exact phase remains attached.</p>
+<p>At b=N^(-1/2), set</p>
+<pre><code>Y=sqrt(N)*y_0, Z=sqrt(N)*z_0, t=sqrt(N)*tau,
+y_0=log|y|/(2*pi), z_0=log|x|/(2*pi),
+tau_*=log|H|/(2*pi).                         (5)</code></pre>
+<p>The REAL integration contour therefore passes through the geometric normal point. This is a specified actual local cycle, not an unspecified formal saddle or global knot thimble.</p>
+<p>To verify its selection, use the exact full-Psi conversion</p>
+<pre><code>f_j(sqrt(N)*v)=C_(j,N) exp(2*pi*(N+1)c_j*v)
+      /Psi_N(2*pi*v+2*pi*i*(1+1/N)a_j),
+C_(j,N)=exp[-pi*i/12+pi*i*c_b^2*chi_j],
+chi_j=4c_j(c_j+beta_j)-(4(c_j-beta_j)+1)/6.   (6)</code></pre>
+<p>All C_(j,N) have modulus one. The uniform full-Psi symbol on its selected strip gives, uniformly in real v,</p>
+<pre><code>f_j(sqrt(N)*v)=C_(j,N) A_j(v) exp(F_j(v)/h)(1+O(1/N)),
+h=2*pi*i/N,
+F_j(v)=-Li_2(exp(2*pi*v+2*pi*i*a_j))+4*pi^2*i*c_j*v,
+A_j(v)=exp(2*pi*c_j*v)
+                 (1-exp(2*pi*v+2*pi*i*a_j))^(a_j-1/2). (7)</code></pre>
+<p>All branches are the selected upper-strip branches. The first derivative grows at most linearly at infinity and is included in A_j; the next derivatives and the full-Psi relative remainder are uniform there. The amplitudes have at most exp(C|v|) growth.</p>
+<p>The three-side leading phase is</p>
+<pre><code>W(tau)=F_4(y_0-tau)+F_2(tau)+F_0(z_0-tau)
+                          -4*pi^2*(y_0-tau)(z_0-tau). (8)</code></pre>
+<p>For each factor the negative imaginary part is the radial Legendre function Im Li_2(s)-2<em>pi</em>c_j<em>log|s|. It is STRICTLY convex in its real log radius, with its unique minimum at the shape s_j. The three minima occur simultaneously at tau=tau_</em>. Thus Re(W/(2<em>pi</em>i)) has its unique global maximum on the entire REAL line at tau_*. Its limiting slopes have strict signs, uniformly on compact positive families, so its tails have a linear gap. The chirp in (8) is real on this contour and does not alter the modulus.</p>
+<p>The COMPLEX derivative also vanishes: it is 2*pi times</p>
+<pre><code>Log(1-s_2)-Log(1-s_0)-Log(1-s_4)+Log s_0+Log s_4,</code></pre>
+<p>which is zero by the identities and angle marks above. Moreover</p>
+<pre><code>G=-W&#39;&#39;(tau_*)/(2*pi*i)
+   =-2*pi*i*(2+sum_(j=0,2,4)s_j/(1-s_j)),
+Re G=2*pi*sum_(j=0,2,4) Im(s_j)/|1-s_j|^2&gt;0. (9)</code></pre>
+<p>The real-contour Gaussian has its unambiguous square root Re G&gt;0. Its leading term is</p>
+<pre><code>C_(0,N)C_(2,N)C_(4,N)
+   A_0 A_2 A_4 sqrt(2*pi/G) exp(W(tau_*)/h)(1+O(1/N)). (10)</code></pre>
+<p>The sqrt(N) measure in (5) cancels the Gaussian N^(-1/2). Every factor is nonzero and bounded above/below on a compact positive family. The strict global modulus gap proves that the REAL local move cycle selects this geometric block with coefficient +1; its other normal ends are lower. This is stronger than just checking det G is nonzero.</p>
+<p>Its rate in THIS charged-kernel orientation is -[D(x)+D(y)]/(2*pi). No sign is changed to fit a different knot-state normalization. The exact identity (4) carries the selected block to the two-side product with multiplier mu_b. This is a nonzero tame map of the local geometric kernel lines; it does not create a nonzero global exterior source coefficient.</p>
+<h2 id="which-complete-sources-pass-through-this-move-unchanged">3. Which complete sources pass through this move unchanged</h2>
+<p>For the multiplicative variables</p>
+<pre><code>r_4=exp(2*pi*b*(Y-t)), r_2=exp(2*pi*b*t),
+r_0=exp(2*pi*b*(Z-t)),</code></pre>
+<p>the internal torus acts by (r_4,r_2,r_0)-&gt;(lambda^(-1)r_4,lambda r_2,lambda^(-1)r_0). Its boundary invariants are</p>
+<pre><code>U=r_2 r_4=exp(2*pi*b*Y), V=r_2 r_0=exp(2*pi*b*Z).</code></pre>
+<p>The explicit coordinate change r_4=U/r_2, r_0=V/r_2 proves</p>
+<pre><code>C[r_4^+-1,r_2^+-1,r_0^+-1]^(G_m)
+                              =C[U^+-1,V^+-1].       (11)</code></pre>
+<p>A Laurent monomial source has internal character delta=h_2-h_4-h_0. It descends to these common scalar boundary ports if and only if delta=0. A general source descends exactly when all its nonzero Laurent coefficients have character zero. Character delta instead gives r_2^delta times a boundary function; this is a specified twisted line, not a removable scalar by fiat.</p>
+<p>For a descending complete source, (4) may be paired with its SAME exterior boundary functional. Finite Cauchy/window factors, original cap factors and external full-Psi circle/ray integrals are all carried by linearity and the stated Fubini/continuation conditions. Intervals may first be evaluated to their finite polynomial to check (11), then reinserted exactly; individual fractional-interval integrands need not descend separately. No radial or interval endpoint term is dropped in this procedure. On a compact common holomorphy chamber this is ordinary analytic contraction; a continuation outside it must keep its transported contour and residues.</p>
+<p>The precise conclusion is a kernel-line transport: if a matched exterior source has geometric coefficient c_N on one side, its coefficient on the other is mu_b c_N in the stated trivializations. It may be zero on both sides. If charges are themselves integrated, the known phase mu_b stays INSIDE that functional; it is not pulled out as though it were constant.</p>
+<h2 id="the-original-source-law-checked-on-the-actual-reduced-graph">4. The ORIGINAL source law, checked on the actual reduced graph</h2>
+<p>The original moment/head graph has positive-factorial atomic orders reflected by d=N-1. At a cap-free trivalent vertex its three atomic arrows are oriented the SAME way, with the original head charge plus or minus d. Its exact law is</p>
+<pre><code>h_0+h_4+h_2=d,                               (12)</code></pre>
+<p>not unshifted scalar descent. For example one positive crossing’s nine atom slots in traversal order have the actual internal laws</p>
+<pre><code>h_0+h_1+h_3=d, h_2+h_4+h_6=d,
+h_3+h_4+h_5=d, h_5+h_7+h_8=d.</code></pre>
+<p>Each triple has one positive-factorial edge. This holds pointwise in the external moment/Gaussian variables, independently of the full-Psi coefficient values or choice of circle/ray piece. It is an incidence equation of the ORIGINAL full source, not a condition imposed only at its geometric critical point.</p>
+<p>There is an exact global unreflection. For each positive-factorial kernel put s=z_out/z_in and write</p>
+<pre><code>N s^d K_N(Q/(s t))
+   =N Q^d t^(-d) K_N(Q^(-1)t s).             (13)</code></pre>
+<p>This is the polynomial reversal K_N(v)=v^d K_N(v^(-1)). Equivalently replace its atomic order h by a=d-h, reverse its incidence edge, and put r=t^(-1). The explicit factor NQ^d t^(-d) is retained as part of the REFLECTED FIELD density. It must not be called tame uniformly in t or deleted.</p>
+<p>All reflected-factorial head charges cancel. Every cap-free internal head vertex now has ZERO Kirchhoff charge; the original cup/cap charges remain at the boundary. At a trivalent vertex (12) becomes a=h_0+h_4, exactly the descent equation (11) in the corresponding oriented variables. Higher-valence head vertices keep their full zero-charge Kirchhoff equation rather than being called a single pentagon port.</p>
+<p>In incidence notation, if v_e is a reflected-factorial edge column, gamma its original head charge and h_e=d-a_e, then gamma+sum v_e h_e becomes gamma’=gamma+d sum_F v_e with reversed columns -v_e on F. The original reflected monomials are exactly -d sum_F v_e; therefore gamma’ consists ONLY of the original boundary charges. This proves the law for every strict original word. The audit checks it after actual Hardy-forest contraction for both signs and longer original words, retaining their original source boundary rows.</p>
+<p>The finite marked full-Phi clock fixes the affine phase precisely:</p>
+<pre><code>Psi_+(h(a+1))=phi_N/F_a,
+phi_N=sqrt(N)exp{i*pi[1/4-(N+N^(-1))/12]}.</code></pre>
+<p>Thus the unreflected head a is marked by a+1, never by the bottom zero mark. If a=b+k and all three clocks are so marked, their exact relation is Q<sup>(a+1)=Q</sup>(-1)Q<sup>(b+1)Q</sup>(k+1). The Q^(-1) and phi_N are retained. They cannot be removed because their classical limits look simpler.</p>
+<h2 id="the-actual-reflected-full-phi-field-and-its-ray">5. The actual reflected full-Phi field AND its ray</h2>
+<p>Let r=t^(-1), S=Log r, b=N^(-1/2). The original full-Phi inversion identity gives the exact reflected field formula</p>
+<pre><code>Psi_+(-S)=zeta_b exp[pi*i*(sqrt(N)S/(2*pi)+c_b)^2] Psi_-(S),
+zeta_b=exp[-pi*i*(1+2c_b^2)/6].               (14)</code></pre>
+<p>Equivalently Psi_-(S)=(1-r)(1-r^N)/Psi_+(S). This displays the full central norm when the opposite orientation is written as an inverse; it is not permission to invert a vanishing factor separately. Combining the character in (13) with (14) yields</p>
+<pre><code>r^d Psi_+(-S)=zeta_b exp(pi*i*c_b^2)
+   exp[i*N*S^2/(4*pi)+(N-3)S/2] Psi_-(S).   (15)</code></pre>
+<p>The prefactor is unit modulus at real b; the Gaussian and linear action in (15) are explicit and may be exponentially significant.</p>
+<p>The source CIRCLE maps to |r|=R^(-1), with its reversed logarithmic parameter, and density NQ^d r^d Psi_+(-S). The original negative RAY does not become the standard inner negative ray. It becomes</p>
+<pre><code>r in (-infinity,-R^(-1)),
++NQ^d/(2*pi*i) Psi_+(-S) dr/r^2,
+S=log|r|-i*pi.                              (16)</code></pre>
+<p>Equation (16) uses N-d=1 exactly. Its tail at negative infinity is the image of the original integrable zero end. Thus (13)–(16) carry the COMPLETE original circle/ray/window source, with no endpoint discarded and no unspecified exponential matrix frame.</p>
+<h2 id="the-exact-internal-fiber-still-needing-contour-transport">6. The exact internal fiber still needing contour transport</h2>
+<p>For the actual sink triple consisting of a reciprocal U coefficient, a V coefficient and the reflected F field, strip its constant NQ^d and use the boundary invariants U=r t_U, V=r t_V. Its field is</p>
+<pre><code>F_N(L;U,V)=r^d Psi_-(Log U-L) Psi_+(Log V-L) Psi_+(-L),
+r=exp L.                                    (17)</code></pre>
+<p>Its exact q-step and central norm are</p>
+<pre><code>F_N(L+h)/F_N(L)
+   =Q^d (1-Q^(-1)V/r)(1-Q^(-1)/r)/(1-U/r),
+h=2*pi*i/N,
+F_N(L+2*pi*i)/F_N(L)
+   =(r^N-V^N)(r^N-1)/[r^N(r^N-U^N)].        (18)</code></pre>
+<p>These follow from the original full-Psi steps, or by multiplying the first equation over its complete Q orbit. The factor r^d gives the retained 2<em>pi</em>i logarithmic mark in the classical phase. Its stationary algebraic relation is</p>
+<pre><code>r=V/(1+V-U).                                (19)</code></pre>
+<p>There is an exact classical/central compatibility worth recording. Put R=r^N, U_0=U^N and V_0=V^N. If M_N denotes the central ratio in (18), then</p>
+<pre><code>M_N-1=-[(1+V_0-U_0)R-V_0]/[R(R-U_0)].       (19a)</code></pre>
+<p>Thus its multiplier-one locus is the Frobenius copy of precisely the linear stationary gluing polynomial (19). This is a genuine local support candidate. The ORIGINAL relative coefficient source can be inhomogeneous under this shift, so (19a) alone does not place that source on M_N=1 or remove either denominator divisor.</p>
+<p>The denominator and all full norm factors are retained. Equations (17)–(18) specify the twisted beta/Pochhammer fiber of the actual source, including its 0/0/infinity-Hankel origin. The arbitrary positive charged REAL contour of Section 2 cannot simply be assigned to this field. Transporting that fiber, or a normalized root residue/derivative of it, into the positive separating contour with its complete monodromy is the remaining local cycle problem. The <a href="actual_trivalent_quantum_beta_source.html">subsequent exact source theorem</a> does not guess this adapter: it pushes the complete coefficient source to a single circle/outer-Hankel current, then to an explicit NONZERO balanced norm-pole block plus a uniformly bounded Barnes factor times the full norm. It also gives a positive-bipyramid example where the scalar fiber remains bounded; a universal positive volume rate does not follow without its exterior source.</p>
+<h2 id="exact-difference-transport-of-nonzero-internal-source-characters">7. Exact difference transport of nonzero internal source characters</h2>
+<p>For completeness the charged kernel has an exact boundary observable map. Put q=exp(2<em>pi</em>i*b^2) and</p>
+<pre><code>alpha_j=exp(-4*pi*b*c_b*c_j),
+D_j=q^(-1/2)exp[-4*pi*b*c_b(c_j+beta_j)].</code></pre>
+<p>The original full-Phi shift gives</p>
+<pre><code>f_j(x-i b)=alpha_j f_j(x)/(1+D_j exp(2*pi*b*x)),
+f_j(x+i b)=alpha_j^(-1)(1+q D_j exp(2*pi*b*x))f_j(x).</code></pre>
+<p>For the three-factor integrand K(Y,Z;t) in (4), z=exp(2<em>pi</em>b<em>t), U=exp(2</em>pi<em>b</em>Y), V=exp(2<em>pi</em>b*Z), this yields POINTWISE</p>
+<pre><code>z K=[alpha_4 V T_(Y+i b)-q D_4 U]K,
+(z+D_4 U)T_(Y-i b)K=alpha_4 V K.             (20)</code></pre>
+<p>Thus every positive polynomial source in z has an explicit boundary difference operator. For J_h=integral z^(-h)K dt, negative powers obey</p>
+<pre><code>(alpha_4 V-D_4 U T_(Y-i b))J_h
+                      =T_(Y-i b)J_(h-1).  (21)</code></pre>
+<p>This is a source extension, not an instruction to invert that difference operator or discard its kernel. Integrated boundary shifts carry their translated contours and any residues. In particular degree O(N) shifts cannot be declared harmless from a fixed-degree pole-free contour argument.</p>
+<p>At b=N^(-1/2) the negative-power integrals themselves converge for 0&lt;=h&lt;=d: their left scaled-tail exponent is 2<em>pi</em>((N+1)-h), since c_2+beta_0+beta_4=1. Their right tail only improves. This keeps the affine +1 in the source law; it does not prove uniqueness or a tame scalar inverse of (21).</p>
+<p>The local positive kernel-line transport, the exact original unreflection/descent and the outstanding fiber transport have been kept distinct. Completing the last step is necessary before using the positive contour as the ORIGINAL knot source’s cycle or claiming its geometric coefficient survives the move.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/positive_bipyramid_source_transport.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#an-arbitrary-positive-ordered-bipyramid">1. An arbitrary positive ordered bipyramid</a><a href="#the-exact-full-phi-kernel-and-its-selected-real-normal-cycle">2. The exact full-Phi kernel and its selected real normal cycle</a><a href="#which-complete-sources-pass-through-this-move-unchanged">3. Which complete sources pass through this move unchanged</a><a href="#the-original-source-law-checked-on-the-actual-reduced-graph">4. The ORIGINAL source law, checked on the actual reduced graph</a><a href="#the-actual-reflected-full-phi-field-and-its-ray">5. The actual reflected full-Phi field AND its ray</a><a href="#the-exact-internal-fiber-still-needing-contour-transport">6. The exact internal fiber still needing contour transport</a><a href="#exact-difference-transport-of-nonzero-internal-source-characters">7. Exact difference transport of nonzero internal source characters</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

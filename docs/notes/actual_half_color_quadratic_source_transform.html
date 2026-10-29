@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A finite half-color quadratic transform for the original source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_half_color_quadratic_source_transform.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-finite-half-color-quadratic-transform-for-the-original-source">A finite half-color quadratic transform for the original source</h1>
+<p>29 October 2026. This proves the exact simple-channel coefficient of the ORIGINAL figure-eight four-plat in the complete Casimir frame. The finite proof uses one terminating q-Chu identity, proved below by finite binomial expansion. It retains all root phases, common Cartan factors and the actual original cup/cap opening.</p>
+<p>The resulting coefficient is a positive sine-binomial square sum times its known phase. It tests the pointed energy of the complete channel Gram, not the value of the invariant after its final cap.</p>
+<h2 id="a-reusable-odd-root-quadratic-transform">1. A reusable odd-root quadratic transform</h2>
+<p>Let <code>N=2m+1&gt;=3</code>, let Q have exact order N, put <code>F_r=(Q;Q)_r</code> and <code>a=Q^(-m)=Q^(m+1)</code>. All factorials below have index at most 2m and are nonzero. Define</p>
+<pre><code>S_m=sum_(k=0)^m Q^[-k(m-k)] [m choose k]_Q^2.</code></pre>
+<p>Then EXACTLY</p>
+<pre><code>sum_(t=0)^m Q^t (a;Q)_t^3/F_t^2
+   =(-1)^m Q^[-m(3m+1)/2] S_m.                 (1)</code></pre>
+<p>This is a finite 3-parameter-to-2-parameter quadratic source transform. It is valid at composite odd levels as well as prime ones, with no square-root choice or root-zero denominator.</p>
+<p>Proof. Expand the THIRD Pochhammer by the finite binomial theorem, put <code>t=k+j</code>, <code>n=m-k</code>, and retain the other two factors. The left side becomes</p>
+<pre><code>sum_(k=0)^m (-a)^k Q^[k(k-1)/2+k](a;Q)_k^2/F_k^2
+   *sum_(j=0)^n Q^j (aQ^k;Q)_j^2
+                                  /[F_j(Q^(k+1);Q)_j].</code></pre>
+<p>Apply terminating q-Chu to the inner sum with terminating length n, <code>b=Q^-n=aQ^k</code>, <code>c=Q^(k+1)</code>. It is</p>
+<pre><code>Q^(-n^2)(Q^(m+1);Q)_n/(Q^(k+1);Q)_n
+   =Q^(-n^2)(a;Q)_n F_k/F_m.                   (2)</code></pre>
+<p>Here the ODD ROOT relation <code>Q^(m+1)=a</code> is essential. Substitute</p>
+<pre><code>(a;Q)_r=(-1)^r Q^[-mr+r(r-1)/2]F_m/F_(m-r).</code></pre>
+<p>Each k-th term is now <code>(-1)^m Q^[-m(3m+1)/2-k(m-k)] [m choose k]_Q^2</code>. This proves (1), including every sign and exponent.</p>
+<h2 id="elementary-finite-q-chu-and-durfee-identities">2. Elementary finite q-Chu and Durfee identities</h2>
+<p>The finite identity used in (2), whenever its denominators are units, is</p>
+<pre><code>sum_(j=0)^n (Q^-n;Q)_j(b;Q)_j Q^j
+                              /[F_j(c;Q)_j]
+   =b^n(c/b;Q)_n/(c;Q)_n.                     (3)</code></pre>
+<p>No published summation proof is a premise. Here is a direct finite proof. First the binomial theorem gives</p>
+<pre><code>sum_(s=0)^n (Q^-n;Q)_s Q^s/F_s
+                           *(cQ^s;Q)_(n-s)
+   =(-c)^n Q^[n(n-1)/2].                      (4)</code></pre>
+<p>To check (4), expand the last Pochhammer. Its c^r coefficient contains <code>(Q^(1-(n-r));Q)_(n-r)</code>, zero unless r=n. Only that last coefficient survives, giving the right side.</p>
+<p>Multiply (3) by <code>(c;Q)_n</code>, expand <code>(b;Q)_j</code>, and extract b^r. Set <code>j=r+s</code> and apply (4) with length n-r and parameter cQ^r. The result is</p>
+<pre><code>(-c)^(n-r) Q^[(n-r)(n-r-1)/2][n choose r]_Q,</code></pre>
+<p>the b^r coefficient of <code>b^n(c/b;Q)_n</code>. Thus (3) is a rational identity before specialization and holds at the stated roots.</p>
+<p>Its useful finite Durfee consequence is</p>
+<pre><code>sum_(r=0)^t Q^(r^2)/(F_r^2 F_(t-r))=1/F_t^2.   (5)</code></pre>
+<p>Indeed take n=t, b=Q^-t, c=0 in (3), multiply by Q<sup>(t</sup>2), and reverse its summation index. This proves (5) by the same finite algebra, without an infinite-product interpretation.</p>
+<h2 id="the-actual-complete-channel-coefficient">3. The actual complete-channel coefficient</h2>
+<p>Now use the principal <code>q=exp(pi*i/N)</code>, <code>Q=q^2</code>, <code>d=2m</code>, <code>x=q^d=Q^m</code>, <code>nu_m=(-1)^m q^[m(m+1)]</code>. Let R_1,R_2 be the two ORIGINAL generators on the complete source multiplicity module, including their common Cartan kappa. The TRUE four-plat action order is <code>[2,-1,2,2]</code>, hence</p>
+<pre><code>W=R_2^2 R_1^(-1) R_2.</code></pre>
+<p>Let V be the complete physical Casimir/Hermite frame, J the actual anti-Pascal recoupling, and p the original cup. Define the COMPLETE right-channel output</p>
+<pre><code>z=V^(-1)J Wp.</code></pre>
+<p>At odd N the node c=-2 is simple, with normalized eigenvector <code>f_0=1</code>, crossing value nu_m and bilinear norm <code>sigma=x^d nu_m</code>. Its exact coefficient is</p>
+<pre><code>z_simple=N Q^[m(m+1)] F_m S_m.                  (6)</code></pre>
+<p>At the principal root <code>S_m=sum_(r=0)^m |[m choose r]_Q|^2&gt;0</code>. Thus (6) is not an expanded path or a guessed saddle surviving selection; it is the ENTIRE actual channel after all its sums.</p>
+<h2 id="source-reduction-to-the-quadratic-transform">4. Source reduction to the quadratic transform</h2>
+<p>The actual J is symmetric: its anti-Pascal formula and <code>F_jF_(d-j)=N(-1)^jQ^[j(j+1)/2]</code> give <code>J_(i,j)=J_(j,i)</code>. Put <code>y=Jf</code>, <code>h=R_2p</code>, <code>v=R_1^(-1)h</code>. The lower bidiagonal equation for y, with endpoint <code>y_d=f_0=1</code>, gives exactly</p>
+<pre><code>y_i=0 for i&lt;m,
+y_(m+r)=Q^[-r(m-r)][m choose r]_Q^2.             (7)</code></pre>
+<p>The successive ratio is the square of <code>|1-Q^(m-r)|/|1-Q^(r+1)|</code>; its complex factorial form in (7) keeps the phase identity at arbitrary primitive Q.</p>
+<p>The FIRST original R_2 on the cup highest lift has a forced final third-head color zero. In the literal positive crossing the transfer must equal that second input color. Its coefficient simplifies to <code>kappa F_(d-i)</code>, using <code>x^2=Q^-1</code>. Therefore</p>
+<pre><code>h_i=kappa p_i F_(d-i), p_i=Nx^(i-d).            (8)</code></pre>
+<p>The literal original inverse crossing then gives</p>
+<pre><code>v_i=x^(i-d)(-1)^i Q^[i(i+1)/2-d] F_(d-i)/F_i
+                     *sum_(b=i)^d Q^b F_b^3/F_(b-i).     (9)</code></pre>
+<p>For example (9) follows directly by the finite inverse-R transfer sum and the SAME reflection identity; the common kappa in (8) cancels the prescribed inverse kappa. No external normalization has been changed.</p>
+<p>Multiply (9) by (7), put <code>i=m+r</code>, and interchange <code>b=m+t</code> and r. Using (5) gives</p>
+<pre><code>y^T v=C sum_(t=0)^m Q^(m+t) F_(m+t)^3/F_t^2,
+C=(-1)^m x^(-m) Q^[m(m+1)/2+1].                 (10)</code></pre>
+<p>This intermediate reduction is a finite identity with the original source; in particular no extension beyond the true finite ranges has been made. Since <code>F_(m+t)=F_m(a;Q)_t</code>, (1) evaluates (10):</p>
+<pre><code>y^T v=Q^[-2m^2+m+1]F_m^3 S_m
+       =F_m^3S_m=N nu_m F_m S_m.               (11)</code></pre>
+<p>The remaining exponent is <code>(1-m)(2m+1)</code>, a full root period. The last equality is the full reflection identity <code>F_m^2=N nu_m</code>.</p>
+<p>Finally the simple inverse channel row is <code>f^T/sigma</code>. Moving the two terminal R_2 factors through J and selecting that simple channel gives</p>
+<pre><code>z_simple=(kappa^2 nu_m^2/sigma)y^T v
+         =nu_m y^T v.</code></pre>
+<p>Here <code>kappa^2=x^d</code> for the actual odd-level full Cartan. Substituting (11) proves (6), with all source and common-line phases retained.</p>
+<h2 id="scope-for-the-proposed-positive-energy">5. Scope for the proposed positive energy</h2>
+<p>For the balanced complete-channel Gram <code>G=(V^(-1)J)^*(V^(-1)J)/N</code>, the original pointed energy is <code>E_N=N^(-1)||z||_2^2</code>. Equation (6) implies EXACTLY</p>
+<pre><code>E_N&gt;=N^2 S_m^2,                                 (12)</code></pre>
+<p>because <code>|F_m|^2=N</code>. The asymptotic consequence is developed in the companion energy audit; it concerns THIS particular positive Gram. It does not contradict its exact Cauchy inequality, and it does not rule out a different source-preserving coherent terminal Gram that contracts more of the actual tensor before squaring.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_half_color_quadratic_source_transform.py">Audit</a>: the finite q-Chu/quadratic transform and the literal full original four-plat simple-channel coefficient, at odd composite and prime levels, with all common Cartan and source constants.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_half_color_quadratic_source_transform.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#a-reusable-odd-root-quadratic-transform">1. A reusable odd-root quadratic transform</a><a href="#elementary-finite-q-chu-and-durfee-identities">2. Elementary finite q-Chu and Durfee identities</a><a href="#the-actual-complete-channel-coefficient">3. The actual complete-channel coefficient</a><a href="#source-reduction-to-the-quadratic-transform">4. Source reduction to the quadratic transform</a><a href="#scope-for-the-proposed-positive-energy">5. Scope for the proposed positive energy</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

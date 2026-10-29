@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A macroscopic clock current surviving exact source fusion · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_overclock_sector_obstruction.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-macroscopic-clock-current-surviving-exact-source-fusion">A macroscopic clock current surviving exact source fusion</h1>
+<p>28 October 2026. Fixed overclock sectors cannot separately be bounded by the regulator of the closed knot, even after exact closure/full-block fusion. This is an all-level calculation in the ORIGINAL enhanced source. It identifies a remaining macroscopic current whose coherent clock sum is essential. It does not establish a new hyperbolic case or obstruct a source-specific upper bound after that sum.</p>
+<h2 id="exact-original-source-and-its-clock-sectors">1. Exact original source and its clock sectors</h2>
+<p>Use N&gt;=2, d=N-1, q=exp(pi*i/N), Q=q^2, and exactly the enhanced crossing/pivot conventions of <a href="kashaev_crossing_and_period_lattice.html">the original crossing audit</a>: mu=-q S and alpha=-q. Take the positive two-strand word [1,1,1], with its original fixed first cut. The exact cyclic-source peeling proof gives</p>
+<pre><code>K_N=Q^(-1) (T_+^3)_(0,1).                       (1)</code></pre>
+<p>Here K_N is the original reduced enhanced period with unknot value one. In the full modified-trace convention multiply EVERY sector and both sides of the subsequent identities by its original known external line. That common line is retained and has no exponential modulus at completeness; it is never replaced by an unknown scalar.</p>
+<p>The factor Q<sup>(-1)=(-q)</sup>(-2) includes the ORIGINAL closing coefficient and full writhe correction. No new average, source or normalization is introduced. The entries of this actual boundary operator are</p>
+<pre><code>T_(0,j)=Q^(1-j), T_(k,0)=0 for k&gt;0,
+T_(k,j)=(-1)^(j-1) Q^[k+(j-1)(j-2)/2]
+                          [k-1 choose j-1]_Q,
+             1&lt;=j&lt;=k&lt;=d.                       (2)</code></pre>
+<p>All other entries vanish. These are the directly proved q-Pascal entries of the original crossing, including T_(0,0)=Q.</p>
+<p>Every supported cut path has first head zero throughout. At a positive crossing its actual overclock is h=[b-a-1]+[a-c]=[b-1]. Thus its three clocks are (0,H,J), with H,J in 0,…,d, and its intermediate second-head values are</p>
+<pre><code>i(H)=H+1 if H&lt;d, i(d)=0;
+i(J)=J+1 if J&lt;d, i(d)=0.                       (3)</code></pre>
+<p>There is exactly ONE such peeled path for each supported clock pair. The positive-index triangular block and the wrap row in (2) give</p>
+<pre><code>K_(N;H,J)=0, H&gt;J,
+K_(N;H,J)=(-1)^H Q^[1+H(H+1)/2]
+                               [J choose H]_Q, H&lt;=J. (4)</code></pre>
+<p>This is an identity of actual original clock contributions, not an arbitrary inserted coefficient. For J&lt;d it follows by multiplying T_(i(H),1), T_(i(J),i(H)) and T_(0,i(J)) and the factor Q^(-1). For J=d it follows from</p>
+<pre><code>[d choose H]_Q=(-1)^H Q^[-H(H+1)/2],</code></pre>
+<p>which is exact factorial reflection. This also includes H=J=d and the absorbing wrap state zero. There is no excluded parity or prime level and no division by F_N.</p>
+<h2 id="the-same-current-after-all-charged-full-block-reductions">2. The same current after all charged full-block reductions</h2>
+<p>The source of (4) is also visible in the <a href="actual_global_charged_bridge_flow.html">whole charged bridge coefficient</a>. After its three full contractions and one loop extraction, put X,Y for the two surviving anchors. Up to the explicitly retained unit root phases its clock sector is</p>
+<pre><code>(Q^(-J);Q)_J [X^d Y^(d-J)]
+   B_(d-H)(Y,X;Q)
+   B_H(X,Y;Q^(J+1))
+   B_(d-J)(X,Y;Q^(H+J+1)),                    (5)</code></pre>
+<p>where B_L(U,V;a)=product_(r&lt;L)(U-Q^r a V). The two parallel X-to-Y intervals concatenate to length d+H-J. If H&gt;J this contains a FULL N-orbit, hence vanishes in the actual nilpotent source X<sup>N=Y</sup>N=0. This recovers the exact support condition in (4).</p>
+<p>If H&lt;=J, the degree-complement identity at charge d fuses the two remaining edges. Its binomial is [d-H choose J-H]_Q. Its last loop has scalar</p>
+<pre><code>(Q^(J+1);Q)_(d-J)=N/F_J,</code></pre>
+<p>while the first loop in (5) has modulus |F_J|. Therefore the COMPLETE charged coefficient has modulus</p>
+<pre><code>N |[J choose H]_Q|.                            (6)</code></pre>
+<p>The N is canceled by the original single exterior 1/N. The other original W_h, kappa, pivot, framing and normalization factors are retained; in this alternating singleton-bridge diagram they have unit modulus, up to the common tame source line. Thus the large sector survives the existing full-block/zero-charge/loop reduction. Equation (4) independently supplies its exact normalized phase.</p>
+<h2 id="two-successive-macroscopic-cancellations">3. Two successive macroscopic cancellations</h2>
+<p>Choose H=floor(N/3), J=floor(2N/3). The uniform actual factorial estimate gives</p>
+<pre><code>log |[J choose H]_Q|
+      =N[v_3/pi]+O(log N)&gt;0,                  (7)</code></pre>
+<p>where v_3 is the regular ideal tetrahedron volume. Indeed, with I(s)=integral_0^s log|2sin(pi*t)| dt, the rate is I(2/3)-2I(1/3)=v_3/pi. This is the figure-eight volume rate, despite the present closed word being the trefoil, whose volume is zero. No figure-eight asymptotic theorem is a premise of (7).</p>
+<p>The FIRST coherent sum is itself an exact general q-binomial identity inside this actual source:</p>
+<pre><code>sum_(H=0)^J K_(N;H,J)=Q F_J,
+F_J=(Q;Q)_J.                                  (8)</code></pre>
+<p>Use the finite q-binomial theorem with argument Q. This collapses the entire H current before estimation. It lowers its maximal rate, but does not make it polynomial: at J=floor(5N/6),</p>
+<pre><code>log |F_J|=N[v_3/(2pi)]+O(log N)&gt;0.             (9)</code></pre>
+<p>Thus even the partially summed current in (8) cannot be assigned the closed knot’s zero regulator or dropped as a small boundary. The complete original scalar is exactly</p>
+<pre><code>K_N=Q sum_(J=0)^d F_J.                         (10)</code></pre>
+<p>The last sum has polynomial size. This follows independently from the already derived ACTUAL spectral-jet closing functional, not a named torus-knot asymptotic. Write its normalized crossing as r_N. At double nodes c=q<sup>a+q</sup>(-a), a odd, 0&lt;a&lt;N, it obeys</p>
+<pre><code>r_N(c)=nu, |nu|=1,
+r_N&#39;(c)/nu=-(N-a)/[2(q^a-q^(-a))].</code></pre>
+<p>The original pivotal functional is</p>
+<pre><code>Phi(f)=-sum_double [c f(c)+(c^2-4)f&#39;(c)]
+                 + one simple-node value if N is odd.</code></pre>
+<p>For f=r_N^3, each first term has modulus at most 2 and each derivative term at most 3N, because c<sup>2-4=(q</sup>a-q<sup>(-a))</sup>2. The possible simple-node term has modulus one. The full writhe factor is (-q)^3, of modulus one. Hence, at EVERY level,</p>
+<pre><code>|K_N|&lt;=3N^2.                                  (11)</code></pre>
+<p>All node derivatives and the original pivotal source are retained in this bound. These formulas were independently proved from the finite R and its generic tensor specialization in <a href="casimir_braiding_and_recoupling_lattice.html">the spectral source note</a>. They do not rely on semisimplicity at the root.</p>
+<h2 id="consequence-for-the-next-source-specific-operation">4. Consequence for the next source-specific operation</h2>
+<p>The first fusion (8) is constructive and exact, but a second macroscopic cancellation is still needed. A bound on individual fixed-h charged coefficients, or even on the first fused current at each J, cannot equal the closed knot regulator. Those currents are not separately honest closed-knot representation periods.</p>
+<p>The new physical-face outward estimates can control their actual endpoint continuations; they do not remove the internal coherent sum exhibited by (8)–(11). A proposed broad source fusion must retain and use that final clock connection, rather than fixing the clocks and then applying a knot-volume bound. This is an explicit failure of that sectorwise route, not a no-go for phase-aware fusion of the entire original source or the volume conjecture.</p>
+<p>No arbitrary consecutive-run or arbitrary-width positive-kernel extension is claimed here. The theorem is restricted to the actual source and exact current proved above.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_overclock_sector_obstruction.py">Audit</a> checks every sector against the literal original crossing, both coherent sums, the original spectral normalization, the fully reduced charged coefficients and the displayed exponential rates.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_overclock_sector_obstruction.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-original-source-and-its-clock-sectors">1. Exact original source and its clock sectors</a><a href="#the-same-current-after-all-charged-full-block-reductions">2. The same current after all charged full-block reductions</a><a href="#two-successive-macroscopic-cancellations">3. Two successive macroscopic cancellations</a><a href="#consequence-for-the-next-source-specific-operation">4. Consequence for the next source-specific operation</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

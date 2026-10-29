@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The original quantum period has an explicit convergent cut cycle · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_cyclic_dilog_hankel_cycle.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-original-quantum-period-has-an-explicit-convergent-cut-cycle">The original quantum period has an explicit convergent cut cycle</h1>
+<p>28 October 2026. The whole-word cyclic-dilogarithm construction now admits an exact deformation from its marked small circles to radial branch cuts. By choosing the opposite-root realization of every u factor, all factors are inverse cyclic dilogarithms. Every cut integral converges at both ends, with no omitted contribution at infinity.</p>
+<p>The resulting cycle and its nonzero local-system jump coefficients are specified for the ORIGINAL quantum state. This is not yet a proof that their full contraction has a nonzero geometric critical contribution. In particular the complex integrand is not made positive by the sine weights below.</p>
+<h2 id="the-actual-marked-covers">1. The actual marked covers</h2>
+<p>Let N&gt;=2, Q=exp(2pi i/N), and epsilon=+1 or -1. On the t-plane put</p>
+<pre><code>D_epsilon(t)=product_(k=1)^(N-1)(1-Q^(epsilon k)t)^(k/N),
+A_epsilon(t)=D_epsilon(t)^-1.</code></pre>
+<p>The branches start with D_epsilon(0)=1. Their algebraic cover is</p>
+<pre><code>y^N=product_(k=1)^(N-1)(1-Q^(epsilon k)t)^k.</code></pre>
+<p>The factor with k=1 shows that the cover is connected: its divisor valuation is one, so the defining right side cannot be a p-th power for any prime p dividing N. Equivalently the local monodromy about that root generates all N sheets. We use its normalization.</p>
+<p>The actual first N Taylor coefficients of A_epsilon are</p>
+<pre><code>c_(epsilon,a)=(-1)^a Q^(epsilon a(a-1)/2)
+                   /(Q^epsilon;Q^epsilon)_a, 0&lt;=a&lt;N. (1)</code></pre>
+<p>This follows from the logarithmic coefficient identity for D and the finite Euler inversion. In particular, for T^N=0, the corresponding v polynomial is exactly</p>
+<pre><code>v_(epsilon,N)(T)=(1/(2pi i)) integral_(|t|=rho)
+                         A_epsilon(t)(tI-T)^-1 dt, (2)</code></pre>
+<p>where 0&lt;rho&lt;1 and the small circle is lifted from the marked sheet. The resolvent is a finite Laurent polynomial in t^-1. No spectral choice or unknown knot normalization is involved.</p>
+<p>Every original u factor has a realization of this form as well:</p>
+<pre><code>u_(Q,N)(T)=v_(Q^-1,N)(Q^-1 T).                 (3)</code></pre>
+<p>Indeed (Q<sup>-1;Q</sup>-1)_a=(-1)^a Q^(-a(a+1)/2)(Q;Q)_a. The auxiliary root orientation changes in (3); the physical knot parameter Q, its source and its Gaussian factors do not change. The <a href="actual_whole_word_cyclic_dilog_resolvent_period.html">whole-word construction</a> also realizes every factorial diagonal by an inverse-D coefficient functional. Thus it uses only (2) and the nonnegative coefficient orders in Section 3 below.</p>
+<h2 id="exact-boundary-values-and-the-oriented-cut-identity">2. Exact boundary values and the oriented cut identity</h2>
+<p>The distinct cuts are</p>
+<pre><code>L_(epsilon,j)={Q^(-epsilon j)r : 1&lt;=r&lt;infinity},
+                                1&lt;=j&lt;N.</code></pre>
+<p>Their complement contains zero and carries the marked branch. Define for r&gt;1</p>
+<pre><code>h_(epsilon,j)(r)=(r-1)^(-j/N)
+   product_(k!=j)(1-r Q^(epsilon(k-j)))^(-k/N). (4)</code></pre>
+<p>For each k!=j, continue its logarithm radially from r=0. It never crosses its zero on this path; equivalently use the corresponding principal logarithm. The remaining real power in (4) is positive.</p>
+<p>Let + denote the side obtained by a small counterclockwise rotation of the outward ray, and - the clockwise side. The j-th factor then has logarithms log(r-1)-i pi and log(r-1)+i pi, respectively. Hence</p>
+<pre><code>(A_epsilon)_+=exp(+pi i j/N)h_(epsilon,j),
+(A_epsilon)_-=exp(-pi i j/N)h_(epsilon,j),
+(A_epsilon)_+-(A_epsilon)_-
+                =2i sin(pi j/N)h_(epsilon,j). (5)</code></pre>
+<p>The sign is independent of epsilon: both sides refer to the actual complex orientation of the t-plane. Let a&gt;=0. Cauchy’s theorem on the plane with the rays and a small zero disk removed gives</p>
+<pre><code>[t^a]A_epsilon(t)
+  =sum_(j=1)^(N-1) sin(pi j/N)/pi * Q^(epsilon j a)
+      *integral_1^infinity h_(epsilon,j)(r)r^(-a-1)dr. (6)</code></pre>
+<p>To check the orientation, a positive contour around an outward slit runs inward on its + side and outward on its - side. The small zero circle equals the large outer contour minus those slit contours, which gives the + minus - jump in (6).</p>
+<p>All limits in this deformation are justified at fixed N. Near the j-th endpoint the integrand is O((r-1)^(-j/N)), which is integrable because j&lt;N. At infinity A_epsilon(t)=O(|t|^(-(N-1)/2)) on every slit sector. The outer arc integral with t^(-a-1) is therefore O(R^(-a-(N-1)/2)) and tends to zero. The finitely many sectors have fixed marks. This argument does not require a single-valued branch on an entire large base circle, including when infinity ramifies. The small endpoint circles also tend to zero.</p>
+<p>On the normalized cover the apparent endpoint singularity is even more transparent. Set g=gcd(N,j), t-t_j=s^(N/g). Then A_epsilon is a unit times s^(-j/g), and its product with dt has order (N-j)/g-1&gt;=0. Thus the lifted differential is holomorphic at that ramification point. The slit description simply records the marked combination of its sheet paths.</p>
+<p>For N=2, (6) gives</p>
+<pre><code>[t^a](1+t)^(-1/2)
+   =(-1)^a/pi * integral_1^infinity
+                      (r-1)^(-1/2)r^(-a-1)dr,</code></pre>
+<p>including the value one for a=0 and -1/2 for a=1. This checks both the orientation and the full normalization.</p>
+<h2 id="matrix-transport-and-the-whole-original-source">3. Matrix transport and the whole original source</h2>
+<p>Expand the finite resolvent in (2) and apply (6) coefficientwise. For every T^N=0, exactly</p>
+<pre><code>v_(epsilon,N)(T)
+  =sum_(j=1)^(N-1) sin(pi j/N)/pi
+       *integral_1^infinity h_(epsilon,j)(r)
+                      (rI-Q^(epsilon j)T)^-1 dr. (7)</code></pre>
+<p>This retains all original finite-head walls inside the NILPOTENT matrix T. It does not replace T by an invertible Laurent shift. There is no pole of this resolvent on r&gt;=1. The same proof applies to a matrix coefficient source sum_(a=0)^(N-1)B_a t^(-a-1): its cut kernel is sum_a B_a Q^(epsilon j a)r^(-a-1).</p>
+<p>Apply (7) in the original order to every factor of the full 9m-variable construction for an m-crossing braid. The Gaussian diagonals, original caps, pivots, Cartan scalars, framing and peripheral line are retained. The original scalar becomes a sum over j_1,…,j_(9m) in {1,…,N-1} of integrals over [1,infinity)^(9m). Its scalar jump weight is</p>
+<pre><code>product_l sin(pi j_l/N)/pi,                    (8)</code></pre>
+<p>and its matrix/rational source is precisely the unchanged ordered network with the cut kernels of (7). The upper endpoint and infinity estimates above dominate every finite matrix entry by a product of integrable one-variable functions at fixed N. Thus Fubini and multilinearity justify the whole substitution, not only its isolated scalar atoms.</p>
+<p>This is an exact source-preserving global cycle deformation for every original word. It does not assume geometricity, positivity of an ideal triangulation, a nonvanishing Kashaev value, or a large-level asymptotic. All original normalization factors remain in the original source; no factor is chosen to fit a volume limit.</p>
+<h2 id="what-this-settles-about-cycle-selection-and-what-it-does-not">4. What this settles about cycle selection, and what it does not</h2>
+<p>The marked quantum cycle is now a completely specified convergent combination of sheet paths on actual cyclic-dilogarithm covers. Every local jump coefficient in (8) is nonzero. For indices whose j_l/N stay in a compact subinterval of (0,1), these coefficients are bounded above and below independently of N. Even over all indices their loss is at worst polynomial at fixed braid length.</p>
+<p>These statements control ONLY the local-system jump coefficients. The remaining functions h, the ordered matrix source and their full contraction are complex and may cancel. The number of cut summands grows with N. None of these facts proves that a marked geometric critical point lies on the selected deformation, that its full derived coefficient is nonzero, or that the sum of all other pieces has a smaller exponential rate.</p>
+<p>The task is therefore no longer to invent a quantum cycle or to guess its local branch weights. The remaining comparison must carry this explicit whole cut cycle to the positive geometric chart, preserving its matrix source and all branch orientations. The positive-chart maximum and the actual-atom analytic regions are available inputs; a global identification with the marked Bloch regulator period is still unproved.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_cyclic_dilog_hankel_cycle.py">Numerical sign and coefficient audit</a>. The Cauchy deformation and estimates above, rather than those finite diagnostics, prove (6)-(8) for all N.</p>
+<h2 id="exact-radial-localization-and-a-whole-word-bound-on-infinity-escape">5. Exact radial localization and a whole-word bound on infinity escape</h2>
+<p>The radial variables in this ACTUAL cycle have a uniform bound, not merely fixed-N convergence. Put</p>
+<pre><code>u=j/N,
+g_(epsilon,j)(r)=(r-1)^u h_(epsilon,j)(r),
+G_j=|g_(epsilon,j)(1)|,
+C_j=(N-1)/4-u/2.</code></pre>
+<p>The endpoint magnitude G_j is independent of epsilon. For r&gt;1 and |w|=r the elementary identity</p>
+<pre><code>d_(Log r) Log|1-w|
+  =Re[w/(w-1)]
+  =1/2+(r^2-1)/(2|1-w|^2)&gt;1/2</code></pre>
+<p>applies to every non-endpoint factor of g. Consequently</p>
+<pre><code>|g_(epsilon,j)(r)|&lt;=G_j r^(-C_j),
+|h_(epsilon,j)(r)|&lt;=G_j (r-1)^(-u)r^(-C_j).   (9)</code></pre>
+<p>Here C_j&gt;=c_N:=(N-1)(N-2)/(4N)&gt;=0. Euler’s beta integral gives the exact normalization</p>
+<pre><code>sin(pi*u)/pi * integral_1^infinity
+                       (r-1)^(-u) dr/r=1.</code></pre>
+<p>Thus for EVERY nonnegative coefficient order a and R&gt;=1,</p>
+<pre><code>sin(pi*u)/pi * integral_1^infinity
+                   |h_(epsilon,j)(r)|r^(-a-1)dr &lt;= G_j,
+sin(pi*u)/pi * integral_R^infinity
+                   |h_(epsilon,j)(r)|r^(-a-1)dr
+                                         &lt;=G_j R^(-C_j). (10)</code></pre>
+<p>This controls all cuts, including indices approaching either end of the index range. No lower bound on a jump weight is needed.</p>
+<p>The endpoint weight is itself explicit:</p>
+<pre><code>G_j=|(Q;Q)_j|/N^(j/N+1/2).                   (11)</code></pre>
+<p>For a direct verification put L_l=Log|1-Q^l|. Reindex k-j modulo N in the product defining g(1), retaining the absent k=0 factor with coefficient zero. Use</p>
+<pre><code>sum_(l=1)^(N-1)L_l=Log N,
+sum_(l=1)^(N-1)l L_l=(N/2)Log N,
+L_(N-l)=L_l.</code></pre>
+<p>It follows that</p>
+<pre><code>Log G_j=-(j/N+1/2)Log N
+                     +sum_(l=N-j)^(N-1)L_l,</code></pre>
+<p>which is (11). Thus the endpoint is an ORIGINAL quantum-factorial weight, with its complete polynomial normalization retained.</p>
+<p>For the full all-inverse construction set s=9m. At |M|=1 the <a href="actual_whole_word_cyclic_dilog_resolvent_period.html">actual rational-source bound</a> is</p>
+<pre><code>|R_(beta,N)(t)|&lt;=N^(b-1+6m) product_l |t_l|^(-1),
+                                            |t_l|&gt;=1. (12)</code></pre>
+<p>Its proof uses the literal truncated shifts, unitary root Gaussian and pivotal diagonals, and the original averaged source. It does not absorb the external dimension or framing line. Apply (10) variable by variable to the absolute value of the whole cut integral, and use a union bound for the s radial variables. If P_tail(R) denotes the contribution with max_l r_l&gt;=R,</p>
+<pre><code>|P_tail(R)|
+  &lt;=|chi_(beta,N)| s N^(b-1+6m) R^(-c_N)
+                                 (sum_(j=1)^(N-1)G_j)^s. (13)</code></pre>
+<p>The same bound without s R^(-c_N) bounds the full absolute integral. This is a bound on the original whole source; it is not a termwise claim about a substituted positive knot model.</p>
+<p>Write J(v)=integral_0^v Log(2sin(pi*t))dt. The uniform endpoint-aware factorial estimate already proved in <a href="full_euler_atom_dilog_and_endpoint_regions.html">the full-atom note</a> gives</p>
+<pre><code>Log G_j=N J(j/N)+O(Log N)</code></pre>
+<p>uniformly for 1&lt;=j&lt;N. Its maximum occurs at v=5/6 and is</p>
+<pre><code>max J=Lambda(pi/6)/pi=v_3/(2pi),</code></pre>
+<p>where v_3 is the volume of a regular ideal tetrahedron. At M=1 the original external line chi has polynomial size. Since c_N/N tends to 1/4, (13) proves the unconditional whole-word escape estimate</p>
+<pre><code>limsup_(N-&gt;infinity) (1/N)Log|P_tail(R)|
+  &lt;=s v_3/(2pi)-(1/4)Log R.                  (14)</code></pre>
+<p>In particular any fixed R&gt;exp(4s v_3/(2pi)) makes this whole infinity tail exponentially small in ABSOLUTE size. The required R depends on the fixed word, not on N. Thus escape to infinity can be excluded as a competing positive exponential contribution in this representation.</p>
+<p>For smaller radial collars, (13) controls the tail relative to the stated endpoint ABSOLUTE envelope. It does not imply localization on an O(1/N) collar relative to the ACTUAL selected period: cancellation may make that period much smaller than the envelope. The angular/source coupling and a nonzero geometric contribution remain unresolved. None of (9)-(14) replaces that remaining lower-bound theorem.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_cut_radial_localization.py">Radial and endpoint audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_cut_radial_localization_results.json">saved results</a>.</p>
+<p>The subsequent <a href="full_cut_geometric_coupling.html">bulk radial theorem</a> evaluates each original coefficient moment with an explicit nonzero Gamma symbol, uniformly in the actual coefficient order. The <a href="exact_quantum_quad_source_transport.html">cyclic sewing comparison</a> instead splits the nilpotent transfers into cyclic resolvents and mandatory boundary terms. For that split representation, use the <a href="cyclic_sewing_regularized_cut_cycle.html">regularized cut rule</a>, which retains its new endpoint finite parts and cyclic-pole residues. The ordinary unsplit Hankel formula must not be applied to its terms without those corrections.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_cyclic_dilog_hankel_cycle.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-marked-covers">1. The actual marked covers</a><a href="#exact-boundary-values-and-the-oriented-cut-identity">2. Exact boundary values and the oriented cut identity</a><a href="#matrix-transport-and-the-whole-original-source">3. Matrix transport and the whole original source</a><a href="#what-this-settles-about-cycle-selection-and-what-it-does-not">4. What this settles about cycle selection, and what it does not</a><a href="#exact-radial-localization-and-a-whole-word-bound-on-infinity-escape">5. Exact radial localization and a whole-word bound on infinity escape</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

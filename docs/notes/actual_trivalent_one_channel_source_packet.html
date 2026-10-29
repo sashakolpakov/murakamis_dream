@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An actual noncentral trivalent source packet with two Steinberg legs · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_trivalent_one_channel_source_packet.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="an-actual-noncentral-trivalent-source-packet-with-two-steinberg-legs">An actual noncentral trivalent source packet with two Steinberg legs</h1>
+<p>29 October 2026. The odd central quartic transform extends to EVERY retained node on one leg of the ORIGINAL black trivalent source, with the other two legs central. It gives an exact common-phase positive factorial sum, a fixed complex color packet, and a strict physical complement gap. This is one actual magnetic coefficient, not a replacement for the full three-channel vertex or its white/marked rows.</p>
+<p>Set N=2m+1&gt;=3, d=2m, q=exp(pi i/N), Q=q^2, x=q^d, F_a=(Q;Q)_a and s_a=|F_a|. All indices are unwrapped. Original normalizations are those of the <a href="actual_trivalent_complete_circle_vertex_kernel.html">full vertex kernel</a>.</p>
+<h2 id="actual-source-coefficient-and-exact-positive-evaluation">1. Actual source coefficient and exact positive evaluation</h2>
+<p>For 0&lt;=j&lt;=m put t=d-j. In the ORIGINAL physical pair define</p>
+<pre><code>h^(j)_a=q^(a^2)[t choose a]_Q at |a,t-a&gt;,
+W^(j)_r=F_pair^r h^(j)/F_r, 0&lt;=r&lt;=2j.             (1)</code></pre>
+<p>The highest equation follows from the ratio -x^-1 Q<sup>a(1-Q</sup>(t-a))/(1-Q^(a+1)). Its Casimir is c_j=q<sup>(2j+1)+q</sup>(-2j-1). At physical degree d,</p>
+<pre><code>W^(j)_j(a,d-a)=q^(-j^2) f_a(c_j).                (2)</code></pre>
+<p>Indeed both sides solve the same actual tridiagonal eigenvector recurrence, and the first entry of the coproduct binomial is N x^-j/(F_t F_j)=q<sup>(-j</sup>2). No inverse frame is used.</p>
+<p>Extract the black source rows (W<sup>(m)_d,W</sup>(j)_j,W^(m)<em>0), after the literal port exchanges of the full kernel. Their pair degrees are (3m,2m,m), summing to 3d. The actual coefficient is N^3 B</em>(N,j), where</p>
+<pre><code>B_(N,j)=sum_(k=0)^m x^(k-d)
+    conjugate[(h^(m)_k)^2 W^(j)_j(m+k,m-k)].      (3)</code></pre>
+<p>Here the exact lowest-column identity W<sup>(m)_d(m+k,d-k)=h</sup>(m)_k was proved with all phases in the <a href="actual_trivalent_steinberg_central_anchor.html#2-exact-source-normalizations-including-both-ends">central anchor</a>. Thus (3) is an original source coefficient, not a chosen abstract 6j. Define</p>
+<pre><code>z_j(k)=s_(j+k)/[s_(j-k)s_k^2], 0&lt;=k&lt;=j,
+z_m(k)=beta(m,k)^2=N/[s_k^2 s_(m-k)^2].</code></pre>
+<p>The exact all-node formula is</p>
+<pre><code>B_(N,j)=q^[m(2-3m+2j)] P_(N,j),
+P_(N,j)=sum_(k=0)^j z_j(k)z_m(k)&gt;0.               (4)</code></pre>
+<p>It includes j=0,m, every odd composite N, and recovers the central quartic at j=m. In the specified CD basis sqrt(N)W on the two central legs and sqrt(2N)f(c_j) on the middle leg, j&lt;m, the coefficient is sqrt(2)N<sup>(9/2)q</sup>(-j^2)B_(N,j). At j=m it is N^(9/2)B_(N,m). The sqrt(2) is the actual double-node FIRST-normal multiplicity; one must not continue it through the odd simple node.</p>
+<h2 id="own-finite-proof-at-every-node">2. Own finite proof at every node</h2>
+<p>Let J_0 denote the actual complete anti-Pascal recoupling, not the six-head cup. The <a href="actual_trivalent_steinberg_central_anchor.html#4-a-finite-coherent-quartic-transform">central proof</a> established by finite binomial inversion</p>
+<pre><code>(J_0)_(a,b)=x D_aD_b[a+b choose a]_(Q^-1),
+D_a=(-q^-1)^a, a+b&lt;=d; zero otherwise,
+conjugate(J_0) P J_0=P.                           (5)</code></pre>
+<p>The actual other Casimir is lower bidiagonal, with diagonal c_a and lower entry Q<sup>a+Q</sup>-a-2. Hence y_j=J_0 f(c_j) is REAL, supported at d-j,…,d, with</p>
+<pre><code>(y_j)_(d-j+k)
+  =s_(d-j)s_j/[s_(d-2j+k)s_k s_(j-k)^2].         (6)</code></pre>
+<p>Its last entry is (J_0)_(d,0)=1. Solve the first-order recurrence backwards from there using</p>
+<pre><code>(c_a-c_j)/[-(Q^a+Q^-a-2)]
+ =-q^-1(1-Q^(a-j))(1-Q^(a+j+1))/(1-Q^a)^2.</code></pre>
+<p>The second occurrence of c_j forces all earlier entries to zero. Root reflection F_aF_(d-a)=N(-1)^a Q<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> cancels every phase in (6). Reversal P y_j is exactly the vector z_j above.</p>
+<p>At this root z_j(i)=(-q)<sup>i(Q</sup>-j;Q)<em>i(Q<sup>(j+1);Q)_i/F_i</sup>2. For k&lt;=j form C</em>(j,k)=sum_(i=k)^j z_j(i)D_i[i choose k]_(Q^-1). With n=j-k, its k-th term times the remaining series is</p>
+<pre><code>(Q^-j;Q)_k(Q^(j+1);Q)_k/F_k^2
+ *sum_(r=0)^n (Q^-n;Q)_r(Q^(j+k+1);Q)_r Q^(-kr)
+                /[F_r(Q^(k+1);Q)_r].</code></pre>
+<p>The SECOND finite q-Chu applies: b=Q^(j+k+1), c=Q^(k+1), and cQ<sup>n/b=Q</sup>-k. It is the own finite identity obtained from the first q-Chu at base Q^-1 by inverting parameters, as in the central proof. All denominator indices are &lt;=j&lt;N. Its product side simplifies to</p>
+<pre><code>C_(j,k)=(-1)^j q^[k^2-j(j+1)]z_j(k).             (7)</code></pre>
+<p>Vandermonde in (5) now gives, for ANY j,l&lt;=m,</p>
+<pre><code>z_j^T J_0 z_l=x(-1)^(j+l)q^[-j(j+1)-l(l+1)]
+              *sum_(k=0)^min(j,l)z_j(k)z_l(k).   (8)</code></pre>
+<p>To recover the actual source, (2),(3) and the phases of h^(m) give B_(N,j)=q<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> f(c_j)^dagger J_0 f(c_m). Since y_j,y_m are real, (5) rewrites this matrix element as z_j^T J_0 z_m. Equation (8) and q^N=-1 give precisely (4). This evaluates the coherent source BEFORE any absolute values.</p>
+<h2 id="entire-physical-color-bound-and-strict-complement-gap">3. Entire physical color bound and strict complement gap</h2>
+<p>For k&lt;=j&lt;m,</p>
+<pre><code>z_(j+1)(k)/z_j(k)
+  =sin[pi(j+k+1)/N]/sin[pi(j-k+1)/N]&gt;=1.          (9)</code></pre>
+<p>For k&gt;0 the difference of these sines is 2cos[pi(j+1)/N]sin(pi k/N)&gt;0. Therefore</p>
+<pre><code>1=P_(N,0)&lt;=P_(N,j)&lt;=P_(N,m),
+log P_(N,j)&lt;=N j0+O(log N), j0=v8/pi.            (10)</code></pre>
+<p>For EVERY fixed delta&gt;0 there is gamma_delta&gt;0 such that</p>
+<pre><code>max_(m-j&gt;=delta N) P_(N,j)
+             &lt;=poly(N)exp[N(j0-gamma_delta)].    (11)</code></pre>
+<p>Outside a fixed neighborhood of k/N=1/4 the central quartic terms already have a strict gap. Inside it, sum log(9) over a fixed subinterval between j/N and 1/2. Its continuous positive integral is uniformly bounded below when (m-j)/N&gt;=delta. The uniform O(log N) sine-factorial estimate covers endpoints. This proves (11), with an empty physical range simply ignored.</p>
+<h2 id="exact-complex-color-factorial-packet">4. Exact complex-color factorial packet</h2>
+<p>Let S_hat_N be the <a href="exact_factorial_interpolation_and_complex_contours.html">canonical sine factorial</a>, with S_hat_N(a)=s_a and S_hat_N(z)S_hat_N(d-z)=N EXACTLY. Fix a small epsilon&gt;0, I_N={k:|k/N-1/4|&lt;=epsilon}, and set</p>
+<pre><code>Pwin_N(sigma)=N sum_(k in I_N)
+  S_hat_N(m-Nsigma+k)
+   /[S_hat_N(m-Nsigma-k)s_k^4s_(m-k)^2].          (12)</code></pre>
+<p>This is an EXACT holomorphic function on a fixed small complex sigma disk, with all scaled factorial arguments in a compact bulk strip. It is EXACTLY EVEN by reflection. At physical sigma=(m-j)/N it is exactly the retained terms of (4). Their omitted positive terms have a uniform exponential gap, also relative to the retained packet after shrinking the disk. The original source completion is q<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>Pwin_N(sigma); at integral deficit s its extra character is (-1)^s q^s, which has NOT been deleted.</p>
+<p>Put J(t)=integral_0^t Log(2sin pi a)da on the marked bulk strip and</p>
+<pre><code>F(t,sigma)=J(1/2-sigma+t)-J(1/2-sigma-t)
+                            -4J(t)-2J(1/2-t).    (13)</code></pre>
+<p>The canonical complex factorial expansion, including the actual half-step m/N=1/2-1/(2N), gives the summand in (12) as</p>
+<pre><code>exp[NF(t,sigma)]/[4N^2 sin^2(pi t)] *[1+O(1/N)], (14)</code></pre>
+<p>uniformly on a slightly larger complex t,sigma tube. The square root of the numerator/denominator sine ratio cancels the phase shift exp[-(G(1/2-sigma+t)-G(1/2-sigma-t))/2], G=J’. The remaining exp[G(1/2-t)]=2cos(pi t) cancels its denominator. Thus (14) has neither an unknown periodic multiplier nor a missing half-step constant.</p>
+<p>The unique real saddle continues holomorphically as</p>
+<pre><code>t_*(sigma)=atan(cos pi sigma)/pi,
+A(sigma)=-F_tt(t_*,sigma)
+         =2pi[1+cos^2(pi sigma)]^2/cos^3(pi sigma).</code></pre>
+<p>For real small sigma, strict concavity follows directly from the cotangent derivatives in (13). Let Phi(sigma)=F(t_*,sigma). Then</p>
+<pre><code>Phi(0)=j0, Phi&#39;(sigma)=-2 artanh(sin pi sigma),
+Phi&#39;&#39;(sigma)=-2pi/cos pi sigma,
+Phi(sigma)=j0-pi sigma^2+O(sigma^4).              (15)</code></pre>
+<p>The EXACT packet has the uniform COMPLEX asymptotic</p>
+<pre><code>Pwin_N(sigma)=N^(-3/2) exp[NPhi(sigma)]
+        /[4sqrt(cos pi sigma)] *[1+O(1/N)].      (16)</code></pre>
+<p>Here sqrt is +1 at zero. For completeness, enclose I_N by half-grid vertical sides and horizontal sides of fixed small height b, using the exact kernel pi N cot(pi N t). The vertical sides have |cot|&lt;=1 and retain the source endpoint currents; their phase has a strict window boundary gap. On horizontal sides the cotangent error is O(exp(-2pi N b)), whereas phase growth is &lt;=Cb<sup>2+C|sigma|</sup>2b. Choose b first with Cb^2&lt;pi b and then shrink the complex sigma disk. All these errors and the endpoint connectors are exponentially gapped. The main contours deform through t_* within the same zero-free factorial strip. Analytic Gaussian integration of (14) gives (16), since sqrt(2pi/A)/(4sin^2(pi t_*))=1/[4sqrt(cos pi sigma)]. This proves uniformity for the exact packet, not just its real-grid leading terms. Cauchy estimates keep every FIXED color derivative. In particular on smaller real/imaginary corridors,</p>
+<pre><code>|Pwin_N(x+iy)|&lt;=poly(N)exp[N(j0-cx^2+Cy^2)], c&gt;0. (17)</code></pre>
+<h2 id="remaining-branching-interfaces">5. Remaining branching interfaces</h2>
+<p>The theorem concerns a genuine original black coefficient with two central legs. The double-node CD factor above has retained the first normal of the complete circle BEFORE its fixed-root image is taken. Equation (12) continues color in this coefficient; it does NOT take derivatives of a moving-q physical source germ. Here sigma is an INTERNAL pair-Casimir channel deficit. It has not been identified with an auxiliary meridian or an ordinary-circle color parameter; such an identification needs its own actual source and peripheral transport certificate.</p>
+<p>For three independently noncentral legs the actual kernel still has three distinct highest/descendant polynomials. The reduction to (8) used the two central legs essentially. One magnetic coefficient also does not bound all other T_i, or identify the distinct U,V,V_m. Paired socle columns have W^dagger P W=0, whereas the central column has W^dagger P W=I; its retraction cannot simply be continued. Those remain explicit interfaces before an arbitrary noncrossing triple-partition graph can be estimated by this positive packet.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_trivalent_one_channel_source_packet.py">literal source and all-node finite transform</a>. Tests supplement the finite proof and contour estimate; no sewn-graph survival or new hyperbolic-volume claim is inferred from them.</p>
+<p>Independent internal analytical review passed the all-node finite transform, actual source phase, entire-color gap, half-step amplitude and exact complex-window contour argument. A fresh primary replay passed ten original all-node families N=3,…,21, three whole-color Laplace profiles and two canonical complex factorial windows.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>a(a+1)/2<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>j<sup>2-4m</sup>2<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>m(2-m)-2mN sigma<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_trivalent_one_channel_source_packet.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#actual-source-coefficient-and-exact-positive-evaluation">1. Actual source coefficient and exact positive evaluation</a><a href="#own-finite-proof-at-every-node">2. Own finite proof at every node</a><a href="#entire-physical-color-bound-and-strict-complement-gap">3. Entire physical color bound and strict complement gap</a><a href="#exact-complex-color-factorial-packet">4. Exact complex-color factorial packet</a><a href="#remaining-branching-interfaces">5. Remaining branching interfaces</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

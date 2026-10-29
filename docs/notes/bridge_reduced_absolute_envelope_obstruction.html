@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual post-overbridge modulus envelope still exceeds knot volume · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/bridge_reduced_absolute_envelope_obstruction.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-actual-post-overbridge-modulus-envelope-still-exceeds-knot-volume">The actual post-overbridge modulus envelope still exceeds knot volume</h1>
+<p>28 October 2026. Exact elimination of all overbridge interiors does NOT make the remaining absolute-value optimization a geometric-volume problem. There is a supported state of the newly reduced ORIGINAL 5_2 source with exponential modulus rate greater than 2.54. Its actual geometric volume rate is less than 0.485. The original averaged cut, both pivots and all bridge endpoint products are included.</p>
+<p>This is a counterexample to a proposed absolute-envelope upper bound, not to the invariant or the volume conjecture. It concerns the state AFTER the proved simultaneous overbridge elimination. A subsequent exact under-anchor/coefficient regrouping can create further cancellations and is not contradicted by this calculation. In fact the offending state’s remaining wire-5 fiber has now been summed EXACTLY to zero by the complementary-charge rule described below.</p>
+<h2 id="the-actual-continuous-modulus-on-a-monotone-bridge-cell">1. The actual continuous modulus on a monotone bridge cell</h2>
+<p>Let</p>
+<pre><code>J(t)=integral_0^t log|2sin(pi u)| du,
+J(t+1)=J(t),
+P(t,l)=J(t+l)-J(t).                              (1)</code></pre>
+<p>For a bridge of m crossings let H1&gt;=…&gt;=Hm be its clocks divided by N, let alpha_j=Arg(a_j)/(2pi) with any fixed lifted representatives, and let theta_in,theta_out be its endpoint port phases divided by 2pi. The exact source-preserving formula in <a href="actual_signed_overbridge_unwinding.html">the signed bridge theorem</a> has limiting modulus action</p>
+<pre><code>Gamma_B=J(H1)-J(Hm)-sum_j J(Delta_j)
+   +P(1/2-alpha_1-theta_in,1-H1)
+   +P(alpha_m+theta_out,Hm)
+   +sum_j P(alpha_j-alpha_(j+1)+1/2,Delta_j),
+Delta_j=H_j-H_(j+1).                            (2)</code></pre>
+<p>Indeed the multinomial has action J(H1)-J(Hm)-sum J(Delta_j). The signed original port identities give a_j b_j=Q^2 x, hence b_j has limiting phase 1/2-alpha_j; the endpoint and link products give the other terms of (2). The COMPLETE remaining monomial/scalar prefactor has modulus between fixed constants times 1/N, as proved in that note, so has no additional exponential action on the original fixed-central grids. Its complex phase is retained.</p>
+<p>For arguments whose central moduli stay away from one, the elementary endpoint-aware product estimate gives</p>
+<pre><code>log|(v_N;Q)_L|=N P(t,L/N)+O(log N),              (3)</code></pre>
+<p>when Arg(v_N)/(2pi)=t+O(1/N) and |v_N|=exp(gamma/N) with fixed nonzero gamma. The estimate includes arcs ending at shape one: split the logarithmic singularity from a smooth periodic part, or compare its total variation after radial regularization at |gamma|/N. Its Riemann-sum error is O(log N). Factorials have the same uniform estimate. Exact root zeros, when present in another example, must still be excluded by the actual polynomial support; (2) is not a license to replace them by their continuous limits.</p>
+<h2 id="a-genuine-reduced-state-of-the-original-5_2-source">2. A genuine reduced state of the original 5_2 source</h2>
+<p>Use the actual three-braid word</p>
+<pre><code>[1,1,1,2,-1,2],                                 (4)</code></pre>
+<p>identified independently with the same original 5_2 period in <a href="five_two_whole_source_reduction.html">the whole-source proof</a>. Use the regular propagated frames with initial c=(2,3,4), so their central coordinates are (2,3s,4), s=(-1)^(N+1). Each crossing creates two new wire variables, numbered consecutively after initial wires 0,1,2. Its port table is</p>
+<table>
+<thead>
+<tr>
+<th>Crossing</th>
+<th>Sign</th>
+<th>Inputs</th>
+<th>Outputs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>+</td>
+<td>0,1</td>
+<td>3,4</td>
+</tr>
+<tr>
+<td>1</td>
+<td>+</td>
+<td>3,4</td>
+<td>5,6</td>
+</tr>
+<tr>
+<td>2</td>
+<td>+</td>
+<td>5,6</td>
+<td>7,8</td>
+</tr>
+<tr>
+<td>3</td>
+<td>+</td>
+<td>8,2</td>
+<td>9,10</td>
+</tr>
+<tr>
+<td>4</td>
+<td>-</td>
+<td>7,9</td>
+<td>11,12</td>
+</tr>
+<tr>
+<td>5</td>
+<td>+</td>
+<td>12,10</td>
+<td>13,14</td>
+</tr>
+</tbody>
+</table>
+<p>The EXACT overbridge paths are</p>
+<pre><code>[0], [1], [2,3], [4], [5].                       (5)</code></pre>
+<p>Thus the original over-over variable 8 really has been summed out; this is not a pre-elimination state or a word with only trivial length-one bridges. Set the surviving labels to N/20 times</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr>
+<th>Variable</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+<th>14</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Label numerator</td>
+<td>13</td>
+<td>8</td>
+<td>11</td>
+<td>18</td>
+<td>3</td>
+<td>2</td>
+<td>18</td>
+<td>6</td>
+<td>4</td>
+<td>16</td>
+<td>13</td>
+<td>19</td>
+<td>4</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>Take the subsequence 20 divides N. The bridge clock lists are</p>
+<pre><code>(1/2), (1/20), (3/5,7/20), (13/20), (3/5).       (6)</code></pre>
+<p>In particular the nontrivial monotonicity is STRICT. Its two spectator under-strands have distinct original central parameters 3 and 4, so the new link argument has central modulus 4/3 or its reciprocal, not one. All original endpoint products likewise have central moduli which are ratios of two distinct members of (2,3,4). Consequently every product in this state is nonzero at every N in the subsequence. No formal continuous state has been substituted for an actual support point.</p>
+<p>Substitution in (2), using J(1-t)=-J(t), gives exactly</p>
+<pre><code>Gamma=-2J(3/20)-3J(1/5)-8J(1/4)
+                     -2J(3/10)-2J(7/20)-2J(2/5)
+   =2.5456403530804530135630814317531... .        (7)</code></pre>
+<h2 id="the-original-boundary-source-is-nonzero-and-has-zero-action">3. The ORIGINAL boundary source is nonzero and has zero action</h2>
+<p>For the actual averaged first cut and two original closed pivots, the boundary source in these normalized Fourier frames factors as</p>
+<pre><code>C_0=K_N(z_(in,0))K_N(z_(out,0)^(-1))/N^2,
+
+C_i=x^(1-N)K_N(z_(in,i)/(Q z_(out,i)))/N, i=1,2,
+K_N(v)=(1-v^N)/(1-v).                           (8)</code></pre>
+<p>Here the comma in z_in,i denotes its head number. Formula (8) is exactly F_0(e tensor g tensor g)F_final^(-1), with e=ones/N and the ORIGINAL pivot g_a=x<sup>(1-N)Q</sup>(-a). It is not a replacement trace or independent cap normalization.</p>
+<p>The final braid permutation is a three-cycle. Each ordinary geometric-series numerator in (8) is therefore 1-c_i/c_(pi(i)) with distinct positive c_i, so is nonzero. The two first-cut numerators are nonzero because the relevant center moduli exceed one. All denominators have modulus between a fixed constant times 1/N and a fixed constant. Thus the FULL boundary entry is nonzero and bounded above and below by powers of N. It contributes zero exponential action. This explicitly retains the phase and possible cancellation of that source; no positivity is asserted.</p>
+<p>The original framing, full Cartan scalar and optional full-state modified dimension are label-independent unit or polynomial factors. They also have zero action. Equations (2),(3),(7),(8) prove for this COMPLETE reduced summand w_N that</p>
+<pre><code>lim_(20|N) N^(-1) log|w_N|=Gamma.                (9)</code></pre>
+<h2 id="the-geometric-rate-is-strictly-smaller">4. The geometric rate is strictly smaller</h2>
+<p>The independently checked <a href="five_two_selected_bloch_calibration.html">three-tetrahedron geometric calibration</a> gives Vol(5_2)=3D(v). Each positive ideal tetrahedron has volume at most the regular tetrahedron value v3=D(exp(pi i/3)). The usual angle-simplex concavity proof supplies that maximum directly. Consequently</p>
+<pre><code>Vol(5_2)/(2pi)&lt;=3v3/(2pi)
+   &lt;0.485&lt;2.54&lt;Gamma.                           (10)</code></pre>
+<p>The actual value is approximately 0.45010961, but it is not needed for this separation. The Arb audit rigorously encloses (7) and the upper bound in (10), with a certified gap greater than 2.05.</p>
+<p>The absolute sum of all remaining bridge/source states is at least |w_N|. Its maximum over the actual monotone cells is therefore NOT bounded by the hyperbolic volume rate. Exact overbridge unwinding has not removed the need for further exponential cancellation.</p>
+<p>This does not contradict the regular-critical-regulator theorem: that theorem requires the FULL complex critical equations. A real absolute maximum need not satisfy the missing phase equations. Nor does this obstruct a later exact under-anchor/coefficient reduction, which regroups the surviving states before any estimate. It rules out the specific next step of identifying the present absolute bridge envelope with Rivin’s geometric maximum.</p>
+<h3 id="the-next-exact-cancellation-is-known-for-this-witness">The next exact cancellation is known for this witness</h3>
+<p>The <a href="actual_bridge_charge_phase.html">charged bridge phase calculation</a> proves an actual further wire identity: with r=[label3-label6], H=[label6-label7], its wire-5 zero-frequency coefficient is zero whenever r+H&lt;d. In (7) these are r=0 and H=3N/5, so the complete N-point wire sum is exactly zero at every level in the chosen subsequence. The original caps are independent of that wire and therefore retain the cancellation.</p>
+<p>Thus the large individual summand is not being presented as an uncontrolled global remainder. The next exact source projection removes its whole fiber. The obstruction concerns taking absolute values BEFORE that projection; the new phase-aware fusion is real constructive progress beyond it.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_bridge_reduced_absolute_envelope.py">Audit and rigorous certificate</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/bridge_reduced_absolute_envelope_results.json">saved results</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/bridge_reduced_absolute_envelope_obstruction.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-continuous-modulus-on-a-monotone-bridge-cell">1. The actual continuous modulus on a monotone bridge cell</a><a href="#a-genuine-reduced-state-of-the-original-5_2-source">2. A genuine reduced state of the original 5_2 source</a><a href="#the-original-boundary-source-is-nonzero-and-has-zero-action">3. The ORIGINAL boundary source is nonzero and has zero action</a><a href="#the-geometric-rate-is-strictly-smaller">4. The geometric rate is strictly smaller</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

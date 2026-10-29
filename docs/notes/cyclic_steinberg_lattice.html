@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cyclic modules, the Kashaev color, and a recoupling lattice at degeneration · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/cyclic_steinberg_lattice.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="cyclic-modules-the-kashaev-color-and-a-recoupling-lattice-at-degeneration">Cyclic modules, the Kashaev color, and a recoupling lattice at degeneration</h1>
+<p>Research note, 25 October 2026. This supplies an integral extension of the local algebra used in the torsor construction. The results are uniform in every level N&gt;=2. They are explicit representation and lattice calculations, not an appeal to a theorem about quantum knot invariants. No novelty is claimed for cyclic quantum-group representations.</p>
+<p>The distinguished Kashaev state remains the one fixed in <a href="kashaev_crossing_and_period_lattice.html">kashaev_crossing_and_period_lattice.md</a> and <a href="kashaev_ado_pointing.html">kashaev_ado_pointing.md</a>.</p>
+<h2 id="a-regular-quantum-group-family-through-the-nilpotent-fiber">1. A regular quantum-group family through the nilpotent fiber</h2>
+<p>Put q=exp(pi*i/N), omega=q^2, rho=q-q^(-1), and</p>
+<pre><code>R=C[t,t^(-1)], E_t=R[x]/(x^N-t),
+X f(x)=x f(x), sigma f(x)=f(omega*x).</code></pre>
+<p>The following endomorphisms are regular over R, including t=1:</p>
+<pre><code>F=(1-X)sigma^(-1),
+E=(1-omega*X)/(omega*X*rho^2) sigma,
+K=-q^(-1)X^(-1).                                  (1.1)</code></pre>
+<p>All inverses in (1.1) exist over R. Direct multiplication gives</p>
+<pre><code>K E=q^2 E K, K F=q^(-2)F K,
+E F-F E=(K-K^(-1))/rho.                            (1.2)</code></pre>
+<p>For a short verification let</p>
+<pre><code>f(X)=(X+X^(-1)-2)/rho^2.</code></pre>
+<p>Then FE=f(X), EF=f(omega<em>X), and f(omega</em>X)-f(X)=(q X-q<sup>(-1)X</sup>(-1))/rho. The last numerator equals K-K^(-1). The normalized Casimir is</p>
+<pre><code>rho^2 FE+qK+q^(-1)K^(-1)=-2.                     (1.3)</code></pre>
+<p>The central powers follow by multiplying around the cyclic orbit:</p>
+<pre><code>F^N=1-t,
+E^N=(-1)^(N-1)(1-t)/(t*rho^(2N)),
+K^N=(-1)^(N-1)/t.                                (1.4)</code></pre>
+<p>Thus the inverses of F used in the generic quantum-torus chart are unnecessary in this quantum-group lattice. At t=1 both E and F are nilpotent, while the module stays simple.</p>
+<p>To see the fiber explicitly, evaluate functions at omega^j, and write e_j for the corresponding delta vectors. Put</p>
+<pre><code>p_j=product_(a=1)^j(1-omega^a), v_j=p_j e_j.</code></pre>
+<p>Then</p>
+<pre><code>F v_j=v_(j+1), E v_j=[j]_q^2 v_(j-1),
+K v_j=q^(N-1-2j)v_j,                             (1.5)</code></pre>
+<p>with the endpoint vectors zero. These are exactly the Kashaev color matrices in the crossing proof. The K eigenvalues are distinct and all adjacent E,F coefficients are nonzero. Matrix units are obtained from the K spectral projectors and these adjacent maps. For t!=1, X,F already generate the full matrix algebra because 1-X is invertible. Hence the image of this family in End_R(E_t) is the full matrix bundle: fiberwise surjectivity implies surjectivity over R by Nakayama. This concerns the image of the given family, not an assertion that every central quotient of the unrestricted quantum group is Azumaya.</p>
+<h2 id="the-pointing-also-extends">2. The pointing also extends</h2>
+<p>The cyclic vacuum equation is</p>
+<pre><code>(X+F-1)v=0.</code></pre>
+<p>Its kernel over R is R*1. Away from t=1 this follows from (X+F-1)=(1-X)(sigma^(-1)-1). At t=1 its rows in the evaluation basis are the N-1 independent differences v_(j-1)-v_j. Thus its rank remains N-1 and its kernel line remains primitive. In the basis (1.5), its specialized vector is</p>
+<pre><code>v_vac=sum_(j=0)^(N-1) p_j^(-1) v_j.              (2.1)</code></pre>
+<p>It is a quantum Whittaker vector rather than the highest-weight vector. The functional eps(f)=Tr_(E_t/R)(f)/N is regular and eps(1)=1. On a knot’s cut operator, which is scalar at t=1, pairing with this vector and functional gives the same Kashaev period as pairing with the highest-weight vector. No possibly large change-of-basis norm is discarded; scalarity cancels that change exactly.</p>
+<h3 id="a-tensor-convention-that-must-be-retained">A tensor convention that must be retained</h3>
+<p>The algebra extension above is not by itself a Hopf-algebra comparison. The Borel coproduct used in the pointed recoupling notes is</p>
+<pre><code>Delta_B X=X tensor X,
+Delta_B F=F tensor 1+X tensor F.</code></pre>
+<p>For the standard quantum-group coproduct and X=-q<sup>(-1)K</sup>(-1),</p>
+<pre><code>Delta_q X=-q X tensor X,
+Delta_q F=F tensor 1-q X tensor F.                (2.2)</code></pre>
+<p>These formulas give the exact scalar mark that any tensor comparison must carry. It has the following explicit endpoint transport; an algebra isomorphism alone would not provide it.</p>
+<h3 id="a-matched-endpoint-chain-for-the-actual-coproduct">A matched endpoint chain for the actual coproduct</h3>
+<p>Write kappa=-q. In an ordered tensor product of b factors, put</p>
+<pre><code>U_j=K_j^(-1)=kappa*X_j, c_j=kappa^(1-j),
+F_j^new=c_j*F_j, E_j^new=c_j^(-1)*E_j.</code></pre>
+<p>These are still the regular quantum-group representations (1.1), with a constant scaling automorphism of E,F. Their Borel coordinates are now U_j,F_j^new, with the actual coproduct</p>
+<pre><code>Delta U=U tensor U,
+Delta F=F tensor 1+U tensor F.</code></pre>
+<p>The unit vector of factor j solves</p>
+<pre><code>(F_j^new+a_j U_j-b_j)1=0,
+a_j=kappa^(-j), b_j=kappa^(1-j), a_j=b_(j+1).    (2.3)</code></pre>
+<p>Thus these are exactly matched endpoint modules in the <a href="pointed_period_descent.html">endpoint formulation</a>, at all levels. The iterated coproduct acts on the unit tensor by the telescoping sum</p>
+<pre><code>F_tot 1=sum_(j=1)^b
+       kappa^(j-1)*c_j*x_1...x_(j-1)*(1-x_j)
+       =1-x_1...x_b,
+U_tot=kappa^b*x_1...x_b.                         (2.4)</code></pre>
+<p>Consequently its pointing is (F_tot+kappa^(-b)U_tot-1)1=0. More generally the substitution</p>
+<pre><code>m:E_(t_1...t_b) -&gt; E_(t_1) tensor ... tensor E_(t_b),
+f(x) -&gt; f(x_1...x_b),                            (2.5)</code></pre>
+<p>intertwines F with F_tot, and multiplication by kappa^b*x with U_tot. Each summand shifts the product coordinate by omega^(-1), so the same telescoping calculation proves (2.5) on every f, not just on the vacuum.</p>
+<p>The central marks are retained:</p>
+<pre><code>U_j^N=kappa^N*t_j, (F_j^new)^N=c_j^N*(1-t_j),
+U_tot^N=kappa^(bN)*product t_j,
+F_tot^N=1-product t_j.                           (2.6)</code></pre>
+<p>At the nilpotent fiber, the individual automorphism is the explicit basis conjugation v_h -&gt; c_j^h v_h. It is a unit at every level, even when kappa^N=-1. Moreover c_j=(-q)^(1-j) is one fixed monomial in the generic quantum parameter; it is not an unrelated scalar chosen separately at each level. At the specified complex roots its basis-conjugation entries all have absolute value one. Thus the scalar in (2.2) is accounted for at the Borel pointing and tensor-embedding level without changing the nilpotent color. At this stage (2.5) has only been checked on the Borel action. The subsequent <a href="casimir_braiding_and_recoupling_lattice.html">Casimir comparison</a> proves its full E-action, identifies both actual crossings on the transported recoupling lattice, and derives the pivotal closing trace. The selected global geometric period and its norm remain additional comparison requirements.</p>
+<h2 id="pointed-borel-factorization-at-all-levels">3. Pointed Borel factorization at all levels</h2>
+<p>For nondegenerate s,t, the existing relative operators are</p>
+<pre><code>Z=Y_1 Y_2^(-1), D=X_1+Z, C=ZX_2,
+X_tot=X_1X_2, Y_tot=X_1Y_2+Y_1,
+tau=(1-st)/(1-t).</code></pre>
+<p>The generic commutation and vacuum-ideal certificates in the preceding notes do not use parity. For the central powers one must retain</p>
+<pre><code>(ZX_2)^N=(-1)^(N-1) Z^N X_2^N.</code></pre>
+<p>Consequently</p>
+<pre><code>X_tot^N=st, Y_tot^N=1-st,
+D^N=tau, (-C)^N=1-tau                           (3.1)</code></pre>
+<p>for every N&gt;=2. The quantum-binomial argument requires primitivity, not primality or oddness. Simplicity and the common vacuum then give the pointed factorization at every level, with the same kernel</p>
+<pre><code>C_(s,t)(u^a v^b)
+   =w^a product_(j=1)^b(1-omega^j w)/(1-omega^j z),
+w=x_1x_2, z=x_2.                                 (3.2)</code></pre>
+<p>In the monomial bases used in the earlier note, its determinant is</p>
+<pre><code>det C_(s,t)=sigma_N f(s,t)^(N(N-1)/2),
+f(s,t)=t(1-st)/(1-t)^2,
+sigma_N=(-1)^(N(N-1)^2/2).                       (3.3)</code></pre>
+<p>The earlier formula without sigma_N applies to odd N. For completeness, the change from x_1^a x_2^b to w^a z^b contributes sigma_N*t^(N(N-1)/2): translation of the z exponent by a has sign (-1)^(a(N-1)). The numerator-column norms contribute (1-st)^(N(N-1)/2). The remaining z-column determinant has sign (-1)^(N-1), phase omega<sup>(N(N</sup>2-1)/3), and denominator (1-t)^(N-1). Its N-th power has no sign or phase. Multiplying these factors proves (3.3), including the even-level sign.</p>
+<h2 id="blow-up-the-simultaneous-nilpotent-point">4. Blow up the simultaneous nilpotent point</h2>
+<p>Use the discrete valuation ring A=C(a,b)[[eps]], with a,b,a+b nonzero, and substitute</p>
+<pre><code>s=1-eps*a, t=1-eps*b.</code></pre>
+<p>This records a direction above (s,t)=(1,1). Its relative parameter is</p>
+<pre><code>tau=(a+b)/b-eps*a,
+f(s,t)=eps^(-1) (a+b)/b^2 * (1+O(eps)).          (4.1)</code></pre>
+<p>In particular the exceptional relative parameter remains nondegenerate. The direction unit (a+b)/b^2 is part of the normalization torsor.</p>
+<p><strong>Integral recoupling theorem.</strong> The invariant factors of C_(s,t) over A are</p>
+<pre><code>eps^(-1), multiplicity N(N-1)/2,
+1,        multiplicity N(N+1)/2.                 (4.2)</code></pre>
+<p>Thus C^(-1) is regular. The image lattice C A<sup>(N</sup>2) contains the basic target lattice A<sup>(N</sup>2), and their quotient is killed by eps and has dimension N(N-1)/2 over the residue field. This is the precise lattice change across the pole, with the vacuum retained.</p>
+<h3 id="uniform-proof">Uniform proof</h3>
+<p>Pass to the w,z evaluation bases with</p>
+<pre><code>w_i=omega^i (st)^(1/N), z_j=omega^j t^(1/N),</code></pre>
+<p>using formal roots with constant term one. Their Vandermonde changes are units in A, so invariant factors are unchanged. Formula (3.2) becomes N blocks, whose entries are</p>
+<pre><code>B_i(j,d)=product_(k=1)^d(1-omega^k w_i)
+                        /(1-omega^k z_j), 0&lt;=d&lt;N. (4.3)</code></pre>
+<p>Define r_i=[-i]_N if i!=0, and r_0=N. The numerator has one simple zero exactly when d&gt;=r_i; the denominator has one exactly when d&gt;=r_j. Therefore every entry has pole order at most one. The residue eps*B_i has nonzero columns only for 1&lt;=d&lt;r_i, and rows r_j&lt;=d. The square submatrix r_j,d in {1,…,r_i-1} is triangular with nonzero diagonal. Its rank is r_i-1.</p>
+<p>The denominator-column matrix, before multiplying by the numerator factors, has determinant valuation -(N-1): multiply its columns d=1,…,N-1 by eps and evaluate at eps=0. The row j=0 is supported only on column zero; the other rows are the same nonzero triangular residue matrix. Numerator factors add valuation N-r_i. Hence</p>
+<pre><code>val(det B_i)=1-r_i.</code></pre>
+<p>Since all poles are simple and the residue has rank r_i-1, exactly r_i-1 invariant factors have valuation -1. The remaining valuations are nonnegative, and their sum is zero, so all are zero. Summing over r_i=1,…,N proves (4.2).</p>
+<p>There is also an explicit integral frame for each block: multiply its source columns d=1,…,r_i-1 by eps. The resulting matrix has a unit determinant. This gives the lattice modification without a numerical limit or an unspecified regularization.</p>
+<h2 id="the-determinant-root-retains-the-exceptional-unit">5. The determinant root retains the exceptional unit</h2>
+<p>For odd N, h=(N-1)/2 and the preceding normalized frame can use</p>
+<pre><code>gamma^N=f^(-h).</code></pre>
+<p>For even N an explicit determinant-one cover is</p>
+<pre><code>gamma^(2N)=-f^(-(N-1)).                          (5.1)</code></pre>
+<p>Indeed sigma_N=(-1)^(N/2) in this case, so raising (5.1) to N/2 cancels the sign in (3.3). This is a genuine even-level phase.</p>
+<p>On the ramified cover eps=delta^(2N), gamma has valuation N-1. Its remaining unit retains (a+b)/b^2 through the displayed root equations. The determinant-normalized C still needs the source and target lattices of (4.2); determinant one alone does not make its entries regular in the original lattices.</p>
+<p>Generic pointed recouplings obey the categorical pentagon at all levels. Extension of their specified scalar normalizations through a whole degeneration requires compatible transported lattices and the phases above. No global path-independence is inferred merely from the determinant formula.</p>
+<p>The subsequent <a href="carry_recoupling_lattice.html">common carry-lattice theorem</a> now proves the required path independence for arbitrary finite pointed recoupling trees. Its explicit image in leaf evaluation coordinates is epsilon^(-floor(sum i_j/N)) on each tuple. A nodewise carry inequality and determinant count prove this equality uniformly. Both the basic sources and the actual sublattices are preserved by every recoupling. The original cut meridian family is recovered with all wrap sources, pivot and framing retained. This extends the two-factor lattice theorem; it does not infer a global geometric gluing or regulator norm from the determinant.</p>
+<h2 id="relevance-and-remaining-comparison">6. Relevance and remaining comparison</h2>
+<p>The cyclic vacuum now has a regular realization in the actual nilpotent Kashaev color. The simultaneous recoupling pole has an explicit two-step integral lattice, and its direction-dependent normalization unit is known. These results remove a local degeneracy restriction of the earlier generic cyclic-module arguments.</p>
+<p>They do not identify the geometric fundamental-class period with the Kashaev cut period. Equations (2.3)–(2.6) account for the tensor mark at the Borel level. The subsequent <a href="casimir_braiding_and_recoupling_lattice.html">Casimir calculation</a> extends the E-action and identifies actual crossings and local pivotal traces on these lattices. The global geometric period pairing and its regulator norm must still be matched. Choosing an unpointed isomorphism of matrix algebras cannot replace that theorem.</p>
+<p>The independent checks in <code>experiments/audit_cyclic_steinberg_lattice.py</code> verify the regular quantum-group relations, nilpotent fiber, all-level pointed factorization, determinant sign, and the block lattice frames. They are diagnostics for the uniform arguments above.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/cyclic_steinberg_lattice.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#a-regular-quantum-group-family-through-the-nilpotent-fiber">1. A regular quantum-group family through the nilpotent fiber</a><a href="#the-pointing-also-extends">2. The pointing also extends</a><a href="#pointed-borel-factorization-at-all-levels">3. Pointed Borel factorization at all levels</a><a href="#blow-up-the-simultaneous-nilpotent-point">4. Blow up the simultaneous nilpotent point</a><a href="#the-determinant-root-retains-the-exceptional-unit">5. The determinant root retains the exceptional unit</a><a href="#relevance-and-remaining-comparison">6. Relevance and remaining comparison</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

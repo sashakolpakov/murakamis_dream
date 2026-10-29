@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An exponentially tame completion of the original source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_exponentially_tame_carry_completion.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="an-exponentially-tame-completion-of-the-original-source">An exponentially tame completion of the original source</h1>
+<p>28 October 2026. The known positive-integer-carry completion has a source-preserving deformation which makes its ENTIRE overflow part arbitrarily small exponentially, in the original balanced flat norm. This is a quantitative result for every fixed signed braid or marked plat, before taking absolute estimates. It removes one specified family of source-zero completion branches; nilpotence alone had not provided such an estimate.</p>
+<p>The genuine degree-zero original word is unchanged. Its geometric critical support, singular cycle boundaries and scalar exponential estimate remain to be controlled. This theorem does not make those remaining contributions small, and it is not a volume bound.</p>
+<h2 id="keep-the-original-crossing-and-its-carry-extension">1. Keep the original crossing and its carry extension</h2>
+<p>Put d=N-1, Q=exp(2 pi i/N), x=-exp(-pi i/N). Let R_plus and R_minus=R_plus^(-1) be the ORIGINAL complete balanced crossings, including their common Cartan scalar. The independently proved <a href="actual_crossing_euler_completion_and_weight_source.html">Euler completion</a> has</p>
+<pre><code>R_tilde_plus=R_plus+Delta_plus,
+R_tilde_minus=R_minus+Delta_minus,
+Delta_minus=-R_minus Delta_plus R_minus.        (1)</code></pre>
+<p>Each Delta has total INTEGER degree change exactly +N, whereas the original crossings preserve that degree. The literal completed crossings are mutual inverses. On b heads the positive-carry ideal has bth power zero.</p>
+<p>For an arbitrary scalar z define</p>
+<pre><code>R_(sigma,z)=R_sigma+z Delta_sigma.             (2)</code></pre>
+<p>The two signs in (2) remain literal inverses: locally Delta_plus R_minus Delta_plus=0. For z=r^N, (2) is exactly</p>
+<pre><code>R_(sigma,z)=r^D R_tilde_sigma r^(-D),          (3)</code></pre>
+<p>where D is local total integer head degree. This is an algebraic identity, not an estimate in an ill-conditioned changed metric. In particular the original degree-zero R_sigma in (2) is untouched.</p>
+<p>For ANY signed word beta on b heads,</p>
+<pre><code>W_z(beta)=W(beta)+sum_(l=1)^(b-1) z^l W_l,
+W_l has degree +lN.                           (4)</code></pre>
+<p>Thus the number of carry orders is bounded by braid width, not N or word length. Its entire original pivotal first-cut matrix equals that of W for EVERY z. Closing the other heads requires a first input/output difference strictly between -N and N, which excludes every positive carry. All original full dimension, peripheral, framing and Cartan factors multiply the same matrices and remain. The identity (4) also holds as the original root meridian family; the quantitative norms below are stated at complete color.</p>
+<p>The same exact source identity holds for the original marked plat. For 2k heads, the cups have total input degree kd. The k-1 ordinary caps fix degree (k-1)d and the FULL marked pair accepts degree from 0 to 2d. Hence the allowed total degree difference lies in [-d,d], again excluding +lN. No cap or marked row is replaced here.</p>
+<h2 id="the-factorized-quantum-atom-is-retained">2. The factorized quantum atom is retained</h2>
+<p>In the relative algebra H^N=1, Hf=Q^(-1)fH, f^N=0, let e_j be its original right idempotents and write</p>
+<pre><code>f_z=f[1-(1-z)e_d].                            (5)</code></pre>
+<p>Its right multiplication is the old nilpotent shift except that its wrapped step has weight z. The two-head fusion C preserves integer degree. The original right-coefficient calculation gives</p>
+<pre><code>R_(+,z)=C right[kappa U_x(f_z) D_x(H)] C^(-1),
+U_x(t)=sum_(a=0)^d x^(-a)t^a/F_a,
+D_x(H)=sum_(k=0)^d (-1)^k Q^(k(k-1)/2)x^(-2k)e_k. (6)</code></pre>
+<p>Indeed the coefficient of f^a e_k in U_x(f_z)D_x is its old completed coefficient multiplied by 1 if a+k&lt;N and by z otherwise. There is at most one wrap. This proves (6), including the literal inverse with the original reversed factor order. No positive model or postulated tetrahedral weight is introduced.</p>
+<p>Since f_z^N=0, any anchored analytic cyclic-dilog completion with the same first N Euler coefficients acts identically on f_z. The literature norm-one functions and every norm factor can therefore be retained exactly as in the existing cyclic network theorem. The boundary idempotent in (5) is NOT discarded: damping is a controlled regularization of its carry, not a claim that the wall or its full inserted Ward complex has vanished.</p>
+<p>For 0&lt;=z&lt;=1, right multiplication by f_z is a weighted partial permutation of norm at most one in the original relative monomial basis. D_x and its inverse have norm one at complete color.</p>
+<h2 id="uniform-original-metric-exponential-bounds">3. Uniform original-metric exponential bounds</h2>
+<p>Here are bounds with an explicit constant and no unspecified factorial conditioning. For 0&lt;=a&lt;N,</p>
+<pre><code>|F_a|&lt;=2^N,
+1/|F_a|&lt;=(N/2)^a/a!,
+sum_(a=0)^d 1/|F_a|&lt;=exp(N/2).               (7)</code></pre>
+<p>To prove the middle inequality, sort any a distinct nonzero root factors |1-Q^j|. The kth smallest is at least 2k/N: its distance from a multiple of N occurs at most twice, and 2sin(pi s)&gt;=4s for 0&lt;=s&lt;=1/2. Their product is at least (2/N)^a a!. This applies to the actual initial root products.</p>
+<p>For completeness, fix a total degree T in the actual fusion (1) of the completion proof. Its block, with indices u&lt;=a, factors as</p>
+<pre><code>C_(u,a)=l_u M_(u,a) r_a,
+l_u=x^u F_(T-u),
+M_(u,a)=1/F_(a-u),
+r_a=x^(-a) F_a/F_(T-a).                       (8)</code></pre>
+<p>All indices lie in [0,d]. The triangular Toeplitz M is a finite Euler function of a unit-norm shift. Its inverse has the same coefficient magnitudes, by the finite Euler convolution. Equation (7) therefore gives</p>
+<pre><code>||C||&lt;=exp[(1+2log2)N],
+||C^(-1)||&lt;=exp[(3/2+log2)N].                 (9)</code></pre>
+<p>For example the three inverse factors in (8) have norms at most 2^N exp(N/2), exp(N/2), exp(N/2). These are bounds in the ORIGINAL balanced physical and relative monomial metrics. They do not claim that C is isometric.</p>
+<p>The Euler factor and its inverse in (6) each have norm at most exp(N/2). Put</p>
+<pre><code>A=3+3log2.</code></pre>
+<p>Equations (6)–(9) imply</p>
+<pre><code>||R_tilde_sigma||&lt;=exp(AN),
+||R_sigma||&lt;=exp(AN),
+||Delta_sigma||&lt;=2exp(AN).                    (10)</code></pre>
+<p>For the middle bound the original R is the block-diagonal degree-zero part of its completion, an orthogonal degree pinching of norm at most one. The same argument applies to the literal negative inverse. The original complete kappa has modulus one and is included throughout.</p>
+<h2 id="entire-overflow-is-arbitrarily-small-before-an-absolute-bound">4. Entire overflow is arbitrarily small before an absolute bound</h2>
+<p>Let the fixed signed word have m crossings, and choose</p>
+<pre><code>z_N=exp(-tau N), tau&gt;=0.</code></pre>
+<p>Tensoring with untouched heads changes none of the local norms. The ordinary product telescoping identity and (10) give</p>
+<pre><code>||W_(z_N)-W||
+  &lt;=2m 3^(m-1) exp[(mA-tau)N].                (11)</code></pre>
+<p>For any prescribed L&gt;0 choose tau&gt;=mA+L. The entire carry error then has norm at most 2m3^(m-1)exp(-LN), while its original closed source is EXACTLY zero by (4). This holds for both signs in the same original flat metric, without changing that source to a conjugated or exponentially conditioned boundary vector.</p>
+<p>The trace norm of the original reduced first-cut functional is at most N^(b-1), since every closed pivot is unitary. Original finite cups/caps likewise have polynomial norms at complete color. Thus (11) also bounds their absolute carry contributions by a polynomial times exp(-LN), with the external source line chi_N retained explicitly. This does not require taking absolute values of the individually enormous unregularized carry paths.</p>
+<p>The finite factor-path absolute envelope can also be controlled, without relying on cancellation inside C or its inverse. For an N<sup>2-by-N</sup>2 matrix T, its entrywise absolute matrix obeys ||abs(T)||&lt;=||T||_HS&lt;=N||T||. Right Euler monomial shifts are partial permutations, so their entrywise absolute sum still has norm at most exp(N/2). The Gaussian absolute matrix is the identity. Consequently the nonnegative matrices summing all unwrapped or wrapped local C/Euler/Gaussian/C^(-1) paths each have norm at most</p>
+<pre><code>L_N=N^2 exp(AN).</code></pre>
+<p>Each wrapped path in (5)–(6) has exactly one factor z. In a word, the sum of absolute weights of paths with at least one wrap is therefore bounded in operator norm by</p>
+<pre><code>m 2^(m-1) N^(2m) exp[(mA-tau)N].             (12)</code></pre>
+<p>The positive-carry degree restriction actually forbids those paths from the plain original closed source term by term. Estimate (12) also applies before that contraction, or after polynomially bounded inserted coupons, when the simple closed-source degree exclusion is unavailable. Thus the quantitative claim is not an inference from source cancellation or an exchange of an infinite scalar expansion. It concerns the specified finite factor expansion; an arbitrary later scalar-contour rewriting must retain its own source identity.</p>
+<p>There is also a controlled extension to the earlier coupon caveat. Insert finitely many specified matrices whose original norms are polynomial in N, including fixed products of normalized E,F,K Ward coupons. Their completed-minus-original sourced products obey the same telescoping estimate with those polynomial factors. The equality is generally NOT exact for degree-lowering coupons; the known N=2 example becomes z_N times its original nonzero carry value. It is now smaller than any desired exponential rate by increasing tau. No moving-q normal identity is inferred.</p>
+<p>In particular let Q_in,Q_out be any of the specified physical Hopf/Ward matrices, of polynomial norm, satisfying the exact actual identity R_sigma Q_in=Q_out R_sigma. The deformed factor has</p>
+<pre><code>||R_(sigma,z_N) Q_in-Q_out R_(sigma,z_N)||
+   &lt;=2 exp[(A-tau)N] (||Q_in||+||Q_out||).     (13)</code></pre>
+<p>Thus the damping can preserve the entire fixed finite collection of original Ward identities to an arbitrarily negative exponential order, even when their individual degree-lowering coupons detect the undamped carry. This is a norm statement on the original source complex. It does not identify stationary branches of an uncontrolled scalar factorization merely from those equations.</p>
+<h2 id="exact-scope-for-a-global-critical-upper-bound">5. Exact scope for a global critical upper bound</h2>
+<p>This is a source-preserving analytic completion with a verified absolute norm estimate for its entire source-zero overflow. Its matrix kernels are finite Laurent polynomials of degree O(N) on each local input/output pair, and (4) is polynomial in z of degree at most b-1. It can be inserted into the existing fixed-variable Euler/cyclic-dilog scalar networks; it introduces no hidden N-rank co-source or unknown scalar normalization.</p>
+<p>It does NOT prove that every stationary point of an arbitrary scalar factorization is physical, or that a raw scalar cycle can be replaced by its geometric contour. The idempotent (5), genuine degree-zero kernel, clock feedback and source/cycle boundaries remain. Excluding their nonphysical limiting stationary strata, or showing their aggregate cancellation, is the remaining task. In particular (11) is not an exponential estimate for W itself or for its original knot scalar. It removes the additional positive-N carry branches of this specified completion from that problem, with an arbitrarily strong bound rather than a formal source-null assertion alone.</p>
+<h2 id="reproducible-audit">6. Reproducible audit</h2>
+<pre><code>python3 experiments/audit_actual_exponentially_tame_carry_completion.py</code></pre>
+<p>The audit verifies (5)–(6), degree-gauge covariance, literal signed inverses, and complete original one-cut/marked-plat sources for several nontrivial signed words. It independently tests the fusion factorization (8), the inverse Euler Toeplitz blocks, and the claimed original-metric inequalities on complex matrices. The all-level proof is (7)–(11), not a finite inference.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_exponentially_tame_carry_completion.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#keep-the-original-crossing-and-its-carry-extension">1. Keep the original crossing and its carry extension</a><a href="#the-factorized-quantum-atom-is-retained">2. The factorized quantum atom is retained</a><a href="#uniform-original-metric-exponential-bounds">3. Uniform original-metric exponential bounds</a><a href="#entire-overflow-is-arbitrarily-small-before-an-absolute-bound">4. Entire overflow is arbitrarily small before an absolute bound</a><a href="#exact-scope-for-a-global-critical-upper-bound">5. Exact scope for a global critical upper bound</a><a href="#reproducible-audit">6. Reproducible audit</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

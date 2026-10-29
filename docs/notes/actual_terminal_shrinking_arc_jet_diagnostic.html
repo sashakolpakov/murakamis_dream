@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An exact original-source jet test for the shrinking-arc metric · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_terminal_shrinking_arc_jet_diagnostic.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="an-exact-original-source-jet-test-for-the-shrinking-arc-metric">An exact original-source jet test for the shrinking-arc metric</h1>
+<p>29 October 2026. This records an exact original prefix, its complete terminal polynomial, and high-precision evaluations of its first jet and FULL finite Cayley-arc energy. The closed scalar is proved polynomially bounded. The data show amplified jets at the tested levels. An all-N positive exponential jet rate has NOT been proved here, so this is not an asymptotic counterexample to the shrinking-arc proposal.</p>
+<p>No conclusion about the coefficient of an escaping classical branch is inferred from its character equations. The actual quantum quantities below are evaluated directly from the original finite matrices.</p>
+<h2 id="the-literal-source-prefix-and-its-exact-coefficients">1. The literal source prefix and its exact coefficients</h2>
+<p>Keep N&gt;=2,d=N-1,q=exp(pi*i/N),Q=q<sup>2,x=q</sup>d=-q^-1, F_j=(Q;Q)<em>j,kappa=q<sup>(d</sup>2/2). Use the COMPLETE original Hom module W=(V tensor V)</em>(integer degree d), the original cup</p>
+<pre><code>p_j=Nx^(j-d),</code></pre>
+<p>and the original adjacent signed generators R_12,R_23. Let R be the literal positive pair crossing on W, INCLUDING kappa, and T the <a href="actual_terminal_packet_closed_kernel.html">complete original terminal packet</a>. The prefix in this test is</p>
+<pre><code>B=R_12 R_23^(-1),</code></pre>
+<p>so the true full chronological word is [-2,1,2,2], with the same ordinary/marked whole source as in the terminal theorem. It is not a newly chosen vector at the terminal cut.</p>
+<p>The prefix state has an elementary EXACT formula:</p>
+<pre><code>R_23^(-1)p=N kappa^(-1)e_d,
+v_j=(Bp)_j=N^2 x^(j-d)/F_(d-j).                      (1)</code></pre>
+<p>For a proof of the first identity, apply the original negative crossing to the highest source p_12 tensor |0&gt;. Its negative transfer must be zero because the second input is0. The outgoing third color is then the old second color. Extracting third color0 leaves only the old cup component |d,0&gt;, of coefficient N, with crossing scalar kappa^-1. This extraction is the inverse of the COMPLETE highest Hom chart, so no arbitrary physical projection is imposed. The strict original positive coefficient R_(j,d)=kappa N x^(j-d)/F_(d-j) gives (1).</p>
+<p>Define the actual recorded-color polynomial and its coefficients by</p>
+<pre><code>f_N(t)=sum_(n=0)^d a_(N,n)t^n, a_N=Tv.               (2)</code></pre>
+<p>The complete terminal factorization gives an efficient expression with NO dense inverse:</p>
+<pre><code>T=N^-1 X R P_rev R,
+X=diag(x^n),
+P_0=1, P_j=(1-Q^j)^2P_(j-1)+Q^j,
+P_rev=diag(P_(d-j)).                                 (3)</code></pre>
+<p>Thus, explicitly,</p>
+<pre><code>a_(N,n)=x^n/N sum_(i,j) R_(n,i) P_(d-i) R_(i,j)
+                                  N^2x^(j-d)/F_(d-j). (4)</code></pre>
+<p>Equations (1)–(4) retain every original Cartan factor, finite endpoint, cup/cap normalization and coherent Green summation. They are complete source identities, not isolated paths or critical-point ansatzes. The external original scalar chi_N multiplies all of (2), its jets and the corresponding squared energy by its stated exact factors. It is not absorbed into T or fitted from a knot value.</p>
+<h2 id="the-raw-closed-value-is-polynomial-a-direct-source-proof">2. The raw closed value is polynomial: a direct source proof</h2>
+<p>The exact original terminal ROW, from the cap/Hopf calculation, is</p>
+<pre><code>sum_n T_(n,j)=(xQ)^(j-d)/N.                           (5)</code></pre>
+<p>This is equation (18) of <a href="actual_terminal_effective_cartan_kernel_and_graph.html">the effective-Cartan source calculation</a>, and is independently checked here on every input column using the original physical projectors. Combining (1),(5) and x^2Q=1 gives</p>
+<pre><code>f_N(1)=N sum_(j=0)^d 1/F_(d-j)
+      =sum_(j=0)^d conjugate(F_j)
+      =conjugate(P_d).                              (6)</code></pre>
+<p>The second identity uses F_(d-j) conjugate(F_j)=N. The whole endpoint source estimate in <a href="actual_terminal_green_capacity_bound.html">the terminal Green theorem</a> proves |P_d|&lt;=3N^2 at ALL parities and composite levels. Hence</p>
+<pre><code>|f_N(1)|&lt;=3N^2.                                     (7)</code></pre>
+<p>This proof uses coherent source identities; replacing the sum by sum |F_j| would lose the polynomial bound. For topological context, the original marked four-plat has rational slope3/2: T^2 U^-1 T<sup>-1(0,1)</sup>T=(3,2)^T in the established cap marking. The proof of (6)–(7) does not require a knot census or a framing guess.</p>
+<h2 id="exact-finite-first-jet-and-arc-energy-formulas">3. Exact finite first-jet and arc-energy formulas</h2>
+<p>The centered physical first jet is</p>
+<pre><code>D_N=2f_N&#39;(1)-d f_N(1)
+   =sum_(n=0)^d(2n-d)a_(N,n).                        (8)</code></pre>
+<p>It is a recorded PHYSICAL clock moment. It is not identified with an original meridian derivative or an ordinary-color q-jet. Such an identification would require another source/normal Ward theorem.</p>
+<p>There is a stable complete-polynomial calculation of the proposed arc energy. Define integers K_r(n) by</p>
+<pre><code>K_0(n)=1, K_1(n)=2n-d,
+(r+1)K_(r+1)(n)=(2n-d)K_r(n)-(d-r+1)K_(r-1)(n).</code></pre>
+<p>These are exactly the coefficients of (1+z)<sup>n(1-z)</sup>(d-n). Consequently the ENTIRE Cayley polynomial is</p>
+<pre><code>Q(y)=(1-iy)^d f_N((1+iy)/(1-iy))=sum_(r=0)^d c_r y^r,
+c_r=i^r sum_n K_r(n)a_(N,n), c_1=iD_N.                (9)</code></pre>
+<p>For a prescribed arc width h&gt;0 its normalized weighted energy is therefore the exact FINITE sum</p>
+<pre><code>E_h=1/2 integral_(-1)^1 |Q(hs)|^2 ds
+   =sum_(r+s even) h^(r+s)c_r conjugate(c_s)/(r+s+1). (10)</code></pre>
+<p>All degrees0,…,d and mixed terms are retained. This is not a Taylor truncation, quadrature approximation, or a sum of independently estimated jets. The original unweighted arc energy E_h^0 obeys</p>
+<pre><code>E_h/(1+h^2)^d &lt;= E_h^0 &lt;= E_h.                       (11)</code></pre>
+<p>The independently proved <a href="actual_shrinking_arc_cauchy_metric.html">sharp derivative-evaluation norm</a> also gives the exact necessary lower test</p>
+<pre><code>E_h&gt;=h^2 |D_N|^2/D_d,
+D_d=[(2r+1)(2r+3)binom(2r,r)/4^r]^2/3,
+r=floor((d-1)/2).                                   (12)</code></pre>
+<p>Thus a PROVED positive exponential rate for this actual D_N would prove excessive energy for EVERY polynomial width h=N^-A, A&gt;0. The present data do not prove that rate. They do show which exact source insertion must be controlled before using a shrinking arc.</p>
+<h3 id="the-missing-normal-current-is-an-explicit-all-input-row">The missing normal current is an explicit all-input row</h3>
+<p>Let r=(x<sup>j)_(j=0)</sup>d be a ROW and J=diag(0,…,d). The original cup eigenrelation and the symmetric physical pair crossing give rR=kappa r. Set F_row(t)=sum_n t^n T_n, so f_N(t)=F_row(t)v. Using (3) and differentiating only this recorded phase gives the following identity on EVERY complete input:</p>
+<pre><code>F_row&#39;(1)=N^-1 r J R P_rev R
+         =(kappa/N) r J P_rev R
+                 +N^-1 r[J,R]P_rev R,               (13)
+[J,R]_(c,a)=(c-a)R_(c,a).</code></pre>
+<p>The same full R and Green register occur on both sides; in particular P_rev is not commuted through a crossing. Applied to v in (1), (13) is the literal first derivative in (8). This specifies an original matrix-valued normal current before the final source pairing. It is not a new meridian Ward identity. A proposed coherent cancellation must transport the second row in (13), with its neighboring factors, or supply its compensated source; the unweighted row identity (5) does not set this current to zero. No exponential estimate for either separate term is asserted.</p>
+<h2 id="high-precision-data-explicitly-diagnostic">4. High-precision data, explicitly diagnostic</h2>
+<p>The table uses the raw original source above, natural logarithms, and the FULL weighted energy (10) with h=N^-2.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">N</th>
+<th style="text-align: right;">log abs f_N(1)/N</th>
+<th style="text-align: right;">log abs D_N/N</th>
+<th style="text-align: right;">log E_h/N</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">.259042</td>
+<td style="text-align: right;">.694506</td>
+<td style="text-align: right;">.637717</td>
+</tr>
+<tr>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">.162528</td>
+<td style="text-align: right;">.604089</td>
+<td style="text-align: right;">.740650</td>
+</tr>
+<tr>
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">.097444</td>
+<td style="text-align: right;">.543196</td>
+<td style="text-align: right;">.809301</td>
+</tr>
+<tr>
+<td style="text-align: right;">128</td>
+<td style="text-align: right;">.056861</td>
+<td style="text-align: right;">.504738</td>
+<td style="text-align: right;">.849268</td>
+</tr>
+<tr>
+<td style="text-align: right;">256</td>
+<td style="text-align: right;">.032490</td>
+<td style="text-align: right;">.481476</td>
+<td style="text-align: right;">.872016</td>
+</tr>
+</tbody>
+</table>
+<p>At N=32,64,128,256 the ratios of E_h to the first-linear-jet energy h<sup>2|D_N|</sup>2/3 are respectively1.000644,1.000278,1.000105,1.000037. This is a diagnostic comparison of the ENTIRE polynomial with its first-jet contribution, not an all-N error estimate.</p>
+<p>The raw value trend is explained by the proved bound (7). The jet and energy trends suggest amplification but are not a rigorous asymptotic lower bound. In particular no limiting rate is fitted or asserted, and no comparison with a different knot’s geometric action is used as proof. The missing statement is a source-derived bound, cancellation, or exact asymptotic for the normal insertion (8).</p>
+<h2 id="audit-and-current-limitation">5. Audit and current limitation</h2>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_terminal_shrinking_arc_jet_diagnostic.py">Audit</a> uses ORIGINAL E/F/R matrices and physical terminal projectors for nine exact finite-root source checks. It verifies (1),(3),(5),(6), all normalizers, the full first-jet coefficients, and the all-input normal-current row (13). Ten high-precision profiles through N=256 then use only the finite R matrices and the coherent first-order Green recurrence; there is no numerical inversion. The Krawtchouk recurrence computes ALL coefficients in (9), followed by the complete monomial Gram (10).</p>
+<p>At N=128, increasing working precision from228 to360 decimal digits changes the centered first jet by less than2.2e-198 relatively and the complete energies at h=N<sup>-1,N</sup>-2 by less than1.7e-198. These checks make the finite diagnostic reproducible; they do not replace an analytic exponent theorem. The closed source bound is proved, while positive exponential growth of D_N and failure of all polynomial shrinking arcs for this source remain explicitly UNPROVED.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_terminal_shrinking_arc_jet_diagnostic.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-literal-source-prefix-and-its-exact-coefficients">1. The literal source prefix and its exact coefficients</a><a href="#the-raw-closed-value-is-polynomial-a-direct-source-proof">2. The raw closed value is polynomial: a direct source proof</a><a href="#exact-finite-first-jet-and-arc-energy-formulas">3. Exact finite first-jet and arc-energy formulas</a><a href="#high-precision-data-explicitly-diagnostic">4. High-precision data, explicitly diagnostic</a><a href="#audit-and-current-limitation">5. Audit and current limitation</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

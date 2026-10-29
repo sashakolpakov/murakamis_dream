@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A source-sensitive angular homotopy: proved bounds and the remaining cycle theorem · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/selected_angular_source_homotopy.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-source-sensitive-angular-homotopy-proved-bounds-and-the-remaining-cycle-theorem">A source-sensitive angular homotopy: proved bounds and the remaining cycle theorem</h1>
+<p>28 October 2026. This note records two proved analytic facts useful for transporting a selected angular source: an exponential boundary bound, and properness of the critical set for a particular lattice-equivalent phase homotopy. It also records the exact coefficient projection which kills the dominant scalar endpoint expansion in a natural prototype contour. These facts do not yet prove a selected geometric contribution.</p>
+<p>The double sum below is now the exact transform proved in <a href="five_two_cyclotomic_transform_proof.html">the finite five-crossing calculation</a>. Its original triple source and all normalizations are retained. Numerical homotopy continuation results are separated from the proved lemmas. The subsequent selected contour argument is in <a href="selected_inner_angular_contour.html">the inner contour note</a>; the homotopy observations here alone are not that source proof.</p>
+<h2 id="the-finite-source-and-its-exact-phase">1. The finite source and its exact phase</h2>
+<p>Let Q=exp(2 pi i/N), F_n=(Q;Q)_n. The candidate at completeness is</p>
+<pre><code>Z_N=sum_(0&lt;=j&lt;=n&lt;N) W_N(n,j),
+W_N(n,j)=Q^[-n(n+2)-j(n+1)] F_n^3/[F_j F_(n-j)]. (1)</code></pre>
+<p>Put x=n/N, y=j/N and J(s)=integral_0^s log(2sin(pi r))dr. The actual factor phases give EXACTLY on this lattice</p>
+<pre><code>W_N(n,j)=|W_N(n,j)|
+   *exp{iN B(x,y)-pi i(3x+2y)},
+B(x,y)=pi(3x+2y-x^2-xy-y^2).                  (2)</code></pre>
+<p>The more immediate phase is -pi(x+x<sup>2+xy+y</sup>2). Its difference from B is 4pi x+2pi y, whose N-fold exponential is one at EVERY selected lattice point. This is a change of interpolation mark with no change of the original finite source at the endpoint.</p>
+<p>Define the actual finite homotopy of this candidate sum by</p>
+<pre><code>Z_N(t)=sum |W_N(n,j)|
+   *exp{it[N B(x,y)-pi(3x+2y)]}, 0&lt;=t&lt;=1.     (3)</code></pre>
+<p>At t=0 every summand is positive, and at t=1 (3) is exactly (1). This is a specified deformation of the entire finite source, not an inference from formal jets. It does not say that intermediate t is a knot invariant or a quantum-group parameter.</p>
+<p>On the holomorphic triangle</p>
+<pre><code>T={ (x,y): 1/2&lt;Re x&lt;1, 0&lt;Re y&lt;Re x },</code></pre>
+<p>mark L(z)=Log(2sin(pi z)) by its real value on 0&lt;z&lt;1. The sine has positive real part throughout that strip, so this mark is holomorphic. Let J be its primitive agreeing with the real J above, and put</p>
+<pre><code>A(x,y)=3J(x)-J(y)-J(x-y), S_t=A+i t B.</code></pre>
+<p>The leading phase of (3) is S_t. Its derivatives are</p>
+<pre><code>S_(t,x)=3L(x)-L(x-y)+it pi(3-2x-y),
+S_(t,y)=-L(y)+L(x-y)+it pi(2-x-2y).           (4)</code></pre>
+<p>The exact factorial interpolation supplies an actual analytic summand with these uniform leading terms; no scalar exterior Euler approximation is needed for that construction.</p>
+<h2 id="strict-real-concavity-and-the-actual-boundary-envelope">2. Strict real concavity and the actual boundary envelope</h2>
+<p>On the REAL late triangle 1/2&lt;x&lt;1, 0&lt;y&lt;x, A is strictly concave. Indeed put a=cot(pi x), b=cot(pi y), c=cot(pi(x-y)). Then</p>
+<pre><code>H_A/pi=[[3a-c,c],[c,-b-c]],
+b+c=sin(pi x)/[sin(pi y)sin(pi(x-y))]&gt;0,
+a=(bc-1)/(b+c)&lt;0.</code></pre>
+<p>The lower diagonal is negative, and</p>
+<pre><code>det H_A/pi^2=3-2bc&gt;1.                         (5)</code></pre>
+<p>Thus the real positive sum at t=0 has one nondegenerate late interior maximum. Its y-coordinate is x/2. If c_0=cos(pi x/2), the remaining equation is</p>
+<pre><code>32(1-c_0^2)c_0^3=1,</code></pre>
+<p>which has one root in the interval corresponding to 1/2&lt;x&lt;1. Numerically x=0.78786562191785…, y=x/2. The phase maximum is about 0.6124533677523. These decimals are descriptive; the uniqueness follows from strict concavity and the boundary signs.</p>
+<p>Let</p>
+<pre><code>c_*=max_(0&lt;=s&lt;=1)J(s)=J(5/6)=v_3/(2pi),</code></pre>
+<p>where v_3 is the regular ideal tetrahedron volume. The uniform root-factorial estimate gives</p>
+<pre><code>log|W_N(n,j)|=N A(n/N,j/N)+O(log N)            (6)</code></pre>
+<p>on the ENTIRE closed triangle, including its endpoint rows. The implied constant is independent of n,j,N.</p>
+<p>For x&lt;=1/2, J(x)&lt;=0 and J(s)&gt;=-c_*, hence</p>
+<pre><code>A(x,y)&lt;=2c_*.</code></pre>
+<p>On y=0 or y=x one has A=2J(x)&lt;=2c_*. On x=1, J(y)+J(1-y)=0 and A=0. Therefore the complete low-n region and every triangular boundary face have absolute exponential envelope at most</p>
+<pre><code>2c_*=v_3/pi=0.32306594721945....              (7)</code></pre>
+<p>By continuity the same statement, with arbitrarily small fixed error, holds in fixed collars of those faces. More precisely for every eta&gt;0 there is delta&gt;0 such that the portion outside</p>
+<pre><code>K_delta={1/2+delta&lt;=x&lt;=1-delta,
+                     delta&lt;=y&lt;=x-delta}</code></pre>
+<p>has absolute sum &lt;=N^C exp[N(2c_*+eta)], uniformly for ALL 0&lt;=t&lt;=1 in the exact finite homotopy (3). This includes the number of lattice terms, which is only O(N^2).</p>
+<p>This is an actual absolute source bound for (1)–(3), rather than a bound on a proposed saddle coefficient. It places all possible contributions above that envelope in a fixed real interior subtriangle. A higher selected exponent is still to be proved, so this is not used as a relative error statement.</p>
+<h2 id="the-good-gauge-critical-set-cannot-escape-on-a-fixed-real-subtriangle">3. The good-gauge critical set cannot escape on a fixed real subtriangle</h2>
+<p><strong>Properness lemma.</strong> Fix delta&gt;0 and let t range over [0,1]. All critical points of S_t with</p>
+<pre><code>1/2+delta&lt;=Re x&lt;=1-delta,
+delta&lt;=Re y&lt;=Re x-delta</code></pre>
+<p>have uniformly bounded imaginary parts. In particular a sequence of such critical points cannot escape at imaginary infinity.</p>
+<p>Here is a proof retaining the affine forcing of the chosen mark. For 0&lt;Re z&lt;1 and Im z tending to either infinity,</p>
+<pre><code>L(z)=-i pi sigma z+i pi sigma/2+o(1),
+sigma=sign(Im z),                            (8)</code></pre>
+<p>uniformly on fixed real substrips. Suppose first that Im x, Im y and Im(x-y) all diverge in modulus along a subsequence. With signs sigma_x,sigma_y,sigma_d, equation (4) becomes</p>
+<pre><code>grad S_t=-i pi M_sigma(t)(x,y)^t
+                           +i pi f_sigma(t)+o(1),
+M_sigma(t)=C_sigma+t[[2,1],[1,2]],
+C_sigma=[[3sigma_x-sigma_d,sigma_d],
+         [sigma_d,-sigma_y-sigma_d]],
+f_sigma(t)=((3sigma_x-sigma_d)/2,
+                     (sigma_d-sigma_y)/2)^t+t(3,2)^t. (9)</code></pre>
+<p>The real parts of x,y stay bounded. Any such critical sequence must therefore have a limiting t at which M is singular, and every null vector v of that limiting matrix must satisfy v^t f=0. This follows by taking the real part of (9)/(i pi) and then projecting onto v; it does not infer critical escape merely from a degenerate Hessian at infinity.</p>
+<p>The six consistent sign cones give the following determinants:</p>
+<pre><code>(+++): (t+1)(3t-5),
+(++-): 3t^2+10t-1,
+(-+-): (t-1)(3t+1),
+(+-+): (t+1)(3t-1),
+(--+): 3t^2-10t-1,
+(---): (t-1)(3t+5).</code></pre>
+<p>In the second cone the only root in [0,1] is alpha=(2sqrt(7)-5)/3; a null vector is (2alpha,1-alpha), and its forcing projection is (1-19alpha)/3, which is nonzero. In the fourth cone, t=1/3 and v=(1,-2), with v^t f=-4/3. The third and sixth cones have t=1 and v=(1,0), with v^t f=2. The other cones have no root in [0,1]. All full-cone escapes are therefore impossible.</p>
+<p>It remains to allow one of the three imaginary combinations to stay bounded. Passing to subsequences reduces to six cases. If Im x stays bounded while Im y tends to +infinity, the second component of (4), divided by i pi, is</p>
+<pre><code>(1-t)x-2t y+(2t-1)+o(1).</code></pre>
+<p>Its imaginary part forces t-&gt;0, and its real part then forces Re x-&gt;1, excluded by delta. For Im y-&gt;-infinity the corresponding expression is -(1+t)x-2t y+(1+2t), with the same contradiction.</p>
+<p>If Im y stays bounded and Im x-&gt;+infinity, the first component is -(1+t)(2x+y)+(1+3t)+o(1), whose imaginary part cannot vanish. For Im x-&gt;-infinity it is</p>
+<pre><code>(1-t)(2x+y)+(3t-1)+o(1).</code></pre>
+<p>The imaginary part forces t-&gt;1, and the real part then tends to 2, again impossible.</p>
+<p>Finally suppose Im(x-y) stays bounded and Im x,Im y diverge together. For positive infinity, the SUM of (4), divided by i pi, is</p>
+<pre><code>-(3+3t)x+(1-3t)y+(1+5t)+o(1),</code></pre>
+<p>whose imaginary part cannot vanish. For negative infinity it is</p>
+<pre><code>(3-3t)x+(-1-3t)y+(-1+5t)+o(1).</code></pre>
+<p>This forces t-&gt;1/3, where its real part is 2Re(x-y)+2/3&gt;0. These cases exhaust all escapes and prove the lemma. It does not exclude finite degeneracies, additional bounded critical points or crossings of the REAL subtriangle’s boundary; those are separate questions.</p>
+<h2 id="exact-endpoint-annihilation-in-the-natural-coefficient-contour">4. Exact endpoint annihilation in the natural coefficient contour</h2>
+<p>The inner polynomial in (1) has the exact finite identity</p>
+<pre><code>H_n(t)=sum_(j=0)^n {n choose j}_Q t^j
+      =F_n [z^n]u_N(tz)u_N(z), n&lt;N.          (10)</code></pre>
+<p>For any delta&gt;0 and n&lt;=(1-delta)N, the coefficient functional in (10) annihilates EVERY fixed number of terms of the exterior top-degree expansion of u_N(tz). Each such term has degree N-1-k in z, with k fixed, whereas the other atom has only nonnegative powers. Thus its contribution is exactly zero once N-1-k&gt;n. This is a source identity, not an estimate.</p>
+<p>Consequently that coefficient can be governed by a scalar atom sector which is beyond every fixed order of the dominant exterior expansion. Uniform pointwise dominance before contraction cannot by itself identify this selected coefficient.</p>
+<p>For the geometric algebraic critical points of the candidate, the proper-ratio equations give</p>
+<pre><code>Y^3+Y^2-1=0, X=Y/(1+Y-Y^2),
+(1-X)^3=X^3Y(1-Y),
+X Y^2+(1-X)Y-X=0.                            (11)</code></pre>
+<p>At the corresponding formal saddle of (10), its two u arguments are 1-Y and 1-X/Y. Let rho be the real root of Y<sup>3+Y</sup>2-1, so 0&lt;rho&lt;1. For either nonreal root,</p>
+<pre><code>|1-Y|^2=2+rho+rho^(-1)&gt;4.                    (12)</code></pre>
+<p>The full scalar u_N at that argument is therefore in the PROVED top-degree region of the <a href="full_euler_atom_dilog_and_endpoint_regions.html">actual atom theorem</a>. Equation (10) nevertheless kills its fixed-order top-degree expansion as just explained. A correct coefficient-contour comparison must retain that cancellation or use the marked factorial interpolation. Substitution of two bare u dilogarithm branches at (11) would not justify the selected source.</p>
+<h2 id="numerical-guide-not-a-cycle-proof">5. Numerical guide, not a cycle proof</h2>
+<p>Implicit-ODE continuation of grad S_t=0 from the real positive maximum follows a bounded nondegenerate branch to</p>
+<pre><code>x=0.86919340003238+0.09218763788516 i,
+y=0.61202243557853-0.02237715112442 i.</code></pre>
+<p>Then exp(2pi i x),exp(2pi i y) solve (11). In the Riley field t<sup>3+t</sup>2+2t+1=0 they are</p>
+<pre><code>Y=t^2+t+1, X=(t^2+2t+4)/5.</code></pre>
+<p>The sampled continuation has Re(x-y)&gt;=0.244, 1-Re x&gt;=0.1308 and |det Hess S_t|&gt;=27.09. These are numerical observations, not interval-certified bounds or a theorem excluding other critical points. The simpler lattice gauge B=pi(x-x<sup>2-xy-y</sup>2) does NOT follow this bounded branch: numerical continuation instead approaches a degenerate infinite branch. Hence a phase mark cannot be changed during a homotopy without checking it.</p>
+<p>The remaining theorem must show that the fixed finite source cycle in (3), equivalently its exact cotangent-residue contour, transports to the tracked geometric thimble with nonzero integer coefficient. Properness on fixed subtriangles, local saddle uniqueness and the real boundary envelope do not alone prove it. Possible finite degeneracies, competing bounded critical points, the outer real boundaries, and the exact Poisson/cotangent source still have to be controlled. No selected 5_2 volume theorem is claimed in this note.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_selected_angular_source_homotopy.py">Exact algebra and numerical continuation audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/selected_angular_source_homotopy_results.json">saved results</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/selected_angular_source_homotopy.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-finite-source-and-its-exact-phase">1. The finite source and its exact phase</a><a href="#strict-real-concavity-and-the-actual-boundary-envelope">2. Strict real concavity and the actual boundary envelope</a><a href="#the-good-gauge-critical-set-cannot-escape-on-a-fixed-real-subtriangle">3. The good-gauge critical set cannot escape on a fixed real subtriangle</a><a href="#exact-endpoint-annihilation-in-the-natural-coefficient-contour">4. Exact endpoint annihilation in the natural coefficient contour</a><a href="#numerical-guide-not-a-cycle-proof">5. Numerical guide, not a cycle proof</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

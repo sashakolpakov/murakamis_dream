@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual integral-color path has a global polynomial q-difference model · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/integral_color_global_q_difference_source.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-actual-integral-color-path-has-a-global-polynomial-q-difference-model">The actual integral-color path has a global polynomial q-difference model</h1>
+<p>Research proof, 27 October 2026. Along the simultaneous path q_lambda=exp(pi*i lambda/N), M=-q_lambda^N, the finite head is a genuine integral-color quotient for every parameter. Its standard q-polynomial operators patch on O(N-1), with removable q=1 values. There is also an explicit regular frame for the original balanced source and all its crossing matrices along the entire closed path.</p>
+<p>The source, cup, cap and pivot changes are recorded. The standard ordinary closure gives the existing reduced color C_N(q); the literal auxiliary pivot gives the earlier auxiliary word with its known off-root route adapter. They agree at both endpoints but are not silently identified in the interior.</p>
+<p>Use <a href="common_verma_two_wall_source.html">the common-Verma quotient</a> and <a href="complete_color_divided_ward_and_fusion.html">the divided-color/pivot calculation</a>. The independent <a href="integral_color_coherent_symbols_and_uniform_poles.html">ordinary-frame symbol audit</a> and <a href="quantum_factorial_frames_and_cyclotomic_source.html">factorial-frame analysis</a> give complementary uniform symbol and frame estimates.</p>
+<h2 id="the-simultaneous-path-stays-on-the-genuine-quotient-wall">1. The simultaneous path stays on the genuine quotient wall</h2>
+<p>Put n=N-1, Q=q^2, rho=q-q^(-1), and</p>
+<pre><code>q_lambda=exp(pi*i lambda/N),
+M_lambda=-q_lambda^N, 0&lt;=lambda&lt;=1.</code></pre>
+<p>Then</p>
+<pre><code>w=M Q^(-N)-M^(-1)=0,
+delta=1-Q^N=1-exp(2pi*i lambda).                       (1.1)</code></pre>
+<p>The tail of the genuine balanced infinite module is invariant on this wall. Its finite head is therefore a quotient for the whole path. The truncated Hopf defect -delta<em>w</em>E_(n,n) vanishes identically; there is no generic-M finite Hopf premise.</p>
+<p>The endpoints are (q,M)=(1,-1) and (q_N,1). Both also have delta=0. The two wall parameters have not been identified: this path lies in w=0 and meets the root wall at its endpoints. Its logarithmic derivative is the integral-color direction</p>
+<pre><code>dLog M=N dLog q,</code></pre>
+<p>not the fixed-meridian q-normal derivative.</p>
+<h2 id="the-integral-color-and-the-two-polynomial-frames">2. The integral color and the two polynomial frames</h2>
+<p>In the ordinary F-shift basis v_j, 0&lt;=j&lt;=n, the genuine color is</p>
+<pre><code>K v_j=q^(n-2j)v_j,
+F v_j=v_(j+1),
+E v_j=[j]_q[N-j]_q v_(j-1),                           (2.1)</code></pre>
+<p>with both boundary arrows zero and [r]_q=(q<sup>r-q</sup>(-r))/rho. Its matrices are Laurent regular at q=1 with [r]_1=r.</p>
+<p>The user’s ordinary-falling polynomial basis is</p>
+<pre><code>e_j=v_j/(n)_j, (n)_j=n!/(n-j)!.</code></pre>
+<p>It gives exactly</p>
+<pre><code>F e_j=(n-j)e_(j+1),
+E e_j=[j]_q[N-j]_q/(N-j)e_(j-1).                      (2.2)</code></pre>
+<p>On the polynomial space H_N=H^0(P1,O(n)), e_j=x^j, this is</p>
+<pre><code>F=x(n-J), E=x^(-1)[J]_q[N-J]_q/(N-J),
+K=q^(n-2J), J=x partial_x.                            (2.3)</code></pre>
+<p>The inverse N-J is legitimate on this space: its eigenvalues are 1,…,N. Equivalently it is the finite polynomial operation integral_0^1 t^(N-1)f(x/t)dt. Thus (2.3) is an exact operator on H_N, including q=1. It is not claimed to be a scalar first-order q-difference expression on unrestricted functions.</p>
+<p>For a simpler q-difference realization, use symmetric q-falling factorials</p>
+<pre><code>[n]_q^(fall,j)=product_(r=0)^(j-1)[n-r]_q,
+f_j=v_j/[n]_q^(fall,j).</code></pre>
+<p>Then</p>
+<pre><code>E f_j=[j]_q f_(j-1),
+F f_j=[n-j]_q f_(j+1).                                (2.4)</code></pre>
+<p>With the marked shift T_q f(x)=f(qx), these have the exact forms</p>
+<pre><code>E_q=(T_q-T_(q^-1))/(rho x),
+F_q=x(q^n T_(q^-1)-q^(-n)T_q)/rho,
+K_q=q^n T_(q^-2).                                    (2.5)</code></pre>
+<p>The apparent x pole cancels on polynomials; the highest coefficient of F_q is zero, so all three preserve degree &lt;=n. Their q=1 values are partial_x, x(n-J), I, respectively.</p>
+<p>Along the entire path, for 1&lt;=r&lt;N,</p>
+<pre><code>[r]_(q_lambda)=sin(pi lambda r/N)/sin(pi lambda/N)&gt;0,</code></pre>
+<p>with value r at lambda=0. None of the q-falling frame factors vanishes or has a pole. The ordinary-falling frame differs by</p>
+<pre><code>e_j=R_j f_j,
+R_j=[n]_q^(fall,j)/(n)_j.                             (2.6)</code></pre>
+<p>These are units on the fixed-N path. This is not a uniform-in-N norm assertion; the factorial-frame note records its possible exponential conditioning.</p>
+<h2 id="the-q-difference-operators-patch-globally-on-on">3. The q-difference operators patch globally on O(n)</h2>
+<p>The south section of a north polynomial is</p>
+<pre><code>(J_n f)(y)=y^n f(1/y).</code></pre>
+<p>Direct substitution into (2.5) gives</p>
+<pre><code>J_n E_q J_n^(-1)=
+    y(q^n T_(q^-1)-q^(-n)T_q)/rho,
+J_n F_q J_n^(-1)=(T_q-T_(q^-1))/(rho y),
+J_n K_q J_n^(-1)=q^(-n)T_(q^2).                       (3.1)</code></pre>
+<p>Thus E and F interchange and K inverts, in the same line-bundle transition that defines O(n). The q=1 limits give its usual global sl2 vector-field action. This is an exact globally patched q-difference realization, not a substitution into a local symbol.</p>
+<p>The frame R in (2.6) also patches by J_n R J_n^(-1); it need not have a scalar first-order difference expression. For q!=1 on the given path, spectral interpolation in T_q expresses it and its inverse as finite q-difference matrices. Coefficients of that interpolation can have removable q=1 singularities even though the operators themselves are regular.</p>
+<p>The reciprocal polynomial chart J_n is not automatically the previously fixed balanced physical Weyl/source matrix. Transporting a specified such matrix C into the h frame below gives D^(-1)CD, with all its original phases and source factors. The chart identities (3.1) do not authorize replacing that transported matrix by J_n.</p>
+<h2 id="a-regular-frame-keeps-the-actual-balanced-pointing">4. A regular frame keeps the actual balanced pointing</h2>
+<p>Let w_j be the original balanced common-Verma basis. Its exact relation to (2.1) is</p>
+<pre><code>v_j=(Q;Q)_j w_j,
+(Q;Q)_j=product_(r=1)^j(1-Q^r).                       (4.1)</code></pre>
+<p>For example along M=-q^N the balanced Ecal arrow is -q^(-j)rho[N-j]_q, and multiplication by 1-Q<sup>j=-q</sup>j rho[j]_q proves (2.1), with E=Ecal/rho^2. The factors in (4.1) have zeros at q=1. Treating (4.1) as an invertible integral frame there would lose source information.</p>
+<p>The correct regular balanced-to-polynomial frame is instead</p>
+<pre><code>h_j=D_j w_j,
+D_j=(-1)^j q^(j(j+1)/2)/{n choose j}_q
+   =(Q;Q)_j/[rho^j [n]_q^(fall,j)],                  (4.2)</code></pre>
+<p>where the binomial is the symmetric q-binomial. Its ratio is</p>
+<pre><code>D_j/D_(j-1)=-q^j [j]_q/[N-j]_q.</code></pre>
+<p>Here D changes basis vectors, so its inverse conjugates old coordinate matrices. The coordinate gauge in the <a href="integral_color_source_detour_audit.html">independent source-detour audit</a> is exactly D^(-1), expressed using the ordinary Q-binomial.</p>
+<p>All factors in (4.2) are nonzero analytic functions on the closed path. Their endpoint values are</p>
+<pre><code>D_j(0)=(-1)^j/binom(n,j),
+D_j(1)=(-1)^j q_N^(j(j+1)/2).                         (4.3)</code></pre>
+<p>For the second equation use [N-r]<em>(q_N)=[r]</em>(q_N), so {N-1 choose j}_(q_N)=1. In particular the root frame is a unitary diagonal phase in the original Euclidean basis.</p>
+<p>In this regular frame the actual Gauss matrices are precisely</p>
+<pre><code>Ecal= rho E_q, F= rho F_q, K=K_q.                     (4.4)</code></pre>
+<p>Both first operators are regular and vanish at q=1. The original ordinary Uq generators are E=rho^(-1)E_q,F=rho F_q on this frame; their individual lattice need not be regular at q=1. The ordinary integral Uq lattice of (2.4) is regular there. These two lattice statements must remain distinct.</p>
+<p>Their braiding matrices agree nonetheless for q!=1: the common Hopf rescaling of E and F cancels in every E^k tensor F^k term of the actual universal finite-color crossing, and K and the Cartan weights stay unchanged. Equivalently, the change from f_j to h_j divides by rho^j on every leg, which commutes with each crossing by exact total-index conservation. The finite crossing and its inverse therefore extend regularly to the usual flip at q=1 in this model. No divergent ordinary generator is inserted into a limit without this cancellation.</p>
+<h3 id="source-dual-source-cup-and-cap">4.1 Source, dual source, cup and cap</h3>
+<p>The prescribed balanced cut has psi_j=1 and phi_j=1/N. In the regular frame (4.2) it is exactly</p>
+<pre><code>psi_h,j=D_j^(-1), phi_h,j=D_j/N,
+Gamma_h,ij=D_j/(N D_i), phi_h psi_h=1.                (4.5)</code></pre>
+<p>These are regular at both endpoints. They are not silently replaced by a constant vector and average covector. Their norms need not be bounded uniformly in N; already D_j(0) contains ordinary binomial factors.</p>
+<p>The dual basis is transformed inversely. Consequently the exact cup sum_j w_j tensor w_j^* equals sum_j h_j tensor h_j^*. For either diagonal pivot g, the right cap has entries</p>
+<pre><code>ev_g(h_j tensor h_k^*)=delta_(jk) g_j,</code></pre>
+<p>so the basis change preserves the cup/cap pair without a missing determinant or endpoint multiplier. All source and co-source normal derivatives follow by differentiating (4.2)–(4.5).</p>
+<p>For an actual one-cut closed braid array, total integer index conservation makes its remaining cut matrix diagonal, even before using a Hopf or Schur argument. Therefore its exact scalar cut is</p>
+<pre><code>phi_h C psi_h=(1/N)Tr C.                             (4.6)</code></pre>
+<p>This is why the same actual scalar is represented by the fixed compact coherent trace period in the h frame. Equality (4.6) does not identify all offdiagonal source operators or erase their derivatives before the closed network has been formed.</p>
+<h2 id="the-ordinary-and-literal-auxiliary-closures-stay-distinguished">5. The ordinary and literal auxiliary closures stay distinguished</h2>
+<p>The genuine ordinary pivotal closure uses K. With its original ordinary zero-framing twist and finite-color normalization, (2.5) gives exactly the existing reduced color C_N(q). For generic q the one-cut ordinary operator is scalar by actual Hopf naturality and irreducibility; the resulting Laurent period extends to the whole path, including both endpoints. Its values are</p>
+<pre><code>C_N(1)=1, C_N(q_N)=Kashaev_N.                         (5.1)</code></pre>
+<p>The root auxiliary construction uses K^(1-N). Away from q_N it differs from the ordinary cap by the diagonal K^(-N), with entry</p>
+<pre><code>q^[-Nn+2Nj].</code></pre>
+<p>Its associated twist also differs. The exact zero-framed b-strand route adapter is the previously proved factor</p>
+<pre><code>q^[Nn(ell-b+1)+2N sum_(closed legs)j_a],               (5.2)</code></pre>
+<p>where ell is writhe. It equals one at both q=1 and q=q_N because ell=b-1 modulo two for a knot. Its interior values and derivatives are generally state-dependent and are retained.</p>
+<p>Thus (4.2) is a genuine unit frame for the same balanced auxiliary pointing along the path. Identifying its literal-pivot scalar with C_N(q) in the interior requires (5.2), not a basis argument. For either specified closure, the new model preserves the entire word and original scalar. Neither the full root modified-dimension line nor an ordinary quantum dimension is declared an off-root extension of the other by this construction.</p>
+<h2 id="exact-finite-coherent-symbols-and-uniform-endpoint-behavior">6. Exact finite coherent symbols and uniform endpoint behavior</h2>
+<p>Use the fixed compact coherent kernel of dimension N, variables v,z, and T=vz/(1+vz). Put</p>
+<pre><code>B_+=1+(q-1)T, B_-=1+(q^(-1)-1)T.</code></pre>
+<p>Binomial summation of the actual matrices (4.4) gives exactly</p>
+<pre><code>sigma_(Ecal)=[B_+^n-B_-^n]/v,
+sigma_F=v[q^n B_-^n-q^(-n)B_+^n],
+sigma_K=q^n[1+(q^(-2)-1)T]^n.                        (6.1)</code></pre>
+<p>The first numerator vanishes at T=0 and the bracket in the second vanishes at T=1. Thus these are smooth entire-sphere symbols in the actual coherent charts, including both poles.</p>
+<p>For s=2pi*i lambda, q=exp(s/(2N)), their limits are</p>
+<pre><code>e_s=2sinh(sT/2)/v,
+f_s=2v sinh(s(1-T)/2),
+k_s=exp[s(1/2-T)].                                   (6.2)</code></pre>
+<p>Convergence is O(1/N) in every fixed smooth derivative norm on the real sphere, uniformly for lambda in [0,1]. To prove it, expand n Log[1+(exp(epsilon*s/(2N))-1)T], epsilon=+1 or -1. Its difference from epsilon*sT/2 and every fixed derivative is O(1/N), uniformly on the compact (lambda,T) rectangle. The endpoint zero factors may be divided using the exact integral identities g(T)/T=integral_0^1 g’(uT)du and g(T)/(1-T)=-integral_0^1 g’(1-u(1-T))du. These remove the apparent v or south-chart pole with the same derivative bound. The kernel charts then give the stated whole- sphere estimate. No such estimate is asserted for an arbitrary growing full braid matrix.</p>
+<p>These principal functions satisfy identically</p>
+<pre><code>e_s f_s+k_s+k_s^(-1)=2cosh(s/2).                      (6.3)</code></pre>
+<p>They describe the same meridian conjugacy class as the simultaneous path. At lambda=0 their multiplicative Gauss matrix is I. Its first lambda derivative retains the nonzero ordinary sl2 moment map; no dimension-N integral representation has disappeared. At lambda=1 the trace is -2, with the marked central sign of the original complete source.</p>
+<p>The plus eigenflag has the particularly simple exact principal form</p>
+<pre><code>h_+(v,T)=exp[s(1-T)/2]v.                              (6.4)</code></pre>
+<p>It is a clock-preserving canonical shear. For imaginary s and the real compact sphere its multiplier has modulus one, so the shear sends the very same sphere to itself. The root factorial-frame note records its quadratic generator, the inverse eigenflag and the two negative inverse-flag bubbles. This smoother plus flag does not permit replacing the actual inverse-flag source or its endpoint current by a different marking.</p>
+<p>The uniform estimates above concern the generator symbols only. The actual selected period has the exact nearby-root ladder C_N(q_(N+k))=C_k(q_(N+k)); in particular it equals one at lambda=N/(N+1). The independent source-detour audit proves its dense ordinary-color bounds and the resulting necessary endpoint nonuniformity. Those statements coexist with the fixed-N analytic source and uniform generator limits; no uniform full-word saddle amplitude is being inferred.</p>
+<h2 id="exact-gain-and-remaining-scope">7. Exact gain and remaining scope</h2>
+<p>The actual integral-color family now has a whole fixed-space q-difference realization with explicit global clutch. The balanced pointing, cup and both cap choices can be transported through a unit frame on the closed simultaneous path. The only singular factorial change is displayed in (4.1), and its regular network cancellation is proved rather than assumed. The scalar compact trace remains the actual one for every specified closure.</p>
+<p>This does not remove the off-root pivot adapter, compare the full root-normal source with a fixed-meridian q-jet, or bound the unknown full-word norm in (6.1). Nor does it construct a global geometric A-branch through the whole path or identify its selected regulator phase. It supplies an actual globally patched family on which those further comparisons can be posed with all source factors visible.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_integral_color_global_q_difference_source.py">exact audit</a> checks the bases, matrices, global patch, true source/cup, actual crossing cancellation, both walls, and endpoint symbols. The <a href="integral_color_source_detour_audit.html">independent proof audit</a> also verifies the integral quotient, source frames, pivotal distinction and exact resonance sampling constraints.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/integral_color_global_q_difference_source.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-simultaneous-path-stays-on-the-genuine-quotient-wall">1. The simultaneous path stays on the genuine quotient wall</a><a href="#the-integral-color-and-the-two-polynomial-frames">2. The integral color and the two polynomial frames</a><a href="#the-q-difference-operators-patch-globally-on-on">3. The q-difference operators patch globally on O(n)</a><a href="#a-regular-frame-keeps-the-actual-balanced-pointing">4. A regular frame keeps the actual balanced pointing</a><a href="#the-ordinary-and-literal-auxiliary-closures-stay-distinguished">5. The ordinary and literal auxiliary closures stay distinguished</a><a href="#exact-finite-coherent-symbols-and-uniform-endpoint-behavior">6. Exact finite coherent symbols and uniform endpoint behavior</a><a href="#exact-gain-and-remaining-scope">7. Exact gain and remaining scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

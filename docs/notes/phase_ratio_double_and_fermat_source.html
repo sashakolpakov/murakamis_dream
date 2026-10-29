@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A pointed Hermitian reflection for the actual cyclic source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/phase_ratio_double_and_fermat_source.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-pointed-hermitian-reflection-for-the-actual-cyclic-source">A pointed Hermitian reflection for the actual cyclic source</h1>
+<p>29 October 2026. The phase-ratio double has a genuine source-compatible realization: inverse conjugation of the quad coordinates is implemented by an explicit ANTIUNITARY on the cyclic Fermat source, together with a face swap. Its full normalizer is retained, and the construction is valid at arbitrary radii. It agrees exactly with the pointed Fourier quad rotations. It also extends to inhomogeneous cyclic packets, with their source currents transformed rather than removed.</p>
+<p>The same diagonal reflection fixes the actual fused arbitrary-plat corner functional. Thus a whole original squared scalar has an exact reflected doubled-word presentation. This does not yet identify its contraction with a positive angle partition: the local joint spectral source and all original sewing/co-source factors remain explicit.</p>
+<h2 id="conventions-and-a-radius-independent-antiinvolution">1. Conventions and a radius-independent antiinvolution</h2>
+<p>Let N&gt;=2, q=exp(pi i/N), Q=q^2. Use a sign sigma=+1 or -1 and set</p>
+<pre><code>q_s=q^sigma, Q_s=Q^sigma,
+D_s e_a=Q_s^a e_a, S e_a=e_(a+1 modN),
+X=u D_s, Y=v S, B=I-X-Y.</code></pre>
+<p>The literal cap-source convention has sigma=+1. The cyclic quad convention with Z_i Z_(i+1)=Q Z_(i+1)Z_i has sigma=-1. Define</p>
+<pre><code>H_s(u,v)=(u&#39;,v&#39;)=(1/baru, q_s^(-1)barv/baru),
+A_(s,a)=(-q_s)^a Q_s^[a(a+1)/2],
+J_s=diag(A_(s,a)^(-1)), Theta_s=J_s conjugation.              (1)</code></pre>
+<p>All powers are ordinary integer expressions; no division by two modulo N is used. Since A_(s,N)=1, the chirp is cyclic, including its endpoint. It is unitary, Theta_s^2=I and H_s^2=id. If u<sup>N+v</sup>N=1, then u’<sup>N+v’</sup>N=1. The central shape U=u^N is sent to 1/barU, which preserves the upper half-plane.</p>
+<p>The exact matrix identity, with NO Fermat hypothesis, is</p>
+<pre><code>B(u&#39;,v&#39;) J_s=-J_s barX^(-1) barB(u,v).         (2)</code></pre>
+<p>Indeed J_s S J_s<sup>(-1)=-q_s</sup>(-1)D_s^(-1)S; multiply barB on the left by -barX^(-1) and use this equality. The extra invertible left factor in (2) is not silently replaced by a similarity.</p>
+<h2 id="actual-right-and-left-source-frames-including-their-normalizers">2. Actual right and left source frames, including their normalizers</h2>
+<p>Use the literal normalized frames from the cap/source construction, with the indicated root orientation:</p>
+<pre><code>F_a(u)=product_(r=1)^a(1-u Q_s^r),
+P_a(u,v)=v^a/F_a(u),
+L_a(u,v)=v^(-a)product_(r=0)^(a-1)(1-u Q_s^r),
+P_0=L_0=1.                                  (3)</code></pre>
+<p>They are the actual P,L of the cap theorem when sigma=+1. Whenever these expressions are defined, finite-product reflection gives</p>
+<pre><code>P(u&#39;,v&#39;)=J_s barP(u,v),
+L(u&#39;,v&#39;)=barL(u,v) D_s^(-1)J_s^(-1).          (4)</code></pre>
+<p>For the right formula factor each denominator as 1-baru<sup>(-1)Q_s</sup>r=-baru<sup>(-1)Q_s</sup>r(1-baru Q_s^(-r)). Together with v’=q_s^(-1)barv/baru this gives precisely the chirp in (1). The same calculation starting at r=0 gives the COMPULSORY clock D_s^(-1) in the left formula.</p>
+<p>Both transformations preserve the Euclidean norm in this cyclic frame EXACTLY, at arbitrary radii. The cancellation uses the full Fermat/shift normalizer v’. It is not a small-root-log argument. For example |F_a(u)/F_a(1/baru)|=|u|^a can be exponentially large when a is proportional to N, but the corresponding v-power cancels it in (4). No assertion that a geometric clock radius is 1+O(1/N) is needed.</p>
+<p>For an arbitrary retained operator C, the paired scalar identity is</p>
+<pre><code>bar[L C P]=L(u&#39;,v&#39;) D_s
+                [J_s barC J_s^(-1)]P(u&#39;,v&#39;).                (5)</code></pre>
+<p>Thus the actual co-source carries a unitary clock insertion. It is not merely the unshifted natural left source at the reflected point. Every external scalar Gamma is conjugated and retained. In particular Theta_s(Gamma P)=barGamma P’; it is not reset to one.</p>
+<p>There is also an exact check on polynomial normalization. Let Delta=1-u<sup>N-v</sup>N and Ptilde=F_d(u)P, d=N-1. Then</p>
+<pre><code>B Ptilde=Delta e_0,
+Delta&#39;=-barDelta/baru^N,
+F_d(u&#39;)=baru^(-d)barF_d(u),
+Ptilde(u&#39;,v&#39;)=baru^(-d)J_s barPtilde(u,v).     (6)</code></pre>
+<p>If the actual column is expressed in the polynomial Ptilde frame, the power baru^d must therefore stay in its transformed Gamma. It can be exponential; (4) does not license deleting it. The same warning applies to the actual cap residue constants and Jacobians. Those are retained by ordinary coordinate substitution. At a literal corner Theta_s e_d=-q_s e_d and Theta_s e_0=e_0, so its pointed normalization changes only by the specified unit phase, not an unknown central normalizer.</p>
+<h2 id="pointed-quad-rotations-compose-coherently">3. Pointed quad rotations compose coherently</h2>
+<p>Use the original normalized Fourier matrix F_s and quad adapter</p>
+<pre><code>(F_s)_(k,a)=Q_s^(ka)/sqrtN, W_s=F_s A_s,
+rho_s(u,v)=(q_s v/u,1/u).</code></pre>
+<p>Then EXACTLY</p>
+<pre><code>Theta_s W_s Theta_s=W_s^(-1),
+H_s rho_s H_s=rho_s^(-1).                    (7)</code></pre>
+<p>The matrix proof is J_s barW_s barJ_s =A_s<sup>(-1)F_s</sup>(-1)=W_s^(-1). The parameter proof is direct substitution. No projective phase or central deck was discarded. Using q instead of q_s^(-1) in (1) with sigma=+1 would insert a root-of-unity deck; keeping the orientation makes (7) exact.</p>
+<p>If W_s P(p)=c(p)P(rho_s p) is the actual pointed source rotation, P_0=1 fixes c. Equations (4),(7) force</p>
+<pre><code>c(H_s rho_s p) barc(p)=1.                    (8)</code></pre>
+<p>Thus the exact source Gamma of a reflected pointed rotation is its reciprocal conjugate, including its nontrivial modulus. This is a genuine normalization identity, not a new unit-norm choice. The left-source clock in (4), and the corresponding clock in (5), must still be used on sewn output faces.</p>
+<h2 id="full-currents-survive-the-reflection">4. Full currents survive the reflection</h2>
+<p>For ANY inhomogeneous packet B f=eta, (2) gives</p>
+<pre><code>B&#39; Theta_s f=-Theta_s(X^(-1)eta).              (9)</code></pre>
+<p>When B is invertible this is also an exact resolvent identity; meromorphic continuation keeps its poles and residues. It neither sets Delta=0 nor deletes a current proportional to Delta. Thus a local source decomposition into a balanced residue and a current is reflected LINEARLY with both parts retained.</p>
+<p>For example the complete Newton packet f_j=B_N(u,vQ^j) obeys (I-uR+vD_Q R)f=(1-u<sup>N+v</sup>N)1, with (Rf)<em>j=f</em>(j+1). The two terms uR and -vD_Q R form a finite Weyl pair, of central powers u^N and -v^N. A fixed unitary Weyl change puts it in the form of (9). Its source must undergo the SAME change and the factor X^(-1) in (9); no claim that the reflected packet is the same standard B_N with its source reset is made. In particular this is not a proof that the inhomogeneous beta current vanishes. The full-Psi split and its marked scalar normalizer remain part of the original packet.</p>
+<h2 id="the-inverse-reflected-triad-and-its-positive-joint-basis">5. The inverse-reflected triad and its positive joint basis</h2>
+<p>Put</p>
+<pre><code>Z0=X, Z1=Y^(-1), Z2=-X^(-1)Y.</code></pre>
+<p>Their cyclic commutation parameter is Q_s^(-1), and their ordered product is -Q_s^(-1). At the reflected point,</p>
+<pre><code>(Z0&#39;,Z1&#39;,Z2&#39;)=
+   (J_s barZ0^(-1)J_s^(-1),
+    J_s barZ2^(-1)J_s^(-1),
+    J_s barZ1^(-1)J_s^(-1)).                 (10)</code></pre>
+<p>Thus inverse conjugation comes with the 1&lt;-&gt;2 face swap. The unitary map I tensor J_s takes P tensor barP to P tensor P’ and takes the phase-ratio observables Z_i tensor barZ_i^(-1) to Z_i tensor Z’_(tau(i)), tau=(1 2). This is a source-compatible interpretation of the inverse factor, not arbitrary inversion of the original bra.</p>
+<p>For sigma=-1 the phase-ratio observables commute, are unitary even for complex u,v, and have ordered product Q. A joint orthonormal basis is</p>
+<pre><code>|s,r&gt;=N^(-1/2)sum_a Q^(ra)|a,s-a moduloN&gt;.</code></pre>
+<p>Its first two eigenvalues are (u/baru)Q^(-s) and (barv/v)Q^r; the third is Q divided by their product. This gives a genuine positive joint spectral norm. It is not yet a positive angle state or its geometric edge projector.</p>
+<p>Indeed the ORIGINAL conjugate source in this basis has coefficients</p>
+<pre><code>c_(s,r)=N^(-1/2)sum_a Q^(-ra)P_a barP_(s-a).                 (11)</code></pre>
+<p>The two source equations, BEFORE any positivity or projection, imply on the Fermat locus</p>
+<pre><code>c_(s,r+1)=[1-(v/barv)Q^(-r)]
+          /[u-(v/barv)baru Q^(s-r)] c_(s,r).                (12)</code></pre>
+<p>On the open family with Im(u^N)&gt;0 and principal root marks u=(u<sup>N)</sup>(1/N),v=(1-u<sup>N)</sup>(1/N), every factor in (12) is nonzero. To check it, write alpha=Arg(u<sup>N)&gt;0,beta=Arg(v</sup>N)&lt;0. The third positive central quad angle gives -pi&lt;beta-alpha&lt;0. Neither beta nor beta-alpha is a multiple of pi. For each fixed s the Fourier transform in (11) is not identically zero, since all P_a barP_(s-a) are nonzero. Equation (12) therefore proves that EVERY c_(s,r) is nonzero at every N.</p>
+<p>Here u^N is a Frobenius center, not a claim about a fixed semiclassical clock radius. No tame geometric-contour estimate is inferred from choosing this center independent of N.</p>
+<p>In particular the positive half-phase square roots do not automatically select one affine tetrahedral charge. For this open family write alpha_i for the three positive CENTRAL quad arguments, sum alpha_i=pi, and let</p>
+<pre><code>r0=-s modN, r1=r, r2=s-r modN, 0&lt;=ri&lt;N.</code></pre>
+<p>The inverse-ratio upper-half-plane square roots have angles beta_i=pi-(alpha_i+pi ri)/N. Their product is q^d on the sum ri=0 or2N sectors and q^(-1) on the sum ri=N sector. Both occur with NONZERO source coefficients. Only the sum2N sector has sum beta_i=pi*d/N; the sum0 sector has sum 3pi-pi/N. Extra physical windows or source constraints are therefore indispensable. They cannot be inferred from the commuting phase-ratio algebra alone.</p>
+<p>A proposed local Cauchy norm supported ONLY on the desired angle sector is not continuous on this whole cyclic source: a discarded Bell basis vector has zero proposed norm but a nonzero source pairing in (11). This rules out that unqualified ALL-EXTERIOR local norm substitution, not a global comparison after the actual co-source or compensated length metric is used.</p>
+<h2 id="the-whole-original-pointed-scalar-has-a-reflected-double">6. The whole original pointed scalar has a reflected double</h2>
+<p>Use the already proved arbitrary-plat fused source</p>
+<pre><code>K_N=chi_N N^(1-k) &lt;e_out|B_beta|e_in&gt;.</code></pre>
+<p>Each input pair is (d,0); each ordinary output pair is (0,d), and the marked output pair is (d,0). On EVERY such pair the eigenvalue of J_s tensor J_s is J_(s,d)J_(s,0)=-q_s. Consequently the input and output corner eigenvalues of J_tot=J_s^(tensor2k) are equal. Hence EXACTLY</p>
+<pre><code>barK_N=barChi_N N^(1-k)
+   &lt;e_out|J_tot barB_beta J_tot^(-1)|e_in&gt;.                  (13)</code></pre>
+<p>This proves a source-exact reflected doubled-word presentation of |K_N|^2, with no normalization by an unknown period. All kernel currents, original Cartan factors and external lines are conjugated and retained. On every standard cyclic quad chart, (10) identifies the inverse-reflected variables; (7) makes the pointed S3 changes compatible.</p>
+<p>It does not prove that every global cyclic/cluster adapter is unitary, or that all geometric edge isotypic constraints have been selected by this source. If an ordered edge word is reflected with reversed face order, its character transforms chi_e to 1/barchi_e. Existing UNIT characters, including the desired full-clock character, are preserved; a free character has not thereby been chosen. Nor may an exponentially conditioned physical-to-cyclic frame be discarded. The unitarity assertions here are in the specified cyclic flat metric, with the actual source/co-source transformed together.</p>
+<p>Thus the reflection is a constructive norm-compatible piece of a special-inner-product comparison. A positive angle majorant still requires the actual geometric tensor/wiring map and its controlled current or defect estimate.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_phase_ratio_fermat_source.py">Audit</a>: exact reflected generators and sources, arbitrary-radius and inhomogeneous normalizers, pointed dihedral identities, phase-ratio spectra/source recurrence, and original complete signed plat sources.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/phase_ratio_double_and_fermat_source.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#conventions-and-a-radius-independent-antiinvolution">1. Conventions and a radius-independent antiinvolution</a><a href="#actual-right-and-left-source-frames-including-their-normalizers">2. Actual right and left source frames, including their normalizers</a><a href="#pointed-quad-rotations-compose-coherently">3. Pointed quad rotations compose coherently</a><a href="#full-currents-survive-the-reflection">4. Full currents survive the reflection</a><a href="#the-inverse-reflected-triad-and-its-positive-joint-basis">5. The inverse-reflected triad and its positive joint basis</a><a href="#the-whole-original-pointed-scalar-has-a-reflected-double">6. The whole original pointed scalar has a reflected double</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

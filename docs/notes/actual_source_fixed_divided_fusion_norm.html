@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A source-fixed quantitative norm for the actual divided fusion current · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_source_fixed_divided_fusion_norm.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-source-fixed-quantitative-norm-for-the-actual-divided-fusion-current">A source-fixed quantitative norm for the actual divided fusion current</h1>
+<p>29 October 2026. The TWO-PHYSICAL-HEAD factorial-fusion defect has a polylogarithmic norm and inverse norm in a specified source-fixing factorial metric. This controls the complete unipotent current, not just its homogeneous bulk, and is an operator estimate before any exterior is paired or phases discarded.</p>
+<p>The metric is the physical gauge L^(1/2), distinct from the LENGTH frame L^(1/4) in the normalized binary blocks. Merging larger physical blocks is a separate issue: its degree-N current has a genuine positive angle norm. No polynomial bound for arbitrary block fusion or a sharp whole-knot energy estimate is inferred.</p>
+<h2 id="the-unchanged-original-current-and-factorial-identity">1. The unchanged original current and factorial identity</h2>
+<p>Use N&gt;=2, q=exp(pi*i/N), Q=q^2, d=N-1 and the ORIGINAL complete balanced head. Put</p>
+<pre><code>Ecal|a&gt;=(Q^-a-1)|a-1&gt;,
+K|a&gt;=x Q^-a|a&gt;, x=-q^-1,
+F_a=(Q;Q)_a, s_a=|F_a|,
+p_N(X)=sum_(a=0)^d X^a/F_a.</code></pre>
+<p>Let A=Ecal_1 K_2, B=Ecal_2 and C=A+B. The genuine generic Weyl lift, divided BEFORE root specialization, gives the actual operator</p>
+<pre><code>J=[C^N/(1-Q^N)]_root
+  =sum_(a=1)^d N B^(N-a) A^a/[F_a F_(N-a)].               (1)</code></pre>
+<p>This is the already proved <a href="divided_ward_factorial_fusion.html">divided-Ward fusion</a>, including its normal direction and even-level signs. One has J^2=0 and [J,C]=0. Its full finite factorial identity is EXACTLY</p>
+<pre><code>p_N(-tB)p_N(-tA)=Theta(t) p_N(-tC),
+Theta(t)=I+(-t)^N J/N,
+Theta(t)^-1=I-(-t)^N J/N.                                (2)</code></pre>
+<p>The sign (-t)^N, all degrees of the finite product, and its actual inhomogeneous/normal current are retained. No equality of the bare homogeneous factors without Theta is asserted.</p>
+<h2 id="an-explicit-source-fixed-physical-metric">2. An explicit source-fixed physical metric</h2>
+<p>Let</p>
+<pre><code>L_a=s_a^2/N, G_a=L_a^(1/2)=s_a/sqrt(N),
+G=diag(G_a).</code></pre>
+<p>Exact root complementation gives G_a G_(d-a)=1. Thus G on both legs fixes every ORIGINAL cup and ordinary cap, and the full marked co-source after its permitted whole-network degree restriction, as in <a href="actual_weighted_fourier_plat_energy.html">the weighted physical Fourier theorem</a>. The original pivots commute with G. No exponential condition number is charged at that paired source, although G itself is exponentially conditioned in the flat physical basis. The marked-row assertion is used on the fully assembled original degree-preserving operator, or with its actually transported row. It is not a replacement of the unrestricted marked row after splitting off a degree-changing current sector.</p>
+<p>Directly,</p>
+<pre><code>G Ecal G^-1 |a&gt;
+    =(Q^-a-1)/|1-Q^a| |a-1&gt;, 1&lt;=a&lt;N.                   (3)</code></pre>
+<p>It is a unit-phase unilateral lowering shift, of operator norm1; K remains unitary. Hence every power of the transformed A or B is a contraction. Write ||T||_G=||G^(tensor2) T G^(-tensor2)||.</p>
+<p>The precise two-head estimate is</p>
+<pre><code>||J/N||_G &lt;= R_N,
+R_N=sum_(a=1)^d 1/[s_a s_(N-a)]
+    =(1/N)sum_(a=1)^d 1/|1-Q^a|
+    &lt;=(1/2)H_(floor(N/2)),                              (4)</code></pre>
+<p>where H_r=sum_(j=1)^r1/j. Indeed (1),(3) give the first inequality. Reflection yields s_a s_(N-a)=N|1-Q^a|, and |1-Q^a|&gt;=4 min(a,N-a)/N proves the last bound. In particular</p>
+<pre><code>||Theta(t)||_G, ||Theta(t)^-1||_G
+            &lt;=1+|t|^N R_N.                            (5)</code></pre>
+<p>For fixed-log tags |t|&lt;=exp(c/N), both norms are O_c(log N). They are polynomial for the more general condition |t|<sup>N&lt;=N</sup>c. There is no such claim for fixed |t|&gt;1.</p>
+<p>This is a concrete positive Hermitian metric and an explicit bound, not a Gram chosen from an unknown terminal knot operator. In ordinary unitary Fourier coordinates its matrix is</p>
+<pre><code>H_F=F (L tensor L) F^*,                                 (6)</code></pre>
+<p>with F the two-head unitary Fourier transform. It is generally non-diagonal. Equivalently conjugate the current by (F_1 G) tensor (F_1 G) and use the flat norm, where F_1 is one-head Fourier. The same source and dual factors must be transported.</p>
+<h2 id="all-exterior-scope-and-coherent-packet-metrics">3. All-exterior scope and coherent packet metrics</h2>
+<p>Identity(2) is an identity of the original finite matrices, so it can be inserted into ANY specified original polynomial exterior, including its actual caps and cut. For a boundary column v, and for a whole boundary matrix V in the corresponding Hilbert–Schmidt norm, (5) gives both comparisons</p>
+<pre><code>(1+|t|^N R_N)^-1 ||p_N(-tC)V||_G
+   &lt;=||p_N(-tB)p_N(-tA)V||_G
+   &lt;=(1+|t|^N R_N)||p_N(-tC)V||_G.                     (7)</code></pre>
+<p>All currents are still present in the exact operator. Tensoring spectators does not change this norm. A FIXED number of such two-physical-head adapters costs at most a fixed power of log N, if their tags obey the stated fixed-log bound and their physical metric interfaces are matched. This is before dephasing; phases in (1) have not been estimated separately at the selected scalar.</p>
+<p>An arbitrary left exterior X does not turn (7) into a relative comparison of |source(X p_N(B)p_N(A)V)| and |source(X p_N(C)V)|. A scalar may cancel or vanish. Moving an adapter across X requires its actual intertwining relation, or the transported boundary Gram X^*H X. The bounded local adapter does not establish either automatically.</p>
+<p>There is a useful exact compatibility test for a new packet Gram. If P is ANY invertible function of this SAME total current C, then P commutes with J and Theta. In the pulled-back Gram</p>
+<pre><code>H_P=P^* (G^2 tensor G^2) P</code></pre>
+<p>the norm of Theta is therefore exactly its norm in G. Consequently (5)–(7) remain valid. This is a genuine way to include the retained current in a non-diagonal coherent packet metric. The actual q-Pascal matrix is a nilpotent Euler function of a physical current, up to recorded chirps, but identifying its relative register with this two-head C requires the typed module map; it is not inferred from equal dimensions. An arbitrary P need not fix the original source: its vector, co-vector and Riesz norm must be transported through that map.</p>
+<h3 id="overlapping-physical-pairs-really-do-have-a-common-tame-metric">Overlapping physical pairs really do have a common tame metric</h3>
+<p>On any fixed b-head space use the SAME global gauge G^(tensor b). Every two-head E-coproduct adapter on adjacent heads, tensored with the spectator identity, has the bound(5) in this metric. The pairs may overlap. No commutation between different adapters is required. Consequently, for a fixed finite word U of these adapters or their inverses,</p>
+<pre><code>||U||_G, ||U^-1||_G
+      &lt;=product_j (1+|t_j|^N R_N).                      (7a)</code></pre>
+<p>Fixed-log tags give a fixed power of log N. The same physical gauge fixes the original paired endpoints as stated above. This is a valid quantitative overlap lemma, not an estimate only for disjoint two-head blocks.</p>
+<p>There is an exact limitation on what that word can implement. For b=3, N&gt;=3, take a_i&gt;0 with a_1+a_2+a_3=N. On the input |a_1,a_2,a_3&gt;, every single two-head J leaves a third positive head unchanged. Every product of two or more J’s lowers total degree by at least2N and therefore annihilates that input. Hence EVERY word of bare pair adapters and inverses has</p>
+<pre><code>&lt;0,0,0|U|a_1,a_2,a_3&gt;=0.                               (7b)</code></pre>
+<p>By contrast, the full three-head current in(8) has the NONZERO coefficient of modulus1/(s_(a_1)s_(a_2)s_(a_3)) there. Thus bare overlapping tame pair adapters cannot generate that full block correction. A further typed packet conjugation or other operator is necessary. Conjugating by a function of the SAME current is covered above; an overlapping packet for a DIFFERENT current need not commute and is not covered. Opposite raising/lowering orientations also require their actual mirror and metric adapters; (7a) asserts the common E-coproduct orientation just specified.</p>
+<h3 id="a-neighboring-packet-gram-carries-an-explicit-angle-weight">A neighboring packet Gram carries an explicit angle weight</h3>
+<p>There is also a quantitative test of the remaining interface. On three actual heads put C_23=Ecal_2 K_3+Ecal_3 and P_23=p_N(C_23). In the coherent packet Gram</p>
+<pre><code>H_23=P_23^* G_global^2 P_23,
+G_global=G tensor G tensor G,</code></pre>
+<p>the neighboring J_12 is measured by its conjugate P_23 J_12 P_23^-1 in the base G metric. On head3=0 the actual packet restricts EXACTLY to p_N(x B), B=Ecal_2: Ecal_3 kills that subspace and K_3=x there. J_12 preserves it as well.</p>
+<p>For A=Ecal_1 K_2 one has BA=Q^-1 AB. The finite Euler shift equation, with the nilpotent argument Z=xB, gives exactly</p>
+<pre><code>p_N(Z) A^a p_N(Z)^-1
+     =A^a product_(j=1)^a(1-Q^-j Z)^-1.                 (7c)</code></pre>
+<p>All inverses are finite polynomials because Z^N=0. The coefficient of Z^h in the last product is Q^-h [a+h-1 choose h]_(Q^-1), by the finite coefficient form of the elementary q-binomial generating identity. For 0&lt;=h&lt;a&lt;N and a+h-1&lt;N this coefficient uses only nonzero factorials.</p>
+<p>In the matrix entry from |a,N-a+h,0&gt; to |0,0,0&gt;, the term a of J_12 is the UNIQUE term lowering head1 to zero, and the displayed h is the unique extra lowering on head2. The conjugated G Ecal G^-1 shifts and K factors have unit modulus. Thus the entry of P_23 (J_12/N) P_23^-1 in the base G frame has modulus</p>
+<pre><code>|[a+h-1 choose h]_Q|/[s_a s_(N-a)].                     (7d)</code></pre>
+<p>This is a full operator entry, including the retained current and the inverse packet, not one term selected before their cancellation. For N=4k, a=2k,h=k, formula(7d) is exactly</p>
+<pre><code>|[3k-1 choose k]_Q|/(2N)
+    =(1/2)w_N(k,2k-1,k),                              (7e)</code></pre>
+<p>where the three nonnegative indices sum to d. It is an explicit positive affine-angle ENERGY weight. Its logarithmic rate is Lambda(pi/4)*2/pi=Catalan/pi, by the uniform factorial estimate. It must receive geometric accounting rather than being declared polynomial. The same entry of the conjugated Theta_12 is multiplied by |t|^N; its identity term is zero on these distinct input/output states. If |t|^N and its reciprocal are polynomially bounded, this entry has the same exponential rate. An upper bound on |t| alone would not justify that lower-rate assertion.</p>
+<p>Consequently the nice two-head adapter bound does not automatically persist in a neighboring total-current packet Gram. This does not exclude a global coherent Gram, a source-restricted estimate, or an angle-energy comparison that RETAINS(7e). It pinpoints the additional typed recoupling which the global estimate must handle.</p>
+<h2 id="why-arbitrary-width-block-fusion-is-not-automatically-tame">4. Why arbitrary-width block fusion is not automatically tame</h2>
+<p>For b actual physical heads let C_b be the total Ecal and</p>
+<pre><code>J_b=[C_b^N/(1-Q^N)]_root.</code></pre>
+<p>The exact q-multinomial expansion is</p>
+<pre><code>J_b/N=sum_(a_1+...+a_b=N,0&lt;=a_i&lt;N)
+          phase(a) product_i Ecal_i^(a_i) K_dressings
+                                  /product_i F_(a_i).   (8)</code></pre>
+<p>Here every phase and K dressing has modulus one after the complete source-fixed gauge G^(tensor b). Thus</p>
+<pre><code>||J_b/N||_G &lt;=
+   sum_(a_1+...+a_b=N,0&lt;=a_i&lt;N) product_i s_(a_i)^-1.     (9)</code></pre>
+<p>For any tuple in (8), its matrix coefficient from |a_1,…,a_b&gt; to |0,…,0&gt; is supplied by that UNIQUE term. Its modulus in the G frame is exactly product_i s_(a_i)^-1. No cancellation in the operator sum can remove this lower bound. The uniform root-factorial estimate and the positive simplex maximum proved in <a href="actual_length_gauge_clock_source.html">the clock-source note</a> therefore yield, for each fixed b&gt;=2,</p>
+<pre><code>lim_(N-&gt;infinity) (1/N)log||J_b/N||_G
+                          =b Lambda(pi/b)/pi.           (10)</code></pre>
+<p>For b=2 this is zero, in agreement with the sharper bound(4). For b=3 it is v_3/pi, with a_i/N near1/3. This is a real positive angle weight in the ACTUAL divided operator, not a hypothetical scalar exterior or a numerical bad state.</p>
+<p>Likewise the mixed adapter merging blocks X,Y contains the tuples straddling both blocks. When their total has at least three physical heads, the uniform tuple still straddles them. On total input degree N its exponential has only its first degree-N term; higher normal powers cannot cancel that matrix coefficient. Thus the two-head bound cannot be silently iterated into a polynomial bound for arbitrary block fusion. The positive angle cost has to be retained and controlled by the global geometric incidence.</p>
+<p>This does not obstruct a sharp geometric energy theorem. It identifies a tame local current adapter and the explicit angle energy that appears at the first genuinely larger fusion. Global source gluing and geometric edge support remain to be proved.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_source_fixed_divided_fusion_norm.py">Audit</a>: literal actual matrices, complete factorial/Theta identities, source-fixed metric, norm/inverse bounds, and the unique multihead coefficient with all Frobenius phases retained.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_source_fixed_divided_fusion_norm.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-unchanged-original-current-and-factorial-identity">1. The unchanged original current and factorial identity</a><a href="#an-explicit-source-fixed-physical-metric">2. An explicit source-fixed physical metric</a><a href="#all-exterior-scope-and-coherent-packet-metrics">3. All-exterior scope and coherent packet metrics</a><a href="#why-arbitrary-width-block-fusion-is-not-automatically-tame">4. Why arbitrary-width block fusion is not automatically tame</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

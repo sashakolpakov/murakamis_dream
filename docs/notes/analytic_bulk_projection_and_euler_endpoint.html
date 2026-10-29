@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Actual analytic bulk propagation and the forced Euler endpoint · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/analytic_bulk_projection_and_euler_endpoint.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="actual-analytic-bulk-propagation-and-the-forced-euler-endpoint">Actual analytic bulk propagation and the forced Euler endpoint</h1>
+<p>28 October 2026. The finite-head projectors in the <a href="actual_euler_gaussian_cauchy_network.html">literal Euler/Gaussian network</a> can be removed with an exponentially small error on a specified interior analytic packet. The assertion has quantitative hypotheses on its physical momenta; it is not an inference from an ideal triangulation. Conversely, an exact forced finite-Euler equation excludes some apparently regular single-dilogarithm charts. Both statements concern the actual finite operators and retain the original source.</p>
+<h2 id="an-exact-projector-decomposition-and-an-exponential-estimate">1. An exact projector decomposition and an exponential estimate</h2>
+<p>Let <code>Pi_N</code> retain Laurent exponents <code>0,...,N-1</code>. If <code>f</code> is holomorphic on an annulus containing <code>r exp(-s)&lt;=|z|&lt;=r exp(s)</code>, its convergent Laurent series gives exactly</p>
+<pre><code>Pi_N f=f-f_--f_+,                            (1)</code></pre>
+<p>where <code>f_-</code> has negative exponents and <code>f_+</code> has exponents at least N. Put <code>M(rho)=sup_(|z|=rho)|f(z)|</code>. Cauchy’s coefficient bound, summed as a geometric series, gives</p>
+<pre><code>||f_-||_r &lt;= M(r exp(-s))/(exp(s)-1),
+||f_+||_r &lt;= M(r exp(s))exp(-Ns)/(1-exp(-s)). (2)</code></pre>
+<p>Thus suppose an actual sequence <code>f_N</code> satisfies</p>
+<pre><code>M_N(r exp(-s)) &lt;= C_N exp(-delta Ns) M_N(r),
+M_N(r exp(s)) &lt;= C_N exp((1-delta)Ns) M_N(r), (3)</code></pre>
+<p>with fixed <code>s,delta&gt;0</code> and <code>log C_N=o(N)</code>. Then</p>
+<pre><code>||Pi_N f_N-f_N||_r
+  &lt;= 2 C_N exp(-delta Ns) M_N(r)/(1-exp(-s)). (4)</code></pre>
+<p>This is a norm estimate relative to the central packet envelope. It does not assert a relative pointwise estimate at zeros of the packet. For b heads, assume (3) for each of the two singly shifted tori. Since each circle projector has sup-norm at most N, telescoping the b commuting projectors proves</p>
+<pre><code>||Pi_N^(tensor b) f_N-f_N||_r
+  &lt;= 2b N^(b-1) C_N exp(-delta Ns)
+                          ||f_N||_r/(1-exp(-s)).   (5)</code></pre>
+<p>All remainders in (1) are retained exactly before (3) is used. There is no replacement of a finite projector by an unmarked Cauchy pole.</p>
+<p>Here is a useful sufficient physical condition. Write a nonzero analytic packet as <code>f_N=a_N exp(NS)</code> on the polyannular collar, allowing logarithms in S when its exponential is single-valued. Suppose the amplitude ratios between the collar and central torus are <code>exp(o(N))</code>, and every logarithmic radial momentum satisfies</p>
+<pre><code>delta &lt;= partial_(log|z_j|) Re S &lt;= 1-delta.   (6)</code></pre>
+<p>Integrating (6) along each radial segment gives (3). Thus (5) proves that a genuinely interior analytic packet is insensitive to both head walls at exponential accuracy.</p>
+<h2 id="application-to-actual-transfer-euler-atoms">2. Application to actual transfer Euler atoms</h2>
+<p>Use <code>Q=exp(2pi*i/N)</code>, <code>h=2pi*i/N</code>, <code>F_a=(Q;Q)_a</code>, and the literal polynomials</p>
+<pre><code>u_N(t)=sum_(a&lt;N)t^a/F_a,
+v_N(t)=sum_(a&lt;N)(-1)^a Q^(a(a-1)/2)t^a/F_a.</code></pre>
+<p>On every fixed closed disk of radius less than 1/4, the actual canonical polynomials, not just their nilpotent logarithms, obey</p>
+<pre><code>u_N(t)=(1-t)^(-1/2) exp[-Li_2(t)/h](1+O(1/N)),
+v_N(t)=(1-t)^(1/2) exp[Li_2(t)/h](1+O(1/N)), (7)</code></pre>
+<p>uniformly with fixed derivatives on smaller disks. The branches in (7) start at t=0. To check the actual truncation, the finite logarithm for v is <code>L_N=sum_(a&lt;N)t^a/[a(Q^a-1)]</code>. On any fixed disk of radius less than one,</p>
+<pre><code>L_N=Li_2(t)/h+(1/2)Log(1-t)+O(1/N).</code></pre>
+<p>For the lower half of the coefficients expand <code>(exp(ha)-1)^-1=(ha)^-1-1/2+O(a/N)</code>; the upper half has a geometrically small tail. On <code>|t|=1/2</code>, the elementary bound <code>|Q^a-1|^-1&lt;=N/4</code> gives <code>|L_N|&lt;=N log(2)/4</code>. The degree-N Taylor remainder of <code>exp(plus or minus L_N)</code> on <code>|t|&lt;=1/4</code> is therefore at most <code>2 exp[-3N log(2)/4]</code>. Its leading exponential is bounded below by <code>exp[-N Li_2(1/4)/(2pi)-O(1)]</code>, so this remainder is exponentially small relatively. This proves (7) for both actual polynomials. The same truncation argument was used for the <a href="actual_hilbert90_gauge_dilogarithm_action.html">primitive Hilbert-90 gauge</a>; the individual half-density factors in (7) are retained here.</p>
+<p>For example the literal actual transfer operator is</p>
+<pre><code>T_N f=Pi_N^(tensor b)[u_N(x^-1 z_2/z_1) f]. (8)</code></pre>
+<p>Take an actual finite-head packet f and assume the entire polyannular collar of its transfer argument t lies in <code>|t|&lt;=rho&lt;1/4</code>. The new action is</p>
+<pre><code>S_new=S-Li_2(t)/(2pi*i).</code></pre>
+<p>Its two changed momenta differ from the old momenta by opposite signed real parts of <code>Log(1-t)/(2pi*i)</code>. Each change has size at most <code>-log(1-rho)/(2pi)</code>. Thus if the old momenta have twice that margin from the head walls, (5) and (7) give an actual analytic propagation formula for (8), with an exponentially small projection remainder and an <code>O(1/N)</code> analytic amplitude comparison. The same assertion, with opposite action, applies to v and to the reversed transfer argument. This is a local operator theorem, rather than formal substitution of a classical symbol into a finite matrix.</p>
+<p>For a finite ordered product, a telescoping error bound propagates these local estimates. A sufficient condition is that each intermediate packet satisfies (3) and that downstream propagation in the corresponding packet norms is <code>exp(o(N))</code>. More generally, an error with rate c remains exponentially small if the total downstream amplification rate is strictly less than c. These are explicit conditions to verify, not properties proved for the original marked knot source.</p>
+<h2 id="actual-factorial-and-gaussian-bulk-diagonals">3. Actual factorial and Gaussian bulk diagonals</h2>
+<p>The other nontrivial factors in the strict crossing are diagonal in the physical momentum index. Their bulk symbols also admit direct actual estimates. For <code>t=k/N</code> in a fixed compact subinterval of <code>(0,1)</code>, define</p>
+<pre><code>A(t)=integral_0^t Log(1-exp(2pi*i y))dy,
+Log(1-exp(2pi*i y))=log(2sin(pi*y))+pi*i*y-pi*i/2.</code></pre>
+<p>Then uniformly on that interval,</p>
+<pre><code>F_k=sqrt(2N sin(pi*t))
+     exp[N A(t)+pi*i*t/2](1+O(1/N)).         (9)</code></pre>
+<p>This follows without a formal product-to-integral replacement. Exactly factor</p>
+<pre><code>F_k=exp[pi*i*k(k+1)/(2N)-pi*i*k/2]
+         (2pi/N)^k k! product_(r=1)^k g(r/N),
+g(y)=sin(pi*y)/(pi*y), g(0)=1.</code></pre>
+<p>Euler–Maclaurin applied to the smooth zero-free function <code>log g</code> has uniform remainder <code>O(1/N)</code> here; Stirling’s formula for k! has the same uniform remainder. Their endpoint terms combine into the precise square root and phase in (9). Inversion gives the reciprocal factorial symbol with the same relative error. The phase A and amplitude are analytic in a neighborhood of each such interior momentum interval. Pointwise diagonal relative error is therefore an actual weighted coefficient-norm estimate. It does not by itself estimate a cancelling summed kernel.</p>
+<p>Finally, with the original marked logarithm of x, the literal Gaussian diagonal is exactly</p>
+<pre><code>d_k=exp{N[pi*i*t^2+pi*i*t-2t Log x]-pi*i*t}. (10)</code></pre>
+<p>Thus no approximation or discarded scalar is needed for its quadratic Fourier phase. Equations (5), (7), (9), and (10) supply an actual interior analytic calculus for the elementary crossing factors. They neither prove that every intermediate geometric chart lies in these domains nor replace the original cap by an interior packet.</p>
+<h2 id="a-forced-endpoint-that-an-actual-analytic-chart-cannot-ignore">4. A forced endpoint that an actual analytic chart cannot ignore</h2>
+<p>The literal Euler polynomials satisfy, at every nonzero t,</p>
+<pre><code>u_N(Qt)=(1-t)u_N(t)+t^N/N,
+v_N(t)=(1-t)v_N(Qt)+t^N/N.                  (11)</code></pre>
+<p>The first equality is coefficient subtraction and <code>F_(N-1)=N</code>. For the second, the top coefficient contributes <code>(-1)^(N-1)Q^(N(N-1)/2)/N=1/N</code>. Consequently each polynomial satisfies the actual two-point bound</p>
+<pre><code>max(|w_N(t)|,|w_N(Qt)|)
+      &gt;= |t|^N/[N(1+|1-t|)], w=u or v.     (12)</code></pre>
+<p>Suppose a proposed uniform single-phase analytic chart has <code>w_N(t)=a_N(t)exp[N B(t)]</code>, with amplitude bounded above by <code>exp(o(N))</code> on a neighborhood. Since Qt tends to t, (12) forces</p>
+<pre><code>Re B(t)&gt;=log|t|.                           (13)</code></pre>
+<p>This is a necessary condition, not a sufficient asymptotic theorem. In particular the homogeneous dilogarithm phases in (7) cannot describe the actual u polynomial on a neighborhood of a unit argument in the upper half-plane, or the actual v polynomial at its conjugate: there <code>Re B=-|Im Li_2(t)|/(2pi)&lt;0</code>, whereas <code>log|t|=0</code>. At <code>t=exp(pi*i/3)</code>, (12) is at least <code>1/(2N)</code> for the pair of u evaluations, while that homogeneous phase is exponentially decreasing. A forced endpoint branch must be retained or cancelled by an exact larger network identity before using that single phase. The statement is about the literal atom argument; no unproved identification of that argument with a developed geometric tetrahedron shape is used.</p>
+<h2 id="the-remaining-source-transition">5. The remaining source transition</h2>
+<p>The original fixed-first-input cap and its averaged compact realization are exact boundary data. Their entry into an interior geometric analytic chart has not been proved. In particular (5) cannot be applied to a boundary packet by assuming (6), and (13) cannot be bypassed by citing algebraicity of a gluing solution. An exact source-preserving reduction can exploit (5) where its hypotheses hold, but must carry the remaining tail chains and the forced terms in (11). Establishing the geometric intersection degree of that complete marked chain remains the cycle-selection problem in the comparison proposition, not a consequence of this bulk calculus.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_analytic_bulk_projection.py">exact audit</a> checks the finite Euler equations, the two-point bound, the original source-visible degree-zero wall, and explicit interior Laurent packets. Its numerical samples of (9) check the normalization; the proofs above give the uniform estimates.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/analytic_bulk_projection_and_euler_endpoint.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#an-exact-projector-decomposition-and-an-exponential-estimate">1. An exact projector decomposition and an exponential estimate</a><a href="#application-to-actual-transfer-euler-atoms">2. Application to actual transfer Euler atoms</a><a href="#actual-factorial-and-gaussian-bulk-diagonals">3. Actual factorial and Gaussian bulk diagonals</a><a href="#a-forced-endpoint-that-an-actual-analytic-chart-cannot-ignore">4. A forced endpoint that an actual analytic chart cannot ignore</a><a href="#the-remaining-source-transition">5. The remaining source transition</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

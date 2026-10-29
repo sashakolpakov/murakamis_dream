@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A short finite square-linearization proof of the positive source scalar · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_trivalent_square_linearization_bridge.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-short-finite-square-linearization-proof-of-the-positive-source-scalar">A short finite square-linearization proof of the positive source scalar</h1>
+<p>29 October 2026. This proves the remaining source-coefficient-to-short-series identity by finite product linearization and root cancellation. It is independent of the Jackson-Leibniz/Newton derivation. The input is the already proved original-source coefficient theorem, not a proposed 6j formula. All root denominators and zero coefficients are retained.</p>
+<p>Put N&gt;=2, d=N-1, Q^N=1 with Q primitive, F_k=(Q;Q)_k. Take retained triangle labels a,b,c&lt;=floor(d/2), let J=a+b+c, delta=J-d&gt;=0, r=b+c-a, and H=2c-r=a+c-b=d-2b+delta. In particular</p>
+<pre><code>0&lt;=delta&lt;=min(a,b,c,H), 0&lt;=r&lt;=2min(b,c), 2b,2c&lt;N.</code></pre>
+<p>The reversed coefficient in the <a href="actual_trivalent_root_fourier_source_certificate.html">actual root-Fourier theorem</a> is</p>
+<pre><code>C_delta=[U^delta](UQ^-b;Q)_b^2
+   *sum_(e=0)^H [V^e](V;Q)_c^2
+                     F_(2c-e)/F_(H-e) U^e.       (1)</code></pre>
+<p>The first three sections prove exactly</p>
+<pre><code>C_delta=T_0 H_c,
+T_0=Q^[delta(delta-1-2b)] F_b^2 F_(2c)
+                     /[F_H F_delta F_(b-delta)^2],
+H_c=sum_(k=0)^delta
+  (Q^-delta,Q^-c,Q^-c,Q^-H;Q)_k Q^k
+              /(Q,Q^-2c,Q^(b-delta+1),Q^(b-delta+1);Q)_k. (2)</code></pre>
+<p>Every denominator here is nonzero. No ordering such as a=max(a,b,c) is required. Section 4 completes the finite Sears transformation and explicit phase conversion to the positive factorial partition.</p>
+<h2 id="an-elementary-finite-product-linearization">1. An elementary finite product linearization</h2>
+<p>For generic v and nonnegative m,n,</p>
+<pre><code>(U;v)_m(U;v)_n
+  =sum_(k=0)^min(m,n) A_(m,n,k) U^k(U;v)_(m+n-k),
+A_(m,n,k)=(-1)^k v^[k(k-1)/2]
+             (v;v)_m(v;v)_n
+          /[(v;v)_k(v;v)_(m-k)(v;v)_(n-k)].      (3)</code></pre>
+<p>Here is a finite induction. The m=0 case is immediate. With S=m+n,</p>
+<pre><code>(1-v^m U)U^k(U;v)_(S-k)
+  =U^k(U;v)_(S+1-k)
+     +(v^(S-k)-v^m)U^(k+1)(U;v)_(S-k).</code></pre>
+<p>Consequently the next coefficient is</p>
+<pre><code>A_(m,n,k)+(v^(m+n-k+1)-v^m)A_(m,n,k-1)
+                                          =A_(m+1,n,k).</code></pre>
+<p>Substitution of the displayed factorials proves this equality; the interior ratio is (1-v<sup>(m+1))/(1-v</sup>(m+1-k)). Endpoints follow by clearing denominators and setting out-of-range coefficients to zero. Thus (3) is a polynomial identity, and specializes at Q with m=n=c because c&lt;N. The largest product length 2c is also below N here.</p>
+<p>Apply the coefficient multiplier</p>
+<pre><code>V^e -&gt; F_(2c-e)U^e/F_(H-e), 0&lt;=e&lt;=H,</code></pre>
+<p>to (3) with m=n=c, discarding coefficients above H. In its k-th term the finite binomial coefficient [2c-k choose e-k]<em>Q cancels the factor F</em>(2c-e). The remaining finite binomial theorem gives</p>
+<pre><code>sum_(e=0)^H [V^e](V;Q)_c^2 F_(2c-e)U^e/F_(H-e)
+  =sum_(k=0)^min(c,H) (-1)^k Q^[k(k-1)/2]
+      F_c^2 F_(2c-k)
+      /[F_k F_(c-k)^2 F_(H-k)] U^k(U;Q)_(H-k).  (4)</code></pre>
+<p>No coefficient beyond the genuine derivative range H is introduced.</p>
+<h2 id="the-exact-root-coefficient-cancellation">2. The exact root coefficient cancellation</h2>
+<p>For 0&lt;=n&lt;=b put</p>
+<pre><code>I_n=[U^n](UQ^-b;Q)_b^2(U;Q)_(d-2b+n).</code></pre>
+<p>Since (U;Q)_N=1-U^N and n&lt;N, coefficient extraction gives exactly</p>
+<pre><code>I_n=[U^n] (UQ^-b;Q)_b
+                    /(UQ^(n-1-2b);Q)_(b+1-n).  (5)</code></pre>
+<p>Indeed the missing factor in the length-N product runs from exponent n-1-2b through -1. Its last b factors cancel one of the two numerator products. Formal division is valid because every Euler factor has constant coefficient one. The discarded numerator term U^N cannot affect the coefficient n.</p>
+<p>Set h=b+1-n&gt;=1 and z=Q^(n-1-2b). The reciprocal finite-product coefficient is z<sup>l(Q</sup>h;Q)_l/F_l: it follows either by multiplying the factors, or from the recurrence obtained by shifting U to QU. Expanding the numerator in (5), and dividing by its v=0 term, gives</p>
+<pre><code>I_n=z^n (Q^h;Q)_n/F_n
+                   *sum_(v=0)^n (Q^-n;Q)_v Q^[(b+1)v]/F_v.</code></pre>
+<p>The factors (Q^-b;Q)_v cancel in numerator and denominator; they are nonzero since v&lt;=n&lt;=b&lt;N. The finite binomial theorem evaluates the sum as (Q<sup>(b+1-n);Q)_n=(Q</sup>h;Q)_n. Therefore</p>
+<pre><code>I_n=Q^[n(n-1-2b)] F_b^2/[F_n F_(b-n)^2].         (6)</code></pre>
+<p>This proof includes n=0 and uses no analytic limit or infinite series.</p>
+<h2 id="consecutive-terms-give-the-exact-short-series">3. Consecutive terms give the exact short series</h2>
+<p>Insert (4) into (1). Only k&lt;=delta contributes, and put n=delta-k. Since H-k=d-2b+n, equation (6) applies term by term. The result is</p>
+<pre><code>C_delta=sum_(k=0)^delta T_k,
+T_k=(-1)^k Q^[k(k-1)/2+(delta-k)(delta-k-1-2b)]
+   *F_b^2 F_c^2 F_(2c-k)
+   /[F_k F_(c-k)^2 F_(H-k) F_(delta-k) F_(b-delta+k)^2]. (7)</code></pre>
+<p>Every factor is a physical factorial with index in 0,…,d. The initial term is precisely T_0 in (2). Its consecutive ratio is</p>
+<pre><code>T_(k+1)/T_k
+  =Q * (1-Q^(k-delta))(1-Q^(k-c))^2(1-Q^(k-H))
+       /[(1-Q^(k+1))(1-Q^(k-2c))
+                              (1-Q^(b-delta+k+1))^2]. (8)</code></pre>
+<p>The apparent extra power in this ratio is Q<sup>(H-delta+2b+2)=Q</sup>(N+1)=Q. This is exactly the root relation that is needed, rather than a generic-q continuation of the root source. Equations (7),(8) prove (2).</p>
+<p>All denominator ranges are safe: k+1&lt;=delta&lt;=c,b; 2c-k is positive and below N for every ratio used; b-delta+k+1&lt;=b&lt;N. Empty sums and delta=0 give the same formula without a ratio. This closes the finite source coefficient bridge. Its remaining finite normalizations are evaluated next. Physical CD and magnetic tensor normalizations remain distinct from this scalar calculation.</p>
+<h2 id="the-symmetric-positive-scalar-with-its-full-original-phase">4. The symmetric positive scalar, with its full original phase</h2>
+<p>Put r_1=a+b-c, r_2=H=a+c-b. In (2), use the root equality Q<sup>(b-delta+1)=Q</sup>(-a-c), and apply the <a href="finite_balanced_sears_operator_proof.html">own finite Sears identity</a> with length delta, retained parameter Q^-c, and both selected denominators Q^(-a-c). It gives</p>
+<pre><code>H_c=K_1 H_sym,
+K_1=(Q^-a,Q^(-a-b);Q)_delta
+                    /(Q^(-a-c),Q^-r_1;Q)_delta,
+H_sym=4phi3(Q^-delta,Q^-a,Q^-b,Q^-c;
+                       Q^(-a-b),Q^(-a-c),Q^(-b-c);Q,Q). (9)</code></pre>
+<p>Every descending denominator index is at least delta, and every upper factorial index is below N. Thus this is a direct finite specialization. No division by H_sym is used. Its kth term is strictly positive at the principal root: the sine factors are positive, and their residual phase is q<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>=q<sup>(Nk)=(-1)</sup>k, cancelling the denominator’s remaining (-1)^k. The k=0 term is one.</p>
+<p>Here is a short explicit normalization of the ACTUAL source. Let</p>
+<pre><code>E_F=3a^2+b^2+c^2-2ab-2ac+2bc-2c-2,
+E_src=2a^2-ab-ac+bc-J-3,
+tau_u=(-1)^u q^[u(u+1)], F_u F_(d-u)=N tau_u.</code></pre>
+<p>The original Fourier theorem says</p>
+<pre><code>A=N q^[E_F+2b(b+1)-2c(c-1)]
+                     C_delta/(F_a F_b F_c F_r). (10)</code></pre>
+<p>Converting K_1 to factorials introduces NO phase: the sums of its two numerator and denominator descending parameters agree. Explicitly</p>
+<pre><code>K_1=F_a F_(a+b) F_(d-b) F_(d-2c)
+        /[F_(a-delta) F_(d-c) F_(a+c) F_(r_1)].</code></pre>
+<p>Insert T_0 from (2) into (10) and reflect complements. Its remaining factorial prefactor is exactly</p>
+<pre><code>N^2 tau_b tau_(2c) tau_(a+b)/(tau_c tau_(a+c))
+  /[F_r F_(r_1) F_(r_2) F_delta
+                       F_(a-delta) F_(b-delta) F_(c-delta)]. (11)</code></pre>
+<p>The tau signs multiply to (-1)^(2b)=1. The seven denominator indices sum to 2d, so F_u=(-i)^u q<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>s_u contributes the net sign (-1)^d. If E_total is the remaining q exponent, direct expansion gives</p>
+<pre><code>E_total-E_src+N(J+1)=2N(2b+1).</code></pre>
+<p>Thus the exact phase of (11), including (10), is (-1)<sup>(N+J)q</sup>E_src. Its positive modulus proves</p>
+<pre><code>A=(-1)^(N+J)q^E_src D_sym H_sym,
+D_sym=N^2/[s_r s_(r_1)s_(r_2)s_delta
+                     s_(a-delta)s_(b-delta)s_(c-delta)]&gt;0. (12)</code></pre>
+<p>This proves nonvanishing on EVERY supported triangle, at both parities.</p>
+<p>For completeness the same symmetric series is the positive R_N. Choose a maximal label a for this SYMMETRIC positive object. Its first term and the first finite Sears prefactor are</p>
+<pre><code>R_0=s_a s_(b+c)/[s_(a-b)s_(a-c)s_b s_c s_r],
+K_0=(Q^(a+1),Q^-2b;Q)_r
+                          /(Q^(a-b+1),Q^-b;Q)_r.</code></pre>
+<p>The long series is obtained by the consecutive ratio of the seven sine-factorial summand. The proved Sears identity changes it to H_b, and the same identity changes H_b to K_2 H_sym, where</p>
+<pre><code>K_2=(Q^-c,Q^(-a-c);Q)_delta
+                     /(Q^(-b-c),Q^-r_2;Q)_delta.</code></pre>
+<p>The finite denominator ranges are safe since r&lt;=b,c and delta&lt;=r_2. The phases in K_0 and K_2 cancel internally, so both are positive. Their sine-factorial products and reflection s_u s_(d-u)=N give</p>
+<pre><code>R_0 K_0 K_2
+  =N^3/[s_a s_b s_c s_r s_(r_1)s_(r_2)
+                     s_(a-delta)s_(b-delta)s_(c-delta)]. (13)</code></pre>
+<p>Both sides are symmetric; the choice of a maximal chart places no restriction on the source ordering. Combining (12),(13) proves the original all-channel identity</p>
+<pre><code>A=(-1)^(N+J)q^E_src [s_a s_b s_c/(N s_delta)]R_N.</code></pre>
+<p>The source is zero for J&lt;d by the independent Fourier degree theorem. This entire finite proof concerns the actual black scalar. It does not bound its magnetic tensor or replace the marked white co-source.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_trivalent_square_linearization_bridge.py">finite product, weighted coefficient and root bridge</a>. The separate <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_trivalent_general_scalar_candidate.py">full-source audit</a> compares the final phase and normalization with original coproduct columns. Two independent analytical reviews checked Sections 1–3; the independent longer Fourier/Newton route checks the full symmetric source identity. A further independent analytical review of Section 4 rederived its seven-factorial prefactor, phase congruence and positive R_0 K_0 K_2 normalization without invoking a maximal-order source symmetry. Finite checks supplement these all-parameter proofs.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>k(J-delta+1)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>u(u+1)/2<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_trivalent_square_linearization_bridge.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#an-elementary-finite-product-linearization">1. An elementary finite product linearization</a><a href="#the-exact-root-coefficient-cancellation">2. The exact root coefficient cancellation</a><a href="#consecutive-terms-give-the-exact-short-series">3. Consecutive terms give the exact short series</a><a href="#the-symmetric-positive-scalar-with-its-full-original-phase">4. The symmetric positive scalar, with its full original phase</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

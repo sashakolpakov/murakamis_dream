@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exact Ward cancellation of cyclic wall currents, with the marked charge retained · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/ward_cyclic_wall_contraction_and_marked_augmentation.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="exact-ward-cancellation-of-cyclic-wall-currents-with-the-marked-charge-retained">Exact Ward cancellation of cyclic wall currents, with the marked charge retained</h1>
+<p>28 October 2026. The original all-plat Ward corner has an explicit co-source homotopy. Under cyclic completion it produces a rank-two commutator wall current. That current is canceled exactly by the corresponding sewing defect, before asymptotics or closure. For an assembled word the typed defects telescope.</p>
+<p>This gives a finite relative-cycle comparison for the Ward reduction; it does not identify nonlinear positive-angle boundary prisms with those currents. The surviving marked wall has charge one. It is not permitted to delete the only source carrier.</p>
+<h2 id="an-explicit-original-co-source-homotopy">1. An explicit original co-source homotopy</h2>
+<p>Use the literal arbitrary-plat conventions in <a href="actual_rogers_bridge_transport.html">the Rogers transport theorem</a>. Put d=N-1. After the k-1 ordinary caps the remaining dual pair has total integer degree d. On that fiber let</p>
+<pre><code>p=|d,0&gt;, ell=&lt;d,0|,
+mu(a)=x^(d-a)(-1)^a Q^(-a(a+1)/2) F_a^2/N^2.</code></pre>
+<p>The first color x here is the remaining pair’s actual color. In particular mu(d)=1. Let F_rel=S_a be the ACTUAL total lowering operator in fusion coordinates. It sends the degree-d fiber to degree d+1. Define a row on the latter fiber by</p>
+<pre><code>nu(a+1,d-a)=mu(a), 0&lt;=a&lt;d.</code></pre>
+<p>Then, on the entire degree-d fiber, exactly</p>
+<pre><code>mu-ell=nu F_rel.                                      (1)</code></pre>
+<p>This is an actual co-source homotopy, not just vanishing on a single vector. Since the full original remaining vector v satisfies F_rel v=0, equation (1) proves mu v=ell v. It is the explicit current behind the Ward corner. All meridian powers in mu and nu remain functions.</p>
+<p>For a general nonintertwining coupon or a separated cyclic sector, F_rel v need not vanish. Its omitted term is precisely nu F_rel v.</p>
+<h2 id="cyclic-completion-has-a-rank-two-ward-defect">2. Cyclic completion has a rank-two Ward defect</h2>
+<p>Consider the positive actual Euler transfer</p>
+<pre><code>T=a J_+ tensor J_-, A=a S tensor S^-1,</code></pre>
+<p>with the literal truncated shifts J and cyclic S. The two residue fibers relevant to F_rel are k=d and k=0. In either cyclic basis the operator A is aS. Between them F_rel is the strict raising shift J_+. Consequently its typed cyclic defect is</p>
+<pre><code>Delta=F_rel A_in-A_out F_rel
+     =a (|1&gt;&lt;d|-|0&gt;&lt;d-1|).                            (2)</code></pre>
+<p>For N=2 this is the same two distinct matrix units; no generic rank assertion or separated-wall assumption is required.</p>
+<p>The ACTUAL transfer has no such defect:</p>
+<pre><code>F_rel T_in=T_out F_rel,</code></pre>
+<p>because J_+ on the first head commutes with J_+ tensor J_-. Writing R_A=(t-A)^(-1), R_T=(t-T)^(-1), and E=R_T-R_A, the resolvent identity gives the exact rational equations</p>
+<pre><code>F_rel R_A,in-R_A,out F_rel=R_A,out Delta R_A,in,
+
+F_rel E_in-E_out F_rel=-R_A,out Delta R_A,in.           (3)</code></pre>
+<p>Thus the cyclic Ward defect and its sewing Ward defect cancel POINTWISE. This is more than equality after a particular trace. The full central polynomial t<sup>N-a</sup>N and its poles remain in (3). On a cut meeting such poles one must use the matched residue and finite-part prescription already proved in <a href="cyclic_sewing_regularized_cut_cycle.html">the sewing cycle theorem</a>. Equation (3) does not authorize retaining only the old branch cuts.</p>
+<p>Every common Cartan line multiplies the same two equations. The negative crossing and other residue fibers have the same typed identity with their literal operators; no replacement inverse or scalar normalization is used.</p>
+<h2 id="the-full-original-marker-detects-the-ward-current">3. The full original marker detects the Ward current</h2>
+<p>For one actual dual cup, input colors are (x,y), y=x<sup>(-1)Q</sup>(-1), and the checked positive core is D u_N(aJ_+ tensor J_-) with a=x^(-1). The output marked row is mu_y. The Gaussian D depends only on the second head, so it commutes with F_rel as a typed map.</p>
+<p>Since T p=0, the ORIGINAL marked resolvent is exactly</p>
+<pre><code>mu_y D R_T,in(t) p=1/t.                               (4)</code></pre>
+<p>Thus every holomorphic functional-calculus germ f gives the original value f(0). In particular the actual Euler germ has f(0)=1. Together with the original Cartan/framing line this is the original one-bridge normalization, not a newly assigned scalar.</p>
+<p>Set g_mu=mu_y D R_A,in p and g_ell=ell R_A,in p. Equation (1) and the first equation of (3), with F_rel p=0, give</p>
+<pre><code>g_mu-g_ell=nu D_out R_A,out Delta R_A,in p.            (5)</code></pre>
+<p>This is the exact missing current when somebody applies the Ward corner separately to a cyclic sector. The right-hand side can be nonzero and has source-visible cyclic poles.</p>
+<p>The corner cyclic term is especially simple:</p>
+<pre><code>g_ell=t^(N-1)/(t^N-a^N).</code></pre>
+<p>Its marked relative wall is</p>
+<pre><code>1/t-g_ell=-a^N/[t(t^N-a^N)].                          (6)</code></pre>
+<p>Its residue at zero is one, its residues at the N cyclic poles are -1/N each, and it has zero residue at infinity. Hence even after full zero-current Ward reduction a nonzero augmented wall survives. A source-free cyclic resolvent is holomorphic at zero and has zero original small-circle period. It cannot be the replacement for (4) with the wall removed.</p>
+<h2 id="exact-residue-contraction-with-polynomial-cost">4. Exact residue contraction with polynomial cost</h2>
+<p>Let beta_j=aQ^j. In the input fiber write S for its cyclic shift, and put</p>
+<pre><code>c_r=mu_y D S^r p, 0&lt;=r&lt;N, c_0=1.</code></pre>
+<p>The ORIGINAL cyclic residues are exactly</p>
+<pre><code>w_j=Res_(beta_j) g_mu(t)dt
+   =(1/N)sum_(r=0)^(N-1)c_r Q^(-jr),
+sum_j w_j=1.                                         (7)</code></pre>
+<p>The corner residues are 1/N. Their difference is an explicit cyclic boundary. With (S_res J)<em>j=J</em>(j+1), put</p>
+<pre><code>J_j=(1/N)sum_(r=1)^(N-1)
+                c_r Q^(-jr)/(Q^(-r)-1).</code></pre>
+<p>Then</p>
+<pre><code>(S_res-1)J=w-(1/N)1.                                 (8)</code></pre>
+<p>The zero-average inverse H of S_res-1 satisfies the genuine chain contraction</p>
+<pre><code>Delta_res H=H Delta_res=I-Pi_0,
+||H||_(ell2)&lt;=1/[2sin(pi/N)]&lt;=N/4,
+||H||_(ell-infinity)&lt;=N.                              (9)</code></pre>
+<p>These are the flat norms on the ACTUAL scalar cyclic-residue coordinates j=0,…,N-1. They are not norms asserted invariant under an exponentially conditioned fusion frame. The first bound is the unitary Fourier spectral calculation. For the second, a zero-sum input g has a cumulative primitive P_j=sum_(h&lt;j)g_h. Both j and N-j bound its absolute size, so |P_j|&lt;=N||g||_infinity/2. Subtract its mean to impose zero average. This proves the stated N bound. No inverse is applied to the constant character; Pi_0 retains its marked augmentation.</p>
+<p>Equations (5)–(9) are an actual Ward/cyclic residue comparison. With a nonconstant analytic test function f, summation by parts retains the dual difference of f, and its cut/pole terms. Thus (8) does not permit deleting these currents before their full relative pairing. For f=1 all nonconstant residues cancel exactly.</p>
+<h2 id="large-individual-residues-occur-in-this-original-unit-source">5. Large individual residues occur in this original unit source</h2>
+<p>At the canonical unit root and any unit meridian, for 1&lt;=r&lt;N,</p>
+<pre><code>|c_r|=|F_(r-1)|^2/N^2.                                (10)</code></pre>
+<p>Indeed S^r p has first index r-1 and second index N-r; the Gaussian has modulus one, and the actual marked row is mu_y(n)=y<sup>(d-n)|F_n|</sup>2/N^2. This also proves uniformity over all unit meridians, not only one complete numerical value.</p>
+<p>Finite Fourier inversion gives the two-sided inequalities</p>
+<pre><code>(max_r |c_r|)/N &lt;= max_j |w_j| &lt;= max_r |c_r|.</code></pre>
+<p>The already independently proved figure-eight factorial estimate therefore yields</p>
+<pre><code>lim_N (1/N)log max_j|w_j|=Vol(4_1)/(2pi)&gt;0,            (11)</code></pre>
+<p>whereas sum_j w_j is EXACTLY one. This is an original-source cancellation example satisfying all the actual zero-current Ward equations. It is neither an arbitrary normalization counterexample nor a claim that this unknot has positive volume.</p>
+<p>The polynomial homotopy bound (9) is entirely compatible with (11): it controls the cost relative to the original coefficient norm; it does not replace exponential input coefficients by polynomial ones without their exact cancellation.</p>
+<h2 id="whole-word-cancellation-and-the-precise-surviving-class">6. Whole-word cancellation and the precise surviving class</h2>
+<p>For arbitrary finite typed factors O_j:V_(j-1)-&gt;V_j, retain the actual transported lowering operators F_j and define</p>
+<pre><code>delta_j=F_j O_j-O_j F_(j-1).</code></pre>
+<p>Their original ordered product W obeys the exact identity</p>
+<pre><code>F_L W-W F_0
+   =sum_j O_L...O_(j+1) delta_j O_(j-1)...O_1.         (12)</code></pre>
+<p>The original cups have F_0 p=0; the original assembled word and ordinary caps intertwine. Therefore the TOTAL co-source change from mu to the Ward corner is zero. In a cyclic/sewn realization (3) supplies the local rational defect cancellation. With its complete matched contours, every cyclic residue and ramified finite-part contribution is carried through (12). This statement is linear in the exact rational forms and does not assume an unmarked deformation of a small circle into branch cuts.</p>
+<p>It follows that the FULL original fused corner can use the purely cyclic cross-sewing representation with its explicit relative boundary source. This is obtained by applying the Ward co-source homotopy to the assembled original network and then the local exact resolvent expansion, or by retaining all the currents in the opposite order; (3) and (12) equate the procedures. The total sum of marker-reduction Ward currents is removable. The unit augmented class (6) is NOT removable. In particular a sectorwise corner replacement without (5) is not this theorem.</p>
+<p>All of (1)–(12) are covariant under a literal full tensor/frame change, with F, the source, every sewing map and every current transformed together. An isomorphism of cyclic kernel lines alone does not supply that full change. In particular this note does not identify arbitrary nonlinear positive-quad angular boundary prisms with the currents in (12), nor prove that the retained cusp class couples to a geometric critical point.</p>
+<p>The complementary <a href="cap_wall_fermat_quad_residue_transport.html">compactified quad transport</a> constructs an actual divisor-residue image of the cup. That local transition can carry the augmentation; it must still respect the cyclic-pole and source-current data above in a whole positive chart comparison.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_ward_cyclic_wall_contraction.py">Original-matrix and wall-current audit</a>.</p>
+<p>The audit passes fourteen original complete/generic dual-cup families, twelve assembled two- and three-slot original Euler words with every cyclic/sewing sector retained, eight chain-contraction norm cases, and six source-scale grids through N=1280. In the assembled words the separate marker changes are nonzero, their commutator-current sum is exactly zero, and the original unit source is retained. The proofs above are uniform; these finite tests independently fix operator order and the two different residue fibers in (3) and (5).</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/ward_cyclic_wall_contraction_and_marked_augmentation.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#an-explicit-original-co-source-homotopy">1. An explicit original co-source homotopy</a><a href="#cyclic-completion-has-a-rank-two-ward-defect">2. Cyclic completion has a rank-two Ward defect</a><a href="#the-full-original-marker-detects-the-ward-current">3. The full original marker detects the Ward current</a><a href="#exact-residue-contraction-with-polynomial-cost">4. Exact residue contraction with polynomial cost</a><a href="#large-individual-residues-occur-in-this-original-unit-source">5. Large individual residues occur in this original unit source</a><a href="#whole-word-cancellation-and-the-precise-surviving-class">6. Whole-word cancellation and the precise surviving class</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

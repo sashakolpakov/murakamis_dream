@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A finite actual Frobenius clock graph has the marked Gauss-wall flux · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/finite_frobenius_clock_graph_and_marked_flux.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-finite-actual-frobenius-clock-graph-has-the-marked-gauss-wall-flux">A finite actual Frobenius clock graph has the marked Gauss-wall flux</h1>
+<p>Research proof, 27 October 2026. One actual divided-source clock gives an algebraic graph in the resolved framing space. Its compact cycle has exactly the previously computed wall flux, with no limiting calibration of the constant. A near-identity logarithmic change of source coordinates relates these finite graphs to the known physical meridian graph and gives an explicit source-form homotopy.</p>
+<p>This identifies a SINGLE inserted Frobenius clock and its cycle. The old physical head clock changes polarization under the Fourier/ controlled-shift gauge; it is not this inserted position clock by default. No full word/current or Gaussian comparison is inferred.</p>
+<h2 id="the-actual-finite-clock-and-its-global-normal-graph">1. The actual finite clock and its global normal graph</h2>
+<p>Put c=2pi*i, N&gt;=3, Q=exp(c/N), and r=N in the <a href="high_integral_color_frobenius_wall_source.html">actual high-color source</a>. Let R be its block number. Its divided coherent source has</p>
+<pre><code>psi(t)_k=t^k,
+lambda(u)_k=binom(N,k)u^k/(1+tu)^N.</code></pre>
+<p>On the source quadric use v=t, a=u/(1+tu), T=va. The binomial theorem gives the exact actual covariant symbol</p>
+<pre><code>F_N(T)=sigma(Q^(-R))
+      =[1+alpha_N T]^N, alpha_N=Q^(-1)-1.           (1)</code></pre>
+<p>It is one symbol, not an ordinary power of another clock symbol substituted for a star product. On the cyclotomic diagonal source, the inserted head position clock Q^S equals Q^R. Thus (1) is also the symbol of its inverse inserted head POSITION clock.</p>
+<p>On the resolved frame space Y of the <a href="gauss_wall_flux_and_actual_peripheral_character.html">Gauss-wall calculation</a>, with north coordinates eta,v,a and south coordinates</p>
+<pre><code>V=1/v, eta&#39;=-v^2 eta, a&#39;=v-v^2a, T&#39;=1-T,
+F=1-eta v=1+eta&#39;V,</code></pre>
+<p>define an algebraic source graph i_N by</p>
+<pre><code>eta_N(v,a)=[1-F_N(va)]/v.                           (2)</code></pre>
+<p>This quotient is polynomial: its numerator is divisible by v. The south clock expression is</p>
+<pre><code>F_N^+(T&#39;)=[1+(Q-1)T&#39;]^N,
+F_N^-(T)=F_N^+(1-T),                               (3)</code></pre>
+<p>where F_N^- denotes (1). Equation (3) follows from Q^N=1. Consequently eta’_N=(F_N^+(Va’)-1)/V is also polynomial and obeys the required transition. Thus i_N is a global algebraic graph over the source quadric, retaining both compact poles.</p>
+<p>At a generic Q, the binomial model instead has the exact factor</p>
+<pre><code>F_N^-(T)=Q^(-N)F_N^+(1-T).                        (4)</code></pre>
+<p>The factor in (4) cannot be discarded before taking quantum-normal jets. Moreover the actual whole divided coherent source has its own retained normal coefficients; its off-root symbol is not asserted to be the naive binomial continuation of (1).</p>
+<h2 id="the-real-compact-cycle-avoids-the-wall-with-bounded-clock-norm">2. The real compact cycle avoids the wall with bounded clock norm</h2>
+<p>Let Gamma be the marked real compact source, on which 0&lt;=T&lt;=1 and angular integration of Omega=dv wedge da gives</p>
+<pre><code>integral_(angle) Omega=-c dT.</code></pre>
+<p>Along this cycle,</p>
+<pre><code>|1+alpha_N T|^2
+   =1-4sin^2(pi/N)T(1-T),
+cos^N(pi/N)&lt;=|F_N(T)|&lt;=1.                         (5)</code></pre>
+<p>The lower bound is positive for N&gt;=3. It is uniformly bounded away from zero as N varies: for example log cos(pi/N)&gt;=-pi<sup>2/(2N</sup>2 cos^2(pi/3)) gives a fixed positive lower bound after multiplying by N. In fact the lower bound in (5) tends to one. Thus Gamma_N=i_N(Gamma) lies in Y minus the Gauss wall D={F=0}, and this clock and its inverse have no exponential norm loss on that cycle.</p>
+<p>The two source poles lie on the exceptional divisor E, since F_N(0)=F_N(1)=1. No unmarked identification of their clock logarithms is made.</p>
+<h2 id="its-marked-wall-flux-is-exact-at-every-level">3. Its marked wall flux is exact at every level</h2>
+<p>Use the global closed form Xi=dlog F wedge dlog v from the Gauss-wall theorem. Pulling it back to (2) gives</p>
+<pre><code>i_N^*Xi=-N alpha_N/(1+alpha_N T) Omega.             (6)</code></pre>
+<p>For N&gt;=3 the segment 1+alpha_N T avoids zero. Its logarithm, continued from zero at T=0, has value Log(Q^(-1))=-c/N at T=1. Therefore</p>
+<pre><code>integral_(Gamma_N) Xi
+  =c N Log(Q^(-1))=-c^2=4pi^2.                    (7)</code></pre>
+<p>The continuous marked logarithm of F_N is N Log(1+alpha_N T), which changes by -c even though the two endpoint values of F_N are both one. This is the full winding, not a point evaluation which forgets the period. Equation (7) reproduces the marked physical flux by direct evaluation of the actual finite clock. It does not alone identify every homology component or the selected knot’s geometric contribution.</p>
+<p>The isolated level N=2 has a zero on this straight source segment; it needs a separately marked relative deformation. Nothing in the asymptotic argument requires claiming (5) there.</p>
+<h2 id="a-whole-near-identity-source-reparametrization">4. A whole near-identity source reparametrization</h2>
+<p>On a common complex neighborhood of the compact source define</p>
+<pre><code>Ttilde_N(T)=-(N/c)Log(1+alpha_N T),
+a_tilde=Ttilde_N(va)/v.                           (8)</code></pre>
+<p>The log is the marked one of Section 3. Since alpha_N=-c/N+O(N^-2), these functions are holomorphic there, extend through v=0, and</p>
+<pre><code>Ttilde_N(0)=0, Ttilde_N(1)=1,
+Ttilde_N&#39;(T)=-N alpha_N/[c(1+alpha_N T)]!=0,
+Ttilde_N(T)=T+O(N^-1)                             (9)</code></pre>
+<p>locally uniformly with all fixed derivatives. In the south chart use Ttilde’_N(T’)=(N/c)Log(1+(Q-1)T’), which equals 1-Ttilde_N(1-T’). Thus Phi_N:(v,a)-&gt;(v,a_tilde) respects the actual affine clutch near the entire compact cycle.</p>
+<p>The finite clock becomes exactly</p>
+<pre><code>F_N(T)=exp[-c Ttilde_N(T)].                      (10)</code></pre>
+<p>Its meridian normal eta_N is therefore the OLD physical meridian normal evaluated at the reparametrized SOURCE coordinates. In Y the associated frame coordinate a still differs from a_tilde; the remaining centralizer translation is explicit, not omitted. It fixes eta,v and changes a to a_tilde by a-&gt;a-eta beta_N, with</p>
+<pre><code>beta_N=[T-Ttilde_N(T)]/[1-F_N(T)].                 (11)</code></pre>
+<p>Both endpoints of (11) are removable on the marked cycle. This is a statement about the resolved framing coordinate, not an assertion that its translation is the actual internal current.</p>
+<p>There is also an exact source-form homotopy:</p>
+<pre><code>Phi_N^*Omega-Omega
+      =d[(T-Ttilde_N(T))dlog v].                 (12)</code></pre>
+<p>The one-form in (12) extends through both compact poles: its coefficient vanishes at T=0 and T=1, respectively, and the two opposite-chart expressions agree. It is O(N^-1) there with all fixed derivatives. Thus the source area class and its compact period are retained, including their polar clutch.</p>
+<h2 id="the-operator-polarization-qualification-is-essential">5. The operator-polarization qualification is essential</h2>
+<p>Under H_0=G Fourier/N, the OLD head clock is sent to the NEW head shift V^(-1), while the old head shift is sent to Q<sup>(-R)Q</sup>S. In particular Q<sup>(-R)Q</sup>S is identity on the selected diagonal source. The inserted Q^S in Section 1 is not the image of the old physical head clock under this same gauge.</p>
+<p>Consequently (1)–(12) give an explicit actual-clock algebraic cycle with the correct marked geometric flux, and its regular logarithmic source reparametrization. Using it as the image of the knot’s ORIGINAL physical cut or its independent internal centralizer current additionally requires the exact Fourier/ conormal operator dictionary and the full star/current transport. Matching functions, symplectic forms or winding alone does not supply that last identification.</p>
+<p>The exact operator adapter is derived in <a href="controlled_fourier_current_and_conormal_dictionary.html">the controlled Fourier current dictionary</a>. The separate current/polarization and coherent-metric audit is in <a href="frobenius_clock_and_internal_centralizer_map.html">the Fr-clock/internal-centralizer note</a>.</p>
+<h2 id="independent-coefficient-and-period-checks">6. Independent coefficient and period checks</h2>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_finite_frobenius_clock_graph.py">The diagnostic</a> constructs the root source from the ACTUAL integral divided matrices, before testing the binomial clock formula and north/south equality. Its 72 finite-field cases cover N=3,…,10 and both source poles. High-precision marked integrals at nine levels N=3,…,256 check the flux, both removable centralizer endpoints, and the stated clock-modulus bound. These checks support the uniform proof; they do not identify the inserted clock with the old physical head clock. <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/finite_frobenius_clock_graph_results.json">Results</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/finite_frobenius_clock_graph_and_marked_flux.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-finite-clock-and-its-global-normal-graph">1. The actual finite clock and its global normal graph</a><a href="#the-real-compact-cycle-avoids-the-wall-with-bounded-clock-norm">2. The real compact cycle avoids the wall with bounded clock norm</a><a href="#its-marked-wall-flux-is-exact-at-every-level">3. Its marked wall flux is exact at every level</a><a href="#a-whole-near-identity-source-reparametrization">4. A whole near-identity source reparametrization</a><a href="#the-operator-polarization-qualification-is-essential">5. The operator-polarization qualification is essential</a><a href="#independent-coefficient-and-period-checks">6. Independent coefficient and period checks</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

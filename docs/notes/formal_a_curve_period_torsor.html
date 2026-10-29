@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Formal quantum-A periods on the classical curve · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/formal_a_curve_period_torsor.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="formal-quantum-a-periods-on-the-classical-curve">Formal quantum-A periods on the classical curve</h1>
+<p>Research note, 25 October 2026. This pursues the norm-torsor and A-curve direction specified in the user’s pasted attachment. It constructs the formal branch and its period connection directly from a specified quantum A-operator. It does not assume equality of a root-of-unity central curve D_n with the classical A-curve. The actual Kashaev-period identification and volume conjecture remain unproved.</p>
+<p>Formal solutions of q-difference equations are existing theory; see the stated coverage of Garoufalidis–Geronimo, <a href="https://arxiv.org/abs/math/0405331">math/0405331</a>. No proof or analytic asymptotic theorem from that source is used below. The calculations here are coefficient lifting, formal connections, and algebraic local models. No novelty is claimed for formal difference-equation methods.</p>
+<h2 id="a-branch-lifts-by-an-explicit-noncommutative-hensel-recursion">1. A branch lifts by an explicit noncommutative Hensel recursion</h2>
+<p>Normalize the specified operator at q=1 so that its first nonzero h-coefficient has order zero, and write</p>
+<pre><code>q=exp(h), delta=x*d/dx, sigma_h=exp(h*delta),
+Ahat=sum_(j=0)^d p_j(h,x)T^j, T f=sigma_h(f)T,
+p_j(h,x) in C(x)[[h]], P(x,L)=sum_j p_j(0,x)L^j.</code></pre>
+<p>Suppose C is a normalized component of P=0 with function field k, x nonconstant and L nonzero, on which P_L is nonzero generically. In particular the selected component has multiplicity one. Extend delta to k by delta(L)=-x P_x/P_L.</p>
+<p><strong>Formal factor theorem.</strong> There is a unique</p>
+<pre><code>a(h)=L+h a_1+h^2 a_2+... in k[[h]]^*</code></pre>
+<p>such that T-a is a right factor of Ahat. All a_j are algebraic functions on C, computed recursively from the operator.</p>
+<p>For a proof, the right remainder is</p>
+<pre><code>R(a)=sum_j p_j(h,x)*product_(s=0)^(j-1) sigma_h^s(a).
+                                                           (1.1)</code></pre>
+<p>Its constant coefficient is P(x,L)=0. Once a_1,…,a_(n-1) are known, its coefficient at h^n is</p>
+<pre><code>P_L(x,L)*a_n + known_n.</code></pre>
+<p>Every shift of h^n a_n agrees with h^n a_n modulo h^(n+1), which proves the displayed coefficient. Set a_n=-known_n/P_L. Formal right division by the monic T-a then gives</p>
+<pre><code>Ahat=Qhat*(T-a).                                  (1.2)</code></pre>
+<p>This is an intrinsic branch of the given operator, rather than a new quantization selected for its growth. A noncharacteristic left multiple Bhat*Ahat has the same lifted branch: its symbol factor B_0(x,L) is a unit in k, so uniqueness in (1.1) applies again.</p>
+<p>A change of cyclic generator by a finite operator C(T) gives, on this branch, multiplication by the scalar obtained by the same remainder formula (1.1), with C in place of Ahat. When C_0(x,L) is nonzero this is a unit of k[[h]]. Thus the gauge law below also handles noncharacteristic changes of cyclic generator.</p>
+<p>The hypothesis that P contains the geometric classical A-component still has to be justified for the actual knot operator. This theorem does not prove an AJ statement.</p>
+<h2 id="the-resulting-period-connection-and-its-gauge-law">2. The resulting period connection and its gauge law</h2>
+<p>Choose a local logarithm v=Log L and put u=Log x. The Bernoulli operator defines an exact formal differential</p>
+<pre><code>Theta_A(h)= [h*delta/(exp(h*delta)-1)] Log a(h) *du
+          =v du+h theta_1+h^2 theta_2+... .        (2.1)</code></pre>
+<p>The quotient means its power series 1-h*delta/2+h<sup>2*delta</sup>2/12-… . The coefficients theta_j for j&gt;=1 are meromorphic algebraic differentials on C. Indeed Log(a/L) has coefficients in k, and delta(Log L)=delta(L)/L belongs to k.</p>
+<p>Locally a formal solution of sigma_h(psi)=a psi is a horizontal period frame for</p>
+<pre><code>d log psi=Theta_A(h)/h.                            (2.2)</code></pre>
+<p>To verify (2.2), apply exp(h*delta)-1 to log psi. Its formal inverse on derivatives is exactly the Bernoulli series in (2.1). Local primitives supply such frames; their integration constants are additional period data.</p>
+<p>For a frame change psi -&gt; g psi, g in k[[h]]^<em>, the ratio changes by a -&gt; a</em>sigma_h(g)/g. Formula (2.1) gives exactly</p>
+<pre><code>Theta_A -&gt; Theta_A+h*d log g.                     (2.3)</code></pre>
+<p>Thus (2.2) is a well-defined formal line with connection and a torsor of horizontal period frames. Changing the cyclic frame changes its presentation by the usual connection gauge; it does not alter its leading period differential.</p>
+<p>This also gives a precise formal comparison criterion. For two such ratios a,b with the same leading L, write</p>
+<pre><code>(Theta_a-Theta_b)/h=omega_0+h omega_1+... .</code></pre>
+<p>They are equivalent by a unit g in k[[h]]^* exactly when</p>
+<pre><code>omega_0=d log g_0 for some g_0 in k^*,
+omega_j=d g_j for some g_j in k, j&gt;=1.            (2.4)</code></pre>
+<p>One direction is (2.3). For the converse take g=g_0 exp(sum_(j&gt;=1)h^j g_j). The comparison is unique up to delta-constant units C[[h]]^*. Equation (2.4) displays the period obstructions explicitly; finite-level Hilbert 90 does not make them vanish automatically for the infinite-order formal shift.</p>
+<h2 id="the-first-correction-retains-the-operators-ordering">3. The first correction retains the operator’s ordering</h2>
+<p>Let P_1(x,L)=sum_j [h]p_j(h,x)L^j. Expanding (1.1) gives</p>
+<pre><code>a_1=-[P_1+(L*delta L/2)P_LL]/P_L,
+
+theta_1=[-P_1/(L P_L)
+               -(delta L/2)(P_LL/P_L+1/L)]du.    (3.1)</code></pre>
+<p>Equivalently, putting P_sub=P_1-(x L/2)P_xL,</p>
+<pre><code>theta_1=-(1/2)d log(L P_L)-P_sub/(L P_L)*du.      (3.2)</code></pre>
+<p>The partial derivatives in P_sub refer to the displayed left-ordered symbol. Formula (3.2) follows by differentiating P_L along C. In the special case P_sub=0, this correction is the square-root line (L P_L)^(-1/2). In general the extra differential is retained. No preferred ordering or vanishing subprincipal term is assumed.</p>
+<h3 id="the-actual-peripheral-normalization-includes-a-difference-constant">The actual peripheral normalization includes a difference constant</h3>
+<p>The reduced and modified-trace literature periods satisfy N_N(M)=d_N(M)F_N(M), with</p>
+<pre><code>f(M)=M-M^(-1),
+d_N(M)=eta_N f(M)/(M^N-M^(-N)),
+d_N(qM)/d_N(M)=-f(qM)/f(M), q=exp(pi*i/N).</code></pre>
+<p>For consistent logarithms let chi=Log(-1). The formal branch ratios therefore give the exact connection-presentation change</p>
+<pre><code>Theta_modified=Theta_reduced+chi*dlog M+h*dlog f. (3.3)</code></pre>
+<p>The sign character and the meridian divisor are separate data. In particular the leading classical shift variable changes sign.</p>
+<p>There is further period data not recovered from this shift ratio. Write u=Log M, h=pi<em>i/N, and w=exp(2pi</em>i*u/h)=M^(2N). Then exactly</p>
+<pre><code>d_N(M)=eta_N f(M) exp(pi*i*u/h)/(w-1).            (3.4)</code></pre>
+<p>The exponential changes sign under u-&gt;u+h, while w is invariant. Thus 1/(w-1) is a genuine difference constant. It is outside the coefficientwise meromorphic formal class used in Section 2 and is not removed by that section’s Bernoulli inversion. Its pole cancels the zero of f in the whole germ and gives d_N(1)=eta_N/N. This identifies a specific piece of the actual period pointing that a formal branch alone would forget. The <a href="algebraic_central_normalization.html">central normalization lemma</a> controls factors from a fixed finite algebraic central presentation; it does not supply an unknown global period comparison.</p>
+<p>The subsequent <a href="regularized_kashaev_period.html">regular-period theorem</a> also shows why a plain uniform branch amplitude for the reduced state would lose essential data at completeness. Exactly F_N=S_N R_N+P_N, where P_N interpolates the ordinary root colors and S_N vanishes at all those orbit points but has value N at Y=1. All ordinary values are polynomially bounded. In particular F_N(q_N)=1 excludes a uniform nonzero geometric WKB amplitude for F_N across M=1,q_N if its complete value has positive exponential growth. The regular period R_N removes this polar/zero structure with the full original gauge retained; its affine source has bounded Laurent support and polynomially bounded coefficients. A norm theorem for R_N is still needed to identify the actual period with the formal geometric branch.</p>
+<h2 id="the-leading-period-is-the-regulator-action-with-conversion-explicit">4. The leading period is the regulator action, with conversion explicit</h2>
+<p>First center at the marked point: use u=Log(x/x_c), v=Log(L/L_c), and replace the uncentered S by S-(Log L_c)<em>u. The extracted solution character exp((Log L_c)</em>u/h) remains explicit; it is not discarded. Now let S denote this centered leading primitive, dS=v du. Suppose the centered geometric peripheral functions used by the regulator obey</p>
+<pre><code>m/m_c=(x/x_c)^a (L/L_c)^b,
+l/l_c=(x/x_c)^c (L/L_c)^d, Delta=a*d-b*c !=0.</code></pre>
+<p>Then U=a u+b v and V=c u+d v. Direct differentiation gives</p>
+<pre><code>dR=-Delta*(u dv-v du)/4,
+R=(Delta/2)S-(Delta/4)u v+constant.               (4.1)</code></pre>
+<p>This identifies the leading <em>differential</em> of the formal quantum-A period with the central coordinate of the regulator Heisenberg torsor in <a href="a_polynomial_torsor_status.html">the focused formulation</a>.</p>
+<p>For example, if the geometric holonomies are m=x<sup>2,l=L</sup>2, then Delta=4. At the centered complete point u=v=0, (4.1) gives</p>
+<pre><code>Im S=(1/2)Vol + Im(constant).                      (4.2)</code></pre>
+<p>For the ADO root parameter h=pi*i/N, a period exp(S/h) has (2pi/N)log|exp(S/h)|=2 Im S. Thus these square-holonomy conventions give the required volume coefficient when the marked additive constant agrees. The subsequent <a href="quantum_longitude_and_regulator_action.html">actual longitude/action calculation</a> now proves this peripheral conversion for the actual classical critical correspondence. Its compatible discrete-character lift also fixes Im S=Vol/2 in this q-parameter, without an undetermined imaginary constant. This does not prove that the geometric component survives in the selected sum’s minimal operator or its quantum period.</p>
+<p>Equivalently the <a href="even_meridian_norm_descent.html">squared-meridian descent</a> uses Y=M^2, step H=Log(q^2)=2h, and S_Q=2S. In (Y,L) the full peripheral exponent determinant is two, and R=S_Q-(Log Y)(Log L)/2. Both conversions give the same marked connection and norm.</p>
+<p>For other conventions Delta, the constant character, and the root parameter must all be retained. Merely writing the same letters for operator variables and full geometric holonomies would lose a factor.</p>
+<h2 id="formal-lattices-at-a-simple-collision">5. Formal lattices at a simple collision</h2>
+<p>The subsequent <a href="geometric_rigidity_and_cyclic_source.html">geometric rigidity calculation</a> constructs regular formal ratios on the two normalized geometric gluing germs, with distinct slopes at the complete peripheral point. An exact scalarization model then has a classical meridian factor despite having no common local quantum coefficient divisor. Its all-shifts cyclic lattice retains a length-one source at (u,h)=(0,0). This gives an additional reason to keep integral factors and the cyclic generator when comparing the normalized curve with an actual operator. It does not remove the hypotheses on a given operator below.</p>
+<p>The function-field construction does not by itself allow evaluation where P_L=0. Here is an explicit extension at two common local types. Let t be a uniformizer on the normalization, with x(0),L(0) nonzero, and assume the operator coefficients are regular there. Suppose</p>
+<pre><code>ord_t(P_L)=1, delta=b(t)t^(-mu)*d/dt,
+b(0)!=0, mu in {0,1}, L=L_0+O(t).</code></pre>
+<p>Mu=0 covers an unramified branch through an ordinary double point; mu=1 covers a simple ramification of the x-projection. Then</p>
+<pre><code>ord_t(a_n) &gt;=-[(mu+2)n-1], n&gt;=1.                 (5.1)</code></pre>
+<p>For a proof, delta increases pole order by at most mu+1. In the known h^n remainder, a term with two positive-order a-coefficients has pole order at most (mu+2)n-2. A term with one positive-order coefficient must also contain a derivative or another h-coefficient; the same bound follows. For derivatives of L alone, delta^r L has pole order at most r(mu+1)-1, which also gives this bound. Division by P_L adds at most one. This proves (5.1) by induction.</p>
+<p>Set w=mu+2 and use the formal weighted chart h=t^w epsilon. Then</p>
+<pre><code>a=L_0+t*A(t,epsilon), A in C[[t,epsilon]],
+h*delta=b(t)[t^2 epsilon*d/dt
+                       -w*t*epsilon^2*d/depsilon]. (5.2)</code></pre>
+<p>The second expression acts at fixed h and preserves the power-series ring. Its exponential is a formal automorphism. Since a has nonzero constant term, the rank-one difference module and its lattice extend on this chart. This is an algebraic formal replacement of the poles, not an instruction to evaluate a divergent coefficient at t=0.</p>
+<p>The chart (5.2) alone does not cover the complete evaluation at fixed nonzero h. It resolves the joint formal degeneration. The other chart must retain the colliding branches, as the next construction shows.</p>
+<h2 id="a-rank-two-algebraic-connection-at-an-ordinary-double-point">6. A rank-two algebraic connection at an ordinary double point</h2>
+<p>Assume the classical symbol has an ordinary double point p=(x_0,L_0), with x_0 L_0 !=0, satisfying</p>
+<pre><code>P=P_x=P_L=0, P_LL!=0,
+P_xL^2-P_xx P_LL !=0.                             (6.1)</code></pre>
+<p>Use h=tau^2 and x=x_0+tau*s. Extract the constant shift character L_0 from the solution, so T acts on the remaining factor as</p>
+<pre><code>L_0 exp[tau*(x_0+tau*s)*d/ds].</code></pre>
+<p>Taylor expansion of the given operator has zero terms of orders tau^0 and tau^1. Dividing by tau^2 gives a formal differential operator whose leading term is</p>
+<pre><code>L_node=A_2*d_s^2+B_1*s*d_s+C_2*s^2+D_0,
+
+A_2=x_0^2 L_0^2 P_LL(p)/2,
+B_1=x_0 L_0 P_xL(p),
+C_2=P_xx(p)/2, D_0=P_1(p).                       (6.2)</code></pre>
+<p>All derivatives in this formula are evaluated at p. To check it, expand the coefficients at x_0+tau<em>s and each j-th shift to order two. The identities P_x=P_L=0 remove the linear terms, and sum_j j^2 p_j L_0<sup>j=L_0</sup>2 P_LL+L_0 P_L gives the second derivative. The mixed coefficient is x_0 L_0 P_xL</em>s*d_s. This proves (6.2) with the left ordering and quantum first coefficient unchanged.</p>
+<p>The complete formal operator, normalized by A_2, has the unique factorization</p>
+<pre><code>L(tau)=U(tau)*[d_s^2+b(s,tau)d_s+c(s,tau)],
+U(0)=1, b,c in C[s][[tau]],                      (6.3)</code></pre>
+<p>where U is a unit in the tau-adic completed differential-operator ring. For the proof, at order tau^n divide the known residual differential operator on the right by the monic leading operator of order two. Its quotient specifies [tau^n]U and its remainder, of order less than two, specifies the tau^n coefficient of b*d_s+c. Ordinary Ore division proves existence and uniqueness recursively. Each step uses polynomial coefficients and a constant nonzero leading coefficient.</p>
+<p>Thus this branch pair has a free rank-two formal connection lattice, regular at s=0. Other classical roots are excluded by the completion around L_0. The construction is unchanged up to isomorphism by a noncharacteristic left multiple of the original operator.</p>
+<p>The two slopes alpha of the classical node obey P_LL alpha^2+2P_xL alpha+P_xx=0. The leading quadratic exponent of the corresponding formal periods is alpha*s^2/(2x_0 L_0), exactly the rescaling of the leading action in Section 4. Two period constants are still required at the regular point s=0. The operator does not select their values or the actual knot’s combination of branches.</p>
+<h2 id="what-this-proves-toward-the-requested-comparison">7. What this proves toward the requested comparison</h2>
+<p>For any specified operator with the geometric component in its classical symbol, its simple generic branch now has a canonical formal ratio, a gauge-covariant period connection, and the same leading regulator differential after the peripheral conversion. The local construction also retains a colliding pair in a regular rank-two lattice at an ordinary double point.</p>
+<p>This does not prove that every relevant knot operator has that symbol, that its complete point has only an ordinary double collision, or that the actual selected ADO period realizes the formal geometric branch with the marked normalization. A formal solution does not establish convergence or its root-of-unity evaluation. Multiplication by exp(c/h) already shows why the action constant matters for volume.</p>
+<p>The next comparison must identify the actual all-level pointed period, with its peripheral lattice, in this A-curve period torsor. The classical regulator fixes what its normalization must be; the present algebra does not prove the identification. The full norm statement in the focused formulation remains unproved.</p>
+<p>The subsequent <a href="actual_geometric_normal_period.html">actual normal-period proof</a> constructs a nonzero formal normal block directly from the actual crossing coefficients. Positive gluing rigidity identifies its Hessian radical with the two framing directions, and the quotient of its algebraic Gaussian amplitude with the geometric one gives an all-orders formal gauge. This is additional local coefficient information; it does not prove that the selected sum’s minimal operator contains that block or that its actual source and cut select it. Sections 7–8 of that note state the exact role of the ideal triangulation theorem and the remaining source-gauge equation.</p>
+<p><code>experiments/audit_formal_a_curve_torsor.py</code> checks the noncommutative lifting, first correction, exact gauge law, collision pole bounds, and rank-two local reduction against independent exact factorizations and shift actions. These are diagnostics for the uniform proofs here.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/formal_a_curve_period_torsor.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#a-branch-lifts-by-an-explicit-noncommutative-hensel-recursion">1. A branch lifts by an explicit noncommutative Hensel recursion</a><a href="#the-resulting-period-connection-and-its-gauge-law">2. The resulting period connection and its gauge law</a><a href="#the-first-correction-retains-the-operators-ordering">3. The first correction retains the operator’s ordering</a><a href="#the-leading-period-is-the-regulator-action-with-conversion-explicit">4. The leading period is the regulator action, with conversion explicit</a><a href="#formal-lattices-at-a-simple-collision">5. Formal lattices at a simple collision</a><a href="#a-rank-two-algebraic-connection-at-an-ordinary-double-point">6. A rank-two algebraic connection at an ordinary double point</a><a href="#what-this-proves-toward-the-requested-comparison">7. What this proves toward the requested comparison</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

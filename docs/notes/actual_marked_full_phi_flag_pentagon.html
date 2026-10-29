@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The full dilogarithm resolves the actual charged flag pentagon at the root · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_marked_full_phi_flag_pentagon.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-full-dilogarithm-resolves-the-actual-charged-flag-pentagon-at-the-root">The full dilogarithm resolves the actual charged flag pentagon at the root</h1>
+<p>28 October 2026. The full modular dilogarithm has an actual finite marked realization at the charged cup. Its values at the marked clock spectrum are regular and invertible at the physical root. They implement a mixed full-Phi/nilpotent pentagon with its original source factor nonzero and of modulus sqrt(N).</p>
+<p>The integer mark is fixed by an explicit operator preparing the original cup, not by an arbitrary choice of a cyclic spectral cut. This removes the singular norm-root factors in the earlier <a href="actual_shared_quantum_flags_and_charged_exchange.html">mixed cyclic/nilpotent pentagon</a>. It does not realize all three classical five-point certificates inside the original crossing or choose its geometric period.</p>
+<h2 id="the-exact-full-function-and-its-marked-unit-root-values">1. The exact full function and its marked unit-root values</h2>
+<p>Use the full literature function with the normalization proved in <a href="rational_quantum_dilogarithm_torsor.html">the rational evaluation</a> and retained in <a href="actual_modular_dilog_circle_and_boundary_source.html">the exact circle/boundary source</a>. Write Q=exp(2pi*i/N), d=N-1, and</p>
+<pre><code>Psi(z)=V_N(exp z)(1-exp(Nz))^((N+1)/(2N)+i z/(2pi))
+                 exp[i Li_2(exp(Nz))/(2pi N)],
+V_N(t)=(1-t^N)^(d/(2N))
+                product_(ell=1)^d(1-Q^ell t)^(-ell/N). (1)</code></pre>
+<p>All marks are anchored at Re z=-infinity, as in those notes. In particular</p>
+<pre><code>Psi(z+2pi*i/N)=Psi(z)/(1-exp z).              (2)</code></pre>
+<p>For j=1,…,N the points z_j=2pi<em>i</em>j/N lie in the interior or top boundary of the selected strip. They are regular and nonzero, including j=N. The bottom point z=0 is a zero and is deliberately a different mark. Repeated use of (2) gives</p>
+<pre><code>Psi(2pi*i*j/N)=phi_N/F_(j-1),
+F_a=(Q;Q)_a,
+phi_N=Psi(2pi*i/N)
+  =sqrt(N) exp{i pi[1/4-(N+N^(-1))/12]}.       (3)</code></pre>
+<p>This fixes the scalar and phase, including even levels. Here is a direct proof of the scalar. In (1) approach z=log r+2pi*i/N with r increasing to one. Its central zero cancels the ell=d factor. The resulting anchored finite product is</p>
+<pre><code>phi_N=N^(d/N) exp[i pi/(12N)]
+                 product_(ell=1)^(N-2)
+                      (1-Q^(ell+1))^(-ell/N). (4)</code></pre>
+<p>For 1&lt;=a&lt;N the anchored argument of 1-Q^a is pi*a/N-pi/2. Summing the arguments in (4) gives the phase in (3). For the modulus, either pair complementary factors in (4), or use the exact radial identity</p>
+<pre><code>|Psi(log r)|^2=(1-r)(1-r^N).</code></pre>
+<p>Equation (2) then yields |Psi(log r+2pi*i/N)|<sup>2=(1-r</sup>N)/(1-r), which tends to N. This proves (3) with no unspecified root phase. The negative orientation is the conjugate-reflected formula with the opposite phase.</p>
+<h2 id="the-actual-coupled-flag-oscillator-has-a-fixed-integer-mark">2. The actual coupled flag oscillator has a fixed integer mark</h2>
+<p>Take the complete original heads, with x=-q^(-1), lambda=x^(-1)=Qx, k=x<sup>N=(-1)</sup>(N-1), and typed cyclic marks S_1^N=mu, S_2^N=k mu. In the notation of <a href="actual_shared_quantum_flags_and_charged_exchange.html">the actual shared flags</a>,</p>
+<pre><code>Delta=f_1+K_1^(-1)S_2-S_1,
+gamma=-e_2K_1,
+v=Z_2^(-1)+S_1e_2,
+
+Delta v=QvDelta, v^N=1, Delta^N=gamma^N=0,
+gamma Delta=lambda(Q^(-1)v-1).               (5)</code></pre>
+<p>Let E_j(v) be the v=Q^j spectral projectors, with E_N=E_0. Then</p>
+<pre><code>Delta E_1(v)=0.                              (6)</code></pre>
+<p>For example (5) makes Delta injective on every E_j with j!=1. If Delta E_1 were nonzero, the remaining N-1 injective arrows would contradict Delta^N=0. There is a direct actual preparation of this cut. Put</p>
+<pre><code>A=-S_1e_2Z_2, C=P(A),
+P(A)=sum_(h=0)^d (-1)^hQ^(h(h-1)/2)A^h/F_h. (7)</code></pre>
+<p>These use the actual finite e_2; A^N=0. Then</p>
+<pre><code>v=C Z_2^(-1) C^(-1),
+Delta=C(K_1^(-1)J_(+,2))C^(-1),
+C gamma=gamma C.                             (8)</code></pre>
+<p>Here J_+ is the literal strict raising shift on the second head. The first identity follows from the finite Euler recurrence: A Z_2<sup>(-1)=Q</sup>(-1)Z_2^(-1)A, so conjugation gives Z_2<sup>(-1)(1-Q</sup>(-1)A)=v. The third follows by direct commutation of A with -e_2K_1. For the second, both proposed raising operators obey (5) with the same gamma and v. Their difference has image in ker(gamma), and their clock covariance therefore allows only the E_1 input. Both vanish on that input, by (6) and the literal endpoint of J_+. Thus their difference is zero.</p>
+<p>For the original cup p of the preceding notes, exactly</p>
+<pre><code>p=N x^(-d) C|0,d&gt;.</code></pre>
+<p>Indeed the coefficient of |h,d-h&gt; in C|0,d&gt; is x^h, by the ordinary factorial reflection. Consequently</p>
+<pre><code>J_v=sum_(j=1)^N j E_j(v)=C(N-J_2)C^(-1),
+[J_v,Delta]=-Delta,
+J_v p=p,
+(J_v+J_1+J_2)p=Np.                           (9)</code></pre>
+<p>The actual cap and the actual integer source charge fix this mark. Equation (9) is not an identification of J_v with an arbitrary interior Pachner edge winding.</p>
+<h2 id="an-invertible-marked-full-phi-matrix-at-the-physical-root">3. An invertible marked full-Phi matrix at the physical root</h2>
+<p>For t positive near one, with its indicated logarithm, define</p>
+<pre><code>F_v(t)=sum_(j=1)^N
+             Psi(Log t+2pi*i*j/N) E_j(v).    (10)</code></pre>
+<p>This is a marked evaluation, not a single-valued cyclic functional calculus that identifies the top and bottom logarithmic values at eigenvalue one. All coefficients in (10) are holomorphic and nonzero near t=1. Hence F_v(t) and its inverse are regular there. The elementary shift (2), applied only to the nonzero arrows Delta:E_j-&gt;E_(j-1), j&gt;=2, gives</p>
+<pre><code>F_v(t)Delta F_v(t)^(-1)
+                    =Delta(1-Q^(-1)t v).     (11)</code></pre>
+<p>There is no exceptional wrap to check: (6) is the actual missing arrow, not an arrow removed by hand.</p>
+<p>At t=1, write F_v=F_v(1). Equations (3) and (8) give the explicit original-head realization</p>
+<pre><code>F_v=phi_N sum_(j=1)^N E_j(v)/F_(j-1)
+   =phi_N C diag_b[1/F_(d-b)] C^(-1),
+F_v p=phi_N p.                               (12)</code></pre>
+<p>The phase and modulus of phi_N are those in (3). In particular the selected source coefficient is nonzero and polynomial in size at every N.</p>
+<p>The relation to the old norm-one cyclic atom is exact. Let nu<sup>N=1-t</sup>N and let C_t=V_N(tv) with its anchored cyclic functional calculus. Then</p>
+<pre><code>F_v(t)=B(t) nu^(-J_v) C_t,
+B(t)=(1-t^N)^((N+1)/(2N)+i Log t/(2pi))
+                     exp[i Li_2(t^N)/(2pi N)]. (13)</code></pre>
+<p>Thus the full modular factor supplies an <strong>integer degree gauge</strong>, rather than just a central scalar. The apparent singular factors in (13) combine to the regular marked matrix (10). Dropping nu^(-J_v) would return the singular rescaled cyclic pentagon.</p>
+<p>The preparation C itself has a contractive core at unit marks. Let H_A act on the second head by H_A|b&gt;=lambda^(-b)|b&gt;/F_b. Then</p>
+<pre><code>A=H_A(S_1 tensor J_minus)H_A^(-1).</code></pre>
+<p>Both C=P(A) and C^(-1) are therefore factorial frames around a literal norm-one nilpotent shift. Their Euler factor and their inverse are the original full-Psi relative moments at the appropriate orientation; their diagonal factorial frames are reflected or ordinary moments as in Section 5 below. Thus (12) has an exact fixed-complexity full-Psi period presentation with the same polynomial boundary-kernel types as the original word. This is not a polynomial norm bound for C or F_v: their exponential actions remain in the full functions.</p>
+<h2 id="the-actual-physical-root-mixed-pentagon-and-its-source">4. The actual physical-root mixed pentagon and its source</h2>
+<p>For every scalar a, the finite Euler polynomial of the original root satisfies</p>
+<pre><code>F_v P(aDelta)
+   =P(aDelta)P(-aQ^(-1)Delta v) F_v.         (14)</code></pre>
+<p>Indeed (11) conjugates the left Euler argument to aDelta-aQ^(-1)Delta v. The two summands Q-commute. The finite ordered binomial theorem gives their Euler factorization; every term of total Delta-degree &gt;=N vanishes. This proves (14) independently of an assumed published operator pentagon, at the physical root and with the actual original endpoints.</p>
+<p>Keep the full original marked cap m, with mp=1. Because Delta p=0 and vp=Qp, both sides have exactly</p>
+<pre><code>m F_v P(aDelta)p
+  =m P(aDelta)P(-aQ^(-1)Delta v)F_vp
+  =phi_N.                                   (15)</code></pre>
+<p>Every original common Cartan, framing and peripheral line remains identical outside (15). The scalar phi_N has not been reset to one. This is a physical-root source-compatible mixed pentagon, with no free auxiliary t and no singular norm-root specialization.</p>
+<p>The nilpotent P factors can each be replaced by their exact full-Psi circle/radial periods. Since their series truncate, this is a finite linear replacement carrying all relative boundary components. It does not yet prove a homology pushforward between two unspecified full-Faddeev face networks or identify their geometric intersection coefficient.</p>
+<h2 id="the-literal-middle-five-point-source-gauges-lie-in-the-same-class">5. The literal middle-five-point source gauges lie in the same class</h2>
+<p>The <a href="actual_middle_five_point_wall_factorization.html">literal middle configuration</a> requires the original argument n=e_1S_2, the corrected reciprocal U, and its explicit diagonal Gamma. These have a common <strong>contractive</strong> transfer, not an uncontrolled nonnormal one. Put</p>
+<pre><code>T=J_(minus,1) tensor S_2,
+H_n|j&gt;=lambda^j c_j^+|j&gt;,
+H_U|j&gt;=lambda^j F_j|j&gt;,
+c_j^+=(-1)^jQ^(j(j-1)/2)/F_j.</code></pre>
+<p>Then</p>
+<pre><code>n=H_n T H_n^(-1), U=H_U T H_U^(-1),
+Gamma=H_U H_n^(-1),
+H_U=N lambda^(-d)Q^(-1) Rev H_n Rev,         (16)</code></pre>
+<p>where Rev|j&gt;=|d-j&gt;. Each identity follows from its consecutive coefficient ratio and includes the strict zero endpoint. For unit S_2, ||T||&lt;=1.</p>
+<p>Let c_a^- be the corresponding Euler coefficient at Q^(-1). Finite factorial reflection gives</p>
+<pre><code>Gamma_j=N^2 Q^j c_(d-j)^+ c_(d-j)^-,
+Gamma_j^(-1)=Q^(-j)c_j^+ c_j^-.              (17)</code></pre>
+<p>Each c_a^epsilon is exactly the one-full-Psi circle minus radial source of the modular-circle theorem. Thus both Gamma and its inverse are two-full-Psi relative periods. At radius one their boundary kernels are unit phase/power diagonals, with only the displayed N^2 scalar. For reflected coefficients, the radial power is t^j; for ordinary ones it is t^(N-j-1). Each radial diagonal operator has norm at most 1/(2pi). The Gaussian phases and the degree reversal in (16) are explicit and retain their original roots.</p>
+<p>This does not claim that Gamma has polynomial norm: its exponential action is now carried by the full Psi functions in its period, rather than hidden in a discarded boundary frame. A component with one radial factor and another circle factor can still have an exponential period. No global dominance estimate follows from the local radial bound alone.</p>
+<h2 id="exact-scope-and-the-remaining-geometric-comparison">6. Exact scope and the remaining geometric comparison</h2>
+<p>The full completion is compatible with an actual charged cap mark and supplies (14) at the physical root, where the norm-one cyclic version was singular. The literal middle-five-point factorial transition also has the exact full-Psi/source realization (16)–(17). These are concrete local source bridges.</p>
+<p>The three classical five-point certificates have specific shared flags and face orders. Their complete factor products have not yet been identified with the mixed factors of (14) or with a proper full-Phi tetrahedral pentagon before source extraction. In particular, merely replacing a cyclic function by Psi does not make the literal candidates 1-Z and X Q-commute; their additive defect persists. The required positive quad/Fourier change must carry its full source and integer mark, with (16)–(17) giving an explicit test for its boundary normalization.</p>
+<p>Furthermore, ordinary Taylor projection is not natural under arbitrary Laurent inversions: Psi-V begins in t^N Log t, and multiplication by t^(-N) exposes a nonvanishing logarithmic source. The circle/radial formula is integrable for precisely a&lt;N. A proposed five-point move leaving that range must retain its logarithmic/carry counterterms. Nothing in (14) requires this invalid extension; its Delta grading is strictly positive and nilpotent.</p>
+<p>Thus the construction gives a genuine physical-root mixed pentagon and nonzero original cap coefficient, not yet the whole positive triangulation period or a geometric lower bound.</p>
+<h2 id="reproducible-independent-checks">7. Reproducible independent checks</h2>
+<p>Run</p>
+<pre><code>python3 experiments/audit_actual_marked_full_phi_flag_pentagon.py</code></pre>
+<p>Exact prime-field checks cover 54 actual marked-root pentagons through N=10, nine complete literal-five-point moment gauges, and their original cups and integer marks. The common phi_N scalar is retained symbolically in those homogeneous identities. Independent complex finite-product checks cover every marked unit-root value (3) through N=20 at both orientations and verify the exact phase and modulus. No volume statement is used by these checks.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_marked_full_phi_flag_pentagon.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-exact-full-function-and-its-marked-unit-root-values">1. The exact full function and its marked unit-root values</a><a href="#the-actual-coupled-flag-oscillator-has-a-fixed-integer-mark">2. The actual coupled flag oscillator has a fixed integer mark</a><a href="#an-invertible-marked-full-phi-matrix-at-the-physical-root">3. An invertible marked full-Phi matrix at the physical root</a><a href="#the-actual-physical-root-mixed-pentagon-and-its-source">4. The actual physical-root mixed pentagon and its source</a><a href="#the-literal-middle-five-point-source-gauges-lie-in-the-same-class">5. The literal middle-five-point source gauges lie in the same class</a><a href="#exact-scope-and-the-remaining-geometric-comparison">6. Exact scope and the remaining geometric comparison</a><a href="#reproducible-independent-checks">7. Reproducible independent checks</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

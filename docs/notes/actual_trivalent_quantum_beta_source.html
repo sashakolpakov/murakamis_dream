@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An exact original trivalent beta cycle and its norm remainder · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_trivalent_quantum_beta_source.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="an-exact-original-trivalent-beta-cycle-and-its-norm-remainder">An exact original trivalent beta cycle and its norm remainder</h1>
+<p>28 October 2026. The original balanced head equation at a trivalent vertex now has a specified one-dimensional relative source. Its finite convolution is an explicit Newton polynomial. A norm-corrected Barnes contour splits this polynomial into a NONZERO balanced residue block and an explicitly retained normalization term. The Barnes factor of that latter term is uniformly bounded on compact positive boundary families. No unknown knot coefficient or replaced invariant occurs.</p>
+<p>This is a local source theorem. The norm factor can have exponential size; the rate of the nonzero residue block and its comparison with that normalization term are separate. Nonvanishing of this block does not yet prove the global knot period selects it after all other boundary integrations.</p>
+<h2 id="the-source-and-its-exact-finite-polynomial">1. The source and its exact finite polynomial</h2>
+<p>Use the ORIGINAL full functions Psi_+, Psi_- from <a href="actual_modular_dilog_circle_and_boundary_source.html">the circle-and-boundary source theorem</a>. Put N&gt;=2, d=N-1, h=2<em>pi</em>i/N and Q=exp h. Their coefficients through degree d are</p>
+<pre><code>p_a=(-1)^a Q^(a(a-1)/2)/(Q;Q)_a,
+m_a=Q^a/(Q;Q)_a.</code></pre>
+<p>After the exact reflection of the positive factorial order, the trivalent fiber field is precisely</p>
+<pre><code>F_N(L;U,V)=r^d Psi_-(Log U-L)
+                    Psi_+(Log V-L)Psi_+(-L), r=exp L.  (1)</code></pre>
+<p>The graph incidence argument in <a href="positive_bipyramid_source_transport.html#4-the-original-source-law-checked-on-the-actual-reduced-graph">the bipyramid source note</a> shows that its constant Laurent coefficient is the original complete source convolution, with all original boundary tags retained. The finite q-binomial calculation gives</p>
+<pre><code>[r^0] F_N=(Q^(-d)/N) B_N(Q^2 U,Q V),
+B_N(u,v)=sum_(a=0)^d product_(j=0)^(a-1)(u-Q^j v). (2)</code></pre>
+<p>The empty product is one. Thus u=Q^2 U, v=Q V and N Q^d are exact tags and normalization, not only their classical limits.</p>
+<p>The basic original-source recurrences are</p>
+<pre><code>B_N(u,v)=(u-v)B_N(u,Qv)+D_N(u,v),
+v B_N(Qu,Qv)=(u-1)B_N(u,v)+D_N(u,v),
+D_N(u,v)=1-u^N+v^N.                              (3)</code></pre>
+<p>The second follows by summing Q^a p_a=(u p_a-p_(a+1))/v for the Newton products p_a. Both endpoint terms are part of the source.</p>
+<h2 id="a-single-exact-outer-hankel-current">2. A single exact outer-Hankel current</h2>
+<p>At large r, each full Psi in (1) has its first N ordinary coefficients plus O_N((1+|Log r|)|r|^(-N)). Therefore F_N is its ordinary Laurent polynomial down through the constant term plus O_N(log|r|/|r|), uniformly over a bounded logarithmic turn. Its generalized constant coefficient is consequently an actual limit of full lifted circles.</p>
+<p>Write</p>
+<pre><code>M_N(r)=(r^N-V^N)(r^N-1)/[r^N(r^N-U^N)],
+C_N(R)=(1/(2*pi*i)) integral_(log R-i*pi)^(log R+i*pi)
+                                                F_N(L)dL.</code></pre>
+<p>For R initially larger than max(1,|U|,|V|), with the fixed logarithmic marks in (1), the EXACT source identity is</p>
+<pre><code>[r^0]F_N=C_N(R)+(1/(2*pi*i)) integral_R^infinity
+      [M_N(-s)-1]F_N(log s-i*pi) ds/s.              (4)</code></pre>
+<p>Indeed F_N(L+2<em>pi</em>i)=M_N(exp L)F_N(L). Apply Cauchy’s theorem to the logarithmic rectangle log R&lt;=Re L&lt;=log S and let S increase to infinity. The circle’s positive Laurent powers integrate to zero, and its remainder tends to zero. The outer integral converges because M_N(-s)-1=O_N(s^(-N)) and d=N-1. This identity is the simultaneous pushforward of the coefficient source. It carries all mixed original radial pieces; it is not a replacement by three bare circles.</p>
+<p>Subsequent contour continuation retains the poles and end faces it crosses. No unproved positive separating contour is assigned to (4).</p>
+<h2 id="a-convergent-barnes-contour-with-a-variable-central-norm">3. A convergent Barnes contour with a variable central norm</h2>
+<p>Consider the positive boundary chamber</p>
+<pre><code>Im u&lt;0, Im(v/u)&gt;0.                               (5)</code></pre>
+<p>Fix Log u with -pi&lt;Arg u&lt;0 and c=Log(v/u) with 0&lt;Im c&lt;pi. Their sum is the continuous logarithm of v, whose imaginary part lies strictly between -pi and pi. Choose 0&lt;epsilon&lt;1 with 2<em>pi</em>epsilon/N&lt;Im c. Define</p>
+<pre><code>g(a)=exp(a Log u) Psi_+(c)/Psi_+(c+h a),
+t=exp(2*pi*i*a), lambda(t)=u^N-v^N t,
+I_N(u,v)=integral_(-epsilon-i*infinity)^(-epsilon+i*infinity)
+                                 g(a)/(exp(-2*pi*i*a)-1) da. (6)</code></pre>
+<p>The line is oriented UPWARD. The exact full-Psi steps give</p>
+<pre><code>g(n)=product_(j&lt;n)(u-Q^j v),
+g(a+N)=[u^N-v^N exp(2*pi*i*a)]g(a).               (7)</code></pre>
+<p>The variable exponential in (7) is essential. A constant Floquet multiplier is true at integer samples only, and cannot be used in a complex contour argument.</p>
+<p>On the entire strip -epsilon&lt;=Re a&lt;=N-epsilon, the denominator Psi_+(c+h a) has no zeros: its argument has positive imaginary part, whereas the zeros of Psi_+ occur at nonpositive imaginary integer combinations of h and 2<em>pi</em>i. Thus g is holomorphic there.</p>
+<h2 id="exact-norm-pole-residue-transport">4. Exact norm-pole residue transport</h2>
+<p>Assume temporarily u^N!=1 and D_N!=0, and choose alpha with</p>
+<pre><code>exp(2*pi*i*alpha)=(u^N-1)/v^N,
+-epsilon&lt;Re alpha&lt;1-epsilon,
+v_*=v exp(h alpha), so u^N-v_*^N=1.              (8)</code></pre>
+<p>Avoid parameters with a pole on the two chosen vertical sides; the result extends by continuation. Use the ORIGINAL sample-preserving norm-corrected differential</p>
+<pre><code>omega=2*pi*i D_N t g(a)
+                    da/[(t-1)(1-lambda(t))].        (9)</code></pre>
+<p>Its residues are g(n) at n=0,…,N-1 and -g(alpha+k) at alpha+k, k=0,…,N-1. At the latter points</p>
+<pre><code>g(alpha+k)=g(alpha) product_(j&lt;k)(u-Q^j v_*).</code></pre>
+<p>The factor t in (9) is important BOTH for these residues and for the ends. For Im a tending to positive infinity it supplies the decay exp(-2<em>pi Im a). For Im a tending to negative infinity, the two denominator factors and this numerator leave the decay exp(-2</em>pi |Im a|), overcoming the full right-edge growth of g. The full-Phi horizontal asymptotics prove that the horizontal sides of the width-N rectangle tend to zero, uniformly in its real coordinate.</p>
+<p>On its two vertical sides, (7) gives</p>
+<pre><code>omega(a+N)-omega(a)
+         =2*pi*i D_N g(a)/(exp(-2*pi*i*a)-1) da.</code></pre>
+<p>The residue theorem therefore proves the exact source-cycle identity</p>
+<pre><code>B_N(u,v)=S_N(u,v)+D_N(u,v) I_N(u,v),
+S_N(u,v)=g(alpha) B_N(u,v_*).                       (10)</code></pre>
+<p>All central norm factors are retained. The extra norm poles are not discarded: their complete balanced Fourier block is the first term. Changing alpha by an integer does not change S_N, by the balanced version of (3). Thus (10) is independent of the root/deck choice.</p>
+<p>The balanced block B_N(u,v_<em>) is nonzero if uv_</em>!=0. One elementary proof takes the discrete Fourier transform of the cyclic sequence p_k=product_(j&lt;k)(u-Q^jv_*), for which p_N=p_0=1. Its Fourier components obey a first-order cyclic recurrence with all coefficients nonzero. No component, including their zero-frequency sum B_N, can vanish. This is a finite source statement, not an asymptotic argument. The other factors in S_N are nonzero in the stated chamber.</p>
+<p>At D_N=0, equation (10) extends directly and S_N=B_N is nonzero. At u^N=1 the norm pole escapes and must be checked separately. If u_0=Q^(-j) with its lower principal argument, the first nonzero coefficient of B_N(u_0,w) is b_j w^j, b_j!=0. This follows from</p>
+<pre><code>(u_0 Q^k-1)b_k=Q^(k-1)b_(k-1)</code></pre>
+<p>and its nonzero top coefficient. As u tends to u_0, v_*^j contributes [(u<sup>N-1)/v</sup>N]^(j/N), exactly cancelling the opposite power in exp(alpha Log u). Since Psi_+(c+h alpha) tends to one, the finite limit is Psi_+(c)b_j v^j!=0. This is a fixed-N collision calculation; no uniform collision asymptotic is assumed. Consequently S_N is nonzero throughout (5), after these specified removable continuations.</p>
+<h2 id="the-barnes-normalization-term-is-uniformly-tame">5. The Barnes normalization term is uniformly tame</h2>
+<p>For every compact K inside (5), there are C_K and N_K such that</p>
+<pre><code>|I_N(u,v)|&lt;=C_K, (u,v) in K, N&gt;=N_K.              (11)</code></pre>
+<p>This bound includes the norm collisions just described. To prove it, write a=-epsilon+i N y and x=v/u. The uniform actual full-Psi symbol on the entire selected strip gives the leading real exponent</p>
+<pre><code>R_N(y)=-y Arg u+
+   Im[Li_2(x)-Li_2(x exp(-2*pi*i*epsilon/N-2*pi*y))]/(2*pi).</code></pre>
+<p>Here N R_N(0)=O_K(1). Its EXACT leading derivative is</p>
+<pre><code>R_N&#39;(y)=-Arg u-
+       Arg(1-x exp(-2*pi*i*epsilon/N-2*pi*y)).       (12)</code></pre>
+<p>It lies between -Arg u&gt;0 and pi-Arg v+O_K(1/N)&lt;2<em>pi. Thus R_N(y)&lt;=O_K(1/N)+eta y for y&lt;=0, while R_N(y)-2</em>pi<em>y&lt;=O_K(1/N)-eta y for y&gt;=0, with a fixed eta&gt;0. The denominator in (6) supplies precisely exp(-2</em>pi<em>N</em>y) on the positive half-line and is bounded on the negative half-line. The full-Psi amplitude ratio is bounded uniformly for all real y, because its selected argument stays a fixed distance from the positive real ray. Its relative error is O_K(1/N).</p>
+<p>The resulting integrand is bounded by C_K exp(-eta |Im a|). This proves (11); the apparent N in da=N i dy cancels its decay scale N^(-1). A fixed finite set of smaller N is treated by the original horizontal full-Phi bounds.</p>
+<p>The leading normalization symbol can also be determined rather than left unspecified. Uniformly on the same compact families,</p>
+<pre><code>I_N=1/(1-u+v)-h*v*(u-v)/(1-u+v)^3+O_K(h^2).        (11a)</code></pre>
+<p>For a on the fixed vertical line with |Im a|&lt;=C log N, the actual full-Psi symbol and its holomorphic derivative bound give</p>
+<pre><code>g(a)=(u-v)^a [1-h*a*(a-1)*(v/u)/(2*(1-v/u))
+                                  +O_K(h^2*(1+|a|^6))].</code></pre>
+<p>Here Log(u-v)=Log u+Log(1-v/u) has imaginary part in (-2*pi,0). The exponentially decaying tails proved above permit a cutoff C log N with error smaller than any fixed inverse power, while the displayed error integrates to O(h^2). The elementary convergent Barnes identity</p>
+<pre><code>integral_(Re a=-epsilon,up) w^a/(exp(-2*pi*i*a)-1) da
+                                                =1/(1-w)</code></pre>
+<p>holds on that cut plane, first by closing to the right for |w|&lt;1 and then by analytic continuation. Applying w<sup>2*d_w</sup>2 proves (11a). The same coefficient also follows from the exact current recurrence I_N(u,v)=(u-v)I_N(u,Qv)+1 on their common logarithmic chamber. Thus the retained term is three explicit norm phases 1,u<sup>N,v</sup>N times an analytic normalization symbol. This asymptotic description does not discard possible subdominant exponentially small pieces.</p>
+<p>The normalization group’s rate therefore obeys</p>
+<pre><code>limsup (1/N) log |D_N I_N|
+                     &lt;=max(0,log|u|,log|v|),        (13)</code></pre>
+<p>uniformly on compact families. It is NOT always exponentially small. For instance it can have the original boundary norm rate. Any proof of a geometric lower bound must compare S_N with this retained term and with the subsequent exterior source; it cannot discard (13).</p>
+<h2 id="the-actual-homogeneous-source-line-with-its-normalizer-explicit">6. The actual homogeneous source line, with its normalizer explicit</h2>
+<p>The zero-charge part now really is an explicit torsor section. Put c_<em>=c+h alpha, so exp(N c_</em>)=1-u^(-N). Equation (10) becomes</p>
+<pre><code>S_N(u,v)=A_N(u) exp[-c Log u/h] Psi_+(c),
+A_N(u)=exp[c_* Log u/h] B_N(u,u exp c_*)/Psi_+(c_*). (14)</code></pre>
+<p>Changing c_* by h leaves A_N unchanged by (3) and the full-Psi shift. Thus A_N depends only on u and is NONZERO; there is no unidentified knot scalar in this local source formula.</p>
+<p>On a common lower logarithmic chamber (and subsequently by the specified analytic continuation), the exact source equations imply</p>
+<pre><code>A_N(Qu)=(1-u^(-1))A_N(u).                         (15)</code></pre>
+<p>The selected function Psi_+(h-Log u) has the same step. Their quotient is h-periodic in Log u. This observation alone does NOT make that quotient constant or tame. The subsequent <a href="actual_trivalent_beta_normalizer.html">exact normalizer proof</a> uses the actual source’s divisor and both end bounds to determine it:</p>
+<pre><code>A_N(u)=(N/phi_N) u^N Psi_+(h-Log u).                (15a)</code></pre>
+<p>The central u^N is compulsory and may have an exponential rate. Periodicity by itself would not have justified its omission.</p>
+<p>The classical growing saddle of the original fiber is r=V/(1+V-U), and its signed positive bipyramid has V/r and 1/r upper and U/r lower. The exact nonzero section (14) is the candidate that can carry this growing block. Its comparison with the full geometric normal contour and the bound (13) remains the next step. The earlier charged REAL kernel with negative volume rate is not used as a substitute for this original source.</p>
+<h2 id="positive-geometry-alone-does-not-dominate-this-local-source">7. Positive geometry alone does not dominate this local source</h2>
+<p>There is a useful exact obstruction to dropping the norm-gap or the exterior boundary functional. Whenever |u|+|v|&lt;=c&lt;1,</p>
+<pre><code>|B_N(u,v)|&lt;=1/(1-c),
+B_N(u,v) -&gt; 1/(1-u+v) as N -&gt; infinity.              (16)</code></pre>
+<p>Every Newton product is bounded by c^a. For each fixed a it tends to (u-v)^a as Q tends to one, so dominated convergence proves both claims. This is an open chamber of the ORIGINAL polynomial source.</p>
+<p>It contains genuine strictly positive signed bipyramids. For example take u=-4*i/5 and v=1/100. The three-side shapes and two outputs are</p>
+<pre><code>p=1+v-u=101/100+4*i/5,
+q=p/v=101+80*i,
+H=u*q=64-404*i/5,
+p/H=v/u=i/80, q/H=1/u=5*i/4.</code></pre>
+<p>Both p,q are upper, H is lower, and both outputs are upper; their oriented volume D(p)+D(q)-D(H)=D(i/80)+D(5*i/4) is strictly positive. Nevertheless the actual local source (16) has rate ZERO. The exact original tags in (2) converge to these same shapes, so this is not a replacement by a different quantum atom.</p>
+<p>Thus a positive classical bipyramid cannot by itself force the scalar trivalent source to grow at its volume. Its boundary Legendre terms, branch marks and the complete exterior pairing matter. In a family where the explicit residue rate DOES strictly exceed max(0,log|u|,log|v|), (10)–(13) instead give B_N=S_N(1+o(1)) with an exponentially small relative remainder, once the residue’s uniform logarithmic error is controlled. The present note proves the exact source decomposition and remainder bound; it does not assume that inequality for every positive bipyramid or every knot network.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_trivalent_quantum_beta_source.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-source-and-its-exact-finite-polynomial">1. The source and its exact finite polynomial</a><a href="#a-single-exact-outer-hankel-current">2. A single exact outer-Hankel current</a><a href="#a-convergent-barnes-contour-with-a-variable-central-norm">3. A convergent Barnes contour with a variable central norm</a><a href="#exact-norm-pole-residue-transport">4. Exact norm-pole residue transport</a><a href="#the-barnes-normalization-term-is-uniformly-tame">5. The Barnes normalization term is uniformly tame</a><a href="#the-actual-homogeneous-source-line-with-its-normalizer-explicit">6. The actual homogeneous source line, with its normalizer explicit</a><a href="#positive-geometry-alone-does-not-dominate-this-local-source">7. Positive geometry alone does not dominate this local source</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A finite Gaussian certificate for original signed-twist source endpoints · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_twist_endpoint_gaussian_certificate.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-finite-gaussian-certificate-for-original-signed-twist-source-endpoints">A finite Gaussian certificate for original signed-twist source endpoints</h1>
+<p>29 October 2026. Every FIXED signed crossing power has an explicit original-source endpoint asymptotic. Its leading coefficient is a finite algebraic function of N modulo8k. Nonvanishing can therefore be checked by finite exact arithmetic rather than assumed from a spectral curve. Powers3,4,5 all pass uniformly in N. Power4 supplies the next source endpoint after the <a href="actual_newton_two_twist_interaction_packet.html">two-twist interaction</a>. This is an endpoint theorem, not a new whole-knot asymptotic or a claim that arbitrary recurrences have no channel conversion.</p>
+<h2 id="the-full-original-source-including-its-repeated-nodes-and-signs">1. The FULL original source, including its repeated nodes and signs</h2>
+<p>Let N&gt;=2,d=N-1,q=exp(pi i/N),Q=q<sup>2,kappa=q</sup>(d^2/2), and r=R/kappa. Use the actual fixed-root g-pivotal one-cut functional phi and put</p>
+<pre><code>c_j=q^(2j+1)+q^(-2j-1), A_j=q^(2j+1)-q^(-2j-1),
+nu_j=(-1)^j q^[j(j+1)], j=0,...,d.</code></pre>
+<p>For EVERY integer k the exact full-normal source is</p>
+<pre><code>phi(r^k)=(-1)^(d+1)/2 sum_(j=0)^d nu_j^k
+              [c_j-(k/2)(d-2j)A_j].                 (1)</code></pre>
+<p>This is derived from the actual spectral-JET functional, not an eigenvalue-only trace. At each double node,</p>
+<pre><code>phi(f)=(-1)^d sum_double[(4-c^2)f&#39;(c)-cf(c)]
+                     +odd_simple f(-2),
+r&#39;(c_j)/r(c_j)=-(d-2j)/(2A_j).</code></pre>
+<p>Since 4-c_j<sup>2=-A_j</sup>2, inserting f=r^k gives (1). Indices j,d-j give equal contributions; the odd simple node has c=-2,A=0 and is counted correctly by the half-sum. In particular the factor(-1)^d from the ORIGINAL pivot is retained. For the full crossing multiply (1) and all asymptotics below by kappa^k.</p>
+<p>The small powers are explicit exceptions to a nonzero N^(3/2) leading term: phi(1)=0, phi(r)=(-q)^d, and phi(r<sup>2)=N(-q)</sup>d. They are retained exact source identities, not discarded endpoints.</p>
+<h2 id="a-finite-residue-class-leading-coefficient">2. A finite, residue-class leading coefficient</h2>
+<p>Fix k&gt;0, put epsilon=k mod2, and for integers m define</p>
+<pre><code>s_m=(2m-epsilon)/(2k),
+a(s)=(1-2s)sin(2pi s), b(s)=cos(2pi s),
+G_k(N)=sum_(0&lt;s_m&lt;1) (-1)^m a(s_m)
+                  exp[-i pi N(m-epsilon/2)^2/k].     (2)</code></pre>
+<p>Then the all-level original source satisfies</p>
+<pre><code>phi(r^k)=C_(N,k) N^(3/2)G_k(N)+O_k(N),
+C_(N,k)=(-1)^(d+1) exp[-i pi epsilon/2-i pi k/(4N)]
+                             (-i sqrt(k)/2)e^(i pi/4). (3)</code></pre>
+<p>When k is odd the error improves to O_k(sqrt N). Negative powers are exactly complex conjugates of positive powers because r<sup>sharp=r</sup>(-1), the Newton basis and phi being real.</p>
+<p>To prove (3), use the half-grid s_j=(j+1/2)/N. EXACTLY on that grid,</p>
+<pre><code>nu_j^k=exp[-i pi epsilon/2-i pi k/(4N)]
+                              exp[i pi N(ks_j^2+epsilon s_j)].</code></pre>
+<p>It is important to use epsilon, not k, in the linear term: replacing one by the other off the lattice changes its retained integer mark. Equation (1) is therefore the stated scalar prefactor times</p>
+<pre><code>sum_j [b(s_j)-(ikN/2)a(s_j)]
+                          exp[i pi N(ks_j^2+epsilon s_j)].</code></pre>
+<p>The periodized amplitude is continuous at0 and1 because k+epsilon is even and a,b have matching endpoint values. Twice integrating its Fourier coefficients proves absolute convergence, so exact half-grid Fourier selection gives</p>
+<pre><code>sum_j A(s_j)e^[i pi N(ks_j^2+epsilon s_j)]
+  =N sum_(m in Z)(-1)^m integral_0^1
+                A(s)e^[i pi N(ks^2+(epsilon-2m)s)] ds. (4)</code></pre>
+<p>For the finitely many interior stationary points complete the square. The compact-cutoff Gaussian integral is</p>
+<pre><code>e^(i pi/4) A(s_m) e^[-i pi N(m-epsilon/2)^2/k]/sqrt(kN)
+                                               +O_k(N^(-3/2)).</code></pre>
+<p>An elementary justification is Fourier inversion of the smooth cutoff amplitude, the damped Gaussian integral, and |exp(it)-1|&lt;=|t| against its integrable second Fourier moment. Away from those cutoffs two integrations by parts give summable O_k(N<sup>(-2)(1+|m|)</sup>(-2)) when A=a. For A=b the first boundary terms have matching endpoint phases and their difference is O_k(N<sup>(-1)(1+|m|)</sup>(-2)); hence their total is still summable.</p>
+<p>For odd k there is no endpoint resonance: the a sum in(4) equals its displayed stationary contribution plus O(N^(-1/2)). The b sum itself is O(sqrt N), with nonstationary remainder O(1). For even k the two possible resonant endpoints have a=0. Write a(s)=s a_0(s) near0 and similarly near1; one integration using the derivative of exp(i pi Nk s^2) bounds each endpoint integral by O_k(1/N). Their contribution to(4) is O_k(1). The b sum is O_k(sqrt N). Multiplying the a sum by N proves the error in(3). All endpoint and half-grid currents have thus been included.</p>
+<h2 id="a-finite-nonvanishing-test-and-three-explicit-uniform-cases">3. A finite NONVANISHING test, and three explicit uniform cases</h2>
+<p>Every coefficient in (2) is algebraic, and G_k(N) is periodic in N modulo8k. Consequently, if its finitely many residue-class values are all nonzero, their minimum modulus is positive and (3) proves</p>
+<pre><code>c_k N^(3/2)&lt;=|phi(R^k)|&lt;=C_k N^(3/2)                 (5)</code></pre>
+<p>at every sufficiently large level, with no parity or coprimality restriction. Failure of this leading test does not prove a zero endpoint: lower-order terms may survive. For example k=1,2 have G_k=0 and require their exact lower-order identities.</p>
+<p>Here are own exact nonvanishing checks:</p>
+<pre><code>G_3(N)=-(2sqrt3/3)exp(-i pi N/12),
+G_4(N)=-exp(-i pi N/4).</code></pre>
+<p>For k=5 put a_1=(4/5)sin(pi/5), a_2=(2/5)sin(3pi/5). Pairing m with k+1-m gives</p>
+<pre><code>G_5(N)=2exp(-i pi N/20)[-a_1+a_2exp(-2pi i N/5)],
+|G_5(N)|&gt;=2(a_1-a_2)
+   =(8/5)sin(pi/5)[1-cos(pi/5)]&gt;0.                  (6)</code></pre>
+<p>These are uniform exact phase calculations, not fits at sampled levels.</p>
+<h2 id="a-genuinely-new-endpoint-for-the-next-reduced-turn-word">4. A genuinely new endpoint for the next reduced turn word</h2>
+<p>Let the original finite Green coefficients be</p>
+<pre><code>P_i=F_i^2 sum_(v=0)^i Q^v/F_v^2,
+P_0=1, P_i=(1-Q^i)^2P_(i-1)+Q^i.</code></pre>
+<p>The exact Newton source column obeys</p>
+<pre><code>(r^3 1)_i=(-q)^i P_i,
+phi(r^4)=(-q)^d sum_(i=0)^d P_i.                    (7)</code></pre>
+<p>For a finite proof of the first equality, multiply the known r and r^2 source kernels. The remaining convolution is F_i sum_j nu_j/F_(i-j); its generating series satisfies the displayed first-order P recurrence, with P_0=1. The second equality uses nu_j[d choose j]_Q=1 in the literal last-row multiplication by r.</p>
+<p>Combining k=4 in(3),(6) with(7) gives the explicit all-parity endpoint</p>
+<pre><code>sum_(i=0)^d P_i
+  =N^(3/2)exp[i pi(3-N)/4]+O(N).                    (8)</code></pre>
+<p>Thus the next repeated-two-twist source has a known nonzero polynomial endpoint, rather than an unknown boundary value. Its interior is a new higher-order Ward problem; (8) does not by itself prove the necessary dominant projection or a coherent long-word estimate.</p>
+<p>This is the reusable analytic input a purely algebraic A-curve test would miss. A marked recurrence and its spectral cover must be supplemented by the ACTUAL source endpoint and any reciprocal inhomogeneous current. The finite certificate(2)–(5) supplies such endpoints for a family of original twist powers. It is a root-value source theorem; no q-normal derivative of a different generic source germ is substituted.</p>
+<h2 id="the-next-actual-reduced-word-has-an-explicit-rank-three-current">5. The next actual reduced word has an explicit rank-three current</h2>
+<p>The previous endpoint is not merely a free parameter. Put C=T_1P_rev and consider its actual source vector C T_(-3)1. Its coefficients are</p>
+<pre><code>(C T_(-3)1)_i=kappa^(-2)(-q)^(i-d)K_i,
+K_i=sum_(j=0)^i nu_j [i choose j]_Q conjugate(P_(d-j)). (9)</code></pre>
+<p>The modular reduction identifies this with the fourth repeated two-crossing/turn run, up to its already recorded unit scalar. Thus it is a genuine next-depth original word, not an arbitrary clock coupon. Its two scalar endpoints are known:</p>
+<pre><code>K_0=conjugate(P_d),
+K_d=sum_j conjugate(P_j).                            (10)</code></pre>
+<p>They have the nonzero polynomial asymptotics of powers3 and4 above.</p>
+<p>There is also an EXACT whole-index Ward equation, including its current. Write G_i=K_i/F_i, G_i=0 for i&lt;0, and Y=Q^i. Then for1&lt;=i&lt;=d,</p>
+<pre><code>(1-Y)^3 G_i+B_iG_(i-1)+C_iG_(i-2)+D_iG_(i-3)
+                                         =Q^2 delta_(i,1),
+B_i=-(1+Q+Q^2)+(4+3Q)Y-3Y^2,
+C_i=Q+Q^2+Q^3-(1+4Q)Y,
+D_i=Q^3(Q^(i-2)-1).                                (11)</code></pre>
+<p>In particular D_2=0 is a second exact source reset. To verify (11), put B_j=conjugate(P_(d-j)); its original backward Green relation is (1-Q<sup>j)</sup>2B_j=B_(j-1)-Q^j. The coefficient a_j=nu_j B_j/F_j therefore satisfies</p>
+<pre><code>(1-Q^j)^3a_j=-Q^j a_(j-1)-nu_j Q^j/F_(j-1).</code></pre>
+<p>Convolve with E(z)=sum z^k/F_k and use sum nu_j z^j/F_j=(Qz;Q)_infinity, as a formal identity below degreeN. The generating equation is</p>
+<pre><code>(z;Q)_3G(z)+(Qz-3)(1-Qz)(1-Q^2z)G(Qz)
+                +3(1-Q^2z)G(Q^2z)-G(Q^3z)=Q^2z,</code></pre>
+<p>whose coefficients are exactly (11). All finite denominators are units.</p>
+<p>For the monic variable M_i=F_i<sup>3G_i=F_i</sup>2K_i the classical spectral polynomial is</p>
+<pre><code>lambda^3+(-3+7Y-3Y^2)lambda^2
+          +(3-5Y)(1-Y)^3lambda-(1-Y)^7.             (12)</code></pre>
+<p>At Y=1 this is lambda^2(lambda+1). The initial data obey M_0=conjugate(P_d), M_1=(1-3Q+Q<sup>2)conjugate(P_d)+Q</sup>2; the actual current is visible. Equation (12) is a concrete new vector-recurrence test for any proposed general spectral criterion. The known scalar endpoints (10) do NOT by themselves determine its dominant projection across the cubic cover. That requires a full vector boundary/current certificate; no single-branch survival or sharp next-depth rate is asserted here.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_twist_endpoint_gaussian_certificate.py">full original signed matrices, finite coefficients and Gaussian endpoints</a>.</p>
+<p>Independent proof review and primary replay passed, including the fixed-root pivot sign, all original positive/negative matrices, half-grid marks, endpoint resonances and explicit k4/k5 nonvanishing. The k=0,1,2 exceptions and possible vanishing of a scalar leading coefficient remain explicit. The <a href="actual_newton_run_endpoint_vectors.html">endpoint-vector companion</a> resolves all Gaussian boundary modes even when that scalar cancels.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_twist_endpoint_gaussian_certificate.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-full-original-source-including-its-repeated-nodes-and-signs">1. The FULL original source, including its repeated nodes and signs</a><a href="#a-finite-residue-class-leading-coefficient">2. A finite, residue-class leading coefficient</a><a href="#a-finite-nonvanishing-test-and-three-explicit-uniform-cases">3. A finite NONVANISHING test, and three explicit uniform cases</a><a href="#a-genuinely-new-endpoint-for-the-next-reduced-turn-word">4. A genuinely new endpoint for the next reduced turn word</a><a href="#the-next-actual-reduced-word-has-an-explicit-rank-three-current">5. The next actual reduced word has an explicit rank-three current</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

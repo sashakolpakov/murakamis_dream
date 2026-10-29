@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Independent audit of the actual two-head cyclic sewing · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/two_head_cyclic_sewing_independent_audit.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="independent-audit-of-the-actual-two-head-cyclic-sewing">Independent audit of the actual two-head cyclic sewing</h1>
+<p>28 October 2026. The exact five-term resolvent and the two-sector SMALL-CIRCLE period reduction in <a href="exact_quantum_quad_source_transport.html">the sewing theorem</a> are correct, including the coincident-wall fibre. A balancing gauge gives a useful local matrix estimate. It does not turn the original period into a positive pairing or license the old Hankel deformation term by term.</p>
+<p>There is an explicit source-visible pole witness in the ORIGINAL positive crossing: its two sewn cross pieces have nonzero double poles absent from the nilpotent resolvent. Their contributions must accompany any subsequent cut deformation.</p>
+<h2 id="resolvent-order-and-the-coincident-wall">1. Resolvent order and the coincident wall</h2>
+<p>On a total-index residue fibre choose basis b_n, n=0,…,N-1. Let S be cyclic raising, A=aS, z=a/t, and h=k+1. For h&lt;N the actual truncated transfer deletes the arrows N-1 to 0 and h-1 to h. With U=[b_0,b_h], its deleted operator is UU^t A. Woodbury therefore gives</p>
+<pre><code>R_T=R_A-R_A U (I+U^t A R_A U)^-1 U^t A R_A.</code></pre>
+<p>Direct cyclic summation gives</p>
+<pre><code>(I+U^t A R_A U)^-1
+    =C_h(z)=[[1,-z^(N-h)],[-z^h,1]].</code></pre>
+<p>All orders in the displayed formula matter. At h=N the two columns of U coincide, so a rank-two Woodbury inverse is NOT available. Nevertheless the SAME compressed expression remains correct, because</p>
+<pre><code>U C_N(z) U^t=(1-z^N)b_0 b_0^t.</code></pre>
+<p>This is exactly the single-deleted-edge formula. Thus the global five-term expression and its two cross terms are valid for every fibre without double-counting the physical wall.</p>
+<p>R_A and the two diagonal sewing terms are holomorphic at t=0. Multiplying by the marked analytic inverse-D germ and integrating on rho&lt;min(1,|a|) kills those three terms entrywise. Other word factors do not alter that conclusion, since they use different integration variables. Consequently the at most 2^(3m) surviving cross-sector networks retain the ORIGINAL source exactly on the original product of small circles.</p>
+<h2 id="the-balancing-gauge-and-its-quantitative-scope">2. The balancing gauge and its quantitative scope</h2>
+<p>Retain a continuous Log z and put</p>
+<pre><code>D_h=diag(1,z^(h-N/2)), w=z^(N/2).</code></pre>
+<p>Then exactly</p>
+<pre><code>D_h^-1 C_h D_h=[[1,-w],[-w,1]],
+det C_h=1-z^N.                                (1)</code></pre>
+<p>The original physical scalar is a=x^-1 or Q^-1 x^-1. On an actual inverse-D cut t=Q^(-epsilon j)r and at M=1,</p>
+<pre><code>z^N=(-1)^(N+1) r^(-N).                        (2)</code></pre>
+<p>For odd N, w is one of the two real values +/-r^(-N/2). The balanced C has positive eigenvalues 1+/-r^(-N/2) for r&gt;1. For even N, w is purely imaginary, and the Hermitian part of the balanced C is EXACTLY identity. Both statements retain the root phase; z^N has not been replaced by a positive number.</p>
+<p>The gauge condition number is</p>
+<pre><code>kappa(D_h)=r^|h-N/2|.</code></pre>
+<p>On the actual radial scale r=exp(s/N), it is bounded by exp(s/2), uniformly in h and N when s is bounded. This includes h=N, although U then has repeated columns. For odd N the smallest balanced eigenvalue is 1-exp(-s/2), which tends to zero at the radial endpoint. At fixed r&gt;1 the gauge can instead have exponential condition number; the stated bound is a scaled local estimate, not a uniform estimate on the entire radial ray.</p>
+<p>Moreover the two-sector Cauchy reduction keeps only C’s OFFDIAGONAL part. Its balanced version is [[0,-w],[-w,0]]: indefinite for odd N and with zero Hermitian part for even N. Thus the positive diagonal of full C belongs to terms whose original small-circle periods vanish. Positivity of full C does not itself prove a lower bound for their remaining cross-sector contraction. The actual co-source is also a pivotal linear pairing, not the positive quadratic form used by an accretivity estimate.</p>
+<h2 id="added-cyclic-poles-change-the-required-relative-cycle">3. Added cyclic poles change the required relative cycle</h2>
+<p>Every cyclic R_A has poles at t<sup>N=a</sup>N, while R_T has only its nilpotent pole at zero. The five-term formula cancels all added poles. Discarding its analytic-at-zero terms preserves the small circle period but does NOT preserve global holomorphy.</p>
+<p>At completeness a<sup>N=(-1)</sup>(N+1). Thus for odd N the added poles lie at N-th roots of unity: most hit D-cut endpoints, and t=1 is an added pole where D itself is regular. For even N they lie at the interlaced half-roots, off those cuts. Separate cross pieces can have double poles. Their old radial-cut integrals may be nonintegrable when the pole hits a branch endpoint. Pole residues or the corresponding marked finite-part chains must be retained. Matrix balancing in Section 2 does not remove this change of relative cycle.</p>
+<h2 id="an-exact-original-positive-crossing-source-witness">4. An exact ORIGINAL positive-crossing source witness</h2>
+<p>Take N=2, M=1, Q=-1, q=i, x=i. In the opposite-root realization of the actual U_+ factor, a=Q^-1 x^-1=i. Use the ORIGINAL fusion C and Gaussian D=I from the strict crossing factorization, and the original averaged first-cut functional Phi with pivotal entries (-i,i). Keep its common Cartan scalar and external line separately, unchanged.</p>
+<p>Let R_cross(t) be the sum of the two cross terms, and R_T the actual transfer resolvent. Exact source contraction gives</p>
+<pre><code>Phi(C R_T(t) C^-1)=2i/t^2,
+Phi(C R_cross(t) C^-1)
+    =-2i(t-1)(t+1)/[t^2(t^2+1)^2].             (3)</code></pre>
+<p>The leading double-pole coefficient of the second expression at EACH of t=i and t=-i is i. These poles are source-visible inside an actual positive crossing, rather than only in an arbitrary matrix entry. The original inverse-D germ here is f(t)=(1+t)^(-1/2). Both small-circle periods are exactly -i.</p>
+<p>The uncorrected old D-cut integral for the sewn expression, on t=-r, would instead be</p>
+<pre><code>(2i/pi) integral_1^infinity
+     (r^2-1)/[r^2(r^2+1)^2] (r-1)^(-1/2)dr.</code></pre>
+<p>It is purely POSITIVE imaginary and therefore cannot equal -i. The missing cyclic-pole contributions are essential, even in this smallest actual-source example. The original normalization multiplies both expressions by the same retained nonzero factor; it cannot correct the mismatch.</p>
+<p>The missing ordinary residues are explicitly</p>
+<pre><code>Res_(t=i) f(t)B(t)dt=(-9-i)/(4sqrt(1+i)),
+Res_(t=-i) f(t)B(t)dt=(9-i)/(4sqrt(1-i)).</code></pre>
+<p>Their sum is approximately 1.0596435755300515788i. The raw cut integral is approximately 0.0596435755300515788i. The correct contour identity is cut MINUS these pole residues, which gives the original value -i.</p>
+<h2 id="audit-conclusion">5. Audit conclusion</h2>
+<p>The exact small-circle sewing is a real finite-sector reduction. The balanced 2-by-2 matrix has a controlled condition number on the natural radial scale and the stated parity-dependent sign. Neither statement supplies a convergent termwise old-cut sewing or a positive selected scalar. A usable geometric comparison must carry the new cyclic poles and the original cross-sector source through the transform, including its endpoint corrections.</p>
+<p>There is a canonical linear repair when cyclic poles have order at most two, as they do in each transfer variable. At a D-cut endpoint alpha, put x=r-1 and write the remaining cut integrand as x^(-u)f(x), where f(x)=b_-2 x^(-2)+b_-1 x^(-1)+O(1). Its finite part is</p>
+<pre><code>integral_0^1 x^(-u)[f-b_-2 x^(-2)-b_-1 x^(-1)]dx
+  +integral_1^infinity x^(-u)f dx
+  -b_-2/(u+1)-b_-1/u.</code></pre>
+<p>Use these marked finite parts on the branch cuts and subtract the ordinary residues at unbranched cyclic poles. This gives the original small-circle period exactly. The constants follow from analytic continuation of the two elementary power integrals. The small endpoint arcs cancel their fractional divergences and have no additional finite residue: on the normalized cover a residue exponent would require j to be a multiple of N. Coordinatewise finite parts commute for this word because its ordered matrix source is a finite sum of products of one-variable rational factors. The tensor prescription retains the required corner subtractions. It preserves the source, while still not making its resulting scalar a positive quadratic pairing.</p>
+<p>The completed <a href="cyclic_sewing_regularized_cut_cycle.html">regularized cut theorem</a> passes this independent proof review. In particular its derivative identity has the positive factor 1/[u…(u+p-1)] for p=1,2. At every integration-by-parts step the boundary term at infinity is O(x^(-(N-1)/2)), and its zero-end finite constant vanishes because u is nonintegral. The final derivative integral converges at both ends. Its whole-word tensor prescription follows from the finite sum of products of one-variable factors, with only coordinate pole loci. The unit-circle/completeness scope excludes new poles in the interior of a radial cut. No additional boundary term was found, and the theorem explicitly leaves geometric coupling open.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_two_head_cyclic_sewing_independent.py">Exact and quantitative audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/two_head_cyclic_sewing_independent_results.json">saved results</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/two_head_cyclic_sewing_independent_audit.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#resolvent-order-and-the-coincident-wall">1. Resolvent order and the coincident wall</a><a href="#the-balancing-gauge-and-its-quantitative-scope">2. The balancing gauge and its quantitative scope</a><a href="#added-cyclic-poles-change-the-required-relative-cycle">3. Added cyclic poles change the required relative cycle</a><a href="#an-exact-original-positive-crossing-source-witness">4. An exact ORIGINAL positive-crossing source witness</a><a href="#audit-conclusion">5. Audit conclusion</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

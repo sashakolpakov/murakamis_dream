@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An exact positive Newton period with cuboctahedral hyperbolic volume · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Cube and sewing</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">Geometric period</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_positive_newton_cuboctahedral_period.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="an-exact-positive-newton-period-with-cuboctahedral-hyperbolic-volume">An exact positive Newton period with cuboctahedral hyperbolic volume</h1>
+<p>29 October 2026. For every odd N=2m+1 define the ACTUAL root polynomial h=Rturn(E_St) in H_N and the original Frobenius period W_N=phi(h^4). The <a href="actual_positive_newton_multiplication.html">positive multiplication theorem</a> retains the full source and proves W_N&gt;0. This note proves</p>
+<pre><code>lim_(N odd -&gt;infty) (pi/N)log W_N=Vol(Q_cube),   (1)</code></pre>
+<p>where Q_cube is the explicit ideal right-angled cuboctahedron in the <a href="actual_nc_graph_rectified_core_geometry.html">actual core geometry</a>. The proof is a real, strictly concave volume maximization. No stationary-phase noncancellation or contour-selection assumption occurs.</p>
+<p>The <a href="actual_odd_central_cube_reflection_packet.html">literal cube source reduction</a> then gives the corresponding actual hyperbolic-volume rate for its ODD CENTRAL JOINT SECTOR. The full color sum and even levels are not asserted here. A sector is not substituted for the whole invariant.</p>
+<h2 id="exact-positive-partition-with-every-root-normal">1. Exact positive partition with every root normal</h2>
+<p>Use d=2m, s_r=product_(u=1)^r 2sin(pi u/N), and Bhat_r from the Newton theorem. That theorem gives</p>
+<pre><code>h=sum_(i=0)^m b_i Bhat_i, b_i=s_m^2/(s_i^2s_(m-i)^2)&gt;0,
+h^2=sum_(k=0)^d a_k Bhat_k,
+a_k=sum_(0&lt;=i,j&lt;=m, max(i,j)&lt;=k&lt;=i+j)
+                                b_i b_j mu_(i,j,k),
+W_N=sum_(k=0)^d a_k a_(d-k).                    (2)</code></pre>
+<p>The last equation is the ORIGINAL full Frobenius pairing, not a value-only trace. Every a_k is strictly positive. Its summation labels can be written (i,j,u,v,k), with the first pair producing k and the second producing d-k. There are only polynomially many such labels.</p>
+<p>Put L(x)=integral_0^x log(2sin(pi t))dt, continuously on [0,1]. The uniform sine-factorial estimate is log s_r=N L(r/N)+O(log N), for every 0&lt;=r&lt;=d, including endpoints. Define</p>
+<pre><code>g(x)=-2L(x)-2L(1/2-x), 0&lt;=x&lt;=1/2,
+mu(x,y,z)=L(x+y)+L(z)-L(x)-L(y)
+                 -L(z-x)-L(z-y)-L(x+y-z).       (3)</code></pre>
+<p>The mu-domain is max(x,y)&lt;=z&lt;=x+y&lt;=1. The exact summands in (2) have logarithm N times</p>
+<pre><code>A(i,j,u,v,k)=g(i)+g(j)+g(u)+g(v)
+                    +mu(i,j,k)+mu(u,v,1-k)     (4)</code></pre>
+<p>up to O(log N), when the letters now denote their scaled real labels. Replacing d/N by 1 or m/N by 1/2 changes these estimates by O(log N), uniformly. This follows from the modulus of continuity of L at 0,1, not from an invalid bounded derivative at those endpoints.</p>
+<p>Let P be the compact convex polytope defined by 0&lt;=i,j,u,v&lt;=1/2 and the two mu-domain constraints in (4). Positivity and polynomial state count give the upper bound by max_P A. Any strictly interior feasible point can be rounded to actual odd-level integers with O(1/N) changes; a single positive term supplies the matching lower bound at an interior maximizer. Thus it suffices to find that maximum.</p>
+<h2 id="each-multiplication-action-is-a-positive-tetrahedral-volume">2. Each multiplication action is a positive tetrahedral volume</h2>
+<p>For a mu-triple put</p>
+<pre><code>p=z-x, q=z-y, r=x+y-z, w=1-x-y.</code></pre>
+<p>They are nonnegative and p+q+2r+w=1. Write V(alpha,beta,gamma) for the volume of the ideal tetrahedron with dihedral angles pi alpha, pi beta, pi gamma, where their sum is 1. Thus V=-pi[L(alpha)+L(beta)+L(gamma)]. The identity L(1-t)=-L(t) gives EXACTLY</p>
+<pre><code>pi mu = V(p+r,q+r,w)
+          +V(p,q,2r+w)+V(p+q,r,r+w).            (5)</code></pre>
+<p>All three are positive ideal angle triples when p,q,r,w&gt;0. Also</p>
+<pre><code>pi g(x)=2V(x,1/2-x,1/2).                       (6)</code></pre>
+<p>The ideal tetrahedron volume is strictly concave on its angle simplex. For an elementary Hessian check, eliminate its third angle; the diagonal coefficients involve cot(alpha)+cot(gamma)&gt;0 and the determinant uses cot(alpha)cot(beta)+cot(beta)cot(gamma) +cot(gamma)cot(alpha)=1. Hence the negative Hessian is positive definite. The linear angle map in (5) is injective: its second triangle supplies p,q and its third supplies r. Therefore mu is strictly concave on its open domain. Continuity extends concavity to the closed domain. The same conclusion holds for g.</p>
+<p>This is a positive volume functional for the FULL period partition. Off its maximum the tetrahedra in (5) are not yet asserted to be the metric tetrahedra of a glued cuboctahedron. The exact value at the maximum is compared with the actual polyhedron in section 4.</p>
+<h2 id="unique-global-maximum-and-its-algebraic-equation">3. Unique global maximum and its algebraic equation</h2>
+<p>The polytope and A are invariant under i&lt;-&gt;j, u&lt;-&gt;v, and exchange of the two pairs with k-&gt;1-k. Averaging over these symmetries cannot decrease a concave function. The strict concavity of the four g terms forces i=j=u=v=t at a maximizing point unless those values already agree. With these fixed, strict concavity of the two mu terms forces k=1/2. It is therefore enough to maximize on 1/4&lt;=t&lt;=1/2 the function</p>
+<pre><code>A_sym(t)=6g(t)+2[L(2t)-L(2t-1/2)].             (7)</code></pre>
+<p>In its interior,</p>
+<pre><code>A_sym&#39;(t)=-12log tan(pi t)+4log[-tan(2pi t)].    (8)</code></pre>
+<p>The derivative tends to +infinity at 1/4 and to -infinity at 1/2. The original strict concavity, or direct differentiation of (8), gives a unique maximum. Setting y=tan(pi t)&gt;1 in (8) yields</p>
+<pre><code>2y/(y^2-1)=y^3, hence y^2=2.</code></pre>
+<p>Thus t<em>=atan(sqrt(2))/pi. All inequalities in P that can be strict are strict at (t</em>,t<em>,t</em>,t<em>,1/2). In particular rounding i,j,u,v to the nearest t</em>N and taking k=m gives actual summands at every large odd level. This completes the positive Laplace proof of the limit N^(-1)log W_N=A_sym(t*), without choosing a subsequence inside odd N.</p>
+<h2 id="direct-volume-of-the-actual-ideal-cuboctahedron">4. Direct volume of the ACTUAL ideal cuboctahedron</h2>
+<p>Let theta=atan(sqrt(2)) and delta=pi/2-theta. The Klein vertices of Q_cube are the permutations of (±1,±1,0)/sqrt(2). Its supporting planes and all right angles were certified in the core geometry. For a completely explicit volume calculation order its twelve vertices by choosing the zero coordinate in order 0,1,2, then the other two signs in order (–),(-+),(+-),(++). Cone its faces to vertex 0, which is (0,-1/sqrt(2),-1/sqrt(2)). The nonincident face fans give the following fourteen geometric tetrahedra, specified by the unordered sets of their three other vertices; each tetrahedron is positively reoriented when computing its shape:</p>
+<pre><code>(4,8,5), (4,5,9), (6,10,7), (6,7,11),
+(2,9,3), (2,3,11), (1,5,3), (1,3,7),
+(1,5,8), (2,4,9), (3,5,9),
+(1,7,10), (2,6,11), (3,7,11).                 (9)</code></pre>
+<p>These are disjoint face cones in a convex polyhedron. The first eight triangulate its four nonincident square faces; the last six are its nonincident triangular faces. There is no tetrahedron recognition based only on a numerical volume.</p>
+<p>Stereographic coordinates z=(X+iY)/(1-Z) and the cross-ratio formula give ten tetrahedra of angle type A, two of B, and two of E:</p>
+<pre><code>A=(theta,delta,pi/2),
+B=(theta,theta,pi-2theta),
+E=(2theta-pi/2,delta,pi-theta).                 (10)</code></pre>
+<p>Representative positive cross ratios are respectively 2/3+i sqrt(2)/3, 1/3+2i sqrt(2)/3, and 2/3+i sqrt(2)/6. Their three cyclic shape arguments give (10) directly. For example the E angles follow from the shapes 2+i sqrt(2) and -1/3+i sqrt(2)/3, together with tan(2theta-pi/2)=1/(2sqrt(2)). The audit verifies every cross ratio in (9) algebraically in Q(sqrt(2),i), using its positive shape representative rather than treating the displayed vertex order as an orientation.</p>
+<p>With Lambda(x)=-integral_0^x log|2sin t|dt, (9),(10) give</p>
+<pre><code>Vol(Q_cube)=12Lambda(theta)+12Lambda(delta)
+                -2Lambda(2theta)+2Lambda(2theta-pi/2). (11)</code></pre>
+<p>On the other hand L(t)=-Lambda(pi t)/pi, so substituting t* into (7) gives precisely pi A_sym(t*)=(11). This proves the claimed equality with the ACTUAL complete core volume in (1).</p>
+<h2 id="the-original-cube-sector-and-the-remaining-whole-source-problem">5. The original cube sector and the remaining whole-source problem</h2>
+<p>The separately proved literal exposed-source identity is</p>
+<pre><code>Z_(cube,central)=N^12 S_N^8 W_N omega_m^(sum e),</code></pre>
+<p>where S_N is the original positive central trivalent scalar after its recorded unit phase, lim N^(-1)log S_N=v8/pi, and the retained twists are unit characters in this fixed sector. Therefore</p>
+<pre><code>lim_(N odd) (2pi/N)log|Z_(cube,central)|
+         =16v8+2Vol(Q_cube)
+         =Vol(S^3 minus the ACTUAL augmented cube link). (12)</code></pre>
+<p>The last equality is the independent complete-core construction with b=4. Thus the geometric growth is present in an actual source sector and its complete positive partition, including every root normal. This does NOT establish that other color sectors cannot cancel or exceed it, nor the corresponding even-level assertion. Those are still required before claiming the full cube volume conjecture, and general graphs need their own full-source control.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_positive_newton_cuboctahedral_period.py">positive partition and exact cuboctahedral shapes</a>. Finite values check the implementation; the limiting equality follows from the uniform factorial envelope, strict concavity, lattice rounding and the explicit geometric tetrahedra above.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_positive_newton_cuboctahedral_period.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-positive-partition-with-every-root-normal">1. Exact positive partition with every root normal</a><a href="#each-multiplication-action-is-a-positive-tetrahedral-volume">2. Each multiplication action is a positive tetrahedral volume</a><a href="#unique-global-maximum-and-its-algebraic-equation">3. Unique global maximum and its algebraic equation</a><a href="#direct-volume-of-the-actual-ideal-cuboctahedron">4. Direct volume of the ACTUAL ideal cuboctahedron</a><a href="#the-original-cube-sector-and-the-remaining-whole-source-problem">5. The original cube sector and the remaining whole-source problem</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

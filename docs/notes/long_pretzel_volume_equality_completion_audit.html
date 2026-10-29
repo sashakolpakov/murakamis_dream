@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Completion audit: full hyperbolic-volume equality for the original source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/long_pretzel_volume_equality_completion_audit.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="completion-audit-full-hyperbolic-volume-equality-for-the-original-source">Completion audit: full hyperbolic-volume equality for the original source</h1>
+<p>29 October 2026. The objective is EQUALITY with the actual hyperbolic volume. An upper bound alone does not satisfy it. The earlier upper-bound checkpoint is an intermediate result; this audit concerns the complete equality on the same broad class.</p>
+<h2 id="statement-and-unchanged-quantifiers">1. Statement and unchanged quantifiers</h2>
+<p>For each fixed odd integer s&gt;=25 there is P_s such that, for every independently chosen FIXED signed tuple |p_i|&gt;=P_s, the original pretzel knot with boxes R^(-(2p_i+1)) has</p>
+<pre><code>lim_(N-&gt;infinity) (2pi/N)log|&lt;K&gt;_N|=Vol(S^3 minus K).</code></pre>
+<p>The invariant and its cut normalization are the original reduced Kashaev invariant. Both parities and all composite quantum levels are included. The slopes may have different signs and arbitrarily different sizes. The width is unbounded across the class, but both it and the slopes are fixed before N tends to infinity. The threshold may depend on the fixed width. No statement for arbitrary knots, short slopes, or widths/slopes growing with N is included.</p>
+<p>The standing hyperbolicity assumption can be retained. In fact the constructed smooth complete metric proves hyperbolicity in this sufficiently long range. This strengthening is not needed to reduce or change the original equality target.</p>
+<h2 id="requirements-and-authoritative-evidence">2. Requirements and authoritative evidence</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Evidence and conclusion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Briefly audit the essential previous ingredients</td>
+<td>Section1 of the <a href="actual_long_pretzel_casson_rivin_equality.html">Casson–Rivin equality note</a> isolates the unchanged finite source, coherent inner elimination, global color gap, exact complex packet, full endpoint/charge analysis and marked representation regulator.</td>
+</tr>
+<tr>
+<td>Entire original invariant, rather than a selected formal block</td>
+<td>The <a href="actual_long_pretzel_full_source_survival.html">whole-source theorem</a> proves the full asymptotic with D_s(p)!=0. Its global estimate includes every auxiliary color and normal derivative; original framing factors have the verified modulus.</td>
+</tr>
+<tr>
+<td>Actual source-selected representation and absolute regulator</td>
+<td>The <a href="actual_pretzel_port_lift_and_geometric_anchor.html">port theorem</a>, <a href="actual_mixed_crossing_circle_preferred_longitude.html">preferred longitude</a> and <a href="actual_pretzel_marked_regulator_and_filling_action.html">marked regulator comparison</a> give Vsrc=Vol(rho_p) on the original filled topology, with its exact peripheral sign and complete oriented anchor.</td>
+</tr>
+<tr>
+<td>Positive geometric realization of that representation</td>
+<td>Sections2–4 of the <a href="actual_long_pretzel_geometric_filling_completion.html">geometric completion proof</a> construct24s positive partially ideal tetrahedra from the original two polyhedra. Their equivariant deformation verifies all shared faces, exact edge return, angle winding one, spherical finite-vertex links and nonsingular compact similarity cusp links.</td>
+</tr>
+<tr>
+<td>Smooth primitive filling, not merely scalar slope holonomy</td>
+<td>The <a href="actual_long_pretzel_primitive_filling_angle.html">primitive-angle proof</a> identifies the actual geometric log periods U=-z, V=-2ell and U+pV=-2pi i m,</td>
+</tr>
+<tr>
+<td>Complete degree-one geometry with no branched or covered end</td>
+<td>Sections2–5 of the <a href="long_pretzel_equality_critical_audit.html">tube proof</a> use the compact flat log-link to obtain its entire plane development and injective period lattice. The actual epigraph is a full tube; primitive angle2pi completes smoothly. The main cusp remains a full horoball quotient.</td>
+</tr>
+<tr>
+<td>Casson–Rivin extremal identification</td>
+<td>Sections2–5 of the <a href="actual_long_pretzel_casson_rivin_equality.html">variational proof</a> put the source point inside the actual filled-slope positive angle slice. The coisotropic first variation holds for ALL angle tangents and vanishes by the source equations. Strict concavity makes this the unique global maximum, including over the boundary.</td>
+</tr>
+<tr>
+<td>Gromov-norm comparison reaches equality</td>
+<td>The completed metric is on the actual oriented filled manifold. Applying the independently proved <a href="regular_critical_values_and_representation_volume_bound.html">representation-volume inequality</a> in both directions between it and the specified hyperbolic metric forces equal volumes. This does not assume that an almost-maximal volume is already maximal.</td>
+</tr>
+<tr>
+<td>Preserve independently signed long slopes and all levels</td>
+<td>The source critical point is holomorphic in all inverse slopes near zero. One fixed geometric neighborhood therefore works whenever max_i</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-actual-equality-chain">3. The actual equality chain</h2>
+<p>The completed and variational proofs give</p>
+<pre><code>lim_N (2pi/N)log|&lt;K&gt;_N|
+  =Vsrc_s(p)
+  =D(beta(rho_p))
+  =max_(theta in A_p) V_T(theta)
+  =Vol(S^3 minus K).</code></pre>
+<p>Here A_p uses the filled rotational constraints Im(U_i+p_iV_i)=-2pi, not the complete UNFILLED cusp constraints. At the source point ReU_i+p_iReV_i=0, so for every tangent of A_p,</p>
+<pre><code>dV_T=(1/2)sum_i ReV_i d(ImU_i+p_iImV_i)=0.</code></pre>
+<p>The main cusp term is zero because its peripheral image is parabolic. The negative tetrahedral Hessian is positive definite with determinant1. Thus the source is the unique constrained maximizer. The separate primitive tube proof ensures that this maximum is realized on the actual smoothly filled knot, rather than on a branched local structure.</p>
+<p>For the customary all-ideal angle presentation, the prior audited positive ideal-subdivision input is used. The independent finite-center metric completion proves the final geometric equality without relying on that optional all-ideal presentation. These dependencies are not conflated.</p>
+<h2 id="verification-and-limits-of-the-checks">4. Verification and limits of the checks</h2>
+<p>The primary agent read the new positive-core, primitive-period and compact-log/tube proofs against the existing source, port and regulator statements. Independent reviewers checked the primitive spin and angle, the complete tube and its degree, the positive-core construction, and the Casson–Rivin first variation on arbitrary angle tangents. The source and geometric thresholds were checked for signed unequal slopes.</p>
+<p>A fresh primary-agent run of <code>experiments/audit_actual_long_pretzel_primitive_filling_angle.py</code> passed its exact spin/angle algebra,120 signed core families,32 small-log calibrations and5 Fermi metric checks. These checks calibrate formulas; the uniform proof of smooth completion is in the notes, not inferred from those finite examples. The previous full-source audits and their precise analytical scope are recorded in the whole-source theorem and the earlier upper-bound completion audit.</p>
+<p>In particular, the new proof does not rely on any of the following insufficient substitutes: a scalar killed peripheral word; convergence of filled volumes to V_s; a positive quantum norm without survival; an arbitrary topological triangulation; or strict concavity without a verified source point in the correct constrained angle domain.</p>
+<p>The evidence establishes full equality for the class in section1. The general volume conjecture for arbitrary hyperbolic knots remains outside this theorem, rather than being declared complete by this audit.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/long_pretzel_volume_equality_completion_audit.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#statement-and-unchanged-quantifiers">1. Statement and unchanged quantifiers</a><a href="#requirements-and-authoritative-evidence">2. Requirements and authoritative evidence</a><a href="#the-actual-equality-chain">3. The actual equality chain</a><a href="#verification-and-limits-of-the-checks">4. Verification and limits of the checks</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

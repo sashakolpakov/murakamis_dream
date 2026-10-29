@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Weighted complete-crossing norms and the actual Green-source gap · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/weighted_crossing_source_gap.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="weighted-complete-crossing-norms-and-the-actual-green-source-gap">Weighted complete-crossing norms and the actual Green-source gap</h1>
+<p>28 October 2026. The ORIGINAL complete crossing has a uniform compact variational formula for its exponential norm in real boundary metrics. At the flat metric its unique maximum is the regular octahedral point and its rate is 2 Catalan/pi. The COMPLETE Green source, including its carry, has a much smaller explicit metric exponent. This proves an open weighted operator-norm gap for both signs.</p>
+<p>This is a norm comparison. It does not assert noncancellation of the original closed scalar period or replace the actual exterior source by a norm-maximizing vector.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_weighted_crossing_source_gap.py">audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/weighted_crossing_source_gap_results.json">results</a> check literal weighted R/source norms, endpoint-uniform factorial estimates and signed metric-rate diagnostics. The weighted optimizer in that script is a diagnostic; the rigorous variational formula, flat maximum and explicit gap chamber are proved below.</p>
+<h2 id="the-actual-coefficient-and-metric">1. The actual coefficient and metric</h2>
+<p>Put q=exp(pi*i/N), Q=q^2, x=-q^(-1), F_k=(Q;Q)_k and d=N-1. The exact positive Green reconstruction, with original unit scalar kappa retained, has input (a,b), output (a+b-j,j), and coefficient</p>
+<pre><code>kappa*x^(-b-j)Q^(jb)
+       F_(a+b-j)F_a/[F_(a-j)F_bF_j],              (1)</code></pre>
+<p>when 0&lt;=j&lt;=a&lt;N, 0&lt;=b&lt;N and a+b-j&lt;N; otherwise it is zero. Every displayed factor is nonzero on this range. This is the ORIGINAL crossing coefficient, independently checked against its gate word, not a positive surrogate.</p>
+<p>Give input and output basis vectors real exponential metrics</p>
+<pre><code>W_in|a,b&gt;=exp(rho_a*a+rho_b*b)|a,b&gt;,
+W_out|c,e&gt;=exp(rho_c*c+rho_d*e)|c,e&gt;,
+R_(+,rho)=W_out R_+ W_in^(-1).                    (2)</code></pre>
+<p>Set</p>
+<pre><code>p=rho_c-rho_a, q_w=rho_c-rho_b,
+r=rho_d-rho_a.</code></pre>
+<p>The symbol q_w is a REAL weight, distinct from the root q. With alpha=(a-j)/N, beta=b/N, gamma=j/N, the exact boundary-metric exponent in (1) is N(p alpha+q_w beta+r gamma).</p>
+<h2 id="uniform-factorial-and-laplace-estimates">2. Uniform factorial and Laplace estimates</h2>
+<p>Define the continuous function</p>
+<pre><code>J(s)=integral_0^s log(2 sin(pi t))dt, 0&lt;=s&lt;=1.</code></pre>
+<p>Uniformly for 0&lt;=k&lt;N,</p>
+<pre><code>log|F_k|=N J(k/N)+O(log N).                       (3)</code></pre>
+<p>One direct proof writes log(2 sin(pi t))=log t+log(1-t)+b(t), where b extends smoothly to [0,1]. Stirling bounds on the two finite factorial sums give O(log N) uniformly, including k=0 and k=N-1; the smooth remainder has bounded Riemann-sum error. Thus no fixed distance from a factorial endpoint is needed.</p>
+<p>Let</p>
+<pre><code>D={alpha,beta,gamma&gt;=0:
+                       alpha+beta&lt;=1, alpha+gamma&lt;=1},
+f=J(alpha+beta)+J(alpha+gamma)-J(alpha)-J(beta)-J(gamma),
+M(p,q_w,r)=max_D [f+p alpha+q_w beta+r gamma].       (4)</code></pre>
+<p>Then for EVERY compact real metric set K,</p>
+<pre><code>log||R_(+,rho)||_HS=N M(p,q_w,r)+O_K(log N).        (5)</code></pre>
+<p>The same formula holds for operator norm, with another O_K(log N). Indeed the positive sum of squared matrix entries lies between its largest summand and N^3 times that summand. Equation (3) approximates each logarithm by the phase in (4) with O(log N) error. Conversely shrink any point of D by 1-1/N and round its coordinates DOWN to the 1/N grid. The resulting physical indices obey both upper bounds N-1 and lie O(1/N) away. The uniform modulus of continuity of J is O(eta(1+|log eta|)), so the maximal phase changes by O_K(log N/N). This proves the uniform two-sided estimate (5). Finally ||R||_op&lt;=||R||_HS&lt;=N||R||_op, so their rates agree.</p>
+<p>There is also an exact finite separable formula useful for computation. Set</p>
+<pre><code>A_N(k;s)=sum_(t=0)^(d-k) |F_(k+t)/F_t|^2 exp(2s t).</code></pre>
+<p>Then the ACTUAL weighted squared HS norm is exactly</p>
+<pre><code>||R_(+,rho)||_HS^2=sum_(k=0)^d |F_k|^(-2) exp(2p k)
+                                  A_N(k;q_w)A_N(k;r). (5a)</code></pre>
+<p>This takes O(N^2) positive real operations without evaluating a new invariant or assuming that the original scalar sum is positive.</p>
+<p>For the negative crossing the exact balanced antiunitary identity is R_-=P overline(R_+)P, including its original Cartan phase. Therefore (5) applies with both input weights and both output weights swapped:</p>
+<pre><code>p_-=rho_d-rho_b, q_-=rho_d-rho_a,
+r_-=rho_c-rho_b.                                 (6)</code></pre>
+<p>No factorial metric conversion is used. All estimates are uniform on compact sets and hold for the literal two signs.</p>
+<h2 id="the-unique-flat-maximum-and-its-value">3. The unique flat maximum and its value</h2>
+<p>For fixed 0&lt;alpha&lt;1 put g_alpha(t)=J(alpha+t)-J(t). On 0&lt;t&lt;1-alpha,</p>
+<pre><code>g_alpha&#39;=log[sin(pi(alpha+t))/sin(pi t)],
+g_alpha&#39;&#39;=-pi sin(pi alpha)
+                     /[sin(pi(alpha+t))sin(pi t)]&lt;0.</code></pre>
+<p>Thus the unique maximizers in beta and gamma at zero weights are both (1-alpha)/2. The mean of log(2 sin(pi t)) is zero and J(1-s)=-J(s). The reduced maximum is consequently</p>
+<pre><code>F(alpha)=-4J((1-alpha)/2)-J(alpha),
+F&#39;(alpha)=log cot(pi alpha/2).                     (7)</code></pre>
+<p>It increases to alpha=1/2 and decreases afterward; its endpoint values are zero. Hence the unique maximum on the ENTIRE domain is</p>
+<pre><code>(alpha,beta,gamma)=(1/2,1/4,1/4),
+M(0,0,0)=-4J(1/4)=2G/pi,                         (8)</code></pre>
+<p>where G=sum_(n&gt;=0)(-1)<sup>n/(2n+1)</sup>2 is Catalan’s constant. To obtain the last equality independently, expand log|1-r exp(2<em>pi</em>i<em>t)| for r&lt;1, integrate its absolutely convergent Fourier series, and let r tend to one in L^1. This gives J(1/4)=-G/(2</em>pi).</p>
+<p>Equivalently 2G/pi=v_8/(2*pi), where v_8=4G is the volume of the regular ideal octahedron. Only the explicit Catalan value is needed for the norm theorem. In particular</p>
+<pre><code>log||R_+||=log||R_-||=N*(2G/pi)+O(log N).           (9)</code></pre>
+<p>The maximizing Hessian is -pi[[2,1,1],[1,2,0],[1,0,2]], negative definite. Thus the maximum and M vary smoothly for sufficiently small weights. No global concavity for arbitrary weights is assumed.</p>
+<h2 id="a-one-dimensional-computation-for-arbitrary-real-weights">4. A one-dimensional computation for arbitrary real weights</h2>
+<p>For every 0&lt;alpha&lt;1, strict concavity gives the exact inner optima</p>
+<pre><code>beta_*(alpha;q_w)
+   =Arg(exp(-q_w)-exp(-pi*i*alpha))/pi,
+gamma_*(alpha;r)
+   =Arg(exp(-r)-exp(-pi*i*alpha))/pi.               (10)</code></pre>
+<p>Both lie strictly between zero and 1-alpha. Thus M is the maximum over the SINGLE interval alpha in [0,1] of (4) evaluated at (10). Its endpoint values are max(0,q_w)+max(0,r) at alpha=0 and p at alpha=1. This is an explicit computable variational problem, including weighted maxima that reach the boundary. Uniqueness is not asserted for arbitrary weights.</p>
+<h2 id="sharp-complete-green-source-exponent-with-its-carry-retained">5. Sharp complete Green-source exponent with its carry retained</h2>
+<p>Use the actual COMPLETE Green source L=G_out+G_in+G_top from <a href="actual_crossing_shared_face_fourier_source.html#9-exact-flat-metric-norm-of-the-complete-green-source">the sharp endpoint theorem</a>. This is the weighted crossing source of that theorem, NOT the unweighted exponentially large fusion-ground channel H_m. Its exact complete coefficients are unit phases on the following supports:</p>
+<ul>
+<li>G_out maps (a,b) to(a+b,0), a&gt;=1 and a+b&lt;N.</li>
+<li>G_in maps (a,0) to(a-e,e), 1&lt;=e&lt;=a&lt;N.</li>
+<li>G_top is one rank-one block on pair degree N, with input(a,N-a) and output(N-e,e), 1&lt;=a,e&lt;N, and unit-modulus input/output factors.</li>
+</ul>
+<p>Put L_rho=W_out L W_in^(-1). For either operator or HS norm,</p>
+<pre><code>log||L_rho||=N delta(rho)+O_K(log N),
+delta(rho)=max(0,max(rho_c,rho_d)-min(rho_a,rho_b)). (11)</code></pre>
+<p>Here is the full endpoint proof. The rank-one carry has norm equal to the product of its weighted vector norms. Its output components have magnitudes exp[rho_c(N-e)+rho_d e], and its input covector components exp[-rho_a a-rho_b(N-a)]. The allowed grids approach both ends within 1/N, so its logarithmic norm is N(max rho_out-min rho_in)+O_K(log N), uniformly even at tied weights.</p>
+<p>The ground-output triangular support gives rate max(0,p,q_w). The ground-input triangular support gives rate max(0,p,r). The degree-one ground entry supplies the lower rate zero even if every metric difference is negative. Both triangular rates are at most delta. Different total-degree blocks isolate the top carry, and different second-output supports isolate the two lower-degree ground terms, so cancellation cannot remove the maximal component. Projection onto those supports bounds each component by the whole operator; the reverse bound is their triangle sum. This proves (11), including the carry and BOTH ground sources. The same assertion for HS follows also by their disjoint matrix-entry supports. Negative crossing sources are transported by the same flip-conjugation; delta is unchanged by the swaps, proving (11) for both signs.</p>
+<p>The norms of the COMPLETE Green source are only polynomial at the flat metric. The carry fixes the sharp positive exponent when output radii dominate input radii. It has not been omitted as a negligible degree-N correction.</p>
+<h2 id="an-explicit-open-radius-chamber-for-the-relative-source-norm-gap">6. An explicit open radius chamber for the relative source norm gap</h2>
+<p>Evaluate (4) at its unweighted maximizing point. This gives</p>
+<pre><code>M_+(rho)&gt;=2G/pi+L_+(rho),
+L_+=(3rho_c+rho_d-3rho_a-rho_b)/4,
+M_-(rho)&gt;=2G/pi+L_-(rho),
+L_-=(rho_c+3rho_d-rho_a-3rho_b)/4.                 (12)</code></pre>
+<p>Consequently the following strict, explicit piecewise-linear chamber contains the flat metric:</p>
+<pre><code>delta(rho)&lt;2G/pi+min(L_+(rho),L_-(rho)).             (13)</code></pre>
+<p>On every compact subset with a margin eta&gt;0, equations (5), (6), and (11) prove for BOTH crossing signs</p>
+<pre><code>||L_(sigma,rho)||/||R_(sigma,rho)||
+                                  &lt;=N^C exp(-N eta). (14)</code></pre>
+<p>One convenient radius cube is |rho_i|&lt;=epsilon, with</p>
+<pre><code>0&lt;epsilon&lt;G/(2*pi).</code></pre>
+<p>Then delta&lt;=2epsilon and L_+,L_-&gt;=-2epsilon. Hence (14) holds uniformly with any eta&lt;2G/pi-4epsilon. The fixed explicit choice epsilon=1/10 even permits eta=4/25 without relying on a decimal evaluation: the alternating series gives G&gt;8/9, and pi&lt;22/7 implies 2G/pi-2/5&gt;82/495&gt;4/25. A common additive shift of all four rho_i leaves every comparison unchanged, so this can also be viewed as a chamber of radius RATIOS rather than a fixed overall scale.</p>
+<p>These are relative operator/HS norm gaps for the actual sourced crossing equation. Contracting through the rest of a knot can select a subspace far below the norm-maximizing octahedral profile. No scalar volume limit or source-angle lower bound follows from (14) alone.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/weighted_crossing_source_gap.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-coefficient-and-metric">1. The actual coefficient and metric</a><a href="#uniform-factorial-and-laplace-estimates">2. Uniform factorial and Laplace estimates</a><a href="#the-unique-flat-maximum-and-its-value">3. The unique flat maximum and its value</a><a href="#a-one-dimensional-computation-for-arbitrary-real-weights">4. A one-dimensional computation for arbitrary real weights</a><a href="#sharp-complete-green-source-exponent-with-its-carry-retained">5. Sharp complete Green-source exponent with its carry retained</a><a href="#an-explicit-open-radius-chamber-for-the-relative-source-norm-gap">6. An explicit open radius chamber for the relative source norm gap</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exact deck characters of the original four-function crossing · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/balanced_crossing_deck_characters.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="exact-deck-characters-of-the-original-four-function-crossing">Exact deck characters of the original four-function crossing</h1>
+<p>28 October 2026. The exact balanced Fourier crossing has a specified continuation away from its sampling grids. Its four full-turn characters are explicit rational functions of the central coordinates. They compute the logarithmic seams in a contour deformation of the original period. A function that is periodic at the original grid need not remain periodic between the grid points.</p>
+<p>This calculation uses the full function, its Gaussian and every affine logarithmic mark. It does not infer a geometric cycle from a rational character or identify the central variety below with the knot A-curve.</p>
+<h2 id="the-fixed-continuation-and-its-four-characters">1. The fixed continuation and its four characters</h2>
+<p>Use the EXACT kernel (14) of <a href="actual_balanced_fourier_crossing_kernel.html">the balanced crossing theorem</a>. Put h=2<em>pi</em>i/N, t=2<em>pi</em>i, X=pi*i-h/2, x=exp(X), s=x^N, and retain the port logarithms a,b,c,d. In particular s=(-1)^(N+1). Let</p>
+<pre><code>A=exp(Na), B=exp(Nb), C=exp(Nc), D=exp(Nd),
+beta=b-a-X, f=d-c-X, rho=c-a,
+lambda=d-b+t, G=d-a-X, H=b-c+X,
+E=N f+(N+1)lambda/2+(G H+lambda^2/2)/h.</code></pre>
+<p>The full continuation is</p>
+<pre><code>M=constant * (C/A)(1-C/A)^2 exp(E)
+   *Psi(beta)Psi(h-f)Psi(lambda+t+h)/Psi(rho).       (1)</code></pre>
+<p>The constant includes the original kappa*zeta_0^2/N. The old central parameters are used as the values of these exponentials, rather than replacing exp(Nrho) by a new independent constant off the grid.</p>
+<p>For a full positive turn of the indicated port, the exact ratios are</p>
+<pre><code>M(a+t,b,c,d)/M = mu_a = s C(A-sB)/[B(A-C)],
+M(a,b+t,c,d)/M = mu_b = s(D-B)/(A-sB),
+M(a,b,c+t,d)/M = mu_c = s(A-C)/(D-sC),
+M(a,b,c,d+t)/M = mu_d = s B(D-sC)/[C(D-B)].         (2)</code></pre>
+<p>These are meromorphic identities on the retained logarithmic cover; the displayed quotients are first interpreted where all factors are regular. No imaginary part is reset to a principal argument.</p>
+<p>Proof: the full function obeys</p>
+<pre><code>Psi(z+t)/Psi(z)=1/(1-exp(Nz)),
+Psi(z-t)/Psi(z)=1-exp(Nz).</code></pre>
+<p>The four exponential arguments in (1) have central values</p>
+<pre><code>U=sB/A, V=sC/D, W=D/B, R=C/A.</code></pre>
+<p>The Gaussian factors exp(Delta E), for turns in a,b,c,d respectively, are</p>
+<pre><code>sC/B, -U, sA/D, -sD/C.                         (3)</code></pre>
+<p>For example a turn in b has Delta E=-(N+1)t/2+N G-N lambda+Nt/2 =-t/2+N(beta-t), so its factor is -U, including the half-turn sign. Combining (3) with the four full-function multipliers gives (2). Thus neither a Gaussian phase nor a complete-color sign was dropped.</p>
+<h2 id="balanced-grids-and-their-off-grid-seams">2. Balanced grids and their off-grid seams</h2>
+<p>On the local sampling multisection C=sB, D=sA all four characters equal one. More precisely,</p>
+<pre><code>mu_a-1 = A(sC-B)/[B(A-C)],
+mu_b-1 = (sD-A)/(A-sB),
+mu_c-1 = (sA-D)/(D-sC),
+mu_d-1 = D(sB-C)/[C(D-B)].                     (4)</code></pre>
+<p>Hence, on this regular chart, the simultaneous unit-character locus is EXACTLY C=sB, D=sA. The converse follows from the first two numerators, since A,B are nonzero. The other two equations are redundant. Also</p>
+<pre><code>mu_a mu_b mu_c mu_d=1.                         (5)</code></pre>
+<p>This is the common-scale symmetry, not four independent gluing equations. All four shifts commute because the characters depend only on A,B,C,D, which are invariant under full logarithmic turns.</p>
+<p>For example, start with a balanced grid (A0,B,C,D), C=sB and D=sA0, and vary only its a-port away from A=A0. Then mu_a=1 still, but</p>
+<pre><code>mu_b-1=(A0-A)/(A-sB),
+mu_c-1=s(A-A0)/(D-sC).</code></pre>
+<p>The other ports acquire seams. Periodicity in the moved port alone therefore does not justify a simultaneous closed-torus deformation. These formulas locate the exact central differences that recur in the <a href="whole_fermat_toric_residue_and_wire_source.html">wire-current calculation</a>.</p>
+<h2 id="sewn-characters-and-the-limitation-of-grid-periodicity">3. Sewn characters and the limitation of grid periodicity</h2>
+<p>For an internal variable shared by two original crossing ports, the full-turn ratio of the product is the product of its two characters from (2), with the orientations and negative-crossing conjugate transport retained. The rational boundary co-source is single-valued in that variable; it adds no logarithmic multiplier. Thus the sewn scalar form has a directly computable rational deck character nu_e. On the propagated balanced central multisection, nu_e=1 because each incident local character is one.</p>
+<p>Off that multisection, imposing nu_e=1 is a NONTRIVIAL equation, not a consequence of the Fourier frame change. A logarithmic branch lip contributes a multiple of (nu_e-1) times the complete kernel. Such a lip cannot be omitted on the grounds that its value at the root grid is zero. In particular, zeros on the grid may cancel the grid denominator and leave a regular but nonzero relative source term. The exact Newton/Rogers examples in the linked wire note exhibit that mechanism.</p>
+<p>The open-braid frame theorem now removes all interior frame adapters, but it does not remove the logarithmic seams of this off-grid full continuation. The characters (2) specify those seams without an unspecified torsor multiplier. Geometric selection still requires an actual relative-period transformation, with these terms retained.</p>
+<h2 id="verification">4. Verification</h2>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_balanced_crossing_deck_characters.py">The independent finite-product audit</a> computes Psi from its rational product and dilogarithm definition, then checks every full-turn ratio at both parities, without applying the shift law in the evaluator. Symbolic checks verify (4), (5), and the unit-character locus. These checks supplement the uniform calculation (2)–(3); they are not a knot volume test.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/balanced_crossing_deck_characters.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-fixed-continuation-and-its-four-characters">1. The fixed continuation and its four characters</a><a href="#balanced-grids-and-their-off-grid-seams">2. Balanced grids and their off-grid seams</a><a href="#sewn-characters-and-the-limitation-of-grid-periodicity">3. Sewn characters and the limitation of grid periodicity</a><a href="#verification">4. Verification</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

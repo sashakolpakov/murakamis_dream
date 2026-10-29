@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An unconditional finite q-Chu reduction of the actual five-crossing source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/five_two_finite_chu_bridge.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="an-unconditional-finite-q-chu-reduction-of-the-actual-five-crossing-source">An unconditional finite q-Chu reduction of the actual five-crossing source</h1>
+<p>28 October 2026. The actual three-index period in <a href="five_two_whole_source_reduction.html">the whole-source calculation</a> has a two-index whole-meridian reduction by elementary finite q-binomial identities. This reduction does not assume the candidate Newton coefficients in its Section 6. The further transform is now proved in <a href="five_two_cyclotomic_transform_proof.html">the full cyclotomic proof</a>; this note records the independent double-sum route.</p>
+<p>Write q=Q here (the Gaussian base, not the half-root), <code>d=N-1</code>, <code>F_a=(q;q)_a</code>, and <code>H_a(z)=sum_j {a choose j}_q z^j</code>. Every denominator below has index less than N.</p>
+<h2 id="a-reusable-terminating-three-factor-transform">1. A reusable terminating three-factor transform</h2>
+<p>For k with <code>F_1,...,F_k</code> nonzero, and arbitrary a,b, exactly</p>
+<pre><code>sum_(ell=0)^k (q^-k; q)_ell (a;q)_ell (b;q)_ell
+                                  q^ell/F_ell
+   =sum_(r=0)^k {k choose r}_q
+                            a^(k-r)b^r(a;q)_r.   (1)</code></pre>
+<p>This is a polynomial identity in a,b, without a genericity condition on their Pochhammer factors.</p>
+<p>First prove the finite q-Chu identity</p>
+<pre><code>sum_(s=0)^n (q^-n;q)_s(a;q)_s q^s/F_s=a^n. (2)</code></pre>
+<p>Expand <code>(a;q)_s</code> by the finite q-binomial theorem and interchange the finite sums. For its coefficient with index r the remaining sum is</p>
+<pre><code>sum_(t=0)^(n-r)(q^(-(n-r));q)_t q^t/F_t
+                              =(q^(1-(n-r));q)_(n-r).</code></pre>
+<p>The last equality is the same finite q-binomial theorem. It is zero unless r=n, because otherwise one factor is <code>1-q^0</code>. The r=n term simplifies to a^n, proving (2).</p>
+<p>To prove (1), expand <code>(b;q)_ell</code>, put ell=r+s, and use (2) with length k-r and parameter a q^r. The inner sum is <code>(a q^r)^(k-r)</code>. Substitute</p>
+<pre><code>(q^-k;q)_r/F_r=(-1)^r q^(-kr+r(r-1)/2){k choose r}_q.</code></pre>
+<p>All signs and q powers cancel, leaving exactly (1).</p>
+<h2 id="applying-it-to-the-original-triple-source">2. Applying it to the ORIGINAL triple source</h2>
+<p>Start with the proved actual source formula</p>
+<pre><code>F_N(Y)=sum_(m+ell&lt;=d)sum_(j=0)^m
+   Y^(2(d-m))q^(j(m+1)+m+ell+2)
+   {m+ell choose ell}_q {m choose j}_q
+   (q/Y;q)_(m+ell)(q^(j+1)/Y;q)_ell.        (3)</code></pre>
+<p>Replace j by m-j and put k=d-m. At a primitive Nth root, <code>q^(m+1)=q^-k</code> and <code>q^(m(m+2)+2)=q^(k^2+1)</code>. The ell sum is the left side of (1) with</p>
+<pre><code>a=q^-k/Y, b=q^(-k-j)/Y.</code></pre>
+<p>Its r-th term is <code>Y^-k q^(-k^2-jr){k choose r}(q^-k/Y;q)_r</code>. The prefactor in (3) consequently simplifies to q Y^k. Set n=k-r and use the exact contiguous product</p>
+<pre><code>(q/Y;q)_(d-k)(q^-k/Y;q)_(k-n)
+                                    =(q/Y;q)_(d-n),</code></pre>
+<p>which follows from q^N=1 before any Y evaluation. One obtains</p>
+<pre><code>F_N(Y)=q sum_(0&lt;=n&lt;=k&lt;=d)
+      Y^k {k choose n}_q (q/Y;q)_(d-n)
+                              H_(d-k)(q^n).       (4)</code></pre>
+<p>This is already an exact simpler finite source transform. It preserves arbitrary Y and all of its meridian derivatives.</p>
+<h2 id="one-more-finite-q-binomial-sum-gives-a-double-sum">3. One more finite q-binomial sum gives a DOUBLE sum</h2>
+<p>Expand H in (4). Put k=n+r and <code>d-k=j+s</code>, so <code>n+r+j+s=d</code>. The root reflection identity gives</p>
+<pre><code>F_(n+r) F_(j+s)
+    =N(-1)^(j+s)q^((j+s)(j+s+1)/2).        (5)</code></pre>
+<p>Fix n,j and set <code>L=d-n-j=r+s</code>. The remaining r,s sum is</p>
+<pre><code>sum_(s=0)^L (-1)^s q^(s(s+1)/2+js)Y^-s
+                                  /(F_s F_(L-s))
+                       =(q^(j+1)/Y;q)_L/F_L.     (6)</code></pre>
+<p>Equation (6) is the ordinary finite q-binomial theorem. Thus the whole actual reduced scalar has the unconditional formula</p>
+<pre><code>F_N(Y)=Nq sum_(n,j&gt;=0,n+j&lt;=d)
+   (-1)^j q^(j(j+1)/2+nj) Y^(d-j)
+   (q/Y;q)_(d-n)(q^(j+1)/Y;q)_(d-n-j)
+                 /[F_n F_j F_(d-n-j)].     (7)</code></pre>
+<p>The factor N in (5)-(7) is the exact full root factorial, not a normalization chosen after evaluating Y. The original Cartan, turning, cut and framing factors are already included in (3), so remain included in (7). The separate full ADO modified-dimension factor multiplies both unchanged.</p>
+<p>Equivalently, with k=d-n, (7) is</p>
+<pre><code>Nq Y^d sum_(k=0)^d (q/Y;q)_k^2/[F_(d-k)F_k]
+   * sum_(j=0)^k (q^-k;q)_j Y^-j
+                                  /[F_j(q/Y;q)_j]. (8)</code></pre>
+<p>Formula (8) is initially read after cancelling Pochhammer denominators termwise back to (7); no division at a Y source zero is implied.</p>
+<h2 id="relation-to-the-proved-cyclotomic-formula">4. Relation to the proved cyclotomic formula</h2>
+<p>Putting t=q^-1, the proved cyclotomic form in the original note is</p>
+<pre><code>F_N(Y) =sum_(n=0)^d t^n(tY;t)_n(t/Y;t)_n
+                   sum_(j=0)^n t^(j(j+1)){n choose j}_t. (9)</code></pre>
+<p>The inner normalized coefficient is the elementary Bailey convolution <code>sum_j t^(j^2+j)/[F_j(t)F_(n-j)(t)]</code>. Equations (1)-(8) give an independent double-sum expression. The <a href="five_two_cyclotomic_transform_proof.html">full proof</a> instead uses the symmetric three-factor expansion, a generic Newton connection, and an exact root Rogers-polynomial convolution to prove (9). Repeated ordinary-color nodes are not used as an interpolation proof.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_five_two_finite_chu_bridge.py">Exact audit</a> checks (1) at generic finite parameters and compares (3), (4), (7), and the original literal source at primitive roots with unrestricted whole-meridian evaluations. The displayed finite identities, not the samples, establish their scope.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/five_two_finite_chu_bridge.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#a-reusable-terminating-three-factor-transform">1. A reusable terminating three-factor transform</a><a href="#applying-it-to-the-original-triple-source">2. Applying it to the ORIGINAL triple source</a><a href="#one-more-finite-q-binomial-sum-gives-a-double-sum">3. One more finite q-binomial sum gives a DOUBLE sum</a><a href="#relation-to-the-proved-cyclotomic-formula">4. Relation to the proved cyclotomic formula</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

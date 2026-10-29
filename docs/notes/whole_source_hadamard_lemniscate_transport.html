@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A controlled one-variable lemniscate for the whole original source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/whole_source_hadamard_lemniscate_transport.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-controlled-one-variable-lemniscate-for-the-whole-original-source">A controlled one-variable lemniscate for the whole original source</h1>
+<p>28 October 2026. The full original knot scalar, with ALL clocks and outer phases retained, has a one-variable coefficient presentation whose selected lemniscate has polynomial logarithmic mass. This bypasses the unproved arbitrary-anchor interior-flow mass estimate for this particular whole-source presentation. It does not prove a sharp geometric bound for the selected lemniscate level. Taking the largest modulus of all critical values is unnecessary and can be substantially worse.</p>
+<p>No coefficient below is defined by the unknown value K_N. The input is the whole original meridian cut polynomial computed from the finite R, followed by explicit monic polynomial operations. It may be expensive, but is a specified source construction rather than a favorable replacement invariant.</p>
+<h2 id="exact-full-source-hadamard-master">1. Exact full-source Hadamard master</h2>
+<p>Fix a zero-framed one-component knot diagram, or a fixed braid presenting it. Use its original reduced reciprocal meridian polynomial F_N(Y), at Q=exp(2pi i/N), with</p>
+<pre><code>F_N(1)=K_N, F_N(Q^j)=C_j(q_N), C_1=1.</code></pre>
+<p>The actual finite-cut and Weyl theorems give F_N in C[Y,Y^-1], reciprocal under Y inversion. Put h=Y+Y^-1 and expand by MONIC Newton division,</p>
+<pre><code>F_N(Y)=sum_(n=0)^D a_(N,n) T_n(Y),
+T_n(Y)=product_(r=1)^n(h-Q^r-Q^-r).             (1)</code></pre>
+<p>Repeated nodes cause no division here: the T_n are monic polynomials in h. The whole original polynomial is the input; one does not reconstruct a missing coefficient from K_N. All original scalar and framing factors remain those of that input.</p>
+<p>At the root, T_N=Y<sup>N+Y</sup>-N-2 and T_(n+N)=T_N T_n. Consequently terms n&gt;=N vanish at EVERY root-color point Y=Q^j. With d=N-1 set</p>
+<pre><code>A_N(z)=sum_(n=0)^d a_(N,n) z^n,
+w_n=T_n(1)=|(Q;Q)_n|^2,
+W_N(z)=sum_(n=0)^d w_n z^(d-n),
+f_N(z)=A_N(z)W_N(z)/z^d.                      (2)</code></pre>
+<p>Then the exact original scalar is</p>
+<pre><code>K_N=CT_z f_N(z)=(2pi i)^(-1)integral f_N(z)dz/z. (3)</code></pre>
+<p>This retains every coefficient phase; it is not the absolute Newton envelope. The truncation also retains all original root-color values, so their audited Plancherel identity remains applicable.</p>
+<p>The first Newton node is Q+Q^-1. Thus a_(N,0)=F_N(Q)=1. Also w_0=1 and w_d=N^2. If m=degree A_N, the polynomial P_N=A_N W_N has</p>
+<pre><code>P_N(0)=N^2, degree P_N=d+m, leading coefficient a_(N,m). (4)</code></pre>
+<p>If m=0, A_N=1 and (3) is exactly K_N=1. This one-pole case is treated separately; no proper-two-pole assertion is made for the unknot case. Otherwise f_N has genuine poles of orders d and m at zero and infinity.</p>
+<h2 id="arithmetic-size-bounds-come-from-the-original-finite-word">2. Arithmetic size bounds come from the original finite word</h2>
+<p>For a fixed original diagram there are constants C,L such that:</p>
+<ul>
+<li>the Laurent degree of F_N is at most C N;</li>
+<li>its coefficients, and all their cyclotomic conjugates, have modulus at most exp(C N), after a harmless fixed power of N is absorbed in C;</li>
+<li>multiplying every coefficient by N^L makes it integral in the cyclotomic integer ring of the retained root field, of degree at most 4N.</li>
+</ul>
+<p>Here is a direct justification. Each finite R term has a bounded number of root factorial denominators, each with index below N, times a product of at most N binomials in the meridian. The complement identity F_a F_(d-a)=N times a unit root clears each inverse factorial with ONE factor N, not N factors. Every conjugate root product has modulus at most 2^N; each binomial expansion has coefficient sum at most 2^N. The fixed diagram uses a fixed number of such factors and only a polynomial number of state paths in N. Pivot exponents and the retained zero-framing normalization have meridian degree O(N). The common quadratic Cartan cancels against its prescribed zero-framing factor, leaving the explicit meridian monomial, not an uncontrolled analytic scalar. Thus the asserted degree, denominator and conjugate bounds follow from the finite defining matrices. In the Gaussian-polynomial cut formula the denominators can in fact be cleared integrally; the weaker N^L statement suffices here.</p>
+<p>Passing from reciprocal Laurent polynomials to h-polynomials uses the integer recurrence Y<sup>r+Y</sup>-r=C_r(h), C_(r+1)=hC_r-C_(r-1). Its coefficient norm is exponential in r. Monic Newton conversion introduces only the complete homogeneous polynomials in the nodes Q<sup>r+Q</sup>-r. In every conjugate their modulus is at most two, and</p>
+<pre><code>|h_(j-n)(a_1,...,a_(n+1))|
+                          &lt;=binom(j,n)2^(j-n).</code></pre>
+<p>Consequently every coefficient of A_N and P_N still has all conjugates bounded by exp(C’ N), with the same fixed N-denominator budget. This includes confluent nodes. No small Vandermonde divisor occurs.</p>
+<p>If a_(N,m)!=0, apply the field norm to the nonzero integral element N^L a_(N,m). Its norm is a nonzero integer. Bounding all other conjugates above gives</p>
+<pre><code>|a_(N,m)|&gt;=exp(-C&#39;&#39; N^2).                     (5)</code></pre>
+<p>Constants depend on the fixed original diagram, not its invariant value.</p>
+<h2 id="the-source-selects-a-pole-separating-level-not-every-critical-value">3. The source selects a pole-separating level, not every critical value</h2>
+<p>For m&gt;=1 view f=f_N as a rational function on the sphere. For any R&gt;0, every connected component of {|f|&gt;R}, with poles included, contains a pole. Otherwise its closure avoids both poles and is compact; the maximum principle for f would contradict |f|&gt;R inside and |f|=R on its boundary. There are therefore at most TWO such components.</p>
+<p>For sufficiently large R they are disjoint neighborhoods of zero and infinity. For sufficiently small R the superlevel is the sphere with small disjoint zero neighborhoods removed, so the two poles are in the same component. Define R_sep to be their merger threshold:</p>
+<pre><code>R_sep=inf{R&gt;0: the superlevel components of 0 and infinity are distinct}. (6)</code></pre>
+<p>Separation persists as R increases. Thus for every regular level R&gt;R_sep the zero component is bounded in the plane. It has a unique OUTER boundary circle Gamma_R lying in |f|=R and winding once around zero. Any additional boundary circles surround holes without zero and have winding zero. Their periods of f dz/z vanish individually. Hence Gamma_R ALONE, with multiplicity one and the original positive orientation, represents (3).</p>
+<p>There is no integer boundary-matrix inversion or accumulated cell multiplicity in this construction. Connectivity can change only at a nonzero critical level, since between regular levels the compact level annulus admits the ordinary gradient trivialization. Thus R_sep is the modulus of a regular critical value of f. It can be smaller than the largest critical modulus; inaccessible criticals are not included merely because they are algebraic roots of f’.</p>
+<p>The definition (6) is a marked algebraic connectivity condition independent of K_N. It is equivalent to the least level supporting a pole-separating closed curve, but (6) specifies it using the actual two pole components.</p>
+<h2 id="the-selected-circle-has-polynomial-logarithmic-length">4. The selected circle has polynomial logarithmic length</h2>
+<p>Let Dp=degree P_N&lt;=2N-2. Every radial ray meets the real algebraic curve</p>
+<pre><code>|P_N(z)|^2-R^2|z|^(2d)=0</code></pre>
+<p>at most 2Dp times. Every fixed-radius circle also meets it at most 2Dp times: the highest angular harmonic has the nonzero product of the leading coefficient of P_N and its constant N^2, so it cannot vanish identically on such a circle. One-dimensional coarea gives</p>
+<pre><code>integral_(Gamma_R)|dz/z|
+          &lt;=4pi Dp+2Dp log(r_max/r_min).     (7)</code></pre>
+<p>The radii have a uniform quantitative bound. The critical equation is zP_N’-dP_N=0; its leading coefficient is m a_(N,m) and its constant is -dN^2. The coefficient bounds and (5), followed by the elementary Cauchy polynomial root bound and its reversed-polynomial version, put all its roots between exp(-C N^2) and exp(C N^2). It follows that the largest regular critical modulus is at most exp(C N^3).</p>
+<p>For |w|=R, every point of the level is a root of P_N(z)-w z^d. Because m&gt;=1, its leading coefficient remains a_(N,m), and its constant remains N^2, independent of w. For R_sep&lt;R&lt;=R_sep+1, the same root bounds therefore give</p>
+<pre><code>|log|z||&lt;=C N^3.                              (8)</code></pre>
+<p>This estimate is uniform as R decreases to R_sep; no inverse critical value separation or inverse R-R_sep is used. Equations (7)–(8) prove</p>
+<pre><code>(2pi)^(-1)integral_(Gamma_R)|dz/z|&lt;=C N^4.     (9)</code></pre>
+<p>The circles are explicit components of degree-O(N) algebraic curves, with coefficient one. Thus this is controlled ORIGINAL-source transport, not merely a conditional estimate for a prospective chain.</p>
+<h2 id="whole-source-estimate-and-its-exact-remaining-scope">5. Whole-source estimate and its exact remaining scope</h2>
+<p>Define R_src=R_sep when m&gt;=1 and R_src=1 in the one-pole case m=0. Integrate (3) on Gamma_R, use (9), and take regular R down to R_sep. There is a constant C depending only on the fixed original diagram with</p>
+<pre><code>|K_N|&lt;=C N^4 R_src.                           (10)</code></pre>
+<p>The audited ordinary-color theorem and exact root-color Plancherel identity then give a corresponding positive whole-energy bound</p>
+<pre><code>E_N=|K_N|^2+poly(N)
+                   &lt;=poly(N) max(1,R_src^2).  (11)</code></pre>
+<p>ALL clocks, original Newton coefficients and outer phases are inside f_N; none were separately estimated before this contour was constructed.</p>
+<p>This does not establish an upper bound by knot volume. The critical points of a product of finite generating polynomials need not be genuine stationary points of a single classical WKB branch: branch cancellation or anti-Stokes interfaces can create extra critical values. The largest critical envelope already overshoots in simple prototypes. Even the selected R_src is not proved to have the hyperbolic-volume rate for general knots. The required remaining theorem must estimate THIS marked level with its exact source, or refine its cycle further; it cannot simply identify every finite polynomial critical point with a knot representation.</p>
+<p>As a check, for the figure-eight the actual A_N=1+z+…+z^d and every coefficient of W_N is positive. Thus R_src&lt;=max_(|z|=1)|f_N(z)| =f_N(1)=N K_N. Together with (10), the selected level has the same known exponential rate as K_N in this prototype. This does not extend the positivity argument to the complex five-crossing coefficients.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_whole_source_hadamard_lemniscate.py">Audit</a>: exact original Laurent cuts, monic confluent Newton conversion, all-color truncation, Hadamard source equality and known one-pole treatment. Numerical connectivity diagnostics are kept separate from the proof and are not used to assert a geometric barrier or a new volume theorem.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/whole_source_hadamard_lemniscate_transport.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-full-source-hadamard-master">1. Exact full-source Hadamard master</a><a href="#arithmetic-size-bounds-come-from-the-original-finite-word">2. Arithmetic size bounds come from the original finite word</a><a href="#the-source-selects-a-pole-separating-level-not-every-critical-value">3. The source selects a pole-separating level, not every critical value</a><a href="#the-selected-circle-has-polynomial-logarithmic-length">4. The selected circle has polynomial logarithmic length</a><a href="#whole-source-estimate-and-its-exact-remaining-scope">5. Whole-source estimate and its exact remaining scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

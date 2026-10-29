@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual pretzel winding period and its explicit positive saddle family · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_pretzel_winding_phase_and_geometric_saddles.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-actual-pretzel-winding-period-and-its-explicit-positive-saddle-family">The actual pretzel winding period and its explicit positive saddle family</h1>
+<p><strong>Subsequent global proof.</strong> The <a href="actual_pretzel_coherent_circle_and_period_asymptotic.html">coherent circle and period theorem</a> now proves survival for this complete augmented source, with explicit nonzero leading constant and original normalization. The local symbol calculations below alone do not imply that result; its additional finite transformation, global recurrence bound and Gaussian estimates are supplied in the linked proof.</p>
+<p>29 October 2026. The complete augmented odd-pretzel source has an exact one-variable residue with finitely many integer windings. Its literal factorial coefficients give a positive-shape stationary family for every fixed odd number of boxes. The action and the full Hessian can be computed explicitly. This identifies candidate exponential rates of the ORIGINAL period; it does not prove that its selected cycle has a nonzero coefficient at those saddles or that every other contribution is smaller.</p>
+<p>In particular a proposed strict radial-homotopy boundary gap is false: an original diagonal face has the same action height. That face must be combined with the interior contribution using the exact source, not discarded as exponentially small.</p>
+<h2 id="exact-winding-including-its-normal-multiplicity">1. Exact winding, including its normal multiplicity</h2>
+<p>Use N&gt;=2, d=N-1, q=exp(pi*i/N), Q=q^2, kappa=q<sup>(d</sup>2/2), and M=floor(d/2). The <a href="actual_pretzel_complete_base_casimir_polynomial.html">literal complete base polynomial</a> is denoted z_N(z). It is the actual quarter-turn of R^(-1)L_N, with degree at most M and every scalar retained. For s odd boxes the unchanged raw marked source is</p>
+<pre><code>A_(N,s)=Phi_2(z_N^s),
+Phi_2(F)=(-1)^d N^2 [z^d](F mod P_N),
+P_N(z)=2T_N(z/2)+2.</code></pre>
+<p>The <a href="actual_pair_casimir_commutant_and_rotated_trace.html">full commutant and marked-trace proof</a> establishes this on all physical channels, not a semisimple projection. Any existing external framing/peripheral line still multiplies A_(N,s).</p>
+<p>Polynomial division or residues at infinity give EXACTLY</p>
+<pre><code>Phi_2(F)=(-1)^d N^2/(2*pi*i) integral F(z)/P_N(z) dz,       (1)</code></pre>
+<p>around every finite node. Put z=w+w^(-1). On |w|=R&gt;1 this is a positively oriented ellipse enclosing those nodes, and</p>
+<pre><code>P_N(w+w^-1)=(1+w^N)^2/w^N.</code></pre>
+<p>Consequently</p>
+<pre><code>A_(N,s)=(-1)^d N^2/(2*pi*i) integral_(|w|=R)
+   z_N(w+w^-1)^s w^N(1-w^-2)/(1+w^N)^2 dw.               (2)</code></pre>
+<p>The full squared denominator is compulsory. Expanding it on |w|&gt;1 gives the finite coefficient identity</p>
+<pre><code>A_(N,s)=(-1)^d N^2 sum_(m&gt;=1) (-1)^(m-1)m
+   ([w^(mN-1)]-[w^(mN+1)]) z_N(w+w^-1)^s.               (3)</code></pre>
+<p>Only m&lt;=floor((sM+1)/N) can occur. At fixed odd s these are eventually m=1,…,(s-1)/2. The coefficient m is the retained confluent/normal source. There is no authorization to keep only m=1 before estimating the others. The existing complete-base audit checks (3) against literal original sources at all tested even and odd levels.</p>
+<p>An immediate exact upper bound is</p>
+<pre><code>|A_(N,s)| &lt;= N^2 (R+R^-1)/(1-R^-N)^2 * R^-N
+                   *max_(|w|=R)|z_N(w+w^-1)|^s.          (4)</code></pre>
+<p>The <a href="actual_pretzel_coherent_radial_capacity_diagnostic.html">coherent capacity diagnostic</a> tests (4) with the actual polynomial and all normal channels. A sampled circle maximum is not a certified analytic upper bound.</p>
+<h2 id="the-phase-comes-from-the-literal-finite-coefficient">2. The phase comes from the literal finite coefficient</h2>
+<p>Write F_a=(Q;Q)_a. The complete-base theorem gives</p>
+<pre><code>kappa*z_N(w+w^-1)/N^2
+  =sum_(v=0)^M sum_(r=0)^v
+    F_(2v)/F_v^4 *
+    (Q^-v;Q)_r(qw;Q)_r(q/w;Q)_r Q^r/F_r^3.              (5)</code></pre>
+<p>The positive continuant coefficient used to prove this simplifies to</p>
+<pre><code>b_v=N^2 |F_(2v)|/|F_v|^4.</code></pre>
+<p>Indeed the original cosine product is (Q<sup>(v+1);Q)<em>(d-2v)=F</em>(d-v)/F_v=N/|F_v|</sup>2. The fixed phase in the continuant then gives b_v x<sup>v=N</sup>2F_(2v)/F_v^4. This removes no phase from the finite sum (5).</p>
+<p>Set X=exp(2<em>pi</em>i<em>v/N), Y=exp(2</em>pi<em>i</em>r/N). On a regular compact subdomain the leading phase of a summand in (5), derived by integrating its exact factorial/Pochhammer logarithms, is</p>
+<pre><code>S(X,Y;w)=-6Li_2(1)-Li_2(X^2)+4Li_2(X)+Li_2(1/X)
+   -Li_2(Y/X)+Li_2(w)+Li_2(1/w)
+   -Li_2(wY)-Li_2(Y/w)+3Li_2(Y).                         (6)</code></pre>
+<p>The exponent convention is exp[N<em>S/(2</em>pi*i)]. At the points below use principal dilogarithms continued on their indicated upper/lower sides. The overall kappa^-1 contributes a real leading action constant pi^2, and thus does not change the volume rate. Endpoint-uniform expansions and contour selection do not follow from the interior phase calculation.</p>
+<p>Its exponentiated logarithmic derivatives are</p>
+<pre><code>exp(S_logX)=(1+X)^2/[(X-1)(X-Y)],
+exp(S_logY)=(1-Y/X)(1-wY)(1-Y/w)/(1-Y)^3,
+exp(S_logw)=(wY-1)/(w-Y).                               (7)</code></pre>
+<p>These also follow directly from the exact consecutive-term ratios in (5). They are algebraic equations for the stationary support, with the logarithmic marks still to be specified.</p>
+<h2 id="all-box-counts-have-an-explicit-positive-shape-stationary-branch">3. All box counts have an explicit positive-shape stationary branch</h2>
+<p>For one winding m with 0&lt;m&lt;s/2 put</p>
+<pre><code>alpha=pi*m/s, eta=2 asinh(tan alpha),
+beta=atan(sec alpha),
+w_*=-exp(eta), Y_*=exp(2i beta),
+X_*=(Y_*-1)/(Y_*+3)=i sec(alpha)/(2-i sec(alpha)).          (8)</code></pre>
+<p>Then |Y_<em>|=1, |X_</em>|&lt;1 and</p>
+<pre><code>0&lt;arg Y_*&lt;arg X_*&lt;pi.</code></pre>
+<p>Eliminating X from the first two equations in (7) gives</p>
+<pre><code>Y=(3X+1)/(1-X),
+w+w^-1=6-16Y/(1+Y)^2.                                 (9)</code></pre>
+<p>With U=exp(2<em>pi</em>i*m/s), the third equation gives Y=(Uw+1)/(w+U). Substitution factors exactly as</p>
+<pre><code>(w-1)^2[(U+1)^2w^2-2(U^2-6U+1)w+(U+1)^2]=0.</code></pre>
+<p>The positive branch (8) is the root outside the unit circle and obeys</p>
+<pre><code>w+w^-1=2-16U/(1+U)^2=2-4 sec^2(alpha).                   (10)</code></pre>
+<p>The factor w=1 is not silently identified with this branch.</p>
+<p>There is an essential inner mark: on the specified dilogarithm sheets,</p>
+<pre><code>S_logX=0, S_logY=2*pi*i, S_logw=2i alpha.                (11)</code></pre>
+<p>Thus the genuinely stationary marked phase for the s separate factors of z_N^s is</p>
+<pre><code>W_m=sum_(i=1)^s [S(X_i,Y_i;w)-2*pi*i Log Y_i]
+                                  -2*pi*i*m Log w.     (12)</code></pre>
+<p>Equation exp(S_logY)=1 does not justify omitting that mark. At (8) it changes only the real part of the action, since |Y_*|=1.</p>
+<h2 id="exact-action-and-nondegeneracy">4. Exact action and nondegeneracy</h2>
+<p>Let Lambda(theta)=-integral_0^theta log|2sin t|dt. The action on (8) is</p>
+<pre><code>Im W_m=8s [Lambda(pi/4+alpha/2)+Lambda(pi/4-alpha/2)].    (13)</code></pre>
+<p>One direct proof uses the stationary equations with their marks. For the action per box, differentiation in alpha gives</p>
+<pre><code>dV/dalpha=-2log|w_*|=-4asinh(tan alpha).</code></pre>
+<p>Elementary differentiation of the right side of (13), divided by s, gives the same derivative. Both sides tend to zero as alpha tends to pi/2; on the phase side this follows from dilogarithm inversion and (pi-2alpha)log|w_*|-&gt;0. This fixes the additive regulator constant. In particular s=3,m=1 gives 4v_8, where v_8=8Lambda(pi/4). Among this specified positive branch family the action strictly decreases with m, so m=1 has the largest action. This is not a classification of every complex or endpoint contribution of the original cycle.</p>
+<p>The Hessian is nondegenerate, without an assumed Gaussian coefficient. In logarithmic coordinates (X,Y,w), let H_3 be the Hessian of S and H_2 its X,Y block. On the stationary loci,</p>
+<pre><code>det H_3=-Y(Y-1)(Y+3)^2(w^2-6w+1)
+               /[4(w-Y)(Y+1)^2(Yw-1)],
+det H_2=-Y^2(Y+3)^2(w-1)^2
+               /[(w-Y)(Y+1)^3(Yw-1)].                 (14)</code></pre>
+<p>All factors are nonzero at (8). The effective outer Schur entry is i cos(alpha). For the full 2s+1 variables of (12), block elimination therefore gives</p>
+<pre><code>det Hess W_m=s (det H_2)^(s-1) det H_3 !=0.             (15)</code></pre>
+<p>These are local phase statements. A nondegenerate stationary point with nonzero local factorial amplitude is not yet a nonzero coefficient in the selected original global period.</p>
+<h2 id="the-equal-height-original-face-is-a-genuine-remaining-obstruction">5. The equal-height original face is a genuine remaining obstruction</h2>
+<p>The proposed shift of log|X| from zero to log|X_<em>| cannot be justified by a strict boundary gap. For every upper unit Y and X=(Y-1)/(Y+3), the X-dependent part of (6) has exactly the SAME imaginary part as at X=Y. The original diagonal edge X=Y has its unique maximum at Y_</em>. Hence it reaches the height of the shifted interior stationary point for every w_*&lt;-1.</p>
+<p>The <a href="actual_pretzel_radial_boundary_gap.html">independent exact boundary calculation</a> proves this identity with its branch marks. The actual r=v summand in (5) is nonzero, and its endpoint residue survives the exact factorial interpolation. It cannot be dismissed as an exterior zero or an exponentially smaller boundary prism.</p>
+<p>The next analytic requirement is to combine that diagonal-face period and the interior contribution coherently, or eliminate the redundant inner sum by an exact transformation. Until this is done, (13)–(15) and numerical agreement with (4) do not prove augmented-base survival, and still less the volume limit after fixed long fillings.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_pretzel_winding_phase_and_geometric_saddles.py">Audit</a> checks the algebraic elimination, all logarithmic marks, Hessian factors, and the action formula. Exact finite winding/source checks remain in the linked complete-base audit. No selected-cycle claim is inferred.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_pretzel_winding_phase_and_geometric_saddles.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-winding-including-its-normal-multiplicity">1. Exact winding, including its normal multiplicity</a><a href="#the-phase-comes-from-the-literal-finite-coefficient">2. The phase comes from the literal finite coefficient</a><a href="#all-box-counts-have-an-explicit-positive-shape-stationary-branch">3. All box counts have an explicit positive-shape stationary branch</a><a href="#exact-action-and-nondegeneracy">4. Exact action and nondegeneracy</a><a href="#the-equal-height-original-face-is-a-genuine-remaining-obstruction">5. The equal-height original face is a genuine remaining obstruction</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

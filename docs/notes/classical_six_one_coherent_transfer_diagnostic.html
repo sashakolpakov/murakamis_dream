@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Coherent classical 6_1 transfer versus the pointwise root envelope · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/classical_six_one_coherent_transfer_diagnostic.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="coherent-classical-6_1-transfer-versus-the-pointwise-root-envelope">Coherent classical 6_1 transfer versus the pointwise root envelope</h1>
+<p>28 October 2026. This is a numerical diagnostic for a CLASSICAL companion product. It does not construct the actual quantum operator, transport the original ordinary-color source, or establish an upper bound for the Kashaev invariant.</p>
+<p>Use Y=exp(2 pi i x) and the supplied peripheral quartic</p>
+<pre><code>A(Y,L)=Y^4 L^4
+   +(-Y^8+Y^7+3Y^4+3Y^3-2Y^2)L^3
+   +(Y^8-3Y^7-Y^6+3Y^5+6Y^4+3Y^3-Y^2-3Y+1)L^2
+   +(-2Y^6+3Y^5+3Y^4+Y-1)L+Y^4.             (1)</code></pre>
+<p>Writing its coefficients as a_4,…,a_0, take the forward companion</p>
+<pre><code>T(x)=[[0,1,0,0],[0,0,1,0],[0,0,0,1],
+      [-a_0/a_4,-a_1/a_4,-a_2/a_4,-a_3/a_4]].</code></pre>
+<p>The tested product has its later time on the left:</p>
+<pre><code>P_N=T((N-1)/N)...T((N/2)/N).                 (2)</code></pre>
+<p>Thus it advances the state (u_j,u_(j+1),u_(j+2),u_(j+3)) along the half color orbit. It starts at the actual classical degeneracy A(-1,L)=(L-1)^4. The leading coefficient Y^4 never vanishes on this circle. At x=5/6 the polynomial divided by Y^4 is</p>
+<pre><code>L^4+5L^3+15L^2+5L+1,</code></pre>
+<p>whose two expanding roots are distinct conjugates with equal modulus. The pointwise spectral radius therefore permits a modulus-only switch there; it does not require a coherent solution to make that switch.</p>
+<p>For overflow control, each matrix multiplication is followed by division by its Frobenius norm and addition of that norm’s logarithm to a scalar accumulator. The final largest singular value restores the operator norm. This is an exact rescaling algorithm up to the stated arithmetic precision. A Frobenius norm by itself would give the same exponential rate, since the two norms differ by at most 2.</p>
+<table>
+<thead>
+<tr>
+<th>N</th>
+<th>Working decimal digits, cross-checked</th>
+<th>log(</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>128</td>
+<td>100 and 164</td>
+<td>0.52892850040928923661</td>
+</tr>
+<tr>
+<td>256</td>
+<td>100 and 164</td>
+<td>0.51813210696801742082</td>
+</tr>
+<tr>
+<td>512</td>
+<td>171 and 257</td>
+<td>0.51234403519576993241</td>
+</tr>
+<tr>
+<td>1024</td>
+<td>342 and 513</td>
+<td>0.50841759797754220015</td>
+</tr>
+</tbody>
+</table>
+<p>Both the accumulated log norm and the normalized final matrix agree between the paired runs beyond the 80 stored decimal digits. In particular the lower precision is always at least max(100,N/3), rather than a fixed precision that could seed a wrong expanding channel as N grows.</p>
+<p>For comparison, direct root quadrature gives</p>
+<pre><code>integral_(1/2)^1 log rho(T(x)) dx
+              =0.5482868866186796             (3)</code></pre>
+<p>with the reported numerical integration error 1.9e-10. The coherent rates are already below (3) and move toward the separately proposed maximal branch-action rate approximately 0.50356, rather than toward (3). This supplies concrete evidence that the scalar spectral-radius envelope loses important phase information for this quartic.</p>
+<p>The finite data do not prove the limiting product rate, exclude different subsequence behavior, or justify replacing the classical matrices by an actual quantum recurrence. Even a proved classical product estimate would still require uniform control of that replacement and the original complex source packet. The independently proved whole-source spectral theorem retains its safe envelope; this diagnostic identifies a plausible improvement to investigate.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/diagnostic_six_one_coherent_classical_transfer.py">Reproducible computation</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/six_one_coherent_classical_transfer_results.json">stored results</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/classical_six_one_coherent_transfer_diagnostic.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

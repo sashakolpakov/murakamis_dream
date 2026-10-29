@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The original whole word as a marked cyclic-dilogarithm resolvent period · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_whole_word_cyclic_dilog_resolvent_period.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-original-whole-word-as-a-marked-cyclic-dilogarithm-resolvent-period">The original whole word as a marked cyclic-dilogarithm resolvent period</h1>
+<p>28 October 2026. Every actual signed braid word admits an exact period on a product of the literature cyclic-dilogarithm curves. The marked cycle and its full original cap are specified, and the finite-head walls are retained inside rational resolvents. There is no restriction on a geometric atom argument, or asymptotic replacement of a finite polynomial by a chosen phase.</p>
+<p>The cyclic dilogarithm and its nilpotent anchoring were already proved in <a href="unfolded_ward_factorial_and_regulator.html">the unfolded Ward calculation</a> and <a href="rees_whole_crossing_source_factorization.html">the Rees crossing calculation</a>. The <a href="full_euler_atom_dilog_and_endpoint_regions.html">full-atom note</a> also gives their exact scalar Taylor Cauchy formula. The new content here is their contraction into the ORIGINAL strict signed word with the specified source and an explicit product cycle. This constructs a global algebraic period representation; it does not prove a geometric intersection number or a volume estimate.</p>
+<h2 id="the-marked-curve-realizes-the-literal-nilpotent-operators">1. The marked curve realizes the literal nilpotent operators</h2>
+<p>Put <code>Q=exp(2pi*i/N)</code> and let C_N be the normalization of</p>
+<pre><code>y^N=product_(j=1)^(N-1)(1-Q^j t)^j.          (1)</code></pre>
+<p>At t=0 choose the sheet y=1. On its disk <code>|t|&lt;1</code> this specifies the analytic function</p>
+<pre><code>D_N(t)=product_(j=1)^(N-1)(1-Q^j t)^(j/N).</code></pre>
+<p>All powers have their common constant-one mark, rather than independent roots chosen after specialization. Weighted root summation gives for <code>1&lt;=a&lt;N</code></p>
+<pre><code>[t^a]log D_N=1/[a(1-Q^a)].                 (2)</code></pre>
+<p>Consequently the first N Taylor coefficients of D_N and its inverse are precisely those of the literal u_N and v_N. For ANY actual nilpotent matrix T with <code>T^N=0</code>, and any <code>0&lt;r&lt;1</code>,</p>
+<pre><code>u_N(T)= (1/(2pi*i)) integral_(gamma_0)
+                              y(t)(tI-T)^-1 dt,
+v_N(T)= (1/(2pi*i)) integral_(gamma_0)
+                           y(t)^-1(tI-T)^-1 dt.    (3)</code></pre>
+<p>Here gamma_0 is the positively oriented circle <code>|t|=r</code> lifted to that sheet of C_N. It is closed. Expand the exact resolvent</p>
+<pre><code>(tI-T)^-1=sum_(a=0)^(N-1)T^a t^(-a-1).    (4)</code></pre>
+<p>Termwise Cauchy evaluation and (2) prove (3). Thus this is exact holomorphic functional calculus on the actual finite head. It does not claim that the scalar evaluations u_N(z) and D_N(z) agree away from a nilpotent argument.</p>
+<h2 id="the-full-original-rational-source-kernel">2. The full original rational source kernel</h2>
+<p>Use the strict factorization in <a href="actual_euler_gaussian_cauchy_network.html">the original Euler/Gaussian network</a>:</p>
+<pre><code>C=F_2 U_- F_1 F_2^-1,
+C^-1=F_2 F_1^-1 V_- F_2^-1,
+R_+=kappa C D U_+ C^-1,
+R_-=kappa^-1 C V_+ D^-1 C^-1,</code></pre>
+<p>where <code>U_±=u_N(T_±)</code>, <code>V_±=v_N(T_±)</code>, <code>T_-=x^-1 S_1^-S_2^+</code>, <code>T_+=x^-1 S_1^+S_2^-</code>. Every T has Nth power zero. Spectator heads are extended by identity. Every crossing has exactly three such Euler atoms; its factorial and Gaussian factors remain the specified matrices.</p>
+<p>Let beta have b heads and m signed crossings, and let <code>A_L ... A_1</code>, <code>L=10m</code>, be its literal stripped matrix word in the correct order. Mark its <code>r=3m</code> Euler slots by <code>j=1,...,r</code>. At slot j set <code>sigma_j=+1</code> for u and <code>-1</code> for v and replace its factor by the rational matrix</p>
+<pre><code>mathscr R_j(t_j)=(t_j I-T_j)^-1.            (5)</code></pre>
+<p>All other factors retain their actual values. Write B_l for the resulting factors. Let the ORIGINAL averaged first-cut functional be</p>
+<pre><code>Phi_(b,N)(W)=(1/N) sum_(a,c,k_2,...,k_b)
+   (product_(i=2)^b g_(k_i))
+          W_((c,k_2,...,k_b),(a,k_2,...,k_b)),
+g_k=(xQ^-k)^(1-N).                         (6)</code></pre>
+<p>One may instead keep the original fixed-first-input-zero source by fixing a=0 and removing 1/N. The equality of their original uninserted knot closures is the prior scalar-closure theorem; no equality for arbitrary inserted resolvents is assumed here. Choose one of these original sources and keep it throughout. Define the rational scalar</p>
+<pre><code>R_(beta,N)(t_1,...,t_r)=Phi_(b,N)(B_L ... B_1). (7)</code></pre>
+<p>This is an entirely explicit rational function with poles only at the coordinate loci <code>t_j=0</code>; its Laurent powers in each variable run from -1 through -N. It retains every finite-head projector because each T_j is the literal truncated transfer. It also retains all pivotal closures and the first-cut coupon. There is no quotient that kills the degree-zero wall terms.</p>
+<p>If chi is the ORIGINAL external dimension, framing and common Cartan factor, included exactly once, then the original scalar is</p>
+<pre><code>P_(beta,N)(M)=chi_(beta,N)(M)/(2pi*i)^r
+   integral_(gamma_0^r)
+       R_(beta,N)(t) product_(j=1)^r y_j^(sigma_j) dt_j. (8)</code></pre>
+<p>The proof applies (3) to each slot, in its original order, and then the finite linear functional (6). No Fubini convergence issue arises on the compact small circles: the matrices have finite dimension and the curves are regular there. Equation (8) holds for the full root meridian family, with the same external factors as the actual invariant. It is not an assertion about generic-q normal derivatives.</p>
+<p>Thus the desired first step of the torsor route is concrete: the algebraic curve, the meromorphic differential, and the original marked cycle are all supplied. The number r of curve factors depends on the braid word, not on N. The curve and source rational function themselves do depend on N.</p>
+<p>There is also a FULL version with no factorial constants hidden in the rational source. The exact reflection identity is</p>
+<pre><code>F_a=N Q^(-a-1) [t^(N-1-a)]D_N(t)^-1.</code></pre>
+<p>Consequently replace each factorial diagonal on its head by</p>
+<pre><code>F^-1=(1/(2pi*i)) integral_(gamma_0)
+                     y diag_(a)(t^(-a-1)) dt,
+F=(1/(2pi*i)) integral_(gamma_0)
+               y^-1 diag_(a)(N Q^(-a-1)t^(a-N)) dt. (9)</code></pre>
+<p>Every crossing has six such factorial diagonals and three transfer Euler atoms. Apply (9) to all six. Formula (8) now holds on <code>C_N^(9m)</code> with a new rational source formed by the same ordered matrix contraction; its only remaining local constants are the specified Gaussian diagonals and explicit powers of N,Q,x. Their marked Gaussian phase and all external Cartan, dimension and framing factors are retained. All actual factorial growth is inside the cyclic-dilogarithm differential. Both the minimal <code>3m</code> and full <code>9m</code> representations are exact.</p>
+<h2 id="an-all-inverse-realization-with-no-growing-infinity-factors">3. An all-inverse realization with no growing infinity factors</h2>
+<p>An exact change of auxiliary completion makes the cut-cycle problem simpler. Write <code>v_(Q^-1)</code> for the SAME finite factorial formula with Q replaced by its inverse. Directly,</p>
+<pre><code>(Q^-1;Q^-1)_a=(-1)^a Q^(-a(a+1)/2)F_a,
+[t^a]v_(Q^-1)(t)=Q^a/F_a,
+u_Q(T)=v_(Q^-1)(Q^-1 T).                   (10)</code></pre>
+<p>These are identities of the actual finite polynomials and operators, not conjugations of the physical invariant. Define C_(N,epsilon) by (1) with <code>Q^j</code> replaced by <code>Q^(epsilon*j)</code>; its y=1 sheet at zero is the corresponding cyclic dilogarithm. Equation (10) replaces each u resolvent in (8) EXACTLY by</p>
+<pre><code>(1/(2pi*i)) integral_(gamma_0 on C_(N,-1))
+                  y^-1(tI-Q^-1 T)^-1 dt.   (11)</code></pre>
+<p>For the full factorial version replace F^-1 by</p>
+<pre><code>(1/(2pi*i)) integral_(gamma_0 on C_(N,-1))
+                     y^-1 diag_(a)(Q^-a t^(-a-1)) dt, (12)</code></pre>
+<p>while F still uses the inverse-y formula in (9) on C_(N,+1). The v transfers likewise keep their original inverse-y curve. Thus the full original word is an exact period on a product of <code>9m</code> oriented curves C_(N,epsilon), with EVERY algebraic factor equal to y^-1. All physical Gaussian, pivotal, Cartan, framing and dimension factors are unchanged. The rational source is formed by the same original ordered contraction.</p>
+<p>This auxiliary completion changes the analytic function beyond its first N Taylor coefficients. It does not discard the infinity contribution of the old positive-y representation; it supplies a different exact period for the same finite operator. No generic-q continuation follows from it.</p>
+<p>For every variable in this all-inverse realization, the rational matrix kernel is <code>O(t^-1)</code> at infinity. Also</p>
+<pre><code>|y^-1|=O(|t|^(-(N-1)/2)).                  (13)</code></pre>
+<p>Every outer cut arc therefore has integral tending to zero in absolute value, for every fixed N&gt;=2. At a root <code>t=Q^(-epsilon*j)</code> the exponent of y^-1 is <code>-j/N&gt;-1</code>, so each cut endpoint is integrable. Consequently all variables admit convergent radial cut deformations without an infinity regularization. The banks and monodromy of these cuts must be kept on the chosen sheet. For even N a large base circle need not close on a single sheet; (13) applies to its cut arcs, not to an unmarked closed lift asserted without proof.</p>
+<p>On the normalization the finite branch endpoints do not in fact produce poles of the differential. If <code>g=gcd(N,j)</code>, a uniformizer has <code>t-alpha=s^(N/g)</code> and <code>y=unit*s^(j/g)</code>. Hence <code>y^-1 dt</code> has nonnegative order <code>(N-j)/g-1</code>. The rational matrix kernel is regular at alpha. The cut deformation is genuine sheet and homology transport, not a sum of residues at those branch points. The <a href="actual_cyclic_dilog_hankel_cycle.html">explicit Hankel cycle theorem</a> computes these banks and their exact nonzero sine weights, and carries them through the entire original ordered source.</p>
+<h2 id="the-full-original-source-is-polynomially-bounded-on-these-cuts">4. The full original source is polynomially bounded on these cuts</h2>
+<p>At <code>|M|=1</code> one has <code>|x|=1</code>. Equip the actual head basis with its ordinary Euclidean norm. Each truncated transfer and its Q^-1 multiple have operator norm at most one. Therefore on the ENTIRE exterior <code>|t|&gt;=1</code>, including its endpoint circle,</p>
+<pre><code>||(tI-T)^-1|| &lt;= sum_(a=0)^(N-1)|t|^(-a-1)
+                                         &lt;= N/|t|. (14)</code></pre>
+<p>The full all-inverse factorial kernels obey</p>
+<pre><code>||diag_(a)(Q^-a t^(-a-1))||&lt;=1/|t|,
+||diag_(a)(NQ^(-a-1)t^(a-N))||&lt;=N/|t|.     (15)</code></pre>
+<p>Every Gaussian diagonal is unitary here. The averaged original cut in (6) is <code>Tr[(E tensor G^(tensor(b-1)))W]</code>, where <code>E=J/N</code> is the rank-one orthogonal projection onto the constant head vector and G is the unitary pivotal diagonal. Its trace norm is exactly <code>N^(b-1)</code>. Thus <code>|Phi(W)|&lt;=N^(b-1)||W||</code>.</p>
+<p>Each crossing contains three transfer resolvents, three direct factorial kernels and three inverse-factorial kernels. Taking the norm of their ORIGINAL ordered product proves the uniform bound for the full all-inverse rational source</p>
+<pre><code>|R_(beta,N)(t)|
+   &lt;= N^(b-1+6m) product_(j=1)^(9m)|t_j|^-1,
+   whenever all |t_j|&gt;=1 and |M|=1.        (16)</code></pre>
+<p>For the retained fixed-first-input-zero source, its first coupon has trace norm sqrt(N); the right side acquires only that additional factor. No actual source is replaced to obtain a bound. A fixed total number k of logarithmic t-derivatives costs at most a constant depending on k,m times an additional factor <code>N^k</code>, by differentiating the finite resolvents and diagonal monomials. Thus the whole rational source has no hidden exponential growth on the canonical exterior cut chain.</p>
+<p>This global upper-amplitude control is unconditional for the specified root source. It supplies neither a lower bound nor a nonzero geometric coefficient. A complex rational source bounded by a polynomial may still carry rapidly varying phase or vanish on the relevant critical image. Those remain part of the cycle-selection and lower-bound question.</p>
+<h2 id="what-a-global-cut-deformation-must-retain">5. What a global cut deformation must retain</h2>
+<p>Unlike the finite scalar Euler polynomials, the y factors in (8) have genuine branch divisors at <code>t=Q^-j</code>. This puts a possible cut deformation on an actual marked algebraic cover. The resolvent expression avoids replacing a finite projector by a spurious reproducing pole. Any subsequent deformation must still be an equality of marked cycles on this cover, with its infinity and branch-boundary terms retained.</p>
+<p>For example the leading magnitude of <code>y</code> at infinity is <code>|t|^((N-1)/2)</code>; its inverse decays by that order. Formula (4) therefore gives automatically decaying infinity behavior for each v-variable coefficient. For a positive-y u-variable coefficient of T^a, the absolute-decay argument applies when <code>a&gt;(N-1)/2</code>; it gives no automatic vanishing below that threshold. Lower powers may need a boundary or Taylor regularization. Whether the original source cancels their coefficients is an explicit question about (7), not a freedom to discard them. Nonzero examples occur in the actual figure-eight word in the audit. The all-inverse realization above avoids that particular regularization problem by an exact change of auxiliary curve.</p>
+<p>The marked small circle in (8) is now a definite cycle whose branch-cut or relative-chain image can be computed. It has not been proved to project with degree one to a positive Rivin angle domain, nor to have nonzero geometric thimble coefficient. Equation (8) avoids assuming that coefficient; it is a suitable starting point for proving or disproving the needed cycle map.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_whole_word_cyclic_dilog_resolvent.py">exact audit</a> checks the Taylor identification from the fractional product, each original signed crossing, whole signed words with their original cap, and the retained low-power u-source terms.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_whole_word_cyclic_dilog_resolvent_period.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-marked-curve-realizes-the-literal-nilpotent-operators">1. The marked curve realizes the literal nilpotent operators</a><a href="#the-full-original-rational-source-kernel">2. The full original rational source kernel</a><a href="#an-all-inverse-realization-with-no-growing-infinity-factors">3. An all-inverse realization with no growing infinity factors</a><a href="#the-full-original-source-is-polynomially-bounded-on-these-cuts">4. The full original source is polynomially bounded on these cuts</a><a href="#what-a-global-cut-deformation-must-retain">5. What a global cut deformation must retain</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

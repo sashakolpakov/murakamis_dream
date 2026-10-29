@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The selected long-pretzel filling has primitive angle 2pi · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_long_pretzel_primitive_filling_angle.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-selected-long-pretzel-filling-has-primitive-angle-2pi">The selected long-pretzel filling has primitive angle 2pi</h1>
+<p>29 October 2026. The actual unit-charge equation gives a primitive 2pi geometric meridian, not merely scalar PSL holonomy. The uncentered SL longitude log would give the WRONG angle. This note fixes the small geometric logs from the actual cusp development, proves their exact oriented core-length formula for independently signed slopes, and identifies the normal rotation without a hidden integer. The positive compact-core deformation and the resulting global tube completion are supplied by their separate geometric lemmas; scalar holonomy alone would not supply them.</p>
+<h2 id="center-the-projective-geometric-logs-before-forming-the-slope">1. Center the projective geometric logs before forming the slope</h2>
+<p>The literal mixed-circle certificate fixes</p>
+<pre><code>M_i=exp(u_i)=H_i^(-1/2), u_i=-z_i/2,
+lambda_i=-L_i^(-1), v_i=Log lambda_i=pi i-ell_i,
+z_i=Log H_i, ell_i=Log L_i,</code></pre>
+<p>with all z_i,ell_i zero at the complete geometric point. The preferred longitude has SL eigenvalue -1 there. Its PROJECTIVE multiplier is nevertheless one. In a coordinate whose infinity is the selected peripheral eigenflag, the actual affine holonomy multipliers are M_i^2 and lambda_i^2. Their continuously small logs are therefore</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>i</mi></msub><mo>=</mo><mn>2</mn><msub><mi>u</mi><mi>i</mi></msub><mo>=</mo><mi>−</mi><msub><mi>z</mi><mi>i</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>V</mi><mi>i</mi></msub><mo>=</mo><mn>2</mn><mo stretchy="false" form="prefix">(</mo><msub><mi>v</mi><mi>i</mi></msub><mo>−</mo><mi>π</mi><mi>i</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><mn>2</mn><msub><mi>ℓ</mi><mi>i</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ U_i=2u_i=-z_i,\qquad
+ V_i=2(v_i-\pi i)=-2\ell_i.                            \tag{1}
+</annotation></semantics></math></p>
+<p>Both vanish at completeness. This centering is fixed ONCE by the complete affine translation cusp, independently of the slope. It is not an opportunistic logarithm reset at the filling point. The positive original diagonal marking is</p>
+<pre><code>mu_i=W_i(1+i c), lambda_i=2ic W_i,
+c=cos(pi/s), W_i&gt;0,</code></pre>
+<p>in its complete Euclidean cusp coordinate. Thus</p>
+<pre><code>(dV_i/dU_i)(0)=2tau_s=2ic/(1+ic), Im(2tau_s)&gt;0.     (2)</code></pre>
+<p>The basis is primitive: it is the actual meridian and boundary of the crossing disk, not half or twice that boundary. The retained R^(-1) is already in this mu_+ marking; no additional meridian shear is allowed.</p>
+<p>For the ACTUAL source equation of charge m_i,</p>
+<pre><code>z_i+2p_i ell_i=2pi i m_i,</code></pre>
+<p>equation (1) gives EXACTLY</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><msub><mi>U</mi><mi>i</mi></msub><mo>+</mo><msub><mi>p</mi><mi>i</mi></msub><msub><mi>V</mi><mi>i</mi></msub><mo>=</mo><mi>−</mi><mn>2</mn><mi>π</mi><mi>i</mi><msub><mi>m</mi><mi>i</mi></msub><mi>.</mi></mrow></menclose><annotation encoding="application/x-tex">
+ \boxed{U_i+p_iV_i=-2\pi i m_i.}                       \tag{3}
+</annotation></semantics></math></p>
+<p>In contrast u_i+p_i v_i=pi i(p_i-m_i) is an UNCENTERED SL eigenlog. Its p_i*pi i term is the old longitude spin, not geometric winding about a new core. Doubling that expression and calling it a cone angle would be incorrect. Likewise using undoubled eigenlogs would incorrectly give pi instead of 2pi.</p>
+<h2 id="a-uniform-exact-core-length-and-orientation-identity">2. A uniform exact core-length and orientation identity</h2>
+<p>Separate evenness of the original analytic source action implies</p>
+<pre><code>ell_i=z_i a_i(z_1^2,...,z_s^2), a_i(0)=tau_s.</code></pre>
+<p>Hence the ratio</p>
+<pre><code>t_i(z)=V_i/U_i=2a_i(z_1^2,...,z_s^2)</code></pre>
+<p>is holomorphic through z_i=0. On a fixed sufficiently small complex source neighborhood, Im t_i&gt;=b&gt;0. This remains true for the simultaneous selected fillings, regardless of the signs or relative magnitudes of their large p_i.</p>
+<p>Combining V_i=t_iU_i with (3), for REAL nonzero p_i, gives the exact formulas</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>i</mi></msub><mo>=</mo><mfrac><mrow><mi>−</mi><mn>2</mn><mi>π</mi><mi>i</mi><msub><mi>m</mi><mi>i</mi></msub></mrow><mrow><mn>1</mn><mo>+</mo><msub><mi>p</mi><mi>i</mi></msub><msub><mi>t</mi><mi>i</mi></msub></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>V</mi><mi>i</mi></msub><mo>=</mo><mfrac><mrow><mi>−</mi><mn>2</mn><mi>π</mi><mi>i</mi><msub><mi>m</mi><mi>i</mi></msub><msub><mi>t</mi><mi>i</mi></msub></mrow><mrow><mn>1</mn><mo>+</mo><msub><mi>p</mi><mi>i</mi></msub><msub><mi>t</mi><mi>i</mi></msub></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><menclose notation="box"><mrow><mrow><mi mathvariant="normal">Re</mi><mo>&#8289;</mo></mrow><msub><mi>V</mi><mi>i</mi></msub><mo>=</mo><mfrac><mrow><mn>2</mn><mi>π</mi><msub><mi>m</mi><mi>i</mi></msub><mrow><mi mathvariant="normal">Im</mi><mo>&#8289;</mo></mrow><msub><mi>t</mi><mi>i</mi></msub></mrow><mrow><mo stretchy="false" form="prefix">|</mo><mn>1</mn><mo>+</mo><msub><mi>p</mi><mi>i</mi></msub><msub><mi>t</mi><mi>i</mi></msub><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup></mrow></mfrac><mi>.</mi></mrow></menclose></mrow><annotation encoding="application/x-tex">
+ U_i=\frac{-2\pi i m_i}{1+p_it_i},\qquad
+ V_i=\frac{-2\pi i m_i t_i}{1+p_it_i},\qquad
+ \boxed{\operatorname{Re}V_i
+       =\frac{2\pi m_i\operatorname{Im}t_i}
+                                  {|1+p_it_i|^2}.}     \tag{4}
+</annotation></semantics></math></p>
+<p>The denominator cannot vanish because Im t_i&gt;0. Thus each nonzero charge gives U_i,V_i nonzero and a genuine LOXODROMIC core generator: Re V_i has the sign of m_i. In particular it cannot be a nontrivial elliptic with an accidentally killed eigenvalue. At the selected unit charges the positive core length is</p>
+<pre><code>length_i=|Re V_i|=2pi Im t_i/|1+p_i t_i|^2&gt;0.</code></pre>
+<p>There is no comparison between different slope sizes in this proof. The oriented logarithmic lattice is also fixed:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">Im</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mover><mi>U</mi><mo accent="true">¯</mo></mover><mi>i</mi></msub><msub><mi>V</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">|</mo><msub><mi>U</mi><mi>i</mi></msub><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup><mrow><mi mathvariant="normal">Im</mi><mo>&#8289;</mo></mrow><msub><mi>t</mi><mi>i</mi></msub><mo>=</mo><mn>2</mn><mi>π</mi><msub><mi>m</mi><mi>i</mi></msub><mrow><mi mathvariant="normal">Re</mi><mo>&#8289;</mo></mrow><msub><mi>V</mi><mi>i</mi></msub><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \operatorname{Im}(\overline U_iV_i)
+     =|U_i|^2\operatorname{Im}t_i
+     =2\pi m_i\operatorname{Re}V_i&gt;0.                  \tag{5}
+</annotation></semantics></math></p>
+<p>Thus the two period directions are linearly independent over R, with the SAME orientation as the positive complete cusp. Reversing the unit charge jointly reverses U_i,V_i and the core orientation; it does not mirror the hyperbolic structure or change the slope.</p>
+<h2 id="the-small-source-logs-are-the-geometric-angular-lifts">3. The small source logs ARE the geometric angular lifts</h2>
+<p>Here is the precise local lemma needed to exclude a hidden extra 2pi winding. Its input is the genuine positive similarity cusp-link deformation supplied by the positive-core construction, not an abstract representation with prescribed eigenvalues.</p>
+<p>Choose the moving peripheral eigenflag as infinity by a frame continuous at the complete cusp. Let the developed similarity cross-section have holonomy</p>
+<pre><code>mu: w -&gt; exp(U)w+A,
+lambda: w -&gt; exp(V)w+B.</code></pre>
+<p>On the complete limit A-&gt;W(1+ic), B-&gt;2icW, both nonzero. Develop the two primitive generator paths using a fixed finite cusp triangulation and a fixed basepoint. Their images and their Euclidean lengths stay uniformly bounded near completeness: each comes from finitely many continuously varying positive triangles. Call a common image bound R and length bound L. These are bounds in the continuous cusp frame, not a singular diagonalizing frame.</p>
+<p>For U!=0 sufficiently small, the common finite affine fixed point is</p>
+<pre><code>k=A/(1-exp(U)).</code></pre>
+<p>Commutativity makes it the fixed point for lambda too. Since A has a nonzero limit, |k| tends to infinity as U tends to zero, uniformly in all the other small parameters. In particular |k|&gt;2R. Along either generator path the analytic logarithmic coordinate</p>
+<pre><code>T=Log(dev-k)</code></pre>
+<p>can be continued in the ball of radius R, which misses k. Its variation satisfies the elementary bound</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi mathvariant="normal">Δ</mi><mi>T</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>L</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">|</mo><mi>k</mi><mo stretchy="false" form="prefix">|</mo><mi>−</mi><mi>R</mi><mo stretchy="false" form="postfix">)</mo><mo>→</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ |\Delta T|\le L/(|k|-R)\longrightarrow0.              \tag{6}
+</annotation></semantics></math></p>
+<p>The endpoint affine holonomy gives exp(Delta T)=exp(U) or exp(V). Therefore Delta T-U or Delta T-V is an integer multiple of 2pi i. Both quantities tend to zero. For all sufficiently small parameters the ONLY possible integer is zero:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><msub><mi mathvariant="normal">Δ</mi><mi>μ</mi></msub><mi>T</mi><mo>=</mo><mi>U</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi mathvariant="normal">Δ</mi><mi>λ</mi></msub><mi>T</mi><mo>=</mo><mi>V</mi><mi>.</mi></mrow></menclose><annotation encoding="application/x-tex">
+ \boxed{\Delta_\mu T=U,\qquad\Delta_\lambda T=V.}      \tag{7}
+</annotation></semantics></math></p>
+<p>This is pointwise quantitative; no connectedness of a punctured parameter domain or arbitrary lift choice is used. It rules out an added integer for EACH primitive generator before multiplying one by the large p. Because the finite source/port frame and the cusp triangles vary on one fixed neighborhood, the argument is uniform for independently signed large slopes. If only a PSL character were given without this geometric cusp-link development, the conclusion (7) would not follow from eigenvalues alone.</p>
+<p>The log-link/tube theorem uses precisely these periods. Its compact translation torus has no extra wrapping index because the primitive generators have periods U,V generating its full rank-two lattice. One must not infer a period lattice solely from the multiplier equations without the small-increment argument (6).</p>
+<h2 id="primitive-slope-actual-angle-and-the-absence-of-branching">4. Primitive slope, actual angle, and the absence of branching</h2>
+<p>The filled primitive curve is sigma=mu+p lambda: its first coefficient is one, so it is primitive in the ACTUAL torus basis. Take lambda as the complementary core curve. This is an integral basis change of determinant one. From (3),(7), its exact developed displacements in T are</p>
+<pre><code>Delta_sigma T=-2pi i m,
+Delta_lambda T=V, Re V!=0.                         (8)</code></pre>
+<p>For the angle normalization use H3 around the vertical axis above k. In upper-half-space coordinates set</p>
+<pre><code>horizontal=k+exp(t)tanh(r)exp(i theta),
+height=exp(t)sech(r).</code></pre>
+<p>Direct differentiation gives</p>
+<pre><code>ds^2=dr^2+sinh(r)^2 dtheta^2+cosh(r)^2 dt^2.</code></pre>
+<p>At fixed r, T=t+Log tanh(r)+i theta, so its periods ARE the axial/rotational displacements (Re T,Im T). Equation (8) has zero axial translation and angular displacement -2pi m. A small normal circle therefore has circumference</p>
+<pre><code>2pi |m| sinh(r)=2pi |m| r+O(r^3).                  (9)</code></pre>
+<p>For |m|=1 the axis has the ordinary smooth 2pi neighborhood. For |m|=2 it is a 4pi branched neighborhood, although both cases have scalar PSL meridional holonomy. This is the rigorous discriminant that the scalar group relation alone cannot supply. In particular the selected |m|=1 channels give a smooth primitive filling.</p>
+<p>For m=1 the displayed meridian angle is -2pi; reversing the orientation of the SAME primitive filling curve gives +2pi. This is the usual orientation-reversing boundary attachment of a solid torus, not a reversal of ambient volume. Formula (5) keeps the positive cusp lattice orientation for either choice of signed slope. More explicitly, for either unit sign choose</p>
+<pre><code>meridian_tube=-m sigma, core_tube=m lambda.</code></pre>
+<p>Their angular period and axial length are respectively +2pi and |Re V|. Relative to the original oriented (sigma,lambda) basis the change has determinant -m^2=-1, exactly the boundary-orientation reversal required to glue an ORIENTED solid torus. This works for both signs of p without changing the orientation of H3. The exact holomorphic reversed-cap isometry jointly inverts both peripheral generators; it interchanges m=+1 and -1 and preserves (9). No mu_+ -&gt; mu_- framing shear occurs.</p>
+<p>The ORIGINAL coherent source has no zero charge, and all 2^s unit signed charges were proved to add. Thus it is exactly the quantum selected channels, rather than an imposed primitive filling, that meet the smooth-angle condition.</p>
+<h2 id="scope-and-the-direct-geometric-lemmas-used-for-completion">5. Scope and the direct geometric lemmas used for completion</h2>
+<p>The result proves the actual peripheral lift, loxodromic core orientation and primitive smooth-angle calibration, using the positive geometric cusp-link deformation near the established complete anchor. It does NOT infer a hyperbolic metric from a bare PSL representation. The independent <a href="actual_long_pretzel_geometric_filling_completion.html">finite-center positive-core proof</a> now supplies the face-compatible local metric and these cusp links. The <a href="long_pretzel_equality_critical_audit.html">log-link/tube completion proof</a> identifies the ENTIRE end with a standard punctured tube before adding its smooth core. Both constructions have passed this note’s independent analytical review; no imported Dehn filling theorem is being assumed correct without proof.</p>
+<p>The final completion review checks the finite face-orbit centers and cell cones, exact identity of each contractible edge-star holonomy (including zero axis dilation), winding-one continuity, finite-vertex spherical covering degree one, ideal similarity links and actual vertical epigraphs. It also checks the signed surgery convention: straightening mu+p lambda uses phi’=phi-p theta and inserts -p full turns, so the original retained R^(-1) becomes R^(-(2p+1)). Thus the completed oriented manifold is the actual source’s filled knot.</p>
+<p>Combined with the independently proved complete log-link and whole-source/regulator theorems, this is a FULL equality certificate on the unchanged class: each fixed odd s&gt;=25 and independently sufficiently large FIXED signed p_i, with the full N sequence, both parities and composite levels. No slope comparability or all-ideal triangulation assumption is needed for this completion. It makes no assertion for small widths, short slopes, N-dependent slopes/width, or arbitrary hyperbolic knots.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_long_pretzel_primitive_filling_angle.py">Audit</a> checks the exact spin/angle distinctions, signed independent core length and orientation identities, the small affine logarithmic increments, and the Fermi metric/circumference normalization.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_long_pretzel_primitive_filling_angle.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#center-the-projective-geometric-logs-before-forming-the-slope">1. Center the projective geometric logs before forming the slope</a><a href="#a-uniform-exact-core-length-and-orientation-identity">2. A uniform exact core-length and orientation identity</a><a href="#the-small-source-logs-are-the-geometric-angular-lifts">3. The small source logs ARE the geometric angular lifts</a><a href="#primitive-slope-actual-angle-and-the-absence-of-branching">4. Primitive slope, actual angle, and the absence of branching</a><a href="#scope-and-the-direct-geometric-lemmas-used-for-completion">5. Scope and the direct geometric lemmas used for completion</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

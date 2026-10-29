@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>One extra quantum region degree, with an exact original crossing port · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/third_region_quantum_face_extension.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="one-extra-quantum-region-degree-with-an-exact-original-crossing-port">One extra quantum region degree, with an exact original crossing port</h1>
+<p>28 October 2026. The third classical certificate changes the region flag in the literal middle configuration. Its two projective coordinates do not form a quantum torus on the original two heads. This note constructs a genuine quantum-torus extension with one extra region degree whose <strong>typed matrix elements</strong> are exactly those physical coordinates. The extension has a fixed vacuum source.</p>
+<p>It also proves an exact vacuum-port formula for the other original crossing factor. A complete marked full-Phi pentagon can be applied BEFORE the auxiliary contraction; summing every intermediate index still gives that original factor and hence the original R. No knot value defines the auxiliary source.</p>
+<p>The complete developed geometric face-order table for the third certificate is not inferred from these two facts. In particular, different matrix elements are not multiplied as though compression were an algebra homomorphism.</p>
+<p>The subsequent <a href="literal_third_full_phi_certificate.html">physical THIRD theorem</a> now supplies that literal face/source certificate by a different construction on the original two heads: inverse actual flag transport and opposite-root FIRST, with its full reflected input adapter. It also explains the forced degenerate clock in this auxiliary vacuum port. The auxiliary identities below remain valid; they are not used as the missing regular geometric face table.</p>
+<h2 id="the-actual-third-region-coordinates">1. The actual third-region coordinates</h2>
+<p>Use complete original heads and marks</p>
+<pre><code>Q=exp(2pi*i/N), x=-q^(-1), k=x^N=(-1)^(N-1),
+Z=Z_1, Z_2, X=xS_2S_1^(-1),
+S_1^N=mu, S_2^N=k mu,
+XZ=QZX, XZ_2=Q^(-1)Z_2X, X^N=Z^N=Z_2^N=1.</code></pre>
+<p>The actual total lowering current gives the normalized last region flag in the middle configuration’s homogeneous frame as</p>
+<pre><code>R=1-n_R, n_R=(1-Z_2)X=x f_2 S_1^(-1).        (1)</code></pre>
+<p>The root binomial product gives n_R^N=0, so R is a unit. Normalizing this new region to one changes the two projective coordinates to</p>
+<pre><code>X&#39;=Z_2X R^(-1), Z&#39;=1-R(1-Z).                (2)</code></pre>
+<p>Their failure to satisfy X’Z’=QZ’X’ cannot be repaired by renaming them as a new quantum-torus pair. We instead retain the missing face degree explicitly.</p>
+<h2 id="an-honest-extended-quantum-torus">2. An honest extended quantum torus</h2>
+<p>Add an auxiliary head with</p>
+<pre><code>W|j&gt;=Q^j|j&gt;, S|j&gt;=|j+1&gt;, S|d&gt;=k|0&gt;,
+WS=QSW, W^N=1, S^N=k.</code></pre>
+<p>It commutes with the physical heads. Put a=Z_2X and</p>
+<pre><code>A=a tensor S^(-1),
+B=1 tensor W-Q^(-1)1 tensor WS+Z tensor S.   (3)</code></pre>
+<p>Then exactly</p>
+<pre><code>AB=QBA, A^N=B^N=1.                          (4)</code></pre>
+<p>For the commutator, A has quantum degree one against each of the three displayed summands of B. For the central powers, a^N=k and S^N=k give A^N=1. In the displayed order the three summands of B pairwise Q-commute. Their root binomial powers give 1-S<sup>N+Z</sup>NS^N=1. These calculations include even and composite levels.</p>
+<p>The face normalization has a periodic quantum lift. Define</p>
+<pre><code>U_j=P(Q^j n_R)^(-1)P(n_R)
+    =product_(r=0)^(j-1)(1-Q^r n_R),
+U=sum_(j=0)^d U_j tensor |j&gt;&lt;j|,              (5)</code></pre>
+<p>where P is the original finite Euler polynomial. Every factor is invertible since n_R is nilpotent. Moreover</p>
+<pre><code>U_0=1, U_1=R, U_N=1.                        (6)</code></pre>
+<p>Thus there is no omitted auxiliary wrap or independently chosen norm root. Let Atilde=UAU^(-1), Btilde=UBU^(-1). Its typed matrix elements are</p>
+<pre><code>&lt;0|Atilde|1&gt;=Z_2X R^(-1)=X&#39;,
+(&lt;0|+&lt;1|)Btilde|0&gt;=1-R+RZ=Z&#39;.              (7)</code></pre>
+<p>The Q^(-1) coefficient in (3) is essential: WS sends |0&gt; to Q|1&gt;, so its off-diagonal contribution in (7) is exactly -R.</p>
+<p>For every physical operator O,</p>
+<pre><code>&lt;0|U(O tensor 1)U^(-1)|0&gt;=O.                 (8)</code></pre>
+<p>Hence this controlled face extension can be inserted with its fixed vacuum without changing an original physical operator or any of its external source conventions.</p>
+<p>The ports in (7) have different incoming/outgoing types. When words are composed one must sum every intermediate auxiliary index. Equation (4) applies before that sum. It does not assert that multiplying the two entries in (7) preserves the same commutator after compression.</p>
+<h2 id="an-explicit-quantum-triangle-source">3. An explicit quantum triangle source</h2>
+<p>The simple B in (3) is not an unspecified similarity. Set</p>
+<pre><code>L=(1-Q ZW^(-1))S, C_B=P(L).                  (9)</code></pre>
+<p>Then</p>
+<pre><code>L^N=0, B=C_B W C_B^(-1), [A,C_B]=0,
+&lt;0|C_B|0&gt;=1.                                (10)</code></pre>
+<p>Indeed L W=Q^(-1)WL and the finite Euler shift gives P(L)W P(L)<sup>(-1)=W(1-Q</sup>(-1)L)=B. The product around its clock orbit is proportional to 1-Z^N=0. Direct commutation gives [A,L]=0. The last identity follows because fewer than N raises from input zero cannot return to zero. Thus this source has fixed augmentation one, not a normalization chosen from a knot invariant.</p>
+<p>For h&lt;N its complete input column is</p>
+<pre><code>&lt;h|C_B|0&gt;=p_h(Z;Q^(-1))_h,
+p_h=(-1)^hQ^(h(h-1)/2)/F_h.                 (11)</code></pre>
+<p>All factors and endpoint zeros in this column remain part of the source.</p>
+<h2 id="the-other-original-r-factor-is-an-exact-coherent-vacuum-port">4. The other original R factor is an exact coherent vacuum port</h2>
+<p>The original crossing has</p>
+<pre><code>R_0=D P(n_-)P(n),
+n=(Q-Z^(-1))X=e_1S_2,
+n_-=-(Q-Z^(-1))a=-e_1Z_2S_2.</code></pre>
+<p>Set</p>
+<pre><code>a_eff=Q a Z^(-1),
+e_aux=(Q-W^(-1))S^(-1), n_0=a_eff e_aux.    (12)</code></pre>
+<p>The auxiliary e_aux is a unit scalar times the literal complete nilpotent raising/lowering matrix. Then exactly</p>
+<pre><code>P(n_-)=&lt;0|P(n_0)C_B|0&gt;.                     (13)</code></pre>
+<p>Here the whole intermediate auxiliary sum has been performed, not suppressed. For a finite proof, the original Euler coefficient cancels the h-fold lowering matrix coefficient to give</p>
+<pre><code>&lt;0|P(n_0)|h&gt;=a_eff^h.</code></pre>
+<p>Together with (11), the right side of (13) is sum_h p_h a_eff<sup>h(Z;Q</sup>(-1))_h. The actual physical relations aZ=QZa imply</p>
+<pre><code>n_-^h=a_eff^h(Z;Q^(-1))_h,</code></pre>
+<p>which proves (13) term by term. This is an exact all-level finite q-binomial bridge from a genuine auxiliary source to the original crossing factor. The polarization factor a_eff=QaZ^(-1) is forced by this calculation and is retained explicitly.</p>
+<p>Equation (13) can be conjugated by the U of (5) on the full extended space without changing its vacuum port, since U_0=1. Thus the same source extension contains both the actual third-region coordinate ports (7) and an original-R operator port.</p>
+<h2 id="a-full-marked-pentagon-before-the-complete-auxiliary-contraction">5. A full marked pentagon before the complete auxiliary contraction</h2>
+<p>Use the marked full-Phi clock on the auxiliary head, with its fixed scalar and top lift:</p>
+<pre><code>F_W=phi_N diag_j[1/F_j],
+phi_N=sqrt(N)exp{i pi[1/4-(N+N^(-1))/12]}.</code></pre>
+<p>Let P_0=P(n_0), H_0=P_0^(-1)WP_0, and F_H0=P_0^(-1)F_WP_0. Exactly as in the literal middle identity, since n_0W=QWn_0 and its missing arrow is the actual input zero,</p>
+<pre><code>P_0 F_H0^(-1)
+   =F_H0^(-1)P_0 P(-n_0H_0).                (14)</code></pre>
+<p>Inserting (14) into (13), while retaining its interface and source, gives the exact full physical factor</p>
+<pre><code>P(n_-)=&lt;0| U [F_H0^(-1)P_0P(-n_0H_0)
+                          F_H0 C_B] U^(-1)|0&gt;. (15)</code></pre>
+<p>Every intermediate auxiliary index in this product is summed. The source F_H0 C_B|0&gt; is not replaced by a scalar vacuum. Its full-Phi scalar, both radial pieces and every finite boundary current are retained.</p>
+<p>Consequently substituting (15) for P(n_-) in the displayed R_0 gives the ORIGINAL crossing as a matrix identity, before choosing a cut entry or a closing tangle. Its common Cartan/framing/peripheral line and the original cups and caps therefore remain unchanged. The factors phi_N in F_H0 and its inverse cancel because those exact interfaces occur on opposite sides in (15), not because a phase has been dropped.</p>
+<p>Each nilpotent Euler factor can be represented by its exact full-Psi circle/radial moment. The controlled operator (5) is likewise a ratio of two such finite Euler factors in n_RQ^(J_aux), with its inverse and vacuum edge fixed. Factorial conjugations reduce n_R to xS_1^(-1) tensor J_+ with unit coefficients; the joint physical/auxiliary clock similarly gives the single missing edge of L. Thus these are finite relative full-Phi kernels with their original coefficient sources, not bare functional substitutions.</p>
+<h2 id="what-this-proves-and-what-still-needs-its-face-table">6. What this proves and what still needs its face table</h2>
+<p>The extra region degree resolves the actual failure of projective coordinate renaming: (7) comes from an honest extended quantum torus, with an explicit periodic source-preserving controlled transport. The same construction has a fixed coherent vacuum port for the actual second crossing factor, and its complete marked pentagon still gives that original factor after ALL auxiliary sums. This is stronger than a coordinate compression or an equality of unmarked generic kernels.</p>
+<p>The precise developed geometric face-order table linking the pentagon in (14) to all five third- certificate flags still must be checked. In particular A in (3) and the forced a_eff in (12) are different typed polarization coordinates; one cannot erase their QZ^(-1) relation. Nor can one replace products by products of the compressed entries (7). These are the remaining explicit face data, not a claim that the original operator or source comparison in (15) is conditional.</p>
+<p>No global selected cycle, geometric intersection degree or volume lower bound is asserted.</p>
+<h2 id="exact-audit">7. Exact audit</h2>
+<p>Run</p>
+<pre><code>python3 experiments/audit_third_region_quantum_face_extension.py</code></pre>
+<p>The audit checks ten complete/wrap families through N=6 over exact prime fields. It verifies the extended torus and its centers, both coordinate ports, C_B’s source augmentation and clock intertwiner, the complete physical port (13), the marked pentagon BEFORE auxiliary contraction, and the entire original R after (15), using the independent original E/Cartan crossing evaluator. It never multiplies compressed coordinates in place of the full auxiliary word.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/third_region_quantum_face_extension.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-third-region-coordinates">1. The actual third-region coordinates</a><a href="#an-honest-extended-quantum-torus">2. An honest extended quantum torus</a><a href="#an-explicit-quantum-triangle-source">3. An explicit quantum triangle source</a><a href="#the-other-original-r-factor-is-an-exact-coherent-vacuum-port">4. The other original R factor is an exact coherent vacuum port</a><a href="#a-full-marked-pentagon-before-the-complete-auxiliary-contraction">5. A full marked pentagon before the complete auxiliary contraction</a><a href="#what-this-proves-and-what-still-needs-its-face-table">6. What this proves and what still needs its face table</a><a href="#exact-audit">7. Exact audit</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

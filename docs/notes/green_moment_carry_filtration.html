@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Actual Green moments: a bounded carry extension and an exact Fock jet map · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/green_moment_carry_filtration.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="actual-green-moments-a-bounded-carry-extension-and-an-exact-fock-jet-map">Actual Green moments: a bounded carry extension and an exact Fock jet map</h1>
+<p>Research proof, 27 October 2026. The polynomial moments in the full scalar Green certificate have an exact bounded triangular carry complex. Its graded differential is the <strong>coefficient monodromy</strong>; it is not zero in general. Actual integer-index moments also have an exact Newton/Fock normal-ordering map, and the Mellin relative source has a finite endpoint-preserving normal-jet complex.</p>
+<p>These constructions do not identify the remaining geometric Green boundary with zero. In particular a top divided-monodromy row is not the original marked cut or its full higher normal jet.</p>
+<h2 id="the-actual-green-currents-have-bounded-logarithmic-degree">1. The actual Green currents have bounded logarithmic degree</h2>
+<p>Let <code>h</code> be the fixed least moment degree of the actual global certificate. In <a href="full_certificate_framing_boundary.html">the full Green formula</a>, every current is a finite sum of terms</p>
+<pre><code>A_beta(M,T_M) p(k) D^gamma I,
+degree p&lt;=h,</code></pre>
+<p>with the literal shifted finite coefficient array retained. After transverse Gaussian contraction, divide only by the recorded common Gaussian generator and its base line. The result belongs to</p>
+<pre><code>sum_(|alpha|&lt;=h) K_geo((H)) ell^alpha,        (1)</code></pre>
+<p>where <code>ell</code> is the finite list of logarithms of the actual critical flow characters. This is an all-order bound on logarithmic degree.</p>
+<p>Proof: an internal finite shift changes the coefficient by a proper rational ratio and changes <code>p</code> by a polynomial of the same degree. Write every actual index as its chosen logarithm divided by <code>H</code>. Taylor expansion about the critical point differentiates a polynomial in these logarithms and cannot increase its degree. Wick contractions and formal division by the unit Gaussian amplitude have algebraic coefficients in the same common field. A meridian shift changes a critical logarithm by its original logarithm plus a formal series with algebraic coefficients; it also preserves the degree bound. Its common exponential/base ratio is kept, as in the normal-period calculation. The fixed negative H orders of the moment are retained.</p>
+<p>The common algebraic field is finite over the marked geometric/frame field. After a fixed algebraic cover makes a chosen loop return all algebraic branches, continuation shifts the critical logarithms by specified integral multiples of <code>2pi*i</code>. Thus the logarithmic part of (1) is unipotent of length at most <code>h+1</code> for that loop. Before passing to that cover, its algebraic coefficient monodromy must also be retained.</p>
+<p>This statement concerns the actual <strong>formal Green images</strong>. It does not say that the entire zero-extended finite coefficient array is a unipotent monodromy module.</p>
+<h2 id="the-exact-triangular-carry-complex-keeps-the-coefficients">2. The exact triangular carry complex keeps the coefficients</h2>
+<p>For one chosen carry coordinate let <code>P_h</code> be polynomials in <code>k</code> of degree at most <code>h</code>. Let <code>M</code> be the actual coefficient-current module and <code>C</code> its carry transport. The total carry is</p>
+<pre><code>T_total=exp(N partial_k) tensor C.</code></pre>
+<p>Use the Newton basis <code>b_j(k)=binom(k/N,j)</code>, <code>0&lt;=j&lt;=h</code>. Translation by <code>N</code> sends <code>b_j</code> to <code>b_j+b_(j-1)</code>. With <code>L b_j=b_(j-1)</code>,</p>
+<pre><code>T_total-I=I tensor(C-I)+L tensor C,
+L^(h+1)=0.                                  (2)</code></pre>
+<p>Therefore the two-term current complex with differential <code>T_total-I</code> is a finite triangular extension of <code>h+1</code> copies of the coefficient complex <code>M --(C-I)--&gt; M</code>. This is the correct bounded carry complex. It applies termwise to the actual polynomial-times-coefficient decomposition above. Tensor Newton bases give the multivariable version, with the actual commuting carry transports retained. If coefficient/moment relations are present, this is the explicit moment presentation mapping equivariantly onto the actual current module; those relations are retained in the quotient. No linear independence of polynomial moments on a finite support is assumed.</p>
+<p>Only when <code>C=I</code> do its invariants consist of constant polynomials and its cokernel consist of the top Newton degree. For an arbitrary coefficient transport one has the exact expansion</p>
+<pre><code>(T_total-I)^h
+  =sum_(r=0)^h binom(h,r)
+                L^r tensor C^r(C-I)^(h-r).                (3)</code></pre>
+<p>Terms with <code>r&lt;h</code> are the coefficient-monodromy correction, not discardable scalar factors. In particular even the divided h-th power need not land in the coefficient-horizontal constant line.</p>
+<p>For actual zero-extended finite arrays the stronger obstruction is elementary. Translation by <code>N</code> minus identity is injective on the space of finite-support arrays: a finite-support periodic array is zero. Hence none of its positive powers kills a nonzero such array. Multiplying by a polynomial moment does not change that fact. Consequently polynomial degree alone cannot make the <strong>full actual array</strong> carry nilpotent. One must either pass to the specified formal continuation (1), or retain the coefficient complex in (2).</p>
+<h2 id="actual-index-moments-are-number-operators-in-the-common-fock-source">3. Actual index moments are number operators in the common Fock source</h2>
+<p>In the actual common Verma basis write an edge index as <code>a=rN+j</code>. The Fock operators are <code>B=partial_t,T=t</code>, with <code>v_(rN+j)=h_j t^r/r!</code>. Its actual index multiplication is therefore</p>
+<pre><code>n_a=j+N T B.                                (4)</code></pre>
+<p>It is not multiplication by <code>T/(2pi*i)</code>. Under <a href="fock_cyclic_normal_mellin_map.html">the exact Mellin map</a>,</p>
+<pre><code>T -&gt; u=Log U, B -&gt; nabla=U partial_U,
+n_a -&gt; j+N u nabla.                         (5)</code></pre>
+<p>This distinction applies to the Green currents themselves: each free flow index is either an edge index or an integral difference of adjacent crossing edge indices. Multiplication by its polynomial is thus a polynomial in the corresponding commuting edge-number insertions, on the appropriate sides of the actual crossing kernels. No quantum-group intertwining of that insertion is presumed.</p>
+<p>There is nevertheless an exact bounded conversion on coherent kernels. For every degree-h polynomial <code>p</code>, Newton interpolation gives</p>
+<pre><code>p(j+Nr)=sum_(m=0)^h binom(r,m) Delta_N^m p(j),
+Delta_N p(a)=p(a+N)-p(a).</code></pre>
+<p>Since <code>binom(TB,m)exp(st)=(st)^m exp(st)/m!</code>,</p>
+<pre><code>p(n_a) theta_s(h_j)
+   =theta_s(h_j) sum_(m=0)^h
+                      Delta_N^m p(j) (sT)^m/m!.           (6)</code></pre>
+<p>On the normal side this is the literal identity</p>
+<pre><code>M[p(n_a)theta_s(h_j)]
+   =epsilon_j U^s sum_(m=0)^h
+                      Delta_N^m p(j) (su)^m/m!.           (7)</code></pre>
+<p>Thus actual number moments do map to bounded logarithmic polynomials times the coherent kernel, with their full lower triangular terms. The map is not the false substitution <code>n_a=j+u/(2pi*i)</code>.</p>
+<p>Set <code>c=2pi*i</code>. Physically <code>U=A^N</code>, <code>H_N=c/N</code>, so <code>k=Log A/H_N=u/c</code> on the chosen logarithmic lift, up to the marked residue label. Choosing the coherent anchor <code>s_*=1/(cN)</code> in (7) gives the exact polynomial transform</p>
+<pre><code>B_(N,j)p(x)=sum_(m=0)^h Delta_N^m p(j) x^m/(m! N^m),
+x=u/c.                                      (8)</code></pre>
+<p>It is unitriangular by polynomial degree, comparing with <code>p(j+x)</code>: its highest coefficient is the same. Lower terms can contain positive powers of <code>N</code>, so the transform is exact rather than an asymptotically identity adapter. Products of these transforms give the bounded multiedge map for the actual flow moments. In particular the step-N falling factorial has the exact image</p>
+<pre><code>M[product_(r=0)^(m-1)(n_a-j-rN) theta_(s_*)]
+                       =(u/c)^m M[theta_(s_*)].</code></pre>
+<p>This is a linear current/kernel map, not a multiplicative map of its scalar polynomial images. For example the image of <code>n_a^2</code> is <code>(j+x)^2+N x</code>, while the square of the image of <code>n_a</code> is only <code>(j+x)^2</code>.</p>
+<p>The physical whole clock gives a sharper test. Since <code>a=rN+j</code>,</p>
+<pre><code>exp(H_N n_a)theta_s=Q^j theta_s,</code></pre>
+<p>whereas ordinary exponentiation of the proposed coordinate image would give</p>
+<pre><code>exp[H_N(j+u/c)]=Q^j exp(u/N)=Q^j alpha(U).</code></pre>
+<p>Thus the bounded polynomial conversion does not intertwine the literal whole clock <code>A</code> without its additional normal/star adapter. After rescaling by <code>H_N</code>, some fixed-degree corrections become small for fixed <code>u</code>; this is not uniform at the geometric scale <code>u=N Log A</code>, which is generally of order <code>N</code>. No whole-function or geometric gluing comparison is inferred from (8).</p>
+<p>All coherent anchors have <code>pi_0 theta_s=I</code>; the original finite cut is retained. The marked relative source path is <code>s-&gt;s+1</code>, so its endpoint ratio remains <code>U</code>, independently of choosing <code>s_*</code>. Choosing an anchor does not rescale <code>T</code> or replace that endpoint. The actual coherent crossing changes the source parameters, so moving a moment through a crossing differentiates its finite kernel coefficients as well. These Leibniz terms, of order at most <code>h</code>, must be retained. Equations (4)–(7) specify their operator order.</p>
+<h2 id="the-marked-relative-source-has-an-exact-finite-normal-jet-complex">4. The marked relative source has an exact finite normal-jet complex</h2>
+<p>Take the actual Mellin source differential and transgression</p>
+<pre><code>delta_U f=((partial_sigma-u)f,f(0),f(1)),
+L_U(a,b_0,b_1)=integral_0^1 exp(-sigma u)a(sigma)dsigma
+                                  -exp(-u)b_1+b_0.</code></pre>
+<p>For a coefficient germ regular at <code>u=0</code>, take its normal jets <code>f_n=(partial_u^n f)|_(u=0)</code>, <code>0&lt;=n&lt;=h</code>. Let <code>E_h</code> be the jet vector space and define the nilpotent triangular operator</p>
+<pre><code>(T_h f)_n=n f_(n-1), f_(-1)=0.</code></pre>
+<p>The actual jet differential is exactly</p>
+<pre><code>(delta_h f)_n=(partial_sigma f_n-n f_(n-1),
+                                  f_n(0),f_n(1)).        (9)</code></pre>
+<p>The jet map from <code>delta_U</code> to (9) is strict: this is just the Leibniz formula for <code>partial_u^n(u f)</code> at zero. Its transgression is</p>
+<pre><code>(L_h(a,b_0,b_1))_n
+  =integral_0^1 sum_(j=0)^n binom(n,j)(-sigma)^(n-j)
+                                                a_j(sigma)dsigma
+    -sum_(j=0)^n binom(n,j)(-1)^(n-j)b_(1,j)+b_(0,n).     (10)</code></pre>
+<p>This is <code>partial_u^n L_U|_0</code>. In particular the endpoint-U carry survives as every displayed binomial term at the second endpoint. Replacing it by just <code>-b_(1,n)</code> is incorrect.</p>
+<p>Conjugation by the finite matrix <code>exp(-sigma T_h)</code> reduces (9) to the ordinary relative polynomial complex. It follows directly that <code>L_h delta_h=0</code>, the inclusion is <code>exp(sigma T_h)f</code>, and <code>L_h i_h=I</code>. This is an actual finite triangular relative-source complex, with top cohomology <code>E_h</code>; it uses no asymptotic hypothesis.</p>
+<p>It is a normal-jet complex, not a finite-dimensional Weyl representation. <code>partial_u</code> needs the next jet to act on the last component. One must not impose <code>[B,T]=I</code> on a fixed finite jet space; its trace would give the impossible equation <code>0=dim E_h</code>.</p>
+<p>The original finite-rank coupon is the zero-jet row <code>Gamma(f)=[tau(f)]_(u=0)</code>. Higher rows are <code>Gamma nabla^j</code>. They are distinct source data, as in the Mellin theorem. Whole coefficient projection <code>tau(f)1</code> is not substituted for <code>Gamma</code>. Both reduced and literal pivot lifts remain paired with their inverse defect lifts; each product is exactly the original <code>e</code>.</p>
+<h2 id="the-proposed-top-monodromy-row-has-a-computable-extra-term">5. The proposed top-monodromy row has a computable extra term</h2>
+<p>For a constant coefficient polynomial <code>p(k)=a_h k^h+...</code>,</p>
+<pre><code>Delta_N^h p/(h! N^h)=a_h.                   (11)</code></pre>
+<p>For the actual moment <code>binom(k,h)</code>, this row is <code>1/h!</code>, not one. The moment-normalized row is instead <code>Delta_N^h/N^h</code>, which sends <code>binom(k,h)</code> to one. Products of the corresponding factorials are required for multivariate moment indices.</p>
+<p>Even if a coefficient function has trivial loop monodromy, its normal derivatives need not vanish. Let <code>f(u)</code> be such a whole-normal coefficient and keep <code>c=2pi*i</code>. The power-normalized Fock normal row on the candidate coordinate polynomial has the exact value</p>
+<pre><code>Gamma [c^h partial_u^h/h!][p(u/c)f(u)]
+  =sum_(r=0)^h c^(h-r)p^((r))(0)/(r!(h-r)!)
+                                        Gamma(nabla^(h-r)f). (12)</code></pre>
+<p>Its <code>r=h</code> term is the top polynomial-monodromy row. All <code>r&lt;h</code> terms are the explicit coefficient-normal-jet correction. Equations (9)–(10) transport these extra rows with the correct endpoint carry. Equations (6)–(8), rather than an uncorrected coordinate replacement, must first be used for the actual index-number moment.</p>
+<p>In particular, after that actual Newton conversion the averaged power-normalized row is explicitly</p>
+<pre><code>R_(h,p)(f)
+  =(1/N)sum_(j=0)^(N-1)sum_(r=0)^h
+      c^(h-r) Delta_N^r p(j)/[r!(h-r)! N^r]
+                          [nabla^(h-r) f_j]_(u=0).       (12a)</code></pre>
+<p>Here <code>f_j</code> retains the whole coefficient germ, including any coherent unit and kernel/pivot factors. Thus (12a) computes the bounded additional coefficient-current rows for the actual polynomial moment, rather than assuming them horizontal. It is applied at each relevant edge/side of the kernel; derivatives through a crossing obey the literal Leibniz rule. If a coefficient is not regular at the normal point, its specified Laurent finite part and polar source must be kept instead of silently applying the regular-jet formula.</p>
+<p>Finally the full Green equation has <code>A_alpha I</code> in <strong>polynomial degree zero</strong>. A top-degree projection for <code>h&gt;0</code> kills that term. It therefore cannot by itself preserve the moment repair or prove that all its carried currents vanish. The lower extension maps in (2), and the full endpoint rows in (10), are indispensable.</p>
+<h2 id="a-singular-coherent-anchor-repairs-the-whole-clock-sector">6. A singular coherent anchor repairs the whole clock sector</h2>
+<p>There is a useful exact whole-function extension of the polynomial conversion, with an equally explicit source defect. Keep <code>Q</code> near its marked root, put <code>z=Q^N</code>, and set</p>
+<pre><code>s_Q=1/[N(z-1)], G_Q(u)=exp(s_Q u).</code></pre>
+<p>The actual whole index clock acts under Mellin by</p>
+<pre><code>Q^(n_a)=Q^j D_z, (D_z f)(u)=f(zu).</code></pre>
+<p>Consequently the exact conjugated operator is</p>
+<pre><code>G_Q^(-1) Q^(n_a) G_Q
+              =Q^j exp(u/N) D_z.            (13)</code></pre>
+<p>For every integer <code>m</code> its m-th power is</p>
+<pre><code>Q^(mj) exp[(z^m-1)u/(N(z-1))] D_(z^m).      (14)</code></pre>
+<p>The quotient is regular at <code>z=1</code>, including negative <code>m</code>, and the limit is multiplication by</p>
+<pre><code>Q_N^(mj) exp(m u/N)=A^m.</code></pre>
+<p>Thus the <strong>whole Laurent clock algebra</strong> has a regular operator limit at this irregular coherent anchor. This is stronger than a finite polynomial symbol identity. On any fixed normal-jet space its matrices have regular coefficients by (13)–(14).</p>
+<p>The other operators retain explicit counterterms:</p>
+<pre><code>G_Q^(-1)B G_Q=nabla+s_Q,
+G_Q^(-1)n_a G_Q=j+N u nabla+u/(z-1).        (15)</code></pre>
+<p>The Weyl commutator remains one. An actual degree-h Green moment therefore has pole order at most <code>h</code> from this insertion. If <code>p(a)=a_h a^h+...</code>, then</p>
+<pre><code>[(z-1)^h G_Q^(-1)p(n_a)G_Q]_(z=1)=a_h u^h.</code></pre>
+<p>This rescaling cannot be applied to the Green equation and then forgotten: for <code>h&gt;0</code> it also kills a regular degree-zero operator term <code>A_alpha I</code> on the wall. Coefficient/excursion counterterms must be retained when deciding its finite part.</p>
+<h3 id="the-actual-finite-source-projector-is-not-regularized-automatically">The actual finite source projector is not regularized automatically</h3>
+<p>The gauge commutes with <code>partial_sigma-u</code>, its relative transgression, and the endpoint <code>U</code>. The finite cut <strong>row</strong> satisfies <code>Gamma G_Q=Gamma</code>, because <code>G_Q(0)=1</code>. However its finite-rank projector transforms as</p>
+<pre><code>G_Q^(-1) Gamma G_Q=exp(-s_Q u) Gamma.        (16)</code></pre>
+<p>Its image/source-one section has n-th normal jet <code>(-s_Q)^n</code>. These are poles of order <code>n</code>; equality of the zero-jet normalization does not identify this source with the constant vacuum. The whole coefficient projector <code>f-&gt;tau(f)1</code> does commute with <code>G_Q</code>; it is not the finite-rank <code>Gamma</code> in (16).</p>
+<p>The remaining normal source row is explicit:</p>
+<pre><code>[nabla,exp(-s_Q u)Gamma]
+  =-s_Q exp(-s_Q u)Gamma-exp(-s_Q u)Gamma nabla.           (17)</code></pre>
+<p>Thus on the finite jet complex (9) the irregular source is the specified triangular jet vector <code>((-s_Q)^n Gamma)_(n&lt;=h)</code>, with the full endpoint terms of (10). It is not an unspecified anomaly, but it has not been shown to cancel against the actual kernel coefficients. The whole-clock regular limit alone is therefore not a regular pointed-source or knot-period limit.</p>
+<h2 id="the-two-wall-coefficient-curvature-must-accompany-this-limit">7. The two-wall coefficient curvature must accompany this limit</h2>
+<p>For the actual common Verma source, the compressed braid differs from the ambient head-to-head braid by the specified term <code>delta w H_beta</code>. Here <code>delta=1-Q^N=1-z</code>, so <code>s_Q=-1/(N delta)</code>. An r-th coherent-source coefficient can therefore turn a nominal <code>delta w</code> excursion into <code>delta w s_Q^r</code>. Its order is not fixed by the polynomial moment degree alone. One may not set both walls to zero before computing these terms at the singular anchor.</p>
+<p>The source complex (9)–(10), the finite vacuum jets (16), and the actual coefficient/current transport must be used together. They keep precisely the data that a bare top divided-monodromy row or an ordinary cyclic specialization would erase.</p>
+<h2 id="exact-gain-and-remaining-comparison">8. Exact gain and remaining comparison</h2>
+<p>The actual Green currents now have a proved bounded logarithmic filtration, a coefficient-sensitive triangular carry complex, an exact number-moment/coherent-kernel conversion, and a finite normal jet relative-source map with every endpoint coefficient specified. These are concrete current/source constructions, not a statement that nilpotence alone solves the transport.</p>
+<p>They do not identify the Gaussian coefficient germs with their actual whole-source specializations at all retained cut roots. Nor do they suppress the coefficient carry <code>C-I</code> of the finite zero-extended arrays. The remaining contribution is exactly the coefficient-monodromy terms in (3), the coefficient-normal jets in (12), the marked endpoint sum in (10), and the irregular finite vacuum/excursion terms (16)–(17), applied to the actual Green currents. Their geometric source image has not been computed or shown to cancel. A nonzero sourced full geometric period and the geometric factor of the actual full scalar operator remain unproved.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_green_moment_carry_filtration.py">Exact current/source audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/green_moment_carry_filtration_results.json">results</a> verify actual Green binomial moments through degree six, their step-N falling factorials, all coefficient normal-jet terms, the relative endpoint complex, whole clock powers at the irregular anchor, and the finite-vacuum projector defect. These are universal operator/jet identities, with no knot-by-knot checks.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/green_moment_carry_filtration.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-green-currents-have-bounded-logarithmic-degree">1. The actual Green currents have bounded logarithmic degree</a><a href="#the-exact-triangular-carry-complex-keeps-the-coefficients">2. The exact triangular carry complex keeps the coefficients</a><a href="#actual-index-moments-are-number-operators-in-the-common-fock-source">3. Actual index moments are number operators in the common Fock source</a><a href="#the-marked-relative-source-has-an-exact-finite-normal-jet-complex">4. The marked relative source has an exact finite normal-jet complex</a><a href="#the-proposed-top-monodromy-row-has-a-computable-extra-term">5. The proposed top-monodromy row has a computable extra term</a><a href="#a-singular-coherent-anchor-repairs-the-whole-clock-sector">6. A singular coherent anchor repairs the whole clock sector</a><a href="#the-two-wall-coefficient-curvature-must-accompany-this-limit">7. The two-wall coefficient curvature must accompany this limit</a><a href="#exact-gain-and-remaining-comparison">8. Exact gain and remaining comparison</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

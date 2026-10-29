@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exact full-Psi deck characters and central gluing · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_full_psi_frobenius_deck_gluing.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="exact-full-psi-deck-characters-and-central-gluing">Exact full-Psi deck characters and central gluing</h1>
+<p>28 October 2026. The full functions in the ORIGINAL source and its new beta residue factors have an exact algebraic deck character. Products and integral monomial gluing carry this character without an unknown central normalizer. Its triviality equations are the marked exponential gluing equations in Frobenius coordinates.</p>
+<p>This constructs central data of the actual specified full-function components. It does not assert that the original invariant is only one such component, or that its complete relative source lies on the character-one locus. The <a href="actual_beta_current_connection_and_monodromy.html">actual beta deck extension</a> shows why those additional assertions would be false without source and cycle control.</p>
+<h2 id="a-full-function-identity-on-the-logarithmic-cover">1. A full-function identity on the logarithmic cover</h2>
+<p>Put h=2<em>pi</em>i/N, N&gt;=2. Use precisely the two original functions Psi_epsilon, epsilon=+1,-1, with</p>
+<pre><code>Psi_epsilon(L+epsilon*2*pi*i)
+                 =Psi_epsilon(L)/(1-exp(NL)).       (1)</code></pre>
+<p>For every integer m, meromorphic continuation gives</p>
+<pre><code>Psi_epsilon(L+2*pi*i*m)/Psi_epsilon(L)
+                 =(1-exp(NL))^(-epsilon*m).        (2)</code></pre>
+<p>This includes negative shifts and all divisor multiplicities. An identity across a zero or pole is understood after cross-multiplication; no vanishing norm factor is separately inverted on the source.</p>
+<p>Let Z=(Z_1,…,Z_d) be marked logarithmic coordinates. Take integer row vectors a_j, a symmetric integer matrix C, constants ell_j and a specified linear term b_N. The constants may include actual colors and exact h or h/2 shifts. Consider the SPECIFIED component</p>
+<pre><code>F_N(Z)=P_N(exp Z)
+   exp[(Z^t C Z/2+b_N^t Z)/h]
+   product_j Psi_(epsilon_j)(a_j.Z+ell_j),          (3)</code></pre>
+<p>where P_N is single-valued meromorphic in exp Z. It can contain the original integer powers, factorial constants and boundary polynomials; it is not assumed small. Write</p>
+<pre><code>X_k=exp(NZ_k), Xi_j=exp(N ell_j),
+A_j=Xi_j product_k X_k^(a_jk),
+gamma_k=exp(N b_N,k+pi*i*N C_kk).</code></pre>
+<p>Direct substitution in (2)–(3) gives EXACTLY</p>
+<pre><code>F_N(Z+2*pi*i e_k)/F_N(Z)=chi_k(X),
+
+chi_k=gamma_k product_l X_l^(C_kl)
+                 product_j(1-A_j)^(-epsilon_j a_jk). (4)</code></pre>
+<p>All half-step phases are present in Xi_j and gamma_k. In particular an h/2 shift contributes -1 to Xi_j and cannot be dropped before taking the Nth-power norm.</p>
+<p>The factor pi<em>i</em>N C_kk is also necessary. For example the bare Gaussian exp(-eta^2/(2h)) has character</p>
+<pre><code>(-1)^N exp(-N eta),                            (5)</code></pre>
+<p>not exp(-N eta). Such signs can cancel an actual half-step elsewhere in a complete kernel, but may not be removed from individual factors.</p>
+<p>For any winding n in Z^d,</p>
+<pre><code>F_N(Z+2*pi*i*n)/F_N(Z)
+   =exp[N n^t C Z+pi*i*N n^t C n+N b_N^t n]
+                       product_j(1-A_j)^(-epsilon_j a_j.n)
+   =product_k chi_k^n_k.                       (6)</code></pre>
+<p>The last equality uses n^t C n-sum_k n_k C_kk in 2Z. Thus the complete deck action is an algebraic character on the central torus, not only an infinitesimal semiclassical relation. Formula (6) fixes the integer Gaussian cocycle as well as its first generators.</p>
+<p>If a later elimination produces rational C or rational linear coordinates, (4) must be used on the corresponding integral cover or before that elimination. Clearing a common denominator and restricting to its integral deck sublattice is sufficient. This does not identify different logarithmic sheets of the original source.</p>
+<h2 id="the-character-one-equations-are-marked-frobenius-gluing">2. The character-one equations are marked Frobenius gluing</h2>
+<p>On a selected central logarithmic chart Y=Log X define</p>
+<pre><code>W_cent,N(Y)=sum_j epsilon_j Li_2(Xi_j exp(a_j.Y))
+                +Y^t C Y/2+sum_k Log(gamma_k)Y_k.  (7)</code></pre>
+<p>The logarithms of gamma keep their specified marks from (4). Differentiation gives</p>
+<pre><code>exp(partial_(Y_k) W_cent,N)=chi_k(X).            (8)</code></pre>
+<p>Consequently chi_k=1 is precisely the EXPONENTIAL marked gluing equation for this component. Its logarithmic lifts differ by the recorded multiples of 2<em>pi</em>i. This is an exact central identity at every N, before making a saddle approximation.</p>
+<p>The central variables X=exp(NZ) and the ordinary semiclassical shape variables exp Z are different. Equation (8) is not a convergence theorem between their evaluations, and does not put the selected source on chi=1. It specifies the Frobenius copy of the same monomial/dilogarithmic equations, with its actual norm and Gaussian marks retained.</p>
+<h2 id="the-actual-beta-residue-verifies-the-complete-formula">3. The actual beta residue verifies the complete formula</h2>
+<p>For the proved original trivalent section, put l=Log u, k=Log v. Its exact form is</p>
+<pre><code>S_N=(N/phi_N)u^N
+   exp[(l^2-kl)/h] Psi_+(k-l) Psi_+(h-l).       (9)</code></pre>
+<p>Here C=[[2,-1],[-1,0]], both atom signs are positive, and their rows are (-1,1),(-1,0). The exact h shift has central value one. The factor u^N is single-valued and stays in P_N; it has a genuine exponential rate but no deck character.</p>
+<p>Let U=u<sup>N,V=v</sup>N,A=U-V. Formula (4) becomes</p>
+<pre><code>chi_u=A(U-1)/V,
+chi_v=1/A.                                     (10)</code></pre>
+<p>These are the independently derived exact beta deck multipliers. They are also the exponential derivatives of the classical marked phase after substituting the central variables. At chi_u=chi_v=1, the finite nonzero torus condition is simply A=1. The factor u^N is INVISIBLE in (10); its correct value was established by the separate original-source rigidity proof. Thus even this exact character calculation alone would not normalize the period.</p>
+<p>The untouched full-Psi atoms in the original scalar crossing obey (2) individually. The reflected factorial monomials have integral exponents N-1 and no additional deck character. The original continuous Gaussian of sign s is exp[-s eta_s^2/(2h)] with eta_s=sqrt(2<em>pi</em>i*s)xi; its character is (-1)^N exp(-sN eta_s). Equation (5) displays the positive case. In these respective coordinates the dilation atom rows remain integral. The new beta residue has precisely (9), including its rational prefactors after exact Q-tag shifts. Therefore all these actual components are covered by the SAME character rule before their original external integration. No alternative knot state is introduced.</p>
+<h2 id="integral-head-gluing-carries-the-characters-exactly">4. Integral head gluing carries the characters exactly</h2>
+<p>Suppose local component i has logarithmic arguments</p>
+<pre><code>Z_i=L_i T+c_i,</code></pre>
+<p>where L_i is an integer matrix describing its actual head and boundary monomials. Include all untouched atom, Gaussian and source factors. If T_k makes one full turn, factor i makes the integer winding L_i e_k. Therefore the geometric product has</p>
+<pre><code>chi_total,k=chi_external,k
+                product_i product_a chi_(i,a)^(L_i[a,k]). (11)</code></pre>
+<p>This follows from exact meromorphic identities, so it does not require pairwise independence of monomial arguments, a nonsingular B block, or a saddle determinant. Equivalently substitute Z_i in (3): C_total=sum_i L_i^t C_i L_i and the atom incidence rows pull back by L_i. The linear terms include C_i c_i as well as the original b_i. Formula (4) for this substituted function is identical to (11), including the parity constants in (6).</p>
+<p>For the literal eligible crossing star</p>
+<pre><code>u=z_4/z_1, v=x^(-1) z_4/z_0,</code></pre>
+<p>its three head characters are</p>
+<pre><code>z_4 turn: chi_u chi_v=(U-1)/V,
+z_1 turn: chi_u^(-1)=V/[A(U-1)],
+z_0 turn: chi_v^(-1)=A.                          (12)</code></pre>
+<p>Their product is one, as required by invariance under simultaneous scaling of its three heads. They are generally not individually one. The central color x^N remains inside V; it is not specialized to a clock value merely because the finite head has dimension N.</p>
+<p>For a finite collection of pairwise disjoint eligible sink stars, the sink source has the tensor product presentation of the beta rank-two extensions, with its original exterior pairing. Formula (11) computes the character of the full selected component. The finite sink pointing product_i B_i, which also contains the current sectors, is invariant in its boundary monomials. Untouched full functions still have their own characters and matched relative cycles. Invariance of the sink pointing does NOT imply that its all-residue sector, or that sector times untouched fields, has character one.</p>
+<h2 id="what-the-central-equations-establish-and-what-they-do-not">5. What the central equations establish and what they do not</h2>
+<p>On any stated actual phase graph, (8) and (11) provide the exact central norm equations whose classical gluing description has already been checked. An A-polynomial elimination must keep the same regular graph, peripheral marks and saturation divisors. Arbitrary denominator-cleared components are not restored by calling these equations Frobenius gluing.</p>
+<p>The theorem does not identify an eliminated curve with the selected minimal quantum A-operator or prove that its geometric branch contributes to the original scalar. The current extension and original relative integration class remain indispensable. In particular, the exact current can gain a nondegenerate geometric residue under a deck turn. Killing every current is not a source-preserving quotient even when a product character is one.</p>
+<p>The constructive output is explicit: the entire residue product’s deck character and its character-one variety are known from the actual monomial incidence and Gaussian data. The missing global step concerns the selected marked relative class on that variety, not an unspecified central multiplier for each local beta section.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_full_psi_frobenius_deck_gluing.py">audit</a> checks direct complete-function turns with both orientations, mixed integer Gaussian matrices, arbitrary integer windings, half-step and odd-Gaussian signs, the actual beta characters, and the literal three-head pullback. Finite checks supplement the exact identities (2)–(6), not a source-selection assertion. Cap factors are used as their complete finite polynomials or with their matched relative interval seams. No scalar character is assigned to an isolated fractional interval-density summand.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_full_psi_frobenius_deck_gluing.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#a-full-function-identity-on-the-logarithmic-cover">1. A full-function identity on the logarithmic cover</a><a href="#the-character-one-equations-are-marked-frobenius-gluing">2. The character-one equations are marked Frobenius gluing</a><a href="#the-actual-beta-residue-verifies-the-complete-formula">3. The actual beta residue verifies the complete formula</a><a href="#integral-head-gluing-carries-the-characters-exactly">4. Integral head gluing carries the characters exactly</a><a href="#what-the-central-equations-establish-and-what-they-do-not">5. What the central equations establish and what they do not</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

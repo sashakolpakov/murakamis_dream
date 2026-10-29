@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual crossing, its ideal octahedron, and its relative source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/relative_octahedral_period.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-actual-crossing-its-ideal-octahedron-and-its-relative-source">The actual crossing, its ideal octahedron, and its relative source</h1>
+<p>Research note, 26 October 2026. This makes part of the <a href="triangulation_regulator_bridge.html">triangulation bridge</a> explicit. The crossing is the already fixed ADO crossing, with its Kashaev specialization. Its five quantum-dilogarithm factors give an actual ideal octahedron at the classical level. At finite levels its factorials have a canonical cyclic boundary source. The missing transition coefficient is exactly the denominator in the full ADO modified dimension, including its meridian dependence.</p>
+<p>These are uniform algebraic identities, not a different definition of the knot invariant. They do not prove that the resulting global relative period equals the marked geometric regulator. Octahedral potentials and crossing decompositions already have substantial literature coverage; Section 8 separates that coverage from the calculations proved here.</p>
+<h2 id="exact-formulas-for-both-actual-crossings">1. Exact formulas for both actual crossings</h2>
+<p>Use the conventions independently fixed in <a href="kashaev_ado_pointing.html">the ADO audit</a> and <a href="finite_sum_annihilator.html">the finite cut lift</a>:</p>
+<pre><code>Q=q^2, x=q^alpha, X=x^2, M=-qx, Y=M^2=QX.</code></pre>
+<p>Initially q is generic in the auxiliary finite cut lift; its truncated matrices are not claimed to give a representation or knot invariant away from the roots. Remove the common Cartan scalar q<sup>(alpha</sup>2/2) as in those notes; the known pivotal and writhe factors remain in the actual cut contraction. Put</p>
+<pre><code>F(a)=(Q;Q)_a, (u;Q)_k=product_(r=0)^(k-1)(1-uQ^r),
+{a choose k}_Q=F(a)/(F(k)F(a-k)).</code></pre>
+<p>For 0&lt;=a,b&lt;N, the positive checked crossing sends (a,b) to (b+k,a-k), 0&lt;=k&lt;=min(a,N-1-b). Its coefficient is exactly</p>
+<pre><code>r^+_(a,b,k)=(-1)^k x^(-a-b-k)
+  Q^(ab+(a-b)k-k(k+1)/2)
+  {a choose k}_Q (QX/Q^a;Q)_k.                    (1.1)</code></pre>
+<p>The negative checked crossing sends (a,b) to (b-k,a+k), 0&lt;=k&lt;=min(b,N-1-a), with coefficient</p>
+<pre><code>r^-_(a,b,k)=x^(a+b-k) Q^(-ab)
+  {b choose k}_Q (QX/Q^b;Q)_k.                   (1.2)</code></pre>
+<p>Here is a direct derivation, including the phases. The E^k coefficient on v_a is [a]_q!/[a-k]_q! times</p>
+<pre><code>product_(r=0)^(k-1)[alpha-a+1+r]_q
+  =(-x^(-1))^k q^(k(a-1)-k(k-1)/2)
+    (q-q^(-1))^(-k) (QX/Q^a;Q)_k.</code></pre>
+<p>Also</p>
+<pre><code>{a choose k}_q=q^(-k(a-k)){a choose k}_Q.</code></pre>
+<p>Multiply by q<sup>(k(k-1)/2)(q-q</sup>(-1))^k/[k]_q! and by the Cartan factor at (a-k,b+k). This gives (1.1). For the inverse series, use (-1)^k q^(-k(k-1)/2) instead. After interchanging a,b at the input, its additional signs and all additional k-dependent q powers cancel. This gives (1.2). Thus the inverse crossing is checked independently, not inferred from an orientation slogan.</p>
+<h2 id="five-quantum-tetrahedron-factors">2. Five quantum tetrahedron factors</h2>
+<p>For |Q|&lt;1 write P_Q(u)=(u;Q)_infinity. Its elementary equation is</p>
+<pre><code>P_Q(Qu)=P_Q(u)/(1-u).</code></pre>
+<p>Set A=Q^a, B=Q^b, C=Q^k. The non-Gaussian factor of (1.1) is exactly</p>
+<pre><code>{a choose k}_Q (QX/A;Q)_k
+  = P_Q(QA/C) P_Q(QC) P_Q(QX/A)
+    / (P_Q(QA) P_Q(QXC/A) P_Q(Q)).               (2.1)</code></pre>
+<p>To prove this, substitute F(j)=P_Q(Q)/P_Q(Q^(j+1)) and (u;Q)_k=P_Q(u)/P_Q(uQ^k). There are five variable tetrahedron factors and a fixed normalization P_Q(Q). For (1.2), replace A by B in (2.1).</p>
+<p>At a root of unity the individual infinite products in (2.1) are not being evaluated. First compress (2.1) to the finite products in (1.1); only those finite products are specialized. This prescription retains the normalization and both endpoints.</p>
+<p>For comparison with a classical period, let h=Log Q and use logarithms a_0=Log A, b_0=Log B, c_0=Log C, u=Log x on a chosen continuation cover. The leading dilogarithmic expression is</p>
+<pre><code>Phi(A,C,X)=Li_2(A/C)+Li_2(C)+Li_2(X/A)
+           -Li_2(A)-Li_2(XC/A)-Li_2(1).         (2.2)</code></pre>
+<p>It follows directly from the product, not an asymptotic theorem about a knot: expanding Log(1-z) in its disk gives Log P_Q(z)=-sum_(m&gt;=1) z<sup>m/(m(1-Q</sup>m)), whose leading coefficient at Q=exp(h) is Li_2(z)/h. Analytic continuation retains the logarithmic branches. Equivalently the same symbol is read off from the exact contiguity equation below.</p>
+<p>The positive crossing has leading action G_++Phi, where</p>
+<pre><code>G_+=a_0 b_0+(a_0-b_0)c_0-c_0^2/2
+     -u(a_0+b_0+c_0)+pi*i*c_0.                 (2.3)</code></pre>
+<p>The exact scalar also has the subleading term -c_0/2, from k(k+1). The negative crossing uses</p>
+<pre><code>G_-=-a_0 b_0+u(a_0+b_0-c_0),</code></pre>
+<p>and Phi(B,C,X). In particular none of the Gaussian, sign, or boundary frame factors is silently discarded.</p>
+<p>For example (1.1) gives the exact rational identity</p>
+<pre><code>r^+_(k+1)/r^+_k
+  = -A/(QBCx) * (1-A/C)(1-QXC/A)/(1-QC).        (2.4)</code></pre>
+<p>Interpret this as r^+_(k+1)=the displayed ratio times r^+<em>k when r^+<em>k=0. Its commuting symbol is exp(partial</em>(c_0)(G</em>++Phi)). For the inverse crossing the ratio is</p>
+<pre><code>x^(-1)(1-B/C)(1-QXC/B)/(1-QC).                  (2.5)</code></pre>
+<p>The other positive-crossing contiguities retain the peripheral convention explicitly:</p>
+<pre><code>r^+_(a+1,b,k)/r^+_(a,b,k)
+  = (BC/x) (1-QA)(1-X/A)
+                    /((1-QA/C)(1-XC/A)),
+r^+_(a,b+1,k)/r^+_(a,b,k)=A/(Cx),
+r^+_(a,b,k)(qx)/r^+_(a,b,k)(x)
+  = q^(-a-b-k)(1-QXC/A)/(1-QX/A).               (2.6)</code></pre>
+<p>They follow by cancelling adjacent factors in the finite Pochhammers, on the interior of both index supports. At a zero, retain the cross-multiplied equations. The meridian shift M-&gt;qM is x-&gt;qx, hence a half-step u-&gt;u+h/2 when h=Log Q. The last symbol in (2.6) is therefore exp(partial_u(G_++Phi)/2), with the square root (ABC)<sup>(-1/2)=q</sup>(-a-b-k) fixed by the original q convention. An internal Q-shift and a meridian q-shift must not be silently identified. These rational symbols provide local data for a global geometric-curve comparison, rather than assuming that comparison from an ordering of the classical A-polynomial.</p>
+<p>For a single crossing, k is determined by its external indices. One must not impose this ratio=1 there. Edge/stationary equations arise only for the variables actually contracted in a global state.</p>
+<h2 id="an-explicit-ideal-octahedron-with-no-guessed-shapes">3. An explicit ideal octahedron, with no guessed shapes</h2>
+<p>On the Zariski open set where the following six points are distinct and finite denominators are nonzero, take ideal vertices</p>
+<pre><code>infinity, 0, 1, C, A, Z,
+Z=C(A-X)/(A-CX).                                (3.1)</code></pre>
+<p>Use the cross-ratio convention</p>
+<pre><code>r(v0,v1,v2,v3)=(v3-v1)(v2-v0)/((v3-v0)(v2-v1)),
+r(infinity,0,1,z)=z.</code></pre>
+<p>The following ordered tetrahedra have the indicated shapes:</p>
+<table>
+<thead>
+<tr>
+<th>Ordered tetrahedron</th>
+<th>Shape</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(infinity,0,1,C)</td>
+<td>C</td>
+</tr>
+<tr>
+<td>(infinity,0,C,A)</td>
+<td>A/C</td>
+</tr>
+<tr>
+<td>(infinity,0,A,1)</td>
+<td>1/A</td>
+</tr>
+<tr>
+<td>(1,C,0,Z)</td>
+<td>X/A</td>
+</tr>
+<tr>
+<td>(1,C,Z,infinity)</td>
+<td>A/(XC)</td>
+</tr>
+</tbody>
+</table>
+<p>All five cross-ratios follow by substitution in (3.1). The six internal triangular faces cancel with opposite boundary signs. In the displayed order the tetrahedra attach along 0,1,2,1,2 previous faces; each two-face attachment is along adjacent faces. This shells a 3-ball. Its boundary consists of eight triangles with the octahedral graph. Its opposite vertex pairs are</p>
+<pre><code>(infinity,0), (1,C), (A,Z).</code></pre>
+<p>The internal edges (infinity,0) and (1,C) each have valence three. Their shape products are exactly</p>
+<pre><code>C(A/C)(1/A)=1,
+C(X/A)(A/(XC))=1.                               (3.2)</code></pre>
+<p>In the rational oriented pre-Bloch group of <a href="bloch_lift_and_boundary_torsor.html">the Bloch-lift note</a>, this chain is</p>
+<pre><code>beta_oct=[C]+[A/C]+[1/A]+[X/A]+[A/(XC)]
+        =[A/C]+[C]+[X/A]-[A]-[XC/A].            (3.3)</code></pre>
+<p>Thus (2.1) carries precisely the Bloch symbol of this octahedron. This is a local chain identity. It does not identify the globally selected knot period with the geometric embedding.</p>
+<p>The logarithmic frame remains additional data. For z=(A/C,C,X/A,A,XC/A) and eps=(1,1,1,-1,-1), define on the chosen logarithmic cover</p>
+<pre><code>R_signed=sum_j eps_j (Li_2(z_j)
+                +Log(z_j)Log(1-z_j)/2-pi^2/6).</code></pre>
+<p>Since sum eps_j=1, the exact expression (2.2) obeys</p>
+<pre><code>G_++Phi=R_signed+G_+
+                -sum_j eps_j Log(z_j)Log(1-z_j)/2.  (3.4)</code></pre>
+<p>Passing from inverted shapes in (3.3) to this signed expression at the level of a flattened Rogers period also requires its branch constants. Equation (3.4) retains a boundary/Heisenberg frame correction; its exponential need not have norm one. The rational symbol by itself cannot remove that correction.</p>
+<p>The five tetrahedra need not all be positive. In fact the local maximizer below has C=-1, so the central tetrahedron is flat. This diagrammatic subdivision is not automatically the positive triangulation supplied by the audited existence theorem.</p>
+<h2 id="the-relative-source-of-a-finite-quantum-factorial">4. The relative source of a finite quantum factorial</h2>
+<p>Here is an exact root-level descent calculation. Let omega be a primitive N-th root, with no primeness or parity assumption. Define</p>
+<pre><code>p_a(Y)=product_(r=1)^a(1-omega^r Y), 0&lt;=a&lt;N,
+S_N(Y)=1+Y+...+Y^(N-1), h_N(Y)=1/S_N(Y).</code></pre>
+<p>The endpoint is</p>
+<pre><code>p_(N-1)(Y)=S_N(Y),                              (4.1)</code></pre>
+<p>because product_(r=0)<sup>(N-1)(1-omega</sup>rY)=1-Y^N. Work in S=K[t]/(t^N-1), with omega in K and N invertible. Its components are t=omega^a, and sigma f(t)=f(omega t). Let p(t;Y) interpolate the values p_a(Y). Put</p>
+<pre><code>e_partial(t)=(1/N)sum_(r=0)^(N-1)(omega t)^r.    (4.2)</code></pre>
+<p>This is the idempotent supported at t=omega^(-1), or a=N-1. Then exactly, before any division,</p>
+<pre><code>(sigma-(1-omega Yt))p=Y^N e_partial.             (4.3)</code></pre>
+<p>For a&lt;N-1 this is the defining factorial recurrence. At the remaining component its left side is</p>
+<pre><code>p_0-(1-Y)p_(N-1)=1-(1-Y)S_N(Y)=Y^N.</code></pre>
+<p>It is useful to retain the cut interpretation. Extend p_a by zero off 0&lt;=a&lt;N in the integer index. Before cyclic identification, the defect is</p>
+<pre><code>delta_(a,-1)-(1-Y^N)delta_(a,N-1).</code></pre>
+<p>Closing the orbit identifies these two index positions and leaves exactly the source Y^N e_partial. Erasing the endpoints would incorrectly give a homogeneous tetrahedron equation.</p>
+<p>There is also a direct affine-resolvent interpretation. The unpatched homogeneous cyclic multiplier is</p>
+<pre><code>H_raw=product_(a=0)^(N-1)(1-omega^(a+1)Y)=1-Y^N.</code></pre>
+<p>Starting the cut at a=0, the augmented transfer around the orbit is exactly</p>
+<pre><code>U_cyc = [ 1-Y^N  Y^N ] .
+        [   0      1  ]</code></pre>
+<p>Indeed the source occurs in the last transition, and its coefficient is Y^N. The marked fixed vector is (1,1). Thus the homogeneous block has central equation V+Y^N-1=0, while the source extension has the additional V=1 sector. This is a concrete instance of the distinction in <a href="triangulation_regulator_bridge.html">the triangulation bridge</a>, derived from the actual finite factorial.</p>
+<p>The full cyclic linear system, including its exceptional components, has determinant</p>
+<pre><code>det(sigma-(1-omega Yt))=(-1)^(N-1)Y^N.          (4.3a)</code></pre>
+<p>To check this, its matrix is a directed cyclic shift minus a diagonal. Only the full shift permutation and the diagonal permutation contribute to its determinant. For Y!=0 it is invertible, so (4.3) determines p uniquely even when S_N(Y)=0. In other words, the relative polynomial solution is regular where the homogeneous unit completion below acquires poles. At Y=1 the unpatched transition itself has a zero; the same cyclic system remains invertible. No inverse of that individual zero transition is needed for this conclusion.</p>
+<p>The source has the exact wall relation</p>
+<pre><code>(1-omega t)e_partial=0.</code></pre>
+<p>Consequently the original primitive is annihilated by the fixed-degree relative operator</p>
+<pre><code>(1-omega t)(sigma-1+omega Yt).                  (4.3b)</code></pre>
+<p>Its commuting support has a tetrahedron component L=1-Yt and a boundary component t=1. The latter must not be divided away at the root fiber t^N=1. Here sigma shifts the <em>internal factorial index</em>, not the meridian M. Neither (4.3b) nor the level-dependent projector (4.2) is being declared to be the knot’s meridian A-operator. A global pushforward identifying the source class is still required.</p>
+<p>After localizing at S_N(Y), p is a unit: every p_a divides p_(N-1)=S_N. The unique unit transition agreeing with 1-omega Yt away from the cut and having cyclic norm one is</p>
+<pre><code>a_tilde_N(t;Y)=1-omega Yt+Y^N h_N(Y)e_partial(t).
+                                                           (4.4)</code></pre>
+<p>Its value at the cut is h_N(Y), since (1-Y)+Y^N h_N=h_N. All other components are unchanged. Consequently</p>
+<pre><code>sigma p=a_tilde_N p,
+Norm_(S/K)(a_tilde_N)=S_N(Y)h_N(Y)=1.            (4.5)</code></pre>
+<p>This proves uniqueness as well: the product of the other N-1 transitions is S_N(Y), forcing the missing transition to be its inverse. The pointing p_0=1 fixes the Hilbert-90 primitive itself.</p>
+<p>For the reciprocal primitive g=p^(-1), the unpatched equation is</p>
+<pre><code>((1-omega Yt)sigma-1)g
+              =-Y^N h_N(Y)e_partial.           (4.6)</code></pre>
+<p>At Y=1 all p_a remain units, and (4.4) becomes</p>
+<pre><code>a_tilde_N(t;1)=1-omega t+e_partial(t)/N.         (4.7)</code></pre>
+<p>Thus the apparent zero transition is replaced by 1/N, derived from the relative recurrence, not inserted as an arbitrary scalar. At the other zeros of S_N(Y), the unit completion has a genuine pole. Equation (4.3) still holds polynomially there. Whole germs or an integral lattice are required for specialization; the rational unit formula alone does not cross those divisors.</p>
+<h2 id="this-is-the-actual-meridian-normalization">5. This is the actual meridian normalization</h2>
+<p>At q_N=exp(pi*i/N), set omega=Q^(-1) and Y=M^2. Then</p>
+<pre><code>H_N(a;M^2)=(Q^(-1)M^2;Q^(-1))_a,
+(QX/A;Q)_k=H_N(a;M^2)/H_N(a-k;M^2).            (5.1)</code></pre>
+<p>The numerator in (1.1) is therefore a quotient of precisely the relative primitives just constructed. The Q-Gaussian binomial uses the same construction with omega=Q, Y=1. Formula (1.2) uses (5.1) with a replaced by b. At a zero of a denominator in (5.1), cancel back to the original finite Pochhammer before evaluation. No 0/0 value is assigned to the separate primitives.</p>
+<p>The independently audited full-state normalization is</p>
+<pre><code>d_N(M)=eta_N M^(N-1)/S_N(M^2), eta_N=i^(N+3).</code></pre>
+<p>By (4.4), this says exactly</p>
+<pre><code>d_N(M)=eta_N M^(N-1)
+         * (the missing cyclic transition at Y=M^2).        (5.2)</code></pre>
+<p>In particular</p>
+<pre><code>d_N(1)=eta_N/N.</code></pre>
+<p>The dependence on M is retained throughout. Its shift gauge is also recovered directly:</p>
+<pre><code>h_N(QY)/h_N(Y)=(1-QY)/(1-Y),
+d_N(qM)/d_N(M)
+  =-q^(-1)(q^2M^2-1)/(M^2-1).                  (5.3)</code></pre>
+<p>The algebraic source before the unit completion is M^(2N) times the boundary idempotent. Both that central factor and the phase eta_N remain part of the data.</p>
+<p>For example the normalization tower has the exact factorization</p>
+<pre><code>S_(ab)(Y)=S_a(Y)S_b(Y^a),
+h_(ab)(Y)=h_a(Y)h_b(Y^a).                       (5.4)</code></pre>
+<p>Factors such as 1+Y are therefore meaningful peripheral functions; they become numerical multipliers only after specialization. Equation (5.4) concerns this normalization, not an unaudited identity between global states at different levels.</p>
+<h2 id="what-the-triangulation-theorem-can-now-compare">6. What the triangulation theorem can now compare</h2>
+<p>For any fixed braid, substitute (1.1)–(1.2) into its existing finite cut contraction, keeping the pivotal and writhe factors. Equations (2.1) and (5.1) give a relative tetrahedral presentation of the <em>same</em> actual state. There is no state-comparison assumption in this substitution. The source in (4.3) and the transition in (5.2) are thus extracted from the actual literature state.</p>
+<p>The audited positive ideal triangulation supplies a different presentation of the geometric fundamental class, with</p>
+<pre><code>beta_T=sum[z_j], Im(z_j)&gt;0, D(beta_T)=Vol(M).</code></pre>
+<p>The comparison distinguishes three global stages:</p>
+<ol type="1">
+<li>The subsequent <a href="crossing_fundamental_cycle.html">crossing fundamental-cycle proof</a> identifies the complete rational diagrammatic Bloch class with the marked fundamental class, including the additional diagram vertices and degree-one cusp cycle. The generic meridian correction and different eigenflags are retained.</li>
+<li>Transport the <em>relative source, pointing, and logarithmic frame</em> through that comparison to the positive triangulation. A classical five-term identity does not prove this quantum transport. An unpointed homogeneous tetrahedron module loses (4.3), while separate evaluation can lose (5.2). The subsequent <a href="factorial_source_torsor.html">factorial source torsor</a> supplies flat local source matrices in both index and meridian directions, their full cut-root transport, and the actual singular cyclic-dilogarithm lattice. The global tensor source and its wall intersections must still be transported.</li>
+<li>Establish the norm comparison of the selected global relative period with the marked regulator. Local factorization alone does not rule out exponentially significant cancellation in the actual oscillatory contraction.</li>
+</ol>
+<p>The comparison must also specify the all-level parameter trajectory. It cannot simply substitute geometric shapes as fixed root-central characters: <a href="triangulation_regulator_bridge.html">the two-regime calculation</a> shows why that has a different local normalization from holding semiclassical small coordinates fixed. Likewise, colored-move invariance with one specified representation does not by itself change its character to the geometric one.</p>
+<p>This locates precisely where the ideal triangulation theorem helps: it supplies a positive geometric representative for the regulator lift. The present calculation provides actual local quantum data on the other side of that comparison. It does not make the three global identifications automatic. Alternatingness is not needed for any identity in Sections 1–5; it could still help control the global gluing and selected cycle.</p>
+<p>The <a href="finite_sum_annihilator.html">nonzero actual annihilator proof</a> already constructs an all-level A-operator from the finite cut state. The additional task is to identify its relevant source block and period with the geometric block, not to declare an arbitrarily quantized classical A-polynomial to be the operator.</p>
+<p>The subsequent <a href="marked_braid_holonomy.html">marked braid holonomy proof</a> now identifies the actual cut state’s classical critical correspondence with framed knot representations. It uses an exact factorial boundary/basis change, derives the meridian conjugation rule from both actual crossing symbols, and supplies nondegenerate charts through every hyperbolic representation. The framing torsor splits algebraically, and the crossing Bloch sum has the expected global boundary wedge and complete-frame regulator rigidity. The <a href="crossing_fundamental_cycle.html">crossing fundamental-cycle proof</a> now identifies the complete rational crossing class with the marked idealized fundamental class and its volume regulator. Generic peripheral/flattening identification and the quantum source and selected-period comparisons in items 1–3 above remain necessary.</p>
+<h2 id="an-unconditional-local-norm-statement-and-its-precise-limit">7. An unconditional local norm statement, and its precise limit</h2>
+<p>At the Kashaev color x=q_N^(N-1), QX=1. The finite identity</p>
+<pre><code>(Q^(-a);Q)_k=(-1)^k Q^(-ak+k(k-1)/2)
+                          F(a)/F(a-k)</code></pre>
+<p>reduces (1.1) to</p>
+<pre><code>r^+_(a,b,k)=x^(-a-b-k)Q^(b(a-k)-k)
+                     F(a)^2/(F(a-k)^2 F(k)).    (7.1)</code></pre>
+<p>Every prefactor in (7.1) has modulus one. Hence exactly</p>
+<pre><code>|r^+_(a,b,k)|=|F(a)|^2/(|F(a-k)|^2 |F(k)|),</code></pre>
+<p>and the inverse crossing has the same modulus with a replaced by b. Thus a positive factorial weight appears in each actual entry. The global contraction still retains its phases.</p>
+<p>Uniformly for 0&lt;=r&lt;N,</p>
+<pre><code>log|F(r)|=-N D(exp(2pi*i*r/N))/(2pi)+O(log N).   (7.2)</code></pre>
+<p>Here is an elementary uniform proof. Set f(s)=log(2sin(pi<em>s)). On [0,1/2] it is increasing. The difference between the right Riemann sum and N integral_0^(r/N) f is nonnegative. Its first interval contributes O(1), since f(s)-log(2pi</em>s) is bounded there, and all subsequent differences telescope to at most f(r/N)-f(1/N)=O(log N). For r&gt;N/2 use reflection f(1-s)=f(s), integral_0^1 f=0, and the exact product |F(N-1)|=N. The change of one endpoint interval is O(log N). Finally d D(exp(2pi<em>i</em>s))/ds=-2pi*f(s), proving (7.2).</p>
+<p>For the admissible pairs s=a/N, t=k/N in 0&lt;=t&lt;=s&lt;=1 this gives uniformly</p>
+<pre><code>(2pi/N)log|r^+|=V(s,t)+O(log N/N),
+V(s,t)=2D(exp(2pi*i*(s-t)))+D(exp(2pi*i*t))
+                                  -2D(exp(2pi*i*s)).        (7.3)</code></pre>
+<p>At X=1, V(s,t) is exactly D(beta_oct) in (3.3). Its maximum is v_oct=4 D(i)=4 Catalan, at (s,t)=(3/4,1/2). For completeness, its two interior critical equations are</p>
+<pre><code>sin(pi*s)=sin(pi*(s-t)),
+(2sin(pi*(s-t)))^2=2sin(pi*t).</code></pre>
+<p>The first gives 2s-t=1 and the second then gives t=1/2. On t=0 the value is zero; on s=t or s=1 it is -D(exp(2pi<em>i</em>t)). The absolutely convergent Fourier series of D on the unit circle bounds this boundary value by pi^2/6, whereas 4 Catalan&gt;32/9. Consequently the displayed unique interior point is the global maximum. Its four nonflat shapes are i; the central shape is -1.</p>
+<p>A fixed braid with c crossings has at most N^B cut states for a constant B depending only on the diagram. Pivotal and framing factors at this color have modulus one. The triangle inequality therefore proves for the actual original invariant</p>
+<pre><code>log|&lt;K&gt;_N| &lt;= N*c*v_oct/(2pi)+O_D(log N).         (7.4)</code></pre>
+<p>This is an octahedral upper bound, already within known coverage, and generally larger than the desired hyperbolic volume. It does not prove the lower bound, the exact volume rate, or equality with the earlier positive factorial model. Positivity of a geometric triangulation is not positivity of this contraction.</p>
+<h2 id="coverage-and-verification">8. Coverage and verification</h2>
+<p>Coverage was checked after deriving the displayed identities:</p>
+<ul>
+<li><a href="https://doi.org/10.1017/S144678871600001X">Cho, optimistic limits and complex volumes</a> covers diagrammatic octahedral potentials, four/five-term subdivisions, and classical complex-volume evaluations. An optimistic potential evaluation is distinct from a theorem about the actual invariant’s growth.</li>
+<li><a href="https://arxiv.org/abs/1612.08262">Suzuki, universal quantum invariant and colored ideal triangulations</a> covers a Heisenberg-double reconstruction of the universal invariant on colored ideal triangulations. Its abstract concerns colored moves; that coverage is not being used as a theorem transporting the present meridian source and period to arbitrary positive geometric data.</li>
+<li><a href="https://arxiv.org/abs/math/0508100">Garoufalidis–Le, asymptotics of the colored Jones function</a> covers octahedral growth upper bounds, with a stronger crossing count adjustment than (7.4). No proof from it is used here.</li>
+</ul>
+<p>These prevent a novelty claim for the octahedral interpretation or upper bound. The purpose of the present computation is to exhibit, in one fixed set of actual ADO conventions, the complete relative recurrence and its exact meridian normalization, so that the proposed regulator comparison has specified input.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_relative_octahedral_period.py">The audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/relative_octahedral_period_results.json">its results</a> check 17,754 entries against the actual positive/inverse matrices at generic q and at roots, for N=2,3,4,5,6,8,9,10,12,15; the exact contiguity and Kashaev square-factorial identities; the five symbolic cross-ratios and oriented face cancellations; ten convergent five-atom identities away from roots; thirty polynomial source specializations, including eleven polar ones; the norm-one completions and their modified-dimension identification; the nonsingular relative cyclic resolvent even on the completion’s polar divisor; and the normalization distribution identity. Numerical checks of the uniform estimate and the local maximum are supplementary to the proofs above. No global volume-limit claim is inferred from the numerical tests.</p>
+<p>The subsequent <a href="regular_holonomy_braiding.html">regular holonomy-braiding construction</a> supplies local quantum transport compatible with the actual nilpotent color and its evaluation. It retains the full central divisor and uses an explicitly anchored Hom line, rather than substituting a generic cyclic state into the knot contraction. This adds local data for the proposed triangulation comparison; the relative source and its global gluing/evaluation are still required.</p>
+<p>The later <a href="verma_tetrahedral_transport.html">pointed tetrahedral calculation</a> proves a quantum operator version for the untruncated Verma presentation: four monomial dilogarithm factors, an exactly normalized formal tetrahedral pentagon, and a root-period preservation theorem for finite formal rewrites with the actual boundary lattice retained. This is separate from merely matching the classical five-term symbol. Its required tensor assignment on a positive geometric triangulation and selected regulator norm are still unproved.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/relative_octahedral_period.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-formulas-for-both-actual-crossings">1. Exact formulas for both actual crossings</a><a href="#five-quantum-tetrahedron-factors">2. Five quantum tetrahedron factors</a><a href="#an-explicit-ideal-octahedron-with-no-guessed-shapes">3. An explicit ideal octahedron, with no guessed shapes</a><a href="#the-relative-source-of-a-finite-quantum-factorial">4. The relative source of a finite quantum factorial</a><a href="#this-is-the-actual-meridian-normalization">5. This is the actual meridian normalization</a><a href="#what-the-triangulation-theorem-can-now-compare">6. What the triangulation theorem can now compare</a><a href="#an-unconditional-local-norm-statement-and-its-precise-limit">7. An unconditional local norm statement, and its precise limit</a><a href="#coverage-and-verification">8. Coverage and verification</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual Mellin period is transcendental for every nontrivial adequate knot · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/adequate_mellin_transcendence.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-actual-mellin-period-is-transcendental-for-every-nontrivial-adequate-knot">The actual Mellin period is transcendental for every nontrivial adequate knot</h1>
+<p>Research theorem, 27 October 2026. The actual Fourier–Mellin section has a bounded rational source and a specified formal source lattice. For every nontrivial adequate knot that selected section is transcendental over C(Q,X). This follows from the already proved quadratic color-degree span and an elementary valuation bound for algebraic power series, proved below without an Eisenstein theorem.</p>
+<p>This is a theorem about the actual pointed period for a wide knot class, including hyperbolic alternating knots. It does not identify its geometric A-component or prove its root-value volume growth.</p>
+<h2 id="algebraic-power-series-have-linearly-bounded-coefficient-valuations">1. Algebraic power series have linearly bounded coefficient valuations</h2>
+<p>Let K be a characteristic-zero discretely valued field, with valuation v, valuation ring R and uniformizer pi. Completeness is unnecessary. Let</p>
+<pre><code>f(X)=sum_(n&gt;=0)c_n X^n in K[[X]]</code></pre>
+<p>be algebraic over K(X). Then there are constants A,B&gt;=0 such that</p>
+<pre><code>v(c_n)&gt;=-A-Bn for all nonzero coefficients.  (1.1)</code></pre>
+<p>Here and below zero coefficients satisfy the bound by v(0)=infinity.</p>
+<p><strong>Proof.</strong> Choose a polynomial P(X,Z) in K[X,Z] for which P(X,f)=0 and P_Z(X,f)!=0. Such a choice exists because the minimal polynomial is separable in characteristic zero. Put</p>
+<pre><code>m=ord_X P_Z(X,f), choose k&gt;m,
+p(X)=sum_(n=0)^(k-1)c_n X^n,
+f=p+X^k w.</code></pre>
+<p>Since p-f has order at least k&gt;m,</p>
+<pre><code>ord_X P_Z(X,p)=m.</code></pre>
+<p>Taylor expansion gives a polynomial</p>
+<pre><code>F(X,W)=X^(-m-k) P(X,p+X^k W) in K[X,W].    (1.2)</code></pre>
+<p>Indeed the linear term is divisible by X^(m+k). The terms of degree j&gt;=2 in W have exponent at least kj, and kj-(m+k)=k(j-1)-m&gt;0. The constant term P(X,p) is divisible by X^(m+k) because substituting w makes the entire Taylor sum zero. At X=0, therefore,</p>
+<pre><code>F(0,W)=aW+b, a=[X^m]P_Z(X,p)!=0.</code></pre>
+<p>Let w_0=-b/a, which is the constant coefficient of w. Set W=w_0+V and divide by a. The resulting polynomial has the exact form</p>
+<pre><code>V+X H(X,V)=0, H in K[X,V].                  (1.3)</code></pre>
+<p>This is the useful normalization: all other monomials have positive X order. Write H=sum h_(i,j) X^i V^j. Choose an integer B&gt;=0 with</p>
+<pre><code>v(h_(i,j))+B(i+1)&gt;=0 for every nonzero h_(i,j). (1.4)</code></pre>
+<p>There are finitely many coefficients, so such a B exists. Under X=pi^B x the selected series z(x)=V(pi^B x) satisfies</p>
+<pre><code>z+x H_B(x,z)=0,
+H_B(x,z)=pi^B H(pi^B x,z) in R[x,z].        (1.5)</code></pre>
+<p>Its constant term is zero. In the coefficient recursion, the coefficient of x^n on the right depends only on earlier coefficients of z because of the outer factor x. Induction shows z belongs to xR[[x]]. Thus, writing V=sum_(r&gt;=1)v_r X^r,</p>
+<pre><code>v(v_r)&gt;=-Br.</code></pre>
+<p>For n&gt;=k+1 one has c_n=v_(n-k), and hence v(c_n)&gt;=-B(n-k)&gt;=-Bn. The finitely many coefficients through c_k are covered by increasing A. This proves (1.1).</p>
+<p>No analytic convergence and no a priori integrality of the original coefficients is used. The truncation removes the possible singular derivative, normalization gives one unit linear coefficient, and a single rescaling of X makes the finite recursion integral.</p>
+<h2 id="consequence-for-rational-function-coefficients-in-q">2. Consequence for rational-function coefficients in Q</h2>
+<p>Apply the theorem to K=C(Q), first with the valuation at Q=0 and then with the valuation at Q=infinity. For a Laurent polynomial c_n(Q), these valuations are respectively</p>
+<pre><code>v_0(c_n)=mindeg_Q c_n,
+v_infinity(c_n)=-maxdeg_Q c_n.</code></pre>
+<p>Consequently an algebraic f(X) with Laurent-polynomial coefficients must satisfy</p>
+<pre><code>mindeg_Q c_n&gt;=-A_0-B_0n,
+maxdeg_Q c_n&lt;= A_infinity+B_infinity n,
+span_Q c_n=O(n).                            (2.1)</code></pre>
+<p>The algebraic relation may have arbitrary complex coefficients; their Q-valuations are zero. Thus this conclusion applies to algebraicity over C(Q,X), not only over the rational number field. It also covers any finite algebraic cover supplying a scalar branch in the selected integer-power series lattice.</p>
+<h2 id="the-actual-adequate-color-coefficients-violate-this-bound">3. The actual adequate color coefficients violate this bound</h2>
+<p>The actual fixed-color functions C_n(Q) are Laurent polynomials, and the <a href="adequacy_and_algebraic_periods.html">adequacy proof</a> establishes their extreme degrees directly from adequate states, cabling and threading. For an adequate diagram with c&gt;0 crossings and state-circle counts v_A,v_B it gives, in the q parameter,</p>
+<pre><code>span_q C_n=c(n-1)^2+(v_A+v_B-2)(n-1).</code></pre>
+<p>The <a href="fourier_mellin_actual_source.html">actual Q-polarization</a> has Q=q^2 and C_n even in q, so</p>
+<pre><code>span_Q C_n=(1/2)c(n-1)^2
+                +(1/2)(v_A+v_B-2)(n-1).    (3.1)</code></pre>
+<p>In particular it has a strictly positive quadratic coefficient. For a reduced connected alternating diagram this simplifies to span_Q C_n=c n(n-1)/2. The zero-framing monomial does not change the span.</p>
+<p>Choose the fixed n_0 of the actual Fourier–Mellin construction and retain its exact selected section</p>
+<pre><code>Z(Q,X)=sum_(n&gt;=n_0) C_n(Q) X^n.              (3.2)</code></pre>
+<p>If Z were algebraic over C(Q,X), equation (2.1) would bound its coefficient spans linearly. This contradicts (3.1) for every nontrivial adequate knot. We have therefore proved</p>
+<pre><code>Z(Q,X) is transcendental over C(Q,X).       (3.3)</code></pre>
+<p>Subtracting or adding any fixed initial-color polynomial preserves algebraicity. Thus the conclusion holds for every fixed starting color, including the start-one generating period.</p>
+<h2 id="the-precise-sourcelattice-conclusion">4. The precise source/lattice conclusion</h2>
+<p>The actual bounded-source identity is</p>
+<pre><code>P^M Z=B,
+Z in X^(n_0) C(Q)[[X]],                     (4.1)</code></pre>
+<p>where B is the fixed nonzero Laurent source from finitely many small colors. The source-lattice condition makes this solution unique, by the leading-coefficient argument of the Fourier–Mellin construction. Hence no scalar section on a finite algebraic cover, satisfying this actual source and this formal lattice, can replace Z. The selected whole period is necessarily transcendental.</p>
+<p>There is a useful operator consequence. Every nonzero actual Q-operator of a nontrivial adequate knot has positive generic Y-exponent span. Otherwise all its Y exponents would be a single m, and its Fourier image would have the form A(Q,X)S^m with A!=0. Equation (4.1) would make S^m Z=B/A rational, and hence Z rational, contradicting (3.3). Thus the actual Mellin source object has positive difference order for this whole knot class; no artificial factor is needed to create that order. This is not a claim about the operator’s specialized symbol at Q=1.</p>
+<p>This does not contradict algebraicity of the underlying equations, gluing place, comparison torsor or connection. Their marked periods can be transcendental. Nor does it contradict rationality of the root fibers: the original <a href="cyclotomic_mellin_residue.html">cyclotomic residue construction</a> gives a rational function at each Q_N whose degree grows with N.</p>
+<p>The assertion is not generic affine nonsplitting without the lattice. A rational or algebraic particular solution outside X^(n_0)[[X]] could coexist with the selected transcendental solution, differing by a homogeneous solution. We have not excluded that possibility. The theorem excludes a pointed algebraic splitting compatible with the actual source lattice and coefficient cut.</p>
+<p>Finally, quadratic degree span gives no lower bound for a specified root value. Cancellation can still occur at Q_N. The exact identity &lt;K&gt;_N=[X^N]Z(Q_N,X), or its infinity-residue version, remains the original volume target. No exponential regulator estimate is inferred from transcendence alone.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_adequate_mellin_transcendence.py">Exact valuation-normalization audit</a>. <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/adequate_mellin_transcendence_results.json">Results</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/adequate_mellin_transcendence.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#algebraic-power-series-have-linearly-bounded-coefficient-valuations">1. Algebraic power series have linearly bounded coefficient valuations</a><a href="#consequence-for-rational-function-coefficients-in-q">2. Consequence for rational-function coefficients in Q</a><a href="#the-actual-adequate-color-coefficients-violate-this-bound">3. The actual adequate color coefficients violate this bound</a><a href="#the-precise-sourcelattice-conclusion">4. The precise source/lattice conclusion</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

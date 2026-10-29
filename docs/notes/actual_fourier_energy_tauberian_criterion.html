@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What a Tauberian argument would need from the original positive Fourier energy · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Fourier and energy</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">Conditional criterion</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_fourier_energy_tauberian_criterion.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="what-a-tauberian-argument-would-need-from-the-original-positive-fourier-energy">What a Tauberian argument would need from the original positive Fourier energy</h1>
+<p>28 October 2026. The positive Fourier energy is the right actual object for testing an Abelian/Tauberian approach. It permits elementary, self-contained statements about its Laplace transform and its exponential rate. Positivity alone identifies a limsup, however; it does not force the volume limit or suppress exceptional low levels.</p>
+<p>The results below give a precise additional cross-level condition that WOULD turn a critical Laplace singularity into the full original volume limit. No such cross-level condition or sharp singularity has yet been derived from the actual A-source. This is a criterion and a source-scope audit, not a proof of the conjecture.</p>
+<h2 id="the-exact-original-energy-and-its-existing-bound">1. The exact original energy and its existing bound</h2>
+<p>Use the ORIGINAL unitary color Fourier transform and original reduced normalization from <a href="ordinary_color_plancherel_bound_audit.html">the independently audited Plancherel identity</a>. For every fixed knot presentation,</p>
+<pre><code>E_N=sum_k |chat_(N,k)|²=|K_N|²+R_N,
+1&lt;=R_N&lt;=N^B, N&gt;=2,                            (1)</code></pre>
+<p>with a fixed constant/power allowed in the upper bound. Every pivot, Cartan and framing factor is retained. The ordinary-color remainder is the original remainder, not a positive replacement model. Thus</p>
+<pre><code>log E_N=log(1+|K_N|²)+O(log N).                (2)</code></pre>
+<p>For any fixed lambda&gt;0,</p>
+<pre><code>log E_N/N -&gt;lambda
+  iff (2pi/N)log|K_N| -&gt;pi*lambda.             (3)</code></pre>
+<p>In particular the desired energy exponent is lambda=Vol/pi.</p>
+<p>The <a href="actual_regular_fast_color_elimination.html">direct ordinary-color coefficient bound</a> gives, for an ell-crossing b-braid,</p>
+<pre><code>||C_j||_1&lt;=j^(ell+b-1)4^(ell*j).</code></pre>
+<p>Taking j=N and using (1) proves E_N&lt;=exp(CN) for a fixed C. This provides an actual nonempty convergence half-plane for the positive Laplace series</p>
+<pre><code>Z(s)=sum_(N&gt;=2) E_N exp(-sN).                  (4)</code></pre>
+<p>It does not identify its sharp convergence boundary geometrically.</p>
+<h2 id="the-abscissa-gives-exactly-the-exponential-limsup">2. The abscissa gives exactly the exponential limsup</h2>
+<p>Put lambda<em>=limsup_N log(E_N)/N, finite and nonnegative. Then (4) converges for real s&gt;lambda</em> and diverges for s&lt;lambda*.</p>
+<p>Indeed, for s&gt;lambda<em>, choose epsilon&lt;(s-lambda</em>). Eventually E_N&lt;=exp((lambda<em>+epsilon)N), so comparison with a geometric series proves convergence. For s&lt;lambda</em>, infinitely many terms satisfy E_N&gt;=exp((s+epsilon)N), so the terms of (4) do not even tend to zero. The convergence boundary itself can be convergent or divergent.</p>
+<p>Consequently a source-derived proof that Z(s) is finite for every s&gt;Vol/pi would give the sharp original exponential UPPER bound. Locating its abscissa at Vol/pi would identify the corresponding limsup. Positivity makes these implications exact, but does not compute the abscissa. Merely naming the abscissa is not an estimate.</p>
+<h2 id="a-power-singularity-gives-a-genuine-cumulative-tauberian-conclusion">3. A power singularity gives a genuine cumulative Tauberian conclusion</h2>
+<p>Here is a special case sufficient to explain the Karamata-type idea, proved independently rather than assumed. Suppose, for lambda&gt;0, alpha&gt;0 and C&gt;0, an actual calculation establishes</p>
+<pre><code>Z(lambda+t) ~ C t^(-alpha), t down to0.          (5)</code></pre>
+<p>Then</p>
+<pre><code>A(x):=sum_(2&lt;=N&lt;=x) exp(-lambda N)E_N
+         ~ C x^alpha/Gamma(alpha+1).          (6)</code></pre>
+<p>Proof. Write a_N=exp(-lambda N)E_N&gt;=0 and define finite positive measures on x&gt;=0 by</p>
+<pre><code>nu_t=(t^alpha/C) sum_N a_N exp(-tN) delta_(tN).</code></pre>
+<p>For each integer k&gt;=0 their Laplace moments satisfy</p>
+<pre><code>integral exp(-kx)dnu_t
+   =(t^alpha/C)Z(lambda+(k+1)t)-&gt;(k+1)^(-alpha). (7)</code></pre>
+<p>Under y=exp(-x), these are ordinary polynomial moments on [0,1]. The candidate limit has x-density exp(-x)x^(alpha-1)/Gamma(alpha); its moments are exactly (7), by the defining Gamma integral. Polynomial moment convergence implies convergence against every continuous function on [0,1]: Bernstein polynomials approximate such a function uniformly, since uniform continuity and the binomial variance bound force the approximation error to zero. The measures’ total masses tend to one, so the uniform approximation error is uniform in t. This proves the claimed weak convergence without a separate Tauberian theorem.</p>
+<p>The bounded function y^-1 times the indicator y&gt;=exp(-1) has just one jump, at a point with zero limit mass. Approximate it from above and below by continuous functions. Hence</p>
+<pre><code>(t^alpha/C)A(1/t)
+  -&gt;integral_0^1 x^(alpha-1)/Gamma(alpha)dx
+   =1/Gamma(alpha+1),</code></pre>
+<p>which proves (6).</p>
+<p>An immediate useful consequence is that HIGH-ENERGY LEVELS OCCUR IN EVERY FIXED MULTIPLICATIVE WINDOW: for each delta in(0,1),</p>
+<pre><code>A(n)-A((1-delta)n)
+  ~ C[1-(1-delta)^alpha] n^alpha/Gamma(alpha+1)&gt;0.          (8)</code></pre>
+<p>Thus no fixed proportional interval can avoid all near-rate levels. Also the UNTILTED cumulative energy S(n)=sum_(N&lt;=n)E_N obeys</p>
+<pre><code>log S(n)/n -&gt;lambda.                          (9)</code></pre>
+<p>For the upper bound S(n)&lt;=exp(lambda n)A(n). For the lower bound, use (8) and exp(lambda(1-delta)n), then let delta decrease to zero.</p>
+<p>Equations (6),(8),(9) are stronger than a bare limsup. They still do not prove log E_N/N-&gt;lambda for every individual N.</p>
+<h2 id="an-operative-cross-level-condition-completing-the-implication">4. An operative cross-level condition completing the implication</h2>
+<p>The following one-sided source-transport condition suffices. Suppose there are fixed delta0&gt;0, L&gt;=0 and A0&gt;=0 such that, for every large n,</p>
+<pre><code>E_(n-r)&lt;=n^A0 exp(Lr) E_n,
+               0&lt;=r&lt;=delta0*n.               (10)</code></pre>
+<p>It prevents an exponentially deep drop from preceding nearby levels; it does not assert positivity of the original unsquared period. An exact source-preserving map between the relevant positive Fourier spaces, with norm at most n^(A0/2)exp(Lr/2), would prove (10).</p>
+<p>Then the cumulative exponential law (9) implies</p>
+<pre><code>log E_n/n -&gt;lambda.                           (11)</code></pre>
+<p>To prove it, fix 0&lt;delta&lt;delta0. Since lambda&gt;0, (9) gives</p>
+<pre><code>S(n)-S((1-delta)n)=exp(lambda n+o(n)).</code></pre>
+<p>By (10) this difference is at most n^(A0+1)exp(L delta n)E_n. Hence liminf log E_n/n&gt;=lambda-Ldelta. Let delta decrease to zero; the upper bound E_n&lt;=S(n) proves (11). Combining (3),(5),(10) therefore proves the ORIGINAL volume limit with V=pi*lambda.</p>
+<p>An O(1) bound on each negative neighboring log-increment implies (10). In contrast, a polynomial comparison at ONE neighboring step, E_(n-1)&lt;=n^A E_n, accumulates to exp(O(r log n)); it does not imply (10). Such a weak comparison allows narrow exponentially deep dips. It cannot be substituted into this proof without further control.</p>
+<p>The power singularity (5) is itself a substantial averaged asymptotic. It is stronger information than the convergence abscissa. Neither (5) nor (10) is being inferred from positivity or from an algebraic classical characteristic.</p>
+<h2 id="what-the-current-actual-source-does-and-does-not-supply">5. What the current actual source does and does not supply</h2>
+<p>The available exact A-equation transports COLOR j at a fixed q:</p>
+<pre><code>sum_i a_i(q,-q^j) C_(j+i)(q)=0.</code></pre>
+<p>The energy E_N changes the color range, the Hilbert-space dimension, AND the parameter q_N when N changes. The fixed-q recurrence does not provide an operator from the level n-r Fourier space to the level n Fourier space. The quantum-group coproduct is also at fixed q. Connected-sum multiplication changes the KNOT at a fixed level; it is not a submultiplicative relation in the LEVEL N. The verified cross-level polynomial rigidity of the color family identifies that family, but gives no norm estimate of the form (10).</p>
+<p>There is a concrete actual-source reason not to replace this missing level map by uniform continuity of a fixed-color polynomial in q. For 4_1, its exact Newton formula gives C_N(q_(N+1))=1 for EVERY N: at that root the evaluation node Q<sup>N+Q</sup>-N equals the first node Q+Q^-1, so all positive Newton indices vanish. The same fixed color at q_N is K_N. Thus a q-displacement of order N^-2 can cross the entire high-color boundary response. This does not disprove (10) for the COMPLETE level energies E_N,E_(N+1); it shows why fixed-q pointing and low-color derivative estimates do not supply it.</p>
+<p>Likewise each exact pointed Gram ratio is positive at its own level. It has not been rewritten as the moments of one fixed positive transfer operator across levels, nor as a positive renewal equation with a specified spectral edge. Either construction, with the original source and nonzero edge weight verified, could supply Tauberian input. The existing level-dependent Gram identity does not.</p>
+<p>There is even a small exact ORIGINAL hyperbolic-source warning against assuming cross-level moment/log-convex structure for raw E_N. For 4_1, the independently proved whole-source formula gives</p>
+<pre><code>K_2=5, K_3=13, K_4=27,
+R_2=1, R_3=2, R_4=3,
+E_2=26, E_3=171, E_4=732.</code></pre>
+<p>Thus</p>
+<pre><code>E_2 E_4-E_3²=-10209&lt;0.                         (12)</code></pre>
+<p>So positivity within each Fourier space does not imply positivity of the cross-level Hankel matrix, or a raw positive moment representation of E_(n+2). This does not exclude an eventual inequality, a known polynomial normalization, or a different source-derived transfer. It simply prevents assuming that structure from Plancherel alone.</p>
+<h2 id="a-minimal-counterexample-to-positivity-only-inference">6. A minimal counterexample to positivity-only inference</h2>
+<p>For any lambda&gt;0, let E_N=exp(lambda N) at even N and E_N=1 at odd N. This is NOT a knot counterexample. Its purpose is to check the exact logical strength of the proposed Tauberian inference. It satisfies</p>
+<pre><code>Z(lambda+t)~1/(2t),
+A(x)~x/2,
+log S(n)/n-&gt;lambda,</code></pre>
+<p>but log E_N/N alternates between lambda and0. It violates (10). Thus even the pure-pole singularity and positivity leave an individual-level survival condition to establish.</p>
+<p>The useful next target is consequently a SOURCE-DERIVED positive Laplace/renewal description or a cross-level comparison such as (10). Neither is currently available. A Tauberian argument can use those inputs efficiently; it cannot create them or resolve the geometric branch coupling by itself.</p>
+<p>Reproduce the exact source warning and the positive-sequence checks:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> experiments/audit_actual_fourier_energy_tauberian.py</span></code></pre></div>
+<p>Coverage only: this is the classical positive-measure Tauberian setting; see <a href="https://mtaylor.web.unc.edu/wp-content/uploads/sites/16915/2020/07/karamata.pdf">Michael Taylor, Karamata’s Tauberian Theorem</a>. Section 3 supplies its own moment proof for the precise power-law case used here; no quoted theorem supplies the missing knot-source inputs.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_fourier_energy_tauberian_criterion.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-exact-original-energy-and-its-existing-bound">1. The exact original energy and its existing bound</a><a href="#the-abscissa-gives-exactly-the-exponential-limsup">2. The abscissa gives exactly the exponential limsup</a><a href="#a-power-singularity-gives-a-genuine-cumulative-tauberian-conclusion">3. A power singularity gives a genuine cumulative Tauberian conclusion</a><a href="#an-operative-cross-level-condition-completing-the-implication">4. An operative cross-level condition completing the implication</a><a href="#what-the-current-actual-source-does-and-does-not-supply">5. What the current actual source does and does not supply</a><a href="#a-minimal-counterexample-to-positivity-only-inference">6. A minimal counterexample to positivity-only inference</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

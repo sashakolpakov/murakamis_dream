@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An actual six-circuit collision and its exact three-beta source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_six_circuit_beta_collision.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="an-actual-six-circuit-collision-and-its-exact-three-beta-source">An actual six-circuit collision and its exact three-beta source</h1>
+<p>28 October 2026. A common zero-side direction exists for the nine atoms of either single crossing when its external ports may move. Such directions do NOT glue through arbitrary braid words. The actual figure-eight word [1,-2,1,-2] already contains a compatible minimal six-circuit in its first three crossings, with no port frozen and no Gaussian variable involved. Its exact quantum tag is Q^5.</p>
+<p>The useful replacement is constructive: complete the six factors by three actual atoms and contract three disjoint Newton stars. The entire block becomes</p>
+<pre><code>B_N(U,a) B_N(V,b) B_N(c,cUV).                       (1)</code></pre>
+<p>At the collision U=V=1 it is exactly N^2 v_N(a)v_N(b). All three beta currents are retained. In particular the last complete beta is 1 while its full-Psi residue is zero. The value identity alone does not bound normal derivatives or the surrounding original period.</p>
+<h2 id="actual-signed-normals">1. Actual signed normals</h2>
+<p>Use the slots, variables and exact shifts of <a href="actual_trivalent_layer_crossing_source.html">the original trivalent layer</a>. Let e_j denote d Log z_j and let e_G=d Log g be the one Gaussian coordinate (a fixed nonsingular linear coordinate in its complexified Gaussian line). With the original scalar Psi half-steps retained, the arguments and signs are:</p>
+<table>
+<thead>
+<tr>
+<th>slot</th>
+<th>epsilon</th>
+<th>positive argument</th>
+<th>negative argument</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>-</td>
+<td>Q^-1 z2/z1</td>
+<td>same</td>
+</tr>
+<tr>
+<td>1</td>
+<td>+</td>
+<td>x^-1 z2/z0</td>
+<td>same</td>
+</tr>
+<tr>
+<td>2</td>
+<td>-</td>
+<td>Q^-1 z3/z0</td>
+<td>same</td>
+</tr>
+<tr>
+<td>3</td>
+<td>+</td>
+<td>Q z2/z4</td>
+<td>same</td>
+</tr>
+<tr>
+<td>4</td>
+<td>- / +</td>
+<td>Q^-1 x^-1 z3/z4</td>
+<td>g x^-1 z3/z4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>-</td>
+<td>Q^-1 g z5/z4</td>
+<td>same</td>
+</tr>
+<tr>
+<td>6</td>
+<td>+</td>
+<td>Q z3/z6</td>
+<td>same</td>
+</tr>
+<tr>
+<td>7</td>
+<td>-</td>
+<td>Q^-1 x^-1 z5/z6</td>
+<td>same</td>
+</tr>
+<tr>
+<td>8</td>
+<td>+</td>
+<td>Q z5/z7</td>
+<td>same</td>
+</tr>
+</tbody>
+</table>
+<p>The signed normals w_j=epsilon_j d Log A_j are</p>
+<pre><code>w0=e1-e2,          w1=e2-e0,       w2=e0-e3,
+w3=e2-e4,          w6=e3-e6,       w7=e6-e5,
+w8=e5-e7,
+w4+=e4-e3,         w4-=e3-e4+eG,
+w5=e4-e5-eG.                                      (2)</code></pre>
+<p>In a single crossing there is no positive dependence among these normals. For the positive crossing a strict witness w_j(eta)&lt;0 is</p>
+<pre><code>eta=( -4,-6,-5,-3,-4,-1,-2,0 ), eta_G=0.</code></pre>
+<p>For the negative crossing replace eta4 by -2. Every displayed pairing is at most -1. Thus ANY subset of single-crossing collisions has a common zero-side translation when all these coordinates may move.</p>
+<p>Freezing all four external ports creates artificial restrictions on this question. For reference, allowing the Gaussian line to move but freezing z0,z1,z6,z7 leaves minimal positive circuits</p>
+<pre><code>{0,1}, {2,6}, {7,8}, {0,3,4,6}  (positive),
+{0,1}, {2,6}, {7,8}, {2,4,5,8}  (negative).</code></pre>
+<p>These lists are exact nullspace calculations. They are not used to deduce the global obstruction below, which leaves EVERY external coordinate free.</p>
+<h2 id="the-globally-compatible-six-circuit">2. The globally compatible six-circuit</h2>
+<p>Take the first three crossings [1,-2,1] of the actual figure-eight word. Write C,D for the two outputs of crossing 1, and F for the first output of crossing 2. These are the two inputs C,F of crossing 3. Let L be crossing 1’s z5, M crossing 2’s z3, and T crossing 3’s z2. The six DIRECT full functions in the circuit are exactly</p>
+<pre><code>Psi_-(Log(L/(xC))-h) Psi_+(Log(L/D)+h)
+Psi_-(Log(M/D)-h)    Psi_+(Log(M/F)+h)
+Psi_-(Log(T/F)-h)    Psi_+(Log(T/(xC))),             (3)</code></pre>
+<p>where h=2pi i/N. All other atoms, original monomial prefactors, Gaussian weights and source coupons remain present.</p>
+<p>The signed-normal sums of the three pairs are respectively</p>
+<pre><code>e_C-e_D,  e_D-e_F,  e_F-e_C.</code></pre>
+<p>Their sum is zero. The six columns form a simple directed cycle, hence a minimal positive dependence with every coefficient 1. This uses slots (7,8) of crossing 1, (2,6) of crossing 2 and (0,1) of crossing 3. None contains the Gaussian coordinate or the sign-changing central slot, so the same dependence holds for any signs on the three positions [1,2,1]. It is not an adjacent same-pair C^-1 C cancellation.</p>
+<p>Collision feasibility must include the constants. The CLASSICAL six arguments in (3) all equal 1 at</p>
+<pre><code>D=F=L=M=T=xC, C!=0.                               (4)</code></pre>
+<p>The product of the EXACT arguments to their signs is Q^5, not -1. Consequently the exact six arguments can all equal 1 when N=5:</p>
+<pre><code>L=QxC, D=Q^2xC, M=Q^3xC, F=Q^4xC, T=xC.</code></pre>
+<p>For every large N the classical locus (4) puts all exact arguments within O(1/N) of 1. Thus this is a genuine simultaneous shrinking collision, even when no exact six-fold intersection exists at that N. The classical fixed constants are compatible, rather than a spurious signed-normal dependence with product constant -1.</p>
+<p>Original cap/trace factors do not impose coordinate identifications on C,D,F. In the full source they are retained holomorphic polynomial or interval factors. This circuit also does not force a source zero: the initial and final endpoints of the four-crossing word remain independent. They can be chosen with every source ratio of modulus different from 1, so all finite K_N source factors are nonzero on (4). This observation concerns the scalar integrand; it does not assert nonvanishing after the remaining integrations.</p>
+<h2 id="exact-grouping-with-every-omitted-atom-restored">3. Exact grouping, with every omitted atom restored</h2>
+<p>The circuit factors alone must not be integrated while omitting their third incident atoms. The full original layer supplies precisely these three disjoint Newton stars:</p>
+<ul>
+<li>crossing 1, positive final star {5,7,8}, after its COMPLETE Gaussian absorption d_j/F_j=p_j x^-2j;</li>
+<li>crossing 2, negative middle star {2,4,6}, with its ONE shared negative Gaussian retained;</li>
+<li>crossing 3, first star {0,1,3}.</li>
+</ul>
+<p>Put t1,t2,t3 for their original residual source vertices z4 and set</p>
+<pre><code>U=D/(xC),     a=x^-2 D/t1,
+V=F/D,        b=g_- x^-1 F/t2,
+c=t3/F.</code></pre>
+<p>Their entire exact contraction is (1). The third beta’s second argument is x^-1 t3/C=cUV. This is an invertible monomial coordinate change in the nonzero variables (C,D,F,t1,t2,t3,g_-); no independent phase, clock or source factor has been dropped.</p>
+<p>The contraction is first proved on the original finite coefficient kernels. Each of L,M,T occurs only in its three incident atoms, and the three sets of atoms are disjoint. Their finite coefficient sums therefore commute with each other and with the remaining original source contraction. The already proved full-Psi relative source may then be reinserted for each COMPLETE B. This proves a source-preserving operation, rather than a pointwise replacement of separated residues.</p>
+<p>The same argument contracts the prescribed two disjoint Newton stars at every crossing of an arbitrary signed word; this is the whole-word identity of the linked trivalent-layer note. It does not remove the remaining Rogers factors or justify deleting any beta currents.</p>
+<h2 id="exact-collision-fibre-and-its-actual-source-sectors">4. Exact collision fibre and its actual source sectors</h2>
+<p>With F_j=(Q;Q)_j and p_j=(-1)^j Q^(j(j-1)/2)/F_j, use</p>
+<pre><code>B_N(u,v)=sum_(i+j&lt;N) F_(i+j)/F_i p_j u^i v^j,
+v_N(v)=sum_(j=0)^(N-1) p_j v^j.</code></pre>
+<p>Then, identically in v and u,</p>
+<pre><code>B_N(1,v)=N v_N(v),     B_N(u,u)=1.                 (5)</code></pre>
+<p>For the first identity, fix j. The quotient F_(i+j)/F_i is (Q^(i+1);Q)_j. Extend its i-sum to a full N-orbit: every added term contains 1-Q^N and is zero. Since j&lt;N, root orthogonality leaves only its constant term, giving sum_i (Q^(i+1);Q)_j=N. For the second, the total-degree-n coefficient is the finite binomial sum sum_j (-1)^j Q^(j(j-1)/2) [n choose j]_Q=(1;Q)_n. It is 1 at n=0 and zero for 1&lt;=n&lt;N. These are elementary finite polynomial proofs.</p>
+<p>Thus U=V=1 gives</p>
+<pre><code>B_N(U,a)B_N(V,b)B_N(c,cUV)
+                =N^2 v_N(a)v_N(b).                (6)</code></pre>
+<p>This all-N fusion incorporates the fixed half-step mismatch; it is not obtained by setting Q=1 in (3).</p>
+<p>For the ORIGINAL relative beta source write B=S+D I, where</p>
+<pre><code>D=1-u^N+v^N,
+S=(N/phi_N)u^N Psi_+(h-Logu)Psi_+(Log(v/u))
+                                  exp[-Log(v/u)Logu/h].</code></pre>
+<p>On (4), the three normalizers are a^N, b^N and 1. They do NOT vanish. The exact anchors Psi_+(h)=phi_N and Psi_+(0)=0 give, at regular c,</p>
+<pre><code>S_N(1,a)=N Psi_+(Loga),
+a^N I_N(1,a)=N[v_N(a)-Psi_+(Loga)],
+S_N(c,c)=0,          I_N(c,c)=1.                  (7)</code></pre>
+<p>The same holds for b. Hence the all-residue three-star term is zero on this fibre; a nonzero complete factor is carried by the third CURRENT. This is an explicit actual boundary contribution, not a justification for declaring every current geometrically degenerate.</p>
+<p>There is also an exact raw-product simplification on the port locus D=F=xC, before integrating L,M,T. Put l=L/(xC), m=M/(xC), t=T/(xC). The six factors (3) are then exactly</p>
+<pre><code>K_N(l) K_N(m) (1-t^N),  K_N(s)=sum_(j=0)^d s^j.    (8a)</code></pre>
+<p>In |Log l|,|Log m|,|Log t|&lt;=delta their modulus is at most 2N^2 exp(3Ndelta). Thus the fixed Q^5 mismatch has an explicit retained polynomial source, rather than being a unit or an uncontrolled scalar. This estimate is on the port-coincidence locus. It does not bound derivatives transverse to D=F=xC after the complete sink integrations.</p>
+<p>The product identity</p>
+<pre><code>Psi_+(z)Psi_-(z)=(1-e^z)(1-e^(Nz)),
+Psi_+(z)Psi_-(z-h)=1-e^(Nz)                       (8)</code></pre>
+<p>follows directly by pairing the finite factors in their defining formula on Re z&lt;0, then continuing the same functions. For example, when the corresponding external ports coincide, a U/F pair in (3) can become K_N(t)=(1-t^N)/(1-t), while a U/V pair becomes 1-t^N. These CENTRAL factors are part of the original source and cannot be replaced by a unit. Away from port coincidence each pair retains its nontrivial deck character, for example</p>
+<pre><code>P(L+full turn)/P(L)
+   =[1-(L/(xC))^N]/[1-(L/D)^N]</code></pre>
+<p>for the first pair in (3). Thus no pointwise deletion into a single- valued rational norm factor follows on a neighborhood of (4).</p>
+<h2 id="what-is-and-is-not-controlled-near-the-collision">5. What is and is not controlled near the collision</h2>
+<p>Equation (1) is a polynomial in U,V,a,b,c, so the COMPLETE contracted source has no analytic pole near U=V=1. Arbitrary finite local contour homotopies are therefore legal after this coherent contraction, with their original side currents retained. This is stronger than trying to choose an impossible common zero-side direction for (3).</p>
+<p>Its exponential bound is a different question. Equations (5)–(7) specify values on a codimension-two fibre, not bounds for their normal jets. In particular S(c,c)=0 and I(c,c)=1 do not show that I is tame on an N-dependent neighborhood. All exterior source couplings remain, and the remaining two Euler factors in (6) can have nontrivial action. No implication that every tangential stationary boundary point is an honest original representation is proved here. Such a statement needs the actual normal equations or a source-preserving alternative chart, not signed-normal compatibility alone.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_six_circuit_beta_collision.py">audit</a> checks the minimal circuits, the two single-crossing witnesses, the exact Q^5 mismatch and N=5 intersection, both full-function identities, and the finite beta collision identities at multiple levels.</p>
+<h2 id="a-non-strict-simultaneous-patch-even-for-dependent-normals">6. A non-strict simultaneous patch, even for dependent normals</h2>
+<p>Positive circuits obstruct a COMMON zero-side direction. They do not obstruct a finite local regularization of subexponential absolute cost. This distinction gives a second constructive treatment of the raw six-circuit without assuming port coincidence.</p>
+<p>Suppose in a fixed finite local tube the ACTUAL differential form is</p>
+<pre><code>product_(j=1)^s Psi_(epsilon_j)(u_j(Z))
+                exp(G(Z)/h) a_N(Z) dZ,
+u_j=v_j.Z+c_j,                                   (9)</code></pre>
+<p>where the nonzero real integral v_j may be dependent. Every u_j uses the DIRECT collision lift near zero; a finite full-function half-step may be included in c_j. The complete form, its original co-source and a_N are holomorphic in this tube. All other factors are retained in G,a_N and remain in their legal regular windows. Assume |a_N|&lt;=exp(oN) and |partial G|&lt;=C(1+log N) there. The qualification about the direct lift is substantive: an additional full turn carries its rational norm denominator, which cannot be declared holomorphic separately.</p>
+<p>Choose a fixed real vector eta outside the finitely many hyperplanes v_j.eta=0, and rescale it so min_j |v_j.eta|&gt;=1. Such eta exists for ANY arrangement, whether it has positive circuits or not. For initial |u_j|&lt;=delta, with delta=N^-alpha and 0&lt;alpha&lt;1, translate</p>
+<pre><code>H_t(Z)=Z+2i delta t eta,  0&lt;=t&lt;=1.                (10)</code></pre>
+<p>The whole sweep has |u_j|&lt;=C_eta delta. At its outgoing end each epsilon_j Im u’_j is either at least delta or at most -delta. The sign is fixed by epsilon_j v_j.eta, independently of the initial point.</p>
+<p>Each direct factor is holomorphic and bounded by</p>
+<pre><code>|Psi_(epsilon_j)(u_j)|
+   &lt;=exp[C Ndelta(1+|log delta|)+O(log N)]         (11)</code></pre>
+<p>throughout this entire tube, including its accumulating zeros. To prove this, shift it by a FIXED integer O(Ndelta) of its signed quantum steps until the entire tube lies in the selected strip at distance comparable to delta. The exact shift writes the original function as that regular shifted function TIMES O(Ndelta) factors 1-exp(u+jh). Each latter factor has modulus &lt;=Cdelta. The shrinking-strip symbol bound and Li_2(exp w)=pi^2/6+O(w(1+|Log w|)) prove (11). There are no inverse finite products in this argument. It is the same scalar collar proof as <a href="actual_isolated_shape_one_downhill_patch.html">the isolated patch</a>.</p>
+<p>For every outgoing factor on its negative signed side use the EXACT identity</p>
+<pre><code>Psi_epsilon(u&#39;)=(1-exp(Nu&#39;))
+                          Psi_epsilon(u&#39;+epsilon 2pi i). (12)</code></pre>
+<p>The other outgoing factors already lie in their selected strips. Thus the outgoing form is exactly a sum of at most 2^s regular full-Psi sectors. Each central exponential in (12) adds its original 2pi i u’ to the action; none is discarded. Dependence among the u_j merely allows two such marks to coincide and does not invalidate the finite expansion or its inherited source.</p>
+<p>The translation has Jacobian one, its sweep has bounded mass cost in fixed dimension, and G changes by O(delta log N). Relative to the SAME tangential background phase, the complete tube and each regular outgoing sector have upper cost exp(O(Ndelta log N)+oN)=exp(oN). This is an ABSOLUTE local estimate, not a lower bound or a ratio to an incoming integrand which may vanish. Stokes gives exactly incoming =sum of outgoing sectors minus the original side sweep, as in the isolated patch. Every side current and every logarithmic mark remains.</p>
+<p>For the six-circuit, (10) applies directly with coordinates (Log C,Log D,Log F,Log L,Log M,Log T) and, for example, eta=(0,1,2,4,8,16). Its three negative-root factors go to their zero side and its three positive-root factors to their selected regular side. The outgoing source has eight sectors with all central norms.</p>
+<p>This patch need not be DOWNHILL: positive circuits prevent extending the isolated signed downhill argument to all its factors at once. Neither the number of visits to such patches nor the exponential action of their tangential side currents is controlled here. In particular, the patch does not show that a restricted tangential stationary point lies on the saturated original critical graph.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_six_circuit_beta_collision.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#actual-signed-normals">1. Actual signed normals</a><a href="#the-globally-compatible-six-circuit">2. The globally compatible six-circuit</a><a href="#exact-grouping-with-every-omitted-atom-restored">3. Exact grouping, with every omitted atom restored</a><a href="#exact-collision-fibre-and-its-actual-source-sectors">4. Exact collision fibre and its actual source sectors</a><a href="#what-is-and-is-not-controlled-near-the-collision">5. What is and is not controlled near the collision</a><a href="#a-non-strict-simultaneous-patch-even-for-dependent-normals">6. A non-strict simultaneous patch, even for dependent normals</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

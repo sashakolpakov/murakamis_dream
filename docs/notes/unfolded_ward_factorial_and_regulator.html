@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unfolding the actual Ward jets gives a marked dilogarithm period · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/unfolded_ward_factorial_and_regulator.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="unfolding-the-actual-ward-jets-gives-a-marked-dilogarithm-period">Unfolding the actual Ward jets gives a marked dilogarithm period</h1>
+<p>Research proof, 27 October 2026. A product-preserving fixed-N formalization with reduced scalar symbols is obstructed under the regularity hypotheses of <a href="fixed_root_formal_ward_obstruction.html">the fixed-root audit</a>. Their coherent all-level factorial jets do admit an unfolding. This note constructs it and identifies its cyclotomic pole, regular part, norm-root gauge, and local Heisenberg regulator by direct formulas.</p>
+<p>This is a theorem about the literal Ward factorial block. It does not identify the selected full knot contraction with a geometric period, or prove the volume conjecture. No published asymptotic or quantum-dilogarithm theorem is a premise of the proof.</p>
+<h2 id="the-actual-jets-and-a-faithful-all-level-unfolding">1. The actual jets and a faithful all-level unfolding</h2>
+<p>Let Q_N=exp(2pi*i/N), N&gt;=2. The actual nilpotent Ward block has the finite factorial gauge</p>
+<pre><code>f_N(z)=sum_(j=0)^(N-1) z^j/(Q_N;Q_N)_j,</code></pre>
+<p>with z=-t e and e^N=0. Every denominator in this formula is nonzero. Its constant term is one. The literal relation is</p>
+<pre><code>f_N(Q_N z)=(1-z)f_N(z) mod z^N.               (1)</code></pre>
+<p>Consider a proposed unfolding F(Q,z)=sum_j c_j(Q)z^j with each c_j rational in Q and regular at Q_N for all sufficiently large N. If its restrictions modulo z^N give these actual jets at every sufficiently large level, then necessarily</p>
+<pre><code>c_j(Q)=1/(Q;Q)_j.                            (2)</code></pre>
+<p>Indeed fix j and use every N&gt;j outside the finite exceptional set. The rational function c_j(Q)-1/(Q;Q)_j vanishes at infinitely many distinct Q_N, so is zero. Existence is the displayed series</p>
+<pre><code>F(Q,z)=sum_(j&gt;=0) z^j/(Q;Q)_j.                (3)</code></pre>
+<p>Thus all-level rational coefficient data, rather than a chosen levelwise continuation, determine one formal function. No bound on the degrees of c_j as j grows was assumed. The same argument works for any specified family of nilpotent jets with such a rational coefficient unfolding; it proves uniqueness, not existence for an arbitrary family or for an unspecified whole knot period.</p>
+<p>Coefficient comparison gives the exact equation and normalization</p>
+<pre><code>F(Q,Qz)=(1-z)F(Q,z), F(Q,0)=1.               (4)</code></pre>
+<p>Over Q(Q)[[z]], these conditions also determine F uniquely. For |Q|&lt;1 it agrees with the ordinary convergent quantum factorial</p>
+<pre><code>F(Q,z)=1/(z;Q)_infinity</code></pre>
+<p>near z=0. This analytic statement follows directly by iterating (4), or from the coefficient identity below; it is not used to justify a root specialization of the infinite product.</p>
+<p>The nilpotent jets in (1) do not on their own define a value of F at a root for nonnilpotent z. The cyclotomic pole must first be retained. The rational coefficient hypothesis excludes arbitrary unrelated periodic factors at different levels; it is not a claim that any transseries or multivalued modular completion is thereby fixed without additional markings.</p>
+<h2 id="the-formal-logarithm-and-its-exact-cyclotomic-pole">2. The formal logarithm and its exact cyclotomic pole</h2>
+<p>Take the z-adic logarithm, with constant term zero. Equation (4) gives directly</p>
+<pre><code>log F(Q,z)=sum_(m&gt;=1) z^m/[m(1-Q^m)].         (5)</code></pre>
+<p>There is no convergence assumption in (5). For fixed m it is a rational identity in Q. Fix a primitive root zeta of order N and write Q=zeta exp(h). The expansion is coefficientwise in z, with one possible h^(-1) term. Put X=z^N. Terms m not divisible by N are regular in h. For m=kN,</p>
+<pre><code>1/(1-exp(kN h))=-1/(kN h)+1/2+O(h).</code></pre>
+<p>Consequently the polar coefficient is exactly</p>
+<pre><code>A_(-1)(X)=[h^(-1)]log F=-Li_2(X)/N^2.        (6)</code></pre>
+<p>Here Li_2(X)=sum_(k&gt;=1)X<sup>k/k</sup>2 is first a formal power series. On a marked punctured curve it has its usual analytic continuation fixed from this germ. Formula (6) is a coefficient evaluation, not a limiting assertion about a selected knot sequence.</p>
+<p>This gives a useful logarithmic-coordinate interpretation. Passing to the N-th cyclotomic resonance retains the terms with indices divisible by N. Their denominators supply a second factor kN, so the resonant logarithm coefficient is a dilogarithm. Keeping only a bare nilpotent special fiber would miss exactly this term.</p>
+<h2 id="the-regular-part-is-the-marked-cyclic-dilogarithm">3. The regular part is the marked cyclic dilogarithm</h2>
+<p>Define, with the z=0 branch fixed,</p>
+<pre><code>D_N(z)=product_(j=1)^(N-1)(1-zeta^j z)^(j/N).</code></pre>
+<p>Its formal logarithm is well defined. The elementary weighted root sum is</p>
+<pre><code>sum_(j=1)^(N-1) j zeta^(jm)
+   =N/(zeta^m-1) for N not dividing m,
+   =N(N-1)/2 for N dividing m.</code></pre>
+<p>For the first equality, differentiate the finite geometric sum and evaluate at the nontrivial N-th root zeta^m. This identity and (5) give the entire constant coefficient:</p>
+<pre><code>[h^0]log F=log D_N(z)-(1/2)Log(1-X).         (7)</code></pre>
+<p>Indeed the nonresonant terms give log D_N minus its resonant part, and the resonant constant term is Li_1(X)/(2N). Combining them gives precisely (7), with its sign and factor one half.</p>
+<p>In a formal exponential line the first two coefficients are therefore</p>
+<pre><code>F(zeta exp(h),z)
+  =exp(-Li_2(X)/(N^2 h))
+       D_N(z)(1-X)^(-1/2)(1+O(h)).           (8)</code></pre>
+<p>Equation (8) is a coefficientwise formal statement in z and h. It is not a uniform rootwise asymptotic estimate or a permission to evaluate a divergent infinite product first. All logarithmic and square-root branches are continued from z=0 together.</p>
+<h2 id="identification-with-the-actual-normalized-norm-root-gauge">4. Identification with the actual normalized norm-root gauge</h2>
+<p>Use the actual cyclic Ward order near M=1,</p>
+<pre><code>kappa=M-M^(-1), kappa_N=M^N-M^(-N),
+A_N=R[e]/(e^N-(-1)^(N+1)kappa_N),
+sigma(e)=zeta e, z=-t e.</code></pre>
+<p>Then X=z^N=-kappa_N t^N, and the full determinant character is</p>
+<pre><code>1-X=1+kappa_Nt^N=Norm(1+t e).                (9)</code></pre>
+<p>Mark nu=(1-X)^(1/N) by nu=1 at the nilpotent fiber. The cyclic product satisfies the exact transport and norm identities</p>
+<pre><code>D_N(zeta z)/D_N(z)=(1-z)/nu,
+Norm D_N(z)=nu^(N(N-1)/2).                  (10)</code></pre>
+<p>The first follows by subtracting its two logarithms using the weighted root sum; the second follows by multiplying all its deck translates. Both identities hold on the common marked root cover, not with independent fractional powers chosen per factor.</p>
+<p>Define</p>
+<pre><code>g_D=D_N(z)/nu^((N-1)/2).                    (11)</code></pre>
+<p>It has Norm g_D=1 and sigma g_D=((1+t e)/nu)g_D. At kappa=0 it has constant coefficient one and reduces exactly to the actual finite factorial gauge f_N(-t e): equation (1) determines that nilpotent unit coefficient by coefficient.</p>
+<p>The <a href="cyclic_ward_norm_root_period.html">norm-root transfer theorem</a> constructs a meridian-regular norm-one gauge with precisely these properties. Their ratio is sigma invariant, hence scalar in R; its N-th power is one and its identity mark is one. Thus the two gauges agree exactly on the completed marked cover. This identifies the actual normalized Ward gauge with the defined cyclic dilogarithm, rather than only comparing their norms.</p>
+<p>For even N the half power in (11) has its identity square-root mark. The disconnected phase sheets are retained, not equated. Formula (7) may now be written particularly simply as</p>
+<pre><code>[h^0]log F=log g_D-(1/2)Log nu.              (12)</code></pre>
+<p>The meridian-regular unit interpretation of (10)–(12) is over the characteristic-zero cyclotomic coefficient field, retaining all factorial denominators. No arithmetic integrality at those denominators is asserted.</p>
+<h2 id="the-local-heisenberg-regulator-is-reconstructed">5. The local Heisenberg regulator is reconstructed</h2>
+<p>On the marked logarithmic cover of X away from 0,1,infinity put</p>
+<pre><code>U=Log X, V=Log(1-X),
+S=Li_2(X)+UV, R=Li_2(X)+(1/2)UV.</code></pre>
+<p>Direct differentiation gives</p>
+<pre><code>dS=U dV, dR=(1/2)(U dV-V dU).              (13)</code></pre>
+<p>Thus U/N, V/N and S/N^2 are the coordinates of the usual Heisenberg period matrix</p>
+<pre><code>Pi_N=[1 U/N S/N^2; 0 1 V/N; 0 0 1].</code></pre>
+<p>The right connection Pi_N^(-1)dPi_N has entries dU/N and dV/N on the first superdiagonal and zero central entry, by (13); equivalently dPi_N=Pi_N Omega_N. More explicitly,</p>
+<pre><code>U/N=Log z, V/N=Log nu,
+S/N^2=-A_(-1)+Log z Log nu,
+R/N^2=-A_(-1)+(1/2)Log z Log nu.             (14)</code></pre>
+<p>Equations (6), (9), and the actual norm-root mark therefore reconstruct the full local flat period from the unfolded Ward factorial and its source. Its real regulator is</p>
+<pre><code>D(X)=Im Li_2(X)+Re(U) Im(V),
+dD=Re(U)d Im(V)-Re(V)d Im(U).               (15)</code></pre>
+<p>This is the Bloch–Wigner local regulator, with the same marked logs. Individual Li_2 pole coefficients alone omit the displayed logarithmic metric term. No knot fundamental-class constant or orientation is supplied merely by this local calculation.</p>
+<p>These logarithmic formulas live on the generic marked punctured cover. They do not assign Log(0) to the nilpotent special fiber; there the regular jet and its divided source are kept instead.</p>
+<p>The actual divided cyclic source is tied to the pole by an explicit first-normal identity. Since kappa_N=N kappa+O(kappa^2), formula (6), with X=-kappa_Nt^N, gives</p>
+<pre><code>partial_kappa A_(-1)|_(kappa=0)=t^N/N.</code></pre>
+<p>The literal polynomial source from the cyclic Ward block obeys</p>
+<pre><code>[(sigma f_N(-t e)-(1+t e)f_N(-t e))/kappa]_(kappa=0)
+     =-t^N=-N partial_kappa A_(-1)|_(kappa=0). (16)</code></pre>
+<p>This directly compares the actual normal source with the unfolded cyclotomic period coefficient. The same scalar t^N is the first-normal group-transfer character B_0(1+t e). The source, norm-root transfer, and period pole are three specified realizations of this one local normal datum.</p>
+<h3 id="the-resonant-pole-is-an-exact-divided-power-tensor-correction">5.1 The resonant pole is an exact divided-power tensor correction</h3>
+<p>There is also an operator realization of this pole on the genuine integral complete-color lift. It is important to use that lift here, rather than suppose that a fixed-root typical color is a generic-q quantum-group module. On b factors let C(Q) be the total actual raising operator. Its individual factors have N-th power zero for every generic Q. The q-multinomial formula then shows that</p>
+<pre><code>J_b(Q)=C(Q)^N/(1-Q^N)</code></pre>
+<p>is regular at Q_N. Denote its root value by J_b. It lowers total integer position by N, so J_b^b=0. The <a href="divided_ward_factorial_fusion.html">divided Ward fusion proof</a> gives the matrix definitions, all root characters, and arbitrary-block associativity. The following derivation identifies its correction directly with the whole function (3).</p>
+<p>Since C(Q) is nilpotent for generic Q, evaluating (5) at -t C(Q) involves only finitely many terms. For m&lt;N its root value is the corresponding coefficient of log f_N(-t C). For m&gt;=N not divisible by N, C(Q)^m has a factor 1-Q^N while its denominator is a unit, so the term vanishes at the root. For m=kN with k&gt;=2 the numerator has k such factors and the denominator only one, so it also vanishes. The remaining term, m=N, is exactly (-t)^N J_b/N. Consequently</p>
+<pre><code>[F(Q,-t C(Q))]_root
+   =exp[(-t)^N J_b/N] f_N(-t C).             (16a)</code></pre>
+<p>Here the exponential terminates before its b-th power. Equivalently, if A_i are the individual raising operators dressed by all later K factors, q-binomial expansion gives</p>
+<pre><code>product_(i=b,...,1) f_N(-t A_i)
+   =exp[(-t)^N J_b/N] f_N(-t C).             (16b)</code></pre>
+<p>Thus the exact finite tensor defect is the evaluated resonant logarithm of the all-level function. In the coordinate of (6), C(Q)<sup>N=(1-Q</sup>N)J_b(Q)=-N h J_b+O(h^2). Substituting this into -Li_2((-t C(Q))<sup>N)/(N</sup>2 h) gives the same (-t)^N J_b/N; all its higher dilogarithm powers vanish after specialization. This comparison uses the moving representation and retains its first normal. Substituting C^N=0 before taking the quotient would delete the entire correction.</p>
+<p>This is a general tensor theorem, with a nilpotence bound independent of N for fixed b. It is not a scalar growth theorem. Ordinary pivotal closure kills a degree-N lowering insertion. A marked missing-edge insertion can compensate that degree, and its divided Hopf-adjoint pairing with the literal cut is computed in the fusion note. A source comparison must retain that relative pairing before contraction.</p>
+<h2 id="a-controlled-norm-theorem-on-an-actual-cyclic-gauge-chart">6. A controlled norm theorem on an actual cyclic gauge chart</h2>
+<p>The local reconstruction also admits an analytic norm estimate. This is a different parameter direction from the fixed-root h in (6)–(8): now N varies, Q_N=exp(2pi<em>i/N), and hbar_N=2pi</em>i/N. Fix 0&lt;r&lt;1 and use the branches continued from z=0. Uniformly for |z|&lt;=r,</p>
+<pre><code>Log g_(D,N)(z)
+   =-Li_2(z)/hbar_N-(1/2)Log(1-z)+O_r(1/N). (17)</code></pre>
+<p>To prove it, put f_z(x)=x Log(1-z exp(2pi<em>i</em>x)). The function and its first two x derivatives are uniformly bounded on this compact chart. The finite product is</p>
+<pre><code>Log D_N(z)=sum_(j=1)^(N-1) f_z(j/N).</code></pre>
+<p>Trapezoidal Euler summation therefore gives</p>
+<pre><code>Log D_N=N integral_0^1 f_z(x)dx
+                     -(1/2)Log(1-z)+O_r(1/N).</code></pre>
+<p>Termwise integration of the absolutely convergent logarithmic series gives integral_0^1 f_z=-Li_2(z)/(2pi*i). The normalization in (11) changes this by O_r(r^N), since Log nu_N=Log(1-z^N)/N. This proves (17), with both upper and lower norm control. It is an estimate of the specific marked cyclic gauge already identified in Section 4, not a choice of a new quantum state.</p>
+<p>For example an explicit bound for the absolute remainder in (17) is</p>
+<pre><code>B_r/(12N)+r^N/[2(1-r^N)],
+B_r=4pi r/(1-r)+4pi^2 r/(1-r)^2.</code></pre>
+<p>The displayed B_r bounds |f_z’’|. The ordinary composite trapezoidal remainder, multiplied by N, gives its first term; |Log(1-z<sup>N)|&lt;=r</sup>N/(1-r^N) gives the second. Thus no interchange of a divergent infinite root product and a limit is used.</p>
+<p>In particular its inverse has rate</p>
+<pre><code>(2pi/N)log|g_(D,N)(z)^(-1)| -&gt; Im Li_2(z).    (18)</code></pre>
+<p>The full local regulator uses the logarithmic metric term in (15). On a marked chart define the metrized inverse gauge by</p>
+<pre><code>||g_(D,N)^(-1)(z)||_reg
+  =|g_(D,N)^(-1)(z)|
+     exp[(N/(2pi))Log|z| Arg(1-z)].           (19)</code></pre>
+<p>Then</p>
+<pre><code>(2pi/N)log||g_(D,N)^(-1)(z)||_reg -&gt; D(z),    (20)</code></pre>
+<p>with O_r(1/N) error on fixed compact marked subcharts. At z=0 the metric extends by continuity if needed. Formula (19) is the explicit metric on the local Heisenberg period line determined by (15); it is not an additional factor inserted into the actual Kashaev invariant. A global knot comparison must still show that its quantum period carries this metric with the prescribed signs and logarithmic transition functions.</p>
+<h2 id="what-the-local-identification-does-not-imply-globally">7. What the local identification does not imply globally</h2>
+<p>This replaces the obstructed fixed-N multiplicative comparison by an explicit coherent all-level function and its marked cyclotomic period. It proves an exact local source/gauge/regulator identification for a block built from the actual quantum matrices.</p>
+<p>To use it for the knot, the local transfer currents and their inserted moments must still be transported through the full source-preserving contraction. The selected cycle and cross-level metric cannot be inferred from agreement of local factors. For example, ordinary finite factorial ratios are regular at their roots because their polar terms cancel; extracting a pole from an individual infinite factor and forgetting that cancellation would not be a valid knot-period argument.</p>
+<p>The actual Newton period, the partially summed geometric block, and its marked knot Bloch action already exist in the other notes. Their remaining comparison must use the unfolded source complex, retaining the normal edge and all peripheral factors. Neither global source survival nor the general volume conjecture is asserted here.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_unfolded_ward_factorial_regulator.py">Exact coefficient audit</a>. <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/unfolded_ward_factorial_regulator_results.json">Results</a>. <a href="unfolded_ward_factorial_independent_audit.html">Independent proof audit</a>. <a href="divided_ward_bridge_independent_audit.html">Independent moving-representation and cut audit</a>. The <a href="global_period_rigidity_function_audit.html">global function/source audit</a> records the extra selected-period information still required beyond this exact local function reconstruction.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/unfolded_ward_factorial_and_regulator.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-jets-and-a-faithful-all-level-unfolding">1. The actual jets and a faithful all-level unfolding</a><a href="#the-formal-logarithm-and-its-exact-cyclotomic-pole">2. The formal logarithm and its exact cyclotomic pole</a><a href="#the-regular-part-is-the-marked-cyclic-dilogarithm">3. The regular part is the marked cyclic dilogarithm</a><a href="#identification-with-the-actual-normalized-norm-root-gauge">4. Identification with the actual normalized norm-root gauge</a><a href="#the-local-heisenberg-regulator-is-reconstructed">5. The local Heisenberg regulator is reconstructed</a><a href="#a-controlled-norm-theorem-on-an-actual-cyclic-gauge-chart">6. A controlled norm theorem on an actual cyclic gauge chart</a><a href="#what-the-local-identification-does-not-imply-globally">7. What the local identification does not imply globally</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

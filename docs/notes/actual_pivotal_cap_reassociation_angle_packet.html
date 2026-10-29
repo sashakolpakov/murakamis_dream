@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An ordinary pivotal cap coherently collapses reassociation to one angle weight · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_pivotal_cap_reassociation_angle_packet.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="an-ordinary-pivotal-cap-coherently-collapses-reassociation-to-one-angle-weight">An ordinary pivotal cap coherently collapses reassociation to one angle weight</h1>
+<p>29 October 2026. Contracting the ORIGINAL ordinary pivotal cap with the actual three-head reassociation packet annihilates every middle input except the top index d=N-1. The surviving map is a phase times weighted truncated addition. In the source-fixing quarter-factorial metric its squared coefficient is exactly ONE positive affine-angle weight. All intermediate terms have been summed coherently first.</p>
+<p>The inverse-packet/cup move has an equally explicit bottom-index selection and the same one-weight energy. These are exact local operator/source identities for arbitrary exteriors, not merely scalar normalizations. The marked cap is different: its complete retained packet is given below and is not replaced by the ordinary cap.</p>
+<h2 id="actual-packet-source-and-metric-conventions">1. Actual packet, source and metric conventions</h2>
+<p>Put q=exp(pi*i/N), Q=q^2, d=N-1, x=-q<sup>-1=q</sup>d, N&gt;=2, F_a=(Q;Q)_a and s_a=|F_a|. Keep the original finite transfers</p>
+<pre><code>C&#39;_12|a,b&gt;=sum_r x^-r [b+r choose r]_Q |a-r,b+r&gt;,
+(C&#39;_12)^-1|a,b&gt;
+   =sum_r (-1)^r Q^[r(r-1)/2]x^-r
+                     [b+r choose r]_Q |a-r,b+r&gt;,        (1)
+0&lt;=r&lt;=min(a,d-b).</code></pre>
+<p>These are the original nilpotent Euler matrices and their full inverse, including strict head endpoints. The actual packet is</p>
+<pre><code>A=(C&#39;_23)^-1 C&#39;_12.                                    (2)</code></pre>
+<p>Its full entry, derived by its UNIQUE intermediate state, is</p>
+<pre><code>|a,b,c&gt; -&gt; |a-r,b+r-s,c+s&gt;,
+A=(-1)^s Q^[s(s-1)/2]x^[-(r+s)]
+                 [b+r choose r]_Q[c+s choose s]_Q,      (3)
+r&lt;=min(a,d-b), s&lt;=min(b+r,d-c), r,s&gt;=0.</code></pre>
+<p>The normalized original ordinary cap and cup are</p>
+<pre><code>ellhat= sqrt(N) ell,
+ellhat|u,v&gt;=(xQ)^-u/sqrt(N) delta_(u+v,d),
+phat=p/N^(3/2),
+phat=sum_(u=0)^d x^(u-d)/sqrt(N) |u,d-u&gt;.              (4)</code></pre>
+<p>Indeed the literal original turns are ell|u,v&gt;=x^v g_u/N delta_(u+v,d), p_(u,v)=N x^-v delta, g_u=x^-d Q^-u. Thus(4) retains the original pivot, not a cap with a favorable substituted phase. The normalized cap and cup both have norm1. Literal ell and p are restored by their stated N powers; all external Cartan/framing/peripheral lines are unchanged.</p>
+<p>Use the PHYSICAL gauge and squared metric</p>
+<pre><code>B_a=L_a^-1/4, h_a=B_a^2=sqrt(N)/s_a,
+L_a=s_a^2/N.                                          (5)</code></pre>
+<p>Root reflection gives B_a B_(d-a)=1. These original turns are fixed by B on paired legs. Hats on maps below mean conjugation by B on their physical input/output legs. This is not the length normalization b_l=B_l/D_l and is not the different tame-current metric L^(1/2).</p>
+<h2 id="exact-cap-selection-including-the-coherent-root-sum">2. Exact cap selection, including the coherent root sum</h2>
+<p>Define K=(ellhat_12 tensor I_3) A. For every physical input,</p>
+<pre><code>K|a,b,c&gt;=0 unless b=d and a+c&lt;=d.                     (6)</code></pre>
+<p>In the surviving case n=a+c,</p>
+<pre><code>K|a,d,c&gt;=N^-1/2 (-1)^a Q^[a(a-1)/2-a]x^(-2a)
+                                  [n choose a]_Q |n&gt;. (7)</code></pre>
+<p>Proof. The cap condition in(3) fixes s=a+b-d. If this is negative, or s&gt;d-c, the contraction is zero. Otherwise its allowed r range is exactly0,…,d-b. The ordinary pivotal cap phase supplies Q^r, and all the remaining factors are independent of r. Its complete coherent sum is</p>
+<pre><code>sum_(r=0)^(d-b) Q^r[b+r choose r]_Q
+                              =[N choose b+1]_Q.       (8)</code></pre>
+<p>For completeness, q-Pascal gives [j+1 choose b+1]-[j choose b+1]=Q^(j-b)[j choose b]. Sum from j=b to d. At the primitive root the resulting Gaussian polynomial is zero for b&lt;d and one for b=d. Its intermediate factorials have no zero denominator; [N choose N]=1 is its literal polynomial value. This works at every even and composite level as well.</p>
+<p>Thus b=d, r=0, s=a, n=c+a, with the strict condition n&lt;=d. Substitution of the ORIGINAL cap coefficient gives precisely(7). This is cancellation of the full finite packet, not one selected term or an assumed homogeneous-source quotient.</p>
+<h2 id="the-doubled-packet-has-exactly-one-positive-angle-weight">3. The doubled packet has exactly one positive angle weight</h2>
+<p>Define w_d(i,j,k)=1/(s_i s_j s_k), i+j+k=d. Applying(5) to(7) gives the exact entry</p>
+<pre><code>Khat_(n;(a,b,c))
+   =delta_(b,d)delta_(n,a+c&lt;=d)
+       q^[a(n-N-1)] sqrt(w_d(a,c,d-n)).                 (9)</code></pre>
+<p>Indeed the squared gauge ratio is h_n/(h_a h_d h_c)=s_a s_c/s_n. Consequently</p>
+<pre><code>|Khat_(n;(a,d,c))|^2
+  =(1/N)|[a+c choose a]_Q|=w_d(a,c,d-a-c).              (10)</code></pre>
+<p>For the LITERAL original cap ell the right side is w_d/N, because ell=ellhat/sqrt(N). No original scalar line was discarded.</p>
+<p>The complete doubled input Gram retains the mixed copies:</p>
+<pre><code>(Khat^*Khat)_(a,d,c ; a&#39;,d,c&#39;)
+  =delta_(a+c,a&#39;+c&#39;)
+     q^[a&#39;(a&#39;+c&#39;-N-1)-a(a+c-N-1)]
+     sqrt(w_d(a,c,d-a-c)w_d(a&#39;,c&#39;,d-a&#39;-c&#39;)).            (11)</code></pre>
+<p>All other middle-input rows/columns are zero. The positive trace on the one remaining output has supplied the UNWRAPPED constraint n=n’. It admits either exact N or2N Fourier character expression, since n,n’ lie in0,…,d. This does not identify n=n’ with a global triangulation edge sum2d. The non-diagonal terms of(11) have not been dephased.</p>
+<p>Rows of Khat have disjoint total-input-degree support, so</p>
+<pre><code>Khat Khat^*=diag(R_n),
+R_n=sum_(a=0)^n w_d(a,n-a,d-n),
+||Khat||_op^2=max_n R_n,
+||Khat||_HS^2=sum_n R_n=Z_(3,N).                        (12)</code></pre>
+<p>Here Z_(3,N) is the positive affine angle-simplex partition, with total d and zero angles retained. Thus the EXACT map has the one-tetrahedron energy exponent</p>
+<pre><code>log||Khat||_op^2=log||Khat||_HS^2+O(logN)
+                            =N v_3/pi+O(logN).          (13)</code></pre>
+<p>The uniform factorial estimate and the unique simplex maximum at thirds prove(13); no isolated numerical saddle is a premise. Equation(12), not a separate entrywise Cauchy estimate, gives its quantitative all-exterior boundary norm.</p>
+<h2 id="the-inverse-packet-cup-move">4. The inverse-packet cup move</h2>
+<p>Let J=A^-1(phat_12 tensor I_3). Its exact output selection is</p>
+<pre><code>J|n&gt; supported on |a,0,c&gt;,
+a+c=n+d, n&lt;=a&lt;=d,
+J_(a,0,c ; n)=N^-1/2 x^[2(a-d)] [c choose d-a]_Q.      (14)</code></pre>
+<p>Proof. Write the cup index as p and apply C’_23 followed by (C’_12)^-1. The desired output fixes s=d-a-b and p=a+r. The remaining finite r sum is</p>
+<pre><code>sum_(r=0)^b (-1)^r Q^[r(r-1)/2][b choose r]_Q
+                                                =(1;Q)_b.</code></pre>
+<p>It is zero unless b=0; for b=0 one has r=0,p=a,s=d-a and c=n+s. Substitution gives(14), with every inverse phase retained. Thus this is an exact cup/current cancellation, not an adjoint claimed from a nonunitary packet.</p>
+<p>In the SAME physical metric(5),</p>
+<pre><code>|Jhat_(a,0,n+d-a ; n)|^2
+                          =w_d(n,d-a,a-n).             (15)</code></pre>
+<p>To check it directly, the squared gauge ratio is h_a h_0 h_c/h_n=N s_n/(s_a s_c). Multiplying the squared coefficient in(14) and using s_a s_(d-a)=N gives(15). It follows that Jhat^*Jhat=diag(R_(d-n)), so its operator/HS norms have the same exact one-weight partition as(12). The literal original cup p restores the factor N^(3/2) in amplitude, or N^3 in energy. These polynomial factors remain explicit.</p>
+<h2 id="what-is-retained-at-the-marked-cap">5. What is retained at the marked cap</h2>
+<p>The actual full marked row is m_(u,v)=x<sup>v/N</sup>2, WITHOUT a degree delta. It cannot use(8). Its complete packet on arbitrary input has output n=c+s, 0&lt;=s&lt;=d-c, and the exact coefficient</p>
+<pre><code>(m_12 A)_(n;(a,b,c))
+  =N^-2 (-1)^s Q^[s(s-1)/2]x^[b-2s]
+     [c+s choose s]_Q
+       *sum_(r=max(0,s-b))^(min(a,d-b)) [b+r choose r]_Q. (16)</code></pre>
+<p>An empty interval means zero. This follows directly from(3) and the unrestricted original row; no source component is omitted. It is the remaining finite current packet when a marked boundary is present. Only if the FULL exterior has already forced pair degree d can the corresponding restricted marked row be used. Even then its r sum lacks Q^r and equals (Q^(-(d-b));Q)_(d-b), not the delta in(8). It is generally nonzero away from b=d.</p>
+<p>Thus the ordinary cap elimination is source-exact and useful, but does not delete the last marked source or its normal currents. If a beta or divided-Ward factorization is used to express(2), all its terms must add back to(6)–(16). Keeping only a bare balanced residue would not establish these identities.</p>
+<h2 id="positive-multiplication-form-and-iteration-scope">6. Positive multiplication form and iteration scope</h2>
+<p>Write sigma_a=q<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and g_j=q<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Since q^(ac)=g_(a+c)/(g_a g_c), the unitary port phases in(9) can be displayed explicitly. After transporting those phases, the positive two-input part is</p>
+<pre><code>T^+_(n;a,c)=N^-1/2 delta_(n=a+c&lt;=d)
+                          sqrt(s_n/(s_a s_c)).         (17)</code></pre>
+<p>For W_j=1/sqrt(s_j) it is exactly</p>
+<pre><code>T^+=N^-1/2 W^-1 M(W tensor W),</code></pre>
+<p>where M is multiplication in C[z]/(z^N), in its canonical monomial basis. Consequently these positive kernels associate exactly, and their internal factorials telescope on a rooted tree. Actual port phases and the removed middle |d&gt; registers must still be retained in the original diagram. They are not declared globally canceled by(17).</p>
+<p>The <a href="actual_cap_tree_angle_energy.html">complete cap-tree calculation</a> gives the arbitrary-width boundary-tree energy with these original node types. This does not assert that every signed braid reduces to such a tree: overlapping recoupling cycles, Gaussian feedback and especially the full marked packet(16) remain. No broad knot survival or sharp whole-source volume estimate follows merely from this local contraction.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_pivotal_cap_reassociation_angle_packet.py">Audit</a>: full original finite packet matrices, ordinary cap and cup source, complete phases and forced indices, exact mixed-copy Gram, one-weight norms, and the unrestricted marked packet.</p>
+<p>Fresh replay: PASS seven levels N=2,…,8 and all 1,295 three-head input columns, checking the full original cap and inverse-cup matrices, the retained marked packet, phases, mixed-copy Gram and one-weight norms. The algebraic proofs above establish the all-level statements; these finite checks are supplementary.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>a(a-N-1)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>j(j-1)/2<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_pivotal_cap_reassociation_angle_packet.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#actual-packet-source-and-metric-conventions">1. Actual packet, source and metric conventions</a><a href="#exact-cap-selection-including-the-coherent-root-sum">2. Exact cap selection, including the coherent root sum</a><a href="#the-doubled-packet-has-exactly-one-positive-angle-weight">3. The doubled packet has exactly one positive angle weight</a><a href="#the-inverse-packet-cup-move">4. The inverse-packet cup move</a><a href="#what-is-retained-at-the-marked-cap">5. What is retained at the marked cap</a><a href="#positive-multiplication-form-and-iteration-scope">6. Positive multiplication form and iteration scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

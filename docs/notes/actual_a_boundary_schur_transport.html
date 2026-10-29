@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exact boundary reduction of the original quantum-A energy · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_a_boundary_schur_transport.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="exact-boundary-reduction-of-the-original-quantum-a-energy">Exact boundary reduction of the original quantum-A energy</h1>
+<p>28 October 2026. This implements the proposed boundary-to-interior strategy at the level of the ORIGINAL pointed operator. A regular interior with a weighted symbol gap can be eliminated with controlled cost. Its entire effect is an explicit positive operator on the retained boundary packets. This operator retains the original source, turning regions, endpoint resonance and selected observable.</p>
+<p>The reduction is proved below. A sharp estimate for its selected boundary response is not proved. In particular, uniqueness does not supply that estimate: a concrete two-endpoint example in Section 4 has an excellent interior gap and an exponentially small boundary eigenvalue.</p>
+<p>The complementary <a href="actual_pointed_a_interval_observability.html">interval propagation theorem</a> gives a controlled whole-line Green extension and exponential inward decay from both retained endpoint packets, including shrinking symbol gaps. This note identifies the exact positive operator that determines those packets in the original global source.</p>
+<p>A subsequent <a href="actual_macroscopic_a_spectral_upper_bound.html">macroscopic actual-source estimate</a> does now bound the whole original value by a classical spectral integral, under its explicit actual-operator and classical-order hypotheses. Comparing that rate with volume remains open broadly. For the proposed stepwise energy mechanism, the <a href="actual_pointed_metric_transport_and_crossing_obstruction.html">pointed metric calculation</a> shows precisely what source and endpoint costs must be retained and why tame full-space metrics can lose coherent phase cancellation.</p>
+<h2 id="eliminate-only-an-interior-whose-estimate-has-been-proved">1. Eliminate only an interior whose estimate has been proved</h2>
+<p>Use the full bounded-jet system and weights in <a href="actual_pointed_a_bulk_agmon_energy.html">the actual bulk energy theorem</a>:</p>
+<pre><code>L u=f, P=L* L, g=L* f, beta=f* f.                    (1)</code></pre>
+<p>Here * means Hermitian transpose. The actual source consists of the fixed initial identity rows. Choose the remaining column set B to contain their colors, the complete color, and every turning, end or other exceptional packet. Write I for the regular interior columns. Thus g_I=0 exactly. No color or normal jet in B is removed.</p>
+<p>Suppose the full-output estimate on vectors supported in I gives</p>
+<pre><code>mu ||v||^2 &lt;= &lt;v,P_II v&gt;, ||P|| &lt;= C, mu&gt;0.          (2)</code></pre>
+<p>For example a fixed weighted symbol gap eta gives mu=eta^2/4 for large N by the proved localized Plancherel estimate. Several regular intervals are allowed: keep enough exceptional columns between them that the full banded operator does not couple their supports, or apply that same estimate to their union with its uniform gap. The operator in (2) retains ALL output rows meeting I.</p>
+<p>Set</p>
+<pre><code>A=P_II, H=-A^(-1)P_IB,
+S=P_BB-P_BI A^(-1)P_IB, E v=(H v,v).               (3)</code></pre>
+<p>Then the exact original solution obeys</p>
+<pre><code>u_I=H u_B, S u_B=g_B.                              (4)</code></pre>
+<p>Moreover</p>
+<pre><code>0&lt;=S&lt;=P_BB, ||H||&lt;=C/mu,
+ker P=E ker S.                                    (5)</code></pre>
+<p>Proof. Complete the square, for arbitrary v_I,v_B:</p>
+<pre><code>&lt;v,Pv&gt;=&lt;v_I-Hv_B,A(v_I-Hv_B)&gt;+&lt;v_B,Sv_B&gt;.          (6)</code></pre>
+<p>This proves positivity, the Schur bound and the kernel assertion; the normal equations P u=g with g_I=0 prove (4). Conversely (4) implies the normal equations. Since the original system is consistent, their solutions also satisfy L u=f: their residual is perpendicular to the range of L while belonging to that range. Thus no spurious boundary solution has replaced the original source.</p>
+<p>For a weighted complete-color projection T_B, its value is T_B u_B. The original unweighted value is exp(-N phi(1)) times that value. For any full observable R u, its exact boundary observable is</p>
+<pre><code>R_eff=R_I H+R_B, R u=R_eff u_B.                    (7)</code></pre>
+<p>The fixed-jet pointing theorem gives ker P subset ker R for the selected constant-color observables (including their weighted versions). Consequently ker S subset ker R_eff. Higher-jet nonuniqueness is retained and does not change the observable. The estimates in (5) show that bulk elimination itself costs at most a power of N whenever mu^(-1) does.</p>
+<h2 id="the-residual-boundary-period-is-positive-and-source-exact">2. The residual boundary period is positive and source-exact</h2>
+<p>Let nu=dim ker S, equal to dim ker P and hence bounded by the original fixed jet budget. Define the two polynomials</p>
+<pre><code>Q_B(lambda)=det(S+lambda I),
+D_B(lambda,z)=det[ S+lambda I+z R_eff* R_eff   g_B;
+                   g_B*                       beta ].       (8)</code></pre>
+<p>Then the SAME original selected energy is exactly</p>
+<pre><code>||R u||^2=[lambda^nu z]D_B/[lambda^nu]Q_B.         (9)</code></pre>
+<p>The denominator is positive; all coefficients of both polynomials are nonnegative real numbers. In particular (9) keeps the boundary source, rather than substituting a maximum eigenvalue or arbitrary boundary vector.</p>
+<p>Here is a direct proof. Since (1) is consistent, (4) gives</p>
+<pre><code>beta=&lt;u,Pu&gt;=&lt;u_B,S u_B&gt;=g_B* S^+ g_B.              (10)</code></pre>
+<p>The matrix [S,g_B;g_B*,beta] is positive semidefinite: it is the Schur complement of A in the Gram matrix [P,g;g*,beta]. Factor it as Z* Z. Appending rows sqrt(lambda)[I,0] and sqrt(z)[R_eff,0] gives the matrix in (8). Expanding its determinant as squared minors proves coefficient nonnegativity. The same argument applies to Q_B.</p>
+<p>Decompose the boundary space orthogonally into ker S and its orthogonal complement. Both g_B and R_eff vanish on the kernel in the appropriate sense. Thus D_B has a factor lambda^nu. On the complement, S is positive definite and (10) makes its bordered Schur complement zero at z=0. Its derivative in z at lambda=0 is</p>
+<pre><code>g_B* S^(-1) R_eff* R_eff S^(-1) g_B=||R_eff u_B||^2.</code></pre>
+<p>Multiplication by det(S on (ker S)^perp) proves (9).</p>
+<p>This is a smaller exact period whenever I occupies most colors. With finitely many exceptional windows of width o(N), its matrix size is o(N), although its entries may retain exponentially small transport information. The latter qualification is essential. Auxiliary regulator weights need not themselves be algebraic; they are an estimating metric, not a new definition of the quantum invariant. Undoing the weight gives the original period exactly.</p>
+<h2 id="regular-interior-coupling-decays-with-distance">3. Regular interior coupling decays with distance</h2>
+<p>Assume the block bandwidth of P is w and its norm is at most C&gt;0. The proof of (2) gives mu&lt;=C. In the original color distance, the interior Green blocks satisfy</p>
+<pre><code>||(A^(-1))_(jk)|| &lt;= mu^(-1)
+                   exp[-mu |j-k|/(2 C w)].       (11)</code></pre>
+<p>If w=0 the inverse is block diagonal instead. To prove (11), expand</p>
+<pre><code>A^(-1)=(2C)^(-1) sum_(n&gt;=0) (I-A/(2C))^n.</code></pre>
+<p>The norm of the n-th power is at most (1-mu/(2C))^n. Its (j,k) block vanishes for n&lt;ceil(|j-k|/w), even when I has gaps. Summing this tail and using 1-a&lt;=exp(-a) gives (11). This is a direct banded-matrix proof, independent of diagonalizing the classical transfer.</p>
+<p>For widely separated boundary columns j,k, (3) therefore gives</p>
+<pre><code>||S_(jk)|| &lt;= C&#39; mu^(-1)
+     exp[-c mu (|j-k|-2w)]    when |j-k|&gt;2w.      (12)</code></pre>
+<p>Only finitely many P neighbors of j and k occur in the product in (3). The analogous formula u_I=H u_B gives a sum of exponentially decaying contributions from the retained boundary data. If those data and the inverse gap are controlled, the regular interior carries their estimate with polynomial loss. It does not generate an additional volume exponent. The estimate is on the exact response, including all jets.</p>
+<h2 id="why-the-residual-boundary-estimate-is-necessary">4. Why the residual boundary estimate is necessary</h2>
+<p>Consider a simple, fully rigid sourced recurrence on j=0,…,n:</p>
+<pre><code>y_0=b, y_(j+1)-2 y_j=0.                          (13)</code></pre>
+<p>Its weighted gap with weight zero is |exp(i theta)-2|&gt;=1. Its interior Gram matrix on I={1,…,n-1} has diagonal 5 and off-diagonal -2, so A&gt;=I for every n. Keep B={0,n}. Eliminating I minimizes the energy</p>
+<pre><code>|y_0|^2+sum_(j=0)^(n-1)|y_(j+1)-2y_j|^2</code></pre>
+<p>for prescribed endpoints. Since</p>
+<pre><code>y_n-2^n y_0=sum_(j=0)^(n-1)2^(n-1-j)
+                                  (y_(j+1)-2y_j),</code></pre>
+<p>Cauchy–Schwarz, with equality attained by proportional residuals, gives</p>
+<pre><code>D_n=sum_(j=0)^(n-1)4^j=(4^n-1)/3,
+&lt;y_B,S y_B&gt;=|y_0|^2+|y_n-2^n y_0|^2/D_n,
+S=[1+4^n/D_n, -2^n/D_n;
+   -2^n/D_n,       1/D_n].                     (14)</code></pre>
+<p>The retained source is g_B=(b,0), beta=|b|^2. Solving S y_B=g_B gives y_0=b and y_n=2^n b, exactly as in (13). Yet ||S|| is bounded, det S=1/D_n, and its smallest eigenvalue is asymptotic to 3*4^(-n)/4. Thus a uniformly controlled bulk, a two-dimensional boundary space, and uniqueness still allow exponential source amplification. In (9) the selected period is exactly 4^n |b|^2.</p>
+<p>This example is a logical test of the propagation inference, not a knot counterexample. It explains why the actual boundary Schur operator and its selected source must be estimated rather than deleted.</p>
+<h2 id="the-exact-remaining-geometric-target">5. The exact remaining geometric target</h2>
+<p>For the actual complete-color observable, (9), together with undoing the weight, reduces the desired upper bound to a selected boundary response estimate. A sufficient condition is</p>
+<pre><code>||R_eff S^+ g_B||
+   &lt;= exp[N Vol(S^3 minus K)/(2pi)+o(N)],         (15)</code></pre>
+<p>when R_eff includes undoing the weight. If R_eff selects only the weighted complete color, the right side is instead multiplied by exp(N phi(1)). This equivalence is explicit; it is not a proof of (15). One may also seek a source-compatible transport flag or an exact boundary factorization which proves (15) without bounding S^+ on irrelevant channels.</p>
+<p>The regulator must retain its source anchor: phi(0)=0 fixes the initial source scale, and a bound on absolute branch regulators alone controls their differences by at most 2 Vol. Neither (3) nor (9) removes that issue. The local physical-face fillings give possible information for the exceptional packets, but their identification with this complete boundary response still requires an exact source comparison.</p>
+<p>The independently proved ordinary-color bound concerns the CONSTANT color components j&lt;N. It does not bound the normal jets in B. Those jets are necessary at singular recurrence steps, and (3)–(9) retain them. Replacing the complete boundary packet by its constant-color projection would therefore be an additional unproved inference.</p>
+<p>This is a constructive boundary-to-interior reduction, valid for the actual original operator wherever its stated bulk gap is verified. No broad sharp whole-source bound or geometric survival theorem is claimed.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_a_boundary_schur_transport.py">Audit</a>: four actual figure-eight source elimination identities, an exact rank-deficient rational fixture for the selected coefficient ratio, and four exact recurrence Schur complements. The actual scalar audit does not assert truncated-jet uniqueness; that input is the full pointed-system theorem used in the proof above.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_a_boundary_schur_transport.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#eliminate-only-an-interior-whose-estimate-has-been-proved">1. Eliminate only an interior whose estimate has been proved</a><a href="#the-residual-boundary-period-is-positive-and-source-exact">2. The residual boundary period is positive and source-exact</a><a href="#regular-interior-coupling-decays-with-distance">3. Regular interior coupling decays with distance</a><a href="#why-the-residual-boundary-estimate-is-necessary">4. Why the residual boundary estimate is necessary</a><a href="#the-exact-remaining-geometric-target">5. The exact remaining geometric target</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

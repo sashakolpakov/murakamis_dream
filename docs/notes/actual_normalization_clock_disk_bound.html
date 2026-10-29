@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A source-specific backward Ward estimate on shrinking clock disks · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_normalization_clock_disk_bound.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-source-specific-backward-ward-estimate-on-shrinking-clock-disks">A source-specific backward Ward estimate on shrinking clock disks</h1>
+<p>29 October 2026. The exact normalization packet identified in <a href="actual_terminal_source_normalization_packet.html">the original cup-slide calculation</a> has a polynomial bound on a disk of radius 1/N about its original clock. This controls the entire clock germ, not only its value. The proof uses an exact backward recurrence; its contraction product cancels the exponential size of the original factorial coefficients.</p>
+<p>More generally the packet is subexponential on EVERY shrinking disk. This supplies a genuine sharp, zero-exponent estimate for this actual normalization source and for specified sublinear-frequency exterior couplings. It does not prove the hyperbolic-volume bound for an arbitrary braid, or a uniform bound on a different open physical head.</p>
+<h2 id="the-original-finite-polynomial-and-its-exact-ward-equation">1. The original finite polynomial and its exact Ward equation</h2>
+<p>Put N&gt;=2, d=N-1, Q=exp(2<em>pi</em>i/N), F_j=(Q;Q)_j, s_j=|F_j| and</p>
+<pre><code>H_N(t)=sum_(j=0)^d F_j t^j.                            (1)</code></pre>
+<p>Every statement below also holds with Q replaced by its conjugate. Since F_j=(1-Q^j)F_(j-1), and F_N=0 exactly, the polynomial satisfies</p>
+<pre><code>(1-t)H_N(t)+t Q H_N(Qt)=1.                            (2)</code></pre>
+<p>This is an identity of the original finite function. No endpoint remainder, coefficient, or peripheral factor has been discarded.</p>
+<p>Let k=floor(N/6). The elementary sine sequence obeys</p>
+<pre><code>min_(0&lt;=j&lt;N) s_j=s_k,
+s_j s_(d-j)=N,
+max_j s_j=N/s_k.                                    (3)</code></pre>
+<p>For the first assertion use s_j/s_(j-1)=2sin(pi*j/N): this ratio is at most one up to N/6, at least one from N/6 to 5N/6, and then at most one. The final value s_d=N exceeds s_0=1. Reflection follows from F_d=N and the complementary conjugate factors, and proves the last assertion, including ties and small N.</p>
+<p>In particular, for any t with |t-1|&lt;=c/N,</p>
+<pre><code>|H_N(tQ^r)| &lt;= exp(c) N^2/s_k                         (4)</code></pre>
+<p>for every integer r. This coarse bound uses absolute values and is exponential by itself. The next step retains a coherent recurrence before using it.</p>
+<h2 id="exact-backward-propagation-cancels-that-exponential">2. Exact backward propagation cancels that exponential</h2>
+<p>Iterate (2) from tQ^(-k) to t. With empty products equal to one,</p>
+<p>H_N(t)=sum_(r=0)^(k-1) (-1)^r t^(-r-1) Q<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> product_(j=1)<sup>r(1-tQ</sup>(-j)) +(-1)^k t<sup>(-k)Q</sup>[k(k-1)/2] product_(j=1)<sup>k(1-tQ</sup>(-j)) H_N(tQ^(-k)). (5)</p>
+<p>This follows by substitution, so phases as well as moduli remain specified. For k=0 it is simply the original polynomial.</p>
+<p>Assume 0&lt;c&lt;=N/2 and |t-1|&lt;=c/N. For 1&lt;=j&lt;=k,</p>
+<pre><code>4j/N &lt;= |1-Q^(-j)| &lt;= 1,
+|1-tQ^(-j)| &lt;= |1-Q^(-j)|+c/N.</code></pre>
+<p>Consequently</p>
+<p>product_(j=1)^k |1-tQ^(-j)| &lt;=s_k product_(j=1)^k(1+c/(4j)). (6)</p>
+<p>Also |t|^(-k)&lt;=exp(c/3). For an intermediate product in the sum of (5), its modulus is at most (1+c/N)^r&lt;=exp(c/6). Thus the whole forcing sum has modulus at most 2k exp(2c/3).</p>
+<p>For b=c/4 and k&gt;0, a decreasing-function integral estimate gives</p>
+<p>sum_(j=1)^k log(1+b/j) &lt;=integral_0^k log(1+b/u)du =k log(1+b/k)+b log(1+k/b) &lt;=b[1+log(1+k/b)]. (7)</p>
+<p>Since k/b&lt;=2N/(3c), the combination of (4)–(7) bounds the remainder by</p>
+<pre><code>exp(19c/12) N^2 (1+2N/(3c))^(c/4).                 (8)</code></pre>
+<p>The decisive cancellation is the factor s_k in (6) against 1/s_k in (4). There is no estimated adiabatic eigenbranch or untracked mode conversion in this first-order finite identity.</p>
+<p>Adding the forcing sum, and treating k=0 directly by (4), proves the uniform, all-level bound</p>
+<pre><code>SUP_(|t-1|&lt;=c/N) |H_N(t)|
+   &lt;= B_(N,c):=2 exp(2c) N^2
+                          (1+2N/(3c))^(c/4),
+0&lt;c&lt;=N/2.                                          (9)</code></pre>
+<p>A simpler bound sufficient when c is fixed is</p>
+<pre><code>SUP |H_N(t)| &lt;=2 exp(2c) N^(2+c/4).                 (10)</code></pre>
+<p>For (10), use sum_j log(1+c/(4j))&lt;=c H_k/4 and H_k&lt;=1+log(k+1), with k+1&lt;=N, directly in (6).</p>
+<p>At t=1 the same argument is sharper and especially elementary:</p>
+<pre><code>|H_N(1)|&lt;= k+N^2.                                  (11)</code></pre>
+<p>All forcing products then have modulus at most one, and (6) is exactly s_k. Thus this independently bounds the original endpoint sum without a spectral trace formula or a saddle argument.</p>
+<h2 id="whole-shrinking-germs-and-their-derivatives">3. Whole shrinking germs and their derivatives</h2>
+<p>If c_N=o(N), equation (9) gives</p>
+<pre><code>log SUP_(|t-1|&lt;=c_N/N) |H_N(t)|=o(N),                (12)</code></pre>
+<p>as an upper bound: c_N log(1+N/c_N)=o(N), and log N=o(N). More explicitly, the logarithm is at most</p>
+<pre><code>log 2+2log N+2c_N+(c_N/4)log(1+2N/(3c_N)).          (13)</code></pre>
+<p>For a fixed c&gt;0, ordinary complex Cauchy on this actual holomorphic disk gives, for EVERY integer r&gt;=0,</p>
+<pre><code>|H_N^(r)(1)|/r! &lt;= B_(N,c) (N/c)^r.                 (14)</code></pre>
+<p>The bound is polynomial in N at every fixed normal order. It is also an explicit quantitative estimate when r grows; no claim of subexponential cost is inferred for arbitrary r=O(N).</p>
+<h2 id="the-exact-original-source-packet-to-which-the-theorem-applies">4. The exact original source packet to which the theorem applies</h2>
+<p>The complete physical cup slide gives R12 R23 p=N e0. After the specified terminal R23^2 and actual cap, its recorded rows are</p>
+<pre><code>b_j=x^(-d) Q^(-j) conjugate(F_j)
+   =x^(-d) Q[conjugate(F_j)-conjugate(F_(j+1))],
+x=Q^(d/2), conjugate(F_N)=0.                        (15)</code></pre>
+<p>Here x has its ORIGINAL mark x=q^d, q=exp(pi*i/N); the notation Q^(d/2) retains that mark. Every full crossing scalar and source factor in (15) is the one in the linked original-source proof.</p>
+<p>Define Hbar_N(t)=sum_j conjugate(F_j)t^j. The exact phase-generating function of these rows is</p>
+<pre><code>f_N(t)=sum_j b_j t^j
+      =x^(-d) Q[(1-t^(-1))Hbar_N(t)+t^(-1)].         (16)</code></pre>
+<p>Its apparent pole at zero is removable. In particular f_N(1)=x^(-d)Q has unit modulus, whereas the full-circle packet energy sum_j|b_j|^2=sum_j s_j^2 is exponential. Thus (9) resolves an actual full-source normalization test that the flat packet norm fails, not merely an arbitrary polynomial example.</p>
+<p>On the disk of (9),</p>
+<pre><code>|f_N(t)| &lt;=2+(2c/N) B_(N,c).                        (17)</code></pre>
+<p>For the weighted Cayley-arc energy of <a href="actual_shrinking_arc_cauchy_metric.html">the exact Cauchy metric</a>, put t=(1+i a s)/(1-i a s), -1&lt;=s&lt;=1. Then |t-1|&lt;=2a. Choose c=2Na (for large N so that c&lt;=N/2). Equations (12),(17) and (1+a<sup>2s</sup>2)<sup>d&lt;=exp(Na</sup>2) show</p>
+<pre><code>log E_arc(f_N)=o(N) whenever a=a_N-&gt;0.               (18)</code></pre>
+<p>The equality of the exponential rate to zero also uses the exact evaluation lower bound E_arc&gt;=|f_N(1)|^2/kappa_d&gt;=1/N. For a&lt;=C/N the upper bound is polynomial. All fixed derivatives of f_N at one are polynomially bounded as well, by (17) and Cauchy.</p>
+<p>The original external scalar chi_N, if used, multiplies f_N and its squared energy by chi_N and |chi_N|^2 respectively. It remains explicit. The raw source identity above already retains all common crossing phases; no auxiliary positive invariant is substituted.</p>
+<h2 id="precise-scope-of-the-exterior-and-global-problem">5. Precise scope of the exterior and global problem</h2>
+<p>For an exposed recorded packet with operator-valued diagonal exterior</p>
+<pre><code>A_j(t)=sum_(|ell|&lt;=D_N) A_ell(t) Q^(ell*j),</code></pre>
+<p>its actual contraction is sum_ell A_ell(t) f_N(tQ^ell), with the original order of each spectator operator retained. Since</p>
+<pre><code>|tQ^ell-1| &lt;= (c_N+2pi D_N)/N,</code></pre>
+<p>(9),(17) give subexponential norm whenever c_N+D_N=o(N) and sum_ell||A_ell(t)||=exp(o(N)) uniformly. Fixed degrees and fixed polynomial spectator costs give polynomial bounds.</p>
+<p>This is a statement about the specified exposed RECORDING slot. It is not automatically a uniform estimate for every physical input color of the open normalization tangle. Inserting physical raising or lowering operators can expose a different two-color packet and requires its literal source calculation. Likewise a general original crossing has degree N-1 in the adjacent observable; it is not a sublinear-frequency perturbation covered by this result.</p>
+<p>For a general exterior sequence A_j the exact Ward equation instead retains the forcing term</p>
+<p>(1-t)H_A(t)+t Q<sup>(-1)H_A(Q</sup>(-1)t) =A_0+sum_(j=1)^d conjugate(F_j)(A_j-A_(j-1))t^j, H_A(t)=sum_(j=0)^d conjugate(F_j) A_j t^j. (19)</p>
+<p>Equation (19) follows coefficientwise from the ORIGINAL recurrence. Dropping its finite differences would lose genuine spectator feedback. Controlling this forcing for complete interior crossings, with the geometric exponent, remains part of the broad goal. The present theorem proves source-specific cancellation at a nontrivial normalization germ, not a general hyperbolic knot-volume estimate.</p>
+<h2 id="where-the-excessive-full-circle-energy-actually-resides">6. Where the excessive full-circle energy actually resides</h2>
+<p>The same exact Ward equation also bounds all root samples, so its nonlocal energy is not an unspecified error. Write H_k=H_N(Q^k), H_0=H_N(1), m=floor(N/6). Then</p>
+<pre><code>H_1=Q^(-1),
+|H_k|&lt;=N+2N s_(k-1), 1&lt;=k&lt;N.                      (20)</code></pre>
+<p>For k&lt;=m+1, forward propagation of (2) from H_1 uses only factors |1-Q^j|&lt;=1 and proves |H_k|&lt;=k. For k&gt;=m+1, backward propagation from H_N=H_0 gives exactly the modulus bound</p>
+<pre><code>|H_k|&lt;=s_(k-1)[|H_0|/N+sum_(r=k)^d 1/s_r].          (21)</code></pre>
+<p>After its minimum at m, the sine factorial rises to its unique maximum interval and then decreases to N. Hence min_(r&gt;=k)s_r&gt;=min(s_(k-1),N). Substituting (11) into (21) yields (20). All inverses here have indices strictly between zero and N; no zero root factor is divided out.</p>
+<p>For the actual normalization polynomial (16), reflection now gives</p>
+<pre><code>|f_N(Q^r)| &lt;=1+2N+4N^2/s_r, 1&lt;=r&lt;N,
+|f_N(1)|=1.                                        (22)</code></pre>
+<p>Indeed Hbar_N(Q<sup>r)=conjugate(H_N(Q</sup>(-r))), and s_(N-r-1)=N/s_r. Thus the full macroscopic clock cost has the uniform leading envelope</p>
+<pre><code>log |f_N(Q^r)| &lt;= N max{-J(r/N),0}+O(log N),
+J(u)=integral_0^u log(2sin(pi v))dv.                 (23)</code></pre>
+<p>This uses the already proved uniform sine-factorial estimate; at a zero of f it is simply an upper bound. The function -J has its unique maximum c_*=v_3/(2pi) at u=1/6.</p>
+<p>Finite Plancherel for the ORIGINAL coefficients (15) is exact:</p>
+<pre><code>sum_(r=0)^d |f_N(Q^r)|^2
+   =N sum_(j=0)^d |F_j|^2
+   =exp(2c_*N+O(log N)).                            (24)</code></pre>
+<p>Consequently, for every fixed delta&gt;0 small enough to give a proper neighborhood of 1/6, there is eta_delta&gt;0 such that</p>
+<p>[sum_(|r/N-1/6|&gt;=delta)|f_N(Q<sup>r)|</sup>2] /[sum_r |f_N(Q<sup>r)|</sup>2] &lt;= N^C exp(-eta_delta N). (25)</p>
+<p>To prove it, use the strict gap of the continuous envelope in (23) off that neighborhood and (24). There are only N samples. No pointwise lower estimate for an individual root sample is needed.</p>
+<p>Thus the excessive ROOT-SAMPLED Fourier energy of this literal normalization source is concentrated away from t=1, near phase exp(pi*i/3). This discrete concentration statement alone does not prove a corresponding continuum-arc concentration statement. Equations (9),(18) control the original phase neighborhood and its normal germs by a separate uniform complex-disk argument, while (22)–(25) describe the sampled large-phase energy quantitatively. No analogous concentration or local bound is inferred for a general hyperbolic source.</p>
+<p>There is also a sharp reason to retain the frequency restriction in Section 5. Choose r_N maximizing |f_N(Q^r)|. Equations (23)–(25) and the average in (24) imply</p>
+<pre><code>r_N/N -&gt;1/6,
+log |f_N(Q^(r_N))|=N v_3/(2pi)+O(log N).              (26)</code></pre>
+<p>The inserted diagonal clock Q^(r_N j) is UNITARY in the recording space, yet produces this exponential scalar on the known packet. It is an additional observable, not the original closed knot value. Thus mere norm-one control of an arbitrary diagonal exterior cannot replace the sublinear-frequency or geometric conditions in the source estimate.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_normalization_clock_disk_independent.py">independent audit</a> checks exact finite recurrences, all backward phases, factorial reflection and the product/integral bounds at ten levels through N=192, as well as three noncommuting spectator-mode packets. Its 1,152 complex-disk samples supplement the all-disk proof; they are not a numerical supremum certificate. The original physical source identification is separately checked on every input column by the <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_terminal_source_normalization_packet.py">cup-slide audit</a>. Two independent analytic reviews verified the displayed constants, the k=0 case, the endpoint, and the growing-bandwidth limit. The expanded audit also checks nine complete root-sample profiles through N=192, including all exact sample bounds and Plancherel, while explicitly distinguishing discrete from continuum concentration.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>r(r+1)/2<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_normalization_clock_disk_bound.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-original-finite-polynomial-and-its-exact-ward-equation">1. The original finite polynomial and its exact Ward equation</a><a href="#exact-backward-propagation-cancels-that-exponential">2. Exact backward propagation cancels that exponential</a><a href="#whole-shrinking-germs-and-their-derivatives">3. Whole shrinking germs and their derivatives</a><a href="#the-exact-original-source-packet-to-which-the-theorem-applies">4. The exact original source packet to which the theorem applies</a><a href="#precise-scope-of-the-exterior-and-global-problem">5. Precise scope of the exterior and global problem</a><a href="#where-the-excessive-full-circle-energy-actually-resides">6. Where the excessive full-circle energy actually resides</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

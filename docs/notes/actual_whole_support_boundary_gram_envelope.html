@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Polynomial actual boundary Gram costs on the entire supported color domain · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">Local theorem</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_whole_support_boundary_gram_envelope.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="polynomial-actual-boundary-gram-costs-on-the-entire-supported-color-domain">Polynomial actual boundary Gram costs on the entire supported color domain</h1>
+<p>29 October 2026. The correlated six-head marked boundary Gram has POLYNOMIAL source cost on EVERY supported folded color cell, at both level parities. No fixed central corridor is required. The second-root- zero Racah terms do not need a uniform strict exponential gap: a global elementary sine-product inequality bounds every such term by the same action as a positive main term. All low/high partner branches, the original marked normal and every lower moment are retained.</p>
+<p>This controls the pointed algebraic Gram from the <a href="actual_six_pants_boundary_torsor_and_sewing.html">actual six-pants boundary</a>. It does not identify its constructed reflection with a physical mirror, bound the physical change of frame or general recouplings, or prove a graph’s sharp geometric energy/noncancellation.</p>
+<h2 id="the-whole-support-theorem">1. The whole-support theorem</h2>
+<p>Let N&gt;=2, d=N-1, M=floor(d/2), q=exp(pi i/N), and take ANY</p>
+<pre><code>0&lt;=l_1,l_2,l_3&lt;=M, l_1+l_2+l_3&gt;=d.            (1)</code></pre>
+<p>There is one paired axis for each 2l_i&lt;d; let their number be r&lt;=3. The actual regular source cell, complete-circle coordinates eta_i, original marked co-source lambda and nested-cup vector v_l are those of the proved boundary theorem. In particular</p>
+<pre><code>m_I=lambda(eta_I v_l),
+tau_l=m_all=Z_N(l)/N^(3-r)&gt;0,
+q_l(eta)=sum_I (m_(I^c)/tau_l)eta_I, q_l(0)=1,
+K_l=sum_I |coeff_I(q_l^(1/2))|^2.              (2)</code></pre>
+<p>There are absolute constants C,C0, independent of N and of ALL labels satisfying (1), such that</p>
+<pre><code>max_I |m_I/tau_l|&lt;=C0 N^C,
+1&lt;=K_l&lt;=C0 N^C.                               (3)</code></pre>
+<p>The exponent may be increased between the two estimates. Thus the actual source and dual costs of this prescribed Gram are exactly K_l and tau_l^2 K_l, with log K_l=O(log N)=o(N) uniformly on the whole support. The estimates include saturation faces, edges, corners, nearest paired neighbors and odd simple axes.</p>
+<p>Unsupported open source cells are not deleted. They lack the positive top moment in (2), so (3) is asserted precisely on (1). The theorem does not assert a polynomial norm for the embedding of this finite coordinate cell into the physical tensor product.</p>
+<h2 id="the-original-generic-trace-and-all-its-normal-factors">2. The original generic trace and all its normal factors</h2>
+<p>The <a href="actual_generic_trivalent_racah_source_identity.html">proved generic source identity</a> and the genuine ordered physical trace give, for each unfolded ordinary triangle j=(a,b,c), the EXACT rational function</p>
+<pre><code>T_j=(-1)^d product_i[2j_i+1]
+     *[r_1]![r_2]![r_3]!/[J+1]!
+     *product_i([j_i]!^2[d-j_i]!/[N+j_i]!) S_j^2,
+J=a+b+c, r_i=J-2j_i,
+
+S_j=sum_t (-1)^(d+t)[N+t]!
+      /{[d+t-J]! product_i[t-j_i]![J-j_i-t]!},
+max(j_i,J-d)&lt;=t&lt;=J-max(j_i).                  (4)</code></pre>
+<p>Here [n] and [n]! are symmetric quantum integers and factorials at zeta=q(1-Z)^(1/(2N)), with the branch through q. These are the actual source functions, not a separately normalized 6j model.</p>
+<p>The unfolded choices are j_i=l_i or d-l_i on a paired axis, and the single l_i on a simple axis. With the original paired-circle unit ell_j(Z)=L_N(c_j(zeta))/Z, the physical moment formula is</p>
+<pre><code>m_I=(-1)^d(q-q^(-1)) [Z^(r+1-|I|)]
+     sum_unfolded Z^r T_j product_(i in I)ell_(j_i)(Z). (5)</code></pre>
+<p>There are at most eight summands and the coefficient order is &lt;=4. The original marked physical trace is exactly the one in (5). No ordinary quantum dimension is specialized to zero before this coefficient is extracted.</p>
+<p>Two elementary integer facts now hold on the ENTIRE supported domain. For every unfolded branch,</p>
+<pre><code>d&lt;=J&lt;=2d, 0&lt;=r_i&lt;=d.                           (6)</code></pre>
+<p>To verify them, increase a coordinate from l_i to d-l_i. The maximum J is 3d-sum l_i&lt;=2d and the minimum is sum l_i&gt;=d. For r_i, its maximum over the flips is 2d-sum l_i&lt;=d and its minimum is sum l_i-2l_i&gt;=d-2l_i&gt;=0. In particular every unfolded branch is an ordinary triangle.</p>
+<p>Moreover EVERY one of the seven denominator factorial indices in S_j is less than N, for every true term. Indeed</p>
+<pre><code>0&lt;=d+t-J&lt;=d-max j_i&lt;=d,
+0&lt;=t-j_i&lt;=some other label&lt;=d,
+0&lt;=J-j_i-t&lt;=some other label&lt;=d.               (7)</code></pre>
+<p>For example t&lt;=j_i+j_k bounds t-j_i, and t&gt;=j_k bounds J-j_i-t. No root denominator appears in any Racah summand. Its numerator contains [N] once for t&lt;N and both [N],[2N] for t&gt;=N; t&lt;=2d&lt;2N excludes a third zero. This is the only termwise change at the second band.</p>
+<h2 id="a-uniform-global-profile-including-the-second-zero-band">3. A uniform global profile, including the second-zero band</h2>
+<p>Let L(t)=integral_0^t log|2sin(pi u)|du, extended periodically to R. Its period is 1 and L(-t)=-L(t). Define the EXACT half-step scaled colors</p>
+<pre><code>a_i=(j_i+1/2)/N, S=sum a_i,
+x_i=S/2-a_i (i=1,2,3), x_4=1-S/2.</code></pre>
+<p>Equations (6) imply</p>
+<pre><code>0&lt;x_i&lt;1/2 for all four i, sum_i x_i=1.         (8)</code></pre>
+<p>The half-step is useful: a high-partner replacement j_i-&gt;d-j_i is exactly a_i-&gt;1-a_i. It permutes the four x coordinates while replacing each by its complement 1/2-x. There is no O(1/N) error in this assertion. For instance flipping the first color sends</p>
+<pre><code>(x_1,x_2,x_3,x_4)
+   -&gt;(1/2-x_4,1/2-x_3,1/2-x_2,1/2-x_1).     (9)</code></pre>
+<p>For a summand put s=(t+3/4)/N and v=s-S/2=(t-J/2)/N. Its three child pairs obey</p>
+<pre><code>x_i+v=(t-j_i+1/4)/N&gt;0,
+x_i-v=(J-j_i-t+1/4)/N&gt;0, i&lt;=3.                (10)</code></pre>
+<p>Also x_4+v=1-(J-t+3/4)/N is in (0,1). The fourth minus argument is x_4-v=1-s=(N-t-3/4)/N: it is positive for t&lt;N and negative for t&gt;=N, precisely the second-zero band.</p>
+<p>After removing its one or two root zeros, the absolute factorial summand has, up to polynomial factors, the profile</p>
+<pre><code>H_x(v)=-sum_(i=1)^4 [L(x_i+v)+L(x_i-v)].       (11)</code></pre>
+<p>For t&lt;N the numerator is s_t; for t&gt;=N it is s_(t-N), apart from the complete root-orbit polynomial factors. Both have rate N L(s) up to O(log N), because L has period 1. The denominator d+t-J has rate L(1+s-S)=-L(S-s). Substitution of (10) then gives (11). This same argument covers endpoints: changing an argument by O(1/N) changes N L by O(log N), uniformly even at a zero of sine. One may prove this modulus of continuity by integrating |log u| over an interval of length O(1/N) near the nearest integer.</p>
+<p>The decisive inequality is</p>
+<pre><code>H_x(v)&lt;=H_x(0)=Phi(x):=-2sum_i L(x_i)          (12)</code></pre>
+<p>for EVERY actual term, including the second-zero band. Here is a direct elementary proof. The function is even in v, and (10) gives |v|&lt;min(x_1,x_2,x_3). For v&gt;0 away from its logarithmic corner, put alpha_i=pi x_i and theta=pi v. Then</p>
+<pre><code>H_x&#39;(v)=log |P_minus/P_plus|,
+P_plus=product_i sin(alpha_i+theta)&gt;0,
+P_minus=product_i sin(alpha_i-theta).          (13)</code></pre>
+<p>If theta&lt;alpha_4, every factor is positive and sin(alpha_i+theta)-sin(alpha_i-theta) =2cos(alpha_i)sin(theta)&gt;0. Thus |P_minus|&lt;P_plus. If theta&gt;alpha_4, exactly the fourth minus factor is negative. Expand the sum of the two products:</p>
+<pre><code>P_plus+P_minus
+  =2 sum_(A subset {1,2,3,4}, |A| even)
+     cos(theta)^(4-|A|)sin(theta)^|A|
+     product_(i in A)cos(alpha_i)
+     product_(i notin A)sin(alpha_i)&gt;0.        (14)</code></pre>
+<p>Every factor is nonnegative, and an interior term is strictly positive by (8). Since P_minus&lt;0, (14) again says |P_minus|&lt;P_plus. Continuity across theta=alpha_4, where (13) tends to minus infinity, proves (12). Evenness treats negative v. No local concavity or uniform strict exponential tail gap was used.</p>
+<p>The integer nearest t=J/2 is a true term of the FIRST band: (6) gives max(j_i,J-d)&lt;=floor(J/2) and ceil(J/2)&lt;=min(J-max j_i,d). At that term |v|&lt;=1/(2N), so the same uniform modulus of continuity gives H_x(v)=Phi(x)+O(log N/N).</p>
+<h2 id="positive-main-value-and-polynomial-normal-envelopes">4. Positive main value and polynomial normal envelopes</h2>
+<p>For t&lt;N, the exact root identity is</p>
+<pre><code>([N+t]!/[N])|_q=(-1)^t[d]![t]!.</code></pre>
+<p>All denominators in (4) are positive symmetric factorials at q. Thus S_main/[N] has ONE common phase (-1)^d. Its positive absolute sum is</p>
+<pre><code>Rcore_N(j)=N sum_(true t&lt;N)
+   s_t/{s_(d+t-J) product_i s_(t-j_i)s_(J-j_i-t)}.</code></pre>
+<p>It has at most N terms and contains the midpoint term identified above. The uniform two-sided sine-factorial estimate and (12) therefore give, throughout the whole support and every branch,</p>
+<pre><code>N^(-C)e^(N Phi(x))&lt;=Rcore_N(j)
+                          &lt;=N^C e^(N Phi(x)). (15)</code></pre>
+<p>The estimate uses only ONE midpoint summand for its lower bound; no bulk Hessian, saddle width or distance from a saturation face is assumed. Second-band terms, after removing [N][2N], obey the same upper bound by (12). They may approach the leading action at boundary scales, which is why a uniform strict gap is unnecessary.</p>
+<p>Use the common disk |Z|&lt;=c/N^2. A quantum-factorial ratio with a fixed number of factors and indices &lt;=3N has, after explicitly removing its zeros, a polynomial envelope relative to its nonzero root product on this disk. This follows either from the proved <a href="bounded_normal_quantum_factorial_envelope.html">bounded normal factorial estimate</a> or directly: a nonzero 1-q^(2k) has magnitude &gt;=c0/N; its change is O(|Z|), and O(N) such factors accumulate only bounded relative growth here. Removed [N] and [2N] factors and the symmetric-int normalization cost fixed powers of N. Their count is uniformly bounded. Equations (7),(12),(15) hence bound the ENTIRE holomorphic S_j/Z by poly(N)e^(N Phi(x)). Cauchy estimates for four fixed normal orders add only another fixed power of N. No alternating-sum cancellation is needed for the second-zero terms.</p>
+<p>To include the complete prefactor of (4), note first that</p>
+<pre><code>([N] [j]!^2[d-j]!/[N+j]!)|_q=(-1)^j.          (16)</code></pre>
+<p>Its zero-removed envelope is polynomial, with no factorial action. All three r_i are &lt;N, while N&lt;=J+1&lt;2N. The zero-removed triangle factor therefore has rate</p>
+<pre><code>P(x)=sum_(i=1)^3 L(2x_i)-L(S-1),</code></pre>
+<p>up to O(log N). Each simple axis contributes one dimension zero [2j+1]=[N]; the other dimensions and all ell_j in (5) have polynomial fixed jets, uniformly to the nearest paired neighbor. If s0=3-r is the number of simple axes, the prefactor without S^2 has zero order s0-4. Multiplication by Z^r and S^2, whose order is at least two, leaves order at least ONE. Consequently</p>
+<pre><code>Z^r T_j product ell</code></pre>
+<p>is holomorphic on the common disk; it is never estimated as a bare singular expression. The preceding bounds give for its fixed jets</p>
+<pre><code>|[Z^k]{Z^r T_j product ell}|&lt;=N^C exp(N E(x)), k&lt;=4,
+E(x)=P(x)+2Phi(x)
+    =sum_(i=1)^4[L(2x_i)-4L(x_i)]
+    =-2sum_(i=1)^4[L(x_i)+L(1/2-x_i)].         (17)</code></pre>
+<p>The second equality uses L(S-1)=-L(2x_4), and the third is the elementary duplication identity for L. This expression is unchanged by every permutation or individual complement x_i-&gt;1/2-x_i. Equation (9) therefore makes E EXACTLY the same function for all unfolded branches of a fixed folded triple, with these half-step coordinates.</p>
+<p>Finally the PROVED actual positive top moment has the exact weight</p>
+<pre><code>Z_N(l)=N^2 product_i k_(l_i)
+          s_(J_l-2l_1)s_(J_l-2l_2)s_(J_l-2l_3)
+                /s_(J_l-d) *R_N(l)^2.</code></pre>
+<p>The same midpoint argument (15), uniform factorial bounds and its positive prefactor give</p>
+<pre><code>N^(-C)exp(N E_fold)&lt;=tau_l&lt;=N^C exp(N E_fold)  (18)</code></pre>
+<p>on the ENTIRE supported domain. Endpoint factors s_0=1 cause no problem, and replacing their scaled arguments by the half-step ones changes logarithms by only O(log N). Combine (5),(17),(18), sum at most eight branches, and absorb the polynomial |q-q^-1|: this proves the first estimate in (3).</p>
+<p>The finite square root of q_l=1+n_l is sum_(k=0)^r binom(1/2,k)n_l^k, with n_l^(r+1)=0. It is a polynomial of degree &lt;=3 in at most seven normalized moments. Thus the first estimate implies the second, with constants independent of the labels and N. Its constant coefficient is one, so K_l&gt;=1. This completes the whole-support actual Gram theorem.</p>
+<h2 id="scope-and-verification">5. Scope and verification</h2>
+<p>The new ingredient beyond the central-corridor bound is the global sine-product inequality (12)–(14), together with the half-step folding coordinates. A second-zero action gap may vanish at boundary scales; uniform positive factorial comparison replaces it. The result controls the correlated marked Gram on its actual regular source cells. It supplies neither a physical mirror interpretation of that Gram nor a bound for genuine transitions between different pair decompositions. Those remain separate global source/geometry tasks; polynomial K alone has no hidden cuboctahedral volume term.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/diagnose_actual_whole_support_boundary_conditioning.py">multiprecision source diagnostic</a> uses the proved generic trace (4), every partner and the original physical circle normal. It compares two precisions and two normal steps on saturation faces/corners and interior examples. These are diagnostics; the uniform theorem follows from the finite generic source identity, (12), common-disk factorial envelopes and the positive midpoint bound, not sampling.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_whole_support_boundary_gram_envelope.py">focused audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_whole_support_boundary_gram_envelope_results.json">recorded results</a> verify the universal even-product polynomial with an identically zero cleared numerator; 46,495 unfolded integer branches and 257,107 true Racah terms at N=2,…,32; 215 independent generic physical-double-sum versus Racah traces; and five all-moment original marked crosschecks. Floating-point action comparisons in that audit are labeled diagnostics; the proof of (12) is the exact sign argument (13),(14).</p>
+<p>The separate <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_whole_support_boundary_conditioning_diagnostic_results.json">paired-precision data</a> include ten boundary/interior cases through N=256, both parities, simple axes and saturation corners. The largest displayed K is below 2.78; this finite observation is not used to choose the polynomial exponent or prove its uniformity.</p>
+<p>Independent internal analytical review: the Euler-atom agent re-derived the entire support/half-step/range argument, both bands of (12), first- band midpoint, common-disk fixed jets, full prefactor zero count and the actual positive tau lower bound, and reported PASS. This is an internal proof check, not external peer review or a global source volume theorem.</p>
+<p>The primary agent independently checked the half-step domains, exact partner transformation, midpoint admissibility, both signs of the global sine-product inequality, root-zero accounting and the uniform fixed-jet argument, then freshly replayed the focused audit: PASS.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_whole_support_boundary_gram_envelope.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-whole-support-theorem">1. The whole-support theorem</a><a href="#the-original-generic-trace-and-all-its-normal-factors">2. The original generic trace and all its normal factors</a><a href="#a-uniform-global-profile-including-the-second-zero-band">3. A uniform global profile, including the second-zero band</a><a href="#positive-main-value-and-polynomial-normal-envelopes">4. Positive main value and polynomial normal envelopes</a><a href="#scope-and-verification">5. Scope and verification</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

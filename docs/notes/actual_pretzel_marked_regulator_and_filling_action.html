@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual mixed source action is the marked geometric regulator · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_pretzel_marked_regulator_and_filling_action.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-actual-mixed-source-action-is-the-marked-geometric-regulator">The actual mixed source action is the marked geometric regulator</h1>
+<p>29 October 2026. This gives the regulator comparison needed AFTER an actual representation/port lift has been established. It retains the ordinary-circle spin, both preferred peripheral flags, and the exact filling charge. The comparison is by an elementary differential identity and the already calibrated complete geometric anchor, rather than by matching cusp Hessians or naming a source action a volume.</p>
+<h2 id="inputs-and-the-specific-branch-under-comparison">1. Inputs and the specific branch under comparison</h2>
+<p>Fix an odd s&gt;=5 and the selected analytic mixed-source branch near complete auxiliary colors. The source construction supplies the holomorphic function Phi_s and its NONZERO amplitude. Put</p>
+<pre><code>z_i=Log H_i, ell_i=Log L_(H_i),
+G(z)=2pi i Phi_s(z/(2i))+C_real,
+partial_(z_i)G=ell_i, G(0) has imaginary part V_s.</code></pre>
+<p>Here C_real is the recorded real Cartan/quarter-turn phase constant. For example the original exp(-is pi(N-1)/4) leading character contributes s pi^2/2. Such constants are kept in a complex-period equality and do not change its regulator norm.</p>
+<p>The following geometric inputs concern the SAME selected branch, as established in <a href="actual_pretzel_port_lift_and_geometric_anchor.html">the literal global-port and geometric-anchor theorem</a>:</p>
+<ol type="1">
+<li>The literal mixed Hurwitz/quarter-turn port and global source equations lift it to representations rho_z of the ACTUAL augmented link group, with main meridian fixed complete. The <a href="actual_pretzel_mixed_regular_character_lift.html">source-selected local lift</a> supplies its explicit auxiliary C and disk product P; a mere trace equation would not replace global port gluing.</li>
+<li>At z=0 that representation is the positively oriented geometric one of the original half-twisted augmented diagram. The explicit white-face/port anchor and the absolute auxiliary translations C=W(1+ic), P=2icW, rather than just a cusp derivative, fix this comparison. The local lift records those matrices in section6; the complete geometric volume is V_s.</li>
+</ol>
+<p>The statements below use these proved inputs explicitly. Neither global port gluing nor the absolute anchor is replaced by formal saddle equations or by a coincident peripheral trace alone.</p>
+<p>The <a href="actual_mixed_crossing_circle_preferred_longitude.html">literal mixed longitude certificate</a> now fixes the actual preferred eigenvalues on the positive meridian flag:</p>
+<pre><code>M_i=H_i^(-1/2), lambda_i=-L_(H_i)^(-1).</code></pre>
+<p>The minus comes from g_j=(-1)^(j-1)K_j and the literal typed loop [2,1,1,2]. Its disk word has zero self-writhe. There is no additional lambda-&gt;M^k lambda framing change hidden in these coordinates.</p>
+<h2 id="retain-the-spin-before-taking-a-regulator-norm">2. Retain the spin before taking a regulator norm</h2>
+<p>Continue logarithms from completeness as</p>
+<pre><code>u_i=Log M_i=-z_i/2,
+v_i=Log lambda_i=pi i-ell_i,
+Gbar=G-pi i sum_i z_i.</code></pre>
+<p>Then EXACTLY</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mover><mi>G</mi><mo accent="true">¯</mo></mover><mo>=</mo><mn>2</mn><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>v</mi><mi>i</mi></msub><mspace width="0.167em"></mspace><mi>d</mi><msub><mi>u</mi><mi>i</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ d\overline G=2\sum_i v_i\,du_i.                       \tag{1}
+</annotation></semantics></math></p>
+<p>Thus the preferred connection is the same one derived directly from the actual mixed universal crossings. The spin is a specified physical character, not an identically one change of the source. Its marked norm is</p>
+<p><span class="math display">$$
+ \boxed{D_{\rm src}(z)
+   =\operatorname{Im}\overline G
+                   -2\sum_i\operatorname{Re}u_i\operatorname{Im}v_i
+   =\operatorname{Im}G
+                   -\sum_i\operatorname{Re}z_i\operatorname{Im}\ell_i.}
+                                                               \tag{2}
+$$</span></p>
+<p>Indeed Im(Gbar)=ImG-pi sum Re z_i, while 2 Reu_i Imv_i=-pi Re z_i+Re z_i Im ell_i. The central terms cancel IN THIS PAIRED EXPRESSION. They were not removed from the separate action or kernel. The squared geometric peripheral logarithms retain their corresponding 2pi i deck shift.</p>
+<p>Writing z_i=x_i+i y_i and ell_i=a_i+i b_i, direct differentiation gives</p>
+<p><span class="math display">$$
+ dD_{\rm src}=\sum_i(a_i\,dy_i-x_i\,db_i)
+       =2\sum_i(\operatorname{Re}v_i\,d\operatorname{Im}u_i
+                         -\operatorname{Re}u_i\,d\operatorname{Im}v_i).
+                                                               \tag{3}
+$$</span></p>
+<p>This is the actual half-meridian-step factor two. It is not inferred from a classical polynomial normalization.</p>
+<h2 id="the-geometric-regulator-has-the-same-derivative-and-absolute-anchor">3. The geometric regulator has the SAME derivative and absolute anchor</h2>
+<p>For the actual representation rho_z, define beta(rho_z) by a FIXED finite oriented fundamental triangulation/idealized relative chain of the augmented-link complement. Decorate each lifted cusp with its specified peripheral eigenflag and develop its tetrahedra using the ACTUAL matrices of the port theorem. Internal faces cancel and the orientation and peripheral marking are those of that same diagram. This is the topological fundamental-chain construction in <a href="crossing_fundamental_cycle.html">the actual fundamental-cycle theorem</a>, not its additional identification of a unipotent five-dilogarithm COEFFICIENT with the shadow chain. That coefficient identity uses unipotence and is NOT being extended to semisimple auxiliary meridians.</p>
+<p>Use the audited coisotropic boundary pairing of <a href="bloch_lift_and_boundary_torsor.html">the Bloch boundary calculation</a>, section2, on this developed chain. For several boundary tori the same calculation is their direct sum: peripheral rows on distinct tori have zero intersection pairing, and the meridian/longitude rows on each torus have the same pairing -2. The resulting identity uses the group/eigenflag gluing equations, not parabolicity of those peripheral matrices. In the full squared peripheral coordinates it is delta beta=-(1/2)sum m_i wedge l_i. Equivalently,</p>
+<pre><code>delta beta=-2 sum_i M_i wedge lambda_i.</code></pre>
+<p>Here m_i=M_i^2 and l_i=lambda_i^2; using unsquared coordinates without their factor two would be incorrect. The main-component contribution is constant because its meridian is fixed at one. Work first where the developed shapes are regular. A sufficiently small neighborhood of the explicitly identified complete anchor has such a fixed finite chain; any normalized degenerate summands and their regulator limits are handled by the already proved five-point chain invariance and continuity. No equality with the transformed source dilogarithm list is assumed in this definition of beta.</p>
+<p>For a shape t, the elementary Bloch–Wigner differential is</p>
+<pre><code>dD(t)=log|t| dArg(1-t)-log|1-t| dArg(t).</code></pre>
+<p>Applying it to the displayed boundary identity gives</p>
+<pre><code>dD(beta)=2 sum_i[Re v_i dIm u_i-Re u_i dIm v_i],</code></pre>
+<p>which is exactly (3). This is the same calculation as <a href="quantum_longitude_and_regulator_action.html">the actual preferred action/regulator identity</a>, sections5–6, and <a href="complex_peripheral_action_and_conversion_bound.html">its complex peripheral continuation</a>, section1. Those proofs use local logarithmic identities and face cancellation, so no assumption of equal component meridians enters.</p>
+<p>At the complete anchor, D(beta(rho_0))=V_s=ImG(0) and all Re z_i are zero. Consequently the two functions with equal differential have the SAME absolute constant on this connected regular branch:</p>
+<p><span class="math display">$$
+ \boxed{D_{\rm src}(z)=D(\beta(\rho_z)).}                \tag{4}
+$$</span></p>
+<p>Use a simply connected sufficiently small marked parameter neighborhood. The explicit auxiliary C has a regular noncentral parabolic limit, so a diagonalizing-frame singularity at completeness does not invalidate this comparison. The identity extends through that removable limit. It does not splice distinct character components at a coincident peripheral point or reset logarithms independently.</p>
+<p>This proof needs neither an assumed equality of unmarked primitives nor a new theorem imported from the literature. Actual port gluing, preferred peripheral coordinates, and the COMPLETE geometric anchor are the explicit inputs that prevent an arbitrary additive volume.</p>
+<h2 id="the-actual-chirps-stationary-action-is-precisely-this-regulator">4. The actual chirp’s stationary action is precisely this regulator</h2>
+<p>For independently signed nonzero fixed fillings and integer charges m_i, the original full-normal centered Gaussian kernel supplies the holomorphic action</p>
+<pre><code>W(z)=G(z)+sum_i (z_i-2pi i m_i)^2/(4p_i),
+z_i+2p_i ell_i=2pi i m_i at stationarity.            (5)</code></pre>
+<p>All real Cartan constants and the retained normal amplitude can be kept beside this leading action. At a stationary point the second term in W is sum p_i ell_i^2. The real part of the stationary equation is Re z_i=-2p_i Re ell_i, so</p>
+<p><span class="math display">$$
+ \boxed{\operatorname{Im}W(z_*)
+   =\operatorname{Im}G(z_*)
+                       +2\sum_i p_i\operatorname{Re}\ell_i
+                                           \operatorname{Im}\ell_i
+   =D_{\rm src}(z_*)=D(\beta(\rho_{z_*})).}            \tag{6}
+$$</span></p>
+<p>In particular there is no unestimated complex endpoint correction left at the filling saddle. It is canceled by the ACTUAL filling quadratic, not deleted by replacing a boundary holonomy with a unit value.</p>
+<p>The same conclusion matches the source Fourier action used in the proved whole-source asymptotic. If zeta denotes its frequency variable,</p>
+<pre><code>ell_i=-2pi i zeta_i,
+z_i=2i chi_i,
+A=Phi_s(chi)+2i sum chi_i zeta_i
+                 -2pi i sum(p_i zeta_i^2+m_i zeta_i).</code></pre>
+<p>At its critical point direct substitution gives</p>
+<pre><code>2pi i A=G+sum p_i ell_i^2</code></pre>
+<p>up to the already recorded REAL Cartan constants. Therefore</p>
+<pre><code>2pi Re A=Im W=D(beta(rho_(z_*))).                   (7)</code></pre>
+<p>This checks the source normalization rather than identifying exponents only up to an unknown scalar or a factor of two.</p>
+<h2 id="the-actual-filled-slope-and-the-remaining-geometric-distinction">5. The actual filled slope and the remaining geometric distinction</h2>
+<p>The preferred-spin relation gives</p>
+<pre><code>M_i lambda_i^(p_i)=(-1)^(p_i+m_i).</code></pre>
+<p>At the selected long-filling point these peripheral matrices are regular semisimple, not nontrivial unipotents with an accidentally unit eigenvalue. Indeed the local all-unit charge saddle has every color coordinate nonzero; the separately even analytic source has nonzero linear longitude derivative there. Both coordinates remain in a small neighborhood of zero, so their distinct reciprocal eigenvalues cannot acquire a nonzero full period. The explicit C and P commute and use the specified COMMON eigenflag. Thus their matrix product C_i P_i^(p_i) is the displayed scalar +/-I.</p>
+<p>Hence the PSL2 representation kills the primitive disk-framed slope mu_i+p_i lambda_i and extends over the corresponding filled manifold. The central sign is not assumed to be +I in a preassigned SL2 lift. The representation-volume straightening and smearing proofs use only the actual PSL2 isometric action, so they apply to this descended representation directly. The original retained negative half twist belongs to the base meridian; it was not replaced by a p_i+1 slope. In the geometric cusp anchor that base meridian is the primitive positive diagonal, not just its length.</p>
+<p>Here is a compatible FINITE-chain proof of invariance under the filling. It is not enough to put only the new vertices at one ideal flag while leaving unrelated old boundary data unchanged. At a filled cusp the peripheral image is cyclic and preserves a target geodesic axis. First replace the OLD augmented ideal-cusp development by the axis-valued cusp map of <a href="general_peripheral_representation_volume_bound.html">the general-peripheral volume proof</a>, sections1–2. Its explicit face-compatible conical comparison (4a) and homotopy have boundary volume O(Y^(-2)) in (4b). Hence this replacement preserves the absolutely normalized AUGMENTED regulator as the cutoff Y tends to infinity; it is not an assumed zero-volume homotopy on an arbitrary old boundary.</p>
+<p>Fix a finite cusp cutoff and a common finite triangulation on its boundary. The OLD boundary map is now on the preserved axis. Because the filling slope is killed, its equivariant vertex assignment factors through the solid torus group Z. Extend the SAME boundary assignment to the new solid-torus vertices equivariantly on that axis. Axis contractibility provides the face-compatible extension, and every new straight tetrahedron is collinear and has zero volume. Thus the finite compact CORE PLUS FILLING chain computes the filled representation volume with no new contribution. The unfilled main cusp retains its original parabolic end convention.</p>
+<p>Taking Y to infinity, the controlled old-cusp comparison proves that the value in (6) is the regulator of the EXTENDED filled representation, with the same orientation, primitive marking, and absolute constant.</p>
+<p>It follows, using the independently proved representation-volume bound, that the selected source exponent is at most the filled manifold’s hyperbolic volume whenever that manifold is hyperbolic. To replace this upper bound by EQUALITY one must additionally prove that this extended representation is its positive geometric Dehn-filling representation. A correctly glued positive near-complete geometric deformation with primitive 2pi filling supplies that fact; it is not inferred merely from (4) or a cusp Hessian. The present note does not substitute for that geometric extension proof.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_mixed_crossing_circle_preferred_longitude.py">Audit</a> includes exact symbolic checks of (2),(6), alongside the original mixed-R/pivot/framing certificate. The representation lift and absolute anchor are separately checked geometric inputs, not consequences of those elementary scalar checks.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_pretzel_marked_regulator_and_filling_action.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#inputs-and-the-specific-branch-under-comparison">1. Inputs and the specific branch under comparison</a><a href="#retain-the-spin-before-taking-a-regulator-norm">2. Retain the spin before taking a regulator norm</a><a href="#the-geometric-regulator-has-the-same-derivative-and-absolute-anchor">3. The geometric regulator has the SAME derivative and absolute anchor</a><a href="#the-actual-chirps-stationary-action-is-precisely-this-regulator">4. The actual chirp’s stationary action is precisely this regulator</a><a href="#the-actual-filled-slope-and-the-remaining-geometric-distinction">5. The actual filled slope and the remaining geometric distinction</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

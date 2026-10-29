@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A source-preserving quadrature with an exponentially smaller error · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/source_preserving_inner_quadrature.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-source-preserving-quadrature-with-an-exponentially-smaller-error">A source-preserving quadrature with an exponentially smaller error</h1>
+<p>28 October 2026. This proves a discrete-to-continuous comparison, including the selected finite endpoints. It is a theorem for the displayed finite factorial sum. The <a href="five_two_cyclotomic_transform_proof.html">finite whole-source transform</a> now proves that this is the ORIGINAL 5_2 invariant, including the whole fixed-root meridian family. That identification is an exact finite calculation, rather than an inference from finite checks.</p>
+<p>The comparison removes the inner summation without choosing a saddle or discarding a Fourier mode. Its TOTAL error is bounded by a logarithmic factor times the already proved original figure-eight invariant. This is useful because that error has a strictly smaller exponential rate than the proposed 5_2 geometric contribution. The outer sum and the nonzero geometric contribution of the remaining integral are not proved by this result.</p>
+<h2 id="reflection-gives-an-entire-interpolant">1. Reflection gives an entire interpolant</h2>
+<p>Write Q=exp(2 pi i/N), F_n=(Q;Q)_n, 0&lt;=n&lt;N, and m=N-1-n. Consider</p>
+<pre><code>a_(n,j)=Q^[-n(n+2)-j(n+1)] F_n^3/(F_j F_(n-j)), 0&lt;=j&lt;=n.</code></pre>
+<p>Let Fhat be the exactly normalized interpolation in <a href="exact_factorial_interpolation_and_complex_contours.html">the factorial theorem</a>. The entire interpolation selected here is</p>
+<pre><code>f_(N,n)(z)=Q^[-n(n+2)-z(n+1)]
+             F_n^3/[Fhat(z) Fhat(n-z)] * exp(2 pi i z).       (1)</code></pre>
+<p>Initially this is defined on the overlapping factorial strips. Reflection and the integer shift m give the exact entire continuation</p>
+<pre><code>f_(N,n)(z)=f_(N,n)(0) H_(N,n)(z)/F_m,
+H_(N,n)(z)=exp[-i pi z(z-N+1)/N] (Q^(z+1);Q)_m.             (2)</code></pre>
+<p>Here Q^z always denotes exp(2 pi i z/N). In fact</p>
+<pre><code>1/[Fhat(z) Fhat(n-z)]
+  =exp[-i pi(n-z)(n-z-N+1)/N] (Q^(z+1);Q)_m/N.</code></pre>
+<p>Substitution proves (2), including its constant by evaluation at z=0. There is no branch choice or asymptotic step in this calculation. In particular f(j)=a_(n,j) at EVERY allowed integer, and</p>
+<pre><code>|f(0)|=|f(n)|=|F_n|^2.                                    (3)</code></pre>
+<p>The factor exp(2 pi i z) is essential to the bounds below. Its value is one on the actual summation lattice. Its use is legitimate here because the comparison is proved for the entire interpolant with the original finite sum and its explicit endpoint terms retained.</p>
+<h2 id="uniform-endpoint-bounds-in-a-late-index-region">2. Uniform endpoint bounds in a late-index region</h2>
+<p>Fix 0&lt;delta&lt;1/2 and assume</p>
+<pre><code>(1/2+delta)N &lt;= n &lt;= N-1.                                  (4)</code></pre>
+<p>For a=0,n and real t, direct absolute values in (2) give</p>
+<pre><code>|f(a+i t)|/|f(a)|=exp(pi lambda_a t) P_m(|t|),
+lambda_a=(2a+n-2N+2)/N,
+P_m(t)=product_(r=1)^m
+      [1+sinh^2(pi t/N)/sin^2(pi r/N)]^(1/2).              (5)</code></pre>
+<p>At a=n the indices n+1,…,N-1 have the same sine magnitudes as 1,…,m. Thus (5) uses the same product at both original endpoints.</p>
+<p>Since m&lt;(N-1)/2, the factors for r and N-r are disjoint equal pairs. The complete sine product gives</p>
+<pre><code>P_m(t)^2 &lt;= product_(r=1)^(N-1)
+      [1+sinh^2(pi t/N)/sin^2(pi r/N)]^(1/2)
+    =sinh(pi t)/[N sinh(pi t/N)] &lt;= exp(pi t).              (6)</code></pre>
+<p>The identity follows by factoring w^N-1 at w=exp(-2 pi t/N), and extends continuously to t=0. The last bound also follows from</p>
+<pre><code>sinh(Ns)/(N sinh s)
+   =(1/N) sum_(r=0)^(N-1) exp((N-1-2r)s) &lt;= exp((N-1)s).</code></pre>
+<p>For the two endpoint lambdas, (4) implies</p>
+<pre><code>|lambda_0| &lt;= 3/2-delta-2/N,    |lambda_n| &lt;= 1.</code></pre>
+<p>Consequently, uniformly in (4),</p>
+<pre><code>|f(a+i t)| &lt;= |F_n|^2 exp[(2 pi-pi delta)|t|].              (7)</code></pre>
+<p>For |t|&lt;=1 one also has</p>
+<pre><code>|f&#39;(a+i t)| &lt;= C(1+log N)|F_n|^2.                         (8)</code></pre>
+<p>To check (8), differentiate the Gaussian and the finite product in (2). Each logarithmic derivative in the latter is bounded by C/[N sin(pi r/N)] &lt;= C/r, because r&lt;=m&lt;N/2 and |t|&lt;=1. Their sum is O(1+log N); (7) bounds the undifferentiated factor. All constants in (8) can be absolute. No asymptotic estimate near a zero endpoint factorial is being used.</p>
+<h2 id="exact-finite-summation-formula-and-its-error">3. Exact finite summation formula and its error</h2>
+<p>Contour integration gives the finite Abel–Plana identity</p>
+<pre><code>sum_(j=0)^n f(j)
+   =integral_0^n f(s) ds +(f(0)+f(n))/2
+    +i integral_0^infinity
+      [f(i t)-f(-i t)-f(n+i t)+f(n-i t)]
+                /(exp(2 pi t)-1) dt.                     (9)</code></pre>
+<p>For clarity, its hypotheses are verified directly here. The function in (2) is entire. On every vertical line 0&lt;=Re z&lt;=n its upper growth rate as Im z tends to infinity is at most pi(2n-N+1)/N &lt; pi. Its lower growth rate is at most pi(3N-3-2n)/N &lt; 2 pi, by (4). The bound is uniform in this closed horizontal interval for each fixed N,n. Thus the horizontal edges disappear when the residue contour with kernels (exp(-2 pi i z)-1)^(-1) above the real axis and (exp(2 pi i z)-1)^(-1) below it is sent to infinity. The real edges combine into the integral in (9), the two vertical edges give its displayed differences, and half-circles at 0,n give the two half endpoint values. This proves (9) for this interpolant, rather than assuming a formal quadrature expansion.</p>
+<p>For 0&lt;t&lt;=1, (8) bounds the numerator by C t(1+log N)|F_n|^2. For t&gt;=1, (7) and the denominator in (9) give an integrable bound C exp(-pi delta t)|F_n|^2. Including the two half endpoint terms proves</p>
+<pre><code>|sum_(j=0)^n a_(n,j)-integral_0^n f_(N,n)(s) ds|
+      &lt;= C_delta (1+log N)|F_n|^2.                       (10)</code></pre>
+<p>In particular the finite endpoint source has been bounded, not declared zero, and every Poisson contribution implicit in the original finite lattice sum is accounted for by the exact error.</p>
+<h2 id="the-total-error-is-controlled-by-the-original-figure-eight-period">4. The total error is controlled by the original figure-eight period</h2>
+<p>Let I_(N,delta) be the sum of the integrals in (10) for all n satisfying (4), and let S_(N,delta) be the same range of the original double sum. The triangle inequality in (10) gives</p>
+<pre><code>|S_(N,delta)-I_(N,delta)|
+   &lt;= C_delta(1+log N) sum_(n=0)^(N-1)|(Q;Q)_n|^2
+    = C_delta(1+log N) K_(4_1),N.                         (11)</code></pre>
+<p>The final equality is the independently proved original-state <a href="figure_eight_whole_source_identity.html">figure-eight source identity</a>. Therefore</p>
+<pre><code>limsup N^(-1) log|S_(N,delta)-I_(N,delta)|
+          &lt;= Vol(4_1)/(2 pi).                           (12)</code></pre>
+<p>This is an actual global exponential comparison for the specified late-index sum. It does NOT assert that I_(N,delta) has a nonzero geometric contribution, or remove the outer discrete summation. The low-index part also requires its separate absolute bound.</p>
+<h2 id="a-reusable-criterion-for-other-finite-bridge-convolutions">5. A reusable criterion for other finite bridge convolutions</h2>
+<p>The same proof applies to</p>
+<pre><code>h(z)=C exp[-i pi z^2/N+i pi beta z/N]
+                  (Q^(z+1);Q)_m,
+n=N-1-m, m&lt;=(N-1)/2, beta real.</code></pre>
+<p>If, for some epsilon&gt;0,</p>
+<pre><code>max(|-beta-m|,|2n-beta-m|)/N + 1/2 &lt;= 2-epsilon,          (13)</code></pre>
+<p>then its finite quadrature error is at most</p>
+<pre><code>C_epsilon(1+log N)(|h(0)|+|h(n)|),                       (14)</code></pre>
+<p>provided |beta|/N is bounded; this last bound in fact follows from (13) and 0&lt;=m&lt;N. Multiplication by exp(2 pi i k z), k integer, retains the exact lattice values and replaces beta by beta+2kN. Condition (13) decides when that choice gives the required bound.</p>
+<p>This criterion is checkable from the actual finite transfer rather than a conjectured geometric cycle. If a bridge convolution has this form and its endpoint sums have a smaller proven rate, it can be removed with a controlled error. No assertion is made that all knot diagrams admit such an ordering or such endpoint bounds.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_source_preserving_inner_quadrature.py">Finite-sum, entire-interpolant and exact contour diagnostics</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/source_preserving_inner_quadrature.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#reflection-gives-an-entire-interpolant">1. Reflection gives an entire interpolant</a><a href="#uniform-endpoint-bounds-in-a-late-index-region">2. Uniform endpoint bounds in a late-index region</a><a href="#exact-finite-summation-formula-and-its-error">3. Exact finite summation formula and its error</a><a href="#the-total-error-is-controlled-by-the-original-figure-eight-period">4. The total error is controlled by the original figure-eight period</a><a href="#a-reusable-criterion-for-other-finite-bridge-convolutions">5. A reusable criterion for other finite bridge convolutions</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

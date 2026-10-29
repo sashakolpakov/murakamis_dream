@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Independent audit of the positive-carry completion and its source scope · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/positive_carry_completion_independent_audit.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="independent-audit-of-the-positive-carry-completion-and-its-source-scope">Independent audit of the positive-carry completion and its source scope</h1>
+<p>27 October 2026. The proposed Euler completion of an actual crossing does preserve the ENTIRE first-cut matrix of every signed braid at an original root, as a meridian family. The correcting group has nilpotence bounded by braid width, independent of N. This is a genuinely general source-preserving completion, unlike a low-degree approximation of the quantum factorials.</p>
+<p>Two scopes must be retained. Local degree-lowering Ward coupons can detect its positive-carry error. Also the naive generic-Q Euler factorization changes the actual q-normal source, already at N=2. There is a direct repair with explicit normal coupons; at fixed normal depth their combined correction group is still uniformly nilpotent. No geometric-sector or volume estimate follows from nilpotence alone.</p>
+<h2 id="physical-integer-degree-proves-root-source-preservation">1. Physical integer degree proves root source preservation</h2>
+<p>Use the actual balanced nilpotent heads, x=-M/q and Q=q^2 of exact order N. Put F_a=(Q;Q)_a. The actual two-leg fusion sends f^a e_k to f_total^a(e_0 tensor e_k). Every physical term of that vector has TOTAL INTEGER DEGREE a+k, not its reduction modulo N. The exact actual positive-crossing coefficient is</p>
+<pre><code>a_+=sum_(a+k&lt;N) x^-a d_k f^a e_k/F_a,
+d_k=(-1)^k x^(-2k)Q^(k(k-1)/2).</code></pre>
+<p>The common original Cartan scalar is retained externally or on both matrices. Its Euler completion is</p>
+<pre><code>a_+^E=u_N(x^-1 f) D,
+D=sum_k d_k e_k,</code></pre>
+<p>with all a,k between zero and N-1, including a+k&gt;=N. For a right coefficient f^a e_k to act on a relative input f^b e_j, the multiplication rule requires j=a+k modulo N. If a+k&lt;N, input and output integer degrees agree. If a+k&gt;=N, its output degree is input degree PLUS N. The action is zero when a+b&gt;=N. Thus, in physical matrices,</p>
+<pre><code>R_+^E=R_+ + E_N,
+E_N raises integer degree exactly N.           (1)</code></pre>
+<p>This uses the actual ROOT Borel intertwining/fusion proof. It holds for every admissible meridian x, not just M=1.</p>
+<p>For b strands let A_&gt;=0 be the algebra of matrices whose degree changes are nonnegative multiples of N, and let n contain its strictly positive-degree matrices. Original crossings are of degree zero, so both the completed crossings and their inverses belong to A_&gt;=0. In fact</p>
+<pre><code>n^b=0,                                         (2)</code></pre>
+<p>because the physical total degree is between zero and b(N-1), whereas b positive carries would raise it by at least bN. The inverse assertion follows either by graded triangularity or the finite inverse of 1+n after factoring out the actual crossing. It holds for every signed word, with no restriction on word length.</p>
+<p>The completed word differs from the original by an element of n. Close all but the first strand with their ORIGINAL pivots. A possibly nonzero cut entry from first input a to first output c would have total degree change c-a, which lies strictly between -N and N. It cannot be a positive multiple of N. Consequently</p>
+<pre><code>ptr_original(W^E-W)=0                           (3)</code></pre>
+<p>as the FULL N-by-N cut matrix. Hence every original first-input probe and the original all-ones output row agree. Every framing, full d_N(M), peripheral and external Cartan factor multiplies both sides unchanged. Equation (3) is an identity of root-level meridian rational families, including their retained regular germs; it is not obtained by replacing d_N by its complete value.</p>
+<p>This does not conflict with the full Borel source-faithfulness theorem. That theorem allows relative coupons of negative as well as positive N-degree. The present source quotient is only on the degree-restricted algebra A_&gt;=0. Lowering an error back to degree zero is deliberately not an allowed operation there.</p>
+<p>The group 1+n has lower-central depth at most b-1, with finite logarithm and inverse formulas. Braid/coherence errors of the completed matrices lie in that group since their degree-zero parts are the actual braid matrices. Their original closed sources vanish by (3). This supplies an algebraic completion of the actual source; it supplies no bound for the entries of the degree-zero word or its hyperbolic action.</p>
+<h2 id="a-local-ward-coupon-detects-the-carry">2. A local Ward coupon detects the carry</h2>
+<p>At N=2, M=1 use x=i and remove only the shared Cartan scalar from the positive crossing. In physical basis 00,01,10,11,</p>
+<pre><code>R_+^E-R_+=-i |11&gt;&lt;00|.                         (4)</code></pre>
+<p>Its original pivotal partial trace is zero. But use the literal balanced closed-wire Ecal=-2|0&gt;&lt;1| and pivot diag(-i,i). The original first-input-zero/all-ones-output source gives</p>
+<pre><code>ell ptr_g[(I tensor Ecal)(R_+^E-R_+)]e_0=2.    (5)</code></pre>
+<p>Restoring the common Cartan scalar multiplies this by the same nonzero original scalar. The full regular complete dimension and framing factors do not make it zero. Thus a single local degree-minus-one coupon can expose a positive N-carry through an off-diagonal first-cut row. One cannot replace the entire Hopf/Ward source complex by the quotient in (3).</p>
+<p>Global Hopf-adjoint partial-trace identities may still cancel their complete sums, because all their coupled terms are kept. Equation (5) says the individual local terms cannot be deleted. Meridian M shifts and derivatives, in contrast, do not change integer degrees, so the root-family equality (3) preserves them. A moving-q normal needs the separate correction below.</p>
+<h2 id="an-explicit-generic-q-counterexample-and-repair">3. An explicit generic-Q counterexample and repair</h2>
+<p>The same finite fusion kernel and Euler/path formulas are well-defined matrices for generic Q, with F_1,…,F_(N-1) units. They are not automatically a generic-q Hopf fusion. At N=2 the Euler matrix calculated from those formulas is</p>
+<pre><code>R^E(Q,x)=[[1,0,0,0],
+          [0,0,x^-1,0],
+          [0,x^-1,1-x^-2,0],
+          [-x^-3,0,0,-x^-2]].</code></pre>
+<p>The actual generic-q compressed crossing has the same first three rows but final row (0,0,0,Q*x^-2). Therefore</p>
+<pre><code>R^E-R_actual=-x^-3 |11&gt;&lt;00|
+                  -(Q+1)x^-2 |11&gt;&lt;11|.         (6)</code></pre>
+<p>Only the first term survives at Q=-1. Off root the second is of degree ZERO and is visible to the full cut. With the same original pivot diag(x^-1,Q/x), the cut difference is</p>
+<pre><code>-Q(Q+1)x^-3 E_(1,1).</code></pre>
+<p>For the actual averaged all-ones source its first Q-normal at Q=-1, with D_Q=Q partial_Q, is</p>
+<pre><code>-1/(2x^3) !=0.                                (7)</code></pre>
+<p>Allowing x to vary with Q does not alter (7), since the source difference itself vanishes identically in x at the root. This is an explicit failure of the naive Euler extension to preserve the actual whole q-normal germ, not just a missing proof.</p>
+<p>The repair in this example is the RETAINED normal coupon</p>
+<pre><code>R^sharp=R^E+(Q+1)x^-2 |11&gt;&lt;11|,</code></pre>
+<p>after which R^sharp-R_actual has only positive carry. Calling Q=-1 before taking the normal derivative would erase that coupon and give the wrong source in (7).</p>
+<h2 id="general-normal-repair-and-bounded-nilpotence-at-fixed-jet-depth">4. General normal repair and bounded nilpotence at fixed jet depth</h2>
+<p>There is a direct matrix construction at every N. The generic fusion kernel preserves its integer degree exactly, and the right path matrix has only changes 0 or +N. Hence its generic Euler matrix R^E(Q,x) has only these two grades. Write pi_0, pi_&gt;0 for those degree projections and set</p>
+<pre><code>Delta_N=R_actual-pi_0 R^E,
+R^sharp=R^E+Delta_N
+        =R_actual+pi_&gt;0 R^E.                  (8)</code></pre>
+<p>Then R^sharp has the actual degree-zero part and the Euler completion’s positive-carry part for ALL Q on this chart. The proof of (3) now applies to R^sharp before root specialization, including its inverse and full normal jets. This is not a claim that R^sharp is an uncorrected Euler factorization or a full Hopf intertwiner.</p>
+<p>Delta_N vanishes at every primitive Nth root by (1). In the localized coefficient ring where intermediate factorials are units, it is divisible by delta=1-Q^N:</p>
+<pre><code>Delta_N=delta Z_N, Z_N regular there.          (9)</code></pre>
+<p>Indeed all proper-divisor cyclotomic factors of 1-Q^N are already units; the remaining primitive cyclotomic factor divides the regular matrix difference. The normalized original crossing and the generic kernel here have rational Q,x entries; the shared full Cartan line is retained separately on both sides.</p>
+<p>At finite Q-normal depth J, work modulo delta^(J+1). In the nonnegative N-graded matrix algebra the ideal</p>
+<pre><code>j=(delta,n)</code></pre>
+<p>satisfies the uniform bound</p>
+<pre><code>j^(b+J)=0.                                    (10)</code></pre>
+<p>Each term of a product of length b+J either contains at least b positive carries or at least J+1 central delta factors. Thus the actual-to-Euler correction lies in a unipotent group of depth bounded independently of N at fixed b,J. Units and their inverses are regular near the root. This is a useful bounded transport statement for actual finite normal data.</p>
+<p>The source DOES see the delta*Z_N terms, as (7) proves. They must be carried as explicit normal coupons rather than quotiented out. Nor does the bounded group depth bound their coefficients or the actual word’s exponential period: the Euler factors and degree-zero word still depend on N. Local E/F Ward insertions also require their complete transported defects from Section 2. These qualifications leave the geometric-period and global volume gates open.</p>
+<h2 id="independent-exact-checks">5. Independent exact checks</h2>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_positive_carry_source_scope.py">The audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/positive_carry_source_scope_results.json">saved results</a> pass 26 literal signed-word cases at braid indices 2,3,4, levels N=2,…,5, and meridians M=1,3. They check both local inverses, positive-degree support, the full first-cut matrix and the retained original framing/dimension on regular charts. The N=2 local E coupon is nonzero. An independent symbolic generic-Q calculation proves (6)-(7) and the exact repair. The grading and local-ring arguments above are all-level.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/positive_carry_completion_independent_audit.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#physical-integer-degree-proves-root-source-preservation">1. Physical integer degree proves root source preservation</a><a href="#a-local-ward-coupon-detects-the-carry">2. A local Ward coupon detects the carry</a><a href="#an-explicit-generic-q-counterexample-and-repair">3. An explicit generic-Q counterexample and repair</a><a href="#general-normal-repair-and-bounded-nilpotence-at-fixed-jet-depth">4. General normal repair and bounded nilpotence at fixed jet depth</a><a href="#independent-exact-checks">5. Independent exact checks</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

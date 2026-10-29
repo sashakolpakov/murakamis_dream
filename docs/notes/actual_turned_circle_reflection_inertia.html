@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A genuine circle turn changes positive face reflection to full Krein inertia · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Obstructions</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">Counterexample</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_turned_circle_reflection_inertia.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-genuine-circle-turn-changes-positive-face-reflection-to-full-krein-inertia">A genuine circle turn changes positive face reflection to full Krein inertia</h1>
+<p>29 October 2026. The positive original complete-circle face form does NOT remain positive through the genuine cup/cap quarter-turn used in the actual four-rung contraction. This is an all-level finite theorem, including the complete Hermite normals. Its obstruction is already present on the ORIGINAL cup and its canonical normal direction, not only on an arbitrary ambient input. An explicit full-rank positive metric repairs Cauchy at polynomial ordinary source cost; controlling its energy through overlapping recouplings is a separate problem.</p>
+<h2 id="exact-original-operators-and-the-full-turned-circle">1. Exact original operators and the full turned circle</h2>
+<p>Set N&gt;=2, d=N-1, q=exp(pi i/N), Q=q^2, x=q^d, and</p>
+<pre><code>s_r=product_(k=1)^r 2sin(pi k/N), s_0=1,
+c_j=q^(2j+1)+q^(-2j-1),
+P_N(z)=2T_N(z/2)+2,
+Bhat_v(z)=product_(k=0)^(v-1)(c_k-z)/s_v^2.</code></pre>
+<p>Let Omega be the ORIGINAL physical pair Casimir, P the literal physical swap, and L_N=(-1)^d U_d(Omega/2). The full operator identities already proved are</p>
+<pre><code>Omega^*P=P Omega, P_N(Omega)=0, P L_N&gt;=0,
+(turn A)_((a,b);(c,e))=x^(a-e)A_((d-a,c);(b,d-e)). (1)</code></pre>
+<p>The turn in (1) is the original unscaled cup/cap turn. It is not a crossing or a relabeling. It is precisely the physical turn used in the <a href="actual_cube_four_rung_positive_source.html">actual rung/cycle reduction</a>, and its Newton reversal holds with repeated roots and all normals in <a href="actual_newton_turn_positive_gram.html">the full turn theorem</a>.</p>
+<p>Write M=floor(d/2), k_j=2 for 2j&lt;d and k_j=1 for 2j=d. Let E_j be the FULL Hermite cluster projector and L_j=L_N E_j. For v&lt;=j put</p>
+<pre><code>z_j(v)=s_(j+v)/(s_(j-v)s_v^2),
+h_j=sum_(v=0)^j z_j(v)Bhat_v.</code></pre>
+<p>The exact all-normal identity is</p>
+<pre><code>turn L_j=N k_j h_j,
+f_N:=turn L_N=N sum_(j=0)^M k_j h_j.           (2)</code></pre>
+<p>Here is a parity-independent proof, rather than extrapolation of the odd rung theorem. The original Frobenius functional satisfies phi(L_j a)=N Tr(E_j m_a)=N k_j a(c_j). Its multiplication trace has algebraic multiplicity two on a paired node and one on the odd simple node; the nilpotent trace is zero only AFTER the full operator identity is used. Newton duality and genuine turn reversal therefore give the v-th coefficient of turn L_j as phi(L_j Bhat_v)=N k_j Bhat_v(c_j). Direct paired-sine factorization gives Bhat_v(c_j)=z_j(v) for v&lt;=j and zero otherwise. This proves (2) in the complete N-dimensional algebra, not merely at its nodes.</p>
+<p>Consequently, at EVERY distinct Casimir node c_k,</p>
+<pre><code>f_N(c_k)=N sum_j k_j sum_(v&lt;=min(j,k))z_j(v)z_k(v)
+                &gt;=N sum_j k_j=N^2,
+f_N(c_0)=N^2.                                 (3)</code></pre>
+<p>All summands are positive real, and z_j(0)=1. The same formula covers the high partner since c_(d-k)=c_k. In particular f_N is invertible in the full Hermite algebra, despite the radical of L_N.</p>
+<h2 id="exact-full-physical-inertia-after-the-actual-turn">2. Exact full physical inertia after the actual turn</h2>
+<p>There is a unique real Hermite polynomial g_N of degree&lt;N whose positive nodal square roots and paired normal values are</p>
+<pre><code>g_N(c)=sqrt(f_N(c)),
+g_N&#39;(c)=f_N&#39;(c)/(2sqrt(f_N(c))) at a double node. (4)</code></pre>
+<p>Every nodal value in (4) is nonzero by (3), so g_N(Omega) is invertible and g_N(Omega)^2=f_N(Omega). Since the coefficients of g_N are real, (1) gives the exact congruence</p>
+<pre><code>P f_N(Omega)=g_N(Omega)^* P g_N(Omega).        (5)</code></pre>
+<p>It follows, without an eigenvector conditioning estimate, that the reflected TURNED circle has inertia</p>
+<pre><code>positive: N(N+1)/2, negative: N(N-1)/2, zero:0. (6)</code></pre>
+<p>These are the inertia dimensions of the literal swap. Thus no invertible change of full physical basis, including one mixing all Hermite channels, can make this turned reflected form positive. For an explicit negative vector, choose any antisymmetric physical v and put u=g_N(Omega)^(-1)v; its value in (5) is -||v||^2.</p>
+<p>The conclusion concerns the specified physical reflection P. It does not rule out a different positive metric or a source-dependent coherent regrouping of a whole graph. In particular it does not contradict positivity of the actual full cube scalar.</p>
+<h2 id="the-obstruction-survives-on-the-completed-original-source-packet">3. The obstruction survives on the completed ORIGINAL source packet</h2>
+<p>Use exactly the original degree-d cup p, ordinary cap ell, marked row m and canonical Hermite direction t from the <a href="actual_tame_c0_hermite_source_frame.html">source frame theorem</a>:</p>
+<pre><code>p_u=N x^(u-d), ell_u=x^u/N, m_u=x^(d-u)/N^2,
+ell=p^*P/N^2, ell p=0, ell t=1, mp=1, mt=0,
+(Omega-c_0)p=0, (Omega-c_0)t=theta_N p.</code></pre>
+<p>These imply p^*Pp=0 and p<sup>*Pt=N</sup>2. Functional calculus retaining the actual first normal gives</p>
+<pre><code>[p,t]^* P f_N(Omega)[p,t]
+              =[[0,N^4],[N^4,beta_N]],
+beta_N=t^*P f_N(Omega)t real,
+determinant=-N^8&lt;0.                           (7)</code></pre>
+<p>The derivative term f_N’(c_0)theta_N p is present; its contribution to the upper row is zero because p^*Pp=0. Thus (7) does not omit a normal. It proves that the complete original two-dimensional source packet already has one positive and one negative direction after the turn. One cannot repair this by dropping the cup (which is null) or by replacing t with a value-only channel.</p>
+<h2 id="a-concrete-positive-cauchy-repair-with-exactly-polynomial-boundaries">4. A concrete positive Cauchy repair, with exactly polynomial boundaries</h2>
+<p>The SAME g_N gives a different, positive, full-rank metric</p>
+<pre><code>G_N=g_N(Omega)^*g_N(Omega).                    (8)</code></pre>
+<p>This retains every physical degree and Hermite normal. Its definition uses the actual turned circle, not an unknown knot invariant. Since g_N(c_0)=N, and ell Omega=c_0 ell, the literal source costs are</p>
+<pre><code>||p||_(G_N)^2=N^5,
+||ell||_(G_N^-1)^2=1/N^3.                    (9)</code></pre>
+<p>Indeed ||p||_2<sup>2=N</sup>3, ||ell||_2^2=1/N, g_N(Omega)p=Np, and ell g_N(Omega)^(-1)=ell/N. For every physical input psi and arbitrary tensor spectators,</p>
+<pre><code>|ell psi|^2 &lt;= N^-3 ||g_N(Omega)psi||_2^2.     (10)</code></pre>
+<p>This is an ORDINARY-cap inequality with the actual cup and cap. It is not a local replacement of the original unrestricted marked row. Applying it to a marked link first requires its already typed whole-source conversion, with all original peripheral factors kept.</p>
+<p>Equations (5),(8) separate the exact issue at a geometric turn: the original physical reflection supplies g^<em>P g, while positive Cauchy uses g^</em>g. The latter is a genuine available metric, but its transport through an overlapping source recoupling is not controlled by (9). Polynomial correlated cell cost and a positive closed Racah scalar do not identify these two sewing operations.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_turned_circle_reflection_inertia.py">literal turn, source packet and Hermite square-root checks</a>. The all-N proof is (2)–(7); complex inertia tests supplement it. No general graph growth or volume theorem is asserted here.</p>
+<p>Independent internal review: the crossing/source agent completed a full analytical read and fresh replay of eleven exact physical turn/source cases and six complex full-Hermite families. The review checked the source-plane determinant, ordinary source costs, inertia and retained derivative directions without identifying the constructed positive repair with a physical mirror.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_turned_circle_reflection_inertia.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-original-operators-and-the-full-turned-circle">1. Exact original operators and the full turned circle</a><a href="#exact-full-physical-inertia-after-the-actual-turn">2. Exact full physical inertia after the actual turn</a><a href="#the-obstruction-survives-on-the-completed-original-source-packet">3. The obstruction survives on the completed ORIGINAL source packet</a><a href="#a-concrete-positive-cauchy-repair-with-exactly-polynomial-boundaries">4. A concrete positive Cauchy repair, with exactly polynomial boundaries</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An actual dressed middle wall is a Fourier-mode projector · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_middle_wall_fourier_packet.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="an-actual-dressed-middle-wall-is-a-fourier-mode-projector">An actual dressed middle wall is a Fourier-mode projector</h1>
+<p>28 October 2026. A literal aggregate of the ORIGINAL middle-wall operators has an exact Fourier/Plancherel reduction. Its two Euler factors can separately have exponential norm, and its wall has both zero and positive integer carry. Their COMPLETE packet is nevertheless a known unitary clock times N times a rank-N cyclic Fourier projector. The full wrap parameter, Cartan line and marked source are retained.</p>
+<p>This is a boundary/current-kernel simplification, not a substitution for the original knot invariant. Its precise placement is essential. It does not bound an arbitrary F_H-conjugated wall or the complete unmodified knot scalar, and gives no volume lower bound.</p>
+<h2 id="the-actual-literal-factors-and-the-failed-separate-damping">1. The actual literal factors and the failed separate damping</h2>
+<p>Use the conventions of <a href="literal_middle_full_phi_certificate.html">the literal middle certificate</a>:</p>
+<pre><code>Q=exp(2pi*i/N), d=N-1, x=-exp(-pi*i/N),
+k=x^N=(-1)^(N-1), lambda=x^(-1)=Qx,
+S_1^N=mu, S_2^N=k mu,
+X=x S_2 S_1^(-1), Z=Z_1,
+n=e_1 S_2, n_-=-e_1 Z_2 S_2,
+P(A)=sum_(h=0)^d (-1)^h Q^(h(h-1)/2) A^h/F_h,
+F_h=(Q;Q)_h,
+W=E_d(Z)X=x mu^(-1)|d&gt;&lt;0| tensor S_2.      (1)</code></pre>
+<p>The full original checked positive crossing is</p>
+<pre><code>B_plus=kappa Flip D P(n_-)P(n),
+D|a,b&gt;=x^(-a-b)Q^(ab)|a,b&gt;.                (2)</code></pre>
+<p>All displayed factors in (1)–(2) are actual finite operators. The original kappa has not been normalized away; it is external only to simplify writing the following packet.</p>
+<p>The split W=W_0+W_+ has</p>
+<pre><code>W_0=x k |d,0&gt;&lt;0,d|,
+W_+=x mu^(-1)|d&gt;&lt;0| tensor sum_(b&lt;d)|b+1&gt;&lt;b|. (3)</code></pre>
+<p>Their integer degrees are 0 and +N. Between whole original crossings the positive part is source-null. INSIDE (2), however, the adjacent Euler factors have negative carries. In fact</p>
+<pre><code>pi_0(n W_+)=k(1-Q)|d-1,0&gt;&lt;0,d-1| !=0.     (4)</code></pre>
+<p>Conjugation by r^D scales W_+ by r^N and the negative part of n by r^(-N); (4) is unchanged. The <a href="actual_exponentially_tame_carry_completion.html">positive-carry damping theorem</a> therefore cannot be applied separately to these internal factors. The following identity controls the actual aggregate instead.</p>
+<h2 id="the-complete-aggregate-is-exactly-a-fourier-projector">2. The complete aggregate is exactly a Fourier projector</h2>
+<p>Define the specified checked wall packet</p>
+<pre><code>L=Flip D P(n_-) W P(n).                    (5)</code></pre>
+<p>Then, for EVERY N&gt;=2, parity and nonzero typed wrap mu,</p>
+<pre><code>L=x^2 Z_1^(-1) sum_(j=0)^d X^j
+  =N x^(N+1) g_1 E_0(X),
+g_1=x^(1-N) Z_1^(-1),
+E_0(X)=N^(-1)sum_(j=0)^d X^j.              (6)</code></pre>
+<p>The full original Cartan scalar gives kappa L, with the same original framing/peripheral source lines as (2). No unknown scalar or numerical norm factor is used in (6).</p>
+<p>Here is an entry proof including the cyclic wrap. Let (a,b) be the input and (c,e) the output BEFORE the final Flip. Put r=[a+b]=[c+e], and epsilon_in=(a+b-r)/N, epsilon_out=(c+e-r)/N. The entry is zero unless these residues agree. The right P(n) must lower the first input a to zero, hence only its power a contributes. Since</p>
+<pre><code>e_1|a&gt;=lambda(1-Q^(-a))|a-1&gt;,
+(Q^(-1);Q^(-1))_a
+    =(-1)^a Q^(-a(a+1)/2)F_a,</code></pre>
+<p>its coefficient simplifies EXACTLY to x^a times S_2^a. The wall then raises that first index to d. The left P(n_-) must have power s=d-c. Root reflection</p>
+<pre><code>(Q^(-1);Q^(-1))_c F_(d-c)=N</code></pre>
+<p>cancels its entire factorial denominator. Its remaining coefficient is lambda^s Q<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. The total S_2 power is N+a-c, so its wrap count is 1+epsilon_in-epsilon_out. Its first wrap k mu cancels the mu^(-1) in W. Simplifying the remaining powers gives the FULL entry</p>
+<pre><code>(P(n_-)WP(n))_(c,e;a,b)
+  =x^(a+c+2)Q^(-(c+1)e)
+                (k mu)^(epsilon_in-epsilon_out). (7)</code></pre>
+<p>This includes all positive, zero and negative total-degree paths; none was discarded after taking absolute values. Multiplication by D and then Flip, with output written (u,v), makes (7)</p>
+<pre><code>L_(u,v;a,b)=x^(a+u+2)
+                (k mu)^(epsilon_in-epsilon_out). (8)</code></pre>
+<p>On the other hand, exactly one summand X^j, j=[a-u], connects these states in the same total-degree residue class. Its coefficient is x^(a-u)(k mu)^(epsilon_in-epsilon_out). Multiplying by the output factor x^2 Q<sup>(-u)=x</sup>(2u+2) proves (6).</p>
+<h2 id="plancherel-exact-norm-and-reduction-to-one-channel-head">3. Plancherel, exact norm and reduction to one channel head</h2>
+<p>For |mu|=1 the literal X is unitary and X^N=1. It has N disjoint cycles, labeled by total degree modulo N, and its eigenvalue-one space has dimension N. Thus E_0(X) is an ORTHOGONAL projector. Equation (6) gives</p>
+<pre><code>rank L=N, ||L||=N,
+L^dagger L=N^2 E_0(X),
+LL^dagger=N^2 Z_1^(-1)E_0(X)Z_1.            (9)</code></pre>
+<p>This is an exact two-copy positive contraction. It is not inferred from positivity of the original pivotal trace, which is false.</p>
+<p>For explicit normalized channel vectors, set b=[r-a] and epsilon=(a+b-r)/N, and put</p>
+<pre><code>U|r&gt;=N^(-1/2)sum_(a=0)^d
+       x^(-a)(k mu)^(-epsilon)|a,[r-a]&gt;.</code></pre>
+<p>Different r have disjoint support, and XU=U. Therefore</p>
+<pre><code>U^dagger U=I_N, E_0(X)=UU^dagger,
+L=N x^2 Z_1^(-1) U U^dagger.                (10)</code></pre>
+<p>It follows that every occurrence of this actual two-head packet can be replaced by two known isometries with ONE N-dimensional internal channel. Its previous two-head cut had dimension N^2. A normalized root Fourier transform on the r-channel is unitary; Plancherel preserves both exterior channel norms exactly.</p>
+<p>For example retain any specified exterior row Lambda, state psi and original surrounding operators A,B. Equation (10) gives</p>
+<pre><code>Lambda A(kappa L)B psi
+  =kappa N x^2 &lt;alpha,beta&gt;,
+alpha=U^dagger Z_1 A^dagger Lambda^dagger,
+beta=U^dagger B psi.                        (11)</code></pre>
+<p>Original spectator indices can remain as tensor factors in (11). Every original cap, pivot and normalization remains in Lambda, psi,A,B; these are not chosen from the unknown knot value. Hence</p>
+<pre><code>|Lambda A(kappa L)B psi|^2
+              &lt;=N^2 ||alpha||^2 ||beta||^2. (12)</code></pre>
+<p>The same identity holds after a unitary DFT of both channel vectors. Formula (11) is an actual local channel reduction, not the tautological Fourier transform of an already evaluated scalar. Its two exterior vectors need not agree or be conjugates; (12) does not give a lower bound or geometric alignment.</p>
+<p>For a fixed compact nonunit wrap, each X^j has norm at most max(|mu|,|mu|^(-1)), because each head can wrap at most once. Thus ||L||&lt;=N max(|mu|,|mu|^(-1)); the unitary formulation is used only for |mu|=1. No exponential source conditioning is hidden by fixing a regular nonzero wrap.</p>
+<h2 id="precise-original-source-placement-and-marked-face-normalizers">4. Precise original-source placement and marked face normalizers</h2>
+<p>Let P=P(n), H=P^(-1)ZP and define the CORRECT transported wall</p>
+<pre><code>W_H=P^(-1) W P.                            (13)</code></pre>
+<p>Then the actual input insertion has exactly the packet (5):</p>
+<pre><code>B_plus W_H=kappa L.                        (14)</code></pre>
+<p>This is valid inside every original signed word and with its ENTIRE fixed co-source, simply by the literal matrix identity. It is not the false relocation B_plus W -&gt; W B_plus. Bare W and the transported W_H are different coupons.</p>
+<p>The marked full-Phi clocks are the original ones,</p>
+<pre><code>F_Z=phi_N diag_j(1/F_j), F_H=P^(-1)F_ZP.</code></pre>
+<p>Since W has first input zero and first output d, F_d=N gives</p>
+<pre><code>F_Z W F_Z^(-1)=W/N,
+F_H W_H F_H^(-1)=W_H/N,
+B_plus F_H^s W_H F_H^(-s)=kappa N^(-s)L.    (15)</code></pre>
+<p>The exact phi_N cancels only in this specified conjugation; it has not been deleted from a one-sided face or source. Similarly for the original factorial face frame Gamma_j, Gamma_d=N^2 Q^(-1), Gamma_0=1, so</p>
+<pre><code>Gamma W Gamma^(-1)=N^2 Q^(-1)W.             (16)</code></pre>
+<p>Transporting BOTH Gamma and W by P gives the same relation in the H frame. Any bounded number of these MATCHED conjugations therefore changes the packet by known polynomial powers of N and recorded root phases, despite exponential standalone norms of Gamma, P or F_H.</p>
+<p>These identities do not bound arbitrary one-sided F_H factors or an untransported wall in an unrelated slot. A full middle-move comparison must exhibit (13)–(15), or another exact matching of its actual interfaces, before invoking (9)–(12).</p>
+<p>For a concrete source check, the ORIGINAL cup has Xp=Q^(-1)p. Thus Lp=0, while the bare wall has the known nonzero mWp. This distinction is compulsory: the packet cannot be substituted for the bare wall in the old endpoint formula. If an explicitly transported source has X-eigenvalue one, its E_0(X) channel instead survives, with its actual transported dual still retained.</p>
+<h2 id="the-original-affine-cap-is-a-charged-fourier-mode">5. The original affine cap is a charged Fourier mode</h2>
+<p>There is an exact bridge from (6) to the FULL original nilpotent source, before replacing a knot cut by its scalar value. Put</p>
+<pre><code>T=Z_1 Z_2, P_d=E_d(T), P_cap=P_d E_0(X).</code></pre>
+<p>T commutes with X. Since the integer degree of two physical heads lies in [0,2d], its eigenvalue Q^d has exactly the ONE lift D=d; the putative second lift d+N exceeds 2d. Thus P_d is precisely the original positive affine cap charge D+1=N, with no zero-winding alias. At r=d the isometry vector in Section 3 is</p>
+<pre><code>w=N^(-1/2)sum_a x^(-a)|a,d-a&gt;,
+P_cap=|w&gt;&lt;w|.                              (17)</code></pre>
+<p>It is independent of mu. Even for a nonunit mu, X restricted to this degree-d sector is unitary: its two simultaneous endpoint wraps cancel the mark. Hence P_cap is an orthogonal rank-one projector for every nonzero typed mark at complete color.</p>
+<p>Use the ORIGINAL cup and ordinary right cap</p>
+<pre><code>p_(a,b)=N x^(-b) delta_(a+b,d),
+l_(a,b)=x^b g_a/N delta_(a+b,d),
+Pi_N=p l.</code></pre>
+<p>Direct substitution of (17) proves</p>
+<pre><code>Pi_N=N g_1 P_cap,
+Pi_N^dagger Pi_N=N^2 P_cap,
+P_d(kappa L)=kappa x^(N+1)Pi_N.             (18)</code></pre>
+<p>The pivot is indispensable. It moves the ket’s X-eigenvalue from one to Q^(-1), the exact original cup mark; &lt;w,g_1 w&gt;=0, so Pi_N^2=0. This positive two-copy identity therefore does not contradict the failure of a positive one-copy pivotal trace.</p>
+<p>Retain the actual partial closing</p>
+<pre><code>Phi_g(A)=Tr_2[A(I tensor g)].</code></pre>
+<p>The same original turns give Phi_g(Pi_N)=I. Consequently for ANY finite matrix C on the open cut, not merely a scalar intertwiner,</p>
+<pre><code>C=(kappa x^(N+1))^(-1)
+      Phi_g[(C tensor I)P_d(kappa L)].       (19)</code></pre>
+<p>This is a source-normalized opening through the actual wall packet. Its factor is a known original Cartan/root phase, not a scalar chosen from the value of a knot period. The external modified dimension, framing and peripheral line multiply both sides unchanged.</p>
+<p>The vector w is maximally entangled: Tr_2(P_cap)=I/N. Equation (18) therefore also proves, for EVERY C,</p>
+<pre><code>||(C tensor I)Pi_N||_HS^2=N||C||_HS^2.       (20)</code></pre>
+<p>For the actual knot cut C=K_N I this is N<sup>2|K_N|</sup>2. Unlike a Fourier transform of an already scalar K_N delta, (17)–(20) specify the original charged source and an explicit local Fourier projector before that scalar reduction. They may be inserted into the full uncontracted original tensor network. Plancherel then acts on known head or channel variables with all normalization fixed.</p>
+<p>There is a source-preserving positive averaging at this TERMINAL opening. Set</p>
+<pre><code>P_k=Z_1^k P_cap Z_1^(-k), Pi_k=N g_1 P_k,
+k=0,...,d.</code></pre>
+<p>The vectors Z_1^k w are an orthonormal Fourier basis of the degree-d sector. Every P_k has marginal I/N. Thus exactly</p>
+<pre><code>sum_k P_k=P_d, Phi_g(Pi_k)=I,
+||(C tensor I)Pi_k||_HS^2=N||C||_HS^2,
+sum_k ||(C tensor I)g_1 P_k||_HS^2=||C||_HS^2. (21)</code></pre>
+<p>For the partial closing, the only nonzero traced entry has b=d-a, and its two pivotal factors obey g_a g_(d-a)=1; the Fourier phases cancel. This proves the middle identity for an arbitrary nonscalar C, independently of an intertwining or scalar-cut assumption. The other identities follow from the orthogonal modes and their identical marginals.</p>
+<p>Equivalently the positive terminal density N P_cap can be replaced by its clock average P_d when testing ANY operator on its FIRST leg alone. This is an exact positive mixed boundary source, with the factor N retained. It does not average an internal paired source on which the exterior acts on both legs. In particular it does not justify replacing local doubled Euler coefficients c_a conjugate(c_b) by their diagonal a=b terms. Such an internal dephasing would require another source identity.</p>
+<p>Equations (19)–(20) still contain the original exterior pivotal contractions. Their norm is not determined by the nonzero local projector. In particular they provide no lower bound for its geometric overlap and no Rivin-volume estimate for the whole doubled network.</p>
+<h2 id="integer-degree-and-the-remaining-geometric-limitation">6. Integer degree and the remaining geometric limitation</h2>
+<p>The degree-zero part of (7) has c+e=a+b, and its total-degree blocks have rank one and unit-modulus entries. Its norm is N. If all OTHER exterior factors preserve total integer degree, the original pivotal first-cut and marked-plat sources kill the packet’s +/-N parts. This gives an exact source replacement by that degree-zero packet, not a scalar relocation to an endpoint.</p>
+<p>Retaining the full Fourier projector (10) is often the simpler representation: integer-degree projection would split its N modular blocks into 2N-1 ordinary blocks. Neither operation makes the entire knot source positive or bounds its other crossings.</p>
+<p>The projector in (6) is a position-ratio clock X, not a physical head clock Z_1. Its correctly transported version can be a relative H-wall. Therefore the finite physical-projector action-zero theorem cannot simply be applied to (6). A regular geometric source can meet an auxiliary face degeneration. The useful rigorous conclusion is the polynomial norm and explicit one-head Plancherel reduction; geometric support and source overlap of the remaining exterior are still additional work.</p>
+<h2 id="audit">7. Audit</h2>
+<pre><code>python3 experiments/audit_actual_middle_wall_fourier_packet.py</code></pre>
+<p>The audit compares (6)–(8) directly with the literal finite Euler operators for both parities and nontrivial wrap marks. It retains the actual Cartan, checked flip, original cup/marker, and complete figure-eight pivotal source. It checks the transported-source identity (14), marked normalization (15), and independent complex isometries/double-layer Plancherel identities. It tests all terminal Fourier modes, their positive average, and arbitrary nonscalar cut matrices in (21). The entry calculation above proves the all-level formula.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>s(a+b+1)+s^2<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_middle_wall_fourier_packet.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-literal-factors-and-the-failed-separate-damping">1. The actual literal factors and the failed separate damping</a><a href="#the-complete-aggregate-is-exactly-a-fourier-projector">2. The complete aggregate is exactly a Fourier projector</a><a href="#plancherel-exact-norm-and-reduction-to-one-channel-head">3. Plancherel, exact norm and reduction to one channel head</a><a href="#precise-original-source-placement-and-marked-face-normalizers">4. Precise original-source placement and marked face normalizers</a><a href="#the-original-affine-cap-is-a-charged-fourier-mode">5. The original affine cap is a charged Fourier mode</a><a href="#integer-degree-and-the-remaining-geometric-limitation">6. Integer degree and the remaining geometric limitation</a><a href="#audit">7. Audit</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual generic six-head source as a typed recoupling column · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_generic_tetrahedral_source_as_recoupling.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-actual-generic-six-head-source-as-a-typed-recoupling-column">The actual generic six-head source as a typed recoupling column</h1>
+<p>29 October 2026. This identifies the full generic source coefficient <code>B_abc</code> with a precisely normalized Clebsch recoupling coefficient. The proof uses the original nested physical cups and ordered ribbon duals, including the pivotal clock at the bend. It applies to every ordinary triangle <code>0&lt;=a,b,c&lt;=d=N-1</code>, including the high root partners. It is a rational generic identity; root zeros and poles are not discarded.</p>
+<p>The finite source sum is defined in <a href="actual_generic_six_head_tetrahedral_source.html">the generic six-head note</a>, §3. The unequal Clebsch conventions and complete four-port identities are those of <a href="actual_ordinary_four_port_recoupling_kernel.html">the four-port kernel</a>, §§1–4. No quantum 6j formula, orthogonality assertion, or asymptotic estimate is an input here.</p>
+<h2 id="the-two-genuinely-typed-hom-bases">1. The two genuinely typed Hom bases</h2>
+<p>Put <code>Q=zeta^2</code>, <code>F_r=(Q;Q)_r</code>, and <code>V=V_d</code>. The ordinary object <code>Q_j</code> has highest weight <code>2j</code>. Every Clebsch map <code>W_AB^C</code> below has its first highest-vector component equal to one. Set</p>
+<pre><code>cV=N zeta^(-d^2), pV=cV p_d,
+P_L(u)=(-1)^u zeta^[u(L-u-1)] F_u F_(L-u)/F_L,
+p_L(u,L-u)=P_L(u), ell_L=p_L^(-1).</code></pre>
+<p>For fixed <code>a,b</code>, a basis of <code>Hom(Q_b,V tensor V tensor Q_a)</code> is</p>
+<pre><code>L_c=(W_c tensor I_Qa) W_(Qc,Qa)^Qb,
+|a-b|&lt;=c&lt;=min(a+b,d).                         (1)</code></pre>
+<p>Here <code>W_c:Q_c -&gt; V tensor V</code> is the physical equal-pair map. A right basis instead first couples <code>V tensor Q_a</code> to an ordinary channel of highest weight <code>D</code>. We use its particular channel <code>D=d</code>:</p>
+<pre><code>T=(I_V tensor W_(V,Qa)^V) W_b,
+T=sum_c H_c L_c.                              (2)</code></pre>
+<p>All expressions have the displayed physical order <code>V,V,Q_a</code>. In particular <code>H_c</code> is a RIGHT-to-LEFT coefficient, rather than the inverse four-port coefficient. Generic highest-weight decomposition proves the bases complete; equivalently the explicit unequal Clebsch norms in the four-port note give their retractions before specialization.</p>
+<p>Write</p>
+<pre><code>r=b+c-a, r1=a+b-c, r2=a+c-b.</code></pre>
+<p>The exact source-to-recoupling identity is</p>
+<pre><code>H_c=(-1)^(d+c) zeta^E
+   F_r1 F_r2 F_(d-a) F_(d-c) F_(2c+1)
+   /[F_a F_d F_(d+c+1)] * B_abc,
+E=-2a^2-5c^2+2ac+2bc+ad+3dc-c+d.              (3)</code></pre>
+<p>This is an equality of generic rational functions, not an equality deduced from root nodal values. The following index proof fixes every clock and scalar in (3).</p>
+<h2 id="bend-the-original-three-cup-source">2. Bend the original three-cup source</h2>
+<p>Let</p>
+<pre><code>J=pV_16 pV_23 pV_45,
+U=(DW_a tensor DW_b tensor DW_c)J.</code></pre>
+<p>The actual generic source formula gives <code>U=sDW_abc Theta_abc</code>, where <code>Theta_abc(2a,r,0)=1</code> and</p>
+<pre><code>sDW_abc=cV^-3 zeta^[c(d-2c)-2c]
+                                 P_(2b)(r1) B_abc.       (4)</code></pre>
+<p>Move the first ordinary leg to the last by the ACTUAL inverse cyclic turn, and bend the now first <code>Q_b</code> leg into an input. The resulting map <code>M:Q_b -&gt; Q_c tensor Q_a</code> has literal entries</p>
+<pre><code>M_(gamma,alpha;t)=sum_beta ell_(2b)(t,beta)
+                K_(2a)(alpha)^-1 U_(alpha,beta,gamma).
+                                                           (5)</code></pre>
+<p>The <code>K_(2a)^-1</code> is essential: for an even highest weight <code>2a</code>, the inverse cyclic cup/cap turn is <code>K_(2a)^-1</code>, not a permutation. Taking the input highest color <code>t=0</code> and output <code>(gamma,alpha)=(0,r2)</code> gives</p>
+<pre><code>M=sDW_abc kTheta W_(Qc,Qa)^Qb,
+kTheta=(-1)^r1 zeta^[2c+r1(2a+1-r1)]
+                     F_(2b)F_r2/(F_r F_(2a)).               (6)</code></pre>
+<p>Indeed <code>ell_(2b)(0,2b)=zeta^(2b)</code> and <code>K_(2a)(r2)^-1=zeta^(2c-2b)</code>. The remaining canonical invariant coefficient is the direct highest equation</p>
+<pre><code>Theta_abc(r2,2b,0)=(-1)^r1 zeta^[r1(2a+1-r1)]
+                          F_(2b)F_r2/(F_r F_(2a)).</code></pre>
+<p>There is no division by a root-zero invariant norm in this step.</p>
+<h2 id="the-same-bend-keeping-all-physical-ports-open">3. The same bend, keeping all physical ports open</h2>
+<p>Define an actual map from one physical object into <code>V tensor Q_a</code> by</p>
+<pre><code>Wtilde_a(i6,alpha;i2)
+   =(-1)^d K_d(i2) K_(2a)(alpha)^-1
+              sum_i1 DW_a(alpha;i1,i2) pV(i1,i6).          (7)</code></pre>
+<p>This is a rigid bend of <code>DW_a</code>, so it is a generic Hopf map. Directly from the highest entry <code>(i6,alpha;i2)=(0,a;0)</code> one obtains</p>
+<pre><code>Wtilde_a=theta_a W_(V,Qa)^V,
+theta_a=cV^-1 zeta^[a(2a-d)]
+                     F_a F_d/(F_(2a)F_(d-a)).               (8)</code></pre>
+<p>For completeness the entry before the remaining physical cup cancels is</p>
+<pre><code>DW_a(a;d,0)=cV^-2 zeta^[a(2a-d)]
+                     F_a F_d/(F_(2a)F_(d-a)).</code></pre>
+<p>It follows by taking the unique term of the physical divided-coproduct formula for <code>W_a[a](d,0)</code>. In (7), the signs and the highest physical clock cancel against <code>pV(d,0)</code>, leaving exactly <code>cV</code> times that entry.</p>
+<p>Now substitute the THREE literal cups of <code>J</code> and the ordered formula for <code>DW_b</code> into (5). The cups <code>pV_23,pV_45</code> force <code>i3=d-i2</code>, <code>i5=d-i4</code>. Their only surviving ratio is</p>
+<pre><code>pV(i4)/pV(d-i4)=(-1)^d K_d(i4).</code></pre>
+<p>The ordinary input bend contributes <code>P_(2b)(t)/P_(2b)(2b-t)=K_(2b)(t)</code>. Physical weight conservation in <code>W_b[t](i5,i2)</code> gives</p>
+<pre><code>K_(2b)(t)=K_d(i5)K_d(i2),
+K_d(i4)=K_d(i5)^-1.</code></pre>
+<p>Thus the two physical clocks at <code>i4,i5</code> cancel, with precisely the remaining factors in (7). This proves the all-input map identity</p>
+<pre><code>M=(DW_c tensor I_Qa)(I_V tensor Wtilde_a) W_b
+  =theta_a (DW_c tensor I_Qa) T.                         (9)</code></pre>
+<p>Equation(9) preserves arbitrary allowed exterior tensors and all input colors of <code>Q_b</code>. It is stronger than comparing a single source corner.</p>
+<p>Apply <code>DW_c</code> to (2). The generic equal-pair norm is</p>
+<pre><code>DW_c W_c=n_c I,
+n_c=(-1)^(d+c)cV^-2
+   zeta^[c(c+1)-d(2c+1)]
+                  F_(d+c+1)/(F_(d-c)F_(2c+1)).            (10)</code></pre>
+<p>Different generic channels are killed. Comparing (6),(9) gives</p>
+<pre><code>H_c=sDW_abc kTheta/(theta_a n_c).                       (11)</code></pre>
+<p>Insert (4),(6),(8),(10) and use</p>
+<pre><code>P_(2b)(r1) kTheta
+               =zeta^[2c(r1+1)] F_r1 F_r2/F_(2a).</code></pre>
+<p>The powers of <code>cV</code>, all three ordinary cups, and <code>F_(2a)</code> cancel. The remaining exponent and factorials are exactly (3).</p>
+<h2 id="actual-casimir-consequence-and-limits">4. Actual Casimir consequence and limits</h2>
+<p>The RIGHT map <code>T</code> factors through the ordinary physical object <code>V_d</code> on positions 2,3. Hence</p>
+<pre><code>Omega_23 T=(zeta^N+zeta^-N) T.                         (12)</code></pre>
+<p>Consequently the vector of actual coefficients <code>H_c</code> from (3) solves the genuine left-channel Casimir eigenproblem, including its endpoint conditions. This supplies a literal source normalization for comparison with a finite Askey–Wilson/Sears polynomial. Identifying that polynomial requires matching the actual channel recurrence and gauge; its identity is not assumed in this note.</p>
+<p>All equations above are generic identities. They may be continued as meromorphic identities to the root, with paired columns and their normal derivatives retained together. Individual factors in (3) or (11) can vanish or have poles; the regular original physical source <code>B_abc</code> is still the finite analytic sum in the six-head note. Nothing here bounds recoupling conditioning, turns the ordered dual into a Hermitian adjoint, or proves a primitive-graph positive asymptotic.</p>
+<h2 id="verification">5. Verification</h2>
+<p>The matching audit constructs the physical <code>W_j,DW_j</code> independently, checks (7),(8) on every input color, and verifies (3) by projecting the full map (2) for every admissible triangle at generic finite-field levels. A separate literal six-head contraction verifies (5),(9), including the pivotal clock, before reducing to a scalar. These finite checks supplement the displayed generic index proof.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_generic_tetrahedral_source_as_recoupling.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-two-genuinely-typed-hom-bases">1. The two genuinely typed Hom bases</a><a href="#bend-the-original-three-cup-source">2. Bend the original three-cup source</a><a href="#the-same-bend-keeping-all-physical-ports-open">3. The same bend, keeping all physical ports open</a><a href="#actual-casimir-consequence-and-limits">4. Actual Casimir consequence and limits</a><a href="#verification">5. Verification</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

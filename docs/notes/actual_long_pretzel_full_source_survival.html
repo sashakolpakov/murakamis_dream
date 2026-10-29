@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A nonzero asymptotic for the whole original long-pretzel source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_long_pretzel_full_source_survival.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-nonzero-asymptotic-for-the-whole-original-long-pretzel-source">A nonzero asymptotic for the whole original long-pretzel source</h1>
+<p><strong>Width extension, 29 October.</strong> The <a href="actual_pretzel_all_width_extension.html">varying-radius alias estimate</a> now supplies the full-color gap for every fixed odd s&gt;=9. All local packet and filling inputs used here already hold there, so the theorem and its geometric equality extend to those widths without changing the invariant or signed-slope quantifiers. The older s&gt;=25 argument below remains as the original assembly with its coarser sufficient bound.</p>
+<p>29 October 2026. The full original source, with ALL auxiliary colors and original normal terms, now has a nonzero selected asymptotic for every fixed odd pretzel width s&gt;=25 and every independently sufficiently large fixed signed twist tuple. This is a quantitative whole-source survival theorem. Its rate is specified by the exact source action. The separate <a href="actual_long_pretzel_geometric_filling_completion.html">geometric completion theorem</a> now proves that this rate equals the filled hyperbolic volume. Its <a href="actual_long_pretzel_casson_rivin_equality.html">Casson–Rivin presentation</a> identifies the source point as the unique filled-slope volume maximizer. The equality uses these geometric proofs, rather than naming a formal source action a volume.</p>
+<h2 id="the-unchanged-invariant-and-the-statement">1. The unchanged invariant and the statement</h2>
+<p>Use the literal original diagram, turns and marked cap from <a href="actual_odd_pretzel_augmented_transfer_source.html">the odd-pretzel source theorem</a>. There are s boxes R^(-(2p_i+1)), where s is odd. Its connectivity calculation proves that this is a one-component pretzel diagram. Let Kraw_N(p) be its original marked tensor contraction, including the full physical Cartan factors on every crossing. Its exact filling identity is</p>
+<pre><code>Kraw_N(p)=kappa^(-2 sum_i p_i)
+  sum_(j_1,...,j_s=1)^N [product_i beta_(j_i-1)^(-p_i)]
+                             A_(s,N)(N-j_1,...,N-j_s). (1)</code></pre>
+<p>Here beta^(P) is the full Fourier–Hermite coefficient of r_N^(2P), and kappa=q<sup>((N-1)</sup>2/2), q=exp(pi i/N). The upper auxiliary bands and the Casimir normal derivatives are part of A and beta in (1). There is no replacement of this finite source by a positive model.</p>
+<p>For every fixed odd s&gt;=25 there exists an integer p_s&gt;0 such that for every FIXED tuple of integers |p_i|&gt;=p_s,</p>
+<pre><code>Kraw_N(p)=N^(3/2) exp[-i s pi(N-1)/4]
+             kappa^(-sum_i p_i) D_s(p) exp[N A_s(p)]
+                                  (1+O_(s,p)(1/N)),   (2)</code></pre>
+<p>with D_s(p) NONZERO. The action and amplitude are the explicit holomorphic functions defined in section2 of <a href="actual_pretzel_cusp_corridor_filling_survival.html">the cusp-corridor filling theorem</a>. The slopes can be positive or negative and can have arbitrarily different magnitudes. They are fixed BEFORE N tends to infinity. Both parities and all composite levels are included.</p>
+<p>The <a href="actual_complete_augmented_source_normalization.html">original normalization calculation</a> applies here to the actual one-component marked diagram as well: its reduced Kashaev evaluation differs from Kraw only by its recorded unit framing character. In particular its absolute value is |Kraw|. The full one-cut modified ADO convention instead contributes the retained whole-germ value i^(N+3)/N at the main complete color. There is one such factor, not a new factor for each auxiliary color used in (1). Thus (2) specifies the original reduced invariant’s growth, and not just an unnormalized comparison sum.</p>
+<h2 id="exact-assembly-of-the-global-and-local-estimates">2. Exact assembly of the global and local estimates</h2>
+<p>Write F0=V_s/(2pi) for the already calibrated COMPLETE augmented source rate. Choose a fixed sufficiently small corridor 0&lt;=h_i=N-j_i&lt;=H=floor(delta N) for which the exact analytic-packet and cusp-corridor theorems hold.</p>
+<p>The <a href="actual_pretzel_global_alias_and_colored_source_gap.html">global full-color theorem</a> gives gamma&gt;0 and a sequence epsilon_N-&gt;0, uniform over the ENTIRE complement of this color corridor, such that</p>
+<pre><code>|A_(s,N)(h)|&lt;=exp[N(F0-gamma+epsilon_N)].             (3)</code></pre>
+<p>Replacing delta by a slightly smaller positive value handles the integer floor without changing this statement. The theorem includes every intermediate color, the even-level middle color j=N/2, the whole RP band, and the original value-plus-normal source functional. Its sufficient width condition is</p>
+<pre><code>V_s/(2pi)&gt;(s-1)v_8/pi + (1/2)log(4+sqrt(15)),</code></pre>
+<p>which is proved for all odd s&gt;=25. No small-color unitarity claim is used: the alias itself can grow exponentially, but its proved rate is small enough for (3).</p>
+<p>The exact full-normal filling coefficients satisfy</p>
+<pre><code>sum_(j=0)^(N-1) |beta_j^(-p_i)|&lt;=2N(1+|p_i|).</code></pre>
+<p>Apply this to the complement in (1), BEFORE any limiting operation. All its kappa factors have modulus one. Its absolute contribution is therefore at most</p>
+<pre><code>product_i[2N(1+|p_i|)] exp[N(F0-gamma+epsilon_N)].     (4)</code></pre>
+<p>Inside the corridor the independently proved source-preserving filling theorem supplies exactly (2), with nonzero coefficient, for all independently sufficiently large |p_i|. In that theorem all color and Fourier endpoint terms have fixed positive source gaps. The high-charge estimate has a gap independent of the largest slope; this is essential when the |p_i| are not comparable. The exact source includes no zero Fourier charge. Its 2^s all-unit signed charges add, and all other local charges have a strict gap.</p>
+<p>The same theorem gives Re A_s(p)-&gt;F0 uniformly as all |p_i| tend to infinity. Increase the common threshold p_s so that</p>
+<pre><code>Re A_s(p)&gt;F0-gamma/2</code></pre>
+<p>whenever every |p_i|&gt;=p_s, and so that the fixed corridor theorem also applies. For each such fixed tuple, (4) is exponentially smaller than its nonzero corridor asymptotic. Adding it cannot cancel the leading coefficient, and its relative error is eventually O(1/N). This proves (2) for the WHOLE original finite sum (1).</p>
+<h2 id="the-rate-and-its-subsequent-geometric-equality">3. The rate and its subsequent geometric equality</h2>
+<p>Define only as notation</p>
+<pre><code>Vsrc_s(p)=2pi Re A_s(p).</code></pre>
+<p>Then the theorem proves an actual limit for the original invariant:</p>
+<pre><code>lim_(N-&gt;infinity) (2pi/N)log|&lt;Pretzel(2p_1+1,...,2p_s+1)&gt;_N|
+                                            =Vsrc_s(p). (5)</code></pre>
+<p>The displayed knot notation uses the source’s crossing convention R^(-(2p_i+1)); globally mirroring the convention changes phases but does not change this absolute-value statement.</p>
+<p>Let tau_s=(1+exp(2iu_s))/2, u_s=atan(sec(pi/s)). The exact action calculation gives</p>
+<pre><code>Vsrc_s(p)=V_s-2pi^2 Im(tau_s)
+              sum_i |1+2p_i tau_s|^(-2)
+                                 +O_s(sum_i |p_i|^(-4)). (6)</code></pre>
+<p>More fundamentally, A_s is the value of the analytic source phase</p>
+<pre><code>Psi(z)-2pi i sum_i(p_i z_i^2+z_i)</code></pre>
+<p>at its selected nondegenerate critical point, with Psi the explicitly defined Fourier Legendre transform of the actual mixed-color action. Formula (6) is a consequence, not a substitute for that exact action.</p>
+<p>The subsequent geometric completion proves</p>
+<pre><code>Vsrc_s(p)=Vol(S^3 minus Pretzel(2p_1+1,...,2p_s+1)).   (7)</code></pre>
+<p>The <a href="actual_long_pretzel_geometric_filling_completion.html">geometric comparison and completion</a> match the actual auxiliary meridian and preferred longitude, construct the filled-knot representation rho_p, and prove</p>
+<pre><code>Vsrc_s(p)=Vol(rho_p)=Vol(S^3 minus K).</code></pre>
+<p>The positive core and primitive2pi tubes give a complete finite-volume hyperbolic metric with holonomy rho_p. This closes equality(7), not merely the earlier upper-bound checkpoint. The actual fundamental-chain regulator and smooth completion, rather than agreement of one cusp derivative, establish it.</p>
+<p>Neither an uncontrolled complementary color sector nor an assumed nonzero cycle coefficient remains in(2). The separate geometric argument is explicitly linked so that equality(7) is not hidden in the name of the source action.</p>
+<h2 id="verification-and-its-scope">4. Verification and its scope</h2>
+<p>The global complement proof and the corridor proof have each passed independent analytic reviews, including signed unequal slopes, the even-level middle color, and the paired high-charge endpoint currents. The assembly above has also passed an independent review. Fresh root replays of all four supporting audits passed:</p>
+<ul>
+<li><code>audit_actual_pretzel_global_alias_and_colored_source_gap.py</code>: exact physical band identities, normal coefficients, spectral ellipse, frozen blocks, binomial sum and the rational width bound.</li>
+<li><code>audit_actual_pretzel_exact_analytic_color_packet.py</code>: actual marked-source decompositions and exact complex packets.</li>
+<li><code>audit_actual_filling_source_fourier_endpoint_gap.py</code>: full-normal kernels, exact contour currents and charge transforms.</li>
+<li><code>audit_actual_pretzel_cusp_corridor_filling_survival.py</code>: original filling coefficients and signed Gaussian density/phase calibrations on controlled analytic packets.</li>
+</ul>
+<p>The analytic-packet calibrations in the last audit are not numerical proofs of the pretzel asymptotic. The actual-source hypotheses and uniform asymptotic estimates are proved in the linked notes. None of these finite checks alone supplies geometric equality(7); that conclusion uses the separate geometric completion proof.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_long_pretzel_full_source_survival.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-unchanged-invariant-and-the-statement">1. The unchanged invariant and the statement</a><a href="#exact-assembly-of-the-global-and-local-estimates">2. Exact assembly of the global and local estimates</a><a href="#the-rate-and-its-subsequent-geometric-equality">3. The rate and its subsequent geometric equality</a><a href="#verification-and-its-scope">4. Verification and its scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

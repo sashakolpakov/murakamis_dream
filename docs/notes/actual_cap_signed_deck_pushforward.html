@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Four-channel actual cap pushforward with signed deck characters · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_cap_signed_deck_pushforward.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="four-channel-actual-cap-pushforward-with-signed-deck-characters">Four-channel actual cap pushforward with signed deck characters</h1>
+<p>28 October 2026. This extends the exact central-meromorphic <a href="actual_cap_pachner_wall_charge.html">actual cap extraction</a> to bounded SIGNED Puiseux characters. The source, co-source, residue weights and 0/d corner indices are the original ones. Fixed negative characters cost a power of N. Arbitrary bulk characters are not covered by this polynomial bound.</p>
+<h2 id="a-single-exact-formula-for-every-actual-endpoint-channel">1. A single exact formula for every actual endpoint channel</h2>
+<p>Put d=N-1, epsilon=a^N, delta=(1-epsilon)^(1/N), delta(0)=1. Use the original Fermat sources P^s and L^t, s,t in {0,d}, and alpha_0=beta_0=1, alpha_d=1-Q, beta_d=N. Set</p>
+<pre><code>sigma=1_(s=d), D=sigma+t,
+R=(1-Q delta)/(1-Q),
+E_j=product_(h=0)^(j-1)(1-delta Q^h),
+E_(j+N)=epsilon E_j.</code></pre>
+<p>The last identity extends E_j to ALL signed integers j as a meromorphic germ. It retains, rather than resets, the full central norm. Let O(a)=a^ell O_ell(epsilon), ell any integer. The exact cap functional</p>
+<pre><code>[alpha_s beta_t]^-1 Res_(a=0)
+           a^(D-1) L^t(a) O(a) P^s(a) da</code></pre>
+<p>is the central constant coefficient of</p>
+<pre><code>sum_(n=0)^d H_n^(ts,ell)(epsilon)
+            [O_ell(epsilon)]_(m(n),n),
+m(n)=(n+t-s+ell) modulo N,</code></pre>
+<p>where h=n+sigma and</p>
+<pre><code>H_n^(ts,ell)=B_t R^sigma E_(h+ell)/E_(h+1),
+B_0=1-delta, B_d=epsilon/N.                           (1)</code></pre>
+<p>Here the representative m(n) is always in 0,…,d. The epsilon powers in (1) include the corresponding integer carry exactly.</p>
+<p>To prove (1), express every source product in the common E frame:</p>
+<pre><code>denominator(P^0_n)=E_(n+1)/(1-delta),
+denominator(P^d_n)=E_(n+2)/[(1-delta)(1-Qdelta)],
+numerator(L^0_m)=E_m,
+numerator(L^d_m)=E_(m+1)/(1-delta).</code></pre>
+<p>The prefactor in the residue contributes a^(D+ell+n-m). Since D+ell+n-m is a multiple of N, this is precisely its integer power of epsilon. Apply E_(j+N)=epsilon E_j. All long products cancel, leaving exactly (1). This proves the operator indices, normalization and deck charge simultaneously. At ell=0 it is the four-channel table in the earlier theorem.</p>
+<p>No assumption that an arbitrary singular matrix descends to epsilon has been made: its chosen character a^ell is part of the input. Summing the actual character decomposition preserves the original matrix operator. A character may not be deleted because its central norm later has a numerical specialization.</p>
+<h2 id="bounded-signed-characters-have-polynomial-source-cost">2. Bounded signed characters have polynomial source cost</h2>
+<p>For ell&gt;=1 the quotient in (1) is the SHORT numerator product</p>
+<pre><code>E_(h+ell)/E_(h+1)
+               =product_(j=h+1)^(h+ell-1)(1-delta Q^j). (2)</code></pre>
+<p>For ell=-k, k&gt;=1, it is the SHORT reciprocal product</p>
+<pre><code>E_(h-k)/E_(h+1)
+               =1/product_(j=h-k)^h(1-delta Q^j).      (3)</code></pre>
+<p>Take rho=1/16 and N&gt;k. In (3) the interval contains at most one exceptional factor 1-delta. If it occurs, B_0 cancels it exactly, while B_d cancels it by</p>
+<pre><code>epsilon/[N(1-delta)]=(1+delta+...+delta^(N-1))/N.</code></pre>
+<p>Thus the kernel is holomorphic at epsilon=0. All other factors have absolute value at least 3/N on |epsilon|&lt;=rho; also |R|&lt;2. The actual uniform bounds are</p>
+<pre><code>ell=0:       sup_n |H_n| &lt;=2,
+ell&gt;=1:      sup_n |H_n| &lt;=4rho 3^(ell-1)/N,
+ell=-k&lt;0:    sup_n |H_n| &lt;=2(1+rho)(N/3)^k, N&gt;k.     (4)</code></pre>
+<p>For (2), use |1-delta Q^j|&lt;=3 and |B_t|&lt;=2rho/N. For (3), cancel the exceptional factor when present; otherwise use that same B_t estimate. This proves (4), not merely a coefficient estimate at one root value.</p>
+<p>For an actual central Laurent matrix with fixed pole order p,</p>
+<pre><code>O_ell(epsilon)=sum_(r=-p)^infinity A_r epsilon^r,</code></pre>
+<p>Cauchy’s estimate and (4) give the exact finite pushforward</p>
+<pre><code>cap(O)=sum_(r=0)^p sum_n [epsilon^r]H_n
+                                  (A_(-r))_(m(n),n),
+
+|cap(O)| &lt;=N C_ell(N) sum_(r=0)^p16^r||A_(-r)||_op, (5)</code></pre>
+<p>where C_ell(N) is the corresponding bound in (4). Thus fixed signed characters and fixed central pole orders have polynomial cost. For ell=-k the asymptotic requirement N&gt;k is explicit; smaller levels use the same exact formula (1), after retaining its additional integer epsilon carry. Fixed finitely many small levels do not alter the volume-rate assertion.</p>
+<p>This is not a bound for unrestricted ell=ell(N). The bulk-sector example derived in the all-sector analysis has exponential source cost despite fixed central pole order. Its actual support must be checked in a singular Pachner operator before applying (5).</p>
+<h2 id="arbitrary-meromorphic-operators-on-the-cap-cover">3. Arbitrary meromorphic operators on the cap cover</h2>
+<p>There is also a separate statement that needs no central descent. Define the ORIGINAL normalized source frames</p>
+<pre><code>p_hat_s=a^sigma P^s/alpha_s,
+l_hat_t=a^t L^t/beta_t.</code></pre>
+<p>They are holomorphic with respective values e_s,e_t^t at zero, and have uniformly bounded Euclidean norms on |a|&lt;=1/(16N), by the explicit cap-frame estimate. If</p>
+<pre><code>O(a)=sum_(j=-p)^infinity A_j a^j</code></pre>
+<p>is any actual matrix Laurent germ with fixed COVER pole order p, the exact cap residue is</p>
+<pre><code>CT_a l_hat_t(a) O(a) p_hat_s(a).</code></pre>
+<p>The rank-one source kernel has trace norm bounded by an absolute constant C on that circle. Cauchy on its coefficients proves</p>
+<pre><code>|cap(O)| &lt;= C sum_(j=0)^p(16N)^j||A_(-j)||_op.       (6)</code></pre>
+<p>Thus every such actual cover-meromorphic operator has a polynomial finite-jet extraction, even if it is not invariant under a-&gt;Qa. Fixed central pole order and fixed cover pole order are different: an epsilon pole of order p has cover order Np. Formula (6) must not be substituted for (5) while hiding that growth.</p>
+<p>For 0&lt;=r&lt;N, the four normalized cover jets are explicitly</p>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>r=0</th>
+<th>1&lt;=r&lt;N</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input0</td>
+<td>e_0</td>
+<td>e_r/F_r</td>
+</tr>
+<tr>
+<td>inputd</td>
+<td>e_d</td>
+<td>e_(r-1)/F_r</td>
+</tr>
+<tr>
+<td>output0</td>
+<td>e_0^t</td>
+<td>e_(N-r)<sup>t/F_r</sup>-</td>
+</tr>
+<tr>
+<td>outputd</td>
+<td>e_d^t</td>
+<td>e_(d-r)<sup>t/F_r</sup>-</td>
+</tr>
+</tbody>
+</table>
+<p>Here F_r<sup>-=(Q</sup>-1;Q^-1)_r. These follow by canceling the unique vanishing factor and using full factorial reflection; they include the wrapped channels. They independently fix the indices in (1).</p>
+<h2 id="actual-network-scope">4. Actual-network scope</h2>
+<p>The source functionals in (1), (5) and (6) are the actual normalized 0/d corners used simultaneously by the original pair-fused plat. The original Cartan, framing, turn and peripheral lines multiply the same expressions. Independent source variables tensor with the displayed constants. For a fixed word and bounded pole orders and signed-character support, the total extraction cost is a fixed power of N relative to the ORIGINAL Laurent-coefficient norms. These are the specified relative-head coordinate norms. No equality with the physical tensor metric across a nonunitary fusion is asserted, and an exponentially large coefficient matrix remains exponentially large in these bounds.</p>
+<p>An equality of complete actual typed meromorphic operators on the same marked cover remains an equality after this finite extraction. This supplies the regularized residue rule for a typed Pachner identity when its actual exterior maps and common cover have been specified. It does not supply that exterior comparison merely from a classical five-term identity, nor equate the character label with a geometric edge winding. Singular factors must first be composed with their actual maps, or all their finite source jets and integer carries must be retained term by term in a common Laurent expansion. The coincident residue is not a silent pullback of independent differential forms across a singular diagonal.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_cap_signed_deck_pushforward.py">Exact original-source audit</a>.</p>
+<h2 id="sharp-scope-a-bulk-character-has-exponential-cap-extraction">5. Sharp scope: a bulk character has exponential cap extraction</h2>
+<p>The bounded-character hypothesis above cannot be removed from the original SINGLE-HEAD d-to-d cap functional. For N&gt;=7 set</p>
+<pre><code>L=ceil(N/6), U=floor(5N/6),
+n=L-2, r=U-n, m=U,
+O(a)=a^r epsilon^-1 |m&gt;&lt;n|.</code></pre>
+<p>All indices lie in the original head range and 1&lt;=r&lt;N. The exact d-to-d positive-character kernel from (1)–(2) gives</p>
+<pre><code>cap(O)=[epsilon]H_n^(dd,r)
+      =(1/N) product_(j=L)^U(1-Q^j).                 (7)</code></pre>
+<p>This can also be read directly from the literal normalized cap frames: their relevant leading components are</p>
+<pre><code>(p_hat_d)_n=a^(n+1)/F_(n+1)+higher central powers,
+(l_hat_d)_m=a^(d-m)F_m/N+higher central powers.</code></pre>
+<p>The coupon contributes a^(r-N). The total power is zero since m=n+r and d+1=N, leaving F_U/[N F_(L-1)], exactly (7). Thus the example retains the actual cap normalization and indices; it is not a redefinition using an unknown knot period.</p>
+<p>The elementary Riemann sum on the nonsingular interval [1/6,5/6] proves</p>
+<pre><code>lim_N (1/N)log|cap(O)|
+   =integral_(1/6)^(5/6) log(2sin(pi t))dt
+   =Vol(4_1)/(2pi)&gt;0.                               (8)</code></pre>
+<p>On every fixed circle |epsilon|=rho in (0,1), however,</p>
+<pre><code>||O(a)||_op=rho^(r/N-1)&lt;=rho^-1,</code></pre>
+<p>uniformly in N. Its central pole order is exactly one; the deck character r grows proportionally to N. Thus neither bounded central pole order nor bounded inserted-coupon norm alone makes the SINGLE-HEAD actual cap extraction tempered over all characters.</p>
+<p>This is an original cap with an INSERTED auxiliary coupon. It is NOT an original knot counterexample, and the coupon does NOT intertwine the actual degree/Cartan charge: it changes the head degree by r. In particular extending it trivially on the other head gives zero between the paired D=d charge projections. The <a href="tame_paired_fermat_source_transport.html">tame paired source</a> uses that actual charge and is not contradicted by (7)–(8). The example explains why that paired-charge improvement and the explicit deck-support hypotheses are substantive.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_cap_signed_deck_pushforward.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#a-single-exact-formula-for-every-actual-endpoint-channel">1. A single exact formula for every actual endpoint channel</a><a href="#bounded-signed-characters-have-polynomial-source-cost">2. Bounded signed characters have polynomial source cost</a><a href="#arbitrary-meromorphic-operators-on-the-cap-cover">3. Arbitrary meromorphic operators on the cap cover</a><a href="#actual-network-scope">4. Actual-network scope</a><a href="#sharp-scope-a-bulk-character-has-exponential-cap-extraction">5. Sharp scope: a bulk character has exponential cap extraction</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

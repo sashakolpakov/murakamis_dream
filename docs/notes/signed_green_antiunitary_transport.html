@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Both original crossing signs have the same flat Green transport · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/signed_green_antiunitary_transport.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="both-original-crossing-signs-have-the-same-flat-green-transport">Both original crossing signs have the same flat Green transport</h1>
+<p>28 October 2026. At complete color, the ORIGINAL negative crossing is the flip-conjugate of the positive crossing in the SAME balanced flat metric. The apparent diagonal comparison in an unbalanced frame cancels to a phase depending only on total integer degree. This transports the proved clock/ground Green system to negative crossings without an ill-conditioned factorial change of metric.</p>
+<p>All original Cartan, twist, pivotal and cap normalizations are retained. This is a local operator theorem; it gives no lower bound for the final scalar source pairing.</p>
+<h2 id="exact-antiunitary-including-the-common-cartan-phase">1. Exact antiunitary including the common Cartan phase</h2>
+<p>Put q=exp(pi<em>i/N), Q=q^2, x=q<sup>(N-1)=-q</sup>(-1), rho=q-q^(-1), and eta=exp(pi</em>i/(2N)). Write the original crossings as</p>
+<pre><code>R_+=kappa K_0^+, R_-=kappa^(-1)K_0^-,
+kappa=eta^((N-1)^2), |kappa|=1.</code></pre>
+<p>Let P swap the two heads and let C be coefficientwise conjugation in the ORIGINAL balanced basis. Then EXACTLY</p>
+<pre><code>R_-=P overline(R_+)P,
+K_0^-=P overline(K_0^+)P.                         (1)</code></pre>
+<p>Thus J=P C is an antiunitary involution and R_-=J R_+ J^(-1). It is not an assertion that R_+ itself is unitary.</p>
+<p>Here is a direct proof fixing the frame and phase. In the real unbalanced basis, F is the real unit shift and E_j=[j]_q^2 is real at this complete color. The common-scalar-removed checked crossing is</p>
+<pre><code>B=P D Theta,
+D_(a,b)=x^(-a-b)q^(2ab).</code></pre>
+<p>D is unitary diagonal. The finite nilpotent Euler factor Theta has coefficients q<sup>(k(k-1)/2)rho</sup>k/[k]_q!. Conjugating them gives the ordinary inverse Euler coefficients; the finite q-binomial convolution proves overline(Theta)=Theta^(-1). Hence</p>
+<pre><code>overline(B)=D^(-1)P B^(-1)P D.                   (2)</code></pre>
+<p>The actual balanced gauge is g_j=(Q;Q)_j, up to a REAL nonzero diagonal. Since</p>
+<pre><code>(Q;Q)_j=(-rho)^j q^(j(j+1)/2)[j]_q!,
+g_j/overline(g_j)=(-1)^j q^(j(j+1)),</code></pre>
+<p>the residual pair phase after transporting (2) to the balanced frame is</p>
+<pre><code>(g_a g_b)/(overline(g_a g_b)) D_(a,b)
+                                    =q^((a+b)(a+b+2)). (3)</code></pre>
+<p>This depends only on total INTEGER head degree a+b. The actual crossings and P preserve that degree, so this phase commutes with them and cancels from the conjugation relation. This proves (1). The full scalar obeys overline(kappa)=kappa^(-1), so there is no unrecorded sign or framing multiplier. No factorial modulus remains in the comparison and no unbalanced norm is used in the result.</p>
+<h2 id="negative-clock-and-ground-families">2. Negative clock and ground families</h2>
+<p>Take the proved original positive clock and ground operators K_m<sup>+,H_m</sup>+ from Section 8 of <a href="actual_rogers_sink_opposite_beta_source.html">the original source theorem</a>. Their clock is Q^(m J_second) immediately after C^(-1), and all indices are physical 0,…,N-1. Define the negative auxiliary families by the exact antiunitary transport</p>
+<pre><code>K_m^-=P overline(K_m^+)P,
+H_m^-=P overline(H_m^+)P.                         (4)</code></pre>
+<p>At m=0 this is the literal ORIGINAL negative crossing with its common scalar removed. These definitions transport a specified original clock insertion; they do not replace the negative crossing by its transpose or assume a new local metric. Both families are N-periodic in m.</p>
+<p>For an array X_(c,d;a,b) let the positive Green shift be</p>
+<pre><code>(A_+ X)_(c,d;a,b)=x^(-1)X_(c,d-1;a-1,b)</code></pre>
+<p>when a,d&gt;=1, with zero outside the physical range. Its antiunitary transport is</p>
+<pre><code>(A_- X)_(c,d;a,b)=x X_(c-1,d;a,b-1),              (5)</code></pre>
+<p>when b,c&gt;=1, zero otherwise. In scalar kernel coordinates this is the monomial x z_first-output/z_second-input. The exact signed source Ward equations are</p>
+<pre><code>K_m^+-A_+ K_(m+1)^+=H_m^+,
+K_m^--A_- K_(m+1)^-=H_m^-.                       (6)</code></pre>
+<p>The second is the antiunitary image of the first, with all original support conditions transported, so no negative-current endpoint is discarded independently.</p>
+<p>For input (a,b), the negative ground output is (0,a+b), provided a+b&lt;N, with coefficient</p>
+<pre><code>Q^(-m a)x^a {a+b choose b}_(Q^(-1))
+                         (Q^(-m)x^2;Q^(-1))_b.   (7)</code></pre>
+<p>It is zero if a+b&gt;=N. This is the conjugate of the EXACT positive ground coefficient with its two input indices exchanged. In particular both ground channels have rank N and the same singular values. Their exponential bulk factorial weight has not disappeared.</p>
+<h2 id="flat-green-conditioning-is-identical-for-both-signs">3. Flat Green conditioning is identical for both signs</h2>
+<p>Use the clock-family Hilbert space</p>
+<pre><code>H_clock=direct_sum_(m mod N) HS(V_N tensor V_N),
+||X||^2=sum_m ||X_m||_HS^2,
+(T_+ X)_m=A_+X_(m+1),
+(T_- X)_m=A_-X_(m+1).</code></pre>
+<p>All head basis vectors have norm one. The clock advance is a permutation, and (5) is a partial permutation with a unit scalar, so</p>
+<pre><code>||T_+||&lt;=1, ||T_-||&lt;=1, T_+^N=T_-^N=0.             (8)</code></pre>
+<p>The nilpotence follows from the strictly increasing first input demand for the positive sign and second input demand for the negative sign. It concerns source transport, not the full braid image group. The exact inverses are finite:</p>
+<pre><code>G_+=(1-T_+)^(-1)=sum_(j=0)^(N-1)T_+^j,
+G_-=(1-T_-)^(-1)=sum_(j=0)^(N-1)T_-^j,
+||G_+||,||G_-||&lt;=N,
+||G_+^(-1)||,||G_-^(-1)||&lt;=2.                    (9)</code></pre>
+<p>Thus the local transformations have condition number at most 2N in the SAME metric for either sign. They reconstruct the original signed crossings from (6), with scalar kappa or kappa^(-1) respectively.</p>
+<p>For clarity, the family shifts are partial permutations with finite chains of length at most N; some chains have length exactly N. After unit phase gauges on each chain, 1-T is the elementary bidiagonal matrix. Its squared singular values on a chain of length L are 4 sin^2[(2j-1)pi/(4L+2)], j=1,…,L. Consequently the exact full family norms are</p>
+<pre><code>||G_+||=||G_-||=1/[2 sin(pi/(4N+2))],
+||G_+^(-1)||=||G_-^(-1)||=2 cos(pi/(2N+1)).        (10)</code></pre>
+<p>The coarser bounds (9) already suffice for polynomial-cost tensor transport at fixed word length. These estimates do NOT lower-bound the final scalar period: the pulled-back original source can still be nearly orthogonal to the tensor of ground channels.</p>
+<h2 id="original-source-and-scope">4. Original source and scope</h2>
+<p>Equation (1) is used locally to represent the negative matrix at its actual four ports. It is NOT applied as a global conjugation of the word or to change the knot into its mirror. All original cups, caps, pivots, common Cartan and zero-framing lines stay in their prescribed places. In particular no metric change or scalar normalization is hidden in passing from positive to negative Green transport.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_signed_green_antiunitary_transport.py">exact root audit</a> checks the full original negative crossing, all negative clock Ward and ground coefficients, nilpotent reconstruction and original whole signed pivotal sources. Small bidiagonal singular-value checks verify (10) independently of the phase calculation; the proof of the all-N bounds is the explicit partial-permutation structure.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/signed_green_antiunitary_transport.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-antiunitary-including-the-common-cartan-phase">1. Exact antiunitary including the common Cartan phase</a><a href="#negative-clock-and-ground-families">2. Negative clock and ground families</a><a href="#flat-green-conditioning-is-identical-for-both-signs">3. Flat Green conditioning is identical for both signs</a><a href="#original-source-and-scope">4. Original source and scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Independent audit of the principal-density comparison · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/principal_density_independent_audit.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="independent-audit-of-the-principal-density-comparison">Independent audit of the principal-density comparison</h1>
+<p>Audit, 27 October 2026. This checks Sections 5–6 of <a href="quantum_source_bridge_extension.html">the uniform comparison</a>, with particular attention to the perturbation pairing, cokernel marking, determinant signs and the factor -1/2. No substantive defect was found under the printed acyclicity, unit-chart and parity conventions.</p>
+<h2 id="direct-derivation-of-the-rank-two-perturbation-pairing">1. Direct derivation of the rank-two perturbation pairing</h2>
+<p>The pairing in equation (5.8) has the printed positive sign. It can be derived directly from the generating equations, avoiding any ambiguity about exact boundary terms in the Liouville form.</p>
+<p>Write P_0 for the permutation matrix, R for the transfer matrix, and w=(q,c). At the chosen fixed point, a cut-fixed kernel tangent u has a generating-family lift B_u=(q_u,c_u) and equal input/output momenta p_u. Thus</p>
+<pre><code>P_0 q_u+R c_u=q_u,
+S_cq q_u+S_cc c_u=R^t p_u.                  (1.1)</code></pre>
+<p>Perturb the phase by epsilon times a quadratic f centered at the critical point, while holding an input tangent v fixed. Let tau be the resulting variation of its transfers and pi the variation of its output momentum. The linearized generating equations are</p>
+<pre><code>P_0^t pi-S_qc tau=f_q(B_v),
+S_cc tau-R^t pi=-f_c(B_v).                  (1.2)</code></pre>
+<p>The mixed Jacobian is invertible by the stated crossing-unit hypothesis, so these variations exist uniquely. Multiply the first equation by q_u^t, use the second equation to eliminate R^t pi, and then use (1.1). The result is</p>
+<pre><code>q_u^t pi-p_u^t R tau
+   =q_u^t f_q(B_v)+c_u^t f_c(B_v)
+   =Hess(f)(B_u,B_v).                      (1.3)</code></pre>
+<p>The left side is exactly Omega(u,(partial_epsilon F)v), since the output-position variation is R tau and the input is fixed. This proves (5.8), including the cut source: its last covector is the fixed input momentum p_1 and therefore acquires no perturbation.</p>
+<h2 id="leading-determinant-coefficients-and-the-endpoint-volume">2. Leading determinant coefficients and the endpoint volume</h2>
+<p>For a square map L of corank two, let B be its kernel basis and C its cokernel coordinate map. With the torsion convention in the comparison note, a perturbation L+epsilon E satisfies</p>
+<pre><code>[epsilon^2] det(L+epsilon E)=det(C E B)/T_L. (2.1)</code></pre>
+<p>To verify this, use the input basis [B,V_c] and target basis [L V_c,W], C W=I. Moving the two kernel columns past the n-2 image columns contributes (-1)^(2(n-2))=1. The two epsilon columns then give det(C E B), with the indicated torsion ratio.</p>
+<p>For the symmetric phase Hessian, C=B^t and T_H=det(B_chi)^2/det H_perp. For the endpoint, the rows in (5.5) use coordinate volume, whereas the trailing-normal target volume is its negative. Indeed the target basis</p>
+<pre><code>(e_qj-e_q1 for j&gt;1, all e_pj), followed by e_q1,</code></pre>
+<p>has determinant -1 in the canonical order. Consequently the coordinate determinant’s leading coefficient is</p>
+<pre><code>-det(pairing)/T_cut^Omega.</code></pre>
+<p>Combining (1.3), (2.1) and the nonsingular determinant elimination therefore gives exactly</p>
+<pre><code>(product V_t) T_H=-T_cut^Omega.</code></pre>
+<p>The perturbation need not remain a sum of local crossing phases. Its mixed Jacobian stays a unit near epsilon=0; only that unit’s constant determinant contributes to the leading epsilon^2 term. This is sufficient for the argument in the source note.</p>
+<h2 id="the-two-remaining-numerical-factors">3. The two remaining numerical factors</h2>
+<p>For the stated bases of ker ell and ker b_0, the canonical pairing conversion matrix is</p>
+<pre><code>K^t R(P) Z=[2/a^2 0;(c^2+1)/a^2 1].</code></pre>
+<p>Its determinant is 2/a^2. The endpoint torsion with the unconverted product co-source is -T_beta, using the ordered bases printed in Section 3 of the comparison note.</p>
+<p>Directly differentiating the framing matrix gives its coefficient matrix in K=(h+2f,e+f):</p>
+<pre><code>C_frame=(1/Delta)
+    [-(kappa/2+s)  r-1/2;
+      kappa+s     1-r].</code></pre>
+<p>Its determinant is -1/(2Delta). Kernel and canonical cokernel both change by this framing matrix, so the contribution is its square. Thus</p>
+<pre><code>T_cut^Omega(r,s)=-T_beta/(2a^2 Delta^2).</code></pre>
+<p>Finally det(-H_perp)=(-1)^(m-1)det H_perp, because the normal rank is m-1. Combining this with the endpoint minus sign and the specified (-1)^(b-1) parity normalization leaves (-1)^(m+b-1)=1 for a knot braid. The remaining amplitude factor is a<sup>2/K_1</sup>2, giving</p>
+<pre><code>Omega_beta^2=-(T_beta/2) Omega_cut^2.</code></pre>
+<h2 id="scope">4. Scope</h2>
+<p>The source and cokernel assumptions needed above are already present: acyclicity of the four-term holonomy complex, ell(Au)=1 for the removed conjugation direction, the actual fixed momentum cut, and the unit mixed Jacobian. A generic equality of critical sets alone would not supply them. The factor -1/2 is relative to the explicitly specified parity normalization and does not choose a square-root phase or its base-only quantum normalization.</p>
+<p>The audit establishes no nonzero selected global period coefficient and no archimedean volume growth. Those remain separate obligations, as the comparison note states.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/principal_density_independent_audit.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#direct-derivation-of-the-rank-two-perturbation-pairing">1. Direct derivation of the rank-two perturbation pairing</a><a href="#leading-determinant-coefficients-and-the-endpoint-volume">2. Leading determinant coefficients and the endpoint volume</a><a href="#the-two-remaining-numerical-factors">3. The two remaining numerical factors</a><a href="#scope">4. Scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

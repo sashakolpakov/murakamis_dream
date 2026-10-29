@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exact coherent turn reduction in the original Newton source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_newton_coherent_turn_reduction.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="exact-coherent-turn-reduction-in-the-original-newton-source">Exact coherent turn reduction in the original Newton source</h1>
+<p>29 October 2026. The full original Newton alphabet obeys a projective modular relation, with its Cartan scalar retained. It removes arbitrary numbers of redundant twist/turn packets BEFORE a norm estimate. In one arbitrary-length class the complete reflected original source is exactly 1 or N and has zero exponential rate. A same-sign run of two-crossing packets reduces to one twist with explicit boundary adapters. These are source-exact coherent reductions, not a new hyperbolic-volume family.</p>
+<h2 id="all-input-relation-including-the-original-cartan-line">1. All-input relation, including the original Cartan line</h2>
+<p>Use the COMPLETE Newton packet of <a href="actual_newton_turn_positive_gram.html">the positive turn metric</a>. Let T=T_1, P=P_rev, d=N-1, q=exp(pi i/N), Q=q^2, kappa=q<sup>(d</sup>2/2), and nu_j=(-1)^j Q^(j(j+1)/2). Its actual entries are</p>
+<pre><code>T_ij=kappa nu_j (-q)^(i-j) [i choose j]_Q, i&gt;=j,
+T^(-1)=conjugate(T).</code></pre>
+<p>All matrices below act on the FULL N-dimensional Newton packet, including every original confluent derivative. Put</p>
+<pre><code>theta_N=kappa^3(-q)^d, |theta_N|=1.</code></pre>
+<p>In fact theta_N=kappa, since kappa<sup>2(-q)</sup>d=1 at the specified root. Keeping the unsimplified form below displays the original phase sources.</p>
+<p>Then</p>
+<pre><code>T P T=theta_N P T^(-1)P,
+(T P)^3=theta_N I.                                    (1)</code></pre>
+<p>Here P is the genuine unscaled physical turn in this packet. No eigenvalue-only quotient or assumed ordinary positive trace is used.</p>
+<p>For a finite own proof of (1), the Gaussian identity needed is</p>
+<pre><code>sum_(k=0)^i (-1)^k Q^(k(k-1)/2-jk)
+                [i choose k]_Q [j+k choose j]_Q
+   =(-1)^i Q^(i(i-1)/2-ij) [j choose i]_Q.             (2)</code></pre>
+<p>To prove it, expand</p>
+<pre><code>[j+k choose j]_Q=(Q^(k+1);Q)_j/F_j
+  =F_j^(-1) sum_(l=0)^j
+       (-1)^l Q^(l(l+1)/2)[j choose l]_Q Q^(kl).</code></pre>
+<p>The finite binomial theorem performs the inner k sum as (Q^(l-j);Q)_i. If i&gt;j every term is zero. If i&lt;=j, only l&lt;=j-i survive; insert</p>
+<pre><code>(Q^(l-j);Q)_i
+  =(-1)^i Q^[-i(j-l)+i(i-1)/2] F_(j-l)/F_(j-l-i).</code></pre>
+<p>The remaining sum is</p>
+<pre><code>sum_(l=0)^(j-i) (-1)^l Q^[l(l+1)/2+il]
+                     /(F_l F_(j-i-l))
+  =(Q^(i+1);Q)_(j-i)/F_(j-i)=[j choose i]_Q.</code></pre>
+<p>This proves (2) by two finite binomial expansions. At the root every denominator used here has index&lt;N. If j+k&gt;=N the product expression for [j+k choose j] is zero and exactly supplies the original cutoff.</p>
+<p>Now use the exact root reflection</p>
+<pre><code>[d-k choose j]_Q=nu_j^(-1) Q^(-jk)[j+k choose j]_Q.</code></pre>
+<p>The (i,j) entry of TPT becomes kappa<sup>2(-q)</sup>(i+d-j) times the left side of (2). For i&gt;j it is zero. For i&lt;=j, the reflected inverse entry is</p>
+<pre><code>(P T^(-1)P)_ij
+   =kappa^(-1) nu_j^(-1)(-q)^(-(j-i))
+                                nu_(j-i)[j choose i]_Q.</code></pre>
+<p>Since nu_(j-i)/nu_j=(-1)^i Q<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, (2) gives (1) entry by entry. Thus all repeated-root normal data are retained. These are the full CASIMIR Hermite normals at the fixed quantum root. No differentiation in q is being asserted: the actual generic-q turn need not be constant reversal in this root Newton frame.</p>
+<h2 id="an-arbitrary-turn-complete-original-source-with-an-exact-rate">2. An arbitrary-turn complete original source with an exact rate</h2>
+<p>Let C=TP and let 1=e_0 be the original numerator-source vector. The first and last T columns give</p>
+<pre><code>C e_0=kappa e_d,
+C^2 e_0=kappa^2 ((-q)^i)_(i=0)^d.</code></pre>
+<p>Together with (1), for every integer h,</p>
+<pre><code>C^(3h)e_0=theta_N^h e_0,
+C^(3h+1)e_0=theta_N^h kappa e_d,
+C^(3h+2)e_0=theta_N^h kappa^2 ((-q)^i)_i.              (3)</code></pre>
+<p>The exact positive Newton metric consequently gives, for EVERY N,</p>
+<pre><code>||C^m 1||^2 = 1, m=0 or1 mod3;
+              N, m=2 mod3.                            (4)</code></pre>
+<p>Its literal adjoint-word closure, with the original unrestricted marked cap and original cups, is exactly this norm by the positive metric theorem. Thus the ENTIRE original reflected circuit has zero exponential rate for arbitrarily many fixed turns. This does not say C is unitary: (4) itself distinguishes norms1 and N. It says that these particular large coherent turn networks are projectively periodic.</p>
+<p>This is a useful normalization class, not a new hyperbolic class. It shows why assigning an independent positive angle capacity to each expanded crossing cannot give the actual rate even in the positive reflected-source formulation.</p>
+<h2 id="exact-reduction-of-arbitrary-same-sign-two-crossing-runs">3. Exact reduction of arbitrary same-sign two-crossing runs</h2>
+<p>There is also a useful reduction of the newly solved T_2 kernel:</p>
+<pre><code>T^2 P=theta_N C T^(-1)C^(-1),
+(T^2P)^m=theta_N^m C T^(-m)C^(-1).                    (5)</code></pre>
+<p>These follow algebraically from (1), for all signed integers m. The original source endpoint satisfies</p>
+<pre><code>C^(-1)e_0=kappa^(-2)(-q)^(-d) T e_0.</code></pre>
+<p>Consequently the source-selected whole run is exactly</p>
+<pre><code>(T^2P)^m e_0
+  =theta_N^m kappa^(-2)(-q)^(-d)
+                              T P T^(1-m)e_0.         (6)</code></pre>
+<p>Thus a run with unbounded turn count has ONE retained turn and one signed twist packet, with all original phase and endpoint adapters displayed. The adapters are actual Newton operators; no assertion of polynomial conditioning or unitarity is made for T. Equation (6) is an exact coherent source reduction, not a sharp estimate for its remaining mixed packet.</p>
+<p>The same relation can remove unit digits inside a general rational twist/turn word, with (1)’s scalar recorded. Reduced mixed-sign words still contain real oscillatory interactions. Neither (5) nor finite order of C diagonalizes those words or proves a geometric maximum.</p>
+<h2 id="remaining-analytic-scope">4. Remaining analytic scope</h2>
+<p>The source of a genuinely reduced word is not determined by the modular relation. In particular the norm of TPT_(-p)e_0 generally contains a nontrivial coherent finite sum; unit nodal twist phases do not make it a polynomially bounded operator. A new sharp variational estimate must control that remaining packet and its integer marks, then identify its full critical graph and regulator. This note proves the exact reduction and the nonzero rate statement (4), not those unproved assertions for arbitrary rational/arborescent sources.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_newton_coherent_turn_reduction.py">full original physical alphabet, all-input modular identity and actual reflected closures</a>.</p>
+<p>Independent analytical review passed: the finite double-binomial cutoff/prefactors, theta_N including kappa, the three exact source vectors, and the same-sign-run conjugacy/source adapter were rederived. The finite audit separately passes49 generic identities, nine full original alphabets, and90 complete reflected original sources.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>i(i-1)/2-ij<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_newton_coherent_turn_reduction.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#all-input-relation-including-the-original-cartan-line">1. All-input relation, including the original Cartan line</a><a href="#an-arbitrary-turn-complete-original-source-with-an-exact-rate">2. An arbitrary-turn complete original source with an exact rate</a><a href="#exact-reduction-of-arbitrary-same-sign-two-crossing-runs">3. Exact reduction of arbitrary same-sign two-crossing runs</a><a href="#remaining-analytic-scope">4. Remaining analytic scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

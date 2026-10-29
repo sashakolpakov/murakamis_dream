@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A torus generator need not select the highest regular critical value · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/charged_torus_critical_selection.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-torus-generator-need-not-select-the-highest-regular-critical-value">A torus generator need not select the highest regular critical value</h1>
+<p>28 October 2026. The implication</p>
+<pre><code>original source generates H_k((C*)^k)
++ unique highest real regular critical action
+=&gt; that critical point contributes</code></pre>
+<p>is FALSE for homogeneous polynomial coefficient periods with only coordinate poles. It remains false when every noncoordinate factor has a root-of-unity phase and the source is the specified finite-flat Fermat/nilpotent top coefficient. An explicit example below has a strict Cauchy bound BELOW its unique highest regular critical value. Thus its original torus misses that critical point’s upward cycle.</p>
+<p>These examples are not asserted to arise from an original knot diagram. They refute an inference from the stated source/topology properties alone. The actual fixed-diagram clock couplings and root interval patterns may impose additional restrictions; those would have to enter a valid knot theorem.</p>
+<h2 id="a-completely-rational-example-with-an-explicit-selected-limit">1. A completely rational example with an explicit selected limit</h2>
+<p>Put</p>
+<pre><code>f(z)=z^(-1)+(91/100)z+(9/200)z^2,
+a_n=(1/(2*pi*i)) integral_(|z|=1) f(z)^n dz/z.</code></pre>
+<p>The source is exactly the generator of H_1(C*). The form has only coordinate poles. Its regular logarithmic critical points satisfy</p>
+<pre><code>100 z^2 f&#39;(z)=(z-1)(z+10)(9z+10)=0.</code></pre>
+<p>Their values are EXACTLY</p>
+<pre><code>f(1)=391/200,
+f(-10)=-47/10,
+f(-10/9)=-167/90.                                (1)</code></pre>
+<p>All are nonzero and nondegenerate. The unique highest real part of log f is therefore log(47/10), at z=-10, independent of its chosen logarithmic mark.</p>
+<p>But on the ORIGINAL source circle the triangle inequality gives</p>
+<pre><code>|f(exp(i theta))|&lt;=391/200&lt;47/10.</code></pre>
+<p>Consequently |a_n|&lt;=(391/200)^n. In fact the strict lower rate is selected with a nonzero coefficient:</p>
+<pre><code>a_n=(391/200)^n /sqrt(2*pi*n*(418/391))
+                                   *(1+O(1/n)).   (2)</code></pre>
+<p>Here is an elementary proof. Equality in the circle triangle inequality requires the phases of exponents -1,1,2 to agree. Their differences 2 and 3 have gcd one, so equality holds only at theta=0 modulo 2*pi. At that point f’(1)=0, and</p>
+<pre><code>log[f(exp(i theta))/f(1)]
+                 =-(418/391)*theta^2/2+O(theta^3).</code></pre>
+<p>Its positive quadratic coefficient gives a Gaussian leading term. Outside any fixed neighborhood of zero the compact circle has a strict modulus gap. Expanding on a shrinking symmetric neighborhood gives (2); the odd third-order term integrates to zero at its first order, and the remaining relative error is O(1/n). No unknown normalizer or source projection is used. The coefficients are nonnegative: a_n&gt;0 for every n&gt;=2 because n=2u+3v with u,v&gt;=0.</p>
+<p>This already disproves highest-critical-value selection. It is not merely an exact zero at an exceptional small level.</p>
+<h3 id="the-same-example-has-uniform-homogeneous-source-charges">The same example has uniform homogeneous source charges</h3>
+<p>Set</p>
+<pre><code>H(X,Y)=X Y^3+(91/100)X^3Y+(9/200)X^4.</code></pre>
+<p>Then deg H^n=4n and</p>
+<pre><code>a_n=[X^(2n)Y^(2n)]H^n.                           (3)</code></pre>
+<p>Indeed with z=X/Y, H/(X<sup>2Y</sup>2)=f(z). The normalized product torus integral in two variables is exactly the original circle integral; the common homogeneous scale integrates to one. In the source algebra</p>
+<pre><code>A_n=K[X,Y]/(X^(2n+1),Y^(2n+1)),</code></pre>
+<ol start="3" type="1">
+<li>is its specified top-coefficient functional, normalized by lambda(X<sup>(2n)Y</sup>(2n))=1. By homogeneous center independence it is also the same functional on every regular Fermat fiber. Perfectness and flatness of that source do not make the higher critical value appear.</li>
+</ol>
+<h2 id="a-counterexample-with-unit-root-of-unity-factors">2. A counterexample with unit root-of-unity factors</h2>
+<p>The previous example did not require unit-modulus linear factors. That restriction alone does not repair the implication. Put</p>
+<pre><code>P(z)=(1-z^4)^2(1+z+z^2)^3(1-z+z^2),
+f(z)=P(z)/z,
+b_n=CT_z f(z)^n.                                 (4)</code></pre>
+<p>All sixteen roots of P, with their actual multiplicities, are roots of unity of orders dividing twelve. The eight REGULAR critical points of log f are the roots of the integer polynomial</p>
+<pre><code>G(z)=15z^8-2z^7+11z^6+2z^5+2z^3-3z^2-2z+1.      (5)</code></pre>
+<p>Precisely,</p>
+<pre><code>zP&#39;(z)-P(z)
+  =(z-1)(z+1)(z^2+1)(z^2+z+1)^2 G(z).</code></pre>
+<p>The prefactor accounts for multiple zeros of P, where log f is not regular. The audit checks gcd(G,P)=1 and that G is squarefree. Certified complex-root isolation gives:</p>
+<table>
+<thead>
+<tr>
+<th>Regular critical point</th>
+<th>Critical-value information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>real z in (0.59700,0.59701)</td>
+<td>f(z) in (7.22573,7.22575)</td>
+</tr>
+<tr>
+<td>real z in (0.36853,0.36854)</td>
+<td>f(z) in (6.82894,6.82897)</td>
+</tr>
+<tr>
+<td>the other six roots</td>
+<td>all critical-value moduli &lt;1.88</td>
+</tr>
+</tbody>
+</table>
+<p>Thus the first critical point is the UNIQUE highest real-action regular critical point. Every regular critical point is nondegenerate. The rational interval root/critical-value certificates are reproduced with 256-bit complex balls in the audit, not taken from a numerical plot.</p>
+<p>Now use the ORIGINAL source circle |z|=R=1/3. The exact identity</p>
+<pre><code>P(z)=(1-z^4)^2(1+z+z^2)^2(1+z^2+z^4)</code></pre>
+<p>gives the elementary uniform bound</p>
+<pre><code>|f(z)|&lt;=R^(-1)(1+R^4)^2(1+R+R^2)^2(1+R^2+R^4)
+       =103408396/14348907
+       &lt;7.20671&lt;7.22573.                         (6)</code></pre>
+<p>Therefore</p>
+<pre><code>|b_n| &lt;= (103408396/14348907)^n.                  (7)</code></pre>
+<p>The unique highest regular critical point cannot be the leading term of this period: its action is separated from (7) by a FIXED positive amount. No limiting interchange at a pole or infinity is used. The circle of radius 1/3 is the same positive generator as every other finite positive source radius.</p>
+<h3 id="exact-cyclotomic-and-socle-format-along-infinitely-many-levels">Exact cyclotomic and socle format along infinitely many levels</h3>
+<p>Let P_hom be the degree-sixteen homogenization of P and put</p>
+<pre><code>H(X,Y)=X^16 Y^2 P_hom(X,Y),
+d_n=17n, N_n=17n+1.</code></pre>
+<p>Then H^n has total degree 2d_n and</p>
+<pre><code>b_n=[X^(d_n)Y^(d_n)]H^n.                        (8)</code></pre>
+<p>Along n=7 mod12, N_n is divisible by twelve. EVERY noncoordinate linear factor phase of H^n is consequently an actual N_n-th root of unity. The source is exactly the fixed top-coefficient functional of K[X,Y]/(X<sup>(N_n),Y</sup>(N_n)), and extends unchanged across its finite flat Fermat family. All scalar coefficients and coordinate monomials are retained. Dividing by the original-type tame factor N_n would not change the exponential gap in (7).</p>
+<p>This is still NOT an original braid/knot realization. In particular the growing multiplicities in powers of this fixed polynomial have not been identified with a fixed diagram’s raw consecutive root intervals. Its purpose is to show that homogeneous source charges, unit cyclotomic phases, source flatness and torus topology together do not imply the asserted selection theorem.</p>
+<h2 id="the-exact-accessibility-obstruction">3. The exact accessibility obstruction</h2>
+<p>For either example choose S=log f locally. An upward gradient cycle from its highest regular critical point has Re S greater than or equal to that point’s critical value. The source circles used above have STRICTLY smaller Re S everywhere, by (1) or (6). Such an upward cycle cannot intersect the source torus. This is a direct obstruction to the proposed nonzero intersection number, not a guessed asymptotic cancellation between equal-height critical points.</p>
+<p>Absolute generation of H_1(C*) does not determine this relative intersection pairing. The relevant upward/downward cycles have asymptotic conditions involving zeros and coordinate ends. They are not all dual to the single absolute torus generator. Source-preserving radius deformation keeps the period fixed but need not turn it into the downward cycle of the highest critical point.</p>
+<p>Dominant-saddle Stokes persistence therefore needs an initial NONZERO coefficient of that saddle. It cannot deduce one merely from highest critical height and absolute torus topology.</p>
+<h2 id="why-a-balanced-source-can-behave-differently">4. Why a balanced source can behave differently</h2>
+<p>There is a genuine extra structure in the new <a href="charged_critical_flow_and_chambers.html">balanced critical-flow theorem</a>. For a product of unit-modulus binary factors and charges q_i, write S_i for incidence count, counting a loop twice. At a regular critical point its exact real equations are</p>
+<pre><code>sum_j (|X_i|^2-|X_j|^2)/|alpha X_i-beta X_j|^2
+                                        =-(S_i-2q_i). (9)</code></pre>
+<p>When every defect is zero and the underlying graph is connected, the maximum principle forces all radii equal. The original torus then does contain every regular critical point after common scaling; on each chamber its source phase is constant and its log amplitude is strictly concave. With a separated highest chamber this can force noncancellation, instead of assuming the geometric thimble coefficient.</p>
+<p>The cyclotomic example (8) has exact defects (+14n,-14n). Thus it does not contradict the balanced theorem. Its coordinate cut deficits are n and 15n across 16n crossing factors, so neither is sublinear. The <a href="charged_source_cut_jets.html">cut-jet theorem</a> retains these macroscopic jets; it did not claim they were tame or negligible. Both cuts nevertheless have UNIFORM strict Hall margin 1/16. After peeling the coordinate monomials, this is a connected residual core with charges (n,15n). The general radial-compactness inequality therefore applies with fixed positive margin; all its regular critical radii stay in a fixed annulus. No escaping regular critical or degenerating cut margin is needed for the failure of highest-value accessibility.</p>
+<p>For the original invariant, showing that the FULL coupled clock/source selects balanced or otherwise accessible geometric cores is still an additional theorem. The counterexample does not rule out that theorem. It rules out deriving it from torus generation alone.</p>
+<h2 id="exact-balance-is-a-real-restriction-on-an-alternating-source">5. Exact balance is a real restriction on an alternating source</h2>
+<p>The first actual source application can be described without knot census data. Take a nontrivial oriented alternating one-component diagram, use its charged bridge presentation, and contract ALL original closure kernels by the proved reproducing law. Every overbridge then has one encounter. Between consecutive overencounters along the knot there is exactly one underencounter. The remaining anchors are these segments; label anchor v by its preceding overevent and let tau(v) be its next overevent. The permutation tau is one cycle.</p>
+<p>At anchor v the preceding overevent supplies output-block length h_v; the next overevent supplies input-block length d-h_(tau(v)); and its one underencounter supplies spectator incidence d. The spectator contribution is the sum of that crossing’s two block lengths d-h and h, independent of its sign. The closure pivots change phases, not degrees. Consequently the exact ORIGINAL incidence defect is</p>
+<pre><code>S_v-2d=h_v-h_(tau(v)).                            (10)</code></pre>
+<p>Thus in this directly closure-contracted alternating presentation, all defects vanish if and only if every crossing clock has the same value. Sublinear defects force all normalized clocks to approach the same value, since the oriented cycle has a fixed number of encounters. This is not an automatic consequence of alternation.</p>
+<p>Equation (10) does not show that this locus is leading, or that it has zero invariant. Further exact fusions may combine opposite defects and give a different core presentation. The point is the necessary scope distinction: a theorem for balanced anchor sectors must still be connected to the FULL original clock sum, rather than applied to every alternating source sector without checking (10).</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_charged_torus_critical_selection.py">Audit</a>: exact rational example and Gaussian constants, homogeneous charges, integer critical polynomials, squarefree/nonzero critical values, certified all-root bounds for the unit-cyclotomic example, and its strict rational source-circle bound. It also checks (10) against the actual signed port/closure metadata, including the exact one-underencounter condition and the oriented one-component return cycle.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/charged_torus_critical_selection.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#a-completely-rational-example-with-an-explicit-selected-limit">1. A completely rational example with an explicit selected limit</a><a href="#a-counterexample-with-unit-root-of-unity-factors">2. A counterexample with unit root-of-unity factors</a><a href="#the-exact-accessibility-obstruction">3. The exact accessibility obstruction</a><a href="#why-a-balanced-source-can-behave-differently">4. Why a balanced source can behave differently</a><a href="#exact-balance-is-a-real-restriction-on-an-alternating-source">5. Exact balance is a real restriction on an alternating source</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

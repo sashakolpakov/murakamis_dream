@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Volume limits constructed from the A-polynomial · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/a_polynomial_volume_limits.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="volume-limits-constructed-from-the-a-polynomial">Volume limits constructed from the A-polynomial</h1>
+<p>Research note, 26 October 2026. This is an auxiliary classical A-polynomial volume identity. The intended full route starts with Kashaev’s own quantum A-module or torsor and uses its structure to prove the invariant’s volume growth. This classical construction calibrates the geometric period; it does not replace that actual invariant. Jones is separate.</p>
+<p>Here is a direct classical construction. It produces marked roots of integer polynomials built from the A-equation by finite-algebra norms, with a proved volume limit on the stated connected geometric class. The remaining choices are a marked curve, path and sampling. No standard quantum A-state is claimed for this construction. It is a discretization of the existing classical regulator, not a claim to have proved the original Kashaev conjecture or to have discovered the regulator identity.</p>
+<h2 id="conventions-and-the-relative-period">1. Conventions and the relative period</h2>
+<p>Use the squared peripheral functions m,l of <a href="boundary_regulator_period.html">the marked regulator note</a>. In SL_2 eigenvalues M,L these are m=M<sup>2,l=L</sup>2, with the recorded orientation of the longitude. Write the corresponding geometric A-equation as A(m,l)=0. It is obtained from the ordinary eigenvalue A-polynomial by its stated finite monomial image, not by renaming M as M^2 without elimination.</p>
+<p>Let C be a connected marked algebraic curve of representations or a finite augmented cover, containing the geometric and conjugate complete points p_+,p_-. Let beta be its rational crossing or triangulation Bloch class. The already proved boundary identity and complete fundamental-class values are</p>
+<pre><code>delta beta=-(1/2)m wedge l,
+D(beta)(p_+)=Vol(X), D(beta)(p_-)=-Vol(X).    (1.1)</code></pre>
+<p>They follow from the actual <a href="marked_braid_holonomy.html#8-a-global-boundary-wedge-and-complete-frame-regulator-rigidity">boundary-wedge calculation</a> and <a href="crossing_fundamental_cycle.html">fundamental-cycle calculation</a>. No selected quantum state is a premise.</p>
+<p>Put</p>
+<pre><code>eta=log|l| darg m-log|m| darg l.</code></pre>
+<p>The elementary Bloch–Wigner derivative is dD(z)=log|z|darg(1-z)-log|1-z|darg z. Applying it to (1.1) gives dD(beta)=eta/2. Consequently every piecewise C^1 path gamma from p_- to p_+, avoiding the finite shape and coordinate divisors, has</p>
+<pre><code>integral_gamma eta=4 Vol(X).                 (1.2)</code></pre>
+<p>The normalized complete places must be retained: their peripheral coordinate pairs can coincide even though their regulator values differ. This fixes the absolute volume by two specified endpoints, without a zero-volume reference.</p>
+<p>If C is finite over a normalized A-component, its real primitive descends. Pass to a connected Galois closure. A deck transformation changes the primitive by a constant, since it fixes eta. Its finite order makes that constant zero. Thus the primitive is invariant and descends on the common regular open curve. This is an elementary finite-cover descent argument; it does not concern a quantum state.</p>
+<h2 id="integer-products-of-a-roots">2. Integer products of A-roots</h2>
+<p>Parametrize gamma on [0,1]. Choose continuous argument lifts theta=arg m, phi=arg l along it. For large N put</p>
+<pre><code>r=floor(sqrt(N)), h=2pi/N, t_j=j/r.</code></pre>
+<p>For each interval choose an algebraic point q_(N,j) on C within N^(-2) of gamma((j+1/2)/r), in a fixed finite collection of regular coordinate charts. Such points exist: use a local finite algebraic projection and approximate its regular value by an algebraic number. Avoid its finitely many ramification and coefficient exceptions. Set</p>
+<pre><code>m_j=m(q_(N,j)), l_j=l(q_(N,j)),
+a_j=nearest_integer((theta(t_(j+1))-theta(t_j))/h),
+b_j=nearest_integer((phi(t_(j+1))-phi(t_j))/h),
+Z_N=product_(j=0)^(r-1) l_j^(a_j) m_j^(-b_j). (2.1)</code></pre>
+<p>Fix either convention at a rounding tie. These are finite algebraic evaluations with integer exponents; no volume value occurs in their definition. All pairs satisfy the A-equation, with the branch specified by gamma.</p>
+<p><strong>Theorem.</strong> Under Section 1’s connectedness and marking hypotheses,</p>
+<pre><code>lim_(N-&gt;infinity) [pi/(2N)]log|Z_N|=Vol(X).   (2.2)</code></pre>
+<p><strong>Proof.</strong> Logs of the moduli are bounded on the compact path. Integer rounding changes h log|Z_N| by O(r/N). Replacing the midpoint values by their algebraic approximants changes it by o(1); the total argument variation is bounded. The remaining sum is the midpoint Riemann sum for integral eta. Its error tends to zero for a piecewise C^1 path. For a C^2 path the total error is O(r<sup>(-1)+r/N+N</sup>(-2)), hence O(N^(-1/2)). Equation (1.2), and h/4=pi/(2N), prove (2.2).</p>
+<p>The limit is independent of the allowed path, samples and rounding choices because eta has the stated real primitive. The finite values need not be independent of those choices.</p>
+<h2 id="a-polynomial-defined-by-norms-not-just-an-informal-root-product">3. A polynomial defined by norms, not just an informal root product</h2>
+<p>Here is an explicit polynomial containing the marked value Z_N. Let F_N be a number field containing the coefficients of A and the sampled meridians m_j. Require only that the leading and constant l-coefficients at each sample are nonzero; finite exceptional sample points can be avoided. Normalize each A(m_j,L_j) to be monic and form</p>
+<pre><code>E_N=tensor_(j,F_N) F_N[L_j]/(A(m_j,L_j)).</code></pre>
+<p>It is a finite algebra. Each L_j is a unit. Let</p>
+<pre><code>H_N=product_j L_j^(a_j)m_j^(-b_j) in E_N,
+Q_N(T)=det(T-Mult_(H_N)) in F_N[T],
+P_N(T)=primitive_integer_multiple
+                      of Norm_(F_N/Q)(Q_N(T)). (3.1)</code></pre>
+<p>All operations are polynomial remainders, multiplication matrices, determinants and number-field norms. Equivalently one can use successive resultants. Evaluation L_j-&gt;l_j sends H_N to Z_N, so Q_N(Z_N)=P_N(Z_N)=0. Thus (2.2) is a marked-root limit for explicitly A-generated integer polynomials P_N.</p>
+<p>The chosen root is essential. A field norm or the largest root over all independent sheet choices can combine other periods. No formula for such an unmarked choice is asserted. This construction is a classical polynomial period, with an existing algebraic norm definition; it is not a new definition of the literature quantum A-operator.</p>
+<h2 id="cover-transfer-is-exact-before-taking-the-limit">4. Cover transfer is exact before taking the limit</h2>
+<p>For a peripheral monomial map</p>
+<pre><code>m&#39;=m^a l^b, l&#39;=m^c l^d, k=ad-bc&gt;0,</code></pre>
+<p>use the same sampled marked points upstairs and transfer the integer increments by</p>
+<pre><code>a&#39;_j=a a_j+b b_j, b&#39;_j=c a_j+d b_j.</code></pre>
+<p>Then ordinary multiplication proves exactly</p>
+<pre><code>product_j (l&#39;_j)^(a&#39;_j)(m&#39;_j)^(-b&#39;_j)=Z_N^k. (4.1)</code></pre>
+<p>Thus this algebraic period has the correct degree law before any asymptotic argument. For a connected one-cusped manifold cover, k is the manifold degree. Laurent elimination gives the upstairs geometric A-factor as in <a href="regge_period_covers_and_a_curves.html">the cover calculation</a>. Independent rounding upstairs changes the scaled log by o(1), so it gives the same limiting law.</p>
+<h2 id="a-connected-infinite-class-from-the-twist-presentation">5. A connected infinite class from the twist presentation</h2>
+<p>Here is an independent algebraic connectedness argument, which avoids assuming an irreducibility theorem from the literature. Use the signed twist convention</p>
+<pre><code>G_k=&lt;a,b | a w^k=w^k b&gt;, w=ab^(-1)a^(-1)b.</code></pre>
+<p>Reading a full pair in the twist box conjugates by w; after k pairs the clasp closes by a w<sup>k=w</sup>k b. For k=1 the relation reduces to aba=bab. The hyperbolic twist members have k&lt;=-1 or k&gt;=2. The independently certified families in <a href="twist_topology_and_peripherals.html">the twist topology note</a> have parameters p=-k-1 (even family) and p=k-2 (odd family), respectively. Their geometry is supplied by the explicit positive face/angle proof, rather than a cited character-variety irreducibility theorem.</p>
+<p>On the nonabelian meridian chart use</p>
+<pre><code>A=[M 1;0 M^(-1)], B=[M 0;-u M^(-1)],
+s=M^2+M^(-2), W=AB^(-1)A^(-1)B,
+z=Tr(W)=u^2+(2-s)u+2.</code></pre>
+<p>Direct multiplication gives</p>
+<pre><code>A W-W B=(s-u-1)(A-B).</code></pre>
+<p>Let S_(-1)=0,S_0=1,S_(j+1)=z S_j-S_(j-1), extended to all integer indices, and put S=S_(k-1),T=S_(k-2). Cayley–Hamilton gives the single relation</p>
+<pre><code>(s-u-1)S-T=0.                               (5.1)</code></pre>
+<p>Consecutive S,T have no common root. Also S(2)=k, T(2)=k-1. Set v=s-u-1; then z=2+u(1-v). On (5.1), S!=0 and v!=1: otherwise z=2 and S-T=1 would contradict (5.1). Hence every point of this chart is given by the rational parametrization</p>
+<pre><code>v=T/S, u=(z-2)S/(S-T),
+s=z-1/[S(S-T)].                             (5.2)</code></pre>
+<p>The last equality uses S<sup>2+T</sup>2-z S T=1. This proves absolute irreducibility of the relevant (s,u) curve.</p>
+<p>The squared meridian m=M^2 gives the double cover</p>
+<pre><code>m^2-s(z)m+1=0.                              (5.3)</code></pre>
+<p>It is also absolutely irreducible. For k&gt;0, D=S(S-T) has degree 2k-2, so (z-2)D-1 has odd degree 2k-1, is coprime to D, and has an odd-order zero. Thus s(z)^2-4 cannot be a square in C(z).</p>
+<p>For k=-h&lt;0, take the largest real root z_0 of S_h, which lies in [0,2). At that point T=0, S^2=1, D=1, so s(z_0)=z_0-1 is strictly between -2 and 2. The real rational function s(z)^2-4 is negative there and positive for large real z, since s(z)~z. A real rational function that is a square in C(z) is either a real square or minus a real square: conjugating its square root gives the same root up to sign. Such a function cannot change sign on its real regular locus. This proves (5.3).</p>
+<p>Consequently this real irreducible marked eigenvalue curve contains both conjugate complete holonomies. The preferred squared longitude is a rational function on it, obtained from its peripheral word; its A-image is nonconstant and the map to that curve is finite on regular open sets. The complete volume values and boundary differential are (1.1). Therefore the polynomial limit theorem applies to every hyperbolic member of this twist family.</p>
+<p>The rational parametrization and connectedness are the additional algebraic checks here. The full hyperbolic geometry and preferred-peripheral certificates are the previously reconstructed ones; their conventions still have to be kept when writing a numerical A-polynomial.</p>
+<h2 id="a-simpler-cone-product-when-a-zero-volume-endpoint-is-available">6. A simpler cone product when a zero-volume endpoint is available</h2>
+<p>This gives a useful direct numerical test, independent of the rounded two-endpoint construction. In ordinary SL_2 coordinates take the expanding longitude L(alpha), with M(alpha)=exp(i alpha/2), 0&lt;=alpha&lt;=Theta, along a geometric cone family ending at volume zero. Schlaefli gives</p>
+<pre><code>Vol(X)=integral_0^Theta log|L(alpha)| d alpha.</code></pre>
+<p>If M_E=exp(i Theta/2) is algebraic, choose q_N^N=M_E on that arc and L_j the continued A-root at M_j=q_N^j. Then</p>
+<pre><code>lim_(N-&gt;infinity) (Theta/N)
+                     log|product_(j&lt;N) L_j|=Vol(X). (6.1)</code></pre>
+<p>The proof is the Riemann-sum theorem, including continuous or integrable logarithmic endpoint singularities. The geometric cone and zero-volume endpoint are hypotheses, not consequences of alternatingness. The earlier <a href="quantum_a_volume.html">cone-transfer note</a> supplies this geometry and its quadratic A-factor for the figure-eight. Here the left side is the algebraic root product itself; no transfer-state dominance assumption is required.</p>
+<h2 id="scope-and-coverage">7. Scope and coverage</h2>
+<p>The classical regulator/volume framework is existing work. <a href="https://arxiv.org/abs/1804.01395">Guilloux–Marche, 1804.01395</a> studies exact polynomials, their volume functions and Mahler measures. Its abstract was checked for coverage; its proofs are not premises for the arguments above. A bare Mahler measure is a different observable from the marked product here and can collect several volume contributions. <a href="https://arxiv.org/abs/math/0311051">Hoste–Shanahan, math/0311051</a> provides adjacent coverage of twist-character recursions. The matrix, Chebyshev and irreducibility arguments above are independent of that proof.</p>
+<p>This is a proved classical marked polynomial-period limit, with an explicit broad connectedness criterion and the twist family application. Its finite sampling is not canonical. Constructing a preferred sequence from an existing quantum A-definition, and proving its volume limit, remains a further goal. Recovering Kashaev directly is its own subsequent objective, as distinguished from a relation with Jones.</p>
+<h2 id="relation-to-the-actual-kashaev-torsor-program">8. Relation to the actual Kashaev torsor program</h2>
+<p>The intended quantum route uses the A-structure attached to Kashaev itself to prove its volume growth. Its comparison with the previous repo is in <a href="a_polynomial_torsor_status.html#0-comparison-with-the-previous-work-in-this-repo">the primary status, Section 0</a>.</p>
+<p>The finite classical products above are not already that invariant. A direct small-level calibration is instructive: for the figure-eight at N=2 the cone product in Section 6 is 2+sqrt(3), whereas the original enhanced Kashaev crossing gives 5. The audit evaluates the latter directly from its W-symbol and pivotal closure, without a Jones evaluation. This only distinguishes this particular classical product from the finite invariant. It is not an obstruction to the invariant’s own quantum A-torsor route.</p>
+<p>There is already a direct operator-period mechanism in <a href="all_level_a_period.html">the all-level A-period note</a>: a specified actual quantum annihilator and finitely many fixed initial periods recover Kashaev exactly by a companion product and whole-germ root evaluation. Its verification uses the original cut and quantum-group quotient modules. Jones need not be a definition or a proof input there.</p>
+<p>There is no need to reconstruct the invariant from the bare classical polynomial alone. The intrinsic route already starts with its actual annihilator and pointed source. Its geometric classical support and selected regulator norm are the missing conclusions. The classical product identity above supplies neither conclusion for that quantum object. A comparison to Jones is additional.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_a_polynomial_volume_limits.py">Audit</a>. <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/a_polynomial_volume_limits_results.json">Results</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/a_polynomial_volume_limits.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#conventions-and-the-relative-period">1. Conventions and the relative period</a><a href="#integer-products-of-a-roots">2. Integer products of A-roots</a><a href="#a-polynomial-defined-by-norms-not-just-an-informal-root-product">3. A polynomial defined by norms, not just an informal root product</a><a href="#cover-transfer-is-exact-before-taking-the-limit">4. Cover transfer is exact before taking the limit</a><a href="#a-connected-infinite-class-from-the-twist-presentation">5. A connected infinite class from the twist presentation</a><a href="#a-simpler-cone-product-when-a-zero-volume-endpoint-is-available">6. A simpler cone product when a zero-volume endpoint is available</a><a href="#scope-and-coverage">7. Scope and coverage</a><a href="#relation-to-the-actual-kashaev-torsor-program">8. Relation to the actual Kashaev torsor program</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

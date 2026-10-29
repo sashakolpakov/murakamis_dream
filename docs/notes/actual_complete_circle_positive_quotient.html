@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The complete positive circle quotient has ordinary channels and an exact source metric · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_complete_circle_positive_quotient.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-complete-positive-circle-quotient-has-ordinary-channels-and-an-exact-source-metric">The complete positive circle quotient has ordinary channels and an exact source metric</h1>
+<p>29 October 2026. The positive reflected complete-color circle has an explicit ordinary-channel quotient, with a once-power affine-angle normalization. Its original ordinary and marked co-sources have exact polynomial dual costs. This gives a positive all-width Cauchy form with the ORIGINAL whole source, rather than an ordinary positive trace.</p>
+<p>The quotient does not erase the circle’s nilpotent data: its inclusion and projection do NOT compose to the identity. Whole-block braiding is well typed on these channels, whereas a crossing that splits the pair need not descend. The remaining macroscopic reassociation estimate and the global geometric edge equations are not proved here.</p>
+<h2 id="the-actual-positive-form-and-its-star">1. The actual positive form and its star</h2>
+<p>Use N&gt;=2, d=N-1, q=exp(pi i/N), Q=q^2, rho=q-q^-1 and the original complete physical V=V_N with H weights d-2a. Let E denote Ecal, so</p>
+<pre><code>E|a&gt;=(Q^(-a)-1)|a-1&gt;, F|a&gt;=(1-Q^(a+1))|a+1&gt;,
+K|a&gt;=q^d Q^(-a)|a&gt;.</code></pre>
+<p>Missing endpoints are zero. In the original positive Euclidean metric, E=-F^dagger and K<sup>dagger=K</sup>-1. On V tensor V let E_t,F_t,K_t be the actual coproducts, Omega=F_tE_t+qK_t+q<sup>-1K_t</sup>-1, and P the LITERAL exchange of the two physical legs. The complete ordinary circle is L=(-1)^d U_d(Omega/2), with its full auxiliary pivot and Cartan. The <a href="actual_complete_circle_reflection_positive.html">positive reflection theorem</a> proves</p>
+<pre><code>C=P L&gt;=0, H=L P=P C P&gt;=0,
+rank C=floor((N+1)/2)^2, ker C=ker L.                 (1)</code></pre>
+<p>No positive pivotal trace is asserted. The actual adjoint identities are</p>
+<pre><code>E_t^dagger P=-P F_t, F_t^dagger P=-P E_t,
+E_t^dagger C=-C F_t, F_t^dagger C=-C E_t,
+K_t^dagger C K_t=C, Omega^dagger C=C Omega.            (2)</code></pre>
+<p>For the first line expand E_t=E_1K_2+E_2 and F_t=F_1+K_1^-1F_2, then exchange the legs. The next line uses that L is an actual Hopf intertwiner. Thus ker C is a Hopf submodule, and</p>
+<pre><code>Q_C=(V tensor V)/ker L, &lt;[v],[w]&gt;_C=v^dagger Cw        (3)</code></pre>
+<p>is positive definite, with E^dagger=-F and unitary K. This is a single-object star statement. Taking a tensor coproduct still reverses order under adjoints; product metrics are not thereby a positive monoidal source theory. The actual reflection/leg wiring remains.</p>
+<h2 id="the-quotient-is-a-complete-sum-of-odd-ordinary-modules">2. The quotient is a complete sum of odd ordinary modules</h2>
+<p>Put M=floor(d/2) and c_j=q<sup>(2j+1)+q</sup>(-2j-1), 0&lt;=j&lt;=M. These nodes are distinct and real. The exact Hopf decomposition is</p>
+<pre><code>Q_C = orthogonal direct sum_(j=0)^M V_(2j+1).         (4)</code></pre>
+<p>Here V_l means the genuine l-dimensional ordinary highest-weight module, not its semisimplification. At odd N the last summand is the Steinberg V_N; it is retained.</p>
+<p>To prove (4), first use the equivalent Hopf module im L. At a paired Casimir node c_j, L has one nonzero image vector in precisely the physical integer degrees</p>
+<pre><code>T=d-j,d-j+1,...,d+j.</code></pre>
+<p>This follows from the complete pair Jordan blocks: a derivative can survive exactly when both members j and d-j are present. At odd N the simple Steinberg node has the SAME range. A nonzero image vector in the first degree is killed by E_t, since the preceding image weight space is zero, and has highest H weight 2j. Its F_t descendants are nonzero through order 2j, because</p>
+<pre><code>E_t F_t^r v=rho^2 [r]_q[2j-r+1]_q F_t^(r-1)v,</code></pre>
+<p>and every displayed q-number is nonzero. They span V_(2j+1). The dimensions sum to floor((N+1)/2)^2, the full rank in (1), so no extension or remaining channel is missing. Distinct real Casimirs are orthogonal by (2).</p>
+<h2 id="a-canonical-basis-has-explicit-affine-angle-weights">3. A canonical basis has explicit affine-angle weights</h2>
+<p>Let E_j(z) be the ordinary Lagrange VALUE polynomial on the distinct nodes c_0,…,c_M, and set</p>
+<pre><code>T_j=d-j, w_j=E_j(Omega)|0,T_j&gt;,
+w_(j,r)=F_t^r w_j/F_r, 0&lt;=r&lt;=2j,
+F_r=(Q;Q)_r, s_r=|F_r|.</code></pre>
+<p>The classes [w_(j,r)] form an orthogonal basis of Q_C. Value interpolation suffices modulo ker L; no generalized direction is deleted before the complete circle is applied. Their EXACT norms are</p>
+<pre><code>||[w_(j,r)]||_C^2=g_j beta(2j,r),
+beta(n,r)=s_n/[s_r s_(n-r)],                         (5)</code></pre>
+<p>where</p>
+<pre><code>g_j=2N beta(2j,j),                  2j&lt;d,
+g_(d/2)=N,                         2j=d (odd N).     (6)</code></pre>
+<p>Here is a normalization proof. In degree T_j the positive CD resolution of L P has its j-th weight 2s_(d-j)^2/s_(d-2j), with weight s_(d/2)^2=N at the odd simple node. The first component of the reflected normalized eigenvector has modulus one. Projecting |0,T_j&gt; to the quotient’s c_j-channel thus gives this norm. Reflection s_a s_(d-a)=N gives (6). Finally (2) gives the descendant norm product product_(h=1)<sup>r[-rho</sup>2[h]_q[2j-h+1]_q]. Dividing by s_r^2 reduces it exactly to beta(2j,r), proving (5).</p>
+<p>These are once-power angle factors. With w_d(a,b,c)=1/(s_a s_b s_c), a+b+c=d,</p>
+<pre><code>beta(2j,r)=N w_d(r,2j-r,d-2j),
+g_j=2N^2 w_d(j,j,d-2j) for paired nodes.             (7)</code></pre>
+<p>The odd Steinberg node has half that paired prefactor. All zero indices, scalar factors and true integer charges remain. Equations (5)–(7) do not identify a geometric triangulation’s edge rows.</p>
+<p>In an orthonormal quotient basis the ladder coefficients have modulus 2sqrt(sin(pi(r+1)/N)sin(pi(2j-r)/N)). Consequently</p>
+<pre><code>||F||_Q, ||E||_Q&lt;=2, ||K||_Q=1.                     (8)</code></pre>
+<h2 id="circle-sewing-retains-the-normal-source-instead-of-semisimplifying">4. Circle sewing retains the normal source instead of semisimplifying</h2>
+<p>Let pi:V tensor V-&gt;Q_C be the quotient map in the orthonormal basis (5), so pi^dagger pi=C. Define iota=P pi^dagger. Both pi and iota are actual Hopf maps, by (2), and</p>
+<pre><code>L=iota pi,
+pi iota=0 on every paired-node V_(2j+1),
+pi iota=N I on the odd Steinberg V_N.                (9)</code></pre>
+<p>Indeed pi L=(pi iota)pi and the induced circle on Q_C is its Casimir value, zero on the paired nodes and N at the odd simple node. Thus two complete circles sew to ZERO at every even level; at odd levels they retain precisely the genuine Steinberg channel. This is the full interior face contraction, including the normal directions, not an orthogonal identity resolution. Treating iota pi as an ordinary semisimple summand projector would lose the original nilpotent source.</p>
+<p>For the original cup p and normalized Hermite t,</p>
+<pre><code>pi p=0, pi t=sqrt(2N^3)e_(0,0),
+iota e_(0,0)=sqrt(2/N)p, L t=2N p.                  (10)</code></pre>
+<p>Thus the nonzero normal source is explicit even though the incoming cup itself is null. No radical is silently deleted from a physical input before its actual circle insertion.</p>
+<h2 id="the-complete-original-boundary-has-a-positive-cauchy-form">5. The complete original boundary has a positive Cauchy form</h2>
+<p>The original ordinary cap and restricted marked cap satisfy</p>
+<pre><code>ell=pi_(0,0)/sqrt(2N^3),
+m_d=ell P/N=(pi P)_(0,0)/sqrt(2N^5).                 (11)</code></pre>
+<p>The marked cap therefore uses H, not C. Their exact dual costs are 1/(2N^3) and 1/(2N^5). These statements follow also from the canonical highest norm g_0=2N and ell w_0=1/N. They retain the original turns; in particular m does not descend to Q_C because m p=1. The associated twist isometry is correspondingly typed: C uses R, whereas H uses the leg-exchanged R#=P R P, so R#^dagger H R#=H. No unexchanged R^dagger H R=H is presumed. Actual diagram reflection or duality must supply that leg exchange before using this transport.</p>
+<p>For an original 2k-head plat let v=W p^tensor k, with every full signed crossing, and retain its external line chi_N. After the k-1 ordinary caps, the original integer-degree conservation forces the last marked pair to degree d. Only THEN replace its unrestricted row by m_d. Put</p>
+<pre><code>G_top=C^tensor(k-1) tensor H,
+Lambda=ell^tensor(k-1) tensor m_d.</code></pre>
+<p>Tensoring the genuine local positive inequalities proves</p>
+<pre><code>Lambda^dagger Lambda &lt;= 2^(-k)N^(-(3k+2)) G_top,
+|K_N|^2&lt;=|chi_N|^2 2^(-k)N^(-(3k+2)) v^dagger G_top v. (12)</code></pre>
+<p>The dual cost is exact on the supported quotient. Adding exp(-N^2)I makes this a full positive metric with no larger dual cost; the added energy is negligible for a fixed word by the original coarse physical norm bound. This metric uses fixed operator/source data, not K_N. Its SHARP GEOMETRIC ENERGY BOUND is not proved. The marked restriction in (12) cannot be used for arbitrary non-degree-preserving exteriors.</p>
+<h2 id="which-overlap-maps-are-well-typed">6. Which overlap maps are well typed</h2>
+<p>The whole-block braid R12 R23 carries L12 to L23 by the actual coproduct/naturality identity. It therefore maps Q_C tensor V to V tensor Q_C, preserving j, and is the literal mixed universal braiding of V_(2j+1) with V_N. The unrolled highest weight is exactly 2j, so no new half-Cartan mark or scalar is introduced.</p>
+<p>On an ordinary channel l=2j+1 the finite universal R and its inverse obey, in these positive single-object metrics,</p>
+<pre><code>||R_(l,N)^plusminus||&lt;=sum_(r=0)^(l-1) 4^r/s_r.      (13)</code></pre>
+<p>The Cartan and checked flip are unitary. Each nilpotent coefficient has modulus1/s_r in the actual Ecal,F conventions; (8) proves (13). For l&lt;=N/2 this is at most l[eN/(l-1)]^(l-1), with value1 for l=1, since s_r&gt;=(4/N)^r r!. Hence every SUBLINEAR ordinary channel l=o(N) has exp(o(N)) block-braiding cost. The macroscopic channels retain their genuine angle energy rather than a claimed polynomial cost.</p>
+<p>A crossing which SPLITS the paired block is different. The original p12 tensor V lies in ker L12, yet its R23 image has nonzero ordinary cap kappa x^(-d)I. The cap inequality then implies that this image is not in ker C12. Thus a single split-pair R23 cannot propagate the same quotient. Actual reassociation must retain its full coupled ordinary-channel map and source interfaces; the local kernel cannot be discarded. This is the same concrete overlap test as <a href="actual_complete_source_multiplicity_module.html#4b-a-local-cap-ward-quotient-does-not-propagate-through-an-adjacent-crossing">the cap-Ward source lemma</a>, now for a genuine positive circle quotient.</p>
+<p>The quotient’s integer labels and (7) are constructive inputs to an angle comparison. They do not prove the global full-2N edge character 2d, a coherent norm bound for arbitrary split-pair faces, or the sharp whole-source knot-volume bound. Those remain the substantive gluing problem, rather than a consequence of positivity of C alone.</p>
+<h3 id="the-first-genuine-split-pair-face-has-a-specified-complete-source-module">The first genuine split-pair face has a specified complete source module</h3>
+<p>For an actual pair of overlapping COMPLETE circles the internal map is</p>
+<pre><code>T_face=(I_V tensor pi)(iota tensor I_V):
+                 Q_C tensor V -&gt; V tensor Q_C.       (14)</code></pre>
+<p>This is a Hopf map with the physical legs in their displayed order. It follows by factoring L23 L12, so it is valid with every exterior and all normal/source data. It is not an asserted unitary associator.</p>
+<p>The complete V_N source multiplicities on each side have dimension M+1. In the balanced quotient basis of (5), their highest vectors are</p>
+<pre><code>h_j=sum_(r=0)^j alpha_(j,r)[w_(j,r)] tensor |j-r&gt;,
+alpha_(j,r)=Q^(jr) F_j F_(2j-r)/[F_(j-r)F_(2j)],</code></pre>
+<p>and on the right their coefficients are x^(-r)alpha_(j,r), with physical |j-r&gt; first. These are actual unrolled highest-weight d vectors. The coproduct E recurrence determines them; its j equations on j+1 coefficients have all necessary nonzero arrows, so there is exactly one such vector per j. F^N=0 supplies its unique V_N lift. Thus no incomplete Clebsch source space is substituted.</p>
+<p>Their positive squared norms are exactly</p>
+<pre><code>sum_(r=0)^j |alpha_(j,r)|^2 g_j beta(2j,r).           (15)</code></pre>
+<p>Equation (14) therefore reduces on the COMPLETE source to an explicit (M+1)-square ordinary-channel Racah packet with these fixed metrics. It carries the nontrivial macroscopic face estimate still needed for global geometric gluing. In its trivial-to-trivial channel there is already an exact source-coherent contraction:</p>
+<pre><code>T_face[0,0]=2N I_V,                                (16)</code></pre>
+<p>because pi_0=sqrt(2N^3)ell, iota_0=sqrt(2/N)p and the original snake is (I tensor ell)(p tensor I)=I. Thus both the same-pair sewing (9) and the source channel of the first overlapping face are polynomially controlled, with their full original factors retained. No polynomial norm is claimed for the remaining macroscopic Racah entries, and (15) is not identified with the geometric edge partition.</p>
+<h2 id="audit">7. Audit</h2>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_complete_circle_positive_quotient.py">Audit</a> checks the actual image-module decomposition and all ladder endpoints, the positive quotient’s orthogonal metric (5), the complete sewing operator (9), both original cap types and the full-source positive inequality (12). It uses the original finite generators and crossings; no unknown scalar period selects the basis or metric.</p>
+<p>Fresh replay: PASS seven exact original Hopf quotient families N=2,…,8, their complete highest Hom spaces in BOTH leg orders; seven full positive angle-metric and sewing families; five complete mixed-block braidings N=2,…,6, including both signed norm bounds; and nine original signed plat source inequalities through six physical heads. The mixed-block audit identifies the induced physical braid entry by entry with the ordinary-channel universal R, including its full Cartan. Whole-block braid naturality is separately checked on all input columns at N=2,…,5. The finite tests supplement the all-level proofs and make no macroscopic split-pair or global geometric-energy assertion.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_complete_circle_positive_quotient.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-positive-form-and-its-star">1. The actual positive form and its star</a><a href="#the-quotient-is-a-complete-sum-of-odd-ordinary-modules">2. The quotient is a complete sum of odd ordinary modules</a><a href="#a-canonical-basis-has-explicit-affine-angle-weights">3. A canonical basis has explicit affine-angle weights</a><a href="#circle-sewing-retains-the-normal-source-instead-of-semisimplifying">4. Circle sewing retains the normal source instead of semisimplifying</a><a href="#the-complete-original-boundary-has-a-positive-cauchy-form">5. The complete original boundary has a positive Cauchy form</a><a href="#which-overlap-maps-are-well-typed">6. Which overlap maps are well typed</a><a href="#audit">7. Audit</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

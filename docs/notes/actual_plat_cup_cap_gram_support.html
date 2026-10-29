@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The original plat source has explicit cup/cap Gram supports · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_plat_cup_cap_gram_support.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-original-plat-source-has-explicit-cupcap-gram-supports">The original plat source has explicit cup/cap Gram supports</h1>
+<p>28 October 2026. For EVERY fixed actual 2k-head plat word, the original scalar has an exact matrix-element presentation between two specified positive pure states, with a unitary pivot and explicit polynomial normalization. No period is divided out and neither state is chosen to favor a geometric saddle.</p>
+<p>The transported cup state satisfies the actual incoming inverse-meridian constraints exactly. The cap state has the outgoing inverse-meridian constraints in mean square with O(N^-2) error. Hence their positive moment limits have the two honest compact braid/cap supports. Their intersection satisfies precisely the plat representation relations within this bounded star-character space. It is not asserted to exhaust the unrestricted representation variety.</p>
+<p>The overlap need not have nonzero limiting mass. No exponential overlap estimate, joint atomic-shape comparison or volume bound is inferred.</p>
+<h2 id="exact-original-source-after-its-permitted-whole-degree-restriction">1. Exact ORIGINAL source, after its permitted whole-degree restriction</h2>
+<p>Use N&gt;=2, d=N-1, q=exp(pi*i/N), Q=q^2 and x=-q^(-1), with the original balanced basis and actual pivot g_i=x<sup>(1-N)Q</sup>(-i). On a standard neighboring primal/dual pair the original left cup p and ordinary right cap l are</p>
+<pre><code>p_(i,j)=N x^(-j) delta_(i+j,d),
+l_(i,j)=x^j g_i/N delta_(i+j,d).</code></pre>
+<p>Since |x|=1,</p>
+<pre><code>l=N^(-2) p^* G, G=diag(g on the primal leg).       (1)</code></pre>
+<p>Both the N and 1/N are the literal actual turn normalizations. The full original marked cap is m_(i,j)=x<sup>j/N</sup>2, with NO degree delta. It is not changed termwise in an arbitrary decomposed tensor.</p>
+<p>Put u=p^(tensor k). It has total INTEGER degree kd. Every ORIGINAL crossing preserves that degree, so the fully assembled W u still has degree kd. The k-1 ordinary top caps force degree d on each of their pairs. Consequently the last MARKED pair also has degree d in the whole scalar pairing. On that specific degree-d subspace,</p>
+<pre><code>m=N^(-3)p^*.                                     (2)</code></pre>
+<p>Thus with any chosen marked pair r_*, the exact originally pointed plat scalar is</p>
+<pre><code>P_N=chi_N N^(-2k-1) &lt;u,G_top W u&gt;,
+G_top=product_(r!=r_*) diag(g on primal leg of pair r). (3)</code></pre>
+<p>Here chi_N is the unchanged original external line, including whatever framing/full peripheral convention has been specified. No component of g or chi_N is reset. Formula (3) uses integer-degree conservation BEFORE the marked-cap restriction. The replacement (2) is not asserted for arbitrary degree-changing coupon insertions or for separated nonconserving current sectors.</p>
+<p>In the actual flat metric ||p||<sup>2=N</sup>3, so ||u||<sup>2=N</sup>(3k). Define</p>
+<pre><code>uhat=u/N^(3k/2), phihat=G_top^* uhat.</code></pre>
+<p>The pivot is unitary, and g=x^(-N)K on each primal head. Hence G_top is a fixed-degree bounded polynomial in the original Cartans, with its exact parity phase retained. Equation (3) becomes</p>
+<pre><code>P_N=chi_N N^(k-1) &lt;phihat,W uhat&gt;.               (4)</code></pre>
+<p>This is an exact same-source scalar identity, not positivity of a pivotal trace. The states here are fixed by the actual turns.</p>
+<h2 id="the-actual-inverse-meridian-equations-of-every-cup">2. The actual inverse-meridian equations of every cup</h2>
+<p>Let the bounded physical based quantum meridians H_j and their exact transport be those of <a href="actual_bounded_quantum_meridian_transport.html">the all-word theorem</a>. Define, as a two-by-two matrix of physical operators,</p>
+<pre><code>A_r=H_(2r)H_(2r-1)-I, 1&lt;=r&lt;=k.                  (5)</code></pre>
+<p>EVERY entry of A_r annihilates u exactly. Here is a direct proof. On the local pair the actual cup obeys</p>
+<pre><code>E_tot p=0, F_tot p=0, K_tot p=p.</code></pre>
+<p>The two product matrices L_(-,2)L_(-,1) and L_(+,2)L_(+,1) therefore act as the identity on each auxiliary component of p. Their ratio is precisely the local H_2 H_1, so its difference from I kills p. For a later pair the global based product is P^(-1)(H_2 H_1)P, where P consists only of earlier heads. Its matrix entries commute with the local pair’s entries. Thus each term of the difference still annihilates that cup, irrespective of the state on the earlier heads. This proves (5) for the full tensor u, with the original ordering.</p>
+<p>The total product T=H_(2k)…H_1 also acts as I on u and is preserved by W. Its preservation follows from the original total E,F,K Hopf intertwining, equivalently the preserved products of L_+ and L_-.</p>
+<p>Let</p>
+<pre><code>psi_N=W uhat/||W uhat||.</code></pre>
+<p>It exists for EVERY N because W is invertible and uhat is nonzero; no assumption on the scalar pairing (4) is required. Define</p>
+<pre><code>A_(r,W)=W A_r W^(-1).</code></pre>
+<p>All of these are the N-uniformly bounded Nielsen polynomials already proved in the physical-meridian theorem, and</p>
+<pre><code>A_(r,W) psi_N=0, (T-I)psi_N=0.                   (6)</code></pre>
+<p>Thus for the POSITIVE pure Gram state of psi_N,</p>
+<pre><code>&lt;psi_N,A_(r,W)^* A_(r,W)psi_N&gt;=0                (7)</code></pre>
+<p>entrywise, exactly at each level. These are the actual transported bottom cup constraints, not a newly imposed classical graph.</p>
+<h2 id="the-actual-top-cap-has-controlled-mean-square-support">3. The actual top cap has controlled mean-square support</h2>
+<p>The cap state in (4) is phihat=G_top^* uhat. Since A_r uhat=0,</p>
+<pre><code>A_r phihat=[A_r,G_top^*] uhat.                   (8)</code></pre>
+<p>All entries of A_r and G_top are fixed-degree polynomials in the actual bounded scaled head observables. Their star commutators have the proved norm bound C_k/N. Therefore</p>
+<pre><code>||(A_r)_(ab) phihat||&lt;=C_k/N,
+&lt;phihat,(A_r)_(ab)^*(A_r)_(ab)phihat&gt;&lt;=C_k^2/N^2. (9)</code></pre>
+<p>This includes the marked pair: it has no pivot of its own in G_top, but pivots on earlier heads can enter its based prefix. Equation (8) handles them rather than treating the based constraint as a local unbased one. The estimate is independent of W and does not replace the original marked source before its permitted whole-degree use.</p>
+<p>The stronger exact cap-row equations for ordinary top caps are also consistent with (9); they are not needed to infer support here.</p>
+<h2 id="positive-limits-and-the-honest-plat-intersection">4. Positive limits and the honest plat intersection</h2>
+<p>The all-word bound supplies a common finite bounded star family for H_j, all W H_j W^(-1), their entries and adjoints. Their commutators are O(1/N). Consequently subsequential moment limits of the two positive pure states have compact commutative realizations as in the physical-meridian theorem.</p>
+<p>At every character write h_j for the SL2 matrices determined by H_j; the physical meridians are -h_j and have trace two. The limiting cup measure is supported by</p>
+<pre><code>phi_W(h_(2r))phi_W(h_(2r-1))=I for all r,
+h_(2k)...h_1=I,                                 (10)</code></pre>
+<p>where phi_W is the EXACT Nielsen word read contravariantly from the actual W. This follows from the zero mean squares (7). The cap measure is supported by</p>
+<pre><code>h_(2r)h_(2r-1)=I for all r,                       (11)</code></pre>
+<p>by (9). No positivity of the original pivotal closing is assumed.</p>
+<p>The intersection of (10) and (11) is the subset of the bounded character space satisfying the honest plat representation relations, including degenerate/central meridians. To verify the group statement, take free meridian generators at the braid’s top. Each top cap identifies its two oriented meridians as inverses, giving (11). Pull the bottom meridians through the literal braid Hurwitz words; its bottom caps then give precisely (10). These are exactly the Wirtinger/van-Kampen identifications of the plat diagram. The total product relation is redundant once all adjacent cap products are I, but it is genuinely retained by the quantum source as well.</p>
+<p>For a one-component knot any noncentral trace-two meridian has parabolic centralizer, so its commuting peripheral image is boundary-parabolic. If it is central in PSL2, normal generation makes the representation trivial. Hence the sharp representation volume bound applies to every representation in this intersection. This is not yet a claim that its joint atomic shapes have the saturated critical regulator values.</p>
+<h2 id="a-bounded-overlap-limit-also-has-this-intersection-support">5. A bounded overlap limit also has this intersection support</h2>
+<p>There is a further statement which does not assume a nonzero overlap. For any fixed polynomial observable F in that bounded star family set</p>
+<pre><code>omega_N(F)=&lt;phihat,F psi_N&gt;.                      (12)</code></pre>
+<p>Its norm is at most the operator norm of F. Polarization expresses it as a linear combination of four positive vector Gram functionals of phihat+i^j psi_N, whose norms are at most four. Their subsequential compact commutative realizations from Section 4 therefore give a bounded complex measure for (12), possibly the ZERO measure. From (6) we have omega_N(F A_(r,W))=0. From (9), &lt;phihat,A_r^* F psi_N&gt;=O(1/N); commuting fixed-degree observables changes this by O(1/N). Consequently the limit annihilates every polynomial multiple of A_(r,W) and A_r^*. Including all adjoints and using continuous approximation shows that it is supported on the intersection (10)-(11). There is no division by omega_N(1) or P_N.</p>
+<p>These moments belong to the exact scalar representation (4). They are not asserted equal to old marked-cap moments after arbitrary degree-changing coupon insertions, for which (2) need not hold.</p>
+<p>The distinction from an exponential theorem is essential. From (4),</p>
+<pre><code>|P_N|=|chi_N| N^(k-1)||W uhat|| |omega_N(1)|.     (13)</code></pre>
+<p>The overlap can be exponentially small, and every fixed-degree moment in (12) can then tend to zero. The separate positive cup and cap measures do not create a normalized overlap measure or a nonzero intersection coefficient. Dividing by that small overlap would destroy the uniform moment bound just proved. No claim is made that the discrete-faithful point lies in this real compact intersection. Complex stationary deformation and its original source still matter.</p>
+<p>The new unconditional result is the SAME original scalar’s explicit cup/cap support and bounded overlap-support statements, for all widths and words. A sharp upper bound still needs exponential control of that overlap and of the associated atomic regulator at singular shape charts. A volume lower bound also needs nonzero geometric selection. Neither conclusion is inferred here.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_plat_gram_support.py">Audit</a>: exact full marked-source reduction, all cup and transported constraints, retained total product and pivots, plus direct flat-complex mean-square cap bounds. Both crossing signs and marked-pair locations are retained.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_plat_cup_cap_gram_support.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-original-source-after-its-permitted-whole-degree-restriction">1. Exact ORIGINAL source, after its permitted whole-degree restriction</a><a href="#the-actual-inverse-meridian-equations-of-every-cup">2. The actual inverse-meridian equations of every cup</a><a href="#the-actual-top-cap-has-controlled-mean-square-support">3. The actual top cap has controlled mean-square support</a><a href="#positive-limits-and-the-honest-plat-intersection">4. Positive limits and the honest plat intersection</a><a href="#a-bounded-overlap-limit-also-has-this-intersection-support">5. A bounded overlap limit also has this intersection support</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

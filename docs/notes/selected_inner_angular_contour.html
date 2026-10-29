@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A selected inner angular contour with coefficient one · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/selected_inner_angular_contour.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-selected-inner-angular-contour-with-coefficient-one">A selected inner angular contour with coefficient one</h1>
+<p>28 October 2026. The late inner block of the five-crossing source has a genuine noncancelling contour. This is a selected contour calculation, rather than the existence of a formal critical point. Its real-parameter version is proved below. A complex-parameter reduction gives explicit one-variable boundary tests for transporting the outer contour. The full outer selected asymptotic is not proved here.</p>
+<p>The exact whole-source transform is supplied separately by <a href="five_two_cyclotomic_transform_proof.html">the finite five-crossing transform</a>. The calculation below concerns its explicitly specified inner block and does not use a Jones formula or a published asymptotic proof.</p>
+<h2 id="the-exact-inner-block-and-its-continuous-source">1. The exact inner block and its continuous source</h2>
+<p>Put Q=exp(2pi i/N), F_n=(Q;Q)_n and</p>
+<pre><code>W_N(n,j)=Q^[-n(n+2)-j(n+1)] F_n^3/[F_j F_(n-j)],
+                                               0&lt;=j&lt;=n&lt;N.</code></pre>
+<p>Use the exact marked factorial interpolation Fhat_N(z). Its reflection and finite-shift identities are</p>
+<pre><code>Fhat_N(z)Fhat_N(N-1-z)
+                    =N exp[pi i z(z-N+1)/N],
+Fhat_N(z+L)/Fhat_N(z)=(Q^(z+1);Q)_L           (1)</code></pre>
+<p>for nonnegative INTEGER L, with the stated analytic continuation. Thus, with L=N-1-n, the actual interpolation after the harmless lattice factor exp(2pi i z) is exactly</p>
+<pre><code>W_N(n,z)exp(2pi i z)
+   =C_(N,n) exp[-pi i z(z-N+1)/N]
+                          (Q^(z+1);Q)_L,
+C_(N,n)=F_n^3/N * exp[-2pi i n(n+2)/N
+                          -pi i n(n-N+1)/N]. (2)</code></pre>
+<p>All constants in (2) are retained. It equals W_N(n,j) at every selected integer j. The right side is an ENTIRE finite-product function of z. Define its selected ordinary integral</p>
+<pre><code>I_(N,n)=C_(N,n) integral_0^n
+   exp[-pi i z(z-N+1)/N](Q^(z+1);Q)_L dz.     (3)</code></pre>
+<p>The separate <a href="source_preserving_inner_quadrature.html">finite Abel–Plana comparison</a> controls the difference between the discrete inner sum and (3) by O_K(log N)|F_n|^2 for n/N in a compact late interval. The contour theorem below proves a positive exponential gap over precisely that endpoint scale; hence that comparison does not erase its selected saddle coefficient.</p>
+<h2 id="the-selected-critical-point-for-real-x">2. The selected critical point for real x</h2>
+<p>Let 1/2&lt;x&lt;1, X=exp(2pi i x). The equation</p>
+<pre><code>XY^2+(1-X)Y-X=0                              (4)</code></pre>
+<p>has a unique root with |Y|&lt;1. Write it as</p>
+<pre><code>Y=-R exp(i alpha), 0&lt;R&lt;1, 0&lt;alpha&lt;pi/2,
+y_s=Log(Y)/(2pi i)+1=b+i eta,
+b=1/2+alpha/(2pi), eta=-log(R)/(2pi)&gt;0.</code></pre>
+<p>Then 1/2&lt;b&lt;x. One direct verification uses beta=2pi(1-x), h=-log R and the identities</p>
+<pre><code>sinh(h)cos(alpha)=sin^2(beta/2),
+cosh(h)sin(alpha)=sin(beta/2)cos(beta/2).      (5)</code></pre>
+<p>They give one positive h and alpha in (0,pi/2). For x&gt;=3/4, b&lt;x is immediate. For 1/2&lt;x&lt;3/4, the ratio of the equations in (5) gives alpha&lt;pi-beta, hence again b&lt;x.</p>
+<p>Let J be the holomorphic primitive of Log(2sin(pi z)) marked from 0&lt;z&lt;1. Up to an x-only constant the inner phase is</p>
+<pre><code>Psi_x(y)=-J(y)-J(x-y)
+                   +pi i[(2-x)y-y^2].       (6)</code></pre>
+<p>The chosen root solves Psi_x’(y_s)=0 in this mark. It is the continuation from the real late source, not the other quadratic root, whose real logarithmic coordinate lies outside (0,x).</p>
+<h2 id="the-horizontal-contour-has-a-unique-global-maximum">3. The horizontal contour has a unique global maximum</h2>
+<p>Shift the interval [0,x] to [0,x]+i eta. For y=s+i eta,</p>
+<pre><code>d_s Re Psi_x(s+i eta)
+   =1/2 log[(sin^2(pi(x-s))+sinh^2(pi eta)) /
+                     (sin^2(pi s)+sinh^2(pi eta))]
+                                  +2pi eta=:F(s). (7)</code></pre>
+<p>One has F(0)&gt;0 and F(x)&lt;0. The first is immediate. For the second, put S=sin^2(pi x), h=2pi eta, a=sinh h and c=cosh h. Equation (5) gives</p>
+<pre><code>a^4+(1-S)a^2-S^2=0, 0&lt;a&lt;1.                  (8)</code></pre>
+<p>The desired F(x)&lt;0 is equivalent to</p>
+<pre><code>S&gt;a(a+c)(c-1)=:R_0.</code></pre>
+<p>The polynomial P(z)=z<sup>2+a</sup>2z-a<sup>2(1+a</sup>2) is increasing for z&gt;=0 and has positive root S. If v=exp(h), direct factorization gives</p>
+<pre><code>P(R_0)=(v-1)^2(v+1)^2(v^2+1)(v^2-2v-1)
+                                  (v^2-v+1)/(16v^4)&lt;0,</code></pre>
+<p>because 1&lt;v&lt;1+sqrt(2). This proves F(x)&lt;0.</p>
+<p>The equation F(s)=0, after exponentiation and expansion of the two sine squares, is a constant plus one sine and one cosine of 2pi s. It has at most two zeros in an interval of length x&lt;1, counting multiplicities. Opposite endpoint signs therefore force exactly one zero. It is s=b, the already known critical point, and it crosses from positive to negative. Thus y_s is a strict, nondegenerate GLOBAL maximum of the real part on this horizontal contour. The Gaussian square root is fixed by this actual left-to-right orientation.</p>
+<h2 id="both-connecting-segments-are-lower">4. Both connecting segments are lower</h2>
+<p>Connect 0 to i eta, and x+i eta to x, using vertical segments. All endpoint values below use the one-sided J mark from 0&lt;Re y&lt;Re x; evaluating a principal dilogarithm directly on its cut can give the wrong value.</p>
+<p>On the left segment y=i tau, tau&gt;0, the imaginary part of Psi_x’(y) is</p>
+<pre><code>arg sin(pi(x-i tau))+pi(3/2-x)&gt;0.</code></pre>
+<p>Consequently Re Psi strictly decreases upward. Its maximum is the original endpoint y=0.</p>
+<p>On the right segment y=x+i tau, tau&gt;0, one obtains</p>
+<pre><code>d_tau Re Psi_x(x+i tau)
+   =arg sin(pi(x+i tau))+pi(3x-3/2)&gt;0.</code></pre>
+<p>Indeed arg sin(pi(x+i tau))&gt; -pi(x-1/2), leaving the positive lower bound pi(2x-1). Its maximum is therefore the horizontal endpoint x+i eta, strictly below the horizontal saddle.</p>
+<p>It remains to compare the LEFT original endpoint with the saddle. Restore the outer phase and define</p>
+<pre><code>S(x,y)=3J(x)-J(y)-J(x-y)
+                   +pi i(3x+2y-x^2-xy-y^2),
+D(x)=Re S(x,y_s(x))-2J(x).                   (9)</code></pre>
+<p>Then</p>
+<pre><code>D(x)&gt;0, 1/2&lt;x&lt;1.                            (10)</code></pre>
+<p>Here is a direct proof. The critical equation gives</p>
+<pre><code>D&#39;(x)=log[|1-X|/(R|1-Y|)].                  (11)</code></pre>
+<p>Use S_0=sin^2(pi x), a=sinh h, c=cosh h as in (8). Formula (11) becomes</p>
+<pre><code>D&#39;(x)=1/2 log[2S_0 a/(ac+S_0)]+3h/2.        (12)</code></pre>
+<p>As a function of S_0 in (0,1), a and h are strictly increasing. Also c/S_0 is strictly decreasing. To verify the latter, put T=a^2; equation (8) gives</p>
+<pre><code>T&#39;=(T+2S_0)/(2T+1-S_0)&gt;0,
+sign d_(S_0)(c/S_0)
+   =sign[S_0 T&#39;-2(1+T)]&lt;0,</code></pre>
+<p>since after clearing its positive denominator the numerator is S_0(T+2)-2(T+1)^2&lt;0. Therefore 2S_0 a/(ac+S_0)=2/(c/S_0+1/a) is strictly increasing. The right side of (12) is strictly increasing in S_0. Since S_0 strictly decreases with x on (1/2,1), D’’(x)&lt;0.</p>
+<p>Finally D(1/2+)=D(1-)=0. At x=1 the limiting saddle is y=1/2, and J(1)=J(1/2)=0. At x=1/2 the saddle is y=1/2+i asinh(1)/(2pi); the one-sided identities Re J(1/2+i eta)=0 and Re J(-i eta)=-pi eta/2 make the two real terms cancel. Strict concavity proves (10).</p>
+<p>Thus every connector and the Abel–Plana endpoint scale is strictly below the selected saddle, uniformly when x lies in a compact subinterval of (1/2,1).</p>
+<h2 id="the-resulting-selected-gaussian-with-its-source-coefficient">5. The resulting selected Gaussian, with its source coefficient</h2>
+<p>Let P’(z)=Log(1-exp(2pi i z)), with its inherited strip mark, and put</p>
+<pre><code>Phi_x(y)=P(y+1-x)-P(y)+pi i(y-y^2),
+a_x(y)=exp(-pi i y) /
+   sqrt[(1-exp(2pi i y))(1-exp(2pi i(y+1-x)))].</code></pre>
+<p>For n/N=x in any compact K contained in (1/2,1), the selected integral (3) satisfies uniformly</p>
+<pre><code>I_(N,n)=C_(N,n) sqrt(N) a_x(y_s)
+      sqrt[2pi/(-Phi_x&#39;&#39;(y_s))]
+      exp[N Phi_x(y_s)] (1+O_K(1/N)).         (13)</code></pre>
+<p>Every displayed factor is nonzero. The multiplier of this Gaussian is ONE. This follows by an exact contour deformation of the entire integrand (2); no thimble intersection is guessed.</p>
+<p>For completeness, the finite product on the horizontal segment has the uniform Euler–Maclaurin expansion</p>
+<pre><code>(Q^(Ny+1);Q)_(N-1-n)
+   =exp{N[P(y+1-x)-P(y)]} /
+      sqrt[(1-exp(2pi i y))(1-exp(2pi i(y+1-x)))]
+                                  *(1+O_K(1/N)).</code></pre>
+<p>Its arguments stay strictly inside the unit disk there, and away from one, uniformly on K. The quadratic Gaussian in (2) contributes exp[N pi i(y-y^2)]exp(-pi i y). The two connector bounds follow with a uniform O(log N) logarithmic product error, treating their simple endpoint zeros by rectangle sums. Their strict phase gap makes them exponentially negligible in (13). Ordinary one-variable complex Laplace expansion at the unique horizontal maximum then proves (13), including the orientation and coefficient one.</p>
+<p>Combined with the finite Abel–Plana endpoint bound stated in Section 1, the SAME selected Gaussian is the asymptotic of the original discrete inner sum, uniformly on real compact K. This is an inner source-selection theorem. Outer cancellation is a further operation and has not been suppressed by wording.</p>
+<h2 id="a-complex-x-reduction-for-the-actual-outer-contour">6. A complex-x reduction for the actual outer contour</h2>
+<p>The following identities reduce the complex continuation to explicit one-variable boundary tests. Let</p>
+<pre><code>x=u+i h, 1/2&lt;u&lt;1,
+|1/X|&lt;=2, X=exp(2pi i x),
+T=1/X-1,
+v=(T+sqrt(T^2+4))/2, Re sqrt(T^2+4)&gt;0,
+Y=-v, y_s=b+i lambda=Log(Y)/(2pi i)+1.</code></pre>
+<p>The condition 0&lt;Im T&lt;2 is enough to make v lie in quadrant I; it cannot cross an axis without T becoming real or satisfying Im T&gt;=2. Hence 1/2&lt;b&lt;min(u,3/4). The latter inequality follows from the ratio of real and imaginary parts of v-1/v=T when u&lt;3/4; it is automatic when u&gt;=3/4. The root has no collision on this domain.</p>
+<p>At the selected root,</p>
+<pre><code>S_yy=-2pi i(v^2+1)/[v(v+1)],
+sign Re S_yy=sign(|v|^2-2Re v-1)&lt;0.           (14)</code></pre>
+<p>For the last inequality write a=Re v&gt;0, r=|v|^2. Then</p>
+<pre><code>|1+v-1/v|^2=r+3+2a+(1-2a-4a^2)/r.</code></pre>
+<p>At r=2a+1 its excess over four is (4a^2+2a+1)/(2a+1)&gt;0, and it is strictly increasing for r&gt;=2a+1. Thus |1/X|&lt;=2 forces r&lt;2a+1. In particular the selected root remains a nondegenerate strict horizontal maximum.</p>
+<p>On y=s+i lambda, 0&lt;=s&lt;=u, one has</p>
+<pre><code>F(s)=d_s Re S
+  =1/2 log[(sin^2(pi(u-s))+sinh^2(pi(h-lambda))) /
+                     (sin^2(pi s)+sinh^2(pi lambda))]
+                          +pi(h+2lambda).    (15)</code></pre>
+<p>There are at most two horizontal stationary points. Also F(0)&gt;0. An exact proof of the latter is available directly from the root: put R=|v| and c=cos(arg v). After squaring the equivalent modulus inequality, its positive difference is</p>
+<pre><code>2(c+1)[(R-1)^2(R+1)+2R^2(1-c)]&gt;0,</code></pre>
+<p>after multiplication by a positive power of R. The sign, rather than that irrelevant positive scaling, is what is used.</p>
+<p>Together with (14), this shows that the maximum over the WHOLE horizontal segment is either the selected saddle or the right endpoint u+i lambda. Unlike the real-x case, F(u) can be positive; there can be a second stationary point, which is a minimum.</p>
+<p>The polygon 0 -&gt; i lambda -&gt; u+i lambda -&gt; x has particularly simple connectors. The left phase is strictly decreasing as a function of its vertical parameter tau. Its maximum is therefore at tau=min(0,lambda). On the right put</p>
+<pre><code>theta_u(tau)=arg sin(pi(u+i tau)).</code></pre>
+<p>This is strictly decreasing. The vertical derivative of Re S is</p>
+<pre><code>theta_u(tau)+pi(3u-5/2), tau&lt;h,
+theta_u(tau)+pi(3u-3/2), tau&gt;h.              (16)</code></pre>
+<p>Each connector segment is strictly concave. Its maximum is at an endpoint or the single stationary value obtained by solving theta_u(tau)=-pi(3u-c), c=5/2 or 3/2, when that value belongs to the segment. Explicitly</p>
+<pre><code>tau=(1/pi)artanh[tan(pi(3u-c))/(-cot(pi u))], (17)</code></pre>
+<p>with the actual arctangent range checked before using (17).</p>
+<p>Consequently an outer contour construction need only bound the selected outer action and these finitely many ONE-VARIABLE endpoint/stationary connector functions. No sampling of the whole two-dimensional polygon is required for a rigorous bound.</p>
+<p>At the geometric outer x, diagnostic values are</p>
+<pre><code>Re S(x,y_s)=0.450109610025218...,
+max left connector=0.10745960674786...,
+max right connector=0.43978988922391....</code></pre>
+<p>The right maximum occurs at tau=0.04913510458548…, rather than at either endpoint. The exact formulas (14)–(17) reduce the whole-contour comparison to one real parameter. The following certificate completes those phase bounds; the displayed decimals above are not used as proof.</p>
+<h2 id="rigorous-bounds-for-the-full-inner-polygons-and-outer-source-edges">7. Rigorous bounds for the full inner polygons and outer source edges</h2>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/certify_selected_inner_contours.py">The Arb certificate</a> uses 192-bit outward-rounded acb/arb arithmetic. Its <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/selected_inner_contour_certificate.json">saved result</a> reports <code>RIGOROUS_ARB_PASS</code>. Polynomial root isolation, every analytic function enclosure, every pass/fail comparison and every interval subdivision are certified balls; floats are used only for displaying already-proved bounds.</p>
+<p>Let x_g=u_g+i h_g be the exact cubic point from <a href="five_two_reduced_outer_contour_concavity.html">the outer phase theorem</a>, and put h(u)=min(h_g,h_g(1-u)/(1-u_g)). The certificate proves:</p>
+<ul>
+<li>For .51&lt;=u&lt;=.99 on x=u+i h(u), ALL left inner connectors have phase below .200 and ALL right inner connectors have phase below .445. The two contour pieces require 523 and 734 dyadic parameter cells respectively.</li>
+<li>On x=u-.1i, .51&lt;=u&lt;=.99, the maximum phase of the ENTIRE inner polygon, after adding the exact lower-kernel weight -.2pi, is below .400. This includes the selected horizontal saddle, the horizontal endpoint and both connectors; 187 parameter cells suffice.</li>
+<li>For u in EACH of [.5099,.5101] and [.9899,.9901], every full inner polygon on the vertical outer source edges has phase below .440. On the upper edge 0&lt;=h&lt;=h(u) this is unweighted. On the lower edge -.1&lt;=h&lt;=0 it includes the actual kernel weight +2pi h. These four boxes require 388 further cells. The real u variable is kept as its whole Arb interval, so these are two-parameter box enclosures, not evaluations at just u=.51,.99.</li>
+</ul>
+<p>The total is 1832 verified cells. The same calculation encloses the selected cubic rate between .45010 and .45012. Thus all connector and lower-source bounds have a STRICT positive gap. The phase calibration is supplied by the separate <a href="five_two_selected_bloch_calibration.html">marked Bloch calculation</a>.</p>
+<p>Here is why the maximum reductions make this a full certificate. On each parameter cell the code encloses the selected quadratic root and checks its first-quadrant branch. Formula (14) and F(0)&gt;0 imply that every horizontal maximum is either the saddle or its right endpoint. The left connector maximum is one of its two endpoints. On the right, the derivative is decreasing; the code includes both endpoints and the unique candidate (17) unless an interval sign proves it irrelevant. Ambiguous cases are subdivided. It therefore cannot omit an actual maximum. The interval cells cover both closed parameter ranges, including their common cubic endpoint.</p>
+<p>The <a href="source_preserving_outer_finite_height_quadrature.html">exact finite-height outer source formula</a> uses precisely these weights and edges. Its half-integer real edges lie in the certified u boxes for every sufficiently large N (N&gt;=10000 is sufficient for its specified rounding). The uniform factorial bound in that theorem includes BOTH inner endpoints, with only polynomial factors; hence a certified phase bound controls the actual whole inner function there.</p>
+<p>The upper kernel also has an explicit gap. On this window h(u)&gt;.007. The outer theorem gives selected reduced phase at most the cubic value, and the remaining upper connectors are below .445. Consequently the full upper polygon, after its kernel weight -2pi h, is below .407. Combining the upper, lower and vertical bounds in the exact outer formula gives an outer discretization error O(N^(5/2)exp(.440N)). This is strictly below the selected cubic action. No outer alias or finite source edge is discarded by its formal symbol.</p>
+<p>These estimates supply the source-error and inner-contour inputs for combining the exact finite transform, selected saddle and marked volume calibration. They do not constitute a general knot theorem; extension to broader bridge networks requires analogous source-preserving reductions and contour bounds.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/selected_inner_angular_contour.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-exact-inner-block-and-its-continuous-source">1. The exact inner block and its continuous source</a><a href="#the-selected-critical-point-for-real-x">2. The selected critical point for real x</a><a href="#the-horizontal-contour-has-a-unique-global-maximum">3. The horizontal contour has a unique global maximum</a><a href="#both-connecting-segments-are-lower">4. Both connecting segments are lower</a><a href="#the-resulting-selected-gaussian-with-its-source-coefficient">5. The resulting selected Gaussian, with its source coefficient</a><a href="#a-complex-x-reduction-for-the-actual-outer-contour">6. A complex-x reduction for the actual outer contour</a><a href="#rigorous-bounds-for-the-full-inner-polygons-and-outer-source-edges">7. Rigorous bounds for the full inner polygons and outer source edges</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual Gauss-wall co-source and its relative cut-current map · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_gauss_wall_cut_current_complex.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-actual-gauss-wall-co-source-and-its-relative-cut-current-map">The actual Gauss-wall co-source and its relative cut-current map</h1>
+<p>Research proof, 27 October 2026. The actual coherent kernel determines both anchored Gauss-wall co-sources explicitly. Their difference is the original selected trace class, not zero. The two corresponding finite cut-current maps have a shared binomial wall row and two literal endpoint corrections. They glue exactly on every actual zero-extended Green array.</p>
+<p>This constructs an actual finite relative current map for the cut direction. It also identifies a definite nonzero boundary class which two Weyl charts cannot erase. It does not identify the internal Gaussian images of the remaining currents with these finite co-sources, or select a geometric global contribution.</p>
+<h2 id="the-literal-coherent-kernel-has-two-anchored-wall-primitives">1. The literal coherent kernel has two anchored wall primitives</h2>
+<p>Let N&gt;=2, n=N-1, and use the actual compact source with</p>
+<pre><code>T=v a, Omega_0=dv wedge da=-dT wedge dlog v,
+f_C(v,T)=sum_(i,j=0)^n C_ij binom(n,j)
+                      v^(i-j)T^j(1-T)^(n-j).          (1)</code></pre>
+<p>This is the actual matrix symbol, written on v!=0. It includes the full weighted-word and Green-current matrices before any scalar projection. The normalized compact period is Tr(C)/N.</p>
+<p>On the resolved framing threefold retain</p>
+<pre><code>nu_cut=-(d eta/eta) wedge Omega_0/(1-eta v),
+D_cut={1-eta v=0}, E={eta=0}.</code></pre>
+<p>On the Gauss wall, eta=1/v, so</p>
+<pre><code>D_cut=C^*_v times A^1_T,
+Res_(D_cut)(f_C nu_cut)=-f_C(v,T)dT wedge dlog v.       (2)</code></pre>
+<p>Here f_C nu_cut is the explicit source-kernel lift of the known principal framing form. It is not silently identified with an internal Gaussian current.</p>
+<p>Define the two actual anchored primitives on D_cut by</p>
+<pre><code>zeta_C^+=-sum_(i,j) C_ij binom(n,j)v^(i-j)
+                 [integral_0^T t^j(1-t)^(n-j)dt]dlog v,
+
+zeta_C^-=+sum_(i,j) C_ij binom(n,j)v^(i-j)
+                 [integral_T^1 t^j(1-t)^(n-j)dt]dlog v. (3)</code></pre>
+<p>Polynomial antiderivation proves <code>d zeta_C^+=d zeta_C^-=(2)</code>. The lower primitive is marked to vanish at T=0 and the upper one at T=1. Their difference is exactly</p>
+<pre><code>zeta_C^--zeta_C^+
+     =(1/N)sum_(i,j) C_ij v^(i-j)dlog v.               (4)</code></pre>
+<p>Indeed <code>binom(n,j) integral_0^1 t^j(1-t)^(n-j)dt=1/N</code>. Every off-diagonal term in (4) is exact on C^*, with primitive <code>C_ij v^(i-j)/[N(i-j)]</code>. Therefore its full boundary class is</p>
+<pre><code>[zeta_C^--zeta_C^+]
+              =(Tr(C)/N)[dlog v] in H^1(D_cut).        (5)</code></pre>
+<p>This is a concrete Cech obstruction to choosing a common anchored primitive. For the actual closed knot cut C=F_N(Y)I, it is exactly <code>F_N(Y)dlog v</code>. This is nonzero as a whole meridian family at every level, since the original ordinary-color anchor gives F_N(Q_N)=1. A particular complete value K_N can still vanish. Two Weyl charts alone cannot turn (5) into zero while retaining the actual selected source class.</p>
+<h2 id="the-wall-co-sources-are-exact-positive-finite-matrix-rows">2. The wall co-sources are exact positive finite matrix rows</h2>
+<p>On the intersection loop of the actual radial normal homotopy, T=1/2 and v=exp(i phi), integration of (3) gives</p>
+<pre><code>integral_C zeta_C^+=-c lambda_N^+(C),
+integral_C zeta_C^-=+c lambda_N^-(C), c=2pi*i.          (6)</code></pre>
+<p>The two functionals are literal diagonal matrix rows</p>
+<pre><code>lambda_N^+(C)=sum_(j=0)^n w_(N,j) C_jj,
+w_(N,j)=binom(n,j)integral_0^(1/2)t^j(1-t)^(n-j)dt
+        =[1/(N 2^N)]sum_(r=j+1)^N binom(N,r),
+lambda_N^-(C)=Tr(C)/N-lambda_N^+(C).                   (7)</code></pre>
+<p>The finite binomial identity in (7) follows by differentiating the indicated binomial tail in its upper limit; its value at zero fixes the integration constant. Thus no unknown knot period is used to define these co-sources.</p>
+<p>All weights are positive and</p>
+<pre><code>lambda_N^+(I)=lambda_N^-(I)=1/2,
+w_(N,n-j)=1/N-w_(N,j).                                (8)</code></pre>
+<p>Let W_M be the actual root Weyl operator, with its retained diagonal coefficients and index reversal. Conjugation reverses the diagonal entries, so exactly</p>
+<pre><code>lambda_N^+(W_M C W_M^(-1))=lambda_N^-(C).              (9)</code></pre>
+<p>This functional identity holds generically and extends on the paired fractional source lattices at a resonance. It does not assert that W_M acts on every coherent coordinate by a classical Mobius transformation. Off-diagonal angular weights in (6) have been integrated explicitly.</p>
+<p>Every full-head Gamma/frame comparison in the current source theorems is diagonal. Its conjugation commutes with both weight matrices in (7), so both co-sources are invariant under it on all matrices. The bounded Gamma source comparison transports the wall charge; it cannot discard it. For the actual closed knot they return F_N(Y)/2 each, including the original full external phase and modified dimension if it is restored.</p>
+<h2 id="a-literal-cut-difference-has-a-shared-degree-elevated-wall-row">3. A literal cut difference has a shared degree-elevated wall row</h2>
+<p>Let J_j be any finite zero-extended actual cut-current array, and take the literal shift <code>(S J)_j=J_(j+1)</code>. Define the degree-elevated wall co-source</p>
+<pre><code>B_N(J)=[1/(N2^N)]sum_(j=0)^N binom(N,j)J_j.             (10)</code></pre>
+<p>The j=N value is retained. It lies outside the original head and can occur in the shifted currents even though the original state is supported in 0,…,n. Extend the head rows (7) by zero outside that interval. Direct summation by parts gives</p>
+<pre><code>lambda_(N,head)^+((S-1)J)= B_N(J)-J_0/N,
+lambda_(N,head)^-((S-1)J)=-B_N(J)+J_N/N.                (11)</code></pre>
+<p>For example the backward difference of the positive head weights is the binomial row, except for the additional -1/N at j=0. This proves (11) including all shifted endpoints.</p>
+<p>Equivalently use the explicit finite relative extensions</p>
+<pre><code>lambda_(N,rel)^+(J)
+   =lambda_(N,head)^+(J)+(1/N)sum_(j&lt;0)J_j,
+lambda_(N,rel)^-(J)
+   =lambda_(N,head)^-(J)+(1/N)sum_(j&gt;=N)J_j.            (12)</code></pre>
+<p>The sums are finite on the actual Green arrays. They agree with (7) on every original head-supported state and satisfy</p>
+<pre><code>lambda_(N,rel)^+((S-1)J)=+B_N(J),
+lambda_(N,rel)^-((S-1)J)=-B_N(J),
+lambda_(N,rel)^++lambda_(N,rel)^-
+                          =(1/N)sum_(all j).         (13)</code></pre>
+<p>Thus the two chart currents glue exactly through the SAME wall row. Their endpoint counterterms are specified by (11), not assigned by a generic relative-cohomology existence theorem.</p>
+<p>The source degree in (10) has a precise meaning. On a source space of dimension N+1 with the ordinary coherent degree N,</p>
+<pre><code>B_N(J)=(1/N)sigma_(diag(J_0,...,J_N))(T=1/2).           (14)</code></pre>
+<p>This is an ordinary coherent source-current realization, not an assertion that the knot representation has changed color. In particular an N-dimensional head row alone cannot replace the j=N endpoint in (10).</p>
+<h2 id="the-exact-least-moment-green-certificate-maps-to-this-relative-complex">4. The exact least-moment Green certificate maps to this relative complex</h2>
+<p>The original arrays of <a href="full_certificate_framing_boundary.html">the full Green certificate</a> already contain their prescribed 1/N. Write them as I_raw and J_(i,raw). Before using the matrix-normalized rows (7), define explicitly</p>
+<pre><code>I_mat=N I_raw, J_(i,mat)=N J_(i,raw).                  (14a)</code></pre>
+<p>The same pointwise Green identity holds for these rescaled arrays, since every external coefficient and shift commutes with N. Summing the noncut indices gives exactly the actual cut diagonal C_jj from I_mat, and J_cut below always means the corresponding J_mat sum. Thus the actual selected scalar is <code>(1/N)sum_j I_mat,j=sum_j I_raw,j</code>. This rescaling does not change the state; it aligns its original normalized array with its coherent matrix coefficient.</p>
+<p>Apply (11)–(13) coefficientwise to I_mat and J_mat. The weights depend only on the cut index. They commute with every other flow translation, with coupling derivatives in those other variables, and with its external meridian Ore operators. Cut-index moment factors remain inside J itself. Thus the cut divergence maps to the explicit wall row (10), while all other unsummed flow divergences remain literal currents.</p>
+<p>In particular first sum only the actual finite transverse indices, leaving the cut j and the other framing index k. Denote the resulting matrix-normalized arrays by calI and calJ_1,calJ_2. The exact least-moment certificate becomes the specified two-current identity</p>
+<pre><code>(-1)^h A_alpha lambda_(N,rel)^+(calI)
+   = B_N(calJ_1)+(S_k-1)lambda_(N,rel)^+(calJ_2),
+(-1)^h A_alpha lambda_(N,rel)^-(calI)
+   =-B_N(calJ_1)+(S_k-1)lambda_(N,rel)^-(calJ_2).       (14b)</code></pre>
+<p>Thus one framing divergence has been converted into a concrete degree-elevated wall row with its endpoints retained. This is a finite source/current pushforward, not a replacement of the finite transverse sum by the internal formal Gaussian. The second divergence in (14b) has not been assigned an unjustified Weyl action.</p>
+<p>After summing the noncut finite indices, write J_cut for the resulting matrix-normalized cut current. Since the original unweighted closed cut is scalar, each hemisphere evaluates the original state to F_N/2. The actual scalar annihilator therefore implies</p>
+<pre><code>B_N(J_cut)=0,                                         (15)</code></pre>
+<p>with its full shifted endpoint convention. This is an exact finite source constraint, not an inference from a locally nonzero or zero Gaussian coefficient. The two charts’ signed wall sources cancel in (13) even before using (15).</p>
+<p>Equivalently one may keep raw arrays throughout and use the rows N lambda_N^+, N lambda_N^- and N B_N. In that convention the endpoint counterterms are exactly J_(cut,raw,0) and J_(cut,raw,N), since <code>J_mat/N=J_raw</code>. The coefficient N in this equivalence is essential and is not suppressed.</p>
+<p>For the second external framing index one still has a literal finite zero-extended sum and its endpoint currents. It is not an extra independent cut color. The actual Weyl identity (9) does not automatically act on that transfer index. An auxiliary second Bernstein source can encode its finite sum, but calling its reflection the actual quantum Weyl action would require a new network/current map. Neither (9) nor (15) supplies that identification after transverse Gaussian contraction.</p>
+<h2 id="the-shared-wall-row-has-a-macroscopic-entropy-phase">5. The shared wall row has a macroscopic entropy phase</h2>
+<p>Its coefficient at j/N=T in an interior real interval obeys</p>
+<pre><code>(1/N)Log[binom(N,j)/2^N]
+   =-Tlog T-(1-T)log(1-T)-log2+O(log N/N).             (16)</code></pre>
+<p>The elementary integral bounds for log(N!) give this uniformly on compact subintervals of (0,1). This real phase has a unique maximum at T=1/2 and second derivative -1/[T(1-T)]. Thus the row (10) is not an arbitrary order-one amplitude in a formal Gaussian comparison: it can localize and lift one framing direction. Its total positive weight is 1/N, but that alone does not bound a cancellation-prone Green current or an unknown selected knot sum.</p>
+<p>On the physical logarithmic section, T=1/2 has A_cut=-1, a regular complete framing. At the wall D_cut itself, however, A_cut=(1-eta v)^(-1) is infinite. The radial normal homotopy shares the base latitude T=1/2 while moving between those different normal points. The binomial row alone does not identify them without the relative normal-chain data. It does not prove that the remaining internal geometric critical point lies on the selected global source cycle, or that all other critical and escaping pieces are absent.</p>
+<h2 id="what-is-still-unmatched">6. What is still unmatched</h2>
+<p>The two source charts, their complete relative endpoint map, the degree-elevated wall row, and the nonzero Cech class (5) are now explicit for every actual finite source and Green current. They retain all marked Weyl/Gamma factors and can be computed before any partial trace or meridian specialization.</p>
+<p>The missing comparison is specific: the internal Gaussian pushforward of the actual currents must carry the rows <code>J_0/N</code>, <code>J_N/N</code>, and B_N(J), including their entropy phase, to the corresponding geometric endpoint and wall functionals. The second framing direction additionally needs an actual pre-collapse source map. Declaring those currents exact or identifying two abstract Borel actions does not compute it.</p>
+<p>In particular the known principal residue equality does not identify the lifted f_C nu_cut with every higher Gaussian current. The present construction does not claim that further map, nonzero selected geometric microstalk, a full scalar geometric-factor theorem, or a volume limit.</p>
+<h2 id="exact-audit">7. Exact audit</h2>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_gauss_wall_cut_current.py">audit_actual_gauss_wall_cut_current.py</a> and its <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_gauss_wall_cut_current_results.json">results</a> verify the incomplete-beta/binomial coefficients, Weyl complement and half normalizations, both head endpoint terms, and the complete zero-extended relative Green maps over Q for N=2 through 16. The current values are independent symbols, including both endpoint tails. All matrix-unit wall primitives and their Cech difference are checked at sizes 2 through 6. An additional entropy-phase grid checks the scale in (16).</p>
+<p>The proof is uniform in N and in the actual matrix coefficients; these checks are not knot examples and assume no selected asymptotic or quantum-to-Gaussian current identification.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_gauss_wall_cut_current_complex.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-literal-coherent-kernel-has-two-anchored-wall-primitives">1. The literal coherent kernel has two anchored wall primitives</a><a href="#the-wall-co-sources-are-exact-positive-finite-matrix-rows">2. The wall co-sources are exact positive finite matrix rows</a><a href="#a-literal-cut-difference-has-a-shared-degree-elevated-wall-row">3. A literal cut difference has a shared degree-elevated wall row</a><a href="#the-exact-least-moment-green-certificate-maps-to-this-relative-complex">4. The exact least-moment Green certificate maps to this relative complex</a><a href="#the-shared-wall-row-has-a-macroscopic-entropy-phase">5. The shared wall row has a macroscopic entropy phase</a><a href="#what-is-still-unmatched">6. What is still unmatched</a><a href="#exact-audit">7. Exact audit</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

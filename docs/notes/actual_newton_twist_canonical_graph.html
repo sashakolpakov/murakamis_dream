@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exact Newton twist equations, original source, and the parabolic Fricke graph · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_newton_twist_canonical_graph.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="exact-newton-twist-equations-original-source-and-the-parabolic-fricke-graph">Exact Newton twist equations, original source, and the parabolic Fricke graph</h1>
+<p>29 October 2026. The actual Newton crossing has a denominator-free finite Weyl system. Its classical map is the genuine parabolic braid/Fricke map, with the original four-plat cup and cap retained by an explicit matrix intertwiner. Arbitrary rational words therefore have an actual complete- meridian character gluing description without an unknown 6j frame.</p>
+<p>The Newton clock is NOT the knot meridian or the Casimir eigenvalue. This does not construct a generic-meridian A-curve or prove a sharp asymptotic/survival theorem for all rational words. The exceptional cup boundary and its normal source cannot be replaced by a regular torus point. Those distinctions are made explicit below.</p>
+<h2 id="the-exact-kernel-and-its-actual-generic-normalization">1. The exact kernel and its actual generic normalization</h2>
+<p>Use the <a href="actual_newton_turn_positive_gram.html">full Newton packet</a>: q=exp(pi i/N), Q=q^2, d=N-1, kappa=q<sup>(d</sup>2/2). The actual full crossing kernel is</p>
+<pre><code>C_ij=kappa(-1)^i q^(i+j^2) [i choose j]_Q,
+      0&lt;=j&lt;=i&lt;=d;  C_ij=0 above the diagonal.         (1)</code></pre>
+<p>It is multiplication by the ORIGINAL checked R, including its common Cartan, all Jordan derivatives, and the true q^(ij) half-clock phase. The actual turn is the reversal P_rev and both original closures are coordinate rows. None of these facts is an independent-eigenline model.</p>
+<p>There is a useful analytic generic-q extension of(1), but its physical scalar must remain. For zeta near q, put Q=zeta^2 and</p>
+<pre><code>s_r^2(zeta)=(-1)^r zeta^[-r(r+1)](Q;Q)_r^2,
+c_j(zeta)=zeta^(2j+1)+zeta^(-2j-1),
+kappa(zeta)=zeta^(d^2/2).</code></pre>
+<p>The normalized Newton basis uses these s_r^2; multiplication by z is the lower bidiagonal Z with diagonal c_j and subdiagonal</p>
+<pre><code>b_j=Q^j+Q^(-j)-2.</code></pre>
+<p>The generic matrix (1) commutes with this Z by the same finite Gaussian identities, and its diagonal is kappa nu_j, nu_j=(-1)^j zeta<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. The literal generic highest-weight-d physical braiding, however, has at the Casimir node c_a the highest-vector eigenvalue</p>
+<pre><code>lambda_(d-a)=(-1)^(d-a)
+                zeta^[d^2/2-(d-a)(N+a)]
+            =kappa gamma_N(zeta) nu_a,
+gamma_N(zeta)=(-1)^d zeta^(-Nd).                     (2)</code></pre>
+<p>Consequently its Newton matrix is gamma_N C, not just C. Generic distinctness and equality of all nodal values prove the matrix identity; regular specialization retains the full confluent polynomial. At the root gamma_N(q)=1, but its normal derivatives are NONZERO. All q-normal calculations must keep(2). This generic q deformation is not a deformation of the knot meridian.</p>
+<p>The inverse of the finite Gaussian kernel is also explicit:</p>
+<pre><code>(C^-1)_ij=kappa^-1(-1)^i
+                q^[j^2-2ij-i] [i choose j]_Q.        (3)</code></pre>
+<p>This follows from the finite q-Pascal inverse and equals coefficient conjugation of(1) at the original root. The physical generic inverse has the additional scalar gamma_N^-1.</p>
+<h2 id="finite-weyl-equations-including-the-actual-normal-wall">2. Finite Weyl equations, including the actual normal wall</h2>
+<p>Let X=Q<sup>i,Y=Q</sup>j on the kernel. Direct adjacent-factor cancellation gives</p>
+<pre><code>(QX-Y) C_(i+1,j)=qY(1-QX)C_ij,
+(QY-1) C_(i,j+1)=q(X-Y)C_ij.                         (4)</code></pre>
+<p>These equations are CROSS-MULTIPLIED; they include the triangular diagonal and its zero neighbors. One must not divide their vanishing coefficients to change the support.</p>
+<p>For the finite zero extension C_(N,j)=0, the first equation has the explicit generic last-row current</p>
+<pre><code>(QX-Y) C_(i+1,j)-qY(1-QX)C_ij
+   =-qY(1-Q^N) delta_(i,d) C_(d,j).                  (5)</code></pre>
+<p>It vanishes at the root, but its first q-normal coefficient does not. Multiplying by gamma_N preserves(4)–(5), with that scalar retained. The backwards-j version is globally valid without another source:</p>
+<pre><code>(Y-1)C_ij=q(X-Q^-1Y)C_(i,j-1), C_(i,-1)=0.          (6)</code></pre>
+<p>Together with triangular support and C_(i,0)=kappa(-q)^i, these are finite pointed equations determining the actual kernel. They do not identify an arbitrary cyclic-shift solution with the original one.</p>
+<p>For strict forward shifts S f_i=f_(i+1), (6) gives the exact matrix identity</p>
+<pre><code>X C S=C Y S+q^-1 C(Y-I).                             (7)</code></pre>
+<p>The first equation similarly gives a cleared operator relation with the wall(5). Inverting its factor S+q(1-QX) at the root is invalid: that factor has a zero last diagonal entry. The finite source is part of the operator identity, even when studying a regular classical chart.</p>
+<h2 id="the-regular-canonical-graph-and-its-preserved-casimir">3. The regular canonical graph and its preserved Casimir</h2>
+<p>For i/N=x,j/N=y in 0&lt;y&lt;x&lt;1 the leading exponent of(1) is</p>
+<pre><code>Phi(x,y)=J(x)-J(y)-J(x-y)+pi i(xy+x+1/2),
+J&#39;(x)=log(2sin pi x).</code></pre>
+<p>The common Cartan produces the displayed pi i/2; the remaining known subleading phase is retained in the finite kernel. Put</p>
+<pre><code>X=exp(2pi i x), Y=exp(2pi i y),
+U=exp(Phi_x), V=exp(-Phi_y).</code></pre>
+<p>The negative sign in the INPUT momentum is essential for composing kernel critical equations. Equations(4) give precisely</p>
+<pre><code>X=Y+(Y-1)/V,  U=-Y(1+V),
+equivalently XV+U+1=0, Y(V+1)+U=0.                  (8)</code></pre>
+<p>It preserves dlog U wedge dlog X. Indeed 2pi i Phi is a generating function with differential log U dlog X-log V dlog Y. The same graph comes from the exact cleared equations, not merely a guessed phase.</p>
+<p>The actual Newton multiplication-Casimir symbol is</p>
+<pre><code>A(X,U)=X+X^-1+(X+X^-1-2)/U.                         (9)</code></pre>
+<p>Substitution in(8) proves A(output)=A(input). The turn has the exact root clock relation P_rev X P_rev=Q^-1 X^-1 and interchanges strict forward and backward shifts. Its principal graph is (X,U)-&gt;(X<sup>-1,U</sup>-1). Thus the second trace symbol is</p>
+<pre><code>B(X,U)=X+X^-1+(X+X^-1-2)U.</code></pre>
+<p>With {log X,log U}=-1, define the ordered third trace</p>
+<pre><code>C(X,U)=(8-AB+{A,B})/2
+      =2-(X-1)^2(U+1)^2/U.                          (10)</code></pre>
+<p>Direct algebra gives the ACTUAL parabolic Fricke equation</p>
+<pre><code>A^2+B^2+C^2+ABC-8(A+B+C)+28=0.                      (11)</code></pre>
+<p>On these trace coordinates, the active point map(8) is</p>
+<pre><code>(A,B,C)-&gt;(A,C,8-AC-B).                              (12)</code></pre>
+<p>The inverse occurs on observables: Ad(R) is pullback by the inverse state map. Thus(12) agrees with the actual positive braid formula Ad(R):(A,B,C)-&gt;(A,8-AB-C,B), rather than reversing a physical crossing based on an isolated eigenphase.</p>
+<h2 id="actual-quantum-trace-matrices-and-original-source-matching">4. Actual quantum trace matrices and original source matching</h2>
+<p>This graph has an exact physical source realization. In the already audited three-head complete multiplicity basis let</p>
+<pre><code>A_phys=Omega_12,
+B_phys e_j=c_j e_j+b_j e_(j-1).</code></pre>
+<p>A_phys is the original symmetric tridiagonal matrix with</p>
+<pre><code>(A_phys)_jj=4qQ^j-q(1+Q)Q^(2j),
+(A_phys)_(j-1,j)=(A_phys)_(j,j-1)=-(1-Q^j)^2.         (13)</code></pre>
+<p>The actual R_23 is C^T, by multiplication functional calculus in the upper-bidiagonal B_phys. Finite Gaussian cancellation gives the FULL matrix identity</p>
+<pre><code>R_23^-1 A_phys R_23=B_phys^T.                        (14)</code></pre>
+<p>For an entrywise proof substitute(1) transposed in A_phys C<sup>T=C</sup>T B_phys^T. On the interior the needed three ratios are</p>
+<pre><code>U_(i-1,j)/U_ij=q^(-2i+1)(1-Q^i)/(1-Q^(j-i+1)),
+U_(i+1,j)/U_ij=q^(2i+1)(1-Q^(j-i))/(1-Q^(i+1)),
+U_(i,j+1)/U_ij=-q(1-Q^(j+1))/(1-Q^(j-i+1)).</code></pre>
+<p>Cross multiplication proves the identity, including the adjacent zero diagonal. The end terms vanish by b_0=b_N=0 and (1-Q<sup>N)</sup>2=0 at the root. No nodal or semisimple substitution is used in(14).</p>
+<p>Set the explicit source intertwiner</p>
+<pre><code>S_source=P_rev R_23^-1.</code></pre>
+<p>Then EXACTLY</p>
+<pre><code>S_source B_phys S_source^-1=Z_lower,
+S_source A_phys S_source^-1=Z_upper=Z_lower^T.        (15)</code></pre>
+<p>The original cup slide gives R_23^-1 p=N kappa^-1 e_d. Moreover ell_i=x^i/N, x=q<sup>d=-q</sup>-1, and the finite q-binomial identity gives</p>
+<pre><code>ell R_23=(kappa/N)e_0^T,
+S_source p=N kappa^-1 e_0,
+ell S_source^-1=(kappa/N)e_d^T.                      (16)</code></pre>
+<p>For the first formula the j-th component is kappa(-q)^j/N times sum_i [j choose i]_Q(-1)<sup>iQ</sup>[i(i-1)/2], namely kappa(-q)^j(1;Q)_j/N. It is zero for j&gt;0. Thus the original N and kappa factors cancel in the WHOLE marked four-plat scalar:</p>
+<pre><code>ell W_phys p=e_d^T W_Newton e_0,
+W_Newton=S_source W_phys S_source^-1.                (17)</code></pre>
+<p>The original enhancement/framing line multiplies both sides unchanged. In the complete four-head invariant reduction, physical generators1 and3 use A_phys and generator2 uses B_phys. Therefore they become P_rev T_1 P_rev and T_1, respectively, with literal signed inverses. This is a complete source-exact alphabet for ANY original four-plat word, including all composite/even levels and all Casimir normals. No unknown Racah eigenframe is present.</p>
+<p>The exact quantum trace triple in these coordinates is Z_lower,Z_upper, and the tridiagonal matrix(13). Expanding its band entries gives the denominator-free quantum Fricke identities from <a href="actual_adjacent_twist_character_and_source.html">the actual adjacent-trace theorem</a> with single/total Casimirs -2 and central coefficients8. In particular it is the actual physical character slice, not an arbitrary surface inferred only from(11). Equation(14), or its transpose, fixes the braid orientation on the full matrices. At N=2 no division by q+q^-1 is allowed; the same explicit matrix identities still hold.</p>
+<h2 id="the-original-cap-is-an-exceptional-curve-not-a-torus-point">5. The original cap is an exceptional curve, not a torus point</h2>
+<p>Both exact boundary vectors in(17) have the correct source eigencondition:</p>
+<pre><code>Z_upper e_0=c_0 e_0,
+e_d^T Z_upper=c_d e_d^T=c_0 e_d^T.                   (18)</code></pre>
+<p>Consequently their reduced classical cap is B=2. The Fricke equation then gives C=4-A on its reduced locus, but has a NONREDUCED normal there. The exact finite source(16)–(18) retains that normal data.</p>
+<p>Naively putting X=1 with finite nonzero U in(9)–(10) collapses all three traces to2. It loses the real cup family. To retain a finite free A!=2 one must resolve the actual corner by</p>
+<pre><code>U ~ (X-1)^2/[X(A-2)] as X-&gt;1.</code></pre>
+<p>Then B-&gt;2 and C-&gt;4-A. Thus the correct cap is an exceptional divisor of the Newton chart. It cannot be removed from an endpoint estimate by calling it a regular stationary point on (C*)^2.</p>
+<p>There is a direct group certificate on this cap. For z=A-2 use</p>
+<pre><code>mu_1=-[[1,1],[0,1]], mu_2=-[[1,0],[z,1]],
+mu_3=mu_2^-1, mu_4=mu_1^-1.                         (19)</code></pre>
+<p>Their total product is identity, all meridian traces are -2, and their trace triple is (A,2,4-A). For z!=0 it is irreducible. Actual Hurwitz propagation of(19) gives the trace dynamics(12), with its direction fixed by the finite conjugation identities. On an irreducible four-punctured representation, a terminal cap trace2 forces the actual inverse pair matrices: if their product were a nontrivial unipotent, both meridian pairs would share its flag and the whole representation would be reducible. This is the four-port case of <a href="actual_parabolic_cap_trace_certificate.html">the faithful cap certificate</a>.</p>
+<p>Thus any REGULAR irreducible intersection of the transported cap with the closing cap is an actual representation of the ORIGINAL rational word closure. This is global parabolic character gluing for arbitrary rational words, not merely a formal cubic at each isolated crossing. Reducible and escaping/normal intersections are not discarded, and their source contributions require separate analytic control.</p>
+<p>This also gives a finite univariate character test for any specified word. Start with the four literal matrices(19), apply the corresponding signed Hurwitz substitutions (with the source adapters in(15)–(17)), and impose the SAME closing inverse-pair matrix equations as the cap pattern(19). Matrix inverses are adjugates since determinant is1, so these are polynomial equations in z. Saturate by z and any denominators introduced by a chosen auxiliary chart; the irreducible solutions are the zeros of an explicit ideal in C[z]. It can be computed by a gcd and, for reduced character support, its square-free part. This retains the actual group/peripheral marking without a generic-meridian A-polynomial elimination. The original nonreduced quantum source is still(16)–(18); taking this reduced ideal does not replace it in the finite period or prove a nonzero geometric coefficient.</p>
+<h2 id="exact-limits-of-the-statement">6. Exact limits of the statement</h2>
+<p>The Newton clock X is exp(2pi i times a NEWTON INDEX/N). The spectral Casimir is the function(9), and the geometric eigenvalue w is obtained only by solving w+w^-1=A. Neither is the physical meridian M.</p>
+<p>This theorem fixes the actual COMPLETE-meridian slice M=1, with meridian trace-2 and the original source framing. It does not create the generic M-dependent quantum A-module. That requires the actual meromorphic color/dual/turn family and its peripheral currents; the generic q scalar(2) is not a substitute for that meridian deformation. The older <a href="newton_actual_source_canonical_transform.html">actual-color Newton transform</a> uses different nodes Q<sup>j+Q</sup>-j and the knot’s meridian variable. The two Newton transforms must not be identified by their names.</p>
+<p>The reversal identity is exact at the original root. Its actual generic-q turn family need not be the same reversal matrix off the root, so whole normal derivatives of a turned circuit must retain that family. Likewise(5) is not deleted in a q-normal recurrence.</p>
+<p>Finally actual character support and an explicit source alphabet do not prove that the geometric branch is accessible, noncanceling, or largest in the complete finite source. A sharp coherent action bound and a nonzero full-source coefficient remain necessary. This result provides the exact finite recurrence, actual braid graph and pointed boundary data for that next analysis; it does not infer a new universal volume equality from a principal curve alone.</p>
+<h2 id="what-the-universal-local-dilogarithm-does-identify">7. What the universal local dilogarithm does identify</h2>
+<p>There is a precise useful boundary-symbol statement. On the logarithmic lift of the regular triangle, put S=2pi i Phi. Directly from the actual factorial ratio in(1), its leading action is</p>
+<pre><code>S=-Li_2(X)+Li_2(Y)+Li_2(X/Y)-Li_2(1)
+              +(Log Y)^2/2+pi i Log X-pi^2.        (19a)</code></pre>
+<p>The last real constant is the leading original kappa, not a chosen imaginary calibration. The q^i factor in(1) is subleading and remains in its exact amplitude. Differentiation gives the same actual graph:</p>
+<pre><code>partial_(Log X) S=Log U,
+partial_(Log Y) S=-Log V.</code></pre>
+<p>Thus the rational pre-Bloch symbol of this local phase is</p>
+<pre><code>beta_Newt=-[X]+[Y]+[X/Y],
+delta beta_Newt=-X wedge U+Y wedge V.               (19b)</code></pre>
+<p>For an elementary verification, ignore the torsion class of -1, write a=1-X, b=1-Y, c=X-Y, and expand the wedge of U=Ya/c and V=-b/c. Bilinearity gives exactly the boundary of the three displayed dilogarithms. The Bloch–Wigner identity also gives</p>
+<pre><code>D(beta_Newt)=Im S-log|X| Arg U+log|Y| Arg V,         (19c)</code></pre>
+<p>on compatible logarithmic branches. Regular composed seams telescope in(19b); a turn preserves X wedge U.</p>
+<p>This does NOT yet identify the resulting closed symbol with the topological fundamental class. Boundary wedges do not fix a closed Bloch period, and the actual cap lies on the exceptional corner in section5, where a regular seam-telescoping argument cannot replace its normal source. A chain-level comparison with the actual signed crossing blocks and marked boundary is still required. Such a global comparison is already proved for the ORIGINAL factorial crossing symbols in <a href="crossing_fundamental_cycle.html">the fundamental-cycle note</a>, for arbitrary diagrams and their regular complete representations. It supplies the classical regulator bound, not the missing global source estimate. In particular(19b) alone neither supplies a generic meridian nor proves access or noncancellation for any new word class.</p>
+<h2 id="focused-verification">8. Focused verification</h2>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_newton_twist_canonical_graph.py">The new exact audit</a> passes symbolic symplectic/Fricke/inverse-Hurwitz and resolved-cap group identities; six generic physical families using the literal full-Cartan universal R and its gamma_N scalar; and seven original root families N=2,…,8. The latter include every finite Weyl boundary equation, the physical three-head Hom action, all quantum Fricke relations/cubic, the source intertwiner, and twenty-one full marked four-plat words using all three physical braid generators. Finite-field arithmetic is exact. These checks supplement the all-entry proofs and do not claim an asymptotic or a meridian deformation from finite tests.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>j(j+1)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_newton_twist_canonical_graph.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-exact-kernel-and-its-actual-generic-normalization">1. The exact kernel and its actual generic normalization</a><a href="#finite-weyl-equations-including-the-actual-normal-wall">2. Finite Weyl equations, including the actual normal wall</a><a href="#the-regular-canonical-graph-and-its-preserved-casimir">3. The regular canonical graph and its preserved Casimir</a><a href="#actual-quantum-trace-matrices-and-original-source-matching">4. Actual quantum trace matrices and original source matching</a><a href="#the-original-cap-is-an-exceptional-curve-not-a-torus-point">5. The original cap is an exceptional curve, not a torus point</a><a href="#exact-limits-of-the-statement">6. Exact limits of the statement</a><a href="#what-the-universal-local-dilogarithm-does-identify">7. What the universal local dilogarithm does identify</a><a href="#focused-verification">8. Focused verification</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Actual middle-Pachner saturation with its compulsory source current · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_quantum_pachner_source_saturation.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="actual-middle-pachner-saturation-with-its-compulsory-source-current">Actual middle-Pachner saturation with its compulsory source current</h1>
+<p>28 October 2026. The literal middle five-point crossing identity has an exact ordered version of the polynomial which removes the spurious cleared Pachner component. It holds on the ORIGINAL finite heads with their missing arrow retained. The ordinary commutative polynomial is not zero as an actual sourced operator: its error is an explicitly retained commutator current. A two-component source presentation keeps this current by polynomial, invertible row and column operations.</p>
+<p>This is a local exact source relation, applicable inside any original word and to all formal normal coefficients. It is not an estimate on all analytic endpoints of the scalar period, nor a proof of its nonzero geometric coefficient. In particular, no exponential estimate on the inverse of a face frame is asserted.</p>
+<h2 id="the-actual-middle-faces">1. The actual middle faces</h2>
+<p>Use the complete original heads and conventions of the <a href="literal_middle_full_phi_certificate.html">literal middle identity</a>:</p>
+<pre><code>Q=exp(2pi*i/N), d=N-1, x_c=-q^(-1),
+S_1^N=mu, S_2^N=x_c^N mu,
+X=x_c S_2 S_1^(-1), Z=Z_1,
+XZ=QZX, X^N=Z^N=1.</code></pre>
+<p>The cyclic heads have the required opposite wrap when N is even. Let E_0 be the ORIGINAL first-clock projector onto index zero. Thus</p>
+<pre><code>E_0(1-Z)=0.</code></pre>
+<p>The actual nilpotent crossing argument and its fifth clock are</p>
+<pre><code>n=(Q-Z^(-1))X, P=P(n),
+H=P^(-1)ZP=Z(1-n)=Z+(1-QZ)X,
+H^N=1,</code></pre>
+<p>where P is the finite Euler polynomial of the original crossing. Only H is inverted below. It is an actual clock unit; neither 1-Z nor E_0 nor another nilpotent face wall is inverted.</p>
+<p>For the present Pachner coordinates put</p>
+<pre><code>x=1-X, y=1-Z, w=xy, H=1-w,
+K=X(1-E_0),
+u=1-KH^(-1), v=1-ZH^(-1).                  (1)</code></pre>
+<p>The equality H=1-(1-X)(1-Z) follows from XZ=QZX. These are the specified actual middle faces after the required quad changes, not independently chosen shapes. Indeed the developed cut argument in the literal middle identity is QK, and its ratio is r=QKH^(-1). Consequently</p>
+<pre><code>u=1-Q^(-1)r,
+v=-Q^(-1)n(1-Q^(-1)n)^(-1).                (2)</code></pre>
+<p>The latter follows by conjugating n with Z. Thus the Q-shift and the nilpotent quad inverse are explicit. At a commutative regular symbol, (1) gives exactly</p>
+<pre><code>w=xy,
+u=x(1-y)/(1-w),
+v=y(1-x)/(1-w),                            (3)</code></pre>
+<p>the rational Pachner map in the <a href="saturated_critical_regulator_compactification.html">saturated critical compactification</a>.</p>
+<h2 id="the-finite-wall-and-an-ordered-saturation-theorem">2. The finite wall and an ordered saturation theorem</h2>
+<p>The right-cleared graph equations of (1) are EXACTLY</p>
+<pre><code>uH-x+w=XE_0=:E,
+vH-y+w=0,
+E y=XE_0(1-Z)=0.                          (4)</code></pre>
+<p>The first wall E is retained. It is not zero, and it cannot be deleted inside an arbitrary original word. It is the same missing arrow seen in the literal middle certificate, in its present orientation.</p>
+<p>Define the bounded-degree ordered polynomial</p>
+<pre><code>g_q=uv-u w v+u w+w v-w.                    (5)</code></pre>
+<p>Then</p>
+<pre><code>g_q=0                                     (6)</code></pre>
+<p>as an actual finite operator, for every N and every nonzero typed wrap mu. The proof only uses (4) and that H=1-w is a unit:</p>
+<pre><code>g_q H=(w+uH)(w+vH)-w
+      =(x+E)y-xy
+      =E y=0.                             (7)</code></pre>
+<p>In the first equality H commutes with w; no other factors are commuted. Cancelling H is valid since H<sup>(-1)=H</sup>(N-1) here. Equation (7) is a source-level replacement for dividing the commutative cleared equations by a vanishing determinant. Its wall is killed by its actual adjacent face y, rather than discarded.</p>
+<p>There is also a representation-independent version. In any unital algebra, choose X,Z,E_0 satisfying E_0(1-Z)=0 and assume H=1-(1-X)(1-Z) is a unit. Definitions (1) then satisfy (4)–(7), without a q-commutation or a cyclic-power hypothesis. The root representation establishes the required unit for the actual crossing, while this universal form proves the normal-jet result below.</p>
+<h2 id="why-the-classical-polynomial-alone-changes-the-source">3. Why the classical polynomial alone changes the source</h2>
+<p>Choose the ordering of the ordinary saturated polynomial to be</p>
+<pre><code>g_bare=uv-w(1-u)(1-v), C=[u,w].</code></pre>
+<p>Expansion without any commutations gives</p>
+<pre><code>g_q=g_bare+C(1-v),
+g_bare=-C(1-v).                            (8)</code></pre>
+<p>Thus for ANY input psi, output functional Lambda and original exterior operators A,B, including all other heads,</p>
+<pre><code>Lambda(A g_bare B psi)
+  =-Lambda(A C(1-v) B psi).                (9)</code></pre>
+<p>This uses exactly the same exterior/source on both sides. No Hopf-invariance of the inserted coupon is assumed and no cut is relocated. Tensoring by identities and applying any original closure, framing, peripheral scalar or divided co-source preserves the equality.</p>
+<p>The current is compulsory even for the smallest actual cup. At N=2, Q=-1, x_c=i, with the original balanced ordered basis, take</p>
+<pre><code>S_1=[[0,1],[1,0]], S_2=[[0,-1],[1,0]],
+X=i S_1 tensor S_2, Z=diag(1,-1) tensor I,
+p=(0,-2i,2,0)^t,
+m=(1,i,1,i)/4.</code></pre>
+<p>These are the original cup and full marker, with mp=1. Direct exact calculation gives</p>
+<pre><code>m g_bare p=1,
+m C(1-v)p=-1.                             (10)</code></pre>
+<p>The audit also inserts both sides of (9) at an interior position of the original figure-eight braid, retaining both original pivotal closures and the original averaged first cut. They cancel there exactly. The test does not replace that cut by a highest entry after the inserted nonintertwining coupon.</p>
+<p>In particular, (6) does not authorize imposing g_bare=0 in the actual coupon algebra. That would contradict (10) and the already proved <a href="actual_source_quotient_and_critical_relation.html">faithful-source obstruction</a>. A commutator current may cost powers of the semiclassical parameter while retaining the full exponential rate. No smaller exponential rate is claimed for the right side of (9).</p>
+<p>There is a stronger, fixed-degree description of this current on the actual q-torus. The cut K satisfies</p>
+<pre><code>KZ=QZK, H=Z+K-KZ.</code></pre>
+<p>The second identity uses XE_0(1-Z)=0, so it retains precisely the same physical missing arrow. Expanding the commutator gives</p>
+<pre><code>[K,H]=(Q-1)(1-K)ZK,
+C=[u,w]=[K,H]H^(-1)
+         =(Q-1)(1-K)Z(1-u).</code></pre>
+<p>Substitute K=(1-u)H and Z=(1-v)H. The result is the exact bounded-degree polynomial identity</p>
+<pre><code>C=(Q-1) Pi,
+Pi=[1-(1-u)H](1-v)H(1-u),
+g_bare=-(Q-1) Pi(1-v), H=1-w.             (10a)</code></pre>
+<p>In particular the right side contains no clock projector, no inverse of H, and no polynomial degree growing with N. This is stronger than relying on an unspecified principal-symbol rule for commutators. It gives an explicit integral quantum correction to the classical saturated equation. Formally setting H=0 in this polynomial face relation gives u+v=1, even before setting Q=1; thus the spurious cleared point w=1,u=v=i fails the retained quantum boundary relation too.</p>
+<p>The fixed-factor assertion in (10a) requires KZ=QZK. It is not asserted for arbitrary off-torus normal perturbations from Section 5. The more general ordered relation (6), current equation (8), and source extension below hold for those perturbations as stated. When a formal q-torus family does retain KZ=QZK, (10a) also holds over that parameter ring. No claim of a small operator norm follows from a fixed-degree expression in possibly large face operators.</p>
+<h2 id="an-exact-polynomial-source-current-presentation">4. An exact polynomial source-current presentation</h2>
+<p>The relation can be retained as an explicit finite extension. Put</p>
+<pre><code>K_sat=[[g_bare, C],
+       [-(1-v), I]],
+
+U=[[I,-C],[0,I]],
+V=[[I,0],[1-v,I]].</code></pre>
+<p>Then the exact ordered matrix identity is</p>
+<pre><code>U K_sat V=diag(0,I).                       (11)</code></pre>
+<p>Both U and V have polynomial unipotent inverses. There is no face localization or division by a quantum scalar in (11); on the actual q-torus its upper-right entry is explicitly (Q-1)Pi from (10a). Its solutions are precisely</p>
+<pre><code>psi_ext=(psi,eta), eta=(1-v)psi,
+K_sat psi_ext=0.                           (12)</code></pre>
+<p>The original source is embedded by (12), and the original co-source is Lambda_ext=(Lambda,0), so that</p>
+<pre><code>Lambda_ext psi_ext=Lambda psi.             (13)</code></pre>
+<p>The second copy is a retained current variable, not a new summation weight chosen to change the invariant. Eliminating that copy by the unit block gives the exact quantum relation (6), not the false classical relation g_bare=0. Conversely, deleting the current copy without this elimination loses (10).</p>
+<p>This construction works on each specified local state in a whole word. For a sequence of L local uses, retain the actual time states and append eta_j=(1-v_j)psi_j at the j-th position. There is one current copy per use. The block eliminations (11) act in their own constraint rows and remove these copies successively; the physical state transitions and their original endpoint functional are unchanged. This is a linear-size constraint/source extension for arbitrary bridge count. It is not a quotient or a semisimplification of the original full coupon algebra.</p>
+<h2 id="all-normal-coefficients-and-the-limited-leading-consequence">5. All normal coefficients and the limited leading consequence</h2>
+<p>Let R be any formal parameter ring, for example the joint formal meridian and quantum-normal ring. Suppose X_R,Z_R and E_(0,R) deform the actual matrices with</p>
+<pre><code>E_(0,R)(1-Z_R)=0.</code></pre>
+<p>Since the constant term of H_R=1-(1-X_R)(1-Z_R) is invertible, H_R has a unique formal inverse by the finite-coefficient Neumann construction. Apply the universal algebra proof after (7). Thus (6), (8), and (11)–(13) hold over R, to ALL normal orders. Every original exterior/source and any defined residue or divided coefficient functional may be applied coefficientwise to (9).</p>
+<p>This does not assume that an auxiliary off-root Euler completion is the original crossing; those two objects have a known quantum normal discrepancy. Nor does it identify the quantum-normal filtration with the meridian-normal filtration. The claim is the stated universal zero insertion for the actual deformed coordinates where defined; the geometric face interpretation in Sections 1–2 was established on the physical root family.</p>
+<p>In a commutative leading-symbol chart compatible with multiplication for these actual face operators, with Q tending to one, the fixed polynomial correction in (10a) has zero leading symbol. Equation (6) then imposes</p>
+<pre><code>uv-w(1-u)(1-v)=0.                          (14)</code></pre>
+<p>It imposes this bounded-degree relation without having to invert the leading value of H. For example the false cleared point x=y=w=1,u=v=i has (14) equal to -1+2i and cannot be such a commutative leading face character. This is a formal support statement, conditional only on having that multiplicative symbol chart. It does not construct a uniform symbol chart at every singular scalar endpoint.</p>
+<p>The missing analytic step is specific. One still has to prove that all exponentially relevant pieces of the ORIGINAL relative cycle admit such a compatible source/current reduction, or bound the remaining pieces directly. The exact current in (9) can have the same exponential rate as the underlying period; neither local unimodular equivalence nor the classical saturation certificate proves it negligible. Likewise this one literal middle-port calculation does not supply all first/third-port identifications with a global positive triangulation. No volume lower bound or global geometric intersection is inferred.</p>
+<h2 id="reproducible-audit">6. Reproducible audit</h2>
+<p>Run</p>
+<pre><code>python3 experiments/audit_actual_quantum_pachner_saturation.py</code></pre>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_quantum_pachner_saturation.py">audit</a> checks 24 actual level/wrap families (N=2 through 9), the retained wall (4), ordered relation (6), nonzero bare relation, the polynomial source extension, fixed-degree divisibility (10a), five normal coefficients under off-torus perturbations, and four original whole figure-eight closures. It also checks (10) exactly over Q(i), independently of finite fields. The adjacent JSON records the outputs. These computations audit the universal proofs; finite coverage is not used as their proof.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_quantum_pachner_source_saturation.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-middle-faces">1. The actual middle faces</a><a href="#the-finite-wall-and-an-ordered-saturation-theorem">2. The finite wall and an ordered saturation theorem</a><a href="#why-the-classical-polynomial-alone-changes-the-source">3. Why the classical polynomial alone changes the source</a><a href="#an-exact-polynomial-source-current-presentation">4. An exact polynomial source-current presentation</a><a href="#all-normal-coefficients-and-the-limited-leading-consequence">5. All normal coefficients and the limited leading consequence</a><a href="#reproducible-audit">6. Reproducible audit</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

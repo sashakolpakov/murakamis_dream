@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The entire integral knot centralizer is self-dual under its actual cut · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/integral_projective_cut_duality.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-entire-integral-knot-centralizer-is-self-dual-under-its-actual-cut">The entire integral knot centralizer is self-dual under its actual cut</h1>
+<p>Research note, 26 October 2026. This extends the local two-factor residue pairing to every tensor power at the Kashaev color. The proof constructs a symmetric PBW coefficient form, realizes the actual complete-color module as a projective summand, and calibrates the induced trace to the original ADO dimension. It does not invoke a published modified-trace or projectivity theorem.</p>
+<p>The result controls the full integral centralizer, not just a chosen fusion algebra. It also proves that every complete-color E,F,K intertwiner lifts through the actual meridian deformation. The geometric quantum-A source and its selected regulator norm remain unidentified; this is no volume-conjecture proof.</p>
+<h2 id="statement-with-the-original-cut-and-phase">1. Statement with the original cut and phase</h2>
+<p>Fix N&gt;=2, q=exp(pi*i/N), Q=q^2, rho=q-q^(-1). Put</p>
+<pre><code>R=C[[u]], M=exp(u), x=-M/q,
+k_x=x^N=(-1)^(N+1)M^N,
+W_b=V_x^(tensor b).</code></pre>
+<p>Use the original matrices, coproduct and pivot from <a href="intrinsic_cut_and_meridian_atlas.html">the intrinsic cut calculation</a>:</p>
+<pre><code>Delta E=E tensor K+1 tensor E,
+Delta F=F tensor 1+K^(-1) tensor F,
+g=K^(1-N).</code></pre>
+<p>Every centralizer below means commutation with these actual total E,F,K matrices. Let</p>
+<pre><code>C_(b,R)=End_(E,F,K;R)(W_b),
+t_b(A)=Tr((P_0 tensor g^(tensor(b-1)))A),
+mathfrak_t_b(A)=d_N(M)t_b(A),
+d_N(M)=eta_N(M-M^(-1))/(M^N-M^(-N)),
+eta_N=(-1)^(N+1)q^(N(1-N)/2)=i^(N+3).           (1.1)</code></pre>
+<p>The whole value d_N(1)=eta_N/N is a unit of R. The zero-framing factor remains theta_x^(-writhe) in the braid operator being traced.</p>
+<p>For every b&gt;=1, C_(b,R) is a finite free symmetric R-algebra with perfect pairing</p>
+<pre><code>(A,B) -&gt; mathfrak_t_b(AB).                      (1.2)</code></pre>
+<p>Its full cut dual is exactly itself. For b&gt;=2 its rank is N^(2b-3); at b=1 it is R. In addition,</p>
+<pre><code>C_(b,R)/u C_(b,R)
+  =End_(E,F,K;C)(V_(-q^(-1))^(tensor b)).       (1.3)</code></pre>
+<p>Thus the pairing remains perfect on the entire complete-color centralizer, including its nonreduced parts. No higher-tensor matrix-algebra description over the confluent center is asserted.</p>
+<h2 id="a-finite-pbw-algebra-over-a-varying-central-character">2. A finite PBW algebra over a varying central character</h2>
+<p>For any unit k in R define</p>
+<pre><code>H_k=R&lt;E,F,K,K^(-1)&gt;/
+  (K E=Q E K, K F=Q^(-1)F K,
+   E F-F E=(K-K^(-1))/rho,
+   E^N=F^N=0, K^N=k).                          (2.1)</code></pre>
+<p>It has R-basis</p>
+<pre><code>F^a K^b E^c, 0&lt;=a,b,c&lt;N.                       (2.2)</code></pre>
+<p>Here is a direct normal-form justification. Order F before K before E, reduce K powers modulo N with their full k factors, and use</p>
+<pre><code>E F^a=F^a E+[a]F^(a-1)
+                (q^(1-a)K-q^(a-1)K^(-1))/rho. (2.3)</code></pre>
+<p>The only additional boundary ambiguities are commutations with K^N, E^N or F^N. K^N commutes because Q^N=1; the extra term in (2.3) vanishes for a=N because [N]=0. The corresponding formula for E^N F has the same property. The ordinary K E F ambiguity reduces to the same (K-K^(-1))/rho on both paths. Disjoint and power-overlap reductions agree. These rules are terminating and resolve the critical overlaps, proving (2.2).</p>
+<p>Define one PBW coefficient functional, with no unknown scalar:</p>
+<pre><code>mu_k(F^a K^b E^c)=delta_(a,N-1)delta_(b,0)delta_(c,N-1). (2.4)</code></pre>
+<p>This is symmetric. For E, the lower term in (2.3) cannot contribute to (2.4), since it lowers the F exponent. The leading commutation with K^b contributes Q^(-b), which equals one whenever (2.4) is nonzero. The F calculation is the same with E and F exchanged. Commuting K gives identical factors when a=c=N-1. Thus mu_k(g h)=mu_k(h g) for g=E,F,K and every h, hence for every pair of algebra elements.</p>
+<p>Its pairing is perfect over R. Filter by total E,F degree. In the associated graded algebra E and F commute and K retains the two inverse Q actions. Every basis monomial has a unique complementary pair of E,F exponents and a complementary K power that gives the coefficient (2.4), with a unit Q and k multiplier. This is a perfect graded pairing. Products of total degree below 2N-2 contribute zero to mu, so the ungraded pairing matrix is block triangular after ordering by complementary degrees. Its diagonal blocks are these invertible graded pairings. This proves perfection in R.</p>
+<h2 id="the-simple-complete-color-is-an-actual-projective-summand">3. The simple complete color is an actual projective summand</h2>
+<p>Use the central Casimir</p>
+<pre><code>Omega=rho^2 F E+q K+q^(-1)K^(-1).</code></pre>
+<p>Successive commutation gives the exact identity</p>
+<pre><code>rho^(2N) F^N E^N
+  =product_(j=0)^(N-1)(Omega-q^(2j+1)K-q^(-2j-1)K^(-1)).</code></pre>
+<p>The product is T_N(Omega)+K<sup>N+K</sup>(-N), where T_0=2,T_1=z,T_(j+1)=z T_j-T_(j-1). Therefore H_k satisfies</p>
+<pre><code>P_k(Omega)=0, P_k(z)=T_N(z)+k+k^(-1).           (3.1)</code></pre>
+<p>For k=k_x, the actual highest-root branch is</p>
+<pre><code>c_x=q x+q^(-1)x^(-1)=-M-M^(-1).</code></pre>
+<p>At M=1 it equals -2 and</p>
+<pre><code>P_(k_x)&#39;(c_x)|_(M=1)=(-1)^(N+1)N^2,            (3.2)</code></pre>
+<p>which is nonzero for all N. Other roots are distinct from this one at that point. Consequently the following actual polynomial is a central idempotent over R:</p>
+<pre><code>e_St=(P_(k_x)(Omega)/(Omega-c_x))/P_(k_x)&#39;(c_x). (3.3)</code></pre>
+<p>The quotient denotes polynomial division before evaluation. All its coefficients belong to R; there is no inverse of a vanishing Casimir difference in (3.3).</p>
+<p>The K-root projectors on this block are</p>
+<pre><code>pi_a=(1/N)sum_(r=0)^(N-1)(K/(x Q^(-a)))^r,
+0&lt;=a&lt;N.</code></pre>
+<p>On e_St H_(k_x), the relations FE and EF on adjacent weight spaces have scalars e_a(x) and e_(a+1)(x), respectively. Each e_a(x), 0&lt;a&lt;N, is a unit at M=1. Thus every interior E,F edge is invertible up to that unit. The remaining boundary F edge is zero because F^N=0 and all other edges are invertible; E^N=0 kills the boundary E edge in the same way. This leaves one length-N chain and its full matrix units. In particular</p>
+<pre><code>e_St H_(k_x)=Mat_N(R).</code></pre>
+<p>The primitive idempotent e=e_St pi_0 has left ideal H_(k_x)e free of rank N over R. The basis F^a e identifies it with the original V_x: F has coefficient one, K has root x Q^(-a), and E has exactly e_a(x). It is a direct summand of H_(k_x), hence is projective over that algebra. This is an explicit projective realization of the actual complete-color deformation.</p>
+<h2 id="tensoring-preserves-this-projectivity">4. Tensoring preserves this projectivity</h2>
+<p>Before fixing K^N, the nilpotent algebra is a Hopf algebra. Its central group-like K^N gives coproducts</p>
+<pre><code>Delta_(k,l):H_(kl)-&gt;H_k tensor H_l,
+S:H_(l^(-1))-&gt;H_l.</code></pre>
+<p>The primitive-root binomial identity ensures E<sup>N=F</sup>N=0 is respected. If W is an H_l-module free over R, the explicit map</p>
+<pre><code>Phi:H_(kl) tensor_R W -&gt; H_k tensor_R W,
+h tensor w -&gt; sum h_(1) tensor h_(2)w           (4.1)</code></pre>
+<p>intertwines the free action on the first domain factor with the diagonal action on the target. Its inverse is</p>
+<pre><code>a tensor w -&gt; sum a_(1) tensor S(a_(2))w,
+Delta_(kl,l^(-1))(a)=sum a_(1) tensor a_(2).   (4.2)</code></pre>
+<p>These are the two usual multiplication/antipode identities, checked before central reduction. They descend because K^N has character kl on the domain and character k times l on the target, while the inverse uses kl times l^(-1)=k. The nilpotent powers descend as well. Thus H_k tensor W is a free H_(kl)-module of rank dim_R W.</p>
+<p>A projective H_k-module is a direct summand of a finite free one. Tensoring its inclusion and retraction with W, and using (4.1), proves it remains projective over H_(kl). Starting with Section 3 proves W_b is projective over H_(k_x^b) for every b.</p>
+<h2 id="calibrating-the-symmetric-trace-to-the-full-ado-cut">5. Calibrating the symmetric trace to the full ADO cut</h2>
+<p>Write F=Frac(R). When k^2!=1 in F, as for k=k_x^b, H_k over F is the direct product of N full N-by-N matrix algebras. This follows from the same weight-chain construction in Section 3 applied to all distinct roots c_j=q z_j+q<sup>(-1)z_j</sup>(-1), z_j^N=k. On each root, the interior e_a(z_j) are nonzero and the boundary edges vanish.</p>
+<p>On each simple module pi_x has ordinary trace one. Direct PBW degree counting gives</p>
+<pre><code>mu_k(pi_x Omega^m)=0, 0&lt;=m&lt;N-1,
+mu_k(pi_x Omega^(N-1))=rho^(2N-2)/N.</code></pre>
+<p>The last equality uses the leading term rho<sup>(2N-2)F</sup>(N-1)E^(N-1); only the zeroth K coefficient of pi_x contributes to (2.4). Lagrange interpolation therefore shows that mu_k has the simple-block weight</p>
+<pre><code>w_j=rho^(2N-2)/(N P_k&#39;(c_j)).</code></pre>
+<p>Use the exact, k-independent factor</p>
+<pre><code>gamma_N=N^2 q^(N(1-N)/2)/rho^(2N-2).           (5.1)</code></pre>
+<p>Differentiating T_N(t+t<sup>(-1))=t</sup>N+t^(-N) gives</p>
+<pre><code>gamma_N w_j=N q^(N(1-N)/2)/P_k&#39;(c_j)
+           =-q^(N(1-N)/2)
+              (q z_j-q^(-1)z_j^(-1))/(z_j^N-z_j^(-N))
+           =d_(z_j).                         (5.2)</code></pre>
+<p>These are exactly the original ADO dimensions from the intrinsic cut proof. No phase or finite numerical multiplier is adjusted. In particular gamma_N mu_(k_x)(e)=d_N(M), including its regular complete value eta_N/N.</p>
+<h2 id="from-the-pbw-form-to-every-integral-centralizer">6. From the PBW form to every integral centralizer</h2>
+<p>For a symmetric finite free R-algebra (H,mu) and a finite projective left H-module P, choose a splitting P -&gt; H^m -&gt; P. On End_H(P), define the trace by applying mu to the diagonal of its corresponding endomorphism of H^m and summing.</p>
+<p>This is independent of the splitting: if A and B are the two rectangular matrices comparing two splittings, the required identity is sum mu((AB)<em>(ii))=sum mu((BA)</em>(jj)), which follows termwise from mu(ab)=mu(ba). It is cyclic for the same reason.</p>
+<p>It is perfect. In an idempotent presentation it is the restriction of the matrix trace pairing to e Mat_m(H^op)e. For any X in that corner, cyclicity gives t(XY)=t(X eYe) for every Y. Since the whole matrix pairing is perfect and the corner is a direct R-summand, every functional on the corner extends by projection Y-&gt;eYe and is represented uniquely by an element of the corner. This proves the corner pairing is perfect, over R itself.</p>
+<p>Apply this construction to H_(k_x^b), W_b and gamma_N mu. Over F its formula is sum_j d_(z_j)Tr(A_j), by (5.2). The <a href="intrinsic_cut_and_meridian_atlas.html">intrinsic cut proof</a> independently identifies exactly that expression with the actual d_N(M)t_b. The latter is R-valued because the actual matrices, pivot and whole d_N(M) are integral at M=1. The two linear functionals agree over F, hence agree on the entire integral centralizer. The corner argument proves (1.2).</p>
+<p>The same idempotent presentation commutes with R-&gt;R/(u), so End_H(W_b) has exactly the base change (1.3). In particular no additional complete-color intertwiner needs a separate lifting assumption. The generic multiplicity formula from the intrinsic cut proof gives rank N^(2b-3) for b&gt;=2. This completes the theorem.</p>
+<h2 id="the-integral-gauge-torsor-and-a-comparison-criterion">7. The integral gauge torsor and a comparison criterion</h2>
+<p>An integral H_k-linear idempotent p on W_b gives another projective module pW_b. Its endomorphism order is p C_(b,R) p, and its inherited cut pairing is perfect by the same corner argument. In particular, regular commuting finite-order edge operators that commute with H_k can be reduced by their exact averaging projector without losing cut duality. Their character roots and all scalar factors remain part of that projector. For geometric edge gluing, this H_k-linearity and regularity must be proved in the actual relative source realization; the abstract quantum-torus edge-rank theorem does not supply them.</p>
+<p>There is a local constraint on such a construction. On just two generic colors the full H_k centralizer is commutative, by the multiplicity-one decomposition. It cannot contain an invertible Weyl pair X,Y with XY=QYX and Q!=1: commutativity would imply (1-Q)YX=0. Thus the geometric clock and shift on an individual relative face cannot both be treated as H_k-linear operators on that two-color module. The full edge products and their retained source terms are the objects whose H_k-linearity must be checked.</p>
+<p>The integral comparison group is now specified:</p>
+<pre><code>G_(b,R)=C_(b,R)^times.                         (7.1)</code></pre>
+<p>Because C_(b,R) is finite free, its units form the principal open set where left multiplication has invertible determinant. Thus this is a smooth affine R-group. Nilpotent ideals in the special-fiber algebra are retained through their unipotent units. An automorphism of the complete fiber lifts directly: lift its centralizer element using (1.3); its determinant on W_b has a nonzero constant term, so the lift is invertible. Cyclicity preserves the actual cut under its inner action. This is an integral version of the generic product of general linear groups, retaining the special-fiber algebra and its nilpotent ideals.</p>
+<p>More generally, if P and Q are finite projective H_k-modules and an isomorphism P/uP -&gt; Q/uQ is supplied, projectivity makes Hom_(H_k)(P,Q) commute with base change. Lift that isomorphism; its determinant is a unit, so it is an isomorphism over R. This is formal local rigidity with specified common H_k data. It does not supply the common module, an algebraic comparison over the whole A-curve, or a selected period section.</p>
+<p>Let C and D be full R-orders in the same finite-dimensional F-algebra, equipped with the same symmetric F-linear trace t. Suppose both are self-dual for t. Then</p>
+<pre><code>C subset D implies C=D.                       (7.2)</code></pre>
+<p>Indeed dualizing the inclusion gives D^vee subset C^vee, or D subset C. The reverse inclusion was the hypothesis. This requires a common calibrated trace and perfection on both orders; matching generic ranks alone would not suffice.</p>
+<p>For the knot centralizer the source order and its calibrated trace are now available uniformly. If a proposed triangulation presentation supplies a second self-dual order and a compatible generic comparison, one integral inclusion will prove equality of these orders and their cut pairings. The selected section, the relevant operator action, and the prescribed lattice still need to be transported; equality of endomorphism orders by itself does not select a period vector.</p>
+<p>The subsequent <a href="sewn_source_and_meridian_charge.html">sewn-source construction</a> now supplies an explicit two-copy projective corner for the actual cup/cap residue with one helper strand. Its regular rational lift uses V_(-M^3/q) on the first surviving strand, so the total central character remains the original one. The cut on that corner is the original calibrated trace. This application retains the full meridian charge factor and identifies sewn residues, while the entire polar projector, global source and selected period remain additional comparisons.</p>
+<p>The subsequent <a href="adjacent_source_normal_form.html">adjacent-source normal form</a> now determines the full local projectors with their regular parts. It also constrains any common-order proposal: the ordinary trace of two adjacent actual polar projectors has a nonzero double pole. No one finite lattice can make both integral, even without an H-linearity requirement. The integral numerators form a regular matrix source algebra, while their unscaled projector arrows require a groupoid of lattice changes. The self-dual-order criterion above still applies to genuinely common integral operators; it does not remove this pole obstruction.</p>
+<p>At the first shifted color x=-M, e_1(x) is no longer a unit at M=1, so Section 3 cannot be applied to that color. Its actual <a href="intrinsic_cut_and_meridian_atlas.html#the-first-meridian-wall-is-an-elementary-integral-modification">elementary modification and conductor</a> must be retained. This theorem does not turn a polar meridian comparison into an invertible integral matrix.</p>
+<h2 id="what-this-contributes-to-the-ideal-triangulation-program">8. What this contributes to the ideal triangulation program</h2>
+<p>The earlier generic cut formula and two-factor self-duality are now extended to the full integral tensor centralizer, for all N and every strand count. This identifies a precise setting for integral source descent: projective modules over symmetric finite orders, with their calibrated trace, plus the conductor modifications at the meridian wall.</p>
+<p>This is an algebraic bilinear pairing. For b&gt;=2 it even has mathfrak_t_b(1)=0, since the ordinary quantum dimension vanishes. Perfection therefore supplies no positivity or growth bound for the selected contraction. Its norm still needs to be compared with the marked Bloch-regulator norm.</p>
+<p>The positive ideal triangulation supplies its marked Bloch lift and regulator norm. The actual quantum source still needs a compatible relative triangulated realization. Nothing here identifies the central Casimir polynomial with the knot A-curve, matches a fixed hyperbolic root character to the actual ADO character, or estimates the selected quantum period across N. Those comparisons remain necessary for the volume conjecture.</p>
+<h2 id="coverage-and-diagnostics">9. Coverage and diagnostics</h2>
+<p>The abstract of <a href="https://arxiv.org/abs/1801.00321v2">Beliakova–Blanchet–Gainutdinov, 1801.00321v2</a> covers modified traces on projectives and their realization by symmetric forms from Hopf integrals, including restricted quantum groups. That theory is existing literature; no novelty claim is made. Its theorems and proofs are not premises here. The PBW, idempotent, tensor, corner and normalization calculations above independently supply the particular statement over C[[log M]], with the exact ADO factor and every parity retained.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_integral_centralizer_duality.py">The audit</a> checks 15 PBW Frobenius forms at N=2,3,4,5,6 with generic and both sign central characters. It verifies all left-regular generator relations, the central polynomial, symmetry and a nonzero Gram determinant. Five primitive-idempotent cases realize the original complete color as a rank-N left ideal; five generic cases calibrate every simple-block weight to the original ADO dimension. Six explicit free-tensor maps at N=2,3,4, including the shifted second color, are invertible and intertwine all E,F,K.</p>
+<p>Ten further cases compute the entire complete-color centralizer directly from its commutator equations, without specializing any fusion frame. Levels 2 through 6 and up to five strands give 279 basis elements in total. Every one is checked against the full E,F,K matrices. The original full cut is symmetric and its Gram determinant is nonzero in every case. These diagnostics test the uniform proofs rather than establishing a volume limit. <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/integral_centralizer_duality_results.json">Results</a>.</p>
+<p>Reproduce with:</p>
+<pre><code>python3 experiments/audit_integral_centralizer_duality.py</code></pre>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/integral_projective_cut_duality.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#statement-with-the-original-cut-and-phase">1. Statement with the original cut and phase</a><a href="#a-finite-pbw-algebra-over-a-varying-central-character">2. A finite PBW algebra over a varying central character</a><a href="#the-simple-complete-color-is-an-actual-projective-summand">3. The simple complete color is an actual projective summand</a><a href="#tensoring-preserves-this-projectivity">4. Tensoring preserves this projectivity</a><a href="#calibrating-the-symmetric-trace-to-the-full-ado-cut">5. Calibrating the symmetric trace to the full ADO cut</a><a href="#from-the-pbw-form-to-every-integral-centralizer">6. From the PBW form to every integral centralizer</a><a href="#the-integral-gauge-torsor-and-a-comparison-criterion">7. The integral gauge torsor and a comparison criterion</a><a href="#what-this-contributes-to-the-ideal-triangulation-program">8. What this contributes to the ideal triangulation program</a><a href="#coverage-and-diagnostics">9. Coverage and diagnostics</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

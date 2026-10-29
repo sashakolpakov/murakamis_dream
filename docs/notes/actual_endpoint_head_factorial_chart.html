@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Subexponential factorial charts at the original head endpoints · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_endpoint_head_factorial_chart.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="subexponential-factorial-charts-at-the-original-head-endpoints">Subexponential factorial charts at the original head endpoints</h1>
+<p>28 October 2026. A factorial change of head basis can be exponentially conditioned on the whole physical color space. On either sublinear endpoint band its condition number is subexponential, uniformly at every level. This makes the natural blowup coordinates of a noncentral endpoint meridian accessible at no additional exponential rate.</p>
+<p>The change preserves the full original tensor source. It does not turn a truncated head identity into an equality of its two conjugate positions. That normal matching source is calculated explicitly below. In particular this is a quantitative chart estimate, not the sharp whole-knot bound or geometric survival theorem.</p>
+<h2 id="uniform-condition-number-including-all-normal-coefficients">1. Uniform condition number, including all normal coefficients</h2>
+<p>Put Q=exp(2<em>pi</em>i/N), d=N-1, F_a=product_(j=1)<sup>a(1-Q</sup>j), and D=diag(F_0,…,F_d) in the ORIGINAL orthonormal balanced head basis. For 0&lt;=R&lt;=floor(d/2), let P_R project onto</p>
+<pre><code>{0,...,R} union {d-R,...,d}.</code></pre>
+<p>Define H_N(0)=1 and H_N(R)=(e*N/R)^R for R&gt;=1. Then</p>
+<pre><code>max_(a in P_R) |F_a| &lt;= N H_N(R),
+max_(a in P_R) |F_a|^(-1) &lt;= H_N(R),
+cond(D restricted to P_R) &lt;= N H_N(R)^2.       (1)</code></pre>
+<p>Proof. For 1&lt;=a&lt;=R&lt;N/2 the elementary sine inequalities give</p>
+<pre><code>(4/N)^a a! &lt;= |F_a| &lt;= 2^a.</code></pre>
+<p>Using a!&gt;=(a/e)^a and the increase of r<em>log(e</em>N/r) for r&lt;N, both |F_a| and its reciprocal are at most H_N(R). The a=0 case is one. The exact reflection formula, with its phase retained, is</p>
+<pre><code>F_a F_(d-a)=N (-1)^a Q^(a(a+1)/2).</code></pre>
+<p>Thus the upper band has |F_(d-a)|&lt;=N H_N(R) and reciprocal at most H_N(R)/N. These prove (1), without evaluating a factorial at its forbidden zero F_N.</p>
+<p>If R=R_N=o(N),</p>
+<pre><code>log cond &lt;= log N+2R log(e*N/R)=o(N).          (2)</code></pre>
+<p>This estimate controls the ENTIRE band vector and every linear functional on it, not just the value at its endpoint or a fixed number of derivatives. It does not bound a fiber that has already summed over unrestricted bulk labels.</p>
+<p>There is also an everywhere invertible, globally tame finite matrix</p>
+<pre><code>D_R=D P_R+(I-P_R),
+||D_R|| ||D_R^(-1)||&lt;=N H_N(R)^2.              (3)</code></pre>
+<p>For a fixed tensor network, independent copies of (3) at any fixed number of physical wires still have exp(o(N)) combined condition number. Nothing is assumed about the size of the knot invariant.</p>
+<h2 id="exact-source-preserving-changes-and-the-retained-endpoint-arrows">2. Exact source-preserving changes and the retained endpoint arrows</h2>
+<p>For adjacent tensors A and B on a shared physical head, insert</p>
+<pre><code>B A=(B D_R)(D_R^(-1) A).                       (4)</code></pre>
+<p>All other heads are spectators. The original pivots commute with D_R because both are diagonal; an exposed cup, cap or marked row is transformed by the same explicit inverse pair rather than reset. Consequently any fixed collection of such changes preserves the ORIGINAL scalar exactly, for arbitrary crossing signs and braid width. The factors in the norm comparison are bounded by (3).</p>
+<p>Let S be the physical unilateral raising matrix, S|a&gt;=|a+1&gt; for a&lt;d and S|d&gt;=0. The balanced raising operator is exactly</p>
+<pre><code>Fcal=D S D^(-1),
+Fcal|a&gt;=(1-Q^(a+1))|a+1&gt;  (a&lt;d).               (5)</code></pre>
+<p>With the cyclic unitary shift X|d&gt;=|0&gt;, the formula instead is</p>
+<pre><code>Fcal=D X D^(-1)-(1/N)|0&gt;&lt;d|.                  (6)</code></pre>
+<p>The rank-one term is mandatory: F_d=N, and the original raising operator is nilpotent. Replacing (5) by a cyclic Weyl generator without (6) changes the source. A coefficient 1/N alone is not a reason to discard its contraction with an unrestricted exterior.</p>
+<p>For the tame truncated gauge D_R, (5) holds on arrows with BOTH ends in its endpoint band. Globally the exact conjugated raising matrix has coefficient</p>
+<pre><code>(1-Q^(a+1)) g_a/g_(a+1),
+g_a=F_a on P_R and g_a=1 otherwise,             (7)</code></pre>
+<p>and is zero at the top. Thus the two possible band-interface arrows remain explicitly in (7); the middle arrows are unchanged. Their norm is at most 2 cond(D_R), hence subexponential. No band interface or cyclic endpoint is silently deleted.</p>
+<h2 id="the-classical-endpoint-chart-is-genuinely-noncentral">3. The classical endpoint chart is genuinely noncentral</h2>
+<p>At complete color use the actual commuting head symbols</p>
+<pre><code>K=-B^(-1), f=(1-B)z, e=(B^(-1)-1)/z.</code></pre>
+<p>The actual Gauss meridian is</p>
+<pre><code>G=[[K,e],[f*K,f*e+K^(-1)]],
+det G=1, Tr G=-2.</code></pre>
+<p>On B!=1 the change from z to f is canonical:</p>
+<pre><code>dlog B wedge dlog f=dlog B wedge dlog z.        (8)</code></pre>
+<p>Its generating derivative is log(1-B), precisely the factorial shift in (5). In the chart (B,f),</p>
+<pre><code>e=(1-B)^2/(B f).                              (9)</code></pre>
+<p>This chart is regular at B=1 when f!=0, and there</p>
+<pre><code>G=[[-1,0],[-f,-1]].                           (10)</code></pre>
+<p>Thus z=f/(1-B) escaping to infinity can describe a FINITE, NONCENTRAL meridian. An argument that substitutes B=1 while keeping z bounded misses (10). The complementary chart (B,e) has f=(1-B)^2/(B e); at B=1 and e!=0 it gives the upper noncentral unipotent. Its symplectic orientation is recorded by dlog B wedge dlog e=-dlog B wedge dlog z, or by using B^(-1) as its momentum. The two charts cover all noncentral trace -2 matrices with G_11=-1; the central matrix is the remaining point.</p>
+<p>This is a regular chart of the actual meridian surface. It is not an assertion that a restricted face stationary point glues its two neighboring meridians. The quantum estimate (1) makes the factorial part of this chart affordable on the physical collar; it does not prove a full contour comparison through that collar.</p>
+<h2 id="what-the-exact-normal-source-still-requires">4. What the exact normal source still requires</h2>
+<p>Across a shared head, the two copies of the factorial basis change cancel coefficient by coefficient. In particular they do not alter the low-band projector P_low=sum_(a=0)^R |a&gt;&lt;a|. In the unitary finite Fourier basis its exact kernel is</p>
+<pre><code>(1/N) sum_(a=0)^R Q^(a(j-i)).                  (11)</code></pre>
+<p>Keeping the unwrapped complex position ratio t in the same finite polynomial gives</p>
+<pre><code>(1/N) K_R(t), K_R(t)=sum_(a=0)^R t^a
+                 =(1-t^(R+1))/(1-t).          (12)</code></pre>
+<p>Both numerator and denominator in (12) are retained, with value R+1 at t=1. On |t|&lt;=C,</p>
+<pre><code>|K_R(t)|&lt;= (R+1) max(1,C)^R=exp(o(N))          (13)</code></pre>
+<p>when R=o(N) and C is fixed. But for every fixed |t|&lt;1 and R-&gt;infinity, K_R(t)-&gt;1/(1-t), which is nonzero when t!=1. Hence a tame endpoint source does NOT impose equality of its two positions.</p>
+<p>The estimate also controls every fixed logarithmic derivative of this EXACT source. If |Log t|&lt;=C and s is a fixed nonnegative integer,</p>
+<pre><code>|(t*d/dt)^s [(1/N)K_R(t)]|
+    &lt;= N^(-1)(R+1)^(s+1) exp(CR).             (13a)</code></pre>
+<p>This follows term by term from the finite sum, including s=0 and R=0. Thus fixed normal jets of a low-band seam have the same subexponential cost for R=o(N), without using an asymptotic delta function or dividing by 1-t. It does not remove the upper-band factor t^(d-R), whose modulus can have an N-order rate off the unit circle.</p>
+<p>Splitting (12) into 1/(1-t)-t^(R+1)/(1-t) creates two apparent matching poles at t=1. Their residues cancel exactly. On a bounded logarithmic ratio chamber and R=o(N), BOTH terms have zero N-order rate away from the pole; one cannot discard the second as having a strictly lower exponential rate. The upper band has its additional factor t^(d-R), which must also be retained.</p>
+<p>In chart (9), the original shared-head equation is f_left=f_right, because the common B is the same and z_left=z_right before taking its limit. Evaluating only at B=1 or replacing its normal source by (13)’s numerical bound does not supply that equation. The full head contraction retains it; an isolated endpoint packet has (12) instead. This pinpoints the remaining need for a coupled contour or exact cancellation across the head bands, rather than claiming that a tame chart alone proves the volume estimate.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_endpoint_head_factorial_chart.py">Independent finite audit</a> checks the norm bound, the cyclic correction, actual signed full-word gauge invariance, and the Fourier source with its canceled matching residues. These checks supplement the uniform arguments above.</p>
+<p>Independent proof reread (Euler/source agent): (1)–(13a) verified directly, including the exact phase in factorial reflection, the 1/N cyclic arrow, the two band-interface arrows, both noncentral Gauss charts and the complete finite geometric-series seam. The normal-matching limitation in Section 4 is essential; no whole-source or geometric critical-value bound follows merely from (13a).</p>
+<h2 id="nilpotent-reconstruction-retains-a-genuine-source-current">5. Nilpotent reconstruction retains a genuine source current</h2>
+<p>Let 1&lt;=s&lt;N, P=I-S<sup>s(S*)</sup>s=P_low(s-1), and let T_s(C)=S^s C(S*)^s on the ORIGINAL finite orthonormal head. Direct multiplication, before any source evaluation, gives</p>
+<pre><code>(I-T_s)C=P C+S^s[(S*)^s,C].                  (14)</code></pre>
+<p>The inverse I+T_s+T_s^2+… is finite and has norm at most ceil(N/s), since S is a contraction. Thus it controls the ENTIRE right side of (14), including its commutator current. At the actual marked knot cut C=K_N I this commutator vanishes, but reconstruction then only repartitions the same unknown scalar K_N among its head bands. At an internal open wire with the original modified mark retained elsewhere, its environment need not be scalar, so deleting the current in (14) is not justified by the marked-cut identity.</p>
+<p>There is a concrete obstruction to extending the polynomial norm claim merely by inserting degree-preserving original crossings. On TWO actual heads put S_1=S tensor I, let R be the original COMPLETE positive checked crossing including kappa, and define</p>
+<pre><code>T_R(A)=R S_1^s A(S_1*)^s R^(-1).              (15)</code></pre>
+<p>This superoperator is nilpotent: it raises the total degree of both the row and column of A by s. Its nilpotence order is at most ceil((2d+1)/s). Nevertheless its Green inverse is exponentially conditioned, for every s=s_N=o(N).</p>
+<p>Here is an exact matrix certificate. Set k=floor(N/2), j=floor(N/4) and a=k+j. For all sufficiently large N, s&lt;=j and a&lt;=d. The original crossing has the DIAGONAL coefficient</p>
+<pre><code>r=R_((a,j),(a,j))
+  =kappa x^(-2j) Q^(j^2) F_a^2/(F_k F_j^2).  (16)</code></pre>
+<p>It is diagonal because transfer k=a-j sends input (a,j) to (j+k,a-k)=(a,j); this uses the checked-crossing order. The exact complete-color inverse relation R^(-1)=Flip conjugate(R) Flip gives R^(-1)_((j,a),(j,a))=conjugate(r), with every scalar kept. Take the unit Hilbert–Schmidt matrix</p>
+<pre><code>A=|a-s,j&gt;&lt;j-s,a|.</code></pre>
+<p>Then the ((a,j),(j,a)) entry of T_R(A) is EXACTLY |r|^2. The row and column total degrees of T_R^ell(A) are both a+j-s+ell*s. Thus no other ell contributes to that entry, and different powers are Hilbert–Schmidt orthogonal. Consequently</p>
+<pre><code>||(I-T_R)^(-1)||_(HS-&gt;HS)&gt;=|r|^2
+   =exp[(v_8/pi)N+O(log N)],                 (17)</code></pre>
+<p>where v_8 is the regular ideal octahedron volume. The last equality uses the uniform factorial estimate and the exact bulk maximizer proved in <a href="weighted_crossing_source_gap.html">the weighted crossing audit</a>: log|r|/N -&gt; -4J(1/4)=v_8/(2pi). In particular this failure is not an arbitrary nilpotent-matrix example or an omitted half-Cartan factor; it occurs for the literal original R and its inverse.</p>
+<p>Statement (17) rules out a polynomial OPERATOR transport estimate from positive grading and nilpotence alone. It does not prove an exponential lower bound for the original scalar pairing of this Green kernel. Such a pairing can cancel large intermediate matrix entries, so Hopf-Ward control of the full current in (14) remains the constructive question. No internal-current cancellation or whole-knot volume conclusion is asserted here.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_endpoint_head_factorial_chart.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#uniform-condition-number-including-all-normal-coefficients">1. Uniform condition number, including all normal coefficients</a><a href="#exact-source-preserving-changes-and-the-retained-endpoint-arrows">2. Exact source-preserving changes and the retained endpoint arrows</a><a href="#the-classical-endpoint-chart-is-genuinely-noncentral">3. The classical endpoint chart is genuinely noncentral</a><a href="#what-the-exact-normal-source-still-requires">4. What the exact normal source still requires</a><a href="#nilpotent-reconstruction-retains-a-genuine-source-current">5. Nilpotent reconstruction retains a genuine source current</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

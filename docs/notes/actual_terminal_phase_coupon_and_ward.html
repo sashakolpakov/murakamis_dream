@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The retained terminal phase is an extra Cartan coupon, with exact Ward sources · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_terminal_phase_coupon_and_ward.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-retained-terminal-phase-is-an-extra-cartan-coupon-with-exact-ward-sources">The retained terminal phase is an extra Cartan coupon, with exact Ward sources</h1>
+<p>29 October 2026. The positive terminal packet has an exact phase integral, but its phase is NOT the knot’s existing meridian-color parameter. It inserts a specified Cartan coupon on one physical wire. Original interval Ward equations acquire explicit sources. A terminal ordinary cap projects back to the complete Hopf multiplicity module, leaving a nontrivial, explicit operator-valued coupon there. Neither that projection nor Parseval makes the coupon an original Hurwitz crossing or a transparent frame change.</p>
+<p>Thus the sharp terminal-energy theorem remains a coherent estimate of this extra coupling. The original scalar at phase one and its Cauchy bound are unchanged. No topological identification with a drilled link or with an existing peripheral variable is made by analogy.</p>
+<h2 id="the-exact-phase-family-of-the-original-terminal-packet">1. The exact phase family of the original terminal packet</h2>
+<p>Use the original notation of <a href="actual_terminal_packet_positive_gram.html">the terminal positive Gram</a>: N&gt;=2, d=N-1, Q=exp(2pi i/N), x=-exp(-pi i/N), and</p>
+<pre><code>D w=I_w|d&gt;, c=ell_12 tensor &lt;d|,
+U_phys=I tensor R_+^2, U_red=R_23^2,
+T_n=c U_phys Pi_(2,n) D.</code></pre>
+<p>All common Cartan, ordinary-cap, framing and peripheral factors are literal original ones. Put C_t=t^(J_2), J_2|a,b,c&gt;=b|a,b,c&gt;, t!=0. Then, as a ROW IDENTITY on every complete multiplicity input,</p>
+<pre><code>F_t=c U_phys C_t D=sum_(n=0)^d t^n T_n,
+F_1=ell U_red.                                        (1)</code></pre>
+<p>For every original prefix B,</p>
+<pre><code>sum_n |T_n(Bp)|^2
+   =(1/(2pi)) integral_0^(2pi)|F_(exp(i theta))(Bp)|^2 dtheta. (2)</code></pre>
+<p>The unchanged original scalar is chi_N F_1(Bp). Its given factor chi_N remains outside (2). The family off t=1 uses the fixed input and output d cut in the definition above. Scalarity of the original uninserted knot does not identify other cut prescriptions off t=1. In particular (1) is the specified packet deformation of a valid original-scalar presentation. It is NOT asserted equal to inserting C_t into an unreduced even plat and then replacing its unrestricted marked row by the same lowest cut. That different off-phase observable must retain its literal marked matrix functional. The exact terminal Cauchy estimate needs only the prescribed (1) and the original t=1 sum, so it makes no such replacement.</p>
+<h2 id="literal-quantum-ward-identities-with-t-retained">2. Literal quantum Ward identities with t retained</h2>
+<p>On the physical middle head, including both nilpotent endpoints,</p>
+<pre><code>C_t F_2 C_t^(-1)=t F_2,
+C_t Ecal_2 C_t^(-1)=t^(-1)Ecal_2,
+[C_t,K_i]=[C_t,H_i]=0, all i.                         (3)</code></pre>
+<p>In particular every single-head Casimir and its central K^N stay fixed. The actual meridian family x=-M/q instead changes K by M and its Casimir to -(M+M^(-1)). Thus (3) is an independent relative Cartan conjugation on a FIXED-color module, not that meridian family.</p>
+<p>Write the literal three-head coproducts as</p>
+<pre><code>Ftot=F_1+K_1^(-1)F_2+K_1^(-1)K_2^(-1)F_3,
+Etot=Ecal_1 K_2K_3+Ecal_2 K_3+Ecal_3,
+At=K_1^(-1)F_2, Bt=Ecal_2 K_3.</code></pre>
+<p>They obey the ALL-EXTERIOR matrix identities</p>
+<pre><code>[Ftot,C_t]=(1-t)At C_t,
+[Etot,C_t]=(1-t^(-1))Bt C_t,
+[Ktot,C_t]=0,
+[Omega_tot,C_t]
+   =(1-t^(-1))Ftot Bt C_t+(1-t)At C_t Etot.            (4)</code></pre>
+<p>There is no omitted boundary arrow or small-error term. At larger width the same formulas replace At by K_1<sup>(-1)…K_(r-1)</sup>(-1)F_r and Bt by Ecal_r K_(r+1)…K_b.</p>
+<p>The defect is macroscopic on an ACTUAL original source. For w=p, D p=p_12 tensor |d&gt;, Ftot Dp=0. For |t|=1 equation (4) gives</p>
+<pre><code>||Ftot C_t Dp||/||Dp||=sqrt(2)|1-t|, EVERY N&gt;=2.        (5)</code></pre>
+<p>Indeed F_2 sends the u-th cup term to a distinct state with coefficient 1-Q^(-u). Original cup terms have modulus N, the K-prefix and C_t are unitary, and sum_(u=0)^d |1-Q<sup>u|</sup>2=2N. Both squared source norms in (5) retain their exact N^3 factor. Thus an order-one unit phase does not preserve the old lowest-source Ward by an O(1/N) error.</p>
+<p>The exact interval-cap identities DO persist after conjugating ALL their operators and their cap/cup by C_t. If iota_p is an original cup insertion, then iota_(p,t)=C_t iota_p satisfies the conjugated interval identities with Omega^(t)=C_t Omega C_t^(-1). Without that simultaneous change the source terms (4) remain. Keeping the rest of the original word unchanged is precisely the relative seam.</p>
+<h2 id="projection-back-to-the-complete-module-does-not-delete-the-coupon">3. Projection back to the complete module does not delete the coupon</h2>
+<p>One must not conclude from (4) that the final amplitude has left the total character forever. The terminal ordinary cap is a Hopf map; the following exact projection accounts for this.</p>
+<p>Set</p>
+<pre><code>F_d=(Q;Q)_d=N,
+xi_d=product_(a=1)^d(Q^(-a)-1)=(-1)^d N.</code></pre>
+<p>Let R_high extract the components |u,d-u,0&gt; of a highest degree-d vector. On physical degree 2d define</p>
+<pre><code>P_low=Ftot^d Etot^d/(F_d xi_d),
+M_t=xi_d^(-1) R_high Etot^d C_t D.                     (6)</code></pre>
+<p>Then P_low is an idempotent onto the LOWEST degree-2d slice of the COMPLETE total-Casimir-minus-two isotypic component. It has not been declared orthogonal in the physical norm. To prove the statement, Etot^d of any degree-2d vector is highest of degree d because Etot^N=0. The complete highest-vector theorem identifies it with H_L(w). Also Etot^d D w=xi_d H_L(w) and Ftot^d H_L(w)=F_d D w. Therefore P_low D=D and</p>
+<pre><code>P_low C_t D=D M_t, M_1=I.                             (7)</code></pre>
+<p>The original terminal row has c U_phys P_low=c U_phys on that degree slice. This can be checked without a spectral assumption: ordinary-cap naturality replaces Ftot and Etot by the remaining single-head F and E, while &lt;d|F^d=F_d&lt;0| and &lt;0|E^d=xi_d&lt;d|. Consequently the precise ALL-INPUT identity is</p>
+<pre><code>F_t=ell U_red M_t.                                   (8)</code></pre>
+<p>Expanding M_t=sum_n t^n M_n gives sum_n M_n=I and T_n=ell U_red M_n. All N original multiplicities remain; no period or unknown amplitude was used in this completion.</p>
+<p>The resulting M_t is generally neither scalar nor unitary and its coefficients M_n need not be positive or projectors. Already at N=2, in the original degree-one physical multiplicity basis,</p>
+<pre><code>M_t=[[t,0],[i(t-1),2-t]].                             (9)</code></pre>
+<p>This follows from the original E/F/H_L/D matrices in (6), not a chosen interpolation. M_0^2!=M_0, and at t=-1 the operator has eigenvalue three. Thus physical unitarity of C_t does not give a contractive effective coupon after the nonorthogonal Hopf projection. The complete total character has been restored in (8), but the original operator factorization has acquired the additional M_t. No specific semiclassical canonical graph for M_t is inferred from the finite-level example (9) alone.</p>
+<h2 id="what-the-doubled-phase-average-matches">4. What the doubled phase average matches</h2>
+<p>On the recorded head, Parseval inserts the exact doubled projector</p>
+<pre><code>D_clock=sum_n Pi_n tensor bar(Pi_n)
+  =(1/(2pi)) integral C_(exp(i theta))
+                     tensor bar(C_(exp(i theta))) dtheta. (10)</code></pre>
+<p>It matches the integer recorded colors in the two copies. It commutes with their Cartan clocks. It does NOT commute with the independent raising/lowering Ward operators. For example, (F_2 tensor I)D_clock|0,0&gt;=(1-Q)|1,0&gt;, whereas D_clock(F_2 tensor I)|0,0&gt;=0. The same nonzero example works at every N&gt;=2, with physical endpoints retained.</p>
+<p>Thus (10) is a Cartan matching condition, not a full inverse-meridian matrix equation. It does not by itself reestablish the faithful cap interval certificate for a transparent middle wire. Effective projection (8) instead retains its entire nontrivial operator M_t on both copies.</p>
+<p>Classically, in an unbased Gauss frame the seam sends</p>
+<pre><code>(k,e,f)-&gt;(k,t^(-1)e,t f),
+G-&gt;h_t G h_t^(-1), h_t=diag(t^(-1/2),t^(1/2)).         (11)</code></pre>
+<p>The square-root sign has no effect on this conjugation. Based meridians to its right also change through their actual L_- prefixes; they may not be held fixed while ignoring that change. This is a relative Cartan-frame transition. It is not generally a peripheral longitude, either: h_t need not commute with the physical meridian G.</p>
+<h2 id="precise-geometric-implication">5. Precise geometric implication</h2>
+<p>The original scalar at t=1 and the positive terminal Cauchy Gram are fully source-exact. At a retained nontrivial phase the equations are the TWISTED equations (4), or equivalently the completed coupon (8). The phase has unchanged color/central powers and so cannot simply be renamed the existing meridian parameter. No theorem here identifies it with a drilled-component holonomy; that would need its own explicit topological/source construction.</p>
+<p>To apply the original-knot representation-volume bound to all critical contributions of (2), one still needs to prove that this additional seam’s complete stationary equations make it transparent, or bound the full M_t coupling with the correct calibrated action. Color equality in (10), or total-Casimir recovery in (8), does not prove that statement. The exact figure-eight energy identity in the terminal-Gram note is unchanged; it is a coherent special calculation of this same family.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_terminal_phase_coupon_ward.py">Audit</a>: literal coproduct Ward operators, full lowest/Hermite multiplicity maps, every input column of (8), all packet coefficients, the exact N=2 coupon, and the macroscopic original-source norm in (5).</p>
+<p>Fresh replay: PASS six all-input physical Ward/terminal-completion levels, the exact symbolic N=2 coupon, and eight source-norm levels through N=129. Compilation passes. No closed-knot geometric estimate is inferred.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_terminal_phase_coupon_and_ward.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-exact-phase-family-of-the-original-terminal-packet">1. The exact phase family of the original terminal packet</a><a href="#literal-quantum-ward-identities-with-t-retained">2. Literal quantum Ward identities with t retained</a><a href="#projection-back-to-the-complete-module-does-not-delete-the-coupon">3. Projection back to the complete module does not delete the coupon</a><a href="#what-the-doubled-phase-average-matches">4. What the doubled phase average matches</a><a href="#precise-geometric-implication">5. Precise geometric implication</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

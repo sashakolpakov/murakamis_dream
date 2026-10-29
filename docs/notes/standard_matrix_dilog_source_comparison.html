@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual pointed fusion map in the literature charged matrix frames · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/standard_matrix_dilog_source_comparison.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-actual-pointed-fusion-map-in-the-literature-charged-matrix-frames">The actual pointed fusion map in the literature charged matrix frames</h1>
+<p>Research note, 26 October 2026. This gives an exact local comparison between the pointed cyclic fusion map used in the actual source construction and the literature basic/charged matrix dilogarithm. It retains four face frames, the input permutation, the scalar fixed by the selected unit, and the full integer-charge multiplier.</p>
+<p>At the nilpotent source the same identity gives a regular standard kernel on the normal chart. The fractional face powers combine to the integer carry pole. The normal kernel shape is a ratio of normal directions; for recoupling it is their ordinary projective cross-ratio. These are algebraic evaluations at fixed N, not a volume limit.</p>
+<p>The definitions compared below are the displayed definitions in <a href="https://arxiv.org/html/math/0306283v2#S2.SS1.SSS2">Baseilhac–Benedetti, Section 2.1.2, equations (3) and the following kernel</a>. Only definitions and scope are used from that source. Its proofs of symmetrization, tetrahedral invariance and global state identification are not premises. This note proves local identities directly. It does not repair the failed full vertex-order test merely by naming the charged tensor, construct the required global charged source, or prove the volume conjecture.</p>
+<h2 id="definitions-and-compatible-roots">1. Definitions and compatible roots</h2>
+<p>Let N=2m+1&gt;=3, r=m+1, Q=exp(2pi*i/N), so 2r=1 modulo N. The odd-level restriction is part of the literature definition being compared. Section 9 computes the same existing fusion map at even levels without claiming that this source defines an even charged tensor.</p>
+<p>For u<sup>N+v</sup>N=1, with uv!=0, put</p>
+<pre><code>Omega(u,v|n)=product_(j=1)^n v/(1-uQ^j).</code></pre>
+<p>It extends periodically to every integer n. Let</p>
+<pre><code>g_N(u)=product_(j=1)^(N-1)(1-uQ^(-j))^j,
+h(u)^N=g_N(u)/g_N(1).                         (1.1)</code></pre>
+<p>Here h is the literature g(u)/g(1), with its compatible Nth roots retained; g_N is its unambiguous Nth-power product. The basic kernel without that scalar and the published normalized kernel are</p>
+<pre><code>L0(u,v)_(k,l)^(i,j)
+   =Q^(kj+r k^2) Omega(u,v|i-k) delta_(i+j,l),
+L(u,v)=h(u)L0(u,v).                           (1.2)</code></pre>
+<p>All indices are modulo N. In this note (i,j) are output indices and (k,l) are input indices, in precisely the displayed order.</p>
+<p>For the pointed fusion C_(s,t) choose nonzero compatible roots</p>
+<pre><code>alpha^N=s, beta^N=t, eta=alpha beta,
+a_s^N=1-s, a_t^N=1-t, a_st^N=1-st,
+gamma=a_st/a_t, v=a_s/a_st, u=alpha/gamma.
+                                                    (1.3)</code></pre>
+<p>Assume s,t,1-s,1-t,1-st are nonzero. Then</p>
+<pre><code>tau=gamma^N=(1-st)/(1-t),
+u^N=s/tau, v^N=(1-s)/(1-st), u^N+v^N=1.</code></pre>
+<p>The relations a_st=gamma a_t and a_s=gamma v a_t are part of the marked cover. Arbitrarily independent roots would miss their face factors. The shape in (1.2) is w_0=u^N=s/tau. It is the reciprocal of the cross-ratio label tau/s used by the earlier recoupling note. The corresponding orientation and index conventions must be retained in a regulator comparison.</p>
+<h2 id="exact-four-face-factorization">2. Exact four-face factorization</h2>
+<p>For a variable z and norm root a, write</p>
+<pre><code>phi_(z,a)(j)=(Qz;Q)_j/a^j,
+Phi_s=diag phi_(alpha,a_s),
+Phi_t=diag phi_(beta,a_t),
+Phi_st=diag phi_(eta,a_st).</code></pre>
+<p>These are the existing pointed cyclic-factorial frames. Define the other input-face frame and the quadratic phase by</p>
+<pre><code>D_tau(k)=(beta v)^k /
+               product_(j=1)^k(1-gamma^(-1)Q^(-j)),
+Gamma_N(k)=Q^(-r k^2).                        (2.1)</code></pre>
+<p>They are periodic: (beta v)<sup>N=1-gamma</sup>(-N). Each denominator is nonzero on the stated chart. Let P exchange the total and relative input factors. In evaluation bases at the marked roots, the exact pointed fusion identity is</p>
+<pre><code>C_eval=kappa (Phi_s tensor Phi_t) L0(u,v)
+                   (D_tau Gamma_N tensor Phi_st^(-1))P,
+
+kappa=(1/N)sum_(b=0)^(N-1)
+             gamma^(-b)(Q eta;Q)_b/(Q beta;Q)_b.       (2.2)</code></pre>
+<p>Thus the comparison with the normalized literature L has scalar kappa/h(u), not an unspecified proportionality. It is fixed by the original pointed fusion map. The Gaussian and input flip in (2.2) are essential. Each remaining matrix is a function on a single face with its specified norm root; no new local quantum function has been introduced.</p>
+<p>Here is a direct proof. The known pointed polynomial kernel is</p>
+<pre><code>C_(s,t)(U^a V^b)
+    =w^a (Qw;Q)_b/(Qz;Q)_b,
+w=x_1x_2, z=x_2.</code></pre>
+<p>Passing to evaluation bases gives delta_(l,i+j) times</p>
+<pre><code>f_k(i,j)=(1/N)sum_b gamma^(-b)Q^(-kb)
+    (Q alpha beta Q^(i+j);Q)_b/(Q beta Q^j;Q)_b.        (2.3)</code></pre>
+<p>Set x=alpha Q^i, z=beta Q^j. The finite-product recurrence in b and its cyclic closure give</p>
+<pre><code>f_k/f_(k-1)=z (gamma Q^k-Qx)/(gamma Q^k-1).     (2.4)</code></pre>
+<p>Every numerator and denominator here is a unit on the chart. Divide f_k by D_tau(k)Q^(jk)Omega(u,v|i-k). Equation (2.4) makes the result independent of k. The relative Y-intertwining equation next gives the row ratio</p>
+<pre><code>B_(i-1,j+1)/B_(i,j)
+       =gamma v (1-beta Q^(j+1))/(1-alpha Q^i).</code></pre>
+<p>Consequently B_(i,j)=phi_s(i)phi_t(j)A_(i+j). The total Y-intertwining equation reduces to</p>
+<pre><code>A_l/A_(l-1)=gamma a_t/(1-eta Q^l).</code></pre>
+<p>It follows that A_l=kappa/phi_st(l). The value at i=j=k=0 is exactly the finite sum in (2.2). The chirp in (2.1) cancels the k^2 phase in (1.2), proving the formula entry by entry. Invertibility of the pointed fusion and its face frames proves kappa!=0; if its value were zero the same recurrences would make the whole matrix zero.</p>
+<h2 id="the-published-normalization-has-determinant-one-a-rigidity-proof">3. The published normalization has determinant one: a rigidity proof</h2>
+<p>First L0 is invertible directly. At fixed l its block is a pair of diagonal matrices times the circulant with entries</p>
+<pre><code>H_n=Q^(r n^2)Omega(u,v|n).</code></pre>
+<p>For its finite Fourier coefficients Hhat_a, the defining recurrence gives</p>
+<pre><code>Hhat_a=(u+vQ^(1-r-a))Hhat_(a-1).              (3.1)</code></pre>
+<p>The multipliers are nonzero, and their product is u<sup>N+v</sup>N=1. If one Fourier coefficient vanished they would all vanish, contradicting H_0=1. This proves invertibility at composite levels as well.</p>
+<p>The exact root translations of L0, proved in Section 5, imply that</p>
+<pre><code>Delta(u,v)=det L0(u,v) [g_N(u)/g_N(1)]^N</code></pre>
+<p>is invariant under independent u-&gt;Qu and v-&gt;Qv. The clock and shift determinants are one at odd N. Thus Delta belongs to C(z), z=u^N, the invariant field of the Fermat cover. It is a regular unit away from z=0,1,infinity. It is therefore of the form constant*z<sup>a*(1-z)</sup>b for integers a,b.</p>
+<p>At u=0,v=1 the Gaussian circulant remains invertible, so a=0. At u=1,v=0, Omega(n)=0 for 1&lt;=n&lt;N and Omega(0)=1. The kernel is the permutation (k,l)-&gt;(k,l-k) with coefficient Q<sup>(kl+(r-1)k</sup>2). Its determinant is one: the permutation sign is one at odd N and the sum of those exponents is divisible by N. Also h(1)=1. This gives b=0 and the constant one. Hence exactly</p>
+<pre><code>det L(u,v)=1.                                (3.2)</code></pre>
+<p>This proves the normalization by an explicit invariant-unit argument and boundary evaluation, rather than a borrowed matrix-dilogarithm theorem.</p>
+<h2 id="the-remaining-scalar-is-a-specified-normalization-torsor">4. The remaining scalar is a specified normalization torsor</h2>
+<p>Put S=N(N-1)/2=Nm, and let F_s,F_t,F_st,F_D be the products of the diagonal entries of Phi_s,Phi_t,Phi_st,D_tau. The already proved polynomial fusion determinant and the two Vandermonde changes give</p>
+<pre><code>det C_eval=[t/(1-t)]^S.</code></pre>
+<p>For example the Vandermonde ratio is gamma^(-NS), which converts the polynomial-basis determinant to this expression. The input flip has determinant (-1)^m. The chirp determinant raised to N is one, including when 3 divides N. Equation (3.2) therefore gives the exact scalar norm</p>
+<pre><code>(kappa/h(u))^(N^2)
+  =(-1)^m [t/(1-t)]^(Nm)
+                [F_st/(F_s F_t F_D)]^N.        (4.1)</code></pre>
+<p>The source value (2.2) and the chosen branch of h fix its remaining phase. Equation (4.1) is not permission to discard the scalar or choose independent roots at different moves. It makes its modulus and normalization line explicit from the four face factors.</p>
+<p>For compatible roots with bounded fixed logarithms of s,t, 1-s,1-t,1-st as N varies, (4.1) also gives</p>
+<pre><code>log|kappa/h(u)|=O(log N).                     (4.2)</code></pre>
+<p>Indeed a cyclic-factorial product has log-modulus</p>
+<pre><code>log|F_s|=N log|(1-s)/(1-alpha)|
+         -N log|D_N(alpha)|-m log|1-s|,</code></pre>
+<p>where D_N(alpha)=product_(j=1)^(N-1)(1-alpha Q<sup>j)</sup>(j/N). The fixed-log root bound proved in <a href="triangulation_regulator_bridge.html#4-keep-central-and-semiclassical-shapes-distinct">the triangulation bridge</a> is log|D_N(exp(w/N))|=O(log N). It gives O(N log N) for each F; the inverse-Q input frame obeys the same estimate. Substitution in (4.1) proves (4.2), with upper and lower polynomial bounds. This concerns these marked trajectories. It does not bound an arbitrary moving root frame or the selected contraction of the knot state.</p>
+<h2 id="charges-act-through-the-finite-heisenberg-torsor">5. Charges act through the finite Heisenberg torsor</h2>
+<p>Let Z e_j=Q^j e_j and S e_j=e_(j+1). Finite-product cancellation gives, for every a,b modulo N,</p>
+<pre><code>Omega(uQ^a,vQ^b|n)
+       =Q^(bn)Omega(u,v|n+a)/Omega(u,v|a).</code></pre>
+<p>Substitution in (1.2) proves the full operator identity</p>
+<pre><code>Omega(u,v|a)L0(uQ^a,vQ^b)
+   =(Z^b S^(-a) tensor S^a)L0(u,v)
+                            (Z^(a-b) tensor I).      (5.1)</code></pre>
+<p>No scalar is suppressed. The scalar normalization obeys</p>
+<pre><code>g_N(uQ^a)/g_N(u)=Omega(u,v|a)^N.</code></pre>
+<p>Thus on the compatible cover h_a=Omega(u,v|a)h_0, (5.1) is the corresponding identity for normalized L. Other normalization-root lifts retain their finite phase.</p>
+<p>For the matrix operation W_(a,b) on the right of (5.1),</p>
+<pre><code>W_(c,d) W_(a,b)=Q^(bc)W_(a+c,b+d).             (5.2)</code></pre>
+<p>This follows from S<sup>(-c)Z</sup>b=Q<sup>(bc)Z</sup>b S^(-c). In particular the two root generators have central commutator Q. The root transport is the finite Heisenberg extension, with its central root retained, rather than an unmarked pair of roots. Its Weyl matrices are unitary for complex Q on the unit circle.</p>
+<p>To apply the literature charged definition, let w_0=z, w_1=(1-z)^(-1), w_2=1-z^(-1). For a chosen log branch and flattening f, its root formula is</p>
+<pre><code>w_j&#39;=exp[(Log w_j+(f_j-epsilon c_j)(N+1)pi*i)/N],
+c_0+c_1+c_2=1, epsilon=+/-1.</code></pre>
+<p>Relative to the unshifted roots of w_0 and w_1^(-1), put</p>
+<pre><code>a=r(f_0-epsilon c_0),
+b=-r(f_1-epsilon c_1),
+u_c=uQ^a, v_c=vQ^b.</code></pre>
+<p>The published charged tensor is exactly</p>
+<pre><code>R_(epsilon,c)=sigma_(epsilon,c)L(u_c,v_c)^epsilon,
+sigma_(epsilon,c)=u_c^(-m c_1)v_c^(-m c_0).     (5.3)</code></pre>
+<p>Equation (5.1) expresses this definition in the original matrix frame by explicit four-leg Weyl operators. For a negative tensor their order and inverses are reversed; the prefactor in (5.3) is still retained as printed. No published symmetry proof is assumed in this calculation.</p>
+<p>The integral charges must not be reduced modulo N in the prefactor. A lift (c_0,c_1)-&gt;(c_0+N b_0,c_1+N b_1), with c_2 adjusted, leaves u_c,v_c unchanged but multiplies the full tensor by</p>
+<pre><code>z^(-m b_1)(1-z)^(-m b_0).                    (5.4)</code></pre>
+<p>These are central functions, not generally phases. For fixed integer charges and fixed z the exact modulus is</p>
+<pre><code>log|sigma_c|=-m/N [c_1 log|z|+c_0 log|1-z|].   (5.5)</code></pre>
+<p>It is bounded across N under that qualification. The Weyl root shifts preserve the local normalized kernel’s singular values; (5.5) supplies its remaining scalar norm. This operator statement supplies no lower bound for an arbitrary selected global contraction.</p>
+<h2 id="the-selected-source-is-explicit-in-the-standard-frames">6. The selected source is explicit in the standard frames</h2>
+<p>The pointed fusion sends the product unit to the product unit. In evaluation coordinates these are constant vectors. Equation (2.2) consequently says</p>
+<pre><code>L0(u,v)p_standard
+        =kappa^(-1)(Phi_s tensor Phi_t)^(-1)1,
+p_standard=(D_tau Gamma_N tensor Phi_st^(-1))1.         (6.1)</code></pre>
+<p>The flip fixes that constant input. In general p_standard is not the constant vector. This gives the selected source in the standard matrix definition, rather than identifying two unpointed kernels and resetting their boundary vectors.</p>
+<p>For a positive charged tensor (5.3), substituting (5.1) in (2.2) gives the original map with four transported leg frames and scalar kappa/[h(u)sigma_c]. For the inverse original map the corresponding scalar is h(u)/[kappa sigma_c], with the inverted leg order. These formulas retain the complete peripheral functions before specialization.</p>
+<p>Any already specified finite recoupled actual network can make this substitution with its full source, covectors, caps and scalar lines. Its period is then unchanged exactly. This is a local equivalence with the literature definition. It is not a proof that the independently prescribed face pairings, charges and selected vector of a global geometric state are the transformed ones in (6.1).</p>
+<h2 id="the-normal-chart-gives-a-nondegenerate-standard-tetrahedron">7. The normal chart gives a nondegenerate standard tetrahedron</h2>
+<p>At fixed N take</p>
+<pre><code>alpha=1-epsilon a, beta=1-epsilon b,
+a b(a+b)!=0, s=alpha^N, t=beta^N.</code></pre>
+<p>Algebraic evaluation of the ratios at epsilon=0 gives</p>
+<pre><code>gamma^N=(a+b)/b,
+u^N=b/(a+b), v^N=a/(a+b),
+kappa_0=(1-u^N)/(N(1-u)).                    (7.1)</code></pre>
+<p>The last formula is the finite geometric sum obtained from (2.2), since its Pochhammer quotient becomes one. All these standard kernel parameters are nondegenerate, and kappa_0 is nonzero. This is an evaluation on the normal chart, not an N-&gt;infinity calculation.</p>
+<p>The singular face roots in (2.2) recombine integrally. On its support l=i+j modulo N put kappa_carry=floor((i+j)/N). Writing p_i(alpha)=(Qalpha;Q)_i, exactly</p>
+<pre><code>phi_s(i)phi_t(j)/phi_st(l)
+  =[p_i(alpha)p_j(beta)/p_l(eta)]
+     gamma^(l-i)v^(-i)(1-t)^(-kappa_carry).    (7.2)</code></pre>
+<p>Use a_st=gamma a_t, a_s=gamma v a_t and a_t^N=1-t to prove (7.2). Thus the fractional powers cancel to the integer carry. Every other displayed kernel factor is a unit at the normal point. Multiplying row (i,j) by (1-t)^kappa_carry gives a regular source frame. Its determinant is exactly t^(N(N-1)/2), hence one at t=1.</p>
+<p>Its actual normal matrix, for l=i+j modulo N, is</p>
+<pre><code>C0_(ij,lk)=kappa_0 [(Q;Q)_i(Q;Q)_j/(Q;Q)_l]
+    gamma^(l-i)v^(-i)D_tau(k)Q^(jk)
+                              Omega(u,v|i-k).         (7.3)</code></pre>
+<p>There are N(N-1)/2 carry-one rows. They are the retained relative source directions of the two-lattice construction; evaluating only an ordinary unscaled image loses them. The independent valuation calculation in the audit checks (7.3) directly from the original finite-product Fourier sum, as well as its determinant and unit pointing.</p>
+<p>For three normal leaf directions a,b,c the standard recoupling shape is</p>
+<pre><code>z_normal=(a+b+c)b/[(a+b)(b+c)].                (7.4)</code></pre>
+<p>It is the cross-ratio in the literature convention of the four cumulative normal flags 0,a,a+b,a+b+c. This follows by substituting the first-order products in s/tau for the two recoupling trees. It explains how geometric flag coordinates can occur on the exceptional source chart even though the leaf central parameters coalesce.</p>
+<p>A global geometric developing configuration must still be matched to the actual equivariant source, its gluing and its marked cut. Arbitrary local normal ratios do not establish that comparison. In particular (7.4) does not turn a reducible root-central character into the complete hyperbolic one or prove the selected regulator norm.</p>
+<h2 id="verification-and-scope">8. Verification and scope</h2>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_standard_matrix_dilog_comparison.py">The independent audit</a> compares the torus-defined fusion matrix and its evaluated four-face expression at N=2,3,…,12,15. At the six odd levels it is the literal literature kernel. All four frame factors, the flip, chirp, nonzero kappa, selected source and determinant norm agree. It checks 874 root translations, 108 odd-level positive/negative charged definitions, their full integer-charge lifts, the Heisenberg commutator and the compatible cyclic-g normalization. All twelve normal source frames also match the independent leading-valuation calculation with their exact determinant phases. All checks pass. <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/standard_matrix_dilog_comparison_results.json">Results</a>.</p>
+<pre><code>python3 experiments/audit_standard_matrix_dilog_comparison.py</code></pre>
+<p>The uniform proofs are finite products, intertwinings, Fourier recurrences and invariant-unit rigidity. Their coverage overlaps existing cyclic 6j and charged matrix dilogarithm theory; no novelty is claimed. The new role in these notes is the explicit actual source, full scalar and normal lattice in the published tensor coordinates. The failed bare vertex-order prescription still needs a global source-compatible charged replacement. Equality of the selected knot period with the marked Bloch-regulator period and its all-level norm remain unproved.</p>
+<h2 id="the-same-existing-fusion-map-at-even-levels">9. The same existing fusion map at even levels</h2>
+<p>There is an all-level algebraic expression, without dividing by two modulo an even N. Put q=exp(pi*i/N), lambda_0=-q. Then</p>
+<pre><code>lambda_0^2=Q, lambda_0^N=(-1)^(N-1),
+Gamma_N(k)=lambda_0^(-k^2).</code></pre>
+<p>The quadratic phase is periodic in k modulo N. Replace Q^(r k^2) in L0 by lambda_0<sup>(k</sup>2), and the input chirp by this Gamma_N. Equations (2.2), (2.3)–(2.4), (5.1)–(5.2) and the full normal-source calculation then hold at every N. They are exact matrices of the already defined pointed quantum-group fusion, rather than a separately chosen invariant. At odd N, lambda_0=Q^r, so the expression is exactly the literature kernel already compared.</p>
+<p>The Gaussian Fourier recurrence is now</p>
+<pre><code>Hhat_a=(u+v lambda_0^(-1)Q^(1-a))Hhat_(a-1).</code></pre>
+<p>Its product is one because lambda_0<sup>N=(-1)</sup>(N-1), proving invertibility at all levels. The same invariant-unit proof gives the exact determinant</p>
+<pre><code>det L^(lambda_0)=delta_N,
+delta_N=1 for odd N,
+delta_N=(-1)^(N/2) for even N.                 (9.1)</code></pre>
+<p>For completeness, the clock and shift determinant signs cancel in their N-dimensional tensor extensions. At u=1,v=0 the remaining boundary permutation and phase have determinant Q<sup>(S</sup>2), S=N(N-1)/2, which is exactly delta_N. This proves (9.1) without dropping the even-level sign.</p>
+<p>The evaluated fusion and the normal carry frame similarly have</p>
+<pre><code>det C_eval=delta_N[t/(1-t)]^S,
+det C_normal=delta_N at the source.            (9.2)</code></pre>
+<p>In the scalar norm formula (4.1), replace (-1)^m by chi_N, where chi_N=(-1)^((N-1)/2) for odd N and chi_N=1 for even N. The input flip and the chirp’s tensor determinant cancel at even N. All the phase factors are thus accounted for in the existing source map.</p>
+<p>The charge prescription (5.3) was read from an odd-level definition and is not asserted at even N by this observation. In particular its flattening/charge parity cannot be extended by silently treating one half modulo an even level. The all-level source expression is available for the required comparison, while the global charged construction and its selected regulator norm still require proof.</p>
+<p>The subsequent <a href="shared_standard_face_gluing.html">shared face proof</a> now makes the four-face expression compatible on one affine flag chart. Its frame depends only on the ordered triangle and shared edge roots. Actual face pairings and corrected cyclic maps become fixed Gaussian matrices with retained scalar functions; the full ordered kernel includes an explicit orientation clock/shift and pointing factor. This establishes local gluing data for a specified network, while its equivariant global charges, actual source/cut and selected regulator norm still require comparison.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/standard_matrix_dilog_source_comparison.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#definitions-and-compatible-roots">1. Definitions and compatible roots</a><a href="#exact-four-face-factorization">2. Exact four-face factorization</a><a href="#the-published-normalization-has-determinant-one-a-rigidity-proof">3. The published normalization has determinant one: a rigidity proof</a><a href="#the-remaining-scalar-is-a-specified-normalization-torsor">4. The remaining scalar is a specified normalization torsor</a><a href="#charges-act-through-the-finite-heisenberg-torsor">5. Charges act through the finite Heisenberg torsor</a><a href="#the-selected-source-is-explicit-in-the-standard-frames">6. The selected source is explicit in the standard frames</a><a href="#the-normal-chart-gives-a-nondegenerate-standard-tetrahedron">7. The normal chart gives a nondegenerate standard tetrahedron</a><a href="#verification-and-scope">8. Verification and scope</a><a href="#the-same-existing-fusion-map-at-even-levels">9. The same existing fusion map at even levels</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

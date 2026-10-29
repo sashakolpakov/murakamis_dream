@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The finite trivalent Euler coefficient to short balanced series · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/finite_trivalent_euler_racah_transform.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-finite-trivalent-euler-coefficient-to-short-balanced-series">The finite trivalent Euler coefficient to short balanced series</h1>
+<p>29 October 2026. This completes the missing finite coefficient identity from the independent <a href="actual_trivalent_root_fourier_source_certificate.html">root-Fourier source proof</a>. The proof uses only the coproduct Euler coefficient, finite Newton interpolation, finite Vandermonde, and the <a href="finite_balanced_sears_operator_proof.html">own finite Sears lemma</a>. It does not import a 6j evaluation.</p>
+<p>Set N&gt;=2, d=N-1, Q=exp(2pi i/N), F_k=(Q;Q)_k. Let a,b,c be nonnegative integers &lt;=floor(d/2), satisfying the triangle inequalities, and put</p>
+<pre><code>r=b+c-a, delta=a+b+c-d&gt;=0,
+r_1=a+b-c, r_2=a+c-b.</code></pre>
+<p>Thus delta&lt;=min(a,b,c,r,r_1,r_2). Every finite factorial used below has a physical index in 0,…,d. Write D_Q h(T)=[h(T)-h(QT)]/T and</p>
+<pre><code>P=[T^d](TQ;Q)_b^2 D_Q^r (TQ^(1-c);Q)_c^2,
+C_delta=Q^[-b(b+1)+c(c-1)] P.                    (1)</code></pre>
+<p>The EXACT identity needed by the actual source normalization is</p>
+<pre><code>C_delta=Q^[b(a+c-b)+c(2c+1)]
+   *F_(2b)/F_(a+b-c)*F_a^2/[F_delta F_(a-delta)^2]
+   *4phi3(Q^-delta,Q^-r,Q^-b,Q^-b;
+                     Q^(-b-c),Q^(-b-c),Q^(-2b);Q,Q). (2)</code></pre>
+<p>The series terminates at min(delta,r). All denominator Pochhammers are nonzero up to that length. No generic-q normal limit is taken.</p>
+<h2 id="jackson-leibniz-and-a-finite-moment-identity">1. Jackson Leibniz and a finite moment identity</h2>
+<p>The finite Leibniz formula follows by induction from D_Q(uv)=(D_Qu)v+u(QT)D_Qv. Apply it to f(T)^2, f=(TQ^(1-c);Q)_c:</p>
+<pre><code>D_Q^r f^2=(-Q^(1-c))^r F_c^2
+  *sum_s [r choose s]_Q Q^[s(s-1)/2+(r-s)(r-s-1)/2]
+   (TQ^(1-c+r);Q)_(c-s)
+   (TQ^(1-c+r-s);Q)_(c-r+s)
+                  /[F_(c-s)F_(c-r+s)].          (3)</code></pre>
+<p>Only max(0,r-c)&lt;=s&lt;=min(r,c) occurs. When multiplied by (TQ)_b^2, the Euler product in a term of (3) is EXACTLY</p>
+<pre><code>(TQ;Q)_b (TQ^(b-a+1);Q)_a
+                     (TQ^(b-a-s+1);Q)_c.         (4)</code></pre>
+<p>To verify (4), compare exponent intervals using their endpoints; the two sides have the same multiplicity at every integer exponent. This argument works for EVERY triangle (a,b,c), not only a maximal first label. Reversing degree J=a+b+c to degree delta in (4) gives the three factors</p>
+<pre><code>A(U)=(UQ^-b;Q)_b(UQ^-b;Q)_a,
+(UQ^(s-r);Q)_c.</code></pre>
+<p>The signs cancel since r+J=2(b+c). The full phase in this reversal is</p>
+<pre><code>P=Q^Z0 F_c^2F_r [U^delta]A(U)
+   *sum_s w_s (UQ^(s-r);Q)_c,
+w_s=Q^[s^2-s(r+c)]/[F_sF_(r-s)F_(c-s)F_(c-r+s)],
+Z0=r(1-c)+r(r-1)/2+b(b+1)/2+ab-a(a-1)/2
+                                  +c(b-a)+c(c+1)/2. (5)</code></pre>
+<p>The crucial moment is computed explicitly. The finite Newton identity</p>
+<pre><code>x^ell=sum_(k=0)^ell (Q^-ell;Q)_k Q^k(x;Q)_k/F_k  (6)</code></pre>
+<p>follows by induction using x(x;Q)_k=Q^-k[(x;Q)<em>k-(x;Q)</em>(k+1)]. Put x=Q^(s-c), multiply by Q^(c ell), and sum against w_s. The factor (Q^(s-c);Q)<em>k cancels F</em>(c-s), leaving Vandermonde of lengths c-k and c. The exact result is</p>
+<pre><code>sum_s w_s (Q^(s-c);Q)_k
+  =(-1)^k Q^[-ck+k(k-1)/2-(c-k)r]
+      F_(2c-k)/[F_rF_(2c-k-r)F_(c-k)F_c].        (7)</code></pre>
+<p>This is an own finite Vandermonde calculation: after cancellation, its summand exponent is (c-k-s)(r-s), up to the displayed constant, and the product-coefficient identity gives [2c-k choose r]_Q. Out-of-range terms are zero. In the use below k&lt;=delta&lt;=2c-r, so every displayed denominator is regular.</p>
+<p>Expand (UQ^(s-r);Q)_c by the finite binomial theorem, insert (6), and put ell=k+v. The remaining v sum is another FINITE Euler product. Equations (6),(7) give</p>
+<pre><code>sum_s w_s (UQ^(s-r);Q)_c
+  =Q^(-cr) sum_k (-1)^k Q^[k(k-1)/2]U^k
+   *F_(2c-k)(UQ^(c-r);Q)_(c-k)
+              /[F_rF_(2c-k-r)F_kF_(c-k)^2].     (8)</code></pre>
+<p>All sums here are finite, so their interchange has no convergence hypothesis. In (5), the last Euler factor in (8) joins the length-a factor contiguously, because c-r=a-b.</p>
+<h2 id="the-root-coefficient-collapse">2. The root coefficient collapse</h2>
+<p>Let L=delta-k, so 0&lt;=L&lt;=b. The only remaining coefficient after (8) is</p>
+<pre><code>[U^L](UQ^-b;Q)_b(UQ^-b;Q)_(d+L-b)
+   =Q^[L(L-1-2b)] F_b^2/[F_LF_(b-L)^2].          (9)</code></pre>
+<p>Here is a finite proof. Put M=d+L-b. The finite binomial expansion of the left side, extracting its zeroth summand, is</p>
+<pre><code>(-Q^-b)^L Q^[L(L-1)/2][M choose L]_Q
+   *2phi1(Q^-L,Q^-b;Q^(M-L+1);Q,Q^(b+1)).</code></pre>
+<p>At this ROOT, Q<sup>(M-L+1)=Q</sup>(N-b)=Q^-b. The equal numerator and denominator cancel, with no zero reached because L&lt;=b&lt;N. The remaining finite binomial sum is (Q^(b+1-L);Q)_L. Converting its two factors to F gives exactly (9). This is the source-specific root collapse; no continuous-color replacement is used.</p>
+<p>Combining (5),(8),(9), and writing</p>
+<pre><code>Z=Z0-cr+delta(delta-1-2b)-b(b+1)+c(c-1),</code></pre>
+<p>one obtains</p>
+<pre><code>C_delta=Q^Z F_b^2 F_(2c)
+                /[F_(r_2)F_delta F_(b-delta)^2] *H_c,
+H_c=4phi3(Q^-delta,Q^-r_2,Q^-c,Q^-c;
+                        Q^(-a-c),Q^(-a-c),Q^(-2c);Q,Q). (10)</code></pre>
+<p>For example the raw kth term before normalization is</p>
+<pre><code>(-1)^k Q^[k(k-1)/2+(delta-k)(delta-k-1-2b)]
+   F_(2c-k)
+   /[F_(2c-k-r)F_kF_(c-k)^2F_(delta-k)F_(b-delta+k)^2].</code></pre>
+<p>Its successive ratio gives (10); the residual argument is Q because 2+2b+2c-r-delta=N+1. This makes the root mark explicit.</p>
+<h2 id="two-proved-sears-transformations-meet-at-one-symmetric-series">3. Two proved Sears transformations meet at one symmetric series</h2>
+<p>Use the own finite Sears identity, with length delta, on H_c. Keep Q^-c and choose d=e=Q^(-a-c). It gives</p>
+<pre><code>H_c=K_1 H_sym,
+K_1=(Q^-a,Q^(-a-b);Q)_delta
+                    /(Q^(-a-c),Q^-r_1;Q)_delta,
+H_sym=4phi3(Q^-delta,Q^-a,Q^-b,Q^-c;
+                       Q^(-a-b),Q^(-a-c),Q^(-b-c);Q,Q).</code></pre>
+<p>The root equalities Q<sup>(a+1-delta)=Q</sup>(-b-c) etc fix all three denominators. Applying the SAME finite Sears lemma to the H_b on the right side of (2) gives</p>
+<pre><code>H_b=K_2 H_sym,
+K_2=(Q^-c,Q^(-a-c);Q)_delta
+                    /(Q^(-b-c),Q^-r_2;Q)_delta.  (11)</code></pre>
+<p>Every factorial index is physical, since delta&lt;=a,b,c,r_i. Thus neither transformation crosses a root pole. No division by H_sym is needed; the comparison is between their explicit prefactors.</p>
+<p>For clarity the complete phase cancellation is recorded. Let tau_u=(-1)^u Q<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, so F_uF_(d-u)=N tau_u. Converting (11) to factorials and reflecting complements gives</p>
+<pre><code>[F_b^2F_(2c)/(F_(r_2)F_delta F_(b-delta)^2)](K_1/K_2)
+ /[F_(2b)F_a^2/(F_(r_1)F_delta F_(a-delta)^2)]
+  =tau_b^2 tau_(2c) tau_(a+b) tau_(b+c)
+                       /(tau_(2b)tau_c tau_a tau_(a+c)^2)
+  =Q^K,
+K=-a^2+ab-2ac-a+bc+b+c^2.</code></pre>
+<p>The residual sign is (-1)<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>=1. Finally direct expansion gives</p>
+<pre><code>Z+K-[b(a+c-b)+c(2c+1)]
+   =-(a-b+c+delta)(a+b+c-delta+1)
+   =-N(-N+2a+2c+1).</code></pre>
+<p>Its Q power is ONE. Substituting into (10),(11) proves EXACTLY (2) for every admissible supported triangle at both parities.</p>
+<h2 id="fully-symmetric-manifestly-positive-root-form">4. Fully symmetric, manifestly positive root form</h2>
+<p>The same calculation also removes every ordering qualification. No step in (3)–(11) assumed a maximal first label. With the original source phase</p>
+<pre><code>E_src=2a^2-ab-ac+bc-J-3,</code></pre>
+<p>the actual scalar has the FULLY symmetric positive form</p>
+<pre><code>A_source=(-1)^(N+J)q^E_src D_sym H_sym,
+D_sym=N^2/[s_r s_(r_1)s_(r_2)s_delta
+                     s_(a-delta)s_(b-delta)s_(c-delta)]. (12)</code></pre>
+<p>Here q=exp(pi i/N), s_u=|F_u|. Every H_sym summand is POSITIVE: in (Q^-u;Q)_k each factor is i q^(-u+l) times its positive sine. The full term phase is q<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>=q<sup>(Nk)=(-1)</sup>k, which cancels the denominator phase (-1)^k. All descending sine indices are nonnegative up to the true termination min(delta,a,b,c). The zeroth term is one. Thus (12) proves nonvanishing for EVERY supported triangle, at both parities and composite levels.</p>
+<p>For an explicit check of the absolute normalization, insert K_2 from (11) and the source prefactor Nq<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>/(F_aF_bF_cF_r), with E from the Fourier theorem, into (2). Reflect complementary factorials. Their modulus is exactly D_sym. Their F-power difference is 1-N, and the remaining q exponent, after (-i)^(1-N) is included, differs from N(N+J)+E_src by 2N(-N+b+c+1). Hence the full phase is precisely the one in (12), not merely an unspecified unit.</p>
+<p>The positive candidate factorial sum, calculated in a chart with a maximal label and then transformed by the same finite Sears lemma, has</p>
+<pre><code>R_N=N^3 H_sym/[s_a s_b s_c s_r s_(r_1)s_(r_2)
+                     s_(a-delta)s_(b-delta)s_(c-delta)]. (13)</code></pre>
+<p>The long/short calculation and phase equivalence are recorded with their explicit initial term in the <a href="actual_trivalent_general_finite_transform_port.html#1-exact-long-and-short-series-for-the-candidate-factorial-object">finite candidate transform port</a>. For a direct normalization check, in its maximal-a chart the initial term is N s_a/[s_(a-b)s_(a-c)s_(a-delta)s_b s_c s_r]. Its first Sears factor has modulus s_(b+c)s_(2b)s_(a-b)s_(a-c)/[s_a s_(r_1)s_b s_c]; the phases of its two ascending and two descending Pochhammers cancel exactly, so this factor is POSITIVE. The second factor K_2 in (11) is also positive: all four negative-parameter Pochhammer phases cancel. Its modulus is s_c s_(a+c)s_(d-a)s_(d-2b) /[s_(c-delta)s_(d-b)s_(b+c)s_(r_2)]. Multiply these three displayed factors and use sine reflection; the result is exactly the positive prefactor in (13). Both sides of (13) are manifestly symmetric, so a maximal chart can be chosen for ANY label order. Combining (12),(13) proves A_source=(-1)<sup>(N+J)q</sup>E_src [s_as_bs_c/(N s_delta)]R_N for every supported triangle. The lower-saturation branch is zero by the independent complete-clock cancellation.</p>
+<h2 id="original-source-conclusion-and-its-separate-sewing-scope">5. Original-source conclusion and its separate sewing scope</h2>
+<p>Together with the root-Fourier coefficient theorem and the explicitly normalized candidate long-to-short series calculation, (2) proves the positive trivalent scalar identity, rather than checking it at finitely many levels. The scalar is zero for J&lt;d; for J&gt;=d it is the specified unit phase times C_N R_N, hence NONZERO.</p>
+<p>This scalar conclusion does not estimate the whole magnetic tensor: its descendant coefficients can carry additional exponential factorials. Ordinary white and marked white source contractions, full Hermite normals and ordered graph sewing still retain their actual independent data. In particular the scalar action maximum must not be relabelled as an already proved full vertex norm bound.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_finite_trivalent_euler_racah_transform.py">all finite coefficient stages and source phases</a>.</p>
+<p>Root and independent internal proof reviews passed the complete finite bridge, both Sears prefactors, all root denominator ranges, the original source phase, positive symmetric series and every-label extension. A fresh exact replay passed fifteen full supported root families through N=16 at every intermediate finite stage, with a symbolic check of the remaining phase multiple. The root’s independent <a href="actual_trivalent_square_linearization_bridge.html">square-linearization proof</a> reaches the same H_c without the Jackson-Leibniz/Newton route. Tests are supplementary; the finite proofs establish the identity.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>u(u+1)/2<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>2(b-a)<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>k(J-delta+1)<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>E+2b(b+1)-2c(c-1)<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/finite_trivalent_euler_racah_transform.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#jackson-leibniz-and-a-finite-moment-identity">1. Jackson Leibniz and a finite moment identity</a><a href="#the-root-coefficient-collapse">2. The root coefficient collapse</a><a href="#two-proved-sears-transformations-meet-at-one-symmetric-series">3. Two proved Sears transformations meet at one symmetric series</a><a href="#fully-symmetric-manifestly-positive-root-form">4. Fully symmetric, manifestly positive root form</a><a href="#original-source-conclusion-and-its-separate-sewing-scope">5. Original-source conclusion and its separate sewing scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

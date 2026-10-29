@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The whole Verma crossing on the cyclic Rees source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/rees_whole_crossing_source_factorization.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-whole-verma-crossing-on-the-cyclic-rees-source">The whole Verma crossing on the cyclic Rees source</h1>
+<p>Research proof, 27 October 2026. The actual Verma R-factor has an exact operator factorization after the irregular Rees transformation: a regular norm-one cyclic matrix factor and a specified resonant quantum period. Together with the actual Cartan factor, the latter carries the nontrivial classical holonomy transport. The original head source and every internal head projector are transported explicitly and remain irregular. No regular same-fiber full cyclic R matrix or selected geometric period is inferred.</p>
+<h2 id="the-exact-transformed-crossing-and-its-ramified-factors">1. The exact transformed crossing and its ramified factors</h2>
+<p>Use the genuine balanced common Verma crossing with its full marked Cartan factor retained:</p>
+<pre><code>R=D Theta, Theta=P_Q(q Ecal_1 F_2),
+log P_Q(z)=-sum_(m&gt;=1) z^m/[m(1-Q^m)].</code></pre>
+<p>The nilpotent series terminates on every original fixed total-index sector before transformation. For its transformed functional calculus, introduce a central bookkeeping parameter <code>t</code> and work coefficientwise in <code>t</code>; no convergence assertion is required.</p>
+<p>Set <code>d=N(Q^N-1)</code>, choose one common marked root <code>eta^N=d</code>, and take the two actual Rees transformations</p>
+<pre><code>C_i=D_eta exp(-p_i u_i/d), D_eta h_j=eta^j h_j,
+Ehat_i=eta C_i Ecal_i C_i^(-1),
+Fhat_i=eta^(-1) C_i F_i C_i^(-1),
+Khat_i=C_i K_i C_i^(-1).</code></pre>
+<p>The nonzero momenta <code>p_i</code> are not required to coincide. The module theorem proves regularity of these operator coefficients and gives their full cyclic root values. Since the same Hopf scale is used on both factors, its eta factors cancel in the R argument. Thus the exact transformed operator is</p>
+<pre><code>Rhat=Dhat P_Q(Zhat),
+Zhat=q Ehat_1 Fhat_2,
+Dhat=(C_1 tensor C_2)D(C_1 tensor C_2)^(-1).   (1)</code></pre>
+<p>Independent choices <code>eta_i</code> instead insert the explicit ratio <code>eta_2/eta_1</code> in <code>Zhat</code>. Its N-th power is one, but its cyclic phase is retained; it is not reset after specialization.</p>
+<h2 id="exact-resonance-separation-before-taking-any-root-value">2. Exact resonance separation before taking any root value</h2>
+<p>Let <code>W=Zhat^N</code>. Split the logarithmic series into indices divisible and not divisible by <code>N</code>. This gives the exact operator identity</p>
+<pre><code>P_Q(t Zhat)=C_Q(t Zhat) R_res,Q(t^N W),
+log C_Q(z)=-sum_(N not dividing m) z^m/[m(1-Q^m)],
+R_res,Q(w)=P_(Q^N)(w)^(1/N).                (2)</code></pre>
+<p>Both factors are functions of the <strong>same</strong> operator, hence commute. Their logarithms and fractional roots are marked by constant one at <code>t=0</code>. Equation (2) follows by comparing each coefficient; its resonant coefficient is</p>
+<pre><code>-(1/N) w^k/[k(1-(Q^N)^k)].</code></pre>
+<p>No value of a divergent infinite factor at a root has been assigned. The first factor is regular in the root normal coefficientwise in <code>t</code>, because each denominator with <code>N</code> not dividing <code>m</code> is a unit and <code>Zhat</code> is a regular Rees operator.</p>
+<p>The exact functional equation also separates:</p>
+<pre><code>C_Q(Qz)/C_Q(z)=(1-z)^(-1)(1-z^N)^(1/N),
+R_res,Q((Qz)^N)/R_res,Q(z^N)=(1-z^N)^(-1/N). (3)</code></pre>
+<p>Their product is precisely the original Pochhammer transport. This retains the whole central divisor, rather than replacing it by a numerical factor at an ideal source.</p>
+<h2 id="the-regular-root-factor-is-the-actual-marked-cyclic-dilogarithm">3. The regular root factor is the actual marked cyclic dilogarithm</h2>
+<p>At the root write <code>Z_0</code> for the cyclic matrix symbol of <code>Zhat</code>, and put</p>
+<pre><code>k_i=Khat_i^N, e_i=Ehat_i^N, f_i=Fhat_i^N,
+X=Z_0^N=-e_1 f_2.</code></pre>
+<p>Here <code>q_N^N=-1</code> fixes the sign. Let</p>
+<pre><code>nu=(1-t^N X)^(1/N),
+D_N(t Z_0)=product_(j=1)^(N-1)(1-Q_N^j t Z_0)^(j/N),
+g_D(t Z_0)=D_N(t Z_0)/nu^((N-1)/2).</code></pre>
+<p>All powers use the common mark at <code>t=0</code>. Weighted root summation in the logarithm gives exactly</p>
+<pre><code>C_(Q_N)(t Z_0)=g_D(t Z_0)^(-1).               (4)</code></pre>
+<p>For nonresonant degrees the logarithms agree coefficient by coefficient. For resonant degrees the <code>nu</code> normalization cancels the resonant part of <code>log D_N</code>. This proves (4) for even and composite <code>N</code> as well as odd <code>N</code>.</p>
+<p>On the cyclic algebra with generator <code>z^N=t^N X</code>, the norm of <code>g_D</code> is one: the deck sum of its logarithm vanishes. On the generic N-squared-dimensional pair matrix space each cyclic eigenvalue occurs N times, so its matrix determinant is also one. These are marked equalities, not permissions to choose a new root of unity phase. Algebraic continuation away from <code>1-t^N X=0</code> keeps this root cover and its marking.</p>
+<p>When <code>X=0</code>, equation (3) and constant term one determine the nilpotent factor coefficient by coefficient through degree <code>N-1</code>. It is exactly the original finite factorial in the actual R. Thus the finite cyclic factor is anchored to the literature state at the nilpotent source; it has not been independently normalized.</p>
+<h2 id="the-resonant-factor-is-a-quantum-period-not-a-regular-scalar">4. The resonant factor is a quantum period, not a regular scalar</h2>
+<p>For a scalar commuting argument <code>w</code> independent of the normal, equation (2) gives, with <code>d=N(Q^N-1)</code>,</p>
+<pre><code>log R_res,Q(w)
+  =Li_2(w)/d+[Li_2(w)+Log(1-w)]/(2N)+O(d).    (5)</code></pre>
+<p>Indeed for <code>Q^N=1+epsilon</code>, <code>1/(1-(1+epsilon)^k)=-1/(k epsilon)+(k-1)/(2k)+O(epsilon)</code>. For the logarithmic normal <code>d_log=N Log(Q^N)</code> the same formula is</p>
+<pre><code>log R_res,Q(w)=Li_2(w)/d_log+Log(1-w)/(2N)+O(d_log).</code></pre>
+<p>The finite <code>Li_2/(2N)</code> adapter is therefore necessary when using the actual linear Rees normal. For the operator <code>W(d)</code> the whole factor in (2) is retained: its lift and noncommutative normal terms can alter its finite part. Only its leading symbol is <code>Li_2(t^N X)/d</code>.</p>
+<p>This fixes the local dilogarithm phase from the actual whole factorial and its zero mark. It does not select a knot fundamental class, a global branch, or a dominant exponential. The normal <code>d</code> is not the physical large-level parameter <code>2pi*i/N</code>.</p>
+<h2 id="leading-cyclic-center-transport-is-the-characteristic-braiding">5. Leading cyclic-center transport is the characteristic braiding</h2>
+<p>The generic conjugation formulas of the whole universal R are rational after the Pochhammer functional equation is used. They therefore apply to (1). The Rees operators entering them are regular. On the chart where the full divisor is a unit, their root values give the exact center transport below.</p>
+<p>With the fixed multiplication order define</p>
+<pre><code>v=q_N Ehat_1 Khat_1^(-1)Khat_2 Fhat_2,
+v^N=-e_1 f_2 k_2/k_1,
+D_c=1-v^N=1+e_1 f_2 k_2/k_1.</code></pre>
+<p>The powers follow by ordered multiplication, including the two factors <code>Q_N^(N(N-1)/2)=(-1)^(N-1)</code> and <code>q_N^N=-1</code>. The uncheck center pullback is</p>
+<pre><code>k&#39;_1=k_1 D_c, k&#39;_2=k_2/D_c,
+e&#39;_1=e_1 k_2, f&#39;_2=f_2/k_1,
+e&#39;_2=k_1 e_2+e_1-e_1 k_2^2/D_c,
+f&#39;_1=f_2+f_1/k_2-f_2/(k_1^2 D_c).            (6)</code></pre>
+<p>For the checked point map apply the literal flip and the contravariant inverse convention already established in the <a href="regular_holonomy_braiding.html">holonomy calculation</a>. Equation (6) is precisely the characteristic classical braiding on the Gauss leaf. In balanced variables <code>e_G=e/rho_N^N</code>, <code>f_G=-rho_N^N f</code>, the divisor is <code>1-e_(G,1)f_(G,2)k_2/k_1</code>; the physical meridian uses the separately marked <code>gamma=(-1)^(N+1)</code> factor. All of these scalings are retained.</p>
+<p>Equation (4) alone is an inner cyclic matrix factor and preserves the root central scalars. The center change (6) is carried by the resonant/Cartan canonical part. In particular one may write the exact ordered factorization</p>
+<pre><code>Rhat=[Dhat R_res,Q(W)] C_Q(Zhat).             (7)</code></pre>
+<p>The regular root finite factor in (7) has been identified explicitly. The bracketed factor is the specified whole canonical period; it has not been replaced by an unproved regular matrix.</p>
+<p>There is a direct reason such a replacement is generally impossible. A regular invertible matrix on a <strong>fixed</strong> pair of full cyclic fibers intertwining <code>Delta Ecal</code> with <code>Delta^op Ecal</code> would require</p>
+<pre><code>e_1 k_2+e_2=k_1 e_2+e_1.                    (8)</code></pre>
+<p>For the dense two-dimensional Rees leaves with independently varying <code>p_i</code> this is false generically. A regular same-fiber matrix limit cannot implement the whole R. It must transport the center/base (or retain a quantum canonical operator). Special pointed subloci where (8) holds do not remove this generic obstruction.</p>
+<h2 id="the-original-head-and-every-internal-projector-are-retained-exactly">6. The original head and every internal projector are retained exactly</h2>
+<p>Let <code>i_2,p_2</code> be the actual two-head inclusion and projection, and put <code>C=C_1 tensor C_2</code>. Define</p>
+<pre><code>i_new=C i_2, p_new=p_2 C^(-1).</code></pre>
+<p>Then the exact source identity is</p>
+<pre><code>p_2 R i_2=p_new Rhat i_new, p_new i_new=I.     (9)</code></pre>
+<p>In the head basis their factors are the ramified flags <code>eta^j</code> and <code>eta^(-j)</code> and the source exponential <code>exp[-(p_1u_1+p_2u_2)/d]</code>. They have not been canceled by calling the source normalized.</p>
+<p>For an intermediate head projector <code>P_2=i_2p_2</code>, one has</p>
+<pre><code>C P_2 C^(-1)=exp[-(p_1u_1+p_2u_2)/d] P_2.   (10)</code></pre>
+<p>The finite cut coupon additionally retains its head entry ratios <code>eta^(i-j)/N</code>. These formulas must be inserted at every compression in a word. Dropping them would compare an uncompressed Verma period with the actual finite-head period and lose the specified two-wall excursion adapter <code>delta w H_beta</code>.</p>
+<p>The original literal pivot transforms as the literal clock power, with <code>g_lit=U g_red</code> and the inverse defect adapter. The common Cartan half-character, zero-framing scalar and full external modified-dimension function remain exactly the original ones.</p>
+<p>The left side of (9) is regular at the root as the actual finite crossing matrix. Thus its right side has precisely the necessary source/period cancellations in this head pairing. This local regularity does <strong>not</strong> show that the resonant pole survives as a selected geometric action; nor does it make <code>i_new</code> or (10) regular.</p>
+<h2 id="exact-gain-and-remaining-whole-source-step">7. Exact gain and remaining whole-source step</h2>
+<p>The actual whole Verma R now supplies, in the same Rees source, the marked cyclic factor, the resonant dilogarithm period, and the characteristic full-cyclic center braiding. The pointing is retained as the explicit irregular and ramified source (9)–(10), rather than reset to a cyclic vacuum.</p>
+<p>This identifies the local whole-clock coefficient transport behind the Green carry module more concretely than an unspecified root matrix. It does not compute the continuation of a complete word/current through every retained projector or the pairing of the two final geometric framing currents. In particular it gives no license to set their coefficient carry <code>C-I</code> to zero, erase the finite source jets, or infer a nonzero selected scalar period. Those remain the actual full scalar comparison.</p>
+<p><a href="quantum_matrix_base_intertwiner_torsor.html">The quantum matrix/base theorem</a> now constructs the local matrix intertwiner on a whole quantum-torus cover. The remaining base transport is explicit and its resonant Hamiltonian yields all six center formulas. The source has its own specified residual; a regular matrix lift alone does not cancel it.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_rees_whole_crossing_source.py">Universal crossing audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/rees_whole_crossing_source_results.json">results</a> check the norm-one cyclic coefficients and functional transport, the resonant linear/logarithmic normal adapter, and all six center powers on twelve dense full-cyclic Rees pairs at even and composite levels as well as odd levels. No knot-specific check or selected phase assertion enters these diagnostics.</p>
+<p><a href="rees_whole_crossing_independent_audit.html">Independent normalization and source audit</a> confirms the proof and its coefficientwise/finite-head scope.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/rees_whole_crossing_source_factorization.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-exact-transformed-crossing-and-its-ramified-factors">1. The exact transformed crossing and its ramified factors</a><a href="#exact-resonance-separation-before-taking-any-root-value">2. Exact resonance separation before taking any root value</a><a href="#the-regular-root-factor-is-the-actual-marked-cyclic-dilogarithm">3. The regular root factor is the actual marked cyclic dilogarithm</a><a href="#the-resonant-factor-is-a-quantum-period-not-a-regular-scalar">4. The resonant factor is a quantum period, not a regular scalar</a><a href="#leading-cyclic-center-transport-is-the-characteristic-braiding">5. Leading cyclic-center transport is the characteristic braiding</a><a href="#the-original-head-and-every-internal-projector-are-retained-exactly">6. The original head and every internal projector are retained exactly</a><a href="#exact-gain-and-remaining-whole-source-step">7. Exact gain and remaining whole-source step</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

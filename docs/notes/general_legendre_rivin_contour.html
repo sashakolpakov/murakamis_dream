@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An explicit global Legendre contour and its source-preserving radial homotopy · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/general_legendre_rivin_contour.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="an-explicit-global-legendre-contour-and-its-source-preserving-radial-homotopy">An explicit global Legendre contour and its source-preserving radial homotopy</h1>
+<p>28 October 2026. Every supplied positive complete ideal triangulation with the marked full-rank Lagrangian gluing rows has an explicit global contour on its positive angle polytope. On this contour the WHOLE imaginary action equals Rivin volume, including off-critical points. Its complex Jacobian is everywhere invertible. An explicit radial homotopy from the geometric fixed-radii chain preserves the leading period, with every boundary prism exponentially smaller. Gaussian Schur complements preserve the same positive half-plane structure.</p>
+<p>These are general contour constructions, not assumptions of noncancellation. They do not assert that the ORIGINAL quantum source has already been changed into this positive chart. The original figure-eight indefinite chart and the five-crossing bent-source calculation show why that last transport is substantive. No new knot invariant is defined here.</p>
+<h2 id="the-marked-positive-chart-and-its-explicit-angle-polytope">1. The marked positive chart and its explicit angle polytope</h2>
+<p>Use the <a href="positive_quad_chart_and_actual_torus_signature.html">positive quad-chart theorem</a>. After its positive rotations, the marked gluing equations are</p>
+<pre><code>A x+B y=c, B invertible, AB^t=BA^t,
+x_j=Log z_j, y_j=Log(1-1/z_j), Im z_j&gt;0.</code></pre>
+<p>Put C=B<sup>(-1)A=C</sup>t. At the complete meridian the retained constant c is purely imaginary. Write B^(-1)c=i kappa, with kappa real, and retain exactly the potential</p>
+<pre><code>W(x)=sum_j Li_2(exp x_j)+(1/2)x^t(I-C)x
+                              +i(kappa-pi*1)^t x.   (1)</code></pre>
+<p>No imaginary constant is added. This is the marked potential whose complete critical value was calibrated in the quad-chart theorem. Put x=rho+i theta and</p>
+<pre><code>gamma(theta)=kappa-C theta,
+beta(theta)=pi*1-theta-gamma(theta),
+P={theta:theta&gt;0, beta(theta)&gt;0, gamma(theta)&gt;0}.        (2)</code></pre>
+<p>This is a convex bounded open polytope. It is the positive angle domain with the marked edge and meridian ANGLE equations imposed. The three angles in tetrahedron j are theta_j,beta_j, gamma_j. The supplied complete point theta_* belongs to P.</p>
+<p>Let F(rho,theta)=Im W(rho+i theta). Directly from (1),</p>
+<pre><code>F(rho,theta)=sum_j Im Li_2(exp(rho_j+i theta_j))
+                                         -rho^t beta(theta). (3)</code></pre>
+<p>In particular F is separable in its radial variables, even though the affine angle constraints couple its angle variables.</p>
+<h2 id="a-unique-radial-minimum-constructs-the-contour-globally">2. A unique radial minimum constructs the contour globally</h2>
+<p>For every theta in P,</p>
+<pre><code>partial_(rho_j)F=-Arg(1-exp(rho_j+i theta_j))-beta_j,
+partial_(rho_j)^2 F
+   =Im[z_j/(1-z_j)]&gt;0.                       (4)</code></pre>
+<p>As rho_j tends to -infinity the first derivative tends to -beta_j&lt;0; at +infinity it tends to gamma_j&gt;0. Hence F has a UNIQUE global radial minimum, with the explicit solution</p>
+<pre><code>rho_L,j(theta)=log[sin beta_j(theta)/sin gamma_j(theta)],
+x_L(theta)=rho_L(theta)+i theta.              (5)</code></pre>
+<p>The equality follows from the ordinary sine rule: its positive shape has argument theta and Arg(1-z)=-beta. Existence and uniqueness also follow from (4), without assuming an optimizer or a contour intersection. On every compact angle subpolytope the radial objective is uniformly coercive.</p>
+<p>On this graph the OFF-CRITICAL identity is exactly</p>
+<pre><code>F(rho_L(theta),theta)
+   =sum_j [Im Li_2(z_j)-rho_L,j beta_j]
+   =sum_j D(z_j)
+   =V(theta).                               (6)</code></pre>
+<p>Here D is Bloch–Wigner and V is the ordinary sum of ideal tetrahedron volumes. Thus the original discrepancy between off-critical dilogarithm action and volume disappears on this specified nonlinear contour. This is stronger than comparing only their critical values.</p>
+<p>Rivin strict concavity makes theta_* the unique global maximum of (6). Its value is the marked hyperbolic volume. The volume extends continuously to the compact closure of P, and every other point of that closure has strictly smaller volume. In particular its boundary has a strict uniform volume gap. The noncompact radial behavior of (5) at some faces is recorded; it has not been declared harmless for an arbitrary quantum amplitude.</p>
+<h2 id="the-contour-is-an-algebraic-phase-graph-on-a-finite-cover">3. The contour is an algebraic phase graph on a finite cover</h2>
+<p>Set p_j=exp(2i theta_j), q_j=exp(2i gamma_j). Then (5) gives the WHOLE rational identity</p>
+<pre><code>z_j=(1-p_j q_j)/(1-q_j),
+q_j=exp(2i kappa_j) product_k p_k^(-C_jk).     (7)</code></pre>
+<p>On the positive real phase locus,</p>
+<pre><code>z_j/conjugate(z_j)=p_j,
+z_j&#39;&#39;/conjugate(z_j&#39;&#39;)=q_j,
+z_j&#39;&#39;=1-1/z_j.</code></pre>
+<p>Since C is rational, one fixed finite cover of the phase torus makes all the monomials in (7) ordinary Laurent monomials. For the actual integral logarithmic gluing marks kappa/pi is also rational, so its constants are roots of unity. The contour is therefore the positive real locus of a rational algebraic graph on that marked finite cover. It is not primarily a collection of asymptotic jets. Formula (7) retains the sign and winding marks through kappa and C.</p>
+<p>The graph also glues explicitly across the POSITIVE quad atlas. The cyclic rotation x’=y, y’=-x-y+i pi permutes the angles and acts on their squared phases by the monomial map</p>
+<pre><code>p&#39;=q, q&#39;=(pq)^(-1).</code></pre>
+<p>Substituting these into (7) gives</p>
+<pre><code>z&#39;=(1-p&#39;q&#39;)/(1-q&#39;)
+              =q(1-p)/(1-pq)=1-1/z.</code></pre>
+<p>Thus these reference contours are the same positive angle-to-shape construction in different quad coordinates, not unrelated local saddles. This is a classical algebraic atlas identity; the corresponding EXACT finite quantum quad/source transformation is not inferred from it.</p>
+<h2 id="a-positive-hessian-structure-controls-its-jacobian-and-all-schur-reductions">4. A positive Hessian structure controls its Jacobian and all Schur reductions</h2>
+<p>Let H=W_xx and write</p>
+<pre><code>H=K+iD,
+D=diag_j Im[z_j/(1-z_j)]&gt;0,
+K=I-C+diag_j Re[z_j/(1-z_j)]=K^t.            (8)</code></pre>
+<p>This holds throughout the positive product of half-planes, not just on the contour or at its maximum. The real Hessian of F in radial/angle coordinates is</p>
+<pre><code>Hess F=[[D,K],[K,-D]].                       (9)</code></pre>
+<p>Differentiating its radial minimum gives</p>
+<pre><code>R:=d rho_L/d theta=-D^(-1)K,
+Hess V=-G, G=D+K D^(-1)K&gt;0.                 (10)</code></pre>
+<p>These formulas prove strict concavity directly in the selected angle coordinates. The complex contour Jacobian is</p>
+<pre><code>J_L=R+iI=-D^(-1)conjugate(H),
+H J_L=-G.                                   (11)</code></pre>
+<p>It is invertible EVERYWHERE on P. Indeed H has positive imaginary part, so Hu=0 would imply u^*D u=0. Thus the contour is a totally real immersion with no vanishing holomorphic volume Jacobian. Its determinant and Gaussian half-density have continuous nonzero marks on the convex P. There is no local Maslov obstruction or a zero Jacobian to be overcome by a limit.</p>
+<p>This structure survives arbitrary successive Gaussian eliminations. If a complex symmetric matrix H has Im H&gt;0, partition it as [[E,F],[F^t,G_0]]. The principal block E is invertible and its Schur complement S=G_0-F^t E^(-1)F obeys</p>
+<pre><code>Im S&gt;0.                                     (12)</code></pre>
+<p>For a vector v put w=(-E^(-1)Fv,v). Then v^<em>S v=w^</em>H w, whose imaginary part is w^*(Im H)w&gt;0. This proves (12) without a diagonalization or a scalar-root argument. It is the all-rank version of the positive-half-plane phenomenon checked explicitly in the five-crossing reduction.</p>
+<p>Real full-rank linear restrictions also preserve the condition, since Im(L^t H L)=L^t(Im H)L&gt;0. Conversely a same-dimensional REAL symplectic Gaussian change cannot repair an indefinite imaginary Hessian. If H’=(E+F H)(A+B H)^(-1) is its usual fractional action, the symplectic identities give</p>
+<pre><code>Im H&#39;=(A+B H)^(-*) (Im H)(A+B H)^(-1).</code></pre>
+<p>Hermitian inertia is unchanged. This distinguishes a positive chart construction from an unproved Gaussian repair of the original indefinite flow chart. Controlled elimination or a nonlinear Euler/quad transform requires its own source map.</p>
+<h2 id="an-exact-radial-homotopy-with-automatically-lower-boundary-prisms">5. An exact radial homotopy with automatically lower boundary prisms</h2>
+<p>Put rho_<em>=Re x_</em> at the complete point. Let Q be ANY compact convex angle polytope contained in P with theta_* in its interior. Compare the two ACTUAL chains</p>
+<pre><code>Gamma_0(theta)=rho_*+i theta,
+Gamma_1(theta)=rho_L(theta)+i theta, theta in Q,
+Gamma_s(theta)=[(1-s)rho_*+s rho_L(theta)]+i theta. (13)</code></pre>
+<p>The fixed-radii theorem makes F(rho_<em>,theta) strictly concave with its unique maximum V_</em> at theta_*. The Legendre chain has the same property by (6). Convexity in rho gives the WHOLE homotopy inequality</p>
+<pre><code>F(Gamma_s(theta))
+   &lt;=(1-s)F(rho_*,theta)+sV(theta)&lt;=V_*.       (14)</code></pre>
+<p>Equality is possible only at theta_*. On the ENTIRE boundary prism [0,1] times boundary(Q), compactness yields</p>
+<pre><code>F&lt;=V_*-delta_Q, delta_Q&gt;0.                  (15)</code></pre>
+<p>Thus this contour deformation comes with a proof of its boundary gap; a boundary estimate is not appended as an unverified condition. Its whole image is compact for fixed Q, and stays in the original positive holomorphic chamber.</p>
+<p>For any holomorphic top form omega_N on that image, Stokes gives the EXACT period difference as the oriented boundary-prism period. In particular if its actual uniform finite-level form is</p>
+<pre><code>omega_N=N^mu exp[NW/(2pi i)]
+                          (a_0(x)+O(1/N)) dx_1...dx_t,</code></pre>
+<p>with its original base line retained, then (15) proves that the two selected periods differ by O(N^B exp[N(V_*-delta_Q)/(2pi)]). No coefficient is set to one by normalization. If a_0(x_*) is a unit, each chain has one selected oriented saddle (multiplicity one), with its nonzero ORIGINAL density, contour Jacobian and Gaussian determinant retained. The numerical coefficient is their specified product, not the number one. Nonvanishing follows directly from the unique maximum, (11), and the negative real Gaussian Hessian; its power is N^(mu-t/2). It is not an assumption that an unspecified thimble intersects a quantum source.</p>
+<p>The statement is for these explicit chains and their retained prism. Applying it to an original knot state requires an exact source-preserving positive-chart realization of that state. It does not assert that realization merely from classical gluing or from a nonzero local normal density.</p>
+<h2 id="every-nonzero-integer-alias-has-an-explicit-radial-escape-direction">6. Every nonzero integer alias has an explicit radial escape direction</h2>
+<p>For an integer vector m, the logarithmic alias is</p>
+<pre><code>W_m(x)=W(x)+2pi i m^t x,
+F_m=F+2pi m^t rho.</code></pre>
+<p>For theta in P, (4) has the global range</p>
+<pre><code>-beta_j&lt;partial_(rho_j)F&lt;gamma_j,
+beta_j,gamma_j in (0,pi).</code></pre>
+<p>Consequently, whenever m_j!=0,</p>
+<pre><code>sign(m_j) partial_(rho_j)F_m
+                    &gt;=2pi|m_j|-pi&gt;=pi|m_j|. (16)</code></pre>
+<p>There is NO critical point of any nonzero alias anywhere in this marked positive chamber. Moreover the explicit flow</p>
+<pre><code>rho_j(s)=rho_j(0)-s sign(m_j), m_j!=0,
+rho_j(s)=rho_j(0), m_j=0</code></pre>
+<p>obeys the uniform whole-function inequality</p>
+<pre><code>dF_m/ds&lt;=-pi ||m||_1.                       (17)</code></pre>
+<p>For example start at constant rho_<em>. After a fixed displacement S&gt;2||rho_</em>||_infinity one has</p>
+<pre><code>F_m(S,theta)&lt;=V_*
+              -pi(S-2||rho_*||_infinity)||m||_1. (18)</code></pre>
+<p>Thus all translated alias BULK chains have explicit exponential loss, uniformly even in the infinitely many alias labels. Only finitely many translation directions are used, but no claim that finitely many Stokes branches exhaust the problem is made. The decay in ||m|| controls the remaining labels.</p>
+<p>The exact radial homotopy also retains its boundary face periods. Unlike (15), those alias prisms need NOT automatically be below V_<em>: their initial phases include 2pi m^t rho_</em>. They cannot be erased because their interiors have no critical point. This construction therefore reduces positive-chamber alias competition to explicit face sources; it does not prove those face sources vanish or have smaller rate in every knot. The original finite-mode or finite-height quadrature remains the way to carry those sources into a genuine comparison.</p>
+<h3 id="topology-separates-positive-peripheral-aliases-from-degenerate-edge-walls">Topology separates positive peripheral aliases from degenerate edge walls</h3>
+<p>For the actual one-cusped triangulation there is a further uniform restriction. It has t edges and t tetrahedra: compactifying its torus cusp to the ideal vertex gives Euler characteristic one, so 1-#edges+2t-t=1. Choose the rows as t-1 ACTUAL independent edge rows followed by the marked meridian, as in the supplied gluing input. An integer alias changes the imaginary equations to</p>
+<pre><code>A theta+B gamma=Im c+2pi Bm.</code></pre>
+<p>Undoing the fixed quad rotations, its edge totals are therefore 2pi(1+k_e), with integer k_e on those t-1 rows. For strictly positive tetrahedra every edge total is positive, so k_e&gt;=0. But the sum over ALL edge angles is exactly 2pi t, and hence the omitted edge has total 2pi(1-sum k_e). Its positivity forces sum k_e&lt;=0. Consequently EVERY k_e is zero.</p>
+<p>Thus any strictly positive alias cell has its ORIGINAL edge angle equations. If m!=0, invertibility of B makes its remaining meridian-angle shift a nonzero integer multiple of 2pi. Such cells are distinct fixed-meridian-angle slices of the SAME full Rivin angle polytope. Their closures omit the unique complete maximizer. Strict concavity and compactness therefore bound their volume maxima strictly below V_*. Only finitely many integer meridian windings are feasible because that angle polytope is compact, so the gap is uniform over all feasible nonzero POSITIVE peripheral aliases.</p>
+<p>This statement is not extended to all weak nonnegative alias loci. A nonzero edge alias can survive only on a degenerate wall, with at least one edge angle zero. Since all local angles are nonnegative there, every tetrahedron incident to that edge has a zero angle and zero volume. The remaining face source is lower dimensional, but its TOTAL period or volume is not bounded by the preceding argument. Its original quantum source terms must still be retained. In particular a bound for the positive interior modes does not prove a bound for every degenerate wall.</p>
+<p>The proposed universal extension to all weak wrong-edge loci is now <strong>FALSE</strong>, as proved by the <a href="positive_geometric_alias_volume_counterexample.html">certified positive-geometric counterexample</a>. Six legal positive 2-to-3 moves on the same 5_2 knot give a nine-tetrahedron positive complete triangulation. A rational weak alias angle assignment has volume 3.76403683049…, exceeding the complete hyperbolic volume 2.82812208833…. Its complete marked meridian angle is exactly zero, and its full marked defect is Bm for an explicitly retained integer m, with det B=-2. Thus this is not an artifact of dropping the peripheral equation or enlarging the integer alias lattice.</p>
+<p>Here the strictly positive wrong-edge locus is EMPTY. The weak locus is not the topological closure of a nonempty positive cell, so the preceding positive-peripheral-alias theorem is unchanged. No coefficient of the oversized weak locus in the original quantum source has been computed. The counterexample therefore refutes universal FACE VOLUME domination; it does not assert an oversized original quantum period. Source exclusion or exact Ward/sewing cancellation remains necessary wherever such a weak locus is encountered. Compact radial clipping alone does not give the false comparison between different integer-shifted potentials.</p>
+<p>An independent useful sufficient bound remains: if s_min is the minimum number of DISTINCT tetrahedra incident to an edge, every wrong-edge weak locus has volume at most (t-s_min)v_3. The <a href="degenerate_alias_faces_and_repair_obstructions.html">star-bound note</a> proves this and supplies exact counterexamples to universal flat-only repair and to an automatic favorable sign of complete edge multipliers.</p>
+<h2 id="tests-against-the-actual-source-and-the-critical-path-consequence">7. Tests against the actual source and the critical-path consequence</h2>
+<p>The <a href="positive_quad_chart_and_actual_torus_signature.html">original figure-eight counterchart</a> has an indefinite angular Hessian on a valid transverse slice. It does not satisfy (8). Choosing new radii in that original chart cannot make this theorem apply. A source-preserving change to the positive quad chart is still necessary.</p>
+<p>The <a href="five_two_selected_volume_proof.html">selected five-crossing proof</a> also needed a bent outer source and bounded lower/vertical pieces. That source theorem is not a consequence of (16). It verified exactly the face and kernel terms that a critical-point-only argument would miss.</p>
+<p>The new general advance is the explicit algebraic Legendre chain (5)–(7), its nonvanishing Jacobian and Schur-closed positive Hessian, and the radial homotopy (13)–(15) with a proved boundary gap. The target contour on every supplied positive triangulation is no longer guessed. What remains for a broad original-knot theorem is its exact quantum source transport, with the alias face periods in Section 6 retained. No broad volume conjecture is claimed proved by this lemma.</p>
+<p>There is a simple exact check on the word “automatic” in the boundary claim. In the scalar positive potential C=0, kappa=2pi/3, the angle interval is</p>
+<pre><code>0&lt;theta&lt;pi/3, gamma=2pi/3, beta=pi/3-theta.</code></pre>
+<p>Its positive critical point is theta_<em>=pi/6, rho_</em>=-log(3)/2 and V_*=2v_3/3. But at the arbitrary initial radius rho_0=0, the angle endpoint theta=pi/3 has</p>
+<pre><code>F(0,pi/3)=Im Li_2(exp(pi i/3))=v_3&gt;V_*.</code></pre>
+<p>The equalities follow from the ordinary Lobachevsky duplication identity. Thus radial boundary prisms from an arbitrary starting source radius need not be lower, even though the whole positive volume problem is strictly concave. This is a test of the analytic positive Lagrangian data, not a claim that this one-tetrahedron data is an actual knot triangulation or a substituted quantum invariant. It proves why (13) specifies rho_* and why the missing original-source transport cannot be supplied by concavity alone.</p>
+<p>The underlying angle-volume and Legendre viewpoints have the coverage already recorded in <a href="rivin_flow_and_quantum_source.html">the Rivin/flow note</a>. No novelty is claimed for Legendre duality or for the positive symplectic Hessian. The explicit whole off-critical chain, its boundary-prism inequality, algebraic phase graph and alias escape are proved here from the displayed formulas, without adopting a published quantum-cycle comparison.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_general_legendre_rivin_contour.py">All-rank identity and scope audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/general_legendre_rivin_contour_results.json">saved results</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/general_legendre_rivin_contour.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-marked-positive-chart-and-its-explicit-angle-polytope">1. The marked positive chart and its explicit angle polytope</a><a href="#a-unique-radial-minimum-constructs-the-contour-globally">2. A unique radial minimum constructs the contour globally</a><a href="#the-contour-is-an-algebraic-phase-graph-on-a-finite-cover">3. The contour is an algebraic phase graph on a finite cover</a><a href="#a-positive-hessian-structure-controls-its-jacobian-and-all-schur-reductions">4. A positive Hessian structure controls its Jacobian and all Schur reductions</a><a href="#an-exact-radial-homotopy-with-automatically-lower-boundary-prisms">5. An exact radial homotopy with automatically lower boundary prisms</a><a href="#every-nonzero-integer-alias-has-an-explicit-radial-escape-direction">6. Every nonzero integer alias has an explicit radial escape direction</a><a href="#tests-against-the-actual-source-and-the-critical-path-consequence">7. Tests against the actual source and the critical-path consequence</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

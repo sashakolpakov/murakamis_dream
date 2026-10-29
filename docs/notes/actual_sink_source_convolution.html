@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exact sink convolution and a growing actual trivalent source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_sink_source_convolution.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="exact-sink-convolution-and-a-growing-actual-trivalent-source">Exact sink convolution and a growing actual trivalent source</h1>
+<p>28 October 2026. The ORIGINAL trivalent sink source has a finite q-binomial polynomial, an explicit inhomogeneous central current, and an exact balanced-residue/Barnes decomposition. The balanced source has an exact POSITIVE norm ratio. This removes phase cancellation from its magnitude, including geometric root lifts. On a nonempty open boundary chamber its marked geometric rate strictly exceeds the retained current rate, so the ORIGINAL sink has that growing rate with a nonzero coefficient.</p>
+<p>This is a local source theorem, for a literal original sink. No claim is made that every vertex of a broad knot class lies in the required gap chamber or that this proves its global volume limit. The exact source-cycle construction and its infinite Barnes bound are also developed in <a href="actual_trivalent_quantum_beta_source.html">the companion beta theorem</a>.</p>
+<p>The subsequent <a href="exact_balanced_source_normalizer_fermat.html">exact Fermat normalizer</a> fixes the entire central source function, not merely its magnitude. It extends the growing-source rate and gap theorem below to the ENTIRE positive boundary chamber, with norm-rate max(0,log|u|,log|v|). Sections 4–5 retain the independent elementary positive-norm proof on |u|&lt;1.</p>
+<h2 id="the-actual-finite-source-with-every-q-tag">1. The actual finite source, with every Q tag</h2>
+<p>Put Q=exp(2pi*i/N), d=N-1, F_a=(Q;Q)_a, and</p>
+<pre><code>p_a=(-1)^a Q^(a(a-1)/2)/F_a,
+p_a^-=Q^a/F_a.</code></pre>
+<p>These are respectively the Psi_+ and Psi_- coefficients below order N. At the original sink its U-diagonal, V-transfer and positive-factorial orders satisfy h_0+h_4+h_2=d. Reflect the last order: a=d-h_2=h_0+h_4. The ORIGINAL coefficients are then</p>
+<pre><code>F_a * (1/F_(h_0)) * p_(h_4).</code></pre>
+<p>Consequently its two-boundary generating kernel is exactly</p>
+<pre><code>B_N(u,v)=sum_(i+j&lt;N) F_(i+j)/F_i * p_j u^i v^j
+        =sum_(a=0)^d product_(j=0)^(a-1)(u-Q^jv).     (1)</code></pre>
+<p>For fixed a, the second equality is precisely the finite q-binomial theorem. It retains EVERY boundary coefficient; therefore it may be paired with the same arbitrary exterior boundary functional, not just evaluated at a selected color.</p>
+<p>For the reflected full-Psi field in <a href="positive_bipyramid_source_transport.html">the actual bipyramid note</a>,</p>
+<pre><code>F_N(L;U,V)=r^d Psi_-(Log U-L)
+                   Psi_+(Log V-L)Psi_+(-L), r=exp L,</code></pre>
+<p>its first-jet Laurent constant is</p>
+<pre><code>C_N(U,V)=sum_(i+j+k=d) p_i^- p_j p_k U^i V^j,
+NQ^d C_N(U,V)=B_N(Q^2U,QV).                            (2)</code></pre>
+<p>Indeed p_(d-a)=Q^(-(d-a))F_a/N. The remaining inner q-binomial sum is the product in (1). Thus the actual tags are u=Q^2U,v=QV, with NQ^d retained. Equivalently the original reciprocal coefficient has its Q^(-1) tag and the reflected factorial window its Q^(-1) tag. They have not been simplified at Q=1. The companion relative moment theorem retains the complete circle/outer-ray chain represented by (2), including mixed individual-ray terms; (2) does not delete those terms.</p>
+<p>Set P_a(u,v)=product_(j&lt;a)(u-Q^jv). Its recurrence gives</p>
+<pre><code>(u-v)B_N(u,Qv)=B_N(u,v)-1+u^N-v^N.                    (3)</code></pre>
+<p>The last term is P_N=u<sup>N-v</sup>N. The inhomogeneous source is therefore the explicit central current</p>
+<pre><code>D_N=1-u^N+v^N.                                        (4)</code></pre>
+<p>No homogeneous descent or scalar normalization is assumed.</p>
+<h2 id="balanced-nonvanishing-and-its-exact-positive-norm-ratio">2. Balanced nonvanishing and its exact positive norm ratio</h2>
+<p>Suppose u<sup>N-w</sup>N=1, uw!=0. Define</p>
+<pre><code>p_a=product_(j&lt;a)(u-Q^jw),
+r_k=w^(-k)product_(j&lt;k)(u-Q^(-j)).</code></pre>
+<p>Then p_N=p_0=1, and the cyclic vector p satisfies</p>
+<pre><code>p_(a+1)=(u-Q^aw)p_a.</code></pre>
+<p>For the UNNORMALIZED discrete Fourier transform</p>
+<pre><code>p_hat_k=sum_(a=0)^d Q^(ka)p_a,</code></pre>
+<p>the recurrence becomes</p>
+<pre><code>w p_hat_(k+1)=(u-Q^(-k))p_hat_k,
+p_hat_k=r_k B_N(u,w).                                  (5)</code></pre>
+<p>Every factor is nonzero: w!=0 and u<sup>N-1=w</sup>N!=0. The Fourier transform is invertible, and p is nonzero. Thus</p>
+<pre><code>B_N(u,w)!=0.                                          (6)</code></pre>
+<p>More quantitatively Parseval gives the exact identity</p>
+<pre><code>|B_N(u,w)|^2
+   =N * [sum_(a=0)^d |p_a|^2]/[sum_(k=0)^d |r_k|^2].   (7)</code></pre>
+<p>Both sums are strictly positive. This identity holds for ALL root choices w and gives the entire magnitude, not merely nonvanishing of a formal leading term. It is the appropriate replacement for assuming that the finite oscillatory sum selects its growing branch.</p>
+<p>Fixed small logarithmic lifts can give polynomial Fourier coefficients, as in the earlier Fermat source comparisons. That estimate does not apply automatically to geometric lifts whose logarithms or clock rotations grow with N. Section 4 uses (7) directly along those actual lifts instead.</p>
+<h2 id="exact-original-source-as-a-balanced-residue-plus-its-current">3. Exact original source as a balanced residue plus its current</h2>
+<p>Use compatible logs in the chamber</p>
+<pre><code>-pi&lt;phi=Arg u&lt;0,
+0&lt;gamma=Arg(v/u)&lt;pi,
+Log v=Log u+Log(v/u).</code></pre>
+<p>Write h=2pi*i/N, c=Log(v/u) and use the ORIGINAL full function</p>
+<pre><code>g(a)=exp(a Log u) Psi_+(c)/Psi_+(c+ha).                  (8)</code></pre>
+<p>Its integer values are P_a(u,v). Off integers its exact norm is VARIABLE:</p>
+<pre><code>g(a+1)=(u-v exp(ha))g(a),
+g(a+N)=[u^N-v^N exp(2pi*i*a)]g(a).                     (9)</code></pre>
+<p>Replacing the second bracket by u<sup>N-v</sup>N off integers is false.</p>
+<p>Put t=exp(2pi<em>i</em>a), lambda(t)=u<sup>N-v</sup>Nt and</p>
+<pre><code>t_*=(u^N-1)/v^N,
+exp(2pi*i*alpha)=t_*, w=v exp(h alpha).</code></pre>
+<p>Assume first D_N!=0 and u^N!=1. The marked meromorphic form</p>
+<pre><code>omega=2pi*i D_N * t g(a) da/[(t-1)(1-lambda(t))]        (10)</code></pre>
+<p>has residues P_k at integers k, EXACTLY the original source. Its other poles alpha+k have residue -g(alpha+k). Their monodromy is exactly one, and u<sup>N-w</sup>N=1. Thus their full N-orbit residue is</p>
+<pre><code>-R_N(u,v), R_N=g(alpha)B_N(u,w).                       (11)</code></pre>
+<p>This residue is nonzero. The marked full function in (8) is regular and nonzero at c. Its denominator at alpha cannot be a zero or pole: exp[N(c+h alpha)]=1-u^(-N) differs from both zero and one at a regular parameter. Changing alpha by an integer changes g(alpha) and the balanced B by inverse factors in (5), so their product R_N is unchanged.</p>
+<p>A finite rectangle of width N enclosing k=0,…,d and the corresponding alpha-orbit gives, with all FOUR edges retained,</p>
+<pre><code>B_N=R_N+(1/(2pi*i))integral_boundary omega.             (12)</code></pre>
+<p>The extra numerator t in (10) is important at the horizontal ends. Choose the left vertical edge Re a=-epsilon, with 0&lt;epsilon&lt;N gamma/(2pi). The inverse full function has no poles in this rectangle: Im(c+ha)&gt;0. Its possible upper Phi poles give zeros, not poles, of g. The full-function asymptotics or its defining integral show both horizontal ends of (10) vanish as their heights tend to infinity. On paired vertical edges omega(a+N)=lambda(t)omega(a). Their difference therefore gives EXACTLY</p>
+<pre><code>B_N(u,v)=R_N(u,v)+D_N I_N(u,v),
+I_N=integral_(Re a=-epsilon,up)
+                  g(a)/(exp(-2pi*i*a)-1) da.           (13)</code></pre>
+<p>All constants are fixed by residues; no knot period occurs in a denominator. At D_N=0 the identity extends by the matched limit: alpha may be chosen to tend to zero, w tends to v, g(alpha) tends to one, and the finite source tends to its nonzero balanced value. No central-norm denominator is inverted there separately.</p>
+<p>This is the same local Frobenius gluing as the original field. Writing U_0=U<sup>N=u</sup>N,V_0=V<sup>N=v</sup>N, its multiplier-one internal radius is</p>
+<pre><code>r_crit^N=1/(1-t_*)=V_0/(1+V_0-U_0).                   (14)</code></pre>
+<p>Thus the balanced source in (11) lies on the ACTUAL central gluing divisor; a free central normalization was not substituted.</p>
+<p>On every compact subset of the above positive boundary chamber,</p>
+<pre><code>|I_N(u,v)|&lt;=C.                                        (15)</code></pre>
+<p>Here is the quantitative reason. Put a=-epsilon+iNy. The full-Psi strip estimate, including its nonzero amplitude, gives a leading logarithmic modulus profile with derivative</p>
+<pre><code>R&#39;(y)=-phi-Arg(1-(v/u)exp(-2pi*y)).</code></pre>
+<p>Uniformly, delta&lt;=R’(y)&lt;=2pi-delta. The denominator in (13) is bounded below on this vertical line and supplies exp(-2pi Ny) at the upper end. Thus the lower profile has a uniform positive slope and the upper weighted profile a uniform negative slope. Its amplitude grows at most exp(C|y|), and g(-epsilon)=O(1). The measure is Ndy, so integration against exp(-delta N|y|) is O(1). The finitely many small N are bounded by continuity and the same absolutely convergent tails. This proves (15), with every boundary current retained. The companion beta theorem supplies the fuller contour and continuation details; the finite-height audit checks (12).</p>
+<h2 id="uniform-balanced-growth-on-a-genuine-geometric-lift-chamber">4. Uniform balanced growth on a genuine geometric lift chamber</h2>
+<p>Now suppose additionally 0&lt;rho=|u|&lt;1. Take a compact subset of this chamber, bounded away from rho=0,1 and its angular ends. Choose alpha in any fixed width-one real interval. Then uniformly</p>
+<pre><code>w=v exp(h alpha)=exp(i Arg v)(1+O(1/N)),
+|w|=1+O(rho^N/N).</code></pre>
+<p>Let I_rho(theta)=Im Li_2(rho exp(i theta)) and theta_rho=acos(rho/2). Elementary uniform product Riemann sums give, for x=a/N or k/N,</p>
+<pre><code>log|p_a|=N P(x)+O(1),
+P(x)=integral_0^x log|u-exp(i Arg v+2pi*i*t)|dt,
+
+log|r_k|=N Qprof(x)+O(1),
+Qprof(x)=integral_0^x log|u-exp(-2pi*i*t)|dt.</code></pre>
+<p>Every factor is bounded away from zero since rho&lt;1. The O(1) is uniform in ALL indices; there is no fixed-small-log assumption or omitted rotated endpoint. Positive Laplace bounds and (7) consequently give</p>
+<pre><code>log|B_N(u,w)|=N(max P-max Qprof)+O(log N).              (16)</code></pre>
+<p>Both maxima can be computed directly. The common periodic derivative is log|1-rho exp(i theta)|, of zero mean, with zeros at theta=+/-theta_rho. The maximizers are its positive-to-negative transitions. Their antiderivative is -I_rho(theta). Hence</p>
+<pre><code>max P=[I_rho(gamma)+I_rho(theta_rho)]/(2pi),
+max Qprof=[I_rho(phi)+I_rho(theta_rho)]/(2pi),
+
+max P-max Qprof=[I_rho(gamma)-I_rho(phi)]/(2pi)&gt;0.      (17)</code></pre>
+<p>The second maximizer may lie near either end of the period; both positions give the SAME formula. Omitting one of these periodic possibilities would give an incorrect exponent.</p>
+<p>The full-Psi estimate in (8), with its actual logarithms, also gives</p>
+<pre><code>log|g(alpha)|=N G(u,v)+O(1),
+G=[-phi log|v|+ImLi_2(v/u)
+               -ImLi_2(exp(i gamma)/rho)]/(2pi).</code></pre>
+<p>Inversion in the upper half-plane gives</p>
+<pre><code>ImLi_2(exp(i gamma)/rho)
+   =I_rho(gamma)+log(rho)(gamma-pi).</code></pre>
+<p>Combining with (16)–(17) proves the explicit rate theorem</p>
+<pre><code>log|R_N(u,v)|=N Lambda(u,v)+O(log N),
+
+Lambda=[ImLi_2(v/u)-ImLi_2(u)
+          +(pi-gamma)log|u|-phi log|v|]/(2pi).         (18)</code></pre>
+<p>The integer/affine mark in (18) is essential. For example it is the imaginary part, divided by 2pi, of</p>
+<pre><code>W=Li_2(v/u)-Li_2(u)+1/2 Log(u)^2
+                          -Log(u)Log(v)+pi*i Log(u).  (19)</code></pre>
+<p>It cannot be discarded as a central factor with limit one.</p>
+<h2 id="an-open-local-class-where-the-original-sink-grows-geometrically">5. An open local class where the ORIGINAL sink grows geometrically</h2>
+<p>Let delta_norm=max(0,log|v|). Equation (4) gives |D_N|&lt;=C exp(N delta_norm) on the present rho&lt;1 chamber. Suppose a compact family has the explicit strict gap</p>
+<pre><code>Lambda(u,v)&gt;=delta_norm+eta, eta&gt;0.                   (20)</code></pre>
+<p>Equations (13), (15), and (18) then prove</p>
+<pre><code>B_N(u,v)=R_N(u,v)[1+O(N^C exp(-N eta))],
+log|B_N(u,v)|=N Lambda(u,v)+O(log N).                  (21)</code></pre>
+<p>This is noncancellation of the ORIGINAL local source. Its balanced contribution has coefficient exactly one, and its remaining original current is exponentially smaller under the stated checked inequality. No complex phase of the oscillatory sum was assumed to be nonzero.</p>
+<p>The exact source normalizer now proves the same Lambda formula for all |u|, including |u|=1. In that extension replace delta_norm by max(0,log|u|,log|v|); the compact gap and relative error statement are otherwise unchanged. Its proof is the explicit two-full-Psi source formula, not extrapolation of the nonsingular product sums of Section 4.</p>
+<p>All bounds are uniform for N-dependent parameters staying in the indicated compact chamber. In particular the ACTUAL tags u_N=Q^2U,v_N=QV from (2) are allowed whenever U,V belong to a compact gap family: for large N they stay in a slightly larger such family. Smoothness gives Lambda(u_N,v_N)=Lambda(U,V)+O(1/N). The factors NQ^d in (2) remain in the exact source; their magnitude adds log N to a logarithmic rate rather than being reset.</p>
+<p>The class is nonempty and open. If |v|=1, then G=0 and</p>
+<pre><code>Lambda=[I_rho(gamma)-I_rho(phi)]/(2pi)&gt;0,</code></pre>
+<p>because gamma is upper and phi lower. Every compact family therefore has a positive gap, which persists in a full open neighborhood by continuity. For example u=0.7-0.4i and v=0.9+0.2i have Lambda approximately 0.191315 and norm-rate zero. A certified neighborhood follows from continuity; the theorem itself uses the explicit inequality (20), not that numerical example.</p>
+<p>There is also a literal unique regular critical action. The finite product’s analytic action is</p>
+<pre><code>W_source(s)=Li_2(v/u)-Li_2((v/u)exp s)+s Log u.</code></pre>
+<p>Its stationary equation is u-v exp s=1. The marked solution is s_<em>=Log(1-u)+pi</em>i-Log v, with 0&lt;Im s_*&lt;2pi. Its second derivative is 1-u!=0. The elementary Euler and quad dilogarithm identities give</p>
+<pre><code>W_source(s_*)=W+pi^2/6.</code></pre>
+<p>Thus (18) is precisely this marked geometric critical rate, not an unrelated estimate on a maximum. The real constant has been recorded; no arbitrary complex period normalization is chosen to achieve the identity.</p>
+<h2 id="scope-and-audit">6. Scope and audit</h2>
+<p>Equation (1) is a polynomial kernel identity, valid with every original exterior functional. Equations (13)–(21) give a local analytic growing-source theorem on a specified open chamber. To use it for an entire knot, one must prove that its actual positive-chart transport places the needed internal fibers in this chamber, control their joint exterior cycle, and retain all other source currents. Those global hypotheses have not been established for a broad knot class. No whole-knot volume conjecture follows from the present note.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_sink_source_convolution.py">audit</a> checks the original coefficient/tag identity, central current, balanced nonvanishing, full-Psi VARIABLE monodromy, all four finite contour edges, exact Parseval ratio and representative growing-source comparisons. The uniform proofs above do not infer their all-level statements from finite checks.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_sink_source_convolution.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-finite-source-with-every-q-tag">1. The actual finite source, with every Q tag</a><a href="#balanced-nonvanishing-and-its-exact-positive-norm-ratio">2. Balanced nonvanishing and its exact positive norm ratio</a><a href="#exact-original-source-as-a-balanced-residue-plus-its-current">3. Exact original source as a balanced residue plus its current</a><a href="#uniform-balanced-growth-on-a-genuine-geometric-lift-chamber">4. Uniform balanced growth on a genuine geometric lift chamber</a><a href="#an-open-local-class-where-the-original-sink-grows-geometrically">5. An open local class where the ORIGINAL sink grows geometrically</a><a href="#scope-and-audit">6. Scope and audit</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

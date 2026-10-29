@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Survival of the full original mixed-color pretzel period near completeness · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_pretzel_mixed_cusp_period_survival.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="survival-of-the-full-original-mixed-color-pretzel-period-near-completeness">Survival of the full original mixed-color pretzel period near completeness</h1>
+<p>29 October 2026. Proof assembly independently reviewed for source reconstruction, marked normalizations, analytic interpolation and contour estimates. The discrete summation proof below uses the exact finite cotangent contour, retaining every endpoint current. For every fixed odd s&gt;=5, a fixed open cusp-color corridor has a nonzero selected asymptotic for the FULL original mixed-color augmented source. The upper color band, lower inner indices, finite-grid residuals and original Hermite marked functional are all estimated. This is a mixed-source theorem; the subsequent coherent filling sum is not replaced by one of its terms.</p>
+<h2 id="statement-and-unchanged-source">1. Statement and unchanged source</h2>
+<p>Let z_(N,h)=rotation(R^(-1)L_(N-h)) be the full physical polynomial from the two-band source theorem, and put</p>
+<pre><code>A_(s,N)(h_1,...,h_s)=Phi_2(product_i z_(N,h_i)).</code></pre>
+<p>All auxiliary colors are actual integers j_i=N-h_i. For each fixed odd s&gt;=5 there is delta_s&gt;0 such that, uniformly for 0&lt;=h_i&lt;=delta_s N and chi_i=pi h_i/N,</p>
+<pre><code>A_(s,N)(h)=N^(3/2) exp(-i s pi(N-1)/4)
+               A_s(chi) exp[N Phi_s(chi)](1+O(1/N)).     (1)</code></pre>
+<p>The functions Phi_s and A_s below are holomorphic on a fixed complex neighborhood of chi=0, even separately in each chi_i, and A_s has no zeros there. At the complete point,</p>
+<pre><code>Phi_s(0)=V_s/(2pi), A_s(0)=C_s,</code></pre>
+<p>with the SAME V_s,C_s as the complete augmented-period theorem. Evenness of the amplitude follows from the full low-core coefficients; its definition by analytic continuation is fixed at the complete point. The full physical polynomial contains a non-even alias band, but that band is exponentially smaller in this corridor.</p>
+<p>In particular (1) is actual uniform noncancellation on an OPEN macroscopic corridor h_i&lt;=delta_s N, not only fixed normal jets or h_i=o(N). The choice s&gt;=5 is used for the independently quantified alias gap; no assertion for s=3 is inferred from that estimate.</p>
+<h2 id="the-analytic-high-index-phase-is-attached-to-the-finite-source">2. The analytic high-index phase is attached to the finite source</h2>
+<p>Use the notation S(tau,chi), C(tau,chi) of the <a href="actual_pretzel_mixed_inner_source_wkb.html">mixed inner source theorem</a>, and define the analytic sine primitive</p>
+<pre><code>J_sin(tau)=integral_0^tau Log(2sin(pi t))dt.</code></pre>
+<p>On a fixed high-index neighborhood tau&gt;1/4 and small complex chi put</p>
+<pre><code>B(tau,chi)=S(tau,chi)-S(tau,0)
+   +2J_sin(tau)-J_sin(tau-chi/pi)-J_sin(tau+chi/pi),
+
+D(tau,chi)=[C(tau,chi)/C(tau,0)]
+   sin(pi tau)/sqrt(sin(pi tau-chi)sin(pi tau+chi)).    (2)</code></pre>
+<p>All roots and logarithms continue from their positive real complete values. These functions are even in chi, B(tau,0)=0, D(tau,0)=1, and D is nonzero after shrinking the neighborhood.</p>
+<p>These expressions follow from the actual coefficient, not a new semiclassical normalization. Indeed</p>
+<pre><code>q^(h^2)D_(h,r)/D_(0,r)
+    =G_N(r)^2/[G_N(r-h)G_N(r+h)],</code></pre>
+<p>where G_N is the positive sine-factorial completion. Its bulk asymptotic has exponential part 2J_sin(tau)-J_sin(tau-chi/pi) -J_sin(tau+chi/pi) and prefactor sin(pi tau)/sqrt(sin(pi tau-chi)sin(pi tau+chi)). Multiplying by the SELECTED inner U_(h,r), including its exponentially accurate analytic interpolant, gives (2).</p>
+<p>For w=-exp(eta), define the analytic phase</p>
+<pre><code>Psi(u,eta,chi)=(-Lambda(2u)+6Lambda(u))/pi
+   +(1/(2pi))integral_0^(2u)Log(2cosh eta+2cos v)dv
+   +B(u/pi,chi).                                      (3)</code></pre>
+<p>The analytic continuation of Lambda on this regular u-neighborhood is fixed by its real values. At chi=0 this is the already calibrated complete Newton phase. For real eta near eta_s=2asinh(tan(pi/s)), its complete critical index is</p>
+<pre><code>u_0(eta)=atan(cosh(eta/2)),
+Psi_uu(u_0,eta,0)&lt;0.</code></pre>
+<p>The holomorphic implicit-function theorem therefore specifies a unique critical u_*(eta,chi) near u_0, and</p>
+<pre><code>j(eta,chi)=Psi(u_*(eta,chi),eta,chi).                    (4)</code></pre>
+<p>The local amplitude is explicitly</p>
+<pre><code>a(eta,chi)=1/(4sqrt(pi))
+   [sqrt(sin(2u_*))/sin(u_*)^(5/2)] exp(iu_*/2)
+   D(u_*/pi,chi)/sqrt(-Psi_uu(u_*,eta,chi)).            (5)</code></pre>
+<p>All factors are nonzero near completeness. At chi=0 this reduces to exp(iu_0/2)/[2((T+2)(T+6))^(1/4)], T=2cosh eta.</p>
+<h2 id="discrete-analytic-laplace-lemma-including-its-actual-error-barrier">3. Discrete analytic Laplace lemma, including its actual error barrier</h2>
+<p>Here is the precise local summation argument used in (4),(5). Choose a fixed real index window [a,b] about u_0, strictly within (pi/4,pi/2). Choose its physical endpoints on the grid pi r/N; their O(1/N) motion does not change any of the fixed gaps below. The source theorem supplies an analytic interpolation of its inner packet on a FIXED complex window, with relative grid residual O(exp(-cN)), uniform in small complex chi. Retain that residual.</p>
+<p>The original Newton factor has an analytic interpolation there too. With</p>
+<pre><code>alpha_+=(N+1)/2-iN eta/(2pi),
+alpha_-=(N+1)/2+iN eta/(2pi),</code></pre>
+<p>take</p>
+<pre><code>Bhat_N(r,eta)=q^(-r^2)
+   Fhat_N(alpha_++r-1)Fhat_N(alpha_-+r-1)
+      /[Fhat_N(alpha_+-1)Fhat_N(alpha_--1)].           (6)</code></pre>
+<p>At every integer r this is EXACTLY product_(k&lt;r) (2cos((2k+1)pi/N)+2cosh eta). All four factorial arguments remain in regular compact substrips. Their marked bulk expansions give the integral term in (3), with leading prefactor ONE: the half-step in alpha_± cancels the two endpoint square-root factors. This continues uniformly to complex u=pi r/N and eta in fixed smaller neighborhoods; no extrapolation from real integer values is used.</p>
+<p>The remaining original factorial factors use the same Fhat/G_N completion. Thus the interpolated high-window summand is holomorphic and equals its explicit nonzero amplitude times exp(N Psi), with a uniform analytic relative O(1/N) error. On the physical grid it agrees with the original summand up to the RETAINED exponentially small inner residual.</p>
+<p>Use the following EXACT finite cotangent formula, which avoids any conditional sum of Poisson endpoint terms. For the integers k&lt;=r&lt;=l in this window, place its vertical sides at the HALF-grid points a_N=(k-1/2)pi/N and b_N=(l+1/2)pi/N. Let f_N(u) denote the analytic interpolated r-summand, with all the prefactors just specified, and let Gamma be the positively oriented rectangle with these vertical sides and fixed imaginary heights +/-d. Then</p>
+<pre><code>sum_(r=k)^l f_N(pi r/N)
+    =N/(2pi i) integral_Gamma f_N(u)cot(Nu)du.       (3a)</code></pre>
+<p>This is the interpolated-grid sum; its retained difference from the ORIGINAL source grid is bounded separately below. The residue of cot(Nu) at each enclosed physical point is 1/N, so (3a) has no endpoint half weights or new lattice multiplicity.</p>
+<p>Choose d&gt;0 inside the fixed holomorphic tube. The complete real phase has a fixed gap at both window endpoints. By continuity, the full vertical sides stay below Re j by a fixed amount, uniformly after making d and then the eta,chi neighborhoods sufficiently small. On those sides cot(N(a_N+it))=-i tanh(Nt), and similarly at b_N, so its modulus is at most one. Their ENTIRE integrals are therefore poly(N)exp[N(Re j-gamma)] for some gamma&gt;0. They are retained currents, not terms assigned value zero.</p>
+<p>On the upper and lower horizontal sides, respectively,</p>
+<pre><code>cot(Nu)=-i+O(exp(-2Nd)),
+cot(Nu)=+i+O(exp(-2Nd)).</code></pre>
+<p>At the complete real parameters, holomorphic Taylor expansion gives sup Re Psi(x+/-id)&lt;=j_0+C d^2 for real x in the window: its first normal derivative is imaginary there. The eta and chi perturbations change this bound and Re j continuously by O(|eta-eta_s|+|chi|^2). Choose d first with C d^2&lt;d/4, and then the fixed parameter neighborhood with this perturbation less than d/4. The horizontal cotangent remainders consequently have a uniform fixed exponential gap. This bounds ALL nonzero Fourier modes together, without an unsupported absolute summation of individual 1/m endpoint terms. Shrink that neighborhood also so that |Im u_<em>|&lt;d/2 and Re u_</em> stays a fixed positive distance from both vertical sides.</p>
+<p>With the counterclockwise orientation, the two constant cotangent parts give N/(2pi) times the sum of the lower and upper left-to-right ordinary integrals. Deform EACH ordinary integral inside the analytic rectangle to the horizontal segment through u_*(eta,chi). The connecting vertical segments at a_N,b_N have the already proved endpoint gap. Away from a small central neighborhood, the shifted segment has the same strict gap by the complete profile and small parameter continuity. In the center,</p>
+<pre><code>Re Psi&lt;=Re j-c_1|u-u_*|^2.</code></pre>
+<p>Thus both ordinary integrals give the SAME saddle integral, with total coefficient N/pi. Uniform analytic Gaussian expansion gives exactly (5), with relative O(1/N). No unknown original-cycle intersection number is assigned.</p>
+<p>The total grid-residual contribution is at most poly(N)exp[N(j_0+C|eta-eta_s|+C|chi|^2-c)], by the source theorem, where j_0 is the complete action at eta_s. Choose the fixed eta neighborhood and chi disk so small that this remains exponentially below Re j. This is WHY relative O(1/N) accuracy on the real grid alone would not suffice, and why the exponential interpolation is used here.</p>
+<h2 id="the-lower-indices-and-the-rest-of-the-circle-are-genuinely-smaller">4. The lower indices and the rest of the circle are genuinely smaller</h2>
+<p>The full physical real-color bound in the mixed source theorem gives</p>
+<pre><code>|q^(h^2)A_(h,r)/D_(0,r)|
+    &lt;=poly(N)exp[N(E(pi r/N)+C chi^2)],               (7)</code></pre>
+<p>including r&lt;h. The complete-circle proof showed that the positive Newton envelope J_R(u)+E(u) has a unique maximum at u_0&gt;pi/4, with a strict gap on u&lt;=pi/4 and on every complement of a fixed neighborhood of u_0. Its angular envelope also has a strict gap away from the negative axis. Both gaps persist for fixed sufficiently small REAL chi by (7) and continuity. The high-index WKB provides the same bound on the remaining compact index intervals.</p>
+<p>Consequently the box’s original low core satisfies, uniformly on a fixed complex neighborhood of the negative point of the circle, for the physical REAL chi on its specified integer-color grid,</p>
+<pre><code>c_(N,h)(-exp eta-exp(-eta))
+   =exp(-i pi(N-1)/4)a(eta,chi)
+                          exp[Nj(eta,chi)](1+O(1/N)), (8)</code></pre>
+<p>up to an exponentially smaller retained remainder. On the original circle outside that neighborhood, the entire low core has a fixed exponential gap relative to the complete maximum, persisting for small chi. These assertions use the actual real-grid lower packets; no off-grid extension of the region r&lt;h is needed. The leading functions a,j are holomorphic in chi; this statement does not identify an unexamined off-grid continuation of those lower physical packets with that holomorphic leading expression. In (8) eta varies in a fixed complex neighborhood, while chi is a PHYSICAL REAL color pi h/N. The leading functions and high-index interpolants are holomorphic in chi; no analytic continuation of the full low-index physical packet is asserted here.</p>
+<h2 id="the-original-marked-period-followed-by-the-alias-estimate">5. The original marked period, followed by the alias estimate</h2>
+<p>For the product of low cores the exact marked residue is</p>
+<pre><code>(-1)^(N-1) N^2/(2pi i) integral_(|w|=R_s)
+  product_i c_(N,h_i)(w+w^(-1))
+            w^N(1-w^(-2))/(1+w^N)^2 dw.              (9)</code></pre>
+<p>Let eta_*(chi) be the unique nearby solution</p>
+<pre><code>sum_i partial_eta j(eta_*,chi_i)=1.</code></pre>
+<p>It exists since the complete derivative of the left side is s cos(pi/s)/(2pi)&gt;0. Define</p>
+<pre><code>Phi_s(chi)=sum_i j(eta_*,chi_i)-eta_*,
+
+A_s(chi)=2sinh(eta_*) product_i a(eta_*,chi_i)
+      /sqrt(2pi sum_i partial_eta^2 j(eta_*,chi_i)).  (10)</code></pre>
+<p>The branch of the square root is fixed at the complete real point. The same finite complex-contour argument as in section3, now in eta=log(-w), moves the central arc to eta_*. No pole of (9) is crossed: Re eta remains strictly positive. The global circle gaps in section4 control its complement. The real Gaussian integral along the local vertical direction gives (1) for the low-core product, with the ORIGINAL sign and N^(3/2) normalization exactly as in the complete-period proof.</p>
+<p>Finally the <a href="actual_pretzel_mixed_alias_source_gap.html">uniform original alias source gap</a> proves for odd s&gt;=5, and a sufficiently small fixed corridor,</p>
+<pre><code>|Phi_2(product_i z_(N,h_i)-product_i c_(N,h_i))|
+    &lt;=poly(N)exp[N(Phi_s(0)-gamma_s)], gamma_s&gt;0.      (11)</code></pre>
+<p>Shrink delta_s until Re Phi_s(chi)&gt;Phi_s(0)-gamma_s/2. Then (11) is exponentially smaller than the just computed nonzero core period. This proves (1) for the FULL original source, keeping every normal derivative and every nonempty alias subset.</p>
+<h2 id="quantitative-curvature-and-what-filling-still-requires">6. Quantitative curvature and what filling still requires</h2>
+<p>The leading action is even in each chi_i. Its quadratic term can be calculated directly from the actual mixed recurrence, without assuming a topological longitude convention. Normalize by D_(0,r), put u=pi r/N, Y=exp(2iu), c=cot(u)^2, and write its classical backward eigenvalues as Y^(-1)v. Then</p>
+<pre><code>v^2-[(c-1)cos(chi)^2-2i sqrt(c)sin(chi)^2]v-c=0.</code></pre>
+<p>The selected high-index root is v=-1 at chi=0. Differentiation in chi^2 gives delta Log(Y^(-1)v)=Y chi<sup>2+O(chi</sup>4). The actual endpoint factor has zero leading action. Therefore</p>
+<pre><code>j(eta,chi)=j(eta,0)
+    -(1+Y_*(eta))chi^2/(2pi i)+O(chi^4).</code></pre>
+<p>Envelope differentiation at the outer critical point gives</p>
+<pre><code>Phi_s(chi)=V_s/(2pi)
+   -(1+Y_s)/(2pi i) sum_i chi_i^2+O(||chi||^4),
+Y_s=exp(2iu_s), u_s=atan(sec(pi/s)).                  (12)</code></pre>
+<p>In particular on the real physical corridor,</p>
+<pre><code>Re Phi_s(chi)=V_s/(2pi)
+   -sin(2u_s)/(2pi) sum_i chi_i^2+O(||chi||^4).       (13)</code></pre>
+<p>This proves strict quadratic decay away from complete color within that corridor, as well as a nonzero analytic leading amplitude.</p>
+<p>The next operation is still the ENTIRE original filling-color sum. Its exact Weyl fold and normal-weighted Gaussian kernel must be combined with (1), and intermediate colors outside this corridor must be bounded. No independent full-twist factor may be discarded. The identification of the filled critical action with the marked geometric volume must also respect the actual meridian/longitude orientation. A complete augmented-source or mixed-cusp theorem is not a fixed filled-knot volume theorem.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_pretzel_mixed_cusp_period_survival.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#statement-and-unchanged-source">1. Statement and unchanged source</a><a href="#the-analytic-high-index-phase-is-attached-to-the-finite-source">2. The analytic high-index phase is attached to the finite source</a><a href="#discrete-analytic-laplace-lemma-including-its-actual-error-barrier">3. Discrete analytic Laplace lemma, including its actual error barrier</a><a href="#the-lower-indices-and-the-rest-of-the-circle-are-genuinely-smaller">4. The lower indices and the rest of the circle are genuinely smaller</a><a href="#the-original-marked-period-followed-by-the-alias-estimate">5. The original marked period, followed by the alias estimate</a><a href="#quantitative-curvature-and-what-filling-still-requires">6. Quantitative curvature and what filling still requires</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

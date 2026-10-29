@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The compact source torsor and its actual Weyl gluing · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/twisted_cotangent_source_and_weyl_gluing.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-compact-source-torsor-and-its-actual-weyl-gluing">The compact source torsor and its actual Weyl gluing</h1>
+<p>Research proof, 27 October 2026. The fixed compact source is a nontrivial cotangent torsor with an explicit Chern transition. The actual finite root module has a meridian-dependent Weyl adapter whose square is exactly the full modified-dimension function times its recorded scalar. The resulting order-two cocycle has a marked rational splitting at every level, including even levels.</p>
+<p>Quantum/dynamical Weyl operators have existing coverage; see the scope of <a href="https://arxiv.org/abs/math/0011001">Etingof–Varchenko</a>. We use that reference for coverage, not a proof or a claim that its precise normalization equals the one below. The cotangent torsor is identified directly by its transition equations (1)–(2). The already proved <a href="actual_weyl_descent.html">actual Weyl descent</a> gives state reciprocity. The new calculations identify the compact source transition and the explicit balanced-basis scalar cocycle with our full peripheral factor.</p>
+<p>These are source and gluing theorems. They do not identify the actual global geometric period or prove its volume norm.</p>
+<h2 id="an-explicit-twisted-cotangent-torsor">1. An explicit twisted cotangent torsor</h2>
+<p>Use the <a href="compact_coherent_source_period.html">compact source</a></p>
+<pre><code>X=(P1 times P1) minus {s_0t_0+s_1t_1=0},
+omega_0=dw wedge dz/(1+wz)^2.</code></pre>
+<p>Project to the first P1. On its affine chart w define the fiber coordinate b=z/(1+wz). Each fiber is an affine line, including the value z=infinity when allowed. On the second chart put</p>
+<pre><code>w&#39;=1/w, b&#39;=1/(w&#39;+z).</code></pre>
+<p>The exact overlap formulas are</p>
+<pre><code>b&#39;=w-w^2 b, dw&#39; wedge db&#39;=dw wedge db=omega_0. (1)</code></pre>
+<p>In particular X is a torsor under the cotangent bundle O(-2), with the affine term w retained. For the local primitives</p>
+<pre><code>lambda=-b dw, lambda&#39;=-b&#39; dw&#39;</code></pre>
+<p>one has</p>
+<pre><code>d lambda=d lambda&#39;=omega_0,
+lambda&#39;-lambda=dlog w.                         (2)</code></pre>
+<p>This is the connection torsor of O(1), in this explicit transition convention. It is not the split total cotangent bundle. On the marked real sphere z=bar(w), lambda is the Chern connection form -bar(w)dw/(1+|w|^2), and</p>
+<pre><code>integral_Gamma omega_0=-2pi*i,
+integral_Gamma[-omega_0/(2pi*i)]=1.             (3)</code></pre>
+<p>Thus the sign agrees with c1(O(1))=1. Equation (2), rather than a globally defined primitive, records the nonzero source class.</p>
+<p>There is a useful obstruction to an incorrect global comparison. On a split framing chart with global tau and invertible A,</p>
+<pre><code>Omega_cut=dtau wedge dlog A=d(tau dlog A)</code></pre>
+<p>is exact. No globally regular map from X to this split chart can pull Omega_cut back to a nonzero multiple of omega_0 in cohomology: pullback preserves exactness and (3) forbids it. A nonzero whole comparison must retain a twisted transition, a divisor residue or its equivalent marked relative class. Equality of local two-forms does not supply that data.</p>
+<h2 id="the-actual-complete-head-patches-globally">2. The actual complete head patches globally</h2>
+<p>Let N&gt;=2, n=N-1, q=exp(pi*i/N), Q=q^2. At complete color M=1 identify the actual balanced head with H^0(P1,O(n)), by e_j=w^j. Its exact generators on this space are</p>
+<pre><code>K=-(1/q)D_(Q^-1),
+Ecal=w^(-1)(D_(Q^-1)-1),
+F=w(1-QD_Q), D_Q f(w)=f(Qw).                 (4)</code></pre>
+<p>The E numerator cancels at w=0. The F coefficient on w^n is 1-Q<sup>(n+1)=1-Q</sup>N=0, so all three preserve this finite section space. They are exactly the finite matrices, not an independent quantization.</p>
+<p>The line transition is f_infinity(u)=u^n f_zero(1/u), u=1/w. It transforms the shift to</p>
+<pre><code>D_Q^(w) -&gt; Q^n D_(Q^-1)^(u)=Q^(-1)D_(Q^-1)^(u).</code></pre>
+<p>Consequently the generators in the second chart are</p>
+<pre><code>(K,Ecal,F) -&gt; (K_u^(-1),-F_u,-Ecal_u).         (5)</code></pre>
+<p>Equivalently let C e_j=e_(n-j). Direct matrix multiplication gives C K C=K^(-1), C Ecal C=-F, C F C=-Ecal. The original constant source vector, average co-source, and coupon e_ij=1/N are fixed by C. Thus the actual complete source has this exact Weyl gluing, not just a matching semiclassical two-form.</p>
+<p>The source level also has a precise half-form description:</p>
+<pre><code>O(N-1)=O(N) tensor K_(P1)^(1/2),
+K_(P1)^(1/2)=O(-1), dim H^0(O(N-1))=N.       (6)</code></pre>
+<p>This is a bundle identity with the unique half-canonical line on P1. In the physical convention Omega_phys=2pi<em>i omega_0, h_N=2pi</em>i/N, its prequantum curvature is Omega_phys/h_N=N omega_0, with the Chern sign of (3). Thus the root level N and the actual section degree N-1 differ by this specified half-form factor. No limit is required for (4)–(6).</p>
+<h2 id="the-balanced-weyl-matrix-at-generic-meridian">3. The balanced Weyl matrix at generic meridian</h2>
+<p>Keep the actual root finite head with meridian M, and write</p>
+<pre><code>K_M e_j=-(M/q)Q^(-j)e_j,
+E_M e_j=(M Q^(-j)-M^(-1))e_(j-1), j&gt;0,
+E_M e_0=0,
+F e_j=(1-Q^(j+1))e_(j+1), j&lt;n, F e_n=0.</code></pre>
+<p>Here E_M is Ecal, not the unscaled Chevalley E. Put</p>
+<pre><code>P_j=(Q;Q)_j, P_j(M^2)=(M^2 Q;Q)_j,
+D_M e_j=M^j P_j/P_j(M^2) e_j,
+W_M=D_M C.                                  (7)</code></pre>
+<p>Work on the marked open where the displayed denominators and numerators are units; in particular they are units near M=1. Then the actual generator comparison is</p>
+<pre><code>W_M K_M W_M^(-1)=K_(M^-1)^(-1),
+W_M E_M W_M^(-1)=-F,
+W_M F W_M^(-1)=-E_(M^-1).                    (8)</code></pre>
+<p>For E after reversing the basis, its raising coefficient is M Q<sup>(j+1)-M</sup>(-1). The adjacent ratio of D is</p>
+<pre><code>D_(j+1)/D_j=M(1-Q^(j+1))/(1-M^2Q^(j+1)),</code></pre>
+<p>giving -(1-Q^(j+1)). The F equation follows from the inverse ratio and 1-Q<sup>(-j)=-Q</sup>(-j)(1-Q^j). The K equation is immediate from Q<sup>n=Q</sup>(-1). This proves (8) including both endpoints.</p>
+<p>On full unrolled colors the same matrix sends H_M to -H_(M^-1), with the meridian lift alpha’=2n-alpha retained. Termwise substitution in the actual universal R therefore gives the Chevalley turnover with reversed tensor order. The original Cartan half-character, cups, caps and twist transform as in the generator proof of actual Weyl descent. This does not discard the stripped-Cartan multiplier recorded there.</p>
+<h2 id="the-square-is-the-full-peripheral-function">4. The square is the full peripheral function</h2>
+<p>Following each reversed basis vector twice gives</p>
+<pre><code>W_(M^-1) W_M=c_N(M) I,
+c_N(M)=N M^(N-1)/S_N(M^2),
+S_N(Y)=1+Y+...+Y^(N-1).                     (9)</code></pre>
+<p>For a direct proof the j-th diagonal product is D_(M^-1,j) D_(M,n-j). Using Q<sup>(N-r)=Q</sup>(-r) pairs its suffix factors and proves independence of j. At j=0 it is</p>
+<pre><code>D_(M,n)=M^n (Q;Q)_n/(M^2Q;Q)_n
+       =N M^n/S_N(M^2),</code></pre>
+<p>since (Q;Q)_(N-1)=N and (M<sup>2Q;Q)_(N-1)=S_N(M</sup>2).</p>
+<p>This is exactly the already fixed full modified-dimension adapter:</p>
+<pre><code>c_N(M)=(N/eta_N)d_N(M), eta_N=i^(N+3).       (10)</code></pre>
+<p>It is invariant under M inversion and has value one at M=1. Its whole meridian germ is not constant. On M=exp(u),</p>
+<pre><code>c_N(exp u)=N sinh(u)/sinh(Nu)
+         =1-(N^2-1)u^2/6+O(u^4).           (11)</code></pre>
+<p>Thus even where the ideal-point multiplier equals one, its peripheral normal data must not be reset. Formula (10) ties the Weyl cocycle to the specified period normalization, rather than an arbitrary projective scalar.</p>
+<h2 id="a-marked-rational-splitting-at-odd-and-even-levels">5. A marked rational splitting at odd and even levels</h2>
+<p>The cocycle in (9) can be solved explicitly, with its divisors kept. For N=2m+1 put</p>
+<pre><code>beta_N(M)=(M^2Q;Q)_m/(Q;Q)_m.</code></pre>
+<p>For N=2m put</p>
+<pre><code>beta_N(M)=[(1+iM)/(1+i)]
+                  (M^2Q;Q)_(m-1)/(Q;Q)_(m-1).            (12)</code></pre>
+<p>The specified i is in the root coefficient field at even N; its phase is retained. In both cases beta_N(1)=1 and</p>
+<pre><code>beta_N(M) beta_N(M^(-1))=c_N(M)^(-1).         (13)</code></pre>
+<p>To prove this, pair Q^r with Q^(-r). For odd N all nonzero residues pair, and</p>
+<pre><code>(Q;Q)_m^2=N(-1)^m Q^(m(m+1)/2).</code></pre>
+<p>For even N the unpaired residue is Q^m=-1, so</p>
+<pre><code>(Q;Q)_(m-1)^2=(N/2)(-1)^(m-1)Q^(m(m-1)/2).</code></pre>
+<p>The remaining scalar norm is (1+iM)(1+i/M)/(1+i)<sup>2=(1+M</sup>2)/(2M), precisely the missing factor. These identities prove (13). Therefore</p>
+<pre><code>Wtilde_M=beta_N(M) W_M,
+Wtilde_(M^-1) Wtilde_M=I.                   (14)</code></pre>
+<p>This is a marked rational norm splitting, not a permission to omit c_N or beta_N from an exact comparison. Their zero/pole divisors are part of the integral source lattice. On the M=1 chart the splitting is regular and fixes the original complete source.</p>
+<h2 id="relation-to-the-remaining-geometric-boundary-theorem">6. Relation to the remaining geometric boundary theorem</h2>
+<p>The actual source now has an explicit cotangent-torsor cocycle, complete quantum chart gluing, and generic-meridian Weyl scalar whose norm and full modified-dimension role are known exactly. This solves the order-two source gluing problem on its stated charts, uniformly in the knot and level.</p>
+<p>Equations (7)–(14) are identities of whole meridian functions at the fixed quantum root. They do not assert the same finite-matrix relations off the root Q^N=1. A q-normal extension must retain the actual two-wall source and its corrections before differentiating.</p>
+<p>It does not assert that the standard polynomial SL2 action on H^0(O(N-1)) equals the actual quantum dressing of every geometric framing. The actual finite Weyl adapter (8) is proved; a general unipotent dressing and its source-normal comparison require their own derivation. Nor does (14) select which internal geometric stationary component contributes to the original period.</p>
+<p>The global regulator/selected-norm comparison remains to be proved.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_twisted_source_weyl_gluing.py">Exact source and cocycle checks</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/twisted_source_weyl_gluing_results.json">results</a> verify all three generator comparisons, the full scalar square and marked norm splitting in 78 actual root-module cases at N=2,…,14. They also check the cotangent transition and full peripheral germ. The <a href="twisted_source_weyl_independent_audit.html">independent audit</a> confirms the proof, normalizations, phases and endpoints.</p>
+<p>The <a href="springer_centralizer_boundary_source.html">geometric framing compactification</a> now produces this same twisted cotangent torsor by rescaling its centralizer coordinate. Its nonzero principal Gaussian residue is computed in <a href="compact_framing_gauge_and_boundary_residue.html">the explicit gauge calculation</a>. The physical selected-cycle comparison remains separate from that exceptional-divisor residue.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/twisted_cotangent_source_and_weyl_gluing.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#an-explicit-twisted-cotangent-torsor">1. An explicit twisted cotangent torsor</a><a href="#the-actual-complete-head-patches-globally">2. The actual complete head patches globally</a><a href="#the-balanced-weyl-matrix-at-generic-meridian">3. The balanced Weyl matrix at generic meridian</a><a href="#the-square-is-the-full-peripheral-function">4. The square is the full peripheral function</a><a href="#a-marked-rational-splitting-at-odd-and-even-levels">5. A marked rational splitting at odd and even levels</a><a href="#relation-to-the-remaining-geometric-boundary-theorem">6. Relation to the remaining geometric boundary theorem</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

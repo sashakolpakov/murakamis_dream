@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The compact source is the boundary of a resolved geometric framing torsor · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/springer_centralizer_boundary_source.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-compact-source-is-the-boundary-of-a-resolved-geometric-framing-torsor">The compact source is the boundary of a resolved geometric framing torsor</h1>
+<p>Research proof, 27 October 2026. The regular-unipotent meridian centralizer torsor has a canonical renormalized compactification. Its exceptional divisor is the actual compact coherent source X=(P1 times P1) minus the incidence divisor. This is an explicit matrix construction, not just an equality of dimensions or a local choice of framing coordinates.</p>
+<p>The principal Gaussian framing form, with its actual diagonal flag co-source retained, has a global nonzero logarithmic residue class on this divisor. The intrinsic coherent source line and all normal weights are determined as well. The logarithmic source/current complex is still required to use this class in the selected quantum period: allowing an unrestricted logarithm of the normal would make its logarithmic differential exact.</p>
+<p>The actual finite source geometry is proved in <a href="compact_coherent_source_period.html">the compact coherent calculus</a>. The explicit r,s,p gauge and physical-symbol section used below are independently calculated in <a href="compact_framing_gauge_and_boundary_residue.html">the compact framing and residue construction</a>. The principal Gaussian comparison is the general theorem of <a href="quantum_source_bridge_extension.html">the density-line calculation</a>.</p>
+<h2 id="the-cut-meridian-has-its-literal-springer-resolution">1. The cut meridian has its literal Springer resolution</h2>
+<p>Fix the physical meridian sign so the complete eigenvalue is +1. The unipotent cone is mu=I+N, where tr N=det N=0. Its resolution is</p>
+<pre><code>L=Tot(O_P1(-2)),
+N(v,eta)=eta [[-v,1],[-v^2,v]],
+eigenflag=[1:v].                                      (1.1)</code></pre>
+<p>The other chart has</p>
+<pre><code>V=1/v, eta&#39;=-v^2 eta,
+N=eta&#39; [[V,-V^2],[1,-V]].                              (1.2)</code></pre>
+<p>Both formulas are verified by multiplication. Away from N=0 its unique kernel/image line recovers the retained flag. At N=0 the flag is the exceptional P1. Thus this resolves the cut meridian; it does not assert that a whole irreducible representation has a regular raw-matrix limit when this meridian approaches I.</p>
+<p>For the actual physical compact symbol, put</p>
+<pre><code>a=z/(1+wz), v=w, T=v a,
+A=exp(c T), p=1/v, c=2pi*i.</code></pre>
+<p>Its complete Gauss matrices give exactly</p>
+<pre><code>eta_phys=(1-A^(-1))/v,
+mu-I=N(v,eta_phys).                                  (1.3)</code></pre>
+<p>At v=0 the quotient has the removable value c a. More explicitly</p>
+<pre><code>eta_phys=(1-exp(-c v a))/v=c a+O(v a^2),
+partial_a eta_phys=c exp(-c v a),                     (1.4)</code></pre>
+<p>so it is a local holomorphic change of coordinates at the compact north pole. In the south chart, a’=v-v^2a and T’=V a’=1-T; since exp(c)=1,</p>
+<pre><code>eta&#39;_phys=(exp(c V a&#39;)-1)/V=c a&#39;+O(V(a&#39;)^2).           (1.5)</code></pre>
+<p>Both real compact poles therefore retain their limiting eigenflag. The exact form identity is</p>
+<pre><code>dv wedge d eta_phys/(1-v eta_phys)
+             =c dv wedge da
+             =c dw wedge dz/(1+wz)^2.                (1.6)</code></pre>
+<p>This is an algebraic/logarithmic resolution of the physical symbol: one may retain A as a multiplicative coordinate with the marked relation Log A=c va. There is no N-dependent limit in (1.3)–(1.6). The clock is still a period of its exponential connection, not an algebraic function on a finite cover of X. Globally A=1 has every integer T fiber; the two poles above are the endpoints of the specified real compact cycle, not the entire analytic divisor.</p>
+<h2 id="the-full-geometric-framing-torsor-has-a-nonextendible-pole">2. The full geometric framing torsor has a nonextendible pole</h2>
+<p>Choose the reference cut meridian I+E_12 of a fixed irreducible representation. The full projective conjugation torsor is G=PGL2. Its map to the nonzero cone is</p>
+<pre><code>g -&gt; g E_12 g^(-1),</code></pre>
+<p>with fiber the additive regular-unipotent centralizer. On the Springer charts with eta!=0 take the projective sections</p>
+<pre><code>g_N=[[1,0],[v,eta^(-1)]],
+g_S=[[V,(eta&#39;)^(-1)],[1,0]].                           (2.1)</code></pre>
+<p>Their conjugations of E_12 are precisely (1.1)–(1.2). Directly,</p>
+<pre><code>g_N^(-1)g_S ~ [[1,-1/(v eta)],[0,1]],                 (2.2)</code></pre>
+<p>where ~ means equality after a nonzero scalar. If b_N,b_S are the additive centralizer coordinates on the right, then</p>
+<pre><code>b_S=b_N+1/(v eta).                                   (2.3)</code></pre>
+<p>This torsor cannot extend as an ordinary algebraic Ga torsor over the zero section of L. Here is an elementary proof. On the punctured line bundle the cocycle in (2.3) has fiber degree -1. A coboundary of that degree is a sum</p>
+<pre><code>eta^(-1) f(v)+(eta&#39;)^(-1)g(V)
+  =eta^(-1)[f(v)-v^(-2)g(1/v)].                       (2.4)</code></pre>
+<p>The Laurent powers available on the right are &gt;=0 and &lt;=-2. The required v^(-1) is missing. Thus (2.3) has nonzero Cech class. On the whole bundle only nonnegative fiber degrees occur. At degree j&gt;=0, the north regular powers are &gt;=0 and the south ones are &lt;=2j; together they span every Laurent power. Hence every regular Ga torsor on this two-chart total space has zero class. Its restriction cannot equal (2.3). This proves the obstruction without a torsor-triviality citation.</p>
+<p>For the elementary additive-descent step used here, an additive torsor on an affine chart is trivial: on a finite principal-open trivializing cover, clear all cocycle denominators by powers f_j^k, write 1=sum_j h_j f_j^k, and take the weighted sums of its additive transition functions. The cocycle identity makes these sums a coboundary. Thus no affine-chart torsor has been omitted from the two-chart calculation.</p>
+<p>There is also a direct irreducible-representation obstruction. Conjugating by diag(r,r^(-1)) makes the chosen meridian I+r^2E_12 approach I. Some other group element has a nonzero lower-left coefficient, because otherwise the representation preserves the chosen line. That coefficient becomes r^(-2)c. The raw representation escapes. Resolving its cut eigenflag does not remove this pole of the full irreducible framing family. This obstruction is independent of the chosen degeneration: for U=I+E_12 and B=[[a,b],[c,d]] in SL2, direct multiplication gives tr[U,B]=2+c^2. Irreducibility supplies some c!=0. If a regular raw limit had its cut meridian equal to I, this trace would tend to 2, contradicting its conjugation-invariant value. Thus no different regular raw framing can evade the escape.</p>
+<h2 id="renormalizing-the-centralizer-produces-the-actual-source-x">3. Renormalizing the centralizer produces the actual source X</h2>
+<p>Use the determined rescaling</p>
+<pre><code>a_N=-eta b_N, a_S=-eta&#39; b_S.</code></pre>
+<p>Equation (2.3) becomes exactly</p>
+<pre><code>V=1/v, a_S=v-v^2 a_N.                                (3.1)</code></pre>
+<p>This is the compact coherent-source torsor. Indeed with a_N=z/(1+vz), one has a_S=v/(1+vz), and its complement condition is the transversality of the two flags</p>
+<pre><code>ell=[1:v], ell_other=[-z:1].</code></pre>
+<p>Thus the renormalized space is the threefold</p>
+<pre><code>Y=Tot(O_P1(-2)) times_P1 X,
+E_exc={eta=0}=X.                                     (3.2)</code></pre>
+<p>Its open part eta!=0 is exactly PGL2 by (2.1)–(2.3), not merely birational to a new state. In north coordinates its actual projective conjugator has the polynomial representative</p>
+<pre><code>g(v,eta,a)=[[eta,-a],[eta v,1-va]], det g=eta.           (3.3)</code></pre>
+<p>At eta=0 this is rank one. Its image is the second flag and its first-column direction is the retained flag; the two are transverse. Formula (3.3) displays the compact source as the exceptional data of a degenerating actual projective frame. The south representative is -v times (3.3), with the appropriate south row convention. Scalar transition does not change conjugation.</p>
+<p>The original constant Ga action b-&gt;b+c becomes a-&gt;a-eta c. It vanishes on E_exc. The rescaled additive group of the line O(-2), acting by translation in a, instead extends freely. This is the precise twisted-centralizer replacement at the shell; there is no global choice a=0 in the nontrivial affine torsor X.</p>
+<p>The full representation extends on its elementary-modification lattice g O^2, with its projective scalar clutch retained. In that lattice the representation matrices are the fixed reference ones. Its abstract cut meridian remains nontrivial; only its singular inclusion into the original raw trivialization has become I. This associated-bundle extension must not be mistaken for an ordinary regular deformation of the raw representation to the central identity color.</p>
+<h2 id="the-global-logarithmic-volume-has-the-compact-source-residue">4. The global logarithmic volume has the compact source residue</h2>
+<p>Define the invariant three-form on the actual frame torsor by</p>
+<pre><code>H_G=d eta wedge dv wedge db.</code></pre>
+<p>Its normalization is specified by this equation. To verify invariance, on the SL2 cover write g=n_-(v)diag(r,r^(-1))n_+(b), r^2=eta. The h,e,f components of its Maurer–Cartan form have wedge r dr wedge db wedge dv=-H_G/2; conjugation by n_+(b) has determinant one, so this calculation holds for all b. Thus the stated factor of -2 relative to that Maurer–Cartan convention is explicit. Substitution b=-a/eta gives its exact extension to Y:</p>
+<pre><code>H_G=-(d eta/eta) wedge dv wedge da.                    (4.1)</code></pre>
+<p>This is global: dv wedge da is unchanged by (3.1), while d eta’/eta’=d eta/eta+2dv/v, whose added term wedges to zero. Consequently</p>
+<pre><code>Res_(E_exc) H_G=-dv wedge da=2pi*i omega_I,
+omega_I=-(1/(2pi*i))dv wedge da.                      (4.2)</code></pre>
+<p>The compact coherent sphere Gamma has integral omega_I=1. Thus (4.2) is a nonzero global algebraic de Rham class on X. A small normal circle bundle over Gamma is a lens-space cycle with Chern number -2, the compact PGL2 framing cycle. No global normal-circle section is needed for the residue pairing.</p>
+<p>The line-bundle calculation agrees with the explicit form:</p>
+<pre><code>K_Y=pi^*O(2), O(E_exc)=pi^*O(-2),
+K_Y(E_exc)=O, K_(E_exc)=K_X=O.                        (4.3)</code></pre>
+<p>In particular the logarithmic volume and its residue have trivial torus weight even though the ordinary centralizer torsor did not extend.</p>
+<h3 id="the-actual-principal-gaussian-has-the-same-nonzero-residue">4.1 The actual principal Gaussian has the same nonzero residue</h3>
+<p>This comparison uses the actual diagonal Hopf scaling, not an assumed arbitrary classical source action. On the old inverse-flag cut chart at complete meridian, retain its centralizer coordinate r and scale s:</p>
+<pre><code>F(r,s)=[[r,1-r],[s,-s]],
+Omega_cut=-dr wedge ds/[s(1+s)].</code></pre>
+<p>Allow the exact common diagonal momentum gauge p, and take the source conjugator g=(F(r,s)diag(p<sup>(-1),1))</sup>(-1). The explicit comparison with (2.1) is</p>
+<pre><code>v=1/p, eta=-s p, b=(1-r)/s,
+a=p(1-r), A_cut=(1+s)^(-1)=(1-eta v)^(-1).            (4.4)</code></pre>
+<p>These are the bridge note’s full three-dimensional framing coordinates; r remains present and is not confused with the two-dimensional meridian leaf. Their Jacobian is</p>
+<pre><code>d eta wedge dv wedge db
+                  =-dr wedge ds wedge dp/(s p).</code></pre>
+<p>It follows exactly that</p>
+<pre><code>Omega_cut wedge dLog p
+   =A_cut H_G
+   =-(d eta/eta) wedge dv wedge da/(1-eta v).          (4.5)</code></pre>
+<p>The missing Haar adapter is A_cut in the interior. Its restriction to E_exc is one, so the residue is fixed, not guessed from weights.</p>
+<p>For any nondegenerate geometric critical representation satisfying the general density theorem, retain its original square-root phase and set c_beta^2=-T_beta/2. The torsion T_beta is nonzero and is constant along this conjugation torsor. Hence the actual principal Gaussian density has Omega_beta=c_beta Omega_cut on that marked line. Equation (4.5) proves</p>
+<pre><code>(1/(2pi*i))Res_(E_exc)
+          (Omega_beta wedge dLog p)=c_beta omega_I.   (4.6)</code></pre>
+<p>Its compact period is c_beta!=0. This is a global nonzero leading geometric logarithmic-residue class for an arbitrary such knot braid. It strengthens nonzero local Gaussian density to a global class on the actual compact source domain. The co-source dLog p and the phase line in (4.6) are part of the assertion. Here the domain identification is the canonical isomorphism E_exc=X. It is not an assertion that the physical compact cycle has already been pushed onto this exceptional divisor. The original base-only quantum normalization line is tensored through unchanged. No isolated compact factorial or full modified-dimension factor is evaluated at a root or removed by this variable-density calculation.</p>
+<p>This does not yet state that the whole actual quantum network pushes its selected source to (4.6). In particular Green currents can contain Log eta. Once that coordinate is admitted without its relative endpoint data, d eta/eta is exact and an absolute argument can erase the residue. The actual relative source/current complex must be carried through this boundary construction; a nonzero principal residue is not itself the global selected-period theorem.</p>
+<h2 id="source-and-gaussian-line-weights-are-distinct-and-explicit">5. Source and Gaussian line weights are distinct and explicit</h2>
+<p>Let h(alpha)=diag(alpha,alpha^(-1)). At the north and south fixed flags the tautological O(-1) fibers have characters alpha and alpha^(-1), respectively, meaning weights +1,-1. The relevant integer weights are therefore</p>
+<table>
+<thead>
+<tr>
+<th>Line</th>
+<th style="text-align: right;">North weight</th>
+<th style="text-align: right;">South weight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tautological O(-1)</td>
+<td style="text-align: right;">+1</td>
+<td style="text-align: right;">-1</td>
+</tr>
+<tr>
+<td>nilpotent normal O(-2)</td>
+<td style="text-align: right;">+2</td>
+<td style="text-align: right;">-2</td>
+</tr>
+<tr>
+<td>ordinary K_Y=O(2)</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">+2</td>
+</tr>
+<tr>
+<td>ordinary half-canonical K_Y^(1/2)=O(1)</td>
+<td style="text-align: right;">-1</td>
+<td style="text-align: right;">+1</td>
+</tr>
+<tr>
+<td>logarithmic K_Y(E_exc)</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>logarithmic half-canonical line, on its sign mark</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>prequantum O(N)</td>
+<td style="text-align: right;">-N</td>
+<td style="text-align: right;">+N</td>
+</tr>
+<tr>
+<td>polarized half-form K_P1^(1/2)=O(-1)</td>
+<td style="text-align: right;">+1</td>
+<td style="text-align: right;">-1</td>
+</tr>
+<tr>
+<td>actual coherent wave line O(N-1)</td>
+<td style="text-align: right;">-(N-1)</td>
+<td style="text-align: right;">+(N-1)</td>
+</tr>
+<tr>
+<td>geometric torsion/Gaussian ratio c_beta</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p>The half-form identity is the exact intrinsic source identity</p>
+<pre><code>H_N=H^0(P1,O(N-1))
+   =H^0(P1,O(N) tensor K_P1^(1/2)).                    (5.1)</code></pre>
+<p>The determinant-line accounting is also compatible with square roots: the ordinary half-canonical character and half-normal divisor character cancel on a compatible logarithmic half-density line. The actual density theorem fixes the weight-zero ratio c_beta after the original cut-density factors have been combined. It does not identify a separately normalized transverse Gaussian with K_Y^(1/2) alone. These line statements retain the original square-root phases and do not equate ordinary coherent clutch with quantum dressing.</p>
+<p>The coherent vector line is the dual O(-(N-1)); its coefficient wave line is O(N-1). Their distinction avoids a sign ambiguity in the table. Pairing the actual source and co-source and retaining the incidence denominator gives the globally defined compact kernel, whose normalized trace period is already exact.</p>
+<p>There is a useful representation-theoretic check of the boundary weight. On the SL2 sign cover, (3.3) lifts as eta^(-1/2)g, so for n=N-1,</p>
+<pre><code>Sym^n(g_SL2)=eta^(-n/2)Sym^n(g).                       (5.2)</code></pre>
+<p>Its leading coefficient is the rank-one coherent operator of the two boundary flags. At v=a=0 the eigenvalues are eta^(1/2), eta^(-1/2), and the powers are eta^((n-2j)/2). This yields precisely the source normal pole and torus weight in the table. For odd n the single source requires its SL2 sign mark; the End kernel and paired compact period descend to PGL2 for every N.</p>
+<p>Equation (5.2) is the standard polynomial coherent-line clutch. It is not proved here to be the actual unrestricted quantum-group dressing of a physical Gauss frame. Ordinary SL2 Möbius action on coherent coordinates and the actual quantum dressing are different constructions until a source-preserving network map has been supplied. The exact actual result in this note is (4.6), which uses the independently checked physical diagonal gauge and principal Gaussian density, not this unproved identification.</p>
+<h2 id="physical-symbol-and-residue-sections-remain-separately-marked">6. Physical-symbol and residue sections remain separately marked</h2>
+<p>The compact source also has the physical map of Section 1. Under the actual bridge coordinates it is reached by the logarithmic centralizer section</p>
+<pre><code>r_*(A)=1-Log A/(2pi*i),
+a=p(1-r_*)=p Log A/(2pi*i).                           (6.1)</code></pre>
+<p>The mark at the north pole is r_<em>=1 and that at the south pole is r_</em>=0. A logarithm deck shift changes r_* by -1 and its old frame coordinate b=(1-r)/s by +1/s; the relative comparison coordinate (r_*-r)/s has the opposite jump. Thus the global source needs the logarithmic transition, not a single split B1 section. The r,s,p note retains its boundary primitive and sign.</p>
+<p>The associated boundary coordinate T=va=1-r and the physical symbol coordinate Log A/(2pi*i) agree on the marked section (6.1). They are not identical functions on the full three-dimensional framing family. In particular taking an arbitrary framing section or identifying the old two B1 coordinates with the two compact leaf coordinates would change the comparison.</p>
+<p>More precisely the physical section is the graph eta=(1-exp(-2pi*i va))/v inside Y; eta on Y is otherwise independent. This graph meets E_exc at the analytic identity locus, not along all of X. For finite v!=0 that locus has va in Z; at v=0 its removable condition is a=0. On the real compact sphere only the two poles occur. Therefore the nonzero residue class on E_exc is not yet the image of the actual physical compact-cycle pairing. A relative cycle or source-chain comparison is still necessary.</p>
+<p>Equivariant descent supplies the global principal class (4.6) and fixes its line weights. It does not fix the scalar of a whole actual quantum source or ensure that unrestricted logarithmic Green transgressions preserve that class. The remaining operation is a marked relative pushforward with the actual source, caps, Weyl transitions and normal jets retained, rather than another choice of a local geometric optimum.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_springer_centralizer_boundary_source.py">exact universal audit</a> checks the matrix transitions, compact flag and form maps, actual Gaussian adapter, normal weights and coherent rank-one boundary. The <a href="resolved_framing_boundary_independent_audit.html">independent resolved-boundary audit</a> also verifies the centralizer nonextension, matrix compactification, line bundles and principal Gaussian residue with the physical-cycle and quantum-dressing qualifications retained. The <a href="resolved_framing_boundary_independent_audit.html">independent global boundary audit</a> checks the torsor obstruction, compactification, exact Haar adapter and marked principal residue, including its selected-cycle limitation.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/springer_centralizer_boundary_source.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-cut-meridian-has-its-literal-springer-resolution">1. The cut meridian has its literal Springer resolution</a><a href="#the-full-geometric-framing-torsor-has-a-nonextendible-pole">2. The full geometric framing torsor has a nonextendible pole</a><a href="#renormalizing-the-centralizer-produces-the-actual-source-x">3. Renormalizing the centralizer produces the actual source X</a><a href="#the-global-logarithmic-volume-has-the-compact-source-residue">4. The global logarithmic volume has the compact source residue</a><a href="#source-and-gaussian-line-weights-are-distinct-and-explicit">5. Source and Gaussian line weights are distinct and explicit</a><a href="#physical-symbol-and-residue-sections-remain-separately-marked">6. Physical-symbol and residue sections remain separately marked</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

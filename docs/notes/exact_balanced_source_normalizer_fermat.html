@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The balanced source normalizer is fixed by its compact Fermat divisor · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/exact_balanced_source_normalizer_fermat.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-balanced-source-normalizer-is-fixed-by-its-compact-fermat-divisor">The balanced source normalizer is fixed by its compact Fermat divisor</h1>
+<p>28 October 2026. The explicit balanced finite source fixes the entire central periodic factor in the trivalent quantum-beta section. For the actual root and the original full-function marks one has EXACTLY</p>
+<pre><code>A_N(u)=(N/phi_N) u^N Psi_+(h-Log u),
+h=2pi*i/N,
+phi_N=sqrt(N)exp{i*pi[1/4-(N+N^(-1))/12]}.               (1)</code></pre>
+<p>The factor u^N is indispensable. This is an identity of the actual local source, not a choice of normalization or a comparison after dividing by an unknown knot invariant. The proof uses a compact algebraic curve and its divisor; no asserted published Fourier or cyclic-dilogarithm evaluation is a premise.</p>
+<h2 id="the-exact-statement-on-a-balanced-source">1. The exact statement on a balanced source</h2>
+<p>Let Q=exp h and u<sup>N-w</sup>N=1. The actual polynomial is</p>
+<pre><code>B_N(u,w)=sum_(a=0)^(N-1) product_(j&lt;a)(u-Q^j w).</code></pre>
+<p>Its <a href="actual_sink_source_convolution.html#2-balanced-nonvanishing-and-its-exact-positive-norm-ratio">positive Fourier norm</a> proves B_N!=0 whenever w!=0, including u=0. Take z=Log u and c=Log(w/u), with compatible marked continuations. The identity equivalent to (1) is</p>
+<pre><code>B_N(u,w)=(N/phi_N)u^N Psi_+(h-z)Psi_+(c)
+                                  exp(-cz/h).         (2)</code></pre>
+<p>The left side is the ORIGINAL finite polynomial. All full-Psi marks and the scalar on the right are the ones already fixed by its defining integral and original coefficient moments.</p>
+<p>Initially take real u&gt;1 and real positive w=(u<sup>N-1)</sup>(1/N). Set t=u^(-1), s=w/u, so s<sup>N+t</sup>N=1 with 0&lt;s,t&lt;1. Let</p>
+<pre><code>D_N(y)=product_(j=1)^(N-1)(1-Q^j y)^(j/N)</code></pre>
+<p>with every factor anchored at y=0. The independently proved rational full-function identity reads</p>
+<pre><code>Psi_+(L)=exp[i Li_2(exp(NL))/(2pi*N)]
+           (1-exp(NL))^(1+iL/(2pi))/D_N(exp L).       (3)</code></pre>
+<p>Use Psi_+(h-z)=Psi_+(-z)/(1-t). Euler’s ordinary dilogarithm identity for s<sup>N+t</sup>N=1 then cancels ALL logarithmic cross terms in the proposed right side of (2). It becomes</p>
+<pre><code>B_cand=K_N s^N/[(1-t)D_N(s)D_N(t)],
+K_N=(N/phi_N)exp[i*pi/(12N)].                          (4)</code></pre>
+<p>For example the dilogarithm sum is pi<sup>2/6+N</sup>2cz; the two binomial powers in (3) and exp(-cz/h) cancel that cz term exactly. No transcendental central factor is left in the Nth power of (4):</p>
+<pre><code>B_cand^N=K_N^N s^(N^2)/[(1-t)^N
+         product_(j=1)^(N-1)(1-Q^j s)^j
+         product_(j=1)^(N-1)(1-Q^j t)^j].              (5)</code></pre>
+<p>Thus (5) is a rational function on the compact Fermat curve.</p>
+<h2 id="the-divisor-of-the-actual-finite-polynomial">2. The divisor of the ACTUAL finite polynomial</h2>
+<p>Use the smooth projective curve C_N: s<sup>N+t</sup>N=1. It is connected: its affine polynomial is Eisenstein over C[t] at t-1. In these coordinates the actual finite function is</p>
+<pre><code>B_N=sum_(a=0)^(N-1)t^(-a)(s;Q)_a.                     (6)</code></pre>
+<p>Its only possible zeros or poles are at s=0, t=0 or infinity. Away from those loci u,w are finite nonzero, and the exact Fourier recurrence proves B_N!=0. At infinity u=0 and w^N=-1; the same recurrence still has every coefficient nonzero, so B_N is finite and nonzero there as well.</p>
+<p>At s=0,t=Q^j, one has u=Q^(-j), w=0. The order of B_N is exactly j, for j=0,…,N-1. To prove this, write B_N(u,w)=sum_k b_k(u)w^k. Its finite source recurrence gives</p>
+<pre><code>(uQ^k-1)b_k=Q^(k-1)b_(k-1), 1&lt;=k&lt;N.</code></pre>
+<p>At u=Q^(-j), the coefficients before k=j vanish; the top coefficient is nonzero, so b_j!=0 by backward recurrence. For j=0 the constant is N. Along the Fermat curve the perturbation of u has order N in w, which does not change this first nonzero order j&lt;N.</p>
+<p>At t=0,s=Q^(-k), the order is a POLE of order k, k=0,…,N-1. Indeed s-Q^(-k) has order N in t. In (6), terms a&gt;k therefore have order at least N-a&gt;0, while among a&lt;=k the unique highest pole is a=k with nonzero coefficient. For k=0, B_N tends to one. These calculations also cover every composite and even level.</p>
+<p>The divisor of B_N^N is consequently:</p>
+<pre><code>zero order Nj at s=0,t=Q^j,
+pole order Nk at t=0,s=Q^(-k),</code></pre>
+<p>with no other zeros or poles. Orders zero mean ordinary nonzero values, not deleted points.</p>
+<h2 id="the-candidate-has-the-same-divisor-including-infinity">3. The candidate has the same divisor, including infinity</h2>
+<p>Read the orders directly from (5). At s=0,t=Q^j, j!=0, t-Q^j has order N in s. The only vanishing t-factor is j’=N-j, with exponent N-j. The numerator has order N^2. The net zero order is N^2-N(N-j)=Nj. At j=0 the factor (1-t)^N instead has order N^2, cancelling the numerator.</p>
+<p>At t=0,s=Q^(-k), k!=0, the only vanishing s-factor is j’=k, with order Nk; it gives the required pole. At k=0 no such factor occurs. At infinity both s,t have simple poles. The numerator has degree N^2 and the denominator has degree N+2 sum_(j=1)<sup>(N-1)j=N</sup>2, with nonzero leading coefficients. Thus (5) has neither a zero nor a pole there.</p>
+<p>Therefore B_N<sup>N/B_cand</sup>N is a rational function on the compact connected C_N with no zero or pole. It is constant.</p>
+<p>Its constant and its Nth root are fixed by a marked source value, not a free scalar. Take t-&gt;0,s-&gt;1 on the initial positive branch. Equation (6) gives B_N-&gt;1. Also</p>
+<pre><code>c=(1/N)Log(1-u^(-N))=-u^(-N)/N+O(u^(-2N)),
+Psi_+&#39;(0)=-Psi_+(h)=-phi_N.</code></pre>
+<p>The latter follows directly from Psi_+(c+h)=Psi_+(c)/(1-exp c) and its nonzero marked value. Thus the right side of (2) tends to one as well. The constant in the Nth powers is one; their continuous Nth-root ratio is one on this marked branch. Analytic continuation proves (2), and hence (1).</p>
+<p>Every deck factor is consistent. Increasing c by h changes w to Qw and multiplies BOTH sides of (2) by 1/(u-w), by the balanced finite source equation and the full-Psi shift. Increasing c or z by 2pi*i has its complete central multiplier canceled by exp(-cz/h). Thus the asserted continuation keeps the original source rather than selecting an independent norm-one trivialization.</p>
+<h2 id="the-actual-trivalent-source-now-has-no-unknown-periodic-factor">4. The actual trivalent source now has no unknown periodic factor</h2>
+<p>For the original chamber Im u&lt;0, Im(v/u)&gt;0, put c=Log(v/u). The <a href="actual_trivalent_quantum_beta_source.html">exact beta source</a> is therefore explicitly</p>
+<pre><code>B_N(u,v)=S_N(u,v)+(1-u^N+v^N)I_N(u,v),
+
+S_N=(N/phi_N)u^N Psi_+(h-Log u)Psi_+(c)
+                                       exp(-c Log u/h). (7)</code></pre>
+<p>There is an exact version in the ORIGINAL reflected field variables. Write z=Log U, c_0=Log(V/U), and retain the actual tags u=Q^2U,v=QV with Log u=z+2h and c=c_0-h. The backward full-Psi shift gives the balanced part of its constant coefficient as</p>
+<pre><code>C_N^(bal)(U,V)=Q^(2-d)/phi_N
+   *U^(N+1)(U-Q^(-1))(U-Q^(-1)V)/V^2
+   *Psi_+(-z)Psi_+(c_0)exp(-c_0 z/h), d=N-1.           (7a)</code></pre>
+<p>Its remaining ORIGINAL current is exactly</p>
+<pre><code>C_N^(current)=Q^(-d)/N*(1-U^N+V^N)I_N(Q^2U,QV).        (7b)</code></pre>
+<p>Indeed Psi_+(-z-h)=(1-Q^(-1)/U)Psi_+(-z) and Psi_+(c_0-h)=(1-Q^(-1)V/U)Psi_+(c_0); expanding the Gaussian accounts for Q^2 U<sup>3/V</sup>2. Thus the full physical right shapes are literally 1/U and V/U. The boundary polynomial, central U^N, Gaussian and Q^(2-d) remain. The bare fiber has the expected nonzero N^(-1/2) factor phi_N^(-1). These equations are at the original physical root; no off-root replacement of Q^N or of its derivatives is being asserted.</p>
+<p>Here I_N is its specified upward Barnes contour and is uniformly O(1) on compact positive boundary families. Equation (7) retains the original current; it does not assert that it is negligible for every positive bipyramid.</p>
+<p>The full-Psi strip estimate now gives the residue rate on the ENTIRE chamber, including |u|=1 and geometric clock rotations. Uniformly on compact subsets,</p>
+<pre><code>log|S_N|=N Lambda(u,v)+O(log N),
+Lambda=[ImLi_2(v/u)-ImLi_2(u)
+      +(pi-Arg(v/u))log|u|-Arg(u)log|v|]/(2pi).       (8)</code></pre>
+<p>Both full-function arguments in (7) stay in regular angular strips. The central source u^N in (7) supplies log|u| to the rate; omitting it changes (8). There is no Diophantine small-factor estimate hidden at |u|=1.</p>
+<p>In fact the ENTIRE leading block is explicit. The exact shift Psi_+(h-Log u)=Psi_+(-Log u)/(1-u^(-1)) and the uniform full-function symbol give</p>
+<pre><code>S_N=(N/phi_N)
+   (1-v/u)^(1/2)/(1-u^(-1))^(1/2)
+   exp{[Li_2(v/u)+Li_2(1/u)-Log(v/u)Log u
+                                  +2pi*i Log u]/h}
+   *[1+O(1/N)].                                     (8a)</code></pre>
+<p>All square roots and dilogarithms inherit their original upper-strip marks. The factor N/phi_N retains its exact phase and has modulus sqrt(N). Both shapes v/u and 1/u are upper. The half-density in (8a) is consequently nonzero and bounded above and below, after dividing by sqrt(N), on every compact positive boundary family. The affine 2pi*i Log u term is the retained central source, not an arbitrarily added choice of classical action.</p>
+<p>Consequently every compact family with</p>
+<pre><code>Lambda&gt;max(0,log|u|,log|v|)</code></pre>
+<p>by a fixed positive margin has ORIGINAL local source B_N=S_N(1+O(N^C exp(-eta N))). This extends the local <a href="actual_sink_source_convolution.html">positive-norm growth theorem</a> beyond its elementary |u|&lt;1 product estimate. The exact actual Q shifts u=Q^2U,v=QV and its NQ^d normalization are carried by that theorem unchanged.</p>
+<p>Thus in the gap chamber the actual local source has exactly the growing two-face block (8a), with relative error O(1/N)+O(N^C exp(-eta N)). This supplies its nonzero leading coefficient rather than postulating the survival of a saddle.</p>
+<p>This is an exact local torsor/source normalization followed by a local noncancellation theorem. A broad knot proof still requires a simultaneous positive-chart and exterior-cycle comparison putting the actual relevant fibers in this gap chamber, or retaining their other currents by another method.</p>
+<p>The companion audit checks the full-Psi normalizer against the ACTUAL balanced finite source at both |u|&lt;1 and |u|&gt;1. The divisor argument, not finite numerical agreement, proves the all-level identity above.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/exact_balanced_source_normalizer_fermat.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-exact-statement-on-a-balanced-source">1. The exact statement on a balanced source</a><a href="#the-divisor-of-the-actual-finite-polynomial">2. The divisor of the ACTUAL finite polynomial</a><a href="#the-candidate-has-the-same-divisor-including-infinity">3. The candidate has the same divisor, including infinity</a><a href="#the-actual-trivalent-source-now-has-no-unknown-periodic-factor">4. The actual trivalent source now has no unknown periodic factor</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

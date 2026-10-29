@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Actual peripheral action, fusion poles, and the normal boundary lattice · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_peripheral_fusion.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="actual-peripheral-action-fusion-poles-and-the-normal-boundary-lattice">Actual peripheral action, fusion poles, and the normal boundary lattice</h1>
+<p>Research note, 26 October 2026. This reconstructs a peripheral-module comparison directly from the literature ADO matrices. The two elementary boundary curves act by specified difference operators, and the fusion pole at the complete meridian has a nonzero square-zero Casimir residue. The proof is uniform in the knot and in every level N&gt;=2. It does not identify the actual quantum period with a geometric gluing period or prove its exponential norm.</p>
+<p>The <a href="ge_geometric_triangulation_audit.html">positive ideal triangulation</a> supplies the marked geometric Bloch class. The <a href="quantum_longitude_and_regulator_action.html">crossing/action comparison</a> already identifies the classical action of the actual state with that class. The present calculation specifies additional <em>quantum boundary data</em> that a period comparison must preserve, including its singular specialization at M=1.</p>
+<h2 id="fixed-colors-parameter-and-duality">1. Fixed colors, parameter, and duality</h2>
+<p>Use exactly the conventions of <a href="kashaev_ado_pointing.html">the ADO definition audit</a>:</p>
+<pre><code>q=exp(pi*i/N), D=q-q^(-1), x=q^alpha, M=-qx,
+[z]=(q^z-q^(-z))/D, T h(M)=h(qM).</code></pre>
+<p>On V_alpha, with 0&lt;=j&lt;N,</p>
+<pre><code>E v_j=[j][alpha-j+1]v_(j-1), F v_j=v_(j+1),
+K v_j=xq^(-2j)v_j, H v_j=(alpha-2j)v_j,
+Delta E=E tensor K+1 tensor E,
+Delta F=F tensor 1+K^(-1) tensor F.</code></pre>
+<p>Let W be the two-dimensional highest-weight-one color, with basis w_0,w_1. Its E,F entries are one and its K eigenvalues are q,q^(-1). The actual pivot and twist on W are</p>
+<pre><code>g_W=K_W^(1-N)=diag(-q,-q^(-1)),
+theta_W=q^(3/2-N)=-q^(3/2).                    (1.1)</code></pre>
+<p>A right partial trace over W uses g_W; a left partial trace over the first factor W uses g_W^(-1). Interchanging these is an actual error: it changes the fusion weights derived below.</p>
+<p>For completeness, choose A=q^(1/2)=exp(pi*i/(2N)), with that root retained. An invariant cup and cap on W are</p>
+<pre><code>b(1)=w_0 tensor w_1-q^(-1)w_1 tensor w_0,
+d(w_0 tensor w_1)=-q, d(w_1 tensor w_0)=1,
+d(w_0 tensor w_0)=d(w_1 tensor w_1)=0.</code></pre>
+<p>Direct contraction gives both zigzags equal to identity and db=-q-q^(-1). For e=bd, the actual fundamental crossing satisfies</p>
+<pre><code>checkR_WW=A*I+A^(-1)*e, e^2=-(q+q^(-1))*e.    (1.2)</code></pre>
+<p>Indeed its only nontrivial two-by-two block, in order 01,10, is q^(-1/2)[[0,1],[1,D]], while e has block [[-q,1],[1,-q^(-1)]]. Closing (1.2) gives the twist in (1.1). Thus a link colored by W obeys the framed Kauffman bracket relations in this root convention. This is checked from the matrices, not imported as a skein-comparison theorem. It remains valid at N=2, when the loop value is zero.</p>
+<h2 id="an-explicit-fusion-basis-and-its-exact-degeneracy">2. An explicit fusion basis and its exact degeneracy</h2>
+<p>For generic alpha, define in W tensor V_alpha</p>
+<pre><code>h_+=w_0 tensor v_0,
+h_-=[alpha]w_1 tensor v_0-x w_0 tensor v_1.</code></pre>
+<p>The coproduct kills both by E. Their H weights are alpha+1 and alpha-1. Iteration of the displayed Delta F gives, with v_N=0,</p>
+<pre><code>F^j h_+=q^(-j)w_0 tensor v_j+[j]w_1 tensor v_(j-1),
+F^j h_-=-xq^(-j)w_0 tensor v_(j+1)
+                                  +[alpha-j]w_1 tensor v_j.  (2.1)</code></pre>
+<p>Both chains have length N: the next terms vanish by [N]=0 and v_N=0. The commutator [E,F]=(K-K^(-1))/D now gives on a chain of highest weight beta exactly E F^j h=[j][beta-j+1]F^(j-1)h. This can also be verified directly in (2.1). The two chains are therefore the specified colors V_(alpha+1) and V_(alpha-1).</p>
+<p>Set</p>
+<pre><code>delta=[alpha+1]=-(M-M^(-1))/D.                 (2.2)</code></pre>
+<p>In each intermediate weight space, in the basis w_0 v_r,w_1 v_(r-1), the two columns of (2.1) are</p>
+<pre><code>(q^(-r),[r])^t,
+(-xq^(1-r),[alpha-r+1])^t.</code></pre>
+<p>Their determinant is exactly delta. The top weight is one-dimensional; the last coefficient is [alpha-N+1]=-delta. Hence the whole fusion change of basis has determinant +/-delta^N, with the sign depending only on the ordering of columns and weight spaces. Consequently</p>
+<pre><code>W tensor V_alpha = V_(alpha+1) direct-sum V_(alpha-1)
+                                                    if delta!=0. (2.3)</code></pre>
+<p>This is a direct basis proof, including composite and even levels. It identifies the precise divisor where the splitting fails.</p>
+<h3 id="casimir-projectors-with-their-poles-retained">Casimir projectors, with their poles retained</h3>
+<p>The Casimir in these conventions is</p>
+<pre><code>C=FE+(qK+q^(-1)K^(-1))/D^2.</code></pre>
+<p>The generator relations show that it commutes with E,F,K,H. On a highest-weight beta color it has value c_beta=(q<sup>(beta+1)+q</sup>(-beta-1))/D^2. On W tensor V_alpha put</p>
+<pre><code>c_-=(x+x^(-1))/D^2,
+c_+=(q^2*x+q^(-2)*x^(-1))/D^2,
+A_alpha=C_total-c_-*I.</code></pre>
+<p>Then c_+-c_-=delta, and (2.3) gives</p>
+<pre><code>A_alpha^2=delta*A_alpha,
+P_+=A_alpha/delta, P_-=I-P_+.                 (2.4)</code></pre>
+<p>These are the actual projectors at delta!=0. Equation (2.4), after clearing delta, is a Laurent identity, so its first equation also holds on the divisor. No projector is evaluated separately there.</p>
+<h2 id="the-two-elementary-boundary-curves-act-on-the-actual-period">3. The two elementary boundary curves act on the actual period</h2>
+<p>Let F_N^L(M) be the reduced cut evaluation of a zero-framed knot colored V_alpha, with any fixed framed W-colored link L in its complement. In particular F_N^empty=F_N is the already specified knot period. This construction also makes sense for linear combinations of such links.</p>
+<p>Write lambda for adding a W-colored, zero-framed preferred parallel of the knot and mu for adding a positive W meridian. The exact formulas are</p>
+<pre><code>F_N^(lambda L)(M)
+   =-f(qM)/f(M)*F_N^L(qM)
+    -f(q^(-1)M)/f(M)*F_N^L(q^(-1)M),
+F_N^(mu L)(M)=(M+M^(-1))*F_N^L(M),
+f(M)=M-M^(-1).                                (3.1)</code></pre>
+<p>These are identities of whole meromorphic germs; apparent poles in the first line cancel when the actual finite evaluation is regular.</p>
+<h3 id="proof-of-the-longitude-weights">Proof of the longitude weights</h3>
+<p>Coloring the knot by W tensor V_alpha is the framed parallel construction by the following finite-product check. Write R=D_Cartan*sum_(k=0)^(N-1)c_k E^k tensor F^k, with c_k=q<sup>(k(k-1)/2)*D</sup>k/[k]!. The two summands of Delta E q^2-commute. Their ordered q-binomial coefficients give</p>
+<pre><code>c_(i+j)*binomial_(q^(-2))(i+j,i)=c_i*c_j,</code></pre>
+<p>which follows at once by writing [k]!=q<sup>(k(k-1)/2)*(q</sup>(-2);q<sup>(-2))_k/(1-q</sup>(-2))^k. Moving the Cartan factors past E and F then gives, term by term,</p>
+<pre><code>(Delta tensor id)R=R_13 R_23,
+(id tensor Delta)R=R_13 R_12.</code></pre>
+<p>Only i+j&lt;N contributes, because the remaining E^N or F^N is zero; all factorial denominators used here are nonzero. The common Cartan scalars agree by additivity of the highest weights. Tensor-product cups, caps and pivots contract directly. This proves the required local parallel replacement, retaining its framing. It retains the preferred zero framing; its twist is the twist of the tensor color, not a scalar twist chosen for one summand. Naturality with the two explicit submodule inclusions in (2.3) gives its cut map</p>
+<pre><code>Z_alpha^L=F_N^L(qM)P_++F_N^L(q^(-1)M)P_-.     (3.2)</code></pre>
+<p>For generic alpha each summand is simple; its cut endomorphism is therefore its scalar by the same quantum-group intertwining argument as for the original ADO cut. Possible exceptional colors are handled after clearing the explicit denominators.</p>
+<p>Taking the left pivotal partial trace over the first W gives the weights. On the highest vector v_0, P_+ has coefficient one in w_0 v_0 and x/delta in w_1 v_0, by the two-column inverse above. Consequently, with g_W<sup>(-1)=diag(-q</sup>(-1),-q),</p>
+<pre><code>ptr_W^left(P_+)=-q^(-1)-qx/delta
+               =-[alpha+2]/[alpha+1],
+ptr_W^left(P_-)=-[alpha]/[alpha+1].           (3.3)</code></pre>
+<p>The partial trace is an intertwiner of a generic simple V_alpha, so this highest diagonal entry is its scalar on the whole module. Substituting x=-M/q in (3.3) gives the first line of (3.1). There is no assumed modified-trace additivity theorem in this proof.</p>
+<p>The full modified dimension</p>
+<pre><code>d_N(M)=eta_N*f(M)/(M^N-M^(-N)), eta_N=i^(N+3)</code></pre>
+<p>has exactly these ratios:</p>
+<pre><code>d_N(q^(+/-1)M)/d_N(M)=-f(q^(+/-1)M)/f(M).    (3.4)</code></pre>
+<p>Here q^N=-1 changes the sign of the denominator; it is essential. Thus for the full period N_N^L=d_N F_N^L, equations (3.1) become</p>
+<pre><code>N_N^(lambda L)=(T+T^(-1))N_N^L,
+N_N^(mu L)=(M+M^(-1))N_N^L.                  (3.5)</code></pre>
+<h3 id="proof-of-the-marked-meridian">Proof of the marked meridian</h3>
+<p>On V_alpha tensor W use the actual unstripped double crossing R_21 R and take the right trace over W. This is an intertwiner of V_alpha, so evaluate its highest diagonal entry. The two W weights contribute -q*x and -q<sup>(-1)*x</sup>(-1), respectively. Terms containing E kill the highest vector or change its index and cannot contribute to that diagonal entry. Hence the scalar is</p>
+<pre><code>-(qx+q^(-1)x^(-1))=M+M^(-1).                 (3.6)</code></pre>
+<p>This fixes the meridian sign in the marking M=-qx. At the trivial highest-weight color alpha=0, M=-q, it gives the actual fundamental loop -q-q^(-1). At completeness M=1 it gives +2. The preferred longitude and meridian signs must not be independently guessed from a trace convention at q=1.</p>
+<h3 id="a-direct-route-from-peripheral-relations-to-actual-annihilators">A direct route from peripheral relations to actual annihilators</h3>
+<p>Let P be a finite linear combination of words in the two specified boundary curves. Suppose P acting on the empty link is zero in the Kauffman bracket skein module of the knot complement. Evaluate that relation using (1.2), with its coefficient square roots retained. Repeated use of (3.5), valid for every intermediate L, gives</p>
+<pre><code>P(M+M^(-1),T+T^(-1)) N_N=0.                 (3.7)</code></pre>
+<p>The order in each word is preserved. Rational coefficient poles allow only the usual finite exceptional set of levels. When the word coefficients lie in C(q), (3.7) belongs to the literature all-level ADO ideal. Coefficients in C(q^(1/2)) are kept over that explicit extension; no descent to C(q) is silently asserted.</p>
+<p>Thus peripheral skein relations yield actual knot-state annihilators by an independent local proof. No equality of the peripheral ideal with the full annihilator ideal, and no AJ specialization theorem, is inferred. Such an equality or a survival argument would still be needed to force its geometric classical component into a primitive minimal operator.</p>
+<h2 id="a-regular-boundary-lattice-and-the-exact-normal-functional">4. A regular boundary lattice and the exact normal functional</h2>
+<p>Define w_N<sup>L=f(M)F_N</sup>L(M). Conjugating (3.1) gives regular Laurent boundary operators on this specified normal state:</p>
+<pre><code>lambda_w=-(T+T^(-1)), mu_w=M+M^(-1).         (4.1)</code></pre>
+<p>The denominator f(M) in the reduced-state action is therefore a genuine change of boundary lattice with a divisor at M=1. It is not a numerical multiplier. The original reduced period is still recovered from that lattice and its normal derivative.</p>
+<p>For the empty link, the <a href="actual_weyl_descent.html">actual Weyl theorem</a> makes F_N invariant under M-&gt;M^(-1), so w_N is odd. With u=Log M,</p>
+<pre><code>w_N(1)=0, K_N=F_N(1)=(1/2)*d_u w_N|_(u=0).   (4.2)</code></pre>
+<p>This is the prescribed normal functional, not a choice of a new solution. Put Y=M^2, U=Y^N and v_N=(Y-1)F_N=M*w_N. Then</p>
+<pre><code>lambda_v=-q^(-1)T-qT^(-1)=kappa*T+kappa^(-1)T^(-1),
+kappa=-q^(-1), kappa^N=(-1)^(N-1),
+K_N=N*partial_(U-1)v_N|_(U=1,M=1).           (4.3)</code></pre>
+<p>These agree with the independently derived full ADO character and <a href="peripheral_normal_period.html">normal period</a>. The full period has the regular whole-germ value eta_N*K_N/N at M=1.</p>
+<p>In particular, a peripheral word relation P as in (3.7) has a regular normal representative</p>
+<pre><code>B_w=P(M+M^(-1),-(T+T^(-1))),
+B_w*w_N=0, (B_w*f(M))*F_N=0.                 (4.4)</code></pre>
+<p>Thus the cleared reduced operator has its right boundary factor f(M) without assuming positive volume growth. Passing from w_N to v_N conjugates each T by q^(-1); the right factor becomes Y-1, with the unit M explicitly retained. If the word has even meridian parity and coefficients in C(q), its normal coefficients descend to C(q,Y) and this is exactly an integral operator B_v*(Y-1) of the preceding normal-period theory. It need not be the primitive minimal operator, and taking an additional left factor can introduce extra root-fiber kernels.</p>
+<p>Adding a fundamental meridian changes meridian parity. Thus mixed W-colored links are kept on the marked M cover; one must not assume their reduced evaluations are even in M just because the original knot period is. In the even meridional subalgebra, mu^2-2 becomes Y+Y^(-1). Formula (4.3) retains the half-root and the even-level longitude sign rather than passing to an unsigned 2N-th norm.</p>
+<h2 id="the-complete-fusion-fiber-has-a-nonzero-square-zero-residue">5. The complete fusion fiber has a nonzero square-zero residue</h2>
+<p>At alpha=N-1 we have M=1 and delta=0. The matrix A_alpha in (2.4) is regular. Write A_0 for its value there. Each of its intermediate two-dimensional weight blocks is</p>
+<pre><code>[[q^(-r)[r], -q^(-2r)],
+ [[r]^2,     -q^(-r)[r]]],  1&lt;=r&lt;N.          (5.1)</code></pre>
+<p>Each block has rank one and square zero; [r]!=0 in this range. The top and bottom weight blocks are zero. Consequently, uniformly,</p>
+<pre><code>A_0^2=0, rank(A_0)=N-1,
+ptr_W^left(A_0)=I_(V_(N-1)).                 (5.2)</code></pre>
+<p>The last equality also follows from delta*ptr(P_+)=-[alpha+2] in (3.3) and [N+1]=-1. It fixes the residue normalization exactly. The colliding Casimir eigenblocks have N-1 Jordan blocks of size two and two blocks of size one. In particular the generic split fusion cannot be specialized as a direct sum of scalar-Casimir blocks. No classification of projective modules is needed for this conclusion, nor is indecomposability of the whole tensor module asserted.</p>
+<p>There is also an exact knot-dependent coefficient of this nilpotent residue. The pointing and Weyl identities give F_N(q)=F_N(q^(-1))=1. Apply (3.2) as a whole germ, rewriting it as</p>
+<pre><code>Z_alpha=F_N(q^(-1)M)*I
+           +(F_N(qM)-F_N(q^(-1)M))/delta * A_alpha.</code></pre>
+<p>The quotient has a removable singularity. Using (2.2) and the reflection identity to differentiate, its complete value is</p>
+<pre><code>Z_0=I+tau_N*A_0,
+tau_N=-(q-q^(-1))*(M partial_M F_N)(q).       (5.3)</code></pre>
+<p>Closing the fundamental color gives</p>
+<pre><code>F_N^(lambda)(1)=-(q+q^(-1))+tau_N.           (5.4)</code></pre>
+<p>This is a specified nilpotent extension coefficient in the actual state, computed without assuming a geometric contribution. It is not K_N itself: (4.2) evaluates a normal derivative at M=1, while (5.3) evaluates one at the adjacent ordinary color M=q. No equality of their exponential rates is asserted. For the unknot F_N=1, tau_N=0 even though the universal residue A_0 is nonzero. Thus the local extension’s existence does not force its excitation by the selected knot period.</p>
+<h2 id="where-this-meets-the-ideal-triangulation-theorem">6. Where this meets the ideal triangulation theorem</h2>
+<p>The ideal triangulation provides the positive representative beta_T with D(beta_T)=Vol and fixes the marked regulator norm. The <a href="quantum_longitude_and_regulator_action.html">actual classical action proof</a> already matches that regulator without an imaginary additive constant. The present calculation adds exact quantum peripheral operators, a regular normal boundary lattice, and its nonsemisimple specialization. These are specific data available for every knot.</p>
+<p>A geometric gluing construction can now be asked to match these operators and this normal functional, rather than merely a generic central equation. It must also carry the actual vacuum/source class. One concrete common object is the skein module of the knot complement: (1.2) and (3.5) give its actual ADO evaluation as a peripheral-module map. A proposed triangulation evaluation must intertwine the same boundary action, preserve the retained normal lattice, and send the same empty-link class to the selected period. An isomorphism of unpointed modules alone would not prove those evaluation maps agree. Equation (3.7) supplies one direction of peripheral-operator compatibility, not equality of modules. The nonzero geometric contribution of the selected normal period, and its norm</p>
+<pre><code>(4/N)log|K_N| -&gt; log||P_hyp||=2Vol/pi,</code></pre>
+<p>remain unproved. Existence of a positive triangulation supplies the geometric representative; it does not identify or bound the knot-dependent extension coefficient or the selected inverse pairing.</p>
+<p>The subsequent <a href="ramified_weyl_fibre.html">ramified Weyl-fibre construction</a> now realizes the prescribed normal functional as an ordinary algebraic evaluation on a descended fibre. The ramification retains the first negative-sector coefficient; evaluating on the root orbit before descent would discard it. An explicit equivariant frame change shows that agreement on that ordinary root fibre is insufficient to fix the period. The marked ramified fibre is therefore additional comparison data; its regulator norm remains unproved.</p>
+<p>The subsequent <a href="ado_threaded_shadow.html">threaded-character proof</a> extends the boundary calculation to arbitrary interior loops. Explicit integral Weyl exact sequences replace singular root-level projectors, and filtered auxiliary traces give the exact degree-N phases and degree-2N abelian even character. This supplies an interior central-data test for a geometric comparison and a separating-observable criterion for an actual source extension; it does not identify that extension or its regulator norm.</p>
+<h2 id="coverage-and-independent-verification">7. Coverage and independent verification</h2>
+<p>Representation theory and projective colors of this unrolled quantum group are covered by Costantino–Geer–Patureau-Mirand, <a href="https://arxiv.org/abs/1406.0410">Some remarks on the unrolled quantum group of sl(2)</a>. The torus skein/noncommutative-torus relationship is covered by Frohman–Gelca, <a href="https://arxiv.org/abs/math/9806107">Skein Modules and the Noncommutative Torus</a>. The coverage check uses their abstracts and bibliographic scope; none of their representation, skein, or comparison proofs is a premise of the calculations above. No novelty is claimed for these general constructions. The relevant concrete results here are the normalization-matched formulas and their independently checked wall. Derivative-valued knot invariants from the radical of the restricted quantum-group center also have coverage in Murakami, <a href="https://arxiv.org/abs/1406.1287">From colored Jones invariants to logarithmic invariants</a>. Its abstract is used for coverage only. No identity between tau_N and its named invariants, or any asymptotic theorem, is assumed.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_peripheral_fusion.py">audit_actual_peripheral_fusion.py</a> constructs the coproduct, Casimir, and actual R matrices independently of the displayed projectors. It checks 45 fusion/wall cases, 30 heterogeneous Hopf cases, and 15 fundamental skein/duality cases at 15 levels including even and composite levels through 24. Six additional tensor-color cases verify both parallel-crossing identities through level 8, including their common Cartan scalars. A separate 16 cabled-knot checks construct the actual R and twist of the full 2N-dimensional tensor color, rather than defining its knot map by fusion. They verify generic decomposition and the nilpotent derivative coefficient at the ideal color, at levels 2,3,4,5 for two signed two-strand braids. Results are in <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_peripheral_fusion_results.json">actual_peripheral_fusion_results.json</a>. The finite diagnostics support the uniform proofs; they establish no asymptotic statement.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_peripheral_fusion.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#fixed-colors-parameter-and-duality">1. Fixed colors, parameter, and duality</a><a href="#an-explicit-fusion-basis-and-its-exact-degeneracy">2. An explicit fusion basis and its exact degeneracy</a><a href="#the-two-elementary-boundary-curves-act-on-the-actual-period">3. The two elementary boundary curves act on the actual period</a><a href="#a-regular-boundary-lattice-and-the-exact-normal-functional">4. A regular boundary lattice and the exact normal functional</a><a href="#the-complete-fusion-fiber-has-a-nonzero-square-zero-residue">5. The complete fusion fiber has a nonzero square-zero residue</a><a href="#where-this-meets-the-ideal-triangulation-theorem">6. Where this meets the ideal triangulation theorem</a><a href="#coverage-and-independent-verification">7. Coverage and independent verification</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

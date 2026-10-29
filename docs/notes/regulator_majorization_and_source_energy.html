@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Majorization, exact regulator conservation, and pointed energy · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/regulator_majorization_and_source_energy.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="majorization-exact-regulator-conservation-and-pointed-energy">Majorization, exact regulator conservation, and pointed energy</h1>
+<p>28 October 2026. Majorization gives a sharp general product inequality, but by itself it pays the pointwise singular-value envelope. There is a stronger, useful strict-convexity statement: a bistochastic mixing map which fixes the regulator observable can mix only equal-regulator channels. That property makes the exponential action weights telescope and gives an endpoint bound for the ORIGINAL source energy. The actual quantum connection has not been proved to possess this property.</p>
+<h2 id="the-general-log-majorization-inequality">1. The general log-majorization inequality</h2>
+<p>For invertible d by d matrices A_j let s_1&gt;=…&gt;=s_d be their singular values and P=A_(m-1)…A_0. For every 1&lt;=r&lt;=d,</p>
+<pre><code>sum_(i&lt;=r)log s_i(P)
+   &lt;=sum_j sum_(i&lt;=r)log s_i(A_j).             (1)</code></pre>
+<p>Indeed the product of the top r singular values is the operator norm of the r-th exterior power. Apply the elementary product-norm bound there. At r=d equality holds, by multiplicativity of the determinant. Thus log s(P) is majorized by the decreasing vector with entries sum_j log s_i(A_j).</p>
+<p>For completeness, the convex-function implication needs no imported inequality. The partial-sum inequalities imply</p>
+<pre><code>sum_i (u_i-t)_+ &lt;=sum_i (v_i-t)_+</code></pre>
+<p>for every t, because each side is the maximum over r of its top-r sum minus rt. Every convex piecewise linear function is a linear function plus a positive combination of these hinge functions. Approximation proves sum f(u_i)&lt;=sum f(v_i) for every convex f. Taking f(t)=exp(pt), p&gt;0, yields the corresponding Schatten bound.</p>
+<p>This is sharp with only the individual singular spectra specified: positive diagonal matrices whose decreasing singular directions are aligned attain equality. It cannot be generally improved by changing the convex function.</p>
+<p>On a regular slowly varying recurrence with a tame supplied instantaneous eigenbasis, the transformed steps are diag(lambda_i(x_j))+O(1/N). For eigenvalues bounded away from zero, their singular logarithms are the decreasing log|lambda_i|+O(1/N). Consequently (1) yields the integral of the POINTWISE sorted root moduli. It does not yield the maximum complete marked-branch action. For r=1 this is the safe classical spectral envelope already proved for the actual source. All exterior-power refinements retain the same limitation at r=1.</p>
+<p>The actual source costs are not part of a singular-spectrum list:</p>
+<pre><code>|ell^*P s|&lt;=||ell|| ||s|| s_1(P).</code></pre>
+<p>In the actual macroscopic theorem, s is the entire ordinary-color packet on the denominator-avoiding complex circle and has proved polynomial norm. That fact makes (1) an original-source upper bound; it does not supply a new branch-selection inequality.</p>
+<h2 id="strict-convexity-gives-a-stronger-exact-rigidity">2. Strict convexity gives a stronger exact rigidity</h2>
+<p>Let C be a nonnegative doubly stochastic matrix and r a real vector. One has the EXACT variance identity</p>
+<pre><code>sum_(i,k) C_(ik)(r_i-r_k)^2
+                  =2 r dot (r-Cr).            (2)</code></pre>
+<p>The two quadratic terms on expansion use the row and column sums. In particular, if Cr=r, every term on the left vanishes:</p>
+<pre><code>C_(ik)&gt;0 =&gt; r_i=r_k.                           (3)</code></pre>
+<p>This is also the equality case of strict convexity of t^2 under doubly stochastic averaging. Merely preserving the TOTAL mean of r does not give (3); every doubly stochastic matrix preserves that mean.</p>
+<p>There is a noncommutative version directly suited to an energy. Let Phi(X)=sum_a K_a X K_a^* be a bistochastic Kraus channel:</p>
+<pre><code>sum_a K_a^*K_a=I, sum_a K_aK_a^*=I.</code></pre>
+<p>For a Hermitian regulator observable R,</p>
+<pre><code>sum_a ||R K_a-K_a R||_HS^2
+        =2 Tr[R(R-Phi(R))]
+        =2 Tr[R(R-Phi^*(R))].                 (4)</code></pre>
+<p>Expansion proves this identity: the two square terms each give Tr R^2, and the cross term is Tr[R Phi(R)]. Thus if either the Schroedinger or Heisenberg channel fixes R, EVERY Kraus operator commutes with R and with exp(tR). In an eigenbasis of R, all mixing is inside equal-regulator blocks. This is substantially stronger than conservation of one scalar mean in one selected state.</p>
+<p>For reference, a bistochastic channel also majorizes the eigenvalues of every positive input. For a rank-r projection Q, Tr[Q Phi(rho)]=Tr[Phi^*(Q)rho], where 0&lt;=Phi^<em>(Q)&lt;=I and Tr Phi^</em>(Q)=r. Diagonalizing rho bounds this trace by the sum of its top r eigenvalues; maximize over Q. This proves the usual convex energy inequalities directly. The NEW information required for (3) or (4) is the fixed regulator observable, not bistochasticity alone.</p>
+<h2 id="exact-telescoping-with-the-original-source-retained">3. Exact telescoping with the original source retained</h2>
+<p>Here is a concrete sufficient condition for endpoint control. It is an algebraic transport theorem, not a claim about an unverified knot connection. Let r_j be specified real diagonal action vectors and</p>
+<pre><code>G_j=diag(exp(N r_(i,j))).</code></pre>
+<p>Suppose the diagonal propagation is</p>
+<pre><code>D_j=G_(j+1) A_j G_j^(-1),
+A_j diagonal, ||A_j||&lt;=exp(epsilon_j),
+sum_j epsilon_j=o(N).                         (5)</code></pre>
+<p>Unitary diagonal phases may be included in A_j. Suppose the ACTUAL energy evolution is</p>
+<pre><code>rho_(j+1)=D_j Phi_j(rho_j)D_j^*,              (6)</code></pre>
+<p>where Phi_j is bistochastic and fixes diag(r_j) as in (4). These are conditions on specified local connection maps; no unknown terminal product or Kashaev value enters their definition. They imply</p>
+<pre><code>Tr[G_m^(-1)rho_m G_m^(-1)]
+   &lt;=exp(2sum_j epsilon_j)
+                    Tr[G_0^(-1)rho_0 G_0^(-1)].             (7)</code></pre>
+<p>Proof. By (4) each K_(a,j) commutes with G_j. Write rhohat_j=G_j^(-1)rho_j G_j^(-1). Then EXACTLY</p>
+<pre><code>rhohat_(j+1)=A_j Phi_j(rhohat_j) A_j^*.</code></pre>
+<p>Take the trace, use positivity and trace preservation, and iterate. This is the desired partial-sum telescoping: all intermediate action potentials cancel, including at equal-regulator mixing events.</p>
+<p>For a genuine amplitude recurrence the special case is one UNITARY Kraus operator U_j. If [U_j,diag(r_j)]=0 and A_j=I, the whole product is exactly</p>
+<pre><code>P=G_m (U_(m-1)...U_0)G_0^(-1).                (8)</code></pre>
+<p>If the zero anchor gives G_0=I, the singular values of P are EXACTLY the endpoint exp(N r_(i,m)), up to ordering. Thus every top-r log-majorization bound telescopes to an endpoint sum, not an integral of separately sorted local increments.</p>
+<p>For the ORIGINAL pure input rho_0=s s^* and output ell, (7) gives</p>
+<pre><code>ell^*rho_m ell &lt;=exp(2sum epsilon_j)
+       ||G_m ell||^2 ||G_0^(-1)s||^2.         (9)</code></pre>
+<p>When the actual evolution is coherent, rho_m=P s s<sup>*P</sup><em>, its left side is exactly |ell^</em>P s|^2. No replacement of that evolution by an artificial mixture is implicit in (9).</p>
+<p>The general positive-output energy has the same bound with its specified output Gram matrix in place of ell ell^*. All actual external factors and original source normalizations remain outside this estimate unchanged. In particular a zero regulator anchor, polynomial original source and co-source norms, and r_(i,m)&lt;=Vol(K)/(2pi) give the sharp desired UPPER rate. No nonzero overlap or lower rate follows.</p>
+<p>Introducing an artificial dephasing or a Kraus average does NOT establish premise (6). For the original coherent scalar one must prove its amplitude evolution or its exact selected Plancherel energy has that positive channel representation. Nor does regulator invariance under finite character-cover monodromy over a FIXED normalized peripheral point, or equality at a ramification point, imply invariance under the quantum connection. A meridian loop which ends on a different longitude sheet can have a different regulator.</p>
+<p>A bounded number of subexponentially bounded connection matrices supported only in equal-action blocks also suffices in (8), with a subexponential norm factor; more generally their summed logarithmic norm cost must be o(N). They need not be unitary. Genuine representation ramification supplies equality of the calibrated values on a colliding block. Proving that the actual quantum connection has only those blocks, with that bound, remains the analytic/source requirement.</p>
+<h2 id="approximate-conservation-needs-the-right-accuracy">4. Approximate conservation needs the right accuracy</h2>
+<p>Formula (4) gives a quantitative diagnostic. If ||Phi^*(R)-R||_HS&lt;=eta and ||R||_HS&lt;=B, then</p>
+<pre><code>sum_a ||[R,K_a]||_HS^2&lt;=2B eta.               (10)</code></pre>
+<p>Across a pair of regulator eigenvalues separated by g, the total squared Kraus mass is at most 2B eta/g^2. Hence polynomial approximate conservation gives only polynomial off-block suppression. After conjugation by exp(NR), a transition from r_k to r_i carries exp[N(r_k-r_i)]. A polynomial error need not survive that factor. For example a bound from (10) alone would need eta exponentially smaller than exp[-2N(r_k-r_i)] for an upward weighted transition. The fixed point property or an actual action barrier is essential.</p>
+<p>The independently proved Gaussian model makes this quantitative: its off-diagonal coupling can be 1/N, its complete marked branch actions are zero, but its selected growth is a/4-theta^2/(4a)&gt;0. Discarding coherent phases costs still more. If W_N(theta)=b_N sum_(k=0)^(N-1) exp[a k(N-k)/N+i k theta], exact finite Fourier orthogonality gives</p>
+<pre><code>(1/N)sum_(ell=0)^(N-1)|W_N(2pi ell/N)|^2
+   =b_N^2 sum_(k=0)^(N-1)exp[2a k(N-k)/N].   (11)</code></pre>
+<p>The square-root energy rate is a/4, exactly the scalar envelope, whereas fixed theta in (0,min(a,pi)) has the smaller coherent rate. Thus a positive phase-averaged energy can destroy the conversion penalty that one is trying to use. Equation (11) is a phase-variable example, NOT the actual root-color Plancherel energy: that actual identity retains its special ordinary-color polynomial remainder.</p>
+<h2 id="the-knot-specific-test-suggested-by-majorization">5. The knot-specific test suggested by majorization</h2>
+<p>The useful test is stronger than convex ordering of root moduli: construct the ACTUAL connection on a calibrated representation packet and prove that its positive energy map is bistochastic and fixes the regulator observable, or prove directly that its entries are confined to equal-calibrated-action blocks with subexponential cost. The exact rigidity (2)–(4) then supplies the missing no-upward-action mixing statement and the source estimate (7)–(9).</p>
+<p>The <a href="complex_peripheral_action_and_conversion_bound.html">complex representation-path theorem</a> already supplies calibrated equality at genuine normalized ramification and an absolute endpoint volume bound. The <a href="two_bridge_midpoint_regulator_anchor.html">two-bridge midpoint theorem</a> supplies the zero anchor on every genuine component of that class. The finite quantum connection, its possible nodal jumps, and its exact selected energy are still to be identified and bounded. General log-majorization or Karamata does not manufacture those facts from eigenvalues alone.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_regulator_majorization.py">Audit</a>: exterior-power partial sums, the bistochastic variance identity, regulator-fixed quantum channels, exact pointed action telescoping, and the finite Gaussian phase-Plancherel distinction.</p>
+<p>Coverage only: product log-majorization is established matrix theory; see <a href="https://userpages.umbc.edu/~gowda/papers/trGOW20-02.pdf">Gowda, Some log and weak majorization inequalities</a>. The exterior-power, convexity, channel and source calculations used here are proved above independently.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/regulator_majorization_and_source_energy.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-general-log-majorization-inequality">1. The general log-majorization inequality</a><a href="#strict-convexity-gives-a-stronger-exact-rigidity">2. Strict convexity gives a stronger exact rigidity</a><a href="#exact-telescoping-with-the-original-source-retained">3. Exact telescoping with the original source retained</a><a href="#approximate-conservation-needs-the-right-accuracy">4. Approximate conservation needs the right accuracy</a><a href="#the-knot-specific-test-suggested-by-majorization">5. The knot-specific test suggested by majorization</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

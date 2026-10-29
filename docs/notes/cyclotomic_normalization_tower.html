@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A local cyclotomic normalization tower and its regulator norm · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/cyclotomic_normalization_tower.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-local-cyclotomic-normalization-tower-and-its-regulator-norm">A local cyclotomic normalization tower and its regulator norm</h1>
+<p>Research note, 25 October 2026. The normalization in the <a href="heisenberg_period_torsor.html">Heisenberg torsor</a> is a finite-product object. Its compatibility between levels can be proved without a Habiro-ring or algebraic K-theory theorem. This note supplies those identities for every level, including even and composite levels, and derives its local archimedean norm directly. This is a local result, not the identification of a contracted knot invariant with a product of tetrahedron norms.</p>
+<p>The cyclic dilogarithm and its recurrence are existing definitions (Faddeev–Kashaev, <a href="https://arxiv.org/abs/hep-th/9310070">hep-th/9310070</a>). No novelty is claimed for the finite products or their distribution. The larger rings and K3-indexed modules introduced in <a href="https://arxiv.org/abs/2412.04241v2">Garoufalidis–Scholze–Wheeler–Zagier</a> concern Frobenius-modified arithmetic gluing of formal series. None of their theorem claims or proofs is used below. The local identities here do not construct those modules or identify their elements with Kashaev’s actual values.</p>
+<h2 id="one-pointed-root-at-every-level">1. One pointed root at every level</h2>
+<p>For N&gt;=1 let zeta_N=exp(2pi*i/N) and set</p>
+<pre><code>D_N(x)=product_(j=1)^(N-1)(1-zeta_N^j*x)^j,
+Q_N(x)=D_N(x)^2/(1-x^N)^(N-1),
+s_N(x)^(2N)=Q_N(x), s_N(0)=1.                    (1.1)</code></pre>
+<p>The last equation defines a unique formal power series in Q(zeta_N)[[x]]: raising a series with constant term one to the power 2N is a bijection in characteristic zero. It also defines its analytic branch on |x|&lt;1. Outside that disk one retains the root torsor and a specified continuation, rather than suppressing its phase.</p>
+<p>For odd N, (1.1) reduces to the earlier normalization:</p>
+<pre><code>s_N(x)^N=product_(j=0)^(N-1)
+                 (1-zeta_N^j*x)^(j-(N-1)/2).     (1.2)</code></pre>
+<p>This follows by squaring (1.2) and using its constant term. For even N the half-integral centering is represented by the 2N-th root in (1.1); no oddness assumption is inserted into a formula with halves.</p>
+<p>Index translation in the finite product gives exactly</p>
+<pre><code>D_N(zeta_N*x)/D_N(x)=(1-x)^N/(1-x^N),
+s_N(zeta_N*x)/s_N(x)=(1-x)/(1-x^N)^(1/N).         (1.3)</code></pre>
+<p>All roots in (1.3) have constant term one. These are the cyclic intertwiner recurrence and its determinant normalization, with a pointing that fixes the local scalar.</p>
+<h2 id="exact-compatibility-between-arbitrary-levels">2. Exact compatibility between arbitrary levels</h2>
+<p>Let N=m*n and choose zeta_m=zeta_N^n, zeta_n=zeta_N^m. Then</p>
+<pre><code>D_(mn)(x)=D_m(x^n)
+             product_(b=0)^(m-1) D_n(zeta_(mn)^b*x)^m,
+
+Q_(mn)(x)=Q_m(x^n)
+             product_(b=0)^(m-1) Q_n(zeta_(mn)^b*x)^m,
+
+s_(mn)(x)=s_m(x^n)^(1/n)
+             product_(b=0)^(m-1) s_n(zeta_(mn)^b*x). (2.1)</code></pre>
+<p>These are equalities of the pointed formal series, hence of their matched continuations. There is no restriction that m,n be coprime or avoid a set of bad primes. This statement concerns characteristic-zero finite-product identities; it does not assert integral or p-adic gluing at those primes.</p>
+<p>For the first equality write each index as j=a<em>m+b. The exponent a</em>m yields the D_n factors, while the exponent b yields</p>
+<pre><code>product_(a=0)^(n-1)(1-zeta_n^a*zeta_(mn)^b*x)^b
+                    =(1-zeta_m^b*x^n)^b.</code></pre>
+<p>The denominators in Q multiply correctly because (m-1)+m(n-1)=mn-1. Raise the last equality of (2.1) to the power 2mn and use the pointed root to prove it without a scalar ambiguity. For three levels, every regrouping has the same power and constant term; equivalently, one groups the index by three digits. This proves associative distribution with its phases fixed locally.</p>
+<p>The maps here include x -&gt; x^n and deck rotations of x. Consequently this identity is not an equality of independently chosen values at one fixed central character for every level.</p>
+<h2 id="a-direct-galoiskummer-certificate">3. A direct Galois/Kummer certificate</h2>
+<p>Let K=Q(zeta_N), let a be prime to N, 1&lt;=a&lt;N, and let sigma_a send zeta_N to zeta_N^a while fixing x. With [k]_N the residue in {0,…,N-1}, put</p>
+<pre><code>B_(N,a)(x)=product_(k=1)^(N-1)
+   (1-zeta_N^k*x)^((a*[a^(-1)*k]_N-k)/N).</code></pre>
+<p>Its exponents are integers. Reindexing the product proves</p>
+<pre><code>sigma_a(D_N)^a/D_N = B_(N,a)^N.                  (3.1)</code></pre>
+<p>Thus the class of D_N in K(x)<sup>*/K(x)</sup>(N<em>) has the inverse cyclotomic Galois character, since a</em>sigma_a[D_N]=[D_N]. In terms of Q_N,</p>
+<pre><code>sigma_a(Q_N)^a/Q_N
+   =B_(N,a)^(2N)*(1-x^N)^(-(a-1)(N-1)).         (3.2)</code></pre>
+<p>This is an explicit local Kummer certificate. It does not show that these classes satisfy the global Bloch five-term relation with the required period normalization, nor identify a global Chern class.</p>
+<h2 id="the-local-norm-from-an-exact-logarithmic-series">4. The local norm from an exact logarithmic series</h2>
+<p>On |x|&lt;1, expand the logarithms in (1.1). The finite sums are</p>
+<pre><code>sum_(j=1)^(N-1) j*zeta_N^(j*k)
+   =-N/(1-zeta_N^k) if N does not divide k,
+   =N(N-1)/2        if N divides k.</code></pre>
+<p>The divisible terms cancel the denominator of Q_N exactly. Therefore</p>
+<pre><code>log s_N(x)=sum_(k&gt;=1, N does not divide k)
+                     x^k/[k*(1-zeta_N^k)].        (4.1)</code></pre>
+<p>There is no asymptotic assumption in (4.1). For any r&lt;1 it implies, uniformly on |x|&lt;=r,</p>
+<pre><code>log s_N(x)=-N Li_2(x)/(2pi*i)
+                     -(1/2)log(1-x)+E_N(x),
+
+|E_N(x)| &lt;= pi*r/[4N(1-r)]
+                   +2*r^(floor(N/2)+1)/(1-r).   (4.2)</code></pre>
+<p>Here N&gt;=2. One elementary proof splits the sum at k=N/2. For the first part use</p>
+<pre><code>1/(1-exp(2pi*i*k/N))=1/2+(i/2)cot(pi*k/N),
+0 &lt;= 1/u-cot(u) &lt;= u/2, 0&lt;u&lt;=pi/2.</code></pre>
+<p>The last inequality follows from sin(u)-u<em>cos(u)=integral_0^u v</em>sin(v)dv and sin(v)&lt;=sin(u). This bounds each error coefficient by pi*k/(4N). In the tail, for a nondivisible k, |1-zeta_N<sup>k|</sup>(-1)&lt;=N/4. Bound the difference coefficient by N and use 1/k&lt;2/N. The same bound includes the omitted divisible terms of the two comparison series. Geometric summation proves (4.2). In particular E_N=O_r(1/N).</p>
+<p>Define the metric on the inverse of this specified local frame by</p>
+<pre><code>log ||s_N(x)^(-1)||_reg
+   =-log|s_N(x)|+N log|x| Arg(1-x)/(2pi).         (4.3)</code></pre>
+<p>The expression extends at x=0. On this disk the branch of Arg is the one from log(1-x). With the Bloch–Wigner function</p>
+<pre><code>D(x)=Im Li_2(x)+log|x| Arg(1-x),</code></pre>
+<p>equation (4.2) gives the quantified comparison</p>
+<pre><code>(2pi/N)log ||s_N(x)^(-1)||_reg
+   =D(x)+(pi/N)log|1-x|-(2pi/N)Re E_N(x).        (4.4)</code></pre>
+<p>It is valid at all levels. This establishes the local regulator rate of the existing normalization frame on compact subdisks. The norm is specified in (4.3); it is not a new definition of the knot invariant and is not yet its absolute-value norm.</p>
+<h2 id="what-happens-outside-this-chart-and-at-resonance">5. What happens outside this chart and at resonance</h2>
+<p>The restriction in (4.2) matters. Cyclic factors have zeros on the unit circle, and an independent evaluation of one frame can be undefined even when the whole period has a regular germ. For example x=exp(pi*i/3) has x^N=1 at multiples of six. A whole period identity and its lattice must be specialized before its individual factors. The <a href="cyclic_steinberg_lattice.html">recoupling lattice</a> gives one explicit instance of such a regular integral replacement.</p>
+<p>An exact identity also detects the chart correction. With S=N(N-1)/2 and T=sum_(j=1)<sup>(N-1)j</sup>2, direct inversion gives</p>
+<pre><code>D_N(x)D_N(1/x)
+   =(-1)^S*zeta_N^T*x^(-S)
+                          [(1-x^N)/(1-x)]^N,
+
+Q_N(x)Q_N(1/x)
+   =(-1)^(N-1)*zeta_N^(2T)
+                          (1-x^N)^2/(1-x)^(2N). (5.1)</code></pre>
+<p>For any matched root choices away from the divisors, it follows that</p>
+<pre><code>log|s_N(x)|+log|s_N(1/x)|
+                     =log|1-x^N|/N-log|1-x|.    (5.2)</code></pre>
+<p>One must transport the regulator metric as well as this algebraic frame. In particular, using the unchanged formula (4.3) on both sides of inversion would introduce the quadratic logarithmic term log|x| Arg(-x); it would not give D(x)+D(1/x)=0. The logarithmic connection and its frame transport supply additional data.</p>
+<h2 id="the-remaining-knot-theorem">6. The remaining knot theorem</h2>
+<p>This gives an exact local system across all levels and proves its local regulator estimate. The <a href="cyclic_steinberg_lattice.html">regular cyclic/Steinberg family</a> also places the vacuum in the actual Kashaev color. Neither result says that contracting the knot tensor is a product of these scalar norms. Contraction includes phases and cancellation, and its distinguished global pairing still has to be compared with the geometric period.</p>
+<p>The required global assertion remains</p>
+<pre><code>(2pi/N)log|&lt;K&gt;_N| -&gt; Vol(S^3 minus K).</code></pre>
+<p>No Hilbert-90 calculation or rigidity of a finite-level unpointed intertwiner fixes that pairing by itself. A proof must identify its integral pointing, its global normalization, and its archimedean norm. The identities above do not establish that assertion for a knot class.</p>
+<p><code>experiments/audit_cyclotomic_normalization.py</code> checks distribution, Galois certificates, inversion, and the series and norm estimates. They are diagnostics for the uniform proofs, not replacements for them.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/cyclotomic_normalization_tower.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#one-pointed-root-at-every-level">1. One pointed root at every level</a><a href="#exact-compatibility-between-arbitrary-levels">2. Exact compatibility between arbitrary levels</a><a href="#a-direct-galoiskummer-certificate">3. A direct Galois/Kummer certificate</a><a href="#the-local-norm-from-an-exact-logarithmic-series">4. The local norm from an exact logarithmic series</a><a href="#what-happens-outside-this-chart-and-at-resonance">5. What happens outside this chart and at resonance</a><a href="#the-remaining-knot-theorem">6. The remaining knot theorem</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

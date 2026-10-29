@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An open six-head bridge reduces exactly to a typed current and angle packet · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_terminal_bridge_operator_reduction.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="an-open-six-head-bridge-reduces-exactly-to-a-typed-current-and-angle-packet">An open six-head bridge reduces exactly to a typed current and angle packet</h1>
+<p>29 October 2026. The first bridge crossing that couples the two ordinary cap pairs of a six-head source can be eliminated as an EXACT map between complete multiplicity modules. The cap forces one physical transfer. All spectator inputs and operator coefficients remain open. The resulting six-head terminal packet is the four-head packet composed with the map below, not a scalar knot-by-knot replacement.</p>
+<p>The through-head feedback factors into a contractive strict shift and a unitary clock in a source-fixing factorial metric. Its remaining angle coefficient is explicit. It has EXTRA factorial powers, so this does not yet prove the requested reduction to one half-density angle cell or a sharp arbitrary-prefix energy estimate. The actual remaining charge and operator, rather than an unspecified boundary current, are identified in (9)–(12).</p>
+<h2 id="complete-source-modules-and-the-physical-terminal">1. Complete source modules and the physical terminal</h2>
+<p>Use the original principal root N&gt;=2,d=N-1,q=exp(pi*i/N),Q=q^2, x=q<sup>d=-q</sup>-1,F_a=(Q;Q)_a,s_a=|F_a|,kappa=q<sup>(d</sup>2/2). All crossings and turns are literal original physical ones from <a href="actual_complete_source_multiplicity_module.html">the complete source module</a>. In particular</p>
+<pre><code>ell|a,b&gt;=x^(-a)Q^(-a)/N delta_(a+b,d),
+p_(a,b)=N x^(-b)delta_(a+b,d).</code></pre>
+<p>Let</p>
+<pre><code>W_2=(V^tensor4)_(degree2d), W_1=(V^tensor2)_(degree d),
+L_0=ell_12 tensor I_34:W_2-&gt;W_1.</code></pre>
+<p>Let I_w:V-&gt;V^tensor5 be the COMPLETE intertwiner of w in W_2, and D_2 w=I_w|d&gt;. Define the six-head-source terminal rows by</p>
+<pre><code>T_n^(6)=(ell_12 ell_34 tensor &lt;d|_5)
+                 (I_123 tensor R_45^2) Pi_(4,n) D_2.</code></pre>
+<p>The last marked cap has already been justified through the whole invariant-tensor source; it is not individually replaced by ell. Let T_n^(4) be the corresponding original three-physical-head terminal on W_1 from <a href="actual_terminal_packet_positive_gram.html">the positive terminal packet</a>.</p>
+<p>Since the cap ell_12 is a Hopf map, deleting it commutes with every prefix coproduct in the highest/lowest intertwiner. In particular</p>
+<pre><code>(ell_12 tensor I_345)I_w=I_(L_0 w).</code></pre>
+<p>It also commutes with the specific terminal R_45^2 and Pi_(4,n). Consequently, for EVERY input column and every adjoining exterior,</p>
+<pre><code>T_n^(6)=T_n^(4)L_0.                                  (1)</code></pre>
+<p>Now place ONE actual adjacent signed bridge crossing R_23^epsilon immediately before that terminal. It acts on the middle two physical heads of W_2, so define</p>
+<pre><code>L_epsilon=L_0 R_23^epsilon:W_2-&gt;W_1.</code></pre>
+<p>The complete source identity becomes</p>
+<pre><code>T_n^(6) R_23^epsilon=T_n^(4)L_epsilon.                (2)</code></pre>
+<p>This keeps the crossing that couples the eliminated cap to the remaining port. It is not commuted past the cap as an unknown scalar.</p>
+<h2 id="every-entry-of-the-positive-open-bridge-with-the-original-phases">2. Every entry of the positive open bridge, with the original phases</h2>
+<p>Take an input |a,b,c,e&gt; of integer degree2d. For epsilon=+1 the cap forces the actual transfer and surviving output to be</p>
+<pre><code>k=d-a-c, u=b-k, output |u,e&gt;, u+e=d,
+0&lt;=k&lt;=min(b,d-c).                                    (3)</code></pre>
+<p>There is exactly ONE original positive crossing coefficient, so</p>
+<pre><code>(L_+)_(u;(a,b,c,e))
+  =kappa/N x^(-a-b-c+k)Q^(-a+cu)
+                F_(d-a)F_b/(F_k F_c F_u),             (4)</code></pre>
+<p>with zero outside (3). This follows directly by multiplying the cap with the literal R coefficient. In particular the original common Cartan kappa and cap1/N have not been discarded.</p>
+<p>The true nonnegative angle charges are</p>
+<pre><code>a+c+k=d.                                             (5)</code></pre>
+<p>The through-head relation b=u+k is a SECOND actual constraint; the spectator is e=d-u. Thus the external through degree has not been frozen independently of the angle charge k.</p>
+<p>Root reflection F_aF_(d-a)=N(-1)<sup>aQ</sup>[a(a+1)/2] rewrites (4) as a phase times</p>
+<pre><code>F_b/(F_a F_c F_k F_u).</code></pre>
+<p>This is a closed finite kernel, not a sum of absolute paths. Tensoring an arbitrary spectator space leaves (2)–(5) unchanged. If the input entries are matrices on that space, they multiply this kernel in their original order. No commutation of spectator operators is used.</p>
+<h2 id="the-negative-bridge-and-its-retained-complement-charges">3. The negative bridge and its retained complement charges</h2>
+<p>For epsilon=-1 the literal negative crossing instead forces</p>
+<pre><code>k=a+c-d, u=b+k, output |u,e&gt;, u+e=d,
+0&lt;=k&lt;=min(c,d-b).</code></pre>
+<p>Its exact full coefficient is</p>
+<pre><code>(L_-)_(u;(a,b,c,e))
+  =kappa^(-1)/N (-1)^k x^(b+c-k-a)
+      Q^[-bc-ck+k(k-1)/2-a]
+                    F_u F_c/(F_k F_b F_(d-a)).        (6)</code></pre>
+<p>If A=d-a and C=d-c, its nonnegative charges are</p>
+<pre><code>A+C+k=d, b=u-k.                                     (7)</code></pre>
+<p>Equations (6)–(7), including their phase, are the actual negative source kernel. They are not obtained by deleting an end channel or assuming a scalar beta identity for noncommuting ports.</p>
+<h2 id="the-full-feedback-is-a-contractive-physical-current-in-a-typed-metric">4. The full feedback is a contractive physical current in a typed metric</h2>
+<p>Use the PHYSICAL diagonal coordinate gauge</p>
+<pre><code>G_a=s_a/sqrt(N)=L_a^(1/2), tau_a=F_a/s_a.</code></pre>
+<p>It fixes every original paired cup and ordinary cap because G_aG_(d-a)=1. The full marked source is transported literally; on the assembled invariant source its complementary-degree restriction is the one already proved in the complete module. This is not the different quarter physical gauge or length gauge.</p>
+<p>For the POSITIVE bridge conjugate input and output heads by G. On the total-degree slices the output pair is complementary, so its product gauge is one. Equation (4) factors EXACTLY as</p>
+<pre><code>Lhat_+ entry=gamma_(a,c,k) U_(c,k)[u,b],
+gamma_(a,c,k)
+  =kappa N (-1)^a x^(-d+k) Q^[a(a-1)/2]
+                           /(s_a s_c F_a F_c F_k),
+U_(c,k)|b&gt;=1_(b&gt;=k) x^(-u)Q^(cu)
+                       tau_b/tau_u |u&gt;, u=b-k.      (8)</code></pre>
+<p>Every nonzero coefficient of U is a UNIT PHASE and different inputs have different outputs. Hence ||U_(c,k)||_op=1 for k&lt;N. More intrinsically it is the literal strict lowering current G(F<sup>T)</sup>kG^-1, followed by the unitary clock x<sup>(-J)Q</sup>(cJ). The condition u+e=d is a final orthogonal degree projector on the retained head and its untouched spectator; its norm is1.</p>
+<p>For the NEGATIVE bridge use the dual source-fixing gauge G^-1. With A,C as in (7), its exact factorization is</p>
+<pre><code>Lhat_- entry=gamma^-_(A,C,k) U^-_(c,k)[u,b],
+gamma^-_(A,C,k)=kappa^(-1)N(-1)^(k+C)x^(A-C-2k)
+      Q^[C(C+1)/2+k(k-1)/2-a]
+                           /(s_A s_C F_A F_C F_k),
+U^-_(c,k)|b&gt;=1_(b+k&lt;N) x^u Q^(-cu)
+                       tau_u/tau_b |u&gt;, u=b+k.       (9)</code></pre>
+<p>This is a unitary clock times the contractive strict raising G^-1 F^k G. No cyclic wrap or transfer alias is added. These typed gauges both fix the original paired turns, but they are different: changing between them across a later overlap retains the actual G^2 interface. It is not declared polynomial.</p>
+<h2 id="what-remains-after-one-exact-bridge-elimination">5. What remains after one exact bridge elimination</h2>
+<p>Both scalar factors have the same known magnitude on their actual angle triple, denoted (A,C,k) in the signed typed coordinates:</p>
+<pre><code>|gamma|=N/(s_A^2 s_C^2 s_k).                         (10)</code></pre>
+<p>Thus feedback has been isolated as a contractive operator rather than estimated by an arbitrary exterior norm. But the scalar energy is NOT the single half-density-cell weight w_d(A,C,k):</p>
+<pre><code>|gamma|^2=N^2/(s_A^4 s_C^4 s_k^2).</code></pre>
+<p>The extra factorial powers are genuine in the exact kernel. They must be grouped coherently with the subsequent T packet or another physical boundary contraction. Deleting them would change (4),(6). This identifies the specific missing angle-energy comparison; it does not rule out such a further coherent contraction.</p>
+<p>For completeness the entire open bridge has an exact row Gram in these typed source metrics. Rows have disjoint spectator color e. Therefore</p>
+<pre><code>Lhat_+ Lhat_+^*=diag(E_+(u)),
+E_+(u)=N^2 sum_(k=0)^(d-u) s_k^(-2)
+                 sum_(A+C=d-k) s_A^(-4)s_C^(-4),
+E_-(u)=E_+(d-u).                                    (11)</code></pre>
+<p>Equation (11) retains the actual restriction k&lt;=d-u, or k&lt;=u in the negative orientation. It is not replaced by independent unconstrained tetrahedra or by an ideal-edge angle equation.</p>
+<p>Most importantly (2) remains the COHERENT composition, so its pointed doubled energy for any vector- or operator-valued input is</p>
+<pre><code>sum_n ||T_n^(4)L_epsilon w||^2.                     (12)</code></pre>
+<p>No diagonal sum of |gamma|^2 paths has been inserted into (12). The <a href="actual_terminal_packet_closed_kernel.html">closed all-input terminal kernel</a> now makes this remaining operator explicit: each six-head entry is T_(n,u) times (4) or (6), with u=b-k or b+k and u=d-e. Its Newton register t has the ACTUAL bounds t&lt;=min(n,u), and its scalar multiplier is the retained partial factorial Green P_t=F_t^2 sum_(v&lt;=t)Q<sup>v/F_v</sup>2. The associated terminal angle triple is (t,n-t,d-n). These are coupled integer port constraints, not independently adjustable spectator variables or a full ideal-edge sum. The partial Green and its coherent clock/shift ordering are not replaced by a scalar norm when composing (12). By the terminal packet theorem, the row sum factors the ORIGINAL co-source. Consequently</p>
+<pre><code>H_epsilon=(T^(4)L_epsilon)^*(T^(4)L_epsilon)
+                                  +exp(-N^2)I</code></pre>
+<p>is a positive Gram on the complete W_2, and its exact boundary dual norm squared is at most N. The regularizer is negligible for fixed original prefixes by the original physical bound. This polynomial dual cost is independent of the spectator ports. Its sharp energy still requires controlling the full composition (12), including every noncommuting clock/shift interface (8),(9).</p>
+<h3 id="the-exact-row-gram-has-a-uniform-pointed-octahedral-profile">The exact row Gram has a uniform pointed octahedral profile</h3>
+<p>Let Lambda(theta)=-integral_0^theta log(2sin t)dt, and v_8=8Lambda(pi/4). Equation (11) has a quantitative asymptotic UNIFORM in EVERY output color, including u=0 and u=d:</p>
+<pre><code>log E_+(u)=(N/pi)H(u/N)+O(log N),
+H(t)=v_8,                                 0&lt;=t&lt;=1/2,
+H(t)=8Lambda(pi*t/2)-2Lambda(pi*t),        1/2&lt;=t&lt;=1,
+log E_-(u)=(N/pi)H(1-u/N)+O(log N).                 (13)</code></pre>
+<p>The implicit constant is independent of u. In particular the COMPLETE open bridge, in its indicated signed source metric, obeys</p>
+<pre><code>log ||Lhat_+||_op^2=log ||Lhat_-||_op^2
+                                  =N v_8/pi+O(log N). (14)</code></pre>
+<p>This is an actual pointed row-capacity formula; it is not obtained by maximizing unconstrained independent tetrahedron weights.</p>
+<p>Here is a proof including its boundary uniformity. The uniform sine-factorial estimate gives the exponent of a term in (11) as</p>
+<pre><code>(N/pi)[4Lambda(alpha)+4Lambda(chi)+2Lambda(kappa)]
+                                                 +O(log N),</code></pre>
+<p>where alpha=pi<em>A/N, chi=pi</em>C/N, kappa=pi<em>k/N. The exact sum is pi</em>d/N and the actual upper bound is k&lt;=d-u. Replacing d/N by1 changes the maximized exponent by O(log N): Lambda has uniform modulus O(delta*(1+|log delta|)) even at0 and pi. For a fixed limiting kappa, alpha+chi=pi-kappa. The unique maximum is alpha=chi=(pi-kappa)/2. Indeed the second derivative on this interval is proportional to</p>
+<pre><code>-cot(alpha)-cot(chi)=-sin(alpha+chi)/(sin alpha sin chi)&lt;0.</code></pre>
+<p>The limiting endpoints follow by continuity. The resulting action is</p>
+<pre><code>F(kappa)=8Lambda((pi-kappa)/2)+2Lambda(kappa),
+F&#39;(kappa)=2log cot(kappa/2),
+F&#39;&#39;(kappa)=-(tan(kappa/2)+cot(kappa/2))&lt;0.</code></pre>
+<p>It peaks at kappa=pi/2, with value v_8. The REAL allowed interval is0&lt;=kappa&lt;=pi*(1-u/N), up to its exact1/N endpoint shift. If u/N&lt;=1/2 it contains the maximum; otherwise its maximum is the upper endpoint. Using Lambda(pi-theta)=-Lambda(theta) gives exactly H in (13).</p>
+<p>For the discrete lower bound choose k nearest N/2, clipped to 0,…,d-u, and choose A,C differing by at most one with sum d-k. Every coordinate differs from a limiting optimizer by O(1/N), uniformly also when the allowed interval collapses. The modulus of Lambda therefore costs only O(log N) after multiplication by N. There are at most N^2 positive terms, and every factorial estimate has the same O(log N) error. Taking the largest term and then summing proves both bounds in (13) uniformly. The negative formula uses the exact mirror E_-(u)=E_+(d-u); replacing (d-u)/N by 1-u/N has the same uniform logarithmic error. Finally E_+ is exactly nonincreasing in u, so its maximum row is u=0; its signed mirror has the same maximum. This proves (14).</p>
+<p>Thus the remaining weighted angle packet has a precise octahedral capacity depending on the retained output color. Replacing every bridge by its free maximum v_8 would discard the correlations and can overcount the knot volume. Whether its coherent gluing to T enforces the needed GLOBAL geometric angle constraints is not proved by (13)–(14).</p>
+<h3 id="exact-source-fixing-pair-degree-biases">Exact source-fixing pair-degree biases</h3>
+<p>There is additional nontrivial metric freedom with NO original paired-boundary cost. On input heads1,2 multiply the physical coordinate gauges by exp(lambda_1<em>(j-d/2)) on each head, and on heads3,4 by exp(lambda_2</em>(j-d/2)). On the output pair use any common exp(lambda_out*(j-d/2)). Every original cup and ordinary cap is fixed pointwise, because its pair degree is d. The assembled marked source retains its original complementary degree restriction and is therefore fixed as well.</p>
+<p>For an entry (3), the input pair degree is</p>
+<pre><code>a+b-d=u-c, c+e-d=c-u.</code></pre>
+<p>The output pair has degree d. Thus the EXACT change of coefficient is exp(delta*(c-u)), where delta=lambda_1-lambda_2. This uses the original physical charge; it is not an adjustable geometric edge label. The full positive row Gram becomes</p>
+<pre><code>E_(+,delta)(u)=N^2 sum_(k&lt;=d-u) sum_(a+c=d-k)
+       exp(2delta*(c-u))/(s_a^4 s_c^4 s_k^2).         (15)</code></pre>
+<p>For delta in any fixed compact real set, the same uniform factorial and rounding proof gives</p>
+<pre><code>log E_(+,delta)(u)=(N/pi) max
+  [4Lambda(pi*a)+4Lambda(pi*c)+2Lambda(pi*k)
+                                  +2pi*delta*(c-t)]
+                      +O(log N), t=u/N,              (16)</code></pre>
+<p>where a,c,k&gt;=0, a+c+k=1 and k&lt;=1-t. Its error is uniform in u and in that delta set. For fixed k at an interior maximizer the tilted A,C equation is sin(pi<em>c)/sin(pi</em>a)=exp(delta/2). No optimization over delta or global gluing theorem is claimed.</p>
+<p>These gauges can therefore encode pair-degree constraints without an exponential source norm. Interfaces with preceding/following crossings must still be transported. In particular the factor exp(-delta*u) is an actual through-head degree clock; it is not a unitary factor that can be discarded from (8) or (12).</p>
+<h2 id="verification-and-scope">6. Verification and scope</h2>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_terminal_bridge_operator_reduction.py">Audit</a> uses original signed R matrices and the full original E/F intertwiner construction. Fresh replay PASS: seven all-input signed bridge maps N=2,…,8; three COMPLETE six-head-to-four-head terminal identities N=2,3,4; and seven physical source/current metric families. It verifies the complete phases in (4),(6),(8),(9), both gauges, every spectator color, and the exact row Grams (11). Six further growing-level row-profile families through N=256 check the uniform endpoint/interior profile (13) and its mirror.</p>
+<p>The proof is all-level and all-exterior. Its new operation is an actual open bridge contraction with explicit angle/current feedback. It does not assert that arbitrarily many such contractions close in a one-cell positive algebra, nor a broad sharp knot-volume estimate.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_terminal_bridge_operator_reduction.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#complete-source-modules-and-the-physical-terminal">1. Complete source modules and the physical terminal</a><a href="#every-entry-of-the-positive-open-bridge-with-the-original-phases">2. Every entry of the positive open bridge, with the original phases</a><a href="#the-negative-bridge-and-its-retained-complement-charges">3. The negative bridge and its retained complement charges</a><a href="#the-full-feedback-is-a-contractive-physical-current-in-a-typed-metric">4. The full feedback is a contractive physical current in a typed metric</a><a href="#what-remains-after-one-exact-bridge-elimination">5. What remains after one exact bridge elimination</a><a href="#verification-and-scope">6. Verification and scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

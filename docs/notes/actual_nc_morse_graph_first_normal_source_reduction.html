@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An exact first-normal reduction for arbitrary original NC Morse graphs · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_nc_morse_graph_first_normal_source_reduction.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="an-exact-first-normal-reduction-for-arbitrary-original-nc-morse-graphs">An exact first-normal reduction for arbitrary original NC Morse graphs</h1>
+<p>29 October 2026. Every fixed graph in the actual noncrossing Morse class has a source-exact reduction to an ordinary magnetic spin network with ONE retained generic-q normal. This includes a distinct boundary term when the sole marked white vertex has an unsaturated root source. The original unrestricted mark remains on the physical V_N strand. No Euclidean norm, semisimple root quotient, scalar Frobenius vertex, or vanishing source normal is substituted for it.</p>
+<p>This is an exact finite source theorem at arbitrary fixed width. It does not establish a norm bound, noncancellation, a stationary cycle, or a geometric volume for a general graph.</p>
+<h2 id="the-graph-is-an-original-ordered-morse-diagram">1. The graph is an original ordered Morse diagram</h2>
+<p>Use precisely the class in section5 of the <a href="actual_trivalent_complete_circle_vertex_kernel.html">literal trivalent vertex theorem</a>. There are b black and b white vertices and E=3b ordered edge slots. Each color class partitions {0,…,E-1} into sorted triples; each partition is noncrossing. At a triple (a,b,c) the actual matching is</p>
+<pre><code>(2a+1,2c+2), (2a+2,2b+1), (2b+2,2c+1).</code></pre>
+<p>Removing innermost adjacent arcs gives an original nested cup/cap Morse word. There is no free incidence permutation or unrecorded braid. Choose a white vertex v* whose outer cap is EXPOSED: it is not contained in any other top cap. Mark that arc; all other caps are ordinary. Its row is the original UNRESTRICTED m. Equivalently, all ordinary top caps can be removed by innermost removals without passing over the marked arc. Every noncrossing partition has such a top-level block, so this leaves the arbitrary graph class intact while restricting its bare pointing.</p>
+<p>Replacing a NESTED cap by the same bare m is not covered. A genuine cut at that location requires pivotal transport through the enclosing caps, which is not a local unmodified m replacement.</p>
+<p>Fix labels 0&lt;=j_e&lt;=M=floor((N-1)/2) and signed integer exponents e_e. The edge coupon is the actual full-normal sector</p>
+<pre><code>R^(e_e)L_(j_e)=omega_(j_e)^(e_e) h0_(j_e) W_(j_e) pi_(j_e),
+pi_j=G_j^(-1)W_j^dagger P,
+G_(j,r)=s_(2j)/(s_r s_(2j-r)),
+h0_j=k_j N s_(2j)/s_j^2,
+k_j=2 if 2j&lt;d, k_j=1 if 2j=d,
+omega_j=kappa(-1)^j q^[j(j+1)].                 (1)</code></pre>
+<p>Here d=N-1, q=exp(pi i/N), Q=q^2, kappa=q<sup>(d</sup>2/2), F_u=(Q;Q)_u, s_u=|F_u|. The paired coupon is nilpotent; pi_j W_j=0 there. Formula(1) includes its first normal BEFORE passing to an ordinary object. All external original line/framing factors remain outside the raw scalar Z_Gamma defined here.</p>
+<h2 id="explicit-local-regular-lifts-and-canonical-ordinary-tensors">2. Explicit local regular lifts and canonical ordinary tensors</h2>
+<p>Set zeta=q exp(t). Every prime below means d/dt at t=0. Let V_N(t) be the generic highest-weight d module in the same balanced basis. Its physical cup has highest coefficient N zeta<sup>(-d</sup>2):</p>
+<pre><code>pV_(u,d-u)(t)=N zeta^(-d^2)(-1)^u
+   zeta^[u(d-u-1)] F_u(t)F_(d-u)(t)/F_d(t),
+ellV(t)=pV(t)^(-1).                             (2)</code></pre>
+<p>It specializes exactly to p_(u,v)=N x^(-v)delta_(u+v,d) and ell_(u,v)=x^u/N delta_(u+v,d). On the ordinary object Q_j of highest weight 2j choose pQ_j with highest coefficient ONE, using the same formula with d replaced by 2j and the leading scale omitted.</p>
+<p>The physical Clebsch map W_j(t) starts at degree l=d-j with</p>
+<pre><code>h_u(t)=(-1)^u zeta^(-du)
+   Q^[u(l-1)-u(u-1)/2](Q^(j+1);Q)_u F_(d-u)/F_d,
+W_(j,r)(t)=F_pair(t)^r h(t)/F_r(t), 0&lt;=r&lt;=2j.   (3)</code></pre>
+<p>All displayed factorial denominators have index &lt;N and are units. The direct highest recurrence and E,F commutator prove covariance; the last F endpoint follows because E_pair is injective above degree d. These facts were proved explicitly in the <a href="actual_trivalent_all_channel_marked_contraction.html">all-channel marked calculation</a>, section3. No generic decomposition theorem is required.</p>
+<p>Keep the ROOT constants h0_j, omega_j and</p>
+<pre><code>gamma_j=q^(2-j^2)/N^2</code></pre>
+<p>fixed as t varies. Define the chosen regular lift</p>
+<pre><code>pi_j(t)=gamma_j^(-1)D_t(W_j(t)),
+D_t(W_j)=pQ_j(t)^T W_j(t)^T
+                    [ellV(t)^T tensor ellV(t)^T]P. (4)</code></pre>
+<p>At t=0 this is precisely the actual pi_j in(1). Direct cup matrices and K covariance give D_t^2(W_j)=W_j. This is a lift of the fixed-root coupon, not an assertion about the full moving-q germ of the original circle, pivot, or framed R. Constant omega_j^(e_e) in the lift is legitimate because(1) is an exact all-normal root equality.</p>
+<p>At any triangle triple (a,b,c), let Theta_abc(t) be the genuine ordinary invariant in Q_a(t) tensor Q_b(t) tensor Q_c(t), normalized by</p>
+<pre><code>Theta_abc(2a,b+c-a,0)=1.                         (5)</code></pre>
+<p>It is an explicit regular finite tensor. Put J=a+b+c, r=b+c-a, r1=a+b-c. Its third-color-zero slice is</p>
+<pre><code>Theta_abc(2a-k,r+k,0)
+   =(-1)^k zeta^[k(2a+1-k)]
+                     F_(r+k)F_(2a-k)/(F_r F_(2a)),
+0&lt;=k&lt;=r1.                                      (6)</code></pre>
+<p>All other slices are forced by</p>
+<pre><code>v_u=-K_c(u-1)/E_c(u-1,u) E_ab v_(u-1).          (7)</code></pre>
+<p>Every denominator in(6),(7) is a unit at the root. The corresponding integer-H invariant space is one-dimensional. Outside the ordinary triangle range it is zero, by the rectangular lowest F equation.</p>
+<p>Define the LOCAL source coefficient by the finite original index sum</p>
+<pre><code>s_abc(t)=&lt;2a,b+c-a,0|
+    [pi_a(t) tensor pi_b(t) tensor pi_c(t)]J_source(t),
+J_source(t)=pV_16(t)pV_23(t)pV_45(t).            (8)</code></pre>
+<p>Then the whole black tensor is U_abc(t)=s_abc(t)Theta_abc(t). At the root its value is explicitly</p>
+<pre><code>s_abc(0)=N^3 A_N(a,b,c)/G_(b,b+c-a),             (9)</code></pre>
+<p>where the <a href="actual_trivalent_all_channel_positive_scalar_and_regular_cubes.html">proved positive source formula</a> includes its original phase. Thus s_abc(0)!=0 exactly when J&gt;=d within the triangle range; it is zero for J&lt;d. The derivative in(8) is a retained local source current, not determined merely by(9).</p>
+<h2 id="the-exact-ordinary-spin-network-and-all-root-constants">3. The exact ordinary spin network and all root constants</h2>
+<p>Keep each vertex’s actual increasing edge order. At a black vertex v with incident labels (a,b,c), place Theta_abc(t), and put</p>
+<pre><code>s_v(t)=s_abc(t).</code></pre>
+<p>At a white vertex with the SAME displayed incident order place D_t(Theta_cba(t)), and put s_v(t)=s_cba(t). The dual reverses the abstract object order, so its resulting row is again indexed in (a,b,c) order. No same-order adjoint may be substituted.</p>
+<p>Contract equal magnetic edge indices, with their dimensions 2j_e+1, to obtain the explicitly specified finite spin network Xi_Gamma(t). It contains the genuine ordinary 3j tensors and cups; it is not defined by the original unknown closed scalar. All its factors and their first derivatives are given by(2),(6),(7).</p>
+<p>Define the EXACT fixed root factor</p>
+<pre><code>C_Gamma=product_edges [h0_j gamma_j omega_j^(e_e)],
+S_Gamma(t)=product_vertices s_v(t).             (10)</code></pre>
+<p>The h0_j and G_j can have factorial exponential growth. They have not been declared polynomial or suppressed. A single gamma_j occurs per edge, because that edge meets exactly one white vertex.</p>
+<p>Let F_Gamma(t) be the ordinary closed ORIGINAL physical graph with the regular lifted coupons (1),(4), and with an ordinary cap also at the eventually marked arc. Genuine local duality gives</p>
+<pre><code>Lambda_abc(t)=gamma_a gamma_b gamma_c D_t(U_cba(t)).</code></pre>
+<p>Substitution at every vertex is therefore the all-width index identity</p>
+<pre><code>F_Gamma(t)=C_Gamma S_Gamma(t) Xi_Gamma(t).        (11)</code></pre>
+<p>This does not require a factorization of Xi_Gamma into vertex norms or source-independent inverse frames. The magnetic contraction is retained in full, on the actual graph wiring.</p>
+<h2 id="the-original-marked-scalar-is-exactly-the-first-normal">4. The original marked scalar is exactly the first normal</h2>
+<p>Remove all other caps in their actual innermost Morse order. Exposure ensures that this leaves the two marked legs as a genuine generic invariant physical column. Bend with the SAME pV(t). Every remaining map is then a generic Hopf map; hence the resulting open map on V_N(t) is a scalar z_Gamma(t)I. To prove scalarity directly, its generic K eigenvalues are distinct and all its interior F arrows are nonzero, so commuting with K,F forces a scalar matrix. Every entry is regular at t=0, by(2)–(4); thus z_Gamma is holomorphic.</p>
+<p>The physical closing trace, including the cup’s sign, is exactly</p>
+<pre><code>ellV pV^T=(-1)^d K_V,
+F_Gamma(t)=D_N(t) z_Gamma(t),
+D_N(t)=(-1)^d[N]_(q exp(t)),
+D_N(0)=0,
+nu_N:=D_N&#39;(0)=2N(-1)^N/(q-q^(-1))!=0.           (12)</code></pre>
+<p>The original unrestricted root marked row has m pV(0)=1. Thus the original marked source is z_Gamma(0), with no extra component factor:</p>
+<pre><code>Z_Gamma=C_Gamma/nu_N
+         *[S_Gamma&#39;(0)Xi_Gamma(0)
+                              +S_Gamma(0)Xi_Gamma&#39;(0)]. (13)</code></pre>
+<p>Only the chosen physical trace quotient is differentiated. The mark has never been transported through a paired image or replaced by an ordinary cap. In particular (13) retains the current that would be lost by first specializing the generic ordinary graph to its root zero. The factor 1/nu_N has magnitude sin(pi/N)/N; this alone gives no bound for the differentiated tensors or their source coefficients.</p>
+<p>The answer is independent of the chosen regular Hopf lift. Two such lifts with the same original root coupons give the same root open map, hence the same z_Gamma(0). Their ordinary closures differ by D_N(t) times a holomorphic scalar vanishing at t=0, so their first normals agree. Individual local source and spin-network derivatives may change with the lift; their complete combination in(13) does not.</p>
+<h3 id="a.-why-an-inner-bare-mark-is-not-a-movable-pivotal-cut">4a. Why an inner bare mark is not a movable pivotal cut</h3>
+<p>The exposure hypothesis is necessary for the bare row used here. On the ordered cube at N=3, give all twelve edges label j=1 and zero twist. Reduce q to 375 in the prime field of order 1009; this has exact order six and every denominator is a unit. The actual physical contraction with bare m on the exposed white block (0,10,11) is 155. Putting the same bare m on the NESTED block (1,8,9), leaving all other coupons unchanged, gives 620. The ordinary trace and its first normal are unchanged, so these two bare insertions cannot both be its normalized pivotal cut. Their difference is an exact cyclotomic counterexample, not a floating-point discrepancy.</p>
+<p>The original proof’s phrase allowing an arbitrary white vertex was therefore too broad. It has been corrected to the exposed hypothesis in section1, and the audit retains this negative test. Moving a genuine cut through an enclosing cap requires its actual pivotal transport. It cannot justify deleting the marked-white current in (15) while leaving that enclosing ordinary cap row unchanged.</p>
+<h2 id="exact-source-support-and-the-marked-white-boundary-term">5. Exact source support and the marked-white boundary term</h2>
+<p>The following alternatives are valid for every graph above.</p>
+<ul>
+<li><p>A nontriangle triple at ANY vertex makes Z_Gamma=0. If black, its generic invariant column is zero. If white, genuine ordered duality makes its generic ordinary row zero. In either case F_Gamma is identically zero. By generic scalarity and D_N(t)!=0 off its isolated root, the physical open scalar is identically zero and its marked specialization is zero as well. This includes a nontriangle MARKED white vertex; no local invariance of m is presumed.</p></li>
+<li><p>A triangle with J&lt;d at a black or an UNMARKED white vertex makes Z_Gamma=0 directly at the root: respectively the actual black column or the ordinary cap row is zero before estimating or summing. The marked white row is not included in this local deletion rule.</p></li>
+<li><p>If every vertex has J&gt;=d, all s_v(0) are nonzero, and (11),(12) force Xi_Gamma(0)=0. The complete formula is then</p>
+<pre><code>Z_Gamma=C_Gamma [product_v s_v(0)]
+                                Xi_Gamma&#39;(0)/nu_N.    (14)</code></pre></li>
+<li><p>Suppose every black and unmarked white vertex has J&gt;=d but the marked white triangle has J&lt;d. There is exactly one zero source factor, s_v*(0)=0. Its full contribution is</p>
+<pre><code>Z_Gamma=C_Gamma [product_(v!=v*) s_v(0)]
+                         s_v*&#39;(0) Xi_Gamma(0)/nu_N.   (15)</code></pre>
+<p>Its ordinary root coefficient alone does not justify deleting this term. The derivative can be nonzero. A subsequent WHOLE-source result now proves its value zero for the closed complete-circle diagrams here: omit all three caps of the exposed marked vertex, obtain a regular six-head invariant, and apply its three complete circles last. Their unsupported product annihilates the saturated source before the mark acts. The full typed proof is in <a href="actual_exposed_six_port_complete_circle_pruning.html">the exposed six-port pruning theorem</a>. This does not set s_v*’ to zero or delete an arbitrary open current.</p></li>
+</ul>
+<p>If at least two s_v(0) vanish, holomorphy of every factor in(11) gives a double zero and hence Z_Gamma=0. If there is a sole black or unmarked-white zero, (13) and the direct deletion above give the exact compatibility identity s_v’(0)Xi_Gamma(0)=0. This is a consequence of the whole original source, not a license to discard an arbitrary normal.</p>
+<h2 id="the-retained-normal-is-explicitly-local-and-finite">6. The retained normal is explicitly local and finite</h2>
+<p>These formulas can be evaluated using first jets only. For example, put</p>
+<pre><code>L_u=-sum_(k=1)^u 2k Q^k/(1-Q^k), L_0=0.</code></pre>
+<p>The logarithmic derivative of the nonzero highest coefficient in(3) is</p>
+<pre><code>h_u&#39;/h_u=u(2l-d-u-1)+L_(j+u)-L_j+L_(d-u)-L_d.  (16)</code></pre>
+<p>All terms are physical units. With f_r=1-Q^r, its actual descendants and derivatives satisfy</p>
+<pre><code>W_(r+1)=F_pair W_r/f_(r+1),
+W_(r+1)&#39;=(F_pair&#39; W_r+F_pair W_r&#39;)/f_(r+1)
+              +2(r+1)Q^(r+1)W_(r+1)/f_(r+1).  (17)</code></pre>
+<p>For a canonical cup of highest weight L and scale p0(t),</p>
+<pre><code>p_(u,L-u)&#39;/p_(u,L-u)
+  =p0&#39;/p0+u(L-u-1)+L_u+L_(L-u)-L_L,
+ell&#39;=-ell p&#39; ell.                              (18)</code></pre>
+<p>Here p0’/p0=-d^2 on V_N and zero on Q_j. Differentiating (4) gives pi_j’; differentiating the four factors in(8) gives s_abc’ by a finite sum with one differentiated factor. Equations(6),(7),(18) similarly give Xi_Gamma’ by a sum of ordinary magnetic contractions with ONE first-jet tensor or cup. This construction retains the full original source normal at any fixed width, without inverses of paired frames.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_nc_morse_graph_first_normal_source_reduction.py">exact first-jet audit</a> checks these local jet identities and original marked graph contractions. Its sole-unsaturated-marked cube fixture has a nonzero LOCAL source normal but zero exterior spin value; it therefore asserts no nonzero boundary contribution merely from that local current. Both factors in(15) are retained. General norm/nonzero/volume control for the ordinary network normal in(14) remains open. Equation(15)’s local current is retained, while its closed complete-circle source value is now annihilated by the separate physical support theorem. No off-complete auxiliary-color or arbitrary open-current cancellation is inferred.</p>
+<p>Internal review history: the initial review and positive tests missed the exposed-versus-nested bare-mark distinction. The additional test in section4a found it. The pointing hypothesis and the dipole fixture have been corrected explicitly; all local source/jet formulas remain unchanged. The corrected audit passes five local jet families, sixteen exposed original source cases and the inner-mark rejection. These are internal checks, not an external peer review or a geometric identification of the network.</p>
+<p>The corrected exposed statements and the additional whole-source six-port pruning were subsequently checked independently by root and the global audit agent. The latter also freshly replayed the typed sewing/pruning regressions, including its negative nested-cut case. The original mark-scope correction is retained above rather than being hidden by that later review.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_nc_morse_graph_first_normal_source_reduction.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-graph-is-an-original-ordered-morse-diagram">1. The graph is an original ordered Morse diagram</a><a href="#explicit-local-regular-lifts-and-canonical-ordinary-tensors">2. Explicit local regular lifts and canonical ordinary tensors</a><a href="#the-exact-ordinary-spin-network-and-all-root-constants">3. The exact ordinary spin network and all root constants</a><a href="#the-original-marked-scalar-is-exactly-the-first-normal">4. The original marked scalar is exactly the first normal</a><a href="#exact-source-support-and-the-marked-white-boundary-term">5. Exact source support and the marked-white boundary term</a><a href="#the-retained-normal-is-explicitly-local-and-finite">6. The retained normal is explicitly local and finite</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

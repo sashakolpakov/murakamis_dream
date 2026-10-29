@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A graphic vanishing-order certificate for the actual spin-one packet · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_nc_spin_one_flow_order_certificate.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-graphic-vanishing-order-certificate-for-the-actual-spin-one-packet">A graphic vanishing-order certificate for the actual spin-one packet</h1>
+<p>29 October 2026. There is an exact generic algebraic model for the ordinary network in the <a href="actual_nc_morse_graph_first_normal_source_reduction.html">original first-normal graph reduction</a>. When EVERY ordinary edge is Q_1, the full network is an explicit flow polynomial, including its scalar normalization. This proves a simple root for every connected original NC cubic graph at N=3. It also gives an exact graph criterion at N=4 and a genuine unbounded class with arbitrary branching and no two-edge neck, where that root is simple as well. No first-nonzero-coefficient convention replaces the original FIXED first normal.</p>
+<p>Every original marked value below uses an EXPOSED top cap, as required by the corrected first-normal theorem. A bare mark at a nested cap needs additional pivotal transport and is not covered. The generic unmarked network identity(2) itself is independent of this pointing.</p>
+<p>These are fixed-level source/order theorems. They are not an all-N asymptotic, a volume estimate, or a graph extension of a knot-volume limit. At N&gt;4 the all-j=1 source is unsaturated, so that same label choice does not supply an asymptotic family of surviving sources.</p>
+<h2 id="the-exact-generic-packet-is-a-flow-polynomial">1. The exact generic packet is a flow polynomial</h2>
+<p>Let Gamma be a connected graph in the literal NC/Morse class, with b black and b white vertices, E=3b ordered edges, and the original opposite ribbon orientations at black and white vertices. Put the canonical ordinary Q_1 tensor Theta_111 at every black vertex and its genuine pivotal dual at every white vertex. Their ordered contraction is Xi_Gamma(zeta), as defined in the first-normal theorem. Use a generic zeta near either exp(pi i/3) or exp(pi i/4), and put</p>
+<pre><code>d0=zeta+zeta^(-1), delta=-d0, D=d0^2,
+g(zeta)=-zeta^7 d0.</code></pre>
+<p>For a subset A of graph edges, let k(A) be the number of connected components of the spanning subgraph, including isolated vertices. Define the FINITE polynomial</p>
+<pre><code>F_Gamma(D)=sum_(A subset edges)
+              (-1)^(E-|A|) D^[|A|-2b+k(A)].    (1)</code></pre>
+<p>Then the actual complete magnetic network obeys the generic identity</p>
+<pre><code>Xi_Gamma(zeta)=g(zeta)^b F_Gamma(D).             (2)</code></pre>
+<p>All fields and normal derivatives are retained in (2). In particular its vanishing order is the order of the displayed polynomial at the appropriate D, since g and D’ are nonzero at these two roots.</p>
+<h2 id="own-two-head-cabling-proof-with-the-actual-pivotal-tensors">2. Own two-head cabling proof, with the actual pivotal tensors</h2>
+<p>Use an AUXILIARY ordinary highest-weight-one object W of dimension two; this is a finite algebraic factorization of Q_1, not a replacement of the original physical V_N source. Its canonical cup and cap are</p>
+<pre><code>p=[[0,1],[-zeta^(-1),0]],
+ell=p^(-1)=[[0,-zeta],[1,0]],
+sum_(a,b) ell_ab p_ab=delta.</code></pre>
+<p>On W tensor W put e=|p&gt;&lt;ell| and</p>
+<pre><code>Pi=I-e/delta.</code></pre>
+<p>The following literal matrices give Pi=i pi and pi i=I:</p>
+<pre><code>i=(|00&gt;, |10&gt;+zeta^(-1)|01&gt;, zeta^(-1)|11&gt;),
+pi=[[1,0,0,0],
+    [0,1/d0,zeta/d0,0],
+    [0,0,0,zeta]].                              (3)</code></pre>
+<p>Direct substitution in the original balanced E,F,K matrices verifies that these are ordinary Q_1 intertwiners. The genuine Q_1 cup has highest coefficient one, as in the general source theorem. Its right dual gives the ALL-INPUT identity</p>
+<pre><code>D(i)=zeta^(-1) pi.                              (4)</code></pre>
+<p>The actual nested six-leg fundamental cup source, followed by pi on its three consecutive pairs, is u Theta_111, where</p>
+<pre><code>u=-zeta^(-2)/d0.                               (5)</code></pre>
+<p>Both sides are invariant in the same one-dimensional homogeneous space. To fix (5), take the canonical corner (2,1,0): its only physical contribution has three cup coefficients -zeta^(-1), one pi coefficient zeta, one 1/d0, and one 1. This gives (5). Equation (4) similarly follows from its four-by-three matrices, or from the row0/column00 coefficient and covariance.</p>
+<p>Let T_Gamma be the literal fundamental Morse contraction with Pi on each edge and the SAME nested vertex cups/caps. White duality, without a Hermitian conjugate, gives</p>
+<pre><code>T_Gamma=(zeta^(-3)u^2)^b Xi_Gamma
+       =(zeta^(-7)/d0^2)^b Xi_Gamma.            (6)</code></pre>
+<p>Now expand every Pi as I-e/delta. Let A be the edges on which I is chosen. The surviving curves are exactly the boundary components of the plane ribbon neighborhood of (vertices,A): the I edge joins its two vertex disks and the e term closes the two deleted ends. The literal NC vertex order, including the reversed white ribbon order, is essential here. Their number is</p>
+<pre><code>boundary(A)=2k(A)-2b+|A|.</code></pre>
+<p>Every resulting fundamental circle evaluates to delta, by the exact cup/cap above. The coefficient for the deleted edges is (-1/delta)^(E-|A|). Hence</p>
+<pre><code>T_Gamma=delta^(2b-E) F_Gamma(delta^2)
+       =delta^(-b)F_Gamma(D).</code></pre>
+<p>Together with (6) this proves (2). The proof retains each state with its sign; no absolute-state estimate or graph projector has been used.</p>
+<h2 id="exact-simple-zero-for-every-connected-nc-graph-at-n3">3. Exact simple zero for every connected NC graph at N=3</h2>
+<p>The plane dual H of Gamma has b+2 vertices. Its chromatic polynomial has the elementary subset expansion</p>
+<pre><code>P_H(D)=sum_(B subset edges(H))(-1)^|B| D^k_H(B).</code></pre>
+<p>For complementary primal and dual edge sets, the plane Euler formula gives k_H(B)=|A|-2b+k_Gamma(A)+1. Thus directly</p>
+<pre><code>P_H(D)=D F_Gamma(D).                            (7)</code></pre>
+<p>Every connected cubic BIPARTITE graph is bridgeless. A bridge cut would give 3(n_black-n_white)=+1 or -1 on one side, an impossibility. It also has no cut vertex: among three incident edges separated into at least two groups, some group has one edge, making a bridge. Thus every facial boundary is a simple cycle. A repeated vertex would, by a small arc in that face and the Jordan separation, be a cut vertex.</p>
+<p>The dual H is loopless and has no cut vertex. For the latter claim, remove one dual vertex f. Every remaining dual component meets f. Walk around its simple primal facial cycle. At a cubic boundary vertex the two other incident faces share the third edge. Thus two successive neighboring faces of f lie in the same component of H-f. All neighbors, hence all of H-f, are connected. Parallel dual edges can be discarded without changing P_H or this conclusion.</p>
+<p>Here is an elementary nonzero-derivative proof, not an appeal to a graph-polynomial name. For a connected loopless graph H with at least one edge put</p>
+<pre><code>beta(H)=(-1)^|vertices(H)| P_H&#39;(1).</code></pre>
+<p>A cut-vertex factorization P_H=D^(1-r) product_(blocks)P_block makes beta zero if there are at least two nontrivial blocks. For K_2 it is one. If H is simple and 2-connected with at least three vertices, choose an edge e=uv. Both H-e and H/e are connected, and at least one is 2-connected after parallel edges are suppressed. Indeed only the contracted vertex can cut H/e. If it does, H-{u,v} has at least two components, each meeting both u and v by 2-connectivity. After any one other vertex is removed, another such component still joins u to v without e; this proves H-e remains 2-connected.</p>
+<p>Deletion/contraction P_H=P_(H-e)-P_(H/e) consequently gives</p>
+<pre><code>beta(H)=beta(H-e)+beta(H/e)&gt;0</code></pre>
+<p>by induction on edges/vertices, using the block factorization for non-2-connected children. This proves an INTEGER positive beta for our dual H. In particular</p>
+<pre><code>F_Gamma(1)=0,
+F_Gamma&#39;(1)=(-1)^b beta(H)!=0.                  (8)</code></pre>
+<p>At q=exp(pi i/3), D=1 and D’=2(q-q^(-1))!=0, so Xi_Gamma has EXACT order one for every connected NC graph, including graphs with two-edge necks. This is an unbounded genuinely branched source result at this fixed level, not only a cube check.</p>
+<p>All j=1 triples are supported at N=3. Substituting the actual local constants h0=3, gamma=q/9, s=54q and the original trace derivative into the general source formula gives the particularly simple answer</p>
+<pre><code>Z_(Gamma,N=3)=108^b beta(H)&gt;0                   (9)</code></pre>
+<p>for untwisted edges. Arbitrary signed edge twists multiply this by the literal omega_1^(sum e), and cannot change its nonzero magnitude.</p>
+<h2 id="at-n4-the-criterion-is-different-and-retains-higher-zeros">4. At N=4 the criterion is different and retains higher zeros</h2>
+<p>Now q=exp(pi i/4), D=2, and D’!=0. A cubic graph admits no nowhere-zero 2-flow: the unique nonzero mod2 current cannot have zero boundary at a vertex of odd degree. This fact also follows from (1) by counting solutions of the incidence equations over F_2 with inclusion/exclusion. Hence F_Gamma(2)=0. Formula (2) gives the EXACT criterion</p>
+<pre><code>ord_q Xi_Gamma=1 if and only if F_Gamma&#39;(2)!=0.  (10)</code></pre>
+<p>The original all-j=1 sector is supported at N=4 as well. Its physical constants are h0=8sqrt(2), gamma=q/16 and s=64sqrt(2)q^(-1). Since D’/nu_4=-1/sqrt(2), its entire original magnetic contraction is</p>
+<pre><code>Z_(Gamma,N=4)=(-1)^(b+1) 2^(12b-1/2) F_Gamma&#39;(2). (11)</code></pre>
+<p>At N=4 this is in fact the WHOLE full-circle marked source at that level. Here M=1. Any edge labeled zero belongs to a black vertex with sum of labels at most two, below d=3, so its actual black source is zero. Thus only the all-j=1 labeling survives. At N=3 there are also supported (0,1,1) vertices; equation(9) remains the specified all-j=1 sector there, without a claim about their additional sum.</p>
+<p>Connectivity alone does NOT prove a simple zero here. The literal four-vertex NC dipole has</p>
+<pre><code>F_dipole(D)=(D-1)(D-2)^2,</code></pre>
+<p>so Xi has exact order TWO and its original fixed first-normal source is zero. Selecting its next nonzero coefficient would compute a different invariant. This agrees with the full paired L_N^2 source obstruction, while (2) determines the whole order explicitly.</p>
+<h2 id="a-literal-branching-insertion-that-preserves-a-simple-zero">5. A literal branching insertion that preserves a simple zero</h2>
+<p>Use the actual ordered cube from the vertex theorem:</p>
+<pre><code>black: (0,1,2),(3,4,11),(5,9,10),(6,7,8),
+white: (0,10,11),(1,8,9),(2,3,7),(4,5,6).</code></pre>
+<p>Let an existing black vertex occupy an interval (a,a+1,a+2). Remove it and insert the cube edge row at that interval. The cube’s outer white vertex (0,10,11) is removed; its three ports are glued IN ORDER to the original three external edges. Map those original edge slots to a+(0,10,11), all later original edges by +9, and every cube edge k to a+k. Keep every other vertex and the original marked white arc.</p>
+<p>This is a literal NC/Morse operation. Existing white partitions are mapped monotonically. The new internal white triples are nested in the previously empty gap between the first two distinguished ports. New black triples occupy the interval replacing the removed black triple; all other black triples lie outside or surround it. Thus both partitions remain noncrossing, and their original cup/cap matchings give the required physical ribbon diagram without a bare permutation.</p>
+<p>It is a genuine planar vertex three-sum. It preserves three-edge connectivity: if a putative cut has at most two edges, restore each deleted degree-three vertex on the majority side of its three ports. In an internally split piece with internal cut count t and p of its three ports on one side, three-edge connectivity of the restored piece gives t+min(p,3-p)&gt;=3, hence t&gt;=2. Two split pieces force at least four cut edges. If only one splits and t=2, its port minority supplies at least one seam edge; if t&gt;=3 the contradiction is already internal. If neither piece splits, their three seam edges are the cut. Each case contradicts the proposed two-edge bound.</p>
+<p>The dual operation is a clique sum along its common triangle. Colorings on that triangle are three distinct colors. Their number is D(D-1)(D-2), and all choices have the same extension count. Counting for all integer D&gt;=3, then using polynomial identity, gives</p>
+<pre><code>F_new=F_old F_cube/[(D-1)(D-2)],
+F_cube=(D-1)(D-2)(D^3-9D^2+29D-32).             (12)</code></pre>
+<p>The cube polynomial follows independently by inclusion/exclusion (1), or coloring its dual three-part complete graph with two vertices per part. Equation(12) is a GENERIC identity before root specialization; its vanishing denominator is canceled with the numerator zeros. It is not root multiplication of L_N coupons or a Frobenius vertex.</p>
+<p>Starting at the theta graph, k insertions therefore give b=1+3k and</p>
+<pre><code>F_Gamma=(D-1)(D-2)(D^3-9D^2+29D-32)^k.         (13)</code></pre>
+<p>Every inserted cube creates two interval black vertices where a new copy can be inserted. Independent choices generate arbitrary finite ordered binary branching trees, not merely one cyclic chain. They all have a simple root at both D=1 and D=2, since the cubic factor is -11 and -2 there. The ORIGINAL fixed-channel marked values are</p>
+<pre><code>Z_(N=3)=108^(1+3k) 11^k,
+Z_(N=4)=2^[12(1+3k)+k-1/2],                    (14)</code></pre>
+<p>up to the retained signed edge-twist unit. These formulas determine their complete first-normal contractions at the indicated levels.</p>
+<h2 id="scope-of-the-order-certificate">6. Scope of the order certificate</h2>
+<p>The generic cabling, signed state expansion and graph insertion are source-exact; the <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_nc_spin_one_flow_order_certificate.py">focused audit</a> checks literal fundamental Morse contractions as well as ordinary spin and original physical marked source contractions. The proof above is not inferred from isolated numerical graph values.</p>
+<p>What remains is an order/noncancellation estimate for actual supported labels growing with N. The Q_1 flow model does not provide it. A generic geometric principal symbol or an arbitrary first-nonzero Laurent convention cannot supply the missing fixed-normal theorem. Unsaturated marked-white terms in the general graph reduction remain retained; every vertex in the two fixed-level sectors above is supported.</p>
+<p>Independent internal review: root read the full graph proof and its fixed-level scope. The global audit agent independently checked the literal cabling constants, signed state expansion, beta positivity, both physical marked prefactors, NC cube insertion and canceled three-sum denominator, then freshly replayed the audit: PASS nine generic Morse/cabling graphs, six branching constructions and eleven original fixed-level source cases. No correction was required. These are internal checks, not external peer review or an all-N volume claim.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_nc_spin_one_flow_order_certificate.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-exact-generic-packet-is-a-flow-polynomial">1. The exact generic packet is a flow polynomial</a><a href="#own-two-head-cabling-proof-with-the-actual-pivotal-tensors">2. Own two-head cabling proof, with the actual pivotal tensors</a><a href="#exact-simple-zero-for-every-connected-nc-graph-at-n3">3. Exact simple zero for every connected NC graph at N=3</a><a href="#at-n4-the-criterion-is-different-and-retains-higher-zeros">4. At N=4 the criterion is different and retains higher zeros</a><a href="#a-literal-branching-insertion-that-preserves-a-simple-zero">5. A literal branching insertion that preserves a simple zero</a><a href="#scope-of-the-order-certificate">6. Scope of the order certificate</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

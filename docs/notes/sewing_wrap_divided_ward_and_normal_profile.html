@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Actual sewing shifts are divided-Ward images of the wrap source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/sewing_wrap_divided_ward_and_normal_profile.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="actual-sewing-shifts-are-divided-ward-images-of-the-wrap-source">Actual sewing shifts are divided-Ward images of the wrap source</h1>
+<p>28 October 2026. The unit shifts in the exact cyclic sewing have an explicit relation to the ORIGINAL integral divided Hopf adjoint. The relation holds on the actual balanced head, including an exact whole-q source profile. The large scalar powers cancel between the two ends of a transfer. Thus these shifts need not be assigned an auxiliary unipotent action.</p>
+<p>This does not yet give a geometric centralizer chain map. There is a first explicit obstruction to the simplest proposed extension: independent head adjoints are not the full mixed coproduct adjoint. Their difference has a nonzero ORIGINAL crossing-cap pairing. The internal geometric interval cannot be inferred by omitting it.</p>
+<h2 id="the-literal-integral-head-and-its-two-wrap-coupons">1. The literal integral head and its two wrap coupons</h2>
+<p>Fix N&gt;=2 and put <code>m=N-1</code>, <code>L=N(N-1)/2</code>, <code>rho=q-q^-1</code>. Use the actual integral color of highest weight m, with basis v_j,</p>
+<pre><code>E^(a)v_j=[m-j+a choose a]_q v_(j-a),
+F^(a)v_j=[j+a choose a]_q v_(j+a),
+K v_j=q^(m-2j)v_j.                           (1)</code></pre>
+<p>Terms outside the head are zero. Symmetric Gaussian coefficients are their Laurent-polynomial values, not quotients evaluated at a root. Let <code>B_+=|m&gt;&lt;0|</code>, <code>B_-=|0&gt;&lt;m|</code>. These are the literal missing cyclic-wrap matrix units. Write <code>J_+,J_-</code> for the unit truncated raising/lowering shifts and <code>J v_j=j v_j</code>.</p>
+<p>Use the FULL integral Hopf adjoints</p>
+<pre><code>A_(E^(n))(C)=sum_(k=0)^n (-1)^k q^(-k(n-1))
+                     E^(n-k) C E^(k) K^-n,
+A_(F^(n))(C)=sum_(k=0)^n (-1)^k q^(k(n-1))
+                     F^(n-k)K^-k C K^k F^(k). (2)</code></pre>
+<p>The mixed terms in (2) remain even when E<sup>(N),F</sup>(N) individually vanish on the N-dimensional head. These are linear adjoint images; no assertion that a single A_h is a square-zero differential is made.</p>
+<h2 id="exact-root-identities-in-the-original-balanced-basis">2. Exact root identities in the ORIGINAL balanced basis</h2>
+<p>At <code>q=exp(pi*i/N)</code> one has <code>[m choose k]_q=1</code> for every k. Indeed each numerator factor <code>[N-s]_q</code> equals <code>[s]_q</code>, with all factors below N nonzero. Direct substitution in (2) gives</p>
+<pre><code>A_(E^(N))(B_+)=(-1)^m J_- q^J,
+A_(F^(N))(B_-)=-q^-1 J_+ q^-J                (3)</code></pre>
+<p>in the integral basis. For example only the k-th term contributes to entry <code>(k-1,k)</code> of the first identity. Its coefficient is <code>(-1)^k q^(-km) q^(-N(m-2k))=(-1)^m q^k</code>. For the second identity, entry <code>(j+1,j)</code> comes from <code>k=m-j</code> and has coefficient <code>-q^(-j-1)</code>.</p>
+<p>The original balanced crossing basis is the diagonal transport</p>
+<pre><code>D_j=(-rho)^j q^(j(j+1)/2).                   (4)</code></pre>
+<p>It gives exactly the original raising coefficients <code>1-Q^(j+1)</code> and balanced <code>Ecal=rho^2 E</code> coefficients <code>Q^-j-1</code>, with <code>Q=q^2</code>. Transport the actual adjoint and the wrap coupons by this same D, keeping their scalars. Equations (3)-(4) imply</p>
+<pre><code>A^bal_(E^(N))(B_+)=-rho^(-N) q^-L J_-,
+A^bal_(F^(N))(B_-)=(-1)^m rho^N q^L J_+.     (5)</code></pre>
+<p>Hence on the actual two-head sewing edge,</p>
+<pre><code>J_+ tensor J_- =(-1)^N
+      A^bal_(F^(N))(B_-) tensor A^bal_(E^(N))(B_+). (6)</code></pre>
+<p>The rho^N and quadratic phase factors cancel EXACTLY. The same statement with exchanged heads gives the other transfer. The marked x^-1 coefficient in each actual transfer remains attached. Neither endpoint wrap is reset or replaced by a new vacuum.</p>
+<p>Thus an actual divided-current description of every local sewing shift exists, at every N, before Gaussian contraction. It uses the mixed Hopf adjoint, rather than an ordinary commutator with the vanishing divided matrix.</p>
+<h2 id="the-whole-normal-profile-is-explicit">3. The whole normal profile is explicit</h2>
+<p>The root formulas cannot simply be differentiated as constants. Keep q generic and the same integral head and balanced frame. Put</p>
+<pre><code>M_col=-q^N,
+G_j(q)=M_col^j [m choose j]_q,
+C_E(q)=(-rho)^(-N)q^(-Nm-L),
+C_F(q)=(-1)^m(-rho)^N q^(L+1-m^2).</code></pre>
+<p>Then the exact WHOLE-q identities are</p>
+<pre><code>A^bal_(E^(N))(B_+)=C_E(q) J_- diag(G_j(q)),
+A^bal_(F^(N))(B_-)=C_F(q) J_+ diag(G_j(q)).   (7)</code></pre>
+<p>To verify the first, its integral <code>(k-1,k)</code> coefficient is <code>(-1)^k q^(k(N+1)-Nm)[m choose k]_q</code>. The balanced-frame ratio and the wrap scalar in (4) change this into <code>C_E M_col^k[m choose k]_q</code>. For the second, put k=m-j in (2); its integral coefficient is <code>(-1)^(m-j)q^(-(m-j)m)[m choose j]_q</code>. The same frame calculation gives the displayed C_F G_j.</p>
+<p>At the root <code>G_j=1</code> and <code>C_E C_F=(-1)^N</code>. Off the root the diagonal profile is nonconstant and may have source divisors. It is tied to the already computed actual color-source profile:</p>
+<pre><code>G_j=M_col^(2j) V_j,
+V_j=[m choose j]_q/M_col^j.                  (8)</code></pre>
+<p>Thus the <a href="full_head_gamma_source_transport.html">whole-head Gamma/source comparison</a> can transport this precise profile, with its extra character retained. Equation (7) itself does not invert G_j at a zero. Fractional source and dual lattices, all normal derivatives, and the original peripheral line remain necessary.</p>
+<p>The actual moment carry at these endpoints is also explicit. Let <code>S=J_++B_-</code> be the cyclic raising completion. For every polynomial p (indeed every function on the displayed finite arguments), entrywise multiplication proves</p>
+<pre><code>p(J)S-S p(J+1)=[p(0)-p(N)]B_-,
+p(J)S^-1-S^-1 p(J-1)=[p(m)-p(-1)]B_+.       (8a)</code></pre>
+<p>In particular <code>[J,S]=S-NB_-</code> and <code>[J,S^-1]=-S^-1+NB_+</code>. Before taking moments, the whole position-clock identity is</p>
+<pre><code>z^J S z^-J=z S+(z^(1-N)-z)B_-,
+z^J S^-1 z^-J=z^-1 S^-1+(z^(N-1)-z^-1)B_+. (8b)</code></pre>
+<p>Euler derivatives in z recover every polynomial/logarithmic moment with its actual endpoint. The factors z^N are retained before specialization. For the two-head cyclic transfer A,</p>
+<pre><code>[J_1+J_2,A]
+    =Na[-B_-,1 tensor S_2^-1+S_1 tensor B_+,2]. (8c)</code></pre>
+<p>The two corner contributions cancel where both wrap edges overlap. The nilpotent transfer has zero total-index commutator. Thus its sewing sources have exactly the N-step moment carry required to repair the cyclic completion. Equations (7)-(8c) retain that carry; they do not turn it into an ordinary derivation after cyclic specialization.</p>
+<h2 id="the-first-global-mismatch-has-an-actual-nonzero-cap-row">4. The first global mismatch has an actual nonzero cap row</h2>
+<p>Equation (6) contains INDEPENDENT adjoints on the two heads. The original crossing intertwines the actual coproduct, whose divided formulas have all mixed terms. Those are different operations. The difference is already visible at N=2 without an asymptotic argument.</p>
+<p>Take <code>q=i</code>, <code>Q=-1</code>, <code>M=1</code>, <code>x=i</code>. In the original balanced basis,</p>
+<pre><code>E=(1/2)E_01, F=2E_10, K=diag(i,-i),
+Delta E^(2)=(1/4)E_(00,11),
+Delta F^(2)=4E_(11,00).</code></pre>
+<p>Let <code>C=B_- tensor B_+</code>. Direct use of (2) with the full coproduct matrices gives</p>
+<pre><code>A^tot_(F^(2)E^(2))(C)
+   =[[-i,0,0,0],
+     [0,-i,1,0],
+     [0,1,i,0],
+     [0,0,0,i]].                            (9)</code></pre>
+<p>The independent product in (6) is <code>J_+ tensor J_-</code>, whose only nonzero entry is <code>(row2,column1)=1</code>. Denote their difference by D_mix. It is not a suppressed scalar or a zero source current. Keep the original stripped crossing</p>
+<pre><code>R_0=[[1,0,0,0],[0,0,-i,0],
+                     [0,-i,2,0],[0,0,0,1]],</code></pre>
+<p>and its original normalized average first cut with closed pivots <code>(-i,i)</code>. Exactly,</p>
+<pre><code>Phi(D_mix R_0)=1/2,
+Phi(R_0 D_mix)=-1/2.                         (10)</code></pre>
+<p>The actual common Cartan factor kappa multiplies these by kappa and is retained; restoring the other external factors does not make them zero. Thus the proposed replacement of the independent sewing image by a diagonal divided Ward generator drops an actual nonzero endpoint contribution.</p>
+<p>This rules out that replacement, not every corrected current construction. A valid tensor/chain fusion must carry D_mix and its counterparts, rather than use independent adjoint identities as if they already had coproduct naturality.</p>
+<h2 id="the-geometric-endpoint-condition-is-now-specific">5. The geometric endpoint condition is now specific</h2>
+<p>There is also a precise target on the ORIGINAL whole word, not only on a separate source cone. The already proved <a href="actual_borel_ward_cut_contraction.html">actual Borel Ward calculation</a> gives the complete principal conjugation fields</p>
+<pre><code>(ad_Ktot-I)/H -&gt; A(h/2),
+ad_Ecal,tot/H -&gt; A f_sl,
+ad_Ftot/H -&gt; A e_sl,</code></pre>
+<p>where <code>H=Log Q</code>. On the original inverse-eigenflag framing chart the compensated cut-Borel fields are <code>xi_1=2(r-1)partial_r+2s partial_s</code> and <code>xi_2=(2r-1)partial_r+2s partial_s</code>. Define the literal finite operator, with the specified LEFT multiplication,</p>
+<pre><code>S_cut=-q K_1-1,
+W_cut=ad_Ftot-2(ad_Ktot-I)-ad_Ecal,tot,
+V_N(C)=S_cut W_cut(C).                      (11a)</code></pre>
+<p>Its cut symbol is <code>S_cut -&gt; A_cut^-1-1=s</code>, so <code>V_N/H -&gt; s(xi_2-xi_1)=s partial_r=V_J</code>. It vanishes exactly on the unweighted actual braid word. The target classical ODE consequently has endpoint <code>r-&gt;r+s</code> at time one. This gives the principal generator; it is not a proof that an arbitrary finite exponential of V_N equals the retained quantum meridian endpoint.</p>
+<p>The target co-source row is explicit as well. For <code>Phi_A(C)=Tr(A C)</code> set <code>B=A S_cut</code>, in that order. Then</p>
+<pre><code>Phi_A(V_N(C))=Tr[W_cut^vee(B) C],
+W_cut^vee(B)=B Ftot-Ktot Ftot B Ktot^-1
+          -2(Ktot^-1 B Ktot-B)
+          -(Ktot^-1 B Ecal,tot-Ecal,tot Ktot^-1 B). (11b)</code></pre>
+<p>Each term follows by cyclicity of the trace, so the original cut row and pivot need not be declared invariant. The whole weighted Ward formula transports (11a)-(11b) with the actual lower-moment Green currents: a moment polynomial p leaves its specified forward difference <code>Delta_t p</code>, not a zero endpoint. The normal clock/pivot adapters in the divided Ward theorem remain attached. These target data already exist; (6) does not by itself supply their source map.</p>
+<p>The actual paired Frobenius source already supplies a precise target generator. In the marked variables of <a href="actual_unprojectivized_frobenius_borel_torsor.html">the unprojectivized source torsor</a>, let <code>s=C alpha^2</code>, <code>r=(1+m_src)/2+D alpha^2</code>. The actual divided-source generator <code>e-h-f</code> has field <code>2 partial_msrc</code>; it fixes alpha. Hence its source-dependent multiple</p>
+<pre><code>s(e-h-f) -&gt; s partial_r=V_J.                (11c)</code></pre>
+<p>At fixed alpha its actual standard-vector group is <code>I+b s [[-1,1],[-1,1]]</code>. Its square-zero matrix gives an exact additive group law, and the paired dual parameter changes by <code>m_src -&gt; m_src+2bs</code>. At b=1 the frame changes by <code>r -&gt; r+s</code>, precisely the complete marked meridian endpoint. Thus the desired endpoint is not an unspecified abstract additive action.</p>
+<p>Equation (11c) is a theorem on that actual paired source family. Equations (6)-(8) identify the literal sewing currents and their whole normal profiles. The missing map must fuse the INDEPENDENT images in (6) into the FULL ordinary/divided coproduct current, carry the correction detected in (10) and all its Green-moment rows, and then identify its transverse Gaussian image with (11a)-(11c).</p>
+<p>The generic principal density <code>c_beta Omega_cut</code> and its nonzero logarithmic residue do not perform that fusion. No nonzero selected geometric image, equality of the relative coordinates, or volume lower bound is claimed from the two separate endpoint constructions.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_sewing_wrap_divided_ward.py">Exact audit</a>. It checks root and generic-q identities at levels 2 through 12, the retained paired transfer signs, and (9)-(10) in characteristic zero. The displayed calculations prove the all-level identities independently of those tests.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/sewing_wrap_divided_ward_and_normal_profile.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-literal-integral-head-and-its-two-wrap-coupons">1. The literal integral head and its two wrap coupons</a><a href="#exact-root-identities-in-the-original-balanced-basis">2. Exact root identities in the ORIGINAL balanced basis</a><a href="#the-whole-normal-profile-is-explicit">3. The whole normal profile is explicit</a><a href="#the-first-global-mismatch-has-an-actual-nonzero-cap-row">4. The first global mismatch has an actual nonzero cap row</a><a href="#the-geometric-endpoint-condition-is-now-specific">5. The geometric endpoint condition is now specific</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

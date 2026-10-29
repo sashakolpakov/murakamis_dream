@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual braid transport has a semisimple sector · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_braid_group_and_spectral_source.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-actual-braid-transport-has-a-semisimple-sector">The actual braid transport has a semisimple sector</h1>
+<p>Research note, 26 October 2026. The finite-by-Heisenberg result for ideal shape ordering does not extend to the full actual braid-source transport. At every level the latter has a connected subgroup with an SL_2 quotient. We prove this from the prescribed crossing, using a nonzero exact pivotal moment and an ordinary-trace identity with definite sign. Finite-index restriction cannot remove that sector.</p>
+<p>This suggests a relative approach: retain the semisimple central/spectral algebra and study its normalization or period extension. We give an explicit rank-four algebra for the two unipotent generators, and show how the already computed actual two-channel source splits on a quadratic spectral cover. Neither construction identifies its spectral coordinate with the geometric A-curve or proves the volume conjecture.</p>
+<h2 id="fix-the-actual-crossing-and-its-phase">1. Fix the actual crossing and its phase</h2>
+<p>Let N&gt;=2, q=exp(pi*i/N), Q=q^2, rho=q-q^(-1), and use exactly the actual color V=V_(x_0), x_0=q<sup>(N-1)=-q</sup>(-1). Write B for the checked crossing with the common Cartan scalar removed, as in the original ADO cut. Its zero-framing scalar is</p>
+<pre><code>theta=x_0^(1-N), theta^(2N)=1.</code></pre>
+<p>Replacing B_i by theta^(-1)B_i gives the same zero-framed word evaluation and is still a braid representation. Thus the pure braid powers below are the actual normalized ones:</p>
+<pre><code>U_1=B_12^(2N)=I+X,
+U_2=B_23^(2N)=I+Y,
+J=B^(2N)-I, X=J tensor I, Y=I tensor J.       (1.1)</code></pre>
+<p>For the full universal crossing the common scalar and twist cancel in this same normalization. No peripheral or modified dimension factor is changed.</p>
+<p>The <a href="casimir_braiding_and_recoupling_lattice.html#3-the-actual-crossing-has-a-unique-confluent-polynomial">independently proved Casimir interpolation</a> has double nodes c_k=q<sup>h+q</sup>(-h), h=2k+1&lt;N, with</p>
+<pre><code>r_N(c_k)=nu_k=(-1)^k q^(k(k+1)),
+r_N&#39;(c_k)/nu_k=-(N-h)/[2(q^h-q^(-h))].</code></pre>
+<p>The one possible simple node has the same root-of-unity property nu_k^(2N)=1. Since B=r_N(Omega), (1.1) obeys</p>
+<pre><code>J^2=0, X^2=Y^2=0.                            (1.2)</code></pre>
+<p>The claim follows by evaluating the value and derivative of (r_N<sup>(2N)-1)</sup>2 at every double node; both are zero. The same polynomial vanishes at the simple node. This is a statement about the actual matrices, not a formal leading symbol or a spectral projector substituted for a crossing.</p>
+<h2 id="an-exact-nonzero-pivotal-moment">2. An exact nonzero pivotal moment</h2>
+<p>Keep the original K and pivot g=K<sup>(1-N)=(-1)</sup>(N-1)K. The already proved closing functional on the Casimir algebra is</p>
+<pre><code>ptr_K f(Omega)
+  =[-sum_(h odd, 0&lt;h&lt;N)
+      (c_h f(c_h)+(q^h-q^(-h))^2 f&#39;(c_h))
+                  + simple-node contribution] I.</code></pre>
+<p>For f=r_N^(2N)-1 its node values are zero and its double-node derivatives are -N(N-h)/(q<sup>h-q</sup>(-h)). Therefore, exactly,</p>
+<pre><code>ptr_K J=Phi_N I,
+Phi_N=N sum_(h odd, 0&lt;h&lt;N)(N-h)(q^h-q^(-h))
+                     =-2N^2/rho !=0.          (2.1)</code></pre>
+<p>For the last equality multiply the sum by rho and use</p>
+<pre><code>rho(q^h-q^(-h))
+   =(q^(h+1)+q^(-h-1))-(q^(h-1)+q^(-h+1)).</code></pre>
+<p>The weighted sum telescopes; q^N=-1 and the Q-geometric sum give -2N, for either parity of N. Thus no exceptional level or unverified noncancellation hypothesis enters (2.1).</p>
+<p>With the actual pivot the corresponding scalar is</p>
+<pre><code>L_N=(-1)^(N-1) Phi_N.</code></pre>
+<p>Sequentially closing strands 3 and 2 in XY gives</p>
+<pre><code>t_reduced,W(XY)=L_N^2,
+mathfrak_t_W(XY)=d_N(1)L_N^2 !=0,
+d_N(1)=i^(N+3)/N.                           (2.2)</code></pre>
+<p>These are the actual cut and its full modified normalization. This test uses the pure-braid source operators; the braid powers depend on N. It is not the fixed-knot volume limit.</p>
+<h2 id="a-negative-ordinary-trace-forces-a-semisimple-quotient">3. A negative ordinary trace forces a semisimple quotient</h2>
+<p>For a pair matrix use the total integer degree a+b. The actual B and J preserve that degree, so the ordinary partial traces</p>
+<pre><code>A=Tr_1 J, C=Tr_2 J</code></pre>
+<p>are diagonal. We claim C=-conjugate(A). Here is a direct proof retaining the original Cartan order. Write B=P D Theta, where P is the swap and</p>
+<pre><code>D_(a,b)=x_0^(-a-b)q^(2ab).</code></pre>
+<p>In this color E_j=[j]_q^2 is real and F is the real unit shift. Complex conjugation of the finite Euler coefficients gives Theta^(-1), while conjugation gives D^(-1) on D. The finite inverse identity is the ordinary Euler convolution on its nilpotent argument. Hence</p>
+<pre><code>conjugate(B)=D^(-1) P B^(-1) P D,
+conjugate(J)=-D^(-1) P J P D.               (3.1)</code></pre>
+<p>The second equation uses J^2=0. On diagonal entries the D factors cancel. Summing the diagonals gives C=-conjugate(A). Consequently on W=V^(tensor 3),</p>
+<pre><code>Tr_W(XY)=Tr(A C)=-sum_a |A_aa|^2 &lt;0.         (3.2)</code></pre>
+<p>The strict inequality has a proof, not a numerical assumption:</p>
+<pre><code>Tr(A K)=Tr[J(I tensor K)]=N Phi_N !=0.</code></pre>
+<p>Indeed (2.1) computes this trace by closing the other factor. As |K_aa|=1, it also gives the quantitative bound</p>
+<pre><code>-Tr_W(XY) &gt;= N |Phi_N|^2=4N^5/|rho|^2.       (3.3)</code></pre>
+<p>Now XY has a nonzero eigenvalue lambda. Choose v with XYv=lambda v and put w=Yv. Then</p>
+<pre><code>Xv=0, Xw=lambda v, Yv=w, Yw=0.</code></pre>
+<p>The vectors v,w are independent. Their plane is invariant under U_1,U_2, with matrices</p>
+<pre><code>U_1|=[1 lambda;0 1], U_2|=[1 0;1 1].         (3.4)</code></pre>
+<p>Their cyclic powers are Zariski dense in the respective one-parameter upper and lower unipotent groups, since the characteristic is zero. Those two groups generate SL_2: elementary upper/lower row operations give its open Gaussian cell and its remaining matrices. Thus the closure of the subgroup generated by U_1,U_2 has an SL_2 quotient on this plane and lies in the identity component of the full braid image closure.</p>
+<p>In particular that identity component is not solvable, and is not nilpotent. Every finite-index subgroup of the original braid group contains positive powers of both pure braids. The same plane argument applies with their two nonzero parameters rescaled. Thus no such restriction removes this connected semisimple sector, at any N&gt;=2.</p>
+<p>The invariant plane here is selected from an eigenvalue of XY; it is not asserted to be the two-cup corner. That corner is not generally preserved by the full braid powers. Nor does this theorem compute the difference-Galois group of the minimal quantum A-operator or identify its selected geometric branch. It tests the full retained braid transport, which is stronger data than a normalization line.</p>
+<h2 id="the-two-square-zero-algebra-has-an-explicit-spectral-center">4. The two-square-zero algebra has an explicit spectral center</h2>
+<p>There is nevertheless a useful reduction. In the universal algebra on X,Y with X<sup>2=Y</sup>2=0, put</p>
+<pre><code>c=XY+YX.</code></pre>
+<p>It commutes with both generators. Every alternating word reduces to a C[c]-linear combination of 1,X,Y,XY; for example (XY)<sup>k=c</sup>(k-1)XY and XYX=cX. These four elements are independent, as the following model over C[c] shows:</p>
+<pre><code>X=[0 1;0 0], Y=[0 0;c 0], XY=[c 0;0 0].</code></pre>
+<p>Its commutator equations also show that the center is exactly C[c]. After c is inverted the algebra is Mat_2(C[c,c^(-1)]), with matrix units</p>
+<pre><code>e_11=XY/c, e_22=YX/c, e_12=X, e_21=Y/c.      (4.1)</code></pre>
+<p>Thus on a simple nonzero spectral component the comparison problem reduces to a line. Replacing a source module by only its scalar center still loses its multiplicity, lattice and period functional; those remain specified data.</p>
+<p>At c=0 the flat abstract fiber is the four-dimensional exterior algebra X<sup>2=Y</sup>2=0, YX=-XY. Its augmentation ideal has cube zero, and</p>
+<pre><code>[1+sX,1+tY]=1+2stXY</code></pre>
+<p>is central. This is the two-step nilpotent fiber. The ambient two-by-two matrix specialization of the displayed model is not faithful there; using it alone would lose the flat source directions. A finite field extension cannot send a nonzero spectral value c to this zero fiber.</p>
+<p>For the actual X,Y of (1.1), (3.2) proves that nonzero spectral components occur. The spectral center is for this pair of pure powers. It is not claimed to commute with the original B_12,B_23, or to give their entire knot-period decomposition.</p>
+<h2 id="the-actual-cap-source-detects-its-matrix-sector">5. The actual cap source detects its matrix sector</h2>
+<p>There is also a completely calibrated source test. Use the actual adjacent cups and caps from <a href="adjacent_source_normal_form.html#1-adjacent-cups-and-caps-give-opposite-source-matrix-units">the source normal form</a>. Their operators Pi_1,Pi_2 have square zero and obey</p>
+<pre><code>Pi_1 Pi_2 Pi_1=Pi_1, Pi_2 Pi_1 Pi_2=Pi_2.</code></pre>
+<p>Their common corner is two copies of V. On it they are E_12,E_21, with the actual full modified trace d_N(1) times the ordinary two-by-two trace. Let</p>
+<pre><code>A_s=I+s Pi_1, B_t=I+t Pi_2,
+C_(s,t)=A_s B_t A_s^(-1) B_t^(-1).</code></pre>
+<p>On the corner det C=1 and Tr C=2+s<sup>2t</sup>2, and it is the identity on the complementary source. Therefore, exactly,</p>
+<pre><code>mathfrak_t_W(C_(s,t)^m-I)
+   =d_N(1)[T_m(2+s^2t^2)-2],                 (5.1)
+T_0=2, T_1=z, T_(m+1)=zT_m-T_(m-1).</code></pre>
+<p>This follows from the actual rectangular trace calibration, not from choosing a new scalar trace. For s=t=1 the trace argument is 3, so the right side detects the semisimple matrix dynamics. These localized source units need not be braid words; (3.4) supplies the separate genuine-braid theorem. Growth in m in (5.1) concerns word length at a fixed N, not growth of a fixed knot as the level changes.</p>
+<h2 id="a-cover-can-split-the-spectral-algebra-instead-of-killing-it">6. A cover can split the spectral algebra instead of killing it</h2>
+<p>The original meridian source already has the appropriate quadratic deformation. Its two numerators satisfy</p>
+<pre><code>t_1^2=delta t_1, t_2^2=delta t_2,
+z=t_1t_2+t_2t_1-delta(t_1+t_2) central.</code></pre>
+<p>On the actual charged two-copy block,</p>
+<pre><code>delta=rho(M^2-M^(-2)),
+A_N=(-1)^N rho(M+M^(-1))
+         *(qM^2-q^(-1)M^(-2))/(M^N+M^(-N)),
+z=A_N^2-delta^2.                             (6.1)</code></pre>
+<p>All functions are the previously calibrated actual ones. In particular the peripheral denominator is retained. More generally pass to the quadratic cover A<sup>2=z+delta</sup>2. Where A and z are units, the identities</p>
+<pre><code>e_11=(t_1t_2-delta t_1)/z,
+e_22=(t_2t_1-delta t_2)/z,
+e_12=(t_1-delta e_11)/A,
+e_21=(t_2-delta e_22)/A                     (6.2)</code></pre>
+<p>are matrix units, directly splitting this rank-four algebra. The actual mark is A=A_N, and at completeness A_N=(-1)^N rho^2 is nonzero. Thus the meridian source is on the matrix-algebra locus at each fixed level, rather than at its nilpotent fiber.</p>
+<p>Once these source generators and the charged simple module are matched, their simultaneous comparison is a scalar line. This is a useful finite-cover reduction of a torsor problem. It preserves the semisimple algebra, its integral source and its trace, while making the remaining comparison rank one. It does not prove that the same central functions and cut are realized on the geometric triangulation or A-curve.</p>
+<p>This statement concerns the integral numerators t_i. It does not supply a common finite lattice for both unscaled projectors t_i/delta; their double-pole trace obstruction from the adjacent-source note remains in force.</p>
+<h2 id="consequence-for-the-regge-and-cover-strategy">7. Consequence for the Regge and cover strategy</h2>
+<p>The <a href="regge_period_covers_and_a_curves.html">finite Regge/ordering result</a> and its Heisenberg period kernel remain valid. The present theorem rules out extending that nilpotence claim to the whole actual braid-source group. A finite cover can still choose roots, split a spectral algebra and make scalar comparison possible, as (6.2) shows. The target must keep the semisimple source and seek a controlled period extension or marked quotient over it.</p>
+<p>Such a relative viewpoint has existing coverage in <a href="https://arxiv.org/abs/alg-geom/9607019">Hain’s relative Malcev theory</a>. Also, the stated homological model of <a href="https://arxiv.org/abs/2212.10940">De Renzi–Martel, 2212.10940</a> uses Heisenberg coefficients for quantum mapping-class-group representations. A nilpotent coefficient group does not assert that the represented mapping class or braid image is nilpotent. <a href="https://arxiv.org/abs/1909.11162">Karvounis, 1909.11162</a> already treats projective quantum-sl2 braid representations and nontrivial central action. Only their stated coverage was consulted; none of their proofs is used above.</p>
+<p>We have not identified the SL_2 plane of (3.4) with hyperbolic holonomy, built the requisite relative completion of the selected quantum A-period, or proved its regulator norm. The original conjecture remains unproved.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_semisimple_transport.py">The audit</a> checks the genuine pure powers, the conjugation and pivotal identities, full original source closings, and the spectral matrix-unit and commutator formulas. <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_semisimple_transport_results.json">Results</a>.</p>
+<p>Reproduce with:</p>
+<pre><code>python3 experiments/audit_actual_semisimple_transport.py</code></pre>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_braid_group_and_spectral_source.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#fix-the-actual-crossing-and-its-phase">1. Fix the actual crossing and its phase</a><a href="#an-exact-nonzero-pivotal-moment">2. An exact nonzero pivotal moment</a><a href="#a-negative-ordinary-trace-forces-a-semisimple-quotient">3. A negative ordinary trace forces a semisimple quotient</a><a href="#the-two-square-zero-algebra-has-an-explicit-spectral-center">4. The two-square-zero algebra has an explicit spectral center</a><a href="#the-actual-cap-source-detects-its-matrix-sector">5. The actual cap source detects its matrix sector</a><a href="#a-cover-can-split-the-spectral-algebra-instead-of-killing-it">6. A cover can split the spectral algebra instead of killing it</a><a href="#consequence-for-the-regge-and-cover-strategy">7. Consequence for the Regge and cover strategy</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

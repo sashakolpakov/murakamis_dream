@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Independent audit of the geometric Newton resolution and normal scales · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/newton_resolution_independent_audit.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="independent-audit-of-the-geometric-newton-resolution-and-normal-scales">Independent audit of the geometric Newton resolution and normal scales</h1>
+<p>Audit, 27 October 2026, of <a href="newton_resolution_and_regulator_cut.html">the Newton resolution note</a>, especially Sections 3 and 5. The strict-transform calculation and its etaleness conclusion are correct with the marked Weyl-stability hypothesis explained below. No actual-symbol or selected-period assertion follows from them.</p>
+<h2 id="the-logarithmic-branch-and-its-involution">1. The logarithmic branch and its involution</h2>
+<p>Write Y=exp(y), L=-exp(lambda), keeping the complete sign L=-1. Assume the selected geometric normalization germ is smooth, etale over y, and fixed by the simultaneous eigenflag-swap involution. Then its local ring is k[[y]], the involution sends y to -y and lambda to -lambda. Consequently lambda(y) is odd:</p>
+<pre><code>lambda=tau y+c_3 y^3+... .                       (1.1)</code></pre>
+<p>Etaleness over y alone does not imply oddness. For example lambda=tau y+b_2y^2 is etale over y and has any prescribed nonreal cusp derivative, but is not Weyl stable when b_2!=0. Thus the eigenflag assertion is an essential part of the proof.</p>
+<p>For the marked complete hyperbolic place, that assertion has a direct geometric justification. Generically swap the two peripheral eigenflags while keeping the representation. At the complete nontrivial parabolic meridian, both flags specialize to its unique eigenline. Develop the vertex flags and take the cross-ratios in the specified positive triangulation. At the complete point all the cross-ratio denominators are units. The swapped decoration therefore specializes to the same nondegenerate complete shapes. Equivalently, the rational involution extends over the valuation ring of the normalized curve and has the same closed shape point. Smoothness of this gluing germ means there is only one normalization place at that point. The involution fixes that place. Its action on the recorded peripheral eigenvalues is precisely inversion.</p>
+<p>This argument retains the shape place and the peripheral lift. Invariance of an unmarked A-polynomial by itself would not exclude exchanging distinct normalization places over its singular point.</p>
+<h2 id="exact-limits-and-the-transverse-parameter">2. Exact limits and the transverse parameter</h2>
+<p>The chart formulas become the following exact identities of germs:</p>
+<pre><code>u=-sinh((y+lambda)/2)/sinh((y-lambda)/2),
+e=[cosh(y)-cosh(lambda)]/[2sinh(y)^2].          (2.1)</code></pre>
+<p>The common zeros cancel, since Im(tau)&gt;0 implies tau!=+1,-1. Both germs are even, hence functions of w=2cosh(y)-2. Their limits are</p>
+<pre><code>u_0=(tau+1)/(tau-1), e_0=(1-tau^2)/4,
+e_0=-u_0/(u_0-1)^2!=0.                       (2.2)</code></pre>
+<p>For tau=a+ib, b&gt;0,</p>
+<pre><code>Im(u_0)=-2b/[(a-1)^2+b^2]&lt;0.</code></pre>
+<p>The invariant local ring is k[[y^2]]=k[[w]]. The exact algebraic identity r=e(x-2) therefore gives</p>
+<pre><code>r=e(w)w, dr/dw at 0=e_0!=0.                  (2.3)</code></pre>
+<p>It follows that the strict transform is a smooth algebraic germ, is transverse to r=0, and is etale over the algebraic coordinate r. The usual unique lifting over nilpotent thickenings follows at the retained marked place. This uses no nonzero du/dw assumption.</p>
+<p>One can see the last point even for a constant u projection. Fix u=u_0, put e_0=1/(2-u_0-u_0^(-1)), and set</p>
+<pre><code>e(w)=e_0/(1+e_0 w),
+r(w)=e_0 w/(1+e_0 w).                         (2.4)</code></pre>
+<p>This is still a transverse strict-transform branch. Thus division by du/dw would incorrectly discard valid branches of the chart. For reference the general first coefficient is</p>
+<pre><code>du/dw at 0=(tau^3-tau-12c_3)/[6(tau-1)^2],</code></pre>
+<p>which can vanish without affecting (2.3).</p>
+<p>The normalization matters: tau here is dlog(-L)/dlog Y. If the earlier meridian coordinate is M and Y=M^2, this tau is one half of dlog(-L)/dlog M. An inverse longitude convention also reverses its imaginary sign. The note’s formulas are correct in its stated Y,L and boundary-orientation convention.</p>
+<h2 id="the-n-squared-adapter-is-trace-to-trace">3. The N-squared adapter is trace-to-trace</h2>
+<p>For C_N(Y+Y<sup>(-1))=Y</sup>N+Y^(-N), define</p>
+<pre><code>w=x-2, U_c=Y^N,
+W=U_c+U_c^(-1)-2=C_N(x)-2.</code></pre>
+<p>Then, exactly,</p>
+<pre><code>C_N(x)-2=(x-2)H_N(x), H_N(2)=N^2,
+W=N^2w+N^2(N^2-1)w^2/12+... .               (3.1)</code></pre>
+<p>The projector H_N(X)/N^2 on the abstract source fiber is precisely the simple X=2 projector in <a href="source_lattice_monodromy_chainmap.html">the source/monodromy chain map</a>. The multiplicities at the other roots are retained, so the assertion is about the full possibly nonsemisimple source fiber.</p>
+<p>There are two different normal scales here. W is the Weyl-invariant central trace normal, whereas U_c-1 is the ordinary central first normal uniformizer:</p>
+<pre><code>W=(U_c-1)^2/U_c,
+U_c-1=N y+O(y^2), w=y^2+O(y^4).</code></pre>
+<p>Thus N^2 is the trace-to-trace adapter. It is not a linear identification of the first Bockstein normal U_c-1 with x-2. The physical cut still has its linear factor N:</p>
+<pre><code>f=(U_c-1)b -&gt; cut(f)=-N b(1).</code></pre>
+<p>For the canonical projector generator the divided-normal value is -1/N, making its cut exactly one. This agrees with (3.1) and does not replace the first-normal row by a trace evaluation.</p>
+<h2 id="scope">4. Scope</h2>
+<p>The calculation supplies a regular algebraic target at the marked geometric place, a transverse cut equation and an exact retained normal normalization. It does not prove that the actual quantum Newton coefficient object has that geometric component or that the original selected source couples to its regulator period.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_newton_resolution_independent.py">Exact independent audit</a>. <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/newton_resolution_independent_results.json">Results</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/newton_resolution_independent_audit.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-logarithmic-branch-and-its-involution">1. The logarithmic branch and its involution</a><a href="#exact-limits-and-the-transverse-parameter">2. Exact limits and the transverse parameter</a><a href="#the-n-squared-adapter-is-trace-to-trace">3. The N-squared adapter is trace-to-trace</a><a href="#scope">4. Scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

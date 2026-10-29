@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A finite positive certificate supplies every sufficiently long filling branch · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/finite_geometric_certificate_uniform_filling_existence.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-finite-positive-certificate-supplies-every-sufficiently-long-filling-branch">A finite positive certificate supplies every sufficiently long filling branch</h1>
+<p>29 October 2026. This is a geometric strengthening of the <a href="finite_real_algebraic_geometric_certificate.html">finite real-algebraic certificate</a>. When that certificate succeeds for the ACTUAL marked base exterior, its meridian-coordinate germ supplies existence, not merely a conditional completion statement, for all independently sufficiently long primitive slopes. The proof uses the certified Jacobian, elementary affine cusp commutation, and a uniform contraction. It does not supply a quantum source packet for a new diagram.</p>
+<h2 id="precise-scope">1. Precise scope</h2>
+<p>Let the finite certificate exhibit a positive complete shape assignment on an oriented ideal triangulation of the marked manifold M. In particular its edge links are circles, vertex links are tori, edge products have winding ONE, and both primitive peripheral multipliers are one. Its marking is a verified oriented homeomorphism to M, not only a degree-one map or an agreement of trace data.</p>
+<p>Use actual peripheral bases (mu_i, lambda_i) whose complete translation ratio has positive imaginary part. Write U_i,V_i for the small logs of their complex similarity multipliers, so these are squared-eigenvalue logs, with central SL signs already removed. The certified edge-plus- meridian Jacobian gives a holomorphic shape germ with coordinates U=(U_1,…,U_h). Developing finitely many tetrahedra produces an ACTUAL framed holomorphic representation rho_U in bounded charts near the complete holonomy. The selected peripheral fixed flags are the developed ideal vertices. All shapes remain positive after one fixed shrink.</p>
+<p>For every chosen subset I of cusps and every primitive integer slope (a_i,b_i) at i in I, put ell_i=sqrt(a_i<sup>2+b_i</sup>2). There is a fixed L_M such that, whenever min_(i in I) ell_i &gt; L_M, and for every independent choice epsilon_i=+1 or -1, the specified germ has a UNIQUE nearby point</p>
+<pre><code>U_i=0                         (i not in I),
+a_i U_i+b_i V_i=2pi i epsilon_i (i in I).             (1)</code></pre>
+<p>The word UNIQUE refers to this fixed marked decorated gluing germ. It does not assert uniqueness of other character components. Its point gives a positively oriented complete finite-volume hyperbolic metric on the actual indicated filling, by the <a href="general_source_regulator_hyperbolic_equality.html">general completion construction</a>. The threshold is uniform over signs and over independently unequal lengths. There is no prime-level or quantum parameter in this theorem.</p>
+<h2 id="cusp-commutation-forces-a-diagonal-first-order-peripheral-map">2. Cusp commutation forces a diagonal first-order peripheral map</h2>
+<p>In the moving selected-flag frame at cusp i, write its commuting affine holonomies as</p>
+<pre><code>mu_i(w)=exp(U_i) w+B_i(U),
+lambda_i(w)=exp(V_i(U)) w+D_i(U).</code></pre>
+<p>The finite developed words make B_i,D_i holomorphic, and B_i(0),D_i(0) are the nonzero complete translation periods. Commutation gives EXACTLY</p>
+<pre><code>(exp(U_i)-1) D_i=(exp(V_i)-1) B_i.                  (2)</code></pre>
+<p>Shrink so B_i never vanishes. On U_i=0, equation(2) gives exp(V_i)=1; the chosen small log is therefore V_i=0. Holomorphic division gives</p>
+<pre><code>V_i(U)=U_i tau_i(U),
+tau_i(0)=D_i(0)/B_i(0),  Im tau_i(0)&gt;0.             (3)</code></pre>
+<p>This applies also while other cusps vary. In particular dV_i/dU_j=0 at zero for j!=i, and dV_i/dU_i is the ACTUAL Euclidean cusp ratio. This does not infer a physical quantum-color Hessian from a Casimir spectral coordinate. Matching a source Hessian to these logs is a separate source/peripheral calculation.</p>
+<h2 id="a-contraction-uniform-over-all-primitive-slope-directions">3. A contraction uniform over all primitive slope directions</h2>
+<p>Choose a closed complex polydisk ||U||_infinity&lt;=r on which every tau_i is holomorphic and</p>
+<pre><code>Im tau_i&gt;=m&gt;0,  |tau_i|&lt;=T,
+sum_j |partial_j tau_i|&lt;=L.                         (4)</code></pre>
+<p>These inequalities hold after shrinking the certified germ. With</p>
+<pre><code>c=m/sqrt(1+T^2)&gt;0,</code></pre>
+<p>the real two-by-two matrix with columns (1,0) and (Re tau_i, Im tau_i) has determinant at least m and Frobenius norm at most sqrt(1+T^2). Consequently, for EVERY real pair (a,b),</p>
+<pre><code>|a+b tau_i(U)|&gt;=c sqrt(a^2+b^2).                    (5)</code></pre>
+<p>Set all unfilled U coordinates to zero, and define on the remaining closed polydisk</p>
+<pre><code>(T_sigma(U))_i=2pi i epsilon_i/[a_i+b_i tau_i(U)].   (6)</code></pre>
+<p>Equations(3) show that its fixed points are precisely(1). If ell_min=min_i ell_i, then(4)–(5) give</p>
+<pre><code>||T_sigma(U)||_infinity&lt;=2pi/(c ell_min),
+||D T_sigma(U)||_(infinity-&gt;infinity)
+                     &lt;=2pi L/(c^2 ell_min).        (7)</code></pre>
+<p>For example any strict threshold</p>
+<pre><code>ell_min&gt;max(4pi/(c r),4pi L/c^2)                    (8)</code></pre>
+<p>makes the image lie in the radius-r/2 polydisk and the Lipschitz constant less than one half. The mean-value estimate is valid along complex straight segments because the polydisk is convex. Iteration therefore converges uniformly to one fixed point, and any solution in this germ is that fixed point. No largest-to-smallest slope comparison is used. Primitivity is needed for the filled topology and smooth meridional angle, not for this analytic contraction itself.</p>
+<p>More precisely, for each filled cusp,</p>
+<pre><code>|U_i|&lt;=2pi/(c ell_i),
+U_i=2pi i epsilon_i/[a_i+b_i tau_i(0)]
+                               +O(1/(ell_i ell_min)),            (9)</code></pre>
+<p>with one constant for all direction/sign tuples. Subtract the two fractions in(6) and its value at zero, use |tau_i(U)-tau_i(0)|&lt;=L||U||_infinity and |b_i|&lt;=ell_i, to obtain the error in(9). The complete point has no unproved representation-existence input: it is the one certified shape germ.</p>
+<h2 id="completion-and-a-uniform-volume-check">4. Completion and a uniform volume check</h2>
+<p>The actual bounded representation rho_U and its flags tend uniformly to the certified complete data as ell_min tends to infinity. Unfilled cusps have U_i=V_i=0 by(3), and remain nontrivial parabolic near the complete point. Filled cusps satisfy the ACTUAL small-log equation(1), not merely its exponential. Thus the explicit local developing map, log-link and primitive 2pi tube construction of the general theorem applies. It fills the specified primitive slopes on the same marked topology with a smooth complete finite-volume metric. A nonprimitive slope or a charge of magnitude greater than one would instead be a different topological/cone assertion and is not silently included.</p>
+<p>There is also a useful uniform normalization check. Let Vol(rho_U) be the absolute marked representation volume. Its already established boundary differential is</p>
+<pre><code>dVol=(1/2)sum_i[Re V_i dIm U_i-Re U_i dIm V_i].      (10)</code></pre>
+<p>Integrate along the straight path sU, 0&lt;=s&lt;=1, in the shape germ. Using V_i=U_i tau_i(U), the leading integrand is -s Im tau_i(0)|U_i|^2/2. All remaining terms are bounded by a constant times ||U||_infinity sum_i |U_i|^2. Hence</p>
+<pre><code>Vol(rho_U)=Vol(M)-(1/4)sum_i Im tau_i(0)|U_i|^2
+                  +O(||U||_infinity sum_i |U_i|^2).             (11)</code></pre>
+<p>Substituting(9) gives, uniformly over independently long slopes,</p>
+<pre><code>Vol(M(sigma))=Vol(M)
+   -pi^2 sum_(i in I) Im tau_i(0)/|a_i+b_i tau_i(0)|^2
+   +O(ell_min^(-1) sum_(i in I) ell_i^(-2)).         (12)</code></pre>
+<p>This proves the usual geometric volume here from the actual completed metric and marked fundamental class, rather than assigning a volume to a formal root of a peripheral polynomial. In particular the volume decreases strictly for all sufficiently long nonempty fillings.</p>
+<h2 id="what-this-resolves-and-the-source-estimate-it-does-not-replace">5. What this resolves, and the source estimate it does not replace</h2>
+<p>The finite positive certificate plus its deduced meridian Jacobian already removes the GEOMETRIC existence qualification in the general completion theorem for all sufficiently long primitive slopes. A separate deformation or discrete-faithfulness theorem need not be assumed. A source candidate matching this germ and the same primitive logs can therefore use this result directly.</p>
+<p>For a new original quantum source the remaining non-tautological gates are still those in <a href="general_original_source_long_filling_transfer.html">the exact long-filling transfer</a>: an actual PHYSICAL auxiliary-color packet, its nonzero holomorphic complex-corridor asymptotic, a strict bound on the entire complementary physical color cube including aliases/normals, and its literal marked representation/action map with the absolute complete regulator anchor. The exact twist expansion is already multilinear at arbitrary width. The new <a href="actual_complete_circle_boundary_packet.html">complete-circle boundary packet</a> controls a spectral Casimir coordinate and all its polynomial normal derivatives. Without its exact physical-color transform and the global color estimate it does not discharge these source gates. Nor does this geometric contraction estimate the quantum Cauchy energy on a generic branched graph.</p>
+<p>No files in the frozen publication snapshot were modified in proving this addendum. Its proof is analytical; no sampled numerical evidence is used for the slope-uniform assertion.</p>
+<p>Independent analytical review: the root and a second reader each checked the affine divisibility, all-direction lower bound, contraction and anisotropic errors, primitive-topology input, and both volume coefficients. Both reported PASS. The uniform assertions follow from the proof above, not from a finite collection of slope samples.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/finite_geometric_certificate_uniform_filling_existence.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#precise-scope">1. Precise scope</a><a href="#cusp-commutation-forces-a-diagonal-first-order-peripheral-map">2. Cusp commutation forces a diagonal first-order peripheral map</a><a href="#a-contraction-uniform-over-all-primitive-slope-directions">3. A contraction uniform over all primitive slope directions</a><a href="#completion-and-a-uniform-volume-check">4. Completion and a uniform volume check</a><a href="#what-this-resolves-and-the-source-estimate-it-does-not-replace">5. What this resolves, and the source estimate it does not replace</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

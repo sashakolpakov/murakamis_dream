@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A uniform norm group and sourced relation complex for twist knots · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/uniform_twist_relator_source.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-uniform-norm-group-and-sourced-relation-complex-for-twist-knots">A uniform norm group and sourced relation complex for twist knots</h1>
+<p>Research note, 27 October 2026. This proves the one-relator side of the determinant reduction suggested by the 4_1 and 5_2 prototypes. The twist parameter remains arbitrary throughout. The construction comes from the actual knot-group relation, with its return-map sign and matrix normal direction retained. It does not assign a replacement quantum state or establish the selected Kashaev period’s volume growth.</p>
+<h2 id="uniform-statement">1. Uniform statement</h2>
+<p>Use the signed twist presentation</p>
+<pre><code>G_k=&lt;a,b | a w^k=w^k b&gt;, w=ab^(-1)a^(-1)b,
+k in Z, k!=0.</code></pre>
+<p>The hyperbolic members have k&lt;=-1 or k&gt;=2. Set</p>
+<pre><code>A=[1 1;0 1], B=[1 0;t 1], W=AB^(-1)A^(-1)B,
+z=t^2+2, v=1+t,
+P_k(t)=S_(k-1)(z),
+f_k(t)=v S_(k-1)(z)-S_(k-2)(z),             (1.1)</code></pre>
+<p>where S_(-1)=0,S_0=1,S_(j+1)=z S_j-S_(j-1), extended to all integer indices.</p>
+<p><strong>Theorem.</strong> For every k!=0:</p>
+<ol type="1">
+<li><p>The pair (f_k,P_k) is obtained by powers of one explicit norm-one unit in a quadratic algebra. Its norm identity is f_k^2+t(t-2)f_k P_k-t^3 P_k^2=1.</p></li>
+<li><p>The matrix return relator has an exact quadratic normal form in f_k. On t!=0, its full matrix equation generates the scheme-theoretic ideal (f_k), retaining its first jet.</p></li>
+<li><p>The polynomial f_k is monic with constant term one and is squarefree, even modulo 2. The classes of t and P_k are integral units in Z[t]/(f_k).</p></li>
+<li><p>At every parabolic root, the sourced relation complex is acyclic. With the orbit-volume and matrix-source marks specified below, its torsion is exactly</p>
+<pre><code>T_k^rel=-2/[P_k(t) f_k&#39;(t)].              (1.2)</code></pre></li>
+<li><p>The weighted residue on the full integral Riley algebra is a perfect pairing. Its branch coefficient is 1/[P_k(t)f_k’(t)], including all conjugate places.</p></li>
+</ol>
+<p>This theorem is uniform in k. The comparison T_k^rel=T_beta with the braid complex is proved by the existing exact prototype calculations for k=-1,2; a general presentation and quantum-source comparison is still required. No general Gaussian-density or volume identity is inferred merely by giving the relation torsion the same name.</p>
+<h2 id="a-single-quadratic-norm-group-solves-the-twist-transport">2. A single quadratic norm group solves the twist transport</h2>
+<p>Put b=t(t-2) and introduce the quadratic algebra</p>
+<pre><code>E=Q(t)[y]/(y^2-b y-t^3).</code></pre>
+<p>The norm of F+P y is</p>
+<pre><code>N(F+P y)=F^2+b F P-t^3 P^2.                 (2.1)</code></pre>
+<p>Let u=1+t+y. Direct multiplication gives N(u)=1, and multiplication by u in the basis 1,y is</p>
+<pre><code>U=[1+t  t^3;1  t^2-t+1],
+det U=1, Tr U=t^2+2.                        (2.2)</code></pre>
+<p>Consequently</p>
+<pre><code>(f_k,P_k)^t=U^k(1,0)^t                     (2.3)</code></pre>
+<p>for every integer k. This follows either from the Chebyshev recurrence or from U^2-z U+I=0 and the initial values (f_0,P_0)=(1,0), (f_1,P_1)=(1+t,1). Taking norms proves</p>
+<pre><code>f_k^2+b f_k P_k-t^3 P_k^2=1.                (2.4)</code></pre>
+<p>This is transport in an existing quadratic norm-one group, with a specified unit and source point. It is not the root-of-unity norm torsor of the quantum A-operator. The generic splitting cover has discriminant t<sup>2(t</sup>2+4). Twisting the diagram is not a manifold cover; those operations are not being identified.</p>
+<p>The algebra has a literal matrix realization:</p>
+<pre><code>Y=W^(-1)-vI,
+Tr Y=b, det Y=-t^3,
+u -&gt; W^(-1),
+W^(-k)=f_k I+P_k Y.                         (2.5)</code></pre>
+<p>Thus (2.3) is the spectral transport of the meridian commutator itself, rather than a chosen auxiliary recurrence.</p>
+<h2 id="exact-matrix-relator-and-its-normal-direction">3. Exact matrix relator and its normal direction</h2>
+<p>The base identity A W-W B=v(A-B), followed by Cayley–Hamilton, gives</p>
+<pre><code>A W^k-W^k B=f_k(A-B).                       (3.1)</code></pre>
+<p>Define</p>
+<pre><code>V=(A-B)B^(-1)=[-t 1;-t 0],
+Z=(A-B)B^(-1)Y=[-t^2 2t(t-1);0 t^2],
+V^#=Tr(V)I-V=[0 -1;t -t].</code></pre>
+<p>The inverse return relation is</p>
+<pre><code>A W^k B^(-1)W^(-k)=I+P_k f_k Z+f_k^2 V.</code></pre>
+<p>Its inverse, with the same output-minus-input convention as dF-I in the braid complex, is</p>
+<pre><code>R_k=W^k B W^(-k)A^(-1)
+   =I-P_k f_k Z+f_k^2 V^#.                 (3.2)</code></pre>
+<p>These are exact identities. The first follows from (3.1) and (2.5). For the second use determinant one and adj(I+X)=I+Tr(X)I-X in dimension two.</p>
+<p>In particular</p>
+<pre><code>Tr R_k=2-t f_k^2,
+R_k-I=-P_k f_k Z modulo f_k^2,
+Tr Z=0, det Z=-t^4.                        (3.3)</code></pre>
+<p>The trace alone loses the first normal direction. The marked matrix equation retains it in the nonzero vector Z.</p>
+<p>For completeness, the full ideal of entries of R_k-I in Q[t,t^(-1)] is (f_k). The entries give P_k f_k and f_k^2, since t is a unit. Equation (2.4) gives (f_k,P_k)=(1), so these two generators generate f_k itself. The converse inclusion is immediate from (3.2). This is a statement about schemes, including nilpotent test rings.</p>
+<h2 id="all-parabolic-roots-are-simple-the-source-unit-is-integral">4. All parabolic roots are simple; the source unit is integral</h2>
+<p>For k&gt;0, f_k has degree 2k-1 and leading coefficient one. For k=-h&lt;0 it has degree 2h and leading coefficient one, using S_(-j-2)=-S_j. Since S_j(2)=j+1,</p>
+<pre><code>f_k(0)=k-(k-1)=1.                          (4.1)</code></pre>
+<p>To prove squarefreeness uniformly, work over F_2. Put P(t)=overline(S_(k-1)(t)), Q(t)=overline(S_(k-2)(t)). Frobenius and t<sup>2+2=t</sup>2 give</p>
+<pre><code>overline(f_k)=(1+t)P(t)^2+Q(t)^2,
+overline(f_k&#39;)=P(t)^2.</code></pre>
+<p>Consecutive Chebyshev polynomials are coprime over every field: their recurrence reduces a common divisor to the pair S_0=1,S_(-1)=0. Thus gcd(overline(f_k),overline(f_k’))=1. Since f_k is monic, its resultant with its derivative is an odd nonzero integer. All characteristic-zero roots are therefore simple, without a genericity hypothesis.</p>
+<p>Let B_k=Z[t]/(f_k). Equation (4.1) makes t an integral unit. Equation (2.4) gives, in this algebra,</p>
+<pre><code>t^3 P_k^2=-1,
+P_k^(-1)=-t^3 P_k.                         (4.2)</code></pre>
+<p>Thus the source factor is an integral unit, not a factor silently canceled only at generic complex points.</p>
+<h2 id="the-sourced-relation-complex-and-its-normalization">5. The sourced relation complex and its normalization</h2>
+<p>Let O be the noncentral trace-two conjugacy class in SL_2. At a parabolic root, the pair (A,B) is irreducible because t!=0. PGL_2 conjugation has an injective three-dimensional tangent, and its quotient on O times O has coordinate t=Tr(AB)-2. Let L be the one-dimensional matrix normal line spanned by Z in (3.3), with the specified generator Z.</p>
+<p>Differentiating the return relation on the fixed-trace pair space gives the complex</p>
+<pre><code>0 -&gt; sl_2 --a--&gt; T_(A,B)(O times O)
+                           --dR_k--&gt; L -&gt; 0,
+a(xi)=([xi,A],[xi,B]),
+dR_k=-P_k f_k&#39;(t) dt times Z.               (5.1)</code></pre>
+<p>The derivative kills conjugation because R_k=I. It is nonzero in the remaining direction by Sections 3–4. The complex is therefore acyclic at every root of f_k.</p>
+<p>The source normalization is explicit. Use the ordered sl_2 basis H=diag(1,-1), E=E_12, F=E_21. On a fixed trace class use nu=dK wedge de/e for the matrix entries K=G_11,e=G_12. At A use (A_11,A_12); at B use (B_11,B_21), so nu_B=-dB_11 wedge dB_21/t. Both forms are invariant under conjugation.</p>
+<p>In the four tangent coordinates (A_11,A_12,B_11,B_21), the conjugation columns and the normal vector partial_t are</p>
+<pre><code>[a(H),a(E),a(F),partial_t]
+    =[0 0 -1 0;2 0 0 0;0 t 0 0;-2t 0 0 1].</code></pre>
+<p>Its determinant is -2t. The product orbit volume has coefficient -1/t, so its value on these columns is 2. The last differential in (5.1), expressed in the marked Z basis, is -P_k f_k’. Therefore the torsion is exactly</p>
+<pre><code>T_k^rel=2/(-P_k f_k&#39;)=-2/(P_k f_k&#39;).        (5.2)</code></pre>
+<p>Changing the complement by a conjugation column changes neither determinant. Conjugating the pair transports all the stated volume and source marks, so the scalar is frame invariant. Reversing the return relation would reverse the sign; no unmarked sign is being ignored.</p>
+<h2 id="a-perfect-residue-pairing-on-the-entire-integral-algebra">6. A perfect residue pairing on the entire integral algebra</h2>
+<p>For a monic degree-d polynomial f define Res_f(h) to be the coefficient of t^(d-1) in the remainder of h modulo f. Set</p>
+<pre><code>lambda_k(h)=Res_(f_k)(P_k^(-1)h).            (6.1)</code></pre>
+<p>The pairing (g,h)-&gt;Res_f(gh) on Z[t]/(f) is perfect: its matrix in 1,t,…,t^(d-1) has zeros below its anti-diagonal and ones on that diagonal. Its determinant is (-1)^(d(d-1)/2). Multiplication by the integral unit P_k^(-1) preserves perfection, proving the claim for lambda_k as well. No localization at a discriminant prime is needed for the whole algebra.</p>
+<p>After splitting into the distinct complex root lines, Lagrange interpolation gives</p>
+<pre><code>lambda_k(h)=sum_(f_k(t_j)=0)
+                     h(t_j)/(P_k(t_j)f_k&#39;(t_j)). (6.2)</code></pre>
+<p>Hence the branch coefficient is exactly -T_k^rel/2. It is a canonical weighted residue in a finite integral algebra, with its conjugate branches retained.</p>
+<h2 id="what-this-settles-and-what-it-does-not">7. What this settles and what it does not</h2>
+<p>The denominator and the -2 source normalization are now proved uniformly on the actual twist relator side. The commutator transport, exact normal form, all-root regularity and integral residue pairing have proofs for arbitrary k. They are not conclusions inferred from the prototypes.</p>
+<p>The existing prototype computation proves T_k^rel=T_beta and Omega_beta<sup>2=-(T_beta/2)Omega_cut</sup>2 for k=-1,2. For arbitrary k, the next required map is the determinant- and source-preserving reduction from the braid period complex to (5.1), including its quantum lattice. The classical group relation alone does not supply that map.</p>
+<p>Even after that map, the actual global quantum source must have its regulator norm controlled across levels. This note does not prove the original volume conjecture, or replace Kashaev by the classical residue (6.1).</p>
+<p>The general program now uses the <a href="arbitrary_bridge_source_reduction.html">arbitrary-bridge sourced complex</a>, with unrestricted bridge number and crossing word. The calculation above is retained as a one-relator diagnostic. A separate executable uniform-twist audit is not attached to this proof text.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/uniform_twist_relator_source.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#uniform-statement">1. Uniform statement</a><a href="#a-single-quadratic-norm-group-solves-the-twist-transport">2. A single quadratic norm group solves the twist transport</a><a href="#exact-matrix-relator-and-its-normal-direction">3. Exact matrix relator and its normal direction</a><a href="#all-parabolic-roots-are-simple-the-source-unit-is-integral">4. All parabolic roots are simple; the source unit is integral</a><a href="#the-sourced-relation-complex-and-its-normalization">5. The sourced relation complex and its normalization</a><a href="#a-perfect-residue-pairing-on-the-entire-integral-algebra">6. A perfect residue pairing on the entire integral algebra</a><a href="#what-this-settles-and-what-it-does-not">7. What this settles and what it does not</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

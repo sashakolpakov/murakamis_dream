@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An actual bounded source in the Fourier--Mellin polarization · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/fourier_mellin_actual_source.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="an-actual-bounded-source-in-the-fouriermellin-polarization">An actual bounded source in the Fourier–Mellin polarization</h1>
+<p>Research construction, 27 October 2026. A fixed rational inhomogeneous source need not be assumed as a special factorization of the original meridian operator. It can be constructed in the Fourier–Mellin polarization directly from any actual all-level operator and finitely many fixed colors. The original Kashaev invariant is retained as an exact coefficient period. It is not replaced by point evaluation or by a new state.</p>
+<p>This gives an actual sourced quantum-A object for arbitrary knots. Its classical geometric support and selected regulator norm still require proof; the volume conjecture is not proved here.</p>
+<h2 id="actual-input-and-the-q-convention">1. Actual input and the Q convention</h2>
+<p>Choose the nonzero rational operator supplied by the <a href="even_meridian_norm_descent.html">Q-only construction</a>, clear its coefficient denominators, and remove a common shift:</p>
+<pre><code>P=sum_(j=0)^d a_j(Q,Y) T^j,
+a_j=sum_m a_(j,m)(Q) Y^m,
+TY=QYT, a_0 a_d!=0.                          (1.1)</code></pre>
+<p>Here d&gt;=1, the m support is finite, and the coefficients belong to the rational function field ℚ(Q). The associated fixed-color periods are C_n(Q), normalized by C_n(1)=1. They are the actual finite reduced periods of the existing color-pointing theorem. The exact identities are</p>
+<pre><code>F_N(Y=Q_N^n)=C_n(Q_N), 1&lt;=n&lt;=N,
+C_N(Q_N)=F_N(1)=&lt;K&gt;_N,
+Q_N=exp(2pi*i/N).                            (1.2)</code></pre>
+<p>There is no large-color asymptotic premise in (1.2).</p>
+<p>For completeness these fixed-color functions descend to Q=q^2 as well. On the ordinary n-dimensional color x=q^(n-1), use the same stripped crossing coefficients, ordinary pivot K and residual twist x. The total x-power on a closed state is</p>
+<pre><code>E_ord=b-1-w+sum_positive(-a-c)+sum_negative(a+c)
+     =-kappa_D+2sum_negative a-2sum_positive c,</code></pre>
+<p>because sum(c-a)=0. It is even for a knot. All remaining factors are expressed in Q and x^2. At x=q^(n-1) this is a rational function of Q. The known Laurent regularity and normalization of C_n are those of the original finite color construction, not an additional asymptotic or Jones-identification assumption.</p>
+<p>Applying the actual root equation to (1.2), then using infinitely many distinct Q_N for every fixed n, gives the generic recurrence</p>
+<pre><code>sum_(j=0)^d a_j(Q,Q^n) C_(n+j)(Q)=0, n&gt;=1.   (1.3)</code></pre>
+<p>This is the same elementary cross-level rigidity used in the <a href="all_level_a_period.html">all-level period theorem</a>.</p>
+<h2 id="choose-a-nonsingular-fixed-starting-color">2. Choose a nonsingular fixed starting color</h2>
+<p>Let A be the Q-exponent span in the collected Laurent support of a_d(Q,Y). For every integer r&gt;A, the substitution a_d(Q,Q^r) is nonzero. Indeed distinct monomials Q^u Y^v become Q^(u+rv), and a collision with v!=v’ would imply r&lt;=|u-u’|&lt;=A. Equal-v terms were already collected.</p>
+<p>Choose the fixed integer</p>
+<pre><code>n_0&gt;=d+A+1.                                 (2.1)</code></pre>
+<p>Then a_d(Q,Q^(n_0-d))!=0, and also a_d(Q,Q^(r-d))!=0 for every r&gt;=n_0. Every C_n is nonzero since C_n(1)=1. These facts will give both a nonzero source and unique formal propagation in the chosen source lattice.</p>
+<h2 id="the-exact-fouriermellin-operator-and-its-boundary-source">3. The exact Fourier–Mellin operator and its boundary source</h2>
+<p>Form the actual formal generating period</p>
+<pre><code>Z(Q,X)=sum_(n&gt;=n_0) C_n(Q) X^n
+       in X^(n_0) ℚ(Q)[[X]].                (3.1)</code></pre>
+<p>Let S act by S f(X)=f(QX), so SX=QXS. The quantum-torus Fourier map is the exact algebra map</p>
+<pre><code>Y |-&gt; S, T |-&gt; X^(-1).</code></pre>
+<p>It respects TY=QYT because X<sup>(-1)S=QSX</sup>(-1). In the recorded left-coefficient ordering its image is</p>
+<pre><code>P^M=sum_(j,m) a_(j,m)(Q) Q^(-mj) X^(-j) S^m. (3.2)</code></pre>
+<p>Negative m are allowed; they are invertible shifts. A fixed left power of S makes the displayed operator have nonnegative order, transporting its source by the same power, if that convention is desired. No factor of the source is discarded by doing so.</p>
+<p>Multiplying (1.3) by X^n and summing n&gt;=n_0 gives</p>
+<pre><code>P^M Z=B(Q,X),                               (3.3)</code></pre>
+<p>where the source is the explicit fixed Laurent polynomial</p>
+<pre><code>B=sum_(j,m) a_(j,m)(Q) Q^(-mj) X^(-j)
+      sum_(r=n_0)^(n_0+j-1) C_r(Q) Q^(mr) X^r. (3.4)</code></pre>
+<p>The empty sum for j=0 is zero. The identity follows termwise from</p>
+<pre><code>sum_(n&gt;=n_0) Q^(mn) C_(n+j) X^n
+  =Q^(-mj) X^(-j)
+       [Z(Q,Q^m X)
+            -sum_(r=n_0)^(n_0+j-1) C_r(Q) Q^(mr) X^r].</code></pre>
+<p>Every coefficient of every X power involves only finitely many terms; convergence is not assumed.</p>
+<p>The source uses exactly the d fixed colors C_(n_0),…,C_(n_0+d-1). Its X powers lie between n_0-d and n_0-1. Its lowest coefficient is</p>
+<pre><code>[X^(n_0-d)]B=C_(n_0)(Q) a_d(Q,Q^(n_0-d))!=0. (3.5)</code></pre>
+<p>Thus it is a genuine nonzero bounded source, not a possibly vanishing right-hand side inferred from formal elimination.</p>
+<h2 id="the-pointing-and-the-original-period-are-retained">4. The pointing and the original period are retained</h2>
+<p>Equation (3.3), together with the lattice condition Z in X^(n_0)[[X]], specifies Z uniquely. A nonzero homogeneous difference W in this lattice, of lowest power r&gt;=n_0, would contribute at power r-d only through j=d. Its coefficient would be</p>
+<pre><code>a_d(Q,Q^(r-d)) [X^r]W,</code></pre>
+<p>which is nonzero by (2.1), a contradiction. Thus the source and specified lattice retain the actual finite-color pointing.</p>
+<p>For every N&gt;=n_0 the original invariant is exactly</p>
+<pre><code>&lt;K&gt;_N=[ [X^N]Z(Q,X) ]_(Q=Q_N)
+      =Res_(X=0) Z(Q_N,X) X^(-N-1)dX.        (4.1)</code></pre>
+<p>The first expression means whole-germ specialization of the coefficient C_N(Q). Even if coefficients of a recurrence or a companion solution have poles at Q_N, C_N itself is the original regular Laurent period. No division by such a pole precedes its cancellation. The residue notation means coefficient extraction; it does not assert an analytically convergent contour realization.</p>
+<p>The full ADO period is still d_N(M)F_N(M), with its marked pole, residue, first jet and sign retained in the original meridian realization. This change of polarization constructs the same reduced Kashaev scalar in (4.1); it does not silently evaluate or remove d_N. A comparison of full-state realizations must transport that specified normalization line as well.</p>
+<h2 id="classical-support-and-the-affine-extension">5. Classical support and the affine extension</h2>
+<p>At Q=1 the symbol of (3.2) is exactly</p>
+<pre><code>P_cl(S,X^(-1)).                              (5.1)</code></pre>
+<p>Thus the classical Fourier transformation exchanges the meridian coordinate and the inverse longitude coordinate in the specified ordering. If a geometric factor occurs in the original actual symbol, its transformed geometric factor occurs here. No such factor is inferred merely from the transform.</p>
+<p>The marked regulator action is compatible with this polarization. Let y=Log Y, lambda=Log(L/L_c) and use H=Log Q, centering the longitude logarithm at the chosen complete lift L_c. Use the corresponding centered WKB action dW=lambda dy. The original constant character L_c is retained separately, rather than dropped from the period. In centered coordinates x=Log(X/X_c)=-lambda, X_c=L_c^(-1), with new momentum y. Hence</p>
+<pre><code>W^M=W-y lambda,  dW^M=y dx.                 (5.2)</code></pre>
+<p>Its symmetric regulator coordinate is unchanged:</p>
+<pre><code>R=W-(1/2)y lambda
+  =W^M-(1/2)x y.                            (5.3)</code></pre>
+<p>Indeed dR=(lambda dy-y d lambda)/2, exactly the marked regulator differential after Y=m and L^2=l are substituted. At the chosen complete lift y=0 the Legendre correction vanishes, including a retained longitude sign. Thus the previously calibrated complete imaginary action is preserved. This checks the classical marked action, not a normalization or asymptotic theorem for the quantum coefficient period (4.1).</p>
+<p>Grouping the m powers of S and using its usual companion realization turns (3.3), when its S-order is positive, into an affine difference extension with rational coefficients and the explicit source (3.4). One can homogenize it by the exact source annihilator</p>
+<pre><code>(S-B(Q,QX)/B(Q,X)) P^M Z=0.                 (5.4)</code></pre>
+<p>The source quotient and the chosen formal lattice must remain marked; (5.4) is not permission to replace the original object by an arbitrary homogeneous solution. If the transformed order is zero, (3.3) is instead its rational algebraic source equation; no artificial order is inserted to manufacture a geometric block.</p>
+<p>This removes the need to assume a special inhomogeneous right factor in order to obtain some canonical generic sourced polarization of the actual A-period. It does not prove that this extension is generically nonsplit, identify its geometric source class, or bound the selected coefficient norm in (4.1).</p>
+<h2 id="the-precise-comparison-residual">6. The precise comparison residual</h2>
+<p>For two supplied affine systems sigma v_i=C_i v_i+c_i, a proposed map v_act=P v_geo+b is horizontal precisely when</p>
+<pre><code>sigma(P) C_geo=C_act P,
+(sigma-C_act)b=c_act-sigma(P)c_geo.           (6.1)</code></pre>
+<p>Thus after a homogeneous comparison P, the remaining obstruction is the explicit class</p>
+<pre><code>[c_act-sigma(P)c_geo]
+          in F^d/(sigma-C_act)F^d.           (6.2)</code></pre>
+<p>An affine cut ell_i v_i+k_i is preserved additionally when</p>
+<pre><code>ell_act P=ell_geo,
+k_act+ell_act b=k_geo.                       (6.3)</code></pre>
+<p>The second equation retains the dual affine constant. Generic matrix invertibility does not by itself transport the boundary lattice.</p>
+<p>The new construction supplies the actual side of (6.1)–(6.3) in this polarization. It does not supply the geometric side or assert that their class (6.2) vanishes. Multiplicative rank-one curvature descent alone does not solve this additive source problem.</p>
+<p>The <a href="actual_mellin_normal_source_rigidity.html">actual Mellin normal-source theorem</a> now uses this very source quotient to exhibit a dual cocycle with value one on the selected section. Its normal symbol is therefore nonzero for every knot, without a semisimplicity assumption. Whole first-normal compatibility removes central scalar freedom on that selected line. The <a href="mellin_cyclotomic_jet_uniqueness.html">cyclotomic jet theorem</a> additionally fixes arbitrary root sections in the exact pole lattice using a bounded number of source-compatible quantum levels. Neither theorem constructs the geometric side of (6.1)–(6.3) or estimates the selected residue’s norm.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_fourier_mellin_actual_source.py">Exact audit</a>. <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/fourier_mellin_actual_source_results.json">Results</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/fourier_mellin_actual_source.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#actual-input-and-the-q-convention">1. Actual input and the Q convention</a><a href="#choose-a-nonsingular-fixed-starting-color">2. Choose a nonsingular fixed starting color</a><a href="#the-exact-fouriermellin-operator-and-its-boundary-source">3. The exact Fourier–Mellin operator and its boundary source</a><a href="#the-pointing-and-the-original-period-are-retained">4. The pointing and the original period are retained</a><a href="#classical-support-and-the-affine-extension">5. Classical support and the affine extension</a><a href="#the-precise-comparison-residual">6. The precise comparison residual</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

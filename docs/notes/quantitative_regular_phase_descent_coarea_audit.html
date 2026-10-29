@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A coarea audit of regular phase descent · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/quantitative_regular_phase_descent_coarea_audit.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-coarea-audit-of-regular-phase-descent">A coarea audit of regular phase descent</h1>
+<p>28 October 2026. This proves the boundary-mass assertion needed in Section 4 of <a href="quantitative_regular_phase_descent.html">quantitative regular phase descent</a>. It does not estimate the exponential size of the boundary periods. In particular, the boundary current below includes grazing curtains; its support need not be contained in a single physical collar hypersurface.</p>
+<h2 id="precise-transport-statement">1. Precise transport statement</h2>
+<p>Let C be a compact oriented piecewise smooth p-chain, with integer multiplicities, in a recorded logarithmic chart. The same argument applies to compact integral currents. Both M(C) and M(partial C) are assumed to be exp(o(N)). Let phi be the actual phase and a its target value. Suppose C lies in {rho&lt;1}, where rho is a Lipschitz exhaustion and {rho&lt;=2} is contained in a legal regular chart. All actual quantum poles and all chart seams which cannot be crossed are excluded from this chart.</p>
+<p>On {rho&lt;=2, phi&gt;=a}, let X satisfy</p>
+<pre><code>d phi(X)=-1.</code></pre>
+<p>Extend X to a globally defined smooth bounded vector field in a slightly larger real chart. The extension is only a device for defining a complete flow Phi_t; it must agree with X on the displayed region. Suppose, for the available time T_N, that</p>
+<pre><code>sup |X| &lt;= B_N,  sup |DX| &lt;= K_N,
+T_N=O(log^2 N),
+K_N T_N=o(N),</code></pre>
+<p>and that B_N, Lip(rho), and the first derivatives of phi on the initial chain are exp(o(N)). In the application these are fixed powers of L=N^epsilon, with epsilon sufficiently small. Define</p>
+<pre><code>tau(z)=max(phi(z)-a,0),  0&lt;=tau&lt;=T_N,
+H(u,z)=Phi_(u tau(z))(z),  0&lt;=u&lt;=1,
+m(u,z)=max_(0&lt;=v&lt;=u) rho(H(v,z)).                  (1)</code></pre>
+<p>There is a level r in (1,2) for which the following currents are defined, have mass exp(o(N)), and satisfy</p>
+<pre><code>partial T_r = C_low,r - C - B_r + E_r.             (2)</code></pre>
+<p>Here T_r is the transported truncated cylinder, C_low,r is supported in {phi&lt;=a}, B_r is the transported side coming from the ORIGINAL boundary partial C, and E_r is the complete exit-associated current. The image of every term on the right lies in the legal closed window {rho&lt;=r}. Thus a closed p-form omega on that window obeys the exact identity</p>
+<pre><code>integral_C omega = integral_(C_low,r) omega
+                   + integral_(E_r) omega
+                   - integral_(B_r) omega.        (3)</code></pre>
+<p>The orientation of B_r is specified below. When C is closed it is absent. Formula (3) retains all relative boundary data; it is not a bound on the last two integrals by their mass alone.</p>
+<h2 id="running-maxima-and-quantitative-slicing">2. Running maxima and quantitative slicing</h2>
+<p>Orient S=[0,1] x C with du first. Then</p>
+<pre><code>partial S = {1} x C - {0} x C - [0,1] x partial C.</code></pre>
+<p>The variational equation and differentiation of u tau(z) give a local Lipschitz bound</p>
+<pre><code>|DH| &lt;= Lambda_N,
+Lambda_N &lt;= const exp(K_N T_N)
+                (1+B_N(T_N+Lip(tau))).           (4)</code></pre>
+<p>All fixed powers of Lambda_N are exp(o(N)). The positive-part definition of tau is Lipschitz and causes no difficulty. Bounds can equivalently be read in local parametrizations and integrated with their multiplicities.</p>
+<p>The running maximum in (1) is also Lipschitz. Indeed, write it as</p>
+<pre><code>m(u,z)=max_(0&lt;=v&lt;=1) rho(H(vu,z)).</code></pre>
+<p>Every function in this maximum has the same local Lipschitz bound, at most const Lip(rho) Lambda_N. The supremum inherits that bound. This argument does not differentiate a maximizing time or a first-hit time. Let Q_N be this bound. Coarea on the PARAMETER cylinder gives</p>
+<pre><code>integral_1^2 M(&lt;S,m,r&gt;) dr &lt;= Q_N M(S).            (5)</code></pre>
+<p>For almost every r, restriction to {m&lt;r} is a finite-perimeter current and its boundary is</p>
+<pre><code>partial(S restricted to {m&lt;r})
+   = (partial S) restricted to {m&lt;r} + &lt;S,m,r&gt;.   (6)</code></pre>
+<p>One may choose a common such r with</p>
+<pre><code>M(&lt;S,m,r&gt;) &lt;= 2 Q_N M(S).                         (7)</code></pre>
+<p>The harmless factor 2 leaves a positive-measure choice of levels; the almost-everywhere current identities can therefore be imposed at the same time. A finite collection of chains or charts is handled by applying coarea to the sum of their unsigned slicing masses.</p>
+<p>Define</p>
+<pre><code>T_r     = H_#(S restricted to {m&lt;r}),
+E_r     = H_#&lt;S,m,r&gt;,
+C_low,r = H(1,.)_#(C restricted to {m(1,.)&lt;r}),
+B_r     = H_#(([0,1] x partial C) restricted to {m&lt;r}).</code></pre>
+<p>The u=0 face is all of C because rho(C)&lt;1. Equations (6) and the product orientation give (2), including its minus sign on B_r. Pushforward commutes with boundary. In particular, (2) includes the boundary of the retained subset of the u=1 face; it is not permissible to discard it separately.</p>
+<p>For m(1,z)&lt;r the entire trajectory up to tau(z) remains in the region where the extension is the actual normalized descent. Consequently its endpoint has phase a if phi(z)&gt;a, and is unchanged with phase at most a otherwise. This proves the stated support of C_low,r. Monotonicity of m in u makes {m&lt;r} an initial time interval in each fibre. There is no re-entry ambiguity, even if the physical trajectory later re-enters the window in the extended flow.</p>
+<p>Finally, mass pushforward and (7) give</p>
+<pre><code>M(T_r) &lt;= Lambda_N^(p+1) M(S),
+M(E_r) &lt;= 2 Lambda_N^p Q_N M(S),
+M(C_low,r) &lt;= Lambda_N^p M(C),
+M(B_r) &lt;= Lambda_N^p M(partial C).                (8)</code></pre>
+<p>These are bounds on parametrized currents WITH their multiplicities. No inference from the size of an image set or from cancellation of its parametrization is used. All quantities in (8) are exp(o(N)). Stokes applied to the legal image of T_r proves (3).</p>
+<h2 id="why-the-exit-current-includes-curtains">3. Why the exit current includes curtains</h2>
+<p>It is in general false that E_r is supported on {rho=r}. A local model is</p>
+<pre><code>rho(H(t,z))=z-(t-t_0)^2.</code></pre>
+<p>For t&gt;=t_0 its running maximum is z. At z=r, the parameter slice {m=r} therefore includes the whole interval t&gt;=t_0, although the physical value of rho is strictly less than r after t_0. These portions are grazing curtains in the boundary of the first-exit truncated cylinder. Coarea bounds their mass together with all other slice pieces.</p>
+<p>This distinction is essential. The construction proves controlled regular transport into a low-action chain PLUS an exit-associated current. It does not prove that this latter current has low action, or that its contribution is determined by data on one collar hypersurface. An additional estimate or an exact source cancellation is still required for a sharp full-period upper bound.</p>
+<h2 id="audit-verdict">4. Audit verdict</h2>
+<p>The saturation certificate and normalized-gradient estimates in Sections 2–4 of the root note support the interior transport assertion. Equations (1)–(8) supply the missing coarea argument without a first-hit derivative bound. They require a legal collar with the recorded derivative bounds, and retention of the complete exit-associated and original-boundary currents. No new general upper or lower volume bound follows from this boundary-mass result alone.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/quantitative_regular_phase_descent_coarea_audit.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#precise-transport-statement">1. Precise transport statement</a><a href="#running-maxima-and-quantitative-slicing">2. Running maxima and quantitative slicing</a><a href="#why-the-exit-current-includes-curtains">3. Why the exit current includes curtains</a><a href="#audit-verdict">4. Audit verdict</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

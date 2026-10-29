@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Actual full-volume ray components and exact normalization-cell pruning · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_markov_ray_normalization_and_pruning.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="actual-full-volume-ray-components-and-exact-normalization-cell-pruning">Actual full-volume ray components and exact normalization-cell pruning</h1>
+<p>28 October 2026. A strict exponential gap for EVERY radial component of the full-dilogarithm source is false for original hyperbolic knots. This can be proved in a literal Markov stabilization of the original word, with its original pivotal source. The resulting ray group is an explicit nonzero tame scalar times the WHOLE original invariant.</p>
+<p>The constructive conclusion is to contract complete normalization cells before estimating irreducible boundary components. Circle and ray terms of these cells combine exactly to their original normalization. No unproved knot value is used to define a replacement source.</p>
+<h2 id="a-universal-pivotal-evaluation-on-the-actual-fusion-channel">1. A universal pivotal evaluation on the actual fusion channel</h2>
+<p>Use the actual strict equal-color crossing and its original factors:</p>
+<pre><code>R_+=kappa C D U_+ C^(-1),
+C=F_2 U_- F_1 F_2^(-1),
+C^(-1)=F_2 F_1^(-1) V_- F_2^(-1),
+d=N-1, F_j=(Q;Q)_j,
+g_b=x^(-d)Q^(-b).</code></pre>
+<p>The notation and scalar line are those of <a href="actual_euler_gaussian_cauchy_network.html">the original strict factorization</a>. Let r=diag(r_0,…,r_d) be ANY diagonal on the second relative head. Then the exact operator identity is</p>
+<pre><code>Tr_2[(I tensor g) kappa C D U_+ (I tensor r) C^(-1)]
+                              =kappa x^(-d) r_0 I.   (1)</code></pre>
+<p>In particular this holds before choosing a fixed cut entry, an averaged marker or an exterior tangle. All color, Cartan and pivotal factors are retained. No assumption on the norm or nonvanishing of r is made.</p>
+<p>Here is a direct all-level proof. Total integer degree makes the partial trace diagonal. Fix its first input a and the relative channel k. Expanding the original C,C^(-1),U_+,D coefficients, then setting j=k-b and s=j+(central shift-j), gives its value</p>
+<pre><code>T_k(a)=kappa x^(-d-2k)(-1)^k F_k
+  sum_(s=0)^k Q^[-k+(k-s)(k-s-1)/2]
+                                 J_s(a)/(F_s F_(k-s)),
+
+J_s(a)=sum_(j=0)^s (-1)^(s-j) Q^[j(j+1)/2]
+             (Q^(a-j+1);Q)_s/(F_j F_(s-j)).          (2)</code></pre>
+<p>The Pochhammer in (2) automatically kills illegal head indices: j&gt;a contains 1-Q^0, and upper overflow contains 1-Q^N. Thus the displayed extended sum is exactly the original supported sum, including endpoints.</p>
+<p>The finite q-binomial theorem gives J_s(a)=(-1)^s. To verify this without a summation citation, expand (T Q^(1-j);Q)_s as a polynomial in T=Q^a. The j-sum of its coefficient of T^ell contains (Q^(1-ell);Q)_s. It vanishes for 1&lt;=ell&lt;=s; the constant coefficient is (-1)^s (Q;Q)_s/F_s=(-1)^s. Applying the same finite binomial theorem to the remaining s-sum gives</p>
+<pre><code>T_k(a)=kappa x^(-d-2k)Q^(-k)(1;Q)_k
+       =kappa x^(-d) delta_(k,0).                    (3)</code></pre>
+<p>This proves (1) for every N&gt;=2, including composite and even N. It does not rely on a scalar-endomorphism theorem for the modified crossing. The modified partial trace itself has been computed.</p>
+<p>For r=I, (1) is the original positive Markov/kink scalar alpha=kappa x^(-d). For general r the extra factor is exactly r_0. That factor must remain in the peripheral/framing line; it is not automatically a unit or a numerical normalization.</p>
+<h2 id="a-radial-component-of-an-original-markov-stabilized-knot">2. A radial component of an original Markov-stabilized knot</h2>
+<p>Positively Markov-stabilize ANY original knot word. In its kink, split only the positive F_2 at the left end of C^(-1), using the EXACT full-Psi coefficient source from <a href="actual_modular_dilog_circle_and_boundary_source.html">the circle/ray theorem</a>. Keep every other factor as the original finite operator, or equivalently as its complete unsplit relative source.</p>
+<p>The positive factorial coefficient is</p>
+<pre><code>F_k=N Q^(d-k) v_(+,d-k)
+   =N Q^(d-k)[B_(+,d-k)(R)-E_(+,d-k)(R)].          (4)</code></pre>
+<p>Its selected radial term, including the minus sign, has coefficient</p>
+<pre><code>F_k^ray=-N Q^(d-k) E_(+,d-k)(R),
+r_k=F_k^ray/F_k.</code></pre>
+<p>Replacing that F_2 in C^(-1) is exactly insertion of (I tensor r) immediately after C^(-1). Equation (1), with the unchanged Markov normalization alpha, therefore gives</p>
+<pre><code>WHOLE radial group = h_N(R) K_N,
+h_N(R)=-N Q^(-1) E_(+,N-1)(R).                   (5)</code></pre>
+<p>This is an identity of the actual stabilized source for every N, not an approximation or a source chosen from K_N. Since (1) is an operator identity, it applies equally to every original cut convention and to arbitrary exterior tensors. No sectorwise Ward replacement is performed after the decomposition.</p>
+<p>The corresponding circle group is (1-h_N)K_N. Their sum is exactly K_N. Expanding the other factors into circles and rays merely refines each of these groups into a fixed finite number of actual relative components; that count depends on the diagram, not on N.</p>
+<h2 id="the-radial-group-has-the-same-exponential-rate">3. The radial group has the same exponential rate</h2>
+<p>Fix ANY 0&lt;R&lt;1 and put</p>
+<pre><code>phi_R=Li_2(R)/(2*pi),
+c_R=R sqrt(1-R)/[-log(1-R)], 0&lt;c_R&lt;1.</code></pre>
+<p>The exact small-disk full-Psi expansion, with two fixed derivatives, is uniform on 0&lt;=t&lt;=R. Its central logarithmic terms are exponentially small there and extend with the required fixed derivatives at t=0 for all sufficiently large N. Consequently</p>
+<pre><code>Psi(log t)/(1-t^N)
+   =sqrt(1-t) exp[-i N Li_2(t)/(2*pi)]
+                                 (1+O_(R,C^2)(1/N)).</code></pre>
+<p>The phase phi(t)=Li_2(t)/(2<em>pi) has no stationary point on [0,R]: phi’(t)=-log(1-t)/(2</em>pi<em>t)&gt;0 and phi’(0)=1/(2</em>pi). Two integrations by parts yield</p>
+<pre><code>E_(+,N-1)(R)
+    =[c_R exp(-iN phi_R)-1]/N+O_R(N^(-2)),
+
+h_N(R)=Q^(-1)[1-c_R exp(-iN phi_R)]+O_R(1/N).     (6)</code></pre>
+<p>Thus h_N is bounded above and below by positive R-dependent constants for all sufficiently large N. The circle factor is tame and nonzero too:</p>
+<pre><code>1-h_N=c_R exp(-iN phi_R)+O_R(1/N).</code></pre>
+<p>Multiplication by either factor changes normalized logarithmic growth by o(1), and preserves zeros at all sufficiently large levels. In particular the ray group (5) in a Markov-stabilized ORIGINAL figure-eight knot has the independently proved rate Vol(4_1)/(2*pi), not a strict smaller rate. This is a whole-knot example; the exterior has not been replaced by a scalar toy model.</p>
+<p>It follows that no theorem asserting a strict gap for every non-pure- circle component can hold for arbitrary original presentations. If all finitely many refined ray components had strictly smaller limsup rate, their group would too, contradicting (5)-(6) for the figure-eight. This does not refute a statement about a correctly pruned presentation or a grouped boundary class.</p>
+<h2 id="a-source-compatible-normalization-quotient">4. A source-compatible normalization quotient</h2>
+<p>There are two exact pruning rules available BEFORE any asymptotics:</p>
+<ol type="1">
+<li>An adjacent typed fusion pair C_x^(-1)C_x or C_x C_x^(-1) is the identity on the original finite heads. If its full relative sources were already split, their COMPLETE sum is retained and contracted; individual rays need not be negligible.</li>
+<li>A visible positive pivotal Markov cell in the form (1) is replaced by its original alpha times r_0. A complete circle-plus-ray cell has r_0=1. An isolated ray or circle group has the explicit factor in (5)-(6), which can be retained as a nonzero tame scalar.</li>
+</ol>
+<p>These are contextual operator identities: tensoring with an exterior, composing at its open port, and applying the original cap/source preserve them. On the channel algebra the Markov evaluation is the character r-&gt;r_0; its kernel is an ideal. This gives a precise pointed quotient for THESE normalization cells, rather than discarding all radial edges. The original alpha and any r_0 depending on peripheral variables remain specified until the actual source is evaluated.</p>
+<p>A fixed finite pruning sequence terminates because it removes visible fusion pairs or kink cells. No confluence or canonical reduced form is claimed. Negative kinks may also be removed as COMPLETE original normalization cells by their original Markov identity; the arbitrary-r evaluation (1) is asserted only for the displayed positive cell.</p>
+<p>The rule does not move arbitrary internal projectors or defects to the boundary. The actual failure of that operation is documented in <a href="actual_interior_wall_cut_relocation.html">the interior-wall test</a>. Nor does it claim that every remaining boundary component has a gap. The meaningful global target is now the source-preserving geometric comparison AFTER these explicit normalization groups have been contracted or retained with their known nonzero factors.</p>
+<h2 id="reproducible-audit">5. Reproducible audit</h2>
+<p><code>experiments/audit_actual_markov_ray_normalization.py</code> evaluates the original finite crossing independently, checks (1) for every channel and cut entry at complete and generic root colors, verifies both binomial sums, contracts literal whole figure-eight cut matrices with the normalized cell, and checks the exact radial factor against (6). The algebraic all-level proof and uniform lower bound are above.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_markov_ray_normalization_and_pruning.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#a-universal-pivotal-evaluation-on-the-actual-fusion-channel">1. A universal pivotal evaluation on the actual fusion channel</a><a href="#a-radial-component-of-an-original-markov-stabilized-knot">2. A radial component of an original Markov-stabilized knot</a><a href="#the-radial-group-has-the-same-exponential-rate">3. The radial group has the same exponential rate</a><a href="#a-source-compatible-normalization-quotient">4. A source-compatible normalization quotient</a><a href="#reproducible-audit">5. Reproducible audit</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

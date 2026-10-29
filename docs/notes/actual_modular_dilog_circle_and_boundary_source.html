@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exact full-dilogarithm circle moments with a controlled original boundary source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_modular_dilog_circle_and_boundary_source.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="exact-full-dilogarithm-circle-moments-with-a-controlled-original-boundary-source">Exact full-dilogarithm circle moments with a controlled original boundary source</h1>
+<p>28 October 2026. The original finite Euler atoms are exactly moments of the full rational Faddeev dilogarithm, with a specified radial correction. At radius one the correction has polynomial operator norm in the actual unit-shift metric. The function itself is regular across every intervening cyclotomic root on its selected logarithmic strip. This removes the norm-one cyclic function’s artificial root barriers without discarding the original coefficient source.</p>
+<p>This does <strong>not</strong> identify the original knot period with a bare Faddeev state integral. The radial corrections remain part of its relative cycle. Polynomial local operator norms do not imply a smaller exponential rate after multiplication by the other crossing factors.</p>
+<h2 id="use-the-full-literature-function-including-its-central-period">1. Use the full literature function, including its central period</h2>
+<p>Put N&gt;=2, epsilon=+1 or -1, Q_epsilon=exp(epsilon<em>2</em>pi*i/N), and</p>
+<pre><code>V_epsilon(t)=(1-t^N)^((N-1)/(2N))
+              product_(ell=1)^(N-1)
+                (1-Q_epsilon^ell*t)^(-ell/N).</code></pre>
+<p>All these factors are anchored at t=0. On the logarithmic cover write t=exp(z) and define</p>
+<pre><code>Psi_epsilon(z)=V_epsilon(exp z)
+    (1-exp(Nz))^((N+1)/(2N)+epsilon*i*z/(2*pi))
+    exp[epsilon*i*Li_2(exp(Nz))/(2*pi*N)].             (1)</code></pre>
+<p>For Re z&lt;0 every logarithm and dilogarithm in (1), except the explicitly displayed z, is its convergent power-series branch. The independently proved <a href="rational_quantum_dilogarithm_torsor.html">rational evaluation</a> identifies Psi_+(z) with</p>
+<pre><code>Phi_(1/sqrt(N))(sqrt(N)*z/(2*pi)-c_(1/sqrt(N))).       (2)</code></pre>
+<p>The negative version is its conjugate-reflected function. Thus (1) uses the literature function with its fixed normalization, not a new invariant or an arbitrarily chosen periodic multiplier. The underlying rational evaluation is standard; the proof in the linked note is independent. For coverage see <a href="https://arxiv.org/abs/1411.6062">Garoufalidis–Kashaev, 1411.6062</a>. Conversion of Kashaev sums into full-dilogarithm integrals also predates this note; no novelty is claimed for that general idea.</p>
+<p>The first N ordinary coefficients of V_epsilon are</p>
+<pre><code>v_(epsilon,a)=(-1)^a Q_epsilon^(a(a-1)/2)
+                /(Q_epsilon;Q_epsilon)_a, 0&lt;=a&lt;N.</code></pre>
+<p>Equation (1) gives the stronger local statement</p>
+<pre><code>Psi_epsilon(z)=sum_(a=0)^(N-1) v_(epsilon,a) exp(az)
+                +O_N((1+|z|)exp(N Re z))             (3)</code></pre>
+<p>uniformly on any bounded imaginary interval as Re z tends to -infinity. The omitted logarithmic terms do not vanish in an ordinary fixed-radius Cauchy integral. Their exact contribution is the radial correction below.</p>
+<h2 id="the-selected-full-turn-is-regular-including-the-unit-circle">2. The selected full turn is regular, including the unit circle</h2>
+<p>For Re z&lt;0, (1) immediately gives the marked monodromy</p>
+<pre><code>Psi_epsilon(z+epsilon*2*pi*i)
+              =Psi_epsilon(z)/(1-exp(Nz)).            (4)</code></pre>
+<p>The elementary quantum shift, with the logarithmic lift retained, is</p>
+<pre><code>Psi_epsilon(z+epsilon*2*pi*i/N)
+              =Psi_epsilon(z)/(1-exp z).              (5)</code></pre>
+<p>These are different statements from norm-one cyclic transport. The full central factor in (1) is necessary for both.</p>
+<p>There are no zeros or poles in the open strip</p>
+<pre><code>0&lt;epsilon*Im z&lt;2*pi.                                 (6)</code></pre>
+<p>One can check the apparent cyclotomic singularities directly, without assuming a cancellation of fractional powers. Differentiating (1) cancels its two logarithmic terms and gives the meromorphic expression</p>
+<pre><code>d_z log Psi_epsilon
+  =sum_(ell=1)^(N-1) (ell/N)
+            Q_epsilon^ell exp(z)/(1-Q_epsilon^ell exp(z))
+   -N(1+epsilon*i*z/(2*pi)) exp(Nz)/(1-exp(Nz)).       (7)</code></pre>
+<p>At z=epsilon<em>2</em>pi<em>i</em>j/N, 1&lt;=j&lt;N, the two residues are -(N-j)/N and 1-j/N, so they cancel. The derivative is holomorphic there and the continued function is nonzero. At z=0 it has residue one: Psi has a simple zero. At z=epsilon<em>2</em>pi*i the residue is zero and Psi is nonzero. These statements also follow from (2), but (7) checks the exact norm and the selected strip directly.</p>
+<p>Consequently the path z=log R+epsilon<em>i</em>theta, 0&lt;=theta&lt;=2*pi, is a regular lifted circular path for EVERY R&gt;0, including R=1. When R=1 its initial endpoint is a zero, and its terminal endpoint is regular. The radial correction has a removable singularity at t=1.</p>
+<h3 id="a-uniform-geometric-phase-on-the-whole-selected-strip">A uniform geometric phase on the whole selected strip</h3>
+<p>The full function also has the correct leading phase beyond the unit disk. For every delta&gt;0 and delta&lt;=epsilon<em>Im z&lt;=2</em>pi-delta, uniformly in ALL Re z, the independently derived defining-integral estimate in <a href="literature_state_volume.html#21-a-uniform-complex-remainder-on-an-entire-horizontal-strip">the literature-state audit</a> gives</p>
+<pre><code>Psi_epsilon(z)=(1-exp z)^(1/2)
+   exp[Li_2(exp z)/(epsilon*2*pi*i/N)]
+                              (1+O_delta(1/N)).        (7a)</code></pre>
+<p>For epsilon=+1 substitute b=N^(-1/2) and w=z-i<em>pi</em>(1+1/N) into that estimate. Its leading argument is -exp(w)=exp(z-pi*i/N). Taylor expansion by this exact half-step gives</p>
+<pre><code>Li_2(exp(z-pi*i/N))/(2*pi*i/N)
+  =Li_2(exp z)/(2*pi*i/N)+(1/2)Log(1-exp z)+O_delta(1/N).</code></pre>
+<p>The second logarithmic derivative of Li_2 is bounded on the smaller angular strip, for every real part. The original defining-integral remainder is O_delta(1/N) there as well. This proves (7a), including its nonzero amplitude. Conjugate reflection proves the negative case. All branches are those continued through the selected strip. On smaller strips Cauchy’s estimate gives the same remainder control for every fixed number of logarithmic derivatives.</p>
+<p>Thus (7a) applies at any nonreal positive geometric shape, irrespective of whether its modulus is below, equal to, or above one. This is a uniform statement about the actual full function in (9), not an analytic continuation of the norm-one cyclic atom’s disk asymptotic. It still does not assert a uniform estimate on the radial edges at the strip’s boundary; their exact bound is retained separately below.</p>
+<h4 id="independent-finite-product-verification-on-compact-subsets">Independent finite-product verification on compact subsets</h4>
+<p>There is also a direct proof of (7a) on every compact subset of 0&lt;Im z&lt;2*pi, using only (7). Put</p>
+<pre><code>s_*=1+i*z/(2*pi),
+R_z(s)=exp(z+2*pi*i*s)/(1-exp(z+2*pi*i*s)),
+g_z(s)=(s-s_*)R_z(s).</code></pre>
+<p>The finite root identity sum_(ell=0)^(N-1)R_z(ell/N)=N exp(Nz)/(1-exp(Nz)) rewrites the EXACT logarithmic derivative as</p>
+<pre><code>d_z log Psi_+(z)=sum_(ell=0)^(N-1)g_z(ell/N).       (7b)</code></pre>
+<p>At s=s_* the apparent pole of g is removable. Its other poles are s=s_<em>+k, nonzero integers k. Since 0&lt;Re s_</em>&lt;1 in this strip, on any compact z-set the function g is holomorphic and uniformly bounded on a fixed complex neighborhood of [0,1]. This remains true at Re z=0, including every apparent cyclotomic root. Equation (7b) extends across those points by these removable values.</p>
+<p>Euler–Maclaurin, with a uniform first remainder, now gives</p>
+<pre><code>sum g_z(ell/N)=N integral_0^1 g_z(s)ds
+                      +(g_z(0)-g_z(1))/2+O_K(1/N).</code></pre>
+<p>For Re z&lt;0 the convergent Fourier series proves integral g_z=-Log(1-exp z)/(2<em>pi</em>i): the constant Fourier coefficient of R_z is zero and integral s exp(2<em>pi</em>i<em>m</em>s)ds is 1/(2<em>pi</em>i*m). Holomorphic continuation proves the same formula throughout the strip. Also g_z(0)-g_z(1) =-exp z/(1-exp z). Hence</p>
+<pre><code>d_z log Psi_+(z)=-N Log(1-exp z)/(2*pi*i)
+                   -exp z/[2(1-exp z)]+O_K(1/N).   (7c)</code></pre>
+<p>Integrate (7c) from a fixed left-half-plane anchor. At that anchor the convergent small-disk expansion already gives log Psi_+=Li_2(exp z)/(2<em>pi</em>i/N)+(1/2)Log(1-exp z)+O(1/N). Bounded paths in a compact substrip preserve the O_K(1/N) error and fix its logarithmic mark, proving (7a) there. Cauchy’s estimate on larger compact sets gives every fixed derivative version. Conjugate reflection treats epsilon=-1. This finite-product proof is independent of the stronger all-real-parts defining-integral estimate above.</p>
+<h2 id="exact-generalized-coefficient-extraction">3. Exact generalized coefficient extraction</h2>
+<p>For a&lt;N and R&gt;0 define</p>
+<pre><code>B_(epsilon,a)(R)=1/(2*pi) integral_0^(2*pi)
+   Psi_epsilon(log R+epsilon*i*theta)
+                   (R exp(epsilon*i*theta))^(-a) dtheta,
+
+E_(epsilon,a)(R)=epsilon/(2*pi*i) integral_0^R
+   Psi_epsilon(log t) t^(N-a-1)/(1-t^N) dt.           (8)</code></pre>
+<p>The function on the real radial path is its continuation from t&lt;1. At t=1 the quotient in (8) has its removable value. Then exactly</p>
+<pre><code>v_(epsilon,a)=B_(epsilon,a)(R)-E_(epsilon,a)(R).       (9)</code></pre>
+<p>Proof: take the rectangular logarithmic contour between Re z=log r and Re z=log R, with imaginary endpoints 0 and epsilon<em>2</em>pi. Its vertical sides are the two lifted circles. Pair its horizontal sides using (4). The resulting radial difference is</p>
+<pre><code>Psi_epsilon(log t)-Psi_epsilon(log t+epsilon*2*pi*i)
+       =-t^N Psi_epsilon(log t)/(1-t^N).</code></pre>
+<p>Use the orientation factor epsilon/(2<em>pi</em>i). By (3), the inner vertical integral tends to v_(epsilon,a), since its error is O_N(r^(N-a)(1+|log r|)). The paired radial integral converges at zero for precisely the required indices a&lt;N. Equation (7) justifies continuation through R=1 and arbitrary positive R. This proves (9) with its sign and every scalar fixed.</p>
+<p>Thus the coefficient source is a relative cycle consisting of one lifted circle and one paired radial edge. It is not the circle alone.</p>
+<h2 id="exact-radial-modulus-and-a-uniform-boundary-bound">4. Exact radial modulus and a uniform boundary bound</h2>
+<p>For 0&lt;t&lt;1, conjugate-pair the finite factors in V_epsilon. This gives</p>
+<pre><code>|V_epsilon(t)|^2=(1-t)(1-t^N)^(-1/N).</code></pre>
+<p>The remaining modulus in (1) is (1-t<sup>N)</sup>((N+1)/N); the explicitly imaginary logarithmic and dilogarithmic terms have modulus one. Hence</p>
+<pre><code>|Psi_epsilon(log t)|^2=(1-t)(1-t^N).                 (10)</code></pre>
+<p>In fact (10) holds for all t&gt;0. For t&gt;1 its two factors are both negative. To check this extension without choosing fractional powers across the zero, take the real part of (7). On the real radial line, the paired finite terms give</p>
+<pre><code>d_(log t) log|Psi_epsilon|
+    =-t/[2(1-t)]-N t^N/[2(1-t^N)].</code></pre>
+<p>This is the logarithmic derivative of the positive square root of |(1-t)(1-t^N)|. The simple zero at t=1 fixes the same multiplicative constant on both sides by continuity of its nonzero first derivative.</p>
+<p>For 0&lt;R&lt;=1, (10) gives the UNIFORM estimate</p>
+<pre><code>|E_(epsilon,a)(R)|
+   &lt;=1/(2*pi) integral_0^R t^(N-a-1)
+                              sqrt((1-t)/(1-t^N)) dt
+   &lt;=R^(N-a)/[2*pi*(N-a)].                         (11)</code></pre>
+<p>This includes a=N-1 and R=1; no fixed-distance-from-the-endpoint condition is needed. For R&gt;1 the same calculation yields the explicit bound</p>
+<pre><code>|E_(epsilon,a)(R)| &lt;=1/[2*pi*(N-a)]
+      +1/(2*pi) integral_1^R t^((N-1)/2-a) dt.      (12)</code></pre>
+<p>Here t^N-1 &gt;= t^(N-1)(t-1). In particular an exterior-radius radial term need not have polynomial size. Its possible exponential rate is retained in (12), rather than discarded in a geometric deformation.</p>
+<p>If T^N=0 and ||T||&lt;=1, define B_epsilon(T) and E_epsilon(T) using the finite resolvent (tI-T)^(-1). Equivalently sum (8) times T^a. Then (9) and (11), at R=1, give</p>
+<pre><code>v_(epsilon,N)(T)=B_epsilon(T)-E_epsilon(T),
+||E_epsilon(T)|| &lt;= H_N/(2*pi),
+H_N=sum_(j=1)^N 1/j.                               (13)</code></pre>
+<p>This bound is on the FULL source correction, not on its logarithm. The nilpotent resolvent retains the finite original head and introduces no unknown scalar normalization.</p>
+<h3 id="a.-the-shifted-full-turn-and-its-exact-negative-ray-source">4a. The shifted full turn and its exact negative-ray source</h3>
+<p>There is a second useful coefficient cycle for the SAME full function. Write Psi=Psi_+ and v_a=v_(+,a). For every R&gt;0 and 0&lt;=a&lt;N put</p>
+<pre><code>C_a(R)=1/(2*pi) integral_(-pi)^pi
+   Psi(log R+i theta)(R exp(i theta))^(-a) dtheta,
+
+J_a(R)=(-1)^(N-a)/(2*pi*i) integral_0^R
+   Psi(log t+i*pi) t^(N-a-1) dt.</code></pre>
+<p>Then, with the indicated logarithmic marks, exactly</p>
+<pre><code>v_a=C_a(R)-J_a(R).                               (13a)</code></pre>
+<p>The shifted rectangle is holomorphic even though it contains zeros: in the lower half-strip, a cyclotomic point z=-2<em>pi</em>i*j/N has residues -j/N and 1+j/N in (7), hence a simple zero of Psi, not a pole. The upper half-strip has the cancellations already proved. Thus the rectangle with imaginary endpoints -pi and pi requires no additional pole residues. Its paired rays satisfy</p>
+<pre><code>Psi(log t-i*pi)=(1-(-t)^N)Psi(log t+i*pi).</code></pre>
+<p>Substituting this into the same rectangular argument as Section 3 cancels the central denominator in its radial difference. The phase of (t exp(-i*pi))^(N-a) is exactly (-1)^(N-a), giving (13a). The inner circle tends to v_a for the same reason as before.</p>
+<p>The selected upper negative ray has the particularly simple EXACT modulus, for ALL t&gt;0,</p>
+<pre><code>|Psi(log t+i*pi)|^2=1+t.                         (13b)</code></pre>
+<p>Indeed in (7) put exp z=-t. Pairing the finite terms gives real part</p>
+<pre><code>(1/2)[N(-t)^N/(1-(-t)^N)+t/(1+t)].</code></pre>
+<p>The second term of (7) cancels its first summand because Re(1+i(log t+i<em>pi)/(2</em>pi))=1/2. The remaining logarithmic derivative is t/[2(1+t)]. The anchor Psi-&gt;1 at t-&gt;0 fixes the constant. When N is even and t=1, the apparent terms cancel at a regular interior-strip point, so the same identity extends through it. Consequently</p>
+<pre><code>|J_a(R)| &lt;= (1/(2*pi)) integral_0^R
+                   sqrt(1+t)t^(N-a-1) dt
+         &lt;=sqrt(1+R) R^(N-a)/[2*pi(N-a)].        (13c)</code></pre>
+<p>At R=1 this again gives a polynomial original-head bound: the nilpotent unit-shift correction has norm at most sqrt(2)H_N/(2*pi). For R&gt;1 the factor R^(N-a) is retained; no exterior polynomial bound is asserted. The epsilon=-1 identity is the conjugate-reflection of (13a)-(13c).</p>
+<p>Thus BOTH full angular choices [0,2*pi] and [-pi,pi] have exact original coefficient cycles. In particular the cut prescribed by <a href="all_radius_angular_geometric_cycle_and_polarization.html">the all-radius angular maximum theorem</a> need not be imposed as a new source choice: its matching ray is specified by (9) or (13a). This fixes the local coefficient cycle, not its whole-word geometric dominance. Carrying those ray terms through the actual positive chart, and proving their total contribution cannot cancel the geometric term, remains necessary.</p>
+<h2 id="application-to-every-original-crossing-and-its-boundary-factors">5. Application to every original crossing and its boundary factors</h2>
+<p>At the complete unit meridian the actual transfer shifts have norm at most one in the standard balanced head metric. Their scalar color factors have modulus one. For the actual Q=e^(2<em>pi</em>i/N), exactly</p>
+<pre><code>u_(Q,N)(T)=v_(-,N)(Q^(-1)T).                       (14)</code></pre>
+<p>This is the finite factorial reflection, not an asymptotic equality. Equations (9), (13), and (14) therefore treat both types of actual transfer with the literature full function and their retained radial sources. In particular no reciprocal full function with a divergent radial endpoint is needed to represent u.</p>
+<p>All original factorial diagonals have the same coefficient realization:</p>
+<pre><code>1/F_a=Q^(-a) v_(-,a),
+F_a=N Q^(N-1-a) v_(+,N-1-a), 0&lt;=a&lt;N.              (15)</code></pre>
+<p>At R=1 the radial-error operator norms for these DIAGONAL kernels are, respectively, at most 1/(2<em>pi) and N/(2</em>pi). These are maxima of the coefficient bounds, not sums. The positive factorial’s original factor N and phase are retained exactly.</p>
+<p>Insert (9) and (14)-(15) in the strict original signed crossing word. Keep its Gaussian, Cartan, framing, peripheral and original input/output functionals. Expanding the finite product gives an EXACT finite sum over choices of circle or radial source at each atom. The number of choices is fixed by the word, independently of N. Each term is an ordinary full-dilogarithm relative period with the original finite rational kernel/source. Absolute convergence at each fixed N follows coefficientwise from the finite nilpotent resolvents and (8)-(10).</p>
+<p>This applies to the full original knot scalar, not just an unpointed operator. It does not require a nonzero knot value or division by one. The previous ordinary-Gaussian replacement can also be retained: its diagonal acts on the same finite degrees and the initial domination argument is unchanged.</p>
+<p>This construction is distinct from the <a href="actual_hardy_forest_residue_reduction.html">Hardy forest reduction</a>. It supplies full-function relative moments on the original finite heads; one must not replace every scalar atom in the unwrapped Laurent graph by (1) and assume that its nonanalytic logarithmic tails are source-null. The radial terms in (9) are exactly what such a substitution would miss.</p>
+<h2 id="what-this-changes-on-the-path-to-the-geometric-period">6. What this changes on the path to the geometric period</h2>
+<p>The cyclic atom’s accumulating root divisors are not intrinsic barriers to the selected full-function transport. Equations (1), (7), and (9) give the full dilogarithm and its exact coefficient cycle, with an explicit locally polynomial correction at radius one. The independently proved Fourier and pentagon identities for that full function can now be tested against this specified source, rather than against an unspecified state integral or an assumed equivalence of formal jets.</p>
+<p>Two conclusions do NOT follow. First, a positive geometric change of coordinates must carry the radial edges and finite resolvents as well as the circle integrand. Second, a polynomial norm bound for one radial factor does not make its whole-word contraction exponentially small: the remaining factors and their source can still carry the volume rate. The nonzero geometric image and the global comparison with the marked Rivin period remain unproved. Those, rather than a further choice of local quantum-dilogarithm normalization, are the next required steps.</p>
+<h2 id="reproducible-checks">7. Reproducible checks</h2>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_modular_dilog_circle.py">The main audit</a> checks 30 exact shift/monodromy/modulus instances, 16 entire circle-plus-radial moments, 14 original diagonal/reflection families, and 12 full-strip phase instances at interior, unit, and exterior radii. The moments use the full function, not its truncated polynomial; the bare circle is explicitly checked to give the wrong coefficient. <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_modular_dilog_circle_results.json">Results</a>.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_modular_shifted_circle.py">The shifted-circle audit</a> separately checks the negative-ray formula and its exact modulus. These checks supplement the all-level proofs above. Neither audit computes a geometric cycle coefficient or verifies a volume limit.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_modular_dilog_circle_and_boundary_source.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#use-the-full-literature-function-including-its-central-period">1. Use the full literature function, including its central period</a><a href="#the-selected-full-turn-is-regular-including-the-unit-circle">2. The selected full turn is regular, including the unit circle</a><a href="#exact-generalized-coefficient-extraction">3. Exact generalized coefficient extraction</a><a href="#exact-radial-modulus-and-a-uniform-boundary-bound">4. Exact radial modulus and a uniform boundary bound</a><a href="#application-to-every-original-crossing-and-its-boundary-factors">5. Application to every original crossing and its boundary factors</a><a href="#what-this-changes-on-the-path-to-the-geometric-period">6. What this changes on the path to the geometric period</a><a href="#reproducible-checks">7. Reproducible checks</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

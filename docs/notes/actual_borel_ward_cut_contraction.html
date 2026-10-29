@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A literal Borel Ward contraction for the actual finite cut · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_borel_ward_cut_contraction.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-literal-borel-ward-contraction-for-the-actual-finite-cut">A literal Borel Ward contraction for the actual finite cut</h1>
+<p>Research construction, 27 October 2026. This derives an explicit split Ward complex and its cut functional from the actual root matrices. It identifies exactly what unknot normalization fixes. It does not yet map the partially summed geometric Gaussian block into that complex or prove a selected global geometric contribution.</p>
+<h2 id="the-two-actual-matrices-already-determine-the-scalar-ward-kernel">1. The two actual matrices already determine the scalar Ward kernel</h2>
+<p>Fix N&gt;=2, Q primitive of order N, x=-M/q!=0. In the original balanced basis w_a=v_a/(Q;Q)_a, 0&lt;=a&lt;N, the actual generators are</p>
+<pre><code>K_aa=k_a=x Q^(-a),
+F_(a+1,a)=f_a=1-Q^(a+1), 0&lt;=a&lt;N-1,</code></pre>
+<p>with all other F entries zero. Distinct k_a and nonzero f_a are units at every M!=0, including the complete value M=1. No E coefficient is inverted, so no color-reducibility wall is removed.</p>
+<p>For C in End(V) put</p>
+<pre><code>delta(C)=([K,C],[F,C]),
+p(C)=Tr(C)/N, i(c)=c I.                         (1.1)</code></pre>
+<p>Define two explicit maps on a pair (X,Z) of matrices. Let H_K(X) have zero diagonal and off-diagonal entries</p>
+<pre><code>H_K(X)_(a,b)=X_(a,b)/(k_a-k_b), a!=b.</code></pre>
+<p>Put d_r=Z_(r+1,r)/f_r and define the diagonal matrix</p>
+<pre><code>H_F(Z)_aa=(1/N)sum_(r=0)^(N-2)(N-1-r)d_r
+                            -sum_(r&lt;a)d_r.    (1.2)</code></pre>
+<p>Then, for every matrix C,</p>
+<pre><code>C=i p(C)+H_K([K,C])+H_F([F,C]).               (1.3)</code></pre>
+<p>For the off-diagonal entries this is immediate. On the diagonal, [F,C]<em>(r+1,r)/f_r=C_rr-C</em>(r+1,r+1); cumulative summation gives the diagonal minus its average, proving (1.3).</p>
+<p>In particular ker delta=k I. Define the actual Ward complex to be</p>
+<pre><code>W^0=End(V) --delta--&gt; W^1=im(delta).</code></pre>
+<p>The map h(X,Z)=H_K(X)+H_F(Z) satisfies</p>
+<pre><code>h delta=I-i p, delta h=I on W^1,
+p h=0, h delta i=0.                          (1.4)</code></pre>
+<p>Thus it is an explicit strong contraction onto k I in degree zero. There is no claim that the unrestricted codomain End(V)^2 has vanishing higher cokernel; W^1 is the actual image subspace.</p>
+<p>These are matrix identities, independent of any irreducibility, semisimplicity, Haar integration, or modified-trace existence theorem.</p>
+<h2 id="the-original-marked-cut-is-cohomologous-to-the-normalized-scalar-row">2. The original marked cut is cohomologous to the normalized scalar row</h2>
+<p>In this same balanced basis the prescribed source and co-source are psi=(1,…,1)^t and phi=(1/N)(1,…,1). Hence</p>
+<pre><code>e=psi phi, e_(a,b)=1/N, Phi(C)=Tr(e C).</code></pre>
+<p>The original pivot is g=K^(1-N), and its marked defect is D=g^(-1)e; thus the actual expression is Phi(C)=Tr(g D C). Neither the pivot nor the full external modified-dimension line d_N(M) is dropped.</p>
+<p>There is an explicit matrix B_cut, with zero diagonal, such that</p>
+<pre><code>(B_cut)_(a,b)=1/[N(k_a-k_b)], a!=b,
+[K,B_cut]=e-I/N.                              (2.1)</code></pre>
+<p>Consequently, for every C,</p>
+<pre><code>Phi(C)-p(C)=-Tr(B_cut[K,C]).                  (2.2)</code></pre>
+<p>Thus the degree-one row b(X,Z)=-Tr(B_cut X) is an exact cochain homotopy Phi-p=b delta on the Ward complex. In particular the original rank-one cut and the scalar normalized trace agree exactly on Ward-closed matrices. Their common value on I is one. This is the literal unknot normalization, rather than a comparison of two quantities that only have the same norm.</p>
+<p>The pivot’s ordinary trace is still zero; (2.2) does not replace the marked defect D by an ordinary pivotal closure. At the root D^2=0, gD=e and DgD=D, as in <a href="relative_framing_source_transgression.html">the actual relative source</a>. The equality of cut rows is an equality on the Ward complex, with the defect retained.</p>
+<h2 id="the-actual-closed-tangle-is-ward-closed">3. The actual closed tangle is Ward closed</h2>
+<p>The prescribed R matrices intertwine the actual coproduct, and the cups and pivotal caps are the explicit Hopf maps already checked in <a href="relative_pivotal_duality.html">the duality calculation</a>. Composing these identities around the closed strands shows that the original (1,1)-tangle endomorphism C commutes with K and F. It therefore lies in ker delta and equals p(C)I by (1.3).</p>
+<p>This proves the finite scalar/cut conclusion directly from the actual matrices. It also gives an exact target for any proposed framing reduction: a map of actual partial-source complexes into W, with the cut row (2.2) and its homotopy transported, would reduce that framing problem to its scalar Ward class.</p>
+<p>The global intertwining identity alone does not construct such a map for a partially summed array. A remaining external internal index is not an open-tangle matrix index. Moving F through the unsummed network generally produces currents in those remaining flow coordinates. Their exact finite boundary, canonical carries and normal source must be retained to identify its complex with W.</p>
+<h2 id="actual-coproduct-symbols-and-the-two-cut-framing-currents">4. Actual coproduct symbols and the two cut-framing currents</h2>
+<p>There is a direct principal-symbol comparison, using the already proved actual moment-map identity. On the tensor product put</p>
+<pre><code>K_tot=Delta^(b-1)K, Ecal_tot=rho^2 Delta^(b-1)E,
+F_tot=Delta^(b-1)F, rho=q-q^(-1).</code></pre>
+<p>In balanced wave coordinates A=Q^a and S f(A)=f(QA), their local input matrices have symbols</p>
+<pre><code>K=x/A, e=(1-x^2/A)p/x, f=(1-A)/p.</code></pre>
+<p>The actual finite Ecal is the truncated matrix, including its rank-one endpoint subtraction; only its interior symbol is used in this display. The actual coproducts are</p>
+<pre><code>Delta K=K tensor K,
+Delta Ecal=Ecal tensor K+1 tensor Ecal,
+Delta F=F tensor 1+K^(-1) tensor F.</code></pre>
+<p>Writing the classical prefix product as P=[a b;c d], its exact Gauss factorization gives</p>
+<pre><code>symbol(K_tot)=a, symbol(Ecal_tot)=b,
+symbol(F_tot)=c/a.                            (4.1)</code></pre>
+<p>Indeed the upper triangular products multiply their off-diagonal entries by E_1K_2+E_2, while the lower triangular product gives F_1+K_1^(-1)F_2. Taking B_-^(-1)B_+ gives P with precisely the three entries in (4.1).</p>
+<p>For simultaneous conjugation A xi and the actual symplectic form, <a href="quantum_source_bridge_extension.html">the uniform moment-map calculation</a> proves</p>
+<pre><code>iota_(A xi) Omega=(2u da+v dc+w db)/a,
+xi=u h+v e_sl+w f_sl,</code></pre>
+<p>where h=diag(1,-1), e_sl=E_12, f_sl=E_21. With the convention iota_(X_H)Omega=dH, equation (4.1) therefore yields</p>
+<pre><code>X_logK=A(h/2),
+X_F=A(e_sl-(c/(2a))h),
+X_Ecal=A(a f_sl).                            (4.2)</code></pre>
+<p>The cut stabilizer is ker ell, ell(h,e_sl,f_sl)=(2,1,-1). Thus K,F alone describe a different Borel. Its actual cut basis h+2f_sl, e_sl+f_sl is instead obtained from</p>
+<pre><code>A(h+2f_sl)=(2/a)(X_K+X_Ecal),
+A(e_sl+f_sl)=X_F+(c/a^2)X_K+(1/a)X_Ecal.     (4.3)</code></pre>
+<p>These relations also give literal quantum Ward identities with a specified operator order. For any full tensor endomorphism J commuting with the actual coproduct generators, both</p>
+<pre><code>W_1(J)=2 K_tot^(-1)([K_tot,J]+[Ecal_tot,J]),
+W_2(J)=[F_tot,J]+F_tot K_tot^(-1)[K_tot,J]
+                          +K_tot^(-1)[Ecal_tot,J]          (4.4)</code></pre>
+<p>vanish exactly. Their first commutator symbols divided by H=Log Q give the two vector fields in (4.3). No quantum Log K is needed. The coefficients in (4.4) multiply on the left; interchanging their order introduces genuine additional quantum terms.</p>
+<p>Equations (4.3)–(4.4) identify the principal cut-framing currents, but are not by themselves a quantum representation of the cut Borel Lie algebra. The Hopf-adjoint presentation below removes their variable-coefficient ambiguity at the finite matrix level.</p>
+<h3 id="the-hopf-adjoint-gives-constant-conjugation-fields">The Hopf adjoint gives constant conjugation fields</h3>
+<p>For h in the actual quantum group define its actual action on matrices by ad_h(C)=sum rho(h_1) C rho(S h_2). The displayed coproduct and antipode formulas give, exactly,</p>
+<pre><code>(ad_K-I)(C)=[K,C]K^(-1),
+ad_Ecal(C)=[Ecal,C]K^(-1),
+ad_F(C)=[F,C]+K^(-1)[K,C]F.                  (4.5)</code></pre>
+<p>In the tensor formulas K,Ecal,F are their actual total coproducts. The first commutator symbols divided by H are therefore</p>
+<pre><code>(ad_K-I)/H -&gt; A(h/2),
+ad_Ecal/H -&gt; A f_sl,
+ad_F/H -&gt; A e_sl.                            (4.6)</code></pre>
+<p>For F, the extra term contributes (c/a)X_logK, canceling the h component in (4.2). Thus</p>
+<pre><code>2(ad_K-I)+2ad_Ecal,
+ad_F+ad_Ecal                                (4.7)</code></pre>
+<p>are literal quantum Ward operators with principal fields A(h+2f_sl), A(e_sl+f_sl). They use the actual truncated E, including its endpoint, and no logarithm of K. The conventional opposite sign of fundamental conjugation vector-field brackets agrees with the Ecal-to-f_sl and F-to-e_sl correspondence. No exact two-generator Lie or coideal presentation is being inferred solely from these first symbols.</p>
+<p>The K,F Hopf Ward rows and the rows in (1.1) are related by an invertible exact row operation:</p>
+<pre><code>X_H=X K^(-1), Z_H=Z+K^(-1)X F,
+X=X_H K, Z=Z_H-K^(-1)X_H K F.               (4.8)</code></pre>
+<p>Hence (1.4) transfers to the Hopf Ward complex by substituting the second line of (4.8) into h. Its cut homotopy is</p>
+<pre><code>Phi-p=-Tr(K B_cut (ad_K-I)(C)),             (4.9)</code></pre>
+<p>with B_cut from (2.1). This is an actual cochain row transformation.</p>
+<h3 id="pivotal-partial-trace-is-an-exact-hopf-adjoint-chain-map">Pivotal partial trace is an exact Hopf-adjoint chain map</h3>
+<p>For two actual modules V,W let</p>
+<pre><code>ptr_W(C)=Tr_W((I tensor g_W)C),
+g_W=K_W^(1-N).</code></pre>
+<p>Then for every matrix C, not only for invariant intertwiners,</p>
+<pre><code>ptr_W(ad_h C)=ad_h(ptr_W C).                 (4.10)</code></pre>
+<p>One exact proof identifies End(V tensor W) with V tensor W tensor W* tensor V* and contracts W tensor W* by the actual right pivotal cap w tensor phi |-&gt; phi(g_W w). This cap is a Hopf map by the checked antipode identities. The resulting contraction is literally the displayed weighted partial trace.</p>
+<p>There is also a generator check with no categorical premise. For K, cyclicity of the W trace and commutation of g_W with K_W give the assertion. For Ecal, expand</p>
+<pre><code>[Ecal_V K_W+Ecal_W,C] * (K_V K_W)^(-1).</code></pre>
+<p>The V terms give the right side, and the two W terms cancel because K_W^(-1)g_W is central. For F, expand the third formula of (4.5) for F_tot=F_V+K_V^(-1)F_W. Again the V terms give the right side; the W terms cancel by</p>
+<pre><code>K_W F_W g_W K_W^(-1)=g_W F_W,</code></pre>
+<p>which follows from the same centrality. The generator identities extend by composition to every h. Iterating gives every original pivotal closed-strand contraction.</p>
+<p>Thus the degree-zero map ptr and its rowwise degree-one map give an exact map from the full finite tensor Hopf-Ward complex (using its actual image as degree one) to the cut Hopf-Ward complex. The scalar contraction and the actual cut homotopy are now attached to that finite diagram.</p>
+<p>This does not yet identify scalar partial Gaussian elimination with that operator-valued diagram. It must transport the E endpoint, the diagonal K poles, cumulative F carries, and the chosen normal source. A remaining flow index is not automatically an open matrix index. That is the remaining algebraic comparison, rather than a consequence of Schur scalarity or (4.10).</p>
+<h2 id="uniform-size-and-regularity-of-the-actual-contraction">5. Uniform size and regularity of the actual contraction</h2>
+<p>For the prescribed unit-circle root,</p>
+<pre><code>|Q^(-a)-Q^(-b)|&gt;=4/N for a!=b,
+|1-Q^(r+1)|&gt;=4/N.</code></pre>
+<p>These follow from sin(pi/N)&gt;=2/N. With the maximum entry norm,</p>
+<pre><code>||H_K(X)|| &lt;= N ||X||/(4|x|),
+||H_F(Z)|| &lt;= N(N-1)||Z||/4.                 (4.1)</code></pre>
+<p>The coefficients in (1.2) each have modulus at most one, giving the second bound. Hence the actual Ward contraction is regular at M=1 and has polynomial bounds in N on compact meridian sets away from zero. This estimate does not involve d_N(M); that separate marked line keeps all its original divisors and jets.</p>
+<p>Polynomial control of a projection does not imply that its value on a given nonzero vector has a nonzero exponential rate. Its kernel contains many nonzero matrices. The bound is useful only after the actual source class has been shown to survive the map.</p>
+<h2 id="what-this-does-and-does-not-settle-about-the-geometric-block">6. What this does and does not settle about the geometric block</h2>
+<p>The partially summed actual family has a nonzero transverse formal geometric block and an actual bulk operator with geometric support, as proved in <a href="partial_geometric_support_theorem.html">the partial support construction</a>. The remaining two-index framing functional has not thereby been identified with the contraction (1.4), nor with the sourced centralizer transgression. That identification requires explicit Ward currents from the local R coproduct identities after partial elimination, and a map retaining the chosen source and normal row.</p>
+<p>If a nonzero formal geometric class were proved to map into ker delta as a nonzero endomorphism, then its cut would be nonzero algebraically: ker delta=k I and Phi(I)=1. This is a precise reduction of the needed normalization problem, not a proof of that embedding or its nonzero scalar coefficient.</p>
+<p>Ward identities plus unknot normalization alone cannot prove that coefficient is nonzero for every knot: arbitrary scalar families C_K=c_K I satisfy both commutator equations, with c_unknot=1 and c_K=0 allowed elsewhere. The missing source map must supply more information than the universal commutant calculation. No global cycle, Stokes, or volume inference is made here.</p>
+<p>The <a href="cyclic_ward_norm_adapter.html">cyclic Ward completion</a> also computes the missing raising edge, its full Frobenius determinant character, and a literal quantum-factorial affine source equation. This retains the complete d_N(M) adapter. It is a further exact source datum for the missing Gaussian/adjoint comparison, rather than a replacement for that comparison.</p>
+<h2 id="subsequent-currents-and-an-exact-divided-normal-realization-of-the-cut">7. Subsequent currents and an exact divided-normal realization of the cut</h2>
+<p>The <a href="local_r_ward_transfer_currents.html">literal local R currents</a> now give the unsummed E and F Ward divergence formulas with the full missing-edge source and inserted moments. Their ordinary closed wall source cancels exactly, so a locally nonzero wall entry cannot by itself certify the global geometric contribution.</p>
+<p>On the genuine complete integral-color lift there is a different specified normal operator: the <a href="divided_adjoint_marked_edge_pairing.html">true divided Hopf adjoint</a> J_ad=[(ad_Ecal)<sup>N/(1-Q</sup>N)]<em>root. For the literal missing edge W=E</em>(N-1,0), direct calculation gives</p>
+<pre><code>J_ad(W)=-N sum_(a=0)^(N-2) E_(a,a+1),
+Phi(J_ad(W))=-(N-1).</code></pre>
+<p>Therefore the normalized row</p>
+<pre><code>Phi_div(C)=-Phi(J_ad(C W))/(N-1)</code></pre>
+<p>has Phi_div(I)=1 and obeys the exact all-matrices homotopy Phi_div-Phi=(Phi_div-Phi)h delta. It returns the original invariant on every actual closed tangle. Generic pivotal naturality before division also gives an explicit full-network realization, with the ordered insertion T(W_cut tensor I) retained. This supplies an actual divided-normal cut, rather than a conjectural scalar normalization.</p>
+<p>The <a href="complete_color_divided_ward_and_fusion.html">complete-color theorem</a> keeps its q-normal distinct from the fixed-root meridian normal, and retains the pivot and framing derivatives. Its one-sided fusion correction is a finite exponential with nilpotence bounded by tensor length. The opposite divided Ward actions contain an SL_2 block, so a nilpotent whole gauge group is not asserted. The Gaussian/source comparison and selected volume norm remain the additional theorem.</p>
+<p>The <a href="residual_gaussian_ward_currents.html">subsequent complete-color residual theorem</a> now computes the dual cut rows explicitly and transports their currents through the actual nondegenerate transverse Gaussian. Their two compensated framing fields have precisely the source covariance of Omega_cut, and their formal ideal is the flat line of that actual Gaussian amplitude. This supplies an all-order interior formal ideal, while preserving the distinction from the whole finite relative-source complex. The <a href="finite_cut_euler_source_obstruction.html">finite-cut source audit</a> shows explicitly why such local formal closure alone cannot prove nonzero selected source survival.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_borel_ward_cut_contraction.py">Exact matrix audit</a>. <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_borel_ward_cut_contraction_results.json">Results</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_borel_ward_cut_contraction.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-two-actual-matrices-already-determine-the-scalar-ward-kernel">1. The two actual matrices already determine the scalar Ward kernel</a><a href="#the-original-marked-cut-is-cohomologous-to-the-normalized-scalar-row">2. The original marked cut is cohomologous to the normalized scalar row</a><a href="#the-actual-closed-tangle-is-ward-closed">3. The actual closed tangle is Ward closed</a><a href="#actual-coproduct-symbols-and-the-two-cut-framing-currents">4. Actual coproduct symbols and the two cut-framing currents</a><a href="#uniform-size-and-regularity-of-the-actual-contraction">5. Uniform size and regularity of the actual contraction</a><a href="#what-this-does-and-does-not-settle-about-the-geometric-block">6. What this does and does not settle about the geometric block</a><a href="#subsequent-currents-and-an-exact-divided-normal-realization-of-the-cut">7. Subsequent currents and an exact divided-normal realization of the cut</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

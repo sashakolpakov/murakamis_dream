@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A common carry lattice for every recoupling tree · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/carry_recoupling_lattice.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-common-carry-lattice-for-every-recoupling-tree">A common carry lattice for every recoupling tree</h1>
+<p>Research note, 26 October 2026. This gives an explicit integral model for an arbitrary finite recoupling tree at simultaneous nilpotent degeneration. Its pole orders are integer carries, independent of the tree. The local moves, the actual meridian family and its original cut trace can be transported on that common lattice at every N, including even and composite levels.</p>
+<p>This extends the two-factor Smith calculation in <a href="cyclic_steinberg_lattice.html">the cyclic lattice note</a>. It uses the existing pointed Borel recouplings and the literature ADO crossing. It does not assign their full colored network to an arbitrary geometric ideal triangulation or prove the selected Bloch-regulator norm.</p>
+<h2 id="statement-and-hypotheses">1. Statement and hypotheses</h2>
+<p>Let N&gt;=2 and Q be primitive of order N. Work over</p>
+<pre><code>R=k[[epsilon]], K=k((epsilon)), char k=0,</code></pre>
+<p>enlarging constants to contain Q as needed. Fix b&gt;=2 and directions a_1,…,a_b such that every nonempty consecutive sum A_I is nonzero. Put</p>
+<pre><code>alpha_j=1-epsilon a_j, t_j=alpha_j^N,
+t_I=product_(j in I) t_j, w_I=product_(j in I) x_j.</code></pre>
+<p>The modules E_t=R[x]/(x^N-t) have their standard monomial lattices. The leaf tensor lattice Lambda_leaf has the integral evaluation basis e_i at x_j=alpha_j Q^(i_j), 0&lt;=i_j&lt;N. The evaluation changes are units over R: their Vandermonde determinants are nonzero modulo epsilon.</p>
+<p>For any ordered binary tree T with these leaves, factor each internal interval I=L union R using the pointed Clebsch map</p>
+<pre><code>C_(t_L,t_R): E_(t_I) tensor E_(tau_I)
+                       -&gt; E_(t_L) tensor E_(t_R),
+tau_I=(1-t_I)/(1-t_R).</code></pre>
+<p>Its iterated evaluation I_T maps the basic source lattice B_T, with one total factor and b-1 relative factors, into Lambda_leaf tensor K. The parameters extend as</p>
+<pre><code>tau_I(0)=A_I/A_R, 1-tau_I(0)=-A_L/A_R.          (1.1)</code></pre>
+<p>Thus every relative cyclic algebra stays algebraically nondegenerate on this exceptional divisor. No geometric positivity is inferred.</p>
+<p>For a leaf residue tuple i define</p>
+<pre><code>kappa(i)=floor((i_1+...+i_b)/N),
+J_kappa=diag(epsilon^(-kappa(i))).</code></pre>
+<p><strong>Common-lattice theorem.</strong> For every tree T,</p>
+<pre><code>I_T=J_kappa M_T, M_T in GL_(N^b)(R),
+I_T B_T=Lambda_carry
+       =direct_sum_i epsilon^(-kappa(i)) R e_i.  (1.2)</code></pre>
+<p>The last lattice is the same for every tree. The Smith poles are exactly -kappa(i). Their multiplicities are</p>
+<pre><code>m_k=sum_(d=kN)^((k+1)N-1)
+                coefficient_d (1+z+...+z^(N-1))^b.         (1.3)</code></pre>
+<p>In particular poles can have order greater than one for larger tensors. The two-factor result is m_1=N(N-1)/2 and m_0=N(N+1)/2.</p>
+<p>The actual integral source lattice is</p>
+<pre><code>B_T^actual=I_T^(-1) Lambda_leaf
+         =M_T^(-1) diag(epsilon^kappa) Lambda_leaf.        (1.4)</code></pre>
+<p>It has the corresponding nonnegative Smith exponents. Its distinguished unit is retained, since I_T(1)=1 belongs to Lambda_leaf.</p>
+<h2 id="the-kernel-for-a-whole-tree">2. The kernel for a whole tree</h2>
+<p>Order the internal nodes in any fixed compatible order. In the source monomial basis, with total exponent a and relative exponents d_v in {0,…,N-1}, the exact evaluation is</p>
+<pre><code>I_T(u^a product_v v_v^d_v)
+  =w_all^a product_(v: I=L union R)
+             (Qw_I;Q)_d_v/(Qw_R;Q)_d_v.         (2.1)</code></pre>
+<p>For one node this is the independently proved pointed kernel C(u^a v<sup>d)=w</sup>a(Qw;Q)_d/(Qz;Q)_d. For the induction, a total coordinate function acts after subtree evaluation by multiplication by its product w_I. Subtree relative operators commute with that total coordinate. Thus every numerator and denominator pulls back to the displayed multiplication function, proving (2.1). Denominators are units in the generic K-algebra; the integral behavior is proved next.</p>
+<p>All parity signs in the pointed Clebsch map and its literal permutations remain as in the all-level construction. No determinant normalization or independent scalar root is introduced in (2.1).</p>
+<h2 id="carries-bound-every-matrix-entry-pole">3. Carries bound every matrix-entry pole</h2>
+<p>For a node interval I let</p>
+<pre><code>s_I=sum_(j in I) i_j, r_I=s_I mod N,
+c_v=(r_L+r_R-r_I)/N in {0,1}.</code></pre>
+<p>At the chosen leaf evaluation point,</p>
+<pre><code>w_I=Q^r_I product_(j in I)(1-epsilon a_j).</code></pre>
+<p>For d&lt;N, the product (Qw_I;Q)_d has a simple zero precisely when d&gt;=N-r_I and r_I!=0. Every other factor is a unit. The zero is simple because its first coefficient is A_I!=0. Use the threshold N when r_I=0. Therefore the node ratio in (2.1) has valuation</p>
+<pre><code>1_(d&gt;=threshold(r_I))-1_(d&gt;=threshold(r_R)).     (3.1)</code></pre>
+<p>If c_v=0 then r_I&gt;=r_R, so this difference is nonnegative. If c_v=1 it is at least -1. Hence its valuation is at least -c_v in both cases.</p>
+<p>The carries telescope:</p>
+<pre><code>floor(s_I/N)=floor(s_L/N)+floor(s_R/N)+c_v,
+sum_(internal v)c_v=kappa(i).                   (3.2)</code></pre>
+<p>Multiplication of row i by epsilon^kappa(i) therefore makes every entry of I_T integral, for every tree. This proves M_T=J_kappa^(-1)I_T has entries in R.</p>
+<h2 id="the-determinant-proves-the-common-image-exactly">4. The determinant proves the common image exactly</h2>
+<p>At every node the pointed two-factor determinant is</p>
+<pre><code>det C=sign_N [t_R(1-t_I)/(1-t_R)^2]^(N(N-1)/2),
+sign_N=(-1)^(N(N-1)^2/2).</code></pre>
+<p>Its valuation is -N(N-1)/2: both 1-t_I and 1-t_R have a simple zero. Extending by the other b-2 tensor factors raises this determinant to N^(b-2). There are b-1 nodes. Thus</p>
+<pre><code>val(det I_T)=-(b-1)(N-1)N^(b-1)/2.              (4.1)</code></pre>
+<p>The sum of the row carries is exactly the opposite:</p>
+<pre><code>sum_i kappa(i)=(b-1)(N-1)N^(b-1)/2.             (4.2)</code></pre>
+<p>For a direct count, sum s_all over all N^b tuples. The residue r_all is uniform on {0,…,N-1}, each appearing N^(b-1) times. Subtract the sum of these residues from the sum of s_all and divide by N. This gives (4.2) without a parity assumption.</p>
+<p>Consequently det M_T is a unit. An integral square matrix with unit determinant is invertible over R. Equation (1.2), including the equality of image lattices rather than only their index, now follows. Formula (1.3) counts tuples with each carry value.</p>
+<p>This proof uses only finite products, valuations and the exact two-factor determinant. It does not infer an integral lattice from numerical invertibility at a nearby complex point.</p>
+<h3 id="the-relative-source-is-an-explicit-bounded-normal-jet">The relative source is an explicit bounded normal jet</h3>
+<p>The two lattices give a specified relative source module in this marked degeneration:</p>
+<pre><code>0 -&gt; Lambda_leaf -&gt; Lambda_carry -&gt; Q_carry -&gt; 0,
+Q_carry=direct_sum_(kappa(i)&gt;0) R/(epsilon^kappa(i)).       (4.3)</code></pre>
+<p>Its nilpotence order is at most floor(b(N-1)/N)&lt;=b-1, independent of N for a fixed tensor size. It is a module supported on a bounded nonreduced normal neighborhood, with all its exponents determined by the two lattices.</p>
+<p>Specialization is not injective on these two lattices. Its exact sequence is</p>
+<pre><code>0 -&gt; Tor_1^R(Q_carry,k) -&gt; Lambda_leaf/epsilon
+  -&gt; Lambda_carry/epsilon -&gt; Q_carry/epsilon -&gt; 0.        (4.4)</code></pre>
+<p>The middle comparison has image rank</p>
+<pre><code>m_0=binomial(N+b-1,b),</code></pre>
+<p>since kappa=0 counts b-tuples with sum&lt;N. Its lost source and cokernel each have dimension N^b-m_0. Keeping the ordinary image alone therefore loses genuine state directions.</p>
+<p>There is also a uniform finite-jet evaluation rule. If A preserves both lattices, its carry-frame specialization has entry</p>
+<pre><code>(J_kappa^(-1) A J_kappa)_(ij)|_0
+               =coefficient_(kappa(j)-kappa(i)) A_(ij),  (4.5)</code></pre>
+<p>with a negative coefficient interpreted as zero. Thus M_T(0) and at most b-1 normal jets of A suffice to compute its recoupled specialization. The local crossing below needs only its zeroth and first wrap coefficients. No analytic limiting process is needed for this specialization theorem.</p>
+<p>The subsequent <a href="relative_pivotal_duality.html">relative duality calculation</a> now constructs the dual inclusion Lambda_carry_sharp subset Lambda_leaf_sharp. Its relative quotient pairs perfectly with Q_carry in k((epsilon))/k[[epsilon]]. The residue pairing is [epsilon^(kappa-1)]fg on each torsion summand, and it pairs the lost Tor fiber perfectly with the dual residual fiber. Thus turned source evaluations have a specified finite normal pairing. Their actual tree rows are transported by I_T^t, not replaced by arbitrary regular vacuum rows. An explicit cyclic endpoint cap exhibits the single-wall case: the retained first normal coefficient recovers a missing cap column and yields the actual pivotal pairing.</p>
+<h2 id="local-moves-preserve-both-integral-lattices">5. Local moves preserve both integral lattices</h2>
+<p>For any two trees,</p>
+<pre><code>F_(T,T&#39;)=I_(T&#39;)^(-1)I_T=M_(T&#39;)^(-1) M_T</code></pre>
+<p>is an integral isomorphism of their basic sources and also of the actual sublattices (1.4). All loops are exactly the identity. This proves path independence through the entire degeneration, not merely on the punctured generic fiber.</p>
+<p>The local arrow is the existing pointed recoupling, with its spectators and permutations retained. For a rotation ((A,B),C)-&gt;(A,(B,C)), set A_X=sum_(j in X)a_j. On the exceptional divisor its two affected relative factors are related by</p>
+<pre><code>C_(c,d), c=A_ABC/A_BC, d=A_BC/A_C.               (5.1)</code></pre>
+<p>These parameters and their required complements are nonzero. All unaffected relative factors and the total factor are spectators. Formula (5.1) follows either by specializing the ordered relative-operator identities or by substituting (1.1) in the exact three-factor pointed recoupling. Thus the pentagon is the same algebraic two-to-three coherence with its full factorial lattice; no scalar has been suppressed at the pole.</p>
+<p>This theorem concerns recoupling networks. Arbitrary face turns, an equivariant knot-character gluing and a presentation on an arbitrary positive ideal triangulation are further constructions.</p>
+<h2 id="a-regular-crossing-lift-with-its-wrap-source-retained">6. A regular crossing lift with its wrap source retained</h2>
+<p>Use the prescribed ADO color at q=q_N, Q=q^2, x=q^alpha, M=-qx. The leaf evaluation basis can be changed by the units</p>
+<pre><code>v_a=(Qalpha_j;Q)_a e_a, 0&lt;=a&lt;N.</code></pre>
+<p>They specialize to the original factorial basis, and the Borel operator (1-X_j)sigma^(-1) in this frame is exactly</p>
+<pre><code>F_j v_a=v_(a+1), a&lt;N-1;
+F_j v_(N-1)=(1-t_j)v_0.                         (6.1)</code></pre>
+<p>The nonwrap coefficient is the cancellation of adjacent products; the wrap coefficient is (1-alpha_j)(Qalpha_j;Q)_(N-1)=1-t_j.</p>
+<p>Choose the actual nilpotent E(x) and the actual diagonal Cartan factor D, both independent of epsilon in this regular frame. In the finite universal crossing series replace only F_j by (6.1). This is a specified auxiliary crossing lift. Since E^N=0 its nilpotent series and inverse terminate at N-1 and are regular. At epsilon=0 it is exactly the original positive/inverse ADO crossing in its original basis. No generic braid relation for this auxiliary lift is assumed.</p>
+<p>Every nonzero transfer has k&lt;=a&lt;N on the E side. On the F side it can wrap at most once. A nonwrap preserves the total integer residue degree; a wrap lowers it by N and has coefficient 1-t_j=N a_j epsilon+O(epsilon^2). The checked permutation preserves that degree. The inverse crossing has the same property.</p>
+<p>It follows that every crossing and inverse preserve both Lambda_leaf and Lambda_carry. In the carry frame a wrap has the compensating factor epsilon^(-1), so its first coefficient N a_j survives. Dropping that coefficient would discard a real source term. Arbitrary products retain all repeated wall and corner contributions.</p>
+<p>The specialized carry operator is lower triangular with respect to kappa. Its diagonal blocks are the actual truncated crossing blocks; its off-diagonal blocks are the retained wrap sources. In particular those blocks need not be zero even though their closed diagonal traces vanish.</p>
+<h2 id="the-selected-cut-trace-is-exactly-the-original-meridian-family">7. The selected cut trace is exactly the original meridian family</h2>
+<p>For a b-strand knot braid beta, use the original pivot g=K^(1-N), residual twist theta=x^(1-N), and writhe w. Let P_0 be the original rank-one cut projector onto v_0. Put</p>
+<pre><code>D_cut=P_0 tensor g tensor ... tensor g,
+Z_beta=theta^(-w) Tr(D_cut B_beta).               (7.1)</code></pre>
+<p>On the actual nilpotent module this is the original cut entry, so Z_beta=F_N(M). It does not close the core with its vanishing quantum dimension. The rank-one cut projector is retained.</p>
+<p>The auxiliary lift has no degree-increasing transition. Any closed diagonal path in (7.1) therefore contains no wrap. Its weight is the actual nilpotent weight. Consequently</p>
+<pre><code>Z_beta(epsilon,x)=F_N(M)                         (7.2)</code></pre>
+<p>as an exact identity in K(x), before specialization. The pivot and cut projector are diagonal and preserve both lattices.</p>
+<p>Transport all operators and the functional through I_T. Writing I_T=J_kappa M_T, the recoupled operator on the basic source is</p>
+<pre><code>B_T=M_T^(-1)(J_kappa^(-1) B_beta J_kappa)M_T.    (7.3)</code></pre>
+<p>It is integral, as is the transported cut insertion. At epsilon=0 its trace is still (7.2), now in the algebraically nondegenerate relative factors (1.1) and the remaining total factor. The cut insertion is generally a full matrix in these coordinates; it must not be reset to a new coordinate projector or vacuum. The local moves of Section 5 transport this same functional.</p>
+<p>This gives an exact recoupled presentation of the actual ADO meridian family for every knot and every N. All constants and M-dependent factors remain fixed. Multiplying by the entire original d_N(M) preserves the full ADO family and its whole meridian germs. At M=1 the original Kashaev value is obtained. The resulting sequence has exactly the same all-level meridian annihilator ideal because it is the same sequence of rational functions F_N(M), not a newly chosen state.</p>
+<p>The argument does not claim that every specialized auxiliary matrix defines a braid representation on the basic carry fiber. The actual nilpotent representation is recovered on the actual lattice (1.4); (7.2) supplies the selected period on the larger recoupling presentation without that extra assertion.</p>
+<p>The subsequent <a href="semicyclic_carry_braiding.html">semicyclic holonomy-braiding theorem</a> now supplies that extra assertion on a specified coherent source family. Its corrected uncheck wrap and transported centers give genuine holonomy braid maps. Their common fixed line, with the actual endpoint rescalings, has equal carry directions and yields a braid action on every basic recoupled fiber as well as its actual sublattice. It also proves the whole cut operator is the original scalar, rather than only the trace identity above. Arbitrary frozen directions are not substituted for that coherent family.</p>
+<h3 id="an-exact-check-that-the-retained-source-matters">An exact check that the retained source matters</h3>
+<p>For the figure-eight braid (sigma_1 sigma_2<sup>(-1))</sup>2 at N=2, q=x=i, the selected cut trace splits by carry as</p>
+<pre><code>carry zero: 3,  carry one: 2,  F_2(1)=5.         (7.4)</code></pre>
+<p>These are exact Q(i) matrix calculations, not numerical estimates. For example E=[[0,1],[0,0]], F=E^t, D=diag(1,-i,-i,1), R_plus=P D(1+2i E tensor F), R_minus=(1-2i E tensor F)D^(-1)P, and g=diag(-i,i) give (7.4) by the literal rank-one cut trace. The braid has writhe zero. The carry-one directions are in the kernel term of (4.4). Retaining only the specialization image would yield 3 instead of 5. Thus that source term cannot be omitted even when the final scalar period is the only quantity of interest.</p>
+<h2 id="relation-to-the-source-torsor-and-the-remaining-geometric-step">8. Relation to the source torsor and the remaining geometric step</h2>
+<p>Each factor in (2.1) is one of the actual factorial primitives of <a href="factorial_source_torsor.html">the source-torsor theorem</a>. The carry theorem controls their complete tree contraction, including all simultaneous poles, rather than specializing them separately. It extends the local two-step lattice to arbitrary tensor size and proves that its recoupling paths preserve the actual cut period, all root parities included.</p>
+<p>The direction labels are a configuration of distinct cumulative points A_0=0,A_1,…,A_b. Their relative cyclic factors and local recouplers are nondegenerate, but they have not been identified with the complete flat knot representation or its positive geometric triangulation. The actual interior threading character and the fixed hyperbolic character remain distinguished as in <a href="ado_threaded_shadow.html">the threading theorem</a>.</p>
+<p>The next comparison must construct the colored/polarized global gluing and transport this full period functional, source lattice, peripheral lifts and root factors. It must also prove the selected Bloch-regulator norm across N. The uniform recoupling and exact period identities above do not themselves supply that norm or prove the volume conjecture.</p>
+<p>The degeneration source Q_carry is not yet identified with the source of an inhomogeneous meridian A-equation. Its bounded normal thickness makes finite nilpotent descent available once the relevant operator and central data match; that match remains a comparison to prove.</p>
+<h2 id="coverage-and-exact-diagnostics">9. Coverage and exact diagnostics</h2>
+<p>Cyclic Borel recoupling and its pentagon already have the Kashaev 6j origin recorded in <a href="pointed_steinberg_recoupling.html">the pointed recoupling note</a>. The comparison with the literature cyclic dilogarithm and its singular factorial frame is in the source-torsor note. No external integral-lattice or global state-comparison theorem is assumed in Sections 2–7; their proof is the finite-product carry count, determinant and literal cut trace above.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_carry_recoupling_lattice.py">The exact audit</a> constructs the row-scaled leading matrices from their valuations and leading coefficients. It verifies unit determinants for 83 tree presentations, including every ordered tree on up to six leaves at N=2. It checks 120 local rotations against the independently constructed pointed Clebsch matrix, with exact spectators. Thus its local-move checks are not only products of a matrix and its computed inverse.</p>
+<p>At N=2,3,4,5,6 it retains genuine wrap terms, verifies inverse crossings, and compares 30 actual generic/Kashaev cut periods in both three-leaf trees. All pivot and writhe factors are included. Higher even and composite levels through 12 enter the lattice and local-move checks. These are finite diagnostics for the uniform proof, not a geometric or asymptotic theorem. The audit also verifies (7.4) symbolically over Q(i), and records the carry-sector contributions in all 30 finite-field periods. Results: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/carry_recoupling_lattice_results.json">carry_recoupling_lattice_results.json</a>.</p>
+<pre><code>python3 experiments/audit_carry_recoupling_lattice.py</code></pre>
+<h2 id="source-flags-and-the-actual-total-frame">10. Source flags and the actual total frame</h2>
+<p>The subsequent <a href="source_flag_carry_extension.html">source flag carry extension</a> now realizes the normal directions as distinct cumulative flags delta_i with an auxiliary source point. In the moving-source chart every endpoint root has a common epsilon^(1/N) factor. Including the actual total source frame leaves exactly the row power epsilon^(-kappa); this gives the same carry lattice for every finite source flag. The matrix extends as an invertible one at the marked source infinity by this note’s valuation argument, which also applies to roots with the same nonzero first coefficients and arbitrary higher terms.</p>
+<p>The actual sublattice, dual linking form and original whole cut operator extend together. In particular this transports the complete period and its Tor contribution, rather than only the ordinary image. The full geometric colored gluing, marked meridian identification and regulator norm remain the outstanding global comparison.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/carry_recoupling_lattice.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#statement-and-hypotheses">1. Statement and hypotheses</a><a href="#the-kernel-for-a-whole-tree">2. The kernel for a whole tree</a><a href="#carries-bound-every-matrix-entry-pole">3. Carries bound every matrix-entry pole</a><a href="#the-determinant-proves-the-common-image-exactly">4. The determinant proves the common image exactly</a><a href="#local-moves-preserve-both-integral-lattices">5. Local moves preserve both integral lattices</a><a href="#a-regular-crossing-lift-with-its-wrap-source-retained">6. A regular crossing lift with its wrap source retained</a><a href="#the-selected-cut-trace-is-exactly-the-original-meridian-family">7. The selected cut trace is exactly the original meridian family</a><a href="#relation-to-the-source-torsor-and-the-remaining-geometric-step">8. Relation to the source torsor and the remaining geometric step</a><a href="#coverage-and-exact-diagnostics">9. Coverage and exact diagnostics</a><a href="#source-flags-and-the-actual-total-frame">10. Source flags and the actual total frame</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

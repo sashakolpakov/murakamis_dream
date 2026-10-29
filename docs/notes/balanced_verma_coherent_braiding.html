@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The balanced Verma crossing is a coherent-source exponential · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/balanced_verma_coherent_braiding.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-balanced-verma-crossing-is-a-coherent-source-exponential">The balanced Verma crossing is a coherent-source exponential</h1>
+<p>Research proof, 27 October 2026. The actual balanced factorial lattice has a completed highest-weight model whose block shift and divided F-power are a literal Weyl pair. This note evaluates the universal crossing on that model. Its root resonance is an exact exponential; on coherent kernels it gives finite E-semicyclic crossings with changing source parameters. Their selected one-cut operator is exactly the original one, including its full meridian normalization.</p>
+<p>The Burau transport and the Verma/Alexander root period were already proved in <a href="frobenius_verma_period.html">the earlier Verma note</a>, and an F-semicyclic crossing in <a href="semicyclic_carry_braiding.html">the carry-braiding note</a>. Those are not new conclusions here. The new comparison is the balanced normal-source/Fock kernel, its evaluated cyclotomic pole, and its relation to those existing objects. This source base remains triangular/reducible. It is not the geometric A-curve or a volume proof.</p>
+<p><a href="balanced_verma_coherent_braiding_independent_audit.html">Independent proof audit</a>.</p>
+<h2 id="the-actual-balanced-infinite-lattice">1. The actual balanced infinite lattice</h2>
+<p>Initially q,M are generic, Q=q^2, x=-M/q and rho=q-q^(-1). On a free basis w_a, a&gt;=0, put</p>
+<pre><code>K w_a=x Q^(-a) w_a,
+Ecal w_a=(M Q^(-a)-M^(-1)) w_(a-1), a&gt;=1,
+Ecal w_0=0,
+F w_a=(1-Q^(a+1)) w_(a+1), Ecal=rho^2 E.</code></pre>
+<p>The adjacent-entry subtraction gives [Ecal,F]=rho(K-K^(-1)); the two weight equations are immediate. Thus this is a genuine generic quantum-group module. Its root head 0&lt;=a&lt;N is exactly the original balanced finite color. The <a href="common_verma_two_wall_source.html">common-Verma source note</a> gives its two boundary walls and normal extension; the construction below can also be checked directly from the displayed matrices.</p>
+<p>Remove only the common Cartan scalar q^(H_1 H_2/2) at w_00, retaining it as the same marked external line as in the original crossing. The remaining Cartan diagonal on a pair of colors is</p>
+<pre><code>D w_(a,b)=x_2^(-a)x_1^(-b)Q^(ab) w_(a,b).</code></pre>
+<p>The uncheck universal crossing is D R_0, with</p>
+<pre><code>R_0=sum_(k&gt;=0) (-1)^k q^(k^2)
+                  Ecal_1^k tensor F_2^k/(Q;Q)_k
+   =P_Q(q Ecal_1 F_2).                       (1)</code></pre>
+<p>The sum terminates on every fixed input. It is regular at every prescribed q_N=exp(pi*i/N), including on tail blocks. Indeed its entry from (a,b) to (a-k,b+k), 0&lt;=k&lt;=a, is exactly</p>
+<pre><code>(-1)^k q^(k^2) {b+k choose k}_Q
+                product_(j=a-k+1)^a (M_1 Q^(-j)-M_1^(-1)). (2)</code></pre>
+<p>The Gaussian coefficient is a polynomial. This cancellation is essential before root specialization. In particular the terms k&gt;=N do not in general vanish in the infinite root module.</p>
+<h2 id="root-blocks-the-weyl-pair-and-the-two-integral-lattices">2. Root blocks, the Weyl pair, and the two integral lattices</h2>
+<p>Fix q=q_N, write gamma=(-1)^(N+1), kappa_i=M_i-M_i^(-1), and kappa_(i,N)=M_i<sup>N-M_i</sup>(-N). Split a=rN+a_bar, 0&lt;=a_bar&lt;N. On the product completion over the block index, let B be the backward block shift. Periodicity of the literal coefficients gives</p>
+<pre><code>Ecal=Ecal_head tensor I+kappa W tensor B,
+F=F_head tensor I, K=K_head tensor I,
+W=E_(N-1,0),
+Ecal^N=gamma kappa_N B.                       (3)</code></pre>
+<p>The divided operator, formed before specializing, is</p>
+<pre><code>T=[F^N/(Q;Q)_N]_root.</code></pre>
+<p>Its action from block r to block r+1 is r+1, because {(r+1)N+a_bar choose N}_Q tends to r+1. Thus [B,T]=I. In the Fock realization h_a tensor t^r/r!, B=partial_t and T=t. The coherent kernel is</p>
+<pre><code>theta_s(h_a)=h_a exp(s t),
+B theta_s=s theta_s, T theta_s=partial_s theta_s,
+pi_0 theta_s=I.                              (4)</code></pre>
+<p>It embeds the finite source module with Ecal_s=Ecal_head+kappa s W, F_s=F_head, K_s=K_head. Formula (4) is a kernel identity: replacing B,T by s,partial_s as an algebra homomorphism would reverse their commutator.</p>
+<p>The earlier unbalanced Verma lattice has Fv_a=v_(a+1). Generically w_a=v_a/(Q;Q)_a is a diagonal change of basis; on blocks a&gt;=N it has root poles. The two root modules therefore have different central powers and cannot be identified by a regular root-fiber basis change. On each fixed total-position sector the generic matrices are conjugate, and their diagonal traces coincide as regular whole functions. This preserves the earlier graded Verma/Alexander period while retaining the singular factorial lattice, rather than identifying its two special fibers.</p>
+<h2 id="the-whole-crossings-resonant-exponential">3. The whole crossing’s resonant exponential</h2>
+<p>Use log P_Q(Z)=-sum_(m&gt;=1)Z<sup>m/[m(1-Q</sup>m)], with Z=q Ecal_1 F_2. On each total-position sector all sums terminate. Since F<sup>N=(1-Q</sup>N)N T+O((1-Q<sup>N)</sup>2), terms m&gt;=N not divisible by N vanish at the root. For m=jN, j&gt;=2, the numerator has j vanishing factors and the denominator only one; these vanish as well. The sole additional logarithm term is m=N:</p>
+<pre><code>-q_N^N Ecal_1^N tensor [F_2^N/(1-Q^N)]_root/N
+                   =Ecal_1^N tensor T_2.</code></pre>
+<p>The remaining m&lt;N terms are the logarithm of the finite nilpotent part, since F_head^N=0. Consequently</p>
+<pre><code>R_0,root=exp(gamma kappa_(1,N) B_1 T_2) R_0,&lt;N. (5)</code></pre>
+<p>The two factors commute: B_1 commutes with Ecal_1, and T_2 commutes with F_2, as follows also from their generic definitions. On every fixed total-position sector the exponential terminates. On the product completion its entries are defined sectorwise. This is an exact operator evaluation of the whole quantum factorial’s cyclotomic resonance, not an asymptotic truncation.</p>
+<h2 id="finite-coherent-crossings-and-their-changing-parameters">4. Finite coherent crossings and their changing parameters</h2>
+<p>Before applying D, the exponential in (5) sends the kernel pair (s_1,s_2) to (s_1,s_2+gamma kappa_(1,N)s_1). The finite part depends on s_1 but not s_2, so this translation introduces no derivatives of its coefficients. The Cartan block ratio is</p>
+<pre><code>D_(rN+a,sN+b)/D_(a,b)=x_2^(-Nr)x_1^(-Ns).</code></pre>
+<p>It therefore rescales the two coherent parameters. The complete uncheck parameter map is</p>
+<pre><code>(s_1,s_2) -&gt; (x_2^(-N)s_1,
+             x_1^(-N)(s_2+gamma kappa_(1,N)s_1)).        (6)</code></pre>
+<p>The finite matrix from the source to this target is exactly</p>
+<pre><code>R_s=D_head sum_(k=0)^(N-1)
+          (-1)^k q_N^(k^2) Ecal_(1,s_1)^k F_(2,head)^k/(Q;Q)_k.
+                                                           (7)</code></pre>
+<p>Equations (5)–(6) prove that (7) is the restriction of the regular infinite crossing to its coherent kernels. It intertwines the genuine root quantum-group actions in those changing fibers. The marked common Cartan scalar remains the original one.</p>
+<p>For equal knot colors put chi=x^N=gamma M^N and t=M<sup>(-2N)=chi</sup>(-2). After the checked flip the source map is</p>
+<pre><code>L_+(chi)=[[1-chi^(-2),chi^(-1)],[chi^(-1),0]]. (8)</code></pre>
+<p>Its inverse is L_-=[[0,chi],[chi,1-chi^2]]. These are exactly the earlier Frobenius Verma block matrices. Positive and negative coherent finite crossings are literal inverses with the intermediate parameters updated. The positive finite matrix is flip times (7). For the inverse, first flip and apply D_head^(-1), then use the finite inverse series sum_(k&lt;N)q_N^k Ecal_(1,s_1)^k F_2^k/(Q;Q)_k, where s_1 is the recovered original source parameter.</p>
+<p>The infinite crossing satisfies the braid equation on finite total-position sectors as a generic polynomial identity. Its regular root specialization does also. Restricting to the coherent kernels proves the finite changing-source braid equation with scalar one. No unrelated normalization root is chosen in this argument. This agrees with, rather than enlarges without proof, the semicyclic coherence already established in the older F chart.</p>
+<h2 id="the-exact-original-selected-cut-including-a-boundary-blowup">5. The exact original selected cut, including a boundary blowup</h2>
+<p>Every L_+ and L_- fixes the line s_j=chi^(1-j)s. On this line the coherent crossings are endomorphisms of one ordered tensor module. Their finite coefficients are polynomial in the source parameters. An Ecal wrap raises integer residue position by N-1 instead of lowering it by one; a term containing r wraps therefore raises total position by rN relative to the ordinary crossing. F_head has no wrap. The same statement holds for the inverse finite series and every braid word, with the parameters transported.</p>
+<p>In the original pivotal partial trace over b-1 strands, closed indices equal their input indices. A positive-degree source term would then raise the remaining cut index by at least N, impossible in a space with indices 0,…,N-1. Hence the entire one-cut matrix is source independent:</p>
+<pre><code>C_beta(M;s_1,...,s_b)=C_beta(M;0,...,0).       (9)</code></pre>
+<p>In particular it has exactly the original reduced ADO value and Kashaev specialization. This is an equality of cut operators; the prescribed pivot, zero-framing scalar and whole external d_N(M) line are retained. No extra cyclic invariant is substituted.</p>
+<p>There is a useful regular boundary chart. Write mu_j=kappa s_j, and use Ecal_mu=Ecal_head+mu W in (7). The source map (8) is linear in mu as well, and all its matrix entries are regular in M. Thus (9) extends to M=1 with mu fixed, even though s=mu/kappa is singular there. The central power is</p>
+<pre><code>Ecal_mu^N=gamma u_N(M)mu,
+u_N=kappa_N/kappa, u_N(1)=N.                (10)</code></pre>
+<p>This distinguishes the regular mu chart from setting kappa=0 while keeping s finite, which would erase the cyclic source. Equality of the selected cut continues through this boundary because it is a polynomial whole identity, not because a singular coherent kernel was evaluated independently.</p>
+<h2 id="what-this-does-and-does-not-add-to-the-a-torsor-route">6. What this does and does not add to the A-torsor route</h2>
+<p>The actual factorial lattice, divided normal power, coherent source, and semicyclic crossing now belong to one explicitly compared object. The source-period exponential in (5) is fixed by the whole function; its group action has the Weyl/regular-centralizer realization proved in the common-Verma note. The source independence (9) and exact normal factor (10) retain the original selected knot value.</p>
+<p>The earlier unbalanced Verma trace still supplies the full factor Delta_K(M^(2N)); its cancellation at completeness is a whole-germ statement, not permission to drop the Alexander divisor. This note does not replace the already proved graded trace identity.</p>
+<p>The base transport (8) is triangular/reducible holonomy. Even on the nonzero exceptional mu chart, F^N=0 and all root-center meridians stay in the same Borel. This does not identify the source base with the irreducible geometric A-curve. Nor does an exact coherent kernel prove which geometric stationary period survives the original contraction or give its archimedean norm. The global geometric source and regulator comparison remains open.</p>
+<p>For literature coverage only, <a href="https://arxiv.org/abs/1101.3440">Baseilhac, 1101.3440</a> explicitly treats root quantum-group representations through quantum coadjoint action and Heisenberg doubles, with odd-order roots in its stated scope. <a href="https://arxiv.org/abs/2311.13797">Negron, 2311.13797</a> states a quantum-Frobenius tensor-category framework at roots of arbitrary order. These prevent a novelty claim for the broad representation-theoretic framework. No theorem from either paper is a proof premise of the finite matrix and kernel identities here.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_balanced_verma_coherent_braiding.py">Exact audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/balanced_verma_coherent_braiding_results.json">results</a> compare the polynomial Gaussian crossing with (5), coherent kernels, changing-source inverses, and braid equations at even and composite levels. They support the uniform proofs above, not a volume claim.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/balanced_verma_coherent_braiding.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-balanced-infinite-lattice">1. The actual balanced infinite lattice</a><a href="#root-blocks-the-weyl-pair-and-the-two-integral-lattices">2. Root blocks, the Weyl pair, and the two integral lattices</a><a href="#the-whole-crossings-resonant-exponential">3. The whole crossing’s resonant exponential</a><a href="#finite-coherent-crossings-and-their-changing-parameters">4. Finite coherent crossings and their changing parameters</a><a href="#the-exact-original-selected-cut-including-a-boundary-blowup">5. The exact original selected cut, including a boundary blowup</a><a href="#what-this-does-and-does-not-add-to-the-a-torsor-route">6. What this does and does not add to the A-torsor route</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

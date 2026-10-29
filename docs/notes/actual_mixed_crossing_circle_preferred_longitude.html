@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual mixed crossing-circle longitude, flag and central sign · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_mixed_crossing_circle_preferred_longitude.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-actual-mixed-crossing-circle-longitude-flag-and-central-sign">The actual mixed crossing-circle longitude, flag and central sign</h1>
+<p>29 October 2026. The literal auxiliary loop [2,1,1,2] has the crossing-disk preferred longitude, with no hidden meridian power. For the actual auxiliary meridian M_aux=-q^j and H=Q^(N-j), the source coordinate L_H=(H-X)/(1-HX) gives</p>
+<pre><code>preferred SL2 longitude lambda=-L_H^(-1),
+centered longitude ell=-lambda=L_H^(-1).              (0)</code></pre>
+<p>The minus is forced by the ORIGINAL ordinary auxiliary pivot. It is not a choice of a different geometric component. This note proves the mixed local transport/framing certificate and records the exact central character. A geometric representation lift and regulator calibration must still use that character explicitly.</p>
+<h2 id="the-literal-mixed-universal-crossing-and-its-color-contiguity">1. The literal mixed universal crossing and its color contiguity</h2>
+<p>Use q=exp(pi i/N), Q=q^2, eta=q^(1/2), and colors x_1=q^alpha, x_2=q^beta. In the factorial basis, a positive checked mixed crossing sends input (a,b) to (b+k,a-k). Its coefficient is EXACTLY</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>r</mi><mrow><mi>α</mi><mo>,</mo><mi>β</mi></mrow><mo>+</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>q</mi><mrow><mi>α</mi><mi>β</mi><mi>/</mi><mn>2</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>k</mi></msup><msup><mi>q</mi><mrow><msup><mi>k</mi><mn>2</mn></msup><mo>−</mo><mi>k</mi></mrow></msup><msubsup><mi>x</mi><mn>1</mn><mrow><mi>−</mi><mi>b</mi><mo>−</mo><mn>2</mn><mi>k</mi></mrow></msubsup><msubsup><mi>x</mi><mn>2</mn><mrow><mi>−</mi><mi>a</mi><mo>+</mo><mi>k</mi></mrow></msubsup><msup><mi>Q</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>−</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>+</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><mfrac><msub><mi>F</mi><mrow><mi>b</mi><mo>+</mo><mi>k</mi></mrow></msub><mrow><msub><mi>F</mi><mi>b</mi></msub><msub><mi>F</mi><mi>k</mi></msub></mrow></mfrac><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup><mi>/</mi><mi>A</mi><mo>;</mo><mi>Q</mi><msub><mo stretchy="false" form="postfix">)</mo><mi>k</mi></msub><mo>,</mo><mspace width="1.0em"></mspace><mi>A</mi><mo>=</mo><msup><mi>Q</mi><mi>a</mi></msup><mo>,</mo><mspace width="0.222em"></mspace><mi>B</mi><mo>=</mo><msup><mi>Q</mi><mi>b</mi></msup><mo>,</mo><mspace width="0.222em"></mspace><mi>C</mi><mo>=</mo><msup><mi>Q</mi><mi>k</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ r^+_{\alpha,\beta}(a,b,k)
+ =q^{\alpha\beta/2}(-1)^k q^{k^2-k}
+ x_1^{-b-2k}x_2^{-a+k}Q^{(a-k)(b+k)}
+ \frac{F_{b+k}}{F_bF_k}(Qx_1^2/A;Q)_k,
+ \quad A=Q^a,\ B=Q^b,\ C=Q^k.                         \tag{1}
+</annotation></semantics></math></p>
+<p>All indices have their actual physical support and F_a=(Q;Q)_a. The half-Cartan is the unwrapped q^(alpha beta/2), not an inferred square root after reducing indices. Derive (1) directly by expanding the finite universal nilpotent factor followed by its full Cartan:</p>
+<pre><code>Ecal_(a-1,a)=q^(-1)(x_1^(-1)-x_1 Q^(-a+1)),
+F_(b+1,b)=1-Q^(b+1),
+q^(k(k-1)/2)rho^k/[k]!
+                     =(-1)^k q^(k^2)rho^(2k)/F_k.</code></pre>
+<p>The two independent positive color shifts therefore obey</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><msubsup><mi>r</mi><mrow><mi>α</mi><mo>+</mo><mn>1</mn><mo>,</mo><mi>β</mi></mrow><mo>+</mo></msubsup><msubsup><mi>r</mi><mrow><mi>α</mi><mo>,</mo><mi>β</mi></mrow><mo>+</mo></msubsup></mfrac><mo>=</mo><msubsup><mi>K</mi><mrow><mn>2</mn><mo>,</mo><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></mrow><mrow><mi>−</mi><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msubsup><msubsup><mi>τ</mi><mi>q</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo>,</mo><mspace width="2.0em"></mspace><mfrac><msubsup><mi>r</mi><mrow><mi>α</mi><mo>,</mo><mi>β</mi><mo>+</mo><mn>1</mn></mrow><mo>+</mo></msubsup><msubsup><mi>r</mi><mrow><mi>α</mi><mo>,</mo><mi>β</mi></mrow><mo>+</mo></msubsup></mfrac><mo>=</mo><msubsup><mi>K</mi><mrow><mn>1</mn><mo>,</mo><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi></mrow></mrow><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msubsup><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>τ</mi><mi>q</mi></msub><mo>=</mo><mfrac><mrow><mi>B</mi><mi>C</mi></mrow><msub><mi>x</mi><mn>2</mn></msub></mfrac><mfrac><mrow><mn>1</mn><mo>−</mo><mi>Q</mi><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup><mi>/</mi><mi>A</mi></mrow><mrow><mn>1</mn><mo>−</mo><mi>Q</mi><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup><mi>C</mi><mi>/</mi><mi>A</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \frac{r^+_{\alpha+1,\beta}}{r^+_{\alpha,\beta}}
+    =K_{2,\mathrm{in}}^{-1/2}\tau_q^{-1},\qquad
+ \frac{r^+_{\alpha,\beta+1}}{r^+_{\alpha,\beta}}
+    =K_{1,\mathrm{out}}^{1/2},
+ \quad
+ \tau_q=\frac{BC}{x_2}
+                 \frac{1-Qx_1^2/A}{1-Qx_1^2C/A}.       \tag{2}
+</annotation></semantics></math></p>
+<p>These are common-index identities: changing the ordinary dimension does not authorize dropping its new boundary states. At zeros the first relation means the CLEARED finite-product identity</p>
+<pre><code>(1-Qx_1^2/A)r_shift
+  =K_2^(-1/2) x_2/(BC)(1-Qx_1^2 C/A)r.</code></pre>
+<p>It remains valid when a displayed ratio is 0/0. Every square root in (2) is its literal q^(H/2) from (1).</p>
+<h2 id="four-mixed-crossings-cancel-the-full-cartan-color-density">2. Four mixed crossings cancel the full Cartan color density</h2>
+<p>Start with ordered strand labels (A,B,C), where C is the auxiliary color j. Chronological positive crossings [2,1,1,2] give</p>
+<pre><code>(A,B,C) -&gt; (A,C,B) -&gt; (C,A,B) -&gt; (A,C,B) -&gt; (A,B,C).</code></pre>
+<p>The auxiliary is UNDER first B then A, and OVER first A then B. Each main head’s K after its first crossing is exactly its K before its second crossing. Hence the two K^(1/2) factors in (2) cancel the two inverse factors EXACTLY, even before taking q to one. No square-root sign is chosen from a cyclic exponent.</p>
+<p>The original auxiliary closing pivot is g_j=K_j^(1-N), with NO 1/j. On its physical weights g_j=(-1)^(j-1)K_j at the root. The shift j-&gt;j+1 changes a common closing weight by q^(1-N). Consequently its common-state source multiplier is</p>
+<pre><code>q^(1-N) (tau_(3,q)tau_(4,q))^(-1).                 (3)</code></pre>
+<p>The classical central factor is -1, since q^(1-N)=-q. This factor must be kept when interpreting a color derivative. Taking only the Cartan monodromy and silently replacing the pivot by K would miss it.</p>
+<p>There is also a FULL all-input identity retaining every dimension endpoint and every root normal jet:</p>
+<pre><code>L_j=(-1)^(j-1)U_(j-1)(Omega/2),
+L_(j+1)+Omega L_j+L_(j-1)=0.                        (4)</code></pre>
+<p>It is the proved literal mixed-loop theorem, not an N-dimensional ADO replacement for a separate ordinary component. Thus the characteristic positive color-shift roots Lambda satisfy Lambda+Lambda^(-1)=-Tr(P), consistently with (3). Formula (3) fixes their flag and orientation on a regular chart; (4) retains the states that are not common under a dimension change.</p>
+<h2 id="mixed-color-eigenvector-transport-fixes-the-actual-flag">3. Mixed-color eigenvector transport fixes the actual flag</h2>
+<p>Use the original classical triangular matrices</p>
+<pre><code>b_+(K,e)=[[K,e],[0,1]], b_-(K,f)=[[1,0],[-Kf,K]],
+G=b_-^(-1)b_+,
+K_i=x_i/A_i,
+e_i=(x_i^(-1)-K_i)p_i, f_i=(1-A_i)/p_i.</code></pre>
+<p>Their Casimir is x_i+x_i^(-1), without assuming equal colors. The actual universal crossing has the Gauss/Hurwitz map</p>
+<pre><code>d=1-e_1 f_2,
+K&#39;_1=K_2 d, K&#39;_2=K_1/d,
+f&#39;_1=K_1f_2/d, e&#39;_2=e_1/(K_2d),
+e&#39;_1=[d e_2+e_1(dK_2-K_2^(-1))]/K_1,
+f&#39;_2=K_2[d f_1+f_2(d/K_1-K_1)].</code></pre>
+<p>This map and its three triangular factorizations are independent of the individual Casimir values; it swaps x_1 and x_2. Let H_i be its prefix-transported raw meridians and mu_i=-H_i the actual meridians. The global flag vector v_i is the lower-prefix transport of (p_i,1)^t. It has mu_i eigenvalue -x_i^(-1), the M_i^(-1) flag for M_i=-x_i classically. Direct matrix multiplication, with different x_1 and x_2 retained, gives</p>
+<pre><code>v&#39;_under=-mu_over^(-1)v_under,
+v&#39;_over=tau_+ v_over,
+tau_+=BC/x_2 * (1-x_1^2/A)/(1-x_1^2C/A).           (5)</code></pre>
+<p>For example p’<em>under=(p_2-e_1)/K_1, while tau</em>+=1/[K_2(1-x_1^(-1)p_1 f_2)]. These prove (5) directly. They agree with the q-&gt;1 limit of (2), including its orientation.</p>
+<h2 id="the-disk-word-is-preferred-not-a-meridional-shear">4. The disk word is preferred, not a meridional shear</h2>
+<p>In global ACTUAL meridians the positive Hurwitz rule is (A,B)-&gt;(A^(-1)BA,A). Multiplying the four specified moves gives</p>
+<pre><code>C_out=P^(-1)CP, P=BA;
+A_out=C^(-1)AC, B_out=C^(-1)BC when [C,P]=1.         (6)</code></pre>
+<p>Closing the auxiliary therefore imposes [C,P]=1. Its underpass vector transport is W=A<sup>(-1)B</sup>(-1)=P^(-1): B is encountered first and A second, in the literal operator order. Including its two overpasses, flag closure reads</p>
+<pre><code>v_C=(tau_3 tau_4)P^(-1)v_C.                         (7)</code></pre>
+<p>The positively oriented blackboard parallel of C has word W^(-1)=P. This is checked by pushing the parallel across the two underpasses: the inverse vector transport records their positively oriented puncture meridians in reverse product order. It is also the boundary of the crossing disk with its two punctures removed. The loop has NO auxiliary self-crossing. Its self-writhe is zero, so the disk parallel has zero self-linking; no power of C is subtracted or inserted. Thus the preferred crossing-disk longitude is</p>
+<pre><code>lambda_C=P=BA.                                     (8)</code></pre>
+<p>The disk may have nonzero linking with other components; that does not change its zero SELF-linking or its preferred framing. If a target leg is dualized, its oriented puncture meridian is inverted by the actual duality, rather than by altering (8) with a power of C.</p>
+<p>On the M_C^(-1) flag, (7) gives eigen(lambda_C)=tau_3 tau_4. On the positive M_C flag the eigenvalue is the inverse:</p>
+<pre><code>lambda=(tau_3 tau_4)^(-1).                          (9)</code></pre>
+<p>Equations (3),(9) prove that the actual positive j shift has symbol Lambda=-lambda. Its complete central sign is therefore fixed, not selected from a metric cusp shape.</p>
+<h2 id="the-main-half-twist-and-actual-quarter-turn-retain-this-framing">5. The main half twist and actual quarter-turn retain this framing</h2>
+<p>The original base box is R^(-1)L_j. The retained R^(-1) crosses only the two MAIN strands. Its Hurwitz action preserves their product P, and algebraically it commutes with the Casimir loop L_j. It creates no auxiliary self-crossing and does not change (8) by a meridional power. Its full original Cartan phase remains in the box; it is not removed from the scalar source.</p>
+<p>There is an elementary surgery-coordinate check of the slope sign. Let theta run along the positively oriented auxiliary meridian and phi along the oriented boundary of its crossing disk. Straightening a filling meridian (theta,phi)=(t,pt) uses phi’=phi-p theta. Hence one positive normal turn rotates the two disk punctures by -p FULL turns. In the displayed checked-braid convention its inserted tangle is R^(-2p). The retained R^(-1) therefore gives R^(-(2p+1)), while the primitive killed curve is mu_C+p lambda_C. This derives the integer sign; it is not assigned by matching an asymptotic volume.</p>
+<p>The genuine unscaled quarter-turn is formed with the original main cup and ordinary main cap. It bends target legs by their actual Hopf duality and is an orientation-preserving movement of this ribbon tangle; the auxiliary circle and its crossing disk move together. It introduces no auxiliary curl or new auxiliary pivot. Consequently the image of the disk word (8) is still its preferred zero-self-linking longitude. This does NOT assert that rotating a polynomial is multiplicative. All statements concern the literal typed turn of R^(-1)L_j with its actual cup/cap.</p>
+<p>The metric cusp has the two possible half-twist meridians differing by one disk longitude. Once the port representation lift is made, (8)–(9) fix the longitude’s sign/flag, so the source derivative may calibrate which corner meridian represents the retained R^(-1). It is not permissible to infer (8) from the cusp derivative alone.</p>
+<h2 id="match-the-actual-mixed-source-and-retain-the-central-character">6. Match the actual mixed source and retain the central character</h2>
+<p>For j=N-h, the literal auxiliary meridian is M_aux=-q<sup>j=q</sup>(-h), so H=Q<sup>h=M_aux</sup>(-2). The source phase has</p>
+<pre><code>G_(LogH)=Log L_H,
+L_H=(H-X)/(1-HX).</code></pre>
+<p>The positive j shift sends M_aux-&gt;qM_aux and H-&gt;Q^(-1)H. Its symbol is therefore L_H^(-1). Combining with the ACTUAL mixed pivot and disk certificate (3),(9) proves precisely (0), rather than identifying a same-color cut theorem with a closed ordinary loop. In particular</p>
+<pre><code>Tr(P)=-(L_H+L_H^(-1)),
+M_aux=e^u, centered ell=e^v=L_H^(-1),
+preferred lambda=-ell, Log lambda=pi i+v.            (10)</code></pre>
+<p>The sign agrees with the literal circle recurrence (4); at complete color L_H=1, the preferred SL2 disk longitude has eigenvalue -1. The squared geometric peripheral coordinates are M_aux<sup>2=H</sup>(-1), lambda<sup>2=L_H</sup>(-2). Their uncentered logarithmic lift retains its 2pi i deck shift.</p>
+<p>Centering lambda by -1 is represented on the PHYSICAL color lattice by the explicit character (-1)<sup>(j-1)=(-1)</sup>(N-1)(-1)^h from g_j. At complex color this character must be transported together with the full filling kernel; it is not an identically one gauge. A preferred logarithmic action may differ from the centered action by the corresponding +/-pi i LogH term, whose two choices differ by 2pi i LogH and agree on the physical lattice. It must not be dropped separately from its kernel or regulator trivialization.</p>
+<p>Finally the actual filled saddle equation</p>
+<pre><code>LogH+2p LogL_H=2pi i m</code></pre>
+<p>gives M_aux ell<sup>p=(-1)</sup>m, hence</p>
+<pre><code>M_aux lambda^p=(-1)^(p+m).                          (11)</code></pre>
+<p>Thus its PSL2 relation is exactly the primitive disk-framed slope mu_C+p lambda_C, with the retained half twist in its base meridian. The displayed central lift is part of the marking; no replacement of p by p+1 or hidden longitude shear was used. Geometric action calibration must retain this lift and its explicit source character.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_mixed_crossing_circle_preferred_longitude.py">Audit</a> compares (1) with the original mixed universal matrices, checks both independent color contiguities and literal four-crossing path weights, and verifies the unequal-color eigenvector and disk-word transport.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_mixed_crossing_circle_preferred_longitude.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-literal-mixed-universal-crossing-and-its-color-contiguity">1. The literal mixed universal crossing and its color contiguity</a><a href="#four-mixed-crossings-cancel-the-full-cartan-color-density">2. Four mixed crossings cancel the full Cartan color density</a><a href="#mixed-color-eigenvector-transport-fixes-the-actual-flag">3. Mixed-color eigenvector transport fixes the actual flag</a><a href="#the-disk-word-is-preferred-not-a-meridional-shear">4. The disk word is preferred, not a meridional shear</a><a href="#the-main-half-twist-and-actual-quarter-turn-retain-this-framing">5. The main half twist and actual quarter-turn retain this framing</a><a href="#match-the-actual-mixed-source-and-retain-the-central-character">6. Match the actual mixed source and retain the central character</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A positive lens chart with its linear constraints retained · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/constrained_lens_geometric_chart.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-positive-lens-chart-with-its-linear-constraints-retained">A positive lens chart with its linear constraints retained</h1>
+<p>28 October 2026. Every supplied positive complete marked ideal triangulation admits a geometric reference chart in which ALL shape arguments lie in the closed lens |z|&lt;=1, |1-z|&lt;=1. No invertibility of the gluing block B is required. Its kernel is retained as exact linear constraints, rather than removed by changing some shapes to exterior arguments.</p>
+<p>On this constrained chart the complete fixed-radii reference chain has a unique volume maximum, a nonzero Gaussian coefficient, and a strict boundary gap. Every geometric atom lies inside the already proved coefficient-one finite-Euler region. This removes a classical polarization obstruction; it does not identify the ORIGINAL quantum cycle with this reference chain or select its logarithmic sheet.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_constrained_lens_geometric_chart.py">exact/Arb audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/constrained_lens_geometric_chart_results.json">results</a> verify the supplied 8_1 geometry with its peripheral markings kept distinct, and six synthetic Lagrangian systems with every rank B=0,…,5. The synthetic systems check the linear construction; they are not asserted knot triangulations or a quantum source theorem.</p>
+<h2 id="lens-choices-do-not-require-an-invertible-b">1. Lens choices do not require an invertible B</h2>
+<p>For a positive shape z, the Euclidean triangle with vertices 0,1,z has sides 1, |z|, |1-z|. Normalize one of its longest sides to one, preserving orientation. The three cyclic normalizations have shapes</p>
+<pre><code>z, 1/(1-z), 1-1/z.</code></pre>
+<p>At least one has both modulus and complementary modulus at most one. Choose it independently in each tetrahedron. All chosen shapes remain strictly in the upper half-plane. Their geometric arguments consequently belong to D_+ in the <a href="full_euler_atom_dilog_and_endpoint_regions.html">full Euler-atom theorem</a>, including the cases of equal side lengths. On a compact family of nondegenerate positive shapes, the coefficient-one estimate is uniform after taking a finite collection of these lens charts.</p>
+<p>Use the resulting real rational marked gluing data</p>
+<pre><code>A x+B y=c,
+x_j=Log z_j, y_j=Log(1-1/z_j),
+rank(A B)=t, AB^t=BA^t, c=i*c_R, c_R real.       (1)</code></pre>
+<p>The rotated affine signs and full peripheral mark are retained in c. Let rank B=r and k=t-r. Choose a real full-rank k-by-t matrix E whose rows span the left kernel of B. Put</p>
+<pre><code>D=EA, d=Ec.</code></pre>
+<p>Then rank D=k and the necessary projection equations are</p>
+<pre><code>D x=d.                                         (2)</code></pre>
+<p>Indeed a row combination annihilating both A and B is zero by (1). Moreover</p>
+<pre><code>ker B=image(D^t),                               (3)</code></pre>
+<p>since BD<sup>t=BA</sup>t E<sup>t=AB</sup>t E^t=0 and both spaces have dimension k.</p>
+<p>Choose any purely imaginary solution (x_0,y_0) of (1). Such a choice exists by its full real row rank. Let L be a real t-by-r matrix with columns a basis of ker D. Solve</p>
+<pre><code>B Y=-A L                                        (4)</code></pre>
+<p>for a real t-by-r matrix Y. The solution exists because EAL=DL=0. Set C=L^tY and l=L^t y_0. Then C is real symmetric and l is purely imaginary. Symmetry follows because the tangent vectors (L v,Y v) lie in the Lagrangian kernel of (A B). It is independent of the choice of Y, by (3) and L^t D^t=0.</p>
+<p>The ENTIRE affine gluing relation now reads</p>
+<pre><code>x=x_0+L xi,
+y=y_0+Y xi+D^t lambda,                         (5)</code></pre>
+<p>with unconstrained lambda. No inverse of B appears. There is no assertion that the coordinates xi, or the Fourier implementation of (2), already have the original quantum source.</p>
+<h2 id="a-nondegenerate-constrained-potential-with-the-original-volume-mark">2. A nondegenerate constrained potential with the original volume mark</h2>
+<p>On the positive branches define</p>
+<pre><code>F(x)=sum_j [Li_2(exp x_j)+x_j^2/2-i*pi*x_j],
+W_L(xi)=F(x_0+L xi)+xi^t C xi/2+l^t xi.        (6)</code></pre>
+<p>The additive constant in (6) is zero, hence real; no imaginary constant is chosen to fit a volume. Since F_x=-y_shape, its derivative is</p>
+<pre><code>grad W_L=-L^t y_shape+C xi+l.                   (7)</code></pre>
+<p>By (3), equation (7)=0 is equivalent to y_shape having the form in (5). Together with (2), these are exactly ALL the original equations (1), including their marked affine constants.</p>
+<p>On the positive chart, where each z_j=exp(x_j) lies in the upper half-plane,</p>
+<pre><code>Im Hess W_L
+   =L^t diag_j[Im(z_j)/|1-z_j|^2] L &gt;0.        (8)</code></pre>
+<p>Thus the reduced Hessian is invertible, for every rank of B. If r=0 the statement is the zero-dimensional one with determinant one. No degeneracy is introduced by retaining (2).</p>
+<p>Let xi_<em>=rho_xi+i theta_xi be the complete solution, and write x_</em>=rho+i theta and y_*=sigma+i gamma. Because x_0 is purely imaginary, rho=L rho_xi. The Bloch identity gives</p>
+<pre><code>Im F(x_*)=sum_j D(z_j)-rho^t gamma.</code></pre>
+<p>The quadratic/linear terms in (6) have imaginary part rho_xi^t(C theta_xi+Im l). The imaginary part of (7)=0 makes this rho^t gamma. Therefore, with its stated marks,</p>
+<pre><code>Im W_L(xi_*)=sum_j D(z_j)=Vol(M).               (9)</code></pre>
+<p>This argument uses the complete marked gluing solution and retains the constraints; it does not replace an unsaturated gluing scheme by all of its cleared boundary points.</p>
+<h2 id="a-full-constrained-angular-box-with-a-strict-gap">3. A full constrained angular box with a strict gap</h2>
+<p>Keep rho_xi fixed at its complete value. Then the allowed shape angles lie in the affine plane D theta=Im d. Define the reference polytope</p>
+<pre><code>P={theta in [0,2*pi]^t : D theta=Im d}.         (10)</code></pre>
+<p>It has relative dimension r and the geometric angle point in its relative interior. Use theta=Im x_0+L theta_xi to parametrize it. This is a SPECIFIED lifted polytope. It is not automatically a fundamental domain of the corresponding torus: other integer logarithmic sheets and their source factors must not be identified with (10) without proof.</p>
+<p>Put r_j=|z_<em>j| and ell_j=log|1-z_</em>j|. Both r_j&lt;=1 and ell_j&lt;=0 by the lens choice. On the affine plane (10), direct expansion of (6) and the REAL part of (7) give</p>
+<pre><code>Im W_L=sum_j f_j(theta_j)+constant,
+f_j(theta)=Im Li_2(r_j exp(i theta))+ell_j theta. (11)</code></pre>
+<p>To verify the possibly important linear term, its coefficient in theta_xi is L^t rho+C rho_xi. The real part of (7) says C rho_xi=L^t sigma, and sigma_j=ell_j-rho_j. Thus that coefficient is exactly L^t ell. Equality (11) follows up to one fixed constant, already calibrated by (9).</p>
+<p>Each f_j has its unique global maximum on [0,2*pi] at theta_*j. On (0,pi),</p>
+<pre><code>f_j&#39;=ell_j-log|1-r_j exp(i theta)|,
+f_j&#39;&#39;=-r_j sin(theta)/|1-r_j exp(i theta)|^2&lt;0.</code></pre>
+<p>The derivative changes sign at theta_<em>j. On (pi,2</em>pi) the function is convex, so its maximum is at an endpoint. The endpoint values at 0 and 2<em>pi are 0 and 2</em>pi<em>ell_j&lt;=0; at pi the value is pi</em>ell_j&lt;=0. Meanwhile f_j(theta_*j)&gt;0. These statements also hold when r_j=1 by continuous boundary values. Consequently</p>
+<pre><code>max_P Im W_L=Vol(M),
+max_(relative boundary P) Im W_L
+            &lt;=Vol(M)-min_j f_j(theta_*j)&lt;Vol(M). (12)</code></pre>
+<p>If r=0 the boundary is empty. In positive dimension every relative boundary point has at least one active coordinate face; the others cannot exceed their own maxima. This proves (12) on the WHOLE marked box intersection, not only the positive angle polytope.</p>
+<p>For example, let a be a FIXED continuous density on the compact polytope, smooth near xi_* and nonzero there. The reference integral</p>
+<pre><code>I_N=integral_P a(theta_xi)
+           exp[N W_L(rho_xi+i theta_xi)/(2*pi*i)] dtheta_xi</code></pre>
+<p>has a nonzero Gaussian leading coefficient, a power N^(-r/2), and exponential rate Vol(M)/(2*pi). Its real quadratic part is negative definite by (8); the unique interior maximum separates the complement of a small critical neighborhood, and (12) also gives its strict boundary gap. A specified classical amplitude with a nonzero leading density gives the same conclusion under its uniform bounds.</p>
+<p>This assertion is not about arbitrary N-dependent regular densities, which can themselves carry an exponential action. For finite full-Psi amplitudes one must use their actual uniform symbols and retain any endpoint indentations or completions; the statement does not discard them. Near xi_* the original finite Euler atoms have coefficient one by their D_+ theorem.</p>
+<h2 id="consequence-and-remaining-source-issue">4. Consequence and remaining source issue</h2>
+<p>The earlier 8_1 example shows that all-subunit shapes may force B singular. It does NOT force an exterior geometric atom if one retains the linear constraints (2). In that same exact five-tetrahedron geometry the unique lens rotation is (1,1,1,1,0). Using the ORIGINAL meridian row and independent edge rows (0,1,2,3,5), B has rank THREE: there are two constraints and a nondegenerate three-variable phase. The constraint matrix from the exact elimination is</p>
+<pre><code>D=[[0,0,1,1,-2], [0,0,1,0,-1]], d=0.</code></pre>
+<p>Using the explicitly different LONGITUDE marking (0,1,2,3,6) gives rank B=FOUR, one constraint, and a nondegenerate four-variable phase. Both complete geometric points have all supplied edge and peripheral equations satisfied. The two reduced charts do not silently identify their peripheral source or polarization. Including both peripheral rows together would instead give rank(A B)=6 and a non-Lagrangian system, outside hypothesis (1); its B-rank four is not a substitute for checking that hypothesis.</p>
+<p>The audit imports the existing exact field/gluing certificate and checks rank, the entire affine parameterization, symmetry and independence of C, the marked critical equations, volume calibration, positive Hessian minors, a nonzero complex Gaussian determinant, and certified positive coordinate/boundary gaps. Its synthetic rank-zero case also checks the empty-boundary convention. Optional –topology replays the existing combinatorial identification with 8_1.</p>
+<p>This is a general construction for supplied positive triangulations, not a new knot-by-knot strategy. It avoids one reason for leaving the coefficient-one atom domain. The remaining requirement is still to transport the ORIGINAL source, lattice and logarithmic marks to this constrained chart and compute its geometric relative coefficient. Neither classical linear elimination nor a formal Fourier delta is being asserted to perform that quantum/source comparison.</p>
+<p>Run</p>
+<pre><code>python3 experiments/audit_constrained_lens_geometric_chart.py</code></pre>
+<p>or add –topology in the previously specified SnapPy environment.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/constrained_lens_geometric_chart.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#lens-choices-do-not-require-an-invertible-b">1. Lens choices do not require an invertible B</a><a href="#a-nondegenerate-constrained-potential-with-the-original-volume-mark">2. A nondegenerate constrained potential with the original volume mark</a><a href="#a-full-constrained-angular-box-with-a-strict-gap">3. A full constrained angular box with a strict gap</a><a href="#consequence-and-remaining-source-issue">4. Consequence and remaining source issue</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

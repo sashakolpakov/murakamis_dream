@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Analytic two-channel conversion can exceed every marked branch action · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/analytic_two_channel_conversion_counterexample.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="analytic-two-channel-conversion-can-exceed-every-marked-branch-action">Analytic two-channel conversion can exceed every marked branch action</h1>
+<p>28 October 2026. A transverse crossing of eigenvalue MODULI, with distinct nonzero eigenvalues and uniformly conditioned analytic eigenvectors, does not justify replacing the integral of the largest root modulus by the largest continuously marked branch action. The following exact two-channel model quantifies the missing conversion cost. It is a general recurrence example, not an operator or source counterexample for a knot.</p>
+<h2 id="a-uniformly-separated-analytic-family">1. A uniformly separated analytic family</h2>
+<p>Fix</p>
+<pre><code>0&lt;theta&lt;min(a,pi), b_N=N^(-p), p&gt;=0 fixed,
+alpha(x)=exp(a(x-1/2)),
+beta(x)=exp(-a(x-1/2)+i theta),
+T_N(x)=[[alpha(x),b_N],[0,beta(x)]].          (1)</code></pre>
+<p>The entries are entire functions of x. All their fixed derivatives are uniformly bounded on a fixed complex neighborhood of [0,1]. The eigenvalues are alpha,beta, independently of b_N, and</p>
+<pre><code>|alpha(x)-beta(x)|^2
+   =exp(2a(x-1/2))+exp(-2a(x-1/2))-2cos(theta)
+   &gt;=4sin(theta/2)^2                         (2)</code></pre>
+<p>on the real interval. They have a transverse modulus crossing at x=1/2 but are distinct there. A diagonalizing matrix is</p>
+<pre><code>S_N(x)=[[1,b_N/(beta(x)-alpha(x))],[0,1]].</code></pre>
+<p>Both S_N and its inverse have norm at most 1+1/(2sin(theta/2)) on [0,1]. They extend holomorphically with uniform bounds to a smaller fixed neighborhood: the closest eigenvalue collision is at x=1/2+i theta/(2a), off the real interval.</p>
+<p>Each continuously marked full-interval logarithmic action is zero:</p>
+<pre><code>integral_0^1 log|alpha(x)|dx
+  =integral_0^1 log|beta(x)|dx=0.             (3)</code></pre>
+<p>In contrast, the scalar spectral-radius envelope is</p>
+<pre><code>integral_0^1 log rho(T_N(x))dx=a/4.          (4)</code></pre>
+<p>The following calculation treats the complete ordered product, including the actual conversion between the two channels.</p>
+<h2 id="exact-product-and-its-gaussian-conversion-entry">2. Exact product and its Gaussian conversion entry</h2>
+<p>Let later times act on the left:</p>
+<pre><code>P_N=T_N((N-1)/N)...T_N(0).</code></pre>
+<p>The diagonal entries are exactly exp(-a/2) and exp(a/2+iN theta). The single possible channel conversion gives</p>
+<pre><code>(P_N)_12=b_N sum_(k=0)^(N-1)
+                 exp[a k(N-k)/N+i theta k].                 (5)</code></pre>
+<p>Indeed the term converting at time k contains alpha_j for j&gt;k and beta_j for j&lt;k. The sum of their real logarithms is a k(N-k)/N, and their phase is theta k. This is an exact finite product calculation, without an eigenvector or adiabatic approximation.</p>
+<p>Put</p>
+<pre><code>Gamma=a/4-theta^2/(4a)&gt;0,
+kappa=pi(pi-theta)/a&gt;0.</code></pre>
+<p>For ALL integer N tending to infinity,</p>
+<pre><code>(P_N)_12=b_N sqrt(pi N/a)
+        exp(N Gamma+iN theta/2)
+        [1+O(exp(-kappa N))+O(N^(-1/2)exp(-Gamma N))].       (6)</code></pre>
+<p>In particular there is no parity restriction or subsequence lower bound hidden in (6). Its leading phase is a single nonzero phase, not a cosine that might vanish.</p>
+<p>Here is an elementary Fourier proof with the tails retained. Extend the sum in (5) to every integer k. Periodize the integrable function</p>
+<pre><code>g(t)=exp[-a(t-N/2)^2/N+i theta t].</code></pre>
+<p>Its m-th Fourier coefficient is the ordinary Gaussian integral</p>
+<pre><code>integral_R g(t)exp(-2pi i m t)dt
+  =sqrt(pi N/a) exp[-N(theta-2pi m)^2/(4a)]
+                     exp[i(theta-2pi m)N/2].</code></pre>
+<p>The Gaussian Fourier integral itself follows by differentiation in its frequency and integration by parts, with its value at frequency zero fixed by the real Gaussian integral. The periodized function and its Fourier series converge absolutely, so evaluation at zero gives</p>
+<pre><code>sum_(k in Z) exp[a k(N-k)/N+i theta k]
+  =sqrt(pi N/a) exp(aN/4+iN theta/2)
+     sum_(m in Z)(-1)^(mN)
+                     exp[-N(theta-2pi m)^2/(4a)].           (7)</code></pre>
+<p>Because 0&lt;theta&lt;pi, m=0 is the UNIQUE largest Fourier term. All other terms together are smaller relatively by O(exp(-kappa N)). The factor (-1)^(mN) therefore does not create leading cancellation. At theta=pi this argument would fail and parity would matter; that case is explicitly excluded.</p>
+<p>The omitted terms k&lt;0 or k&gt;=N have absolute sum at most</p>
+<pre><code>1+2sum_(r&gt;=1)exp(-ar)=coth(a/2),             (8)</code></pre>
+<p>since their real exponents are at most -ar. Thus their contribution is bounded independently of N, BEFORE multiplication by b_N. Combining (7)–(8) proves (6) and its all-level nonvanishing assertion.</p>
+<p>It follows directly from the bounded diagonal entries that</p>
+<pre><code>lim_(N-&gt;infinity) N^(-1)log||P_N||_2=Gamma&gt;0.                (9)</code></pre>
+<p>The same limit holds for the unit boundary source e_2 and the scalar output e_1^t P_N e_2. These are fixed polynomially bounded boundary data. The alternative source e_1 remains bounded and has rate zero. Consequently source selection cannot be inferred from the eigenvalue curves alone.</p>
+<p>For example, a=2 and theta=1 give marked branch actions 0, the scalar envelope 1/2, and the exact coherent-product rate 3/8. There is genuinely exponentially small conversion compared with the envelope: its penalty is theta^2/(4a), but that penalty is insufficient to reduce the answer to the largest marked branch action.</p>
+<p>The same calculation also gives a precise sufficient condition in this model. Allow arbitrary a&gt;0 and 0&lt;theta&lt;pi, without assuming theta&lt;a. Formula (7) and the bounded tails give the exact norm rate max(0,a/4-theta^2/(4a)). At theta=a the conversion is only polynomial; at theta&gt;a it is bounded, as are the diagonal products. Thus here the marked-branch bound is valid exactly when the conversion penalty is at least its action gain. Real-axis eigenvalue separation alone does not express that inequality.</p>
+<h2 id="subprincipal-coupling-and-reciprocal-variants">3. Subprincipal coupling and reciprocal variants</h2>
+<p>The case p=0 is one fixed analytic matrix family with uniformly separated eigenvalues. The case p=1 is stronger for a proposed semiclassical robustness argument: T_N differs from the exactly diagonal principal family by O(1/N), with all fixed analytic derivatives obeying the same estimate. The diagonal principal product has rate zero, whereas the true product still has rate Gamma. A polynomially small channel coupling changes the leading exponential rate.</p>
+<p>The same solution also satisfies a scalar second-order recurrence. Writing h=1/N and u_j for its first component, eliminate the second component to obtain</p>
+<pre><code>u_(j+2)=[alpha(x+h)+beta(x)]u_(j+1)
+                    -alpha(x)beta(x)u_j, x=j/N,
+u_0=0, u_1=b_N.                              (10)</code></pre>
+<p>Its literal companion is [[0,1],[-exp(i theta),alpha(x+h)+beta(x)]]. This analytic companion differs by O(h) from a principal companion with the uniformly distinct roots alpha,beta. Its initial source is polynomially bounded, and u_N is exactly (5). Thus the counterexample also applies to a scalar finite-order recurrence with an analytic subprincipal correction; it is not confined to a noncompanion matrix presentation. No claim that its coefficients are those of a knot quantum-A operator is being made.</p>
+<p>A determinant-one condition does not prevent this example. Multiplying every T_N by exp(-i theta/2) makes its determinant exactly one and changes no norm, eigenvalue modulus or rate in (3)–(9).</p>
+<p>One can also realize the modulus crossing between two distinct EXPANDING roots of a reciprocal-conjugate four-channel family. Let Ttilde=exp(-i theta/2)T_N, choose c&gt;a/2, put B=exp(c)Ttilde, and on the real interval set</p>
+<pre><code>A_N(x)=diag(B(x),(B(x)^*)^(-1)),
+J=[[0,I_2],[I_2,0]].</code></pre>
+<p>Use coefficient conjugation to extend the second block holomorphically off the real interval. Then A_N^* J A_N=J, det A_N=1, and its roots are lambda_1,lambda_2,1/conj(lambda_1),1/conj(lambda_2), with lambda_(1,2)=exp(c) times the two eigenvalues of Ttilde. All four are distinct throughout [0,1]. At x=1/2 the two expanding roots exp(c +/- i theta/2) have equal modulus and remain distinct.</p>
+<p>The largest marked branch action is c and the scalar envelope is c+a/4. Its coherent-product norm has rate c+Gamma. Indeed its two product blocks are exp(cN)Ptilde_N and exp(-cN)(Ptilde_N<sup>*)</sup>(-1), and a determinant-one 2 by 2 matrix has the same operator norm as its inverse. Thus even this reciprocal-conjugate structure does not imply the proposed branch-action shortcut.</p>
+<h2 id="what-this-does-and-does-not-decide">4. What this does and does not decide</h2>
+<p>Analyticity, a uniform real eigenvalue gap, analytic conditioned eigenvectors and polynomial boundary data are NOT sufficient to bound a coherent product by the maximum of complete marked branch actions. The exact Gaussian model identifies a real missing estimate: one must control the action gained by changing channels together with its exponentially small conversion cost and the actual source that can excite it. A simultaneous constant diagonalization, or a preserved boundary source channel, would prevent the conversion in this example; plain slow variation does not.</p>
+<p>This does not refute the lower classical 6_1 product rates already computed, nor a stronger theorem using the special knot operator and its original source. It rules out inferring that stronger theorem from generic analytic slow variation alone. No quantum-A operator, regulator identity or original knot source is asserted for (1).</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_analytic_two_channel_conversion.py">Audit</a> compares literal matrix products, the finite Gaussian sum and the Fourier formula at odd and even levels, including the O(1/N) coupling and the preserved-source alternative.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/analytic_two_channel_conversion_counterexample.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#a-uniformly-separated-analytic-family">1. A uniformly separated analytic family</a><a href="#exact-product-and-its-gaussian-conversion-entry">2. Exact product and its Gaussian conversion entry</a><a href="#subprincipal-coupling-and-reciprocal-variants">3. Subprincipal coupling and reciprocal variants</a><a href="#what-this-does-and-does-not-decide">4. What this does and does not decide</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

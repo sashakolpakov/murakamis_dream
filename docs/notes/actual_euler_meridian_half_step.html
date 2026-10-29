@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual Euler meridian half-step has a controlled norm and a nonzero endpoint · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_euler_meridian_half_step.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-actual-euler-meridian-half-step-has-a-controlled-norm-and-a-nonzero-endpoint">The actual Euler meridian half-step has a controlled norm and a nonzero endpoint</h1>
+<p>27 October 2026. The right Euler frame in the original all-strand cap has an explicit adapter under M -&gt; qM. Its operator and inverse have at most polynomial norm in the specified flat relative metric. Its canonical endpoint evaluation is EXACTLY 2/[N(1-q)], and its affine cyclic transport retains the central factors 1+Z and 1-Z.</p>
+<p>This is a sourced local calculation, not a new knot invariant or a proof of selected geometric survival. It controls the Euler part of the meridian frame change. It does not bound the fusion change in the original physical metric or the full word/source contraction.</p>
+<h2 id="the-actual-adapter-and-all-its-coefficients">1. The actual adapter and all its coefficients</h2>
+<p>Use q=exp(pi*i/N), Q=q^2, N&gt;=2, and the right coefficient algebra of <a href="all_strand_euler_cauchy_cap.html">the all-strand original source</a>. Put z=xf with z^N=0, x=-M/q, and</p>
+<pre><code>u_N(z)=sum_(k=0)^(N-1) z^k/(Q;Q)_k.</code></pre>
+<p>Keep the same abstract coefficient-module frame when changing M. The actual meridian step M -&gt; qM sends x to qx and hence z to qz. Define the two inverse, finite polynomial adapters</p>
+<pre><code>B_N(z)=u_N(qz)u_N(z)^-1,
+A_N(z)=B_N(z)^-1=u_N(z)u_N(qz)^-1             (1)</code></pre>
+<p>in that nilpotent algebra. The actual word basis uses u_N^-1, so the direction of the basis change can use A_N rather than B_N; both bounds below are stated. This is not a substitution into a classical momentum coordinate.</p>
+<p>Their unique degree-&lt;N representatives are</p>
+<pre><code>A_N(z)=sum_(k=0)^(N-1) a_k z^k,
+a_k=(q;Q)_k/(Q;Q)_k,
+B_N(z)=sum_(k=0)^(N-1) b_k z^k,
+b_k=q^k(q^-1;Q)_k/(Q;Q)_k.                  (2)</code></pre>
+<p>One can prove (2) without an infinite-product specialization. The nilpotent Euler equation u_N(Qz)=(1-z)u_N(z) gives</p>
+<pre><code>(1-z)B_N(Qz)=(1-qz)B_N(z) modulo z^N.</code></pre>
+<p>Its constant coefficient is one; comparing every higher degree below N gives exactly the b_k recurrence in (2). Taking the inverse gives the analogous a_k recurrence. All its denominators 1-Q^k, 0&lt;k&lt;N, are actual nonzero root units.</p>
+<h2 id="the-unreduced-polynomial-ward-equations-retain-the-source">2. The unreduced polynomial Ward equations retain the source</h2>
+<p>For their CANONICAL degree-&lt;N representatives, before discarding degree N, the exact polynomial identities are</p>
+<pre><code>(1-z)B_N(Qz)-(1-qz)B_N(z)=-(2/N) z^N,
+(1-qz)A_N(Qz)-(1-z)A_N(z)=+(2/N) z^N.       (3)</code></pre>
+<p>All coefficients below degree N cancel by (2). For the first top coefficient use the FULL root products</p>
+<pre><code>product_(r=0)^(N-1)(1-q^-1 Q^r)=2,
+(Q;Q)_(N-1)=N,
+b_(N-1)=2q^(N-1)/[N(1-q^-3)].</code></pre>
+<p>Thus (q-Q<sup>-1)b_(N-1)=2q</sup>N/N=-2/N. The second top coefficient is (1-q^-1)a_(N-1)=2/N. These prove (3), including composite levels. The factor two comes from q^N=-1 and has not been absorbed into a normalization.</p>
+<p>Evaluate the FIRST identity at the polynomial argument z=1. Its shifted term is multiplied by zero, so one obtains</p>
+<pre><code>B_N(1)=2/[N(1-q)]
+      =1/N+(i/N)cot(pi/(2N)).                (4)</code></pre>
+<p>At z=q^-1 the same identity gives</p>
+<pre><code>B_N(q)=2/[N(1-q^-1)]=conjugate(B_N(1)).      (5)</code></pre>
+<p>In particular B_N(1) is nonzero at every level and tends to 2i/pi. Equation (4) is an exact evaluation of the specified polynomial, not a claim that z=1 defines a character of z^N=0. The source term in (3) is necessary for that evaluation.</p>
+<h2 id="the-affine-norm-torsor-has-both-central-divisors">3. The affine norm torsor has both central divisors</h2>
+<p>Keep the same polynomials but now place z in the cyclic algebra z^N=Z, with Z a central parameter. Away from 1-Z=0 the first identity in (3) becomes the exact AFFINE difference equation</p>
+<pre><code>sigma(B_N)=L(z)B_N-2Z/[N(1-z)],
+sigma(z)=Qz,  L(z)=(1-qz)/(1-z).             (6)</code></pre>
+<p>The cyclic norm of its homogeneous multiplier is exactly</p>
+<pre><code>product_(j=0)^(N-1)L(Q^j z)=(1+Z)/(1-Z).     (7)</code></pre>
+<p>It follows directly from product(1-Q^j z)=1-Z and q^N=-1. This specifies the local homogeneous norm curve and its retained affine source. At Z=0 the homogeneous cyclic norm is one and the affine term vanishes; the marked degree-&lt;N section has B_N(0)=1. At the norm divisor Z=1, (3), rather than two separately undefined quotients in (6), gives the regular endpoint value (4). Deleting either 1+Z or the source 2Z/N changes this comparison.</p>
+<p>This is the actual Euler adapter’s local norm/source extension. It is not identified with the knot’s geometric A-curve. Replacing z^N=0 by Z here defines a specified polynomial cyclic extension of this adapter; it does not assert a full moving-q or full-word holonomy extension.</p>
+<h2 id="uniform-coefficient-and-operator-bounds">4. Uniform coefficient and operator bounds</h2>
+<p>Write t=pi/N. For k&gt;=1, the exact phases and positive magnitudes in (2) are</p>
+<pre><code>a_k=exp(-ikt/2) alpha_k,
+b_k=-exp(-ikt/2) beta_k,
+alpha_k=product_(r=1)^k sin((r-1/2)t)/sin(rt),
+beta_k=alpha_k sin(t/2)/sin((k-1/2)t).       (8)</code></pre>
+<p>There are all-level bounds</p>
+<pre><code>alpha_k &lt;= 2/sqrt(min(k+1,N-k)),
+beta_k &lt;= pi/[min(k,N-k)]^(3/2).            (9)</code></pre>
+<p>Here is an elementary proof. For k&lt;=N/2 write</p>
+<pre><code>alpha_k=w_k product_(r=1)^k
+                  sinc((r-1/2)t)/sinc(rt),
+w_k=product_(r=1)^k (r-1/2)/r.</code></pre>
+<p>The function log(sinc v) decreases on (0,pi/2]. The logarithm of the displayed product sums its decreases over disjoint half intervals, so is between zero and log(pi/2). Induction gives</p>
+<pre><code>1/sqrt(4k+1) &lt;= w_k &lt;= 1/sqrt(k+1).</code></pre>
+<p>For the other half use the exact reflection identity</p>
+<pre><code>alpha_(N-1-l)=1/[N alpha_l sin((l+1/2)t)],</code></pre>
+<p>which follows by splitting the full odd-root product. The inequality sin v&gt;=2v/pi for v&lt;=pi/2 gives the first bound in (9). Finally sin(t/2)&lt;=pi/(2N) and</p>
+<pre><code>sin((k-1/2)t)&gt;=2 min(k-1/2,N-k+1/2)/N</code></pre>
+<p>give the second bound. These estimates include both tails. Summation yields, with deliberately generous explicit constants,</p>
+<pre><code>sum_(k=0)^(N-1)|a_k| &lt;= 8 sqrt(N),
+sum_(k=0)^(N-1)|b_k| &lt;= 1+6pi.              (10)</code></pre>
+<p>For example sum_(m&gt;=1)m^(-3/2)&lt;=3 suffices for the second. Consequently for EVERY contraction Z_0 with Z_0^N=0,</p>
+<pre><code>||B_N(Z_0)|| &lt;= 1+6pi,
+||B_N(Z_0)^-1||=||A_N(Z_0)|| &lt;= 8 sqrt(N). (11)</code></pre>
+<p>The flat right-regular basis f^a e_j makes R_f a truncated unit-coefficient shift, so ||xR_f||&lt;=1 on |M|=1. Thus (11) applies to the actual relative right-Euler adapter in that SPECIFIED metric. A physical fusion basis can be ill conditioned; (11) is not a bound in every metric and is not a bound for the whole knot operator.</p>
+<h2 id="the-omitted-endpoint-carry-stays-nonzero">5. The omitted endpoint carry stays nonzero</h2>
+<p>In the nilpotent algebra (1) implies</p>
+<pre><code>B_N(qz)B_N(z)=1-z modulo z^N.</code></pre>
+<p>As an ordinary polynomial its exact form is</p>
+<pre><code>B_N(qz)B_N(z)-(1-z)=z^N R_N(z),
+degree R_N&lt;=N-2.                              (12)</code></pre>
+<p>Using (4)-(5), its endpoint carry is exactly</p>
+<pre><code>R_N(1)=4/[N^2 |1-q|^2]
+      =1/[N^2 sin^2(pi/(2N))] -&gt; 4/pi^2.      (13)</code></pre>
+<p>Thus the high-degree carry does NOT vanish at the source endpoint. Replacing the canonical finite adapter there by the ordinary square-root relation B(qz)B(z)=1-z would change the period, even though that relation holds in the nilpotent algebra. Evaluating before the prescribed reduction is not an algebra homomorphism. In particular A_N(1) and B_N(1) need not be reciprocal.</p>
+<h2 id="critical-path-meaning-and-checks">6. Critical-path meaning and checks</h2>
+<p>This result supplies an actual meridian source adapter with a proved subexponential condition bound, a nonzero exact endpoint and a specified affine norm torsor. It retains precisely the central norm and highest-degree terms that a premature evaluation would erase. It is not a proof that the knot-dependent endpoint sum S_N has any lower bound or nonzero geometric image. Fusion, word transport, the peripheral line and all source sectors must still be compared to the marked geometric A-period. The original volume conjecture remains unproved.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_euler_meridian_half_step.py">The audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_euler_meridian_half_step_results.json">saved results</a> pass 23 exact finite-field levels N=2,…,24. They check the actual Euler quotients, inverses, both UNREDUCED source equations, exact endpoints, nonzero polynomial carry and both cyclic norm factors. Nine complex diagnostics through N=4096 check the separately proved coefficient bounds. Another agent independently derived the coefficient phases, estimates and exact endpoint formula from its polynomial Ward equation.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_euler_meridian_half_step.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-adapter-and-all-its-coefficients">1. The actual adapter and all its coefficients</a><a href="#the-unreduced-polynomial-ward-equations-retain-the-source">2. The unreduced polynomial Ward equations retain the source</a><a href="#the-affine-norm-torsor-has-both-central-divisors">3. The affine norm torsor has both central divisors</a><a href="#uniform-coefficient-and-operator-bounds">4. Uniform coefficient and operator bounds</a><a href="#the-omitted-endpoint-carry-stays-nonzero">5. The omitted endpoint carry stays nonzero</a><a href="#critical-path-meaning-and-checks">6. Critical-path meaning and checks</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

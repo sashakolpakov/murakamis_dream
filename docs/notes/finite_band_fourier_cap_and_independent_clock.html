@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The finite Fourier cap keeps the physical clock and band character independent · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/finite_band_fourier_cap_and_independent_clock.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-finite-fourier-cap-keeps-the-physical-clock-and-band-character-independent">The finite Fourier cap keeps the physical clock and band character independent</h1>
+<p>Exact source theorem and category audit, 27 October 2026. A four-port head tensor has a literal band-Fourier cap, with an exact finite root average. That average does not sum the physical position index and does not substitute a geometric wave momentum for its Fourier variable. Unwrapped tails retain explicit alias norm characters.</p>
+<h2 id="the-actual-selected-functional">1. The actual selected functional</h2>
+<p>Let R be the original coefficient algebra over the marked cyclotomic field Q(zeta), where zeta is a primitive N-th root. The actual whole Q/M variables, phases, pivots, caps, peripheral factors and normal parameters may all remain in R. The Fourier sampling root zeta is held fixed; Q need not equal zeta before its actual root specialization.</p>
+<p>For the literal port ordering write</p>
+<pre><code>J^(p,q)_(a,b)=T_(a+p,b+q;a,b),
+F_T(x,y;xi,eta)=sum J^(p,q)_(a,b) x^a y^b xi^p eta^q.</code></pre>
+<p>All four head indices lie in [0,N-1] before zero extension. Therefore |p|,|q|&lt;N. The original balanced first cut and identity second closure give EXACTLY</p>
+<pre><code>Phi(T)=(1/N)[eta^0]F_T(1,1;1,eta)
+      =(1/N)sum_(a,b,p) J^(p,0)_(a,b).        (1)</code></pre>
+<p>This uses every first-port band. It is not restricted to the scalar double diagonal when acting on off-diagonal Ward current tensors. There is only the original physical normalization 1/N.</p>
+<p>For any retained physical input-clock insertion f(Q^b), the same formula holds with that factor inside the sum. The following identities are R-linear, so every original factor and every whole normal derivative is preserved coefficientwise.</p>
+<h2 id="exact-finite-fourier-theorem-and-all-tail-corrections">2. Exact finite Fourier theorem and all tail corrections</h2>
+<p>For any finite Laurent polynomial F(eta)=sum_q F_q eta^q over R, orthogonality of the finite characters proves</p>
+<pre><code>Av_N(F):=(1/N)sum_(j=0)^(N-1) F(zeta^j)
+        =sum_(k in Z) F_(kN),
+
+[eta^0]F=Av_N(F)-sum_(k!=0) F_(kN).           (2)</code></pre>
+<p>Proof: sum_j zeta^(jq) is N if N divides q and zero otherwise. Every sum is finite. In particular, on the ENTIRE original head-band space |q|&lt;N,</p>
+<pre><code>Phi(T)=(1/N^2)sum_(j=0)^(N-1)
+                     F_T(1,1;1,zeta^j).       (3)</code></pre>
+<p>The extra 1/N here is the Fourier averaging factor. It does NOT turn the physical b sum into a normalized second trace; y=1 and all b coefficients remain in each summand. Dropping that sum changes (1).</p>
+<p>For a shifted/moment current eta^ell D_eta^h F, where D_eta=eta partial_eta, the exact version is</p>
+<pre><code>[eta^0](eta^ell D_eta^h F)
+  =(-ell)^h F_(-ell)
+  =Av_N(eta^ell D_eta^h F)
+     -sum_(k!=0)(kN-ell)^h F_(kN-ell).        (4)</code></pre>
+<p>For h=0 the factor is one. Arbitrary polynomial index moments and whole rational coefficients may instead be included directly in F_q. Their monodromy factors are not replaced by root values in doing so. Equations (2) and (4) keep precisely the aliases of unwrapped Green/divided tails. A high-color head of dimension greater than N also need not have |q|&lt;N, so its aliases must be retained even if all of its own ports are physically head-supported.</p>
+<p>There is a useful WHOLE version that does not collapse these tails. Adjoin independent V_eta and v with v^N=V_eta. Then</p>
+<pre><code>Av_(N,V_eta)(F):=(1/N)sum_j F(v zeta^j)
+                =sum_k F_(kN) V_eta^k,
+[eta^0]F=[V_eta^0] Av_(N,V_eta)(F).            (5)</code></pre>
+<p>This is also the normalized multiplication trace in the free cyclic algebra R[V_eta^+-1][eta^+-1]/(eta^N-V_eta). Setting V_eta=1 FIRST merges all aliases. Keeping V_eta independently recovers the literal unwrapped cap, its endpoints and all moment factors.</p>
+<h2 id="the-physical-position-clock-is-a-different-coordinate">3. The physical position clock is a different coordinate</h2>
+<p>The whole physical input clock B=Q^b acts on F_T by y-&gt;Qy. The output clock Q^(b+q) acts by</p>
+<pre><code>(y,eta)-&gt;(Qy,Qeta).                            (6)</code></pre>
+<p>Thus Q^b and eta are independent. The eta dilation is only the OFFSET part of the output clock, not the input physical clock or its sum. These formulas are direct index equalities before Q^N=1. If a cyclic presentation is used for both variables, keep separate power coordinates U_B=B^N and V_eta=eta^N. Equality of some root values does not identify their normal germs: D_Q U_B=Nb U_B, while a fixed Fourier sampling value V_eta has no such derivative.</p>
+<p>For the literal two-cut unknot, T is the flip tensor. Therefore</p>
+<pre><code>F(eta)=sum_(q=-(N-1))^(N-1)(N-|q|)eta^q,
+Phi(T)=1.</code></pre>
+<p>The finite Fourier average is N, followed by the ORIGINAL 1/N. With an input-clock insertion f(Q^b), the selected value is (1/N)sum_b f(Q^b). In particular at Q=zeta the insertion f(B)=B has value zero, whereas retaining only b=0 has value 1/N. This actual tensor distinguishes the physical sum from the Fourier cap.</p>
+<p>The exact orientation-cover identity F(eta)deta/eta=[(eta-eta^-1)F]du/(u^2-4), u=eta+eta^-1, remains a source-preserving rational identity, including its marked eta=0 sheet. It does not identify eta with a physical position.</p>
+<h2 id="bounded-phase-ratios-do-not-turn-the-cap-into-substitution">4. Bounded phase ratios do not turn the cap into substitution</h2>
+<p>The bounded-band Gaussian theorem gives, for each FIXED offset q, a principal ratio Z_q/Z_0=p_e^q with the specified actual frame. After Fourier generation, this is the principal character-incidence relation eta p_e=1. It is not an equality of the two bases and not an instruction to evaluate a finite kernel at eta=p_e^-1. Summing offsets growing with N also requires information not supplied by a theorem for each fixed bounded offset.</p>
+<p>There IS a precise positive bounded-test consequence. If h(eta) is a fixed Laurent polynomial, source pairing selects only its finitely many opposite bands:</p>
+<pre><code>[eta^0](h(eta) sum_q Z_q eta^q)/Z_0
+   =sum_j h_j Z_(-j)/Z_0 -&gt; h(p_e^-1).        (7)</code></pre>
+<p>Thus the principal source distribution evaluates BOUNDED TESTS at the incidence point. Equation (7) neither evaluates the entire growing kernel there nor transports the original contour/endpoint. Higher terms act by derivatives on h; the complete finite source still uses all bands and aliases. This distinguishes distributional pairing from the false kernel-substitution inference below.</p>
+<p>There is an exact finite-port obstruction to inferring substitution from the ratios alone. Put T_(0,q;0,0)=p_e^q for 0&lt;=q&lt;N, and all its other port entries zero. This is a valid element of the same finite four-port tensor space, with generating kernel</p>
+<pre><code>K_N(eta)=sum_(q=0)^(N-1)(eta p_e)^q.</code></pre>
+<p>It has the phase ratio p_e^q EXACTLY. Its actual cap is [eta^0]K_N=1, while K_N(p_e^-1)=N. No scalar correction can make substitution equal the cap on both this kernel and the constant kernel one. This is an obstruction to a universal co-source inference, not a counterexample about a knot invariant.</p>
+<p>Consequently one may define a SEPARATE geometric coordinate eta_geo=p_e^-1 and compute its rational Jacobian, boundary values or residues. None of those calculations alone transports the original Fourier cap eta=0, its finite contour/root average or its full tails into eta_geo. A source-compatible Fourier/canonical pushforward is still required.</p>
+<h2 id="consequence-for-the-existing-boundary-calculations">5. Consequence for the existing boundary calculations</h2>
+<p>Sections 1–5 of <a href="identity_cut_orientation_cover_and_marked_source.html">the identity-cut orientation note</a> are exact finite source identities. Its geometric equations remain valid when eta is read there as the independent chart coordinate eta_geo=p_e^-1. The phrases saying that the ORIGINAL cap eta=0 therefore reaches B=1 require this unproved source pushforward. They must not be used as a deduction from a principal ratio or an equality of two rational one-forms alone.</p>
+<p>Likewise the <a href="figure_eight_first_loop_cap_residue.html">actual first-loop calculation</a> and its Hermite certificate remain exact statements about the actual transverse Gaussian on the candidate geometric boundary eta_geo. Its zero residues and nonzero relative endpoint gaps are not thereby the image of the finite Fourier cap functional. The <a href="wick_first_loop_actual_atom_independent_audit.html">independent first-loop audit</a> retains this distinction explicitly.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_finite_band_fourier_cap.py">Exact head/tail/clock checks</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/finite_band_fourier_cap_results.json">saved results</a>. The checks pass at seven levels N=2,…,8: all 8,771 literal four-port units, 5,544 shifted-moment tail cases, 203 independent input/output clock units, the actual two-cut unknot with its input-clock insertion, and the exact character-kernel obstruction. Generic Q values and the fixed Fourier sampling root are tested separately.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/finite_band_fourier_cap_and_independent_clock.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-selected-functional">1. The actual selected functional</a><a href="#exact-finite-fourier-theorem-and-all-tail-corrections">2. Exact finite Fourier theorem and all tail corrections</a><a href="#the-physical-position-clock-is-a-different-coordinate">3. The physical position clock is a different coordinate</a><a href="#bounded-phase-ratios-do-not-turn-the-cap-into-substitution">4. Bounded phase ratios do not turn the cap into substitution</a><a href="#consequence-for-the-existing-boundary-calculations">5. Consequence for the existing boundary calculations</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

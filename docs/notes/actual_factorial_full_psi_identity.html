@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The original factorial interpolant is exactly a full-Psi quotient · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_factorial_full_psi_identity.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-original-factorial-interpolant-is-exactly-a-full-psi-quotient">The original factorial interpolant is exactly a full-Psi quotient</h1>
+<p>28 October 2026. The normalized factorial interpolation used for the original finite sums is the SAME full Faddeev function already used in the relative moment source. There is no residual period-one multiplier. This supplies a literal five-full-Psi formula for every original physical crossing coefficient, including its support zeros and complete scalar.</p>
+<p>This is a normalization comparison inside the existing double-sine/Barnes framework. It is not a new quantum invariant or a selected-cycle theorem.</p>
+<h2 id="exact-identity-and-elimination-of-the-periodic-ambiguity">1. Exact identity and elimination of the periodic ambiguity</h2>
+<p>Let N&gt;=2, h=2pi*i/N, d=N-1 and use the exactly normalized functions Fhat_N and G_N of <a href="exact_factorial_interpolation_and_complex_contours.html">the factorial theorem</a>. Let Psi be the ORIGINAL positive full function and</p>
+<pre><code>phi_N=Psi(h)=sqrt(N)exp{i pi[1/4-(N+1/N)/12]}.</code></pre>
+<p>Then as meromorphic functions of z,</p>
+<pre><code>Fhat_N(z)=phi_N/Psi(h(z+1)).                      (1)</code></pre>
+<p>Here is an independent proof fixing the possible period-one ambiguity. Both sides are nonzero and holomorphic on -1&lt;Re z&lt;N. For Fhat this was proved from its convergent Gamma product. For Psi use the proved identification</p>
+<pre><code>Psi(Z)=Phi_(1/sqrt(N))(sqrt(N)Z/(2pi)-c_b).</code></pre>
+<p>The zero-free strip |Im argument|&lt;Im c_b becomes precisely 0&lt;Im Z&lt;2pi(1+1/N), or -1&lt;Re z&lt;N. These strip and conjugation facts are proved from the defining integral in <a href="faddeev_pentagon_audit.html">the full-Phi audit</a>, not assumed from a published pentagon.</p>
+<p>The two first-shift equations imply that</p>
+<pre><code>H(z)=Fhat_N(z)Psi(h(z+1))/phi_N</code></pre>
+<p>is one-periodic on their overlap. It extends to an entire, nowhere-zero one-periodic function by translations of this strip. Fix an entire logarithm L of H. On a central vertical strip of width one, both signs of log|H| have the bound</p>
+<pre><code>|Re L(z)|&lt;=C_N(1+|Im z|^2 log(2+|Im z|)).          (2)</code></pre>
+<p>For clarity this is a rough FIXED-N growth estimate, not a semiclassical estimate. The finite Barnes-G expression for Fhat proves it directly. All its Gamma/Barnes arguments have positive real parts in this strip. The convergent digamma series gives psi(w)=O(log(2+|w|)) there; integrating the proved derivative</p>
+<pre><code>d_w log BarnesG(1+w)
+      =w psi(1+w)-w-1/2+(log(2pi))/2</code></pre>
+<p>along a vertical line bounds its logarithm by O(t^2 log(2+|t|)). The same estimates bound both numerator and denominator in the finite Barnes product. The full-Phi left/right asymptotics on a fixed horizontal strip bound the Psi part, including its reciprocal, by a quadratic logarithm. This proves (2). Periodicity extends it to the whole plane.</p>
+<p>An entire harmonic function with growth O(R^2 log R) has zero derivatives of every order at least three: its circle Fourier coefficients of order ell are O(R^(2-ell)log R), tending to zero for ell&gt;=3. Apply this to Re L, or the harmonic Cauchy formula. Thus L is a polynomial of degree at most two. Periodicity of H forces L(z+1)-L(z) to be a constant 2pi<em>i</em>m, m integer, so the quadratic coefficient is zero. Since H(0)=1,</p>
+<pre><code>H(z)=exp(2pi*i*m z).                              (3)</code></pre>
+<p>Finally take Re z=d/2. The real Gamma product and exact reflection G_N(z)G_N(d-z)=N give |G_N(z)|=sqrt(N). The modulus of the explicit Gaussian factor in Fhat is ONE on this line, hence |Fhat|=sqrt(N). The argument h(z+1) has Im equal to pi(1+1/N); its Faddeev argument is real. The proved conjugation identity therefore gives |Psi|=1. As |phi_N|=sqrt(N), we have |H|=1 on this entire vertical line. Equation (3) now forces m=0. This proves (1), including its phase.</p>
+<h2 id="exact-five-function-original-crossing-coefficient">2. Exact five-function ORIGINAL crossing coefficient</h2>
+<p>For the positive physical crossing with input (a,b), total transfer k, and output (b+k,a-k), the original coefficient is</p>
+<pre><code>r_plus(a,b,k)=kappa x^(-a-b+k)Q^(b(a-k))
+                       F_(b+k)F_a/[F_k F_b F_(a-k)].</code></pre>
+<p>Apply (1) to the normalized interpolation in the transfer variable z. Its FULL function factor, with all fixed factors also expressed in Psi, is exactly</p>
+<pre><code>Fhat(b+z)F_a/[Fhat(z)F_b Fhat(a-z)]
+   =phi_N^(-1)
+      Psi(h(b+1))Psi(h(z+1))Psi(h(a-z+1))
+                    /[Psi(h(a+1))Psi(h(b+z+1))].       (4)</code></pre>
+<p>The original Cartan monomial and kappa remain unchanged. Formula (4) is a literal equality, not an equality up to a central factor. Its negative version is the actual balanced antiunitary mirror, with the opposite full function and conjugate marked constants.</p>
+<p>At every physical integer z in [0,d], forbidden transfers z&gt;a or b+z&gt;=N are EXACT zeros of this expression. They are the actual pole/zero cancellations of the completed function. The half-integer rectangle of <a href="actual_total_transfer_endpoint_packets.html">the endpoint-packet theorem</a> therefore represents the original finite transfer sum directly with these five functions, preserving all corners and source data.</p>
+<p>The five classical arguments are B, A/V, V, A and T/V, where A=Q^a, B=Q^b, V=Q^(a-z), T=AB. Their signed sum is exactly the original direct crossing symbol</p>
+<pre><code>-[A]-[T/V]+[V]+[B]+[A/V].</code></pre>
+<p>Thus no extra auxiliary nine-to-five calibration is needed in THIS physical coefficient chart. This does not remove the true transfer boundary current (the low normal packet has the nonzero source in equation (12) of the endpoint theorem), provide an infinite-height quadrature estimate, or establish a global cycle with a sharp bound.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_total_transfer_endpoint_packets.py">Audit</a>: independent Barnes-G versus completed full-Psi evaluations, original allowed/forbidden transfer values and exact normal/source identities.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_factorial_full_psi_identity.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-identity-and-elimination-of-the-periodic-ambiguity">1. Exact identity and elimination of the periodic ambiguity</a><a href="#exact-five-function-original-crossing-coefficient">2. Exact five-function ORIGINAL crossing coefficient</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

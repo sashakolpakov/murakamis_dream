@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tetrahedral order changes and a calibrated figure-eight move · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/tetrahedral_symmetry_and_figure_eight.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="tetrahedral-order-changes-and-a-calibrated-figure-eight-move">Tetrahedral order changes and a calibrated figure-eight move</h1>
+<p>Research note, 25 October 2026. The definitions are the Gaussian kernels and charged operators of Andersen–Kashaev, <a href="https://arxiv.org/pdf/1109.6295v2">arXiv:1109.6295v2</a>, Sections 4–7. We reconstruct the needed symmetries from the independently proved Fourier formula, rather than assuming the source’s Fundamental Lemma or its global invariance theorem. The phase conventions are those of <code>peripheral_phase_and_state.md</code>.</p>
+<p>This note calibrates an actual move between the three-tetrahedron twist-family realization of 4_1 and the two-tetrahedron realization used for its audited minimal annihilator. Its statement is for generic boundary x, before setting the complete value x=0.</p>
+<p>Throughout, b&gt;0, h=(b+b<sup>(-1))</sup>(-2), and q=exp(2pi i b^2).</p>
+<h2 id="coherent-changes-of-triangle-ordering">1. Coherent changes of triangle ordering</h2>
+<p>Define the published kernels</p>
+<pre><code>A(x,y)=delta(x+y)exp[pi i(x^2+1/12)],
+B(x,y)=exp[pi i(x-y)^2].</code></pre>
+<p>As operators, A is reflection followed by a unit-modulus chirp, and B=M_+ Fourier M_+, where M_+(x)=exp(pi i x^2) and Fourier has kernel exp(-2pi i xy). Thus A,B are unitary and preserve Schwartz space, with adjoints given by their conjugate symmetric kernels. These assertions do not require a quantum-dilogarithm identity.</p>
+<p>For a triangle whose orientation is reversed, identify its space with its conjugate dual using the antiunitary maps R_A=A conjugation and R_B=B conjugation. They represent its two adjacent vertex transpositions. Indeed R_A<sup>2=R_B</sup>2=1. Their product is the linear operator</p>
+<pre><code>V=A B^*, V(x,y)=exp(pi i/12)exp(-pi i y^2-2pi i xy).</code></pre>
+<p>Completing a square in the middle integral of V^2 supplies the Fresnel factor exp(-pi i/4). The third product leaves delta(x-y), with total scalar</p>
+<pre><code>exp(3pi i/12-pi i/4)=1.</code></pre>
+<p>Therefore V^3=1. The two involutions and this relation give an <em>exact</em> representation of S_3, with the odd permutations antiunitary because they reverse orientation. In particular, the triangle basis change is determined by its vertex permutation, independently of a chosen word. The pi/12 in A is essential to this scalar calculation.</p>
+<p>All Fresnel and plane-wave integrals here can be regularized by a positive Gaussian. Their limits are the ordinary Fourier delta and Fresnel integral with the displayed normalization, not unspecified projective equalities.</p>
+<h2 id="the-three-tetrahedral-generators">2. The three tetrahedral generators</h2>
+<p>Use a,beta,c&gt;0 with a+beta+c=1/2 for the charges, and write</p>
+<pre><code>f_(a,c)(r)=exp(-pi i/12)psi_(c,beta)(r),
+K_(a,c)(x,y;u,v)
+   =delta(x+y-u)f_(a,c)(v-y)exp[2pi i x(v-y)].</code></pre>
+<p>The Fourier and inversion identities in the pentagon audit give the following three exact kernel identities, where bars denote adjoints:</p>
+<pre><code>integral Abar(v,s)K_(a,c)(x,s;u,t)A(t,y) dsdt
+                                 =Kbar_(a,beta)(x,y;u,v),
+
+integral Abar(u,s)K_(a,c)(s,x;v,t)B(t,y) dsdt
+                                 =Kbar_(beta,c)(x,y;u,v),
+
+integral Bbar(u,s)K_(a,c)(s,y;t,v)B(t,x) dsdt
+                                 =Kbar_(a,beta)(x,y;u,v). (2.1)</code></pre>
+<p>Here is a direct verification, including the possible convergence issue. Put r=v-y. In the first identity the two A delta functions set s=-v,t=-y. On x=u+v, its coefficient reduces to</p>
+<pre><code>exp(-pi i/12)psi_(c,beta)(r)exp[pi i r(r+2u)].</code></pre>
+<p>In the second identity the A delta sets s=-u and the tetrahedron delta gives x=u+v. After shifting t by x, its remaining integral is precisely Fourier inversion of the Schwartz function psi_(a,c); its coefficient is the same expression with psi_(a,c) in place of psi_(c,beta). This integral is absolutely convergent.</p>
+<p>In the third identity the tetrahedron delta sets t=s+y. Its quadratic terms cancel and the last integral is</p>
+<pre><code>integral exp[2pi i s(u+v-x)]ds=delta(u+v-x).</code></pre>
+<p>With exp(-pi epsilon s^2) inserted, the left side is epsilon<sup>(-1/2)exp[-pi(u+v-x)</sup>2/epsilon], so the distributional limit has coefficient exactly 1. The remaining smooth coefficient is again the first displayed expression. The defining inversion and conjugation formula for psi identifies these three expressions with their claimed adjoint kernels. There is no extra phase in (2.1).</p>
+<p>These are precisely the adjacent tetrahedral vertex swaps (01),(12),(23). The charges transform respectively as</p>
+<pre><code>(a,beta,c)-&gt;(a,c,beta), (beta,a,c), (a,c,beta).</code></pre>
+<p>The first swap changes the first two vertices in its incident faces 2,3, so it uses A on both. The middle swap uses A on face 0 and B on face 3. The last uses B on faces 0,1. This identifies the operators with actual face vertex permutations. Section 1 makes their compositions coherent; their actions on opposite edge pairs and on face labels are the ordinary permutation actions of S_4. The identities for a negative tetrahedron are the adjoints of (2.1).</p>
+<h2 id="gluing-through-these-order-changes">3. Gluing through these order changes</h2>
+<p>For a face and its oppositely oriented copy, simultaneous changes of basis preserve the pairing. For an even permutation this is unitarity; for an odd one, the bra and ket are interchanged as well as conjugated. Internal face adapters therefore cancel. A non-order-preserving intermediate face gluing is represented by its unique S_3 adapter from Section 1, rather than being silently replaced by an increasing vertex map.</p>
+<p>For the proper contractions of the previous notes this cancellation has a direct regularized justification. A paired B and B^* integration gives</p>
+<pre><code>integral exp(-pi epsilon x^2) B(x,t)Bbar(x,s) dx
+   =exp[pi i(t^2-s^2)]epsilon^(-1/2)
+                                  exp[-pi(t-s)^2/epsilon].</code></pre>
+<p>It tends to delta(t-s); paired A kernels give that delta directly. After the independent face constraints are eliminated, invertibility of the original full face matrix lets one use the N dynamical arguments and the adapter errors t-s as independent coordinates. The dynamical functions are Schwartz, and the errors have normalized Gaussian weights. Rescale each error by sqrt(epsilon). Translations of the dynamical coordinates preserve their L1 norms, and their Schwartz bounds justify dominated convergence. Quadratic chirps have modulus one. The same argument applies to the plane-wave delta in the third rule (2.1).</p>
+<p>Thus changing face frames inside a finite proper contraction preserves its value, with these prescribed limits. This argument does not claim that an arbitrary trace of a bounded operator is trace class. Properness and the explicit Gaussian resolution supply the needed finite-dimensional justification here.</p>
+<p>One may consequently put a positive bipyramid into the canonical pentagon ordering, apply the audited identity, and return to the desired boundary orders. When both endpoint face contractions are proper, this gives their tensor identity with its retained pentagon scalar. It is unnecessary to assume that the intermediate canonical vertex order extends to one global branching of the closed triangulation.</p>
+<h2 id="the-actual-figure-eight-bipyramid">4. The actual figure-eight bipyramid</h2>
+<p>Start with the p=0 even twist face family:</p>
+<pre><code>U=(r,v,s,g), V=(s,g,e,u), W=(u,v,r,e),
+signs=(+,-,-).</code></pre>
+<p>Its degree-three edge has local representatives U_02,V_03,W_02. The incident internal faces are v,g,e. Gluing only these faces, before any boundary identification, gives the following five-vertex bipyramid:</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Tetrahedron</th>
+<th>Global vertices at its local 0,1,2,3</th>
+<th>Canonical local order</th>
+<th>Pentagon label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>U</td>
+<td>(1,0,3,4)</td>
+<td>(1,0,2,3)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>V</td>
+<td>(1,2,0,3)</td>
+<td>(2,0,1,3)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>W</td>
+<td>(1,2,3,4)</td>
+<td>(0,1,2,3)</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>The apices are 1,3 and the equator vertices are 0,2,4. All three canonical signs are negative, so this is the <em>adjoint</em> pentagon, not the original all-positive operator word. The remaining boundary faces r,s,u retain their original vertex maps.</p>
+<p>Replace the three tetrahedra by canonical tetrahedra 1=(0,1,2,4) and 3=(0,2,3,4), sharing their equatorial face h. Their face tuples are</p>
+<pre><code>(r,h,s,u), (u,r,h,s).</code></pre>
+<p>To obtain increasing face maps, reorder their vertices by (0,1,3,2) and (0,3,1,2), respectively. The result is</p>
+<pre><code>X_2: (r,h,u,s), (u,s,r,h), signs=(+,-).                 (4.1)</code></pre>
+<p>The boundary maps, including the nontrivial intermediate one, are computed from the original pairings in the script. In the canonical ordering the u gluing has full permutation (3,1,2,0); its induced triangular permutation is a cyclic rotation. It must be carried by the corresponding V or V^2 adapter. The coherent triangle rules account for it exactly. After the two reorders above all four face maps are increasing.</p>
+<p>This is a 3–2 replacement of the embedded abstract ball before boundary pairing, so it identifies the same knot exterior. Optional Regina checks recognize (4.1) as the standard two-tetrahedron figure-eight triangulation; the homeomorphism argument does not rely on that finite recognition.</p>
+<h2 id="full-angle-and-peripheral-transport">5. Full angle and peripheral transport</h2>
+<p>Write the old physical triples as (a_U,b_U,c_U), and similarly for V,W. The old canonical charges are half the following angles divided by pi:</p>
+<pre><code>a_0=b_V/(2pi), c_0=a_V/(2pi),
+a_2=a_U/(2pi), c_2=b_U/(2pi),
+a_4=a_W/(2pi), c_4=c_W/(2pi).</code></pre>
+<p>The balanced edge equations give c_2=c_0+a_4+a_0+c_4. All five free charges are positive and</p>
+<pre><code>1/2-(a_0+a_2+a_4+c_0+c_4)=c_U/(2pi)&gt;0.</code></pre>
+<p>Thus the entire positive angle space lies in the convergent charged pentagon chamber; no continuation through a pole is being assumed. In the ordered triangulation (4.1), the new triples are</p>
+<pre><code>a&#39;_1=a_U+b_V, b&#39;_1=a_V+a_W,
+c&#39;_1=pi-a_U-b_V-a_V-a_W,
+a&#39;_2=b_V+c_W, b&#39;_2=a_U+a_W,
+c&#39;_2=pi-a_U-a_W-b_V-c_W.                              (5.1)</code></pre>
+<p>They are positive, and both new edge weights are 2pi. The new face and peripheral matrices are exactly</p>
+<pre><code>Q_f=diag(1,-1), H=diag(1/2,-1),
+A=[[1,-2],[0,4]], B=[[-1,-1],[0,2]],
+nu/pi=(-1,2), c_0/pi=(1,-1), p=(-1,1).</code></pre>
+<p>Here the standard peripheral holonomies are</p>
+<pre><code>mu_2=a&#39;_1-a&#39;_2, lambda_2=2(a&#39;_2-b&#39;_2).</code></pre>
+<p>Pulling back (5.1) gives, on the entire old balanced angle space,</p>
+<pre><code>mu_2=-mu_3, lambda_2=-lambda_3.                       (5.2)</code></pre>
+<p>The old meridian and preferred longitude are independently certified in the topological note. The bipyramid homeomorphism transports them; cusp angle holonomy is preserved by the corresponding diagonal changes on its vertex links. Identity (5.2), with zero constant branch correction, records the resulting orientation convention. Matching the old curves therefore uses the negative of the displayed new longitude row, giving p=(1,-1) and the same c_0=(pi,-pi). This reverses the fiber variable and changes the printed prefactor: the matched state is -J_2(h,-x).</p>
+<h2 id="the-exact-phase-certificate-and-state-identity">6. The exact phase certificate and state identity</h2>
+<p>Use K_X from the peripheral-phase note. The adjoint pentagon multiplier is exp(i rho/h), where</p>
+<pre><code>rho=pi P/12, P=(a_V+a_U+c_W)/pi-1/2.</code></pre>
+<p>Direct substitution of (5.1) into the two K polynomials gives</p>
+<pre><code>K_2-K_3+rho=11pi/12.                                 (6.1)</code></pre>
+<p>This identity holds for every balanced angle vector. In particular its longitude slope is zero. The script checks all coefficients on the four-dimensional affine angle space, not one special geometric point.</p>
+<p>For matched peripheral orientations the two coarea orientation signs are both -1, and N_2-N_3=-1. Applying the exact transform formula and its uniqueness theorem consequently gives</p>
+<pre><code>J_3(h,x)=-exp[-pi i/12+11pi i/(12h)]J_2(h,-x).         (6.2)</code></pre>
+<p>Here J_3,J_2 are the literal printed FAMED states with the chosen eliminated coordinates: U for J_3 and the first tetrahedron for J_2. Use the increasing lexicographic face-label orders of the scripts; the corresponding face determinants are +1 and -1. Their p_1^2 factors are both 1. The equality is on their common horizontal holomorphic band around the complete meridian. Positive angle chambers overlap under (5.1), so the Fourier–Laplace comparison has an open longitude interval and requires no extrapolation from a complete-point test.</p>
+<h2 id="reflection-and-the-same-selected-minimal-operator">7. Reflection and the same selected minimal operator</h2>
+<p>There is also an orientation-preserving automorphism of (4.1): interchange its two tetrahedra, with vertex maps</p>
+<pre><code>(1,3,0,2), (2,0,3,1).</code></pre>
+<p>These commute with every actual face pairing. Their induced angle map interchanges the tetrahedra and swaps a,b in each. The peripheral action is (mu,lambda)-&gt;(-mu,-lambda), and direct substitution on the full balanced angle space gives K(alpha’)=K(alpha). Tetrahedral equivariance and the same transform uniqueness therefore show</p>
+<pre><code>J_2(h,x)=J_2(h,-x).                                  (7.1)</code></pre>
+<p>Thus (6.2) is also an exact scalar equivalence at the same boundary x. Both the reflection and its scalar normalization were proved for the selected integrals, not inferred from a reciprocal classical A-polynomial.</p>
+<p>For clarity the known minimal order-two operator of J_2, in the natural Andersen–Malusà b-shift convention, has coefficients</p>
+<pre><code>R=q^4 Q^4-q^3 Q^3-q(q^2+1)Q^2-qQ+1,
+b_0=q^2 Q^2(q^3 Q^2-1),
+b_1=q^(1/2)(q^2 Q^2-1)R,
+b_2=q^3 Q^2(q Q^2-1).</code></pre>
+<p>The previous Ore and minimality proofs concern this same literature state after its recorded scalar gauge. Reflection sends (Q,E) to (Q<sup>(-1),E</sup>(-1)). Left multiplication by E^2 returns nonnegative shift degrees; its exact coefficient identity is</p>
+<pre><code>b_(2-k)(q^(-2)Q^(-1))=-q^(-6)Q^(-6)b_k(Q), k=0,1,2.</code></pre>
+<p>Only this Laurent monomial unit is removed. All nonmonomial peripheral factors, including those vanishing at the complete value, remain. Equation (6.2) now proves that the three- and two-tetrahedron states have the same primitive minimal operator and the same volume law. No colored Jones polynomial or arbitrarily chosen recurrence solution enters this comparison.</p>
+<h2 id="checks-and-remaining-scope">8. Checks and remaining scope</h2>
+<p>Run <code>.venv/bin/python experiments/audit_figure_eight_move.py --regina</code> for the exact combinatorial, entire-angle-space, phase, reflection and operator certificates and the optional independent triangulation recognition. Without Regina use <code>python3 experiments/audit_figure_eight_move.py</code>. The independent integral comparison is in <code>python3 experiments/compare_figure_eight_realizations.py</code>. The latter compares four generic/complete boundary cases at two b values, using tensor Hermite orders 256 and 384. Its maximum relative discrepancy from (6.2) is below 1.2e-12, with refinement difference below 3.3e-10. It also checks the evenness (7.1) independently. These are numerical diagnostics of the separately proved identities.</p>
+<p>The argument audits the ordering changes needed in this concrete positive move and provides reusable local rules for other proper positive moves. Together with the endpoint moment theorem in the peripheral-phase note, these rules give selected-state annihilator invariance along certified proper positive paths between compatible geometric endpoints. It does not supply connecting paths for arbitrary triangulations, justify every nonproper contraction, or prove geometric FAMED certificates for all alternating knots. The positive factorial comparison model still needs its own generic boundary move law; its factor-eight test is not resolved by a different model’s calibrated identity.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/tetrahedral_symmetry_and_figure_eight.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#coherent-changes-of-triangle-ordering">1. Coherent changes of triangle ordering</a><a href="#the-three-tetrahedral-generators">2. The three tetrahedral generators</a><a href="#gluing-through-these-order-changes">3. Gluing through these order changes</a><a href="#the-actual-figure-eight-bipyramid">4. The actual figure-eight bipyramid</a><a href="#full-angle-and-peripheral-transport">5. Full angle and peripheral transport</a><a href="#the-exact-phase-certificate-and-state-identity">6. The exact phase certificate and state identity</a><a href="#reflection-and-the-same-selected-minimal-operator">7. Reflection and the same selected minimal operator</a><a href="#checks-and-remaining-scope">8. Checks and remaining scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

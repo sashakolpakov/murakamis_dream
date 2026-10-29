@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pointed recoupling and relative period descent · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/pointed_period_descent.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="pointed-recoupling-and-relative-period-descent">Pointed recoupling and relative period descent</h1>
+<p>Research note, 25 October 2026. This continues the structural program. The result is an exact comparison of selected algebraic vacua, their normalization lines and their classical Bloch labels under recoupling. It applies uniformly to finite recoupling diagrams. The remaining identification with the intrinsic knot period is stated in Section 7.</p>
+<p>Write C_(s,t) for the explicit pointed factorization in <code>pointed_steinberg_recoupling.md</code>, and set</p>
+<pre><code>tau(s,t)=(1-st)/(1-t),
+f(s,t)=t(1-st)/(1-t)^2,
+h=(n-1)/2,
+det C_(s,t)=f(s,t)^(nh).</code></pre>
+<p>All formulae are on the nondegenerate parameter locus. Local maps are defined over its algebraic function field and extend wherever their intrinsic sections are regular. No angle-positivity assumption is used.</p>
+<h2 id="the-pointing-extends-to-arbitrary-matched-affine-transports">1. The pointing extends to arbitrary matched affine transports</h2>
+<p>The Steinberg family is a normalization of a larger pointed family. Let g=(lambda,mu) be an affine central character with lambda*mu nonzero. Choose nonzero endpoint roots a,b such that</p>
+<pre><code>b^n=lambda*a^n+mu.</code></pre>
+<p>On E_(g;a,b)=K[x]/(x^n-lambda), define</p>
+<pre><code>X f=x f, Y f=(b-a x)f(omega^(-1)x).</code></pre>
+<p>The norm is b<sup>n-a</sup>n<em>lambda=mu. The unit is the unique vacuum line for Y+aX-b, since this operator is (b-a x)(sigma^(-1)-1). Rescaling X’=aX/b,Y’=Y/b gives exactly the Steinberg module with parameter lambda</em>a<sup>n/b</sup>n.</p>
+<p>For g,h use endpoints c-&gt;d and a-&gt;c, respectively. Assume also mu_(gh)=mu_g+lambda_g*mu_h is nonzero, so that the composite and relative matrix algebras below are nondegenerate. The tensor coproduct preserves the pointing of their composite a-&gt;d:</p>
+<pre><code>L_tot=L_g+X_1 L_h,
+f(x) -&gt; f(x_1x_2).</code></pre>
+<p>This follows from c matching on the two factors. The injections are strictly coassociative. Thus the pointed construction is not confined to affine characters fixing the point one.</p>
+<p>The same relative operators Z=Y_1Y_2^(-1), D=X_1+Z, C=ZX_2 have central character</p>
+<pre><code>lambda_rel=mu_(gh)/mu_h,
+mu_rel=-mu_g*lambda_h/mu_h.</code></pre>
+<p>Their compatible endpoints are c/a -&gt; d/a. With L_rel=-C+(c/a)D-d/a,</p>
+<pre><code>L_tot=L_g+X_1 L_h,
+L_rel=(L_g-Z L_h)/a,
+L_h=D^(-1)(L_tot-a L_rel).                          (1.1)</code></pre>
+<p>These are exact identities at indeterminate quantum parameter. Normalizing the two endpoint modules gives the earlier C_(s,t), with s=lambda_g<em>c<sup>n/d</sup>n and t=lambda_h</em>a<sup>n/c</sup>n. The resulting factorization therefore preserves the selected unit, with all endpoint scalars known.</p>
+<p>For the unscaled monomial bases its determinant is</p>
+<pre><code>[a^n*lambda_h*mu_(gh)/mu_h^2]^(nh).                 (1.2)</code></pre>
+<p>Indeed the target basis rescaling has determinant (a/d)<sup>(n</sup>2 h), the source rescaling has determinant (ac/d<sup>2)</sup>(n^2 h), and f(s,t)=lambda_h<em>mu_(gh)</em>(ac/d)<sup>n/mu_h</sup>2. Substitution in the previous determinant formula gives (1.2).</p>
+<h2 id="the-racah-map-is-the-same-explicit-pointed-factorization">2. The Racah map is the same explicit pointed factorization</h2>
+<p>Consider three Steinberg modules E_r tensor E_s tensor E_t, with all nonempty consecutive products different from zero and one. Put</p>
+<pre><code>a=tau(rs,t), b=tau(r,s),
+c=tau(r,st), d=tau(s,t).</code></pre>
+<p>Then cd=a and tau(c,d)=b. Order the left decomposition as E_(rst) tensor E_a tensor E_b, and the right as E_(rst) tensor E_c tensor E_d. Their evaluation maps are</p>
+<pre><code>I_L=(C_(r,s) tensor 1) P_23 (C_(rs,t) tensor 1),
+I_R=(1 tensor C_(s,t)) (C_(r,st) tensor 1).</code></pre>
+<p>Here P_23 is the literal vector-space permutation. Exactly</p>
+<pre><code>I_L=I_R (1 tensor C_(c,d)).                         (2.1)</code></pre>
+<p>In particular the recoupling maps the product of the two distinguished multiplicity vacua to their product, with coefficient one.</p>
+<p>For a proof uniform in the quantum parameter, write</p>
+<pre><code>Y_12=X_1Y_2+Y_1, Y_23=X_2Y_3+Y_2,
+Y_123=X_1X_2Y_3+X_1Y_2+Y_1.</code></pre>
+<p>The two left relative pairs A,B and two right pairs C,D have</p>
+<pre><code>X_A=Y_123 Y_3^(-1), X_B=Y_12 Y_2^(-1),
+X_C=Y_123 Y_23^(-1), X_D=Y_23 Y_3^(-1),
+Y_A=-Y_12 Y_3^(-1)X_3, Y_B=-Y_1Y_2^(-1)X_2,
+Y_C=-Y_1Y_23^(-1)X_2X_3, Y_D=-Y_2Y_3^(-1)X_3.</code></pre>
+<p>Keeping these orders, direct multiplication gives</p>
+<pre><code>X_A=X_C X_D, Y_A=X_C Y_D+Y_C,
+X_B=X_C+Y_CY_D^(-1), Y_B=-Y_CY_D^(-1)X_D.           (2.2)</code></pre>
+<p>For the first identity the intermediate Y_23 cancels. For the third, 1+X_2Y_3Y_2<sup>(-1)=Y_23Y_2</sup>(-1); the others follow by the same ordered products. These are exactly the two-factor factorization formulae of C_(c,d). Both sides of (2.1) preserve the unit in all three factors and intertwine the same full matrix algebra. The pointed uniqueness theorem proves equality, including its scalar.</p>
+<p>This identifies a recoupling operator with the explicit q-factorial kernel, rather than only defining it as a ratio of unspecified maps.</p>
+<h2 id="the-normalization-cocycle-and-the-permutation-sign">3. The normalization cocycle and the permutation sign</h2>
+<p>The units obey the rational identity</p>
+<pre><code>f(c,d)=-f(r,s)f(rs,t)/[f(r,st)f(s,t)].              (3.1)</code></pre>
+<p>Let gamma_(s,t)<sup>n=f(s,t)</sup>(-h), so gamma C has determinant one. Put Gamma_L=gamma_(r,s)gamma_(rs,t) and Gamma_R=gamma_(r,st)gamma_(s,t). The recoupling from these normalized tree evaluations is exactly</p>
+<pre><code>F_hat=(Gamma_L/Gamma_R) C_(c,d).                   (3.2)</code></pre>
+<p>Its determinant is (-1)^h, not necessarily one. This is forced by the single permutation P_23 in (2.1): the flip on two n-dimensional factors, and its tensor extension, both have determinant (-1)^h for odd n. Dropping that sign would give a false normalization law.</p>
+<p>If one independently normalizes C_(c,d) by gamma_(c,d), the ratio epsilon=Gamma_L/[Gamma_R*gamma_(c,d)] satisfies</p>
+<pre><code>epsilon^n=(-1)^h.</code></pre>
+<p>For a Racah normalization with its correct signed determinant, take eta_(c,d)<sup>n=(-1)</sup>h*f(c,d)^(-h). Then</p>
+<pre><code>Gamma_L/[Gamma_R*eta_(c,d)] is mu_n-valued.          (3.3)</code></pre>
+<p>It is constant on each irreducible lifted parameter component. This proves the rigidity statement with its actual hypotheses and records the root phase, rather than canceling it at a special value.</p>
+<h2 id="descent-of-the-selected-finite-period-on-a-recoupling-diagram">4. Descent of the selected finite period on a recoupling diagram</h2>
+<p>For any binary tree T, iterating the pointed C maps gives an evaluation I_T into the same tensor product of leaf modules. It is invertible and takes the product vacuum to the product vacuum. For two trees the transition is I_(T’)^(-1)I_T. Consequently</p>
+<pre><code>F_(T&#39;,T&#39;&#39;) F_(T,T&#39;)=F_(T,T&#39;&#39;),</code></pre>
+<p>and every loop is the identity. This proves exact pointed coherence, including the pentagon and disjoint recouplings.</p>
+<p>If the node maps are multiplied by their specified roots gamma, let Gamma_T be their product. The transition becomes</p>
+<pre><code>F_hat_(T,T&#39;)=(Gamma_T/Gamma_(T&#39;))F_(T,T&#39;).            (4.1)</code></pre>
+<p>All higher coherence still holds by cancellation. The normalized product vacuum is transported with precisely this scalar. Thus the selected line, not just the unpointed module, descends on this recoupling groupoid with its normalization line.</p>
+<p>The conclusion is stable under every finite exterior contraction: a matrix identity may be tensored with any exterior tensors and paired along any chosen indices, retaining the same scalar. Sums are finite, so no face-rank or convergence assumption enters this step. It includes scalar periods and open boundary tensors, and does not require the resulting period to be nonzero.</p>
+<p>These are algebraic identities on their common parameter cover. They extend to every regular specialization of the corresponding sections. Generic units must first be retained and canceled in that identity; specializing a displayed fraction at a pole is not a definition of its section.</p>
+<h2 id="the-bloch-label-is-the-tetrahedral-cross-ratio">5. The Bloch label is the tetrahedral cross-ratio</h2>
+<p>For the four cumulative points</p>
+<pre><code>p_0=1, p_1=r, p_2=rs, p_3=rst,</code></pre>
+<p>the cross-ratio in the recorded convention is</p>
+<pre><code>z(r,s,t)=(1-rs)(1-st)/[(1-rst)(1-s)]
+          =b/c=tau(c,d)/c.                        (5.1)</code></pre>
+<p>Thus the recoupling has a natural tetrahedral Bloch label. Four consecutive parameters give five cumulative points; their alternating tetrahedral boundary is</p>
+<pre><code>[z(s,t,u)]-[z(rs,t,u)]+[z(r,st,u)]
+                     -[z(r,s,tu)]+[z(r,s,t)]=0.    (5.2)</code></pre>
+<p>This is the same five-point relation established in the Bloch note, by deleting each of the five vertices. The classical regulator and the quantum pointed recoupling therefore have compatible local coherence diagrams. Equating their <em>global period classes</em> still requires the comparison in Section 7.</p>
+<h2 id="intrinsic-normalization-lines-from-spinor-brackets">6. Intrinsic normalization lines from spinor brackets</h2>
+<p>The extra affine-frame data in f must be distinguished from the cross-ratio (5.1). For four nonzero affine coordinates p_i, direct substitution gives the Racah unit</p>
+<pre><code>f_R=-p_1p_2(p_0-p_2)(p_1-p_3)
+              /[p_0p_3(p_1-p_2)^2].              (6.1)</code></pre>
+<p>Choose nonzero homogeneous flag vectors v_i in K^2, and set lambda_ij=det(v_i,v_j). In the affine frame v_i=(p_i,1), remove the displayed vertex-frame factor to obtain</p>
+<pre><code>f_bar=-lambda_02 lambda_13/lambda_12^2.             (6.2)</code></pre>
+<p>This is GL(2)-invariant. Under v_i -&gt; a_i v_i it is multiplied by a_0a_3/(a_1a_2), so it is intrinsically a section of a decoration line, rather than an invariant number after forgetting those lines. The cross-ratio and its complement are</p>
+<pre><code>z=lambda_02 lambda_13/(lambda_03 lambda_12),
+1-z=-lambda_01 lambda_23/(lambda_03 lambda_12),</code></pre>
+<p>by the elementary Plucker relation. Their n-th roots give the local Fermat norm cover on this flag torsor.</p>
+<p>There is also an exact shared-face normalization. On an ordered triangle put</p>
+<pre><code>q_ijk=lambda_ik/lambda_jk^2.</code></pre>
+<p>With the usual multiplicative coboundary,</p>
+<pre><code>f_bar(0123)=-(delta q)(0123)^(-1).                  (6.3)</code></pre>
+<p>Choose roots alpha_ijk<sup>n=q_ijk</sup>h on faces and define the tetrahedral root eta_0123=(delta alpha)(0123). Then</p>
+<pre><code>eta_0123^n=(-1)^h*f_bar(0123)^(-h),                 (6.4)</code></pre>
+<p>the signed Racah normalization of Section 3. Sharing the face roots, rather than choosing unrelated tetrahedral roots, makes their product over a 3-chain equal to the face product over its boundary. Interior face roots cancel. On the boundary of a 4-simplex it is one because delta^2=1. This proves strict compatibility of these scalar normalization sections with the five-term relation.</p>
+<p>The statement is valid for actual equivariant vector flags or for sections of their decoration lines with the corresponding transition functions. A PSL(2) lifting obstruction or nontrivial peripheral characters must remain in those line transitions; they are not set to one by choosing an affine chart. Such data can leave peripheral factors after gluing, exactly where a generic unit can specialize to a numerical multiplier.</p>
+<h2 id="the-remaining-global-theorem">7. The remaining global theorem</h2>
+<p>We have proved selected-vacuum coherence on the recoupling parameter groupoid, algebraic transport through arbitrary finite exterior contractions, and relative descent of its normalization line on decorated flag charts. The local Bloch label has the same five-point coherence. These statements are uniform and use no knot census.</p>
+<p>The subsequent <code>affine_frame_period_transport.md</code> and <code>projective_frame_period_torsor.md</code> prove full matrix/frame covariance on the specified local root covers. They also prove that the selected unit must generally be transported to a nonconstant vector. A global knot period still needs an intrinsic decorated-character gluing construction, its peripheral lifts and its selected period class matched with the literature state. The exact local Faddeev comparison does not by itself identify that global cycle. The regulator comparison across levels also remains necessary for the volume conjecture.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/pointed_period_descent.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-pointing-extends-to-arbitrary-matched-affine-transports">1. The pointing extends to arbitrary matched affine transports</a><a href="#the-racah-map-is-the-same-explicit-pointed-factorization">2. The Racah map is the same explicit pointed factorization</a><a href="#the-normalization-cocycle-and-the-permutation-sign">3. The normalization cocycle and the permutation sign</a><a href="#descent-of-the-selected-finite-period-on-a-recoupling-diagram">4. Descent of the selected finite period on a recoupling diagram</a><a href="#the-bloch-label-is-the-tetrahedral-cross-ratio">5. The Bloch label is the tetrahedral cross-ratio</a><a href="#intrinsic-normalization-lines-from-spinor-brackets">6. Intrinsic normalization lines from spinor brackets</a><a href="#the-remaining-global-theorem">7. The remaining global theorem</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

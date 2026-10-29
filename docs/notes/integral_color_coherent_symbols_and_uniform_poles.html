@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Actual integral-color coherent symbols, uniformly including the poles · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/integral_color_coherent_symbols_and_uniform_poles.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="actual-integral-color-coherent-symbols-uniformly-including-the-poles">Actual integral-color coherent symbols, uniformly including the poles</h1>
+<p>Research proof, 27 October 2026. The actual integral N-color family admits a globally regular polynomial source frame. Its generator symbols have exact finite formulas and uniform expansions on the entire real compact source, including both poles. Moving q and the integral color together gives the expected exponential clock. An explicit flag shear compares its principal moment matrix with the varying-meridian Grothendieck chart.</p>
+<p>Every change of frame below is an exact diagonal quantum-factorial change of the actual representation and source. Its large size cannot be discarded when comparing selected periods. Uniform asymptotics of the individual generators do not prove uniform asymptotics of the full R word.</p>
+<p>The exact symmetric whole-q-difference model is developed in <a href="integral_color_global_q_difference_source.html">the global integral-color source note</a>. The quantitative frame norm, its dilogarithmic generating function, and the root flag-current bookkeeping are given in <a href="quantum_factorial_frames_and_cyclotomic_source.html">the quantum-factorial source comparison</a>.</p>
+<h2 id="the-actual-integral-family-and-its-polynomial-frame">1. The actual integral family and its polynomial frame</h2>
+<p>Fix N&gt;=2, put n=N-1, and use</p>
+<pre><code>c=2pi*i, s=c lambda, 0&lt;=lambda&lt;=1,
+q=exp(s/(2N)), Q=q^2, rho=q-q^(-1),
+M=-q^N, m=q^N=exp(s/2).</code></pre>
+<p>Write <code>[j]_q=(q^j-q^(-j))/rho</code>, with its Laurent-polynomial continuation when rho=0. In the ordinary-falling polynomial frame the actual integral module has</p>
+<pre><code>F e_j=(n-j)e_(j+1),
+E e_j=[j]_q[N-j]_q/(N-j)e_(j-1),
+K e_j=q^(n-2j)e_j.                         (1)</code></pre>
+<p>The absent boundary edges are zero. Put Ecal=rho E and Fcal=rho F. These are the operators compared below. They satisfy exactly</p>
+<pre><code>K Ecal K^(-1)=Q Ecal, K Fcal K^(-1)=Q^(-1) Fcal,
+Fcal Ecal+qK+q^(-1)K^(-1)=(q^N+q^(-N))I.    (2)</code></pre>
+<p>For example the diagonal entry of Fcal Ecal is <code>rho^2[j]_q[N-j]_q</code>; expanding the two q-numbers proves (2).</p>
+<p>Use the same actual compact coherent kernel as before:</p>
+<pre><code>sigma_C(v,z)=sum_(i,j=0)^n v^i C_ij binom(n,j)z^j
+                                               /(1+vz)^n.</code></pre>
+<p>Its globally regular source coordinates are</p>
+<pre><code>T=vz/(1+vz), a=z/(1+vz), b=v/(1+vz),
+ab=T(1-T), a=T/v, b=v(1-T),
+Omega_0=dv wedge da.</code></pre>
+<p>On the compact real source <code>z=bar(v)</code>, both |a| and |b| are at most one half, and 0&lt;=T&lt;=1. The pole-chart change is <code>V=1/v, a'=v-v^2a</code>.</p>
+<h2 id="exact-finite-n-symbols-have-no-polar-singularities">2. Exact finite-N symbols have no polar singularities</h2>
+<p>Let</p>
+<pre><code>R_x(T)=1+(x-1)T,
+W_N(T)=q^N+q^(-N)-q^(-N)R_Q(T)^N
+                          -q^N R_(Q^-1)(T)^N.</code></pre>
+<p>Then the exact actual symbols are</p>
+<pre><code>sigma_K=q^n R_(Q^-1)(T)^n,
+sigma_(K^-1)=q^(-n)R_Q(T)^n,
+sigma_A=R_Q(T)^n, A e_j=Q^j e_j,
+sigma_Fcal=n rho b,
+sigma_Ecal=a H_N(T),
+H_N(T)=W_N(T)/[N rho T(1-T)].               (3)</code></pre>
+<p>The apparent divisions in the last formula are removable. Indeed W_N is a polynomial which vanishes exactly at T=0 and T=1, so it is divisible by T(1-T). It is also divisible by rho^2 as a Laurent polynomial in q, making rho=0 removable. Its two endpoint values agree:</p>
+<pre><code>H_N(0)=H_N(1)=q^n-q^(-n).                  (4)</code></pre>
+<p>Thus (3) is a globally regular source function, including its two pole fibers, not just a formula on the open torus.</p>
+<p>Here is the short coefficient proof. In the Ecal kernel use</p>
+<pre><code>binom(n,j)/(N-j)=binom(N,j)/N,
+rho^2[j]_q[N-j]_q
+   =q^N+q^(-N)-q^(2j-N)-q^(N-2j).</code></pre>
+<p>Extend the sum to j=0,N, where its summand is zero. The binomial theorem gives W_N divided by <code>N rho v(1-T)</code>; since <code>T/v=a</code>, this is exactly (3). The Fcal formula follows from <code>sum_j(n-j)binom(n,j)x^j=n(1+x)^(n-1)</code>.</p>
+<h2 id="uniform-asymptotics-hold-on-the-entire-compact-source">3. Uniform asymptotics hold on the entire compact source</h2>
+<p>Define the whole principal functions</p>
+<pre><code>A_inf=exp(sT), k=m exp(-sT),
+f=s b,
+W(T)=m+m^(-1)-k-k^(-1)
+    =4sinh(sT/2)sinh(s(1-T)/2),
+H(T)=W(T)/[sT(1-T)], e=a H(T).              (5)</code></pre>
+<p>Every apparent division in (5) is removable, including s=0. For each fixed nonnegative integer l there is a finite constant C_l, independent of N and lambda in [0,1], such that in smooth coordinate norms on the whole real compact source</p>
+<pre><code>||sigma_A-A_inf||_(C^l)
+  +||sigma_K-k||_(C^l)
+  +||sigma_(K^-1)-k^(-1)||_(C^l)
+  +||sigma_Ecal-e||_(C^l)
+  +||sigma_Fcal-f||_(C^l) &lt;= C_l/N.         (6)</code></pre>
+<p>The following proof includes the endpoint estimates. For fixed S and l, the binomial exponent has the elementary bound</p>
+<pre><code>||R_(exp(s/N))(T)^N-exp(sT)||_(C^l[0,1])
+                                  &lt;=C_(S,l)|s|^2/N    (7)</code></pre>
+<p>for |s|&lt;=S. For large N expand the logarithm of <code>1+(exp(s/N)-1)T</code>; its difference from sT/N and its fixed T derivatives are uniformly bounded. Alternatively differentiate the binomial power explicitly. The two first s coefficients are identical, giving the |s|^2 factor. The finitely many smaller N have the same bound by compactness after dividing out s^2.</p>
+<p>Apply (7) to W_N-W with two extra T derivatives. This difference vanishes at both endpoints. For any such function g,</p>
+<pre><code>g(T)/[T(1-T)]
+  =-T integral_0^1 y g&#39;&#39;(Ty)dy
+   -(1-T)integral_0^1 y g&#39;&#39;(1-(1-T)y)dy.    (8)</code></pre>
+<p>Differentiation of (8) bounds its C^l norm by a fixed multiple of the C^(l+2) norm of g, with no endpoint loss. Moreover <code>N rho/s=sin(pi lambda/N)/(pi lambda/N)</code> is bounded below by 2/pi on this family. Equations (7)–(8) therefore give</p>
+<pre><code>||H_N-H||_(C^l[0,1])&lt;=C_l |s|/N.</code></pre>
+<p>The corresponding Fcal bound follows from <code>n rho=s+O(|s|/N)</code>. The K and clock estimates use (7) and the one missing power n=N-1. Multiplication by the globally smooth functions a,b proves (6) in both compact pole charts. This also proves uniformity at lambda=0; it does not divide a nonzero estimate by a vanishing rho without its |s| factor.</p>
+<p>The exact star product is still required for finite matrices. Ordinary products of symbols equal the classical products only in this controlled principal limit. In particular (2) gives the principal Casimir identity <code>ef+k+k^(-1)=m+m^(-1)</code>.</p>
+<h2 id="the-moving-q-clock-and-the-actual-principal-moment-matrix">4. The moving-q clock and the actual principal moment matrix</h2>
+<p>The actual simultaneous path has <code>M=-q^N=-m</code>, so the principal Gauss parameter is x=-M=m. Its clock is precisely</p>
+<pre><code>A_inf=exp(sT), k=x/A_inf.                  (9)</code></pre>
+<p>Thus moving q really changes its frequency from c to c lambda. Changing only M at fixed q_N would not do that. Where its factors are nonzero, the old balanced momentum is</p>
+<pre><code>p_bal=(1-A_inf)/f
+     =(1-exp(sT))/[s v(1-T)].             (10)</code></pre>
+<p>The full moment matrix is globally regular even where this particular momentum chart fails:</p>
+<pre><code>mu=[k,e;k f,m+m^(-1)-k], det mu=1.         (11)</code></pre>
+<p>Its eigenvalues are m and m^(-1). The actual knot-meridian sign in the old convention is <code>-mu</code>, since M=-m. At lambda=1 its projective sign gives the complete physical meridian. All M and SL2 sign markings are retained; choosing one of the two eigenflags is additional augmented data.</p>
+<p>For the m-eigenflag use the slope v_geo in <code>[1:v_geo]</code>. Directly,</p>
+<pre><code>v_geo=(m-k)/e=k f/(k-m^(-1))
+      =r_s(T)v,
+r_s(T)=s(1-T)/(1-exp[-s(1-T)]).           (12)</code></pre>
+<p>Consequently (11) is exactly the whole Grothendieck matrix from <a href="compact_exponential_cech_current_detour.html">the exponential detour</a> evaluated at <code>(T,v_geo)</code>. The source shear</p>
+<pre><code>(v,a)-&gt;(r_s(T)v,a/r_s(T))</code></pre>
+<p>preserves T and Omega_0 exactly, because <code>Omega_0=-dT wedge dlog v</code>. For lambda&lt;1 it is regular on the whole real compact sphere. In this ordinary-falling frame it becomes singular at lambda=1,T=0. This particular singularity is frame dependent, as the next section proves.</p>
+<p>The other eigenflag, corresponding to the original inverse-cut marking <code>M^(-1)=-m^(-1)</code> on <code>-mu</code>, has slope</p>
+<pre><code>v_inv=s v(1-T)/(1-exp(sT)).                (13)</code></pre>
+<p>Equations (12)–(13) must not be silently interchanged.</p>
+<h2 id="an-exact-quantum-factorial-change-removes-the-first-flag-artifact">5. An exact quantum-factorial change removes the first flag artifact</h2>
+<p>The symmetric q-falling frame has</p>
+<pre><code>E_q e_j=[j]_q e_(j-1), F_q e_j=[n-j]_q e_(j+1).</code></pre>
+<p>Its change from (1) is diagonal. If <code>e'_j=g_j e_j</code>, then</p>
+<pre><code>g_0=1, g_(j+1)/g_j=(n-j)/[n-j]_q.</code></pre>
+<p>All these factors are nonzero on 0&lt;=lambda&lt;=1. The exact finite symbols in this frame are</p>
+<pre><code>sigma_(rho E_q)=[R_q(T)^n-R_(q^-1)(T)^n]/v,
+sigma_(rho F_q)=v[q^nR_(q^-1)(T)^n-q^(-n)R_q(T)^n].    (14)</code></pre>
+<p>Their endpoint divisions are removable, and the same elementary binomial argument proves uniform C^l convergence on the entire compact sphere to</p>
+<pre><code>e_sym=2sinh(sT/2)/v,
+f_sym=2v sinh(s(1-T)/2), k=m exp(-sT).       (15)</code></pre>
+<p>The m-eigenflag now has the regular slope</p>
+<pre><code>v_+=exp(s(1-T)/2)v,                        (16)</code></pre>
+<p>through lambda=1, including both poles. The inverse eigenflag is</p>
+<pre><code>v_-=-exp(-sT/2)
+        sinh(s(1-T)/2)/sinh(sT/2) v.       (17)</code></pre>
+<p>For lambda&lt;1 it reverses the two pole flags, whereas at lambda=1 the ratio of the two sines is one and (17) equals (16). The two corner limits <code>(lambda,T)=(1,0),(1,1)</code> therefore retain the inverse-flag collision/bubble data. Regularity of (16) does not justify deleting that augmentation information.</p>
+<p>The exact principal comparison is</p>
+<pre><code>b_s(T)=2sinh(s(1-T)/2)/[s(1-T)],
+e=b_s e_sym, f=f_sym/b_s.                 (18)</code></pre>
+<p>Equivalently use the symplectic source shear <code>v_sym=v/b_s(T), a_sym=b_s(T)a</code>. At lambda=1,T=0, b_s vanishes; the ordinary-frame pole in (12) is thus a basis artifact. These are exact matrix and principal-coordinate comparisons, not a boundedness assertion about the changing frame.</p>
+<h2 id="the-original-balanced-word-and-pointed-source-are-retained-exactly">6. The original balanced word and pointed source are retained exactly</h2>
+<p>There is also an explicit exact adapter to the existing balanced integral module. In that frame</p>
+<pre><code>F_bal v_j=(1-Q^(j+1))v_(j+1),
+Ecal_bal v_j=(M Q^(-j)-M^(-1))v_(j-1).</code></pre>
+<p>At M=-q^N define</p>
+<pre><code>d_j=(Q;Q)_j/[rho^j(n)_j]
+   =(-1)^j q^(j(j+1)/2)[j]_q!/(n)_j,
+D=diag(d_j), d_0=1.                       (19)</code></pre>
+<p>Here <code>(n)_j=n(n-1)...(n-j+1)</code>. The second expression makes lambda=0 removable, with value <code>(-1)^j j!/(n)_j</code>. Every d_j is nonzero on the full real path, including lambda=1. Directly,</p>
+<pre><code>D^(-1)F_bal D=rho F,
+D^(-1)Ecal_bal D=rho E,
+D^(-1)K D=K.                              (20)</code></pre>
+<p>For the second identity use <code>M Q^(-j)-M^(-1)=-rho q^(-j)[N-j]_q</code>. Thus (20) is an exact quantum-factorial frame of the actual integral representation, not a newly ordered classical polynomial.</p>
+<p>Conjugating every strand by D conjugates every actual factorial R matrix by <code>D tensor D</code>. The Cartan factor, pivot, transfer weights and head projectors are kept; the diagonal factors commute with the latter three. Internal D factors telescope through an arbitrary word. Its cut matrix transforms as</p>
+<pre><code>C_poly=D^(-1)C_bal D.</code></pre>
+<p>The literal rank-one source transforms at the same time:</p>
+<pre><code>psi_poly=D^(-1)psi_bal, phi_poly=phi_bal D.              (21)</code></pre>
+<p>All pointed pairings are therefore exactly unchanged. For every weighted knot word the cut matrix is diagonal by integer-weight conservation, so its actual normalized source is also its same normalized trace before and after (20). The weighted Green current identities are preserved coefficientwise.</p>
+<p>The genuine integral Hopf pivot K and the original auxiliary root-compatible pivot <code>K^(1-N)</code> must still be distinguished. Their exact closed-strand adapter is <code>K^(-N)</code>. It commutes with every displayed diagonal change of frame and remains an actual position-dependent insertion off the root:</p>
+<pre><code>K^(-N)e_j=q^(-Nn)q^(2Nj)e_j.</code></pre>
+<p>At q_N it becomes the retained scalar <code>(-1)^n</code>; along the moving-q path it cannot be replaced by that value. The external modified-dimension and framing factors likewise stay their original ones. The basis identity does not equate two generic quantum invariants whose pivots or external source factors were chosen differently.</p>
+<p>Equation (20) does not license replacing (21) by an unrelated vacuum or discarding the size of D in asymptotics. Likewise the symmetric q-falling adapter and its source must be retained. Their quantum-factorial norms can carry exponential size. The individual uniform generator bounds (6) and (15) prove neither a uniform full-word star expansion nor the selected geometric period. They give the exact source frames and global classical moment maps to which such a theorem would have to apply.</p>
+<h2 id="exact-audit-and-endpoint-checks">7. Exact audit and endpoint checks</h2>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_integral_color_coherent_symbols.py">audit_integral_color_coherent_symbols.py</a> and its <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/integral_color_coherent_symbols_results.json">results</a> verify all finite symbols, removed endpoint values, Casimir normalization, and both diagonal frame adapters at levels 2 through 6 over the rational function field in q. They also check the two principal augmented flags and ordinary/symmetric shear identities.</p>
+<p>A separate 70-digit grid check uses N=8,16,32,64,128, includes lambda=0,1, both exact T endpoints, nearby T=10^(-8), and the color-scale endpoint positions T=1/N,1-1/N. It agrees with the proved uniform rate. These numerical checks audit conventions and cancellation; the uniform whole-sphere assertion is the argument (7)–(8), not an extrapolation from that grid.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/integral_color_coherent_symbols_and_uniform_poles.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-integral-family-and-its-polynomial-frame">1. The actual integral family and its polynomial frame</a><a href="#exact-finite-n-symbols-have-no-polar-singularities">2. Exact finite-N symbols have no polar singularities</a><a href="#uniform-asymptotics-hold-on-the-entire-compact-source">3. Uniform asymptotics hold on the entire compact source</a><a href="#the-moving-q-clock-and-the-actual-principal-moment-matrix">4. The moving-q clock and the actual principal moment matrix</a><a href="#an-exact-quantum-factorial-change-removes-the-first-flag-artifact">5. An exact quantum-factorial change removes the first flag artifact</a><a href="#the-original-balanced-word-and-pointed-source-are-retained-exactly">6. The original balanced word and pointed source are retained exactly</a><a href="#exact-audit-and-endpoint-checks">7. Exact audit and endpoint checks</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

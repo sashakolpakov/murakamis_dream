@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Coupled crossing gauges: an exact optimizer and a twist-block improvement · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_convex_gauge_block_energy.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="coupled-crossing-gauges-an-exact-optimizer-and-a-twist-block-improvement">Coupled crossing gauges: an exact optimizer and a twist-block improvement</h1>
+<p>28 October 2026. The original endpoint-preserving gauge program can be implemented as a finite convex optimization, with its full original paired source retained. For a broad explicit alternating-sign class, flat gauges are its <strong>exact finite-N global minimizers</strong> at the single-crossing Hilbert–Schmidt partition. Even replacing HS norms by operator norms cannot improve its exponential crossing envelope. Thus this particular optimization does not produce the Rivin volume.</p>
+<p>There is a constructive improvement after coherent block contraction: an entire repeated-crossing twist block has a uniform exponential norm bound independent of its length. It improves the crossing bound for every repeated-generator block of length at least five in the specified original braid word, at arbitrary width. No conversion of an arbitrary unoriented diagram twist region is assumed. This is not the sharp knot-volume bound or a lower bound.</p>
+<h2 id="the-implemented-original-program-and-its-entropy-dual">1. The implemented original program and its entropy dual</h2>
+<p>Use the source-preserving gauge program in <a href="actual_weighted_fourier_plat_energy.html#3-a-computable-positive-energy-upper-bound-hierarchy">the weighted Fourier energy theorem</a>. The width is 2k; every original cap/cup pair is adjacent. On every physical wire edge e choose arbitrary real logs s_e(a), 0&lt;=a&lt;N. At each endpoint the only restrictions are</p>
+<pre><code>s_(odd,a)+s_(even,d-a)=0, d=N-1.                   (1)</code></pre>
+<p>These make the endpoint gauges fix the ORIGINAL paired cups, ordinary caps, and the marked cap after its legitimate whole-degree restriction. All scalar, pivotal and framing lines stay as before. An internal wire has a single gauge on its entire segment between incident gates.</p>
+<p>For a crossing v let i=(a,b), o=(c,e). Put</p>
+<pre><code>Phi_N(s)=(1/2)sum_v log sum_(i,o)
+    |R_v(o,i)|^2 exp(2s_out(o)-2s_in(i)).           (2)</code></pre>
+<p>The sums use the original physical crossing support, not a cyclic completion. Positive entries are exactly</p>
+<pre><code>R_+(a+b-e,e;a,b)
+   =kappa x^(-b-e)Q^(eb)
+      F_(a+b-e)F_a/[F_(a-e)F_bF_e],               (3)</code></pre>
+<p>with 0&lt;=e&lt;=a&lt;N and a+b-e&lt;N. The negative moduli are obtained by swapping both input and output heads, from the proved actual antiunitary identity. The common kappa is a retained unit phase. Thus no knot scalar is input to the objective.</p>
+<p>The resulting rigorous bound is</p>
+<pre><code>|P_N| &lt;= |chi_N|N^(k-1) exp(inf_s Phi_N(s)).         (4)</code></pre>
+<p>The implementable objective (2) is convex log-sum-exp. The new script eliminates (1) with a signed union-find and supplies its analytic gradient to L-BFGS. It keeps separate intermediate wire gauges and the independent top and bottom source gauges; it does not optimize each crossing in isolation.</p>
+<p>There is a useful dual characterization. At every crossing choose a probability p_v on its actual nonzero entries. Require identical one-head marginals at the two ends of every internal wire and require reflected odd/even marginals at each paired boundary. Such probabilities annihilate every gauge linear term in (2). The elementary entropy identity</p>
+<pre><code>log sum_i exp(l_i)=max_p [sum_i p_i l_i-sum_i p_i log p_i]</code></pre>
+<p>therefore gives the lower certificate</p>
+<pre><code>inf_s Phi_N(s) &gt;= (1/2)sum_v
+      [sum p_v log|R_v|^2-sum p_v log p_v].         (5)</code></pre>
+<p>If the maximizing constrained probabilities are strictly positive, Lagrange multipliers give p_v proportional to the exponentials in (2), and equality holds. Indeed the entropy has infinite inward derivative at a zero coordinate whenever a strictly positive feasible point exists, so its maximum is interior. Its derivative annihilates the constraint tangent space, hence is a linear combination of the constraint rows, which gives precisely those multipliers. This is a finite-dimensional entropy/flow duality with actual R weights. It does not identify those flows with geometric angle structures.</p>
+<p>The subsequent <a href="actual_twist_block_projector_barrier.html">joint projector-profile bound</a> sharpens the block constant below to 4v_3+2v_8 while retaining the same original source, frame and meridian-circle proof. The valid coarser estimates here are unchanged.</p>
+<h2 id="exact-optimum-for-alternating-signs-by-generator-position">2. Exact optimum for alternating signs by generator position</h2>
+<p>Suppose the word has the sign pattern</p>
+<pre><code>sign(sigma_i)=epsilon*(-1)^(i+1), epsilon=+1 or -1, (6)</code></pre>
+<p>at every occurrence of generator i. Its index sequence is arbitrary, as are its length and even width. The theorem applies whenever its plat closure is the desired one-component knot; no knot-specific calculation enters. It is not a claim that every alternating knot presentation automatically has (6).</p>
+<p><strong>Exact optimizer theorem.</strong> For every N&gt;=2,</p>
+<pre><code>inf_s Phi_N(s)=m log||R_+||_HS.                    (7)</code></pre>
+<p>Thus the fully coupled single-crossing HS gauge program is already minimized by s=0, including all endpoint gauges allowed in (1).</p>
+<p>Proof. Normalize the squared moduli of the positive crossing:</p>
+<pre><code>p_+(o,i)=|R_+(o,i)|^2/||R_+||_HS^2.</code></pre>
+<p>The literal matrix (3) is symmetric: R_+(o,i)=R_+(i,o). It follows that its input and output first-head marginals coincide, as do its second-head marginals. Let them be p_H and p_L. Root factorial reflection gives a second exact modulus symmetry,</p>
+<pre><code>|R_+(c,e;a,b)|
+   =|R_+(d-e,d-c;d-b,d-a)|.                      (8)</code></pre>
+<p>Indeed the new transfer difference is still a-e=c-b, and |F_j||F_(d-j)|=N cancels all reflected numerator/denominator factors in (3). Consequently p_H(a)=p_L(d-a).</p>
+<p>For the negative crossing the two head marginals are interchanged. Under (6), any given odd physical head therefore has the same marginal at ALL its incident crossings, and every even head has the reflected marginal. Which of the two is called H depends only on epsilon. Assign these same marginals to untouched wire segments too. All internal wire constraints and all boundary reflection constraints in Section 1 are satisfied. The strictly positive probabilities p_v=|R_v|<sup>2/||R_v||_HS</sup>2 are thus feasible in (5). Their entropy value is exactly sum_v log||R_v||<em>HS=m log||R</em>+||_HS. The same value is attained by s=0 in (2), proving (7).</p>
+<p>Equivalently, the entire projected gradient at s=0 vanishes, not merely the gradients of individually balanced crossings. Convexity then certifies the global minimum without any numerical convergence assumption. This is why some randomly initialized large-N numerical optimizations converge slowly in gauge-null directions; the exact stationary certificate avoids confusing that with a smaller optimum.</p>
+<h2 id="even-operator-norm-gauges-retain-the-crossing-exponent">3. Even operator-norm gauges retain the crossing exponent</h2>
+<p>Let a_N+b_N=d with a_N/N -&gt;3/4 and b_N/N -&gt;1/4. When epsilon=+1, put the fixed indices (a_N,b_N,a_N,b_N,…) on the physical heads; reverse them for epsilon=-1. At a positive crossing this gives the diagonal entry R_+(a_N,b_N;a_N,b_N). At a negative crossing it gives the head-swapped diagonal entry with the same modulus. This is a single physical index path through the WHOLE network, and its paired endpoint charges are exactly d.</p>
+<p>Every gauge in (1) is one on each of these endpoint states. Along the path the interior gauge ratios telescope. Bounding each local operator norm by this one entry therefore gives, for ANY N-dependent choices of positive diagonal wire gauges,</p>
+<pre><code>product_v ||G_out,v R_v G_in,v^(-1)||_op
+          &gt;= |R_+(a_N,b_N;a_N,b_N)|^m.             (9)</code></pre>
+<p>This is a lower bound on the norm-based upper-bound program, not on the actual scalar period; other state paths can cancel that scalar.</p>
+<p>The uniform factorial estimate shows</p>
+<pre><code>log|R_+(a_N,b_N;a_N,b_N)|
+     =N[2J(3/4)-J(1/2)-2J(1/4)]+O(log N)
+     =N v_8/(2pi)+O(log N).</code></pre>
+<p>Flat gauges have that same operator-norm exponent by the original crossing theorem. Hence the best single-crossing operator program, as well as (7), has the exact exponential rate</p>
+<pre><code>inf_gauge sum_v log||R_v,gauge||
+              =m N v_8/(2pi)+O_word(log N).        (10)</code></pre>
+<p>This decides the proposed finest local scaling route for the class (6), at arbitrary width. It cannot by itself lower the crossing envelope to the smaller hyperbolic knot volume. A genuinely coherent block contraction is necessary.</p>
+<h2 id="a-uniform-twist-block-improvement-from-the-actual-casimir">4. A uniform twist-block improvement from the actual Casimir</h2>
+<p>Such contraction does yield a quantitative general improvement. Let B be either original complete crossing on two physical heads, with its original unit Cartan/framing factors retained. For every integer ell and every N&gt;=2,</p>
+<pre><code>||B^ell||_op &lt;=32 N^2(1+|ell|) c_*^N,
+||B^ell||_HS &lt;=32 N^3(1+|ell|) c_*^N,
+c_*=7+5sqrt(2).                                  (11)</code></pre>
+<p>The exponential constant is independent of twist length. No spectral condition number or unproved semisimplicity is hidden in (11).</p>
+<p>Here is a direct norm proof from the already independently derived <a href="casimir_braiding_and_recoupling_lattice.html#3-the-actual-crossing-has-a-unique-confluent-polynomial">actual Casimir crossing polynomial</a>. Use Ecal=rho^2 E and the actual complete physical matrices. They obey</p>
+<pre><code>||F||,||Ecal||&lt;=2, K unitary,
+F Ecal+qK+q^(-1)K^(-1)=-2I.</code></pre>
+<p>On the tensor product put</p>
+<pre><code>Omega=F_tot Ecal_tot+qK_1K_2+q^(-1)K_1^(-1)K_2^(-1),
+F_tot=F_1+K_1^(-1)F_2,
+Ecal_tot=Ecal_1 K_2+Ecal_2.</code></pre>
+<p>Expanding and using the single-head Casimir identity gives</p>
+<pre><code>Omega=-2(K_2+K_1^(-1))
+   -(q+q^(-1))K_1^(-1)K_2
+   +F_1 Ecal_2+K_1^(-1)Ecal_1 F_2K_2,</code></pre>
+<p>so ||Omega||&lt;=14 in the ORIGINAL flat balanced metric.</p>
+<p>Let P_N(z)=T_N(z)+2, T_0=2,T_1=z,T_(n+1)=zT_n-T_(n-1). The proved actual polynomial identity is B=lambda_0 r_N(Omega), |lambda_0|=1, with P_N(Omega)=0. Its roots</p>
+<pre><code>c=2cos(pi h/N), h odd, 1&lt;=h&lt;N</code></pre>
+<p>are double. When N is odd there is additionally the simple root -2. At every double root r_N(c)=nu, |nu|=1 and</p>
+<pre><code>|r_N&#39;(c)|=(N-h)/(4 sin(pi h/N))&lt;=N^2/8.            (12)</code></pre>
+<p>The simple root value has modulus one. These spectral jets, including their derivatives, follow from the defining finite R by confluent generic-q highest-weight interpolation; no diagonalizability at the root is used.</p>
+<p>For an explicit bounded Hermite basis set</p>
+<pre><code>Q_c(z)=P_N(z)/(z-c)^2,
+A_c=Q_c(c)=N^2/(4sin^2(pi h/N)),
+alpha_c=Q_c&#39;(c)/A_c=c/(4-c^2),
+e_c(z)=Q_c(z)[1-alpha_c(z-c)]/A_c,
+j_c(z)=(z-c)Q_c(z)/A_c.</code></pre>
+<p>These polynomials have respectively the jets (1,0) and (0,1) at c, and zero jets at all other roots. At a possible simple root -2 use e_-(z)=P_N(z)/[(z+2)P_N’(-2)], with |P_N’(-2)|=N^2. Consequently the exact polynomial representing B<sup>ell/lambda_0</sup>ell is</p>
+<pre><code>f_ell(z)=sum_double [nu^ell e_c(z)
+             +ell nu^(ell-1)r_N&#39;(c) j_c(z)]
+                 +sum_simple nu^ell e_-(z).        (13)</code></pre>
+<p>This formula works for negative ell too: r_N is a unit modulo P_N.</p>
+<p>For completeness the constants can be controlled explicitly. Integrate around |z|=R=14+1/N. The resolvent norm is at most N by its Neumann series. Put r(R)=(R+sqrt(R^2+4))/2. The Chebyshev recurrence gives |T_N(z)|&lt;=2r(R)^N, and</p>
+<pre><code>|P_N(z)|&lt;=5 c_*^N,
+|z-c|&gt;=12,
+A_c&gt;=N^2/4, |alpha_c|&lt;=N^2/8.</code></pre>
+<p>The first inequality uses N[log r(14+1/N)-log r(14)]&lt;=1/sqrt(200). It follows on that circle that</p>
+<pre><code>|e_c(z)|&lt;c_*^N/3,
+|j_c(z)|&lt;=5c_*^N/(3N^2),
+|e_-(z)|&lt;=5c_*^N/(12N^2).</code></pre>
+<p>Together with (12), the at most N interpolation conditions bound |f_ell(z)| by N(1+|ell|)c_*^N. Cauchy’s matrix functional calculus therefore gives ||f_ell(Omega)||&lt;=R N<sup>2(1+|ell|)c_*</sup>N, which is stronger than the operator inequality (11). The HS inequality costs at most sqrt(N^2)=N. Thus no exponentially conditioned eigenbasis has entered the proof.</p>
+<h2 id="whole-word-consequence-at-arbitrary-width">5. Whole-word consequence at arbitrary width</h2>
+<p>Partition any fixed original knot word into maximal repeated-generator twist blocks of lengths ell_t, leaving other crossings as blocks of length one. Perform these actual matrix contractions first, preserving the original source and all common phases. Combining (11) with the ordinary crossing bound gives the unconditional whole-source estimate</p>
+<pre><code>limsup_N (2pi/N)log|P_N|
+   &lt;=sum_t min(|ell_t|v_8, 2pi log(7+5sqrt(2))).   (14)</code></pre>
+<p>The factors 32N^3(1+|ell_t|), spectator dimensions and all complete source normalizations contribute only O_word(log N). The same holds for the reduced original Kashaev scalar. This applies to arbitrary width and sign patterns, not just the twist-knot family.</p>
+<p>There is also a direct finite-N source justification which includes ODD braid width and does not require passing to an even plat. For a b-strand knot cut use its original complete pivot g, which is unitary, and retain the unit-modulus zero-framing line in W. The exact actual cut is</p>
+<pre><code>C=Tr_env[W(I tensor g^(tensor(b-1)))]=K_N I.</code></pre>
+<p>Every partial trace of a unitary-weighted operator has norm at most the environment dimension times its operator norm. Thus, with every normalization still original,</p>
+<pre><code>|K_N| &lt;= N^(b-1)||W||_op
+  &lt;= N^(b-1) product_t min(
+      ||B_sign(t)||_op^|ell_t|,
+      32N^2(1+|ell_t|)(7+5sqrt(2))^N).            (14a)</code></pre>
+<p>At completeness the full ADO modified dimension is its known root phase divided by N, so it does not change the exponential bound. This proof uses the actual original pivotal cut, not a new positive closing trace. It supplies the source estimate for (14) at every braid width.</p>
+<p>Since</p>
+<pre><code>2pi log(7+5sqrt(2)) &lt; 5 v_8,</code></pre>
+<p>every repeated-generator block of length at least five gives a strict improvement over its separate-crossing bound. The displayed numerical comparison can be verified by elementary convergent series for sqrt(2), log and Catalan’s constant; it is not used for (11) or (14). The constant is deliberately coarse, so (14) is not asserted to equal or be bounded by Vol(S^3-K). It establishes a real quantitative gain from coherent block contraction in the specified braid word after the finest gauge program has been shown ineffective on the alternating-sign class.</p>
+<h2 id="reproduction-and-numerical-scope">6. Reproduction and numerical scope</h2>
+<pre><code>python3 experiments/actual_convex_gauge_block_energy.py
+python3 experiments/actual_convex_gauge_block_energy.py --full</code></pre>
+<p>The script uses exact finite factorial moduli in logarithmic form; the only floating operations in the objective are ordinary positive log-sum-exp and its gradient. It checks the transpose/reflection marginals through N=32 and optimizes complete coupled wire gauges at width four and six. In the class (6), the independently verified zero gradient is the global certificate, so starting at that point does not rely on slow optimization in null directions. Nonalternating examples are diagnostics; finite-iteration results there are feasible upper bounds and are not claimed exact optima.</p>
+<p>The block tests independently construct the bounded physical Omega, check its actual polynomial crossing identity, and evaluate positive and negative twist powers through N=10. The all-N bound is the analytic Hermite/resolvent proof above, not extrapolation from those powers. <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_convex_gauge_block_energy_results.json">Saved results</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_convex_gauge_block_energy.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-implemented-original-program-and-its-entropy-dual">1. The implemented original program and its entropy dual</a><a href="#exact-optimum-for-alternating-signs-by-generator-position">2. Exact optimum for alternating signs by generator position</a><a href="#even-operator-norm-gauges-retain-the-crossing-exponent">3. Even operator-norm gauges retain the crossing exponent</a><a href="#a-uniform-twist-block-improvement-from-the-actual-casimir">4. A uniform twist-block improvement from the actual Casimir</a><a href="#whole-word-consequence-at-arbitrary-width">5. Whole-word consequence at arbitrary width</a><a href="#reproduction-and-numerical-scope">6. Reproduction and numerical scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

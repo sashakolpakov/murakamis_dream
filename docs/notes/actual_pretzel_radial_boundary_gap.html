@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The proposed pretzel radial homotopy has no strict boundary-action gap · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_pretzel_radial_boundary_gap.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-proposed-pretzel-radial-homotopy-has-no-strict-boundary-action-gap">The proposed pretzel radial homotopy has no strict boundary-action gap</h1>
+<p><strong>Subsequent resolution for this source.</strong> The obstruction proved below remains valid, but the <a href="actual_pretzel_coherent_circle_and_period_asymptotic.html">full coherent period theorem</a> now combines the equal-height contributions by an exact finite inner transformation and controls all remaining indices with both recurrence branches. It proves complete-base survival without the false strict boundary gap. The unfilled augmented link, not a fixed knot filling, is the scope of that result.</p>
+<p>29 October 2026. For the EXACT phase of the double sum in <a href="actual_pretzel_complete_base_casimir_polynomial.html">the complete original pretzel polynomial</a>, the original-radius diagonal boundary attains the SAME action as the candidate shifted interior saddle, for EVERY fixed real w&lt;-1. Consequently no uniform strict boundary gap holds on the proposed closed homotopy rho_X in [rho_*,0]. This does not refute a deformation which coherently fills or combines that endpoint current. It identifies the endpoint contribution such a deformation must retain.</p>
+<h2 id="phase-branches-and-the-candidate-saddle">1. Phase, branches, and the candidate saddle</h2>
+<p>Write w=-W, W&gt;1, X=exp(rho+i theta), Y=exp(i phi), with 0&lt;phi&lt;theta&lt;pi and rho&lt;=0. Use the principal dilogarithm, taking the boundary value of Li2(Y/X) from Im(Y/X)&lt;0. Thus its continuation to theta=phi at rho&lt;0 is its LOWER-side value on (1,infinity). The phase is</p>
+<pre><code>S=-6Li2(1)-Li2(X^2)+4Li2(X)+Li2(1/X)-Li2(Y/X)
+                  +Li2(w)+Li2(1/w)-Li2(wY)-Li2(Y/w)+3Li2(Y).</code></pre>
+<p>Put F=Im S. The lower-side convention is essential at the diagonal; resetting its logarithm changes F by a radial mark.</p>
+<p>Set A=W+W^(-1) and</p>
+<pre><code>phi_*=2 arctan(sqrt(A+2)/2),
+Y_*=exp(i phi_*), X_*=(Y_*-1)/(Y_*+3),
+rho_*=log|X_*|, theta_*=arg X_*.</code></pre>
+<p>Then rho_<em>&lt;0 and 0&lt;phi_</em>&lt;theta_*&lt;pi. These are the specified exponentiated stationary equations. On this chart D_X S=0 and D_Y S=2pi i at the point. The retained mark -2pi i Log Y makes the latter an actual zero derivative; because |Y|=1 this mark is real on the angular triangle and does not change F or the result below.</p>
+<h2 id="an-exact-identity-equates-the-diagonal-and-interior-actions">2. An exact identity equates the diagonal and interior actions</h2>
+<p>For ANY 0&lt;phi&lt;pi, set Y=exp(i phi), X(Y)=(Y-1)/(Y+3), and define</p>
+<pre><code>G(X;Y)=-Li2(X^2)+4Li2(X)+Li2(1/X)-Li2(Y/X).</code></pre>
+<p>The following equality is exact:</p>
+<pre><code>Im G(X(Y);Y)=3 Cl2(phi)-Cl2(2phi)=Im G(Y;Y).       (1)</code></pre>
+<p>Here Cl2(a)=Im Li2(exp(i a)); it uses the same continuous principal boundary values, not a changed dilogarithm sheet.</p>
+<p>Proof. X(Y) is in the upper unit disk. Indeed Im X=4sin(phi)/|Y+3|^2 and |X|^2=(2-2cos(phi))/(10+6cos(phi))&lt;1. Moreover</p>
+<pre><code>1-Y/X=(1+Y)^2/(1-Y)</code></pre>
+<p>has argument (pi+phi)/2, so Y/X lies in the lower half-plane and arg X&gt;phi. All the displayed logarithms therefore vary continuously. Direct differentiation gives</p>
+<pre><code>D_X G=2Log(1-X^2)-4Log(1-X)
+                          +Log(1-1/X)-Log(1-Y/X).</code></pre>
+<p>Its exponential is one at X=X(Y). Its limit as phi decreases to zero is zero, fixing the integer logarithmic ambiguity, hence D_X G=0 on the entire interval. Thus</p>
+<pre><code>d_phi Im G(X(Y);Y)=log|1-Y/X|
+                 =2log|1+Y|-log|1-Y|.</code></pre>
+<p>The same derivative is obtained from 3Cl2(phi)-Cl2(2phi), since d_a Cl2(a)=-log|1-exp(i a)|. Both sides of (1) tend to zero as phi increases to pi. This proves (1), including its constant.</p>
+<p>The other terms of S depend only on Y,w, so (1) proves</p>
+<pre><code>F(rho_*,theta_*,phi_*;w)=F(0,phi_*,phi_*;w).       (2)</code></pre>
+<p>In particular the diagonal boundary of the ORIGINAL radius is not strictly below the candidate interior action.</p>
+<h2 id="it-is-precisely-the-maximum-on-that-boundary-edge">3. It is precisely the maximum on that boundary edge</h2>
+<p>On rho=0, theta=phi, inversion of the two w-dependent dilogarithms gives the explicit real function</p>
+<pre><code>B_W(phi)=6Cl2(phi)-Cl2(2phi)
+            -2Im Li2(-exp(i phi)/W)+phi log W.     (3)</code></pre>
+<p>There is no omitted imaginary constant: Li2(-W),Li2(-1/W) are real, and Log(-wY)=log W+i phi in the inversion formula. With t=tan(phi/2)&gt;0, differentiation and elementary sine algebra give</p>
+<pre><code>B_W&#39;(phi)=log([(A+2)+(A-2)t^2]/(4t^4)).           (4)</code></pre>
+<p>The numerator minus 4t^4 equals</p>
+<pre><code>-(1+t^2)(4t^2-A-2).</code></pre>
+<p>Hence B_W has a UNIQUE maximum, at t^2=(A+2)/4, which is exactly phi_*. Combining (2)–(4),</p>
+<pre><code>max_(0&lt;=phi&lt;=pi) F(0,phi,phi;w)=F_* .             (5)</code></pre>
+<p>Equations (2) and (5) disprove the requested strict uniform boundary gap for every w&lt;-1. They do not assert that another boundary edge or an intermediate radius exceeds F_*, nor that a fixed strictly shifted triangle lacks its own boundary gap. No such extra statement is needed.</p>
+<p>For reference, the opposite far corner has the exact lower-side value F(rho,pi,pi;w)=pi(log W-rho). It rises under the radial shift and therefore also cannot be dismissed by an unmarked endpoint rule.</p>
+<h2 id="the-equal-action-boundary-is-present-in-the-original-finite-source">4. The equal-action boundary is present in the original finite source</h2>
+<p>The exact double summand in formula (11a) of the original polynomial is, with F_j=(Q;Q)_j,</p>
+<pre><code>A_(v,r)=F_(2v)/F_v^4 * (Q^(-v);Q)_r Q^r/F_r^3
+                                  *(qw;Q)_r(q/w;Q)_r,
+0&lt;=r&lt;=v&lt;=M=floor((N-1)/2).</code></pre>
+<p>At the DIAGONAL physical endpoint r=v it is exactly</p>
+<pre><code>A_(v,v)=(-1)^v Q^(-v(v-1)/2)
+      *F_(2v)(qw;Q)_v(q/w;Q)_v/F_v^6.           (6)</code></pre>
+<p>Every factor in (6) is nonzero for w&lt;-1 and 0&lt;=v&lt;=M. In particular this is not an outside-support zero of (Q^(-v);Q)_r: that zero first occurs at r=v+1. The outer polynomial/source factors N^2/kappa remain as in the original formula. No nonzero coefficient for the ENTIRE period is inferred by taking a single endpoint term.</p>
+<p>An exact factorial completion also makes the retained endpoint plain. Put h=2pi i/N, delta=v-r, alpha_+=d/2+Log(W)/h and alpha_-=d/2-Log(W)/h. With the exact Fhat_N of <a href="exact_factorial_interpolation_and_complex_contours.html">the original factorial interpolation</a>, the following meromorphic function takes the literal values A_(v,r):</p>
+<pre><code>Ahat(v,r)=exp(pi i r+h[-vr+r(r+1)/2])
+    *Fhat(2v)/[Fhat(v)^3 Fhat(v-r)Fhat(r)^3]
+    *Fhat(alpha_++r)/Fhat(alpha_+)
+    *Fhat(alpha_-+r)/Fhat(alpha_-).               (7)</code></pre>
+<p>Both alpha choices satisfy Q^(alpha_++1)=qw and Q^(alpha_-+1)=q/w. Their sum uses the actual negative-w logarithmic marks; the product has no unspecified periodic factor. Formula (7) follows from the exact factorial shift and (Q<sup>(-v);Q)_r=(-1)</sup>r Q^(-vr+r(r-1)/2) F_v/F_(v-r) at the physical integers. The physical change (v,r)-&gt;(delta,r) is unimodular, so its local lattice residues have no new Jacobian. This constructs the SAME finite residue functional in the new coordinates; it is not a pointwise identity between two products of cotangents or permission to omit their chart-change currents.</p>
+<p>Near delta=0 and a compact tangential neighborhood of the equal-action point, Fhat(delta) is holomorphic, nonzero and Fhat(0)=1; all other scaled factorial arguments lie in regular compact substrips. Thus the cot pole at delta=0 has its ORIGINAL NONZERO residue (6). Conversely 1/Fhat(delta) has simple zeros at delta=-1,-2,…,-m for any fixed small normal collar m&lt;N, canceling those newly enclosed cot poles provided the remaining factors stay regular. This permits the familiar zero-side local filling; it does not delete delta=0 or supply a strict action gap there. Finite-height connecting contours and all their currents must be retained exactly as in the proved simple seam filling.</p>
+<p>An exact residue cycle is the sum of small product circles about (delta,r) in Z_&gt;=0^2 with delta+r&lt;=M, with density Ahat times the two unit-residue cotangent factors. It is the original finite sum. Moving it to the shifted saddle requires an actual relative-cycle operation through this equal-action endpoint packet. Its coefficient, possible coherent cancellation, and any resulting uniform asymptotic remain unproved by radial concavity alone.</p>
+<p>The subsequent <a href="actual_pretzel_coherent_inner_gauss_elimination.html">coherent finite inner elimination</a> does handle this packet without postulating that radial homotopy: an exact balanced finite transformation keeps the half shift and proves its nonzero amplitude in the geometric range. The <a href="actual_pretzel_coherent_circle_and_period_asymptotic.html">whole circle/period assembly</a> uses that coherent sum and an all-index two-branch upper envelope, rather than the false strict boundary-gap premise disproved here.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_pretzel_radial_boundary_gap.py">Audit</a> supplements the proof with high-precision branch/derivative equalities and literal finite-factorial diagonal identities. It is not used to infer an asymptotic or a selected thimble coefficient.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_pretzel_radial_boundary_gap.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#phase-branches-and-the-candidate-saddle">1. Phase, branches, and the candidate saddle</a><a href="#an-exact-identity-equates-the-diagonal-and-interior-actions">2. An exact identity equates the diagonal and interior actions</a><a href="#it-is-precisely-the-maximum-on-that-boundary-edge">3. It is precisely the maximum on that boundary edge</a><a href="#the-equal-action-boundary-is-present-in-the-original-finite-source">4. The equal-action boundary is present in the original finite source</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

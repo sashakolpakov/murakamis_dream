@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reflection-compatible original cap metrics, and the remaining leg-order test · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_reflection_marked_boundary_metric.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="reflection-compatible-original-cap-metrics-and-the-remaining-leg-order-test">Reflection-compatible original cap metrics, and the remaining leg-order test</h1>
+<p>29 October 2026. The positive complete-circle form controls the ORIGINAL ordinary and marked boundaries, but with DIFFERENT literal leg flips. This gives an all-width positive boundary estimate with polynomial dual cost. It does not yet identify an arbitrary untwisted fully augmented planar diagram with a Hilbert norm square. A concrete single-leg bend below shows why that last wiring check cannot be omitted.</p>
+<h2 id="actual-pair-sources-and-the-two-positive-forms">1. Actual pair sources and the two positive forms</h2>
+<p>Put N&gt;=2, d=N-1, q=exp(pi*i/N), Q=q^2, x=q^d. On two original physical heads retain</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi>a</mi><mo>,</mo><mi>b</mi></mrow></msub><mo>=</mo><mi>N</mi><msup><mi>x</mi><mrow><mi>−</mi><mi>b</mi></mrow></msup><msub><mi>δ</mi><mrow><mi>a</mi><mo>+</mo><mi>b</mi><mo>,</mo><mi>d</mi></mrow></msub><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>ℓ</mi><mrow><mi>a</mi><mo>,</mo><mi>b</mi></mrow></msub><mo>=</mo><msup><mi>x</mi><mrow><mi>−</mi><mi>a</mi></mrow></msup><msup><mi>Q</mi><mrow><mi>−</mi><mi>a</mi></mrow></msup><msub><mi>δ</mi><mrow><mi>a</mi><mo>+</mo><mi>b</mi><mo>,</mo><mi>d</mi></mrow></msub><mi>/</mi><mi>N</mi><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>m</mi><mrow><mi>a</mi><mo>,</mo><mi>b</mi></mrow></msub><mo>=</mo><msup><mi>x</mi><mi>b</mi></msup><mi>/</mi><msup><mi>N</mi><mn>2</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ p_{a,b}=Nx^{-b}\delta_{a+b,d},\quad
+ \ell_{a,b}=x^{-a}Q^{-a}\delta_{a+b,d}/N,
+ \quad m_{a,b}=x^b/N^2.
+</annotation></semantics></math></p>
+<p>Let P|a,b&gt;=|b,a&gt; be the literal tensor flip, NOT a crossing. Write m_d=m times the INTEGER pair-degree-d projector. Since x<sup>2=Q</sup>(-1), the exact row identities are</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mo>=</mo><msup><mi>N</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><msup><mi>p</mi><mo>†</mo></msup><mi>P</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>m</mi><mi>d</mi></msub><mo>=</mo><msup><mi>N</mi><mrow><mi>−</mi><mn>3</mn></mrow></msup><msup><mi>p</mi><mo>†</mo></msup><mo>=</mo><msup><mi>N</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>ℓ</mi><mi>P</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \ell=N^{-2}p^\dagger P,\qquad
+ m_d=N^{-3}p^\dagger=N^{-1}\ell P.                         \tag{1}
+</annotation></semantics></math></p>
+<p>The original complete crossing circle satisfies the independently proved <a href="actual_complete_circle_reflection_positive.html">full physical positivity theorem</a>:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mi>P</mi><msub><mi>L</mi><mi>N</mi></msub><mo>≽</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><mi>H</mi><mo>=</mo><msub><mi>L</mi><mi>N</mi></msub><mi>P</mi><mo>=</mo><mi>P</mi><mi>C</mi><mi>P</mi><mo>≽</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ C=PL_N\succeq0,\qquad H=L_NP=PCP\succeq0.
+</annotation></semantics></math></p>
+<p>The original Hermite source normal t has ell t=1, m_d t=0, L_Nt=2Np. Consequently the already derived ordinary-cap identity is C t=2N^3 ell^dagger and ell C^+ ell<sup>dagger=1/(2N</sup>3).</p>
+<p>Conjugating by the TRUE flip P gives the new marked identity</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false" form="prefix">(</mo><mi>P</mi><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>2</mn><mi>N</mi><mi>p</mi><mo>,</mo><mspace width="2.0em"></mspace><menclose notation="box"><mrow><msub><mi>m</mi><mi>d</mi></msub><msup><mi>H</mi><mo>+</mo></msup><msubsup><mi>m</mi><mi>d</mi><mo>†</mo></msubsup><mo>=</mo><mfrac><mn>1</mn><mrow><mn>2</mn><msup><mi>N</mi><mn>5</mn></msup></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msubsup><mi>m</mi><mi>d</mi><mo>†</mo></msubsup><msub><mi>m</mi><mi>d</mi></msub><mo>≼</mo><mfrac><mi>H</mi><mrow><mn>2</mn><msup><mi>N</mi><mn>5</mn></msup></mrow></mfrac><mi>.</mi></mrow></menclose></mrow><annotation encoding="application/x-tex">
+ H(Pt)=2Np,\qquad
+ \boxed{\displaystyle
+ m_d H^+m_d^\dagger=\frac1{2N^5},\qquad
+ m_d^\dagger m_d\preceq\frac H{2N^5}.}                      \tag{2}
+</annotation></semantics></math></p>
+<p>Indeed H<sup>+=PC</sup>+P and m_d=ell P/N. Equivalently Pt/(2N^4) is an explicit inverse solution for m_d^dagger, and its pairing with m_d is 1/(2N^5). No inverse of L_N or deletion of its radical is made. Ordinary ell uses C; marked m_d uses H.</p>
+<p>Both distinctions matter. Since Cp=0 and m_d p=1, the marked row is not bounded by C. The UNRESTRICTED m is not bounded by H either: H|0,0&gt;=0 while m|0,0&gt;=1/N^2. It is the whole-source degree argument below, not a local marked-row substitution, that permits (2).</p>
+<h2 id="all-width-original-marked-boundary-estimate">2. All-width original marked boundary estimate</h2>
+<p>Consider the original k-cup plat source p^(tensor k) and a full original signed word W preserving total INTEGER degree. Each cup has degree d. After the k-1 ordinary output caps have fixed their pair degrees d, the remaining marked pair is forced to degree d. Therefore, on the ACTUAL incoming total degree kd,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msup><mi>ℓ</mi><mrow><mi>⊗</mi><mo stretchy="false" form="prefix">(</mo><mi>k</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo>⊗</mo><mi>m</mi><mo stretchy="false" form="postfix">)</mo><mi>W</mi><msup><mi>p</mi><mrow><mi>⊗</mi><mi>k</mi></mrow></msup><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msup><mi>ℓ</mi><mrow><mi>⊗</mi><mo stretchy="false" form="prefix">(</mo><mi>k</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo>⊗</mo><msub><mi>m</mi><mi>d</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>W</mi><msup><mi>p</mi><mrow><mi>⊗</mi><mi>k</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ (\ell^{\otimes(k-1)}\otimes m)W p^{\otimes k}
+   =(\ell^{\otimes(k-1)}\otimes m_d)W p^{\otimes k}.          \tag{3}
+</annotation></semantics></math></p>
+<p>Put Lambda=ell^(tensor(k-1)) tensor m_d and</p>
+<p><span class="math display">$$
+ Q_{\rm top}=C^{\otimes(k-1)}\otimes H,\qquad
+ c_k=2^{-k}N^{-(3k+2)}.
+$$</span></p>
+<p>Tensor the actual pair dual norms. This gives EXACTLY</p>
+<p><span class="math display">$$
+ \boxed{\displaystyle
+ \Lambda Q_{\rm top}^+\Lambda^\dagger=c_k,\qquad
+ \Lambda^\dagger\Lambda\preceq c_k Q_{\rm top}.}             \tag{4}
+$$</span></p>
+<p>For the original scalar, with its existing framing/peripheral line chi_N unchanged, one consequently has</p>
+<p><span class="math display">$$
+ |K_N|^2\leq|\chi_N|^2c_k
+  \langle Wp^{\otimes k},Q_{\rm top}Wp^{\otimes k}\rangle.    \tag{5}
+$$</span></p>
+<p>The estimate extends to arbitrary coefficient Hilbert spaces and keeps every actual pivot already present in ell. It neither assumes W is unitary nor pays a condition number for its unknown state. It is a boundary Cauchy theorem, NOT yet a geometric bound for the positive energy on the right.</p>
+<p>On ordinary pairs the original signed same-pair twists are exact C-isometries. On the marked H pair, their REFLECTED conjugates P R^a P are H-isometries. Replacing one by the other without the literal leg interface would not be a source identity.</p>
+<h2 id="reflection-of-original-crossings-and-a-genuine-bend-caveat">3. Reflection of original crossings and a genuine bend caveat</h2>
+<p>The full original equal-color balanced crossing is complex symmetric. In its strict coefficient, reversing input(a,b) and output(b+k,a-k) leaves the full factorial ratio, x power, and Q exponent unchanged. The independently checked actual inverse is Rminus=P conjugate(R)P. Thus</p>
+<p><span class="math display">$$
+ P R_{\rm minus}P=R^\dagger.                              \tag{6}
+$$</span></p>
+<p>This is the correct reflected-adjoint statement; P remains a leg exchange, not a physical extra braid. Similarly, a reflected ordinary cap is p^dagger P/N^2, whereas the legitimately restricted marked one is p<sup>dagger/N</sup>3. These are different boundary orientations.</p>
+<p>There is a local obstruction to treating PSD as invariant under ARBITRARY planar bending. Regard the actual cup as the matrix N U:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mrow><mi>a</mi><mo>,</mo><mi>b</mi></mrow></msub><mo>=</mo><msup><mi>x</mi><mrow><mi>−</mi><mi>b</mi></mrow></msup><msub><mi>δ</mi><mrow><mi>a</mi><mo>+</mo><mi>b</mi><mo>,</mo><mi>d</mi></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><msup><mi>U</mi><mo>†</mo></msup><mi>U</mi><mo>=</mo><mi>I</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>ℓ</mi><mrow><mi>a</mi><mo>,</mo><mi>b</mi></mrow></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msup><mi>U</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msub><mo stretchy="false" form="postfix">)</mo><mrow><mi>a</mi><mo>,</mo><mi>b</mi></mrow></msub><mi>/</mi><mi>N</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ U_{a,b}=x^{-b}\delta_{a+b,d},\qquad
+ U^\dagger U=I,\qquad \ell_{a,b}=(U^{-1})_{a,b}/N.
+</annotation></semantics></math></p>
+<p>Using these very turns to dualize one physical leg of a four-port form B gives</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi mathvariant="script">𝒟</mi><mn>2</mn></msub><mi>B</mi><msub><mo stretchy="false" form="postfix">)</mo><mrow><mi>a</mi><mi>b</mi><mo>;</mo><mi>c</mi><mi>d</mi></mrow></msub><mo>=</mo><munder><mo>∑</mo><mrow><mi>u</mi><mo>,</mo><mi>v</mi></mrow></munder><msub><mi>U</mi><mrow><mi>b</mi><mi>u</mi></mrow></msub><msub><mi>B</mi><mrow><mi>a</mi><mi>v</mi><mo>;</mo><mi>c</mi><mi>u</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><msup><mi>U</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msub><mo stretchy="false" form="postfix">)</mo><mrow><mi>v</mi><mi>d</mi></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi mathvariant="script">𝒟</mi><mn>2</mn></msub><mi>B</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>⊗</mo><mi>U</mi><mo stretchy="false" form="postfix">)</mo><msup><mi>B</mi><msub><mi mathvariant="sans-serif">𝖳</mi><mn>2</mn></msub></msup><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>⊗</mo><msup><mi>U</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ (\mathcal D_2B)_{ab;cd}
+  =\sum_{u,v}U_{bu}B_{av;cu}(U^{-1})_{vd},\qquad
+ \mathcal D_2B=(I\otimes U)B^{\mathsf T_2}(I\otimes U^{-1}). \tag{7}
+</annotation></semantics></math></p>
+<p>The factors N from cup and cap cancel. At N=2 the ACTUAL positive H=L_2P has its sole nonzero block on |01&gt;,|10&gt; equal to</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>4</mn><mi>i</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>4</mn><mi>i</mi></mtd><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \begin{pmatrix}4&amp;-4i\\4i&amp;4\end{pmatrix}.
+</annotation></semantics></math></p>
+<p>Its one-leg transpose, and hence the actually turned form (7), has eigenvalues 4,4,4,-4. Thus a single-leg source duality is NOT in general a positive Hilbert congruence. A bare ordinary bubble gives the related warning ell p=0, whereas replacing ell by p<sup>dagger/N</sup>2 would incorrectly give N.</p>
+<p>This is a statement about a DIFFERENT bipartition of an already formed four-port Gram tensor. It is NOT the genuine antiparallel crossing circle, whose reflection must be transported together with its dual object. The next section verifies the distinction explicitly.</p>
+<h2 id="genuine-dual-objects-introduce-no-local-positivity-failure">4. Genuine dual objects introduce no local positivity failure</h2>
+<p>Use standard dual bases for V<em>. With the original antipode conventions, the self-duality isometry from V</em> to V is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>=</mo><msup><mi>U</mi><mi mathvariant="sans-serif">𝖳</mi></msup><mo>,</mo><mspace width="2.0em"></mspace><mi>T</mi><mi>S</mi><mo stretchy="false" form="prefix">(</mo><mi>h</mi><msup><mo stretchy="false" form="postfix">)</mo><mi mathvariant="sans-serif">𝖳</mi></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>=</mo><mi>h</mi><mo>,</mo><mspace width="1.0em"></mspace><mi>h</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>H</mi><mo>,</mo><mi>K</mi><mo>,</mo><mi mathvariant="script">ℰ</mi><mo>,</mo><mi>F</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ T=U^{\mathsf T},\qquad
+ T S(h)^{\mathsf T}T^{-1}=h,
+       \quad h\in\{H,K,\mathcal E,F\}.                    \tag{8}
+</annotation></semantics></math></p>
+<p>For example S(E)=-EK^(-1), S(F)=-KF. Checking the single nonzero entry in each raising/lowering column proves (8), including the endpoints; S(H)=-H and S(K)=K^(-1). The standard coevaluation becomes the original p/N after I tensor T, and standard evaluation becomes N ell after T^(-1) tensor I. Thus this is the actual duality, rather than a guessed rotation of the positive form.</p>
+<p>For any choices of the two object orientations, put D=T^(epsilon) tensor T^(eta), epsilon,eta in {0,1}, and transport BOTH the circle and its reflection:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mrow><mi>ϵ</mi><mi>η</mi></mrow></msub><mo>=</mo><mi>D</mi><msub><mi>L</mi><mi>N</mi></msub><msup><mi>D</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>P</mi><mrow><mi>ϵ</mi><mi>η</mi></mrow></msub><mo>=</mo><mi>D</mi><mi>P</mi><msup><mi>D</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>L</mi><mrow><mi>ϵ</mi><mi>η</mi></mrow></msub><msub><mi>P</mi><mrow><mi>ϵ</mi><mi>η</mi></mrow></msub><mo>=</mo><mi>D</mi><mi>H</mi><msup><mi>D</mi><mo>†</mo></msup><mo>≽</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ L_{\epsilon\eta}=D L_ND^{-1},\qquad
+ P_{\epsilon\eta}=D P D^{-1},\qquad
+ L_{\epsilon\eta}P_{\epsilon\eta}=DHD^\dagger\succeq0. \tag{9}
+</annotation></semantics></math></p>
+<p>All D are unitary. In particular no negative eigenvalue in (7) disproves the antiparallel instance of (9).</p>
+<p>This transport can be chosen consistently along EVERY oriented diagram wire: assign the appropriate object isometry to that wire, and transform a coupon B by D_out B D_in^(-1). Each contracted internal port cancels a D with its inverse. This elementary tensor identity holds for arbitrary exteriors and all leg orderings. It does not require an extra sign or an arbitrary new crossing.</p>
+<p>If left and right self-duality conventions are instead identified, their exact discrepancy is the ORIGINAL pivot. Namely, with g_a=x<sup>(-d)Q</sup>(-a),</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>U</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>U</mi><mi mathvariant="sans-serif">𝖳</mi></msup><mo>=</mo><mi>g</mi><mo>,</mo><mspace width="2.0em"></mspace><msup><mi>U</mi><mi mathvariant="sans-serif">𝖳</mi></msup><msup><mi>U</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>=</mo><msup><mi>g</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><mi>U</mi><mi>g</mi><msup><mi>U</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>=</mo><msup><mi>g</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ U^{-1}U^{\mathsf T}=g,\qquad
+ U^{\mathsf T}U^{-1}=g^{-1},\qquad UgU^{-1}=g^{-1}.       \tag{10}
+</annotation></semantics></math></p>
+<p>These identities are direct antidiagonal multiplication. They show which unitary clocks must remain when a turn changes sides. Their existence permits a consistent genuine-dual description; it does NOT license deleting a pivotal holonomy on a closed component.</p>
+<p>The unresolved global check is therefore more specific than an orientation-sign problem. One must exhibit the projection-plane cut of the ACTUAL fully augmented tensor graph, with its remaining wire contractions and original turns, as a common ket/bra pairing of the transported positive forms (9), or another positive boundary pairing of polynomial cost. A positive coupon on each face is not itself that graph identity. The original ordinary bubble, for example, is ell p=0, whereas replacing its pivotal contraction by p^dagger p/N^2 would give N.</p>
+<p>No proof that a correctly cut reduced fully augmented diagram must use the bad bipartition (7) is asserted. Conversely no arbitrary global norm-square theorem follows here merely from (9). Until the complete wiring identity is proved, (5) and (9) are the supported all-width source and oriented-local results; the global geometric energy estimate remains open.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_reflection_marked_boundary_metric.py">Audit</a> checks eight exact original-module source levels, five tensor-source widths, seven genuine-dual circle families, and the exact N=2 different-bipartition diagnostic. It also checks the literal full crossings, all source inverse solutions, original degree restriction, and both left/right pivotal discrepancies.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_reflection_marked_boundary_metric.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#actual-pair-sources-and-the-two-positive-forms">1. Actual pair sources and the two positive forms</a><a href="#all-width-original-marked-boundary-estimate">2. All-width original marked boundary estimate</a><a href="#reflection-of-original-crossings-and-a-genuine-bend-caveat">3. Reflection of original crossings and a genuine bend caveat</a><a href="#genuine-dual-objects-introduce-no-local-positivity-failure">4. Genuine dual objects introduce no local positivity failure</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

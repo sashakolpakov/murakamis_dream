@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The whole meridian profile and its regular period are equivalent · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/scaled_meridian_regular_profile.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-whole-meridian-profile-and-its-regular-period-are-equivalent">The whole meridian profile and its regular period are equivalent</h1>
+<p>Research proof, 27 October 2026. The canonical actual polar subtraction gives a uniform comparison of the whole scaled meridian function and its regular period, including every fixed resonance center. The original full-state monomial supplies an even resonance factor exactly. Uniform division across its zeros is justified by a fixed boundary norm, not by pointwise division or a jet argument.</p>
+<p>The result is conditional only on the explicitly stated domination of the polynomial-size ordinary-color tail when normalized by the Kashaev value. It does not assert that this growth or a whole profile limit exists for a general hyperbolic knot. It also keeps the fixed-root meridian normal distinct from the moving-q integral-color normal.</p>
+<h2 id="exact-actual-functions-and-the-tail-assumption-used-here">1. Exact actual functions and the tail assumption used here</h2>
+<p>Use the actual functions of <a href="regularized_kashaev_period.html">the regularized Kashaev period</a>:</p>
+<pre><code>q_N=exp(pi*i/N), Q_N=q_N^2, Y=M^2,
+K_N=F_N(1), S_N(Y)=1+Y+...+Y^(N-1),
+F_N(Y)=S_N(Y)R_N(Y)+P_N(Y).                 (1)</code></pre>
+<p>Here P_N is the unique polynomial of degree at most N-2 with <code>P_N(Q_N^j)=C_j(q_N)</code>, 1&lt;=j&lt;N, and R_N is Laurent polynomial. The ordinary-color theorem gives</p>
+<pre><code>|C_j(q_N)|&lt;=D_N, D_N&lt;= (N/2)^(b-1),
+|[Y^r]P_N|&lt;=2D_N, 0&lt;=r&lt;=N-2.               (2)</code></pre>
+<p>Work along any sequence with K_N nonzero and</p>
+<pre><code>epsilon_N=N D_N/|K_N| -&gt;0.                 (3)</code></pre>
+<p>A positive exponential lower bound for |K_N| implies (3), but is stronger than needed here. Put c=2pi*i and use the entire scaled meridian coordinate</p>
+<pre><code>M_N(z)=exp(z/(2N)), Y_N(z)=exp(z/N), U=Y_N(z)^N=exp(z).</code></pre>
+<p>Define</p>
+<pre><code>g_N(z)=F_N(Y_N(z))/K_N,
+pi_N(z)=P_N(Y_N(z))/K_N,
+r_N(z)=N R_N(Y_N(z))/K_N,
+rho_N(z)=M_N(z)^(N-1) r_N(z).              (4)</code></pre>
+<p>All these functions are entire in z. The retained monomial in rho_N is the original full-state normalization, not a newly chosen gauge.</p>
+<p>For any compact K in the z-plane and every nonnegative integer l, the coefficient formula (2) gives the direct bound</p>
+<pre><code>sup_K |partial_z^l pi_N|
+   &lt;=2(N-1)D_N exp(max(0,sup_K Re z))/|K_N|.             (5)</code></pre>
+<p>Indeed each differentiated exponential contributes <code>(r/N)^l</code>, of modulus at most one. Thus the complete interpolation tail and all its fixed jets vanish locally uniformly under (3). No growing Vandermonde inverse or unproved q-normal estimate is involved.</p>
+<h2 id="the-original-full-state-factor-gives-an-exact-even-resonance-function">2. The original full-state factor gives an exact even resonance function</h2>
+<p>The symmetric geometric sum gives exactly</p>
+<pre><code>H_N(z)=S_N(Y_N(z))/[N M_N(z)^(N-1)]
+      =sinh(z/2)/[N sinh(z/(2N))].          (6)</code></pre>
+<p>At apparent common zeros this is its entire continuation. It is even and H_N(0)=1. Hence (1) becomes the exact whole identity</p>
+<pre><code>g_N=H_N rho_N+pi_N.                        (7)</code></pre>
+<p>The uncentered geometric sum would instead tend to <code>(exp(z)-1)/z</code>. Its additional factor <code>exp(z/2)</code> is accounted for by the exact monomial in (4). Removing or ignoring that factor would give the wrong Weyl transformation for the regular coefficient.</p>
+<p>Put</p>
+<pre><code>H(z)=2sinh(z/2)/z, H(0)=1.</code></pre>
+<p>On every fixed disk, for all sufficiently large N,</p>
+<pre><code>H_N(z)=H(z)B_N(z),
+B_N(z)=[z/(2N)]/sinh(z/(2N)),
+B_N=1+O_K(N^(-2)).                        (8)</code></pre>
+<p>B_N is a holomorphic nonvanishing unit on that disk. Its poles are at the distant points cN times nonzero integers. Thus (8) is locally uniform, including all fixed zeros of H. Those zeros are exactly <code>z_k=ck</code>, nonzero integers k; they are simple. For N&gt;|k| they are exact zeros of H_N as well.</p>
+<p>The full modified dimension from the actual state is</p>
+<pre><code>d_N(M)=eta_N (M-M^(-1))/(M^N-M^(-N)), eta_N=i^(N+3).</code></pre>
+<p>Therefore its complete Weyl-even scaled cocycle is exactly</p>
+<pre><code>N d_N(M_N(z))/eta_N=1/H_N(z).              (9)</code></pre>
+<p>This retains both the actual phase eta_N and every finite root divisor. It is a whole meromorphic identity, not just its value at z=0. In particular the full normalized ADO profile is</p>
+<pre><code>N calN_N(M_N(z))/(eta_N K_N)
+        =g_N/H_N=rho_N+pi_N/H_N.           (10)</code></pre>
+<p>The last summand must be subtracted before claiming holomorphic uniformity at a resonance. A small nonzero residue still gives a pole. For example C_1=1 forces a nonzero pole at z=c at every finite level, even if its normalized residue tends to zero.</p>
+<p>There is also an exact actual half-source interpretation. The marked rational Weyl splitting beta_N from <a href="twisted_cotangent_source_and_weyl_gluing.html">the source Weyl-gluing theorem</a> satisfies</p>
+<pre><code>beta_N(M)beta_N(M^(-1))=c_N(M)^(-1),
+c_N(M)=N M^(N-1)/S_N(M^2).</code></pre>
+<p>Thus, at this scaled meridian, without any limit or growth assumption,</p>
+<pre><code>c_N(M_N(z))=H_N(z)^(-1),
+beta_N(M_N(z))beta_N(M_N(-z))=H_N(z).       (10a)</code></pre>
+<p>The odd/even-level phase and its unpaired even-level factor remain the original ones in beta_N. Hence the resonance factor is already the exact norm of the actual marked half-source, not an externally imposed entire function.</p>
+<h3 id="it-is-also-the-character-of-the-original-finite-compact-source">2.1 It is also the character of the original finite compact source</h3>
+<p>On the actual N-dimensional source let J e_j=j e_j and n=N-1. Then exactly</p>
+<pre><code>H_N(z)=(1/N)Tr exp[z(J-n/2)/N].             (10b)</code></pre>
+<p>This is the finite sum (6), with its original 1/N. The compact coherent symbol is explicitly</p>
+<pre><code>exp[-nz/(2N)] [1+(exp(z/N)-1)T]^n.</code></pre>
+<p>Its original compact-source period is (10b), by the proved coherent trace formula. Uniformly for z in compact sets and 0&lt;=T&lt;=1 this symbol tends to <code>exp[z(T-1/2)]</code>. Consequently</p>
+<pre><code>H(z)=integral_0^1 exp[z(T-1/2)]dT.          (10c)</code></pre>
+<p>Thus the resonance factor is at once an actual source character, the exact Weyl norm (10a), and the inverse full peripheral cocycle (9). No index theorem or identification of different quantum theories is needed for these equalities.</p>
+<h2 id="uniform-division-is-valid-through-every-resonance-center">3. Uniform division is valid through every resonance center</h2>
+<p>Choose radii 0&lt;r&lt;R with R not equal to 2pi times a positive integer. Let</p>
+<pre><code>m_R=min_(|z|=R)|H(z)|&gt;0.</code></pre>
+<p>For all sufficiently large N, (8) gives <code>min_(|z|=R)|H_N(z)|&gt;=m_R/2</code>. Whenever u_N/H_N has its holomorphic continuation to the disk of radius R, the maximum principle gives the fixed division bound</p>
+<pre><code>||u_N/H_N||_(|z|&lt;=r)
+                 &lt;=(2/m_R)||u_N||_(|z|=R). (11)</code></pre>
+<p>There is no loss of control at an interior resonance. Its removable quotient is holomorphic before applying the maximum principle. For our exact numerator <code>u_N=g_N-pi_N</code>, this condition holds because (7) supplies the entire quotient rho_N.</p>
+<p>This proves the following equivalence under (3):</p>
+<ul>
+<li>g_N converges locally uniformly on C to a holomorphic g;</li>
+<li>rho_N converges locally uniformly on C to a holomorphic rho.</li>
+</ul>
+<p>The same proof is local on any open domain, using finitely many small boundaries avoiding its resonance zeros. The limits are necessarily related by</p>
+<pre><code>g=H rho, g(0)=rho(0)=1.                    (12)</code></pre>
+<p>For the nontrivial implication, at each fixed z_k the exact numerator vanishes for all large N. Equations (5) and local uniform convergence give g(z_k)=0, so g/H has a holomorphic removable continuation. Put rho=g/H. The numerator of</p>
+<pre><code>rho_N-rho=(g_N-g-pi_N-(H_N-H)rho)/H_N</code></pre>
+<p>is exactly divisible. Equations (5), (8), and (11) prove local uniform convergence, including all resonance centers. They also give the explicit estimate</p>
+<pre><code>||rho_N-rho||_(D_r)
+  &lt;=(2/m_R)[||g_N-g||_(boundary D_R)
+          +||pi_N||_(boundary D_R)
+          +||H_N-H||_(boundary D_R)||rho||_(boundary D_R)]. (13)</code></pre>
+<p>The forward implication follows directly from (7). The same norms show that local boundedness of the two families is equivalent. In particular the regularization neither manufactures nor loses an unspecified normal-family assumption.</p>
+<p>At the centers the removable value can be recorded explicitly:</p>
+<pre><code>rho_N(z_k)=[g_N&#39;(z_k)-pi_N&#39;(z_k)]/H_N&#39;(z_k),
+H_N&#39;(z_k)=(-1)^k/[2iN sin(pi k/N)],
+H&#39;(z_k)=(-1)^k/(ck).                       (14)</code></pre>
+<p>Thus fixed resonance derivatives and the regular quotient obey the same convergence. Higher derivatives follow either from Cauchy’s formula after (13) or by repeated division.</p>
+<h2 id="weyl-symmetry-and-the-regular-coefficient">4. Weyl symmetry and the regular coefficient</h2>
+<p>The actual <a href="actual_weyl_descent.html">Weyl theorem</a> gives <code>F_N(Y^(-1))=F_N(Y)</code>, hence g_N is exactly even. H_N is even as well. Equation (7) implies</p>
+<pre><code>H_N(z)[rho_N(z)-rho_N(-z)]=pi_N(-z)-pi_N(z).</code></pre>
+<p>The numerator is exactly divisible. Applying (11) and (5) proves, even without convergence of rho_N,</p>
+<pre><code>rho_N(z)-rho_N(-z) -&gt;0 locally uniformly.   (15)</code></pre>
+<p>Every profile rho in (12) is therefore even. It may still be algebraic: the example <code>rho=1, g=H</code> satisfies all these resonance, Weyl and normalization constraints. If rho is entire and algebraic over C(z), it is an even polynomial; these identities do not exclude such a regular coefficient. The required whole period factor is already nonalgebraic and supplies all the resonance zeros.</p>
+<p>By contrast the uncentered limit r satisfies <code>r(-z)=exp(z)r(z)</code>. A nonzero global r with this property cannot itself be algebraic. This is a normalization issue resolved by the original full-state monomial, not an obstruction to an algebraic centered coefficient.</p>
+<p>Also <code>rho_N(0)=N R_N(1)/K_N=1-P_N(1)/K_N -&gt;1</code>. Thus R_N(1) is nonzero for all large N on the sequence (3), and using the intrinsic normalization</p>
+<pre><code>M_N(z)^(N-1)R_N(Y_N(z))/R_N(1)</code></pre>
+<p>gives the same local-uniform limits and the same equivalence. No division by an unproved nonzero period is made before (3).</p>
+<h2 id="fixed-root-and-integral-color-normal-maps-have-the-same-u-but-different-sources">5. Fixed-root and integral-color normal maps have the same U but different sources</h2>
+<p>Compare the preceding path with the actual integral-color one</p>
+<pre><code>qfrak_N(z)=exp(c/(2N)+z/(2N^2)),
+M=-qfrak_N(z)^N=exp(z/(2N)),
+Qfrak_N(z)^N=exp(z/N)=Y_N(z).              (16)</code></pre>
+<p>Thus M, Y and U=exp(z) agree exactly. The quantum parameter does not: q is fixed at q_N in (1)–(15), while it varies in (16). On the actual common module put</p>
+<pre><code>delta=1-Q^N, w=M Q^(-N)-M^(-1).</code></pre>
+<p>The two source paths are exactly</p>
+<pre><code>fixed root: delta=0, w=M-M^(-1),
+integral color: delta=1-Y_N(z), w=0.        (17)</code></pre>
+<p>They are different legs of the two-wall geometry. The head-word excursion factor delta*w vanishes on both legs, but that does not identify their derivatives, pivots or selected contractions.</p>
+<p>The actual ordinary integral pivot/twist differs from the frozen root auxiliary source by the already computed route factor</p>
+<pre><code>qfrak_N(z)^(Nn kappa_D)
+       (Qfrak_N(z)^N)^(sum_closed j_a),
+kappa_D=writhe-b+1, n=N-1.</code></pre>
+<p>Knot parity removes only its root value. In this normal coordinate the remaining whole insertion is</p>
+<pre><code>exp{z[n kappa_D/(2N)+(sum_closed j_a)/N]}.   (18)</code></pre>
+<p>Its modulus and every fixed z derivative are bounded on compact z sets uniformly in N, since <code>0&lt;=sum_closed j_a&lt;=(b-1)n</code>. It remains a nonconstant source insertion. A bound on its individual weights does not control cancellations in a selected sum, so it cannot be deleted when comparing normalized profiles.</p>
+<p>There is also a q-normal contribution. For a specified auxiliary finite-word lift, the path derivative in (16) contains <code>q partial_q/(2N^2)</code> in addition to the fixed-root contribution <code>M partial_M/(2N)</code>, together with the actual source derivatives from (18). Neither (2) nor the polar bound (5) bounds that q-normal derivative of the selected quantum word.</p>
+<p>The integral-color sampling centers are accordingly different:</p>
+<pre><code>z_(N,k)=-ckN/(N+k) -&gt;-ck,
+C_N(qfrak_N(z_(N,k)))=C_k(q_(N+k)).         (19)</code></pre>
+<p>These are moving q-color resonances, whereas the fixed-root zeros in (14) are exactly ck at every sufficiently large level. Equations (16)–(19) specify the coordinate and source adapter needed for a comparison; they do not assert equality of the two selected profile functions.</p>
+<h2 id="exact-scope">6. Exact scope</h2>
+<p>The tail bound, full-state cocycle, quotient norm and equivalence of whole/regular profile convergence are exact consequences of the actual regularized state. They hold through the resonance centers, and retain the marked monomial and full modified dimension.</p>
+<p>The independent <a href="whole_gamma_frame_profile.html">whole Gamma source comparison</a> proves an actual function-level refinement, with no K_N growth assumption. If z=ca and</p>
+<pre><code>Phi_a(T)=G(T)^(-a)/Gamma(1-a),
+G(T)=(exp(cT)-1)/c,</code></pre>
+<p>its actual middle-index q-normal residual V_(N,L)(a) and the marked meridian half-source obey</p>
+<pre><code>N^(-a)beta_N(M_N(ca)) -&gt;Phi_(-a)(1/2),
+V_(N,L)(a)=u_N(a) beta_N(M_N(-c b)),
+b=a/(1+a/N), u_N(0)=1, u_N=1+O_K(1/N).     (21)</code></pre>
+<p>The unit is specified by nonvanishing J-products there and remains valid through resonance zeros. The reparametrization b aligns their finite moving and fixed zeros; it cannot be omitted in a unit comparison. Consequently</p>
+<pre><code>Phi_a(T)Phi_(-a)(T)=H(ca).</code></pre>
+<p>Thus (10a), (10b) and (21) match actual source functions and their norm, not only a formally similar entire function. These are scalar source-line comparisons. They do not identify the full selected knot modules, their regular period coefficients or the state profiles in (16). In particular the opposite and slightly reparametrized half-source coordinate in (21) is not the identical-M normal path used in (16).</p>
+<p>No positive volume growth, whole normal-family convergence, algebraicity of the regular coefficient, or equality of q-normal and meridian-normal sourced periods has been proved here.</p>
+<h2 id="audit">7. Audit</h2>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_scaled_meridian_regular_profile.py">audit_scaled_meridian_regular_profile.py</a> and its <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/scaled_meridian_regular_profile_results.json">results</a> check the finite centered character, both marked half-source norms and full cocycle at 85-digit precision, including odd and even N=2 through 18. They check the interpolation coefficient and derivative bound for bounded nodal data, and removable quotient values at the exact positive and negative resonances.</p>
+<p>The quotient stress family is an explicitly declared universal Laurent-polynomial family satisfying the same interpolation divisibility; it is not asserted to be a knot invariant. The general-knot analytic proof is (5)–(14). A separate compact grid through N=128 checks the improved centered factor rate O(N^(-2)); no general-knot growth assumption is inferred from these audits.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/scaled_meridian_regular_profile.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-actual-functions-and-the-tail-assumption-used-here">1. Exact actual functions and the tail assumption used here</a><a href="#the-original-full-state-factor-gives-an-exact-even-resonance-function">2. The original full-state factor gives an exact even resonance function</a><a href="#uniform-division-is-valid-through-every-resonance-center">3. Uniform division is valid through every resonance center</a><a href="#weyl-symmetry-and-the-regular-coefficient">4. Weyl symmetry and the regular coefficient</a><a href="#fixed-root-and-integral-color-normal-maps-have-the-same-u-but-different-sources">5. Fixed-root and integral-color normal maps have the same U but different sources</a><a href="#exact-scope">6. Exact scope</a><a href="#audit">7. Audit</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

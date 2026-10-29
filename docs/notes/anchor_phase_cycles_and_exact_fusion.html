@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Feasible anchor phases are not globally flat, even on surviving knot states · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/anchor_phase_cycles_and_exact_fusion.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="feasible-anchor-phases-are-not-globally-flat-even-on-surviving-knot-states">Feasible anchor phases are not globally flat, even on surviving knot states</h1>
+<p>28 October 2026. The new EXACT charged bridge-flow coefficient has a positive-magnitude expansion with a specified U(1) graph connection. Its phases cannot in general be removed by vertex gauges. This remains true on feasible charge flows in a nonzero source sector of a reduced alternating hyperbolic knot, and the holonomy persists semiclassically.</p>
+<p>The counterfamily also has an exact q-binomial fusion: its entire coefficient is polynomially sized. Thus this is a constructive example of source cancellation, not evidence that its particular sum remains unsolved. The next general step must use such phase-aware fusions, rather than assume vertex-gauge positivity of the charged source.</p>
+<h2 id="the-exact-positive-magnitude-expansion-and-its-proper-flatness-test">1. The exact positive-magnitude expansion and its proper flatness test</h2>
+<p>The event polynomials of <a href="actual_global_charged_bridge_flow.html">the actual whole charged source</a> are products of blocks</p>
+<pre><code>product_(r=0)^(L-1)(alpha X_u-Q^r beta X_v),
+0&lt;=L&lt;=d=N-1, q=exp(pi*i/N), Q=q^2.              (1)</code></pre>
+<p>Since all sine factors in F_j are positive in magnitude for 0&lt;j&lt;N,</p>
+<pre><code>[L choose k]_Q=q^(k(L-k))*|[L choose k]_Q|.</code></pre>
+<p>The coefficient of X_u<sup>(L-k)X_v</sup>k in (1) is therefore EXACTLY</p>
+<pre><code>alpha^L *|[L choose k]_Q| *w_e^k,
+w_e=-(beta/alpha)q^(L-1).                       (2)</code></pre>
+<p>The quadratic k phases cancel. Every magnitude in (2) is strictly positive for 0&lt;=k&lt;=L. The common alpha factors and the original clock/source factor W_h remain outside this expansion.</p>
+<p>Let k_e be the chosen head-charge on each oriented block u-&gt;v. The actual source requires degree d at EVERY anchor. Thus</p>
+<pre><code>incoming(k)-outgoing(k)
+                 =d-sum_(e leaving anchor)L_e.  (3)</code></pre>
+<p>If w_e=eta_v/eta_u, the phase product is constant on this charge polytope. But a bare graph cycle need not be feasible: some edges may be forced to capacity zero or their full capacity. The exact test is the lattice of DIFFERENCES OF FEASIBLE FLOWS.</p>
+<p>For a feasible flow k, form its residual directed graph: use an edge forward if k_e&lt;L_e and backward if k_e&gt;0, carrying phase w_e or w_e^(-1), respectively. A residual cycle with nontrivial phase gives another feasible flow with a different phase by one unit augmentation. Conversely, every difference of feasible integer flows decomposes into such residual cycles, by following an available positive edge until a vertex repeats and then subtracting its minimum multiplicity. Therefore phases are constant on the full feasible support if and only if all these feasible cycle holonomies are one. This criterion retains the source capacities and charges, not only graph topology.</p>
+<p>Self-loop blocks may first be evaluated as their exact scalar Pochhammer; if one is zero the entire clock sector is zero. The counterexamples below have no such hidden zero factors.</p>
+<h2 id="a-uniformly-surviving-bulk-curvature-family">2. A uniformly surviving BULK-curvature family</h2>
+<p>Use the actual reduced alternating three-braid</p>
+<pre><code>W=[1,-2,1,1,-2,-2].                             (4)</code></pre>
+<p>Its closure is the 13/5 two-bridge knot 6_3. The existing <a href="six_three_and_two_bridge_audit.html">6_3 certificate</a> proves its hyperbolic geometry. An optional exact marked-triangulation check in the audit compares (4) with RationalTangle(13,5).numerator_closure(); both give isosig gLLPQccdefffhggaacv_aBBb. None of the coefficient or phase calculations below depends on a numerical knot recognition.</p>
+<p>Put N=2r+1, d=2r and choose the ORIGINAL overclocks</p>
+<pre><code>h=(0,r,r,r,0,r), r&gt;=1.                          (5)</code></pre>
+<p>All bridges in this alternating diagram have length one, so (5) is in the exact monotone source domain. The nine anchors are numbered by the six bridge events followed by the three original closures. The nonempty grouped blocks are as follows; w_e=q<sup>(k_e</sup>phase). The last column is a feasible head-charge, not its phase exponent.</p>
+<table>
+<thead>
+<tr>
+<th>e</th>
+<th>tail -&gt; head</th>
+<th>L</th>
+<th>phase exponent</th>
+<th>base charge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>6 -&gt; 7</td>
+<td>2r</td>
+<td>2r</td>
+<td>r</td>
+</tr>
+<tr>
+<td>1</td>
+<td>8 -&gt; 0</td>
+<td>r</td>
+<td>-r</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0 -&gt; 1</td>
+<td>r</td>
+<td>r</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>7 -&gt; 1</td>
+<td>r</td>
+<td>-r</td>
+<td>0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1 -&gt; 2</td>
+<td>r</td>
+<td>-r</td>
+<td>0</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1 -&gt; 2</td>
+<td>r</td>
+<td>r</td>
+<td>0</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2 -&gt; 3</td>
+<td>r</td>
+<td>-r</td>
+<td>0</td>
+</tr>
+<tr>
+<td>7</td>
+<td>0 -&gt; 3</td>
+<td>2r</td>
+<td>-2r</td>
+<td>r</td>
+</tr>
+<tr>
+<td>8</td>
+<td>3 -&gt; 4</td>
+<td>r</td>
+<td>r</td>
+<td>0</td>
+</tr>
+<tr>
+<td>9</td>
+<td>4 -&gt; 5</td>
+<td>r</td>
+<td>r</td>
+<td>0</td>
+</tr>
+<tr>
+<td>10</td>
+<td>2 -&gt; 6</td>
+<td>2r</td>
+<td>0</td>
+<td>r</td>
+</tr>
+<tr>
+<td>11</td>
+<td>5 -&gt; 7</td>
+<td>2r</td>
+<td>-2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>12</td>
+<td>4 -&gt; 8</td>
+<td>2r</td>
+<td>-2</td>
+<td>r</td>
+</tr>
+</tbody>
+</table>
+<p>The sum of the common alpha^L exponents is zero. The last three rows are the ORIGINAL source closures, including both pivots. Every row is obtained from the original signed event formulas; the table is not an auxiliary graph chosen to create a phase.</p>
+<p>The base charges satisfy (3), and so do</p>
+<pre><code>k(t)=k(0)+t*(+e2+e4+e6-e7), 0&lt;=t&lt;=r.           (6)</code></pre>
+<p>This is a four-vertex BULK cycle 0-&gt;1-&gt;2-&gt;3-&gt;0. It uses no closure edge. All bounds are satisfied for every integer in (6); all its flow weights are nonzero. Its exact phase per augmentation is</p>
+<pre><code>w2 w4 w6/w7=q^r -&gt; exp(pi*i/2).                 (7)</code></pre>
+<p>This is a genuine order-N exponent, not Q raised to a fixed integer. One may take t near r/2 to obtain an interior cycle margin of order N. Vertex gauges preserve relative phases of equal-charge flows, so cannot turn (6) into positive weights.</p>
+<p>The WHOLE clock-sector coefficient nevertheless survives, at every odd level:</p>
+<pre><code>[X_0^d ... X_8^d]P_h=N q^(2-r^2) !=0.          (8)</code></pre>
+<p>Thus the example is not a nonflat graph supported only in a sector which the charged source kills. We now prove (8) by exact fusion.</p>
+<h2 id="exact-fusion-of-the-surviving-curved-sector">3. Exact fusion of the surviving curved sector</h2>
+<p>First the two parallel r-blocks e4,e5 concatenate their root intervals and become</p>
+<pre><code>product_(j=1)^d(X1-Q^j X2)
+             =sum_(j=0)^d X1^(d-j)X2^j.        (9)</code></pre>
+<p>This already performs their internal phase cancellation. Even on the resulting coarser graph, the feasible cycle through e2,(9),e6,e7 has holonomy q^(2r)=x -&gt; -1, not one.</p>
+<p>Let C_j=|[r choose j]_Q| and</p>
+<pre><code>B(t)=sum_(j=0)^r C_j t^j
+                  =(-q^(1-r)t;Q)_r.            (10)</code></pre>
+<p>All six remaining r-blocks supply positive C_j magnitudes. Solving the source charges after (9) gives free b in [0,r] and nonnegative a,c,f with a+f&lt;=r,c+f&lt;=r. The r-block head-charges, in edge order e1,e2,e3,e6,e8,e9, are</p>
+<pre><code>a,c,b,f+c,f+a,f.</code></pre>
+<p>The other head-charges are</p>
+<pre><code>e0=e10=r+b-f, e45=b+c, e7=r+a-c,
+e11=f, e12=r+a.</code></pre>
+<p>These are all the feasible flows, not a restricted subfamily. Using the phase table, their total exponent is</p>
+<pre><code>-2r+r b-(2r+2)a+2r c-(r+2)f.                   (11)</code></pre>
+<p>There are no further alpha^L factors. Since q^(4r+2)=1, the two correlation sums in a,c use the SAME weight q^(2r). The exact finite identity</p>
+<pre><code>B(t)B(q^(2r)t)=sum_(j=0)^d q^(rj)t^j            (12)</code></pre>
+<p>follows directly by concatenating the two root progressions in (10) and using [d choose j]_Q=(-1)^j Q^(-j(j+1)/2). Taking the coefficient of t^(r-f) yields</p>
+<pre><code>sum_a C_a C_(a+f)q^(2r a)=q^(r(r-f)).          (13)</code></pre>
+<p>Apply (13) twice in (11). The remaining b and f sums both equal</p>
+<pre><code>B(q^r)=(Q^(r+1);Q)_r=N/F_r.                    (14)</code></pre>
+<p>The result is q<sup>(-2r+2r</sup>2)(N/F_r)^2. Root reflection gives F_r<sup>2=N(-1)</sup>r Q^(r(r+1)/2); reducing the exponent modulo 2N proves (8). This supplies the actual nonzero surviving source coefficient and explains its polynomial size by explicit q-binomial cancellations. It is not an assumed asymptotic lower bound.</p>
+<h2 id="a-second-simpler-full-source-cycle">4. A second, simpler full-source cycle</h2>
+<p>For the original figure-eight word [1,-2,1,-2], at ANY N choose h=(0,0,H,d),1&lt;=H&lt;d. The grouped feasible flows reduce to a rectangle 0&lt;=k&lt;=d-H,0&lt;=v&lt;=H. In the eight nonempty-edge ordering of the audit,</p>
+<pre><code>k0=k5=H-v+k, k1=k7=d, k2=k,
+k3=k4=k6=v.</code></pre>
+<p>There is a feasible five-edge cycle changing v down by one at fixed k, with holonomy q^(N+H+1). It includes closure edges and can have order-N residual capacity. Exact q-binomial summation gives</p>
+<pre><code>coefficient=N q^(4+H-H^2-NH) !=0.               (15)</code></pre>
+<p>For example its two separated sums are (Q^(H+1);Q)_(d-H) and (Q^(-H);Q)_H. Their product is N times a unit phase. This demonstrates why retaining the actual closure is essential even when the bulk support happens to be phase-flat in a small example.</p>
+<h2 id="what-the-graph-criterion-does-and-does-not-settle">5. What the graph criterion does and does not settle</h2>
+<p>The positive-sine grouping is exact and useful. It converts unknown flow-dependent phases into a finite graph character. But neither the global nor the bulk character is automatically a vertex coboundary on nonzero source support. Equations (5)–(8) prove this uniformly for an actual reduced alternating hyperbolic-knot state.</p>
+<p>The same example exhibits the constructive alternative: fuse the root progressions and their charge correlations BEFORE taking absolute values. Here that gives (8) exactly, hence only polynomial size. The example does not obstruct a further phase-aware normal form or a geometric asymptotic theorem for the full remaining clock sum. It rules out erasing anchor cancellation by a blanket flatness/positivity assertion, and provides an explicit q-cycle fusion for testing a more general rule.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_anchor_phase_cycles_and_fusion.py">Exact audit</a> and its saved certificate verify original block metadata, all source charges/capacities, the nonflat bulk cycle, exact cyclotomic coefficients, and the two finite product fusion identities. Optional –topology compares the explicit braid with the 13/5 rational tangle.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/anchor_phase_cycles_and_exact_fusion.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-exact-positive-magnitude-expansion-and-its-proper-flatness-test">1. The exact positive-magnitude expansion and its proper flatness test</a><a href="#a-uniformly-surviving-bulk-curvature-family">2. A uniformly surviving BULK-curvature family</a><a href="#exact-fusion-of-the-surviving-curved-sector">3. Exact fusion of the surviving curved sector</a><a href="#a-second-simpler-full-source-cycle">4. A second, simpler full-source cycle</a><a href="#what-the-graph-criterion-does-and-does-not-settle">5. What the graph criterion does and does not settle</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

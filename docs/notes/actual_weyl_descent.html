@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Weyl symmetry of the actual state and automatic operator reciprocity · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_weyl_descent.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="weyl-symmetry-of-the-actual-state-and-automatic-operator-reciprocity">Weyl symmetry of the actual state and automatic operator reciprocity</h1>
+<p>Research note, 26 October 2026. This removes the extra quantum-reciprocity hypothesis from the preceding normal-period formulation when the operator is the primitive minimal operator of the actual normalized ADO family. The state symmetry, its peripheral factors, and the monomial reciprocity are proved directly. They hold for every knot at every level, with the usual finite exceptional set for a chosen operator’s specialization. They do not prove injectivity of its relevant root-fiber sector, identify its classical geometric factors, or establish the regulator norm.</p>
+<p>The state is the literature one fixed in <a href="kashaev_ado_pointing.html">the ADO audit</a>. Its all-level annihilator is nonzero by <a href="finite_sum_annihilator.html">the finite-state proof</a>. No new ordering of a classical polynomial or replacement state is chosen here.</p>
+<h2 id="the-actual-reduced-and-full-periods-have-reflected-meridians">1. The actual reduced and full periods have reflected meridians</h2>
+<p>Use q=exp(pi*i/N), x=q^alpha, M=-qx and Y=M^2. On the actual N-dimensional color the matrices and coproduct are</p>
+<pre><code>H v_a=(alpha-2a)v_a, K v_a=x q^(-2a)v_a,
+E v_a=[a][alpha-a+1]v_(a-1), F v_a=v_(a+1),
+Delta E=E tensor K+1 tensor E,
+Delta F=F tensor 1+K^(-1) tensor F.</code></pre>
+<p>Let a= N-1 and alpha’=2a-alpha. Then</p>
+<pre><code>x&#39;=q^(-2)x^(-1), M&#39;=M^(-1),
+theta_(alpha&#39;)=theta_alpha,
+theta_alpha=q^((alpha^2+2(1-N)alpha)/2).       (1.1)</code></pre>
+<p>The conclusion is the exact state identity</p>
+<pre><code>F_N(M)=F_N(M^(-1)),
+N_N(M)=N_N(M^(-1)).                           (1.2)</code></pre>
+<p>Here N_N is the full modified-trace period. The evenness already proved in <a href="even_meridian_norm_descent.html">the meridian descent</a> therefore also gives F_N(Y)=F_N(Y^(-1)). The shift in x in (1.1) is essential; unshifted inversion of x is not the statement.</p>
+<h3 id="a-generator-proof-of-the-turnover">A generator proof of the turnover</h3>
+<p>Define the Chevalley algebra involution</p>
+<pre><code>chi(E)=F, chi(F)=E, chi(K)=K^(-1), chi(H)=-H.</code></pre>
+<p>The displayed coproduct and antipodes S(E)=-E K^(-1), S(F)=-K F give directly, on every generator,</p>
+<pre><code>Delta chi=(chi tensor chi)Delta^op,
+chi S=S^(-1)chi,
+chi(K^(1-N))=K^(N-1).                         (1.3)</code></pre>
+<p>For the actual finite universal R, termwise substitution gives</p>
+<pre><code>(chi tensor chi)(R)=R_21.                     (1.4)</code></pre>
+<p>Indeed its Cartan q^(H tensor H/2) is unchanged, and each E^k tensor F^k becomes F^k tensor E^k, with the same coefficient. This also checks inverse crossings. Pullback by chi reverses tensor order; with the ordinary flip as tensor-order map, (1.4) is precisely the positive-crossing identity for turning the diagram through pi about its vertical axis.</p>
+<p>For clarity, this turnover includes the cups and caps. Right duals use the action through S. Equation chi S=S^(-1)chi identifies the pulled-back right dual with the left dual of the pulled-back module. The evaluation f(v) and coevaluation sum_i v_i tensor v_i^* then become the left evaluation and coevaluation after reversing tensor order. In the common right-dual presentation, the left closing maps are evaluation with the pivot and coevaluation with its inverse. The last identity in (1.3) therefore sends the closing matrix g to g^(-1), exactly as the spatial turnover does. The zigzag contractions remain identity maps. Equation (1.1) checks the twist on the color; the balancing identity extends that check to its tensor products.</p>
+<p>Consequently the turnover identity holds for each crossing, inverse crossing, cup, cap and twist, and hence for their compositions. This is a generator proof for the actual ribbon-tangle evaluation. A rotation of the marked framed knot is an ambient isotopy. If the boundary ribbon frame is moved by the rotation, it conjugates the cut endomorphism by the same endpoint map on both sides; that has no effect on its scalar. No knot-invertibility assumption is involved. Thus the reduced knot scalar is unchanged by replacing its color by its Chevalley pullback.</p>
+<p>Here is the explicit identification of that color, including all normalizations. In the Chevalley pullback of V_alpha set</p>
+<pre><code>w_b=d_b v_(N-1-b), d_0=1,
+d_b=product_(s=1)^b [s][alpha&#39;-s+1].           (1.5)</code></pre>
+<p>For generic alpha these are a basis. The root identities [N-s]=[s] and [z-N]=-[z] give [b][alpha’-b+1]=[N-b][alpha-(N-b)+1]. Substitution now proves</p>
+<pre><code>E_chi w_b=[b][alpha&#39;-b+1]w_(b-1),
+F_chi w_b=w_(b+1),
+K_chi w_b=q^(alpha&#39;-2b)w_b,
+H_chi w_b=(alpha&#39;-2b)w_b.</code></pre>
+<p>So this color is exactly V_(alpha’). Combined with the turnover identities, it proves the first part of (1.2) at generic colors. The cut scalar is Laurent polynomial in x at zero framing, so the identity extends through all exceptional colors as a whole germ.</p>
+<p>One can also keep the stripped Cartan scalar throughout the calculation. If R_0,theta_0 denote the normalized crossing and residual twist used in the finite cut formulas, their reflected comparison has the same explicit multiplier</p>
+<pre><code>h_N(x)=q^(-2)x^(2N-2),
+C R_(0,alpha&#39;) C^(-1)=h_N P R_(0,alpha) P,
+theta_(0,alpha&#39;)=h_N theta_(0,alpha).          (1.6)</code></pre>
+<p>Here C is the tensor square of the basis map in (1.5), and P flips the two factors; use h_N^(-1) for the inverse crossing. The product h_N^w is cancelled by the exact zero-framing correction h_N^(-w). Thus there is no unrecorded scalar or branch factor in (1.2). This cancellation is before any ideal-color specialization.</p>
+<p>Finally the full factor is</p>
+<pre><code>d_N(M)=eta_N*(M-M^(-1))/(M^N-M^(-N)),
+eta_N=i^(N+3).</code></pre>
+<p>It is exactly invariant under M inversion. Hence the full equality in (1.2) also holds as a meromorphic whole-germ identity, including its poles, residues and the cancelled value d_N(1)=eta_N/N.</p>
+<h2 id="the-actual-normal-state-ideal-is-reflected">2. The actual normal-state ideal is reflected</h2>
+<p>Put f=Y-1 and v_N(Y)=f F_N(Y). On rational meridian functions use</p>
+<pre><code>R h(Y)=h(Y^(-1)), J=-Y R.</code></pre>
+<p>Equation (1.2) gives, for the actual state at every level,</p>
+<pre><code>J v_N=v_N.                                   (2.1)</code></pre>
+<p>On the formal quantum torus T Y=q^2Y T, write Q=q^2. Direct composition gives J^2=1 and the algebra involution</p>
+<pre><code>jmath(B)=J B J,
+jmath(Y)=Y^(-1), jmath(T)=Q T^(-1).            (2.2)</code></pre>
+<p>Let I_v be the actual all-level annihilator ideal of v_N. It is nonzero and satisfies jmath(I_v)=I_v: apply J to its exact root equations and use (2.1). There is no assumed AJ theorem in this argument.</p>
+<p>This is the existing full ADO operator ideal in recorded conventions. Indeed, with U=Y^N at a root,</p>
+<pre><code>u_N=F_N/S_N=f F_N/(U-1),
+N_N(M)=eta_N M^(N-1)u_N(Y).</code></pre>
+<p>The shift fixes U and has the character q<sup>(N-1)=-q</sup>(-1) on M^(N-1). Thus I_v=I_u, and it is obtained from the full literature ideal by that explicit character twist. It also equals the fixed rational gauge f I_F f^(-1). These statements retain all actual period factors; they do not algebraize v_N as a function of q.</p>
+<h2 id="primitive-minimality-forces-unitary-monomial-reciprocity">3. Primitive minimality forces unitary monomial reciprocity</h2>
+<p>Over C(q,Y)[T^(+/-1)] choose the actual least-order operator B, with support 0,…,d. Clear its rational denominators and remove the common coefficient content, recording those operations. Then</p>
+<pre><code>B=sum_(j=0)^d b_j(q,Y)T^j,
+b_j in A=C[q^(+/-1),Y^(+/-1)],
+gcd_A(b_0,...,b_d)=1, b_0*b_d!=0.             (3.1)</code></pre>
+<p>This primitive representative is unique up to C^* q^r Y^s. The state lattice remains the actual one from v_N and the full formula in Section 2, rather than a newly chosen companion lattice.</p>
+<p>Since the ideal is reflected, T^d jmath(B) is another actual order-d operator. Minimality gives</p>
+<pre><code>B=h(q,Y)T^d jmath(B).                         (3.2)</code></pre>
+<p>Its coefficient list is Q^j b_j(q,Q<sup>(-d)Y</sup>(-1)), in reversed order. It is primitive because this substitution is an automorphism of the Laurent UFD and each Q^j is a unit. Comparing the valuations at every irreducible of A in the two primitive lists forces h to be a unit:</p>
+<pre><code>h=c_0 q^a Y^b, c_0 in C^*.</code></pre>
+<p>The reflection is involutive, but the degree-restoring map S_d(B)=T^d jmath(B) satisfies S_d<sup>2(B)=Q</sup>d B. Applying it twice to (3.2) gives</p>
+<pre><code>h(q,Y)h(q,Q^(-d)Y^(-1))*Q^d=1.</code></pre>
+<p>Hence c_0=epsilon in {1,-1} and a=d(b-1). Multiplying (3.2) by J on the right therefore yields the exact intertwiner</p>
+<pre><code>B J=J&#39; B,
+J&#39;=c(q,Y)T^d R,
+c(q,Y)=sigma*q^(dm)*Y^m,
+sigma in {1,-1}, m in Z.                     (3.3)</code></pre>
+<p>Here m=b+1 and sigma=-epsilon. In particular</p>
+<pre><code>c(q,Y)c(q,Q^(-d)Y^(-1))=1,
+|c(q,Y)|=1 when |q|=|Y|=1.                   (3.4)</code></pre>
+<p>Thus the two root-fiber reflections are unitary involutions. The primitive minimal operator of the actual normal state automatically has exactly the reciprocity required by the preceding period note. This is uniform for every knot. It does not require primeness, alternatingness, a prescribed coefficient ordering, or a conjectured classical symbol. The original half-root q is retained: q^(dm) must not be replaced by a guessed integer power of Q.</p>
+<p>Primitivity also makes its q=1 symbol B_cl nonzero: otherwise every coefficient would have the common factor q-1. Specializing (3.3) gives the balanced polynomial identity</p>
+<pre><code>B_cl(Y,L)=-sigma*Y^(m-1)*L^d*B_cl(Y^(-1),L^(-1)).</code></pre>
+<p>This is a proved symmetry of the actual classical symbol. Its geometric A-component still needs a separate survival theorem.</p>
+<h2 id="the-weyl-sector-of-the-normal-source-is-now-automatic">4. The Weyl sector of the normal source is now automatic</h2>
+<p>For this B, choose the actual F-annihilator P=B*f. It is an operator identity, with right factor f retained. This construction does not assert that every primitive reduced-state annihilator has that factor; the necessary positive-growth test in <a href="peripheral_normal_period.html">the normal-period note</a> still concerns each such annihilator separately.</p>
+<p>On the central fiber U=1 write B_N(t)=B_0+t B_1+…, t=U-1, using the fixed roots Y_r(t)=Q_N<sup>r(1+t)</sup>(1/N). The actual vector v_N(t) has</p>
+<pre><code>(v_0)_r=(Q_N^r-1)C_r(q_N), (v_0)_0=0,
+B_0 v_1=-B_1 v_0,
+K_N=N*(v_1)_0.                               (4.1)</code></pre>
+<p>The state symmetry proves J v_0=v_0 at every level, including any level with K_N=0 and without a rank-one assumption. Inversion sends t to -t+O(t^2), while the derivative of J(t) is J/N. Differentiating (3.3) and applying it to v_0 gives exactly</p>
+<pre><code>J&#39; B_1 v_0=-B_1 v_0.                         (4.2)</code></pre>
+<p>The complete evaluation vector e_0 has J-parity -1. Thus both the source and the desired functional live in the -1 sectors. The unwanted symmetry sector has zero overlap in this pairing.</p>
+<p>Let B_- be B_0 restricted from the -1 domain to the -1 range. It suffices that B_- be injective; surjectivity onto the entire range sector is unnecessary. The actual derivative guarantees that the source is in its image. Then its left inverse, or its Moore–Penrose inverse, gives</p>
+<pre><code>K_N=-N e_0^* B_-^+ B_1 v_0.                  (4.3)</code></pre>
+<p>Extra +1 kernel vectors do not change the complete value. More generally the value is unique whenever e_0 annihilates the kernel of B_-, even if that restriction is not injective. Those root-fiber conditions remain to prove for a broad class of actual operators.</p>
+<p>The bounded source estimates from the preceding note apply: ||B_1||=O(1/N), ||v_0||=O(sqrt(N)D_N). Consequently the exponential part must come from the specified inverse pairing, with its actual source overlap. Reciprocity alone supplies neither its inverse norm nor a nonzero geometric contribution.</p>
+<h2 id="the-metric-period-is-independent-of-primitive-generator-units">5. The metric period is independent of primitive generator units</h2>
+<p>Another primitive minimal generator is B’=u B with u=c_0 q^a Y^b. At the root, let D_u be its diagonal multiplication matrix on the orbit. It is |c_0| times a unitary matrix. Differentiation gives</p>
+<pre><code>B_0&#39;=D_u B_0,
+B_1&#39;v_0=D_u B_1v_0,</code></pre>
+<p>because the extra derivative of u multiplies B_0 v_0=0. Thus the normal equation and its complete period are unchanged. The range reflection is conjugated by D_u, so its Weyl-sector norm is changed only by the fixed scalar |c_0|. The positive exponential rate and the exact pairing (4.3) are therefore well defined for the primitive minimal operator, with the marked actual lattice.</p>
+<p>This does not license dropping a nonunit meridian factor. Such a factor is outside the remaining generator ambiguity and its zeros, poles, state gauge and normal jets must be kept as before.</p>
+<p>The ambient relation J T J=Q T^(-1) also gives, with the exact ADO character kappa=-q^(-1),</p>
+<pre><code>J(kappa*T)J=(kappa*T)^(-1),
+(kappa*T)^N=(-1)^(N-1).                      (5.1)</code></pre>
+<p>The even-level sign is part of the descended data. This concerns the ambient orbit module, not an assertion that the scalar solution line is invariant under T.</p>
+<h2 id="the-bounded-polar-source-is-a-finite-sine-transform">6. The bounded polar source is a finite sine transform</h2>
+<p>The actual symmetry also proves the ordinary-color identity</p>
+<pre><code>C_(N-j)(q_N)=C_j(q_N), 1&lt;=j&lt;N.                (6.1)</code></pre>
+<p>In the notation of <a href="regularized_kashaev_period.html">the regular-period note</a>, write a_r=[Y^r]p_N for the Taylor coefficients of its proper polar function at zero. Pair j with N-j in its already proved formula. With theta_j=pi*j/N this gives exactly</p>
+<pre><code>a_r=-(2/N)sum_(j=1)^(N-1)
+           C_j(q_N) sin((2r-1)theta_j)sin(theta_j).</code></pre>
+<p>Define the usual real sine matrix</p>
+<pre><code>S_(a,j)=sqrt(2/N)sin(pi*a*j/N).</code></pre>
+<p>For 1&lt;=a,j&lt;N, its rows are orthonormal: expand the sine products as differences of cosines and sum the two finite geometric series. Integer row labels outside that interval are zero or signed copies of these rows. Thus</p>
+<pre><code>a_r=-sum_j S_(2r-1,j)S_(1,j)C_j(q_N),
+|a_r|&lt;=D_N, r&gt;=0.                            (6.2)</code></pre>
+<p>The bound follows either from the operator norm of S diag(C_j)S^t, or by Cauchy–Schwarz. In particular</p>
+<pre><code>a_0=sum_j S_(1,j)^2 C_j(q_N),
+sum_j S_(1,j)^2=1.</code></pre>
+<p>Therefore the fixed Laurent-window source of the regular period is a finite linear combination of these explicit sine moments, with coefficients from the chosen fixed operator. No surgery or TQFT comparison theorem is being assumed for this description. It improves the earlier 2D_N bound and specifies its exact Weyl structure. It does not give a lower bound on the source’s projection to a geometric singular vector or algebraize these moments in q.</p>
+<h2 id="coverage-verification-and-the-remaining-norm-problem">7. Coverage, verification, and the remaining norm problem</h2>
+<p>This symmetry has existing coverage: the abstract of <a href="https://arxiv.org/abs/2112.15204">Martel–Willetts, 2112.15204</a> advertises the inherited ADO symmetry and orientation independence. Quantum-torus Weyl reciprocity is also covered in <a href="https://letu.math.gatech.edu/Papers/Lectures_Luminy_2014_new.pdf">Le’s lectures, Section 5.9</a>. No unified-invariant, homological, AJ or asymptotic proof from those sources is a premise here. The proofs above use the actual finite R, the pivotal pairings, primitive minimality and Laurent arithmetic. No novelty claim is made for Weyl symmetry or balanced operators.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_weyl_descent.py">The independent audit</a> checks 27 local Chevalley comparisons through level 15, including the ideal color; 63 actual cut turnovers at generic meridians; 25 complete Laurent-state reflections, with their ordinary-color and sine-source identities; 60 monomial-reciprocity cases; and sine orthogonality at nine even/composite/odd levels. These exact finite-field checks validate the uniform formulas, rather than proving their scope by enumeration. Results are in <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_weyl_descent_results.json">the output</a>.</p>
+<pre><code>python3 experiments/audit_actual_weyl_descent.py</code></pre>
+<p>The <a href="triangulation_regulator_bridge.html">triangulation bridge</a> already fixes the marked geometric Bloch action and its volume norm on the actual classical critical branch. This note now makes the quantum Weyl descent uniform for the actual knot state and its primitive minimal normal operator. What remains is the root-fiber solvability and inverse-pairing norm in (4.3), together with survival of the geometric factor in the actual operator. No equality D_N=A_K or volume conjecture is inferred.</p>
+<p>The subsequent <a href="actual_peripheral_fusion.html">peripheral-fusion proof</a> also derives these boundary conventions directly from adjacent-color fusion and heterogeneous crossings. In the odd normal state w_N=(M-M^(-1))F_N, the fundamental parallel acts as -(T+T^(-1)); in v_N=M<em>w_N it acts as kappa</em>T+kappa<sup>(-1)T</sup>(-1), with the same kappa=-q^(-1). At M=1 the fusion has an explicitly retained square-zero Casimir residue with normalized pivotal trace. This provides exact quantum boundary data, while the geometric source and norm comparison above remain unproved.</p>
+<p>The subsequent <a href="ramified_weyl_fibre.html">ramified Weyl-fibre proof</a> extends the quadratic descent to the actual branch-point lattice. Explicit units U^(1/(2N)) and U^(m/(2N)) linearize both involutions; the invariant lattice over s=((U-1)/(U+1))^2 retains the first negative coefficient as a special-fibre coordinate. The full ADO period is (eta_N/2)e_0^*b_0 there. The half-root in (3.3) also determines the exact sector dimensions, exposing signatures for which the optional injectivity condition cannot hold. This algebraic evaluation supplies no additional volume-growth theorem.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_weyl_descent.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-reduced-and-full-periods-have-reflected-meridians">1. The actual reduced and full periods have reflected meridians</a><a href="#the-actual-normal-state-ideal-is-reflected">2. The actual normal-state ideal is reflected</a><a href="#primitive-minimality-forces-unitary-monomial-reciprocity">3. Primitive minimality forces unitary monomial reciprocity</a><a href="#the-weyl-sector-of-the-normal-source-is-now-automatic">4. The Weyl sector of the normal source is now automatic</a><a href="#the-metric-period-is-independent-of-primitive-generator-units">5. The metric period is independent of primitive generator units</a><a href="#the-bounded-polar-source-is-a-finite-sine-transform">6. The bounded polar source is a finite sine transform</a><a href="#coverage-verification-and-the-remaining-norm-problem">7. Coverage, verification, and the remaining norm problem</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

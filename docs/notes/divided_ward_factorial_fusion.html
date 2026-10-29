@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The divided Ward power is an exact unipotent factorial fusion defect · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/divided_ward_factorial_fusion.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-divided-ward-power-is-an-exact-unipotent-factorial-fusion-defect">The divided Ward power is an exact unipotent factorial fusion defect</h1>
+<p>Research proof, 27 October 2026. Work in the genuine generic quantum group Weyl color <code>D_(N-1)(q)</code>, whose complete root specialization is the original Kashaev color. A mixed first-normal divided power on two factors is nonzero although the individual divided powers vanish. It is exactly the multiplicativity defect of the literal finite Ward factorial. The defects have a coherent associative fusion law, with the even-level Frobenius signs retained.</p>
+<p>These are operator and normal-source statements. They do not prove that the ghost survives the selected scalar knot contraction.</p>
+<h2 id="the-integral-weyl-lift-and-its-divided-power">1. The integral Weyl lift and its divided power</h2>
+<p>Put <code>Q=q^2</code>, <code>rho=q-q^(-1)</code>. On <code>D_(N-1)(q)</code> use</p>
+<pre><code>F v_a=v_(a+1),
+E v_a=[a]_q [N-a]_q v_(a-1),
+K v_a=q^(N-1-2a) v_a,       0&lt;=a&lt;N,</code></pre>
+<p>with endpoint vectors zero. These are genuine finite quantum-group matrices for generic <code>q</code>. In the meridian convention <code>x=-M/q</code>, their color is <code>x=q^(N-1)</code>, hence <code>M=-q^N</code>. At <code>q_N=exp(pi*i/N)</code> this is the complete color <code>M=1</code>, including even and composite <code>N</code>.</p>
+<p>Use <code>Ecal=rho^2 E</code>; its coproduct is</p>
+<pre><code>Delta Ecal=Ecal tensor K+1 tensor Ecal.</code></pre>
+<p>In the balanced basis <code>w_a=v_a/(Q;Q)_a</code>, the raising coefficient is</p>
+<pre><code>Ecal w_a=(q^(-N)-q^(N-2a))w_(a-1).</code></pre>
+<p>At the root this becomes <code>(Q^(-a)-1)w_(a-1)</code>, the actual complete matrix. These basis changes are units at the root for <code>a&lt;N</code>.</p>
+<p>On two factors put</p>
+<pre><code>A=Ecal tensor K, B=1 tensor Ecal, C=A+B.</code></pre>
+<p>They satisfy <code>AB=Q BA</code>, and <code>A^N=B^N=0</code> for every generic <code>q</code>. The normal-ordered q-binomial expansion is</p>
+<pre><code>C^N=sum_(j=1)^(N-1) {N choose j}_Q B^(N-j) A^j.</code></pre>
+<p>Every coefficient has a simple factor <code>1-Q^N</code>; its quotient is regular at every primitive <code>N</code>-th root. Thus the literal first-normal operator</p>
+<pre><code>J=[C^N/(1-Q^N)]_(q=q_N)</code></pre>
+<p>is well defined and equals</p>
+<pre><code>J=sum_(j=1)^(N-1)
+     N B^(N-j) A^j/[(Q;Q)_j (Q;Q)_(N-j)].        (1)</code></pre>
+<p>Here <code>(Q;Q)_(N-1)=N</code>. This is the scaled divided quantum-group power, not an arbitrary operator added to the root color. It records the specified generic integral lift. Its individual one-factor counterpart is zero because <code>Ecal^N=0</code> identically there.</p>
+<p>One has <code>[J,C]=0</code>, and <code>J^2=0</code>: both follow from the generic identity, or from total-index lowering by <code>N</code> in a two-factor space whose maximum total index is <code>2N-2</code>. Every generic braid intertwines <code>C</code>, so division by the scalar and specialization show that it also intertwines <code>J</code>.</p>
+<h2 id="a-uniform-explicit-nonzero-entry">2. A uniform explicit nonzero entry</h2>
+<p>The vector <code>w_(N-1) tensor w_1</code> has only one surviving term in (1), namely <code>j=N-1</code>. Its coefficient is <code>1/(1-Q)</code>. At the root,</p>
+<pre><code>Ecal^(N-1)w_(N-1)=(-1)^(N-1)N w_0,
+Ecal w_1=(1-Q)Q^(-1)w_0,
+K^(N-1)w_1=q_N^((N-1)(N-3))w_1.</code></pre>
+<p>The phase therefore simplifies, using <code>q_N^N=-1</code>, to</p>
+<pre><code>J(w_(N-1) tensor w_1)=-N q_N w_0 tensor w_0.       (2)</code></pre>
+<p>This proves nonvanishing at every <code>N&gt;=2</code> with the original balanced root normalization. No odd-level restriction is used.</p>
+<h2 id="exact-factorial-fusion-including-all-degrees">3. Exact factorial fusion, including all degrees</h2>
+<p>Define the positive-argument finite factorial</p>
+<pre><code>p_N(X)=sum_(j=0)^(N-1) X^j/(Q;Q)_j.</code></pre>
+<p>At generic <code>q</code>, q-binomial expansion gives the finite identity</p>
+<pre><code>p_N(B)p_N(A)=sum_(n=0)^(2N-2) C^n/(Q;Q)_n.       (3)</code></pre>
+<p>Indeed the coefficient of <code>B^i A^j</code> on both sides is <code>1/[(Q;Q)_i(Q;Q)_j]</code>; terms with either index at least <code>N</code> vanish. For <code>n=N+s</code>, cancel <code>1-Q^N</code> in (3) before taking the root. Since</p>
+<pre><code>[(Q;Q)_(N+s)/(1-Q^N)]_root=N (Q;Q)_s,</code></pre>
+<p>the resulting summand is <code>J C^s/[N(Q;Q)_s]</code>. Terms with <code>s&gt;=N-1</code> vanish by total degree. Therefore the exact root identity is</p>
+<pre><code>p_N(B)p_N(A)=(I+J/N)p_N(C).                       (4)</code></pre>
+<p>The literal Ward polynomial has argument <code>-t Ecal</code>, not positive <code>Ecal</code>. Thus its corresponding form is</p>
+<pre><code>p_N(-tB)p_N(-tA)
+   =(I+(-t)^N J/N)p_N(-tC).                       (5)</code></pre>
+<p>The sign <code>(-t)^N</code> must not be suppressed. The first missing degree is <code>N</code>, but (4)–(5) identify the <strong>entire</strong> finite product defect. Since <code>J^2=0</code>, its logarithm is exactly <code>(-t)^N J/N</code>.</p>
+<p>This is also the resonant logarithm of the unfolded factorial. The degree-<code>N</code> term of <code>log p_infinity(X)=sum_m X^m/[m(1-Q^m)]</code> is <code>X^N/[N(1-Q^N)]</code>. Along the specified tensor lift its regular value is <code>J/N</code>. The normal extension, rather than the bare root identity <code>C^N=0</code>, retains this term.</p>
+<h2 id="coherent-fusion-on-arbitrary-ordered-blocks">4. Coherent fusion on arbitrary ordered blocks</h2>
+<p>For an ordered block <code>X</code> of Steinberg factors let <code>C_X</code> be its total <code>Ecal</code>, <code>K_X</code> its total <code>K</code>, and</p>
+<pre><code>J_X=[C_X^N/(1-Q^N)]_root,
+chi_X=K_X^N=(-1)^((N-1) length(X)) I.</code></pre>
+<p>Regularity of <code>J_X</code> follows from the ordered q-multinomial expansion: all nonzero exponent tuples have entries below <code>N</code>, while the numerator has the factor <code>1-Q^N</code>. The operator lowers total degree by <code>N</code>, and satisfies <code>[J_X,C_X]=[J_X,K_X]=0</code> at the root.</p>
+<p>For any <code>k,s</code> with <code>0&lt;=s&lt;N</code>, direct factor grouping gives</p>
+<pre><code>[(Q;Q)_(kN+s)/(1-Q^N)^k]_root
+                      =N^k k! (Q;Q)_s.</code></pre>
+<p>Consequently the root of the generic finite quantum exponential is</p>
+<pre><code>E_X(t)=exp[(-t)^N J_X/N] p_N(-t C_X).             (6)</code></pre>
+<p>The exponential is finite: its <code>k</code>-th term lowers total degree by <code>kN</code>, so it terminates before <code>k=length(X)</code>. Formula (6) is also the ordered product of the individual factorials, with each individual raising generator dressed by all later <code>K</code> factors.</p>
+<p>For two consecutive blocks define the mixed divided power</p>
+<pre><code>j_(X,Y)=J_(X tensor Y)-J_X tensor chi_Y-1 tensor J_Y.</code></pre>
+<p>The coproduct q-binomial expansion gives explicitly</p>
+<pre><code>j_(X,Y)=sum_(a=1)^(N-1)
+  N (1 tensor C_Y)^(N-a)(C_X tensor K_Y)^a
+                  /[(Q;Q)_a(Q;Q)_(N-a)].        (7)</code></pre>
+<p>The inherited terms <code>J_X tensor chi_Y</code> and <code>1 tensor J_Y</code> commute with both arguments in (7). Canceling them in the generic q-exponential product proves the block fusion identity</p>
+<pre><code>p_N(-t(1 tensor C_Y)) p_N(-t(C_X tensor K_Y))
+  =Theta_(X,Y)(t) p_N(-t C_(X tensor Y)),
+
+Theta_(X,Y)(t)=exp[(-t)^N j_(X,Y)/N].             (8)</code></pre>
+<p>These transitions are unipotent. In a block of length <code>b</code>, all their nonconstant terms lower total degree by at least <code>N</code>; the ideal of such endomorphisms has <code>b</code>-th power zero. This nilpotence bound is independent of the level <code>N</code>.</p>
+<h3 id="associativity-with-the-frobenius-character-retained">Associativity, with the Frobenius character retained</h3>
+<p>For three consecutive blocks, direct cancellation of the inherited <code>J_X,J_Y,J_Z</code> terms gives the exact additive identity</p>
+<pre><code>j_(X,Y) tensor chi_Z+j_(X tensor Y,Z)
+   =1 tensor j_(Y,Z)+j_(X,Y tensor Z).          (9)</code></pre>
+<p>Within the left pair the two operators commute: <code>j_(X,Y)</code> commutes with <code>C_(X tensor Y)</code> and <code>K_(X tensor Y)</code>, and the next mixed operator is a polynomial in that block’s total raising operator and the last block’s raising operator. The corresponding right pair commutes for the same reason. Exponentiating (9) therefore gives</p>
+<pre><code>[Theta_(X,Y) embedded with degree-N factor chi_Z]
+      Theta_(X tensor Y,Z)
+   =Theta_(Y,Z) Theta_(X,Y tensor Z).          (10)</code></pre>
+<p>This is the coherent twisted fusion-cocycle identity. At odd <code>N</code> the displayed character is one; at even <code>N</code> it can invert the embedded unipotent transition. It is part of the tensor convention. Repeated application proves independence of parenthesization.</p>
+<p>Thus the actual divided-power normal extension has literal coherent unipotent fusion transitions on this ordered tensor category. No braided source torsor, chosen cohomology class, or selected-period survival is inferred solely from the associative identity. This nilpotence statement concerns the positive raising-factorial transitions. Adjoining lowering divided powers is a different operation and need not preserve a nilpotent group.</p>
+<h2 id="the-hopf-adjoint-and-cohomological-qualifications">5. The Hopf-adjoint and cohomological qualifications</h2>
+<p>The new normal generator avoids the finite-order-flow obstruction: it is not the logarithm of the finite-order <code>ad_K</code>. It acts nontrivially on tensor and dual multiplicity data even though its one-color action vanishes. Its first-normal coproduct is not primitive; the mixed term (7) is indispensable. A factorwise primitive flow with zero action on each individual color would miss the entire operator (2).</p>
+<p>For matrix Ward complexes one must use its <strong>divided Hopf adjoint</strong>, not just the ordinary commutator with <code>J_X</code>. The coproduct has the inherited <code>J</code> terms and the mixed lower-power terms in (7). The antipode is the regular specialization of the generic antipode; in this normalization it gives <code>S(J)=-J K^(-N)</code>. Hence on an endomorphism <code>T</code> its action has the form</p>
+<pre><code>ad_J(T)=J T K^(-N)-T J K^(-N)
+   +sum_(a=1)^(N-1) c_a Ecal^a T
+                            S(Ecal^(N-a)K^a),
+c_a=N/[(Q;Q)_a(Q;Q)_(N-a)].                  (11)</code></pre>
+<p>The mixed terms need not vanish on arbitrary matrices, even when <code>J</code> vanishes on the underlying single-color module. Commutation of <code>J</code> with a braid alone does not replace this all-matrices action. A compatible pivotal trace can be obtained from the genuine generic Hopf trace before dividing and specializing, retaining the actual root pivotal and peripheral scalar adapters. The separate original marked defect is still not an ordinary intertwining coupon.</p>
+<p>Moreover the mixed insertion is negligible under the ordinary full cut trace for a grading reason. Any braid operator has total-degree zero, while <code>J_X</code> lowers total degree by <code>N</code>. Closing all but one color forces the remaining color to lower by <code>N</code>, impossible in the range <code>0,...,N-1</code>. Thus the ordinary cut operator with this insertion is zero. A nonzero relative class would have to retain compensating wrap and marked-cut currents before taking this quotient. Their existence and nonzero pairing have not been proved by (4) or (10).</p>
+<p>Finally, nilpotence by itself does not identify a class in the geometric Gaussian pushforward. It makes a specified perturbation finite only after that perturbation is an actual filtered chain map on a common source complex. The map, differential, endpoint/carry terms, and the nonzero leading scalar projection are still required. The exact fusion cocycle supplies new coherent normal-source data; it does not by itself supply these HPL hypotheses or a selected volume asymptotic.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_divided_ward_factorial_fusion.py">Exact audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/divided_ward_factorial_fusion_results.json">results</a> compare (1) with an independent generic-q normal derivative, check the full signed factorial identities, and verify triple fusion associativity with both Frobenius characters.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/divided_ward_factorial_fusion.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-integral-weyl-lift-and-its-divided-power">1. The integral Weyl lift and its divided power</a><a href="#a-uniform-explicit-nonzero-entry">2. A uniform explicit nonzero entry</a><a href="#exact-factorial-fusion-including-all-degrees">3. Exact factorial fusion, including all degrees</a><a href="#coherent-fusion-on-arbitrary-ordered-blocks">4. Coherent fusion on arbitrary ordered blocks</a><a href="#the-hopf-adjoint-and-cohomological-qualifications">5. The Hopf-adjoint and cohomological qualifications</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

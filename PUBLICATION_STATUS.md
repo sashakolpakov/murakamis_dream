@@ -10,6 +10,10 @@ The snapshot contains the internally reviewed positive Newton multiplication the
 
 The current update adds the general four-port Racah kernel, the supported scalar normal estimates, the uniform local hyperideal-volume theorem, and the whole positive Conway variational limit. It also preserves the literature coverage comparison and explicitly unproved partner-value diagnostic. The research-routes index retains the cube, Fourier, torsor, pretzel and global geometric approaches together with their unresolved steps.
 
+The repository now has an illustrated research guide: seven chapters, full-text search, a topic-filtered archive, and four editable TikZ figures with compiled PNG, SVG and PDF versions. The main README is short; the historical log and all technical source paths remain available. `tools/build_book.py` rebuilds `docs/`, and `tools/check_book.py` checks navigation, assets and archive coverage.
+
+The latest reviewed mathematical additions prove exact 64-partner root-value reflection, generic bilinear transport and weighted cluster-current identities; polynomial spectral control and a tail-free normal criterion; and exact Conway closure seams with an explicit nonhyperbolic meridian-insertion subfamily. Generic partner jets are not symmetric, and coherent control of nonempty `[2N]` currents remains open. The all-high cotangent observation is separately labeled as an unproved numerical diagnostic.
+
 The general volume conjecture, full cube source control and arbitrary branched-graph survival remain open. Internal proof reviews and finite audits are distinguished in the notes; finite checks alone do not prove an asymptotic theorem. Work still under review is retained in the research workspace until its status is ready to publish.
 
 Earlier `gh` API checks failed, and a read-only Git probe reported DNS failure. Fetching, merging and pushing subsequently succeeded, and `gh` now succeeds too. These earlier connection errors no longer describe the publication status.

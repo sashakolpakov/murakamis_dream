@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Audit of the full peripheral shift on root fibers and normal germs · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/full_peripheral_shift_root_and_normal_audit.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="audit-of-the-full-peripheral-shift-on-root-fibers-and-normal-germs">Audit of the full peripheral shift on root fibers and normal germs</h1>
+<p>27 October 2026. The corrected full-normalization paragraph in <a href="partial_geometric_support_theorem.html">the partial support theorem</a>, Section 5, passes. Its root-family and geometric-symbol conclusions are unchanged. The whole q-normal source requires the additional power-character factor below.</p>
+<p>Keep the original line</p>
+<pre><code>d_N(M)=epsilon_N M^(N-1)(M^2-1)/(M^(2N)-1),</code></pre>
+<p>with its actual rational-map/source lattice at canceled or uncanceled divisors. Direct division gives EXACTLY</p>
+<pre><code>g_N(q,M)=d_N(qM)/d_N(M)
+  =q^(N-1)(q^2 M^2-1)/(M^2-1)
+                         *(M^(2N)-1)/(q^(2N)M^(2N)-1).</code></pre>
+<p>The fixed root phase epsilon_N cancels; it has not been reset. For N_N=d_N F_N, the correct gauge of an operator annihilating F_N is d_N D d_N^-1. Thus its ordered substitution is</p>
+<pre><code>T -&gt; g_N^-1 T,
+T^r -&gt; product_(j=0)^(r-1) g_N(q,q^jM)^-1 T^r.</code></pre>
+<p>These products follow from T f(M)=f(qM)T, not a commutative substitution for powers.</p>
+<p>With independent retained powers z=q<sup>N,w=M</sup>(2N), the whole factor is</p>
+<pre><code>g_N=q^-1 z (q^2 M^2-1)/(M^2-1)*(w-1)/(z^2w-1).</code></pre>
+<p>The meridian Ore step MUST act by</p>
+<pre><code>sigma(M)=qM, sigma(z)=z, sigma(w)=z^2w.</code></pre>
+<p>In particular w is fixed by this step only AFTER restriction to the physical root character z=-1. There that restriction is the meromorphic meridian-germ identity</p>
+<pre><code>g_bar=-q^-1(q^2 M^2-1)/(M^2-1).</code></pre>
+<p>The common w-1 cancels as a rational identity on the root fiber. Its complete lattice is still required at norm-zero intersections; g_bar itself has a pole at M=1 for N&gt;1 and must not be evaluated there as a regular unit. This agrees with the original source guard.</p>
+<p>Consequently the ordered root gauge in the partial theorem is correct on every actual root meridian family. Its generic-M classical symbol has g_bar -&gt; -1, so the preexisting geometric factor becomes A_geo(M,-L_full) in that FULL ROOT shift convention. The same applies to the Fourier and fixed-input root families; neither uses an asserted whole-normal identification.</p>
+<p>The distinction is visible before any asymptotic analysis:</p>
+<pre><code>g_N/g_bar=-z(w-1)/(z^2w-1),
+(g_N/g_bar)|_(z=-1)=1,
+D_z log(g_N/g_bar)|_(z=-1)=-(w+1)/(w-1).</code></pre>
+<p>On the actual whole fixed-N power graph this gives</p>
+<pre><code>[D_q log g_N-D_q log g_bar]|_(q=q_N)
+              =-N (M^(2N)+1)/(M^(2N)-1),</code></pre>
+<p>where D_q=q partial_q with M fixed. Hence equality on the entire root MERIDIAN germ does not equate its q-normal jets. The discrepancy retains exactly the peripheral character and its norm divisor.</p>
+<p>Finally g_N -&gt; +1 as q-&gt;1 at FIXED N and generic M. This is a different specialization from the root-character classical symbol g_bar -&gt; -1. The latter is the statement of the root-family support theorem; one may not transfer it to a whole fixed-N gauge by forgetting z,w or changing their Ore action. No conclusion about the final selected geometric period is added by this audit.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/full_peripheral_shift_root_and_normal_audit.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

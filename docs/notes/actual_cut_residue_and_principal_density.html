@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual cut residue and its principal density · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_cut_residue_and_principal_density.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-actual-cut-residue-and-its-principal-density">The actual cut residue and its principal density</h1>
+<p>Research note, 26 October 2026. The previous turn identified a commutative regular-meridian torsor and its cut two-form. Here we identify its logarithmic cut co-source directly in the original finite boundary pairing. We also factor both original crossing amplitudes into a mixed-Hessian determinant and an explicit momentum coboundary. The latter cancels along every closed braid. These are uniform identities, independent of alternatingness or a particular knot example.</p>
+<p>The actual quantum period is unchanged. These statements do not yet transport its internal relative class to a geometric triangulation or establish its regulator norm.</p>
+<h2 id="the-unchanged-finite-cut-is-a-logarithmic-residue">1. The unchanged finite cut is a logarithmic residue</h2>
+<p>Use the <a href="marked_braid_holonomy.html">marked braid boundary</a>: Q is primitive of order N, F_a=(Q;Q)_a, and the basis w_a=v_a/F_a has the constant input vector psi=1 and covector phi=(1/N)sum_a. Let</p>
+<pre><code>C_N=k[A]/(A^N-1),
+f_tilde(A)=sum_(j=0)^(N-1) f_j A^j.</code></pre>
+<p>The tilde denotes the unique representative of degree &lt;N, not an arbitrary Laurent representative. Root orthogonality proves the following exact identities:</p>
+<pre><code>phi(f)=(1/N)sum_(a=0)^(N-1) f(Q^a)=f_0
+      =Res_(A=0) f_tilde(A) dA/A
+      =-Res_(A=infinity) f_tilde(A) dA/A.    (1.1)</code></pre>
+<p>Equivalently put</p>
+<pre><code>omega_N=A^(N-1)dA/(A^N-1)
+       =(1/N)dlog(A^N-1).</code></pre>
+<p>Every root has residue 1/N. The sum of its finite root residues after multiplication by f_tilde is (1.1). At infinity omega_N=dA/A+O(A^(-N-1))dA; since deg f_tilde&lt;N the correction has zero residue there. This gives an independent residue-theorem proof of (1.1).</p>
+<p>The normalized source projector is also explicit. If (S f)(A)=f(QA), then</p>
+<pre><code>e=(1/N)sum_(j=0)^(N-1) S^j=psi phi,
+e^2=e, Tr(e)=1,
+phi C psi=Tr(e C)                            (1.2)</code></pre>
+<p>for every linear operator C. For the actual zero-framed knot cut C=F_N(M)I, so this is exactly the reduced ADO evaluation, with its original normalization. No new state has been defined by the residue formula.</p>
+<h2 id="the-cut-coordinate-change-retains-the-entire-pole-divisor">2. The cut-coordinate change retains the entire pole divisor</h2>
+<p>For M!=0 make the rational boundary coordinate change</p>
+<pre><code>A=M/(M+s), s=M(A^(-1)-1).</code></pre>
+<p>This is also the cut-coordinate map on the classical critical chart in <a href="regular_meridian_centralizer.html">the regular-meridian note</a>. The finite identity here is a change of boundary coordinate; it does not define a finite-q framing variable r.</p>
+<p>Direct substitution gives</p>
+<pre><code>omega_N=M^N ds/[(M+s)((M+s)^N-M^N)],           (2.1)
+beta=dlog A=-ds/(M+s).</code></pre>
+<p>The N simple roots are s_a=M(Q^(-a)-1), with residues 1/N. The additional pole s=-M has residue -1. Infinity is regular for omega_N. The representative f_tilde(A(s)) is regular at infinity and has pole order at most N-1 at s=-M. Hence (1.1) becomes</p>
+<pre><code>phi(f)=-Res_(s=-M) f_tilde(M/(M+s)) beta
+      = Res_(s=infinity) f_tilde(M/(M+s)) beta. (2.2)</code></pre>
+<p>This is an exact finite-level pairing with the same beta which contracts the classical framing two-form. It identifies the cut co-source, rather than replacing omega_N by beta on a fixed cycle: beta has a pole at infinity, while omega_N does not. Pole divisors and representatives remain part of the comparison.</p>
+<p>At completeness A=1 corresponds to s=0, which is excluded from the invertible framing chart Delta=s!=0. Its cut contribution is exactly f(1)/N. Deleting that point without its source changes the pairing. Its coefficient follows from</p>
+<pre><code>partial_s[(M+s)^N-M^N]|_(s=0)=N M^(N-1).</code></pre>
+<p>For the actual contracted cut C psi=F_N(M)1, each cut point contributes F_N(M)/N. These internal state indices are distinct from the ordinary meridian-color evaluations. In particular no polynomial bound on ordinary colors bounds this deleted internal contribution.</p>
+<p>It is permissible to change the cut presentation explicitly: any weights w_a with sum w_a=1 give</p>
+<pre><code>sum_a w_a (C psi)_a=F_N(M).                   (2.3)</code></pre>
+<p>For example averaging the N-1 points A!=1 with normalization 1/(N-1) preserves the invariant exactly. Its boundary source and its stationary presentation change; (2.3) alone does not prove that a particular geometric normal block survives.</p>
+<h2 id="canonical-representatives-carry-a-normal-source">3. Canonical representatives carry a normal source</h2>
+<p>The representative condition in (1.1) is indispensable: A^N and 1 agree in C_N but have different residues against dA/A at zero if used without reduction. The section obeys</p>
+<pre><code>A f_tilde - (Af)_tilde
+               =f_(N-1)(A^N-1).             (3.1)</code></pre>
+<p>Thus multiplication has a specified boundary carry. More generally in the flat algebra C_U=k[U,A]/(A^N-U), write</p>
+<pre><code>f *_U g=sum_(i,j&lt;N) f_i g_j
+                   U^floor((i+j)/N) A^((i+j) mod N).</code></pre>
+<p>Its first normal product at U=1 is exactly</p>
+<pre><code>partial_U(f *_U g)|_1
+        =sum_(i+j&gt;=N) f_i g_j A^(i+j-N).    (3.2)</code></pre>
+<p>Let D=A partial_A on the canonical representatives and reduce products at U=1. Checking each monomial pair gives</p>
+<pre><code>D(f *_1 g)-(Df)*_1 g-f *_1(Dg)
+               =-N partial_U(f *_U g)|_1.   (3.3)</code></pre>
+<p>This makes precise why an ordinary derivation cannot simply be imposed after cyclic specialization. On the full family, the vector field A partial_A+N U partial_U preserves A^N-U; at U=1 the separate normal term remains necessary. The formulas are compatible with, but do not replace, the previous actual carry lattices and meridian normal jets.</p>
+<p>The cut-point coefficient 1/N and the earlier peripheral inverse-power correction 1/u_N(M) are distinct factors. Their product is the already computed paired source scalar Gamma_N=1/[N u_N(M)] from the <a href="cyclic_source_connection_and_resonant_flags.html">cyclic source calculation</a>. Identifying these scalar evaluations does not identify the corresponding full quantum modules.</p>
+<h2 id="both-actual-crossing-amplitudes-have-a-canonical-factorization">4. Both actual crossing amplitudes have a canonical factorization</h2>
+<p>Use the actual balanced coefficients and their principal transport amplitudes in <a href="actual_geometric_normal_period.html">the normal-period note</a>. Write Y=M<sup>2=x</sup>2 at the classical symbol. Then</p>
+<pre><code>a_+^2=AB (1-BC)(1-Y/A)/[(1-B)(1-C)(1-YC/A)],
+a_-^2=C/(AB) (1-AC)(1-Y/B)/[(1-A)(1-C)(1-YC/B)].</code></pre>
+<p>These are variable principal amplitudes. Their fixed product normalizations, root phases and boundary 1/N are retained separately, exactly as in that note.</p>
+<p>Put a=log A, b=log B, c=log C, tau=a+b. For a positive crossing the first output coordinate is u=b+c; for a negative crossing it is u=b-c. View its generating phase S as a function of a,u at fixed tau. Its mixed Hessian is</p>
+<pre><code>V_+=partial_a partial_u S_+=1/(1-C),
+V_-=partial_a partial_u S_-=C/(1-C).          (4.1)</code></pre>
+<p>These follow by differentiation, with no stationary equation for the transfer imposed at an individual crossing. For example the positive directional vectors in (a,b,c) are (1,-1,1),(0,0,1); the negative ones are (1,-1,-1),(0,0,-1). Applying them to the actual Hessian gives (4.1).</p>
+<p>Let p_1,p_2 be the input balanced momenta and p’_1,p’_2 the output momenta. Their exact classical shift relations are</p>
+<pre><code>p&#39;_2/p_1=BC/x * (1-Y/A)/(1-YC/A),
+p&#39;_1/p_2=A/(Cx) * (1-BC)/(1-B)                (+),
+
+p&#39;_2/p_1=x/B * (1-AC)/(1-A),
+p&#39;_1/p_2=x/A * (1-Y/B)/(1-YC/B)                (-).</code></pre>
+<p>Multiplying these two relations and cancelling factors proves</p>
+<pre><code>a_+^2=Y V_+ (p&#39;_1 p&#39;_2)/(p_1 p_2),
+a_-^2=Y^(-1) V_- (p&#39;_1 p&#39;_2)/(p_1 p_2).     (4.2)</code></pre>
+<p>Thus the departures from the mixed-Hessian half-density are an explicit momentum coboundary and the color factor. This is an identity from the original coefficients, not an assumption about a semiclassical quantization.</p>
+<h2 id="the-momentum-coboundary-cancels-for-every-knot-braid">5. The momentum coboundary cancels for every knot braid</h2>
+<p>Take a b-strand braid of writhe w on its marked critical correspondence. Multiply (4.2) over all crossings. Every internal momentum cancels between an output and its next input. At a closed strand the two remaining momenta agree; at the specified constant cut both are one. Therefore</p>
+<pre><code>product_crossings a_sign^2
+                  =Y^w product_crossings V_sign. (5.1)</code></pre>
+<p>The original pivot and zero-framing variable amplitude is M<sup>(b-1-w)/product_(j=2)</sup>b A_j. Consequently the complete variable amplitude has the identity</p>
+<pre><code>a_beta^2=(product_(j=2)^b K_j^2)
+                             product_crossings V_sign,
+K_j=x/A_j.                                  (5.2)</code></pre>
+<p>This is uniform in the braid word and retains the actual pivotal factor. Square-root signs and base-only phase lines remain marked; an identity of squares does not choose them.</p>
+<h2 id="the-same-pivotal-factor-corrects-the-ambient-holonomy-volume">6. The same pivotal factor corrects the ambient holonomy volume</h2>
+<p>On a fixed-trace SL_2 conjugacy class write</p>
+<pre><code>G=[K e;Kf K^(-1)+ef],
+K+K^(-1)+ef=t,
+nu=dK wedge de/e.</code></pre>
+<p>The form nu is conjugation invariant. One proof regards the class as the quadratic surface in the three traceless matrix coordinates: conjugation preserves its equation and has determinant one, so its residue two-form is invariant. This can also be verified on upper, lower and diagonal generators.</p>
+<p>Balanced phase coordinates have</p>
+<pre><code>A=x/K, p=e x/(1-xK),
+omega=dlog A wedge dlog p=-nu/K.             (6.1)</code></pre>
+<p>The prefix Gauss transformation to marked holonomies is</p>
+<pre><code>H_j=B_(j-1)^(-1) G_j B_(j-1).</code></pre>
+<p>It is triangular in j. On its diagonal it is a fixed conjugation, preserving nu. Hence</p>
+<pre><code>wedge_j nu(G_j)=wedge_j nu(H_j).</code></pre>
+<p>For P=H_b…H_1, Gauss multiplication gives P_11=product_j K_j. Combining these identities yields</p>
+<pre><code>(product_(j=2)^b K_j) wedge_j omega_j
+             =(-1)^b/K_1 wedge_j nu(H_j).    (6.2)</code></pre>
+<p>The right side is invariant under simultaneous conjugation centralizing the first meridian: its K_1 is fixed and all nu(H_j) are invariant. On the cut critical chart K_1=-(M+s). This gives exactly the residual (M+s)^(-1) factor in the centralizer/cut form. It supplies a general geometric explanation for that divisor, beyond its earlier figure-eight check.</p>
+<p>Equation (6.2) is an identity of ambient top forms. It has not yet been promoted to an identification of the reduced Gaussian determinant line or the actual internal relative cycle. That reduction must retain its kernel, dual source, square-root phase and the normal terms in Section 3.</p>
+<h3 id="an-invariant-finite-dimensional-complex-for-the-reduction">An invariant finite-dimensional complex for the reduction</h3>
+<p>There is a natural algebraic candidate for its determinant line. Let X be the product of the b noncentral fixed-trace meridian conjugacy classes, F the Hurwitz braid map, and rho a fixed point. Write P=H_b…H_1 and use left trivialization for its product derivative. There is a complex</p>
+<pre><code>0 -&gt; sl_2 --a--&gt; T_rho X --D--&gt; T_rho X
+                                  --m--&gt; sl_2 -&gt; 0,
+a(xi)=([xi,H_j])_j,
+D=dF-I,
+m(v)=dP(v)P^(-1).                            (6.3)</code></pre>
+<p>Both compositions vanish: equivariance gives D a=0 and product preservation gives m D=0. These identities hold for every braid and every fixed representation.</p>
+<p>If rho is irreducible, a is injective and m is surjective. For the latter claim, use the nondegenerate trace pairing on sl_2. An element annihilating m first commutes with H_b. The preceding term then makes it commute with H_(b-1), and induction gives commutation with every H_j. Its trace zero common centralizer is zero. This proves surjectivity.</p>
+<p>Assume additionally ker D=im a, meaning that the fixed-trace representation is infinitesimally rigid modulo conjugation. Rank-nullity then makes (6.3) acyclic. This is an explicit regularity hypothesis; it is not supplied by this complex or silently inferred from a reduced set of fixed points.</p>
+<p>Choose columns V completing a to a basis of T_rho X and a right inverse W of m. Then D V,W also form a basis, and the scalar determinant ratio is</p>
+<pre><code>T_beta(rho)=det[a,V]/det[D V,W].              (6.4)</code></pre>
+<p>The same tangent-coordinate basis is used in both middle terms. Changing V multiplies numerator and denominator by the same determinant; changing W adds D V columns. Thus (6.4) is independent of those choices. It is invariant under simultaneous conjugation: d(conjugation) changes both middle bases equally, and Ad(g) changes the two sl_2 bases equally. It is a rational nonzero scalar on the regular representation locus and descends along the framing torsor.</p>
+<p>This constructs an invariant torsion directly from the linearized actual holonomy map. Identifying its determinant line with the Gaussian reduction in (5.2), including the cut co-source, remains a separate required calculation. No equality with an established topological Reidemeister torsion or with the selected quantum period is asserted.</p>
+<p>The subsequent <a href="pointed_markov_reduction.html">uniform Markov reduction</a> now proves invariance of this scalar under braid conjugation, braid relations and either stabilization, on the stated regular representation locus. Its proof gives explicit chain maps and an acyclic rank-two summand. The actual geometric Gaussian complex has its own explicit rank-one reduction under the same move, with determinant canceled by the original coefficient amplitude. A full comparison of the two determinant lines is still required.</p>
+<h2 id="what-remains-for-the-selected-period">7. What remains for the selected period</h2>
+<p>The finite cut co-source is now exactly the logarithmic residue in (2.2). The original principal coefficients have the uniform determinant/coboundary form (4.2), and their pivotal correction gives the invariant ambient form (6.2). These remove an arbitrary choice of boundary measure from the proposed torsor comparison.</p>
+<p>The next reduction must send the actual internal class, with its normal carry, to the centralizer contraction of that form. At M=1 the framing two-form is exact on the specified chart in ordinary de Rham cohomology; a relative or regularized source is essential. The residue normalization alone does not prove this pushforward or nonvanishing on the geometric block. The selected regulator norm across levels, and thus the original Kashaev volume conjecture, remain unproved.</p>
+<h2 id="coverage-and-verification">8. Coverage and verification</h2>
+<p>Root traces, residues, polynomial remainder carries and mixed-Hessian half-densities are existing algebra and semiclassical constructions; no novelty is claimed for them. The identities here concern the fixed actual boundary and coefficient conventions. For adjacent existing scope, <a href="https://arxiv.org/abs/2005.01133">McPhail-Snyder, 2005.01133</a> relates a quantum holonomy construction at q=i to twisted Burau representations and nonabelian torsion. <a href="https://arxiv.org/abs/2509.02354">The holonomy-braiding paper, 2509.02354</a> advertises a four-dilogarithm factorization. Only their abstracts were consulted for coverage; neither proof is used here, and neither statement is taken to identify the present selected geometric period at all levels.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_cut_density.py">The audit</a> checks the exact residue and normal-carry identities, both original principal amplitudes, the ambient volume factors, and the original finite cut matrices. <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_cut_density_results.json">Results</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_cut_residue_and_principal_density.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-unchanged-finite-cut-is-a-logarithmic-residue">1. The unchanged finite cut is a logarithmic residue</a><a href="#the-cut-coordinate-change-retains-the-entire-pole-divisor">2. The cut-coordinate change retains the entire pole divisor</a><a href="#canonical-representatives-carry-a-normal-source">3. Canonical representatives carry a normal source</a><a href="#both-actual-crossing-amplitudes-have-a-canonical-factorization">4. Both actual crossing amplitudes have a canonical factorization</a><a href="#the-momentum-coboundary-cancels-for-every-knot-braid">5. The momentum coboundary cancels for every knot braid</a><a href="#the-same-pivotal-factor-corrects-the-ambient-holonomy-volume">6. The same pivotal factor corrects the ambient holonomy volume</a><a href="#what-remains-for-the-selected-period">7. What remains for the selected period</a><a href="#coverage-and-verification">8. Coverage and verification</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

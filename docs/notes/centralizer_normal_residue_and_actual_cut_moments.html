@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual cut moments are centralizer normal-residue co-sources · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/centralizer_normal_residue_and_actual_cut_moments.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-actual-cut-moments-are-centralizer-normal-residue-co-sources">The actual cut moments are centralizer normal-residue co-sources</h1>
+<p>Research proof, 27 October 2026. Polynomial centralizer currents have an explicit finite-pole realization on the resolved actual framing torsor. Their normal residues pair with every actual cut matrix by a specified Toeplitz row. The two Weyl charts glue by an explicit rational homotopy, while their current primitives retain exactly the two endpoint values. A whole cut-clock co-source then extends the construction beyond individual Taylor jets.</p>
+<p>This constructs a framing moment/current map. The centralizer b is a framing variable, not an unframed critical-field generator. No descent of the actual state to its geometric critical summand is inferred from this map.</p>
+<h2 id="actual-framing-coordinates-and-the-normal-form">1. Actual framing coordinates and the normal form</h2>
+<p>Use the source/framing threefold and the original marked density of <a href="compact_framing_gauge_and_boundary_residue.html">the compact framing bridge</a>. On the north chart write</p>
+<pre><code>Omega=dv wedge da, T=va, X=eta v, F=1-X,
+b_N=-a/eta=-T/X,
+nu_cut=-(d eta/eta) wedge Omega/F.             (1)</code></pre>
+<p>Here b_N is the right regular-unipotent centralizer coordinate. The south chart is</p>
+<pre><code>V=1/v, a&#39;=v-v^2a, eta&#39;=-v^2eta,
+T&#39;=Va&#39;=1-T, b_S=-a&#39;/eta&#39;,
+b_S=b_N+1/X, F=1+eta&#39;V.                     (2)</code></pre>
+<p>The form nu_cut is global; its factor 1/F is the actual cut/Haar adapter and is not set to its boundary value before taking moments. The original principal Gaussian multiplies (1) by its marked nonzero algebraic density c_beta and original base line. These factors tensor through the calculations below.</p>
+<p>Work over any characteristic-zero coefficient field of the marked unframed data. Polynomial coefficients below are independent of the framing coordinates. The normal residue is taken at eta=0 coefficientwise at finite pole order, with d eta/eta first.</p>
+<h2 id="polynomial-moments-have-exact-normal-residues">2. Polynomial moments have exact normal residues</h2>
+<p>For every h&gt;=0,</p>
+<pre><code>Res_E[b_N^h nu_cut]=-(-T)^h Omega.           (3)</code></pre>
+<p>Indeed <code>b_N^h=(-a)^h eta^(-h)</code> and <code>1/F=sum_(r&gt;=0)eta^r v^r</code>; only r=h contributes to the normal residue. Thus for any polynomial P,</p>
+<pre><code>Res_E[P(b_N)nu_cut]=-P(-T)Omega.             (4)</code></pre>
+<p>The adapter 1/F is decisive. Replacing nu_cut by the Haar form before multiplying by b_N^h would lose every nonconstant moment. The bounded moment h has finite normal pole order h+1.</p>
+<p>With the actual compact sphere and omega_I=-Omega/(2pi*i), the normalized identity-source period is exactly</p>
+<pre><code>(1/(2pi*i))integral_Gamma Res_E[P(b_N)nu_cut]
+                         =integral_0^1 P(-T)dT.        (5)</code></pre>
+<p>This is not an assertion that P(b_N) is a global scalar function; the required chart gluing is provided next.</p>
+<h2 id="the-two-polynomial-moment-charts-glue-by-a-specified-homotopy">3. The two polynomial moment charts glue by a specified homotopy</h2>
+<p>The residue-compatible south representative of the north polynomial P(b_N) is P(b_S-1). It is not P(b_S). With (2),</p>
+<pre><code>b_S-1-b_N=F/X.                              (6)</code></pre>
+<p>Direct south-chart residue gives <code>Res_E[P(b_S-1)nu_cut]=-P(T'-1)Omega=-P(-T)Omega</code>. The normal residue is therefore a global source form.</p>
+<p>There is an explicit stronger gluing identity. For P=b^h,</p>
+<pre><code>[P(b_S-1)-P(b_N)]nu_cut=d Xi_h,             (7)</code></pre>
+<p>where Xi_0=0 and, on the overlap v!=0,</p>
+<pre><code>Xi_h=-sum_(r=1)^h binom(h,r)(-T)^(h-r)
+         sum_(k=0)^(r-1)binom(r-1,k)(-1)^k
+                  X^(k-h)/(k-h) Omega.      (8)</code></pre>
+<p>The denominator k-h is never zero. To verify (7), its left side is</p>
+<pre><code>-[(F-T)^h-(-T)^h]/[X^(h+1)F] dX wedge Omega.</code></pre>
+<p>The numerator is divisible by F. Expanding F=1-X leaves only powers X^(-j), j&gt;=2, whose primitive is precisely (8). There is no Gauss-wall pole left and no logarithmic E residue in the overlap difference. The same formula extends linearly to every P. This gives the actual finite-pole Cech homotopy, rather than declaring the two polynomial coordinates identical.</p>
+<h2 id="vertical-currents-retain-their-exact-endpoint-cech-class">4. Vertical currents retain their exact endpoint Cech class</h2>
+<p>The actual right-centralizer vector field is</p>
+<pre><code>V_b=partial_(b_N)=partial_(b_S)=-eta partial_a.</code></pre>
+<p>It preserves nu_cut. The vertical two-current is</p>
+<pre><code>alpha_N(P)=iota_(V_b)[P(b_N)nu_cut]
+                   =P(b_N)d eta wedge dv/F,
+d alpha_N(P)=P&#39;(b_N)nu_cut.                 (9)</code></pre>
+<p>Its north normal residue is</p>
+<pre><code>Res_E alpha_N(P)=[P(-T)-P(0)]dlog v.        (10)</code></pre>
+<p>For the south representative P(b_S-1), expressed back in the north base coordinates, it is</p>
+<pre><code>Res_E alpha_S(P)=[P(-T)-P(-1)]dlog v.       (11)</code></pre>
+<p>Thus their exact current Cech difference is</p>
+<pre><code>Res_E alpha_S(P)-Res_E alpha_N(P)
+                    =[P(0)-P(-1)]dlog v.   (12)</code></pre>
+<p>This is the actual relative endpoint class. It has nonzero period whenever P(0)!=P(-1). Formulas (7)–(8) also give the current-level overlap homotopy explicitly by Cartan’s identity:</p>
+<pre><code>alpha_S(P)-alpha_N(P)
+                     =L_(V_b)Xi_P-d iota_(V_b)Xi_P.</code></pre>
+<p>In particular the degree-one example P=b has P’=1 and endpoint difference one. Its differentiated top form is the nonzero unit source class. Finite moment degree and nilpotence of a logarithmic transport group do not make this endpoint class vanish. A relative source must retain it; it cannot annihilate every such current and preserve the unit period.</p>
+<h2 id="the-correct-finite-cut-co-source-is-the-dual-toeplitz-row">5. The correct finite cut co-source is the dual Toeplitz row</h2>
+<p>Let N&gt;=2, n=N-1, J e_j=j e_j. For a polynomial P define the literal diagonal cut row</p>
+<pre><code>T_N(P)_j
+   =N binom(n,j)integral_0^1
+              P(-T)T^j(1-T)^(n-j)dT.       (13)</code></pre>
+<p>For each monomial it is exactly</p>
+<pre><code>T_N(b^h)_j=(-1)^h (j+1)^(rising h)/(N+1)^(rising h),     (14)</code></pre>
+<p>for EVERY h&gt;=0. The beta integral proves this finite rational formula. The actual all-matrix trace identity is</p>
+<pre><code>(1/N)Tr[T_N(P)C]
+     =integral_Gamma P(-T)sigma_C omega_I.  (15)</code></pre>
+<p>For the actual one-cut and Green matrices, which are diagonal term by term, this is the original normalized cut as well. It does not replace the original rank-one cut by a trace on arbitrary off-diagonal Ward matrices.</p>
+<p>Equations (4) and (15) therefore specify the residue co-source against every actual cut-current kernel. All source coefficient matrices remain literal; their trace is not used to define T_N. If raw Green arrays already contain 1/N, first use the explicit matrix normalization C=N I_raw, as in the cut-current theorem.</p>
+<p>Actual Weyl reflection is compatible with these rows:</p>
+<pre><code>T_N(P)_(n-j)=T_N(P(-1-b))_j.               (16)</code></pre>
+<p>This follows by T-&gt;1-T in (13). The actual weighted anti-diagonal Weyl operator has the same effect by conjugation on a diagonal row. Its diagonal source factors and the bounded Gamma units commute with the row; their original fractional source lattices are retained rather than inverted at a zero.</p>
+<p>There is an exact derivative/current identity. For any diagonal matrix C and its literal adjacent difference <code>Delta C_j=C_(j+1)-C_j</code>, j=0,…,n-1,</p>
+<pre><code>(1/N)Tr[T_N(P&#39;)C]
+   =P(0)C_00-P(-1)C_nn
+        +n*(1/n)Tr_[dimension n][T_n(P)Delta C].       (17)</code></pre>
+<p>Integration by parts and the derivative formula for Bernstein polynomials prove (17). It retains both endpoint rows and the change of source degree. This is a finite current map, not a statement that the knot has changed its quantum color. For C=I, (17) reduces exactly to P(0)-P(-1), as in (12). The same definition (13) is used at dimension one when N=2 makes the current target n=1; it is the scalar beta integral.</p>
+<p>There is a corresponding explicit product-current correction before pairing. For a general kernel f_C(v,T),</p>
+<pre><code>d iota_(V_b)[P(b_N)f_C nu_cut]
+              =[P&#39;(b_N)f_C-X P(b_N)partial_T f_C]nu_cut. (17a)</code></pre>
+<p>Indeed V_b(T)=-X and V_b(v)=V_b(eta)=0. The north current residue is <code>f_C[P(-T)-P(0)]dlog v</code>. Its derivative verifies (17a) directly with the normal residue differential sign. The finite Bernstein derivative in (17) is exactly the kernel derivative that appears here. It must not be dropped by treating the source kernel as constant along the centralizer.</p>
+<h2 id="symbol-quantization-is-distinct-from-co-source-quantization">6. Symbol quantization is distinct from co-source quantization</h2>
+<p>For degree h&lt;=n there is also a unique diagonal matrix with coherent symbol (-T)^h:</p>
+<pre><code>Q_N(b^h)=(-1)^h (J)_h/(n)_h,              (18)</code></pre>
+<p>where the factorials are falling. This gives the useful exact symbol derivative identity</p>
+<pre><code>Q_(N-1)(P&#39;)=-n Delta Q_N(P).               (19)</code></pre>
+<p>The trace in the left target has dimension N-1=n. Summing it gives P(0)-P(-1), with the same endpoints.</p>
+<p>But Q_N(P) is not the co-source (13) against a general C: ordinary multiplication of coherent symbols is not the matrix or star product. The rising factorials in T_N and falling factorials in Q_N must not be interchanged. For identity C their normalized traces agree with (5); for a general Green matrix, (13)–(17) are the appropriate paired identities.</p>
+<h2 id="the-actual-whole-cut-clock-has-a-compatible-normal-co-source-lift">7. The actual whole cut clock has a compatible normal co-source lift</h2>
+<p>The companion <a href="dual_clock_normal_cut_source.html">dual whole-clock source theorem</a> constructs the explicit polynomial P^dual_(N,w) of degree&lt;=n with</p>
+<pre><code>T_N(P^dual_(N,w))_j=w^j, 0&lt;=j&lt;N.           (20)</code></pre>
+<p>Its formula is</p>
+<pre><code>P^dual_(N,w)(b)=sum_(h=0)^n [(N+1)^(rising h)/h!]
+      [sum_(r=h)^n(-1)^r binom(r,h)(w-1)^r]b^h.</code></pre>
+<p>Thus (15) becomes an exact ACTUAL cut-clock pairing, <code>Tr(w^J C)/N</code>, for every C. The map is not guessed from its limiting symbol. It obeys the exact Weyl relation</p>
+<pre><code>P^dual_(N,w)(-1-b)=w^n P^dual_(N,w^(-1))(b).            (21)</code></pre>
+<p>Its finite polynomial endpoints are specified as well:</p>
+<pre><code>P^dual_(N,w)(0)=sum_(r=0)^n(1-w)^r,
+P^dual_(N,w)(-1)=w^N-(w-1)^N.                         (21a)</code></pre>
+<p>They are not identified with the two clock eigenvalues.</p>
+<p>For w=exp(z/N), it converges locally uniformly in the whole variables z,b to exp(-zb), with every fixed holomorphic jet. The centered lift converges to exp[-z(b+1/2)] and its exact identity-source period is the already marked H_N(z). The normal pole degree of the whole polynomial can reach N; it is not discarded before the residue.</p>
+<p>Differentiating (20) gives the literal normalized cut-index moments <code>(J/N)^h</code>, including the exact finite Newton correction in their normal polynomial. The h-th z derivative at zero has degree at most min(h,n), so its normal pole order is at most h+1, independently of N. Hence bounded Green LOG moments of the actual cut clock are included. For example the actual first normalized moment has</p>
+<pre><code>P_(N,1)(b)=-1/N-(N+1)b/N,
+P_(N,1)(0)-P_(N,1)(-1)=-(N+1)/N.                     (21b)</code></pre>
+<p>This is a nonzero endpoint/current Cech class for an ACTUAL bounded cut-log moment. It does not prove that a particular complete Green certificate has a nonzero combined boundary; it proves that bounded degree alone cannot force vanishing.</p>
+<p>The degree bound applies to the cut-clock polynomial itself; a weighted word kernel can still have full coherent degree N-1. This does not identify an independent crossing-transfer clock with that cut clock. For the latter one needs the actual network Ward/current map, not only a common polynomial or abstract Borel representation.</p>
+<h2 id="scope-of-the-framing-integration">8. Scope of the framing integration</h2>
+<p>The construction supplies actual source moments, all their finite endpoint terms, the global polynomial normal gluing, and the whole cut-clock limit. It is a concrete part of the missing framing pushforward. The bounded-degree example (12) also shows why a generic bounded unipotent logarithmic complex cannot by itself make every Green boundary vanish.</p>
+<p>The normal polynomial b is a framing variable. Its normalized moments are (-1)^h/(h+1), not automatically a finite unframed critical-field trace. The intended geometric critical algebra belongs after framing integration. The present maps do not construct that transverse critical observable or identify the remaining actual transfer log with the centralizer current. They also do not prove global polar control for every internal Gaussian coefficient, selected geometric source survival or a volume limit.</p>
+<h2 id="exact-audit">9. Exact audit</h2>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_centralizer_normal_cut_moments.py">audit_centralizer_normal_cut_moments.py</a> and its <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/centralizer_normal_cut_moments_results.json">results</a> verify the finite normal residues, explicit Cech primitive, both vertical-current endpoint residues and the product-current covariance correction through degree six. They verify the dual Toeplitz moments, actual Weyl reflection and paired current identity with independent matrix entries at dimensions 2 through 9 and moment degrees through seven. The separate covariant-symbol and degree-lowering map is checked as well. All these tests are exact rational identities.</p>
+<p>The whole-clock construction and its bounded moment-degree sharpening have their own exact audit linked in the companion note. The independent <a href="gauss_wall_current_independent_audit.html">Gauss-wall/current audit</a> checks the signs, global polynomial clutch, distinction between trace and the original average cut, and all endpoint dimensions. No internal Gaussian or selected critical-field descent is inferred from these checks.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/centralizer_normal_residue_and_actual_cut_moments.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#actual-framing-coordinates-and-the-normal-form">1. Actual framing coordinates and the normal form</a><a href="#polynomial-moments-have-exact-normal-residues">2. Polynomial moments have exact normal residues</a><a href="#the-two-polynomial-moment-charts-glue-by-a-specified-homotopy">3. The two polynomial moment charts glue by a specified homotopy</a><a href="#vertical-currents-retain-their-exact-endpoint-cech-class">4. Vertical currents retain their exact endpoint Cech class</a><a href="#the-correct-finite-cut-co-source-is-the-dual-toeplitz-row">5. The correct finite cut co-source is the dual Toeplitz row</a><a href="#symbol-quantization-is-distinct-from-co-source-quantization">6. Symbol quantization is distinct from co-source quantization</a><a href="#the-actual-whole-cut-clock-has-a-compatible-normal-co-source-lift">7. The actual whole cut clock has a compatible normal co-source lift</a><a href="#scope-of-the-framing-integration">8. Scope of the framing integration</a><a href="#exact-audit">9. Exact audit</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

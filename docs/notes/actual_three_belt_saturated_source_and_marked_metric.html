@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Three complete belts: the saturated source and the marked-pair obstruction · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_three_belt_saturated_source_and_marked_metric.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="three-complete-belts-the-saturated-source-and-the-marked-pair-obstruction">Three complete belts: the saturated source and the marked-pair obstruction</h1>
+<p>29 October 2026. On the genuine six-head saturated source, three disjoint positive complete-circle forms define an explicit positive Gram. They do NOT have a finite dual norm for the original marked co-source. There is an all-level source vector whose three-belt energy is zero and whose original marked evaluation is exactly ONE.</p>
+<p>The correctly typed original cap inequality uses C tensor C tensor H, not C tensor C tensor C. It detects the same vector with a polynomial lower bound. Thus a simple tensor-cube DCT or a scalar Frobenius branch cannot be used to claim a marked trivalent source theorem. This result retains the full divided-current kernel and root normals.</p>
+<h2 id="the-actual-six-port-space-and-the-three-circle-operators">1. The actual six-port space and the three circle operators</h2>
+<p>Use d=N-1, q=exp(pi i/N), Q=q^2, x=q^d, N&gt;=2. The balanced physical generators are Ecal=-F^dagger, K<sup>dagger=K</sup>-1. Let</p>
+<pre><code>L=(-1)^d U_d(Omega/2), C=P L&gt;=0, H=L P=P C P&gt;=0,</code></pre>
+<p>where P exchanges the two physical legs, not a braid crossing. All the literal ordinary-circle pivots and Cartan phases are retained. Their positivity and kernels are the <a href="actual_complete_circle_reflection_positive.html">complete-circle theorem</a>.</p>
+<p>Let S be the SATURATED generic-q specialization inside the full six-head H=0 invariants. The <a href="actual_six_port_divided_power_source_kernel.html">divided-power source theorem</a> identifies it, with every original cup/braid word included, as</p>
+<pre><code>S = Inv_root,H=0 intersect ker J_E,6,
+ext(S)=ker(J_E,4:W-&gt;Llow),
+W=(V_N^tensor4)_(degree2d), dim S=(N^3+N)/2.         (1)</code></pre>
+<p>The maps Phi:W-&gt;Inv and ext are the specified actual source maps, with ext extracting final physical colors(0,d) times x^d/N. No semisimple projection is substituted for (1).</p>
+<p>On W the three disjoint physical pair Casimirs become</p>
+<pre><code>A1=Omega12, A2=Omega34,
+A3=F4 Ecal4+(q+q^-1)I.                              (2)</code></pre>
+<p>For completeness A3 is EXACTLY ext Omega56 Phi. Split the six heads into A=1234 and B=56. On an invariant vector, E_B=-K_B E_A, F_B=-K_A F_A, K_B=K_A^-1. Using F_B K_B=Q K_B F_B and E_A K_A=Q^-1 K_A E_A gives F_B E_B=E_A F_A on that vector. The actual commutator [Ecal_A,F_A]=(q-q<sup>-1)(K_A-K_A</sup>-1) therefore turns Omega_B into Omega_A. On W, K_A=1, proving (2). In particular the reduced operators in (2) are not guessed trace variables. They commute on the actual invariant space and preserve S.</p>
+<p>The positive unmarked-belt form is</p>
+<pre><code>G_C(v,v)=v^dagger(C12 tensor C34 tensor C56)v.         (3)</code></pre>
+<p>Its kernel equals that of L12 L34 L56, since the product of the three physical P maps is invertible. This kernel assertion does not identify (3) with an original marked link closure.</p>
+<h2 id="full-cluster-projectors-including-their-first-normals">2. Full cluster projectors, including their first normals</h2>
+<p>Let c0=q+q^-1. Its actual root cluster is {0,d}: c0=cd, and it is DOUBLE for every N&gt;=2. The distinct other nodes are c_j=q<sup>(2j+1)+q</sup>(-2j-1), 1&lt;=j&lt;=floor(d/2). Let e0(z) be the FULL Hermite cluster polynomial: value one and derivative zero at c0, and value/derivative zero at the other double nodes (value zero at the possible odd simple node). It may be given by</p>
+<pre><code>l0(z)=product_(c!=c0)(z-c)/(c0-c),
+e0(z)=l0(z)^2[1-2l0&#39;(c0)(z-c0)] mod P_N(z).         (4)</code></pre>
+<p>All denominators are nonzero at the fixed level. Thus e0(Ai) is an actual root cluster projector, not an eigenvalue-only substitution. Write E000=e0(A1)e0(A2)e0(A3). It preserves S and every root normal within the chosen joint cluster. Its rank on S is five, as also follows from the five admissible generic branches of {0,d}^3.</p>
+<p>The regular generic pair projectors give an elementary annihilation identity. The branch (d,0,0) has no generic invariant: a positive spin d cannot couple two spin-zero channels to an invariant. Its joint projector is therefore zero on the saturated generic source lattice. Multiply this projector by the THREE within-cluster gap denominators before specializing q. This gives on E000 S</p>
+<pre><code>(A1-c0)(A2-c0)(A3-c0)=0.                            (5)</code></pre>
+<p>There is no division by a root-zero gap in (5); it is the root value of an exact cleared generic identity on the actual lattice. The complete circle on this cluster is</p>
+<pre><code>L_N(Ai)E000=L_N&#39;(c0)(Ai-c0)E000,
+(4-c0^2)L_N&#39;(c0)=(-1)^d 2N !=0.</code></pre>
+<p>Consequently, with ALL first normal data retained,</p>
+<pre><code>L_N(A1)L_N(A2)L_N(A3)E000 S=0.                      (6)</code></pre>
+<p>This argument does not assume that a rank-eight generic cube would specialize to a regular three-variable dual-number module.</p>
+<h2 id="an-original-planar-source-whose-marked-value-survives">3. An original planar source whose marked value survives</h2>
+<p>Take the actual nested planar cups joining physical ends (1,6),(2,3),(4,5). The original cup is</p>
+<pre><code>p_(a,b)=N x^(-b) delta_(a+b,d).</code></pre>
+<p>Let v_triangle be their tensor insertion in the physical order. It has the regular generic cup lift, so belongs to S. Its exact W coordinate w_triangle=ext(v_triangle) is</p>
+<pre><code>w_triangle_(0,b,d-b,d)=N^2 x^(-(d-b)), 0&lt;=b&lt;=d,
+all other coefficients zero.                        (7)</code></pre>
+<p>The ORIGINAL whole marked co-source on W is</p>
+<pre><code>lambda=ell12 tensor ell34,
+ell_(a,b)=x^a/N delta_(a+b,d).                       (8)</code></pre>
+<p>This is the result of the full six-head invariant identity, not a local replacement of an unrestricted marked row. The only surviving term in lambda w_triangle is b=d, and hence</p>
+<pre><code>lambda w_triangle=1.                               (9)</code></pre>
+<p>On the whole invariant source lambda is a left c0 eigenvector of ALL three Ai. For A1,A2 this is the original ordinary-cap intertwining equation. After those two caps the remaining pair is an actual invariant cup, with Casimir c0; applying the full marked row afterward proves the A3 assertion too. Thus</p>
+<pre><code>lambda E000=lambda on S.</code></pre>
+<p>Set u=Phi E000 w_triangle. It is an explicit nonzero original saturated-source vector, with regular cluster coupons and no unknown knot invariant in its definition. Equations (6),(9) prove</p>
+<pre><code>G_C(u,u)=0,     original_marked_row(u)=1.             (10)</code></pre>
+<p>Therefore there is NO finite constant B_N, even one allowed to grow exponentially, such that the original marked functional satisfies</p>
+<pre><code>|original_marked_row(v)|^2 &lt;= B_N G_C(v,v)</code></pre>
+<p>for all v in S. This is an actual source Riesz obstruction, not a generic indefinite-metric example or an absolute-value estimate. It does not assert a counterexample to a closed link’s volume limit: u uses known Casimir cluster coupons, and the failed statement is the proposed all-exterior marked positive sewing theorem.</p>
+<h2 id="the-genuine-marked-metric-evades-the-obstruction">4. The genuine marked metric evades the obstruction</h2>
+<p>The correctly typed original three-pair form is</p>
+<pre><code>G_m(v,v)=v^dagger(C12 tensor C34 tensor H56)v.         (11)</code></pre>
+<p>The <a href="actual_complete_circle_positive_quotient.html#5-the-complete-original-boundary-has-a-positive-cauchy-form">original cap/source inequality</a> gives, after the WHOLE degree restriction of the marked pair,</p>
+<pre><code>|original_marked_row(v)|^2 &lt;= G_m(v,v)/(8N^11)
+                 for every six-head invariant v.    (12)</code></pre>
+<p>In particular the same explicit source vector (10) satisfies</p>
+<pre><code>G_m(u,u)&gt;=8N^11, while G_C(u,u)=0.                   (13)</code></pre>
+<p>The distinction is the physical last-pair reversal, not a harmless choice of positive inner-product coordinates. Writing H=P C P moves that P onto the source vector; a single-pair flip does NOT preserve the original ordered six-head Hopf invariant space. Thus the joint simplex support of the three unreflected pair-Casimir product cannot simply be transferred to (11) by keeping S unchanged.</p>
+<p>Exact full-source diagnostics give ranks of the two forms on S:</p>
+<table>
+<thead>
+<tr>
+<th>N</th>
+<th>dim S</th>
+<th>rank G_C</th>
+<th>rank G_m</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>5</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>15</td>
+<td>4</td>
+<td>6</td>
+</tr>
+<tr>
+<td>4</td>
+<td>34</td>
+<td>1</td>
+<td>6</td>
+</tr>
+<tr>
+<td>5</td>
+<td>65</td>
+<td>10</td>
+<td>19</td>
+</tr>
+</tbody>
+</table>
+<p>These finite ranks illustrate the already proved all-N distinction (10)–(13); no rank trend is used as proof of a limiting theorem.</p>
+<h2 id="what-remains-possible-at-a-genuine-trivalent-junction">5. What remains possible at a genuine trivalent junction</h2>
+<p>For the three-C observation, joint positivity gives a sum of positive channel weights, but its original source dual already fails (10). The joint branch geometry also removes a full tensor-cube DCT: missing admissible joint nodes cannot reconstruct arbitrary products of three independent half-bandwidth polynomials. A correct simplex interpolation/angle weight would describe that observed quotient, not restore the missing marked functional.</p>
+<p>One may instead keep (11), change the entire reflected source by the actual duality/permutation braid, or point an auxiliary belt using its FULL open-loop normal source. Each is a concrete different physical problem. The present result neither deletes that current nor identifies a physical leg flip with an added crossing. A geometric trivalent-source survival theorem would need such a source-compatible kernel before its angle or DCT estimate.</p>
+<p>There is an explicit correctly marked all-input kernel, useful for stating that next problem without an unknown recoupling frame. Use the orthonormal single-pair quotient rows of the <a href="actual_complete_circle_positive_quotient.html">positive circle quotient</a>,</p>
+<pre><code>pi_(j,r) = w_(j,r)^dagger C / sqrt(g_j beta(2j,r)),
+w_(j,r)=F_pair^r E_j(Omega)|0,d-j&gt;/F_r,
+0&lt;=j&lt;=floor(d/2), 0&lt;=r&lt;=2j.</code></pre>
+<p>Here E_j is the stated value Lagrange polynomial; use of values is valid only AFTER its actual complete-circle map, and its g_j, factorials and angle normalizations are exactly those proved there. Define on every W input by the FULL original Phi</p>
+<pre><code>K_(j1,r1;j2,r2;j3,r3)(w)
+  =(pi_(j1,r1) tensor pi_(j2,r2) tensor pi_(j3,r3) P56)Phi_w.
+                                                           (14)</code></pre>
+<p>Then G_m(Phi_w,Phi_w) is EXACTLY the sum of |K|^2 over all these indices. Integer degree imposes r1+r2+r3=j1+j2+j3, including every endpoint. The original scalar, not an auxiliary unknown invariant, is precisely</p>
+<pre><code>lambda w = K_(0,0;0,0;0,0)(w)/(sqrt(8) N^(11/2)).     (15)</code></pre>
+<p>This explains the polynomial dual constant in (12). It also locates the missing moment-map constraint. With Pi=pi tensor pi tensor pi, the vector K=Pi P56 v for v in S satisfies</p>
+<pre><code>E_Q,total K=Pi [Ecal_6,P56]v,
+F_Q,total K=Pi [F_6,P56]v,                            (16)</code></pre>
+<p>not the zero-current trivalent invariant equations. The actual ordered coproducts give the LOCAL currents</p>
+<pre><code>[Ecal_6,P56]
+  =[E5(K6-1)-E6(K5-1)]P56,
+[F_6,P56]
+  =K1234^-1 [F5(1-K6^-1)-F6(1-K5^-1)]P56.           (17)</code></pre>
+<p>These follow by exchanging physical legs5,6 in the displayed coproduct, and are exact finite operators. Thus the marked kernel already has genuine normal/momentum data beyond three independent node values. Setting (17) to zero would change the original source. Bounding the coherent kernel (14), or constructing a differently pointed reflected closure with its full source, remains the next analytic step; the tensor-cube sampling proof does not supply it.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_three_belt_saturated_source_and_marked_metric.py">literal six-head source, full Hermite projector and marked/unmarked forms</a>.</p>
+<p>Independent full analytical review and fresh replay passed: seven divided-source/full-Hermite levels, four literal all-input six-head marked comparisons and three independent complex positive forms. The exact local E/F moment-current identities were checked too. The source-compatible multivariate positive correction is now <a href="actual_marked_multiport_chebyshev_source_packet.html">the marked middle-degree Chebyshev packet</a>, with an explicit original corner and tensor Parseval. Its geometric energy estimate remains separate.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_three_belt_saturated_source_and_marked_metric.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-six-port-space-and-the-three-circle-operators">1. The actual six-port space and the three circle operators</a><a href="#full-cluster-projectors-including-their-first-normals">2. Full cluster projectors, including their first normals</a><a href="#an-original-planar-source-whose-marked-value-survives">3. An original planar source whose marked value survives</a><a href="#the-genuine-marked-metric-evades-the-obstruction">4. The genuine marked metric evades the obstruction</a><a href="#what-remains-possible-at-a-genuine-trivalent-junction">5. What remains possible at a genuine trivalent junction</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

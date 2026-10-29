@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Meridian transport on the cut source and its geometric dual · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/equivariant_cut_source_transport.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="meridian-transport-on-the-cut-source-and-its-geometric-dual">Meridian transport on the cut source and its geometric dual</h1>
+<p>Research note, 26 October 2026. The comparison in <a href="cut_wall_and_cyclic_source.html">the cut-wall note</a> matched source presentations over S=C[[u,h]]. Here their normalized presentations are compared with meridian transport included. The geometric source has the inverse marked longitude character, which is retained explicitly.</p>
+<p>The result concerns the actual local cut coefficients and a calibrated formal geometric cyclic model. It does not identify the full knot’s affine source, selected section, or volume norm.</p>
+<h2 id="the-full-actual-cut-has-a-difference-constant-normalization-line">1. The full actual cut has a difference-constant normalization line</h2>
+<p>Keep q=q_N=exp(pi*i/N), x=-M/q, Y=M^2, U=M^(2N), and sigma(M)=qM. Define</p>
+<pre><code>p=q^(-1)M^2-qM^(-2), r=sigma(p),
+c_2=q^2+q^(-2).</code></pre>
+<p>The actual two-factor modified cut in the previous note is</p>
+<pre><code>Phi_N(f)=C_N(U)[r f_+ + p f_-],
+C_N(U)=-zeta_N U/[(U-1)(U+1)],
+zeta_N=q^(N(1-N)/2).                           (1.1)</code></pre>
+<p>Thus C_N=Gamma_N/d in that note. It is not Gamma_N that is meridian-constant: the geometric gap d is not constant. At an actual root sigma(U)=U, so sigma(C_N)=C_N exactly. The physical normalization is a marked meromorphic constant line, including its central lattice and both poles. It is not declared a unit at U=1 or absorbed into a coefficientwise formal unit. All statements below about regular S-presentations concern the normalized coefficients, with this line kept separately.</p>
+<p>The elementary exact identity</p>
+<pre><code>sigma^2(p)=c_2 sigma(p)-p                     (1.2)</code></pre>
+<p>follows by expanding its two monomials. It provides a fixed transport matrix for the cut coefficients:</p>
+<pre><code>J=[ c_2  1 ], w=(r,p),
+  [ -1   0 ]
+sigma(w)=w J, det J=1.                       (1.3)</code></pre>
+<p>These identities are rational in q,M; they require no formal approximation. At roots they describe the actual weights before any node specialization.</p>
+<h2 id="the-wall-presentation-is-meridian-equivariant">2. The wall presentation is meridian-equivariant</h2>
+<p>Work now over S with q=exp(h), M=exp(u), sigma(u)=u+h. Give S^2 the semilinear operator T=J sigma and S the operator sigma. The exact sequence of underlying S-modules is</p>
+<pre><code>0 -&gt; S --j--&gt; S^2 --ell--&gt; S -&gt; S/m -&gt; 0,
+j=(p,-r)^t, ell=(r,p), m=(p,r)=(u,h).          (2.1)</code></pre>
+<p>Every arrow intertwines its stated meridian transport. Indeed</p>
+<pre><code>J sigma(j)=j, ell J=sigma(ell).               (2.2)</code></pre>
+<p>The first identity uses (1.2); the second is (1.3). Consequently the normalized point source in (2.1) has character 1. This is a specified semilinear presentation, not just an isomorphism of point modules. Tensoring its cut with the recorded C_N line preserves equivariance on its original root meridian chart. Its polar specialization remains a whole-germ operation.</p>
+<p>The ordered scalar source residue stays fixed under the base meridian change:</p>
+<pre><code>Res du dh/[p sigma(p)]
+   =Res du dh/[sigma(p) sigma^2(p)]=1/16.      (2.3)</code></pre>
+<p>One direct verification is that the transformation of the two equations in (1.2) has determinant one. Equivalently their two Jacobian determinants at u=h=0 both equal 16. Also sigma(du wedge dh)=du wedge dh. These are statements about the base residue; a tensor period line has its own character.</p>
+<h2 id="the-geometric-cyclic-free-presentation-has-an-exact-shift-matrix">3. The geometric cyclic free presentation has an exact shift matrix</h2>
+<p>Let a,b be the calibrated geometric ratios from the preceding note, so</p>
+<pre><code>a-b=v p, v in S^times,
+a(0,0)=b(0,0)=L_c, v(0,0)=kappa/4.</code></pre>
+<p>Keep the actual SL2 longitude sign L_c; it is not set to one. On the normalized split module V=S^2 use T=diag(a,b)sigma, e=(1,1), f=(1,0), and</p>
+<pre><code>Lambda=S e direct_sum m S f.</code></pre>
+<p>Its generators e,pf,rf give the free presentation</p>
+<pre><code>0 -&gt; F_1 --R--&gt; F_0 --E--&gt; Lambda -&gt; 0,
+R=(0,r,-p)^t,
+E=[ 1 p r ],
+  [ 1 0 0 ]</code></pre>
+<p>with the following semilinear transports:</p>
+<pre><code>T_(F_1)=a sigma,
+T_(F_0)=B sigma,
+B=[ b  0    0  ],
+  [ v  0   -a  ],
+  [ 0  a  a c_2].                            (3.1)</code></pre>
+<p>These are automorphisms: det B=b a^2 is a unit. Direct multiplication proves both compatibility identities</p>
+<pre><code>E B=diag(a,b) sigma(E),
+B sigma(R)=a R.                              (3.2)</code></pre>
+<p>The first uses a=b+vp, and the second uses (1.2). Thus the single relation is itself a meridian line, with ratio a. This records information that an S-module presentation alone omitted.</p>
+<h2 id="dualizing-gives-exactly-the-cut-complex-with-a-period-line-twist">4. Dualizing gives exactly the cut complex with a period-line twist</h2>
+<p>For a semilinear free module T=C sigma, its S-dual transport is C^(-t) sigma. This follows directly from</p>
+<pre><code>(T phi)(z)=sigma(phi(T^(-1)z)).</code></pre>
+<p>The dual of (3.1) is therefore the two-term presentation</p>
+<pre><code>[F_0^vee --R^t--&gt; P_a^vee],</code></pre>
+<p>where P_a denotes the line with ratio a. Its degree-one cohomology is Ext^1_S(Lambda,S). The explicit dual matrix is</p>
+<pre><code>B^(-t)=[ 1/b  -c_2 v/(ab)  v/(ab) ],
+       [  0       c_2/a       -1/a ],
+       [  0        1/a          0  ].          (4.1)</code></pre>
+<p>Its first coordinate line is stable, has ratio b^(-1), and maps to zero under R^t. It is exactly P_b^vee: as a functional on V it kills f and sends e to one. Hence this zero column may be quotiented out as a difference submodule, not just deleted from an underlying linear presentation.</p>
+<p>Define the constant quotient map</p>
+<pre><code>Q=[ 0 1  0 ],
+  [ 0 0 -1 ].</code></pre>
+<p>Then the full matrix identities are</p>
+<pre><code>Q B^(-t)=a^(-1)J Q,
+R^t=(r,p)Q.                                  (4.2)</code></pre>
+<p>They prove an isomorphism of quotient difference complexes:</p>
+<pre><code>[F_0^vee -&gt; P_a^vee]/P_b^vee[0]
+   = P_a^vee tensor [S^2_(J sigma) --(r,p)--&gt; S_sigma]. (4.3)</code></pre>
+<p>Thus the normalized actual cut presentation is precisely the universal factor of the geometric dual cyclic presentation; the dual geometric period line is the remaining factor. All arrows and meridian matrices are specified by (4.2).</p>
+<p>Taking degree-one cohomology gives the equivariant comparison</p>
+<pre><code>Ext^1_S(Lambda,S)=P_a^vee tensor S/m,
+T on the point = L_c^(-1).                   (4.4)</code></pre>
+<p>The scalar base residue remains (2.3). Multiplication by the two units v,sigma(v) changes it to 1/kappa^2 in the calibrated geometric equations. The opposite sign from the two ordered density values -p,r remains the sign already recorded in the cut-wall note. Neither that sign nor L_c^(-1) is absorbed into zeta_N. This closes the local equivariance calculation for the normalized cut and the calibrated geometric cyclic model.</p>
+<h2 id="the-original-root-matrices-check-this-transport">5. The original root matrices check this transport</h2>
+<p>The calculation has a direct check on the original root model. For V_x tensor V_x its generic highest roots are</p>
+<pre><code>z_j=x^2 Q^(-j), Q=q^2, 0&lt;=j&lt;N.</code></pre>
+<p>The actual full projector cuts, proved from the pivotal matrices, are d_(z_j). Substitution of the original modified dimension gives</p>
+<pre><code>d_(z_j)=C_N(U) p_j,
+p_j=q^(-2j-1)M^2-q^(2j+1)M^(-2),
+sigma(p_j)=p_(j-1 mod N).                    (5.1)</code></pre>
+<p>Here p_0=p and p_(N-1)=r. The actual highest-vector meridian matrix G=H(qM)P H(M)^(-1) intertwines total E,F,K and gives the full affine crossing identity with source (1+U^(-1))E_(N-1). Its label cycle induces exactly (5.1). Thus (1.3) describes the cut weights under this original meridian comparison, not only a chosen model shift on functions.</p>
+<p>There is a useful specialization qualification. For N&gt;2 the free wall matrix has J^N=I, since its distinct eigenvalues are q<sup>2,q</sup>(-2). At N=2 they coincide; J^2 is not identity. The actual cut then has r=-p and its image is nevertheless N-periodic. Its extra kernel must be retained. The formal free presentation near q=1 is not thereby a free periodic root module at every distant root. No new topological invariant is inferred.</p>
+<h2 id="the-universal-part-of-every-tensor-cut-uses-two-fourier-moments">6. The universal part of every tensor cut uses two Fourier moments</h2>
+<p>The existing intrinsic cut formula also identifies its universal coefficient part for arbitrary strand count b&gt;=2. At generic color the final highest roots are z_j=x^b Q^(-j), and an actual intertwiner has multiplicity-block traces A_j. Put</p>
+<pre><code>C_b=-zeta_N/[x^(bN)-x^(-bN)],
+J_+(A)=sum_j Q^(-j)Tr A_j,
+J_-(A)=sum_j Q^j Tr A_j.</code></pre>
+<p>The full original cut is exactly</p>
+<pre><code>mathfrak_t_W(A)=C_b[q x^b J_+(A)
+                          -q^(-1)x^(-b)J_-(A)]. (6.1)</code></pre>
+<p>This follows by substituting the modified-dimension numerator in the already proved full trace formula. It reduces the cut coefficients to at most two Fourier moments. It does not reduce the N-dimensional trace quotient or the knot’s quantum-A module to dimension two. The block traces still depend on the entire braid and its centralizer transitions.</p>
+<p>There is also an exact parity statement. Since sigma(x)=qx and q^N=-1,</p>
+<pre><code>sigma(C_b)=(-1)^b C_b.</code></pre>
+<p>Every fixed-label weight d_(z_j), as a rational function of M, therefore satisfies</p>
+<pre><code>[T^2-(-1)^b(q^b+q^(-b))T+1] d_(z_j)=0.        (6.2)</code></pre>
+<p>For even b the common frame is meridian-constant; for odd b its sign line remains. For even b the actual fusion labels also permute under the known meridian atlas. No generic EFK-module comparison for odd b is being asserted by (6.2). Individual Fourier moments can be polar in a singular fusion frame, so (6.1) must still be specialized as a whole.</p>
+<h2 id="scope-coverage-and-checks">7. Scope, coverage and checks</h2>
+<p>This supplies an exact semilinear local source presentation and its comparison to the geometric dual cyclic model, with the marked period character and the actual normalization line kept. The earlier all-orders normal-block comparison can transport P_a to the dual of the corresponding actual formal normal line. It does not identify that line with the selected finite sum.</p>
+<p>The actual global source arrows, knot section, and central lattice at U=1 still have to be transported through sewing. The pole in C_N is genuine difference-constant period data; its cancellation cannot be inferred from a regular S-unit gauge. Nonzero pairing of the selected source with the geometric block, and its regulator norm across levels, remain unproved. In particular this note does not establish the global affine comparison equation for c_K,c_T.</p>
+<p>Modified-trace and formal difference-equation coverage is the existing coverage recorded in the preceding notes. No novelty claim is made for free resolutions, semilinear duality, or cyclic presentations. All displayed intertwiners and coefficient identities are proved by the direct calculations above.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_equivariant_cut_source.py">The audit</a> checks the universal wall transport, relation transport, full free cyclic matrix, dual, stable branch line, quotient chain map and residue. Twelve generic original root cases at N=2,3,4,5,6,9 construct the actual E,F,K, original crossings and meridian matrices. All 116 projector cuts at both colors agree with (5.1); the full affine crossing identity and retained normalizer are checked. The N=2 extra kernel is recorded, not treated as periodicity of its free presentation. Four exact symbolic width checks retain the parity in (6.2). <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/equivariant_cut_source_results.json">Results</a>.</p>
+<p>Reproduce with:</p>
+<pre><code>python3 experiments/audit_equivariant_cut_source.py</code></pre>
+<p>The subsequent <a href="sewn_source_and_meridian_charge.html">sewn-source theorem</a> now transports the actual residue through arbitrary full knot operators and gives a regular rational lift of its projective corner. It also forces a further marking: one surviving meridian must carry charge three. Its step and full dimension factor are retained. The inverse complete longitude character above cannot distinguish that odd charge from charge one. The entire source and its selected geometric period still need comparison.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/equivariant_cut_source_transport.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-full-actual-cut-has-a-difference-constant-normalization-line">1. The full actual cut has a difference-constant normalization line</a><a href="#the-wall-presentation-is-meridian-equivariant">2. The wall presentation is meridian-equivariant</a><a href="#the-geometric-cyclic-free-presentation-has-an-exact-shift-matrix">3. The geometric cyclic free presentation has an exact shift matrix</a><a href="#dualizing-gives-exactly-the-cut-complex-with-a-period-line-twist">4. Dualizing gives exactly the cut complex with a period-line twist</a><a href="#the-original-root-matrices-check-this-transport">5. The original root matrices check this transport</a><a href="#the-universal-part-of-every-tensor-cut-uses-two-fourier-moments">6. The universal part of every tensor cut uses two Fourier moments</a><a href="#scope-coverage-and-checks">7. Scope, coverage and checks</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

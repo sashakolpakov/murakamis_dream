@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The full actual reassociation is an angle half-density · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_reassociation_angle_kernel.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-full-actual-reassociation-is-an-angle-half-density">The full actual reassociation is an angle half-density</h1>
+<p>29 October 2026. Every entry of the actual adjacent-pair fusion reassociation has a unique two-transfer path. In the source-fixing physical quarter-factorial gauge, its squared entry is exactly a product of FOUR positive affine-angle weights, one per cell. The full root phase and all strict finite-head inequalities are explicit.</p>
+<p>This is an all-entry, all-exterior tensor identity. It supplies actual shared-charge incidence, rather than assigning independent angle variables after taking absolute values. It does not yet identify this cell complex with a geometric ideal triangulation or bound its global partition by knot volume.</p>
+<h2 id="the-actual-divided-power-fusion-is-one-finite-euler-operator">1. The actual divided-power fusion is one finite Euler operator</h2>
+<p>Put <code>q=exp(pi*i/N)</code>, <code>Q=q^2</code>, <code>d=N-1</code>, <code>F_a=(Q;Q)_a</code>, <code>s_a=|F_a|</code>, and use the original balanced head basis. Let</p>
+<pre><code>S^-|a&gt;=|a-1&gt; for a&gt;0, S^-|0&gt;=0,
+mathsfF|a&gt;=(1-Q^(a+1))|a+1&gt;, mathsfF|d&gt;=0.</code></pre>
+<p>For a nonzero original meridian root x, divide the ACTUAL Borel fusion column indexed <code>(a,b)</code> by its explicit <code>F_a</code>, and denote the resulting map by C’_x. Its exact kernel is</p>
+<pre><code>(C&#39;_x)_(a-r,b+r;a,b)=x^(-r) [b+r choose r]_Q,
+0&lt;=r&lt;=min(a,d-b).                                (1)</code></pre>
+<p>All other entries vanish. This follows either from the original coproduct powers or from the physical kernel of <a href="actual_borel_regular_fusion_and_divided_cap_period.html">actual fusion</a>. No relative index is identified with a physical one without this map.</p>
+<p>Set <code>T_x=x^(-1) S^- tensor mathsfF</code>. Then <code>T_x^N=0</code> and</p>
+<pre><code>C&#39;_x=p_N(T_x), p_N(t)=sum_(r=0)^d t^r/F_r,
+(C&#39;_x)^(-1)=sum_(r=0)^d (-1)^r Q^(r(r-1)/2)t^r/F_r
+                                                  evaluated at t=T_x. (2)</code></pre>
+<p>Indeed the r-th power has coefficient <code>x^-r F_(b+r)/F_b</code>. The finite Euler inverse follows by q-binomial convolution. Its inverse entry is (1) times <code>(-1)^r Q^(r(r-1)/2)</code>, with exactly the SAME strict support. Every endpoint and zero transfer is retained.</p>
+<p>For reference the head relation is EXACT at both finite endpoints:</p>
+<pre><code>S^- mathsfF=(1-Q)I+Q mathsfF S^-.</code></pre>
+<p>On three heads it gives <code>T_23 T_12=Q T_12 T_23+(1-Q)T_13</code>, where <code>T_13=(xy)^(-1)S_1^- mathsfF_3</code> if the two fusion parameters are x,y. Thus the overlap is an actual finite q-oscillator algebra, with no silently omitted rank-one endpoint correction.</p>
+<h2 id="every-reassociation-entry-including-its-phase">2. Every reassociation entry, including its phase</h2>
+<p>Let</p>
+<pre><code>A_xy=(I tensor C&#39;_y)^(-1)(C&#39;_x tensor I).</code></pre>
+<p>For input <code>(a,b,c)</code> the only possible outputs are</p>
+<pre><code>(u,v,w)=(a-r,b+r-s,c+s),
+0&lt;=r&lt;=min(a,d-b), 0&lt;=s&lt;=min(b+r,d-c).              (3)</code></pre>
+<p>For each input/output there is at most one path, since <code>r=a-u</code>, <code>s=w-c</code>. The COMPLETE entry is</p>
+<pre><code>A_(u,v,w;a,b,c)
+  =(-1)^s Q^(s(s-1)/2)x^(-r)y^(-s)
+        [b+r choose r]_Q [c+s choose s]_Q.         (4)</code></pre>
+<p>In particular the intermediate head bound <code>b+r&lt;=d</code> is essential; checking only the final output would add spurious entries. Formula (4) follows by multiplying the two literal kernels (1)–(2). It is an operator identity on the complete finite three-head space, so it preserves ANY adjoining tensor, source or current when all their interfaces are transported. No knot scalar occurs in it.</p>
+<p>Assume now <code>|x|=|y|=1</code>, including the original complete source. Write <code>beta_(L,r)=s_L/(s_r s_(L-r))</code>. The principal half-root identity <code>[L choose r]_Q=q^(r(L-r)) beta_(L,r)</code> gives the exact unit phase</p>
+<pre><code>omega=(-1)^s x^(-r)y^(-s)
+                       q^[rb+sc+s(s-1)].          (5)</code></pre>
+<p>All signs and the half-period q are kept, at odd and even N. There is also an exact Fourier polarization of this phase:</p>
+<pre><code>omega=zeta_out(u,w) zeta_in(a,b,c) q^(-ub-wc),
+zeta_out=(-1)^w x^u y^(-w)q^(w^2-w),
+zeta_in=(-1)^c x^(-a)y^c q^(ab+c).               (5a)</code></pre>
+<p>Substituting <code>u=a-r,w=c+s</code> proves (5a). Its bilinear part is a TWO-variable 2N-half-clock Fourier phase. The physical indices still lie in the original N-windows with the strict constraints (3); an unwindowed Fourier/Plancherel replacement is not authorized by this phase identity alone.</p>
+<h2 id="source-fixing-quarter-gauge-and-four-positive-cells">3. Source-fixing quarter gauge and four positive cells</h2>
+<p>Use the PHYSICAL gauge</p>
+<pre><code>g_a=L_a^(-1/4)=N^(1/4)/sqrt(s_a),
+L_a=s_a^2/N,
+h_a=g_a^2=sqrt(N)/s_a.</code></pre>
+<p>It is source-fixing because <code>g_a g_(d-a)=1</code>. The original cup and ordinary cap are fixed on their complementary physical indices; the full marked row has this property on its degree-d restriction. The original integer-degree argument forces that restriction only after the other ordinary caps have been assembled. We use exactly that whole-source scope, as in <a href="actual_weighted_fourier_plat_energy.html">the physical weighted-source theorem</a>. Original pivots commute with this gauge. No marked corner is inserted in an arbitrary exterior.</p>
+<p>Let <code>Ahat=g^(tensor 3) A (g^(-1))^(tensor 3)</code>. For every entry (3),</p>
+<pre><code>|Ahat_entry|^2
+  = beta_(a,r) beta_(b+r,r) beta_(b+r,s) beta_(c+s,s)
+  = N^4 product_(j=1)^4 w_N(alpha_j),             (6)</code></pre>
+<p>where <code>w_N(i,j,k)=1/(s_i s_j s_k)</code> and</p>
+<pre><code>alpha_1=(r,a-r,d-a),
+alpha_2=(r,b,d-b-r),
+alpha_3=(s,b+r-s,d-b-r),
+alpha_4=(s,c,d-c-s).                             (7)</code></pre>
+<p>Every alpha has nonnegative integer entries summing EXACTLY to d. The full complex half-density is therefore</p>
+<pre><code>Ahat_entry=N^2 omega sqrt(product_j w_N(alpha_j)). (8)</code></pre>
+<p>Proof. The squared gauge ratio is <code>s_a s_b s_c/[s_(a-r)s_(b+r-s)s_(c+s)]</code>. Multiply this by the squared magnitudes of the two binomials in (4). Inserting the intermediate <code>s_(b+r)</code> expresses the result as the four beta factors in (6). Finally each beta is exactly <code>N w_N(r,L-r,d-L)</code> by root complementation. This proves (6)–(8) without changing or suppressing any original source factor.</p>
+<p>For a single C’_x or its inverse, the corresponding two-cell formula is</p>
+<pre><code>|Chat&#39;_entry|^2
+   =N^2 w_N(r,a-r,d-a)w_N(r,b,d-b-r).             (9)</code></pre>
+<p>The inverse has the additional unit phase from (2), so its positive cell kernel is identical, while its coherent composition differs.</p>
+<h3 id="exact-incidence-rather-than-independent-angles">Exact incidence, rather than independent angles</h3>
+<p>The four cells in (7) satisfy</p>
+<pre><code>alpha_1,1=alpha_2,1=r,
+alpha_3,1=alpha_4,1=s,
+alpha_2,3=alpha_3,3=d-(b+r).                     (10)</code></pre>
+<p>The external ports are recovered by</p>
+<pre><code>a=alpha_1,1+alpha_1,2, b=alpha_2,2, c=alpha_4,2,
+u=alpha_1,2, v=alpha_3,2,
+w=alpha_4,1+alpha_4,2.                           (11)</code></pre>
+<p>Conversely four nonnegative sum-d triples satisfying (10), with these boundary values, recover exactly one admissible entry (3). Thus (7),(10),(11) are a bijective actual local charge model; their five free integer parameters are <code>(a,b,c,r,s)</code>. In particular the intermediate upper wall is the shared NONNEGATIVE charge <code>alpha_2,3=alpha_3,3</code>. Integer total degree is conserved.</p>
+<p>These are proven shared-spin constraints. They are not by themselves the geometric equation that sums dihedral angles to 2pi around each edge of an ideal triangulation. That further global identification, including peripherals, must be established rather than inferred from the presence of positive sum-d cells.</p>
+<h2 id="exact-factorization-through-the-normalized-b-coefficients">4. Exact factorization through the normalized b coefficients</h2>
+<p>This kernel is compatible with the proposed LENGTH normalization, not an unrelated square-root replacement. Put</p>
+<pre><code>B_L(X,Y)=product_(j=0)^(L-1)(X-Q^jY),
+D_L=s_L^(1/2)/N^(1/4), b_L=B_L/D_L,
+m_j=s_j/sqrt(N),
+tau_(L,r)=sqrt(m_r m_(L-r)) [X^(L-r)Y^r]b_L.</code></pre>
+<p>The <a href="actual_length_normalized_star_gram.html">normalized coefficient Gram identity</a> is exactly</p>
+<pre><code>|tau_(L,r)|^2=sqrt(N)w_N(r,L-r,d-L),
+arg(tau_(L,r))=arg[(-1)^r q^(r(L-1))].           (12)</code></pre>
+<p>For one positive or inverse fusion cell let <code>m=b+r</code>. Then</p>
+<pre><code>Chat&#39;_entry=sqrt(N) eta_+ tau_(a,r)tau_(m,r),
+(Chat&#39;^(-1))_entry=sqrt(N) eta_- tau_(a,r)tau_(m,r),
+eta_+=x^(-r)q^[r(2-a-r)],
+eta_-=(-1)^r x^(-r)q^[r(1-a)].                  (13)</code></pre>
+<p>For the full reassociation the exact complex coefficient is</p>
+<pre><code>Ahat_entry=N eta tau_(a,r)tau_(b+r,r)
+                     tau_(b+r,s)tau_(c+s,s),
+eta=(-1)^s x^(-r)y^(-s)
+                    q^[r(2-a-r)+s(1-b-r)].       (14)</code></pre>
+<p>Multiplying the four phases in (12) proves (14), including (5). In particular ZERO lengths are retained: <code>b_0=N^(1/4)</code> and <code>tau_(0,0)=N^(-1/4)</code>. At the all-zero input the factor <code>N tau_(0,0)^4</code> is one, as the original operator requires. The b-length tensor and physical quarter gauge have therefore been matched with their actual normalizers and source types.</p>
+<h2 id="positive-energies-and-the-full-coherent-gram">5. Positive energies and the full coherent Gram</h2>
+<p>For a fixed input i, the exact column energy is the positive sum</p>
+<pre><code>||Ahat e_i||^2=N^4 sum_(r,s satisfying (3))
+                                  product_j w_N(alpha_j). (15)</code></pre>
+<p>The Hilbert–Schmidt energy is its sum over all physical inputs. Thus each local positive cell contributes ONE w, not its square. This is a genuine identity for the entire column, not a saddle approximation or a single selected large entry.</p>
+<p>The FULL Gram, however, is</p>
+<pre><code>(Ahat^*Ahat)_(i,j)
+   =N^4 sum_(common output o) conj(omega_(o,i))omega_(o,j)
+             sqrt(W_(o,i)W_(o,j)),
+W_(o,i)=product_four_cells w_N.                  (16)</code></pre>
+<p>Off-diagonal replicas remain. They cannot be deleted as an exact source operation. Any all-exterior upper comparison obtained by Cauchy must bound or retain these mixed terms; (16) states their phase and incidence explicitly. The original marked source has not been assumed positive or diagonal.</p>
+<h2 id="the-complete-original-crossing-uses-the-same-physical-cells">6. The complete original crossing uses the same physical cells</h2>
+<p>There is no remaining standalone factorial diagonal between these physical Euler maps. Let <code>C'_(21)=Flip C'_(12) Flip</code>, and retain the original Gaussian</p>
+<pre><code>D_2|a,b&gt;=(-1)^b Q^(b(b-1)/2)x^(-2b)|a,b&gt;.</code></pre>
+<p>For the original same-color braid at every meridian root x,</p>
+<pre><code>R_+=kappa C&#39;_(12) D_2 C&#39;_(21) (C&#39;_(12))^(-1),
+R_-=kappa^(-1) C&#39;_(12) (C&#39;_(21))^(-1)
+                                  D_2^(-1)(C&#39;_(12))^(-1). (17)</code></pre>
+<p>Here kappa is the original full common Cartan scalar, not a new normalization. To verify (17), start with the exact all-integer-degree factorization in <a href="actual_pascal_coherent_gram.html#61-an-exact-pascalgaussian-alphabet-for-original-braid-crossings">the Pascal theorem</a>. There <code>C=C' diag(F_a)</code>. Conjugating its relative Euler factor U by this diagonal gives coefficient <code>x^-r F_(a+r)/(F_a F_r)=x^-r[a+r choose r]</code>, exactly the physical C’_(21), with its strict bounds. The diagonal commutes with D_2. This proves (17) in EVERY total degree and hence as a full operator. The negative formula is its literal inverse.</p>
+<p>At completeness D_2, kappa and all original pivots/framing phases have modulus one. In the SAME source-fixing quarter gauge, each of the three C’ factors in a crossing has the two-cell kernel (9). Their inverse phases, upper/lower walls and original finite source remain present. This is an exact coherent physical alphabet at arbitrary braid width, not a source-null completion or a deletion of the inhomogeneous current.</p>
+<p>It provides six positive cell weights per crossing before any shared-head contractions. To turn the resulting positive comparison into a sharp volume theorem one still needs its global geometric edge/peripheral constraints or a further coherent contraction. Neither is asserted merely from (17). In particular a generic positive path partition is not automatically the partition on an ideal geometric triangulation.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_reassociation_angle_kernel.py">Audit</a>: original coproduct-derived fusion, finite Euler inverses, all strict reassociation entries, half-root phases, b_0 and normalized coefficient factorization, exact local charge incidence and both ORIGINAL signed crossing operators with retained common Cartan.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_reassociation_angle_kernel.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-divided-power-fusion-is-one-finite-euler-operator">1. The actual divided-power fusion is one finite Euler operator</a><a href="#every-reassociation-entry-including-its-phase">2. Every reassociation entry, including its phase</a><a href="#source-fixing-quarter-gauge-and-four-positive-cells">3. Source-fixing quarter gauge and four positive cells</a><a href="#exact-factorization-through-the-normalized-b-coefficients">4. Exact factorization through the normalized b coefficients</a><a href="#positive-energies-and-the-full-coherent-gram">5. Positive energies and the full coherent Gram</a><a href="#the-complete-original-crossing-uses-the-same-physical-cells">6. The complete original crossing uses the same physical cells</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

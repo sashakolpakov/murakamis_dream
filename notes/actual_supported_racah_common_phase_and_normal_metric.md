@@ -241,7 +241,7 @@ columns deleted from a physical Hermite cluster. This is the remaining
 normal interface for using the positive factorial in a full recoupling
 energy argument.
 
-A separate, UNPROVED research lead is preserved by the
+A research lead, originally unproved, is preserved by the
 [64-partner value diagnostic](../experiments/diagnose_supported_racah_partner_value_reflection.py)
 and its [recorded root images](../experiments/supported_racah_partner_value_reflection_diagnostic_results.json).
 For three specified folded tuples per level when distinct, every one
@@ -250,6 +250,10 @@ comparisons showed no failure of W_squared invariance. These are exact
 finite cyclotomic-root images, not a uniform complex identity proof.
 No symmetry of generic germs, bound on the [2N] current, completed
 physical Gram or volume theorem is inferred from that observation.
+The subsequent [actual partner-reflection theorem](actual_racah_partner_reflection_identity.md)
+now proves the root-value symmetry uniformly from the actual reciprocal
+source and analytic projector residues. Its exact first-normal
+counterexample shows why this does not establish generic-jet symmetry.
 
 ## 6. An exact valuation interface to the separately proved physical kernel
 

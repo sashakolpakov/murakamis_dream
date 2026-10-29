@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Archived diagnostic: a coherent all-high Racah tail and a cotangent sum · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">Unproved diagnostic lead</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/research_all_high_racah_tail_cotangent.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="archived-diagnostic-a-coherent-all-high-racah-tail-and-a-cotangent-sum">Archived diagnostic: a coherent all-high Racah tail and a cotangent sum</h1>
+<p>29 October 2026. RESEARCH LEAD ONLY. The finite identity proposed below has been checked numerically at eleven specified levels. No finite proof, certified error bound, uniform normal estimate, or general partner-transport theorem is asserted. This preserves an observation from the investigation of the live [2N] current, rather than promoting root-value symmetry to a statement about generic-q germs.</p>
+<h2 id="the-actual-generic-normal-being-observed">1. The actual generic normal being observed</h2>
+<p>Fix an integer m&gt;=1 and</p>
+<pre><code>N=3m+1, D=N-1=3m, q=exp(pi i/N), Q=q^2,
+theta=pi/N, s_r=product_(u=1)^r 2sin(u theta).</code></pre>
+<p>Start with the supported folded sextuple (m,m,m,m,m,m), and change ALL six spins to their partners D-m=2m. Use the SAME generic symmetric quantum integers [u]=(zeta<sup>u-zeta</sup>-u)/(zeta-zeta^-1) and seven-factorial sum S(zeta) as in the <a href="actual_supported_racah_common_phase_and_normal_metric.html">proved common-phase and retained-normal theorem</a>. For this all-high branch, every face sum is 6m and every opposite sum is 8m. Its true summation range is therefore 6m&lt;=z&lt;=8m.</p>
+<p>Remove the actual numerator zeros, before root evaluation:</p>
+<pre><code>(-1)^D S(zeta)/[N]=C(zeta)+[2N]T(zeta).       (1)</code></pre>
+<p>Here C is the SINGLE term z=6m=2D, and T consists of the terms z=6m+1,…,8m with BOTH [N] and [2N] omitted from the numerator. All seven true denominator indices are &lt;N. The functions C,T are analytic at q, and the elementary factorial reflection gives</p>
+<pre><code>C(q)=N^2/s_(2m)^3=s_m^3/N,
+T(q)=-2sin(theta)N^2 sum_(k=0)^(2m-1)
+          (-1)^k s_k/[s_(k+1)^4 s_(2m-1-k)^3]. (2)</code></pre>
+<p>The tail is really present. In the coordinate t=log(zeta/q),</p>
+<pre><code>dot[(-1)^D S/[N]](q)=dot C(q)+4N/(q-q^-1) T(q). (3)</code></pre>
+<p>Consequently T(q) cannot be deleted merely because [2N](q)=0. The <a href="actual_racah_partner_reflection_identity.html">all-partner value theorem</a> does not identify the derivatives in (3).</p>
+<h2 id="the-observed-formula-and-its-exact-checked-scope">2. The observed formula and its exact checked scope</h2>
+<p>The proposed finite identity is</p>
+<pre><code>T(q)/C(q) ?= -3sin(theta) sum_(u=1)^m cot(u theta). (4)</code></pre>
+<p>The question mark is intentional. The portable diagnostic checks EXACTLY the following previously probed values:</p>
+<pre><code>m=1,2,3,4,6,8,12,16,24,32,48,
+N=4,7,10,13,19,25,37,49,73,97,145.</code></pre>
+<p>Thus it checks both parities and several composite levels, but not every m&lt;=48. Its working precision is 3N+60 decimal digits. At these levels the two sides agree to far more than forty decimal digits. This is numerical evidence, not an exact cyclotomic certificate.</p>
+<p>Some rounded values of the coherent ratio are</p>
+<pre><code>N=4:   -2.1213203435596,
+N=25:  -7.5419628808584,
+N=49:  -9.5541461519503,
+N=145: -12.801479315575.</code></pre>
+<p>Taking absolute values INSIDE the alternating sum in (2) loses the cancellation. The diagnostic records this absolute-tail comparison separately. The observed large overestimate supplies no no-go theorem for the coherent sum and no proof of its growth rate.</p>
+<p>If (4) is eventually proved, elementary cotangent estimates would bound THIS T(q)/C(q) polynomially (in fact logarithmically). That would still be a special all-high family, not a theorem for every supported partner branch or for every normal order.</p>
+<h2 id="higher-normal-observations-and-a-possible-finite-proof-route">3. Higher-normal observations and a possible finite-proof route</h2>
+<p>The same existing probe records i dot T(q)/C(q) and ddot T(q)/C(q), with no derivative of C in these ratios. These are computed from the actual omitted-zero factorial terms, not by differentiating (4). For a unit quantum integer the exact logarithmic derivatives at q are</p>
+<pre><code>dot log[u]=-i[u cot(u theta)-cot(theta)],
+ddot log[u]=u^2 csc^2(u theta)-csc^2(theta).   (5)</code></pre>
+<p>Sum (5) over the numerator indices except N,2N and subtract the seven denominator sums. If the resulting real quantities for a tail term are L1,L2, its first derivative is -i L1 times the term and its second derivative is (L2-L1^2) times the term. The recorded values grow moderately at the checked levels; no asymptotic bound or all-order conclusion is inferred from that observation.</p>
+<p>A possible own finite-proof route is a parameter-differentiated cyclic terminating summation. The proved central cotangent identity in <a href="actual_partner_normal_transport.html#5-an-exact-central-normal-check-by-a-finite-product-derivative">the spectral/normal transport note</a> comes from the OWN balanced Sears calculation followed by a finite product derivative. It motivates looking for an analogous finite transformation for (2). That analogy is a research direction, not a missing step silently supplied by a named summation formula.</p>
+<p>The current established scope remains the polynomial root spectral estimate and the tail-free generic-normal criterion. General bounds on live [2N] currents, their fixed jets, and coherent partner sewing remain open.</p>
+<p>Portable diagnostic: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/diagnose_all_high_racah_tail_cotangent.py">script</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/all_high_racah_tail_cotangent_diagnostic_results.json">recorded results</a>. Only mpmath is required. Status PASS_DIAGNOSTIC means the finite numerical comparisons passed, not that (4) is proved.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/research_all_high_racah_tail_cotangent.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-generic-normal-being-observed">1. The actual generic normal being observed</a><a href="#the-observed-formula-and-its-exact-checked-scope">2. The observed formula and its exact checked scope</a><a href="#higher-normal-observations-and-a-possible-finite-proof-route">3. Higher-normal observations and a possible finite-proof route</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

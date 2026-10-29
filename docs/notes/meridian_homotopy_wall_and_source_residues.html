@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The compact geometric homotopy has an exact wall and peripheral charge · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/meridian_homotopy_wall_and_source_residues.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-compact-geometric-homotopy-has-an-exact-wall-and-peripheral-charge">The compact geometric homotopy has an exact wall and peripheral charge</h1>
+<p>Research proof, 27 October 2026. At fixed complete meridian the physical compact source sphere and the exceptional source sphere are not homologous in the Gauss open set. Their difference is one explicit wall torus, with its orientation and period determined. Varying the meridian supplies a global logarithmic orbit homotopy avoiding that wall, at the cost of the opposite SL2 lift and an explicit peripheral Cech period.</p>
+<p>The actual full quantum source has a matching, completely specified central-sign character. Along this meridian path every possible modified-dimension pole has a residue equal to an original ordinary color, with a polynomial total norm bound. This is an actual source wall theorem. It does not turn the Kashaev point evaluation into a meridian integral or continue the full geometric A-branch for free.</p>
+<p>Use <a href="springer_centralizer_boundary_source.html">the resolved framing source</a> and the <a href="compact_exponential_cech_current_detour.html">exact exponential Cech/current construction</a>. All source phases and the complete modified-dimension function remain marked throughout.</p>
+<h2 id="a-closed-form-detects-the-fixed-meridian-obstruction">1. A closed form detects the fixed-meridian obstruction</h2>
+<p>On the resolved threefold Y use north coordinates v,eta,a and south coordinates</p>
+<pre><code>V=1/v, eta&#39;=-v^2 eta, a&#39;=v-v^2a.</code></pre>
+<p>Put f=1-eta v=1+eta’ V, and remove the Gauss divisor</p>
+<pre><code>D_cut={f=0}.</code></pre>
+<p>The exceptional divisor is E={eta=0}=X. The following form is globally regular and closed on Y minus D_cut:</p>
+<pre><code>Xi=dLog f wedge dLog v
+  =dv wedge d eta/f
+  =dV wedge d eta&#39;/f.                                  (1.1)</code></pre>
+<p>The last two expressions show that its apparent flag poles cancel. It is pulled back from the resolved meridian surface and is closed therefore also on the threefold.</p>
+<p>Let c=2pi*i. Orient the actual compact source sphere by</p>
+<pre><code>0&lt;=T&lt;=1, 0&lt;=phi&lt;2pi,
+v=sqrt(T/(1-T))exp(i phi),
+a=sqrt(T(1-T))exp(-i phi).</code></pre>
+<p>Its source form is</p>
+<pre><code>Omega_0=dv wedge da=-i dT wedge dphi,
+omega_I=-Omega_0/c, integral_Gamma omega_I=1.           (1.2)</code></pre>
+<p>Let Gamma_E be this sphere at eta=0. Let Gamma_phys be its actual physical-symbol section</p>
+<pre><code>eta_phys=(1-exp(-cT))/v.                               (1.3)</code></pre>
+<p>The removable pole formulas at both endpoints make these genuine compact cycles. By the exact physical Gauss identity,</p>
+<pre><code>Xi|_(Gamma_E)=0,
+Xi|_(Gamma_phys)=c Omega_0,
+integral_(Gamma_phys)Xi=-c^2=4pi^2.                    (1.4)</code></pre>
+<p>Thus no homology, and in particular no homotopy, inside Y minus D_cut can identify the two cycles. This conclusion does not assume that the flag or centralizer coordinates stay fixed during a proposed homotopy.</p>
+<h2 id="the-necessary-relative-cycle-is-one-explicitly-oriented-wall-torus">2. The necessary relative cycle is one explicitly oriented wall torus</h2>
+<p>The straight normal interpolation eta_lambda=lambda eta_phys is a global compact three-chain before D_cut is deleted. Its Gauss factor is</p>
+<pre><code>f_lambda=1-lambda+lambda exp(-cT).</code></pre>
+<p>It hits D_cut exactly at lambda=T=1/2, for every phi. The intersection loop is</p>
+<pre><code>C: v=exp(i phi), a=1/(2v), eta=1/v,</code></pre>
+<p>inside D_cut, which is globally C^*<em>(v) times A^1</em>(a). Near that loop,</p>
+<pre><code>f_lambda=-2(lambda-1/2)+pi*i(T-1/2)+higher terms.        (2.1)</code></pre>
+<p>The normal real Jacobian is negative. Define Tube(C) with first the counterclockwise f-circle and then the positive v-circle. Removing a small neighborhood of the intersection from the three-chain gives the exact relation</p>
+<pre><code>[Gamma_phys]-[Gamma_E]=-[Tube(C)]
+              in H_2(Y minus D_cut).                   (2.2)</code></pre>
+<p>Indeed the inner boundary of the removed disk has the opposite normal orientation, and (2.1) reverses that orientation once more. This fixes the sign without a convention about an unspecified cap.</p>
+<p>The wall residue and period are</p>
+<pre><code>Res_(D_cut) Xi=dLog v,
+integral_(Tube(C))Xi=c^2=-4pi^2.                      (2.3)</code></pre>
+<p>Equation (2.3) independently checks (2.2). Since C winds once in the C^* factor of D_cut, it has no cap inside D_cut. A source comparison must retain this torus or an equivalent relative boundary co-source.</p>
+<p>The actual principal Gaussian flag form from the resolved source has the corresponding balanced residues:</p>
+<pre><code>nu_cut=-(d eta/eta) wedge Omega_0/f,
+Res_E nu_cut=-Omega_0,
+Res_(D_cut) nu_cut=+Omega_0.                            (2.4)</code></pre>
+<p>For the geometric Gaussian multiply (2.4) by its recorded nonzero torsion/phase coefficient c_beta and retain the original base-only quantum line. To check the second residue, on v!=0 use</p>
+<pre><code>nu_cut=df/[f(1-f)] wedge Omega_0.</code></pre>
+<p>On the wall Omega_0=d(v da); along the actual intersection loop v da=-(1/2)dLog v, so its primitive also has the explicit period -pi*i. The ordinary two-form residue and this lower boundary current are different degrees of data and should not be identified.</p>
+<h2 id="the-integer-winding-cannot-be-erased-at-fixed-meridian">3. The integer winding cannot be erased at fixed meridian</h2>
+<p>There is a simple relative interpretation of (1.4). A globally finite eta section has f=1 at both flag poles. Since the sphere is simply connected, choose Log f=0 at its north pole. Its value at the south pole is 2pi*i times an integer, invariant in any continuous family avoiding f=0. The exceptional sphere has integer zero; the physical sphere has integer -1. This is the source degree obstruction.</p>
+<p>The tempting logarithmic interpolation</p>
+<pre><code>eta_lambda=(1-exp(-c lambda T))/v</code></pre>
+<p>avoids f=0 on the north chart but does not patch at the south pole:</p>
+<pre><code>eta&#39;_lambda=
+  [exp(-c lambda)exp(c lambda T&#39;)-1]/V,
+T&#39;=Va&#39;=1-T.                                          (3.1)</code></pre>
+<p>For nonintegral lambda it has a nonzero V^(-1) coefficient. Discarding that coefficient would remove precisely the global clutch being tested. The exact finite-current regularization in the cited Cech note keeps this defect; it is not a new quantum dressing.</p>
+<h2 id="varying-the-meridian-gives-an-explicit-global-orbit-homotopy">4. Varying the meridian gives an explicit global orbit homotopy</h2>
+<p>Let m be the eigenvalue on the retained flag. The Grothendieck meridian chart is</p>
+<pre><code>mu(v,m,eta)=
+  [[m-eta v, eta],
+   [(m-m^(-1))v-eta v^2, m^(-1)+eta v]].               (4.1)</code></pre>
+<p>Its determinant is one, its trace is m+m^(-1), and [1:v] is its m-eigenflag. Its second chart is the affine transition</p>
+<pre><code>eta&#39;=-v^2 eta+(m-m^(-1))v.                             (4.2)</code></pre>
+<p>At m=1 this is the Springer bundle. Away from m=+/-1 it is a nontrivial affine cotangent torsor. The full Gauss entry</p>
+<pre><code>f=m-eta v=m^(-1)+eta&#39; V</code></pre>
+<p>is global. Its two polar flag values are m and m^(-1), rather than both one.</p>
+<p>Define the marked path, for 0&lt;=lambda&lt;=1,</p>
+<pre><code>m_lambda=exp(pi*i lambda),
+f_lambda=exp[pi*i lambda(1-2T)],
+eta_lambda=m_lambda[1-exp(-c lambda T)]/v.              (4.3)</code></pre>
+<p>The south expression forced by (4.2) is</p>
+<pre><code>eta&#39;_lambda=m_lambda^(-1)
+                     [exp(c lambda T&#39;)-1]/V.          (4.4)</code></pre>
+<p>Both are removable at the corresponding poles for every lambda. All eigenvalues and f_lambda stay nonzero. At lambda=0 the family is the exceptional sphere at the identity. At lambda=1 it is -mu_phys, with m=-1 and eta=-eta_phys. Thus (4.3) is a globally regular projective meridian-orbit homotopy avoiding the Gauss wall. Its SL2 lift changes by the central sign, explicitly.</p>
+<p>This sign change is necessary for a once-winding clock. Along a meridian family choose Log m continuously. The pole conditions give Log f(S)=-Log m modulo 2pi<em>i, while the physical relative clock has Log(f/m)(S)=-2pi</em>i. Starting with the zero clock forces 2 Log m_end=2pi*i modulo the chosen path mark. A closed path ending m=1 cannot accomplish this odd winding; ending m=-1 does.</p>
+<p>The actual inverse-eigenvalue convention of the finite source is M=m^(-1), so its path is M_lambda=exp(-pi*i lambda). Formulas (4.3)–(4.4) agree with the bridge note’s determinant-h matrix after division by M_lambda. No sign is silently discarded.</p>
+<h2 id="the-avoided-wall-reappears-as-a-marked-peripheral-cech-period">5. The avoided wall reappears as a marked peripheral Cech period</h2>
+<p>On the total varying-meridian family the naive dLog f wedge dLog v has meridian poles at the two polar flags. The regular local forms are</p>
+<pre><code>Xi_N=(dLog f-dLog m) wedge dLog v,
+Xi_S=(dLog f+dLog m) wedge dLog v.                      (5.1)</code></pre>
+<p>Their difference is exactly</p>
+<pre><code>Xi_S-Xi_N=2dLog m wedge dLog v
+                =d(2Log m dLog v).                   (5.2)</code></pre>
+<p>Thus the global object is the specified peripheral period torsor, not a single absolute two-form with a forgotten patch. Along m:1-&gt;-1 the marked Log m changes by pi*i. The Cech term in (5.2) then has flag period c^2, the wall period of (2.3). Changing the meridian transfers the charge; it does not delete it.</p>
+<p>On a fixed lambda fiber the two local forms agree. Their actual compact period is</p>
+<pre><code>integral_Gamma Xi_lambda=-c^2 lambda
+                          =-2c Log m_lambda.          (5.3)</code></pre>
+<p>For the physical h_N=c/N, its signed normalized curvature integral is</p>
+<pre><code>(1/(2pi*i h_N)) integral_Gamma Xi_lambda=-N lambda.    (5.4)</code></pre>
+<p>The coherent source uses the Chern convention c_1=-F/(2pi*i). For curvature F=Xi_lambda/h_N its positive Chern degree is therefore N lambda, agreeing with the endpoint prequantum line O(N). The minus sign in (5.4) belongs to the stated flux orientation, not to a claim that the actual source has line O(-N).</p>
+<p>At the endpoint the prequantum exponential of the full flux is exp(-2pi*i N)=1. The integer clutch and its half-form/sign data still remain. In particular the intermediate integral-degree locations lambda=k/N are precisely the actual ordinary-color wall locations in Section 6. This is an exact equality of locations and signed curvature integrals; it is not an unproved identification of generic quantum dressing with ordinary coherent SL2 action.</p>
+<p>There is a stronger exact root identity, proved with all marks in <a href="gauss_wall_flux_and_actual_peripheral_character.html">the flux/peripheral-character theorem</a>. Our oriented period is I_phys(M)=+2c Log M for M=m^(-1). Its explicit inverse I_inv=-I_phys gives</p>
+<pre><code>chi_H=exp(-2c LogM/H),
+chi_(h_N)=M^(-2N),
+d_N=epsilon_N (M-M^(-1))chi_(h_N)^(1/2)/(1-chi_(h_N)).</code></pre>
+<p>The marked half-root is antiperiodic under the actual q half-step. Thus the wall flux supplies the actual central character and full polar adapter at the roots. This does not identify that logarithmic H-lift with a particular off-root auxiliary source or its normal jets.</p>
+<h2 id="every-actual-meridian-wall-charge-is-an-ordinary-color">6. Every actual meridian wall charge is an ordinary color</h2>
+<p>Fix the original N-th-root state, and write its reciprocal reduced Laurent function as F_N(Y), Y=M^2. Keep the full original factor</p>
+<pre><code>epsilon_N=i^(N+3), n=N-1,
+d_N(M)=epsilon_N M^n/S_N(M^2),
+S_N(Y)=1+Y+...+Y^(N-1),
+P_N(M)=d_N(M)F_N(M^2).                                (6.1)</code></pre>
+<p>Along the actual meridian path M_lambda=exp(-pi*i lambda), the only possible interior poles are simple and occur at</p>
+<pre><code>lambda_k=k/N, M_k=exp(-pi*i k/N), 1&lt;=k&lt;N.             (6.2)</code></pre>
+<p>A pole is removable if the corresponding actual color vanishes. The actual finite-color identity and reciprocity give</p>
+<pre><code>F_N(M_k^2)=F_N(Q_N^(-k))=C_k(q_N).                   (6.3)</code></pre>
+<p>Direct differentiation of S_N gives the exact wall residue</p>
+<pre><code>Res_(lambda_k)[P_N(M_lambda)d lambda]
+  =epsilon_N (-1)^k sin(pi k/N) C_k(q_N)/(pi N).       (6.4)</code></pre>
+<p>Equivalently the canonical meridian one-form has</p>
+<pre><code>Res_(M_k)[P_N(M)dLog M]
+  =-i epsilon_N (-1)^k sin(pi k/N) C_k(q_N)/N.         (6.5)</code></pre>
+<p>Proof: at a nontrivial root Y_k, S_N’(Y_k)=-N Y_k^(-1)/(1-Y_k). Also M_k<sup>(N-1)(1-M_k</sup>2)=(-1)^k 2i sin(pi k/N). Substitution into the ordinary simple-pole formula proves both equations. They retain the original phase, parity and full source factor.</p>
+<p>The independently established actual ordinary-color bound is</p>
+<pre><code>|C_k(q_N)|&lt;=D_N=O(N^(b-1)), 1&lt;=k&lt;N,</code></pre>
+<p>for a fixed b-strand knot braid. Hence</p>
+<pre><code>sum_k |Res[P_N dLog M]|
+   &lt;=(D_N/N)cot(pi/(2N)) &lt;2D_N/pi.                   (6.6)</code></pre>
+<p>The corresponding total closed-contour correction is at most 4D_N. For d lambda the bound is smaller by pi. These are polynomial source-wall charges for every knot in this actual presentation, not estimates imported from a geometric saddle.</p>
+<p>More generally a transport kernel holomorphic at these walls multiplies each residue by its literal value there. A bound for that kernel is additional input. Singular kernels require their actual derivative residues and cannot be covered by (6.6) alone.</p>
+<p>Equations (6.4)–(6.6) are meridian-integral statements. They do not express the Kashaev point evaluation as such an integral or prove that an unknown geometric transport has polynomial wall values. The universal charges themselves are now exact and bounded. The <a href="regularized_kashaev_period.html">existing regular-period decomposition</a> already separates these ordinary-color principal parts from the regular quotient carrying the complete value. Thus even all the residues in (6.5), with their normalization fixed, do not determine that regular part or its large-level norm.</p>
+<h3 id="the-endpoint-central-sign-is-an-actual-source-line-character">6.1 The endpoint central sign is an actual source-line character</h3>
+<p>The original reduced state depends on M^2, so it is unchanged by M-&gt;-M. Its full source satisfies exactly</p>
+<pre><code>P_N(-M)=(-1)^(N-1)P_N(M),
+P_N(M^(-1))=P_N(M).                                  (6.7)</code></pre>
+<p>For the second identity use reciprocity and S_N(Y<sup>(-1))=Y</sup>(-(N-1))S_N(Y). Thus the semisimple detour ends at the same reduced complete Kashaev value, with a completely specified full peripheral-line sign. In particular</p>
+<pre><code>P_N(M)/M^(N-1)=epsilon_N F_N(Y)/S_N(Y)</code></pre>
+<p>descends as a rational function of Y. P_N itself descends in the character line of the double cover M^2=Y. This is an exact property of the actual finite source, independent of an assumed classical coherent dressing. The matrix Weyl adapter carries additional integral information; its norm is not replaced here by this scalar calculation.</p>
+<h2 id="the-unresolved-full-knot-continuation-is-sharply-separated">7. The unresolved full-knot continuation is sharply separated</h2>
+<p>The homotopy (4.3) is universal for the meridian orbit and compact source. To lift it to the full geometric critical family one must continue the marked A-curve branch and all crossing charts along the chosen M path. Ramification, ideal places, vanishing chart denominators and branch monodromy can occur. The local Rivin algebraic place does not establish that global continuation.</p>
+<p>A finite cover can record monodromy, and the normalization of an algebraic A-curve supplies a proper compact curve. Neither fact ensures that its lifted endpoint is the central twist of the chosen geometric representation, keeps its finite source lattice regular, or bounds a transport kernel at the walls. Such assertions must be proved with their marked source; they do not follow from the orbit homotopy alone.</p>
+<p>Nor can a finite etale cover remove the fixed-meridian wall class. Pull back Xi and sum the lifts of the two cycles. Their period difference is the covering degree times -c^2, still nonzero in characteristic zero. Equivalently pushforward of an upstairs cobordism would contradict (1.4). A cover can retain a spin or branch mark; it cannot turn this non-torsion cycle correction into zero while preserving the selected cycle.</p>
+<p>What is now explicit is the entire universal obstruction and its possible detour: one Gauss wall torus at fixed meridian; one peripheral Cech charge when varying it; one actual central-sign line; and finitely many ordinary-color source residues with total polynomial norm. These remain meaningful before quantum jets. They do not identify the normal d at fixed N with h_N, or prove the geometric selected phase or the volume norm.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_meridian_homotopy_wall_and_source_residues.py">exact audit</a> checks the chart clutch, both homotopies, wall orientation, curvature degree, all parity signs and actual finite-source residues. The <a href="gauss_wall_cycle_and_peripheral_flux.html">independent Gauss-wall/flux proof audit</a> also verifies the cycle sign, global clutch, peripheral convention and actual source residue formulas.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/meridian_homotopy_wall_and_source_residues.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#a-closed-form-detects-the-fixed-meridian-obstruction">1. A closed form detects the fixed-meridian obstruction</a><a href="#the-necessary-relative-cycle-is-one-explicitly-oriented-wall-torus">2. The necessary relative cycle is one explicitly oriented wall torus</a><a href="#the-integer-winding-cannot-be-erased-at-fixed-meridian">3. The integer winding cannot be erased at fixed meridian</a><a href="#varying-the-meridian-gives-an-explicit-global-orbit-homotopy">4. Varying the meridian gives an explicit global orbit homotopy</a><a href="#the-avoided-wall-reappears-as-a-marked-peripheral-cech-period">5. The avoided wall reappears as a marked peripheral Cech period</a><a href="#every-actual-meridian-wall-charge-is-an-ordinary-color">6. Every actual meridian wall charge is an ordinary color</a><a href="#the-unresolved-full-knot-continuation-is-sharply-separated">7. The unresolved full-knot continuation is sharply separated</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

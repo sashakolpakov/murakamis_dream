@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Even paired black, ordinary-white and original marked contractions · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_even_central_black_white_marked_contraction.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="even-paired-black-ordinary-white-and-original-marked-contractions">Even paired black, ordinary-white and original marked contractions</h1>
+<p>29 October 2026. The actual EVEN central two-vertex source has an exact positive marked contraction, despite the zero self-pairing of every paired image. The calculation uses the true ordinary metric and a regular generic lift of the full nilpotent coupon. It does not replace the paired channel by a projector, move the mark onto an ordinary quotient, or identify white with the Hermitian adjoint of black.</p>
+<p>For N=2m&gt;=4 put j=m-1, d=N-1, theta=pi/N. Write the already proved actual black scalar as</p>
+<pre><code>A_N=q^[1-m(m-1)] S_N,
+S_N=sum_(k=1)^(m-1) sin(k theta)cos(k theta) beta(m,k)^4&gt;0.</code></pre>
+<p>Then the original marked two-vertex source, with all three circles in this paired central sector, is EXACTLY</p>
+<pre><code>Z_even=8 N^3 S_N^2/cos(theta)
+      =(1/2)exp(2N v8/pi)[1+O(1/N)].             (1)</code></pre>
+<p>The N=2 central sector is zero. Other joint channels and their coherent sum are not evaluated here. For comparison, the <a href="actual_central_black_white_marked_contraction.html">odd simple central contraction</a> is N^3 S_N^2 with its different odd quartic S_N.</p>
+<h2 id="actual-paired-image-and-its-genuine-pivotal-dual">1. Actual paired image and its genuine pivotal dual</h2>
+<p>Use q=exp(pi i/N), Q=q^2, x=q^d, F_r=(Q;Q)_r. Let W:Q_j-&gt;V_N tensor V_N be the full actual Clebsch map in the <a href="actual_trivalent_even_central_normal_packet.html">even normal source packet</a>. Q_j has dimension 2j+1=N-1 and its genuine ordinary metric is</p>
+<pre><code>G_rr=sin((r+1)theta)/sin(theta), 0&lt;=r&lt;=2j,
+pi=G^(-1) W^dagger P,
+pi W=0,
+L_c=h0 W pi, h0=2N/sin(theta).                  (2)</code></pre>
+<p>L_c is the COMPLETE c=-2cos(theta) sector of the original circle. Its first normal has already been applied in (2). It is nonzero and nilpotent; it is not the spectral projector of that paired cluster.</p>
+<p>The original physical self-duality is</p>
+<pre><code>p_(a,b)=N x^(-b)delta_(a+b,d),
+ell_(a,b)=x^a/N delta_(a+b,d), ell=p^(-1).</code></pre>
+<p>On Q_j choose the ordinary self-duality with highest coefficient one:</p>
+<pre><code>pQ_(r,2j-r)=(-q^(2j))^r Q^[-r(r+1)/2]
+                         F_r F_(2j-r)/F_(2j),
+ellQ=pQ^(-1).                                  (3)</code></pre>
+<p>For a map W its genuine right dual is</p>
+<pre><code>D(W)=pQ^T W^T(ell^T tensor ell^T)P.</code></pre>
+<p>It is a bilinear pivotal dual. The actual all-input equality is</p>
+<pre><code>D(W)=gamma pi,
+gamma=q^[3m^2-2m+1]/N^2.                        (4)</code></pre>
+<p>Both maps preserve the actual INTEGER H grading. In that homogeneous Hom space a map onto the simple Q_j has, after duality, a highest vector in the uniquely determined pair kernel of degree m. Its highest equation is a first-order recurrence with all its interior coefficients nonzero. Thus this homogeneous Hom space is one-dimensional. Periodic K aliases in other integer degrees are not asserted to be absent from an unrelated ungraded Hom problem.</p>
+<p>To fix the scalar without a normalization convention, take input colors a,b with a+b=m. The actual lowest endpoint is</p>
+<pre><code>W_(2j)(j+a,d-a)=q^j h_a,
+h_a=q^(ma) beta(m,a).</code></pre>
+<p>Since pQ_(2j,0)=q^(-2j), the left side of (4) is q<sup>(-j)x</sup>m h_a/N^2; the right row before gamma is conjugate(h_b). The ratio h_a/conjugate(h_b)=q<sup>(m</sup>2) gives (4).</p>
+<p>The dual in the opposite direction satisfies D(pi)=gamma^(-1)W. Indeed direct matrix multiplication gives</p>
+<pre><code>D^2(W)=(K_V^(-1) tensor K_V^(-1)) W K_Q=W.</code></pre>
+<p>The signs from the two physical factors square to one. No use is made of the false equality pi W=I.</p>
+<p>Let J=p_16 p_23 p_45 be the original nested black cup source. Define</p>
+<pre><code>U=pi^tensor3 J,
+Lambda=ell^S W^tensor3.</code></pre>
+<p>The original nested matching is unchanged by right-dual reversal, so exactly as an index identity,</p>
+<pre><code>Lambda=gamma^3 D_Q(U).                          (5)</code></pre>
+<p>The true black tensor is</p>
+<pre><code>U=s Theta, s=N^3 A_N/G_jj=N^3 A_N sin(theta),    (6)</code></pre>
+<p>where Theta is the actual invariant in Q_j^tensor3 normalized to one at magnetic colors (2j,j,0). This is the independent ordinary 3j of the even source theorem, not a tensor defined by dividing U by a selected entry.</p>
+<h2 id="a-generic-finite-theta-evaluation-proved-by-vandermonde">2. A generic finite theta evaluation, proved by Vandermonde</h2>
+<p>Temporarily take a generic parameter zeta, write Q=zeta^2 and F_r=(Q;Q)_r. In the ordinary highest-weight 2j object, with the cup (3), the highest vector for the same ordinary object inside its square has entries</p>
+<pre><code>h_a=(-1)^a Q^[-a(a+1)/2]
+                 F_(j+a) F_(2j-a)/(F_j F_(2j)),
+0&lt;=a&lt;=j.                                       (7)</code></pre>
+<p>This follows directly from h_(a+1)/h_a=-Q<sup>(-a-1)(1-Q</sup>(j+a+1))/(1-Q^(2j-a)). Let WQ_r=F_pair^r h/F_r. Its entire lowest slice is</p>
+<pre><code>WQ_(2j)(j+a,2j-a)=h_a.                         (8)</code></pre>
+<p>For a finite proof, both sides obey the same first-order lowest F equation. At a=j the actual divided coproduct gives</p>
+<pre><code>sum_(s=0)^j (Q^-j,Q^(j+1);Q)_s/F_s^2
+   =(Q^-j;Q)_j/F_j=(-1)^j Q^[-j(j+1)/2].</code></pre>
+<p>This is the second finite Chu identity (obtained by base inversion from the elementary finite proof in <a href="actual_half_color_quadratic_source_transform.html">the quadratic source transform, section2</a>). It equals h_j, proving (8) with scalar one.</p>
+<p>Schur’s first-order highest recurrence makes D(WQ)WQ a scalar eta_j times the identity. Evaluate it on the highest vector using (3),(8):</p>
+<pre><code>eta_j=(-1)^j Q^[-j(j-1)/2]
+     sum_(a=0)^j Q^[-(j+1)a]
+                [j+a choose a]_Q [2j-a choose j-a]_Q
+   =(-1)^j Q^[-j(3j+1)/2] [3j+1 choose j]_Q.    (9)</code></pre>
+<p>The last equality is elementary Vandermonde: the summation is the coefficient of u^j in</p>
+<pre><code>1/[(uQ^(-j-1);Q)_(j+1)(u;Q)_(j+1)]
+   =1/(uQ^(-j-1);Q)_(2j+2).</code></pre>
+<p>Expand each reciprocal finite product by its elementary coefficient formula. This proves (9) as a finite rational identity, without a published theta or 6j evaluation.</p>
+<p>Set Theta0=(WQ tensor I)pQ. Its stated anchor is</p>
+<pre><code>a_j=(Theta0)_(2j,j,0)=(-1)^j zeta^[-j(j+3)].     (10)</code></pre>
+<p>The actual cap/cup index contractions give K_Q T=eta_j I for the cut theta, where T_st=sum_(a,b)Theta0_(a,b,s)D(Theta0)_(a,b,t). Equivalently this follows from the invariant E equations, which give K_Q T scalar, and the same highest coefficient used in (9). Consequently the normalized invariant Theta=Theta0/a_j obeys</p>
+<pre><code>D(Theta)Theta=eta_j [2j+1]_zeta/a_j^2.           (11)</code></pre>
+<p>At the even root this expression, and the entire effective cut, are ZERO: [3j+1 choose j]<em>Q has a simple factor 1-Q^N, while F_j and F</em>(2j+1) are units. This is why the odd retraction argument cannot be reused.</p>
+<h2 id="retain-the-physical-mark-by-a-regular-normal-trace-quotient">3. Retain the physical mark by a regular normal trace quotient</h2>
+<p>Lift the physical V_N, the ordinary Q_j and their cups to the same generic parameter zeta near q. An explicit regular lift of W starts at physical degree t=d-j=m with highest coefficients</p>
+<pre><code>h_a(zeta)=(-1)^a zeta^(-da)
+   Q^[a(t-1)-a(a-1)/2] (Q^(j+1);Q)_a F_(d-a)/F_d,</code></pre>
+<p>and uses the actual divided-F descendants through r=2j. Its highest recurrence proves covariance, and factorial reflection gives exactly the root h_a in section1. All defining factorial denominators have index &lt;=d&lt;N, including F_d in this highest lift. They are units. Define the regular lift</p>
+<pre><code>pi(zeta)=gamma^(-1) D(W(zeta)),</code></pre>
+<p>using the FIXED root gamma from (4). It specializes to the genuine pi in (2). Thus h0 W(zeta)pi(zeta) is a regular Hopf coupon whose root value is the exact full-normal circle sector L_c.</p>
+<p>This is a chosen regular lift for a FIXED-ROOT identity. It is not a claim that the original moving-q circle or pivot has this entire generic normal germ.</p>
+<p>The lifted U is s(zeta)Theta(zeta), with s holomorphic and its root value given by (6). The generic ordinary closed physical diagram with coupons W pi is therefore, by (5),(11),</p>
+<pre><code>F(zeta)=gamma^3 s(zeta)^2
+                 eta_j(zeta)[2j+1]_zeta/a_j(zeta)^2. (12)</code></pre>
+<p>Cut the ORIGINAL marked physical arc before closing it. Its open map is a scalar t(zeta)I on the physical highest-weight d module. All its entries are regular, so t is holomorphic at q. The physical cup has p0=N zeta<sup>(-d</sup>2), and direct cup/cap multiplication gives</p>
+<pre><code>ell p^T=(-1)^d K_V,
+F(zeta)=(-1)^d [N]_zeta t(zeta).                (13)</code></pre>
+<p>At the root this is exactly the original pivot K^(1-N), since K<sup>N=(-1)</sup>d I. The unrestricted original marked row satisfies m p=1, so its fixed-root closure is t(q). The mark has remained on the physical V_N strand throughout. No paired projector or arbitrary modified-trace axiom is introduced.</p>
+<p>The zero in (11) is simple. Since N=2m, j=m-1 and 3j+1=N+j-1, factor that zero explicitly in (9), giving</p>
+<pre><code>lim_(zeta-&gt;q) eta_j [2j+1]_zeta/[N]_zeta
+   =(-1)^j q^[-3j(j+1)+d]
+                       N/[(1-Q^j)F_(2j)].      (14)</code></pre>
+<p>Indeed F_(3j+1)/(1-Q^N) specializes to N F_(j-1). Equation (14) retains the normal responsible for the original marked scalar; it is not obtained by setting the ordinary zero to a positive value.</p>
+<p>From (12)–(14), the marked scalar for three W pi coupons is</p>
+<pre><code>t(q)=(-1)^(m+1) q^(-2)
+                     sin(theta)^2 tan(theta) A_N^2. (15)</code></pre>
+<p>Substitute gamma from (4), s from (6), a_j from (10), and use</p>
+<pre><code>F_(2j)=N/(1-Q^-1),
+(1-Q^-1)/(1-Q^j)=i tan(theta).</code></pre>
+<p>These identities give every phase in (15). Multiplying by h0^3, then using A_N=q<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>S_N and q^N=-1, cancels the remaining phase and proves (1). Each fixed edge twist R^e L_c contributes its literal unit omega_j^e, where</p>
+<pre><code>omega_j=kappa(-1)^j q^[j(j+1)].</code></pre>
+<p>The complete expression therefore acquires omega_j^(e1+e2+e3). Any external original line factor chi_N stays outside this raw formula.</p>
+<h2 id="an-explicit-checkable-marked-co-source-identity">4. An explicit checkable marked co-source identity</h2>
+<p>Use the unscaled W-coordinate white tensor Vm of the <a href="actual_trivalent_complete_circle_vertex_kernel.html">literal branching vertex</a>, and the independently normalized Theta in (6). The same result is equivalently the full coherent magnetic sum</p>
+<pre><code>sum_(r1,r2,r3) Theta_(r1,r2,r3) conjugate(Vm_(r1,r2,r3))
+   =N^4 sin(theta)^2/cos(theta) conjugate(A_N).   (16)</code></pre>
+<p>The ordinary white covector is nonzero and equals (5), but its closed pairing with U is zero. Formula (16) evaluates the original marked normal co-source instead. It does not assert equality of the marked white tensor with an adjoint black tensor on arbitrary exteriors, and gives no full magnetic norm estimate.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_even_central_black_white_marked_contraction.py">focused audit</a> checks the generic finite theta evaluation separately from exact root source/duality data and literal full physical marked closures. The analytic argument above proves every even level N&gt;=4, including composite levels. The N=2 zero is retained separately.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>1-m(m-1)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_even_central_black_white_marked_contraction.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#actual-paired-image-and-its-genuine-pivotal-dual">1. Actual paired image and its genuine pivotal dual</a><a href="#a-generic-finite-theta-evaluation-proved-by-vandermonde">2. A generic finite theta evaluation, proved by Vandermonde</a><a href="#retain-the-physical-mark-by-a-regular-normal-trace-quotient">3. Retain the physical mark by a regular normal trace quotient</a><a href="#an-explicit-checkable-marked-co-source-identity">4. An explicit checkable marked co-source identity</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

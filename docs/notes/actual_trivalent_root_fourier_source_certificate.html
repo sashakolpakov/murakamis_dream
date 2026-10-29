@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An independent root-Fourier certificate for the trivalent black scalar · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_trivalent_root_fourier_source_certificate.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="an-independent-root-fourier-certificate-for-the-trivalent-black-scalar">An independent root-Fourier certificate for the trivalent black scalar</h1>
+<p>29 October 2026. This derives an EXACT Euler-polynomial coefficient formula from the actual highest/descendant source. It proves its integer saturation support J&gt;=d by cancellation of a complete Fourier mode. The positive C R identity is not assumed in this derivation; its remaining finite transformation is now separately <a href="finite_trivalent_euler_racah_transform.html">proved</a>. This coefficient certificate retains all original phases and root endpoint currents.</p>
+<p>Let N&gt;=2, d=N-1, q=exp(pi i/N), Q=q^2, x=q^d, F_a=(Q;Q)_a. Assume integer 0&lt;=j_i&lt;=floor(d/2) satisfying the triangle inequalities, and put r=j_2+j_3-j_1 and J=j_1+j_2+j_3. Thus 0&lt;=r&lt;=2min(j_2,j_3). Use the original balanced coproduct and highest vectors h<sup>(j)_k=q</sup>(k^2)[d-j choose k]_Q. The selected actual black coefficient is N^3 A, with</p>
+<pre><code>A=q^[-j_1(d-2j_1)] sum_k x^[k+j_1+j_3-2d]
+   conjugate[h^(j_1)_k h^(j_3)_k
+      W^(j_2)_r(j_3+k,d-j_1-k)].                 (1)</code></pre>
+<p>Here k=0,…,min(d-j_1,d-j_3), W<sup>(j)_r=F_pair</sup>r h^(j)/F_r. This is the literal endpoint extraction of the all-port vertex, including its lowest-column phase; no generic 6j formula is used.</p>
+<h2 id="exact-coefficient-theorem">1. Exact coefficient theorem</h2>
+<p>Define the unnormalized Jackson difference</p>
+<pre><code>D_Q g(T)=[g(T)-g(QT)]/T,
+D_Q T^h=(1-Q^h)T^(h-1),
+f(T)=(TQ^(1-j_3);Q)_(j_3),
+g(T)=(TQ;Q)_(j_2).</code></pre>
+<p>The source-exact identity is</p>
+<pre><code>A= N q^E/[F_(j_1)F_(j_2)F_(j_3)F_r]
+                     *[T^d] g(T)^2 D_Q^r f(T)^2,
+E=3j_1^2+j_2^2+j_3^2-2j_1j_2-2j_1j_3
+                          +2j_2j_3-2j_3-2.       (2)</code></pre>
+<p>Every polynomial and denominator is finite; all denominator indices are below N. In particular deg(g^2 D_Q^r f^2)=J, so</p>
+<pre><code>J&lt;d implies A=0 EXACTLY.                         (3)</code></pre>
+<p>This is an original-source cancellation before taking absolute values, not an admissibility rule imposed on a guessed 6j symbol.</p>
+<h2 id="own-finite-fourier-proof">2. Own finite Fourier proof</h2>
+<p>The original coproduct binomial gives, with b=d-j_1-k,</p>
+<pre><code>W^(j_2)_r(j_3+k,b)=F_(j_3+k)F_bF_(d-j_2)
+  *sum_z q^(z^2)x^[-r+j_3+k-z]
+   Q^[z(r-j_3-k+z)]
+   /[F_z^2 F_(d-j_2-z)^2 F_(j_3+k-z)
+                                  F_(j_2-j_1-k+z)].</code></pre>
+<p>The range is exactly where every displayed denominator index is nonnegative and &lt;N. Substitute this and the two highest vectors in (1). Use only</p>
+<pre><code>conjugate(F_a)=(-1)^a Q^[-a(a+1)/2]F_a,
+F_(d-a)=N(-1)^a Q^[a(a+1)/2]/F_a,
+q^N=-1.</code></pre>
+<p>After the factors N cancel, the result is</p>
+<pre><code>A=(-1)^(j_3)q^B/[F_(j_1)F_(j_2)F_(j_3)]
+  *sum_(k,z) (-1)^(k+z)
+   q^[(k-z)^2+(1+2j_1-2j_2)k+(1-2j_3)z]
+   [(Q^(k+1);Q)_(j_3)(Q^(z+1);Q)_(j_2)]^2
+   /[F_(j_3+k-z)F_(j_2-j_1-k+z)],
+B=3j_1^2-2j_1j_2+j_2^2-j_3-2.                  (4)</code></pre>
+<p>Equation (4) displays all phase bookkeeping; no root sign is left in an unspecified scalar. Put l=k-z and p=j_3+l. The two last factorials force p=0,…,r. For fixed p the z-dependent factor is</p>
+<pre><code>Q^[(1-r)z]
+   (Q^(z+p-j_3+1);Q)_(j_3)^2(Q^(z+1);Q)_(j_2)^2.</code></pre>
+<p>Its sum extends EXACTLY to z=0,…,N-1. For z&gt;d-j_2 the second Euler factor contains 1-Q^N. If k=z+p-j_3&lt;0 then k&gt;=-j_3 and the first factor contains 1-Q^0; if k&gt;d-j_3 it contains 1-Q^N. There is no k&gt;=N wrap because z&lt;=d-j_2 and p-j_3&lt;=j_2-j_1 imply k&lt;=d-j_1. Thus all added states are killed by their literal factorial zeros.</p>
+<p>For a polynomial P(T) of degree &lt;=2(j_2+j_3)&lt;2N, complete root Fourier summation consequently selects precisely</p>
+<pre><code>sum_(z=0)^(N-1) Q^[(1-r)z]P(Q^z)
+            =N([T^(r-1)]P+[T^(N+r-1)]P).         (5)</code></pre>
+<p>Absent or negative coefficient indices mean zero. The p sum in (4) is, after its explicit constant phase is extracted,</p>
+<pre><code>H(T)=sum_(p=0)^r (-1)^p Q^[p(p-1)/2+(1-r)p]
+               [r choose p]_Q f(Q^pT)^2.</code></pre>
+<p>If f(T)^2=sum_h c_h T^h, the finite binomial theorem gives</p>
+<pre><code>H(T)=sum_h c_h T^h(Q^(1-r+h);Q)_r
+     =T^r D_Q^r f(T)^2.                         (6)</code></pre>
+<p>In fact for h&lt;r the product contains 1-Q^0, while for h&gt;=r it equals F_h/F_(h-r). Therefore the LOW Fourier coefficient r-1 in (5) vanishes EXACTLY. The surviving high coefficient is [T^(N+r-1)]g<sup>2H=[T</sup>d]g<sup>2D_Q</sup>r f^2. The p-independent phase in (4) is q^E, with E as in (2), and its factorial denominator is F_r. This proves (2) and (3), including r=0 and all level parities.</p>
+<h2 id="a-finite-low-degree-version-at-saturation-depth-delta">3. A finite low-degree version at saturation depth delta</h2>
+<p>For delta=J-d&gt;=0, put c_e=[U^e](U;Q)_(j_3)^2. Reversal of the two finite Euler products in (2) gives</p>
+<pre><code>[T^d]g^2D_Q^r f^2
+  =Q^[j_2(j_2+1)-j_3(j_3-1)] [U^delta]
+   (UQ^(-j_2);Q)_(j_2)^2
+   *sum_(e=0)^(2j_3-r) c_e
+                   F_(2j_3-e)/F_(2j_3-e-r) U^e. (7)</code></pre>
+<p>Thus only coefficients &lt;=delta need be computed. All denominator indices in (7) are physical: delta&lt;=j_i and delta&lt;=2j_3-r follow from the bounds on the other two j’s. For any fixed saturation depth this is a fixed-length source formula, with no unspecified boundary data or q-normal derivative. It is not claimed that its summands have a common phase.</p>
+<h2 id="two-entire-saturation-layers-are-manifestly-nonzero">4. Two entire saturation layers are manifestly nonzero</h2>
+<p>Let</p>
+<pre><code>Lead=Q^[j_2(j_2+1)-j_3(j_3-1)]
+                          F_(2j_3)/F_(2j_3-r).</code></pre>
+<p>This is the NONZERO leading coefficient of g<sup>2D_Q</sup>r f^2. Therefore on the entire layer delta=0, equation (2) gives</p>
+<pre><code>A=Nq^E Lead/[F_(j_1)F_(j_2)F_(j_3)F_r]!=0.      (8)</code></pre>
+<p>For delta=1, so J=N, the next-to-leading coefficient divided by Lead is</p>
+<pre><code>-2/(1-Q) [Q^(-j_2)(1-Q^(j_2))
+         +(1-Q^(j_3))(1-Q^(2j_3-r))/(1-Q^(2j_3))]
+  =2Q^(-2j_2)(1-Q^(j_2))(1-Q^(j_2+j_3))
+                                  /[(1-Q)(1+Q^(j_3))]. (9)</code></pre>
+<p>The first equality follows by taking the next coefficient in the two Euler squares before the Jackson derivative: their ratios are -2sum_(a=1)<sup>(j_2)Q</sup>-a and -2sum_(a=0)<sup>(j_3-1)Q</sup>a; the derivative multiplies the latter ratio by (1-Q<sup>(2j_3-r))/(1-Q</sup>(2j_3)). For the second equality use 2j_3-r=J-2j_2=N-2j_2 and cancel the factor 1-Q^(j_3) in 1-Q^(2j_3).</p>
+<p>Every factor on the last line of (9) is nonzero. Indeed J=N and 2j_i&lt;=d force j_i&gt;=1; also j_2+j_3=N-j_1 lies strictly between 0 and N, and j_3&lt;N/2 excludes 1+Q^(j_3)=0. Multiplying (9) by the nonzero prefactor in (2) proves A!=0 on the ENTIRE delta=1 layer, at both level parities. Empty small-N layers are simply absent. These are genuine all-triple source nonvanishing statements, not deductions from a presumed positive formula.</p>
+<h2 id="the-subsequent-exact-transformation">5. The subsequent exact transformation</h2>
+<p>The complete positive formula from this independent route equates the finite coefficient in (2) or (7), including its displayed phase, to</p>
+<pre><code>(-1)^(N+J)q^[2j_1^2-j_1j_2-j_1j_3+j_2j_3-J-3]
+   *[prod_i s_(j_i)/(N s_delta)] R_N(j).</code></pre>
+<p>Equation (3) already proves its saturation-zero branch. The <a href="actual_trivalent_one_channel_source_packet.html">one-central-channel result</a> supplies a proved nonzero boundary line. The finite coefficient-to- short-series and Sears bridge is now proved in the linked finite Euler-to-Racah transform, with an independent square-linearization derivation. Finite experiments alone do not prove it. No sewn-graph energy, magnetic norm or hyperbolic-volume claim is made from this coefficient formula.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_trivalent_root_fourier_source_certificate.py">literal source, Fourier selection and coefficient theorem</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_trivalent_root_fourier_source_certificate.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-coefficient-theorem">1. Exact coefficient theorem</a><a href="#own-finite-fourier-proof">2. Own finite Fourier proof</a><a href="#a-finite-low-degree-version-at-saturation-depth-delta">3. A finite low-degree version at saturation depth delta</a><a href="#two-entire-saturation-layers-are-manifestly-nonzero">4. Two entire saturation layers are manifestly nonzero</a><a href="#the-subsequent-exact-transformation">5. The subsequent exact transformation</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

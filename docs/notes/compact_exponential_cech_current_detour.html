@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The exponential framing detour and its exact compact-source current · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/compact_exponential_cech_current_detour.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-exponential-framing-detour-and-its-exact-compact-source-current">The exponential framing detour and its exact compact-source current</h1>
+<p>Research proof, 27 October 2026. The natural exponential homotopy does not patch in the fixed complete-meridian framing space. Its precise Cech defect is a nonzero affine-cotangent cocycle. Allowing the meridian eigenvalue to vary absorbs that defect and produces a global whole-function detour. The induced compact-source current has an explicit primitive for every actual finite matrix, including all weighted Green-current matrices. Its meridian-normal poles are exact and its finite part retains the original trace.</p>
+<p>The detour changes the meridian and the physical clock. It is not an intertwiner of the actual quantum word or a proof of the geometric/source pushforward. The fixed-complete obstruction and the varying-meridian repair are kept separate below.</p>
+<h2 id="the-fixed-framing-space-and-the-failed-exponential-interpolation">1. The fixed framing space and the failed exponential interpolation</h2>
+<p>Use the actual compact-source charts</p>
+<pre><code>V=1/v, a&#39;=v-v^2 a, T=v a, T&#39;=V a&#39;=1-T,
+omega_0=dv wedge da, omega_I=-omega_0/(2pi*i).</code></pre>
+<p>The resolved complete framing threefold has the additional normal coordinate</p>
+<pre><code>eta&#39;=-v^2 eta.</code></pre>
+<p>Its actual principal full framing form is</p>
+<pre><code>H=-dlog eta wedge omega_0/(1-eta v).         (1)</code></pre>
+<p>The nonzero constant <code>c=2pi*i</code> is fixed. The physical graph is</p>
+<pre><code>eta_phys=(1-exp(-c T))/v,
+eta&#39;_phys=(exp(c T&#39;)-1)/V.                  (2)</code></pre>
+<p>The equality of these expressions uses <code>exp(c)=1</code>. The apparent divisions by v or V are removable at their respective compact poles. These are the explicit actual meridian/source formulas proved in <a href="compact_framing_gauge_and_boundary_residue.html">the framing bridge</a>.</p>
+<p>On the first chart consider the nonvanishing-denominator path</p>
+<pre><code>eta_lambda=(1-exp(-c lambda T))/v,
+1-eta_lambda v=exp(-c lambda T).            (3)</code></pre>
+<p>The transition forced by the fixed threefold is</p>
+<pre><code>eta&#39;_lambda
+  =[exp(-c lambda)exp(c lambda T&#39;)-1]/V.    (4)</code></pre>
+<p>For nonintegral real lambda, (4) has a genuine pole at V=0. The tempting regular second-chart expression <code>[exp(c lambda T')-1]/V</code> differs by</p>
+<pre><code>[exp(-c lambda)-1]exp(c lambda T&#39;)/V.       (5)</code></pre>
+<p>Thus (3) supplies a whole path only on the punctured source chart. It does not define a homotopy of the whole fixed compact source into the complement of the additional divisor <code>1-eta v=0</code>.</p>
+<p>This is also an elementary fixed-base relative obstruction. On the real compact sphere let T run from zero to one along a fixed angular meridian. Any continuous section with finite pole-chart coordinates has <code>1-eta v=1</code> at both endpoints. If it avoids zero, this function is a based loop in C^*. Its winding is zero for the zero section and -1 for (2). A homotopy through such sections cannot change that integer. This argument concerns sections with their two pole fibers retained. The stronger fixed-space tube statement is developed independently in the resolved-relative-cycle calculation; no conclusion about unrestricted deformations of cycles is needed here. The actual fixed-space tube and the generic-meridian source-wall charges are computed in <a href="meridian_homotopy_wall_and_source_residues.html">the meridian homotopy wall theorem</a>.</p>
+<h2 id="the-cech-defect-is-absorbed-by-changing-the-conjugacy-class">2. The Cech defect is absorbed by changing the conjugacy class</h2>
+<p>Put</p>
+<pre><code>h_lambda=exp(-c lambda), u_lambda=exp(-c lambda T),
+k_lambda=1-h_lambda.</code></pre>
+<p>Define the whole matrix</p>
+<pre><code>mu_lambda=
+  [u_lambda, (1-u_lambda)/v;
+   v(u_lambda-h_lambda), 1+h_lambda-u_lambda].          (6)</code></pre>
+<p>It has determinant h_lambda and fixes the retained eigenflag <code>[1:v]</code> with eigenvalue one. The other eigenvalue is h_lambda. On the second chart <code>u_lambda=h_lambda exp(c lambda T')</code>; therefore its potentially bad lower entry is exactly</p>
+<pre><code>h_lambda[exp(c lambda T&#39;)-1]/V,</code></pre>
+<p>which is removable. Formula (6) is a global holomorphic matrix on the entire compact-source surface for every lambda. It equals I at lambda=0 and the physical complete meridian at lambda=1. Its 11 entry never vanishes on the real homotopy, including its two endpoints in each compact fiber.</p>
+<p>Write its upper off-diagonal coordinate as eta_N and its lower off-diagonal coordinate as eta_S. Their exact transition is</p>
+<pre><code>eta_S=k_lambda v-v^2 eta_N.                (7)</code></pre>
+<p>For k_lambda!=0 this is the affine cotangent torsor with class k_lambda. Its class is nonzero: a correction by functions regular on the two affine base charts would have to express v, after division by v^2, as Laurent powers &gt;=0 and &lt;=-2. The missing v^(-1) coefficient prevents this. At lambda=0,1 the affine translation vanishes and (7) returns to the nilpotent line bundle. Thus the repair is a family of conjugacy classes, not a missing regular correction to (4) inside the fixed space.</p>
+<p>The inverse-cut-eigenflag convention of the actual knot model fixes the SL2 lift as</p>
+<pre><code>M_lambda=exp(-c lambda/2), h_lambda=M_lambda^2,
+mu_tilde_lambda=M_lambda^(-1)mu_lambda,
+p=1/v, s=(u_lambda-h_lambda)/M_lambda.</code></pre>
+<p>Then (6) is exactly the existing generic-meridian Gauss matrix</p>
+<pre><code>mu_tilde_lambda=
+  [M+s, -(M-M^(-1)+s)p;
+   s/p, M^(-1)-s].                       (8)</code></pre>
+<p>The actual cut coordinate is consequently</p>
+<pre><code>A_cut=M/(M+s)=h_lambda/u_lambda.            (9)</code></pre>
+<p>At lambda=1 it returns <code>exp(c T)</code>. The SL2 endpoint is the recorded M=-1 sign, whereas its projective meridian is the desired complete meridian. The full kappa term, modified dimension, pivot and other source factors cannot be replaced by their M=1 values in the interior. No analytic continuation of a knot’s geometric A-branch along this eigenvalue path has been proved by (6).</p>
+<h2 id="a-global-whole-function-map-of-the-actual-compact-source">3. A global whole-function map of the actual compact source</h2>
+<p>When k_lambda!=0 set</p>
+<pre><code>a_lambda=(1-exp(-c lambda v a))/(k_lambda v),
+Phi_lambda(v,a)=(v,a_lambda).              (10)</code></pre>
+<p>Equation (7) divided by k_lambda says exactly</p>
+<pre><code>a&#39;_lambda=v-v^2 a_lambda.</code></pre>
+<p>Hence Phi_lambda is a global holomorphic endomorphism of the actual compact-source surface, not merely its meridian chart. It extends at lambda=0 with <code>Phi_0=id</code>. For 0&lt;lambda&lt;1 its fiber derivative is</p>
+<pre><code>J_lambda=partial_a a_lambda
+   =c lambda exp(-c lambda T)/k_lambda !=0.             (11)</code></pre>
+<p>No properness or global injectivity follows from (11). The whole exponential functions, with their marked branches, are retained rather than replaced by their jets.</p>
+<p>There is an exact global primitive</p>
+<pre><code>Phi_lambda^*omega_0-omega_0=d B_lambda,
+B_lambda=-(a_lambda-a)dv.                 (12)</code></pre>
+<p>Indeed differentiation gives (11) minus one. On the second chart both <code>a'_lambda-a'</code> and dV acquire their inverse factors, so B_lambda patches without a Cech remainder. In particular</p>
+<pre><code>integral_Gamma Phi_lambda^*omega_I=1.       (13)</code></pre>
+<p>Directly on the compact cycle this is the elementary identity</p>
+<pre><code>integral_0^1 J_lambda(T)dT=1.</code></pre>
+<p>This supplies an exact compact cohomology/current deformation; there is no free period normalization in it.</p>
+<h2 id="the-current-formula-applies-to-every-actual-finite-word">4. The current formula applies to every actual finite word</h2>
+<p>Let C be any actual finite N-by-N matrix, including the completed weighted word or one of its Green-current matrices. Put n=N-1. Its actual coherent scalar symbol is the regular function</p>
+<pre><code>f_C(v,a)=sum_(i,j=0)^n C_ij binom(n,j)
+              v^i a^j(1-va)^(n-j).        (14)</code></pre>
+<p>The source form is <code>alpha_C=f_C omega_0</code>. Define the explicit current</p>
+<pre><code>B_(C,lambda)
+   =-[integral_(a)^(a_lambda) f_C(v,b) db]dv.           (15)</code></pre>
+<p>The integral in (15) is finite polynomial antiderivation in b; it does not use the value of the trace or the knot period. The coordinate transformation of the scalar f_C and of <code>db dv</code> proves that (15) is a global holomorphic one-form on X. Direct differentiation proves the strict current identity</p>
+<pre><code>Phi_lambda^*alpha_C-alpha_C=d B_(C,lambda).             (16)</code></pre>
+<p>Thus the original finite source is preserved exactly:</p>
+<pre><code>integral_Gamma Phi_lambda^*(f_C omega_I)=Tr(C)/N.       (17)</code></pre>
+<p>For a separate verification, all off-diagonal terms of (14) have angular weight i-j and integrate to zero. A diagonal term reduces under <code>t_lambda=v a_lambda</code> to polynomial antiderivation along the complex path from t_lambda=0 to t_lambda=1:</p>
+<pre><code>binom(n,j)integral_0^1 t_lambda^j
+                        (1-t_lambda)^(n-j)dt_lambda=1/N.</code></pre>
+<p>Whole-word products and every original head projector are formed before (14)–(16). Pullback is not used as a replacement matrix product. Since Phi_lambda is independent of crossing couplings, all coupling Euler operators and the explicit Green moment operators commute with this current map. In particular the full weighted source identity and both remaining framing Green currents retain their literal matrix coefficients and endpoints.</p>
+<p>This gives an actual compact-current deformation of those specified sources. It has not identified their image with the internal geometric Gaussian current.</p>
+<h3 id="the-actual-polar-fiber-support-complex-is-preserved">4.1 The actual polar-fiber support complex is preserved</h3>
+<p>This map retains more than the absolute compact period. Let <code>L_infinity</code> be the actual deleted polar fiber <code>v=infinity</code>, and <code>U=X minus L_infinity</code>, with its affine coordinates (v,a). The source support complex proved in <a href="compact_source_localization_boundary.html">the compact localization theorem</a> is</p>
+<pre><code>C_(L,alg)^k=Omega_alg^k(X) direct_sum Omega_alg^(k-1)(U),
+D(alpha,beta)=(d alpha,alpha|_U-d beta).     (17a)</code></pre>
+<p>Here the exponential detour requires the specified extension</p>
+<pre><code>C_(L,hol)^k=Gamma(X_an,Omega_hol^k)
+                direct_sum Gamma(U_an,Omega_hol^(k-1)).</code></pre>
+<p>The original algebraic source complex maps to this holomorphic complex by inclusion. All subsequent current maps and finite parts in this note take values in this holomorphic complex; they are not asserted to remain algebraic. Equivalently one can use its explicitly generated whole exponential-period subcomplex, including the stated primitives.</p>
+<p>Phi_lambda fixes the base v. It therefore preserves L_infinity and U and defines a strict pullback chain map on C_(L,hol), and hence from the actual algebraic source into this extension. This retains the actual polar-fiber co-source rather than replacing it by an unspecified integration functional.</p>
+<p>For an explicit homotopy, the affine-fiber interpolation</p>
+<pre><code>H_tau(v,a)=(v,a+tau(a_lambda-a))</code></pre>
+<p>is global: the difference of two fiber coordinates transforms linearly. It preserves U as well. Its Cartan homotopy operator on one-forms and two-forms is</p>
+<pre><code>K_lambda beta=integral_(a)^(a_lambda) beta_a(v,b) db,
+K_lambda(f omega_0)=-[integral_(a)^(a_lambda)f(v,b)db]dv.</code></pre>
+<p>It satisfies <code>Phi_lambda^*-id=d K_lambda+K_lambda d</code> directly by differentiation, or by integrating the derivative in tau. In particular <code>K_lambda alpha_C=B_(C,lambda)</code>.</p>
+<p>Take the actual primitive beta_C on U with d beta_C=alpha_C; it is obtained without using its trace by polynomial integration in the v coordinate, as in the localization theorem. The complete source pair has the exact relative identity</p>
+<pre><code>Phi_lambda^*(alpha_C,beta_C)-(alpha_C,beta_C)
+   =D(B_(C,lambda),-K_lambda beta_C).       (17b)</code></pre>
+<p>Indeed its second component is <code>B_(C,lambda)+d K_lambda beta_C</code>, precisely the homotopy formula for beta_C. This fixes the endpoint sign in (17b). The source residue and all co-source endpoint data survive this specified relative chain map. Every coupling derivative commutes with both K_lambda and (17b). Thus (17b) applies coefficientwise to every literal finite Green-current matrix formed from the whole weighted word. It does not replace those matrices by a scalar before composing the word. Commutation with an internal formal Gaussian pushforward has not been proved here.</p>
+<h2 id="exact-finite-part-regularization-at-the-complete-resonance">5. Exact finite-part regularization at the complete resonance</h2>
+<p>Near lambda=1 use the marked normal <code>k=1-exp(-c lambda)</code> and the local branch</p>
+<pre><code>lambda=1-Log(1-k)/c.</code></pre>
+<p>Put <code>u=exp(-c T)</code> and <code>eta_phys=(1-u)/v</code>. Then the whole map has</p>
+<pre><code>a_lambda=eta_phys/k+a u+O(k),
+J_lambda=c u/k+u(1-c T)+O(k).              (18)</code></pre>
+<p>For the identity matrix, (12) gives the explicit pole and finite part</p>
+<pre><code>Phi_lambda^*omega_0
+   =(c u/k)omega_0+u(1-c T)omega_0+O(k),
+(c u)omega_0=d[-eta_phys dv],
+u(1-c T)omega_0-omega_0=d[a(1-u)dv].        (19)</code></pre>
+<p>Thus the pole is exact and the finite-part compact period is one. In particular discarding only the pole coefficient preserves the selected source; discarding the entire current would not.</p>
+<p>More generally (14) has degree at most n in a. Therefore (15) and (16) have poles of order at most n+1=N in k, with a finite principal part. Comparing Laurent coefficients in (16) gives</p>
+<pre><code>every negative coefficient=d(explicit coefficient of B),
+finite_part(Phi_lambda^*alpha_C)
+                     =alpha_C+d finite_part(B_(C,lambda)). (20)</code></pre>
+<p>For the original relative primitive beta_C its a-degree is at most n, so K_lambda beta_C has the same pole bound N. Comparing Laurent coefficients in (17b) therefore strengthens (20): every negative coefficient is exact in the stated holomorphic support complex, and the finite part represents the identical selected relative source class after holomorphic comparison. These coefficients can contain exp(-c T) and are not generally algebraic forms. In particular all negative coefficients have zero compact period, while the finite part retains <code>Tr(C)/N</code> with the original 1/N. No inversion of that trace or nonvanishing assumption is used. The same statement holds coefficientwise for all actual coupling moments. The bound N is color dependent; it is not a color-uniform bound on the uncontracted word or on unknown geometric Gaussian loops. Here lambda is auxiliary and the coefficients of C are fixed, or regular in this source normal. If the actual meridian is coupled to M_lambda, poles of the full modified dimension and other coefficient factors must be added separately. They are not removed by the fiber current (15).</p>
+<h2 id="the-remaining-quantumsource-comparison-is-explicit">6. The remaining quantum/source comparison is explicit</h2>
+<p>The preceding current construction is a genuine global compact source map, but it is not the full sought geometric map. At an image point its ordinary physical coherent clock would be <code>exp(c v a_lambda)</code>. The Gauss detour (6)–(9), instead, has</p>
+<pre><code>A_cut=h_lambda/u_lambda.</code></pre>
+<p>These are different whole functions. Pullback by Phi_lambda is not asserted to preserve the finite star product or to implement the actual quantum-group dressing. The generic-meridian word also contains the complete nonzero vacuum and source factors, which must be transported rather than omitted.</p>
+<p>Consequently (16)–(20) preserve all actual source currents as compact currents, and (6)–(9) give a global noncrossing classical matrix detour, but their compatibility with the actual whole R/base transport still requires a source-preserving map. Simply equating the two clocks would skip that missing step. Coupling lambda to the meridian likewise requires the appropriate chain rule for meridian shifts; it is not implied by their commutation when lambda is an independent auxiliary parameter.</p>
+<p>The fixed-space defect (4)–(5) and the varying-class torsor (7) supply exact data for that comparison. They do not remove the fixed-complete wall tube by a Weyl relabeling. Nor do they prove geometric-branch continuation, all-loop logarithmic extension, selected geometric source survival, or a volume limit.</p>
+<h2 id="exact-audit">7. Exact audit</h2>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_compact_exponential_cech_current.py">audit_compact_exponential_cech_current.py</a> and its <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/compact_exponential_cech_current_results.json">results</a> verify the determinant, retained eigenflag, inverse-flag meridian normalization, affine transition, whole exponential source gluing, and normal pole/finite-part coefficients. For every matrix unit at sizes 2 through 5 they also verify (16), global one-form gluing, both components and the sign of the actual relative support identity (17b), the stated pole bound, and the normalized polynomial trace endpoint. The proof applies to arbitrary N; these are convention and algebra checks, not finite-level evidence for topology or geometric period selection.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/compact_exponential_cech_current_detour.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-fixed-framing-space-and-the-failed-exponential-interpolation">1. The fixed framing space and the failed exponential interpolation</a><a href="#the-cech-defect-is-absorbed-by-changing-the-conjugacy-class">2. The Cech defect is absorbed by changing the conjugacy class</a><a href="#a-global-whole-function-map-of-the-actual-compact-source">3. A global whole-function map of the actual compact source</a><a href="#the-current-formula-applies-to-every-actual-finite-word">4. The current formula applies to every actual finite word</a><a href="#exact-finite-part-regularization-at-the-complete-resonance">5. Exact finite-part regularization at the complete resonance</a><a href="#the-remaining-quantumsource-comparison-is-explicit">6. The remaining quantum/source comparison is explicit</a><a href="#exact-audit">7. Exact audit</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

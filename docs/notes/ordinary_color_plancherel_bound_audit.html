@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Auditing the ordinary-color remainder in the original Fourier energy · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/ordinary_color_plancherel_bound_audit.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="auditing-the-ordinary-color-remainder-in-the-original-fourier-energy">Auditing the ordinary-color remainder in the original Fourier energy</h1>
+<p>28 October 2026. The question is the precise inequality used when replacing the original complete-color value by a positive Fourier norm. The proof below uses the actual finite crossing matrices and a reconstructed positive path trace. No published asymptotic, unitarity, ADO/Jones comparison, or volume-conjecture theorem is a premise.</p>
+<p>The root convention is essential. Set</p>
+<pre><code>q=exp(pi i/N), Q=q^2,
+[j]=sin(pi j/N)/sin(pi/N).</code></pre>
+<p>Let a fixed braid on b strands close to a ONE-component zero-framed knot, and let C_j(q) denote its original reduced ordinary j-color, with unknot value one. Then, for every 1&lt;=j&lt;N,</p>
+<pre><code>|C_j(q)| &lt;= [j]^(b-1) &lt;= sin(pi/N)^(1-b).       (1)</code></pre>
+<p>There is no corresponding assertion at j=N. The statement is also not asserted at arbitrary Galois-conjugate roots.</p>
+<p>The immediate consequence needed in the Fourier argument is the all-level, all-ordinary-color estimate</p>
+<pre><code>0 &lt;= E_N-|K_N|^2 &lt;= (N-1)(N/2)^(2b-2).       (1a)</code></pre>
+<p>Here the braid presentation, and therefore b, is fixed as N varies. Neither hyperbolicity nor alternatingness is needed for this bound. The positive-energy identity is exact; only the replacement of its ordinary-color remainder by a polynomial uses the estimate.</p>
+<h2 id="the-positive-algebra-and-its-trace-can-be-checked-directly">1. The positive algebra and its trace can be checked directly</h2>
+<p>Put delta=q+q^(-1)=2cos(pi/N), and mu_a=sin((a+1)pi/N)/sin(pi/N), 0&lt;=a&lt;=N-2. These numbers are positive; with zero boundary values they satisfy mu_(a-1)+mu_(a+1)=delta mu_a. On walks of length m in the chain 0,…,N-2 starting at zero, let U_i change only the middle height of a return (c,a,c), with coefficient sqrt(mu_a mu_a’)/mu_c. Direct local multiplication gives</p>
+<pre><code>U_i*=U_i, U_i^2=delta U_i,
+U_i U_(i+1) U_i=U_i,
+U_i U_j=U_j U_i for |i-j|&gt;1.</code></pre>
+<p>Consequently B_i=q<sup>(1/2)I-q</sup>(-1/2)U_i is unitary: its eigenvalues are q^(1/2) and -q^(-3/2). The same displayed relations prove the braid relation. Inverse crossings are the actual inverses.</p>
+<p>The weighted trace</p>
+<pre><code>tau_m(A)=sum_walks mu_(last height) A_(walk,walk)</code></pre>
+<p>is positive. Its weight is central in the path algebra because every generator preserves the last height, so it is tracial too. Directly,</p>
+<pre><code>tau_(m+1)(A tensor I)=delta tau_m(A),
+tau_(m+1)((A tensor I)U_m)=tau_m(A).            (2)</code></pre>
+<p>In the first identity sum over the last step using the mu recurrence. In the second identity only the unchanged middle height contributes to the diagonal: mu_c from the last vertex cancels the denominator mu_c of U_m, leaving exactly the weight mu_a on the length-m walk.</p>
+<p>These recursions identify the trace with the ORIGINAL fundamental quantum trace. Indeed the latter has K=diag(q,q^(-1)) and U block [[q,-1],[-1,q^(-1)]] on (01,10), zero on (00,11); its partial K-trace is I and Tr K=delta. Both traces therefore satisfy (2), with value one on the empty diagram. Uniqueness does not require semisimplicity: the Temperley–Lieb relations inductively span the next algebra by the included algebra and elements A U_m B, and traciality plus (2) determine both types. The spanning claim follows by reducing each U_m A U_m with the preceding spanning statement and the two local quadratic/adjacent relations.</p>
+<h2 id="ordinary-colors-are-positive-projections-in-this-trace">2. Ordinary colors are positive projections in this trace</h2>
+<p>Write n=j-1. The recursively defined color projector is</p>
+<pre><code>p_0=p_1=I,
+p_(m+1)=p_m tensor I
+   -[m]/[m+1] (p_m tensor I)U_m(p_m tensor I).</code></pre>
+<p>For n&lt;=N-2 every denominator used is nonzero and every coefficient is real. The local algebra proves idempotence and annihilation by U_1,…,U_(n-1); hence its path realization is an orthogonal projector. The trace recursion gives tau_n(p_n)=[n+1]=[j].</p>
+<p>This is the actual highest-weight color, not a color assigned to an unrelated positive model. In the ordinary fundamental tensor space, the common kernel of the U_i has one vector at each tensor weight: the local 01/10 relation fixes their coefficient ratio and adjacent exchanges connect all words of that weight. The vectors obtained by successive coproduct F-actions on the highest tensor span those lines. Their coefficients involve only nonzero [r]!, r&lt;=n. Thus they give the original j-dimensional highest-weight module. The projector acts as identity on this common kernel and has image in it. Restricting the cabled finite universal R to these images gives the original j-color R, by its coproduct identities. A direct coefficient proof of both identities, including the Cartan factors, is given in the <a href="actual_ordinary_color_comparison_audit.html#4-the-fundamental-cable-is-the-literal-colored-r">independent color audit</a>. The retained highest-vector Cartan scalar is q<sup>(n</sup>2/2); the ordinary framing twist is q^(n(n+2)/2). Both have modulus one.</p>
+<p>For b colored strands let P be the tensor product of these projectors. The trace of a disjoint colored closure, or (2) successively, gives</p>
+<pre><code>tau(P)=[j]^b.</code></pre>
+<p>The cabled braid is unitary in the path representation and preserves P. It also preserves each last-height block. In an orthonormal basis of Im P within each such block, its diagonal entries have modulus at most one and every trace weight is positive. Therefore</p>
+<pre><code>|tau(P B P)| &lt;= tau(P)=[j]^b.</code></pre>
+<p>Dividing by the NONZERO original ordinary quantum dimension [j], and retaining the unit-modulus zero-framing factor, proves (1).</p>
+<p>At j=N the relevant quantum dimension is [N]=0. In the positive path trace the corresponding negligible projector has zero image. The division just used is unavailable. This is precisely why this proof places no polynomial bound on K_N.</p>
+<h2 id="the-ado-orbit-really-has-these-ordinary-color-values">3. The ADO orbit really has these ordinary-color values</h2>
+<p>At the orbit color x=q^(j-1), the original N-dimensional module has the invariant subspace U=span(v_j,…,v_(N-1)); its quotient is the ordinary j-dimensional module. Every tensor factor of the finite R, its inverse, and the pivot preserves U. In a basis adapted to U, each matrix path along an underlying strand can enter U but cannot leave it. A one-component braid closure passes through the open cut. For its quotient block that cut starts and ends outside U, forcing every contributing path around the component to stay in the quotient. Thus the induced cut is exactly the all-j-colored cut, even though the other braid strands were traced first. No assertion of this form is made for a separate closed link component.</p>
+<p>The conventions agree after the explicit signs are kept:</p>
+<pre><code>K^(1-N)=epsilon_j K,
+theta_ADO=epsilon_j theta_ordinary,
+epsilon_j=(-1)^(j-1).</code></pre>
+<p>The braid permutation is a b-cycle, so its writhe w satisfies w=b-1 modulo 2. The resulting sign is epsilon_j^(b-1-w)=1. Consequently the ORIGINAL even meridian family satisfies F_N(Q^j)=C_j(q), with F_N(1)=K_N. This is the filtered matrix argument of <code>root_orbit_pointing.md</code>, with the precise one-component and framing hypotheses exposed.</p>
+<p>To distinguish the two coordinates used in the older notes, write this as</p>
+<pre><code>F_N^M(-q^j)=F_N^Y(Q^j)=C_j(q), Y=M^2.</code></pre>
+<p>The functions in this identity are REDUCED periods. The full ADO state also carries its original modified-dimension factor, which can have a pole at an ordinary orbit point. Neither its value nor a transverse derivative is bounded by (1). No such value or derivative is used in the Fourier remainder below.</p>
+<h2 id="an-explicit-positive-fourier-remainder">4. An explicit positive Fourier remainder</h2>
+<p>Set c_0=K_N and c_j=C_j(q) for 1&lt;=j&lt;N, and use the unitary transform</p>
+<pre><code>chat_k=N^(-1/2) sum_(j=0)^(N-1) Q^(-kj)c_j.</code></pre>
+<p>Finite character orthogonality proves exactly</p>
+<pre><code>E_N:=sum_k |chat_k|^2
+   =|K_N|^2+R_N,
+0&lt;=R_N=sum_(j=1)^(N-1)|C_j(q)|^2
+   &lt;=sum_(j=1)^(N-1)[j]^(2b-2).               (3)</code></pre>
+<p>In particular this remainder is polynomial uniformly over the entire ordinary-color range, including j=N-1, rather than just at fixed j. There is an explicit sharper constant. Put r=b-1&gt;=1 and assume N&gt;r. The Fourier expansion of sin^(2r)(pi j/N) has frequencies -r,…,r. Only its constant coefficient survives summation over all N roots; that coefficient is binom(2r,r)/4^r. The j=0 summand is zero. Hence</p>
+<pre><code>0&lt;=R_N &lt;= N binom(2r,r)/(4^r sin^(2r)(pi/N))
+        &lt;= binom(2r,r) N^(2r+1)/16^r.         (4)</code></pre>
+<p>For b=1 the closure is the unknot and R_N=N-1 instead. For small N&lt;=r the sum bound (3) remains valid without the simplified formula.</p>
+<p>Equivalently chat=K_N u+e, where u is the constant unit vector, e is orthogonal to u, and ||e||^2=R_N. This orthogonality is exact; there is no discarded cross term.</p>
+<p>There is also an unconditional logarithmic statement, which is safer than writing an equality of unsmoothed logarithms before a positive rate has been established. The trivial ordinary color satisfies C_1=1, so R_N&gt;=1 for every N&gt;=2. Set</p>
+<pre><code>P_(N,b)=(N-1)(N/2)^(2b-2)&gt;=1.</code></pre>
+<p>Then the exact energy identity and (1a) give</p>
+<pre><code>1+|K_N|^2 &lt;= E_N &lt;= P_(N,b)(1+|K_N|^2),       (4a)
+0 &lt;= log E_N-log(1+|K_N|^2) &lt;= log P_(N,b).</code></pre>
+<p>In particular, uniformly without any nonvanishing assumption,</p>
+<pre><code>(pi/N)log E_N
+  =(pi/N)log(1+|K_N|^2)+O_b(log N/N).         (4b)</code></pre>
+<p>With log 0=-infinity this is equivalently</p>
+<pre><code>0 &lt;= (pi/N)log E_N-max(0,(2pi/N)log|K_N|)
+   &lt;= (pi/N)log(2P_(N,b)).                   (4c)</code></pre>
+<p>For any fixed V&gt;0, (4a)–(4c) prove</p>
+<pre><code>(2pi/N)log|K_N| -&gt; V
+    if and only if
+(pi/N)log E_N -&gt; V.                           (5)</code></pre>
+<p>The implication from positive energy to the original invariant uses the fact that a polynomial remainder is smaller than any sequence with strictly positive exponential rate. It does not assume eventual nonvanishing of K_N; that nonvanishing follows from the positive energy rate and (3). An unrestricted equality of log E_N and 2 log|K_N| at exponential scale does NOT follow merely from the polynomial remainder: zeros or exponentially small values would invalidate that inference.</p>
+<h2 id="what-is-verified-and-what-remains">5. What is verified, and what remains</h2>
+<p>The existing audit <code>experiments/audit_regularized_kashaev_period.py</code> was independently rerun during this check: all 30 positive-path versus original-cut comparisons, 62 ordinary-color inequalities, and ten exact finite-field polar/orbit calculations passed. Those finite checks supplement the uniform proofs above; they do not prove a volume limit. Two fresh independent audits also passed and were read and rerun by the root agent:</p>
+<ul>
+<li><a href="ordinary_color_positive_trace_independent_audit.html">Positive path algebra</a>: both Markov identities on noncommuting words, the full projection induction including the first zero-dimension projection, and 42 signed colored closures including j=N-1.</li>
+<li><a href="actual_ordinary_color_comparison_audit.html">Original color identification</a>: the uniform one-component filtered trace proof and direct R coproduct calculation, supplemented by 228 exact whole-knot cut comparisons and 22 signed-cable families, with the original Cartan and twist phases.</li>
+</ul>
+<p>The explicit sine-energy identity in (4) was independently checked in 225 pairs (N,r), with 80-digit arithmetic; its proof is the finite character calculation above. No defect was found in either uniform proof. These checks establish the remainder estimate’s stated scope, not the geometric size of the remaining Fourier energy.</p>
+<p>The polynomial remainder in (3) has an independent algebraic proof. The positive energy E_N still requires its geometric exponential estimate. In particular, the canonical cleared operator B(Y-1) becomes Bhat(S-I) in the dual cyclic coordinate and kills the constant mode u exactly. Retaining the original normal/pointed source is therefore essential when estimating that energy. Plancherel validates the positive target; it does not by itself supply its size.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/ordinary_color_plancherel_bound_audit.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-positive-algebra-and-its-trace-can-be-checked-directly">1. The positive algebra and its trace can be checked directly</a><a href="#ordinary-colors-are-positive-projections-in-this-trace">2. Ordinary colors are positive projections in this trace</a><a href="#the-ado-orbit-really-has-these-ordinary-color-values">3. The ADO orbit really has these ordinary-color values</a><a href="#an-explicit-positive-fourier-remainder">4. An explicit positive Fourier remainder</a><a href="#what-is-verified-and-what-remains">5. What is verified, and what remains</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

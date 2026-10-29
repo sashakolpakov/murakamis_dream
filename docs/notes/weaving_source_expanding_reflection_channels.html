@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The weaving reflection source has expanding nonordinary channels · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/weaving_source_expanding_reflection_channels.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-weaving-reflection-source-has-expanding-nonordinary-channels">The weaving reflection source has expanding nonordinary channels</h1>
+<p>28 October 2026. A bounded negative correction would be enough to evade the exact indefinite-Gram obstruction at the leading exponential scale. This note tests a specific way to obtain that correction: ordinary-color unitary traces and finitely many of their source jets. The ORIGINAL five-strand weaving source does not admit that particular reflection-positive decomposition. Its retained projective source has nonreal EXPANDING moment channels, not only the constant channel seen at N=2.</p>
+<p>This is a fixed-root, word-growth theorem. It is NOT a disproof of a polynomial-in-N correction for each fixed knot, an asymptotic positive formula valid only at large N, or a word-dependent scalar norm. Those would require additional arguments. In particular nothing below identifies the negative source terms with the bounded ordinary-color tail of the <a href="regularized_kashaev_period.html">regular meridian period</a>.</p>
+<h2 id="the-exact-arbitrary-width-reflection-pairing">1. The exact arbitrary-width reflection pairing</h2>
+<p>At complete color the ORIGINAL balanced crossing matrices are symmetric:</p>
+<pre><code>R_plus^t=R_plus, R_minus^t=R_minus.</code></pre>
+<p>For example the positive coefficient with input (a,b), output (c,j), c=a+b-j, is</p>
+<pre><code>kappa x^(-b-j) Q^(jb) F_c F_a/(F_(a-j)F_bF_j).</code></pre>
+<p>Transposing exchanges (a,b) with (c,j); c-b=a-j makes this coefficient identical. The negative statement follows by inversion. The proved <a href="signed_green_antiunitary_transport.html">complete antiunitary identity</a> therefore gives R_minus=P R_plus^dagger P, including kappa.</p>
+<p>Let the width p be odd. Put U=product_(i odd)R_i^+, and let J reverse the p head factors. Since the odd crossings are disjoint,</p>
+<pre><code>V=product_(i even)R_i^-=J U^dagger J,
+B=VU=J U^dagger J U,
+B^dagger J=J B.                               (1)</code></pre>
+<p>The actual first-cut source is F=P_0 tensor g^(tensor(p-1)); the equivalent averaged marked row may be used only through its already proved whole-source identity. With the original writhe-zero framing and its external line retained, the reduced weave moments are</p>
+<pre><code>k_n=Tr(F B^n),
+h(X,Y)=Tr(F J X^dagger J Y),
+h(B^i,B^j)=k_(i+j).                           (2)</code></pre>
+<p>Thus a definite reflection subspace containing these half-states would give a positive Hankel form on the sequence (k_n). Equations (1)–(2) are an actual source pairing. They do not assert that the involution J, or its original marked co-source, is positive.</p>
+<p>For p=5 the time-ordered braid block is [1,3,-2,-4]. Its physical over and under encounters alternate, and its strand permutation is a five-cycle. In particular the closures at n=5m+2 are knots. The scalar is the original reduced Kashaev value. Restoring the full ADO dimension line multiplies every moment at this fixed N by the same known nonzero scalar; it changes none of the poles below.</p>
+<h2 id="an-exact-selected-source-computation-at-n3">2. An exact selected-source computation at N=3</h2>
+<p>Put omega=Q=exp(2 pi i/3). Then x=omega and g_a=omega^(1-a). The two positive and two negative common Cartan factors cancel in B. Its entries lie in Z[omega]. The audit constructs this literal operator and its original source exactly, rather than sampling its spectrum numerically.</p>
+<p>The resulting rational generating function is</p>
+<pre><code>G(z)=sum_(n&gt;=0) k_n z^n=A(z)/D(z),             (3)</code></pre>
+<p>where A and D are COPRIME integer polynomials and deg D=43. The full coefficient lists are saved in the audit certificate. The denominator is</p>
+<pre><code>D=-(z-1)^3 P4a^2 P4b P8^2 P12,
+
+P4a=z^4-17z^3+55z^2-17z+1,
+P4b=z^4-5z^3+7z^2-5z+1,
+
+P8=z^8-19z^7+126z^6-380z^5+557z^4
+                  -380z^3+126z^2-19z+1,
+
+P12=z^12-57z^11+1032z^10-8306z^9+34071z^8
+      -75492z^7+95323z^6-75492z^5+34071z^4
+      -8306z^3+1032z^2-57z+1.                 (4)</code></pre>
+<p>The first moments are</p>
+<pre><code>0,1,217,15349,707317,26955828,936961969,... .</code></pre>
+<p>This is not an inferred finite recurrence. After discovering its coefficients, the audit verifies the reversed denominator polynomial as an EXACT annihilating matrix identity on every source-supported integer-degree block. It then verifies the numerator and coprimeness. Cayley–Hamilton-style multiplication of that displayed identity proves (3) at ALL n, independently of any finite fit.</p>
+<p>The ordinary source includes only first-head index zero, hence supports total integer degrees 0,…,8. The exact arithmetic represents a+b omega by the integer matrix [[a,-b],[b,a-b]], so the calculation uses neither floating eigenvalues nor approximate cancellation. The local matrices and pivot are also checked directly against the existing independently assembled ORIGINAL balanced crossing.</p>
+<h2 id="the-retained-source-couples-to-nonreal-expanding-modes">3. The retained source couples to nonreal expanding modes</h2>
+<p>Exact rational root isolation places a root z_0 of P8 in</p>
+<pre><code>.41&lt;Re z_0&lt;.42, .11&lt;Im z_0&lt;.13.              (5)</code></pre>
+<p>In particular |z_0|&lt;1. Numerically z_0 is approximately .4133686+.1189402i, giving |1/z_0| approximately 2.324825. The numerical values are explanatory only; (5) proves expansion. Since gcd(A,P8)=1, this is a genuine DOUBLE pole of the selected whole source. Its moment contribution has the form (a+b n)lambda^n with b!=0 and lambda=1/z_0.</p>
+<p>It survives on the all-knot subsequence n=5m+2. Indeed the exact fifth-power resultant is</p>
+<pre><code>Res_z(P8(z),w-z^5)
+  =w^8-58634w^7+98866981w^6-2511273890w^5
+     +449769171292w^4-2511273890w^3
+     +98866981w^2-58634w+1.                   (6)</code></pre>
+<p>This polynomial is squarefree and coprime to the corresponding resultant of D/P8^2. Thus no two relevant fifth powers collide and cancel the selected double pole. The box (5) also proves Im(z_0^5)&gt;0: for z_0=x+iy it is y(5x<sup>4-10x</sup>2y<sup>2+y</sup>4), whose lower bound on that box is positive. Consequently the generating series of k_(5m+2) has a NONREAL pole strictly inside the unit disk.</p>
+<p>This selected-source assertion is stronger than noticing nonreal eigenvalues in the ambient transfer matrix. Such eigenvalues could have been invisible to the marked cap; coprimeness in (3) proves that these are visible.</p>
+<h2 id="what-this-rules-out-and-what-it-leaves-open">4. What this rules out, and what it leaves open</h2>
+<p>An ordinary-color braid action in the positive path model is unitary. At fixed N, its closing trace is therefore uniformly bounded as the weave repetition varies. Finitely many fixed-order analytic jets of those finite matrices have at most polynomial growth in the repetition: differentiating a product chooses only polynomially many factors, with the remaining zero-order factors unitary. Their generating functions are analytic in |z|&lt;1.</p>
+<p>Suppose the reflection form (2), restricted even to nonempty half-states B^(1+5i), split into a positive form plus such an ordinary-color/finite-unitary-jet correction. Then the sequence k_(5m+2) would differ by a polynomially bounded sequence from a positive Hankel moment sequence. This is impossible because of the nonreal pole just proved.</p>
+<p>Here is an elementary justification, avoiding a spectral-positivity assumption about B. A positive Hankel sequence a_m of exponential size defines the inner product &lt;X<sup>i,X</sup>j&gt;=a_(i+j) on polynomials. Multiplication T by X is symmetric. Iterated Cauchy–Schwarz gives</p>
+<pre><code>||Tf||&lt;=||f||^(1-2^(-j)) ||T^(2^j)f||^(2^(-j)).</code></pre>
+<p>The exponential moment bound makes ||T^n f||&lt;=C_f R^n, so letting j tend to infinity proves ||Tf||&lt;=R||f||. Thus T extends to a bounded self-adjoint operator on the Hilbert completion. Its scalar resolvent &lt;1,(I-zT)^(-1)1&gt; is analytic at EVERY nonreal z. One may verify the usual resolvent fact directly from ||(T-w)f||&gt;=|Im w| ||f|| and the same inequality for its adjoint. It agrees near zero with the moment series. Subtracting a polynomially bounded sequence changes that series by a function analytic in the unit disk, which cannot remove the nonreal pole in (5)–(6). This is the contradiction.</p>
+<p>The conclusion concerns a source-compatible REFLECTION/HANKEL decomposition with a correction uniformly polynomial in repetition. The nonordinary source radical cannot be bounded in that way just by invoking ordinary-color unitarity. It retains expanding channels.</p>
+<p>It remains possible that, for each fixed knot as N tends to infinity, a different marked extension has a polynomially bounded negative part; this fixed-N computation does not decide that question. Likewise a nonlinear or word-dependent norm formula need not give the Hankel form (2), and is not excluded. The positive cyclic norm already known for all knots is a different construction. No broad volume theorem, asymptotic counterexample, or positivity failure for the scalar values themselves follows here.</p>
+<h2 id="reproducible-certificate">5. Reproducible certificate</h2>
+<pre><code>python3 experiments/audit_weaving_source_expanding_reflection_channels.py</code></pre>
+<p>The certificate contains the exact numerator/denominator lists, the matrix-recurrence verification, the rational isolating rectangle, and the disjoint fifth-power resultants. The whole proof uses the original local matrices, source, word and ordinary-color unitarity already independently derived in this repository.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/weaving_source_expanding_reflection_channels.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-exact-arbitrary-width-reflection-pairing">1. The exact arbitrary-width reflection pairing</a><a href="#an-exact-selected-source-computation-at-n3">2. An exact selected-source computation at N=3</a><a href="#the-retained-source-couples-to-nonreal-expanding-modes">3. The retained source couples to nonreal expanding modes</a><a href="#what-this-rules-out-and-what-it-leaves-open">4. What this rules out, and what it leaves open</a><a href="#reproducible-certificate">5. Reproducible certificate</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

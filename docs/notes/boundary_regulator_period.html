@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The boundary period line has an exact volume norm · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/boundary_regulator_period.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-boundary-period-line-has-an-exact-volume-norm">The boundary period line has an exact volume norm</h1>
+<p>Research note, 25 October 2026. This constructs the continuous boundary period and its norm directly from the audited symplectic boundary formula. It is the classical Chern–Simons/regulator framework, not a new quantum definition. No global theorem identifying a published quantum state is assumed. The last section states the exact remaining quantum comparison.</p>
+<p>Use a nondegenerate one-cusped gluing chart, full peripheral rows with pairing -2, and the oriented tetrahedral Bloch lift beta. Flat real shapes other than 0 and 1 are allowed. All logarithms below live on their matched continuation cover; constants from their branches remain.</p>
+<h2 id="the-peripheral-line-and-its-invariant-norm">1. The peripheral line and its invariant norm</h2>
+<p>On the logarithmic cover of (C<sup>*)</sup>2 use U=Log m, V=Log l. Define a line by the deck action</p>
+<pre><code>(U,V,p) -&gt; (U+2pi i a,V+2pi i b,exp(bU-aV)p),
+a,b in Z.                                          (1.1)</code></pre>
+<p>This is an actual action: composing two multipliers introduces only exp(2pi i(bc-ad))=1. The form</p>
+<pre><code>A=-(U dV-V dU)/(2pi i)                              (1.2)</code></pre>
+<p>transforms to A+d(bU-aV), so d-A defines a connection on the line. Its curvature form dA is -dU wedge dV/(pi i). On a peripheral Lagrangian curve, in particular a smooth geometric A-polynomial branch, its pullback is flat.</p>
+<p>Set B(U,V)=Re U Im V-Re V Im U. The norm</p>
+<pre><code>log||p||=log|p|-B(U,V)/(2pi)                         (1.3)</code></pre>
+<p>is invariant under (1.1): B changes by 2pi(b Re U-a Re V), precisely the change of log|p| times 2pi. No choice of a logarithm branch is being hidden in this norm.</p>
+<h2 id="a-branch-compatible-tetrahedron-primitive">2. A branch-compatible tetrahedron primitive</h2>
+<p>For a tetrahedron choose u=Log z and v=Log z’‘, where z’’=1-z^(-1). Write w=Log(1-z)=u+v+pi i k with a fixed odd integer k on the chosen logarithmic sheet. Continue Li_2 so that dLi_2(z)=-w du. Put</p>
+<pre><code>T(z)=Li_2(z)+(1/2)u w+(pi i k/2)u.                 (2.1)</code></pre>
+<p>Direct differentiation gives</p>
+<pre><code>dT=(1/2)(u dv-v du).                               (2.2)</code></pre>
+<p>The compatible branch of the Bloch–Wigner identity gives exactly</p>
+<pre><code>Im T=D(z)-(1/2)(Re u Im v-Re v Im u).              (2.3)</code></pre>
+<p>Indeed D=Im Li_2+Re u Im w; substitute w=u+v+pi i k in (2.1). The k terms cancel in (2.3). The branch identity for D continues because its derivative is single valued and its continuation constants are real: a loop about zero changes u by 2pi i and leaves Li_2 fixed; a loop about one changes w by 2pi i and Li_2 by -2pi i u. Their commutators add multiples of (2pi i)^2. Thus (2.3) does not discard flattening terms by taking an unmatched principal branch.</p>
+<h2 id="centering-the-affine-gluing-equations">3. Centering the affine gluing equations</h2>
+<p>Collect x=(u_j,v_j), with the orientation signs in</p>
+<pre><code>Omega(x,y)=sum_j epsilon_j(u_j y_vj-v_j y_uj).</code></pre>
+<p>The logarithmic edge equations are affine with purely imaginary constants. Choose a purely imaginary vector x_0=i a_0 satisfying those equations and the chosen complete peripheral logarithms. It need not be a shape point. Such a vector is obtained by taking the imaginary part of a complete logarithmic shape point; equivalently one can use the rational angle reference already constructed in the state notes. This existence is asserted for a chart with that complete point.</p>
+<p>Subtract its peripheral values in defining U,V, so U=V=0 at the chosen complete lift. Then xi=x-x_0 satisfies the homogeneous edge equations, xi in E^perp. The audited coisotropic boundary identity is</p>
+<pre><code>Omega(xi,eta)=-(1/2)(U(xi)V(eta)-V(xi)U(eta)),
+xi,eta in E^perp.                                 (3.1)</code></pre>
+<p>This is the same pairing calculation that gives delta beta=-(1/2)m wedge l. Define</p>
+<pre><code>R_X=sum_j epsilon_j T(z_j)-(1/2)Omega(x_0,x)+C,
+C real.                                           (3.2)</code></pre>
+<p>Equations (2.2) and (3.1) prove</p>
+<pre><code>dR_X=-(1/4)(U dV-V dU).                            (3.3)</code></pre>
+<p>The centering term in (3.2) is necessary because the edge equations are affine. Applying a homogeneous symplectic formula without it would lose a branch-dependent linear term.</p>
+<p>There is also an exact norm identity. Since Re x is in E^perp, and Im x-a_0 is in E^perp, (2.3) and (3.1) give</p>
+<pre><code>Im R_X=D(beta)-(1/2)Omega(Re x,Im x-a_0)
+      =D(beta)+(1/4)B(U,V).                        (3.4)</code></pre>
+<p>No angle positivity, saddle estimate or limit is used here.</p>
+<p>Changing the purely imaginary reference within the same affine edge and complete peripheral constraints changes x_0 by an element of E. Its pairing with x-x_0 vanishes. The change in R_X is consequently a real constant, since both references are purely imaginary. Thus this reference choice affects only the unitary phase of P_X below.</p>
+<h2 id="the-regulator-is-a-norm-of-a-parallel-period">4. The regulator is a norm of a parallel period</h2>
+<p>Define on the logarithmic continuation cover</p>
+<pre><code>P_X=exp(2R_X/(pi i)).                              (4.1)</code></pre>
+<p>Equations (3.3)–(3.4) say exactly</p>
+<pre><code>d log P_X=A,
+log||P_X||=2D(beta)/pi.                            (4.2)</code></pre>
+<p>At the geometric complete point the last value is 2Vol(W)/pi. Thus volume is already the norm of a continuous period section. This identity is uniform on the stated nondegenerate gluing charts.</p>
+<p>Two compatible chart presentations of the same marked Bloch lift have the same boundary connection and norm. Their parallel sections therefore differ by a constant of absolute value one on a connected overlap. Under a logarithmic deck change the comparison with the multiplier in (1.1) can likewise retain a constant unitary character. This records a flat phase twist of the pullback line. The calculation does not silently trivialize it or identify it with a particular published Chern–Simons phase. That identification requires the global lift and phase calibration, alongside the finite scalar data of <code>equivariant_roots_and_phase_descent.md</code>.</p>
+<p>The exact five-term invariance of D(beta) already proved in the Bloch note makes the norm in (4.2) independent of its tetrahedral presentation. Its complex phase contains the additional period datum. The boundary symbol alone does not fix the value of that section.</p>
+<p>The action (1.1) and connection (1.2) have the same ordered-coordinate form as the classical line described in Baseilhac–Benedetti, <a href="https://arxiv.org/abs/1212.4261v3">Analytic families of quantum hyperbolic invariants</a>, Section 4.4, equations (56)–(57). Their ordered coordinates are (lambda,mu)=(longitude,meridian), whereas ours were (m,l). Exchanging the ordered coordinates dualizes this line. A literal comparison must therefore retain the peripheral orientation/inversion convention as well as the phase calibration. The connection and volume norm above were derived from the local primitive and coisotropic reduction, without assuming that source’s global identification theorem or a same-order identification of its marked line with ours.</p>
+<h2 id="the-remaining-quantum-comparison-is-now-a-precise-norm-statement">5. The remaining quantum comparison is now a precise norm statement</h2>
+<p>Let J_n be the prescribed, fully normalized literature meridian state at b^2=1/n, evaluated at the complete peripheral point. The conventions in the state notes give h_n=n/(n+1)^2, not 1/n. The requested volume law</p>
+<pre><code>-2pi h_n log|J_n| -&gt; Vol(W)</code></pre>
+<p>is exactly equivalent to</p>
+<pre><code>4h_n log|J_n|+log||P_hyp|| -&gt; 0.                   (5.1)</code></pre>
+<p>The equality log||P_hyp||=2Vol(W)/pi proves this equivalence with all constants fixed. Establishing (5.1) is still a quantum theorem. It requires identifying the selected global period/cycle and controlling its comparison across levels; no finite-level phase normalization proves it. In the actual Faddeev chart the finite central character is t_n=exp((n+1)y), as independently derived in the rational bridge. The map of parameters must therefore remain part of this comparison.</p>
+<p>The work here supplies the exact classical target and its norm. It does not replace the all-alternating goal by a theorem about the existence of that target, or assert an unproved quantum comparison.</p>
+<p>The subsequent <code>rational_period_pushforward.md</code> constructs an exact folded period for the specified source realization and identifies its local gluing/regulator summands with all measures retained. It also shows why boundary specialization can preserve a residue even when the open special gluing fiber has lost its point. Transport and localization of that cycle, followed by (5.1), remain necessary.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/boundary_regulator_period.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-peripheral-line-and-its-invariant-norm">1. The peripheral line and its invariant norm</a><a href="#a-branch-compatible-tetrahedron-primitive">2. A branch-compatible tetrahedron primitive</a><a href="#centering-the-affine-gluing-equations">3. Centering the affine gluing equations</a><a href="#the-regulator-is-a-norm-of-a-parallel-period">4. The regulator is a norm of a parallel period</a><a href="#the-remaining-quantum-comparison-is-now-a-precise-norm-statement">5. The remaining quantum comparison is now a precise norm statement</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

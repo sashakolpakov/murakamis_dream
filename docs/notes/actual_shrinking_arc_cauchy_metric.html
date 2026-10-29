@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A shrinking-arc inner product for the original terminal packet · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_shrinking_arc_cauchy_metric.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-shrinking-arc-inner-product-for-the-original-terminal-packet">A shrinking-arc inner product for the original terminal packet</h1>
+<p>29 October 2026. Weighted Cauchy does not require the full Fourier circle. The exact evaluation norm on a suitably weighted arc is polynomial, uniformly in the arc width. This constructs an additional positive metric on the original complete module. It does not by itself bound its energy by hyperbolic volume.</p>
+<h2 id="an-exact-polynomial-evaluation-theorem">1. An exact polynomial evaluation theorem</h2>
+<p>Let f(t)=sum_(j=0)^d z_j t^j, let a&gt;0, and write</p>
+<pre><code>t_a(s)=(1+i a s)/(1-i a s),  -1&lt;=s&lt;=1,
+Q_a(s)=(1-i a s)^d f(t_a(s)).                       (1)</code></pre>
+<p>The latter is an ordinary polynomial of degree at most d. Define</p>
+<pre><code>E_(a,d)(f)=1/2 integral_(-1)^1 |Q_a(s)|^2 ds
+         =1/2 integral_(-1)^1
+                (1+a^2 s^2)^d |f(t_a(s))|^2 ds.     (2)</code></pre>
+<p>Then the SHARP all-polynomial evaluation inequality is</p>
+<pre><code>|f(1)|^2 &lt;= kappa_d E_(a,d)(f),
+kappa_d=(2m+1)^2 [binom(2m,m)/4^m]^2 &lt;= d+1,
+m=floor(d/2).                                      (3)</code></pre>
+<p>In particular the exact constant does not depend on a. A very small arc need not have an exponential dual-source cost.</p>
+<p>Proof. Let P_j be the Legendre polynomials, normalized by P_j(1)=1. Integration by parts in their Rodrigues formula gives</p>
+<pre><code>(1/2) integral P_j P_k = delta_(j,k)/(2j+1),
+P_(2r)(0)=(-1)^r binom(2r,r)/4^r, P_(2r+1)(0)=0.</code></pre>
+<p>Expand Q_a in this orthogonal basis and apply Cauchy at zero. Its evaluation norm squared is</p>
+<pre><code>sum_(r=0)^m (4r+1) b_r^2=(2m+1)^2 b_m^2,
+b_r=binom(2r,r)/4^r.</code></pre>
+<p>The equality telescopes using b_r/b_(r-1)=(2r-1)/(2r). Induction gives b_m^2&lt;=1/(2m+1), hence the last bound in (3). Equality in the evaluation bound holds for the reproducing polynomial sum_(j=0)^d (2j+1)P_j(0)P_j(s). The map f-&gt;Q_a is an invertible linear map between degree-d polynomial spaces: its inverse is the inverse fractional linear substitution with its denominator cleared. Thus the constant is sharp for every a&gt;0.</p>
+<p>For the unweighted normalized arc energy</p>
+<pre><code>E^0_(a,d)(f)=1/2 integral_(-1)^1 |f(t_a(s))|^2 ds,</code></pre>
+<p>the same proof gives</p>
+<pre><code>|f(1)|^2 &lt;= kappa_d (1+a^2)^d E^0_(a,d)(f).           (4)</code></pre>
+<p>If d=O(N) and a=N^(-A), A&gt;0 fixed, this extra factor is exp(o(N)). For a=1/N it is 1+O(1/N). The measure in (2) is specified in the Cayley coordinate s; it is not silently replaced by uniform angle.</p>
+<h2 id="the-explicit-finite-gram-and-its-original-co-source">2. The explicit finite Gram and its original co-source</h2>
+<p>Let V_(k,j) be the coefficient of s^k in</p>
+<pre><code>(1+i a s)^j (1-i a s)^(d-j),</code></pre>
+<p>and let H_(k,l)=0 for k+l odd and 1/(k+l+1) for k+l even. The coefficient-space Gram of (2) is exactly</p>
+<pre><code>W_(a,d)=V^* H V &gt;0.                                 (5)</code></pre>
+<p>All entries are explicit finite rational combinations of powers of a and i. For the row e=(1,…,1), equation (3) says more precisely</p>
+<pre><code>e W_(a,d)^(-1) e^* = kappa_d.                        (6)</code></pre>
+<p>This is an algebraic inner product construction, not an unknown period inserted into the definition of its own norm. Its condition number can be large; no polynomial condition number is asserted or needed.</p>
+<p>Now use the ACTUAL original terminal packet rows T_j from <a href="actual_terminal_packet_positive_gram.html">the complete terminal construction</a>. They satisfy sum_j T_j=lambda U on every input of the complete module, and are defined before the preceding braid B is chosen. Put</p>
+<pre><code>f_v(t)=sum_j t^j T_j v,
+G_(a,epsilon)=T^* W_(a,d) T+epsilon I, epsilon&gt;0.      (7)</code></pre>
+<p>This is a positive definite metric, including when T is singular. Its original final contraction b=sum_j T_j obeys</p>
+<pre><code>b G_(a,epsilon)^(-1) b^* &lt;= kappa_d &lt;= d+1.           (8)</code></pre>
+<p>For example, factor W=A^*A and use (6) and Cauchy on ATv. The resulting inequality holds for every v; its optimal squared dual norm in G is therefore at most kappa_d. No inverse of T is used.</p>
+<p>For the complete unchanged original source v=B w_0,</p>
+<pre><code>|K_N|^2 &lt;= |chi_N|^2 kappa_d
+            [E_(a,d)(f_v)+epsilon ||v||^2].          (9)</code></pre>
+<p>All external and peripheral factors remain in chi_N. Taking epsilon=exp(-N^2) makes the added term negligible for every fixed original braid, by the already proved exp(O(N log N)) source bound. At arbitrary fixed plat width one can record a fixed number r of physical colors, use the product arc measure, and apply (3) in each variable. The dual cost is product kappa_(d_j)&lt;=product(d_j+1), still polynomial. No source channel is removed.</p>
+<p>For the original figure-eight, T_j Bp=|(Q;Q)_j|^2&gt;=0 exactly. On every unit-circle arc |f_v(t)|&lt;=f_v(1). Equations (2)–(3) give</p>
+<pre><code>|K_N|^2/kappa_d &lt;= E_(a,d)(f_v)
+              &lt;=(1+a^2)^d |K_N|^2.                 (10)</code></pre>
+<p>Hence any a=N^(-A), A&gt;0, has the same known sharp benchmark rate. This uses the original finite positive formula; it is not a general noncancellation assertion.</p>
+<h2 id="precisely-what-localization-does-and-does-not-accomplish">3. Precisely what localization does and does not accomplish</h2>
+<p>With a=1/N, the extra Cartan parameter in the norm stays within O(1/N) of its original value t=1. The comparison no longer requires a sharp estimate at every fixed t on the unit circle. This is a useful change in the proposed metric, not a proof that the local energy is sharp.</p>
+<p>Even a degree-one polynomial can have exponentially amplified local energy. Set f_N(t)=1+exp(cN)(t-1), c&gt;0, use d=1 in (1), and obtain</p>
+<pre><code>Q_a(s)=1+i a s[2exp(cN)-1],
+E_(a,1)(f_N)=1+(a^2/3)[2exp(cN)-1]^2.               (11)</code></pre>
+<p>For a=N^(-A) this has rate 2c although f_N(1)=1. This is an elementary diagnostic, not a knot counterexample. Polynomial degree, localization and controlled evaluation norm alone do not bound jets of the original source. Using d=N-1 only increases the energy of this same f by the weight (1+a<sup>2s</sup>2)^(d-1), so the issue also occurs in the degree-N ambient space.</p>
+<p>Conversely choosing an excessively small arc can make the energy arbitrarily close to the unknown |K_N|^2. That would be an exact reformulation, not an independent geometric estimate. The useful remaining assertion is a source-derived bound on (2), at a prescribed scale such as a=1/N, by exp[N Vol(M)/pi+o(N)].</p>
+<p>There is also no automatic compactness argument from t-&gt;1. The <a href="actual_terminal_effective_cartan_kernel_and_graph.html">complete coupon kernel</a> has an additional orbital channel; its Fourier coordinates can escape while its character coordinates remain bounded. Arc endpoints need not satisfy the full-circle interior phase stationarity equation. Both the calibrated action and accessibility of such contributions remain to be checked before using representation volume.</p>
+<p>The finite Cauchy step, including an explicit metric and polynomial dual cost, is proved. The sharp global quantum-energy estimate and geometric survival remain open.</p>
+<h2 id="a-quantitative-test-for-amplified-source-derivatives">4. A quantitative test for amplified source derivatives</h2>
+<p>The same finite polynomial argument gives a useful lower bound on the proposed energy. For d&gt;=1 let r=floor((d-1)/2) and put</p>
+<pre><code>D_d=sum_(j=0)^d (2j+1)P&#39;_j(0)^2
+   =[(2r+1)(2r+3)b_r]^2/3 &lt;= (d+2)^3/3.            (12)</code></pre>
+<p>Indeed P’_(2r+1)(0)=(-1)^r(2r+1)b_r; the sum telescopes as in Section 1. Evaluation of the derivative at zero therefore gives</p>
+<pre><code>E_(a,d)(f) &gt;= a^2 |2f&#39;(1)-d f(1)|^2 / D_d.          (13)</code></pre>
+<p>Here Q’_a(0)=i a[2f’(1)-d f(1)] exactly. The upper bound on D_d follows from b_r^2&lt;=1/(2r+1), 2r+1&lt;=d and 2r+3&lt;=d+2. For the unweighted arc energy divide the right side by (1+a<sup>2)</sup>d. Thus an actual source with an excessive exponential first derivative would refute sharpness of every polynomially shrinking arc in this metric family. A numerical growth trend alone does not prove that derivative exponent.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_shrinking_arc_cauchy_metric.py">Audit</a>: PASS nine exact rational Gram inverses, sharp evaluation constants and derivative norms; seven complete original terminal source Grams, positive completions and benchmark energy comparisons; and the exact degree-one localization diagnostic. The audit uses rational arithmetic for (6) and independent polynomial quadrature for the complex source.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_shrinking_arc_cauchy_metric.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#an-exact-polynomial-evaluation-theorem">1. An exact polynomial evaluation theorem</a><a href="#the-explicit-finite-gram-and-its-original-co-source">2. The explicit finite Gram and its original co-source</a><a href="#precisely-what-localization-does-and-does-not-accomplish">3. Precisely what localization does and does not accomplish</a><a href="#a-quantitative-test-for-amplified-source-derivatives">4. A quantitative test for amplified source derivatives</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

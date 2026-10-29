@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exact binomial conversion with algebraic clock coefficients · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/algebraic_clock_conversion_counterexample.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="exact-binomial-conversion-with-algebraic-clock-coefficients">Exact binomial conversion with algebraic clock coefficients</h1>
+<p>28 October 2026. This supplements the <a href="analytic_two_channel_conversion_counterexample.html">analytic conversion counterexample</a>. The failure of a bound by the maximum complete marked-branch action already occurs with polynomial coefficients over Q(i), on a compact interval with no zero or coincident eigenvalues. This is a recurrence example, NOT a knot operator; the clock x below is not the meridian M.</p>
+<p>Fix delta=1/16. Take integers H=16r, n=H-2r=14r, and</p>
+<pre><code>x_j=(r+j)/H, j=0,...,n-1,
+T_j=[ x_j       1/n;
+      0       i(1-x_j) ],
+P_n=T_(n-1)...T_0.</code></pre>
+<p>The source is e_2 and the observable is e_1*. Thus the selected scalar is (P_n)_12. The eigenvalues x and i(1-x) are nonzero and distinct on [delta,1-delta], with gap |x-i(1-x)|&gt;=1/sqrt(2). Eigenframes and their derivatives are uniformly bounded. The principal family is diagonal; the exact family differs from it only by the entry 1/n.</p>
+<h2 id="exact-finite-identity">1. Exact finite identity</h2>
+<p>Expanding according to the unique off-diagonal step gives</p>
+<pre><code>(P_n)_12=(1/n) C_(H,r) i^(-r)
+                  sum_(m=r)^(H-r-1) binom(H,m)i^m,
+C_(H,r)=H^(-(n-1))(H-r-1)!(H-r)!/H! .          (1)</code></pre>
+<p>Indeed the term with conversion at step k has, apart from (1/n)i^k, the positive weight</p>
+<pre><code>H^(-(n-1)) (H-r-1)!(H-r)! /
+                          ((r+k)!(H-r-k)!).    (2)</code></pre>
+<p>This proves (1) without an asymptotic argument. The same scalar is the solution of the exact second-order recurrence</p>
+<pre><code>u_(j+2)=[x_(j+1)+i(1-x_j)]u_(j+1)
+                     -i x_j(1-x_j)u_j,
+u_0=0, u_1=1/n.                               (3)</code></pre>
+<p>Its coefficients are polynomial in x_j and 1/H over Q(i), and its leading shift coefficient is one. The principal characteristic roots are again x and i(1-x). Thus this is also a scalar companion example.</p>
+<h2 id="growth-follows-from-the-binomial-theorem-and-elementary-tails">2. Growth follows from the binomial theorem and elementary tails</h2>
+<p>Write h(delta)=-delta log(delta)-(1-delta)log(1-delta). The full sum is (1+i)^H, with modulus exp[H log(2)/2]. The omitted tails satisfy</p>
+<pre><code>|omitted tails|&lt;=(2r+1)exp[H h(delta)].          (4)</code></pre>
+<p>For completeness, binom(H,m)&lt;=exp[H h(m/H)] follows because the m-th term of the binomial probability sum with p=m/H is at most one. Entropy increases on [0,1/2] and is symmetric, giving (4) for both tails, including the single endpoint m=H-r. Since</p>
+<pre><code>Delta=log(2)/2-h(1/16)&gt;0,</code></pre>
+<p>the middle sum equals (1+i)^H times 1+O(H exp(-H Delta)). There is no unresolved oscillatory cancellation in this conclusion.</p>
+<p>Applying the elementary factorial asymptotic log(m!)=m log(m)-m+O(log(m)) to (1) gives</p>
+<pre><code>lim_(r-&gt;infinity) (1/n)log|(P_n)_12|=Gamma,
+Gamma=-1+[2(1-delta)log(1-delta)+log(2)/2]/(1-2delta).
+                                                           (5)</code></pre>
+<p>Each continuously marked eigenvalue has the SAME complete action</p>
+<pre><code>I=(1/(1-2delta)) integral_delta^(1-delta) log(x) dx
+ =-1+[(1-delta)log(1-delta)-delta log(delta)]/(1-2delta).
+                                                           (6)</code></pre>
+<p>Their discrepancy is strictly positive:</p>
+<pre><code>Gamma-I=[log(2)/2-h(delta)]/(1-2delta)&gt;0.        (7)</code></pre>
+<p>The diagonal entries of P_n have rate I, so its full norm also has rate Gamma. Both numbers happen to be negative with this normalization; multiplying every matrix by the fixed rational scalar 4 makes both positive and preserves the discrepancy. No positivity of the rate is needed to refute the proposed upper bound.</p>
+<p>The diagonal principal product has rate I. Thus the polynomial 1/n perturbation changes the leading exponential rate, despite the uniformly separated spectrum. Algebraicity in a clock variable alone does not remove this phenomenon. The additional structure of an actual quantum knot operator, its meridian dependence, and its selected source remain separate, essential questions.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_algebraic_clock_conversion.py">Audit</a>: exact Gaussian-integer triangular products, identity (1), the independently iterated scalar companion, and asymptotic tail/rate checks.</p>
+<p>An independent agent checked the full proof and freshly reran the audit: PASS. Its review retained the distinction between an algebraic clock example and an actual quantum-meridian operator.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/algebraic_clock_conversion_counterexample.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-finite-identity">1. Exact finite identity</a><a href="#growth-follows-from-the-binomial-theorem-and-elementary-tails">2. Growth follows from the binomial theorem and elementary tails</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

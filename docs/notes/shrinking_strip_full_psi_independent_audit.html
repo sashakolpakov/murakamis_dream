@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Independent defining-integral audit of the shrinking-strip full-Psi estimate · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/shrinking_strip_full_psi_independent_audit.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="independent-defining-integral-audit-of-the-shrinking-strip-full-psi-estimate">Independent defining-integral audit of the shrinking-strip full-Psi estimate</h1>
+<p>28 October 2026. The full-Psi estimates in Section 5 of <a href="quantitative_regular_phase_descent.html">quantitative regular descent</a> are correct, with the explicit Cauchy-disk qualification below. The proof uses the defining integral and its exact subtraction formula; no published asymptotic theorem is assumed. It is a local selected-chart estimate, not a contour-crossing or whole-source boundary theorem.</p>
+<h2 id="uniform-kernel-bound-with-the-width-displayed">1. Uniform kernel bound with the width displayed</h2>
+<p>Use the exact remainder formula independently derived in <a href="literature_state_volume.html#21-a-uniform-complex-remainder-on-an-entire-horizontal-strip">the defining-integral note</a>:</p>
+<pre><code>log Phi_b(z/(2pi b))=Li_2(-exp z)/(2pi i b^2)+R_b(z),
+R_b(z)=-2i[ integral_0^infinity H_b(t)sin(zt/pi)dt
+                     +c arctan(z/pi)]-i pi c,
+c=-b^2/24,
+K_b(t)=[1/sinh(b^2t)-1/(b^2t)]/[4t sinh t],
+H_b(t)=K_b(t)-c exp(-t)/t.                         (1)</code></pre>
+<p>The constant and logarithm are the ones fixed by the original upper indentation and the left-half-plane anchor. In particular R_b(0)= i pi b^2/24; it is not an adjustable scalar normalization.</p>
+<p>For all v&gt;0,</p>
+<pre><code>0&lt;=1/v-1/sinh(v)&lt;=v/6.                            (2)</code></pre>
+<p>For 0&lt;v&lt;sqrt(6), the right inequality follows by expanding sinh(v)(1-v^2/6): the cubic coefficient is zero and every subsequent coefficient is negative, giving sinh(v)(1-v^2/6)&lt;=v. Above sqrt(6) it follows already from 1/v&lt;=v/6. Thus (2) is uniform.</p>
+<p>It gives |K_b(t)|&lt;=b^2/[24sinh(t)]. For t&gt;=1 this is O(b^2exp(-t)). For 0&lt;t&lt;=1, uniformly in 0&lt;b&lt;=1,</p>
+<pre><code>K_b(t)=c/t+O(b^2t).</code></pre>
+<p>Indeed 1/sinh(v)=1/v-v/6+O(v^3) uniformly for v=b^2t&lt;=1; substitution gives c/sinh(t)+O(b^6t), followed by 1/sinh(t)=1/t+O(t). Consequently</p>
+<pre><code>|H_b(t)|&lt;=Cb^2                 (0&lt;t&lt;=1),
+|H_b(t)|&lt;=Cb^2exp(-t)           (t&gt;=1).            (3)</code></pre>
+<p>For 0&lt;delta&lt;=1, integration yields</p>
+<pre><code>integral_0^infinity |H_b(t)|exp((1-delta/pi)t)dt
+                      &lt;=Cb^2/delta.               (4)</code></pre>
+<p>This estimate has no dependence on Re z. On |Im z|&lt;=pi-delta, |sin(zt/pi)|&lt;=exp((1-delta/pi)t), so it controls the integral in (1) uniformly on the entire horizontal strip.</p>
+<p>For the remaining elementary term, put w=z/pi. Both 1+iw and 1-iw have positive real part at least delta/pi. On their principal branches,</p>
+<pre><code>arctan(w)=[Log(1+iw)-Log(1-iw)]/(2i).</code></pre>
+<p>The argument difference is bounded by pi, and the modulus ratio is between (delta/(2pi))^2 and its reciprocal. These bounds persist for arbitrarily large Re w. Hence</p>
+<pre><code>|arctan(z/pi)|&lt;=C log(2/delta).                    (5)</code></pre>
+<p>Equations (1),(4),(5) prove the absolute uniform estimate</p>
+<pre><code>|R_b(z)|&lt;=Cb^2[delta^(-1)+log(2/delta)],
+   |Im z|&lt;=pi-delta, 0&lt;b&lt;=1, 0&lt;delta&lt;=1.           (6)</code></pre>
+<h2 id="the-actual-half-step-for-both-signs">2. The actual half-step for both signs</h2>
+<p>Set b^2=1/N and h=2pi i/N. The actual positive full function has the recorded identification</p>
+<pre><code>log Psi_+(z)=log Phi_b(w/(2pi b)),
+w=z-i pi(1+1/N).                                 (7)</code></pre>
+<p>For delta&lt;=Im z&lt;=2pi-delta and delta&gt;=2pi/N, the distance of w to both edges +/-pi is at least delta-pi/N&gt;=delta/2. The argument in the leading dilogarithm is exactly</p>
+<pre><code>-exp(w)=exp(z-h/2).</code></pre>
+<p>Write f(z)=Li_2(exp z) on the selected strip continuation from Re z negative. Then f’(z)=-Log(1-exp z) and f’’(z)=exp z/(1-exp z). For y separated from 2pi Z by delta/2,</p>
+<pre><code>|1-r exp(iy)|&gt;=[delta/(2pi)](1+r), r&gt;=0.</code></pre>
+<p>This follows from |1-r exp(iy)|<sup>2=(1-r)</sup>2+4r sin^2(y/2) and sin(delta/4)&gt;=delta/(2pi). Thus |f’’|&lt;=C/delta uniformly over all real parts, including on the whole half-step segment. Taylor’s integral remainder and (6) give</p>
+<pre><code>log Psi_+(z)=f(z)/h+(1/2)Log(1-exp z)+O(1/(Ndelta)). (8)</code></pre>
+<p>The negative actual function is conjugate-reflected with all branches anchored in the same way. Reflection changes h to -h, but preserves the SIGN of the half-logarithm. Therefore both signs satisfy</p>
+<pre><code>log Psi_epsilon(z)
+   =Li_2(exp z)/(epsilon h)
+     +(1/2)Log(1-exp z)+O(1/(Ndelta)),              (9)</code></pre>
+<p>on delta&lt;=epsilon Im z&lt;=2pi-delta. There is no hidden sign change or N-dependent normalizing constant in (9).</p>
+<h2 id="derivatives-down-to-the-stated-ndelta-threshold">3. Derivatives down to the stated Ndelta threshold</h2>
+<p>There is a small logical qualification when using Cauchy’s estimate. At delta=2pi/N, one cannot simply apply a statement formulated only for margin &gt;=2pi/N to every point of a disk with a smaller margin. Instead use the defining-integral proof again.</p>
+<p>For a center satisfying the hypotheses of (9), take the complex disk |z’-z|&lt;=delta/4. Its signed angular margin is at least 3delta/4. After the ACTUAL half-step (7), its Phi strip margin is at least</p>
+<pre><code>3delta/4-pi/N&gt;=delta/4.                            (10)</code></pre>
+<p>Both the integral remainder and the Taylor remainder are therefore O(1/(Ndelta)) throughout this disk. The remainder in (9) is holomorphic there with its fixed selected branches. Cauchy’s formula now proves for every fixed integer k&gt;=0,</p>
+<pre><code>|partial_z^k remainder|&lt;=C_k/[Ndelta^(k+1)].        (11)</code></pre>
+<p>This proves the derivative assertion without strengthening the threshold delta&gt;=2pi/N or assuming a fixed strip width.</p>
+<h2 id="source-chart-scope-and-a-harmless-hessian-sign-correction">4. Source-chart scope and a harmless Hessian sign correction</h2>
+<p>These estimates apply to the actual full Psi functions on their selected logarithmic strips and only to such local charts. A product estimate for the original network must retain every exponential N-dependent monomial/Gaussian/window factor in its specified leading action; rational amplitudes must obey the asserted denominator bounds. The moment-ray corrections and chart-exit currents are not discarded. No estimate here crosses a quantum pole, identifies a different sheet, or bounds a mixed endpoint/bulk period.</p>
+<p>One unrelated sign in Section 3 of the descent note needs correction. For its explicitly written W=sum epsilon Li_2(A)+Z^tCZ/2+linear,</p>
+<pre><code>partial^2 W=C+sum epsilon v v^t A/(1-A),            (12)</code></pre>
+<p>rather than a minus sign. The polynomial Hessian N/L norm bound and every subsequent descent estimate use absolute values, so this correction changes none of those inequalities.</p>
+<p>I found no further error in the strip constants, the half-step normalization, or the claimed local-chart limitation. The separate global issue remains estimation of all original exit/boundary currents.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/shrinking_strip_full_psi_independent_audit.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#uniform-kernel-bound-with-the-width-displayed">1. Uniform kernel bound with the width displayed</a><a href="#the-actual-half-step-for-both-signs">2. The actual half-step for both signs</a><a href="#derivatives-down-to-the-stated-ndelta-threshold">3. Derivatives down to the stated Ndelta threshold</a><a href="#source-chart-scope-and-a-harmless-hessian-sign-correction">4. Source-chart scope and a harmless Hessian sign correction</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

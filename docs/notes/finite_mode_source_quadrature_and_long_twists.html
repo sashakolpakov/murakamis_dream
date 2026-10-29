@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A finite Fourier packet resolves the original long-twist quadrature type · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/finite_mode_source_quadrature_and_long_twists.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-finite-fourier-packet-resolves-the-original-long-twist-quadrature-type">A finite Fourier packet resolves the original long-twist quadrature type</h1>
+<p>28 October 2026. This is a constructive extension of the <a href="source_preserving_inner_quadrature.html">source-preserving inner quadrature</a>. It keeps the original finite lattice values, the original endpoints and an explicit convergent remainder. A long twist requires more Fourier modes, not an unproved deletion of its endpoint source.</p>
+<p>The theorem below removes the vertical-type obstruction for every fixed literal twist length. The remaining geometric selection is among a finite mode family. It does not assert that the geometric mode dominates all others in an arbitrary knot.</p>
+<h2 id="exact-finite-mode-abelplana">1. Exact finite-mode Abel–Plana</h2>
+<p>Let n be a positive integer and f holomorphic in a neighborhood of the closed strip 0&lt;=Re z&lt;=n. Suppose, uniformly there,</p>
+<pre><code>|f(x+it)| &lt;= C exp(pi tau |t|),</code></pre>
+<p>where tau&lt;2(K+1) and K is a nonnegative integer. Polynomial factors in |t| are also allowed if the inequality has any fixed strict margin. Then</p>
+<pre><code>sum_(j=0)^n f(j)
+   =(f(0)+f(n))/2
+    +sum_(k=-K)^K integral_0^n f(x) exp(2pi i k x) dx
+    +R_K(f),                                             (1)
+
+R_K(f)=i integral_0^infinity exp(-2pi Kt)
+   [f(it)-f(-it)-f(n+it)+f(n-it)]
+                  /(exp(2pi t)-1) dt.                    (2)</code></pre>
+<p>The integral at zero is interpreted by its removable continuous value; the numerator vanishes there. At infinity it is absolutely convergent.</p>
+<p>Here is a direct residue proof, rather than an assumption that Poisson modes may be discarded. Use the upper and lower kernels</p>
+<pre><code>U_K(z)=exp(2pi i Kz)/(exp(-2pi iz)-1),
+L_K(z)=exp(-2pi i Kz)/(exp(2pi iz)-1).</code></pre>
+<p>Their residues at integers are the same as for K=0. Their vertical damping is 2pi(K+1). For w=exp(2pi iz), their boundary sum is exactly</p>
+<pre><code>U_K(z)+L_K(z)=-sum_(k=-K)^K w^k.</code></pre>
+<p>Integrating the two rectangular contours, with half-circles at the endpoints, gives (1). The horizontal edges vanish by the stated strict growth inequality. The two vertical edges are exactly (2), with the same signs as ordinary finite Abel–Plana. This proves the full finite source identity. Taking K=0 recovers the previous theorem.</p>
+<p>One may also take unequal upper/lower cutoffs K_+,K_-; the mode range is -K_-&lt;=k&lt;=K_+, and the two differences in (2) are weighted by exp(-2pi K_+t), exp(-2pi K_-t), respectively. Thus an asymmetric kernel or a specified integer lattice gauge need not be artificially symmetrized.</p>
+<h2 id="a-quantitative-endpoint-remainder">2. A quantitative endpoint remainder</h2>
+<p>Suppose the four endpoint values satisfy</p>
+<pre><code>|f(a+it)| &lt;= A exp(pi tau |t|), a=0,n,
+|f&#39;(a+it)| &lt;= A B, |t|&lt;=1.</code></pre>
+<p>Put gamma=2(K+1)-tau&gt;0. Splitting (2) at t=1 gives</p>
+<pre><code>|R_K(f)| &lt;= C A [B+1/gamma],                            (3)</code></pre>
+<p>with an absolute constant C. Near zero the numerator is O(ABt), and the denominator is at least 2pi t. At infinity its absolute value is at most C A exp(-pi gamma t).</p>
+<p>For every T&gt;=1 the omitted t&gt;=T part is bounded by</p>
+<pre><code>C A gamma^(-1) exp(-pi gamma T).                        (4)</code></pre>
+<p>Thus when A has a known smaller exponential rate than the main geometric period, the entire finite-mode correction has that same smaller rate up to polynomial factors. This is the same kind of source comparison as the original 5_2 error bound by K_(4_1),N. No rate for A is inferred merely from the existence of the main saddle.</p>
+<p>For the reflected factorial kernels in Section 5 of the earlier quadrature theorem, tau is bounded in terms of the displayed Gaussian coefficient and linear exponent. A finite K therefore exists even when its former single-mode inequality fails. Their original endpoint derivative bound has B=O(1+log N). This is a verifiable local kernel criterion; no contour or geometric coupling is assumed.</p>
+<h2 id="application-to-every-literal-p-fold-crossing-sector">3. Application to EVERY literal p-fold crossing sector</h2>
+<p>The <a href="general_bridge_quadrature_and_twist_type_obstruction.html">exact original-matrix calculation</a> gives, after the specified external Cartan line, the literal relative degree-zero values</p>
+<pre><code>d_j^p, d_j=(-1)^j Q^(j(j+1)/2), 0&lt;=j&lt;N,</code></pre>
+<p>for every integer twist length p. Set n=N-1 and use their exact entire interpolation</p>
+<pre><code>B(z)=exp[pi i p z(z-n)/N].</code></pre>
+<p>For every 0&lt;=x&lt;=n,</p>
+<pre><code>|B(x+it)| &lt;= exp(pi c |t|), c=|p|n/N.</code></pre>
+<p>The smallest symmetric cutoff satisfying the strict contour-decay criterion is</p>
+<pre><code>K_min=floor(c/2).                                       (5)</code></pre>
+<p>It has at most |p|+1 modes and is bounded independently of N for fixed p. The resulting remainder is polynomially bounded in N. For a margin uniform over ALL levels use instead</p>
+<pre><code>K=floor(|p|/2), gamma=2(K+1)-c&gt;=1.                      (6)</code></pre>
+<p>The exact endpoint numerator gives the particularly transparent formula</p>
+<pre><code>sum_(j=0)^n d_j^p
+   =1+sum_(k=-K)^K integral_0^n
+      exp[pi i p x(x-n)/N+2pi i kx] dx
+    +4i integral_0^infinity
+      exp(-pi i p t^2/N) sinh(pi p n t/N)
+               exp(-2pi Kt)/(exp(2pi t)-1) dt.           (7)</code></pre>
+<p>No endpoint or parity factor is omitted. For p=0 the original sum is N and (1) with K=0 gives it exactly. For p!=0 the correction in (7) satisfies the explicit bound</p>
+<pre><code>|R_K| &lt;= (4c/pi) sum_(r=K+1)^infinity 1/(4r^2-c^2).     (8)</code></pre>
+<p>This follows by expanding the positive denominator and integrating the absolute sinh bound; strict 2(K+1)&gt;c justifies Tonelli. For K in (6), (8) is O_p(1), uniformly in N. For the minimal cutoff (5) it is O_p(N): gamma is a positive rational with denominator N, hence gamma&gt;=1/N. Near t=0, B’=O_p(1), so (3) gives the same polynomial conclusion directly.</p>
+<p>With the uniform cutoff (6), taking T=eta N in (4) leaves an O_p(exp(-pi eta N)) far tail. The low Fourier modes in (7) are kept exactly; they have not been put in that error. Their number depends on p and not on the quantum level. Each is an ordinary finite Gaussian integral, so for p!=0 equation (7) also directly bounds the whole clock sum by O_p(sqrt N) using the elementary Fresnel bound, plus its O_p(1) correction.</p>
+<p>The analogous formula with a different original linear lattice gauge simply shifts the retained finite mode window. There is no freedom to call one of its modes the original selected state without carrying the other modes and (2).</p>
+<h3 id="the-entire-marked-gaussian-kernel-not-only-its-constant-argument">3.1 The entire marked Gaussian kernel, not only its constant argument</h3>
+<p>The source-preserving extension needed for an actual word keeps a spectral argument and the meridian. The original finite Gaussian polynomial is exactly</p>
+<pre><code>Gamma_(p,N)(t,M)=sum_(j=0)^(N-1) d_j(M)^p t^j,
+d_j(M)=(-1)^j Q^(j(j+1)/2) M^(-2j).</code></pre>
+<p>Choose a specified logarithm L of Z=t M^(-2p) and put</p>
+<pre><code>f(z)=B(z) exp(Lz).</code></pre>
+<p>This has the literal marked Gaussian coefficients at every integer. On compact annuli for t,M and any fixed bounded logarithmic branch,</p>
+<pre><code>|f(a+is)| &lt;= A exp(pi tau |s|), a=0,n,
+A=max(1,|Z|^n), tau=|p|n/N+|Im L|/pi.                   (9)</code></pre>
+<p>The same bound holds uniformly over 0&lt;=Re z&lt;=n. The endpoint derivative bound is A times a constant depending on p and the specified compact logarithmic chart, independently of N. Hence (1)–(4), with a finite cutoff depending only on that chart and p, give an EXACT finite-mode presentation of the entire original Gamma_(p,N)(t,M), including its endpoint terms and remainder. For |Arg Z|&lt;=pi the simple choice K=floor((|p|+1)/2) has a uniform positive type margin. A change L-&gt;L+2pi i ell is exactly a shift of the Fourier mode labels; the scalar polynomial is unchanged.</p>
+<p>This has an immediate whole-network consequence. In <a href="actual_euler_gaussian_cauchy_network.html">the original Cauchy network</a>, each Gaussian factor is literally Gamma_(+1,N)(z/w,M) or its negative-sign counterpart. Replace each by its exact expression (1). On the specified compact Cauchy circles its logarithmic arguments range over finitely many bounded branch charts, with transition by the just stated exact relabeling. More explicitly, partition each circle’s parameterization into finitely many arcs carrying continuous logarithmic lifts; alternatively carry its unwrapped mark throughout. No global single-valued Log is assumed on a full circle, and individual mode integrals are not identified across marks. Their combined formula is the same original polynomial. Formula (9) gives absolute uniform integrability of the endpoint remainder. Fubini therefore carries this replacement through the complete original cap, pivot and external normalization. No source coupon is changed. This yields a finite Fourier-packet presentation for the Gaussian part of EVERY fixed original braid word. The packet size is independent of N. All its factorial/Euler and projection factors remain the same exact functions; no exponential bound for their contracted endpoint periods is asserted.</p>
+<h2 id="the-resulting-generalization-target">4. The resulting generalization target</h2>
+<p>This resolves the specific long-twist vertical-type failure: every fixed p has a finite, explicitly sourced mode packet, including arbitrarily large positive or negative twists. The same theorem applies to each reflected finite-factorial bridge kernel with a known finite vertical type. It does not require p=1 or a twist-knot diagram.</p>
+<p>For many bridges, this produces finitely many mode combinations for each fixed word, together with endpoint faces and corners. Iterating it requires its uniform strip estimates at the actual intermediate parameters; after an earlier integration those may be complex, so the original finite-product reflection must be checked again. The original word is not automatically a product of independent one-variable kernels. The general finite-height residue construction remains available when an infinite-height strip is not justified.</p>
+<p>A broad knot theorem still needs a structural way to prove that the actual endpoint periods and the other retained modes have smaller rate, and that the geometric mode has nonzero original coefficient. The present result replaces an invalid one-mode shortcut by a concrete finite-dimensional selection problem. It does not solve that remaining selection by asserting an assumed geometric contour.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_twist_vertical_type_obstruction.py">Exact finite-packet diagnostics</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/finite_mode_source_quadrature_and_long_twists.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-finite-mode-abelplana">1. Exact finite-mode Abel–Plana</a><a href="#a-quantitative-endpoint-remainder">2. A quantitative endpoint remainder</a><a href="#application-to-every-literal-p-fold-crossing-sector">3. Application to EVERY literal p-fold crossing sector</a><a href="#the-resulting-generalization-target">4. The resulting generalization target</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

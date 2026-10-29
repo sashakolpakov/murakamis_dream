@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The original source is a tame nilpotent extension, not a positive trace · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_quantum_source_positivity_obstruction.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-original-source-is-a-tame-nilpotent-extension-not-a-positive-trace">The original source is a tame nilpotent extension, not a positive trace</h1>
+<p>28 October 2026. There is a universal, source-specific obstruction to obtaining geometric nonvanishing from an ordinary faithful positive trace on the actual root quantum-group category. Its tensor-closing map sends the identity to zero but a canonical nilpotent cup/cap to the identity. This holds at every level and can be inserted into ANY original knot cut without changing its value.</p>
+<p>The source extension is polynomially tame in the actual flat metric. Consequently this is not an obstruction to a later geometric norm comparison or emergent positive integral. It rules out deriving that comparison just from positivity/unitarity of the original categorical trace, or from a positive semisimplification which discards its jets.</p>
+<h2 id="keep-the-actual-turns-and-boundary-projector">1. Keep the actual turns and boundary projector</h2>
+<p>Put N&gt;=2, d=N-1, q=exp(pi*i/N), Q=q^2 and x=-q^(-1). Use the ORIGINAL balanced factorial basis w_a. The actual pivot is</p>
+<pre><code>g_a=x^(1-N)Q^(-a), sum_a g_a=0, |g_a|=1.          (1)</code></pre>
+<p>At this color the dual color x<sup>(-1)Q</sup>(-1) equals x. The exact actual turns in <a href="quantum_bridge_cap_source.html">the bridge-source proof</a> give the cup column p and right-cap row l on V_N tensor V_N:</p>
+<pre><code>p_(i,j)=N x^(-j) delta_(i+j,d),
+l_(i,j)=x^j g_i/N delta_(i+j,d).                  (2)</code></pre>
+<p>These retain the actual N, 1/N and pivot, rather than rescaling the turns to obtain a desired state. Define Pi_N=p l. Then</p>
+<pre><code>l p=sum_i g_i=0, Pi_N^2=0, rank Pi_N=1.          (3)</code></pre>
+<p>The ORIGINAL pivotal partial closing is</p>
+<pre><code>Phi_N(T)=Tr_2[T(I tensor g)].                     (4)</code></pre>
+<p>By direct evaluation of (2),</p>
+<pre><code>Phi_N(I_(N^2))=0,
+Phi_N(Pi_N)=I_N.                                (5)</code></pre>
+<p>For the second identity the only retained diagonal term has j=d-i; its coefficient is g_i g_(d-i)=1, using x<sup>2=Q</sup>(-1). The actual snake normalization is therefore fixed. No zero quantum dimension is divided out and no full peripheral multiplier is replaced by its root value.</p>
+<p>On the open cut retain its original e=psi phi, psi_i=1, phi_i=1/N. Thus e is an orthogonal rank-one projector in this flat metric. Define the actual two-head scalar functional</p>
+<pre><code>Lambda_N(T)=Tr[e Phi_N(T)].</code></pre>
+<p>It has the exact values</p>
+<pre><code>Lambda_N(I)=0, Lambda_N(Pi_N)=1.                 (6)</code></pre>
+<p>The positive open-cut functional Tr(e C) has not been replaced. The failure of positivity is at the compulsory pivotal tensor-closing map Phi_N, before that boundary functional is applied.</p>
+<h2 id="no-positive-realization-of-that-closing-map-or-full-source">2. No positive realization of that closing map or full source</h2>
+<p>Suppose Phi_N were positive as a linear map between operator algebras with ANY positive definite Hermitian metrics. Every positive A obeys 0&lt;=A&lt;=r I for some r. Positivity and Phi_N(I)=0 then force 0&lt;=Phi_N(A)&lt;=0. Positive matrices linearly span the whole algebra, so Phi_N would be zero, contradicting Phi_N(Pi_N)=I.</p>
+<p>This proves that no change of positive head metric makes the SAME original pivotal closing a positive map. The argument does not assume the flat metric, a particular knot or an asymptotic expansion.</p>
+<p>Similarly no positive functional on a unital star algebra can have both values in (6). Cauchy–Schwarz gives</p>
+<pre><code>|tau(a)|^2&lt;=tau(I) tau(a^*a)=0</code></pre>
+<p>if tau(I)=0. It would vanish on every a. Therefore the restriction of Lambda_N to the unital actual intertwiner algebra cannot be a positive state or trace for any involution respecting that algebra. A global nonzero scalar phase does not repair a zero value on I.</p>
+<p>One cannot evade this by first taking a positive spectral corner while keeping its actual nilpotent source. The earlier direct Casimir proof gives, on the actual tensor module,</p>
+<pre><code>Pi_N=(-1)^N (q-q^(-1))^(-2)(Omega-c_0)e_0,
+c_0=q+q^(-1),                                    (7)</code></pre>
+<p>where e_0 is the actual double-node projector. This makes Pi_N a CENTRAL nilpotent in the quantum-group intertwiner algebra. Every positive star realization of a finite-dimensional algebra kills a central nilpotent: its image commutes with its adjoint, hence is a normal nilpotent and is zero. Equivalently Cauchy–Schwarz iterated on the nilpotent selfadjoint Pi_N^* Pi_N proves its positive functional vanishes. This applies even if the corner’s identity has nonzero trace.</p>
+<p>Equation (7) is the retained actual confluence, proved in <a href="meridian_casimir_source.html">the meridian Casimir-source theorem</a>, not an assumed property of an abstract quantum topology construction. Thus a positive reduced spectral quotient cannot preserve (6). It must retain a source/normal extension outside that ordinary quotient.</p>
+<h2 id="this-obstruction-is-functorial-for-every-original-knot">3. This obstruction is functorial for EVERY original knot</h2>
+<p>For ANY finite cut matrix C, not only a scalar intertwiner, linearity of the partial closing and (5) give</p>
+<pre><code>Phi_N[(C tensor I)Pi_N]=C,
+Lambda_N[(C tensor I)Pi_N]=Tr(e C).               (8)</code></pre>
+<p>In particular let C_K be the actual cut operator of a knot with its specified crossings, pivots and framing convention. Its original external line chi_N is retained, so its scalar is</p>
+<pre><code>P_(K,N)=chi_N Tr(e C_K)
+       =chi_N Lambda_N[(C_K tensor I)Pi_N].      (9)</code></pre>
+<p>This is a canonical cup/cap realization of the SAME period for all knots and levels, not an arbitrary inserted coupon chosen to defeat a positivity claim. The actual complete cut is scalar by the already proved original quantum-group intertwining and irreducibility. If C_K=f_(K,N)I, the state in (9) is f_(K,N)Pi_N, a nilpotent multiple. Dropping the nilpotent source would erase its whole original value, not just a dispensable local correction.</p>
+<p>This explains why ordinary-color positive traces do not extend by formal faithfulness to the Kashaev color. The exact ordinary-color positive realization has zero quantum dimension at this endpoint; its positive semisimplification kills precisely the object/source which (5)-(9) retain. The separate regular-period theorem correctly uses that positivity only below color N, not for the volume target.</p>
+<h2 id="original-braiding-is-also-not-positively-unitarizable">4. Original braiding is also not positively unitarizable</h2>
+<p>The all-N actual Casimir interpolation retains the nonzero derivative at c_0. If B=R_checked/kappa removes only the recorded common Cartan scalar, its double-node block obeys</p>
+<pre><code>e_0(B^2-I)=(-1)^(N+1)(N-1)(q-q^(-1))Pi_N !=0,    (10)</code></pre>
+<p>and the right side has square zero. Therefore B^2, hence B, has a nontrivial Jordan block. A unitary matrix in a positive definite metric is diagonalizable. No positive metric and no common phase normalization makes the original checked crossing unitary.</p>
+<p>This is an exact all-N consequence of the original R coefficient and the actual cap jet. The derivative interpolation and its direct matrix derivation are already in <a href="casimir_braiding_and_recoupling_lattice.html">the Casimir braiding proof</a> and <a href="meridian_casimir_source.html">the meridian source proof</a>. We use them with their scalar and parity, rather than assuming a literature unitarity theorem.</p>
+<h2 id="the-necessary-extension-is-tame-but-does-not-give-a-lower-bound">5. The necessary extension is tame, but does not give a lower bound</h2>
+<p>In the actual flat complex root metric, (2) gives exactly</p>
+<pre><code>||p||_2=N^(3/2), ||l||_2=N^(-1/2), ||Pi_N||_op=N.</code></pre>
+<p>Also ||Phi_N||_(op-&gt;op)=N and ||Lambda_N||=N. The upper bounds follow from summing N unitary-pivot diagonal blocks. Equality for Phi uses T=I tensor g^(-1); equality for Lambda uses T=e tensor g^(-1).</p>
+<p>Thus the universal source extension costs only polynomial factors, not an unknown exponential normalization. For the assembled scalar cut there is the exact positive norm identity</p>
+<pre><code>|P_(K,N)|=|chi_N| ||(C_K tensor I)Pi_N||_op/N.    (11)</code></pre>
+<p>Equation (11) is useful normalization information but NOT a new noncancellation mechanism: C_K already contains the original internal pivotal sums. The right side is the same unknown scalar in a canonical nilpotent line. A local geometric amplitude or ambient operator norm does not supply a lower bound for it.</p>
+<p>No source-specific broad positivity/nonvanishing theorem has been obtained here. What is decided is that the actual cyclic/Hopf source does not force it through ordinary positive trace, unitarity or a positive reduced torsor. A successful positive geometric comparison must explicitly transport the retained nilpotent/relative source and prove its nonzero geometric image. Emergent positivity of a suitably reduced global integral is not excluded by this result.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_quantum_source_positivity.py">Audit</a>: direct actual cups/caps, pivot, Hopf invariance, original full-twist nilpotent, and functorial reconstruction of actual whole-knot cut operators.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_quantum_source_positivity_obstruction.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#keep-the-actual-turns-and-boundary-projector">1. Keep the actual turns and boundary projector</a><a href="#no-positive-realization-of-that-closing-map-or-full-source">2. No positive realization of that closing map or full source</a><a href="#this-obstruction-is-functorial-for-every-original-knot">3. This obstruction is functorial for EVERY original knot</a><a href="#original-braiding-is-also-not-positively-unitarizable">4. Original braiding is also not positively unitarizable</a><a href="#the-necessary-extension-is-tame-but-does-not-give-a-lower-bound">5. The necessary extension is tame, but does not give a lower bound</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

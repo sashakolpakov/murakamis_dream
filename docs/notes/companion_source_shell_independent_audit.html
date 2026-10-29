@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Independent audit of the whole pointed companion source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/companion_source_shell_independent_audit.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="independent-audit-of-the-whole-pointed-companion-source">Independent audit of the whole pointed companion source</h1>
+<p>27 October 2026. The classification and polynomial comparison in <a href="pointed_companion_source_and_polynomial_hilbert90.html">the pointed source theorem</a> pass over the stated commutative coefficient rings, including nonreduced bases. They require no quantum-gap division or imported multiplicative-quiver classification. The full actual word and selected regulator norm remain additional data.</p>
+<h2 id="exact-scheme-classification-in-the-source-orbit-basis">1. Exact scheme classification in the source orbit basis</h2>
+<p>The cyclic source basis e_j=Y^jv fixes v=e_0 and makes Y the companion with last column t_i. Its determinant is (-1)^(N-1)t_0. The identities ell v=1 and ell Y=ell give ell=(1,…,1) and sum_i t_i=1, without division. The multiplicative moment equation is equivalent to requiring that XY-QYX have image in the source line, with its row then uniquely determined by the two invertible matrices.</p>
+<p>Let Xv=v. In a nonzero-index row, for column j&lt;N-1 the companion equation is</p>
+<pre><code>X_(i,j+1)=Q[X_(i-1,j)+t_i X_(N-1,j)].</code></pre>
+<p>Induction on j gives X_(N-1,j)=0 there and</p>
+<pre><code>X_(i,j)=Q^i x_(j-i) for i&lt;=j, and zero for i&gt;j.</code></pre>
+<p>Only x_0=1 and the still undetermined zeroth-row coefficients occur. In the last column put m=N-i. Dividing by the UNIT Q^i gives exactly</p>
+<pre><code>x_m=(1-Q^m)t_(N-m)
+             +sum_(l=1)^(m-1)t_(N-m+l)x_l.</code></pre>
+<p>This recursively determines every x_m and proves the converse at the same time: all nonzero-index moment rows vanish. Thus det X=Q^(N(N-1)/2), and its inverse requires only powers of Q. Y inverse requires t_0 inverse, exactly the indicated principal open. The row w is unique. Its determinant character is</p>
+<pre><code>wv=Q^-N-1,</code></pre>
+<p>by det(I+v w)=1+w v, which follows directly from determinant multilinearity and also holds over rings with nilpotents.</p>
+<p>Every inverse map and classification step is over the stated coordinate ring, so this is an isomorphism of schemes, not merely a classification of field-valued points. The source chart is the principal open 1-sum_(i&gt;0)t_i!=0 in affine (N-1)-space. With a chosen free ambient basis the representation chart is GL_N times that open: the source orbit basis gives the unique gauge, and its stabilizer is trivial.</p>
+<h2 id="the-polynomial-coboundary-and-its-retained-co-source">2. The polynomial coboundary and its retained co-source</h2>
+<p>Let chi(z)=z^N-sum t_i z^i and h(z)=z^N chi(1/z). Since sum t_i=1, ordinary monic division gives</p>
+<pre><code>chi=(z-1)chi_red, h=(1-z)h_red,
+h_red=z^(N-1)chi_red(1/z), h_red(0)=1.</code></pre>
+<p>The recurrence is precisely</p>
+<pre><code>h(z)x(z)=h(Qz) modulo z^N,</code></pre>
+<p>where x(z)=sum_(m&lt;N)x_m z^m. On the finite lowering shift L, L^N=0 and B L B<sup>-1=Q</sup>-1 L. Thus</p>
+<pre><code>G=h(L), G B=B h(QL)=X G.</code></pre>
+<p>G is upper unipotent and its inverse is the finite nilpotent geometric series. This proves X=G B G^-1 over the WHOLE ring. No factors 1-Q^m or 1-Q^N are inverted, canceled or evaluated. The formula remains valid at Q=1; at that value it is a canonical choice from chi, not a uniqueness assertion for every clock conjugator.</p>
+<p>Since L v=0, Gv=G inverse v=v. Since ell(I-L)=e_0^t,</p>
+<pre><code>ell G=e_0^t h_red(L).</code></pre>
+<p>Hence the source pairing identity</p>
+<pre><code>ell C v=[e_0^t h_red(L)] [G inverse C G] v</code></pre>
+<p>has the printed orientation. Trivializing the clock has not made the co-source constant. The new Y, actual crossing/cap/current matrices and source must ALL be conjugated. Parameter-dependent connections also carry the forced gauge term G inverse dG. No fixed original peripheral/dimension line is normalized away.</p>
+<h2 id="whole-mixed-moments-recover-the-retained-polynomial">3. Whole mixed moments recover the retained polynomial</h2>
+<p>For 0&lt;=j&lt;N, Y^jv=e_j, so the mixed moments are exactly</p>
+<pre><code>m_j=ell X Y^jv=sum_(l=0)^j Q^(j-l)x_l,
+m_0=1, x_j=m_j-Q m_(j-1).</code></pre>
+<p>The second identity is ordinary telescoping. On the head-unit localization, the already proved recurrence then recovers t_(N-m) successively, by dividing only by 1-Q^m. Thus these N-1 mixed source/clock moments determine the WHOLE polynomial, not merely a normal Taylor approximation. Ordered in the reverse tail variables (t_(N-1),…,t_1), their polynomial Jacobian is lower triangular with diagonal 1-Q^m. Its determinant is</p>
+<pre><code>product_(m=1)^(N-1)(1-Q^m)=N at primitive Q_N.</code></pre>
+<p>The last equality follows by evaluating (z<sup>N-1)/(z-1)=product_(m=1)</sup>(N-1)(z-Q_N^m) at z=1. It is an exact root unit, not a bound for the global inverse map. At other Q, including Q=1, those moment coordinates can be singular although the companion chart and G remain regular.</p>
+<p>Pure Y moments do NOT recover this data: ell Y^jv=1 for all integer j, by the normalized output equation and invertibility of Y. On the actual section the mixed moments are Q^j, so the reconstruction gives the original cyclotomic chi=z^N-1. This does not identify chi with a knot A-polynomial or compute an actual closed-word scalar.</p>
+<h2 id="the-actual-section-and-the-remaining-period">4. The actual section and the remaining period</h2>
+<p>On the source orbit chart, Y^N=I implies Y^Nv=v. Expanding this single equation in its basis forces t_0=1 and t_i=0 for i&gt;0. Conversely those equations make Y the cyclic shift. This is valid over every supplied commutative base, not only at a root or in characteristic zero. Then</p>
+<pre><code>chi=z^N-1, h=1-z^N, G=I,
+h_red=1+z+...+z^(N-1),
+w=(Q^-N-1)e_0^t.</code></pre>
+<p>Thus the original finite source is a regular SECTION of the unfolding, while its two finite endpoint deletions remain the actual operators from the previous boundary theorem. This is not a change of the actual knot state to a deformed companion.</p>
+<p>The theorem determines a whole algebraic source chart and an exact comparison for any GIVEN full word. It does not determine that word’s scalar closed period, identify chi_red with A_K, select a global geometric cycle, or give a growing-N norm bound for G. Its retained co-source polynomial is precisely why clock conjugacy alone is insufficient.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_companion_source_shell.py">The exact independent script</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/companion_source_shell_results.json">saved results</a> pass symbolic N=2,…,7 checks of every lower moment row, characteristic/pointing factor, determinant, polynomial coboundary, co-source, mixed-moment inverse/Jacobian and original section. Twelve additional primitive/generic finite-field fibers check the FULL multiplicative moment row and its determinant character, not only the linearized relation.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/companion_source_shell_independent_audit.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-scheme-classification-in-the-source-orbit-basis">1. Exact scheme classification in the source orbit basis</a><a href="#the-polynomial-coboundary-and-its-retained-co-source">2. The polynomial coboundary and its retained co-source</a><a href="#whole-mixed-moments-recover-the-retained-polynomial">3. Whole mixed moments recover the retained polynomial</a><a href="#the-actual-section-and-the-remaining-period">4. The actual section and the remaining period</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

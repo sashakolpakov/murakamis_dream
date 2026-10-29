@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Coherent complete-belt stacks with arbitrary signs and outer twists · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_coherent_octahedral_belt_stack_asymptotic.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="coherent-complete-belt-stacks-with-arbitrary-signs-and-outer-twists">Coherent complete-belt stacks with arbitrary signs and outer twists</h1>
+<p>29 October 2026. The complete-circle boundary packet removes the balance restriction from the original quantum source of the literal octahedral belt stacks. No ordering, parity or residue subsequence is selected. A fixed extra signed crossing power is retained exactly; its literal geometric collar certificate is linked separately below.</p>
+<h2 id="the-exact-original-source-and-its-nodal-crossing-phase">1. The exact original source and its nodal crossing phase</h2>
+<p>Use the genuine full checked crossing R, the complete ordinary auxiliary-circle operator L_N and the unscaled physical turn of <a href="actual_balanced_octahedral_belt_stack_volume.html">the original stack construction</a>. Write z=z_N, z^sharp for its literal reflected polynomial, and</p>
+<pre><code>f_+=z^sharp R^(-1), f_-=Rz,
+n=p+q&gt;0, e=q-p,
+Phi_(p,q,a;N)=phi(L_N R^a product_i f_(epsilon_i)),</code></pre>
+<p>where the fixed word epsilon has p plus and q minus pieces, and a is any fixed signed integer. The whole pair commutant is the FULL Hermite algebra, so the exact all-port identity is</p>
+<pre><code>Phi_(p,q,a;N)=phi(L_N R^(e+a)(z^sharp)^p z^q)
+   =N sum_(j=0)^(N-1) R(c_j)^(e+a)
+                              conjugate(z(c_j))^p z(c_j)^q. (1)</code></pre>
+<p>The second equality is the proved original complete-belt sewing functional; the repeated Casimir normal source has not been replaced before closure. Its derivative pairing gives precisely the displayed N-weighted nodal sum. The all-port equality in the first line includes the normal directions and is stronger than the final nodal formula.</p>
+<p>Put d=N-1, q_root=exp(pi i/N), kappa=exp(pi i d^2/(2N)) and</p>
+<pre><code>theta_j=(2j+1-N)pi/N, c_j=-2cos(theta_j).</code></pre>
+<p>The literal crossing has R(c_j)=kappa(-1)^j q_root<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Consequently, at EVERY node and both parities,</p>
+<pre><code>R(c_j)=kappa^(1/2) exp[iN theta_j^2/(4pi)],
+kappa^(1/2) HERE MEANS exp[pi i d^2/(4N)].             (2)</code></pre>
+<p>There is no principal-square-root convention. The two exponent formulas differ by -2pi i j, exactly. Since the two indices of a double node give the same eigenvalue, (2) is compatible with all multiplicities in (1). In particular |R(c_j)|=1.</p>
+<h2 id="the-nonzero-all-parity-coherent-gaussian">2. The nonzero all-parity coherent Gaussian</h2>
+<p>The <a href="actual_complete_circle_boundary_packet.html">source-exact boundary packet</a> gives, uniformly for small real theta,</p>
+<pre><code>z(-2cos theta)=exp(-i pi d/4) a(i theta)
+                      exp[Nj(i theta)] [1+O(1/N)],
+j(i theta)=j_0-theta^2/(4pi)+O(theta^4),
+a(0)=2^(-9/4) exp(i pi/8), j_0=v8/pi.                 (3)</code></pre>
+<p>Both a(i theta) and j(i theta) are even analytic; j(i theta) is real. Every fixed neighborhood of theta=0 has an exponential gap on its complement for the literal polynomial. The twist in (2) has unit modulus, so it preserves that entire-source gap.</p>
+<p>Combining (1)–(3), the local exponent is EXACTLY, to quadratic order,</p>
+<pre><code>nN j_0 - N[n-i(e+a)]theta^2/(4pi).</code></pre>
+<p>Its real quadratic part is positive because n&gt;0, even for arbitrarily large FIXED signed a. The nodal grid has step2pi/N and shift0 for odd N, shift1/2 for even N. Its complex Gaussian sum is</p>
+<pre><code>sum_j exp[-N(n-i(e+a))theta_j^2/(4pi)]
+   =sqrt(N)/sqrt(n-i(e+a)) [1+O(exp(-cN))].</code></pre>
+<p>Here and below sqrt has positive real part. This follows directly by Fourier transforming the Gaussian: all nonzero frequencies are bounded by exp[-pi N Re(1/(n-i(e+a)))], at either lattice shift. The two tails outside the fixed local window are exponentially small as well. Taylor expansion of the even analytic amplitude and quartic exponent has relative error O(1/N); dominated Gaussian integration makes that estimate uniform on the actual lattice.</p>
+<p>The resulting FULL original source is</p>
+<pre><code>Phi_(p,q,a;N)
+  =N^(3/2) 2^(-9n/4) kappa^(a/2)
+     exp[-ie pi/8+ie pi/(4N)]
+     /sqrt(n-i(e+a)) * exp[nN j_0] [1+O(1/N)].        (4)</code></pre>
+<p>The fixed constant in the error can depend on p,q,a. There is no claim uniform in a growing with N. To check the phase explicitly, the constant factors BEFORE simplification are</p>
+<pre><code>kappa^((e+a)/2) exp[-ie pi d/4] exp[ie pi/8].</code></pre>
+<p>Since d^2/N-d=-d/N, these equal precisely those in (4). This retains the original crossing scalar kappa, not only its modulus. No source phase, normal or winding coefficient is dropped.</p>
+<p>The leading factor in (4) is nonzero at EVERY sufficiently large level, without a prime-level, parity or congruence restriction. In particular</p>
+<pre><code>lim_N (2pi/N) log|Phi_(p,q,a;N)|=2n v8.              (5)</code></pre>
+<p>For p=q=k and a=0, (4) reduces to the earlier retained-belt constant N<sup>(3/2)2</sup>[-(9k+1)/2]/sqrt(k), providing a normalization check. The excluded n=0 case has no positive localized packet and is not covered by this theorem.</p>
+<h2 id="actual-links-and-the-precise-geometric-scope">3. Actual links and the precise geometric scope</h2>
+<p>For a=0 the literal octahedral stack proof already constructs the ACTUAL complement for every fixed sign word of length n&gt;=1. Its complete regular-cell metric has volume2n v8, without a balance hypothesis. Its original source is exactly (1). The original reduced single-cut Kashaev normalization differs only by the recorded unit phases (and the stated single1/N in the modified convention), so (5) proves the full original volume limit for EVERY such sign word.</p>
+<p>Thus unbalanced stacks, including a single positive or negative piece, are now included. This is an actual link-family extension, not a new claim about arbitrary bridge graphs or independently filled crossing circles. Its possible containment in previously known Whitehead-chain families retains the earlier coverage caveat.</p>
+<p>For a!=0, (1)–(5) retain the literal original outer R^a insertion with all of its source scalars. The independently reviewed <a href="actual_balanced_octahedral_belt_stack_volume.html#3a-any-fixed-integer-outer-crossing-power">outer-collar puncture permutation/isometry certificate</a> identifies its ACTUAL complement with the same complete regular-cell gluing, of volume2n v8. Its component count is n+3 for even a and n+2 for odd a. Thus the original volume equality holds for every fixed sign word and every fixed integer outer twist a. The topological assertion comes from that literal collar certificate, not from the quantum rate.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_coherent_octahedral_belt_stack_asymptotic.py">full original sign-word/outer-twist sources, high-precision nodal phase checks and coherent Gaussian calibrations</a>. Fresh replay PASS: seven full physical levels,210 all-sign word operators and490 complete original outer-twist closures;860 100-digit all-parity nodal phase checks; six growing-N families of complete coherent Gaussian calibrations. The phase identities themselves are proved algebraically above; the phase checks and profiles supplement the analytic proof and are not its noncancellation premise.</p>
+<p>Independent analytical check: the global critical-path auditor re-derived (2), the exact imbalance/Cartan phase in (4), and the complex Gaussian at both lattice shifts. The pointwise source error is controlled after summation by its absolute real Gaussian, with fixed factor depending on n,e,a. Thus no parity cancellation or unestimated residue current is being assumed away.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>j(j+1)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_coherent_octahedral_belt_stack_asymptotic.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-exact-original-source-and-its-nodal-crossing-phase">1. The exact original source and its nodal crossing phase</a><a href="#the-nonzero-all-parity-coherent-gaussian">2. The nonzero all-parity coherent Gaussian</a><a href="#actual-links-and-the-precise-geometric-scope">3. Actual links and the precise geometric scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

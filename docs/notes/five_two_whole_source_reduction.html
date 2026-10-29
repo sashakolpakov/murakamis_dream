@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual whole source for the 7/3 five-crossing plat · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/five_two_whole_source_reduction.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-actual-whole-source-for-the-73-five-crossing-plat">The actual whole source for the 7/3 five-crossing plat</h1>
+<p>Research note, 27 October 2026. This derives an exact finite source formula for 5_2 from the same oriented mixed-color four-plat method used for 4_1. All turns, the cut coupon, full Cartan scalar and zero-framing correction are retained. Both the three-index Gaussian/Pochhammer formula and its cyclotomic coefficient transform are proved for the whole meridian family. At completeness the transform gives an explicit two-index formula for the original state.</p>
+<p>This is a diagnostic for arbitrary-bridge source transport, not a restriction of the main volume target to the twist family. No broad selected-period or hyperbolic-volume theorem is asserted here.</p>
+<h2 id="the-marked-plat-and-exact-framing">1. The marked plat and exact framing</h2>
+<p>Set q=exp(pi*i/N), Q=q^2, x=-M/q, Y=M<sup>2=Qx</sup>2, d=N-1 and xvee=x<sup>(-1)Q</sup>(-1). Use</p>
+<pre><code>beta=sigma_2^2 sigma_1^(-2) sigma_2.          (1.1)</code></pre>
+<p>Its action order is sigma_2, sigma_1^(-1), sigma_1^(-1), sigma_2, sigma_2. With the same rational-tangle marking as in the <a href="figure_eight_whole_source_identity.html">figure-eight proof</a>,</p>
+<pre><code>T=[1 1;0 1], U=[1 0;1 1],
+T^2 U^2 T (0,1)^t=(7,3)^t.                 (1.2)</code></pre>
+<p>This is the two-bridge 7/3 plat, with continued fraction [2,2,1] or [2,3], giving the five-crossing twist-knot diagram 5_2 in the handedness fixed by (1.1). The actual three-braid word used in the earlier prototype is retained as an independent finite evaluation check in the audit; no Jones formula is used.</p>
+<p>The top colors are [V(x),V(xvee),V(xvee),V(x)] and their orientations are [+, -, -, +]. Every crossing has positive oriented writhe, so the framing correction is the inverse fifth power of the actual color twist. Put A=alpha, B=2d-alpha, so q^A=x, q^B=xvee. The full mixed Cartan contribution is q<sup>((3B</sup>2-2AB)/2). Including the twist q<sup>(-(5/2)(A</sup>2-2dA)) gives exactly</p>
+<pre><code>q^(3dB)=xvee^(3d).                           (1.3)</code></pre>
+<p>Formula (1.3) is included in the contraction. Omitting either its Cartan or framing part would change the whole meridian identity.</p>
+<h2 id="the-same-literal-source-has-different-bottom-cap-types">2. The same literal source has different bottom cap types</h2>
+<p>Use the exact balanced mixed R coefficients and turns from the figure-eight proof. Cut the fourth top leg at index zero. Because this cut is a left pivotal trace, its coupon is D_0=g E_00, and Tr(g^(-1)D_0 C)=C_00. Thus it is the original reduced scalar cut.</p>
+<p>The top source indices are</p>
+<pre><code>(a,d-a,d,0), 0&lt;=a&lt;N,</code></pre>
+<p>and their coefficient, including the two cups and the coupon, is N^2 x^(a-2d). The final colors are now [V(x),V(xvee),V(xvee),V(x)]. Thus the first bottom cap is ev_R(x), while the second is ev_L(x). This differs from the figure-eight contraction and is essential.</p>
+<p>If the surviving first output index is b and its dual partner is d-b, then the two cap coefficients are</p>
+<pre><code>x^(d-b)g_b/N=x^(-b)Q^(-b)/N,
+x^d/N,
+g_b=x^(-d)Q^(-b).                            (2.1)</code></pre>
+<p>All cap and cup factors are literal finite matrices. No ordinary quantum dimension is divided out, and no separate modified trace is assigned to each bridge.</p>
+<h2 id="forced-transfer-elimination">3. Forced transfer elimination</h2>
+<p>Write the five transfers in action order as k_1,…,k_5. The first positive crossing has second input index d, so k_1=0. After the next two negative crossings write their transfers as k and ell. The successive states are</p>
+<pre><code>(a,d,d-a,0),
+(d-k,a+k,d-a,0),
+(a+k-ell,d-k+ell,d-a,0),</code></pre>
+<p>with</p>
+<pre><code>a+k&lt;N, 0&lt;=ell&lt;=k.                            (3.1)</code></pre>
+<p>The fourth positive crossing has transfer j&lt;=a. The last bottom cap forces the fifth transfer to be j-a, hence</p>
+<pre><code>k_4=a, k_5=0.                               (3.2)</code></pre>
+<p>The final state is</p>
+<pre><code>(a+k-ell,d-a-k+ell,d,0).</code></pre>
+<p>The first cap relation follows automatically. Thus the exact surviving routes are (0,k,ell,a,0), with support (3.1). This elimination uses only the actual unwrapped finite support.</p>
+<p>Set j=k-ell, n=a+k and m=a+j=n-ell. The whole boundary factor from the cups, cap types in (2.1), and the coupon is</p>
+<pre><code>x^(-d-j) Q^(-a-j).</code></pre>
+<p>Multiplying by the five mixed crossing entries and (1.3), then reflecting the two terminal Gaussian binomials, gives</p>
+<pre><code>W_(a,k,ell)=(-1)^ell Y^(2d-2n+ell)
+  Q^(a(k+1)+k^2+2k+2-ell*j-ell(ell+1)/2)
+  {n choose k}_Q {k choose ell}_Q
+  (Q/Y;Q)_k (YQ^(-n);Q)_ell
+  (Q^(j+1)/Y;Q)_a.                          (3.3)</code></pre>
+<p>The reflection identities used here are</p>
+<pre><code>{d choose a}_Q=(-1)^a Q^(-a(a+1)/2),
+{d-j choose ell}_Q
+    =(-1)^ell Q^(-ell*j-ell(ell+1)/2)
+                                  {j+ell choose ell}_Q.</code></pre>
+<p>They hold because Q has primitive order N and all upper indices involved are less than N.</p>
+<h2 id="an-exact-whole-source-gaussian-formula">4. An exact whole-source Gaussian formula</h2>
+<p>Invert the ell factors of (YQ^(-n);Q)_ell in (3.3):</p>
+<pre><code>(YQ^(-n);Q)_ell
+   =(-Y)^ell Q^(-n*ell+ell(ell-1)/2)
+                          (Q^(m+1)/Y;Q)_ell.</code></pre>
+<p>The signs cancel. The remaining products and binomials simplify by</p>
+<pre><code>{n choose k}_Q {k choose ell}_Q
+               ={m+ell choose ell}_Q {m choose j}_Q,
+
+(Q/Y;Q)_k (Q^(j+1)/Y;Q)_a (Q^(m+1)/Y;Q)_ell
+               =(Q/Y;Q)_(m+ell)(Q^(j+1)/Y;Q)_ell.</code></pre>
+<p>Their monomial exponent becomes j(m+1)+m+ell+2. We obtain the following proved identity for the actual reduced whole period:</p>
+<pre><code>F_(5_2),N(Y)
+  =sum_(m,ell&gt;=0,m+ell&lt;N) sum_(j=0)^m
+      Y^(2(N-1-m)) Q^(j(m+1)+m+ell+2)
+      {m+ell choose ell}_Q {m choose j}_Q
+      (Q/Y;Q)_(m+ell)(Q^(j+1)/Y;Q)_ell.     (4.1)</code></pre>
+<p>Every factor is finite. This is a Laurent-polynomial identity before setting Y=1 or Y^N=1. In particular the displayed Y^(2(N-1-m)) is retained, including all of its meridian jets. The exact original full ADO factor d_N(M), if desired, multiplies both sides as its unchanged whole germ.</p>
+<p>At N=2 the formula gives, exactly,</p>
+<pre><code>F_(5_2),2(Y)=-2Y-3-2/Y,
+&lt;5_2&gt;_2=-7.</code></pre>
+<p>The sign is fixed by the above framing and source, rather than chosen from the knot determinant.</p>
+<h2 id="reciprocal-newton-space-and-two-proved-boundary-rows">5. Reciprocal Newton space and two proved boundary rows</h2>
+<p>Formula (4.1) has minimum Y exponent at least -d, term by term: the minimum in a term is 2d-3m-2ell, and m+ell&lt;=d. The already proved actual Weyl symmetry F(Y)=F(Y^(-1)) therefore bounds the maximum exponent by d as well. Consequently there are unique coefficients C_n^(N), 0&lt;=n&lt;=d, in</p>
+<pre><code>F_N(Y)=sum_(n=0)^d C_n^(N) T_n(Y),
+T_n(Y)=product_(r=1)^n(Y+Y^(-1)-Q^r-Q^(-r)). (5.1)</code></pre>
+<p>This is a statement about whole reciprocal Laurent polynomials, not interpolation of a few root values. The T_n are monic Newton polynomials of degree n in Y+Y^(-1), including at a root Q.</p>
+<p>The actual anchor at Y=Q gives C_0^(N)=1. The coefficient of Y^(-d) in (4.1) comes only from m=d,ell=0. Since (-1)^d Q^(d(d+1)/2)=1, the top row is exactly</p>
+<pre><code>C_d^(N)=Q sum_(j=0)^d {d choose j}_Q.         (5.2)</code></pre>
+<p>There is a useful source-basis simplification valid at every n:</p>
+<pre><code>(1-Y)T_n(Y)=-Y^(n+1)(Q^(-n)/Y;Q)_(2n+1).   (5.3)</code></pre>
+<p>Thus the normal source has one contiguous Pochhammer rather than two separated products. Equation (5.3) follows by inverting (Y;Q)_(n+1) in (1-Y)T_n and joining its factors with (Q/Y;Q)_n. It may be useful when transporting sources through arbitrary bridge convolutions. It does not itself prove the remaining coefficient transform.</p>
+<h2 id="the-proved-whole-source-cyclotomic-transform">6. The proved whole-source cyclotomic transform</h2>
+<p>For every primitive Nth root Q, every N&gt;=2, and arbitrary nonzero Y, the exact simplification is</p>
+<pre><code>C_n(Q)=(-1)^n Q^(-n(n+3)/2)
+                sum_(j=0)^n Q^(-j(n+1)){n choose j}_Q,
+F_N(Y) =sum_(n=0)^(N-1) C_n(Q) T_n(Y).     (6.1)</code></pre>
+<p>Equivalently its inner summand is Q^(-j(j+1)){n choose j}_(Q^(-1)). The <a href="five_two_cyclotomic_transform_proof.html">direct finite proof</a> starts from (4.1), applies an elementary terminating three-factor q-Chu transform and q-Vandermonde, and then uses a generic Newton connection and a finite root Rogers-polynomial convolution. Every parity sign and source factor is retained. The proof is a Laurent-polynomial identity in Y; repeated ordinary-color nodes are not used as interpolation data. Thus it includes all fixed-root meridian jets and the normal complete-color source.</p>
+<p>At Y=1, use</p>
+<pre><code>T_n(1)=(-1)^n Q^(-n(n+1)/2)(Q;Q)_n^2.</code></pre>
+<p>Writing F_n=(Q;Q)_n, the ORIGINAL reduced Kashaev state is therefore</p>
+<pre><code>&lt;5_2&gt;_N=sum_(0&lt;=j&lt;=n&lt;N)
+      Q^[-n(n+2)-j(n+1)] F_n^3/[F_j F_(n-j)]. (6.2)</code></pre>
+<p>This is the exact double sum used by the <a href="source_preserving_inner_quadrature.html">source-preserving inner quadrature</a>. Neither (6.1) nor (6.2) asserts saddle selection, a noncancellation estimate, or a volume limit. The full modified-dimension function remains its original separate factor when the full ADO period is used.</p>
+<h2 id="independent-checks">7. Independent checks</h2>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_five_two_whole_source.py">literal-path audit</a> starts with the original E/Cartan mixed crossing entries, the two exact cups, the fourth-leg coupon, and the differently oriented bottom caps. It sums all paths and checks the forced route pattern and each surviving weight in (4.1). Twenty-seven whole contractions at levels 2 through 10 and three meridians per level pass; eighteen are also compared with the original six-crossing three-braid cut. The audit checks (1.2)–(1.3), the normal-basis product identity, the top Newton row, the proved cyclotomic values and (6.2).</p>
+<p>The uniform proof of (4.1) is the source and transfer calculation in Sections 1–4. The proof of (6.1) is the separate <a href="five_two_cyclotomic_transform_proof.html">finite transform</a>, whose <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_five_two_finite_chu_bridge.py">audit</a> also compares whole-Y Laurent coefficients and checks the reusable generic and root convolution identities. The finite checks validate the formulas; they do not establish their all-level scope.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/five_two_whole_source_results.json">Results</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/five_two_whole_source_reduction.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-marked-plat-and-exact-framing">1. The marked plat and exact framing</a><a href="#the-same-literal-source-has-different-bottom-cap-types">2. The same literal source has different bottom cap types</a><a href="#forced-transfer-elimination">3. Forced transfer elimination</a><a href="#an-exact-whole-source-gaussian-formula">4. An exact whole-source Gaussian formula</a><a href="#reciprocal-newton-space-and-two-proved-boundary-rows">5. Reciprocal Newton space and two proved boundary rows</a><a href="#the-proved-whole-source-cyclotomic-transform">6. The proved whole-source cyclotomic transform</a><a href="#independent-checks">7. Independent checks</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

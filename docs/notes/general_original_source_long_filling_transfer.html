@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Long fillings of a general original quantum source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/general_original_source_long_filling_transfer.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="long-fillings-of-a-general-original-quantum-source">Long fillings of a general original quantum source</h1>
+<p>29 October 2026. The Fourier filling mechanism is independent of the pretzel graph. This theorem isolates its actual analytic inputs and proves that they propagate to every independently sufficiently long fixed signed integral filling. The new general geometric theorem then identifies the resulting rate with the actual filled hyperbolic volume.</p>
+<p>This is a CONDITIONAL quantum transfer theorem. It does not assert its source hypotheses for every diagram, or count them as proved merely because the diagram has a positive geometric triangulation. Establishing them for broader original sources is part of the active goal.</p>
+<h2 id="exact-source-and-hypotheses">1. Exact source and hypotheses</h2>
+<p>Fix a diagram with b specified crossing-circle ports on original complete target strands. Retain its entire marked closure, all Cartan factors, and its literature normalization. Let A_N(h_1,…,h_b) be its ORIGINAL mixed-circle scalar, with auxiliary colors j_i=N-h_i. The <a href="actual_crossing_circle_source_and_filling.html">all-input circle basis</a> gives the exact finite identity</p>
+<pre><code>K_N(p)=chi_N kappa^(-2 sum p_i)
+   sum_(j_1,...,j_b=1)^N product_i beta_(j_i-1)^(-p_i)
+                                    A_N(N-j_1,...,N-j_b). (1)</code></pre>
+<p>This substitutes each actual full twist R^(-2p_i), leaving the base coupons and retained half twists in A_N. The beta coefficients retain all confluent Casimir jets. Multilinearity of the original diagram proves(1), even if adjacent physical operators do not commute. The independent color-register functionals commute; no physical operator is moved through another. Keep chi_N explicitly and require its known normalization to be nonzero with log|chi_N|=o(N). Here A_N is defined before precisely that recorded outer factor; chi_N is not included a second time in the mixed scalar. It is not chosen using the value of the completed unknown invariant.</p>
+<p>Assume the following for this fixed source.</p>
+<p><strong>Global source gap.</strong> There is a fixed sufficiently small delta&gt;0, H=floor(delta N), a real F0 and gamma&gt;0 such that</p>
+<pre><code>max_(some h_i&gt;H) |A_N(h)| &lt;= poly(N) exp[N(F0-gamma)] (2)</code></pre>
+<p>over the ENTIRE physical color cube 0&lt;=h_i&lt;=N-1. The estimate includes ordinary colors, every alias and every marked normal term.</p>
+<p><strong>Exact analytic corridor packet.</strong> There is a finite holomorphic packet C_N(x), even in each coordinate, on a fixed complex neighborhood of the box |Re x_i|&lt;=2delta, |Im x_i|&lt;=sigma0, with</p>
+<pre><code>|A_N(h)-eta_N C_N(h/N)|
+                &lt;=poly(N) exp[N(F0-gamma)]           (3)</code></pre>
+<p>for 0&lt;=h_i&lt;=H. Here eta_N is an explicit retained unit phase. On that fixed complex neighborhood,</p>
+<pre><code>C_N(x)=N^mu a(x) exp[N phi(x)](1+O(N^-1)),           (4)</code></pre>
+<p>uniformly, where a and phi are holomorphic and separately even, a(0)!=0, phi(0)=F0, and</p>
+<pre><code>phi&#39;&#39;(0)=2pi i diag(tau_1,...,tau_b), Im tau_i&gt;0.     (5)</code></pre>
+<p>A known imaginary constant in phi(0) may instead be retained explicitly as exp[iN Im phi(0)] in eta_N. This only separates its specified unit phase; it does not change the original state or an unknown growth rate.</p>
+<p>The uniform complex statement is essential. A pointwise approximation on the physical grid is not enough for the Fourier contour estimates. One may shrink delta, with the global gap(2) required for the chosen corridor. By(4)–(5), after shrinking the neighborhood,</p>
+<pre><code>|C_N(x+iy)|&lt;=poly(N) exp[N(F0-a0||x||^2+B0||y||^2)] (6)</code></pre>
+<p>with a0&gt;0. All constants may depend on the fixed diagram, not on N.</p>
+<p>These assumptions concern a specified original source and specified interpolation, not a choice of solution of its recurrence.</p>
+<h2 id="the-source-action-and-theorem">2. The source action and theorem</h2>
+<p>Define the local analytic Fourier transform by</p>
+<pre><code>grad phi(xi(z))+2pi i z=0,
+Psi(z)=phi(xi(z))+2pi i xi(z) dot z,
+B(z)=(2pi)^(b/2) a(xi(z))/sqrt(det[-phi&#39;&#39;(xi(z))]).</code></pre>
+<p>The implicit-function theorem applies by(5). The Gaussian square root is the one from the translated original real contour. Both Psi and B are separately even; B(0)!=0 and</p>
+<pre><code>Psi(z)=F0-i pi sum_i z_i^2/tau_i+O(||z||^4).        (7)</code></pre>
+<p>For integer nonzero charges m_i put</p>
+<pre><code>T_m(z)=Psi(z)-2pi i sum_i(p_i z_i^2+m_i z_i).</code></pre>
+<p>For all independently sufficiently large fixed signed p_i, let z_* be the unique nearby critical point of T_1. Then</p>
+<pre><code>K_N(p)=chi_N eta_N kappa^(-sum p_i)
+         N^mu D(p) exp[N T_1(z_*)](1+O_p(N^-1)),   (8)</code></pre>
+<p>where</p>
+<pre><code>D(p)=2^b (2pi)^(b/2) B(z_*) product_i sinh(2pi i z_*,i)
+                                  /sqrt(det[-T_1&#39;&#39;(z_*)])</code></pre>
+<p>is NONZERO. Consequently</p>
+<pre><code>lim_N (2pi/N)log|K_N(p)|=2pi Re T_1(z_*).           (9)</code></pre>
+<p>The slopes and diagram are fixed before N tends to infinity. There is no slope-comparability, same-sign, prime-level or parity restriction. The constants and threshold are source dependent.</p>
+<h2 id="exact-filling-including-every-endpoint-and-normal-term">3. Exact filling, including every endpoint and normal term</h2>
+<p>The full Hermite coefficients obey</p>
+<pre><code>sum_j |beta_j^(-p)|&lt;=2N(1+|p|).</code></pre>
+<p>Thus(2)–(3) cost only polynomial multiples of exp[N(F0-gamma)] in the WHOLE finite sum(1). No non-even alias is folded into C_N. For its exact even corridor define</p>
+<pre><code>F_N(z)=sum_(|h_i|&lt;=H) C_N(h/N) exp(2pi i h dot z).</code></pre>
+<p>The <a href="actual_filling_source_fourier_endpoint_gap.html">full-normal Fourier identity</a>, sections4–5, is valid for ANY even packet. In each color its sampled kernel is the derivative of</p>
+<pre><code>exp(-2pi i p N z^2) sinh(2pi i z) F_N(z).</code></pre>
+<p>Its values vanish at z=+/-1/2 and its derivatives match at the two endpoints. Therefore the exact charge representation retains only m!=0. The complete b-port expression has integrand</p>
+<pre><code>exp[-2pi i N sum_i(p_i z_i^2+m_i z_i)]
+                    product_i[m_i sinh(2pi i z_i)] F_N(z),</code></pre>
+<p>with the unchanged parity phases and kappa factors. Its infinite charge series converges with the paired endpoint currents retained. This identity uses both original normal contributions; a value-only Fourier kernel would not give the same zero-charge cancellation.</p>
+<p>Hypothesis(6) is precisely the source-specific input of the exact cotangent-contour Fourier estimate. Its proof applies coordinatewise to C_N: noncentral frequencies, finite color endpoints and fixed mixed derivatives all have an exponential source gap. The paired high-charge current has a double zero at the endpoint. Its weighted bound is a constant times</p>
+<pre><code>poly(N,p) m/(m-|p|)^3 exp[N(F0-g)],</code></pre>
+<p>for m&gt;2|p|+2delta+2, and is summable. The imaginary contour width is fixed by the SOURCE, not divided by the largest slope.</p>
+<p>In several coordinates use the exact telescoping difference of the full color functionals and their finite-charge restrictions, as in equation(14a) of that note. All spectator chirps stay on their REAL finite grids or finite real integrals while one tail is removed. Thus these bounds do not incur exp(N|p_j|) costs from another port. This is why independently unequal slopes are permitted.</p>
+<h2 id="the-central-packet-and-all-nonminimal-charges">4. The central packet and all nonminimal charges</h2>
+<p>The central Fourier calculation in section6 of the same note uses only(4)–(6), analytic implicit stationarity and a real Gaussian. It gives, uniformly on a fixed small complex z-neighborhood,</p>
+<pre><code>F_N(z)=N^(mu+b/2) B(z) exp[N Psi(z)](1+O(N^-1)).   (10)</code></pre>
+<p>No separate pointwise error is transformed as if it had an exponential Fourier gap; the exact finite analytic C_N is used throughout.</p>
+<p>The <a href="actual_pretzel_long_filling_charge_selection.html">local charge proof</a> also depends only on the stated analytic structure. Here is its extension when the diagonal cusp parameters tau_i are different. Put epsilon_i=1/p_i,t_i=m_i/p_i. The saddle equations become</p>
+<pre><code>z_i=-t_i/2+epsilon_i Psi_i(z)/(4pi i).</code></pre>
+<p>They have a unique holomorphic solution in one fixed polydisk of (t,epsilon), with z_i=-t_i/2 at epsilon=0. Completing the square isolates a purely imaginary term on real t,epsilon:</p>
+<pre><code>T_m(z_m)=(pi i/2)sum_i t_i^2/epsilon_i+Bhat(t^2,epsilon).</code></pre>
+<p>The remainder is analytic and even in every t_i. If b_i=pi Im(tau_i)/|tau_i|^2&gt;0, then</p>
+<pre><code>partial_(t_i^2) Re Bhat(0,0)=-b_i/4.</code></pre>
+<p>Shrink one fixed polydisk so each derivative is &lt;=-b_i/8. Integrating these inequalities along the squared coordinates gives</p>
+<pre><code>Re T_m(z_m)&lt;=Re T_1(z_*)
+                    -sum_i (b_i/8)(m_i^2-1)/p_i^2. (11)</code></pre>
+<p>Thus only |m_i|=1 can be leading among local nonzero charges. Every component z_i is nonzero for m_i!=0: separate evenness writes Psi_i=z_i Q_i(z_1<sup>2,…,z_b</sup>2), and the saddle equation solves z_i=-t_i/[2(1-epsilon_i Q_i/(4pi i))]. The sinh factors in(8) therefore do not vanish. The real part of the translated-contour Hessian remains strictly negative, so its Gaussian determinant is nonzero for signed as well as positive slopes.</p>
+<p>The finite nonlocal charges are treated by the same source estimate: outside |z_i|&lt;=t0/4 the real source has a fixed Fourier gap; inside, |m_i+2p_i z_i|&gt;=|p_i|t0/2 for a charge with |m_i/p_i|&gt;=t0. A fixed imaginary shift in that coordinate decreases its filling phase, including the endpoint connectors. The gap is independent of the largest other slope. Local connector bounds use |Im z_i|&lt;=C|p_i|^-1 |m_i/p_i|, which follows from the same separately even factorization. These are the arguments of sections4–5 of the <a href="actual_pretzel_cusp_corridor_filling_survival.html">corridor proof</a>; they do not use a common value of tau_i or a cyclic diagram.</p>
+<p>The 2^b minimal signed charges have identical complex action. Under (m_i,z_i)-&gt;(-m_i,-z_i), m_i sinh(2pi i z_i) is unchanged; the exact parity characters are unchanged as well. They ADD. Gaussian integration of(10) supplies N^(-b/2), giving(8). Finally Re T_1(z_*) tends uniformly to F0 as max_i|1/p_i| tends to zero, so the threshold can absorb the fixed global/error gaps(2)–(3). This proves the full-source, not only corridor, theorem.</p>
+<h2 id="when-the-rate-is-the-actual-hyperbolic-volume">5. When the rate is the ACTUAL hyperbolic volume</h2>
+<p>Add the following independent geometric certificates for the SAME source. The base diagram is a fixed complete finite-volume cusped hyperbolic manifold Y. The analytic critical packet has an actual bounded framed representation family rho_x near the oriented complete holonomy, with the remaining components parabolic. Its original peripheral marking and absolute source action satisfy</p>
+<pre><code>G=2pi i phi(x)+recorded real constant,
+z_i=2pi i x_i, ell_i=partial_(z_i)G=phi_i(x),
+U_i=-z_i, V_i=-2ell_i,</code></pre>
+<p>with the literal spin kept when converting to these centered projective logs. Require the actual regulator comparison and the absolute anchor ImG(0)=Vol(Y), rather than merely a matching Hessian.</p>
+<p>The Fourier and filling stationarity equations then give EXACTLY</p>
+<pre><code>ell_i=-2pi i z_*,i,
+U_i+p_i V_i=-2pi i,
+2pi Re T_1(z_*)=Vol(rho_p).</code></pre>
+<p>The <a href="general_source_regulator_hyperbolic_equality.html">general geometric completion theorem</a> applies to this actual nearby framed representation. It gives a complete smooth hyperbolic metric on the correctly marked filled topology and hence</p>
+<pre><code>lim_N (2pi/N)log|K_N(p)|=Vol(Y(p)).                 (12)</code></pre>
+<p>That theorem handles arbitrary bases and primitive slopes. The quantum transfer proved HERE concerns the integral full-twist kernel(1); arbitrary rational quantum surgery kernels would need their own exact source and endpoint proof. No rational-filling quantum statement is silently added by the more general geometric theorem.</p>
+<h2 id="current-proved-applications-and-active-generalization-task">6. Current proved applications and active generalization task</h2>
+<p>The established long-pretzel family supplies every hypothesis by explicit source and port proofs. The improved width estimate is being audited separately. For a general augmented diagram, identity(1) is already available, but the complete complex packet(3)–(5), its global gap(2), and its actual marked representation anchor must still be established. The theorem propagates those base certificates to all long fillings; it does not manufacture them from the A-polynomial or geometry alone.</p>
+<p>The active goal of the most general original-invariant equality remains open beyond the source classes where those hypotheses are proved.</p>
+<p>The <a href="actual_long_filled_octahedral_belt_stack_volume.html">signed octahedral belt-stack assembly</a> now supplies all these hypotheses for another class, at every fixed nonempty stack width and fixed outer crossing power. Its literal inner color continuation, squared outer Fourier kernel, global source gaps, typed peripheral lift and complete face anchor give full equality for independently long signed integral fillings of ANY subset of auxiliary circles. Unfilled colors remain at h=0; they are not assigned p=0. This application does not turn the present conditional theorem into an unconditional statement for arbitrary graph sources.</p>
+<h2 id="independent-proof-audit">7. Independent proof audit</h2>
+<p>An independent read checked the exact N powers, the Cartan kernel factor, the all-unit parity cancellation, and the unequal-cusp charge estimate. It also checked the coordinate conversion dG=ell dz=(1/2)VdU and 2pi i T=G+sum p_i ell_i^2 up to its recorded REAL constant. The general theorem retains its base-source hypotheses; the audit does not establish them for a new diagram. The improved pretzel source proof currently verifies them for fixed odd s&gt;=9.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/general_original_source_long_filling_transfer.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-source-and-hypotheses">1. Exact source and hypotheses</a><a href="#the-source-action-and-theorem">2. The source action and theorem</a><a href="#exact-filling-including-every-endpoint-and-normal-term">3. Exact filling, including every endpoint and normal term</a><a href="#the-central-packet-and-all-nonminimal-charges">4. The central packet and all nonminimal charges</a><a href="#when-the-rate-is-the-actual-hyperbolic-volume">5. When the rate is the ACTUAL hyperbolic volume</a><a href="#current-proved-applications-and-active-generalization-task">6. Current proved applications and active generalization task</a><a href="#independent-proof-audit">7. Independent proof audit</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

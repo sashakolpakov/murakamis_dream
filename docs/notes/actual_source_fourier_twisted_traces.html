@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The original source has an exact Fourier resolution into twisted traces · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_source_fourier_twisted_traces.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-original-source-has-an-exact-fourier-resolution-into-twisted-traces">The original source has an exact Fourier resolution into twisted traces</h1>
+<p>27 October 2026. The all-strand endpoint source admits a resolution into UNIT-density Frobenius traces on one common matrix algebra of actual word coefficients. Their source-conjugation transport satisfies an explicit nonabelian norm equation. Primitive Fourier sectors have finite cyclic transport (as do gcd-two sectors); the remaining transport is unipotent, with index EXACTLY gcd(k,N). The zero sector has index EXACTLY N when N&gt;2. Thus nilpotence exists but is not uniformly bounded in level.</p>
+<p>Individual sectors are not knot invariants: an actual braid-conjugacy test changes their values while preserving their marked Fourier sum. No sector is identified here with a geometric A-period, nor is its coefficient bounded subexponentially. This note does not replace the already proved symmetric trace on the full E,F,K centralizer in <a href="integral_projective_cut_duality.html">the integral cut theorem</a>.</p>
+<h2 id="the-actual-endpoint-is-a-nakayama-relative-line">1. The actual endpoint is a Nakayama-relative line</h2>
+<p>Use the actual root algebra and cap of <a href="actual_euler_cap_cauchy_boundary.html">the Euler/Cauchy theorem</a>:</p>
+<pre><code>A_0=&lt;H,f | H^N=1, Hf=Q^-1 fH, f^N=0&gt;,
+e_j=(1/N)sum_k Q^(jk)H^k,
+tau(f^a e_j)=delta_(a,N-1),
+nu(H)=QH, nu(f)=f,
+tau(ab)=tau(b nu(a)).</code></pre>
+<p>Set z=xf, J=1/[(1-z)(1-Qz)] and</p>
+<pre><code>E=e_(N-1)J, nu(E)=e_0 J, s=f^(N-1)e_0.</code></pre>
+<p>The rational expression J is an actual finite polynomial because z is nilpotent. Its degree-(N-1) coefficient is zero at Q^N=1. Also e_(N-1)J e_(N-1)=e_(N-1). Consequently</p>
+<pre><code>E^2=E, tau(E)=0, tau(s)=1,
+E a nu(E)=rho_0(Ja) s for EVERY a in A_0,       (1)
+rho_0=[f^(N-1)e_0].</code></pre>
+<p>For (1), the two endpoint idempotents in e_(N-1)Ja e_0 select exactly its f^(N-1)e_0 coefficient. Right multiplication by J does nothing to s since s f=0. Thus the actual source is a specified rank-one linear compression between DIFFERENT projectives.</p>
+<p>Ordinary compression E a E would erase it: E is a primitive idempotent lifting e_(N-1), so E A_0 E=C E, and tau vanishes on that entire corner. More explicitly put n=e_(N-1)(J-1). Then n^2=0, n e_(N-1)=0, and</p>
+<pre><code>E=(1-n)e_(N-1)(1+n).</code></pre>
+<p>The corner claim follows from e_(N-1)A_0 e_(N-1)=C e_(N-1). In contrast (1) is nonzero at a=s.</p>
+<p>This linear compression is not a word quotient. Already at N=2, the actual positive crossing coefficient is</p>
+<pre><code>a_R=eta I+(eta^-1/2)s, eta=exp(pi*i/4).</code></pre>
+<p>Here J=1. The map P(a)=E a nu(E) has P(e_0)=0 but P(a_R e_0)=(eta^-1/2)s!=0. Transport on the selected scalar line alone would lose real word data. One must retain the projective memory E A_0, or another independently proved source complex.</p>
+<p>Nor is the single cap a twisted trace for some automorphism merely because tau is. If tau(Eab)=tau(Eb theta(a)) for every a,b, Frobenius nondegeneracy implies</p>
+<pre><code>nu(E)nu(a)=theta(a)nu(E).</code></pre>
+<p>Thus nu(E)A_0=A_0 nu(E). A normal idempotent is central: both off- diagonal corners vanish. But the center of A_0 is C and E is a proper primitive idempotent. This rules out that shortcut. The Fourier resolution below instead uses invertible densities.</p>
+<h2 id="align-all-tail-heads-on-one-actual-coefficient-algebra">2. Align all tail heads on ONE actual coefficient algebra</h2>
+<p>The <a href="all_strand_euler_cauchy_cap.html">all-strand source theorem</a> decomposes the closed tail into r=N^(b-2) normalized Borel heads. For b&gt;=3 label them lambda=(t,j), with y_lambda=YQ^-j; for b=2 use one head and j=0. Let C_lambda be its actual two-leg fusion. The physical GLOBAL H=K_total/(xY) acts in that local regular frame as Q^-j times left multiplication by H.</p>
+<p>Replace that local frame by</p>
+<pre><code>Psi_lambda=C_lambda composed with nu^-j.        (2)</code></pre>
+<p>Indeed nu<sup>-j(Ha)=Q</sup>-j H nu^-j(a), so (2) intertwines the same global H and f on every copy. Consequently the full actual braid, INCLUDING all off-diagonal tail transitions, acts on row vectors by right multiplication by a matrix A in B=Mat_r(A_0). Transposing the usual array of block right coefficients gives this row-vector convention. Operator composition is right action in its original order; no diagonal blocks are extracted during multiplication.</p>
+<p>The physical Euler-dressed coefficient matrix is</p>
+<pre><code>b=U^-1 A U, U=diag(u(z)),
+u(z)=sum_(a=0)^(N-1) z^a/(Q;Q)_a.</code></pre>
+<p>The matrix Frobenius functional and Nakayama map are</p>
+<pre><code>T(b)=sum_lambda tau(b_(lambda,lambda)),
+nu acts entrywise,
+T(ab)=T(b nu(a)).</code></pre>
+<p>Changing from the local head to (2) sends its word coefficient to nu^j of the local coefficient. Therefore the ORIGINAL source from the all-strand theorem becomes EXACTLY</p>
+<pre><code>P_W=chi_W gamma_0 T(D b),
+gamma_0=N x^(b(1-N))Q,
+D=diag_lambda[Q^-j e_(j-1)J].                 (3)</code></pre>
+<p>All original framing and full peripheral factors remain in chi_W. This is valid for varying actual meridian x=-M/q at the fixed root on its original source lattice. It does not equate central-F and moving-q normals. Formula (3) follows either from the literal pivotal trace or from rho_j(Jb)=tau(e_(j-1)Jb); no invariant is divided out to choose the frame.</p>
+<h2 id="fourier-resolution-into-genuine-unit-density-traces">3. Fourier resolution into genuine unit-density traces</h2>
+<p>The idempotent Fourier formula gives</p>
+<pre><code>D=(1/N)sum_(k=0)^(N-1) C_k,
+C_k=diag_lambda[Q^(-j+(j-1)k)] H^k J.          (4)</code></pre>
+<p>Every C_k is a UNIT of B. Define</p>
+<pre><code>Phi_k(a)=T(C_k a),
+theta_k=Ad_(C_k) composed with nu.</code></pre>
+<p>Then Phi_k is a nondegenerate Frobenius functional and</p>
+<pre><code>Phi_k(ab)=Phi_k(b theta_k(a)),
+P_W=(chi_W gamma_0/N)sum_k Phi_k(b).          (5)</code></pre>
+<p>For the twisted trace identity, T(C_k ab)=T(b nu(C_k)nu(a)). Since nu(C_k)=Q^k C_k, its scalar multiplier cancels in inner conjugation, giving theta_k as stated. These are actual whole-word source sectors, not characters assigned to semisimple root points. Their Fourier SUM recovers the original nonunit source density D.</p>
+<p>If desired the space of all invertible Frobenius densities is a torsor under the noncommutative unit group B^times. It is not yet the G_m/norm-one torus of a simple quantum A-eigenline. Passing to that latter object requires its own central spectral compatibility.</p>
+<h2 id="exact-finite-order-and-unipotent-source-transport">4. Exact finite-order and unipotent source transport</h2>
+<p>Put g=gcd(k,N), d=N/g, taking g=N,d=1 when k=0. The scalar- diagonal phases in C_k have Nth power one. Using HfH<sup>-1=Q</sup>-1 f, the product formula for its Nth power is</p>
+<pre><code>C_k^N=G_k(z) I_r,
+G_k(z)=[(1-z^d)(1-Q^d z^d)]^-g.              (6)</code></pre>
+<p>Indeed multiplication visits every dth-root orbit of z exactly g times. The two factors in J give the two products displayed in (6). All are units on the actual nilpotent source. Also nu(C_k)=Q^k C_k and nu^N=Id. Hence</p>
+<pre><code>theta_k^N=Ad_(G_k(z) I_r).                    (7)</code></pre>
+<p>In particular primitive k has g=1, z^N=0, so G_k=1 and theta_k^N=Id. This conclusion is valid at every composite N too. The same holds for g=2: Q^d=-1 and the two denominator factors multiply to 1-z^N=1. For g&gt;2 the bound (8) is sharp.</p>
+<p>For the remaining k, G_k=1+O(z^d). On the basis f^a H^j,</p>
+<pre><code>Ad_(G_k)(f^a H^j)
+   =f^a [G_k(z)/G_k(Q^-j z)] H^j.</code></pre>
+<p>The factor in brackets minus one belongs to (z^d), and Ad_(G_k) fixes all functions of z. Iterating a difference therefore gains one further factor z^d on each iteration, proving the sharper bound</p>
+<pre><code>(theta_k^N-Id)^g=0.                           (8)</code></pre>
+<p>To see sharpness, the leading term for g&gt;2 is</p>
+<pre><code>G_k(z)=1+g(1+Q^d)z^d+O(z^(2d)).</code></pre>
+<p>The ratio at j=1 has nonzero leading coefficient g(1+Q<sup>d)(1-Q</sup>-d)z^d. Its (g-1)st power survives because d(g-1)&lt;N. Thus the index is exactly g. In particular there is no uniform level-independent bound. For k=0 and N&gt;2,</p>
+<pre><code>G_0(z)=J(z)^N=1+N(1+Q)z+O(z^2).</code></pre>
+<p>Its ratio at j=1 has nonzero linear coefficient N(1+Q)(1-Q^-1). Thus (Ad_(G_0)-Id)^(N-1)(H)!=0, while its Nth power is zero: the index in (8) is EXACTLY N. The exception N=2 has J=1, so its cyclic transport is already finite order. The growing index and the unestimated word coefficients prevent using nilpotence alone as a subexponential norm estimate.</p>
+<p>There is an explicit Hilbert-90 gauge in every g&lt;=2 sector. Put C_k<sup>0=diag_lambda[Q</sup>(-j+(j-1)k)]H^k and mu_k=Ad_(C_k^0) composed with nu. It sends z to Q^-k z. Choose the finite nilpotent exponential</p>
+<pre><code>g_k(z)=exp sum_(a=1)^(N-1)
+            (1+Q^a)z^a/[a(Q^(ka)-1)].          (8a)</code></pre>
+<p>At g=1 every displayed denominator is a unit. At g=2 the sole resonant degree a=d has numerator zero too; choose that coefficient to be zero rather than interpret a zero-over-zero expression. Coefficient comparison in the finite logarithm proves</p>
+<pre><code>g_k(Q^k z)/g_k(z)=J(z),
+theta_k=Ad_(g_k) composed with mu_k
+                     composed with Ad_(g_k^-1). (8b)</code></pre>
+<p>For k=1 this gauge is especially concrete:</p>
+<pre><code>g_1(z)=v(z)v(Qz)=[u(z)u(Qz)]^-1
+                   =(1-z)^-1 u(z)^-2.         (8c)</code></pre>
+<p>Thus the finite cyclic transport is explicitly solved, but its comparison gauge contains TWO quantum Euler factors. It is not a polynomial-norm estimate and must retain those factors in a regulator comparison. For g&gt;2 the nonzero resonant term at degree d prevents solving the same scalar-polynomial gauge equation: its numerator 1+Q^d is nonzero while Q^(kd)-1=0. This is precisely the remaining unipotent defect rather than an omitted normalization choice.</p>
+<p>The subsequent <a href="actual_hilbert90_gauge_dilogarithm_action.html">uniform actual-gauge action proof</a> now makes this metric issue quantitative. For the CANONICAL finite polynomial g_1, uniformly on |z|&lt;=1/4,</p>
+<pre><code>g_1(z)=exp[(2/h)Li_2(z)+O(1/N)], h=2pi*i/N.</code></pre>
+<p>Its flat right-regular operator and inverse have positive exponential norm rates, so its condition number grows exponentially. This is the specified actual source gauge, not an arbitrary rescaling. In contrast, <a href="actual_euler_meridian_half_step.html">its Euler meridian half-step</a> has a polynomial condition bound and a nonzero exact sourced endpoint. Both results retain their degree-N carries and stated metrics.</p>
+<h2 id="the-source-conjugation-torsor-has-a-concrete-norm-equation">5. The source-conjugation torsor has a concrete norm equation</h2>
+<p>For any actual invertible word coefficient c, or any unit of B, put</p>
+<pre><code>h_k(c)=c theta_k(c)^-1.</code></pre>
+<p>Twisted cyclicity gives the exact PERIOD equation</p>
+<pre><code>Phi_k(c^-1 b c)=Phi_k(b h_k(c)).               (9)</code></pre>
+<p>This states precisely how the sector co-source must be transported under conjugation. Its ordered cyclic norm telescopes:</p>
+<pre><code>product_(r=0)^(N-1) theta_k^r(h_k(c))
+    =c theta_k^N(c)^-1
+    =c G_k c^-1 G_k^-1.                     (10)</code></pre>
+<p>Sectors with gcd(k,N)&lt;=2 therefore have a genuine nonabelian norm-one source equation; the other sectors retain an explicit unipotent commutator defect. On an independently identified commutative simple eigenline this would become an ordinary Hilbert-90-type comparison. Neither that eigenline nor its geometric support is assumed here. The nonprimitive defect and the marked Fourier sum cannot simply be deleted.</p>
+<p>The individual values Phi_k(b) are not knot invariants. There is an exact actual-matrix witness with the SAME braid index and writhe: at N=3 over F_1009, the figure-eight word beta=(1,-2,1,-2) has sector values</p>
+<pre><code>[224,545,410], average 393,</code></pre>
+<p>whereas sigma_1 beta sigma_1^-1=(1,1,-2,1,-2,-1) has</p>
+<pre><code>[619,845,724], average 393.</code></pre>
+<p>All external normalization factors are identical in this comparison. Thus an adapter depending only on level, color, braid index and writhe cannot turn these fixed sectors into ordinary-color knot evaluations. Equation (9), with its actual transported co-source, is required. The sum in (5) does give the original invariant.</p>
+<p>There is also a local E-commutation obstruction: at N=2, J=1 and theta_k sends the nonconstant part f e_0 of the actual crossing to Q^-k f e_1. After undoing the Euler/fusion frame its right operator no longer commutes with the actual total E. The audit checks a nonzero literal commutator. Consequently theta_k is an automorphism of the full Borel-relative algebra, not generally of the smaller actual E,F,K centralizer. Its sectors must not be identified with that centralizer’s existing symmetric cut trace.</p>
+<h2 id="what-this-advances-and-what-remains">6. What this advances and what remains</h2>
+<p>This gives an explicit source-preserving Fourier family with a fully solved finite-level cyclic transport equation, including its nonabelian norm defect. It also identifies the exact linear source line and shows why ordinary corner compression erases it. These are algebraic statements about the actual selected source and the completed original word at arbitrary braid index.</p>
+<p>They do not supply a nonzero selected geometric A-sector, a bound for the sector sum, or a sharp volume norm. In particular finite cyclic transport, even in primitive sectors, does not bound the value of a word; the norm-one condition alone permits large comparison matrices. The zero sector’s nilpotence index grows with N and its contribution has not been proved negligible. The source family is therefore an exact input for the required singular/nonlocal geometric comparison, not that comparison itself.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_source_fourier_twisted_traces.py">audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_source_fourier_twisted_traces_results.json">saved results</a> check seven levels N=2,…,8, all basis relative-line compressions, twisted cyclicity, sector inverses, exact norm equations, the sharp zero-sector nilpotence index, and the common-frame ORIGINAL source on six signed words of braid indices two, three and four. The noninvariance and E-commutation witnesses use literal original crossing matrices and pivots, not replacement traces.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_source_fourier_twisted_traces.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-endpoint-is-a-nakayama-relative-line">1. The actual endpoint is a Nakayama-relative line</a><a href="#align-all-tail-heads-on-one-actual-coefficient-algebra">2. Align all tail heads on ONE actual coefficient algebra</a><a href="#fourier-resolution-into-genuine-unit-density-traces">3. Fourier resolution into genuine unit-density traces</a><a href="#exact-finite-order-and-unipotent-source-transport">4. Exact finite-order and unipotent source transport</a><a href="#the-source-conjugation-torsor-has-a-concrete-norm-equation">5. The source-conjugation torsor has a concrete norm equation</a><a href="#what-this-advances-and-what-remains">6. What this advances and what remains</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The regular ADO period, its bounded source, and a cyclic trace · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/regularized_kashaev_period.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-regular-ado-period-its-bounded-source-and-a-cyclic-trace">The regular ADO period, its bounded source, and a cyclic trace</h1>
+<p>Research note, 26 October 2026. This isolates a canonical regular period of the actual literature state. All its polar data come from ordinary colors and have polynomial size at the specified principal root. The regular period at completeness is exactly a weighted field trace on the squared-meridian cyclic algebra. Any specified actual all-level operator gives it a rootwise affine equation with a source in a fixed finite-dimensional Laurent space, with polynomially bounded coefficients.</p>
+<p>These statements hold for every knot. They neither prove that this source couples to the geometric branch nor establish the volume limit. They do not identify this rootwise source with a fixed generic rational source or import a published volume theorem.</p>
+<h2 id="the-actual-pointing-and-the-statement">1. The actual pointing and the statement</h2>
+<p>Fix a b-strand braid closing to a zero-framed knot. The parameters and state are those of <a href="kashaev_ado_pointing.html">the ADO audit</a>:</p>
+<pre><code>q_N=exp(pi*i/N), Q_N=q_N^2, Y=M^2,
+F_N(Y) in C[Y,Y^(-1)],
+F_N(1)=K_N=&lt;K&gt;_N,
+F_N(Q_N^j)=C_j(q_N), 1&lt;=j&lt;N.                  (1.1)</code></pre>
+<p>The evenness and operator descent to Y were proved in <a href="even_meridian_norm_descent.html">the squared-meridian note</a>. The integer-color identities are the independently proved <a href="root_orbit_pointing.html">quotient-color pointing</a>. Here C_j has unknot value one; it is used to control exact polar data, not through a Jones asymptotic assumption.</p>
+<p>Put zeta_j=Q_N^j and S_N(Y)=1+Y+…+Y^(N-1). There is a unique polynomial P_N of degree at most N-2 with</p>
+<pre><code>P_N(zeta_j)=C_j(q_N), 1&lt;=j&lt;N.</code></pre>
+<p>Define</p>
+<pre><code>p_N(Y)=P_N(Y)/S_N(Y),
+R_N(Y)=(F_N(Y)-P_N(Y))/S_N(Y).                 (1.2)</code></pre>
+<p>Then R_N is Laurent polynomial. With eta_N=i^(N+3), the exact full ADO state decomposes as</p>
+<pre><code>N_N(M)=eta_N M^(N-1) R_N(M^2)
+                   +eta_N M^(N-1) p_N(M^2).  (1.3)</code></pre>
+<p>The second term has every polar principal part of the full state away from M=0 and infinity. The first term is regular there. This prescription is canonical in the marked Y-coordinate: p_N has precisely those simple principal parts, is regular at zero, and tends to zero at infinity.</p>
+<p>The main conclusions, proved below, are:</p>
+<ul>
+<li><p>All C_j(q_N), 1&lt;=j&lt;N, satisfy the uniform bound |C_j(q_N)|&lt;=[j]_(q_N)^(b-1)&lt;=D_N, where D_N=sin(pi/N)<sup>(1-b)&lt;=(N/2)</sup>(b-1).</p></li>
+<li><p>|p_N(1)|&lt;=D_N. Thus the regular full period and the full ADO value at completeness differ by a polynomially bounded quantity.</p></li>
+<li><p>Exactly</p>
+<pre><code>R_N(1)=(1/N) Tr_(C(Y)/C(U))(Y F_N(Y))|_(U=1), U=Y^N.       (1.4)</code></pre></li>
+<li><p>A specified actual all-level operator, after a fixed rational gauge and denominator clearing, gives an affine equation for R_N. Its source has Laurent support in a fixed interval and coefficients O(D_N), independently of N.</p></li>
+</ul>
+<p>The last claim concerns meridian functions at each root. No corresponding bound on q-derivatives transverse to the root is inferred.</p>
+<h2 id="a-positive-trace-bounds-all-the-ordinary-colors">2. A positive trace bounds all the ordinary colors</h2>
+<p>We reconstruct the finite algebra needed for the bound. Assume N&gt;=3, theta=pi/N, and put</p>
+<pre><code>delta=2cos(theta),
+mu_a=sin((a+1)theta)/sin(theta), 0&lt;=a&lt;=N-2.</code></pre>
+<p>All mu_a are positive; with mu_(-1)=mu_(N-1)=0 they obey mu_(a-1)+mu_(a+1)=delta*mu_a. Let H_m have the orthonormal basis of length-m walks on the chain 0,…,N-2 starting at zero. On a walk a, define U_i to be zero unless a_(i-1)=a_(i+1)=c. Otherwise it replaces the middle height a_i by a neighbor a_i’ of c, with matrix entry</p>
+<pre><code>(U_i)_(a&#39;,a)=sqrt(mu_(a_i&#39;)mu_(a_i))/mu_c.     (2.1)</code></pre>
+<p>Direct multiplication gives U_i*=U_i, U_i^2=delta U_i, U_i U_(i+1) U_i=U_i, and commuting distant generators. For the square use the displayed neighbor sum. In the adjacent product the middle heights are forced at its two outer steps and the square-root ratios cancel, leaving the single U_i entry. Thus these are actual Temperley–Lieb matrices. The braid matrix</p>
+<pre><code>B_i=q_N^(1/2) I-q_N^(-1/2) U_i                (2.2)</code></pre>
+<p>is unitary: its two eigenvalues are q_N^(1/2) and -q_N^(-3/2). The braid relation follows by expanding and using the three local Temperley–Lieb relations.</p>
+<p>The nonnormalized positive trace is</p>
+<pre><code>tau_m(A)=sum_walks mu_(a_m) A_(a,a).           (2.3)</code></pre>
+<p>Endpoint preservation makes it tracial. The neighbor sum gives tau_(m+1)(A tensor I)=delta*tau_m(A), and (2.1) gives tau_(m+1)((A tensor I)U_m)=tau_m(A). These identities determine the diagram trace: every Temperley–Lieb diagram at the next level is in the span of the included algebra and A U_m B, and cyclicity reduces the latter trace to the preceding level. In particular this trace agrees with the algebraic closure trace.</p>
+<p>Here is its connection with the fixed actual R. On the ordinary two-dimensional color, after retaining the common Cartan scalar,</p>
+<pre><code>R_checked=q^(1/2) I-q^(-1/2) U,</code></pre>
+<p>where U is zero on 00 and 11 and has block</p>
+<pre><code>U|_(01,10)=[ q  -1 ; -1  q^(-1) ].            (2.4)</code></pre>
+<p>This follows by substituting E v_1=v_0 into the actual finite R. It obeys U<sup>2=(q+q</sup>(-1))U and the adjacent relation. With K=diag(q,q^(-1)), its partial quantum trace is I. Thus the actual quantum trace has precisely the two trace recursions above and equals (2.3), even though (2.4) itself is not Hermitian in the unmodified tensor basis.</p>
+<p>For completeness the j-color is represented by the idempotent p_(j-1). The recursion, within the requisite tensor power, is</p>
+<pre><code>p_0=p_1=I,
+p_(m+1)=p_m tensor I
+   -[m]/[m+1]*(p_m tensor I)U_m(p_m tensor I).  (2.5)</code></pre>
+<p>The Temperley–Lieb relations inductively give p_m U_i=U_i p_m=0 for i&lt;m and (p_m U_m p_m)^2=([m+1]/[m])p_m U_m p_m; substituting this last identity in (2.5) verifies idempotence at the next step. All coefficients are real and denominators nonzero in the range used here. Hence these idempotents are orthogonal projections in (2.1). The trace recursion and delta*[m+1]-[m]=[m+2] give</p>
+<pre><code>tau_m(p_m)=[m+1].                              (2.6)</code></pre>
+<p>This also verifies the actual color rather than assigning it by name. For generic q the common kernel of the U_i in V_1^(tensor m) has one vector at each weight: each adjacent exchange imposes the q-ratio read from (2.4), and adjacent exchanges connect all words of that weight. These m+1 vectors are F^r(v_0 tensor … tensor v_0), with E F<sup>r=[r][m-r+1]F</sup>(r-1). Thus the image is exactly the ordinary (m+1)-dimensional highest-weight color. This identity specializes for m&lt;=N-2, when all needed denominators remain nonzero. Cabling the actual finite R and restricting to these images gives its color R by the coproduct identity; equivalently expand the coproduct powers by the q-binomial formula. This is the same color comparison proved in <a href="adequacy_and_algebraic_periods.html#3-passing-from-parallel-strands-to-the-actual-color">the degree note</a>.</p>
+<p>For a b-strand braid colored by j&lt;N, the tensor product P of these projections has positive trace [j]^b. The cabled braid is unitary, preserves P, and its framing correction has modulus one. On the image of P each diagonal entry of a unitary has modulus at most one. The positive trace therefore gives</p>
+<pre><code>|C_j(q_N)|&lt;=tau(P)/[j]=[j]^(b-1).              (2.7)</code></pre>
+<p>This is uniform in j,N. For N=2 only j=1 occurs and the statement is immediate. Since sin(pi/N)&gt;=2/N, the D_N bound in Section 1 follows. At j=N the positive trace of the corresponding projection is zero; division by [N] is unavailable. Nothing here bounds the Kashaev color.</p>
+<h2 id="the-exact-principal-parts-and-the-regular-remainder">3. The exact principal parts and the regular remainder</h2>
+<p>At a root zeta_j of S_N,</p>
+<pre><code>S_N&#39;(zeta_j)=N*zeta_j^(-1)/(zeta_j-1).</code></pre>
+<p>Lagrange interpolation gives</p>
+<pre><code>P_N(Y)=sum_(j=1)^(N-1) C_j(q_N)
+                    *S_N(Y)/((Y-zeta_j)S_N&#39;(zeta_j)),
+p_N(Y)=sum_(j=1)^(N-1)
+  C_j(q_N)*zeta_j*(zeta_j-1)/(N*(Y-zeta_j)).    (3.1)</code></pre>
+<p>The roots are simple and F_N-P_N vanishes at all of them. Since S_N(0)=1, division in the Laurent ring proves R_N is Laurent polynomial. It also gives the whole wall value</p>
+<pre><code>R_N(zeta_j)=(F_N&#39;(zeta_j)-P_N&#39;(zeta_j))/S_N&#39;(zeta_j).         (3.2)</code></pre>
+<p>The full state’s phase, its monomial M^(N-1), and every divisor in S_N remain in (1.3). This is an identity of meridian germs, not a replacement of any factor by its numerical value at M=1. In particular both summands retain parity (-1)^(N-1) on the M-cover.</p>
+<p>Putting Y=1 in (3.1) gives</p>
+<pre><code>P_N(1)=-sum_(j=1)^(N-1) zeta_j C_j(q_N),
+p_N(1)=-(1/N)sum_(j=1)^(N-1) zeta_j C_j(q_N),
+|p_N(1)|&lt;=D_N,
+K_N=N R_N(1)+P_N(1).                          (3.3)</code></pre>
+<p>The interpolation coefficients themselves are</p>
+<pre><code>[Y^r]P_N=(1/N)sum_j C_j(q_N)(zeta_j^(-r)-zeta_j),
+0&lt;=r&lt;=N-2.                                   (3.4)</code></pre>
+<p>They have modulus at most 2D_N. More usefully, every Taylor coefficient of the proper polar function at zero satisfies</p>
+<pre><code>[Y^r]p_N=(1/N)sum_j C_j(q_N)(1-zeta_j)zeta_j^(-r),
+|[Y^r]p_N|&lt;=2D_N, r&gt;=0.                      (3.5)</code></pre>
+<p>This direct formula avoids estimating a growing Vandermonde inverse.</p>
+<p>The subsequent <a href="actual_weyl_descent.html">actual Weyl-descent proof</a> now proves C_(N-j)=C_j for every knot in these conventions. It rewrites (3.5) as an exact sine-matrix moment and improves its bound to D_N. Thus the bounded Laurent source has an explicit Weyl structure, without a new quantum-state definition. Its geometric coupling and cross-level norm remain unproved.</p>
+<h2 id="any-actual-operator-supplies-a-bounded-rootwise-source">4. Any actual operator supplies a bounded rootwise source</h2>
+<p>Take the specified actual all-level reduced operator in squared-meridian coordinates,</p>
+<pre><code>P_hat=sum_(j=0)^d a_j(q,Y)T^j, T Y=q^2Y T.</code></pre>
+<p>Existence and descent were proved in the <a href="finite_sum_annihilator.html">finite-state</a> and <a href="even_meridian_norm_descent.html">even-meridian</a> notes. Let f=Y-1. Choose and retain a fixed nonzero clearing factor c(q,Y) so that</p>
+<pre><code>A_hat=c*f*P_hat*f^(-1)
+      belongs to C[q^(+/-1),Y^(+/-1)][T].       (4.1)</code></pre>
+<p>At the actual root U=Y^N is shift-invariant, and F_N/S_N=f F_N/(U-1). Therefore exactly</p>
+<pre><code>A_hat(F_N/S_N)=0,
+A_hat R_N=b_N, b_N=-A_hat p_N.                 (4.2)</code></pre>
+<p>This is the full ADO normalization after extracting its explicitly known eta_N M^(N-1). Equivalently this extraction twists the full shift by kappa=-q^(-1), retaining its N-cyclic sign (-1)^(N-1). It is not a new chosen knot state.</p>
+<p>Write the Laurent support of all coefficients of A_hat as contained in [r_-,r_+]. The source b_N is Laurent polynomial: (4.2) also equals A_hat R_N, which has no finite nonzero poles. At zero every shifted p_N is O(1); at infinity every shifted p_N is O(Y^(-1)). Hence</p>
+<pre><code>b_N in span{Y^r : r_-&lt;=r&lt;=r_+-1}.              (4.3)</code></pre>
+<p>This finite-dimensional space is independent of N. Empty intervals mean the source is zero; nonvanishing or geometric coupling is not being assumed.</p>
+<p>There is also a uniform bound on its coefficients. If a_(j,e)(q) is the coefficient of Y^e in A_hat’s j-th term, the coefficient of Y^k in -A_hat p_N is a sum of</p>
+<pre><code>-a_(j,e)(q_N)*Q_N^(j*(k-e))*[Y^(k-e)]p_N,
+k-e&gt;=0.</code></pre>
+<p>Equation (3.5) and |Q_N|=1 bound it by</p>
+<pre><code>2D_N sum_(j,e)|a_(j,e)(q_N)|=O_A(D_N).         (4.4)</code></pre>
+<p>The sum is bounded because A_hat is fixed and Laurent polynomial in q. The argument holds at all sufficiently large levels where the specified annihilation identity applies. Every fixed meridian jet of b_N at Y=1 has the same polynomial bound, since its Laurent support is fixed. Restoring the full monomial contributes only the corresponding fixed powers of N to such jets.</p>
+<p>This removes a rational-source-factorization hypothesis from this <em>rootwise</em> construction. It does not prove that the coefficients of b_N come from a single rational function b(q,Y), that its generic difference-extension class is the earlier one, or that q-jets of those coefficients are bounded. The latter are not controlled by principal-root unitarity.</p>
+<p>The individual rootwise affine equation has the rational particular solution R_N, so it splits over that root field. This does not split the generic all-level extension: the source coefficients and the selected sections have not been algebraized in q. The cross-level period and its regulator norm remain the issue.</p>
+<p>There is a useful pointed uniqueness statement under a separate rank hypothesis. Suppose the rational homogeneous solutions of A_hat form the one-dimensional C(U)-line generated by u_N=F_N/S_N. Then every rational solution of (4.2) regular at both Y=Q_N and Y=1 has the same value R_N(1). Indeed the difference of two such solutions is c(U)u_N. The anchor C_1=1 makes u_N have a nonzero simple pole at Y=Q_N, so regularity there forces c to vanish at U=1. Since u_N is regular at Y=1, the difference has value zero there. Thus this source and its two meridian lattices determine the complete period without a remaining central scalar. Rank one is sufficient, not asserted for every actual knot operator.</p>
+<h2 id="the-complete-regular-period-is-an-intrinsic-cyclic-trace">5. The complete regular period is an intrinsic cyclic trace</h2>
+<p>Let E_N=C(Y), K_N^cent=C(U), U=Y^N. The extension is cyclic with sigma(Y)=Q_NY, and</p>
+<pre><code>Tr_(E_N/K_N^cent)(Y F_N(Y))
+  =sum_(j=0)^(N-1) Q_N^j Y F_N(Q_N^jY).       (5.1)</code></pre>
+<p>It is Laurent polynomial in U; its whole value at U=1 is defined. Equations (1.1) and (3.3) give</p>
+<pre><code>t_N:=R_N(1)=(1/N)Tr(Y F_N)|_(U=1).            (5.2)</code></pre>
+<p>Thus the regularized complete value is already an algebraic period pairing on the actual cyclic object. The functional uses the marked monomial Y, not a selected eigenvalue with largest modulus. An anchored central rescaling F_N-&gt;c(U)F_N, c regular and c(1)=1, preserves it. An unpointed Hilbert-90 module alone still does not supply F_N.</p>
+<p>More generally every Fourier coefficient</p>
+<pre><code>t_(N,r)=(1/N)sum_(j=0)^(N-1) zeta_j^(-r)F_N(zeta_j)</code></pre>
+<p>satisfies |t_(N,r)-K_N/N|&lt;=D_N. The particular r=N-1 is (5.2). If the target volume is positive, exponential growth with that rate for K_N is equivalent to the same growth for any of these coefficients: their differences from K_N/N are polynomial, and log N/N tends to zero. This is an equivalence of the conjecture, not a proof of either side.</p>
+<h2 id="a-positive-trace-norm-gives-another-exact-formulation">6. A positive trace norm gives another exact formulation</h2>
+<p>On S_1=C[Y]/(Y^N-1), define the involution by conjugating coefficients and sending Y to Y^(-1). At the actual principal root it preserves the cyclic structure. The pointed state has the positive squared trace norm</p>
+<pre><code>H_N=(1/N)Tr_(S_1/C)(F_N^* F_N)
+   =|K_N|^2/N+(1/N)sum_(j=1)^(N-1)|C_j(q_N)|^2,
+0&lt;=H_N-|K_N|^2/N&lt;=D_N^2.                      (6.1)</code></pre>
+<p>For a hyperbolic knot with volume V&gt;0, the following statements are equivalent:</p>
+<pre><code>(2pi/N)log|K_N| -&gt; V,
+(2pi/N)log|t_N| -&gt; V,
+(pi/N)log H_N -&gt; V.                           (6.2)</code></pre>
+<p>For example the first implication uses (3.3): a polynomial term is exponentially smaller than a sequence of positive exponential rate. The converse follows from the same identity. The norm equivalence follows directly from the positive identity (6.1). Equivalently the regulator target log||P_hyp||=2V/pi becomes</p>
+<pre><code>(4/N)log|t_N|-log||P_hyp|| -&gt;0,
+(2/N)log H_N-log||P_hyp|| -&gt;0.                 (6.3)</code></pre>
+<p>The positivity here controls the semisimple tail. It does not estimate the complete regular period or prove its geometric coefficient.</p>
+<h2 id="why-a-regularized-period-is-needed-at-the-complete-point">7. Why a regularized period is needed at the complete point</h2>
+<p>The anchor and evenness give F_N(q_N)=F_N(-q_N)=1. Therefore a nonvanishing geometric WKB amplitude uniformly valid across both M=1 and M=q_N cannot directly describe the reduced state if it has positive volume growth. Indeed a holomorphic geometric action with a nonzero finite shift multiplier, and an amplitude whose ratio at those points tends to a nonzero number, would give a nonzero finite limit for F_N(q_N)/F_N(1). The anchor would then exclude positive exponential growth of F_N(1).</p>
+<p>The exact decomposition explains how such an inference fails:</p>
+<pre><code>F_N(Y)=S_N(Y)R_N(Y)+P_N(Y).                    (7.1)</code></pre>
+<p>The regular term is multiplied by a function with S_N(1)=N and S_N(zeta_j)=0 for every ordinary orbit color. The actual full ADO normalization precisely removes that function, leaving the regular period R_N and the controlled polar part. The zeros and poles occur at spacing O(1/N); a coefficientwise formal branch cannot erase their whole meridian germs. This uses the exact original factors, including the sign character, rather than an asymptotic replacement.</p>
+<p>The <a href="quantum_longitude_and_regulator_action.html">geometric action proof</a> and <a href="triangulation_regulator_bridge.html">triangulation bridge</a> now provide the marked regulator connection and norm to compare with t_N or H_N. What remains is proving that this specified regular quantum period has that norm. Bounded source coefficients alone do not prove its coupling, noncancellation, or the geometric factor’s survival in the summed operator. No volume conjecture is claimed here.</p>
+<p>The subsequent <a href="peripheral_normal_period.html">normal-period construction</a> keeps the factor Y-1 in the polynomial quantum module. Its complete full ADO value is the first normal derivative of (Y-1)F_N across U=1. A boundary-column argument gives a necessary factor condition for positive volume growth. Under the stated rank, or checked Weyl-sector invertibility, condition that derivative is an exact inverse-matrix period with known bounded source. It equals R_N(1) plus the controlled p_N(1), with the full phase retained. Its norm comparison is still additional work.</p>
+<h2 id="coverage-and-independent-verification">8. Coverage and independent verification</h2>
+<p>Positive Temperley–Lieb path traces and unitary braid matrices are existing theory; <a href="https://arxiv.org/abs/quant-ph/0511096">Aharonov–Jones–Landau</a> is one explicit coverage source. The connection of root-of-unity nonsemisimple invariants with derivatives already has coverage in <a href="https://arxiv.org/abs/1406.1287">Murakami</a>, while the ADO/integer-color unification is covered by <a href="https://arxiv.org/abs/2003.09854">Willetts</a>. No proof, completion theorem, or asymptotic result from those sources is a premise here. Partial-fraction interpolation and cyclic field traces are standard algebra; no novelty claim is made for them.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_regularized_kashaev_period.py">The audit</a> compares 30 positive colored path traces with independently assembled actual highest-weight cut states, checks 62 principal-root color bounds including colors next to the truncation wall, and checks the ADO quotient-color identification at the small levels. Ten exact finite- field Laurent cut calculations verify all polar divisions, every ordinary-color value, the cancelled wall derivatives, and the weighted cyclic trace identity. All checks passed. The uniform arguments above, rather than these finite samples, prove the statements. Results are in <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/regularized_kashaev_period_results.json">the audit output</a>.</p>
+<pre><code>python3 experiments/audit_regularized_kashaev_period.py</code></pre>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/regularized_kashaev_period.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-pointing-and-the-statement">1. The actual pointing and the statement</a><a href="#a-positive-trace-bounds-all-the-ordinary-colors">2. A positive trace bounds all the ordinary colors</a><a href="#the-exact-principal-parts-and-the-regular-remainder">3. The exact principal parts and the regular remainder</a><a href="#any-actual-operator-supplies-a-bounded-rootwise-source">4. Any actual operator supplies a bounded rootwise source</a><a href="#the-complete-regular-period-is-an-intrinsic-cyclic-trace">5. The complete regular period is an intrinsic cyclic trace</a><a href="#a-positive-trace-norm-gives-another-exact-formulation">6. A positive trace norm gives another exact formulation</a><a href="#why-a-regularized-period-is-needed-at-the-complete-point">7. Why a regularized period is needed at the complete point</a><a href="#coverage-and-independent-verification">8. Coverage and independent verification</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

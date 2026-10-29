@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual Fourier source reduces exactly to one exterior index · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_one_index_fourier_source_and_ward_reduction.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-actual-fourier-source-reduces-exactly-to-one-exterior-index">The actual Fourier source reduces exactly to one exterior index</h1>
+<p>Research theorem, 27 October 2026. For the original root family the fully reclosed one-cut operator is scalar. Hence ANY fixed first input column, paired with the original output row, gives the original period. Applied to the actual second-wire Fourier polarization, this removes the first exterior average exactly and leaves one finite Fourier-label sum. A whole actual Ward homotopy records every normal defect of this source reduction; off-root scalarity is not assumed.</p>
+<h2 id="the-scalar-root-closure-and-its-precise-source">1. The scalar root closure and its precise source</h2>
+<p>Use the actual nilpotent color at q_N=exp(pi*i/N), Q_N=q_N^2, with M left as its original meridian parameter. In the balanced head frame</p>
+<pre><code>K=x diag(Q_N^(-j)), x=-M/q_N,
+F_(j+1,j)=1-Q_N^(j+1), 0&lt;=j&lt;N-1.</code></pre>
+<p>The original signed local crossings intertwine the true coproduct. Closing every other strand with its ORIGINAL root pivotal cap therefore makes the one-cut matrix C_N(M) a module endomorphism. The literal closure proof, including the root cap and all full peripheral factors, is given in <a href="closed_braid_period_line.html">the closed-braid period construction</a>, Sections 2–3. No extra pivot is attached at the opened identity wire.</p>
+<p>One can prove scalarity directly with just the actual K and F rows. Distinct K eigenvalues make C_N diagonal. The F commutator then gives</p>
+<pre><code>(1-Q_N^k)(C_(k-1,k-1)-C_(k,k))=0, 1&lt;=k&lt;N.</code></pre>
+<p>Every prefactor is nonzero, so all entries agree. This proves</p>
+<pre><code>C_N(M)=P_N(M) I.                                    (1.1)</code></pre>
+<p>If C_N includes the original external d_N, then P_N=d_N F_N; if that line is recorded externally, P_N=F_N. Use the SAME choice on every side. The equality first holds on the admissible generic M chart and continues as its actual rational-map/source-lattice identity. It includes every regular complete value M=1. It does not invert a peripheral norm-zero factor or assert off-root q scalarity of the compressed auxiliary family.</p>
+<p>Let 1 denote the all-ones column, and retain the actual source</p>
+<pre><code>Phi(C)=(1/N)1^t C 1,
+lambda_a(C)=1^t C e_a=sum_c C_(c,a).               (1.2)</code></pre>
+<p>Equation (1.1) proves, for EVERY a in the physical head,</p>
+<pre><code>lambda_a(C_N)=Phi(C_N)=P_N.                       (1.3)</code></pre>
+<p>This fixes only the INPUT column. The output row still sums all c. It is not the diagonal source E_aa when applied to current tensors.</p>
+<h2 id="one-remaining-fourier-label-sum-with-its-original-normalization">2. One remaining Fourier-label sum, with its original normalization</h2>
+<p>For the literal two-cut tensor let</p>
+<pre><code>T^V=(I tensor V)T(I tensor V^-1),
+V_(j,b)=Q^(jb),
+Jtilde_(a,j)=sum_c T^V_(c,j;a,j).</code></pre>
+<p>Use the WHOLE actual inverse from <a href="actual_two_cut_fourier_polarization_and_cap.html">the Vandermonde source theorem</a>. Its exact partial-trace identity gives, even before specializing Q,</p>
+<pre><code>sum_j Jtilde_(a,j)=lambda_a(C).                   (2.1)</code></pre>
+<p>At the actual root the scalar closure therefore proves</p>
+<pre><code>P_N(M)=sum_(j=0)^(N-1) Jtilde_(a,j)(M)           (2.2)</code></pre>
+<p>for ANY chosen first input a. There is no remaining first average and no extra 1/N outside this last sum. The inverse Fourier matrix still supplies its own 1/N INSIDE each raw Jtilde. For charge-zero T,</p>
+<pre><code>Jtilde_(a,j)=(1/N)sum_(b,q)
+                    Q_N^(jq)T_(a-q,b+q;a,b).     (2.3)</code></pre>
+<p>Thus fixing a does not force q=0 and does not remove the second momentum coordinate. The original first output row is essential.</p>
+<p>The specified proper-root partial lift with Q^(jq)/N has the same values in (2.2) at every original root. Off root its inverse need not equal V(Q)^-1. Equation (2.1) with the whole inverse and (2.2) with the root/proper-root inverse have these stated different scopes. Their q-normal source jets are not silently identified.</p>
+<h2 id="a-whole-balanced-ward-contraction-for-the-source-change">3. A whole balanced Ward contraction for the source change</h2>
+<p>This section is an exact finite-matrix identity, before jets. It uses the actual balanced finite K,F matrices at whole Q,M. Put</p>
+<pre><code>D_K(C)=K C K^-1-C,
+D_F(C)=F C-K^-1 C K F,
+delta C=(D_K(C),D_F(C)), p(C)=Tr C/N.            (3.1)</code></pre>
+<p>At a genuine Hopf fiber these are the actual Hopf-adjoint rows. Elsewhere (3.1) remains its specified compressed finite-matrix formula; its whole network defects must be retained. Work only over the localization where Q^l-1 is a unit for 0&lt;|l|&lt;N. These units do not invert 1-Q^N.</p>
+<p>For X=(X_K,X_F), set</p>
+<pre><code>O(X)_(i,j)=(X_K)_(i,j)/(Q^(j-i)-1), i!=j,
+O(X)_(i,i)=0,
+d_k(X)=(X_F)_(k,k-1)/(1-Q^k), 1&lt;=k&lt;N.</code></pre>
+<p>Let Q_k be the centered diagonal step</p>
+<pre><code>(Q_k)_(i,i)=(N-k)/N-1_(i&gt;=k),
+h(X)=O(X)+sum_(k=1)^(N-1) d_k(X) Q_k.          (3.2)</code></pre>
+<p>Off-diagonal recovery is immediate from D_K. The selected F entry has NO off-diagonal pollution, since both left F and right F have only one arrow in that direction:</p>
+<pre><code>(D_F C)_(k,k-1)
+        =(1-Q^k)(C_(k-1,k-1)-C_(k,k)).         (3.3)</code></pre>
+<p>Telescoping the centered steps proves the WHOLE identity</p>
+<pre><code>h delta C=C-p(C)I,   p h=0,   delta I=0.        (3.4)</code></pre>
+<p>In particular the actual image complex End -&gt; im delta contracts onto the scalar line. No cokernel assertion is made for the entire unrestricted two-row space. No integral-factorial basis change has been introduced; this is the original balanced head.</p>
+<p>Write</p>
+<pre><code>Q_a=e_a 1^t, e=(1/N)1 1^t,
+gamma_a(C)=lambda_a(C)-Phi(C)=Tr[(Q_a-e)C],
+b_a(X)=gamma_a(h(X)).</code></pre>
+<p>Since gamma_a(I)=0, applying gamma_a to (3.4) gives</p>
+<pre><code>lambda_a-Phi=b_a delta                              (3.5)</code></pre>
+<p>as an exact WHOLE source/current identity. For the actual reclosed matrix this says</p>
+<pre><code>sum_j Jtilde_(a,j)-Phi(C)=b_a(delta C).          (3.6)</code></pre>
+<p>At its root Hopf fiber delta C_N=0, so (3.6) becomes (2.2). For whole q/M auxiliary arrays, or inserted Green/current coupons, the right side records the actual remaining closure/current row; it is not discarded by an off-root Schur argument.</p>
+<p>Normal derivatives follow by differentiating (3.5). In Taylor coefficients at any specified actual normal path,</p>
+<pre><code>gamma_a(C_n)=sum_(i+j+k=n) (b_a)_i delta_j(C_k). (3.7)</code></pre>
+<p>This includes the derivatives of the whole operators, source and unit denominators. For an uninserted scalar C_0 at first order, delta_1(C_0)=0 because delta_t(I)=0 for all t, and delta_0 C_0=0. Hence gamma_a(C_1)=(b_a)_0 delta_0(C_1). A current insertion with nonscalar C_0 retains the other terms in (3.7).</p>
+<p>On a full diagram use the original ordered Hopf/coprod and pivotal row, including prefixes, to evaluate delta C. The whole frozen pivotal cap is chi^-1 ptr_K M_(Z^J), not ptr_K by itself, with Z=Q^N. Its exact moment-clock and divided rows are retained in <a href="actual_divided_ward_closure_and_green_caps.html">the actual cap theorem</a>. This source homotopy does not set those cap/Green endpoints to zero.</p>
+<h2 id="a-polynomial-root-bound-in-the-original-balanced-metric">4. A polynomial root bound in the original balanced metric</h2>
+<p>Give the balanced head its flat positive metric and End its Hilbert–Schmidt norm, with the orthogonal product norm on the two current rows. The K-row inverse gap at Q_N is bounded by</p>
+<pre><code>1/[2 sin(pi/N)] &lt;= N/4.                        (4.1)</code></pre>
+<p>For the diagonal part integrate edge gradients from the middle vertex m=floor(N/2), then subtract the mean. This is the SAME centered step operator in (3.2); only its norm estimate changes. For left edges k&lt;=m,</p>
+<pre><code>1/|1-Q_N^k| &lt;= N/(4k).</code></pre>
+<p>The relevant tail-sum matrix is A_(i,k)=1/k for 1&lt;=i&lt;=k&lt;=m. With weights w_i=i^(-1/2), elementary sums give</p>
+<pre><code>sum_(k&gt;=i) A_(i,k)w_k &lt;=3w_i,
+sum_(i&lt;=k) A_(i,k)w_i &lt;=2w_k.</code></pre>
+<p>The weighted Cauchy–Schwarz inequality then gives ||A||&lt;=sqrt(6)&lt;3. The right half has the same estimate with k replaced by N-k. The two edge sets and anchored outputs are disjoint; subtracting the mean is orthogonal projection. Thus</p>
+<pre><code>||h_diag|| &lt;=3N/4,   ||h||&lt;=3N/4.              (4.2)</code></pre>
+<p>For completeness the matrix bound follows by writing |sum_k A_ik x_k|^2 &lt;= (sum_k A_ik w_k) sum_k A_ik |x_k|^2/w_k and then summing i. This proves the estimate without importing a Hardy inequality. Complex reciprocal phases are bounded by the same positive kernel. No q-factorial condition number has been omitted.</p>
+<p>The original row difference has exactly</p>
+<pre><code>||Q_a-e||_HS=sqrt(N-1).</code></pre>
+<p>Consequently its actual source primitive satisfies</p>
+<pre><code>||b_a|| &lt;=(3N/4)sqrt(N-1).                    (4.3)</code></pre>
+<p>These are root metric bounds for this specified Ward/source map, not bounds on the whole word or the geometric quantum period. They make no uniform-neighborhood estimate for its normal units.</p>
+<h2 id="choosing-a-good-first-position-anchor-at-every-large-level">5. Choosing a good first-position anchor at every large level</h2>
+<p>Assume the established geometric framing model has a nonempty regular algebraic chart for (A,p_e), with nondegenerate Fourier normal block as in <a href="actual_fourier_polarized_geometric_normal_block.html">the actual Fourier construction</a>. This is its stated complete positive geometric/marked branch input, not a new conclusion from (1.1). Over the fixed marked representation/half-density cover, remove every denominator and critical discriminant used for that chart. These are finitely many nonzero algebraic functions on its selected connected component. For a finite algebraic marking cover, take their nonzero field norms first, then clear denominators on the rational (A,p_e) chart. Since A=1/(1+s) is a nonconstant framing coordinate, only FINITELY many A-values have their entire fiber excluded. Explicitly, clear denominators of each defining function as a polynomial in the other coordinate; a fiber is identically zero only when all its coefficient polynomials in A vanish. They have finitely many common roots.</p>
+<p>Choose a root of unity A_<em>=exp(2pi</em>i p/d) outside that finite set, with 0&lt;p&lt;d, gcd(p,d)=1. Its finite marked-cover lifts are retained. There is no assertion that the particular choice A_*=-1 is good for every knot. Set</p>
+<pre><code>a_N=floor(pN/d), r_N=pN-d a_N in {0,...,d-1}.</code></pre>
+<p>Then a_N is an original physical head index, and</p>
+<pre><code>A_N=Q_N^(a_N)=A_* exp[-(r_N/d)H_N],
+H_N=2pi*i/N.                                   (5.1)</code></pre>
+<p>Along each residue class of N modulo d, r_N is constant. The classes may be refined by every previously retained parity/phase modulus; no existing root sign or source branch is reset. The selected good geometric point deforms on its fixed marked cover to A_N for all sufficiently large N; the remaining framing/ Fourier coordinate is still free on a nonempty open. Formula (2.2) therefore computes the SAME original root period using a good fixed first-position sequence and just one exterior j sum. Existence of this formal geometric branch does not prove its survival in that last selected finite sum.</p>
+<p>The WHOLE clock before normal differentiation is</p>
+<pre><code>A=Z^(p/d) Q^(-r_N/d), Z=Q^N,                  (5.2)</code></pre>
+<p>on its MARKED power cover: the root value of Z^(p/d) is A_<em>. One may realize it with v^d=Q, W^d=Z, W=v^N and A=W^p v^(-r_N). This equals Q^(a_N) exactly on the actual power graph. Keeping Z and its phase branch is essential. Replacing its marked value by the constant A_</em> FIRST would lose</p>
+<pre><code>D_Q log A=a_N,</code></pre>
+<p>and would give only -r_N/d instead. Thus residue-class root selection does not identify off-root q-normal germs. Equation (3.7) and the whole inverse must be used for those germs.</p>
+<h2 id="scalarity-is-necessary-and-the-source-is-not-a-diagonal-probe">6. Scalarity is necessary, and the source is not a diagonal probe</h2>
+<p>There is an actual WHOLE auxiliary counterexample even for the one-positive-crossing unknot. At N=2 use x=-M/q, Q=q^2 and remove only the common Cartan scalar as in the actual residual matrices. In the ordinary F-shift frame its checked crossing is</p>
+<pre><code>Rplus=[[1,0,0,0],
+       [0,0,x^-1,0],
+       [0,x^-1,1-x^-2,0],
+       [0,0,0,Q*x^-2]].</code></pre>
+<p>The frozen cap is g=x^-1 diag(1,Q); the original zero-framing multiplier is theta^-1=x. Taking the literal partial trace gives</p>
+<pre><code>C(Q,M)=d_2(M)diag(1,1+Q(Q^2-1)/M^2),
+d_2(M)=i M/(1+M^2).                              (6.1)</code></pre>
+<p>The balanced diagonal frame does not change this diagonal cut. At Q=-1 it equals d_2(M)I, including the original complete value. Nevertheless the whole source difference and its first normal are</p>
+<pre><code>gamma_0 C=-d_2(M) Q(Q^2-1)/(2M^2),
+D_Q(gamma_0 C)|_(Q=-1)=d_2(M)/M^2 !=0.           (6.2)</code></pre>
+<p>Here M is held fixed and the original phase i is fixed. At M=1 this normal value is i/2. Equation (3.5) reproduces (6.2) exactly from (D_F C)_(1,0)/(2(1-Q)). Thus the whole Ward row genuinely survives differentiation; scalar root closure cannot erase it. Using the ordinary generic ribbon cap instead of the specified frozen auxiliary cap would be a different off-root source.</p>
+<p>For the literal two-cut unknot T is the flip. Inserting the actual matrix-unit coupon X=E_00 at the second identity wire gives the one-cut matrix C=X. Its selected average is Phi(C)=1/N, whereas</p>
+<pre><code>lambda_0(C)=1, lambda_a(C)=0 for a!=0.</code></pre>
+<p>The fixed-input reduction therefore fails without scalarity. Its exact discrepancy is (3.5), with the nonzero F/K current of that specified coupon. Similarly a charged C=E_(c,a), c!=a, has lambda_a(C)=1 while its diagonal probe at a is zero. Removing the output sum would change the current/source problem even when the eventual uninserted knot matrix is scalar.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_one_index_fourier_source.py">The exact audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_one_index_fourier_source_results.json">saved results</a> check the whole two-row contraction and sources, actual signed root braid/Fourier tensors at complete and generic meridians, off-root current defects, metric bounds and marked clock exponents. No hyperbolic-volume or global selected-cycle conclusion is claimed.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_one_index_fourier_source_and_ward_reduction.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-scalar-root-closure-and-its-precise-source">1. The scalar root closure and its precise source</a><a href="#one-remaining-fourier-label-sum-with-its-original-normalization">2. One remaining Fourier-label sum, with its original normalization</a><a href="#a-whole-balanced-ward-contraction-for-the-source-change">3. A whole balanced Ward contraction for the source change</a><a href="#a-polynomial-root-bound-in-the-original-balanced-metric">4. A polynomial root bound in the original balanced metric</a><a href="#choosing-a-good-first-position-anchor-at-every-large-level">5. Choosing a good first-position anchor at every large level</a><a href="#scalarity-is-necessary-and-the-source-is-not-a-diagonal-probe">6. Scalarity is necessary, and the source is not a diagonal probe</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A certified state beyond twist knots, and the two-bridge obstruction · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/six_three_and_two_bridge_audit.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-certified-state-beyond-twist-knots-and-the-two-bridge-obstruction">A certified state beyond twist knots, and the two-bridge obstruction</h1>
+<p>Research note, 25 October 2026. The state definition remains the published Faddeev integral, with the independently proved analytic and annihilator results in <a href="literature_state_volume.html">literature_state_volume.md</a> and <a href="general_annihilator_and_volume.html">general_annihilator_and_volume.md</a>. This note supplies new complete finite certificates for the knot 6_3. It does not prove the all-two-bridge or all-alternating assertion.</p>
+<h2 id="the-folded-layering-is-explicit">1. The folded layering is explicit</h2>
+<p>We use the combinatorics of the appendix of Guéritaud–Futer, <a href="https://arxiv.org/abs/math/0406242">arXiv:math/0406242</a>, as construction data. Its volume-maximization theorem is not an assumption in the geometric certificate below.</p>
+<p>Label the four punctures of every level sphere 0,1,2,3. Its three pairs of opposite edges have classes</p>
+<pre><code>0: (01,23),     1: (02,13),     2: (03,12).</code></pre>
+<p>For an R/L word Omega of length c&gt;=2, set m_0=0, m_1=1, and</p>
+<pre><code>m_(i+1)=m_(i-1)                  if Omega_i=Omega_(i+1),
+         3-m_(i-1)-m_i          otherwise.</code></pre>
+<p>Layer i, 1&lt;=i&lt;c, flips the two edges in class m_i and contains two tetrahedra. For an old edge ab, its tetrahedron has bottom faces abc,abd and top faces acd,bcd, where {a,b,c,d}={0,1,2,3}. Intermediate faces are glued by their physical puncture labels. At either end fold along class m_0 or m_c: the faces opposite a and b are identified by the transposition (ab), fixing their common edge.</p>
+<p>This gives every face permutation without solving hyperbolic equations. Topologically each layer is the product between the two triangulations of the four-punctured sphere. The end fold attaches the rational clasp: its two paired triangles are a regular neighborhood of the meridional disk in the end rational tangle. Thus the construction is the usual two-bridge diagram specified by Omega. For Omega=RLRL the syllable lengths are (1,1,1,1); including the end crossings gives Conway [2,1,1,2], whose continued fraction is 13/5. This is 6_3.</p>
+<p>The algorithm is implemented in <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/layered_two_bridge.py">layered_two_bridge.py</a>. Optional Regina/SnapPy comparisons give the expected combinatorial isomorphism signatures and knot names. The construction itself does not depend on that recognition.</p>
+<h2 id="a-proper-ordering-and-the-preferred-longitude-for-6_3">2. A proper ordering and the preferred longitude for 6_3</h2>
+<p>For RLRL there are six tetrahedra. In layer order, choose vertex orders</p>
+<pre><code>0123, 0123, 0213, 0123, 0213, 0213.</code></pre>
+<p>The resulting face rows and signs are</p>
+<pre><code>(f0,f1,f2,f3),    +
+(f1,f4,f3,f5),    +
+(f6,f2,f4,f7),    +
+(f0,f8,f9,f5),    -
+(f10,f9,f11,f7),  -
+(f6,f10,f8,f11),  - .</code></pre>
+<p>Equal labels are glued preserving the order of their three vertices. The face matrix defined in the preceding notes has determinant -1.</p>
+<p>Here is an independent preferred-longitude certificate. Use the explicit normal cusp cycles alpha and beta recorded in <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/certify_six_three.py">certify_six_three.py</a>. Their dual cellular chains have linking numbers 1,1 under an integral primitive generator of H^1(M;Z). The cellular Smith calculation gives H_1(M)=Z, and their oriented cusp intersection is -1. Moreover</p>
+<pre><code>[beta-alpha] = boundary_2 * (-3,1,-2,1,3,-1)^T.       (2.1)</code></pre>
+<p>The matrix boundary_2 is recomputed by walking once around each global edge; no presentation of the knot group is assumed. Equation (2.1) is an integral chain identity, not just a numerical vanishing of holonomy. It proves that l=beta-alpha is a primitive, nullhomologous peripheral class, hence the preferred longitude up to sign.</p>
+<p>For reproducibility, in physical angle coordinates (a_j,b_j,c_j) the normal-curve rows are</p>
+<pre><code>alpha: (0,0,-1 | 1,0,0 | 0,0,0 | 0,0,-1 | 0,0,0 | 0,0,0),
+l:     (-1,0,1 | -1,1,1 | 1,-2,0 | 1,0,1 | 1,0,0 | 0,-1,-1).</code></pre>
+<p>An optional exact combinatorial isomorphism to SnapPy’s marked 6_3 triangulation calibrates alpha to its standard meridian and l to its negative standard longitude. The differences of the angle rows are given as rational combinations of the tetrahedron/edge constraints with zero affine constant. Thus the calibration retains the logarithmic branch as well as the homology classes. This software calibration is recorded separately from the integral preferred-longitude proof (2.1).</p>
+<p>The common face/edge Gaussian is</p>
+<pre><code>G = [ 1  1  1  1  0  0 ]
+    [ 1  1  1  1  0  0 ]
+    [ 1  1 -1  0 -1 -1 ]
+    [ 1  1  0  2 -1 -1 ]
+    [ 0  0 -1 -1  0 -1 ]
+    [ 0  0 -1 -1 -1  0 ].</code></pre>
+<p>Every edge row and the separately certified longitude row satisfy A=B G. Omit the first of the six edge rows and append l. Then</p>
+<pre><code>det B=2,   B^(-1)A=G,
+p=2B^(-1)e_6=(1,1,-1,1,-1,-1)^T,
+gamma=0,
+c_0/pi=(-2,-2,1,-1,2,2)^T.                           (2.2)</code></pre>
+<p>The edge identity can also be obtained from the general independent <a href="face_edge_stokes_identity.html">Stokes proof</a>. The preferred-longitude identity here is checked with its actual normal-curve row.</p>
+<h2 id="complete-positive-shapes-by-rational-arithmetic">3. Complete positive shapes by rational arithmetic</h2>
+<p>Use an all-positive tetrahedron vertex convention for the following shape computation. The exact vertex maps from the preceding layering to this convention are identities except that vertices 2 and 3 are interchanged in tetrahedra 2 and 3, with tetrahedra numbered from zero. The shapes in this convention are</p>
+<pre><code>(a,a,b,b,c,c),
+P(c)=c^6-3c^5+5c^4-4c^3+2c^2-c+1=0,
+a=-c^5+2c^4-3c^3+2c^2-c+1,
+b=-c^5+3c^4-5c^3+4c^2-c.                            (3.1)</code></pre>
+<p>These are native geometric shape parameters. For the signs used in Section 2, the positive literature shape at each newly selected quad is its uniform inverse conjugate. This preserves angles and Bloch–Wigner volume. The convention is made explicit in the subsequent singular-face note; the native quad modulus itself should not be inserted in a Gaussian with the opposite global orientation.</p>
+<p>There is exactly one root c in the disc</p>
+<pre><code>|c-c_*|&lt;r,  c_*=(841164+1200143 i)/10^6, r=10^(-5).</code></pre>
+<p>To certify this, write P(c_*+w)=sum_{k=0}^6 p_k w^k. The exact rational inequality checked in the script is</p>
+<pre><code>|p_0|_1+sum_(k=2)^6 |p_k|_1 r^k
+     &lt; (r/20) max(|Re p_1|,|Im p_1|),                (3.2)</code></pre>
+<p>where |z|_1=|Re z|+|Im z|. The right side is at most |p_1|r/20. On |w|=r the remainder from p_1 w is therefore strictly smaller than |p_1 w|. Rouché’s theorem gives one root, including multiplicity. The actual rational ratio to the displayed derivative lower bound is less than 0.043491; the proof uses the exact inequality (3.2).</p>
+<p>Taylor expansion of a(c),b(c) on the same disc gives rational rectangular enclosures. In particular all three shapes have 0&lt;Re z&lt;1 and Im z&gt;0. The exact polynomial certificate reduces the numerator of every multiplicative edge equation to zero modulo P. For example three of the equations in paired variables are</p>
+<pre><code>a^2 b^2 c=1,
+(a^2 b-a^2-a+1)(a^2 b-a^2+a-1)=0,
+(bc-c^2+c-1)(bc+c^2-3c+1)=0.</code></pre>
+<p>The full six edge equations and two imported peripheral equations are recorded in the script. Independently, the multiplicative equations for the normal cycles alpha and l from Section 2 also reduce to zero modulo P. No peripheral completeness conclusion is inferred merely from numerically small residuals.</p>
+<p>It remains to fix logarithmic branches. For each enclosure of z=x+iy, bound</p>
+<pre><code>Arg z=atan(y/x),  Arg z&#39;=atan(y/(1-x)),
+Arg z&#39;&#39;=pi-Arg z-Arg z&#39;.</code></pre>
+<p>All bounds are rational: range-reduce atan with its elementary inversion and pi/4 identities, then use 24 terms of the alternating power series on [-1/2,1/2]. Machin’s identity supplies a rational enclosure of pi. The resulting edge sums lie in (pi,3pi), while the two normal peripheral sums lie in (-pi,pi). Their exponentials are exactly 1, so the sums are respectively 2pi and zero. Every dihedral angle is greater than 69/100 radians; this last inequality is checked between rational bounds.</p>
+<p>Thus the six positive ideal tetrahedra glue without edge cone defects. Both generators of the cusp have trivial complex linear holonomy. Consistently scaled horospheres therefore glue to a compact flat torus, which is complete. This constructs a complete positive geometric triangulation. The numerical values, included only to locate the root, are</p>
+<pre><code>a=0.1588360981+1.2001426273 i,
+b=0.2327856159+0.6413907459 i,
+c=0.8411639019+1.2001426273 i.</code></pre>
+<h2 id="the-resulting-literature-state-and-volume-theorem">4. The resulting literature state and volume theorem</h2>
+<p>Let h=b_quantum<sup>2/(1+b_quantum</sup>2)^2; b_quantum denotes the quantum parameter rather than the middle shape in (3.1). Put v=(-2,-2,1,-1,2,2)^T and let G,p be as in (2.2). The specified printed literature state is now the completely explicit five-dimensional integral</p>
+<pre><code>J_6_3(h,x)=-(2pi sqrt(h))^(-6)
+   integral_(p.y=x)
+     exp[(-i y^T G y/2+pi v^T y)/(2pi h)]
+     product_(j=1)^6 Phi_(b_quantum)(y_j/(2pi sqrt(h)))
+     dy_2 ... dy_6.                                  (4.1)</code></pre>
+<p>Choose the horizontal contour through the geometric saddle at x=0 and continue it for small x. The printed and oriented coarea conventions coincide here because p_1^2=1; the leading minus sign is p_1/det(script-A). The full tensor level phase is the one in the preceding phase audit; it is not silently used to rescale (4.1).</p>
+<p>All hypotheses of Theorem 5.1 of the literature-state note have now been checked independently. Consequently</p>
+<pre><code>lim_(h-&gt;0+) -2pi h log|J_6_3(h,0)|
+   =2[D(a)+D(b)+D(c)]=Vol(S^3\6_3).                   (4.2)</code></pre>
+<p>Here D is Bloch–Wigner volume. Its approximate value is 5.6930210912813007651. The positivity/concavity proof also makes J_6_3 nonzero for all sufficiently small h; this is an actual complex state asymptotic, not a formal critical-value calculation.</p>
+<p>The independent annihilator theorem gives a nonzero minimal quantum A-operator for this same state in the Andersen–Malusà b-shift convention. With t_0=x/(2pi sqrt(h)), its variables are</p>
+<pre><code>q=exp(2pi i b_quantum^2),
+Q=exp(-2pi b_quantum t_0),    E:t_0 -&gt; t_0-i b_quantum,
+E Q=q Q E.</code></pre>
+<p>The peripheral matrices give, exactly,</p>
+<pre><code>A_alpha-B_alpha G=p^T,
+B_alpha B^(-1)e_6=0.</code></pre>
+<p>Hence x=-H_alpha at the classical constrained saddle, with no longitude mixing, and its classical branch is</p>
+<pre><code>Q=exp(H_alpha),     E=exp(H_l/2).</code></pre>
+<p>For the calibrated standard longitude, H_l=-H_longitude. Thus the branch uses the inverse square root of the standard longitude eigenvalue ratio; an SL(2) lift still needs its sign convention. This is recorded rather than identified with unqualified variables M,L.</p>
+<p>The geometric peripheral factor divides the classical symbol of the minimal annihilator by the proved saddle argument. An explicit full coefficient list, absence of additional classical factors, and equality with a Jones-defined AJ operator have not been established. No generic factor has been canceled by specializing Q=1.</p>
+<h2 id="why-the-uniform-two-bridge-extension-still-requires-work">5. Why the uniform two-bridge extension still requires work</h2>
+<p>The simplest extension would assert that every canonical layered triangulation has a compatible proper ordering. This fails for the explicit canonical triangulation of 6_2: all 16 global branchings have singular script-A. The exhaustive search constructs each admissible local total order, enforces order agreement on every glued face, and reaches the end of its finite tree; this is not a failed bounded random search. Similar singularities occur in the examples 7_3,7_4,7_5,7_7.</p>
+<p>Even the repeated alternating word is insufficient: RLRL is proper, but all 280 branchings of RLRLRLRL (the 10_45 canonical layering) are singular. Thus a periodic Farey pattern alone does not supply the missing theorem.</p>
+<p>These facts concern this matrix chart. They are not obstructions to other geometric triangulations or to a more general oscillatory description of the literature tensor. A uniform constructive change of chart, a suitable certified geometric move sequence, or a direct analysis that allows a singular face matrix is required by that approach. The subsequent <a href="singular_faces_and_six_two.html">singular-face note</a> supplies such a direct Fourier reduction under explicit rank conditions, and a complete application to 6_2. Uniform membership and global state identifications remain to be proved.</p>
+<p>Reproduce the exact certificate with</p>
+<pre><code>python3 experiments/certify_six_three.py</code></pre>
+<p>and the separate topology/marking calibration with</p>
+<pre><code>.venv/bin/python experiments/certify_six_three.py --topology</code></pre>
+<p>The new scripts also record finite branching and face-matrix diagnostics in <code>two_bridge_results.json</code> and <code>layered_two_bridge_results.json</code>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/six_three_and_two_bridge_audit.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-folded-layering-is-explicit">1. The folded layering is explicit</a><a href="#a-proper-ordering-and-the-preferred-longitude-for-6_3">2. A proper ordering and the preferred longitude for 6_3</a><a href="#complete-positive-shapes-by-rational-arithmetic">3. Complete positive shapes by rational arithmetic</a><a href="#the-resulting-literature-state-and-volume-theorem">4. The resulting literature state and volume theorem</a><a href="#why-the-uniform-two-bridge-extension-still-requires-work">5. Why the uniform two-bridge extension still requires work</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

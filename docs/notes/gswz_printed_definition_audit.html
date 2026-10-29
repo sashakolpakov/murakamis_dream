@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Independent audit of the printed GSWZ v2 definitions · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/gswz_printed_definition_audit.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="independent-audit-of-the-printed-gswz-v2-definitions">Independent audit of the printed GSWZ v2 definitions</h1>
+<p>Audit date: 25 October 2026. Scope: <em>The Habiro ring of a number field</em>, arXiv:2412.04241v2, posted 27 August 2025; PDF title-page manuscript date 13 August 2025. The checked PDF has 73 pages and SHA-256 <code>308d1dd1c42bd979e5d5c31d9d95215a1808f604031b49c0ce2a1eb767273de9</code>. This audit was separately requested by the user. It checks the proposed examples against the printed definitions, rather than assuming either the paper’s theorems or the proposed criticisms.</p>
+<p>Primary sources: <a href="https://arxiv.org/pdf/2412.04241v2">v2 PDF</a> and <a href="https://arxiv.org/html/2412.04241v2">v2 HTML</a>. Page numbers below are the printed PDF page numbers. PDF pages 9, 29 and 35 were also inspected visually; the relevant formulas agree with the HTML and extracted text.</p>
+<p><strong>Result.</strong> The two structural counterexamples are valid under the printed definitions. Definition 1.4 is not closed under pointwise addition, and the span in Definition 1.3 need not be finitely generated. The Gaussian normalization and rank-one recurrence errors are also present in the PDF. These findings do not directly disprove the restricted arithmetic membership assertion in Theorem 5.</p>
+<h2 id="printed-conventions-that-matter">1. Printed conventions that matter</h2>
+<p>Definition 1.1, equation (13), p. 7, defines the actual Habiro ring using the exact p-adic equality</p>
+<pre><code>f_m(x+zeta_(pm)-zeta_m)=phi_p(f_(pm))(x).</code></pre>
+<p>The coefficient Frobenius fixes rational constants. At primes inverted in R the completion is zero, so the paper explicitly treats those gluing conditions as vacuous.</p>
+<p>Definition 1.3, equations (20)–(22), p. 9, allows</p>
+<pre><code>f_m in epsilon_m(xi)^(1/m)
+         (R_p^[zeta_m]^*+x K_p[zeta_m][[x]]), (m,p)=1.</code></pre>
+<p>Only the constant coefficient has an integrality/unit condition. The bracket placement really allows all higher coefficients in the fraction field; it is not the bounded-denominator ring R_p^[zeta_m][[x]][1/p]. The local module is the H_(R_p^)-span of all sections satisfying the printed logarithmic Frobenius test.</p>
+<p>Definition 1.4, equations (23)–(24), p. 10, indexes all m&gt;=1. It imposes membership in these local spans and, for every gamma&gt;0,</p>
+<pre><code>f(q^gamma)^gamma f(q^(-1)) in H_(R[1/gamma])|_gamma.</code></pre>
+<p>The restriction on the right tests only orders coprime to gamma. This is not an implicit restriction to orders prime to Delta: the paragraph immediately preceding Theorem 5, p. 14, explicitly changes the earlier all-order definition to that narrower setting.</p>
+<p>No quotient by independent root phases is printed in Definition 1.4. For xi=0 the coefficient torsor has a trivial frame and the examples below are actual rational scalar collections. A coherent change of coefficient frame changes both compared sections by the same unit; their relative sign and the addition obstruction are unchanged. Quotienting the scalar collections by arbitrary componentwise phases would also make their stated pointwise addition undefined, so would be a different construction requiring a new definition.</p>
+<h2 id="the-global-zero-class-set-is-not-an-additive-group">2. The global zero-class set is not an additive group</h2>
+<p>Take K=Q, R=Z[1/6], Delta=6 and xi=0. Define constant series</p>
+<pre><code>f_2=-1, f_m=1 for m!=2.</code></pre>
+<p>Every relevant prime p is odd. On orders m prime to p, q-&gt;q^p preserves the order, so f(q<sup>p)/f(q)</sup>p=s/s^p=1 for s=+/-1. The regulator term for xi=0 vanishes. Hence f is itself an admitted invertible local section for every non-vacuous local test.</p>
+<p>For equation (24), at an order m coprime to gamma, both substitutions q-&gt;q^gamma and q-&gt;q^(-1) preserve that order. The tested constant is f_m^(gamma+1). If m!=2 it equals one. If m=2, coprimality forces gamma odd and it again equals one. Thus every global tested collection is identically one, so f belongs to the printed H_(R,0).</p>
+<p>Actual Habiro gluing with p=5,m=2 instead requires</p>
+<pre><code>-1=1 in Z_5[zeta_10],</code></pre>
+<p>which is false, even after reduction modulo 5. Thus f does not belong to H_R. This contradicts H_(R,0)=H_R in Theorem 2, p. 10.</p>
+<p>Moreover 1 and f are both admitted. Their sum h=1+f has h_2=0 and h_10=2. Its local-span condition holds because a span is additive; it is not being rejected merely because one constant term is zero. The global gamma=1 test requires h(q)h(q^(-1)) to lie in H_R. Its constants at orders 2 and 10 are 0 and 4, so p=5 gluing would require 0=4. Therefore h fails Definition 1.4.</p>
+<p>This proves directly that the global set is not closed under addition. The argument uses neither Theorem 1 nor a nonzero K-theory class.</p>
+<h2 id="the-local-span-is-not-finitely-generated">3. The local span is not finitely generated</h2>
+<p>Fix the same K,R,xi and p=5. Equation (14), p. 7, identifies the local base ring with</p>
+<pre><code>H=product_((m,5)=1) Z_5[zeta_m][[x]].</code></pre>
+<p>Only the integral projection H-&gt;Z_5[[x]] at m=1 is needed below; no surjectivity or abstract product-decomposition theorem is used in the finite-generation obstruction.</p>
+<p>For every a&gt;=1 define u^(a) by</p>
+<pre><code>u_1^(a)(x)=(1+x)^(5^(-a)),
+u_m^(a)(x)=1 for m&gt;1, (m,5)=1.</code></pre>
+<p>These are formal binomial series in Q_5[[x]] with constant coefficient one, as allowed by equation (20). At the m=1 germ q=1+x, the exact formal identity (q<sup>5)</sup>(5<sup>(-a))=(q</sup>(5<sup>(-a)))</sup>5 makes the quotient in equation (21) equal one. Every other local component is one, and the order is preserved under fifth powers. Hence all u^(a) are admitted invertible sections, with linear coefficient 5^(-a) at m=1.</p>
+<p>Let M be their full module as defined, i.e. the H-span of every admitted invertible section. Every element of M has integral constant coefficient at m=1: all defining sections do, and finite H-linear combinations preserve it.</p>
+<p>If g_1,…,g_r generated M, write</p>
+<pre><code>g_(i,1)=A_i+B_i x+O(x^2), A_i in Z_5, B_i in Q_5.</code></pre>
+<p>Choose B&gt;=0 so that every B_i lies in 5^(-B)Z_5. For h_i in H, the coefficient of x in sum h_i g_i is a sum of terms C_i B_i+D_i A_i, with C_i,D_i in Z_5. It therefore remains in 5^(-B)Z_5. It cannot produce 5^(-a) when a&gt;B. This contradiction proves that M is not finitely generated, and in particular not free of rank one as asserted in Theorem 1, p. 9.</p>
+<p>No analytic radius condition is imposed by the printed definition. Requiring later continuation or integral slopes would be an added hypothesis, not a property established by the defining test.</p>
+<p>Lemma 3.4, equation (184), p. 39, separately requires the linear coefficient to be integral. Corollary 3.5 retains that requirement, and Lemma 3.6 equation (195), p. 41, explicitly includes it. The counterexamples exploit exactly this missing condition in (20). Adding it excludes these fractional-power examples, but a complete repair still requires checking all subsequent uses. It does not remove the constant-sign obstruction in Section 2.</p>
+<h2 id="the-printed-gaussian-normalization-leaves-a-forbidden-term">4. The printed Gaussian normalization leaves a forbidden term</h2>
+<p>Equation (110), p. 28, defines formal Gaussian contraction on R[[w,w^3/h,h]]. Equation (114), p. 29, gives the purported normalized input. Already m=1,k=0 disproves that normalization.</p>
+<p>From the defining Pochhammer product, independently,</p>
+<pre><code>log(q*z*exp(w);q)_infty
+   =-sum_(n&gt;=1) z^n exp(nw)q^n/[n(1-q^n)], q=exp(h)
+   =Li_2(z exp(w))/h+(1/2)Li_1(z exp(w))+O(h).</code></pre>
+<p>The quadratic term in the polar Taylor expansion is Li_0(z)w^2/(2h). The printed exponential subtracts Li_0(z)w^2/h, leaving -Li_0(z)w^2/(2h). This monomial is outside the stated domain: nonnegative powers of w,w^3/h,h cannot have exponents (2,-1).</p>
+<p>At w=0 its regular logarithm is -log(1-z), so the printed psi has value (1-z)^(-1)+O(h), rather than 1+O(h).</p>
+<p>This is not merely a choice of a scalar Gaussian phase. The n-th power of the unwanted quadratic term has w<sup>(2n)h</sup>(-n); Gaussian contraction contributes h^n, so infinitely many nonzero terms enter the coefficient of h^0. In the formally allowed A=0 case of the t-deformed construction, equation (119) gives Lambda=-Li_0(z). The extra exponential then cancels the Gaussian kernel exactly. This example concerns the formal construction before t=1; the degenerate z=0 specialization for A=0 is not being offered as admissible data for the arithmetic Theorem 5.</p>
+<p>For general m the necessary polar subtractions are</p>
+<pre><code>Li_2(z^m)/(m^2 h),
+Li_1(z^m)w/(m h),
+Li_0(z^m)w^2/(2h).</code></pre>
+<p>The regular constant logarithm of the product must also be subtracted, where (114) adds it. These corrections follow by splitting the Pochhammer product into its m residue classes and expanding each factor. They identify the intended local normalization; they do not verify the repaired global identification theorem.</p>
+<h2 id="equation-165-has-the-stated-sign-error">5. Equation (165) has the stated sign error</h2>
+<p>Definition (32), p. 12, gives in rank one A=1,m=2,k=0</p>
+<pre><code>H(t)=1+q^3 t^2/[(1-q)(1-q^2)]+O(t^4).</code></pre>
+<p>For sigma H(t)=H(qt), the coefficient of t^2 in (1-sigma)(1-q^(-1)sigma)H is q^3. The printed right side of equation (165), p. 35, gives -q^3. Thus the recurrence fails as printed independently of the Gaussian issue.</p>
+<p>For the general rank-one congruence series, let n=k+mj. Its coefficients have successive ratio</p>
+<pre><code>c_n/c_(n-m)=(-1)^(A*m)
+   q^(A*m*n-A*m*(m-1)/2)/(q^(n-m+1);q)_m.</code></pre>
+<p>It follows that the corrected operator recurrence is</p>
+<pre><code>product_(r=0)^(m-1)(1-q^(-r)sigma)H(t)
+   =(-1)^(A*m) q^(A*m*(m+1)/2)
+                              t^m sigma^(A*m)H(t).</code></pre>
+<p>The q-exponent in the operator prefactor is unchanged; the sign is (-1)^(A<em>m). The coefficient of sigma^(A</em>m) on the previous term is q^(A<em>m</em>(k+m(j-1))); extracting coefficients must retain that factor. The finite q-binomial expansion gives the product on the left.</p>
+<h2 id="scope-and-implications-for-this-project">6. Scope and implications for this project</h2>
+<p>Theorem 5 explicitly restricts to root orders prime to Delta. The global collection in Section 2 becomes identically one there because its exceptional order 2 disappears. It therefore does not disprove Theorem 5’s restricted arithmetic membership assertion. The local error still occurs at the good prime 5 and order 1, but it is not itself a counterexample to membership of the particular series constructed in Theorem 5. That restricted statement needs a separate audit with corrected definitions and formulas; it has not been verified or disproved here.</p>
+<p>The distinctions are:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Printed claim</th>
+<th>Independent finding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Definition 1.3 / Theorem 1</td>
+<td>The admitted span need not be finitely generated.</td>
+</tr>
+<tr>
+<td>Definition 1.4 / Theorem 2</td>
+<td>The all-order zero-class set is not additive and differs from H_R.</td>
+</tr>
+<tr>
+<td>Equation (114)</td>
+<td>Wrong polar subtraction and constant normalization; input leaves the stated Gaussian domain.</td>
+</tr>
+<tr>
+<td>Equation (165)</td>
+<td>Wrong sign, with a direct coefficient correction.</td>
+</tr>
+<tr>
+<td>Restricted Theorem 5</td>
+<td>Not directly refuted by these examples; not independently verified here.</td>
+</tr>
+</tbody>
+</table>
+<p>No result from this paper has been used as a premise of the project’s A-curve torsor proofs. In particular these findings do not by themselves affect the independently derived finite cyclic norm equation or its Hilbert-90 comparison. They do rule out importing the printed unrestricted module theorems without repair.</p>
+<p>The exact diagnostics in <code>experiments/audit_gswz_printed_definitions.py</code> check the constant tests, fractional-power Frobenius identity, Gaussian expansion, and recurrence coefficients. The all-order arguments and the non-finite-generation proof are those above, not extrapolations from finite computations.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/gswz_printed_definition_audit.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#printed-conventions-that-matter">1. Printed conventions that matter</a><a href="#the-global-zero-class-set-is-not-an-additive-group">2. The global zero-class set is not an additive group</a><a href="#the-local-span-is-not-finitely-generated">3. The local span is not finitely generated</a><a href="#the-printed-gaussian-normalization-leaves-a-forbidden-term">4. The printed Gaussian normalization leaves a forbidden term</a><a href="#equation-165-has-the-stated-sign-error">5. Equation (165) has the stated sign error</a><a href="#scope-and-implications-for-this-project">6. Scope and implications for this project</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

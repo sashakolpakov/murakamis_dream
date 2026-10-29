@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What the selected five-crossing proof does and does not generalize · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/general_bridge_quadrature_and_twist_type_obstruction.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="what-the-selected-five-crossing-proof-does-and-does-not-generalize">What the selected five-crossing proof does and does not generalize</h1>
+<p>28 October 2026. This is an independent audit of the proposed extension from the original selected 5_2 period to many bridges or long twist regions. The result below is an exact obstruction inside the ORIGINAL repeated crossing, rather than an arbitrary oscillatory example. It identifies why one useful quadrature theorem cannot simply be iterated after aggregating long twists. It is not an obstruction to the volume conjecture.</p>
+<h2 id="the-genuinely-reusable-input">1. The genuinely reusable input</h2>
+<p>The <a href="five_two_selected_volume_proof.html">five-crossing proof</a> combines four different facts:</p>
+<ul>
+<li>an exact finite whole-source transform;</li>
+<li>a lattice-to-integral comparison with every endpoint retained;</li>
+<li>global bounds for the selected contour and every quadrature correction;</li>
+<li>the geometric action and a nonzero Gaussian coefficient.</li>
+</ul>
+<p>Only the second item currently has a local criterion that can be read directly from a general finite kernel. Section 5 of <a href="source_preserving_inner_quadrature.html">the inner quadrature theorem</a> gives that criterion for a reflected factorial convolution with a quadratic Gaussian. The finite-height version is more general, but produces additional source contours instead of bounding them automatically.</p>
+<p>The arbitrary-plat reduction and positive gluing arguments supply classical equations and rigidity at arbitrary bridge number. They do not supply the exponential bounds for the finite quantum endpoint sources. Thus neither positive ideal shapes nor an acyclic classical bridge complex currently checks all four items for an infinite hyperbolic knot class.</p>
+<h2 id="an-exact-sector-of-an-actual-long-twist">2. An exact sector of an actual long twist</h2>
+<p>Use the original equal-color crossing and its actual Borel fusion from <a href="actual_crossing_euler_completion_and_weight_source.html">the whole-word theorem</a>. Its relative coefficient, after retaining the common Cartan scalar kappa externally, is</p>
+<pre><code>a_R/kappa = sum_(a+k&lt;N)
+   (-1)^k Q^(k(k-1)/2) x^(-a-2k) f^a e_k/F_a.</code></pre>
+<p>The ideal (f) is two-sided. Hence the image of a literal p-fold crossing in the exact quotient by (f), for any integer p, is</p>
+<pre><code>sum_k d_k^p e_k,
+d_k=(-1)^k Q^(k(k-1)/2) x^(-2k).</code></pre>
+<p>Equivalently these are the actual degree-zero diagonal entries of C^(-1) R^p C/kappa^p. This is an exact matrix sector, not a semiclassical replacement of the full crossing. At the complete color x=-q^(-1), Q=q^2,</p>
+<pre><code>d_k=(-1)^k Q^(k(k+1)/2).</code></pre>
+<p>Let n=N-1. A normalized entire interpolation of these literal lattice values is</p>
+<pre><code>B_(p,N)(z)=exp[pi i p z(z-n)/N].                         (1)</code></pre>
+<p>Indeed its exponent differs from the displayed d_k^p exponent by -2pi i p k, so (1) agrees at EVERY integer k. All ordinary linear lattice gauges have the form</p>
+<pre><code>B_(p,N,ell)(z)=exp(2pi i ell z) B_(p,N)(z), ell in Z.     (2)</code></pre>
+<p>The quotient calculation does not permit replacing the original knot’s whole cut by this sector alone. Its role here is to test a proposed universal local quadrature rule on an actual component of that kernel.</p>
+<h2 id="no-linear-lattice-gauge-removes-the-long-twist-type">3. No linear lattice gauge removes the long-twist type</h2>
+<p>For a=0,n and real t,</p>
+<pre><code>|B_(p,N,ell)(a+it)|
+   =exp[-pi {p(2a-n)/N+2ell} t].                       (3)</code></pre>
+<p>The largest absolute vertical exponent over the two endpoints and two directions is therefore exactly</p>
+<pre><code>pi [ |p|(N-1)/N + 2|ell| ].                            (4)</code></pre>
+<p>In particular ell=0 is optimal, and its minimal type approaches pi|p|. This is a minimization over all the linear integer lattice gauges, not a failure to find a suitable gauge.</p>
+<p>More decisively, the actual endpoint numerator in finite Abel–Plana is explicit. The identities B(n-z)=B(z) and exp(2pi i ell n)=1 give</p>
+<pre><code>B_ell(it)-B_ell(-it)-B_ell(n+it)+B_ell(n-it)
+   =4 exp(-pi i p t^2/N)
+      sinh(pi p n t/N) cosh(2pi ell t).                 (5)</code></pre>
+<p>There is no hidden cancellation between the two endpoints. Dividing by exp(2pi t)-1, its absolute size at infinity is asymptotic, up to a fixed positive constant, to</p>
+<pre><code>exp{ pi [|p|(N-1)/N+2|ell|-2] t }.                     (6)</code></pre>
+<p>Consequently, whenever |p|(N-1)/N&gt;2, no gauge (2) gives the absolutely convergent endpoint integral used in the reusable infinite-height quadrature theorem. For every fixed |p|&gt;=3 this fails at every sufficiently large level. At equality the absolute integral still diverges; no claim about a conditionally regularized formula at that threshold is needed.</p>
+<p>This exact test includes both crossing signs and every level parity. The common Cartan scalar has no head-index dependence and changes none of (3)–(6). A zero-framing scalar external to a larger braid likewise does not change the endpoint vertical type.</p>
+<h2 id="what-a-long-twist-theorem-would-have-to-do-differently">4. What a long-twist theorem would have to do differently</h2>
+<p>The subsequent <a href="finite_mode_source_quadrature_and_long_twists.html">finite-mode quadrature theorem</a> now resolves this particular type obstruction constructively: retain an explicit O(|p|)-sized Fourier packet and an endpoint remainder which is O_p(1) at every level. Its far tail is exponentially small at height proportional to N. The modes and near endpoint correction remain present.</p>
+<p>The finite-height residue formula remains exact for (1), so this is not a prohibition on that method. It forces one to keep and control the extra contours. At height t=N h their endpoint growth after the Abel–Plana denominator has rate</p>
+<pre><code>pi [ |p|(1-1/N)-2 ] h.</code></pre>
+<p>Thus a bound that keeps h fixed while aggregating an arbitrarily long twist has a linearly growing adverse rate already in this actual sector. A valid large-twist argument may instead retain the individual crossings, use heights of order 1/|p|, or prove a different exact recoupling together with all its transformed endpoint sources. The present theorem does not decide which of those succeeds.</p>
+<p>Nor does the existence of a positive geometric triangulation bound these quantum endpoint terms. Any use of volume monotonicity must first identify the endpoints with specified original lower-complexity periods; an unidentified face of a factorial sum is not automatically the invariant of a drilled or smoothed link.</p>
+<p>The next genuinely structural theorem is therefore an endpoint transport and bound for a whole bridge move: express every finite-source boundary correction as a specified lower-complexity pointed period, with a proven rate below the geometric main period, uniformly over a diagram class. That is a concrete target suggested by the 5_2 error bound by the ORIGINAL figure-eight invariant. It has not yet been established for arbitrary plats, arbitrary alternating diagrams, or a nontrivial infinite family with unbounded bridge number.</p>
+<h2 id="coverage-not-proof-input">5. Coverage, not proof input</h2>
+<p>The primary abstract of Jun Murakami’s <a href="https://arxiv.org/abs/2501.00225">double-twist preprint</a> (v3 dated 2 May 2025) states a volume-conjecture result for double twist knots. The primary abstract of van der Veen’s <a href="https://arxiv.org/abs/math/0611181">Whitehead-chain paper</a> states an infinite family of links. The latter is not a theorem about arbitrary many-bridge knots in S^3. The published <a href="https://ems.press/journals/qt/articles/12209830">twist triangulation theorem</a> concerns the Teichmueller-TQFT volume conjecture; its abstract does not identify that state with the original Kashaev scalar. These are coverage checks only. No proof technique or theorem from those papers is used in (1)–(6).</p>
+<p>The strongest established original-knot output of the present selected finite-source mechanism remains its independently proved figure-eight and five-crossing prototypes. A broad-class theorem is a further task, not a consequence of continuity of the classical geometric point.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_twist_vertical_type_obstruction.py">Exact original-matrix and vertical-type audit</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/general_bridge_quadrature_and_twist_type_obstruction.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-genuinely-reusable-input">1. The genuinely reusable input</a><a href="#an-exact-sector-of-an-actual-long-twist">2. An exact sector of an actual long twist</a><a href="#no-linear-lattice-gauge-removes-the-long-twist-type">3. No linear lattice gauge removes the long-twist type</a><a href="#what-a-long-twist-theorem-would-have-to-do-differently">4. What a long-twist theorem would have to do differently</a><a href="#coverage-not-proof-input">5. Coverage, not proof input</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Full rank-one cyclotomic descent, including ramified zeros and poles · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/full_rank_one_cyclotomic_descent.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="full-rank-one-cyclotomic-descent-including-ramified-zeros-and-poles">Full rank-one cyclotomic descent, including ramified zeros and poles</h1>
+<p>Research proof for independent audit, 27 October 2026. This extends <a href="q_parameter_curvature_extension.html">the unramified Q-parameter proof</a>. The new ingredient is a weighted sequence-uniqueness lemma allowing finite exponential–Puiseux amplitudes. It removes both ramification and finite-nonzero limiting-root hypotheses from that rank-one result.</p>
+<p>This remains a comparison-line theorem. The actual geometric comparison line, its full cyclic transport identities and its source/cut marking must still be supplied. The original volume conjecture is not proved here.</p>
+<h2 id="statement-and-the-coefficient-field-requirement">1. Statement and the coefficient-field requirement</h2>
+<p>Let sigma_Q(Y)=QY and a(Q,Y) be a nonzero element of ℚ(Q,Y). Assume that for every sufficiently large positive integer n,</p>
+<pre><code>product_(j=0)^(n-1) a(zeta_n,zeta_n^jY)=1,
+zeta_n=exp(2pi*i/n),                         (1.1)</code></pre>
+<p>as a whole rational identity in Y. Then there exists</p>
+<pre><code>f(Q,Y) in ℚ(Q,Y)^*,
+a(Q,Y)=f(Q,QY)/f(Q,Y).                      (1.2)</code></pre>
+<p>No unramifiedness, limiting-root separation, or levelwise degree bound for Hilbert-90 gauges is assumed. The conclusion is generic rational descent. It does not assert that f is a unit at the ideal meridian or that it preserves an unspecified period pointing.</p>
+<p>The same conclusion over a subfield K of C holds if (1.1) is known at every primitive n-th root for the chosen coefficient embedding. For ℚ-coefficients this whole-root condition follows by cyclotomic Galois conjugation. For a number field a sufficient stronger marking is to know (1.1) for all coefficient conjugates. A single geometric embedding is not silently promoted to that condition.</p>
+<h2 id="scaled-roots-supply-all-powers-without-a-nonresonance-assumption">2. Scaled roots supply all powers without a nonresonance assumption</h2>
+<p>For a fixed positive integer k set xi_N=exp(2pi<em>i</em>k/N). Its order is m=N/gcd(k,N). Whole-root (1.1) gives the m-step transport identity at xi_N for all sufficiently large N. Its N-step transport consists of gcd(k,N) repetitions and is also one.</p>
+<p>Factor a over an algebraic splitting field as</p>
+<pre><code>a(Q,Y)=r(Q)Y^s
+      product_(i=1)^d(1-alpha_i(Q)Y)
+        /product_(j=1)^e(1-beta_j(Q)Y).      (2.1)</code></pre>
+<p>Every alpha_i,beta_j is a nonzero algebraic function of Q. Its value may tend to zero or infinity at Q=1. For sufficiently large root orders the values themselves are finite and nonzero.</p>
+<p>The ordinary primitive-root product first gives s=0, r(zeta_n)^n=1 and d=e. It also gives equality of the multisets of n-th powers of the alpha and beta values. The fixed-rational scalar discreteness argument yields</p>
+<pre><code>r(Q)=Q^(k_0), k_0 in Z.                     (2.2)</code></pre>
+<p>Here is that argument in full. The identities |r(zeta_n)|=1 exclude a zero or pole of r at Q=1, so choose an analytic logarithm ell of r near one. Then</p>
+<pre><code>L_n=n ell(exp(2pi*i/n)) belongs to 2pi*i Z.</code></pre>
+<p>The expansion of this fixed analytic germ gives L_n=n ell(1)+2pi<em>i ell’(1)+O(1/n), with a convergent expansion in powers of 1/n after the linear term. Hence L_(n+1)-L_n=ell(1)+O(1/n^2). These differences lie in the discrete set 2pi</em>i Z, so ell(1) belongs to that set and r(1)=1. Choose the logarithm with ell(1)=0. The sequence L_n now converges in the same discrete set and is eventually 2pi*i k_0 for a fixed integer k_0. Thus r(zeta_n)=zeta_n^(k_0) at infinitely many roots. The rational function r(Q)-Q^(k_0) has infinitely many zeros and is therefore identically zero. This proves (2.2).</p>
+<p>At xi_N use its actual order m, not a primitive N-step product formula. Equality of the m-th power multisets, raised to the gcd(k,N)-th power, gives equality of their N-th power multisets. In particular</p>
+<pre><code>sum_i alpha_i(xi_N)^N=sum_j beta_j(xi_N)^N  (2.3)</code></pre>
+<p>for every fixed k and all sufficiently large N.</p>
+<h2 id="convergent-puiseux-forms-from-a-finite-cover">3. Convergent Puiseux forms from a finite cover</h2>
+<p>Put t=Log Q/(2pi*i), with the logarithm near Q=1. There is a positive integer e_0 such that, after t=s^(e_0), all branches in (2.1) are single-valued meromorphic functions of s near zero. Here is a direct justification of the needed analytic form.</p>
+<p>Choose a punctured t-disk avoiding other discriminant zeros and coefficient poles of the finite root polynomials. Local analytic roots give a finite covering there. Its monodromy is a permutation of finitely many roots. Taking e_0 divisible by the cycle lengths kills this monodromy, so the pulled-back roots are single-valued holomorphic functions on a punctured s-disk. Cauchy’s elementary root bound, after division by the leading polynomial coefficient, bounds every root by a fixed power of |t|^(-1). Multiplying by a sufficient power of s then gives a bounded holomorphic function, which extends across zero. Hence each root is meromorphic there.</p>
+<p>Since no root is identically zero, it has a convergent form</p>
+<pre><code>alpha_i(exp(2pi*i*t))
+   =a_i t^(nu_i) exp(lambda_i(t^(1/e_0))),   (3.1)</code></pre>
+<p>where a_i!=0, nu_i is rational and lambda_i is holomorphic with lambda_i(0)=0. Choose the branch t^(1/e_0)&gt;0 on the positive t-axis, which contains all scaled roots used below. The beta branches have corresponding data b_j,mu_j,eta_j.</p>
+<p>Define</p>
+<pre><code>A_i(t)=exp(lambda_i(t^(1/e_0))/t),
+B_j(t)=exp(eta_j(t^(1/e_0))/t).               (3.2)</code></pre>
+<p>These need not extend meromorphically across t=0. Each is of the specific form</p>
+<pre><code>exp(P(s^(-1))) g(s), s=t^(1/e_0),           (3.3)</code></pre>
+<p>where P is a polynomial with no constant term and degree below e_0, and g is a holomorphic unit. Indeed separate the terms of lambda(s)/s^(e_0) with negative s exponents; the remainder is holomorphic. Multiplication by any algebraic/Puiseux weight changes g to a meromorphic function after a common further ramification. The next lemma permits these weights explicitly.</p>
+<h2 id="weighted-exponentialpuiseux-sequence-uniqueness">4. Weighted exponential–Puiseux sequence uniqueness</h2>
+<p>Fix e&gt;=1. Consider finitely many triples (nu,a,P), with nu rational, a!=0 complex and P a polynomial of degree below e with P(0)=0. Let g_(nu,a,P)(s) be meromorphic germs at zero. Merge identical triples by adding their g coefficients. If</p>
+<pre><code>sum_(nu,a,P) N^(-nu N) a^N
+    exp(P(N^(1/e))) g_(nu,a,P)(N^(-1/e))=0  (4.1)</code></pre>
+<p>for every sufficiently large integer N, then every merged g is identically zero.</p>
+<p><strong>Oscillatory estimate.</strong> If</p>
+<pre><code>phi(x)=theta x+sum_(r=1)^(e-1)b_r x^(r/e),
+theta,b_r real,</code></pre>
+<p>and either theta is nonzero modulo 2pi or some b_r is nonzero, then the Cesaro mean of exp(i phi(N)) is zero.</p>
+<p>If theta is nonzero modulo 2pi, partial sums of exp(i theta N) are bounded. Summation by parts bounds the sum through M by O(1+M^rho), where rho&lt;1 is the highest fractional exponent; the total variation of exp(i sum b_r x^(r/e)) has that bound. If all b_r vanish the sum is bounded directly.</p>
+<p>If theta is zero modulo 2pi, let rho in (0,1) be the highest nonzero fractional exponent. Eventually |phi’(x)| is comparable to x^(rho-1), and |phi’‘(x)|=O(x^(rho-2)). The sum–integral error is O(M^rho), by integrating the derivative’s absolute value over unit intervals. Integration by parts with 1/(i phi’) bounds the integral by O(M^(1-rho)); its derivative term is bounded by the integral of |phi’‘|/|phi’|<sup>2=O(x</sup>(-rho)). Both bounds are o(M), proving the estimate.</p>
+<p><strong>Proof of (4.1).</strong> If a merged coefficient is nonzero, choose successively among the finitely many such terms:</p>
+<ol type="1">
+<li>the smallest nu;</li>
+<li>the largest modulus R=|a| at that nu;</li>
+<li>the lexicographically largest vector of real coefficients of P, ordered from the highest power down;</li>
+<li>the smallest Laurent order m of g among those remaining terms.</li>
+</ol>
+<p>Normalize by the common positive scale</p>
+<pre><code>N^(-nu N) R^N exp(Re P(N^(1/e))) N^(-m/e).</code></pre>
+<p>Every term outside these selected scales tends to zero: the successive comparisons are on the N log N, N, fractional-power and log N scales. The normalized equality becomes</p>
+<pre><code>sum_l c_l exp(i phi_l(N))+o(1)=0,           (4.2)</code></pre>
+<p>with at least one nonzero leading Laurent coefficient c_l. The residual phases are distinct modulo constants: equal phases would have the same complex a and the same complex P, and would already have been merged. Their pairwise differences therefore satisfy the oscillatory estimate above. Multiply (4.2) by exp(-i phi_j(N)) and take Cesaro means. Every cross term has mean zero, and the error tends to zero, so c_j=0. This contradicts the selection of m. It proves the lemma.</p>
+<p>In particular, distinct pairs (nu,a) remain distinguishable when their amplitudes are finite sums of (3.3). This weighted conclusion is stronger than the earlier meromorphic-amplitude lemma and is the form usable for rational partial-fraction source coefficients.</p>
+<h2 id="branch-pairing-from-all-scaled-power-sums">5. Branch pairing from all scaled power sums</h2>
+<p>At xi_N, equation (3.1) gives exactly</p>
+<pre><code>alpha_i(xi_N)^N
+  =N^(-nu_i N)(a_i k^(nu_i))^N A_i(k/N)^k. (5.1)</code></pre>
+<p>For fixed k the amplitudes in this formula are finite sums of (3.3), with the same common ramification. Apply the lemma to (2.3). Distinct (nu,a) remain distinct after replacing a by a k^nu. Thus for every pair (nu,a),</p>
+<pre><code>sum_(alpha_i in (nu,a)) A_i(kt)^k
+               =sum_(beta_j in (nu,a)) B_j(kt)^k.</code></pre>
+<p>Rescale the argument and take k=1,…,d. For each (nu,a) this gives equality of the first d power sums of its A and B functions. Newton identities, padding by zeros to length d, identify their multisets over the common field of meromorphic functions on the ramified punctured disk. Their entries are nonzero exponentials, so the group cardinalities agree. A fixed permutation pairs A_i=B_(pi(i)) as function germs.</p>
+<p>The paired branches have the same nu and a. Their quotient is therefore exp(lambda_i-eta_(pi(i))). The equality of A and B says that (lambda_i-eta_(pi(i)))/t has exponential one. It is holomorphic on a connected ramified punctured disk, even if initially it could have a pole at zero. A holomorphic function with values in the discrete set 2pi*i Z is constant. Hence</p>
+<pre><code>lambda_i-eta_(pi(i))=2pi*i k_i t,
+alpha_i(Q)=Q^(k_i) beta_(pi(i))(Q), k_i in Z. (5.2)</code></pre>
+<p>This proves the required integral Q-shift pairing without any assumption on ramification or limiting values.</p>
+<h2 id="finite-divisor-flow-and-rational-descent">6. Finite divisor flow and rational descent</h2>
+<p>For k_i&gt;0 use the finite gauge product_(u=0)<sup>(k_i-1)(1-Q</sup>u beta_(pi(i))(Q)Y). For k_i&lt;0 use the inverse product over k_i&lt;=u&lt;0. Their product, times Y^(k_0), gives (1.2) over a finite splitting field. Its numerator and denominator Y-degrees are each at most</p>
+<pre><code>|k_0|+sum_i |k_i|.                          (6.1)</code></pre>
+<p>The finite divisor flow is unique on each infinite Q-shift orbit. Consequently it is invariant under the Galois group of the splitting field over ℚ(Q). The product part has value one at Y=0, fixing its remaining scalar. It therefore descends to ℚ(Q,Y). This also proves descent over K under the stated whole-root hypothesis.</p>
+<p>The remaining generic scalar ambiguity is a function of Q alone; a specified regular anchor can fix it. The theorem does not discard a zero or pole of the gauge at the ideal meridian or replace the required source/cut lattice by a generic isomorphism.</p>
+<h2 id="scope-for-the-actual-a-period-program">7. Scope for the actual A-period program</h2>
+<p>The actual reduced knot state has a rational Q-operator. This places its rational coefficient constructions in the correct cyclotomic field. However, the theorem applies to a specified rank-one comparison coefficient with the full transport identity (1.1). The current root-state data do not automatically construct that comparison or prove its norm characters agree with a geometric regulator realization. Those remain substantive inputs.</p>
+<p>The proof concerns fixed rational comparison data. It neither trivializes the whole quantum A-module nor asserts algebraicity of the selected Mellin period, which is transcendental for the adequate class. Algebraic comparison maps and transcendental marked periods remain compatible.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_full_rank_one_cyclotomic_descent.py">Ramified and weighted audit</a>. <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/full_rank_one_cyclotomic_descent_results.json">Results</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/full_rank_one_cyclotomic_descent.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#statement-and-the-coefficient-field-requirement">1. Statement and the coefficient-field requirement</a><a href="#scaled-roots-supply-all-powers-without-a-nonresonance-assumption">2. Scaled roots supply all powers without a nonresonance assumption</a><a href="#convergent-puiseux-forms-from-a-finite-cover">3. Convergent Puiseux forms from a finite cover</a><a href="#weighted-exponentialpuiseux-sequence-uniqueness">4. Weighted exponential–Puiseux sequence uniqueness</a><a href="#branch-pairing-from-all-scaled-power-sums">5. Branch pairing from all scaled power sums</a><a href="#finite-divisor-flow-and-rational-descent">6. Finite divisor flow and rational descent</a><a href="#scope-for-the-actual-a-period-program">7. Scope for the actual A-period program</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

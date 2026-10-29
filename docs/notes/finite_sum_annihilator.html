@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A nonzero all-level annihilator from the actual finite cut state · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/finite_sum_annihilator.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-nonzero-all-level-annihilator-from-the-actual-finite-cut-state">A nonzero all-level annihilator from the actual finite cut state</h1>
+<p>Research note, 26 October 2026. This gives an independent existence proof of a nonzero all-level meridian annihilator for the reduced literature ADO state of every knot. The proof keeps the finite-sum boundaries, handles an elimination operator vanishing under summation, and removes a central factor before root specialization. It does not identify the operator’s classical symbol with the geometric A-curve or prove a volume estimate.</p>
+<p>Existence of level-independent ADO recursions is existing coverage: <a href="https://arxiv.org/abs/2005.08176">Brown–Dimofte–Garoufalidis–Geer, 2005.08176</a>. Proper q-hypergeometric sums and q-holonomicity are standard, with scope surveyed in <a href="https://arxiv.org/abs/1601.07487">Garoufalidis–Le, 1601.07487</a>. Their closure, Hamiltonian-reduction, and holonomicity proofs are not premises here. The proof below is a filtered dimension count with explicit boundary strata and finite exponential moments.</p>
+<h2 id="an-auxiliary-off-root-lift-with-the-root-state-unchanged">1. An auxiliary off-root lift, with the root state unchanged</h2>
+<p>Choose a braid presentation of a zero-framed knot. At a fixed positive integer N, keep q generic and use the N by N matrices</p>
+<pre><code>E v_a=[a]_q*(x*q^(1-a)-x^(-1)*q^(a-1))/(q-q^(-1)) v_(a-1),
+F v_a=v_(a+1), K v_a=x*q^(-2a)v_a, 0&lt;=a&lt;N,</code></pre>
+<p>with the endpoint vectors zero. These need not be a quantum-group representation away from the root. Only their finite matrix entries will be used off-root.</p>
+<p>On a crossing put D_(a,b)=x<sup>(-a-b)q</sup>(2ab), and</p>
+<pre><code>Theta=sum_(k=0)^(N-1) c_k (E tensor F)^k,
+c_k=q^(k(k-1)/2)*(q-q^(-1))^k/[k]_q!,
+R_tilde=D*Theta.                                 (1.1)</code></pre>
+<p>This is the actual unrolled R with its common q<sup>(alpha</sup>2/2) factor removed, x=q^alpha. The inverse is</p>
+<pre><code>R_tilde^(-1)=Theta_inv*D^(-1),
+Theta_inv=sum_(k=0)^(N-1)
+   (-1)^k*q^(-k(k-1)/2)*(q-q^(-1))^k/[k]_q!
+                                  *(E tensor F)^k. (1.2)</code></pre>
+<p>For a proof, set Q=q^2 and rewrite the two coefficient series as the q-exponential and its inverse. Their coefficient convolution is the finite q-binomial identity</p>
+<pre><code>product_(j=0)^(m-1)(1+Q^j*t)
+  =sum_(r=0)^m Q^(r(r-1)/2) {m choose r}_Q t^r.</code></pre>
+<p>Inserting the last factor and collecting coefficients proves this identity inductively. At t=-1 its right side is zero for m&gt;0, which is exactly the inverse-series convolution after the factorial rewrite. Finally (E tensor F)^N=0 truncates it. Thus (1.2) holds for generic q, without a root-of-unity relation.</p>
+<p>Use the checked crossings obtained by permutation, pivotal K^(1-N), and the residual framing factor x^(w(N-1)), with w the braid writhe. Take the (0,0) entry of the cut partial trace and call it L_N(q,x). No scalarity or topological invariance is asserted for this off-root lift. At q_N=exp(pi*i/N), it is exactly the actual reduced period</p>
+<pre><code>L_N(q_N,x)=F_N(x).                              (1.3)</code></pre>
+<p>The cancellation of the removed factors against the twist, and the root normalization, are those already independently checked in <a href="kashaev_ado_pointing.html">the ADO pointing note</a>. All denominators [k]_q!, k&lt;N, and q-q^(-1), are nonzero at q_N. Consequently L_N is regular there as a rational function of generic x.</p>
+<h2 id="the-precise-finite-sum-class">2. The precise finite-sum class</h2>
+<p>The lift is a finite sum over crossing powers and strand labels. All matching constraints are integral linear equations. Their integer solution lattice has a fixed integral basis; use its coordinates k=(k_1,…,k_s). All actual labels and crossing powers are fixed integral linear functions of k. Their bounds 0,…,N-1 define a finite support P_N by finitely many inequalities</p>
+<pre><code>ell_nu(N,k)&gt;=0.                                (2.1)</code></pre>
+<p>Every nonzero summand on this support is a product of:</p>
+<ul>
+<li>a monomial q^Q(N,k) x^L(N,k), with Q integer-valued quadratic and L integral linear;</li>
+<li>finitely many q-factorials (q<sup>v;q</sup>v)_ell(N,k) and their inverses, with nonnegative integral linear lengths;</li>
+<li>finitely many (x<sup>u*q</sup>ell(N,k);q^v)_m(N,k) and their inverses, with u!=0 and nonnegative integral linear lengths;</li>
+<li>finitely many fixed nonzero Q(q)-scalars raised to integral linear exponents, including signs.</li>
+</ul>
+<p>Here v!=0 is fixed. Include all factorial and Pochhammer length conditions among (2.1). A term is defined as zero outside P_N. Its value is nonzero as a rational function of generic (q,x) on P_N. This is the only regularity of a summand used below.</p>
+<p>The x-dependent Pochhammer parameters also satisfy the proper alignment condition: v divides each coefficient of k_i in ell. This ensures that an internal unit shift moves an argument by an integral number of its q^v steps. For the actual R-weights both v and those coefficients are even, with v=+/-2. The proof does not assert this shift bound for unaligned Pochhammer products.</p>
+<p>To check this class for (1.1), use</p>
+<pre><code>E^k v_a=([a]_q!/[a-k]_q!)
+      *product_(r=0)^(k-1)[alpha-a+r+1]_q v_(a-k).</code></pre>
+<p>The second product is an x-dependent Pochhammer of length k. Explicitly, writing rho=q-q^(-1), it is</p>
+<pre><code>(-x^(-1))^k q^(k(a-1)-k(k-1)/2) rho^(-k)
+                     *(x^2*q^(2-2a);q^2)_k.</code></pre>
+<p>Also [r]_q!=q<sup>(-r(r-1)/2)*(q</sup>2;q<sup>2)_r/(1-q</sup>2)^r. These formulas verify both the alignment and the allowed linear exponents of scalar factors, with no appeal to a closure theorem. The other coefficients in (1.1)–(1.2) are q-factorials and quadratic q-monomials. Pivotal and framing entries contribute x-powers linear in (N,k) and q-powers quadratic in (N,k). Thus their shift ratios belong to the class just described.</p>
+<p>Choose a fixed positive integer B so that shifting x by q^B shifts every x-dependent Pochhammer argument by an integral number of its q^v steps. B=1 works for these R-weights: u=+/-2, v=+/-2. Write T for this x-shift and S_i for k_i -&gt; k_i+1. Set z=q^N and t_i=q^k_i. The variable z will be retained until the last specialization.</p>
+<h2 id="a-global-shift-span-bound-including-the-boundaries">3. A global shift-span bound, including the boundaries</h2>
+<p>Let I_N(q,x;k) be one summand, extended by zero. For R&gt;=1 consider the actions</p>
+<pre><code>x^a z^c T^b S_1^beta_1...S_s^beta_s I,
+0&lt;=a,c,b,beta_i&lt;=R.                             (3.1)</code></pre>
+<p>These are functions of (N,k,x), over the coefficient field Q(q). Their joint span has dimension O(R^(s+2)). The constant depends on the fixed summand data and support, not N or R.</p>
+<h3 id="interior-rational-shift-estimate">Interior rational-shift estimate</h3>
+<p>Where a collection of shifted terms is supported, choose one supported shift beta_0 as reference. Ratios of the shifted products to I(k+beta_0) are rational in x,z,t_1,…,t_s. They have a common Laurent-polynomial denominator of degree O(R), and after clearing it all exponents are bounded in absolute value by C R.</p>
+<p>Indeed a shift changes every factorial length and Pochhammer endpoint by O(R). All possible endpoint factors belong to finitely many types 1-q^r x^u z^v t^a, with r in intervals of length O(R). Include their required denominator factors once, with the bounded multiplicities of the original products. Quadratic q-monomials change by linear functions of (N,k), hence by Laurent monomials of degree O(R) in z,t; x-shifts of x^L contribute the same kind of monomial. Powers q<sup>O(R</sup>2), and the shifted scalar factors, are scalars in Q(q).</p>
+<p>Without boundaries this proves the O(R^(s+2)) estimate immediately. Ignoring the zero extension at a boundary would be incorrect.</p>
+<h3 id="boundary-stratification-and-its-codimension">Boundary stratification and its codimension</h3>
+<p>Choose C so |ell_nu(0,beta)-ell_nu(0,0)|&lt;=C R for all shifts in (3.1). Partition the integer pairs (N,k) by declaring each support form either greater than C R, less than -C R, or equal to one particular integer in [-C R,C R]. A stratum with a form less than -C R contributes zero to every shifted term.</p>
+<p>On any remaining stratum the supported shifts are a fixed subset: large forms remain positive, while near-boundary forms have fixed integer values. An empty subset contributes zero. Otherwise choose beta_0 from that subset. All q-factorial ratios between it and another supported shift have nonnegative endpoint indices. Their intervening factorial factors have strictly positive indices. A common denominator can therefore be chosen nonzero on the stratum. The x-dependent factors are nonzero for generic x. Thus the interior estimate still applies there.</p>
+<p>Suppose the fixed near-boundary forms have rank r as affine constraints on (N,k). Their consistent integer labels have only O(R^r) possibilities: choose r independent forms, after which all dependent labels are determined. There are finitely many choices of forms and large/small patterns.</p>
+<p>On each such stratum, the multiplicative variables z,t satisfy r independent binomial constraints</p>
+<pre><code>z^b product_i t_i^a_i=q^d.                      (3.2)</code></pre>
+<p>The Laurent monomials of degree O(R) in x,z,t modulo these constraints span a space of dimension O(R^(s+2-r)). To see this integrally, use Smith normal form of the fixed constraint lattice. The r constrained exponents can be reduced modulo fixed integers; the other s+2-r exponents range through O(R) integers. This also keeps the finitely many components if the lattice is not saturated. The varying right sides q^d are coefficient-field scalars.</p>
+<p>Restrict the family (3.1) to all these strata. A function is determined by its restrictions, and multiplication by the nonzero reference summand or common denominator does not increase dimension. Consequently its dimension is at most</p>
+<pre><code>sum_(r=0)^(s+1) O(R^r)*O(R^(s+2-r))
+    =O(R^(s+2)).                               (3.3)</code></pre>
+<p>This proves the global bound. It also treats small N, intersecting boundary faces, and redundant support inequalities. In particular it does not assume that the index polytope is a box.</p>
+<p>The same estimate holds for a finite sum on the same lattice by applying it to the direct sum of their spaces. One can retain separate term components in the elimination below, so cancellation between terms is not an assumption.</p>
+<h2 id="elimination-without-internal-multiplication-variables">4. Elimination without internal multiplication variables</h2>
+<p>The PBW monomials of the operators in (3.1) are linearly independent in the formal Ore algebra. There are (R+1)^(s+3) of them. For large R this exceeds the bound (3.3). Finite linear algebra yields a nonzero formal operator</p>
+<pre><code>P(x,z,T,S_1,...,S_s) I=0                        (4.1)</code></pre>
+<p>with coefficients in Q(q), and no multiplication t_i in P. Identity (4.1) is global on the zero-extended integer array, not merely an equality of ratios at interior indices.</p>
+<p>The construction is effective in principle. List the boundary strata, clear the proper denominators, reduce their monomials by the binomial constraints, and solve the resulting finite linear system over Q(q). No efficiency or minimal-order claim is made.</p>
+<h2 id="finite-moments-repair-vanishing-under-summation">5. Finite moments repair vanishing under summation</h2>
+<p>For each N introduce independent formal units w_i and the finite Laurent polynomial</p>
+<pre><code>F_N(q,x,w)=sum_(k in Z^s) w^k I_N(q,x;k).</code></pre>
+<p>Since the support is finite, translation of the sum is exact:</p>
+<pre><code>sum_k w^k S_i I(k)=w_i^(-1) F_N(q,x,w).</code></pre>
+<p>Thus (4.1) becomes</p>
+<pre><code>P(x,q^N,T,w_1^(-1),...,w_s^(-1)) F_N(q,x,w)=0.  (5.1)</code></pre>
+<p>Expand the nonzero polynomial P in its commuting internal shifts around S_i=1:</p>
+<pre><code>P=sum_alpha A_alpha(x,z,T)(S-1)^alpha.</code></pre>
+<p>Choose a nonzero A_alpha at least total degree h. Set w_i=exp(v_i) in (5.1). Its coefficient of v^alpha at that least degree is</p>
+<pre><code>(-1)^h A_alpha(x,q^N,T) F_N(q,x,1)=0.            (5.2)</code></pre>
+<p>Every term in which a positive-degree moment of F_N occurs has a lower-degree coefficient of P, and therefore vanishes. Hence A_alpha is a genuine nonzero meridian operator for the summed state, even if P(x,z,T,1,…,1)=0. This is a formal finite-moment argument, with no convergence, contour shift, or boundary omission.</p>
+<h2 id="specializing-qn-1-without-losing-the-operator">6. Specializing q^N=-1 without losing the operator</h2>
+<p>Apply (5.2) to the actual off-root lift L_N. Clear denominators and write its nonzero operator as</p>
+<pre><code>A(x,z,T)=(z+1)^h A_0(x,z,T),</code></pre>
+<p>where at least one coefficient of A_0 has nonzero value at z=-1. The factor is central. For every fixed positive N, q^N+1 is a nonzero rational function of generic q, so the identity for L_N also implies</p>
+<pre><code>A_0(x,q^N,T)L_N(q,x)=0</code></pre>
+<p>before specialization. At q=q_N the lift is regular, as proved in Section 1. Therefore</p>
+<pre><code>P_K(q,x,T)=A_0(x,-1,T),
+P_K(q_N,x,T)F_N(x)=0                            (6.1)</code></pre>
+<p>for all but finitely many N. The excluded levels are poles of the fixed rational q-coefficients. P_K is nonzero by construction.</p>
+<p>This cancels a common operator factor before specialization of an auxiliary lift. It changes neither the state nor any peripheral factor in a state comparison. In particular the actual full ADO factor d_N is still the whole rational germ of the pointing note.</p>
+<p>At the trivial quotient color the actual reduced state has value one. Thus an order-zero multiplication operator cannot annihilate it at all large levels. After removing a common shift, (6.1) has positive order and nonzero leading and trailing coefficients in Q(q,x). Its existence proves that the actual localized all-level annihilator ideal is nonzero for every knot.</p>
+<p>The exact change x=-q^(-1)M and the fixed full/reduced shift gauge transport this operator to the meridian M and to the full literature ADO normalization. In the localized skew polynomial ring over Q(q,M), left Euclidean division gives the unique monic element of least order in the actual nonzero ideal. This is the literature minimal-operator convention; the construction above need not compute that minimal element efficiently.</p>
+<h2 id="what-this-settles-and-what-the-triangulation-must-still-supply">7. What this settles and what the triangulation must still supply</h2>
+<p>The <a href="all_level_a_period.html">all-level exact period theorem</a> can now be applied to a nonzero actual annihilator for every knot, with its finite fixed-color pointing and bounded q-jets. Existence of such an operator is no longer an unaudited premise in that application. No proof of an equality with a Jones recursion ideal is needed for this implication.</p>
+<p>This proof does not show that the minimal operator has the geometric A-component in its classical symbol, that it has a rational inhomogeneous source factor, or that its period has the geometric regulator norm. A positive ideal triangulation supplies the geometric Bloch class and gluing branch. The exact comparison between its quantum gluing period and the actual cut-state module remains necessary, as detailed in <a href="triangulation_regulator_bridge.html">the triangulation bridge</a>.</p>
+<p>The subsequent <a href="relative_octahedral_period.html">relative octahedral presentation</a> now rewrites these very cut-state coefficients into five tetrahedral atoms, proves their local ideal-octahedron geometry, and derives the finite factorial’s source and exact cyclic boundary transition. This gives explicit local input for the remaining comparison; it does not identify this eliminated meridian operator’s global geometric block or its selected regulator period.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_finite_sum_annihilator.py">diagnostics</a> check the generic off-root crossing lift and its inverse against the actual root matrices, explicit global boundary certificates, and the finite-moment and central-specialization repairs. Their <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/finite_sum_annihilator_results.json">results</a> are checks of these ingredients, not a volume theorem or an efficient all-knot computation of minimal operators.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/finite_sum_annihilator.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#an-auxiliary-off-root-lift-with-the-root-state-unchanged">1. An auxiliary off-root lift, with the root state unchanged</a><a href="#the-precise-finite-sum-class">2. The precise finite-sum class</a><a href="#a-global-shift-span-bound-including-the-boundaries">3. A global shift-span bound, including the boundaries</a><a href="#elimination-without-internal-multiplication-variables">4. Elimination without internal multiplication variables</a><a href="#finite-moments-repair-vanishing-under-summation">5. Finite moments repair vanishing under summation</a><a href="#specializing-qn-1-without-losing-the-operator">6. Specializing q^N=-1 without losing the operator</a><a href="#what-this-settles-and-what-the-triangulation-must-still-supply">7. What this settles and what the triangulation must still supply</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

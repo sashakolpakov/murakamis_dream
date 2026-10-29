@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual cap wall has an exact Fermat-residue quad transition · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/cap_wall_fermat_quad_residue_transport.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-actual-cap-wall-has-an-exact-fermat-residue-quad-transition">The actual cap wall has an exact Fermat-residue quad transition</h1>
+<p>28 October 2026. This proves a boundary extension of the finite quantum quad transition, including its source, co-source, and every actual arbitrary-plat corner. The actual cup corner is an algebraic RESIDUE of the cyclic source, not an unnormalized limiting vector. Output covectors require a cyclic shift in addition to the scalar transition. The local parameter change also has an explicit central Jacobian. Neither correction may be omitted away from the cusp.</p>
+<p>The regular Fourier/chirp source transform was already proved in <a href="exact_quantum_quad_source_transport.html">the quad transport note</a>. The new results here are its extension across all Fermat cusps, the divisor and exact Nth power of its scalar, the actual cap residues, the dual shift correction, and their simultaneous whole-network transport. The construction does NOT decompose the transformed crossing kernels into positive geometric tetrahedron tensors or select a global geometric integration cycle.</p>
+<h2 id="the-compact-source-line-and-an-identity-without-denominators">1. The compact source line and an identity without denominators</h2>
+<p>Fix N&gt;=2, d=N-1, q=exp(pi i/N), Q=q^2, and gamma=-q. Let</p>
+<pre><code>Z e_n=Q^n e_n,       S e_n=e_(n+1 mod N),
+W_(k,n)=N^(-1/2)gamma^n Q^(kn+n(n+1)/2).</code></pre>
+<p>All root and chirp phases are retained; no division by two modulo N is used. W is unitary and has the previously proved relations</p>
+<pre><code>W Z^-1 W^-1=S,       W Z^-1 S W^-1=gamma Z.</code></pre>
+<p>On the smooth projective Fermat curve</p>
+<pre><code>C_N: u^N+v^N=w^N</code></pre>
+<p>put <code>B(u,v,w)=wI-uZ-vS</code>. This matrix has rank N-1 at EVERY point of C_N. For v!=0, its first-order cyclic recurrence determines every kernel vector from its zeroth coefficient. If v=0, then u,w!=0 and exactly one diagonal entry w-uQ^j vanishes. These arguments also cover u=0 and w=0. Thus its right kernels form a line subbundle L of the trivial rank-N bundle over the entire curve.</p>
+<p>The projective quad rotation is the regular automorphism</p>
+<pre><code>rho[u:v:w]=[qv:w:u],      rho^3=id projectively.</code></pre>
+<p>The following is an EXACT polynomial matrix identity:</p>
+<pre><code>B(qv,w,u) W = -W Z^-1 B(u,v,w).                      (1)</code></pre>
+<p>It follows by multiplying B by -Z^-1 and using the two W relations. In particular W identifies the kernel fibers even when u, v or w vanishes. Formula (1) has no forbidden division by a cusp coordinate. At both even and odd N, <code>(qv)^N+w^N=u^N</code>, as required.</p>
+<h2 id="meromorphic-source-and-co-source-frames">2. Meromorphic source and co-source frames</h2>
+<p>Use the homogeneous degree-zero frames</p>
+<pre><code>P_n(u,v,w)=v^n/product_(j=1)^n(w-uQ^j),
+L_n(u,v,w)=v^-n product_(j=0)^(n-1)(w-uQ^j),
+P_0=L_0=1.                                         (2)</code></pre>
+<p>Here P is a column, L a row. Direct recurrence gives <code>B P=0</code> and <code>L B=0</code>. On the open set uvw!=0 all their entries are well defined and neither frame vanishes. There exist uniquely specified meromorphic scalars c and e such that</p>
+<pre><code>W P = c (P composed with rho),
+L W^-1 = e (L composed with rho) S.                  (3)</code></pre>
+<p>The S in the second formula is COMPULSORY. Indeed (1) implies that <code>L Z W^-1</code>, rather than <code>L W^-1</code>, is a left kernel of the target B. Since <code>W Z^-1 W^-1=S</code>, formula (3) follows. Its scalars are fixed by the zeroth components:</p>
+<pre><code>c=(W P)_0,
+e=(L Z W^-1)_0.</code></pre>
+<p>Thus the same original output cap cannot be transported merely as an unshifted left Fermat source. It must keep this cyclic shift or absorb it into the adjacent transformed kernel.</p>
+<p>Two direct telescoping identities determine the paired scalar:</p>
+<pre><code>L P = N(w-u)w^(N-1)/v^N,
+L S P = N(w-u)/v.</code></pre>
+<p>For the first, the nth summand is <code>(w-u)/(w-uQ^n)</code> and the sum is the logarithmic derivative of <code>w^N-u^N</code>. For the second, each summand is <code>(w-u)/v</code>, including the wrapped n=0 term. Substitute (3) to obtain the exact WHOLE factor</p>
+<pre><code>c e = (w-u)w^N / [v^N(u-qv)].                       (4)</code></pre>
+<p>No value of a central norm has been substituted in (4).</p>
+<h2 id="all-cusp-frames-and-the-exact-scalar-divisor">3. All cusp frames and the exact scalar divisor</h2>
+<p>Write</p>
+<pre><code>A_j=[Q^-j:0:1], 0&lt;=j&lt;N.</code></pre>
+<p>Near A_j use v as local parameter and <code>u(v)=Q^-j(1-v^N)^(1/N)</code>, with the branch equal to Q^-j at zero. For j&gt;=1 set</p>
+<pre><code>alpha_j=N(-1)^(j-1)Q^(j(j-1)/2)/F_(j-1),
+beta_j=(-1)^j Q^(-j(j+1)/2)F_j,
+F_j=(Q;Q)_j.</code></pre>
+<p>Exact root-factorial reflection also gives the simpler forms <code>alpha_j=F_(N-j)</code> and <code>beta_j=N/F_(d-j)</code>.</p>
+<p>Then the following are regular NONZERO vector/covector frames at A_j:</p>
+<pre><code>P_hat_j(v)=v^(N-j) P(u(v),v,1)/alpha_j,
+L_hat_j(v)=v^j L(u(v),v,1)/beta_j,
+P_hat_j(0)=e_j,       L_hat_j(0)=e_j^t.              (5)</code></pre>
+<p>At A_0, P and L themselves are regular with values e_0 and e_0^t. To prove (5), the only zero factor of the P denominator is at index j. Its leading term is <code>v^N/N</code>. For the L numerator the zero at index j occurs precisely when n&gt;j. Thus the minimum orders of the components are respectively <code>-(N-j)</code> and <code>-j</code>, attained uniquely at n=j. The other finite factors give exactly alpha_j and beta_j. Notice the full identity</p>
+<pre><code>alpha_j beta_j=N(1-Q^-j).                           (6)</code></pre>
+<p>This covers every v=0 cusp; their two rho-images cover the u=0 and w=0 cusps as well. In particular the kernel line extends at all 3N cusp points, including even N.</p>
+<p>The source P has divisor</p>
+<pre><code>div(P)=-sum_(j=1)^d (N-j) A_j</code></pre>
+<p>as a meromorphic section of L. It has no other poles and no zeros, since its zeroth coefficient is one. Consequently</p>
+<pre><code>degree L=-N(N-1)/2.                                 (7)</code></pre>
+<p>This nontrivial degree is a concrete obstruction to a single global regular normalized source frame. Normalization factors with cusp zeros and poles are structurally necessary.</p>
+<p>Because W is an everywhere invertible constant matrix, (3) now determines the full divisor of c. It has poles of order N-j at A_j and zeros of that order at rho^-1 A_j. The tangent line <code>w-uQ^j=0</code> cuts C_N at A_j with multiplicity N; the line <code>u-qvQ^j=0</code> similarly cuts it at rho^-1 A_j. Hence their divisors and the anchor <code>c(A_0)=N^-1/2</code> give the exact algebraic identity</p>
+<pre><code>c(u,v,w)^N = N^(-N/2)
+  product_(j=1)^d [
+    (1-Q^j)(u-qvQ^j)/(w-uQ^j)
+                 ]^(N-j).                          (8)</code></pre>
+<p>For completeness, divide the two sides of (8). The divisor calculation shows that their quotient has neither poles nor zeros on the smooth compact curve, so it is constant. Evaluation at A_0 sets that constant to one. This also proves that c has no additional zeros on uvw!=0. Its actual branch is the Fourier sum in (3), not an independently chosen Nth root. Formula (4) then fixes e with its original phase. Thus (8) specifies a genuine marked algebraic source torsor, including the boundary divisor.</p>
+<h2 id="actual-corners-are-residues-not-discarded-limiting-factors">4. Actual corners are residues, not discarded limiting factors</h2>
+<p>For j&gt;=1, (5) gives the exact algebraic residue formulas</p>
+<pre><code>e_j = alpha_j^-1 Res_(A_j) v^(N-j-1) P dv,
+e_j^t = beta_j^-1 Res_(A_j) v^(j-1) L dv.           (9)</code></pre>
+<p>At A_0 they are <code>Res P dv/v=e_0</code> and <code>Res L dv/v=e_0^t</code>. Only the nth component with n=j has exponent -1 in (9); every other component is regular in that differential.</p>
+<p>For the actual fused cup corner j=d, the constants simplify to</p>
+<pre><code>alpha_d=1-Q,       beta_d=N.</code></pre>
+<p>Therefore</p>
+<pre><code>e_d=(1-Q)^-1 Res_(A_d) P dv,
+e_d^t=N^-1 Res_(A_d) v^(N-2) L dv.                 (10)</code></pre>
+<p>In particular the ordinary unregularized cyclic source has a SIMPLE pole at this actual cap wall, with residue <code>(1-Q)e_d</code>. Omitting it would remove the actual cup. The output d-corner instead requires the displayed power <code>v^(N-2)</code> and factor N^-1. These factors are determined by the source and co-source and cannot be replaced by a common guessed normalization.</p>
+<p>Let <code>a_j=gamma^j Q^(j(j+1)/2)</code>. At A_j the regularized transitions in (3),(5) have the exact nonzero coefficients</p>
+<pre><code>lim v^(N-j)c/alpha_j = a_j/sqrt(N),
+lim v^j e/beta_j = Q^j/[sqrt(N)a_j].                 (11)</code></pre>
+<p>Indeed W e_j is <code>a_j/sqrt(N)</code> times the Fourier vector Q^(jn). The target left frame is Q^(-jn), and its cyclic shift contributes Q^-j, giving the second factor in (11). Their product is Q^j/N, which also follows from (4),(6). The A_0 values are both N^-1/2. Thus every actual corner survives this quad transition, with its original nonzero phase and a polynomial, explicitly known factor.</p>
+<p>If the target affine coordinate is</p>
+<pre><code>zeta=qv/u(v),</code></pre>
+<p>the exact differential change is</p>
+<pre><code>dv/v=(1-v^N)d zeta/zeta
+     = [1/(1-zeta^N)]d zeta/zeta.                   (12)</code></pre>
+<p>The factor in (12) is another REQUIRED central factor. It is one at the cusp, but must be retained when transporting the whole relative form or continuing it away from that point. This is particularly relevant when a norm later specializes to a number.</p>
+<h2 id="the-whole-actual-arbitrary-plat-source-transports-at-once">5. The whole actual arbitrary-plat source transports at once</h2>
+<p>Use the exact actual pair-fused word B_beta and its current quotient from <a href="actual_rogers_bridge_transport.html">the arbitrary-bridge transport theorem</a>. Its original reduced scalar is</p>
+<pre><code>P_(beta,N)=chi_beta N^(1-k)
+                &lt;e_out|B_beta|e_in&gt;,                (13)</code></pre>
+<p>where every input pair is <code>(d,0)</code>, each ordinary output pair is <code>(0,d)</code>, and the marked output pair is <code>(d,0)</code>. The original Cartan, framing and peripheral factors remain chi_beta, or remain inside B_beta according to the original convention.</p>
+<p>Replace EACH of the 2k input columns and 2k output rows by its corresponding independent residue in (9)–(10). This is an exact 4k-variable residue presentation of the FULL source matrix element, not only an equality of one source vector. Equivalently, use the regular frames P_hat_j,L_hat_j in (5) and take the product of the small source circles with measures <code>dv_h/(2pi i v_h)</code>. Every form then has a specified original local lift and coefficient. In the unregularized form the explicit additional normalization is</p>
+<pre><code>[N(1-Q)]^-k,</code></pre>
+<p>with factors <code>v^(N-2)</code> on the k output d-corners, ordinary dv on the k input d-corners, and dv/v on all 0-corners.</p>
+<p>At any selected head insert W as the quantum quad frame change. For a full tensor T use</p>
+<pre><code>T&#39;=(tensor W_out) T (tensor W_in)^-1.</code></pre>
+<p>The transformed input is exactly c times the target P frame. The transformed output is exactly e times the target L frame WITH its S insertion, as in (3). If desired that S is absorbed into T’ by literal multiplication on that output. Consecutive slice changes cancel exactly. Apply the actual coordinate change rho to each corresponding source curve, retaining (12), and take the image of the specified small source cycle. Thus all input and output cap residues and their pairings are preserved for an arbitrary number of bridges and any actual word. This is an exact source-preserving nonlinear quad transition at the cap wall.</p>
+<p>This statement is about the ORIGINAL full word and its transported marker. The Ward corner in (13) cannot be applied separately to cyclic bulk/sewing summands that are not Hopf intertwiners. Such summands must retain the full marked row from the bridge theorem and their actual Ward defects. The complementary <a href="ward_cyclic_wall_contraction_and_marked_augmentation.html">marked augmentation theorem</a> gives the exact co-source homotopy and rank-two current correction, while proving that the unit augmented wall class survives.</p>
+<h2 id="uniform-source-bounds-at-the-wall-and-on-fixed-log-root-charts">6. Uniform source bounds at the wall and on fixed-log root charts</h2>
+<p>There is no exponential normalization hidden at the original cap corners. More precisely, there are absolute constants c,C&gt;0 such that, for every N&gt;=2, every j, and <code>|v|&lt;=1/(16N)</code>, the regular frames in (5) (with P,L at j=0) satisfy</p>
+<pre><code>c &lt;= ||P_hat_j||_2, ||L_hat_j||_2 &lt;= C.              (14)</code></pre>
+<p>Here u(v) has the specified local branch. The corresponding target P and L composed with rho have norms between <code>c sqrt(N)</code> and <code>C sqrt(N)</code>. The S insertion is unitary. Thus the regularized c and e coefficients in (11) have magnitudes between <code>c/sqrt(N)</code> and <code>C/sqrt(N)</code> throughout that micro-collar, including its cusp.</p>
+<p>Here is a direct uniform estimate. Every nonzero root factor has <code>|1-Q^r|&gt;=4/N</code>. The perturbation of u from Q^-j is at most <code>C|v|^N/N</code>. Relative errors in the products of nonzero factors are therefore bounded uniformly, above and below. The unique vanishing factor is exactly</p>
+<pre><code>1-(1-v^N)^(1/N)
+   =v^N/[1+delta+...+delta^(N-1)],
+delta=(1-v^N)^(1/N),</code></pre>
+<p>whose denominator has magnitude comparable to N. After dividing by alpha_j or beta_j, all components are bounded by a geometric sequence in their cyclic distance from j. For example, the right components with n&gt;=j are bounded by <code>C |v|^(n-j)/|F_(n-j)| &lt;= C/64^(n-j)</code>; the wrapped components with n&lt;j have distance N-j+n. The latter formula follows by the same exact factorial reflection used in the bridge source note. The left components use distance j-n modulo N. Their jth components remain bounded away from zero. This proves (14). At rho A_j the first target coordinate is O(v), while the ratio of its other two coordinates is a unit root times <code>1+O(|v|^N/N)</code>. Its N individual source coefficients are consequently bounded above and below by constants. Unitarity of W proves the stated transition bounds.</p>
+<p>For the original corners j=0,d the normalization constants themselves are polynomial: they are 1, 1-Q, and N. The algebraic factors alpha_j,beta_j for a bulk j can have factorial size; (5) retains them exactly and makes no contrary assertion.</p>
+<p>There is also a two-sided polynomial bound on NONDEGENERATE fixed-log root charts. Let U+V=1, with U,V in a fixed compact subset of C minus {0}, and choose bounded compatible logarithms a,b, <code>exp(a)=U</code>, <code>exp(b)=V</code>. Put</p>
+<pre><code>u=exp(a/N), v=exp(b/N), w=1.</code></pre>
+<p>Then for some C_K independent of N,</p>
+<pre><code>N^(-C_K) &lt;= |c|, |e| &lt;= N^(C_K).                   (15)</code></pre>
+<p>This follows directly from the exact algebraic norm (8). The weighted baseline product has magnitude</p>
+<pre><code>product_(j=1)^d |1-Q^j|^(N-j)=N^(N/2),</code></pre>
+<p>by pairing j and N-j. The remaining ratio in (8) is <code>(u-qvQ^j)/(1-uQ^j)</code>. Its logarithmic magnitude is <code>O(1/min(j,N-j))</code>, apart from a fixed number of endpoint factors which remain bounded above and below. Those endpoint limits do not vanish: a or a-b-pi<em>i could equal the relevant 2pi</em>i integer only if U=1 or U=-V, both excluded by U+V=1 with UV!=0. Summing with weights N-j, and dividing by N in (8), gives <code>|log|c||&lt;=C_K log N</code>. In (4), <code>1-u</code> and <code>u-qv</code> each have size comparable to 1/N on this chart, so ce is bounded above and below, proving the bound for e.</p>
+<p>The actual cap branch is <code>a=2pi*i+Log(1-V)</code>, and the 0-corner branch has <code>a=Log(1-V)</code>. Their regularizations multiply c by <code>v/(1-Q)</code> or 1, and multiply e by <code>v^d/N</code> or 1. These factors are also bounded by powers of N on the stated charts. The central Jacobian in (12) is a retained nonzero bounded function there. Thus neither the source nor co-source transition introduces an exponential loss on a marked nondegenerate chart. This is a local source statement, not a selected geometric saddle estimate.</p>
+<h2 id="what-this-crosses-and-what-it-does-not">7. What this crosses, and what it does not</h2>
+<p>The original source corner now has an actual compactified cyclic source realization, nonzero local quad coefficient, exact co-source correction, and fixed boundary cycle. Its scalar torsor is specified by (8) and the Fourier anchor, with no arbitrary root choice and no lost central Jacobian. The distinction between a source flag and a geometric tetrahedron shape has not been bypassed: the central Fermat ratio U=u<sup>N/w</sup>N undergoes the rational map <code>U -&gt; 1-1/U</code>, but U has not thereby been marked as an actual triangulation shape.</p>
+<p>Nor has the conjugated ACTUAL crossing T’ been factored here into the desired positive geometric tetrahedron tensors. A unitary change of the finite head basis always defines T’; that definition does not prove the missing factorization. Finally, the nonzero local cusp residue does not alone show that its global continuation has nonzero intersection with the hyperbolic critical cycle. Those are the remaining kernel and global-cycle comparisons.</p>
+<p>The source correction this note forces is nevertheless explicit: keep the cap residue, the dual cyclic shift, the scalar branch (8), and the central Jacobian (12). A proposed positive-quad transition that omits any one of them is not the original pointed network.</p>
+<h2 id="exact-checks">8. Exact checks</h2>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_cap_wall_fermat_quad_residue.py">audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/cap_wall_fermat_quad_residue_results.json">saved results</a> check 240 generic Fermat points at N=2,…,11, the exact polynomial intertwiner, compulsory dual shift, whole paired scalar, and (8). They check all 195 projective cusps at these levels, all corner residue orders and constants, and nine full tensor source contractions with one, two and three bridges. Finite fields use the unnormalized matrix sqrt(N)W, so these are exact checks with no numerical square-root choice. Independent proof review checked (1)–(13), including the whole 4k normalization and Jacobian. Twenty high-precision micro-collar diagnostics through N=64 also check the source and co-source norm conventions in (14); the uniform proof is the product estimate in Section 6. The arguments above, rather than the finite checks, prove all N.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/cap_wall_fermat_quad_residue_transport.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-compact-source-line-and-an-identity-without-denominators">1. The compact source line and an identity without denominators</a><a href="#meromorphic-source-and-co-source-frames">2. Meromorphic source and co-source frames</a><a href="#all-cusp-frames-and-the-exact-scalar-divisor">3. All cusp frames and the exact scalar divisor</a><a href="#actual-corners-are-residues-not-discarded-limiting-factors">4. Actual corners are residues, not discarded limiting factors</a><a href="#the-whole-actual-arbitrary-plat-source-transports-at-once">5. The whole actual arbitrary-plat source transports at once</a><a href="#uniform-source-bounds-at-the-wall-and-on-fixed-log-root-charts">6. Uniform source bounds at the wall and on fixed-log root charts</a><a href="#what-this-crosses-and-what-it-does-not">7. What this crosses, and what it does not</a><a href="#exact-checks">8. Exact checks</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A factorial-frame bound for complete original twist blocks · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_twist_block_factorial_frame_bound.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-factorial-frame-bound-for-complete-original-twist-blocks">A factorial-frame bound for complete original twist blocks</h1>
+<p>28 October 2026. An explicit normalized <strong>physical</strong> Borel fusion and its exact inverse improve the uniform twist-block estimate. For absolute constants C,A, every N&gt;=2 and every integer ell satisfy</p>
+<pre><code>||B_N^ell||_op &lt;= C N^A(1+|ell|) exp(12 gamma_* N),
+gamma_*=-integral_0^(1/6)log(2sin(pi t))dt.           (1)</code></pre>
+<p>The same holds for HS norm with one additional factor N. Here B_N is either actual complete crossing with its original Cartan/root framing line; those complete scalar factors have modulus one. No arbitrary condition number is removed. Every fusion metric cost is bounded in the original balanced flat norm, and the common Cartan is kept on the meridian continuation used in the proof.</p>
+<p>In volume units 24pi gamma_*=12v_3, where v_3 is the regular ideal tetrahedron volume. The preceding independently checked bound 2pi log(7+5sqrt(2)) in <a href="actual_convex_gauge_block_energy.html">the convex block note</a> remains valid; (1) is a sharper result, with a separate explicit-frame audit. Neither bound is the sharp knot-volume theorem.</p>
+<p>The later <a href="actual_twist_block_projector_barrier.html">joint projector-profile theorem</a> improves 12v_3 further to 4v_3+2v_8 by maximizing the coupled projector interval profile. It uses the exact physical frames and source continuation established here; the coarser proof below is unchanged.</p>
+<p>The subsequent <a href="actual_twist_block_projector_barrier.html">joint projector estimate</a> sharpens the volume constant further to 4v_3+2v_8. It uses the SAME physical frames, source and meridian-circle argument below, but maximizes the complete projector factorial profile together. The independent bound (1) and its proof remain valid.</p>
+<h2 id="the-actual-normalized-fusion-and-inverse">1. The actual normalized fusion and inverse</h2>
+<p>Fix q=exp(pi i/N), Q=q^2, d=N-1, F_a=(Q;Q)_a. Continue the original meridian M near one and set x=-M/q, Y=M^2. On each balanced physical head use the literal matrices</p>
+<pre><code>K|a&gt;=x Q^(-a)|a&gt;,
+F|a&gt;=(1-Q^(a+1))|a+1&gt;,
+Ecal|a&gt;=(M Q^(-a)-M^(-1))|a-1&gt;, Ecal=rho^2 E.</code></pre>
+<p>Missing endpoint arrows are zero. This is the original nilpotent N-color meridian family; it is not a generic cyclic representation. The total lowering operator is</p>
+<pre><code>f=F_1+K_1^(-1)F_2, f^N=0.</code></pre>
+<p>For total integer degree T, set I_T=[max(0,T-d),min(T,d)]. The actual free Borel fusion columns are f^a|0,T-a&gt;. Normalize each by its nonzero physical factorial F_a. In the basis |u,T-u&gt; this gives</p>
+<pre><code>C_T(u,a)=x^(u-a) F_(T-u)/[F_(a-u)F_(T-a)], u&lt;=a,
+C_T(u,a)=0 otherwise.                             (2)</code></pre>
+<p>These are triangular matrices with diagonal one. Expanding f^a by the finite Q-binomial theorem proves (2) directly. Their exact inverses are</p>
+<pre><code>C_T^(-1)(u,a)=(-1)^(a-u)Q^((a-u)(a-u-1)/2) C_T(u,a). (3)</code></pre>
+<p>Indeed (2) factors as diag_u(x^u F_(T-u)) times the upper Euler-Toeplitz matrix (1/F_(a-u)) times its inverse diagonal. The inverse Euler coefficients are (-1)^h Q^(h(h-1)/2)/F_h. This proves (3) for arbitrary nonzero M, not only at the complete root. In particular both matrices have the SAME entrywise moduli. All normalized factorials and powers of M in these physical frames are retained.</p>
+<h2 id="the-sharp-elementary-factorial-cost-of-this-frame">2. The sharp elementary factorial cost of this frame</h2>
+<p>Write</p>
+<pre><code>J(s)=integral_0^s log(2sin(pi t))dt.</code></pre>
+<p>The already proved endpoint-uniform factorial estimate gives log|F_a|=N J(a/N)+O(log N) uniformly in 0&lt;=a&lt;N. On the triangle u,v&gt;=0, u+v&lt;=1,</p>
+<pre><code>max [J(u+v)-J(u)-J(v)]=2gamma_*.                   (4)</code></pre>
+<p>To check (4), fix s=u+v. The expression is strictly concave in u: its second derivative is -pi sin(pi s)/[sin(pi u)sin(pi(s-u))]&lt;0. The maximum has u=v=s/2. Its derivative in s is log(2cos(pi s/2)), so s=2/3 is the unique maximum. Its value is -3J(1/3)=-2J(1/6)=2gamma_*; the last identity follows by integrating the sine doubling formula and using J(1-s)=-J(s).</p>
+<p>Every entry of (2) is a Q-binomial coefficient times x^(u-a). Equations (2)–(4) therefore prove, uniformly on |M-1|&lt;=1/(8N^3),</p>
+<pre><code>||C_T||, ||C_T^(-1)|| &lt;= C_0 N^A0 exp(2gamma_*N).   (5)</code></pre>
+<p>The factor |x|^(u-a) is uniformly bounded there, and converting max entry to norm costs at most N. The bound is uniform in the integer degree T. Thus the full physical fusion condition number costs exp(4gamma_*N+O(log N)). It has not been declared subexponential.</p>
+<h2 id="a-literal-bidiagonal-casimir-in-this-normalized-frame">3. A literal bidiagonal Casimir in this normalized frame</h2>
+<p>Use the actual normalized tensor Casimir</p>
+<pre><code>Omega=F_tot Ecal_tot+qK_tot+q^(-1)K_tot^(-1),
+Ecal_tot=Ecal_1K_2+Ecal_2, K_tot=K_1K_2.</code></pre>
+<p>It commutes with f. Direct application to the seed vector gives</p>
+<pre><code>Omega|0,j&gt;=c_j(Y)|0,j&gt;
+             +(M Q^(-j)-M^(-1)) f|0,j-1&gt;,
+c_j(Y)=q^(-1)Y Q^(-j)+qY^(-1)Q^j.                 (6)</code></pre>
+<p>For example the first physical offdiagonal term before rewriting is (M Q<sup>(-j)-M</sup>(-1))(1-Q)|1,j-1&gt;. Subtracting that same multiple of f|0,j-1&gt; leaves the Cartan diagonal c_j(Y); this verifies (6) without inverting an endpoint coefficient.</p>
+<p>Commuting Omega through f^a and retaining the normalizer F_a gives</p>
+<pre><code>C_T^(-1) Omega C_T |a,j&gt;
+   =c_j(Y)|a,j&gt;+b_j(M)|a+1,j-1&gt;,
+j=T-a,
+b_j(M)=(M Q^(-j)-M^(-1))(1-Q^(T-j+1)).             (7)</code></pre>
+<p>Targets outside the physical basis are omitted. In particular when j=0 the formal coefficient M-M^(-1) need not vanish away from completeness; |a+1,-1&gt; is absent by the original endpoint convention. At a=d the displayed factor 1-Q^N genuinely vanishes. Thus (7) is an actual finite bidiagonal matrix, denoted H_T(M), valid also at the complete collisions. It uses no cyclic head completion.</p>
+<p>The actual generic-meridian crossing polynomial, derived from its finite highest-weight matrix in <a href="meridian_casimir_source.html#1-the-fixed-operator-and-its-generic-meridian-spectrum">the meridian Casimir note</a>, has eigenvalue</p>
+<pre><code>lambda_j(Y)=nu_j Y^(-j),
+nu_j=(-1)^j q^(j(j+1)), |nu_j|=1.                  (8)</code></pre>
+<p>This is the original crossing with the explicit common Cartan scalar recorded separately. Equations (2),(7),(8) identify its complete degree block by similarity, rather than merely comparing its spectrum.</p>
+<p>The finite-matrix verification of (8) is short. At total degree j write a highest vector h_j=sum_(a=0)^j beta_a |a,j-a&gt;, beta_0=1. Its actual Ecal equation gives</p>
+<pre><code>beta_(a+1)/beta_a
+  =-e_(j-a)/[e_(a+1)xQ^(-(j-a-1))],
+e_a=M Q^(-a)-M^(-1).</code></pre>
+<p>For generic M these denominators are nonzero. Multiplying cancels the e factors and gives beta_j=(-1)^j x<sup>(-j)Q</sup>(j(j-1)/2). The coefficient of |0,j&gt; in the checked R h_j comes only from the zero-transfer term on |j,0&gt;, so its eigenvalue is beta_j x^(-j), which is exactly (8). The N descendants of each h_j are nonzero generically by the elementary E F^r recurrence; f^N=0. Distinct c_j(Y) make these N summands independent and their dimensions total N^2. The defining finite R commutes with the actual total generators, so this computes the whole generic crossing, not just selected entries.</p>
+<h2 id="explicit-interval-projectors-with-only-one-possible-collision">4. Explicit interval projectors with only one possible collision</h2>
+<p>Fix nonnegative physical degrees r&lt;=s from the j-interval of H_T. For generic M its c_j(Y) are distinct. The j-to-k bidiagonal spectral projector E_k has entry, from column s to row r,</p>
+<pre><code>(E_k)_(r,s)=
+   product_(l=r+1)^s b_l(M)
+      /product_(l=r,l!=k)^s [c_k(Y)-c_l(Y)]
+                              if r&lt;=k&lt;=s,
+(E_k)_(r,s)=0 otherwise.                         (9)</code></pre>
+<p>One proof expands the triangular resolvent: [(z-H_T)^(-1)]<em>(r,s)=product b_l/product</em>(l=r)^s(z-c_l), then takes the residue at c_k. This proves the full matrix formula, including intervals touching a physical endpoint.</p>
+<p>The exact factorization of each difference is</p>
+<pre><code>c_k(Y)-c_l(Y)
+  =qY^(-1)(Q^k-Q^l)[1-Y^2 Q^(-(k+l+1))].          (10)</code></pre>
+<p>The first product of differences in (10), for l in [r,s], l!=k, has absolute value exactly |F_(k-r)F_(s-k)|. Its reciprocal is at most exp(2gamma_*N+O(log N)). The additional common factor |qY<sup>(-1)|</sup>(s-r) is not exactly one on the later meridian circle, but its logarithm is O(N delta) there and it is uniformly bounded above and below.</p>
+<p>For the second product the integers k+l+1 form an interval of length at most N, inside [1,2N-1], with the entry l=k omitted. There is at most ONE zero at M=1: k+l+1=N. If this is the omitted entry, there is no zero. This explicitly includes the simple self-paired node when N is odd and the near-endpoint nodes when N is even.</p>
+<p>After removing this possible zero and the omitted entry, the root product is a circular interval product of 1-Q^m. It is a ratio of factorials, or two such ratios when the interval crosses N. Its leading logarithm is the difference of two endpoint values of J; J(1)=0 accounts for the crossing. Hence that product AND its reciprocal are at most exp(2gamma_*N+O(log N)). Omitting one additional nonzero factor changes the bound only by O(log N), since</p>
+<pre><code>4/N &lt;= |1-Q^m| &lt;=2, 1&lt;=m&lt;N.</code></pre>
+<p>This is a whole-product estimate; multiplying N separate polynomial bounds is not used.</p>
+<h2 id="the-shrinking-meridian-circle-retains-all-normalizers">5. The shrinking meridian circle retains all normalizers</h2>
+<p>For any integer ell choose</p>
+<pre><code>delta=1/[8N^3(1+|ell|)], M=1+delta exp(i theta).    (11)</code></pre>
+<p>All c_j(Y) are distinct on this circle: the other solutions of M<sup>4=Q</sup>m are a distance of order 1/N from one, while delta is smaller. For a nonzero root factor the relative change in its logarithm is O(delta/|1-Q^m|). Summing around a full interval costs at most</p>
+<pre><code>O(delta N(1+log N))=O(1),</code></pre>
+<p>because |1-Q^m|&gt;=4min(m,N-m)/N. Thus the noncolliding product bound in Section 4 remains uniform on (11); there is no N^O(N) loss. The possible zero factor has magnitude |1-M^4| &gt;=3delta, since |M<sup>3+M</sup>2+M+1|&gt;=3 on this small circle. Its reciprocal costs at most C N^3(1+|ell|).</p>
+<p>The numerator of (9) has two interval products. At M=1 their moduli are</p>
+<pre><code>|F_s/F_r|,
+|F_(T-r)/F_(T-s)|,</code></pre>
+<p>where all indices lie in [0,d]. Each has leading exponent at most 2gamma_*N. Neither numerator interval contains a root-zero factor. The same harmonic-sum comparison preserves those bounds on (11). The factors M^(-1) in the first numerator product and qY^(-1) in each denominator difference contribute only exp(O(N delta)) over the complete intervals; they are retained on both sides. Combining them with BOTH denominator products proves, for all entries and degrees,</p>
+<pre><code>|(E_k)_(r,s)|
+    &lt;= C_1 N^A1(1+|ell|) exp(8gamma_*N).            (12)</code></pre>
+<p>The eigenvalue powers in (8) are uniformly bounded on (11): |M^(-2j ell)| &lt;= exp(4N|ell|delta) &lt;2. Summing the at most N projectors and converting max entry to operator norm costs only a further polynomial. Combining with (5) gives</p>
+<pre><code>||B_N(M)^ell||
+    &lt;= C_2 N^A2(1+|ell|) exp(12gamma_*N)             (13)</code></pre>
+<p>on the entire circle, in the ORIGINAL physical metric.</p>
+<p>The full original common Cartan has not disappeared. On the retained branch alpha=d+Log M/Log q it is</p>
+<pre><code>kappa(M)=q^(alpha^2/2),
+kappa(M)/kappa(1)
+   =M^d exp[(Log M)^2/(2Log q)].                   (14)</code></pre>
+<p>Its ell-th power has modulus bounded by exp(2N|ell|delta+C N|ell|delta^2), uniformly less than a fixed constant. Thus (13) holds for the unstripped crossing too, with its SAME original Cartan. The original framing scalars at M=1 have modulus one. There is no color-dependent factor chosen from a knot period here.</p>
+<p>Finally every actual signed crossing power is holomorphic near M=1: the finite defining R and its inverse have only the constant nonzero factorials F_a and powers of nonzero M as denominators. The apparent spectral poles in (9) cancel in the full matrix. Cauchy’s formula at the center of (11), with the full matrix and Cartan retained, bounds its norm by the maximum norm on that circle. This proves (1). The circle integral introduces no extra delta^(-1) factor, since dM and the Cauchy denominator have the same radius.</p>
+<h2 id="source-preserving-whole-word-consequence-and-scope">6. Source-preserving whole-word consequence and scope</h2>
+<p>The bound concerns a coherently contracted actual twist block before any absolute values. It can replace that block inside any original braid or plat, of arbitrary width, without changing a cap, pivot, modified-dimension factor, marked source or framing line. Therefore the preceding block-energy argument, on consecutive repeated-generator blocks of the specified original braid word, improves to</p>
+<pre><code>limsup_N (2pi/N)log|P_N|
+   &lt;=sum_twist blocks min(|ell|v_8,12v_3).          (15)</code></pre>
+<p>The original reduced Kashaev scalar has the same bound. Blocks and width are fixed while N tends to infinity. The estimate is uniform in ell as stated in (1), but the whole-word asymptotic uses a fixed braid word. The strict comparison 12v_3&lt;4v_8 makes every consecutive repeated-generator block of length at least four improve its separate-crossing bound. No tangle conversion of an arbitrary unoriented diagram twist region is asserted. This is still a coarse repeated-generator-block upper bound, not an estimate by Vol(S^3-K), a nonzero selected geometric coefficient or the volume conjecture.</p>
+<p>The strict constant comparison needs no numerical volume premise. For G=sum_(n&gt;=0)(-1)<sup>n/(2n+1)</sup>2, G&gt;8/9. The elementary Fourier series of the sine integral gives</p>
+<pre><code>v_3=(3sqrt(3)/4)sum_(k&gt;=0)
+            [(3k+1)^(-2)-(3k+2)^(-2)].</code></pre>
+<p>The decreasing positive summand bounds its tail from k=1 by its first value plus its integral, so that sum is at most 3/4+9/400+1/60. Together with sqrt(3)&lt;7/4 this gives v_3&lt;10/9. Since v_8=4G&gt;32/9, one obtains 3v_3&lt;10/3&lt;32/9&lt;v_8, which proves 12v_3&lt;4v_8 rigorously.</p>
+<p>Explicitly, this whole-source bound also holds at ODD braid width. For the original b-strand complete cut, retain the unitary pivot g and the original unit zero-framing correction in W. The exact cut identity is C=Tr_env[W(I tensor g^(tensor(b-1)))]=K_N I. Therefore</p>
+<pre><code>|K_N| &lt;= N^(b-1)||W||_op
+  &lt;= N^(b-1) product_t min(||B_sign(t)||_op^|ell_t|,
+         C N^A(1+|ell_t|)exp(12gamma_*N)).          (16)</code></pre>
+<p>The first inequality follows directly by summing the N^(b-1) environment diagonal matrix elements and applying the operator norm. No positivity premise for the pivotal trace is required. The full ADO state differs at completeness by its retained root phase/N. Thus (16) includes all original source factors in modulus and gives (15) for either parity of braid width, without relying only on the even-plat notation of the gauge construction.</p>
+<h2 id="independent-actual-matrix-audit">7. Independent actual-matrix audit</h2>
+<pre><code>python3 experiments/audit_actual_twist_block_factorial_frame.py</code></pre>
+<p>The audit evaluates the generic-meridian R directly from the finite E^h tensor F^h sum, independently of the spectral reconstruction. It checks the normalized physical fusion, its explicit Euler inverse, the bidiagonal Casimir intertwining, every interval-projector entry, the difference factorization and the one-collision count, all physical degree endpoints, signed powers and the full Cartan continuation. Fresh result: <strong>PASS</strong>, 240 signed meridian/degree families through N=9, including both level parities. <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_twist_block_factorial_frame_results.json">Saved results</a>.</p>
+<p>The new bound’s exponential constants come from the uniform analytic product proof, not extrapolation of those finite tests. The previous Hermite norm theorem is left intact as an independent coarser bound.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_twist_block_factorial_frame_bound.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-normalized-fusion-and-inverse">1. The actual normalized fusion and inverse</a><a href="#the-sharp-elementary-factorial-cost-of-this-frame">2. The sharp elementary factorial cost of this frame</a><a href="#a-literal-bidiagonal-casimir-in-this-normalized-frame">3. A literal bidiagonal Casimir in this normalized frame</a><a href="#explicit-interval-projectors-with-only-one-possible-collision">4. Explicit interval projectors with only one possible collision</a><a href="#the-shrinking-meridian-circle-retains-all-normalizers">5. The shrinking meridian circle retains all normalizers</a><a href="#source-preserving-whole-word-consequence-and-scope">6. Source-preserving whole-word consequence and scope</a><a href="#independent-actual-matrix-audit">7. Independent actual-matrix audit</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

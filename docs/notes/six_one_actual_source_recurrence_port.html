@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual six-crossing source: a proved triple reduction and the missing finite transform · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/six_one_actual_source_recurrence_port.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-actual-six-crossing-source-a-proved-triple-reduction-and-the-missing-finite-transform">The actual six-crossing source: a proved triple reduction and the missing finite transform</h1>
+<p>28 October 2026. This note reduces the ORIGINAL six-crossing four-plat, with every turn and framing factor retained, to a three-index finite sum. The proof uses literal finite transfer elimination and the independently proved terminating three-factor q-Chu identity. It does not assume a colored-Jones formula.</p>
+<p>The attractive Rogers/Newton expansion in Section 4 remains <strong>unproved</strong>. It matches the direct finite tests and its classical characteristic is exactly the independently derived longitude quartic. Neither fact proves the finite transform. Accordingly this note supplies no verified actual quantum color operator for 6_1 and no new volume estimate.</p>
+<h2 id="the-marked-plat-and-its-source">1. The marked plat and its source</h2>
+<p>Use the conventions of the <a href="figure_eight_whole_source_identity.html">actual four-crossing proof</a>: Q is any primitive Nth root, d=N-1, x=-M/q, Q=q², Y=Qx²=M², and xvee=x^-1 Q^-1. The actual action order is</p>
+<pre><code>sigma2, sigma1^-1, sigma1^-1, sigma1^-1, sigma2, sigma2.</code></pre>
+<p>The braid word, with rightmost action first, is sigma2² sigma1^-3 sigma2. Its rational-tangle slope is</p>
+<pre><code>T² U³ T (0,1)^t=(9,4)^t,
+T=[[1,1],[0,1]], U=[[1,0],[1,1]].                 (1)</code></pre>
+<p>This is the 9/4 handedness, mirror to the 9/5 convention in the <a href="six_one_classical_spectral_envelope_obstruction.html">independent longitude calculation</a>. We keep this handedness throughout the source calculation; mirroring replaces Q by Q^-1 in the final scalar.</p>
+<p>Top colors/orientations are (x,xvee,xvee,x), (+,-,-,+). Cut the fourth leg with the ORIGINAL left-trace coupon D0=g E00. As in the earlier proof, the input is</p>
+<pre><code>(a,d-a,d,0), with coefficient N² x^(a-2d).       (2)</code></pre>
+<p>The oriented writhe is 2. With A=alpha, B=2d-alpha, the full mixed Cartan exponent minus the actual framing exponent is exactly dB:</p>
+<pre><code>sum_crossings sign*alpha_i alpha_j/2
+             -2*(A²-2dA)/2 = dB.              (3)</code></pre>
+<p>Thus the retained common factor is xvee^d. The final colors are (xvee,x,xvee,x), so BOTH caps are ev_L. No ordinary quantum dimension is divided out and no turn is moved through a crossing.</p>
+<h2 id="forced-transfers-give-an-actual-four-index-sum">2. Forced transfers give an actual four-index sum</h2>
+<p>The surviving transfer list is</p>
+<pre><code>(0,k,ell,r,a,0),
+0&lt;=a, k, a+k&lt;=d, 0&lt;=ell&lt;=k,
+0&lt;=r&lt;=d-a-k+ell.                               (4)</code></pre>
+<p>Indeed the first transfer is zero because its second input is d. After the three negative crossings the state is</p>
+<pre><code>(d-k+ell-r, a+k-ell+r, d-a, 0).</code></pre>
+<p>If the fourth positive transfer is j&lt;=a, the final second cap forces the last transfer j-a. Hence j=a and the last transfer is zero. The final state is</p>
+<pre><code>(d-k+ell-r, k-ell+r, d, 0).</code></pre>
+<p>The two cap factors multiply to x^(2d-k+ell-r)/N². This exponent is important; replacing it by x^d gives the wrong source.</p>
+<p>Write G_m=(Q/Y;Q)_m and let brackets denote Gaussian binomials. Direct multiplication of the literal mixed entries, (2), the two caps, and (3), followed only by reflection of [d choose a], gives</p>
+<pre><code>F_N(Y)=sum_(4) W(a,k,ell,r),
+
+W=Y^(d-2a-k+r)
+  Q^[1+a+2k(a+k+1)-ell(a+2k)+ell²]
+  [a+k choose k] [d-k+ell choose ell]
+  [a+k-ell+r choose r]
+  (Q/Y)_k (Y Q^(-a-k))_ell
+  (Q^(k-ell+1)/Y)_r (Y Q^(-a-k+ell-r))_a.      (5)</code></pre>
+<p>Here and below all Pochhammers have base Q. The root relation used to reduce integer exponents is d=-1 modulo N; no half-power root sign is discarded. All binomial factorial indices lie between 0 and d.</p>
+<h2 id="a-proved-three-index-source">3. A proved three-index source</h2>
+<p>The actual same period is</p>
+<pre><code>F_N(Y)=sum_(m=0)^d sum_(b=0)^m sum_(r=0)^(d-b)
+   Y^(m-b) Q^(b²) [m choose b] [d-b choose r]
+   G_m (Q^(b+1)/Y)_r (Q^(-2b-m-r-1))_b.       (6)</code></pre>
+<p>Proof. In (5) put n=a+k, m=a+k-ell+r, b=n-ell. The new support is</p>
+<pre><code>0&lt;=m,n&lt;=d, 0&lt;=a&lt;=b&lt;=min(m,n).</code></pre>
+<p>Reflect [d-k+ell choose ell] and invert the two Y-positive Pochhammers. The four original Pochhammers combine to</p>
+<pre><code>G_m (Q^(b-a+1)/Y)_(n-b) (Q^(b+1)/Y)_(n-b),</code></pre>
+<p>with sign (-1)^a. The binomials become [n choose b][m choose b][b choose a]. The whole scalar is</p>
+<pre><code>(-1)^a Y^(d+m-2b)
+  Q^[1+n+b+2b²+a(a-3)/2-a(2b+m)].              (7)</code></pre>
+<p>For fixed m,b,a, sum n=b+l. Set K=d-b, A=Q^(b-a+1)/Y and B=Q^(b+1)/Y. The n-dependent part is</p>
+<pre><code>Q^b sum_(l=0)^K (Q^-K)_l(A)_l(B)_l Q^l/F_l
+  =Q^b sum_(r=0)^K [K choose r] B^(K-r)A^r(B)_r. (8)</code></pre>
+<p>This is the symmetric form of the terminating three-factor identity proved in <a href="five_two_cyclotomic_transform_proof.html">the five-crossing finite transform, Section 1</a>. It applies at every primitive root because K&lt;N and every denominator F_l is nonzero. Now B<sup>(K-r)A</sup>r=B^K Q^(-ar). Combining B^K with (7) gives the factor Y<sup>(m-b)Q</sup>(b²), leaving the a-sum</p>
+<pre><code>sum_(a=0)^b [b choose a] (-1)^a
+   Q^[a(a-1)/2-a(2b+m+r+1)]
+    =(Q^(-2b-m-r-1))_b.                       (9)</code></pre>
+<p>The finite q-binomial theorem proves (9). This gives (6). All operations are identities of whole Laurent polynomials in Y, so fixed-root meridian jets and the original modified-dimension germ, if attached, are retained. No conclusion about moving-q normal jets is drawn from differentiation of this root identity.</p>
+<h2 id="the-exact-finite-identity-still-required-for-the-simple-recurrence">4. The exact finite identity still required for the simple recurrence</h2>
+<p>Put</p>
+<pre><code>T_n(Y)=product_(j=1)^n(Y+Y^-1-Q^j-Q^-j),
+J_n(t)=sum_(j=0)^n t^(j(j+1)) [n choose j]_t.</code></pre>
+<p>The candidate remaining identity is</p>
+<pre><code>(6) ?= sum_(n=0)^d J_n(Q^-1) T_n(Y).            (10)</code></pre>
+<p>Equivalently J_n(Q^-1)=sum_j [n choose j]_Q Q^(-j(n+1)). The direct source tests agree, but (8)–(9) do not prove (10). No existing note supplies the additional extra-sigma1^-1 transform.</p>
+<p>There is a useful exact algebraic target if (10) is proved. The Rogers polynomials satisfy generically</p>
+<pre><code>J_0=1, J_1=1+t²,
+J_n=(1+t-t^n+t^(2n))J_(n-1)
+                  -t(1-t^(n-1))J_(n-2).      (11)</code></pre>
+<p>This recurrence has a separate elementary formal generating-series proof in <a href="actual_multichannel_newton_green_transport.html">the multichannel note</a>. For the MIRRORED candidate c_n=J_n(Q), its forward operator in u=Q^n, Ec_n=c_(n+1), Eu=QuE, is</p>
+<pre><code>E²-[1+Q-Q²u+Q⁴u²]E+Q(1-Qu).                  (12)</code></pre>
+<p>It is monic and has stable classical order. It is an exact operator on the stated Rogers sequence, but is NOT asserted here to be an actual 6_1 coefficient operator. If (10) is proved for all primitive roots and whole Y, ordinary-color pointing at infinitely many levels and Laurent polynomial rigidity promote these coefficients to the generic actual ordinary-color Newton sequence. This avoids assuming an off-root lift.</p>
+<p>At Q=1 the coefficient characteristic is</p>
+<pre><code>1-(2-u+u²)V+(1-u)V²=0, V=E^-1.</code></pre>
+<p>Under the independently proved classical Newton map</p>
+<pre><code>u=(YL+1)/(Y+L), V=Y+Y^-1-u-u^-1,</code></pre>
+<p>its numerator is EXACTLY the normalized quartic (3) of the independent 9/5 longitude calculation, multiplied by Y^4; the denominator is Y²(Y+L)²(YL+1)². This is checked symbolically. The unmirrored version of (12) gives L reversed. This match is a useful consistency check and does not substitute for (10).</p>
+<p>Even after (10), a polynomial color-shift operator and its full inhomogeneous source must be obtained by the quantum Newton transform with denominators and unilateral endpoints retained. Generic noncommutative fraction-field conjugacy alone does not certify the classical leading coefficient of a particular cleared color operator.</p>
+<h2 id="reproduction-and-precise-output">5. Reproduction and precise output</h2>
+<p>Run</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> experiments/audit_six_one_actual_source_recurrence_port.py</span></code></pre></div>
+<p>The audit constructs the literal six original mixed crossings and every source factor independently of (5), checks the route identity (5), the finite intermediate (7), and (6). It labels (10) as unproved and tests it separately. It also verifies the generic Rogers recurrence and the exact classical quartic transform. The uniform proofs of (5)–(9) are the finite calculations above; the tests are diagnostics rather than an all-N proof of (10).</p>
+<p>The usable new result is the actual three-index source (6). The specific remaining source identity is (10). A general classical-order theorem, a verified actual 6_1 quantum color operator, phase-aware product asymptotics, and a broad selected geometric coefficient are still open.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/six_one_actual_source_recurrence_port.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-marked-plat-and-its-source">1. The marked plat and its source</a><a href="#forced-transfers-give-an-actual-four-index-sum">2. Forced transfers give an actual four-index sum</a><a href="#a-proved-three-index-source">3. A proved three-index source</a><a href="#the-exact-finite-identity-still-required-for-the-simple-recurrence">4. The exact finite identity still required for the simple recurrence</a><a href="#reproduction-and-precise-output">5. Reproduction and precise output</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

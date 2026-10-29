@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Whole quantum-normal crossing response and the marked geometric action · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/quantum_normal_crossing_bulk_response.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="whole-quantum-normal-crossing-response-and-the-marked-geometric-action">Whole quantum-normal crossing response and the marked geometric action</h1>
+<p>Research proof, 27 October 2026. The actual crossing coefficients have a uniform whole-function comparison between the integral quantum normal and the fixed-root positive-meridian normal on every compact bulk-flow chart. The difference is an order-one shape-dependent function. It is not a small matrix perturbation, and the Gamma diagonal source comparison alone cannot intertwine the crossings.</p>
+<p>For an arbitrary knot braid, the complete original Cartan, framing and pivotal factors cancel in a precise way. The remaining bulk insertion is the Euler derivative minus the actual leading action. At a marked flattened critical point it is the negative action itself. This gives a universal comparison of the leading formal geometric blocks, retaining their full source conventions. It does not compare the selected global periods or resolve their endpoint contributions.</p>
+<p>The exact scalar source-line comparison is <a href="whole_gamma_frame_profile.html">the whole Gamma theorem</a>, and its all-head extension is <a href="full_head_gamma_source_transport.html">the full-head source transport</a>. The independent local crossing analysis is recorded in <a href="actual_crossing_q_normal_meridian_ratio.html">the actual crossing ratio calculation</a>.</p>
+<h2 id="two-actual-normal-paths-and-the-exact-crossings">1. Two actual normal paths and the exact crossings</h2>
+<p>Put c=2pi*i, H_0=c/N and use a in a fixed complex compact set. Define</p>
+<pre><code>H=H_0+ca/N^2, b=a/(1+a/N), H b=ca/N,
+q_col=exp(H/2), Q_col=exp(H),
+M_col=exp(Hb/2)=-q_col^N,
+q_0=exp(H_0/2), Q_0=exp(H_0),
+M_+=exp(H_0b/2).                            (1)</code></pre>
+<p>The meridian M_+ is the Weyl inverse of the argument used in the exact Gamma half-source comparison. It is not replaced by M_col. Retain the actual x=-M/q mark as</p>
+<pre><code>Log x=c/2+H(b-1)/2</code></pre>
+<p>on the color path, and with H_0 on the root path. This fixes the Cartan half-character; it is not a principal-log reset.</p>
+<p>At input integer positions i,j the actual stripped positive coefficient sends <code>(i,j)</code> to <code>(j+k,i-k)</code> and is</p>
+<pre><code>r_+=(-1)^k x^(-i-j-k)
+     Q^[ij+(i-j)k-k(k+1)/2]
+     {j+k choose k}_Q (M^2 Q^(-i);Q)_k.     (2)</code></pre>
+<p>The negative coefficient sends <code>(i,j)</code> to <code>(j-k,i+k)</code> and is</p>
+<pre><code>r_-=x^(i+j-k) Q^(-ij)
+     {i+k choose k}_Q (M^2 Q^(-j);Q)_k.     (3)</code></pre>
+<p>These are the actual canceled common-Verma formulas, with the original common Cartan unit separated and then restored below. No recurrences or asymptotic invariant identity are assumed.</p>
+<p>Write u=i/N, v=j/N, t=k/N. For positive crossings fix a compact flow domain with</p>
+<pre><code>u&lt;=1-epsilon, u-t&gt;=epsilon,
+v&gt;=0, t&gt;=0, v+t&lt;=1-epsilon.                (4)</code></pre>
+<p>For negative crossings interchange u and v in (4). These are literal head-flow domains. The Pochhammer factors stay away from both cyclotomic endpoints; factorial sums at zero are handled by their removable functions. All coefficients in the comparison are nonzero there for sufficiently large N and a in the prescribed compact set.</p>
+<h2 id="the-exact-whole-bulk-response">2. The exact whole bulk response</h2>
+<p>Define the single-valued function on real -1&lt;x&lt;1 by</p>
+<pre><code>F(x)=integral_0^x c y/(1-exp(-cy))dy, F(0)=0.            (5)</code></pre>
+<p>Its integrand has removable value one at zero. It has the corresponding analytic continuation to a marked zero-free crossing chart. Put</p>
+<pre><code>B_+(u,v,t)=c[uv+(u-v)t-t^2/2]
+   +F(v+t)-F(v)-F(t)+F(t-u)-F(-u),
+
+B_-(u,v,t)=-cuv
+   +F(u+t)-F(u)-F(t)+F(t-v)-F(-v).          (6)</code></pre>
+<p>Then uniformly on (4) and on compact complex a-sets,</p>
+<pre><code>r_(sign),col/r_(sign),root
+         =exp[a B_sign(u,v,t)](1+O(1/N)). (7)</code></pre>
+<p>The ratio is a whole function of a on these compact normal sets. Its expansion does not divide by a vanishing integer normal factor. Formula (7) is before summing over the flow indices.</p>
+<p>Here is a uniform proof. For a quantum factorial with m/N=x,</p>
+<pre><code>partial_H Log(Q;Q)_m
+   =-sum_(r=1)^m r exp(Hr)/(1-exp(Hr)).</code></pre>
+<p>After division by N^2 this is a Riemann sum whose limit is F(x)/c. The summand normalized by N has a removable limit at r=0. Its second H derivative is O(N^3), uniformly below the far cyclotomic endpoint. Since H-H_0=ca/N^2, Taylor’s formula with a uniform remainder gives</p>
+<pre><code>(Q_col;Q_col)_m/(Q_0;Q_0)_m
+                      =exp[a F(x)](1+O(1/N)).          (8)</code></pre>
+<p>For the Pochhammer in (2), take the same logarithmic derivative at arguments b-i+r. Its range is uniformly separated from zero and from -N by (4). The same Taylor/Riemann calculation gives <code>exp{a[F(t-u)-F(-u)]}(1+O(1/N))</code>. The b-shift is O(1) in each argument and changes this limit only by O(1/N). The Gaussian coefficient is the factorial quotient in (8). Finally the explicit Q monomial gives the quadratic term in (6), while the x ratio contributes only O(1/N). This proves (7). The proof for (3) is identical with its displayed support.</p>
+<p>The original positive common Cartan unit is</p>
+<pre><code>C(H,b)=exp{H[c/H+b-1]^2/4}.</code></pre>
+<p>Indeed the unrolled color is <code>c/H+b-1</code>, equal to N-1 on the integral path and N-1+b on the fixed-root path. Therefore</p>
+<pre><code>C(H,b)/C(H_0,b)=exp(-ca/4)(1+O(1/N)).       (9)</code></pre>
+<p>For a negative crossing use its inverse. This scalar cannot be omitted from a crossing comparison; its cancellation in the complete zero-framed word is the next step.</p>
+<h2 id="why-the-scalar-gamma-source-map-does-not-already-intertwine-r">3. Why the scalar Gamma source map does not already intertwine R</h2>
+<p>At k=0 the stripped positive coefficient is simply</p>
+<pre><code>r_+(i,j,0)=x^(-i-j)Q^(ij).</code></pre>
+<p>Its exact ratio on (1) is</p>
+<pre><code>exp{(H-H_0)[ij-(b-1)(i+j)/2]}.             (10)</code></pre>
+<p>A diagonal conjugation on the two input/output strands multiplies a checked crossing at equal inputs i=j by one: the corresponding output is the same pair. This remains true for different diagonal gauges on the two strands. A common scalar can match i=j=0, but then cannot also match (10) at another i=j for generic a.</p>
+<p>For i/N approaching a nonzero bulk u the ratio in (10) tends to <code>exp(ca u^2)</code>, whereas at i=j=0 it is one. Restoring the common Cartan scalar changes both by the same factor and does not repair this. Thus the actual Gamma diagonal source maps, alone, cannot extend to a scalar-adjusted diagonal crossing intertwiner. A nontrivial Cartan/base transport is necessary. This is an exact local obstruction, not a knot example or a claim that all possible source/base extensions are impossible.</p>
+<h2 id="the-complete-source-cancels-the-nongeometric-bulk-terms">4. The complete source cancels the nongeometric bulk terms</h2>
+<p>Let beta be any fixed b_strand-strand braid closing to a knot, with writhe w and</p>
+<pre><code>kappa_D=w-b_strand+1.</code></pre>
+<p>This integer is even. Let n=N-1 and let <code>sum_closed i</code> denote the initial closed-strand index sum. Restoring the exact common Cartan line, auxiliary root pivot <code>K^(1-N)</code>, root-compatible twist, and the original cut 1/N gives the literal array weight</p>
+<pre><code>W_aux=(1/N)x^(n kappa_D)
+              Q^(n sum_closed i) product_crossings r_sign. (11)</code></pre>
+<p>To verify (11), the product of common crossing scalars and the inverse zero-framing twist is x^(nw). Each closed pivot is <code>x^(-n)Q^(n i)</code>. Their product gives (11). Thus no isolated Cartan scalar or numerical ideal-point multiplier was removed.</p>
+<p>For the color path versus root path in (1), the prefactor x^(n kappa_D) has ratio 1+O(1/N), while the Q prefactor has ratio <code>exp[ca sum_closed(i/N)](1+O(1/N))</code>.</p>
+<p>The genuine ordinary integral cap/twist is not this frozen root auxiliary source. Their exact adapter, proved in <a href="integral_color_source_detour_audit.html">the integral-source audit</a>, is</p>
+<pre><code>W_aux,col/W_int,col
+   =q_col^(Nn kappa_D)(Q_col^N)^(sum_closed i).          (12)</code></pre>
+<p>Its root value is one by knot parity. Its whole normal limit is <code>exp{ca[kappa_D/2+sum_closed(i/N)]}</code>. Consequently the original pivot-dependent position terms cancel, and (7) gives</p>
+<pre><code>W_int,col/W_aux,root
+  =exp{a B_beta(flow)}(1+O(1/N)),
+B_beta=sum_crossings B_sign-c kappa_D/2.   (13)</code></pre>
+<p>This is uniform for every fixed word on a common compact interior flow chart. Every original projection is retained; on the two actual walls the finite head is respectively the genuine quotient or submodule. The common-Verma excursion factor delta*w vanishes on both paths. External full modified dimensions, if one passes from reduced to full states, remain their specified separate factors, as in the regular-profile and Gamma-source notes.</p>
+<p>Equation (13) is an actual whole-array insertion comparison. It does not interchange the finite sum with a limit and does not bound the contribution of flows outside that compact chart.</p>
+<h2 id="the-insertion-is-the-euler-derivative-minus-the-actual-action">5. The insertion is the Euler derivative minus the actual action</h2>
+<p>Choose a marked primitive</p>
+<pre><code>L(x)=integral_0^x Log(1-exp(cy))dy.</code></pre>
+<p>Its logarithmic singularity at zero is integrable. Consistent branch changes add linear terms. Integration by parts gives</p>
+<pre><code>F(x)=x L&#39;(x)-L(x).                         (14)</code></pre>
+<p>The leading stripped log-weights per N are</p>
+<pre><code>A_+=-c(u+v)/2+c[uv+(u-v)t-t^2/2]
+      +L(v+t)-L(v)-L(t)+L(t-u)-L(-u),
+
+A_-=c(u+v-t)/2-cuv
+      +L(u+t)-L(u)-L(t)+L(t-v)-L(-v).      (15)</code></pre>
+<p>The signs in these linear terms follow directly from the marked Log x=c/2+O(1/N) and the actual <code>(-1)^k</code> in (2). Let E be the Euler field in these scaled position/transfer variables. Equations (6) and (14) prove</p>
+<pre><code>B_sign=(E-1)A_sign.                        (16)</code></pre>
+<p>For the whole root array (11), the leading log-weight per N is</p>
+<pre><code>A_beta=sum_crossings A_sign
+              +c kappa_D/2+c sum_closed(i/N).         (17)</code></pre>
+<p>The initial closed positions and all intermediate positions are homogeneous integral-linear functions of the actual free flow coordinates: follow the one braid-permutation cycle from the cut. Therefore the free-flow Euler field gives exactly</p>
+<pre><code>B_beta=(E-1)A_beta.                        (18)</code></pre>
+<p>The constant <code>c kappa_D/2</code> in (17) must be kept. Its exponential at complete integer N is one, but its Euler contribution is exactly the nontrivial normal term in (13). Resetting it would destroy the whole comparison.</p>
+<h2 id="the-actual-marked-geometric-block-has-a-universal-normal-action-factor">6. The actual marked geometric block has a universal normal action factor</h2>
+<p>On the existing regular actual critical chart choose the marked linear flattening so <code>d A_flat=0</code> at the chosen geometric point. Subtracting an integral linear character does not change <code>(E-1)A_beta</code>. Thus (18) gives there</p>
+<pre><code>B_beta|_crit=-A_flat|_crit=-S_geo/c.         (19)</code></pre>
+<p>Here S_geo is the marked Log Q action of the actual state, with its original Bloch-regulator and source signs. Equations (13) and (19) give the leading formal geometric-block comparison</p>
+<pre><code>block_int,col/block_aux,root
+               has normal multiplier exp(-a S_geo/c). (20)</code></pre>
+<p>The interpretation of (20) is precise. The finite-array uniform proof is on the real bulk charts (4). At the complex geometric point use the already constructed actual local proper-ratio/WKB branch and its analytic marked continuation. The two phases have the same leading critical scheme and transverse Hessian; (13) inserts the nonzero amplitude <code>exp(a B_beta)</code>. Ordinary nondegenerate transverse Gaussian contraction therefore evaluates its leading multiplier at the critical point, giving (20). The two framing directions remain external as in the partial support theorem. The marked action is constant along this critical framing torsor, so the factor is independent of that framing.</p>
+<p>This is a formal local block assertion, not an analytic continuation of the finite sum inferred from real lattice estimates. In the recorded geometric Log Q convention <code>Re(S_geo/c)=Vol/(2pi)</code>. For real a the modulus of (20) is therefore <code>exp[-a Vol/(2pi)]</code>, without a new adjustable Cartan or ideal-point scalar.</p>
+<p>The exact Gamma half-source remains necessary at the framing and resonance boundaries. Its zeros are not supplied by the nonvanishing exponential (20). No selected global geometric contribution, endpoint/carry cancellation, full normal-profile identity, or volume limit is proved by this block comparison.</p>
+<h2 id="audit">7. Audit</h2>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_quantum_normal_bulk_response.py">audit_quantum_normal_bulk_response.py</a> and its <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/quantum_normal_bulk_response_results.json">results</a> evaluate the literal finite crossing products at 85-digit precision for N=16 through 256 and compact real/complex normal parameters. They check both signs, the original common Cartan line, and the complete source/framing cancellation for several even knot-parity values of kappa_D. They also check the exact diagonal obstruction at N=2,3,5,16 and the marked Euler/dilog primitive on positive and negative bulk intervals.</p>
+<p>These checks confirm the formulas and their O(1/N) error scale. The uniform proof is the Taylor/Riemann argument in Section 2; the arbitrary-word source cancellation is exact (11)–(12). No knot-specific example or selected-sum asymptotic is used.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/quantum_normal_crossing_bulk_response.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#two-actual-normal-paths-and-the-exact-crossings">1. Two actual normal paths and the exact crossings</a><a href="#the-exact-whole-bulk-response">2. The exact whole bulk response</a><a href="#why-the-scalar-gamma-source-map-does-not-already-intertwine-r">3. Why the scalar Gamma source map does not already intertwine R</a><a href="#the-complete-source-cancels-the-nongeometric-bulk-terms">4. The complete source cancels the nongeometric bulk terms</a><a href="#the-insertion-is-the-euler-derivative-minus-the-actual-action">5. The insertion is the Euler derivative minus the actual action</a><a href="#the-actual-marked-geometric-block-has-a-universal-normal-action-factor">6. The actual marked geometric block has a universal normal action factor</a><a href="#audit">7. Audit</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

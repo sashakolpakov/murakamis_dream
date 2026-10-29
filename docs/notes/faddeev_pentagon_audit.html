@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Independent Fourier and positive charged-pentagon audit · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/faddeev_pentagon_audit.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="independent-fourier-and-positive-charged-pentagon-audit">Independent Fourier and positive charged-pentagon audit</h1>
+<p>Research note, 25 October 2026. The definitions and target identities are those of Andersen–Kashaev, <a href="https://arxiv.org/pdf/1109.6295v2">arXiv:1109.6295v2</a>, equations (10), (18), (20), (54), (56), (57). The proof below starts from the defining Faddeev integral and the functional and inversion identities already independently derived in <code>literature_state_volume.md</code>. The source’s pentagon and Fourier proofs are not premises.</p>
+<p>This supplies the positive local 2–3 kernel identity, including its scalar and all boundary arguments. Passing from this kernel to arbitrary knot fiber states, or connecting all their integration cycles, remains separate work. In particular, no bare compact-product identity on the unit circle is used as an analytic move identity.</p>
+<h2 id="input-identities-and-notation">1. Input identities and notation</h2>
+<p>Initially b&gt;0 is real. Set</p>
+<pre><code>Q=b+b^(-1), c_b=iQ/2,
+q=exp(2pi i b^2),
+zeta=exp[-pi i(1+2c_b^2)/6],
+zeta_0=exp[pi i(1-4c_b^2)/12].</code></pre>
+<p>Here zeta is the constant in the inversion identity, called zeta_b in the earlier notes. Directly from the defining integral and its continuation,</p>
+<pre><code>Phi(z-i b)=(1+q^(-1/2)exp(2pi b z))Phi(z),
+Phi(z-i/b)=(1+exp(-pi i/b^2)exp(2pi z/b))Phi(z),
+Phi(z)Phi(-z)=zeta exp(pi i z^2),
+overline(Phi(z))=1/Phi(overline(z)).                    (1.1)</code></pre>
+<p>The last equality is for real b. Poles are c_b+mi b+ni/b and zeros are -c_b-mi b-ni/b, m,n&gt;=0. For irrational b^2 the first pole at c_b is simple; it stays simple when b^2 is rational because no other pair m,n gives its location. On every fixed horizontal strip, away from these poles,</p>
+<pre><code>Phi(z)=1+O(exp(-kappa |Re z|))              (Re z-&gt;-infinity),
+Phi(z)=zeta exp(pi i z^2)(1+O(exp(-kappa Re z)))
+                                           (Re z-&gt;+infinity),</code></pre>
+<p>for some kappa&gt;0. The same estimates with polynomial factors hold for each fixed number of derivatives. To obtain them beyond the defining strip, use finitely many shifts in (1.1); for the right end also use inversion. Thus sectorial asymptotics of an unbounded operator are not being assumed.</p>
+<p>We will use the elementary constant identity</p>
+<pre><code>zeta_0^2 zeta exp(pi i c_b^2)=1.                        (1.2)</code></pre>
+<h2 id="fourier-formula-from-two-shifts-and-a-fresnel-normalization">2. Fourier formula from two shifts and a Fresnel normalization</h2>
+<p>Define I(w) by the contour integral of Phi(z)exp(2pi i w z). Initially the contour passes above the real line but below c_b on the imaginary axis. Its right-hand end can have any sufficiently large fixed positive height A; raise it only in the right half-plane, where there are no poles. The left end can remain at a small positive height. For Im w&lt;0 choose A&gt;-Im w. Both tails then decay exponentially. Choices of A give the same answer by contour deformation, so I is holomorphic throughout the lower half-plane.</p>
+<p>Choose A&gt;b-Im w and integrate the first identity in (1.1). In its left side move the translated contour back upward. It crosses no pole: its intersection with the imaginary axis stays below c_b. The tails vanish. Multiplication by exp(2pi b z) translates w to w-i b, and therefore</p>
+<pre><code>I(w-i b)=q^(1/2)(exp(-2pi b w)-1)I(w).                 (2.1)</code></pre>
+<p>Choosing A&gt;b^(-1)-Im w similarly gives the dual equation. The function</p>
+<pre><code>H(w)=exp(-pi i w^2)Phi(w+c_b)</code></pre>
+<p>satisfies both equations by (1.1). These equations meromorphically continue I and I/H to the whole plane. Their quotient has periods i b and i/b. For irrational b^2, their integer combinations accumulate at zero. A meromorphic function with these periods has no pole and has zero derivative, so I=K_b H for a constant K_b. This step uses both shifts; one shift alone would leave an undetermined periodic factor.</p>
+<p>Here is a way to fix K_b without using the residue formula we aim to derive. The boundary value of I from below is the distributional Fourier transform of Phi on the real line. This follows by contour deformation with a Gaussian cutoff, or by splitting Phi into its constant left tail, its quadratic right tail, and a Schwartz remainder. Fourier inversion gives</p>
+<pre><code>Phi(x)=K_b integral exp(-pi i w^2)Phi(w+c_b-i0)
+                                  exp(-2pi i xw)dw.    (2.2)</code></pre>
+<p>To compute the right-hand asymptotic of (2.2), subtract from its integrand a smooth cutoff of exp(-pi i w^2) on the negative half-line and its one simple pole at w=0. The remainder is Schwartz: the negative tail differs from the Gaussian exponentially, and the positive tail decays like exp(-pi Q w). The pole has the prescription (w-i0)^(-1); its inverse Fourier transform is supported on x&lt;=0. With a smooth cutoff its inverse transform decreases faster than every power for x-&gt;+infinity. The truncated Gaussian has, by completing the square and one integration by parts in the nonstationary tail, inverse transform</p>
+<pre><code>exp(-pi i/4)exp(pi i x^2)+O(1/x), x-&gt;+infinity.</code></pre>
+<p>The known right-end asymptotic of Phi is zeta exp(pi i x^2). Thus</p>
+<pre><code>K_b=zeta exp(pi i/4)=zeta_0.</code></pre>
+<p>Consequently</p>
+<pre><code>integral Phi(x)exp(2pi i wx)dx
+  =zeta_0 exp(-pi i w^2)Phi(w+c_b).                    (2.3)</code></pre>
+<p>The integral means the preceding convergent contour for Im w&lt;0 and its boundary value on the real axis. The residue of I at w=0 comes from its left constant tail and is 1/(2pi i). Equation (2.3) now gives, rather than assumes,</p>
+<pre><code>Res_(z=c_b) Phi(z)=1/(2pi i zeta_0).                   (2.4)</code></pre>
+<p>Complex conjugation and (1.1)–(1.2) give the companion formula</p>
+<pre><code>integral Phi(x)^(-1)exp(2pi i wx)dx
+  =zeta_0 exp(-2pi i w c_b)Phi(w+c_b).                 (2.5)</code></pre>
+<p>It is absolutely convergent on a line Im x=eta&lt;0 when eta&lt;Im w&lt;0, provided -Q/2&lt;eta&lt;0. All formulas extend to rational b^2 by continuity: the contours, tail estimates and the defining Phi integral are uniform on compact positive b intervals. No density-of-periods argument is asserted at a rational value itself.</p>
+<h2 id="a-scalar-integral-identity-with-generic-parameters">3. A scalar integral identity with generic parameters</h2>
+<p>Let</p>
+<pre><code>J(u,v,w)=integral_R Phi(x+u)/Phi(x+v) exp(2pi i wx)dx,</code></pre>
+<p>where</p>
+<pre><code>Im(v+c_b)&gt;0, Im(c_b-u)&gt;0,
+Im(v-u)&lt;Im w&lt;0.                                      (3.1)</code></pre>
+<p>These conditions separate upper and lower poles and give exponential decay at both ends. Put d=u-v. The exact evaluation is</p>
+<pre><code>J(u,v,w)=zeta_0 exp[-2pi i w(v+c_b)]
+   Phi(d-c_b)Phi(w+c_b)/Phi(d+w-c_b).                  (3.2)</code></pre>
+<p><strong>Proof.</strong> Write R(x)=Phi(x+u)/Phi(x+v). Its shift equation is</p>
+<pre><code>(1+q^(-1/2)exp(2pi b(x+v)))R(x-i b)
+   =(1+q^(-1/2)exp(2pi b(x+u)))R(x).</code></pre>
+<p>Initially take Im d&gt;max(b,b^(-1)) and Im w sufficiently close to zero from below. All integrals after multiplication by either exponential converge. In translating the left contour, its possible poles between heights -b and 0 are the m=0 lower poles of R; the displayed binomial cancels each of them. Poles with m&gt;=1 lie below that slab. The dual shift has the identical cancellation with n=0. Thus no residue is lost.</p>
+<p>Changing variable in the weighted integral gives</p>
+<pre><code>J(w-i b)/J(w)
+  =q^(1/2)exp(-2pi b v)
+       (exp(2pi b w)-1)/(q-exp(2pi b(d+w))).           (3.3)</code></pre>
+<p>Use the cross-multiplied equation at its zeros. There is an analogous dual equation. The right side of (3.2) satisfies both, as direct substitution in (1.1) verifies. The same meromorphic continuation and dense-period argument as in Section 2 makes the quotient constant in w. At w=0, the left constant tail of R gives residue 1/(2pi i). Formula (2.4) gives the same residue on the proposed right side, so the quotient is 1.</p>
+<p>The initial open region Im d&gt;max(b,b^(-1)) is nonempty because max(b,b^(-1))&lt;Q. Holomorphy and the identity theorem extend the result to the connected domain (3.1), and continuity covers rational b^2. QED.</p>
+<h2 id="the-bounded-operator-pentagon">4. The bounded operator pentagon</h2>
+<p>Let p=(2pi i)^(-1)d/dx and q=x. For real b, Phi(p), Phi(q) and Phi(p+q) are unitary by (1.1) and spectral calculus. They preserve Schwartz space: the real-axis multipliers and all their derivatives have polynomial bounds. The exact identity is</p>
+<pre><code>Phi(p)Phi(q)=Phi(q)Phi(p+q)Phi(p).                     (4.1)</code></pre>
+<p>Here are the kernel and limiting details needed to derive it from (3.2). Put h(t)=zeta_0 exp(-pi i t^2)Phi(t+c_b-i0), the kernel of Phi(p). The kernel of Phi(p+q) is exp(-pi i x^2)h(x-y)exp(pi i y^2). The right kernel of (4.1) is therefore</p>
+<pre><code>Phi(x)exp(-pi i x^2)
+       integral h(x-z)exp(pi i z^2)h(z-y)dz.           (4.2)</code></pre>
+<p>Invert one Phi factor by (1.1), and substitute t=-z. The remaining scalar integral has (u,v,w)=(x+c_b,y-c_b,-x-c_b) in (3.2). Its evaluated kernel is the left kernel h(x-y)Phi(y), because its scalar ratio is zeta_0^2 zeta exp(pi i c_b^2)=1. This also checks the projective scalar.</p>
+<p>To justify this boundary calculation, replace h(t) by</p>
+<pre><code>h_(eta,epsilon)(t)=exp[2pi eta(t-i epsilon)]
+                zeta_0 exp[-pi i(t-i epsilon)^2]
+                Phi(t-i epsilon+c_b),
+0&lt;epsilon&lt;eta&lt;Q/2.</code></pre>
+<p>It is the kernel of the bounded spectral multiplier Phi(p+i eta)exp(2pi epsilon p), and it decreases exponentially at both ends. Use it in both occurrences in (4.2). Their product integral is absolutely convergent; after inversion its parameters lie strictly in (3.1). As eta,epsilon tend to zero with epsilon&lt;eta, the multipliers are uniformly bounded and converge strongly to Phi(p). Their Gaussian conjugates do likewise. The evaluated kernels tend in the distribution sense to h(x-y)Phi(y). This proves (4.1) without multiplying unregulated singular distributions or assigning a value to an oscillatory double integral.</p>
+<h2 id="tetrahedral-and-positive-charged-operators">5. Tetrahedral and positive charged operators</h2>
+<p>Define the literature uncharged operator</p>
+<pre><code>T_ij=exp(2pi i p_i q_j) Phi(q_i-q_j+p_j)^(-1).</code></pre>
+<p>It satisfies</p>
+<pre><code>T_12 T_13 T_23=T_23 T_12.                              (5.1)</code></pre>
+<p>For completeness, separate its shear S_ij=exp(2pi i p_i q_j). The shears satisfy S_12 S_13 S_23=S_23 S_12 by their explicit action on functions. Moving the three inverse-Phi factors to the right on the left side gives</p>
+<pre><code>psi(A)psi(A+C)psi(C),
+A=q_1-q_2+p_2, C=q_2-q_3+p_3, [A,C]=(2pi i)^(-1).</code></pre>
+<p>The two factors on the right side are psi(C)psi(A). They agree by inversion of (4.1). This verifies (5.1), including the order of its factors.</p>
+<p>For charges a,c&gt;0, beta=1/2-a-c&gt;0, define exactly as in AK (18)</p>
+<pre><code>nu(r)=exp[-pi i c_b^2(4r+1)/6],
+psi_(a,c)(x)=nu(a-c)
+   exp[-4pi i c_b a(x-c_b(a+c))]/Phi(x-2c_b(a+c)),
+T(a,c)=exp(2pi i p_1 q_2)psi_(a,c)(q_1-q_2+p_2).</code></pre>
+<p>This last formula is the everywhere bounded spectral/shear realization of the charged operator. It avoids treating its separate, possibly unbounded exponential conjugating factors as bounded operators. The defining function psi_(a,c) decreases exponentially at both ends and is Schwartz. Its Fourier transform is absolutely convergent. Substitution in (2.5), followed by inversion (1.1), gives</p>
+<pre><code>f_(a,c)(t):=exp(-pi i t^2)
+    integral psi_(a,c)(x)exp(-2pi i tx)dx
+  =exp(-pi i/12)psi_(c,beta)(t).                       (5.2)</code></pre>
+<p>In this substitution the translated line has height -Q(a+c) and the Fourier parameter has imaginary part -Qa. The inequalities -Q(a+c)&lt;-Qa&lt;0 are exactly what is needed for absolute convergence; a+c&lt;1/2 keeps the contour above all inverse-Phi poles.</p>
+<p>The tetrahedral kernel is</p>
+<pre><code>&lt;x_1,x_2|T(a,c)|y_1,y_2&gt;
+  =delta(x_1+x_2-y_1)f_(a,c)(y_2-x_2)
+                             exp[2pi i x_1(y_2-x_2)]. (5.3)</code></pre>
+<p>It maps Schwartz space continuously to itself. Indeed after a linear coordinate change its application is the integral of a Schwartz function in three variables times a quadratic chirp. This observation also controls finite products of the charged kernels.</p>
+<h2 id="charged-23-identity-and-its-contour">6. Charged 2–3 identity and its contour</h2>
+<p>Take a_j,c_j,beta_j&gt;0, j=0,…,4, subject to</p>
+<pre><code>a_1=a_0+a_2, a_3=a_2+a_4,
+c_1=c_0+a_4, c_3=a_0+c_4, c_2=c_1+c_3.               (6.1)</code></pre>
+<p>Equivalently, the five free charges a_0,a_2,a_4,c_0,c_4 are positive and their sum is less than 1/2. Then the exact identity is</p>
+<pre><code>T_12(a_4,c_4) T_13(a_2,c_2) T_23(a_0,c_0)
+  =exp(pi i c_b^2 P/3) T_23(a_1,c_1)T_12(a_3,c_3),
+P=2(c_0+a_2+c_4)-1/2.                                (6.2)</code></pre>
+<p>Here is a proof that retains the contours. Compose (5.3) and integrate its delta functions. Write f_j=f_(a_j,c_j). After factoring the same delta function and the same exterior chirp, (6.2) reduces to</p>
+<pre><code>integral_R f_4(Y-t)f_2(t)f_0(Z-t)
+                exp[2pi i(Y-t)(Z-t)]dt
+  =exp(pi i c_b^2 P/3)f_1(Z)f_3(Y).                  (6.3)</code></pre>
+<p>Both Y and Z are arbitrary real boundary variables. No complete-cusp value has been substituted.</p>
+<p>The uncharged kernel has the simpler boundary form</p>
+<pre><code>f_u(t)=zeta_0^(-1)/Phi(t-c_b+i0).</code></pre>
+<p>Equation (5.1) gives (6.3) with f_u in place of all five factors and scalar 1, initially as a boundary distribution. Its holomorphic integral version has t on R+i gamma, with</p>
+<pre><code>0&lt;gamma&lt;min(Im Y,Im Z),
+Im Y+Im Z-gamma&lt;Q/2.                                 (6.4)</code></pre>
+<p>All lower poles of f_u(t) lie below the contour and the reflected poles of f_u(Y-t),f_u(Z-t) above it. The left tail decays like exp(2pi Q Re t); the right tail like exp[-2pi(gamma+Q/2-Im Y-Im Z)Re t]. Thus (6.4) gives absolute convergence. Its equality with the boundary distribution can be checked near any real Y,Z away from zero by indenting around the distinct poles; there the contour integral continues across the real arguments. The identity theorem then extends it to the connected chamber (6.4).</p>
+<p>Now in the left side of (6.3) set</p>
+<pre><code>t=s-2c_b a_2,
+Ybar=Y+2c_b a_3, Zbar=Z+2c_b a_1.</code></pre>
+<p>Its three denominators become exactly</p>
+<pre><code>Phi(Ybar-s-c_b), Phi(s-c_b), Phi(Zbar-s-c_b).</code></pre>
+<p>The contour for s has gamma=Qa_2. Since a_0,a_4&gt;0 it lies below Im Ybar and Im Zbar; since beta_2&gt;0,</p>
+<pre><code>Im Ybar+Im Zbar-gamma=Q(a_0+a_2+a_4)&lt;Q/2.</code></pre>
+<p>Thus it is precisely a convergent contour (6.4), with no pole crossed. The linear charge phases and the chirp have an s-independent ratio to the uncharged integrand. Substitute (5.2), or compare their quadratic exponents directly. The ratio after dividing by f_1(Z)f_3(Y) is exp(pi i c_b^2 P/3), proving (6.3) and (6.2).</p>
+<p>The script checks this last calculation symbolically with all five free charges, c_b,Y,Z and s indeterminate. It is an identity of the entire quadratic exponent, including the terms linear in s and in the boundary variables, not just a specialized phase comparison.</p>
+<h2 id="what-can-be-glued-and-what-is-not-settled">7. What can be glued, and what is not settled</h2>
+<p>For real b the multiplier in (6.2) has modulus one. Multiplying by any fixed exterior kernel and performing a convergent contraction preserves the identity with precisely this multiplier. The same holds with Schwartz test boundary states, by (5.3). This proves the positive local move law in a common boundary trivialization. Changing trivializations can produce additional boundary factors; (6.2) does not set them equal to 1.</p>
+<p>In the previous notes’ parameter hbar=Q^(-2), the same exact multiplier is exp[-pi i P/(12 hbar)]. Its unit modulus does not make it dispensable in a boundary Fourier transform or an exact quantum-operator comparison.</p>
+<p>For a fixed finite chain of such moves the multipliers compose by their explicit product. The phase is exponentially oscillatory as b tends to zero, so it should remain in exact state identities even though its modulus does not change the volume rate. Whether its composition is absorbed by the prescribed level/framing convention must be checked for that convention.</p>
+<p>Three further steps are not consequences of this local proof:</p>
+<ol type="1">
+<li>Establishing that required triangulations are joined by moves with admissible positive charges, or supplying continuation and residue identities when a path leaves this domain.</li>
+<li>Passing from the tensor kernel partition function to the particular meridian-polarized fiber integral, retaining the Gaussian boundary phases, Jacobians, and orientation constants.</li>
+<li>Proving convergence or valid distributional contraction for every noncompact exterior gluing, rather than the convergent contractions specified above.</li>
+</ol>
+<p>The subsequent <code>peripheral_phase_and_state.md</code> makes item 2 explicit for a fixed proper FAMED realization: it derives the full tensor phase and orientation sign, identifies a published level choice, and proves uniqueness of the recovered fiber state. For compatible audited moves it reduces the remaining transport to an affine phase and a possible meridian shift. Those coefficients and continuation domains still need to be checked in the intended connecting sequences.</p>
+<p>The FAMED change-of-variable issue in <code>literature_state_volume.md</code> matters in item 2: a fiber prefactor printed as p_1 differs by p_1^2 from the direct coarea prefactor 1/p_1. This is an explicit possible normalization change, not a reason to discard the local identity or to silently cancel the factor. Nor does this audit identify the generic move multiplier for the different positive sine-factorial comparison model.</p>
+<h3 id="an-exact-fiber-normalization-equivalence">7.1 An exact fiber-normalization equivalence</h3>
+<p>One part of item 2 can be settled without a move theorem. Let x=p^T y-i pi gamma and Omega=dy_1 wedge … wedge dy_N. On a fiber, the forms</p>
+<pre><code>omega_i=(-1)^(i-1)/p_i
+         dy_1 wedge ... omit dy_i ... wedge dy_N, p_i!=0,</code></pre>
+<p>agree: each satisfies dx wedge omega_i=Omega, and their differences vanish when restricted to the fiber. Thus the same meromorphic integrand F(y) defines a coordinate-independent oriented fiber integral by integrating F omega_i, whenever its contours are homologous and its tails converge. This is just a linear change of variables, with no quantum-topology premise.</p>
+<p>For the coordinate choice i=1 in the printed FAMED (4.5), the measure is p_1 dy_2…dy_N rather than omega_1=dy_2…dy_N/p_1. Therefore the exact coarea-normalized state is</p>
+<pre><code>J_coarea=J_printed/p_1^2.                              (7.1)</code></pre>
+<p>All other constants of that definition are retained. For other eliminated coordinates, their permutation orientations must be included before making the same comparison. This normalization change is independent of the boundary variable and of b. It leaves the annihilator and the proven volume limit unchanged. It is an explicit equivalence of two normalizations of the same integral, rather than a new convenient solution of a quantum curve.</p>
+<p>With positive Lebesgue measures, for F=exp(-y_1<sup>2-y_2</sup>2), x=2y_1+3y_2, the coarea integral is sqrt(pi/13)exp(-x^2/13). The two printed-style fiber factors give respectively 4 and 9 times this function. Specializing the boundary first would hide this entirely elementary normalization discrepancy.</p>
+<h3 id="a-class-of-noncompact-contractions-that-is-absolutely-convergent">7.2 A class of noncompact contractions that is absolutely convergent</h3>
+<p>The preceding gluing qualification can be discharged for the proper face matrices already used in the geometric notes. Consider N tetrahedra with all 2N faces paired. Let x be their real face variables, let X_i select the face opposite local vertex i in each tetrahedron, and put</p>
+<pre><code>D=X_0-X_1+X_2, R=X_3-X_2,
+L=stack(D,R).</code></pre>
+<p>Suppose det L!=0 and all tetrahedra have positive charges. The full tensor contraction of (5.3), using its adjoint for negative tetrahedra, is</p>
+<pre><code>Z_X=integral delta(Dx) product_j f_j((Rx)_j)
+              exp[2pi i sum_j epsilon_j (X_0x)_j(Rx)_j] dx. (7.2)</code></pre>
+<p>Here f_j is either its charged f or its complex conjugate. The phase is of modulus one for real x,b. The linear change x-&gt;(u=Dx,t=Rx) makes (7.2) an ordinary integral and gives the bound</p>
+<pre><code>|Z_X| &lt;= 1/|det L| product_j ||f_j||_(L1) &lt; infinity.    (7.3)</code></pre>
+<p>Thus all delta constraints are independent, their product is a well-defined linear delta measure, and this particular noncompact gluing is absolutely convergent. This L is the face matrix script-A of the other notes with its last N rows negated; invertibility is the same condition. In particular, the uniform det(script-A)=+/-1 proof for the twist families verifies this criterion for every p, not only for the finite recognized examples.</p>
+<p>If an embedded subnetwork is replaced by exactly the pentagon pattern (6.2), or its adjoint, and both resulting full face matrices are invertible, then its full contractions obey the same exact scalar identity. To justify inserting the kernel equality, first cut off the exterior real variables. Independence of the full linear constraints makes their delta pairings transverse. On compact supports the equality of local distributions can therefore be paired with the exterior kernel; alternatively one can eliminate these independent linear constraints first. Remove the cutoffs using (7.3) on both sides. Absolute convergence supplies dominated convergence and the necessary Fubini steps. No integration through a pole is involved.</p>
+<p>Consequently these unpolarized literature partition functions have the same modulus under these proper positive operator-pentagon replacements. Other vertex-order patterns require the exact tetrahedral symmetry kernels, and a sequence of arbitrary triangulation changes is not asserted to stay in this class. Equation (7.3) also does not identify their particular meridian fiber states. It resolves the noncompact contraction issue for this explicit class, while leaving those further obligations intact. The subsequent <code>tetrahedral_symmetry_and_figure_eight.md</code> reconstructs those ordering kernels with their exact S_3 coherence and regularized cancellation in proper contractions. It calibrates the resulting noncanonical-order figure-eight move and its selected fiber states.</p>
+<p>Run <code>python3 experiments/audit_faddeev_pentagon.py</code>. Its complex-b tests use the convergent modular-double product, which was independently compared with the defining integral in <code>check_local_completion.py</code>. They integrate the generic scalar identity, the charged Fourier identity and (6.3) directly. The formulas extend to these complex b values by analytic continuation with separated pole contours; none of these tests replaces the real-b proof or its contour conditions.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/faddeev_pentagon_audit.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#input-identities-and-notation">1. Input identities and notation</a><a href="#fourier-formula-from-two-shifts-and-a-fresnel-normalization">2. Fourier formula from two shifts and a Fresnel normalization</a><a href="#a-scalar-integral-identity-with-generic-parameters">3. A scalar integral identity with generic parameters</a><a href="#the-bounded-operator-pentagon">4. The bounded operator pentagon</a><a href="#tetrahedral-and-positive-charged-operators">5. Tetrahedral and positive charged operators</a><a href="#charged-23-identity-and-its-contour">6. Charged 2–3 identity and its contour</a><a href="#what-can-be-glued-and-what-is-not-settled">7. What can be glued, and what is not settled</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The cyclic source connection and its resonant flags · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/cyclic_source_connection_and_resonant_flags.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-cyclic-source-connection-and-its-resonant-flags">The cyclic source connection and its resonant flags</h1>
+<p>Research note, 26 October 2026. The source comparison in <a href="controlled_cyclic_euler_source.html">the Euler calculation</a> has an exact logarithmic connection. Its scalar is another cyclic dilogarithm, with a specified phase. This gives both its classical generating action and a regularization at every nontrivial root of unity. The regularized primitive operator has a computable kernel. Its source frames still glue by the original actual cap.</p>
+<p>These are local identities for the existing cyclic dilogarithm and actual factorial source. They do not identify the selected Kashaev period with a geometric cycle. Cyclic Fourier transforms are already part of the literature coverage recorded in the Euler note; no novelty is claimed for the underlying cyclic function. The proofs and the source and cap normalizations here are direct.</p>
+<h2 id="the-scalar-comparison-is-an-explicit-algebraic-period">1. The scalar comparison is an explicit algebraic period</h2>
+<p>Put q=exp(pi*i/N), Q=q^2, and use a primitive generator X with</p>
+<pre><code>X^N=U, z^N=1-U, z=M^2.</code></pre>
+<p>The symbol z in this note is the norm root, not an eigenvalue of X. The branch near U=0 is initially z=1 and M=1. Let</p>
+<pre><code>S_N(z)=1+z+...+z^(N-1),
+Dcal_N(z)=product_(k=1)^(N-1)(1-Q^k z)^(k/N),
+kappa_N=sqrt(N) exp[pi*i*(N-1)*(N-2)/(12N)].</code></pre>
+<p>Define the logarithms in Dcal inside |z|&lt;1 and continue them together. At z=1 these factors are nonzero, and</p>
+<pre><code>Dcal_N(1)=kappa_N.                              (1.1)</code></pre>
+<p>Indeed Arg(1-Q^k)=pi*k/N-pi/2. Pairing k with N-k gives the modulus sqrt(N), and summing these weighted arguments gives the displayed phase. This phase is retained at even and composite levels as well.</p>
+<p>For the scalar gamma_N=a_0/S_N of the Euler source comparison, its exact formula is</p>
+<pre><code>gamma_N(z)=M^(-(N-1)) Dcal_N(z)
+                            /[kappa_N S_N(z)]. (1.2)</code></pre>
+<p>Here M is the retained square-root meridian mark. To prove (1.2), start with the previously proved determinant formula</p>
+<pre><code>a_0^N=z^(-N(N-1)/2)
+   product_(r=1)^(N-1)[(z-Q^r)/(1-Q^r)]^(N-r).</code></pre>
+<p>Replace r by N-k in each numerator and denominator. The factors -Q^r cancel, leaving Dcal_N(z)<sup>N/kappa_N</sup>N. Both sides of the resulting root identity are one at z=1. Continuation from that mark proves (1.2), including its phase.</p>
+<p>Thus no unknown scalar is needed for this local comparison. On its cover it is an evaluation of the specified finite algebraic product. Its exact connection is</p>
+<pre><code>d log gamma_N=-(N-1)dM/M-d log S_N(z)
+        -(1/N)sum_(k=1)^(N-1)
+                        k Q^k dz/(1-Q^k z).    (1.3)</code></pre>
+<p>This is a rational connection on the marked base. Transport along a path is the ratio of the explicit products (1.2), with their branches transported. A loop around z=Q^(-k) has residue k/N-1 for gamma_N. Resetting an N-th root after the loop would change that transport.</p>
+<h2 id="the-parameter-trajectories-must-be-specified">2. The parameter trajectories must be specified</h2>
+<p>There are three distinct uses of these formulas.</p>
+<ul>
+<li>At fixed primitive center U on a compact marked chart away from U=1, z=exp(Log(1-U)/N) approaches one. The earlier polynomial coefficient bounds apply.</li>
+<li>At a fixed small primitive coordinate X=x with |x|&lt;1, U=x^N approaches zero and z approaches one. This also lies in a compact central chart. Bounding coefficients in that chart does not by itself bound a contracted complex sum.</li>
+<li>At a fixed norm-root coordinate z with |z|&lt;1, U=1-z^N approaches one, and the coherent logarithm is N Log z. The compact-chart bound does not apply. Formula (1.2) has an exponential, explicitly computable size here.</li>
+</ul>
+<p>For |x|&gt;1 the fixed-primitive-coordinate trajectory also escapes every bounded central chart. A geometric construction must specify which local polarization and trajectory it uses; the same letter for two classical-looking shapes cannot do so.</p>
+<h2 id="the-generating-action-with-a-uniform-error-bound">3. The generating action with a uniform error bound</h2>
+<p>For fixed z away from zero and the unit circle set</p>
+<pre><code>G(z)=-log|z|/2-Im Li_2(z)/(2pi),       |z|&lt;1,
+G(z)=-log|z|+Im Li_2(1/z)/(2pi),       |z|&gt;1.</code></pre>
+<p>Only dilogarithms inside the unit disk occur in these formulas. Put w=z in the first case and w=1/z in the second. Then</p>
+<pre><code>log|gamma_N(z)|
+  =N G(z)-log N/2+log|z|/2+log|1-z|/2
+                -log|1-w^N|+R_N(z),           (3.1)</code></pre>
+<p>where, with delta=abs(|z|-1),</p>
+<pre><code>|R_N(z)| &lt;= [4pi^2 |z|/delta^2+4pi/delta]/(12N). (3.2)</code></pre>
+<p>In particular this holds uniformly on compact subsets of either indicated domain. Here is an elementary proof. Taking moduli in the determinant formula gives exactly</p>
+<pre><code>log|gamma_N|=-(N-1)log|z|/2-log N/2
+   +sum_(r=1)^(N-1)(1-r/N)log|z-Q^r|
+                                  -log|S_N(z)|. (3.3)</code></pre>
+<p>The denominator product used here has logarithm log N/2 by pairing r with N-r. For f(t)=(1-t)log|z-exp(2pi<em>i</em>t)|, the composite trapezoid estimate gives</p>
+<pre><code>sum_(r=1)^(N-1) f(r/N)
+   =N integral_0^1 f(t)dt-log|1-z|/2+R_N.</code></pre>
+<p>Its second derivative is bounded by the numerator of (3.2). Expanding the convergent logarithmic series in the disk gives</p>
+<pre><code>integral f=-Im Li_2(z)/(2pi),                |z|&lt;1,
+integral f=log|z|/2+Im Li_2(1/z)/(2pi),       |z|&gt;1.</code></pre>
+<p>Substitute S_N=(1-z^N)/(1-z) to obtain (3.1).</p>
+<p>On the inside chart the real part of the holomorphic generating action is G, with</p>
+<pre><code>Ghol(z)=-Log z/2-Li_2(z)/(2pi*i),
+dGhol=[-1/2+Log(1-z)/(2pi*i)] dz/z.           (3.4)</code></pre>
+<p>This identifies the limiting local connection, rather than assuming that a root-central normalization has zero rate.</p>
+<p>The source-free frame is still an exact expression:</p>
+<pre><code>C_N(z)=M^(N-1) S_N(z) gamma_N(z)
+                              =Dcal_N(z)/kappa_N. (3.5)</code></pre>
+<p>Retaining these source factors, the induced regulator norm on the inverse frame obeys, uniformly on compact punctured subdisks,</p>
+<pre><code>(2pi/N)[-log|C_N(z)|
+             +N log|z| Arg(1-z)/(2pi)]
+                  =D_Bloch(z)+O(log N/N).     (3.6)</code></pre>
+<p>This follows directly from the already proved <a href="cyclotomic_normalization_tower.html#4-the-local-norm-from-an-exact-logarithmic-series">cyclotomic logarithmic-series estimate</a>. The logarithmic correction is part of the regulator metric. Equation (3.6) is not an equality with the absolute value of the full knot contraction.</p>
+<p>The paired exact identity remains</p>
+<pre><code>gamma_N(M)gamma_N(M^(-1))
+         =Gamma_N=M^(N-1)/[N S_N(M^2)]
+         =d_N(M)/(N eta_N), eta_N=i^(N+3).    (3.7)</code></pre>
+<p>Consequently G(z)+G(1/z)=-abs(log|z|)/2, exactly the rate of this specified modified-dimension factor. The local large factors cancel or persist according to the actual cap and source; they cannot be omitted before contraction.</p>
+<h2 id="a-regularized-evaluation-at-every-nontrivial-n-th-root">4. A regularized evaluation at every nontrivial N-th root</h2>
+<p>Let 1&lt;=r&lt;N, zeta=Q^r, and choose M_zeta=exp(pi<em>i</em>r/N). Continue M from one counterclockwise to this mark. Approach z=t*zeta with 0&lt;t&lt;1 and set u=1-z<sup>N=1-t</sup>N&gt;0. Define</p>
+<pre><code>gamma_tilde_(N,r)=u^(r/N) gamma_N.            (4.1)</code></pre>
+<p>On the N-th-root cover this has a finite nonzero value at z=zeta, with its radial root marked as positive. Exactly,</p>
+<pre><code>gamma_tilde_(N,r)(zeta)
+   =M_zeta^(-(N-1)) (Q;Q)_r/N.               (4.2)</code></pre>
+<p>For a proof, isolate k_0=N-r in Dcal_N(z). This factor is (1-Q<sup>(k_0)z)</sup>(1-r/N), while S_N has a simple zero. Moreover</p>
+<pre><code>(1-Q^(k_0)z)/(1-z^N) -&gt; 1/N.</code></pre>
+<p>Reindexing all remaining logarithms gives, with no unspecified phase on the radial branch,</p>
+<pre><code>product_(k!=k_0)(1-Q^k zeta)^(k/N)
+                   =kappa_N N^(-r/N)(Q;Q)_(r-1).</code></pre>
+<p>Insert these equations in (1.2); the last factor 1-zeta completes (Q;Q)_r. This proves (4.2). Thus the singular scalar is replaced by an explicit algebraic evaluation.</p>
+<p>There is more information than its norm. Write the actual Euler coefficients as</p>
+<pre><code>c_0=1, c_s=product_(j=1)^s Q^(j-1)/(Q^j-1).</code></pre>
+<p>Use the full factorial/source reflection</p>
+<pre><code>a_j(z)=gamma_N(z) Q^(-j)(Qz;Q)_(N-1-j).</code></pre>
+<p>At the same regularized fiber it gives</p>
+<pre><code>a_tilde_j=0,                                  j&lt;r,
+a_tilde_(r+s)=M_zeta^(-(N+1)) c_s,     0&lt;=s&lt;N-r. (4.3)</code></pre>
+<p>Indeed the factorial vanishes precisely in the first case. At j=r, multiplying (Q;Q)_r by the complementary factorial gives N, and Q<sup>(-r)=M_zeta</sup>(-2). The subsequent coefficient recurrence is the original Euler recurrence with index s.</p>
+<p>In the primitive regular module, X^N=u and its special fiber has X^N=0. The whole regularized operator is therefore</p>
+<pre><code>u^(r/N) d_N(X)|_(z=zeta)
+   =M_zeta^(-(N+1)) X^r
+                    sum_(s=0)^(N-1-r)c_s X^s. (4.4)</code></pre>
+<p>Its image is X^r V, its kernel has dimension r, and its rank is N-r. These images form the standard nested source flag. In particular this operation is not an invertible change of primitive operators. Their determinant is u^r before taking the special fiber. A proposed flow lift must retain this flag or the corresponding relative lattice, rather than evaluating an unregularized inverse at the divisor.</p>
+<p>There is an exact discrete transport underlying all these fibers. Keep X and u=1-z^N fixed, and shift z-&gt;Qz, M-&gt;qM. On the common marked cover, with epsilon=q^(-(N+1)),</p>
+<pre><code>d_N(X;Qz)=epsilon u^(-1/N) X d_N(X;z).       (4.6)</code></pre>
+<p>For a direct proof, the cyclic-product recurrence gives</p>
+<pre><code>gamma_N(Qz)/gamma_N(z)
+      =q^(-(N-1)) u^(-1/N)(1-Qz).</code></pre>
+<p>Insert it into the exact reflected-factorial coefficients and use their Euler recurrence. The coefficient of X^0 wraps by X^N=u and satisfies the same identity. Equivalently, if T_z denotes the coefficient polynomial with constant term one,</p>
+<pre><code>(1-z) T_(Qz)(X)=Q^(-1) X T_z(X).</code></pre>
+<p>Iterating (4.6) from the principal lift z_0=(1-u)^(1/N) gives</p>
+<pre><code>u^(r/N) d_N(X;Q^r z_0)
+                =epsilon^r X^r d_N(X;z_0).   (4.7)</code></pre>
+<p>The last factor is an integral unit near u=0. This constructs the complete local lattice transport, not merely its limiting rank. After N steps its multiplier is epsilon<sup>N=(-1)</sup>(N-1), consistent with M-&gt;-M on the marked double cover. Dropping that mark would erase a phase at even levels. The shift here holds the primitive X fixed; an actual global meridian shift also changes crossing matrices and Cartan data. This local equation alone is not the knot’s quantum A-polynomial.</p>
+<p>The complete integral statement is just as simple. Take R=C[[u]] and its spectral order S=R[X]/(X^N-u)=C[[X]]. The regularized coefficient a_tilde_j is divisible by u when j&lt;r, and a_tilde_r is a unit. Consequently its multiplier is</p>
+<pre><code>f_reg=X^r h, h in S^*,
+image(f_reg)=X^r S,
+coker(f_reg)=S/(X^r).                         (4.8)</code></pre>
+<p>Indeed replace each lower term u b_j X^j by X^(N+j)b_j before dividing by X^r. Every resulting exponent is positive, except the unit constant a_tilde_r. Hence h is a unit. As an R-module, the cokernel is C^r and is killed by u. The Smith factors are exactly N-r units and r copies of u; there are no higher powers. The source comparison is an isomorphism onto the spectral line lattice X^r S, although its map into the original R-lattice loses rank. This is an explicit integral replacement for an invertible-matrix claim.</p>
+<p>For a product of m such blocks and integral invertible adapters, its inverse has poles of order at most m: each block inverse has at most one pole. Tensoring adds the same orders. This bound is independent of N for a fixed finite network. Applying it to a proposed geometric presentation requires checking that its adapters and scalar source lines are precisely the regular ones specified here.</p>
+<p>For a fixed root zeta=exp(2pi<em>i</em>theta), 0&lt;theta&lt;1 rational, take levels with N theta integral. Equation (4.2) gives</p>
+<pre><code>(2pi/N)log|gamma_tilde_(N,Ntheta)(zeta)|
+                          -&gt;-D_Bloch(zeta).   (4.9)</code></pre>
+<p>This follows by an integrable logarithmic Riemann sum for log|(Q;Q)_(Ntheta)|; subtract log N exactly as in (4.2). For zeta=exp(pi*i/3) it includes all levels divisible by six. It supplies the local resonant regulator rate, not a knot volume theorem or a restriction of that conjecture to these levels.</p>
+<h2 id="the-regularized-source-frames-glue-by-the-actual-cap">5. The regularized source frames glue by the actual cap</h2>
+<p>Use the actual dual colors, J^2=Q I, and B=gamma_N J. Let u=1-z^N be the common local parameter at z=zeta. The opposite source has residue -(N-r)/N after pullback under M-&gt;M^(-1). On the common cover take</p>
+<pre><code>B_tilde=u^(r/N) B,
+Bdual_tilde=u^((N-r)/N) Bdual.</code></pre>
+<p>Both comparison matrices are finite and invertible there. The second root is transported on the common cover, rather than independently reset along an inverse radial path. Their scalar product is, exactly,</p>
+<pre><code>gamma_tilde gamma_dual_tilde
+      =u Gamma_N=M^(N-1)(1-z)/N.             (5.1)</code></pre>
+<p>For the actual cap C_x^t, x=-M/q, the already audited dual-frame calculation therefore gives</p>
+<pre><code>Bdual_tilde^(-t) C_x^t B_tilde^(-1)
+       =N C_x/[Q M^(N-1)(1-z)]              (5.2)</code></pre>
+<p>at the resonant fiber. This is finite and invertible because zeta!=1. Cups and pivots transform by the same bases. Thus this local regularization preserves actual duality, including the Gaussian and modified-dimension factors. It does not turn the ordinary trace into the modified trace.</p>
+<p>The flag pairing also shows why normal data are needed. The actual C_x is anti-diagonal with nonzero entries. Hence</p>
+<pre><code>(X^r V)^perp=X^(N-r) V                       (5.3)</code></pre>
+<p>in the indicated bases. Pairing both leading source vectors therefore gives zero, even though the cap is invertible and both vectors are nonzero. This is a local statement about these factorial source vectors, not about the knot period.</p>
+<p>Their full pairing, including its normal factor, is explicit. Write p_a(z)=(Qz;Q)<em>a and x=-M/q. Since C_x e_a=M^a q<sup>(a</sup>2) e</em>(N-1-a), direct multiplication gives</p>
+<pre><code>p(z^(-1))^t C_x^t p(z)=S_N(z) G_N(M),
+G_N(M)=sum_(a=0)^(N-1)(-1)^a M^(-a)q^(2a^2+a). (5.4)</code></pre>
+<p>To prove it, use the exact complement identity</p>
+<pre><code>p_a(z^(-1)) p_(N-1-a)(z)
+   =S_N(z)(-1)^a z^(-a)Q^(a(a+1)/2).</code></pre>
+<p>The zero of S_N at zeta is simple, and its first normal coefficient is governed by this finite Gaussian sum. For example, if N is odd and r is even, M=q^r makes it the ordinary quadratic sum with b=(N+1-r)/2, and |G_N|^2=N. Indeed expand its norm, set the index difference to k and sum Q^(2ka): only k=0 survives. If N is even and r=3 mod 4, the terms with indices a and a+N/2 cancel, so G_N(q^r)=0. This follows because their ratio is (-1)^(N/2+(N+1-r)/2)=-1. Thus even the first normal term requires its actual phase. These uniform identities locate the issue in a computable source pairing; they neither show nor imply vanishing of the full Kashaev invariant.</p>
+<h2 id="what-this-supplies-for-the-rivin-flow">6. What this supplies for the Rivin flow</h2>
+<p>The <a href="rivin_flow_and_quantum_source.html">angle flow</a> supplies a geometric path and its marked A-curve potential. Equations (1.2)–(1.3) now supply exact local transport for the scalar source line; (3.1) gives its action along specified trajectories; (4.3)–(4.4) give its degeneration and source flag; (4.6)–(4.8) construct its discrete transport on the spectral line lattice; and (5.2) gives compatible actual gluing through a resonance.</p>
+<p>This removes a local scalar and lattice ambiguity. It still does not assign every geometric shape to the actual network’s norm-root coordinate or transport its selected cut cycle. In particular a covector can annihilate X^r V. The flag makes that coupling question explicit, without proving it is nonzero for the actual knot. Convexity of the classical volume cannot by itself remove this remaining selected-period question.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_cyclic_source_resonances.py">The audit</a> checks the new frame identity against independent matrix determinants, its connection against determinant derivatives, every resonant source flag and its first-order Smith factors at the tested levels, the actual regularized caps and their normal Gaussian moments, the marked complex phase and the proved error bound. <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/cyclic_source_resonance_results.json">Results</a>.</p>
+<p>Reproduce with:</p>
+<pre><code>python3 experiments/audit_cyclic_source_resonances.py</code></pre>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/cyclic_source_connection_and_resonant_flags.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-scalar-comparison-is-an-explicit-algebraic-period">1. The scalar comparison is an explicit algebraic period</a><a href="#the-parameter-trajectories-must-be-specified">2. The parameter trajectories must be specified</a><a href="#the-generating-action-with-a-uniform-error-bound">3. The generating action with a uniform error bound</a><a href="#a-regularized-evaluation-at-every-nontrivial-n-th-root">4. A regularized evaluation at every nontrivial N-th root</a><a href="#the-regularized-source-frames-glue-by-the-actual-cap">5. The regularized source frames glue by the actual cap</a><a href="#what-this-supplies-for-the-rivin-flow">6. What this supplies for the Rivin flow</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

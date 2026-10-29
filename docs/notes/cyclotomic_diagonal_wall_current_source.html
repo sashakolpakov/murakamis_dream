@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A cyclotomic diagonal source and an actual endpoint-completed wall ladder · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/cyclotomic_diagonal_wall_current_source.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-cyclotomic-diagonal-source-and-an-actual-endpoint-completed-wall-ladder">A cyclotomic diagonal source and an actual endpoint-completed wall ladder</h1>
+<p>Research proof, 27 October 2026. The degree-N binomial wall row can be coupled to the original head index by an intrinsic cyclotomic projector in an actual high integral color. Actual divided powers, together with their first-normal wrap entries, give an exact classical SL2 action on the resulting N+1-state string. The coupling is a controlled cyclic head-shift gauge, rather than an unspecified Kronecker insertion.</p>
+<p>This supplies an exact finite source/current realization. It does not make the projector commute with the original whole crossing. A literal first-normal charged crossing entry below proves that this stronger assertion fails. Whole gauge transport is exact if all crossings, pivots, sources and internal projectors are transported together.</p>
+<h2 id="actual-color-clocks-and-the-diagonal-constraint">1. Actual color, clocks and the diagonal constraint</h2>
+<p>Use the integral color and constant sign basis of <a href="high_integral_color_frobenius_wall_source.html">the high-color source theorem</a> with r=N. Its dimension is N(N+1), and its basis is w_(R,S), 0&lt;=R&lt;=N, 0&lt;=S&lt;N. Put q=q_N, Q=q_N^2, rho=q_N-q_N^(-1), delta=1-q^(2N), and let the head index and block index denote the literal diagonal matrices S and R in this fixed basis. They are actual color observables: the unwrapped index is J_un=NR+S, while Q<sup>J_un=Q</sup>S at the root. The distinct root eigenvalues determine S by spectral interpolation; then R=(J_un-S)/N.</p>
+<p>The cyclotomic charge and its zero projector are</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><msup><mi>Q</mi><mrow><mi>R</mi><mo>−</mo><mi>S</mi></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><mi>P</mi><mo>=</mo><mfrac><mn>1</mn><mi>N</mi></mfrac><munderover><mo>∑</mo><mrow><mi>ℓ</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></munderover><msup><mi>C</mi><mi>ℓ</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ C=Q^{R-S},\qquad
+ P=\frac1N\sum_{\ell=0}^{N-1}C^\ell.                 \tag{1}
+</annotation></semantics></math></p>
+<p>The root geometric-series identity proves, on each basis vector, that P selects exactly</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mi>j</mi></msub><mo>=</mo><msub><mi>w</mi><mrow><mi>j</mi><mo>,</mo><mi>j</mi></mrow></msub><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>≤</mo><mi>j</mi><mo>&lt;</mo><mi>N</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>z</mi><mi>N</mi></msub><mo>=</mo><msub><mi>w</mi><mrow><mi>N</mi><mo>,</mo><mn>0</mn></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ z_j=w_{j,j}\quad(0\le j&lt;N),\qquad z_N=w_{N,0}.        \tag{2}
+</annotation></semantics></math></p>
+<p>In particular this is an orthogonal rank-(N+1) projector in the constant sign basis. P, R and S have unambiguous constant matrix extensions in the original integral q-family. This extension makes no claim that their generic-q extensions are quantum intertwiners.</p>
+<h2 id="the-wall-row-including-its-endpoint-and-normalization">2. The wall row, including its endpoint and normalization</h2>
+<p>Write e_+=psi_+ lambda_+ for the actual Frobenius coherent coupon,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ψ</mi><mo>+</mo></msub><mo>=</mo><munderover><mo>∑</mo><mrow><mi>R</mi><mo>=</mo><mn>0</mn></mrow><mi>N</mi></munderover><msub><mi>v</mi><mi>R</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>λ</mi><mo>+</mo></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>v</mi><mi>R</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mn>2</mn><mrow><mi>−</mi><mi>N</mi></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mi>N</mi><mi>R</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>λ</mi><mo>+</mo></msub><msub><mi>ψ</mi><mo>+</mo></msub><mo>=</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \psi_+=\sum_{R=0}^{N}v_R,\qquad
+ \lambda_+(v_R)=2^{-N}{N\choose R},\qquad
+ \lambda_+\psi_+=1.
+</annotation></semantics></math></p>
+<p>The original head average is the rank-one coupon e_h=psi_h phi_h, where psi_h=sum_S v_S and phi_h(v_S)=1/N. Let e_prod=e_+ tensor e_h. This is the actual divided-coherent Frobenius source times the original head source; its Frobenius dual is binomial, and is not silently identified with a uniform average over the entire high color. Then</p>
+<p><span class="math display">$$
+ \operatorname{Tr}(e_{\rm prod}P)=\frac1N,\qquad
+ e_D=NP e_{\rm prod}P                              \tag{3}
+$$</span></p>
+<p>is an idempotent of trace one. Its source and co-source on (2) are exactly sum_j z_j and sum_j 2^(-N) binom(N,j) z_j^*.</p>
+<p>For any array J_0,…,J_N over a commutative coefficient algebra, use the actual diagonal insertion</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">𝒥</mi><mo>=</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>J</mi><mi>N</mi></msub><mo>−</mo><msub><mi>J</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><msub><mi>P</mi><mrow><mi>R</mi><mo>=</mo><mi>N</mi></mrow></msub><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ \mathcal J=J(S)+(J_N-J_0)P_{R=N},                    \tag{4}
+</annotation></semantics></math></p>
+<p>where J(S) has entries J_0,…,J_(N-1). Its restriction to (2) is diag(J_0,…,J_N). Consequently</p>
+<p><span class="math display">$$
+ \frac1N\operatorname{Tr}(e_D\mathcal J)
+ =\operatorname{Tr}(e_{\rm prod}P\mathcal J)
+ =\frac1{N2^N}\sum_{j=0}^{N}{N\choose j}J_j
+ =B_N(J).                                          \tag{5}
+$$</span></p>
+<p>This is the wall row from <a href="actual_gauss_wall_cut_current_complex.html">the actual Gauss-wall current complex</a>, with both its 1/N and its j=N endpoint. It applies coefficientwise to the original retained logarithmic/polynomial Green arrays. It is not a pointwise multiplication of coherent symbols.</p>
+<p>In that current complex the original arrays already contain 1/N: I_mat=N I_raw and J_mat=N J_raw. Thus (5) applies to J_mat; its raw version is N B_N(J_raw). This factor cannot be silently absorbed.</p>
+<p>The normalized source Tr(e_D C) returns the actual high-color knot scalar when C is its scalar long-knot operator. At the root this is the original K_N by the already proved all-color periodicity. The unnormalized wall source returns K_N/N. The old marked ADO/peripheral line and its full twists are retained; this construction does not replace them by a fictitious high-level normalization.</p>
+<p>There is no exponential source cost at the root. Directly,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><msub><mi>ψ</mi><mi>D</mi></msub><mo stretchy="false" form="postfix">∥</mo><mo>=</mo><msqrt><mrow><mi>N</mi><mo>+</mo><mn>1</mn></mrow></msqrt><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="postfix">∥</mo><msub><mi>λ</mi><mi>D</mi></msub><msup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msup><mo>=</mo><msup><mn>4</mn><mrow><mi>−</mi><mi>N</mi></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mn>2</mn><mi>N</mi></mrow><mi>N</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><mn>1</mn><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="postfix">∥</mo><msub><mi>e</mi><mi>D</mi></msub><mo stretchy="false" form="postfix">∥</mo><mo>≤</mo><msqrt><mrow><mi>N</mi><mo>+</mo><mn>1</mn></mrow></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \|\psi_D\|=\sqrt{N+1},\qquad
+ \|\lambda_D\|^2=4^{-N}{2N\choose N}\le1,
+ \qquad\|e_D\|\le\sqrt{N+1}.                          \tag{6}
+</annotation></semantics></math></p>
+<p>The same bound holds for its trace-functional norm. This is a root bound, not a bound on a growing normal neighborhood or on arbitrary quantum derivatives.</p>
+<p>This bound uses the constant coordinate metric. The <a href="frobenius_clock_and_internal_centralizer_map.html">current/metric audit</a> also proves a polynomial bound for THIS selected anchor in the explicit tensor coherent metric, by exact binomial cancellation. It separately proves that the full controlled gauge, and other points of its real coherent orbit, can be exponentially conditioned in that metric. Thus (6) is not a uniform bound for an arbitrary period-line comparison or the whole coherent source family.</p>
+<h2 id="an-exact-sl2-ladder-made-from-actual-divided-and-normal-entries">3. An exact SL2 ladder made from actual divided and normal entries</h2>
+<p>Let e,f,h be the classical multiplicity matrices of the actual divided-power theorem, with</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><msub><mi>v</mi><mi>R</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mo>−</mo><mi>R</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><msub><mi>v</mi><mrow><mi>R</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo><mspace width="1.0em"></mspace><mi>f</mi><msub><mi>v</mi><mi>R</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>R</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><msub><mi>v</mi><mrow><mi>R</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mspace width="1.0em"></mspace><mi>h</mi><msub><mi>v</mi><mi>R</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>2</mn><mi>R</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>v</mi><mi>R</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ ev_R=(N-R+1)v_{R-1},\quad
+ fv_R=(R+1)v_{R+1},\quad hv_R=(N-2R)v_R.
+</annotation></semantics></math></p>
+<p>Let V be the cyclic head shift S -&gt; S+1 modulo N. Define the actual head spectral pseudoinverse</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>D</mi><mo>†</mo></msup><mo>=</mo><mrow><mi mathvariant="normal">diag</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mo stretchy="false" form="prefix">[</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">]</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>,</mo><mi>…</mi><mo>,</mo><mo stretchy="false" form="prefix">[</mo><mi>N</mi><mo>−</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">]</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ D^\dagger=\operatorname{diag}(0,[1]^{-1},\ldots,[N-1]^{-1}).
+</annotation></semantics></math></p>
+<p>Every displayed denominator is nonzero at the marked root. Integral divided multiplication and [N+1]_(q_N)=-1 give</p>
+<p><span class="math display">$$
+ E^{(N+1)}=e\otimes E_{\rm St},\qquad
+ F^{(N+1)}=-f\otimes F_{\rm St}.                      \tag{7}
+$$</span></p>
+<p>Indeed E<sup>(N)=(-1)</sup>(N-1)e and ordinary E=(-1)^N E_St, and E<sup>(N)E=[N+1]E</sup>(N+1); the F identity is identical without the two E signs. The literal first-normal wrap matrices are</p>
+<p><span class="math display">$$
+ [E_{\rm cross}/\delta]_0
+   =(-1)^{N+1}\rho^{-1}e\otimes E_{N-1,0},\qquad
+ [F_{\rm cross}/\delta]_0
+   =\rho^{-1}f\otimes E_{0,N-1}.                     \tag{8}
+$$</span></p>
+<p>Both are regular divisions in the original q-family, not divisions of zero root matrices. Combining (7) and (8) with the specified operator orders gives</p>
+<p><span class="math display">$$
+ \begin{split}
+ \widetilde E
+ &amp;=E^{(N+1)}(I\otimes D^\dagger)
+      +\rho(-1)^{N+1}[E_{\rm cross}/\delta]_0
+   =e\otimes V^{-1},\\
+ \widetilde F
+ &amp;=-(I\otimes D^\dagger)F^{(N+1)}
+      +\rho[F_{\rm cross}/\delta]_0
+   =f\otimes V,\\
+ \widetilde H&amp;=h\otimes I.
+ \end{split}                                                   \tag{9}
+$$</span></p>
+<p>For example E_St D^dagger is the noncyclic unit backward shift; the first term misses only S=0, which (8) completes. For F the pseudoinverse acts on the OUTPUT, exactly as printed. Thus [Etilde,Ftilde]=Htilde and the other two SL2 relations hold on the WHOLE actual high-color vector space. All three commute with P. On its selected string they act as</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>E</mi><mo accent="true">̃</mo></mover><msub><mi>z</mi><mi>j</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mo>−</mo><mi>j</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><msub><mi>z</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><mover><mi>F</mi><mo accent="true">̃</mo></mover><msub><mi>z</mi><mi>j</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><msub><mi>z</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \widetilde E z_j=(N-j+1)z_{j-1},\qquad
+ \widetilde F z_j=(j+1)z_{j+1}.                       \tag{10}
+</annotation></semantics></math></p>
+<p>The missing last bulk link is supplied by the actual normal edges: F_cross/delta sends z_(N-1) to (N/rho)z_N, and E_cross/delta sends z_N to ((-1)^(N+1)/rho)z_(N-1). Equations (9)–(10), rather than a postulated auxiliary representation, therefore realize the entire N+1 wall-current string. Dividing the nonzero coefficients in (10) also gives the literal unit forward and backward current shifts, with their two endpoint projectors retained.</p>
+<h2 id="the-coupling-is-an-exact-controlled-shift-gauge">4. The coupling is an exact controlled-shift gauge</h2>
+<p>Define the constant unitary permutation</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><munderover><mo>∑</mo><mrow><mi>R</mi><mo>=</mo><mn>0</mn></mrow><mi>N</mi></munderover><msub><mi>P</mi><mi>R</mi></msub><mo>⊗</mo><msup><mi>V</mi><mi>R</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ G=\sum_{R=0}^{N}P_R\otimes V^R.
+</annotation></semantics></math></p>
+<p>Direct multiplication proves the simultaneous identities</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi>G</mi><mo stretchy="false" form="prefix">(</mo><mi>e</mi><mo>⊗</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo><msup><mi>G</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mover><mi>E</mi><mo accent="true">̃</mo></mover><mo>,</mo></mtd><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi>G</mi><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo>⊗</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo><msup><mi>G</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mover><mi>F</mi><mo accent="true">̃</mo></mover><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi>G</mi><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>⊗</mo><msub><mi>P</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><msup><mi>G</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mi>P</mi><mo>,</mo></mtd><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi>G</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>e</mi><mo>+</mo></msub><mo>⊗</mo><msub><mi>P</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><msup><mi>G</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><msub><mi>e</mi><mi>D</mi></msub><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi>G</mi><msup><mi>Q</mi><mi>S</mi></msup><msup><mi>G</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><msup><mi>Q</mi><mrow><mi>−</mi><mi>R</mi></mrow></msup><msup><mi>Q</mi><mi>S</mi></msup><mo>,</mo></mtd><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi>G</mi><msup><mi>Q</mi><mi>R</mi></msup><msup><mi>G</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><msup><mi>Q</mi><mi>R</mi></msup><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{split}
+ G(e\otimes I)G^{-1}&amp;=\widetilde E,&amp;
+ G(f\otimes I)G^{-1}&amp;=\widetilde F,\\
+ G(I\otimes P_0)G^{-1}&amp;=P,&amp;
+ G(e_+\otimes P_0)G^{-1}&amp;=e_D,\\
+ GQ^SG^{-1}&amp;=Q^{-R}Q^S,&amp;GQ^RG^{-1}&amp;=Q^R.
+ \end{split}                                                   \tag{11}
+</annotation></semantics></math></p>
+<p>Thus this is also an explicit finite clock shear: the head clock becomes the inverse of the cyclotomic constraint charge. No classical geometric Egorov identification is inferred from (11).</p>
+<p>The root Fourier matrix with entries Q^(ST)/N sends psi_h to v_0 and phi_h to v_0^* under the inverse dual map. It maps e_h to P_0. It is a scalar multiple of a unitary matrix and has condition number one. Consequently H_0=G(I tensor Fourier) conjugates the divided-coherent product rank-one source exactly to e_D, including its off-diagonal entries. If every crossing is replaced by</p>
+<p><span class="math display">$$
+ R^{H_0}=(H_0\otimes H_0)R_{\rm high}(H_0^{-1}\otimes H_0^{-1}),
+                                                               \tag{12}
+$$</span></p>
+<p>and pivots, duals, coupons and internal projectors are conjugated with their endpoint H_0’s, the full arbitrary word and all its q-jets are exactly gauge equivalent. This is ordinary finite matrix basis change in the actual integral family. It makes no assertion that P commutes with the original R, or that R^H already has the required geometric Gaussian/source comparison.</p>
+<h2 id="literal-whole-source-germs-and-an-off-diagonal-ward-adapter">5. Literal whole source germs and an off-diagonal Ward adapter</h2>
+<p>The generic integral divided matrices determine finite source germs Psi_S(q), Lambda_S(q), u_S(q)=Lambda_S Psi_S exactly as in the high-color source theorem; u_S(q_N)=1. Put</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ψ</mi><mo>=</mo><munder><mo>∑</mo><mi>S</mi></munder><msub><mi mathvariant="normal">Ψ</mi><mi>S</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mi mathvariant="normal">Λ</mi><mo>=</mo><mfrac><mn>1</mn><mi>N</mi></mfrac><munder><mo>∑</mo><mi>S</mi></munder><msub><mi mathvariant="normal">Λ</mi><mi>S</mi></msub><mi>/</mi><msub><mi>u</mi><mi>S</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>e</mi><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi mathvariant="normal">Ψ</mi><mi mathvariant="normal">Λ</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>u</mi><mi>P</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi mathvariant="normal">Λ</mi><mi>P</mi><mi mathvariant="normal">Ψ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \Psi=\sum_S\Psi_S,\qquad
+ \Lambda=\frac1N\sum_S\Lambda_S/u_S,\qquad
+ e(q)=\Psi\Lambda,\qquad u_P(q)=\Lambda P\Psi.
+</annotation></semantics></math></p>
+<p>The distinct residue strings are disjoint, so Lambda Psi=1. Moreover u_P(q_N)=1/N. Thus the two WHOLE idempotent germs</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>e</mi><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo><mi>P</mi><mi>/</mi><msub><mi>u</mi><mi>P</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>d</mi><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>P</mi><mi>e</mi><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo><mi>P</mi><mi>/</mi><msub><mi>u</mi><mi>P</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+ a(q)=e(q)P/u_P(q),\qquad
+ d(q)=Pe(q)P/u_P(q)                                  \tag{13}
+</annotation></semantics></math></p>
+<p>are regular and have trace one. At the root d=e_D. On the actual generic scalar high-color long-knot operator, both return its exact scalar, with no discarded quantum jet. This comparison is with the SAME high color, not an off-root equality with the original color N.</p>
+<p>Their off-diagonal difference is an explicit Cartan Ward boundary. Set Delta=a-d and, in the original unwrapped position basis, define</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mfrac><msub><mi mathvariant="normal">Δ</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mrow><mi>i</mi><mo>−</mo><mi>j</mi></mrow></mfrac><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mo>≠</mo><mi>j</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>B</mi><mrow><mi>i</mi><mi>i</mi></mrow></msub><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ B_{ij}=\frac{\Delta_{ij}}{i-j}\ (i\ne j),\qquad B_{ii}=0.
+</annotation></semantics></math></p>
+<p>The diagonal of Delta is identically zero, at every q in the germ. Consequently</p>
+<p><span class="math display">$$
+ \Delta=[J_{\rm un},B],\qquad
+ \operatorname{Tr}(\Delta C)=-\operatorname{Tr}(B[J_{\rm un},C])
+                                                               \tag{14}
+$$</span></p>
+<p>for EVERY matrix C. Hence the one-sided projected product source and the compressed source agree on weight-zero actual cut arrays, while their full off-diagonal Ward discrepancy has not been erased.</p>
+<p>The alternative whole germ G e_0(q) G^(-1), obtained by transporting one original residue-string coupon, has the same root as d(q). Its higher diagonal source weights generally differ: d samples the actual S=R mod N string, while G e_0 G^(-1) samples S=0 before transport. Their source and co-source ratios are regular units with root one. Those units and u_P must be carried when comparing whole jets; equality of their numerical root binomial rows does not remove them.</p>
+<p>These source units can also be retained by an EXPLICIT whole-germ gauge, rather than an unspecified choice of extension. Write v=Psi, w=Lambda, v_c=Pv and w_c=wP/u_P. Thus wv=w_c v_c=1 and d=v_c w_c. Put v_t=H_0v, w_t=wH_0^(-1), e_t=v_t w_t and</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>v</mi><mi>c</mi></msub><msub><mi>w</mi><mi>t</mi></msub><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>−</mo><mi>d</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>−</mo><msub><mi>e</mi><mi>t</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ K(q)=v_cw_t+(I-d)(I-e_t).                            \tag{14a}
+</annotation></semantics></math></p>
+<p>The Fourier normalization specified in Section 4 gives v_t(q_N)=v_c(q_N) and w_t(q_N)=w_c(q_N), so K(q_N)=I. It is therefore a regular invertible matrix germ. Direct multiplication, using the four source normalizations, proves</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><msub><mi>v</mi><mi>t</mi></msub><mo>=</mo><msub><mi>v</mi><mi>c</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>w</mi><mi>c</mi></msub><mi>K</mi><mo>=</mo><msub><mi>w</mi><mi>t</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>K</mi><msub><mi>e</mi><mi>t</mi></msub><msup><mi>K</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>=</mo><mi>d</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ Kv_t=v_c,\qquad w_cK=w_t,\qquad
+ K e_tK^{-1}=d.                                     \tag{14b}
+</annotation></semantics></math></p>
+<p>Consequently H(q)=K(q)H_0 transports that actual divided-coherent whole source to the compressed source exactly. Conjugating every crossing, pivot, dual, coupon and internal projector by H(q) gives an exact whole-word source comparison, including all source-normal derivatives and the unit u_P. This is a same-color gauge theorem. It neither equates the high and original low-color q-jets nor establishes the geometric Gaussian image of the transformed word. Only H(q_N), not its behavior on a growing q-neighborhood, has the polynomial cost established above.</p>
+<p>There is also an explicit adapter if the incoming high-color coupon is the uniform average in this fixed basis. On the Frobenius factor put lambda_av(v_R)=1/(N+1), and write lambda_bin=lambda_+. Then</p>
+<p><span class="math display">$$
+ K_{\rm Fr}=I+\psi_+(\lambda_{\rm av}-\lambda_{\rm bin}),\qquad
+ K_{\rm Fr}^{-1}=I-\psi_+(\lambda_{\rm av}-\lambda_{\rm bin}).
+                                                               \tag{14c}
+$$</span></p>
+<p>The rank-one correction squares to zero, since both rows pair with psi_+ to one. It fixes the source vector and sends the uniform coupon to the binomial coupon by conjugation. Both K_Fr and its inverse have norm O(sqrt(N+1)). Tensoring with the head identity and using the same near-identity construction (14a) joins the constant uniform source to the actual divided-coherent WHOLE germ. Composing it with H(q) therefore retains the precise incoming source, including all its normal jets. If a different integral/balanced basis is used, its actual source adapter must first be included; (14c) is not a license to replace its off-diagonal row by an average. All these conjugations compare the high color with itself.</p>
+<h2 id="an-actual-mixed-normal-crossing-changes-the-total-charge">6. An actual mixed-normal crossing changes the total charge</h2>
+<p>The entire root crossing commutes with the TOTAL charge C tensor C, although it need not preserve the individual zero-charge projectors. The original first-normal crossing need not even preserve total zero charge. Here is an explicit entry of the actual positive R.</p>
+<p>Take input (R_1,S_1)=(1,0), (R_2,S_2)=(N-1,0), and transfer k=1. Its total root charge is zero. The un-checked output is (0,N-1),(N-1,1), whose total charge is -1 modulo N. The transfer coefficient has exactly one normal zero, and</p>
+<p><span class="math display">$$
+ [R_{\rm entry}/\delta]_0
+   =(-1)^{N+1}N\,
+       q_N^{H_{N-1}H_{N(N-1)+1}/2}\ne0,              \tag{15}
+$$</span></p>
+<p>where H_i=m-2i and the common half-Cartan character is exactly the one in the original R. This follows directly from the E wrap coefficient (-1)^(N+1)N/rho, the nonzero F head coefficient [1]=1, and the k=1 nilpotent coefficient rho. Checked R only swaps its output factors and has the same total charge defect. Thus deleting all charged neighbors at first normal order changes an actual crossing coefficient. A full-source current theorem cannot silently apply P before and after each original crossing.</p>
+<p>There is nevertheless an exact bounded-charge filtration. For any transfer k=aN+b, 0&lt;=b&lt;N, write the two possible head carries as c_E=1_(S_1&lt;b) and c_F=1_(S_2+b&gt;=N). Then</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>R</mi><mn>1</mn></msub><mo>+</mo><msub><mi>R</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>c</mi><mi>F</mi></msub><mo>−</mo><msub><mi>c</mi><mi>E</mi></msub><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi mathvariant="normal">Δ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>S</mi><mn>1</mn></msub><mo>+</mo><msub><mi>S</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><mi>N</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>c</mi><mi>F</mi></msub><mo>−</mo><msub><mi>c</mi><mi>E</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \Delta(R_1+R_2)=c_F-c_E\in\{-1,0,1\},\qquad
+ \Delta(S_1+S_2)=-N(c_F-c_E).                         \tag{16}
+</annotation></semantics></math></p>
+<p>The total charge change modulo N is therefore c_F-c_E. More precisely the E^k path has a+c_E simple block zeros, the F^k path has a+c_F, and the denominator [k]! has a. Thus a nonzero entry has exact delta-order a+c_E+c_F. In particular every nonzero charge change costs at least one normal order; this conclusion retains the denominator zeros rather than counting only numerator edges. A product of actual crossing jets of total normal order B can consequently move the total charge by at most B. The same follows for inverse crossings from the exact inverse series, since the root crossing and its inverse have charge zero. For N&gt;2B these neighbors have distinct residue labels. Diagonal pivots do not change this conclusion. This is a support statement for actual braid-word jets, not a claim that their zero-charge component or boundary cohomology vanishes.</p>
+<p>The resonant tail E^(N) tensor F^(N) has zero total charge. It does not cancel the mixed charged entry (15). The actual quadratic Frobenius-degree theorem in <a href="high_color_first_normal_r_and_frobenius_degree.html">the first-normal crossing note</a> is compatible with this filtration and retains precisely these mixed terms.</p>
+<h2 id="exact-scope-and-audit">7. Exact scope and audit</h2>
+<p>We have constructed the wall-row source on an intrinsic constrained subspace of an actual color, its exact endpoint-completed ladder, its full finite gauge transport, and its literal whole source germ. Equation (14) keeps the off-diagonal source-current correction. Equation (15) isolates why the source projector alone is not a whole-network intertwiner. The missing step is to transport the actual two framing currents through the resulting charged/source complex into the geometric Gaussian/relative complex, with the peripheral endpoint class retained. Neither the normalized source nor the finite SL2 string alone supplies that map.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_cyclotomic_diagonal_wall_current_source.py">The audit</a> checks actual integral divided entries and actual first-normal wrap entries independently, the exact source and gauge identities, Cartan boundary (14), wall endpoints, and actual charged crossing entry (15). Its checks are exact finite-field identities, not a topological or asymptotic inference.</p>
+<p>The saved <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/cyclotomic_diagonal_wall_current_source_results.json">results</a> pass seven actual colors N=2,…,8 and four full actual crossing families N=2,…,5. They include 1708 nonzero charged first-normal entries. Those entries support, rather than remove, the retained charged-sector obstruction.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/cyclotomic_diagonal_wall_current_source.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#actual-color-clocks-and-the-diagonal-constraint">1. Actual color, clocks and the diagonal constraint</a><a href="#the-wall-row-including-its-endpoint-and-normalization">2. The wall row, including its endpoint and normalization</a><a href="#an-exact-sl2-ladder-made-from-actual-divided-and-normal-entries">3. An exact SL2 ladder made from actual divided and normal entries</a><a href="#the-coupling-is-an-exact-controlled-shift-gauge">4. The coupling is an exact controlled-shift gauge</a><a href="#literal-whole-source-germs-and-an-off-diagonal-ward-adapter">5. Literal whole source germs and an off-diagonal Ward adapter</a><a href="#an-actual-mixed-normal-crossing-changes-the-total-charge">6. An actual mixed-normal crossing changes the total charge</a><a href="#exact-scope-and-audit">7. Exact scope and audit</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

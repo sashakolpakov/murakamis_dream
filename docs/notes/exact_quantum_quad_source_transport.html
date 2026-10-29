@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exact quad transport retains a finite cross-wall sewing source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/exact_quantum_quad_source_transport.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="exact-quad-transport-retains-a-finite-cross-wall-sewing-source">Exact quad transport retains a finite cross-wall sewing source</h1>
+<p>28 October 2026. There is an exact finite Fourier/chirp transform of a pointed cyclic source into its positive quad rotation. Its coefficient is nonzero and polynomially bounded on fixed-log root trajectories. This alone is not the required global bridge: that source parameter is a source-flag cross-ratio, and the ORIGINAL crossing has nilpotent finite-head walls.</p>
+<p>Those walls admit a useful global reduction. Each actual two-head Euler resolvent is a cyclic resolvent plus four explicit sewing terms. On the original small circle only TWO cross-wall terms contribute. Thus a word with m crossings has an exact cyclic comparison with at most <code>2^(3m)</code> sewing sectors, retaining the original caps and peripheral factors. The source-free cyclic bulk has zero original period. This is a theorem about the actual source, not a geometric nonvanishing assertion.</p>
+<h2 id="exact-sewing-for-the-literal-two-head-transfer">1. Exact sewing for the literal two-head transfer</h2>
+<p>Let S be the cyclic unit raising shift on the actual head <code>e_0,...,e_(N-1)</code>, and let <code>J_+,J_-</code> be its truncated raising and lowering shifts. Fix a nonzero marked scalar a. The actual positive transfer and its cyclic completion are</p>
+<pre><code>T=a J_+ tensor J_-, A=a S tensor S^-1.        (1)</code></pre>
+<p>They preserve the total index modulo N. In its residue-k fiber use <code>b_n=e_n tensor e_((k-n) mod N)</code>, <code>0&lt;=n&lt;N</code>, and put <code>h=k+1</code>. Then A is a times the cyclic raising shift in n. The actual T deletes the outgoing edges at n=N-1 and n=k; if k=N-1 those edges coincide. Its two path lengths are h and N-h, with the zero-length second path omitted at h=N.</p>
+<p>Write <code>R_A(t)=(tI-A)^-1</code>, <code>z=a/t</code>, and in this fiber put</p>
+<pre><code>U_h=[b_0,b_(h mod N)],
+C_h(z)=[[1,-z^(N-h)],[-z^h,1]].</code></pre>
+<p>For EVERY h=1,…,N, exactly</p>
+<pre><code>(tI-T)^-1=R_A-R_A U_h C_h(a/t) U_h^t A R_A. (2)</code></pre>
+<p>For h&lt;N this is a rank-two Woodbury formula. Indeed</p>
+<pre><code>I+U_h^t A R_A U_h
+   =1/(t^N-a^N) *
+     [[t^N,a^(N-h)t^h],[a^h t^(N-h),t^N]],</code></pre>
+<p>whose inverse is precisely C_h. For h=N the two columns of U_h coincide; their total coefficient in (2) is <code>1-z^N</code>, the ordinary single-deleted-edge formula. This separately checks the overlapping-wall fiber; a rank-two inverse at coincident columns is not assumed.</p>
+<p>There is a global version without an explicit sum of fibers. Let <code>V_0,V_1:C^N -&gt; C^N tensor C^N</code> be</p>
+<pre><code>V_0 e_k=e_0 tensor e_k,
+V_1 e_k=e_((k+1) mod N) tensor e_(N-1),</code></pre>
+<p>and let H on their auxiliary head have entry k+1. Expanding (2) gives the fixed five-term identity</p>
+<pre><code>R_T=R_A-R_A V_0 V_0^t A R_A-R_A V_1 V_1^t A R_A
+   +R_A V_0 z^(N-H) V_1^t A R_A
+   +R_A V_1 z^H V_0^t A R_A.                (3)</code></pre>
+<p>The cyclic central factor is the FULL <code>A^N=a^N I</code>; it has not been reset at an ideal meridian. In the actual crossing <code>a=x^-1</code>, or <code>Q^-1 x^-1</code> for the opposite-root u realization. Both have <code>a^N=x^-N</code>, with the original peripheral mark retained. The negative transfer follows by exchanging the two heads.</p>
+<h2 id="only-cross-wall-sewing-has-the-original-small-circle-period">2. Only cross-wall sewing has the original small-circle period</h2>
+<p>Let f(t) be any germ holomorphic at zero, in particular either marked inverse cyclic dilogarithm used in the <a href="actual_whole_word_cyclic_dilog_resolvent_period.html">all-inverse original period</a>. Choose the original circle <code>0&lt;rho&lt;min(1,|a|)</code>. The cyclic matrix A is invertible, so R_A is holomorphic inside this circle. The first three terms of (3) are therefore holomorphic there after multiplication by f. Their Cauchy periods vanish. The exact functional calculus reduces to</p>
+<pre><code>f(T)=1/(2pi*i) integral_(|t|=rho) f(t) [
+     R_A V_0 (a/t)^(N-H) V_1^t A R_A
+    +R_A V_1 (a/t)^H V_0^t A R_A] dt.       (4)</code></pre>
+<p>Here <code>f(T)</code> means the first N Taylor coefficients evaluated at the actual nilpotent T. Equation (4) includes f=1, so the sewing is not merely a correction to higher coefficients. It supplies the entire identity operator’s period as well.</p>
+<p>Apply (4) to all <code>3m</code> literal transfer Euler slots in the full <code>9m</code>-curve original-word representation. Every other factor, including the six factorial coefficient functionals per crossing, Gaussian diagonals and ORIGINAL cap, remains unchanged. Multilinearity gives an exact sum of at most <code>2^(3m)</code> cyclic cross-wall sewing networks. The auxiliary head of each sewing map is its existing total-index residue; no number of new sector types grows with N. Any putative sector containing a source-free cyclic transfer slot has zero original period.</p>
+<p>This gives a genuine whole-network cyclic comparison with the source retained. It does not identify its kernels with the standard positive geometric tetrahedron tensor.</p>
+<p>The small-circle identity must not be turned into an unmarked termwise radial-cut identity. Separate R_A factors have poles at <code>t^N=a^N</code>; (2) cancels all of them in the full nilpotent resolvent. For a simple cyclic eigenvalue, its nonzero spectral projection is the residue. If such a pole meets a cyclic-D cut endpoint, separate sewing/bulk pieces can be nonintegrable even though the full original differential is integrable. Their relative cycles or matched residue corrections are compulsory. On <code>t=a exp(s/N)</code> the sewing weights have sizes <code>exp[-s h/N]</code> and <code>exp[-s(1-h/N)]</code>. For an interior physical momentum h/N they remain order one, rather than disappearing as N grows. They are part of the leading source transport.</p>
+<p>There is a controlled balancing gauge in this endpoint scale. Choose one common logarithm of z and set</p>
+<pre><code>B_h=diag(z^((N-2h)/4),z^((2h-N)/4)).</code></pre>
+<p>Directly,</p>
+<pre><code>B_h^-1 C_h B_h=[[1,-z^(N/2)],[-z^(N/2),1]]. (4a)</code></pre>
+<p>Its Hermitian part is at least <code>(1-|z|^(N/2))I</code> for <code>|z|&lt;1</code>. For <code>|z|=exp(-s/N)</code>, the condition number of B_h is at most <code>exp(s/2)</code> and this lower bound is <code>1-exp(-s/2)</code>, uniformly in h,N. Thus the sewing matrix has an actual accretive gauge in the natural endpoint scale. This does not make the full complex contraction positive or remove its cyclic poles.</p>
+<p>Those pole corrections can be seen by the ORIGINAL cap itself. At N=2,M=1,Q=-1,x=i, the opposite-root u realization has a=i and the actual Gaussian D is I. Keep the actual fusion C and the averaged original two-head pivotal cut with pivots <code>(-i,i)</code>. With the original common Cartan factor retained externally,</p>
+<pre><code>Phi(C R_T C^-1)=2i/t^2,
+Phi(C [two cross terms] C^-1)
+               =-2i(t-1)(t+1)/[t^2(t^2+1)^2]. (4b)</code></pre>
+<p>The latter has nonzero double-pole coefficient i at BOTH <code>t=i</code> and <code>t=-i</code>. These lie off the inverse-D branch cut <code>(-infinity,-1]</code>. Thus the extra cyclic-pole corrections are source-visible in the actual crossing, rather than artifacts of an arbitrary matrix probe. The small-circle equality is exact, but keeping only its old radial branch cuts is false. Indeed after multiplying by the actual inverse-D function <code>f(t)=(1+t)^(-1/2)</code>, continued from zero, the residues are <code>(-9-i)/(4sqrt(1+i))</code> and <code>(9-i)/(4sqrt(1-i))</code>, respectively. Both are nonzero with their original marks.</p>
+<p>The subsequent <a href="cyclic_sewing_regularized_cut_cycle.html">regularized cut theorem</a> now carries every sewing sector to a specified cut period: use at most two endpoint Taylor subtractions at ramified poles, and subtract the ordinary residues at unramified cyclic poles. Its equivalent differentiated radial integrals are absolutely convergent. This constructs the matched cut prescription rather than leaving its regularization unspecified; the geometric selection and final cancellation estimate remain open.</p>
+<h2 id="an-exact-fourierchirp-positive-quad-transform">3. An exact Fourier/chirp positive quad transform</h2>
+<p>Set <code>q=exp(pi*i/N)</code>, <code>Q=q^2</code>, <code>gamma=-q</code>, and define the unitary matrix</p>
+<pre><code>W_(k,n)=N^(-1/2) gamma^n Q^(kn+n(n+1)/2).    (5)</code></pre>
+<p>The chirp is periodic since <code>gamma^N Q^(N(N+1)/2)=1</code>, so (5) works at every parity without division modulo N. With <code>Z e_n=Q^n e_n</code> and the cyclic S above, direct multiplication gives</p>
+<pre><code>W Z^-1 W^-1=S,
+W Z^-1 S W^-1=gamma Z.                     (6)</code></pre>
+<p>For <code>u^N+v^N=1</code>, <code>uv!=0</code>, put</p>
+<pre><code>p(u,v)_n=Omega(u,v|n)=v^n/(uQ;Q)_n.</code></pre>
+<p>All denominators are nonzero, and p spans the one-dimensional kernel of <code>1-uZ-vS</code>. Define</p>
+<pre><code>u&#39;=q v/u, v&#39;=1/u.</code></pre>
+<p>Then exactly</p>
+<pre><code>W p(u,v)=c_N(u,v) p(u&#39;,v&#39;),
+c_N=N^(-1/2)sum_(n&lt;N)gamma^n Q^(n(n+1)/2)Omega(u,v|n),
+(u&#39;)^N=1-1/u^N, (v&#39;)^N=1/u^N.              (7)</code></pre>
+<p>Indeed the same p is killed by <code>1-(-X^-1Y)-X^-1</code> for <code>X=uZ,Y=vS</code>. Equations (6) turn these operators into <code>1-u'Z-v'S</code>. The target kernel has dimension one by its cyclic first-order recurrence. W is invertible, so the coefficient c_N is NEVER zero. This proves nonvanishing directly, rather than assuming it in a Fourier identity.</p>
+<p>The parameters return exactly after three applications. Also</p>
+<pre><code>W^3=omega_N I,
+omega_N=N^(-1/2)sum_(n&lt;N)gamma^n Q^(n(n+1)/2),
+|omega_N|=1.                               (8)</code></pre>
+<p>To prove this, conjugation (6) has order three on Z,S, hence W^3 is scalar. Its (0,0) entry is the displayed sum, since the product of chirps at a,b times Q^(ab) is the chirp at a+b modulo N. Unitarity proves its modulus. Consequently the three coefficients c_N multiply to the retained omega_N, not an independently chosen scalar one.</p>
+<h2 id="polynomial-source-coefficient-and-exact-cap-transport">4. Polynomial source coefficient and exact cap transport</h2>
+<p>Let the compatible logarithms of <code>u^N</code> and <code>v^N</code> remain in fixed compact sets, with their central values away from zero and one, and <code>u=exp(w/N),v=exp(s/N)</code>. Uniformly for every <code>0&lt;=n&lt;N</code>,</p>
+<pre><code>N^-C &lt;= |Omega(u,v|n)| / |1/(Q;Q)_n| &lt;= N^C. (9)</code></pre>
+<p>For a direct proof compare each denominator to <code>1-Q^j</code>. Away from a fixed number of endpoint indices its relative change is <code>O(1/min(j,N-j))</code>; the logarithms sum to <code>O(log N)</code>. At the finitely many endpoints the ratios tend to nonzero values proportional to <code>w+2pi*i*j</code> or <code>w-2pi*i*j</code>. Compactness and <code>exp(w)!=1</code> bound these above and below. The numerator <code>|v|^n</code> is bounded by fixed constants. The same estimate holds for the transformed marks <code>w'=pi*i+s-w</code>, <code>s'=-w</code>. Since W is unitary, (7) therefore gives</p>
+<pre><code>N^-C&#39; &lt;= |c_N(u,v)| &lt;= N^C&#39;.                 (10)</code></pre>
+<p>These are actual uniform upper/lower bounds for the selected local source coefficient. They concern fixed-log root paths; they do not identify central and semiclassical shape coordinates.</p>
+<p>All caps and tensor compositions have an exact transport rule. For any actual column p, row ell, pairing M and tensor R, use</p>
+<pre><code>p&#39;=Wp, ell&#39;=ell W^-1,
+M&#39;=(W_left^-1)^t M W_right^-1,
+R&#39;=(tensor W_out) R (tensor W_in)^-1.        (11)</code></pre>
+<p>Every contracted inverse pair cancels, preserving the entire original scalar, not just a unit vector. If a pointed fusion maps <code>p_A tensor p_B</code> to <code>p_C tensor p_D</code>, its transformed tensor maps the normalized target quad units with the exact factor <code>c_C c_D/(c_A c_B)</code>. This nonzero scalar must be kept or carried by the boundary rows. It is not reset to one. The same basis changes transport V_0,V_1 and their dual rows in (3)-(4), preserving all cross-wall sewing exactly.</p>
+<h2 id="why-this-is-not-yet-the-geometric-quad-bridge">5. Why this is not yet the geometric quad bridge</h2>
+<p>In the existing shared-face frame, the ACTUAL raw unit maps to <code>p(rho_f,a_f)</code>, since <code>G_f 1=(phi_f(n)^-1)_n</code>. But its central parameter is the source-flag cross-ratio</p>
+<pre><code>t_f(s)=(p_j-s)(p_i-p_k)/((p_i-s)(p_j-p_k)),</code></pre>
+<p>not the tetrahedral shape. Equation (7) is exactly cyclic ordering of that face with its source flag retained. Its Gaussian matrix is consequently compatible with the previous shared-face cyclic matrices; naming it a Fourier transform does not supply a new tetrahedron identification.</p>
+<p>This distinction is generic. Normalize four geometric flags to <code>(infinity,0,1,z)</code> and use the standard tetrahedron shape <code>w=1/z</code>. Two source-face parameters are</p>
+<pre><code>t_B(s)=s, t_A(s)=w(1-s)/(w-1).</code></pre>
+<p>Requiring both to lie in the positive quad orbit <code>{w,1-1/w,1/(1-w)}</code> forces w to be a root of one of</p>
+<pre><code>w^2+w-1, w^2-w-1, w^2-3w+1, 3w^2-3w+1.      (12)</code></pre>
+<p>This follows by substituting the three possible values of s in the second formula and comparing with the same three values. In the upper half-plane only <code>w=1/2+i/(2sqrt(3))</code> survives this necessary condition. Thus for every other positive tetrahedron no common source flag makes even these two face-unit parameters its positive quads. This rules out that specific facewise identification; it does not rule out a genuine four-leg geometric transform.</p>
+<p>There is also an all-N actual-source obstruction to omitting the nilpotent wall. On one head write <code>J_+=(I-|0&gt;&lt;0|)S</code>, <code>A=W S W^-1</code>. Since W’s zeroth column is constant,</p>
+<pre><code>W J_+ W^-1=(I-P)A, P=J_allones/N.           (13)</code></pre>
+<p>For the original fixed cap <code>p=e_0</code>, <code>ell=allones</code>, retain <code>p'=Wp,ell'=ell W^-1</code>. Then <code>ell' P p'=1</code>; the original averaged cut evaluates the transported projector as <code>1/N</code>. The wall is a specified, source-visible operator at every N. It cannot be declared negligible solely from a nonzero generic cyclic coefficient or a metaplectic basis change.</p>
+<p>The viable remaining route is therefore precise: carry the finite cross-wall sewing sectors (4), their matched cycles, and the transformed caps (11) into the positive geometric kernel. Equations (7)-(10) control a real local source transport; they do not prove that the whole original cut cycle has a nonzero geometric intersection. That global lower bound remains unproved.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_exact_quantum_quad_source_transport.py">Exact audit</a>. It checks (2)-(4), the all-level Fourier identities, the retained caps and whole actual signed words, and the polynomial equations in (12). The uniform proofs above do not rely on finite examples.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/exact_quantum_quad_source_transport.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-sewing-for-the-literal-two-head-transfer">1. Exact sewing for the literal two-head transfer</a><a href="#only-cross-wall-sewing-has-the-original-small-circle-period">2. Only cross-wall sewing has the original small-circle period</a><a href="#an-exact-fourierchirp-positive-quad-transform">3. An exact Fourier/chirp positive quad transform</a><a href="#polynomial-source-coefficient-and-exact-cap-transport">4. Polynomial source coefficient and exact cap transport</a><a href="#why-this-is-not-yet-the-geometric-quad-bridge">5. Why this is not yet the geometric quad bridge</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

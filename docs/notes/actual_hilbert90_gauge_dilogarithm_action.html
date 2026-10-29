@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual primitive Hilbert-90 gauge has a dilogarithm action and exponential norm · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_hilbert90_gauge_dilogarithm_action.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-actual-primitive-hilbert-90-gauge-has-a-dilogarithm-action-and-exponential-norm">The actual primitive Hilbert-90 gauge has a dilogarithm action and exponential norm</h1>
+<p>27 October 2026. The explicit cyclic source gauge in <a href="actual_source_fourier_twisted_traces.html">the actual Fourier twisted-trace theorem</a> has a rigorously computable exponential scale, even in the flat right-regular metric. This is an ACTUAL gauge from the original source construction, not an arbitrary central rescaling of a state. It proves why solving its norm-one transport equation does not by itself give a subexponential comparison to a geometric period.</p>
+<p>The result also identifies a concrete dilogarithm action of this source gauge on a regular chart. It does not identify that chart with the marked geometric A-component or its Bloch regulator.</p>
+<h2 id="the-specified-actual-gauge">1. The specified actual gauge</h2>
+<p>Let q=exp(pi<em>i/N), Q=q^2, h=2pi</em>i/N and z^N=0. The primitive k=1 source sector has the unique scalar-polynomial gauge with constant term one</p>
+<pre><code>g_N(z)=v_N(z)v_N(Qz)
+      =[u_N(z)u_N(Qz)]^-1,                   (1)
+u_N(z)=sum_(a=0)^(N-1) z^a/(Q;Q)_a,
+v_N=u_N^-1 in the nilpotent algebra.</code></pre>
+<p>It solves g_N(Qz)/g_N(z)=1/[(1-z)(1-Qz)], eliminating the corresponding inner twist of the source automorphism. The constant-term and transport equation make it unique: a quotient of two gauges would be Q-invariant, hence constant in degree&lt;N. The full matrix comparison can have other choices; no uniqueness claim for all matrix gauges is made.</p>
+<p>The CANONICAL polynomial representative of (1), of degree&lt;N, is exactly the Taylor polynomial through degree N-1 of exp(L_N(z)), where</p>
+<pre><code>L_N(z)=sum_(a=1)^(N-1)
+                (1+Q^a) z^a/[a(Q^a-1)]
+      =-i sum_(a=1)^(N-1) cot(pi*a/N) z^a/a.   (2)</code></pre>
+<p>Indeed the logarithm of v_N in the nilpotent algebra is sum z<sup>a/[a(Q</sup>a-1)]. Adding its shifted logarithm gives (2). This establishes the relation to the ACTUAL finite gauge before using analytic estimates. It is not an unproved resummation of quantum jets.</p>
+<h2 id="uniform-asymptotics-of-the-actual-polynomial-on-a-fixed-disk">2. Uniform asymptotics of the actual polynomial on a fixed disk</h2>
+<p>For |z|&lt;=1/4 one has, uniformly as N grows,</p>
+<pre><code>g_N(z)=exp[(2/h) Li_2(z)+O(1/N)].            (3)</code></pre>
+<p>The same statement with the opposite sign holds for the canonical degree-&lt;N representative of g_N^-1. In particular these finite polynomials have no zero on that disk for all sufficiently large N.</p>
+<p>Here is a proof that retains the truncation error. First, on every fixed disk |z|&lt;=rho&lt;1,</p>
+<pre><code>L_N(z)=(2/h)Li_2(z)+O(1/N).                 (4)</code></pre>
+<p>For a&lt;=N/2 use the uniform elementary estimate cot(t)=1/t+O(t) on 0&lt;t&lt;=pi/2. Dividing its error by a gives O(1/N) per coefficient, whose sum against rho^a remains O(1/N). For a&gt;N/2, the inequality</p>
+<pre><code>|cot(pi*a/N)| &lt;= N/[2 min(a,N-a)]</code></pre>
+<p>gives a tail O(rho^(N/2) log N), and the omitted tail of Li_2 is smaller. This proves (4) with both root endpoints accounted for.</p>
+<p>Put G_N=exp(L_N) as an ordinary analytic function. On |z|=1/2, the coarser |cot(pi*a/N)|&lt;=N/2 gives</p>
+<pre><code>|L_N(z)| &lt;= (N/2)log 2,
+|G_N(z)| &lt;= exp[(N/2)log 2].</code></pre>
+<p>Cauchy’s coefficient bound and the degree-N Taylor tail therefore give, throughout |z|&lt;=1/4,</p>
+<pre><code>|G_N(z)-g_N(z)| &lt;= 2 exp[-(N/2)log 2].       (5)</code></pre>
+<p>Meanwhile (4) gives</p>
+<pre><code>|G_N(z)| &gt;= exp[-N Li_2(1/4)/pi-O(1/N)].</code></pre>
+<p>For example Li_2(1/4)&lt;=13/48, so Li_2(1/4)/pi is strictly smaller than log(2)/2. Thus (5) is exponentially small RELATIVE to G_N on the entire disk. Combining it with (4) proves (3) for the actual canonical polynomial. Replacing L_N by -L_N proves the inverse statement by the identical estimate.</p>
+<p>The Taylor-tail estimate is essential. Nilpotent equality alone would not justify evaluating its analytic exponential away from zero, as the nonzero endpoint carry in <a href="actual_euler_meridian_half_step.html">the meridian half-step theorem</a> explicitly demonstrates.</p>
+<h2 id="a-positive-exponential-lower-bound-for-this-comparison-gauge">3. A positive exponential lower bound for this comparison gauge</h2>
+<p>Take w=i/4 and set</p>
+<pre><code>c=Im Li_2(i/4)/pi &gt; 0.</code></pre>
+<p>The alternating power series proves</p>
+<pre><code>Im Li_2(i/4) &gt;= 1/4-(1/4)^3/9=143/576.</code></pre>
+<p>Equation (3) gives the precise scalar-gauge rate</p>
+<pre><code>log|g_N(i/4)|=c N+O(1/N).                    (6)</code></pre>
+<p>To pass from this polynomial value to an ACTUAL finite operator, use the flat right-regular basis f^a e_j. The operator R_f is a truncated shift with unit coefficients. For |x|=1, its argument xR_f has norm one, and the powers applied to a degree-zero basis vector are orthogonal. If g_N(z)=sum c_a z^a, this gives</p>
+<pre><code>||g_N(xR_f)|| &gt;= (sum |c_a|^2)^(1/2)
+                &gt;= sqrt(15/16)|g_N(i/4)|.    (7)</code></pre>
+<p>The second inequality is just Cauchy–Schwarz for evaluation at |w|=1/4. Multiplication by x^a changes no coefficient norm. Thus this specified comparison gauge has exponential operator growth, with liminf N^-1 log||g_N(xR_f)||&gt;=c. Applying the inverse version of (3) at -i/4 proves the same lower bound for its inverse. Its condition number therefore has liminf logarithmic rate at least 2c.</p>
+<p>All these operators are unipotent: their diagonal entries and determinants are one. The source transport is cyclic and obeys its exact norm-one equation. Those algebraic facts coexist with the exponential norm in (7). This result concerns the flat coefficient metric. A nonunitary physical fusion change requires its own metric comparison.</p>
+<h2 id="implication-for-the-intended-torsor-proof">4. Implication for the intended torsor proof</h2>
+<p>The primitive source transport is explicitly SOLVED at each level, and its gauge action is the specified dilogarithm in (3). Its comparison is not tempered. A proof may carry this action into the marked regulator rather than try to discard the gauge as a normalization. Which combination of actions and source sectors is selected by the original knot word remains to be proved.</p>
+<p>This establishes neither a counterexample to the volume conjecture nor an exponential estimate for the knot invariant. The number c above is a gauge-chart value, not a knot’s hyperbolic volume. It does not rule out a different whole comparison with controlled norm. It does rule out inferring such control for this actual primitive gauge solely from Hilbert 90, finite cyclicity, unipotence or determinant one.</p>
+<p>The rigorous uniform normal-form estimate (3) is the new local period/action comparison here. The nonzero selected geometric image and global sector/cancellation estimates remain open.</p>
+<p>Subsequent direct source calculations now distinguish that operator norm from selected local periods. The <a href="actual_primitive_gauge_resonant_endpoint.html">canonical resonant endpoint</a> is an explicit Gauss period of size N^-1/2. The <a href="actual_gauge_period_selects_algebraic_point.html">normalized top-coefficient period</a> selects the algebraic point 2 on fixed polynomial observables and intertwines fixed ordered gauge meridian steps. Thus this specified source has an evaluated local leading period, not just an exponential operator estimate. Its full knot-word coupling and selected hyperbolic action remain unproved.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_hilbert90_gauge_action.py">The high-precision diagnostic</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_hilbert90_gauge_action_results.json">saved output</a> compare the literal finite v_N(z)v_N(Qz) polynomial with exp(L_N) and its dilogarithm action. The theorem rests on the uniform proof above; numerical rate samples are not used as a proof. Another agent independently checked its source-gauge orientation, the Cauchy remainder, both coefficient tails and the operator lower bound.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_hilbert90_gauge_dilogarithm_action.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-specified-actual-gauge">1. The specified actual gauge</a><a href="#uniform-asymptotics-of-the-actual-polynomial-on-a-fixed-disk">2. Uniform asymptotics of the actual polynomial on a fixed disk</a><a href="#a-positive-exponential-lower-bound-for-this-comparison-gauge">3. A positive exponential lower bound for this comparison gauge</a><a href="#implication-for-the-intended-torsor-proof">4. Implication for the intended torsor proof</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

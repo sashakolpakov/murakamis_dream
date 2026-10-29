@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Boundary states and an exact meridian-framing correction · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/general_boundary_state_and_framing.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="boundary-states-and-an-exact-meridian-framing-correction">Boundary states and an exact meridian-framing correction</h1>
+<p>Research note, 25 October 2026. We use the existing charged AK tensor and the Andersen–Malusà annihilator convention. The independent preferred-longitude construction is proved in <code>preferred_longitude_cochains.md</code>; the Phi estimates and saddle argument are those already proved in <code>literature_state_volume.md</code>.</p>
+<p>This gives a uniform boundary-state theorem for the ordinary-fiber case, including singular face matrices. It permits a rational longitude shear of the intermediate spectral coordinate and corrects it explicitly. It does not assume that the shear coefficient is zero.</p>
+<h2 id="hypotheses-and-the-condition-that-remains">1. Hypotheses and the condition that remains</h2>
+<p>Let a globally branched ideal triangulation of a knot exterior in S^3 have a complete positive geometric structure. The Fourier reduction gives N tetrahedral Phi factors and a d-dimensional allowed real shape space W=im S, where d=N-2k. Let A,B be N by N gluing matrices formed from N-1 independent edge rows and the full preferred-longitude row. The cochain theorem gives</p>
+<pre><code>W=im B^T, rank B=d,
+L={ (t,s):t in W, s-Gt in W^perp }=ker(A|-B).</code></pre>
+<p>The additional hypothesis for this note is</p>
+<pre><code>rank B_ed=d-1.                                     (1.1)</code></pre>
+<p>It means the longitude increases the B rank. All proper charts satisfy (1.1), since then d=N and the full edge B rank is N-1. Singular charts can also satisfy it, as the exact 6_2 realization does. The case rank B_ed=d, in which the affine plane moves with longitude, is not silently included.</p>
+<p>Orient a meridian m and preferred longitude l with intersection(m,l)=1. By the audited cusp formula their eliminated rows obey</p>
+<pre><code>A_m B_l^T-B_m A_l^T=-2.</code></pre>
+<p>Fix the geometric logarithmic lifts, normalized so that both peripheral holonomies are zero at completeness. Carry every additive pi constant in eliminating the prime coordinates.</p>
+<h2 id="rational-spectral-coordinate-and-its-actual-peripheral-meaning">2. Rational spectral coordinate and its actual peripheral meaning</h2>
+<p>By (1.1), e_N is in im B. There is a unique v in W such that</p>
+<pre><code>Bv=2e_N.</code></pre>
+<p>It is rational. Put p=S^T v and</p>
+<pre><code>beta=B_m v/2.                                      (2.1)</code></pre>
+<p>The coefficient beta is not presumed integral or zero. It records a possible longitude shear of the intermediate meridian coordinate.</p>
+<p>First B_m^T is in W. Indeed the vertical part of L has dimension N-d. The vertical part of the edge isotropic space has dimension (N-1)-(d-1)=N-d and is contained in it, so these spaces coincide. The meridian pairs to zero with every edge row and thus annihilates this vertical space. This is precisely B_m^T in W.</p>
+<p>Write S<sup>+=(S</sup>T S)<sup>(-1)S</sup>T and b_r=S^+ B_r^T. Symplectic pairing with all completed gluing rows, together with their projected G identity, then proves</p>
+<pre><code>(A_m-B_m G)S=-p^T,
+(A_l-B_l G)S=0,
+b_l^T p=2, b_m^T p=2beta.                          (2.2)</code></pre>
+<p>For example the first identity follows by testing on every B^T c in W: the meridian pairing gives -2c_N, whereas v.B^T c=2c_N. No inverse of a singular B is used.</p>
+<p>Choose a rational strict angle structure theta0, in units of pi, whose lifted meridian and longitude are both zero. It exists: the geometric angle structure lies in this rational affine subspace and in its open positive polytope; rational points are dense there. This is an existence argument, not a claim that arbitrary prescribed peripheral lifts admit such a positive point.</p>
+<p>In radians put</p>
+<pre><code>d0=pi*1-a0, C0=E c0,
+H=Q-P_+/2, W0=2Qd0-C0,
+y=i d0+S z.</code></pre>
+<p>All coefficients and imaginary offsets are rational multiples of pi. For any balanced angle structure theta, its first-angle variation belongs to W under (1.1). One way to see this is to eliminate the double-prime variables from the full edge block: its projected solvability space has dimension N-[(N-1)-(d-1)]=d and contains W, hence equals W.</p>
+<p>Thus d_theta-d0=S eta_theta. The angle equations and the projected Gaussian identity further give</p>
+<pre><code>S^T(W_theta-W0)=(lambda/2)p,
+p^T eta_theta=mu-beta*lambda,                       (2.3)</code></pre>
+<p>where mu,lambda are the actual lifted angular meridian and longitude. For the first equality, B(W_theta-W0)=lambda*e_N and B has row space W. For the second, use the first identity of (2.2) in the meridian angle equation. The zero peripheral values at theta0 fix the affine constant.</p>
+<h2 id="an-exact-fiber-of-the-existing-tensor">3. An exact fiber of the existing tensor</h2>
+<p>Keep the reduction constant c_X, including its three determinant Jacobians, and define</p>
+<pre><code>I_b(z)=exp[(i y^T H y+W0^T y)/(2pi h)]
+                  product_j Phi_b(y_j/(2pi sqrt(h))),
+h=b^2/(1+b^2)^2, y=i d0+S z.</code></pre>
+<p>Choose p_j nonzero. Positive Lebesgue disintegration defines</p>
+<pre><code>J_old(h,x)=c_X/|p_j|*(2pi sqrt(h))^(-d)
+            integral_(p^T z=x) I_b(z) dz_(others).  (3.1)</code></pre>
+<p>This includes the constant imaginary Gaussian term; it has not been removed without recording a phase. Use the contour corresponding to theta0, and its holomorphic continuation near the complete fiber.</p>
+<p>After rebasing a proper chart to S=I, with the same boundary coordinate and the same eliminated coordinate p_j, the earlier printed FAMED convention is J_print=sigma<em>p_j^2</em>J_old, where sigma=sign(det(script-A)*p_j). This explicit constant is the conversion already proved in the peripheral-phase note. It leaves the annihilator and volume limit unchanged. For singular charts the printed inverse-determinant formula is undefined, whereas the original charged tensor and (3.1) are defined.</p>
+<p>Let d_theta=pi*1-a, C_theta=E c and</p>
+<pre><code>Theta_theta=C_theta.d_theta-d_theta^T Q d_theta,
+k(a,c)=a c/(4pi)+(a-c)/12-pi/24,
+K0(theta)=sum epsilon_j*k(a_j,c_j)-pi*N_+/12
+                                           +Theta_theta/(2pi),
+K_old(theta)=K0(theta)+(W_theta-W0).d0/(2pi).</code></pre>
+<p>The exact charged Fourier and inversion identities now give</p>
+<pre><code>Z_AK(theta;b)=exp(pi i N/12+i K_old(theta)/h)
+   integral_(R+i(mu-beta*lambda)) J_old(h,x)
+                                  exp(lambda*x/(4pi h)) dx. (3.2)</code></pre>
+<p>Thus this function is recovered from a specifically normalized existing tensor, rather than selected as an arbitrary recurrence solution. Fourier–Laplace uniqueness applies on the strip supplied by strict angles. For fixed b, the charged factors and their derivatives have exponential tails. Their injective pullback to W, and then their fiber marginal, make J_old Schwartz with exponential tails on each smaller horizontal strip.</p>
+<p>Changing the rational reference within mu=lambda=0 only gives an explicit central phase. If W1,d1 are the new reference vectors, then W1-W0 annihilates W, p^T S^+(d1-d0)=0, and contour translation gives J1=exp[i*(W1-W0).d0/(2pi h)]J0. This phase is retained in the level; it does not change the boundary annihilator.</p>
+<h2 id="exact-classical-equations-and-the-geometric-fiber">4. Exact classical equations and the geometric fiber</h2>
+<p>Let F0 be the classical phase in the z coordinates of (3.1), and set g=(1/i)grad_z F0. For log z_shape=i<em>pi</em>1-y and log z_shape’’=Log(1+exp y), direct differentiation gives</p>
+<pre><code>g=S^T(G log z_shape+log z_shape&#39;&#39;)-i k0,
+k0=S^T(pi*G*1+W0).</code></pre>
+<p>The constant for any gluing or meridian row is exactly zero, because</p>
+<pre><code>pi*G*1+W0=G a0+b0&#39;&#39;,</code></pre>
+<p>where b0’’ is the reference double-prime angle vector. Substitution leaves A_r a0+B_r b0’’-nu_r, its reference lifted holonomy. Consequently</p>
+<pre><code>H_edge=b_edge^T g,
+H_l=b_l^T g,
+H_m=p^T z+b_m^T g.                                 (4.1)</code></pre>
+<p>At a constrained saddle grad F0=i<em>xi</em>p/2 these equations say</p>
+<pre><code>H_l=xi, H_m=x+beta*xi.                              (4.2)</code></pre>
+<p>Thus the actual intermediate coordinate is x=H_m-beta*H_l. No assumed meridian formula or presumed zero shear was used.</p>
+<p>At the complete geometric shapes g=0 and x=0. They lie on the affine plane y=i d0+W: subtract their gluing system from the reference angular system, then use the projection of ker(A|B), which is W. The geometric fiber has all imaginary y coordinates strictly between zero and pi.</p>
+<p>The real Hessian on its real tangent is negative definite. The uniform Phi remainder, global tail bound and complex saddle proof therefore give</p>
+<pre><code>lim_(h-&gt;0+) -2pi h log|J_old(h,0)|=Vol(M).            (4.3)</code></pre>
+<h2 id="converting-to-the-true-meridian-by-a-gaussian-operator">5. Converting to the true meridian by a Gaussian operator</h2>
+<p>Use the boundary coordinate t=x/(2pi sqrt(h)) and P=(2pi i)^(-1)d/dt. For real beta define the existing Fourier/Gaussian polarization operator</p>
+<pre><code>U_beta=exp(-2pi i beta P^2).</code></pre>
+<p>Here Fourier transformation and multiplication by a Gaussian are the operators of Andersen–Kashaev, <a href="https://arxiv.org/abs/1409.1208v1">arXiv:1409.1208v1</a>, Section 6, specialized to A=R. Our multiplier definition specifies the particular shear and its square-root phase, whose identities are checked below.</p>
+<p>Its definition as a Fourier multiplier fixes its normalization and phase. For beta nonzero its kernel is</p>
+<pre><code>(2i beta)^(-1/2) exp[pi i(t-t&#39;)^2/(2beta)],
+sqrt(2i beta)=sqrt(2|beta|)*exp(i*pi*sgn(beta)/4).</code></pre>
+<p>This follows by one Fresnel Gaussian Fourier integral. It also proves U_(-beta)U_beta=I exactly, with no unspecified projective multiplier. For beta=0 use the identity operator.</p>
+<p>Define the meridian wavefunction by this change of polarization:</p>
+<pre><code>J_mer(h,x)=1/(2pi sqrt(h)*sqrt(2i beta))
+   integral_R exp[i(x-x&#39;)^2/(8pi beta h)] J_old(h,x&#39;) dx&#39;, (5.1)</code></pre>
+<p>when beta is nonzero, and J_mer=J_old otherwise. The real integral is absolutely convergent since J_old is Schwartz. Its analytic continuation to a small horizontal strip is controlled by its exponential tails.</p>
+<p>Fourier transformation proves the exact Laplace relation</p>
+<pre><code>integral J_mer(h,x) exp(lambda*x/(4pi h)) dx
+   =exp[i beta lambda^2/(8pi h)]
+                     integral J_old(h,x) exp(lambda*x/(4pi h)) dx.</code></pre>
+<p>For rigor, first use real Fourier frequency. Both sides extend holomorphically to a frequency strip: a small contour shift in x’ preserves the old exponential tail, even after its quadratic chirp, and gives an exponential tail for U_beta J_old as well. Analytic continuation gives the displayed Laplace identity near lambda=0.</p>
+<p>Combining with (3.2) replaces K_old by</p>
+<pre><code>K_mer=K_old-beta*lambda^2/(8pi),</code></pre>
+<p>and its contour is R+i*mu. The existing AK level ell=-4K_mer/pi therefore recovers J_mer from that normalized tensor. This proves an exact state identification with a recorded boundary polarization. It does not depend on the unproved assertion beta=0. For the Gaussian-corrected representation this assertion is local in the peripheral variables near the reference, with continuation wherever the stated strip bounds hold. No unproved global continuation through peripheral singularities is being assumed.</p>
+<h2 id="volume-survives-this-exact-correction">6. Volume survives this exact correction</h2>
+<p>For beta nonzero, insert (3.1) into (5.1) and perform the real coarea disintegration. Its complete integral, with every scalar retained, is</p>
+<pre><code>J_mer(h,x)=c_X*(2pi sqrt(h))^(-d-1)*(2i beta)^(-1/2)
+   integral_R^d exp[i(x-p^T z)^2/(8pi beta h)] I_b(z) dz.</code></pre>
+<p>At x=0 the geometric point is still critical, since p^T z_<em>=0. The additional classical term i</em>(p^T z)^2/(4beta) is a real quadratic times i, and adds nothing to the real Hessian on a horizontal real plane. The N Phi factors still supply a negative definite real Hessian. The imaginary contour shift from the rational reference to the geometric point keeps p^T z fixed, so the new chirp creates no extra growth during that deformation.</p>
+<p>The same uniform remainder, tail and Gaussian proof now applies in dimension d. Its Gaussian coefficient is nonzero. For beta=0 it applies on the original (d-1)-dimensional fiber. In both cases</p>
+<pre><code>lim_(h-&gt;0+) -2pi h log|J_mer(h,0)|=Vol(M),            (6.1)</code></pre>
+<p>and J_mer is nonzero for sufficiently small h. Both normalizations have the same polynomial saddle scale h^(-1/2); the Gaussian correction does not hide an exponentially significant modulus.</p>
+<h2 id="the-exact-quantum-torus-and-its-annihilator">7. The exact quantum torus and its annihilator</h2>
+<p>In the Andersen–Malusà convention put</p>
+<pre><code>q=exp(2pi i b^2), Q=exp(-2pi b t), E=exp(2pi b P), EQ=qQE.</code></pre>
+<p>Fourier calculation, or the exact central commutator, gives</p>
+<pre><code>U_beta E U_beta^(-1)=E,
+U_beta Q U_beta^(-1)=q^beta Q E^(2beta).             (7.1)</code></pre>
+<p>The central power q^beta is essential. For rational beta use the specified finite cover for the fractional E powers and the indicated exponential branch of q^beta. The direct finite-product and moment argument also applies to the integral in Section 6, so a minimal annihilator in the ordinary b-shift algebra exists after descent.</p>
+<p>Equation (7.1) transforms full quantum-torus annihilators, including nonmonomial peripheral factors. It does not assert preservation of minimal degree after localizing only the Q coefficients. A conjugated polynomial is an annihilator; the primitive minimal generator is a separate statement supplied by the direct existence proof.</p>
+<p>The new saddle has x=H_m and phase derivative i H_l/2. Therefore its classical branch is</p>
+<pre><code>Q=exp(-H_m), E=exp(H_l/2).</code></pre>
+<p>The geometric peripheral factor divides the classical symbol of its minimal annihilator by the proved uniform saddle argument. Q<sup>(-1),E</sup>2 are the PSL(2) eigenvalue ratios; SL(2) lift signs must still be recorded. No equality with the full classical A-polynomial or a Jones-defined AJ operator is assumed.</p>
+<p>This theorem removes the extra zero-framing hypothesis from the ordinary-fiber construction. It does not treat rank B_ed=d, construct complete geometric triangulations for all alternating knots, identify arbitrary triangulations by certified moves, or prove H-triangulation limits. Those parts of the original objective remain open.</p>
+<p><code>audit_boundary_framing.py</code> checks the peripheral identities, a Gaussian image and its Laplace multiplier, and 405 quantum-torus multiplication identities before any specialization. The full audited figure-eight operator is transformed and recovered exactly by the inverse shear; all its generic peripheral coefficients are retained. The new framed polynomial is not asserted to have minimal E degree. For 6_2 it also matches this general construction to the previously recorded compact state, including its exact central factor exp(27pi i/(70h)).</p>
+<p>The subsequent <code>fourier_boundary_state.md</code> gives a single inverse-Fourier definition for both possible boundary ranks. It recovers this Gaussian correction exactly in the ordinary-fiber case and proves the volume limit when rank B_ed=d as well. The rank restriction in this note is therefore no longer needed in the combined theorem.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/general_boundary_state_and_framing.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#hypotheses-and-the-condition-that-remains">1. Hypotheses and the condition that remains</a><a href="#rational-spectral-coordinate-and-its-actual-peripheral-meaning">2. Rational spectral coordinate and its actual peripheral meaning</a><a href="#an-exact-fiber-of-the-existing-tensor">3. An exact fiber of the existing tensor</a><a href="#exact-classical-equations-and-the-geometric-fiber">4. Exact classical equations and the geometric fiber</a><a href="#converting-to-the-true-meridian-by-a-gaussian-operator">5. Converting to the true meridian by a Gaussian operator</a><a href="#volume-survives-this-exact-correction">6. Volume survives this exact correction</a><a href="#the-exact-quantum-torus-and-its-annihilator">7. The exact quantum torus and its annihilator</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

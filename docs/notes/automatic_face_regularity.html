@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Fourier rank conditions follow from knot-exterior homology · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/automatic_face_regularity.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-fourier-rank-conditions-follow-from-knot-exterior-homology">The Fourier rank conditions follow from knot-exterior homology</h1>
+<p>Research note, 25 October 2026. This supplies a uniform independent proof of the two rank conditions in <code>singular_faces_and_six_two.md</code>. It applies to every globally branched oriented ideal triangulation of a knot exterior in S^3. No geometricity, quantum-invariant existence theorem, or finite census assertion is used.</p>
+<h2 id="statement">1. Statement</h2>
+<p>Let X be the ideal compactification of an oriented one-cusped manifold M, with its single ideal vertex. Assume H^1(X;R)=0. For ordered face pairings put</p>
+<pre><code>D=X_0-X_1+X_2, R=X_2-X_3, E=diag(epsilon).</code></pre>
+<p><strong>Theorem.</strong> Rank D=N. For any basis F of ker D, set</p>
+<pre><code>T=E R F, U=X_0 F,
+K=basis of ker T, P=basis of im T,
+C=K^T U^T P.</code></pre>
+<p>Then rank C=dim ker T. Thus the Fourier reduction of the existing charged tensor always has a well-defined convergent residual integral. The full stacked face matrix [D;R] can still be singular.</p>
+<p>For knot exteriors in S^3 the cohomology assumption is automatic, as proved in Section 4. The theorem is also valid whenever the stated ideal-compactification cohomology vanishes.</p>
+<h2 id="a-local-relation-is-exactly-an-ideal-edge-cocycle">2. A local relation is exactly an ideal edge cocycle</h2>
+<p>Introduce three numbers (a,b,c) in an ordered tetrahedron of sign epsilon. Define four local momentum coefficients and four position coefficients</p>
+<pre><code>p=(b,b+c,c,c),
+q=(a,-a,a+epsilon*b,-epsilon*b).                     (2.1)</code></pre>
+<p>Suppose across every glued face pair i,j they satisfy</p>
+<pre><code>p_(t,i)=p_(u,j), q_(t,i)+q_(u,j)=0.                 (2.2)</code></pre>
+<p>The vector space of such relations is naturally isomorphic to the space of cellular real 1-cocycles on the ideal triangulation X.</p>
+<p><strong>Proof.</strong> In one tetrahedron give its vertices potentials</p>
+<pre><code>n_0=0, n_1=c, n_2=b+c, n_3=b+c+epsilon*a.</code></pre>
+<p>For the face opposite i, list its three vertices as u&lt;v&lt;w and let omega_i=epsilon*(-1)^i. Direct substitution gives</p>
+<pre><code>p_i=n_v-n_u, q_i=omega_i*(n_w-n_v).                 (2.3)</code></pre>
+<p>The same face has opposite omega on its two occurrences. Because face gluings preserve the three-vertex order, (2.2) is exactly equality of the two independent vertex differences on that face. Consequently all local differences lambda_ij=n_j-n_i descend to a single number on each global oriented edge. They sum to zero around every triangular face, so define a cellular edge cocycle.</p>
+<p>Conversely, a global edge cocycle is locally a gradient on each tetrahedron: set n_0=0 and n_i=lambda_0i. The triangular cocycle relations give every other edge difference. Then recover</p>
+<pre><code>c=n_1-n_0, b=n_2-n_1, a=epsilon*(n_3-n_2).</code></pre>
+<p>Equations (2.3) prove the face matching conditions. The constructions are inverse. This proves the claimed isomorphism, including injectivity.</p>
+<p>There is only one ideal vertex, so the cellular coboundary map from 0-cochains to 1-cochains is zero. Hence H^1(X;R)=0 says that the cocycle space itself is zero. All relations (2.1)–(2.2) must therefore vanish.</p>
+<h2 id="applying-the-local-lemma-to-the-matrices">3. Applying the local lemma to the matrices</h2>
+<p>First, if D^T a=0, use (2.1) with b=c=0 in every tetrahedron. Its position coefficients match because their paired sums are exactly D^T a; the momentum coefficients are zero. The lemma forces a=0. Thus D has full row rank N.</p>
+<p>Next suppose C has a nonzero left-null vector z. The corresponding global face assignment k=F K z obeys</p>
+<pre><code>Dk=0, Rk=0.</code></pre>
+<p>Let b=X_0 k. Since P spans E R(ker D), the condition z^T C=0 is</p>
+<pre><code>b^T E R F=0.</code></pre>
+<p>Therefore R^T E b annihilates ker D and is in im D^T. Choose a with</p>
+<pre><code>D^T a+R^T E b=0.                                   (3.1)</code></pre>
+<p>Set c=X_2 k. The equations Dk=Rk=0 say that the four occurrences of k in a tetrahedron are (b,b+c,c,c), exactly the momentum coefficients in (2.1). They match on paired faces since k is a global face assignment. The local position coefficients in (2.1) sum over faces to the left side of (3.1). Thus they match as well. The lemma forces a=b=c=0, hence k=0. Since F K has independent columns, z=0, a contradiction. C has full row rank as asserted.</p>
+<p>This argument uses only real finite-dimensional linear algebra and the explicit cocycle lemma. In particular it does not infer convergence from a general TQFT theorem with an unaudited analytic proof.</p>
+<h2 id="why-the-cohomology-vanishes-for-knot-exteriors">4. Why the cohomology vanishes for knot exteriors</h2>
+<p>Let M be the compact exterior of a knot in S^3. Its ideal compactification is M with its connected boundary torus collapsed to one point. Thus</p>
+<pre><code>H^1(X;R)=H^1(M,boundary M;R).</code></pre>
+<p>In the cohomology exact sequence of this pair, H<sup>0(M)-&gt;H</sup>0(boundary M) is an isomorphism. Hence H^1(M,boundary M) injects into H^1(M), with image the kernel of restriction to H^1(boundary M).</p>
+<p>Mayer–Vietoris for S^3=M union a solid torus gives H_1(M;Z)=Z and shows that the boundary meridian maps to its generator. For example H_1(boundary M)-&gt;H_1(M) direct-sum H_1(solid torus) is an isomorphism; the meridian is zero in the solid torus, and the other boundary generator generates its H_1. The meridian therefore generates H_1(M). Restriction H<sup>1(M)-&gt;H</sup>1(boundary M) is injective, so its kernel and H^1(M,boundary M) vanish. This proves the required hypothesis.</p>
+<h2 id="consequence-and-the-remaining-distinction">5. Consequence and the remaining distinction</h2>
+<p>The full-tensor volume theorem in <code>singular_faces_and_six_two.md</code> now applies to <strong>every globally branched complete positive geometric ideal triangulation of a knot exterior in S^3</strong>. Its Fourier rank assumptions have a uniform topological proof, rather than being additional census conditions. The independent geometry-to-saddle and analytic proofs remain necessary and are supplied in that note.</p>
+<p>This is still a statement about the full charged tensor at complete angles. A knot quantum A-state additionally needs its specified boundary fiber, phase, normalization, and peripheral identification. The general preferred-longitude/fiber construction and equivalence of arbitrary realizations are not consequences of the rank theorem alone. For 6_2 these are supplied by the separate finite certificates.</p>
+<p>The subsequent <code>preferred_longitude_cochains.md</code> supplies the uniform preferred-longitude relation. The ordinary-fiber construction and then <code>fourier_boundary_state.md</code> supply the normalized meridian state for both possible boundary ranks, preserving the complete geometric volume limit. Geometric realization and global triangulation identification are still separate obligations. The subsequent <code>preferred_longitude_cochains.md</code> now gives the uniform preferred-longitude relation. <code>general_boundary_state_and_framing.md</code> constructs the meridian state whenever the longitude increases the B rank, with an exact correction for any rational longitude shear. The other boundary-rank case remains separate.</p>
+<p>There is also no assertion here that every ideal triangulation admits a global branching or that every hyperbolic alternating knot has the required positive geometric realization of the chosen combinatorics. Those are separate uniform construction questions.</p>
+<p>The script <code>reduce_singular_faces.py</code> checks (2.3) symbolically and recomputes the ideal edge-cocycle matrix in each finite example. As a useful boundary check, the two-component word RLRLRL has a nonzero cocycle and local-relation space; the one-vertex hypothesis should not be dropped without a replacement argument.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/automatic_face_regularity.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#statement">1. Statement</a><a href="#a-local-relation-is-exactly-an-ideal-edge-cocycle">2. A local relation is exactly an ideal edge cocycle</a><a href="#applying-the-local-lemma-to-the-matrices">3. Applying the local lemma to the matrices</a><a href="#why-the-cohomology-vanishes-for-knot-exteriors">4. Why the cohomology vanishes for knot exteriors</a><a href="#consequence-and-the-remaining-distinction">5. Consequence and the remaining distinction</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

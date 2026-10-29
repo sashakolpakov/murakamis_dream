@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Regge symmetries, nilpotent period transport, and covers of A-curves · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/regge_period_covers_and_a_curves.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="regge-symmetries-nilpotent-period-transport-and-covers-of-a-curves">Regge symmetries, nilpotent period transport, and covers of A-curves</h1>
+<p>Research note, 26 October 2026, following the user’s suggestion of a twisted Regge group and descent from a cover. There is an explicit finite-by-Heisenberg structure for the ideal tetrahedron’s classical period. A finite ordering cover removes its finite part. We also derive the peripheral elimination and quantum restriction-of-scalars constructions for a manifold cover. None is asserted to identify the selected original Kashaev period on two different manifolds.</p>
+<p>Existing coverage includes the Regge transformation stated in <a href="https://arxiv.org/html/1903.04929v2#S1">Akopyan–Izmestiev, 1903.04929</a>, hyperbolic scissors congruence in <a href="https://arxiv.org/abs/math/0301318">Mohanty, math/0301318</a>, and the Weyl-group/period interpretation in <a href="https://arxiv.org/abs/1908.01141">Rudenko, 1908.01141</a>. For character varieties and A-polynomials under commensurability, see the stated results of <a href="https://web.math.ucsb.edu/~long/pubpdf/commensfinal.pdf">Long–Reid</a>. Only definitions and stated scope were consulted. The elementary group, period and elimination arguments below are independent.</p>
+<h2 id="the-ideal-part-of-the-regge-group-is-smaller">1. The ideal part of the Regge group is smaller</h2>
+<p>Order the six edge coordinates by opposite pairs</p>
+<pre><code>(a,a&#39;,b,b&#39;,c,c&#39;)=(01,23,02,13,03,12).</code></pre>
+<p>A Regge involution fixes a,a’ and replaces each of the other four coordinates e by s-e, with s=(b+b’+c+c’)/2. Introduce</p>
+<pre><code>p_i=(e_i+e&#39;_i)/2, d_i=(e_i-e&#39;_i)/2.</code></pre>
+<p>The involution swaps p_2,p_3 and acts on d by diag(1,-1,-1). Vertex permutations act by all three-coordinate permutations on p and by the 24 signed permutations with sign product +1 on d. The latter group acts faithfully as S_4 on</p>
+<pre><code>(1,1,1), (1,-1,-1), (-1,1,-1), (-1,-1,1).</code></pre>
+<p>The same diagonal sign change diag(1,-1,-1) occurs as a vertex double transposition and acts trivially on p. Its product with the Regge involution therefore swaps p_2,p_3 and fixes d. Conjugation gives the whole independent S_3 on p. Removing these p-actions from the vertex permutations gives the independent S_4 on d. Consequently</p>
+<pre><code>Regge = S_3(p) x S_4(d), order 144.            (1.1)</code></pre>
+<p>It is solvable of derived length three, with derived-group orders 144,36,4,1. It is not nilpotent: its S_3 quotient has lower central subgroup A_3 that remains A_3 on taking another commutator with S_3.</p>
+<p>For an ideal tetrahedron the dihedral-angle coordinates have</p>
+<pre><code>d_1=d_2=d_3=0, p_1+p_2+p_3=pi.</code></pre>
+<p>Thus the faithful action on ideal angles is just S_3, with kernel the S_4 factor in (1.1). The extra Regge involution merely swaps the other two angles. Nontrivial additional transport can still occur on logarithmic lifts, orientations, face tensors and source lattices; it is not an additional continuous symmetry of the ideal angle simplex.</p>
+<h2 id="the-explicit-twist-on-the-logarithmic-period">2. The explicit twist on the logarithmic period</h2>
+<p>This section uses a local tetrahedral period, distinct from the globally normalized peripheral R in the earlier notes. Set tau=pi*i and, for Im z!=0, use principal branches</p>
+<pre><code>u=Log z, v=Log(1-z),
+r=Li_2(z)+uv/2,
+epsilon=sign(Im z).</code></pre>
+<p>Then dr=(u dv-v du)/2. The shape generators</p>
+<pre><code>rho(z)=1/(1-z), sigma(z)=1-z</code></pre>
+<p>have the exact lifts</p>
+<pre><code>rho: (u,v,r,epsilon)
+  -&gt;(-v, u-v-epsilon*tau,
+              r-epsilon*tau*v/2-tau^2/6, epsilon),
+
+sigma: (u,v,r,epsilon)
+  -&gt;(v,u,-r-tau^2/6,-epsilon).                (2.1)</code></pre>
+<p>These follow by differentiating the displayed dilogarithms. For sigma, the constant is fixed by Li_2(1)=pi^2/6. For rho, evaluate the constant at its fixed point z=exp(epsilon<em>pi</em>i/3); no value of its dilogarithm is needed. Direct substitution verifies rho<sup>3=sigma</sup>2=1 and sigma rho sigma=rho^(-1), with the changed epsilon used at each step. A frozen choice of its sign would fail.</p>
+<p>There is a useful simultaneous centering:</p>
+<pre><code>ubar=u-epsilon*tau/3,
+vbar=v+epsilon*tau/3,
+rbar=r-epsilon*tau*(u+v)/6+tau^2/12.</code></pre>
+<p>It gives</p>
+<pre><code>drbar=(ubar dvbar-vbar dubar)/2,
+rho:   (ubar,vbar,rbar)-&gt;(-vbar,ubar-vbar,rbar),
+sigma: (ubar,vbar,rbar)-&gt;(vbar,ubar,-rbar).     (2.2)</code></pre>
+<p>Thus the central period transforms by the determinant character of this integral two-dimensional S_3 action. The orientation-twisted coordinate epsilon<em>rbar is invariant under that finite action. Equivalently, epsilon</em>D_Bloch(z) is invariant when the tetrahedral orientation is transported.</p>
+<p>This twist matters for descent. The six ordinary Bloch values in an unordered shape orbit consist of three D and three -D. Their sum is zero. An untwisted product/norm of exponential periods therefore erases the volume. Descending the oriented period requires the determinant local system, rather than averaging away its sign.</p>
+<h2 id="a-finite-by-two-step-nilpotent-period-group">3. A finite-by-two-step-nilpotent period group</h2>
+<p>An explicit discrete Heisenberg lattice preserving (2.2) is</p>
+<pre><code>H(a,b,c):
+  ubar -&gt; ubar+2tau*a, vbar -&gt; vbar+2tau*b,
+  rbar -&gt; rbar+tau*(a vbar-b ubar)+tau^2*c/3,
+  a,b,c in Z.</code></pre>
+<p>Its group law is</p>
+<pre><code>(a,b,c)(a&#39;,b&#39;,c&#39;)
+  =(a+a&#39;,b+b&#39;,c+c&#39;+6(ab&#39;-ba&#39;)).              (3.1)</code></pre>
+<p>Its commutator is central with c-coordinate 12(ab’-ba’), and every further commutator is trivial. The lattice is an enlargement convenient for the Tate constants; minimality is not claimed. Actual logarithmic monodromies around zero and one belong to it: in the centered coordinates they are H(1,0,-2epsilon) and H(0,1,-2epsilon), respectively.</p>
+<p>For an integral matrix A in the S_3 of (2.2), its action is</p>
+<pre><code>(a,b)-&gt;A(a,b), c-&gt;det(A)c.</code></pre>
+<p>This preserves (3.1). Hence the period symmetries embed in the explicit group</p>
+<pre><code>H_Z semidirect S_3.                           (3.2)</code></pre>
+<p>Its kernel H_Z is two-step nilpotent and has index six. The full semidirect product is not nilpotent, since its S_3 quotient is not. This is the concrete virtually nilpotent structure available here; it concerns the ideal shape period. It does not assert that all actual quantum tensor transports or their selected-source monodromy lie in this group.</p>
+<p>Passing to the labeled shape cover removes the finite S_3 ambiguity. Away from shapes with stabilizers it is a sixfold unramified cover of the unordered shape space. At fixed shapes, including the regular ideal shape, its ramification must be retained as an orbifold/root marking. The spectral lattices in <a href="cyclic_source_connection_and_resonant_flags.html">the resonant-source calculation</a> are relevant to that extension, but are not identified with this entire classical period object merely by their names.</p>
+<p>The nilpotent connection is already explicitly soluble. Its rank-three upper-triangular realization has strictly upper-triangular connection matrix Omega, and a product of three such matrices vanishes. Its path transport is exactly</p>
+<pre><code>I + integral Omega + integral_(t_1&lt;t_2)
+                                  Omega(t_1)Omega(t_2). (3.3)</code></pre>
+<p>Thus only logarithmic integrals and their length-two iterated integrals occur. These are periods; nilpotence does not make their horizontal values rational functions. The fundamental class still supplies the additive central mark.</p>
+<h3 id="the-quantum-ordering-maps-are-explicit-gaussians">The quantum ordering maps are explicit Gaussians</h3>
+<p>The same finite ordering part can be solved on the existing pointed shape module, without asserting a new quantum invariant. Use the conventions of <a href="pointed_tetrahedron_gluing.html#2-explicit-pointed-root-intertwiners">the pointed tetrahedron calculation</a>:</p>
+<pre><code>R=r_0^2, order(R)=N, r_0^N=-1,
+X e_a=s R^a e_a, Y e_a=t e_(a+1),
+s^N+t^N=1,
+p_0=1, p_a=t^a/product_(j=1)^a(1-sR^j).</code></pre>
+<p>The target roots for rho are (1/t,r_0 s/t,r_0), and those for sigma are (t,s,1/r_0). The pure Gaussian intertwiners, before pointing, are</p>
+<pre><code>(K_rho)_(i,a)=(-1)^a r_0^(a^2) R^(ia)/N,
+(K_sigma)_(i,a)=R^(ia)/N.                    (3.4)</code></pre>
+<p>To derive them, the zeroth spectral-projector column in the earlier construction is the constant vector 1/N. For rho, the remaining columns apply (-r_0<sup>(-1)P</sup>(-1)Z)^a to it, where Z is the unit clock and P the unit shift. This gives the first formula. For sigma the column operator is Z^a, giving the second. Thus these matrices are independent of the shape roots, with their Gaussian phases still retained.</p>
+<p>For the target kernel p’, set</p>
+<pre><code>h_g=(K_g p&#39;)_0, J_g=K_g/h_g.                 (3.5)</code></pre>
+<p>The kernel is one-dimensional and its zeroth component is one, so h_g is nonzero and J_g p’=p. Irreducibility and this equality make every S_3 relation strict for the J’s. These are the existing pointed adapters, now in closed form.</p>
+<p>The unpointed phase is also explicit. Direct matrix products give</p>
+<pre><code>K_sigma(R)K_sigma(R^(-1))=I/N,
+K_rho^3=(G_N/N^2) I,
+G_N=sum_(a=0)^(N-1)(-1)^a r_0^(a^2).         (3.6)</code></pre>
+<p>For the second equation, the product commutes with X,Y by the order-three monomial transformation, so it is scalar. Its (0,0) entry is G_N/N^2 after reindexing by a+b. The sequence (-1)^a r_0<sup>(a</sup>2) is N-periodic even when N is even. Orthogonality of the R-character sum proves |G_N|^2=N for the complex unit roots. Its phase is not dropped.</p>
+<p>In the standard Hermitian norm sqrt(N)K_g is unitary. Consequently the pointed scalar has the exact norm</p>
+<pre><code>|h_g|=||p&#39;||/(sqrt(N)||p||).                 (3.7)</code></pre>
+<p>The normalizations in a finite ordering cycle telescope to the explicit Gaussian scalar (3.6). They do not create an uncontrolled exponential multiplier around that cycle. This solves the quantum shape-ordering part at every N, including even and composite N. It does not identify the shape generator with the actual knot’s relative source or construct its full face-tensor Regge action.</p>
+<h2 id="what-a-finite-manifold-cover-does-to-the-geometric-a-curve">4. What a finite manifold cover does to the geometric A-curve</h2>
+<p>Now let p:M’-&gt;M be an orientation-preserving finite cover of degree D, with M a one-cusped hyperbolic knot exterior. For one boundary component upstairs choose oriented peripheral bases and write</p>
+<pre><code>mu&#39;=mu^a lambda^b, lambda&#39;=mu^c lambda^d,
+P=[[a,b],[c,d]], k=det P&gt;0.</code></pre>
+<p>Use the squared eigenvalues m,l of the earlier PSL boundary convention, retaining SL sign characters separately. Restriction of any representation downstairs gives exactly</p>
+<pre><code>m&#39;=m^a l^b, l&#39;=m^c l^d.                       (4.1)</code></pre>
+<p>This map of two algebraic tori is an isogeny of degree k. If A_geo(m,l)=0 is the marked geometric factor, the polynomial of its image is obtained by Laurent elimination:</p>
+<pre><code>(A_geo(m,l), m&#39;-m^a l^b, l&#39;-m^c l^d)
+                        intersect C[m&#39;^(+/-1),l&#39;^(+/-1)]. (4.2)</code></pre>
+<p>Its radical is generated by an irreducible image polynomial. A norm/resultant can carry a power of this polynomial: that power is the generic degree of the map on the curve. It must not be mistaken for another component.</p>
+<p>If M’ has one cusp, k=D. The image in (4.2) is its geometric A-factor, with its indicated marking. Here is a local proof of the assertion about the geometric branch. The lifted positive geometric triangulation gives a smooth one-dimensional marked gluing germ upstairs. Downstairs use U=Log m and V=Log l with positive cusp slope t=dV/dU. The restricted family has</p>
+<pre><code>dU&#39;/dU=a+b t !=0,</code></pre>
+<p>because Im t&gt;0 and (a,b)!=(0,0). It therefore fills the upstairs geometric germ locally. Taking its irreducible algebraic closure gives exactly the indicated geometric factor. This does not determine the other A-components upstairs: representations there are not required to extend downstairs.</p>
+<p>If M’ has several cusps, its full boundary object is an eigenvalue variety in a higher-dimensional torus. The restricted downstairs family is one-dimensional, not the whole geometric deformation space. The boundary degrees k_j satisfy sum k_j=D.</p>
+<p>For the connected cyclic cover from the meridian modulo D, there is one cusp and (mu’,lambda’)=(mu^D,lambda). Thus</p>
+<pre><code>A&#39;_geo(m&#39;,l&#39;) = square-free Laurent part of
+                  Res_t(t^D-m&#39;, A_geo(t,l&#39;)). (4.3)</code></pre>
+<p>Conversely A_geo divides A’_geo(m^D,l). The marked lift selects it among possible translated factors. The cover need not be a knot complement in S^3, so the appropriate A-object is that of its torus-boundary manifold.</p>
+<h2 id="the-marked-regulator-descends-with-exactly-the-cover-degree">5. The marked regulator descends with exactly the cover degree</h2>
+<p>Use the original peripheral normalization</p>
+<pre><code>dR=-(U dV-V dU)/4.</code></pre>
+<p>On the common centered logarithmic cover, (4.1) gives</p>
+<pre><code>U&#39;=aU+bV, V&#39;=cU+dV,
+U&#39;dV&#39;-V&#39;dU&#39;=k(UdV-VdU).                      (5.1)</code></pre>
+<p>For one cusp k=D. Lift the marked ideal fundamental cycle: every tetrahedron and its flattening occurs D times. This fixes the integration constant, so exactly on that marking</p>
+<pre><code>p^*R&#39;=D R,
+p^*P&#39;=P^D,
+log||P&#39;_hyp||=D log||P_hyp||,
+Vol(M&#39;)=D Vol(M).                            (5.2)</code></pre>
+<p>The map on period spaces is implicit in p^*. For multiple cusps sum (5.1) over them; sum k_j=D gives the same marked total regulator identity along the restricted family. This is a genuine classical cover-and-descent law. It follows from the lifted fundamental cycle, not from the A-polynomial coefficients alone.</p>
+<h2 id="the-quantum-boundary-parameter-changes-under-the-same-map">6. The quantum boundary parameter changes under the same map</h2>
+<p>For this algebraic statement choose a quantum-torus convention</p>
+<pre><code>lhat mhat = qbold mhat lhat,
+W(a,b)=qbold^(ab/2) mhat^a lhat^b.</code></pre>
+<p>The half power is retained as a coefficient root, without division by two modulo a level. Direct multiplication gives</p>
+<pre><code>W(c,d) W(a,b)=qbold^k W(a,b) W(c,d).          (6.1)</code></pre>
+<p>Thus the peripheral inclusion embeds the cover torus with parameter qbold’=qbold^k. It is not a map between the two displayed quantum tori at an unchanged generic parameter. The actual SL/PSL and half-longitude conventions must be converted before applying (6.1) to the knot operator.</p>
+<p>At a root of order N, qbold^k has order N/gcd(N,k). Using the principal roots instead, qbold=exp(2pi<em>i/(kN)) gives qbold’=exp(2pi</em>i/N). A modular inverse choice when gcd(N,k)=1 generally chooses another root embedding. It is not automatically the original archimedean sequence.</p>
+<p>This explains why a cover volume theorem cannot simply be divided by D to prove the original finite-state conjecture: the chosen period, level, source and boundary convention must also be compared. No equality of knot invariants under arbitrary finite manifold covers is assumed here.</p>
+<h2 id="a-precise-quantum-transfer-exists-by-restriction-of-scalars">7. A precise quantum transfer exists by restriction of scalars</h2>
+<p>For the cyclic case let F=C(qbold,m), F_0=C(qbold,u), u=m^k, and sigma(m)=qbold m, sigma_0(u)=qbold^k u. Take the specified semilinear module T=B(m)sigma of rank r. In the F_0 basis 1,m,…,m^(k-1), put</p>
+<pre><code>Z e_a=e_(a+1), Z e_(k-1)=u e_0,
+D_q=diag(1,qbold,...,qbold^(k-1)).</code></pre>
+<p>Replacing coefficients f(m) by multiplication matrices f(Z) gives the exact restricted matrix</p>
+<pre><code>B_res = Mult(B) (D_q tensor I_r),
+T_res=B_res sigma_0, rank k r.               (7.1)</code></pre>
+<p>The rank-r block ordering in this formula is by powers of m. This is a literal restriction of the original module, not a definition of the actual quantum invariant of M’.</p>
+<p>Assume B has a defined specialization at qbold=1. Its restricted characteristic polynomial there is</p>
+<pre><code>det(L-B_res,0)=Norm_(F/F_0) det(L-B_0).       (7.2)</code></pre>
+<p>Indeed after adjoining all k roots of u, the multiplication representation diagonalizes into the k evaluations at zeta*m. For a companion this is the resultant of its classical symbol, including its leading-coefficient denominators. No AJ theorem for the actual knot is inferred from (7.2).</p>
+<p>There is also an exact root comparison wherever the specified rational matrices specialize. If qbold has order N and gcd(N,k)=1, sigma_0 has order N. The N-step monodromy of (7.1) is the restriction of T^N. Its characteristic is</p>
+<pre><code>D_res(u^N,v)
+   =Norm_(C(m^N)/C(m^(kN))) D_N(m^N,v).       (7.3)</code></pre>
+<p>If gcd(N,k)&gt;1 the minimal downstairs orbit is shorter; its gcd(N,k)-th power is the restricted T^N, but (7.3) cannot be used as the characteristic of that shorter orbit. These extra sectors are retained, including at even levels.</p>
+<p>Restriction also keeps the original source, with its extra channels. A trivial rank-one F quotient restricts to rank k over F_0, with semilinear matrix D_q. Its distinguished one is the basis element 1, rather than all k directions being declared a trivial line. Dropping these directions or taking a scalar trace would change the selected period unless the corresponding source and co-source comparison is proved.</p>
+<h2 id="the-implication-for-the-proposed-strategy">8. The implication for the proposed strategy</h2>
+<p>An ordering/parameter cover can remove the finite Regge part of the classical period transport; its Heisenberg equations are explicitly solved by (3.3). A finite manifold cover has the precise geometric A-factor and marked regulator laws (4.2)–(5.2), and a natural candidate quantum transfer is (7.1). This makes the cover strategy a concrete comparison problem rather than an unspecified simplification of A.</p>
+<p>A finite sigma-stable algebraic field cover cannot on its own split a nonsplit horizontal affine source: taking the normalized field trace of a putative splitting gives one downstairs. This is proved in <a href="affine_quantum_a_period.html#2-finite-algebraic-covers-do-not-kill-a-nonzero-affine-class">the affine source note</a>. It does not rule out useful manifold covers, which change the group and module. Nor does it identify their selected Kashaev-type states with (7.1).</p>
+<p>There is a precise group-theoretic target for the quantum comparison. If Gamma is a transport group and Gamma_0 has finite index, their Zariski closures have the same identity component. Indeed the larger closure is a finite union of cosets of the smaller one, so its identity component is contained in that smaller closure. The identity components therefore coincide. A finite cover can remove a finite permutation quotient; it cannot turn a nonnilpotent connected transport group into a nilpotent one. For the period group (3.2), the connected part is explicitly Heisenberg. For the selected actual quantum period, identifying the relevant connected group, or a marked quotient of it, remains necessary.</p>
+<p>The useful cover statement must also be controlled across levels. A finite group at one fixed root level can always be killed by some finite cover, which by itself gives no bound on its selected period as N grows. The ordering degree six here is independent of N, and its quantum Gaussian cycles have the explicit polynomial norms (3.6). The additional root covers, source normalizations and level changes are retained separately.</p>
+<p>The <a href="actual_braid_group_and_spectral_source.html">subsequent actual-braid calculation</a> now proves that the full retained braid transport has a connected subgroup with an SL_2 quotient at every level. Two genuine pure powers supply square-zero logarithms with strictly negative mixed ordinary trace, and the actual pivotal moment is -2N<sup>2/(q-q</sup>(-1)). Thus finite-index restriction cannot make that full group nilpotent. The finite ordering result above still holds. A useful cover can instead split the explicit spectral source algebra, reducing its simultaneous comparison to a scalar line.</p>
+<p>The remaining conjecture is still the original marked period identity (2pi/N)log|F_N(1)|-&gt;Vol(M). Its selected quantum-A period has not been identified with the calibrated regulator line, or descended from an upstairs selected period with controlled norm. The braid-image theorem does not determine the minimal operator’s difference-Galois group.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_regge_cover_transfer.py">The audit</a> checks the complete finite Regge action, the period lifts, the orientation twist, the Heisenberg law, peripheral forms, elimination, and the quantum restriction matrices. <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/regge_cover_transfer_results.json">Results</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/regge_period_covers_and_a_curves.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-ideal-part-of-the-regge-group-is-smaller">1. The ideal part of the Regge group is smaller</a><a href="#the-explicit-twist-on-the-logarithmic-period">2. The explicit twist on the logarithmic period</a><a href="#a-finite-by-two-step-nilpotent-period-group">3. A finite-by-two-step-nilpotent period group</a><a href="#what-a-finite-manifold-cover-does-to-the-geometric-a-curve">4. What a finite manifold cover does to the geometric A-curve</a><a href="#the-marked-regulator-descends-with-exactly-the-cover-degree">5. The marked regulator descends with exactly the cover degree</a><a href="#the-quantum-boundary-parameter-changes-under-the-same-map">6. The quantum boundary parameter changes under the same map</a><a href="#a-precise-quantum-transfer-exists-by-restriction-of-scalars">7. A precise quantum transfer exists by restriction of scalars</a><a href="#the-implication-for-the-proposed-strategy">8. The implication for the proposed strategy</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

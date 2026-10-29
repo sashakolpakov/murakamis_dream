@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Whole Fourier polarization of the actual second cut · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_two_cut_fourier_polarization_and_cap.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="whole-fourier-polarization-of-the-actual-second-cut">Whole Fourier polarization of the actual second cut</h1>
+<p>Research theorem, 27 October 2026. The second identity wire admits an exact change of polarization over its WHOLE actual coefficient ring. It preserves the original source, every peripheral factor, both endpoint defects and normal derivatives. Its Fourier variable is independent of the old physical edge position. A bounded-band Gaussian statement gives a character incidence, rather than an identification of these two bases.</p>
+<h2 id="the-actual-tensor-and-its-unchanged-source">1. The actual tensor and its unchanged source</h2>
+<p>Use the literal two-cut tensor of <a href="actual_two_cut_framing_port_reconstruction.html">the port reconstruction</a>,</p>
+<pre><code>T_(c,d;a,b),  0&lt;=a,b,c,d&lt;N.</code></pre>
+<p>The original pivots, caps, crossing scalars, preferred peripheral lifts and zero-framing line are already in T. Opening an internal identity edge supplies no new pivot. Its original source is</p>
+<pre><code>Phi(T)=(1/N) sum_(a,c,b) T_(c,b;a,b).                 (1.1)</code></pre>
+<p>Thus the first cut retains its actual rank-one row, including all first output bands. The second cut is an identity closure. For charge-zero uninserted/scalar-Green tensors c+d=a+b; (1.1) then also equals the double-diagonal sum/N. Current tensors require (1.1), not that restricted formula.</p>
+<p>Let R be the actual ring localized at the differences Q<sup>i-Q</sup>j, i!=j, for 0&lt;=i,j&lt;N. Every such difference is a unit at a primitive Q_N. Retain all other actual parameters, including q with q^2=Q, M, Q^N, M^N and the original peripheral rational maps/lattices. Put</p>
+<pre><code>y_j=Q^j,   V_(j,b)=y_j^b.</code></pre>
+<p>The determinant is the usual product of y_j-y_i. Elementary polynomial interpolation gives the exact inverse</p>
+<pre><code>(V^-1)_(b,j)=[X^b] L_j(X),
+L_j(X)=product_(m!=j) (X-y_m)/(y_j-y_m).             (1.2)</code></pre>
+<p>This is an isomorphism of finite free R-modules before taking jets. Define</p>
+<pre><code>T^V=(I tensor V) T (I tensor V^-1).</code></pre>
+<p>Partial trace on the second wire proves EXACTLY</p>
+<pre><code>sum_j T^V_(c,j;a,j)=sum_b T_(c,b;a,b),
+Phi(T^V)=Phi(T).                                   (1.3)</code></pre>
+<p>All actual matrix products, inserted Green observables and Hopf rows are transported by this same conjugation. For example the actual two-port coproduct is (I tensor V) Delta(h) (I tensor V^-1), with the original ordering and prefixes. It is not replaced by a scalar left/right action on a reshaped diagonal array. An internal wire requires V and V^-1 on its two sides, so arbitrary word composition, cups/caps and all existing closure factors are preserved.</p>
+<p>For original source maps psi and phi on that wire, a general boundary source is transported as V psi and phi V^-1. Here the identity closure is invariant, which explains (1.3). This is a basis change of the actual state and source, not the definition of a replacement state.</p>
+<p>At the primitive root, character orthogonality gives</p>
+<pre><code>(V^-1)_(b,j)=Q_N^(-bj)/N.                          (1.4)</code></pre>
+<p>The RAW new two-variable array retaining the first source is</p>
+<pre><code>Jtilde_(a,j)=sum_c T^V_(c,j;a,j),
+Phi(T)=(1/N)sum_(a,j) Jtilde_(a,j).                (1.5)</code></pre>
+<p>For charge-zero T this becomes the exact full-band formula</p>
+<pre><code>Jtilde_(a,j)=(1/N) sum_(b,q)
+                 Q_N^(jq) T_(a-q,b+q;a,b).        (1.6)</code></pre>
+<p>Only physically supported terms occur, with zero extension otherwise. The 1/N in (1.6) is the Fourier inverse; it does NOT replace the original 1/N in (1.5). The entire finite band range is transformed before any Gaussian expansion.</p>
+<p>At Q_N, if one instead fixes c=a in T^V, charge conservation forces d=b in the old tensor. Consequently T^V_(a,j;a,j)=(1/N)sum_b T_(a,b;a,b), independent of j. The new momentum coordinate survives because the first source is retained, rather than replaced by a diagonal trace.</p>
+<h2 id="exact-whole-clock-and-shift-operators-including-endpoints">2. Exact whole clock and shift operators, including endpoints</h2>
+<p>On the old head let B=diag(Q^b), J=diag(b), and</p>
+<pre><code>U=sum_(b&lt;N-1) E_(b+1,b),
+Uflat=sum_(b&gt;0) E_(b-1,b).</code></pre>
+<p>These are truncated shifts; U^-1 is not notation for Uflat. Put</p>
+<pre><code>C=V B V^-1,    Y=diag(y_j),
+u_j=y_j^N,     v^t=e_(N-1)^t V^-1,
+uminus_j=y_j^-1, w^t=e_0^t V^-1.</code></pre>
+<p>Direct evaluation of a polynomial at the N nodes proves</p>
+<pre><code>C_(i,j)=delta_(j,i+1)                         if i&lt;N-1,
+C_(N-1,j)=L_j(Q^N),
+
+V U V^-1=Y-u v^t,
+V Uflat V^-1=Y^-1-uminus w^t.                     (2.1)</code></pre>
+<p>For example (V U)_(j,b)=y_j^(b+1), except for its missing last column. Subtracting that column gives the rank-one correction. The backward identity removes the missing first column. At Q_N, C is the cyclic backward shift, u is the all-ones column, v_j=y_j/N, and w_j=1/N. The WHOLE last row in (2.1) must be retained before normal differentiation.</p>
+<p>For 1&lt;=m&lt;N the complete higher forward carry is</p>
+<pre><code>V U^m V^-1=Y^m
+   -sum_(b=N-m)^(N-1) (y_j^(b+m))_j e_b^t V^-1.  (2.2)</code></pre>
+<p>In particular the transform does not cyclically identify the original finite head or its Green tails. The finite relative head/tail module is carried along by the same isomorphism. Unwrapped tails are not discarded or aliased by using (1.4); their exact independent-power Fourier cap is recorded in <a href="finite_band_fourier_cap_and_independent_clock.html">the finite Fourier theorem</a>.</p>
+<p>The actual balanced finite matrices, as literal compressed matrices for whole Q,M, are</p>
+<pre><code>F=U(I-QB),
+Ecal=Uflat(M B^-1-M^-1 I),
+K=x B^-1,   x=-M/q.</code></pre>
+<p>Their exact transforms are</p>
+<pre><code>F^V=Y(I-QC)-(1-Q^N)u v^t,
+Ecal^V=Y^-1(M C^-1-M^-1 I)
+                     -(M-M^-1)uminus w^t,
+K^V=x C^-1.                                       (2.3)</code></pre>
+<p>Indeed v^t C=Q<sup>(N-1)v</sup>t and w^t C<sup>-1=w</sup>t. These identities prove (2.3), including its signs. Thus the two actual endpoint defects delta=1-Q^N and kappa=M-M^-1 remain distinct. At the complete root both vanish, but</p>
+<pre><code>D_Q[-delta u v^t]_(Q_N)=N u v^t,
+D_M[-kappa uminus w^t]_(M=1)=-2 uminus w^t.        (2.4)</code></pre>
+<p>Here D_Q=Q partial_Q and D_M=M partial_M with the other parameter fixed. The simultaneous integral-color path must subsequently be pulled back with its actual q/M relation. These normal terms cannot be removed by specializing (2.3) prematurely.</p>
+<p>Likewise</p>
+<pre><code>C^N=V diag(Q^(Nb)) V^-1,
+C^N|_(Q_N)=I,
+D_Q(C^N)|_(Q_N)=N V J V^-1.                       (2.5)</code></pre>
+<p>The cyclic root value does not identify its whole normal clock.</p>
+<h2 id="the-normal-connection-of-this-actual-basis-change">3. The normal connection of this actual basis change</h2>
+<p>For fixed N, the matrix</p>
+<pre><code>A_Q=(D_Q V)V^-1=J_eval (V J V^-1),
+J_eval=diag(j),                                   (3.1)</code></pre>
+<p>is regular at the primitive root. Differentiating an arbitrary whole transported matrix gives</p>
+<pre><code>D_Q T^V=(I tensor V)(D_Q T)(I tensor V^-1)
+                               +[I tensor A_Q,T^V].       (3.2)</code></pre>
+<p>Every normal jet follows by the product rule; the connection term is forced. Partial trace of its commutator is zero entrywise on the first wire, so it preserves the full original source also at first normal order. Invariant functions or extra source-dependent coupons must themselves be transported, rather than commuted past V without their endpoint terms.</p>
+<p>In the usual complex root metric V/sqrt(N) is unitary. Hence</p>
+<pre><code>||A_Q||_op &lt;= (N-1)^2.                            (3.3)</code></pre>
+<p>This is a polynomial bound for the forced FIRST normal basis term, not a bound for the actual entire knot state. Regularity holds in a root-dependent neighborhood for each N. It does not produce a single meromorphic family at the accumulation point Log Q=0.</p>
+<p>The same statements hold with the original full ADO peripheral line</p>
+<pre><code>d_N(M)=epsilon_N (M-M^-1)/(M^N-M^-N)</code></pre>
+<p>retained as its actual rational map/source lattice. Nothing here replaces it by its complete value epsilon_N/N before derivatives.</p>
+<h2 id="independent-band-and-position-variables-before-polarization">4. Independent band and position variables before polarization</h2>
+<p>Write J^(p,q)<em>(a,b)=T</em>(a+p,b+q;a,b) and</p>
+<pre><code>F(x,y;xi,eta)=sum J^(p,q)_(a,b) x^a y^b xi^p eta^q.</code></pre>
+<p>The coupling variables x,y generate position weights. The physical input clock at the second cut is B=Q^b, while eta generates the OUTPUT OFFSET q. Direct index identities give</p>
+<pre><code>B_input:        y -&gt; Qy,
+B_output:       (y,eta) -&gt; (Qy,Qeta),
+q moment:       E_eta=eta partial_eta,
+Phi(T)=(1/N) CT_eta F(1,1;1,eta).                 (4.1)</code></pre>
+<p>These are different commuting coordinates before a polarization. The last cap closes the band and leaves the physical b sum intact. The finite root average and unwrapped alias corrections are exact in <a href="finite_band_fourier_cap_and_independent_clock.html">the independent-clock cap theorem</a>. Equations (1.2)–(1.6) instead change the actual wire basis: the old physical b is summed internally, and j becomes an external spectral coordinate. This is a source-preserving change of polarization, rather than the substitution B=eta.</p>
+<p>For a finite Laurent test h(eta)=sum h_n eta^n, its literal cap coupon is</p>
+<pre><code>X_h=sum_(n&gt;=0) h_n U^n +sum_(n&lt;0) h_n Uflat^(-n),</code></pre>
+<p>with unsupported shifts zero. Indeed CT selects q=-n, and (X_h)<em>(b,b+q)=h</em>(-q). Thus CT h F is the original source with X_h inserted on the identity wire. The Toeplitz coupon map is not multiplicative at finite endpoints. Its original Ward row must be retained. The actual negative-band moment calculation in <a href="actual_negative_band_boundary_moment_and_ward_atom.html">the boundary-current note</a> gives explicit signed-crossing examples where this insertion is nonzero although the uninserted source is zero.</p>
+<h2 id="principal-incidence-and-the-first-bounded-test-correction">5. Principal incidence and the first bounded-test correction</h2>
+<p>This section is a LOCAL formal Gaussian theorem with bounded band tests. It is separate from the exact whole finite transform above.</p>
+<p>Keep the old physical exterior positions (A,B) fixed. Use the actual integral tree extension of the port-offset lattice in <a href="actual_two_cut_framing_port_reconstruction.html">the port theorem</a>. For charge-zero offsets (p,q)=(-q,q), let nu=Hq be the small continuous boundary displacement. The resulting enlarged actual phase and amplitude are S(u,nu), a_0(u,nu), with u transverse. They come from those original coefficient atoms, including Cartan, pivot and half-step terms. Work at a regular critical point with S_u=0, invertible S_uu, and nonzero a_0. Let u(nu) be its formal critical continuation and put</p>
+<pre><code>W(nu)=S(u(nu),nu),
+A_0(nu)=a_0(u(nu),nu)/sqrt(det(-S_uu(u(nu),nu))),
+p_e=exp(W&#39;(0)),
+alpha=(partial_nu log A_0)(0),
+beta=W&#39;&#39;(0)/2.                                  (5.1)</code></pre>
+<p>The square-root line is the original fixed Gaussian line; its constant choice cancels in the ratio. If a varying lattice measure is needed, it is included in a_0. The chosen affine integral tree coordinates have fixed measure. Formal stationary phase gives, for EACH fixed q,</p>
+<pre><code>Z_q/Z_0=p_e^q[1+H(q alpha+q^2 beta)+O(H^2)].      (5.2)</code></pre>
+<p>Proof: write the actual formal block as exp(W(nu)/H) A_0(nu)[1+H z_1(nu)+O(H^2)] and substitute nu=Hq. Taylor expansion gives (5.2). The first Gaussian correction z_1 cancels from this normalized ratio at order H; its difference z_1(Hq)-z_1(0) first contributes at order H^2. All constant base lines cancel too. This proof neither estimates a saddle remainder nor sums q growing with N.</p>
+<p>For an explicit contraction form let G=S_uu^-1, g=d_u log a_0, ell=S_nu, and</p>
+<pre><code>b^i=-G^(ij)g_j+(1/2)G^(il) S_(ljk)G^(jk).</code></pre>
+<p>Implicit differentiation and the determinant rule give exactly</p>
+<pre><code>alpha=partial_nu log a_0+b^i ell_i
+                                  -(1/2)G^(ij)ell_(ij),
+beta=(S_(nu nu)-ell_i G^(ij)ell_j)/2,            (5.3)</code></pre>
+<p>all evaluated at nu=0,u(0). This also derives (5.2) directly with covariance -HG. Actual bounded changes of the chosen tree particular solution translate u and give the same block ratios. Flattening/period marks are held fixed; an N-dependent log-deck move is not such a bounded translation.</p>
+<p>Now interpret Delta(t)=sum_(q in Z)t^q as a FORMAL Laurent distribution, paired only with finite Laurent tests. It is not an ordinary function to evaluate at t=1. Equations (5.2) yield</p>
+<pre><code>Zhat(eta)=Z_0{Delta(eta p_e)
+   +H(alpha E_eta+beta E_eta^2)Delta(eta p_e)+O(H^2)}.</code></pre>
+<p>For every fixed Laurent polynomial h, finite coefficient extraction therefore gives the rigorous bounded-test identity</p>
+<pre><code>CT_eta h(eta) Zhat(eta)
+  =Z_0{h(p_e^-1)
+          +H{-alpha E_eta h+beta E_eta^2 h}_(eta=p_e^-1)
+          +O(H^2)}.                            (5.4)</code></pre>
+<p>Each test uses only finitely many fixed bands, so the port theorem and Gaussian contraction suffice. The principal Fourier incidence is eta p_e=1. It does not eliminate the physical B coordinate. For the ACTUAL identity cap h=1, the right side is Z_0 exactly, including all corrections: only q=0 is extracted. The remaining physical position sum and its original support/tails persist. If beta!=0, (5.4) has a second derivative on test functions; an ordinary coordinate substitution plus a scalar unit has only a first derivative at this order and cannot reproduce this map.</p>
+<p>The principal geometric chart eta_geo=p_e^-1 and its rational boundary residues can still be studied. They are NOT images of the original finite cap eta=0 merely by (5.2) or (5.4). In particular <a href="figure_eight_first_loop_cap_residue.html">the exact first Gaussian calculation</a> is a calculation on that candidate geometric incidence boundary, not a proof of the cap-cycle pushforward. A whole open-phase Fourier stationary construction must use (1.2)–(1.6), its full support and source before any local reduction.</p>
+<h2 id="audit-and-scope">6. Audit and scope</h2>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_two_cut_fourier_polarization.py">The exact operator/source audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_two_cut_fourier_polarization_results.json">saved results</a> check generic/root Vandermonde inverse and carries, the forced normal connection, both actual boundary terms, full source and actual signed-braid tensors. The bounded-test formulas are independently checked on quadratic non-diagonal Gaussian models.</p>
+<p>This theorem supplies a genuine whole change of polarization of the actual pointed finite state. It proves no global geometric cycle comparison, no nonzero selected geometric block, and no hyperbolic-volume limit. Those require transporting the actual source through the remaining geometric/cyclotomic construction.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_two_cut_fourier_polarization_and_cap.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-tensor-and-its-unchanged-source">1. The actual tensor and its unchanged source</a><a href="#exact-whole-clock-and-shift-operators-including-endpoints">2. Exact whole clock and shift operators, including endpoints</a><a href="#the-normal-connection-of-this-actual-basis-change">3. The normal connection of this actual basis change</a><a href="#independent-band-and-position-variables-before-polarization">4. Independent band and position variables before polarization</a><a href="#principal-incidence-and-the-first-bounded-test-correction">5. Principal incidence and the first bounded-test correction</a><a href="#audit-and-scope">6. Audit and scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

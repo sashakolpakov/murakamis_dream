@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An explicit coherent Gram for an actual split source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_pascal_coherent_gram.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="an-explicit-coherent-gram-for-an-actual-split-source">An explicit coherent Gram for an actual split source</h1>
+<p>29 October 2026. The finite q-Pascal matrix gives an explicit, invertible, source-independent local packet transform. Pulling back a positive factorial metric produces a full-rank NON-DIAGONAL Gram. For the ORIGINAL figure-eight four-plat split packet its co-source norm is exactly <code>sqrt(N)</code> and its positive energy has the sharp volume exponent. No unknown knot value defines the transform or its metric.</p>
+<p>This is a constructive instance of the proposed special-inner-product Cauchy inequality. It does not yet transport the three-braid complete clock decomposition to this split packet or provide a sharp energy estimate for arbitrary knots. Those distinctions matter after the <a href="actual_figure_eight_clock_gram_obstruction.html">complete clock-sector obstruction</a>.</p>
+<h2 id="a-local-all-exterior-pochhammer-packet-identity">1. A local all-exterior Pochhammer packet identity</h2>
+<p>Let <code>Q</code> be a primitive Nth root, <code>N&gt;=2</code>, <code>d=N-1</code>, and let <code>Y,u</code> be arbitrary nonzero variables. Write <code>F_n=(Q;Q)_n</code>. For <code>0&lt;=k&lt;=n&lt;N</code> define the actual split-route tensor</p>
+<pre><code>T_(n,k)(Y)=Y^(2k-n) [n choose k]_Q
+                (Q/Y;Q)_k (YQ^(-n);Q)_(n-k).       (1)</code></pre>
+<p>These are precisely the surviving finite routes <code>a=n-k</code> of the <a href="figure_eight_whole_source_identity.html#4-forced-transfer-elimination-and-its-whole-scalar">original four-plat proof</a>. That proof derives them from the original E/F entries, unrolled dual colors, full Cartan scalar, actual turns and the specified <code>g E_00</code> cut coupon. In particular (1) has no unspecified peripheral scalar.</p>
+<p>Set</p>
+<pre><code>C_n(Y)=(-1)^n Q^(-n(n+1)/2)(Q/Y;Q)_n,
+v_k(Y,u)=(-1)^k Q^(k(k-1)/2)(uYQ)^k,
+P_(n,k)=[n choose k]_Q if k&lt;=n, and 0 otherwise.</code></pre>
+<p>Then the following is an ENTRYWISE identity of whole Laurent polynomials, retaining the complete internal-clock fugacity:</p>
+<pre><code>u^k T_(n,k)(Y)=C_n(Y) P_(n,k) v_k(Y,u).            (2)</code></pre>
+<p>Proof. Reverse the <code>n-k</code> consecutive Pochhammer factors in (1):</p>
+<pre><code>(YQ^(-n);Q)_(n-k)
+  =(-Y)^(n-k)Q^[-(n(n+1)-k(k+1))/2]
+                     (Q^(k+1)/Y;Q)_(n-k).</code></pre>
+<p>Their product with <code>(Q/Y;Q)_k</code> is <code>(Q/Y;Q)_n</code>. The remaining monomial is exactly the one in (2). No division by <code>(Q/Y;Q)_n</code> is used; its zero fibers and all meridian jets are retained.</p>
+<p>Consequently the whole k-fiber is</p>
+<pre><code>sum_(k=0)^n u^k T_(n,k)(Y)
+   =C_n(Y)(uYQ;Q)_n.                            (3)</code></pre>
+<p>The finite q-binomial theorem proving (3) follows by inserting the last factor, using q-Pascal. All Gaussian factorial indices are below N, so even levels and composite levels cause no exception.</p>
+<p>The exterior scope is precise. The <code>n</code> boundary port, <code>Y</code>, and all other exterior variables remain open. An ARBITRARY polynomial or matrix-valued exterior <code>E_n(Y,u,Z)</code> may be paired with (3). More generally (2) is a tensor factorization and preserves arbitrary external arrays on BOTH the n and k ports when those ports are retained. If an exterior depends on k, it stays attached to that port; it cannot be deleted while using (3) with input v. This is the ordinary typed local-contraction rule, not an assumed independence of the physical underclock feedback.</p>
+<p>The variable u records a literal internal-transfer fugacity. It does not assert that the clocks or spectator arguments of an arbitrary original knot are independent. Equation (2), rather than the special value <code>u=1</code>, is the reusable bridge packet identity. Here Y and u are central coefficient variables. Substituting noncommuting boundary operators would require its actual ordered intertwiner; the commutative identity does not authorize that step.</p>
+<h2 id="the-universal-pascal-transform-and-its-inverse">2. The universal Pascal transform and its inverse</h2>
+<p>The matrix P is N by N, triangular with unit diagonal, and depends only on Q. Its explicit inverse is</p>
+<pre><code>(P^(-1))_(n,k)=(-1)^(n-k) Q^((n-k)(n-k-1)/2)
+                              [n choose k]_Q, k&lt;=n.     (4)</code></pre>
+<p>Indeed <code>[n choose j][j choose k]=[n choose k][n-k choose j-k]</code>; the convolution in a product with (4) is <code>(1;Q)_(n-k)</code>, hence zero unless <code>n=k</code>. This proves the inverse without a root-zero denominator.</p>
+<p>Thus the packet move is not contraction to the unknown K_N and not replacement by a rank-one co-source. It retains N independent boundary channels. For any adjoining tensor A, changing packet coordinates <code>f -&gt; Pf</code> changes that tensor to <code>A P^(-1)</code>; their contraction is exactly unchanged. This proves source-independent composition at arbitrary width wherever the stated packet occurs. It makes no claim that the transported tensor has small norm for arbitrary A.</p>
+<p>Both P and its inverse have explicit finite coefficients. The map may be exponentially conditioned; that conditioning is part of the coherent metric, not an omitted norm cost.</p>
+<h3 id="these-pascal-matrices-are-actual-current-operators">2.1 These Pascal matrices are actual current operators</h3>
+<p>On an original balanced physical head write the lowering-generator convention as</p>
+<pre><code>mathsfF|a&gt;=(1-Q^(a+1))|a+1&gt;, mathsfF|d&gt;=0.</code></pre>
+<p>Then <code>mathsfF^r[n,k]=F_n/F_k</code> for <code>n-k=r</code>. Consequently</p>
+<pre><code>P=p_N(mathsfF), p_N(t)=sum_(r=0)^d t^r/F_r.        (4a)</code></pre>
+<p>Its inverse is the opposite finite Euler polynomial, reproducing (4). This is a literal original nilpotent-current realization, not an auxiliary matrix with only the same classical symbol.</p>
+<p>At completeness let <code>Ecal|a&gt;=(Q^(-a)-1)|a-1&gt;</code> and <code>U_a=Q^[-a(a+1)/2]</code>. The actual unitary chirp obeys</p>
+<pre><code>U Ecal U^(-1)=mathsfF^T,
+P^T=U p_N(Ecal) U^(-1).                          (4b)</code></pre>
+<p>The same Pascal blocks occur in the ACTUAL two-head Borel fusion, including every total integer degree. For <code>0&lt;=T&lt;=2d</code> set <code>I_T={max(0,T-d),...,min(T,d)}</code>. Index the relative input by <code>(a,T-a)</code> and the physical output by <code>(u,T-u)</code>, with <code>a,u in I_T</code>. The proved physical fusion kernel is</p>
+<pre><code>C_T[u,a]=x^(u-a) F_a F_(T-u)/(F_(a-u)F_(T-a)), u&lt;=a,
+         0 otherwise.</code></pre>
+<p>It factors EXACTLY as</p>
+<pre><code>C_T=D_out,T (P|I_T)^T D_in,T,
+D_out,T[u]=x^u F_u F_(T-u),
+D_in,T[a]=x^(-a)/F_(T-a).                        (4c)</code></pre>
+<p>All indices of these factorials lie in <code>0,...,d</code>. The principal interval <code>P|I_T</code> has the same explicit inverse (4) restricted to that interval: every intermediate convolution index stays in it. There is no omitted high-total-degree wrap, including <code>T&gt;=N</code>. This follows directly by writing <code>F_a/(F_(a-u))=[a choose u]_Q F_u</code> in the actual fusion formula.</p>
+<p>Thus (4c) supplies a typed current/physical embedding of the Pascal move on arbitrary neighboring heads. Its diagonal factors are compulsory. Nothing here silently identifies an arbitrary fusion-relative clock with a physical head or with a chosen total Ward current.</p>
+<p>On the actual dual pair with total degree d this also checks the original turns explicitly. In physical pair coordinates <code>(u,d-u)</code>, write the original cup, ordinary cap and degree-d marked row as</p>
+<pre><code>p_u=N x^(u-d), ell_u=x^(-u)Q^(-u)/N,
+m_u=x^(d-u)/N^2.</code></pre>
+<p>Then the SAME fusion block obeys</p>
+<pre><code>C_d e_d=p, ell C_d=e_0^T/N,
+(m C_d)_a=x^(d-a) s_a^2/N^2.                    (4e)</code></pre>
+<p>The first is the a=d column of (4c). For the second, root reflection reduces its a-th entry to <code>(1;Q)_a</code>; the marked row instead gives <code>(Q;Q)_a</code>. Thus (4e) retains the full marked density, which is NOT a corner row on arbitrary tensors. Its familiar further corner reduction requires the actual invariant exterior Ward relation. This note does not make that reduction for an arbitrary packet.</p>
+<p>Finally <code>H=N G_0^2</code>, where <code>G_0=diag(s_a/sqrt(N))=L^(1/2)</code> is the source-fixing physical factorial gauge. Hence (7) below is exactly <code>G=N P^*G_0^2P</code>. If an actual current J commutes with the nilpotent generator C and <code>S=p_N(C)</code>, then for ANY positive H_0,</p>
+<pre><code>||J||_(S^*H_0S)=||S J S^(-1)||_(H_0)=||J||_(H_0). (4d)</code></pre>
+<p>This is the useful current-compatible Gram mechanism. Applying it to a total two-head current requires the actual typed module identification and the commutation relation; (4a)–(4c) exhibit the relevant possibilities, but do not assert that every clock in a knot is simultaneously that same current.</p>
+<h2 id="the-actual-figure-eight-gram-and-controlled-co-source">3. The actual figure-eight Gram and controlled co-source</h2>
+<p>Now take the principal <code>Q=exp(2pi*i/N)</code>, put <code>s_n=|F_n|</code>, and set <code>Y=u=1</code>. Define <code>v_k=(-1)^k Q^(k(k+1)/2)</code>. Equation (3) says</p>
+<pre><code>Pv=F=(F_0,...,F_d)^T,
+C_n(1)=conj(F_n).                               (5)</code></pre>
+<p>The second equality is the exact identity <code>conj(F_n)=(-1)^nQ^(-n(n+1)/2)F_n</code>. The original whole-source calculation therefore gives, with its actual zero framing and all Cartan/turn factors already accounted for,</p>
+<pre><code>K_(4_1),N=C(1)^T P v=F^*F=sum_n s_n^2.           (6)</code></pre>
+<p>This normalization comes from the literal original four-plat source, not from fitting (6) to a known value. Any separately attached original modified-dimension germ multiplies both sides unchanged.</p>
+<p>Let <code>H=diag(s_0^2,...,s_d^2)</code> and define the coherent packet metric</p>
+<pre><code>G=P^* H P,
+G_(k,l)=sum_(n&gt;=max(k,l)) s_n^2
+                  conj([n choose k]_Q)[n choose l]_Q.    (7)</code></pre>
+<p>G is explicit and positive definite because every s_n is nonzero and P is invertible. It has rank N, including the n=0 channel. Its off-diagonal terms retain the q-binomial phases. In particular it is not the diagonal absolute value of P.</p>
+<p>The Riesz vector of the original linear co-source <code>C^T P</code> is <code>a=P^*F</code>. Its squared dual norm in (7) is EXACTLY</p>
+<pre><code>a^*G^(-1)a=F^*H^(-1)F=N.                        (8)</code></pre>
+<p>The actual packet energy is likewise explicit:</p>
+<pre><code>||v||_G^2=(Pv)^*H(Pv)=sum_(n=0)^d s_n^4.         (9)</code></pre>
+<p>Cauchy–Schwarz in this coherent, full-rank inner product proves the original-source bound</p>
+<pre><code>|K_(4_1),N|^2&lt;=N sum_(n=0)^d s_n^4.              (10)</code></pre>
+<p>This is useful precisely because the co-source norm (8) is polynomial while the state energy (9) retains the cancellation in each Pascal fiber. It is not a norm estimate for every possible packet input.</p>
+<h2 id="exact-compatibility-with-the-b-length-frame-including-length-zero">4. Exact compatibility with the b-length frame, including length zero</h2>
+<p>Use the <a href="actual_length_normalized_star_gram.html">actual length normalization</a></p>
+<pre><code>D_n=A_n^2=s_n^(1/2)/N^(1/4), b_n=B_n/D_n.</code></pre>
+<p>The row n of the coefficient tensor of b_n is the corresponding Pascal row divided by D_n, with its original monomial phases. Thus in that typed row frame the exact packet factorization is</p>
+<pre><code>P_b=D^(-1)P, C_b=D C,
+C_b^T P_b v=C^T P v.                            (11)</code></pre>
+<p>Transport the positive row metric as well:</p>
+<pre><code>H_b=D^2 H, P_b^*H_bP_b=G.                       (12)</code></pre>
+<p>The squared source dual norm remains N, and the energy remains <code>sum s_n^4</code>. These are identities, not an asymptotic cancellation. In particular <code>D_0=N^(-1/4)</code>, <code>b_0=N^(1/4)</code>; the row-zero factor in <code>P_b</code> and its inverse factor in <code>C_b</code> are compulsory. Omitting zero-length slots changes the original source.</p>
+<p>Other length registers of an exterior are retained with their own inverse frames, exactly as in the length-normalized star theorem. Equation (11) normalizes the EXPOSED length n row and does not identify its coefficient index k with a physical-head length.</p>
+<h2 id="the-positive-energy-has-the-sharp-exponent">5. The positive energy has the sharp exponent</h2>
+<p>For <code>J(t)=integral_0^t log(2sin(pi x))dx</code>, the elementary uniform factorial estimate gives</p>
+<pre><code>log s_n=N J(n/N)+O(log N), uniformly 0&lt;=n&lt;N.</code></pre>
+<p>J has its unique global maximum at <code>t=5/6</code>, and <code>4pi J(5/6)=4Lambda(pi/6)=Vol(4_1)</code>. Bounding the N-term positive sum by its maximum and using a nearest integer to <code>5N/6</code> gives</p>
+<pre><code>log(sum_n s_n^4)=N Vol(4_1)/pi+O(log N).          (13)</code></pre>
+<p>Thus (10) has exactly the desired sharp upper exponent. The positive sum (6) separately gives the matching lower exponent. This recovers the verified figure-eight benchmark by a genuine coherent Gram, rather than by flattening its original overclock sectors.</p>
+<p>The Gram here acts on the explicitly exposed split-transfer packet. The much larger COMPLETE sectors in the three-braid clock state are different coordinates, after different contractions. Equality of their final scalar with (6) does NOT by itself provide an invertible packet map between them. No diagonal-clock obstruction is evaded by silently identifying those two spaces.</p>
+<h2 id="exact-composable-updates-and-the-remaining-general-question">6. Exact composable updates and the remaining general question</h2>
+<p>If a specified invertible packet operator S acts before the packet, the energy and Riesz vector on its INPUT coordinates update as</p>
+<pre><code>G -&gt; G_S=S^* G S, a -&gt; a_S=S^*a,
+a_S^*G_S^(-1)a_S=a^*G^(-1)a.                    (14)</code></pre>
+<p>For a Gaussian clock chirp <code>U_ell=diag(Q^(ell*k(k+1)/2))</code>, this is unitary congruence: its phases and the spectrum of G are retained. For a pure coordinate change <code>v'=Sv</code>, rather than an inserted operator, the unchanged pairing instead uses <code>G'=(S^(-1))^*G S^(-1)</code> and <code>a'=(S^(-1))^*a</code>. Likewise (4) permits exact Pascal/inverse-Pascal changes. These are actual local tensor-coordinate operations with arbitrary retained exteriors, not changes of the knot invariant.</p>
+<p>They do NOT imply that the same simple factorial diagonal H survives an arbitrary coherent word of such moves. A chirped input generally has energy <code>sum s_n^2 |(P U_ell v)_n|^2</code>, not <code>sum s_n^4</code>. The internal phase must be evaluated or controlled before its modulus is taken. A known actual example is the Rogers coefficient packet <code>J_n(t)=sum_k [n choose k]_t t^(k(k+1))</code>: it is exactly a Pascal transform of a unitary Gaussian input, as proved from the original <a href="five_two_cyclotomic_transform_proof.html">five-crossing whole source</a>. Its remaining Newton evaluation is coherent; the <a href="actual_multichannel_newton_green_transport.html">multichannel proof</a> already shows why a tame coefficient norm cannot simply be assumed.</p>
+<p>The proved general local move is (2)–(4), with exact Gram transport (11)–(14). A broad sharp theorem still requires (i) an actual source-preserving decomposition into these packet moves and (ii) a geometric bound on the resulting coherent energy, including all spectator feedback and dual metrics. Neither condition is inferred from the figure-eight benchmark alone.</p>
+<h3 id="an-exact-pascalgaussian-alphabet-for-original-braid-crossings">6.1 An exact Pascal/Gaussian alphabet for original braid crossings</h3>
+<p>For the original SAME-COLOR braid there is a further explicit local decomposition, at every integer total degree T. It resolves the crossing into known coherent packet moves rather than assuming such a decomposition. Use <code>C_T</code> from (4c), <code>I_T</code> as there, and define</p>
+<pre><code>t_T[a]=x^(-a)/F_a,
+U_T[a&#39;,a]=x^(-(a&#39;-a))/F_(a&#39;-a) if a&#39;&gt;=a, else 0,
+D_T[a]=(-1)^(T-a) Q^((T-a)(T-a-1)/2) x^(-2(T-a)).</code></pre>
+<p>Then EXACTLY</p>
+<pre><code>U_T=t_T (P|I_T) t_T^(-1),
+R_(+,T)=kappa C_T D_T U_T C_T^(-1),
+R_(-,T)=kappa^(-1) C_T U_T^(-1)D_T^(-1)C_T^(-1). (15)</code></pre>
+<p>Here kappa is the original common Cartan entry <code>R_(00,00)</code>, with its given meridian continuation. It has not been reset. At completeness <code>|x|=1</code>, both kappa and every D_T entry have modulus one. The other diagonals in (4c),(15) retain their explicit factorial magnitudes and root phases. The inverse of U_T is obtained from (4), so no unknown diagonalization enters.</p>
+<p>Proof with the strict physical support retained. In the actual flat Borel basis <code>f^a e_j</code>, <code>a,j&lt;N</code>, the original crossing is right multiplication by the independently derived coefficient</p>
+<pre><code>a_R=kappa sum_(r+k&lt;N)
+    (-1)^k Q^(k(k-1)/2) x^(-r-2k) f^r e_k/F_r.</code></pre>
+<p>That formula follows by the actual triangular fusion inversion on <code>R(e_0 tensor e_j)=kappa x^(-j)e_j tensor e_0</code>; its finite Euler inverse is precisely (4a). For an input <code>f^a e_j</code> the r,k term has <code>j=k+r modulo N</code>, with output <code>f^(a+r)e_k</code> when <code>a+r&lt;N</code>. Within the SAME total INTEGER degree <code>T=a+j</code>, one must have <code>j=k+r</code> as an integer, not <code>k+r-N</code>. Thus <code>a'=a+r</code>, <code>k=T-a'</code>, and its coefficient is exactly <code>kappa D_T[a']U_T[a',a]</code>. Conversely all the entries specified in (15) satisfy <code>r+k=j&lt;N</code>, so none is extra. Conjugation by the actual C_T proves (15). In particular high blocks <code>T&gt;=N</code> have been retained. No completed positive-N carry or source-null approximation is used in (15).</p>
+<p>Taking the direct sum over T gives the FULL original crossing as an operator identity, with its literal negative inverse. Therefore (4c),(15) can be inserted into an arbitrary signed braid of arbitrary width, with arbitrary adjoining tensors. All ordinary/marked turns, pivots, framing and peripheral factors stay original. The shared head indices enforce the actual overlap/feedback of neighboring total-degree registers; those T labels are not independent clocks.</p>
+<p>This is an explicit coherent alphabet of principal Pascal blocks, their inverses, known factorial diagonals and unitary Gaussians. For a repeated-generator block its C_T interfaces cancel exactly before any norm is taken. Neighboring generators generally have different overlapping degree registers and leave genuine recoupling. Their remaining positive energy is not estimated by (15) alone.</p>
+<p>The fusion/Euler formulas themselves were previously proved in <a href="actual_borel_regular_fusion_and_divided_cap_period.html">the actual Borel theorem</a> and <a href="actual_crossing_euler_completion_and_weight_source.html">the original crossing coefficient theorem</a>. The use here is their exact integer-degree Pascal factorization, its explicit coherent metrics and its retained original co-source. It is not a claim that a generic R factorization is new, nor that known factorial weights already satisfy the global Rivin constraints.</p>
+<h2 id="the-precise-overlap-compatibility-problem">7. The precise overlap compatibility problem</h2>
+<p>There is a local sufficient metric condition for composing the alphabet without defining a metric from the unknown terminal word. Choose a family of positive packet metrics specified by LOCAL typed data (Q, meridians, retained integer degrees and length ports), before choosing the braid. It must include the explicit Pascal pullbacks above, the intended positive factorial/angle row energies, and the original turn co-sources with their controlled dual norms. For every elementary THREE-head reassociation, let A be its actual finite coordinate-change matrix. The required local compatibility is</p>
+<pre><code>N^(-c) G_left &lt;= A^* G_right A &lt;= N^c G_left,       (16)</code></pre>
+<p>uniformly in all its admissible integer ports, for one fixed c. Every diagonal factor in (4c),(15), and every required source adapter, is included in A or in its explicitly assigned endpoint metric. This is a finite local matrix inequality; its data do not involve K_N or a terminal braid product.</p>
+<p>If (16) holds, a fixed sequence of L reassociations compares the state energies by <code>N^(cL)</code> and the transported source dual norms by the same factor. This follows by congruence and inversion of (16), then induction. Thus its Cauchy budget costs at most <code>N^(2cL)</code>. The estimate tensorizes with untouched exterior heads. A positive geometric angle-fiber factorization of the assigned row energies, with the actual integer edge and peripheral constraints, would then give the desired comparison to its partition function up to a polynomial. That last identification is an explicit requirement, not a consequence of (16) alone.</p>
+<p>Using exact pullbacks of ONE arbitrary physical metric makes tree coordinate changes isometric tautologically, but does not establish that the resulting dense Gram has the stated positive-angle energy. The problem is to obtain BOTH the controlled local energy model and the compatible overlaps, with the same retained source. It cannot be solved by defining G from the unknown completed word.</p>
+<h3 id="the-obvious-fixed-factorial-tensor-metric-fails-16">The obvious fixed factorial tensor metric fails (16)</h3>
+<p>This failure can be proved on the ACTUAL fusion reassociation, after removing its trivial column factorial. Put</p>
+<pre><code>C&#39;=C diag_(a,k)(F_a^(-1)),
+A=(I tensor C&#39;)^(-1)(C&#39; tensor I) on three heads.  (17)</code></pre>
+<p>This is the genuine change from the first-pair divided-power fusion coordinates to the second-pair coordinates. All its original turns are transported by the same matrices; the assertion is a local all-exterior norm test, not a knot scalar estimate.</p>
+<p>At total pair degree d, (4c) and reflection give</p>
+<pre><code>C&#39;_d=V (P^T) V^(-1),
+V_a=x^a(-1)^aQ^(a(a+1)/2), |V_a|=1.             (18)</code></pre>
+<p>An input <code>|0,u,d-u&gt;</code> is fixed by the first-pair C’, because its first relative divided-power index is zero. Hence</p>
+<pre><code>|&lt;0,a,d-a| A |0,u,d-u&gt;|=|[u choose a]_Q|,
+                                       0&lt;=a&lt;=u&lt;=d.     (19)</code></pre>
+<p>Now use ANY fixed positive diagonal tensor metric whose last two head weights have constant complementary product <code>h_2(a)h_3(d-a)=constant</code>. In particular every fixed physical factorial metric <code>(L^t)^(tensor 3)</code> has this property. The input and output basis vectors in (19) have equal metric norm. Therefore its induced operator norm satisfies</p>
+<pre><code>||A|| &gt;= |[u choose a]_Q|.                       (20)</code></pre>
+<p>For <code>N=3k+1</code>, <code>u=2k</code>, <code>a=k</code>, the uniform factorial estimate gives</p>
+<pre><code>lim (1/N)log|[2k choose k]_Q|=v_3/pi&gt;0.          (21)</code></pre>
+<p>Thus (16) with the SAME fixed factorial tensor metric on both coordinate systems is false, even after the column factorial has been removed and even before any unknown braid is present. Its complementary source property does not imply tame reassociation.</p>
+<p>This does not rule out the coherent family sought in (16), an angle-weighted recoupling rather than a tame one, or a source-specific smaller invariant packet. It pinpoints the next required estimate: the overlap of the actual Pascal packets needs its OWN coherent Gram/angle factorization. Flat or fixed diagonal factorial gluing cannot silently replace it.</p>
+<p>The interface is already an EXACT positive affine-angle weight: root complementation gives</p>
+<pre><code>|[u choose a]_Q|=N w_N(a,u-a,d-u),
+a+(u-a)+(d-u)=d.                                (22)</code></pre>
+<p>Thus its squared matrix coefficient is <code>N^2 w_N(a,u-a,d-u)^2</code>. The test (21) has the regular-angle triple <code>(k,k,k)</code>; its exponential cost is genuine tetrahedral angle energy to be allocated and glued, not an unexplained norm loss. A coherent global comparison may retain these weights or change their Gram placement. It must prove their actual incidence and dual/source compensation rather than omit them.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_pascal_coherent_gram.py">Audit</a>: original mixed E/F four-plat contractions, arbitrary Y/u local packets and exterior insertions, exact Pascal inverses, full positive Gram/source normalization, b_0, the sharp positive-energy rate, and both original signed crossings in every total-degree block with full pivotal words. The final tests also check the actual three-head reassociation and its fixed-factorial metric obstruction (19)–(21).</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_pascal_coherent_gram.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#a-local-all-exterior-pochhammer-packet-identity">1. A local all-exterior Pochhammer packet identity</a><a href="#the-universal-pascal-transform-and-its-inverse">2. The universal Pascal transform and its inverse</a><a href="#the-actual-figure-eight-gram-and-controlled-co-source">3. The actual figure-eight Gram and controlled co-source</a><a href="#exact-compatibility-with-the-b-length-frame-including-length-zero">4. Exact compatibility with the b-length frame, including length zero</a><a href="#the-positive-energy-has-the-sharp-exponent">5. The positive energy has the sharp exponent</a><a href="#exact-composable-updates-and-the-remaining-general-question">6. Exact composable updates and the remaining general question</a><a href="#the-precise-overlap-compatibility-problem">7. The precise overlap compatibility problem</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

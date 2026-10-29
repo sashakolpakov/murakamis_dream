@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Four literature cyclic-dilogarithm atoms for the actual crossing · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/four_cyclic_atoms.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="four-literature-cyclic-dilogarithm-atoms-for-the-actual-crossing">Four literature cyclic-dilogarithm atoms for the actual crossing</h1>
+<p>Research note, 26 October 2026. This gives an exact root-level factorization of the genuine semicyclic holonomy crossing into four literature cyclic quantum dilogarithms. Each atom transports its center; their determinant normalizations and external root factor are explicit. An anchored scalar-rigidity argument fixes the remaining phase. The factorization holds at every N, including even and composite levels.</p>
+<p>The object being factorized is the actual crossing already identified in <a href="semicyclic_carry_braiding.html">the semicyclic braid proof</a>. Its nilpotent boundary, cut period, pivot, twist and full ADO normalization are retained. This does not assign all colored face/turn data to an arbitrary positive geometric triangulation or prove its selected norm.</p>
+<h2 id="the-literature-atom-including-its-determinant">1. The literature atom, including its determinant</h2>
+<p>Fix q=exp(pi*i/N), Q=q^2 and N&gt;=2. On a split quantum torus let a primitive monomial m have m^N=w. Choose roots</p>
+<pre><code>mu^N=w, nu^N=1-w, mu nu !=0.</code></pre>
+<p>For its eigenvalues mu Q^j define the pointed cyclic function</p>
+<pre><code>f_0=1, f_j=nu^j/(mu;Q)_j, 0&lt;=j&lt;N.             (1.1)</code></pre>
+<p>Its cyclic recurrence is f_(j+1)/f_j=nu/(1-mu Q^j). The last step is the identity (mu;Q)_N=1-mu<sup>N=nu</sup>N. Spectral idempotents define the matrix C=f(m) without choosing an analytic infinite product. If m acts on an N^2-dimensional two-pair torus, each eigenvalue occurs N times. Put</p>
+<pre><code>F=product_(j=0)^(N-1) f_j,
+gamma^N=F^(-1), gamma=1 at mu=0,
+D_atom=gamma C.                                (1.2)</code></pre>
+<p>Then det C=F^N and det D_atom=1. For a general number of spectator pairs the same normalization works by multiplicity.</p>
+<p>This is exactly the standard alternate cyclic-dilogarithm definition</p>
+<pre><code>mathfrak_d_N(z;Q)=(1-z^N)^((N-1)/(2N))
+                    product_(ell=1)^(N-1)(1-Q^ell z)^(-ell/N).
+                                                           (1.3)</code></pre>
+<p>Indeed, writing D_N(z)=product_(ell=1)<sup>(N-1)(1-Q</sup>ell z)^(ell/N), finite cancellation gives</p>
+<pre><code>F=nu^(-N(N-1)/2) D_N(mu)^N,
+gamma=nu^((N-1)/2)/D_N(mu),
+gamma f_j=mathfrak_d_N(mu Q^j;Q).              (1.4)</code></pre>
+<p>Compatible roots are part of the formulas. Include the square roots required by half powers when N is even; no inverse of two modulo N is used. Definition (1.3) is the literature cyclic dilogarithm, not the full ADO dimension d_N(M), which remains a different function.</p>
+<h2 id="an-atom-is-an-intertwiner-between-changing-centers">2. An atom is an intertwiner between changing centers</h2>
+<p>Suppose m A=Q^k A m, k integral. Formal compact conjugation has the rational expression</p>
+<pre><code>r_m(A)=A product_(ell=0)^(k-1)(1-Q^ell m)^(-1), k&gt;0,
+r_m(A)=A product_(ell=k)^(-1)(1-Q^ell m),       k&lt;0.         (2.1)</code></pre>
+<p>The value at k=0 is A. These are finite expressions; after inverting 1-w every factor is invertible at the root. The Nth central power changes by (1-w)^(-k).</p>
+<p>In the splitting frame take A’=nu^(-k) A. The recurrence (1.1) gives exactly</p>
+<pre><code>r_m(A) C=C A&#39;,  r_m(A) D_atom=D_atom A&#39;.         (2.2)</code></pre>
+<p>This proves the atom comparison directly, including composite levels. In particular the atom is not evaluated repeatedly in one frozen central representation.</p>
+<h2 id="the-four-monomials-and-the-two-independent-norm-factors">3. The four monomials and the two independent norm factors</h2>
+<p>Use two uniform clock/shift pairs</p>
+<pre><code>S_i e_a=s_i Q^a e_a, Z_i e_a=z_i e_(a+1),
+S_i Z_i=Q Z_i S_i.</code></pre>
+<p>Start with s_1=s_2=1, source roots z_1,z_2 nonzero, and put</p>
+<pre><code>x=q^alpha, k=x^N, a=z_2/z_1, r=a^N=phi_2/phi_1.</code></pre>
+<p>The quantum-group embedding is the previously proved one</p>
+<pre><code>F_i=Z_i, K_i=x S_i^(-1),
+rho^2 E_i=qx Z_i^(-1)(1-S_i^(-1))
+                               (1-Q^(-1)x^(-2)S_i),
+rho=q-q^(-1).</code></pre>
+<p>Thus E_i^N=0 initially and phi_i=z_i^N. The compact four-factor identity of <a href="verma_tetrahedral_transport.html">the Verma proof</a> has the ordered monomials</p>
+<pre><code>m_1=-Qx A S_1^(-1), m_2=x^(-1)A,
+m_3=Qx A,          m_4=-x^(-1)A S_1,
+A=Z_1^(-1)Z_2.                                 (3.1)</code></pre>
+<p>Their coefficients, order and q phase are retained. Define</p>
+<pre><code>Delta_1=1+kr,
+Delta_2=1-r/[k(1+kr)],
+nu_1^N=Delta_1, nu_2^N=Delta_2,
+nu_3=nu_1^(-1), nu_4=nu_2^(-1).                (3.2)</code></pre>
+<p>Assume these factors are nonzero. They are full functions, not constants selected after peripheral evaluation.</p>
+<p>The root Cartan map first changes z_1,z_2 to z_1/x,z_2/x, leaving s_1=s_2=1. Its matrix is</p>
+<pre><code>C_cartan e_(i,j)=Q^(ij)e_(i,j).                 (3.3)</code></pre>
+<p>For each subsequent atom m=c A S_1^b, the commutation integers with (S_1,S_2,Z_1,Z_2) are (1,-1,b,0). By (2.2) its target roots are</p>
+<pre><code>(s_1,s_2,z_1,z_2)
+   -&gt; (s_1/nu,s_2 nu,z_1/nu^b,z_2).             (3.4)</code></pre>
+<p>Evaluate m_i in the frame reached before that atom. Compatible spectral roots and norm factors are</p>
+<table>
+<thead>
+<tr>
+<th>Atom</th>
+<th>Spectral root mu_i</th>
+<th>nu_i^N</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>q x a</td>
+<td>Delta_1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>a/(x nu_1)</td>
+<td>Delta_2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Q x a/nu_1</td>
+<td>Delta_1^(-1)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>q a/(x nu_1 nu_2)</td>
+<td>Delta_2^(-1)</td>
+</tr>
+</tbody>
+</table>
+<p>The negative monomial signs are accounted for by q^N=-1 and (A S_1<sup>b)</sup>N=(-1)^(b(N-1)) A^N S_1^(bN). Multiplication verifies mu_i<sup>N+nu_i</sup>N=1 in every row, at every parity.</p>
+<p>For completeness the successive clock-center product factors are</p>
+<pre><code>Delta_1, Delta_2, Delta_1^(-1), Delta_2^(-1).</code></pre>
+<p>They restore both clock roots exactly with the compatible choices in (3.2). The final shift roots are</p>
+<pre><code>z&#39;_1=z_1 nu_1 nu_2/x, z&#39;_2=z_2/x.              (3.5)</code></pre>
+<p>Their powers are precisely the genuine holonomy targets:</p>
+<pre><code>phi&#39;_1=phi_1/k+(1-k^(-2))phi_2,
+phi&#39;_2=phi_2/k.</code></pre>
+<p>Here Delta_1 Delta_2=1+kr-r/k. This is a direct center calculation for the complete four-factor word.</p>
+<h2 id="the-exact-normalized-crossing-formula">4. The exact normalized crossing formula</h2>
+<p>Let D_i be (1.2)–(1.3) for atom i in its transported frame. Let B_src and B_tar be the changes from the standard F-circle bases to the uniform clock/shift bases:</p>
+<pre><code>B_src e_(i,j)=z_1^i z_2^j e_(i,j),
+B_tar e_(i,j)=(z&#39;_1)^i(z&#39;_2)^j e_(i,j).</code></pre>
+<p>These are the actual monomial frame changes: v_a=z_i^a e_a has F v_a=v_(a+1), with wrap phi_i. On the root cover anchored by nu_1=nu_2=gamma_i=1 at a=0, the uncheck crossing is exactly</p>
+<pre><code>R^0=(nu_1 nu_2)^(-(N-1)/2)
+     B_src^(-1) C_cartan D_1 D_2 D_3 D_4 B_tar.           (4.1)</code></pre>
+<p>Products have their displayed order and changing-frame meaning. The inverse gives the negative crossing, with its centers and all roots transported as in the genuine braid theorem.</p>
+<p>Here is a proof of the scalar, rather than an unspecified projective factorization. Conjugating the generic compact four-factor identity gives a rational quantum-torus identity. The proof in the linked Verma note is a formal algebra identity before root specialization. Its rational conjugations have finite expressions (2.1), so clearing the indicated denominators specializes that identity at every root. Equations (2.2)–(3.5) then show that the right side of (4.1) and the genuine semicyclic R^0 intertwine the same full matrix algebra with the same central data and Casimirs. They differ by a scalar lambda on the generic regular chart.</p>
+<p>Each D_i has determinant one on the N^2-dimensional pair. The exact remaining determinants are</p>
+<pre><code>det C_cartan=Q^((N(N-1)/2)^2),
+det B_tar/det B_src=(nu_1 nu_2/x^2)^(N^2(N-1)/2),
+det R^0=x^(-N^2(N-1))Q^((N(N-1)/2)^2).</code></pre>
+<p>The external factor in (4.1) cancels the entire extra determinant. Thus</p>
+<pre><code>lambda^(N^2)=1.                                (4.2)</code></pre>
+<p>This does not by itself discard lambda. Use the formal source anchor a=0: the matrices m_i/mu_i extend there, f_j=1, D_i=identity, and all specified norm roots equal one. The zeroth coordinate of the right side applied to v_00 has a regular value one. This coordinate does not involve an inverse singular frame entry, since (B_src)_00=(B_tar)_00=1. The genuine crossing fixes v_00. Therefore lambda has value one at this formal anchor. A root-of-unity-valued algebraic function is constant on the irreducible anchored component, so lambda=1. This proves (4.1) with its phase fixed.</p>
+<p>Other lifted components retain their phases; the theorem does not identify independent choices of normalization roots.</p>
+<h2 id="the-raw-scalar-is-explicit-and-must-be-retained">5. The raw scalar is explicit and must be retained</h2>
+<p>If raw pointed C_i rather than the literature D_i are used, write R_raw=B_src^(-1)C_cartan C_1 C_2 C_3 C_4 B_tar. Then R_raw=lambda_raw R^0, with</p>
+<pre><code>lambda_raw^(N^2)
+  =(nu_1 nu_2)^(N^2(N-1)/2) product_i F_i^N.    (5.1)</code></pre>
+<p>The complete formula and branch on the anchored cover are equivalently fixed by (4.1) and gamma_i<sup>N=F_i</sup>(-1). Thus determinants control a real normalization line, with its root phase selected by the actual pointing. They are not permission to throw away an arbitrary scalar period.</p>
+<p>The external root in (4.1) also remains necessary even though the four atom norm factors multiply to one. At fixed nonzero Delta_1,Delta_2 its log-modulus is</p>
+<pre><code>-(N-1)/(2N) log|Delta_1 Delta_2|.</code></pre>
+<p>This is bounded across N under that fixed-central specialization. No bound for an unrecorded moving-center specialization or the entire selected knot period is inferred.</p>
+<h2 id="peripheral-functions-that-become-numerical-multipliers">6. Peripheral functions that become numerical multipliers</h2>
+<p>For a positive checked crossing on the common fixed line of the genuine braid theorem, its uncheck source pair is swapped. Hence its ratio r is k. Write U=k<sup>2=M</sup>(2N), retaining the actual sign k=(-1)<sup>(N-1)M</sup>N. Equations (3.2) give</p>
+<pre><code>Delta_1=1+U, Delta_2=U/(1+U),
+Delta_3=1/(1+U), Delta_4=(1+U)/U.               (6.1)</code></pre>
+<p>At M=1 these specialize to 2,1/2,1/2,2. They must be transported as the functions in (6.1), including their compatible roots and the external product whose Nth power is U. This is a concrete occurrence of the peripheral factors the user asked us to retain. It does not by itself repair the earlier positive scalar model’s failed move.</p>
+<p>The scalar, Cartan frame and source normalization of the actual crossing are now accounted for before any such evaluation. Taking absolute values of individual atom entries would still change the quantum contraction.</p>
+<p>There is also an exact framing norm check on this fixed line. Let beta_ext=(nu_1 nu_2)^(-(N-1)/2) be the external factor in (4.1), and theta_0=x^(1-N) the actual residual twist. Since (nu_1 nu_2)<sup>N=U=x</sup>(2N),</p>
+<pre><code>(beta_ext/theta_0)^(2N)=1.                     (6.2)</code></pre>
+<p>Their moduli therefore cancel exactly in a zero-framed braid evaluation. The remaining phase is part of the specified root cover and pointing; it is not discarded. This checks the normalization of the tetrahedral presentation against the actual framing, rather than adding a free global multiplier.</p>
+<h2 id="boundary-specialization-and-scope-of-the-comparison">7. Boundary specialization and scope of the comparison</h2>
+<p>After recombination the operator (4.1) is exactly the polynomial semicyclic crossing. Its nilpotent boundary phi_1=phi_2=0 therefore has the original regular value, even though individual atom expressions or uniform frames can be singular. Use the complete identity or its transported lattice for that specialization. The common carry theorem and its bounded normal jets describe the integral recoupling source; the cut operator remains F_N(M)I and the full ADO factor is unchanged.</p>
+<p>We have consequently identified actual finite root crossings, their genuine braid maps and selected source with explicit literature cyclic tetrahedron atoms, including scalar roots and an external frame. This is a local operator factorization that can be substituted into any already specified finite braid contraction, transporting every paired and boundary leg.</p>
+<p>It does not prove that arbitrary face turns or all colored Pachner presentations of a positive geometric knot triangulation carry that same relative source and evaluation. The external semicyclic character is still reducible, and fixed root centers still differ from fixed semiclassical shape coordinates. The geometric A-operator/source identification and the selected Bloch-regulator norm across levels remain unproved.</p>
+<p>There is a concrete check on the distinction just made. At the complete point on the fixed semicyclic center line, (6.1) gives the four central shapes</p>
+<pre><code>(-1, 1/2, 1/2, -1).</code></pre>
+<p>Their Bloch–Wigner regulators are all zero because they are real. Thus that fixed-center Bloch sum is not the nonzero hyperbolic fundamental-class regulator. This does not compute the selected quantum period’s growth; it shows why a local factorization and matching central equations alone cannot replace the remaining source/cycle and parameter comparison.</p>
+<p>The subsequent <a href="cyclic_tetrahedron_pentagon.html">root tetrahedral pentagon</a> now supplies a strict local three-to-two identity for these same finite atoms on a compatible anchored cover. It includes the monomial shears, their changing splitting frames, and all norm and determinant roots. Thus specified exterior contractions can transport this local move exactly. It does not supply the entire geometric tensor presentation. Ordinary five-term transport preserves the zero regulator of the fixed central cycle just computed, so the geometric comparison must still retain the relative source and its selected realization.</p>
+<h2 id="definitions-coverage-and-exact-diagnostics">8. Definitions, coverage and exact diagnostics</h2>
+<p>Formula (1.3) is the alternate cyclic-dilogarithm definition displayed with Definition 3.3 in <a href="https://arxiv.org/abs/1412.5777">Ip–Yamazaki, 1412.5777</a>. Only its definition is used; (1.1)–(1.4) prove the needed functional and determinant identities directly. The abstract of <a href="https://arxiv.org/abs/2509.02354v2">McPhail-Snyder–Reshetikhin, 2509.02354v2</a> already covers a four-dilogarithm holonomy factorization. No novelty or independent global invariant is claimed. No published factorization or coherence proof is a premise above.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_four_cyclic_atoms.py">The exact audit</a> constructs all transported clock/shift modules, cyclic spectral matrices, and central roots over finite fields. It checks 18 crossings at generic and Kashaev colors for N=2,3,4,5,6,8,9,10,12. All 72 atom intertwiners satisfy their four generator equations. It independently compares the complete raw product with the actual semicyclic crossing, records its nonzero scalar, and verifies the exact determinant identity (5.1). It checks both restored clock roots and the full final F central powers. Normalization phases in (4.1) are fixed by the uniform anchored argument, rather than unrelated numerical choices of roots. All checks passed. Results: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/four_cyclic_atoms_results.json">four_cyclic_atoms_results.json</a>.</p>
+<pre><code>python3 experiments/audit_four_cyclic_atoms.py</code></pre>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/four_cyclic_atoms.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-literature-atom-including-its-determinant">1. The literature atom, including its determinant</a><a href="#an-atom-is-an-intertwiner-between-changing-centers">2. An atom is an intertwiner between changing centers</a><a href="#the-four-monomials-and-the-two-independent-norm-factors">3. The four monomials and the two independent norm factors</a><a href="#the-exact-normalized-crossing-formula">4. The exact normalized crossing formula</a><a href="#the-raw-scalar-is-explicit-and-must-be-retained">5. The raw scalar is explicit and must be retained</a><a href="#peripheral-functions-that-become-numerical-multipliers">6. Peripheral functions that become numerical multipliers</a><a href="#boundary-specialization-and-scope-of-the-comparison">7. Boundary specialization and scope of the comparison</a><a href="#definitions-coverage-and-exact-diagnostics">8. Definitions, coverage and exact diagnostics</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

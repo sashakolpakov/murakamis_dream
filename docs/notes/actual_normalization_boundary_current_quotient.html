@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A source-exact quotient for normalization boundary currents, including normal jets · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_normalization_boundary_current_quotient.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-source-exact-quotient-for-normalization-boundary-currents-including-normal-jets">A source-exact quotient for normalization boundary currents, including normal jets</h1>
+<p>29 October 2026. There is a genuine class of singular relative-source components that can be eliminated before positivity: the zero-pointing part of a complete visible Markov normalization cell. This is an operator identity with spectators retained. It composes through any fixed forest of such cells at arbitrary braid width, even when the spectator coefficients are not scalar or mutually commuting.</p>
+<p>For the original full-Psi radial current, even at radius one, every normalized Mellin Taylor coefficient of its pointed scalar is at most N/(2pi). The entire radial operator on a nilpotent contraction has normalized coefficients bounded by H_N/(2pi). On a fixed radius below one, oscillation gives the sharper bound C r! log(eN)^r for raw pointed derivatives. Thus these actual logarithmic normal currents have no additional exponential normalization cost after contraction.</p>
+<p>This extends the known normalization-cell evaluation and its tame radial value to an operator-valued relative-current quotient with a quantified normal germ. It does not eliminate internal head/cap alias currents, identify Mellin order with the knot meridian, or prove a sharp bound for the remaining knot period.</p>
+<h2 id="the-exact-selected-cell-with-all-original-scalar-factors">1. The exact selected cell, with all original scalar factors</h2>
+<p>Use the literal positive equal-color factorization and pivot of <a href="actual_markov_ray_normalization_and_pruning.html">the Markov source proof</a>:</p>
+<pre><code>R+=kappa C D U C^-1,
+g_b=x^(-d) Q^(-b), d=N-1,
+alpha=kappa x^(-d).</code></pre>
+<p>For every diagonal function r of the second RELATIVE channel,</p>
+<pre><code>Tr_new[(I tensor g) kappa C D U (I tensor r) C^-1]
+                     =alpha r_0 I.                    (1)</code></pre>
+<p>The trace has NO additional 1/N. The original sole cut average, turns, marked row and full peripheral/framing line are unchanged. Zero framing cancels the original alpha only when the complete original Markov cell is contracted. A current with r_0 != 1 keeps that extra factor.</p>
+<p>For completeness, the direct finite coefficient proof of (1) computes the k-th channel’s cut diagonal as</p>
+<pre><code>alpha x^(-2k) Q^(-k) (1;Q)_k = alpha delta_(k,0).</code></pre>
+<p>Its intermediate q-binomial identity is</p>
+<pre><code>sum_(j=0)^s (-1)^(s-j) Q^[j(j+1)/2]
+   (Q^(a-j+1);Q)_s/[F_j F_(s-j)]=(-1)^s.</code></pre>
+<p>Expand the Pochhammer as a polynomial in Q^a. All its positive-degree coefficients contain (Q^(1-ell);Q)_s and vanish; the constant is the right side. A second finite binomial sum gives (1). This proof retains the forbidden-index zeros of the original finite head and works at all levels, including even and composite N.</p>
+<h2 id="operator-valued-pointing-and-exact-cancellation-of-its-kernel">2. Operator-valued pointing and exact cancellation of its kernel</h2>
+<p>Let S be ANY spectator space. Replace r_k by arbitrary operators A_k on S, acting at the same relative-channel slot in (1). Then</p>
+<pre><code>Tr_new[(I tensor g tensor I_S)
+  kappa (C D U tensor I_S)
+  (sum_k I_cut tensor |k&gt;&lt;k| tensor A_k)
+  (C^-1 tensor I_S)]
+                     =alpha I_cut tensor A_0.          (2)</code></pre>
+<p>To prove (2), expand in any basis of End(S) and apply (1) to every coefficient. No positivity, simultaneous diagonalization or assumption about an exterior knot value enters. In particular A_k may be coupled to arbitrary tensors outside the cell, but not silently moved through the cut head or the inside of C.</p>
+<p>Define the pointing map epsilon(A)=A_0. The difference</p>
+<pre><code>A_k-A_0 for every k                                  (3)</code></pre>
+<p>is annihilated by the COMPLETE cell. Thus a source-current packet may be replaced by its pointing after the whole cell has been assembled. It is not necessary for the norms of its individual channels to be small. Equation (2) remains valid after arbitrary exterior composition and the original full marked functional.</p>
+<p>The same statement holds coefficientwise for a holomorphic or meromorphic normal germ A_k(sigma), on a common domain where the cell expression is defined. If epsilon(A(sigma)) is identically zero, ALL its normal Laurent/Taylor coefficients pair to zero. A pole in separated channel pieces is canceled only after their common complete packet is formed; (2) is not a prescription to drop those poles first.</p>
+<p>Now suppose a fixed tensor diagram contains a forest of visible cells: each leaf has the precise form (2), and after contracting a leaf the next prescribed cell has that form. Contract leaves in this order. Induction proves that every zero-pointing leaf packet disappears exactly, and each surviving cell is replaced by its specified A_0, in the ORIGINAL operator order. This is an all-width source theorem, not a claim that every braid admits such a pruning or that arbitrary internal projectors can be slid to a cap.</p>
+<h2 id="the-actual-radial-current-and-its-mellin-normal-germ">3. The actual radial current and its Mellin-normal germ</h2>
+<p>Fix a real 0&lt;R&lt;1, independent of N. Let Psi be the fully normalized positive function from <a href="actual_modular_dilog_circle_and_boundary_source.html">the original circle/ray source</a>. The actual positive atom’s radial part in the displayed cell has channel coefficients</p>
+<pre><code>r_k(0)=-N Q^(d-k) E_(d-k)(R)/F_k,</code></pre>
+<p>where</p>
+<pre><code>E_a(R)=1/(2pi*i) integral_0^R
+       Psi(log t)/(1-t^N) * t^(N-a-1) dt.</code></pre>
+<p>Consequently its pointed scalar is EXACTLY</p>
+<pre><code>h_N(0)=-N Q^-1 E_d(R).                              (4)</code></pre>
+<p>It must be retained: the original ray group is h_N(0) times the whole exterior invariant, and need not have a smaller exponential rate. The circle group is (1-h_N(0)) times that same exterior.</p>
+<p>There is a natural logarithmic normal of this specified relative radial current: multiply its radial integrand by t^(-sigma). For Re sigma&lt;1 set</p>
+<pre><code>h_N(sigma)=-N Q^-1/(2pi*i) integral_0^R
+       Psi(log t)/(1-t^N) * t^(-sigma) dt.             (5)</code></pre>
+<p>This is holomorphic there, by integrable domination on compact sigma-sets. Its derivatives are the literal insertions (-log t)^r in the ORIGINAL radial current. At sigma=0 (5) is (4), with the original phase and coefficient, not a rescaled boundary state. Sigma is a Mellin-normal coordinate of this atom source. It is NOT being identified with the knot’s meridian parameter or with a normal Cartan coupon elsewhere in the word.</p>
+<h2 id="uniform-normal-currents-through-radius-one">4. Uniform normal currents through radius one</h2>
+<p>The exact real-ray modulus, with the complete central factor retained, is</p>
+<pre><code>|Psi_epsilon(log t)|^2=(1-t)(1-t^N), 0&lt;t&lt;=1.</code></pre>
+<p>Consequently its quotient has modulus</p>
+<pre><code>A_N(t)=sqrt((1-t)/(1-t^N))&lt;=1, A_N(1)=1/sqrt(N).   (6a)</code></pre>
+<p>There is no pole at t=1. This proves, for EVERY 0&lt;R&lt;=1 and r&gt;=0,</p>
+<pre><code>|h_N^(r)(0)|/r!
+   &lt;=N/(2pi*r!) integral_0^R A_N(t)(-log t)^r dt
+   &lt;=N/(2pi).                                       (6b)</code></pre>
+<p>For Re sigma&lt;1 it also proves</p>
+<pre><code>|h_N(sigma)|&lt;=N/[2pi(1-Re sigma)].                    (6c)</code></pre>
+<p>All normal coefficients are those of the actual Mellin current (5). No fixed-distance-from-one assumption, separated root branch, or pointwise phase approximation enters (6a)–(6c).</p>
+<p>There is an operator version BEFORE the normalization cell is closed. For a literal nilpotent contraction T on its supplied finite relative head, T^N=0 and ||T||&lt;=1, retain the full source correction</p>
+<pre><code>E_sigma(T)=epsilon/(2pi*i) integral_0^R
+  Psi_epsilon(log t)/(1-t^N) * t^(N-sigma-1)
+                      sum_(a=0)^d t^(-a)T^a dt.       (6d)</code></pre>
+<p>It is a holomorphic operator germ for Re sigma&lt;1 and includes every original finite resolvent coefficient. Differentiation and (6a) give</p>
+<pre><code>|| E_sigma^(r)(T)|_(sigma=0) /r! ||
+   &lt;=(1/(2pi)) sum_(j=1)^N j^(-r-1)
+   &lt;=H_N/(2pi), r&gt;=0.                               (6e)</code></pre>
+<p>The first inequality uses integral_0^1 t^(j-1)(-log t)^r dt=r!/j^(r+1). Similarly, for |sigma|&lt;=rho&lt;1 the whole operator germ is at most</p>
+<pre><code>[1/(1-rho)+H_N]/(2pi).                               (6f)</code></pre>
+<p>This applies in the stated nilpotent-contraction metric. No assertion is made that every conjugated interior atom is a contraction in one common physical metric; changing that metric or composing with an unrestricted exterior still requires its actual estimates.</p>
+<p>The first Mellin pole at the other endpoint is also explicit. The actual small-t expansion starts with Psi(log t)=1+O(t), up to higher logarithmic terms which do not affect this first pole. Therefore</p>
+<pre><code>Res_(sigma=1) E_sigma(T)=-epsilon T^d/(2pi*i),
+Res_(sigma=1) h_N(sigma)=N Q^-1/(2pi*i).              (6g)</code></pre>
+<p>Subtract the constant term in the a=d coefficient of (6d); the remaining integral is holomorphic through sigma=1. Every other coefficient is already integrable there. This proves (6g), with its sign and full original normalization. It is a retained source current, not zero. For a fixed ordered collection of such atom endpoints the iterated residues are the corresponding ordered products of T_j^d; their norm is at most one in the supplied contraction metrics. After the displayed normalization-cell pointing their scalar cost is polynomial in N. No reordering of noncommuting atoms is used.</p>
+<p>For a fixed normalization forest, (6b) bounds an independent normalized multijet by (N/(2pi))^L. If all cells share one normal coordinate, the order-r coefficient has the additional count binom(r+L-1,L-1). Thus even growing normalized jet orders cost only a polynomial in N and r for this fixed forest. These coefficients may be nonzero; they are retained scalar source factors, not declared negligible.</p>
+<h3 id="sharper-pointed-estimate-at-a-fixed-interior-radius">Sharper pointed estimate at a fixed interior radius</h3>
+<p>There is C_R, independent of N, such that</p>
+<pre><code>sup_(|sigma|&lt;=1/log(eN)) |h_N(sigma)| &lt;= C_R.           (6)</code></pre>
+<p>Here is a direct proof, including the t=0 endpoint. The exact small-disk full-Psi expansion, with one fixed derivative, gives</p>
+<pre><code>Psi(log t)/(1-t^N)=a_N(t) exp[-iN phi(t)],
+phi(t)=Li2(t)/(2pi),
+||a_N||_(C^1[0,R])&lt;=C_R,
+0&lt;c_R&lt;=phi&#39;(t)&lt;=C_R, |phi&#39;&#39;(t)|&lt;=C_R.               (7)</code></pre>
+<p>It follows from the normalized full function, including its central period; the proof and two-derivative version are given in the Markov source note. The finitely many small levels can be absorbed in C_R.</p>
+<p>Split the integral at 1/N (or at R if R&lt;1/N). On the first interval, with rho=1/log(eN),</p>
+<pre><code>N integral_0^(1/N) |t^(-sigma) a_N(t)| dt
+  &lt;=C_R N^(Re sigma)/(1-Re sigma)&lt;=C_R.</code></pre>
+<p>On [1/N,R], integrate the oscillatory exponential once by parts, keeping BOTH endpoint terms. Multiplication by N cancels its 1/N. The endpoint terms are bounded since N^(Re sigma)&lt;=e and R is fixed. The derivative of a_N/phi’ gives a bounded integral. The only remaining term is bounded by</p>
+<pre><code>C_R |sigma| integral_(1/N)^R t^(-Re sigma-1) dt
+  &lt;=C_R |sigma| log N max(1,N^(Re sigma))&lt;=C_R.</code></pre>
+<p>This proves (6). No claim of pointwise smallness of the original ray has been used, and its lower endpoint contribution is not discarded. In particular Cauchy’s formula on that normal disk gives</p>
+<pre><code>|h_N^(r)(0)| &lt;= C_R r! log(eN)^r, r&gt;=0.               (8)</code></pre>
+<p>For a fixed forest of L cells with independent normal coordinates, the resulting pointed scalar germs are products in the specified operator order. In the scalar radial case their multijets satisfy</p>
+<pre><code>|partial^nu product_(j=1)^L h_(N,j)(0)|
+     &lt;=C^L product_j(nu_j!) log(eN)^(|nu|).           (9)</code></pre>
+<p>For fixed L and fixed total order this is polynomial (indeed polylogarithmic). Raw derivative orders with |nu| log((|nu|+1)log(eN))=o(N) still cost exp(o(N)); normalized Taylor coefficients need only |nu| log log(eN)=o(N).</p>
+<p>The conjugate radial integral has the same analytic estimate. The operator-valued pointing assertion here is for the displayed POSITIVE cell. A negative cell may be contracted as its complete original normalization, but no unstated negative arbitrary-channel formula is assumed. In particular no original pivot is replaced by a fresh average.</p>
+<h2 id="scope-for-the-global-contour-question">5. Scope for the global contour question</h2>
+<p>This is a source-specific cancellation before positivity, valid with all original spectators and marked data. The full radial current is not thrown away: its pointed scalar and its controlled normal germ remain. The zero-pointing part vanishes as a complete original-source pairing, without assuming a thimble comparison.</p>
+<p>The operation can remove normalization boundary components even when separate circle/ray pieces individually carry the whole knot rate. It changes individual-state evaluation tests and so evades the genuine obstruction to a UNIVERSAL cotangent chart homotopy. Its hypothesis is the literal visible-cell/forest structure, not merely a rational spectral relation or a matching character value.</p>
+<p>For genuinely internal head, transfer and alias clusters that structure has not been proved. Their complete currents may not lie in this pointing kernel. No sharp upper bound for the remaining pruned period, no all-face descending cycle, and no original-source lower bound follow from (1)–(9). Extending source-specific contraction to those internal clusters remains substantive work.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_normalization_boundary_current.py">Audit</a> checks the operator-valued all-input identity with original crossings, ordinary pivots and marked exteriors, and independently evaluates the full-Psi Mellin current and its first logarithmic normal derivatives.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_normalization_boundary_current_quotient.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-exact-selected-cell-with-all-original-scalar-factors">1. The exact selected cell, with all original scalar factors</a><a href="#operator-valued-pointing-and-exact-cancellation-of-its-kernel">2. Operator-valued pointing and exact cancellation of its kernel</a><a href="#the-actual-radial-current-and-its-mellin-normal-germ">3. The actual radial current and its Mellin-normal germ</a><a href="#uniform-normal-currents-through-radius-one">4. Uniform normal currents through radius one</a><a href="#scope-for-the-global-contour-question">5. Scope for the global contour question</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

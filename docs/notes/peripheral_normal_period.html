@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The peripheral delta module and the normal derivative of the knot period · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/peripheral_normal_period.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-peripheral-delta-module-and-the-normal-derivative-of-the-knot-period">The peripheral delta module and the normal derivative of the knot period</h1>
+<p>Research note, 26 October 2026. This identifies a boundary component which any positive-volume proof must retain. The ordinary principal-root colors force polynomial growth if a polynomial annihilator acts nontrivially on the complete-color delta vector. When that boundary component is retained, a simple rank condition expresses the actual complete period as the first normal derivative of a homogeneous kernel line. The derivative has a polynomially bounded source. Its size is therefore an inverse-operator and source-coupling problem, in the natural cyclic trace metric.</p>
+<p>These are necessary-condition and conditional period theorems, with uniform proofs below. The rank condition and the boundary-factor condition are not asserted for every hyperbolic knot operator. The regulator norm and original volume conjecture remain unproved.</p>
+<p>The subsequent <a href="actual_weyl_descent.html">actual Weyl-descent proof</a> constructs P=B*(Y-1) from the primitive minimal normal operator for every knot and proves its unitary reciprocity. Thus those symmetry data in Section 6 are available for the canonical actual operator. The special-fiber injectivity and norm estimates remain additional; Section 2’s necessity test still concerns every polynomial annihilator.</p>
+<p>The subsequent <a href="actual_peripheral_fusion.html">peripheral-fusion proof</a> derives the regular normal boundary lattice from the actual fundamental parallel, retaining its pole before changing lattice. Its odd normal state w_N=(M-M^(-1))F_N has K_N=(1/2)partial_(Log M)w_N at M=1. The adjacent-color splitting there has a nonzero square-zero Casimir residue whose pivotal partial trace is identity. These exact quantum extension data do not establish the root-fiber rank or the regulator norm.</p>
+<p>The subsequent <a href="ramified_weyl_fibre.html">ramified Weyl-fibre theorem</a> retains this derivative as an ordinary coordinate of a descended algebraic fibre over s=((U-1)/(U+1))^2. Its - sector generator is z e_- rather than a vector discarded by setting z=0 first. The source equation and complete functional then hold in that fibre, with their original rank qualifications. An explicit dimension formula gives signatures for which negative-sector injectivity cannot hold; saturated kernels and further lifting data remain available. No regulator norm is inferred from this descent.</p>
+<h2 id="fixed-state-ring-and-principal-root-bound">1. Fixed state, ring, and principal-root bound</h2>
+<p>Use the actual literature state in <a href="kashaev_ado_pointing.html">the ADO audit</a>, with</p>
+<pre><code>q_N=exp(pi*i/N), Q_N=q_N^2, Y=M^2,
+F_N(Y) Laurent polynomial, K_N=F_N(1)=&lt;K&gt;_N,
+F_N(Q_N^r)=C_r(q_N), 1&lt;=r&lt;N.</code></pre>
+<p>The <a href="regularized_kashaev_period.html">regular-period theorem</a> reconstructs the positive path trace directly from the actual fundamental crossing. For any fixed b-strand knot braid it proves</p>
+<pre><code>|C_r(q_N)|&lt;=D_N=sin(pi/N)^(1-b)&lt;= (N/2)^(b-1). (1.1)</code></pre>
+<p>Take a specified actual annihilator with denominators cleared and recorded, in the polynomial quantum torus</p>
+<pre><code>R=C(q)[Y^(+/-1),T^(+/-1); T Y=q^2Y T],
+P=sum_(j=0)^d a_j(q,Y)T^j,
+a_j in C[q^(+/-1),Y^(+/-1)].                 (1.2)</code></pre>
+<p>An initial power of T permits the nonnegative shift convention. The <a href="finite_sum_annihilator.html">existence</a> and <a href="even_meridian_norm_descent.html">squared-meridian descent</a> theorems supply such an actual operator, but do not yet identify its classical geometric factors.</p>
+<h2 id="a-nonzero-complete-column-forces-polynomial-growth">2. A nonzero complete column forces polynomial growth</h2>
+<p>For 0&lt;=i&lt;=d put</p>
+<pre><code>r_i(q)=a_i(q,q^(-2i)).                         (2.1)</code></pre>
+<p>If r_i is not identically zero, it has finite vanishing order nu_i at q=1. For all large N,</p>
+<pre><code>|r_i(q_N)|&gt;=c_i N^(-nu_i).</code></pre>
+<p>Evaluate the actual equation at Y=Q_N^(-i). Its i-th term is r_i(q_N)K_N. If N&gt;d, every other term uses a noncomplete orbit color, and hence has modulus at most C_P D_N by (1.1). The fixed Laurent coefficients are bounded on the unit torus. Consequently</p>
+<pre><code>|K_N|&lt;=C N^(b-1+nu_i).                        (2.2)</code></pre>
+<p>Thus a positive exponential volume rate requires</p>
+<pre><code>a_i(q,q^(-2i))=0 for every i.                 (2.3)</code></pre>
+<p>Equivalently every coefficient is divisible in the Laurent ring by q^(2i)Y-1. Polynomial division at its nonzero root proves this equivalence. Hence the required factorization is exactly</p>
+<pre><code>P=B*(Y-1), B in R with Laurent coefficients.  (2.4)</code></pre>
+<p>This is right multiplication: its i-th coefficient is b_i(q,Y)*(q^(2i)Y-1). A monic operator over C(q,Y) can have poles on those divisors; an ordinary evaluation of that localized operator cannot replace the cleared equation used above.</p>
+<p>The result is a dichotomy, not a proof that all hyperbolic operators already satisfy (2.3). If an actual hyperbolic-knot annihilator violated it, (2.2) would contradict its positive-volume conjecture. Conversely (2.3) alone supplies no exponential lower bound.</p>
+<h2 id="the-missing-component-is-a-fixed-boundary-module">3. The missing component is a fixed boundary module</h2>
+<p>At generic q define</p>
+<pre><code>Delta=R/R*(Y-1), delta=class of 1.</code></pre>
+<p>It has C(q)-basis T^j delta, j in Z, and</p>
+<pre><code>Y T^j delta=q^(-2j)T^j delta.</code></pre>
+<p>Therefore P delta=0 is exactly (2.3). The module is simple at indeterminate q: polynomial interpolation in Y isolates one term of any nonzero finite combination of these distinct eigenvectors, and powers of T then generate all of them. Every vector is killed by a nonzero polynomial in Y. Localizing the meridian to C(q,Y) therefore kills Delta completely.</p>
+<p>For a polynomial annihilator ideal I, positive exponential growth would imply I is contained in R*(Y-1). Its cyclic module would have Delta as a quotient. For one specified P satisfying (2.4), this quotient already follows without a volume assumption. The generic norm torsor over C(q,Y) needs a meridian lattice to retain this boundary datum.</p>
+<p>At the actual root, impose T^N=1 as well. The resulting Delta_N is the N-dimensional clock-and-shift module with Y<sup>N=T</sup>N=1, at every parity and composite level. It is irreducible because the N distinct Y-eigenvalues and their cyclic shift generate all matrix units. On functions of the root orbit the complete delta vector is</p>
+<pre><code>e_0=(1,0,...,0),
+e_0(Y)=S_N(Y)/N modulo Y^N-1.</code></pre>
+<p>Thus P annihilates this vector on the central fiber when (2.4) holds. If c_N=(0,C_1,…,C_(N-1)), the actual state there is</p>
+<pre><code>F_bar_N=c_N+K_N e_0.                          (3.1)</code></pre>
+<p>Every vector in this affine line satisfies the same special operator equation and has the same ordinary-color pointing. The complete coefficient is fixed by extension away from the central fiber. This affine ambiguity is not permission to change the actual state.</p>
+<p>At q=1, (2.4) also gives the vertical factor Y-1 in the classical polynomial symbol. Removing vertical factors to state an A-curve equation discards this specific boundary-module datum. The marked integral/meridian extension must therefore accompany that curve.</p>
+<h2 id="the-actual-full-period-is-a-normal-derivative">4. The actual full period is a normal derivative</h2>
+<p>Assume (2.4) for the specified operator. Work near U=Y^N=1, with t=U-1 and the fixed root germs</p>
+<pre><code>Y_r(t)=Q_N^r*(1+t)^(1/N), 0&lt;=r&lt;N.</code></pre>
+<p>Represent B by the cyclic matrix B_N(t): its row r, column r+j modulo N receives b_j(q_N,Y_r(t)). Write</p>
+<pre><code>B_N(t)=B_0+t B_1+O(t^2),
+(B_1)_(r,r+j)=(1/N)(Y*d/dY)b_j(q_N,Q_N^r).    (4.1)</code></pre>
+<p>Retain the full vector of the actual state and put</p>
+<pre><code>v_N(t)_r=(Y_r(t)-1)F_N(Y_r(t)),
+v_N(t)=v_0+t v_1+O(t^2).</code></pre>
+<p>Since P F_N=0, B_N(t)v_N(t)=0. At the special fiber,</p>
+<pre><code>(v_0)_0=0,
+(v_0)_r=(Q_N^r-1)C_r(q_N), 1&lt;=r&lt;N,
+B_0 v_0=0,
+B_0 v_1=-B_1 v_0,
+(v_1)_0=K_N/N.                               (4.2)</code></pre>
+<p>The last identity keeps the zero of Y-1 until differentiation: Y_0’(0)=1/N. In particular the complete full ADO value is exactly</p>
+<pre><code>N_N(1)=eta_N (v_1)_0, eta_N=i^(N+3).           (4.3)</code></pre>
+<p>Indeed the full state, before specialization, is</p>
+<pre><code>N_N(M)=eta_N M^(N-1)*(Y-1)F_N(Y)/(U-1).</code></pre>
+<p>Its poles, its sign character, and its phase have all been retained. The normal derivative realizes their cancelled whole germ.</p>
+<p>Suppose now that</p>
+<pre><code>rank B_0=N-1.                                 (4.4)</code></pre>
+<p>The known nonzero vector v_0 spans its kernel; the reference component is Q_N-1 because C_1=1. The solutions of the inhomogeneous normal equation in (4.2) form a genuine affine torsor under C*v_0. Since (v_0)_0=0, its complete-coordinate functional is constant. Thus (4.2) determines K_N exactly, without choosing the derivative of a central normalization unit.</p>
+<p>More explicitly replacing v_N(t) by c(1+t)v_N(t), c(1)=1, adds c’(1)v_0 to v_1. The complete value in (4.3) does not change. This is the anchored normal-period comparison, with its specified root germs. The rank condition is additional to the existence of the actual operator; it is not assumed for every knot.</p>
+<p>The regular complete scalar of the preceding note is</p>
+<pre><code>R_N(1)=(v_1)_0-p_N(1), |p_N(1)|&lt;=D_N.          (4.5)</code></pre>
+<p>So the normal derivative and that regularized field-trace period give the same positive-volume target.</p>
+<h2 id="the-first-obstruction-selects-a-point-of-the-delta-torsor">5. The first obstruction selects a point of the delta torsor</h2>
+<p>Let D(t)=diag(Y_r(t)-1), so P_N(t)=B_N(t)D(t). At zero, Im D(0) is the hyperplane of vectors with zero complete coordinate. Its kernel is C<em>e_0. Since ker B_0=C</em>v_0 is inside this hyperplane,</p>
+<pre><code>rank P_0=N-2, ker P_0=span(e_0,c_N).           (5.1)</code></pre>
+<p>The first lifting obstruction is the linear map</p>
+<pre><code>kappa:ker P_0 -&gt; coker P_0,
+x -&gt; [P_1 x].                                 (5.2)</code></pre>
+<p>This is the usual first Bockstein: a lift x+t x_1 solves the equation through first order exactly when P_0 x_1+P_1 x=0. In particular</p>
+<pre><code>P_1 e_0=(1/N)B_0 e_0.</code></pre>
+<p>This is not in Im P_0. Otherwise e_0 would differ from a vector in Im D(0) by a member of ker B_0, also in Im D(0), a contradiction. The actual vector c_N+K_N e_0 lifts. Hence kappa has rank one on the two-dimensional kernel, and its kernel selects that exact line.</p>
+<p>Choose any left null vector ell of P_0 with ell P_1 e_0 nonzero. The period is the exact ratio</p>
+<pre><code>K_N=-ell P_1 c_N/(ell P_1 e_0).                (5.3)</code></pre>
+<p>Changing ell subject to this condition gives the same answer, because the actual lift exists. This derivative pairing records the boundary extension that the ordinary special kernel omits. Under (4.4) the rank loss in P is exactly one simple Smith factor; no unverified higher-order lift is being used. More singular cases need the higher jets retained in the <a href="bounded_meridian_jets.html">bounded-jet construction</a>.</p>
+<h2 id="a-bounded-source-and-the-exact-inverse-matrix-period">6. A bounded source and the exact inverse-matrix period</h2>
+<p>Use the Hermitian norm on the orbit coming from the cyclic trace; the unnormalized Euclidean version differs only by the common factor N^(1/2). The fixed Laurent coefficients give</p>
+<pre><code>||B_1||&lt;=C_B/N,
+||v_0||&lt;=2D_N*sqrt(N).                         (6.1)</code></pre>
+<p>For the first inequality write B_1 as a finite sum of diagonal coefficient matrices times unitary cyclic shifts, and bound each Y-derivative on the unit torus. Thus the normal equation has a polynomially bounded, explicitly specified source.</p>
+<p>Let B_0^+ be the Moore–Penrose inverse. Since e_0 is perpendicular to ker B_0, every solution of (4.2) has the same complete coordinate, and exactly</p>
+<pre><code>K_N=-N*e_0^* B_0^+ B_1 v_0.                  (6.2)</code></pre>
+<p>If s_N is the smallest nonzero singular value of B_0, then</p>
+<pre><code>|K_N|&lt;=2 C_B D_N sqrt(N)/s_N.                 (6.3)</code></pre>
+<p>Consequently positive volume growth would force an exponentially large inverse norm in this specified boundary problem. The source itself cannot supply that positive exponent. Small singular values alone are insufficient: (6.2) also retains the source and the complete-coordinate pairing. In a singular-vector decomposition it is the sum of their two overlaps divided by the corresponding singular values. No largest-eigenvalue prescription is being used.</p>
+<p>The geometric action already has imaginary value Vol at completeness, by the <a href="quantum_longitude_and_regulator_action.html">actual action proof</a>. What remains is to prove that (6.2), with these exact overlaps, has that regulator norm. Neither (6.3) nor the existence of a geometric critical point proves that estimate. Extra left operator factors can also create small singular values with zero relevant overlap.</p>
+<h3 id="a-weyl-symmetry-isolates-the-relevant-inverse">A Weyl symmetry isolates the relevant inverse</h3>
+<p>There is a stronger reduction when the <em>actual operator</em> has a checked reciprocity. Write R h(Y)=h(Y^(-1)), Q=q^2, and suppose</p>
+<pre><code>J=-Y R, J&#39;=c(q,Y)T^d R,
+B J=J&#39; B,
+c(q,Y)c(q,Q^(-d)Y^(-1))=1,
+|c(q,Y)|=1 on the unit torus.                 (6.4)</code></pre>
+<p>Both give unitary involutions on the root orbit; B_0 intertwines them. Their -1 eigenspaces are orthogonal to the +1 eigenspaces, and e_0 has J-eigenvalue -1. The factor Y-1 is the squared-meridian form of the Weyl denominator, up to the retained monomial M.</p>
+<p>If J v_0=v_0, differentiating the operator identity at U=1 proves J’ B_1 v_0=-B_1 v_0. Explicitly inversion sends t to -t+O(t^2), and the domain involution has derivative J/N. Applying the differentiated identity to v_0 kills the terms containing B_0 v_0 and leaves exactly this source parity. Thus only the -1 symmetry sector enters the complete normal period.</p>
+<p>Under (4.4) this source parity is automatic whenever K_N is nonzero. Indeed the one-dimensional kernel makes J v_0=epsilon*v_0. If epsilon=-1, the same differentiation gives source parity +1. The -1 part of v_1 would then be a multiple of v_0 and have zero complete coordinate, forcing K_N=0.</p>
+<p>More generally (4.4) can be weakened in this symmetry setting: it suffices that J v_0=v_0 and B_0 is injective on the -1 domain. The actual derivative places the source in its image. Extra +1 kernel vectors do not affect the value. Writing the restricted Moore–Penrose inverse as B_-^+, the exact period is</p>
+<pre><code>K_N=-N e_0^* B_-^+ B_1 v_0.                  (6.5)</code></pre>
+<p>It is this inverse and its specified source that need a regulator norm theorem. Small singular values in the other symmetry sector make no contribution. Reciprocity is additional quantum data; it is not assumed merely from the classical A-curve’s inversion symmetry. The subsequent <a href="actual_weyl_descent.html">actual-state proof</a> now derives this reciprocity for the primitive minimal normal operator of every knot, and also proves J v_0=v_0 directly. An arbitrary nonprimitive or left-multiplied operator still needs its own checked intertwiner and lattice.</p>
+<p>There is an explicit Hilbert-90 descent of the reflected kernel frame. If its generic rational kernel is a C(U)-line, reciprocity gives</p>
+<pre><code>J v=gamma(U)v, gamma(U)gamma(U^(-1))=1.</code></pre>
+<p>When J v_0=v_0, gamma is a unit at U=1 with gamma(1)=1. Set g(U)=(1+gamma(U))/2. Direct division gives g(U)/g(U^(-1))=gamma(U). Thus g*v is J-invariant and g(1)=1. This is an explicit frame change of the same pointed line, not a replacement knot state. Its derivative adds g’(1)v_0 and leaves the complete normal period unchanged. Zeros or poles of this frame elsewhere remain part of the lattice data. This is quadratic Hilbert 90 on the central involution, after the normal pointing has already fixed the value at the branch point.</p>
+<p>The ambient cyclic orbit also retains a precise signed dihedral relation. Direct multiplication gives J T J=Q<em>T^(-1). With the actual ADO character kappa=-q^(-1), put T_tilde=kappa</em>T. Then</p>
+<pre><code>J T_tilde J=T_tilde^(-1),
+T_tilde^N=kappa^N=(-1)^(N-1).                 (6.6)</code></pre>
+<p>Thus the uniform half-root lambda=-q, lambda^2=Q, is compatible with the Weyl action and with the full even-level sign. This is an action on the ambient orbit module. It does not assert that the scalar operator’s rational solution line is stable under T; only its checked reflection intertwiner and central frame descent are used. Neither Hilbert-90 descent nor this finite symmetry supplies the missing regulator norm.</p>
+<h2 id="a-fixed-initial-form-bounds-the-rational-root-period-rank">7. A fixed initial form bounds the rational root period rank</h2>
+<p>There is a simple separate certificate for generic rational rank. For any Laurent polynomial operator L, let r be the least Y-exponent in its coefficients and define</p>
+<pre><code>I_0(q,z)=sum_j [Y^r]a_j(q,Y)*z^j.              (7.1)</code></pre>
+<p>At q_N, suppose this initial form is nonzero. On E=C(Y) over C(U), U=Y^N, represent Y^(-r)L in the monomial basis 1,Y,…,Y^(N-1). Its matrix is integral over C[U]. Modulo U it is lower triangular: positive powers of Y either increase the basis exponent or wrap with a positive power of U. Its diagonal entries are I_0(q_N,Q_N^k). The principal submatrix on their nonzero indices has nonzero determinant. Therefore</p>
+<pre><code>dim_(C(U)) ker L
+   &lt;=#{0&lt;=k&lt;N : I_0(q_N,Q_N^k)=0}.             (7.2)</code></pre>
+<p>This counts distinct lattice roots, not their multiplicities. If I_0=g(q)*z<sup>a*(z-q</sup>(2s))^m, with g(q_N) nonzero and m&gt;=1, the bound is one at every such level. Any known nonzero rational period then proves generic rank one. The same applies at infinity. This is a condition on the actual quantum initial form, not on the commutative A-polynomial alone. Terms vanishing at q=1 can change the extremal Y-coefficient.</p>
+<p>The bound certifies the generic line used in Hilbert 90. It does not replace (4.4), which concerns its special fiber and the normal derivative. A rational kernel line may acquire extra special solutions; that possibility is exactly what the lattice retains.</p>
+<p>The subsequent <a href="torsion_initial_rank.html">torsion initial-rank theorem</a> extends the pure-binomial test: rational-coefficient initial forms have only finitely many isolated torsion-grid exceptions outside their contained binomial torsion curves. Their eventual root count is given by finite periodic congruences. A single occupied curve therefore gives generic rank one even in the presence of non-toric initial factors. The proof keeps the q half-root and provides an explicit exceptional-level bound. It does not establish the special negative-sector injectivity or regulator norm.</p>
+<h2 id="the-rank-hypothesis-cannot-be-suppressed">8. The rank hypothesis cannot be suppressed</h2>
+<p>For a manufactured root family let</p>
+<pre><code>F_N(Y)=1+a_N S_N(Y),
+B=(T-1)(T-Q), P=B*(Y-1).</code></pre>
+<p>Then P F_N=0 because (Y-1)F_N=Y-1+a_N(U-1), and B kills 1,Y. All ordinary orbit values are one, while K_N=1+N*a_N is arbitrary. Here B_0 has a two-dimensional kernel. Its complete-coordinate functional does not vanish on that kernel, so the first normal equation leaves this freedom. The quantum initial form also has two distinct lattice roots, consistent with (7.2).</p>
+<p>These are not knot states. In particular choosing a_N to change the complete value violates the coherent all-level color data, whose recovery is proved in <a href="all_level_a_period.html">the all-level theorem</a>. The example only explains the rank requirement for the simpler normal equation (6.2), not a new ambiguity in the actual invariant.</p>
+<h2 id="independent-operator-and-actual-state-calibration">9. Independent operator and actual-state calibration</h2>
+<p>The audit derives a telescoping operator for the finite block</p>
+<pre><code>H_N(Y)=sum_(k=0)^(N-1) t_k(Y),
+t_k=product_(r=1)^k(Y+Y^(-1)-Q^r-Q^(-r)).</code></pre>
+<p>The subsequent <a href="figure_eight_whole_source_identity.html">whole-source four-plat proof</a> identifies H_N with the actual figure-eight ADO state at every level, with all peripheral factors retained. The derivation here does not take that equality as a premise. Put Z=Q^k and</p>
+<pre><code>C(Y,Z)=(Y-1)^2 Z/((Y-Z)(1-YZ)),
+D(Y)=Y(Y+1)(Q-Y^2)(QY^2-1),
+g=Q^2Y^2-QY^4+QY^3+QY-Q+Y^2,
+c_-=Y^2(Q-Y)(QY^2-1),
+c_0=-(Y-1)^2(Y+1)g,
+c_+=Y^2(QY-1)(Q-Y^2).</code></pre>
+<p>The finite products give the two Y-shift ratios and the k-ratio directly. Substitution proves the exact rational certificate</p>
+<pre><code>sum_(j=-1)^1 c_j(Y)*t_k(Q^jY)/t_k(Y)
+  =D(Y)*(C(Y,QZ)*t_(k+1)/t_k-C(Y,Z)).          (9.1)</code></pre>
+<p>At a root Q^N=1, C(Y,1)=-1 and t_N=Y<sup>N+Y</sup>(-N)-2. Telescoping therefore gives</p>
+<pre><code>(c_-T^(-1)+c_0+c_+T)H_N
+               =D(Y)*(3-U-U^(-1)).           (9.2)</code></pre>
+<p>The central factor is retained. Applying D(Y)T-D(QY) kills the source. Left multiplication by T removes the negative shift. The common coefficient factor removed in the audit is exactly Q<sup>3Y(Q</sup>3Y<sup>2-1)</sup>2, recorded before any specialization. The resulting polynomial P has every boundary column factor, initial form z(Q-z), and classical symbol</p>
+<pre><code>(Y-1)^2(Y+1)^2*(z-1)*Y^2*A_geo(Y,z),
+A_geo=z^2-(Y^2-Y-2-Y^(-1)+Y^(-2))*z+1.         (9.3)</code></pre>
+<p>This checks the familiar geometric peripheral polynomial and the additional boundary factors in fixed conventions. It does not prove an AJ theorem for arbitrary knot operators or identify root central curves with A_geo.</p>
+<p>For this calibrated operator the exact reciprocity in (6.4) is c(Q,Y)=-Q^12 Y^8 and d=3. Substituting its coefficients verifies</p>
+<pre><code>-Q^j Y b_j(Y)=c(Q,Y)b_(3-j)(Q^(-3)/Y).</code></pre>
+<p>The two involution and unit-norm identities follow by multiplication. The -1 domain has dimension ceil(N/2), including every parity. The audit verifies the source parity and recovers the same period using only that folded inverse. This removes an irrelevant symmetry sector before any asymptotic estimate; it is not such an estimate.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_peripheral_normal_period.py">The audit</a> verifies the certificate symbolically. At levels 2,3,4,5,6,7,8,10 it proves coefficientwise equality of H_N with independently computed actual figure-eight cut Laurent polynomials over the stated finite fields, and verifies their annihilation. At eleven levels through 18 it checks both matrix ranks, the derivative product rule, and exact recovery of the complete block period by (4.2), (5.2), and the Weyl-folded inverse (6.5). It also checks 50 initial-root dimension examples and six explicit rank- ambiguity examples. All checks passed. The larger block tests do not extend the actual-state comparison beyond its stated levels. That all-level comparison is now supplied by the independent four-plat proof, which also proves the selected volume limit and leading coefficient for the actual figure-eight invariant. Results are in <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/peripheral_normal_period_results.json">the output</a>.</p>
+<pre><code>python3 experiments/audit_peripheral_normal_period.py</code></pre>
+<p>The boundary delta module, first lifting obstruction, Moore–Penrose inverse and initial-form argument use standard module and linear algebra. Their proofs above specify their role in the actual marked period; no novelty claim or imported analytic theorem is made. The quantum-torus Weyl involution already has explicit coverage in <a href="https://letu.math.gatech.edu/Papers/Lectures_Luminy_2014_new.pdf">Le’s lectures, Section 5.9</a>. Only its scope is used for coverage; no AJ, state-comparison or analytic conclusion from that source is a premise. The weighted involutions and source parity above were obtained by direct operator identities, with all monomial phases retained. The <a href="triangulation_regulator_bridge.html">geometric triangulation bridge</a> supplies the marked Bloch action for the comparison with this normal period. Its norm, the actual geometric factor’s survival, and the original volume conjecture remain open in this project.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/peripheral_normal_period.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#fixed-state-ring-and-principal-root-bound">1. Fixed state, ring, and principal-root bound</a><a href="#a-nonzero-complete-column-forces-polynomial-growth">2. A nonzero complete column forces polynomial growth</a><a href="#the-missing-component-is-a-fixed-boundary-module">3. The missing component is a fixed boundary module</a><a href="#the-actual-full-period-is-a-normal-derivative">4. The actual full period is a normal derivative</a><a href="#the-first-obstruction-selects-a-point-of-the-delta-torsor">5. The first obstruction selects a point of the delta torsor</a><a href="#a-bounded-source-and-the-exact-inverse-matrix-period">6. A bounded source and the exact inverse-matrix period</a><a href="#a-fixed-initial-form-bounds-the-rational-root-period-rank">7. A fixed initial form bounds the rational root period rank</a><a href="#the-rank-hypothesis-cannot-be-suppressed">8. The rank hypothesis cannot be suppressed</a><a href="#independent-operator-and-actual-state-calibration">9. Independent operator and actual-state calibration</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The original state has charged simplex amplitudes and a retained quadratic phase · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/original_crossing_winding_convexity.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-original-state-has-charged-simplex-amplitudes-and-a-retained-quadratic-phase">The original state has charged simplex amplitudes and a retained quadratic phase</h1>
+<p>28 October 2026. This is a statement about the ORIGINAL enhanced Kashaev state, before a Fourier or Fermat change of basis. Each nonzero crossing entry has four nonnegative factorial indices adding to N-1. Its absolute action is concave on that charged simplex, strictly concave on each face with at least three positive coordinates. The exact phases are quadratic and remain indispensable: reversing a crossing leaves its entire support and every absolute weight unchanged.</p>
+<p>The original cut forces the state onto proper faces. In particular, one must not assume an interior optimizer of the four-angle action is accessible to the original source. The <a href="original_source_cyclic_variation_peeling.html">first-strand support reduction</a> proves that the first head stays zero and gives the corresponding exact q-Pascal boundary operator, including the two unit-modulus end crossings. No broad volume-conjecture estimate follows from concavity alone.</p>
+<h2 id="both-actual-crossings-have-the-same-charged-support">1. Both actual crossings have the same charged support</h2>
+<p>Use Q=exp(2 pi i/N), s=exp(pi i/N), F_j=product_(r=1)<sup>j(1-Q</sup>r), and the literature normalization proved in <a href="kashaev_crossing_and_period_lattice.html">the crossing audit</a>. Write B_+=P(R<sup>o)</sup>t and B_-=B_+^{-1}. For an entry with input (a,b) and output (c,d), put</p>
+<pre><code>u=[b-a-1], v=[a-c], t=[c-d], h=[d-b],             (1)</code></pre>
+<p>where brackets take values 0,…,N-1. Then exactly</p>
+<pre><code>B_+[(c,d),(a,b)]
+   =N Q^[1-(t+h)(u+h)]/(F_u conjugate(F_v) F_t conjugate(F_h))
+                                                    (2)</code></pre>
+<p>when u+v+t+h=N-1, and it is zero otherwise. This follows by substituting (i,j,k,l)=(a,b,d,c) into the original unbraided formula. The two printed theta inequalities are equivalent to this sum condition: the sum is congruent to -1 modulo N, and those inequalities bound it strictly below 2N.</p>
+<p>For the ACTUAL inverse, including the Q^{-1} correction to the printed inverse, its factorial indices are (h,u,v,t). Its numerator is N Q<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. In particular the support is identical. Using the sum in (1) gives the stronger entrywise identity</p>
+<pre><code>B_-[(c,d),(a,b)]
+   =Q^(c+d-a-b) conjugate(B_+[(c,d),(a,b)]).       (3)</code></pre>
+<p>Indeed the exponent left after division by conjugate(B_+) is (u+v)(v+t)-(t+h)(u+h), congruent to h-v modulo N, and h-v is congruent to c+d-a-b. Thus if Z e_j=Q^j e_j,</p>
+<pre><code>B_-=(Z tensor Z) conjugate(B_+) (Z tensor Z)^{-1}. (4)</code></pre>
+<p>Conjugation in (3)-(4) is entrywise complex conjugation, not adjoint. It does not make the original braid transfer positive or unitary.</p>
+<p>The exact charged absolute weight is therefore, for either sign,</p>
+<pre><code>|B_+[(c,d),(a,b)]|=|B_-[(c,d),(a,b)]|
+                =N/|F_u F_v F_t F_h|.             (5)</code></pre>
+<h2 id="the-uniform-real-action-and-its-convex-geometry">2. The uniform real action and its convex geometry</h2>
+<p>Let Lambda(0)=0 and Lambda’(theta)=-log(2 sin theta) on (0,pi). The elementary uniform root-factorial estimate, including the two endpoints, is</p>
+<pre><code>log|F_j|=-(N/pi)Lambda(pi j/N)+O(log(N+1)),
+                     0&lt;=j&lt;N.                     (6)</code></pre>
+<p>For clarity its uniformity does not require staying in the bulk. Split log(2 sin pi x) into log x+log(1-x) plus a smooth function on [0,1]. Stirling bounds for the two resulting factorial products and a bounded Riemann-sum error for the smooth part prove (6), uniformly in j.</p>
+<p>With alpha=(u,v,t,h)/N, (5)-(6) give</p>
+<pre><code>(1/N)log|B_+|=H(alpha)+O(log(N+1)/N),
+H(alpha)=(1/pi)sum_(r=1)^4 Lambda(pi alpha_r),
+sum alpha_r=1-1/N.                               (7)</code></pre>
+<p>For a fixed whole word, the error remains O_word(log N), and its number of state variables is fixed. Thus the absolute action of an actual state is the sum of these local H, with the original support and cut constraints. No scalar replacement state is needed to define this action.</p>
+<p>Here is the strict-concavity statement, including the obtuse case. For k&gt;=3, theta_r&gt;0 and sum theta_r=pi, the quadratic form</p>
+<pre><code>sum_r cot(theta_r) w_r^2, sum_r w_r=0,             (8)</code></pre>
+<p>is positive definite. If every angle is at most pi/2, this is immediate; at most one coefficient can be zero in this open simplex. Otherwise exactly one angle, say theta_1, exceeds pi/2. Put s_0=sum_(r&gt;1)theta_r=pi-theta_1&lt;pi/2. Cauchy–Schwarz gives</p>
+<pre><code>sum_(r&gt;1)cot(theta_r) w_r^2
+   &gt;= (sum_(r&gt;1)w_r)^2 / sum_(r&gt;1)tan(theta_r).</code></pre>
+<p>The addition formula for tan gives sum_(r&gt;1)tan(theta_r)&lt;tan(s_0), since there are at least two positive summands and their sum is below pi/2. This strictly dominates the negative term -cot(s_0) w_1^2 whenever w_1 is nonzero. If w_1=0, the remaining positive diagonal form is positive on every nonzero vector. This proves (8). The same proof works when the angle sum is strictly below pi: then cot(sum_(r&gt;1)theta_r)&gt;cot(pi-theta_1), strengthening the inequality.</p>
+<p>Since the Hessian of sum Lambda is minus this cotangent form, H is strictly concave on the open charged simplex. It extends continuously as a concave function to its closure. On a face at limiting charge sum alpha=1, the same assertion holds for its k&gt;=3 active coordinates. A two-coordinate face instead has zero action, because Lambda(theta)+Lambda(pi-theta)=0. One-coordinate faces also have zero action. Thus strictness on a forced source face must be checked, not inferred from strictness in the unattained open four-coordinate simplex.</p>
+<p>The value at the balanced point is 2 pi H(1/4,1/4,1/4,1/4)=8 Lambda(pi/4), the regular ideal octahedron volume. This calibrates the local absolute envelope. It is not a claim that its sum over a diagram equals the knot-complement volume.</p>
+<h2 id="whole-word-winding-regions-and-their-source-faces">3. Whole-word winding regions and their source faces</h2>
+<p>Fix the original arc colors divided by N and choose integer lifts of the brackets in (1). The crossing indices are then affine functions of these colors; their sum is exactly 1-1/N. Nonnegativity defines a convex polytope for each choice of lifts. There are finitely many choices for a fixed word, independently of N. The pivotal closures must be imposed with their ORIGINAL shifts, not as unshifted equality of colors.</p>
+<p>On a region with all four coordinates positive at every crossing, the Hessian of the whole absolute action has kernel exactly the variations which leave every crossing index fixed. At a crossing, this requires all four incident arc variations to be equal. On a connected projection these equalities propagate to a common translation of all arc colors. Fixing the original cut color removes that translation. Therefore the whole action is strictly concave on any such nonempty region. It has at most one interior critical point; if one exists, it is the unique maximum on that region’s closure.</p>
+<p>This assertion is deliberately not an existence claim. For the original one-cut source, some four-coordinate interiors are inaccessible. On a forced face, discard the zero-action one- and two-coordinate crossing faces. The exact strictness criterion is injectivity, on the remaining tangent space, of the combined corner maps at crossings with at least three active coordinates. This is a finite linear-algebra calculation. When it fails there are real flat directions, which need elimination before applying an ordinary nondegenerate Laplace argument.</p>
+<p>This gives a finite, source-dependent concavity problem. It does not put a nonzero quantum coefficient on its maximizer, or equate an absolute-state maximum with the geometric regulator.</p>
+<h2 id="the-quadratic-phase-is-part-of-the-same-original-state">4. The quadratic phase is part of the same original state</h2>
+<p>The exact factorial phase is</p>
+<pre><code>F_j=|F_j| exp[pi i j(j+1)/(2N)-pi i j/2].          (9)</code></pre>
+<p>Write alpha_u,…,alpha_h for (1)/N, and define</p>
+<pre><code>D(alpha)=alpha_u^2+alpha_t^2-alpha_v^2-alpha_h^2,
+L(alpha)=alpha_u+alpha_t-alpha_v-alpha_h,
+B(alpha)=-2pi(alpha_t+alpha_h)(alpha_u+alpha_h)
+                      -(pi/2)D(alpha)+(pi/2)L(alpha).</code></pre>
+<p>Equations (2) and (9), without an asymptotic approximation, give</p>
+<pre><code>B_+=|B_+| exp[i N B(alpha)-i(pi/2)L(alpha)+2pi i/N]. (10)</code></pre>
+<p>The negative crossing uses the complex conjugate of (10), multiplied by the exact phase Q^(c+d-a-b) from (3). Thus on every fixed winding region the leading phase of the WHOLE original state is a real quadratic function of its arc colors, with crossing signs retained. The remaining linear phases, pivotal scalars, and writhe factor remain explicit.</p>
+<p>One may consequently define a phase homotopy by multiplying every chosen exact phase angle of the whole summand by tau in [0,1]. At tau=0 this is the absolute sum of that original presentation; at tau=1 it is the original invariant. Intermediate values are not claimed to be knot invariants. Concavity supplies a possible initial real maximum on each accessible face, but does not prove continuation of its integration cycle or nonvanishing at tau=1.</p>
+<p>There is a sharp reason that phase cannot be ignored. For a fixed braid POSITION word, (3) implies that changing any crossing signs changes neither its supported state set nor any absolute-state summand. The enhancement mu=-s S is a unit-modulus cyclic shift, and the writhe normalization also has modulus one, so the statement holds through the ORIGINAL full closure. Yet crossing changes can change the knot or unknot it. For example the position word (1,2,1,2) has the trefoil closure with all signs positive and the figure-eight closure with alternating signs. Their actual values differ, while their entire absolute-state sum is identical. This is an exact finite-state obstruction, not just a comparison of formal critical potentials.</p>
+<p>The new concavity therefore cannot by itself settle source selection. A reduced-alternating argument might additionally use its specified phase and projection, but those are additional information. The desired global theorem must carry (10) and the forced source faces all the way to the geometric contour.</p>
+<h2 id="independent-finite-checks">5. Independent finite checks</h2>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_original_crossing_winding_convexity.py">The audit</a> checks (1)-(5) against the independently implemented original crossing and its true inverse over finite fields, including even and composite levels. Complex checks verify (9)-(10), the full original pivotal contraction, the figure-eight normalization, and the equal absolute sums of the two signed words above. The cotangent tests supplement, and do not replace, the proof (8).</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>(u+v)(v+t)-1<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/original_crossing_winding_convexity.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#both-actual-crossings-have-the-same-charged-support">1. Both actual crossings have the same charged support</a><a href="#the-uniform-real-action-and-its-convex-geometry">2. The uniform real action and its convex geometry</a><a href="#whole-word-winding-regions-and-their-source-faces">3. Whole-word winding regions and their source faces</a><a href="#the-quadratic-phase-is-part-of-the-same-original-state">4. The quadratic phase is part of the same original state</a><a href="#independent-finite-checks">5. Independent finite checks</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Deleting cut roots preserves the pointed relative Ward class · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/ward_source_localization.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="deleting-cut-roots-preserves-the-pointed-relative-ward-class">Deleting cut roots preserves the pointed relative Ward class</h1>
+<p>Research proof, 27 October 2026. The original cut covector does not descend after deleting the root <code>A=1</code>. A different literal finite cut does descend, and its matrix functional is explicitly cochain homotopic to the original on the actual Ward complex. The equivalence extends to the relative boundary resolution and to a marked whole normal family. It is a boundary/source comparison, not a rule for compressing crossings or a geometric Gaussian source-survival theorem.</p>
+<h2 id="the-localized-source-and-its-exact-normalization">1. The localized source and its exact normalization</h2>
+<p>Fix <code>N&gt;=2</code>, <code>Q</code> primitive of order <code>N</code>, and the original evaluation color <code>V=C_N=k[A^+/-1]/(A^N-1)</code>. In its evaluation basis the source is <code>psi=(1,...,1)^t</code>, the co-source is <code>phi=(1/N)(1,...,1)</code>, and <code>e=psi phi</code>. Let <code>S</code> be any nonempty set of retained roots, <code>m=|S|=N-s&gt;0</code>, and let <code>P</code> be multiplication by its characteristic idempotent. Define</p>
+<pre><code>psi_S=P psi, phi_S=(N/m)phi P,
+e_S=psi_S phi_S=(N/m)P e P.                   (1)</code></pre>
+<p>One has <code>phi_S psi_S=1</code>, <code>e_S^2=e_S</code>, and <code>Tr e_S=1</code>. The literal new matrix cut is</p>
+<pre><code>Phi_S(C)=Tr(e_S C)=(1/m)sum_(a,b in S) C_(a,b). (2)</code></pre>
+<p>The factor <code>N/(N-s)</code> is retained exactly, for every <code>s&lt;N</code>. The original pivot and marked defect remain available via <code>Phi(C)=Tr(g D C)</code>; equation (2) changes the boundary representative, not the original numerical invariant on closed tangles. The entire external full-ADO factor remains unchanged.</p>
+<p>For deletion only of <code>A=1</code>, let <code>epsilon_1=(1/N)sum_(j&lt;N)A^j</code> and <code>P=1-epsilon_1</code>. The new color co-source is intrinsically</p>
+<pre><code>phi_S(f)=[N phi(f)-f(1)]/(N-1).               (3)</code></pre>
+<p>It kills the deleted root’s entire idempotent summand and factors through <code>C_N[(A-1)^(-1)]=P C_N</code>. Thus it removes the previously displayed localization obstruction for this new representative.</p>
+<h2 id="the-actual-ward-homotopy-on-all-matrices">2. The actual Ward homotopy, on all matrices</h2>
+<p>Use the actual root matrices <code>K,F</code> and the split image Ward complex from <a href="actual_borel_ward_cut_contraction.html">the Ward contraction</a>:</p>
+<pre><code>W_N^0=End(V), W_N^1=im delta_N,
+delta_N(C)=([K,C],[F,C]),
+h_N delta_N=I-i_N p_N, delta_N h_N=I,
+p_N(C)=Tr(C)/N, i_N(c)=c I.</code></pre>
+<p>Both <code>Phi</code> and <code>Phi_S</code> take value one on <code>I</code>. Consequently</p>
+<pre><code>Phi_S-Phi=(Phi_S-Phi) h_N delta_N.            (4)</code></pre>
+<p>This is an explicit all-matrices cochain homotopy, with the known finite denominators in <code>h_N</code>. Every actual closed cut tangle is Ward closed and equals <code>F_N(M)I</code>. Hence</p>
+<pre><code>Phi_S(C_K)=Phi(C_K)=F_N(M).                   (5)</code></pre>
+<p>This holds wherever that original root-color cut operator is defined, as a meromorphic whole germ in <code>M</code>; no scalar or peripheral factor is replaced by its value at completeness.</p>
+<p>The distinction between the two source complexes matters. In the color relative complex <code>R(C_N)</code> alone, <code>phi_S</code> and <code>phi</code> are not homotopic: its top cohomology is <code>C_N</code>, and they have different values on <code>epsilon_1</code>. Equation (4) uses the <strong>matrix Ward</strong> differential. It must not be presented as a homotopy in the old color relative complex without that additional differential.</p>
+<h2 id="an-explicit-localized-ward-complex-and-retraction">3. An explicit localized Ward complex and retraction</h2>
+<p>Order the retained labels as <code>a_1&lt;...&lt;a_m</code>. Put <code>V_S=P V</code> and <code>K_S=K|_(V_S)</code>. If several interior roots were deleted, the ordinary compression of <code>F</code> can be disconnected. Instead use the specified skip-transport matrix</p>
+<pre><code>(F_S)_(a_(j+1),a_j)=product_(r=a_j)^(a_(j+1)-1)(1-Q^(r+1)),
+                       1&lt;=j&lt;m.             (6)</code></pre>
+<p>All these coefficients are units. This is the original F transport along the unique retained linear interval between the two labels. For deletion only of label zero it is ordinary compressed <code>F</code>. For <code>m=1</code> it is zero, as appropriate to a one-dimensional space.</p>
+<p>The distinct <code>K_S</code> eigenvalues and the connected nonzero path (6) give <code>ker delta_S=k I_S</code>. The same entrywise and cumulative formulas give its explicit split image Ward complex <code>W_S</code> and contraction <code>h_S</code>, with normalized row <code>p_S=Tr/m</code>.</p>
+<p>Let <code>L:V-&gt;V_S</code> be restriction and <code>J:V_S-&gt;V</code> be inclusion, so <code>JL=P,LJ=I_S</code>. Define</p>
+<pre><code>c_0(C)=L C J,
+c_1=delta_S c_0 h_N.                         (7)</code></pre>
+<p>Then <code>c_1 delta_N=delta_S c_0</code>: the only omitted term is <code>delta_S c_0 i_N p_N=0</code>. Thus (7) is a genuine chain map, not an assumed rowwise compression of Ward currents. It sends <code>I_N</code> to <code>I_S</code> and induces the identity on scalar cohomology.</p>
+<p>A section is equally explicit. Set</p>
+<pre><code>s_0(T)=J T L+p_S(T)(I_N-P),
+s_1=delta_N s_0 h_S.                         (8)</code></pre>
+<p>It is a chain map, sends <code>I_S</code> to <code>I_N</code>, and <code>c s=I</code> in both degrees. With <code>H=(I-s_0 c_0)h_N</code> in degree one, direct multiplication gives</p>
+<pre><code>H delta_N=I-s_0 c_0,
+delta_N H=I-s_1 c_1.                         (9)</code></pre>
+<p>Therefore deleting any <code>s&lt;N</code> roots gives an explicit homotopy retraction of these Ward complexes. The localized cut on <code>W_S</code> composed with <code>c_0</code> is exactly (2).</p>
+<p>This construction transports currents as well as the scalar class. It does not turn <code>V_S</code> into the original quantum-group module. The skip matrix is a Ward transport operator; no coproduct, crossing intertwining, or Hopf-pivotal property is inferred for it.</p>
+<h2 id="the-relative-source-map-is-strict-after-adjoining-ward-currents">4. The relative source map is strict after adjoining Ward currents</h2>
+<p>For a coefficient space <code>E</code>, the existing relative source resolution is <code>R(E)=R(k) tensor E</code>, where</p>
+<pre><code>R(E)^1=E[t],
+R(E)^2=E[t] direct_sum E direct_sum E,
+d_R h=(partial_t h,h(0),h(1)).</code></pre>
+<p>Its contraction is natural for every linear coefficient map. Apply it degreewise to <code>W_N</code> and <code>W_S</code> and use the usual total differential <code>d_R tensor I+(-1)^degR I tensor delta</code>. Equations (7)–(9) extend to actual relative-Ward chain maps and homotopies. The two cut rows extend to maps into <code>R(k)</code>; their homotopy is explicitly</p>
+<pre><code>r tensor x -&gt; (-1)^deg(r) r tensor
+                          [(Phi_S-Phi)h_N](x).</code></pre>
+<p>Thus the <strong>combined</strong> relative-Ward complex has the same nonzero pointed line after deletion. This is a precise relative source extension of (4), rather than just equality on one knot value.</p>
+<h2 id="the-whole-normal-and-its-branch-mark-can-be-retained">5. The whole normal and its branch mark can be retained</h2>
+<p>Let <code>R=k[[U-1]]</code>, and retain the actual finite color normal algebra</p>
+<pre><code>C_U=R[A]/(A^N-U).</code></pre>
+<p>Mark the unique root <code>alpha(U)^N=U</code>, <code>alpha(1)=1</code>. Its evaluation branches are <code>A=alpha(U)Q^a</code>. The idempotent</p>
+<pre><code>epsilon_0(U)=(1/N)sum_(j=0)^(N-1)(A/alpha(U))^j</code></pre>
+<p>is regular and projects onto the marked branch reducing to <code>A=1</code>. Put <code>P(U)=1-epsilon_0(U)</code>. The exact whole-normal co-source is</p>
+<pre><code>phi_S,U(f)=[Tr_(C_U/R)(f)-f(alpha(U))]/(N-1)
+         =Tr_(P(U)C_U/R)(P(U)f)/(N-1).        (10)</code></pre>
+<p>It is regular, normalized on <code>P(U)</code>, and retains every normal coefficient. Since <code>A-1</code> is a unit on the retained summands, (10) factors through <code>A-1</code> localization. The marked deleted branch is removed as a whole; its punctured generic remnant is not used to divide away its normal contribution.</p>
+<p>For a canonical representative <code>f_tilde=sum_(j&lt;N)f_j A^j</code>, equation (10) reads <code>[N f_0-f_tilde(alpha)]/(N-1)</code>. Multiplication still has the exact carry</p>
+<pre><code>A f_tilde-(Af)_tilde=f_(N-1)(A^N-U).</code></pre>
+<p>The source is linear, and this carry remains necessary. Deletion repairs the excluded-root obstruction; it does not make a trace functional into a ring map or erase the normal <code>U</code>.</p>
+<p>The same marked construction works for any subset of branches. In the split evaluation lattice one can use <code>K_aa=x alpha^(-1)Q^(-a)</code> and the interior path entries <code>F_(a+1,a)=1-alpha Q^(a+1)</code>. They specialize to the original matrices. Distinct K differences and these interior path entries are units over <code>R</code>. A separately specified cyclic wrap can also be retained; it does not enter the interior entries used by the Ward contraction. The retractions above therefore extend over this whole formal boundary normal family, with their normalization <code>N/(N-s)</code> unchanged. No Hopf or internal-network extension is inferred from this boundary construction.</p>
+<h2 id="compression-has-an-exact-composition-defect">6. Compression has an exact composition defect</h2>
+<p>For arbitrary matrices <code>C,D</code>, one has</p>
+<pre><code>c_0(CD)-c_0(C)c_0(D)=L C(I-P)D J.             (11)</code></pre>
+<p>The right side records an excursion through the deleted root sector. It is generally nonzero. Thus independently compressing each crossing, turn, or cap does not reproduce compression of the whole actual network. Nor is <code>c_0</code> multiplicative or an ordinary quantum-group intertwiner. The current map (7) is the specific repair in the split Ward complex; it supplies no local R-matrix replacement or strict tensor functor.</p>
+<p>The old statement that the <strong>original</strong> co-source fails to descend is still correct. The new result is that its pointed relative-Ward class has a literal representative supported on the geometric open chart, with an exact normalization and a marked whole-normal extension. A source-compatible internal Gaussian comparison can use this representative and its homotopy. Such a comparison must still transport the excursion currents, carries, and the other retained divisors. Nonzero geometric-source survival and the volume conjecture do not follow just from deleting the root.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_ward_source_localization.py">Exact audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/ward_source_localization_results.json">results</a> check the source homotopy and explicit chain retraction on matrix units, for every nonempty retained subset at seven levels. They also retain a nonzero compression-excursion defect and the marked whole-normal carry.</p>
+<p><a href="ward_source_localization_independent_audit.html">Independent proof audit</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/ward_source_localization.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-localized-source-and-its-exact-normalization">1. The localized source and its exact normalization</a><a href="#the-actual-ward-homotopy-on-all-matrices">2. The actual Ward homotopy, on all matrices</a><a href="#an-explicit-localized-ward-complex-and-retraction">3. An explicit localized Ward complex and retraction</a><a href="#the-relative-source-map-is-strict-after-adjoining-ward-currents">4. The relative source map is strict after adjoining Ward currents</a><a href="#the-whole-normal-and-its-branch-mark-can-be-retained">5. The whole normal and its branch mark can be retained</a><a href="#compression-has-an-exact-composition-defect">6. Compression has an exact composition defect</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

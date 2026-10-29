@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A rank-three actual source: two endpoint envelopes give a sharp norm · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_newton_rank_three_folded_packet.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-rank-three-actual-source-two-endpoint-envelopes-give-a-sharp-norm">A rank-three actual source: two endpoint envelopes give a sharp norm</h1>
+<p>29 October 2026. The next repeated Newton twist/turn word has a genuine cubic spectral cover and an interior forward dominant-modulus switch. Nevertheless its ENTIRE positive original-source norm has a sharp limit. The proof keeps its exact source currents, uses a gapped backward branch only for the lower bound, and overlaps two full spectral-radius envelopes for the upper bound. The required profile comparisons have finite outward-rounded interval/Rouche certificates. No hyperbolic volume or link identity is inferred from the resulting constant.</p>
+<h2 id="the-actual-source-and-both-of-its-boundary-vectors">1. The actual source and both of its boundary vectors</h2>
+<p>Use T=T_1,P=P_rev and the unchanged original Newton metric. By the <a href="actual_newton_run_endpoint_vectors.html">universal endpoint identity</a>, (T<sup>2P)</sup>4 1 has, up to a unit scalar, coefficients</p>
+<pre><code>v_i=kappa^(-2)(-q)^(i-d)K_i,
+K_i=sum_(j=0)^i nu_j [i choose j]_Q conjugate(P_(d-j)). (1)</code></pre>
+<p>Here P_i is the original Green sequence, not the turn matrix. Its rank-three forced Ward, with G_i=K_i/F_i and M_i=F_i^3G_i, is proved in <a href="actual_twist_endpoint_gaussian_certificate.html">the endpoint theorem, section5</a>. Write its coefficients as B_i,C_i,D_i there. The exact monic equation is</p>
+<pre><code>M_i+B_i M_(i-1)+C_i(1-Q^(i-1))^3 M_(i-2)
+   -Q^3(1-Q^(i-1))^3(1-Q^(i-2))^4 M_(i-3)
+                                         =Q^2 delta_(i,1). (2)</code></pre>
+<p>Negative-index terms are absent. Its literal data are M_0=conjugate(P_d), M_1=(1-3Q+Q<sup>2)conjugate(P_d)+Q</sup>2; D_2=0 fixes the next datum. In particular the source forcing has not been deleted.</p>
+<p>There is a regular exact backward equation. Put</p>
+<pre><code>g_k=conjugate(F_k)^4 M_(d-k), Z_k=Q^(-k).</code></pre>
+<p>For every3&lt;=k&lt;=d,</p>
+<pre><code>g_k=a_k g_(k-1)+b_k g_(k-2)+c_k g_(k-3),             (3)
+a_k=1+Q^(-1)+Q^(-2)-(4+Q^(-1))Z_k,
+b_k=[-Q^(-3)-Q^(-2)-Q^(-1)
+             +(3+4Q^(-1))Z_k-3Q Z_k^2](1-Q Z_k),
+c_k=Q^(-3)(1-Q Z_k)(1-Q^2 Z_k)^4.</code></pre>
+<p>All original currents are encoded in its INITIAL VECTOR. Let S_0=sum_(j=0)^d conjugate(P_j). Exactly, for N&gt;=3,</p>
+<pre><code>g_0=N^2 S_0,
+g_1=N^2 Q^(-1)[(Q-3)S_0+2N],
+g_2=N^2 Q^(-4)[(Q^4-3Q^3-3Q^2+6Q+3)S_0
+                              +2(Q^3+Q^2-3Q-1)N].   (4)</code></pre>
+<p>For a direct proof of(4), root reflection gives</p>
+<pre><code>K_(d-h)=nu_h sum_(j=h)^d [j choose h]_Q conjugate(P_j).</code></pre>
+<p>Writing S_m=sum_j Q^(mj)conjugate(P_j), the original finite Green equation yields</p>
+<pre><code>(1-Q^m)S_m+2Q^(m-1)S_(m-1)-Q^(m-2)S_(m-2)
+                                  =N delta_(m,1 modN).</code></pre>
+<p>The actual inverse-crossing last row also gives S_(-1)=NQ: equivalently sum_j Q<sup>jP_j=NQ</sup>(-1). These evaluate S_1,S_2 from S_0,N and give(4). Reversing(2) and multiplying by the displayed fourth factorial proves(3).</p>
+<p>The independently evaluated original endpoints give</p>
+<pre><code>|M_0|~N^(3/2),
+S_0=N^(3/2)exp[-i pi(3-N)/4]+O(N).</code></pre>
+<p>Consequently (g_2,g_1,g_0)/g_0=(4,-2,1)+O(N^(-1/2)). This is the nonzero dominant eigenvector at the backward endpoint. The N terms in(4) are retained source currents, not arbitrary choices.</p>
+<h2 id="spectral-envelopes-and-a-source-selected-backward-lower-bound">2. Spectral envelopes, and a source-selected backward lower bound</h2>
+<p>Put Y=e<sup>(2iu),Z=e</sup>(-2iu). The forward and backward principal cubics are</p>
+<pre><code>f_u(lambda)=lambda^3+(-3+7Y-3Y^2)lambda^2
+                +(3-5Y)(1-Y)^3lambda-(1-Y)^7,
+b_u(lambda)=lambda^3+(5Z-3)lambda^2
+                +(3-7Z+3Z^2)(1-Z)lambda-(1-Z)^5.    (5)</code></pre>
+<p>Let rho_f,rho_b be their largest root moduli. They are continuous and bounded below by1/3,2/3 respectively, by their traces. Set I_e(u)=pi<sup>(-1)integral_0</sup>u log rho_e(t)dt, e=f,b.</p>
+<p>Uniformly for all indices in any indicated compact u interval, the actual matrix product has the spectral-radius upper bound</p>
+<pre><code>log|M_i|&lt;=N I_f(pi i/N)+o(N),
+log|g_k|&lt;=N I_b(pi k/N)+o(N).                        (6)</code></pre>
+<p>This remains valid at modulus switches and the initial double fast zero. Here is an elementary proof avoiding an ill-conditioned full eigenframe. A bounded3x3 matrix of spectral radius at most1 has ||A<sup>l||&lt;=C(l+1)</sup>2, uniformly in repeated roots: Newton interpolation of z^l bounds its order0,1,2 confluent differences by the corresponding complete homogeneous polynomials, of size at most (l+1)^2. The matrix factors in that interpolation are uniformly bounded. Freeze the exact smooth companion over blocks of length L=floor(N^(1/8)). Its step error is O(L/N). Expanding the product in those errors bounds one block by rho^L C L^2 exp(C L^4/N). Multiplying the blocks costs O(N log L/L+L^3)=o(N) in its logarithm. Uniform continuity of log rho gives the Riemann integral, uniformly also for partial final blocks. Polynomial initial data add only O(log N). This proves(6).</p>
+<p>The upper-bound mechanism is valid for ANY FIXED companion rank r, not only this cubic. A uniformly bounded rank-r matrix with spectral radius at most one has powers bounded by C(l+1)^(r-1), by the same order-(r-1) confluent divided-difference formula. Freezing L steps therefore costs at most rho^L C L^(r-1) exp(C L^(r+1)/N). Over O(N/L) blocks the extra logarithm is O(N log L/L+L^r). Taking L=floor(N^(1/(2r))) makes this o(N). This requires a fixed-rank uniformly smooth actual recurrence, a positive lower spectral-radius bound, and subexponential initial data; it permits eigenvalue collisions and modulus switches. It is a FULL spectral-radius upper envelope, not a lower bound or a license to replace the radius by an arbitrarily selected single branch.</p>
+<p>For every strict backward prefix0&lt;=u&lt;=u_0&lt;pi/2 there is also a lower:</p>
+<pre><code>log|g_k|=N I_b(pi k/N)+O_(u0)(log N).                 (7)</code></pre>
+<p>The <a href="actual_backward_cubic_dominant_source_certificate.html">independent exact dominant-root certificate</a> proves a unique simple dominant branch of b_u beginning at-2 on the ENTIRE strict half-circle. Its two fast roots may coalesce at0. Its regular dominant projection and a uniformly stable complement power-Gram give source transport without diagonalizing those fast roots. Equation(4) supplies the required actual nonzero projection with relative O(N^(-1/2)) error. The exact backward equation is homogeneous for k&gt;=3, so no interior forcing is omitted in applying that certificate. Summed dominant logarithms prove(7). This argument does not transport a branch through the forward modulus switch.</p>
+<h2 id="one-algebraic-profile-maximum-and-two-finite-comparisons">3. One algebraic profile maximum and two finite comparisons</h2>
+<p>Let Lambda be Lobachevsky and define</p>
+<pre><code>J_e(u)=I_e(u)+2Lambda(u)/pi, e=f,b.</code></pre>
+<p>Since M_i=F_i^2K_i and s_i s_(d-i)=N, (6) gives the two original coefficient envelopes J_f(pi i/N) and J_b(pi(d-i)/N). The lower(7) gives J_b at every fixed strict backward prefix.</p>
+<p>The backward profile has exactly one first-half maximum u_*. Put</p>
+<pre><code>p_6(z)=z^6-9z^5+29z^4-38z^3+10z^2+2z+1.</code></pre>
+<p>Its unique root z_* in[1,4] lies in(19/5,77/20), and u_<em>=arcsin(sqrt(z_</em>)/2), so 2pi/5&lt;u_*&lt;pi/2. Indeed</p>
+<pre><code>J_b&#39;(u)=pi^(-1)log[rho_b(u)/(2sin u)^2].</code></pre>
+<p>Imposing |lambda|=z=4sin^2u in b_u and its conjugate and eliminating lambda,Z gives z^24 p_6(z)^2=0. Exact Sturm counts give just two positive roots of p_6 in[0,4]: one in(2/3,7/10) and z_* above. The smaller cannot give rho_b=z because the product of the three root moduli gives rho_b&gt;=z^(5/6)&gt;z when0&lt;z&lt;1. At u=pi/2 all roots of lambda<sup>3-8lambda</sup>2+26lambda-32 have modulus&lt;4: its unique real root lies in(2,3), and the conjugate pair has modulus sqrt(32/r)&lt;4. Continuity now proves the claimed maximum. These eliminations use full polynomials, not a sampled eigenvalue branch.</p>
+<p>The forward profile is increasing: its root trace has modulus1+3z, so rho_f&gt;=z+1/3&gt;z. Two further finite inequalities suffice for a global overlap:</p>
+<pre><code>integral_0^(2pi/5)log(rho_f/rho_b)du&lt;0,
+integral_(2pi/5)^(pi/2)log[rho_b/(2sin u)^2]du&lt;0.      (8)</code></pre>
+<p>The audit supplies rigorous interval bounds on WHOLE parameter cells. For each cubic it chooses rational complex root centers and verifies three disjoint disks by</p>
+<pre><code>|p&#39;(c)|_lower r &gt; |p(c)|_upper+|p&#39;&#39;(c)|_upper r^2/2+r^3.</code></pre>
+<p>Rouche therefore encloses all roots for EVERY parameter in that cell. Their moduli bound rho and its logarithm. The small initial interval uses a monic Cauchy bound and rho_b&gt;=2/3. At4096 outward-rounded cells the two certified upper bounds in(8) are respectively less than -.0327 and-.0114. This is a finite proof of the comparisons, not extrapolation from samples.</p>
+<p>The first inequality makes J_f(2pi/5)&lt;J_b(2pi/5). The second makes J_b(pi/2)&lt;J_b(2pi/5). Root-conjugation symmetry gives J_b(pi-u)=2J_b(pi/2)-J_b(u), so J_b(3pi/5)&lt;J_b(pi/2). The only profile criticals before3pi/5 are u_* and its reflected minimum. Therefore the maximum of J_b on[0,3pi/5] is J_b(u_*). Use the forward envelope for i/N&lt;=2/5 and the backward envelope for i/N&gt;=2/5. They cover EVERY physical index and neither exceeds this backward maximum.</p>
+<h2 id="whole-original-source-conclusion-and-scope">4. Whole original-source conclusion and scope</h2>
+<p>The polynomial number of positive norm terms gives the upper rate; a rounded backward index near u_* and(7) give the matching lower. For the literal original halfword A=(T_2P_rev)^4,</p>
+<pre><code>lim_N N^(-1)log||A1||_Newt^2=2J_b(u_*).              (9)</code></pre>
+<p>Its original adjoint-word marked closure equals this positive norm exactly. All Cartan lines and all fixed-root Casimir normals remain. No value-only trace or arbitrary diagonal Newton coupon was substituted. The assertion concerns fixed word depth before N tends to infinity.</p>
+<p>This extends the source-aware folded Ward method to a genuine cubic with an interior modulus switch. Its inputs are explicit resets, the full opposite source vector, finite algebraic dominant-mode tests, and finite certified envelope comparisons. It is not a general theorem that an arbitrary scalar A-polynomial selects its largest root, and it is not a new broad bridge-family or hyperbolic-volume claim.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_newton_rank_three_folded_packet.py">original source, exact folded current, algebraic criticals and interval spectral profiles</a>.</p>
+<p>Two independent complete proof reviews passed. Fresh replays confirm eleven full original source/current families, the exact modulus resultant and Sturm counts, and8192 outward-rounded whole-cell spectral disks. The root proposals are never used without the stated Rouche validation. Both reviewers rederived the freeze-block bound, the actual source projection and the reflected profile overlap; no topological or volume identification was inferred.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_newton_rank_three_folded_packet.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-source-and-both-of-its-boundary-vectors">1. The actual source and both of its boundary vectors</a><a href="#spectral-envelopes-and-a-source-selected-backward-lower-bound">2. Spectral envelopes, and a source-selected backward lower bound</a><a href="#one-algebraic-profile-maximum-and-two-finite-comparisons">3. One algebraic profile maximum and two finite comparisons</a><a href="#whole-original-source-conclusion-and-scope">4. Whole original-source conclusion and scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

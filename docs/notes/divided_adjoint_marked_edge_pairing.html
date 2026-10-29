@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The divided adjoint pairs nontrivially with the actual missing edge · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/divided_adjoint_marked_edge_pairing.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-divided-adjoint-pairs-nontrivially-with-the-actual-missing-edge">The divided adjoint pairs nontrivially with the actual missing edge</h1>
+<p>Research proof, 27 October 2026. The genuine complete integral Weyl color gives a divided Hopf-adjoint operator on its matrix space. Applied to the literal missing cyclic edge, it has an exact nonzero pairing with the prescribed marked cut. This yields a cohomologous divided-normal realization of the original knot cut functional. It does not prove survival of the geometric Gaussian period.</p>
+<h2 id="the-two-normal-directions-are-distinct">1. The two normal directions are distinct</h2>
+<p>Keep <code>Q=q^2</code>, <code>x=-M/q</code>. In the balanced basis the generic truncated raising entries are</p>
+<pre><code>Ecal_(a-1,a)=M Q^(-a)-M^(-1),       1&lt;=a&lt;N.</code></pre>
+<p>The absent cyclic entry is the specified coefficient</p>
+<pre><code>w(q,M)=M Q^(-N)-M^(-1),
+W=E_(N-1,0).</code></pre>
+<p>It vanishes identically on the genuine integral Weyl color <code>M=-q^N</code>. At the fixed root <code>Q^N=1</code> it becomes <code>w=kappa=M-M^(-1)</code>. These two restrictions are different normal directions. If <code>delta=1-Q^N</code>, their exact relation is</p>
+<pre><code>w=kappa+M delta/(1-delta).</code></pre>
+<p>At the complete intersection <code>M=1,delta=0</code>, one has <code>dw=d kappa+d delta</code>; the Weyl curve is <code>w=0</code>, not <code>kappa=0</code>. No tensor divided power below is identified with the generic-M cyclic-edge normal by replacing one parameter with the other.</p>
+<h2 id="the-actual-divided-hopf-adjoint">2. The actual divided Hopf adjoint</h2>
+<p>Take the genuine Weyl family <code>V(q)=D_(N-1)(q)</code> on <code>M=-q^N</code>, as in <a href="divided_ward_factorial_fusion.html">the factorial fusion proof</a>. For a matrix <code>T</code> its actual generic Hopf adjoint is</p>
+<pre><code>A(T)=ad_Ecal(T)=[Ecal,T]K^(-1).</code></pre>
+<p>Write <code>A=X+Y</code>, with</p>
+<pre><code>X(T)=Ecal T K^(-1), Y(T)=-T Ecal K^(-1).</code></pre>
+<p>Then <code>XY=Q YX</code> and <code>X^N=Y^N=0</code> for every generic <code>q</code>. Hence the same q-binomial cancellation as for the tensor divided power defines a regular actual operator on the root matrix space:</p>
+<pre><code>J_ad=[A^N/(1-Q^N)]_(q=q_N)
+    =sum_(j=1)^(N-1) c_j Y^(N-j)X^j,
+c_j=N/[(Q;Q)_j(Q;Q)_(N-j)].                  (1)</code></pre>
+<p>This is the divided <strong>Hopf</strong> adjoint. It need not equal ordinary commutation by the divided power on <code>V</code>; that latter power is zero on the individual color. Formula (1) retains the mixed antipode terms acting through <code>V tensor V*</code>.</p>
+<h2 id="exact-action-on-the-missing-edge">3. Exact action on the missing edge</h2>
+<p>At the actual root set</p>
+<pre><code>epsilon_a=Q^(-a)-1, P_a=product_(s=1)^a epsilon_s,
+P_(N-1)=(-1)^(N-1)N,
+K^N=(-1)^(N-1)I.</code></pre>
+<p>Let <code>l=N-j</code>. The <code>j</code>-th term of (1) applied to <code>W=E_(N-1,0)</code> is supported only at matrix entry <code>(l-1,l)</code>. Its coefficient is</p>
+<pre><code>c_j (-1)^l Q^(-l(l-1)/2-jl)
+                   P_(N-1) epsilon_l K^(-N).</code></pre>
+<p>Using</p>
+<pre><code>c_j=c_l=(-1)^(l-1)Q^(-l(l-1)/2)/(1-Q^l),
+epsilon_l=(1-Q^l)Q^(-l),</code></pre>
+<p>and <code>Q^N=1</code>, every coefficient simplifies to <code>-N</code>. Therefore</p>
+<pre><code>J_ad(W)=-N sum_(l=1)^(N-1) E_(l-1,l).          (2)</code></pre>
+<p>This holds for every <code>N&gt;=2</code>, with the original balanced root basis. For the literal marked source and co-source,</p>
+<pre><code>e_(a,b)=1/N, Phi(T)=Tr(eT)=Tr(g D T),</code></pre>
+<p>equation (2) gives the exact nonzero pairing</p>
+<pre><code>Phi(J_ad(W))=-(N-1).                          (3)</code></pre>
+<p>The normalized ordinary trace of (2) is zero. Thus the marked normal pairing is visible before the ordinary scalar Ward quotient. Its degrees are explicit: <code>W</code> raises matrix index by <code>N-1</code>, <code>J_ad</code> lowers it by <code>N</code>, and the marked cut supplies the remaining one-step pairing. This is a mixed divided-normal/missing-edge cochain calculation, not a nonzero closed geometric class.</p>
+<h2 id="an-actual-cohomologous-divided-normal-cut">4. An actual cohomologous divided-normal cut</h2>
+<p>Define the literal all-matrices row</p>
+<pre><code>Phi_div(T)=-Phi(J_ad(T W))/(N-1).              (4)</code></pre>
+<p>Equation (3) says <code>Phi_div(I)=1</code>. Let <code>delta_W(T)=([K,T],[F,T])</code> and let <code>h_W</code> be the explicit actual Ward contraction in <a href="actual_borel_ward_cut_contraction.html">the finite Ward note</a>, so</p>
+<pre><code>h_W delta_W=I-i p,
+p(T)=Tr(T)/N, i(c)=c I.</code></pre>
+<p>Since <code>(Phi_div-Phi)i=0</code>, one obtains the exact cochain homotopy on <strong>all</strong> matrices,</p>
+<pre><code>Phi_div-Phi=(Phi_div-Phi)h_W delta_W.          (5)</code></pre>
+<p>In particular every actual closed cut tangle is Ward closed, hence equals <code>F_N(1) I</code>. Equations (4)–(5) give</p>
+<pre><code>Phi_div(C_K)=Phi(C_K)=F_N(1)=Kashaev_N(K).     (6)</code></pre>
+<p>Thus (4) is an explicit divided-normal source realization of the original invariant, with its source and normalization fixed. It is not a new invariant or a redefinition of its numerical values. The full ADO value retains the entire external marked line; at completion it multiplies (6) by <code>i^(N+3)/N</code>. That scalar is not absorbed into (4).</p>
+<h2 id="pivotal-partial-trace-commutes-with-the-genuine-divided-adjoint">5. Pivotal partial trace commutes with the genuine divided adjoint</h2>
+<p>For the genuine generic integral colors use the generic pivotal partial trace</p>
+<pre><code>ptr_K(T)=Tr_closed[(I tensor K_closed)T].</code></pre>
+<p>The generic Hopf adjoint and this trace commute on every matrix. This follows from the ordinary antipode cancellation; equivalently the generic pivotal cap is a Hopf map. Apply the generic identity to the <code>N</code>-th adjoint power and divide both sides by <code>1-Q^N</code>. The divided operators are regular by the q-binomial argument on the corresponding tensor-and-dual colors. Specialization gives</p>
+<pre><code>ptr_K J_ad,total=J_ad,cut ptr_K.               (7)</code></pre>
+<p>At the root, the actual pivot satisfies <code>g_closed=K_closed^(1-N)=chi_closed^(-1)K_closed</code>, where the entire scalar <code>chi_closed=K_closed^N</code> is retained. Thus (7) holds also for the original actual pivotal partial trace <code>ptr_g</code>.</p>
+<p>The order of the marked edge matters. For an arbitrary full tensor matrix <code>T</code>, the cut edge lifts as <code>W_cut tensor I_closed</code>, so the exact all-matrices identity is</p>
+<pre><code>Phi_div(ptr_g T)
+  =-Phi(ptr_g[J_ad,total(T(W_cut tensor I))])/(N-1). (8)</code></pre>
+<p>Here <code>ptr_g(T(W_cut tensor I))=(ptr_g T)W_cut</code> was used. There is no license to replace the argument of <code>J_ad,total</code> by <code>T</code> and move the edge unchanged outside it. The mixed Hopf-adjoint terms are essential. Equations (7)–(8) transport the new source through the actual contraction while keeping its insertion order.</p>
+<h2 id="what-this-proves-about-cohomology-and-hpl">6. What this proves about cohomology and HPL</h2>
+<p>The action <code>J_ad</code> lowers matrix weight by <code>N</code>, so its square is zero on <code>End(V_N)</code>. It annihilates <code>I</code> and has zero normalized ordinary trace on every matrix. It consequently induces a chain map on the split image Ward complex: set</p>
+<pre><code>J_ad^1(delta_W T)=delta_W(J_ad T).</code></pre>
+<p>This is well defined because the kernel of <code>delta_W</code> is <code>k I</code> and <code>J_ad(I)=0</code>. Its action on scalar Ward cohomology is zero. Likewise the marked row <code>Phi J_ad</code> is Ward exact, by composing the old cut homotopy with this chain map. This is consistent with the nonzero cochain pairing (3): the missing edge is not Ward closed.</p>
+<p>The normalized row (4), in contrast, has the same <strong>nonzero</strong> cohomology class as the original cut, by (5). It is now represented using a genuine divided adjoint and the literal missing edge. This gives concrete source data for a future source-preserving Gaussian chain comparison. It does not construct that comparison or show which geometric formal class has nonzero image. Nilpotence of an inserted operator and exact scalar Ward normalization alone do not supply the missing HPL map or an asymptotic volume theorem.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_divided_ward_factorial_fusion.py">Exact audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/divided_ward_factorial_fusion_results.json">results</a> check (2)–(5) on every matrix unit at seven levels and verify the all-matrices pivotal and ordered-insertion identities (7)–(8).</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/divided_adjoint_marked_edge_pairing.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-two-normal-directions-are-distinct">1. The two normal directions are distinct</a><a href="#the-actual-divided-hopf-adjoint">2. The actual divided Hopf adjoint</a><a href="#exact-action-on-the-missing-edge">3. Exact action on the missing edge</a><a href="#an-actual-cohomologous-divided-normal-cut">4. An actual cohomologous divided-normal cut</a><a href="#pivotal-partial-trace-commutes-with-the-genuine-divided-adjoint">5. Pivotal partial trace commutes with the genuine divided adjoint</a><a href="#what-this-proves-about-cohomology-and-hpl">6. What this proves about cohomology and HPL</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

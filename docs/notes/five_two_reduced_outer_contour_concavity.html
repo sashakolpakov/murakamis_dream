@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A proved outer maximum for the cubic reduced phase · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/five_two_reduced_outer_contour_concavity.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-proved-outer-maximum-for-the-cubic-reduced-phase">A proved outer maximum for the cubic reduced phase</h1>
+<p>28 October 2026. For the exact double-sum phase supplied by the <a href="five_two_cyclotomic_transform_proof.html">finite transform</a>, the selected inner critical branch has a rigorously concave reduced outer action on a full horizontal band. The explicit bent contour through its cubic stationary point also has a unique global maximum there. The sloped part is controlled analytically, without a mesh-based positivity assumption.</p>
+<p>This is a theorem about the explicit reduced phase and its contour. The original outer sum still has to be carried to that contour, including its aliases and the inner endpoint pieces. Equality of the cubic critical value with the marked hyperbolic regulator is also separate: numerical agreement or equality of trace fields does not prove that action identity.</p>
+<h2 id="the-phase-and-a-specified-inner-critical-branch">1. The phase and a specified inner critical branch</h2>
+<p>Use the branch J’(z)=Log(2sin(pi z)) continued from 0&lt;z&lt;1, and set</p>
+<pre><code>S(x,y)=3J(x)-J(y)-J(x-y)
+           +i*pi*(3x+2y-x^2-xy-y^2).          (1)</code></pre>
+<p>Its added lattice characters are retained in this definition. Let</p>
+<pre><code>1/2&lt;Re x&lt;1, 0&lt;=Im x&lt;=Log(2)/(2pi),
+X=exp(2pi*i*x), T=1/X-1.</code></pre>
+<p>The number T lies in the upper half-plane and 1&lt;=|T+1|&lt;=2. The quadratic</p>
+<pre><code>v-1/v=T                                      (2)</code></pre>
+<p>has exactly one root in the first quadrant. Indeed its two roots have product -1 and share the sign of their imaginary parts. A root could be purely imaginary only if T belonged to i[2,infinity). The present circles, centered at -1 with radii at most 2, meet the imaginary axis below sqrt(3), so they avoid that ray. The chosen root is analytic here.</p>
+<p>Put</p>
+<pre><code>Y=-v, y_s(x)=1+Log(Y)/(2pi*i)
+              =1/2+Log(v)/(2pi*i),           (3)</code></pre>
+<p>where 0&lt;Arg v&lt;pi/2 and -pi&lt;Arg Y&lt;-pi/2. Then 1/2&lt;Re y_s&lt;Re x&lt;1 and 0&lt;Re(x-y_s)&lt;1/2. For the latter inequality, (T+1)v=v^2+v-1 has positive imaginary part, so Arg(T+1)+Arg v lies strictly between zero and pi. All three J arguments in (1) therefore stay on their stated strips.</p>
+<p>The quadratic equation gives S_y(x,y_s)=0. Exponentiating that derivative gives</p>
+<pre><code>1-X/Y=X(1-Y).</code></pre>
+<p>The logarithmic derivative itself is zero, rather than an unretained multiple of 2pi*i: it is constant modulo that multiple on this connected branch and tends to zero at x-&gt;1 from the real interval. Define</p>
+<pre><code>W(x)=S(x,y_s(x)).                             (4)</code></pre>
+<h2 id="exact-reduced-hessian">2. Exact reduced Hessian</h2>
+<p>Differentiating (1)–(3), or taking its Schur complement, gives exactly</p>
+<pre><code>W&#39;&#39;(x)=2pi*i R(v),
+R(v)=(v^2+v+4)(v^2+v-1)/(1-v^4).             (5)</code></pre>
+<p>Equivalently, with s=v+1/v=sqrt(T^2+4) on its marked branch,</p>
+<pre><code>R=(T+1)/(2T)*[(3T-2)/s-5].                   (6)</code></pre>
+<p>These formulas are independent of an added constant logarithmic flattening. Such a flattening still matters for W and W’.</p>
+<h2 id="horizontal-strict-concavity-on-the-whole-band">3. Horizontal strict concavity on the whole band</h2>
+<p>Write v=a+ib, a,b&gt;0, r=a<sup>2+b</sup>2, and d=|T+1|^2. The present band has 1&lt;=d&lt;=4. Equation (2) gives the exact constraint</p>
+<pre><code>r^2+(3-d)r+1+2a(r-1)-4a^2=0.                (7)</code></pre>
+<p>Direct multiplication gives Im R=b P_0/|1-v<sup>4|</sup>2. Reducing its real polynomial numerator by (7) gives</p>
+<pre><code>P=a[2r^2+(6d+4)r-8]
+                 +2r^3+2r^2+(13-5d)r+8.    (8)</code></pre>
+<p>This numerator is STRICTLY positive on the stated domain. Here is an elementary certificate. Its constant part is at least</p>
+<pre><code>C(r)=2r^3+2r^2-7r+8&gt;0.</code></pre>
+<p>For 0&lt;=r&lt;=1 this is at least 8-7r&gt;=1. For r&gt;=1 it is increasing and C(1)=5. If the coefficient of a in (8) is nonnegative, this proves the claim. Otherwise r&lt;1. Since a&lt;=sqrt(r), replacing a by w=sqrt(r) gives a lower bound. The result is affine in d, with coefficient w^2(6w-5).</p>
+<p>For w&lt;=5/6 its minimum over 1&lt;=d&lt;=4 occurs at d=4:</p>
+<pre><code>L_4=2w^6+2w^5+2w^4+7w^2(4w-1)+8(1-w)&gt;0.</code></pre>
+<p>For w&gt;=1/4 every displayed term is nonnegative. For w&lt;1/4, the last two terms alone exceed 6-7/16&gt;0. For w&gt;=5/6 the minimum occurs at d=1:</p>
+<pre><code>L_1=2w^6+2w^5+2w^4+10w^3+8(w^2-w+1)&gt;0.</code></pre>
+<p>Thus Im R&gt;0. Consequently</p>
+<pre><code>partial_u^2 Re W(u+i eta)&lt;0                  (9)</code></pre>
+<p>for EVERY horizontal line in the band. This proves global horizontal concavity directly from the explicit phase, rather than assuming that a different positive triangulation controls these original reduced coordinates.</p>
+<h2 id="the-cubic-stationary-point-and-its-exact-flattening">4. The cubic stationary point and its exact flattening</h2>
+<p>Let rho be the unique real root of rho<sup>3+rho</sup>2-1=0. Elementary evaluation gives 3/4&lt;rho&lt;4/5. Let v_g be the upper-half-plane root of</p>
+<pre><code>v^3-v^2+1=0,
+Re v_g=(1+rho)/2, |v_g|^2=1/rho.</code></pre>
+<p>Define</p>
+<pre><code>X_g=1/(1+v_g^2),
+x_g=1+Log(X_g)/(2pi*i)=u_g+i eta_g,
+y_g=1/2+Log(v_g)/(2pi*i).</code></pre>
+<p>The critical identities v_g^2(1-v_g)=1 and v_g^5=-(1+v_g) give T_g=v_g^2. On the branch of Section 1,</p>
+<pre><code>W&#39;(x)=3Log T-Log v-Log(1+v)-i*pi.</code></pre>
+<p>At the cubic point this is 5Log v_g-Log(1+v_g)-i*pi=0. The sign of pi is fixed: the argument difference lies between -pi/2 and 5pi/2 and is an odd multiple of pi, hence equals pi. Thus (x_g,y_g) is a genuine stationary point of (1) in its stated flattening, not merely a solution of exponentiated equations.</p>
+<p>Useful exact values are</p>
+<pre><code>|T_g|=1/rho&lt;4/3,
+Re(1/T_g)=(1-rho)/2&gt;1/10,
+D:=|1+T_g|^2=3+rho-rho^2&lt;13/4&lt;4.</code></pre>
+<p>It follows that eta_g=Log(D)/(4pi)&lt;Log(2)/(2pi). Numerically</p>
+<pre><code>x_g=.869193400032383...+.092187637885157...i,
+y_g=.612022435578528...-.022377151124418...i,
+Re W(x_g)=.450109610025218....</code></pre>
+<p>The last decimal is an evaluation of (1). It is not used as a proof of regulator calibration or source intersection.</p>
+<h2 id="analytic-dominance-on-the-sloped-outer-segment">5. Analytic dominance on the sloped outer segment</h2>
+<p>Set theta_g=2pi(1-u_g)=Arg(1+T_g), c=eta_g/(1-u_g)=Log|1+T_g|/theta_g. Then 0&lt;c&lt;1. For completeness theta_g&gt;pi/4: writing 1+T_g=A+iB gives</p>
+<pre><code>A=(3-rho^2)/2,
+B^2-A^2=(-2+rho+3rho^2)/2&gt;0.</code></pre>
+<p>Also Log|1+T_g|&lt;(1/2)Log(13/4)&lt;pi/4.</p>
+<p>On the sloped segment x=u+i c(1-u), u_g&lt;=u&lt;1, write</p>
+<pre><code>theta=2pi(1-u), T=exp[(c+i)theta]-1.</code></pre>
+<p>The function |T| increases with theta on [0,theta_g], so |T|&lt;=4/3. A further useful lower bound is</p>
+<pre><code>Re(1/T)&gt;=(1-rho)/2&gt;1/10.                    (10)</code></pre>
+<p>To prove it, let</p>
+<pre><code>h(theta)=sinh(c theta)
+            -(2-rho)[cosh(c theta)-cos theta].</code></pre>
+<p>It vanishes at both endpoints, by the exact geometric value of Re(1/T_g). Its second derivative is strictly negative: 2-rho&gt;1 and 0&lt;=theta&lt;=theta_g&lt;pi/2. Thus h&gt;=0, which is (10) after using the elementary real coth formula.</p>
+<p>Equation (6) also gives an absolutely convergent expansion</p>
+<pre><code>R=-3/T-9/4+E(T),
+E=(3/4)T+(T+1)(3T-2)/(4T)
+                      *[(1+T^2/4)^(-1/2)-1].</code></pre>
+<p>For r_T=|T|&lt;2 the binomial derivative bound yields</p>
+<pre><code>|E|&lt;=3r_T/4+(1+r_T)(2+3r_T)r_T
+                     /[32(1-r_T^2/4)^(3/2)].</code></pre>
+<p>At r_T&lt;=4/3 the right side is at most 1+63/(20sqrt(5)). Combining with (10),</p>
+<pre><code>Re R&lt;=(63/sqrt(5)-31)/20&lt;0.                 (11)</code></pre>
+<p>The horizontal-band theorem already gives Im R&gt;0 here. Therefore the ENTIRE sloped reduced action satisfies</p>
+<pre><code>d^2/du^2 Re W(u+i c(1-u))
+   =2pi[2c Re R-(1-c^2)Im R]&lt;0.             (12)</code></pre>
+<p>Its first derivative vanishes at u_g, so it strictly decreases to the right. This proves the sloped dominance analytically.</p>
+<h2 id="an-explicit-sufficient-outer-saddle-contour">6. An explicit sufficient outer saddle contour</h2>
+<p>Fix any alpha in (1/2,u_g). The piecewise contour</p>
+<pre><code>x(u)=u+i min(eta_g,c(1-u)), alpha&lt;=u&lt;=1      (13)</code></pre>
+<p>has a UNIQUE global maximum of Re W at x_g. The left piece is covered by (9), the right piece by (12), and W’(x_g)=0. There is a strict action gap away from every neighborhood of x_g. The finite endpoint value at u=1 is submaximal by strict decrease, without requiring a separate numerical bound.</p>
+<p>For an analytic nonzero amplitude with a controlled uniform asymptotic expansion on this contour, ordinary one-variable saddle evaluation therefore has a nonzero Gaussian leading coefficient at x_g. The kink at x_g is harmless: its two tangent directions, 1 and 1-i c, lie in the same negative Gaussian cone. In fact W’’(x_g) has negative real AND negative imaginary parts, and c&lt;1, so rotating between those directions keeps the quadratic real part strictly negative. The two local half-rays give the full marked Gaussian, rather than an undetermined zero intersection factor ON THIS specified path.</p>
+<p>This is not a proof that the original outer residue cycle equals (13). That step must control the actual outer aliases and the inner connector/end-point integrals along the deformation. For example, a constant-height translation of the WHOLE triangle would retain an inner endpoint with action larger than the cubic value; reduced saddle concavity alone would miss it. The exact <a href="source_preserving_inner_quadrature.html">inner quadrature theorem</a> is an input for that separate source-preserving comparison, not permission to discard its remaining complex endpoint pieces.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_five_two_reduced_outer_concavity.py">Algebra and contour audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/five_two_reduced_outer_concavity_results.json">saved diagnostics</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/five_two_reduced_outer_contour_concavity.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-phase-and-a-specified-inner-critical-branch">1. The phase and a specified inner critical branch</a><a href="#exact-reduced-hessian">2. Exact reduced Hessian</a><a href="#horizontal-strict-concavity-on-the-whole-band">3. Horizontal strict concavity on the whole band</a><a href="#the-cubic-stationary-point-and-its-exact-flattening">4. The cubic stationary point and its exact flattening</a><a href="#analytic-dominance-on-the-sloped-outer-segment">5. Analytic dominance on the sloped outer segment</a><a href="#an-explicit-sufficient-outer-saddle-contour">6. An explicit sufficient outer saddle contour</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

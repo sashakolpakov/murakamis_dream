@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An explicit marked multiport Chebyshev packet · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_marked_multiport_chebyshev_source_packet.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="an-explicit-marked-multiport-chebyshev-packet">An explicit marked multiport Chebyshev packet</h1>
+<p>29 October 2026. The correctly marked original plat source has an explicit coherent multivariate polynomial packet. After its actual complete-circle quotient, every variable has half bandwidth and exact tensor Chebyshev/Parseval reconstruction with polynomial dual cost. This works at arbitrary FIXED bridge width, both level parities and all composite levels. The physical source-to-packet transform may carry exponential factorial energy; no sharp volume estimate for that energy is asserted.</p>
+<p>The construction uses C on ordinary pairs and H on the marked pair. It therefore avoids the proved all-C six-port source obstruction. It is a final-source identity/inequality, not a claim that arbitrary split-pair crossings descend to the quotient or that node values may replace the original generic-q normal germ.</p>
+<h2 id="original-source-and-the-exact-middle-degree-extraction">1. Original source and the exact middle-degree extraction</h2>
+<p>Put N&gt;=2,d=N-1,q=exp(pi i/N),Q=q<sup>2,x=q</sup>d, M=floor(d/2). For a 2k-head plat, let v=W p^tensor k be the COMPLETE original output state after any fixed signed braid word, with its full Cartan and source factors. Retain the external normalization chi_N explicitly. The following identities more generally hold for any input v of TOTAL integer degree kd, so apply with every allowed degree-preserving exterior. Write the original ordinary and full marked rows as</p>
+<pre><code>ell_(a,b)=x^a/N delta_(a+b,d),
+m_(a,b)=x^b/N^2  (unrestricted a,b),
+K_raw=(ell^tensor(k-1) tensor m)v.</code></pre>
+<p>Let P_mid project EACH consecutive physical pair to degree d and define its actual coefficient tensor</p>
+<pre><code>psi_(a1,...,ak)
+   =v_(a1,d-a1,...,ak,d-ak),    0&lt;=ai&lt;=d.           (1)</code></pre>
+<p>The ordinary caps force their k-1 pair degrees to d. The TOTAL integer degree then forces the last pair degree to d too. Hence</p>
+<pre><code>K_raw=(ell^tensor(k-1) tensor m_d) P_mid v,          (2)</code></pre>
+<p>where m_d is the marked row RESTRICTED only after this argument. No arbitrary local marking replacement is made. Every C=P L_N and H=L_N P is block diagonal in pair degree, so P_mid COMMUTES with the actual positive product G_top=C^tensor(k-1) tensor H. Thus</p>
+<pre><code>E_mid=(P_mid v)^dagger G_top(P_mid v)
+                           &lt;=v^dagger G_top v.      (3)</code></pre>
+<p>The source is preserved while the positive energy is reduced.</p>
+<h2 id="the-literal-pair-cd-polynomials-not-a-new-spectral-model">2. The literal pair-CD polynomials, not a new spectral model</h2>
+<p>Let A be the ORIGINAL middle-degree pair Casimir, in the physical basis |a,d-a&gt;, a=0,…,d. Its entries are</p>
+<pre><code>A_(a,a)=D_a=4qQ^a-q(1+Q)Q^(2a),
+A_(a,a+1)=A_(a+1,a)=t_a=-(1-Q^(a+1))^2.</code></pre>
+<p>All t_a for a&lt;d are nonzero. Define the actual continuants</p>
+<pre><code>f_0(z)=1, f_1(z)=(z-D_0)/t_0,
+f_(a+1)(z)=((z-D_a)f_a(z)-t_(a-1)f_(a-1)(z))/t_a.  (4)</code></pre>
+<p>Then f_a(c_j) is component a of the normalized actual Casimir eigenvector v_j with first component one. The distinct nodes are c_j=2cos((2j+1)pi/N), j=0,…,M, with multiplicities m_j=2 except the odd simple endpoint m_M=1. The <a href="actual_complete_circle_reflection_positive.html">full physical CD proof</a> gives</p>
+<pre><code>H_d=N sum_j m_j v_j v_j^dagger,
+C_d=N sum_j m_j conjugate(v_j) v_j^T.               (5)</code></pre>
+<p>Indeed H=L_N P has the first resolution. In degree d, physical reversal obeys P v_j=(x^d nu_j) conjugate(v_j), with nu_j=(-1)^j q<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> of unit modulus, proving the second. The weights in (5) come from the first normals of the COMPLETE circle at its double Casimir zeros; they have not been supplied by discarding the root Jordan data. The original cup also proves</p>
+<pre><code>f_a(c_0)=x^a.                                      (6)</code></pre>
+<h2 id="the-coherent-polynomial-and-its-exact-original-marked-corner">3. The coherent polynomial and its exact original marked corner</h2>
+<p>Define the KNOWN linear transform of the physical tensor (1)</p>
+<pre><code>F_N(z_1,...,z_k)=sum_(a1,...,ak) psi_(a1,...,ak)
+   f_(a1)(z_1)...f_(a(k-1))(z_(k-1)) f_(ak)#(z_k),   (7)</code></pre>
+<p>where # conjugates coefficients in the real Casimir variable. The conjugate on the MARKED variable is essential. Its presence is forced by H rather than C, not a freely chosen phase. All physical colors are coherently summed in (7) BEFORE an absolute value or positive norm is taken. Equations (5),(6) prove EXACTLY</p>
+<pre><code>E_mid=N^k sum_(j1,...,jk) m_j1...m_jk
+                         |F_N(c_j1,...,c_jk)|^2,    (8)
+K_raw=x^d N^(-(k+1)) F_N(c_0,...,c_0).              (9)</code></pre>
+<p>The actual invariant is chi_N K_raw; no external normalization is silently omitted. Formula (9) concerns the original marked scalar, not an unknown terminal amplitude chosen to define the transform. The full corner value uses only f_a(c_0)=x^a and the literal factors in (2): its last phase is x^(d-ak), not x^ak.</p>
+<p>Consequently</p>
+<pre><code>|K_raw|^2 &lt;= E_mid/(2^k N^(3k+2)),                  (10)</code></pre>
+<p>because c_0 is a DOUBLE node of weight 2 for every N&gt;=2. This is the original cap Cauchy budget, now a concrete all-port polynomial kernel with an explicit physical source and positive measure.</p>
+<h2 id="exact-half-bandwidth-fold-and-polynomial-tensor-dct">4. Exact half-bandwidth fold and polynomial tensor DCT</h2>
+<p>Raw F_N has degree at most d in EACH variable. Let</p>
+<pre><code>G_N(z)=product_(j=0)^M(z-c_j).</code></pre>
+<p>Take the remainder of (7) by G_N in each variable, independently, and call it Fbar_N. This is an explicit SOURCE-INDEPENDENT linear fold, of degree at most M in every variable. All grid values in (8),(9) are unchanged. This folding is made only AFTER the full circle/source identity (5); it is not an all-input replacement of the original pair algebra C[z]/P_N by a semisimple algebra before its coupon acts. It makes no assertion about q-normal derivatives or about arbitrary analytic continuation off the physical grid.</p>
+<p>Expand</p>
+<pre><code>Fbar_N=sum_(0&lt;=ri&lt;=M) A_r product_i T_(ri)(z_i/2).</code></pre>
+<p>The exact weighted discrete orthogonality 2M&lt;N gives the tensor DCT</p>
+<pre><code>A_r=(2^s(r)/N^k) sum_j (product_i m_ji)
+               F_N(c_j1,...,c_jk) product_i cos(ri theta_ji),
+theta_j=(2j+1)pi/N, s(r)=#{i:ri&gt;0}.                 (11)</code></pre>
+<p>In particular |A_r|&lt;=2^k max_grid|F_N| and max_[-2,2]^k |Fbar_N|&lt;=N^k max_grid|F_N|. The DCT itself has no hidden exponential condition factor at fixed k. Exact Parseval is</p>
+<pre><code>(1/N^k) sum_j (product_i m_ji)|F_N(c_j1,...,c_jk)|^2
+                   =sum_r 2^(-s(r))|A_r|^2,
+E_mid=N^(2k) sum_r 2^(-s(r))|A_r|^2.                (12)</code></pre>
+<p>The original source in these COHERENT coefficient coordinates is</p>
+<pre><code>K_raw=x^d/N^(k+1) sum_r A_r product_i cos(ri pi/N).</code></pre>
+<p>Its exact squared dual norm for the Parseval coefficient norm is</p>
+<pre><code>N^(-2k-2)(N/2)^k=1/(2^k N^(k+2)),                 (13)</code></pre>
+<p>since sum_(r=0)^M 2^(r&gt;0) cos(r pi/N)^2=N/2. This is a polynomial original-source cost at every fixed width. In particular the six-port case k=3 has a literal three-variable marked packet, full tensor-grid reconstruction, and dual cost 1/(8N^5) in the coefficient norm, equivalently 1/(8N^11) against E_mid.</p>
+<h2 id="scope-and-the-branching-gate-that-remains">5. Scope and the branching gate that remains</h2>
+<p>The three-C trivalent observation on the unchanged saturated source has a proper simplex support and an exact marked null-direction, as proved in <a href="actual_three_belt_saturated_source_and_marked_metric.html">the marked metric audit</a>. The present CCH packet is DIFFERENT: final pair-degree extraction and its marked coefficient conjugation keep the literal original co-source. They do not claim that its values form the zero-current three-object Hopf invariant. The last pair’s physical reversal has the explicit moment currents in that note, equations (16),(17).</p>
+<p>The DCT in (11) is controlled, but the source-to-continuant map in (7), the high-degree fold, and the resulting coefficients A_r need not have polynomial norms in the original physical metric. Their actual coherent energy is exactly what (8),(12) retain. Also a corner value is not automatically as large as the grid maximum. Thus no general sharp upper, original-cycle survival, geometric edge equations, or trivalent augmented-graph volume equality follows merely from this positive representation. A geometric energy certificate for the actual packet (7), keeping its last-pair current, would be a substantive next step.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_marked_multiport_chebyshev_source_packet.py">literal marked braid sources, pair CD, coherent grid and tensor Parseval</a>.</p>
+<p>Independent analytical review rederived the physical C/H conjugations, the unrestricted-to-middle marked-source step, all normalization powers, the two-parity DCT reproducing kernel and exact dual norm. A separate fresh replay passed seven original CD levels, 21 all-input tensor packets and four coupled six-head marked braid sources. These checks do not assert a sharp geometric bound or a generic-q germ.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>j(j+1)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_marked_multiport_chebyshev_source_packet.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#original-source-and-the-exact-middle-degree-extraction">1. Original source and the exact middle-degree extraction</a><a href="#the-literal-pair-cd-polynomials-not-a-new-spectral-model">2. The literal pair-CD polynomials, not a new spectral model</a><a href="#the-coherent-polynomial-and-its-exact-original-marked-corner">3. The coherent polynomial and its exact original marked corner</a><a href="#exact-half-bandwidth-fold-and-polynomial-tensor-dct">4. Exact half-bandwidth fold and polynomial tensor DCT</a><a href="#scope-and-the-branching-gate-that-remains">5. Scope and the branching gate that remains</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

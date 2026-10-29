@@ -10,6 +10,17 @@ preserves the cube constructions and other approaches, including their
 counterexamples and unresolved extensions. A narrower proved scope is
 recorded without discarding the idea.
 
+The latest [partner-reflection theorem](actual_racah_partner_reflection_identity.md)
+proves all sixty-four normalized root values equal, with exact reciprocal
+source normalization and generic bilinear transport. First normals are
+not invariant. The [spectral transport analysis](actual_partner_normal_transport.md)
+adds a polynomial killed-Jacobi spectral gap and a sufficient tail-free
+normal criterion; a nonempty [2N] current still needs coherent control.
+On the geometric side, the [Conway seam analysis](positive_conway_geometric_incidence.md)
+proves forced-flat closure atoms and an explicit infinite nonhyperbolic
+meridian-insertion subfamily. These refine the critical path without
+asserting a general knot equality.
+
 ## 1. A concrete enlargement already proved
 
 The [varying-radius alias theorem](actual_pretzel_all_width_extension.md)

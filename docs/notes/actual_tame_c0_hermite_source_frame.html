@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A tame Hermite frame for the original source channel · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_tame_c0_hermite_source_frame.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-tame-hermite-frame-for-the-original-source-channel">A tame Hermite frame for the original source channel</h1>
+<p>29 October 2026. The colliding c_0 Casimir channel containing the ORIGINAL cup has an explicit generalized vector with harmonic-sum coefficients. Its source-adapted Hermite frame has UNIFORMLY bounded physical condition number after a common N^(3/2) scale. In that frame the original marked and ordinary caps are exactly the two coordinate rows, and the full crossing is a unit scalar times a Jordan matrix with uniformly bounded off-diagonal coefficient.</p>
+<p>This proves an actual source-controlled Hermite Gram for the selected T=N-1 channel, including its derivative direction. It does not estimate recoupling from this channel into all other channels on overlapping pairs. No full-channel q-Racah norm or sharp knot bound follows yet.</p>
+<h2 id="the-original-physical-source-and-casimir">1. The original physical source and Casimir</h2>
+<p>Fix <code>q=exp(pi*i/N)</code>, <code>Q=q^2</code>, <code>d=N-1</code>, <code>rho=q-q^(-1)</code>, <code>x=q^d=-q^(-1)</code>, <code>N&gt;=2</code>. On balanced heads use exactly</p>
+<pre><code>mathsfF|a&gt;=(1-Q^(a+1))|a+1&gt;,
+Ecal|a&gt;=(Q^(-a)-1)|a-1&gt;,
+K|a&gt;=xQ^(-a)|a&gt;,
+F_tot=mathsfF_1+K_1^(-1)mathsfF_2,
+E_tot=Ecal_1 K_2+Ecal_2,
+Omega=F_tot E_tot+qK_tot+q^(-1)K_tot^(-1).</code></pre>
+<p>Missing endpoint arrows are zero. Work on the physical integer-degree d subspace with basis <code>|u,d-u&gt;</code>, <code>0&lt;=u&lt;=d</code>. Let <code>c_*=q+q^(-1)</code>. The ORIGINAL cup, ordinary pivotal cap and marked row restrict here to</p>
+<pre><code>p_u=N x^(u-d), ell_u=x^(-u)Q^(-u)/N,
+m_u=x^(d-u)/N^2.                               (1)</code></pre>
+<p>The unrestricted marked row is not replaced by this restricted row on other degrees; every vector constructed below has degree d. These are the fixed actual turns, with no invented scalar frame.</p>
+<p>Define finite harmonic sums</p>
+<pre><code>H_0=0, H_u=sum_(j=1)^u 1/(1-Q^j),
+g_u=x^(u-d)=p_u/N,
+v_u=-g_u H_u/rho.                              (2)</code></pre>
+<p>Then the exact Jordan equations are</p>
+<pre><code>(Omega-c_*)g=0, (Omega-c_*)v=g.                 (3)</code></pre>
+<p>In particular g,v are independent, and their span is the actual size-two c_* block inside integer degree d. This block, rather than the entire 2N-dimensional c_* generalized eigenspace across degrees, is the source channel treated in this note.</p>
+<h2 id="derivation-from-generic-q-with-actual-cup-duality-retained">2. Derivation from generic q with actual cup duality retained</h2>
+<p>Use a variable z near q and the ordinary highest-weight representation of highest weight d=N-1. Put <code>Q_z=z^2</code>, <code>x(z)=z^d</code>, <code>F_a(z)=product_(j=1)^a(1-z^(2j))</code>. Keep the standard highest-weight endpoint, including <code>mathsfF|d&gt;=0</code>. All factorials with <code>a&lt;N</code> are nonzero near q.</p>
+<p>The top-channel descendant and spin-zero invariant cup may be normalized as</p>
+<pre><code>g_u(z)=x(z)^(u-d),
+h_u(z)=g_u(z) R_u(z),
+R_u(z)=(-1)^u z^[-u(u+1)] F_u(z)F_(d-u)(z)/F_d(z).
+                                                           (4)</code></pre>
+<p>Indeed <code>g(z)=F_tot(z)^d|0,0&gt;/F_d(z)</code>. The finite coproduct binomial proves its displayed components. The E equation for an invariant degree-d vector gives the successive ratio</p>
+<pre><code>h_(u+1)/h_u=-z^[d-2u-2]
+                     (1-z^(2u+2))/(1-z^(2d-2u)),</code></pre>
+<p>which is (4); direct F and K equations give <code>F_tot h=0</code>, <code>K_tot h=h</code>. Thus h is the ACTUAL self-duality cup up to the stated analytic unit normalization. Its paired evaluation is transported reciprocally. One does not extend the root-only expression <code>K^(1-N)</code> as a generic-q pivot or assume a root cyclic endpoint away from q.</p>
+<p>The exact Casimir eigenvalues are</p>
+<pre><code>Omega(z)g(z)=c_top(z)g(z),
+Omega(z)h(z)=c_triv(z)h(z),
+c_top(z)=z^(2N-1)+z^(-2N+1),
+c_triv(z)=z+z^(-1).                             (5)</code></pre>
+<p>These follow from the defining coproduct: the top highest vector has K-root <code>z^(2d)</code>, while h is invariant. They can also be checked directly from the entries above. Root complementation gives <code>R_u(q)=1</code>, so <code>h(q)=g(q)</code>. Meanwhile</p>
+<pre><code>D_logz(c_triv-c_top)|q=2N rho,
+D_logz R_u|q=-2N H_u.                           (6)</code></pre>
+<p>For the second equation, differentiate (4) and pair its last u factorial terms with indices <code>N-j</code>. Their sum reduces to <code>-2N sum_(j&lt;=u)(1-Q^j)^(-1)</code>; the quadratic integer terms cancel. All derivatives are at fixed N and the actual root, at either parity.</p>
+<p>Consequently</p>
+<pre><code>lim_(z-&gt;q) [h(z)-g(z)]/[c_triv(z)-c_top(z)]=v.   (7)</code></pre>
+<p>Applying (5) before the limit proves (3). This is a normalized divided difference of actual Clebsch channels, with the original cup kept. It does not use the fixed-q common-meridian splitting at a dual cap; that cap’s exact dual-color product keeps its Casimir nodes collided.</p>
+<p>An analytic rescaling of h or g, equal to one at q, can add a multiple of g to v. The source-adapted vector in Section3 removes precisely that ambiguity. Thus the final Hermite frame does not depend on the unphysical first derivative of an eigenvector normalization.</p>
+<h2 id="exact-original-co-sources-and-the-canonical-hermite-lift">3. Exact original co-sources and the canonical Hermite lift</h2>
+<p>The finite sums in (1)–(2) give</p>
+<pre><code>ell g=0, m g=1/N,
+gamma_N:=ell v=q x^(-d)/(N rho^2)
+               =(-1)^N/(N rho^2),
+mu_N:=m v=-(sum_(u=0)^d H_u)/(N^2 rho).          (8)</code></pre>
+<p>In particular gamma_N is NONZERO at every level. To check its value, interchange the two finite sums:</p>
+<pre><code>sum_(u=0)^d Q^(-u)H_u
+  =sum_(j=1)^d [sum_(u=j)^d Q^(-u)]/(1-Q^j)
+  =-1/(1-Q^(-1)).</code></pre>
+<p>Also <code>q x^(-d)=(-1)^N</code>, by <code>x=q^d</code> and the actual half-period q. This accounts for the full parity sign.</p>
+<p>Define the SOURCE-ADAPTED generalized vector</p>
+<pre><code>t_N=(v-mu_N p)/gamma_N.                         (9)</code></pre>
+<p>Then all original source pairings are exactly</p>
+<pre><code>m p=1, m t_N=0, ell p=0, ell t_N=1,
+(Omega-c_*)t_N=theta_N p,
+theta_N=1/(N gamma_N)=(-1)^N rho^2.              (10)</code></pre>
+<p>Thus the two original co-sources, not newly chosen dual rows, are the inverse frame on this actual Jordan channel. In particular <code>(Omega-c_*)|span(p,t_N)=theta_N p ell</code>, agreeing with the retained rank-one nilpotent source. No ordinary quantum dimension is divided out. The generalized direction and the marked co-source remain.</p>
+<p>The replacement <code>v-&gt;v+lambda g</code> changes <code>mu_N</code> by <code>lambda/N</code>, so the numerator in (9) is unchanged. This proves the normalization independence asserted after (7).</p>
+<h2 id="fourierplancherel-gives-uniform-physical-conditioning">4. Fourier–Plancherel gives uniform physical conditioning</h2>
+<p>For <code>1&lt;=j&lt;N</code>,</p>
+<pre><code>|1-Q^j|&gt;=4min(j,N-j)/N, |rho|&gt;=4/N.</code></pre>
+<p>Hence, with <code>Harm_N=1+log N</code>,</p>
+<pre><code>max_u |H_u| &lt;=(N/2)Harm_N,
+||v||_2 &lt;=(N^(5/2)/8)Harm_N,
+|mu_N| &lt;=(N/8)Harm_N,
+|gamma_N|^(-1)=N|rho|^2&lt;=4N.</code></pre>
+<p>These estimates already give polynomial frame bounds without a spectral projector. A stronger exact Fourier calculation removes their condition growth.</p>
+<p>On degree d the original marked row is <code>m=p^*/N^3</code>, so (10) gives <code>p^*t_N=0</code>. If <code>Hbar=(1/N)sum_u H_u</code>, (9) becomes</p>
+<pre><code>(t_N)_u=(-1)^(N+1)N rho g_u(H_u-Hbar).           (11)</code></pre>
+<p>Use the unnormalized cyclic Fourier transform <code>Hhat_k=sum_(u=0)^d H_u Q^(-ku)</code>. Pairing j with N-j gives <code>H_d=d/2</code>. The cyclic difference of H therefore has value <code>-d/2</code> at zero and <code>(1-Q^u)^(-1)</code> at <code>u=1,...,d</code>. Its Fourier transform is EXACTLY <code>-k</code>, for <code>1&lt;=k&lt;=d</code>: successive transforms differ by <code>sum_(j=1)^d Q^(-kj)=-1</code>, starting at zero for k=0. Consequently</p>
+<pre><code>Hhat_k=-k/(1-Q^(-k)), 1&lt;=k&lt;=d,
+||t_N||_2^2=N|rho|^2 sum_(k=1)^d k^2/|1-Q^k|^2. (12)</code></pre>
+<p>This is ordinary finite Plancherel on the FULL physical N-window; no Fourier channel is omitted or independently dephased.</p>
+<p>The elementary root identity is</p>
+<pre><code>sum_(k=1)^d |1-Q^k|^(-2)=(N^2-1)/12.</code></pre>
+<p>For a direct proof differentiate <code>P(z)=(z^N-1)/(z-1)</code> twice at one. The first reciprocal sum is d/2 and the sum of squared reciprocals is <code>d(5-N)/12</code>; their difference is the displayed absolute sum. Pairing k and N-k then gives</p>
+<pre><code>N^2(N^2-1)/48
+   &lt;=sum_(k=1)^d k^2/|1-Q^k|^2
+   &lt;=N^2(N^2-1)/24.</code></pre>
+<p>Since <code>4/N&lt;=|rho|&lt;=2pi/N</code>, it follows that</p>
+<pre><code>N^3/4&lt;=||t_N||_2^2&lt;=pi^2 N^3/6,
+p^*t_N=0, ||p||_2^2=N^3.                       (13)</code></pre>
+<p>For the two physical columns <code>V=[p,t_N]</code> this proves</p>
+<pre><code>sigma_min(V)&gt;=N^(3/2)/2,
+sigma_max(V)&lt;=pi N^(3/2)/sqrt(6),
+kappa(V)&lt;=2, uniformly EVERY N&gt;=2.              (14)</code></pre>
+<p>For the last bound use the known first column norm N^(3/2), not just the two extreme singular-value bounds: the other column’s relative norm lies in <code>[1/2,pi/sqrt(6)]</code>, and <code>pi/sqrt(6)&lt;2</code>. The condition number is therefore at most two; N=2 attains two.</p>
+<p>The exact inverse on its range is still the two ORIGINAL rows m,ell by (10). The ordinary row on the full physical degree-d space has a larger norm because it also sees other channel directions; its restriction here is precisely the coordinate dual of t_N. No inverse of a possibly ill-conditioned whole Casimir projector was used.</p>
+<h2 id="an-actual-positive-hermite-gram-and-crossing-bound">5. An actual positive Hermite Gram and crossing bound</h2>
+<p>On <code>S_N=span(p,t_N)</code> define the positive inner product</p>
+<pre><code>||w||_(Herm)^2=|m w|^2+|ell w|^2.                (15)</code></pre>
+<p>It makes p,t_N orthonormal. It has rank two on S_N, not rank one, and retains BOTH the value and derivative channels. Both original co-sources have dual norm one. Equation (14) compares this Gram uniformly with N^(-3) times the physical metric. This is an explicit source-controlled Hermite Gram, not a metric defined from an unknown knot scalar or terminal word.</p>
+<p>Keep the original crossing’s common Cartan scalar kappa. The independently derived Casimir polynomial has</p>
+<pre><code>r(c_*)=1, r&#39;(c_*)=-d/(2rho).</code></pre>
+<p>Therefore in the p,t_N frame the EXACT original signed crossing is</p>
+<pre><code>R_+=kappa [[1,tau_N],[0,1]],
+R_-=kappa^(-1) [[1,-tau_N],[0,1]],
+tau_N=(-1)^(N+1)d rho/2, |tau_N|&lt;=pi.            (16)</code></pre>
+<p>Thus, for every signed integer l,</p>
+<pre><code>||R_+^l||_(Herm)&lt;=1+pi|l|                        (17)</code></pre>
+<p>at the original complete root, since <code>|kappa|=1</code>. The original full Cartan, pivot, framing and modified-dimension line have not been renormalized; (16) is a basis expression for that same operator. The PHYSICAL operator norm on this SAME invariant source channel is consequently at most <code>2(1+pi|l|)</code>, uniformly in N.</p>
+<p>The Gram (15) is asserted on the SELECTED TWO-DIMENSIONAL invariant channel only. Adjacent crossings may take it into other intermediate Casimir channels. Extending it through the full q-Racah transform, with the source, is the remaining problem. Declaring the rest of the physical tensor space orthogonal would not control that leakage, and no such full-channel estimate is claimed here.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_tame_c0_hermite_source_frame.py">Audit</a>: literal original E/F Casimir and signed R, all original source rows, generic-q cup/descendant divided difference, parity and frame singular values at both odd and even levels.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_tame_c0_hermite_source_frame.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-original-physical-source-and-casimir">1. The original physical source and Casimir</a><a href="#derivation-from-generic-q-with-actual-cup-duality-retained">2. Derivation from generic q with actual cup duality retained</a><a href="#exact-original-co-sources-and-the-canonical-hermite-lift">3. Exact original co-sources and the canonical Hermite lift</a><a href="#fourierplancherel-gives-uniform-physical-conditioning">4. Fourier–Plancherel gives uniform physical conditioning</a><a href="#an-actual-positive-hermite-gram-and-crossing-bound">5. An actual positive Hermite Gram and crossing bound</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

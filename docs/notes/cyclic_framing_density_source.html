@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The prefix-adapted framing density has an exact cyclotomic source factor · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/cyclic_framing_density_source.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-prefix-adapted-framing-density-has-an-exact-cyclotomic-source-factor">The prefix-adapted framing density has an exact cyclotomic source factor</h1>
+<p>Research calculation, 27 October 2026. This computes an actual finite root-filter functional on the rational density supplied by the <a href="prefix_adapted_two_position_framing_cover.html">prefix-adapted framing chart</a>. The result keeps an explicit power character and its cyclic norm. It is not a proof that this root filter is the original source after geometric Gaussian pushforward. That interchange remains unproved.</p>
+<h2 id="the-density-with-the-physical-prefix-retained">1. The density, with the physical prefix retained</h2>
+<p>Fix the complete parabolic meridian mark. Use signed developed prefix products U,V from the actual braid-to-Gauss dictionary; the physical inverse position is k=ell_U/ell_V. On the framing torsor write</p>
+<pre><code>P = [[r, r(1-r)/s], [s,1-r]],
+ell_W = Tr(W P),
+A=1/(1+s), B=1/k.</code></pre>
+<p>For a matrix W write c_W=W_21 and h_W=W_11-W_22. The equation ell_(U-kV)=0 is quadratic in r. In the regular quadratic field put</p>
+<pre><code>D = partial_(r/s) ell_(U-kV).</code></pre>
+<p>The actual framing two-form is</p>
+<pre><code>Omega = ell_V/(B D) dlog A wedge dlog B.        (1.1)</code></pre>
+<p>Its field trace over the two-position base is</p>
+<pre><code>Tr Omega = T(B) dlog A wedge dlog B,
+T(B) = W B/(c_U B-c_V)^2,
+W = c_V h_U-h_V c_U.                          (1.2)</code></pre>
+<p>In particular it need not be zero. The earlier special case V=I had W=0 and an odd unweighted density; that case cannot be used for an arbitrary physical edge. The chart note proves (1.1)–(1.2) from the actual prefix dictionary.</p>
+<p>For completeness the elementary trace calculation is short. Put tau=r/s, C=U-kV, and write</p>
+<pre><code>ell_C = -s c_C tau^2+(c_C+s h_C)tau+d_C+s b_C.</code></pre>
+<p>At its two simple roots the values of D are opposite. Reducing the quadratic ell_V modulo ell_C, or subtracting its two root values, gives</p>
+<pre><code>Tr(ell_V/D) = (c_V h_C-h_V c_C)/c_C^2
+            = W/(c_U-k c_V)^2.</code></pre>
+<p>Multiplication by 1/B gives (1.2). Notice that the trace coefficient has no remaining s dependence.</p>
+<p>The coefficients in (1.2) are intrinsic marked character functions. With the reference cut meridian J=[[1,1],[0,1]], direct multiplication gives</p>
+<pre><code>c_W = Tr(J W)-Tr(W),
+W = Tr(J(VU-UV)).                             (1.3)</code></pre>
+<p>Thus c_U,c_V,W, and their ratios below are rational trace-word functions of the marked representation. Conjugating while retaining J does not change them. Equivalently its residual unipotent centralizer fixes c_W and changes h_W by a common multiple of c_W, which cancels from W. They live on the marked character cover, not in the free framing-coordinate field. On a geometric component generically finite over the peripheral curve, they are algebraic over its A-curve field. The identities here concern the complete parabolic slice; no independent full holonomy deformation is imposed.</p>
+<h2 id="exact-root-averaging-is-a-derivative-of-a-cyclic-norm">2. Exact root averaging is a derivative of a cyclic norm</h2>
+<p>Suppose c_U!=0, W!=0, and set</p>
+<pre><code>lambda=c_V/c_U, gamma=W/c_U^2,
+T(B)=gamma B/(B-lambda)^2.                    (2.1)</code></pre>
+<p>Let Q be a primitive N-th root and assume lambda^N!=1. Define the finite algebraic functional</p>
+<pre><code>A_N(T) = (1/N) sum_(b=0)^(N-1) T(Q^b).</code></pre>
+<p>Then, EXACTLY,</p>
+<pre><code>A_N(T) = gamma N lambda^(N-1)/(1-lambda^N)^2.  (2.2)</code></pre>
+<p>No limiting operation or quantum expansion is involved in (2.2). To prove it, first use the literal cyclic norm</p>
+<pre><code>product_(b=0)^(N-1)(1-lambda Q^(-b))
+                   = 1-lambda^N.             (2.3)</code></pre>
+<p>With theta=lambda partial_lambda, direct differentiation gives</p>
+<pre><code>T(B)=-(gamma/lambda) theta^2 log(1-lambda/B).</code></pre>
+<p>Applying theta twice to log (2.3) proves (2.2). Logarithms are only notation for logarithmic derivatives of rational functions here; no branch of a logarithm is needed. Equivalently the ordinary partial-fraction identity for B^N-1 proves the same formula.</p>
+<p>The case lambda=0 is taken directly: T(B)=gamma/B and A_N(T)=0 for N&gt;1. Formula (2.2) is then interpreted by its polynomial limit. The displayed rate assertions below assume lambda!=0.</p>
+<p>This also has a WHOLE off-root representative. Before setting Q^N=1 retain</p>
+<pre><code>P_N(Q,lambda)=product_(b=0)^(N-1)(1-lambda Q^(-b)).</code></pre>
+<p>For arbitrary nonzero Q, away from the specified poles,</p>
+<pre><code>(1/N)sum_b T(Q^b)
+    = -gamma/(N lambda) theta^2 log P_N.       (2.4)</code></pre>
+<p>Only after taking the actual whole derivatives may P_N specialize to (2.3). Its Q derivative is</p>
+<pre><code>Q partial_Q log P_N
+  = sum_b b lambda Q^(-b)/(1-lambda Q^(-b)).   (2.5)</code></pre>
+<p>Specializing (2.3) first and differentiating it would incorrectly erase this current. The exact finite product retains the quantum normal, its moments, and its source factors.</p>
+<h2 id="a-nonzero-rational-density-can-acquire-an-exponential-source-weight">3. A nonzero rational density can acquire an exponential source weight</h2>
+<p>At any fixed complex lambda with 0&lt;|lambda|!=1 and gamma!=0, (2.2) implies</p>
+<pre><code>lim_(N-&gt;infinity) (1/N)log|A_N(T)|
+                     = -|log|lambda||.        (3.1)</code></pre>
+<p>For |lambda|&lt;1 the denominator tends to one, and the numerator has rate log|lambda|. For |lambda|&gt;1 factor lambda^(2N) out of the denominator; the resulting rate is -log|lambda|.</p>
+<p>There is no contradiction with the polynomial bounds for a fixed algebraic coefficient on one controlled arc. A_N has a growing cyclic norm and power character; it is not evaluation of one fixed algebraic function of Q near one. Nor does (3.1) prove that the actual geometric coefficient is exponentially small. The source pairing has not been shown to commute with this field trace and principal-density sampling. It does show that such an interchange cannot be declared harmless merely because T is rational and pointwise nonzero.</p>
+<p>Ordinary B residues do not replace this functional either. The one-form T(B)dlog B=gamma dB/(B-lambda)^2 is exact and has zero ordinary residues. Its finite cyclic average (2.2) is nevertheless nonzero. The marked source and its cyclic norm supply information which absolute de Rham exactness would lose.</p>
+<h2 id="a-calibration-on-the-actual-figure-eight-representation-chart">4. A calibration on the actual figure-eight representation chart</h2>
+<p>The prefix chart note constructs a fixed triple for the actual mixed braid (1,-2,1,-2), over u^2+u+1=0. For its third physical strand the signed developed prefix products reduce to</p>
+<pre><code>V = [[1,1],[-u,1-u]],
+U = [[u+1,2u+1],[1-u,3-u]].</code></pre>
+<p>These are determinant-one matrices. The chart computation gives</p>
+<pre><code>W=2u+1,  lambda=1/(u+2),  gamma=-lambda.</code></pre>
+<p>Consequently (2.2) becomes</p>
+<pre><code>A_N(T)=-N lambda^N/(1-lambda^N)^2,             (4.1)
+|lambda|=1/sqrt(3).</code></pre>
+<p>At either marked geometric embedding its rate is therefore -log(3)/2. This is a calibration of the exact density functional, not a recomputation of Kashaev’s figure-eight invariant. In particular it must not be inserted as a new prefactor in that invariant. A source-preserving comparison must instead explain how this character and its dual/source normalization are transported. The example tests a general prefix formula; the conjecture target remains unrestricted hyperbolic knots.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_cyclic_framing_density_source.py">symbolic audit</a> checks the cyclic norm, an independent companion-matrix trace, the whole off-root current, and the exact figure-eight field values.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/cyclic_framing_density_source.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-density-with-the-physical-prefix-retained">1. The density, with the physical prefix retained</a><a href="#exact-root-averaging-is-a-derivative-of-a-cyclic-norm">2. Exact root averaging is a derivative of a cyclic norm</a><a href="#a-nonzero-rational-density-can-acquire-an-exponential-source-weight">3. A nonzero rational density can acquire an exponential source weight</a><a href="#a-calibration-on-the-actual-figure-eight-representation-chart">4. A calibration on the actual figure-eight representation chart</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

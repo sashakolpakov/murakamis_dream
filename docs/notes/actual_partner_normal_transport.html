@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Spectral control and the tail-free boundary of Racah normal transport · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">Spectral theorem; tail-free bound</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_partner_normal_transport.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="spectral-control-and-the-tail-free-boundary-of-racah-normal-transport">Spectral control and the tail-free boundary of Racah normal transport</h1>
+<p>29 October 2026. The new estimate here is a polynomial spectral gap for the ACTUAL folded root polynomial and bounds for every fixed SPECTRAL derivative. It also records a general sufficient criterion for full generic-q partner-normal transport: the actual factorial range must stop before its [2N] current. A one-edge partner always has that property, so its normal bound is a corollary of the existing positive-core theorem, not a bound on a nonzero discarded current. The first-normal spectral identity below is exact, but the general nonempty-tail normal problem and a physical confluent-frame norm bound remain open.</p>
+<h2 id="exact-source-convention-and-the-restricted-transport-theorem">1. Exact source convention and the restricted transport theorem</h2>
+<p>Put D=N-1, M=floor(D/2), q=exp(pi i/N), Q=q^2, and theta=pi/N. All six spins below are integers. Let a,b,c,d,e,f&lt;=M and assume</p>
+<pre><code>a+b+e,c+d+e,a+d+f,b+c+f &gt;= D.                 (1)</code></pre>
+<p>Use the SAME generic seven-factorial sum S(zeta), face factors Delta_F^2, and normalized squared scalar</p>
+<pre><code>K_e(zeta)=[N]^2 S(zeta)^2 product_F Delta_F^2 (2)</code></pre>
+<p>as in <a href="actual_supported_racah_common_phase_and_normal_metric.html">the common-phase/normal theorem</a>. This is the scalar diagonal gauge of the ACTUAL generic four-port source proved in <a href="actual_general_four_port_single_racah_kernel.html">the full source theorem</a>, not a substituted root 6j value. Let e<em>=D-e and form K_e</em> by changing ONLY e in the same generic formula. Both germs are analytic at q.</p>
+<p>More generally let B be ANY of the sixty-four partner branches and let Q_B be its three opposite sums. If</p>
+<pre><code>min Q_B &lt;= 2D,                              (3a)</code></pre>
+<p>then, for every fixed r, in t=log(zeta/q),</p>
+<pre><code>|D_t^r K_B(q)| &lt;= C_r N^(c_r) W_N^2.         (3b)</code></pre>
+<p>The constants are independent of labels and N. Indeed its actual z range ends at min Q_B. Every term therefore contains exactly one [N], and no [2N]. After [N] cancellation, the generic expression has a positive common-phase root core and only unit denominator factors. The uniform positive-core germ theorem applies to all its fixed jets; its normalized root value is W_N^2 by the all-partner value theorem. This proves (3b) without discarding any term.</p>
+<p>For the single partner e*=D-e, the untouched opposite sum a+b+c+d&lt;=2D automatically proves (3a). In particular there is an absolute C such that</p>
+<pre><code>K_e(q)=K_e*(q)=W_N^2&gt;0,
+|dot K_e*(q)| &lt;= C N^8 W_N^2.                (3)</code></pre>
+<p>The value equality follows from the stronger <a href="actual_racah_partner_reflection_identity.html">all-sixty-four VALUE reflection theorem</a>. The proof below only needs its single-internal-edge case. By tetrahedral relabeling, (3) applies to ANY ONE partner of a folded sextuple. Its first-normal estimate is rederived in section4 to identify exactly the spectral term which higher-order transport would require. A local square root with positive root value also has polynomial fixed-jet bounds under criterion (3a).</p>
+<p>Criterion (3a) can fail already for TWO adjacent partners: N=5, folded labels (1,1,2,2,2,2), partners (3,3,2,2,2,2), give the true range z=8,9, so z=9 contains [2N]. Here the exact regularized sum is C+[2N]T with C(q)=(3+sqrt(5))/2 and T(q)=-1: the current is really nonzero, not merely allowed by an index bound. The spectral theorem below does not control it. No assertion for such branches is made.</p>
+<h2 id="the-actual-root-polynomial-and-its-degree-recurrence">2. The actual root polynomial and its degree recurrence</h2>
+<p>Set</p>
+<pre><code>p=min(a+d,b+c), s=a+b+c+d, t0=s-2p,
+h=max(|a-b|,|c-d|), rA=a+b-h, rC=c+d-h,
+L=2p-D, n=p-f, t=p+f-D.                     (4)</code></pre>
+<p>The supports imply 0&lt;=t&lt;=n, n+t=L, and rA,rC&gt;=L. In particular L&gt;=0. If t=0 (possibly with L&gt;0) the root polynomial below is 1, all its positive-order spectral derivatives vanish, and no killed matrix is needed. Let alpha=q^(2h+1), lambda=z+z^-1. The actual generic source polynomial is</p>
+<pre><code>G_n(z;zeta)=sum_(k=0)^n
+   (Q^-n,P Q^(n-1),alpha z,alpha/z;Q)_k Q^k
+                     /(Q,Q^(t0+1),Q^-rA,Q^-rC;Q)_k,
+P=Q^(-2p),                                  (5)</code></pre>
+<p>where in the GENERIC formula Q=zeta^2 and alpha=zeta^(2h+1). The denominators are root units. At the root P=Q^(1-L), the second upper parameter is Q^-t, and (5) becomes the degree-t polynomial</p>
+<pre><code>R_t(lambda)=sum_(k=0)^t A_k
+                product_(i&lt;k)(c_(h+i)-lambda),
+c_j=2cos((2j+1)theta),
+A_k= [s_n/s_(n-k)] [s_t/s_(t-k)]
+      [s_(rA-k)/s_rA] [s_(rC-k)/s_rC]
+                     s_t0/(s_k s_(t0+k)) &gt;0. (6)</code></pre>
+<p>Here s_j=product_(u=1)^j 2sin(u theta). This is an identity of root polynomials, not a deletion of the GENERIC k&gt;t terms. The phase in (6) cancels exactly: the residual exponent is Nk and the remaining sign is (-1)^k, so (-1)^k q^(Nk)=1. It also follows directly by converting each finite Pochhammer to sine factors.</p>
+<p>For completeness the following recurrence is an OWN finite-product calculation. For arbitrary generic alpha,beta,gamma,delta, put P=alpha beta gamma delta, and define R_j by the finite sum (5) with upper parameters Q<sup>-j,PQ</sup>(j-1) and denominators Q,alpha beta,alpha gamma,alpha delta. Then</p>
+<pre><code>lambda R_j=A_j R_(j+1)
+      +(alpha+alpha^-1-A_j-C_j)R_j+C_j R_(j-1),
+A_j=product_(u=beta,gamma,delta)(1-alpha u Q^j)
+      (1-PQ^(j-1))
+       /[alpha(1-PQ^(2j-1))(1-PQ^(2j))],
+C_j=alpha(1-Q^j)
+      product_(uv=beta gamma,beta delta,gamma delta)(1-uvQ^(j-1))
+       /[(1-PQ^(2j-2))(1-PQ^(2j-1))].        (7)</code></pre>
+<p>To verify it without invoking a polynomial-family theorem, use M_k=(alpha z,alpha/z;Q)_k and</p>
+<pre><code>lambda M_k=(alpha Q^k+alpha^-1 Q^-k)M_k
+                                  -alpha^-1 Q^-k M_(k+1).</code></pre>
+<p>If h_jk is its coefficient in R_j, the three required ratios are</p>
+<pre><code>h_(j+1),k/h_jk=(1-Q^(-j-1))(1-PQ^(j+k-1))
+                   /[(1-Q^(k-j-1))(1-PQ^(j-1))],
+h_(j-1),k/h_jk=(1-Q^(k-j))(1-PQ^(j-2))
+                   /[(1-Q^-j)(1-PQ^(j+k-2))],
+h_j,k-1/h_jk=(1-Q^k) product_u(1-alpha u Q^(k-1))
+                /[Q(1-Q^(k-j-1))(1-PQ^(j+k-2))].</code></pre>
+<p>Substitution proves (7) after one common-denominator multiplication; the k=0 and terminating endpoints are obtained before division, or by the same cleared polynomial identity. Thus it remains valid at our root whenever j&lt;t. Here C_0 is identically zero and is set to zero BEFORE root specialization; after omitting it, the remaining recurrence denominators are units.</p>
+<h2 id="a-killed-birth-death-operator-with-a-polynomial-spectral-gap">3. A killed birth-death operator with a polynomial spectral gap</h2>
+<p>At the parameters in (4), A_j=-a_j and C_j=-b_j, where b_0=0 and for 0&lt;=j&lt;t</p>
+<pre><code>a_j=4 sin((t0+1+j)theta) sin((rA-j)theta)
+         sin((rC-j)theta) sin((L-j)theta)
+       /[sin((L-2j)theta) sin((L-2j-1)theta)],
+b_j=4 sin(j theta) sin((rA-L+j)theta)
+         sin((rC-L+j)theta) sin((s+2-N-j)theta)
+       /[sin((L-2j+1)theta) sin((L-2j)theta)]. (8)</code></pre>
+<p>Every numerator sine index of a_j is in 1,…,D, and hence</p>
+<pre><code>a_j&gt;=64/N^4,  a_j&gt;=b_j&gt;=0.                   (9)</code></pre>
+<p>Here is a proof of the second inequality, which is important for the uniformity. First t0&lt;=2h and rA,rC&gt;=L follow from the four choices of the largest difference in h and a,b,c,d&lt;=D/2. For example, when h=a-b&gt;=|c-d|, p=b+c, rA-L=D-2c&gt;=0 and rC-L=D-a-b-c+d&gt;=0 because c-d&lt;=a-b. The other cases follow by exchanging the two pairs and their ends. For j&gt;=1 put v=L-2j, x=t0+1+j, y=rA-L+j, z=rC-L+j, and</p>
+<pre><code>Delta_v(u)=log sin((u+v)theta)-log sin(u theta).</code></pre>
+<p>All indices used are strictly between 0 and N. The function Delta_v is decreasing, and Delta_v(N-v-u)=-Delta_v(u). Moreover y+z=t0+D-2h-v&lt;=D-v&lt;N-v, so Delta_v(y)+Delta_v(z)&gt;=0. Since x&gt;=j+1, (8) gives</p>
+<pre><code>log(a_j/b_j)&gt;=Delta_v(j)-Delta_v(j+1)
+                       +log[sin((v+1)theta)/sin((v-1)theta)]&gt;=0.</code></pre>
+<p>For the last step clear its positive denominators and use EXACTLY</p>
+<pre><code>sin((v+j)theta)sin((j+1)theta)sin((v+1)theta)
+   -sin(j theta)sin((v+j+1)theta)sin((v-1)theta)
+  =sin(theta)[cos(theta)-cos(v theta)cos((v+2j+1)theta)]&gt;=0.</code></pre>
+<p>The final inequality uses 1&lt;=v&lt;=D. This proves the drift inequality; at j=0 it is immediate. The lower bound in (9) uses sin(u theta)&gt;=sin(theta)&gt;=2/N and denominators at most 1.</p>
+<p>For t&gt;=1 let B_t be the t by t tridiagonal matrix with diagonal c_h+a_j+b_j, upper diagonal -a_j and lower diagonal -b_j. Its characteristic roots are EXACTLY those of R_t, by (7), R_0=1, and the nonzero leading coefficients. It is diagonally similar to a real symmetric matrix, since a_j b_(j+1)&gt;0. Put M_t=B_t-c_h I. The maximum principle with a Dirichlet boundary at t and reflection at 0 proves M_t^-1 is entrywise nonnegative. To bound its row sums, solve M_t u=1, u_t=0, and set d_j=u_j-u_(j+1). Then</p>
+<pre><code>a_j d_j-b_j d_(j-1)=1,
+0&lt;d_j&lt;=(j+1)/a_min,
+||M_t^-1||_infinity=max_j u_j
+                   &lt;=t(t+1)/(2a_min)&lt;=N^6/64. (10)</code></pre>
+<p>The real eigenvalues of M_t are positive (also by the same maximum principle), so every zero rho of R_t satisfies</p>
+<pre><code>rho&gt;=c_h+64/N^6.                            (11)</code></pre>
+<p>This proof does not need the stronger observed but unproved claim that all these zeros exceed 2.</p>
+<p>Every supported folded e has lambda_e=c_e&lt;=c_h. Factoring R_t over its real roots and using (11) now proves, for each fixed r,</p>
+<pre><code>|R_t^(r)(lambda_e)|/R_t(lambda_e)
+                        &lt;=(N^7/64)^r.        (12)</code></pre>
+<p>The same argument bounds fixed derivatives of 1/R_t by a polynomial times 1/R_t(lambda_e). This is a root SPECTRAL statement, not an assertion about the coefficients of the disappearing generic tail.</p>
+<h2 id="convert-spectral-control-to-the-actual-first-partner-normal">4. Convert spectral control to the actual first partner normal</h2>
+<p>The proved full-source formula is S=S0(E)(V_n/C_n)G_n(E). The factor V_n/C_n is independent of E and is kept generically. Write</p>
+<pre><code>K_e=J_e G_n(lambda_e;zeta)^2,
+R_J=J_e*/J_e
+   =[product_F D_F(e*)/product_F D_F(e)]
+                                  [S0(e*)/S0(e)]^2,             (13)</code></pre>
+<p>where D_F=(-1)<sup>(F-D)[N]Delta_F</sup>2 is analytic and nonzero at q. The total face sign is even. All numerator [N] zeros in (13) cancel before evaluation; every remaining factor is a root unit. The exact root value symmetry, or its elementary factorial reflection s_(D-r)=N/s_r, gives R_J(q)=1. Each fixed logarithmic derivative of R_J is polynomially bounded uniformly in the labels: it is a quotient of O(N) unit quantum-integer factors with index O(N). In particular |dot R_J(q)|&lt;=C N^3.</p>
+<p>Set z_e=zeta^(2e+1), z_e*=zeta^(2N)/z_e. Because G_n is symmetric in its spectral argument, its partner evaluation is EXACTLY G_n(zeta^(-2N)z_e;zeta). The two spectral coordinates satisfy</p>
+<pre><code>lambda_e*-lambda_e
+   =(zeta^(2N)-1)(zeta^(2N)-z_e^2)/(zeta^(2N)z_e),
+|dot lambda_e*-dot lambda_e|&lt;=4N.             (14)</code></pre>
+<p>At q they coincide. Differentiating the FULL generic polynomial only ONCE therefore cancels its common coefficient normal and gives the exact identity</p>
+<pre><code>(dot K_e*-dot K_e)/W_N^2
+  =dot R_J+2(dot lambda_e*-dot lambda_e)
+                                  R_t&#39;(lambda_e)/R_t(lambda_e). (15)</code></pre>
+<p>Equation (15) differentiates the full source identity (13), rather than its value alone. In THIS one-edge case its [2N] tail is empty by (3a); thus (15) must not be presented as a new bound for a nonzero T. Equation (12), the root-unit derivative bound in (13), and the uniform folded-germ bound from the common-phase theorem imply (3).</p>
+<p>At SECOND order the common coefficient derivative no longer cancels: mixed spectral/generic-q derivatives of G_n appear. Its generic degree is n, whereas its root degree is t, and the vanished k&gt;t coefficients can contribute to precisely these mixed derivatives. Consequently (12) ALONE cannot be iterated to higher generic-q jets. The already proved tail-free criterion still handles every fixed order in the one-edge case, by its separate positive-core proof. Neither argument yet bounds a nonempty [2N] tail or the relevant mixed coefficient/spectral derivatives after external partners.</p>
+<h2 id="an-exact-central-normal-check-by-a-finite-product-derivative">5. An exact central normal check by a finite product derivative</h2>
+<p>For odd N=2m+1 and a=b=c=d=f=m, R_m is the actual turned Steinberg projector h_N. Its endpoint c_0 obeys h_N(c_0)=1 and</p>
+<pre><code>h_N&#39;(c_0)=-[2sin(theta)]^-1 sum_(u=1)^m cot(u theta). (16)</code></pre>
+<p>This is an exact identity, not a fitted asymptotic. To prove it, specialize the OWN <a href="finite_balanced_sears_operator_proof.html">balanced Sears identity</a> by canceling its parameter c=d. The transformed sum has an upper parameter 1 and only its k=0 term survives, giving the finite product</p>
+<pre><code>sum_(k=0)^m (Q^-m,Q^-m,A;Q)_k Q^k
+                 /(Q,Q,AQ^-2m;Q)_k
+    =(Q^(m+1),Q/A;Q)_m/(Q,Q^(m+1)/A;Q)_m.   (17)</code></pre>
+<p>At Q^N=1, Q^-2m=Q and (A)_k/(AQ)_k=(1-A)/(1-AQ^k). Differentiate (17) at A=1. Pairing u with N-u on its right gives</p>
+<pre><code>sum_(k=1)^m (Q^-m;Q)_k^2 Q^k
+                      /[F_k^2(1-Q^k)]
+                     =-i sum_(u=1)^m cot(u theta).</code></pre>
+<p>Differentiating the finite Newton expression (6) at c_0 gives (16), with its factor -i/[2sin(theta)]. In particular |h_N’(c_0)|&lt;=C N^2(1+log N), consistent with the general polynomial bound. This identity tests a genuine normal direction and does not replace the source germ by its value.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_partner_normal_transport.py">degree recurrence, positive drift, spectral derivatives and exact first normals</a>. The finite tests supplement the recurrence, drift and generic source proofs above. They do not certify transport for a nonempty [2N] tail or an all-partner higher-jet theorem.</p>
+<p>Independent internal analytical review by the Euler agent checked the exact finite degree recurrence, all sine ranges, the drift and three-sine identity, killed-chain inverse/gap, spectral product bound, actual source-prefactor/first-normal identity, and the finite Sears cotangent calculation. The review specifically retained the empty tail in the one-flip case and the unproved nonempty-tail boundary. Fresh primary audit: one exact seven-parameter recurrence certificate, 1,792 root families, 613 full first-normal identities, fifteen exact cotangent identities, and the N=5 nonzero-tail regression.</p>
+<p>Primary-agent review: the finite recurrence, sine drift inequality, killed-chain inverse bound, spectral derivative estimate and source-normal conversion were read in full. The tail-free restriction and the unestimated nonempty [2N] current remain explicit; the review does not extend the theorem to that current.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_partner_normal_transport.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-source-convention-and-the-restricted-transport-theorem">1. Exact source convention and the restricted transport theorem</a><a href="#the-actual-root-polynomial-and-its-degree-recurrence">2. The actual root polynomial and its degree recurrence</a><a href="#a-killed-birth-death-operator-with-a-polynomial-spectral-gap">3. A killed birth-death operator with a polynomial spectral gap</a><a href="#convert-spectral-control-to-the-actual-first-partner-normal">4. Convert spectral control to the actual first partner normal</a><a href="#an-exact-central-normal-check-by-a-finite-product-derivative">5. An exact central normal check by a finite product derivative</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

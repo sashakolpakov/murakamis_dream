@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simultaneous lower-transfer faces with interior physical heads go downhill · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_transfer_only_face_downhill_patch.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="simultaneous-lower-transfer-faces-with-interior-physical-heads-go-downhill">Simultaneous lower-transfer faces with interior physical heads go downhill</h1>
+<p>28 October 2026. This gives a source-preserving boundary operation for an arbitrary fixed one-component braid word. Several actual total transfers may approach zero simultaneously. If every physical head factorial stays in a regular interior strip, all those transfer normals have compatible zero sides. The original scalar cardinal source can be continued from its existing lower cotangent sides through their joint NEGATIVE collar, with its exact currents retained. Every outgoing selected-strip norm/cardinal phase is downhill at the stated nested scale.</p>
+<p>Head endpoints are excluded. This is a genuine class of removable exits, not a sharp bound for the remaining whole knot period, nor a claim about the number of repeated boundary visits during a global descent.</p>
+<h2 id="the-original-source-has-independent-integer-transfer-coordinates">1. The original source has independent integer transfer coordinates</h2>
+<p>Use the original complete balanced crossing, with d=N-1. Its two signed routings are</p>
+<pre><code>(a,b) -&gt; (b+sigma*k, a-sigma*k), sigma=+1 or -1.  (1)</code></pre>
+<p>All original kappa, Cartan, pivotal, framing and external factors are retained. Before splitting states, use the justified whole original averaged trace</p>
+<pre><code>K_N=chi_N/N Tr[(I tensor g tensor ... tensor g) W_N]. (2)</code></pre>
+<p>For a one-component closure its integer closed paths have coordinates</p>
+<pre><code>(t,k_1,...,k_m) in Z^(m+1),                         (3)</code></pre>
+<p>with counting Jacobian ONE. Here t is one arc’s color. Follow the oriented physical knot: each crossing’s two visits change that color by opposite multiples of k_j. Every intermediate arc label is therefore an integer linear form</p>
+<pre><code>ell_r=t+sum_j e_(rj) k_j, e_(rj) in {0,1,-1}.       (4)</code></pre>
+<p>Each k_j cancels after its second visit, so the path closes for EVERY integer transfer vector, and conversely every closed path recovers its unique t and transfers. An equivalent direct proof propagates symbolic initial heads through (1). At the end their owners are permuted by a single cycle P and acquire integral offsets d_r(k). Closure asks A_r-A_(Pr)=d_r(k). Degree conservation gives sum_r d_r=0 identically, so these equations solve integrally around that cycle, with one free common color and no divisibility constraint.</p>
+<p>The physical state polytope is exactly</p>
+<pre><code>0&lt;=k_j&lt;=d, 0&lt;=ell_r(t,k)&lt;=d.                       (5)</code></pre>
+<p>For the average (2) it has strict real interior: take t=d/2 and every k_j=eta d with eta&lt;1/(4(m+1)). This is a domain assertion, not a positivity or noncancellation assertion. A highest-cut t=0 presentation can have forced faces. Its forced equalities must be removed before using a free-coordinate interior statement; (2) is justified for the whole original word, not separately after inserting a current.</p>
+<p>This is the explicit knot lattice of <a href="actual_scalar_cardinal_source_completion.html#explicit-knot-coordinates-dimension-and-forced-cut-faces">the scalar cardinal completion</a>. It explains why the lower-transfer normals in the following theorem are independent even after the ORIGINAL closure is imposed.</p>
+<h2 id="exact-singular-factor-and-the-regular-head-hypotheses">2. Exact singular factor and the regular-head hypotheses</h2>
+<p>For a positive crossing the original coefficient is</p>
+<pre><code>r_+(a,b;k)=kappa x^(-a-b+k) Q^(b(a-k))
+             Fhat(b+k)Fhat(a)/[Fhat(k)Fhat(b)Fhat(a-k)],
+Q=exp(2pi*i/N), x=-exp(-pi*i/N).                   (6)</code></pre>
+<p>The negative one is precisely its balanced conjugate mirror, not a replacement positive coefficient. Its denominator also contains the negative-root Fhat_-(k). The exact full-function identity is</p>
+<pre><code>1/Fhat_epsilon(k)=Psi_epsilon(epsilon*h*(k+1))/phi_epsilon,
+h=2pi*i/N, phi_-=conjugate(phi_+).                (7)</code></pre>
+<p>Thus the classical lower-transfer normal has the EXACT tag</p>
+<pre><code>xi_j=(k_j+1)/N, u_j=epsilon_j*2pi*i*xi_j.          (8)</code></pre>
+<p>It is not legitimate to omit the +1 when locating finite zeros.</p>
+<p>Fix a subset J of crossings. Put delta=N^(-alpha), 0&lt;alpha&lt;1, and assume |xi_j|&lt;=delta for j in J. Every physical head label appearing in any crossing is assumed to stay in the interior strip</p>
+<pre><code>eta &lt;= Re(ell_r/N) &lt;= 1-eta, eta=N^(-epsilon),
+|Im(ell_r/N)| &lt;= C epsilon log N+C/N.             (9)</code></pre>
+<p>Other transfer factorial arguments are regular in their own marked strips. In particular none of their full-function arguments approaches one during this operation. More generally it is enough to assume the regular part G of the original logarithmic action satisfies</p>
+<pre><code>|partial_(xi_j) G| &lt;= C_0+C_word epsilon log N     (10)</code></pre>
+<p>on the entire normal tube. Condition (9), the actual five-function formula (6), and the fixed integer coefficients (4) imply (10). Indeed every relevant derivative is a fixed combination of Log(1-Q^ell) and Log(Q^ell), plus fixed lift constants. Interior angular margin eta bounds the first by O(1+epsilon log N); (9) bounds the second. The original Cartan Gaussian has the same bound. Constants depend only on the fixed word and the prescribed tube constants.</p>
+<p>If alpha&gt;C_word’ epsilon for a sufficiently large fixed word constant, all heads stay in (9), with slightly weaker constants, when ANY subset of the k_j is displaced by real distance at most 2N delta. This uses the finite integer routing coefficients in (4). Thus this hypothesis can be checked before the move; it is not an assumed unknown period comparison. In what follows choose alpha so that</p>
+<pre><code>alpha &gt; (C_word+2) epsilon,                       (11)</code></pre>
+<p>enlarging C_word to cover those margin changes. Such alpha exists for all sufficiently small fixed epsilon.</p>
+<h2 id="all-retained-marks-have-zero-real-variation-in-these-normals">3. All retained marks have zero real variation in these normals</h2>
+<p>The <a href="actual_scalar_cardinal_source_completion.html">scalar cardinal source</a> uses fixed powers of</p>
+<pre><code>w^+(s)=A_N(s)+B_N(s) exp(2pi*i*s),
+w^-(s)=B_N(s)+A_N(s) exp(-2pi*i*s).               (12)</code></pre>
+<p>Every mode of every window is an INTEGER character of the actual linear labels (4). Along a real transfer displacement its modulus is EXACTLY constant, even when the other variables are complex. Hence these leading integer marks cannot change the downhill sign below. Their coefficients have only polynomial normal bounds on the fractional fixed-height edges used here: heads stay in (9), and a transfer window’s digamma poles are a fixed distance from those edges. No assertion that the modes are harmless on arbitrary macroscopic complex deformations is made.</p>
+<p>Likewise the ORIGINAL full-Psi reset</p>
+<pre><code>Psi_epsilon(u)=(1-exp(Nu))
+                          Psi_epsilon(u+epsilon*2pi*i) (13)</code></pre>
+<p>retains TWO outgoing sectors. Their relative character exp(Nu), with u from (8), also has exactly constant modulus along a real k_j shift. All original norm factors 1-exp(Nu) remain; none is replaced by one. Integer step shifts leave these characters themselves unchanged.</p>
+<p>At outside physical integers the A_N,B_N packets have compensating poles. Consequently (12) must remain a JOINT packet during the filling. It is split only on regular outgoing edges. The ensuing statement about each outgoing sector does not authorize independent pole crossings for its separated terms.</p>
+<h2 id="uniform-simultaneous-downhill-at-the-nested-scale">4. Uniform simultaneous downhill at the nested scale</h2>
+<p>Write the original density’s leading exponential as exp(N S), so its height is Re S. On a continuous marked branch its singular transfer part has the exact leading form</p>
+<pre><code>S_sing=sum_(j in J) Li_2(exp(epsilon_j*2pi*i*xi_j))
+                                  /(epsilon_j*2pi*i). (14)</code></pre>
+<p>All other leading terms are G in (10). Along xi_j -&gt; xi_j-s_j with s_j real and 0&lt;=s_j&lt;=2delta,</p>
+<pre><code>partial_(s_j) Re S
+   =log|1-exp(epsilon_j*2pi*i*(xi_j-s_j))|
+                                 -Re partial_(xi_j)G
+   &lt;= -(alpha-C_word epsilon) log N+C.            (15)</code></pre>
+<p>This follows directly by differentiating Li_2. Its real logarithm is single valued on the punctured normal disk. The exact holomorphic completion below retains the zero if the path meets it.</p>
+<p>Under (11), (15) is &lt;=-c_word log N for all sufficiently large N. The normals are independent coordinates, so they can be shifted in any order; no positive circuit arises among them. After shifting each one by 2delta, its signed full-Psi imaginary coordinate satisfies</p>
+<pre><code>epsilon_j Im u_j&#39; in [-6pi delta,-2pi delta].     (16)</code></pre>
+<p>Apply (13) at every outgoing factor and retain the complete 2^|J| norm packet, together with every cardinal mode. The two-sector selected-strip calculation in <a href="actual_isolated_shape_one_downhill_patch.html">the shape-one patch</a> shows that the maximum outgoing sector height is at most the continuously marked height followed in (15). Equivalently, the branch on either side of the normal cut is the larger of the two reset sectors; the other one has smaller height. Integer cardinal characters do not change (15). Therefore EVERY outgoing sector obeys</p>
+<pre><code>Re S_out &lt;= Re S_in -2 c_word |J| delta log N.    (17)</code></pre>
+<p>The assertion is local in the stated regular-head tube. It makes no claim about every sector of the entire original period away from it.</p>
+<p>The full quantum factor, including its zeros, has the uniform normal bound exp[O(N delta(1+|log delta|))+O(log N)]. The regular background varies by O(N delta(1+epsilon log N)). Cardinal coefficients contribute only a fixed polynomial factor on the stated edges. Thus the complete fixed finite patch has additional mass exp(o(N)). These estimates use alpha&lt;1 and (11); they do not divide by the value of the knot period.</p>
+<h2 id="exact-cotangent-filling-and-source-sides">5. Exact cotangent filling and source sides</h2>
+<p>The finite-level reason this is an original-source operation is also explicit. At a newly crossed integer k_j=-s, 1&lt;=s&lt;N,</p>
+<pre><code>ord[1/Fhat_epsilon(k_j)]=1.</code></pre>
+<p>Every head factorial in (6) is nonzero and holomorphic on the interior strip (9). The remaining transfer factors are regular, so the complete summand has a zero at k_j=-s. Its full cardinal completion is holomorphic there too, and has at least that zero. The cotangent pole is therefore removable. At joint negative integers these statements hold separately in every free k_j variable; the completed scalar summand is holomorphic before taking any multivariate residue.</p>
+<p>Consequently the old lower side Re k_j=-1/2 can be moved to Re k_j=-R-1/2, with R=O(N delta)&lt;N, at fixed positive upper/lower heights, retaining both horizontal connecting pieces. No original physical integer residue is removed and no new one is added. This can be performed simultaneously in all j in J, because (3) is an integer coordinate system. The iterated product-prism Stokes identity retains every side and corner current with its induced orientation. The statement is applied to a joint-chain piece on whose ENTIRE sweep the head margin (9) holds. If the full source is first split into this regular-head piece and head-endpoint pieces, the new transverse cutting curtains are part of those side currents. They are not dropped or declared lower-rate by the present theorem. For a single translated patch, with sweep S and</p>
+<pre><code>partial S=Gamma_out-Gamma_in-S_side,</code></pre>
+<p>the exact identity is</p>
+<pre><code>integral_(Gamma_in) omega
+   =sum_outgoing_sectors integral_(Gamma_out) omega_sector
+                                  -integral_(S_side) omega. (18)</code></pre>
+<p>At outside integer poles the packet is kept combined, as required in Section 3. Formula (18) does not drop the horizontal connectors or the side currents of the other original logarithmic/radial factors. Its residue-free form assumes the sweep stays in Re k_j&lt;0, starting at the original lower sides as just specified. A patch starting at POSITIVE transfer coordinates can cross the original poles k_j=0,1,…,O(N delta). Their original residue currents must then be added with their orientations. They are not canceled by the windows, which equal one on physical integers. The existing low-transfer packet bound controls their operator cost but does not bound an unrestricted exterior by the knot volume. No generic positive-side residue deletion is part of this theorem.</p>
+<p>A direct finite-step estimate provides an independent check on the zero side. For k=nu-s on a fractional fixed-height edge,</p>
+<pre><code>1/Fhat(k)=product_(r=0)^(s-1)(1-Q^(nu-r))/Fhat(nu).</code></pre>
+<p>For s=O(N delta), its modulus is at most</p>
+<pre><code>N^C [C(s+1)/N]^s.                                (19)</code></pre>
+<p>The regular head and Cartan ratios cost at most N^(C_word epsilon*s+C). All integer characters are invariant under those step shifts. Thus the far negative edge has the suppressing factor exp[-(alpha-C_word epsilon)s log N+O(s+log N)], in agreement with (15). Near the start and on the retained horizontal connectors one uses the complete bounded normal patch rather than asserts a uniform strict gap from a face of zero displacement.</p>
+<h2 id="boundary-of-the-theorem">6. Boundary of the theorem</h2>
+<p>This supplies a simultaneous downward filling for lower-TRANSFER-only outer cotangent faces with regular interior heads, in the ORIGINAL complete closed source at arbitrary braid width. A failure of its regular-head hypotheses routes the analysis to a physical head endpoint, another transfer endpoint, or an escaping/nonregular head chart. It cannot be blamed on an arbitrary circuit of nine auxiliary atomic variables in this chart. An interior normal cut may instead retain the original low-transfer residue packet described above; that current is also not removed.</p>
+<p>It does NOT assert that all physical face directions are downhill. For example at the all-zero head AND transfer vertex, reverse any strict interior flow. Since the factorial-degree imbalance at either signed crossing is +k, its logarithmic modulus along that outward ray has the leading positive increment -k t log t+O(t). Fixed cardinal characters have unit modulus there. Thus Slater feasibility alone does not give a downhill direction when head endpoints collide. That increment is still o(1) at t=N^(-alpha); it is not an excess-volume counterexample and does not affect (15), where heads are regular.</p>
+<p>Global sharp upper bounds still require handling those other faces, controlling repeated patch/flow visits and their aggregate source, and retaining the original phase through any chart change. Neither geometric survival nor the original volume limit is inferred here.</p>
+<p>Reproducible free-coordinate, signed phase and exact-window checks: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_transfer_only_face_downhill.py">audit</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_transfer_only_face_downhill_patch.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-original-source-has-independent-integer-transfer-coordinates">1. The original source has independent integer transfer coordinates</a><a href="#exact-singular-factor-and-the-regular-head-hypotheses">2. Exact singular factor and the regular-head hypotheses</a><a href="#all-retained-marks-have-zero-real-variation-in-these-normals">3. All retained marks have zero real variation in these normals</a><a href="#uniform-simultaneous-downhill-at-the-nested-scale">4. Uniform simultaneous downhill at the nested scale</a><a href="#exact-cotangent-filling-and-source-sides">5. Exact cotangent filling and source sides</a><a href="#boundary-of-the-theorem">6. Boundary of the theorem</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

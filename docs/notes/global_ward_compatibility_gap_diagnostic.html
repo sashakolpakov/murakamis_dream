@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The simultaneous many-head Ward gap is a separate problem · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/global_ward_compatibility_gap_diagnostic.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-simultaneous-many-head-ward-gap-is-a-separate-problem">The simultaneous many-head Ward gap is a separate problem</h1>
+<p>28 October 2026. The proved polynomial inverse for an actual <a href="actual_two_head_ward_polynomial_contraction.html">two-head lowering current</a> does not yet give an inverse for arbitrary many-head constraints. This note records a reproducible test and an exact identity identifying the full system worth studying. It proves no new asymptotic spectral bound and reports no counterexample to such a bound.</p>
+<h2 id="the-actual-physical-operators">1. The actual physical operators</h2>
+<p>At the canonical complete color, put</p>
+<pre><code>Q=exp(2pi i/N), x=-exp(-pi i/N),
+F_one e_a=(1-Q^(a+1))e_(a+1),
+Ecal_one e_a=-(1-Q^(-a))e_(a-1),
+K_one e_a=x Q^-a e_a.</code></pre>
+<p>Here Ecal=rho^2 E in the original balanced physical frame. This polynomial scalar rescaling retains the actual Ward equation. For b heads use the ACTUAL coproducts</p>
+<pre><code>F_b=sum_j K_1^-1...K_(j-1)^-1 F_j,
+Ecal_b=sum_j Ecal_j K_(j+1)...K_b.</code></pre>
+<p>Let P reverse the physical heads. Since K is unitary and Ecal_one=-F_one^*, directly</p>
+<pre><code>Ecal_b=-P F_b^* P.                                  (1)</code></pre>
+<p>In total-degree blocks this is</p>
+<pre><code>Ecal_s=-P_(s-1) F_(s-1)^* P_s.</code></pre>
+<p>Thus the simultaneous Ward normal operator is exactly</p>
+<pre><code>F_s^*F_s+P_s F_(s-1)F_(s-1)^*P_s.                   (2)</code></pre>
+<p>This identity uses the original physical metric, not a nonunitary fusion similarity. It holds in every head number at this complete color. No claim that (2) has a uniform spectral gap follows from the identity alone.</p>
+<p>There is also an exact Hermitian formulation. On the full physical tensor space put D=F_b+Ecal_b. Equation (1) gives</p>
+<pre><code>(P D)^*=-P D.</code></pre>
+<p>Thus iP D is Hermitian. For a vector in a single total degree, the F and Ecal outputs are orthogonal, so ||Dv||^2 is precisely the simultaneous Ward energy (2). This is a folded Hermitian Dirac formulation in the original metric. Its spectral estimate remains to be proved; Hermiticity alone does not bound a gap.</p>
+<p>There is a further exact kernel issue: the full Dirac kernel need not be graded. Already at one complete physical head, N=5, write c_r=1-Q^r and</p>
+<pre><code>v=e_0+[c_1/conjugate(c_2)]e_2+e_4.</code></pre>
+<p>Then (F+Ecal)v=0 by the two odd-row recurrences, whereas neither F e_2 nor Ecal e_2 vanishes. The degree-2 component is nonzero and obeys K=1, since x=Q^2. Thus even on the required K=1 slice, projection of the FULL Dirac kernel is not the joint Ward kernel. A gap for the global Hermitian Dirac would require an additional kernel-angle estimate before yielding the fixed-degree stacked inverse. This is why the target remains the actual Gram (2).</p>
+<h2 id="the-exact-gram-matrix-has-nontrivial-magnetic-triangle-flux">2. The exact Gram matrix has nontrivial magnetic triangle flux</h2>
+<p>Write H_s=F_s<sup>*F_s+Ecal_s</sup>*Ecal_s, and let a be a physical head state of total degree s. Its diagonal is exactly</p>
+<pre><code>H_s[a,a]=4 sum_i [sin^2(pi(a_i+1)/N)+sin^2(pi a_i/N)].</code></pre>
+<p>For i&lt;j, a_i&lt;d and a_j&gt;0, set a’=a+e_i-e_j and M=sum_(i&lt;h&lt;j)a_h. Direct multiplication of the two actual coproducts gives the off-diagonal entry</p>
+<pre><code>H_s[a&#39;,a]=8 q^-1 sin(pi(a_i+1)/N)sin(pi a_j/N)
+   *cos((j-i)phi-pi(a_i+a_j+2M)/N),                 (3)</code></pre>
+<p>where q=exp(pi i/N) and phi=Arg x=pi-pi/N. All other off-diagonal entries vanish except the Hermitian reverse edges. Equivalently the real cosine factor in (3) is</p>
+<pre><code>(-1)^(j-i) cos[pi(a_i+a_j+2M+j-i)/N].</code></pre>
+<p>For clarity, the F^*F contribution before combining phases is</p>
+<pre><code>x^(j-i)Q^(-a_i-M-1)
+                     (1-Q^(a_i+1))(1-Q^-a_j),</code></pre>
+<p>and the Ecal^*Ecal contribution is</p>
+<pre><code>x^(i-j)Q^(a_j+M-1)
+                     (1-Q^(a_i+1))(1-Q^-a_j).</code></pre>
+<p>Their sum is exactly (3). No asymptotic symbol or K=1 approximation is used in this calculation.</p>
+<p>Consequently a diagonal unitary vertex gauge CANNOT in general make this Gram matrix an ordinary real weighted graph Laplacian. There is an explicit countertest inside the actual K_total=1 sector: take b=4, N=5, s=8, and the triangle</p>
+<pre><code>a=(1,1,2,4), b=(2,0,2,4), c=(2,1,1,4).</code></pre>
+<p>Put k=(5-sqrt(5))/2. Equation (3) and the elementary golden-angle sine identities give exactly</p>
+<pre><code>H[b,a]=k q^-1, H[c,b]=k q^-1, H[a,c]=-sqrt(5)q,
+H[b,a]H[c,b]H[a,c]=-sqrt(5)k^2 q^-1.               (4)</code></pre>
+<p>The triangle product is nonreal. It is invariant under every diagonal unitary gauge, while any matrix with real off-diagonal entries has real products around all such triangles. All three states obey K_total=1 since x<sup>4Q</sup>-8=1. Thus this obstruction is present on the required actual invariant-weight fiber, not only on another degree or a hypothetical kernel.</p>
+<p>This does not refute a polynomial simultaneous Ward bound, a magnetic/Hodge comparison, or a nonlocal unitary decomposition. It rules out the direct real-path argument obtained by simply gauging away all global phases. The two-head path proof has no triangles and does not encounter this obstruction.</p>
+<p>There is nevertheless an EXACT norm-preserving realification at all head numbers. The entry formula and reversal of the interval i,…,j give</p>
+<pre><code>P_s H_s P_s=conjugate(H_s).</code></pre>
+<p>Define P_+=(I+P_s)/2, P_-=(I-P_s)/2, and</p>
+<pre><code>U=P_++iP_-=[(1+i)/2]I+[(1-i)/2]P_s.</code></pre>
+<p>Then U is unitary, mixes only a state and its physical reversal, and</p>
+<pre><code>U^* H_s U=Re H_s-P_s Im H_s                            (5)</code></pre>
+<p>is REAL SYMMETRIC. Indeed the real part commutes with P_s and the imaginary part anticommutes with it. This proves (5) directly. It is a sparse two-state mixing with condition number one, not an exponentially conditioned fusion transformation.</p>
+<p>The resulting real matrix has signed interactions and no automatic diagonal-dominance or Laplacian comparison. Thus the triangle test rules out a diagonal phase gauge, while (5) supplies a valid more general unitary reduction. Any use on the original source must transform the currents and source by this same specified U.</p>
+<h2 id="four-head-diagnostic-at-the-actual-two-cup-degree">3. Four-head diagnostic at the actual two-cup degree</h2>
+<p>For b=4 choose s=2(N-1), exactly the total integer degree of two original cups. The regular Borel decomposition has full length-N strings, so the exact rank of F_s is</p>
+<pre><code>rank F_s=h_4(s)-h_3(s-(N-1)),</code></pre>
+<p>where h_b(s) is the coefficient of t^s in (1+…+t<sup>(N-1))</sup>b. This fixes which singular values are nonzero without numerical thresholding. The original physical matrices give the following resolved nonzero F gaps:</p>
+<pre><code>N= 4: 1.08239220
+   6: 0.43260052
+   8: 0.18973845
+  10: 0.08478187
+  12: 0.03780617
+  14: 0.01676550
+  16: 0.00740054
+  20: 0.00142953.</code></pre>
+<p>The exact zero cluster remains below 9e-15 in these diagnostics. This rapid decay warns against carrying the two-head estimate over to F_b by an unproved iteration. These finite values alone DO NOT prove exponential decay or disprove every polynomial estimate.</p>
+<p>Crucially, keeping BOTH actual Ward currents changes the picture. For [F_s; Ecal_s] the computed smallest nonzero values are</p>
+<pre><code>N= 4: 1.20597689
+   6: 0.62788204
+   8: 0.39963573
+  10: 0.28269084
+  12: 0.21347310
+  14: 0.16854041.</code></pre>
+<p>The observed joint kernel dimension is N at these levels. The joint gap is consistent with a polynomial bound, which is not proved here. In particular the F-only diagnostic is not an obstruction to a polynomial simultaneous Ward contraction.</p>
+<h2 id="the-remaining-constructive-target">4. The remaining constructive target</h2>
+<p>A useful many-head theorem must solve the compatible simultaneous current system with its joint kernel and cokernel retained. Its exact Gram is (2)–(3), (4) rules out a diagonal phase removal, and (5) gives a condition-one sparse realification. It must not impose a separate invariant-pair equation at an intermediate slice where interbridge crossings have mixed the pair channels. Equations (1)–(2) provide an actual fixed-metric formulation of that target. The local two-head bounds and the <a href="ward_cyclic_wall_contraction_and_marked_augmentation.html">cyclic Ward-wall contraction</a> are valid inputs; compatibility and a simultaneous spectral estimate are further work.</p>
+<p>Even a proved polynomial simultaneous inverse would transport exact currents, not identify a positive geometric kernel or prove the selected scalar’s volume rate by itself.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_global_four_head_ward_gap.py">Reproduce the diagnostic</a>. The default levels stop at N=12; <code>--larger</code> adds N=14,16. Larger resolved F-only values above were separately computed in the same physical basis; a contemplated N=24 dense SVD was interrupted.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/global_ward_compatibility_gap_diagnostic.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-physical-operators">1. The actual physical operators</a><a href="#the-exact-gram-matrix-has-nontrivial-magnetic-triangle-flux">2. The exact Gram matrix has nontrivial magnetic triangle flux</a><a href="#four-head-diagnostic-at-the-actual-two-cup-degree">3. Four-head diagnostic at the actual two-cup degree</a><a href="#the-remaining-constructive-target">4. The remaining constructive target</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

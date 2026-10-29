@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The selected endpoint source is a marked two-pole cycle · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_two_pole_source_contour.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-selected-endpoint-source-is-a-marked-two-pole-cycle">The selected endpoint source is a marked two-pole cycle</h1>
+<p>27 October 2026. The exact all-strand coefficient source has an ordinary one-variable contour representative, with two nearby marked pole cycles. Neither pole is an invariant by itself: a characteristic-zero actual figure-eight braid calculation changes BOTH endpoint values under braid conjugacy while leaving their difference unchanged. The coalescing-root limit also has a precise cyclotomic boundary layer. Replacing it by one ordinary double-pole contour loses even the constant source.</p>
+<p>This gives a concrete contour input for gate C. It does not prove a nonzero geometric thimble intersection. The final section records the derived source-symbol test that a whole geometric comparison would need.</p>
+<h2 id="exact-contour-of-the-original-all-strand-source">1. Exact contour of the original all-strand source</h2>
+<p>Use the canonical degree-&lt;N endpoint polynomials from <a href="all_strand_euler_cauchy_cap.html">the original all-strand theorem</a>, and combine all tail heads BEFORE attempting a source limit:</p>
+<pre><code>T_N(Z)=sum_lambda Q^-j B_lambda(Z),
+S_N=T_N(1)-T_N(Q^-1), Q=exp(2pi*i/N).</code></pre>
+<p>No unknown invariant is divided out in forming T_N. Its coefficients are determined by the actual complete word, its actual fusion/Euler frames and every off-diagonal tail transition. The original full peripheral and framing line is retained in that theorem; in modulus the reduced original invariant satisfies</p>
+<pre><code>|Kashaev_N(K)|=N|S_N|/|1-Q|.                    (1)</code></pre>
+<p>Define the source differential</p>
+<pre><code>omega_N(T)=T(z) dz/[z^N(1-z)(1-Qz)].           (2)</code></pre>
+<p>Its residue at zero is the original rational-kernel coefficient functional. Since degree T&lt;N, its order at infinity is at most -3, so there is no residue at infinity. Its two other residues are</p>
+<pre><code>Res_(z=1) omega_N=-T(1)/(1-Q),
+Res_(z=Q^-1) omega_N=T(Q^-1)/(1-Q).            (3)</code></pre>
+<p>Here both centers have z^N=1. Thus the global residue theorem gives the EXACT all-level source identity</p>
+<pre><code>Res_(z=0) omega_N
+  =[z^(N-1)] T(z)/[(1-z)(1-Qz)]
+  =[T(1)-T(Q^-1)]/(1-Q).                    (4)</code></pre>
+<p>Equivalently the small positive circle around zero can be deformed to the negative sum of the two pole circles. The opposite signs in their scalar periods come from the residues, not a choice to discard one contour. Formula (4) is a representation of the existing finite source, not the definition of a replacement state.</p>
+<h2 id="an-actual-braid-conjugacy-changes-both-endpoint-values">2. An actual braid conjugacy changes both endpoint values</h2>
+<p>At N=2 use q=i, Q=-1, x=i and eta=exp(pi*i/4). The original balanced positive crossing, with its actual common Cartan line, is</p>
+<pre><code>R_+=[[eta,0,0,0],
+     [0,0,eta^-1,0],
+     [0,eta^-1,2i eta^-1,0],
+     [0,0,0,eta]].</code></pre>
+<p>Use its literal inverse, K=diag(i,-i), F_(1,0)=2 and the original pivot K^-1. Form the original three-strand word, tail-head fusion and right Euler conjugation from the all-strand theorem. Exact matrix multiplication over Q(i,sqrt(2)) gives</p>
+<pre><code>beta=(1,-2,1,-2),
+T_beta(Z)=-1+(5/2)Z,
+
+beta&#39;=(1,1,-2,1,-2,-1)=sigma_1 beta sigma_1^-1,
+T_beta&#39;(Z)=2+(5/2)Z.                          (5)</code></pre>
+<p>Both words have the same braid index and writhe, so all external source, peripheral and framing factors agree. Their endpoint pairs are</p>
+<pre><code>beta:   (T(1),T(-1))=(3/2,-7/2),
+beta&#39;:  (T(1),T(-1))=(9/2,-1/2).               (6)</code></pre>
+<p>Both endpoints change by three, while both differences are exactly five, the same original reduced cut value. The change is a constant polynomial, which the source (4) annihilates.</p>
+<p>Thus neither individual endpoint can be identified with an intrinsic marked knot period using only a scalar adapter depending on N, color, braid index and writhe. The transported co-source or the complete two-endpoint difference is required. This is an exact actual-word countertest, not an arbitrary polynomial chosen to mimic a knot.</p>
+<h2 id="the-pole-collision-has-a-cyclotomic-boundary-layer">3. The pole collision has a cyclotomic boundary layer</h2>
+<p>There is a simple all-level warning against merging the two poles before retaining the normal clock. For the constant polynomial one,</p>
+<pre><code>[z^(N-1)]1/[(1-z)(1-Qz)]=0</code></pre>
+<p>at every original root, since this coefficient is (1-Q^N)/(1-Q). If one sets Q=1 in that rational kernel first, the same coefficient instead becomes</p>
+<pre><code>[z^(N-1)](1-z)^-2=N.                          (7)</code></pre>
+<p>This is a failure of the premature specialization, not a failure of the exact residue formula. The original source is normalized on the cyclotomic relation Q^N=1 and must retain it through the pole collision.</p>
+<p>To see the correct normal geometry, put H=2pi*i/N and z=exp(H xi). The two source poles are xi=0 and xi=-1 on their local logarithmic lifts. The pullback of (2) is EXACTLY</p>
+<pre><code>H T_N(exp(H xi)) exp(H xi) exp(-2pi*i xi)
+   /[(1-exp(H xi))(1-exp(H(xi+1)))] dxi.       (8)</code></pre>
+<p>On compact xi charts away from 0,-1 this has the kernel form</p>
+<pre><code>H^-1 exp(-2pi*i xi) T_N(exp(H xi))
+       /[xi(xi+1)] * (1+O(H)) dxi.           (9)</code></pre>
+<p>The poles stay one unit apart, and the cyclotomic exponential survives. A fixed-z double-pole model that omits these data is not the source normal limit. In particular an ordinary residue of the principal geometric framing density alone cannot decide the selected endpoint class.</p>
+<h2 id="what-a-whole-geometric-source-calculation-would-have-to-show">4. What a whole geometric source calculation would have to show</h2>
+<p>There is a precise local source-symbol criterion once a uniform WHOLE asymptotic near the two endpoints has been proved. Let D=z partial_z and suppose on a fixed complex neighborhood of one</p>
+<pre><code>T_N(z)=H^alpha exp(S(z)/H)
+                [a_0(z)+H a_1(z)+O(H^2)],      (10)</code></pre>
+<p>with holomorphic S,a_0,a_1, uniform errors (including the required derivatives), and a_0(1)!=0. This hypothesis concerns the complete selected tail sum T_N, not one unsummed local geometric block. Set mu=exp(-D S(1)). Direct Taylor expansion at z=exp(-H) gives</p>
+<pre><code>S_N=H^alpha exp(S(1)/H)
+   {(1-mu)a_0(1)
+    +H[(1-mu)a_1(1)+mu D a_0(1)
+                     -(mu/2)D^2 S(1)a_0(1)]
+    +O(H^2)}.                                (11)</code></pre>
+<p>If mu!=1, the first coefficient is nonzero. If mu=1, the principal coefficient cancels and the next source coefficient is</p>
+<pre><code>D a_0(1)-(1/2)D^2 S(1)a_0(1).                (12)</code></pre>
+<p>The uniform Taylor expansion proves these formulas: write S(exp(-H))=S(1)-H D S(1)+(H<sup>2/2)D</sup>2 S(1)+O(H^3) and do the same for the amplitude. No contour or thimble selection is assumed during that algebraic expansion.</p>
+<p>If the first nonzero coefficient of the resulting derived source series occurs at some fixed finite order, and (10) holds to that order with controlled error, the original invariant has the same exponential rate Im S(1)/(2pi). In particular a calibrated action with Im S(1)=Vol(X) would imply the required volume rate. This is a sufficient conditional source criterion, not a proof that (10) holds for the knot state or that its derived coefficient is nonzero.</p>
+<p>The source variable here is the right-Euler coefficient variable. Its identification with a geometric framing or peripheral clock is still required. Only AFTER such a marking could a classical closure relation be used to assert mu=1. The actual source-wall and fusion-orientation audit in <a href="fusion_canonical_chart_and_retained_source_wall.html">the canonical-chart theorem</a> prevents making that substitution by inspection.</p>
+<p>Thus the cycle problem is not settled by Rivin uniqueness: it must transport the marked TWO-pole functional and establish its first nonzero derived coefficient on the actual selected geometric image. Exact finite source jets or the unsourced nonzero Gaussian alone do not establish these hypotheses. No broad knot class is proved here.</p>
+<h2 id="exact-checks">5. Exact checks</h2>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_two_pole_source_contour.py">The actual-source audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_two_pole_source_contour_results.json">saved results</a> pass 15 literal signed-word cases, levels N=2,…,6, and three same-index/same-writhe figure-eight braid conjugacies. The N=2 pair (5)-(6) is additionally checked by exact characteristic-zero matrix multiplication. All original word, pivot, fusion and Euler factors are used. Finite-field tests verify conventions; the residue and boundary-layer proofs above are all-level.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_two_pole_source_contour.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-contour-of-the-original-all-strand-source">1. Exact contour of the original all-strand source</a><a href="#an-actual-braid-conjugacy-changes-both-endpoint-values">2. An actual braid conjugacy changes both endpoint values</a><a href="#the-pole-collision-has-a-cyclotomic-boundary-layer">3. The pole collision has a cyclotomic boundary layer</a><a href="#what-a-whole-geometric-source-calculation-would-have-to-show">4. What a whole geometric source calculation would have to show</a><a href="#exact-checks">5. Exact checks</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

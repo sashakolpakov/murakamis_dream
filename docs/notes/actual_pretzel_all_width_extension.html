@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A varying-radius alias estimate lowers the proved width threshold to nine · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Equality results</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">Specified family</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_pretzel_all_width_extension.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-varying-radius-alias-estimate-lowers-the-proved-width-threshold-to-nine">A varying-radius alias estimate lowers the proved width threshold to nine</h1>
+<p>29 October 2026. The original short RP band admits a stronger global bound when its TRUE sine-binomial coefficients and its varying monic spectral radius are kept together. The uniform rate is</p>
+<pre><code>B_*=(1/pi) integral_0^(pi/2) log rho(u) du &lt; 81/100,</code></pre>
+<p>instead of the previous (1/2)log(4+sqrt(15)). This proves the ENTIRE original-color source gap for every fixed odd width s&gt;=9. All color endpoints, the even middle color, and the original Hermite normal jets remain. The previously proved corridor/filling and geometric-completion arguments therefore apply unchanged at those widths.</p>
+<p>This does not remove every width restriction: s=3,5,7 remain outside the present global alias argument. No assertion for them is obtained by naming this positive envelope a sharp source asymptotic.</p>
+<h2 id="keep-the-exact-original-short-band-coefficients">1. Keep the exact original short-band coefficients</h2>
+<p>Use q=exp(pi i/N), Q=q^2, d=N-1, s_a=|(Q;Q)_a| and the monic physical middle continuants p_l. The exact identity in <a href="actual_pretzel_global_alias_and_colored_source_gap.html">the original global alias theorem</a> is</p>
+<pre><code>(-1)^(N+h-1) P_(N,h)(z)
+   =sum_(l=0)^(h-1) (-1)^l
+       q^(3l^2+4l+1-2hl-h)
+              [h+l choose 2l+1]_Q bar p_l(z).          (1)</code></pre>
+<p>It holds for EVERY 1&lt;=h&lt;=floor(N/2), including h=N/2 at even N. All Gaussian factorial indices are below N. The actual alias is R P_(N,h), not P alone and not a semisimple truncation.</p>
+<p>The monic recurrence has</p>
+<pre><code>p_(l+1)=(z-D_l)p_l-a_(l-1)^2 p_(l-1),
+D_l=4qQ^l-q(1+Q)Q^(2l), a_(l-1)=-(1-Q^l)^2,
+(p_0,p_(-1))=(1,0).                                  (2)</code></pre>
+<p>The finite root phases in (1) are retained. Only after this exact identity will absolute values be taken. In particular no conjectural Laurent positivity or ordinary-color unitarity is needed.</p>
+<h2 id="exact-pointwise-maximal-frozen-radius">2. Exact pointwise maximal frozen radius</h2>
+<p>Freeze u=pi l/N in [0,pi/2]. After a unit phase change the two frozen roots obey</p>
+<pre><code>lambda^2-d_z lambda+a^2=0,
+d_z=z exp(-2iu)-4+2exp(2iu), a=4sin(u)^2.              (3)</code></pre>
+<p>For z=-2 define</p>
+<pre><code>t=sqrt(1+8sin(u)^2),
+rho(u)=(t+1)/2 * [2+sqrt((t+1)(3-t))].                (4)</code></pre>
+<p>This is EXACTLY the larger root modulus in (3), not a numerical fit. For a derivation put y=1-cos(2u), so a=2y, d_(-2)=-4+4i sin(2u). Then</p>
+<pre><code>|d_(-2)|^2=16(1+2y-y^2),
+|d_(-2)^2-4a^2|=16sqrt(1+4y).</code></pre>
+<p>If the root moduli are rho and a^2/rho, their squared sum is (|d|<sup>2+|d</sup>2-4a^2|)/2. Solving this quadratic and taking its positive square root gives (4). Equivalently set t-1=2sin theta; then</p>
+<pre><code>rho(u)=(1+sin theta+cos theta)^2,
+0&lt;=theta&lt;=pi/2.</code></pre>
+<p>In particular rho is continuous, positive, rho&gt;=a, and 4&lt;=rho&lt;=3+2sqrt(2). It is the POINTWISE maximum over all real z in [-2,2]. Indeed at z=2 the roots both equal -a. For fixed a, a root of modulus r&gt;=a makes d_z lie on the ellipse</p>
+<pre><code>d=r exp(i theta)+(a^2/r) exp(-i theta).</code></pre>
+<p>Its closed interior is exactly the region where both roots have modulus at most r. For r=rho(u), the z=-2 endpoint lies on the ellipse and the z=2 endpoint lies inside. Convexity covers their entire affine z-segment. The two endpoints u=0,pi/2 follow directly from (3); no inverse eigenframe is used there.</p>
+<h2 id="a-uniform-varying-product-estimate-for-the-actual-polynomials">3. A uniform varying-product estimate for the actual polynomials</h2>
+<p>Put</p>
+<pre><code>I(v)=integral_0^v log rho(pi t) dt, 0&lt;=v&lt;=1/2.</code></pre>
+<p>The exact companions of (2), divided at their l-th step by rho(pi l/N), converge uniformly to a bounded continuous family whose root moduli are at most one, uniformly for z in [-2,2]. Their coefficients have no singular root endpoint. The frozen-block Cayley–Hamilton argument therefore gives</p>
+<pre><code>max_(z in[-2,2]) |p_l(z)|
+              &lt;=exp[N I(l/N)+epsilon_N N],
+max_(0&lt;=l&lt;=floor(N/2)) epsilon_N -&gt;0.                 (5)</code></pre>
+<p>For clarity this is an actual product bound, not an adiabatic claim. For a fixed block length L, the exact normalized block differs uniformly by o(1) from its frozen power. A bounded 2x2 matrix with root moduli at most one has ||B^L||&lt;=CL by Cayley–Hamilton, also at a double root. First choose L to make log(CL)/L small, then N large, and concatenate blocks. Uniform continuity of log rho turns the scalar product of radii into N I(l/N)+o(N), uniformly in l. The initial vector is exactly (1,0). This proves (5) through BOTH index endpoints without a conditioned eigenvector factor.</p>
+<h2 id="the-entire-sine-binomial-envelope-has-an-exact-global-maximum">4. The entire sine-binomial envelope has an exact global maximum</h2>
+<p>Let</p>
+<pre><code>J(x)=integral_0^x log(2sin(pi t)) dt, 0&lt;=x&lt;=1.</code></pre>
+<p>The already proved UNIFORM factorial estimate gives, with alpha=h/N and beta=l/N,</p>
+<pre><code>log |[h+l choose 2l+1]_Q|
+  =N[J(alpha+beta)-J(2beta)-J(alpha-beta)]+O(log N).    (6)</code></pre>
+<p>The index shifts by one cost O(log N), uniformly even at zero and N-1. This estimate is applied only to actual indices below N. Combining (5),(6), the possible term rate in (1) is at most</p>
+<pre><code>F(alpha,beta)=J(alpha+beta)-J(2beta)-J(alpha-beta)+I(beta),
+             0&lt;=beta&lt;=alpha&lt;=1/2.                    (7)</code></pre>
+<p>Its maximum is EXACTLY B_*=I(1/2). Here is an elementary proof. For 0&lt;beta&lt;alpha&lt;1/2,</p>
+<pre><code>partial_alpha F=log[sin pi(alpha+beta)/sin pi(alpha-beta)]&gt;=0,</code></pre>
+<p>because their difference is 2cos(pi alpha)sin(pi beta)&gt;=0. Thus maximize first at alpha=1/2. At that boundary,</p>
+<pre><code>d/d beta F(1/2,beta)
+            =log[rho(pi beta)/(4sin(pi beta)^2)]&gt;=0,</code></pre>
+<p>using rho&gt;=a in section2. Therefore the maximum occurs at (alpha,beta)=(1/2,1/2). Since J(0)=J(1)=0, its value is B_*. All boundary cases follow by continuity of J and I. No unsupported interior saddle or numerical optimization is being used.</p>
+<p>Sum the at most N terms in (1). The polynomial degree is h-1&lt;=N/2; complex Markov on [-2,2] controls N^(-2) times its first derivative at every actual node with only the same fixed factor as before. The actual crossing R has faithful Hermite norm at most9/8. Hence</p>
+<pre><code>limsup_N (1/N) log max_(1&lt;=h&lt;=floor(N/2))
+                          ||R P_(N,h)||_H &lt;= B_*.      (8)</code></pre>
+<p>Thus (8) retains ALL original source normal jets and the actual crossing. It is not a bound for an unrelated positive comparison model.</p>
+<h2 id="a-finite-rigorous-upper-certificate-and-the-width-nine-margin">5. A finite rigorous upper certificate and the width-nine margin</h2>
+<p>The bound B_*&lt;81/100 has a direct finite interval-arithmetic certificate, described explicitly here so it is reproducible as a proof rather than as sampled evidence. In variable t in[1,3], put</p>
+<pre><code>u(t)=asin sqrt((t^2-1)/8).</code></pre>
+<p>For a rational interval [a,b] in[1,3], (t+1) is increasing and sqrt((t+1)(3-t)) is decreasing. Therefore</p>
+<pre><code>rho(u(t)) &lt;= K(a,b)
+             =(b+1)/2 * [2+sqrt((a+1)(3-a))].</code></pre>
+<p>Divide [1,3] into512 equal rational intervals. This gives the EXACT analytical upper sum</p>
+<pre><code>B_* &lt;= (1/pi) sum_[a,b] [u(b)-u(a)] log K(a,b).        (9)</code></pre>
+<p>Outward-rounded Arb evaluation at100-bit precision encloses the right side in</p>
+<pre><code>[0.80908894192172909372913834 +/- 5e-26] &lt;81/100.</code></pre>
+<p>Only a fixed finite sum of square roots, asin, log and pi is evaluated; no large-N experiment enters this certificate. The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_pretzel_all_width_extension.py">audit</a> reconstructs the upper sum and proves the strict comparison by its enclosing interval.</p>
+<p>For the complete augmented rate A_s=V_s/(2pi), put j_0=v_8/pi. Its exact alias margin is</p>
+<pre><code>g_s=A_s-(s-1)j_0
+   =j_0-(2s/pi) integral_0^(pi/s) (pi/s-v)sec(v)dv.   (10)</code></pre>
+<p>For alpha=pi/s&lt;1, cos v&gt;=1-v^2/2 gives</p>
+<pre><code>g_s &gt;= j_0-pi/s
+      -pi^3/[12s^3(1-pi^2/(2s^2))].                  (11)</code></pre>
+<p>Use pi&lt;22/7 and the first32 alternating terms of G=sum_(k&gt;=0)(-1)<sup>k/(2k+1)</sup>2 as a rational LOWER bound for Catalan’s constant; j_0=4G/pi. At s=9 the resulting rational lower bound is greater than0.812633708, hence greater than13/16 and81/100. The loss in (11) decreases with s&gt;=9. Consequently</p>
+<pre><code>g_s&gt;B_* for EVERY odd s&gt;=9.                           (12)</code></pre>
+<p>This strictly improves the previous threshold25. The same constants do not prove the condition at s=3,5,7.</p>
+<h2 id="transfer-to-the-entire-actual-source-and-the-remaining-widths">6. Transfer to the ENTIRE actual source and the remaining widths</h2>
+<p>Every original auxiliary color is already covered by the exact two-band identities: high colors are c_(N,h)+RP_(N,h), low colors are pure (-1)^N RP_(N,j), including even j=N/2. The global coherent core bound remains j_0, with a strict macroscopic-color contraction. Every term containing m&gt;=1 aliases therefore has upper rate</p>
+<pre><code>(s-m)j_0+mB_* &lt;=(s-1)j_0+B_* &lt; A_s</code></pre>
+<p>for odd s&gt;=9. The full value-plus-normal functional costs only a polynomial, and the fixed subset count2^s is harmless. The all-core term outside a fixed cusp corridor has its separately proved strict gap. This proves the SAME entire-color-cube source gap as the old global theorem at EVERY odd s&gt;=9.</p>
+<p>All subsequent analytic inputs were already proved for every fixed odd s&gt;=5: the exact even complex high-window packet, whole filling Fourier endpoint/current bounds, nonzero unit-charge sum, original normalization, and the actual geometric filling construction. Thus they transfer unchanged once their long-slope threshold is increased as necessary. The original full volume equality consequently extends to every fixed odd s&gt;=9 with all independently sufficiently long fixed signed slopes. No width or slope is allowed to grow with N.</p>
+<p>For s=5 and7 the present phase-free per-alias margin test remains insufficient; at s=3 the old limiting margin is exactly zero and its local corridor alias estimate was also only proved for s&gt;=5. Those are TWO distinct remaining gates. Extending the theorem there needs a stronger coherent alias/source estimate, not a changed declaration of the existing condition. No fabricated all-width conclusion is inferred from (8).</p>
+<h2 id="why-another-constant-improvement-in-this-termwise-route-is-insufficient">7. Why another constant improvement in this termwise route is insufficient</h2>
+<p>The monic bound used above is exponentially sharp at the actual endpoint z=-2. This identifies exactly which ABSOLUTE-TERM step must be replaced to reach the remaining widths; it is not a claim that the full coherent alias P_h has this rate or that the whole source fails to cancel.</p>
+<p>For l=floor(N/2)-1 one has</p>
+<pre><code>log|p_l(-2)|=N B_*+O(1).                              (13)</code></pre>
+<p>Here is a direct uniform proof. Use tau=l/N and epsilon=1/N in the literal companion (2), and write it as T_epsilon(tau). Its leading eigenvalues lambda(tau),sigma(tau) can be chosen smoothly on the WHOLE closed interval[0,1/2], with</p>
+<pre><code>lambda(0)=-4, sigma(0)=0,
+|lambda(tau)|=rho(pi tau)&gt;=4,
+|sigma(tau)|&lt;=|lambda(tau)|,
+|lambda(tau)-sigma(tau)|&gt;=4.                         (14)</code></pre>
+<p>The last inequality follows from the explicit discriminant in section2. There is no equality of the two eigenvalue moduli in the open interval: for u&gt;0 and u&lt;pi/2 the normalized d_(-2) has nonzero imaginary part, whereas two roots of equal modulus and positive real product would have real sum. Their moduli meet only at the terminal endpoint, where their eigenvalues remain distinct. Thus the branch starting at -4 is the dominant branch throughout; no hidden exchange of expanding channels is used.</p>
+<p>Take the uniformly invertible eigenframe</p>
+<pre><code>S(tau)=[[lambda,sigma],[1,1]].</code></pre>
+<p>Taylor expansion of the explicit smooth companion gives</p>
+<pre><code>S(tau+epsilon)^(-1)T_epsilon(tau)S(tau)
+                     =diag(lambda,sigma)+epsilon A(tau)+O(epsilon^2),</code></pre>
+<p>with all coefficients and two derivatives uniformly bounded. An explicit bounded off-diagonal matrix X, determined by X_ij=-A_ij/(D_i-D_j), makes the near-identity change I+epsilon X diagonal through first order. The resulting matrix is</p>
+<pre><code>diag(lambda+epsilon A_11,sigma+epsilon A_22)+O(epsilon^2).</code></pre>
+<p>Divide each step by d_1=lambda+epsilon A_11. Its normalized form is diag(1,r_tau)+O(epsilon^2), with |r_tau|&lt;=1+Cepsilon. All normalized products therefore have uniformly bounded norm. The original initial vector (p_0,p_(-1))=(1,0) has first eigen-coordinate -1/4+O(epsilon). At the first step the second coordinate is O(epsilon), because sigma(0)=0. Over at most N/2 steps the O(epsilon^2) residual changes the first coordinate by O(epsilon), and keeps the second O(epsilon). The first physical coordinate consequently has a uniformly nonzero bounded prefactor times product d_1. Finally</p>
+<pre><code>log|product d_1|=sum_j log rho(pi j/N)+O(1)
+                =N I(l/N)+O(1).</code></pre>
+<p>This proves (13), including the endpoint of equal moduli without an inverse eigenvalue-modulus gap. The proof applies equally to bar p_l.</p>
+<p>Now choose the ACTUAL h=floor(N/2) and the top term l=h-1 in (1). Its Gaussian coefficient is EXACTLY</p>
+<pre><code>[2h-1 choose 2h-1]_Q=1,</code></pre>
+<p>and its other displayed coefficient is a unit phase. Therefore any termwise-absolute estimate of the expansion (1) has rate at least B_<em> already from this single EXACT monic term. Since g_7 and g_5 are both smaller than B_</em>, this specific route cannot remove those widths by a sharper frozen-radius constant or a better estimate of that term.</p>
+<p>That comparison can also be certified without a numerical limiting fit: rho&gt;=4 everywhere and rho&gt;=5 on[pi/6,pi/3]. The latter follows from its displayed unimodal (1+sin theta+cos theta)^2 expression and the two explicit endpoint values, both greater than5. Hence</p>
+<pre><code>B_* &gt;= (log5)/6+(log4)/3 &gt; .73.</code></pre>
+<p>On the other hand sec v&gt;=1 in (10) gives g_s&lt;=j_0-pi/s. The elementary bounds G&lt;11/12 and pi&gt;157/50 give j_0&lt;1.17, so g_5,g_7&lt;1.17-157/350&lt;.73. The finite interval audit checks the two endpoint and logarithmic comparisons with outward rounding.</p>
+<p>This is an obstruction to the STATED ABSOLUTE-TERM METHOD, not to the actual source. A further improvement must combine the P_h terms coherently, or pair the complete alias with the other boxes and the original Phi_2 functional before estimating. The exact Frobenius/ circle-source pairing under investigation is eligible for that task; deleting the alias or a normal jet is not.</p>
+<h2 id="parity-of-the-number-of-boxes-the-even-width-link-statement">8. Parity of the number of boxes: the even-width link statement</h2>
+<p>The same proof applies to every fixed INTEGER s&gt;=9, if even widths are stated as LINKS rather than knots. This is a source/parity audit, not an inference that a link is a knot.</p>
+<p>The exact unwrapped-degree and Phi_2 product identities use the original cups, ordinary caps and ONE marked cap and hold for any integer box count. The only use of oddness in their topological conclusion is the component count: following the main strand advances its box label by2 modulo s. Thus there are gcd(s,2) main components. With all crossing circles present the augmented diagram has s+gcd(s,2) components; after their prescribed fillings it has gcd(s,2) main components. In particular an even s gives a two-component pretzel link.</p>
+<p>The analytic checks are likewise independent of oddness of s:</p>
+<ul>
+<li>The complete polynomial is the SAME z_N and the source is the SAME full-Hermite Phi_2(z_N^s). The coherent inner bounds have no s in them. The enclosing-circle saddle has s j’(eta_s)=1 and alpha=pi/s in(0,pi/2) for every integer s&gt;2. Its two Gaussian constants are nonzero and the higher winding bound is unchanged.</li>
+<li>The mixed packet remains exactly even in EACH color. The complex saddle Hessian and the real color curvature are nonzero for s&gt;2. Local source replacement uses a strictly positive alias margin;
+<ol start="12" type="1">
+<li>supplies it for all integer s&gt;=9.</li>
+</ol></li>
+<li>The exact filling formula is applied once per port. Under every unit charge reflection both m_i and its sinh factor change sign. Its level character is (-1)^((s+sum_i m_i)(N-1))=1, because sum_i m_i is congruent to s modulo2. This conclusion does not require s odd. All endpoint/tail estimates depend on the fixed number of ports and continue verbatim.</li>
+</ul>
+<p>The original LINK normalization is already proved in <a href="actual_complete_augmented_source_normalization.html">the complete source-normalization theorem</a>, section3: a cut partial trace is a scalar Hopf endomorphism of the remaining simple V_N regardless of connectivity. Thus the same single-cut reduced Kashaev link value has the modulus of the raw source. Its enhancement sign is (-1)^((N-1)(c-1)) with the ACTUAL component count c. There is still only one modified dimension if that optional convention is used, not one per main component.</p>
+<p>The literal port matrices, reversed-cap ordering, shaded/white face geometry, and primitive auxiliary filling equations also do not use oddness. For even width the two main-component meridians remain noncentral parabolic. The general geometric completion theorem keeps BOTH unfilled cusps complete; it does not collapse them to one.</p>
+<p>Consequently, with the same sufficiently long independently signed fixed twists, the source and volume equality extend to the ORIGINAL single-cut reduced two-component pretzel LINK for every fixed even s&gt;=10. The knot conclusion is the odd s&gt;=9 part. No assertion for a normalization that modifies every component independently is made. The even widths4,6,8, like the odd widths3,5,7, are not supplied by the present full-color gap. The audit includes literal even-width full marked sources against the unwrapped transfer and exact rotated Phi_2 product; numerical checks supplement the parity-independent derivations above.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_pretzel_all_width_extension.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#keep-the-exact-original-short-band-coefficients">1. Keep the exact original short-band coefficients</a><a href="#exact-pointwise-maximal-frozen-radius">2. Exact pointwise maximal frozen radius</a><a href="#a-uniform-varying-product-estimate-for-the-actual-polynomials">3. A uniform varying-product estimate for the actual polynomials</a><a href="#the-entire-sine-binomial-envelope-has-an-exact-global-maximum">4. The entire sine-binomial envelope has an exact global maximum</a><a href="#a-finite-rigorous-upper-certificate-and-the-width-nine-margin">5. A finite rigorous upper certificate and the width-nine margin</a><a href="#transfer-to-the-entire-actual-source-and-the-remaining-widths">6. Transfer to the ENTIRE actual source and the remaining widths</a><a href="#why-another-constant-improvement-in-this-termwise-route-is-insufficient">7. Why another constant improvement in this termwise route is insufficient</a><a href="#parity-of-the-number-of-boxes-the-even-width-link-statement">8. Parity of the number of boxes: the even-width link statement</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

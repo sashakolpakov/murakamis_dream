@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Coherent doubled reassociation and one-power angle transfer weights · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_doubled_reassociation_angle_transfer.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="coherent-doubled-reassociation-and-one-power-angle-transfer-weights">Coherent doubled reassociation and one-power angle transfer weights</h1>
+<p>29 October 2026. An actual reassociation packet has an exact doubled Gram with FOUR one-power affine-angle weights on its diagonal. The shared-head positive trace has a literal Fourier/Kraus summation and an unwrapped physical edge constraint. Its off-diagonal terms retain the two-copy phases; they are not replaced by a product of magnitudes.</p>
+<p>An operator Cauchy inequality then gives an explicit positive path majorant for ANY fixed signed plat, with its original source and cap supports retained. This is an actual bound, not a new invariant. The raw path majorant has an <a href="actual_closed_pascal_route_energy.html">actual-source oversized closed-route obstruction</a>, so it cannot itself supply the sharp knot-volume bound. The physical shared-head equation alone is not the ideal edge-angle identification. The <a href="actual_pivotal_cap_reassociation_angle_packet.html">ordinary-cap coherent collapse</a> is a source-specific way to improve it before any such dephasing.</p>
+<h2 id="literal-finite-euler-transfers-and-the-source-fixed-metric">1. Literal finite Euler transfers and the source-fixed metric</h2>
+<p>Keep N&gt;=2, d=N-1, q=exp(pi*i/N), Q=q^2, x=-q^-1 and s_a=|(Q;Q)_a|. On an actual physical pair define</p>
+<pre><code>V_12=x^-1 S_1^- F_2,
+S^-|a&gt;=|a-1&gt;, S^-|0&gt;=0,
+F|b&gt;=(1-Q^(b+1))|b+1&gt;, F|d&gt;=0.</code></pre>
+<p>The original normalized Borel transfer and its literal inverse are</p>
+<pre><code>C&#39;_12=p_N(V_12),
+(C&#39;_12)^-1=sum_(r=0)^d (-1)^r Q^[r(r-1)/2]V_12^r/F_r,
+p_N(t)=sum_(r=0)^d t^r/F_r, F_r=(Q;Q)_r.                (1)</code></pre>
+<p>These are finite nilpotent matrices, not source-free cyclic completions. Their exact coefficients are</p>
+<pre><code>C&#39;_12|a,b&gt;=sum_r x^-r [b+r choose r]_Q |a-r,b+r&gt;,
+(C&#39;_12)^-1|a,b&gt;
+   =sum_r (-1)^r Q^[r(r-1)/2]x^-r
+                              [b+r choose r]_Q |a-r,b+r&gt;, (2)
+0&lt;=r&lt;=min(a,d-b).</code></pre>
+<p>The formula follows by applying V_12^r; its F product is F_(b+r)/F_b. The inverse in(1) follows from the finite Euler identity modulo V_12^N=0. All endpoint terms and its actual inverse phases are retained.</p>
+<p>Use the physical metric and its coordinate gauge</p>
+<pre><code>h_a=sqrt(N)/s_a=L_a^-1/2,
+B=diag(sqrt(h_a))=L^-1/4.                              (3)</code></pre>
+<p>This is a PHYSICAL head metric, not the length-register D_l frame. Since h_a h_(d-a)=1, the gauge B on paired heads fixes the actual cups and ordinary caps pointwise; its marked source use retains the already proved whole-operator degree restriction. Pivots are diagonal and commute with B. The full original source is therefore transported as in the physical weighted-Fourier theorem. No ordinary positive pivotal trace is presumed.</p>
+<p>Write hats for conjugation by the appropriate tensor power of B. Set beta(L,r)=s_L/(s_r s_(L-r)). Directly from(2),(3),</p>
+<pre><code>|C&#39;hat_12[(a-r,b+r),(a,b)]|^2
+   =beta(a,r)beta(b+r,r)
+   =N^2 w_d(r,a-r,d-a)w_d(r,b,d-b-r),                 (4)
+w_d(i,j,k)=1/(s_i s_j s_k), i+j+k=d.</code></pre>
+<p>The inverse has exactly the same diagonal energy weights. This includes r=0 and all allowed endpoints, with s_0=1. Each w appears ONCE in the doubled diagonal weight. The original coefficients were not replaced by positive weights before being squared.</p>
+<h2 id="the-actual-three-head-packet-and-its-complete-doubled-gram">2. The actual three-head packet and its complete doubled Gram</h2>
+<p>Let</p>
+<pre><code>A=(C&#39;_23)^-1 C&#39;_12.                                    (5)</code></pre>
+<p>Given input i=(a,b,c), its allowed outputs are</p>
+<pre><code>o=(a-r,b+r-s,c+s),
+0&lt;=r&lt;=min(a,d-b), 0&lt;=s&lt;=min(b+r,d-c).                  (6)</code></pre>
+<p>The intermediate state (a-r,b+r,c) is UNIQUE. Consequently</p>
+<pre><code>A[o,i]=(-1)^s Q^[s(s-1)/2]x^[-(r+s)]
+                 [b+r choose r]_Q [c+s choose s]_Q.    (7)</code></pre>
+<p>This is the whole actual packet, including the inverse’s finite current/wall data. It is not the homogeneous part of a separate beta expansion. Its exact integer support has not been relaxed.</p>
+<p>In the metric(3), write</p>
+<pre><code>Ahat[o,i]=q^[r(b-d)+s(c+s)] sqrt(W(i;r,s)),
+W=N^4 product_(j=1)^4 w_d(t_j),                         (8)</code></pre>
+<p>where</p>
+<pre><code>t_1=(r,a-r,d-a),
+t_2=(r,b,d-b-r),
+t_3=(s,b+r-s,d-b-r),
+t_4=(s,c,d-c-s).</code></pre>
+<p>The phase in(8) uses the exact identity [L choose r]_Q=q<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>beta(L,r) and x=q^d. No half integer modular inverse is used. It is valid at both parities. Its positive gauge changes no phase.</p>
+<p>For an arbitrary boundary matrix D, including a matrix-valued exterior, the complete doubled contraction is</p>
+<pre><code>(Ahat^* D Ahat)_(i,j)
+   =sum_(o,o&#39;) conjugate(Ahat[o,i]) D_(o,o&#39;) Ahat[o&#39;,j]. (9)</code></pre>
+<p>Thus mixed copies have their actual phase DIFFERENCE and a square root of the two diagonal W weights. Formula(9) does not set i=j or o=o’ before the exterior has specified that contraction.</p>
+<p>If a different exact factorial presentation uses an explicit Theta current, substituting its FULL identity into(9) gives the same Gram, including all cross terms with that current. One must not add a second independent current to(7), nor keep only its homogeneous summand. The separate tame-current metric L^(1/2) is not silently identified with the quarter gauge(3).</p>
+<h2 id="what-a-shared-head-fourierplancherel-sum-really-does">3. What a shared-head Fourier/Plancherel sum really does</h2>
+<p>For a positive input density rho define the actual positive map</p>
+<pre><code>E(rho)=Tr_(middle output)[Ahat rho Ahat^*].                (10)</code></pre>
+<p>For each physical middle color M=0,…,d, let K_M be the matrix obtained from Ahat by fixing its middle output to M and retaining its two outer output ports. Then EXACTLY</p>
+<pre><code>E(rho)=sum_(M=0)^d K_M rho K_M^*.                         (11)</code></pre>
+<p>Its term between copies (i,r,s) and (j,r’,s’) carries</p>
+<pre><code>M=b+r-s=b&#39;+r&#39;-s&#39;.                                      (12)</code></pre>
+<p>This is an UNWRAPPED equality, not a permitted extra alias. It has either exact Fourier expression</p>
+<pre><code>delta_(M,M&#39;)=(1/N)sum_(ell=0)^d Q^[ell(M-M&#39;)]
+  =(1/(2N))sum_(ell=0)^(2N-1)q^[ell(M-M&#39;)].             (13)</code></pre>
+<p>Both are alias-free here because M,M’ lie in0,…,d. Applying the unitary Fourier matrix to the Kraus list merely replaces K_M by its Fourier combinations and leaves(11) unchanged.</p>
+<p>This is a genuine coherent shared-head sum. It leaves the mixed outer/input copies of(9) and their phases. It does not assert that a coherent INTERNAL wire in the original scalar can simply be traced or phase-averaged: if its actual exterior couples M and M’, that matrix stays in(9). Nor does(12) identify a triangulation’s positive edge sum2d. Such a geometric incidence requires the separate oriented/source map.</p>
+<p>The measure in(11) is a positive Hilbert trace in the doubled energy, not the ordinary pivotal trace at complete color. All original pivots and cut rows remain in the external observable.</p>
+<h2 id="a-quantitative-diagonal-observable-inequality">4. A quantitative diagonal-observable inequality</h2>
+<p>Let D=diag(d_o) with d_o&gt;=0. Every output o of A has at most N^2 possible inputs i: its fixed total degree determines b once a,c are chosen. Rowwise Cauchy–Schwarz in(9) therefore proves the operator inequality</p>
+<pre><code>Ahat^* D Ahat &lt;=N^2 diag(T_A^t d),
+(T_A)_(o,i)=|Ahat[o,i]|^2.                              (14)</code></pre>
+<p>In particular its explicit column energy is</p>
+<pre><code>E_i=N^4 sum_(r,s satisfying6) product_j w_d(t_j),
+Ahat^* Ahat &lt;=N^2 diag(E_i).                            (15)</code></pre>
+<p>This is an actual all-input estimate AFTER the two finite Euler operators and their current data have been combined into A. The same proof for one C’ or its inverse uses at most N inputs per output and the two once-power weights(4):</p>
+<pre><code>C&#39;hat^* D C&#39;hat &lt;=N diag(T_(C&#39;)^t d).                   (16)</code></pre>
+<p>Tensoring spectator identities changes none of these counts. Equation(14) is an inequality, not a claim that the off-diagonal Gram terms vanish. It explicitly pays a polynomial factor when they are estimated. Other coherent packet Grams can improve it.</p>
+<h2 id="a-full-original-signed-plat-consequence">5. A full ORIGINAL signed-plat consequence</h2>
+<p>The actual Pascal/fusion alphabet proves, without any source-null remainder,</p>
+<pre><code>R_+=kappa C&#39;_12 D_2 C&#39;_21 (C&#39;_12)^-1,
+R_-=kappa^-1 C&#39;_12 (C&#39;_21)^-1 D_2^-1 (C&#39;_12)^-1,          (17)</code></pre>
+<p>where D_2 is the original diagonal Gaussian, of unit modulus at complete color, and kappa is the original Cartan scalar. This follows also by C=C’diag(F_a) in the actual Borel factorization; conjugating its opposite transfer by diag(F_a) gives C’_21. All factors are the strict physical matrices in(1), including the top/bottom walls. There is no independent cyclic or ghost source discarded in(17).</p>
+<p>Let the original 2k-head plat have m signed crossings, and write its literal source as</p>
+<pre><code>P_N=chi_N N^(k-1)&lt;phi,W u&gt;, ||phi||=||u||=1,</code></pre>
+<p>with the actual normalized cups u and the actual pivoted cap phi. The quarter gauge fixes these paired source vectors. Let P_cap be the diagonal projector onto degree d on EACH final cap pair. The unit vector phi lies in its range, so</p>
+<pre><code>|phi&gt;&lt;phi| &lt;=P_cap.                                     (18)</code></pre>
+<p>This retains the actual cap support; it does not replace the original invariant by an ordinary positive trace.</p>
+<p>Expand each crossing by(17), combine any desired exact packets BEFORE estimating, and apply(14) or(16) backwards to(18). Gaussian phases act trivially on diagonal observables. If the uncombined alphabet contains L=3m C’ factors, define the explicit positive physical-path sum</p>
+<pre><code>Z_path=sum_(i_0,...,i_L)
+         |u_(i_0)|^2 1_cap(i_L)
+              product_(j=1)^L |C&#39;hat_j[i_j,i_(j-1)]|^2. (19)</code></pre>
+<p>Here |u_i|<sup>2=N</sup>-k on the ORIGINAL input cup-complement states and zero elsewhere. Every physical index lies in0,…,d and every transfer has its exact unwrapped support. Then</p>
+<pre><code>|P_N|^2 &lt;=|chi_N|^2 N^(2k-2+3m) Z_path.                 (20)</code></pre>
+<p>This is a uniform bound for arbitrary fixed braid/bridge width. It keeps the whole original external line. Each factor in(19) is exactly N^2 times TWO one-power affine-angle weights, by(4). Grouping adjacent reassociations replaces two steps by(8),(14) with their four one-power weights and the corresponding N^2 row count. Other exact contractions can be performed first too.</p>
+<p>The resulting positive path space has honest source boundary conditions and physical conservation laws. This note does not claim that these are the ideal triangulation’s complete edge constraints, or that its maximum angle volume is Vol(S^3-K). Those are the remaining geometric-energy requirements. In particular(20) by itself is not the sharp volume theorem. More strongly, the <a href="actual_closed_pascal_route_energy.html">checkerboard closed-route theorem</a> exhibits, on the authorized original averaged trace source at N=3r+1, a positive path of squared weight N<sup>(4m)w_d(r,r,r)</sup>(4m) in every length-m signed word. Its rate 4m v_3/pi can increase under word normalizations while the knot period is unchanged. Some such routes cancel even within a local R entry: this is a path-majorant obstruction, not a nonzero complete clock-sector assertion. Coherent source grouping must precede a sharp estimate. The pivotal-cap identity linked above gives one such exact grouping and its one-angle energy.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_doubled_reassociation_angle_transfer.py">Audit</a>: the literal finite inverse, exact four-weight phases, doubled Kraus/Fourier sum, operator inequalities, and complete original signed-plat source bounds.</p>
+<p>Fresh replay: PASS four exact mixed-copy/Fourier packet families and four complete original signed-plat source inequalities, with literal Cartan scalar and pivots retained. The all-level statements follow from the displayed finite operator identities and Cauchy inequalities.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>r(L-r)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_doubled_reassociation_angle_transfer.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#literal-finite-euler-transfers-and-the-source-fixed-metric">1. Literal finite Euler transfers and the source-fixed metric</a><a href="#the-actual-three-head-packet-and-its-complete-doubled-gram">2. The actual three-head packet and its complete doubled Gram</a><a href="#what-a-shared-head-fourierplancherel-sum-really-does">3. What a shared-head Fourier/Plancherel sum really does</a><a href="#a-quantitative-diagonal-observable-inequality">4. A quantitative diagonal-observable inequality</a><a href="#a-full-original-signed-plat-consequence">5. A full ORIGINAL signed-plat consequence</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

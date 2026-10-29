@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Projective frame covariance on the normalized period cover · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/projective_frame_period_torsor.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="projective-frame-covariance-on-the-normalized-period-cover">Projective frame covariance on the normalized period cover</h1>
+<p>Research note, 25 October 2026. This resolves the local full-matrix frame comparison left open in <code>pointed_period_descent.md</code>. The result uses the explicit Hilbert-90 transport and a determinant rigidity argument, with an identity-frame anchor. It applies to every finite configuration diagram at every odd level. It does not identify a global literature integration cycle or compare different levels, and hence does not prove the volume conjecture.</p>
+<p>The local tensors are the existing cyclic Weyl/Borel recoupling tensors, with their pointing, roots and measures specified in the preceding notes. No new quantum function is introduced here. All assertions below concern the common nondegenerate algebraic locus, before peripheral specialization. For the component argument take an algebraically closed constant field of characteristic zero, such as C; all matrix identities are algebraic.</p>
+<h2 id="the-full-projective-change-has-compatible-weyl-rescalings">1. The full projective change has compatible Weyl rescalings</h2>
+<p>Let p_i be distinct nonzero affine flags, and let</p>
+<pre><code>p_i&#39;=(a p_i+b)/(c p_i+d),   ad-bc != 0,
+d_i=c p_i+d.</code></pre>
+<p>Assume d_i and p_i’ are nonzero. The unscaled triangle algebra from <code>affine_frame_period_transport.md</code> has</p>
+<pre><code>lambda_ijk=(p_i-p_k)/(p_j-p_k),
+mu_ijk=-(p_i-p_j)/(p_j-p_k).</code></pre>
+<p>The elementary difference formula for a fractional linear transformation gives exactly</p>
+<pre><code>lambda_ijk&#39;=(d_j/d_i)lambda_ijk,
+mu_ijk&#39;=(d_k/d_i)mu_ijk.                            (1.1)</code></pre>
+<p>Choose vertex roots D_i^n=d_i. Write</p>
+<pre><code>kappa_ijk=D_j/D_i,    nu_ijk=D_k/D_i.</code></pre>
+<p>Thus the new triangle algebra is the old one with Weyl generators rescaled to kappa X, nu Y. A common rescaling of the matrix representing the projective transformation cancels in these ratios. Compatible root choices are part of the cover; they are not suppressed.</p>
+<p>For the tetrahedron write A=023, B=012, C=013, D=123. The six identities</p>
+<pre><code>kappa_A=kappa_C kappa_D,
+nu_A=kappa_C nu_D=nu_C,
+kappa_B=kappa_C=nu_C/nu_D,
+nu_B=(nu_C/nu_D)kappa_D                            (1.2)</code></pre>
+<p>follow just by canceling the vertex roots. The ordered Racah algebra embedding is</p>
+<pre><code>X_A=X_C X_D,         Y_A=X_C Y_D+Y_C,
+X_B=X_C+Y_CY_D^(-1), Y_B=-Y_CY_D^(-1)X_D.</code></pre>
+<p>Equations (1.2) show that rescaling all four triangle algebras commutes with this embedding, including the two different terms in each sum. This is a full quantum-operator assertion, valid at generic q. It is the step needed before Schur rigidity can legitimately be invoked.</p>
+<h2 id="explicit-triangle-intertwiners-and-their-composition">2. Explicit triangle intertwiners and their composition</h2>
+<p>The old triangle module has endpoints u=A_j/A_k, v=A_i/A_k, with A_i^n=p_i. Choose new A_i’^n=p_i’ and the new endpoints u’,v’. In the monomial bases define K by</p>
+<pre><code>(K f)(y)=f(y/kappa).</code></pre>
+<p>After this basis rescaling the old generators kappa X, nu Y act as multiplication y and</p>
+<pre><code>Y_0=(v_0-u_0 y)sigma^(-1),
+u_0=nu*u/kappa, v_0=nu*v.</code></pre>
+<p>They have the new central character (lambda’,mu’). The desired new module has Y’=(v’-u’y)sigma^(-1), at the same character. Choose an old marked spectral root alpha^n=lambda, and the new root alpha’=kappa alpha. Section 1 of the affine transport note constructs the exact norm-one intertwiner H from (u_0,v_0) to (u’,v’), normalized by H(alpha’)=1. Then</p>
+<pre><code>S=H K,
+S(kappa X)=X&#39; S,   S(nu Y)=Y&#39; S.                  (2.1)</code></pre>
+<p>This is an explicit n by n matrix on the endpoint, vertex-root and marked-spectrum cover. Its scalar has been fixed; invertibility is proved by the norm-one recurrence, not assumed from an unspecified period.</p>
+<p>These unnormalized S matrices compose strictly when root data compose. Indeed their product implements the product rescaling and, after removing the product K, still has value one at the final marked root: H_2(alpha_2)H_1(alpha_2/kappa_2)=1. Uniqueness of the normalized intertwiner proves the composition law. On forgetting the marked root one obtains the scalar line and deck transformations described earlier.</p>
+<h2 id="projective-covariance-first-holds-up-to-an-explicit-scalar-line">3. Projective covariance first holds up to an explicit scalar line</h2>
+<p>Let R(p):V_A tensor V_B -&gt; V_C tensor V_D be the pointed general-endpoint Racah map. The two maps</p>
+<pre><code>R(p&#39;) (S_A tensor S_B),
+(S_C tensor S_D) R(p)                              (3.1)</code></pre>
+<p>intertwine the same rescaled full matrix algebra, by (1.2) and (2.1). The source and target are irreducible modules for that n^2 by n^2 matrix algebra. Therefore the two maps differ by a single nonzero scalar. This conclusion follows after the operator comparison; irreducibility alone would not compare arbitrary selected tensors.</p>
+<p>The scalar in (3.1) need not be one before normalization. It is an algebraic unit on the indicated cover. The inversion audit computes it exactly, rather than discarding it by evaluating a boundary parameter.</p>
+<h2 id="shared-face-signed-normalization-retains-the-pentagon">4. Shared-face signed normalization retains the pentagon</h2>
+<p>In these unscaled endpoint bases, the determinant of R is</p>
+<pre><code>det R=f_R^(nh),  h=(n-1)/2,
+f_R=-(p_2/p_3)(p_0-p_2)(p_1-p_3)/(p_1-p_2)^2.      (4.1)</code></pre>
+<p>To see this, use the general two-factor determinant with the right triangle pair C,D: the incoming endpoint on D is A_2/A_3, its lambda is (p_1-p_3)/(p_2-p_3), its mu is -(p_1-p_2)/(p_2-p_3), and the total mu is -(p_0-p_2)/(p_2-p_3). Substitution gives precisely (4.1). This is the unscaled-basis version of the earlier Steinberg determinant; the vertex-frame factor must be retained.</p>
+<p>On each ordered face put</p>
+<pre><code>Q_ijk=p_k*(p_i-p_k)/(p_j-p_k)^2.</code></pre>
+<p>Direct cancellation proves</p>
+<pre><code>f_R=-(delta Q)^(-1).</code></pre>
+<p>Choose shared face roots xi_ijk<sup>n=Q_ijk</sup>h and set eta=delta xi. Then</p>
+<pre><code>eta^n=(-1)^h f_R^(-h),
+R_hat=eta R,       det R_hat=(-1)^h.                (4.2)</code></pre>
+<p>The sign is the literal permutation sign from recoupling, and is the same for all frames. Products of eta cancel on the boundary of a 4-simplex by delta^2=1. Consequently this normalization preserves the exact recoupling pentagon, including its recorded permutations. It is not a choice of independent roots on unrelated tetrahedra.</p>
+<h2 id="determinant-rigidity-fixes-the-full-matrix-scalar">5. Determinant rigidity fixes the full matrix scalar</h2>
+<p>For each triangle choose rho^n=(det S)^(-1), and set S_hat=rho S. Its determinant is one. Include both sets of shared face roots for R_hat(p),R_hat(p’) and these rho roots in the finite algebraic cover. The scalar lambda_hat between the two versions of (3.1) now satisfies</p>
+<pre><code>lambda_hat^(n^2)=1.                                (5.1)</code></pre>
+<p>Indeed all tensor-product determinants of the S_hat maps are one, and the two R_hat determinants are the same (-1)^h. This proves (5.1) without taking absolute values or suppressing a generic unit.</p>
+<p>Fix a lift of the identity projective transformation with D_i=1, A_i’=A_i, alpha’=alpha, rho=1, and identical shared face roots. There S=identity and lambda_hat=1. On any irreducible lifted component containing this anchor, the algebraic function lambda_hat takes values in the finite group mu_(n^2), so it is constant. It is therefore one:</p>
+<pre><code>R_hat(p&#39;) (S_hat_023 tensor S_hat_012)
+      =(S_hat_013 tensor S_hat_123) R_hat(p).       (5.2)</code></pre>
+<p>This is the precise Zariski rigidity argument and its normalization hypothesis. The root covers are finite etale over the nondegenerate open locus. Components containing an identity-frame lift dominate the connected frame locus. Thus this is a generic projective comparison on a cover, not only a statement at the identity or at a finite test point. Other deck lifts retain their root phases; the theorem does not set those phases to one.</p>
+<p>For any fixed finite flag diagram the same reasoning applies to all its tetrahedra on one common component anchored at the identity data. Normalized intertwiners are arrows of a central root extension of the marked-frame groupoid: the extra rho root composes multiplicatively. Arrows satisfying (5.2) are closed under composition and inverses, by the matrix equation itself. Together with shared-face normalization, this gives local coherent projective transport of finite recoupling diagrams. Interior S_hat maps cancel in a finite contraction using the dual map on its oppositely oriented copy. The boundary tensor and the transported period vectors carry the surviving data.</p>
+<h2 id="which-object-has-actually-been-constructed">6. Which object has actually been constructed</h2>
+<p>The construction provides a finite-level local period system on generic decorated flag charts: split Weyl modules, actual selected-vector transport, the marked spectral/Heisenberg data, shared-face normalization, and a root extension of projective frame changes. It gives exact five-term recoupling and full projective covariance there. The unit in a chart is not invariant under these transports; its image S_hat*1 is part of the data. The affine note proves this distinction explicitly. A vector chosen in one frame can now be transported coherently on this local cover. This does not yet choose an equivariant global vector for a flat knot local system.</p>
+<p>This is consistent with the existing matrix-dilogarithm and character-cover framework of <a href="https://arxiv.org/abs/math/0306283">Baseilhac–Benedetti</a> and their <a href="https://arxiv.org/abs/1212.4261">analytic families</a>. We reconstruct the comparisons above directly and do not assume their global proofs. Literal equality to a chosen published matrix normalization has not been established merely by the common recoupling origin.</p>
+<p>The remaining global problem is to make this local system equivariant for the decorated flat knot local system, retain its peripheral lifts, and match its selected global period with the literature state and cycle. Identifying that period includes its continuous dilogarithm factor, not just the finite splitting module. Its compatibility across levels must then be compared to the Bloch regulator. The present fixed-level rigidity theorem does not imply that comparison or the all-alternating volume conjecture.</p>
+<p>The subsequent <code>equivariant_roots_and_phase_descent.md</code> constructs coherent deck multipliers from peripheral root characters, makes triangle transports strictly equivariant, and corrects the remaining scalar configuration cocycle using relative degree-four vanishing. It retains a relative fundamental-class phase. The continuous target and its exact volume norm are in <code>boundary_regulator_period.md</code>. These results still require the selected literature period/cycle and the comparison across levels.</p>
+<p>The later <a href="source_flag_transport.html">source-flag construction</a> distinguishes moving the affine origin from holding it fixed. If that origin is retained as a marked source point and transformed with the flags, the relative modules have a unit-preserving monomial projective transport with scalar one. Changing the source point instead gives the nonconstant adapter treated here. Its actual finite-source scalar can now be fixed by edge duality, including cap and cyclic naturality, and its normal coefficient is explicit. This does not change the fixed-origin comparison or identify the global selected knot period and regulator norm.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/projective_frame_period_torsor.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-full-projective-change-has-compatible-weyl-rescalings">1. The full projective change has compatible Weyl rescalings</a><a href="#explicit-triangle-intertwiners-and-their-composition">2. Explicit triangle intertwiners and their composition</a><a href="#projective-covariance-first-holds-up-to-an-explicit-scalar-line">3. Projective covariance first holds up to an explicit scalar line</a><a href="#shared-face-signed-normalization-retains-the-pentagon">4. Shared-face signed normalization retains the pentagon</a><a href="#determinant-rigidity-fixes-the-full-matrix-scalar">5. Determinant rigidity fixes the full matrix scalar</a><a href="#which-object-has-actually-been-constructed">6. Which object has actually been constructed</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

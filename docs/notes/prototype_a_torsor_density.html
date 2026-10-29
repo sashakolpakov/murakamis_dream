@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The same geometric residue in the two prototype A-periods · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/prototype_a_torsor_density.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-same-geometric-residue-in-the-two-prototype-a-periods">The same geometric residue in the two prototype A-periods</h1>
+<p>Research note, 27 October 2026. The user suggested using 4_1 and 5_2 to guide a general proof. Here the two cases give the same exact determinant-line identity, with a simple Riley residue. The calculation uses the original coefficient model and the intrinsic linearized holonomy complex. It does not prove the selected finite period’s volume asymptotic.</p>
+<h2 id="a-precise-statement-in-both-complete-trace-fields">1. A precise statement in both complete trace fields</h2>
+<p>Use the three-strand words, in the fixed Hurwitz action order,</p>
+<pre><code>beta_4=[1,-2,1,-2],
+beta_5=[1,1,1,2,-1,2].</code></pre>
+<p>The first is the figure-eight braid. An independent local SnapPy recognition of the second gives 5_2. The symbolic fixed-point calculation below does not use that recognition as a representation-theoretic input.</p>
+<p>Let</p>
+<pre><code>A=[1 1;0 1], B=[1 0;t 1].</code></pre>
+<p>For 4_1 take C=A^(-1)B A B^(-1)A; for 5_2 put</p>
+<pre><code>D=A^(-1)B A, E=D^(-1)A D, C=E A E^(-1).</code></pre>
+<p>The respective nonabelian parabolic fixed-point equations are</p>
+<pre><code>f_4(t)=t^2-t+1=0,
+f_5(t)=t^3+t^2+2t+1=0.                       (1.1)</code></pre>
+<p>These follow by substituting the matrices in the Hurwitz word and factoring the entries of F_beta(A,B,C)-(A,B,C). Thus the comparison uses their exact complete trace fields, not a floating-point hyperbolic representation.</p>
+<p>Conjugate by the full framing matrix</p>
+<pre><code>F(r,s)=[r 1-r;s -s], s!=0.</code></pre>
+<p>Let Omega_beta denote the original variable principal normal Gaussian density, retaining both framing derivatives and all crossing, pivot and writhe variable factors. Its fixed base-only quantum normalization line remains separately marked, as in the <a href="actual_geometric_normal_period.html">normal-period construction</a>. Let T_beta be the torsion of the acyclic holonomy complex proved invariant under presentation moves in <a href="pointed_markov_reduction.html">the uniform Markov theorem</a>.</p>
+<p><strong>Prototype proposition.</strong> In the respective exact function fields Q[t]/(f_i)(s,r), one has</p>
+<pre><code>Omega_beta^2=-(T_beta/2) Omega_cut^2,
+Omega_cut=-dr wedge ds/[s(1+s)].             (1.2)</code></pre>
+<p>More explicitly,</p>
+<pre><code>4_1: -T_beta/2=(2t-1)/3,
+5_2: -T_beta/2=(3t^2-6t+1)/23.              (1.3)</code></pre>
+<p>These identities hold on the full two-variable framing chart, rather than on finitely many frames. The omitted chart divisors are retained when comparing the selected relative source; (1.2) is a statement on its regular locus.</p>
+<h2 id="independent-sides-of-the-determinant-calculation">2. Independent sides of the determinant calculation</h2>
+<p>The Gaussian side is computed directly from the actual balanced crossing Hessians and amplitudes. The integral closure lattice has d=m+1 variables: d=5 and d=7 in the two words. The Hessian has its two independently differentiated framing null vectors. Its transverse determinants are nonzero, of ranks 3 and 5. The squared normal density is</p>
+<pre><code>a_beta^2 det(d chi/d(r,s))^2/det(-H_perp).</code></pre>
+<p>The torsion side is computed independently from dF_beta-I, infinitesimal conjugation and d(H_b…H_1)(H_b…H_1)^(-1). It does not use the crossing Hessian or an expected density formula. Exact ranks make the holonomy complex acyclic. Its determinant ratio is evaluated at the ordinary frame (r,s)=(2,3); the general framing invariance of that ratio was proved by the chain argument, not by interpolation.</p>
+<p>The audit then proves (1.2) by exact equality of these independent expressions in the full function field. FLINT polynomial arithmetic in s,r and an explicit reduced quadratic or cubic number-field arithmetic are used. No finite-field sampling, interpolation or numerical rounding is part of this equality.</p>
+<h2 id="the-common-scalar-is-an-ordinary-algebraic-residue">3. The common scalar is an ordinary algebraic residue</h2>
+<p>Define S_4(t)=-1 and S_5(t)=t^2+2. The two constants in (1.3) satisfy exactly</p>
+<pre><code>-T_beta/2=1/[S_i(t) f_i&#39;(t)]
+        =Res_(v=t) dv/[S_i(v)f_i(v)].       (3.1)</code></pre>
+<p>For 4_1 this is -1/(2t-1)=(2t-1)/3. For 5_2 it is</p>
+<pre><code>1/[(t^2+2)(3t^2+2t+2)]
+                    =(3t^2-6t+1)/23</code></pre>
+<p>modulo f_5. Both S_i f_i’ are units in their trace fields. The Gaussian source coefficient is therefore a nonzero algebraic residue at each simple marked parabolic place.</p>
+<p>This is a concrete instance of the requested rigid-period viewpoint: the coefficient is an evaluation in a finite spectral algebra with its residue co-source. It does not assert that the whole finite Kashaev invariant is already the trace of these classical residues.</p>
+<h2 id="the-uniform-twist-lemma-suggested-by-both-cases">4. The uniform twist lemma suggested by both cases</h2>
+<p>This section records the prototype diagnostic, rather than the scope of the main program. The subsequent <a href="arbitrary_bridge_source_reduction.html">arbitrary-bridge source reduction</a> uses a 2k-plat with unrestricted k and crossing word, eliminates every intermediate stage with its source and dual, and replaces the single Riley residue by an endpoint determinant complex. No twist-family assumption is imposed on that theorem or the intended volume result.</p>
+<p>For the signed twist presentation already used in <a href="a_polynomial_volume_limits.html#5-a-connected-infinite-class-from-the-twist-presentation">the A-curve note</a>, let S_j(z) be the second-kind Chebyshev recurrence and put</p>
+<pre><code>f_k(t)=(1+t)S_(k-1)(t^2+2)-S_(k-2)(t^2+2).</code></pre>
+<p>The prototypes are k=-1 and k=2. A precise next determinant lemma is the following proposed uniform identity at a simple nonabelian parabolic root:</p>
+<pre><code>T_k=-2/[S_(k-1)(t^2+2) f_k&#39;(t)].             (4.1)</code></pre>
+<p>Together with a uniform Gaussian/holonomy determinant map, it would make the principal cut residue explicit for the entire regular twist family. Equation (4.1) is not claimed proved here for arbitrary k.</p>
+<p>There is a direct route to the general algebraic calculation. For A=[M 1;0 M^(-1)], B=[M 0;-u M^(-1)], W=AB<sup>(-1)A</sup>(-1)B, the complete relation is</p>
+<pre><code>A W^k-W^k B=R_k(A-B),
+R_k=(s-u-1)S_(k-1)(z)-S_(k-2)(z),
+s=M^2+M^(-2), z=u^2+(2-s)u+2.</code></pre>
+<p>At R_k=0, W<sup>(-k)=S_(k-1)(z)(W</sup>(-1)-(s-u-1)I). Differentiating the relator therefore exposes the factor S_(k-1) dR_k. At M=1,u=-t, dR_k=f_k’(t)dt on the parabolic slice. This explains the denominator in (4.1). What remains is the explicit determinant/source map from that one-relator complex to the braid complex, with its normalization. Merely observing the denominator is not a proof of the uniform identity.</p>
+<h2 id="relation-to-the-required-volume-theorem">5. Relation to the required volume theorem</h2>
+<p>The geometric regulator action was already calibrated to hyperbolic volume. This proposition fixes its algebraic principal coefficient and its framing/cut dependence in both prototypes, with the same residue rule. It provides a testable common lemma for the general construction.</p>
+<p>To prove the original volume limit, one still has to show that the actual selected global quantum period pushes to this marked source with a nonzero, subexponential comparison factor. A nonzero local Gaussian coefficient alone does not prove that statement. Neither this proposition nor the Markov theorem is presented as a volume-conjecture proof.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_cubic_framing_density.py">Exact characteristic-zero audit</a>. <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/cubic_framing_density_results.json">Results</a>. <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_geometric_a_density.py">Finite-field diagnostic evaluator</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/prototype_a_torsor_density.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#a-precise-statement-in-both-complete-trace-fields">1. A precise statement in both complete trace fields</a><a href="#independent-sides-of-the-determinant-calculation">2. Independent sides of the determinant calculation</a><a href="#the-common-scalar-is-an-ordinary-algebraic-residue">3. The common scalar is an ordinary algebraic residue</a><a href="#the-uniform-twist-lemma-suggested-by-both-cases">4. The uniform twist lemma suggested by both cases</a><a href="#relation-to-the-required-volume-theorem">5. Relation to the required volume theorem</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

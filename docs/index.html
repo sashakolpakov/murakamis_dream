@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="./assets/site.css"><link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<script src="./assets/site.js" defer></script></head>
+<body data-base="./"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="./index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="./index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="./index.html" class="active">Overview</a><a href="./guide/results.html" class="">Equality results</a><a href="./guide/mechanism.html" class="">The mechanism</a><a href="./guide/geometry.html" class="">Actual geometry</a><a href="./guide/frontier.html" class="">Current frontier</a><a href="./guide/notation.html" class="">Notation</a><a href="./guide/audits.html" class="">Reproducing audits</a><a href="./archive.html" class="">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research guide</div><div class="reading-grid"><article class="content"><h1 id="murakamis-dream">Murakami’s Dream</h1>
+<h2 id="quantum-invariants-geometric-volume-and-the-missing-global-argument">Quantum invariants, geometric volume, and the missing global argument</h2>
+<p>The question driving this project is whether the original quantum invariant of a hyperbolic knot has exponential growth determined by the volume of its complement:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">lim</mi><mrow><mi>N</mi><mo>→</mo><mi>∞</mi></mrow></munder><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mi>N</mi></mfrac><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>K</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>K</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>=</mo><mrow><mi mathvariant="normal">Vol</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msup><mi>S</mi><mn>3</mn></msup><mo>\</mo><mi>K</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(K)|=\operatorname{Vol}(S^3\setminus K).</annotation></semantics></math></p>
+<p>We pursue this through the pointed quantum A-structure, exact finite source formulas, positive energies, and hyperbolic angle optimization. The original marked source and peripheral factors stay part of the problem.</p>
+<p><strong>The general conjecture remains open in this repository.</strong> The notes contain internally reviewed arguments for specified families, general local identities, and obstructions to proposed extensions. Internal proof review, finite checks, and exploratory calculations are distinguished throughout this guide.</p>
+<figure>
+<img src="assets/figures/research-map.png" alt="The three parts of the argument: original source, global growth, and actual hyperbolic geometry." />
+<figcaption aria-hidden="true">The three parts of the argument: original source, global growth, and actual hyperbolic geometry.</figcaption>
+</figure>
+<h2 id="read-the-argument-in-order">Read the argument in order</h2>
+<p>Start with <a href="guide/results.html">the equality results</a> for the exact knot and link families and their quantifiers. Then read <a href="guide/mechanism.html">the mechanism</a>: what the source formulas do, where weighted Cauchy enters, and why a local scalar estimate does not finish the problem. <a href="guide/geometry.html">The geometry chapter</a> explains what certifies the volume of the actual complement.</p>
+<p><a href="guide/frontier.html">The current frontier</a> identifies the remaining general steps. <a href="guide/notation.html">Notation</a> and <a href="guide/audits.html">reproducing audits</a> are reference chapters. The searchable archive contains the full technical notes, scripts, and recorded results; it is not a second reading list to complete before understanding the project.</p>
+<h2 id="where-the-evidence-stands">Where the evidence stands</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Part of the argument</th>
+<th>Current scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Original invariant equals actual geometric volume</td>
+<td>Specified long pretzel families, signed belt stacks and their specified long fillings, and the signed marked theta link</td>
+</tr>
+<tr>
+<td>Exact finite source identities</td>
+<td>General four-port recoupling, complete-circle algebra, and typed sewing identities</td>
+</tr>
+<tr>
+<td>Local quantum-volume law</td>
+<td>Uniform supported scalar asymptotic with an actual hyperideal tetrahedron volume</td>
+</tr>
+<tr>
+<td>Whole positive source limit</td>
+<td>Every fixed expression in the specified positive Conway class has an explicit variational limit</td>
+</tr>
+<tr>
+<td>General knot or graph equality</td>
+<td>Full source transport and the actual global geometric constraints remain unresolved</td>
+</tr>
+</tbody>
+</table>
+<p>The cube, Fourier, torsor, and alternative approaches are preserved. A failed intermediate estimate is useful evidence about the argument; it is retained beside the corrected scope.</p>
+<h2 id="about-this-edition">About this edition</h2>
+<p>This guide organizes the research snapshot of 29 October 2026. Its chapters explain the current argument; linked technical notes contain the detailed proofs and qualifications. Historical checkpoints remain in the archive and should be read with their dates and later corrections in mind.</p>
+<nav class="chapter-nav" aria-label="Chapter navigation"><span></span><a href="./guide/results.html">Next: Equality results</a></nav>
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/book/chapters/index.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#quantum-invariants-geometric-volume-and-the-missing-global-argument">Quantum invariants, geometric volume, and the missing global argument</a><a href="#read-the-argument-in-order">Read the argument in order</a><a href="#where-the-evidence-stands">Where the evidence stands</a><a href="#about-this-edition">About this edition</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

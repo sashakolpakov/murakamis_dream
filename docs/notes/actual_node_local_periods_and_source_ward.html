@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Projected nodes, actual local periods, and the surviving Ward source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_node_local_periods_and_source_ward.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="projected-nodes-actual-local-periods-and-the-surviving-ward-source">Projected nodes, actual local periods, and the surviving Ward source</h1>
+<p>28 October 2026. A collision of two preferred-longitude values need not be a collision of the original critical points. On two disjoint regular Morse charts of the ORIGINAL coefficient density, the local periods have a bounded separating insertion frame even at that projected node. Internal shift identities have explicit exponentially small relative-boundary errors on these charts. No inverse longitude difference is used.</p>
+<p>This does not prove that the selected finite knot source splits into these local periods with a bounded connection. The exact original figure-eight Ward equation below shows why the missing source step cannot be replaced by the classical separating projectors. The distinction concerns a projected node, not a genuine collision on the full normalized character scheme.</p>
+<h2 id="actual-density-and-the-analytic-hypotheses">1. Actual density and the analytic hypotheses</h2>
+<p>Keep the actual whole coefficient array, integral closure lattice, cut average, pivots, Cartan/framing constants and peripheral line of <a href="actual_geometric_normal_period.html">the geometric normal-period theorem</a>. Fix its two framing coordinates on a transverse slice. Write the remaining scaled internal coordinates as z in C^r and u=Log M. The preferred meridian half-step is</p>
+<pre><code>u -&gt; u+pi*i/N.</code></pre>
+<p>Use the exactly normalized factorial interpolant, equivalently <a href="actual_factorial_full_psi_identity.html">the exact full-Psi quotient</a>, with the original affine arguments and their marks. Denote this holomorphic density on a regular chart by omega_N(u,z). No new finite-state values or co-source are assigned.</p>
+<p>Here are the analytic premises needed below. They are more than a formal stationary series. On fixed neighborhoods of two sections z_p(u), p=1,2, suppose</p>
+<pre><code>omega_N = chi_N(u) N^beta exp[N Phi(u,z)]
+                                  a_N(u,z) dz_1...dz_r,       (1)
+a_N=a_0+O(1/N),   a_0(u,z_p(u)) != 0,</code></pre>
+<p>uniformly holomorphically, with all fixed derivatives on smaller neighborhoods. The external normalization chi_N is retained as a line; it is not assumed tame or dropped. Phi=S/(2pi*i) is the actual marked action. Suppose</p>
+<pre><code>partial_z Phi(u,z_p(u))=0,
+det partial_z^2 Phi(u,z_p(u)) != 0,
+z_1(u) != z_2(u).                                            (2)</code></pre>
+<p>All bounds and separations are uniform after shrinking the u-disk. When a separating actual monomial is used below, the two exponentiated critical configurations must also be distinct; different logarithmic lifts of the same configuration are not enough. For the reduced coefficient density chi_N is nonzero and holomorphic on the chosen chart. If the full ADO dimension is included, its possibly meromorphic line stays external: analyticity and nonvanishing below refer to the normalized sections Z_p,N/chi_N, and scalar ratios are asserted on the regular locus of that line. No fixed-size pole-free disk for the full ADO dimension is assumed. For a finite product of original factorial interpolants, (1) follows from the proved uniform complex Stirling estimate whenever every scaled factorial argument stays in a compact subset of 0&lt;Re s&lt;1. The powers N^beta and scalar marks are literal ones. Other regular full-Psi charts can be used only where their marked uniform symbol has actually been established. The formal normal theorem alone does not establish (1) on an arbitrary continued chart.</p>
+<p>If an exact cotangent or window factor is included in a chosen local source presentation, (1) must hold for that factor too, with its retained mode/action. A bare coefficient estimate is not automatically an estimate for every relative source sector.</p>
+<p>The <a href="marked_braid_holonomy.html">actual critical correspondence</a> identifies (2), on its full regular locus, with distinct framed knot representations. The nondegenerate transverse Hessian is supplied at the geometric branch by the normal-period theorem. Its conjugate has the same algebraic nondegeneracy. A projected coincidence</p>
+<pre><code>L_1(u_0)=L_2(u_0)                                             (3)</code></pre>
+<p>does not invalidate either of these full critical charts.</p>
+<h2 id="analytic-local-periods-have-a-bounded-frame-at-the-node">2. Analytic local periods have a bounded frame at the node</h2>
+<p><strong>Local theorem.</strong> Under (1)–(2), after shrinking the u-disk, there are disjoint truncated Gaussian cycles Gamma_p(u) and exact analytic periods</p>
+<pre><code>Z_p,N(f;u)=integral_(Gamma_p(u)) f(u,z) omega_N(u,z),            (4)</code></pre>
+<p>such that</p>
+<pre><code>Z_p,N(1;u)=chi_N(u) N^(beta-r/2)
+   exp[N phi_p(u)] [b_p,0(u)+O(1/N)],
+phi_p=Phi(u,z_p),  b_p,0 != 0.                               (5)</code></pre>
+<p>The cycles in (4) are specified local relative cycles for the unchanged actual density. They are not asserted to be summands of the selected finite lattice cycle.</p>
+<p>Choose a holomorphic insertion theta with</p>
+<pre><code>|theta(u,z_1(u))-theta(u,z_2(u))| &gt;= delta &gt; 0.</code></pre>
+<p>For distinct exponentiated critical configurations such a theta is a fixed linear combination of the actual internal monomials: each distinct pair excludes only a proper hyperplane of choices. For the two literal insertions 1,theta, form</p>
+<pre><code>M_N(p,0)=1,
+M_N(p,1)=Z_p,N(theta;u)/Z_p,N(1;u).                           (6)</code></pre>
+<p>Then uniformly on a smaller disk,</p>
+<pre><code>M_N(p,1)=theta(u,z_p(u))+O(1/N),
+||M_N||+||M_N^-1|| &lt;= C.                                    (7)</code></pre>
+<p>In particular, (3) does not cause an insertion-frame singularity. The normalized sections Z_p,N/chi_N are nonzero for all sufficiently large N, as are the scalar periods on the regular nonzero locus of the external line. The exact diagonal meridian ratios in this LOCAL period object are</p>
+<pre><code>b_p,N(u)=Z_p,N(1;u+pi*i/N)/Z_p,N(1;u).                        (8)</code></pre>
+<p>After retaining chi_N’s exact ratio, they have the actual marked leading longitude ratio. Indeed N times the action increment tends to partial_u S_p/2=Log L_p. The common prescribed external scalar line must be included in whichever longitude convention is used.</p>
+<p>Proof. A parameter-dependent holomorphic Morse coordinate y exists near each section, with</p>
+<pre><code>Phi(u,z(y,u))=phi_p(u)-(y_1^2+...+y_r^2)/2.</code></pre>
+<p>One elementary construction first solves partial_1 Phi=0 for z_1 by the implicit-function theorem, completes that square using the analytic square root of its nonzero coefficient, and repeats on the Schur complement. A fixed complex linear change makes the needed pivots nonzero at the base point. Shrinking the disk keeps these pivots and square roots holomorphic and bounded. This proves the asserted coordinate without an asymptotic summability premise.</p>
+<p>Take the image of the real cube [-eta,eta]^r with its fixed orientation. The two images remain disjoint. In these coordinates ordinary Gaussian integration, a Taylor expansion on a smaller cube and an exponentially small outside tail give (5). Its leading coefficient is (2pi)^(r/2) times the original a_0 and the marked Morse-coordinate Jacobian. Every factor is nonzero. The same calculation with theta gives (7). Analyticity follows by integrating over a fixed cube in y; the exponentially small tails are analytic as well. Formula (8) is then an exact analytic ratio. This proof does not divide by L_1-L_2 or solve a scalar companion eigenvector problem at the projected node.</p>
+<p>For clarity, transporting a LOCAL branch vector in the insertion frame produces the matrix</p>
+<pre><code>M_N(u+pi*i/N)^t diag(b_1,N,b_2,N) M_N(u)^(-t).                (9)</code></pre>
+<p>Its frames are bounded by (7). This is a statement about the direct sum of the specified local periods. Equation (9) is not identified with the global finite-source companion, nor is it an explicit new all-level operator. Such an identification would require the source pushforward which is still missing.</p>
+<h2 id="exact-local-ward-errors-are-relative-boundary-currents">3. Exact local Ward errors are relative-boundary currents</h2>
+<p>There is a source-relevant quantitative refinement. Let v be one actual internal integer shift, scaled as delta_N=v/N (with the corresponding convention if logarithmic coordinates are used). The original factorial functional equations give EXACTLY</p>
+<pre><code>omega_N(u,z+delta_N)=R_v,N(u,z) omega_N(u,z),                  (10)</code></pre>
+<p>on the common regular chart, including the original Gaussian and all characters. Let f be holomorphic on that common chart. Let H_p,N be the translation cylinder of Gamma_p by delta_N, and B_p,N the cylinder of its boundary. With consistent boundary orientations, holomorphic Stokes gives the exact identity</p>
+<pre><code>Z_p,N(R_v,N f(u,z+delta_N)-f(u,z);u)
+                                  = integral_(B_p,N) f omega_N. (11)</code></pre>
+<p>There are c&gt;0,C,B independent of N for which the right side satisfies</p>
+<pre><code>|integral_(B_p,N) f omega_N|
+   &lt;= |chi_N(u)| C N^B ||f|| exp[N(Re phi_p(u)-c)].             (12)</code></pre>
+<p>Here ||f|| is the supremum on a fixed neighborhood of the cylinder. To prove it, the unshifted boundary has |y|&gt;=eta and hence an action drop at least eta^2/2. Its O(1/N) translation changes Re Phi by O(1/N), uniformly by holomorphy. Thus a fixed positive fraction of the drop remains. The cylinder’s volume and Jacobians have uniform polynomial bounds; (1) proves (12). No discarded boundary term is set to zero. Relative to its own nonzero local period, this error is at most C N^B exp(-cN).</p>
+<p>Consequently the full regular phase has separate analytic quantum blocks with exponentially accurate local Ward relations even when the scalar longitude roots coincide. Genuine complex collisions of the FULL critical points, a vanishing Hessian, a source pole crossing, or continuation outside these neighborhoods are excluded. Also, an external action gain can amplify (12). The comparison of its c with the full action width is an extra estimate, just as in <a href="actual_local_analytic_transport_action_barrier.html">the local analytic transport barrier</a>.</p>
+<h2 id="an-exact-original-source-test-at-an-actual-projected-node">4. An exact original-source test at an actual projected node</h2>
+<p>The original figure-eight identity gives, at M=1 and EVERY level,</p>
+<pre><code>K_N=sum_(n=0)^d w_n,
+w_n=|(Q;Q)_n|^2,
+mu_N(f)=sum_n w_n f(Q^n),  d=N-1.                            (13)</code></pre>
+<p>This is the complete reduced source with its original pointing, not an arbitrary normal-state co-source. Its two classical critical clocks are</p>
+<pre><code>z_+=(1+i sqrt(3))/2,  z_-=(1-i sqrt(3))/2,</code></pre>
+<p>the distinct geometric/conjugate character lifts with the same complete preferred longitude. The two saddles of the exact sine interpolant G_N(Ns)^2 lie at s=1/6,5/6. Its phase is 2J(s), with nonzero second derivatives +2pi sqrt(3),-2pi sqrt(3), respectively. Thus this is an actual source example satisfying the local analytic premises: the two full critical points are regular while their peripheral projection is nodal. Their calibrated regulators have opposite signs. The real positive finite source is not replaced by the sum of both local Gaussian cycles.</p>
+<p>The full finite Ward equation retains an endpoint. Put</p>
+<pre><code>A(Z)=2-Z-Z^-1,
+(B_Q f)(Z)=A(QZ) f(QZ).</code></pre>
+<p>The exact weights satisfy w_(n+1)=A(Q^(n+1))w_n, w_0=1,w_N=0. Therefore, for EVERY Laurent polynomial insertion,</p>
+<pre><code>mu_N((I-B_Q)f)=f(1).                                         (14)</code></pre>
+<p>Now take the classical separating functions</p>
+<pre><code>e_+(Z)=(Z-z_-)/(z_+-z_-),  e_-=1-e_+.</code></pre>
+<p>They separate the two classical critical points, but</p>
+<pre><code>[B_Q,e_+]f
+  =(Q-1) Z A(QZ) f(QZ)/(z_+-z_-),                            (15)
+mu_N((I-B_Q)e_+)=z_+/(z_+-z_-) != 0,
+mu_N((I-B_Q)e_-)=-z_-/(z_+-z_-) != 0.                        (16)</code></pre>
+<p>These are exact original-source identities, not asymptotic errors. The pointwise commutator is O(1/N) on the unit clock grid, but it is not zero. Such algebraic smallness cannot alone establish an exponential conversion barrier. Moreover e_+ and e_- are not exact idempotents in C[Z,Z^-1]/(Z^N-1); their idempotent defect is proportional to Z^2-Z+1. In the SAME source,</p>
+<pre><code>N mu_N((Z^2-Z+1)(Z^-2-Z^-1+1))/K_N -&gt; 2pi sqrt(3),            (17)</code></pre>
+<p>as proved in <a href="actual_source_quotient_and_critical_relation.html">the source-quotient theorem</a>. Thus the positive paired insertion of that idempotent defect still has the full geometric exponential rate. The exact global source cannot be replaced by the reduced critical projectors while discarding only exponentially smaller terms.</p>
+<p>This does not show harmful node conversion occurs in this knot. It shows exactly which source identity a proposed exact separation would have to improve. In fact this prototype has a separate positive whole-source proof; (14)–(17) explain why the node’s local classical idempotents are not that proof.</p>
+<h2 id="the-remaining-quantum-test">5. The remaining quantum test</h2>
+<p>The <a href="actual_pointed_commutant_and_critical_observable.html">pointed commutant theorem</a> already proves that every horizontal endomorphism preserving the raw Mellin source lattice acts scalarly on its selected source. Its partial insertion module supplies formal critical observables, with a covariant rule rather than a zero commutator. The local analytic construction above strengthens the regular-node statement but does not evade that exact source obstruction.</p>
+<p>To exclude harmful nodal conversion for the original whole period, one must still do one of the following with the ORIGINAL source: identify a bounded analytic pushforward to these separated local periods and bound all the currents in (11), or construct a different covariant multioperator module whose actual connection has the necessary equal-calibrated-action support/exponential barrier. Classical sheet separation and a nondegenerate full Hessian supply neither identification automatically. A formal direct sum alone cannot detect a nonzero exponentially small entry.</p>
+<p>In particular, this note proves a regular projected node introduces no LOCAL Morse or insertion-frame singularity. It does not prove that the actual global connection contains no conversion there, that the geometric coefficient of the selected cycle is nonzero, or a sharp whole-knot upper bound.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_node_source_ward.py">Finite audit</a>: exact original cyclic weights, affine Ward endpoint, classical separating commutator and nonzero two-node source values over finite fields. The analytic statements above are proved by the uniform Morse and side-cylinder estimates, not inferred from the finite audit.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_node_local_periods_and_source_ward.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#actual-density-and-the-analytic-hypotheses">1. Actual density and the analytic hypotheses</a><a href="#analytic-local-periods-have-a-bounded-frame-at-the-node">2. Analytic local periods have a bounded frame at the node</a><a href="#exact-local-ward-errors-are-relative-boundary-currents">3. Exact local Ward errors are relative-boundary currents</a><a href="#an-exact-original-source-test-at-an-actual-projected-node">4. An exact original-source test at an actual projected node</a><a href="#the-remaining-quantum-test">5. The remaining quantum test</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

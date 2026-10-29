@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alternating generator signs do not make the charged-flow maximum a real saddle · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/alternating_braid_real_phase_obstruction.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="alternating-generator-signs-do-not-make-the-charged-flow-maximum-a-real-saddle">Alternating generator signs do not make the charged-flow maximum a real saddle</h1>
+<p>28 October 2026. This is an exact obstruction in the ORIGINAL enhanced Kashaev source. It applies at arbitrary braid width. It concerns a real charged-flow approach, not the existence of a selected complex geometric cycle or the volume conjecture itself.</p>
+<h2 id="a-source-retaining-local-variation-at-arbitrary-width">1. A source-retaining local variation at arbitrary width</h2>
+<p>Use the original crossings and actual inverse of <a href="original_crossing_winding_convexity.html">the charged-state note</a>. Put Q=exp(2 pi i/N). Suppose that the first crossing touching the cut head is sigma_1^epsilon, epsilon=+1 or -1. Suppose its outgoing second head next meets sigma_2^(-epsilon), before any other crossing touching that head. Crossings on disjoint heads can occur in between. This includes arbitrary width weaving blocks beginning sigma_1^epsilon sigma_2^(-epsilon), and does not restrict the rest of the word to a twist family.</p>
+<p>The <a href="original_source_cyclic_variation_peeling.html">actual source theorem</a> forces the first head to remain zero and the incoming second head of this first cut crossing to equal 1. Call its outgoing second-head color D. The first local factor is consequently</p>
+<pre><code>T+_(D,1)=Q^D,              T-_(D,1)=Q^(-1),        (1)</code></pre>
+<p>for 1&lt;=D&lt;N. All original pivot, framing, Cartan, and other crossing factors remain in the whole path weight W(D).</p>
+<p>At the next crossing, write its input as (D,b), its output as (c,d), and its original corner indices as</p>
+<pre><code>u=[b-D-1], v=[D-c], t=[c-d], h=[d-b],
+u+v+t+h=N-1.                                    (2)</code></pre>
+<p>Fix every other color in the actual source path. Assume D+1&lt;N and that the variation D -&gt; D+1 remains in this same support chamber, so u&gt;=1, u -&gt; u-1 and v -&gt; v+1 without a residue wrap. Then the WHOLE original summand obeys the exact identity</p>
+<pre><code>W(D+1)/W(D)
+  = sin(pi u/N)/sin(pi(v+1)/N)
+                   * exp[-epsilon*pi*i*(t+h)/N]. (3)</code></pre>
+<p>The magnitude ratio in (3) is strictly positive. Only the two displayed crossings depend on D; none of the exterior source factors has been replaced by an arbitrary co-source or discarded.</p>
+<p>For epsilon=+1, the positive second-crossing coefficient has ratio</p>
+<pre><code>Q^(t+h) (1-Q^u)/(1-Q^(-(v+1))).</code></pre>
+<p>Its actual inverse has ratio Q^(-1) times the conjugate of this expression. Multiplying by the ratio Q from (1) gives</p>
+<pre><code>Q^(-(t+h)) (1-Q^(-u))/(1-Q^(v+1)).               (4)</code></pre>
+<p>Using the sine forms of the two linear factors and the EXACT charge in (2) proves (3). For epsilon=-1 the ratio of the first factor in (1) is one; the positive second crossing gives the conjugate sine-phase in (3). This proves both signs at every N, including even and composite levels, without a semiclassical approximation.</p>
+<h2 id="consequence-for-the-proposed-real-saddle-mechanism">2. Consequence for the proposed real-saddle mechanism</h2>
+<p>Let a source-support region have a limiting interior direction D/N=z, and let tau=(t+h)/N tend to a number in (0,1]. Equation (3) says that the limiting phase derivative of the whole summand in this direction is</p>
+<pre><code>partial_z Theta = -epsilon*pi*tau modulo 2*pi.   (5)</code></pre>
+<p>It cannot vanish, even after adding an integer lattice phase. Thus the leading complex action cannot have a REAL critical point on such a region. In particular, a real maximizer of the strictly concave absolute action is not thereby a critical point of the original complex state.</p>
+<p>If a real critical point is sought in a region where this local color variation is free, (5) forces tau=0. Since the corners are nonnegative, t=h=0 in the limiting configuration. The opposite-sign crossing then has at most two nonzero corners, with sum one, and its limiting absolute entropy is zero. This is a forced degeneracy, not the nondegenerate positive chart contemplated in a direct Laplace argument.</p>
+<p>This argument does not apply at a face where the D variation is no longer free. Nor does it rule out complex saddles or a source-preserving complex contour homotopy. It shows that such further transport cannot be replaced by the assertion that alternating generator signs automatically make the original real charged-flow optimizer stationary.</p>
+<h2 id="the-actual-figure-eight-source-gives-an-interior-strict-maximum">3. The actual figure-eight source gives an interior strict maximum</h2>
+<p>For the word (sigma_1 sigma_2<sup>(-1))</sup>2, consider the actual supported paths</p>
+<pre><code>(0,1,B+1) -&gt; (0,D,B+1) -&gt; (0,E,F)
+          -&gt; (0,0,F) -&gt; (0,0,B).                (6)</code></pre>
+<p>In the full-dimensional limiting chamber</p>
+<pre><code>0&lt;F&lt;E&lt;D&lt;B&lt;1,                                    (7)</code></pre>
+<p>letters now denote colors divided by N. The four corner lists tend to</p>
+<pre><code>(0,0,1-D,D),
+(B-D,D-E,E-F,1+F-B),
+(E,0,0,1-E),
+(F,0,1-B,B-F).                                  (8)</code></pre>
+<p>The two cut end crossings have zero limiting absolute action. With Lambda’(theta)=-log(2 sin theta), the whole absolute action is</p>
+<pre><code>H=(1/pi)[Lambda(pi(B-D))+Lambda(pi(D-E))
+        +Lambda(pi(E-F))+Lambda(pi(1+F-B))
+        +Lambda(pi F)+Lambda(pi(1-B))
+        +Lambda(pi(B-F))].                      (9)</code></pre>
+<p>This has a unique strict interior maximum on the closure of (7). Indeed fix s=B-F. The first three angles sum to s, so strict concavity of Lambda on that fixed-charge simplex makes them all s/3. For the two remaining free angles F and 1-B, their sum is 1-s; strict concavity makes both (1-s)/2. Finally Lambda(pi(1-s))+Lambda(pi s)=0 cancels, leaving</p>
+<pre><code>H_red(s)=[3 Lambda(pi s/3)
+                   +2 Lambda(pi(1-s)/2)]/pi,
+H_red&#39;(s)=log[cos(pi s/2)/sin(pi s/3)].            (10)</code></pre>
+<p>This derivative changes sign only at s=3/5, from positive to negative. The unique maximum is therefore</p>
+<pre><code>(B,D,E,F)=(4/5,3/5,2/5,1/5),
+H_max=5 Lambda(pi/5)/pi=0.7936696457597476... .    (11)</code></pre>
+<p>Here the entropy statement only concerns this actual source chamber; no identification of its maximum with a knot volume is made.</p>
+<p>The retained leading phase, computed from the original quadratic crossing phases with signs (+,-,+,-), is, modulo lattice-invisible linear phases,</p>
+<pre><code>Theta/pi=BD-2BF-DE-D+EF+E+F.                     (12)</code></pre>
+<p>At the strict absolute maximum its gradient divided by pi, in the order (B,D,E,F), is</p>
+<pre><code>(1/5,-3/5,3/5,-1/5) modulo 2 Z^4.               (13)</code></pre>
+<p>In particular partial_D Theta=-3 pi/5. More strongly, throughout (7), partial_D Theta=-pi(1+E-B) lies strictly between -pi and zero. This is the arbitrary-width obstruction (5) realized at a strict interior entropy maximum of the original hyperbolic-knot source.</p>
+<h2 id="what-changes-in-the-next-proof-step">4. What changes in the next proof step</h2>
+<p>For alternating homogeneous braids, one cannot close noncancellation by combining real source-flow concavity with automatic phase stationarity. The original state already contains a local opposite-sign phase flux (3). A viable general proof must transport that genuinely oscillatory state to its complex geometric cycle, or perform exact source-preserving summations that change this presentation while retaining its selected period. Concavity remains useful after that transport; it does not perform the transport.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_alternating_braid_real_phase_obstruction.py">audit</a> checks (3) against the independently implemented ORIGINAL crossing and actual inverse over finite fields, verifies its complex sine phase, and checks the full symbolic phase and entropy critical point. These tests supplement the uniform proof above.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/alternating_braid_real_phase_obstruction.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#a-source-retaining-local-variation-at-arbitrary-width">1. A source-retaining local variation at arbitrary width</a><a href="#consequence-for-the-proposed-real-saddle-mechanism">2. Consequence for the proposed real-saddle mechanism</a><a href="#the-actual-figure-eight-source-gives-an-interior-strict-maximum">3. The actual figure-eight source gives an interior strict maximum</a><a href="#what-changes-in-the-next-proof-step">4. What changes in the next proof step</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

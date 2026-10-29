@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exact finite-height outer quadrature for the original five-crossing source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/source_preserving_outer_finite_height_quadrature.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="exact-finite-height-outer-quadrature-for-the-original-five-crossing-source">Exact finite-height outer quadrature for the original five-crossing source</h1>
+<p>28 October 2026. The original double sum now has an exact outer contour formula with finite upper and lower heights. Its source edges, upper kernel and lower kernel are all explicit. A uniform factorial estimate includes BOTH inner endpoints, so a certified phase bound on the full inner polygon gives a polynomially sized outer error without an additional amplitude assumption.</p>
+<p>This establishes the applied quadrature criterion. The numerical phase bounds proposed for the geometric contour are not proved here, and no selected outer saddle or volume limit follows from the identity alone.</p>
+<h2 id="the-actual-holomorphic-outer-function">1. The actual holomorphic outer function</h2>
+<p>Use <code>Q=exp(2pi*i/N)</code> and the EXACT marked interpolation <code>Fhat_N(z)</code> from <a href="exact_factorial_interpolation_and_complex_contours.html">the factorial theorem</a>. Define</p>
+<pre><code>K_N(z,w)=Q^[-z(z+2)-w(z+1)]
+              Fhat_N(z)^3/[Fhat_N(w)Fhat_N(z-w)] exp(2pi*i*w),
+g_N(z)=exp(4pi*i*z) integral_0^z K_N(z,w)dw. (1)</code></pre>
+<p>Both powers of Q use <code>Q^z=exp(2pi*i*z/N)</code>. The two exponential factors are integer-lattice gauges, with their full off-lattice values retained. For an actual integer <code>0&lt;n&lt;N</code>, g_N(n) is EXACTLY the selected inner integral of the original double sum in <a href="source_preserving_inner_quadrature.html">the inner quadrature theorem</a>.</p>
+<p>The function g_N is holomorphic on <code>0&lt;Re z&lt;N</code>. For a direct proof use <code>w=t z</code>, <code>0&lt;=t&lt;=1</code>: both <code>Re w</code> and <code>Re(z-w)</code> lie in <code>[0,Re z]</code>, where Fhat is holomorphic and nonzero. The parameter integral is locally uniformly holomorphic. For fixed z, any inner polygon from zero to z satisfying the same real-part constraints gives the identical integral, by Cauchy’s theorem in its simply connected zero-free strip. In particular the selected polygon <code>0 -&gt; i lambda -&gt; Re z+i lambda -&gt; z</code> is allowed, even when lambda is negative. No integer-n reflection formula is being applied at a noninteger outer z.</p>
+<h2 id="uniform-factorial-amplitudes-including-the-endpoint-zero">2. Uniform factorial amplitudes INCLUDING the endpoint zero</h2>
+<p>Fix epsilon&gt;0 and C&lt;infinity. On</p>
+<pre><code>D={zeta:0&lt;=Re zeta&lt;=1-epsilon, |Im zeta|&lt;=C},</code></pre>
+<p>let <code>J(zeta)=integral_0^zeta Log(2sin(pi t))dt</code>, marked from <code>0&lt;t&lt;1</code> and extended continuously at zero from the right strip. Put</p>
+<pre><code>Phi(zeta)=J(zeta)+(pi*i/2)(zeta^2-zeta).</code></pre>
+<p>There are positive constants c,C_1, independent of N&gt;=2, with</p>
+<pre><code>c sqrt(1+N|zeta|) exp[N Re Phi(zeta)]
+   &lt;= |Fhat_N(N zeta)|
+   &lt;= C_1 sqrt(1+N|zeta|) exp[N Re Phi(zeta)] (2)</code></pre>
+<p>uniformly on D. In particular its logarithmic error is <code>O(log N)</code> on this CLOSED domain, including zeta=0. The mark of Phi equals <code>[Li_2(1)-Li_2(exp(2pi*i*zeta))]/(2pi*i)</code> with the one-sided strip continuation; it is not reset on a dilogarithm cut.</p>
+<h3 id="proof-directly-from-the-original-gamma-product">Proof directly from the original Gamma product</h3>
+<p>In that product set z=N zeta. All kth-factor Gamma arguments <code>N(k+zeta)</code> and <code>N(k-zeta)</code> have real part at least <code>N(k-1+epsilon)</code>. Stirling’s formula in a fixed right-half-plane sector therefore gives, uniformly and with a summable remainder,</p>
+<pre><code>log kth_factor
+   =N phi_k(zeta)+(1/2)Log(1-zeta^2/k^2)+O_(epsilon,C)(1/(N k^2)),
+phi_k=(k+zeta)Log(1+zeta/k)
+               -(k-zeta)Log(1-zeta/k)-2zeta.</code></pre>
+<p>The O bound may be enlarged for finitely many small k; it is uniform on D. The derivative of phi_k is <code>Log(1-zeta^2/k^2)</code>. The sine product thus combines their leading terms with the central Gamma term into N J(zeta). The sum of the half-log terms is <code>(1/2)Log[sin(pi*zeta)/(pi*zeta)]</code>, a bounded analytic function on D with its removable value at zero. The summed remainder is uniformly bounded (indeed O(1/N)).</p>
+<p>It remains to control the CENTRAL Gamma without assuming <code>|N zeta|</code> large. Put w=N zeta. Its difference from its leading primitive is exactly</p>
+<pre><code>log Gamma(1+w)-w Log w+w.</code></pre>
+<p>For <code>Re w&gt;=0</code>, <code>|w|&gt;=1</code>, uniform Stirling gives real part <code>(1/2)log|w|+O(1)</code>. For <code>|w|&lt;=1</code>, Gamma(1+w) is nonzero and bounded above/below on the compact right half-disk, and <code>w Log w</code> has a bounded continuous extension at zero. Thus the same real part is <code>(1/2)log(1+|w|)+O(1)</code> everywhere. The explicit phase relating G_N and Fhat contributes only the bounded term <code>Re(pi*i*zeta/2)</code> after N Phi is removed. Exponentiation proves (2). A finite initial set of N is absorbed by compactness and nonvanishing, if needed.</p>
+<h2 id="a-phase-certificate-suffices-for-the-whole-inner-polygon">3. A phase certificate suffices for the whole inner polygon</h2>
+<p>Let <code>x=z/N</code>, <code>y=w/N</code>, with x in a fixed compact late strip <code>0&lt;alpha&lt;=Re x&lt;=beta&lt;1</code>, bounded imaginary part. Suppose the chosen inner polygon Gamma_x has a uniformly bounded number of straight segments and bounded total length, and <code>0&lt;=Re y&lt;=Re x</code> throughout. The action from the LITERAL (1) is</p>
+<pre><code>S(x,y)=3J(x)-J(y)-J(x-y)
+                     +pi*i(3x+2y-x^2-xy-y^2). (3)</code></pre>
+<p>It is exactly the marked action used by the selected-inner contour calculation. Equations (1)-(2), including the O(1) linear Gaussian factors, give uniformly</p>
+<pre><code>|exp(4pi*i*Nx)K_N(Nx,Ny)|
+  &lt;= C sqrt(N) exp[N Re S(x,y)]
+                /sqrt[(|y|+1/N)(|x-y|+1/N)]. (4)</code></pre>
+<p>The endpoint factors in (4) are uniformly integrable on this polygon family. Since |x|&gt;=alpha, y and x-y cannot both be small. Near either endpoint the only remaining singularity is distance to that endpoint to power -1/2. Its integral on a straight segment of bounded length is bounded independently of the segment’s angle or distance from the endpoint. Summing the fixed number of segments gives a uniform bound.</p>
+<p>Consequently, with</p>
+<pre><code>G(x)=sup_(y in Gamma_x) Re S(x,y),</code></pre>
+<p>the ACTUAL outer function has the quantitative estimate</p>
+<pre><code>|g_N(Nx)|&lt;=C N^(3/2) exp[N G(x)].            (5)</code></pre>
+<p>This controls the original inner endpoints rather than assuming the interior square-root expansion extends through them. For an interior compact subchart, the usual nonzero analytic amplitude is more explicitly</p>
+<pre><code>sqrt(2N) [sin(pi*x)^3/(sin(pi*y)sin(pi*(x-y)))]^(1/2)
+        exp[-pi*i(3x+2y)] exp[N S(x,y)](1+O(1/N)),</code></pre>
+<p>with its inherited square-root mark. Only the bound (5) is needed for the outer error criterion below.</p>
+<h2 id="exact-finite-height-residue-formula-with-the-original-integers">4. Exact finite-height residue formula with the ORIGINAL integers</h2>
+<p>Let a&lt;=b be integers in the allowed outer range. Set</p>
+<pre><code>L=a-1/2, R=b+1/2.</code></pre>
+<p>These half-integer source edges enclose exactly the original integers a,…,b. Let gamma_+ be any piecewise smooth upper curve from <code>L+iH_L</code> to <code>R+iH_R</code>, with positive height, and let gamma_- run from <code>L-iD</code> to <code>R-iD</code>, with D&gt;0. Assume their enclosed domain lies in <code>0&lt;Re z&lt;N</code>. Define paths Gamma_+,Gamma_- from L to R by adjoining their vertical endpoint connectors. All orientations below run left to right on the upper and lower curves.</p>
+<p>For every function g holomorphic on this closed domain,</p>
+<pre><code>sum_(n=a)^b g(n)
+   =integral_L^R g(s)ds
+      +integral_(Gamma_+) g(z)/(exp(-2pi*i*z)-1)dz
+      +integral_(Gamma_-) g(z)/(exp(2pi*i*z)-1)dz. (6)</code></pre>
+<p>Proof: the positive whole boundary is Gamma_- minus Gamma_+. Use the residue-one kernel pi cot(pi z) and the identities <code>pi cot(pi z)=-pi*i-2pi*i/(exp(-2pi*i*z)-1)</code> above, <code>pi cot(pi z)=pi*i+2pi*i/(exp(2pi*i*z)-1)</code> below. The unweighted halves are each <code>integral_L^R g/2</code> by holomorphy. This proves (6) with no endpoint half-residue convention or limit at infinite height.</p>
+<p>Deform the real integral in (6) through Gamma_+. Then</p>
+<pre><code>sum_(n=a)^b g(n)=integral_(gamma_+) g(z)dz
+                              +T_+(g)+T_-(g)+E(g), (7)
+T_+(g)=integral_(gamma_+) g(z)/(exp(-2pi*i*z)-1)dz,
+T_-(g)=integral_(gamma_-) g(z)/(exp(2pi*i*z)-1)dz,
+E(g)= i integral_0^(H_L) g(L+it)/(1+exp(-2pi*t))dt
+      -i integral_0^(H_R) g(R+it)/(1+exp(-2pi*t))dt
+      +i integral_0^D g(L-it)/(1+exp(2pi*t))dt
+      -i integral_0^D g(R-it)/(1+exp(2pi*t))dt. (8)</code></pre>
+<p>The upper edge weights in (8) are at most one; the lower weights are at most exp(-2pi*t). In particular no endpoint derivative estimate for g is needed. The identity is still the original integer source. The half-grid edges specify its residue cycle rather than replacing its lattice values.</p>
+<h2 id="applied-geometric-contour-and-its-sufficient-exponential-bounds">5. Applied geometric contour and its sufficient exponential bounds</h2>
+<p>Choose a fixed window <code>alpha_0=.51</code>, <code>beta_0=.99</code>, and take <code>a=ceil(alpha_0 N+1/2)</code>, <code>b=floor(beta_0 N-1/2)</code> when nonempty. Then <code>ell=L/N</code>, <code>r=R/N</code> belong to this fixed window. All other original outer indices remain in the two real collars and retain their separate estimates.</p>
+<p>For fixed <code>u_g in (alpha_0,beta_0)</code>, <code>h_g&gt;0</code>, put</p>
+<pre><code>h(u)=min(h_g,h_g(1-u)/(1-u_g)),
+gamma_+: z=N[u+i h(u)], ell&lt;=u&lt;=r,
+gamma_-: z=N[u-.1i], ell&lt;=u&lt;=r.             (9)</code></pre>
+<p>The proposed marked geometric choices are approximately <code>u_g=.86919340003238</code>, <code>h_g=.09218763788516</code>. Formula (7) holds for any exact choices; taking the exact marked saddle values makes the upper curve pass through that point. Its kink is harmless because the curve is piecewise smooth. Since beta_0&lt;1, h has a fixed positive minimum on the window.</p>
+<p>Suppose rigorous bounds on the FULL inner polygons establish</p>
+<pre><code>G(u+i h(u))-2pi*h(u) &lt;= Lambda_top,
+G(u-.1i)-.2pi &lt;= Lambda_bottom,
+G(ell+i tau), G(r+i tau) &lt;= Lambda_upperedge,
+G(ell-i tau)-2pi*tau,
+         G(r-i tau)-2pi*tau &lt;= Lambda_loweredge, (10)</code></pre>
+<p>on the respective top, bottom and connector ranges. They must include the horizontal maximum AND both inner connector pieces, not just the selected inner saddle. By (5) and the exact kernel bounds, equations (7)-(10) give</p>
+<pre><code>|sum_(n=a)^b g_N(n)-integral_(gamma_+)g_N(z)dz|
+   &lt;= C N^(5/2) exp[N Lambda],
+Lambda=max(Lambda_top,Lambda_bottom,
+                       Lambda_upperedge,Lambda_loweredge). (11)</code></pre>
+<p>Indeed on the upper curve its kernel has modulus at most <code>exp(-2pi*N h)/(1-exp(-2pi*N h))</code>, uniformly at most twice the exponential for large N; the bottom has the analogous fixed-height bound. The connector weights are already bounded in (8). Their lengths are O(N), giving the stated polynomial.</p>
+<p>Thus any certified Lambda strictly below the proposed geometric rate proves that the OUTER discretization error is exponentially smaller. Add the already proved inner error and both actual real collars before inferring a statement about the full original double sum. This theorem does not supply the bounds (10), a nonzero outer Gaussian coefficient, or the geometric volume calibration; those are separate required steps.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_outer_finite_height_quadrature.py">Formula and endpoint-amplitude diagnostics</a>. The residue calculation and uniform Gamma-product estimates above, rather than numerical phase samples, prove (2), (6)-(11).</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/source_preserving_outer_finite_height_quadrature.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-holomorphic-outer-function">1. The actual holomorphic outer function</a><a href="#uniform-factorial-amplitudes-including-the-endpoint-zero">2. Uniform factorial amplitudes INCLUDING the endpoint zero</a><a href="#a-phase-certificate-suffices-for-the-whole-inner-polygon">3. A phase certificate suffices for the whole inner polygon</a><a href="#exact-finite-height-residue-formula-with-the-original-integers">4. Exact finite-height residue formula with the ORIGINAL integers</a><a href="#applied-geometric-contour-and-its-sufficient-exponential-bounds">5. Applied geometric contour and its sufficient exponential bounds</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

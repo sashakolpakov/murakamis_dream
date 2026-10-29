@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The untruncated Verma period and its exact Alexander factor · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/frobenius_verma_period.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-untruncated-verma-period-and-its-exact-alexander-factor">The untruncated Verma period and its exact Alexander factor</h1>
+<p>Research note, 26 October 2026. This constructs a single graded Verma cut series and proves its exact rational specialization at every root q_N=exp(pi*i/N), including even and composite levels. Its root period is the actual reduced ADO state divided by the full Alexander factor Delta_K(M^(2N)). This root normalization already occurs in Willetts; Section 9 records the statement coverage. The proof here is an independent crossing, filtration and polynomial-trace calculation. It does not assume a completion theorem or identify the generic graded series with a completed literature invariant.</p>
+<p>The root state has exactly the original all-level quantum A-ideal and the original Kashaev specialization. The construction also turns the <a href="closed_braid_period_line.html">reducible period anchors</a> into explicit polar data. It does not yet identify this period with the marked Bloch regulator or prove the volume conjecture.</p>
+<h2 id="a-graded-cut-series-with-no-root-dependent-truncation">1. A graded cut series with no root-dependent truncation</h2>
+<p>Put Q=q^2 and x=q^alpha. On the infinite highest-weight Verma basis v_a, a&gt;=0, use</p>
+<pre><code>K v_a=xQ^(-a)v_a,
+E v_a=[a]_q[alpha-a+1]_q v_(a-1), F v_a=v_(a+1).</code></pre>
+<p>For a fixed input vector the universal crossing sum is finite. After removing its common Cartan factor, cancel the divided-factorial denominators before specializing. In terms of the polynomial Gaussian coefficient {a choose n}_Q the positive checked entry is</p>
+<pre><code>R^+_(b+n,a-n; a,b)
+   =x^(-a-b+n)Q^((a-n)b){a choose n}_Q
+                  (x^(-2)Q^(a-n);Q)_n, 0&lt;=n&lt;=a.           (1.1)</code></pre>
+<p>The negative checked entry is</p>
+<pre><code>R^-_(b-n,a+n; a,b)
+   =x^(a+b-n)Q^(-ab){b choose n}_Q
+                  (x^2 Q^(1-b);Q)_n, 0&lt;=n&lt;=b.            (1.2)</code></pre>
+<p>To derive (1.1), write the product of the n E coefficients as [a]_q!/[a-n]_q! times the color product, use {a choose n}_q=q^(-n(a-n)){a choose n}_Q, and combine the Cartan exponent. For (1.2) apply the inverse Cartan first and reverse the color-product factors; the signs and quadratic powers cancel. Thus every displayed coefficient is Laurent polynomial in q,x. There is no [N]_q denominator left to interpret.</p>
+<p>At generic q these are the mutually inverse checked Verma crossings. Their identities follow from the formal R coefficient recurrence already derived in the <a href="regular_holonomy_braiding.html">local braiding note</a>. Each homogeneous total-index sector is finite, and its entries are Laurent polynomials. Those identities therefore specialize at roots by polynomial identity. Terms with n&gt;=N are included; they need not vanish after the cancellation in (1.1)–(1.2).</p>
+<p>Let beta be a b-strand braid of writhe w whose closure is K, and put c=b-1-w. Let B_beta be the product of these checked crossings and inverses. Define the auxiliary graded series</p>
+<pre><code>V_beta(q,x;tau)=x^c sum_(a_2,...,a_b&gt;=0)
+    tau^(a_2+...+a_b)Q^(-a_2-...-a_b)
+    &lt;0,a_2,...,a_b|B_beta|0,a_2,...,a_b&gt;.       (1.3)</code></pre>
+<p>The factor x^c combines the ordinary pivot K on the closed strands and the residual twist x. Every coefficient of tau is a finite sum: crossings preserve total index, so all intermediate indices are bounded by that coefficient’s total degree. Consequently (1.3) is defined in Z[q<sup>(+/-1),x</sup>(+/-1)][[tau]]. This assertion does not require convergence or a value at tau=1 for generic q. The graded auxiliary series is not asserted to be a knot invariant.</p>
+<h2 id="exact-frobenius-block-decomposition">2. Exact Frobenius block decomposition</h2>
+<p>Now q=q_N, Q of order N, and k=x^N. Write</p>
+<pre><code>a=NA+r, b=NB+s, n=NC+t, 0&lt;=r,s,t&lt;N.</code></pre>
+<p>The root Gaussian identity is</p>
+<pre><code>{NA+r choose NC+t}_Q={A choose C}{r choose t}_Q.             (2.1)</code></pre>
+<p>For an elementary proof, expand product_(j=0)<sup>(a-1)(1+Q</sup>j z) by Gaussian coefficients and factor each full N-cycle as 1-(-z)^N. Comparing coefficients proves (2.1), with the cycle signs canceled by the Gaussian prefactor. No primality assumption on N enters. Also</p>
+<pre><code>(hQ^j;Q)_(NC+t)=(1-h^N)^C(hQ^j;Q)_t.        (2.2)</code></pre>
+<p>Substitution in (1.1) gives its residue entry at (r,s,t) times</p>
+<pre><code>{A choose C}k^(-A-B+C)(1-k^(-2))^C.           (2.3)</code></pre>
+<p>Substitution in (1.2) gives its residue entry times</p>
+<pre><code>{B choose C}k^(A+B-C)(1-k^2)^C.               (2.4)</code></pre>
+<p>The positive output block indices are (B+C,A-C), apart from a possible carry when s+t&gt;=N. The negative ones are (B-C,A+C), apart from a carry when r+t&gt;=N. A carry lowers the sum of the residue indices by exactly N. Nonzero entries have t&lt;=r in the positive case and t&lt;=s in the negative case. Thus neither sign can increase total residue degree.</p>
+<p>Identify the block indices (A_1,…,A_b) with monomials in Z_1,…,Z_b. The carry-free block actions (2.3)–(2.4) are the symmetric-power actions of the mutually inverse matrices</p>
+<pre><code>L_+(k)=[[1-k^(-2),k^(-1)],[k^(-1),0]],
+L_-(k)=[[0,k],[k,1-k^2]].                      (2.5)</code></pre>
+<p>On the associated graded for total residue degree, the entire Verma crossing therefore factors as</p>
+<pre><code>actual finite checked R_N^sign tensor Sym L_sign(k).
+                                                        (2.6)</code></pre>
+<p>The finite residue part is exactly the actual truncated ADO crossing: a carry is precisely the term removed by its nilpotent F endpoint. This proves the comparison rather than replacing the finite R by an unverified cyclic one.</p>
+<p>Every closed diagonal term in (1.3) returns to its initial residue degree. Since all carries strictly lower that degree, none can occur on a contributing path. Hence (2.6) computes the full graded cut trace exactly, not only its leading term.</p>
+<h2 id="polynomial-blocks-give-a-rational-period">3. Polynomial blocks give a rational period</h2>
+<p>Let L_beta(k) be the product of (2.5) embedded in b dimensions, in the same operator order as B_beta. Delete its first row and column and call the resulting matrix A_beta(k). Define</p>
+<pre><code>D_beta(k;z)=det(I-z A_beta(k)).</code></pre>
+<p>The first block index is cut at zero. Projecting the first output block to zero amounts to setting Z_1=0. The remaining polynomial trace is therefore the trace on Sym of A_beta, and</p>
+<pre><code>sum_(d&gt;=0) z^d Tr(Sym^d A_beta)=1/D_beta(k;z).               (3.1)</code></pre>
+<p>For a proof, verify the identity on diagonal matrices by multiplying geometric series. For each coefficient both sides are polynomials in the matrix entries; diagonalizable matrices are Zariski dense. The coefficient identities follow for all matrices, including nondiagonalizable ones. The identities have integer coefficients, so they also support the exact finite-field diagnostics.</p>
+<p>Let P_(N,beta)(x;tau) be the finite residue cut polynomial: sum over 0&lt;=r_2,…,r_b&lt;N with the same factors x^c Q^(-sum r_i) and tau^(sum r_i) as in (1.3). Combining (2.6) and (3.1) proves</p>
+<pre><code>V_beta(q_N,x;tau)
+   =P_(N,beta)(x;tau)/D_beta(x^N;tau^N).       (3.2)</code></pre>
+<p>This is an identity of formal tau series and hence an explicit rational continuation in tau. The denominator, including its polar divisor, is retained. Equation (3.2) also specifies its actual relative algebraic equation D_beta V_beta=P_(N,beta). Its shift/grade variable is internal; this is not yet the desired affine meridian q-difference source equation.</p>
+<h2 id="the-entire-normalized-denominator-is-alexander">4. The entire normalized denominator is Alexander</h2>
+<p>The classical matrices (2.5) have a common right and left fixed vector</p>
+<pre><code>v(k)=(1,k^(-1),...,k^(1-b))^t.</code></pre>
+<p>Conjugating by diag(1,k,…,k^(b-1)) gives the usual Hurwitz/Fox blocks [[1-k<sup>(-2),k</sup>(-2)],[1,0]] and their inverses. The deleted minor of I-L_beta thus presents the ordinary Alexander module, by the infinite-cyclic-cover argument in the <a href="closed_braid_period_line.html">closed-braid note</a>. It is an Alexander polynomial up to a Laurent unit. The exact unit is fixed here. Put D_beta(k)=D_beta(k;1). Then</p>
+<pre><code>Delta_K(k^2)=k^(-c)D_beta(k), c=b-1-w.          (4.1)</code></pre>
+<p>Here Delta_K is the symmetric normalization with Delta_K(1)=1. The following direct checks fix all units in (4.1).</p>
+<p>First, c is even for a knot. The sign change k-&gt;-k conjugates every block by diag(1,-1,1,…), so k^(-c)D_beta is Laurent in k^2. At k=1 the matrix L_beta is the one-cycle strand permutation; its deleted I-L cofactor is one. At k=-1 it is diagonally conjugate to the same permutation, with the same cofactor.</p>
+<p>For reciprocity introduce the upper triangular matrix H(k) with diagonal one and</p>
+<pre><code>H_ij=(1-k^2)k^(i-j) for i&lt;j.</code></pre>
+<p>Multiplication of a single 2-by-2 block proves</p>
+<pre><code>L_i(k^(-1))^t H(k)L_i(k)=H(k).</code></pre>
+<p>It follows for every word. Over C(k), I-L_beta has rank b-1, because its deleted cofactor is nonzero at k=1. Thus its adjugate is D_beta(k)v(k)v(k)^t. Use</p>
+<pre><code>H(k)v(k)=k^(-2(b-1))v(k^(-1)),
+v(k^(-1))^t H(k)=v(k)^t,
+det L_beta=(-1)^w k^(-2w).</code></pre>
+<p>The adjugate of I-L_beta^(-1), together with knot parity w=b-1 modulo two, gives</p>
+<pre><code>D_beta(k^(-1))=k^(-2c)D_beta(k).</code></pre>
+<p>Consequently the right side of (4.1) is reciprocal and takes value one at k=1. These properties uniquely fix the usual symmetric Alexander normalization.</p>
+<p>The same formula can be checked under braid moves without losing units. Conjugation preserves D_beta, since the common left/right vector v is fixed. A last-strand positive stabilization preserves D_beta; a negative one multiplies it by k^2, by a last-coordinate Schur complement. The corresponding c changes by zero and two. Thus (4.1) is unchanged in both cases.</p>
+<h2 id="exact-comparison-with-the-prescribed-ado-state">5. Exact comparison with the prescribed ADO state</h2>
+<p>At the root the ordinary pivot K and the actual ADO pivot satisfy</p>
+<pre><code>g_ADO=K^(1-N)=k^(-1)K.</code></pre>
+<p>The residual actual twist is x^(1-N)=x/k. For b strands and writhe w these give exactly</p>
+<pre><code>P_(N,beta)(x;1)=k^c F_N(M), M=-q_N x.         (5.1)</code></pre>
+<p>Combining (3.2), (4.1) and (5.1) proves the root-period identity</p>
+<pre><code>V_beta(q_N,x;1)=F_N(M)/Delta_K(M^(2N)).        (5.2)</code></pre>
+<p>The evaluation at tau=1 means the rational continuation (3.2). It is defined over C(x); particular Alexander roots may be poles. This is a direct all-knot, all-level comparison. The exponent c, the sign of q_N^N and the full function Delta_K are accounted for. At M=1, k=(-1)^(N-1), c is even, and Delta_K(1)=1. Therefore</p>
+<pre><code>V_beta(q_N,q_N^(N-1);1)=F_N(1)=&lt;K&gt;_N          (5.3)</code></pre>
+<p>as a regular whole germ, including even levels. No asymptotic normalization is involved. Although the graded series (1.3) is diagram dependent, its rational root specialization (5.2) is a knot invariant with the prescribed meridian and framing.</p>
+<p>For the full ADO normalization multiply both sides by the entire known function</p>
+<pre><code>d_N(M)=i^(N+3)M^(N-1)/(1+M^2+...+M^(2N-2)).</code></pre>
+<p>The factor Delta_K(M^(2N)) does not replace this function. Both divisors and their whole specializations are retained.</p>
+<h2 id="the-same-actual-quantum-a-ideal-and-pointed-fiber">6. The same actual quantum A-ideal and pointed fiber</h2>
+<p>Let sigma(M)=q_N M. Since U=M^(2N) is fixed by sigma, Delta_K(U) is a central scalar for the root meridian difference action. Multiplication by this nonzero rational function therefore gives, for every specified meridian operator P,</p>
+<pre><code>P F_N=0 iff P(F_N/Delta_K(U))=0.               (6.1)</code></pre>
+<p>Thus the two root families have exactly the same all-level annihilator ideal as defined for the actual ADO state. The assertion holds in the reduced normalization and, with d_N retained, in the full one. It does not assert equality with a colored-Jones recursion ideal or a classical A-curve.</p>
+<p>There is also exact compatibility with the marked ramified fiber. Reciprocity makes Delta_K(U) even in z=(U-1)/(U+1), and its constant term is one. Hence 1/Delta_K(U)=1+O(z^2). Multiplying by it leaves both coordinates (a_0,b_0) of the <a href="ramified_weyl_fibre.html">ramified Weyl fiber</a> unchanged. In particular it preserves the normal Kashaev functional, not merely an unpointed root solution line. Away from U=1 its entire factor still matters.</p>
+<p>This supplies an explicit untruncated root-period realization of the same quantum-A problem. The existence of the formal series (1.3) and its root rational continuation does not yet identify a generic completion, a geometric classical factor of the minimal operator, or the regulator norm.</p>
+<h2 id="the-reducible-anchor-is-actual-polar-data">7. The reducible anchor is actual polar data</h2>
+<p>On a local meridian cover choose U=M^(2N) near an Alexander root alpha and a branch M(U) through M_*. Equation (5.2) is an exact meromorphic period identity. If alpha is a simple root,</p>
+<pre><code>Res_(U=alpha) V_beta dU
+                =F_N(M_*)/Delta_K&#39;(alpha).    (7.1)</code></pre>
+<p>The <a href="closed_braid_period_line.html">upper triangular comparison</a> independently computes F_N(M_*) as the selected cut period of the exact nonabelian reducible family. Thus (7.1) matches that period with a specified residue of the untruncated trace. For a multiple root the same whole ratio gives all principal-part coefficients from the corresponding meridian jets. If the numerator vanishes the pole order can decrease; no nonvanishing claim is assumed.</p>
+<p>The Alexander divisor is therefore not only a classical necessary attachment locus: it is the actual pole divisor of this global root trace, with selected polar data fixed by the ADO state. An occurrence can cancel when the numerator vanishes. This construction retains such cancellations and does not evaluate the numerator and denominator separately at the divisor.</p>
+<h2 id="what-this-adds-to-the-triangulation-comparison">8. What this adds to the triangulation comparison</h2>
+<p>The local relative factorial source and the classical Alexander deformation matrix now have a common global trace interpretation. Untruncated Verma crossings give the explicit period (1.3); the Frobenius polynomial blocks produce its full Alexander denominator, and (5.2) identifies its selected root value with the prescribed quantum-A period. This supplies actual global period data rather than choosing a scalar on a torsor to impose the desired answer.</p>
+<p>The remaining geometric theorem must transport this selected relative period to the ideal-triangulation gluing realization, including its poles, source and boundary pointing, and establish its marked Bloch-regulator norm. The geometric fundamental class and its classical action are already identified in the linked <a href="triangulation_regulator_bridge.html">triangulation bridge</a>. Neither the algebraic polynomial trace (3.1) nor cancellation of the Alexander factor at U=1 controls that quantum norm. The target remains</p>
+<pre><code>(4/N)log|F_N(1)| -&gt; log||P_hyp||=2Vol(M)/pi.</code></pre>
+<p>No such estimate, noncancellation theorem or selected-period identification with the Bloch regulator is proved here.</p>
+<p>The subsequent <a href="verma_tetrahedral_transport.html">pointed tetrahedral transport</a> does establish a local part of the transport: exact four-factor Verma crossings, a scalar-one formal tetrahedral pentagon, and preservation of the rational root period under finite formal operator rewrites with the same external pointing. Complete compression to the original lattice is performed before root specialization. Individual compact products can be singular; their norm characters and poles remain in the relative data. Application to an arbitrary positive geometric triangulation and the regulator norm are additional work.</p>
+<h2 id="coverage-and-independent-verification">9. Coverage and independent verification</h2>
+<p><a href="https://arxiv.org/html/2003.09854v2">Willetts, 2003.09854v2, Introduction Result 2</a> already states a completed invariant with root evaluation ADO divided by Delta_K(A^(2r)). That is the prior coverage of the normalization in (5.2). Its completion, comparison and recursion proofs are not premises here. We prove the root trace formula by the displayed Gaussian cancellation, residue filtration, symmetric-power trace and explicitly normalized Fox cofactor. Equality of the generic graded auxiliary series with Willetts’s completed element is not claimed. The literature ADO definition remains the fixed state.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_frobenius_verma_period.py">The audit</a> compares the full untruncated coefficients with the block factorization, tests both signs and full homogeneous-sector inverse matrices, and checks the finite crossing against the actual ADO matrices. Independent symbolic checks verify the Fox minor, duality, reciprocity, conjugation and stabilization units. Full graded Verma traces are computed by unbounded-index sparse propagation to a stated degree and compared with the rational formula using independently constructed finite ADO matrices. Polar samples are retained. See <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/frobenius_verma_period_results.json">the results</a>. These checks support the uniform proof and establish no volume asymptotic.</p>
+<p>The saved audit includes 26,454 local block coefficient comparisons at nine levels through 12, both full homogeneous-sector inverse crossings and exact finite ADO restrictions, 16 symbolic Alexander/ duality normalization cases, and 506 graded coefficients in 34 complete trace cases on two, three and four strands. The cases include even/composite levels, both signs, exact Kashaev points, and a polar Alexander sample with nonzero finite numerator.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/frobenius_verma_period.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#a-graded-cut-series-with-no-root-dependent-truncation">1. A graded cut series with no root-dependent truncation</a><a href="#exact-frobenius-block-decomposition">2. Exact Frobenius block decomposition</a><a href="#polynomial-blocks-give-a-rational-period">3. Polynomial blocks give a rational period</a><a href="#the-entire-normalized-denominator-is-alexander">4. The entire normalized denominator is Alexander</a><a href="#exact-comparison-with-the-prescribed-ado-state">5. Exact comparison with the prescribed ADO state</a><a href="#the-same-actual-quantum-a-ideal-and-pointed-fiber">6. The same actual quantum A-ideal and pointed fiber</a><a href="#the-reducible-anchor-is-actual-polar-data">7. The reducible anchor is actual polar data</a><a href="#what-this-adds-to-the-triangulation-comparison">8. What this adds to the triangulation comparison</a><a href="#coverage-and-independent-verification">9. Coverage and independent verification</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bounded meridian jets for a fixed quantum A-operator · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/bounded_meridian_jets.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="bounded-meridian-jets-for-a-fixed-quantum-a-operator">Bounded meridian jets for a fixed quantum A-operator</h1>
+<p>Research note, 25 October 2026. A fixed recurrence needs only a bounded amount of meridian jet data to cross all singularities on a root orbit. The bound depends on the operator, not the level. There is no rank-one or regular-orbit hypothesis. The subsequent <a href="all_level_a_period.html">all-level period theorem</a> uses coherence across levels to replace these potentially unknown meridian jets by controlled jets of finitely many fixed small colors in the quantum parameter.</p>
+<p>The state and conventions are those of <a href="kashaev_ado_pointing.html">the ADO pointing calculation</a>:</p>
+<pre><code>q_N=exp(pi*i/N), M_j=-q_N^j,
+F_N(M_j)=C_j(q_N), 1&lt;=j&lt;=N,
+F_N(1)=&lt;K&gt;_N, F_N(-q_N)=1.                       (0.1)</code></pre>
+<p>The C_j are the actual reduced fixed-color periods, not new initial conditions chosen to obtain a desired asymptotic. Their identity in (0.1) was independently proved by the filtered quotient-color argument in <a href="root_orbit_pointing.html">the root-orbit note</a>.</p>
+<h2 id="a-uniform-bound-on-singularities">1. A uniform bound on singularities</h2>
+<p>Take a specified nonzero reduced-state operator</p>
+<pre><code>P=sum_(i=0)^d a_i(q,M)T^i, T h(M)=h(qM), d&gt;=1.    (1.1)</code></pre>
+<p>Clear its rational denominators once, retaining the fixed operator and the state normalization, so all a_i are Laurent polynomials. Let D be the M-exponent span of a_d. For all sufficiently large N, a_d(q_N,M) is a nonzero Laurent polynomial and its exponent span is at most D. The excluded levels are finite: any one nonzero q-coefficient of a_d has only finitely many nonzero roots.</p>
+<p>Use the same local coordinate at each orbit point:</p>
+<pre><code>M=M_j(1+z), M_j=-q_N^j.                           (1.2)</code></pre>
+<p>The points M_j, 1&lt;=j&lt;=2N, are distinct. The sum of the multiplicities of all nonzero roots of a_d(q_N,M) is at most D. In particular,</p>
+<pre><code>S_N=sum_(j=1)^(N-d) ord_(M=M_j) a_d(q_N,M) &lt;= D.  (1.3)</code></pre>
+<p>This is a count with multiplicity. It does not require a torsion-point classification, primeness of N, or estimates on nearly vanishing factors.</p>
+<h2 id="exact-recovery-from-finitely-many-initial-jets">2. Exact recovery from finitely many initial jets</h2>
+<p>Write the forward companion equation on column states as</p>
+<pre><code>V_j(z)=(F_N(M_j(1+z)),...,F_N(M_(j+d-1)(1+z)))^t,
+V_(j+1)(z)=B_j(z)V_j(z).</code></pre>
+<p>The superdiagonal of B_j is one; its last row is (-a_0/a_d,…,-a_(d-1)/a_d), evaluated at (q_N,M_j(1+z)). Each B_j has pole order at most the j-th summand in (1.3). Thus</p>
+<pre><code>r_N(z)=e_d^t B_(N-d)(z)...B_1(z)
+      =sum_(k=-S_N)^infinity r_(N,k) z^k.        (2.1)</code></pre>
+<p>Let</p>
+<pre><code>J_k=([z^k]F_N(M_1(1+z)),...,
+     [z^k]F_N(M_d(1+z)))^t.</code></pre>
+<p>All these are ordinary meridian germs of the actual Laurent polynomial state. The scalar r_N(z)V_1(z) is regular and equals F_N(1+z). Hence</p>
+<pre><code>&lt;K&gt;_N=sum_(k=0)^S_N r_(N,-k) J_k.                (2.2)</code></pre>
+<p>More generally the output jet of order h needs initial jets only through S_N+h, and therefore through D+h. All negative coefficients of r_N V_1 vanish by the equation and regularity of the actual state; they are compatibility equations, not an excuse to evaluate an undefined quotient.</p>
+<p>This gives at most d(D+1) scalar initial data for the value, independent of N. When the orbit is regular, S_N=0 and (2.2) is the ordinary initial value formula. No claim that its higher meridian jets are small is made.</p>
+<p>For computation one can avoid multiplying Laurent matrices. Put C_j=a_d(q_N,M_j(1+z)) B_j and multiply the polynomial matrices C_j, together with the complete scalar denominator product. If its order at z=0 is S_N, retain the numerator through order S_N+h and divide by the denominator’s unit part. This computes the same whole germ. For fixed d,D,h this requires O(N) field operations up to a constant depending on the fixed truncation and matrix sizes.</p>
+<h2 id="an-intrinsic-bound-on-the-integral-kernel-defect">3. An intrinsic bound on the integral kernel defect</h2>
+<p>The same statement applies to the actual integral solution lattice, not just a selected scalar period. Put n=2N, u=M^n, O=C[u]_(u-1), and represent P on E=C(M) over C(u), as in <a href="root_orbit_pointing.html#4-the-root-period-can-be-read-from-the-quantum-a-operator">the cofactor construction</a>. Let</p>
+<pre><code>Lambda=ker_(C(u)) P intersection O^n.</code></pre>
+<p>This is a saturated free O-module. Complete and use u=(1+z)^n, R=C[[z]]. Evaluation at the n root germs M_j(1+z) is an invertible Vandermonde change of basis over R. It identifies Lambda_R with a saturated submodule of R^n.</p>
+<p>Choose an integral basis, with matrix G(z) of size n by r, and let A(z) be its first d rows. Generic recurrence propagation shows r&lt;=d and A has column rank r over C((z)). Its Smith exponents obey</p>
+<pre><code>0&lt;=b_1&lt;=...&lt;=b_r&lt;=D.                             (3.1)</code></pre>
+<p>Here is a proof of the bound. Propagation through the whole orbit uses each point at most once; the total pole budget is still at most D. Therefore G=L A for a meromorphic n by d matrix L with z^D L integral. Since G is saturated, it has an integral left inverse Q. Consequently</p>
+<pre><code>(Q z^D L) A=z^D I_r.</code></pre>
+<p>Smith normal form implies every z^b_i divides z^D, proving (3.1). In particular if two integral solutions have the same initial meridian jets through D, their difference vanishes on the entire central fiber. The order-h version follows by the same calculation.</p>
+<p>This is the precise bounded extension data in the kernel lattice. It is a genuine linear solution module. No module structure is being inferred from a nonlinear condition on proposed scalar sections.</p>
+<p>The bound can be sharp: for f=(M+q)^D and P=f(M)T-f(qM), the solution lattice has rank one, but its first evaluation has order D. Its first nonzero initial jet is the D-th. This example has zero reference value; it does not contradict the earlier rank-one theorem with a nonzero anchor.</p>
+<h2 id="ordinary-initial-values-can-miss-a-jet">4. Ordinary initial values can miss a jet</h2>
+<p>Consider the fixed second-order operator</p>
+<pre><code>P=(M+q)T^2-[(q^2+1)M+q(q+1)]T+q^2(M+1).         (4.1)</code></pre>
+<p>It annihilates both 1 and f=(M+q)(M+q^2). At a root of order 2N, N&gt;=3, all rational solutions are C(u)-linear combinations of these two functions. Indeed, putting g=sigma(f)-f, its equation is</p>
+<pre><code>g*sigma(Delta h)-sigma(g)*Delta h=0.</code></pre>
+<p>Thus Delta h=c(u)Delta f and h=b(u)+c(u)f.</p>
+<p>The basis (1,f) is integral and saturated: at the first and third orbit points its evaluation minor is a unit. At the first two points the minor has order one, since</p>
+<pre><code>[z] (f(-q^2(1+z))-f(-q(1+z)))=q^2(q^2-1).</code></pre>
+<p>The Smith exponents are (0,1). Every h_N=1+c_N f has both ordinary initial values equal to one, yet</p>
+<pre><code>h_N(1)=1+c_N(1+q_N)(1+q_N^2).</code></pre>
+<p>The exact missing datum is</p>
+<pre><code>h_N(1)=1+[(1+q)(1+q^2)/(q^2(q^2-1))]
+             *([z]h_N(-q^2(1+z))-[z]h_N(-q(1+z))). (4.2)</code></pre>
+<p>Taking c_N=a^N, a&gt;1, gives logarithmic rate log(a), with the same fixed operator and the same two ordinary initial values. These are manufactured states, not knot invariants. The example explains why an independent bound on meridian jets cannot be silently assumed. The all-level theorem below uses additional coherence actually available for the knot state.</p>
+<h2 id="the-full-ado-normalization-keeps-its-residue-and-first-jet">5. The full ADO normalization keeps its residue and first jet</h2>
+<p>Keep the exact factor</p>
+<pre><code>N_N=d_N F_N,
+d_N=eta_N*(M-M^-1)*M^N/(M^(2N)-1), eta_N=i^(N+3).</code></pre>
+<p>The regular numerator is</p>
+<pre><code>R_N=(u-1)N_N=eta_N*(M-M^-1)*M^N F_N.</code></pre>
+<p>Its reference residue and target jet are</p>
+<pre><code>R_N(-q)=eta_N*(-1)^N*(q-q^-1),
+[z]R_N(1+z)=2 eta_N &lt;K&gt;_N.                      (5.1)</code></pre>
+<p>These follow by direct substitution; the second retains the zero of M-M^-1 until differentiation. The factor M^N has shift character -1, and the exact generic full/reduced gauge is</p>
+<pre><code>d_N(qM)/d_N(M)=-(qM-q^-1 M^-1)/(M-M^-1).</code></pre>
+<p>On the initial d colors, N&gt;d, the diagonal multiplication by eta_N*(M-M<sup>-1)*M</sup>N is a meridian unit. At the target it has one zero. Thus the full target transfer row acquires a factor z and the required output first jet compensates for that zero: transport under this actual gauge needs no additional initial jet beyond the reduced bound D. Using a general full-state operator directly also gives the weaker bound D_full+1 by Section 2.</p>
+<p>A central unit equal to one at u=1 cannot change (2.2) or (5.1): the whole output is regular, and its value, or first coefficient after the target zero, only sees that unit’s constant term. This is distinct from erasing a generic peripheral factor.</p>
+<h2 id="coverage-checks-and-the-remaining-comparison">6. Coverage, checks, and the remaining comparison</h2>
+<p>Desingularization of q-difference equations and systems is existing coverage: <a href="https://arxiv.org/abs/1801.04160">Koutschan–Zhang, 1801.04160</a> and <a href="https://arxiv.org/abs/1802.01150">Barkatou–Jaroschek, 1802.01150</a>. Only their stated scope was consulted here. No algorithm or proof from them is a premise; the degree, propagation, and Smith arguments above are complete. No novelty claim is made.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_bounded_meridian_jets.py">exact diagnostics</a> check 30 second-order examples, including higher contact orders and the full-state gauge, and 28 examples attaining the first-order bound. Even and composite levels are included. The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/bounded_meridian_jets_results.json">results</a> are diagnostics of these uniform proofs, not a knot-class or volume test.</p>
+<p>For a specified actual annihilator, the finite-jet bound is now unconditional in its root-level rank. The subsequent <a href="finite_sum_annihilator.html">finite cut-state proof</a> now constructs a nonzero actual all-level annihilator for every knot in principle. Its geometric symbol still requires independent identification. The <a href="all_level_a_period.html">next theorem</a> removes the unknown meridian jets from the exact period formula using cross-level polynomial coherence. It does not establish the geometric regulator norm.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/bounded_meridian_jets.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#a-uniform-bound-on-singularities">1. A uniform bound on singularities</a><a href="#exact-recovery-from-finitely-many-initial-jets">2. Exact recovery from finitely many initial jets</a><a href="#an-intrinsic-bound-on-the-integral-kernel-defect">3. An intrinsic bound on the integral kernel defect</a><a href="#ordinary-initial-values-can-miss-a-jet">4. Ordinary initial values can miss a jet</a><a href="#the-full-ado-normalization-keeps-its-residue-and-first-jet">5. The full ADO normalization keeps its residue and first jet</a><a href="#coverage-checks-and-the-remaining-comparison">6. Coverage, checks, and the remaining comparison</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

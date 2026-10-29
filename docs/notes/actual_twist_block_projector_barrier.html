@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A sharp projector barrier for the original repeated-crossing blocks · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_twist_block_projector_barrier.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-sharp-projector-barrier-for-the-original-repeated-crossing-blocks">A sharp projector barrier for the original repeated-crossing blocks</h1>
+<p>28 October 2026. The actual physical factorial frame gives a sharper uniform bound when its spectral-projector interval products are estimated together. Write v_3 for the regular ideal tetrahedron volume and v_8 for the regular ideal octahedron volume. There are absolute constants C,A such that, for every N&gt;=2 and every integer ell,</p>
+<pre><code>||B_N^ell||_op
+   &lt;= C N^A(1+|ell|) exp[N(2v_3+v_8)/pi].           (1)</code></pre>
+<p>B_N is the ORIGINAL complete crossing in the balanced physical metric, with its original unit Cartan and framing factors. The HS estimate costs one further factor N. No spectrum-only or semisimplicity assumption is used. The proof retains the actual nilpotent blocks by the meridian Cauchy argument in <a href="actual_twist_block_factorial_frame_bound.html">the factorial-frame theorem</a>.</p>
+<p>This improves that theorem’s volume constant 12v_3 to 4v_3+2v_8. It is a coarse bound for the whole original knot source at arbitrary braid width, not the desired sharp hyperbolic-volume estimate.</p>
+<h2 id="the-entire-projector-product-with-its-physical-domain">1. The entire projector product, with its physical domain</h2>
+<p>Keep the actual degree-T bidiagonal Casimir and interval-projector formula from Sections 3–5 of the factorial-frame theorem. Let integer indices 0&lt;=r&lt;=k&lt;=s&lt;N obey 0&lt;=T-s&lt;=T-r&lt;N. Its projector entry is</p>
+<pre><code>(E_k)_(r,s)=product_(l=r+1)^s b_l(M)
+             /product_(l=r,l!=k)^s(c_k(M^2)-c_l(M^2)).</code></pre>
+<p>Put J(u)=integral_0^u log(2sin(pi t))dt on [0,1], and extend J periodically. This is consistent because J(1)=0. In the following formula T,r,s,k denote the integer indices DIVIDED by N. The exact root-factorial identities give the leading projector exponent</p>
+<pre><code>p(T,r,s,k)=J(s)-J(r)+J(T-r)-J(T-s)
+           -J(k-r)-J(s-k)-J(k+s)+J(k+r).           (2)</code></pre>
+<p>The last two terms use the periodic extension. The physical domain is</p>
+<pre><code>0&lt;=r&lt;=k&lt;=s&lt;=1,  0&lt;=T-s&lt;=T-r&lt;=1.                  (3)</code></pre>
+<p>The numerator consists of two ordinary interval products. The first denominator is |F_(k-r)F_(s-k)|. The second is a circular root interval, with one factor omitted and at most one complete-meridian zero. Thus the endpoint-uniform factorial estimate gives (2) with error O(log N) after removing that possible zero. The +1 in k+l+1 shifts endpoints by 1/N; the logarithmic modulus of continuity of J bounds its effect by O(log N), uniformly even at the endpoints. This does not assume uniform separation from a root.</p>
+<p>On the specified circle</p>
+<pre><code>|M-1|=delta=1/[8N^3(1+|ell|)],</code></pre>
+<p>all noncolliding products change by a uniformly bounded factor, using the harmonic sum of their relative changes. The one possible zero costs at most C delta^(-1). The prefactors which are not exactly unit off the complete fiber have modulus exp(O(N delta)). Consequently</p>
+<pre><code>|(E_k)_(r,s)|
+   &lt;=C_0 N^A0(1+|ell|) exp[N p(T/N,r/N,s/N,k/N)].  (4)</code></pre>
+<p>Here the notation on the right restores integer indices. The constants are independent of the degree block and of the chosen spectral node.</p>
+<h2 id="exact-maximization-of-the-projector-exponent">2. Exact maximization of the projector exponent</h2>
+<p>Let G(u)=log|2sin(pi u)|, periodically extended. For 0&lt;=l&lt;=1, every interval of length l has its G-integral between</p>
+<pre><code>B(l)=2J(l/2),
+A(l)=J((1+l)/2)-J((1-l)/2)=-2J((1-l)/2).           (5)</code></pre>
+<p>Indeed G is symmetric and increases strictly with distance from its integer zero until that distance reaches 1/2. The minimum interval is centered at an integer and the maximum at a half-integer. Alternatively, differentiate J(t+l)-J(t): its regular stationary intervals have exactly these two centers. Moving through a singular endpoint gives the same ordering by continuity and monotonicity. The cases l=0,1 follow by limits.</p>
+<p>Set l=s-r. Both numerator differences in (2) are integrals over an interval of length l, so each is at most A(l). The last difference, J(k+s)-J(k+r), is at least B(l). The remaining split denominator obeys</p>
+<pre><code>J(k-r)+J(s-k)&gt;=2J(l/2).                           (6)</code></pre>
+<p>For 0&lt;l&lt;1 this follows directly from strict convexity:</p>
+<pre><code>d^2/dx^2 [J(x)+J(l-x)]
+   =pi sin(pi l)/[sin(pi x)sin(pi(l-x))]&gt;0.</code></pre>
+<p>Symmetry places the minimum at x=l/2; the endpoints follow by continuity. Combining (5)–(6) gives</p>
+<pre><code>p&lt;=2A(l)-4J(l/2)
+  =-4[J((1-l)/2)+J(l/2)]
+  &lt;=-8J(1/4)=v_8/pi.                              (7)</code></pre>
+<p>For the last inequality the two arguments have sum 1/2, and the same convexity calculation places their minimum at 1/4 each. Equality in ALL these inequalities holds at</p>
+<pre><code>T=1, r=1/4, s=3/4, k=1/2.</code></pre>
+<p>These values satisfy (3). Thus v_8/pi is the exact maximum of the specified projector profile, not an estimate obtained by separately maximizing its factorials. The identity -8J(1/4)=v_8/pi uses v_8=8 Lambda(pi/4) and J(u)=-Lambda(pi u)/pi.</p>
+<h2 id="restore-both-physical-frames-eigenvalues-and-the-complete-source">3. Restore both physical frames, eigenvalues and the complete source</h2>
+<p>The explicit physical fusion and its inverse each have norm exp[2 gamma_* N+O(log N)], where gamma_*=v_3/(2pi). Both are necessary. The spectral eigenvalue powers are bounded on the delta circle; the full original Cartan obeys</p>
+<pre><code>kappa(M)/kappa(1)
+   =M^(N-1) exp[(Log M)^2/(2Log q)],</code></pre>
+<p>whose ell-th power is bounded there too. Summing projectors costs only a polynomial. Equations (4)–(7) therefore bound the full matrix power on the circle by</p>
+<pre><code>C N^A(1+|ell|) exp[N(4gamma_*+v_8/pi)].</code></pre>
+<p>The original matrix power is holomorphic across M=1 for either sign of ell. Cauchy’s formula transfers this estimate to its center without another inverse delta. Since 4gamma_*+v_8/pi=(2v_3+v_8)/pi, this proves (1), including the complete nilpotent normal contribution.</p>
+<p>For a fixed b-strand braid closing to a knot, the original reduced cut is</p>
+<pre><code>K_N I=theta_N^(-w) Tr_env[W_N(I tensor g_N^(tensor(b-1)))],</code></pre>
+<p>where the retained complete pivot g_N is unitary and |theta_N|=1. Expanding that partial trace in an orthonormal environmental basis gives</p>
+<pre><code>|K_N|&lt;=N^(b-1)||W_N||_op.                          (8)</code></pre>
+<p>This is a norm bound for the actual complex pivotal trace, not a claim that it is positive. Partition the specified word into consecutive repeated-generator blocks with nonzero exponents ell_t. The matrices are coherently multiplied inside each block BEFORE estimating. From (1), (8), and the independently proved one-crossing exponent,</p>
+<pre><code>limsup_N (2pi/N)log|K_N|
+   &lt;=sum_t min(|ell_t|v_8, 4v_3+2v_8).             (9)</code></pre>
+<p>This applies to odd or even braid width and either sign of each block. It implies the corresponding full Fourier-energy upper bound by the audited polynomial ordinary-color remainder. The complete full-state modified-dimension factor is a specified root phase divided by N, so its exponential rate obeys the same estimate. None of those factors has been reset at an intermediate meridian.</p>
+<p>Every block of at least four crossings improves its separate-crossing bound, since 4v_3+2v_8&lt;4v_8. The block must be a repeated generator of the specified braid; arbitrary diagram twist regions would require a proved tangle conversion. Formula (9) has not been shown to be bounded by Vol(S^3 minus K). It proves neither the sharp upper bound nor geometric survival.</p>
+<h2 id="verification">4. Verification</h2>
+<p>The root agent independently checked the actual factorial-frame proof and replayed its 240 generic-meridian signed-degree comparisons. Two other agents independently verified (2)–(7), including the circular interval and endpoint shifts. The supplementary audit <code>experiments/audit_actual_twist_block_projector_barrier.py</code> checks the profile inequalities, exact factorial products after zero removal, physical endpoint domains and convergence at the maximizing profile. These checks supplement the uniform proof above.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_twist_block_projector_barrier.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-entire-projector-product-with-its-physical-domain">1. The entire projector product, with its physical domain</a><a href="#exact-maximization-of-the-projector-exponent">2. Exact maximization of the projector exponent</a><a href="#restore-both-physical-frames-eigenvalues-and-the-complete-source">3. Restore both physical frames, eigenvalues and the complete source</a><a href="#verification">4. Verification</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

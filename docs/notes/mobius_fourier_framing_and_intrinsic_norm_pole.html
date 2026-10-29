@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Fourier framing fiber is a projective line with one intrinsic pole · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/mobius_fourier_framing_and_intrinsic_norm_pole.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-fourier-framing-fiber-is-a-projective-line-with-one-intrinsic-pole">The Fourier framing fiber is a projective line with one intrinsic pole</h1>
+<p>Research proof, 27 October 2026. The new momentum coordinate has a simpler description than the quadratic position projection: on every regular fixed-cut fiber it is a Möbius coordinate. Its only pole in the framing density is fixed by the developed prefixes, independently of the cut position. This is an identity of rational functions before any quantum expansion. It also computes the exact cyclic norm of the principal density, with its exceptional factors retained.</p>
+<p>This calculation concerns the geometric framing density. Its finite root sampling is not asserted to be the Gaussian pushforward of the original finite source. The actual zero-source current in <a href="actual_fourier_source_cancellation.html">the Fourier source audit</a> explains why a nonzero local geometric block alone cannot establish that assertion.</p>
+<h2 id="the-rank-one-difference-removes-the-quadratic-shell">1. The rank-one difference removes the quadratic shell</h2>
+<p>Use the signed developed prefixes U,V of <a href="actual_fourier_polarized_geometric_normal_block.html">the actual Fourier polarization</a>, with det U=det V=1 and UV inverse the nontrivial TRACE-TWO meridian in that convention. Thus U-V has rank one. Choose a factorization</p>
+<pre><code>U-V=u v,   v=(a,b),   w=v V inverse=(c,d).</code></pre>
+<p>Here u is a column, v and w are rows, and w u=0. Rescaling u and v inversely has no effect on the formulas below. Keep the actual prefix sign sigma, equal to either +1 or -1.</p>
+<p>For F(r,s)=[[r,1-r],[s,-s]], s nonzero, write</p>
+<pre><code>V&#39;=F inverse V F,   ell_V=V&#39;_11,
+k=ell_U/ell_V,   C=U-kV,
+p=sigma (F inverse C F)_12/(k-1).</code></pre>
+<p>The last equation is the ACTUAL balanced second-edge momentum, not a definition of the independent finite Fourier-band variable. The principal stationary incidence is eta_F=p inverse, with the same scope as the actual Fourier theorem.</p>
+<p>On the regular open where these expressions are defined,</p>
+<pre><code>p=sigma [c(1-r)-ds]/[ar+bs],                         (1)
+r=[sigma(c-ds)-bsp]/[ap+sigma c].                    (2)</code></pre>
+<p>Here is a direct proof. The first row of F inverse(U-V)F is a scalar multiple of vF. Hence, denoting its first two entries by ell_D,beta_D,</p>
+<pre><code>beta_D/ell_D=(vF)_2/(vF)_1.</code></pre>
+<p>Since k-1=ell_D/ell_V,</p>
+<pre><code>p/sigma=(beta_D/ell_D)ell_V-(V&#39;)_12.</code></pre>
+<p>For a determinant-one matrix V’, its inverse gives</p>
+<pre><code>(vF)_2 ell_V-(vF)_1(V&#39;)_12=(v V inverse F)_2.</code></pre>
+<p>This is exactly (1), and solving (1) gives (2). The calculation uses the full prefix matrices and the original sign. It does not pass through a choice of square root of the position discriminant.</p>
+<p>Put</p>
+<pre><code>Delta(s)=sigma [s(ad-bc)-ac].</code></pre>
+<p>Then</p>
+<pre><code>partial_p r=Delta(s)/(ap+sigma c)^2.                  (3)</code></pre>
+<p>If Delta(s) is nonzero, (1)-(2) extend to mutually inverse maps of projective lines over the marked prefix field. The excluded values of s are explicit. The previously proved discrete-faithful argument ensures Delta(s) is not identically zero for an actual independent second position. No additional framing cover is needed.</p>
+<h2 id="the-pole-is-intrinsic-and-does-not-move-with-the-cut">2. The pole is intrinsic and does not move with the cut</h2>
+<p>Suppose a is nonzero. Define</p>
+<pre><code>lambda=-sigma c/a,   D(s)=Delta(s)/a^2.</code></pre>
+<p>Then r=infinity corresponds to p=lambda, and</p>
+<pre><code>dr=D(s) dp/(p-lambda)^2                            (4)</code></pre>
+<p>on a fixed-s fiber. In particular the pole lambda is independent of s. If a=0, nondegeneracy forces c nonzero and r is affine in p; the corresponding pole is p=infinity. If c=0 and a nonzero, it is p=0. These cases are retained, rather than divided away.</p>
+<p>There is also a coordinate-free prefix expression on a regular chart. Put K=UV inverse. If c_U-c_V is nonzero, then</p>
+<pre><code>lambda=-sigma c_K/(c_U-c_V),                         (5)</code></pre>
+<p>where c_W is the lower-left entry of W in the marked cut frame. Indeed c_U-c_V=u_2 a and c_K=u_2 c. The same ratio is a marked trace-word function, since for J=[[1,1],[0,1]],</p>
+<pre><code>c_W=Tr(JW)-Tr(W).</code></pre>
+<p>Consequently this pole belongs to the fixed marked character field; it is not a free additional framing parameter. Formula (5) is not used on its vanishing-denominator chart; (1)-(4) remain the defining expressions there.</p>
+<h2 id="the-actual-geometric-density-has-an-explicit-cyclic-norm">3. The actual geometric density has an explicit cyclic norm</h2>
+<p>Retain the established geometric two-form and cut clock</p>
+<pre><code>Omega_cut=-dr wedge ds/[s(1+s)],   A=1/(1+s).</code></pre>
+<p>Using (3) without discarding its orientation gives</p>
+<pre><code>Omega_cut= -Delta(s) p/[s(ap+sigma c)^2]
+                                  dlog A wedge dlog p. (6)</code></pre>
+<p>Thus in the finite-pole case its coefficient is</p>
+<pre><code>T_s(p)=G(s) p/(p-lambda)^2,
+G(s)=-Delta(s)/(s a^2).                              (7)</code></pre>
+<p>Let Q be a primitive N-th root, lambda^N different from one. The EXACT finite functional on this rational coefficient is</p>
+<pre><code>(1/N) sum_(j=0)^(N-1) T_s(Q^j)
+      =G(s) N lambda^(N-1)/(1-lambda^N)^2.             (8)</code></pre>
+<p>The original Fourier incidence samples p=Q^(-j), which has the same finite set of values and hence the same functional. Equation (8) is the logarithmic second derivative of</p>
+<pre><code>product_(j=0)^(N-1)(1-lambda Q^(-j))=1-lambda^N.</code></pre>
+<p>It is the SAME elementary cyclic-norm identity already proved in <a href="cyclic_framing_density_source.html">the two-position density calculation</a>, now on the birational Fourier fiber, with no quadratic field trace. The underlying differential (4) is exact, and its ordinary logarithmic residue vanishes. That does not make (8) zero.</p>
+<p>If lambda=0, (8) vanishes for N&gt;1. In the pole-at-infinity case the coefficient in (6) is a scalar multiple of p, whose average also vanishes for N&gt;1. For nonzero lambda off the unit circle, the limit of (1/N) log of the modulus in (8) is -abs(log abs(lambda)), provided G(s) is fixed and nonzero. Thus rationality and birationality alone do not provide a subexponential source estimate.</p>
+<p>Before root specialization the retained product is</p>
+<pre><code>P_N(Q,lambda)=product_(j=0)^(N-1)(1-lambda Q^(-j)).</code></pre>
+<p>Its logarithmic Q-normal derivative D_Q log P_N is the weighted sum sum_j j lambda Q^(-j)/(1-lambda Q^(-j)). One cannot replace P_N by 1-lambda^N before taking that derivative. The whole normal, the norm-zero fiber and any cancellation with another source factor must be kept. This is consistent with the explicit moving norm pole of <a href="actual_negative_band_boundary_moment_and_ward_atom.html">the original factorial atom</a>.</p>
+<h2 id="an-actual-figure-eight-prefix-and-the-scope-of-the-theorem">4. An actual figure-eight prefix and the scope of the theorem</h2>
+<p>For the actual third prefix used in the polarization audit, u^2+u+1=0 and</p>
+<pre><code>V=[[1,1],[-u,1-u]],
+U=[[u+1,2u+1],[1-u,3-u]],   sigma=-1.</code></pre>
+<p>One can take u_column=(u,1), v=(1,2), w=(1+u,1). Equations (1)-(3) become</p>
+<pre><code>p=[s-(1+u)(1-r)]/[r+2s],
+r=[s-(1+u)-2sp]/[p-(1+u)],
+partial_p r=[(1+u)+(1+2u)s]/[p-(1+u)]^2.              (9)</code></pre>
+<p>The intrinsic pole is lambda=1+u=-u^2, of order six at either geometric embedding. It is independent of the good cut phase. For N divisible by six, principal-density sampling in (8) is undefined. The original finite tensor and its source are regular. Therefore simply sampling this principal density cannot be their whole source formula. A genuine comparison must explain this pole using the actual finite coefficients, walls and co-source.</p>
+<p>The projective-line description (1)-(4), the intrinsic pole (5), and the finite norm (8) are general prefix identities. They simplify the geometric fiber and locate its escaping boundary. They do not construct its quantum completion, show that the original last cyclic sum has a nonzero geometric coefficient, or prove the volume conjecture.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_mobius_fourier_framing.py">The exact audit</a> checks these formulas against raw conjugated matrices, including both prefix signs, finite and infinite poles, the figure-eight number field and independent companion-matrix cyclic traces. The <a href="mobius_and_flat_source_frame_independent_audit.html">independent proof audit</a> also verifies the orientation, intrinsic pole, exceptional-fiber agreement and the distinction between the two normal divisors.</p>
+<p>The subsequent <a href="universal_resonant_cut_and_actual_source.html">universal actual-cut theorem</a> shows that the prefix-dependent pole can be normalized to p=1 by a genuine braid/inverse insertion and a first-slot physical cut, while preserving the original period and a regular geometric chart. This does not make principal sampling legitimate: the new density is resonant at every level. The full quantum source must be transported, including that escaping boundary layer.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/mobius_fourier_framing_and_intrinsic_norm_pole.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-rank-one-difference-removes-the-quadratic-shell">1. The rank-one difference removes the quadratic shell</a><a href="#the-pole-is-intrinsic-and-does-not-move-with-the-cut">2. The pole is intrinsic and does not move with the cut</a><a href="#the-actual-geometric-density-has-an-explicit-cyclic-norm">3. The actual geometric density has an explicit cyclic norm</a><a href="#an-actual-figure-eight-prefix-and-the-scope-of-the-theorem">4. An actual figure-eight prefix and the scope of the theorem</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

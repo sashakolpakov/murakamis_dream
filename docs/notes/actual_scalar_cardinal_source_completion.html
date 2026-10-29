@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A pole-free scalar cardinal completion of the original joint source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_scalar_cardinal_source_completion.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-pole-free-scalar-cardinal-completion-of-the-original-joint-source">A pole-free scalar cardinal completion of the original joint source</h1>
+<p>28 October 2026. Fixed powers of explicit cardinal windows remove every factorial pole in a prescribed O(N) joint-state box, while leaving ALL original integer physical state values unchanged and killing every invalid integer state. This keeps the unwrapped linear output and closure relations. It is a scalar completion of the ORIGINAL finite source, not a new positive invariant or a replacement boundary state.</p>
+<p>The windows are not innocuous on general complex contours. Their wrong-side exponential growth and exact finite integer-mode packets are calculated below. Their separated mode currents must remain at outside-band integer collisions. No global volume bound is inferred.</p>
+<h2 id="exact-cardinal-functions-and-quantitative-half-plane-bounds">1. Exact cardinal functions and quantitative half-plane bounds</h2>
+<p>Put d=N-1 and</p>
+<pre><code>S_N(s)=sum_(j=0)^d 1/(s-j),
+w_N^+(s)=(exp(2pi*i*s)-1)S_N(s)/(2pi*i),
+w_N^-(s)=exp(-2pi*i*s)w_N^+(s).                    (1)</code></pre>
+<p>Both functions are entire. Their values are EXACTLY one at each integer 0,…,d, and zero at every integer outside that range. The outside zeros are simple: S_N(n) is a sum of strictly positive terms if n&gt;=N, and strictly negative terms if n&lt;0, so is nonzero.</p>
+<p>These are sums of the literal unit-circle Fourier coefficients in <a href="actual_projected_transfer_cot_completion.html">the physical projection theorem</a>. Orthogonality and Cauchy–Schwarz therefore give, on the WHOLE plane,</p>
+<pre><code>|w_N^+(s)|&lt;=sqrt(N) exp(2pi max(0,-Im s)),
+|w_N^-(s)|&lt;=sqrt(N) exp(2pi max(0,+Im s)).            (2)</code></pre>
+<p>The normalizations dtheta/(2pi) and the complete turn 0&lt;=theta&lt;=2pi are retained. Thus a fixed number of fixed window powers costs exp(o(N)) on any joint tube |Im s|&lt;=N^alpha, alpha&lt;1, and polynomial cost on its favorable half-plane. It may cost exp(cN) on the wrong side of a macroscopic complex contour.</p>
+<p>There are also N-1 additional real, noninteger zeros, one in each (j,j+1). Indeed S_N’(x)=-sum_r1/(x-r)^2&lt;0 there and its endpoint limits are +infinity and -infinity. There are no nonreal zeros of S_N, since Im S_N(s)=-Im s sum_j|s-j|^(-2). These zeros are kept; one cannot replace the window by a nowhere-zero scalar unit.</p>
+<h2 id="an-exact-finite-mode-formula-with-its-endpoint-currents">2. An exact finite-mode formula, with its endpoint currents</h2>
+<p>Let psi be the ordinary digamma and define</p>
+<pre><code>H_N(s)=psi(s+1)-psi(N-s),
+A_N(s)=1/2-H_N(s)/(2pi*i),
+B_N(s)=1/2+H_N(s)/(2pi*i), t=exp(2pi*i*s).</code></pre>
+<p>The digamma recurrence and reflection, equivalently the convergent partial fractions of pi cot(pi s), give exactly</p>
+<pre><code>S_N(s)=pi cot(pi s)+H_N(s),
+w_N^+(s)=A_N(s)+B_N(s)t,
+w_N^-(s)=B_N(s)+A_N(s)t^(-1).                      (3)</code></pre>
+<p>Thus any fixed integer power has a finite, explicit binomial packet of INTEGER Fourier modes. No limit is used in (3). On the physical strip -1&lt;Re s&lt;N the coefficients A_N,B_N are holomorphic. In a scaled compact substrip, their asymptotics and derivative bounds are those of the elementary uniform digamma expansion; for example</p>
+<pre><code>H_N(Nz)=Log(z)-Log(1-z)+O(1/N), 0&lt;Re z&lt;1.          (4)</code></pre>
+<p>The logarithms in (4) are the consistent ones in this simply connected strip. On nonreal compact scaled chambers the finite packets therefore add only integer linear logarithmic marks to the original leading phase.</p>
+<p>This decomposition is NOT a license to discard its endpoint currents. At s=-r&lt;0, H_N has residue -1; at s=N+r, H_N also has residue -1 in the s coordinate. In either case A_N and B_N have opposite simple polar parts. In their COMPLETE combination (3) these parts cancel; the derivative of t supplies the finite correction which makes the window zero rather than one at that integer. Higher powers cancel their complete principal parts and finite jets as well. Splitting the modes and crossing those poles independently loses that source cancellation.</p>
+<p>For the macroscopic off-real symbol one may use</p>
+<pre><code>S_N(Nz)=integral_0^1 du/(z-u)+O(1/N).</code></pre>
+<p>The integral is nonzero off [0,1]. On Im z&gt;0, w^+ has no exponential factor; on Im z&lt;0 its leading factor is exp(2pi<em>i</em>Nz). For w^- the roles reverse, with factor exp(-2pi<em>i</em>Nz) on Im z&gt;0. Thus (2)’s wrong-side growth is a REAL leading effect, precisely an integer mark, not a tame multiplier that may be erased.</p>
+<p>There is a useful precise local choice. On any compact scaled chamber K disjoint from the real axis, the uniform digamma expansion gives</p>
+<pre><code>H_N(Nz)=h(z)+O_K(1/N),
+h(z)=Log z-Log(1-z).</code></pre>
+<p>Use w^+ when Im z&gt;0 and w^- when Im z&lt;0. Uniformly with every fixed number of z derivatives, that FAVORABLE window is respectively</p>
+<pre><code>1/2-h(z)/(2pi*i)+O_K(1/N),
+1/2+h(z)/(2pi*i)+O_K(1/N).                    (4a)</code></pre>
+<p>Both limiting functions are nonzero: a zero would require h(z)=+pi<em>i or -pi</em>i, hence exp(h)=z/(1-z)=-1, an impossibility. Compactness therefore gives fixed positive upper and lower bounds for the favorable window on K, for all sufficiently large N. The discarded exponential in deriving (4a) is only an ESTIMATE inside that specified chamber; the exact packet (3) is still used for transport.</p>
+<p>Consequently, at any supplied regular joint critical point where all physical forms ell/N are nonreal, choose each window orientation favorably there. The completed scalar has the SAME leading phase and a nonzero bounded local amplitude multiplier. This is an exact completion with a controlled microlocal symbol, not an assertion that the original cycle reaches that point. When some forms are real, one must keep both modes and their real zeros; (4a) supplies no such local ellipticity there.</p>
+<h2 id="fixed-powers-cancel-all-factorial-poles-in-a-fixed-joint-box">3. Fixed powers cancel ALL factorial poles in a fixed joint box</h2>
+<p>The actual factorial interpolant has the exact integer divisor</p>
+<pre><code>ord_(s=n) Fhat_N(s)=floor(n/N), n integer.          (5)</code></pre>
+<p>It has no noninteger zero or pole. For n&gt;=0 the zeros come from the denominator Gamma(Nk-s) of its defining product, one for each Nk&lt;=n. For n&lt;0 its numerator Gamma(s+1) and Gamma(Nk+s+1) give 1+floor((-n-1)/N)=-floor(n/N) poles. This also follows from its exact N-shift, with the original strip nonzero. The conjugate negative-root factorial has the SAME divisor.</p>
+<p>Suppose a physical linear state form ell takes values with |Re ell|&lt;=Lambda N in the chosen complex box. For either exponent epsilon=+1 or -1 and either window orientation eta, choose a fixed integer p&gt;Lambda+1. Then</p>
+<pre><code>G_(epsilon,eta)(ell)
+   =Fhat_(+ or -)(ell)^epsilon *w_N^eta(ell)^p       (6)</code></pre>
+<p>is holomorphic on that box and vanishes at EVERY outside-band integer ell. At a physical integer it is exactly the original factorial or its inverse. Indeed its divisor there is p+epsilon floor(n/N)&gt;=1 outside the band. The half-open endpoints are exactly 0,…,N-1; there is no division by F_N or a substituted value at a pole.</p>
+<p>Use (6) for EACH factorial occurrence of the original coefficient. Add an entire cardinal factor for any physical head/transfer form not already present. This proves holomorphy also at dependent or simultaneous collisions: each individual meromorphic factor has already been canceled, so no appeal to a generic transverse intersection or an unproved saturation quotient is needed.</p>
+<p>The original positive coefficient has factorial forms</p>
+<pre><code>input a,b; transfer k; outputs c=b+k, e=a-k,
+Fhat(c)Fhat(a)/[Fhat(k)Fhat(b)Fhat(e)].             (7)</code></pre>
+<p>The negative coefficient is its actual mirror. Thus every physical input, output and transfer is one of the forms in (7). All Cartan Gaussians, kappa, pivot and external source factors stay unchanged. Formula (6) only changes the off-lattice analytic completion.</p>
+<h2 id="exact-whole-original-scalar-with-unwrapped-gluing-preserved">4. Exact whole original scalar with unwrapped gluing preserved</h2>
+<p>Start with the original COMPLETE balanced-basis scalar, after the justified whole-word marked trace conversion,</p>
+<pre><code>K_N=chi_N/N Tr[(I tensor g tensor ... tensor g)W_N]. (8)</code></pre>
+<p>Let v consist of the b initial physical head labels and the m nonnegative physical transfer indices. At each signed crossing the exact update is</p>
+<pre><code>(a,b)-&gt;(b+sigma*k,a-sigma*k).</code></pre>
+<p>Every intermediate physical head label is an INTEGER LINEAR form in v. The ordinary trace closure is the EXACT integer linear equation Lv=0, not equality modulo N. A fixed integral basis B of ker_Z L gives a bijection v=B u from Z^r to all integer closed paths. It is obtained by integer row and column operations on the fixed diagram matrix; no quantum-level or source normalization factor occurs.</p>
+<p>Every physical closed path has all initial/transfer coordinates in [0,d], so a fixed rational left inverse of B bounds |u|&lt;=C N. Choose an integer coordinate box containing them. All physical forms ell(Bu) then satisfy |Re ell|&lt;=Lambda N on a slightly enlarged fixed O(N) complex box, with Lambda depending only on the diagram and box. Use the window powers in Section 3 on its actual scalar summand, calling the resulting holomorphic function F_N(u).</p>
+<p>At EVERY valid integer state F_N has its EXACT original value. At EVERY invalid integer state at least one physical form lies outside 0,…,d, and its completed factor is zero; all other completed factors are holomorphic. Hence it contributes zero even when the unwindowed formula had simultaneous poles. Therefore, exactly,</p>
+<pre><code>K_N=chi_N/N sum_(u in integer box) F_N(u).          (9)</code></pre>
+<p>The same sum is its product cotangent residue contour. Any additional integer states crossed while enlarging it inside the specified box have zero residue unless they are original physical states. All intersections are ordinary multivariate residues of a HOLomorphic scalar summand, so no derivative residue is silently omitted. This is a genuine complete-source comparison for arbitrary fixed braid width, preserving unwrapped routing and all marked scalar factors.</p>
+<h3 id="explicit-knot-coordinates-dimension-and-forced-cut-faces">Explicit knot coordinates, dimension and forced-cut faces</h3>
+<p>For a ONE-component closure the lattice above has the particularly simple explicit coordinates</p>
+<pre><code>u=(t,k_1,...,k_m), dimension m+1.                  (9a)</code></pre>
+<p>Start at the distinguished cut with color t and follow the oriented physical knot once. At the two visits to crossing j, the strand color changes respectively by +sigma_j k_j and -sigma_j k_j. Hence every physical arc color is exactly</p>
+<pre><code>ell_r=t+sum_j epsilon_(r,j) k_j,
+epsilon_(r,j) in {0,1,-1}.                       (9b)</code></pre>
+<p>Each k occurs with both signs on the complete traversal, so the final color is t for EVERY integer transfer vector. Conversely any original closed path has one t and its unique transfers, and this traversal recovers all its colors. This is an integer bijection with counting Jacobian ONE, not a modulo-N or rational parametrization. Equivalently the one-cycle closure permutation has rank b-1 after subtracting the identity, so its m+b variables have kernel dimension m+1.</p>
+<p>The exact original state polytope is</p>
+<pre><code>0&lt;=k_j&lt;=d, 0&lt;=ell_r(t,k)&lt;=d for every physical arc. (9c)</code></pre>
+<p>The summand in these coordinates is the product of the original signed r(a_j,b_j;k_j), every original ordinary-head pivot evaluated on its closure arc, and chi_N/N. Thus the construction is concrete for arbitrary braid width and involves no unknown knot scalar. The cube 0&lt;=t,k_j&lt;=d contains all states; (6) analytically kills the invalid intermediate colors inside that cube. A larger fixed O(N) complex box is chosen only for contour transport and pole accounting.</p>
+<p>Its STRICT real interior is nonempty for every nonempty one-component diagram: set t=d/2 and all k_j=delta d, with 0&lt;delta&lt;1/(4(m+1)). Formula (9b) puts every arc in (d/4,3d/4), and each transfer is strictly between zero and d. There is no assumption that a quantum coefficient has no cancellations at that point; this is an exact source-domain assertion.</p>
+<p>A fixed highest-cut t=0 presentation is different and can force k_j=0 or other boundary equalities. It must then be treated on its actual affine face, with the corresponding constant factorials kept; one cannot impose a missing normal stationary equation or pretend that face has a full strict interior. The construction used here instead makes the justified WHOLE original marked-trace conversion to I/N BEFORE decomposing paths, yielding the original average over t. It does not replace a cut separately in any clock sector or inserted current. Thus the strict interior in (9c) is obtained without changing the original selected scalar or discarding its fixed-cut boundary mechanism. Links may retain the general lattice formulation above.</p>
+<p>For a completely explicit contour, take each t,k_j on a rectangle with real edges -1/2 and N-1/2 and any fixed nonzero imaginary height. Its product encloses exactly the integer cube 0,…,d in these m+1 coordinates. Since the coefficients in (9b) are 0,+1,-1, every arc form on that contour has |Re ell|&lt;=(m+1)N. Thus, for example, the fixed choice p=m+4 at EACH factorial occurrence suffices there. For a larger box |Re(t,k_j)|&lt;=C N, choose p&gt;C(m+1)+2 instead. The exact integral is (9)’s original chi_N/N times</p>
+<pre><code>(2pi*i)^(-(m+1)) integral F_N(u)
+              product_j [pi cot(pi*u_j) du_j].     (9d)</code></pre>
+<p>There is no geometric Jacobian or root-grid multiplicity in (9d).</p>
+<h3 id="explicit-original-action-at-complete-color">Explicit original action at complete color</h3>
+<p>For clarity the leading action in Section 5 can be read directly from the retained ORIGINAL coefficients, not an unspecified operator. Let x=-q^(-1), Q=q^2=exp(2pi<em>i/N), and use the continuous choice Log x=i</em>pi-i*pi/N. The two exact signed coefficients are</p>
+<pre><code>r_+(a,b;k)=kappa x^(-a-b+k) Q^(b(a-k))
+   Fhat_+(b+k)Fhat_+(a)
+     /[Fhat_+(k)Fhat_+(b)Fhat_+(a-k)],
+r_-(a,b;k)=kappa^(-1) x^(a+b-k) Q^(-a(b-k))
+   Fhat_-(a+k)Fhat_-(b)
+     /[Fhat_-(k)Fhat_-(a)Fhat_-(b-k)].              (9e)</code></pre>
+<p>Here Fhat_-(z)=conjugate(Fhat_+(conjugate(z))). The second formula is the actual complete-color swap/conjugation relation, including the unit Cartan scalar; it is not a replacement R matrix. All its physical inputs and outputs are the unwrapped forms in (9b).</p>
+<p>On a regular marked chamber put</p>
+<pre><code>L_+(s)=integral_0^s Log(1-exp(2pi*i*v)) dv,
+L_-(s)=integral_0^s Log(1-exp(-2pi*i*v)) dv.</code></pre>
+<p>The branches are the actual factorial branches continued from 0&lt;s&lt;1. For instance L_+(s)=[Li2(1)-Li2(exp(2pi<em>i</em>s))]/(2pi*i) on that marked continuation. With A=a/N, B=b/N and K=k/N, the state-dependent leading actions in (9e) are explicitly</p>
+<pre><code>s_+=i*pi*(-A-B+K)+2pi*i*B*(A-K)
+       +L_+(B+K)+L_+(A)-L_+(K)-L_+(B)-L_+(A-K),
+s_-=i*pi*(A+B-K)-2pi*i*A*(B-K)
+       +L_-(A+K)+L_-(B)-L_-(K)-L_-(A)-L_-(B-K).  (9f)</code></pre>
+<p>Thus S_0 is the sum of (9f), with every A,B,K replaced by its ACTUAL source linear form in y=(t,k)/N. The exact kappa factors, the original external chi_N, and x^(1-N) factors in the pivots remain in (9d); their state-independent phase is not discarded. The pivot’s remaining Q^(-a)=exp(-2pi<em>i</em>A) and the O(1) correction from Log x are explicit amplitudes, not additional N-order state actions. The usual uniform factorial symbol is applied only on regular compact marked chambers, never across a factorial zero by assertion. Equation (9f) therefore gives the actual complete bulk stationary problem in the m+1 physical coordinates.</p>
+<h2 id="leading-equations-and-the-still-necessary-global-estimate">5. Leading equations and the still necessary global estimate</h2>
+<p>Write y=u/N, and suppose a regular open chamber admits the original leading scalar action N S_0(y). Expand each power by the EXACT finite mode formula (3), retaining its coefficients and all matched endpoint currents. A mode indexed by integers n_ell has leading action</p>
+<pre><code>N[S_0(y)+2pi*i sum_ell n_ell ell(B y)].              (10)</code></pre>
+<p>Its full stationary equations are</p>
+<pre><code>partial_(y_j) S_0+2pi*i sum_ell n_ell
+                     partial_(y_j)ell(B y)=0.       (11)</code></pre>
+<p>All added numbers are integers. Exponentiating (11) gives the SAME original classical gluing equations. At a regular FULL stationary point its retained integer marks are included by the already proved phase/regulator identity. It is not an identification of a selected geometric cycle from nonzero density alone.</p>
+<p>Equations (10)–(11) have only been asserted on regular leading chambers with the appropriate slow symbol control. Across a real window layer one must retain its whole finite-mode packet, and at outside-band integers the matched currents in Section 2. The function F_N is holomorphic there, but its separated mode terms may have poles. Nor does holomorphy bound the original factorial action or a global transport mass. The window bound (2) is subexponential on normal tubes, but a macroscopic wrong-side contour changes the leading integer-marked action and must be calibrated as such. These facts are retained, rather than claiming the windows are harmless weights.</p>
+<p>The construction removes scalar factorial POLE exits in a fixed box without imposing a new invariant or changing discrete gluing. It does not yet supply the full high-action deformation, a sharp bulk bound, or geometric noncancellation of the original knot state.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_scalar_cardinal_source_completion.py">Audit</a>: exact window values and finite packets, factorial divisor cancellation, half-plane growth, both literal signed coefficients and original full signed-source lattice comparisons. A fresh run passes 288 finite-mode packets, 96 whole-plane bound checks, 108 Barnes divisor packages, 670 exact original signed coefficient checks, and eight complete-source lattice comparisons on braid widths two through four. These finite checks supplement the proofs above; they are not all-level proofs or tests of a volume claim.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_scalar_cardinal_source_completion.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-cardinal-functions-and-quantitative-half-plane-bounds">1. Exact cardinal functions and quantitative half-plane bounds</a><a href="#an-exact-finite-mode-formula-with-its-endpoint-currents">2. An exact finite-mode formula, with its endpoint currents</a><a href="#fixed-powers-cancel-all-factorial-poles-in-a-fixed-joint-box">3. Fixed powers cancel ALL factorial poles in a fixed joint box</a><a href="#exact-whole-original-scalar-with-unwrapped-gluing-preserved">4. Exact whole original scalar with unwrapped gluing preserved</a><a href="#leading-equations-and-the-still-necessary-global-estimate">5. Leading equations and the still necessary global estimate</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

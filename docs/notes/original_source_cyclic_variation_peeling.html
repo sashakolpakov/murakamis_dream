@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exact cyclic variation and peeling the original Kashaev cut · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/original_source_cyclic_variation_peeling.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="exact-cyclic-variation-and-peeling-the-original-kashaev-cut">Exact cyclic variation and peeling the original Kashaev cut</h1>
+<p>Research note, 28 October 2026. This is an exact support theorem for the original enhanced crossing in <a href="kashaev_crossing_and_period_lattice.html">the independently derived crossing convention</a>. It uses neither a Fourier gauge nor an asymptotic estimate. It applies to every braid position word and every assignment of crossing signs.</p>
+<h2 id="the-local-cyclic-interval">1. The local cyclic interval</h2>
+<p>Write Q=exp(2<em>pi</em>i/N), q=exp(pi*i/N), and [x] for the representative in {0,…,N-1}. For a checked crossing with input (a,b) and output (c,d), put</p>
+<pre><code>u=[b-a-1], v=[a-c], t=[c-d], h=[d-b].</code></pre>
+<p>For either crossing sign the support condition is exactly</p>
+<pre><code>u+v+t+h=N-1,          [a-b]=v+t+h.                  (1)</code></pre>
+<p>Thus, after lifting b to an integer, the output is in the cyclic interval</p>
+<pre><code>b &lt;= d_lift &lt;= c_lift &lt;= a_lift=b+[a-b].           (2)</code></pre>
+<p>This follows directly from the original four-index weight and the actual inverse, including its Q^(-1) normalization. Negative crossings permute the four factorial indices, so they have the same support.</p>
+<p>Given colors x=(x_1,…,x_b) and fixed sentinels L,R, define the integer cyclic variation</p>
+<pre><code>V_(L,R)(x)=[L-x_1]+sum_(i=1)^(b-1)[x_i-x_(i+1)]
+                                       +[x_b-R]. (3)</code></pre>
+<p>Every supported adjacent crossing makes V nonincreasing. Indeed, with neighboring colors p,s, its three affected summands satisfy</p>
+<pre><code>[p-c] &lt;= [p-a]+v,       [d-s] &lt;= h+[b-s],
+[c-d]=t,               v+t+h=[a-b].               (4)</code></pre>
+<p>The inequalities are the elementary triangle inequality for nonnegative cyclic distance. Their defects are nonnegative multiples of N.</p>
+<h2 id="the-actual-source-forces-a-face-at-every-cut-crossing">2. The actual source forces a face at every cut crossing</h2>
+<p>The original enhancement is mu=-q S, where S e_j=e_(j+1 mod N). Fix the first cut color to zero. Each summation path in the actual weighted partial trace runs from</p>
+<pre><code>x_in =(0,[A_2+1],...,[A_b+1])
+x_out=(0,A_2,...,A_b).                             (5)</code></pre>
+<p>This is a statement about an individual nonzero path, before summing coefficients. Choose L=0 and R=[A_b+1]. The interior tail distances in (3) agree at the two endpoints. Direct subtraction gives</p>
+<pre><code>V(x_in)-V(x_out) = 0   if A_2=0,
+                      -N  otherwise.             (6)</code></pre>
+<p>Monotonicity therefore forces A_2=0, and V must be constant throughout the path. Both inequalities in (4) are consequently equalities at every crossing.</p>
+<p>At any crossing in position 1, its left neighbor is the sentinel 0, so</p>
+<pre><code>[0-c]=[0-a]+v.                                    (7)</code></pre>
+<p>Only these crossings change x_1. Telescoping (7) from x_1=0 back to x_1=0 shows that the sum of their nonnegative v’s is zero. Therefore</p>
+<pre><code>x_1=0 at EVERY stage; every position-1 crossing has v=0. (8)</code></pre>
+<p>In particular, no original source path can lie in a chamber with all four crossing angles positive at every vertex. Formal strict concavity on such a chamber is not an assertion that the original source occupies that chamber.</p>
+<p>Before the first position-1 crossing, only position-2 crossings can change x_2. Their left equality in (4) makes [0-x_2] nondecreasing. It starts at N-1, because A_2=0. Hence x_2 stays 1 until the first position-1 crossing. After the last position-1 crossing the same quantity ends at zero, so x_2 is already zero and remains zero. Consequently:</p>
+<pre><code>first position-1 crossing: u=v=0;
+last  position-1 crossing: v=t=0.                 (9)</code></pre>
+<p>If there is only one such crossing, both statements hold. If there are none, the original source has no supported paths. These statements remain valid for links; no scalar-endomorphism assertion is required.</p>
+<p>The original absolute crossing weight is N/|F_u F_v F_t F_h|, with F_j=product_(r=1)<sup>j(1-Q</sup>r). The reflection |F_j F_(N-1-j)|=N shows that BOTH end crossings in (9) have absolute weight exactly one. Every other cut crossing is on the tetrahedral three-corner face v=0. This is an actual source-support reduction.</p>
+<h2 id="exact-q-pascal-boundary-operators">3. Exact q-Pascal boundary operators</h2>
+<p>Set</p>
+<pre><code>T^sigma_(k,j)=(B_sigma)_(0,k ; 0,j).</code></pre>
+<p>All indices below lie in {0,…,N-1}. Directly from the original crossing formula,</p>
+<pre><code>T+_(0,j)=Q^(1-j),        T+_(k,0)=0 for k&gt;0,
+
+T+_(k,j)=(-1)^(j-1) Q^[k+(j-1)(j-2)/2]
+                     {k-1 choose j-1}_Q,
+                     1&lt;=j&lt;=k&lt;=N-1,               (10)</code></pre>
+<p>and all remaining entries vanish. The actual inverse crossing gives</p>
+<pre><code>T-_(k,j)=Q^(k-j) conjugate(T+_(k,j)).              (11)</code></pre>
+<p>Thus T-_(0,j)=Q^(-1), and, for 1&lt;=j&lt;=k&lt;=N-1,</p>
+<pre><code>T-_(k,j)=(-1)^(j-1) Q^[-j-(j-1)(j-2)/2]
+                     {k-1 choose j-1}_(Q^-1).    (12)</code></pre>
+<p>For example, (10) follows by replacing N/F_(N-k) with bar_F_(k-1) and bar_F_r with (-1)^r Q<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>F_r. The wrap row k=0 is kept; it is not an optional endpoint correction.</p>
+<p>In fact T-=(T+)^(-1). To prove this without compressing an inverse by fiat, let P be the positive-index block of T+, indexed r,i=0,…,N-2:</p>
+<pre><code>P_(r,i)=Q^(r+1)(-1)^i Q^[i(i-1)/2]{r choose i}_Q.</code></pre>
+<p>The finite q-binomial theorem gives the inverse q-Pascal matrix</p>
+<pre><code>({r choose i}_Q)^(-1)
+   =(-1)^(r-i)Q^[(r-i)(r-i-1)/2]{r choose i}_Q.</code></pre>
+<p>The resulting inverse of P is exactly (12). For the wrap row, the finite q-hockey-stick identity and the root specialization imply</p>
+<pre><code>sum_(r=i)^(N-2) P_(r,i)=-Q^(-i).</code></pre>
+<p>This gives the constant wrap row Q^(-1) in the inverse of T+. The formula is valid at every N&gt;=2, without a prime-level assumption.</p>
+<h2 id="the-full-original-scalar-after-peeling">4. The full original scalar after peeling</h2>
+<p>Let W be the braid word in its actual operator order, let w be its writhe, and let alpha=-q. Construct a word W_peel on b-1 heads by replacing every position-1 crossing by T+ or T-, and every crossing in position i&gt;=2 by the same original B+ or B- in position i-1. No sign, ordering, Cartan scalar, or framing factor changes.</p>
+<p>For b&gt;=2 the exact fixed-cut scalar is</p>
+<pre><code>K_N(W)=(-q) alpha^(-w)
+  [ Tr_(heads 3,...,b)
+      ( W_peel (I tensor mu^(tensor(b-2))) ) ]_(0,1). (13)</code></pre>
+<p>The trace in (13) is over the remaining heads except its first one. For b=2 this is just (-q)alpha^(-w)(W_peel)_(0,1). The outside factor -q is the retained pivotal coefficient on the removed ordinary trace of original head 2. The original writhe w is unchanged, including crossings replaced by T.</p>
+<p>Proof: expand the original weighted partial trace into paths. Section 2 forces every first-head label to zero and A_2=0. Restrict each crossing coefficient accordingly and perform the remaining sums. This gives (13) term by term, before using cancellation. It is stronger than a formal compression identity for arbitrary sources.</p>
+<p>The first-strand shell is therefore removed uniformly for every original braid. This differs from <a href="arbitrary_bridge_source_reduction.html">the classical arbitrary-bridge deformation reduction</a>: (13) is an identity of the actual finite quantum scalar. Iterating it without preserving the new T boundary operators is not justified. The remaining T/B word is complex, and this theorem supplies no geometric saddle coefficient or volume lower bound.</p>
+<h2 id="reproducible-checks">5. Reproducible checks</h2>
+<p><code>experiments/audit_original_source_cyclic_variation_peeling.py</code> checks the original matrices and their actual inverses over cyclotomic prime fields, both q-Pascal formulas and their product, every supported local cyclic-variation inequality at small levels, full original signed-word scalars against (13), and the forced faces path by path. The same-position trefoil and figure-eight words have identical support and absolute local weights, while their actual selected scalars differ. The source reduction therefore does not remove the need to control the original phases.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>-r(r+1)/2<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/original_source_cyclic_variation_peeling.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-local-cyclic-interval">1. The local cyclic interval</a><a href="#the-actual-source-forces-a-face-at-every-cut-crossing">2. The actual source forces a face at every cut crossing</a><a href="#exact-q-pascal-boundary-operators">3. Exact q-Pascal boundary operators</a><a href="#the-full-original-scalar-after-peeling">4. The full original scalar after peeling</a><a href="#reproducible-checks">5. Reproducible checks</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Adaptive Fermat sampling preserves the entire original crossing source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_adaptive_fermat_root_orbit_source.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="adaptive-fermat-sampling-preserves-the-entire-original-crossing-source">Adaptive Fermat sampling preserves the entire original crossing source</h1>
+<p>28 October 2026. The internal root-orbit source may be placed on its exact Fourier resonance without changing the ORIGINAL finite crossing operator. Its sampling point is allowed to depend on the input/output heads. The old degree-zero restriction is replaced by two explicit physical source walls. This is not an unsupported central base change or a modification of one homogeneous summand.</p>
+<p>The resulting source-flat family has a first-normal-jet reconstruction at resonance, with jet order independent of N. It fixes the whole finite state, including its currents. It does not prove a global geometric coefficient is nonzero.</p>
+<h2 id="complete-laurent-kernel-and-its-only-alias">1. Complete Laurent kernel and its only alias</h2>
+<p>Put Q=exp(2<em>pi</em>i/N), d=N-1, retain the actual color x and scalar kappa, and use the COMPLETE positive crossing polynomial</p>
+<pre><code>K(t)=B_N(t/z_1,x^(-1)t/z_0)
+     R_N(z_6/z_0,x^(-1)z_6/t)
+     B_N(x^(-1)z_7/z_6,x^(-2)z_7/t).              (1)</code></pre>
+<p>The physical crossing is its ORIGINAL finite input/output block, with kappa retained. This is the proved Gaussian-absorbed complete kernel; no original Gaussian was deleted from a separated sector.</p>
+<p>Expand the three factors with indices (i,j),(r,k),(h,l), respectively, each nonnegative pair having sum&lt;N. One term has</p>
+<pre><code>input demands a=j+r, b=i,
+output degrees c=r+k-h, e=h+l,
+t exponent p=i+j-k-l,
+c+e-a-b=-p.                                      (2)</code></pre>
+<p>In particular input powers are nonpositive, second-output degree is at most d, both output degrees are at most d, and -2d&lt;=p&lt;=d. For any nonzero sampling root t_0,</p>
+<pre><code>(1/N)sum_(j=0)^d K(t_0 Q^j)
+           =CT_t K+t_0^(-N)[t^(-N)]K.             (3)</code></pre>
+<p>There is exactly one possible alias. This identity is an equality of the COMPLETE finite Laurent kernel before any source split.</p>
+<h2 id="a-source-flat-adaptive-family-including-exact-resonance">2. A source-flat adaptive family, including exact resonance</h2>
+<p>Let A be an independent scalar source parameter. Choose the algebraic sampling root by</p>
+<pre><code>t_0^(-N)=z_1^(-N)-A z_7^(-N).                    (4)</code></pre>
+<p>The normalized symmetric root average is independent of which Nth root is chosen. Equations (3)–(4) show its two errors explicitly:</p>
+<pre><code>z_1^(-N)[t^(-N)]K-A z_7^(-N)[t^(-N)]K.            (5)</code></pre>
+<p>The FIRST term demands incoming second index at least N, since K has no positive powers of z_1. The original finite INPUT space kills it. The SECOND term has negative second-output degree, since K has z_7 degree at most d. The original finite OUTPUT block kills it. Therefore the adaptive average has EXACTLY the original finite crossing operator, for EVERY A, not merely its closed trace.</p>
+<p>This is stronger than the earlier total-degree alias argument. The root t_0 has overall head degree one, so that argument alone would not apply. The two physical index walls in (5) are the replacement. No alias deletion is asserted for a separately continued full-Psi homogeneous/current sector.</p>
+<p>The symmetric average is linear in t_0^(-N). It consequently extends regularly across z_1^(-N)-A z_7^(-N)=0, even though the individual sample points then go to infinity. One first takes the COMPLETE symmetric average and the original finite block, not a value of a single divergent sample.</p>
+<p>In the all-homogeneous one-Psi field, the full-turn multiplier is</p>
+<pre><code>(z_7/z_1)^N[1-(z_1/t_0)^N]=A.                    (6)</code></pre>
+<p>Thus A=1 is precisely its exact Fourier resonance. It is reached inside an actual source-flat family, rather than by imposing A=1 inside the old co-source. The normalized finite-orbit/Fourier formula then has zero FINAL closure current and its explicitly known nonzero resonant coefficient. The pre-existing B/R currents must still be kept unless a further proved source map removes them.</p>
+<p>The stronger independent external-frame construction in <a href="actual_balanced_fourier_crossing_kernel.html">the balanced crossing theorem</a> also balances all three B/R sources. That theorem is compatible with the present head-adaptive source map; it is not assumed in its proof.</p>
+<h2 id="both-signs-and-whole-original-words">3. Both signs and whole original words</h2>
+<p>At complete color x=-q^(-1), the exact balanced relation is R_-=P overline(R_+)P, with the common scalar conjugated to kappa^(-1). Apply this relation to the COMPLETE polynomial source, with opposite root Q^(-1) and the formal two heads exchanged. Its adaptive negative sampling is</p>
+<pre><code>t_(0,-)^(-N)=z_0^(-N)-A z_6^(-N).                (7)</code></pre>
+<p>The errors now demand first INPUT index at least N or have negative first OUTPUT degree. Both are removed by the SAME original physical finite blocks. This is an exact negative source representation, not a fixed-value balance of the old negative continuous Gaussian.</p>
+<p>Hence any number of crossings in ANY original signed braid or plat may be replaced simultaneously. Their finite matrices agree entrywise, and the original cups/caps, pivot, marked row, Cartan and zero-framing lines are unchanged. Arbitrary bridge count is allowed.</p>
+<p>There is also a raw no-healing formulation: the two complete modified kernels still have only nonnegative input demands and output upper bound d. A negative output cannot be healed at the next touching kernel, since that input has no such coefficient; an input demand at least N cannot be supplied by any preceding output. The original finite end sources kill surviving untouched invalid heads. This does not authorize arbitrary Laurent coupons that change that support.</p>
+<h2 id="the-unsplit-cyclic-inhomogeneous-equation">4. The unsplit cyclic inhomogeneous equation</h2>
+<p>The COMPLETE state has a concrete cyclic connection, not only the one-function homogeneous equation. Put</p>
+<pre><code>u_0=t/z_1, v_0=x^(-1)t/z_0,
+a=x^(-1)z_7/z_6, c=z_6/z_0, w=x^(-1)z_6/t,
+B_0(t)=B_N(u_0,v_0), F(t)=B_N(a,a w)R_N(c,w),
+Y(t)=B_0(t)F(t)=K(t),
+D_0=1-u_0^N+v_0^N,
+H_pair=D_B R_N(c,w)+a D_R B_N(a,Qa w).</code></pre>
+<p>The exact finite Newton/Rogers Ward equations imply POINTWISE</p>
+<pre><code>Y(t)-b(t)Y(t/Q)=eta(t),
+b(t)=(z_7/z_1)(1-Q z_1/t),
+eta=B_0(t)H_pair(t)+(Qac/v_0)D_0 F(t/Q).           (8)</code></pre>
+<p>Indeed F(t)-ac F(t/Q)=H_pair(t), and v_0 B_0(t)=(u_0-Q)B_0(t/Q)+Q D_0. Multiplying these two identities proves (8) with every endpoint and source norm present. In particular the source eta is not declared zero on resonance.</p>
+<p>At t_j=t_0 Q^j, let Y_j=Y(t_j), eta_j=eta(t_j), and define</p>
+<pre><code>(T_A v)_j=b(t_j)v_(j-1), j modulo N.</code></pre>
+<p>Then T_A^N=A I by (6), and the actual state satisfies</p>
+<pre><code>(I-T_A)Y=eta.                                    (9)</code></pre>
+<p>All these are finite algebraic functions on the specified sampling cover; no formal WKB expansion or choice of a new period is involved.</p>
+<h2 id="resonant-first-normal-source-reconstruction">5. Resonant first-normal-source reconstruction</h2>
+<p>On a regular local chart of the cover (4), let</p>
+<pre><code>G_A=I+T_A+...+T_A^(N-1).</code></pre>
+<p>The exact geometric-series identity gives</p>
+<pre><code>G_A eta=(1-A)Y.                                  (10)</code></pre>
+<p>At A=1 the left side vanishes. Since the whole original state is regular on this chart, differentiating the ACTUAL source family gives</p>
+<pre><code>Y|_(A=1)=-d_A(G_A eta)|_(A=1).                   (11)</code></pre>
+<p>Thus the entire resonant finite state is fixed by the first normal jet of its explicit unsplit source, with jet order ONE independent of N. This is a source identity, not an instruction to divide by 1-A and separately evaluate a vanishing numerator.</p>
+<p>For an explicit homogeneous coefficient choose a holomorphic branch omega=A^(1/N) near one and the periodic cyclic gauge g_j(A), g_0=1,</p>
+<pre><code>b(t_j)g_(j-1)=omega g_j.</code></pre>
+<p>All b(t_j) are nonzero at resonance. Write tildeY_j=Y_j/g_j and tildeeta_j=eta_j/g_j. Averaging their equation yields</p>
+<pre><code>mean(tildeeta)=(1-omega)mean(tildeY).</code></pre>
+<p>Consequently its zero-clock homogeneous projection coefficient is</p>
+<pre><code>mean(tildeY)|_(A=1)
+             =-N*d_A mean(tildeeta)|_(A=1).        (12)</code></pre>
+<p>The normalized homogeneous vector g_j at resonance is the actual Fermat/cyclic full-Psi vector with the independently fixed Fourier normalizer. Equation (12) constructs its comparison coefficient from the original source, rather than assuming that coefficient exists or is nonzero. Its possible vanishing and its geometric overlap after exterior contraction still have to be checked.</p>
+<p>For a fixed word with m internal orbit variables, apply (10) to each complete tensor factor before the original finite contraction. The whole original period is thereby a mixed FIRST normal derivative in each of m independent source parameters at their Fermat values. The required jet order depends on the fixed word, not on N. These derivatives include the moving root and all source terms; differentiating only a homogeneous block would not be the same operation.</p>
+<h2 id="scope">6. Scope</h2>
+<p>The adaptive sampling and normal-source formulas are exact, source preserving and valid for all original signed finite words. They close an actual internal circle on its resonant algebraic multisection and give a prescribed normal-jet pointing there. Neither the one-dimensional homogeneous space nor its nonzero local Fourier vector by itself proves survival of the final geometric period. That remaining claim cannot be obtained by invoking divisor rigidity without the actual global source coefficient supplied by (12) and the exterior pairing.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_adaptive_fermat_root_orbit_source.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#complete-laurent-kernel-and-its-only-alias">1. Complete Laurent kernel and its only alias</a><a href="#a-source-flat-adaptive-family-including-exact-resonance">2. A source-flat adaptive family, including exact resonance</a><a href="#both-signs-and-whole-original-words">3. Both signs and whole original words</a><a href="#the-unsplit-cyclic-inhomogeneous-equation">4. The unsplit cyclic inhomogeneous equation</a><a href="#resonant-first-normal-source-reconstruction">5. Resonant first-normal-source reconstruction</a><a href="#scope">6. Scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

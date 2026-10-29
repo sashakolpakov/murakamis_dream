@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cyclotomic Mellin functions are fixed by bounded quantum jets · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/mellin_cyclotomic_jet_uniqueness.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="cyclotomic-mellin-functions-are-fixed-by-bounded-quantum-jets">Cyclotomic Mellin functions are fixed by bounded quantum jets</h1>
+<p>Research proof, 27 October 2026. In the actual Fourier–Mellin polarization, a bounded number of quantum jet levels fixes the whole rational root function, not only a selected scalar multiple of it. The normal-order bound is independent of N. The source, formal starting lattice and cyclotomic pole lattice are all necessary inputs.</p>
+<p>This extends the existing <a href="all_level_a_period.html">bounded-jet operator-period reconstruction</a> from one coefficient to the whole rational Mellin fiber. The sparse valuation and recurrence arguments are the same ones; no novelty is claimed for them. The new scope is arbitrary competing root sections, without a rank, semisimplicity, scalar-ratio or minimality hypothesis.</p>
+<p>The result is uniqueness, not a construction of a regulator section satisfying those exact data or an estimate of its residue. In particular it does not prove the volume conjecture.</p>
+<h2 id="the-actual-operator-source-and-pole-lattice">1. The actual operator, source and pole lattice</h2>
+<p>Use the specified actual Q-only color recurrence</p>
+<pre><code>P=sum_(j=0)^d a_j(Q,Y)T^j, TY=QYT,
+sum_j a_j(Q,Q^r) C_(r+j)(Q)=0, r&gt;=1,</code></pre>
+<p>with d&gt;=1, a_0 a_d!=0, and Laurent-polynomial coefficients after one fixed denominator clearing. Retain the actual colors, source and conventions of <a href="fourier_mellin_actual_source.html">the Fourier–Mellin construction</a>. Let A be the Q-exponent span, D the Y-exponent span, and s the number of collected monomials of a_d. Choose a fixed</p>
+<pre><code>n_0&gt;=d+A+1, B=D(s-1), k=B+1.</code></pre>
+<p>The actual formal series and its exact source are</p>
+<pre><code>Z(Q,X)=sum_(r&gt;=n_0) C_r(Q) X^r,
+P^M Z=mathcalB(Q,X),
+P^M=sum_(j,ell) a_(j,ell)(Q) Q^(-ell*j) X^(-j) S^ell,
+S f(X)=f(QX).</code></pre>
+<p>The Laurent polynomial mathcalB is fixed by the d actual colors C_(n_0),…,C_(n_0+d-1). Its full quantum jets are retained, rather than just its value at one root.</p>
+<p>At Q_N=exp(2pi*i/N), the actual root section Z_N is rational. Let</p>
+<pre><code>p_&lt;(N,X)=sum_(r=1)^(n_0-1) C_r(Q_N) X^r.</code></pre>
+<p>The exact color periodicity proved in <a href="cyclotomic_mellin_residue.html">the cyclotomic residue theorem</a> gives the pole lattice</p>
+<pre><code>(1-X^N)[Z_N(X)+p_&lt;(N,X)]
+       in X C[X], of degree at most N.               (1)</code></pre>
+<p>It also gives Z_N in X^(n_0)C[[X]] and</p>
+<pre><code>K_N=Res_infinity Z_N(X)dX/X.</code></pre>
+<p>Condition (1) is more than having simple finite cyclotomic poles: it fixes the allowed polynomial part at infinity as well.</p>
+<h2 id="finite-reconstruction-theorem">2. Finite reconstruction theorem</h2>
+<p>For all sufficiently large N, let W_N be a rational function with</p>
+<pre><code>W_N in X^(n_0)C[[X]],
+(1-X^N)[W_N+p_&lt;] in X C[X], degree&lt;=N.                (2)</code></pre>
+<p>Put Q=Q_N(1+epsilon), R_k=C[epsilon]/(epsilon^k). Suppose there is a polynomial truncation</p>
+<pre><code>Wtilde_N=sum_(r=n_0)^N w_r(epsilon)X^r,
+w_r in R_k,
+w_r(0)=[X^r]W_N,</code></pre>
+<p>whose source equation has the correct coefficients in the finite window</p>
+<pre><code>[X^m](P^M Wtilde_N-mathcalB)=0 in R_k,
+               n_0-d&lt;=m&lt;=N-d.                      (3)</code></pre>
+<p>Then exactly W_N=Z_N. In particular its residue is the original Kashaev value K_N.</p>
+<p>There are k=B+1 quantum levels in (3): orders zero through B. The number of X coefficients grows with N, but the required quantum normal order does not. No bounded X-degree is assumed for higher actual quantum jets; only the indicated finite window is used. Truncating the actual formal Z at X^N supplies one such lift, since omitted higher coefficients cannot enter that window.</p>
+<h3 id="proof">Proof</h3>
+<p>Subtract that actual truncation and write its coefficients as e_r(epsilon), with e_r=0 for r&lt;n_0. Coefficient comparison in the exact Fourier ordering gives</p>
+<pre><code>sum_(j=0)^d a_j(Q,Q^m)e_(m+j)=0 in R_k.               (4)</code></pre>
+<p>Indeed the factor Q^(-ell<em>j) in the Fourier transform cancels the j-part of the shift on the exponent m+j, leaving Q^(ell</em>m). No square-root or index offset is suppressed here.</p>
+<p>For r&gt;=n_0 set</p>
+<pre><code>h_(r-d)(Q)=a_d(Q,Q^(r-d)),
+mu_(r-d)=ord_(Q=Q_N) h_(r-d),
+M_r=sum_(t=n_0)^r mu_(t-d).</code></pre>
+<p>All h_(r-d) are nonzero Laurent polynomials: r-d&gt;A prevents collisions of distinct Q<sup>uY</sup>v monomials after Y=Q^(r-d). Each has at most s monomials, hence its nonzero-root vanishing order is at most s-1 by the logarithmic-derivative Vandermonde argument already proved in the operator-period note.</p>
+<p>The points Q_N^(r-d), n_0&lt;=r&lt;=N, are distinct. For all large N the Laurent polynomial a_d(Q_N,Y) is not identically zero; it has at most D nonzero roots. Thus</p>
+<pre><code>M_N&lt;=D(s-1)=B.                                      (5)</code></pre>
+<p>These statements exclude only finitely many levels of the fixed coefficient field. They do not assume regular propagation at every color.</p>
+<p>Induct in (4), with m=r-d. All earlier error coefficients are divisible by epsilon^(k-M_(r-1)). The other operator coefficients are regular in epsilon. Since h_(r-d) is a unit times epsilon^mu_(r-d), it follows that</p>
+<pre><code>e_r in epsilon^(k-M_r) R_k.                         (6)</code></pre>
+<p>This remains valid in the truncated ring: the annihilator of epsilon^mu consists of epsilon^(k-mu) multiples, with at least the divisibility claimed in (6). By (5), k-M_r&gt;=1 through r=N. Hence every root coefficient through X^N agrees.</p>
+<p>Subtract the two pole conditions (1)–(2). The polynomial (1-X^N)(W_N-Z_N) has degree&lt;=N, and all its coefficients through that degree are zero by (6) and the common starting lattice. It vanishes identically. This proves the theorem.</p>
+<h2 id="a-literal-unknot-example-shows-why-root-data-are-insufficient">3. A literal unknot example shows why root data are insufficient</h2>
+<p>The actual unknot has C_r(Q)=1. The following nonminimal operator is nonetheless an actual all-level annihilator:</p>
+<pre><code>P=(T-Q)[(1-QY)T-(1-Y)]
+  =(1-Q^2Y)T^2+(1+Q)(QY-1)T+Q(1-Y).                (7)</code></pre>
+<p>The inner bracket applied to 1 is (1-Q)Y; the outer T-Q kills it. Here D=1, s=2, so B=1 and k=2. Its exact Fourier operator and source, for any fixed admissible n_0, are</p>
+<pre><code>P^M=X^(-2)(1-X)(1-QX)(1-S),
+Z(Q,X)=X^(n_0)/(1-X),
+mathcalB=X^(n_0-2)[1-Q^(n_0)+(Q^(n_0)-Q)X].          (8)</code></pre>
+<p>At the root, for every constant lambda,</p>
+<pre><code>W_N=Z_N+lambda X^N/(1-X^N)                          (9)</code></pre>
+<p>has the same affine source, starting lattice, prescribed prefix and cyclotomic pole lattice. It has residue 1+lambda instead of 1. This is an alternative root section of an ACTUAL unknot operator, not a different knot invariant.</p>
+<p>No nonzero lambda in (9) has the first normal lift (3). One way to see this is (4) at m=N-2: its earlier errors are zero, and h_(N-2)=1-Q^N has a simple zero, so the first normal equation forces e_N(0)=0.</p>
+<p>There is also a whole-function obstruction, not just the coefficient argument. Write U=X^N, f(U)=lambda U/(1-U). After canceling the nonzero rational prefactor in (8), a first-order homogeneous lift would require</p>
+<pre><code>(1-S_0)g_1=N U f&#39;(U), S_0 g(X)=g(Q_N X).</code></pre>
+<p>The cyclic average of its left side is zero, whereas that of its right side is N^2 U f’(U), nonzero if lambda!=0. This argument is valid in C((X)) as well as in C(X). Thus the required two jet levels are genuinely necessary in this actual example. Root operator, affine source and pole lattice by themselves do not determine the residue.</p>
+<h2 id="relation-to-the-selected-line-and-regulator-questions">4. Relation to the selected-line and regulator questions</h2>
+<p><a href="actual_mellin_normal_source_rigidity.html">The selected Mellin-line theorem</a> uses the observable source quotient to remove central scalar multipliers at first normal order, without semisimplicity. The present result also handles additions in the homogeneous source-kernel, as illustrated by (9); it uses the larger fixed jet budget and the exact cyclotomic pole lattice.</p>
+<p>The theorem gives a finite exact target for a proposed whole comparison. Such a candidate still must supply (2)–(3), with the actual source and coefficients through the stated orders. An algebraic classical optimizer or a local geometric Gaussian does not yet supply that lift or its global pole behavior. No hyperbolic-volume growth follows from uniqueness alone.</p>
+<p>Verification: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_mellin_cyclotomic_jet_uniqueness.py">script</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/mellin_cyclotomic_jet_uniqueness_results.json">results</a>. The <a href="mellin_cyclotomic_jet_uniqueness_independent_audit.html">independent proof audit</a> checks the finite Fourier window, truncated-ring valuation induction, pole numerator reconstruction and sharp actual unknot obstruction.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/mellin_cyclotomic_jet_uniqueness.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-operator-source-and-pole-lattice">1. The actual operator, source and pole lattice</a><a href="#finite-reconstruction-theorem">2. Finite reconstruction theorem</a><a href="#a-literal-unknot-example-shows-why-root-data-are-insufficient">3. A literal unknot example shows why root data are insufficient</a><a href="#relation-to-the-selected-line-and-regulator-questions">4. Relation to the selected-line and regulator questions</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An exact factorial interpolation for the original selected contours · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/exact_factorial_interpolation_and_complex_contours.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="an-exact-factorial-interpolation-for-the-original-selected-contours">An exact factorial interpolation for the original selected contours</h1>
+<p>28 October 2026. The original finite quantum factorials admit an explicit holomorphic interpolation with a uniform complex dilogarithm expansion. This permits a contour representation of the ACTUAL finite state sum without replacing a finite Euler polynomial by its wrong exterior branch. The lattice values, reflection phase and original support cycle are all retained. A contour carrying a nonzero geometric saddle is still required; the interpolation does not select that saddle by itself.</p>
+<p>This is within the existing Barnes/double-sine analytic-difference framework, not a novelty claim for a special function. For coverage see <a href="https://ir.cwi.nl/pub/2100">Ruijsenaars, On Barnes’ Multiple Zeta and Gamma Functions</a> and <a href="https://arxiv.org/abs/math/0306164">Narukawa, multiple sine functions and elliptic gamma functions</a>. Only coverage is used from those papers. The product, normalization, functional identities and asymptotic comparison needed here are proved below directly. They concern the ORIGINAL root factorial, not a newly normalized knot state.</p>
+<h2 id="a-convergent-whole-function-with-the-exact-lattice-values">1. A convergent whole function with the exact lattice values</h2>
+<p>Fix an integer N&gt;=2, Q=exp(2 pi i/N). On the strip -1&lt;Re z&lt;N define</p>
+<pre><code>G_N(z)=(2 pi/N)^z Gamma(z+1)
+   * product_(k&gt;=1)
+      Gamma(Nk+z+1)/[Gamma(Nk-z)(Nk)^(2z+1)].       (1)</code></pre>
+<p>All positive-base powers use the real logarithm. Each Gamma argument has positive real part in this strip. On every compact z set the logarithm of the kth factor is O_(N,K)(k^-2): in the Gamma-ratio expansion the 1/k term cancels. More explicitly, its leading term is</p>
+<pre><code>-z(z+1)(2z+1)/(6N^2 k^2).</code></pre>
+<p>The product and its logarithmic derivatives therefore converge locally uniformly. It is holomorphic and nonzero on the strip and G_N(0)=1. Gamma’s functional equation gives on overlapping strips</p>
+<pre><code>G_N(z+1)/G_N(z)
+   =(2 pi/N)(z+1)
+       product_(k&gt;=1)[1-(z+1)^2/(N^2 k^2)]
+   =2 sin(pi(z+1)/N).                            (2)</code></pre>
+<p>The last equality is the ordinary convergent sine product. This also gives the meromorphic continuation of (1). Define the marked factorial</p>
+<pre><code>Fhat_N(z)=exp[i pi z(z+1)/(2N)-i pi z/2] G_N(z).  (3)</code></pre>
+<p>Then EXACTLY</p>
+<pre><code>Fhat_N(z+1)=[1-Q^(z+1)] Fhat_N(z),
+Fhat_N(0)=1,
+Fhat_N(n)=(Q;Q)_n, 0&lt;=n&lt;N,                     (4)</code></pre>
+<p>where Q^z always means exp(2 pi i z/N). In particular the interpolation is attached to the original finite state before any asymptotic choice.</p>
+<p>For any marked alpha and nonnegative integer n where the ratio is regular, (4) also gives</p>
+<pre><code>Fhat_N(alpha+n)/Fhat_N(alpha)=(Q^(alpha+1);Q)_n. (5)</code></pre>
+<p>Thus color-shifted factorials have the same exact interpolation. Their whole meridian marks and original prefactors remain part of the state. This is a fixed-root identity, not a moving-q normal-jet theorem.</p>
+<h2 id="reflection-is-exact-with-no-undetermined-periodic-factor">2. Reflection is exact, with no undetermined periodic factor</h2>
+<p>The whole sine product satisfies</p>
+<pre><code>G_N(z)G_N(N-1-z)=N.                            (6)</code></pre>
+<p>Here is a proof that fixes a possible periodic ambiguity. Differentiate the logarithm of the left side using (1), initially on the stated strip. Writing psi for the logarithmic derivative of Gamma, the partial sum through k=K telescopes to</p>
+<pre><code>psi(NK+z+1)-psi(N(K+1)-z).</code></pre>
+<p>It tends to zero locally uniformly as K tends to infinity. Hence the left side is constant. At z=0 its value is the literal product product_(j=1)^(N-1)2sin(pi j/N)=N, obtained by evaluating the derivative of t^N-1 at t=1. This proves (6). The corresponding marked identity is</p>
+<pre><code>Fhat_N(z)Fhat_N(N-1-z)
+   =N exp[i pi z(z-N+1)/N].                    (7)</code></pre>
+<p>The phase in (7) cannot be discarded in a complex contour deformation.</p>
+<h2 id="a-finite-barnes-g-formula-for-independent-computation">3. A finite Barnes-G formula for independent computation</h2>
+<p>Let B denote the Barnes G function with B(1)=1 and B(w+1)=Gamma(w)B(w), normalized by its convergent Weierstrass product. The infinite product (1) equals the finite expression</p>
+<pre><code>G_N(z)=(2 pi/N)^z Gamma(z+1)
+   * product_(r=0)^(N-1)
+      B(1+(r-z)/N)/B(1+(r+z+1)/N).             (8)</code></pre>
+<p>For completeness its scalar is fixed, not inferred from a recurrence. Apply Gamma multiplication to each factor of (1), and put</p>
+<pre><code>a_r=(r+z+1)/N, b_r=(r-z)/N.</code></pre>
+<p>The product through k=K becomes the right side of (8) times</p>
+<pre><code>H_K=Gamma(K+1)^(-(2z+1))
+         product_r B(K+1+a_r)/B(K+1+b_r).</code></pre>
+<p>One has H_K(0)=1 by telescoping in r. Direct differentiation of the defining Weierstrass product gives</p>
+<pre><code>d/dw log B(1+w)=w psi(1+w)-w-1/2+(1/2)log(2 pi).</code></pre>
+<p>The ordinary uniform digamma expansion on a positive large argument therefore gives partial_z log H_K=O_Kcompact(1/K), since sum_r(a_r+b_r)=N. Integrating from zero to z proves H_K-&gt;1. This establishes (8) with scalar one; it does not require a quoted multiple-Gamma normalization theorem.</p>
+<h2 id="uniform-complex-asymptotics-including-the-first-correction">4. Uniform complex asymptotics, including the first correction</h2>
+<p>Let K be any compact subset of 0&lt;Re x&lt;1. Define the analytic primitive</p>
+<pre><code>J(x)=integral_0^x Log(2sin(pi t)) dt,</code></pre>
+<p>continued from 0&lt;x&lt;1, with its integrable logarithmic endpoint at zero. The sine has positive real part on this strip, so its indicated logarithm is single-valued there. Uniformly on K,</p>
+<pre><code>log G_N(Nx)
+   =N J(x)+(1/2)Log(2N sin(pi x))
+               +pi cot(pi x)/(12N)+O_K(N^-3).     (9)</code></pre>
+<p>The logarithm and square-root marks are the ones positive on the real interval. Every fixed derivative also satisfies the corresponding uniform remainder bound on a smaller compact set.</p>
+<h3 id="direct-proof-with-a-summable-remainder">Direct proof with a summable remainder</h3>
+<p>Use the elementary Gamma Stirling expansion through 1/(12w), with remainder O(|w|^-3) in a closed right-half-plane sector. That remainder bound follows, for example, by integrating the bounded periodic fourth Bernoulli polynomial in the Euler summation remainder; its integral is bounded by a constant times integral_0<sup>infinity|w+t|</sup>-4 dt. For x in K all arguments Nx and N(k+x),N(k-x) remain in such a sector, uniformly in k. The kth logarithmic factor in (1) becomes</p>
+<pre><code>N phi_k(x)+(1/2)Log(1-x^2/k^2)
+   +(1/(12N))[1/(k+x)-1/(k-x)]
+   +O_K(N^-3 k^-3),</code></pre>
+<p>where</p>
+<pre><code>phi_k(x)=(k+x)Log(1+x/k)-(k-x)Log(1-x/k)-2x.</code></pre>
+<p>The remainders are summable. Since phi_k(0)=0 and phi_k’(x)=Log(1-x<sup>2/k</sup>2), the sine product sums the leading terms to J(x) after including the Gamma(Nx+1) factor. It likewise sums the half-logarithms to (1/2)Log(2N sin(pi x)). Finally</p>
+<pre><code>1/x+sum_(k&gt;=1)[1/(k+x)-1/(k-x)]=pi cot(pi x)</code></pre>
+<p>gives the displayed 1/N term. This proves (9) with the stated uniform remainder. Cauchy’s formula proves the derivative assertion.</p>
+<p>Equivalently, writing X=exp(2 pi i x) on the same logarithmic strip,</p>
+<pre><code>Fhat_N(Nx)=sqrt(iN(1-X))
+    *exp{N[Li_2(1)-Li_2(X)]/(2 pi i)
+                   +pi cot(pi x)/(12N)+O_K(N^-3)}. (10)</code></pre>
+<p>The square root means sqrt(2N sin(pi x))exp(i pi x/2), not an independent principal-root reset. The equality of the leading primitives follows by differentiating and fixing the value at x=0. No continuation through an unrecorded dilogarithm cut occurs in 0&lt;Re x&lt;1, since X avoids the real interval [1,infinity).</p>
+<p>Unlike a pointwise assertion about a finite Euler polynomial, (10) holds on full complex compact subsets of this strip. In particular it remains useful when a geometric coefficient saddle has a nonzero imaginary index coordinate.</p>
+<h2 id="the-original-finite-sum-has-a-marked-residue-cycle">5. The original finite sum has a marked residue cycle</h2>
+<p>Take the ACTUAL finite coefficient sum for a fixed braid, after its integral closure equations have been solved as in the existing normal-period calculation. Its dimension d depends on the word, not on N. Write its allowed lattice support as S_N. All factorial arguments at an allowed point are integers between zero and N-1; retain every Gaussian, pivot, cap, framing and peripheral factor.</p>
+<p>Replace each factorial in that same summand by Fhat_N of its original affine index form, using (5) for a marked color shift. Call this meromorphic interpolated summand I_N(z). It agrees with the literal original coefficient at every allowed integer point. Choose small positively oriented product circles about the points of S_N, with no other integer poles or interpolation poles inside, and let Gamma_N be their oriented sum. Then exactly</p>
+<pre><code>sum_(k in S_N) I_N(k)
+  =(1/(2 pi i)^d) integral_(Gamma_N)
+             I_N(z) product_(j=1)^d [pi cot(pi z_j) dz_j]. (11)</code></pre>
+<p>Each cotangent has residue one. Equation (11) is therefore a direct multivariable residue identity, with the original finite support encoded in its specified cycle. It does not replace that cycle by a preferred infinite contour or omit a finite-head wall.</p>
+<p>At completeness, on any complex tube where every scaled factorial argument has real part strictly between zero and one, the interpolated summand has no factorial zero or pole. Formula (10) gives its actual complex phase and a uniform nonzero leading amplitude there. The cotangent pole lattice and the support boundary still have to pass through any proposed deformation of Gamma_N. Neither a nonzero interpolant nor a unique critical point establishes its intersection coefficient with the original cycle.</p>
+<p>This makes a possible route to the main theorem more concrete: a source-preserving deformation of (11) to a positive geometric chain could use a uniform complex expansion of the SAME lattice summand. The whole contour and boundary estimate, including noncancellation, remain necessary. In particular no 5_2 or broad knot volume theorem is asserted by this interpolation result.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_exact_factorial_interpolation.py">Exact functional-equation and complex-asymptotic diagnostics</a>.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/exact_factorial_interpolation_and_complex_contours.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#a-convergent-whole-function-with-the-exact-lattice-values">1. A convergent whole function with the exact lattice values</a><a href="#reflection-is-exact-with-no-undetermined-periodic-factor">2. Reflection is exact, with no undetermined periodic factor</a><a href="#a-finite-barnes-g-formula-for-independent-computation">3. A finite Barnes-G formula for independent computation</a><a href="#uniform-complex-asymptotics-including-the-first-correction">4. Uniform complex asymptotics, including the first correction</a><a href="#the-original-finite-sum-has-a-marked-residue-cycle">5. The original finite sum has a marked residue cycle</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

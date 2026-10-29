@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The nilpotent Mobius action is not the actual framing Ward action · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_nilpotent_mobius_source_and_ward_obstruction.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-nilpotent-mobius-action-is-not-the-actual-framing-ward-action">The nilpotent Mobius action is not the actual framing Ward action</h1>
+<p>28 October 2026. A common fractional-linear change of the charged nilpotent anchors is an exact algebra automorphism. Its effect on the ORIGINAL source is computable. However, it does not provide a second geometric framing integral: invariance of a homogeneous top-degree state is automatic, while the ordinary common action fails covariance with an ORIGINAL crossing. Its source-preserving weighted lift also has the wrong nilpotent Jordan type to be the actual Hopf current on a head.</p>
+<p>This rules out that specific identification. It does not rule out a coupled quantum dressing which transforms clocks, crossings and source currents together, or the independent positive selection theorem for a network already satisfying its stated hypotheses.</p>
+<h2 id="exact-automorphism-and-source-jacobian">1. Exact automorphism and source Jacobian</h2>
+<p>Put d=N-1 and A_N=K[X]/(X^N), in characteristic zero. The source is the ORIGINAL functional lambda(P)=[X^d]P. For a!=0 define</p>
+<pre><code>phi_(a,c)(X)=aX/(1+cX) mod X^N.                    (1)</code></pre>
+<p>The inverse is X/(a-cX), so this is an algebra automorphism. Its SOURCE formula, valid for EVERY polynomial exterior, is</p>
+<pre><code>lambda(P(phi_(a,c)(X)))
+      =lambda(P(X) J_(a,c)(X)),
+J_(a,c)(X)=a(a-cX)^(N-2).                        (2)</code></pre>
+<p>Proof. In the specified residue lambda=Res P(X)dX/X^N, make the formal invertible change Y=aX/(1+cX). Then X=Y/(a-cY) and</p>
+<pre><code>dX/X^N=a(a-cY)^(N-2)dY/Y^N.</code></pre>
+<p>This proves (2) with its exact scalar and exponent. For k anchors the source factor is the product of the k displayed J factors. At a=1, its infinitesimal identity is</p>
+<pre><code>lambda(-X^2 partial_X P)=-(N-2)lambda(XP).         (3)</code></pre>
+<p>Thus ordinary Mobius substitution does NOT preserve the original source on arbitrary exteriors. The coefficient norm of its source multiplier at a=1 is exactly</p>
+<pre><code>||(1-cX)^(N-2)||_1=(1+|c|)^(N-2).                (4)</code></pre>
+<p>At fixed nonzero c this is exponential in N. This is a norm statement about the full normal source, not a claim that the original scalar acquires that factor.</p>
+<h2 id="why-homogeneous-source-invariance-is-automatic">2. Why homogeneous-source invariance is automatic</h2>
+<p>For k original charged anchors let Omega=product_i X_i^d. The top homogeneous piece of A_N^(tensor k) has degree kd and is the ONE line K Omega. Every actual whole-source P_h is homogeneous of that degree before projection, including after the proved closure contractions.</p>
+<p>Under common (1), each variable starts with aX_i and all remaining terms have strictly higher degree. Since no degree above kd survives,</p>
+<pre><code>phi_(a,c)(P_h)=a^(kd) P_h in A_N^(tensor k).       (5)</code></pre>
+<p>In particular c-invariance at a=1 holds for EVERY top-degree state, whether its selected coefficient is nonzero or zero. The induced c-action on this socle line is trivial. It therefore contains no information identifying a geometric relative period or selecting a nonzero second framing fiber. This is the same original homogeneous socle, not a substituted favorable source.</p>
+<p>It remains possible to retain lower-degree normal classes and the full Jacobian (2). Their covariance must actually be proved; (5) cannot replace it.</p>
+<h2 id="the-exact-source-preserving-lift-has-the-wrong-ward-generator">3. The exact source-preserving lift has the wrong Ward generator</h2>
+<p>There is a specified weighted action preserving lambda on ALL states:</p>
+<pre><code>U_(a,c)P(X)=a^(-d)(1+cX)^(N-2)P(phi_(a,c)(X)).    (6)</code></pre>
+<p>Indeed (2), or direct substitution in it, gives lambda(U P)=lambda(P). At a=1 its infinitesimal generator is</p>
+<pre><code>L=(N-2)X-X^2 partial_X,
+L X^j=(N-2-j)X^(j+1).                           (7)</code></pre>
+<p>For N&gt;=3 its Jordan blocks are N-1 and 1: it acts in one full chain on 1,X,…,X^(N-2), and kills the separate socle X^d. At N=2 it is zero. The UNWEIGHTED substitution generator -X^2 partial_X likewise has blocks N-1 and 1, with the separate constant line instead.</p>
+<p>The ORIGINAL complete quantum E and F on one physical head have a single Jordan block of size N. For F its consecutive coefficients in the actual balanced basis are 1-Q^(j+1), 0&lt;=j&lt;=N-2, all nonzero. The corresponding E coefficients are also nonzero along their whole chain. Consequently no invertible head gauge conjugates (7), or its unweighted version, to the actual E or F. Nilpotent Jordan type is unchanged by any such gauge.</p>
+<p>One can instead use the ordinary coherent weight (1+cX)^d, obtaining the regular classical generator dX-X^2 partial_X. But then the source is NOT fixed; exactly</p>
+<pre><code>lambda((1+cX)^d P(X/(1+cX)))
+       =lambda(P(X)/(1-cX)).                    (8)</code></pre>
+<p>Moreover the primitive two-head coherent generator has nilpotency index 2N-1, whereas the actual root Hopf coproduct has its N-th power zero. Thus even this alternative is not a factorwise identification with the actual quantum tensor action. Its source and tensor adapter would have to be constructed and retained separately.</p>
+<h2 id="a-literal-original-crossing-fails-common-mobius-covariance">4. A literal original crossing fails common Mobius covariance</h2>
+<p>This is also visible without a representation classification. Let B be the ORIGINAL positive checked crossing in the actual balanced factorial basis and retain its common Cartan scalar kappa. Complete color means x=-q^(-1), Q=q^2, hence x^(-2)=Q. Its k=0 entries give</p>
+<pre><code>[|0,1&gt;] B |1,0&gt;=kappa x^(-1),
+[|0,2&gt;] B |2,0&gt;=kappa x^(-2).                   (9)</code></pre>
+<p>For N&gt;=3 put D=-X^2 partial_X and D_tot=D_1+D_2. Then</p>
+<pre><code>[|0,2&gt;] [B,D_tot] |1,0&gt;
+                   =kappa(x^(-1)-x^(-2)) !=0.   (10)</code></pre>
+<p>To see the two terms, D_tot|1,0&gt;=-|2,0&gt;; after B only its k=0 term can yield |0,2&gt;. Conversely B|1,0&gt; has |0,1&gt; coefficient in (9), and D_tot sends it to -|0,2&gt;. This proves (10), with no lost factorial, source normalization or Cartan scalar. At the actual half-root x^(-1)=-q and x<sup>(-2)=q</sup>2, so the difference is -q(1+q), nonzero for every N&gt;=3.</p>
+<p>Therefore the common ordinary Mobius action cannot be slid through the unchanged actual crossing. Full E/F Ward identities do not supply that missing covariance, since they concern the different Hopf action in Section 3. At N=2 the unweighted Mobius substitution is already the identity on K[X]/X^2 and supplies no framing direction at all.</p>
+<h2 id="consequence-for-the-proposed-second-framing-fiber">5. Consequence for the proposed second framing fiber</h2>
+<p>The <a href="actual_charged_socle_and_fermat_source.html">nilpotent source</a> and <a href="actual_general_flow_fusion.html">closure contractions</a> are exact. The ordinary common Mobius changes do not add a selected nonzero fiber to them. On the original top-degree state they act trivially by (5). On general exteriors they require the source multiplier (2), and on the fixed actual network they have the explicit covariance defect (10).</p>
+<p>This leaves a precise constructive possibility: a COUPLED quantum framing transformation, including the underclock feedback, Hopf tensor factors and boundary co-source, might have a controlled nonzero relative fiber. It cannot be identified with the common automorphism (1) merely from nilpotent-source invariance. The existing warning about ordinary coherent Mobius action versus actual quantum dressing in <a href="springer_centralizer_boundary_source.html">the Springer boundary note</a> is consistent with, and now has the explicit selected-source and crossing calculations (2)-(10).</p>
+<p>No broad knot-volume lower bound or nonzero global geometric coefficient is proved by this test.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_nilpotent_mobius_source.py">Audit</a>: exact source Jacobians and inverse maps, both weighted source actions, their Jordan indices, original quantum E/F chains and the full original crossing witness (10), with kappa retained.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_nilpotent_mobius_source_and_ward_obstruction.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-automorphism-and-source-jacobian">1. Exact automorphism and source Jacobian</a><a href="#why-homogeneous-source-invariance-is-automatic">2. Why homogeneous-source invariance is automatic</a><a href="#the-exact-source-preserving-lift-has-the-wrong-ward-generator">3. The exact source-preserving lift has the wrong Ward generator</a><a href="#a-literal-original-crossing-fails-common-mobius-covariance">4. A literal original crossing fails common Mobius covariance</a><a href="#consequence-for-the-proposed-second-framing-fiber">5. Consequence for the proposed second framing fiber</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

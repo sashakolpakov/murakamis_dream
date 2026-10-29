@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A whole Gamma profile of the actual retained quantum-factorial source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/whole_gamma_frame_profile.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-whole-gamma-profile-of-the-actual-retained-quantum-factorial-source">A whole Gamma profile of the actual retained quantum-factorial source</h1>
+<p>Research proof, 27 October 2026. The exact residual in the actual balanced-to-symmetric source frame has a uniform whole-function profile on the N^2-scaled quantum normal. It includes its integer resonance zeros and all fixed holomorphic jets. A middle-index residual is also exactly a holomorphic unit times the independently fixed actual meridian Weyl half-adapter, after a necessary parameter reparametrization that aligns their zeros.</p>
+<p>The opposite profiles multiply to the entire centered meridian factor already present in the full modified dimension. No growth assumption on the knot invariant is used. These are actual scalar source/frame comparisons, not an asserted equivalence of the whole q-normal and meridian-normal knot modules.</p>
+<p>The retained residual is established in <a href="exact_clock_shear_star_automorphism_audit.html">the exact clock-shear audit</a> and <a href="integral_color_global_q_difference_source.html">the actual polynomial source</a>. The actual meridian half-adapter is the marked rational function of <a href="twisted_cotangent_source_and_weyl_gluing.html">the Weyl-gluing theorem</a>.</p>
+<h2 id="the-actual-residual-and-its-marked-normal">1. The actual residual and its marked normal</h2>
+<p>Put c=2pi*i, n=N-1 and retain the symmetric q-binomial. On the actual integral-color family the residual after removing the quadratic clock shear is exactly</p>
+<pre><code>V_(N,j)(q)={N-1 choose j}_q/M^j,
+M=-q^N.                                               (1.1)</code></pre>
+<p>Use the whole scaled normal</p>
+<pre><code>H=Log Q=c/N+z/N^2,
+q=exp(H/2), z=ca,
+M=exp(z/(2N)),
+b=a_N=a/(1+a/N).                                     (1.2)</code></pre>
+<p>The marking M=-q^N gives the stated exponential since exp(c/2)=-1. The exact identity H b=z/N is important. All powers N^a below mean exp(a log N) with the real logarithm of the positive integer.</p>
+<p>For every j&lt;N,</p>
+<pre><code>V_(N,j)(a)
+  =exp(-Hbj/2)
+     product_(r=1)^j
+         sinh[H(r-b)/2]/sinh(Hr/2).                  (1.3)</code></pre>
+<p>Indeed sinh[H(N-r)/2]=sinh[H(r-b)/2], because HN=c+z/N. There is no omitted sign. Equation (1.3) is an equality of the original finite residual, not a model chosen to reproduce its jets.</p>
+<p>Set J(x)=2sinh(x/2)/x, J(0)=1. Then (1.3) separates exactly as</p>
+<pre><code>V_(N,j)=exp(-Hbj/2)
+   product_(r=1)^j(1-b/r)
+   product_(r=1)^j J(H(r-b))/J(Hr).                  (1.4)</code></pre>
+<p>Zeros in the first product must not be removed by logarithms.</p>
+<h2 id="uniform-whole-profile-theorem">2. Uniform whole-profile theorem</h2>
+<p>Define the marked chord function for 0&lt;T&lt;1 by</p>
+<pre><code>G(T)=(exp(cT)-1)/c
+    =exp(pi*i T)sin(pi T)/pi,
+Log G(T)=log[sin(pi T)/pi]+pi*i T.                   (2.1)</code></pre>
+<p>For every compact K in the complex a-plane and every delta&gt;0, there is C_(K,delta) such that, for all sufficiently large N,</p>
+<pre><code>sup_(a in K, delta&lt;=j/N&lt;=1-delta)
+  |N^a V_(N,j)(a)-Phi_a(j/N)|
+      &lt;=C_(K,delta) log N/N,                         (2.2)
+Phi_a(T)=G(T)^(-a)/Gamma(1-a).                       (2.3)</code></pre>
+<p>The convergence is absolute and locally uniform in complex a. It includes every positive integer a, where the limiting function vanishes. It is not a relative-error assertion at those zeros. In particular if j_N/N-&gt;T in (0,1), then N^a V_(N,j_N)-&gt;Phi_a(T) locally uniformly in a.</p>
+<h3 id="an-elementary-euler-product-lemma-including-zeros">2.1 An elementary Euler-product lemma, including zeros</h3>
+<p>For b in a fixed complex compact set and j sufficiently large,</p>
+<pre><code>E_j(b)=j^b product_(r=1)^j(1-b/r)
+      =1/Gamma(1-b)+O(1/j),                          (2.4)</code></pre>
+<p>uniformly and absolutely. One direct proof uses</p>
+<pre><code>(1-b/r)exp(b/r)=1+O_K(r^(-2)).</code></pre>
+<p>For r beyond a fixed compact-dependent threshold choose the logarithm near one. Its tails sum uniformly to O(1/j). Also sum_(r&lt;=j)1/r-log j=gamma+O(1/j). Therefore E_j converges at the stated rate to the entire Euler product</p>
+<pre><code>exp(-gamma b)product_(r&gt;=1)(1-b/r)exp(b/r).            (2.5)</code></pre>
+<p>The finitely many possible zero factors are kept as factors, so this proof remains valid at positive integers.</p>
+<p>For completeness (2.5) is the reciprocal of the Euler Gamma function, not an imported asymptotic formula. For Re b&lt;1 repeated integration by parts gives</p>
+<pre><code>I_j(b)=integral_0^1 t^(-b)(1-t)^j dt
+      =1/[(j+1-b)product_(r&lt;=j)(1-b/r)].</code></pre>
+<p>After u=jt, dominated convergence gives j<sup>(1-b)I_j(b)-&gt;integral_0</sup>infinity u^(-b)exp(-u)du=Gamma(1-b). Near zero use a fixed integrable power on each compact subset of Re b&lt;1; away from zero use (1-u/j)^j&lt;=exp(-u). Thus the entire product (2.5) agrees with 1/Gamma(1-b) on that half-plane and defines its entire continuation. This proves (2.4) independently of a Gamma-ratio or Stirling theorem.</p>
+<h3 id="the-nonzero-j-product-has-a-uniform-logarithm">2.2 The nonzero J product has a uniform logarithm</h3>
+<p>For T=j/N in the stated interval, all Hr and H(r-b) stay in a fixed zero-free neighborhood of the segment c[0,1-delta] once N is large. Choose L(x)=Log J(x), L(0)=0. Its first two derivatives are bounded there. Taylor expansion with its uniform remainder and a Riemann sum give</p>
+<pre><code>sum_(r&lt;=j)[L(H(r-b))-L(Hr)]
+   =-Hb sum_(r&lt;=j)L&#39;(Hr)+O(1/N)
+   =-b L(Hj)+O(1/N)
+   =-a L(cT)+O(1/N).                                (2.6)</code></pre>
+<p>The Riemann sum can be integrated along the straight complex segment from zero to Hj; the same derivative bound gives its O(1/N) error. Exponentiating proves that the J product is J(cT)^(-a)(1+O(1/N)), uniformly on K and the indicated interval.</p>
+<p>Finally b=a+O_K(1/N),</p>
+<pre><code>N^a j^(-b)=T^(-a)[1+O_K(log N/N)],
+exp(-Hbj/2)=exp(-caT/2) exactly.</code></pre>
+<p>Combining these identities, (2.4) and (2.6) proves (2.2), since T J(cT)exp(cT/2)=G(T). The proof never divides by Gamma^-1 near a resonance zero.</p>
+<h2 id="the-profile-retains-the-entire-normal-resonance-data">3. The profile retains the entire normal resonance data</h2>
+<p>For fixed T, Phi_a(T) is entire in a. The finite normalized functions in (2.2) are holomorphic too. Cauchy’s formula therefore gives convergence of every fixed a-derivative on smaller compact sets. This packages the large root-normal jets in one whole function, rather than assuming a finite jet controls the source.</p>
+<p>The exact numerator zeros are at b=r, equivalently</p>
+<pre><code>a=N r/(N-r), 1&lt;=r&lt;=j.                                (3.1)</code></pre>
+<p>They approach the positive-integer zeros of (2.3), but they are not located exactly at those integers at finite N. At a=-k, k&gt;=0, the profile is instead</p>
+<pre><code>Phi_(-k)(T)=G(T)^k/k!,
+V_(N,j)(-k)~N^k G(T)^k/k!.                           (3.2)</code></pre>
+<p>This is a polynomial source scale in N. No complete knot-growth assumption appears in either (3.1) or (3.2).</p>
+<p>As a check on the known exact first normal,</p>
+<pre><code>partial_a Log V_(N,j)|_(a=0)
+   =-log N-Log G(T)-gamma+o(1).                       (3.3)</code></pre>
+<p>Since q partial_q=(2N^2/c)partial_a in this normal, (3.3) agrees with the exact cotangent sum of the clock-shear audit. The N^2 log N term is real source data, resolved by (2.3).</p>
+<h2 id="the-actual-meridian-weyl-half-adapter-has-the-opposite-profile">4. The actual meridian Weyl half-adapter has the opposite profile</h2>
+<p>Keep the actual fixed root Q_N=exp(c/N), and put M(a)=exp(ca/(2N)). The already specified rational half-adapter is, with its even-level mark i retained,</p>
+<pre><code>beta_N(M)=(M^2Q_N;Q_N)_L/(Q_N;Q_N)_L, N odd,
+beta_N(M)=[(1+iM)/(1+i)]
+                (M^2Q_N;Q_N)_L/(Q_N;Q_N)_L, N even,
+L=(N-1)/2 odd, L=N/2-1 even.                         (4.1)</code></pre>
+<p>It is not a newly normalized scalar: beta_N(1)=1 and the actual Weyl norm identity fixes it as in the cited gluing theorem.</p>
+<p>For each factor there is the exact identity</p>
+<pre><code>(1-exp[H_0(r+a)])/(1-exp(H_0r))
+  =exp(H_0a/2)(1+a/r) J(H_0(r+a))/J(H_0r),
+H_0=c/N.                                             (4.2)</code></pre>
+<p>Apply the same proof as Section 2 with b=-a, now without the a_N drift. The even prefactor in (4.1) is 1+O_K(1/N). Thus, uniformly on every compact complex a-set, including its zeros,</p>
+<pre><code>N^(-a) beta_N(exp(ca/(2N)))
+   =G(1/2)^a/Gamma(1+a)+O_K(1/N)
+   =Phi_(-a)(1/2)+O_K(1/N).                          (4.3)</code></pre>
+<p>The same whole Gamma half-profile is therefore derived separately from an actual q-normal frame and an actual fixed-root meridian source adapter. No logarithm of a vanishing factor is used.</p>
+<h2 id="an-exact-finite-scalar-source-bridge-aligns-their-zeros">5. An exact finite scalar source bridge aligns their zeros</h2>
+<p>There is a stronger comparison before taking any limit. Let H,b be as in (1.2), choose L as in (4.1), and put</p>
+<pre><code>M_tilde=exp(-H_0 b/2).</code></pre>
+<p>Define the explicit unit</p>
+<pre><code>u_N(a)=exp[-(H-H_0)bL/2]
+   product_(r=1)^L
+      J(H(r-b))J(H_0r)/[J(Hr)J(H_0(r-b))],           (5.1)</code></pre>
+<p>and at even N divide its right-hand side by (1+iM_tilde)/(1+i). Then exactly</p>
+<pre><code>V_(N,L)(a)=u_N(a) beta_N(M_tilde).                    (5.2)</code></pre>
+<p>All J factors in (5.1) are units on fixed compact a-sets for sufficiently large N: their arguments remain near c[0,1/2], which misses the first nonzero J zero. The even prefactor is a unit near M=1. In particular (5.2) is valid through integer resonances; it was not defined by dividing its two vanishing sides. It has u_N(0)=1 and</p>
+<pre><code>u_N=1+O_K(1/N)                                       (5.3)</code></pre>
+<p>locally uniformly and holomorphically.</p>
+<p>Proof: in (1.4), take j=L. The corresponding beta product has the exact factorization</p>
+<pre><code>exp(-H_0bL/2)product_(r&lt;=L)(1-b/r)
+                     J(H_0(r-b))/J(H_0r),</code></pre>
+<p>times the even prefactor if appropriate. The zero polynomial product cancels as a common factor of the two expressions; what remains is precisely (5.1). For (5.3), H-H_0=O_K(N^-2). The exponent in (5.1) is O(1/N). The logarithm of each J cross ratio is also O_K(N^-2), by differentiating the bounded smooth difference L(H(r-b))-L(Hr) with respect to H. Summing L terms is O(1/N). The even prefactor differs from one by O(1/N).</p>
+<p>The reparametrization b=a_N is essential. Comparing directly to beta_N(exp(-H_0a/2)) would put its zeros at a=r, while the q-normal frame zeros are (3.1). A claimed uniform unit ratio without that adjustment would be false near integer zeros.</p>
+<p>This is an exact holomorphic scalar source-line comparison with its origin mark, phase, zeros and unit all specified. It is not an intertwiner of the full q-normal and meridian-normal knot states, their quantum clocks, or their selected regular parts.</p>
+<p>The <a href="full_head_gamma_source_transport.html">full-head source theorem</a> extends this comparison to every color by using the complementary actual Weyl chart in the upper half. Its comparison unit is uniformly I+O(1/N) in any common diagonal metric, including the resonance divisors. Its source and dual fractional lattices are retained; the potentially singular source factors themselves are not declared units.</p>
+<p>The same coordinate also matches the retained central power, with the meridian reflection explicit. On the integral-color leg M_col=exp(Hb/2), while M_tilde=exp(-H_0b/2). Therefore</p>
+<pre><code>chi_H(M_col)=exp[-2c Log(M_col)/H]
+             =exp(-cb)=M_tilde^(2N).                 (5.4)</code></pre>
+<p>Here chi_H is the geometric whole flux character of <a href="gauss_wall_flux_and_actual_peripheral_character.html">the Gauss-wall calculation</a>. The target inverse-power character is its reciprocal, as required by the opposite meridian orientation. Equation (5.4) matches specified scalar characters; it does not assert that this geometric lift is an unspecified off-root auxiliary-matrix center.</p>
+<h2 id="opposite-profiles-give-the-exact-universal-meridian-function">6. Opposite profiles give the exact universal meridian function</h2>
+<p>The actual finite Weyl scalar is</p>
+<pre><code>c_N(M)=N M^(N-1)/S_N(M^2),
+beta_N(M)beta_N(M^(-1))=c_N(M)^(-1).                 (6.1)</code></pre>
+<p>At M=exp(z/(2N)), the exact centered inverse norm is</p>
+<pre><code>H_N(z)=c_N(M)^(-1)
+      =sinh(z/2)/[N sinh(z/(2N))].                   (6.2)</code></pre>
+<p>It has its removable entire values at the apparent common zeros. On each fixed compact z-set it tends uniformly, with O(N^-2) error, to H(z)=2sinh(z/2)/z. Multiplying the two limits in (4.3) therefore proves independently</p>
+<pre><code>Phi_a(T)Phi_(-a)(T)
+   =1/[Gamma(1-a)Gamma(1+a)]
+   =sin(pi a)/(pi a)
+   =H(ca),                                          (6.3)</code></pre>
+<p>for every T in (0,1), with entire continuation at all a. The T factors cancel. In particular the actual c_N tends meromorphically to Gamma(1-a)Gamma(1+a), locally uniformly away from its poles. Its inverse and the beta norm converge to the entire H. This orientation is retained.</p>
+<p>For completeness the finite norm input to this reflection identity does not require a published proof. At odd N pair residues r and N-r in the beta factors; their numerator is the full product (M<sup>2Q;Q)_(N-1)=S_N(M</sup>2), and their denominator is N with the displayed phase. The leftover M power is M^(-(N-1)), giving (6.1). At even N the unpaired residue is Q^(N/2)=-1; its factor is supplied exactly by</p>
+<pre><code>(1+iM)(1+i/M)/(1+i)^2=(1+M^2)/(2M).</code></pre>
+<p>The same product argument gives (6.1). These are the actual marked finite identities already audited in the gluing construction.</p>
+<p>The entire difference identities are</p>
+<pre><code>G(T)Phi_(a+1)(T)=-a Phi_a(T),
+(a+1)H(c(a+1))=-a H(ca).                             (6.4)</code></pre>
+<p>They follow from the Gamma recurrence and hold even at their zeros; ratio notation would exclude those points. These rank-one shifts agree with the retained inverse meridian-norm half-step character. The half-adapter with a-&gt;-a has shift factor G(T)/(a+1).</p>
+<p>The <a href="scaled_meridian_regular_profile.html">centered regular-profile theorem</a> keeps H_N and the whole knot-dependent regular part separately. Equality of the universal factor (6.3) does not identify that regular part or prove a growth or convergence theorem for it.</p>
+<p>The subsequent <a href="full_head_gamma_source_transport.html">full-head source transport</a> extends the finite comparison to every head index, using the actual Weyl complement in the upper half. The interior profile here is unchanged; a naive upper prefix would introduce different zero divisors and is not that source extension.</p>
+<h2 id="coverage-and-precise-novelty">7. Coverage and precise novelty</h2>
+<p>A repository search found earlier factorial-frame periods and normal jets, but no existing derivation of (2.2), (4.3), or the zero-preserving actual comparison (5.2). The Gamma reflection factor itself is classical, not a new identity. For background coverage, <a href="https://arxiv.org/abs/2307.15938">Iritani’s survey</a> uses it in Gamma-class factorizations and integral flat-section structures. That coverage is not used as a proof or as an identification of this knot source with quantum cohomology.</p>
+<p>The contribution here is the independent whole-function derivation from the actual retained q-binomial residual, its uniformity through the shifted integer resonances, and its exact marked unit comparison to the already fixed actual meridian half-adapter. These statements do not assume the volume conjecture or any K_N growth hypothesis.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_whole_gamma_frame_profile.py">audit</a> checks finite hyperbolic factorizations, zero alignment, the exact unit, both parities of the actual beta norm, uniform compact profiles and the paired entire function. The <a href="gamma_residual_normal_profile_independent_audit.html">independent normal-profile audit</a> also checks the whole zero-preserving unit and its uniform bound.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/whole_gamma_frame_profile.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-residual-and-its-marked-normal">1. The actual residual and its marked normal</a><a href="#uniform-whole-profile-theorem">2. Uniform whole-profile theorem</a><a href="#the-profile-retains-the-entire-normal-resonance-data">3. The profile retains the entire normal resonance data</a><a href="#the-actual-meridian-weyl-half-adapter-has-the-opposite-profile">4. The actual meridian Weyl half-adapter has the opposite profile</a><a href="#an-exact-finite-scalar-source-bridge-aligns-their-zeros">5. An exact finite scalar source bridge aligns their zeros</a><a href="#opposite-profiles-give-the-exact-universal-meridian-function">6. Opposite profiles give the exact universal meridian function</a><a href="#coverage-and-precise-novelty">7. Coverage and precise novelty</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

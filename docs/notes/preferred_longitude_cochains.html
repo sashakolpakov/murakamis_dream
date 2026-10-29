@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The preferred-longitude identity, including singular charts · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/preferred_longitude_cochains.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-preferred-longitude-identity-including-singular-charts">The preferred-longitude identity, including singular charts</h1>
+<p>Research note, 25 October 2026. The cochain construction audited here appears in Kambampati, <a href="https://arxiv.org/abs/2610.04103v1">Integral face-edge duality for knot triangulations, arXiv:2610.04103v1</a>, Sections 4–6. We reconstruct its local identities and global cancellation. The cusp intersection identity below has a separate exhaustive local verification. We do not use that paper’s analytic corollaries, integral cokernel theorems, or any claimed quantum asymptotic as a premise.</p>
+<p>This closes the preferred-longitude gap left in <code>face_edge_stokes_identity.md</code>. The extra condition for an ordinary boundary fiber remains distinct.</p>
+<h2 id="the-relation-already-supplied-by-fourier-reduction">1. The relation already supplied by Fourier reduction</h2>
+<p>Use the notation S,Q,G from <code>reduce_singular_faces.py</code>, with</p>
+<pre><code>G=-2Q+P_+, P_+=diag((epsilon+1)/2),
+L={ (t,s): t in im S, s-Gt in (im S)^perp }.</code></pre>
+<p>Here Q is the symmetric ambient extension of the reduced Gaussian. The dimension of L is N, and L is Lagrangian for the form t.s’-s.t’. The Fourier regularity theorem applies to every globally branched knot-exterior triangulation, even when its stacked face matrix is singular.</p>
+<p>Introduce two global face assignments x,y with</p>
+<pre><code>(X_0-X_1+X_2)x=0,
+(X_3-X_2+X_1)y=0,
+(X_2-X_3)x=(X_1-X_0)y.</code></pre>
+<p>Set t=E(X_2-X_3)x and s=X_0x+X_3y+P_+t. These assignments parametrize exactly L. Here is an independent dimension argument that avoids an assumed Neumann–Zagier rank theorem.</p>
+<p>On local face values use the pairing sum epsilon*(x_0 y_0-x_1 y_1+x_2 y_2-x_3 y_3). It vanishes for two global face assignments by cancellation across identified faces. The local constraints give tuples</p>
+<pre><code>x=(a,a+b,b,b-epsilon*t),
+y=(p-epsilon*t,p,p+w,w).</code></pre>
+<p>Pairing an original lift of t’ with a reversed lift of t gives</p>
+<pre><code>(t&#39;)^T X_0 x_t = t^T X_3 y_(t&#39;).</code></pre>
+<p>In particular t obeys both Fourier support constraints, and the last identity gives S^T(s-Gt)=0. Thus the image is in L.</p>
+<p>The map is injective. In the zero-shape case t=s=0, the face cochains of Section 2 agree on every occurrence of a global edge. They give an ideal edge cocycle, which vanishes by <code>automatic_face_regularity.md</code>. Its first and last edge values recover x and -y, hence x=y=0. There are 4N face unknowns and only 3N equations, so the parameter space has dimension at least N. Injectivity into the N-dimensional L forces dimension N and surjectivity.</p>
+<h2 id="face-potentials-and-a-closed-dual-spine-cochain">2. Face potentials and a closed dual-spine cochain</h2>
+<p>On a quotient face with ordered vertices a&lt;b&lt;c define potentials</p>
+<pre><code>phi(a)=0, phi(b)=x_f, phi(c)=x_f-y_f.</code></pre>
+<p>Their directed edge differences agree on the two occurrences of a paired face. For local faces k,l meeting in edge jm define</p>
+<pre><code>q_jm=epsilon*sgn(j,m,k,l)*(h_k(jm)-h_l(jm)),
+h_k(jm)=phi_k(m)-phi_k(j).</code></pre>
+<p>These potentials use separate corners of each characteristic triangle, even though those corners map to the same ideal vertex.</p>
+<p>This is independent of the choices of ordering of jm and kl. The local tuples of Section 1 give</p>
+<pre><code>q_01=q_23=t,
+q_03=q_12=epsilon*(x_0+y_3),
+q_02=q_13=-t-epsilon*(x_0+y_3).</code></pre>
+<p>Therefore these are the homogeneous physical shape coordinates for</p>
+<pre><code>(log z,log z&#39;,log z&#39;&#39;)=(t,s-t,-s),</code></pre>
+<p>with prime/double-prime placement determined by epsilon. Edge equations follow by canceling the h terms around each complete global edge link.</p>
+<p>Derive auxiliary local face values f_i as follows. Put f_0=0 and, for i=1,2,3, let jm be the edge shared by faces 0 and i and set</p>
+<pre><code>f_i=phi_0(j)+phi_0(m)-phi_i(j)-phi_i(m).</code></pre>
+<p>Substitution gives</p>
+<pre><code>f=(0, -x_2-x_3, x_0-x_2-x_3+y_3, x_0-2x_3+y_3).</code></pre>
+<p>For every pair k,l, not only those involving face 0, one obtains</p>
+<pre><code>phi_k(j)+phi_k(m)-phi_l(j)-phi_l(m)=f_l-f_k.          (2.1)</code></pre>
+<p>For a normal cusp arc at vertex j entering face k and leaving face l, the signed shape contribution is consequently</p>
+<pre><code>h_k(jm)-h_l(jm)
+   =[f_l+2phi_l(j)]-[f_k+2phi_k(j)].                 (2.2)</code></pre>
+<p>The sign here is the one used by <code>curve_holonomy</code>: epsilon times the sign of the permutation (j,m,k,l). Our code derives f from endpoint sums and checks all six equations (2.1) and all twenty-four directed arc equations (2.2), for each tetrahedron sign.</p>
+<p>On a directed dual edge crossing from face (T,k) to its partner (U,l), give the value a=f_(T,k)-f_(U,l). Around a dual two-cell, equation (2.1) writes its period as a telescoping sum of endpoint potentials. Paired-face potentials agree, so that period is zero. Thus a is a closed cochain on the dual spine of the knot exterior.</p>
+<p>On a closed normal cusp curve, the phi terms of (2.2) cancel across successive paired faces. The resulting shape period is exactly its dual-spine period under a. Pushing each cusp arc through the center of its truncated tetrahedron gives that same dual-spine path and preserves its homology class. A preferred longitude is nullhomologous in the exterior. Its period is therefore zero.</p>
+<p>We have proved, for its actual unhalved normal-curve row,</p>
+<pre><code>A_l t-B_l s=0 for every (t,s) in L.                  (2.3)</code></pre>
+<p>This proves immediately that</p>
+<pre><code>B_l^T in im S,
+S^T(A_l^T-G B_l^T)=0.                               (2.4)</code></pre>
+<p>If the face matrix is invertible, im S=R^N and (2.4) becomes the full identity A_l=B_l G. No finite-example extrapolation is involved.</p>
+<h2 id="a-separate-local-proof-of-the-peripheral-symplectic-pairing">3. A separate local proof of the peripheral symplectic pairing</h2>
+<p>For a closed normal cusp curve gamma let h_gamma be its physical angle-coefficient row. Put</p>
+<pre><code>J_epsilon=blockdiag(epsilon_j*J0),
+J0=[ 0  1 -1; -1  0  1; 1 -1  0 ].</code></pre>
+<p>Then, with our cusp orientation and positive-turn convention,</p>
+<pre><code>h_gamma J_epsilon h_eta^T=-2 intersection(gamma,eta).</code></pre>
+<p>Here is the finite local identity that proves this formula. List the 24 directed normal arcs of a tetrahedron as (vertex,entry,exit). Place gamma endpoints at fraction 1/3 and eta endpoints at fraction 2/3 on the ordered sides. Let r_gamma(f) be +1 for its exit face, -1 for its entry face and zero otherwise. For each common face f, let i,j be the ranks of the arc vertices in the ordered face. Then</p>
+<pre><code>local algebraic pairing + 2 local intersection
+   =sum_f epsilon*(-1)^f*r_gamma(f)*r_eta(f)*K_ij,
+K=[ 1  1 -1; -1 -1  1; 1 -1  1 ].                 (3.1)</code></pre>
+<p>All 2<em>24^2=1152 cases are checked with rational line intersections and integer arithmetic by <code>audit_boundary_cochains.py</code>. Equation (3.1) is also a direct three-side endpoint calculation; it handles arcs at different vertices as well as intersecting arcs in one cusp triangle. On identified faces both endpoint signs reverse, their product is unchanged, the vertex ranks agree, and epsilon</em>(-1)^f reverses. The boundary terms cancel. Summing (3.1) proves the formula.</p>
+<p>After eliminating the prime coordinate, the same algebraic pairing is A_gamma B_eta^T-B_gamma A_eta^T. In particular a meridian m and longitude l oriented with intersection(m,l)=1 have pairing -2. The factor two is retained; the longitude row is not divided by two.</p>
+<h2 id="the-complete-preferred-longitude-relation">4. The complete preferred-longitude relation</h2>
+<p>The full edge block (A_ed|B_ed) has rank N-1. Indeed its left kernel consists of global edge assignments with equal sums on the three opposite pairs in every tetrahedron. Such an assignment is locally lambda_ij=n_i+n_j. A triangle’s three edge values uniquely recover its three vertex values, so the values agree under all gluings. There is one ideal vertex, hence this kernel is precisely the one-dimensional space of constant edge assignments.</p>
+<p>An edge row can be represented by a small contractible cusp curve around one endpoint germ of that edge. It has zero intersection with every peripheral curve. Section 3 therefore proves edge isotropy and orthogonality to every peripheral row. The longitude row is independent of the edge rows: pairing a proposed dependence with the meridian would give zero, whereas its longitude pairing is -2.</p>
+<p>Delete one full edge row and append the preferred longitude. The resulting N by N matrices A,B consequently satisfy</p>
+<pre><code>rank(A|B)=N, AB^T=BA^T.</code></pre>
+<p>Section 2 proves L is contained in ker(A|-B). Both spaces have dimension N, so</p>
+<pre><code>L=ker(A|-B)=im [B^T;A^T],
+im S=im B^T, rank B=dim S=N-2k.                    (4.1)</code></pre>
+<p>The image equality follows from the displayed symplectic identity and rank. This proves nullity doubling and the full constrained preferred-longitude Gaussian identity independently of a presumed analytic result.</p>
+<p>In particular every proper globally branched knot triangulation has invertible preferred-longitude B and its exact FAMED matrix identity. For a singular chart the same statement is a relation on im S, not an unjustified inverse of B.</p>
+<h2 id="what-this-does-and-does-not-settle-for-the-boundary-state">5. What this does and does not settle for the boundary state</h2>
+<p>If rank B_ed=dim S-1, adding the longitude increases the B rank. The allowed shape plane is then independent of longitude holonomy and one may extract the boundary state by an ordinary linear fiber. If instead rank B_ed=dim S, the longitude moves that affine plane. These two cases must be distinguished; (4.1) does not rule out the second case.</p>
+<p>Wong’s existing definition makes this distinction in condition (2) of Definition 1.5 of <a href="https://arxiv.org/abs/2512.23198v1">arXiv:2512.23198v1</a>. We do not assume its additional meridian/framing condition or its analytic theorem. A separate change of peripheral polarization is needed when the linear fiber represents a framed meridian.</p>
+<p>Reproduce the independent audits with</p>
+<pre><code>python3 experiments/audit_boundary_cochains.py</code></pre>
+<p>The finite global checks include all fundamental cycles of the cusp dual graph, the closed dual-spine cochain, its preferred-longitude period, and equality of the face and completed gluing relations. The proof above supplies the uniform statement beyond those examples.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/preferred_longitude_cochains.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-relation-already-supplied-by-fourier-reduction">1. The relation already supplied by Fourier reduction</a><a href="#face-potentials-and-a-closed-dual-spine-cochain">2. Face potentials and a closed dual-spine cochain</a><a href="#a-separate-local-proof-of-the-peripheral-symplectic-pairing">3. A separate local proof of the peripheral symplectic pairing</a><a href="#the-complete-preferred-longitude-relation">4. The complete preferred-longitude relation</a><a href="#what-this-does-and-does-not-settle-for-the-boundary-state">5. What this does and does not settle for the boundary state</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

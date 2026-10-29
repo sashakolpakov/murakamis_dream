@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Annihilator existence and volume for the literature geometric state integrals · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/general_annihilator_and_volume.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="annihilator-existence-and-volume-for-the-literature-geometric-state-integrals">Annihilator existence and volume for the literature geometric state integrals</h1>
+<p>Research note, 25 October 2026. This extends the independent analysis in <code>literature_state_volume.md</code>. The quantum state remains the published integral. The annihilator convention is Definition 5 of Andersen–Malusà, <a href="https://arxiv.org/pdf/1711.11522v3">arXiv:1711.11522v3</a>. No new choice of a preferred recurrence solution is made here.</p>
+<p>The later <code>general_boundary_state_and_framing.md</code> extends the same existence argument to the explicitly constructed meridian wavefunctions of ordinary boundary-fiber charts, including singular face matrices and their exact Gaussian framing correction. The quantum parameter and b-shift convention remain the ones specified here. The subsequent <code>fourier_boundary_state.md</code> removes the ordinary-fiber rank restriction by inverse Fourier recovery of the specifically leveled tensor. Its absolutely convergent moving-plane integral is also of class (1.1), with rational Gaussian and Phi coefficients and the required small-shift holomorphy and exponential bounds. The same independent annihilator proof therefore applies to it.</p>
+<p>The operators used are the b-shift operators of Andersen–Malusà, after the explicit spectral rescaling in Section 5. They differ at finite b from the operators used in Section 4.4 of the FAMED paper. Section 6.1 records that distinction. An identification of the canonical Andersen–Malusà knot state with these integral realizations for every knot is not assumed. The subsequent <code>peripheral_phase_and_state.md</code> identifies each fixed fiber integral exactly with a particular leveled AK tensor realization. It gives the omitted angle phase, coarea orientation, and a state-recovery theorem; its affine move criterion still has to be applied to actual connecting sequences before asserting general intrinsic knot-state equivalence. Its subsequent full-integral moment argument forces the affine boundary phase slope to vanish for compatible geometric endpoints, proving equality of selected-state annihilators along certified proper positive paths.</p>
+<p>The new point is an elementary existence proof for a boundary annihilator. It uses the finite-product shift equation, a dimension count, exponential moments, and restriction of scalars. In particular, a zero obtained by naively putting the internal shifts equal to 1 is handled rather than assumed absent.</p>
+<p>The hypotheses are still those of the published integral (4.5) in Ben Aribi–Wong, <a href="https://arxiv.org/pdf/2410.10776v2">arXiv:2410.10776v2</a>, with positive complete geometric and peripheral certificates specified in Section 5 of the companion note. This proves a statement for that class of literature states. It does not establish membership for every alternating knot or audit every global TQFT move identity.</p>
+<h2 id="proper-finite-products-from-the-exact-functional-equation">1. Proper finite products from the exact functional equation</h2>
+<p>Use quantum parameter b&gt;0 and q=exp(2 pi i b^2). Consider variables t=(t_0,t_1,…,t_d), of which t_0 is the boundary variable. The class of integrands needed below is</p>
+<pre><code>I_b(t)=exp(pi i t^T H t+(b+b^(-1)) pi c^T t+C(b))
+    product_(j=1)^m Phi_b(v_j^T t+i(b+b^(-1))rho_j)^epsilon_j, (1.1)</code></pre>
+<p>where H is rational symmetric, c,v_j,rho_j are rational, epsilon_j are integers, and C(b) is independent of t. Extra roots of unity in the Gaussian normalization can be included in C(b). Normalization factors independent of the boundary variable do not affect annihilator existence, but remain relevant to the volume limit and are kept in the specified state.</p>
+<p>Choose an integer L&gt;0 such that L times every coordinate of every v_j is integral. Let S_k shift t_k by -i b L. Choose an integer D&gt;0 clearing the finitely many rational exponents in multiplication factors and set</p>
+<pre><code>X_k=exp(2 pi b t_k/D).</code></pre>
+<p>The exact functional equation of Phi, derived from its defining integral in the companion note, implies that I_b(t-i b L n)/I_b(t), for n integral, is a Laurent monomial in X times finitely many factors</p>
+<pre><code>1+a_j q^r X^w_j</code></pre>
+<p>or their inverses. Here a_j is a root of unity times a fixed rational power of q, w_j is an integral vector, and the integer r ranges over intervals whose lengths are O(|n|). The Gaussian contributes monomial exponents linear in n and central powers of q quadratic in n. The latter are scalars in the coefficient field and do not increase the degree in X.</p>
+<p>All coefficients belong to a fixed finite algebraic extension F of ℚ(q): adjoin finitely many roots of q and roots of unity. This is one fixed field, independent of the order of the shift n.</p>
+<p><strong>Bounded-denominator lemma.</strong> For each n, all functions</p>
+<pre><code>X_0^a S_0^n_0 ... S_d^n_d I_b / I_b,
+0&lt;=a,n_0,...,n_d&lt;=n,                                    (1.2)</code></pre>
+<p>have a common Laurent-polynomial denominator D_n(X), and after multiplication by D_n their Laurent exponents in each X_k lie in [-C n,C n], for a fixed C.</p>
+<p><strong>Proof.</strong> For each of the finitely many original Phi factors, include in D_n every binomial 1+a_j q^r X^w_j which can occur in a denominator for the shifts in (1.2). The possible r lie in one interval of O(n) integers. A repeated original factor only increases a bounded multiplicity. Thus D_n has O(n) binomial factors and Laurent degree O(n) in each coordinate. Every individual shift ratio has O(n) numerator factors and a monomial of degree O(n). Multiplying by the remaining factors in D_n, and by X_0^a, preserves this linear degree bound. The exact finite shift depends only on the net shift of each Phi argument; path-dependent repeated denominators need not be introduced. QED.</p>
+<h2 id="a-nonzero-elimination-operator-without-invoking-a-closure-theorem">2. A nonzero elimination operator without invoking a closure theorem</h2>
+<p>The relation is S_0 X_0=q^(-L/D)X_0 S_0; S_1,…,S_d commute with both of them and with each other. The PBW monomials</p>
+<pre><code>X_0^a S_0^n_0 ... S_d^n_d,   0&lt;=a,n_0,...,n_d&lt;=n,</code></pre>
+<p>are linearly independent as formal operators over F. There are (n+1)^(d+2) of them. By the bounded-denominator lemma, their actions on I_b span a space of dimension at most (2C n+1)^(d+1) over F. For sufficiently large n the first number exceeds the second. Finite linear algebra therefore gives a nonzero operator</p>
+<pre><code>P(X_0,S_0,S_1,...,S_d) I_b=0,                            (2.1)</code></pre>
+<p>which contains no internal multiplication variable X_1,…,X_d.</p>
+<p>This is constructive: form the exact rational shift ratios, clear their common denominator, and solve the finite homogeneous system. Its size may be large. The existence proof makes no efficiency or minimal-degree assertion.</p>
+<p>The output (2.1) need not survive S_1=…=S_d=1. Treating that specialization as automatically nonzero would leave a gap. The next argument resolves it.</p>
+<h2 id="exponential-moments-recover-a-genuine-boundary-operator">3. Exponential moments recover a genuine boundary operator</h2>
+<p>Suppose the state is</p>
+<pre><code>Z_b(t_0)=integral_C I_b(t_0,t_1,...,t_d) dt_1 ... dt_d.   (3.1)</code></pre>
+<p>Assume for all sufficiently small b that:</p>
+<ul>
+<li>I_b and all the finitely many shifts in (2.1) are holomorphic in the horizontal contour deformations required to shift t_k by -i b L n_k.</li>
+<li>On those deformations they decay exponentially in every real integration direction, uniformly for the boundary variable in an open neighborhood.</li>
+</ul>
+<p>These are analytic assumptions to verify for the chosen state, rather than consequences of the dimension count. They imply the same properties after inserting a polynomial in the t_k or exp(z dot t_internal), for small complex z.</p>
+<p>Define the analytic exponential moment</p>
+<pre><code>F_b(t_0,z)=integral_C exp(z dot t_internal) I_b(t) dt_internal.</code></pre>
+<p>Contour translation gives exactly</p>
+<pre><code>integral_C exp(z dot t_internal) S_k I_b dt_internal
+    =exp(i b L z_k) F_b(t_0,z),  k&gt;=1.                  (3.2)</code></pre>
+<p>No residue or boundary term is omitted: this is precisely where the holomorphy and exponential tail hypotheses are used. Boundary S_0 acts on F_b in its prescribed way and X_0 remains a multiplication operator.</p>
+<p>Expand the nonzero operator P in the <em>central</em> internal shift variables:</p>
+<pre><code>P(X_0,S_0,T)=sum_alpha A_alpha(X_0,S_0)(T-1)^alpha.</code></pre>
+<p>Let k be its least nonzero total degree, and choose |alpha|=k with A_alpha!=0. From (2.1)–(3.2),</p>
+<pre><code>P(X_0,S_0,exp(i b L z)) F_b(t_0,z)=0.</code></pre>
+<p>The coefficient of z^alpha of total degree k is</p>
+<pre><code>(i b L)^k A_alpha(X_0,S_0) F_b(t_0,0)=0.                (3.3)</code></pre>
+<p>All terms in which a derivative falls on F_b have lower derivatives of P, which vanish. Thus A_alpha is a nonzero boundary annihilator of Z_b. The argument also covers k=0, when ordinary specialization is sufficient.</p>
+<p>For example, an elimination output (T-1)^2 P_0(X_0,S_0,T) has zero direct specialization, but its first surviving coefficient is P_0(X_0,S_0,1). The second moment gives 2(i b L)^2 times this operator acting on Z_b. With several internal variables the same total-degree argument handles sums such as (T_1-1)A+(T_2-1)B, without requiring a common linear factor.</p>
+<p>This does not cancel any <em>peripheral</em> factor in X_0. All peripheral factors and the exact quantum parameter are retained in (3.3).</p>
+<h2 id="returning-from-finite-covers-to-the-prescribed-peripheral-algebra">4. Returning from finite covers to the prescribed peripheral algebra</h2>
+<p>The preceding proof may use rational powers of q, the fractional multiplication variable X_0, and the coarse shift S_0=E^L. The desired level-one peripheral operators are</p>
+<pre><code>Q=exp(-2 pi b t_0),       E f(t_0)=f(t_0-i b),
+E Q=q Q E.</code></pre>
+<p>Let K_0=ℚ(q,Q). Choose K=F(q^(1/D),X_0), enlarging the fixed finite constant extension F if necessary. It is stable under the automorphism sigma induced by E, since F and q^(1/D) are constant under this action and</p>
+<pre><code>sigma(Q)=qQ,     sigma(X_0)=q^(-1/D)X_0.</code></pre>
+<p>For a nonzero state A_alpha cannot have degree zero, since multiplication by a nonzero rational function cannot annihilate a nonzero holomorphic germ. (If the state vanishes identically, annihilator existence is trivial.) Thus let A_alpha have degree m&gt;=1 in S_0 and nonzero leading coefficient. The space over K spanned by</p>
+<pre><code>Z_b,E Z_b,...,E^(mL-1) Z_b</code></pre>
+<p>is stable under E: the next shift is reduced by A_alpha, and E acts on its coefficients by sigma. Restrict scalars from K to K_0. The resulting space has dimension at most mL[K:K_0] over K_0 and remains stable under E. Hence finitely many powers of E acting on Z_b are linearly dependent over K_0.</p>
+<p>There is consequently a nonzero annihilator in K_0[E;sigma]. Clear rational denominators and integer contents to obtain coefficients in Z[q,Q], or in the larger allowed ring Z[q^(+/-1/2),Q]. This argument does not assume that Galois automorphisms commute with the fractional-variable shift. Restriction of scalars is what justifies descent.</p>
+<p>If Z_b is nonzero, an order-zero annihilator is impossible. Existence over K_0 also proves existence over the literature field K_lit=ℚ(q^(1/2),Q). The nonzero annihilator ideal in K_lit[E;sigma] has a unique monic element of least degree by the usual left Euclidean division in a skew polynomial ring. Clearing denominators and taking primitive coefficients gives the literature minimal operator, up to the stated scalar units and sign convention.</p>
+<p>The monic generator’s minimality is a consequence of well ordering and left division, not an assertion that the dimension-count output was minimal.</p>
+<h2 id="verification-for-the-published-geometric-famed-state">5. Verification for the published geometric FAMED state</h2>
+<p>Recall the existing integral, with scaled boundary x and fiber p^T y=x+i pi gamma:</p>
+<pre><code>J_X(hbar,x)=C_X(2 pi sqrt(hbar))^(-N)
+  integral exp((i y^T H y+c^T y)/(2 pi hbar))
+                  product_j Phi_b(y_j/(2 pi sqrt(hbar)))
+                  dy_2 ... dy_N,
+hbar=b^2/(1+b^2)^2.                                    (5.1)</code></pre>
+<p>All H,c/pi,p,gamma are rational as specified in the companion note. Put</p>
+<pre><code>t_0=x/(2 pi sqrt(hbar)),    t_j=y_j/(2 pi sqrt(hbar)), j&gt;=2.</code></pre>
+<p>Then</p>
+<pre><code>y_1/(2 pi sqrt(hbar))
+   =[t_0-sum_(j&gt;=2) p_j t_j]/p_1
+                        +i(b+b^(-1))gamma/(2p_1).</code></pre>
+<p>The Gaussian becomes a rational quadratic Gaussian in t, with linear coefficients rational multiples of pi(b+b^(-1)). Thus it has exactly the form (1.1), including all the boundary-dependent Gaussian factors. The scalar Jacobian from dy to dt is independent of t_0 and does not affect annihilation.</p>
+<p>At x=0 use the contour through the actual positive complete geometric saddle y*. Its imaginary coordinates have a fixed gap from 0 and pi. Any fixed finite number of the original shifts t_k-&gt;t_k-i b L n_k moves y by O(b^2). For sufficiently small b every Phi argument stays in its defining strip.</p>
+<p>The strict concavity and global linear tail estimate (5.8)–(5.9) in the companion note persist for these small contour translations and for small complex x. To see the boundary extension explicitly, write</p>
+<pre><code>y=y*+T u+v x,    p^T T=0, p^T v=1,</code></pre>
+<p>with T,v real. The restricted complex Hessian at x=0,b=0 has negative definite real part and is invertible. The implicit function theorem gives a nearby critical point for small x and b^2. On its horizontal contour all imaginary coordinates remain in (0,pi). The negative definite real Hessian holds at every real u and gives uniform linear tails by the ray argument. These same bounds control the intermediate contours and all exponential moments near z=0. They establish both analytic hypotheses of Section 3.</p>
+<p><strong>Theorem 5.1 (literature minimal operator exists).</strong> For every positive geometric FAMED state with the finite peripheral certificates in the companion note, the exact published state (5.1), expressed in boundary t_0, has a nonzero annihilating ideal in ℚ(q,Q)[E;sigma]. Its primitive minimal operator exists in the literature sense. The state is nonzero for all sufficiently small b by its independently proved Gaussian asymptotic.</p>
+<p>The proof is Sections 1–4 together with the explicit verification above. It is an existence and finite-computability theorem. It does not give an efficient uniform formula for the minimal operator’s coefficients or its degree.</p>
+<h2 id="its-classical-symbol-contains-the-geometric-peripheral-curve">6. Its classical symbol contains the geometric peripheral curve</h2>
+<p>Keep the same boundary variable and normalization. The uniform saddle calculation near x=0 gives</p>
+<pre><code>J_X(hbar,x)=B_b(x) exp(Phi_s(x)/(2 pi hbar))(1+o(1)),
+s=b^2,</code></pre>
+<p>uniformly on a small complex neighborhood. Here Phi_s is the critical value of the explicit phase F_s in (5.6) of the companion note, is holomorphic in (x,s), and B_b(x) has a nonzero holomorphic leading Gaussian coefficient times hbar^(-1/2). These properties follow from the same strip and concavity bounds, not from an arbitrary formal WKB solution.</p>
+<p>Since E translates x by -2 pi i b sqrt(hbar), fixed Q corresponds to x=-log Q/(1+s), and therefore</p>
+<pre><code>E^j J_X/J_X -&gt; ell(Q)^j,
+ell(Q)=exp(-i Phi_0&#39;(x)),      x=-log Q.                 (6.1)</code></pre>
+<p>Let Ahat be the primitive minimal operator. Its coefficients are rational in q^(1/2),Q. After clearing denominators and removing their common vanishing power at q^(1/2)=1, its classical symbol A_0(Q,E) is nonzero. Applying (6.1) to the annihilator identity yields</p>
+<pre><code>A_0(Q,ell(Q))=0.                                       (6.2)</code></pre>
+<p>Here the classical branch can be identified from the checked gluing data. The constrained saddle has</p>
+<pre><code>grad F_0=(i xi/2)p,
+A Log z+B Log z&#39;&#39;=i nu+xi e_N,
+Phi_0&#39;(x)=i xi/2.</code></pre>
+<p>The symplectic peripheral certificate gives</p>
+<pre><code>x=H_m+n_1 H_l,       xi=H_l,
+n_1=-2 e_N^T D B^(-1)e_N.</code></pre>
+<p>Consequently the geometric peripheral curve in this polarization is</p>
+<pre><code>Q=exp(-H_m-n_1 H_l),       E=exp(H_l/2).                (6.3)</code></pre>
+<p>This records the inverse and factor-of-two conventions without silently choosing an SL(2) lift. The PSL eigenvalue ratios are exp(H_m),exp(H_l); for n_1=0 they are Q<sup>(-1),E</sup>2. Rational n_1 is treated on a finite peripheral cover. An SL(2) longitude lift may be -exp(H_l/2), rather than exp(H_l/2); the sign must be fixed using the exact state normalization. The figure-eight conversion below exhibits precisely this issue.</p>
+<p>The exponentiated gluing equations and (6.3), after clearing their rational exponents, are algebraic. The invertible restricted Hessian isolates the shape solution for fixed boundary near the complete point, so this branch lies on a one-dimensional algebraic component. Equation (6.2) says the irreducible geometric peripheral factor divides A_0 on the stated cover. Additional classical factors have not been excluded, and none is canceled at Q=1. Exact equality with the complete classical A-polynomial is a stronger AJ assertion, not required for the following state volume limit.</p>
+<h3 id="two-published-operator-conventions-are-not-equal-at-finite-b">6.1 Two published operator conventions are not equal at finite b</h3>
+<p>The present b-shift operator translates the scaled boundary x by</p>
+<pre><code>-2 pi i b sqrt(hbar)=-2 pi i b^2/(1+b^2),</code></pre>
+<p>and Q multiplies by exp(-(1+b^2)x). Its commutation parameter is q_b=exp(2 pi i b^2).</p>
+<p>By contrast, Section 4.4 of the FAMED paper defines multiplication by exp(x), a shift x-&gt;x+4 pi i hbar, and q_F=exp(4 pi i hbar). These are not an exact renaming of q_b,Q,E. The existence proof above therefore does not prove an annihilator statement for those different finite-b operators. It proves one for the Andersen–Malusà b-shift algebra acting on the explicitly rescaled literature state integral.</p>
+<p>There is also a sign to track in the displayed semiclassical substitution in that source: from its stated J~exp(i phi/(2 pi hbar)) and phi’=H_l/2, the positive shift x-&gt;x+4 pi i hbar gives exp(-H_l), rather than exp(+H_l). Thus an inverse-longitude convention must be reconciled before using its claimed classical-symbol identification. This follows by direct substitution; no conclusion about all other results in that paper is inferred from it.</p>
+<h3 id="exact-figure-eight-conversion-including-the-boundary-factor">6.2 Exact figure-eight conversion, including the boundary factor</h3>
+<p>For the ordered two-tetrahedron example, the face maps give</p>
+<pre><code>Q_f=diag(1,-1), H=diag(1/2,-1),
+A=[[1,-2],[0,4]], B=[[-1,-1],[0,2]],
+nu=(-pi,2pi), c=(pi,-pi), p=(-1,1), gamma=0, C_X=1.</code></pre>
+<p>These finite matrices can be checked directly from the displayed face maps and gluing rows. At boundary spectral coordinate t_0, the fiber is y_1=y_2-x, x=2 pi sqrt(hbar)t_0. Writing y_2=2 pi sqrt(hbar)t gives</p>
+<pre><code>J_F(hbar,2 pi sqrt(hbar)t_0)
+  = exp(-pi(b+b^(-1))t_0)/(2 pi sqrt(hbar))
+    integral Phi_b(t)Phi_b(t-t_0)
+           exp(pi i t_0^2-2 pi i t_0 t-pi i t^2) dt.</code></pre>
+<p>In the Andersen–Malusà state of the companion note, substitute t=t_0-y and use the exact inversion identity. With</p>
+<pre><code>zeta_b=exp(i pi(b^2+b^(-2))/12),</code></pre>
+<p>the exact relation is</p>
+<pre><code>J_F(hbar,2 pi sqrt(hbar)t_0)
+  = zeta_b/(2 pi sqrt(hbar))
+           exp(pi(b+b^(-1))t_0) J_AM,b(t_0).            (6.4)</code></pre>
+<p>For small complex scaled boundary value, both contours are related within the holomorphic strip, with vanishing vertical ends. This justifies the change of variables as an identity of the selected states.</p>
+<p>The boundary factor g(t_0)=exp(pi(b+b^(-1))t_0) has</p>
+<pre><code>E g/g=-q_b^(-1/2).</code></pre>
+<p>Consequently the corresponding primitive operators are related by</p>
+<pre><code>Ahat_F(Q,E)=Ahat_AM(Q,-q_b^(1/2) E),                    (6.5)</code></pre>
+<p>up to the fixed allowed equation units. At the complete point the geometric FAMED root is E=1 and the Andersen–Malusà SL longitude root is E=-1. Their states have exactly the same volume rate at t_0=0; their ratio there is the explicit phase zeta_b times 1/(2 pi sqrt(hbar)). At generic boundary the factor in (6.4) is exponentially significant in the scaled semiclassical limit and cannot be replaced by an unspecified scalar normalization.</p>
+<p>The subsequent <code>tetrahedral_symmetry_and_figure_eight.md</code> now compares this two-tetrahedron realization with the p=0 even twist-family realization. For their recorded face orders and printed normalizations it proves</p>
+<pre><code>J_3(hbar,x)=-exp[-pi i/12+11pi i/(12hbar)]J_F(hbar,x).</code></pre>
+<p>The move initially reverses x; a certified two-tetrahedron involution proves J_F is even. Both selected states consequently have the same minimal order-two operator (6.5). Its simultaneous Q,E reflection is checked exactly, retaining every nonmonomial peripheral factor.</p>
+<h2 id="the-volume-statement-now-concerns-a-literature-quantum-a-state">7. The volume statement now concerns a literature quantum A-state</h2>
+<p><strong>Corollary 7.1.</strong> Under the positive complete geometric and finite matrix certificate hypotheses above, define the quantum A-operator as the primitive minimal annihilator of the exact state (5.1). This operator exists, its classical symbol contains the geometric peripheral component in (6.3), and its prescribed state satisfies</p>
+<pre><code>lim_(b-&gt;0+) -2 pi hbar log|J_X(hbar,0)|=Vol(M).           (7.1)</code></pre>
+<p>The existence and symbol conclusions are proved here. The limit is the independent uniform-remainder and Gaussian proof in the companion note. There is no colored Jones polynomial in these definitions or proofs.</p>
+<p>The normalization is the published integral’s explicit one. An arbitrary solution of its operator is not assigned the same volume rate. Likewise a triangulation-independent scalar or boundary multiplier must be analyzed with its full generic variables before identifying two states.</p>
+<p>Remaining work for the user’s full knot-family objective is concrete:</p>
+<ol type="1">
+<li>Extend the geometric certificates beyond the twist families to more general alternating knots. The diagrammatic identification and preferred peripheral audit for the twist data are now reconstructed in <code>twist_topology_and_peripherals.md</code>.</li>
+<li>Complete the exact global state transformations, including generic peripheral factors, polarization, normalization and integration cycles, needed to identify these integral realizations as one topological knot state. The positive local charged pentagon and the fiber coarea factor are independently derived in <code>faddeev_pentagon_audit.md</code>; the full tensor phase, state recovery, and affine move criterion are now in <code>peripheral_phase_and_state.md</code>. Its geometric-endpoint moment argument removes the affine slope for every certified path. The actual figure-eight connecting move and ordering changes are audited in <code>tetrahedral_symmetry_and_figure_eight.md</code>.</li>
+<li>Establish any desired stronger equality of the entire classical symbol with the classical A-polynomial and compute useful minimal operators.</li>
+</ol>
+<p>None of these is inferred solely from the existence of Menasco’s topological polyhedra or from the abstract annihilator existence theorem.</p>
+<p>Run <code>python3 experiments/audit_general_annihilator.py</code> for exact checks of moment extraction and restriction of scalars, plus numerical checks of actual contour moments and the exact generic-boundary figure-eight conversion. A fractional-coefficient order-two example descends to an exact order-eight operator over ℚ(q,Q); this checks that the proof does not silently assume fractional coefficients can simply be replaced by their integer powers.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/general_annihilator_and_volume.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#proper-finite-products-from-the-exact-functional-equation">1. Proper finite products from the exact functional equation</a><a href="#a-nonzero-elimination-operator-without-invoking-a-closure-theorem">2. A nonzero elimination operator without invoking a closure theorem</a><a href="#exponential-moments-recover-a-genuine-boundary-operator">3. Exponential moments recover a genuine boundary operator</a><a href="#returning-from-finite-covers-to-the-prescribed-peripheral-algebra">4. Returning from finite covers to the prescribed peripheral algebra</a><a href="#verification-for-the-published-geometric-famed-state">5. Verification for the published geometric FAMED state</a><a href="#its-classical-symbol-contains-the-geometric-peripheral-curve">6. Its classical symbol contains the geometric peripheral curve</a><a href="#the-volume-statement-now-concerns-a-literature-quantum-a-state">7. The volume statement now concerns a literature quantum A-state</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

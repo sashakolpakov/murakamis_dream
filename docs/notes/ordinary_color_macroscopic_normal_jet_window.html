@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A macroscopic polynomial quantum-normal window for every fixed plat · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/ordinary_color_macroscopic_normal_jet_window.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-macroscopic-polynomial-quantum-normal-window-for-every-fixed-plat">A macroscopic polynomial quantum-normal window for every fixed plat</h1>
+<p>28 October 2026. For an original knot presented as a fixed 2k-plat, ordinary-color quantum-normal jets are polynomially bounded throughout</p>
+<pre><code>k(j-1)+1&lt;=N.                                    (1)</code></pre>
+<p>The endpoint is INCLUDED. This follows from a one-sided angular positive-path interval and elementary polynomial differentiation; no derivative of a singular root path basis is taken. Thus the conclusion controls a macroscopic part of the actual pointed quantum-A source, not only finitely many small colors. It does not bound the remaining high-color packet or independent meridian derivatives of the root ADO state.</p>
+<h2 id="exact-original-family-and-statement">1. Exact original family and statement</h2>
+<p>Let C_j(q) denote the ORIGINAL reduced, zero-framed ordinary integral color-j knot scalar. The ordinary pivot is K(q), with its matching ribbon twist. At q_N=exp(pi*i/N), j&lt;N, its equality with the original reduced root state is the independently proved quotient/cabling comparison, with the actual half-Cartan and parity adapters retained. Off the root this note uses that ORDINARY integral family. It does not differentiate a frozen ADO pivot as though it were the same family.</p>
+<p>Fix the plat word and k. Its actual Laurent degree in the marked variable z=q^(1/2) obeys</p>
+<pre><code>deg_Laurent C_j &lt;=D_j&lt;=C_word (j+1)^2.          (2)</code></pre>
+<p>For every fixed r&gt;=1 there is a constant C_(word,r) such that, for all N and j&gt;=1 satisfying (1),</p>
+<pre><code>|partial_s^r C_j(q_N(1+s/N)) at s=0|
+         &lt;=C_(word,r) j^(k-1)(D_j+1)^(2r+1). (3)</code></pre>
+<p>For r=0 the sharper bound is |C_j(q_N)|&lt;=j^(k-1). In particular the right side of (3) is polynomial in N, for example C_(word,r) N^(k+4r+1). There is no level-parity or primality restriction.</p>
+<p>The same polynomial conclusion holds for the root normal coordinate</p>
+<pre><code>Delta=1-q^(2N), q=q_N(1-Delta)^(1/(2N)),       (4)</code></pre>
+<p>and for the actual weighted colors d_j(q)=(q^(2j)-1)C_j(q), including their fixed-order jets. The constants can change with r and the word, but not N or j in this window.</p>
+<p>For k&gt;=2, the endpoint of (1) is below N, so these are ordinary colors. The k=1 knot is the unknot, whose reduced scalar is one; its possible j=N endpoint is harmless and can instead be handled separately.</p>
+<h2 id="positivity-on-the-full-one-sided-angular-interval">2. Positivity on the full one-sided angular interval</h2>
+<p>Put m=j-1 and n=2km. The fundamental cable of this colored plat has n endpoints. Work in its VACUUM path space: nonnegative paths</p>
+<pre><code>a_0=a_n=0, |a_(i+1)-a_i|=1.</code></pre>
+<p>Every such path has maximum height at most n/2=km. This is the important improvement over the full trace path space, whose paths need not end at zero. On</p>
+<pre><code>pi/(2N)&lt;=theta&lt;pi/N, q=exp(i theta),            (5)</code></pre>
+<p>condition (1) implies that all required weights</p>
+<pre><code>mu_a=[a+1]_q=sin((a+1)theta)/sin theta,
+             0&lt;=a&lt;=km,</code></pre>
+<p>are strictly positive. At the upper endpoint, mu_(km) is allowed to become zero if km+1=N. Positivity is only asserted strictly BELOW that endpoint.</p>
+<p>For completeness the elementary TL generator on this orthonormal path basis has, when a_(i-1)=a_(i+1)=a, the two-state matrix</p>
+<pre><code>e_i[b,c]=sqrt(mu_b mu_c)/mu_a, b,c in {a-1,a+1}.</code></pre>
+<p>The omitted height -1 has weight zero. Its nonzero eigenvalue is (mu_(a-1)+mu_(a+1))/mu_a=2cos theta. The same elementary adjacent calculation gives e_i e_(i+1)e_i=e_i; disjoint generators commute. The maximum-height states introduce no missing term: a neighbor of an editable middle height is at most km-1, so its two weights are within the stated finite vacuum range. Thus every elementary fundamental crossing</p>
+<pre><code>B_i=q^(1/2)I-q^(-1/2)e_i                       (6)</code></pre>
+<p>is unitary: its eigenvalues are q^(1/2) and -q^(-3/2). Negative crossings are its adjoints. These are the actual ordinary full-Cartan normalizations, not a changed braid operator.</p>
+<p>Jones–Wenzl recursion on each m-strand color block has positive denominators [1],…,[m], is selfadjoint, and gives an orthogonal projection onto the original color-j cable subspace. Its quantum trace is EXACTLY [m+1]=[j]. One direct induction uses f_m=f_(m-1)-([m-1]/[m])f_(m-1)e_(m-1)f_(m-1) and the ordinary partial trace, giving [2][m]-[m-1]=[m+1].</p>
+<p>The actual generic cabling comparison follows from the explicit highest-weight embedding and the original R coproduct. Its proof in <a href="actual_ordinary_color_comparison_audit.html">the ordinary-color audit</a> is algebraic BEFORE root specialization, so it applies throughout (5), where none of those denominators vanish. No root-only quotient has been analytically differentiated.</p>
+<h2 id="the-original-plat-normalization-and-the-improved-bound">3. The original plat normalization and the improved bound</h2>
+<p>A single actual colored cup has squared positive norm [j]: closing it against its adjoint evaluates precisely the quantum trace of its Jones–Wenzl projector. The k disjoint ordinary colored cups therefore have squared norm [j]^k. The actual output caps have the same norm. The required self-dual orientation and ribbon identifications retain their original signs and q monomials; on (5) these are unitary factors, not additional positive dimension factors. They stay in C_j(q), and their degree is included in (2).</p>
+<p>One can see the cup normalization directly in the orthonormal vacuum path model: one colored cup is sqrt([j]) times the unique length-2m mountain path. The k-cup source is [j]^(k/2) times the concatenation of those mountains. Every internal color projector fixes this source. The cabled braid is unitary and maps the prescribed color subspace to its actual corresponding output subspace. Consequently the raw ordinary colored plat scalar has absolute value at most [j]^k.</p>
+<p>The reduced KNOT scalar is the raw scalar divided by ONE [j]. This is its original cut/trace identity, not one division per cup or per strand. Hence throughout the CONTINUOUS interval (5),</p>
+<pre><code>|C_j(exp(i theta))|&lt;=[j]^(k-1)&lt;=j^(k-1).        (7)</code></pre>
+<p>The last inequality follows from [j]=sum_(a=0)<sup>(j-1)q</sup>(j-1-2a) and positivity. The full zero-framing line has modulus one on this interval. Neither it nor any original pivotal factor is reset.</p>
+<p>At theta=pi/N, use continuity of the actual Laurent polynomial C_j. This includes equality in (1) even though the top path weight becomes zero. It is invalid to differentiate that singular path basis; the next step differentiates only a bounded POLYNOMIAL on the closed one-sided interval. This is why the endpoint is genuinely included.</p>
+<h2 id="an-elementary-quadratic-laurent-degree-bound">4. An elementary quadratic Laurent-degree bound</h2>
+<p>For clarity, (2) does not rely on a colored-Jones degree theorem. In an integral highest-weight color-j basis, the original universal R nilpotent coefficient is a Gaussian polynomial times a product of at most j-1 quantum integers and a power of q-q^(-1). Its divided-power denominator cancels in the Gaussian coefficient. The latter’s Laurent degree is O(j^2), as follows by its finite Pascal recurrence. The Cartan exponent is a product of two weights of size at most j-1, and hence also has degree O(j^2).</p>
+<p>Both signs have the same degree bound. A fixed word adds only a fixed number of such degrees. The actual pivotal powers contribute O_word(j), and the matching ribbon framing contributes O_word(j^2). Use the reduced cut scalar, rather than introduce a division by [j]: it is a finite sum of these integral entries and pivots. Thus its Laurent support is contained in [-C_word(j+1)<sup>2,C_word(j+1)</sup>2] in z=q^(1/2). Summing paths cannot increase that support. This proves (2) with a fixed coarse word constant while retaining the half-root.</p>
+<h2 id="endpoint-differentiation-without-a-cited-markov-inequality">5. Endpoint differentiation without a cited Markov inequality</h2>
+<p>Let z_N=q_N^(1/2) be its original marked branch. Put</p>
+<pre><code>a=tan(pi/(8N)), t=a(x-1)/2, -1&lt;=x&lt;=1,
+z=z_N(1+i t)/(1-i t).</code></pre>
+<p>The q-angle now runs exactly from pi/(2N) to pi/N. Define</p>
+<pre><code>P(x)=(1+t^2)^D C_j(z^2), D=D_j.                (8)</code></pre>
+<p>It is a polynomial of degree at most 2D: multiplication clears every Laurent monomial’s denominators. Since D a^2=O_word(1), (7) gives</p>
+<pre><code>sup_[-1,1]|P|&lt;=exp(D a^2)j^(k-1)&lt;=C_word j^(k-1). (9)</code></pre>
+<p>For any complex polynomial P of degree n, expand it as sum_(l=0)^n c_l T_l(x). The cosine integral for its Chebyshev coefficients gives |c_0|&lt;=M and |c_l|&lt;=2M, M=sup|P|. The elementary differential equation</p>
+<pre><code>(1-x^2)T_l&#39;&#39;-x T_l&#39;+l^2 T_l=0</code></pre>
+<p>implies, at x=1,</p>
+<pre><code>T_l^(r+1)(1)=(l^2-r^2)T_l^r(1)/(2r+1).</code></pre>
+<p>Thus, for each FIXED r, |T_l<sup>r(1)|&lt;=C_r(l+1)</sup>(2r), and</p>
+<pre><code>|P^r(1)|&lt;=C_r M(n+1)^(2r+1).                 (10)</code></pre>
+<p>The derivatives of (1+t<sup>2)</sup>(-D) at x=1 have bounded fixed-order norms because D a^2=O_word(1). The angular chain rule costs at most C_r N^r. Applying (9)–(10) to (8) therefore proves</p>
+<pre><code>|partial_theta^r C_j(exp(i theta)) at theta=pi/N|
+    &lt;=C_(word,r)N^r j^(k-1)(D_j+1)^(2r+1).   (11)</code></pre>
+<p>This is an endpoint estimate, so a two-sided positive arc is not needed. Finally q partial_q=(1/i)partial_theta on that angular curve. For q=q_N(1+s/N), the order-r operator is</p>
+<pre><code>N^(-r) product_(l=0)^(r-1)(q partial_q-l).</code></pre>
+<p>Its expansion uses only angular derivatives through r, and (11) gives (3). For (4) it is instead the fixed polynomial (-1)^r product_(l=0)^(r-1)((q partial_q)/(2N)-l), which has the same bound. Derivatives of q^(2j)-1 on either scale are bounded at fixed order since j&lt;=N. This proves the weighted color statement too.</p>
+<h2 id="the-entire-low-color-packet-is-bounded-on-a-complex-normal-disk">6. The entire low-color packet is bounded on a complex normal disk</h2>
+<p>There is a useful strengthening of the fixed-jet assertion. Fix ANY A&gt;4. Uniformly for every color satisfying (1), the ACTUAL entire ordinary family obeys</p>
+<pre><code>|C_j(q_N exp(s/N))|&lt;=C_(word,A)(D_j+1)j^(k-1)
+                   &lt;=C_(word,A)N^(k+1),
+              |s|&lt;=2N^(-A).                  (12)</code></pre>
+<p>No eigenframe, recurrence denominator, truncated Taylor polynomial or root color quotient is used on this disk.</p>
+<p>To prove (12), keep the same polynomial P in (8). The half-root ratio is now exp(s/(2N)), so its exact rational coordinate is</p>
+<pre><code>t=-i tanh(s/(4N)), x=1+2t/a.</code></pre>
+<p>Consequently |x-1|&lt;=C|s|. For |x-1|&lt;=d&lt;1/4 the elementary formula</p>
+<pre><code>T_l(x)=[(x+sqrt(x^2-1))^l
+                     +(x-sqrt(x^2-1))^l]/2</code></pre>
+<p>gives |T_l(x)|&lt;=exp(C l sqrt(d)): the two reciprocal factors have moduli at most 1+C sqrt(d). The finite Chebyshev expansion and |c_l|&lt;=2M from (9) yield</p>
+<pre><code>|P(x)|&lt;=C(D_j+1)j^(k-1)
+                        exp(C D_j sqrt(|s|)).</code></pre>
+<p>Since D_j=O_word(N^2) and A&gt;4, this exponential is bounded by a word constant on the whole displayed disk. The denominator in (8) is nonzero there and its inverse has modulus at most exp(C D_j |t|^2), also bounded. This proves (12), including the one-sided-positivity endpoint: only the original real-arc bound was used in its polynomial continuation.</p>
+<p>The weighted d_j(q)=(q^(2j)-1)C_j(q) has the same bound, since |q<sup>(2j)|&lt;=exp(4N</sup>(-A)) on this disk. The linear normal q=q_N(1+s/N) and the normal (4) map smaller disks of comparable radius into this exponential disk by their exact logarithms. Cauchy’s formula on a slightly smaller circle gives simultaneous polynomial bounds for ANY fixed jet depth of this ENTIRE packet.</p>
+<p>This stronger result is important at singular recurrence steps: one can transport the honest holomorphic low-color germs around nearby coefficient zeros, rather than infer that a finite Taylor truncation selected the correct meromorphic continuation. No recurrence denominator has been declared absent from that circle; the actual scalar colors themselves are holomorphic and bounded.</p>
+<h2 id="what-this-supplies-for-the-original-pointed-source">7. What this supplies for the original pointed source</h2>
+<p>For fixed k, the interval reaches</p>
+<pre><code>j&lt;=1+floor((N-1)/k).</code></pre>
+<p>At every singular recurrence step whose entire retained bounded jet packet lies within this color interval, its ACTUAL quantum-normal data are polynomially bounded without inverting that singular step. In particular a 2-bridge presentation controls the ordinary-color quantum jets through the midpoint, including the valid endpoint. The original complete/root source and all remaining high-color normal packets stay in the subsequent boundary transport.</p>
+<p>This does NOT assert a meridian-derivative bound for F_N(Y) at fixed q_N. Along C_j(q), q and Y=q^(2j) move together. Nor does pointwise unitarity at q_N extend the result beyond (1): there the continuous vacuum path space encounters nonsemisimple wall channels. Those channels and their original source must be retained. No bound for the complete K_N or the full high-color response is inferred.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_ordinary_color_macroscopic_normal_jet_window.py">Audit</a>: continuous untruncated vacuum path unitarity, colored cup/JW normalization, endpoint-inclusive angular bounds and exact Chebyshev endpoint derivative estimates.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/ordinary_color_macroscopic_normal_jet_window.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-original-family-and-statement">1. Exact original family and statement</a><a href="#positivity-on-the-full-one-sided-angular-interval">2. Positivity on the full one-sided angular interval</a><a href="#the-original-plat-normalization-and-the-improved-bound">3. The original plat normalization and the improved bound</a><a href="#an-elementary-quadratic-laurent-degree-bound">4. An elementary quadratic Laurent-degree bound</a><a href="#endpoint-differentiation-without-a-cited-markov-inequality">5. Endpoint differentiation without a cited Markov inequality</a><a href="#the-entire-low-color-packet-is-bounded-on-a-complex-normal-disk">6. The entire low-color packet is bounded on a complex normal disk</a><a href="#what-this-supplies-for-the-original-pointed-source">7. What this supplies for the original pointed source</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

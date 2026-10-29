@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A tame phase-ratio projector on the actual doubled corner sector · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/phase_ratio_corner_sector_metric.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-tame-phase-ratio-projector-on-the-actual-doubled-corner-sector">A tame phase-ratio projector on the actual doubled corner sector</h1>
+<p>29 October 2026. This is a boundary metric theorem for the ORIGINAL normalized Fermat cap, with all source normalizers retained. On its selected doubled clock sector, every flat orthogonal projector is exactly contractive for real cap parameters and polynomially bounded throughout a fixed complex cap disk. It does not prove that an interior crossing preserves that sector, or identify the character constraints of a triangulation edge.</p>
+<h2 id="the-actual-source-and-its-periodic-positive-metric">1. The actual source and its periodic positive metric</h2>
+<p>Let N&gt;=2, d=N-1, Q=exp(2pi i/N), and 0&lt;|epsilon|&lt;=rho=1/16. Use the marked root</p>
+<pre><code>delta=(1-epsilon)^(1/N), u=Q^(-j)delta, v^N=epsilon,
+0&lt;=j&lt;N.                                                     (1)</code></pre>
+<p>Any marked Nth root v is allowed. In the literal cap orientation,</p>
+<pre><code>P_a=v^a/product_(r=1)^a(1-uQ^r),
+L_a=v^(-a)product_(r=0)^(a-1)(1-uQ^r),  0&lt;=a&lt;N,
+h_a=|L_a|/|P_a|.                                           (2)</code></pre>
+<p>These are the original source frames of <a href="phase_ratio_bell_weights_and_source_gram.html">the source-balanced Gram theorem</a>. Because 1-u<sup>N=v</sup>N, both P and L, and hence h, extend N-periodically. Their EXACT recurrence is</p>
+<pre><code>h_(a+1)/h_a=|1-uQ^a| |1-uQ^(a+1)|/|v|^2.                   (3)</code></pre>
+<p>For j&gt;=1 the actual cap normalization is</p>
+<pre><code>Phat_a=v^(N-j)P_a/alpha_j,
+Lhat_a=v^j L_a/beta_j,
+alpha_j=F_(N-j), beta_j=N/F_(d-j),
+F_r=product_(k=1)^r(1-Q^k),
+alpha_j beta_j=N(1-Q^(-j)).                                 (4)</code></pre>
+<p>For j=0 retain P,L unchanged. Consequently the actual balanced metric Hhat=diag(|Lhat_a|/|Phat_a|) is a single positive scalar multiple of H=diag(h_a). The scalar in question is exactly |v|^(2j-N)|alpha_j/beta_j|; it has NOT been assumed tame or omitted from the original source. It cancels in every operator norm below.</p>
+<p>The literal source cost is still</p>
+<pre><code>Phat^* Hhat Phat=Lhat Hhat^(-1)Lhat^*
+   =|epsilon| |1-u|/[N|1-Q^(-j)|]
+                       sum_a 1/|1-uQ^a|,   j&gt;=1,            (5)</code></pre>
+<p>and |1-u| sum_a 1/|1-uQ^a| for j=0. In particular it is bounded by C(1+|epsilon|(1+log N)), as proved in the linked Gram note. No normalizer has been replaced by a chosen unit source.</p>
+<p>At fixed N, Phat and Lhat both tend to the coordinate corner e_j as epsilon tends to zero on their marked root cover. For the resonant entry of Phat, (1-delta)/epsilon tends to 1/N and the remaining denominator factors together with F_(N-j) multiply to N. For Lhat, its j-th numerator is exactly beta_j at epsilon=0. Every other entry has a strictly positive residual power of v. The j=0 assertion follows directly from (2).</p>
+<h2 id="the-doubled-sector-and-the-exact-projector-criterion">2. The doubled sector and the exact projector criterion</h2>
+<p>Give the doubled head the product metric G=H tensor H. Its clock sum sectors are</p>
+<pre><code>V_s=span{|a,s-a mod N&gt;:0&lt;=a&lt;N},
+G|_(V_s)=diag(g_a), g_a=h_a h_(s-a).                         (6)</code></pre>
+<p>The ORIGINAL conjugate double may equivalently be written using the source-exact antiunitary reflection of <a href="phase_ratio_double_and_fermat_source.html">the reflection theorem</a>. That reflection preserves h and adds only its specified diagonal unitary chirp. Thus it has the same metric (6), and the doubled corner e_j tensor bare_j belongs to V_(2j mod N).</p>
+<p>The clock-sector projector is diagonal and commutes with G, so it is contractive on the entire doubled space. Inside V_s the phase-ratio shift S^(-1) tensor S has the Fourier eigenvectors</p>
+<pre><code>w_(s,r)=N^(-1/2)sum_a Q^(ra)|a,s-a&gt;, 0&lt;=r&lt;N.</code></pre>
+<p>Unit-modulus scalar marks change the eigenvalues, not these projectors. A rank-one flat character projector Pi_(s,r)=w w^* has the EXACT restricted metric norm</p>
+<pre><code>||Pi_(s,r)||_G
+   =[(N^(-1)sum_a g_a)(N^(-1)sum_a g_a^(-1))]^(1/2).        (7)</code></pre>
+<p>Indeed a rank-one map xy^* has weighted norm ||G^(1/2)x|| ||G^(-1/2)y||. Formula (7) is independent of r and equals one precisely when g is constant.</p>
+<p>More generally, a flat orthogonal projector Pi is contractive in a positive metric G precisely when [Pi,G]=0. Necessity follows by applying contractivity to x+t y with x in its range and y in its kernel, and varying complex t: it forces their G-orthogonality. Sufficiency follows by the resulting orthogonal splitting. In general ||Pi||_G&lt;=sqrt(cond G).</p>
+<h2 id="exact-contractivity-and-its-complex-extension">3. Exact contractivity and its complex extension</h2>
+<p><strong>Theorem.</strong> For the actual normalized cap (1)–(4), every flat orthogonal projector whose range and domain lie in V_(2j mod N) satisfies</p>
+<pre><code>||Pi||_(Hhat tensor Hhat)
+       &lt;=exp[8|epsilon|(1+log N)]
+       &lt;=e^(8rho)N^(8rho).                                 (8)</code></pre>
+<p>Here the norm means the restriction to that sector, or equivalently the extension by zero on its orthogonal complement. If epsilon is real, the norm of every nonzero such projector is EXACTLY one. In particular this applies to all shift-character projectors and their orthogonal sums on the selected doubled corner sector.</p>
+<p>Proof. Put z_k=|1-delta Q^k|, periodically in k. Applying (3) to the two reflected indices gives, for 1&lt;=ell&lt;N,</p>
+<pre><code>g_(j+ell)/g_j
+   =(z_ell/z_(-ell))
+                 product_(k=1)^(ell-1)(z_k/z_(-k))^2,
+g_j=h_j^2,  s=2j mod N.                                   (9)</code></pre>
+<p>The potentially arbitrarily small resonant chord z_0 cancels EXACTLY. If epsilon is real then delta is real and positive, including when epsilon&lt;0 and delta&gt;1. Thus z_k=z_(-k) and every g_a=h_j^2. The metric is scalar on this sector, proving exact contractivity without a limiting argument.</p>
+<p>For complex epsilon the marked logarithm gives |delta-1|&lt;=2|epsilon|/N. For k!=0 mod N, with m=min(k,N-k),</p>
+<pre><code>|1-Q^k|&gt;=4m/N,
+|z_(+/-k)/|1-Q^k|-1|&lt;=|epsilon|/(2m)=:t_k&lt;=1/32.</code></pre>
+<p>It follows that</p>
+<pre><code>|log(z_k/z_(-k))|
+   &lt;=log((1+t_k)/(1-t_k))&lt;=3|epsilon|/(2m).                 (10)</code></pre>
+<p>Since sum_(k=1)^(N-1)1/min(k,N-k)&lt;=2(1+log N), equations (9)–(10) give</p>
+<pre><code>|log(g_a/h_j^2)|&lt;=8|epsilon|(1+log N).</code></pre>
+<p>Thus the restricted condition number is at most exp[16|epsilon|(1+log N)]. The general projector estimate of section 2 proves (8). Replacing H by Hhat only multiplies the doubled metric by a common positive scalar, so the proof retains all alpha,beta factors in (4). This also proves uniformity for epsilon depending arbitrarily on N, even exponentially close to zero. If |epsilon|log N tends to zero, the upper bound tends to one.</p>
+<p>The opposite root orientation follows by Q-&gt;Q^(-1) and the corresponding reflected cap labels; the same real chord estimates and source normalization proof apply.</p>
+<h2 id="exact-scope-at-the-original-source">4. Exact scope at the original source</h2>
+<p>The theorem controls a genuine boundary sector selected by the original corner limit, not an arbitrarily chosen geometric sector. For epsilon!=0 the complete cap column has nonzero entries in every coordinate, so its conjugate double also has other V_s components. These components cannot be discarded inside a Cauchy cap contour. A general V_s has the exact norm (7), with no scalar metric conclusion unless its own reflected products are constant.</p>
+<p>Nor has a crossing been proved to preserve the local sector s=2j, or a change to an adjacent Fermat chart proved contractive in this metric. Global total-degree conservation does not imply those local assertions. If a specified physical/edge projector acts inside the selected sector as a flat orthogonal projector, (8) bounds that projector with the actual cap metric. Identifying all interior edge projectors and controlling their intervening transport remain separate requirements. All off-Fermat beta currents and both Bell half-phase chambers of the linked notes remain in the complete original source.</p>
+<h2 id="independent-finite-audit">5. Independent finite audit</h2>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_phase_ratio_corner_sector_metric.py">The audit</a> checks the literal normalized frames, the alpha beta product, periodic recurrence, reflected product (9), and all cap labels at a range of levels and real/complex cap parameters. It also compares (7) with direct weighted singular values of character projectors and their nontrivial sums. The tests include cap parameters exponentially small in N; none substitutes epsilon=0 before constructing the metric. The accompanying result file is written only after all assertions pass.</p>
+<p>Fresh replay: PASS 710 actual normalized cap sectors, 664 direct weighted character/sum-projector checks, and 12 opposite-root cases. Python compilation also passes. The numerical checks supplement the uniform reflected-chord proof; they do not establish interior preservation of the selected sector.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/phase_ratio_corner_sector_metric.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-source-and-its-periodic-positive-metric">1. The actual source and its periodic positive metric</a><a href="#the-doubled-sector-and-the-exact-projector-criterion">2. The doubled sector and the exact projector criterion</a><a href="#exact-contractivity-and-its-complex-extension">3. Exact contractivity and its complex extension</a><a href="#exact-scope-at-the-original-source">4. Exact scope at the original source</a><a href="#independent-finite-audit">5. Independent finite audit</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

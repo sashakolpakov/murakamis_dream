@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The original Rogers sink is an opposite-root beta source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_rogers_sink_opposite_beta_source.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="the-original-rogers-sink-is-an-opposite-root-beta-source">The original Rogers sink is an opposite-root beta source</h1>
+<p>28 October 2026. The remaining U/U/F sink has an exact finite order-reversal identity with the already solved Newton sink at the opposite root. Applying its ACTUAL relative source gives an explicit two-full-Psi residue and a uniformly bounded retained current on a nonempty geometric chamber. No new normalization, guessed contour, or substitution of a positive invariant is required.</p>
+<p>Together with the literal three-sink crossing partition, this supplies local analytic source formulas for all nine original crossing atoms. It does not prove that the simultaneous exterior knot cycle selects their geometric product.</p>
+<h2 id="original-rogers-polynomial-and-field-tags">1. Original Rogers polynomial and field tags</h2>
+<p>Put Q=exp(2<em>pi</em>i/N), h=2<em>pi</em>i/N and d=N-1. The actual U/U/F finite convolution is</p>
+<pre><code>R_N(u,v)=sum_(i+j&lt;N) (Q;Q)_(i+j)
+                           u^i v^j/[(Q;Q)_i(Q;Q)_j]. (1)</code></pre>
+<p>Its q-Pascal recurrence gives the exact endpoint Ward equations</p>
+<pre><code>(1-u)R_N(u,v)-v R_N(Qu,v)=D_R,
+(1-v)R_N(u,v)-u R_N(u,Qv)=D_R,
+D_R=1-u^N-v^N.                                     (2)</code></pre>
+<p>For example h_(a+1)(u,v)=u h_a(u,v)+v h_a(Qu,v), while h_N=u<sup>N+v</sup>N at the primitive root. Summing a=0,…,d gives (2). The nonzero inhomogeneous endpoint is part of the source.</p>
+<p>For the complete reflected moment field</p>
+<pre><code>F_R(L;U,V)=r^d Psi_-(Log U-L)
+                     Psi_-(Log V-L)Psi_+(-L), r=exp L,</code></pre>
+<p>the EXACT original tags are</p>
+<pre><code>N Q^d [r^0]F_R=R_N(Q^2 U,Q^2 V).                  (3)</code></pre>
+<p>Indeed the two minus coefficients are Q^i/(Q;Q)<em>i and Q^j/(Q;Q)<em>j, while p</em>(d-i-j)=Q^(i+j+1)(Q;Q)</em>(i+j)/N. No Q tag or N factor is dropped.</p>
+<p>The exact field step and norm are</p>
+<pre><code>F_R(L+h)/F_R(L)=Q^d (1-Q^(-1)/r)
+                          /[(1-U/r)(1-V/r)],
+F_R(L+2*pi*i)/F_R(L)
+              =r^N(r^N-1)/[(r^N-U^N)(r^N-V^N)].    (3a)</code></pre>
+<p>Subtracting one in the latter has numerator [(U<sup>N+V</sup>N-1)r<sup>N-U</sup>N V^N]. Its multiplier-one locus is the Frobenius copy of the classical linear gluing equation (U+V-1)r=UV. The retained source does not become a homogeneous solution merely because that polynomial is displayed.</p>
+<h2 id="a-finite-source-preserving-order-reversal">2. A finite source-preserving order reversal</h2>
+<p>Write B_(q,N)(a,b)=sum_(k=0)^d product_(j&lt;k)(a-q^j b). Then the WHOLE polynomial kernel satisfies</p>
+<pre><code>R_N(u,v)=v^d B_(Q^(-1),N)(v^(-1),Q^(-1)u/v).      (4)</code></pre>
+<p>This is an identity of every boundary coefficient and can therefore be paired with the SAME exterior functional and original cups/caps. The apparent negative v powers cancel to the original polynomial; they are not a new source support assumption.</p>
+<p>Here is an all-N coefficient proof. Let q=Q^(-1). The right side is</p>
+<pre><code>sum_(a=0)^d v^(d-a)(q u;q)_a.</code></pre>
+<p>The coefficient of u^i v^j has a=d-j and is</p>
+<pre><code>(-1)^i q^(i(i+1)/2)
+         (q;q)_(d-j)/[(q;q)_i(q;q)_(d-j-i)].</code></pre>
+<p>The numerator quotient equals (Q;Q)_(i+j)/(Q;Q)_j by the root complement, and (q;q)_i=(-1)^i Q^(-i(i+1)/2)(Q;Q)_i. The phases cancel EXACTLY, leaving the coefficient in (1). This uses no asymptotics.</p>
+<h2 id="carry-the-opposite-root-contour-and-the-full-norm">3. Carry the opposite-root contour and the full norm</h2>
+<p>Define the opposite-root current by the actual conjugate source</p>
+<pre><code>I_-(a,b)=overline(I_+(overline(a),overline(b))),</code></pre>
+<p>with its conjugate logarithmic marks. The conjugate of the upward Barnes contour is a DOWNWARD contour; this orientation is retained. Equivalently it is minus the upward integral with denominator exp(2<em>pi</em>i*z)-1 and the opposite full-Psi function. Its chamber is a upper and b/a lower. Its uniform compact bound is the conjugate of the proved original Newton bound.</p>
+<p>Apply the EXACT opposite Newton decomposition to (4), using</p>
+<pre><code>a=v^(-1), b=Q^(-1)u/v,
+Log a=-Log v, Log(b/a)=Log u-h.</code></pre>
+<p>The complete norm transforms by</p>
+<pre><code>v^d(1-a^N+b^N)=-v^(-1)(1-u^N-v^N).</code></pre>
+<p>The original Rogers source is consequently</p>
+<pre><code>R_N=T_N+D_R J_N,
+J_N(u,v)=-v^(-1) I_-(v^(-1),Q^(-1)u/v),
+T_N(u,v)=phi_N exp[-Log u Log v/h]
+                Psi_-(Log u-h)Psi_-(Log v-h).      (5)</code></pre>
+<p>All constants are exact: N/phi_-=phi_+ because |phi_N|^2=N, and v^d a^N times the shifted Gaussian contributes v^(-1)*v=1. Thus (5) is an actual relative-cycle pushforward, not a normal determinant calculation. The opposite circle/ray source, its endpoints and deck choices are transported by (4) and conjugation.</p>
+<p>For u,v both strictly lower, the transformed opposite chamber is valid uniformly on compact subsets for all sufficiently large N. It follows immediately that</p>
+<pre><code>|J_N(u,v)|&lt;=C_K.                                  (6)</code></pre>
+<p>Its principal normalization symbol is also explicit:</p>
+<pre><code>J_N=1/(1-u-v)+h*u*v/(1-u-v)^3+O_K(h^2).             (6a)</code></pre>
+<p>This follows by substituting the exact Q^(-1) tag into the proved opposite Newton symbol, or by expanding (2). Its all-order rational recursion has poles only on the bubble locus u+v=1. Exact current continuation and exponentially small sectors are still retained.</p>
+<p>At smaller N, or after continuation outside that chamber, (5) keeps its transported logarithmic marks and currents; no bare replacement by a principal contour is assumed.</p>
+<p>There is a useful full-positive-function version that displays the norm factors. The exact identity</p>
+<pre><code>Psi_-(z-h)=(1-exp(Nz))/Psi_+(z)</code></pre>
+<p>gives</p>
+<pre><code>T_N=phi_N (1-u^N)(1-v^N) exp[-Log u Log v/h]
+                          /[Psi_+(Log u)Psi_+(Log v)]. (7)</code></pre>
+<p>The factor is (1-u<sup>N)(1-v</sup>N), NOT (uv)^N. On the balanced Fermat locus u<sup>N+v</sup>N=1 these agree, but off that locus their difference is D_R. Replacing one by the other changes the retained current by an explicit full-Psi term. Such a change cannot be declared tame or ignored at an ideal specialization.</p>
+<h2 id="balanced-fourier-check-and-both-homogeneous-ward-equations">4. Balanced Fourier check and both homogeneous Ward equations</h2>
+<p>On u<sup>N+v</sup>N=1, the source recurrence is homogeneous. The finite u-orbit has</p>
+<pre><code>R_N(Q^k u,v)=R_N(u,v) (u;Q)_k/v^k.</code></pre>
+<p>Summing the orbit and taking the zero Fourier coefficient of the polynomial gives</p>
+<pre><code>R_N(u,v) B_(Q,N)(v^(-1),u/v)=N u^N/(1-v).         (8)</code></pre>
+<p>The balanced Newton sum is nonzero. Using its independently proved normalizer, (8) yields exactly (7) with its balanced factor (uv)^N. This is an independent finite-source normalization check.</p>
+<p>Off balance, (5) supplies the actual full norm extension. Its geometric block obeys BOTH exact homogeneous equations</p>
+<pre><code>(1-u)T_N(u,v)=v T_N(Qu,v),
+(1-v)T_N(u,v)=u T_N(u,Qv),                         (9)</code></pre>
+<p>and J_N obeys (2) with right side one. The all-level source choice is therefore fixed by order reversal, not just by data on D_R=0.</p>
+<h2 id="an-actual-growing-local-source-on-a-full-open-chamber">5. An actual growing local source on a full open chamber</h2>
+<p>For u,v strictly lower, write l=Log u,m=Log v on (-pi,0). The actual negative-strip full-Psi symbol and exact shift yield</p>
+<pre><code>T_N=phi_N/ sqrt[(1-u)(1-v)]
+    exp[W_R(u,v)/h](1+O_K(1/N)),
+W_R=-Li_2(u)-Li_2(v)-l*m.                         (10)</code></pre>
+<p>Every density is explicit and nonzero, with all fixed derivative bounds uniform on compact lower-half-plane families. Put</p>
+<pre><code>Lambda_R=Im W_R/(2*pi),
+delta_R=max(0,log|u|,log|v|).</code></pre>
+<p>If Lambda_R&gt;=delta_R+eta on a compact family, (5)–(6) prove</p>
+<pre><code>R_N(u,v)=T_N(u,v)[1+O_K(N^(-1/2)exp(-N eta))].    (11)</code></pre>
+<p>The ORIGINAL residue has coefficient one; its entire retained normalization current is exponentially smaller. This is a genuine source theorem on a nonempty open family, not a knot-family claim.</p>
+<p>For |u|=|v|=1, with both lower, delta_R=0 and</p>
+<pre><code>Lambda_R=[-Im Li_2(u)-Im Li_2(v)]/(2*pi)&gt;0.</code></pre>
+<p>The cross term l*m is real. A compact pair of lower unit arcs has a uniform positive gap, which persists in a full open neighborhood. In particular, uniformly for theta,eta on compact subsets of (0,pi),</p>
+<pre><code>lim_(N-&gt;infinity) (2*pi/N)
+            log|R_N(exp(-i*theta),exp(-i*eta))|
+                         =D(exp(i*theta))+D(exp(i*eta)). (12)</code></pre>
+<p>The identical limit holds with the ACTUAL Q<sup>2,Q</sup>2 tags in (3). These are original local polynomial volume identities. They are not asserted to be Kashaev invariants of a new family of knots.</p>
+<p>There is a genuinely positive three-side bipyramid subfamily too. At u=exp(-i theta),v=exp(-i eta), its three-side shapes are</p>
+<pre><code>A=(u+v-1)/v, B=(u+v-1)/u,
+C=(u+v-1)/(uv).</code></pre>
+<p>C is upper for all theta,eta in (0,pi). Both A and B are lower when eta&lt;pi/2+theta/2 and theta&lt;pi/2+eta/2. These strict inequalities hold in particular near every equal-angle pair. Thus the three signed shapes -[A]-[B]+[C] and the two negative output shapes -[u]-[v] are strictly positive and nondegenerate there. The five-term relation identifies their equal positive volume. This verifies a nonempty open geometric family without asserting that every possible unit-angle pair is a positive 2-to-3 move in this ordering.</p>
+<h2 id="what-is-now-available-globally">6. What is now available globally</h2>
+<p>The literal crossing assembly has three disjoint finite sinks. For a positive crossing, exact Gaussian absorption leaves two Newton kernels and one Rogers kernel. For a negative crossing there are again two Newton kernels and one Rogers kernel, with its original Gaussian retained. Equations (4)–(11) thus fill the missing analytic local entry in that assembly, including its source and norm factors.</p>
+<p>This does not permit independent sector integrations on arbitrary new circles. The simultaneous original boundary pairing, logarithmic seams, caps and residual Gaussian remain compulsory. The full exterior cycle and its geometric noncancellation are the next global issue.</p>
+<h2 id="sew-the-actual-opposite-face-before-taking-an-asymptotic-symbol">7. Sew the actual opposite face BEFORE taking an asymptotic symbol</h2>
+<p>In the literal positive crossing, the final Newton and Rogers kernels share the EXACT variable w=v_B/u_B=v_R. Write their paired polynomial kernel as</p>
+<pre><code>F(a,c,w)=B_N(a,a w) R_N(c,w),
+alpha=Log a, chi=Log c, sigma=Log w,
+A=a^N, C=c^N, W=w^N,
+D_B=1-A+AW, D_R=1-C-W.                            (13)</code></pre>
+<p>The Newton positive growth chamber asks w upper while the Rogers negative growth chamber asks w lower. There is NO simultaneous principal positive chamber for the two unsewn face factors. The literal product must first use the exact shifted identity</p>
+<pre><code>Psi_+(sigma)Psi_-(sigma-h)=1-W.</code></pre>
+<p>Consequently its full residue product is exactly</p>
+<pre><code>P(a,c,w)=(1-W) G(a,c,w),
+G=N a^N exp[-sigma(alpha+chi)/h]
+                   Psi_+(h-alpha)Psi_-(chi-h).      (14)</code></pre>
+<p>The ordinary factor 1-w is absent: the EXACT h shift removes it. The central factor 1-W is retained. All remaining original currents are the explicit aggregate</p>
+<pre><code>F=P+D_B I_B(a,a w) T_R(c,w)
+      +D_R J_R(c,w) S_B(a,a w)
+      +D_B D_R I_B(a,a w)J_R(c,w).                 (15)</code></pre>
+<p>This is an identity of actual marked functions; their relative cycles and overlaps are inherited from the original finite pair. It does not assign independent principal contours to the three terms in the incompatible half-plane chambers.</p>
+<p>The paired endpoint Ward identity is also explicit and polynomial:</p>
+<pre><code>F(a,c,w)-a c F(a,c,Qw)
+   =D_B R_N(c,w)+a D_R B_N(a,Qa w).                (16)</code></pre>
+<p>It follows by multiplying the two exact finite Ward equations. No artificial denominator 1-w is introduced. The source norms obey</p>
+<pre><code>D_B+A D_R=1-AC.                                  (17)</code></pre>
+<p>Thus the two simultaneous balanced constraints force the single external central relation AC=1. Their coupling must not be replaced by two independent local angle-domain choices.</p>
+<p>The remaining field G has no dilogarithm in sigma; its sigma phase is the explicit linear Fourier coupling -sigma(alpha+chi). Its regular remaining shape functions can both be on selected strips when a and c are lower, irrespective of the removed face’s sign. The OTHER factors of the complete crossing still depend on this same internal variable, so this observation alone does not evaluate its full Fourier integral or select its exterior cycle.</p>
+<p>One full sigma deck gives</p>
+<pre><code>P -&gt; P/(AC),
+(F-P) -&gt; (F-P)+(1-(AC)^(-1))P.                    (18)</code></pre>
+<p>The original pair F remains fixed. This is the inherited shared-face source extension, with the exact norm currents. It shows both the benefit of sewing the opposite face first and why its currents cannot then be deleted independently.</p>
+<h3 id="the-exact-locus-for-an-aggregate-geometric-quotient">7.1. The exact locus for an aggregate geometric quotient</h3>
+<p>The sewn pair permits a precise algebraic statement stronger than deleting its individual current sectors. Keep a,c,w nonzero and the same marked function P in (14). Its three full logarithmic turns have characters</p>
+<pre><code>mu_a=(A-1)/(AW),
+mu_c=(1-C)/W,
+mu_w=1/(AC).                                      (18a)</code></pre>
+<p>For example an alpha turn contributes W^(-1) from its Fourier exponential and 1-A^(-1) from Psi_+(h-alpha); a chi turn contributes W^(-1)(1-C). Equation (18) gives the sigma turn. All factors and logarithmic marks are exact, including the h shifts.</p>
+<p>On this regular central torus, the CHARACTER-ONE IDEAL is exactly the joint balanced ideal, since</p>
+<pre><code>1-mu_a=D_B/(AW),
+1-mu_c=-D_R/W,
+1-mu_w=-(D_B+A D_R)/(AC).                         (18b)</code></pre>
+<p>Thus (1-mu_a,1-mu_c,1-mu_w)=(D_B,D_R) after the indicated unit localization. The weaker shared-face condition AC=1 alone does not make the other two characters one.</p>
+<p>Let H=F-P be the AGGREGATE current. Under each turn it changes by (1-mu)P. A deck-compatible pointwise quotient killing H therefore has geometric image supported on this joint balanced locus (or on its retained normal/derived thickening). Conversely on its regular matched base change D_B=D_R=0, the exact finite source identities give</p>
+<pre><code>F=P!=0.                                          (18c)</code></pre>
+<p>Indeed the Newton and Rogers balanced polynomials are each nonzero by their finite Fourier proofs. Their exact marked residues equal those polynomials there, so (18c) is a nonzero local source-preserving restriction, not a section defined from an unknown knot value. One is killing the COMBINED current on a specified algebraic base; one is not declaring its separate summands zero off that base.</p>
+<p>This identifies a possible local geometric quotient and the exact support it requires. It does NOT prove that the remaining original head/cap co-source factors through this base change, nor replace its finite degree relations by scalar norm equations. Normal source jets, the other head factors and the actual exterior integration still have to be transported. Character-one and nonzero local pointing do not by themselves determine a nonzero global period coefficient.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_rogers_sink_opposite_beta_source.py">audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_rogers_sink_opposite_beta_source_results.json">results</a> check original finite reversal and actual tags, the two conjugate Barnes source identities, balanced Fourier normalization and the paired polynomial Ward relation. The proofs do not infer their all-level statements from finite checks.</p>
+<h2 id="the-actual-shared-head-source-combines-the-currents-into-a-ground-channel">8. The ACTUAL shared-head source combines the currents into a ground channel</h2>
+<p>There is a stronger physical identity once the first, still unsplit Newton factor is included. In the literal positive crossing put</p>
+<pre><code>E=x^(-1)z_6/z_1, s=x^(-1)z_1/z_0,
+a=x^(-1)z_7/z_6, c=z_6/z_0,
+B_0(w)=B_N(E/w,sE/w),
+K_m=Pi_+^(6) CT_w B_N(Q^m E/w,Q^m sE/w)F(a,c,w).</code></pre>
+<p>The common original scalar kappa remains external. These are literal operators on the original finite input space; Pi_+^(6) is the original nonnegative first-output barrier. K_0 is the original positive crossing without kappa. K_m inserts the ACTUAL internal Cartan clock Q^(mJ) on the t=z_4 head just after C^(-1), before its remaining gates.</p>
+<p>The first factor has w degree between -d and zero. Therefore pairing the polynomial Ward equation (16) with it kills every w^N times a nonnegative polynomial. The exact source equation before the physical barriers is</p>
+<pre><code>CT B_0[F-acF(Qw)]
+    =(1-a^N) CT B_0 R+corr,
+corr=a(1-c^N) CT B_0 B_N(a,Qaw).                  (19)</code></pre>
+<p>No D_B or D_R has been set to zero. Their w^N parts have vanished by the FINITE DEGREE of the actual third sink, rather than a branchwise replacement of the source. Rotating w in the second left term gives the next clock insertion K_(m+1).</p>
+<p>The remaining physical barriers have precise effects:</p>
+<ul>
+<li>H_m=CT B_N(Q^m E/w,Q^m sE/w)R_N(c,w) has first-output degree at most d, so a^N H_m has negative first-output degree and is killed by Pi_+^(6).</li>
+<li>Every term of a CT B_0 B_N(a,Qaw) has first-output degree -i-1&lt;0, so this entire term is killed by the SAME barrier.</li>
+<li>Multiplication of that last expression by c^N can remove the negative output degree, but then it requires first INPUT index at least N. The original finite input space kills it.</li>
+</ul>
+<p>These claims hold with every clock m: the clock changes coefficients, not the indicated index supports. Thus on the ORIGINAL finite heads,</p>
+<pre><code>K_m-(ac)K_(m+1)=H_m.                              (20)</code></pre>
+<p>The boundary source is explicit. For input indices alpha,beta and alpha+beta&lt;N,</p>
+<pre><code>H_m |alpha,beta&gt;
+  =Q^(m beta)x^(-beta) {alpha+beta choose alpha}_Q
+        (Q^m x^(-2);Q)_alpha |alpha+beta,0&gt;,       (21)</code></pre>
+<p>and it is zero if alpha+beta&gt;=N. To derive (21), expand the Euler factor (s;Q)_j in the first Newton kernel. If its Euler order is k, the surviving indices are j=beta+k and i=alpha-k. The q-binomial sum is exactly (Q^m x^(-2);Q)_alpha. This proves all normalizations with the actual color x retained.</p>
+<p>H_0 has rank N: the inputs (0,beta) span every output (beta,0). It is a ground-SECOND-output channel, not a rank-one operator and not a negligible error. At complete color x^(-2)=Q its coefficient is x^(-beta)(Q;Q)_(alpha+beta)/(Q;Q)_beta; it is nonzero on every supported input and can have bulk factorial growth.</p>
+<p>This growth is quantitative in the complete flat balanced metric. Rows have disjoint input total degrees, so the exact operator norm is</p>
+<pre><code>||H_0||^2=max_(0&lt;=t&lt;N) |F_t|^2
+                                sum_(b=0)^t |F_b|^(-2).</code></pre>
+<p>With J(s)=integral_0^s log(2 sin(pi y))dy, the uniform factorial estimate log|F_k|=N J(k/N)+O(log N) gives</p>
+<pre><code>log||H_0||=N integral_(1/6)^(5/6)
+                          log(2 sin(pi y))dy+O(log N).</code></pre>
+<p>Indeed the largest profile rise is J(5/6)-J(1/6). Thus the physical ground-output source is not an exponentially small boundary error. Its exact endpoint support does not justify discarding its period after composition with the remaining word.</p>
+<p>The fusion operation itself is associative multiplication with explicit weights. On e_a=t^a/F_a in C[t]/(t^N), ordinary multiplication has m(e_a tensor e_b)={a+b choose a}<em>Q e</em>(a+b), with zero output when a+b&gt;=N. Consequently H_m is this multiplication after diagonal weights (Q^m x^(-2);Q)<em>J on the first input and (Q<sup>m/x)</sup>J on the second, followed by the ground-second-head inclusion. The exact identity (z;Q)</em>(a+b)=(z;Q)_a(Q^a z;Q)_b describes the weight transport under further fusion. This structural description preserves all original factorial frames; it is not a new positive state model.</p>
+<p>Equation (20) has an exact nilpotent Green solution. Multiplication by ac=x^(-1)z_7/z_0 raises the second output index and increases the first input demand by one. Hence (ac)^N times any K_m is zero on the original finite input space. Iterating gives</p>
+<pre><code>K_0=sum_(j=0)^d (ac)^j H_j.                       (22)</code></pre>
+<p>This reconstructs the ACTUAL crossing, including the combined current endpoints, from explicit fusion-to-ground channels. For example its only possible output from input (alpha,beta) has the form (alpha+beta-j,j), with j&lt;=alpha and alpha+beta-j&lt;N, and coefficient</p>
+<pre><code>x^(-beta-j)Q^(j beta)
+   {alpha+beta-j choose alpha-j}_Q
+                   (Q^j x^(-2);Q)_(alpha-j).      (23)</code></pre>
+<p>All identities are literal finite operators and may be inserted in ANY original signed word with the same caps and pivotal source. They do not assert that every H_m insertion has a degenerate global representation, or that the remaining bulk sums have no cancellation. What has been proved is an actual sourced boundary/Green identity, without discarding the norm currents or changing the invariant.</p>
+<p>The independent <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_crossing_green_ground_fusion.py">finite-head audit</a> compares (20)–(23) with the original gate word, including whole signed words and their original pivotal source.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_rogers_sink_opposite_beta_source.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#original-rogers-polynomial-and-field-tags">1. Original Rogers polynomial and field tags</a><a href="#a-finite-source-preserving-order-reversal">2. A finite source-preserving order reversal</a><a href="#carry-the-opposite-root-contour-and-the-full-norm">3. Carry the opposite-root contour and the full norm</a><a href="#balanced-fourier-check-and-both-homogeneous-ward-equations">4. Balanced Fourier check and both homogeneous Ward equations</a><a href="#an-actual-growing-local-source-on-a-full-open-chamber">5. An actual growing local source on a full open chamber</a><a href="#what-is-now-available-globally">6. What is now available globally</a><a href="#sew-the-actual-opposite-face-before-taking-an-asymptotic-symbol">7. Sew the actual opposite face BEFORE taking an asymptotic symbol</a><a href="#the-actual-shared-head-source-combines-the-currents-into-a-ground-channel">8. The ACTUAL shared-head source combines the currents into a ground channel</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

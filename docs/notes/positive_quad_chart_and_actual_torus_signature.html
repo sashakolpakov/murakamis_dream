@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A positive classical torus chart exists; the actual flow chart need not have its signature · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 29 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.<br><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/positive_quad_chart_and_actual_torus_signature.md">Markdown source</a><a href="../guide/frontier.html">Read the current frontier</a></div><h1 id="a-positive-classical-torus-chart-exists-the-actual-flow-chart-need-not-have-its-signature">A positive classical torus chart exists; the actual flow chart need not have its signature</h1>
+<p>28 October 2026. For EVERY supplied positive complete ideal triangulation with the marked full-rank Lagrangian gluing rows, positive quad rotations produce an invertible B chart. Its fixed-radii positive angle chamber has a strictly concave whole classical action, a unique global maximum, and absolute gradient degree one. The action at that maximum is exactly the hyperbolic volume in the stated normalization.</p>
+<p>This closes a classical chart restriction. It does not carry the original quantum cycle into that chamber. An exact calculation in the ORIGINAL figure-eight flow chart shows why that transport is necessary: its geometric fixed-radii angular Hessian is indefinite, even after the two framing variables are fixed.</p>
+<h2 id="positive-quad-rotations-always-permit-an-invertible-b">1. Positive quad rotations always permit an invertible B</h2>
+<p>Use the marks and rank data of the <a href="doubled_phase_rivin_optimizer.html">doubled Rivin optimizer</a>. For t positive tetrahedra choose compatible principal logs</p>
+<pre><code>x_j=Log z_j, y_j=Log(1-1/z_j), Im z_j&gt;0,
+A x+B y=c,</code></pre>
+<p>where (A B) has rank t and AB<sup>T=BA</sup>T. The independent edges and the marked meridian supply these t rows. The affine constant c retains the original edge windings, peripheral eigenvalue characters and logarithmic lift. At completeness Re c=0.</p>
+<p>At the positive point put tau_j=1/(z_j-1). The usual positive Lagrangian pairing gives</p>
+<pre><code>det(A+B diag(tau_j))!=0.                         (1)</code></pre>
+<p>Indeed its kernel would give a tangent (a,tau a) in the complexification of a real Lagrangian, while its symplectic pairing with its conjugate is a nonzero multiple of sum Im(tau_j)|a_j|^2, strictly signed unless a=0.</p>
+<p>Expand (1) multilinearly in its columns. At least one term choosing either A_j or B_j in each position has nonzero determinant. For each chosen A_j rotate just that positive quad type by</p>
+<pre><code>z&#39;_j=z&#39;&#39;_j=1-1/z_j,
+x&#39;_j=y_j, y&#39;_j=-x_j-y_j+i*pi.                   (2)</code></pre>
+<p>All three positive shape orders stay in the upper half-plane. Substitution in the original equation gives, in this column,</p>
+<pre><code>A&#39;_j=B_j-A_j, B&#39;_j=-A_j,
+c&#39;=c-i*pi*sum_(rotated j) A_j.                  (3)</code></pre>
+<p>Unrotated columns are unchanged. Thus the selected A/B transversal is exactly the new B up to column signs. It is invertible. The local transformation is symplectic, so AB<sup>T=BA</sup>T persists and C=B^-1 A is real symmetric.</p>
+<p>This uses positive tetrahedral rotations, rather than an uninterpreted formal Fourier swap. It supplies a positive classical chart for every triangulation under the stated inputs; it does not assert an exact finite quantum transform for (2).</p>
+<h2 id="a-whole-positive-chamber-has-the-desired-global-maximum">2. A whole positive chamber has the desired global maximum</h2>
+<p>Drop the primes after (3). On the product of upper half-planes use the standard dilogarithm branch and the explicit potential</p>
+<pre><code>W(x)=sum_j Li_2(exp x_j)
+    +(1/2)x^T(I-C)x+(B^-1 c-i*pi*1)^T x.       (4)</code></pre>
+<p>For these positive shape logs,</p>
+<pre><code>Log(1-z_j)=x_j+y_j-i*pi,
+grad_x W=-B^-1(Ax+By-c).                       (5)</code></pre>
+<p>Thus the positive complete shapes are a critical point of (4). Let rho=Re x_* and restrict to the entire fixed-radii positive angle cube</p>
+<pre><code>x=rho+i theta, 0&lt;theta_j&lt;pi.</code></pre>
+<p>The quadratic in (4) is real, so its imaginary part is affine in theta. Direct differentiation therefore gives</p>
+<pre><code>Hess_theta Im W
+   =-diag_j Im(z_j/(1-z_j))
+   =-diag_j [exp(rho_j)sin theta_j
+                /|1-exp(rho_j+i theta_j)|^2].  (6)</code></pre>
+<p>It is strictly negative definite on the WHOLE cube, not just at its complete point. The gradient vanishes at theta_<em>, by (5). Strict concavity makes theta_</em> the unique global maximum of Im W on this cube and on its closure. For a boundary point, the segment from theta_* stays positive until its possible last endpoint, its second derivative is strictly negative, and W has the required continuous boundary value. This also proves strict inequality at every other boundary point.</p>
+<p>The same argument works on every affine angle slice containing theta_<em>. The negative gradient is injective on the positive cube. Its degree at zero on any compact neighborhood containing theta_</em> and no boundary zero is +1; the gradient itself has degree (-1)^t. This is a CLASSICAL angle-gradient degree, not the intersection number of an unspecified quantum source cycle.</p>
+<h2 id="the-maximums-imaginary-action-is-exactly-the-volume">3. The maximum’s imaginary action is exactly the volume</h2>
+<p>Write x=rho+i theta and y=sigma+i gamma at a critical point. The Bloch–Wigner identity on these positive branches is</p>
+<pre><code>D(z_j)=Im Li_2(z_j)+rho_j(theta_j+gamma_j-pi).</code></pre>
+<p>Since d=B^-1 c=Cx+y at a critical point, direct expansion of (4) gives the full boundary correction</p>
+<pre><code>Im W_crit-sum_j D(z_j)
+    =theta^T(C rho+sigma)
+    =theta^T B^-1 Re c.                        (7)</code></pre>
+<p>At completeness Re c=0. Consequently</p>
+<pre><code>max_(0&lt;theta&lt;pi) Im W(rho+i theta)
+    =Im W(x_*)=Vol(X).                         (8)</code></pre>
+<p>For h=2pi*i/N the exponential exp(W/h) therefore has real rate Vol(X)/(2pi) at that unique maximum. No numerical scalar was fitted to obtain (8). The standard branch in (4) and the affine marks in c were retained. An arbitrary additional imaginary constant would change (8) and is not allowed in this definition. Matching (4), including its constant, to an actual quantum presentation remains separate work.</p>
+<p>For the fixed positive chamber, strict concavity also supplies a strict action gap outside every fixed neighborhood of the complete point. It says nothing about other logarithmic chambers, endpoint branches, or the original cycle’s image.</p>
+<h2 id="the-original-figure-eight-flow-torus-has-a-different-signature">4. The original figure-eight flow torus has a different signature</h2>
+<p>This is an actual phase calculation, not an arbitrary Airy or formal-WKB example. Use the original balanced crossing coefficients whose exact ratios and principal Hessians were proved in <a href="actual_geometric_normal_period.html">the actual stationary calculation</a>. The audit below imports its original closure embedding.</p>
+<p>Take the figure-eight braid sigma_1 sigma_2^-1 sigma_1 sigma_2^-1 and its complete geometric parabolic representation</p>
+<pre><code>t=(1-i sqrt(3))/2,
+mu_1=[[1,1],[0,1]], mu_2=[[1,0],[t,1]],
+mu_3=mu_1^-1 mu_2 mu_1 mu_2^-1 mu_1.</code></pre>
+<p>Use the regular original framing</p>
+<pre><code>F=[[2,-1],[3,-3]]</code></pre>
+<p>and the same negative SL2 lift and sequential Gauss factorization as that calculation. Its five free multiplicative phase variables are the initial A_0 and the four crossing C_j. Fix log A_0 and log C_1 as framing coordinates. This is a valid transverse slice: their logarithmic Jacobian in the two original frame parameters (r,s) at (2,3) has nonzero determinant</p>
+<pre><code>15(-11sqrt(3)-i)/[4(155sqrt(3)+283i)].</code></pre>
+<p>Let H_normal be the original holomorphic phase Hessian in the remaining log C_2,log C_3,log C_4 coordinates. Exact arithmetic in Q(sqrt(-3)) gives</p>
+<pre><code>-Im H_normal /sqrt(3)
+  =[[-832683/405769,  1/52, -21/8],
+    [         1/52,  -9/8,   3/8],
+    [        -21/8,   3/8,  9/32]].           (9)</code></pre>
+<p>Its second and third diagonal entries have opposite signs. Therefore the real exponent on the fixed-radii angular torus has both an increasing and a decreasing quadratic direction at this geometric point. Reversing the action convention reverses both signs and cannot repair indefiniteness.</p>
+<p>Thus free radii through this original geometric point do NOT even give a local maximum in this valid original flow chart. This does not rule out another framing or a source-preserving canonical change of variables. It proves that positivity of a different ideal triangulation cannot be silently transferred to the original phase by changing radii alone.</p>
+<h2 id="what-the-classical-result-resolves-and-what-is-still-missing">5. What the classical result resolves and what is still missing</h2>
+<p>Equations (1)–(8) remove an invertible-B restriction and prove the exact global positive-chamber convexity and calibration needed on the classical target, for every supplied positive complete ideal triangulation. The proof does not need equality of the off-critical dilogarithm action with Rivin volume; its angular Hessian and its critical value suffice.</p>
+<p>Equation (9) shows that a source-preserving change from the ORIGINAL quantum flow coordinates to that positive chart is substantive. The original Cauchy cycle and every projection, Gaussian, normal source, peripheral factor and matched residue must pass through it. Neither the classical gradient degree nor Rivin uniqueness computes that transport’s global intersection number. Controlling other chambers and endpoint pieces remains necessary after the positive chamber is reached.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_positive_quad_chart_and_actual_torus_signature.py">The audit</a> checks positive quad rotations and B selection, the calibration identity, the exact actual figure-eight Hessian (9), and the validity of its original framing slice. The all-triangulation claims follow from the arguments above, not a finite list of knot tests.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/positive_quad_chart_and_actual_torus_signature.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#positive-quad-rotations-always-permit-an-invertible-b">1. Positive quad rotations always permit an invertible B</a><a href="#a-whole-positive-chamber-has-the-desired-global-maximum">2. A whole positive chamber has the desired global maximum</a><a href="#the-maximums-imaginary-action-is-exactly-the-volume">3. The maximum’s imaginary action is exactly the volume</a><a href="#the-original-figure-eight-flow-torus-has-a-different-signature">4. The original figure-eight flow torus has a different signature</a><a href="#what-the-classical-result-resolves-and-what-is-still-missing">5. What the classical result resolves and what is still missing</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>
