@@ -15,8 +15,14 @@ The unfilled complete augmented volume V_s and the filled source volume V_src,s(
 - [Adversarial dependency audit](notes/actual_source_casson_rivin_dependency_audit.md)
 - [General geometric completion and regulator theorem](notes/general_source_regulator_hyperbolic_equality.md)
 - [Positive Newton metric for genuine turns](notes/actual_newton_turn_positive_gram.md)
+- [Coherent turn reductions](notes/actual_newton_coherent_turn_reduction.md)
+- [Two-twist interaction packet](notes/actual_newton_two_twist_interaction_packet.md)
+- [Exact Newton kernel and canonical graph](notes/actual_newton_twist_canonical_graph.md)
+- [What algebraic source/geometry criteria certify](notes/algebraic_source_geometry_criteria_audit.md)
 - [Actual six-port divided-power source kernel](notes/actual_six_port_divided_power_source_kernel.md)
 - [Historical research log](RESEARCH_LOG.md)
+
+Root-level Casimir Hermite data are distinguished from actual generic-q normal deformations. A formal generic-Q continuation of a root scalar recurrence is not automatically the original generic-q source germ; the linked notes retain the required Cartan factors, turn families, and normal currents.
 
 The proofs are in `notes/`. Scripts and recorded results are in `experiments/`. A finite audit checks stated identities or examples; it is not by itself a proof of an all-level asymptotic theorem. Some scripts are diagnostics or work in progress, rather than a single application test suite.
 

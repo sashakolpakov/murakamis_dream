@@ -6,7 +6,7 @@ from pathlib import Path
 import mpmath as mp
 import numpy as np
 
-from audit_actual_two_cut_ports import balanced_data
+from audit_actual_two_cut_ports import balanced_data, coproduct
 
 
 def field_case(N):
@@ -52,8 +52,43 @@ def field_case(N):
         lhs = pow(fb[k], 3, prime)*h[d-k] % prime
         rhs = (h[d]*hb[k]+pow(Q, -1, prime)*jb[k]) % prime
         assert lhs == rhs
+        phased = (pow(kappa, 4, prime)*pow(Q, -1, prime)*pow(q, k*k, prime)
+                  *rhs*pow(f[k]*fb[k] % prime, -1, prime)) % prime
+        assert int(actual[d-k]) == phased
+    if N <= 8:
+        # Replay the actual reflected marked source in the ORIGINAL full
+        # physical pair, independently of the coordinate norm identity.
+        rho = (q-pow(q, -1, prime)) % prime
+        Et, Ft, Kt = coproduct(rho*rho*E % prime, F, K, 2, N, prime)
+        Ki = np.diag([pow(int(a), -1, prime) for a in np.diag(Kt)])
+        O = (Ft@Et+q*Kt+pow(q, -1, prime)*Ki) % prime
+        eye = np.eye(N*N, dtype=np.int64)
+        packet = [eye]
+        for r in range(1, N):
+            s2prev = (-1)**(r-1)*pow(Q, -(r-1)*r//2, prime)*f[r-1]**2 % prime
+            s2 = (-1)**r*pow(Q, -r*(r+1)//2, prime)*f[r]**2 % prime
+            c = (pow(q, 2*r-1, prime)+pow(q, -2*r+1, prime)) % prime
+            packet.append(s2prev*pow(s2, -1, prime)*((c*eye-O)@packet[-1] % prime) % prime)
+        Ti = np.zeros_like(T)
+        for i in range(N):
+            for j in range(i+1):
+                nu = (-1)**j*pow(Q, j*(j+1)//2, prime) % prime
+                Ti[i, j] = (pow(kappa, -1, prime)*pow(nu, -1, prime)*pow(-q, j-i, prime)
+                            *pow(Q, -j*(i-j), prime)*f[i]
+                            *pow(f[j]*f[i-j] % prime, -1, prime)) % prime
+        actualA = T2@P@T2 % prime
+        conjugateA = (Ti@Ti % prime)@P@(Ti@Ti % prime) % prime
+        final = conjugateA.T@actual % prime
+        operator = sum((int(a)*B for a, B in zip(final, packet)), np.zeros_like(O)) % prime
+        x = int(K[0, 0])
+        cup = np.array([N*pow(x, -b, prime) % prime if a+b == d else 0
+                        for a in range(N) for b in range(N)], dtype=np.int64)
+        marked = np.array([pow(x, b, prime)*pow(N*N, -1, prime) % prime
+                           for a in range(N) for b in range(N)], dtype=np.int64)
+        assert int(marked@(operator@cup % prime) % prime) == int(conjugateA[:, 0]@actual % prime)
     return {"N": N, "all_original_T2_source_coefficients_and_Ward": True,
-            "exact_Gaussian_endpoint_and_full_backward_current": True}
+            "exact_Gaussian_endpoint_and_full_backward_current": True,
+            "full_original_physical_reflected_marked_source": N <= 8}
 
 
 def calibration(N, rate):

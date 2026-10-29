@@ -53,6 +53,10 @@ Coefficient extraction gives
 (1-Q^i)^3G_i=(1+Q-3Q^i)G_(i-1)-QG_(i-2), hence (2).
 This argument can first be made at generic Q and then specialized
 coefficientwise below degree N. It never divides a zero root factorial.
+The physical source identification (1) uses the root complementation
+identity. A generic-Q continuation of this displayed scalar recurrence
+is not thereby identified with the actual generic-q tangle/source germ.
+All estimates here use its exact physical root values.
 
 ## 2. The second source endpoint is exactly the known Gaussian
 
@@ -87,6 +91,15 @@ Define J_0=0,J_1=1 and evolve J by (2) only for i>=2. Direct reversal
 of (2), with g_k=conjugate(F_k)^3 H_(d-k), now proves
 
     g_k=H_d conjugate(H_k)+Q^(-1)conjugate(J_k), 0<=k<=d.  (5)
+
+The corresponding PHASED source coefficient, useful before any future
+color-contour deformation, is exactly
+
+    (A1)_(d-k)=kappa^4 Q^(-1) q^(k^2)/s_k^2
+                 [H_d conjugate(H_k)+Q^(-1)conjugate(J_k)]. (5a)
+
+Indeed W_(d-k)=nu_k g_k/(N s_k^2); the actual factor
+(-q)^(2d-k)nu_k=Q^(-1)q^(k^2) gives (5a).
 
 The constant term Q^(-1) in (4)--(5) is a retained original boundary
 current. It is not set to zero. The independent J solution does not
@@ -209,3 +222,9 @@ removes arbitrarily many redundant turns; genuinely longer reduced
 mixed words still require their own coherent packet/current estimate.
 
 Audit: [literal original matrices, exact sums/recurrences/endpoints and norm calibration](../experiments/audit_actual_newton_two_twist_interaction_packet.py).
+
+Independent analytical review and fresh replay passed: the reflection
+indices/current, endpoint normalization, separated-frame bound through
+the midpoint, strictly gapped Riccati lower bound, and cubic maximum
+were each rederived. The finite profiles supplement that proof; they
+are not its justification.

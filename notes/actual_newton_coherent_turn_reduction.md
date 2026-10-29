@@ -74,6 +74,9 @@ entry is
 
 Since nu_(j-i)/nu_j=(-1)^i Q^[i(i-1)/2-ij], (2) gives (1)
 entry by entry. Thus all repeated-root normal data are retained.
+These are the full CASIMIR Hermite normals at the fixed quantum root.
+No differentiation in q is being asserted: the actual generic-q turn
+need not be constant reversal in this root Newton frame.
 
 ## 2. An arbitrary-turn complete original source with an exact rate
 
@@ -148,3 +151,9 @@ the exact reduction and the nonzero rate statement (4), not those
 unproved assertions for arbitrary rational/arborescent sources.
 
 Audit: [full original physical alphabet, all-input modular identity and actual reflected closures](../experiments/audit_actual_newton_coherent_turn_reduction.py).
+
+Independent analytical review passed: the finite double-binomial
+cutoff/prefactors, theta_N including kappa, the three exact source
+vectors, and the same-sign-run conjugacy/source adapter were rederived.
+The finite audit separately passes49 generic identities, nine full
+original alphabets, and90 complete reflected original sources.
