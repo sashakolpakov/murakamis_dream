@@ -149,3 +149,24 @@ Preservation audit: the links above were checked against the current
 files and scope statements. No existing research note or diagnostic was
 deleted, rewritten or downgraded by this index. It adds navigation only;
 there is no new proof or change in the claimed knot/link families here.
+
+
+## 7. Common frames, two exceptional factors, and original generic normals
+
+The [joint ordinary-column theorem](actual_q_hahn_joint_complex_amplitude.md)
+and [finite selected-local certificate](actual_augmented_plat_selected_local_certificate.md)
+remain available with their domains and hypotheses. The
+[right-angled framing obstruction](actual_right_angled_selected_framing_obstruction.md)
+rules out making every original factor central and selected in one frame.
+Its generic two-facet refinement localizes the weaker physical-support
+failure to exactly two factors at any bridge width. Continuation of those
+factors, control outside the central domain and coherent recoupling remain
+possible routes; none is asserted to be completed.
+
+The [small-channel derivative bound](actual_q_hahn_small_channel_generic_normals.md)
+uses the original generic source. The
+[partner collision identity](actual_q_hahn_partner_normal_collision.md)
+retains its actual first normal and surviving tail, whose additional poles
+exclude an unrestricted individual-normal continuation. The accompanying
+[complex-growth exploration](../experiments/actual_partner_normal_complex_growth_exploration.json)
+is preserved as a diagnostic, not as a proved exponential lower bound.

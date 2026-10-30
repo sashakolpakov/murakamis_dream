@@ -204,10 +204,24 @@ central domain, including folded channels, with an explicit selected
 local sheet. The channel remains an integer. The
 [common-framing criterion](actual_augmented_plat_physical_framing_criterion.md)
 states finite strict inequalities for simultaneous use on a plat;
-general feasibility and the required source sheets remain unproved.
+the [right-angled obstruction](actual_right_angled_selected_framing_obstruction.md)
+now proves that an all-central selected frame cannot exist for the actual
+certified right-angled cut. Generic geometric strip flags localize the
+weaker strict physical-support failures to exactly TWO factors, for
+arbitrary bridge width. Those facets can be prescribed, including the pair
+adjacent to the original marked physical edge. The other factors need not lie in the central
+domain. Thus continuation or coherent resummation is required.
 The [selected local certificate](actual_augmented_plat_selected_local_certificate.md)
-states sufficient finite tests for this local geometric/source comparison;
-it does not establish a whole-source cycle or sum estimate.
+remains a conditional local theorem; it does not establish a whole-source
+cycle or sum estimate. The
+[small-channel generic-normal estimate](actual_q_hahn_small_channel_generic_normals.md)
+and [exact partner collision](actual_q_hahn_partner_normal_collision.md)
+retain the original derivatives. The latter exposes additional individual
+normal poles, so a full-domain paired-normal estimate cannot be assumed.
+The [physical paired-normal theorem](actual_q_hahn_physical_partner_normal_bound.md)
+does prove polynomial relative cost on the whole complete physical grid,
+retaining the actual large partner and both parities. A complex corridor
+for that normal and a whole-source estimate still require proof.
 These local results are not a whole-source asymptotic. Outside the
 specified marked domain the endpoint quadratic has monodromy, so an unspecified
 analytic continuation alone cannot identify the selected geometric

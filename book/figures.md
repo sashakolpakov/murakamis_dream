@@ -10,9 +10,15 @@ Exact source formulas, joint local complex amplitudes and the marked geometric b
 
 ## The joint local domain
 
-The blue diamond shows where the [joint kernel theorem](../notes/actual_q_hahn_joint_complex_amplitude.md) applies in the real parts of the two physical wire coordinates. Both the pair degree and magnetic coordinate may vary complexly. The diagonal seam and outer boundary are excluded. The [framing criterion](../notes/actual_augmented_plat_physical_framing_criterion.md) gives finite inequalities for placing all coupons in this domain, without asserting that every diagram admits such a common frame.
+The blue diamond shows where the [joint kernel theorem](../notes/actual_q_hahn_joint_complex_amplitude.md) applies in the real parts of the two physical wire coordinates. Both the pair degree and magnetic coordinate may vary complexly. The diagonal seam and outer boundary are excluded. The [framing criterion](../notes/actual_augmented_plat_physical_framing_criterion.md) gives finite inequalities for placing all coupons in this domain. The right-angled obstruction below rules out satisfying them on every selected sheet in the certified cut.
 
 ![The joint central domain in the real parts of two wire coordinates; low and high degree adapters are separated by the excluded total-degree seam.](figures/joint-kernel-domain.png)
+
+## Two exceptional factors at arbitrary bridge width
+
+Under the geometric strip conditions, the common framing flags determine a line through the convex hull of the normalized white face normals. A generic line meets exactly two facets. The [framing obstruction and localization](../notes/actual_right_angled_selected_framing_obstruction.md) prove that these are exactly the two local factors failing strict physical support. The two facets can be prescribed, including those adjacent to the original marked physical edge. The other factors need not lie in the smaller central domain; quantum continuation and the global estimate remain open.
+
+![Schematic planar section of the white-normal convex hull, with two facet exits locating the exceptional factors.](figures/two-exceptional-factors.png)
 
 ## A change of pairing
 

@@ -1,0 +1,396 @@
+# The right-angled cut obstructs an all-central selected frame
+
+30 October 2026.
+
+The shaded-face circle packing does give common exteriors. It does not
+supply a frame in which every original ordinary column is both in the
+proved central domain and on its selected endpoint sheet. For the literal projection
+Morse prefixes of a positively certified right-angled augmented plat,
+the following argument instead gives an obstruction to that simultaneous
+choice. The unfolded geometric critical germ, the actual quantum source,
+and the volume conjecture are not contradicted. The obstruction concerns
+this particular all-column physical-support/selected-sheet route.
+
+The decisive dictionary is section 3. It retains the actual projection
+basepaths and the positive normalizations of the reflection lifts; an
+abstract circle packing without this dictionary would not prove the
+statement.
+
+## 1. Geometric input and statement
+
+Let Q be the labeled convex ideal right-angled polyhedron supplied by
+[the actual matching-graph certificate](general_augmented_plat_matching_geometry.md).
+Its shaded faces are triangles; its white faces are the actual projection
+regions. Every edge separates the two colors, and every vertex has four
+alternating incident faces. The shaded triangles are paired by the actual
+crossing disks. Half twists retain the face quotient and primitive marks
+recorded in that construction.
+
+At the horizontal cuts outside the crossing boxes use the original ordered
+Morse meridians H_1,...,H_m and prefixes Q_i=H_i...H_1. The exterior
+projection region is F_0. The two conditions in question are:
+
+* Every input and output triple has canonical wire logarithms in the
+  CENTRAL domain of the framing criterion and the joint kernel theorem.
+* Every input and output lies on the source-selected endpoint sheet in
+  the selected-local certificate, with the positive geometric orientation.
+
+Subject to the literal prefix identification proved in section 3, NO common
+rank-one frame has both properties. The argument uses the weaker necessary
+strict-support test, not a failure peculiar to the central wedge boundary.
+
+## 2. Disks of nonadjacent facets and the white-normal polyhedron
+
+Use Lorentz signature (-,+,+,+). Choose an interior point of Q as the
+Klein origin, and write every outward unit facet normal as n=(n_0,n_vec).
+Then n_0>0. Adjacent normals have Lorentz product zero.
+
+Distinct facets which do not share an edge have disjoint supporting planes
+in hyperbolic space. Here is a direct proof for this ideal right-angled
+setting. If two such facets share an ideal vertex, their planes are the
+opposite vertical planes of its rectangular horosphere link, hence are
+parallel. Otherwise their closed ideal boundaries are disjoint. A bounded-
+distance minimizing sequence between the two facets cannot escape: two
+bounded-distance sequences escaping to infinity have the same ideal limit,
+which would be a common ideal boundary point. Thus the distance is achieved
+at finite points. A minimizing point in a facet interior has a perpendicular
+joining geodesic. If it is on an edge, the neighboring facet plane is
+orthogonal. The tangential direction toward the other closest point lies
+in the outward normal cone of that edge, by minimality; but its scalar
+product with the same edge normal is nonpositive because the other point
+belongs to Q. Orthogonality makes these two statements force the tangential
+component to vanish. There are no finite vertices. The minimizing segment
+is therefore perpendicular to both supporting planes. Intersecting planes
+have no positive-length common perpendicular. The planes are disjoint.
+
+The orientations face the common interior of Q, so their outward halfspaces
+are disjoint. Indeed, for disjoint planes the alternative orientations would
+put one plane strictly in the outward halfspace of the other, making its
+supporting inequality redundant or removing that facet of Q. Their unit
+normals consequently have product at most -1. In particular
+same-colored outward ideal disks have disjoint interiors, with tangencies
+only at shared ideal vertices. A finite set of these disks has a nonempty
+open common exterior: take a point on one boundary away from all finitely
+many tangencies and then move a little to its exterior.
+
+For each WHITE face f put
+
+    v_f=n_f,vec/n_f,0,      C=conv{v_f}.                         (1)
+
+For each SHADED face b with outward normal m_b, exactly its three neighboring
+white normals satisfy
+
+    m_b,vec . v_f=m_b,0.                                      (2)
+
+Every other white normal satisfies the strict inequality < in (2), by the
+preceding disjoint-plane argument. Those three v_f are not collinear: their three unit normals have Gram
+matrix with diagonal 1 and off-diagonal -1, of determinant -4. They are
+linearly independent, and their positive affine normalizations are
+therefore not collinear.
+Thus they give an exposed triangular facet of C.
+
+These triangles have exactly the dual incidence of the original checkerboard
+sphere: two white vertices are joined at each ideal vertex of Q, and the two
+shaded triangles there are its two incident facets. The cyclic links at a
+white vertex are the original white-face boundary cycles. Consequently the
+known triangles form an embedded closed connected two-manifold in the
+boundary of the three-dimensional convex hull C. Along every known edge both
+convex-hull sides are already present; at every vertex the known cyclic link
+is the whole link. There is no room for an extra facet. Equivalently this
+closed triangulated sphere is both open and closed in the boundary of C.
+Hence
+
+    C={ y in R^3 : m_b,vec . y <= m_b,0 for EVERY shaded b }.    (3)
+
+This is an equality of finite Euclidean convex polyhedra. It is stronger
+than merely saying that C meets the unit ball. It identifies C with the
+intersection of the shaded inward halfspaces, extended in Klein coordinates.
+Its vertices are generally outside the unit ball and its edges are tangent
+to that ball.
+
+Let K be the open common exterior of all shaded ideal disks. A flag in K,
+viewed as a unit vector on the Klein sphere, is a STRICT interior point of C.
+The distinction matters: an arbitrary hyperbolic geodesic need not meet C.
+Only the selected flags will supply its required endpoints in C.
+
+## 3. The literal white-reflection prefixes
+
+Let r_f be reflection in the white face plane f. At a horizontal Morse cut
+outside all crossing boxes, label the white intervals encountered from the
+exterior left spine by F_0,F_1,...,F_m. The original prefix loop surrounding
+the first i punctures is the two-white-face bigon: it crosses the projection
+cut in F_0 and F_i, with its upper and lower paths lying in the two opened
+projection balls. The horizontal cut misses every crossing-disk half sheet;
+the exterior spine misses them as well. Thus these paths need no unrecorded
+shaded-face deck transformation. Reversing the literal cut identifies its
+projective holonomy as
+
+    Q_i=r_(F_i) r_(F_0),
+    H_i=r_(F_i) r_(F_(i-1)).                              (4)
+
+The order is the original convention Q_i=H_i...H_1, not its inverse.
+It can be checked in the canonical incoming disk coordinate eta, in which
+its punctures are 0 and 1 and its auxiliary flag is infinity. The consecutive
+white reflections are
+
+    r_0(eta)=-conjugate(eta),
+    r_mid(eta)=conjugate(eta)/(2conjugate(eta)-1),
+    r_1(eta)=2-conjugate(eta).
+
+They give A=r_mid r_0, B=r_1 r_mid and P=r_1 r_0, exactly the original
+canonical puncture pair after eta=1/(2s+1). A cup or cap has equal first and
+last white regions, so (4) gives the required inverse pair. A retained half
+twist changes the shaded pairing and the auxiliary primitive meridian; it
+does not change these outside two-white-face loops. The input and output
+before/after a box have the same two outer white faces. Both are adjacent
+to BOTH shaded faces meeting at that box's auxiliary ideal vertex.
+
+The lift signs are also fixed. In the Hermitian Lorentz model use
+
+    M(n)=[[n_0+n_3,n_1-i n_2],[n_1+i n_2,n_0-n_3]],
+    H(n)=adj M(n), E=[[0,-1],[1,0]], J(n)=E conjugate(H(n)).
+
+For an outward UNIT spacelike normal, J(n) conjugate(J(n))=I, and J(n)
+followed by conjugation is its plane reflection. Direct multiplication gives
+
+    tr[J(n_g) conjugate(J(n_f))]=2<n_g,n_f>.             (5)
+
+The consecutive white planes at a main segment are tangent and face the
+common interior, so their product is the required trace -2 lift. The actual
+negative-parabolic heads therefore telescope without independent signs:
+
+    Q_i=J(n_(F_i)) conjugate(J(n_(F_0))).                (6)
+
+Changing from a unit normal to the normalized vertex (1,v_f) rescales by
+n_f,0>0. Thus the linear coefficients used below have only POSITIVE relative
+normal factors. Arbitrary sign choices for reflections would lose this fact.
+
+## 4. Selected sheets put both global flags in K
+
+Write the common projector as Pi=v ell, ell(v)=1, and let w=ker ell. Put
+
+    w_0=r_(F_0)(v).
+
+For a coupon whose left prefix interval is F, equation (4) gives
+
+    W_prefix v=r_F(w_0).                              (7)
+
+Its two shaded disk circles bound the region Omega of the selected-local
+certificate. This is precisely the common exterior of those two outward
+shaded disks: at their common auxiliary vertex they become the parallel
+sides of the original cusp rectangle. The primitive orientation gives the
+positive strip between them, not either exterior complementary half-plane.
+Both planes are orthogonal to the adjacent white plane F. Thus r_F preserves
+EACH shaded halfspace and preserves Omega.
+
+On the CENTRAL domain the proved selected input/output tests require w and
+W_prefix v in Omega. By (7) this is equivalent to w,w_0 in
+Omega. Every shaded face occurs in exactly one original disk pair, so all
+the tests together imply
+
+    w in K,                 w_0 in K.                 (8)
+
+This proves the separated strip intersections are nonempty in this geometry;
+it does NOT yet give the coupled physical-support inequalities. The latter
+are what fail below.
+
+## 5. Polarization forces a failed strict-support triangle
+
+For every original prefix, its diagonal is
+
+    a_f=ell[ J(n_f) conjugate(J(n_(F_0))) v ]
+       =ell[ J(n_f) conjugate(w_0) ].
+
+Since ell has kernel w, all a_f are one common nonzero scalar times the
+polarized circle forms
+
+    L_n(w,w_0)=det(w,J(n)conjugate(w_0)).               (9)
+
+These are real-linear in the Lorentz normal n. Up to complex conjugation,
+(9) is the Hermitian polarization w^* H(n) w_0. For a null normal with
+M(n)=y y^*, direct factorization gives
+
+    w^* H(n) w_0=conjugate(det(y,w)) det(y,w_0).        (10)
+
+If w!=w_0, the simultaneous real and imaginary kernel of (9) is therefore
+the Lorentz two-plane spanned by the two null lifts of w and w_0. To verify
+that it has exactly dimension two, send these two distinct flags to the
+coordinate axes: the condition is the vanishing of one off-diagonal
+Hermitian entry. If w=w_0, the kernel is a real hyperplane containing its
+null lift; the following argument still applies.
+
+By (8) and (3), those null lifts, normalized to time coordinate 1, give
+points of the STRICT interior of C. Thus the affine kernel of (9) meets
+int C. A real line in that kernel, through such a point, meets the boundary
+of the bounded polyhedron C. Let a boundary point lie in a shaded facet
+with neighboring white vertices v_0,v_1,v_2. It has barycentric coordinates
+lambda_i>=0, sum lambda_i=1. Linearity gives
+
+    sum_i lambda_i L_((1,v_i))(w,w_0)=0.               (11)
+
+The unit normal n_i is n_i,0(1,v_i), with n_i,0>0. By (9), equation (11)
+is a nontrivial NONNEGATIVE relation among that facet's three actual prefix
+diagonals a_i, after dividing each weight by n_i,0 and renormalizing their
+sum. Therefore
+
+    0 in conv_R{a_0,a_1,a_2}.                         (12)
+
+But this shaded facet is one original input or output factor. Its strict
+physical-support criterion requires exactly the opposite of (12). If the
+boundary point lies on an edge or vertex, zero weights are allowed in (11),
+and the same contradiction follows. A vanishing diagonal would additionally
+violate the regular chart rather than evade the argument.
+
+Thus the geometric oriented-strip conditions and simultaneous strict
+physical support cannot both hold for this literal right-angled
+factorization. In particular the proved CENTRAL-domain source-sheet
+certificate has no common frame here.
+
+## 6. A generic pair has exactly two failed physical triples
+
+The obstruction has bounded combinatorial size. For a generic pair of
+DISTINCT flags w,w_0 in K, its affine polarization kernel is a line through
+int C which meets the boundary in the interiors of exactly TWO facets.
+A facet's diagonal triangle contains zero if and only if this line meets
+that facet: both directions follow from (9), the positive normal scalings,
+and barycentric coordinates. Therefore exactly two original input/output
+triples fail the convex-hull test, independently of the number of bridges,
+boxes, or white faces.
+
+Such generic pairs exist, and one may also avoid every total-degree seam
+and regular-chart divisor. Indeed distinct endpoint pairs in the open set
+K times K parameterize an open set of hyperbolic geodesics, equivalently
+Klein affine lines meeting the open ball with these endpoints. Meeting any
+one fixed edge line of C imposes a nonzero real algebraic coplanarity
+condition on this four-real-dimensional line space. It cannot contain an
+open subset. Avoiding the finitely many such conditions makes the two
+boundary intersections interior to facets. A bounded convex polyhedron
+and an interior-crossing line have exactly two boundary points.
+
+For a disk, put its two outer white circles at Re eta=0 and Re eta=1.
+If eta(w)=a+ib and eta(w_0)=c+id, its actual right flag has coordinate
+-c+id under the left white reflection. Up to a common scalar the two
+outer prefix coefficients are
+
+    a_0=-(a+c)+i(d-b),
+    a_2=(a+c-2)-i(d-b).
+
+Thus Im(a_0 conjugate(a_2))=-2(d-b). The seam condition is exactly
+Im eta(w_0)=Im eta(w), a proper real analytic condition on ANY open
+subset of K times K. The strip coordinate is finite there and its
+imaginary part is nonconstant. A finite union of these seam loci also
+has empty interior. At cups and caps the two outer faces coincide, but
+one may additionally avoid a real ratio for the two DISTINCT adjacent
+white coefficients. This too is a proper algebraic condition: for any two
+distinct white normals, real dependence of their complex polarizations
+means that the kernel Lorentz plane meets their real span. In the affine
+chart it is the coplanarity condition for the kernel line and the line
+through those two white vertices, including parallel intersection at
+infinity. A fixed such condition has empty interior in the open space of
+secants. Avoiding it is stronger than, and implies, the required cup/cap
+canonical-log test. Finally (w,w_0) maps to the common frame by
+v=r_(F_0)(w_0), ell(v)=1, ker ell=w. Away from v=w this is a real
+analytic diffeomorphism onto an open part of the frame quotient.
+The finitely many proper algebraic regular-chart divisors cannot
+contain that open part. All the exclusions can be made simultaneously.
+
+At every remaining facet the framing criterion therefore gives STRICT
+PHYSICAL support, with its canonical low or high adapter. Exactly two
+facets still fail that criterion. The next corollary shows that their identities can in fact be prescribed.
+
+This is a geometric localization statement. It does not show that the
+other factors lie in the smaller central domain, extend the proved
+source-sheet equivalence to the whole physical strip, or estimate the
+two exceptional factors. Those distinctions prevent this corollary from
+being mistaken for a global amplitude theorem.
+
+### The two exceptional facets can be prescribed
+
+Choose ANY two distinct shaded facets b_1,b_2 of C. Each supporting
+hyperbolic plane lies in the inward halfspace of every other shaded
+plane. Its whole unit-sphere circle therefore belongs to its C facet;
+away from the finitely many tangency points it lies in that facet's
+relative interior. Equivalently, the triangular facet circumscribes
+this circle and its edges touch at the original ideal vertices.
+
+Choose distinct non-tangency points r_i on the two circles. Their open
+chord is in int C, since its endpoints are relative-interior points
+of different facets, and it lies in the open unit ball. Perturb each
+r_i a little within its own facet, away from the circle's center, to
+a point p_i OUTSIDE the closed unit ball and still in the relative
+facet interior. A fixed midpoint of the chord remains in the open
+ball by continuity. Thus the line through p_1,p_2 has two distinct
+sphere intersections, both strictly between the p_i and hence in
+int C. These sphere flags w,w_0 belong to K. The full intersection
+of their line with C is precisely [p_1,p_2], so its two failed facets
+are exactly b_1,b_2.
+
+All these properties persist on an open set of endpoint pairs. The
+finite edge, seam, cup/cap, projector and regular-chart exclusions
+from the preceding argument can therefore be imposed as well. For
+an algebraic positive certificate the flags may also be chosen
+algebraic: the strict feasible set is open in a rational chart of
+the sphere-pair space, and algebraic points are dense there.
+
+In particular take the two shaded triangles incident to the ORIGINAL
+marked physical main edge of the matching graph. They are distinct
+and meet at that edge's ideal vertex in Q. The two exceptional ordinary
+column factors can be localized at those two vertices, without moving
+the mark or changing the source. One can instead choose the two halves
+of any designated crossing-circle matching edge. This is a geometric
+choice of frame; it neither deletes those factors nor proves an estimate
+for their exact contraction. The other factors are strictly physical,
+not automatically in the smaller central domain.
+
+## 7. Scope and consequence
+
+The obstruction is to a proposed sufficient condition for applying the
+ordinary local theorem everywhere at a geometric critical point. It does
+not contradict the joint kernel theorem, whose domain remains correct;
+the selected-local certificate remains a conditional theorem. Nor does it
+contradict the unfolded geometric critical scheme or its volume regulator.
+A geometric critical point can lie outside the strict physical chamber of
+some factors, and its relevant contour can require additional continuations,
+branch changes, normal terms, or a coherent resummation before local
+estimates are applied.
+
+The generic-frame theorem avoids algebraic poles. It never supplied strict
+physical support or selected sheets. The present obstruction explains why
+those additional real inequalities cannot be obtained from the right-angled
+circle packing by choosing a sufficiently generic common frame.
+
+Audit: [exact outward lifts and convex polarization](../experiments/audit_actual_right_angled_selected_framing_obstruction.py).
+The formal reflection and null-factorization identities pass. The regular
+ideal octahedron checks 72 exact prefix products, 78 selected endpoint
+pairs with exact failed-facet convex relations, 67 transverse two-facet
+exit checks, and 936 reflected selected
+halfspace checks. This finite fixture does not replace section 3's actual
+Morse-basepath proof or section 2's general facet-incidence argument.
+
+
+Independent geometric/source review: a second reader checked the
+closest-facet argument, outward-halfspace signs, the white-normal Gram
+matrix and closed facet sphere, and the literal Morse two-white-face
+bigon including half-twisted boxes. The canonical puncture pair and
+trace -2 lift telescope were independently recalculated. The same reader
+checked the generic two-facet statement, both endpoint and cup/cap seam
+exclusions, and positive normal rescaling. The analytical review passed.
+
+Root review: full analytical read and fresh exact audit PASS. The review
+checked the actual prefix dictionary, full shaded-facet coverage, the
+selected strip orientation, the polarization kernel and its endpoints,
+and the convex-hull contradiction. It separately checked the exactly-two
+localization and generic avoidance argument. The source conclusion is
+restricted to an ALL-CENTRAL selected frame; the larger physical-domain
+statement is geometric with the oriented strip sides imposed. No volume
+conjecture, unfolded critical germ, or contour outside that central route
+is refuted by this result.
+
+Prescribed-pair corollary review: the root reader and two independent
+readers checked the facet-circle construction, outward in-plane
+perturbations, strict chord intersection, and the open family permitting
+all earlier exclusions. The original marked main edge is selectable
+without transporting its mark. The exact fixture now also checks all six
+distinct facet pairs of the regular ideal octahedron. These reviews retain
+the limitations on central support and source estimates for the other
+factors and for the exceptional block itself.

@@ -44,6 +44,10 @@ python3 experiments/audit_general_marked_multicusp_gluing_rigidity.py
 python3 experiments/audit_actual_augmented_plat_critical_scheme.py
 python3 experiments/audit_actual_augmented_plat_physical_framing_criterion.py
 python3 experiments/audit_actual_augmented_plat_selected_local_certificate.py
+python3 experiments/audit_actual_q_hahn_small_channel_generic_normals.py
+python3 experiments/audit_actual_q_hahn_partner_normal_collision.py
+python3 experiments/audit_actual_q_hahn_physical_partner_normal_bound.py
+python3 experiments/audit_actual_right_angled_selected_framing_obstruction.py
 python3 experiments/audit_general_matching_graph_full_normal_source.py
 python3 experiments/audit_actual_planar_three_port_reflection_double.py
 ```
@@ -51,6 +55,8 @@ python3 experiments/audit_actual_planar_three_port_reflection_double.py
 The root, complex-action and amplitude notes contain their analytical proofs; root finding and large-level comparisons are regressions. The magnetic audit also tests the original finite Casimir equation and the exact joint rational formula, retaining the difference between Gaussian and positive sine binomials. The character and regulator audits check exact rational identities in formal variables. The marked gluing audit uses an actual three-cusp triangulation; the critical-scheme audit checks local inverses and 24 incidence graphs. The reflection and graph audits replay actual finite sources. None of these checks proves the missing general global asymptotic.
 
 The joint determinant audit checks the source polynomial before continuation, its three-term recurrence and positive principal minors. The joint amplitude audit compares the literal finite sum with its determinant and asymptotic, including both derivative corrections at folded channels. The framing audit verifies the stated equivalences and local construction; it does not search for or prove a favorable common frame for every plat.
+
+The generic-normal audits compare the original generic columns and derivatives, including the exact large-partner collision tail and nonzero extra-pole residues. The right-angled obstruction audit checks reflection signs, polarization identities and exact two-facet examples. Its general conclusion rests on the separate proof of the literal Morse-prefix dictionary and convex incidence, not on extrapolating those examples.
 
 ## Rebuilding this guide and its figures
 
@@ -70,3 +76,5 @@ python3 tools/build_book.py
 ```
 
 The main README is deliberately short. The long research log, all existing technical note paths, and audit imports are preserved.
+
+The physical paired-normal audit checks the original Casimir entries, weighted Dirichlet identity, double-node reflection and actual generic derivative. Its polynomial estimate is proved on the physical grid; it is not a complex-neighborhood or whole-source theorem.

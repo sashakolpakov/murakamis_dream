@@ -1,5 +1,13 @@
 # A finite criterion for a physical magnetic framing
 
+**Subsequent scope result (30 October):** the
+[right-angled obstruction and localization](actual_right_angled_selected_framing_obstruction.md)
+proves that no common all-central selected frame exists for the actual
+certified right-angled plat cut. Generic geometric strip flags have exactly
+two strict physical-support failures, at arbitrary bridge width. The local
+conditional statements below remain valid; their simultaneous realization
+in that right-angled class cannot supply the general proof.
+
 30 October 2026. This note reduces the simultaneous framing question for
 the actual complete augmented-plat character to a strict semialgebraic
 feasibility problem in one rank-one projector. It also treats the smaller

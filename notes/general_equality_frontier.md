@@ -34,23 +34,44 @@ and [joint amplitude theorem](actual_q_hahn_joint_complex_amplitude.md)
 now permit t and the magnetic coordinate to move together complexly
 on a fixed central domain, uniformly through the folded channel limit.
 The selected local sheet has an explicit principal-square-root test.
-The channel remains a discrete index; generic normal currents and a
-global coherent-source estimate remain open.
+The channel remains a discrete index. The new
+[small-channel generic-normal theorem](actual_q_hahn_small_channel_generic_normals.md)
+bounds every fixed actual generic derivative with polynomial relative cost
+on compact subsets of the joint domain. The
+[partner collision theorem](actual_q_hahn_partner_normal_collision.md)
+gives the exact large-partner first normal as a transverse derivative,
+including its surviving tail. That tail has genuine additional poles;
+the ordinary-column theorem cannot be extended to all individual normals
+on the same whole domain. Smaller near-fold corridors and cancellations
+in the complete coupon remain to be controlled.
+
+The [physical paired-normal theorem](actual_q_hahn_physical_partner_normal_bound.md)
+now bounds every actual complete-channel first-normal entry relative to
+its ordinary column by N^6/256+N^2/8, with O_K(N^4) cost away from
+scaled degree one. The original generic large partner and both parities
+are retained. This closes the physical entrywise estimate, not the
+complex corridor or cancellation problem for the full source.
 
 The [physical framing criterion](actual_augmented_plat_physical_framing_criterion.md)
-gives strict semialgebraic tests for a single common frame to put every
-coupon in this central domain. Local compatibility for one disk product
-and prefix is proved. General simultaneous feasibility, the required
-selected local sheets and the contributing global cycle are not inferred
-from positive gluing or from algebraic regularity alone.
+and [finite selected-local certificate](actual_augmented_plat_selected_local_certificate.md)
+remain conditional local theorems. Their proposed simultaneous realization
+has now been tested: the
+[right-angled framing obstruction](actual_right_angled_selected_framing_obstruction.md)
+proves there is NO all-central selected common frame for the actual
+certified right-angled augmented-plat cut. The actual Morse prefixes,
+outward reflection signs and shaded facet incidence are essential to
+this conclusion. It is not a counterexample to the volume conjecture.
 
-The [finite selected-local certificate](actual_augmented_plat_selected_local_certificate.md)
-combines those strict tests and the actual marked geometric data. If
-supplied, it gives the geometric stationary germ on the source-selected
-local phase, with actual volume and nondegenerate transverse Hessian.
-Its existence for every general skeleton and its contribution to the
-original global cycle remain unproved. Generic partner normals and
-finite complex-channel continuation are not part of its local conclusion.
+There is a general localization. Generic flags satisfying the geometric
+oriented-strip conditions give EXACTLY TWO input/output triples outside
+strict physical support, regardless of bridge width. The polarization
+kernel is a line through the white-normal convex polyhedron; its two
+facet exits are exactly those failures. Any two distinct facets can be
+prescribed, including the pair adjacent to the original marked physical
+edge; the source and mark stay fixed. All other factors are strictly
+physical but need not belong to the smaller central domain. This isolates
+a possible continuation/resummation problem without proving its estimates,
+its selected branches outside that domain, or a global cycle coefficient.
 
 The [local critical-character map](actual_augmented_plat_local_critical_character_map.md)
 now recovers the actual ordered transport and primitive auxiliary

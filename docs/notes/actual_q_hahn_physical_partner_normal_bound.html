@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A polynomial bound for the actual partner normal on the physical grid · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a><p><span class="badge">All physical paired first normals; complex corridor open</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_q_hahn_physical_partner_normal_bound.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_q_hahn_physical_partner_normal_bound.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_q_hahn_physical_partner_normal_bound_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="a-polynomial-bound-for-the-actual-partner-normal-on-the-physical-grid">A polynomial bound for the actual partner normal on the physical grid</h1>
+<p>30 October 2026. Every original physical magnetic entry of a complete double Casimir channel has a polynomially bounded confluent normal relative to its nonzero ordinary value. This includes both halves of every physical degree block, both parities, and every complete double channel. The estimate is for the ACTUAL generic divided difference. It is not an estimate obtained by differentiating a root-only formula.</p>
+<p>The argument is a positive-imaginary-part estimate for a half-prefix of the original complex symmetric Casimir matrix, followed by its exact reflection symmetry through first order at a double spectral node. No complex magnetic continuation, global magnetic contour, or whole marked-source estimate follows from this physical-grid statement.</p>
+<h2 id="the-source-and-the-quantitative-statement">1. The source and the quantitative statement</h2>
+<p>Put theta=pi/N, q=exp(i theta), Q=q^2, d=N-1, x=q^d. Let</p>
+<pre><code>0&lt;=j&lt;l, j+l=d, l&lt;=t&lt;=d, 0&lt;=u&lt;=t,
+c_j=q^(2j+1)+q^(-2j-1),
+Delta_j=q^(2j+1)-q^(-2j-1).</code></pre>
+<p>All these indices are integers. Let C_(j,u) be the original root column normalized by C_(j,0)=1. Let w_(j,u) be its actual confluent normal as specified by <a href="actual_mixed_augmented_plat_compiler.html">the mixed compiler</a>:</p>
+<pre><code>w_(j,u)=[D C_(j,u)-D C_(l,u)]/[-2N Delta_j],
+D=zeta d/dzeta, evaluated at zeta=q.                (1)</code></pre>
+<p>Both generic columns in (1) use the original highest weight d and its full factorial ratio. Then EVERY C_(j,u) is nonzero and</p>
+<pre><code>|w_(j,u)/C_(j,u)|&lt;=N^6/256+N^2/8.                 (2)</code></pre>
+<p>If t/N stays in a fixed compact subset of (0,1), the right side can be replaced by C_K N^4. In the present complete range t&gt;=l this only requires a fixed upper separation from t/N=1. No separation from the folded channel is required.</p>
+<h2 id="the-actual-prefix-has-positive-imaginary-part">2. The actual prefix has positive imaginary part</h2>
+<p>The original degree-t Casimir block J_t is complex symmetric tridiagonal, as proved directly from the balanced tensor operators in <a href="actual_complete_casimir_hermite_packet.html">the complete Hermite packet</a>. For r=0,…,t put U_r=Q^r, T=Q^t. Its entries simplify exactly to</p>
+<pre><code>D_r=U_r/T [2(q^(-1)+qT)-(q+q^(-1))U_r],
+A_r=(U_r-T)(1-QU_r)/T,             0&lt;=r&lt;t.          (3)</code></pre>
+<p>Every A_r is nonzero. For 1&lt;=m&lt;=floor(t/2), let J_[m] be its leading m-by-m principal submatrix. Because the matrix is symmetric, its Hermitian imaginary part is the entrywise imaginary-part matrix. Set h_r=(t-2r)theta and c=-cos((t+1)theta). Its diagonal and upper offdiagonal imaginary parts, including the next boundary coefficient, are</p>
+<pre><code>d_r=4 sin(h_r)[c+cos(theta)cos(h_r)],
+o_r=4 sin(h_r-theta)sin((t-r)theta)sin((r+1)theta).
+                                                           (4)</code></pre>
+<p>For 0&lt;=r&lt;m these o_r are positive. Introduce positive weights</p>
+<pre><code>a_r=1/sin((t-r)theta),          0&lt;=r&lt;=m.</code></pre>
+<p>A direct sine expansion gives the EXACT weighted row identity</p>
+<pre><code>d_r-o_(r-1)a_(r-1)/a_r-o_r a_(r+1)/a_r
+  =4 sin(r theta)sin^2(theta)sin(t theta)
+                     /sin((t-r-1)theta) &gt;=0,       (5)</code></pre>
+<p>where the r=0 term involving o_(-1) is absent. The right side is zero at r=0. All denominators in (5) are positive in the stated range. One elementary verification expands sin(b-a) and cos(a+b+theta), with a=r theta and b=(t-r)theta. After multiplying by sin(b-theta)/4, the residual is precisely sin(a)sin^2(theta)sin(a+b).</p>
+<p>Conjugate Im J_[m] by diag(1,-1,1,…), so its offdiagonals are -o_r. For a vector v write v_r=a_r y_r, and set y_m=0. Equation (5) expresses its quadratic form as</p>
+<pre><code>sum_(r=0)^(m-1) k_r |y_r-y_(r+1)|^2
+       +sum_(r=0)^(m-1) V_r a_r^2 |y_r|^2,
+
+k_r=o_r a_r a_(r+1)
+   =4 sin((t-2r-1)theta)sin((r+1)theta)
+                              /sin((t-r-1)theta),
+V_r=the nonnegative right side of (5).             (6)</code></pre>
+<p>There is a genuine Dirichlet term at the right endpoint; it is not discarded when the prefix is taken. The conductances obey</p>
+<pre><code>k_r&gt;=4 sin(theta).                                (7)</code></pre>
+<p>Indeed the two numerator sine arguments alpha,beta are at least theta, with alpha+beta=(t-r)theta&lt;pi. On the interval theta&lt;=alpha&lt;=alpha+beta-theta, their product is minimized at an endpoint, so sin(alpha)sin(beta)&gt;=sin(theta) sin(alpha+beta-theta), which is (7).</p>
+<p>Since a_r&lt;=1/sin(theta) and sum|y_r|<sup>2&lt;=m</sup>2 sum|y_r-y_(r+1)|^2, equations (6),(7) prove</p>
+<pre><code>Im J_[m] &gt;= [4 sin^3(theta)/m^2] I.               (8)</code></pre>
+<p>The sign-conjugation is unitary and does not change this lower bound. For t/N in a fixed compact inside (0,1), all a_r in this half-prefix are uniformly bounded; the stronger lower bound is c_K/N^3.</p>
+<h2 id="lower-half-spectral-derivatives">3. Lower-half spectral derivatives</h2>
+<p>Let f_r(z) be the original normalized forward column,</p>
+<pre><code>f_0=1, f_r(z)=det(zI-J_[r])/(A_0 ... A_(r-1)).      (9)</code></pre>
+<p>The real point c_j is a double eigenvalue of J_t. The actual source and normal are exactly</p>
+<pre><code>C_(j,r)=f_r(c_j),             w_(j,r)=f_r&#39;(c_j).    (10)</code></pre>
+<p>This is the generic-confluence identity in the complete Hermite packet and the mixed compiler: differentiating the two normalized generic columns cancels the common q derivative and retains the original eigenvalue-gap derivative -2N Delta_j.</p>
+<p>For ANY real z, (8) gives</p>
+<pre><code>||(zI-J_[m])^(-1)||&lt;=m^2/[4 sin^3(theta)].</code></pre>
+<p>In particular the determinant in (9) is nonzero there. Taking its logarithmic derivative gives</p>
+<pre><code>|f_m&#39;(z)/f_m(z)|
+   =|tr((zI-J_[m])^(-1))|
+   &lt;=m^3/[4 sin^3(theta)].                        (11)</code></pre>
+<p>Since m&lt;=N/2 and sin(theta)&gt;=2/N, (11) is at most N^6/256. The compact-degree improvement of (8) gives C_K N^4 instead. For m=0 the normal is zero and the value is 1.</p>
+<h2 id="reflection-extends-the-bound-through-the-full-physical-block">4. Reflection extends the bound through the full physical block</h2>
+<p>Let P reverse the indices 0,…,t. Formula (3) gives exactly</p>
+<pre><code>P J_t P=conjugate(J_t).                           (12)</code></pre>
+<p>The characteristic polynomial is</p>
+<pre><code>p_(t+1)(z)=product_(m=0)^t(z-c_m),</code></pre>
+<p>and the forward column satisfies</p>
+<pre><code>(J_t-zI)f(z)=-p_(t+1)(z)e_t/(A_0 ... A_(t-1)).     (13)</code></pre>
+<p>At a double node c_j, both the residual and its first derivative vanish. Reflecting and conjugating (13), and using uniqueness of the forward recurrence with its first component fixed, therefore gives, at that node,</p>
+<pre><code>f_(t-r)=f_t conjugate(f_r),
+f&#39;_(t-r)=f&#39;_t conjugate(f_r)+f_t conjugate(f&#39;_r).    (14)</code></pre>
+<p>This is a first-order identity at a DOUBLE node. It is not inferred by differentiating a value identity known only at isolated points. One may justify (14) as an identity modulo (z-c_j)^2: the reflected column has first entry conjugate(f_t(conjugate z)); its first-row error is a multiple of p_(t+1)(z), so its forward recurrence agrees to this order. Setting r=t in the value identity gives |f_t|=1.</p>
+<p>The endpoint normal has a particularly simple ORIGINAL generic calculation. At u=t only a=m survives in the generic Clebsch sum, and its highest-vector ratio R_(m,m) is identically 1. Thus</p>
+<pre><code>C_(m,t)(zeta)=(-1)^m
+          zeta^[d(t-2m)+m(m-1)].                 (15)</code></pre>
+<p>The two exponents for j,l differ by N(l-j). Combining (15) with the actual gap in (1) gives</p>
+<pre><code>f&#39;_t(c_j)/f_t(c_j)=-(l-j)/(2 Delta_j),
+|f&#39;_t/f_t|&lt;N/[4 sin(theta)]&lt;=N^2/8.               (16)</code></pre>
+<p>For r&gt;t/2 apply (14) with t-r in the lower half. Its value is nonzero and</p>
+<pre><code>f&#39;_r/f_r=f&#39;_t/f_t+conjugate(f&#39;_(t-r)/f_(t-r)).       (17)</code></pre>
+<p>Equations (11),(16),(17) prove (2) for every physical entry.</p>
+<h2 id="scope-of-the-estimate">5. Scope of the estimate</h2>
+<p>The paired normal, including its formerly hidden large-channel contribution, is controlled on the entire physical grid. Its exponential rate there cannot exceed that of its ordinary column by more than O(log N)/N. This is a relative entrywise statement; it does not control cancellations after a whole graph is sewn.</p>
+<p>The high-total-degree blocks are transported by the constant Chevalley-plus-flip adapter in the complete Hermite packet. Thus the same root spectral-column estimate applies after the stated physical index translation. It is the root confluent column being transported here, not a new generic-q adapter assumed to be flat.</p>
+<p>The estimate does NOT extend by continuity to a fixed complex magnetic neighborhood. The canonical large-partner continuation has the additional degree poles proved in <a href="actual_q_hahn_partner_normal_collision.html">the generic collision note</a>, and its finite tail requires a separate complex estimate. A bound on integer magnetic samples, even at all levels, supplies no such analytic continuation theorem.</p>
+<p>Focused audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_q_hahn_physical_partner_normal_bound.py">original normal, positive prefix and reflection</a>, with <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_q_hahn_physical_partner_normal_bound_results.json">saved results</a>. The symbolic weighted-row identity passed. Exact arithmetic checked 131 original Casimir blocks, 726 weighted-row identities, 8,578 actual generic paired normals and their first-order reflections, and 571 original endpoint normals. At 90 digits, 10,164 actual relative-normal bounds passed; the audit also checked 288 positive prefix matrices and 2,384 conductance inequalities. These finite checks supplement the uniform proof above.</p>
+<p>An independent analytical review checked the original source conventions, weighted Dirichlet identity, conductance minimum, Poincare bound and N^6 constant, the reflected recurrence modulo the double characteristic zero, and the generic endpoint exponent difference N(l-j). It also checked that the high-degree adapter transports the actual root spectral column without assuming flatness of an individual generic derivative. Its verdict covers the stated physical-grid theorem only.</p>
+<p>A second independent analytical review and fresh replay passed. That reader verified the weighted row identity independently as a formal Laurent identity, the alternating conjugation and boundary Dirichlet term, the conductance and resolvent constants, and the first-order reflection with the actual generic endpoint sign. The fresh audit passed all reported exact and high-precision checks, including 8,578 original generic paired normals and 571 endpoints. No complex magnetic continuation or whole-source bound is inferred.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_q_hahn_physical_partner_normal_bound.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-source-and-the-quantitative-statement">1. The source and the quantitative statement</a><a href="#the-actual-prefix-has-positive-imaginary-part">2. The actual prefix has positive imaginary part</a><a href="#lower-half-spectral-derivatives">3. Lower-half spectral derivatives</a><a href="#reflection-extends-the-bound-through-the-full-physical-block">4. Reflection extends the bound through the full physical block</a><a href="#scope-of-the-estimate">5. Scope of the estimate</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

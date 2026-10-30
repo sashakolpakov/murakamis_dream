@@ -1,5 +1,13 @@
 # A finite certificate for the selected geometric principal phase
 
+**Subsequent scope result (30 October):** the
+[right-angled obstruction and localization](actual_right_angled_selected_framing_obstruction.md)
+proves that no common all-central selected frame exists for the actual
+certified right-angled plat cut. Generic geometric strip flags have exactly
+two strict physical-support failures, at arbitrary bridge width. The local
+conditional statements below remain valid; their simultaneous realization
+in that right-angled class cannot supply the general proof.
+
 30 October 2026. For any fixed augmented plat, of arbitrary width, this
 note gives explicit tests which identify the geometric stationary
 branch with the source-selected LOCAL q-Hahn principal action. It also

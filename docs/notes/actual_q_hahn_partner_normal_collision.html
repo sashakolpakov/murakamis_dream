@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual partner normal is transverse to a generic collision · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a><p><span class="badge">Exact paired normal; extra-pole obstruction</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_q_hahn_partner_normal_collision.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_q_hahn_partner_normal_collision.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_q_hahn_partner_normal_collision_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="the-actual-partner-normal-is-transverse-to-a-generic-collision">The actual partner normal is transverse to a generic collision</h1>
+<p>30 October 2026. The large partner in the original mixed-circle column can be compared with the small column BEFORE specializing q. Their equality holds on a generic spectral-collision hypersurface. This gives an exact transverse derivative formula for the original first normal, and an explicit finite tail. The tail has genuine additional poles; there is no individual-normal holomorphic theorem on the entire joint central wedge.</p>
+<p>No polynomial relative bound for that normal on a smaller corridor is proved here. Nor does a pole of an individual continued column imply a pole of the full physical coupon after all measures and terms are combined.</p>
+<h2 id="the-original-generic-column-in-a-symmetric-finite-form">1. The original generic column in a symmetric finite form</h2>
+<p>Use Q=zeta^2, d=N-1, B=Q^(-N), x=zeta^d, U=Q^u, T=Q^t and X=U^(-1). Write (a;Q)<em>k=product</em>(r=0)^(k-1)(1-a Q^r). The actual generic Clebsch column from <a href="actual_mixed_augmented_plat_compiler.html">the mixed compiler</a>, section 2, has the finite expression</p>
+<pre><code>C_m=x^u F_m,
+F_m(Q,B;X,T)=sum_(k=0)^m
+   (Q^(-m);Q)_k (B^2 Q^(m+1);Q)_k (X;Q)_k Q^k
+   /[(BQ;Q)_k (T^(-1);Q)_k (Q;Q)_k].              (1)</code></pre>
+<p>In (1), B is temporarily an independent variable. Its specialization B=Q^(-N) is the ORIGINAL generic source; B is not a replacement quantization. All displayed denominator factors are units near a primitive N-th root with B=1, except the indicated T divisors.</p>
+<p>For clarity, the finite transformation in (1) has a direct proof. The original bivariate numerator is</p>
+<pre><code>H_m^B(U,V)=sum_(a=0)^m (-1)^a B^a Q^[a(a+1)/2]
+   [m choose a]_Q (BQ^(m-a+1);Q)_a/(BQ;Q)_a
+   V^a product_(r&lt;a)(U-Q^r)
+       product_(r&lt;m-a)(V-Q^r),
+F_m=H_m^B(U,T/U)/product_(r&lt;m)(T-Q^r).             (2)</code></pre>
+<p>The normalized generic Casimir operator, after removing x^u, has eigenvalues Lambda_m=B<sup>(-1)Q</sup>(-m)+B Q^(m+1). On the Newton basis P_k(X)=(X;Q)_k its action is triangular:</p>
+<pre><code>L P_k=Lambda_k P_k+eta_k P_(k-1),
+eta_k=(B^(-1)-Q^k)(1-Q^(k-1)/T)(1-Q^(-k)).         (3)</code></pre>
+<p>One can check the lower term without a summation transformation. At X=1,Q<sup>(-1),…,Q</sup>(2-k), the shifted polynomial vanishes, so the lower term is divisible by P_(k-1). At X=Q^(1-k), only the X/Q shift remains; its coefficient is (B<sup>(-1)-Q</sup>k)(1-Q^(k-1)/T), and P_k(X/Q)/P_(k-1)(X)=1-Q^(-k). The leading coefficient gives Lambda_k.</p>
+<p>Consequently the coefficients of a degree-m eigenfunction normalized to F_m(1)=1 satisfy</p>
+<pre><code>a_(k+1)/a_k=Q(1-Q^(k-m))(1-B^2 Q^(m+k+1))
+   /[(1-BQ^(k+1))(1-Q^k/T)(1-Q^(k+1))].            (4)</code></pre>
+<p>For generic parameters these eigenvalues are distinct. The degree-m normalized eigenfunction is unique, and (4), with a_0=1, gives (1). Rational continuation then proves the identity wherever defined.</p>
+<p>There is no small-channel restriction hidden in this argument. To justify the generic operator identity for a fixed arbitrary m, first take every integer source size N&gt;=2m+1. The original generic Clebsch calculation and its sufficiently many complete physical t slices give the identity at B=Q^(-N), after clearing denominators. The cleared residual is a FIXED finite Laurent polynomial in B,Q,U,T. Write it as sum B^a p_a(Q,U,T). For N larger than its finite Q-exponent widths, the supports of Q^(-Na)p_a are disjoint. Its vanishing at all such N forces every p_a=0. Thus (3) and the actual numerator identity are formal in B,Q, and apply equally to a large m&lt;N. The physical slice count at one fixed N is not being applied to a large partner.</p>
+<h2 id="the-collision-identity-is-generic">2. The collision identity is generic</h2>
+<p>Fix 0&lt;=j&lt;l and j+l=N-1. The eigenvalue difference factors as</p>
+<pre><code>Lambda_l-Lambda_j
+  =B^(-1)Q^(-l)(1-Q^(l-j))(1-B^2 Q^N).            (5)</code></pre>
+<p>On the generic hypersurface B^2 Q^N=1, the two numerator parameters of (1) for m=j are the two numerator parameters for m=l in the opposite order. In the large series the second parameter is Q^(-j), so its terms k&gt;j vanish. Therefore, IDENTICALLY in X,T,</p>
+<pre><code>F_l=F_j on B^2 Q^N=1.                             (6)</code></pre>
+<p>Work locally near the actual primitive root Q_0, B=1, with the denominators in (1) inverted. The collision is smooth there because its B derivative is nonzero. Equation (6) gives a regular rational function R_(j,l) such that</p>
+<pre><code>F_l-F_j=(1-B^2 Q^N) R_(j,l).                       (7)</code></pre>
+<p>At even N another algebraic component of the collision can meet denominator divisors. This does not affect the stated local germ: every factor 1-BQ^r, 1&lt;=r&lt;N, is a unit at Q_0,B=1. The assertion does not cancel a denominator identically zero on an irrelevant component.</p>
+<p>At the actual root, (6) also proves the useful bivariate factorization</p>
+<pre><code>H_l^1(U,V)=H_j^1(U,V)
+                 product_(r=j)^(l-1)(UV-Q_0^r).    (8)</code></pre>
+<p>This is an identity of the continued source numerator, not just an equality on the physical integer magnetic grid.</p>
+<h2 id="the-actual-generic-q-normal-becomes-a-transverse-b-derivative">3. The actual generic-q normal becomes a transverse B derivative</h2>
+<p>Return to B=Q^(-N), q=exp(pi i/N), Q_0=q^2, x=q^(N-1), and put</p>
+<pre><code>Delta=q^(2j+1)-q^(-2j-1), D=zeta d/dzeta.</code></pre>
+<p>The actual tensor Casimir eigenvalue is</p>
+<pre><code>lambda_m(zeta)=zeta^(2N-2m-1)+zeta^(-2N+2m+1),
+D(lambda_j-lambda_l)(q)=-2N Delta.</code></pre>
+<p>The root-only expression q<sup>(2m+1)+q</sup>(-2m-1) has the same value but would give the WRONG derivative sign. The actual mixed compiler uses</p>
+<pre><code>w_j=[D C_j(q)-D C_l(q)]/[-2N Delta].              (9)</code></pre>
+<p>Along this ACTUAL generic family,</p>
+<pre><code>D(1-B^2 Q^N)=2N at the root.</code></pre>
+<p>Since F_l-F_j vanishes identically in X,T on the collision, the derivatives of x^u, X=zeta^(-2u), and T=zeta^(2t) do not contribute to the derivative of the difference. Equations (7),(9) give exactly</p>
+<pre><code>w_j=x^u R_(j,l)(Q_0,1;X,T)/Delta
+   =x^u [B partial_B(F_j-F_l)]_(Q_0,1)/(2 Delta).   (10)</code></pre>
+<p>The partial derivative in the second line holds Q,X,T fixed. This is an exact consequence of generic collision divisibility. It is NOT differentiation of the root-only identity F_l=F_j. In particular the large partner’s generic normal has not been dropped.</p>
+<h2 id="the-explicit-surviving-derivative-tail">4. The explicit surviving derivative tail</h2>
+<p>All expressions in this section are at Q=Q_0. Put</p>
+<pre><code>a=Q^(-j), b=Q^(-l),
+c_k=(a;Q)_k(b;Q)_k(X;Q)_k Q^k
+                     /[(Q;Q)_k^2(T^(-1);Q)_k],
+L_k(y)=-sum_(r=0)^(k-1) y Q^r/(1-y Q^r).</code></pre>
+<p>For k&lt;=j, every factor in L_k(a),L_k(b) is a unit. Differentiating (1) in B and subtracting cancels the common denominator derivative. For k&gt;j the single vanishing numerator factor has derivative</p>
+<pre><code>[y partial_y(y;Q)_k]_(y=Q^(-j))
+                =-(a;Q)_j(Q;Q)_(k-j-1).</code></pre>
+<p>Thus the ORIGINAL normal is</p>
+<pre><code>w_j=x^u/Delta * {
+   sum_(k=0)^j c_k [L_k(b)-L_k(a)]
+   +(a;Q)_j sum_(k=j+1)^l
+      (b;Q)_k(Q;Q)_(k-j-1)(X;Q)_k Q^k
+                      /[(Q;Q)_k^2(T^(-1);Q)_k] }. (11)</code></pre>
+<p>The second line is a nonempty tail whenever j&lt;l. Bounded harmonic coefficients in the first line do not bound this coherent sum relative to F_j; nor do they remove the tail. Equation (11) records all of it with the original normalizer.</p>
+<h2 id="genuine-extra-poles-obstruct-a-whole-wedge-normal-theorem">5. Genuine extra poles obstruct a whole-wedge normal theorem</h2>
+<p>As a polynomial in X, w_j/x^u has EXACT degree l. Only the k=l tail term contributes its highest coefficient, which is</p>
+<pre><code>(-1)^l Q^[l(l+1)/2]
+   (Q^(-l);Q)_l(Q^(-j);Q)_j(Q;Q)_(l-j-1)
+   /[Delta (Q;Q)_l^2(T^(-1);Q)_l].                (12)</code></pre>
+<p>Its numerator is nonzero: all nonzero factorial indices are less than N, and 2j+1&lt;N gives Delta!=0. Therefore each divisor</p>
+<pre><code>T=Q^r,                 j&lt;=r&lt;l,                    (13)</code></pre>
+<p>is a genuine SIMPLE pole of the normalized normal for generic X. The highest-coefficient residue is nonzero and cannot be canceled by lower powers of X. Its residue polynomial has degree l, so it does not vanish on an open set of magnetic coordinates.</p>
+<p>The ordinary small column F_j has no pole at any of (13). Its denominator only uses r&lt;j. If N/2&lt;r&lt;l, the scaled pair degree tau=r/N lies strictly inside the joint central wedge. An open set of its central magnetic coordinates avoids the finitely many roots of the residue polynomial. Thus the actual terminating continuation of this INDIVIDUAL first normal cannot be holomorphic on that whole wedge, let alone admit a uniform relative polynomial estimate there.</p>
+<p>These additional divisors lie below the physical high-partner range t&gt;=l. On a fixed compact tau&gt;1/2 they disappear when j/N is sufficiently close to 1/2. Consequently (13) does not disprove a smaller corridor near the folded endpoint. It also does not prove such a corridor estimate: the tail in (11) still requires control.</p>
+<p>Finally, (13) is not a theorem about poles of the entire mixed coupon. The original inverse measure and the other terms may cancel individual-column poles. Nor does it exclude a separately specified whole-source continuation. It rules out silently extending the ordinary-column joint theorem to this canonical generic normal.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_q_hahn_partner_normal_collision.py">generic collision, original normal and pole certificates</a>.</p>
+<p>Independent analytical review and fresh audit: PASS. A second reader rederived the Newton-basis coefficient ratio, checked the fixed-degree Laurent-support extension, actual eigenvalue-gap sign, transverse factor, core and tail signs, and the noncanceling highest-coefficient poles. The fresh audit passed 4,123 original generic-q normal comparisons, 445 nonphysical tail checks and 614 nonzero extra-pole residues, as well as the generic transformations and noncyclotomic collisions. No smaller-corridor estimate or full-coupon pole is inferred.</p>
+<p>Primary-agent independent analytical review and fresh replay: PASS. It checked the actual-source ratio recurrence and all-degree extension, the tensor-eigenvalue gap convention, transverse derivative and tail factor two, and the nonzero leading pole residues. The same focused audit counts passed; the stated scope is unchanged.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_q_hahn_partner_normal_collision.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-original-generic-column-in-a-symmetric-finite-form">1. The original generic column in a symmetric finite form</a><a href="#the-collision-identity-is-generic">2. The collision identity is generic</a><a href="#the-actual-generic-q-normal-becomes-a-transverse-b-derivative">3. The actual generic-q normal becomes a transverse B derivative</a><a href="#the-explicit-surviving-derivative-tail">4. The explicit surviving derivative tail</a><a href="#genuine-extra-poles-obstruct-a-whole-wedge-normal-theorem">5. Genuine extra poles obstruct a whole-wedge normal theorem</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

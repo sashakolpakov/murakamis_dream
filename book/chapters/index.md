@@ -28,8 +28,9 @@ Start with [the equality results](results.md) for the exact knot and link famili
 | --- | --- |
 | Volume limit of the original invariant | Signed Conway families with mixed seeds $h^s$, $s\geq3$, arbitrary fixed trees and constructible knot patterns, after sufficiently long signed full fillings; isolated $C(h^s)$ for $s\geq4$; specified pretzel and belt-stack families |
 | Exact finite source identities | All auxiliary colors at arbitrary fixed plat width; full matching-graph trace normal; Fourier core and Parseval; full-color three-port reflection doubles |
-| Local quantum action | Actual joint complex action and nonzero amplitude in pair degree and magnetic coordinate on a fixed central domain, including folded channels; the channel stays discrete |
+| Local quantum action | Joint complex ordinary amplitude and polynomial fixed-derivative bounds for small channels; polynomial paired first-normal bounds on the physical grid; additional poles obstruct a whole-domain complex normal theorem; the channel stays discrete |
 | General geometric branch | Under a positive gluing certificate, marked rigidity and the actual critical scheme give a stationary branch with the true volume anchor; contributing source sheet still to be established |
+| Common geometric framing | An all-central selected frame is impossible for the certified right-angled cut; generic geometric strip flags localize strict physical-support failure to exactly two factors, at any bridge width |
 | Whole positive source limit | Every robust Conway expression; cylindrical factors have actual hyperbolic volume, while cap products split into geometric factors |
 | General knot or graph equality | Uniform complex source asymptotics, physical alias bounds and selection of the actual geometric period remain unresolved |
 
