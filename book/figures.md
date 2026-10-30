@@ -4,9 +4,9 @@ These diagrams introduce the objects and constructions used in the guide. The ge
 
 ## The route to volume equality
 
-The original source, its global growth, and the geometry of the actual complement are three separate parts of the argument. The open steps shown here concern the general conjecture; the [results chapter](chapters/results.md) states the families already covered by the recorded proofs.
+Exact source formulas, the selected local complex action and the marked geometric candidate are now available at arbitrary fixed width. The diagram highlights the remaining global selection and estimate problem. The [frontier](chapters/frontier.md) states the precise gap; the [results chapter](chapters/results.md) states the families already covered by the recorded proofs.
 
-![The general research route: original quantum source, global growth, and actual hyperbolic geometry.](figures/research-map.png)
+![The general research route: exact source, local action and actual geometric volume, with the remaining global theorem highlighted.](figures/research-map.png)
 
 ## A change of pairing
 

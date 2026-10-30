@@ -14,6 +14,46 @@ depends on the fixed diagram. N is the quantum level; the twist
 parameters are fixed before N tends to infinity. A finite matching
 test specifies which parity patterns give knots.
 
+The latest arbitrary-width step is a proved
+[negative-root theorem](actual_q_hahn_negative_root_source_polynomial.md)
+and its [source-selected complex local action](actual_q_hahn_selected_complex_action.md).
+This controls the actual local Fourier cancellations on the physical
+arc. It is a leading-action theorem, not a full amplitude expansion
+or a global estimate after complexifying the magnetic variables.
+
+The [local critical-character map](actual_augmented_plat_local_critical_character_map.md)
+now recovers the actual ordered transport and primitive auxiliary
+marking. A [regular generic geometric chart](actual_augmented_plat_regular_geometric_phase_chart.md)
+exists at every coupon simultaneously. The
+[absolute endpoint regulator comparison](actual_augmented_plat_endpoint_regulator.md)
+proves 2pi Re phi(0)=Vol(Y_D) at a regular correctly marked full
+geometric critical point, including both degree charts and signed
+half twists. The source's contributing sheet and cycle are NOT
+inferred from the existence or value of that geometric candidate.
+
+The [full matching-graph source](general_matching_graph_full_normal_source.md)
+also retains every folded label and physical trace normal on the
+actual geometric graph at both parities. For specified planar
+[three-port reflection doubles](actual_planar_three_port_reflection_double.md),
+the full source is a positive weighted square sum of coherent half
+packets. The packets themselves still require an asymptotic estimate.
+
+The critical path is therefore more precise: the local complex
+action and absolute geometric anchor are now proved, while global
+marked continuation, a nonzero selected contribution and uniform
+control of competing colors/aliases remain substantial missing
+theorems. Long twists do not by themselves resolve the magnetic
+branch-selection problem of the complete augmented source.
+
+The [channel Hessian theorem](actual_augmented_plat_channel_hessian.md)
+now removes one local degeneracy concern: its actual root-reduced
+channel block is diagonal, with entries -4pi i/tau_i for the primitive
+geometric cusp shapes, and its channel/magnetic cross-block vanishes.
+The block has negative real part. Channel-only elimination is therefore
+valid locally, with color Hessian pi i diag(tau_i). The remaining
+magnetic equations and the physical endpoint cycle are not solved by
+that implicit-function statement.
+
 The new [complete](actual_augmented_plat_phase_compiler.md) and
 [all-color](actual_mixed_augmented_plat_compiler.md) compilers give
 the exact arbitrary-plat source, including generic confluence normals,

@@ -20,6 +20,16 @@ Here $\chi$ is the auxiliary color deficit divided by $N$. The coefficients are 
 
 Thus the Fourier proposal has a concrete object to estimate. Parseval controls a norm, while the desired invariant is a particular coherent contraction. A uniform complex asymptotic, physical alias suppression and survival of the geometric contribution still require proof for a general plat.
 
+## The finite polynomials select a local complex action
+
+After its forced zero is removed, every actual physical q-Hahn polynomial has simple negative real roots. The [proof](../../notes/actual_q_hahn_negative_root_source_polynomial.md) uses an exact sine recurrence, interlacing and sine coefficient operators; the numerical root checks only test the implementation.
+
+Consequently its logarithm, real on the positive axis, is holomorphic on the slit plane. Real factorial estimates first identify its strictly concave positive-axis variational limit. Uniform bounds from the negative roots and the identity theorem then continue the limit to a [uniquely selected holomorphic action](../../notes/actual_q_hahn_selected_complex_action.md). On the physical Fourier arc, the corresponding continued saddle is nondegenerate. This proves the actual local exponential rate while retaining its cancellations.
+
+This is a local leading-action theorem. It supplies neither a full amplitude expansion nor analytic control after the magnetic variables move to a global geometric saddle. Those are still required for the general finite source.
+
+The [full matching-graph identity](../../notes/general_matching_graph_full_normal_source.md) is a complementary exact assembly tool: all folded sectors form one generic network with the original physical trace normal retained. It holds at both parities and uses the graph of the actual crossing-disk cut. No vanishing channel norm is inverted.
+
 ## Exact recoupling exposes a local geometric scalar
 
 Four external objects can be paired in two ways. The actual change of basis is computed before root specialization, with its genuine pivotal turn.
@@ -43,6 +53,12 @@ $$|K_N|^2\leq e^{o(N)}Z_N.$$
 Weighted Cauchy can prove such an estimate once the inner product, original source cost, and dual cost are explicit. Choosing a positive form alone does not make those costs small. The repository contains exact counterexamples to proposed unmarked norms and to replacing a full magnetic tensor by its scalar rate.
 
 The whole-support boundary Gram theorem gives polynomial costs on each supported local cell. The next step is to transport this control through the actual global composition. Correlated seam labels must remain shared; maximizing local factors independently can change the answer.
+
+For specified planar three-port reflection doubles, there is now a stronger [exact full-source identity](../../notes/actual_planar_three_port_reflection_double.md):
+
+$$Z_N^{\mathrm{double}}=\sum_{\mathbf a\in\mathcal D_N}\frac{|Z_N^{\mathrm{half}}(\mathbf a)|^2}{\theta_N(\mathbf a)}\geq0.$$
+
+Every interior color is already coherently summed inside the half-packet. This includes the actual normals at both level parities. Since there are at most $N^3$ boundary triples, the doubled source differs from its largest squared weighted packet by at most that polynomial factor. Its asymptotic is therefore reduced to estimating the half-packets, whose internal cancellations have not disappeared. Positivity here allows zeros and is not a nonvanishing theorem for arbitrary plats.
 
 ## An upper bound is only half of equality
 

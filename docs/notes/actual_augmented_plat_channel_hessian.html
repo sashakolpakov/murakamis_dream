@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The endpoint channel Hessian is the inverse primitive cusp shape · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Geometry</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#geometry">Angle optimization and actual geometry</a><p><span class="badge">Primitive cusp and channel Hessian</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_augmented_plat_channel_hessian.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_augmented_plat_channel_hessian.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_augmented_plat_channel_hessian_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="the-endpoint-channel-hessian-is-the-inverse-primitive-cusp-shape">The endpoint channel Hessian is the inverse primitive cusp shape</h1>
+<p>30 October 2026. The actual normalized augmented-plat phase has a nondegenerate channel block at every regular complete geometric point. After eliminating its two local q-Hahn variables on their recorded critical sheets, ALL channel/magnetic mixed second derivatives vanish at the complete channel endpoint. The diagonal entries are exactly</p>
+<pre><code>H_(xi_i,xi_i)=-4pi i/tau_i,                         (0)</code></pre>
+<p>where tau_i is the ACTUAL oriented primitive crossing-circle cusp shape, longitude translation divided by meridian translation. Hence each entry has strictly negative real part. This is a source theorem for every original augmented plat admitting the stated regular complete geometric chart, at any fixed width, with any retained half-twist pattern.</p>
+<p>The proof identifies the cusp shape directly from the actual meridian and longitude MATRICES. It does not infer that marking by matching a Hessian. It also does not assert that the remaining magnetic Hessian is nondegenerate after removing framing directions, or that a finite source cycle contributes a nonzero Gaussian amplitude.</p>
+<h2 id="a-local-critical-reduction-must-keep-its-integer-characters">1. A local critical reduction must keep its integer characters</h2>
+<p>Use the fully normalized local phase Theta_epsilon and its rational critical map from <a href="actual_augmented_plat_local_critical_character_map.html">the actual character calculation</a>. Write y for the magnetic variables (tau,u,v), xi for the folded channel, and alpha,beta for the two internal q-Hahn variables. The high physical degree chart uses its proved affine adapter; its phase remains the same function of these LOW coordinates, not the same function with the physical pair product substituted for T.</p>
+<p>At a regular complete point J=exp(2pi i xi)=-1, both internal critical quadratics have simple roots. The holomorphic implicit-function theorem gives their chosen continuations alpha(y,xi), beta(y,xi) in a small logarithmic neighborhood. The exponentiated equations alone give</p>
+<pre><code>Theta_alpha=2pi i n_alpha,
+Theta_beta=2pi i n_beta,</code></pre>
+<p>with locally constant integers on these roots. Retain these characters and put</p>
+<pre><code>Theta_tilde=Theta-2pi i(n_alpha alpha+n_beta beta).</code></pre>
+<p>Then its two internal derivatives are EXACTLY zero. Define the root-reduced phase Theta_bar(y,xi) by substituting these roots into Theta_tilde. Envelope differentiation now gives</p>
+<pre><code>exp(partial_xi Theta_bar)=R_epsilon
+                         =R0(-J)^epsilon.          (1)</code></pre>
+<p>Reducing an unadjusted phase whose internal derivatives are nonzero integer characters would add spurious alpha_xi and beta_xi terms. No choice of these local characters is, by itself, a proof that the corresponding Poisson sector contributes to the original finite sum.</p>
+<h2 id="endpoint-tangential-derivatives-vanish-identically">2. Endpoint tangential derivatives vanish identically</h2>
+<p>The actual source identities hold on the ENTIRE endpoint root chart:</p>
+<pre><code>R0|_(J=-1)=1,
+C=I+bH, H=P+I, H^2=0,
+(dR0/dJ)|_(J=-1)=2b.                              (2)</code></pre>
+<p>The derivative in (2) follows the implicit internal roots, holding the magnetic variables fixed. In particular it is not a derivative taken with their exponential coordinates Z,W incorrectly frozen. The scalar b is recovered from the actual ordered input/output meridians by</p>
+<pre><code>b=Tr([H,A_in] A_out)/32.</code></pre>
+<p>The endpoint regulator note’s <a href="actual_augmented_plat_endpoint_regulator.html">rational chart</a>, with Z=(a-1)/(a+1), W=(b0-1)/(b0+1), gives explicitly</p>
+<pre><code>b=(2Ta b0-Ta-Tb0+a+b0-2)
+                  /[2(T+1)(a-1)(b0-1)].           (3)</code></pre>
+<p>Here b0 is a chart parameter, not the transport coefficient b. Formula (3) holds in both physical degree charts. The audit differentiates the original general-J rational expression for R0 using Z_J=-P_J/P_Z and W_J=-P_J/P_W, and checks (2) exactly over Q(T,a,b0).</p>
+<p>Because (-J)^epsilon=1 at J=-1, equation (1) implies</p>
+<pre><code>partial_xi Theta_bar(y,1/2)=2pi i n_xi             (4)</code></pre>
+<p>for one LOCALLY CONSTANT integer n_xi on each connected marked endpoint chart. It does not automatically imply that this derivative is zero. Nevertheless differentiating (4) in ANY magnetic tangent direction gives</p>
+<pre><code>partial_y partial_xi Theta_bar=0.                 (5)</code></pre>
+<p>This is an identity along the whole endpoint chart, not a numerical vanishing at the geometric point alone. Finally dJ/dxi=-2pi i there, so (1),(2) give</p>
+<pre><code>partial_xi^2 Theta_bar
+    =-2pi i(2b-epsilon)
+    =-4pi i(b-epsilon/2).                         (6)</code></pre>
+<p>The high-degree adapter is independent of xi. Therefore (5),(6) remain valid in the actual high physical coordinates.</p>
+<h2 id="the-primitive-cusp-translations-fix-the-factor-and-sign">3. The primitive cusp translations fix the factor and sign</h2>
+<p>The collar is the ORIGINAL threading word [2,1,1,2], followed by the retained main half twist R^epsilon. The <a href="actual_augmented_plat_endpoint_regulator.html">proved endpoint reconstruction</a>, section 3, supplies its raw trace -2 auxiliary meridian</p>
+<pre><code>C_aux,raw=-[I+(epsilon/2-b)H].                     (7)</code></pre>
+<p>Thus the actual trace +2 meridian is</p>
+<pre><code>mu=I+(epsilon/2-b)H.</code></pre>
+<p>The actual disk-framed preferred longitude is P=BA, with no meridian power inserted. Since P=-I+H, its centered trace +2 representative is</p>
+<pre><code>lambda_centered=-P=I-H.                           (8)</code></pre>
+<p>Changing a matrix by its central minus sign changes no projective translation. Conjugate their common parabolic fixed point to infinity. The nonzero nilpotent H then has form [[0,h],[0,0]], h!=0. Equations (7),(8) say that the actual translations are</p>
+<pre><code>translation(mu)=(epsilon/2-b)h,
+translation(lambda)=-h.</code></pre>
+<p>Both primitive paths retain their original collar orientations. Therefore</p>
+<pre><code>tau_geom=translation(lambda)/translation(mu)
+         =1/(b-epsilon/2).                       (9)</code></pre>
+<p>This proves the inverse cusp relation DIRECTLY at the complete point; no nearby deformation theorem or guessed cusp potential is used. With the positive orientation I(mu,lambda)=1, Im tau_geom&gt;0. Substituting (9) into (6) proves (0), including</p>
+<pre><code>Re(-4pi i/tau_geom)
+               =-4pi Im(tau_geom)/|tau_geom|^2&lt;0.  (10)</code></pre>
+<p>As a sign check, an actual rectangular crossing-circle cusp with c=cot(pi x)&gt;0 has, in the SOURCE half-twist convention,</p>
+<pre><code>tau_epsilon=2ic/(1-epsilon ic),
+b=1/(2ic),
+H_xixi=-2pi/c+2pi i epsilon.                       (11)</code></pre>
+<p>Source epsilon=-1 is the geometric ‘+’ collar of the matching-graph geometry note; the two notations should not be silently interchanged. The parameter x in (11) is a geometric rectangle parameter and is not being identified with a general Newton source coordinate.</p>
+<h2 id="the-full-original-plat-retains-this-diagonal-block">4. The full original plat retains this diagonal block</h2>
+<p>Sum the root-reduced phases of all original circle coupons, together with the original cup, cap, marking and exterior phases. Eliminate only the affine physical-wire degree equations, using coordinates independent of the channel variables. Denote the resulting local phase by</p>
+<pre><code>F(y,xi_1,...,xi_r).</code></pre>
+<p>The remaining y coordinates are the original magnetic degrees of freedom; no assertion about their Hessian or framing quotient is made. Cups/caps and the degree constraints introduce no additional channel dependence. At the full endpoint xi_i=1/2, equations (5),(6) give exactly</p>
+<pre><code>F_(xi,y)=0,
+F_(xi_i,xi_j)=-delta_ij 4pi i/tau_i                (12)</code></pre>
+<p>at a regular complete geometric point. Off-diagonal channel terms vanish because each local reduced coupon contains only its own channel. The mixed block remains zero under the actual affine degree restriction. In particular the channel block is invertible with negative definite REAL PART in these actual channel coordinates, independently of any magnetic degeneracies.</p>
+<p>For clarity this statement concerns the marked phase. The integers in (4) remain locally constant, and the original normal equation becomes stationary only in the corresponding specified Poisson sector. Equation (12) does not choose that sector’s coefficient in the finite source.</p>
+<h2 id="a-local-channel-elimination-with-the-color-normalization-retained">5. A local channel elimination, with the color normalization retained</h2>
+<p>There is a limited but useful implicit-function consequence. Subtract the recorded constants 2pi i n_i xi_i from F, and add the actual positive cosine-branch color coupling</p>
+<pre><code>-2pi i sum_i (xi_i-1/2) chi_i.                    (13)</code></pre>
+<p>At chi=0 every point y of a sufficiently small endpoint chart has the channel stationary solution xi_i=1/2. By (12) and continuity, the holomorphic implicit-function theorem solves all CHANNEL equations uniquely for xi=xi(y,chi), near the geometric point. This eliminates only those variables. It does not solve the remaining y equations.</p>
+<p>At the complete geometric point,</p>
+<pre><code>partial xi_i/partial chi_j=-delta_ij tau_i/2.      (14)</code></pre>
+<p>The resulting channel-eliminated phase f(y,chi) obeys</p>
+<pre><code>f_(chi_i,chi_j)=delta_ij pi i tau_i,
+f_(chi,y)=0,                                     (15)</code></pre>
+<p>at chi=0. Replacing the cosine sign changes both first derivatives and leaves (15) unchanged. For the displayed positive cosine branch the physical similarity logs are U_i=-2pi i chi_i and V_i=4pi i(xi_i-1/2), so (14) also gives V_i/U_i=tau_i to first order, with the original inverse-meridian sign.</p>
+<p>The transfer convention writing f’’=2pi i tau_packet therefore has</p>
+<pre><code>tau_packet=tau_geom/2,</code></pre>
+<p>as already required in the explicitly solved Conway sources. There is no additional factor of two in (0) or (15).</p>
+<p>What this removes is a genuine local obstruction: the folded channel normal is nondegenerate, its sign is controlled, its mixed second-order coupling to the magnetic coordinates vanishes, and its peripheral coefficient is correctly normalized. What remains includes the magnetic critical scheme and its genuine gauge directions, a selected complex magnetic branch, the physical support/Poisson cycle, boundary and alias estimates, and a nonzero amplitude. The physical channel endpoint is still an endpoint of the finite folded summation domain; this theorem does not turn it into an interior finite-state saddle.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_augmented_plat_channel_hessian.py">exact cusp and channel calculation</a>, <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_augmented_plat_channel_hessian_results.json">results</a>.</p>
+<p>Independent character/current review: full analytical read and fresh audit PASS. The review checked the retained internal integer characters, implicit root derivatives, actual primitive cusp orientation and signed shear, both physical adapters, the channel-independent affine degree restriction and the channel-only implicit-function theorem. Six cusp cases and three rectangle/color-Hessian checks passed. No magnetic quotient rigidity, physical cycle or global source estimate is inferred.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_augmented_plat_channel_hessian.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#a-local-critical-reduction-must-keep-its-integer-characters">1. A local critical reduction must keep its integer characters</a><a href="#endpoint-tangential-derivatives-vanish-identically">2. Endpoint tangential derivatives vanish identically</a><a href="#the-primitive-cusp-translations-fix-the-factor-and-sign">3. The primitive cusp translations fix the factor and sign</a><a href="#the-full-original-plat-retains-this-diagonal-block">4. The full original plat retains this diagonal block</a><a href="#a-local-channel-elimination-with-the-color-normalization-retained">5. A local channel elimination, with the color normalization retained</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -27,6 +27,21 @@ python3 experiments/audit_actual_positive_conway_variational_limit.py
 
 Read the corresponding result's `scope` field before interpreting `PASS`. There is no assertion that every historical diagnostic forms a single passing application test suite. Some optional geometry checks require SnapPy, Regina, Sage, or other packages listed by the particular script.
 
+The arbitrary-plat advance has a separate focused set:
+
+```sh
+python3 experiments/audit_actual_q_hahn_negative_root_source_polynomial.py
+python3 experiments/audit_actual_q_hahn_selected_complex_action.py
+python3 experiments/audit_actual_augmented_plat_local_critical_character_map.py
+python3 experiments/audit_actual_augmented_plat_endpoint_regulator.py
+python3 experiments/audit_actual_augmented_plat_regular_geometric_phase_chart.py
+python3 experiments/audit_actual_augmented_plat_channel_hessian.py
+python3 experiments/audit_general_matching_graph_full_normal_source.py
+python3 experiments/audit_actual_planar_three_port_reflection_double.py
+```
+
+The negative-root and complex-action notes contain their analytical proofs; root finding and large-level comparisons are regressions. The character and regulator audits check exact rational identities in formal variables. The reflection and graph audits replay actual finite sources. None of these checks proves the missing general global asymptotic.
+
 ## Rebuilding this guide and its figures
 
 The guide is generated from `book/chapters/` and the published notes. Its static HTML uses native MathML and local CSS and JavaScript; reading it requires no account or external math service.

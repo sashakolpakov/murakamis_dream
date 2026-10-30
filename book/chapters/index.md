@@ -12,7 +12,7 @@ The current target allows every fixed bridge width $k\geq2$: start with an essen
 
 **The general conjecture remains open in this repository.** The notes contain internally reviewed arguments for specified families, general local identities, and obstructions to proposed extensions. Internal proof review, finite checks, and exploratory calculations are distinguished throughout this guide.
 
-![The three parts of the argument: original source, global growth, and actual hyperbolic geometry.](../figures/research-map.png)
+![The general route: exact source, selected local complex action and marked geometric candidate; global selection and estimates remain open.](../figures/research-map.png)
 
 ## Read the argument in order
 
@@ -27,8 +27,9 @@ Start with [the equality results](results.md) for the exact knot and link famili
 | Part of the argument | Current scope |
 | --- | --- |
 | Original invariant equals actual geometric volume | Signed Conway families with mixed seeds $h^s$, $s\geq3$, arbitrary fixed trees and constructible knot patterns, after sufficiently long signed full fillings; isolated $C(h^s)$ for $s\geq4$; specified pretzel and belt-stack families |
-| Exact finite source identities | All auxiliary colors at arbitrary fixed plat width; entire Fourier core and Parseval; general four-port recoupling and typed sewing |
-| Local quantum-volume law | Uniform supported scalar asymptotic with an actual hyperideal tetrahedron volume |
+| Exact finite source identities | All auxiliary colors at arbitrary fixed plat width; full matching-graph trace normal; Fourier core and Parseval; full-color three-port reflection doubles |
+| Local quantum action | Negative roots select the actual q-Hahn complex leading action for strict real physical parameter limits; supported four-port scalar action has an actual hyperideal tetrahedron volume |
+| General geometric candidate | Regular magnetic charts and primitive peripheral transport; actual volume normalization at a full marked geometric critical point; contributing source sheet still to be established |
 | Whole positive source limit | Every robust Conway expression; cylindrical factors have actual hyperbolic volume, while cap products split into geometric factors |
 | General knot or graph equality | Uniform complex source asymptotics, physical alias bounds and selection of the actual geometric period remain unresolved |
 

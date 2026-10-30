@@ -22,14 +22,24 @@
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> experiments/audit_actual_four_port_hyperideal_angle_volume.py</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> experiments/audit_actual_positive_conway_variational_limit.py</span></code></pre></div>
 <p>Read the corresponding result’s <code>scope</code> field before interpreting <code>PASS</code>. There is no assertion that every historical diagnostic forms a single passing application test suite. Some optional geometry checks require SnapPy, Regina, Sage, or other packages listed by the particular script.</p>
+<p>The arbitrary-plat advance has a separate focused set:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> experiments/audit_actual_q_hahn_negative_root_source_polynomial.py</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> experiments/audit_actual_q_hahn_selected_complex_action.py</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> experiments/audit_actual_augmented_plat_local_critical_character_map.py</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> experiments/audit_actual_augmented_plat_endpoint_regulator.py</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> experiments/audit_actual_augmented_plat_regular_geometric_phase_chart.py</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> experiments/audit_actual_augmented_plat_channel_hessian.py</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> experiments/audit_general_matching_graph_full_normal_source.py</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> experiments/audit_actual_planar_three_port_reflection_double.py</span></code></pre></div>
+<p>The negative-root and complex-action notes contain their analytical proofs; root finding and large-level comparisons are regressions. The character and regulator audits check exact rational identities in formal variables. The reflection and graph audits replay actual finite sources. None of these checks proves the missing general global asymptotic.</p>
 <h2 id="rebuilding-this-guide-and-its-figures">Rebuilding this guide and its figures</h2>
 <p>The guide is generated from <code>book/chapters/</code> and the published notes. Its static HTML uses native MathML and local CSS and JavaScript; reading it requires no account or external math service.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> tools/build_book.py</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> tools/check_book.py</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> http.server 8000 <span class="at">--directory</span> docs</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> tools/build_book.py</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> tools/check_book.py</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> http.server 8000 <span class="at">--directory</span> docs</span></code></pre></div>
 <p>The build requires Pandoc. TikZ sources and their compiled PNG/PDF figures are retained in <code>book/figures/</code>. To regenerate the figures, install a TeX distribution with TikZ and the optional Python package PyMuPDF, then run:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> tools/render_figures.py</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> tools/build_book.py</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> tools/render_figures.py</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> tools/build_book.py</span></code></pre></div>
 <p>The main README is deliberately short. The long research log, all existing technical note paths, and audit imports are preserved.</p>
 <nav class="chapter-nav" aria-label="Chapter navigation"><a href="../guide/notation.html">← Notation</a><span></span></nav>
 <footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/book/chapters/audits.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#what-is-being-checked">What is being checked</a><a href="#a-focused-starting-set">A focused starting set</a><a href="#rebuilding-this-guide-and-its-figures">Rebuilding this guide and its figures</a></aside></div></main>

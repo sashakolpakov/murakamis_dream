@@ -4,8 +4,8 @@
 arbitrary fixed bridge number and arbitrary fixed essential twist
 skeleton. A Conway seed grammar is an established application, not the
 definition of the intended general class. The statement below remains
-a CONJECTURE until the full source estimates and geometric source
-comparison are proved for its general skeleton.
+a CONJECTURE until the full source estimates and selection of the
+geometric period are proved for its general skeleton.
 
 ## 1. Quantifiers and the actual diagram
 
@@ -139,6 +139,24 @@ The already proved long-filling transfer is independent of k once
 these inputs are available. It must not be cited as having supplied
 them for an arbitrary plat.
 
+The new [actual local character map](actual_augmented_plat_local_critical_character_map.md)
+proves the primitive differential on any correctly marked stationary
+branch. The [absolute endpoint regulator theorem](actual_augmented_plat_endpoint_regulator.md)
+proves the complete-volume anchor at a regular correctly marked
+geometric critical point. A [generic framing theorem](actual_augmented_plat_regular_geometric_phase_chart.md)
+supplies a regular unfolded geometric candidate, but does not select
+its physical logarithmic sheet or a contributing quantum cycle.
+Thus the identities in (4) have a general classical proof with these
+hypotheses; their realization by the actual selected source remains
+part of the quantum problem.
+
+The [actual channel Hessian](actual_augmented_plat_channel_hessian.md)
+also has a general primitive normalization: H_(xi_i,xi_j) is
+-delta_ij 4pi i/tau_i, and the channel/magnetic mixed block vanishes.
+Its negative real part gives a local channel elimination at the
+geometric endpoint, while holding the magnetic variables as parameters.
+It supplies no nonzero cycle coefficient or magnetic asymptotic.
+
 ## 5. What the current general work is changing
 
 The [complete source compiler](actual_augmented_plat_phase_compiler.md)
@@ -152,6 +170,24 @@ including the odd endpoint. It does not supply a uniform complex
 asymptotic. If the required nonzero analytic corridor packet exists,
 its periodicity mirrors the same rate near the opposite cube face.
 The actual physical alias split therefore matters for the global gap.
+
+For each actual local q-Hahn column, the
+[negative-root theorem](actual_q_hahn_negative_root_source_polynomial.md)
+now proves a canonical slit-plane logarithm, and the
+[complex-action theorem](actual_q_hahn_selected_complex_action.md)
+proves its actual leading action on the physical Fourier arc.
+This is not yet a joint complex magnetic packet or a whole-source
+asymptotic. The endpoint quadratic has monodromy, so an unspecified
+analytic continuation alone cannot identify the selected geometric
+root. A controlled simultaneous continuation and a global cycle
+estimate remain necessary.
+
+The [full graph identity](general_matching_graph_full_normal_source.md)
+puts all folded labels and normals on the actual matching graph.
+The [reflection-double identity](actual_planar_three_port_reflection_double.md)
+removes the final gluing cancellation for specified three-port
+doubles, retaining the full source. Neither identity already bounds
+the internally coherent half-packets for arbitrary graphs.
 
 The [matching-graph geometry](general_augmented_plat_matching_geometry.md)
 constructs the actual complete complement and primitive markings

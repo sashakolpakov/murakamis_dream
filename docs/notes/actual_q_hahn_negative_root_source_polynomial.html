@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Negative roots of the actual complete-channel source polynomial · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a><p><span class="badge">Local negative-root theorem</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_q_hahn_negative_root_source_polynomial.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_q_hahn_negative_root_source_polynomial.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_q_hahn_negative_root_source_polynomial_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="negative-roots-of-the-actual-complete-channel-source-polynomial">Negative roots of the actual complete-channel source polynomial</h1>
+<p>30 October 2026. The finite polynomial inside EVERY physical complete-channel q-Hahn column has only negative nonzero roots. They are simple; its sole possible zero at the origin is the forced support power. This is an all-level theorem for the ACTUAL finite coefficients, not an inference from the stationary quadratic or a sampled real-root plot. In particular the physical Fourier evaluation of that polynomial never vanishes.</p>
+<p>The proof uses an exact two-binomial recurrence and an elementary sine coefficient multiplier. An independent sine-operator peeling proof of the two-binomial step is retained in section5.</p>
+<h2 id="the-exact-source-polynomial-and-its-support">1. The exact source polynomial and its support</h2>
+<p>Put N&gt;=2, d=N-1, theta=pi/N, q=exp(i theta), and</p>
+<pre><code>s_r=product_(k=1)^r 2sin(k theta), s_0=1,
+beta(n,a)=s_n/[s_a s_(n-a)] for 0&lt;=a&lt;=n,
+beta(n,a)=0 outside that integer range.</code></pre>
+<p>For physical 0&lt;=t&lt;=d, 0&lt;=u&lt;=t and 0&lt;=j&lt;=t set v=t-u and</p>
+<pre><code>P_(t,j,u)(z)=sum_a E_a z^a,
+E_a=beta(j,a) beta(u,a) beta(v,j-a)/beta(t,j).           (1)</code></pre>
+<p>Its nonzero support is exactly</p>
+<pre><code>a0=max(0,j-v), a1=min(j,u), n=a1-a0.                   (2)</code></pre>
+<p>All coefficients in this interval are strictly positive. The actual <a href="actual_augmented_plat_phase_compiler.html">complete augmented-plat compiler</a> uses the further restrictions j&lt;=floor(d/2), t+j&gt;=d and the exact physical evaluation</p>
+<pre><code>f_u(c_j)=(-1)^u q^[-(j+1)u] P_(t,j,u)(q^delta),
+delta=t+j-d&gt;=0.                                       (3)</code></pre>
+<p>Equation (1) is precisely that finite compiler coefficient, with no q-factorial normalizer omitted. The theorem holds even without those further complete-image restrictions:</p>
+<pre><code>P(z)=C z^a0 product_(h=1)^n(z+rho_h),
+C&gt;0, rho_h&gt;0, and all rho_h distinct.                  (4)</code></pre>
+<p>If n=0 this is a positive monomial, with no nonzero roots to list.</p>
+<h2 id="a-two-binomial-polynomial-has-simple-negative-nonzero-roots">2. A two-binomial polynomial has simple negative nonzero roots</h2>
+<p>For u,v&gt;=0 with t=u+v&lt;N define</p>
+<pre><code>Q_j^(u,v)(z)=sum_a beta(u,a) beta(v,j-a) z^a,
+0&lt;=j&lt;=t.                                             (5)</code></pre>
+<p>The symmetric quantum-binomial product is the finite identity</p>
+<pre><code>B_k(w)=sum_a beta(k,a)w^a
+      =product_(r=0)^(k-1)(1+q^(k-1-2r)w).            (6)</code></pre>
+<p>For an elementary proof, use B_k(w)=(1+q<sup>(k-1)w)B_(k-1)(q</sup>-1 w). The two coefficient terms combine to beta(k,a) by the sine addition identity; B_0=1 starts the induction. No root-location assertion for B_k is made: its roots usually lie on a unit-circle arc.</p>
+<p>Let F(w,z)=B_u(zw)B_v(w)=sum_j Q_j(z)w^j. Its q-shifts obey</p>
+<pre><code>(1+q^-u zw)(1+q^-v w)F(qw,z)
+  =(1+q^u zw)(1+q^v w)F(q^-1 w,z).</code></pre>
+<p>Comparing the coefficient of w^j and dividing by 2i gives the EXACT three-term recurrence</p>
+<pre><code>sin(j theta) Q_j
+  =[z sin((u-j+1)theta)+sin((v-j+1)theta)] Q_(j-1)
+     +z sin((t-j+2)theta) Q_(j-2),                    (7)</code></pre>
+<p>with Q_0=1 and Q_1=[sin(u theta)z+sin(v theta)]/sin theta.</p>
+<p>First suppose j&lt;=min(u,v). For 2&lt;=j&lt;=min(u,v), every sine coefficient shown in (7) is strictly positive, since t&lt;N. At any negative zero r of Q_(j-1), the sign of Q_j(r) is opposite to that of Q_(j-2)(r). Starting with Q_0,Q_1, a direct induction therefore gives j SIMPLE negative roots of Q_j strictly interlacing those of Q_(j-1). For completeness, adjacent roots of Q_(j-1) give j-2 alternating sign intervals; its rightmost root has Q_j&lt;0 while Q_j(0)&gt;0; and its leftmost root has sign opposite to the sign of Q_j at negative infinity. These provide all j roots. The leading and constant coefficients are positive by (5).</p>
+<p>All other j are reduced to this case by the following EXACT identities:</p>
+<pre><code>Q_j^(u,t-u)(z)/beta(t,j)
+   =Q_u^(j,t-j)(z)/beta(t,u),                         (8)
+Q_j^(u,v)(z)=z^u Q_(t-j)^(u,v)(1/z),                 (9)
+Q_j^(u,v)(z)=z^j Q_j^(v,u)(1/z).                     (10)</code></pre>
+<p>Identity (8) follows coefficientwise by canceling six sine factorials; (9),(10) follow from beta(k,a)=beta(k,k-a). Their Laurent expressions are exactly polynomials because the same forced support zeros are present on both sides.</p>
+<p>Choose the smallest of j,t-j,u,v. If it is j, use (7). If it is t-j, use (9). If it is u, use (8). If it is v, use (10) and then (8). The new degree parameter is at most both new group sizes, so the previous Sturm induction applies. Reversal replaces each nonzero negative root by its reciprocal and multiplication by a positive constant or a forced power of z does not change its sign or simplicity. Thus (5) has exactly its forced zero of order a0, followed by n simple negative roots, for EVERY 0&lt;=j&lt;=t&lt;N.</p>
+<h2 id="the-sine-multiplier-preserves-negative-roots">3. The sine multiplier preserves negative roots</h2>
+<p>Let D=z d/dz and define the REAL coefficient operator</p>
+<pre><code>S_r=sin[theta(D+r)],
+S_r A(z)=[e^(ir theta)A(e^(i theta)z)
+                    -e^(-ir theta)A(e^(-i theta)z)]/(2i). (11)</code></pre>
+<p>Suppose A has degree n and only negative roots, with positive leading coefficient, and 0&lt;r, r+n&lt;N. Then S_r A has n SIMPLE negative roots. Here is a direct proof. Write A(z)=C product(z+rho_h), rho_h&gt;0. For x&gt;0 follow the continuous argument</p>
+<pre><code>arg[e^(ir theta)A(-e^(i theta)x)].</code></pre>
+<p>Each factor rho_h-x e^(i theta) has strictly decreasing argument, with derivative -rho_h sin(theta)/|rho_h-x e^(i theta)|^2. The total argument decreases from r theta to (r+n)theta-n pi. It crosses exactly 0,-pi,…,-(n-1)pi, once each. Those crossings are exactly the n negative roots of (11); the factors being measured never vanish on x&gt;0. Its leading and constant coefficients are positive. Repeated roots of the input do not spoil the strict argument monotonicity.</p>
+<p>A forced power z^a is retained: S_r[z^a A]=z^a S_(r+a)A. Thus the same assertion applies if 0&lt;r+a and r+a+n&lt;N.</p>
+<p>The elementary root reflection s_a s_(d-a)=N gives</p>
+<pre><code>beta(j,a)=s_j/N product_(r=1)^(d-j) 2sin[(a+r)theta],
+                     0&lt;=a&lt;=j.                       (12)</code></pre>
+<p>Consequently multiplication of the a-th coefficient by beta(j,a), on a polynomial of degree at most j, is the exact operator</p>
+<pre><code>M_j=(s_j/N) 2^(d-j) product_(r=1)^(d-j) S_r.           (13)</code></pre>
+<p>Every factor in (13) satisfies r+degree&lt;=d&lt;N. On a polynomial with its forced zero at the origin the shifted inequality in section3 is the same one. It therefore preserves that zero and all remaining negative roots. Applying M_j to Q_j and dividing by the positive beta(t,j) gives precisely (1). Equations (5)–(13) prove (4). The empty product j=d causes no exception: then j=t=d and n=0.</p>
+<h2 id="the-actual-fourier-value-and-its-logarithmic-branch">4. The actual Fourier value and its logarithmic branch</h2>
+<p>In the complete-image chamber, 0&lt;=delta&lt;=j&lt;=floor(d/2). Thus q^delta has argument between 0 and pi/2, strictly below pi/2 at finite N. It lies away from every zero in (4), so the ACTUAL canonical column (3) is nonzero, including all magnetic endpoints.</p>
+<p>More generally P(z)/P(1) has a canonical holomorphic logarithm on C minus the nonpositive real axis, fixed to be zero at z=1. Its exact factorization is</p>
+<pre><code>Log[P(z)/P(1)]=a0 Log z
+         +sum_h Log[(z+rho_h)/(1+rho_h)].              (14)</code></pre>
+<p>For real |phi|&lt;pi this also gives the elementary bound</p>
+<pre><code>cos(phi/2)^n &lt;= |P(e^(i phi))|/P(1) &lt;= 1.              (15)</code></pre>
+<p>This follows from |e^(i phi)+rho|<sup>2=(1+rho)</sup>2-4rho sin^2(phi/2). The loss in (15) can be exponential in N. It is not a subexponential whole-source bound, a Gaussian amplitude estimate, or a proof of noncancellation after summing different physical magnetic variables. The zero-free logarithm is the rigorous input for a separate local complex asymptotic argument.</p>
+<h2 id="independent-sine-operator-peeling-proof-of-section2">5. Independent sine-operator peeling proof of section2</h2>
+<p>There is a second own proof that does not use the recurrence or the intersection duality. Begin with the finite Laurent polynomial</p>
+<pre><code>A_initial(z)=z^j B_v(1/z)=z^(j-v) B_v(z).</code></pre>
+<p>Apply the coefficient multiplier beta(u,a). By (12) with j replaced by u, it is proportional to product_(r=1)^(d-u) S_r. The same product is zero on every unwanted Laurent power: for a&lt;0 the factor r=-a occurs, and for a&gt;u the factor r=N-a occurs. This uses v&lt;=d-u and j&lt;=u+v&lt;=d. On the wanted powers it equals beta(u,a) exactly, so its output is the polynomial (5).</p>
+<p>The factors commute. If j&gt;u, apply first r=N-j,…,d-u in increasing order. The identity</p>
+<pre><code>S_(N-k) B_k=sin(k theta) B_(k-1)</code></pre>
+<p>removes each forced high power, with the fixed prefactor z^(j-v) accounted for in the shift. If j&lt;v, next apply r=v-j,…,1 in decreasing order. The identity</p>
+<pre><code>S_0 B_k=sin(k theta) z B_(k-1)</code></pre>
+<p>removes each forced negative Laurent power. All extracted constants are positive. The remaining polynomial is a positive multiple of z^a0 B_n(z), with a0,n as in (2).</p>
+<p>The unused factors have r from max(0,v-j)+1 to d-max(u,j). After extracting z^a0 their parameters are s=r+a0. They satisfy 0&lt;s and s+n&lt;N, and their number is</p>
+<pre><code>n+(d-t) &gt;= n.                                       (16)</code></pre>
+<p>Use at least n of these factors to strip B_n. More generally,</p>
+<pre><code>S_s[B_k(z) A(z)]=B_(k-1)(z) T_(s,k)A(z),
+T_(s,k)A=Im{e^(is theta)(1+q^k z)A(qz)}               (17)</code></pre>
+<p>for real z; equivalently take the two conjugate polynomial terms as in (11). If A has m negative roots, positive leading coefficient, and k+m=n, the argument at z=-x decreases strictly from s theta to (s+k+m)theta-(m+1)pi. Here 0&lt;k&lt;N and 0&lt;s+n&lt;N. It therefore crosses exactly m+1 multiples of pi, giving T_(s,k)A exactly m+1 SIMPLE negative roots and positive leading/constant coefficients.</p>
+<p>Starting with A=1, each step reduces k by one and increases m by one. After n steps no B factor remains and all roots are negative. The remaining d-t ordinary S_s factors preserve them by section3. This independently proves the complete support and root assertion for Q. It also explains why a reciprocal sine factorial by itself need not be a multiplier: the proof uses the whole paired coefficient structure.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_q_hahn_negative_root_source_polynomial.py">exact recurrence, dualities, finite source coefficients and root counts</a>.</p>
+<p>Independent geometric/algebraic review: full analytical read and fresh audit PASS. The reviewer checked the recurrence/Sturm reduction and factorial dualities, the sine-multiplier normalization, and separately every shifted high/negative-power removal and unused-operator count in the independent peeling proof. The replay passed 76 generic recurrences, 6,800 finite recurrences, 8,720 dualities and peelings, and 867 original Casimir entries. Numerical root counts remain regression checks, not the all-level proof.</p>
+<p>Independent coherent-partner review: full analytical read and fresh audit PASS. The reviewer rederived the Sturm sign intervals and minimum-of-four duality reduction, checked the multiplier argument variation with forced zeros, and independently checked every Laurent peeling shift and degree bound. The actual finite compiler coefficient and its zero-free q^delta evaluation were checked as well. No correction was required.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_q_hahn_negative_root_source_polynomial.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-exact-source-polynomial-and-its-support">1. The exact source polynomial and its support</a><a href="#a-two-binomial-polynomial-has-simple-negative-nonzero-roots">2. A two-binomial polynomial has simple negative nonzero roots</a><a href="#the-sine-multiplier-preserves-negative-roots">3. The sine multiplier preserves negative roots</a><a href="#the-actual-fourier-value-and-its-logarithmic-branch">4. The actual Fourier value and its logarithmic branch</a><a href="#independent-sine-operator-peeling-proof-of-section2">5. Independent sine-operator peeling proof of section2</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>
