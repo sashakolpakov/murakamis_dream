@@ -28,11 +28,11 @@ now identifies its limiting action, including at the zero faces, with
 the actual geometric regulator and its complex boundary correction.
 The [whole-source untwisted corridor](general_untwisted_mixed_source_volume_corridor.md)
 now transfers this volume identity to the original mixed source when
-any chosen set of untwisted ports varies near completeness. A
-[signed one-port criterion](actual_signed_small_circle_face_kernel.md)
-is also proved under its explicit local curvature inequality.
-General long fillings still require bounds for interacting signed
-reflected terms and the combined far-color source. The current
+any chosen set of untwisted ports varies near completeness. The [homogeneous source theorem](actual_homogeneous_casimir_face_source.md)
+now gives the exact original coefficient for all Casimir coupons and
+a JOINT signed/unsigned corridor under finite shared-radius certificates,
+including disconnected subsets. Existence of such signed certificates
+for a general class and the combined far-color bound remain open. The current
 dependency map is in the [frontier chapter](../book/chapters/frontier.md).
 
 The older source, operator, Fourier and torsor tools are preserved below
@@ -81,7 +81,11 @@ For a partial filling the analogous statement is about the remaining
 link exterior with its original single marked normalization.
 
 The quantifier is every fixed k and every admissible fixed skeleton;
-there is no proposed universal threshold depending on k alone.
+there is no proposed universal threshold depending on k alone. We use
+T(D) for the required twist length so that it cannot be confused with
+the quantum level N. A twist region here is a designated two-strand
+box with its essential crossing disk, not an arbitrary tangle with a
+large crossing count.
 
 Under an actual positive marked gluing certificate, the
 [geometric long-filling corollary](general_augmented_plat_long_filling_quantifiers.md)
@@ -131,16 +135,74 @@ Consequently the long-twist problem does not require a new surgery
 formula for each bridge number. The same exact filling map is already
 available. What is missing generally is control of its input A_D.
 
+There is also a direct polynomial form, supplied by the homogeneous
+source theorem. For N>=3 put d=N-1 and let f_(e,N,p)(Omega) be the ACTUAL root
+Casimir polynomial for the whole operator
+R^(epsilon_e-2p_e) in the original box, including its repeated-node
+Hermite data. If Z_(D,p,N) denotes the original marked contraction
+before its recorded exterior framing factor, then exactly
+
+    Z_(D,p,N)=[prod_(ordinary faces f) L_f^d]
+                prod_e H_(f_(e,N,p)) |_(L_u=L_v=0).        (3a)
+
+Every local polynomial has degree d; the number of shared face variables
+depends only on the fixed skeleton. Thus (3a) is an exact polynomial
+form of the full source at arbitrary fixed k, including negative twists.
+The known exterior normalization is retained when passing from Z to
+K_N. This gives a second route for studying long twists directly at
+each box. No sharp long-power estimate for these kernels is being
+assumed: their coefficients are complex, and larger p does not by
+itself make their shared-face contraction positive. Nor is (3a) being
+called the eliminated knot A-polynomial.
+
+These whole-box kernels also compose without introducing an external
+circle color. For two Casimir polynomials f,g, exactly
+
+    H_(fg)(x,b,c,y)=[z^d] H_f(x,b,z,y) H_g(x,z,c,y).         (3b)
+
+Indeed the input index j of the left kernel contributes z^(d-j),
+while the output index j' of the right kernel contributes z^j'.
+Extraction forces j'=j and gives the original matrix composition.
+Thus arbitrary positive or negative twist powers admit a layered
+coefficient formula using only the literal R or R^-1 kernels, with
+all their scalar phases retained. This is an alternative finite
+presentation of the same source, not a new asymptotic estimate.
+
 ## 4. Inputs still needed for general signed long fillings
 
-**Full mixed-color quantum source.** Establish an exact holomorphic color packet
-for A_D near the complete colors, with a uniform complex asymptotic,
-and an exponential gap on the ENTIRE physical color complement.
-The estimate must include all aliases and normal currents. A bound
-for one positive sector or for independently maximized vertices does
-not give this input. The marked multiport Chebyshev/Parseval packet
+**Full mixed-color quantum source.** The complete-image term already
+has its exact holomorphic packet and a uniform complex asymptotic.
+The original mixed source agrees with it exponentially accurately on
+the physical integer corridor for all untwisted varied ports, and for
+joint signed/unsigned ports satisfying the finite certificates below.
+What remains generally is to establish those certificates (or stronger
+phase-preserving estimates), and to bound the combined original source
+on the ENTIRE physical color complement. This must include opposite-end
+aliases, their exact cancellations, and the normal currents used by
+the filling transform. The marked multiport Chebyshev/Parseval packet
 is exact at every fixed k, but its physical source-to-coefficient
 energy is still the quantity to estimate.
+
+For clarity, the new near-complete sufficient condition is finite and
+independent of the quantum level. For every nonempty reflected subset
+S of the varied ports, choose ONE shared positive weight per original
+face such that
+
+    C_S(l)=sum_(e notin S) [F(x_e,b_e,y_e)+F(x_e,c_e,y_e)]
+           +sum_(e in S,epsilon_e!=0) G(b_e,x_e,y_e,c_e)
+           +sum_(e in S,epsilon_e=0) log max(b_e,c_e)
+           -sum_(ordinary faces f) log l_f
+             < Vol(Y_D)/(2pi).
+
+Here F is the complete triangle potential and G the exact crossing
+coefficient-magnitude potential defined in the
+[homogeneous source theorem](actual_homogeneous_casimir_face_source.md).
+Different subsets may use different weights. The finite strict margins
+give one fixed color corridor for ALL subsets, including disconnected
+ones, at arbitrary fixed bridge width. Establishing these inequalities
+for a structural class of diagrams is a general theorem problem; it
+does not require a separate quantum asymptotic for each knot. Their
+validity alone still does not control the far-color complement.
 
 **Actual geometry.** Supply the marked complete augmented exterior
 and its absolute volume anchor. A positive ideal gluing certificate
@@ -195,8 +257,10 @@ geometric critical point. A [generic framing theorem](actual_augmented_plat_regu
 supplies a regular unfolded geometric candidate, but does not select
 its physical logarithmic sheet or a contributing quantum cycle.
 Thus the identities in (4) have a general classical proof with these
-hypotheses; their realization by the actual selected source remains
-part of the quantum problem.
+hypotheses. Under the stronger labeled right-angled certificate the
+complete-image source realization is now proved; its extension to
+the full mixed source outside the proved corridors remains part of
+the quantum problem.
 
 The [actual channel Hessian](actual_augmented_plat_channel_hessian.md)
 also has a general primitive normalization: H_(xi_i,xi_j) is

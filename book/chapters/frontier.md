@@ -27,7 +27,18 @@ This is a theorem about complete augmented **links**, including patterns whose m
 
 The proof is recorded and independently reviewed within this project. That is distinct from external peer review.
 
-## The exact coefficient that makes the global proof possible
+## The original source as one homogeneous coefficient
+
+The [homogeneous source theorem](../../notes/actual_homogeneous_casimir_face_source.md) now applies to **every original Casimir-polynomial coupon**. For a coupon $f_e(\Omega)$, its exact face operator gives one polynomial $H_{f_e}(x,b,c,y)$ of degree $d=N-1$, with nonnegative integer exponents and its original complex coefficients. The whole marked contraction is
+
+$$Z_N=\left[\prod_{f\ \mathrm{ordinary}}L_f^d\right]
+\left.\prod_e H_{f_e}\right|_{L_u=L_v=0}.$$
+
+The identity retains the actual cup/cap factors, physical endpoint zeros, the second-head mark, and both parity cosets. It includes small colors, signed crossings, arbitrary polynomial combinations and disconnected replacements. No smoothing forest or ordering of dependent operators is needed. The finite face grid has $N^{R+1}$ points; its local inverse Fourier factors and mark give exactly the coefficient above. Degree $dR$ excludes every additional level alias.
+
+![Every original coupon becomes a homogeneous polynomial on its four original faces; one shared-face coefficient gives the whole marked source.](../figures/homogeneous-face-source.png)
+
+Complete circles recover the earlier positive formula below: their $H$ contains an exact factor $N$, followed by the original folded-channel sum. Thus the general identity and the complete-source normalization agree.
 
 Let $R$ be the number of crossing circles, $d=N-1$, and $a_i$ the original internal channel labels. At each circle, the [literal source identity](../../notes/actual_complete_circle_positive_face_polynomial.md) gives two determinant polynomials and one forced-zero polynomial:
 
@@ -78,7 +89,7 @@ The complete signed source now has a global equality. The remaining general prob
 
 | Required extension | What is available | What still needs proof |
 | --- | --- | --- |
-| Local deformed source | The whole original source has the geometric volume limit in a near-complete corridor at any set of untwisted ports; one varied signed port is covered by an explicit local curvature test | Interacting signed ports and their disconnected reflection subsets |
+| Local deformed source | Whole-source volume corridors for all untwisted ports; joint signed/unsigned corridors under finite shared-radius certificates, including disconnected subsets | Establish those certificates for a general diagram class, or supply a stronger phase-preserving bound |
 | Whole filling transform | Exact filling transform and geometric long-filling threshold | A bound for the entire complementary color region and its aliases, retaining all small-color terms |
 
 Internal deficits $s_i=N-1-2a_i$ and external filling-color deficits $h_i=N-j_i$ are different variables. The [fixed complex core theorem](../../notes/actual_complete_core_complex_packet.md) now controls the complete-image term with $\boldsymbol\chi=\mathbf h/N$ in a fixed complex neighborhood:
@@ -155,21 +166,31 @@ $$\lim_{N\to\infty}\frac{2\pi}{N}\log\left|A_N(N-\mathbf h_{N,E},N_{\mathrm{else
 
 This is a limit for the **whole original mixed source**, with the actual marked geometric representation on the right. It holds at arbitrary fixed width and both level parities. A complete metric on a filled knot is a further assertion, and the full filling transform still needs its complementary-color estimates.
 
-For a signed varied port, the [exact crossing kernel](../../notes/actual_signed_small_circle_face_kernel.md) preserves the original confluent Casimir data. Its weighted coefficient norm can grow exponentially even at color one. The same calculation nevertheless gives a sufficient one-port criterion at the original packing:
+The [homogeneous theorem](../../notes/actual_homogeneous_casimir_face_source.md) also gives a joint signed/unsigned corridor under an explicit finite certificate. Put $F_e=F(x,b,y)+F(x,c,y)$ for an unchanged circle, and use the four-angle potential $G(b,x,y,c)$ for a replaced signed circle. For an unsigned replacement the sharper potential is $I(b,c)=\log\max(b,c)$. For every nonempty reflected subset $S$, it suffices to find shared positive face weights with
 
-$$g_i=F(x_i,b_i,y_i)+F(x_i,c_i,y_i)-G(b_i,x_i,y_i,c_i)>0.$$
+$$\mathcal C_S(\ell)=\sum_{e\notin S}F_e(\ell)
++\sum_{e\in S}\Psi_{\epsilon_e}(\ell)
+-\sum_{f\ \mathrm{ordinary}}\log\ell_f
+<\frac{\operatorname{Vol}(Y_D)}{2\pi},\qquad
+\Psi_0=I,\quad\Psi_{\pm1}=G.$$
 
-Here $F$ is the original triangle potential and $G$ is the explicit four-variable entropy maximum in that note. The criterion assumes connected identity smoothing and four positive, suitably unmarked face curvatures. It gives a signed one-port corridor with every other port complete and its sign retained. A curvature ratio below $2.807257219\ldots$ is one sufficient local test. This is an inequality on the local curvature data; it is not a claim that every such quadruple occurs in a rigid labeled packing. Interacting signed ports require a separate simultaneous estimate.
+A face has one weight wherever it occurs; different subsets may use different choices. The graph has finitely many subsets. Their strict margins absorb the $C^{h_i-1}$ insertion costs on one sufficiently small fixed color cube. This proves an exponentially accurate ratio to the geometric core and the same whole-source representation-volume limit displayed above. The proof covers interacting signed ports and disconnected subsets. What remains unproved generally is the **existence** of these certificates.
 
-![A schematic slice of external colors: the untwisted corridor, the sufficient signed one-port estimate, and the remaining full color complement.](../figures/external-color-corridor.png)
+The simpler original-packing test $g_e=F_e-G_e>0$ at every varied port implies the certificate, including marked-zero limits after regularization. It is sufficient and is not automatic. A rationally certified width-three instance proves that the criterion has actual diagram examples. The earlier [one-port theorem](../../notes/actual_signed_small_circle_face_kernel.md) and its explicit curvature tests remain useful special cases.
+
+![A schematic slice of external colors: the untwisted corridor, joint signed corridors under shared-radius certificates, and the remaining full color complement.](../figures/external-color-corridor.png)
 
 The [positive Newton calculation](../../notes/actual_positive_newton_capacity_obstruction.md) explains why the far-color problem cannot be reduced to a presumed universal entropy comparison on all certified matched graphs. Its exact local kernel has nonnegative coefficients, but an explicit shared-face feasible state gives a capacity above the geometric complete value. The coefficient lower bound retains the true Newton weights. The graph family has not yet been adapted to the original flat-plat compiler, so this remains a polynomial-capacity obstruction, not a claimed flat-plat source counterexample. In the actual alternating expansion the omitted sign changes a critical equation. A proof using that expansion must retain the sign.
 
-The remaining general source problems are interacting signed near-complete terms and the entire complementary color region, including their combined opposite-end aliases.
+The [resummed small-circle formula](../../notes/actual_resummed_small_circle_face_kernel.md) now gives every local coefficient by a finite rational generating function, with an explicit Fourier formula when one outer degree vanishes. It also disproves a tempting far-color shortcut: even after the Newton cancellations, a unique-path coefficient can be exponentially larger than the corresponding crossing coefficient. This is a local norm obstruction, not a counterexample to a bound after the full shared-face extraction. The remaining source problems are general signed-certificate existence and the entire complementary color region, including combined opposite-end aliases.
 
 The [near-maximal-volume theorem](../../notes/general_representation_volume_peripheral_gap.md) gives a general geometric criterion for the latter problem. For a fixed finite list of marked peripheral words, keeping any $|\operatorname{tr}^2\rho(\mu_i)-4|$ bounded away from zero forces a uniform positive volume gap. Its proof derives convergence to the marked complete representation from near-maximal volume. Using this criterion for the quantum source still requires a bound on the actual full period; a characteristic equation or the complete-image term alone does not provide that bound.
 
 The previous operator and torsor approaches remain available. The exceptional operator is the original normalized Casimir polynomial, with its [general character relation](../../notes/actual_matching_edge_polynomial_geometric_action.md) and [exact resolvent period](../../notes/actual_matching_edge_continuant_operator_period.md). The original marked transport, genuine quantum normals, odd framing source, logarithmic class and relative boundary currents are preserved in the [source and torsor routes](../library.html). The new coefficient identity and signed Gaussian resolve the complete contraction without assigning an arbitrary relative cycle.
+
+The [retained Newton critical equations](../../notes/actual_alternating_newton_peripheral_branch.md) provide a further algebraic comparison. Keeping the actual alternating sign and finite sine-factorial ratios yields a localized quadratic relation. After the shared-face equations are eliminated, an explicit rational change identifies its closure with the original untwisted primitive-collar trace relation. The selected square roots and meridian lift remain specified. The external action derivative distinguishes reciprocal Newton branches that have the same trace square. Their real Newton indices lie outside the terminating low-color range, so this comparison does not establish a contributing finite-sum cycle or a global volume bound.
+
+The [full local action comparison](../../notes/actual_newton_complete_local_action.md) goes further on the explicitly selected reciprocal logarithmic sheet: $\Psi_{\mathrm{Newton}}=S_{\mathrm{core}}+\pi i$ as holomorphic germs near completeness. It matches every shared-face derivative, the external momentum, and the additive phase. This theorem concerns an untwisted local port. The physical $h=1$ kernel has only its $r=0$ Newton term, whereas this continued critical point has $r/N>1/2$; matching the action therefore does not select a contribution to that finite sum. The full-source estimate must still retain the actual endpoints and signed compositions.
 
 The global knot quantum A-operator and its selected period have not been derived from this identity. The coefficients and source relations provide a concrete finite object for that work; they are not being renamed the knot A-polynomial.
 

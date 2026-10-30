@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The original Newton and complete-core local actions on the reciprocal branch · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">A-structure and torsors</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#torsors">A-structures, torsors, and regulators</a><p><span class="badge">Local marked action equality; finite cycle open</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_newton_complete_local_action.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_newton_complete_local_action.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_newton_complete_local_action_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="the-original-newton-and-complete-core-local-actions-on-the-reciprocal-branch">The original Newton and complete-core local actions on the reciprocal branch</h1>
+<p>30 October 2026. Independently reviewed and frozen. Original untwisted port; x,b,c,y&gt;0, with the literal input b/output c convention. The theorem is an equality on the selected HOLOMORPHIC GERM near alpha=0 and any fixed positive face base. The real formulas below use 0&lt;alpha&lt;1/2 to describe the reciprocal algebraic branch; they do not assert a global continuation of the marked core or its source period over that range. This compares classical generating functions on one explicitly continued sheet. It neither moves a finite source cycle nor identifies its amplitude or contribution.</p>
+<p>Use the <a href="actual_alternating_newton_peripheral_branch.html">exact Newton action and its localized critical equations</a>. Put A0=x+y, L=A0+b+c, D=xy-bc and kappa=4cos(pi alpha)^2. For 0&lt;alpha&lt;1/2, let z be the smaller positive root of</p>
+<pre><code>(L^2+kappa D)z^2-(2LA0+kappa xy)z+A0^2=0.</code></pre>
+<p>The existing proof gives 0&lt;z&lt;A0/L&lt;1. Set</p>
+<pre><code>theta=acos(cos(pi alpha)sqrt(z)), r=theta/pi,
+rho=1-r, W=exp(-2i theta),
+k=(A0-Lz)/(2cos theta)&gt;0,
+sinh(pi beta)=sin(pi alpha)sqrt(z/(1-z)), delta=i beta.</code></pre>
+<p>The two useful algebraic identities are</p>
+<pre><code>k^2=xy(1-z)+bc z,
+A0-Lz=2k cos theta.                                      (1)</code></pre>
+<p>The actual selected primitive collar obeys R0=exp(2pi i alpha), with meridian M=exp(-pi i alpha). The reflected Newton root W is chosen, not the first-half root exp(2i theta).</p>
+<h2 id="the-exact-marked-newton-lifts">1. The exact marked Newton lifts</h2>
+<p>Write phi_b=Arg(k+b exp(i theta)), phi_c similarly, and set</p>
+<pre><code>xi=Arg(k-x exp(-i theta))/pi,
+eta=Arg(k-y exp(-i theta))/pi,
+mu=1-phi_c/pi.                                          (2)</code></pre>
+<p>All arguments in (2) are the indicated real arguments between0 andpi. The exact reverse reconstruction has</p>
+<pre><code>t=-k exp(-i theta),
+A=exp(2pi i xi)=(k-x exp(-i theta))/(k-x exp(i theta)),
+B=exp(2pi i eta)=(k-y exp(-i theta))/(k-y exp(i theta)),
+Z=exp(2pi i mu)=(k+c exp(-i theta))/(k+c exp(i theta)).    (3)</code></pre>
+<p>This is precisely the earlier t=W(Lz-A0)/(W+1), followed by its original A,B,Z reconstruction. Moreover its t equation gives</p>
+<pre><code>AB/Z=(k+b exp(-i theta))/(k+b exp(i theta)).</code></pre>
+<p>Now 0&lt;phi_b,phi_c&lt;theta and 0&lt;pi xi,pi eta&lt;pi-theta. Consequently xi+eta+(phi_b+phi_c)/pi is an integer strictly between 0 and2, hence exactly1. Thus</p>
+<pre><code>mu-xi-eta=phi_b/pi, 1-mu=phi_c/pi.                       (4)</code></pre>
+<p>This proves that ALL four Newton face loads are positive and add to1. It also proves the strict four-binomial K-polytope inequalities:</p>
+<pre><code>rho&lt;mu&lt;1, 0&lt;xi,eta&lt;rho, xi+eta&lt;mu,
+mu+rho-xi-eta=rho+phi_b/pi&lt;1.</code></pre>
+<p>Only the low-color Newton termination is violated: rho&gt;1/2&gt;alpha. The principal log mu=-phi_c/pi is NOT the original marked lift (2); already its face monomial would change by Log(c/b), before any additional entropy-sheet changes.</p>
+<h2 id="full-face-momenta-equal-the-core-angles">2. Full face momenta equal the core angles</h2>
+<p>Let Q_b(delta) be the actual one-triangle determinant-plus-beta rate plus HALF of the forced-factor rate, normalized by Q_b(0)=F(x,b,y). Then Q_b’=-Log(E_b/sqrt(Dg)), where</p>
+<pre><code>Dg=A0^2-4xy sin(pi delta)^2,
+T_b^2=b A0+xy+b^2 sin(pi delta)^2,
+E_b=A0+2b sin(pi delta)^2+2sin(pi delta)T_b.</code></pre>
+<p>All roots and logarithms are the source-selected ones at completeness. The <a href="actual_marked_deformed_circle_pattern.html">proved source circle-pattern identity</a>, section3, gives partial_(log l_j)Q_b=theta_j^(b)/(2pi), the three actual center angles. At delta=i beta the angles remain real and positive on the selected near-complete germ. Directly from (1), with C=cos theta,S=sin theta,</p>
+<pre><code>cosh(pi beta)=S/sqrt(1-z),
+T_b=(k+b C)/sqrt(1-z), T_c=(k+c C)/sqrt(1-z).           (5)</code></pre>
+<p>Therefore the middle-angle formula tan(theta_b/2)=b cosh(pi beta)/T_b is tan(phi_b). Since both angles lie in(0,pi), theta_b=2phi_b, and similarly theta_c=2phi_c. This proves the two middle derivatives.</p>
+<p>Here is an explicit algebraic proof for the outer derivatives too. Put H=1-z and</p>
+<pre><code>R0x=xH(y-x)+2i x S k,
+R1x=H A0+2x(z-C^2)+2i x S C,
+R_b=R0x+b R1x, R_c=R0x+c R1x.</code></pre>
+<p>The actual deformed center-triangle sine/cosine formulas say</p>
+<pre><code>exp(i theta_x^(b))=R_b/[(x+b)H sqrt(Dg)].</code></pre>
+<p>The identity</p>
+<pre><code>R_b R_c (k-x C-i x S)
+=(x+b)(x+c)H^2 Dg (k-x C+i x S)                     (6)</code></pre>
+<p>follows by substitution of</p>
+<pre><code>b+c=[A0 H-2kC]/z, bc=[k^2-xyH]/z, S^2=1-C^2.</code></pre>
+<p>In particular exp(i(theta_x<sup>(b)+theta_x</sup>(c)))=exp(2pi i xi). Both angle sums lie strictly between0 and2pi, so they agree as marked angles, not merely modulo2pi. Exchange x,y for the other outer face. Thus the full homogeneous face gradients are exactly</p>
+<pre><code>(xi,mu-xi-eta,1-mu,eta)
+=partial_(log x,log b,log c,log y)[Q_b(delta)+Q_c(delta)]. (7)</code></pre>
+<p>Equation (6) was independently expanded symbolically; its residual is identically zero after the three displayed substitutions. The angle branches extend to a sufficiently small complex neighborhood. Regularity of the reconstructed critical point comes from the earlier localized four-branch reconstruction and its simple quadratic roots, not from the outer-angle identity alone.</p>
+<h2 id="the-actual-sine-continuation-and-stationarity">3. The actual sine continuation and stationarity</h2>
+<p>Let J(t)=int_0^t Log(2sin(pi u))du, initially real for0&lt;t&lt;1. Continue rho BELOW the two real divisors rho=alpha and rho=1/2. On the final real reciprocal branch this specifies</p>
+<pre><code>J(t)=-J(-t)+pi i t,                -1&lt;t&lt;0,
+J(t)= J(t-1)+pi i(t-1),             1&lt;t&lt;2.             (8)</code></pre>
+<p>Both negative sine factors have Log=log(abs(sine))+pi i. The opposite approach sides in their arguments are essential: alpha-rho passes above0, while2rho passes below1. A continuation exists without any extra K divisor: the K-polytope is convex. Join an initial strict physical point with rho&lt;alpha to (2) inside this polytope, and detour its parameter below the two specified rho crossings. All K arguments stay near(0,1); rho and alpha+rho also stay in(0,1).</p>
+<p>Use the FULL homogeneous action, not just its critical-variable part:</p>
+<pre><code>Psi_New=K+B_alpha+pi i(alpha+rho)+Log c
+         +mu Log(b/c)+xi Log(x/b)+eta Log(y/b),      (9)</code></pre>
+<p>with the literal K,B_alpha of the Newton theorem. On the selected real branch K has only positive sine arguments. By (8) the imaginary part of B_alpha is pi(1-alpha-rho). Thus the full action has constant imaginary part pi, and all four critical-variable derivatives have zero imaginary part. Their exponentiated equations are the exact uncleared Newton equations, so their real derivatives are exactly0. There is no concealed integer stationarity subtraction.</p>
+<p>The envelope external derivative retains the pi i alpha character:</p>
+<pre><code>partial_alpha Psi_New,crit
+=Log[-sin(pi(alpha+rho))/sin(pi(alpha-rho))]
+=log[sin(theta-pi alpha)/sin(theta+pi alpha)]
+=-2pi beta=2pi i delta.                              (10)</code></pre>
+<p>For the last step, tanh(pi beta)=tan(pi alpha)cot theta, by (5). Omitting pi i alpha would give the wrong external derivative.</p>
+<h2 id="complete-core-action-and-the-additive-constant">4. Complete-core action and the additive constant</h2>
+<p>Define the <a href="actual_complete_core_complex_packet.html">original untwisted local core generating function</a> by</p>
+<pre><code>S_core(alpha;x,b,c,y)=Q_b(delta)+Q_c(delta)+2pi i alpha delta,
+Log R0(delta)=2pi i alpha, delta(0)=0.                 (11)</code></pre>
+<p>Its delta stationarity is exact, so its external derivative is 2pi i delta and its four face derivatives are (7). Consequently Psi_New,crit-S_core is constant on the selected connected germ. It is important that (9) contains Log c: without it one face derivative would differ by1 and the action difference would not be constant.</p>
+<p>Calibrate at x=b=c=y=1 and alpha=0. Then</p>
+<pre><code>rho=2/3, mu=5/6, xi=eta=1/3,
+K=-4J(1/6)-4J(1/3),
+B_0=-5J(1/3)+pi i/3.</code></pre>
+<p>The elementary reflection J(1-t)=-J(t) and duplication J(2t)=2J(t)+2J(t+1/2) imply2J(1/6)=3J(1/3). Also F(1,1,1)=-3[J(1/6)+J(1/3)]. Therefore</p>
+<pre><code>Psi_New,crit = S_core + pi i.                       (12)</code></pre>
+<p>This equality is exact on the specified holomorphic germ; it is not only equality of trace squares or exponentiated derivatives. Other continuation windings need their corresponding explicit characters. Both sides have been compared in the SAME homogeneous face normalization. The <a href="actual_homogeneous_casimir_face_source.html">literal source adapter</a>, equation(7a), multiplies either local homogeneous kernel by N<sup>-1(bc)</sup>(-d/2) on the same original lifted face variables. Thus the corresponding physical-box actions both subtract (Log b+Log c)/2, and (12) is unchanged. The original global cup, cap, target and mark characters are likewise common and retained; none is reset to obtain the equality.</p>
+<p>At leading semiclassical level the additive constant is the actual phase exp(pi i N)=(-1)^N. The literal finite Newton sign is (-1)^(h-1+r)=exp[pi i N(alpha+rho)]*(-1); its additional order-one minus sign remains in the finite amplitude, as do all factorial +/-1 shifts. This result does not compare those amplitudes.</p>
+<p>The branch is outside the low terminating Newton support. Nothing here deforms the original finite cycle to it, excludes other branches or endpoint currents, or proves its contribution coefficient nonzero. It provides a source-normalized local classical generating-function interface only; global face identification still uses the original shared variables and their exact target/mark characters.</p>
+<h2 id="physical-support-and-verification">5. Physical support and verification</h2>
+<p>The calibration at alpha=0 is an analytic germ limit, not an evaluation of L_0, which is exactly zero. Nor does the same exterior action prove a complete exponential rate for fixed low color. For h=1, alpha=1/N tends to zero, but the actual L_1 is the identity and its finite Newton sum contains ONLY r=0. The selected critical index has rho&gt;1/2 and is absent from that terminating sum. Its local homogeneous identity kernel has the already proved rate log max(b,c), not an automatically selected complete-circle rate. These facts are consistent with (12): the theorem compares phase functions, not finite amplitudes, cycles or their contribution coefficients.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_newton_complete_local_action.py">focused audit</a> checks the exact polynomial identities, the explicitly marked loads, raw critical derivatives on the prescribed sine sheets, the unsquared collar, and the full action including its imaginary constant. Its <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_newton_complete_local_action_results.json">results</a> are classical identity checks, not numerical evidence for a finite source cycle deformation or a selected asymptotic contribution.</p>
+<p>Root full analytical and public audit-code review: PASS. Two independent full analytical reviews also checked the canonical lifts, strict K polytope, outer-angle identity, sine continuation, peripheral momentum and additive constant. The author and independent redirected 70-digit audits reproduce two symbolic identities, 24 full critical actions, 120 raw stationarity/external derivatives, 96 marked face derivatives and 24 unsquared collar checks, with maximum error below 1.74e-69. A separate root implementation of the triangle normalization and imaginary-delta collar integral checked eight additional equal, asymmetric and large-ratio cases at 65 digits, with error below 6.72e-66. These reviews certify the stated local holomorphic action identity; they do not certify a finite-cycle contribution or an amplitude comparison.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_newton_complete_local_action.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-exact-marked-newton-lifts">1. The exact marked Newton lifts</a><a href="#full-face-momenta-equal-the-core-angles">2. Full face momenta equal the core angles</a><a href="#the-actual-sine-continuation-and-stationarity">3. The actual sine continuation and stationarity</a><a href="#complete-core-action-and-the-additive-constant">4. Complete-core action and the additive constant</a><a href="#physical-support-and-verification">5. Physical support and verification</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

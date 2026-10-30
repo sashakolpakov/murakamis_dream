@@ -1,0 +1,437 @@
+# The retained Newton sign and the actual local peripheral branch
+
+30 October 2026. Independently reviewed and frozen. The actual alternating
+low-color Newton sum has a localized critical scheme whose eliminated
+quadratic is exactly the polynomial closure of the original untwisted
+primitive-collar trace relation. Its selected complete germ is fixed
+by the already proved collar flags and meridian convention. For positive
+face variables, however, every real critical Newton index lies OUTSIDE
+the physical terminating range. The identity does not make that branch
+a contribution to the original finite sum.
+
+This is a local marked algebraic comparison, valid at an actual original
+port with positive outer and middle face variables. It is independent
+of bridge width. It does not cover a marked zero-face degeneration, a
+retained half twist at this port, the discrete endpoint analysis, or a
+global low-color representation/period. The nearby actual geometric
+family is already constructed separately; no new global gluing theorem
+is inferred from this scalar relation.
+
+## 1. Keep the literal Newton coefficient and its sign
+
+The [exact Newton source formula](actual_positive_newton_capacity_obstruction.md),
+section0, gives
+
+    T_h=sum_(r=0)^(h-1) (-1)^(h-1+r) b_(h,r) Bhat_r(-T),
+    b_(h,r)=S_r^2 S_(h+r)/[S_(2r+1)S_(h-r-1)],
+    S_j=product_(k=1)^j 2sin(pi k/N).
+
+Here 1<=h<=floor(N/2), and the coefficient of x^i y^j c^(m-i-j)
+in Bhat_r(-T)c^m is exactly
+
+    [m r]_s [m+r-i-j r]_s [r i]_s [r j]_s.
+
+Write a_r for this four-binomial coefficient multiplied by the
+LITERAL signed b_(h,r). With s_j=2sin(pi j/N), direct factorial
+telescoping gives, when both terms are in the strict physical support,
+
+    a_(r+1)/a_r =
+    -s_(r+1)^2 s_(h+r+1) s_(h-r-1) s_(m+r-i-j+1) s_(m-r)
+    ----------------------------------------------------------------.
+          s_(2r+2)s_(2r+3)s_(r-i+1)s_(r-j+1)             (0)
+
+In particular r+1<h. Its limit on each strict normalized compact
+is the NEGATIVE of the product on the left of (2). Thus (2) is the
+actual finite-ratio characteristic; it is not inferred by differentiating
+only a logarithmic asymptotic with an uncontrolled error. The three
+other shared-face characteristics follow by the same factorial
+telescoping in m,i,j. All finite offsets remain in these identities.
+
+The port and original q^(dp) character are those of that source
+identity. Its unwrapped physical support and its actual finite +1
+shifts are retained; the calculation below concerns their limiting
+logarithmic critical equations, not an off-grid finite equality.
+
+Use the original Newton variables alpha=h/N, rho=r/N, mu=m/N,
+xi=i/N, eta=j/N. For 0<rho<alpha<1/2 and the strict nonzero Newton
+polytope, the genuine positive coefficient b_(h,r) has logarithmic rate
+
+    B_alpha(rho)=2J(rho)+J(alpha+rho)-J(2rho)-J(alpha-rho),
+    J(t)=integral_0^t log(2sin(pi z)) dz.
+
+The strict nonzero Newton polytope means
+
+    rho<mu<1, 0<xi,eta<rho, xi+eta<mu,
+    mu+rho-xi-eta<1.
+
+The coefficient's logarithmic rate is
+
+    K=J(mu)+J(mu+rho-xi-eta)-J(mu-rho)-J(mu-xi-eta)
+                       -J(xi)-J(rho-xi)-J(eta)-J(rho-eta).
+
+Its shared-face critical action contains
+
+    K+B_alpha+pi i rho+mu Log(b/c)
+                        +xi Log(x/b)+eta Log(y/b),
+
+with the fixed pi i alpha character and the rest of the original
+source still retained. Differentiating in mu,xi,eta gives the first
+three equations of section2; differentiating in rho gives (2).
+
+The finite +1 shifts affect this rate by o(1) on fixed strict compacts.
+They are not removed from the finite source. Differentiating gives
+
+    exp(partial_rho B_alpha)
+      =sin(pi(alpha+rho)) sin(pi(alpha-rho))/cos(pi rho)^2
+      =[sin(pi alpha)^2-sin(pi rho)^2]/cos(pi rho)^2.    (1)
+
+The exact sign (-1)^(h-1+r) contributes pi i rho to the leading
+rho action. Its pi i alpha part must ALSO remain in the complete
+marked action; it is simply independent of rho. With K the actual
+four-tetrahedron Newton entropy, its retained rho critical equation is
+
+    sin(pi(mu+rho-xi-eta)) sin(pi(mu-rho))
+    ------------------------------------------------- *
+    sin(pi(rho-xi)) sin(pi(rho-eta))
+    [sin(pi alpha)^2-sin(pi rho)^2]/cos(pi rho)^2 = -1. (2)
+
+All logarithms use a specified continuation from the positive physical
+domain before adding the retained pi i character. There is no real
+interior solution in that domain, since every factor there is positive.
+This is precisely why its positive capacity maximum cannot be used as
+an actual saddle.
+
+Put Z=exp(2pi i mu), A=exp(2pi i xi), B=exp(2pi i eta),
+W=exp(2pi i rho), and kappa=4cos(pi alpha)^2. The two rational factors
+in (2) become
+
+    (ZW-AB)(Z-W)/[Z(W-A)(W-B)],
+    (W-exp(2pi i alpha))(W-exp(-2pi i alpha))/(W+1)^2.
+
+After multiplying their RECORDED denominators and bringing the -1
+across, the constant and degree-four terms cancel. Divide only by
+the exponential unit W. The result is the quadratic
+
+    (Z-A)(Z-B)(W+1)^2
+          +kappa (W-Z)(ZW-AB)=0.                      (3)
+
+This identity follows by expansion and contains no asymptotic
+approximation. The physical source fixes which component, logarithm
+and contour could be relevant; (3) does not choose them. The parameter
+kappa has the form of a meridian trace square under the established
+color marking, but this calculation alone does not identify the
+remaining variables with actual holonomy coordinates.
+
+Equation (3) is valid only off the denominators cleared from (2),
+including W=A,B,-1 and the original sine factors. At alpha=1/2 the
+second factor in (1) is identically 1 after cancellation. Then the
+uncleared equation reduces to
+
+    W (Z-A)(Z-B)=0.
+
+Since W is an exponential unit, it has no generic finite solution.
+The double root W=-1 of (3) at kappa=0 is therefore extraneous, not
+an endpoint geometric saddle. Any treatment at that color must use
+the literal discrete endpoint/pole structure or an independently
+justified continuation. The coefficient's exact finite offsets and
+all other original phases remain essential.
+
+## 2. The localized shared-face critical scheme
+
+Write the four positive face variables as x,b,c,y, retaining the source
+input b/output c convention from the Newton coefficient extraction.
+Let U=exp(2pi i alpha), kappa=(U+1)^2/U. Over the Laurent ring in
+U,Z,A,B,W and the four face variables, the UNSATURATED equations are
+
+    b(Z-1)(ZW-AB)-c(Z-W)(Z-AB)=0,
+    x(Z-AB)(W-A)-b(ZW-AB)(A-1)=0,
+    y(Z-AB)(W-B)-b(ZW-AB)(B-1)=0,
+    (Z-A)(Z-B)(W+1)^2+kappa(W-Z)(ZW-AB)=0.              (4)
+
+The actual regular critical scheme is their localization by the following
+product of recorded nonzero factors. The saturation ideal defines its
+closure and has the same restriction on D_reg != 0:
+
+    D_reg=xybc UZABW (Z-1)(Z-W)(Z-AB)(ZW-AB)
+             (A-1)(B-1)(W-A)(W-B)(W-1)(W+1)
+             (W-U)(W-U^-1).                            (5)
+
+These factors come from the strict sine-product arguments of the
+literal coefficient and its weight. Some cancel in particular formulas,
+but are not silently removed from the original regular chart. The
+choice of the continued logarithms is additional marked data, not
+encoded by this algebraic saturation alone. At endpoint arguments the
+unsaturated equations are merely a closure; they are not the actual
+critical scheme without a separate boundary analysis.
+
+The discriminant of the quadratic in W is exactly
+
+    kappa {kappa(Z^2-AB)^2
+          -4(Z-A)(Z-B)(Z+1)(Z+AB)}.                    (6)
+
+At leading-coefficient or discriminant zeros it need not have two
+distinct finite branches. No branch or integration cycle follows from
+this discriminant.
+
+## 3. Exact elimination using the three shared-face equations
+
+The first three equations admit the following direct reduction. Set
+
+    t=b(ZW-AB)/(Z-AB), L=b+c+x+y,
+    D=xy-bc, E=bc(x+y)+(b+c)xy, A0=x+y.
+
+On the regular chart (4) implies
+
+    A=(xW+t)/(x+t), B=(yW+t)/(y+t),
+    Z=(t-cW)/(t-c),
+    Lt^2+(1+W)Dt-WE=0.                                 (7)
+
+The denominators x+t,y+t,t-c are units on (5): if one vanishes,
+its corresponding unreduced equation forces W=1. For positive faces,
+LE+D^2=(b+x)(b+y)(c+x)(c+y)>0. Thus the simultaneous exceptional
+case E-Dt=Lt+D=0 cannot occur, and
+
+    W=t(Lt+D)/(E-Dt).
+
+For this positive-face elimination chart and its nearby complex
+continuation, additionally localize at E-Dt and (c+x)(c+y). For the
+reverse reconstruction below also retain L and kappa as units. These are
+units on the positive locus; they are not consequences of (5) on every
+complex component. Retain the full pullback of (5) under these
+substitutions. In particular
+t, W, t-c and t-cW stay nonzero; Z=0 is not an allowed solution.
+The first Newton sine ratio has the exact expression
+
+    exp(K_rho)=-1+W(c+x)(c+y)/[(t-c)(t-cW)].
+
+Its correctly signed remaining equation is
+
+    kappa(t-c)(t-cW)
+       +(c+x)(c+y)[(W+1)^2-kappa W]=0.                 (8)
+
+After substituting W, the resultant is the unit (c+x)(c+y) times
+
+    (Lt^2+E)^2-kappa t(t+x)(t+y)(E-Dt)=0.              (9)
+
+This is another compact polynomial closure. It is used only with the
+same pulled-back exclusions, not as an unconditional off-grid identity.
+Eliminating t instead and putting zeta=(W+1)^2/W gives the factor
+(c+x)^2(c+y)^2 W^2 times
+
+    (L^2+kappa D)zeta^2
+      -kappa(2L A0+kappa xy)zeta+kappa^2 A0^2=0.
+
+For kappa nonzero, z=zeta/kappa satisfies
+
+    (L^2+kappa D)z^2-(2L A0+kappa xy)z+A0^2=0,          (10)
+
+with discriminant kappa[4A0 E+kappa x^2y^2]. Extra roots on excluded
+divisors are not restored by the calculation. There is an explicit
+reverse reconstruction on the recorded open chart. If Q1,Q2 denote
+the left sides of (7)'s last equation and (8), then
+
+    L Q2-kappa Q1
+     =(c+x)(c+y)[-kappa(1+W)t+L(W+1)^2-kappa A0 W].
+
+Consequently
+
+    t=L(W+1)/kappa-A0 W/(W+1)
+      =W(Lz-A0)/(W+1).                               (10a)
+
+If P(z) denotes the left side of (10), direct substitution gives
+Q1=L W^2 P(z)/(W+1)^2 whenever (W+1)^2=kappa z W. Thus a root of
+(10), either W satisfying
+(W+1)^2=kappa z W, and (10a), followed by (7), reconstruct the original
+four equations whenever all recorded units remain nonzero. This
+proves equivalence on that open chart, not on its polynomial closure.
+The extra L unit is explicit; it cannot be inferred from (5) on an
+arbitrary complex component.
+
+## 4. The real critical indices lie outside the terminating sum
+
+Assume x,b,c,y>0 and 0<alpha<1/2, so 0<kappa<4. The leading coefficient
+L^2+kappa D is positive, the middle coefficient has positive magnitude,
+and the discriminant in (10) is positive. Hence its two roots are
+real, distinct and positive. Let P be its left side. Exactly
+
+    P(1)=(b+c)^2-kappa bc>0,
+    2(L^2+kappa D)-(2L A0+kappa xy)
+        =2(b+c)^2+2A0(b+c)+kappa(xy-2bc)>0.
+
+The second inequality follows from kappa<=4, leaving
+2(b-c)^2+2A0(b+c)+kappa xy>0. Thus the vertex lies below1; since
+P(1)>0, BOTH roots are strictly less than1. On a real unit-circle
+branch W=exp(2pi i rho), equation(10) reads
+
+    z=cos(pi rho)^2/cos(pi alpha)^2 in (0,1).
+
+Its first-half real representative therefore has alpha<rho<1/2;
+the reflected representative lies in (1/2,1-alpha). Neither belongs
+to the ACTUAL terminating Newton range 0<r/N<h/N=alpha. This holds
+for every positive quartet, not only close to alpha=1/2.
+
+In fact these give ALL FOUR regular algebraic critical points over
+this positive base (before choosing logarithmic windings). For each of
+the two z roots, the two W roots are distinct, nonreal and on the unit
+circle. Also
+
+    P(A0/L)=-kappa A0 E/L^2<0,
+
+so Lz-A0 is nonzero. Formula(10a) makes both t and t/W nonreal. It
+follows that x+t,y+t,t-c,t-cW and E-Dt are nonzero, as are A,B,Z
+from (7). Their differences A-1,B-1,W-A,W-B,Z-1,Z-W are nonzero
+multiples of W-1 or t(W-1). The first three equations then exclude
+Z-AB=0: that would force ZW-AB=0, contradicting Z(W-1)!=0. They
+also exclude ZW-AB=0. Finally W=exp(+/-2pi i alpha) is impossible
+because z<1. Every factor in (5) is therefore a unit. No extra
+positive-base branch is created by (10); all four are reconstructed
+by (10a). This does not choose the actual source logarithms or cycle.
+
+At alpha=1/2, (8) reduces on the saturated chart to the impossible
+condition (c+x)(c+y)=0. Thus the double W=-1 root of its polynomial
+closure is extraneous for positive faces, as already noted. At
+kappa=4 a root of (10) reaches1 only when b=c; the physical endpoint
+needs its own source treatment.
+
+This proves a selection exclusion, not exponential cancellation or an
+endpoint estimate. A deformation of the actual finite sum or cotangent
+chain must still account for its endpoints, crossed divisors and marks.
+No representation of the original group or peripheral branch is inferred
+from equations(4)--(10) alone.
+
+
+## 5. The actual primitive-collar polynomial closure and selected germ
+
+Use the [actual primitive collar](actual_deformed_circle_primitive_collar.md),
+sections1--3 and its marked-strip orientation in section5. Its original
+order is A_in=r_b r_x, B_in=r_y r_b, P=r_y r_x; its corner-preserving
+sidepairing carries the input b triangle to the output c triangle.
+This is not the doubled shaded-reflection word. Write
+
+    u=sin(pi delta)^2, A0=x+y,
+    Dg=A0^2-4xy u,
+    Tb^2=b A0+xy+b^2u, Tc^2=c A0+xy+c^2u,
+    Eb=A0+2bu+2sqrt(u)Tb, Ec=A0+2cu+2sqrt(u)Tc.
+
+The literal untwisted primitive collar has R0=Eb Ec/Dg on its selected
+flag. Write M for its selected auxiliary meridian EIGENVALUE, so the
+actual determinant-one meridian matrix has eigenvalues M,M^-1. Its
+marking is M=exp(-pi i alpha), R0=M^-2=exp(2pi i alpha), as in the
+[geometric assembly](actual_complete_core_geometric_deformation.md),
+sections1--2. Therefore its trace square is
+
+    kappa=R0+2+R0^-1.                                 (11)
+
+Both square roots Tb,Tc are the positive ones at completeness, then
+continued on the actual marked germ. Eliminating them from (11) gives
+
+    [kappa Dg-2Dg-2(A0+2bu)(A0+2cu)]^2
+                     -64u^2 Tb^2 Tc^2
+    =Dg {16[(b+c)^2-kappa bc]u^2
+          -4(kappa-4)[2A0(b+c)+kappa xy]u
+          +(kappa-4)^2 A0^2}.                          (12)
+
+Retain Dg != 0 and the actual selected square roots; squaring does not
+make the other sign combinations into the selected collar. For
+kappa != 4 and z != 1 put
+
+    v=4u/(kappa-4), v=z/(1-z).
+
+After dividing (12) by (kappa-4)^2 and multiplying by (1-z)^2, its
+quadratic is EXACTLY (10). Equivalently
+
+    u=(kappa-4)z/[4(1-z)]
+      =-sin(pi alpha)^2 z/(1-z).                       (13)
+
+Thus the first three shared-face equations do identify the remaining
+Newton polynomial closure with the original untwisted peripheral
+trace relation, through the explicit rational change (13). This does
+not identify every critical point or its logarithmic lift with that
+representation: all earlier units, signs, and actual source support
+remain necessary. At kappa=4 equation(13) is interpreted by the
+selected germ limit, not by division at that divisor.
+
+The selection is visible already at the complete point. Set
+Tb0=sqrt(b A0+xy), Tc0=sqrt(c A0+xy). On the selected collar,
+
+    v -> A0^2/(Tb0+Tc0)^2,
+    z -> A0^2/[A0^2+(Tb0+Tc0)^2].                     (14)
+
+This is the smaller z-root at kappa=4. The other squared branch uses
+(Tb0-Tc0)^2 instead; it is not the same selected flag continuation.
+For b=c it reaches z=1, where the displayed rational transformation
+is singular. For small real alpha the selected collar has
+delta = i alpha A0/(Tb0+Tc0)+O(alpha^2), with the stated M convention.
+Trace square alone would not fix this sign, distinguish a reciprocal
+collar, or retain the central SL lift. The selected choice is explicitly
+M_aux=R0^(-1/2) tending to1. Both low external color h and reflected
+high color N-h have
+the same limiting trace square; this does not identify their source
+periods or their selected contribution coefficients. In contrast the
+REAL Newton representative of either
+z-root has rho>alpha by the previous section. This gives an explicit
+separation between the algebraic peripheral branch and the physical
+terminating Newton support.
+
+There is one further marked selector: the two reciprocal W roots of
+the selected z do not have the same external momentum. Keeping the
+pi i alpha character, the stationary Newton action has derivative
+
+    partial_alpha Psi=Log[sin(pi(alpha+rho))/sin(pi(alpha-rho))]+pi i,
+    exp(partial_alpha Psi)=-sin(pi(alpha+rho))/sin(pi(alpha-rho)). (15)
+
+This also follows from the literal finite coefficient identity
+a_(h+1,r)/a_(h,r)=-s_(h+r+1)/s_(h-r), before taking its strict-compact
+limit. On the first-half branch alpha<rho<1/2 put delta=i beta,
+beta>0. Equation(13) implies EXACTLY
+
+    sin(pi(rho+alpha))/sin(pi(rho-alpha))=exp(2pi beta).
+
+Indeed sinh(pi beta)=sin(pi alpha)cos(pi rho)/
+sqrt[sin(pi(rho+alpha))sin(pi(rho-alpha))], and this equals the
+hyperbolic sine of half the logarithm of the displayed ratio. Hence
+(15) is exp(+2pi beta) for this W and exp(-2pi beta) for its reciprocal
+(rho replaced by1-rho). The already selected complete-core action has
+partial_alpha S=2pi i delta=-2pi beta. Therefore the RECIPROCAL W
+branch is the one whose exponentiated external momentum agrees with
+the actual primitive marking. The first-half W has the opposite
+external momentum. Both lie outside the terminating Newton range.
+
+This comparison is exact on the local selected germ and retains
+logarithmic winding ambiguities. It does not establish equality of
+the full Newton and core actions, an additive or monomial normalization,
+or their original contributing cycles. It provides no contribution
+coefficient or exponential estimate for the finite alternating sum.
+
+
+## 6. Verification and remaining source question
+
+[The focused audit](../experiments/audit_actual_alternating_newton_peripheral_branch.py)
+checks the exact cleared identities and discriminants, the original
+finite signed Newton coefficient ratios against their logarithmic
+limits, reconstruction of the uncleared shared-face equations, and
+the UNSQUARED selected collar R0 with its literal meridian orientation,
+and the finite external ratio selecting the reciprocal W momentum.
+The finite-coefficient checks retain all original offsets and compare
+(0) with an independently assembled literal signed factorial coefficient.
+
+The calculation isolates a concrete next requirement: continue the
+actual finite Newton/cotangent chain to the selected marked branch,
+retaining its terminating endpoints and every crossed divisor. Neither
+a root of the polynomial closure nor the absence of a real physical
+critical point proves exponential cancellation, nonvanishing, a
+regulator equality for the low-color period, or a global volume bound.
+
+
+Root full analytical and audit-code review PASS, including the exact
+finite-ratio characteristic, recorded localized units, reverse four-branch
+reconstruction, unsquared primitive collar and reciprocal external-momentum
+selector.
+
+Independent full analytical/code review and fresh85-digit redirected replay
+PASS:15 exact symbolic identities;12 literal signed finite ratios and their
+12 factorial telescopings;12 external-color telescopings;40 reverse/uncleared
+shared-face reconstructions;20 unsquared marked collars and20 reciprocal
+momentum pairs;4 selected complete-germ checks. Maximum residual was
+1.27e-82. The review does not infer a full-action normalization, endpoint
+analysis, original finite-sum contribution or global low-color volume bound.

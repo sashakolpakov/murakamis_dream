@@ -38,9 +38,15 @@ The [marked circle-pattern theorem](../notes/actual_marked_deformed_circle_patte
 
 ![Two finite circles in the same marked strip, with main tangencies, deformed matching intersections, and selected fixed points that collide at completeness.](figures/marked-circle-strip.png)
 
+## One polynomial for each original coupon
+
+The [homogeneous source theorem](../notes/actual_homogeneous_casimir_face_source.md) retains the original four face variables at each coupon. Its local polynomial has degree $N-1$ and nonnegative exponents, while its coefficients retain the actual phases and repeated-node information. The product has degree $(N-1)R$; the $R$ ordinary face targets consume all that degree. This makes the marked coefficient exact and excludes every other Fourier alias, including disconnected replacements. Geometry and volume bounds enter afterwards.
+
+![Original Casimir coupons, their homogeneous four-face kernels and the single coefficient for the whole marked source.](figures/homogeneous-face-source.png)
+
 ## External colors and the remaining filling estimate
 
-The blue square schematically represents the proved [whole-source untwisted corridor](../notes/general_untwisted_mixed_source_volume_corridor.md); its size depends on the fixed diagram. Along the indicated axis, one varied signed port has a [sufficient local curvature criterion](../notes/actual_signed_small_circle_face_kernel.md). The complement remains a problem for the full original source. The complete term has an opposite-end alias, which the small-color term cancels; a bound for the complete term alone cannot replace the combined estimate. The diagram shows two external color coordinates, not two bridge strands or a quantitative value of the corridor width.
+The blue square schematically represents the proved [whole-source untwisted corridor](../notes/general_untwisted_mixed_source_volume_corridor.md); its size depends on the fixed diagram. The [homogeneous theorem](../notes/actual_homogeneous_casimir_face_source.md) now gives joint signed/unsigned corridors under finite shared-radius certificates. Along the indicated axis, a [one-port local curvature criterion](../notes/actual_signed_small_circle_face_kernel.md) suffices. The complement remains a problem for the full original source. The complete term has an opposite-end alias, which the small-color term cancels; a bound for the complete term alone cannot replace the combined estimate. The diagram shows two external color coordinates, not two bridge strands or a quantitative value of the corridor width.
 
 ![External-color regions and the scope of the current source estimates.](figures/external-color-corridor.png)
 

@@ -27,7 +27,7 @@ Start with [the equality results](results.md) for the exact knot and link famili
 | Part of the argument | Current scope |
 | --- | --- |
 | Volume limit of the original invariant | Signed Conway families with mixed seeds $h^s$, $s\geq3$, arbitrary fixed trees and constructible knot patterns, after sufficiently long signed full fillings; isolated $C(h^s)$ for $s\geq4$; specified pretzel and belt-stack families |
-| Exact finite source identities | Original complete source as one positive face coefficient at each folded label, with exact support, measure and even-level carries; all-color compilers and Fourier identities retained |
+| Exact finite source identities | Original arbitrary-Casimir-coupon source as one homogeneous face coefficient, including disconnected replacements and both parity carries; the complete-circle positive formula is its special case |
 | Boundary first-normal defect | An explicit two-insertion formula from the full root channel; finite Plancherel gives polynomial cost $O(N^2)$, without determining the scalar derivative or estimating that channel by the geometric volume |
 | Local quantum action | Selected ordinary amplitude on full physical complex compacts; fixed generic jets for all integer-grid physical columns and divided pairs; subexponential complex paired-normal bounds in shrinking channel windows |
 | General geometric branch | Under the labeled certificate, the complete-image period now selects the actual marked geometric action, including its boundary flags and primitive peripheral words; its whole-source extension requires the stated corridor hypotheses |
@@ -35,7 +35,7 @@ Start with [the equality results](results.md) for the exact knot and link famili
 | Exceptional matching block | Exact generic Casimir polynomial and original resolvent period; selected scalar character relation, strict-support Green action and endpoint jets; contributing contour and joint contraction remain open |
 | Whole complete source limit | Every connected certified augmented plat with any retained half-twist pattern, at arbitrary fixed width and both level parities; exact face coefficients, a nonzero signed Gaussian and actual polyhedral volume |
 | Complete-image external colors | A nonzero asymptotic on a fixed complex neighborhood; its limiting action is the actual marked geometric regulator, with the necessary complex boundary correction |
-| Whole mixed source near completeness | Actual marked representation-volume limit at any set of untwisted varied ports, with exponentially small relative error against the geometric core; one varied signed port has a sufficient local curvature test |
+| Whole mixed source near completeness | Actual representation-volume limit at any set of untwisted varied ports; joint signed/unsigned corridors under finite shared-radius certificates, including disconnected subsets |
 | General signed long-filled knot equality | Bounds for every remaining reflected color term and the combined far aliases remain unresolved |
 
 The cube, Fourier, torsor, and alternative approaches are preserved. A failed intermediate estimate is useful evidence about the argument; it is retained beside the corrected scope.
