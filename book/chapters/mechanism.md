@@ -95,6 +95,8 @@ where $\chi$ is the retained parity character and $D_b$ is the directional deriv
 
 The [adjoint connection on the actual period](../../notes/actual_tensor_source_translated_cycle_normals.md) follows by finite-order integration by parts on that unchanged closed cycle. It acts on the original cotangent density multiplied by $G$, producing the required finite-part and double-pole terms. It is an exact relation between specified translated periods, with no claim that a translated head lies in the physical basis or that a geometric contour has been reached.
 
+The [complete local marked-density theorem](../../notes/actual_augmented_plat_local_marked_density.md) then assembles the selected factors with the original unrestricted mark. Their absolute normalization gives a nonzero fixed-channel density. At the complete geometric point, the channel Hessian is diagonal with entries $-4\pi i/\tau_i$, where $\tau_i$ are the actual primitive cusp shapes. After retaining the exact integer characters, the local sum over the original folded nodes is a nonzero Gaussian at both level parities. This establishes a local complete-source coefficient; the framing integral and its appearance in the original global cycle remain to be proved.
+
 ## Exact recoupling exposes a local geometric scalar
 
 Four external objects can be paired in two ways. The actual change of basis is computed before root specialization, with its genuine pivotal turn.

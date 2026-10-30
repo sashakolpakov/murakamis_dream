@@ -22,7 +22,8 @@ Under the actual positive marked gluing certificate, the [geometric filling theo
 | Ordinary local factors | Selected action and nonzero amplitude on full physical complex compacts; a global Legendre chart for that selected action | The channel remains a genuine discrete color; normal bounds have their stated domains |
 | Actual geometry | A positive marked certificate gives the complete geometry, its nearby stationary branch and the absolute hyperbolic-volume anchor | Existence of the geometric critical point does not prove quantum contribution |
 | Exceptional matching edge | Exact entire root kernel and a selected nonzero relative packet near the actual geometric frame, jointly in complex degree and magnetic coordinates | A local packet does not determine its coefficient in the original period |
-| Endpoint and normals | Closing-arc bounds and a specified full generic operator lift with subexponential derivative cost near the fold | A nonzero leading normal amplitude and the remaining contour are separate questions |
+| Endpoint and normals | Closing-arc bounds and a specified full generic operator lift with subexponential derivative cost near the fold | Individual derivative amplitudes and the remaining contour are separate questions |
+| Complete local source | Nonzero marked density and local folded-channel Gaussian at both level parities | The framing orbit and the coefficient in the original global cycle remain uncomputed |
 | General long fillings | A conditional source-to-filling theorem with the correct independent-slope quantifiers | Its general complex packet, nonzero density germ and whole-source gap still need proof |
 
 The [selected-factor theorem](../../notes/actual_augmented_plat_selected_factor_localization.md) is useful here: for the certified right-angled cut, exactly two physical-support failures can be placed at the ends of one chosen crossing-circle edge. Every other ordinary factor is on the selected physical packet. An all-central selected common frame **cannot exist**; moving all factors into that domain is therefore not an available shortcut.
@@ -77,6 +78,8 @@ The [generic boundary-source theorem](../../notes/actual_generic_boundary_gauge_
 
 The [absolute regulator comparison](../../notes/actual_matching_edge_deficient_packet_regulator.md) proves that the normalized degree reflection has scalar one and preserves the actual Bloch regulator. The literal cups and turn supply a winding character, which is one on the lattice but must remain in the continued action. The specified generic lift has the opposite root character; restoring its actual turn therefore gives the normalized circle coefficient exactly. With the original marks and **full stationary equations**, the critical action gives the actual augmented-link volume. No uncomputed regulator constant remains at this local anchor.
 
+The [complete local marked-density theorem](../../notes/actual_augmented_plat_local_marked_density.md) now proves more than nonzero separate factors. Each fully normalized circle has an $N^{-1}$ relative packet with nonzero amplitude, and the actual marked boundary contributes another $N^{-1}$. The original paired-circle normal is already included in this root compiler. Summing the local folded-channel window gives a nonzero Gaussian coefficient at both parities, using the actual discrete nodes, weights and signed half twists. A transverse magnetic Gaussian is also nonzero per unit framing volume. This is a complete-color local theorem; it does not integrate the framing orbit, prove a global source contribution, or supply a mixed-color filling packet.
+
 The dense forbidden lattice zeros still rule out a uniform nowhere-zero single-term asymptotic on a neighborhood containing an open real forbidden region. The new packet is in a complex chart. At a fixed forbidden integer separation, the whole original physical slice is zero. Deforming only its magnetic variables cannot turn the local nonzero packet into a nonzero slice period.
 
 ## Exact transport retains the boundary terms
@@ -93,7 +96,7 @@ The [adjoint period connection](../../notes/actual_tensor_source_translated_cycl
 
 **The main gap remains a substantial global theorem.** There are two concrete tasks:
 
-1. Transport the original degree and magnetic cycles to the geometric chart with a nonzero controlled coefficient, using the exact boundary corrections. The local root packet, genuine derivative bounds and isolated residue density do not establish survival of the whole coherent contribution.
+1. Compute the framing contribution and transport the original degree and magnetic cycles to the geometric chart with a nonzero controlled coefficient, using the exact boundary corrections. The nonzero local marked density and folded Gaussian do not establish survival of the whole coherent contribution.
 2. Control the remaining physical regions and aliases uniformly in the auxiliary colors, and obtain the full source's complex color packet, so the general long-filling transfer applies.
 
 The Fourier route is still useful. Its exact positive partition gives a weighted-Cauchy upper bound with all flow and charge constraints retained. Its radial optimizer cannot simply be declared geometric: the [radial-frame obstruction](../../notes/actual_positive_fourier_radial_geometric_obstruction.md) prevents assembling all strict ordinary radial saddles into the certified complete representation. No numerical rate gap follows from that obstruction.

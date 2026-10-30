@@ -49,6 +49,15 @@ turn and degree-log characters must stay in the action and in its marked
 winding sectors. At FULL source-marked stationarity the critical action
 has real part Vol(Y_D)/(2pi).
 
+The [complete local marked-density theorem](actual_augmented_plat_local_marked_density.md)
+now proves nonzero fixed-channel source density and a nonzero local
+folded-channel Gaussian at BOTH level parities. It starts from the
+actual unrestricted root mark, so the complete-circle paired normal
+is already included. This is a complete-color local result; it does
+not assert a nonzero individual q-normal coefficient. The transverse
+magnetic Gaussian is nonzero per unit framing volume. The framing
+orbit and its coefficient in the original period are not integrated.
+
 The main unresolved theorem is GLOBAL: transport the original degree
 and magnetic cycle, retaining finite-head boundary terms and crossed
 poles; prove a nonzero geometric coefficient and control competing
