@@ -31,7 +31,7 @@ Start with [the equality results](results.md) for the exact knot and link famili
 | Local quantum action | Selected ordinary amplitude on full physical complex compacts; fixed generic jets for all integer-grid physical columns and divided pairs; subexponential complex paired-normal bounds in shrinking channel windows |
 | General geometric branch | Under a positive gluing certificate, marked rigidity and the actual critical scheme give a stationary branch with the true volume anchor; contributing source sheet still to be established |
 | Common geometric framing | Exactly two prescribed physical-support failures for the certified right-angled cut; every other ordinary factor is on the selected full physical packet, at arbitrary bridge width |
-| Exceptional matching block | Exact regular paired-projector formula; Plancherel computes the full folded norm rate at both parities, and fixed derivatives add only polynomial cost; sharp joint contraction remains open |
+| Exceptional matching block | Exact generic Casimir polynomial and original resolvent period; selected scalar character relation, strict-support Green action and endpoint jets; contributing contour and joint contraction remain open |
 | Whole positive source limit | Every robust Conway expression; cylindrical factors have actual hyperbolic volume, while cap products split into geometric factors |
 | General knot or graph equality | Uniform complex source asymptotics, physical alias bounds and selection of the actual geometric period remain unresolved |
 

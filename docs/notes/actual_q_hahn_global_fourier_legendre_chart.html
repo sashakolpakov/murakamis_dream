@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The physical selected Fourier action has a global Legendre chart · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Fourier and energy</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#fourier">Fourier, weighted Cauchy, and energy</a><p><span class="badge">Global selected ordinary Legendre chart</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_q_hahn_global_fourier_legendre_chart.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_q_hahn_global_fourier_legendre_chart.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_q_hahn_global_fourier_legendre_chart_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="the-physical-selected-fourier-action-has-a-global-legendre-chart">The physical selected Fourier action has a global Legendre chart</h1>
+<p>30 October 2026. The local action change of <a href="actual_q_hahn_holomorphic_fourier_legendre_transport.html">holomorphic Legendre transport</a> is globally one-to-one on the full physical tube. This removes a possible multiple-chart ambiguity for the selected classical action. It does not provide analytic continuation of individual finite Fourier coefficients.</p>
+<h2 id="statement">1. Statement</h2>
+<p>Fix 0&lt;xi&lt;=1/2 and the original marked selected action Phi_xi. Retain all the source constants and logarithmic characters in the local theorem. Write</p>
+<pre><code>P={1/2&lt;Re tau&lt;1, 0&lt;Re nu&lt;Re tau},
+y=2pi i(nu-tau/2),
+F=J(xi)+(xi-1/2)y+Phi_xi(tau,nu)
+                                  -i pi(tau-xi+xi^2)/2,
+lambda=F_y=xi-1/2+Phi_nu/(2pi i).               (1)</code></pre>
+<p>Let O be the image of P in (tau,y). Then</p>
+<pre><code>(tau,y) -&gt; (tau,lambda)                        (2)</code></pre>
+<p>is a biholomorphism from O onto its open image D_xi. In particular the selected Legendre action F-lambda y is a SINGLE holomorphic function on D_xi, with its original additive phase fixed by (1). The image D_xi is not asserted convex, a product, or the whole complex coefficient plane.</p>
+<h2 id="a-source-selected-square-root-is-injective-on-each-physical-fiber">2. A source-selected square root is injective on each physical fiber</h2>
+<p>Fix tau. Put</p>
+<pre><code>a=pi Re tau in (pi/2,pi), w=exp(y),
+c=-cos(pi tau), C=cos(pi xi), s=sin(pi xi),
+B(w)=w^2+2cw+C^2, V(w)=w^2+2cw+1.</code></pre>
+<p>The physical w-domain is exactly the sector</p>
+<pre><code>S_tau={w!=0: |Arg w|&lt;a}.                       (3)</code></pre>
+<p>The marked y-strip has imaginary width 2a&lt;2pi, so exp maps that strip bijectively onto (3). The full physical packet proves B and V nonzero there. Therefore both roots alpha,beta of B belong to the complementary closed cone</p>
+<pre><code>K_tau={0} union {w!=0: |Arg(-w)|&lt;=pi-a}.</code></pre>
+<p>This cone is convex: its angle is 2(pi-a)&lt;pi. The whole segment [alpha,beta] consequently misses S_tau. This conclusion also covers xi=1/2, when one root is zero.</p>
+<p>For distinct roots, the function</p>
+<pre><code>r(w)=(w-alpha) sqrt((w-beta)/(w-alpha))          (4)</code></pre>
+<p>is holomorphic on C minus [alpha,beta], using the principal square root in the displayed ratio. Indeed that ratio is a nonpositive real number precisely on the removed segment. It satisfies</p>
+<pre><code>r(w)^2=B(w), r(w)=w+c+O(1/w) at infinity.       (5)</code></pre>
+<p>The reflection R(w)=alpha+beta-w=-2c-w preserves the slit domain and B. Thus r(R(w))/r(w) is a constant sign on its connected domain. The asymptotic condition (5) fixes that sign to be minus:</p>
+<pre><code>r(-2c-w)=-r(w).                               (6)</code></pre>
+<p>If r(w_1)=r(w_2), the equation B(w_1)=B(w_2) gives either w_1=w_2 or w_2=-2c-w_1. The second alternative, by (6), would force r(w_1)=0, impossible off the slit. Hence r is injective on the slit complement, and in particular on S_tau. If alpha=beta, the normalized root is simply r(w)=w+c and the same conclusion is immediate.</p>
+<p>The root in (4) is the ACTUAL selected source root. For real tau and positive w it is the positive square root used to calibrate the source. For any compact path in the allowed tau strip, a sufficiently large positive w makes B(w)/w^2 uniformly close to one. Its continuation remains the root with (5), so the same calibration holds at the end of the path. Equality then extends through the connected physical w-sector. No pointwise principal square root of B is substituted for this continued root.</p>
+<h2 id="the-selected-momentum-and-action-are-globally-single-chart">3. The selected momentum and action are globally single-chart</h2>
+<p>The actual selected source multiplier is</p>
+<pre><code>Y=exp(Phi_nu)=(s+i r)^2/V=(s+i r)/(s-i r).      (7)</code></pre>
+<p>The last equality uses V=s^2+B. Its two factors do not vanish on the physical domain because V is nonzero. Since s&gt;0, the last expression is an injective Möbius function of r. Equations (6),(7) prove that Y is injective on each physical w-sector.</p>
+<p>If two marked lambda values in (1) agree, their exponentials Y agree. They therefore have the same w, and the marked strip then gives the same y. The map (2) is thus globally injective. Its Jacobian F_yy is everywhere nonzero by the local theorem. The holomorphic inverse theorem supplies local holomorphic inverses; injectivity makes them agree on overlaps. This proves the stated biholomorphism onto D_xi and the single-valued Legendre action.</p>
+<p>This is a global coordinate result for the ALREADY selected ordinary action. It does not choose a different source sheet, complexify the actual integer channel, or turn the coefficient label into an available complex finite-source variable. The real integer coefficient rate, exceptional block, partner normals and global period questions keep the scopes of their separate theorems.</p>
+<p>Focused audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_q_hahn_global_fourier_legendre_chart.py">reflection and momentum injectivity identities</a>.</p>
+<p>Primary-agent full analytical review: PASS. The reader checked the complementary convex cone, normalized slit root, reflection sign, injective root and Möbius momentum, source calibration along complex tau paths, marked exponential strip and global inverse onto its image.</p>
+<p>Independent full analytical review and fresh focused audit: PASS. A second reader checked the same proof, including repeated roots and xi=1/2, and reproduced the three exact algebraic identities. Both reviews retain the open-image scope and infer no finite complex-index coefficient theorem or contributing global source cycle.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_q_hahn_global_fourier_legendre_chart.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#statement">1. Statement</a><a href="#a-source-selected-square-root-is-injective-on-each-physical-fiber">2. A source-selected square root is injective on each physical fiber</a><a href="#the-selected-momentum-and-action-are-globally-single-chart">3. The selected momentum and action are globally single-chart</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

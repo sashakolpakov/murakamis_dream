@@ -20,6 +20,12 @@ Under the geometric strip conditions, the common framing flags determine a line 
 
 ![Schematic planar section of the white-normal convex hull, with two facet exits locating the exceptional factors.](figures/two-exceptional-factors.png)
 
+## The exceptional operator and its selected scalar action
+
+The scalar polynomial and original resolvent have different analytic roles. All polynomial zeros lie above $2$, while the physical Casimir nodes lie in $[-2,2]$. The actual geometric target is at most $-2$ under the marked complete certificate. The exact contour retains both factors and their generic normals. Endpoint estimates at $+2$ do not prove the global saddle contribution or settle a parabolic target at $-2$. See [the current critical path](chapters/frontier.md#the-exceptional-edge-now-has-an-exact-algebraic-description).
+
+![The exact polynomial-resolvent period and its spectral regions, with the contributing global period still open.](figures/exceptional-period.png)
+
 ## A change of pairing
 
 Four external colors stay fixed while the internal channel changes. This is the local operation used to transport the source through a diagram. The [mechanism chapter](chapters/mechanism.md) explains the normalization and why local control must be assembled into a global estimate.

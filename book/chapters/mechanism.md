@@ -54,6 +54,22 @@ The [native-energy theorem](../../notes/actual_matching_edge_native_projector_en
 
 The [full matching-graph identity](../../notes/general_matching_graph_full_normal_source.md) is a complementary exact assembly tool: all folded sectors form one generic network with the original physical trace normal retained. It holds at both parities and uses the graph of the actual crossing-disk cut. No vanishing channel norm is inverted.
 
+## The exceptional block is an actual operator period
+
+The [generic polynomial theorem](../../notes/actual_matching_edge_geometric_target_polynomial.md) writes the completed block as $D_a^{-1}p_a(\Omega)$, before every normal extraction. Its [zeros are all above two](../../notes/actual_matching_edge_racah_root_location.md), so the finite polynomial selects a canonical logarithm and scalar action. The [general generating relation](../../notes/actual_matching_edge_polynomial_geometric_action.md) matches the actual four-parabolic character equation, including the inverse-turn sign and the source's additive scalar anchor.
+
+The target is fixed by the original ports: $z=\operatorname{Tr}(B_{\rm in}^{-1}B_{\rm out})=2-4/c^2$. The [marked-word theorem](../../notes/actual_matching_circle_rectangle_bound.md) proves $c\leq1$ for the actual certified complete geometry, including half twists. Thus a nonparabolic target lies below $-2$; a formal real rectangle with $c>1$ cannot supply that complete marked quotient.
+
+A polynomial of degree proportional to $N$ still cannot be replaced by its scalar value inside a contraction. The [exact period](../../notes/actual_matching_edge_continuant_operator_period.md) is
+
+$$p_a(\Omega)=\frac{1}{2\pi i}\oint_\Gamma p_a(z)(zI-\Omega)^{-1}\,dz.$$
+
+Its original Green entries retain both continuants and the full characteristic denominator. The [strict-support theorem](../../notes/actual_matching_edge_cross_central_green_action.md) proves their selected leading action and bounds every fixed generic derivative when the two physical rows straddle the midpoint and $z$ lies in the stated common prefix domain, including fixed compact real intervals below $-2$. On the anti-diagonal they are exactly negative for real $z<-2$. The actual surrounding state is not thereby a positive functional or a continuant eigenstate.
+
+The [finite-propagation identity](../../notes/actual_matching_edge_polynomial_finite_propagation.md) does give exact scalar action on a forward continuant in rows $u\leq t-a$, and on a backward continuant in rows $u\geq a$. These precise windows can leave a central gap. The environment and any complex magnetic continuation remain additional input.
+
+Separate [polynomial](../../notes/actual_matching_edge_polynomial_endpoint_control.md) and [full-resolvent](../../notes/actual_casimir_endpoint_resolvent_bound.md) bounds control the closing point $+2$ and its genuine normals on shrinking neighborhoods. They do not settle the possible geometric parabolic target $-2$, or the contour between the endpoint neighborhood and the candidate saddle. The remaining task is an estimate of the actual period and its coherent sewing.
+
 ## Exact recoupling exposes a local geometric scalar
 
 Four external objects can be paired in two ways. The actual change of basis is computed before root specialization, with its genuine pivotal turn.
@@ -107,6 +123,8 @@ For specified planar three-port reflection doubles, there is now a stronger [exa
 $$Z_N^{\mathrm{double}}=\sum_{\mathbf a\in\mathcal D_N}\frac{|Z_N^{\mathrm{half}}(\mathbf a)|^2}{\theta_N(\mathbf a)}\geq0.$$
 
 Every interior color is already coherently summed inside the half-packet. This includes the actual normals at both level parities. Since there are at most $N^3$ boundary triples, the doubled source differs from its largest squared weighted packet by at most that polynomial factor. Its asymptotic is therefore reduced to estimating the half-packets, whose internal cancellations have not disappeared. Positivity here allows zeros and is not a nonvanishing theorem for arbitrary plats.
+
+The retained Fourier phase now has an [exact integer quadratic form](../../notes/actual_matching_graph_centered_fourier_phase.md). The [holomorphic Legendre transport](../../notes/actual_q_hahn_holomorphic_fourier_legendre_transport.md) restores that phase and the original winding characters in the selected ordinary action. Its [global chart](../../notes/actual_q_hahn_global_fourier_legendre_chart.md) is one-to-one on the full physical tube. These are action and coordinate theorems; they do not analytically continue individual finite Fourier coefficients or select the global source cycle.
 
 ## An upper bound is only half of equality
 

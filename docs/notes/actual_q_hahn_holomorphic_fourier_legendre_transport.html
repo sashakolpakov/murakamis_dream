@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The selected Fourier action has a nonsingular holomorphic Legendre chart · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Fourier and energy</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#fourier">Fourier, weighted Cauchy, and energy</a><p><span class="badge">Selected local holomorphic Legendre transport</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_q_hahn_holomorphic_fourier_legendre_transport.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_q_hahn_holomorphic_fourier_legendre_transport.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_q_hahn_holomorphic_fourier_legendre_transport_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="the-selected-fourier-action-has-a-nonsingular-holomorphic-legendre-chart">The selected Fourier action has a nonsingular holomorphic Legendre chart</h1>
+<p>30 October 2026. The actual selected ordinary q-Hahn action admits a local holomorphic Legendre change at EVERY point of the full strict physical tube. Restoring the exact coefficient phase recovers the original magnetic coordinate and action. This is a theorem about the selected classical action. It does not continue a finite coefficient index away from its integer lattice or prove a source integration-cycle statement.</p>
+<h2 id="the-actual-source-fixes-the-additive-phase">1. The actual source fixes the additive phase</h2>
+<p>Fix a real channel parameter 0&lt;xi&lt;=1/2. Use the selected holomorphic action Phi_xi(tau,nu) of the <a href="actual_q_hahn_full_physical_complex_packet.html">full physical packet</a>, on</p>
+<pre><code>P={1/2&lt;Re tau&lt;1, 0&lt;Re nu&lt;Re tau}.</code></pre>
+<p>The actual finite channel remains an integer j, with j/N tending to xi. No complex finite-channel interpretation is made here. Put</p>
+<pre><code>y=2pi i(nu-tau/2), w=exp(y),
+C=cos(pi xi), s=sin(pi xi), c=-cos(pi tau).</code></pre>
+<p>The image O of P in (tau,y) coordinates is convex. On a real radial slice, tau and y are real, and the source polynomial P_(t,j)(w) is positive when its actual complete support t+j&gt;=d is imposed.</p>
+<p>The finite source identity, including its scalar, is</p>
+<pre><code>fhat_j(N nu)=q^[(d-2j)N nu] c_(t,j) P_(t,j)(exp y),
+c_(t,j)=q^[j(t+j-d)]/(Q;Q)_j,
+q=exp(pi i/N), Q=q^2, d=N-1.                    (1)</code></pre>
+<p>Use the original product logarithm</p>
+<pre><code>(Q;Q)_j=(-i)^j q^[j(j+1)/2] s_j,
+s_j=product_(r=1)^j 2sin(pi r/N).</code></pre>
+<p>At nu=t/(2N)-iy/(2pi), with real y, the exact argument supplied by the prefactors of (1) is</p>
+<pre><code>pi[d(t-j)+j^2]/(2N),                            (2)</code></pre>
+<p>independent of y. This is a marked product logarithm, not a principal argument chosen anew after reducing (2) modulo 2pi. Dividing its logarithm by N yields the absolute phase</p>
+<pre><code>C_0(tau,xi)=i pi(tau-xi+xi^2)/2.                (3)</code></pre>
+<p>Consequently define on O</p>
+<pre><code>F_xi(tau,y)=J(xi)+(xi-1/2)y
+     +Phi_xi(tau,tau/2-iy/(2pi))-C_0(tau,xi).   (4)</code></pre>
+<p>On the real complete radial slice this is precisely the REAL positive-polynomial action in the <a href="actual_q_hahn_fourier_coefficient_variational.html">coefficient variational theorem</a>. The constant and linear terms in (4) are fixed by (1), not by an arbitrary integration constant. Formula (4) also defines its holomorphic continuation in tau and y. Throughout this note xi is a fixed real parameter.</p>
+<h2 id="the-legendre-derivative-has-no-critical-point-on-o">2. The Legendre derivative has no critical point on O</h2>
+<p>Write</p>
+<pre><code>B=w^2+2cw+C^2, V=w^2+2cw+1.</code></pre>
+<p>The selected square root of B is continued from its positive value on the real radial slice. The full packet proves B and V nonzero: they are w^2 times its two nonzero characteristic factors. Since O is convex, the selected square root is globally defined there. The selected source multiplier has the exact expression</p>
+<pre><code>Y=exp(Phi_nu)=(s+i sqrt(B))^2/V.                (5)</code></pre>
+<p>This retains the continued root. It does not assert that sqrt(B) is pointwise principal outside the real slice. Differentiating (4),(5) on that slice and continuing the identity gives</p>
+<pre><code>F_y=xi-1/2+Phi_nu/(2pi i),
+F_yy=s w(w+c)/(pi sqrt(B) V).                  (6)</code></pre>
+<p>The only possible new zero in the second line is w+c=0. It is AUTOMATICALLY excluded by the strict physical domain. Indeed put</p>
+<pre><code>T=exp(2pi i tau), U=exp(2pi i nu).</code></pre>
+<p>Then w+c=0 is equivalent to U=(1+T)/2. The principal argument of T is theta=2pi(Re tau-1), strictly between -pi and 0. The argument of the positive sum 1+T lies strictly between theta and 0, for every |T|&gt;0. But an allowed physical U has its argument lift in (0,2pi Re tau); its principal argument is either in (0,pi] or in (-pi,theta). It cannot equal that of (1+T)/2.</p>
+<p>Because s&gt;0, w!=0, B!=0 and V!=0, equation (6) proves</p>
+<pre><code>F_yy never vanishes on O.                      (7)</code></pre>
+<p>This includes the endpoint xi=1/2. The real radial curvature is positive, but the proof of (7) uses the full complex physical domain, not positivity of a complex Hessian.</p>
+<h2 id="local-action-transport-with-its-exact-phase">3. Local action transport with its exact phase</h2>
+<p>Let lambda=F_y. By (7), (tau,y)-&gt;(tau,lambda) is locally biholomorphic at EVERY point of O. In each such chart define</p>
+<pre><code>L_xi(tau,lambda)=F_xi(tau,y)-lambda y.           (8)</code></pre>
+<p>These are local Legendre charts on the marked action graph. No global injectivity of the projection to (tau,lambda) is asserted. They satisfy</p>
+<pre><code>L_lambda=-y, L_lambdalambda=-1/F_yy,
+lambda=xi-1/2+Phi_nu/(2pi i),
+L_tau=Phi_tau+pi i(lambda-xi).                  (9)</code></pre>
+<p>On real complete radial parameters and 0&lt;lambda&lt;xi, this L is the actual coefficient rate already proved. At other complex lambda it is an analytic ACTION chart, not yet an asymptotic formula for individual finite Fourier coefficients.</p>
+<p>For an arbitrary physical nu in the same local chart, consider</p>
+<pre><code>H(tau,nu;lambda)=L_xi(tau,lambda)
+      +2pi i(lambda+1/2-xi)(nu-tau/2).         (10)</code></pre>
+<p>Stationarity in lambda gives</p>
+<pre><code>y=2pi i(nu-tau/2).                             (11)</code></pre>
+<p>Substitution of (4),(8) then yields the exact critical-value identity</p>
+<pre><code>H_crit=J(xi)+Phi_xi(tau,nu)-C_0(tau,xi).        (12)</code></pre>
+<p>The original prefactor contributes -J(xi)+C_0(tau,xi), by (1), and therefore restores precisely Phi. In particular no discarded quadratic phase has to be guessed from a Hessian or a volume value. Differentiation of (12) also preserves the original magnetic momentum and the tau momentum; the latter includes the explicit shift in (9).</p>
+<h2 id="actual-affine-cycle-coordinates-and-retained-characters">4. Actual affine cycle coordinates and retained characters</h2>
+<p>At a vertex of the exact shared-cycle compiler, let</p>
+<pre><code>u_v=epsilon_v x_c+B_v,
+b_v=max(0,T_i-d), t_i=min(T_i,2d-T_i),
+delta_v=(B_v-b_v)/N-t_i/(2N), X_c=x_c/N.</code></pre>
+<p>The normalized magnetic coordinate is</p>
+<pre><code>nu_v=epsilon_v X_c+(B_v-b_v)/N.</code></pre>
+<p>The exact finite coefficient phase contains the linear term 2pi i(lambda_v+1/2-xi_i)(delta_v+epsilon_v X_c), up to the explicitly retained finite d/N correction. Thus its classical lambda equation is (11), with</p>
+<pre><code>y_v=2pi i(delta_v+epsilon_v X_c).</code></pre>
+<p>It recovers the ORIGINAL coordinate nu_v, with either actual degree adapter and the original white-map reversal. It does not force the new y_v to be real. This is the precise action-level distinction from the <a href="actual_positive_fourier_radial_geometric_obstruction.html">all-radial obstruction</a>.</p>
+<p>For a closed physical cycle, the exact coefficient constraint is</p>
+<pre><code>sum_v epsilon_v(lambda_v+1/2-xi_i)
+      +(1/2)sum_b epsilon_b
+   =n_c+(b_c+E_c/2)/N.                         (13)</code></pre>
+<p>The original marked charge b_c, finite pivotal shift E_c/2 and the integer Fourier winding n_c remain specified. In a leading stationary action the multiplier includes the term -2pi i n_c X_c. It must remain in a critical-value calculation. Likewise a factor (-1)^a has its original product logarithm; replacing it by another logarithm differing by 2pi i a is invisible on integer colors but changes a continued action character. The local identity (12) does not authorize either omission.</p>
+<h2 id="the-remaining-quantum-statement-is-separate">5. The remaining quantum statement is separate</h2>
+<p>This theorem gives an everywhere nonsingular LOCAL selected-action change for ordinary physical factors. It explains how restoring the exact phase permits nonradial magnetic critical coordinates; it does not construct their finite coefficient asymptotics, select a contributing global period, bound a complementary contraction, or prove that complex critical contributions survive. Completed partner normals and the exceptional four-port block retain their previous scope.</p>
+<p>In particular, the finite positive coefficient theorem still concerns actual integer indices and real complete parameters with interior slopes. Holomorphic action transport alone cannot replace the missing analytic statement about those coefficients or the full source cycle.</p>
+<p>Focused audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_q_hahn_holomorphic_fourier_legendre_transport.py">source prefactor and Legendre derivative identities</a>.</p>
+<p>Primary-agent full analytical review: PASS. The reader recomputed the finite product phase and absolute constant, both derivative shifts, critical-value restoration, exclusion of the caustic on the full tube, and exact winding and finite charge terms. Both actual degree adapters and the white-map reversal retain their original scope.</p>
+<p>Independent full analytical review and fresh audit: PASS. A second reader checked the same source-normalized action identities and the continued square-root convention, and reproduced the five exact audit identities. Neither review infers complex finite coefficient indices, global injectivity from the local argument, or a contributing source cycle.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_q_hahn_holomorphic_fourier_legendre_transport.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-source-fixes-the-additive-phase">1. The actual source fixes the additive phase</a><a href="#the-legendre-derivative-has-no-critical-point-on-o">2. The Legendre derivative has no critical point on O</a><a href="#local-action-transport-with-its-exact-phase">3. Local action transport with its exact phase</a><a href="#actual-affine-cycle-coordinates-and-retained-characters">4. Actual affine cycle coordinates and retained characters</a><a href="#the-remaining-quantum-statement-is-separate">5. The remaining quantum statement is separate</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

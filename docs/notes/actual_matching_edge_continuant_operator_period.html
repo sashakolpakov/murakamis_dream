@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The original exceptional operator as a continuant period · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a> · <a href="../library.html#torsors">A-structures, torsors, and regulators</a><p><span class="badge">Exact operator period and retained normal poles</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_edge_continuant_operator_period.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_matching_edge_continuant_operator_period.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_matching_edge_continuant_operator_period_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="the-original-exceptional-operator-as-a-continuant-period">The original exceptional operator as a continuant period</h1>
+<p>30 October 2026. The completed matching block has an exact generic contour representation whose entries are original forward and backward continuants. It retains the paired double poles, moving-q normals, physical target order and finite propagation. This separates an actual operator period from evaluation of its scalar polynomial at a classical trace.</p>
+<p>No geometric saddle contribution or sharp complementary contraction estimate is asserted.</p>
+<h2 id="the-original-generic-matrix-and-its-actual-spectrum">1. The original generic matrix and its actual spectrum</h2>
+<p>Put d=N-1 and use zeta=q exp(h), q=exp(pi i/N). In a physical total-degree block 0&lt;=t&lt;=d, the ORIGINAL Casimir J_t(zeta) has diagonal A_r, upper U_r and lower L_r, r=0,…,t:</p>
+<pre><code>Q=zeta^2,
+A_r=zeta^-1 Q^(r-t)(1-Q^(N-r))(1-Q^r)
+   +zeta^(-2d-1)Q^r(1-Q^(N-t+r))(1-Q^(t-r))
+   +zeta^(2d+1)Q^-t+zeta^(-2d-1)Q^t,
+U_r=zeta^-N Q^(2r+1-t)(1-Q^(N-r-1))(1-Q^(t-r)),
+L_r=zeta^-N(1-Q^(N-t+r))(1-Q^(r+1)).             (1)</code></pre>
+<p>The offdiagonals are indexed 0&lt;=r&lt;t. These are the actual entries proved in <a href="actual_q_hahn_physical_generic_jet_bound.html">the physical generic-jet theorem</a>. In particular U and L are NOT identified away from the root. All internal offdiagonals are nonzero at q. The actual generic high-degree adapter identifies total degree 2d-t with this same matrix, with the translated physical indices; no new norm or complex conjugation is imposed.</p>
+<p>Its generic characteristic polynomial is</p>
+<pre><code>chi_t(zeta,z)=product_(m=0)^t (z-lambda_m(zeta)),
+lambda_m(zeta)=zeta^(2N-2m-1)+zeta^(-2N+2m+1).    (2)</code></pre>
+<p>This follows from the original normalized Clebsch columns for m=0,…,t and their distinct generic eigenvalues. Their generic source identity then extends (2) to q. The target label used in the recoupling is g=d-m, so (2) is exactly the target Casimir zeta<sup>(2g+1)+zeta</sup>(-2g-1), with its original moving-q derivative.</p>
+<p>At q the only repeated eigenvalues are the pairs m and d-m when both occur in this block. Their multiplicity is two. An odd-level middle label is simple. An unreduced tridiagonal matrix has one-dimensional eigenspaces: its first coordinate determines an eigenvector recursively and cannot vanish. Therefore every paired node here has a genuine Jordan block of size two, rather than two independent eigenspaces.</p>
+<h2 id="exact-green-entries-with-both-continuants-retained">2. Exact Green entries with both continuants retained</h2>
+<p>Define the prefix and suffix determinants</p>
+<pre><code>P_r(z)=det(zI-J_t[0,...,r-1]), P_0=1,
+S_r(z)=det(zI-J_t[r,...,t]),   S_(t+1)=1.         (3)</code></pre>
+<p>All quantities retain their dependence on zeta. They satisfy the original forward and backward determinant recurrences. For example</p>
+<pre><code>P_(r+1)=(z-A_r)P_r-U_(r-1)L_(r-1)P_(r-1).</code></pre>
+<p>For z outside the actual spectrum, set R_t(zeta,z)=(zI-J_t)^-1. The exact entries are</p>
+<pre><code>(R_t)_(u,v)=
+   (product_(r=u)^(v-1) U_r) P_u S_(v+1)/chi_t,  u&lt;=v,
+   (product_(r=v)^(u-1) L_r) P_v S_(u+1)/chi_t,  v&lt;=u.      (4)</code></pre>
+<p>Empty products are one, so the two formulas agree on the diagonal. Expanding a tridiagonal cofactor proves (4): the intervening chain uses exactly the indicated upper or lower entries, and the two remaining blocks supply the prefix and suffix. Equivalently direct multiplication by zI-J_t verifies (4) using (3). No root-only reflection is differentiated to obtain the backward factor.</p>
+<h2 id="the-exact-generic-operator-period-and-its-bandwidth">3. The exact generic operator period and its bandwidth</h2>
+<p>Let p_a(zeta,z) and D_a(zeta) be the original polynomial and face factor in <a href="actual_matching_edge_geometric_target_polynomial.html">the generic target identity</a>. For the original folded range 0&lt;=a&lt;=floor(d/2), their coefficients are holomorphic near q after the displayed common face zero is canceled. The completed operator before the fixed physical bend and pivotal turn is</p>
+<pre><code>E_a(zeta)=D_a(zeta)^-1 p_a(zeta,Omega(zeta)).      (5)</code></pre>
+<p>Fix one contour Gamma enclosing ALL the root spectral nodes, for example the positively oriented circle |z|=3. For zeta in a sufficiently small neighborhood of q, the same contour encloses every moving node and meets none. On each physical block,</p>
+<pre><code>E_(a,t)(zeta)
+  =D_a(zeta)^-1/(2pi i)
+      integral_Gamma p_a(zeta,z) R_t(zeta,z) dz.              (6)</code></pre>
+<p>This follows either by Cauchy’s formula on the generic eigenspaces, then holomorphic continuation, or by expanding the resolvent at infinity and taking the coefficient of z^-1. Thus (6) is valid at the paired root WITHOUT deleting its double poles. Substitution of (4) is an exact single spectral-period representation of every native magnetic matrix entry.</p>
+<p>The original polynomial has degree a. Since J_t is tridiagonal,</p>
+<pre><code>(E_(a,t)(zeta))_(u,v)=0 if |u-v|&gt;a.             (7)</code></pre>
+<p>This is a generic identity, so every fixed moving-q derivative has the SAME bandwidth. Equivalently (6) has exact cancellation outside this band. This assertion is about the actual target physical coordinates BEFORE the recorded bend and pivotal turn; it does not silently permute the original outside ports.</p>
+<p>The full source substitution retains beta_N times the original bend and turn, the row factor and half-twist, and the whole-source marked normal, exactly as in the completed target theorem. Those factors have not been absorbed into a chosen resolvent norm.</p>
+<h2 id="genuine-moving-q-normals-and-the-reduced-pole-budget">4. Genuine moving-q normals and the reduced pole budget</h2>
+<p>Differentiate in h with z FIXED. The exact identity is</p>
+<pre><code>partial_h R_t=R_t (partial_h J_t) R_t.</code></pre>
+<p>Consequently the first normal of (6) is</p>
+<pre><code>partial_h E_(a,t)
+  =-(partial_h D_a)/D_a *E_(a,t)
+   +D_a^-1/(2pi i) integral_Gamma
+      [(partial_h p_a)R_t+p_a R_t(partial_h J_t)R_t] dz.     (8)</code></pre>
+<p>The partial derivative of p_a retains every generic-q coefficient. The derivative of J_t is the derivative of (1), including the distinct generic upper and lower entries. Formula (8) therefore includes moving spectral nodes and moving generalized eigenspaces, not merely a derivative of the scalar root value.</p>
+<p>There is a useful exact reduction at a paired node lambda. Let Q(h) be its analytic two-dimensional cluster projector, and let its two actual analytic eigenbranches be lambda_1(h),lambda_2(h). At h=0 put</p>
+<pre><code>Q=Q(0), M=(J_t(q)-lambda)Q, M^2=0.</code></pre>
+<p>Then the root resolvent on this cluster is</p>
+<pre><code>R_cluster=Q/(z-lambda)+M/(z-lambda)^2.           (9)</code></pre>
+<p>The apparent fourth-order pole in R(partial_h J)R vanishes. Indeed differentiate the exact cluster identity (J-lambda_1)(J-lambda_2)Q(h)=0 and sandwich it by Q. It gives</p>
+<pre><code>Q J&#39; M+M J&#39; Q=(lambda_1&#39;+lambda_2&#39;)M,
+M J&#39; M=0.                                     (10)</code></pre>
+<p>The second equation follows by multiplication by M. Thus the same-cluster contribution to R J’ R is exactly</p>
+<pre><code>Q J&#39; Q/(z-lambda)^2
+   +(lambda_1&#39;+lambda_2&#39;)M/(z-lambda)^3.         (11)</code></pre>
+<p>Terms between different spectral clusters remain in (8); they must not be discarded. They contain the actual motion of the cluster projectors. The source derivative of the paired gap is lambda_j’-lambda_(d-j)’=-2N(q<sup>(2j+1)-q</sup>(-2j-1)), in convention (2).</p>
+<p>More generally the r-th moving-q derivative of the resolvent has pole order at most r+2 at a paired node and at most r+1 at a simple node. To see this WITHOUT assuming diagonalizability at the root, the exact analytic cluster resolvent is</p>
+<pre><code>R_cluster(h,z)=
+   [(z-lambda_1(h))Q(h)+(J(h)-lambda_2(h))Q(h)]
+   /[(z-lambda_1(h))(z-lambda_2(h))].            (12)</code></pre>
+<p>Each h derivative increases the specialized denominator pole order by at most one. All numerators and cluster projectors in (12) are holomorphic. The corresponding scalar spectral derivatives needed in an r-th operator normal consequently have order at most r+1, with the actual q derivatives still retained. In particular the first normal needs scalar spectral derivatives only through order two, consistent with the prior Taylor-two calculation. These are exact pole budgets, not size bounds on the cluster projectors.</p>
+<h2 id="scalar-continuation-is-distinct-from-contour-contribution">5. Scalar continuation is distinct from contour contribution</h2>
+<p>The <a href="actual_matching_edge_racah_root_location.html">source-polynomial root theorem</a> gives a canonical Log p_a and a leading scalar action throughout C minus [2,infinity). This is a statement about p_a, not about R_t. The latter has the actual nodes of (2), all in [-2,2] at q, including their double poles.</p>
+<p>In particular a target below -2 is off the root spectrum. A general target in (-2,2) lies in its spectral interval, among nodes that become dense as N grows. Any deformation of (6) must avoid those actual poles or account for their residues. The scalar’s zero-free continuation does not permit deleting them.</p>
+<p>The exact numerator in (4) is where selected forward/backward boundary estimates can enter. A proof of a geometric contribution must still analyze that numerator together with chi_t, the fixed spectral contour, and the actual surrounding coherent state. It cannot replace p_a(Omega) by p_a(lambda_geometric) pointwise. Equations (4),(6),(8),(12) expose that remaining operator problem while preserving its original source and every required normal.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_matching_edge_continuant_operator_period.py">actual Green entries, contour coefficients, normal poles and bandwidth</a>.</p>
+<p>Independent review: the root agent and cluster/source agent checked the complete generic Green/contour proof, actual spectrum and Jordan structure, moving-q normal, reduced pole budget and source bandwidth. A fresh cluster replay passed 534 original Green three-jets, 1,902 contour operator entries with 5,706 jet coefficients, 868 bandwidth zeros, and 29 genuine double clusters with their fourth-pole cancellations. The reviewed scope includes no contour deformation or scalar-to-operator asymptotic.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_edge_continuant_operator_period.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-original-generic-matrix-and-its-actual-spectrum">1. The original generic matrix and its actual spectrum</a><a href="#exact-green-entries-with-both-continuants-retained">2. Exact Green entries with both continuants retained</a><a href="#the-exact-generic-operator-period-and-its-bandwidth">3. The exact generic operator period and its bandwidth</a><a href="#genuine-moving-q-normals-and-the-reduced-pole-budget">4. Genuine moving-q normals and the reduced pole budget</a><a href="#scalar-continuation-is-distinct-from-contour-contribution">5. Scalar continuation is distinct from contour contribution</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

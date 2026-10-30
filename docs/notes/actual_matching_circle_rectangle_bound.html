@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Every certified crossing-circle rectangle has ratio at most one · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Geometry</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#geometry">Angle optimization and actual geometry</a><p><span class="badge">Actual primitive-word bound c at most one</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_circle_rectangle_bound.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_matching_circle_rectangle_bound.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_matching_circle_rectangle_bound_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="every-certified-crossing-circle-rectangle-has-ratio-at-most-one">Every certified crossing-circle rectangle has ratio at most one</h1>
+<p>30 October 2026. For every crossing circle in an ACTUAL complete right-angled matching-polyhedron certificate, the disk-framed rectangle ratio satisfies</p>
+<pre><code>0&lt;c&lt;=1.                                        (1)</code></pre>
+<p>Thus its actual recoupled target trace is at most -2. This holds for both retained half-twist signs, not just the pure or Conway subclass. The equality case remains a nontrivial parabolic target; no strict inequality or operator asymptotic is inferred.</p>
+<h2 id="the-geometric-and-marked-input">1. The geometric and marked input</h2>
+<p>Assume the labeled actual cut, complete cusp metric and primitive crossing-circle paths of <a href="general_augmented_plat_matching_geometry.html">the general matching-polyhedron certificate</a>. Its actual crossing-circle rectangle has vertices (1,E,-1,-E), with E=exp(2pi i x), 0&lt;x&lt;1/2, and c=cot(pi x)&gt;0. An arbitrary abstract ideal rectangle is not asserted to satisfy (1). The conclusion concerns one realized in this complete manifold with these actual disk and meridian identifications.</p>
+<p>The original based pair and its transport may be normalized as</p>
+<pre><code>A=-[[1,1],[0,1]], B=-[[1,0],[-4,1]],
+P=BA, H=P+I, H^2=0,
+C=I+bH, B_out=C B C^-1.</code></pre>
+<p>The actual primitive collar and quantum half-twist calibration give</p>
+<pre><code>tau_epsilon=2ic/(1-epsilon ic),
+b-epsilon/2=1/tau_epsilon,
+b=-i/(2c), epsilon in {0,+1,-1}.                (2)</code></pre>
+<p>The literal inverse-cup bend fixes the target word</p>
+<pre><code>W=B^-1 B_out,
+Tr W=2+16b^2=2-4/c^2,                          (3)</code></pre>
+<p>as proved in <a href="actual_matching_edge_geometric_target_polynomial.html">the actual geometric target theorem</a>. The only possible concern for a discreteness argument is whether C itself is a group element when a retained half twist occurs. The next calculation removes that concern without assuming it.</p>
+<h2 id="the-half-transport-still-gives-actual-based-meridian-words">2. The half-transport still gives actual based meridian words</h2>
+<p>Put S=I+H/2. The original primitive-collar reconstruction in <a href="actual_augmented_plat_critical_scheme.html">the actual critical scheme</a>, at the complete endpoint J=-1, says PROJECTIVELY</p>
+<pre><code>mu=C^-1 S^epsilon.                             (4)</code></pre>
+<p>Here mu is the actual based auxiliary meridian. Indeed its generic factor (P<sup>-1-I)</sup>epsilon specializes using</p>
+<pre><code>P^-1-I=-2S,</code></pre>
+<p>and the recorded scalar h_J<sup>(-epsilon)=(-2)</sup>(-epsilon) cancels that constant. The remaining lift scalar is central and has no effect on the conjugation below. Thus (4) retains the primitive meridian; it does not replace it by a half-longitude.</p>
+<p>Direct multiplication in the original pair gives</p>
+<pre><code>S B S^-1=A, S^-1 B S=B A B^-1.                 (5)</code></pre>
+<p>Since C=mu^-1 S^epsilon projectively, the three physical outputs are</p>
+<pre><code>epsilon=0:  B_out=mu^-1 B mu,
+epsilon=+1: B_out=mu^-1 A mu,
+epsilon=-1: B_out=mu^-1 B A B^-1 mu.            (6)</code></pre>
+<p>Every expression in (6) is an ACTUAL based holonomy word in the same complete manifold. The meridians A,B,mu have the common basepaths fixed by the original threading word. In particular W=B^-1 B_out is a group element for every retained parity. The matrix S need not itself be a group element; none of (6) assumes that it is. Changes of lift sign cannot affect the ensuing absolute trace classification.</p>
+<h2 id="the-complete-metric-excludes-the-forbidden-trace">3. The complete metric excludes the forbidden trace</h2>
+<p>The certified metric is complete and its universal developing cover is hyperbolic three-space, as in the complete gluing theorem. Its holonomy acts by deck transformations and hence freely. A nonidentity element of this group cannot fix an interior point.</p>
+<p>If c&gt;1, equation (3) gives -2&lt;Tr W&lt;2. Its determinant-one matrix therefore has distinct eigenvalues exp(+i theta), exp(-i theta), with 0&lt;theta&lt;pi. After conjugacy its Möbius action is a nontrivial rotation about the geodesic joining its two ideal fixed points. It fixes every interior point on that geodesic. This contradicts the free deck action. Consequently c&lt;=1, proving (1).</p>
+<p>This is an elementary group consequence of the ACTUAL primitive word (6). No unproved packing inequality or exterior cusp-shape estimate is used. It also explains why the same assertion could not be made about an abstract rectangle without the marked quotient.</p>
+<p>At c=1 the target is genuinely parabolic, not the identity. In the normalization above its matrix is</p>
+<pre><code>W=[[8b^2-4b+1,4b^2],[16b^2,8b^2+4b+1]],</code></pre>
+<p>and at b=-i/2, W+I=[[2i,-1],[-4,-2i]] is nonzero and squares to zero. Nothing here rules out that parabolic word in the manifold. A strict bound would require an additional topological or geometric argument about that word, which is not supplied by this theorem.</p>
+<h2 id="consequence-and-scope">4. Consequence and scope</h2>
+<p>Every actual complete target in this certified class is therefore</p>
+<pre><code>c&lt;1: Tr W&lt;-2, a real off-spectrum target;
+c=1: Tr W=-2, the parabolic spectral endpoint.</code></pre>
+<p>The formal c&gt;1 branch of the local algebraic four-parabolic relation still exists, but cannot be the complete crossing-circle geometry with the marked certificate used here. This removes the in-spectrum case for these actual geometric targets. It does not show that a given common frame places the target’s physical rows in the strict cross-central domain, identify a surrounding continuant state, or prove contour contribution or equality of source and volume.</p>
+<p>Focused audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_matching_circle_rectangle_bound.py">actual half-twist words and target trace</a>.</p>
+<p>Primary-agent full analytical review: PASS. The reader checked the actual primitive scalar cancellation, both half-transport conjugations and all three based words, the elliptic fixed-axis contradiction, and the explicit nonidentity parabolic equality case.</p>
+<p>Independent full analytical review and fresh focused replay: PASS. A second reader verified the group-word status without assuming S belongs to the group, the complete free-deck argument and endpoint matrix, and reproduced all sixteen exact audit identities. Neither review asserts a strict bound, a common favorable frame, or an original source asymptotic.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_circle_rectangle_bound.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-geometric-and-marked-input">1. The geometric and marked input</a><a href="#the-half-transport-still-gives-actual-based-meridian-words">2. The half-transport still gives actual based meridian words</a><a href="#the-complete-metric-excludes-the-forbidden-trace">3. The complete metric excludes the forbidden trace</a><a href="#consequence-and-scope">4. Consequence and scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

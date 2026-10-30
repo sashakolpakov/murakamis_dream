@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual geometric target channel and its finite Casimir polynomial · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a> · <a href="../library.html#torsors">A-structures, torsors, and regulators</a><p><span class="badge">Exact actual target and generic Casimir polynomial</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_edge_geometric_target_polynomial.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_matching_edge_geometric_target_polynomial.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_matching_edge_geometric_target_polynomial_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="the-actual-geometric-target-channel-and-its-finite-casimir-polynomial">The actual geometric target channel and its finite Casimir polynomial</h1>
+<p>Follow-up: the <a href="actual_matching_circle_rectangle_bound.html">actual primitive-word theorem</a> now proves c&lt;=1 for EVERY circle in the certified complete class, including half twists. The c&gt;1 algebraic case classified below is therefore formal and cannot be realized by that complete marked quotient. Equality c=1 remains a genuine parabolic target.</p>
+<p>30 October 2026. The literal four-port bend fixes the recoupled channel; it is not a freely chosen geometric diagonal. In the certified right-angled geometry its complete trace is <code>2-4/c^2</code>, where <code>c</code> is the actual crossing-circle rectangle ratio. In particular, an entire already constructed class has a target outside the real physical channel range at EVERY matching edge.</p>
+<p>There is nevertheless an exact source polynomial that can be evaluated at that trace. The fully normalized original Racah scalar is a degree-a polynomial in the target Casimir, generically before specialization. Consequently the completed target operator is that polynomial of the ORIGINAL Casimir. This retains all its normal derivatives. Its scalar evaluation below trace -2 is positive and has a direct variational limit.</p>
+<p>This is not yet an asymptotic for that operator in the surrounding coherent contraction. In particular a polynomial of degree proportional to N cannot be replaced by its value at a classical symbol without an additional argument. No global volume equality follows here.</p>
+<h2 id="the-typed-bend-fixes-the-geometric-target">1. The typed bend fixes the geometric target</h2>
+<p>Use the exact bend of the <a href="actual_matching_edge_marked_four_port_block.html">marked four-port source</a>:</p>
+<pre><code>B(K)_(a,b,c,e)=sum_(u,v) K_(a,b;u,v) pV(u,e)pV(v,c).</code></pre>
+<p>Its four external objects occur in the order <code>(a,b,c,e)</code>. The target tensor in that theorem couples the middle ports <code>(b,c)</code> and then applies the ACTUAL pivotal last-to-first turn to the other pair. It is not a different permutation of these objects.</p>
+<p>Here is the corresponding based-holonomy calculation. For an original physical head write</p>
+<pre><code>Lminus(X,S)=[[1,0],[S(1-X)/X,-1/X]],
+G(X,S)=[[-1/X,(1-X)/(XS)],[-S(1-X)/X,-2+1/X]].</code></pre>
+<p>The original cup gives the inverse-head relation <code>(X,S) -&gt; (X^-1,-S)</code>. Its two Lminus matrices multiply to the identity, and prefix transport makes its two based meridians inverses. Thus the nested cups in <code>B(I)</code> have ordered based meridians</p>
+<pre><code>(A_in, B_in, B_in^-1, A_in^-1).                    (1)</code></pre>
+<p>For example, the middle two local Lminus factors cancel; the remaining prefix at the fourth head is the first Lminus, which gives precisely the inverse of the first based meridian. This proves the nesting order, including its basing, directly from the original cups.</p>
+<p>The <a href="actual_augmented_plat_local_critical_character_map.html">actual critical character map</a> preserves both total F and total K. Therefore it preserves the ENTIRE matrix <code>Lminus_2 Lminus_1</code>, not only the trace of the pair product. Applying the coupon to the first two heads of (1) consequently leaves the prefixes and based meridians at the last two heads unchanged. The bent tensor has the ordered tuple</p>
+<pre><code>(A_out, B_out, B_in^-1, A_in^-1),
+A_in^-1 B_in^-1 B_out A_out=P_in^-1 P_out=I.        (2)</code></pre>
+<p>The original target middle Casimir is consequently</p>
+<pre><code>lambda_target=Tr(B_in^-1 B_out).                   (3)</code></pre>
+<p>The pivotal turn does not change (3): it is the actual cyclic basepath change for the OTHER pair, already retained in the finite tensor formula. It does not replace a meridian by its negative or insert a longitude.</p>
+<p>At completeness normalize the incoming pair by simultaneous conjugacy:</p>
+<pre><code>A=-[[1,1],[0,1]], B=-[[1,0],[-4,1]],
+P=BA, H=P+I, H^2=0,
+C=I+bH, B_out=C B C^-1.</code></pre>
+<p>Direct matrix multiplication gives</p>
+<pre><code>Tr(B^-1 C B C^-1)=2+16b^2.                        (4)</code></pre>
+<p>All these traces use the original trace-minus-two lifts. No common choice of framing flags changes (3) or (4).</p>
+<h2 id="classification-in-the-certified-complete-geometry">2. Classification in the certified complete geometry</h2>
+<p>The <a href="general_augmented_plat_matching_geometry.html">general matching-graph geometry</a> puts the crossing-circle rectangle at <code>(1,E,-1,-E)</code>, with <code>E=exp(2pi i x)</code>, <code>0&lt;x&lt;1/2</code>, and <code>c=cot(pi x)&gt;0</code>. The actual primitive collar, calibrated to the quantum half-twist sign in the <a href="actual_augmented_plat_channel_hessian.html">channel-Hessian theorem</a>, is</p>
+<pre><code>tau_epsilon=2ic/(1-epsilon ic),
+b-epsilon/2=1/tau_epsilon, epsilon in {0,+1,-1}.</code></pre>
+<p>Hence the apparent shear cancels in the physical pair transport:</p>
+<pre><code>b=-i/(2c), lambda_target=2-4/c^2.                  (5)</code></pre>
+<p>This is independent of the retained half-twist sign; its primitive auxiliary meridian still depends on that sign. The source target eigenvalue is <code>zeta^(2g+1)+zeta^(-2g-1)</code>, whose real scaled limit is <code>2cos(2pi xi_target)</code>. Thus (5) has the classification</p>
+<pre><code>c&gt;1: xi_target=asin(1/c)/pi in (0,1/2), up to partner;
+c=1: lambda_target=-2, the folded parabolic point;
+0&lt;c&lt;1: xi_target=1/2 +/- i arcosh(1/c)/pi.          (6)</code></pre>
+<p>The last case is a fixed nonzero imaginary channel displacement. Neither the ordinary packet, which keeps the channel real and discrete, nor the shrinking REAL-fold norm theorem is a continuation to it.</p>
+<p>There is no general remedy by selecting another matching edge. The <a href="actual_conway_strict_leaf_quarter_bound.html">strict-quarter theorem</a>, together with the actual marked Conway geometry, proves <code>x_leaf&gt;1/4</code> for EVERY leaf of EVERY retained robust cylindrical Conway factor. Those are its measured primitive rectangle parameters, as follows also from the proved cusp shape <code>2i cot(pi x_leaf)</code>. Thus every matching edge in that broad class has <code>c&lt;1</code>. In <code>C(h^3)</code>, all three ratios are <code>c=1/2</code>, so all three target traces are -14. This is an obstruction to a proposed real-target-channel rescue, not to recoupling or to the conjecture.</p>
+<h2 id="the-original-scalar-is-a-generic-polynomial-in-the-target-casimir">3. The original scalar is a generic polynomial in the target Casimir</h2>
+<p>Put <code>d=N-1</code>, use generic <code>zeta</code>, <code>Q=zeta^2</code>, and symmetric quantum integers <code>[n]=(zeta^n-zeta^-n)/(zeta-zeta^-1)</code>. Let <code>S_ag,G_ag,D_a</code> be the ACTUAL seven-factorial sum and face factors of the <a href="actual_matching_edge_racah_positive_scalar.html">positive matching-edge scalar</a>:</p>
+<pre><code>G_ag=(-1)^d S_ag/[N],
+D_a=(-1)^a[N][a]!^2[d-a]!/[d+a+1]!,
+H_ag=D_a G_ag D_g.</code></pre>
+<p>Define <code>lambda_r=zeta^(2r+1)+zeta^(-2r-1)</code> and</p>
+<pre><code>p_a(z)=sum_(k=0)^a (-1)^k/[k]!^2
+   *product_(r=0)^(k-1)
+      {[a-r][a+r+1]/([d-r][d+r+2])
+                *(z-lambda_r)/(zeta-zeta^-1)^2}.
+                                                           (7)</code></pre>
+<p>For every generic label <code>0&lt;=a,g&lt;=d</code>, the exact identity is</p>
+<pre><code>H_ag=p_a(lambda_g).                               (8)</code></pre>
+<p>In particular this is a degree-a polynomial in the ACTUAL target Casimir, with <code>p_0=1</code> and <code>p_a(lambda_0)=1</code>. Its finite basic sum is</p>
+<pre><code>4phi3(Q^-a,Q^(a+1),Q^-g,Q^(g+1);
+                     Q,Q^-d,Q^(d+2);Q,Q).        (9)</code></pre>
+<p>There are no omitted powers of zeta in (7). Indeed each numerator pair in (9) contributes <code>-(zeta-zeta^-1)^2 zeta^(2r+1)[a-r][a+r+1]</code>, or its g version. The four denominator factors and the summand’s <code>Q^k</code> leave exactly the sign <code>(-1)^k</code> in (7). Also <code>[g-r][g+r+1]=(lambda_g-lambda_r)/(zeta-zeta^-1)^2</code>.</p>
+<p>Here is an own finite proof from the source sum. By symmetry assume <code>a&lt;=g</code>. Apply the already proved <a href="finite_balanced_sears_operator_proof.html">finite Sears identity</a> to (9), with length a, retained parameter <code>Q^(g+1)</code>, and <code>d_S=Q^-d,e_S=Q</code>. Its new numerator and denominator EXPONENTS are</p>
+<pre><code>(-a,g+1,g-d,-d-a-1); (-d,g-a+1,g-d-a),</code></pre>
+<p>with prefactor</p>
+<pre><code>F1=(Q^-g,Q^(g-d-a);Q)_a/(Q,Q^(-d-a-1);Q)_a.</code></pre>
+<p>Apply the same finite identity again, retaining <code>Q^(g-d)</code> and taking <code>d_S=Q^(g-a+1), e_S=Q^(g-d-a)</code>. This gives</p>
+<pre><code>4phi3(Q^-a,Q^-a,Q^(g-d),Q^(d+g+2);
+                      Q,Q^(g-a+1),Q^(g-a+1);Q,Q),
+F2=(Q^-a,Q^(g-a+1);Q)_a/
+                      (Q^(g-d-a),Q^(d-a+1);Q)_a.</code></pre>
+<p>The intermediate denominator <code>Q^(g-d-a)</code> first vanishes AFTER length a, including g=d. Multiplying and reversing the negative products gives</p>
+<pre><code>F1 F2=(-1)^a[N][d-a]![g]!^2/
+                      ([d+a+1]![g-a]!^2).         (10)</code></pre>
+<p>The right side is precisely the original <code>z=d+g</code> Racah summand, multiplied by <code>(-1)^d D_a D_g/[N]</code>. Its successive summand ratio is</p>
+<pre><code>-[d+g+k+2][d-g-k][a-k]^2 /
+                          ([g-a+k+1]^2[k+1]^2),</code></pre>
+<p>which is also the final series ratio. It terminates at <code>min(a,d-g)</code>, exactly the original range. This proves (8) by finite products and the own finite transform, including all generic zeros. Both sides of (9) are symmetric in a,g, which covers a&gt;g.</p>
+<h2 id="exact-completed-operator-identity-with-every-normal-retained">4. Exact completed-operator identity, with every normal retained</h2>
+<p>Let Omega and Pi_g be the ORIGINAL generic two-head Casimir and its generic projectors in the <a href="actual_matching_edge_completed_projector_block.html">completed target theorem</a>. Its scalar is <code>F_ag=G_ag D_g</code>. Equation (8) gives the operator identity</p>
+<pre><code>sum_(g=0)^d F_ag Pi_g = D_a^-1 p_a(Omega).          (11)</code></pre>
+<p>Indeed the projectors exhaust the actual generic tensor product and Omega has eigenvalue lambda_g on their images. This is a GENERIC identity, so it includes the true first normal and every fixed generic jet. At a colliding pair its root Hermite data are exactly</p>
+<pre><code>F_ag(q)=D_a(q)^-1 p_a(lambda_g(q))=R_N(a,g),
+H_ag^div(q)=D_a(q)^-1 p_a&#39;(lambda_g(q)).            (12)</code></pre>
+<p>The prime in (12) is the spectral-variable derivative; generic-q derivatives are still taken in (11). This distinction is essential. In particular the old nilpotent term has not been removed: (12) computes its actual coefficient rather than inferring that coefficient from equality of the two root scalar values.</p>
+<p>The full typed replacement is therefore exactly</p>
+<pre><code>sum_g G_ag h_g T_(2g)=beta_N R B[D_a^-1 p_a(Omega)]. (13)</code></pre>
+<p>Here <code>beta_N</code>, the physical bend B and the pivotal turn R are the unchanged maps of the completed target theorem. All original row weights, half-twist phases and the exposed whole-source normal remain outside (13) with their original conventions.</p>
+<p>For the original range <code>0&lt;=a&lt;=floor(d/2)</code>, every denominator in (7) and D_a is a root unit after its displayed common zero is canceled. Thus the right side of (11) is holomorphic directly, without forming individual singular projectors. Equation (11) is not an assertion that Omega is Hermitian or that p_a(Omega) has polynomial operator norm.</p>
+<h2 id="positive-evaluation-at-the-actual-nonphysical-geometric-trace">5. Positive evaluation at the actual nonphysical geometric trace</h2>
+<p>At <code>q=exp(pi i/N)</code> put <code>theta=pi/N</code>, <code>x_r=2cos((2r+1)theta)</code>, <code>s_k=product_(v=1)^k 2sin(v theta)</code>. Converting the generic products in (7) at the root gives</p>
+<pre><code>p_a(z)=sum_(k=0)^a s_k^-4
+             product_(r=0)^(k-1)(x_r-x_a)(x_r-z). (14)</code></pre>
+<p>For the original folded row range, <code>x_r&gt;x_a</code> whenever r&lt;a. Hence EVERY term in (14) is positive at every real z&lt;-2. This is a genuine finite source-polynomial evaluation, not interpolation in a fabricated complex integer color. At z=x_g it equals the previously proved positive squared-trinomial Racah sum, but (14) remains defined away from all those physical nodes.</p>
+<p>Fix compact subsets <code>xi in (0,1/2]</code>, <code>c in (0,1)</code>, and let <code>a/N-&gt;xi</code>, with actual geometric trace <code>z=2-4/c^2</code>. Write</p>
+<pre><code>A=sin^2(pi xi), kappa=c^-2,
+f_(xi,c)(v)=integral_0^v
+   log[(A-sin^2(pi s))(kappa-sin^2(pi s))/sin^4(pi s)] ds.
+                                                           (15)</code></pre>
+<p>Then the actual finite polynomial satisfies</p>
+<pre><code>N^-1 log p_a(2-4/c^2) -&gt; max_(0&lt;=v&lt;=xi) f_(xi,c)(v).
+                                                           (16)</code></pre>
+<p>If the parameters on the right are taken at their actual values <code>xi=a/N</code>, the logarithmic error is O(log N), uniformly on the stated compacts. This includes the folded limit. More explicitly, its k-th term has EXACT logarithm</p>
+<pre><code>sum_(v=a-k+1)^(a+k) log sin(v theta)
+   -4 sum_(v=1)^k log sin(v theta)
+   +sum_(r=0)^(k-1) log[kappa-sin^2((r+1/2)theta)].</code></pre>
+<p>The first line follows from <code>x_r-x_a=4 sin((a-r)theta)sin((a+r+1)theta)</code>; all powers of two cancel. The last summand is smooth uniformly because kappa&gt;1. The elementary endpoint harmonic bound for log sin gives an O(log N) error for its Riemann sums, even when a+k approaches N-1 or a-k=0. Finally <code>sin(pi(xi-s))sin(pi(xi+s))=A-sin^2(pi s)</code> identifies the integral with (15). Thus <code>log term_k=N f(k/N)+O(log N)</code>, including either endpoint. The polynomial has at most N positive terms; the upper bound is their maximum times N, and a nearest integer to its interior maximum gives the reverse bound with the same logarithmic loss.</p>
+<p>The maximizing point is unique. Set t=sin^2(pi v). The derivative exponential is <code>(A-t)(kappa-t)/t^2</code>, strictly decreasing from infinity to zero as t runs from 0 to A. Consequently</p>
+<pre><code>sin^2(pi v_*)=A kappa/(A+kappa).                  (17)</code></pre>
+<p>At the folded row <code>xi=1/2</code>, this becomes</p>
+<pre><code>v_*=atan(1/c)/pi=x,                              (18)</code></pre>
+<p>the ACTUAL measured crossing-circle rectangle parameter. Thus the positive finite polynomial selects the correct local rectangle in this precise scalar variational sense.</p>
+<p>For z in a fixed compact subset of (-infinity,-2), all fixed generic-q and spectral derivatives of the scalar in (14) cost only a polynomial relative to p_a(z). This follows from (7), not from differentiating a root-only formula: each root term is positive; the nonzero quantum integer factors have total logarithmic derivative <code>O(N^2(1+log N))</code>, and <code>z-x_r</code> is uniformly separated from zero. On a disk of that reciprocal radius every summand remains in a fixed narrow sector. Cauchy gives the fixed-jet bound. This controls scalar evaluation at that trace, not the norm of the operator in (11).</p>
+<h2 id="the-remaining-analytic-question-is-narrower-but-still-real">6. The remaining analytic question is narrower, but still real</h2>
+<p>Equations (3)–(6) answer which target channel the actual geometry requires. Equations (7)–(14) provide its exact finite source polynomial without a complex-color interpolation. The full root Hermite data and generic normal are retained, and (16)–(18) give a positive scalar action whose critical parameter is the actual rectangle.</p>
+<p>The original contracted operator is nevertheless <code>p_a(Omega)</code> with <code>a</code> proportional to N. A sharp analysis must show how that polynomial acts on the actual surrounding selected boundary state, including the pivotal reshuffle and shared magnetic variables. Its scalar value at lambda_target is not already such an operator theorem, nor a noncancellation estimate for the full marked source. This is the remaining step exposed here; taking the independent full operator maximum would again pay the previously computed 10v3 boundary cost.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_matching_edge_geometric_target_polynomial.py">typed target, original polynomial, normal and scalar-rate checks</a>. It passes exact symbolic nested-cup/prefix/primitive-collar identities, 4,485 generic ORIGINAL seven-factorial comparisons, eleven original Casimir polynomial matrices (6,453 entries), 529 four-jet comparisons before specialization and 251 actual divided-normal comparisons with the spectral derivative. Twelve positive scalar evaluations at 80 digits check the stated variational normalization and selected mode. These checks supplement the displayed finite and asymptotic proofs; none tests or asserts a surrounding coherent operator asymptotic.</p>
+<p>Independent geometry-agent proof review and fresh redirected audit: PASS. The review independently checked the nested-cup basepaths and full lower Borel preservation, the actual middle target and primitive half-twist cancellation, the generic finite polynomial, retained normal, positive scalar terms and endpoint-uniform logarithmic error. It also checked that the strict-quarter obstruction concerns the measured primitive rectangles. The fresh replay reproduced every recorded count. No scalar-to-operator asymptotic was included in that verdict.</p>
+<p>Root full analytical review: PASS. The review separately checked the typed nesting and collar trace, both finite Sears transformations and their original prefactor and termination, the generic operator identity and retained normal, the positive root products and uniform endpoint Riemann estimate, and the unique scalar saddle.</p>
+<p>Independent coherent-source review and fresh redirected audit: PASS. The full proof read checked the actual lower Borel basing and target, the half-twist cancellation, generic source normalization through both finite transforms, the completed spectral polynomial and true divided normal, and the scalar action and generic-jet scope. Its fresh replay reproduced all recorded counts. The note and focused audit are frozen.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_edge_geometric_target_polynomial.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-typed-bend-fixes-the-geometric-target">1. The typed bend fixes the geometric target</a><a href="#classification-in-the-certified-complete-geometry">2. Classification in the certified complete geometry</a><a href="#the-original-scalar-is-a-generic-polynomial-in-the-target-casimir">3. The original scalar is a generic polynomial in the target Casimir</a><a href="#exact-completed-operator-identity-with-every-normal-retained">4. Exact completed-operator identity, with every normal retained</a><a href="#positive-evaluation-at-the-actual-nonphysical-geometric-trace">5. Positive evaluation at the actual nonphysical geometric trace</a><a href="#the-remaining-analytic-question-is-narrower-but-still-real">6. The remaining analytic question is narrower, but still real</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

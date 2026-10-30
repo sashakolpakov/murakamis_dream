@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exact polynomial action away from a physical endpoint · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a><p><span class="badge">Exact generic continuant action on explicit rows</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_edge_polynomial_finite_propagation.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_matching_edge_polynomial_finite_propagation.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_matching_edge_polynomial_finite_propagation_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="exact-polynomial-action-away-from-a-physical-endpoint">Exact polynomial action away from a physical endpoint</h1>
+<p>30 October 2026. The original exceptional Casimir polynomial acts by its scalar value on a genuine forward or backward continuant in an explicit part of the physical block. The identity is finite and generic, so it retains the actual q normals. It does not say that the surrounding selected boundary state is such a continuant or is supported in that part of the block.</p>
+<h2 id="original-matrix-continuants-and-endpoint-residual">1. Original matrix, continuants and endpoint residual</h2>
+<p>Fix N, d=N-1 and a physical low degree 0&lt;=t&lt;=d. Let J_t(q) be the ACTUAL generic Casimir matrix of the <a href="actual_q_hahn_physical_generic_jet_bound.html">physical generic-jet theorem</a>, with diagonal D_u, upper entries A_u^+ and lower entries A_u^-. These entries are the original coproduct entries before root specialization; their generic upper and lower values are different.</p>
+<p>For an arbitrary spectral parameter z define</p>
+<pre><code>C_0(z)=1,
+C_u(z)=det(zI-J_[u](q))/product_(r=0)^(u-1) A_r^+,
+                                  1&lt;=u&lt;=t,               (1)</code></pre>
+<p>where J_[u] is the first u rows and columns. Equivalently these are the normalized forward recurrence with C_-1=0. They are polynomials in z with rational generic-q coefficients. Every A_r^+ is a root unit when 0&lt;=r&lt;t, so (1) is holomorphic near the actual root for every z, including z outside the physical spectrum.</p>
+<p>The recurrence gives EXACTLY</p>
+<pre><code>(J_t-zI)C(z)=r_t(z)e_t,
+r_t(z)=-det(zI-J_t)/product_(r=0)^(t-1) A_r^+.   (2)</code></pre>
+<p>The empty product has value one. Thus C(z) is an exact solution on every row except the final row. For an eigenvalue, its residual vanishes and this is the actual normalized eigenvector; at an arbitrary z it is an endpoint-residual vector, not an invented complex-color eigenvector of the finite matrix.</p>
+<p>The backward vector C^back(z), normalized to value one at u=t, is defined from the reversed ACTUAL generic matrix. It similarly satisfies</p>
+<pre><code>(J_t-zI)C^back(z)=r_0(z)e_0.                  (3)</code></pre>
+<p>No root-only conjugation symmetry is differentiated to obtain (3).</p>
+<h2 id="finite-propagation-for-the-original-exceptional-polynomial">2. Finite propagation for the original exceptional polynomial</h2>
+<p>For any scalar polynomial p of degree at most a, put</p>
+<pre><code>h_z(X)=(p(X)-p(z))/(X-z), deg h_z&lt;=a-1.</code></pre>
+<p>Polynomial division and (2) give the exact vector identity</p>
+<pre><code>p(J_t)C(z)-p(z)C(z)=r_t(z) h_z(J_t)e_t.        (4)</code></pre>
+<p>A tridiagonal matrix can move the support of a vector by at most one row in one multiplication. Consequently h_z(J_t)e_t is supported in rows u&gt;=t-a+1. Therefore</p>
+<pre><code>[p(J_t)C(z)]_u=p(z)C_u(z), 0&lt;=u&lt;=t-a.         (5)</code></pre>
+<p>The backward version is</p>
+<pre><code>[p(J_t)C^back(z)]_u=p(z)C^back_u(z), a&lt;=u&lt;=t.  (6)</code></pre>
+<p>For a=0 both equalities hold everywhere. A negative upper limit or an excessive lower limit denotes an empty window. These are exact finite identities, independent of any limit or positivity.</p>
+<p>In particular take the ORIGINAL degree-a polynomial p_a of <a href="actual_matching_edge_geometric_target_polynomial.html">the geometric target theorem</a>. For 0&lt;=a&lt;=floor(d/2), all of its displayed generic coefficients are root regular. Its actual completed exceptional operator is D_a^-1 p_a(J_t), with the same regular scalar D_a. Multiplying (4)–(6) by D_a^-1 therefore proves the same finite identities for that completed operator. They hold as generic-q germs before specialization, hence after EVERY fixed generic derivative, with all continuant and scalar derivatives retained. They neither discard the nilpotent term nor replace a q derivative by a spectral one. They also hold for a chosen holomorphic z(q).</p>
+<p>The high physical block has total degree T&gt;d. Use the already proved GENERIC adapter t=2d-T and u’=u-(T-d). Its matrix is exactly J_t(q), so (5),(6) apply to u’. No new high-degree convention or root-only reflection is introduced.</p>
+<p>The windows are generically sharp. If a&gt;=1 and t&gt;=a-1, the first possibly affected forward row is u=t-a+1. In (4) only the leading term of h_z can reach that row from e_t, giving</p>
+<pre><code>[p(J_t)C-p(z)C]_(t-a+1)
+   =r_t(z) lead(p) product_(r=t-a+1)^(t-1) A_r^+.
+                                                           (7)</code></pre>
+<p>It is nonzero whenever the three displayed factors are nonzero. The corresponding backward statement uses the lower entries. Thus one cannot generally extend (5) through the remaining rows by merely observing that z is a classical geometric trace.</p>
+<h2 id="exact-green-column-formulation">3. Exact Green-column formulation</h2>
+<p>When z is outside the actual finite spectrum, (2) also gives</p>
+<pre><code>(zI-J_t)^-1 e_t=-C(z)/r_t(z).                  (8)</code></pre>
+<p>Equations (4),(8) are an exact resolvent-column identity. It can be used in a functional-calculus or boundary-state representation without assigning an artificial noninteger color. For example, any row functional ell supported on 0&lt;=u&lt;=t-a satisfies</p>
+<pre><code>ell p_a(J_t)C(z)=p_a(z) ell C(z).               (9)</code></pre>
+<p>An actual representation of the surrounding state as such a vector, or a controlled integral of such vectors, remains additional input. An arbitrary row functional, dense mark or boundary tensor is not declared to have the support in (9). All physical bends, pivotal turns and the exposed mark remain the original ones.</p>
+<h2 id="macroscopic-windows-and-the-remaining-interface">4. Macroscopic windows and the remaining interface</h2>
+<p>In scaled low coordinates, a/N-&gt;xi, t/N-&gt;tau, the two safe regions are respectively</p>
+<pre><code>nu&lt;=tau-xi,               nu&gt;=xi.              (10)</code></pre>
+<p>At the folded row xi=1/2 and a strict physical degree tau&lt;1, their union leaves the central interval (tau-1/2,1/2). The existing selected-factor localization proves a physical packet outside the exceptional matching edge. It does not prove that the target environment equals (1), or that its output belongs to (10).</p>
+<p>Moreover (5),(6) are statements at ACTUAL integer physical rows. Evaluating them at complex geometric magnetic coordinates would require a proved continuation of these continuants and their boundary identity. The ordinary packet alone, whose channel stays real and discrete, does not supply that off-spectrum continuation.</p>
+<p>The exact identity consequently identifies a concrete sufficient interface for scalar evaluation, while preserving the unresolved environment, continuation and source-cycle questions. It is not a degree-O(N) functional-calculus approximation.</p>
+<p>Focused audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_matching_edge_polynomial_finite_propagation.py">actual generic Casimir propagation and sharp boundary defects</a>.</p>
+<p>Primary-agent full analytical review: PASS. The reader checked the forward/backward endpoint signs, generic root units, actual high adapter, first affected row, resolvent-column identity, and the precise missing environment and complex-row continuation assumptions.</p>
+<p>Independent full analytical review and fresh focused replay: PASS. A second reader checked the original upper/lower continuant normalization, polynomial division, sharp path factor and retained generic jets, and reproduced 104 continuants, 1212 safe-row four-jet identities, 260 nonzero first defects and 104 endpoint determinants, totaling 4848 retained jet coefficients. Neither review identifies an arbitrary boundary state with a continuant or infers a whole-source asymptotic.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_edge_polynomial_finite_propagation.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#original-matrix-continuants-and-endpoint-residual">1. Original matrix, continuants and endpoint residual</a><a href="#finite-propagation-for-the-original-exceptional-polynomial">2. Finite propagation for the original exceptional polynomial</a><a href="#exact-green-column-formulation">3. Exact Green-column formulation</a><a href="#macroscopic-windows-and-the-remaining-interface">4. Macroscopic windows and the remaining interface</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

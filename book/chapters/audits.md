@@ -73,6 +73,12 @@ The joint determinant audit checks the source polynomial before continuation, it
 
 The generic-normal audits compare the original generic columns and derivatives, including the exact large-partner collision tail and nonzero extra-pole residues. The right-angled obstruction audit checks reflection signs, polarization identities and exact two-facet examples. Its general conclusion rests on the separate proof of the literal Morse-prefix dictionary and convex incidence, not on extrapolating those examples.
 
+## The exceptional-period checks
+
+The current period argument has focused audits for the generic Casimir polynomial, its root location and positive endpoint convolution, the actual inverse-turn character relation, and the full resolvent with its normal poles. The strict-prefix and Green-action audits check original matrix entries and selected logarithms. The rectangle audit verifies the actual primitive words for all three half-twist cases. Each note links its script and recorded output.
+
+The endpoint resolvent proof uses a unitary congruence and exact Schur denominator; it does not claim a Hermitian similarity or a polynomial bound for individual spectral projectors. Numerical rate samples supplement the written asymptotic proofs. None of these local or endpoint checks establishes a contributing contour or the general source asymptotic.
+
 ## Rebuilding this guide and its figures
 
 The guide is generated from `book/chapters/` and the published notes. Its static HTML uses native MathML and local CSS and JavaScript; reading it requires no account or external math service.

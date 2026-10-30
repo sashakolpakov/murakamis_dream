@@ -1,5 +1,42 @@
 # General equality: proved scope and the remaining original-source problem
 
+## Current exceptional-period reduction
+
+The actual exceptional matching edge is now exactly the generic operator
+D_a^-1 p_a(Omega), with all original normals retained. Its finite scalar
+polynomial has simple roots above two and a canonical selected action.
+The [general generating relation](actual_matching_edge_polynomial_geometric_action.md)
+recovers the actual local four-parabolic character equation, with its
+marking and scalar anchor. This does not yet identify a contributing
+global knot period.
+
+The [actual primitive-word bound](actual_matching_circle_rectangle_bound.md)
+proves c<=1 for every circle in the complete matching-polyhedron
+certificate, including retained half twists. Thus the actual target
+2-4/c^2 is at most -2. Strict c<1 is off spectrum; c=1 remains a
+parabolic target and is outside the current strict off-spectrum estimate.
+
+The [original operator contour](actual_matching_edge_continuant_operator_period.md)
+retains forward and backward continuants and the exact characteristic
+denominator. The [cross-central Green theorem](actual_matching_edge_cross_central_green_action.md)
+supplies their actual selected action and genuine generic-jet bounds
+for strict real physical rows on its stated common prefix domain.
+Neither the scalar polynomial nor that Green integrand can simply
+replace the whole coherent contraction.
+
+The [positive endpoint convolution](actual_matching_edge_polynomial_endpoint_control.md)
+and [full endpoint resolvent](actual_casimir_endpoint_resolvent_bound.md)
+provide polynomial control near the closing point +2, with all fixed
+generic normals. This is distinct from the possible geometric target
+-2. The connecting contour, a nonzero selected contribution, and the
+whole mixed-color source gap remain substantial missing theorems.
+
+The Fourier phase is now an exact integer quadratic expression, and
+its selected ordinary action has a global holomorphic Legendre chart.
+These preserve the original winding data but do not supply a new
+complex finite coefficient or a global source cycle. The general
+long-twist conjecture remains OPEN.
+
 30 October 2026. The active objective is the MOST GENERAL original
 quantum equality, with the right side proved to be the actual hyperbolic
 volume. The previous long-pretzel result is an established application,

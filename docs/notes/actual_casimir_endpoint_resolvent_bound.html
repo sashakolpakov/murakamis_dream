@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The full original Casimir resolvent is polynomial at the spectral endpoint · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a><p><span class="badge">Full physical endpoint resolvent and genuine jets</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_casimir_endpoint_resolvent_bound.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_casimir_endpoint_resolvent_bound.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_casimir_endpoint_resolvent_bound_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="the-full-original-casimir-resolvent-is-polynomial-at-the-spectral-endpoint">The full original Casimir resolvent is polynomial at the spectral endpoint</h1>
+<p>30 October 2026. The original physical Casimir has a uniformly polynomial resolvent at z=2, including all degrees, both level parities and its Jordan blocks. Fixed genuine generic-q and spectral derivatives have polynomial cost on an explicit shrinking neighborhood. This addresses a finite endpoint of the exact operator contour; it does not prove dominance of a geometric saddle or control an entire contour segment merely from its endpoint.</p>
+<h2 id="uniform-statement">1. Uniform statement</h2>
+<p>Put q=exp(pi i/N), d=N-1, N&gt;=3, and use the ACTUAL generic physical matrix J_t(zeta) from the <a href="actual_q_hahn_physical_generic_jet_bound.html">original jet theorem</a>. For every 0&lt;=t&lt;=d there is an absolute constant C such that</p>
+<pre><code>||(2I-J_t(q))^-1||op&lt;=C N^17.                  (1)</code></pre>
+<p>The exponent is a conservative uniform bound, not an optimal rate. The same bound holds for every high-degree block, by the exact generic high-degree adapter, and for their full orthogonal direct sum.</p>
+<p>For sufficiently small absolute c&gt;0, on the bidisk</p>
+<pre><code>zeta=q exp(h), |h|&lt;=cN^-19, |z-2|&lt;=cN^-18,</code></pre>
+<p>the resolvent exists and has norm at most 2C N^17. Consequently its mixed Taylor coefficients satisfy</p>
+<pre><code>||[h^r(z-2)^s](zI-J_t(q exp(h)))^-1||op
+   &lt;=C_(r,s) N^(17+19r+18s).                  (2)</code></pre>
+<p>These are the original matrix normals, with distinct generic upper and lower entries. No semisimple projection or root-only reflection is differentiated in (2).</p>
+<h2 id="the-exact-ground-state-congruence">2. The exact ground-state congruence</h2>
+<p>Write theta=pi/N, lambda_0=q+q^-1, delta=2-lambda_0=4sin^2(theta/2). The original normalized channel-zero vector is</p>
+<pre><code>f_r=(-q^-1)^r.</code></pre>
+<p>The root offdiagonal and its positive magnitude are</p>
+<pre><code>A_r=-a_r q^(2r+1-t),
+a_r=4sin((t-r)theta)sin((r+1)theta)&gt;0, 0&lt;=r&lt;t.</code></pre>
+<p>The exact row identity proved in the <a href="actual_casimir_off_spectrum_prefix_action.html">off-spectrum prefix theorem</a> is D_r=lambda_0+q^-1 A_r+q A_(r-1), with A_(-1)=0. For a leading m-by-m prefix, m&lt;=t, let F=diag(f_0,…,f_(m-1)) and let L_m be the REAL weighted Dirichlet matrix with diagonal a_(r-1)+a_r and offdiagonals -a_r, retaining the right boundary conductance a_(m-1). Then exactly</p>
+<pre><code>F(J_[m]-lambda_0 I)F=-q^-t L_m,
+F(J_[m]-2I)F=-q^-t(L_m+delta V_m),
+V_m=diag(q^(t-2r)).                            (3)</code></pre>
+<p>This is a unitary congruence, not a unitary similarity. Its left and right factors nevertheless preserve singular values and determinant magnitudes. Thus it can be used for inverse norms without claiming that J is Hermitian.</p>
+<p>The positive matrix L_m has the elementary exact formulas</p>
+<pre><code>det L_m=product_(r=0)^(m-1) a_r,
+tr L_m^-1=sum_(r=0)^(m-1)(r+1)/a_r.            (4)</code></pre>
+<p>Indeed L_m=B^T diag(a_r)B, where (Bv)<em>r=v_r-v</em>(r+1) and v_m=0. The inverse of B has ones above its diagonal; (4) follows directly.</p>
+<h2 id="both-halves-are-controlled-even-when-t-approaches-n-1">3. Both halves are controlled, even when t approaches N-1</h2>
+<p>Suppose 1&lt;=m&lt;=floor(t/2)+1 and m&lt;=t. Every argument (t-2r)theta in V_m lies in [0,t theta], and t theta&lt;=pi-theta. Rotation by exp(-it theta/2) therefore gives</p>
+<pre><code>Re[exp(-it theta/2)(L_m+delta V_m)]
+   &gt;=cos(t theta/2)(L_m+delta I).</code></pre>
+<p>Since cos(t theta/2)&gt;=sin(theta/2)&gt;=1/N and delta&gt;=4/N^2,</p>
+<pre><code>||(J_[m]-2I)^-1||op&lt;=N^3/4.                  (5)</code></pre>
+<p>This remains uniform at the folded physical endpoint t=N-1. For these same half-prefixes one has</p>
+<pre><code>a_r&gt;=4(r+1)^2/N^2.                            (6)</code></pre>
+<p>For r=0 use sin(t theta)&gt;=sin theta&gt;=2/N. For r&gt;=1, r&lt;=t/2 and t&lt;=N-1 put t-r in [r,N-r-1]. Both sine factors in a_r are at least 2r/N, giving a_r&gt;=16r<sup>2/N</sup>2 and hence (6). Equations (4),(6) show</p>
+<pre><code>delta tr L_m^-1&lt;= (pi^2/4)(1+log N).</code></pre>
+<p>Expansion in the diagonal perturbation gives an especially simple determinant bound: all principal minors of L_m are positive, and every diagonal entry of V_m has modulus one. Therefore</p>
+<pre><code>|det(L_m+delta V_m)|&lt;=det(L_m+delta I)
+   &lt;=det L_m exp(delta tr L_m^-1)
+   &lt;=C N^3 product_(r=0)^(m-1) a_r.            (7)</code></pre>
+<p>This is an upper bound for the ACTUAL determinant; no estimate on individual nonorthogonal spectral projectors was used. The trailing half at the root is the reflected conjugate of a leading half, so (5),(7) apply to it too. Only these root norm statements use reflection.</p>
+<h2 id="the-exact-full-determinant-prevents-a-small-schur-denominator">4. The exact full determinant prevents a small Schur denominator</h2>
+<p>The actual characteristic polynomial gives</p>
+<pre><code>chi_t(2)=det(2I-J_t(q))
+   =product_(r=0)^t [2sin((r+1/2)theta)]^2&gt;0.   (8)</code></pre>
+<p>Let s_t=product_(r=1)^t 2sin(r theta). Then</p>
+<pre><code>product_(r=0)^(t-1)a_r=s_t^2,
+chi_t(2)/s_t^2&gt;=4/N^2.                        (9)</code></pre>
+<p>Here is an elementary uniform proof of the second inequality. The positive sequence</p>
+<pre><code>H_t=product_(r=0)^t 2sin((r+1/2)theta)/s_t</code></pre>
+<p>has successive ratios sin((t+1/2)theta)/sin(t theta). They are first at least one and then at most one, so its minimum occurs at an endpoint. The cyclotomic products give H_(N-1)=2/N, while H_0=2sin(theta/2)&gt;=2/N. Squaring proves (9).</p>
+<p>For t&gt;=1 split J_t-2I between its two middle rows. Its diagonal blocks B,C have sizes floor((t+1)/2), ceil((t+1)/2), so (5),(7) apply. Let A be their single connecting root offdiagonal and a=|A|&lt;=4. In (7) the connecting conductance occurs in BOTH Dirichlet halves. Consequently</p>
+<pre><code>|det B det C|&lt;=C N^6 a s_t^2.</code></pre>
+<p>The two-by-two bridge correction has determinant</p>
+<pre><code>Delta=1-A^2(B^-1)_(last,last)(C^-1)_(first,first)
+     =det(J_t-2I)/(det B det C).</code></pre>
+<p>Using (8),(9) and a&lt;=4 yields</p>
+<pre><code>|Delta|&gt;=c N^-8.                              (10)</code></pre>
+<p>Every entry of its adjugate is bounded by C N^3 by (5). Its inverse therefore has norm at most C N^11. The rank-two resolvent formula, with two diagonal-block inverse factors of norm at most C N^3, gives C N^(3+3+11)=C N^17 for the whole inverse. This proves (1). The case t=0 is the scalar inverse delta<sup>-1&lt;=N</sup>2/4.</p>
+<p>This argument controls the actual full Jordan resolvent; it does not bound it by a sum of exponentially large individual projector norms.</p>
+<h2 id="the-original-generic-normals-and-the-contour-qualification">5. The original generic normals and the contour qualification</h2>
+<p>Every exponent in the displayed original generic matrix entries is O(N), and the bandwidth is fixed. On |h|&lt;=c/N the matrix perturbation has operator norm at most C N|h|, uniformly in physical t. Combining this with (1), the two perturbations h and z-2 on the stated bidisk have relative inverse norm less than 1/2 for sufficiently small c. The Neumann resolvent formula proves the uniform bidisk bound; two-variable Cauchy gives (2). This argument starts from the genuine generic matrix and so retains all moving-node and moving-projector contributions automatically.</p>
+<p>The endpoint matters because the largest root Casimir node tends to 2, while the source-polynomial zeros approach 2 from above. A fixed contour enclosing all nodes cannot remain a fixed compact of the scalar limiting slit plane. Equations (1),(2) provide uniform finite control at 2 and on the displayed shrinking neighborhood. They do not alone estimate the path connecting that neighborhood to a fixed contour, establish a steepest-descent deformation, or show that the geometric contribution is nonzero.</p>
+<p>Focused audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_casimir_endpoint_resolvent_bound.py">actual ground-state congruence, halves and full endpoint resolvent</a>.</p>
+<p>Primary and independent analytical reviews: PASS. The independent read checked the unitary congruence rather than a claimed similarity, the two half-block bounds uniformly through t=N-1, the duplicated bridge conductance, exact characteristic-product lower bound and full Schur denominator, and the genuine generic perturbation. A fresh independent replay passed 187 original full blocks, 5,030 congruence entries, 251 half-inverse, positive-determinant and trace checks, 187 characteristic products, and 170 exact Schur determinants. The numerical full norms are diagnostics; the stated uniform exponent comes from the proof. No contour deformation or geometric contribution is included in these reviews.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_casimir_endpoint_resolvent_bound.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#uniform-statement">1. Uniform statement</a><a href="#the-exact-ground-state-congruence">2. The exact ground-state congruence</a><a href="#both-halves-are-controlled-even-when-t-approaches-n-1">3. Both halves are controlled, even when t approaches N-1</a><a href="#the-exact-full-determinant-prevents-a-small-schur-denominator">4. The exact full determinant prevents a small Schur denominator</a><a href="#the-original-generic-normals-and-the-contour-qualification">5. The original generic normals and the contour qualification</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

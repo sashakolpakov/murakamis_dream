@@ -1,5 +1,14 @@
 # Research routes and preserved ideas
 
+The new exceptional-period route retains the exact generic Casimir polynomial,
+its canonical scalar action and general local character relation, the actual
+continuant resolvent period, strict-support Green estimates, and separate
+endpoint controls. Finite-propagation windows and the universal marked
+rectangle bound are retained with their limitations. The coherent Fourier
+phase and global ordinary Legendre chart remain complementary tools.
+These results do not replace the cube, positive sewing or other earlier
+routes, and do not yet prove the general contributing source period.
+
 29 October 2026. This is a navigation and scope record, not a new proof
 or a replacement for the underlying notes. No route below is abandoned
 because another has advanced. “Proved” refers to the repository's
