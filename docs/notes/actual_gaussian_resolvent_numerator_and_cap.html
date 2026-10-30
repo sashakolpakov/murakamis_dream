@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The original Gaussian resolvent has a positive numerator and a controlled closing cap · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a><p><span class="badge">Exact full numerator; controlled root Gaussian closing cap</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_gaussian_resolvent_numerator_and_cap.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_gaussian_resolvent_numerator_and_cap.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_gaussian_resolvent_numerator_and_cap_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="the-original-gaussian-resolvent-has-a-positive-numerator-and-a-controlled-closing-cap">The original Gaussian resolvent has a positive numerator and a controlled closing cap</h1>
+<p>31 October 2026. Independently reviewed. The exact original numerator has a positive path expansion and a Fejer all-color formula, while the Gaussian resolvent has a subexponential closing cap at +2. No global contour selection, source asymptotic or generic-q continuation of the Gaussian is asserted.</p>
+<h2 id="inputs-already-proved-in-the-repository">1. Inputs already proved in the repository</h2>
+<p><a href="actual_matching_edge_continuant_operator_period.html">actual matching edge continuant operator period</a> gives the actual generic tridiagonal blocks, both continuants, all Jordan poles and the true physical high-total adapter. <a href="actual_casimir_off_spectrum_prefix_action.html">actual casimir off spectrum prefix action</a> and <a href="actual_matching_edge_cross_central_green_action.html">actual matching edge cross central green action</a> give selected logarithmic actions only on strict physical prefix/row compacts. They do not cover arbitrary complex magnetic heads, midpoint prefixes or a global contracted exterior. The latter theorem is explicitly an integrand theorem.</p>
+<p><a href="actual_casimir_endpoint_resolvent_bound.html">actual casimir endpoint resolvent bound</a> bounds EVERY original block by CN^17 at +2 and on |sigma-2|&lt;=cN^-18, including genuine resolvent normals. The stronger <a href="actual_casimir_closing_region_bound.html">actual casimir closing region bound</a> gives, for fixed gamma&gt;0, throughout the angular cone</p>
+<pre><code>sigma=2+r exp(i phi), |phi|&lt;=pi-gamma,
+||(sigma-Omega)^-1|| &lt;= CN^3 exp[CN f(r)+C log^2 N],
+f(r)=sqrt(r) log(2+1/r).</code></pre>
+<p>It includes every physical degree and all fixed genuine RESOLVENT jets. Thus the +2 joining region was already controlled; it must not be reported as an unresolved endpoint estimate.</p>
+<p>The new exact all-integer Gaussian uses the full Hermite data:</p>
+<pre><code>R^n=q^(n d^2/4) f_n(Omega),
+f_n(sigma)=exp[n N K(sigma)/(4pi i)],
+K(sigma)=arccosh(-sigma/2)^2,
+chi_N(sigma)=2T_N(sigma/2)+2,
+V_N(sigma)=chi_N(sigma)(sigma-Omega)^-1.</code></pre>
+<p>K is analytic on C minus [2,infinity), removable at -2. This equality is at the original root; it does not identify an arbitrary off-root R germ. The homogeneous source applies coefficient extraction to the ordered product of these local functions, retaining all original targets and the unit q^(n d^2/4). No additional N or marked scalar is introduced by this functional calculus.</p>
+<h2 id="a-direct-gaussian-consequence-for-the-entire-closing-cap">2. A direct Gaussian consequence for the entire closing cap</h2>
+<p>On either side of the K slit near +2,</p>
+<pre><code>K(sigma)=-pi^2+O(sqrt(|sigma-2|)),
+|f_n(sigma)|&lt;=exp[C |n| N sqrt(|sigma-2|)].</code></pre>
+<p>The estimate is uniform on either slit side, including its boundary values. Therefore the old whole-cone resolvent bound gives</p>
+<pre><code>||f_n(sigma)(sigma-Omega)^-1||
+  &lt;=CN^3 exp[CN(f(r)+|n|sqrt(r))+C log^2 N].       (1)</code></pre>
+<p>For every FIXED integer n this has vanishing exponential rate as r-&gt;0. It also holds with fixed genuine q derivatives on the resolvent ALONE, using the old resolvent product rule. Those are not advertised as genuine derivatives of R^n.</p>
+<p>There is an actual joining path in the Gaussian slit. Run inward on the two rays sigma=2-r exp(+/-i gamma), down to radius rho_N=min(cN^-18,r_N/2) when the outer radius is r_N, and join them by the short LEFT arc of that circle. The rays are covered by (1). The left arc is in the old polynomial endpoint disk and lies to the RIGHT of the largest spectral node, whose distance from 2 is comparable to N^-2. It never crosses the K cut. On that arc |f_n|=exp[O(|n|N sqrt(rho_N))] and the full resolvent is polynomial. The cap therefore has rate at most C[f(r)+|n|sqrt(r)], and any r_N-&gt;0 yields exp[o(N)] for fixed n. This establishes only the closing portion of a contour, with no estimate for its surrounding source contraction.</p>
+<h2 id="exact-positivity-of-the-full-homogeneous-resolvent-numerator">3. Exact positivity of the FULL homogeneous resolvent numerator</h2>
+<p>Use distinct names B,C for the two middle face weights. In the proved source polynomial representation, Omega=-T acts on z^j, 0&lt;=j&lt;N, by</p>
+<pre><code>Omega z^j=c_j z^j-b_j(x+y)z^(j-1)-e_j xy z^(j-2),
+c_j=2cos((2j+1)pi/N),
+b_j=4sin^2(j pi/N),
+e_j=4sin(j pi/N)sin((j-1)pi/N).</code></pre>
+<p>Here b_0=e_0=e_1=0 and all allowed lowering weights are nonnegative. These are the original endpoint factors, not cyclic replacements.</p>
+<p>Expand the resolvent by ALL finite downward paths from j to i, using steps one or two. A path with k steps visits k+1 distinct row indices. Multiplication by chi_N removes precisely those k+1 factors, with their multiplicities even when eigenvalues coincide. Its numerator is</p>
+<pre><code>(-1)^k (positive step weight)
+            product_(unvisited r)(sigma-c_r).</code></pre>
+<p>At sigma=-2-u, u&gt;=0, the product has sign (-1)^(d-k). Consequently</p>
+<pre><code>P_N(u;x,B,C,y):=(-1)^d H_(V_N(-2-u))(x,B,C,y)</code></pre>
+<p>is a polynomial with NONNEGATIVE coefficients in all FIVE variables u,x,B,C,y. Its face degree remains d. The same original homogeneous adapter is used, including C^(d-j) for the initial degree j. For every complex sigma,</p>
+<pre><code>|H_(V_N(sigma))|_coef &lt;= P_N(|sigma+2|;x,B,C,y).    (2)</code></pre>
+<p>The inequality is termwise in face coefficients, since |sigma-c_r|&lt;=|sigma+2|+2+c_r. It controls the entire polynomial numerator, including its independent semisimple data; no interpolation from only the complete-channel values was used. Cauchy on a fixed spectral disk also controls spectral derivatives by the same positive regularization with an enlarged radius.</p>
+<p>The spectral total-derivative identity supplied independently by cluster is compatible with this statement. Its paired data involve BOTH V(c) and V’(c); the latter cannot be recovered by differentiating a root-only complete-channel simplification.</p>
+<p>There is an exact Fejer normalization of the endpoint coupon. With T=-Omega, define F_N(X)=(T_N(X)-1)/(X-1), using the polynomial quotient. Then</p>
+<pre><code>(-1)^d V_N(-2)=F_N(T/2)
+  =N+2 sum_(j=1)^(N-1)(N-j) T_j(T/2)
+  =L_N+2 sum_(h=1)^(N-1)L_h.                       (2a)</code></pre>
+<p>The first equality follows by dividing chi_N(sigma)-chi_N(-2) by sigma+2 and using T_N(-X)=(-1)^N T_N(X). The other two follow from the finite cosine telescope. This is a coherent identity in the actual Casimir quotient, not positivity of the separate L_h coupons. It makes the extra semisimple endpoint data completely explicit. No existing Fejer-named note was found in the repository search.</p>
+<p>More generally the divided Chebyshev identity gives EXACTLY</p>
+<pre><code>(-1)^d V_N(-2cosh w)
+  =L_N+2 sum_(h=1)^(N-1) cosh((N-h)w)L_h.           (2b)</code></pre>
+<p>For example, subtract 2T_N(t/2) from 2T_N(s/2), divide by s-t, and expand in U_(h-1)(t/2); then set s=-2cosh w and t=Omega=-T. This is a polynomial identity in s,t, so it includes coincident nodes and all Hermite derivatives. The homogeneous coupon map and the whole original marked contraction preserve it linearly.</p>
+<p>For a set E of spectral ports, the contracted product of these signed numerators is consequently the exact finite sum over 1&lt;=h_e&lt;=N of the ORIGINAL external-color source, with weights 1 at h_e=N and 2cosh((N-h_e)w_e) at h_e&lt;N. Every retained crossing on a complementary port remains in its actual order. There is no free interpolation or new mark. At a V-only selected port the coupon is literally L_h, with no newly inserted half crossing. If an original R^epsilon is retained separately at that same port, it multiplies BOTH sides of (2b) in its original order. Thus the shared numerator-capacity problem is concretely an exponential generating transform of ALL original colors. The existing small-deficit corridor controls only h_e close to N; neither (2b) nor path positivity supplies the missing phase-sensitive far-color bound.</p>
+<h2 id="parity-and-an-explicit-limitation-of-a-numerator-norm-argument">4. Parity and an explicit limitation of a numerator norm argument</h2>
+<p>For odd N, -2 is a simple node and</p>
+<pre><code>V_N(-2)=N^2 P_simple=N L_(N,simple).</code></pre>
+<p>For even N=2m, the exact scalar polynomial identity is</p>
+<pre><code>-V_N(-2)=(2-Omega) U_(m-1)(Omega/2)^2.              (3)</code></pre>
+<p>Indeed chi_N(sigma)-4=(sigma<sup>2-4)U_(m-1)(sigma/2)</sup>2 and V_N(-2)=(chi_N(Omega)-chi_N(-2))/(Omega+2), interpreted as its polynomial quotient. Formula (3) retains semisimple contributions.</p>
+<p>The unrestricted positive-weight norm in (2) does NOT always have the complete folded rate. The B^d coefficient is a length-zero path, hence</p>
+<pre><code>[B^d]P_N(u)=|chi_N(-2-u)|/(2+u+c_d).               (4)</code></pre>
+<p>At even N and u=0 this tends to one. Thus at x=y=C=1, B=exp(8), liminf N^-1 log P_N(0)&gt;=8. In contrast, positivity and degree a of the original folded determinant give</p>
+<pre><code>F(1,B,1)+F(1,1,1) &lt;= (1/2)log B+2F(1,1,1)
+                     &lt;=4+pi&lt;8.</code></pre>
+<p>The last elementary bound uses F(1,1,1)=3[Lambda(pi/6)+Lambda(pi/3)]/pi&lt;=pi/2, obtained by the absolute Fourier bound |Lambda(theta)|&lt;=pi^2/12. This is a strictly positive quartet, not a zero-face pathology.</p>
+<p>At odd N, the coefficient (4) vanishes exactly at u=0. But for any fixed k&gt;0 and u_N=N^-k its exponential rate is zero: writing eta_N=arccosh(1+u_N/2), its numerator is 4sinh^2(N eta_N/2), while eta_N~sqrt(u_N). Therefore the same lower rate 8 reappears under polynomially small regularization. The relevant limits do not commute. No coefficientwise domination by bare P_N(0) is asserted.</p>
+<p>This is only a LOCAL arbitrary-positive-radius norm limitation. It is not a counterexample to the original shared marked coefficient, nor to a rate statement on a specially certified packing radius. The large diagonal term has a source-specific face degree and can be constrained by the remaining original graph. The phase-blind Hermite obstruction in <a href="actual_direct_long_power_source.html">actual direct long power source</a> is a separate, graph-wide result.</p>
+<h2 id="the-gaussian-does-not-automatically-damp-a-whole-enclosing-contour">5. The Gaussian does not automatically damp a whole enclosing contour</h2>
+<p>On the spectral cover put sigma=-2cosh w, w=s+it, s&gt;0, |t|&lt;pi. Then</p>
+<pre><code>K=squared w,
+|f_n|=exp[n N s t/(2pi)],
+chi_N(-2cosh w)=2[(-1)^N cosh(Nw)+1].</code></pre>
+<p>On a fixed compact with s&gt;0,</p>
+<pre><code>N^-1 log |f_n/chi_N| -&gt; n s t/(2pi)-s.            (5)</code></pre>
+<p>Thus one side is damped and the other grows. On the growing side, a fixed spectral ellipse with |t|&gt;2pi/|n| gives positive scalar quotient rate, increasing with |n|. The exact matrix numerator can change that rate, but the mere largeness of a fixed twist cannot justify a global decrease. A complete ellipse also meets the K cut near +2; deleting that point and using the proved cap does not change this bulk sign issue.</p>
+<p>In the half-plane Re w&gt;0 the exact denominator has the convergent expansion</p>
+<pre><code>epsilon=(-1)^N,
+1/chi_N=epsilon exp(-Nw)/(1+epsilon exp(-Nw))^2
+        =sum_(m&gt;=1) (-1)^(m-1) epsilon^m m exp(-mNw). (6)</code></pre>
+<p>The individual Gaussian-charge phase is n w^2/(4pi i)-m w, before adding the actual V numerator phase and all face coefficient actions. Its stationary point without that numerator is w=2pi i m/n. There is no justification for discarding every m except the smallest. This agrees with the independently derived nonzero midpoint charges in the exact full-Hermite Fourier formula.</p>
+<h2 id="a-precise-remaining-input">6. A precise remaining input</h2>
+<p>A sufficient next theorem would control the ORIGINAL marked, shared-face resolvent numerator after sewing, uniformly on a specified spectral cycle and on the needed complex face torus. It must include the full V (or V and V’), not just positive complete samples, and prove:</p>
+<ol type="1">
+<li>a local analytic relative packet at the selected near-parabolic stationary point, including its original coefficient contour;</li>
+<li>a strict global real-action bound for the complement of that packet on a homologous product cycle, preserving every spectral pole and the endpoint/Fourier currents;</li>
+<li>control of every surviving nonzero charge in (6), or its equivalent unsplit resolvent period, with the actual neighboring Casimirs kept in their original order.</li>
+</ol>
+<p>The torsor theorem solves the classical local transport and normalizes the Gaussian Hamiltonian. The existing Green estimates supply selected integrand phases on strict physical charts, and (1) completes the +2 cap for this root Gaussian. Neither supplies the missing global source-specific amplitude, cycle comparison or complementary gap. The exact positive path theorem (2) is a concrete input, but (4) explains why replacing its shared coefficient by an unrestricted local norm would not complete the argument.</p>
+<h2 id="validation-and-reviewed-scope">Validation and reviewed scope</h2>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_gaussian_resolvent_numerator_and_cap.py">focused original-source audit</a> and its <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_gaussian_resolvent_numerator_and_cap_results.json">results</a> record 77 symbolic identities, 3,100 independently built original coproduct/physical-grid entries (including 1,000 wrong-unwrapped-total zeros), and 4,039 nonnegative path/complex majorant checks. They do not numerically establish any asymptotic or contour claim.</p>
+<p>Primary full analytical and audit-code review: PASS. Independent full analytical/code review and fresh redirected replay: PASS. The reviews checked the existing all-block endpoint estimates, Gaussian joining cap, full multiplicities in the path expansion, Fejer and parity identities, strictly positive-quartet rate comparison, source target normalization and charge signs. The joining radius was clarified to remain inside both the endpoint disk and an arbitrarily shrinking outer cap. The remaining bulk/shared-source requirements in Section 6 are not proved.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_gaussian_resolvent_numerator_and_cap.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#inputs-already-proved-in-the-repository">1. Inputs already proved in the repository</a><a href="#a-direct-gaussian-consequence-for-the-entire-closing-cap">2. A direct Gaussian consequence for the entire closing cap</a><a href="#exact-positivity-of-the-full-homogeneous-resolvent-numerator">3. Exact positivity of the FULL homogeneous resolvent numerator</a><a href="#parity-and-an-explicit-limitation-of-a-numerator-norm-argument">4. Parity and an explicit limitation of a numerator norm argument</a><a href="#the-gaussian-does-not-automatically-damp-a-whole-enclosing-contour">5. The Gaussian does not automatically damp a whole enclosing contour</a><a href="#a-precise-remaining-input">6. A precise remaining input</a><a href="#validation-and-reviewed-scope">Validation and reviewed scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An exact spectral total derivative for the original root source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Fourier and energy</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a> · <a href="../library.html#fourier">Fourier, weighted Cauchy, and energy</a><p><span class="badge">Exact full-Hermite spectral derivative; global estimate open</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_spectral_total_derivative_source.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_spectral_total_derivative_source.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_spectral_total_derivative_source_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="an-exact-spectral-total-derivative-for-the-original-root-source">An exact spectral total derivative for the original root source</h1>
+<p>Independently reviewed, 31 October 2026. This is an exact fixed-root identity for the original pair Casimir, retaining its simple and repeated spectral nodes. No contour deformation or uniform exponential estimate is asserted.</p>
+<p>Put N&gt;=3,d=N-1,q=exp(pi i/N). Let chi(z)=2T_N(z/2)+2, and let Omega be the ACTUAL pair Casimir from the <a href="actual_homogeneous_casimir_face_source.html">original source theorem</a>. Define its polynomial resolvent numerator</p>
+<pre><code>V(z)=chi(z)(z-Omega)^(-1).</code></pre>
+<p>This is the unique degree-(N-1) matrix polynomial supplied by polynomial division and chi(Omega)=0. It is not the determinant adjugate of the full N^2-dimensional matrix. At a paired c=2cos(phi), its resolvent is</p>
+<pre><code>(z-Omega)^(-1)=P/(z-c)+Q/(z-c)^2+regular.</code></pre>
+<p>Write h(z)=chi(z)/(z-c)^2 locally. The Chebyshev ODE gives</p>
+<pre><code>h(c)=N^2/(4-c^2), h&#39;(c)/h(c)=c/(4-c^2).</code></pre>
+<p>Consequently Q=V(c)/h(c) and P=V’(c)/h(c)-h’(c)V(c)/h(c)^2. With Qhat(z)=(4-z<sup>2)V(z)/N</sup>2 this is</p>
+<pre><code>Q=Qhat(c), P=Qhat&#39;(c)+c Qhat(c)/(4-c^2).</code></pre>
+<p>For any function f holomorphic at the spectral nodes, therefore,</p>
+<pre><code>f(c)P+f&#39;(c)Q
+  =[(4-c^2)(fV)&#39;(c)-c f(c)V(c)]/N^2
+  =-d_phi[2sin(phi) f(2cos(phi))V(2cos(phi))/N^2].    (1)</code></pre>
+<p>When N is odd, the simple node is c=-2, chi’(-2)=N^2, and the right side of (1) at phi=pi is 2f(-2)P_*. Thus the original simple term has exactly one half of that derivative. Each paired node occurs twice in the full odd-angle grid and the derivatives are equal there. The exact original operator is accordingly</p>
+<pre><code>f(Omega)=-1/2 sum_(k=0)^(N-1) B_f&#39;(phi_k),
+B_f(phi)=2sin(phi) f(2cos(phi))V(2cos(phi))/N^2,
+phi_k=(2k+1)pi/N.                                   (2)</code></pre>
+<p>No cyclic physical head is introduced: the cyclic variable in (2) is the spectral parameter, with the original projector multiplicities.</p>
+<p>For R^n use its <a href="actual_direct_long_power_source.html">exact full-Hermite Gaussian</a></p>
+<pre><code>f(2cos(phi))=q^(n d^2/4)
+   exp[-n(phi-pi)^2/(2hbar)], hbar=2pi i/N,
+0&lt;=phi&lt;=2pi.</code></pre>
+<p>On this interval B_f has equal zero endpoint values and equal first derivatives. Its second derivatives can differ at the endpoints, reflecting the K-cut at z=2. Thus its periodic extension is C^1, but endpoint currents must be retained in further integration by parts. In particular the zero Fourier integral of -B_f’ is exactly zero.</p>
+<p>With Fourier convention hat B(j)=(2pi)<sup>(-1)int_0</sup>(2pi) B(phi)e^(-ijphi)dphi, the finite midpoint formula gives the convergent fixed-N identity</p>
+<pre><code>f(Omega)=-(iN^2/2)sum_(ell in Z) ell (-1)^ell hat B(Nell). (3)</code></pre>
+<p>The ell=0 term is zero. For each fixed N,n the sum is absolutely convergent: periodic B is C^1 with piecewise smooth higher derivatives, so hat B(j)=O(j^-3). Constants here may depend exponentially on N; this observation gives no uniform global bound. Formula (3) is an alternative exact source period, closely related to the existing <a href="actual_coherent_filling_gaussian_chirp.html">Fourier-Hermite Gaussian formulas</a>. It does not erase their endpoint currents or determine which nonzero charge contributes after sewing.</p>
+<h2 id="why-complete-channel-samples-do-not-control-the-derivative">Why complete-channel samples do not control the derivative</h2>
+<p>At a paired node, L_N(c)=0 and L_N’(c)=(-1)<sup>(N-1)N/(2sin</sup>2(phi)). Hence its complete sector equals</p>
+<pre><code>L_N&#39;(c)Q=(-1)^(N-1)2V(c)/N.</code></pre>
+<p>The complete positive packet therefore controls V(c), whereas V’(c) also carries the independent semisimple projector P. The simplest illustration is a diagonal coefficient on the face boundary x=y=0: Omega is diagonal there, so at a paired eigenvalue c its entry V(z)=chi(z)/(z-c) vanishes at z=c, but V’(c)=chi’’(c)/2 is nonzero. At even N every spectral node is paired, so all corresponding complete diagonal samples vanish while the semisimple derivatives reconstruct the identity. This example concerns the ACTUAL local polynomial specialization, not a freely chosen off-grid interpolation.</p>
+<p>Thus the proved exponential interpolation of complete packet values cannot simply be differentiated to estimate (2) or (3). A bound on the original polynomial resolvent numerator between nodes, including its semisimple derivative and the retained endpoint charges, is an additional input. No claim that such a bound is impossible is made.</p>
+<h2 id="exact-link-to-the-retained-physical-colors">Exact link to the retained physical colors</h2>
+<p>Polynomial division of the Chebyshev identity gives, in the SAME original Casimir quotient,</p>
+<pre><code>V(z)=U_(N-1)(Omega/2)
+       +2sum_(h=1)^(N-1)T_(N-h)(z/2)U_(h-1)(Omega/2)
+    =(-1)^d L_N
+       +2sum_(h=1)^(N-1)(-1)^(h-1)T_(N-h)(z/2)L_h.   (4)</code></pre>
+<p>One proof starts from</p>
+<pre><code>[T_N(x)-T_N(y)]/(x-y)=U_(N-1)(y)
+  +2sum_(h=1)^(N-1)T_(N-h)(x)U_(h-1)(y),</code></pre>
+<p>then substitutes x=z/2,y=Omega/2 and T_N(Omega/2)=-1. The scalar polynomial identity also follows immediately by induction in N using the two Chebyshev recurrences. It was checked exactly for N=2,…,14 before recording it here.</p>
+<p>The homogeneous source and every actual exterior functional preserve (4) by linearity. Thus controlling the original off-node numerator means controlling a SPECIFIED coherent combination of all physical colors, with their signs. It is not determined by the complete packet alone. On the other hand a bound on this coherent combination could be sharper than bounds on its separate colors, so (4) is not a no-go statement for a phase-preserving resolvent method.</p>
+<h2 id="validation-and-scope">Validation and scope</h2>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_spectral_total_derivative_source.py">focused audit</a> uses the original coproduct Casimir and independently built signed R matrices. It checks all monomials through degree N-1 and powers n=+/-1,…,+/-5 at N=3,…,8, including both parity conventions. The divided-Chebyshev identity is also checked symbolically at N=2,…,14. <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_spectral_total_derivative_source_results.json">Results</a> record finite identities; they assert no uniform Fourier constants.</p>
+<p>Root independently reviewed the full proof and source audit. Coherent independently reviewed the Chebyshev ODE, all multiplicities, the exact Fourier normalization and endpoint regularity, and the semisimple-data limitation. Coherent also independently read the portable audit and freshly replayed it:13 symbolic identities,33 monomial identities and60 original R-power identities, comparing149293 actual matrix entries. Both reviews retain the fixed-root scope and the absence of uniform Fourier estimates or selected-cycle conclusions.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_spectral_total_derivative_source.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#why-complete-channel-samples-do-not-control-the-derivative">Why complete-channel samples do not control the derivative</a><a href="#exact-link-to-the-retained-physical-colors">Exact link to the retained physical colors</a><a href="#validation-and-scope">Validation and scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

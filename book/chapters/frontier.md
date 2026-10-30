@@ -208,7 +208,36 @@ Here $\sigma$ is the principal symbol of the original Casimir. On a smooth gener
 
 The canonical two-form fixes the orientation and Hamiltonian. The existing exact Gaussian functional calculus, now checked for every integer power, retains that same Hamiltonian and all Hermite data. These are local source statements at arbitrary bridge width. Different boxes need not have commuting Casimirs, and the shared-face contraction still requires an estimate that preserves phases.
 
+The [physical meridian theorem](../../notes/actual_crossing_torus_meridian_transport.md) now connects this transport to the actual filled diagram. The half powers in the original physical kernel give the reciprocal momentum $p=r_H^{-1}$. The outer head derivative fixes the common scale of the two meridian flags. With both included, a positive crossing gives the literal Hurwitz move
+
+$$ (A,B)\longmapsto(A^{-1}BA,A),\qquad P=BA, $$
+
+and the negative crossing gives its inverse. The entire ordered product $P$ is preserved. The trace alone would not fix these conventions.
+
+For any fixed plat width and any fixed integer powers, the shared wire equations and the original cup/cap/mark phases then assemble **every full regular layered critical point** into a boundary-parabolic representation of the actual filled knot group. This is a regular forward morphism, with its excluded divisors and logarithmic characters specified. It does not show that a root of a cleared whole-box equation lifts to that chart. It also does not classify protected-zero, singular or escaping critical points of the original marked coefficient. In particular it supplies no nonzero coefficient for the geometric branch in the finite sum.
+
 There is a general reason to retain those phases. The direct-power note proves that the positive envelope obtained by taking absolute values of the canonical Hermite spectral terms has growth at least the complete drilled volume, even after shared-radius optimization. It cannot establish the strictly smaller filled-volume rate. The torsor gives explicit transport; bounding its original global period remains the decisive step.
+
+## The full spectral numerator and the remaining estimate
+
+Put $\chi_N(\sigma)=2T_N(\sigma/2)+2$ and $V_N(\sigma)=\chi_N(\sigma)(\sigma-\Omega)^{-1}$. The [spectral total-derivative identity](../../notes/actual_spectral_total_derivative_source.md) rewrites each original twist operator using this polynomial numerator, including both the ordinary projector and the nilpotent term at every repeated node. Its exact Fourier formula has zero charge identically zero; the nonzero charges and endpoint currents remain. Values of the complete-channel kernel alone do not determine the independent derivative data.
+
+The [Gaussian numerator theorem](../../notes/actual_gaussian_resolvent_numerator_and_cap.md) gives a concrete object to estimate after sewing:
+
+$$(-1)^{N-1}V_N(-2\cosh w)
+=L_N+2\sum_{h=1}^{N-1}\cosh((N-h)w)L_h.$$
+
+Here the $L_h$ are the original physical-color coupons, with any separately retained half crossing multiplied on both sides in its original order. This is a polynomial identity retaining all repeated-node data. At $w=0$ it is the Fejer polynomial in the actual Casimir. After the displayed common sign $(-1)^{N-1}$, the homogeneous numerator at $\sigma=-2-u$ has nonnegative coefficients in $u$ and the four face variables, so its path expansion supplies a positive majorant for complex $\sigma$. The same face must still carry one shared weight throughout the diagram.
+
+The Gaussian times the full resolvent also has a controlled closing cap near $+2$: its cost is $e^{o(N)}$ on a shrinking cap for each fixed twist power. This settles that endpoint, not the surrounding contraction. A local positive-weight norm can exceed the complete geometric rate, and the twist Gaussian grows on one side of a fixed spectral ellipse. The next estimate must therefore use the actual shared coefficient and a justified contour; neither positivity nor a large twist supplies it automatically.
+
+There is now an exact [even-level reduction of that shared coefficient](../../notes/actual_fejer_cross_half_source_reduction.md). The positive numerator splits into paths crossing the two middle spectral rows and paths staying on one side. If $H_M$ is the original maximal complete-channel polynomial, its crossing part satisfies
+
+$$\frac{N}{2}H_M\ \leq\ P_{\mathrm{cross}}\ \leq\ \frac{3N}{2}H_M$$
+
+coefficientwise. The original marked coefficient with crossing paths at every port therefore has the known complete-volume rate, under the same labeled geometric certificate. Every other nonzero term has one-sided ports forming a rooted forest: a one-sided port occupies more than half of a middle face's allowed degree, so no face can receive two such ports, and the original gap graph excludes a surviving cycle. The forest terms need not vanish. Bounding their weights remains open; their literal half-size blocks still use level $N$. This positive path partition is distinct from a decomposition into covariant color coupons.
+
+For the general knot theorem, the decisive missing statement is still a **global asymptotic for the original phase-sensitive source**: a nonzero geometric contribution, with its actual marked action, and control of every complementary color, charge and boundary contribution. The regular representation morphism and the endpoint estimate are inputs to that statement, not substitutes for it.
 
 ## Existing knot results and preserved alternatives
 

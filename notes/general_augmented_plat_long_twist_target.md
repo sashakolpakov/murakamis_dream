@@ -179,6 +179,29 @@ Gaussian. These facts hold independently of bridge width; they do not
 supply the remaining global coefficient estimate or an eliminated
 knot A-polynomial.
 
+The [physical meridian transport](actual_crossing_torus_meridian_transport.md)
+now gives a further width-independent algebraic result. Differentiating
+the ORIGINAL physical kernel, including its half powers and the outer
+head derivative, fixes the physical momentum as the reciprocal of the
+coefficient momentum. The resulting matrices obey the full signed
+Hurwitz relations, not merely conservation of their Casimir trace.
+After the literal cup/cap/marked constraints are imposed, every FULL
+regular critical point of the layered source defines a representation
+of the actual filled diagram group. This is a forward morphism on its
+specified regular open scheme; it is not a classification of critical
+points after setting protected faces to zero, nor a proof that the
+original coefficient cycle selects the geometric representation.
+
+The [full spectral total derivative](actual_spectral_total_derivative_source.md)
+and [Gaussian resolvent numerator](actual_gaussian_resolvent_numerator_and_cap.md)
+retain both semisimple and nilpotent data of every original pair Casimir.
+The numerator is an exact coherent transform of ALL physical colors;
+its positive path expansion can be sewn with the same shared face
+targets. The closing cap near spectral +2 is controlled at fixed twist
+power. The remaining global contour, its nonzero Fourier charges, and
+the shared numerator estimate are explicit outstanding problems. Long
+twisting alone does not damp both sides of a spectral contour.
+
 ## 4. Inputs still needed for general signed long fillings
 
 **Full mixed-color quantum source.** The complete-image term already
