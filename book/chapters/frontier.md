@@ -78,7 +78,7 @@ The complete signed source now has a global equality. The remaining general prob
 
 | Required extension | What is available | What still needs proof |
 | --- | --- | --- |
-| Local deformed source | A nonzero uniform complex packet for the exact complete-image term, with its actual marked geometric action | Estimates for every other reflected-color term in the full source |
+| Local deformed source | A nonzero uniform complex core with its actual marked action; the original source differs exponentially little throughout a near-complete integer corridor at every untwisted varied port | Quantitative bounds when a varied port retains a half twist |
 | Whole filling transform | Exact filling transform and geometric long-filling threshold | A bound for the entire complementary color region and its aliases, retaining all small-color terms |
 
 Internal deficits $s_i=N-1-2a_i$ and external filling-color deficits $h_i=N-j_i$ are different variables. The [fixed complex core theorem](../../notes/actual_complete_core_complex_packet.md) now controls the complete-image term with $\boldsymbol\chi=\mathbf h/N$ in a fixed complex neighborhood:
@@ -141,7 +141,17 @@ Double-triangle blocks contribute zero. The formula is independent of each block
 
 The [strict representation-volume theorem](../../notes/general_representation_volume_kernel_strictness.md) supplies the strict comparison when the smoothed source is itself certified hyperbolic. Its actual filling quotient kills an essential meridian. An independently checked natural-map argument proves that a representation with such a kernel has strictly smaller absolute volume. Thus the connected regular smoothing has a strict capacity gap, and the simultaneous operator estimate transfers it to small colors. A simple smoothed white triangulation supplies its required polyhedron by the block construction.
 
-**The remaining geometric case is a sum of nonzero degenerate block volumes.** We still need a representation of the original group whose regulator realizes that sum through the actual cut pairings. A formal capacity sum alone does not supply it. Loop-infeasible cases and sums consisting only of zero-capacity blocks already have a gap below the positive original volume. Signed deleted ports and the full complementary-color/alias estimate remain separate quantum requirements.
+The [actual block representation](../../notes/actual_smoothed_block_representation_volume.md) now closes the nonzero degenerate-block case. It retains the original cuts and face pairings, including matching cuts whose shaded pairings run between blocks. Compatible finite horospherical corners and a uniform short-edge tetrahedron bound identify the regulator with the sum of block volumes. The representation kills the deleted meridians, so the strict-volume theorem applies. No geometric decomposition of the whole smoothed exterior or finite quantum factorization is assumed.
+
+Combining that strict gap with the exact subset identities proves a **general untwisted color corridor**. For any fixed set $E$ of untwisted varied ports, the other ports staying complete with their original signs, there are $\delta(D),\gamma(D)>0$ such that
+
+$$\left|A_N(N-\mathbf h_E,N_{\mathrm{else}})-F_N^E(\mathbf h)\right|
+\leq N^{K(D)}e^{N(\operatorname{Vol}(Y_D)/(2\pi)-\gamma(D))},
+\qquad 0\leq h_i\leq\delta(D)N.$$
+
+This includes every integer level of both parities at arbitrary fixed width. The two remaining source problems are quantitative bounds for varied ports with half twists and control of the entire color complement, including the combined opposite-end aliases. The displayed corridor estimate does not settle either one.
+
+The [near-maximal-volume theorem](../../notes/general_representation_volume_peripheral_gap.md) gives a general geometric criterion for the latter problem. For a fixed finite list of marked peripheral words, keeping any $|\operatorname{tr}^2\rho(\mu_i)-4|$ bounded away from zero forces a uniform positive volume gap. Its proof derives convergence to the marked complete representation from near-maximal volume. Using this criterion for the quantum source still requires a bound on the actual full period; a characteristic equation or the complete-image term alone does not provide that bound.
 
 The previous operator and torsor approaches remain available. The exceptional operator is the original normalized Casimir polynomial, with its [general character relation](../../notes/actual_matching_edge_polynomial_geometric_action.md) and [exact resolvent period](../../notes/actual_matching_edge_continuant_operator_period.md). The original marked transport, genuine quantum normals, odd framing source, logarithmic class and relative boundary currents are preserved in the [source and torsor routes](../library.html). The new coefficient identity and signed Gaussian resolve the complete contraction without assigning an arbitrary relative cycle.
 

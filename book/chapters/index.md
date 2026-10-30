@@ -35,7 +35,7 @@ Start with [the equality results](results.md) for the exact knot and link famili
 | Exceptional matching block | Exact generic Casimir polynomial and original resolvent period; selected scalar character relation, strict-support Green action and endpoint jets; contributing contour and joint contraction remain open |
 | Whole complete source limit | Every connected certified augmented plat with any retained half-twist pattern, at arbitrary fixed width and both level parities; exact face coefficients, a nonzero signed Gaussian and actual polyhedral volume |
 | Complete-image external colors | A nonzero asymptotic on a fixed complex neighborhood; its limiting action is the actual marked geometric regulator, with the necessary complex boundary correction |
-| Small-color insertions and smoothing | Every connected untwisted subset has an exact polynomial correspondence; disconnected subsets vanish in a proved small-degree window; regular hyperbolic smoothings have a strict geometric gap |
+| Small-color insertions and smoothing | Every connected untwisted subset has an exact polynomial correspondence and strict geometric gap; disconnected subsets vanish in a proved small-degree window; these give the original near-complete untwisted color corridor |
 | General signed long-filled knot equality | Bounds for every remaining reflected color term and the combined far aliases remain unresolved |
 
 The cube, Fourier, torsor, and alternative approaches are preserved. A failed intermediate estimate is useful evidence about the argument; it is retained beside the corrected scope.
