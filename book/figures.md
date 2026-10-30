@@ -32,6 +32,12 @@ The [external reflection and cusp theorem](../notes/actual_external_circle_refle
 
 ![The primitive cusp basis from two rectangles and its exact factor of two in the folded Gaussian normalization.](figures/cusp-gaussian.png)
 
+## The marked faces share one strip
+
+The [marked circle-pattern theorem](../notes/actual_marked_deformed_circle_pattern.md) keeps the two zero-curvature faces as actual parallel lines. Main incidences stay tangent; matching incidences acquire the prescribed inversive cosine. A finite system with $3R-1$ equations reconstructs every center and radius, and its Jacobian is invertible at the complete pattern. The resulting curvatures solve the original source's face-stationary equations. The diagram shows the shared strip and the selected fixed points at two marked triangles; the theorem applies to every certified diagram, with no restriction to this illustrated configuration.
+
+![Two finite circles in the same marked strip, with main tangencies, deformed matching intersections, and selected fixed points that collide at completeness.](figures/marked-circle-strip.png)
+
 ## The exceptional operator and its selected scalar action
 
 The scalar polynomial and original resolvent have different analytic roles. All polynomial zeros lie above $2$, while the physical Casimir nodes lie in $[-2,2]$. The actual geometric target is at most $-2$ under the marked complete certificate. The exact contour retains both factors and their generic normals. Endpoint estimates at $+2$ do not prove the global saddle contribution or settle a parabolic target at $-2$. See [the current critical path](chapters/frontier.md#the-exceptional-edge-now-has-an-exact-algebraic-description).

@@ -1,5 +1,15 @@
 # Why the right side is hyperbolic volume
 
+## The current general construction
+
+For a connected labeled right-angled augmented plat at any fixed bridge width, the [signed complete-source theorem](../../notes/general_signed_augmented_source_volume.md) identifies the original source rate with the actual complete volume. The [fixed complex core theorem](../../notes/actual_complete_core_complex_packet.md) now gives a nonzero analytic asymptotic for its complete-image external-color term. The older local and operator routes below retain their separate scopes.
+
+The [marked circle-pattern theorem](../../notes/actual_marked_deformed_circle_pattern.md) reconstructs the two exceptional boundary faces as parallel lines and solves simultaneously for all finite circle centers and radii. The original positive face Hessian, followed by elementary rigidity of the center triangles, proves that this system has an invertible Jacobian. Its unique nearby solution has exactly the stationary radii of the source action, with one shared strip width and the selected boundary eigenlines retained.
+
+![The actual marked lines retain their shared width and the selected eigenlines as matching tangencies deform.](../figures/marked-circle-strip.png)
+
+This reconstructs the face geometry. The actual primitive crossing-circle word and the regulator's boundary correction must also be checked before identifying the whole deformed action. The full filling theorem additionally requires the remaining reflected-color and far-alias bounds described in the [frontier](frontier.md).
+
 ## A local tetrahedron is a genuine geometric result
 
 In the supported four-port theorem, the exact half-shifted color coordinate is
