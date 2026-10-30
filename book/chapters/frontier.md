@@ -45,9 +45,16 @@ The [odd framing source theorem](../../notes/actual_source_preserving_odd_framin
 $$z_0=\frac{\operatorname{Tr}[e_t C_0(T_1-q_0T_{-1})]}{\kappa_N(t)},\qquad
 \kappa_N(t)=1-q_0-t^{N-1}+q_0(1-t)^{N-1}.$$
 
-For real $0\leq t\leq1$, $|\kappa_N(t)|\geq N^{-1}$ at every level. This is the unchanged original scalar, with its original factors and both support cycles. On the certified geometric chart the underlying odd form has a nonzero logarithmic residue. The coherent base weight $N\beta_a(t)/\kappa_N(t)$ remains explicit; the residue alone is not the weighted global period. At $r\sim N$, the two classical band symbols cancel to order $N^{-1}$, so the joint quantum error must be controlled before dividing by $\kappa_N$. That boundary estimate and the actual cycle's winding are still required.
+For real $0\leq t\leq1$, $|\kappa_N(t)|\geq N^{-1}$ at every level. This is the unchanged original scalar, with its original factors and both support cycles. On the certified geometric chart the underlying odd form has a nonzero logarithmic residue. The coherent base weight $N\beta_a(t)/\kappa_N(t)$ remains explicit; the residue alone is not the weighted global period. At $r\sim N$, the two classical band symbols cancel to order $N^{-1}$, so the joint quantum error must be controlled before dividing by $\kappa_N$. The boundary estimate for the contracted period and the actual cycle's winding are still required.
 
 The [marked logarithmic class](../../notes/actual_odd_framing_logarithmic_class.md) makes one part of this task algebraic. On a closed geometric two-cycle, the underlying finite-$q_0$ form has period $(2\pi i)^2c_D(n_1+q_0n_0)$ for two integer winding numbers. A nonzero pair gives $|n_1+q_0n_0|\geq\sin(\pi/N)\geq2/N$, even when $n_1+n_0=0$. Thus a classical cancellation can survive the quantum normalization with nonzero size. The original source's winding pair and its weighted quantum realization still have to be proved; the theorem does not assign them by selecting a convenient cycle.
+
+The [correlated band-ratio theorem](../../notes/actual_correlated_boundary_band_ratio.md) now controls the normalization error for the original uncontracted products on the six-type boundary chart. The adjacent bands share one holomorphic relative remainder of size $O(N^{-1})$ on a head disk of radius proportional to $N$. Cauchy's estimate makes their difference $O(N^{-2})$. Keeping the exact cup characters and all finite model factors then gives
+
+$$\frac{S_N(+1)-q_0S_N(-1)}{\kappa_N S_N(-1)}
+=\frac{B_N(+1)/B_N(-1)-q_0}{\kappa_N}+O(N^{-1}).$$
+
+Here $S_N$ is the actual charged product with its exposed scalar cap removed, and $B_N$ is the specified model evaluated at the finite clocks and channel labels. Its quotient has not been replaced by the classical symbol or proved to have a nonzero limit. This theorem does not yet pass through the internal sums or Gaussian integration, and it does not cover extra routed factors outside the six controlled types.
 
 The [selected-factor theorem](../../notes/actual_augmented_plat_selected_factor_localization.md) is useful here: for the certified right-angled cut, exactly two physical-support failures can be placed at the ends of one chosen crossing-circle edge. Every other ordinary factor is on the selected physical packet. An all-central selected common frame **cannot exist**; moving all factors into that domain is therefore not an available shortcut.
 
