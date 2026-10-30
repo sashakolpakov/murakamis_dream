@@ -7,6 +7,7 @@ from pathlib import Path
 
 import numpy as np
 import sympy as sp
+import mpmath as mp
 
 from audit_actual_braided_two_cut_source_adapter import (
     original_crossings, embed_pair, embed_one, product, partial, eye, eq,
@@ -139,6 +140,28 @@ def audit_case(N, width, kind):
         assert int(np.trace(Dcdual@CX[0])%p)==predicted
         fourier_entries+=N*N
         fourier_currents+=1
+    # Source-defined off-node matrix, with every unwrapped charge retained.
+    toeplitz_entries=offnode_entries=offnode_pairings=0
+    offnode_normal_defects=offnode_coherent_defects=0
+    for charge in range(-d,d+1):
+        X=np.diag(np.ones(N-abs(charge),dtype=np.int64),-charge)
+        routed=mm(mm(Ui,embed_one(const(X),0,inwidth,N,p),p),U,p)
+        CX=partial(mm(mm(A,routed,p),B,p),g,outwidth,N,p)
+        assert np.array_equal(CX[0],z[0]*X%p)
+        toeplitz_entries+=N*N
+    for momentum in (1,2,3):
+        X=np.array([[pow(momentum,r-s,p)*pow(N,-1,p)%p
+                     for s in range(N)] for r in range(N)],dtype=np.int64)
+        routed=mm(mm(Ui,embed_one(const(X),0,inwidth,N,p),p),U,p)
+        CX=partial(mm(mm(A,routed,p),B,p),g,outwidth,N,p)
+        assert np.array_equal(CX[0],z[0]*X%p)
+        factor=(sum(pow(momentum,r,p) for r in range(N))*pow(N,-1,p)
+                *pow((1-t+t*pow(momentum,-1,p))%p,d,p))%p
+        assert int(np.trace(ecut@CX[0])%p)==z[0]*factor%p
+        defect=(CX[1]-z[1]*X)%p
+        offnode_entries+=N*N;offnode_pairings+=1
+        offnode_normal_defects+=int(np.count_nonzero(defect))
+        offnode_coherent_defects+=int(int(np.trace(ecut@defect)%p)!=0)
     # Genuine q-dependent test weights, every subinterval and both jet orders.
     h=np.array([[((ell+2)+pow(q,2*ell,p))%p for ell in range(N)],
                 [2*ell*pow(q,2*ell,p)%p for ell in range(N)]],dtype=np.int64)
@@ -161,6 +184,11 @@ def audit_case(N, width, kind):
                 nonzero_current_coefficients=int(np.count_nonzero(M)),
                 complete_fourier_matrix_entries=fourier_entries,
                 three_node_current_values=fourier_currents,
+                unwrapped_toeplitz_entries=toeplitz_entries,
+                offnode_root_entries=offnode_entries,
+                offnode_coherent_pairings=offnode_pairings,
+                nonzero_offnode_normal_entries=offnode_normal_defects,
+                nonzero_offnode_coherent_normal_defects=offnode_coherent_defects,
                 exposed_scalar=list(z),field=p)
 
 
@@ -180,6 +208,23 @@ def chain_checks():
     return dict(integer_shift_cotangent_chains=count,retained_resonant_finite_part=1)
 
 
+def offnode_boundary_checks():
+    mp.mp.dps=70
+    checks=[]
+    for N in (32,65,128,257):
+        for rho,t,c0 in ((mp.mpc('1','.3'),mp.mpc('.3','.1'),mp.mpc('.2','-.1')),
+                         (mp.mpc('-.7','.8'),mp.mpc('.6','-.2'),mp.mpc('-.3','.2')),
+                         (1/(2*mp.pi*1j),mp.mpf('.4'),mp.mpf('.2'))):
+            momentum=1-1/(N*rho+c0)
+            actual=mp.fsum(momentum**r for r in range(N))/N*(1-t+t/momentum)**(N-1)
+            expected=rho*(1-mp.exp(-1/rho))*mp.exp(t/rho)
+            scaled=N*abs(actual-expected)
+            assert scaled<50
+            checks.append(float(scaled))
+    return dict(boundary_profile_checks=len(checks),maximum_N_absolute_error=max(checks),
+                scope='Literal finite boundary factor, including a limiting Fourier zero; unknown source scalar is not estimated.')
+
+
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--output',type=Path);args=ap.parse_args()
     rows=[audit_case(N,2,k) for N in range(2,7) for k in ('braid','complete')]
@@ -187,9 +232,14 @@ def main():
     rows += [audit_case(N,3,'rectangular') for N in (2,3,4)]
     totals={k:sum(row[k] for row in rows) for k in ('actual_band_coefficients',
         'flux_coefficients','finite_interval_jet_identities','nonzero_retained_normal_defects',
-        'complete_fourier_matrix_entries','three_node_current_values')}
+        'complete_fourier_matrix_entries','three_node_current_values',
+        'unwrapped_toeplitz_entries','offnode_root_entries','offnode_coherent_pairings',
+        'nonzero_offnode_normal_entries','nonzero_offnode_coherent_normal_defects')}
+    assert totals['nonzero_offnode_normal_entries']>0
+    assert totals['nonzero_offnode_coherent_normal_defects']>0
     result=dict(status='PASS',source_cases=len(rows),totals=totals,cases=rows,
-                chain=chain_checks(),scope='Actual routed off-diagonal current, finite intervals and genuine first jets. No stationary pushforward or relative framing coefficient.')
+                chain=chain_checks(),offnode=offnode_boundary_checks(),
+                scope='Actual routed off-diagonal current and genuine first jets; literal off-node profile is root-only with nonzero generic defects retained. No stationary pushforward or relative framing coefficient.')
     target=args.output or Path(__file__).with_name('actual_braided_residual_framing_current_results.json')
     target.write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(dict(status='PASS',source_cases=len(rows),**totals),indent=2))

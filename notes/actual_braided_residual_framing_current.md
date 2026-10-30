@@ -247,18 +247,87 @@ It is not enough to multiply a cup's simple residue by an assigned
 geometric scalar.
 
 Equation (7) is proved AFTER the original finite internal period
-contraction. It has not here been lifted to an off-grid meromorphic
-Ward identity on a common free-head lattice: the separate band
-charges and support cycles must still be compared to do that.
+contraction. The subsequent
+[common-band theorem](actual_matching_graph_common_band_ward_current.md)
+supplies its meromorphic interior Ward assembly on one primitive
+free-head lattice, with the actual charged insertions and full routed
+source. Its different original support cycles are still retained.
 Equation (10) keeps the exact finite-head ends of this contracted
-current. Equation (11) is a universal change-of-cycle rule for EACH
-specified band summand, not a proof of that missing off-grid Ward
-comparison. These formulas do not replace
+current, and (11) transports EACH specified band summand with those
+cycle differences. These formulas do not replace
 Gamma+v by Gamma merely because the source has a moving-P
 quasiperiod. The latter has its nontrivial rational gauge, characters
 and divisors even at finite normal order.
 
-## 5. The remaining equation at the framing diagonal
+## 5. The literal source between Fourier nodes
+
+The actual routed channel has more information than its cyclic samples.
+Its genuine integral source preserves UNWRAPPED integer charge: if
+an inserted matrix is supported on row minus column equal to n, its
+output has that same charge. This follows before root specialization
+from the original crossings, cups, caps and typed degree equations.
+The fixed weight differences of rectangular A and B cancel. A bare
+root K-eigenvalue, which would identify n and n+N, is not used here.
+
+Put T_n=sum_(r-s=n)E_rs, with -d<=n<=d. Then
+X_j=N^-1 sum_n eta_j^(-n)T_n. Separating the DISTINCT output matrix
+diagonals in C(X_j)=zX_j proves
+
+    C(T_n)=zT_n, -d<=n<=d,
+    X(p)_(r,s)=p^(r-s)/N,
+    C(X(p))=zX(p), p in C*.                              (12)
+
+In fact the j=0 identity suffices. X(p) is a specified finite
+rank-one matrix, not an interpolation assigned to contracted source
+values. Every physical position and every unwrapped band remains.
+Pairing with the same first coherent functional (2) gives exactly
+
+    Tr[e_t C(X(p))]=z b_N(t,p),
+    b_N(t,p)=(1-p^N)/[N(1-p)] (1-t+t/p)^(N-1).           (13)
+
+The factor at p=1 is its removable value one. This formula follows
+by separately summing p^r and beta_s p^(-s), so it keeps the actual
+coherent degree d=N-1 and the original p=eta^-1 orientation.
+Whenever b_N(t,p)!=0, dividing THIS specified functional by b_N
+returns exactly the original root scalar z. This licenses that
+finite band-momentum boundary family; it does not license a general
+second diagonal functional or simultaneous evaluation of two heads.
+
+The source therefore has an exact boundary-scale test. In the
+first-slot chart r=1/(1-p)-b0 s, retain c0=b0 s and set
+
+    p_N=1-1/(N rho+c0).
+
+For rho in a fixed compact subset of C*, and t,c0 in fixed compacts,
+direct expansion of the FINITE factor in (13) gives
+
+    b_N(t,p_N)=rho(1-exp(-1/rho))exp(t/rho)+O(N^-1).     (14)
+
+The error is uniform and absolute, including its limiting zeros.
+On a compact avoiding those zeros it is relative, and b_N and its
+inverse have bounded size for large N. At the exact Fourier nodes
+p=Q^-j, j!=0, (13) instead vanishes exactly. Their limiting positions
+rho=1/(2pi i j) are precisely the zeros in (14). At rho=infinity
+the displayed limiting factor tends to one. No pointwise substitution
+of p into the whole internal source is used to prove these facts.
+
+All of (12)--(14) is ROOT-ONLY. For the original moving-q channel
+write Delta(epsilon,p)=C_epsilon(X(p))-z(epsilon)X(p).
+Although Delta(0,p)=0, its genuine first quantum derivative need
+not vanish. The focused original-matrix checks below exhibit nonzero
+derivatives, including after the coherent pairing. They retain the
+actual route, endpoint arrows and generic pivot. Thus differentiating
+(13) would discard a source term. If a quantum-dependent p is used,
+the additional p derivative of Delta(0,p) is zero; it does not remove
+the genuine defect. All required normals still use the original
+generic channel and the source currents (5)--(11).
+
+Equation (14) is a matching condition for any proposed contracted
+hard-edge calculation. Its coefficient is the UNKNOWN whole z.
+Local nonzero white packets do not determine how their transverse
+periods and charged support cycles reproduce that coefficient.
+
+## 6. The remaining equation at the framing diagonal
 
 The new ingredient relative to the old formal Ward ideal is the
 source-defined M_l in (6), including the off-diagonal routed bands
@@ -283,7 +352,11 @@ one-to-three-head birth/death cuts: 326 original routed band value/first
 jet coefficients, 134 flux coefficients, 334 weighted interval/jet
 identities, and 48 nonzero retained generic-normal corrections. Separate
 original-matrix checks verify 1177 full Fourier-projector channel entries
-and 67 three-node complete current values. Symbolic checks verify the
+and 67 three-node complete current values. The off-node extension checks
+2087 unwrapped Toeplitz entries, 801 literal rank-one source entries and
+57 coherent pairings. It retains 588 nonzero genuine first-normal entries
+and 54 nonzero coherent normal defects. Twelve boundary-scale checks
+include a limiting Fourier zero. Symbolic checks verify the
 universal integer-shift chain rule and its
 resonant cotangent finite part. They do not audit an off-grid Ward
 identity or a stationary framing pushforward.
@@ -297,3 +370,10 @@ the principal residual field, complete-source normalization, cotangent
 change-of-chain rule and all three resonant coefficients. These reviews
 retain the explicit distinction between finite contracted currents,
 off-grid Ward assembly and an original geometric-period coefficient.
+
+The added off-node section 5 received independent full primary and
+coherent-source reviews. The latter freshly replayed the extended
+audit, including the true generic defects and limiting Fourier zero.
+Those reviews cover the literal finite rank-one source, unwrapped
+charge proof and root boundary profile; they do not determine z,
+differentiate its root factor, or identify a selected transverse period.

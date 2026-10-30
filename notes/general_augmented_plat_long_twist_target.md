@@ -79,6 +79,17 @@ limits. Root partner zeros and excluded divisors remain. These local
 boundary results do not yet supply a whole-source relative coefficient
 or the complementary-color gap required for the general equality.
 
+The [literal boundary sign theorem](actual_right_angled_resonant_prefix_signs.md)
+now supplies the actual negative finite clocks and positive mixed total.
+The [complemented-head identity and outgoing packet](actual_q_hahn_complementary_hard_edge.md)
+and [finite-clock boundary determinant](actual_q_hahn_negative_clock_boundary.md)
+control further original numerator regimes, including the folded channel.
+The exact source-current theorem below also gives a continuous ROOT
+band-weight family extracting the same invariant after an explicit
+bounded normalization near the resonant boundary. This is a prescribed
+source functional, not a new integration cycle or an estimate of its
+unknown scalar. Its genuine quantum-normal defect is nonzero.
+
 The [actual framing-density theorem](actual_augmented_plat_framing_density_source_ward.md)
 now identifies the local source form as
 Omega_src=-c_D dr wedge ds/[s(1+s)], with c_D nonzero and independent

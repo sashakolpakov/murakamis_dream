@@ -121,6 +121,17 @@ $$\sum_{\ell\ge0}\frac{(-K)^\ell}{\ell!\,(1-t/(\pi i))_\ell}.$$
 
 At $t=0$ this is the root Bessel series. Its parameter derivatives give the actual normalized quantum jets; differentiating a root-only formula would miss them. The exact original normalization, including its possible powers of $N$, stays in the result. These are boundary-factor theorems, not a whole-operator estimate or a proof that the geometric component contributes to the original cycle.
 
+The [literal prefix-sign theorem](../../notes/actual_right_angled_resonant_prefix_signs.md) now fixes the boundary domains from the original outward face normals. All nonzero lower-left prefix entries have one common phase and positive coefficients. Consequently the finite clocks in the 022/220 regimes and both clocks in 222 are negative, while the 202 total is positive. These statements preserve the marked first cut and all retained half twists. When there is one main component, primitive meridian conjugacy also forces every original 200/002 box into the proved Bessel calibration, with both orientations included.
+
+The [complemented-head identity](../../notes/actual_q_hahn_complementary_hard_edge.md) is exact before root specialization, so it transports genuine quantum derivatives to the small-second-clock regime. A separate positive-matrix comparison gives the outgoing 220 root packet through the fold. For two finite negative clocks, the [boundary determinant theorem](../../notes/actual_q_hahn_negative_clock_boundary.md) proves a leading logarithmic rate and uniform relative transport. Its first trace correction can be order one and is retained. The exact scalar and large-partner factors remain present; the new determinant result does not assert generic quantum-normal limits.
+
+There is also a source-defined way to impose the boundary weights. The [finite-current theorem](../../notes/actual_braided_residual_framing_current.md) now uses **unwrapped integer charge conservation** to prove, for the literal rank-one insertion $X(p)_{rs}=p^{r-s}/N$,
+
+$$\operatorname{Tr}[e_t\,\mathcal C(X(p))]=z\,b_N(t,p),\qquad
+b_N(t,p)=\frac{1-p^N}{N(1-p)}(1-t+t/p)^{N-1}.$$
+
+Here $z$ is the original root scalar. At $p=1-1/(N\rho+c_0)$ the explicit factor tends to $\rho(1-e^{-1/\rho})e^{t/\rho}$. Away from its known zeros, dividing this specified functional by $b_N$ extracts the same invariant at bounded cost. Thus the boundary family is authorized by an exact finite-source identity. Its genuine quantum derivative has additional nonzero terms. Computing its internal geometric period and proving a nonzero contribution remain necessary.
+
 ## How far this is from the general conjecture
 
 **The main gap remains a substantial global theorem.** There are two concrete tasks:
