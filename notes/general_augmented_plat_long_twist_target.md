@@ -26,8 +26,13 @@ crossing-circle colors, for the exact complete-image term of reflection.
 The [marked geometric assembly](actual_complete_core_geometric_deformation.md)
 now identifies its limiting action, including at the zero faces, with
 the actual geometric regulator and its complex boundary correction.
-General long fillings still require bounds for the other reflected
-terms and the combined far aliases. The current
+The [whole-source untwisted corridor](general_untwisted_mixed_source_volume_corridor.md)
+now transfers this volume identity to the original mixed source when
+any chosen set of untwisted ports varies near completeness. A
+[signed one-port criterion](actual_signed_small_circle_face_kernel.md)
+is also proved under its explicit local curvature inequality.
+General long fillings still require bounds for interacting signed
+reflected terms and the combined far-color source. The current
 dependency map is in the [frontier chapter](../book/chapters/frontier.md).
 
 The older source, operator, Fourier and torsor tools are preserved below

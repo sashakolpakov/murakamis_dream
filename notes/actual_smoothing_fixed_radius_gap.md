@@ -1,12 +1,17 @@
 # A fixed-radius smoothing bound and its explicit limitation
 
-30 October 2026. Independently reviewed. A one-variable test at
+30 October 2026. Independently reviewed; source-coverage correction below.
+A one-variable test at
 the ORIGINAL positive face variables gives a strict source upper bound after a
 literal untwisted L_1 insertion. It needs neither a balanced split nor
 an attained smoothed capacity. The test is not universal: an explicit
 certified family below makes its best possible gap tend to minus
 infinity. This is a failure of fixed old radii, not a counterexample
-to a fully optimized smoothing gap or a volume conjecture.
+to a fully optimized smoothing gap or a volume conjecture. The family is
+proved as a labeled right-angled MATCHED-GRAPH capacity example. Its
+identification with the fixed flat-plat source coefficient is conditional
+on an additional source-preserving presentation adapter; section3 does
+not supply that adapter.
 
 ## 1. An exact sufficient source test
 
@@ -118,7 +123,7 @@ fixed positive marked radii resolve the elementary Laurent-coefficient
 bound; they do not silently remove these finite-source questions.
 No signed deleted-port R^epsilon norm is discarded.
 
-## 3. An explicit certified family where the fixed-radius test fails
+## 3. A certified matched-graph family where the capacity test fails
 
 The initial white triangulation is the octahedral sphere with equator
 0,1,2,3 and poles4,5: its triangles are
@@ -138,7 +143,7 @@ edge01 stays. This is again a perfect matching: the new triangle
 (0,1,b_n) inherits01, while the other two new triangles are paired
 by b_(n-1)b_n. The complement is the actual union of main cycles.
 
-To specify the original source, use this EMBEDDED dual cubic graph,
+To specify the marked diagram, use this EMBEDDED dual cubic graph,
 not just its abstract isomorphism class. Replace a small neighborhood
 of every selected matching edge by the standard untwisted complete
 crossing-circle box, with its four main half-edges in their inherited
@@ -150,7 +155,14 @@ its three external ports and adding the specified matching edge.
 It therefore preserves this literal construction and its marking;
 no assertion that an arbitrary abstract cubic graph is an admissible
 source is needed. A Morse presentation gives its actual cups, caps,
-and complete-circle tensors.
+and complete-circle tensors. This construction does NOT prove that the
+diagram has the fixed flat-plat presentation required by the
+[marked face-coefficient theorem](actual_original_marked_face_coefficient.md),
+sections1--3, with the same designated circle ports and mark. That
+theorem's gap sweep and marked conservation argument cannot simply be
+imported into an arbitrary Morse presentation. Neither a uniform bridge
+width over this family nor a source-preserving flat-plat adapter at a
+fixed depth is established here.
 
 Here is the labeled geometric certificate, not just a combinatorial
 example. In the boundary plane use the two marked parallel lines
@@ -191,7 +203,7 @@ it is convex, rather than merely locally right-angled. Induction gives a convex 
 right-angled polyhedron with the exact new labeled facets. No
 unlabeled volume match is used as a certificate.
 
-Consequently the actual source face curvatures are exactly
+Consequently the labeled packing face curvatures are exactly
 
     l_0=l_1=2, l_4=l_5=1, l_2=l_3=0, l_(b_j)=B_j.
 
@@ -201,12 +213,15 @@ property. Remove the matching port01 and its two triangles
 (0,1,b_n),(0,1,4), and merge b_n with4. The remaining projection is
 connected (already deleting the two old cubic vertices leaves a
 connected graph), and the marked faces2,3 remain distinct. Thus this
-is a legitimate L_1 smoothing in the scope of section1. It does not
-require the main strands to have one component.
+is the literal opposite matching-edge smoothing of this marked graph.
+Applying section1 to its actual quantum source would additionally
+require the presentation adapter just specified. The geometric and
+capacity calculations do not require the main cycles to have one
+component.
 
 Only five remaining triangle terms depend on the new common radius z:
 two are (2,B_(n-1),z), two are (2,z,0), and one is (z,0,0).
-The exact gap (2) is therefore
+The graph capacity functional (2) is therefore exactly
 
     G_n(z)=C_n-2F(2,B_(n-1),z)-2F(2,z,0)+(1/2)log z,
     C_n=F(2,B_n,2)+2F(2,B_(n-1),B_n)
@@ -253,18 +268,21 @@ inequality is not automatically its capacity inequality. Section3
 also rules out promoting the one-variable test to a theorem forced
 by every positive labeled certificate.
 
-A general proper-subset proof still needs a strict comparison after
-the full surviving radii adjust, including boundary capacity limits,
-then a source-exact treatment of L_h charges, aliases and any retained
-deleted-port braid. The present result supplies an exact sufficient
-source bound and an explicit limitation of one proposed universal
-route.
+The general connected untwisted smoothing gap and its near-complete
+small-color corridor are now [proved separately](actual_smoothed_block_representation_volume.md)
+in the original fixed flat-plat scope. That theorem does not provide the
+missing presentation adapter for the family in section3. The present
+note retains its exact sufficient source bound in section1 and its
+independent matched-graph functional limitation. Signed varied ports
+and far-color source bounds remain separate.
 
 Focused audit: [original source and labeled certificate checks](../experiments/audit_actual_smoothing_fixed_radius_gap.py),
 with [saved results](../experiments/actual_smoothing_fixed_radius_gap_results.json).
 At 80 digits it checks ten literal original marked L_1 contractions
 against the shorter face-coefficient source, retaining every remaining
-half twist and the original cups, mark, and measure. It also checks two
+half twist and the original cups, mark, and measure. These original
+matrix fixtures test section1; they are NOT the Apollonian graphs of
+section3 and do not establish the missing adapter. The audit also checks two
 symbolic tangency identities; nine perfect matchings, three-connected
 graphs, and connected literal smoothings; 2,340 white and 3,816 shaded
 support values; and 432 original right-angle incidences. Seven finite
@@ -273,7 +291,7 @@ check diagnose the exact normalization. The analytic argument, not
 those finite profiles, proves the all-n limitation in (9).
 
 Primary full analytical proof and audit-code review: PASS. Independent
-targeted geometric review: PASS, including the literal embedded source,
+targeted geometric review: PASS, including the literal embedded matched graph,
 perfect matching, interstice insertion, convex supporting-halfspace
 induction, and the actual opposite-face smoothing. These reviews do
 not infer a full optimized smoothing gap or an L_h alias bound.
@@ -283,3 +301,19 @@ Independent full analytical proof/code review and fresh redirected
 count was reproduced. The review retains the sufficient nature of (3),
 the exact charge/alias qualifications after (5), and the fixed-old-face
 scope of the counterfamily.
+
+### Source-coverage correction, 30 October 2026
+
+The earlier wording called the section3 family an original source
+counterexample to the fixed-radius strategy. The verified statement is
+the narrower geometric matched-graph CAPACITY obstruction (9). The
+frozen exact face identity proves a fixed flat-plat formula, not the
+general Morse formula that the earlier inference would need. An
+arbitrary link-to-plat isotopy does not verify preservation of the
+designated complete-circle tensors, their original mark or the face
+coefficient normalization. All displayed geometry, functional formulas
+and asymptotics remain unchanged. The audit code and saved results are
+unchanged; no rerun or new original-source comparison is claimed by
+this correction.
+Independent coherent targeted review of this coverage correction:
+PASS. No mathematical geometry or functional estimate was changed.

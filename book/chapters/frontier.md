@@ -78,7 +78,7 @@ The complete signed source now has a global equality. The remaining general prob
 
 | Required extension | What is available | What still needs proof |
 | --- | --- | --- |
-| Local deformed source | A nonzero uniform complex core with its actual marked action; the original source differs exponentially little throughout a near-complete integer corridor at every untwisted varied port | Quantitative bounds when a varied port retains a half twist |
+| Local deformed source | The whole original source has the geometric volume limit in a near-complete corridor at any set of untwisted ports; one varied signed port is covered by an explicit local curvature test | Interacting signed ports and their disconnected reflection subsets |
 | Whole filling transform | Exact filling transform and geometric long-filling threshold | A bound for the entire complementary color region and its aliases, retaining all small-color terms |
 
 Internal deficits $s_i=N-1-2a_i$ and external filling-color deficits $h_i=N-j_i$ are different variables. The [fixed complex core theorem](../../notes/actual_complete_core_complex_packet.md) now controls the complete-image term with $\boldsymbol\chi=\mathbf h/N$ in a fixed complex neighborhood:
@@ -131,7 +131,7 @@ their entire original subset contribution is **zero**. The ordinary face targets
 
 For the required geometric gap, the [smoothing-capacity theorem](../../notes/actual_matching_smoothing_angle_capacity.md) supplies a sufficient angle-flow and entropy condition when an untwisted color-one circle is deleted. The polynomial operator carries any compatible strict gap to small colors, at the stated $C^{h-1}$ cost. It does not supply the gap itself.
 
-The [fixed-radius criterion](../../notes/actual_smoothing_fixed_radius_gap.md) gives another sufficient bound without requiring a regular smoothed minimizer. Its explicit certified counterfamily also proves that varying only the merged face while keeping every other old radius fixed cannot work generally. A general comparison must allow all surviving radii to readjust, including boundary limits. This is an obstruction to that restricted proof strategy, not to the volume conjecture.
+The [fixed-radius criterion](../../notes/actual_smoothing_fixed_radius_gap.md) gives another sufficient bound without requiring a regular smoothed minimizer. Its explicit certified matched-graph family shows that the corresponding capacity test can fail when only the merged face varies. A source-coverage correction distinguishes that functional example from an original flat-plat source counterexample: the latter would need a presentation adapter that has not been proved. The graph geometry and capacity calculation remain valid.
 
 The [capacity decomposition](../../notes/actual_smoothed_source_capacity_blocks.md) now handles those boundary limits. Compact angle duality remains exact even when the positive-radius infimum is not attained. Loops give an infeasible angle problem; separating two-edge cycles split the capacity into an additive sum. Each nontrivial simple block has a constructed circle packing and an actual convex ideal right-angled polyhedron, with
 
@@ -149,7 +149,23 @@ $$\left|A_N(N-\mathbf h_E,N_{\mathrm{else}})-F_N^E(\mathbf h)\right|
 \leq N^{K(D)}e^{N(\operatorname{Vol}(Y_D)/(2\pi)-\gamma(D))},
 \qquad 0\leq h_i\leq\delta(D)N.$$
 
-This includes every integer level of both parities at arbitrary fixed width. The two remaining source problems are quantitative bounds for varied ports with half twists and control of the entire color complement, including the combined opposite-end aliases. The displayed corridor estimate does not settle either one.
+The [whole-source corollary](../../notes/general_untwisted_mixed_source_volume_corridor.md) combines this gap with the zero-free core. After shrinking the corridor, their ratio is $1+O(e^{-cN})$. Consequently, for any physical integer sequence $\mathbf h_N/N\to\boldsymbol\chi$ in that corridor,
+
+$$\lim_{N\to\infty}\frac{2\pi}{N}\log\left|A_N(N-\mathbf h_{N,E},N_{\mathrm{else}})\right|=\operatorname{Vol}(\rho_{\boldsymbol\chi}).$$
+
+This is a limit for the **whole original mixed source**, with the actual marked geometric representation on the right. It holds at arbitrary fixed width and both level parities. A complete metric on a filled knot is a further assertion, and the full filling transform still needs its complementary-color estimates.
+
+For a signed varied port, the [exact crossing kernel](../../notes/actual_signed_small_circle_face_kernel.md) preserves the original confluent Casimir data. Its weighted coefficient norm can grow exponentially even at color one. The same calculation nevertheless gives a sufficient one-port criterion at the original packing:
+
+$$g_i=F(x_i,b_i,y_i)+F(x_i,c_i,y_i)-G(b_i,x_i,y_i,c_i)>0.$$
+
+Here $F$ is the original triangle potential and $G$ is the explicit four-variable entropy maximum in that note. The criterion assumes connected identity smoothing and four positive, suitably unmarked face curvatures. It gives a signed one-port corridor with every other port complete and its sign retained. A curvature ratio below $2.807257219\ldots$ is one sufficient local test. This is an inequality on the local curvature data; it is not a claim that every such quadruple occurs in a rigid labeled packing. Interacting signed ports require a separate simultaneous estimate.
+
+![A schematic slice of external colors: the untwisted corridor, the sufficient signed one-port estimate, and the remaining full color complement.](../figures/external-color-corridor.png)
+
+The [positive Newton calculation](../../notes/actual_positive_newton_capacity_obstruction.md) explains why the far-color problem cannot be reduced to a presumed universal entropy comparison on all certified matched graphs. Its exact local kernel has nonnegative coefficients, but an explicit shared-face feasible state gives a capacity above the geometric complete value. The coefficient lower bound retains the true Newton weights. The graph family has not yet been adapted to the original flat-plat compiler, so this remains a polynomial-capacity obstruction, not a claimed flat-plat source counterexample. In the actual alternating expansion the omitted sign changes a critical equation. A proof using that expansion must retain the sign.
+
+The remaining general source problems are interacting signed near-complete terms and the entire complementary color region, including their combined opposite-end aliases.
 
 The [near-maximal-volume theorem](../../notes/general_representation_volume_peripheral_gap.md) gives a general geometric criterion for the latter problem. For a fixed finite list of marked peripheral words, keeping any $|\operatorname{tr}^2\rho(\mu_i)-4|$ bounded away from zero forces a uniform positive volume gap. Its proof derives convergence to the marked complete representation from near-maximal volume. Using this criterion for the quantum source still requires a bound on the actual full period; a characteristic equation or the complete-image term alone does not provide that bound.
 

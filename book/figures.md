@@ -38,6 +38,12 @@ The [marked circle-pattern theorem](../notes/actual_marked_deformed_circle_patte
 
 ![Two finite circles in the same marked strip, with main tangencies, deformed matching intersections, and selected fixed points that collide at completeness.](figures/marked-circle-strip.png)
 
+## External colors and the remaining filling estimate
+
+The blue square schematically represents the proved [whole-source untwisted corridor](../notes/general_untwisted_mixed_source_volume_corridor.md); its size depends on the fixed diagram. Along the indicated axis, one varied signed port has a [sufficient local curvature criterion](../notes/actual_signed_small_circle_face_kernel.md). The complement remains a problem for the full original source. The complete term has an opposite-end alias, which the small-color term cancels; a bound for the complete term alone cannot replace the combined estimate. The diagram shows two external color coordinates, not two bridge strands or a quantitative value of the corridor width.
+
+![External-color regions and the scope of the current source estimates.](figures/external-color-corridor.png)
+
 ## The exceptional operator and its selected scalar action
 
 The scalar polynomial and original resolvent have different analytic roles. All polynomial zeros lie above $2$, while the physical Casimir nodes lie in $[-2,2]$. The actual geometric target is at most $-2$ under the marked complete certificate. The exact contour retains both factors and their generic normals. Endpoint estimates at $+2$ do not prove the global saddle contribution or settle a parabolic target at $-2$. See [the current critical path](chapters/frontier.md#the-exceptional-edge-now-has-an-exact-algebraic-description).
