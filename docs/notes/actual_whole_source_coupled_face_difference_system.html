@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The original complete core has a finite coupled face-coefficient system · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">A-structure and torsors</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#torsors">A-structures, torsors, and regulators</a> · <a href="../library.html#frontier">Obstructions and the general conjecture</a><p><span class="badge">Exact polynomial system and fold selection; regular-chart momenta</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_whole_source_coupled_face_difference_system.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_whole_source_coupled_face_difference_system.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_whole_source_coupled_face_difference_system_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="the-original-complete-core-has-a-finite-coupled-face-coefficient-system">The original complete core has a finite coupled face-coefficient system</h1>
+<p>30 October 2026. Independently reviewed. The original four-component circle system admits a polynomial source gauge that preserves its first component. Tensoring it on the actual shared face variables gives an exact whole-source system coupling only finitely shifted face coefficients. The original finite support and a source-selected fold adapter determine its polynomial solution. Its reduced characteristic is identified algebraically with the existing ORDERED local character transport.</p>
+<p>This is a system for the complete-image external-color core. It does not erase its ordinary small-color subsets, eliminate the coefficient family to a scalar A-polynomial, or establish a complex asymptotic of its period.</p>
+<h2 id="a-polynomial-four-component-source-gauge">1. A polynomial four-component source gauge</h2>
+<p>Use N&gt;=3, d=N-1, q=exp(pi i/N), Q=q^2 and the actual polynomial Z_j(x,b,y), 0&lt;=j&lt;=d, of the <a href="actual_positive_face_fixed_fold_packet.html">fixed-fold source theorem</a>, equation(10). Write Z_-1=0 and</p>
+<pre><code>Delta_j=(x-Q^j y)(x-Q^(-j)y),
+Pcal_j=P_d(x,y)/product_(r=1)^j Delta_r,
+P_d(x,y)=product_(r=1)^d(x-Q^r y).</code></pre>
+<p>The rational presentation of Pcal_j is used only to define the following source; its canceled polynomial expressions are proved below. Retain</p>
+<pre><code>omega_j=q^(d^2/2)(-1)^j q^[j(j+1)],
+U_j=omega_j^epsilon Pcal_j
+   (Z_j^b Z_j^c, Z_j^b Z_(j-1)^c,
+      Z_(j-1)^b Z_j^c, Delta_j Z_(j-1)^b Z_(j-1)^c)^T. (1)</code></pre>
+<p>Here the superscript b or c indicates the middle face, not a power. The first component is precisely the original reflected complete-circle polynomial omega_j^epsilon B_ext,j. In the notation of the fixed-fold note, U_j=G_j V_j with G_j=diag(1,1,1,Delta_j).</p>
+<p>ALL FOUR components of (1) are polynomials in x,b,c,y. Below the fold, Pcal_j is the ordinary forced polynomial, so the claim is immediate. Above the fold put r=d-j and s=d-2r. The actual large-H reflection gives</p>
+<pre><code>Z_j=P_s Z_r,   Pcal_j=P_s^-1.</code></pre>
+<p>For s&gt;=2, Z_(j-1)=P_(s-2) Z_(r+1), so the second and third components reduce respectively to P_(s-2) Z_r^b Z_(r+1)^c and P_(s-2) Z_(r+1)^b Z_r^c. At the even first bridge s=1, they instead reduce to Z_M^b Z_M^c, where M=floor(d/2). Finally</p>
+<pre><code>(U_j)_4=omega_j^epsilon B_ext,(j-1), j&gt;=1,</code></pre>
+<p>because Delta_j Pcal_j=Pcal_(j-1). It is zero at j=0. This proves polynomiality, including zero-face evaluations, without choosing a Laurent expansion at a pole. The component degrees are d,d-1,d-1,d. The gauge G is not invertible on Delta_j=0; no such divisor is discarded.</p>
+<p>Put theta=pi/N and retain the actual finite coefficients</p>
+<pre><code>u_j=cos((j-1)theta)sin(j theta),
+v_j^b=sin((2j-1)theta)[x+y+2b cos(j theta)cos((j-1)theta)],
+barw_j=sin((j-1)theta)cos(j theta), w_j=barw_j Delta_(j-1),
+L_j=u_j^2 Delta_j, r_j=(-Q^j)^epsilon.</code></pre>
+<p>The exact polynomial-gauge recurrence is</p>
+<pre><code>L_j U_j=r_j N_j U_(j-1),                           (2)
+N_j=
+  [v_j^b v_j^c, -v_j^b w_j, -w_j v_j^c, barw_j^2 Delta_(j-1)]
+  [u_j v_j^b,    0,          -u_j w_j,   0]
+  [u_j v_j^c,   -u_j w_j,     0,         0]
+  [Delta_j u_j^2,0,           0,         0].</code></pre>
+<p>Indeed N_j=G_j M_j G_(j-1)^-1 on the localized field. Its only apparent denominator is w_j^2/Delta_(j-1), and it cancels exactly as displayed. Thus (2) is polynomial and extends across that divisor. The ORIGINAL finite sequence is zero outside 0,…,d. The equations at j=0 and j=N remain true: the first uses u_0=0 and U_-1=0; the last uses the two actual terminal scalar relations and u_N=0. There is no periodic closing arrow or omitted endpoint current.</p>
+<p>Every coefficient of (2) is Laurent in Q^j. Its face degree is at most three. If mathcal U(z)=sum_(j=0)^d U_j z^j and Theta f(z)=f(Qz), then exactly</p>
+<pre><code>[L(Theta)-z(-Q Theta)^epsilon N(Q Theta)]mathcal U(z)=0. (3)</code></pre>
+<p>The Laurent Theta powers lie between -5 and5; the z-degree is at most1. These bounds are independent of N. The first component is unchanged from the original finite core. For its full Fourier gauge S(chi)=exp(pi i d chi)mathcal U(exp(-2pi i chi)), retain exactly</p>
+<pre><code>exp(pi i d chi)Theta mathcal U=q^d S(chi-1/N).      (4)</code></pre>
+<h2 id="the-original-source-selects-the-fold-crossing">2. The original source selects the fold crossing</h2>
+<p>This section concerns the finite source, not a choice of formal WKB solution. Work over the face coefficient field localized at the Delta_j that occur, and put M=floor(d/2), s0=d-2M and h=M+s0+1=d-M+1. The known initial vector is</p>
+<pre><code>U_0=omega_0^epsilon P_d(x,y)(1,0,0,0)^T.</code></pre>
+<p>Let R4 reverse the four components. The ACTUAL source has the exact polynomial fold adapter</p>
+<pre><code>U_h=q^((s0+1)epsilon) R4 U_M.                      (5)</code></pre>
+<p>A direct proof uses h=d-(M-1) and h-1=d-M in the large-H reflection. The first and fourth components exchange because B_ext,(d-j)=B_ext,j; the two cross products exchange with their forced factors. Finally Delta_h=Delta_M and omega_h/omega_M=q^(s0+1). These give every component of (5), including the even bridge s0=1. No new square root is required. The adapter is a unit phase times a permutation. Near the actual fold Delta_M=(x+y)^2-4xy sin^2((s0+1)pi/(2N)) is uniformly positive on the stated positive radius compact.</p>
+<p>The adapter advances one step at odd levels and TWO at even levels. To see why this matters, write N=2H, M=H-1. At j=H the leading coefficient is nonzero and the transfer has rank one:</p>
+<pre><code>U_H=(1,A^-1,A^-1,1)^T (U_(H-1))_1, A=x+y.         (6)</code></pre>
+<p>At j=H+1 its leading coefficient is zero, while N_(H+1) has just one nonzero row,</p>
+<pre><code>sin^2(theta)(A^2,-A^3,-A^3,A^2).</code></pre>
+<p>It annihilates (6), so this row places no condition on U_(H+1). An invertible analytic gauge cannot change this rank loss.</p>
+<p>For generic face data and every even N&gt;=4, the finite system (2), with zero support outside 0,…,d and prescribed U_0, therefore has a THREE-dimensional affine freedom whenever it has a solution. States through U_H are determined. The new U_(H+1) is an arbitrary four-vector; all later transfers through d are invertible. The terminal row at N imposes one nonzero condition. The determinant of N_j is</p>
+<pre><code>[Delta_j/Delta_(j-1)](u_j w_j)^4,</code></pre>
+<p>so these assertions retain the relevant factors. At odd N, u_j never vanishes inside 1,…,d, and the prescribed U_0 already determines every state. The source adapter (5) fixes the even free vector and restores uniqueness. Its compatibility with the terminal equation is provided by the literal Newton source and its reflection. This is not a claim of three different original sources: the unsupplemented operator has extra solutions, while its specified source data fixes one.</p>
+<h2 id="exact-whole-source-coefficient-equations">3. Exact whole-source coefficient equations</h2>
+<p>Use the actual labeled planar source graph. Each circle i has its literal four incident faces (x_i,b_i,c_i,y_i), with all repeated or shared face names identified. Tensor the local polynomial vectors:</p>
+<pre><code>W(z_1,...,z_R;L)=tensor_(i=1)^R mathcal U_i(z_i;L).</code></pre>
+<p>It has 4^R components and is polynomial in EVERY face variable. For any nonnegative exponent vector n, define the finite coefficient family</p>
+<pre><code>C_n(z)=[product_f L_f^(n_f)] W(z;L),               (7)</code></pre>
+<p>and set it to zero if some n_f&lt;0. The component indexed by alpha has face degree dR-m(alpha), where m counts its local second/third indices. Thus the entire family is finite. It is not a choice of rational-series expansion or a coefficient integral through newly introduced divisors.</p>
+<p>Let S_i be the operator (3) acting on tensor factor i. Expand its actual face-polynomial coefficients as</p>
+<pre><code>S_i=sum_nu L^nu S_(i,nu)(z_i,Theta_i).</code></pre>
+<p>All nu are nonnegative and |nu|&lt;=3. Exact coefficient extraction gives</p>
+<pre><code>sum_nu S_(i,nu)(z_i,Theta_i) C_(n-nu)(z)=0,
+             i=1,...,R, for every n.             (8)</code></pre>
+<p>These are the sought finite FACE SHIFTS. No scalar equation for only one selected coefficient is inferred. The operators commute before extraction: they act on separate external registers and separate tensor factors, while their shared face multiplications commute. The coupled coefficient equations inherit this compatibility.</p>
+<p>The local initial vectors and adapters (5) tensor to give the actual finite solution. Over the localized face field, uniqueness follows by advancing each register through its regular rows and its specified fold jump; the constructions in different registers commute. Polynomiality then follows from (1), not from an assertion about arbitrary operator solutions. The adapters can equally be recorded coefficientwise in (7).</p>
+<p>Let u,v be the two ORIGINAL marked faces and define n* by</p>
+<pre><code>n*_u=n*_v=0, n*_f=d for every other face f.</code></pre>
+<p>For the all-first tensor component, the exact original entire complete core is</p>
+<pre><code>F_N(h)=chi_(D,N) N^R exp[pi i d sum_i h_i/N]
+      (C_(n*))(exp(-2pi i h_1/N),...,exp(-2pi i h_R/N))_(1,...,1).
+                                                           (9)</code></pre>
+<p>This follows from the source-exact reflected Fourier pairing and the original marked face-coefficient theorem. It retains the common twist phase, N^R measure, original mark and finite parity. The two marked faces are set to zero only AFTER polynomial extraction. Equation (9) is the empty subset in the external reflection formula; ordinary-color subsets are not represented by deleting them from this statement.</p>
+<h2 id="the-principal-characteristic-is-the-actual-ordered-character-map">4. The principal characteristic is the actual ordered character map</h2>
+<p>There is an exact algebraic identification with <a href="actual_augmented_plat_local_critical_character_map.html">the original local critical-character map</a>. Use its variables T,U,V,J and internal roots Z,W. On a regular chart,</p>
+<pre><code>P(X,Y)=T(J-Y)^2(X-Y)+(Y-1)^2(TY-XJ)=0.             (10)</code></pre>
+<p>The source convention has b incoming and c outgoing. Thus the OLD ordered map has T=x/y, U=-x/c at the output and V=-x/b at the input. Put r=(J+1)^2/(4J), A=x+y, and</p>
+<pre><code>D=A^2-4xy r, B_b=A+2br, B_c=A+2cr,
+e_out(Z)=-y Z(J-1)^2(TZ-UJ)/[J U(J-Z)^2],
+e_in(W)=-y W(J-1)^2(TW-VJ)/[J V(J-W)^2].         (11)</code></pre>
+<p>Then (10) implies exactly</p>
+<pre><code>e_out^2-2B_c e_out+D=0, e_in^2-2B_b e_in+D=0.    (12)</code></pre>
+<p>Here is a finite polynomial certificate. By homogeneity set y=1, x=T. For one generic triangle with middle face z=-T/X, write e=-Z(J-1)^2(TZ-XJ)/[J X(J-Z)^2] and B_z=T+1+2zr. Then</p>
+<pre><code>e^2-2B_z e+D=-P(X,Z) K(X,Z)/[J X^2(J-Z)^4],
+K=J^3 X(J-T)
+   +[JT(1-J^2)+2J^2X(T-1)]Z
+   +[X(1-JT)+2T(J-1)]Z^2.</code></pre>
+<p>Conversely the resultant of P(X,Z) and J X(J-Z)^2 e+Z(J-1)^2(TZ-XJ) is</p>
+<pre><code>J^4 X^2(J-1)^4(T-X)^2 (e^2-2B_z e+D).</code></pre>
+<p>Thus, away from the displayed degeneracies and the quadratic discriminant, the two local roots correspond to the two continuant roots. This is an elimination of the ACTUAL critical equation.</p>
+<p>The same character map’s ordered centralizer eigenratio is</p>
+<pre><code>R0=ZW(J-1)^4(TZ-UJ)(TW-VJ)
+   /[JUV(J-Z)^2(J-W)^2(T-J)(TJ-1)].</code></pre>
+<p>Since D=y<sup>2(T-J)(T-J</sup>-1), its exact factorization is</p>
+<pre><code>R0=e_out e_in/D.                                    (13)</code></pre>
+<p>It is therefore the lambda in the reduced continuant quartic</p>
+<pre><code>D(lambda^4+1)-4B_bB_c(lambda^3+lambda)
+             +(4B_b^2+4B_c^2-2D)lambda^2=0.      (14)</code></pre>
+<p>The polynomial gauge changes no full principal determinant: with u=(1/2)sin(2pi mu), J=exp(2pi i mu), the retained determinant is</p>
+<pre><code>u^8 D^3 Pquartic(z(-J)^epsilon),                  (15)</code></pre>
+<p>where Pquartic is the left side of (14). This polynomial identity follows by similarity where D!=0 and hence extends as a polynomial; it does not license canceling u or D on their zero strata.</p>
+<p>The finite Fourier equation has the stationary relation</p>
+<pre><code>z(-J)^epsilon lambda=1.</code></pre>
+<p>With z=exp(-2pi i chi), equations(13)–(15) give precisely</p>
+<pre><code>R0(-J)^epsilon=exp(2pi i chi)=M_aux^-2.            (16)</code></pre>
+<p>This is the marked meridian relation of the original threading word, including its half-twist shear and inverse eigenratio, rather than a new normalization of the trace curve.</p>
+<p>The magnetic and total momenta agree as well. For one original H Newton summand, let its two raw heads be X,Y with XY=T and internal root Z. Differentiating the two literal Newton products, at their stationary root, gives the exponentiated logarithmic forces</p>
+<pre><code>p1=Z(X-1)/(X-Z), p2=JZ(Y-1)/(YZ-J).</code></pre>
+<p>For example the first product contributes integral_0^kappa Log(X-exp(2pi i t))dt; exponentiating 2pi i times its logarithmic X derivative gives p1. The second product and its literal Y^k factor give p2. The retained white monomial q^(d i) contributes the additional minus sign in the fixed-total first-head momentum. Thus</p>
+<pre><code>-p1/p2=(1-X)(TZ-XJ)/[J(X-Z)(T-X)],                (16a)</code></pre>
+<p>which is exactly the old magnetic Y(X,Z), with no Hermitian reversal. For the full circle, the original residual sine product contributes -(T-J)/(TJ-1) to the total-degree force; the monomial q<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> T^-a contributes -J^-1. Consequently</p>
+<pre><code>e^(Theta_tau)=J^-1 (T-J)/(TJ-1) p2(U,Z)p2(V,W)
+  =JZW(T-J)(T-U)(T-V)/[(TJ-1)(TZ-UJ)(TW-VJ)].    (16b)</code></pre>
+<p>Here each p2 uses its own second head T/U or T/V. These are the literal normalization factors from the source circle formula, not functions adjusted to fit the character equation. Equations(13), (16a),(16b) recover all three derivatives used by the original ordered-character theorem. Its typed incoming/output construction therefore preserves the entire ordered product P=BA and transports the two punctures by the same centralizer. The integer logarithmic marks are still required before turning these exponential equations into additive stationary equations.</p>
+<h2 id="branch-calibration-and-what-has-not-been-eliminated">5. Branch calibration and what has not been eliminated</h2>
+<p>For positive regular face radii and mu=1/2-delta with small delta&gt;0, the actual positive continuants select</p>
+<pre><code>e_out=E_c(delta), e_in=E_b(delta),</code></pre>
+<p>as in the fixed-real fold theorem. Equation(13) then selects the positive product branch. Put C=pi[sqrt(bA+xy)+sqrt(cA+xy)]/A. At delta=0, R0=1, J=-1, and</p>
+<pre><code>(1/2) dR0/dJ=C/(2pi i).</code></pre>
+<p>The derivative follows from dJ/ddelta=2pi i and d Log R0/ddelta=2C. In the original ordered map this is exactly the additive parabolic conjugator coefficient: the matrix transport is <code>I+[C/(2pi i)](P+I)</code>, not the identity merely because R0=1. With the retained half twist, its primitive cusp ratio is</p>
+<pre><code>tau=1/[C/(2pi i)-epsilon/2]=2pi i/(C-pi i epsilon),</code></pre>
+<p>agreeing with the independently marked rectangle calculation.</p>
+<p>Equations(10)–(16) hold first on the stated regular character chart. Their cleared polynomial relations have zero-face limits, but taking such limits can lose flag or branch information. The original source and the large-H adapters, rather than an arbitrary quartic root, specify those limits. In particular no new geometric branch is inferred merely from the quartic at u=0.</p>
+<p>In a prospective coefficient saddle, a face shift n-&gt;n-nu has multiplier L^nu, with L_f=exp(-partial_(n_f/N) action). The actual shared-face incidence in (8) is therefore retained. The Cauchy stationary equations for the original coefficient use its literal target n*, not independent triangle radii. Under the primitive face/head change of variables they are the original magnetic conservation/gluing equations wherever the full local character chart is regular. This last comparison is a stationary-equation identification, not a theorem that a solution is selected by the finite period. At the two marked zero faces one must retain the actual boundary limit and co-source.</p>
+<p>The equations do not eliminate the neighboring coefficient indices, prove a scalar A-polynomial for an arbitrary network, or identify every component of their characteristic variety with a geometric component. Nor do they prove a fixed complex external-color packet, its nonzero saddle coefficient, or the needed bounds for the nonempty small-color subsets. Their exact finite source solution, primitive normalization and local ordered-character interface are what is established here.</p>
+<p>Focused <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_whole_source_coupled_face_difference_system.py">exact source audit</a>, with <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_whole_source_coupled_face_difference_system_results.json">saved results</a>: PASS. It constructs 50 literal homogenized Newton polynomials and checks 300 canceled source components, 360 polynomial recurrence rows, 15 exact core Fourier pairings, 192 coupled rows with 27,254 shared-face coefficient equalities, and 12 marked tetrahedral-graph coefficient extractions. Seven symbolic certificates check the polynomial gauge and original ordered magnetic/total/channel character maps. The independently developed fold block uses 336 original Newton values, 48 source jumps, 2,208 system rows and 48 full finite-system rank checks through N=18 and both parities. The rank counts concern the explicitly localized operator field; finite fixtures do not assert a geometric certificate or an asymptotic theorem.</p>
+<p>Independent root review of the full proof and audit source: PASS. Its fresh redirected replay reproduced all recorded symbolic, polynomial, shared-face coefficient and fold-selection checks. The review includes the original incoming-b/output-c convention and the full magnetic, total and channel character identities; it does not extend those regular-chart identities to a reconstructed marked zero-face representation.</p>
+<p>Independent source/transport review: PASS for the polynomial gauge, exact whole-source coefficient system, source-selected fold jump, and final ordered magnetic/total momentum comparison. The three-dimensional even operator freedom and its elimination by the literal source adapter were also checked independently. The original finite system, source polynomial and audit are frozen; the geometric boundary and period qualifications in section 5 remain part of the result.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>d(R+S-sigma)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_whole_source_coupled_face_difference_system.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#a-polynomial-four-component-source-gauge">1. A polynomial four-component source gauge</a><a href="#the-original-source-selects-the-fold-crossing">2. The original source selects the fold crossing</a><a href="#exact-whole-source-coefficient-equations">3. Exact whole-source coefficient equations</a><a href="#the-principal-characteristic-is-the-actual-ordered-character-map">4. The principal characteristic is the actual ordered character map</a><a href="#branch-calibration-and-what-has-not-been-eliminated">5. Branch calibration and what has not been eliminated</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

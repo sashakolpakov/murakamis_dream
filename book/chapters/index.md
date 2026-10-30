@@ -34,7 +34,8 @@ Start with [the equality results](results.md) for the exact knot and link famili
 | Common geometric framing | Exactly two prescribed physical-support failures for the certified right-angled cut; every other ordinary factor is on the selected full physical packet, at arbitrary bridge width |
 | Exceptional matching block | Exact generic Casimir polynomial and original resolvent period; selected scalar character relation, strict-support Green action and endpoint jets; contributing contour and joint contraction remain open |
 | Whole complete source limit | Every connected certified augmented plat with any retained half-twist pattern, at arbitrary fixed width and both level parities; exact face coefficients, a nonzero signed Gaussian and actual polyhedral volume |
-| General signed long-filled knot equality | The external-color complex packet with its complementary-region and alias bounds remains unresolved |
+| Complete-image external colors | A nonzero asymptotic on a fixed complex neighborhood; the limiting action has the actual complete volume anchor, with marked geometric continuation still to establish |
+| General signed long-filled knot equality | Bounds for every remaining reflected color term and the combined far aliases, plus the marked deformed action, remain unresolved |
 
 The cube, Fourier, torsor, and alternative approaches are preserved. A failed intermediate estimate is useful evidence about the argument; it is retained beside the corrected scope.
 

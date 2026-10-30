@@ -78,10 +78,17 @@ The complete signed source now has a global equality. The remaining general prob
 
 | Required extension | What is available | What still needs proof |
 | --- | --- | --- |
-| Local deformed source | Exact all-color formulas, the complete signed source and primitive peripheral marks | A uniform complex packet in the **external** crossing-circle colors, with its actual marked geometric action |
+| Local deformed source | A nonzero uniform complex packet for the exact complete-image term on a fixed external-color neighborhood | Reconstruction of its marked geometric action at the two zero faces; estimates for the other reflected terms |
 | Whole filling transform | Exact filling transform and geometric long-filling threshold | A bound for the entire complementary color region and its aliases, retaining all small-color terms |
 
-Internal deficits $s_i=N-1-2a_i$ and external filling-color deficits $h_i=N-j_i$ are different variables. The new internal-channel theorem does not provide the missing external-color estimate. Fixed nonzero external parameters require control beyond the internal $\sqrt N$ window.
+Internal deficits $s_i=N-1-2a_i$ and external filling-color deficits $h_i=N-j_i$ are different variables. The [fixed complex core theorem](../../notes/actual_complete_core_complex_packet.md) now controls the complete-image term with $\boldsymbol\chi=\mathbf h/N$ in a fixed complex neighborhood:
+
+$$\frac{F_N(N\boldsymbol\chi)}{F_N(0)}
+=e^{N(S_N(\boldsymbol\chi)-S_N(0))}
+\sqrt{\frac{\det K_N(0)}{\det K_N(\boldsymbol\chi)}}
+\bigl(1+O(N^{-1})\bigr).$$
+
+Here $S_N$ is the selected joint critical action and $K_N$ its nonsingular Hessian. The square root is fixed at $\boldsymbol\chi=0$. The theorem proves nonvanishing uniformly and $S_N\to S$ holomorphically, with $2\pi S(0)=\operatorname{Vol}(Y_D)$. The exponential retains $S_N$; convergence alone does not justify substituting $S$. Identifying the **whole deformed action** with the actual marked geometric regulator still requires the boundary reconstruction.
 
 The [external reflection theorem](../../notes/actual_external_circle_reflection_and_cusp.md) gives an exact interface. An original color $N-h$ circle is a cosine-weighted complete circle plus a literal color $h$ circle. The complete term has a proved Fourier limit for $h=z\sqrt N$, and its coefficient matches the primitive cusp shape:
 
@@ -99,7 +106,11 @@ The [source-divisor transfer](../../notes/general_long_filling_source_divisor.md
 
 The [finite Fourier-period theorem](../../notes/actual_positive_face_fixed_fold_packet.md) gives an exact four-component difference equation for the original complete-circle core. Its shift range is bounded independently of $N$. It retains the actual finite polynomial solution, both fold endpoints, the Fourier gauge and the full classical determinant factors. Its selected local characteristic is an explicit palindromic quartic. After the shared-face extraction, the equation couples neighboring face coefficients; a scalar equation for the whole knot has not yet been derived.
 
-The same theorem improves the relative internal-channel estimate to $O(N^{-1})$ on a fixed **real** interval, with an even analytic action and an explicit amplitude. This error is not exponentially small and therefore does not justify replacing the exact source in a Fourier transform at frequencies of order $N$. The exact difference equation provides an additional way to study that remaining problem.
+The [exponential interpolation theorem](../../notes/actual_positive_face_exponential_fold_interpolation.md) improves the original fixed-real estimate to an exponentially accurate comparison on the actual channel grid, uniformly for complex face radii. Analytic iterations on nested disks and contraction of the actual finite recurrence establish that comparison. The complete-core theorem then converts the finite channel grid by exact cotangent contours and evaluates the joint saddle. This closes the fixed-neighborhood analytic step for the complete term.
+
+The [coupled polynomial system](../../notes/actual_whole_source_coupled_face_difference_system.md) retains every shared-face coefficient and the exact fold-selection relation. It matches the ordered classical momenta on regular charts. At a triangle with two marked zero faces the local quadratic has a double root, so those identities alone do not recover its boundary flag. That is the geometric issue now being addressed.
+
+For the remaining reflected terms, the [smoothing-capacity theorem](../../notes/actual_matching_smoothing_angle_capacity.md) supplies a checkable sufficient condition for a strict rate loss when an untwisted color-one circle is deleted. Its angle-flow and entropy argument extends beyond balanced examples. It does not yet cover every deletion, general small colors, or every half-twist pattern.
 
 The previous operator and torsor approaches remain available. The exceptional operator is the original normalized Casimir polynomial, with its [general character relation](../../notes/actual_matching_edge_polynomial_geometric_action.md) and [exact resolvent period](../../notes/actual_matching_edge_continuant_operator_period.md). The original marked transport, genuine quantum normals, odd framing source, logarithmic class and relative boundary currents are preserved in the [source and torsor routes](../library.html). The new coefficient identity and signed Gaussian resolve the complete contraction without assigning an arbitrary relative cycle.
 

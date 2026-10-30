@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An exponentially accurate analytic interpolation of the actual fold factors · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a><p><span class="badge">Exponential actual-grid interpolation; fixed complex faces</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_positive_face_exponential_fold_interpolation.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_positive_face_exponential_fold_interpolation.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_positive_face_exponential_fold_interpolation_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="an-exponentially-accurate-analytic-interpolation-of-the-actual-fold-factors">An exponentially accurate analytic interpolation of the actual fold factors</h1>
+<p>30 October 2026. Independently reviewed and frozen. The construction below uses analytic contractions on shrinking disks, then the actual positive finite recurrence. It produces an even holomorphic fold interpolation whose error on the original channel grid is exponentially small, uniformly on a fixed complex face-radius neighborhood. Formal WKB existence alone is not used. This is a local complete-circle factor theorem; the shared coefficient period and the ordinary-color alias subsets remain separate.</p>
+<h2 id="statement-with-the-original-finite-anchor">1. Statement with the original finite anchor</h2>
+<p>Fix a compact set of positive face radii in any one of the actual zero patterns of the <a href="general_signed_augmented_source_volume.html">signed source theorem</a>. Zero faces stay zero. Set</p>
+<pre><code>B_(N,a)=beta_a^2 D_a(x,b,y)D_a(x,c,y)P_(d-2a)(x,y),
+d=N-1, M=floor(d/2), s0=d-2M,
+delta_a=(d-2a)/(2N), delta_min=s0/(2N), h=1/N.</code></pre>
+<p>Use the explicit analytic functions E_b,J_b,a_b,V of <a href="actual_positive_face_fixed_fold_packet.html">the fixed-fold theorem</a>, equations(1),(2). In particular V is even, V(0)=0 and V’’(0)=2pi(T_b+T_c)/(x+y)&gt;0. The T_b=0 triangle is treated as the exact constant-pivot case, with J_b=1.</p>
+<p>There are fixed positive delta_<em>,rho,c,C, a complex logarithmic radius neighborhood O_rho of the given real compact, and even holomorphic functions H_N(delta;l) on |delta|&lt;2delta_</em>, l in O_rho, such that H_N(0;l)=0 and</p>
+<pre><code>H_N(delta;l)=-N V(delta;l)
+                  -(1/2)Log[J_b(delta;l)J_c(delta;l)]+O(N^-1).
+                                                           (1)</code></pre>
+<p>The bound is uniform on smaller closed disks and neighborhoods, with all fixed derivatives by Cauchy estimates. Define the specified finite-N interpolation</p>
+<pre><code>mathcal B_N(delta;l)=B_(N,M)(l)
+                   exp[H_N(delta;l)-H_N(delta_min;l)].       (2)</code></pre>
+<p>The original B_(N,M) is retained exactly; it is a holomorphic unit on O_rho by positive-matrix preconditioning and the original forced factor. Then for EVERY original integer a with delta_min&lt;=delta_a&lt;=delta_*,</p>
+<pre><code>B_(N,a)(l)/mathcal B_N(delta_a;l)=1+O(e^(-cN)),
+                                            uniformly l in O_rho. (3)</code></pre>
+<p>The right side of (2) is even in delta. No noninteger-dimensional matrix is introduced. For an actual retained half twist, the factor</p>
+<pre><code>omega_M^epsilon
+         exp[pi i epsilon N(delta^2-delta_min^2)]            (4)</code></pre>
+<p>agrees exactly with omega_a^epsilon on this grid, including its common q<sup>(d</sup>2/2) phase. Thus (2)–(4) preserve the entire local root complete-circle factor. They do not interpolate a different generic-q germ or ordinary small-color coupon.</p>
+<h2 id="a-regular-analytic-equation-in-the-squared-fold-variable">2. A regular analytic equation in the squared fold variable</h2>
+<p>First consider one triangle with T_b&gt;0. Let z denote the pivot coordinate (N/2-a)/N. On a fixed small complex disk the functions E(z)=E_b(z), D(z)=(x+y)^2-4xy sin^2(pi z) obey E(z)E(-z)=D(z). Write</p>
+<pre><code>B0(w)=[E(z)+E(-z)]/2, C0(w)=[E(z)-E(-z)]/(2z),
+t(w)=tan(pi z)/z, w=z^2.</code></pre>
+<p>All are holomorphic in w near zero; t and C0 are units. Seek a reflection-preserving approximate pivot in the form</p>
+<pre><code>e_v(z)=E(z) exp[z v(z^2)],                         (5)</code></pre>
+<p>where v is holomorphic in w. Thus e_v(z)e_v(-z)=D(z) EXACTLY. Clear the actual recurrence residual as in the fixed-fold proof:</p>
+<pre><code>Rcal_v(z,h)=tan(pi(z+h))e_v(z)+tan(pi z)e_v(-z-h)
+   -[tan(pi(z+h))+tan(pi z)]
+                      [A+2b sin(pi z)sin(pi(z+h))].         (6)</code></pre>
+<p>It vanishes at z=0,-h and is odd under z -&gt; -z-h. Set z=zeta-h/2. Division therefore defines a holomorphic function of w=zeta^2:</p>
+<pre><code>G_h(v)(w)= Rcal_v(zeta-h/2,h)
+                     /[zeta(zeta^2-h^2/4)].                 (7)</code></pre>
+<p>The values at the apparent three divisors in (7) are their removable limits. Holomorphic divisibility follows successively by the two zeros and centered oddness, including h=0 where the zeros coalesce. It does not require estimating separate singular quotients. At h=0 and v=0, G_0(0)=0. Its linearization is multiplication by the nonzero analytic function</p>
+<pre><code>L(w)=2t(w)C0(w), L(0)=4pi^2 T_b.                  (8)</code></pre>
+<p>This normalization resolves the formal fold pole in the analytic equation; it does not cancel the peripheral factors of the finite four-component operator.</p>
+<h2 id="the-single-loss-analytic-estimate">3. The single-loss analytic estimate</h2>
+<p>Here is the estimate that controls arbitrarily many corrections. Use sup norms on w disks, with radii in a fixed compact interval 0&lt;R_1&lt;=R&lt;=R_0. For small v and 0&lt;Delta&lt;R-R_1, with h small enough that Ch&lt;Delta, analytic differentiation gives</p>
+<pre><code>||D G_h(v)-L||_(R to R-Delta)
+                              &lt;=C(||v||_R+h/Delta).        (9)</code></pre>
+<p>All constants are uniform on a fixed complex radius neighborhood. There is only ONE loss of analytic radius, not two independent derivatives in z. We give the cancellation explicitly.</p>
+<p>Write the even and odd parts of (5) as</p>
+<pre><code>e_v(z)=B0(w)+w F_v(w)+z[C0(w)+G_v(w)].</code></pre>
+<p>Both F_v,G_v are pointwise analytic functions of (w,v(w)), and</p>
+<pre><code>F_v=C0 v+O(v^2), G_v=B0 v+O(v^2).</code></pre>
+<p>For example they follow directly from cosh(zv) and sinh(zv)/z, which are analytic in (w,v). For zeta^2=w put a=zeta-h/2, b’=zeta+h/2 and w_-=a<sup>2,w_+=b’</sup>2. The v-dependent part of (7) is exactly</p>
+<pre><code>t_+ F_-+t_- F_+
+  +(h/(2zeta))(t_- F_+-t_+ F_-)
+  +(1/zeta)(t_+ G_--t_- G_+),                    (10)</code></pre>
+<p>where subscripts indicate evaluation at w_+ or w_-. The same formula with pointwise derivatives of F,G holds for D G_h. Every apparent divided difference is controlled by</p>
+<pre><code>[K(w_+)-K(w_-)]/zeta
+            =2h integral_0^1 K&#39;(w_-+t(w_+-w_-))dt.         (11)</code></pre>
+<p>The segment stays in the outer disk when Ch&lt;Delta. Cauchy’s bound for K’ costs Delta^-1. Comparing the first line of (10) with its h=0 value uses the same first-derivative estimate, since |w_+-w|+|w_–w|&lt;=Ch. The nonlinear h=0 difference from (8) costs O(||v||). These facts prove (9), including w=0 by holomorphy.</p>
+<h2 id="exponentially-accurate-analytic-pivots">4. Exponentially accurate analytic pivots</h2>
+<p>The explicit first correction already proved in the fixed-fold note provides the starting function</p>
+<pre><code>v^(0)(w)=h a_b(z)/z, w=z^2.</code></pre>
+<p>It is holomorphic and O(h); the joint residual divisibility there gives G_h(v<sup>(0))=O(h</sup>2) on one fixed disk. Iterate</p>
+<pre><code>v^(m+1)=v^(m)-L^-1 G_h(v^(m))                   (12)</code></pre>
+<p>on nested w disks, losing Delta=Kh at each step. Choose fixed K sufficiently large, then h sufficiently small. Equation (9) makes the map in (12) a contraction with Lipschitz factor at most1/2 between consecutive disks, as long as ||v||&lt;=C_1 h. The first change is O(h^2), and subsequent changes decrease geometrically. Their sum is O(h^2), so that norm condition closes by induction.</p>
+<p>More explicitly put R_m=R_0-m Delta and T(v)=v-L^-1 G_h(v). Then v^(m) is defined on the disk of radius R_m. On the next disk, v<sup>(m+1)-v</sup>(m)=T(v<sup>(m))-T(v</sup>(m-1)), with the previous iterate restricted to R_m. Estimate (9) therefore gives ||v<sup>(m+1)-v</sup>(m)||<em>(R</em>(m+1))&lt;= (1/2)||v<sup>(m)-v</sup>(m-1)||_(R_m). This is a contraction between nested analytic domains, not an assertion that translation is bounded on one unchanged disk.</p>
+<p>Perform m=floor(c_0/h) steps, with c_0 small enough that all disks still contain one fixed smaller disk. Keep one more radius margin to evaluate the final residual. The resulting analytic v_N obeys</p>
+<pre><code>v_N=v^(0)+O(h^2), ||G_h(v_N)||&lt;=C e^(-c_1/h).     (13)</code></pre>
+<p>Each operation is analytic in the face parameters, and all estimates are uniform there. The finite iteration count may depend on N; no analyticity in a varying quantum level is claimed. All functions are real on positive real radii and real w. Put</p>
+<pre><code>e_N^*(z)=E(z)exp[z v_N(z^2)].                    (14)</code></pre>
+<p>It preserves reflection exactly, has the original first correction, and its ACTUAL Riccati residual is exponentially small on a fixed complex z disk. The removable divisions in (7) only multiply it by bounded analytic factors. For T_b=0 take e_N^*=A exactly.</p>
+<h2 id="match-the-actual-finite-pivots-including-complex-face-radii">5. Match the actual finite pivots, including complex face radii</h2>
+<p>Choose a fixed real cutoff 2delta_0 within the disk of (14). Start the ACTUAL physical recurrence at the nearest k0 to 2delta_0 N, and estimate only k&lt;=delta_0 N. At real positive radii the original pivots have A&lt;=e_a&lt;=2A+4b. Also e_N^*(k/N)/A&gt;=exp(c k/N) for sufficiently large N in a nonconstant triangle. Consequently the exact error multiplier is bounded by</p>
+<pre><code>[tan(k theta)/tan((k+1)theta)] exp[-c(k+1)/N].     (15)</code></pre>
+<p>This is the same source-derived positive contraction as before. The initial error is bounded, and its propagation to k&lt;=delta_0 N is O(e^(-c_2 N)). The sum of exponentially small local residuals remains exponentially small, with at most a polynomial loss.</p>
+<p>The matching extends to a FIXED complex face neighborhood, not just to a shrinking neighborhood. At each original principal matrix, positive-summand preconditioning gives M_j(l)=M_j(l_real)<sup>(1/2)(I+E)M_j(l_real)</sup>(1/2), ||E||&lt;=C rho, uniformly j,N. The last inverse-entry formula then gives the original Schur-pivot ratio</p>
+<pre><code>e_a(l)/e_a(l_real)=1+O(rho)</code></pre>
+<p>uniformly, with no lower eigenvalue assumption beyond the stated positive matrices. The same bound holds for (14) by its uniform analytic unit bounds. Thus each complex error multiplier is at most exp(C rho) times (15). Over the entire finite interval the extra cost is at most exp(C rho N). Choose rho FIRST below both the initial-damping and analytic-residual exponential rates. It follows that</p>
+<pre><code>e_a(l)/e_N^*((N/2-a)/N;l)=1+O(e^(-c_3 N))        (16)</code></pre>
+<p>uniformly in the smaller complex face neighborhood and at EVERY physical pivot in the chosen real window, including the two parity endpoints. This step identifies the constructed analytic function with the actual polynomial source. No choice among homogeneous recurrence solutions has been assumed.</p>
+<h2 id="an-analytic-discrete-primitive-with-the-exact-folded-anchor">6. An analytic discrete primitive with the exact folded anchor</h2>
+<p>Apply the construction to the two actual triangles. Their exact reflection makes the marked logarithm</p>
+<pre><code>ell_N(z)=Log[e_(b,N)^*(z)e_(c,N)^*(z)/D(z)]</code></pre>
+<p>odd and holomorphic on a fixed disk. Moreover</p>
+<pre><code>ell_N=V&#39;+h(a_b+a_c)+O(h^2),                     (17)</code></pre>
+<p>uniformly and holomorphically. We now construct the logarithm of the channel product itself with exponential precision, instead of summing a finite-order Euler–Maclaurin error.</p>
+<p>Let A_h f(z)=h^-1 integral_(-h/2)^(h/2) f(z+t)dt. It preserves odd analytic functions. On nested z disks its difference from the identity has norm at most Ch/Delta. Start f^(0)=ell_N and iterate f<sup>(m+1)=f</sup>(m)+ell_N-A_h f^(m), losing Delta=Kh at every step. The first change is O(h^2), by the centered integral and bounded second derivatives. The same geometric contraction argument as in (12), now linear, gives an odd analytic f_N with</p>
+<pre><code>f_N=ell_N+O(h^2), A_h f_N=ell_N+O(e^(-c_4 N)).    (18)</code></pre>
+<p>Define H_N(z)=-h^-1 integral_0^z f_N(t)dt. It is even, has value zero at zero, and obeys</p>
+<pre><code>H_N(z+h/2)-H_N(z-h/2)
+                          =-ell_N(z)+O(e^(-c_4 N)).        (19)</code></pre>
+<p>Equations (17),(18) give exactly (1), since integral_0^z(a_b+a_c)=(1/2)Log[J_b(z)J_c(z)].</p>
+<p>For adjacent ACTUAL channel indices the forced product contributes exactly D at the midpoint, and the two original pivots contribute their reciprocals. By (16) their ratio is exp[-ell_N(midpoint)] with exponentially small relative error. Compare this with (19) and sum at most O(N) steps from the physical maximal channel. The resulting error is still O(e^(-cN)). At the starting index (2) uses B_(N,M) EXACTLY and delta_min=s0/(2N). This proves (3).</p>
+<h2 id="what-the-theorem-supplies-and-what-it-does-not">7. What the theorem supplies and what it does not</h2>
+<p>The comparison (3) is exponentially accurate on the actual channel grid, uniformly for fixed complex face radii, while (2) is even and holomorphic in a fixed fold disk. It therefore supplies the local interpolation input that a fixed-frequency Fourier contour argument requires. It is substantially stronger than a real-grid relative O(N^-1) approximation. Its phase and amplitude are those of the actual finite source, with all beta, forced factors, parity offsets and half twists retained.</p>
+<p>The full shared-face coefficient must still be assembled with its original Cauchy period, angular tails and finite channel endpoints. The entire complete-image core must then be distinguished from the nonempty ordinary-color subsets in the exact external reflection identity. No global alias gap, filled-knot conclusion, or generic-q normal theorem is inferred here.</p>
+<p>The focused <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_positive_face_exponential_fold_interpolation.py">audit</a> and its <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_positive_face_exponential_fold_interpolation_results.json">recorded results</a> check 20 symbolic identities and 24 complex-face residual identities. Numerical analytic-iteration prototypes are compared with the ORIGINAL beta/D/P factors: four pivot cases through N=1024 and eight complete-circle comparisons at both parities, including fixed complex face parameters. These finite projections are diagnostics of the construction; they are not premises for the uniform exponential estimate proved above.</p>
+<p>Root and coherent_partner_currents independently reviewed the full analytic proof, including the nested-domain single-loss iteration, complex-face source matching and centered primitive. An independent redirected replay reproduced every focused audit result at 65 digits. No full mixed-color packet, ordinary-subset gap, or generic-q normal claim is included in these validations.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_positive_face_exponential_fold_interpolation.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#statement-with-the-original-finite-anchor">1. Statement with the original finite anchor</a><a href="#a-regular-analytic-equation-in-the-squared-fold-variable">2. A regular analytic equation in the squared fold variable</a><a href="#the-single-loss-analytic-estimate">3. The single-loss analytic estimate</a><a href="#exponentially-accurate-analytic-pivots">4. Exponentially accurate analytic pivots</a><a href="#match-the-actual-finite-pivots-including-complex-face-radii">5. Match the actual finite pivots, including complex face radii</a><a href="#an-analytic-discrete-primitive-with-the-exact-folded-anchor">6. An analytic discrete primitive with the exact folded anchor</a><a href="#what-the-theorem-supplies-and-what-it-does-not">7. What the theorem supplies and what it does not</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

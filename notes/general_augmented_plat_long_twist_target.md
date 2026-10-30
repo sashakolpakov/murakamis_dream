@@ -20,10 +20,13 @@ its [global torus saddle](actual_positive_face_coefficient_saddle.md), the
 The signed extension derives a uniform relative folded Gaussian from
 the original continuants and sums the actual phases to a nonzero leading
 coefficient. All original factors and the primitive grid measure remain.
-General long fillings still require the complex packet and full
-complementary/alias estimate in EXTERNAL crossing-circle colors; these
-are not the internal folded labels now controlled. The current dependency
-map is in the [frontier chapter](../book/chapters/frontier.md).
+The [fixed complex complete-core theorem](actual_complete_core_complex_packet.md)
+now supplies a nonzero asymptotic on a fixed neighborhood in EXTERNAL
+crossing-circle colors, for the exact complete-image term of reflection.
+Its complete action is the actual volume. General long fillings still
+require its marked geometric continuation at zero faces and bounds for
+the other reflected terms and the combined far aliases. The current
+dependency map is in the [frontier chapter](../book/chapters/frontier.md).
 
 The older source, operator, Fourier and torsor tools are preserved below
 with their own scopes. They are not an assertion that the general filling
