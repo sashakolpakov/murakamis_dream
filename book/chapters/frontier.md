@@ -121,7 +121,13 @@ The [coupled polynomial system](../../notes/actual_whole_source_coupled_face_dif
 
 The [exact small-circle operator](../../notes/actual_small_circle_polynomial_face_insertion.md) preserves the face polynomial ring after summing all original paths. Its apparent negative powers cancel because the physical endpoint coefficients vanish. The original total-degree argument then excludes every whole-level Fourier alias. At fixed positive radii, a color $h$ insertion costs at most $C^{h-1}$ in the weighted coefficient norm.
 
-The [ordered extension](../../notes/actual_ordered_small_circle_face_insertions.md) composes these operators in reverse diagram order when their output middle faces are unmarked bounded regions. It shifts every coefficient created by later operators, so interacting regions are included. An exact transpose adapter also handles a single protected output face without moving the original mark. This is not yet an arbitrary-subset theorem: mixed elimination directions can interact cyclically, and deleted ports with retained half twists need separate treatment.
+The [simultaneous correspondence](../../notes/actual_simultaneous_small_circle_face_correspondence.md) now covers **every untwisted subset with connected identity smoothing**, including protected outgoing faces and cyclic dependencies between operators. Its proof checks polynomiality separately in each merged-face component, while retaining all other formal path choices. It needs no global elimination order. The earlier [ordered construction](../../notes/actual_ordered_small_circle_face_insertions.md) remains a useful special case.
+
+Disconnected identity smoothings have a different exact conclusion. If the inserted colors satisfy
+
+$$2\sum_{i\in J}(h_i-1)<N-1,$$
+
+their entire original subset contribution is **zero**. The ordinary face targets require more degree than the retained Laurent terms can supply. This includes the mesoscopic window at both level parities, with every remaining complete-circle phase retained. Deleted ports carrying a half twist are still outside these results.
 
 For the required geometric gap, the [smoothing-capacity theorem](../../notes/actual_matching_smoothing_angle_capacity.md) supplies a sufficient angle-flow and entropy condition when an untwisted color-one circle is deleted. The polynomial operator carries any compatible strict gap to small colors, at the stated $C^{h-1}$ cost. It does not supply the gap itself.
 
@@ -131,7 +137,11 @@ The [capacity decomposition](../../notes/actual_smoothed_source_capacity_blocks.
 
 $$\Phi_{\mathrm{smoothed}}=\sum_B\frac{\operatorname{Vol}(Q_B)}{\pi}.$$
 
-Double-triangle blocks contribute zero. The formula is independent of each block's adjacent marked pair; it does not move the quantum mark or factor the finite quantum source. **The strict comparison of this sum with the original capacity remains open.** Identifying the blocks with the smoothed exterior's geometric pieces also needs its actual gluing proof.
+Double-triangle blocks contribute zero. The formula is independent of each block's adjacent marked pair; it does not move the quantum mark or factor the finite quantum source.
+
+The [strict representation-volume theorem](../../notes/general_representation_volume_kernel_strictness.md) supplies the strict comparison when the smoothed source is itself certified hyperbolic. Its actual filling quotient kills an essential meridian. An independently checked natural-map argument proves that a representation with such a kernel has strictly smaller absolute volume. Thus the connected regular smoothing has a strict capacity gap, and the simultaneous operator estimate transfers it to small colors. A simple smoothed white triangulation supplies its required polyhedron by the block construction.
+
+**The remaining geometric case is a sum of nonzero degenerate block volumes.** We still need a representation of the original group whose regulator realizes that sum through the actual cut pairings. A formal capacity sum alone does not supply it. Loop-infeasible cases and sums consisting only of zero-capacity blocks already have a gap below the positive original volume. Signed deleted ports and the full complementary-color/alias estimate remain separate quantum requirements.
 
 The previous operator and torsor approaches remain available. The exceptional operator is the original normalized Casimir polynomial, with its [general character relation](../../notes/actual_matching_edge_polynomial_geometric_action.md) and [exact resolvent period](../../notes/actual_matching_edge_continuant_operator_period.md). The original marked transport, genuine quantum normals, odd framing source, logarithmic class and relative boundary currents are preserved in the [source and torsor routes](../library.html). The new coefficient identity and signed Gaussian resolve the complete contraction without assigning an arbitrary relative cycle.
 
