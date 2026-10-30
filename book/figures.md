@@ -16,7 +16,7 @@ The blue region shows the limiting [full strict physical domain](../notes/actual
 
 ## Two exceptional factors at arbitrary bridge width
 
-Under the geometric strip conditions, the common framing flags determine a line through the convex hull of the normalized white face normals. A generic line meets exactly two facets. The [framing obstruction and localization](../notes/actual_right_angled_selected_framing_obstruction.md) prove that these are exactly the two local factors failing strict physical support. The two facets can be prescribed, including those adjacent to the original marked physical edge. The [selected-factor theorem](../notes/actual_augmented_plat_selected_factor_localization.md) now puts every other ordinary factor on the selected full physical packet. The exceptional block and the global contraction still need a sharp estimate.
+Under the geometric strip conditions, the common framing flags determine a line through the convex hull of the normalized white face normals. A generic line meets exactly two facets. The [framing obstruction and localization](../notes/actual_right_angled_selected_framing_obstruction.md) prove that these are exactly the two local factors failing strict physical support. The two facets can be prescribed, including those at both ends of one crossing-circle matching edge. The [selected-factor theorem](../notes/actual_augmented_plat_selected_factor_localization.md) now puts every other ordinary factor on the selected full physical packet. The exceptional block and the global contraction still need a sharp estimate.
 
 ![Schematic planar section of the white-normal convex hull, with two facet exits locating the exceptional factors.](figures/two-exceptional-factors.png)
 
@@ -25,6 +25,12 @@ Under the geometric strip conditions, the common framing flags determine a line 
 The scalar polynomial and original resolvent have different analytic roles. All polynomial zeros lie above $2$, while the physical Casimir nodes lie in $[-2,2]$. The actual geometric target is at most $-2$ under the marked complete certificate. The exact contour retains both factors and their generic normals. Endpoint estimates at $+2$ do not prove the global saddle contribution or settle a parabolic target at $-2$. See [the current critical path](chapters/frontier.md#the-exceptional-edge-now-has-an-exact-algebraic-description).
 
 ![The exact polynomial-resolvent period and its spectral regions, with the contributing global period still open.](figures/exceptional-period.png)
+
+## The exact support boundary
+
+The prescribed geometric frame puts the exceptional edge beyond the domain of its currently controlled local packet. The [support calculation](../notes/actual_matching_edge_geometric_support_zero_chamber.md) identifies the failed inequality exactly. The [entire finite kernel](../notes/actual_matching_edge_entire_operator_kernel.md) cancels its apparent poles while retaining every physical lattice zero. Its asymptotic in the geometric chamber remains open. The axis depicts the folded limiting channel, not the finite-level bandwidth endpoint $a/N$.
+
+![The limiting physical bandwidth and geometric chamber, with the entire finite kernel and the remaining selected-asymptotic problem.](figures/support-wall.png)
 
 ## A change of pairing
 

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The original operator period has a controlled closing region at two · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a><p><span class="badge">Closing-region bound with genuine normals</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_casimir_closing_region_bound.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_casimir_closing_region_bound.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_casimir_closing_region_bound_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="the-original-operator-period-has-a-controlled-closing-region-at-two">The original operator period has a controlled closing region at two</h1>
+<p>30 October 2026. Independently reviewed. A whole right half-disk at the spectral endpoint has vanishing exponential cost as its radius tends to zero. The bound is uniform over EVERY physical degree and every original matrix entry, including the Jordan blocks. Fixed genuine generic-q and spectral derivatives of the resolvent have the same vanishing-rate property. Combined with the separately proved canceled Sears bound for the actual scalar polynomial, it controls the full original integrand and its fixed generic normals throughout that region.</p>
+<p>The same estimates extend to a fixed angular slit cone on both sides of that half-disk, avoiding the spectral poles on the left real ray. The statement is an upper estimate. It does not select a contributing contour or give a nonzero saddle contribution. The scalar normal input to the final assembly is proved in its linked companion theorem.</p>
+<h2 id="uniform-finite-statement">1. Uniform finite statement</h2>
+<p>Use the original physical matrix J_t, q=exp(pi i/N), d=N-1, N&gt;=3, and 0&lt;=t&lt;=d. Define</p>
+<pre><code>f(r)=sqrt(r) log(2+1/r), r&gt;0, and f(0)=0,
+H_N(r)=C N^3 exp[C N f(r)+C(log N)^2].          (1)</code></pre>
+<p>There is an absolute C such that for every 0&lt;=r&lt;=1/4,</p>
+<pre><code>||(zI-J_t(q))^-1||op&lt;=H_N(r),
+              Re z&gt;=2, |z-2|&lt;=r.              (2)</code></pre>
+<p>The same holds for the actual high-degree blocks, by their exact generic adapter. For fixed nonnegative integers j,k, with R_t(h,z)=(zI-J_t(q exp(h)))^-1, one also has on this region</p>
+<pre><code>||partial_h^j partial_z^k R_t(0,z)||op
+    &lt;=C_(j,k) N^j max(1,H_N(r))^(j+k+1).       (3)</code></pre>
+<p>These are genuine generic derivatives of the original matrix, with its distinct moving upper and lower entries. In particular</p>
+<pre><code>lim_(r down 0) limsup_(N-&gt;infinity)
+  N^-1 log sup_(t,z) ||partial_h^j partial_z^k R_t(0,z)||op
+      &lt;=0.                                   (4)</code></pre>
+<p>Here z ranges over the half-disk in (2). Replacing a zero norm by max(1,norm) gives the equivalent nonnegative-rate formulation.</p>
+<p>More generally fix 0&lt;gamma_0&lt;pi/2. All these statements hold, with constants depending on gamma_0, throughout</p>
+<pre><code>K_(r,gamma_0)={2} union
+   {z=2+rho exp(i phi): 0&lt;rho&lt;=r,
+                             |phi|&lt;=pi-gamma_0}.             (4a)</code></pre>
+<p>This includes parts of the disk to the LEFT of two, but excludes a fixed angular neighborhood of the left real ray containing the poles.</p>
+<h2 id="every-prefix-has-a-small-positive-determinant-rate">2. Every prefix has a small positive determinant rate</h2>
+<p>Put theta=pi/N. The exact ground-state congruence in the <a href="actual_casimir_endpoint_resolvent_bound.html">endpoint theorem</a> gives, for any leading prefix of size 1&lt;=m&lt;=t,</p>
+<pre><code>|det(J_[m]-zI)|=|det(L_m+(z-lambda_0)V_m)|,
+lambda_0=2cos(theta), |(V_m)_(r,r)|=1.          (5)</code></pre>
+<p>L_m is the real Dirichlet path matrix with conductances</p>
+<pre><code>a_r=4sin((t-r)theta)sin((r+1)theta), 0&lt;=r&lt;t,
+(L_m)_(r,r)=a_(r-1)+a_r, a_(-1)=0,
+(L_m)_(r,r+1)=-a_r.                           (6)</code></pre>
+<p>The final term a_(m-1) is retained as a Dirichlet boundary spring. The principal minors are positive, so expansion in the diagonal perturbation, term by term in absolute value, yields</p>
+<pre><code>|det(L_m+(z-lambda_0)V_m)|
+   &lt;=det L_m det(I+s L_m^-1), s=|z-lambda_0|,
+det L_m=product_(r=0)^(m-1) a_r.              (7)</code></pre>
+<p>The following estimate holds uniformly in ALL t,m,N and 0&lt;=s&lt;=2:</p>
+<pre><code>log det(I+s L_m^-1)
+   &lt;=C N f(s)+C(log N)^2.                     (8)</code></pre>
+<p>Here is a direct path proof, including the two small-conductance endpoints. Let h_r=min(r+1,t-r). Since t&lt;=N-1, both integers r+1 and t-r, and their distances from N, are at least h_r. The elementary sine lower bound therefore gives</p>
+<pre><code>a_r&gt;=16 h_r^2/N^2.                            (9)</code></pre>
+<p>The exact inverse-trace formula for L_t then gives</p>
+<pre><code>Tr L_t^-1=sum_(r=0)^(t-1)(r+1)/a_r&lt;=C N^3.     (10)</code></pre>
+<p>In particular its smallest eigenvalue is at least c N^-3.</p>
+<p>Partition the rows of L_t into consecutive dyadic blocks from the left and right endpoints towards the middle. There are O(log N) blocks, with a bounded number of each dyadic length, apart from at most two shorter remainder blocks. On a block of length ell, every internal conductance is at least c ell<sup>2/N</sup>2 by (9). Remove the springs between blocks and the final Dirichlet spring. The resulting block-diagonal Neumann operator is smaller than L_t as a quadratic form. A constant-conductance Neumann path of length ell has eigenvalues</p>
+<pre><code>4 a sin^2(pi k/(2ell)), 0&lt;=k&lt;ell.</code></pre>
+<p>Consequently each such block contributes at most 1+C min(ell,N sqrt(lambda)) eigenvalues at most lambda. Summing the dyadic lengths gives the counting estimate</p>
+<pre><code>n_t(lambda)&lt;=C log N
+      +C N sqrt(lambda) log(2+1/lambda).       (11)</code></pre>
+<p>For clarity, with x=N sqrt(lambda), the sum of lengths below x is O(x), while the larger blocks contribute O(x[1+log(N/x)]). If x&lt;1, their contribution is O(x log N), which is bounded by the second term in (11). For large lambda the trivial bound n_t&lt;=N is stronger. Prefix interlacing gives n_m(lambda)&lt;=n_t(lambda) and the same lower eigenvalue bound as in (10).</p>
+<p>For positive eigenvalues mu, integrate the identity log(1+s/mu)=integral_mu^infinity s/[lambda(lambda+s)] d lambda. The C log N term of (11), starting at cN^-3, costs O((log N)^2). The other term has integral at most C N f(s): set lambda=s y and use the integrability of y<sup>-1/2(1+y)</sup>-1 and the same function times |log y|. This proves (8), with s=0 immediate.</p>
+<p>No inverse bound for a long complex Casimir prefix was assumed. Only the real positive path L_m enters this comparison.</p>
+<h2 id="exact-cancellation-controls-all-original-green-entries">3. Exact cancellation controls all original Green entries</h2>
+<p>For u&lt;=v the original continuant identity expresses R_(u,v) as the leading prefix determinant of size u, the trailing determinant of size t-v, and the product of original upper entries between them, divided by the full characteristic polynomial. At the root the trailing prefix is the reflected conjugate of a leading prefix; the magnitudes a_r in (6) obey a_(t-1-r)=a_r. Thus the conductance products from the two bounds (7) and the middle Green product telescope EXACTLY to</p>
+<pre><code>product_(r=0)^(t-1) a_r=s_t^2,
+s_t=product_(r=1)^t 2sin(r theta).             (12)</code></pre>
+<p>The root matrix is symmetric, so the same estimate holds for u&gt;v. Its exact characteristic polynomial has real roots below two:</p>
+<pre><code>chi_t(z)=product_(r=0)^t[z-2cos((2r+1)theta)].</code></pre>
+<p>For Re z&gt;=2, each factor has magnitude at least its value at two. The already proved exact product inequality is</p>
+<pre><code>|chi_t(z)|&gt;=chi_t(2)&gt;=4s_t^2/N^2.             (13)</code></pre>
+<p>Equations (7),(8),(12),(13) therefore bound EVERY entry by</p>
+<pre><code>(N^2/4) exp[2C N f(|z-lambda_0|)+2C(log N)^2]. (14)</code></pre>
+<p>Empty prefixes have determinant one and cause no exception. For t=0 the scalar bound follows directly from 2-lambda_0&gt;=4/N^2. Finally |z-lambda_0|&lt;=r+delta with delta=2-lambda_0 comparable to N^-2. The elementary inequality f(a+b)&lt;=f(a)+f(b) gives N f(r+delta)&lt;=N f(r)+C log N. The function f is increasing: its derivative has the sign of log x-2+4/x for x=2+1/r&gt;=2, whose minimum is log 4-1&gt;0. Multiplying the entrywise bound by the dimension at most N proves (2). In particular the proof includes t=N-1 and long prefixes; no compact restriction on physical degree is needed.</p>
+<h3 id="the-angular-slit-cone-extension">The angular slit-cone extension</h3>
+<p>The same numerator estimate applies at any complex z. Only the full characteristic lower bound changes outside Re z&gt;=2. Write</p>
+<pre><code>x_h=2-2cos((2h+1)theta)&gt;0,
+|chi_t(2+rho exp(i phi))/chi_t(2)|
+   =product_(h=0)^t |1+rho exp(i phi)/x_h|.     (14a)</code></pre>
+<p>For |phi|&lt;=pi-gamma_0 and every y&gt;=0 one has |1+y exp(i phi)|&gt;=sin(gamma_0). Split the factors in (14a) at x_h=2rho. To count them, put v_h=min(h+1/2,N-h-1/2). The complete list 0&lt;=h&lt;N satisfies</p>
+<pre><code>16 v_h^2/N^2&lt;=x_h&lt;=4pi^2 v_h^2/N^2.</code></pre>
+<p>There are O(N sqrt(rho)+1) factors with x_h&lt;=2rho, so their total logarithmic loss is at most C_(gamma_0)(N sqrt(rho)+1). For the other factors, y=rho/x_h&lt;1/2 and log|1+y exp(i phi)|&gt;=log(1-y)&gt;=-2y. The two displayed comparisons, followed by the convergent tail sum of v_h^-2, give</p>
+<pre><code>sum_(x_h&gt;2rho) rho/x_h&lt;=C(N sqrt(rho)+1).</code></pre>
+<p>Bounding the entire list also bounds every degree sublist. Hence</p>
+<pre><code>|chi_t(z)/chi_t(2)|
+   &gt;=exp[-C_(gamma_0)(N sqrt(rho)+1)]           (14b)</code></pre>
+<p>on (4a). The additional loss is absorbed in N f(r)+O(log N). This proves (2),(3),(4) on the full cone (4a).</p>
+<p>The cone has a useful literal overlap with the earlier strict-prefix action domains. For any fixed strict pair of prefix angles beta_1, beta_2&lt;pi, choose gamma_0 smaller than both (pi-beta_i)/2. Points z=2-rho exp(+/-i gamma_0) then lie in BOTH selected-prefix halfplanes. Thus the estimate reaches potential joining points for those actual integrand charts. No contour deformation or saddle contribution follows from this overlap alone.</p>
+<h2 id="actual-generic-normals-remain-controlled">4. Actual generic normals remain controlled</h2>
+<p>For each fixed j&gt;=1 the displayed ORIGINAL generic matrix satisfies</p>
+<pre><code>||partial_h^j J_t(q exp(h)) evaluated_(h=0)||op&lt;=C_j N^j.</code></pre>
+<p>This follows directly from its fixed bandwidth and finite products of monomials with exponents O(N). Differentiating the inverse identity retains the exact moving matrix: partial_h R=R(partial_h J)R and partial_z R=-R^2. Each mixed derivative is a finite sum of products with at most j+k+1 resolvent factors and total h-derivative order j on the intervening J factors. Bound them by (2) to obtain (3). This argument includes every moving eigenvalue and Jordan-current term, and differentiates no root-only reflection.</p>
+<h2 id="the-root-scalar-integrand-also-has-vanishing-closing-rate">5. The root scalar integrand also has vanishing closing rate</h2>
+<p>The actual polynomial p_a(q,z), 0&lt;=a&lt;=floor(d/2), has only simple roots strictly above two. Its normalization makes p_a(q,x)&gt;0 for real x&lt;2. Therefore the factorization into its actual roots gives the exact estimate</p>
+<pre><code>|p_a(q,z)|&lt;=p_a(q,2-r), |z-2|&lt;=r.              (15)</code></pre>
+<p>This remains true on the part of the disk crossing the scalar’s LIMITING cut: the finite source is a polynomial there and (15) does not select or continue a logarithm through its zeros.</p>
+<p>For a/N-&gt;alpha in (0,1/2], the proved slit action gives N^-1 log p_a(q,2-r)-&gt;Psi_alpha(2-r) at every fixed r&gt;0. Its explicit real formula has Psi_alpha(2-r)-&gt;0 as r decreases to zero. Indeed its maximizing t_* satisfies</p>
+<pre><code>sin^2(pi t_*)=A r/(r+4A), A=sin^2(pi alpha),</code></pre>
+<p>so t_*=O(sqrt(r)); the sine-log integrals in that formula tend to zero, including their integrable endpoint logarithms. Thus (2),(15) prove</p>
+<pre><code>lim_(r down 0) limsup_(N-&gt;infinity) N^-1 log
+   sup_(Re z&gt;=2,|z-2|&lt;=r)
+      ||p_a(q,z)(zI-J_t(q))^-1||op &lt;=0,         (16)</code></pre>
+<p>uniformly over every physical degree t. The actual face factor is one at the root. The same conclusion holds with any fixed generic or spectral derivative placed on the RESOLVENT factor alone, by (3).</p>
+<p>Consequently a closing arc of bounded length contained in this half-disk has the upper rate (16). This is a genuine estimate on the entire closing region, rather than an inference from a tiny endpoint disk. This root-factor argument does not itself estimate generic derivatives of the scalar polynomial on that whole region; Section 6 uses the separate scalar theorem for them. Neither argument estimates the rest of an enclosing contour, its deformation or intersection numbers, or the coherent surrounding state. A contributing geometric saddle and noncancellation remain separate requirements.</p>
+<p>All conclusions in this section also hold on the slit cone (4a), with its fixed gamma_0-dependent constants. The scalar estimate (15) already holds on the whole disk, and (14b) supplies the only extra resolvent cost.</p>
+<h2 id="assembly-for-the-full-original-integrand-and-its-generic-normals">6. Assembly for the full original integrand and its generic normals</h2>
+<p>The independently proved <a href="actual_matching_edge_polynomial_closing_region_bound.html">canceled-Sears closing theorem</a> supplies the scalar factor on the WHOLE complex disk, including its genuine generic-q normals and the actual face scalar. Combine it with (2),(3),(4a). For</p>
+<pre><code>I_(N,a,t)(h,z)=D_a(q exp(h))^-1
+               p_a(q exp(h),z)(zI-J_t(q exp(h)))^-1,</code></pre>
+<p>every fixed j,k&gt;=0 satisfies</p>
+<pre><code>sup_(z in K_(r,gamma_0))
+    ||partial_h^j partial_z^k I_(N,a,t)(0,z)||op
+   &lt;=C_(j,k,gamma_0) r^-k N^(4j+3k+3)
+      exp[C_(j,k,gamma_0) N f(r)
+                     +C_(j,k,gamma_0)(log N)^2].             (17)</code></pre>
+<p>This holds uniformly in ALL 0&lt;=a&lt;=floor((N-1)/2), ALL 0&lt;=t&lt;=N-1, both level parities and 0&lt;r&lt;=r0, for a sufficiently small fixed r0. The angular exclusion gamma_0 remains fixed and positive. No limit a/N-&gt;alpha is required in (17).</p>
+<p>Here are the finite costs in the pure Leibniz argument. Put i of the j generic derivatives and l of the k spectral derivatives on the scalar factor. Its companion bound costs at most N^(3i) r^-l exp[C N f(r)+C log N], since p_a(q,2)&lt;=1. The remaining resolvent derivatives cost, by (3),</p>
+<pre><code>C N^(j-i) H_N(r)^(j-i+k-l+1).</code></pre>
+<p>The resulting power of N is 4j-i+3k-3l+3&lt;=4j+3k+3, and r<sup>-l&lt;=r</sup>-k. Summing the finitely many Leibniz terms proves (17). The inverse face scalar and all its q jets are already part of the scalar companion theorem; none is discarded.</p>
+<p>In particular, let r_N decrease to zero at ANY rate and let an arc Gamma_N lie in K_(r_N,gamma_0), with length at most a fixed power of N. Hold that arc fixed while taking generic-q derivatives. For every fixed j, the integral over Gamma_N of partial_h^j I(0,z) has norm at most exp[o(N)]. This uses k=0 in (17), so there is no r_N^-k loss. It includes the actual finite source normals needed by the exceptional operator period, not just its root value.</p>
+<p>This cap estimate does not prove a deformation of the remainder of the original contour, its saddle intersection number or a nonzero geometric contribution. In particular it leaves the surrounding complement and its coherent contraction explicit: multiplying this block by an uncontrolled environment is not a completed volume bound.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_casimir_closing_region_bound.py">dyadic path comparison, all-prefix determinants and original Green entries</a>.</p>
+<p>Independent review of Sections 1–5: the root and geometry agents checked the full analytical proof, including the angular cone and its strict-prefix overlap. The geometry agent freshly replayed the audit: 128 dyadic partitions and deleted-spring matrices, 6,951 block scales, 1,089 all-prefix congruences and positive determinant comparisons, 5,445 original Green entries and exact product cancellations, 264 characteristic half-plane comparisons, 12 first and 12 second genuine q-resolvent identities, 24 spectral identities, 254 node-distance bounds and 2,025 angular characteristic-product bounds passed. The finite spectral-count samples are explicitly diagnostics; the uniform estimates are proved above. The Section 6 assembly uses only the two independently reviewed bounds and the displayed Leibniz count. The root and source agents independently checked that assembly, including the actual face factor, conservative power of N, arbitrary shrinking radii for k=0, fixed angular exclusion and the explicit surrounding-environment limitation: PASS. No new numerical test is needed for this finite Leibniz consequence.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_casimir_closing_region_bound.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#uniform-finite-statement">1. Uniform finite statement</a><a href="#every-prefix-has-a-small-positive-determinant-rate">2. Every prefix has a small positive determinant rate</a><a href="#exact-cancellation-controls-all-original-green-entries">3. Exact cancellation controls all original Green entries</a><a href="#actual-generic-normals-remain-controlled">4. Actual generic normals remain controlled</a><a href="#the-root-scalar-integrand-also-has-vanishing-closing-rate">5. The root scalar integrand also has vanishing closing rate</a><a href="#assembly-for-the-full-original-integrand-and-its-generic-normals">6. Assembly for the full original integrand and its generic normals</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

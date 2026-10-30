@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The controlled exceptional kernel tube misses the selected global frame · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Obstructions</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#geometry">Angle optimization and actual geometry</a><p><span class="badge">Exact incompatibility of the controlled tube</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_edge_kernel_tube_geometric_obstruction.md">Markdown source</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="the-controlled-exceptional-kernel-tube-misses-the-selected-global-frame">The controlled exceptional kernel tube misses the selected global frame</h1>
+<p>30 October 2026. Independently reviewed. This is an exact classical-coordinate consequence of the actual inverse turn. The <a href="actual_matching_edge_antidiagonal_operator_packet.html">source-matching complex root kernel</a> is a valid nonzero packet on its stated tube. That tube does not contain the complete geometric point in a common frame having the global shaded-exterior flags and the selected physical complement used in our one-matching-edge localization.</p>
+<p>This strengthens the real-slice obstruction under an explicit global flag hypothesis. It includes the parabolic rectangle c=1, since the proof does not diagonalize the target or use a rectangle ratio.</p>
+<h2 id="the-exact-tube-and-the-geometric-assumptions">1. The exact tube and the geometric assumptions</h2>
+<p>Keep the actual certified right-angled matching cut, its literal prefixes, retained half twists and original mark. Fix a matching edge. Assume the common global frame has both shaded-exterior flags in K, and that every original ordinary factor outside this edge has strict physical support and its source-selected complete geometric sheet. These are the hypotheses supplied by the prescribed-pair localization.</p>
+<p>Use the actual root-kernel variables</p>
+<pre><code>target output u=nu,
+target input v=nu+delta,
+target normalized total tau=nu+lambda+delta.</code></pre>
+<p>At the complete input the packet’s strict limiting tube is</p>
+<pre><code>0&lt;Re delta&lt;1/2, Re nu&gt;0, Re lambda&gt;0,
+Re(nu+lambda+delta)&lt;1.                         (1)</code></pre>
+<p>For a discrete input a/N&lt;1/2 its proved tube is smaller, with Re delta&lt;a/N. The geometric statement concerns the complete limiting channel; it does not continue that discrete index. Both finite degree offsets in the packet remain in that theorem. Here (1) describes its limiting classical coordinate domain, not a new finite-index identity.</p>
+<p>No common frame satisfying the preceding geometric hypotheses puts the actual inverse-turn target in (1), in either physical degree adapter or either input/output order.</p>
+<h2 id="undo-the-actual-inverse-turn-in-multiplicative-coordinates">2. Undo the actual inverse turn in multiplicative coordinates</h2>
+<p>Let A,B be the original inputs and A_o,B_o their outputs, so P=BA=B_o A_o. The actual target inputs are A_o^-1,A, with outputs B_o,B^-1 and target product T_target=A A_o^-1. Use the original prefix-normalized projector Pi and target projector</p>
+<pre><code>Pi_t=A_o Pi/Tr(A_o Pi).                        (2)</code></pre>
+<p>As before, Pi comes from the ONE global frame by W Pi_global/Tr(W Pi_global), followed by the fixed local conjugacy. Its image and kernel are the actual prefix flags, not independently chosen local data.</p>
+<p>Write T=exp(2pi i tau), V=exp(2pi i v), U=exp(2pi i u). The LOW target adapter has prefix traces</p>
+<pre><code>Tr(A_o^-1 Pi_t)=-1/V,
+Tr(B_o Pi_t)=-1/U,
+Tr(T_target Pi_t)=1/T.</code></pre>
+<p>Applying (2), using T_target A_o=A and B_o A_o=P, gives</p>
+<pre><code>(Tr(A Pi),Tr(A_o Pi),Tr(P Pi))=(-V/T,-V,V/U).   (3)</code></pre>
+<p>Thus the original physical exponentials are</p>
+<pre><code>U_old,in=T/V, U_old,out=1/V, T_old=U/V.         (4)</code></pre>
+<p>For the HIGH target adapter the prefix traces are instead (-T/V,-T/U,T). Formula (2) gives (-V,-V/T,V/U), so the two original magnetic exponentials in (4) simply exchange. The total and the support conclusions remain unchanged.</p>
+<p>The canonical ORIGINAL low logarithms dictated by (1),(4) are</p>
+<pre><code>tau_old=1-delta,
+nu_old,in=lambda,
+nu_old,out=1-nu-delta=tau_old-nu.               (5)</code></pre>
+<p>The integer one in tau_old and nu_old,out is essential. It is fixed by the actual canonical physical wires; it cannot be dropped by looking only at their exponentials. Equation (1) implies</p>
+<pre><code>1/2&lt;Re tau_old&lt;1,
+0&lt;Re lambda&lt;Re tau_old,
+0&lt;Re(tau_old-nu)&lt;Re tau_old.                   (6)</code></pre>
+<p>Hence BOTH original factors lie in the full strict physical domain.</p>
+<p>If the target input/output order is reversed, the original physical total is 1+delta, with magnetic rows lambda+delta and 1-nu. The actual ORIGINAL high adapter subtracts delta from both rows and reverses the total, yielding exactly (5). This proves (6) for all the stated adapters and orders without a reality assumption.</p>
+<h2 id="the-exact-global-contradiction">3. The exact global contradiction</h2>
+<p>Since the global flags lie in K, the literal white-reflection prefix dictionary supplies the oriented strip tests at EVERY disk, including the two factors on this edge. Equations (5),(6) put those two factors strictly inside the full ordinary physical domain. The proved selected-sheet continuation on that domain therefore makes their geometric sheets source-selected as well.</p>
+<p>Every factor would consequently have both strict physical support and the oriented strip condition. The purely geometric sections 4–5 of the <a href="actual_right_angled_selected_framing_obstruction.html">white-normal obstruction</a> rule this out: the polarization kernel through the two K flags meets the white-normal polyhedron, and a boundary triangular facet gives a nonnegative relation among its three actual prefix diagonals. Their convex hull contains zero, violating strict physical support.</p>
+<p>This use of the old geometric proof does not extend an old central-only source theorem by assertion. The needed source-sheet continuation throughout the full physical domain is separately established in the <a href="actual_augmented_plat_selected_factor_localization.html">selected-factor theorem</a>. Neither the contradiction nor (2)–(6) uses c&lt;1 or a diagonal target; the parabolic target is included.</p>
+<h2 id="what-the-result-changes">4. What the result changes</h2>
+<p>The complex root-kernel packet retains its exact finite grid values, holomorphic continuation and nonzero amplitude on (1). The obstruction concerns its compatibility with the currently selected geometric complement. Merely allowing complex coordinates inside that SAME physical tube does not resolve this interface.</p>
+<p>This one-block route needs continuation beyond the proved tube, or a different coupled grouping, complementary description or frame selection. No numerical rate gap, vanishing source contribution, absence of another contributing cycle, or failure of the volume conjecture is inferred. Boundary points and continuations across the stated support walls require their own analysis.</p>
+<p>This is an analytical corollary of the audited inverse-turn dictionary, physical adapters, full-domain sheet theorem and white-normal proof. It claims no new finite-kernel audit counts or asymptotic estimates.</p>
+<p>Primary-agent full analytical review: PASS. The reader checked the inverse-turn prefix ratios, the integer-one lifts, both adapters and the exact hypotheses of the reused white-normal argument.</p>
+<p>Two independent targeted analytical reviews: PASS. The source reader checked the stated tube against the actual root-kernel formula; the global-source reader independently derived both target adapters and the reversed-order high lift. All three readers retain the global K hypothesis and distinguish the coordinate obstruction from a failure of the finite packet theorem or the volume conjecture.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_edge_kernel_tube_geometric_obstruction.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-exact-tube-and-the-geometric-assumptions">1. The exact tube and the geometric assumptions</a><a href="#undo-the-actual-inverse-turn-in-multiplicative-coordinates">2. Undo the actual inverse turn in multiplicative coordinates</a><a href="#the-exact-global-contradiction">3. The exact global contradiction</a><a href="#what-the-result-changes">4. What the result changes</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -33,9 +33,10 @@ def note_context(source, base, status):
     stem = Path(source).stem
     related = [c for c in COLLECTIONS if stem in [c["entry"], *c["notes"]]]
     links = [f'<a href="{REPO}/blob/main/{quote(source)}">Markdown source</a>']
-    for filename, label in ((f"audit_{stem}.py", "Audit script"),
-                            (f"{stem}_results.json", "Recorded output")):
-        if (ROOT / "experiments" / filename).is_file():
+    for candidates, label in (((f"audit_{stem}.py",), "Audit script"),
+                              ((f"{stem}_results.json", f"audit_{stem}_results.json"), "Recorded output")):
+        filename = next((name for name in candidates if (ROOT / "experiments" / name).is_file()), None)
+        if filename:
             links.append(f'<a href="{REPO}/blob/main/experiments/{quote(filename)}">{label}</a>')
     routes = " · ".join(f'<a href="{base}library.html#{c["id"]}">{escape(c["title"])}</a>' for c in related)
     return (f'<div class="note-context"><a href="{base}library.html">Research library</a>'

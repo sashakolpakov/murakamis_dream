@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A real exceptional target cannot preserve the selected global complement · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Obstructions</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#geometry">Angle optimization and actual geometry</a><p><span class="badge">Selected-complement real-frame obstruction</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_edge_real_frame_global_obstruction.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_matching_edge_real_frame_global_obstruction.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_matching_edge_real_frame_global_obstruction_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="a-real-exceptional-target-cannot-preserve-the-selected-global-complement">A real exceptional target cannot preserve the selected global complement</h1>
+<p>30 October 2026. Independently reviewed. The <a href="actual_matching_edge_real_target_frames.html">real-target classification</a> constructs local real cross-central frames for every strict geometric target c&lt;1. They cannot also preserve the selected physical ordinary complement in the present one-matching-edge reduction of a certified right-angled link. This is a precise frame obstruction for that route, not a rate gap or a contradiction to the source invariant or conjecture.</p>
+<h2 id="statement-and-retained-hypotheses">1. Statement and retained hypotheses</h2>
+<p>Fix an actual labeled right-angled matching-polyhedron certificate, its literal Morse prefixes, retained half twists, primitive markings, and original source. Choose one matching edge as the exceptional four-port block. Assume its actual rectangle satisfies 0&lt;c&lt;1; the parabolic case c=1 is not treated here.</p>
+<p>There is NO common regular frame with all the following properties:</p>
+<ul>
+<li>Every original input/output factor outside this edge lies in the strict physical domain on its source-selected complete geometric sheet, as in the selected-factor localization theorem.</li>
+<li>After the ACTUAL inverse pivotal turn, both target magnetic rows and the normalized total are real and strictly physical, in either degree adapter. The two limiting target rows are distinct.</li>
+<li>The limiting target row distance is positive and at most 1/2, the folded polynomial bandwidth. In particular this includes any strict candidate for a nonzero real exceptional matrix entry.</li>
+</ul>
+<p>The real-target classification shows that such rows must be on its minus anti-diagonal branch. The key additional fact proved below is that undoing the turn puts BOTH original factors at this edge in the strict physical domain on their selected sheets as well. The geometric white-normal argument then excludes the resulting all-factor frame.</p>
+<h2 id="undo-the-actual-turn-before-testing-the-disk-strips">2. Undo the actual turn before testing the disk strips</h2>
+<p>Retain the original incoming pair and transport</p>
+<pre><code>A=-[[1,1],[0,1]], B=-[[1,0],[-4,1]], P=BA,
+C=I+b(P+I), b=-i/(2c),
+A_o=C A C^-1, B_o=C B C^-1.</code></pre>
+<p>The target input/output pair is (A_o^-1,A) and (B_o,B^-1), with target product T=B^-1 B_o=A A_o^-1. Let Pi be the ORIGINAL frame, and Pi_t its inverse-turn frame. The actual basepath change is</p>
+<pre><code>Pi_t=A_o Pi/Tr(A_o Pi).                        (1)</code></pre>
+<p>Here Pi is the prefix-normalized local projector <code>W Pi_global/Tr(W Pi_global)</code>, followed by the common local normalizing conjugacy. Its flags are the actual prefix image Wv and the same global kernel w. This notation does not choose a new independent frame at the edge.</p>
+<p>In the target notation, let E=e^2, e=exp(+/-pi i tau), and</p>
+<pre><code>q=rho+i sqrt(1-rho^2), q_out=conjugate(q),
+rho=rho_-&lt;0, k=sinh^2 eta, c=sech eta.</code></pre>
+<p>First use the displayed ordering; exchanging q and its conjugate will be included below. Since q is unit, the target prefix equations and (1) give the EXACT original prefix diagonals</p>
+<pre><code>Tr(A Pi)=e/q,
+Tr(A_o Pi)=e^-1/q,
+Tr(P Pi)=q^-2.                                (2)</code></pre>
+<p>Indeed Tr(A_o^-1 Pi_t)=1/Tr(A_o Pi), while T A_o=A and B_o A_o=P. These identities fix the basepoint and all ratios; (2) is not obtained by identifying Pi with Pi_t.</p>
+<p>Write the original image and kernel flags in the disk coordinate eta(s)=1/(2s+1) as z and w. Put H=1/c=sqrt(1+k). In this coordinate</p>
+<pre><code>A=[[-1,0],[-2,-1]], P=[[-1,-2],[0,-1]],
+C acts by eta -&gt; eta+iH,
+A_o=[[-1-2iH,-2H^2],[-2,-1+2iH]].             (3)</code></pre>
+<p>For Pi represented by these flags,</p>
+<pre><code>Pi=[[z,-zw],[1,-w]]/(z-w).</code></pre>
+<p>Direct traces in (3) give</p>
+<pre><code>Tr(P Pi)=-1-2/(z-w),
+Tr(A Pi)=-1+2zw/(z-w),
+Tr(A_o Pi)-Tr(A Pi)
+            =[-2H^2-2iH(z+w)]/(z-w).          (4)</code></pre>
+<p>Use q+q^-1=2rho and (2) in (4). It follows that</p>
+<pre><code>z-w=-q/rho,
+z+w=iH+(e^-1-e)/(2iH rho).                    (5)</code></pre>
+<p>The second term in the sum is REAL for both target adapters. Hence</p>
+<pre><code>Im z=[H-sqrt(1-rho^2)/rho]/2,
+Im w=[H+sqrt(1-rho^2)/rho]/2.                  (6)</code></pre>
+<p>Exchanging the trace signs exchanges these heights. They are finite: rho_- is strictly negative. Both flags lie strictly in the ACTUAL original disk strip 0&lt;Im eta&lt;H precisely when</p>
+<pre><code>|rho|&gt;1/sqrt(k+2).                            (7)</code></pre>
+<p>For rho_-=(-sqrt(k+2)-c0)/(1+k), inequality (7) is equivalent to c0&gt;-1/sqrt(k+2). This is exactly the lower inequality in the strict physical interval already required by the real-target classification. Thus every viable real minus-branch target satisfies its original disk’s selected strip test, including when tau&lt;1/2.</p>
+<p>The real plus branch fails (7), but it is already excluded from a direct nonzero folded entry by its exact row distance greater than 1/2. No source support is discarded in this argument.</p>
+<h2 id="both-original-factors-are-also-strictly-physical">3. Both original factors are also strictly physical</h2>
+<p>Let q=exp(i alpha), pi/2&lt;alpha&lt;pi, and set</p>
+<pre><code>delta=1-alpha/pi in (0,1/2),
+u=(tau-delta)/2, v=(tau+delta)/2,
+0&lt;u&lt;tau/2&lt;v&lt;tau&lt;1.</code></pre>
+<p>These are the target low and high rows. The original physical coordinate dictionary applied to (2) is</p>
+<pre><code>U_in=-q/e, U_out=-q e, T_original=q^2.         (8)</code></pre>
+<p>For q in the upper half-plane, the original two factors have total degree</p>
+<pre><code>tau_original=alpha/pi=1-delta in (1/2,1),</code></pre>
+<p>and their magnetic rows are u and 1-v, in one order or the other depending on the target adapter. Their physical wire pairs are (u,1-v) and (1-v,u). Every entry is strictly between zero and one, and their sum is tau_original. Thus both factors lie strictly in the ordinary complete-channel physical domain.</p>
+<p>For q in the lower half-plane, the actual physical total is instead 1+delta, with physical magnetic rows v and 1-u. Applying the ORIGINAL high-degree adapter subtracts delta from those rows and reverses the total. The normalized total and rows are again</p>
+<pre><code>1-delta,  u and 1-v.                          (9)</code></pre>
+<p>This explicitly covers both trace orderings and both target adapters. There is no implicit assumption that the normalized target total tau itself exceeds 1/2.</p>
+<p>Combine (6),(7) with (9). The selected-sheet continuation throughout the full strict physical domain, proved in <a href="actual_augmented_plat_selected_factor_localization.html">the selected-factor theorem</a>, identifies these strip tests with the actual source-selected input and output sheets. Therefore BOTH original factors at the chosen edge are now physical and selected, in the same original frame Pi.</p>
+<h2 id="why-the-geometric-global-obstruction-applies-beyond-its-old-headline">4. Why the geometric global obstruction applies beyond its old headline</h2>
+<p>The original <a href="actual_right_angled_selected_framing_obstruction.html">white-normal obstruction</a> was initially stated for an all-central source frame. Its geometric sections 4–5 prove a stronger conditional assertion: simultaneous STRICT physical support and the oriented disk-strip tests are impossible in one common frame for the literal certified cut.</p>
+<p>Here is the precise use, with no extension of an unproved source sheet outside its domain. Write Pi_global=v ell, let w=ker ell and w_0=r_(F_0)(v). The literal prefixes are Q_i=r_(F_i)r_(F_0). Each adjacent white reflection preserves the two disk halfspaces. Consequently all input/output strip tests imply w,w_0 belong to the common shaded exterior K. In the white-normal polyhedron C, K lies strictly inside C on its unit sphere.</p>
+<p>Actual prefix diagonals are positive normal rescalings of the polarized real-linear forms L_n(w,w_0). Their real kernel meets int C. Following a line in that kernel to a triangular boundary facet gives a nonnegative relation among the three actual prefix diagonals of that facet. Thus zero lies in their real convex hull. This contradicts that original factor’s strict physical-support criterion. The proof includes coincident flags and nongeneric facet-edge intersections; it does not require exactly two generic failures or an all-central hypothesis.</p>
+<p>By assumption every factor outside the selected matching edge is physical and source-selected; the full-domain theorem supplies its strip test. Sections 2–3 supply both properties on the edge as well. The preceding geometric contradiction proves the stated obstruction.</p>
+<h2 id="what-must-change-in-the-proposed-method">5. What must change in the proposed method</h2>
+<p>The exact real-row Green action and real exceptional operator packets remain valid local theorems. The new conclusion is that this real slice cannot contain the complete geometric point while retaining the currently selected physical ordinary complement in a single common frame. Within that one-block setup, a geometric contraction must use complex target coordinates or change which grouping or complementary source description is controlled.</p>
+<p>No numerical exponential gap, vanishing of the invariant, absence of a geometric contribution on another cycle, or impossibility of a different source-preserving resummation is inferred. The parabolic target c=1, boundary support, and exact limiting row coincidences remain outside the strict local classification used here.</p>
+<p>Focused audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_matching_edge_real_frame_global_obstruction.py">actual inverse-turn flags and both physical adapters</a>.</p>
+<p>Primary-agent full analytical review: PASS. The reader checked the actual projector pullback, strip heights, all original low/high logarithms and the precise reuse of the geometric strict-support obstruction. Distinct limiting target rows are explicitly required.</p>
+<p>Independent full analytical review and fresh redirected replay: PASS. A second reader reproduced seventeen matrix/trace identities, seventy-two actual frames, 144 strip flags and 144 normalized original factor checks. Both reviews retain the explicit local-prefix projector and make no conclusion about a different global source route.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_edge_real_frame_global_obstruction.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#statement-and-retained-hypotheses">1. Statement and retained hypotheses</a><a href="#undo-the-actual-turn-before-testing-the-disk-strips">2. Undo the actual turn before testing the disk strips</a><a href="#both-original-factors-are-also-strictly-physical">3. Both original factors are also strictly physical</a><a href="#why-the-geometric-global-obstruction-applies-beyond-its-old-headline">4. Why the geometric global obstruction applies beyond its old headline</a><a href="#what-must-change-in-the-proposed-method">5. What must change in the proposed method</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

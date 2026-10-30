@@ -21,8 +21,8 @@ Under the actual positive marked gluing certificate, the [geometric filling theo
 | Original finite source | Exact all-color formulas at arbitrary fixed width; shared Kirchhoff flows, Fourier charges and all required normals retained | An exact formula alone does not estimate its coherent sum |
 | Ordinary local factors | Selected action and nonzero amplitude on full physical complex compacts; a global Legendre chart for that selected action | The channel remains a genuine discrete color; normal bounds have their stated domains |
 | Actual geometry | A positive marked certificate gives the complete geometry, its nearby stationary branch and the absolute hyperbolic-volume anchor | Existence of the geometric critical point does not prove quantum contribution |
-| Exceptional matching edge | Exact Casimir polynomial, selected scalar action, original resolvent period, and controlled Green kernels on strict physical support | The surrounding coherent state and a contributing contour remain to be controlled |
-| Endpoint and normals | Polynomial bounds at the closing point $z=2$, with genuine generic derivatives | A shrinking endpoint neighborhood does not control the entire connecting contour |
+| Exceptional matching edge | Exact entire finite root kernel, including every physical support zero; a nonzero relative packet within its bandwidth | The complete geometric point lies beyond the domain of that packet |
+| Endpoint and normals | Subexponential control on shrinking closing arcs at $z=2$, including the full original integrand and fixed generic derivatives | The rest of the contour and complex normals in the geometric chamber remain open |
 | General long fillings | A conditional source-to-filling theorem with the correct independent-slope quantifiers | Its general complex packet, nonzero density germ and whole-source gap still need proof |
 
 The [selected-factor theorem](../../notes/actual_augmented_plat_selected_factor_localization.md) is useful here: for the certified right-angled cut, exactly two physical-support failures can be placed at the ends of one chosen crossing-circle edge. Every other ordinary factor is on the selected physical packet. An all-central selected common frame **cannot exist**; moving all factors into that domain is therefore not an available shortcut.
@@ -51,13 +51,33 @@ $$p_a(\Omega)=\frac{1}{2\pi i}\oint_\Gamma p_a(z)(zI-\Omega)^{-1}\,dz.$$
 
 Its Green entries have original forward and backward continuants and the full characteristic denominator. Their [selected action and generic-normal bounds](../../notes/actual_matching_edge_cross_central_green_action.md) hold when the two actual physical rows are strictly on opposite sides of the midpoint on the stated common spectral domain, which includes every fixed compact real interval below $-2$. On the anti-diagonal, the Green entry is exactly negative for real $z<-2$. Neither this sign nor the scalar action proves that the geometric saddle contributes to the contour.
 
-The endpoint $2$ also has separate [polynomial](../../notes/actual_matching_edge_polynomial_endpoint_control.md) and [full resolvent](../../notes/actual_casimir_endpoint_resolvent_bound.md) estimates. They control the original derivatives through a shrinking neighborhood, including both level parities. The connecting contour still needs an estimate. This closing point $+2$ is distinct from the possible geometric target $-2$, which is outside the current off-spectrum Green theorem.
+The endpoint $2$ also has separate polynomial and full resolvent estimates. Their [closing-region assembly](../../notes/actual_casimir_closing_region_bound.md) now controls the **whole original integrand**, including fixed generic derivatives, on shrinking arcs in each fixed slit cone. Its cost is subexponential for any radius tending to zero. This does not control the remaining contour. The closing point $+2$ is distinct from the possible geometric target $-2$, which is outside the current off-spectrum Green theorem.
+
+## The geometric point lies across an exact support boundary
+
+The [actual operator kernel](../../notes/actual_matching_edge_antidiagonal_operator_packet.md) has a nonzero relative amplitude on its full strict physical complex tube. Its anti-diagonal entries are positive squares. But the [geometric support calculation](../../notes/actual_matching_edge_geometric_support_zero_chamber.md) shows precisely why that result does not yet suffice: in the prescribed-pair frame, both exceptional ordinary factors have normalized total $0<\operatorname{Re}\sigma<1/2$. The actual change of pairing gives a row separation $\delta=1-\sigma$, so $\operatorname{Re}\delta>1/2$. All the other kernel-domain inequalities hold; the bandwidth inequality fails.
+
+This is an exact source constraint. At finite level, $p_a(\Omega)$ has bandwidth $a$, and its physical entries with $h>a$ vanish, including their genuine generic derivatives. Allowing complex coordinates inside the old tube, or assembling more copies of that same packet, does not reach this geometric chamber.
+
+There is now an [entire finite continuation](../../notes/actual_matching_edge_entire_operator_kernel.md) across the boundary:
+
+$$\mathcal K_{N,a}(h,u,l)=\frac{\beta_a^2}{N}
+\prod_{r=a+1}^{N-1-a}2\sin\frac{\pi(h+r)}{N}
+R_a(z_1;c_h)R_a(z_2;c_h).$$
+
+Here $\beta_a=s_{2a}/s_a^2$, $s_n=\prod_{r=1}^{n}2\sin(\pi r/N)$, $\sigma_N=N-1-h$, $z_1=q^{-\sigma_N+2u}$, $z_2=q^{\sigma_N-2l}$, and $c_h=\cos(\pi h/N)$. This polynomial parameter differs from the cusp rectangle ratio above. The polynomials $R_a$ are the original finite determinant polynomials. Every apparent denominator and monomial phase cancels **before** taking a limit. The formula matches the whole physical grid: its residual sine product or its polynomial factors retain the forbidden-entry zeros. At the maximal folded channel the residual product is empty for odd levels and has one factor for even levels.
+
+The [explicit global frame](../../notes/actual_augmented_plat_real_deficient_frame.md) makes the geometric test uniform: on every certified matching cut, the exceptional normalized degree can be set to the real value $\sigma=1/6$. Both magnetic rows are complex, and all other ordinary factors remain selected and physical. This fixes a coordinate of the common frame. Exact formulas identify the geometric upper and lower characteristic branches against the reflected source anchor; an actual asymptotic and a contributing cycle still require proof.
+
+![The controlled physical packet and geometric chamber lie on opposite sides of the limiting support boundary; an exact entire kernel spans both, while its selected geometric asymptotic remains open.](../figures/support-wall.png)
+
+This supplies a concrete function to analyze in the required chamber. It does not supply its selected asymptotic or its genuine generic-quantum normals. The dense forbidden lattice zeros also rule out a uniform nowhere-zero single-term asymptotic on a neighborhood containing an open real forbidden region; a complex chart or an expansion retaining the cancellations is required. At a fixed forbidden integer separation, the whole original physical slice is zero. Deforming only its magnetic variables cannot turn a local nonzero packet into a nonzero slice period.
 
 ## How far this is from the general conjecture
 
 **The main gap remains a substantial global theorem.** There are three concrete tasks:
 
-1. Put the exceptional-edge integral and the actual surrounding state on compatible domains, retaining their shared physical variables, marks and phases.
+1. Prove the selected asymptotic and required genuine normals of the entire exceptional kernel in the geometric chamber beyond its physical bandwidth, or supply another exact representation that reaches that chamber.
 2. Prove that the geometric critical point contributes with a nonzero controlled coefficient to the original finite source. A classical character relation or a scalar polynomial evaluation does not establish this.
 3. Control the remaining physical regions and aliases uniformly in the auxiliary colors, so the general long-filling transfer applies.
 

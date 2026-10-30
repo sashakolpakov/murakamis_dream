@@ -1,41 +1,34 @@
 # The general long-twist target at arbitrary bridge number
 
-## Current exceptional-period reduction
+## Current critical path: the exact support boundary
 
-The actual exceptional matching edge is now exactly the generic operator
-D_a^-1 p_a(Omega), with all original normals retained. Its finite scalar
-polynomial has simple roots above two and a canonical selected action.
-The [general generating relation](actual_matching_edge_polynomial_geometric_action.md)
-recovers the actual local four-parabolic character equation, with its
-marking and scalar anchor. This does not yet identify a contributing
-global knot period.
+The actual completed matching edge is the generic operator D_a^-1 p_a(Omega).
+The [entire finite root kernel](actual_matching_edge_entire_operator_kernel.md)
+now expresses every physical entry as two original determinant polynomials
+and a residual sine product. Apparent poles and monomial phases cancel
+before any limit, while every forbidden physical lattice zero remains.
+Its [controlled relative packet](actual_matching_edge_antidiagonal_operator_packet.md)
+has a nonzero amplitude inside the strict physical bandwidth.
 
-The [actual primitive-word bound](actual_matching_circle_rectangle_bound.md)
-proves c<=1 for every circle in the complete matching-polyhedron
-certificate, including retained half twists. Thus the actual target
-2-4/c^2 is at most -2. Strict c<1 is off spectrum; c=1 remains a
-parabolic target and is outside the current strict off-spectrum estimate.
+The [geometric support theorem](actual_matching_edge_geometric_support_zero_chamber.md)
+locates the missing region precisely, at every certified fixed bridge width.
+The two exceptional ordinary factors share 0<Re sigma<1/2; after the
+actual turn their row separation is Re delta=1-Re sigma>1/2. All other
+kernel-domain inequalities hold. The current relative packet therefore
+does not contain the complete geometric point. More copies of that same
+packet cannot remove the common-frame obstruction.
 
-The [original operator contour](actual_matching_edge_continuant_operator_period.md)
-retains forward and backward continuants and the exact characteristic
-denominator. The [cross-central Green theorem](actual_matching_edge_cross_central_green_action.md)
-supplies their actual selected action and genuine generic-jet bounds
-for strict real physical rows on its stated common prefix domain.
-Neither the scalar polynomial nor that Green integrand can simply
-replace the whole coherent contraction.
+The [closing-region theorem](actual_casimir_closing_region_bound.md)
+also controls the whole original spectral integrand and its fixed genuine
+normals on shrinking arcs at +2 in each fixed slit cone, with
+subexponential cost. It does not
+settle the remaining contour or the possible geometric target -2.
 
-The [positive endpoint convolution](actual_matching_edge_polynomial_endpoint_control.md)
-and [full endpoint resolvent](actual_casimir_endpoint_resolvent_bound.md)
-provide polynomial control near the closing point +2, with all fixed
-generic normals. This is distinct from the possible geometric target
--2. The connecting contour, a nonzero selected contribution, and the
-whole mixed-color source gap remain substantial missing theorems.
-
-The Fourier phase is now an exact integer quadratic expression, and
-its selected ordinary action has a global holomorphic Legendre chart.
-These preserve the original winding data but do not supply a new
-complex finite coefficient or a global source cycle. The general
-long-twist conjecture remains OPEN.
+The next required theorem concerns the entire kernel in the geometric
+chamber: its selected asymptotic and genuine generic normals, followed
+by a nonzero global source contribution and the complementary-color gap.
+The original scalar character relation and marked hyperbolic-volume
+anchor remain valid. The general long-twist equality remains OPEN.
 
 30 October 2026. The target is an original Kashaev volume equality for
 arbitrary fixed bridge number and arbitrary fixed essential twist
