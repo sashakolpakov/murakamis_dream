@@ -95,7 +95,7 @@ $$2\pi\operatorname{Re}S(\boldsymbol\chi)
 +\frac12\sum_i\operatorname{Re}U_i\operatorname{Im}V_i,
 \qquad U_i=-2\pi i\chi_i.$$
 
-Thus for small **real** $\boldsymbol\chi$, the exact complete-core polynomial has rate $\operatorname{Vol}(\rho_{\boldsymbol\chi})$. At zero this is the complete augmented-link volume. For complex meridians the displayed boundary correction is necessary. The relative asymptotic still retains $S_N$; convergence alone does not justify substituting $S$ in its exponential.
+Thus for small **real** $\boldsymbol\chi$, the exact complete-core polynomial has rate $\operatorname{Vol}(\rho_{\boldsymbol\chi})$. At zero this is the complete augmented-link volume. For complex meridians the displayed boundary correction is necessary. The relative asymptotic still retains $S_N$; convergence alone does not justify substituting $S$ in its exponential. The [finite-level action transfer](../../notes/general_long_filling_varying_action_transfer.md) now proves that the filling calculation can retain $S_N$ throughout and take its limit at the end. Its remaining hypotheses are the full mixed-source estimates.
 
 The [external reflection theorem](../../notes/actual_external_circle_reflection_and_cusp.md) gives an exact interface. An original color $N-h$ circle is a cosine-weighted complete circle plus a literal color $h$ circle. The complete term has a proved Fourier limit for $h=z\sqrt N$, and its coefficient matches the primitive cusp shape:
 
@@ -107,7 +107,7 @@ This holds uniformly for bounded complex $\mathbf z$, with fixed derivatives. It
 
 ![Two actual cusp rectangles fix the primitive longitude factor of two and the normalization of the mesoscopic Fourier Gaussian.](../figures/cusp-gaussian.png)
 
-The [source-divisor transfer](../../notes/general_long_filling_source_divisor.md) explains the final quantifier: a nonzero analytic amplitude germ gives a result outside an exceptional divisor, while all independently long slopes require the stronger unit or coordinate-monomial condition. Those hypotheses still need to be verified for the general source.
+The [source-divisor transfer](../../notes/general_long_filling_source_divisor.md) explains the final quantifier: a nonzero analytic amplitude germ gives a result outside an exceptional divisor, while all independently long slopes require the stronger unit or coordinate-monomial condition. The established complete core has a unit amplitude. To use it for the original filled invariant, the other terms and the color complement must still have a proved gap.
 
 ## The exceptional edge now has an exact algebraic description
 
@@ -117,9 +117,21 @@ The [exponential interpolation theorem](../../notes/actual_positive_face_exponen
 
 The [coupled polynomial system](../../notes/actual_whole_source_coupled_face_difference_system.md) retains every shared-face coefficient and the exact fold-selection relation. It matches the ordered classical momenta on regular charts. At a triangle with two marked zero faces the local quadratic has a double root. The [marked circle-pattern theorem](../../notes/actual_marked_deformed_circle_pattern.md) recovers the shared strip, all source-stationary face radii, and selected eigenline germs directly from a nonsingular finite geometric system. The [primitive collar calculation](../../notes/actual_deformed_circle_primitive_collar.md) then fixes the actual disk word, half-twist shear and line-face limit. Its single side pairing has multiplier $E_bE_c/D$; the double-reflection word has its square. Keeping that distinction and the actual eigenflag lets the global theorem verify every group relation and the regulator differential.
 
-For the remaining reflected terms, the [smoothing-capacity theorem](../../notes/actual_matching_smoothing_angle_capacity.md) supplies a checkable sufficient condition for a strict rate loss when an untwisted color-one circle is deleted. Its angle-flow and entropy argument extends beyond balanced examples. It does not yet cover every deletion, general small colors, or every half-twist pattern.
+## What the remaining small-color terms now reduce to
+
+The [exact small-circle operator](../../notes/actual_small_circle_polynomial_face_insertion.md) preserves the face polynomial ring after summing all original paths. Its apparent negative powers cancel because the physical endpoint coefficients vanish. The original total-degree argument then excludes every whole-level Fourier alias. At fixed positive radii, a color $h$ insertion costs at most $C^{h-1}$ in the weighted coefficient norm.
+
+The [ordered extension](../../notes/actual_ordered_small_circle_face_insertions.md) composes these operators in reverse diagram order when their output middle faces are unmarked bounded regions. It shifts every coefficient created by later operators, so interacting regions are included. An exact transpose adapter also handles a single protected output face without moving the original mark. This is not yet an arbitrary-subset theorem: mixed elimination directions can interact cyclically, and deleted ports with retained half twists need separate treatment.
+
+For the required geometric gap, the [smoothing-capacity theorem](../../notes/actual_matching_smoothing_angle_capacity.md) supplies a sufficient angle-flow and entropy condition when an untwisted color-one circle is deleted. The polynomial operator carries any compatible strict gap to small colors, at the stated $C^{h-1}$ cost. It does not supply the gap itself.
 
 The [fixed-radius criterion](../../notes/actual_smoothing_fixed_radius_gap.md) gives another sufficient bound without requiring a regular smoothed minimizer. Its explicit certified counterfamily also proves that varying only the merged face while keeping every other old radius fixed cannot work generally. A general comparison must allow all surviving radii to readjust, including boundary limits. This is an obstruction to that restricted proof strategy, not to the volume conjecture.
+
+The [capacity decomposition](../../notes/actual_smoothed_source_capacity_blocks.md) now handles those boundary limits. Compact angle duality remains exact even when the positive-radius infimum is not attained. Loops give an infeasible angle problem; separating two-edge cycles split the capacity into an additive sum. Each nontrivial simple block has a constructed circle packing and an actual convex ideal right-angled polyhedron, with
+
+$$\Phi_{\mathrm{smoothed}}=\sum_B\frac{\operatorname{Vol}(Q_B)}{\pi}.$$
+
+Double-triangle blocks contribute zero. The formula is independent of each block's adjacent marked pair; it does not move the quantum mark or factor the finite quantum source. **The strict comparison of this sum with the original capacity remains open.** Identifying the blocks with the smoothed exterior's geometric pieces also needs its actual gluing proof.
 
 The previous operator and torsor approaches remain available. The exceptional operator is the original normalized Casimir polynomial, with its [general character relation](../../notes/actual_matching_edge_polynomial_geometric_action.md) and [exact resolvent period](../../notes/actual_matching_edge_continuant_operator_period.md). The original marked transport, genuine quantum normals, odd framing source, logarithmic class and relative boundary currents are preserved in the [source and torsor routes](../library.html). The new coefficient identity and signed Gaussian resolve the complete contraction without assigning an arbitrary relative cycle.
 

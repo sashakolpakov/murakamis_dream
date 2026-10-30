@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Long filling with the actual finite-level critical action · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">General frontier</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#fourier">Fourier, weighted Cauchy, and energy</a> · <a href="../library.html#frontier">Obstructions and the general conjecture</a><p><span class="badge">Conditional transfer theorem</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/general_long_filling_varying_action_transfer.md">Markdown source</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="long-filling-with-the-actual-finite-level-critical-action">Long filling with the actual finite-level critical action</h1>
+<p>30 October 2026. Independently reviewed and frozen. The complete core theorem retains a holomorphic action S_N in its exponential. Its convergence to S does not justify replacing exp(N S_N) by exp(N S). The long-filling argument can retain S_N throughout. This removes that compatibility issue without assuming a new asymptotic expansion of S_N. The full mixed-source gap remains a separate hypothesis.</p>
+<h2 id="precise-hypotheses-and-conclusion">1. Precise hypotheses and conclusion</h2>
+<p>Retain the original full-twist identity, endpoint and normal currents, and normalization chi_N of the <a href="general_original_source_long_filling_transfer.html">general filling transfer</a>. Fix the diagram and its b filled ports. Suppose there are nonzero scalars c_N with</p>
+<pre><code>(1/N) log|c_N| -&gt; F0,</code></pre>
+<p>and exact finite holomorphic packets C_N, separately even, on the SAME fixed complex color neighborhood used in that theorem. Assume</p>
+<pre><code>C_N(x)=c_N exp[N phi_N(x)] [a_N(x)+r_N(x)],       (1)
+phi_N(0)=0,  phi_N -&gt; phi holomorphically,
+sup|r_N|=O(1/N).</code></pre>
+<p>Here phi_N and a_N are separately even and holomorphic. On a slightly smaller fixed neighborhood assume |a_N| is bounded above and below by positive constants, uniformly in N. Uniform bounds on still smaller domains give bounds on their fixed derivatives by Cauchy’s formula. Assume</p>
+<pre><code>phi&#39;&#39;(0)=2pi i diag(tau_1,...,tau_b), Im tau_i&gt;0. (2)</code></pre>
+<p>The full physical-color complement and the error between the original mixed source and its retained unit phase times C_N obey the same exponential gap as in the original transfer, now measured relative to |c_N|. A gap measured relative to exp(N F0) also suffices after reducing its positive exponent, because log|c_N|=N F0+o(N).</p>
+<p>Then there is a diagram-dependent threshold T such that every FIXED signed integer tuple p with all |p_i|&gt;T has</p>
+<pre><code>K_N(p)=chi_N eta_N kappa^(-sum p_i) c_N
+           D_N(p) exp[N S_(p,N)] [1+O_p(1/N)],   (3)</code></pre>
+<p>where the actual finite-level critical point xi_N is the small solution of</p>
+<pre><code>partial_i phi_N(xi_N)+pi i (xi_N,i-1)/p_i=0,
+S_(p,N)=phi_N(xi_N)+(pi i/2)sum_i(xi_N,i-1)^2/p_i. (4)</code></pre>
+<p>For each such fixed p, |D_N(p)| is bounded above and bounded away from zero for all large N. No convergence of a_N or of D_N is required. The actions S_(p,N) converge to S_p defined by (4) with phi in place of phi_N. Consequently</p>
+<pre><code>lim_N (2pi/N) log|K_N(p)|=2pi(F0+Re S_p).        (5)</code></pre>
+<p>The normalization chi_N is the original known nonzero factor with log|chi_N|=o(N), and eta_N and the displayed kappa factors are the retained unit phases. No unknown value of the filled invariant is used to choose a normalization. The diagram and p are fixed before N tends to infinity, and neither equal signs nor comparable slopes are required.</p>
+<p>All source scalars use the same convention as the original transfer: any common recorded exterior framing unit occurs once, either in c_N or in the displayed outer factors, as in that source’s exact identity.</p>
+<h2 id="uniform-local-estimates">2. Uniform local estimates</h2>
+<p>Holomorphic convergence on a fixed neighborhood implies uniform convergence of all fixed derivatives on a smaller one. Separate evenness makes every phi_N Hessian at zero diagonal. By (2), its negative real quadratic part on real color directions is uniformly positive for all large N. Taylor’s formula therefore gives the same Gaussian corridor upper bound as in the original transfer, with constants independent of N:</p>
+<pre><code>|C_N(x+i y)| &lt;= C |c_N|
+             exp[N(-a0 |x|^2+B0 |y|^2)].         (6)</code></pre>
+<p>The holomorphic implicit-function construction is uniform as well. Define the actual finite-level Fourier critical map and action by</p>
+<pre><code>grad phi_N(xi_F,N(z))+2pi i z=0,
+Psi_N(z)=phi_N(xi_F,N(z))+2pi i xi_F,N(z).z.</code></pre>
+<p>They exist on one fixed polydisc and converge with fixed derivatives to their limiting counterparts. Psi_N is separately even, Psi_N(0)=0, and its quadratic coefficients converge to -i pi/tau_i.</p>
+<p>Use the EXACT finite packet C_N in the finite color sum. The contour argument in the original transfer uses its holomorphy, (6), and the fixed-width complement gap; these estimates are uniform here. Applying stationary phase directly to (1), including its holomorphic absolute remainder, gives</p>
+<pre><code>F_N(z)=c_N N^(b/2) exp[N Psi_N(z)]
+                        [B_N(z)+O(1/N)],
+B_N(z)=(2pi)^(b/2) a_N(xi_F,N(z))
+                   /sqrt(det[-phi_N&#39;&#39;(xi_F,N(z))]). (7)</code></pre>
+<p>All errors and fixed derivatives are uniform on a smaller fixed domain. The Gaussian square root is fixed by the translated original contour. Neither the grid error nor exp[N(phi_N-phi)] is Fourier transformed as an independent approximation. The action phi_N remains in (7).</p>
+<h2 id="charges-noncancellation-and-the-leading-coefficient">3. Charges, noncancellation and the leading coefficient</h2>
+<p>For each nonzero charge vector m put</p>
+<pre><code>T_(m,N)(z)=Psi_N(z)-2pi i sum_i(p_i z_i^2+m_i z_i).</code></pre>
+<p>The proof excluding zero charges is an exact identity of the original normal-current kernel and any even packet; it is unchanged. The finite color endpoints and large-charge tails use (6) and its fixed derivatives, so their exponential estimates are uniform in N too. When estimating one charge coordinate, spectator chirps stay on their original real grids or real contours, as in the original transfer. Thus there is no cost growing exponentially with another fixed slope.</p>
+<p>For the remaining local charges set e_i=1/p_i and t_i=m_i/p_i. Solve uniformly in N</p>
+<pre><code>z_i=-t_i/2+e_i partial_i Psi_N(z)/(4pi i).</code></pre>
+<p>Separate evenness and completing the square give</p>
+<pre><code>T_(m,N)(z_(m,N))=(pi i/2)sum_i t_i^2/e_i
+                                  +Bhat_N(t^2,e).</code></pre>
+<p>At the limit (t,e)=(0,0),</p>
+<pre><code>partial_(t_i^2) Re Bhat = -pi Im(tau_i)/(4|tau_i|^2)&lt;0.</code></pre>
+<p>Uniform derivative convergence preserves a fixed negative upper bound on one common neighborhood for every sufficiently large N. Integrating in the squared real t coordinates therefore gives the same strict action ordering between |m_i|=1 and every other local charge. All finite nonlocal charges and endpoint connectors obey the same uniform estimates as the original transfer. Shrink the inverse-slope polydisc once so the minimal-charge action is closer to zero than the global source gaps.</p>
+<p>At the minimal charge, xi_N and the second saddle are related exactly by</p>
+<pre><code>z_(N,i)*=(xi_N,i-1)/(2p_i).</code></pre>
+<p>The exponent is exactly S_(p,N) in (4), not its limiting value. Uniform implicit convergence gives xi_N -&gt; xi and S_(p,N) -&gt; S_p. Write partial_i phi_N(x)=x_i g_(i,N)(x). The stationarity equation gives</p>
+<pre><code>xi_N,i=e_i pi i/[g_(i,N)(xi_N)+pi i e_i].</code></pre>
+<p>The denominators are uniformly nonzero near zero. Hence for fixed nonzero e_i all xi_N,i are nonzero; moreover |xi_N,i|&lt;1/2 after shrinking the common polydisc. In particular z_(N,i)* is nonzero and small.</p>
+<p>The two Gaussian integrations give the precise coefficient</p>
+<pre><code>D_N(p)=2^b (2pi)^b a_N(xi_N) product_i sinh(2pi i z_(N,i)*)
+   /[sqrt(det[-phi_N&#39;&#39;(xi_N)])
+                sqrt(det[-T_(1,N)&#39;&#39;(z_N*)])].    (8)</code></pre>
+<p>Both determinants stay nonzero, with the branches of the original translated contours. For each fixed p the sinh factors have nonzero limits, and a_N is uniformly bounded away from zero. Formula (8) is therefore bounded above and away from zero. The 2^b minimal signed charges have identical action and coefficient: evenness applies at each N, while m_i sinh(2pi i z_i) and the actual parity character are unchanged by simultaneous sign reversal. They add exactly as before. This proves (3). Taking logarithms of absolute values divided by N proves (5).</p>
+<h2 id="application-to-the-established-complete-core">4. Application to the established complete core</h2>
+<p>For the <a href="actual_complete_core_complex_packet.html">actual core packet</a>, set</p>
+<pre><code>c_N=F_N(0),
+phi_N(chi)=S_N(chi)-S_N(0),
+a_N(chi)=sqrt(det K_N(0)/det K_N(chi)).</code></pre>
+<p>These satisfy (1)–(2) on a fixed smaller neighborhood. In fact the separate channel reflection makes S_N and det K_N separately even: flipping chi_i flips the corresponding critical delta_i, and conjugates the Hessian by that coordinate reflection. Its determinant is unchanged. The square root is the branch equal to one at zero. Thus a_N converges to a nonzero unit and its bounds required above hold. The complete-source theorem gives log|c_N|/N -&gt; Vol(Y_D)/(2pi). The packet cusp parameter in (2) is pi i/(C_i-pi i epsilon_i), half the primitive geometric cusp parameter; the original filling kernel already retains that convention.</p>
+<p>The <a href="actual_complete_core_geometric_deformation.html">actual marked regulator</a> identifies F0+phi with the geometric action, with its recorded boundary correction and primitive peripheral logs. Under the STILL REQUIRED whole mixed-source complement and corridor-error gaps, the general geometric filling completion therefore identifies (5) with the actual filled hyperbolic volume for every independently long fixed signed p.</p>
+<p>This note closes the finite-action compatibility issue only. It neither proves those mixed-source gaps nor extends the complete-core theorem to filled knots by itself. No additional finite Taylor expansion of S_N, nor an exchange of a level limit with the filling transform, is used.</p>
+<p>Independent analytical review checked the exact saddle conversion, both Gaussian powers and the coefficient (8), uniform complex and charge estimates, finite-level evenness, noncancellation, and the actual core normalization and cusp factor. No new finite computation is claimed: this is a uniform extension of the stated conditional transfer proof, not a numerical test of its missing source hypotheses.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/general_long_filling_varying_action_transfer.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#precise-hypotheses-and-conclusion">1. Precise hypotheses and conclusion</a><a href="#uniform-local-estimates">2. Uniform local estimates</a><a href="#charges-noncancellation-and-the-leading-coefficient">3. Charges, noncancellation and the leading coefficient</a><a href="#application-to-the-established-complete-core">4. Application to the established complete core</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

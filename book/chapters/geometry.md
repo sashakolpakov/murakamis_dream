@@ -10,6 +10,8 @@ The [marked circle-pattern theorem](../../notes/actual_marked_deformed_circle_pa
 
 The [primitive collar theorem](../../notes/actual_deformed_circle_primitive_collar.md) computes the actual side pairing, selected eigenflag and half-twist shear, including a common marked-line limit. The [global geometric assembly](../../notes/actual_complete_core_geometric_deformation.md) verifies the full original group presentation and identifies the core's limiting action with the marked geometric deformation. For complex meridian logs it retains the boundary correction $\tfrac12\sum_i\operatorname{Re}U_i\operatorname{Im}V_i$; for real external deficits this correction vanishes. The full filling theorem still requires the other reflected-color terms and the combined far-alias bounds described in the [frontier](frontier.md).
 
+For an identity-smoothed source, the [block capacity theorem](../../notes/actual_smoothed_source_capacity_blocks.md) removes the need to assume an attained positive-radius minimum. It splits degenerate angle problems along two-edge cycles, constructs the simple blocks' circle packings by an entropy maximum and an embedded Euclidean development, and identifies their capacities with actual polyhedral volumes. Their sum has not yet been proved strictly smaller than the original volume, and the geometric decomposition of the smoothed link exterior remains separate from this capacity identity.
+
 ## A local tetrahedron is a genuine geometric result
 
 In the supported four-port theorem, the exact half-shifted color coordinate is
