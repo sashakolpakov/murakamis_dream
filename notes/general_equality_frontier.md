@@ -29,8 +29,28 @@ An exact magnetic factorization also proves a
 [complex magnetic corridor](actual_q_hahn_magnetic_complex_corridor.md)
 at fixed real discrete pair degree t and channel j. It includes
 canonical logarithm selection and both original integer offsets.
-Joint continuation of t and the magnetic coordinate, the channel
-endpoint and a global coherent-source estimate remain open.
+The [joint accretive determinant](actual_q_hahn_joint_accretive_determinant.md)
+and [joint amplitude theorem](actual_q_hahn_joint_complex_amplitude.md)
+now permit t and the magnetic coordinate to move together complexly
+on a fixed central domain, uniformly through the folded channel limit.
+The selected local sheet has an explicit principal-square-root test.
+The channel remains a discrete index; generic normal currents and a
+global coherent-source estimate remain open.
+
+The [physical framing criterion](actual_augmented_plat_physical_framing_criterion.md)
+gives strict semialgebraic tests for a single common frame to put every
+coupon in this central domain. Local compatibility for one disk product
+and prefix is proved. General simultaneous feasibility, the required
+selected local sheets and the contributing global cycle are not inferred
+from positive gluing or from algebraic regularity alone.
+
+The [finite selected-local certificate](actual_augmented_plat_selected_local_certificate.md)
+combines those strict tests and the actual marked geometric data. If
+supplied, it gives the geometric stationary germ on the source-selected
+local phase, with actual volume and nondegenerate transverse Hessian.
+Its existence for every general skeleton and its contribution to the
+original global cycle remain unproved. Generic partner normals and
+finite complex-channel continuation are not part of its local conclusion.
 
 The [local critical-character map](actual_augmented_plat_local_critical_character_map.md)
 now recovers the actual ordered transport and primitive auxiliary

@@ -4,9 +4,15 @@ These diagrams introduce the objects and constructions used in the guide. The ge
 
 ## The route to volume equality
 
-Exact source formulas, the selected local complex action and the marked geometric candidate are now available at arbitrary fixed width. The diagram highlights the remaining global selection and estimate problem. The [frontier](chapters/frontier.md) states the precise gap; the [results chapter](chapters/results.md) states the families already covered by the recorded proofs.
+Exact source formulas, joint local complex amplitudes and the marked geometric branch are now available at arbitrary fixed width under their stated hypotheses. The diagram highlights the remaining global selection and estimate problem. The [frontier](chapters/frontier.md) states the precise gap; the [results chapter](chapters/results.md) states the families already covered by the recorded proofs.
 
 ![The general research route: exact source, local action and actual geometric volume, with the remaining global theorem highlighted.](figures/research-map.png)
+
+## The joint local domain
+
+The blue diamond shows where the [joint kernel theorem](../notes/actual_q_hahn_joint_complex_amplitude.md) applies in the real parts of the two physical wire coordinates. Both the pair degree and magnetic coordinate may vary complexly. The diagonal seam and outer boundary are excluded. The [framing criterion](../notes/actual_augmented_plat_physical_framing_criterion.md) gives finite inequalities for placing all coupons in this domain, without asserting that every diagram admits such a common frame.
+
+![The joint central domain in the real parts of two wire coordinates; low and high degree adapters are separated by the excluded total-degree seam.](figures/joint-kernel-domain.png)
 
 ## A change of pairing
 

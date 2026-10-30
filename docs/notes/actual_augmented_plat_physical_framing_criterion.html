@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A finite criterion for a physical magnetic framing · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Geometry</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#geometry">Angle optimization and actual geometry</a><p><span class="badge">Finite framing tests; common existence open</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_augmented_plat_physical_framing_criterion.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_augmented_plat_physical_framing_criterion.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_augmented_plat_physical_framing_criterion_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="a-finite-criterion-for-a-physical-magnetic-framing">A finite criterion for a physical magnetic framing</h1>
+<p>30 October 2026. This note reduces the simultaneous framing question for the actual complete augmented-plat character to a strict semialgebraic feasibility problem in one rank-one projector. It also treats the smaller central domain used by the joint accretive determinant. The criterion keeps every original prefix word and both actual degree adapters.</p>
+<p>There is no assertion that this feasibility problem always has a solution. The positive gluing certificate and the regular critical-scheme theorem do not by themselves prove that assertion. In particular, a nonempty real-open set of perfectly regular frames fails physical support at any one essential crossing disk. The obstruction below explains why merely avoiding algebraic divisors cannot settle the issue.</p>
+<h2 id="the-common-frame-is-a-rank-one-projector">1. The common frame is a rank-one projector</h2>
+<p>Fix the actual marked geometric representation and its finite original Morse word. For its prefix matrices Q use the same trace -2 main lifts as in the <a href="actual_augmented_plat_regular_geometric_phase_chart.html">regular magnetic chart</a>. A simultaneous projective frame g, modulo LEFT diagonal changes, is equivalently</p>
+<pre><code>Pi=g^(-1) E_11 g,  Pi^2=Pi, tr Pi=1, det Pi=0.       (1)</code></pre>
+<p>Indeed the two eigenspaces of Pi have distinct eigenvalues 1 and 0, so every such projector is obtained this way; its stabilizer is precisely the projective diagonal torus. This is the same two-dimensional complex framing quotient as in the <a href="actual_augmented_plat_critical_scheme.html">actual critical scheme</a>. Every needed prefix diagonal is the LINEAR function</p>
+<pre><code>a_Q=tr(Q Pi)=(g Q g^(-1))_11.                        (2)</code></pre>
+<p>At an input of a crossing-circle coupon put</p>
+<pre><code>Q_0=W, Q_1=A W, Q_2=P W, P=B A,
+a_i=tr(Q_i Pi).</code></pre>
+<p>For the output, replace A by the actual outgoing first meridian A’; Q_0 and Q_2 are unchanged. The original two physical wire phases are</p>
+<pre><code>X_1=-a_0/a_1, X_2=-a_1/a_2, T=X_1 X_2=a_0/a_2.     (3)</code></pre>
+<p>We always impose the other finitely many regular-chart nonvanishings from the cited chart theorem. No independent local change of frame is permitted in (2).</p>
+<h2 id="exact-strict-support-criterion">2. Exact strict-support criterion</h2>
+<p>For a nonzero X off the positive real axis choose its wire logarithm by</p>
+<pre><code>x=Log_(0,2pi)(X)/(2pi i),  0&lt;Re x&lt;1.                (4)</code></pre>
+<p>Write s=x_1+x_2. The actual low adapter is tau=s, u=x_1; the high adapter is tau=2-s, u=1-x_2. At the complete channel the strict local physical domain is</p>
+<pre><code>1/2&lt;Re tau&lt;1,  0&lt;Re u&lt;Re tau.                       (5)</code></pre>
+<p>For three nonzero prefix diagonals, (4)–(5) hold if and only if</p>
+<pre><code>Im(a_0 conjugate(a_2)) != 0,
+0 is not in the real convex hull of {a_0,a_1,a_2}.   (6)</code></pre>
+<p>Here the low or high adapter is determined, rather than freely chosen. The second condition is equivalent to the existence of one open half-plane through the origin containing all three numbers.</p>
+<p>Proof. Rotate a_0 to the positive axis. Under the convex-hull condition the three arguments have lifts</p>
+<pre><code>arg a_0=0, arg a_2=delta in (-pi,pi), arg a_1=beta,
+max(0,beta,delta)-min(0,beta,delta)&lt;pi.</code></pre>
+<p>The first condition in (6) says delta is neither 0 nor an endpoint. The canonical physical arguments are consequently</p>
+<pre><code>2pi Re x_1=pi-beta,
+2pi Re x_2=pi+beta-delta.                            (7)</code></pre>
+<p>Their sum is 2pi-delta. Thus delta&gt;0 gives the low adapter, delta&lt;0 gives the high adapter, and</p>
+<pre><code>Re tau=1-|delta|/(2pi) in (1/2,1).</code></pre>
+<p>Both inequalities for u follow from 0&lt;Re x_i&lt;1: in the low case tau-u=x_2, and in the high case tau-u=1-x_1. Conversely (5) puts the sum of the two wire arguments strictly between pi and 3pi and away from 2pi. The inverse formulas (7) put the three prefix arguments in an interval of width less than pi. This proves (6).</p>
+<p>The input and output have the same a_0,a_2. Their prescribed adapter therefore agrees. Their canonical sums agree in real part by (7) and in imaginary part by X_1 X_2=T. Thus degree conservation holds as an EXACT complex equality, not only after exponentiation.</p>
+<p>At a cup or cap the first and last prefix words agree. The corresponding condition is simply that a_1/a_0 is not a nonpositive real number; all diagonals are nonzero. Then X_2=X_1^(-1) and their canonical logarithms sum exactly to 1. Applying these tests at every event makes the chosen wire logarithms solve the original affine incidence equations Bx=b without any additional integer adjustment. Ordinary and marked cap characters are still the distinct characters recorded in the source.</p>
+<h2 id="the-central-joint-domain-has-an-even-simpler-test">3. The central joint domain has an even simpler test</h2>
+<p>The central domain adds</p>
+<pre><code>|2 Re u-Re tau|&lt;1/2                                (8)</code></pre>
+<p>to (5). This is the leading open domain Re c&gt;0, Re z&gt;0 for</p>
+<pre><code>c=-cos(pi tau), z=exp[pi i(tau-2u)].</code></pre>
+<p>The exact finite c has tau+1/N in place of tau; any compact subset of (5),(8) satisfies its corresponding inequality for large N. For BOTH actual adapters,</p>
+<pre><code>tau-2u=x_2-x_1.                                    (9)</code></pre>
+<p>Consequently the central condition is adapter-independent. In physical wire real parts it is the diamond</p>
+<pre><code>|Re x_1-1/2|+|Re x_2-1/2|&lt;1/2,
+Re(x_1+x_2) != 1.                                  (10)</code></pre>
+<p>An exact test using only the prefix diagonals is</p>
+<pre><code>Im(a_0 conjugate(a_2)) != 0,
+|a_2| Re(a_1 conjugate(a_0))
+  +|a_0| Re(a_1 conjugate(a_2)) &gt; 0.                 (11)</code></pre>
+<p>Proof. In the argument lifts above, (8) is |2 beta-delta|&lt;pi. This says precisely that a_1 lies in the open half-plane centered at the bisector of the MINOR angular interval from a_0 to a_2. The vector a_0/|a_0|+a_2/|a_2| points along that bisector. Taking the scalar product with a_1 gives (11). Conversely the resulting interval delta/2-pi/2&lt;beta&lt;delta/2+pi/2, with |delta|&lt;pi, puts all three arguments in an interval of width less than pi. Thus (11) itself implies (6), as well as (8).</p>
+<p>This extra inequality is substantial: same-side disk flags, or merely being in the larger physical strip (5), does not imply (11).</p>
+<h2 id="a-finite-semialgebraic-feasibility-problem">4. A finite semialgebraic feasibility problem</h2>
+<p>Equations (1),(2),(6) give a finite strict semialgebraic test for a simultaneous physical magnetic frame. One can encode the convex-hull test with one complex separator n_f per input/output triple:</p>
+<pre><code>|n_f|^2=1, Re(n_f a_(f,i))&gt;0 for i=0,1,2.</code></pre>
+<p>For the central domain there are no separator choices. Introduce positive real r_(f,0),r_(f,2) with r_(f,i)<sup>2=|a_(f,i)|</sup>2 and require</p>
+<pre><code>r_(f,2) Re(a_(f,1) conjugate(a_(f,0)))
+  +r_(f,0) Re(a_(f,1) conjugate(a_(f,2))) &gt; 0.        (12)</code></pre>
+<p>Also require the square of Im(a_(f,0) conjugate(a_(f,2))) to be positive, impose the cup/cap tests, and retain every regular-chart nonvanishing. All coefficients are algebraic when the actual marked representation is algebraic. Only one projector Pi is shared by the whole diagram. This formulation is suitable for an exact feasibility or infeasibility certificate; it is not a collection of independent local frame choices.</p>
+<p>A strict feasible frame persists under sufficiently small changes of the marked representation. The strict inequalities give a common positive margin on the finite set of triples, and all denominators remain nonzero. In particular it would persist for sufficiently long fillings once obtained at completeness.</p>
+<p>This persistence does not obtain the initial frame. Nor does (12) make the pair totals real: their imaginary parts come from the moduli of the prefix ratios. A theorem continuing only u at fixed real t,j cannot be applied to these generally complex totals. Even a joint domain requires comparing its selected internal roots with the actual geometric roots, and subsequently controlling the contributing global finite-source cycle.</p>
+<h3 id="a-finite-family-sharing-one-disk-product-is-always-feasible">A finite family sharing one disk product is always feasible</h3>
+<p>There is a constructive positive result: all input/output triples from any fixed finite family of transports sharing the SAME product P and prefix W can be made central simultaneously. This does not couple different disk products or different prefixes.</p>
+<p>Normalize A,P as in (13), put H=P+I, and write its transported splits as A_b=(I+bH)A(I-bH), with b in the given finite complex set. This includes every complete centralizer transport and any retained finite half-twist shifts. For a&gt;0 put h=sqrt(2a+1) and take the projector</p>
+<pre><code>L_a=[[1+a/2+i h/2, (a-1)/4+i h/2],
+     [-a-1,       -a/2-i h/2]].                    (12a)</code></pre>
+<p>Direct multiplication gives</p>
+<pre><code>L_a^2=L_a, tr L_a=1,
+tr(P L_a)=1, tr(A L_a)=a,
+tr([H,A] L_a)=-4i h,
+tr(A_b L_a)=a-4i b sqrt(2a+1)-8b^2.                (12b)</code></pre>
+<p>For the finite b-set the last expression is a+O(sqrt(a)), uniformly as a tends to positive infinity. It therefore has positive real part for every b once a is large enough. The central scalar inequality in (11), with endpoints 1,1, is then strictly positive for every triple. Only its T=1 seam remains. These finitely many scalar inequalities hold on an open neighborhood of L_a in the complex projector surface. The nonconstant function tr(P L) cannot be real on any such open neighborhood. A sufficiently small perturbation therefore removes the seam, and gives all the strict central tests.</p>
+<p>For an arbitrary shared prefix W, recover the actual common projector by</p>
+<pre><code>Pi=W^(-1)L/tr(W^(-1)L).                             (12c)</code></pre>
+<p>It is rank-one of trace one, and its actual prefix diagonals are one common nonzero scalar times tr(L),tr(A_b L),tr(P L). Thus the central inequalities are unchanged. The additional trace in (12c) does not vanish identically on the projector surface: otherwise ell(W^(-1)v)=0 for every ell(v)=1, forcing W^(-1)=0. Hence its zero set cannot contain the feasible open neighborhood. The perturbation can simultaneously avoid this trace, the seam, and the finitely many proper regular-chart divisors. This proves the assertion for W as well, rather than assuming the W=I projector survives unchanged.</p>
+<p>The construction is a precise favorable near-coincident-frame mechanism at ONE auxiliary flag. It proves that each coupon’s incoming and outgoing central inequalities are locally compatible. It leaves the genuinely simultaneous problem (12), with the actual different products and prefixes of the full plat, unresolved.</p>
+<h2 id="a-geometric-necessary-condition-and-an-open-obstruction">5. A geometric necessary condition and an open obstruction</h2>
+<p>There is a useful uniform restriction on possible solutions. At one essential complete disk normalize its distinct puncture flags so that</p>
+<pre><code>A=-[[1,1],[0,1]], B=-[[1,0],[-4,1]],
+P=B A=[[1,1],[-4,-3]].                              (13)</code></pre>
+<p>This normalization follows directly from Tr A=Tr B=Tr P=-2. The circle through the three parabolic flags is then the real circle. Write Pi=v ell with ell(v)=1, put w=ker ell, and put z=Wv. These are projective points; z is the right framing point transported by the ACTUAL prefix W. If (6) holds, then</p>
+<pre><code>z and w lie in the same open side of this circle.   (14)</code></pre>
+<p>In particular replacing z by v in this test would be incorrect.</p>
+<p>Here is a direct proof. For real r=(r_0,r_1,r_2) set</p>
+<pre><code>M(r)=r_0 I+r_1 A+r_2 P.</code></pre>
+<p>The matrices in this pencil are real-linearly independent and</p>
+<pre><code>det M=2(r_0^2+r_1^2+r_2^2)-(r_0+r_1+r_2)^2.         (15)</code></pre>
+<p>Suppose z,w are in opposite open half-planes. The condition M(r)z=w is two homogeneous real linear equations in three r’s, so it has a nonzero solution. M(r) cannot annihilate a nonreal z: its real and imaginary vector parts are linearly independent, which would force M=0. The real Möbius transformation identity</p>
+<pre><code>Im M(z)=det(M) Im(z)/|M_21 z+M_22|^2</code></pre>
+<p>therefore gives det M&lt;0. Normalize the sign so that sum r_i&gt;0. Equation (15) forces every r_i&gt;0: if, for example, r_0&lt;=0, then</p>
+<pre><code>det M=(r_1-r_2)^2+r_0^2-2r_0(r_1+r_2)&gt;=0,</code></pre>
+<p>because r_1+r_2&gt;0. This is a contradiction. Now</p>
+<pre><code>0=ell(M(r)Wv)=r_0 a_0+r_1 a_1+r_2 a_2.</code></pre>
+<p>This is a strictly positive convex relation after division by sum r_i, contradicting (6).</p>
+<p>If z is nonreal and w is on the real circle, the same argument gives det M=0 and r_i&gt;=0, still a nontrivial convex relation. If z is on the real circle, solve instead M(r)z=0, again two real equations in three unknowns. The same det=0 argument gives r_i&gt;=0 and the same relation for every w. The point at infinity is handled in homogeneous coordinates, or by a real change of disk coordinates. Thus a good triple must satisfy (14). This is a necessary condition, not a converse.</p>
+<p>The opposite-side choice is a nonempty REAL-OPEN condition on the common framing quotient. It also allows v and w to be distinct, as required for a projector. The common regular-frame locus is a complex Zariski open dense subset by the cited chart theorem. It intersects this real-open bad set: a nonzero holomorphic polynomial cannot vanish on a real-open subset of this complex manifold. Hence EVERY such complete character has common regular frames that fail physical support already at this disk. This conclusion holds independently of whether the representation has a positive gluing certificate.</p>
+<p>For a small exact illustration use W=I, v=(i,1), ell=(1,i)/(2i), so w=-i. Equations (13) give</p>
+<pre><code>(a_0,a_1,a_2)=(1,-1+i/2,-1-5i/2),
+(1/2)a_0+(5/12)a_1+(1/12)a_2=0.                    (16)</code></pre>
+<p>The endpoint discriminant numerator is a_0 a_1+a_1 a_2+a_0 a_2=1/4, and the leading-coefficient numerator a_0+a_2+4a_1=-4-i/2; both are nonzero. Thus this support failure is not just the local root-discriminant failure. Formula (16) is only a local illustration; the preceding open-density argument deals with all the other regular divisors of the actual finite diagram.</p>
+<p>Near-coincident framing points do not evade (14). In the limit w=v, each condition concerns v and Wv on its own developed disk circle. The different prefixes W are fixed words of the representation, not small perturbations of the identity. No simultaneous same-side or central-domain conclusion follows just by taking w close to v.</p>
+<h2 id="what-an-ordinary-fixed-total-fiber-estimate-does-and-does-not-say">6. What an ordinary fixed-total fiber estimate does and does not say</h2>
+<p>At fixed real discrete t,j, the proved magnetic corridor can be multiplied over a fixed finite number of ORDINARY q-Hahn column factors. Pull their magnetic u variables back by affine wire maps preserving every such total. On a compact subset of the common corridors, the relative errors multiply to 1+O(1/N), the leading actions add, and the nonzero amplitudes multiply. An already evaluated normal-derived coefficient depending only on these fixed t,j may remain an EXACT scalar outside this product.</p>
+<p>This elementary product statement estimates neither generic q/normal derivatives of the columns nor the rank-two derivative terms of mixed source kernels. It supplies no bound for fiber summation and does not release t,j. It therefore does not establish an asymptotic for an arbitrary full original-source summand containing those normal terms.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_augmented_plat_physical_framing_criterion.py">exact projector, determinant, convexity and adapter checks</a>. The audit includes numerical argument comparisons only as regressions of the explicit equivalences; it is not an existence search or a proof of a favorable simultaneous frame for arbitrary augmented plats.</p>
+<p>Independent analytical review: PASS. A second reader checked both directions of the support and central-domain tests, the exact affine degree lift and cap marks, the common-product constructive lemma and its nonidentity-prefix normalization, the disk-side obstruction including boundary flags, and the distinction between regular bad frames and nonexistence of favorable frames. The initial audit was independently replayed; the expanded audit adds 100 exact central-feasibility checks for the constructive lemma. No global existence or cycle claim follows.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_augmented_plat_physical_framing_criterion.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-common-frame-is-a-rank-one-projector">1. The common frame is a rank-one projector</a><a href="#exact-strict-support-criterion">2. Exact strict-support criterion</a><a href="#the-central-joint-domain-has-an-even-simpler-test">3. The central joint domain has an even simpler test</a><a href="#a-finite-semialgebraic-feasibility-problem">4. A finite semialgebraic feasibility problem</a><a href="#a-geometric-necessary-condition-and-an-open-obstruction">5. A geometric necessary condition and an open obstruction</a><a href="#what-an-ordinary-fixed-total-fiber-estimate-does-and-does-not-say">6. What an ordinary fixed-total fiber estimate does and does not say</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

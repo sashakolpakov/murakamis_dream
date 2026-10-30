@@ -34,17 +34,23 @@ python3 experiments/audit_actual_q_hahn_negative_root_source_polynomial.py
 python3 experiments/audit_actual_q_hahn_selected_complex_action.py
 python3 experiments/audit_actual_q_hahn_uniform_complex_amplitude.py
 python3 experiments/audit_actual_q_hahn_magnetic_complex_corridor.py
+python3 experiments/audit_actual_q_hahn_joint_accretive_determinant.py
+python3 experiments/audit_actual_q_hahn_joint_complex_amplitude.py
 python3 experiments/audit_actual_augmented_plat_local_critical_character_map.py
 python3 experiments/audit_actual_augmented_plat_endpoint_regulator.py
 python3 experiments/audit_actual_augmented_plat_regular_geometric_phase_chart.py
 python3 experiments/audit_actual_augmented_plat_channel_hessian.py
 python3 experiments/audit_general_marked_multicusp_gluing_rigidity.py
 python3 experiments/audit_actual_augmented_plat_critical_scheme.py
+python3 experiments/audit_actual_augmented_plat_physical_framing_criterion.py
+python3 experiments/audit_actual_augmented_plat_selected_local_certificate.py
 python3 experiments/audit_general_matching_graph_full_normal_source.py
 python3 experiments/audit_actual_planar_three_port_reflection_double.py
 ```
 
 The root, complex-action and amplitude notes contain their analytical proofs; root finding and large-level comparisons are regressions. The magnetic audit also tests the original finite Casimir equation and the exact joint rational formula, retaining the difference between Gaussian and positive sine binomials. The character and regulator audits check exact rational identities in formal variables. The marked gluing audit uses an actual three-cusp triangulation; the critical-scheme audit checks local inverses and 24 incidence graphs. The reflection and graph audits replay actual finite sources. None of these checks proves the missing general global asymptotic.
+
+The joint determinant audit checks the source polynomial before continuation, its three-term recurrence and positive principal minors. The joint amplitude audit compares the literal finite sum with its determinant and asymptotic, including both derivative corrections at folded channels. The framing audit verifies the stated equivalences and local construction; it does not search for or prove a favorable common frame for every plat.
 
 ## Rebuilding this guide and its figures
 

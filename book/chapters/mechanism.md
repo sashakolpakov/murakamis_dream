@@ -28,7 +28,13 @@ Consequently its logarithm, real on the positive axis, is holomorphic on the sli
 
 The [actual amplitude theorem](../../notes/actual_q_hahn_uniform_complex_amplitude.md) now strengthens this to a nonzero prefactor and uniform relative error $O(N^{-1})$. Its proof uses the exact finite difference equation and a real normalization, retaining both original integer offsets. The scaled parameters are the actual values at level $N$, so no rate of convergence of those parameters is assumed.
 
-There is also a [complex magnetic corridor](../../notes/actual_q_hahn_magnetic_complex_corridor.md) for the original terminating kernel at fixed real integer pair degree and channel. An exact coproduct factorization places every magnetic zero outside the physical strip. This selects its logarithm, removes the possible sampling alias, and permits an actual complex amplitude estimate. A global magnetic deformation also changes pair degrees: simultaneous complex continuation in those variables, the contributing cycle, and the full coherent sum remain open.
+The [fixed-degree magnetic corridor](../../notes/actual_q_hahn_magnetic_complex_corridor.md) places every magnetic zero outside the physical strip. The new [joint determinant theorem](../../notes/actual_q_hahn_joint_accretive_determinant.md) goes further: the literal kernel is an explicitly normalized determinant $\det(zI+cD+K)$, with $D>0$ and $K^*=-K$. Its positive Hermitian part excludes zeros in a fixed joint domain, including at folded channels.
+
+The [joint amplitude theorem](../../notes/actual_q_hahn_joint_complex_amplitude.md) therefore permits the pair degree and magnetic coordinate to vary together complexly. Exact normalization removes sampling aliases; two original finite shift equations control both derivatives and fix a nonzero amplitude with relative error $O(N^{-1})$. The channel stays an integer. An explicit principal-square-root test identifies the selected local sheet.
+
+![The joint domain in the real parts of the two physical wire coordinates, with its degree seam excluded.](../figures/joint-kernel-domain.png)
+
+The [common-framing criterion](../../notes/actual_augmented_plat_physical_framing_criterion.md) turns simultaneous membership in this domain into finite strict inequalities for one rank-one projector. It also proves local feasibility for any finite transport family sharing one disk product and prefix. General simultaneous feasibility, the correct selected sheets, generic normal currents, a contributing cycle and the full coherent sum remain separate tasks.
 
 The [full matching-graph identity](../../notes/general_matching_graph_full_normal_source.md) is a complementary exact assembly tool: all folded sectors form one generic network with the original physical trace normal retained. It holds at both parities and uses the graph of the actual crossing-disk cut. No vanishing channel norm is inverted.
 

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A finite certificate for the selected geometric principal phase · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">A-structure and torsors</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#geometry">Angle optimization and actual geometry</a> · <a href="../library.html#torsors">A-structures, torsors, and regulators</a><p><span class="badge">Finite selected-phase certificate; global contribution open</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_augmented_plat_selected_local_certificate.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_augmented_plat_selected_local_certificate.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_augmented_plat_selected_local_certificate_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="a-finite-certificate-for-the-selected-geometric-principal-phase">A finite certificate for the selected geometric principal phase</h1>
+<p>30 October 2026. For any fixed augmented plat, of arbitrary width, this note gives explicit tests which identify the geometric stationary branch with the source-selected LOCAL q-Hahn principal action. It also expresses the endpoint sheet test as a condition on the two common framing flags. No intersection with the original finite summation cycle is inferred.</p>
+<p>The certificate has not been shown to exist for every positive geometric augmented plat. Its point is to replace an unspecified local branch-identification assumption by finite tests on the actual marked representation, with all input/output signs retained.</p>
+<h2 id="data-and-the-selected-critical-certificate">1. Data and the selected-critical certificate</h2>
+<p>Fix the actual augmented-plat Morse word, retained half twists, and primitive peripheral marks. Supply:</p>
+<ol type="1">
+<li>An actual marked positive complete gluing certificate, as in <a href="general_marked_positive_gluing_certificate.html">the geometric certificate theorem</a>. It gives the geometric representation, not an unrelated component of the character equations.</li>
+<li>ONE rank-one projector Pi satisfying all the regular-chart, central-support and cup/cap tests of <a href="actual_augmented_plat_physical_framing_criterion.html">the physical framing criterion</a>. These include the original affine degree equations with the canonical wire logarithms and the actual low/high adapters.</li>
+<li>The actual magnetic multiplier at each ordinary column factor. At an input it is Y_geo=S_1/S_2; at an output it is Y_geo=S_2/S_1. The momenta S are reconstructed from the original prefix matrices, not chosen separately to make a test pass.</li>
+<li>The selected-root test in section 2 at every input and output, and the original logarithmic/Poisson characters of the full marked phase. The latter are retained as part of the certificate, rather than erased after exponentiation.</li>
+</ol>
+<p>These conditions imply the following LOCAL conclusion. The actual geometric critical germ is a germ of the source-selected principal phase. Modulo its two framing directions its magnetic Hessian is nondegenerate. Its fully marked critical action phi has</p>
+<pre><code>d(2pi i phi)=1/2 sum V_i dU_i,
+2pi Re phi(0)=Vol(Y_D),
+phi_(chi_i chi_j)(0)=pi i tau_i delta_(ij),          (1)</code></pre>
+<p>with U_i=-2pi i chi_i and the original primitive cusp shapes tau_i. Its ordinary q-Hahn column amplitude factors are nonzero.</p>
+<p>The conclusion concerns the actual marked phase and its ordinary column factors. It is NOT a full-source amplitude theorem, a bound for generic normal currents, a continuation of the finite discrete channel, or a claim that the original cycle contributes at this germ.</p>
+<h2 id="the-local-sheet-test-is-algebraic-on-the-marked-cover">2. The local sheet test is algebraic on the marked cover</h2>
+<p>Use the actual low coordinates tau,nu of each column, after applying the high adapter when required. Put</p>
+<pre><code>xi=1/2, zeta=exp[pi i(tau-2nu)], c=-cos(pi tau),
+W=1+2c zeta, V=1+2c zeta+zeta^2.                   (2)</code></pre>
+<p>Here W is a scalar, not a prefix matrix. In the central domain Re c&gt;0, Re zeta&gt;0. Both W/zeta and V/zeta have positive real part; hence W and V avoid the nonpositive real axis. In particular the principal square root of W has strictly positive real part.</p>
+<p>The <a href="actual_q_hahn_joint_complex_amplitude.html">joint original-kernel theorem</a>, section 7, gives the source-selected multiplier</p>
+<pre><code>Y_sel=(zeta+i sqrt(W))^2/V.                         (3)</code></pre>
+<p>For the actual geometric multiplier define</p>
+<pre><code>r_geo=[V Y_geo-zeta^2+W]/(2i zeta).                 (4)</code></pre>
+<p>The actual Casimir characteristic equation says r_geo^2=W. Therefore</p>
+<pre><code>Y_geo=Y_sel  if and only if  Re r_geo&gt;0.             (5)</code></pre>
+<p>This is an equality test for the selected root, not just a test that both values solve the characteristic polynomial. The source theorem fixes the square root by its actual center phase and finite-source continuation.</p>
+<p>All expressions in (2)–(5) are algebraic after retaining the marked square root of T=exp(2pi i tau). Its argument is pi Re tau in (pi/2,pi), which fixes the square-root sign; zeta=T^(1/2)/U with U=exp(2pi i nu). Thus for an algebraic marked representation and projector the endpoint root test is a finite real-algebraic test. The logarithmic characters of the action remain additional marked data, not a consequence of squaring (4).</p>
+<h2 id="exact-flag-formulas-including-the-output-sign-and-high-adapter">3. Exact flag formulas, including the output sign and high adapter</h2>
+<p>Normalize one actual incoming pair to</p>
+<pre><code>A=-[[1,1],[0,1]], B=-[[1,0],[-4,1]],
+P=B A, H=P+I.</code></pre>
+<p>Write Pi=v ell, ell(v)=1. In these disk coordinates let w be the kernel flag of ell and let z be the image flag W_prefix v. This use of the actual prefix is essential. Normalize the local rank-one matrix W_prefix Pi by its trace; it has image z and kernel w.</p>
+<p>In affine coordinates a representative of the local common frame is</p>
+<pre><code>g=[[1,-w],[1,-z]].</code></pre>
+<p>Direct substitution into the ORIGINAL head and prefix formulas gives</p>
+<pre><code>U_phys=(z-w)/(z-w+1),
+T_phys=(z-w)/(4wz+3w+z+1),
+S_1/S_2=-w/(z+1).                                  (6)</code></pre>
+<p>The source internal root in a low column is obtained from the actual inverse, at J=-1,</p>
+<pre><code>Z=-U[y(T-U)+(1-U)]/[-y(T-U)+T(1-U)].                (7)</code></pre>
+<p>For the input use y=S_1/S_2; for the output use its RECIPROCAL. Equations (6),(7) give</p>
+<pre><code>Z_in,low=(2w+1)/(2w-1),
+Z_out,low=(2z+1)/(2z+3).                            (8)</code></pre>
+<p>For the high adapter one must first replace</p>
+<pre><code>T_low=T_phys^(-1), U_low=U_phys/T_phys.</code></pre>
+<p>Keeping the same actual input/output momentum convention in (7) then gives</p>
+<pre><code>Z_in,high=-(2z+1)/(2z+3),
+Z_out,high=-(2w+1)/(2w-1).                          (9)</code></pre>
+<p>These are rational identities, not deductions from a root-only symmetry. They retain the output sign of a kernel and the actual high-degree translation.</p>
+<h2 id="the-endpoint-selected-sheets-are-oriented-disk-sides">4. The endpoint selected sheets are oriented disk sides</h2>
+<p>For any strict central triple, its two local framing flags z,w are on the SAME open side of the real disk circle, by section 5 of the physical framing criterion. The two roots of the local characteristic give the two opposite choices of that side.</p>
+<p>One can see the latter directly from (6). Fix U_phys,T_phys and put d=U_phys/(1-U_phys)=z-w. The equation for w is quadratic; its roots have sum -(d+1). Consequently its two flag pairs are related by</p>
+<pre><code>(z,w) -&gt; (-w-1,-z-1).                              (10)</code></pre>
+<p>They therefore lie on opposite sides of the real circle. There is no collision or boundary crossing in the central domain. For example T+1-U cannot vanish there: arg T is in (pi,2pi), arg(1+T) is strictly between arg T and 2pi, while the strict physical U argument lies between 0 and arg T. The other regular root denominators are excluded by the regular-chart assumptions. The simple characteristic and the connected central domain preserve the two sheet labels.</p>
+<p>At a strict physical real point, the actual selected internal root Z is in the upper half of the unit disk, as proved by the original q-Hahn selection theorem. Equation (8) then gives w below the real circle for an input, and z above it for an output. Equation (9) gives the SAME respective side choices in the high adapter. Together with the same-side necessity, continuation through the central domain therefore proves the equivalent tests</p>
+<pre><code>selected input  &lt;=&gt; Im z&lt;0 and Im w&lt;0,
+selected output &lt;=&gt; Im z&gt;0 and Im w&gt;0,              (11)</code></pre>
+<p>where each line uses that factor’s OWN actual disk normalization. The inequalities in (11), rather than an upper-half-disk assertion for Z at arbitrary complex parameters, are what continue globally. They agree with (5); either supplies the same endpoint sheet test.</p>
+<h2 id="a-global-strip-intersection-question-remains">5. A global strip-intersection question remains</h2>
+<p>For one actual complete coupon its transport is C=I+bH. The primitive mark fixes b-epsilon/2=1/tau_cusp, so Im b&lt;0 for the positive geometric orientation. In the incoming disk coordinate set</p>
+<pre><code>eta(s)=1/(2s+1).</code></pre>
+<p>Direct substitution gives eta(C s)=eta(s)-2b. The incoming condition in (11) becomes Im eta&gt;0; the outgoing condition, in the disk frame C^(-1), becomes Im(eta+2b)&lt;0. Thus, CONDITIONAL ON the strict central inequalities, both input and output are selected exactly when</p>
+<pre><code>0&lt;Im eta(w)&lt;-2 Im b,
+0&lt;Im eta(W_prefix v)&lt;-2 Im b.                       (12)</code></pre>
+<p>This is the actual oriented region between the two developed disk circles. Positivity of the primitive cusp orientation gives its positive height. It does not prove that all such regions meet.</p>
+<p>Let Omega_f denote this region in the one global flag sphere, using the actual input disk normalization at coupon f. Formula (12) gives the necessary separated global conditions</p>
+<pre><code>w in intersection_f Omega_f,
+v in intersection_f W_f^(-1) Omega_f.               (13)</code></pre>
+<p>Once the coupled central tests also hold, (13) is sufficient for ALL endpoint local sheet tests. This is a finite geometric version of the certificate. It identifies the precise role of the actual prefix pullbacks; independent local flags do not establish (13).</p>
+<p>No general identification of these intersections with exteriors of polyhedral face disks is asserted here. Such an identification would need the actual based words and both disk copies, as well as the coupled central inequalities. The common-product feasibility lemma in the preceding framing note concerns support only; it does not by itself supply these selected input/output sheets.</p>
+<h2 id="proof-of-the-certificate-and-precise-persistence">6. Proof of the certificate and precise persistence</h2>
+<p>The sheet test identifies each actual geometric magnetic multiplier with the selected local multiplier. The regular inverse (7) then identifies its internal root with the source-selected root, including the high adapter. The original full coupon phase, its factorial measure, external phases and marked cap characters are retained. Fixing the stipulated logarithmic/Poisson characters gives the actual marked principal phase, rather than merely its exponentiated equations.</p>
+<p>The <a href="actual_augmented_plat_critical_scheme.html">critical-scheme inverse</a> now identifies this germ with the actual marked geometric representation germ modulo the diagonal scale. The positive multi-cusp gluing rigidity theorem makes its only magnetic null directions the two framing directions. A transverse framing slice therefore has nondegenerate magnetic Hessian. The same theorem’s classical action corollary, using the primitive collar differential and the absolute endpoint regulator, gives exactly (1). No new period normalization is introduced by the test.</p>
+<p>The joint column theorem gives, for actual integer channels with real xi_N=j/N near 1/2, the nonzero ordinary amplitude</p>
+<pre><code>fhat=N^(-1/2) B_(xi_N)(tau,nu)
+                exp[N Phi_(xi_N)(tau,nu)](1+O(1/N)).</code></pre>
+<p>A fixed finite product of such ordinary factors has the product estimate on a compact common domain. This supplies nonzero ordinary column amplitude germs at the certified branch; it supplies neither generic normal-factor estimates nor a full-source saddle coefficient.</p>
+<p>All strict central inequalities and (5) persist under small marked peripheral deformation. The unramified geometric germ and transverse critical slice then continue the certified CLASSICAL selected branch. The selected coefficient functions also continue holomorphically in xi near 1/2. This applies to sufficiently long geometric fillings, with their original primitive marks. It does not continue the finite discrete index j to a complex value or justify a channel contour.</p>
+<p>The remaining global tasks are substantive: produce the certificate for a broad geometric class, control all required normal currents, and prove that the original finite cycle has the required contribution and global exponential bound. This note resolves none of those tasks merely by having a stationary point with the correct volume.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_augmented_plat_selected_local_certificate.py">exact original-head, adapter and strip identities</a>.</p>
+<p>Independent analytical reviews: PASS. Two readers checked the finite certificate, original low/high input/output conventions, connected-domain sheet continuation, the actual primitive-collar strip and prefix pullbacks, and the distinction between classical continuation and a finite-channel or full-source asymptotic. A fresh independent audit replay passed all four root identities, the exact strip translation, and 2,000 selector comparisons on 1,000 central frames. The reviews establish no general existence of the certificate or contributing cycle.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_augmented_plat_selected_local_certificate.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#data-and-the-selected-critical-certificate">1. Data and the selected-critical certificate</a><a href="#the-local-sheet-test-is-algebraic-on-the-marked-cover">2. The local sheet test is algebraic on the marked cover</a><a href="#exact-flag-formulas-including-the-output-sign-and-high-adapter">3. Exact flag formulas, including the output sign and high adapter</a><a href="#the-endpoint-selected-sheets-are-oriented-disk-sides">4. The endpoint selected sheets are oriented disk sides</a><a href="#a-global-strip-intersection-question-remains">5. A global strip-intersection question remains</a><a href="#proof-of-the-certificate-and-precise-persistence">6. Proof of the certificate and precise persistence</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

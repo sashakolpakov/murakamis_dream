@@ -1,0 +1,40 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath}
+\usetikzlibrary{arrows.meta}
+\definecolor{ink}{HTML}{183444}
+\definecolor{blue}{HTML}{1B6780}
+\definecolor{amber}{HTML}{AD601A}
+\begin{document}
+\hyphenpenalty=10000\exhyphenpenalty=10000
+\begin{tikzpicture}[font=\sffamily,text=ink,>=Stealth]
+ \fill[blue!12] (2.5,0)--(5,2.5)--(2.5,5)--(0,2.5)--cycle;
+ \draw[gray!60,dotted] (0,0) rectangle (5,5);
+ \draw[blue,thick,dashed] (2.5,0)--(5,2.5)--(2.5,5)--(0,2.5)--cycle;
+ \draw[amber,very thick,dashed] (1.25,3.75)--(3.75,1.25);
+ \draw[->,thick] (0,0)--(5.6,0) node[right] {$\operatorname{Re}x_1$};
+ \draw[->,thick] (0,0)--(0,5.6) node[above] {$\operatorname{Re}x_2$};
+ \foreach \v/\lab in {2.5/{\tfrac12},5/{1}} {
+   \draw (\v,.07)--(\v,-.07) node[below] {$\lab$};
+   \draw (.07,\v)--(-.07,\v) node[left] {$\lab$};
+ }
+ \node[below left] at (0,0) {$0$};
+ \node[align=center] at (1.8,1.6) {Low degree\\$\tau=x_1+x_2$};
+ \node[align=center] at (3.4,3.5) {High degree\\$\tau=2-x_1-x_2$};
+ \node[amber,align=center,fill=white,inner sep=3pt] at (4.15,.7) {Excluded seam\\$\operatorname{Re}(x_1+x_2)=1$};
+ \node[anchor=west,align=left,text width=7.2cm] at (6.6,4.0) {
+   \textbf{A joint complex domain}\\[7pt]
+   $\left|\operatorname{Re}x_1-\tfrac12\right|
+      +\left|\operatorname{Re}x_2-\tfrac12\right|<\tfrac12$\\[9pt]
+   Pair degree and magnetic coordinate may both be complex.
+   The channel remains an integer.};
+ \node[anchor=west,align=left,text width=7.2cm] at (6.6,1.3) {
+   \textbf{The global condition remains}\\[7pt]
+   One common frame must place every input and output in the domain,
+   with the correct local sheet. A contributing cycle and a bound
+   for the full sum require further proof.};
+ \node[align=center,text width=13cm,font=\sffamily\small] at (6.6,-1.1) {
+   This is the projection onto real parts. Imaginary parts are unrestricted;
+   the uniform asymptotic holds on compact subsets. Dashed boundaries are excluded.};
+\end{tikzpicture}
+\end{document}

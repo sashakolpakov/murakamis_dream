@@ -196,10 +196,20 @@ proves its actual leading action on the physical Fourier arc. The
 adds a nonzero prefactor with relative error O(1/N). The
 [magnetic corridor theorem](actual_q_hahn_magnetic_complex_corridor.md)
 continues the actual finite kernel in one magnetic variable while
-the pair degree and channel stay real and discrete. It also records
-the exact joint rational kernel, without proving a joint estimate.
-This is not yet a joint complex magnetic packet or a whole-source
-asymptotic. The endpoint quadratic has monodromy, so an unspecified
+the pair degree and channel stay real and discrete. The subsequent
+[joint determinant](actual_q_hahn_joint_accretive_determinant.md) and
+[joint amplitude theorem](actual_q_hahn_joint_complex_amplitude.md)
+now continue pair degree and magnetic coordinate together on a fixed
+central domain, including folded channels, with an explicit selected
+local sheet. The channel remains an integer. The
+[common-framing criterion](actual_augmented_plat_physical_framing_criterion.md)
+states finite strict inequalities for simultaneous use on a plat;
+general feasibility and the required source sheets remain unproved.
+The [selected local certificate](actual_augmented_plat_selected_local_certificate.md)
+states sufficient finite tests for this local geometric/source comparison;
+it does not establish a whole-source cycle or sum estimate.
+These local results are not a whole-source asymptotic. Outside the
+specified marked domain the endpoint quadratic has monodromy, so an unspecified
 analytic continuation alone cannot identify the selected geometric
 root. A controlled simultaneous continuation and a global cycle
 estimate remain necessary.

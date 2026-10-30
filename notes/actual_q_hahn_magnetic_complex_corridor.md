@@ -1,5 +1,12 @@
 # The actual magnetic polynomial and its complex corridor
 
+Subsequent joint extension: the [accretive determinant](actual_q_hahn_joint_accretive_determinant.md)
+and [joint amplitude theorem](actual_q_hahn_joint_complex_amplitude.md)
+now allow pair degree and magnetic coordinate to vary together on a
+central complex domain. The channel remains discrete. The theorem below
+keeps its larger fixed-degree magnetic strip; its original review scope
+records the state before that subsequent extension.
+
 30 October 2026. This note concerns the original complete-circle column,
 at fixed integer pair degree t and channel j. Its finite continuation in
 the magnetic coordinate u is specified by its terminating factorial sum,

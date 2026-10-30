@@ -1,5 +1,10 @@
 # A uniform nonzero complex amplitude for the actual q-Hahn column
 
+Subsequent extension: [joint pair-degree and magnetic amplitudes](actual_q_hahn_joint_complex_amplitude.md)
+are now proved on a central complex domain, using the original finite
+kernel and an exact accretive determinant. The present theorem and its
+proof retain the real-parameter hypothesis stated below.
+
 30 October 2026. The original finite q-Hahn polynomial has a full leading
 asymptotic, with a specified nonzero amplitude and relative error O(1/N),
 uniformly on compact subsets of the right half-plane. Its magnetic
