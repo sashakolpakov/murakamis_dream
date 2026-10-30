@@ -26,6 +26,7 @@ Under the actual positive marked gluing certificate, the [geometric filling theo
 | Complete local source | Nonzero marked density and local folded-channel Gaussian at both level parities | The framing orbit and the coefficient in the original global cycle remain uncomputed |
 | Framing dependence | The actual local density is a nonzero constant times $-dr\wedge ds/[s(1+s)]$ | Its relative boundary pairing with the original source cycle remains unproved |
 | Common boundary chart | All six original numerator types and their literal duals fit one marked chart; the complete uncontracted product has controlled genuine jets | Requires the labeled right-angled certificate; no estimate of the contracted sum follows |
+| Boundary rank and curvature | Exactly two flat framing directions; neighboring original physical heads give a primitive transverse slice with inverse Hessian $O(N^{-1})$ | This controls the local second derivative; boundary stationarity and contraction still require proof |
 | Boundary first-normal defect | Two explicit root-channel insertions determine it, with an $O(N^2)$ Hilbert–Schmidt norm bound by finite Plancherel | The scalar derivative is separate; the full root-channel norm still needs a geometric estimate |
 | Odd framing source | An exact normalized difference of the two adjacent physical bands recovers the original invariant at every fixed width | Its local logarithmic residue does not yet determine the original global cycle coefficient |
 | General long fillings | A conditional source-to-filling theorem with the correct independent-slope quantifiers | Its general complex packet, nonzero density germ and whole-source gap still need proof |
@@ -57,6 +58,24 @@ $$\frac{S_N(+1)-q_0S_N(-1)}{\kappa_N S_N(-1)}
 Here $S_N$ is the actual charged product with its exposed scalar cap removed, and $B_N$ is the specified model evaluated at the finite clocks and channel labels. Its quotient has not been replaced by the classical symbol or proved to have a nonzero limit. This theorem does not yet pass through the internal sums or Gaussian integration, and it does not cover extra routed factors outside the six controlled types.
 
 The [selected-factor theorem](../../notes/actual_augmented_plat_selected_factor_localization.md) is useful here: for the certified right-angled cut, exactly two physical-support failures can be placed at the ends of one chosen crossing-circle edge. Every other ordinary factor is on the selected physical packet. An all-central selected common frame **cannot exist**; moving all factors into that domain is therefore not an available shortcut.
+
+## A general transverse estimate at the boundary
+
+The [finite curvature theorem](../../notes/actual_q_hahn_boundary_model_curvature.md) and [original graph-rank theorem](../../notes/actual_original_boundary_transverse_rank.md) now give a uniform local estimate for every fixed certified matching graph. The argument uses the graph and its actual tensor factors, with no restriction on bridge width.
+
+Integral divergence-free magnetic variations are differences of white-face potentials. Exactly two white faces, $u,v$, meet the marked ideal vertex and have constant prefixes. The finite boundary cores equate all the other face potentials in their kernel. Connectivity of the triangulated sphere after deleting $u,v$ therefore leaves exactly two flat directions, and these are precisely the limiting framing tangents.
+
+The original marked physical edge measures $P_u-P_v$. One neighboring physical edge measures $P_u$ or $P_v$ on this kernel. Their determinant is $\pm1$, so fixing these two actual heads gives a primitive transverse slice $W$; an arbitrary second cut need not do so.
+
+![Two constant-face potentials account for the framing kernel, and neighboring original physical heads give a primitive transverse slice.](../figures/face-potential-rank.png)
+
+The determinant cores and the positive-total polynomial each have curvature between $cN$ and $CN$ on their active logarithmic clock directions. The remaining retained nonlinear factors cost $O(S+1)$, where $S=\sum_i(N-1-2a_i)$ is the sum of **internal** channel deficits. Consequently, on $W$,
+
+$$c_DNI\leq H_{0,N}\leq C_DNI,\qquad
+\|H_N-H_{0,N}\|\leq C_D(S+1),\qquad
+\|H_N^{-1}\|\leq C_D/N\quad(S=o(N)).$$
+
+Here $H_{0,N}$ is the real positive reference Hessian and $H_N$ is the actual complex root-source Hessian. Source characters, cups, dual reversals and finite channel labels remain present. This removes transverse degeneracy as a local obstacle at the resonant boundary. It does not yet establish the stationary first derivative, a contracted Gaussian contribution, or its coefficient in the original period. External filling colors remain a separate variable.
 
 ## The exceptional edge now has an exact algebraic description
 

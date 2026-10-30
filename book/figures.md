@@ -20,6 +20,12 @@ Under the geometric strip conditions, the common framing flags determine a line 
 
 ![Schematic planar section of the white-normal convex hull, with two facet exits locating the exceptional factors.](figures/two-exceptional-factors.png)
 
+## Two framing directions and a primitive transverse slice
+
+For the certified original matching graph, the finite boundary cores equate all quadratic white-face potentials. The two constant-prefix faces leave exactly two flat directions. The marked physical head and one neighboring original physical head detect them with determinant $\pm1$. The [rank and curvature theorem](../notes/actual_original_boundary_transverse_rank.md) therefore gives a uniformly invertible transverse Hessian. This is a choice of source coordinates; the boundary stationary equation and the coefficient in the original period are separate questions.
+
+![Two constant-face potentials and the neighboring original physical heads that give a primitive transverse slice.](figures/face-potential-rank.png)
+
 ## The exceptional operator and its selected scalar action
 
 The scalar polynomial and original resolvent have different analytic roles. All polynomial zeros lie above $2$, while the physical Casimir nodes lie in $[-2,2]$. The actual geometric target is at most $-2$ under the marked complete certificate. The exact contour retains both factors and their generic normals. Endpoint estimates at $+2$ do not prove the global saddle contribution or settle a parabolic target at $-2$. See [the current critical path](chapters/frontier.md#the-exceptional-edge-now-has-an-exact-algebraic-description).
