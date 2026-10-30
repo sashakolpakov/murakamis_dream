@@ -8,7 +8,7 @@ The [marked circle-pattern theorem](../../notes/actual_marked_deformed_circle_pa
 
 ![The actual marked lines retain their shared width and the selected eigenlines as matching tangencies deform.](../figures/marked-circle-strip.png)
 
-This reconstructs the face geometry. The actual primitive crossing-circle word and the regulator's boundary correction must also be checked before identifying the whole deformed action. The full filling theorem additionally requires the remaining reflected-color and far-alias bounds described in the [frontier](frontier.md).
+The [primitive collar theorem](../../notes/actual_deformed_circle_primitive_collar.md) computes the actual side pairing, selected eigenflag and half-twist shear, including a common marked-line limit. The [global geometric assembly](../../notes/actual_complete_core_geometric_deformation.md) verifies the full original group presentation and identifies the core's limiting action with the marked geometric deformation. For complex meridian logs it retains the boundary correction $\tfrac12\sum_i\operatorname{Re}U_i\operatorname{Im}V_i$; for real external deficits this correction vanishes. The full filling theorem still requires the other reflected-color terms and the combined far-alias bounds described in the [frontier](frontier.md).
 
 ## A local tetrahedron is a genuine geometric result
 

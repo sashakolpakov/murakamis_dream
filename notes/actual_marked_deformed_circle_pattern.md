@@ -8,6 +8,11 @@ the local product of physical meridians at the degenerate marked
 triangles. The ordered auxiliary meridian and full regulator comparison
 remain separate until their actual collar words are calculated.
 
+Follow-up: the [primitive collar calculation](actual_deformed_circle_primitive_collar.md)
+and [global geometric assembly](actual_complete_core_geometric_deformation.md)
+now supply those steps. The full reflected-color filling estimate remains
+outside these geometric theorems.
+
 ## 1. Actual incidence and a finite reconstruction system
 
 Use the labeled convex ideal right-angled certificate and original main

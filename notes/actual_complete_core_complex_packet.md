@@ -7,6 +7,12 @@ arbitrary fixed bridge width. Its object is the exact complete-image term
 in color reflection. The other reflected terms remain part of the
 long-filling problem.
 
+Subsequent geometric identification: the
+[marked deformation theorem](actual_complete_core_geometric_deformation.md)
+resolves the boundary reconstruction dependency stated below, retaining
+the primitive collar and the complex regulator boundary correction.
+It does not remove the ordinary-color subsets from the full source.
+
 ## 1. The finite object and theorem
 
 Fix a connected labeled convex ideal right-angled augmented source D

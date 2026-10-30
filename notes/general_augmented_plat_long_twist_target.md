@@ -23,9 +23,11 @@ coefficient. All original factors and the primitive grid measure remain.
 The [fixed complex complete-core theorem](actual_complete_core_complex_packet.md)
 now supplies a nonzero asymptotic on a fixed neighborhood in EXTERNAL
 crossing-circle colors, for the exact complete-image term of reflection.
-Its complete action is the actual volume. General long fillings still
-require its marked geometric continuation at zero faces and bounds for
-the other reflected terms and the combined far aliases. The current
+The [marked geometric assembly](actual_complete_core_geometric_deformation.md)
+now identifies its limiting action, including at the zero faces, with
+the actual geometric regulator and its complex boundary correction.
+General long fillings still require bounds for the other reflected
+terms and the combined far aliases. The current
 dependency map is in the [frontier chapter](../book/chapters/frontier.md).
 
 The older source, operator, Fourier and torsor tools are preserved below
