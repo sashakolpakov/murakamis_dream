@@ -1,0 +1,385 @@
+# An exact generic boundary gauge for the original marked source
+
+30 October 2026. Independently reviewed. A symmetric analytic
+basis change removes the nonmonomial part of every ordinary cup and
+preserves the entire original marked source, including its retained
+trace normal. Its transformed white coefficients are given below in
+terms of the ORIGINAL generic q-Hahn numerator. This is a finite
+tensor identity on the actual modules, including the paired nilpotent
+sectors. It is not a complex magnetic continuation theorem.
+
+## 1. A root-normalized symmetric basis
+
+Fix N>=3, d=N-1, q0=exp(pi i/N), zeta=q0 exp(epsilon), Q=zeta^2,
+and F_n=(Q;Q)_n. For any actual module V_L with 0<=L<N set
+
+    b_L(r;zeta)=zeta^[r(L-r)] F_r F_(L-r)/F_L,
+    b_L^0(r)=b_L(r;q0)=s_r s_(L-r)/s_L,
+    s_n=product_(k=1)^n 2sin(pi k/N),
+    g_L(r;zeta)=[b_L(r;zeta)/b_L^0(r)]^(1/2),
+    G_L=diag(g_L(0),...,g_L(L)).                           (1)
+
+The square root is the analytic one equal to 1 at epsilon=0.
+Every factorial index is below N, so all these functions are units
+on a neighborhood of the actual root. In particular
+
+    G_L(q0)=I,  g_L(r)=g_L(L-r),  b_d^0(r)=1.              (2)
+
+The last identity is s_r s_(d-r)=s_d=N. In the actual ordinary
+cup normalization, including its ordering,
+
+    p_L(r,L-r)=(-1)^r zeta^(-r) b_L(r;zeta).
+
+The physical cup is pV=N zeta^(-d^2) p_d. Replace each module
+basis by its columns G_L and transform both covariant and
+contravariant tensor indices. Thus
+
+    p'_L=G_L^(-1) p_L G_L^(-T),
+    ell'_L=G_L^T ell_L G_L,  ell_L=p_L^(-1).
+
+Then, EXACTLY before root specialization,
+
+    p'_L(r,L-r)=(-1)^r zeta^(-r) b_L^0(r),
+    pV'(r,d-r)=N zeta^(-d^2-r)(-1)^r.                    (3)
+
+The generic factorial factors have moved to the adjacent tensors;
+they have not been deleted from the source.
+
+The gauge has polynomial cost on physical indices. Indeed
+|1-q0^(2k)|>=c min(k,N-k)/N and direct logarithmic differentiation
+of (1) gives O(N^2 log N), uniformly in L,r. The same product
+estimate on a sufficiently small disk proves
+
+    |g_L(r;zeta)|+|g_L(r;zeta)^(-1)|<=C
+       for |epsilon|<=c/[N^2(1+log N)].                  (4)
+
+Consequently every fixed epsilon derivative of g_L or its inverse
+is bounded by C_m[N^2(1+log N)]^m. These are estimates at the
+actual integer module indices only.
+
+## 2. The actual white map, dual, and cyclic order
+
+Let W_a:V_(2a)->V_d tensor V_d be the original regular generic
+Clebsch map, 0<=a<=floor(d/2), with the normalization in
+[the full matching-graph source](general_matching_graph_full_normal_source.md).
+Keep its exact dual
+
+    pi_a=gamma_a^(-1) p_(2a)^T W_a^T
+                         (ellV^T tensor ellV^T) P,
+    gamma_a=q0^(2-a^2)/N^2.                               (5)
+
+Here gamma_a is the fixed root scalar in that regular lift; P
+reverses the two physical heads. Put G_pair=G_d tensor G_d and
+
+    W'_a=G_pair^(-1) W_a G_(2a),
+    pi'_a=G_(2a)^(-1) pi_a G_pair,
+    K'_a=W'_a pi'_a=G_pair^(-1)(W_a pi_a)G_pair.            (6)
+
+Substitution of (3) into (5), using P G_pair=G_pair P, proves
+the SAME categorical dual formula with every tensor primed.
+This verifies compatibility with the actual bent edges, rather
+than replacing the white vertex by a Hermitian adjoint.
+
+All generic intertwining identities remain true after conjugating
+the module matrices by G_L. No division by pi_a W_a occurs.
+In particular its root is still zero on a paired sector and the
+identity on the odd simple sector. The nilpotent source has not
+been replaced by a semisimple quotient.
+
+The exact generic reversal J_L|r>=zeta^[-(L+1)r]|L-r>
+commutes with G_L by (2). Therefore the original Chevalley/high-
+degree adapter also holds for the primed white maps. Likewise the
+actual four-physical-head cyclic turn, with its coefficient
+(-1)^d zeta^(d-2u), commutes with the product of four G_d factors:
+the diagonal coefficient commutes and the cyclic permutation
+permutes identical factors. No unproved cyclic-module adapter is
+being applied to the original nilpotent module.
+
+## 3. The actual LARGE-channel numerator
+
+The generic source distinction is essential here. W_a takes values
+in the channel of highest weight 2a, so its generic Casimir eigenvalue
+is zeta^(2a+1)+zeta^(-2a-1). In the original compiler indexing its
+channel is m=d-a, not a. These two generic eigenvalues coincide at
+the root but have different derivatives.
+
+Use the actual generic polynomial from the
+[collision/source theorem](actual_q_hahn_partner_normal_collision.md):
+
+    H_m^B(U,V)=sum_(k=0)^m (-1)^k B^k Q^[k(k+1)/2]
+       [m choose k]_Q (BQ^(m-k+1);Q)_k/(BQ;Q)_k
+       V^k product_(j<k)(U-Q^j) product_(j<m-k)(V-Q^j),
+    B=Q^(-N).
+
+For 0<=r<=2a put m=d-a, sigma=m+r and i+j=sigma, with
+0<=i,j<=d. Then the
+original white coefficient is EXACTLY
+
+    W_a(i,sigma-i;r)
+      =(-1)^m zeta^[-dr+di-m(m-1)]
+         H_m^B(Q^i,Q^(sigma-i))/F_m,                      (7)
+
+and its transformed coefficient is
+
+    W'_a(i,sigma-i;r)
+      =g_(2a)(r)/[g_d(i)g_d(sigma-i)] * right_side_of_(7). (8)
+
+For the low half r<=a, the original endpoint and normalized LARGE
+column are
+
+    W_a(0,sigma;r)=zeta^(-dr) F_sigma/(F_m F_r),
+    C_m(zeta;sigma,i)=zeta^(di) H_m^B(U,V)/D_m(Q^sigma),
+    D_m(T)=product_(k=0)^(m-1)(T-Q^k),
+    D_m(Q^sigma)=(-1)^m zeta^[m(m-1)]F_sigma/F_r.
+
+The actual finite Clebsch sum divided by its endpoint is C_m;
+cancellation gives (7). For ALL r one can verify (7) term by term,
+without extending that nonexistent physical endpoint into high
+degrees. In the original Clebsch sum use highest index b and set
+k=j-m+b. Its denominator is F_b F_(m-b) F_k F_(r-k),
+with r-k=i-b. Its complete q exponent simplifies to
+
+    -dr+di-2db+2bj+b(b-1),
+
+exactly the converted finite-H summand. The factorial numerator
+is F_(a+b)F_(d-b)/(F_a F_d) on both sides. Terms outside their
+finite support vanish by their Newton products, so the same
+identity holds in the high half r>a. All denominators in H_m
+and F_m are root units because m<N. Thus (7) is regular BEFORE
+taking its generic normal and specifies the full original white
+tensor, without a root-only high adapter.
+
+There is a decisive check already at a=0. The original coefficient is
+
+    W_0(i,d-i;0)=(-1)^i zeta^(-i)b_d(i;zeta),
+    W'_0(i,d-i;0)=(-1)^i zeta^(-i),
+
+whereas the SMALL normalized compiler column is C_0=zeta^(di).
+Their root values agree, but their generic derivatives do not.
+Thus substituting the small-channel generic R_a into W_a merely
+because the root columns collide would be incorrect.
+
+The precise possible bridge to the small numerator is the exact
+collision identity, with B temporarily independent of Q:
+
+    H_m^B-H_a^B product_(k=a)^(m-1)(UV-Q^k)
+          =(1-B^2 Q^N) T_(a,m)^B(U,V),  m+a=d.           (9a)
+
+It holds in the localized generic coefficient ring by the finite
+terminating identity proved in the collision note. Along the
+ACTUAL source B=Q^(-N), the derivative of 1-B^2 Q^N at q0 is
+2N. Thus the transverse term in (9a) contributes to the original
+first normal. A bound or packet for the small R_a alone does not
+control that term. Equation (8), not a differentiated root
+simplification, is the transformed source requiring continuation.
+
+## 4. Exact cancellation on the whole marked source
+
+Apply (1)--(6) at every physical and channel occurrence of the
+original typed matching graph. Every contracted wire has one
+G_L and one G_L^(-1); cups and caps transform as in (3).
+Consequently the ordinary closed scalar satisfies
+
+    F'_Delta(epsilon)=F_Delta(epsilon)                   (9b)
+
+as an analytic identity, for any fixed original diagram and every
+fixed choice of its folded channel labels. This also holds after
+the finite label sum and retained signed half-twist factors.
+No coupon is commuted through another coupon. It is the exact
+coordinate invariance of this specified finite tensor contraction.
+
+Keep the SAME exposed original physical head. Its open
+endomorphism transforms by G_d^(-1) H G_d. For the original
+Hopf-covariant contraction H=z_Delta I, so its scalar is unchanged.
+The physical ordinary dimension remains
+
+    D_N(epsilon)=(-1)^d[N]_(q0 exp(epsilon)),
+    nu_N=D_N'(0)=2N(-1)^N/(q0-q0^(-1)).                   (10)
+
+This can also be checked directly from (3): the ratio of the two
+ordered complementary cup entries is still
+(-1)^d zeta^(d-2r). Since G_d(q0)=I, the original unrestricted
+marked row on that exposed arc is unchanged at the root, including
+its exact normalization m pV(q0)=1. Thus the source's genuine
+trace-normal extraction is preserved:
+
+    Z_Delta=F_Delta'(0)/nu_N=F'_Delta{}'(0)/nu_N.          (11)
+
+If one represents the mark off root as a row, it must transform
+covariantly too; retaining an untransformed generic row while
+changing its cup is not (9b). The proof of (11) uses the original
+ordinary closure and its first normal, so it requires no invented
+off-root mark and no movement of the bare root mark.
+
+For the complete-circle decomposition this applies to the regular
+Hopf lift in the full-source theorem. As there, that lift is not
+asserted to be the original complete circle's entire moving-q germ.
+The root scalar and its normalized ordinary trace derivative are
+independent of that choice. For an actual specified generic coupon
+(for example the original exceptional polynomial operator), basis
+covariance (9b) applies to that very coupon and all its generic jets.
+It does not replace its moving-q germ by the complete-circle lift.
+
+## 5. What finite gauge cancellation does not prove
+
+The physical estimates (4) do NOT imply estimates at complex
+magnetic coordinates. There is an exact elementary obstruction to
+such an inference. Given any proposed holomorphic interpolation
+g(epsilon,u) of a physical gauge, replace it by
+
+    g(epsilon,u) exp[epsilon exp(N^2) sin^2(pi u)].         (12)
+
+For every integer u this changes neither its value nor ANY of its
+epsilon derivatives. For integer L it preserves the symmetry
+u<->L-u. Yet its first generic derivative at a fixed noninteger u
+can be arbitrarily large. Even fixing all finite physical jets and
+the reversal symmetry does not determine the needed off-grid gauge.
+
+One may cancel specified factors algebraically in an exact whole-
+source continuation BEFORE estimating them. Alternatively one may
+prove bounds for an explicitly chosen continuation of the factors
+in (8). Neither operation follows from the physical cancellation
+(9b). In particular the existing joint deficient-degree theorem
+controls the actual R numerators, while the remaining boundary
+factors, the full generic operator lift in that chart, and the
+global degree period still require their own exact constructions.
+
+## 6. What can nevertheless be bounded in the deficient corridor
+
+The exact numerator in (7) gives a useful positive statement without
+inventing a continuation of G_L. Define the unprimed white continuation
+by the RIGHT SIDE of (7), with m=d-a fixed, sigma=N Sigma complex,
+r=sigma-m, and a specified magnetic lift i of size O(N). It is a
+literal finite generic source expression, agreeing with every physical
+white entry as just proved. Denote it by mathscr W_a(zeta;sigma,i).
+It is not defined by interpolation of physical samples.
+
+Fix a compact K in the joint deficient corridor of the
+[actual joint numerator theorem](actual_q_hahn_joint_deficient_degree_packet.md),
+using z=q0^(sigma-2i) and its marked logarithmic lift. Put
+
+    s=m-a=d-2a.
+
+There are eta,c,C>0, depending on K, such that for 1<=s<=eta N,
+every fixed k>=0, and all sufficiently large N,
+
+    |partial_epsilon^k H_m^B(Q^i,Q^(sigma-i))|_0
+       <=C_k N^(10k) (C N^20)^s |H_a^1(U0,V0)|,          (13)
+
+    |partial_epsilon^k mathscr W_a|_0
+       <=C_k N^(10k) (C N^20)^s |mathscr W_a(q0)|.        (14)
+
+The root quantities on the right are nonzero on K. The simple odd
+midpoint s=0 is covered directly by the small-numerator theorem.
+Thus the relative generic cost is subexponential in every window
+s log N=o(N), and polynomial for bounded s. This is an upper bound,
+not a nonzero leading normal amplitude. It concerns the specified
+unprimed white continuation; no bound for the unspecified complex
+gauge in (8) is asserted.
+
+Here is a proof retaining all large-channel factors. The exact generic
+normalization is
+
+    H_n^B(Q^i,Q^(sigma-i))=zeta^(n sigma) K_n R_n(zeta;sigma,z).
+
+The joint deficient theorem supplies the actual small determinant
+M_a(epsilon), a bounded inverse, and a bounded determinant ratio on
+|epsilon|<=rho=c N^(-10). Its last diagonal cofactor is R_(a-1),
+so R_(a-1)/R_a is bounded on this disk too. The exact all-degree
+generic recurrence and its source justification are recorded in
+[the near-fold partner theorem](actual_q_hahn_near_fold_complex_partner_bound.md).
+On the circle |epsilon|=rho its only spectral denominators satisfy
+
+    |Lambda_n-Lambda_(n-j)|>=c rho, j=1,2, n<=m,
+
+with the j=2 equation used only when defined. At the unique folded
+resonance the factor is 1-Q^(-N); its modulus is comparable to
+N rho, and the other factor is comparable to N^(-1). All other
+required gaps are at least cN^(-2). The finite rational coefficient
+formulas therefore give |alpha_n|<=C/rho, |beta_n|<=C/rho^2.
+Propagating the ACTUAL recurrence exactly s steps gives
+
+    |R_m/R_a|<=(C N^20)^s.                               (15)
+
+The accompanying exact scalar quotient is
+
+    K_m/K_a=product_(j=2a+1)^(2m)(1-B^2 Q^j)
+       /[product_(j=a+1)^m(1-B^2 Q^j)
+          product_(j=a+1)^m(1-BQ^j)].                    (16)
+
+Its denominator indices stay uniformly near N/2, so their root
+values are units with a fixed lower bound; its 2s numerator factors
+are bounded above. Consequently |K_m/K_a|<=C^s. Also
+|zeta^(s sigma)|<=C_K^s, since the scaled marked parameters remain
+in a fixed compact. These estimates and the small-numerator bound
+prove (13) on the circle. The ORIGINAL finite H_m is holomorphic
+inside it: all denominator Pochhammer indices are below N. Thus
+Cauchy's estimate applies to H_m, not to its singular monic R_m.
+
+At the root the collision identity (9a) gives
+
+    H_m^1=P_s(T0)H_a^1,
+    P_s(T)=product_(j=a)^(m-1)(T-Q^j),
+    c_K^s<=|P_s(T0)|<=C_K^s.                             (17)
+
+The last bounds hold because the deficient total Sigma is separated
+from the near-fold interval [a/N,m/N]. In particular no D_a(T0)
+is divided out, even when Sigma N is a deficient integer. Finally
+the monomial and F_m^(-1) in (7) have bounded relative variation on
+the same disk, by the fixed marked-lift bound and the root-unit
+factorial estimate in section 1. This proves (14).
+
+One can retain the actual transverse numerator as well. With the
+original compiler eigenvalues
+
+    lambda_n=zeta^(2N-1-2n)+zeta^(-2N+1+2n),
+    lambda_m-lambda_a=-(zeta^s-zeta^(-s))
+                                      (zeta^N-zeta^(-N)),
+
+the function
+
+    mathscr T_a=[H_m^B-P_s(T)H_a^B]/(lambda_m-lambda_a)    (18)
+
+is holomorphic through epsilon=0 by (9a). On the same circle the
+denominator has modulus at least c s rho. Applying the preceding
+estimates and then Cauchy's formula gives
+
+    |partial_epsilon^k mathscr T_a|_0
+       <=(C_k/s) N^[10(k+1)](C N^20)^s |H_a^1|.          (19)
+
+This is the original divided numerator with the actual gap sign.
+It does not divide by D_m(T), so it has none of the spurious
+deficient-degree column poles. It does not assert that the full
+exceptional operator's unspecialized boundary factors have already
+been continued or bounded. Nor can these nonreal local estimates
+turn an identically zero forbidden physical degree slice into a
+nonzero global period.
+
+Focused audit: [original cups, large white numerators, whole marked
+plats, and deficient generic circles](../experiments/audit_actual_generic_boundary_gauge_and_source.py),
+with [saved results](../experiments/actual_generic_boundary_gauge_and_source_results.json).
+The exact checks passed 282 cup four-jets, 1,028 original LARGE
+white/numerator four-jets including high physical degrees, 14 actual
+categorical duals, and 24 marked trace-normal equalities on six full
+original plats. They retain 45 explicit small/large generic mismatches.
+The actual divided-numerator checks passed 147 physical four-jets,
+including 98 nonzero transverse normals, and 40 deficient integer-total
+collision identities. At 150 digits, eight complex root collisions,
+32 genuine large-source circle identities and 32 starting cofactors
+passed; the maximum literal-source relative error was below 3.1e-136.
+These finite checks verify the source and normalizations; the uniform
+estimates are the analytic arguments above.
+
+Independent full analytical review and fresh redirected audit: PASS.
+The review checked the actual LARGE-channel conversion in both physical
+halves, every cup/dual factor, the marked ordinary trace normal, and the
+cofactor/resonance/scalar proof of (13)--(19). The replay reproduced all
+counts above. It does not infer complex gauge bounds from physical
+samples, replace a generic large partner by its small root value, or
+claim a full exceptional-operator or global-period asymptotic.
+
+Primary-agent full analytical review: PASS. It independently checked the
+large generic source index, the all-row conversion, original trace-normal
+covariance, the interpolation counterexample, and the actual near-fold
+cofactor, resonance and scalar estimates. This note and its focused
+audit are frozen; the full meromorphic operator lift is a separate result.

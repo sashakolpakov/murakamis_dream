@@ -1,0 +1,335 @@
+# The actual q-Hahn numerator at a deficient integer degree
+
+30 October 2026. Independently reviewed. Fix an actual integer
+degree t below the small channel a. The original generic numerator has
+an exact forced factor, which persists BEFORE root specialization.
+Its residual root polynomial is a positive-spectrum real Jacobi
+determinant. This gives a nonzero relative root amplitude at complex
+magnetic coordinates away from its explicit cuts, and polynomial
+cost for genuine q derivatives of this ORIGINAL numerator.
+
+The degree t stays an integer. A joint complex-degree estimate and
+the full exceptional operator's generic boundary factors are not
+asserted. Nor does a nonzero off-grid local packet change the fact
+that every original physical entry in the forbidden degree slice,
+including its q normals, is zero.
+
+## 1. The forced factor is an identity of the original generic source
+
+Use the exact generic source and recurrence of
+[the small-channel normal theorem](actual_q_hahn_small_channel_generic_normals.md).
+Thus N>=3, d=N-1, q varies near q0=exp(pi i/N), Q=q^2,
+B=Q^-N, and H_a^B is the ORIGINAL finite Newton numerator. Its
+monic reverse polynomial is
+
+    R_a(q;t,z)=z^a S_a^B(q^t/z,Q^t)/(Q^(ta) K_a),
+    S_a^B(U,T)=U^a H_a^B(U,T/U),
+    K_a=(B^2 Q^(a+1);Q)_a/(BQ;Q)_a.                  (1)
+
+Throughout 0<=t<a<=floor(d/2). All coefficients and K_a are
+holomorphic root units where required; in particular K_a(q0)!=0.
+At U=Q^r, 0<=r<=t, every kth summand of H_a^B contains
+
+    product_(j<k)(U-Q^j)
+       *product_(j<a-k)(Q^t/U-Q^j).
+
+Either k>r or a-k>t-r, so it vanishes. This is true at GENERIC q,
+with all the original B factors retained. Consequently
+
+    F_t(q,z)=product_(r=0)^t(z-q^(t-2r))
+              divides R_a(q;t,z).                            (2)
+
+The nodes are distinct near q0. At a=t+1 monicity gives
+R_(t+1)=F_t exactly. Write the genuine generic recurrence as
+
+    R_(n+1)=(z+alpha_n(q;t))R_n+beta_n(q;t)R_(n-1).
+
+When a>=t+2, its next step, together with (2), forces
+
+    beta_(t+1)(q;t)=0 IDENTICALLY.                            (3)
+
+Indeed a nonzero scalar times the lower-degree monic R_t cannot
+be divisible by F_t. It follows that the quotient
+
+    V_m(q;t,z)=R_(t+1+m)(q;t,z)/F_t(q,z)
+
+has its own exact tail recurrence
+
+    V_0=1, V_1=z+alpha_(t+1),
+    V_(m+1)=(z+alpha_(t+1+m))V_m
+                            +beta_(t+1+m)V_(m-1).             (4)
+
+When a=t+1 the quotient is simply V_0=1, and no recurrence at a
+larger degree is needed. No q derivative couples a nonempty tail
+back across the vanished
+bridge (3). This differs from differentiating a factorization that
+holds only at a root of unity.
+
+## 2. Exact root locations in the deficient chart
+
+Put theta=pi/N and c=-cos((t+1)theta)<0. The root recurrence is
+
+    alpha_n=c/[cos(n theta)cos((n+1)theta)],
+    beta_n=B_n[cos^2(n theta)-c^2],
+    B_n=sin^2(n theta)/[cos^2(n theta)
+                       sin((2n-1)theta)sin((2n+1)theta)].      (5)
+
+For n>=t+2, n<a, beta_n<0. Hence V_(a-t-1) is the characteristic
+polynomial of a real symmetric Jacobi matrix: its diagonal entries
+are -alpha_n for n=t+1,...,a-1, and its adjacent entries are
+sqrt(-beta_n), n=t+2,...,a-1.
+
+Its roots are in fact POSITIVE, not merely real. The exact root
+recurrence has R_a(z;-c)=(-1)^a R_a(-z;c). Set
+
+    t_hi=N-t-2,  -cos((t_hi+1)theta)=-c.
+
+Then t_hi>=d-a lies in the original complete-column chamber. Its
+proved root factorization has forced LEFT unit-arc roots and a
+negative-real residual. Reflection z->-z gives precisely the
+forced roots in (2) and positive-real roots for V. Their simplicity
+also follows from the irreducible real Jacobi matrix in (4).
+
+Thus every zero of the ACTUAL root polynomial R_a is on
+
+    {q^(t-2r):0<=r<=t} union (0,infinity).                    (6)
+
+Choose compact real parameter ranges
+
+    0<sigma_0<=sigma=t/N<=sigma_1<1/2,
+    sigma+eta<=alpha=a/N<=1/2, eta>0.                         (7)
+
+Take the common slit domain
+
+    Omega=C\([0,infinity)
+              union {exp(i phi):|phi|<=pi sigma_1}).          (8)
+
+It is connected and simply connected: in the logarithm plane with
+0<Arg z<2pi the removed unit arc is two finite vertical slits
+attached to the two edges of the strip. In particular negative
+real z belongs to Omega. The root polynomial is nowhere zero
+there, uniformly for the levels and parameters in (7).
+
+## 3. The actual selected leading phase and relative amplitude
+
+Fix z0=-1. There are functions S_(sigma,alpha),A_(sigma,alpha),
+holomorphic in z on Omega, with S(z0)=0,A(z0)=1 and A nowhere
+zero, such that on each fixed compact in Omega
+
+    R_a(q0;t,z)/R_a(q0;t,z0)
+       =A_(sigma,alpha)(z) exp[N S_(sigma,alpha)(z)]
+                                            *(1+O(N^-1)).     (9)
+
+The error and all its fixed z derivatives are uniform. The ACTUAL
+ratios sigma=t/N and alpha=a/N are used. No uniform continuation
+in complex sigma is claimed.
+
+Here is a proof and a normalization that determines the functions.
+From (6), logarithmic derivatives of
+N^-1 Log[R_a(z)/R_a(-1)] are uniformly bounded on compact subsets
+of Omega; the logarithm is zero at -1. Its higher derivatives have
+the same local bounds. For z=-r<0 use the exact reflection
+
+    R_a(q0;t,-r)=(-1)^a R_a(q0;t_hi,r),
+                          t_hi=N-t-2.                        (10)
+
+The right side is the already proved ACTUAL high-degree packet.
+Consequently every normal-family limit agrees there with
+
+    S_(sigma,alpha)(-r)
+       =Phi_alpha(1-sigma,v_r)-Phi_alpha(1-sigma,v_1)
+                                      -pi i(v_r-v_1),
+    v_r=(1-sigma)/2+i log(r)/(2pi), v_1=(1-sigma)/2.            (11)
+
+The identity theorem fixes its continuation uniquely on Omega.
+The finite offset -2 in (10) is retained for the absolute anchor;
+only its limit is used in (11). Sequential compactness gives the
+claimed uniform leading convergence over (7), even when the actual
+parameters approach their limits slower than 1/N.
+
+For an explicit transport proof of the relative error, put
+
+    D=z partial_z, kappa=2pi i,
+    U=exp(pi i sigma)/z, T=exp(2pi i sigma), J=exp(2pi i alpha).
+
+The SAME root finite polynomial satisfies exactly
+
+    (QU-1)(U-T) R(z/Q)+(QT-U)(1-U) R(Qz)
+       +[2U+2QTU-(1+Q)U^2-T(Q^-a+Q^(a+1))]R(z)=0.            (12)
+
+This is the original generic Casimir identity for S, with the
+monic reverse substitution (1); it is valid at these deficient
+degrees too. Write
+
+    A0=(U-1)(U-T),
+    C0=2U(1+T-U)-T(J+J^-1),
+    H(p,z)=A0(exp(kappa p)+exp(-kappa p))+C0.
+
+For p=D S the selected characteristic is H(p,z)=0. Its derivative
+H_p is nonzero on Omega. Indeed
+
+    C0^2-4A0^2=-16 T^2 sin^2(pi alpha) W/z^2,
+    W=1-2cos(pi sigma)z+cos^2(pi alpha)z^2.                    (13)
+
+When sigma<alpha<=1/2, all finite roots of W are positive real:
+for alpha<1/2 its quadratic has positive sum and product and
+cos^2(pi sigma)>cos^2(pi alpha); at alpha=1/2 it is linear with
+positive root. Also A0 vanishes only at the excluded unit-arc
+endpoints. This proves uniform simplicity on the stated compacts.
+
+The first coefficient of (12), after its exact shifts are expanded,
+is
+
+    H1=kappa[U(U-T)exp(-kappa p)
+               +T(1-U)exp(kappa p)+2TU-U^2-TJ],
+    rho=-(H1+(D p)H_(p,p)/2)/H_p.                            (14)
+
+Define A by D Log A=rho and A(-1)=1. Simplicity and the larger-
+compact Cauchy bounds first give
+D(N^-1 Log R)-p=O(N^-1). Cauchy gives that bound for its fixed
+derivatives too. Substituting a second time into (12) then gives
+
+    D(N^-1 Log R)=p+rho/N+O(N^-2).
+
+Integrate along compact paths from -1. The exact normalized ratio
+at the starting point is one, proving (9) and its error. This is
+an actual finite-shift bootstrap, not a formal transport ansatz.
+The coefficients are smooth in the real parameters (7), by the
+simple characteristic and the actual anchor (11).
+
+The absolute anchor in (9) is explicitly known from (10) and the
+original ordinary normalization:
+
+    R_a(q0;t,-1)=(-1)^a b_a^-1
+      product_(r=0)^(a-1)2sin[pi(t_hi-r)/N]
+      *q0^[-d t_hi/2-(a^2-da)/2]
+      *fhat_a(t_hi,t_hi/2),
+    b_a=s_(2a)/s_a^2.                                      (15)
+
+The fhat on the last line is the proved nonzero ordinary packet
+evaluated at its ACTUAL high total t_hi=N-t-2, including a
+half-integer magnetic center when necessary. Thus (9) has no
+unfixed multiplicative phase or scale. One may apply that packet
+and the elementary sine-product estimate directly to (15).
+
+## 4. Polynomial cost of genuine generic-q numerator derivatives
+
+Let z=q^(t-2u), with the complex physical coordinate u held fixed
+while q=q0 exp(epsilon) varies. Require a FIXED logarithmic lift:
+the root z lies in a fixed compact of Omega and |u|<=C N. For
+example, take u=(t-Log(z)/(pi i/N))/2 with the marked branch of
+Log on Omega. The fixed integer t and a obey (7). Then for
+each fixed m
+
+    |partial_epsilon^m R_a(q;t,q^(t-2u))|_(epsilon=0)
+           <=C_m N^(10m) |R_a(q0;t,q0^(t-2u))|.               (16)
+
+Here the polynomial is the ORIGINAL generic R from (1), with
+B=Q^-N. It is not obtained by differentiating the root recurrence
+(5) while discarding B. A root value z alone does not fix this jet:
+replacing u by u+N L preserves z(q0) but changes its q derivative
+by -2N L z. The bounded marked lift is therefore necessary.
+
+To prove (16), first split off the genuine factor (2). On a small
+generic disk its explicit logarithmic derivative is O(N^2), since
+all root distances from the compact to the unit arc are bounded
+below. For the residual determinant (4), freeze each upper entry
+at its positive root value sqrt(-beta_n(q0)); put the generic
+lower entry equal to -beta_n(q)/sqrt(-beta_n(q0)). Its diagonal
+is z(q)+alpha_n(q). The determinant is precisely the actual V.
+
+At the root this matrix is the alternating-sign unitary conjugate
+of zI minus the positive-spectrum real Jacobi matrix in section 2:
+the frozen positive offdiagonals differ from its negatives by that
+diagonal sign gauge. Its inverse is bounded by the inverse distance of
+the compact from [0,infinity). Moreover, for n>=t+2,
+
+    cos^2((t+1)theta)-cos^2(n theta)
+      =sin((n+t+1)theta)sin((n-t-1)theta)>=c/N,
+
+uniformly on (7). Since B_n>=1/4, every frozen upper entry has
+size at least c N^-1/2. The original generic recurrence estimates
+give alpha_n'=O(N^5), beta_n'=O(N^7), uniformly for all required
+n<=a. Thus the perturbed determinant matrix differs from its root
+matrix by at most C N^(15/2)|epsilon| in operator norm.
+
+On |epsilon|<=c N^-10 its determinant ratio is bounded uniformly
+above and below: apply det(I+M0^-1(M-M0)) with dimension at most
+N. The forced product has the same property there. Cauchy's
+formula proves (16). The same argument bounds the exact scalar
+K_a and monomial factors in (1), whose relative logarithmic
+derivatives are polynomial. Therefore (16) also controls the
+ORIGINAL unnormalized Newton numerator at these complex magnetic
+arguments. It does not divide by D_a(Q^t), which vanishes here.
+
+## 5. The local kernel application and the remaining period problem
+
+The [entire exceptional source](actual_matching_edge_entire_operator_kernel.md)
+uses two copies of these root R polynomials at the SAME deficient
+integer degree. If both determinant arguments lie in fixed compacts
+of Omega, (9),(15) give their actual nonzero root packet, with the
+residual sine product and original normalization retained. This
+includes large genuinely nonreal determinant arguments; the
+forbidden physical nodes on the unit arc remain outside Omega.
+
+This is the chart supplied by the
+[actual global real-deficient frame](actual_augmented_plat_real_deficient_frame.md).
+For each level choose t_N near N/6 and set
+d_N=tan(pi t_N/N) in that construction. Its two failed factors
+then have the EXACT real normalized degree t_N/N, with the
+determinant arguments in the upper and lower half-planes. Fixing
+one sufficiently large geometric X and an interior midpoint keeps
+these arguments in fixed compact subsets of Omega as N grows.
+The marked magnetic lifts stay bounded after division by N.
+
+In the folded limit alpha->1/2, the original magnetic momentum
+associated to this numerator is Y=-exp(-2pi i D S). Its selected
+branch is
+
+    Y(z)=(z-i sqrt(1-2cos(pi sigma)z))^2
+                       /[1-2cos(pi sigma)z+z^2],              (17)
+
+where the square root is positive at z<0 and continued through
+the respective half-plane. To check the sign, (10) sends z=-r
+to high z=r>0, whose proved selected characteristic has the
+PLUS square root. Replacing r by -z gives exactly (17).
+Characteristic simplicity continues it uniquely. This is the
+actual geometric branch established in the frame theorem, with
+its output disk normalization retained. It does not identify a
+contributing global period or the absolute action with the link
+volume.
+
+Equation (16) controls the actual generic q-Hahn NUMERATORS. A full
+generic exceptional-kernel continuation still has its original
+boundary factors; it is not proved merely by replacing q in the
+root entire formula. Nor is this a joint complex-degree theorem.
+
+Finally, each real integer forbidden separation h>a gives an
+IDENTICALLY ZERO original physical operator slice, including every
+generic-q normal. Deforming only its magnetic finite sums cannot
+turn that zero slice into a nonzero original period. A local
+geometric contribution in such a representation must cancel or
+fail selection there. Actual transport of the degree period, or
+another source-preserving grouping, remains necessary for a global
+nonzero contribution. No general long-twist volume theorem is
+inferred from this local chart result.
+
+Focused audit: [original generic factorization, actual finite shifts
+and selected complex packets](../experiments/audit_actual_q_hahn_deficient_degree_packet.py).
+
+Primary-agent and independent full analytical reviews: PASS. The
+readers checked the generic support factor and persistent zero bridge,
+residual sign gauge and positive spectrum, root-location normal family,
+actual finite-shift bootstrap, high-total anchor with both offsets,
+bounded marked lifts and the genuine numerator perturbation estimates.
+The actual geometric branch and the identically zero physical slice
+remain distinct in these reviews.
+
+Fresh independent focused replay: PASS. It reproduced 672 forced-node
+four-jet checks, 182 generic zero bridges, 560 tail factorizations and
+560 original numerator comparisons, followed by 280 exact finite shifts.
+Twelve positive residual matrices, 24 selected relative amplitudes and
+72 genuine numerator checks also passed at 150 digits. The maximum
+N-scaled relative error was below 1.326; the independent literal
+generic-source relative error was below 1.1e-136. Numerical rate tests
+check normalization; the uniform estimates are proved above.

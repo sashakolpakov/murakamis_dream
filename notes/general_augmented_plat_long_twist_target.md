@@ -1,34 +1,40 @@
 # The general long-twist target at arbitrary bridge number
 
-## Current critical path: the exact support boundary
+## Current critical path: the selected complex packet and the original period
 
 The actual completed matching edge is the generic operator D_a^-1 p_a(Omega).
-The [entire finite root kernel](actual_matching_edge_entire_operator_kernel.md)
-now expresses every physical entry as two original determinant polynomials
-and a residual sine product. Apparent poles and monomial phases cancel
-before any limit, while every forbidden physical lattice zero remains.
-Its [controlled relative packet](actual_matching_edge_antidiagonal_operator_packet.md)
-has a nonzero amplitude inside the strict physical bandwidth.
+Its [entire finite root kernel](actual_matching_edge_entire_operator_kernel.md)
+retains every physical support zero. The
+[fixed deficient factorization](actual_q_hahn_deficient_degree_packet.md)
+separates forced zeros from a positive-root Jacobi determinant, and the
+[joint deficient packet](actual_q_hahn_joint_deficient_degree_packet.md)
+now proves a selected action and nonzero relative amplitude in a complex
+neighborhood of the ACTUAL geometric frame. Degree and magnetic
+coordinates may vary together. This reaches the chamber beyond physical
+bandwidth at every fixed width under the marked geometric certificate.
 
-The [geometric support theorem](actual_matching_edge_geometric_support_zero_chamber.md)
-locates the missing region precisely, at every certified fixed bridge width.
-The two exceptional ordinary factors share 0<Re sigma<1/2; after the
-actual turn their row separation is Re delta=1-Re sigma>1/2. All other
-kernel-domain inequalities hold. The current relative packet therefore
-does not contain the complete geometric point. More copies of that same
-packet cannot remove the common-frame obstruction.
+The [generic boundary-source theorem](actual_generic_boundary_gauge_and_source.md)
+retains the actual LARGE channel m=N-1-a and proves genuine numerator
+bounds of subexponential relative cost when (N-1-2a) log N=o(N).
+The small and large channels coincide at the root but their quantum
+normals differ. The full generic operator's boundary lift remains a
+separate step; finite physical gauge cancellation alone does not bound
+an unspecified complex interpolation.
 
-The [closing-region theorem](actual_casimir_closing_region_bound.md)
-also controls the whole original spectral integrand and its fixed genuine
-normals on shrinking arcs at +2 in each fixed slit cone, with
-subexponential cost. It does not
-settle the remaining contour or the possible geometric target -2.
+The [absolute reflected regulator](actual_matching_edge_deficient_packet_regulator.md)
+has no uncomputed constant. Exact source reflection has scalar one;
+the endpoint Bloch symbol preserves the actual diagram volume. Literal
+turn and degree-log characters must stay in the action and in its marked
+winding sectors. At FULL source-marked stationarity the critical action
+has real part Vol(Y_D)/(2pi).
 
-The next required theorem concerns the entire kernel in the geometric
-chamber: its selected asymptotic and genuine generic normals, followed
-by a nonzero global source contribution and the complementary-color gap.
-The original scalar character relation and marked hyperbolic-volume
-anchor remain valid. The general long-twist equality remains OPEN.
+The main unresolved theorem is GLOBAL: transport the original degree
+and magnetic cycle, retaining finite-head boundary terms and crossed
+poles; prove a nonzero geometric coefficient and control competing
+colors. A forbidden physical integer degree slice is identically zero,
+including genuine generic normals. Its magnetic contour alone cannot
+acquire a nonzero period just because the continued local packet is
+nonzero. The general long-twist volume equality remains OPEN.
 
 30 October 2026. The target is an original Kashaev volume equality for
 arbitrary fixed bridge number and arbitrary fixed essential twist

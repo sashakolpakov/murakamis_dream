@@ -28,9 +28,9 @@ The scalar polynomial and original resolvent have different analytic roles. All 
 
 ## The exact support boundary
 
-The prescribed geometric frame puts the exceptional edge beyond the domain of its currently controlled local packet. The [support calculation](../notes/actual_matching_edge_geometric_support_zero_chamber.md) identifies the failed inequality exactly. The [entire finite kernel](../notes/actual_matching_edge_entire_operator_kernel.md) cancels its apparent poles while retaining every physical lattice zero. Its asymptotic in the geometric chamber remains open. The axis depicts the folded limiting channel, not the finite-level bandwidth endpoint $a/N$.
+The prescribed geometric frame puts the exceptional edge beyond physical bandwidth. The [support calculation](../notes/actual_matching_edge_geometric_support_zero_chamber.md) identifies the failed inequality exactly. The [entire finite kernel](../notes/actual_matching_edge_entire_operator_kernel.md) cancels its apparent poles while retaining every physical lattice zero. The [joint deficient packet](../notes/actual_q_hahn_joint_deficient_degree_packet.md) now controls its selected asymptotic on a complex neighborhood of the actual geometric frame. The contribution to the original global period remains open. The axis depicts the folded limiting channel, not the finite-level bandwidth endpoint $a/N$; the geometric packet has complex magnetic coordinates.
 
-![The limiting physical bandwidth and geometric chamber, with the entire finite kernel and the remaining selected-asymptotic problem.](figures/support-wall.png)
+![The limiting physical bandwidth, the selected complex geometric packet, and the remaining global period problem.](figures/support-wall.png)
 
 ## A change of pairing
 
