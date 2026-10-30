@@ -88,7 +88,9 @@ The exact source-current theorem below also gives a continuous ROOT
 band-weight family extracting the same invariant after an explicit
 bounded normalization near the resonant boundary. This is a prescribed
 source functional, not a new integration cycle or an estimate of its
-unknown scalar. Its genuine quantum-normal defect is nonzero.
+unknown scalar. At the complete root it reduces to the existing coherent
+cut with t_eff=t/[p(1-t)+t], leaving the residual framing freedom.
+Its genuine quantum-normal defect is nonzero.
 
 The [actual framing-density theorem](actual_augmented_plat_framing_density_source_ward.md)
 now identifies the local source form as

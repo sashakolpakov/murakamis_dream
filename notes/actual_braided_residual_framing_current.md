@@ -293,6 +293,34 @@ returns exactly the original root scalar z. This licenses that
 finite band-momentum boundary family; it does not license a general
 second diagonal functional or simultaneous evaluation of two heads.
 
+There is an exact whole-source absorption of this insertion. Let
+H=C(I)=P_V[AB]=zI, with the ORIGINAL pivots and all other source
+factors. Equation (12) gives
+
+    Tr[e_t C(X(p))]/b_N(t,p)=Tr[e_eff H],
+    e_eff=e_t X(p)/b_N(t,p),
+    (e_eff)_(a,c)=beta_a(t)p^(-c)/(1-t+t/p)^d.            (13a)
+
+Thus the right side is evaluated on the original white-cut network,
+without the extra U and U^-1 insertions. This is an identity AFTER
+the whole root contraction, not a local rule for moving X(p) through
+one crossing or moving a bare mark. No pivot has been added or removed.
+
+Moreover e_eff is exactly the existing normalized coherent kernel
+with z_coh=t/(1-t) and w=p^-1. Put D_p=diag(p^a). Directly,
+
+    D_p^-1 e_eff D_p=e_(t_eff),
+    t_eff=t/[p(1-t)+t].                                 (13b)
+
+The [original common diagonal gauge](compact_framing_gauge_and_boundary_residue.md)
+preserves t_eff and removes this common momentum p. Its one-cut
+physical map forgets the residual centralizer coordinate. Therefore
+the absorption supplies no additional pin of that coordinate:
+the two apparent parameters are one coherent position and the
+already present common diagonal gauge. The canceled formula for
+e_eff may extend across a Fourier zero of b_N, but this is not a
+generic-q removal of that zero or a contour transport statement.
+
 The source therefore has an exact boundary-scale test. In the
 first-slot chart r=1/(1-p)-b0 s, retain c0=b0 s and set
 
@@ -311,6 +339,10 @@ rho=1/(2pi i j) are precisely the zeros in (14). At rho=infinity
 the displayed limiting factor tends to one. No pointwise substitution
 of p into the whole internal source is used to prove these facts.
 
+In the absorbed one-cut expression,
+t_eff=t+t(1-t)/(N rho)+O(N^-2). Thus this scaling gives a small
+coherent-position tilt, not an independent centralizer condition.
+
 All of (12)--(14) is ROOT-ONLY. For the original moving-q channel
 write Delta(epsilon,p)=C_epsilon(X(p))-z(epsilon)X(p).
 Although Delta(0,p)=0, its genuine first quantum derivative need
@@ -321,6 +353,16 @@ actual route, endpoint arrows and generic pivot. Thus differentiating
 the additional p derivative of Delta(0,p) is zero; it does not remove
 the genuine defect. All required normals still use the original
 generic channel and the source currents (5)--(11).
+
+More explicitly, for the SAME actual generic A,B,U and pivot, the
+identity retaining every quantum correction is
+
+    Tr[e_t C_epsilon(X(p))]/b_N
+        =Tr[e_eff H_epsilon]+Tr[e_t Delta(epsilon,p)]/b_N.
+                                                               (14a)
+
+Every genuine jet differentiates the full right side. The second term
+cannot be discarded by the root absorption (13a).
 
 Equation (14) is a matching condition for any proposed contracted
 hard-edge calculation. Its coefficient is the UNKNOWN whole z.
@@ -356,7 +398,11 @@ and 67 three-node complete current values. The off-node extension checks
 2087 unwrapped Toeplitz entries, 801 literal rank-one source entries and
 57 coherent pairings. It retains 588 nonzero genuine first-normal entries
 and 54 nonzero coherent normal defects. Twelve boundary-scale checks
-include a limiting Fourier zero. Symbolic checks verify the
+include a limiting Fourier zero. The whole-source absorption has 114
+actual root/first-jet checks and 801 effective coherent-gauge entries;
+139 symbolic kernel identities, 139 gauge identities, six trace
+normalizations and the first position tilt are checked independently.
+Symbolic checks verify the
 universal integer-shift chain rule and its
 resonant cotangent finite part. They do not audit an off-grid Ward
 identity or a stationary framing pushforward.
@@ -377,3 +423,8 @@ audit, including the true generic defects and limiting Fourier zero.
 Those reviews cover the literal finite rank-one source, unwrapped
 charge proof and root boundary profile; they do not determine z,
 differentiate its root factor, or identify a selected transverse period.
+The subsequent whole-source absorption (13a),(13b),(14a) also received
+independent primary and coherent-source reviews of its exact kernel,
+gauge orientation, position tilt and retained generic defect. Its
+conclusion is reduction to the existing one-cut coherent family,
+not an independent localization of the residual framing direction.

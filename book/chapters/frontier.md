@@ -130,7 +130,7 @@ There is also a source-defined way to impose the boundary weights. The [finite-c
 $$\operatorname{Tr}[e_t\,\mathcal C(X(p))]=z\,b_N(t,p),\qquad
 b_N(t,p)=\frac{1-p^N}{N(1-p)}(1-t+t/p)^{N-1}.$$
 
-Here $z$ is the original root scalar. At $p=1-1/(N\rho+c_0)$ the explicit factor tends to $\rho(1-e^{-1/\rho})e^{t/\rho}$. Away from its known zeros, dividing this specified functional by $b_N$ extracts the same invariant at bounded cost. Thus the boundary family is authorized by an exact finite-source identity. Its genuine quantum derivative has additional nonzero terms. Computing its internal geometric period and proving a nonzero contribution remain necessary.
+Here $z$ is the original root scalar. At $p=1-1/(N\rho+c_0)$ the explicit factor tends to $\rho(1-e^{-1/\rho})e^{t/\rho}$. Away from its known zeros, dividing this specified functional by $b_N$ extracts the same invariant at bounded cost. At the complete root, this normalized functional can also be absorbed into the existing coherent cut, with effective position $t_{\mathrm{eff}}=t/[p(1-t)+t]$. It therefore leaves the residual framing freedom in place. Its genuine quantum derivative has additional nonzero terms. The explicit boundary factor is a matching test; computing the internal geometric period and proving a nonzero contribution remain necessary.
 
 ## How far this is from the general conjecture
 

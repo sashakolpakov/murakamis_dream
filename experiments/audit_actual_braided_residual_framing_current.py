@@ -143,6 +143,7 @@ def audit_case(N, width, kind):
     # Source-defined off-node matrix, with every unwrapped charge retained.
     toeplitz_entries=offnode_entries=offnode_pairings=0
     offnode_normal_defects=offnode_coherent_defects=0
+    absorbed_source_jets=absorbed_coherent_entries=0
     for charge in range(-d,d+1):
         X=np.diag(np.ones(N-abs(charge),dtype=np.int64),-charge)
         routed=mm(mm(Ui,embed_one(const(X),0,inwidth,N,p),p),U,p)
@@ -159,6 +160,25 @@ def audit_case(N, width, kind):
                 *pow((1-t+t*pow(momentum,-1,p))%p,d,p))%p
         assert int(np.trace(ecut@CX[0])%p)==z[0]*factor%p
         defect=(CX[1]-z[1]*X)%p
+        assert factor!=0
+        invfactor=pow(int(factor),-1,p)
+        effective=(ecut@X%p)*invfactor%p
+        t_eff=t*pow((momentum*(1-t)+t)%p,-1,p)%p
+        beta_eff=np.array([math.comb(d,a)*pow(t_eff,a,p)*pow(1-t_eff,d-a,p)%p
+                           for a in range(N)],dtype=np.int64)
+        Dp=np.diag([pow(momentum,a,p) for a in range(N)])
+        Dpi=np.diag([pow(momentum,-a,p) for a in range(N)])
+        assert np.array_equal(Dpi@effective@Dp%p,
+                              np.outer(beta_eff,np.ones(N,dtype=np.int64)))
+        assert int(np.trace(effective)%p)==1
+        for jet in range(2):
+            full_defect=(CX[jet]-z[jet]*X)%p
+            lhs=int(np.trace(ecut@CX[jet])%p)*invfactor%p
+            rhs=(int(np.trace(effective@H[jet])%p)
+                 +int(np.trace(ecut@full_defect)%p)*invfactor)%p
+            assert lhs==rhs
+            absorbed_source_jets+=1
+        absorbed_coherent_entries+=N*N
         offnode_entries+=N*N;offnode_pairings+=1
         offnode_normal_defects+=int(np.count_nonzero(defect))
         offnode_coherent_defects+=int(int(np.trace(ecut@defect)%p)!=0)
@@ -189,6 +209,8 @@ def audit_case(N, width, kind):
                 offnode_coherent_pairings=offnode_pairings,
                 nonzero_offnode_normal_entries=offnode_normal_defects,
                 nonzero_offnode_coherent_normal_defects=offnode_coherent_defects,
+                absorbed_whole_source_jet_identities=absorbed_source_jets,
+                absorbed_coherent_gauge_entries=absorbed_coherent_entries,
                 exposed_scalar=list(z),field=p)
 
 
@@ -225,6 +247,36 @@ def offnode_boundary_checks():
                 scope='Literal finite boundary factor, including a limiting Fourier zero; unknown source scalar is not estimated.')
 
 
+def coherent_absorption_checks():
+    t,p=sp.symbols('t p',nonzero=True)
+    kernel=gauge=traces=0
+    for N in range(2,8):
+        d=N-1
+        beta=sp.Matrix([sp.binomial(d,a)*t**a*(1-t)**(d-a) for a in range(N)])
+        row=beta*sp.ones(1,N)
+        X=sp.Matrix(N,N,lambda r,s:p**(r-s)/N)
+        factor=sum(p**r for r in range(N))/N*(1-t+t/p)**d
+        raw=row*X
+        te=t/(p*(1-t)+t)
+        for a in range(N):
+            for c in range(N):
+                actual=raw[a,c]/factor
+                expected=beta[a]*p**(-c)/(1-t+t/p)**d
+                assert sp.cancel(actual-expected)==0
+                coherent=sp.binomial(d,a)*te**a*(1-te)**(d-a)
+                assert sp.cancel(p**(c-a)*expected-coherent)==0
+                kernel+=1;gauge+=1
+        assert sp.cancel(sum(raw[a,a] for a in range(N))/factor-1)==0
+        traces+=1
+    h,rho,c0=sp.symbols('h rho c0',nonzero=True)
+    pn=1-h/(rho+c0*h)
+    te=t/(pn*(1-t)+t)
+    assert sp.simplify(te.subs(h,0)-t)==0
+    assert sp.simplify(sp.diff(te,h).subs(h,0)-t*(1-t)/rho)==0
+    return dict(symbolic_finite_kernel_entries=kernel,symbolic_coherent_gauge_entries=gauge,
+                symbolic_trace_normalizations=traces,exact_first_tilt=1)
+
+
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--output',type=Path);args=ap.parse_args()
     rows=[audit_case(N,2,k) for N in range(2,7) for k in ('braid','complete')]
@@ -234,12 +286,14 @@ def main():
         'flux_coefficients','finite_interval_jet_identities','nonzero_retained_normal_defects',
         'complete_fourier_matrix_entries','three_node_current_values',
         'unwrapped_toeplitz_entries','offnode_root_entries','offnode_coherent_pairings',
-        'nonzero_offnode_normal_entries','nonzero_offnode_coherent_normal_defects')}
+        'nonzero_offnode_normal_entries','nonzero_offnode_coherent_normal_defects',
+        'absorbed_whole_source_jet_identities','absorbed_coherent_gauge_entries')}
     assert totals['nonzero_offnode_normal_entries']>0
     assert totals['nonzero_offnode_coherent_normal_defects']>0
     result=dict(status='PASS',source_cases=len(rows),totals=totals,cases=rows,
                 chain=chain_checks(),offnode=offnode_boundary_checks(),
-                scope='Actual routed off-diagonal current and genuine first jets; literal off-node profile is root-only with nonzero generic defects retained. No stationary pushforward or relative framing coefficient.')
+                absorption=coherent_absorption_checks(),
+                scope='Actual routed current and genuine first jets; root off-node functional absorbs into the original one-cut coherent family, while its generic defect remains. No independent centralizer pin, stationary pushforward or relative framing coefficient.')
     target=args.output or Path(__file__).with_name('actual_braided_residual_framing_current_results.json')
     target.write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(dict(status='PASS',source_cases=len(rows),**totals),indent=2))
