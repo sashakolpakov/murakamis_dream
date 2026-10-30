@@ -1,5 +1,15 @@
 # General equality: proved scope and the remaining original-source problem
 
+30 October update. The [source-preserving odd period](actual_source_preserving_odd_framing_period.md)
+now recovers the unchanged original scalar from two actual neighboring
+bands, with inverse normalization at most N on a real coherent cut.
+This exact statement holds at arbitrary fixed width. Its certified
+geometric form has a nonzero local logarithmic residue, with the
+coherent base weight retained. The source-preservation gap is closed;
+uniform quantum matching at the resonant boundary and the original
+global cycle coefficient remain open. The external mixed-color packet
+and complementary-color gap also remain necessary for general fillings.
+
 ## Current critical path: the selected complex packet and the original period
 
 The actual completed matching edge is the generic operator D_a^-1 p_a(Omega).

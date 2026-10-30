@@ -1,5 +1,15 @@
 # The general long-twist target at arbitrary bridge number
 
+30 October update. The target below still has arbitrary fixed k and
+independently long fixed signed twists. The new
+[odd framing source theorem](actual_source_preserving_odd_framing_period.md)
+is an exact source identity throughout that fixed-width setting:
+it preserves the original scalar and has only polynomial normalization
+cost. Its nonzero local geometric residue has the stated certified
+complete-source scope. Neither the original global period coefficient
+nor the general mixed-color estimate follows yet; the volume equality
+below remains a conjecture.
+
 ## Current critical path: the selected complex packet and the original period
 
 The actual completed matching edge is the generic operator D_a^-1 p_a(Omega).
