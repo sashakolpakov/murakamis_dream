@@ -12,6 +12,7 @@ import mpmath as mp
 from audit_actual_braided_two_cut_source_adapter import (
     original_crossings, embed_pair, embed_one, product, partial, eye, eq,
     Local, const, mm, kron, module_jet)
+from audit_high_color_first_normal_r_degree import root_field
 
 
 def fixture(N, width, kind):
@@ -277,6 +278,84 @@ def coherent_absorption_checks():
                 symbolic_trace_normalizations=traces,exact_first_tilt=1)
 
 
+def genuine_normal_freedom_checks():
+    q,p,h=sp.symbols('q p h',nonzero=True)
+    R=sp.Matrix([[1,0,0,0],[0,0,1/q,0],
+                 [0,1/q,1-1/q**2,0],[0,0,0,1]])
+    g=sp.diag(-q,-1/q); D=sp.trace(g); I=sp.eye(2)
+    X=sp.Matrix(2,2,sp.symbols('x0:4'))
+    Xp=sp.Matrix([[1,1/p],[p,1]])/2
+    def ptr(Y):
+        return sp.Matrix(2,2,lambda r,c:sp.factor(sum(
+            g[b,b]*Y[2*r+b,2*c+b] for b in range(2))))
+    def assert_matrix(A,B):
+        assert all(sp.cancel(a-b)==0 for a,b in zip(A,B))
+    # Compare the retained eta=q^(1/2) factor and its genuine derivative
+    # against the independently compiled original crossing, not a new R.
+    field,q0,gjet,(Rp,_) = original_crossings(2)
+    _,eta0=root_field(2)
+    def mod(expr):
+        num,den=sp.fraction(sp.cancel(expr.subs(q,q0)))
+        return int(num)%field*pow(int(den)%field,-1,field)%field
+    for r in range(4):
+        for c in range(4):
+            assert int(Rp[0][r,c])==eta0*mod(R[r,c])%field
+            expected=eta0*mod(R[r,c]/2+q*sp.diff(R[r,c],q))%field
+            assert int(Rp[1][r,c])==expected
+    for a in range(2):
+        assert int(gjet[0][a])==mod(g[a,a])
+        assert int(gjet[1][a])==mod(q*sp.diff(g[a,a],q))
+    # Full arbitrary-k proof after factoring lambda^(k-2) as h.
+    lam=-q**-2
+    u2=(1-h)/(1-lam); u1=u2+h; uk=u1+lam*h
+    vk=1-uk
+    middle=R[1:3,1:3]
+    Rkm2=sp.eye(4)
+    Rkm2[1:3,1:3]=u2*middle+(1-u2)*I
+    z=-q-vk/q; psi=(1/q-1/q**5)*u2
+    actual=ptr(Rkm2*sp.kronecker_product(X,I)*R**2)
+    assert_matrix(actual,(z+psi)*X-psi*sp.trace(g*X)/D*I)
+    E10=sp.Matrix([[0,0],[1,0]])
+    assert_matrix(ptr(Rkm2*sp.kronecker_product(E10,I)*R**2),
+                  (-q*u1-q**-3)*E10)
+    # This universal freedom retains the actual pivot and zero diagonal.
+    assert_matrix(D*Xp-sp.trace(g*Xp)*I,D*(Xp-I/2))
+    rows=[]
+    for k in (3,5,7,9,11):
+        uk=sum(lam**r for r in range(k))
+        u2=sum(lam**r for r in range(k-2))
+        z=-q-(1-uk)/q; psi=(1/q-1/q**5)*u2
+        def channel(Y):return ptr(R**(k-2)*sp.kronecker_product(Y,I)*R**2)
+        assert_matrix(ptr(R**k),z*I)
+        assert_matrix(channel(X),(z+psi)*X-psi*sp.trace(g*X)/D*I)
+        assert_matrix(channel(Xp)-z*Xp,psi*(Xp-I/2))
+        zr=sp.simplify(z.subs(q,sp.I))
+        delta=sp.simplify((q*sp.diff(psi,q)).subs(q,sp.I))
+        assert zr==-k*sp.I and delta==-4*sp.I*(k-2)
+        E00=sp.diag(1,0)
+        J0=channel(E00).applyfunc(lambda f:sp.simplify(f.subs(q,sp.I)))
+        assert_matrix(J0-zr*E00,-delta*I/2)
+        e=sp.Matrix([[sp.Rational(1,3)]*2,[sp.Rational(2,3)]*2])
+        assert sp.trace(e*Xp.subs(p,2))==1
+        paired=sp.trace(e*delta*(Xp.subs(p,2)-I/2))
+        assert paired==delta/2
+        rows.append(dict(k=k,root_scalar_without_cartan=str(zr),
+                         extreme_normal_without_cartan=str(delta),
+                         extreme_ratio=str(sp.simplify(delta/zr)),
+                         coherent_ratio=str(sp.simplify(paired/zr))))
+    eta=sp.exp(sp.pi*sp.I/4)
+    source_root5=eta**5*(-5*sp.I)
+    source_root3=eta**3*(-3*sp.I)
+    assert sp.simplify(source_root5-sp.Rational(5,3)*eta**2*source_root3)==0
+    defect=eta**5*(-12*sp.I)-sp.Rational(5,3)*eta**2*eta**3*(-4*sp.I)
+    assert sp.simplify(defect-eta**5*(-16*sp.I/3))==0
+    return dict(original_crossing_entry_jets=32,original_pivot_entry_jets=4,
+                factorized_arbitrary_power_identities=8,free_pivotal_channel_identity=1,
+                full_generic_braid_channels=len(rows),open_diagonal_adapters=len(rows),
+                restored_cartan_linear_combination=1,cases=rows,
+                scope='General tensor-span freedom; exact connected odd two-braid sources at N2. The normal is an additional root open-diagonal datum, not a geometric-period obstruction.')
+
+
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--output',type=Path);args=ap.parse_args()
     rows=[audit_case(N,2,k) for N in range(2,7) for k in ('braid','complete')]
@@ -293,6 +372,7 @@ def main():
     result=dict(status='PASS',source_cases=len(rows),totals=totals,cases=rows,
                 chain=chain_checks(),offnode=offnode_boundary_checks(),
                 absorption=coherent_absorption_checks(),
+                normal_freedom=genuine_normal_freedom_checks(),
                 scope='Actual routed current and genuine first jets; root off-node functional absorbs into the original one-cut coherent family, while its generic defect remains. No independent centralizer pin, stationary pushforward or relative framing coefficient.')
     target=args.output or Path(__file__).with_name('actual_braided_residual_framing_current_results.json')
     target.write_text(json.dumps(result,indent=2)+'\n')

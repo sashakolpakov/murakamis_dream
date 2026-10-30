@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An explicit root-channel adapter for the first-normal defect · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a><p><span class="badge">Exact root-channel normal adapter and finite Plancherel bound</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_explicit_root_channel_normal_adapter.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_explicit_root_channel_normal_adapter.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_explicit_root_channel_normal_adapter_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="an-explicit-root-channel-adapter-for-the-first-normal-defect">An explicit root-channel adapter for the first-normal defect</h1>
+<p>30 October 2026. Independently reviewed. The genuine first quantum defect of the original off-node boundary functional is an explicit function of TWO root-channel insertions. The adapter has polynomial norm O(N^2) on the actual boundary scale. It retains the full open root channel, not just its scalar closure z.</p>
+<p>This is a finite-source identity at every N&gt;=2 and arbitrary fixed Morse width. It gives neither a bound for the root-channel norm nor the coefficient of a geometric relative period.</p>
+<h2 id="the-actual-family-and-its-divided-descendants">1. The actual family and its divided descendants</h2>
+<p>Fix N&gt;=2, d=N-1, q=q0 exp(epsilon), q0=exp(pi i/N), Q=q^2. The highest weight d and the physical indices remain FIXED. Use</p>
+<pre><code>F e_a=(1-Q^(a+1))e_(a+1), 0&lt;=a&lt;d, F e_d=0,
+K e_a=q^d Q^(-a)e_a,
+ad_F X=FX-K^-1 X K F, ad_K X=KXK^-1.              (1)</code></pre>
+<p>Let C_e be a holomorphic family of linear maps on End(V_d), commuting with these ACTUAL generic adjoints, and suppose</p>
+<pre><code>C_e(I)=z(e)I.                                     (2)</code></pre>
+<p>The original routed channel C_e(X)=P_V[A U^-1(X tensor I)U B] satisfies these hypotheses with the original generic pivot g=(-1)^d K, actual endpoints and all peripheral factors; the <a href="actual_braided_residual_framing_current.html">braided source/current theorem</a> includes rectangular cuts and arbitrary fixed width. No bare root mark is made covariant, and no routed U band is omitted here. Only K and F covariance is needed in the proof below.</p>
+<p>For 0&lt;=s&lt;=d put</p>
+<pre><code>h_s(q)=(-1)^s Q^[s(s+1)/2] {d choose s}_Q,
+{d choose s}_Q=product_(j=1)^s (1-Q^(N-j))/(1-Q^j).</code></pre>
+<p>For -d&lt;=n&lt;=d let s0=max(-n,0), and define the n-th-band matrix</p>
+<pre><code>V_n(q)_(s+n,s)=h_s(q)/h_s0(q)
+   whenever 0&lt;=s,s+n&lt;=d; all other entries are zero.  (3)</code></pre>
+<p>All h_s(q0)=1, by 1-Q0<sup>(N-j)=-Q0</sup>(-j)(1-Q0^j). Thus (3) is holomorphic near the root and V_n(q0)=T_n, the literal unwrapped band sum sum_(r-s=n) E_rs. In particular V_-d=E_0d and V_0=diag(h_0,…,h_d).</p>
+<p>Here is the entire descendant calculation. The successive ratio is</p>
+<pre><code>h_(s+1)/h_s=-Q^(s+1)(1-Q^(d-s))/(1-Q^(s+1)).</code></pre>
+<p>On a band with entries h_s, the coefficient of ad_F is</p>
+<pre><code>(1-Q^(s+n+1))h_s-Q^n(1-Q^(s+1))h_(s+1)
+                     =(1-Q^(N+n))h_s.             (4)</code></pre>
+<p>At either physical end the missing term is zero. Substitution of the same ratio verifies (4) at the newly appearing left endpoint; at the right endpoint h_(d+1)=0 is used only as that finite zero, not as a new cyclic arrow. After normalizing (3), for -d&lt;=n&lt;d,</p>
+<pre><code>ad_F V_n=c_n(q)V_(n+1),
+c_n=1-Q^n       if n&lt;0,
+c_n=1-Q^(N+n)   if n&gt;=0.                          (5)</code></pre>
+<p>In particular c_0=1-Q^N vanishes at the root. It is canceled GENERICALLY, before taking root values. Equivalently, with F_k=product_(j=1)<sup>k(1-Q</sup>j),</p>
+<pre><code>(ad_F)^(d+n) E_0d
+              =F_(d+n) sum_s (h_s/h_d) E_(s+n,s).
+                                                           (6)</code></pre>
+<p>For d+n&gt;=N, (6) cancels the common factor in F_(d+n); it never divides a specialized zero matrix by a root zero. This explains the positive-band descendants without replacing the physical endpoint.</p>
+<p>Generic ad_K has distinct eigenvalues on the different integer bands. Its extreme band is one dimensional, so C_e(E_0d)=lambda(e)E_0d, with lambda holomorphic. Covariance and the nonzero generic factors (5) imply</p>
+<pre><code>C_e(V_n)=lambda(e)V_n, -d&lt;=n&lt;=d.                  (7)</code></pre>
+<p>Analytic continuation gives (7) at the root too. Since V_0(q0)=I, lambda(0)=z(0). Thus this proof also gives C_0(T_n)=z_0 T_n directly from regular generic K/F covariance, without an off-root cyclic shift or an assumed interpolation.</p>
+<h2 id="two-literal-root-insertions-give-the-first-normal-defect">2. Two literal root insertions give the first-normal defect</h2>
+<p>Write C_1=partial_epsilon C_e|0, z_1=z’(0), and mathcal A=C_0-z_0 Id_End. Define the explicit root diagonal</p>
+<pre><code>H_0=0,
+H_s=2N sum_(j=1)^s 1/(1-Q0^j),
+H=diag(H_0,...,H_d).                              (8)</code></pre>
+<p>This is the genuine derivative h’_s(q0). Indeed differentiating the product for h_s gives s(s+1)+sum_j[2N/(1-Q0^j)-2j], leaving exactly (8). In particular it keeps the derivative of Q^N; the root simplification h_s(q0)=1 is not differentiated instead.</p>
+<p>The derivative J_n=V’_n has entries H_s-H_s0 on its band. Differentiating (7), and subtracting the derivative of (2) at n=0, gives the EXACT identities</p>
+<pre><code>eta I=mathcal A(H), eta=lambda&#39;(0)-z_1,
+(C_1-z_1 Id_End)T_n
+               =eta T_n-mathcal A(J_n).           (9)</code></pre>
+<p>There is no unspecified scalar normal in eta: it equals any diagonal entry of mathcal A(H), or Tr(mathcal A(H))/N.</p>
+<p>For ANY unwrapped Toeplitz matrix X=sum_n x_n T_n, let J(X)=sum_n x_n J_n. Since</p>
+<pre><code>J(X)=XH-sum_n x_n H_max(-n,0) T_n</code></pre>
+<p>and mathcal A annihilates every T_n, (9) simplifies to</p>
+<pre><code>(C_1-z_1 Id_End)X=eta X-mathcal A(XH).             (10)</code></pre>
+<p>In particular for X(p)_(r,s)=p^(r-s)/N, p!=0, the genuine defect Delta_e(p)=C_e(X(p))-z(e)X(p) has</p>
+<pre><code>Delta&#39;_0(p)=eta X(p)-mathcal A(X(p)H),
+eta I=C_0(H)-z_0 H.                              (11)</code></pre>
+<p>Thus only the original ROOT insertions H and X(p)H are required, in the SAME routed channel with its original closure. If p depends on epsilon, the extra derivative is zero because the root defect vanishes identically in p. No derivative of a root-only simplification of an individual coupon has been used.</p>
+<p>For the original coherent row e_t of trace one and its exact b_N(t,p)=Tr[e_t X(p)], the retained scalar defect is therefore</p>
+<pre><code>Tr[e_t Delta&#39;_0(p)]
+   =eta b_N(t,p)-Tr[e_t C_0(X(p)H)]
+                                  +z_0 Tr[e_t X(p)H]. (12)</code></pre>
+<p>If b_N!=0 this may be divided by that SAME b_N. Equation (12) does not evaluate either new root period from z. In particular it does not introduce a second trace-one localization or remove U.</p>
+<p>There is a useful exact check against the free pivotal channel B_e(X)=D_e X-tau_e(X)I, tau_e(X)=Tr(g_e X), D_e=tau_e(I). Swapping the sums in (8) gives</p>
+<pre><code>sum_s Q0^(-s)H_s=-2N/(1-Q0^-1),
+tau_0(H)=-nu_N, nu_N=D&#39;_0.</code></pre>
+<p>Equations (11) then give eta=nu_N and Delta’_0(p)=nu_N[X(p)-I/N], retaining the physical trace-normal sign. The actual N=2 odd-braid family in the current theorem shows that these additional open data cannot generally be replaced by z.</p>
+<h2 id="the-exact-plancherel-bound">3. The exact Plancherel bound</h2>
+<p>Center H by its scalar mean: tildeH_s=H_s-N^-1 sum_r H_r. Both (9) and (10) are unchanged, since mathcal A(I)=mathcal A(X)=0. Set</p>
+<pre><code>R_N^2=N^-1 sum_s |tildeH_s|^2.</code></pre>
+<p>This variance has a finite exact Fourier formula. With hat f_k=sum_s f_s Q0^(-ks), define the cyclic difference b_s=H_s-H_(s-1 mod N). Then b_0=-N(N-1) and b_s=2N/(1-Q0^s) for s&gt;0. Pairing s with N-s gives sum_(s&gt;0)(1-Q0<sup>s)</sup>-1=(N-1)/2. The successive differences of sum_(s&gt;0)Q0<sup>(-ks)/(1-Q0</sup>s) are -1 for 1&lt;=k&lt;N, hence</p>
+<pre><code>hat b_k=-2Nk,
+hat H_k=-2Nk/(1-Q0^-k), 1&lt;=k&lt;N,
+R_N^2=4 sum_(k=1)^(N-1) k^2/|1-Q0^k|^2.          (13)</code></pre>
+<p>These are the unnormalized Fourier transform and its Parseval factor 1/N^2; no extra N is suppressed. Also</p>
+<pre><code>sum_(k=1)^(N-1) csc^2(pi k/N)=(N^2-1)/3.</code></pre>
+<p>For an elementary proof, logarithmically differentiate P(x)=(x<sup>N-1)/(x-1)=product_(k&gt;0)(x-Q0</sup>k) twice at x=1, using P(1)=N, P’(1)=N(N-1)/2 and P’’(1)=N(N-1)(N-2)/3. Subtract the two resulting sums to get sum |1-Q0<sup>k|</sup>-2=(N^2-1)/12. Therefore</p>
+<pre><code>R_N^2&lt;=N^2(N^2-1)/3, R_N&lt;=N^2/sqrt(3).           (14)</code></pre>
+<p>Use Hilbert–Schmidt norm on matrices and its induced norm on channels. If |log|p||&lt;=A/N, then</p>
+<pre><code>||X(p)||_HS&lt;=exp(A),
+||X(p)tildeH||_HS&lt;=exp(A)R_N,
+|eta|&lt;=R_N ||mathcal A||_(HS-&gt;HS).</code></pre>
+<p>The second inequality follows entry by entry from |p^(r-s)|&lt;=exp(A); the third follows from eta I=mathcal A(tildeH). Consequently</p>
+<pre><code>||Delta&#39;_0(p)||_HS
+   &lt;=2exp(A)R_N ||mathcal A||_(HS-&gt;HS)
+   &lt;=4exp(A)N^2/sqrt(3) ||C_0||_(HS-&gt;HS).         (15)</code></pre>
+<p>For the last inequality, C_0(I)=z_0 I gives |z_0|&lt;=||C_0||. The actual scale p_N=1-1/(N rho+c0), with rho in a fixed compact of C* and c0 bounded, satisfies this hypothesis uniformly for large N. Scalar pairing retains its actual factor ||e_t||_HS, and division by b_N retains |b_N|^-1; neither is silently declared polynomial. Most importantly, (15) is NOT a bound by |z_0|. The full channel norm can contain large independent open-source contributions.</p>
+<h2 id="a-canonical-square-zero-part-of-the-root-channel">4. A canonical square-zero part of the root channel</h2>
+<p>Every such root channel preserves E_N=span{I,H}, and in the ordered basis I,H its matrix is</p>
+<pre><code>[[z_0,eta],[0,z_0]].                              (16)</code></pre>
+<p>For composition of two admissible channel families,</p>
+<pre><code>z(CD)=z(C)z(D),
+eta(CD)=z(C)eta(D)+eta(C)z(D).                     (17)</code></pre>
+<p>Thus z+eta e, e^2=0, is an exact dual-number character of this channel algebra. Where z!=0, eta/z is additive under composition. This is literal finite linear algebra. Arbitrary braid coupons are not thereby factored into these End(V_d) channels, and (17) implies no global growth, transport or triangulation theorem.</p>
+<p>The first-normal defect is therefore explicitly determined by the FULL root channel, while (11)–(12) identify which additional root insertions must be retained. The original finite support cycles, their moving-period boundary terms and their relative geometric coefficient remain outside this adapter.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_explicit_root_channel_normal_adapter.py">focused audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_explicit_root_channel_normal_adapter_results.json">saved results</a> pass 133 exact generic ladder entries and 54 raw divided-descendant identities. Nineteen original braid, complete-circle and rectangular sources give 2087 all-band first-normal defect comparisons, 2087 normalized-descendant jet entries, 801 off-node adapter entries, 57 coherent-period identities and 57 genuine moving-p checks. Twelve actual channel compositions check (17). Exact finite-field tests give 496 Fourier modes, 31 Parseval identities and 62 pivotal free-channel normal checks. Twenty boundary norm checks at 90 digits have maximum relative Parseval error below 4.2e-90. These tests retain the actual generic pivots; they do not infer the root-channel norm from z.</p>
+<p>Independent full analytical review: the primary and coherent-source readers checked the physical endpoints, generic descendant cancellation, two-root-insertion signs, genuine derivative convention, pivotal adapter, exact Fourier normalization, polynomial norm and composition scope. The coherent-source reader also independently checked 276 rational ladder entries and the root h_s/H_s/pivot formulas before reading the audit implementation. Its fresh redirected replay of the full focused audit reproduced all counts and passed. This validation concerns the first-normal DEFECT, not C_1 or z_1 separately, and retains the full-root-channel norm and original period scope.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_explicit_root_channel_normal_adapter.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-family-and-its-divided-descendants">1. The actual family and its divided descendants</a><a href="#two-literal-root-insertions-give-the-first-normal-defect">2. Two literal root insertions give the first-normal defect</a><a href="#the-exact-plancherel-bound">3. The exact Plancherel bound</a><a href="#a-canonical-square-zero-part-of-the-root-channel">4. A canonical square-zero part of the root channel</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>
