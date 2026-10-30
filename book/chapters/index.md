@@ -1,6 +1,6 @@
 # Murakami’s Dream
 
-## Quantum invariants, geometric volume, and the missing global argument
+## Quantum invariants and actual hyperbolic volume
 
 The question driving this project is whether the original quantum invariant of a hyperbolic knot has exponential growth determined by the volume of its complement:
 
@@ -10,7 +10,7 @@ We pursue this through the pointed quantum A-structure, exact finite source form
 
 The current target allows every fixed bridge width $k\geq2$: start with an essential hyperbolic augmented plat, then put independently sufficiently many signed twists into each designated region. The diagram and twists stay fixed as $N$ grows. The [frontier](frontier.md) separates the exact formulas and geometric certificates already available from the general quantum asymptotic still needed.
 
-**The general conjecture remains open in this repository.** The notes contain internally reviewed arguments for specified families, general local identities, and obstructions to proposed extensions. Internal proof review, finite checks, and exploratory calculations are distinguished throughout this guide.
+**The general conjecture remains open in this repository.** The notes now include a whole-source equality for connected certified untwisted augmented links at arbitrary fixed width, as well as the specified knot families, general identities and obstructions. Internal proof review, finite checks, and exploratory calculations are distinguished throughout this guide.
 
 ![The general route: exact source, local complex amplitudes and a marked geometric branch under a positive gluing certificate; global selection and estimates remain open.](../figures/research-map.png)
 
@@ -27,14 +27,14 @@ Start with [the equality results](results.md) for the exact knot and link famili
 | Part of the argument | Current scope |
 | --- | --- |
 | Volume limit of the original invariant | Signed Conway families with mixed seeds $h^s$, $s\geq3$, arbitrary fixed trees and constructible knot patterns, after sufficiently long signed full fillings; isolated $C(h^s)$ for $s\geq4$; specified pretzel and belt-stack families |
-| Exact finite source identities | All auxiliary colors at arbitrary fixed plat width; complete-source Kirchhoff flows and charged cycle Fourier extraction; Fourier core and Parseval; full-color three-port reflection doubles |
+| Exact finite source identities | Original complete source as one positive face coefficient at each folded label, with exact support, measure and even-level carries; all-color compilers and Fourier identities retained |
 | Boundary first-normal defect | An explicit two-insertion formula from the full root channel; finite Plancherel gives polynomial cost $O(N^2)$, without determining the scalar derivative or estimating that channel by the geometric volume |
 | Local quantum action | Selected ordinary amplitude on full physical complex compacts; fixed generic jets for all integer-grid physical columns and divided pairs; subexponential complex paired-normal bounds in shrinking channel windows |
 | General geometric branch | Under a positive gluing certificate, marked rigidity and the actual critical scheme give a stationary branch with the true volume anchor; contributing source sheet still to be established |
 | Common geometric framing | Exactly two prescribed physical-support failures for the certified right-angled cut; every other ordinary factor is on the selected full physical packet, at arbitrary bridge width |
 | Exceptional matching block | Exact generic Casimir polynomial and original resolvent period; selected scalar character relation, strict-support Green action and endpoint jets; contributing contour and joint contraction remain open |
-| Whole positive source limit | Every robust Conway expression; cylindrical factors have actual hyperbolic volume, while cap products split into geometric factors |
-| General knot or graph equality | Uniform complex source asymptotics, physical alias bounds and selection of the actual geometric period remain unresolved |
+| Whole positive source limit | Every connected certified untwisted augmented plat, at arbitrary fixed width and both level parities; exact face coefficients and actual polyhedral volume |
+| General signed long-filled knot equality | Signed channel cancellation and the external-color complex packet with its complementary-region and alias bounds remain unresolved |
 
 The cube, Fourier, torsor, and alternative approaches are preserved. A failed intermediate estimate is useful evidence about the argument; it is retained beside the corrected scope.
 

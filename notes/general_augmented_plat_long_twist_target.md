@@ -1,140 +1,34 @@
 # The general long-twist target at arbitrary bridge number
 
-30 October update. The target below still has arbitrary fixed k and
-independently long fixed signed twists. The new
-[odd framing source theorem](actual_source_preserving_odd_framing_period.md)
-is an exact source identity throughout that fixed-width setting:
-it preserves the original scalar and has only polynomial normalization
-cost. Its nonzero local geometric residue has the stated certified
-complete-source scope. Neither the original global period coefficient
-nor the general mixed-color estimate follows yet; the volume equality
-below remains a conjecture.
+30 October 2026 update. The target remains arbitrary fixed k>=2 and
+independently sufficiently long FIXED signed twists, with the knots and
+slopes fixed before the quantum level tends to infinity. It remains a
+CONJECTURE for a general essential hyperbolic augmented skeleton.
 
-## Current critical path: the selected complex packet and the original period
+There is now a whole-source intermediate theorem: the
+[original untwisted augmented source](general_untwisted_augmented_source_volume.md)
+has limit equal to the actual complete volume for every fixed connected
+plat with the stated labeled right-angled certificate. Both parities and
+composite levels are included. This is an augmented-LINK theorem, not a
+long-filled knot theorem; zero-half-twist standard plats have several
+main components, and full twists do not join them.
 
-The actual completed matching edge is the generic operator D_a^-1 p_a(Omega).
-Its [entire finite root kernel](actual_matching_edge_entire_operator_kernel.md)
-retains every physical support zero. The
-[fixed deficient factorization](actual_q_hahn_deficient_degree_packet.md)
-separates forced zeros from a positive-root Jacobi determinant, and the
-[joint deficient packet](actual_q_hahn_joint_deficient_degree_packet.md)
-now proves a selected action and nonzero relative amplitude in a complex
-neighborhood of the ACTUAL geometric frame. Degree and magnetic
-coordinates may vary together. This reaches the chamber beyond physical
-bandwidth at every fixed width under the marked geometric certificate.
+The new proof uses the [exact positive face coefficient](actual_original_marked_face_coefficient.md),
+its [global torus saddle](actual_positive_face_coefficient_saddle.md), the
+[uniform all-channel bound](actual_positive_face_channel_rate.md), and the
+[absolute facet-coning volume](actual_original_boundary_stationary_character.md).
+All original scalar factors and the primitive finite-grid measure are
+retained. The complete untwisted contraction no longer needs an assumed
+relative-cycle coefficient. General retained half twists still require
+signed-channel noncancellation. General long fillings additionally require
+the complex packet and full complementary/alias estimate in EXTERNAL
+crossing-circle colors; these are not the internal folded labels just
+controlled. The current dependency map is in the
+[frontier chapter](../book/chapters/frontier.md).
 
-The [full generic exceptional lift](actual_matching_edge_generic_deficient_operator_lift.md)
-now retains both actual LARGE numerators, every original boundary
-factor and the moving scalar of the literal p/E operator. The
-[moving-period factorial](actual_moving_period_factorial_normals.md)
-supplies a specified continuation. Every fixed genuine derivative has
-subexponential relative cost when (N-1-2a) log N=o(N) on a slightly
-NONREAL geometric degree chart. These upper bounds do not prove a
-nonzero leading normal amplitude. The large and small channels coincide
-at the root but their quantum normals differ.
-
-The same factorial has exact unit and moving-period shift equations.
-The [actual tensor-source connection](actual_tensor_source_finite_jet_connection.md)
-has an explicit rational cup gauge G. After imposing the original
-primitive free head lattice, its operators are exactly
-chi(b) G exp[(N-P)D_b] G^-1. Finite quantum jets are commuting and
-unipotent after retaining their root parity character. G can carry
-leading exponential action and remains in the original period.
-The [adjoint period identity](actual_tensor_source_translated_cycle_normals.md)
-transports the retained cotangent density too, including its double-pole
-corrections. These exact identities do not wrap the physical basis.
-The
-[degree-cycle boundary theorem](actual_matching_edge_degree_cycle_boundary.md)
-adds forbidden physical points as zero ORDERED PERIODS under its actual
-free-lattice and complement-regularity hypotheses. It computes the
-channel residues, cotangent finite parts and original source-normal
-coefficients required when that enlarged cycle moves. A late-wall
-normal residue has nonzero order-one coefficient times its root density;
-this is not yet a coefficient of the whole geometric saddle.
-
-The [absolute reflected regulator](actual_matching_edge_deficient_packet_regulator.md)
-has no uncomputed constant. Exact source reflection has scalar one;
-the endpoint Bloch symbol preserves the actual diagram volume. Literal
-turn and degree-log characters must stay in the action and in its marked
-winding sectors. At FULL source-marked stationarity the critical action
-has real part Vol(Y_D)/(2pi).
-
-The [complete local marked-density theorem](actual_augmented_plat_local_marked_density.md)
-now proves nonzero fixed-channel source density and a nonzero local
-folded-channel Gaussian at BOTH level parities. It starts from the
-actual unrestricted root mark, so the complete-circle paired normal
-is already included. This is a complete-color local result; it does
-not assert a nonzero individual q-normal coefficient. The transverse
-magnetic Gaussian is nonzero per unit framing volume. The framing
-orbit and its coefficient in the original period are not integrated.
-
-The main unresolved theorem is GLOBAL: transport the original degree
-and magnetic cycle, retaining finite-head boundary terms and crossed
-poles; prove a nonzero geometric coefficient and control competing
-colors. A forbidden physical integer degree slice is identically zero,
-including genuine generic normals. Its magnetic contour alone cannot
-acquire a nonzero period just because the continued local packet is
-nonzero. The general long-twist volume equality remains OPEN.
-
-The [common charged-current theorem](actual_matching_graph_common_band_ward_current.md)
-now constructs the meromorphic Ward equations on one primitive lattice
-before finite contraction, retaining every band's own support cycle.
-The [logarithmically escaping factorial estimate](actual_moving_period_factorial_logarithmic_escape.md)
-and [original root boundary packets](actual_q_hahn_resonant_hard_edge.md)
-control specified factors at r of order N. The
-[genuine quantum boundary packet](actual_q_hahn_generic_resonant_hard_edge.md)
-keeps t=N^2 epsilon: its normalized limit is
-0F1(;1-t/(pi i);-K), with exact source normalization and true normal
-limits. Root partner zeros and excluded divisors remain. These local
-boundary results do not yet supply a whole-source relative coefficient
-or the complementary-color gap required for the general equality.
-
-The [literal boundary sign theorem](actual_right_angled_resonant_prefix_signs.md)
-now supplies the actual negative finite clocks and positive mixed total.
-The [complemented-head identity and outgoing packet](actual_q_hahn_complementary_hard_edge.md)
-and [finite-clock boundary determinant](actual_q_hahn_negative_clock_boundary.md)
-control further original numerator regimes, including the folded channel.
-The exact source-current theorem below also gives a continuous ROOT
-band-weight family extracting the same invariant after an explicit
-bounded normalization near the resonant boundary. This is a prescribed
-source functional, not a new integration cycle or an estimate of its
-unknown scalar. At the complete root it reduces to the existing coherent
-cut with t_eff=t/[p(1-t)+t], leaving the residual framing freedom.
-Its genuine quantum-normal defect is nonzero.
-
-The [actual framing-density theorem](actual_augmented_plat_framing_density_source_ward.md)
-now identifies the local source form as
-Omega_src=-c_D dr wedge ds/[s(1+s)], with c_D nonzero and independent
-of the framing point. Its proof uses the actual independent-head
-large-polynomial Ward identities, finite offsets, original marked
-co-source and Gaussian Jacobian. At fixed first-cut clock the residual
-form is c_D d(r/s), so its actual relative ends still matter.
-
-The [finite residual current](actual_braided_residual_framing_current.md)
-retains two routed off-diagonal bands and gives exact integration by
-parts with both physical interval ends and genuine quantum derivatives.
-Its complete Fourier current has three-node support but still has the
-unknown whole scalar as coefficient. Its band periods are specified;
-the common-current theorem above supplies the off-grid equations, while
-the original chain's pushforward to the geometric framing boundary
-remains unproved.
-
-The [braided two-cut theorem](actual_braided_two_cut_source_adapter.md)
-now gives an exact alternative functional for the SAME original marked
-scalar at arbitrary bridge width, also between different Morse levels.
-For the actual transported array J^U and genuine pivotal vector g,
-J^U 1=z1 and g^T J^U=z g^T. The braid bands and generic derivatives
-remain present. The residual array has dimension (N-1)^2; these
-identities do not independently fix two head values or prove a
-geometric framing coefficient. They supply a concrete source identity
-for the global transport task, without narrowing the target class.
-
-30 October 2026. The target is an original Kashaev volume equality for
-arbitrary fixed bridge number and arbitrary fixed essential twist
-skeleton. A Conway seed grammar is an established application, not the
-definition of the intended general class. The statement below remains
-a CONJECTURE until the full source estimates and selection of the
-geometric period are proved for its general skeleton.
+The older source, operator, Fourier and torsor tools are preserved below
+with their own scopes. They are not an assertion that the general filling
+inputs have now been proved.
 
 ## 1. Quantifiers and the actual diagram
 
@@ -228,9 +122,9 @@ Consequently the long-twist problem does not require a new surgery
 formula for each bridge number. The same exact filling map is already
 available. What is missing generally is control of its input A_D.
 
-## 4. The three tasks on a general augmented skeleton
+## 4. Inputs still needed for general signed long fillings
 
-**Full quantum source.** Establish an exact holomorphic color packet
+**Full mixed-color quantum source.** Establish an exact holomorphic color packet
 for A_D near the complete colors, with a uniform complex asymptotic,
 and an exponential gap on the ENTIRE physical color complement.
 The estimate must include all aliases and normal currents. A bound
@@ -302,7 +196,7 @@ Its negative real part gives a local channel elimination at the
 geometric endpoint, while holding the magnetic variables as parameters.
 It supplies no nonzero cycle coefficient or magnetic asymptotic.
 
-## 5. What the current general work is changing
+## 5. Preserved operator and Fourier routes
 
 The [complete source compiler](actual_augmented_plat_phase_compiler.md)
 and [all-color compiler](actual_mixed_augmented_plat_compiler.md)

@@ -2,6 +2,16 @@
 
 The project seeks equality for broad classes of hyperbolic knots, with the right side established as the volume of the actual complement. The results below are research proofs recorded and internally reviewed in this repository. They are not claims of external peer review.
 
+## Complete untwisted augmented links at arbitrary width
+
+The [general untwisted source theorem](../../notes/general_untwisted_augmented_source_volume.md) covers every fixed connected augmented plat carrying a labeled convex ideal right-angled polyhedron for its actual projection and crossing-disk cut. There is no restriction on bridge width, matching graph, or a Conway grammar. With every retained half-twist exponent zero, the original marked complete-circle source satisfies
+
+$$\lim_{N\to\infty}\frac{2\pi}{N}\log|A_{D,N}|=2\operatorname{Vol}(Q_D)=\operatorname{Vol}(Y_D).$$
+
+Both level parities and composite levels are included. The proof converts the whole finite source into positive face coefficients, proves a global coefficient saddle and an all-channel upper bound at shared geometric radii, and computes the absolute action by coning the actual facets. Every original scalar, support condition and marked measure remains in the identity.
+
+This is a complete augmented-link result. In a standard adjacent-cap plat, the untwisted main strands have several components; full twists cannot join them. General signed half-twist cancellation and the external-color packet needed for long fillings remain open. The theorem also requires the labeled geometric certificate; it does not assert that every reduced plat supplies one. The [coverage comparison](../../notes/general_untwisted_augmented_source_literature_coverage.md) credits earlier overlapping link results and checks the parallel-belt parity obstruction.
+
 ## Full original-source equalities
 
 The Conway results start with a crossing-circle box, turn it by a quarter turn, and call the resulting piece $h$. Stack $s$ such pieces to form a seed $A_s=h^s$. The [arbitrary-width extension](../../notes/actual_conway_arbitrary_width_seeds.md) allows every fixed $s\geq3$, including mixtures of widths. Build larger tangles by stacking previously built tangles or rotating them by a quarter turn $R$, retaining every auxiliary crossing circle. The grammar $E::=A_s\mid RE\mid EE$ records those operations. A cylindrical closure joins corresponding top and bottom endpoints around the outside; cap closure instead pairs endpoints on each end.

@@ -1,0 +1,303 @@
+# The original marked source is one positive face coefficient
+
+30 October 2026. Independently reviewed and frozen. For every fixed folded
+channel assignment, the literal complete-circle plat source equals one
+coefficient of an explicit homogeneous polynomial with nonnegative real
+coefficients, times its known scalar and retained half-twist phases.
+The proof retains the original marked cap, finite support, primitive
+measure and both level parities. It does not substitute a newly chosen
+period for the physical source.
+
+The identity below is finite and exact. It does not yet estimate that
+coefficient, prove it nonzero for every channel assignment, or establish
+a hyperbolic-volume asymptotic.
+
+## 1. Literal source and polynomial
+
+Fix a connected 2k-plat projection, k>=2, with all crossings in R
+recorded two-strand boxes. The exterior contains the actual k bottom
+cups and k top caps, one of the latter carrying the ORIGINAL unrestricted
+mark. Retain each box's half twist epsilon_i in {0,+1,-1}. The source is
+the [original complete-circle contraction](general_matching_graph_full_normal_source.md),
+not a routed replacement. Any separately recorded exterior framing line
+multiplies both sides of the identity below and is not erased.
+
+Remove half twists only in the planar graph used to name its regions;
+their exact scalars omega_(a_i)^epsilon_i remain in the source. The plane
+matching graph Delta has R+2 white faces. Let u be the exterior face and
+v the bounded face inside the actual marked top cap. These are the two
+faces adjacent to the marked physical edge. Write F_* for the other R
+faces. The geometric certificate is not needed for the finite identity;
+when it is present these are exactly the two constant-prefix faces of
+the resonant chart.
+
+Connectedness here concerns the planar source graph, not the number of
+main link components. Multiple main components are allowed. In particular
+the all-untwisted standard 2k-plat generally retains k main components;
+the positive untwisted specialization is a statement about that augmented
+LINK source, not automatically a family of k-bridge knots.
+
+Put N>=3, d=N-1, q=exp(pi i/N), Q=q^2. For each actual integer label
+0<=a_i<=floor(d/2), set s_i=d-2a_i and
+
+    beta_a=S_(2a)/S_a^2, S_j=product_(r=1)^j 2sin(pi r/N),
+    k_a=1 if s=0, and k_a=2 otherwise.
+
+Use the exact local factors proved in the
+[positive-circle theorem](actual_complete_circle_positive_face_polynomial.md):
+
+    D_a(x,z,y)=det[z I+(x/2)H_-+(y/2)H_+],
+    Ptilde_s(x,y)=sum_(j=0)^s S_s/[S_j S_(s-j)] x^(s-j)y^j.
+
+At box i let (f0,fin,fout,f2) be its ORIGINAL outer, input-middle,
+output-middle and final white regions. Define
+
+    P_(N,a)(L)=product_i
+       D_(a_i)(L_f0,L_fin,L_f2)
+       D_(a_i)(L_f0,L_fout,L_f2)
+       Ptilde_(s_i)(L_f0,L_f2).                       (1)
+
+Repeated region labels, if the actual plane diagram has them, are
+substituted literally. Every coefficient of (1) is nonnegative real,
+and its total degree is sum_i(2a_i+s_i)=dR. Define
+
+    C_(N,a)=[product_(f in F_*) L_f^d]
+                  P_(N,a)(L) evaluated at L_u=L_v=0. (2)
+
+The fixed-channel contribution A_(N,a)^epsilon to the original marked
+root source is EXACTLY
+
+    A_(N,a)^epsilon
+       =N^R product_i[k_(a_i) beta_(a_i)^2
+                          omega_(a_i)^epsilon_i] C_(N,a). (3)
+
+Thus C_(N,a)>=0, with zero allowed. The full original source is the
+finite sum of (3) over its original folded labels. In particular the
+untwisted terms have a positive coefficient description; signed half
+twists retain their actual channel phases. No cancellation between
+different half-twisted channels is ruled out by (3).
+
+## 2. A signed face index in the original flat-plat sweep
+
+Use the actual bottom-to-top order of physical heads and adjacent
+boxes. Number the gaps between strands by g=1,...,2k-1. Odd gaps start
+inside a bottom cup and end inside a top cap. Even gaps start and end
+in the exterior. A box on zero-based slot a replaces ONLY the region
+in gap g=a+1: its old middle region ends at the input pi vertex, and
+its new middle region starts at the output W vertex. All other gap
+regions continue through the box unchanged.
+
+Let M_f count these middle corners in face f. Let T_f be the signed
+ordinary physical turn incidence: each original cup or cap contributes
++1 to its outside face and -1 to its inside face. These signs are the
+literal source signs: both cup and ordered ordinary cap have the same
+positive first-head monomial q^(d i) on i+j=d. In particular a top cap
+does not acquire an independently reversed sign.
+
+Every bounded segment in an odd gap has two ends, each either a middle
+corner or an inside cup/cap. Every bounded segment in an even gap has
+two middle ends. Therefore
+
+    M_f-T_f=2 for every bounded face.                 (4)
+
+Connectedness forces at least one box in each internal even gap: an
+unused such gap would separate the source projection into two disjoint
+plat blocks. Each of the k-1 even gaps therefore contributes two middle
+ends to the exterior, whereas all 2k cups/caps contribute their outside
+incidence there. Hence
+
+    M_u=2(k-1), T_u=2k, M_u-T_u=-2.                   (5)
+
+This is the signed Euler turning identity in the literal Morse
+convention. Equivalently, middle corners and inside turns contribute
++1 to twice the tangent winding of a face boundary; outside turns
+contribute -1. The sweep proof specifies all signs without selecting
+an arbitrary face orientation.
+
+The literal pi dualization does not invalidate (4). It reverses all
+three ports, and each adjacent face sees two of these local reversals.
+More directly the exact complete-circle factor already combines its
+auxiliary cup and two inverse physical cups, leaving precisely the two
+middle denominators with exponent d/2. There are no unrecorded turns
+to add after applying that exact factorization.
+
+## 3. The original mark gives exactly the two missing face exponents
+
+Use centered face logarithms. For an ordered physical pair with outside
+face x, middle face z and final face y,
+
+    i=d/2+N(Log L_x-Log L_z)/(2pi i),
+    j=d/2+N(Log L_z-Log L_y)/(2pi i).                  (6)
+
+On each actual cup/cap y=x. The exact complete-circle expression is
+its scalar k_a beta_a^2 times its numerator in (1), divided by the
+product of its two middle variables to power d/2. Thus the ordinary
+whole-source face monomial has exponent (d/2)(T_f-M_f). Equations
+(4),(5) give
+
+    L_u^d product_(f != u) L_f^(-d).                  (7)
+
+This holds also at EVEN levels: d/2 may be half-integral locally, but
+the assembled exponents in (7) are integers. Every local logarithmic
+lift is retained until this assembly.
+
+The mark sign is fixed by the original ordered matrices. At its cap
+with first head i and SECOND head j=d-i,
+
+    ordinary cap(i,j)=N^-1 q^(di),
+    mark(i,j)=N^-2 q^(dj).
+
+The original mark is unrestricted before contraction. The k bottom
+cups fix total physical degree kd, every actual box preserves that
+integer degree, and the other k-1 top caps use degree (k-1)d. Thus
+the two surviving marked endpoints necessarily have i+j=d. This is
+a consequence of whole-source conservation, not an early diagonal
+replacement of the marked tensor.
+
+Their ratio is N^-1 q^(-d^2)Q^(dj). The second head is the one whose
+raw face clock is -L_v/L_u. On the centered lift (6), the ratio is
+
+    N^-1 (L_v/L_u)^d.                                (8)
+
+Using the first head in (8) would reverse the marked character and
+give an incorrect target coefficient. Equation (8) changes exponent
++d to zero at u, and exponent -d to zero at v. All other exponents
+remain -d. No integral character has been selected anew or discarded.
+
+For completeness, the source constants also agree exactly. There are
+k cups N q^(-d^2)q^(di), k-1 ordinary caps N^-1 q^(di), and one marked
+cap N^-2 q^(dj). Each centered physical head contributes the constant
+q^(d^2/2); these 2k constants cancel the k cup factors q^(-d^2).
+Their total scalar is therefore precisely N^-1. Consequently the
+assembled meromorphic root product is
+
+    N^-1 product_i[k_(a_i)beta_(a_i)^2omega_(a_i)^epsilon_i]
+           P_(N,a)(L) product_(f in F_*) L_f^(-d).     (9)
+
+The local root cup poles have been canceled by the proved complete-circle
+identity before (9) is used. No generic-q cancellation is inferred.
+
+## 4. Primitive face grids at both parities and exact physical support
+
+The centered homogeneous source lattice is the cycle lattice of Delta.
+Its integral identification with face-potential differences modulo a
+constant is proved in
+[the original rank theorem](actual_original_boundary_transverse_rank.md),
+section 1. Fix the exterior face potential to zero. There are R+1
+independent integral face potentials, with no finite-index Jacobian.
+
+At ODD N, d/2 is integral. Set L_u=1 and let every other L_f range
+independently through mu_N={Q^p:0<=p<N}. Formula (6) gives integral
+heads. At EVEN N there is an exact specified coset. Give each main
+edge the Z2 value1 and each matching edge the value0. Every shaded
+triangle has two main edges and one matching edge, so this cochain
+sums to zero on each triangle of the dual sphere. It integrates to
+face values t_f in Z2, unique after setting t_u=0. In the literal
+plat sweep this is simply the parity of the gap in which a region
+is born; the exterior has parity0. In particular t_v=1.
+
+Use the grid
+
+    L_f=q^(t_f) Q^(p_f), p_f in Z/N, L_u=1.           (10)
+
+On a main edge, d+t_left-t_right is even, so (6) is integral. On a
+matching edge, its auxiliary row is a plus a face-potential difference;
+the matching parity0 makes that integral too. The physical cup
+complements and all channel equations hold on the chosen affine lifts.
+The number of grid points is exactly N^(R+1) at either parity.
+
+There are no extra physical states hidden in this modular grid. Reduce
+physical heads to 0,...,d. The local support theorem proves that a
+surviving circle has BOTH physical totals in the actual interval
+[d-a,d+a], which contains at most N integers. Their congruence modulo
+N therefore forces equality as UNWRAPPED totals, with the original
+auxiliary row in [0,2a]. Unsupported pairs are killed by the small white
+or by the ONE forced factor retained after the cup cancellation. This
+is a zero of the entire root circle, not an undefined zero times a pole.
+Cups/caps similarly have unique physical total d in their congruence
+class. Thus every nonzero grid point gives an actual allowed state.
+
+Conversely every allowed state defines one grid point by the primitive
+face-potential isomorphism. Distinct allowed states cannot differ by
+N times a nonzero flow, since every head lies in an interval of length
+less than N. The actual allowed states are therefore exactly the
+possibly nonzero grid points, with zero points harmlessly included.
+
+Finally retain the even-level carry signs rather than canceling them
+locally by fiat. A surviving canonical state and its chosen affine
+lift differ by N times an integral CLOSED source flow. By the integral
+face-potential theorem this is N times integral face shifts. The full
+expression (9) has integer face exponents and is unchanged by such
+shifts. Hence the product of the local recorded carry multipliers is
+one. This proves the global carry cancellation in the actual source;
+it does not assert independent periodicity of each physical tensor.
+
+## 5. A unique alias and the exact measure
+
+Write the nonnegative-coefficient polynomial as
+P_(N,a)=sum_n c_n product_f L_f^(n_f), with n_f>=0 and
+sum_f n_f=dR. In (9), the target exponents are0 at u,v and d at the
+R other faces. Averaging independently over (10) annihilates a monomial
+unless
+
+    n_v=0 modulo N,
+    n_f=d modulo N for f in F_*.
+
+Because 0<=d<N, nonnegativity forces n_v>=0 and n_f>=d. Their minimum
+total already equals dR. Homogeneity therefore forces
+
+    n_u=n_v=0, n_f=d for every f in F_*.
+
+There is exactly ONE possible alias, namely the actual coefficient (2).
+At that exponent the even coset multiplier is1. The normalized face
+average equals C_(N,a), and the unnormalized source sum multiplies it
+by N^(R+1). Together with the single N^-1 in (9), this proves (3).
+No second boundary average or matching-edge trace factor is inserted.
+
+The same calculation also checks the original unmarked ordinary root
+closure. Its monomial is (7), so every one of the R+1 bounded faces
+would require polynomial degree at least d. This exceeds the total
+degree dR. Its whole root sum is consequently zero, as required by
+the original trace-normal identity. The mark is essential to the
+nonzero admissible target, not an optional renormalization.
+
+## 6. Scope and review
+
+Formula (3) is the original fixed-channel ROOT contraction, not merely
+an equality of off-grid interpolants or local density values. It uses
+the proved canceled root circle and its exact modular-support zeros.
+It does not replace genuine generic-q lifts or their normal derivatives.
+The source weights h0 already include the actual complete-circle normal.
+
+The finite formula is valid at both parities and composite levels.
+All folded labels occur. A positive geometric certificate supplies
+additional candidate angle data but is not inferred from positivity of
+the polynomial. Estimating (2), proving a sharp full-channel bound with
+retained signed phases, and identifying the filled mixed-color limit
+remain separate tasks. No volume conjecture is asserted here.
+
+The [focused audit](../experiments/audit_actual_original_marked_face_coefficient.py),
+with [recorded results](../experiments/actual_original_marked_face_coefficient_results.json),
+checks 735 signed flat-plat sweeps and 15,386 exact marked face exponents.
+It compares 17 original fixed-sector W/pi matrix contractions, including
+the unrestricted original mark, with the independently built determinant
+coefficient. Its full face-grid checks cover 19,737 assignments: 2,179
+supported states, 17,558 forbidden states, and 117 nontrivial even-level
+carry cancellations. Both level parities and composite levels occur;
+ordinary root closure zero is checked separately. These are finite
+identities over exact cyclotomic finite fields, not numerical evidence
+for an asymptotic or a nonzero coefficient in every sector.
+
+Independent primary full analytical review and fresh redirected replay:
+PASS. The reader checked the signed sweep, second-head mark, exact N^-1
+scalar, primitive parity-coset grids, global carry cancellation, local
+support interval, unique alias and original ordinary-closure zero.
+Every focused-audit count was independently reproduced.
+
+Independent peer full analytical review and fresh redirected replay:
+PASS. The reader independently checked the original unrestricted mark
+and whole-degree restriction, both-parity measure, retained forced
+factor and finite support, and exact coefficient extraction. Every
+focused-audit count was reproduced, including the nontrivial even
+carries. The connected multi-main-component scope and the absence of
+an asymptotic or a nonzero-coefficient assertion were retained.

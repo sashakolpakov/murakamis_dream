@@ -22,7 +22,7 @@ Under the geometric strip conditions, the common framing flags determine a line 
 
 ## Two framing directions and a primitive transverse slice
 
-For the certified original matching graph, the finite boundary cores equate all quadratic white-face potentials. The two constant-prefix faces leave exactly two flat directions. The marked physical head and one neighboring original physical head detect them with determinant $\pm1$. The [rank and curvature theorem](../notes/actual_original_boundary_transverse_rank.md) therefore gives a uniformly invertible transverse Hessian. This is a choice of source coordinates; the boundary stationary equation and the coefficient in the original period are separate questions.
+For the certified original matching graph, the finite boundary cores equate all quadratic white-face potentials. The two constant-prefix faces leave exactly two flat directions. The marked physical head and one neighboring original physical head detect them with determinant $\pm1$. The [rank and curvature theorem](../notes/actual_original_boundary_transverse_rank.md) therefore gives a uniformly invertible transverse Hessian. This is a choice of source coordinates. The [positive face coefficient theorem](../notes/actual_positive_face_coefficient_saddle.md) uses the same connected graph to establish its global saddle; signed channel sums and external filling colors remain separate.
 
 ![Two constant-face potentials and the neighboring original physical heads that give a primitive transverse slice.](figures/face-potential-rank.png)
 

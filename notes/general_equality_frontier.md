@@ -1,5 +1,7 @@
 # General equality: proved scope and the remaining original-source problem
 
+30 October 2026 update: the [complete untwisted augmented source](general_untwisted_augmented_source_volume.md) now has an all-level volume equality for every connected labeled right-angled certificate at arbitrary fixed width. Its exact positive face coefficient, global saddle, all-channel upper bound and absolute coning action replace the previous complete-untwisted contraction gap. General signed channel cancellation and the external-color packet for long-filled knots remain open. The earlier routes below retain their own scopes; the [current guide](../book/chapters/frontier.md) gives the active dependency map.
+
 30 October update. The [source-preserving odd period](actual_source_preserving_odd_framing_period.md)
 now recovers the unchanged original scalar from two actual neighboring
 bands, with inverse normalization at most N on a real coherent cut.

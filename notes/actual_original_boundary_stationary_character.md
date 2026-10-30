@@ -1,0 +1,559 @@
+# The original marked boundary source and its transverse stationary point
+
+30 October 2026. Independently reviewed. This concerns the specified original
+six-type boundary source, at fixed real integer channel labels approaching
+the fold. Its actual marked cap cancels the limiting linear magnetic
+force. This gives a nearby transverse stationary point and a constructed
+local period. It does not identify their coefficient in the original
+support cycle. An independent coning calculation below identifies its
+absolute leading real rate with Vol(Q)/pi, where Q is the actual
+right-angled half-polyhedron; it does not use a finite-r sheet assertion.
+
+The logarithmic source coordinates, exact scalar factors and original
+mark are part of the statement. No additional winding character is
+introduced in the marked-source conclusion.
+
+## 1. The literal regular circle lift has no extra root character
+
+Put d=N-1, q=exp(pi i/N), Q=q^2, 0<=a<=floor(d/2),
+m=d-a, s=d-2a, and F_j=(Q;Q)_j. Write S_j for the positive
+sine factorial and beta_a=S_(2a)/S_a^2. Retain the original constants
+
+    h0_a=k_a N beta_a, gamma_a=q^(2-a^2)/N^2,
+    P_s(T)=product_(j=a)^(m-1)(T-Q^j).
+
+All heads in this section use the specified moving-factorial continuation
+of the [regular original source](actual_original_network_resonant_source_envelope.md).
+Let sigma=i+j, r=sigma-m, x=2a-r=d+a-sigma, T=Q^sigma.
+At the root its ordinary channel cup is exactly
+
+    p_(2a)(x)=F_s q^[2m(d+a)] T^(-a)/P_s(T).           (1)
+
+This is a meromorphic identity, including its removable specializations.
+Indeed the fixed-root factorial reflection first gives
+
+    p_(d-s)(x)=F_s exp(pi i x) q^[(s-1)x]
+                      /product_(j=1)^s(1-Q^(x+j)).
+
+At x=d+a-sigma its denominator is T^(-s)P_s(T), and
+exp(pi i x)q^[(s-1)x]=q^(2mx). This proves (1) with its
+literal logarithmic character.
+
+The actual generic reversal, specialized only after it is used, gives
+
+    W_a(d-j,d-i;2a-r)=q^[s(a-r)] W_a(i,j;r),
+    pV(d-j)pV(d-i)=N^2 q^(-d sigma).
+
+Thus the literal categorical dual is retained in the product. For an
+output row R and input row S at the same total sigma, substitute
+
+    W_a(R,sigma-R;r)
+       =(-1)^m q^[d(R-sigma)+m(a+1)] H_m(Q^R,Q^(sigma-R))/F_m
+
+and the same formula for S. Use the exact root collision
+H_m=P_s(T)H_a and H_a=q^(a sigma)K_a R_a, where
+K_a=F_(2a)/F_a^2 and R_a has its actual monic normalization.
+The remaining head dependence of h0_a W_a pi_a is
+
+    q^[d(R+S)-2m sigma] P_s(T)
+       R_a(q^(sigma-2R);c_sigma)R_a(q^(sigma-2S);c_sigma).
+
+The entire coefficient C_a in the
+[absolute regulator normalization](actual_matching_edge_deficient_packet_regulator.md)
+has precisely this dependence, because its residual sine product obeys
+
+    V_a(d-sigma)=q^(-sd-s sigma)P_s(T).
+
+The ratio of the two scalars, retaining gamma_a and h0_a, reduces by
+F_j=(-i)^j q^[j(j+1)/2]S_j and S_j S_(d-j)=N to
+
+    q^[-2N(-2N+a+3)]=1.
+
+Consequently, as the SPECIFIED root continuations,
+
+    h0_a W_a pi_a = C_a.                               (2)
+
+This uses both actual LARGE numerators and the actual dual cups. It
+does not differentiate a root collision, identify moving-q germs, or
+replace the separately recorded bare canceled/turned continuation by
+this one. The retained half twist is a fixed-channel scalar on both
+sides and changes no magnetic derivative.
+
+There is a useful exact homogeneous form, valid for EVERY folded label;
+the [positive face-polynomial theorem](actual_complete_circle_positive_face_polynomial.md)
+gives its independent local proof, both-parity carry convention, full
+coefficient positivity and the physical support-zero audit.
+Define
+
+    D_a(x,b,y)=det[bI+(x/2)H_-+(y/2)H_+],
+    Ptilde_s(x,y)=product_(j=a+1)^(d-a)(x-Q^j y).
+
+For positive formal face diagonals x=L0, y=L2 and the two middle
+diagonals b,c, use the marked raw clocks -x/b,-b/y and -x/c,-c/y.
+Then (2) is exactly
+
+    h0_a W_a pi_a
+      =k_a beta_a^2 D_a(x,b,y)D_a(x,c,y)Ptilde_s(x,y)
+                                            /(bc)^(d/2). (2a)
+
+Indeed H_a=(-q^-1)^a K_a D_a/L2^a and
+P_s(Q^sigma)=q^(-2s)L2^(-s)Ptilde_s. Substitute these into
+the calculation above. Its remaining scalar phase is
+(-1)^d q^[d-sd-2s-2a]=(-1)^(d+s)=1. In this computation
+q^sigma=-q^-1 sqrt(x/y) and the two negative physical raw clocks
+have their canonical argument pi. The identity extends with those
+marked half powers; at odd N the powers are integral. This is not
+a replacement of an even-level marked square root by an unrecorded
+principal branch. The numerator in (2a) has degree 2a+s=d.
+
+## 2. Source coordinates and the local angle-force input
+
+Fix the labeled certified diagram and the common boundary sample
+r_frame=N rho, s_frame=exp(-2pi i alpha)-1. The parameters range in
+the compact sets of the
+[common boundary chart](actual_original_network_resonant_boundary_chart.md).
+Keep the actual physical half-index shifts, auxiliary integer offsets,
+all original turns, the ordinary or marked exposed cap, and fixed labels
+with S=sum_i(d-2a_i)=o(N).
+
+Use LOGARITHMIC CLOCK potentials Z_f, not normalized head potentials.
+Their homogeneous physical variations are
+
+    delta h_e=N(delta Z_left-delta Z_right)/(2pi i).    (3)
+
+The [literal face-lattice theorem](actual_original_boundary_transverse_rank.md)
+proves that the integer face differences give the original primitive
+homogeneous lattice. A common additive constant is immaterial. Exactly
+two faces have constant prefixes; write Qcal for the other, quadratic
+faces. The actual sample has Z_f=Log L_f with all source marks retained.
+
+For clarity the local analytic input needed here is stated explicitly.
+At an ordered white triangle with faces f0,f1,f2, let theta_j be the
+angle at the center of its j-th circle in the tangent-circle triangle.
+A constant-prefix line has limiting angle zero. At the common sample,
+the normalized logarithmic derivative of its literal W numerator and
+white monomial tends uniformly to
+
+    sum_(j=0)^2 theta_j dZ_fj/(2pi) - dZ_f1/2.          (4)
+
+The theta sum is pi. This statement is obtained from the actual finite
+cores, not from a finite-r identification of their sheets with the
+geometric critical branch. For 222, with
+alpha_*=a_f0/(2a_f1), beta_*=a_f2/(2a_f1), its derivatives are
+
+    theta_0/(2pi)=atan(2alpha_*/sqrt(2alpha_*+2beta_*+4alpha_*beta_*))/pi,
+    theta_2/(2pi)=atan(2beta_*/sqrt(2alpha_*+2beta_*+4alpha_*beta_*))/pi.
+
+The actual H Ward equations and positive finite determinant select
+these angles. The 220 and 022 formulas are their one-line limits.
+The 202 positive polynomial gives theta_0=2atan(sqrt(T_raw)) and
+theta_2=pi-theta_0. The 200 and 002 top terms give respectively
+(theta_0,theta_1,theta_2)=(pi,0,0) and (0,0,pi). All root partner
+products and near-fold cup corrections are retained; their normalized
+first-derivative errors tend to zero when S=o(N).
+
+Here are source proofs of the force limits, including the boundary cases.
+Put p=N^-1 partial_logU Log H and r=N^-1 partial_logV Log H.
+The exact two white Ward equations, the O(N) second-log-derivative
+bounds, and Q=exp(2pi i/N) give at the fold
+
+    (1-U)t_U+U(1-V)t_V=1+UV,
+    (1-U)/t_U+U(1-V)/t_V=1+UV,
+    t_U=exp(2pi i p), t_V=exp(2pi i r).               (4a)
+
+The errors before taking the limit are O((s+1)/N) on a 222 compact.
+Its positive matrix gives p,r in a compact subset of (0,1/2): each
+relevant positive trace has a bulk lower bound, as does its complement.
+For U=-u,V=-v the unique upper-semicircle solution is
+
+    p=atan(u sqrt(v)/sqrt(1+u+uv))/pi,
+    r=atan(sqrt(v(1+u+uv)))/pi.
+
+Its triangle discriminant is positive and separated from zero on the
+specified compacts. Thus it gives uniform derivative convergence,
+not just an identity satisfied by a putative geometric saddle.
+The elementary circle cosine law makes these exactly the angles in (4).
+
+For 220 the determinant-rate theorem extends to its zero second
+coefficient uniformly using H_+<=2H_-+8I. Its fixed holomorphic
+logarithmic bounds give derivative convergence. At the fold the
+derivative integral is
+
+    integral_0^(1/2) [1-cos(pi t)/sqrt(cos^2(pi t)+u)]dt
+       =atan(sqrt(u))/pi.
+
+The last equality follows by y=sin(pi t). The other H force tends to
+1/2. Exact reciprocity gives 022. For 202 the positive coefficient
+ratios give the mode equation
+
+    tan(pi kappa)=sqrt(T_raw)sin(pi a/N)
+                             /[1+sqrt(T_raw)cos(pi a/N)].
+
+The already proved Gaussian weight bound and variance O(N) imply
+mean/N-kappa=O(N^-1/2), uniformly. This tends to the stated atan
+formula. Finally the exact top terms of 200/002 have H forces
+(m/N,m/N)+O(N^-1) and (0,0)+O(N^-1), respectively. Their nonzero
+Bessel remainders have bounded logarithmic derivatives. Multiplication
+by the original white monomial subtracts d/(2N) from the second
+H force. The large partner and root cup corrections cost O((s+1)/N)
+in normalized first derivatives, using the actual separated factors.
+These arguments prove (4), locally uniformly with its marked phases.
+No uniform quantitative rate beyond o(1) is needed below.
+
+## 3. The integer covector is computed from the original turns
+
+At a literal physical cup or cap write its first-head variable as its
+actual signed face difference plus the affine offset. The exact root
+cup pV(x)=N q^(-d^2)q^(dx), and its ordered inverse cap, contribute
+in the normalized limit one half of a SIGNED face difference.
+Let epsilon_(b,f) be that signed incidence for the original turn b.
+This is read from the cup or cap entry; it is not chosen afterward.
+Let chi_f be the integer face-incidence vector of the retained marked
+versus ordinary cap character. For the specified mark this follows
+directly from Xi_N(x)=N^-1 q^(-d^2)Q^(dx). Here x is the SECOND
+ordered cap head: the original cap and mark are q^(di)/N and
+q^(dj)/N^2 at (i,j)=(d-x,x). If u is the cap's outside face and
+v its inside face, the raw second clock is -L_v/L_u; the mark
+therefore contributes +1 at v and -1 at u. A retained literal cyclic
+turn is treated by its actual monomial in the same way.
+
+Let M_f count the middle white corners at the trivalent vertices. Then
+the limiting normalized logarithmic derivative of the original full
+root product S_N is the explicit covector
+
+    nu_f=1_(f in Qcal)-M_f/2
+                    +(1/2)sum_b epsilon_(b,f)+chi_f.    (5)
+
+The angle contribution is 1 on a bounded circle because the consecutive
+tangent-circle triangles sweep its full 2pi angle. It is zero at each
+of the two constant-prefix lines. This is the actual circle-packing
+incidence, not a sum of independently optimized vertices.
+
+Every nu_f is an INTEGER. To prove this in the original uncontracted
+Morse graph, traverse the closed boundary of a white face and record
+whether its direction agrees with the source-edge orientation. At a
+middle corner the two main legs are both incoming or both outgoing,
+so this agreement flips. At a main-matching corner one leg is incoming
+and one outgoing, so it does not flip. It flips at a literal cup or
+cap. Returning to the start implies that M_f plus the number of turns
+at f is even. The sign of a turn is irrelevant modulo two, proving
+the integrality in (5).
+
+This argument is unchanged by the literal pi reduction. Before that
+reduction dualization reverses all THREE ports; each adjacent face
+meets two of these local turns. Deleting them preserves turn parity.
+Algebraically its cup/physical-inverse-cup ratio has no leading magnetic
+derivative at the fold: when 2a=d its q exponent is
+
+    d[(d-r)-(2d-i-j)]=d(m-d),
+
+which is label-only. The exact near-fold remainder is not deleted.
+Thus the parity calculation and the reduced two-W calculation of (4)
+refer to the same source.
+
+Also sum_f nu_f=0. There are 2R white vertices and R quadratic faces;
+the total middle count is 2R, while every turn and mark incidence has
+sum zero. Hence (5) defines an integral covector on face potentials
+modulo their common constant.
+
+For the ORIGINAL flat-plat presentation the signed count is stronger.
+At a horizontal slice let the gaps between its 2k ordered heads carry
+the actual white-region labels. A box in slot a removes the old middle
+gap a+1 at its pi vertex and introduces a new one at its W vertex.
+Each odd gap begins at a bottom cup and ends at a top cap. Every
+bounded segment of such a region has exactly two endpoints: middle
+vertices or inside cups/caps. The internal even gaps begin and end in
+the exterior. Each must be met by at least one box: otherwise the
+plat separates across that gap, contrary to the one-main-component
+hypothesis. Its bounded intermediate segments have two middle
+endpoints. Thus, with the LITERAL cup signs, every bounded face has
+
+    M_f-turn_f=2,  turn_f=sum_b epsilon_(b,f).
+
+The exterior has M_out=2(k-1) and turn_out=2k, hence index -2.
+An inside cup/cap contributes -1 to turn and its outside contributes
++1; this follows directly from its raw first-head ratio
+-L_out/L_in. Consequently the exact physical monomial after (2a) is
+
+    L_out^d product_(bounded f) L_f^(-d).             (5a)
+
+The two constant faces are precisely this exterior and the inside
+face of the marked cap. The mark contributes -d at the former and
++d at the latter. In fact its scalar is exactly
+
+    Xi_N=N^-1 (L_in/L_out)^d,                         (5b)
+
+since q^(-d^2)(-q^-1)^d=(-1)^d q^(-Nd)=1. This proves
+
+    nu_f=0 for EVERY face of the original marked source. (5c)
+
+The ordinary closed source instead has the two charges +1 at the
+exterior and -1 at the other constant face. They are canceled by the
+actual mark, not by an invented winding choice.
+
+For the specified compact parameter sets, (4) therefore implies
+
+    (1/N)d Log S_N(Z_N) = o(1)                         (6)
+
+uniformly for shrinking folded deficits. Fixed-channel h0, gamma and
+half-twist phases have zero magnetic derivative but stay in S_N.
+
+## 4. Retained normalization and the distinction from a winding change
+
+The preceding signed count also records the complete formal-face
+normalization. On the positive face-log branch each original bottom
+cup has scalar N q^(-d^2/2), and each ordinary top cap has scalar
+N^-1 q^(d^2/2); their k pairs cancel. Equation (5b) supplies the
+remaining 1/N. Hence the uncontracted original marked sector is
+
+    N^-1 product_i[k_(a_i) beta_(a_i)^2 omega_(a_i)^epsilon_i]
+       * product_i[D_(a_i,in)D_(a_i,out)Ptilde_(s_i)]
+       /product_(quadratic f)L_f^d.                   (7)
+
+The original exterior framing line remains separate and unchanged.
+The identities extend with the specified source marks. Formula (7)
+does not itself convert a physical finite sum to an unrestricted
+face torus, or settle its support and alias conditions.
+
+For comparison, if one keeps the ordinary cap, or uses another
+already proved presentation with the integer cochain (5), an exact
+lattice-one winding change can be
+specified as follows. This comparison is NOT used to obtain (5c).
+
+Choose an INTEGER affine source origin h^0 for the fixed labels and
+support stratum. Its corresponding potential origin Z^0 includes the
+actual half-index constants. Every original integer source state has
+
+    Z-Z^0=(2pi i/N)n,  n integral modulo constants.
+
+The entire character
+
+    C_nu,N(Z)=exp[-N sum_f nu_f(Z_f-Z_f^0)]
+
+equals one at every such state. Multiplying the original summand by
+this displayed character preserves its original finite sum, and all residues on
+its original small node tori. It does not equate differently transported
+support chains. The affine-origin factor exp(N nu dot Z^0) is retained,
+even when its real logarithm has leading size.
+
+Define the particular sector logarithm
+
+    g_N(Z)=Log S_N(Z)-N nu dot(Z-Z^0).                  (8)
+
+For the original MARKED source nu=0 and g_N=Log S_N exactly. For
+the comparison presentation its normalized gradient at the boundary
+sample tends to zero after the displayed explicit correction.
+The subtracted character can change the real off-grid action. Accordingly
+(8) is a specified winding representative, not an assertion that the
+original global cycle selects this representative or that its critical
+value is the marked geometric volume. The exact identity (2) prevents
+an additional accidental circle character; it does not compute an
+unproved global winding coefficient.
+
+## 5. Local transverse critical point and a constructed local period
+
+Fix the two neighboring original physical heads from the primitive
+slice theorem. Equivalently take its fixed integral complementary
+log-clock basis C and write Z=Z_N+Cw, w in C^n, n=R-1. The existing
+rank theorem and [finite core curvature](actual_q_hahn_boundary_model_curvature.md)
+give, in this basis, a real positive reference Hessian bounded between
+cN I and CN I. The exact finite clocks and near-fold corrections change
+it by o(N). On a fixed complex neighborhood all fixed derivatives of
+order at least two are O(N). These statements include both parities.
+
+Set e_N=|N^-1 partial_w g_N(0)|, so e_N tends uniformly to zero by
+(6). The Hessian divided by N has inverse bounded uniformly, and its
+derivative is bounded on a smaller fixed ball. Newton's contraction,
+using that Hessian at zero, therefore gives a unique zero w_N in a
+ball of radius C e_N. Explicitly the Newton remainder is at most
+C|w|^2, so the map sends that ball into itself and has contraction
+constant at most C e_N for sufficiently large N. Thus
+
+    partial_w g_N(w_N)=0,    |w_N|<=C e_N=o(1).         (9)
+
+This is a transverse sector-critical point; it does not assert that
+the finite-label geometric sample itself is stationary. Nor does it
+assert that the two remaining finite framing forces vanish. Without
+a quantitative rate for (6), the head displacement is only o(N).
+
+Let H_N be the w Hessian at w_N. Its real part remains at least cN I.
+For fixed sufficiently small eta>0 the oriented local contour
+w=w_N+i x, x in [-eta,eta]^n, obeys
+
+    Re[g_N(w_N+i x)-g_N(w_N)]<=-cN|x|^2.
+
+Taylor's theorem proves this from the Hessian and O(N) third derivative.
+The standard rescaling x=N^-1/2 y can here be verified directly:
+the cubic correction is odd and integrates to zero on the symmetric
+box against the even complex Gaussian; the quartic correction and
+square of the cubic have relative size O(N^-1), and the remaining
+tails are exponentially small. Uniform higher derivative bounds give
+
+    integral_(w_N+i[-eta,eta]^n) exp(g_N(w)) dw
+      = i^n (2pi)^(n/2) exp(g_N(w_N))/sqrt(det H_N)
+                                           *[1+O(N^-1)]. (10)
+
+The square root is the continuation from the positive reference matrix.
+All source scalars and the affine-origin character remain in the
+displayed exponential. If the chosen flat source measure is the actual
+unscaled free-head measure, the exact coordinate Jacobian contributes
+(N/(2pi i))^n. Any cotangent kernels or additional boundary currents
+must be retained separately; they are not implicitly replaced by that
+flat measure.
+
+Equation (10) is a nonzero explicitly constructed LOCAL period. No
+intersection with the original finite-support cycle, residue transport,
+mixed-color comparison, or asymptotic for the fully contracted source
+is inferred.
+
+## 6. The absolute rate from the actual coned polyhedron
+
+This section supplies an absolute geometric normalization without
+identifying the finite-r selected sheets with a geometric critical
+branch. The potential and coning identities themselves require only
+the connected certified right-angled graph and a marked main edge;
+they do not require that all main strands form one component. The
+one-main-component hypothesis remains in the earlier finite-r
+six-type boundary-chart and local-period assertions.
+Let a_f>0 be the actual curvatures of the bounded white circles
+in the marked coordinate p=infinity, and set a_f=0 at its two white
+lines. A common positive scale is immaterial. For one shaded triangle
+write its three curvatures as (x,b,y), and let
+
+    F(x,b,y)=lim_(a/N->1/2) N^-1 Log D_a(x,b,y).
+
+The limit and its first derivatives follow from the actual finite
+determinant rate and the preceding boundary limits. It is homogeneous
+in the logarithmic sense F(tx,tb,ty)=F(x,b,y)+(1/2)log t. For three
+positive curvatures set
+
+    Delta=sqrt(xb+by+yx), theta_j=2atan(a_j/Delta).
+
+These are the center-triangle angles, their sum is pi, and (4) says
+partial_log a_j F=theta_j/(2pi). Consequently
+
+    V_tri=2pi F-sum_j theta_j log a_j
+
+has differential -sum_j log(tan(theta_j/2))dtheta_j. The common
+log Delta disappears because sum_j dtheta_j=0. Define the usual
+Lobachevsky function by Lambda(t)=-integral_0^t log|2sin u|du.
+Direct differentiation now gives
+
+    V_tri=2 sum_j[Lambda(theta_j/2)
+                        +Lambda((pi-theta_j)/2)] + constant. (11)
+
+The constant is ZERO, with the source normalization still retained.
+Indeed at (x,0,0), D_a=(x/2)^a det H_-. The exact original LDL pivots
+give
+
+    det H_-=product_(n=1)^a
+           sin(n pi/N)/[cos(n pi/N)sin((2n-1)pi/N)].
+
+Their normalized logarithm tends to (1/2)log2, by the elementary
+log-sine Riemann sum. Thus F(x,0,0)=(1/2)log x and V_tri=0.
+This is also the continuous boundary value of the determinant rate:
+set the second matrix coefficient to zero by H_+<=2H_-+8I, then
+let the identity coefficient tend to zero in its explicit rate
+integral. After subtracting (1/2)log alpha its integrand is dominated
+by C+2|log cos(pi t)| and tends to -log2-2log cos(pi t).
+The right side of (11) tends to zero at (pi,0,0). This fixes the
+absolute constant and includes all one-line degenerations.
+
+The actual facets identify the sum in (11) with volume. Cone the marked
+ideal vertex p=infinity to every nonincident facet of the convex Q.
+These positive pyramids partition Q, as in the existing positive
+polyhedron triangulation. For a WHITE ideal polygon on a finite circle,
+let delta_j be its consecutive central arcs. Its cone volume is
+sum_j Lambda(delta_j/2). To verify this, triangulate the actual cyclic
+polygon from one of its vertices. Each ideal tetrahedron with fourth
+vertex infinity contributes the three Lobachevsky values of its
+Euclidean triangle angles. Internal diagonals occur with complementary
+half-arcs t and pi-t, and cancel by Lambda(pi-t)=-Lambda(t).
+Only the boundary half-arcs remain. No new ideal vertex or unsigned
+overlapping decomposition is introduced.
+
+At a shaded triangle the consecutive contact arcs on a neighboring
+white circle are exactly its center angle theta_j. Orthogonality of
+the white and shaded circles gives two right angles in the quadrilateral
+of their centers and their two intersections. Hence the shaded arc
+between those intersections is pi-theta_j. The shaded ideal triangle
+coned to infinity therefore has volume
+sum_j Lambda((pi-theta_j)/2). Summing the white pyramids and shaded
+tetrahedra over their ACTUAL facet incidences proves
+
+    Vol(Q)=sum_(shaded triangles) sum_j
+          [Lambda(theta_j/2)+Lambda((pi-theta_j)/2)]
+          =(1/2)sum_(shaded triangles) V_tri.          (12)
+
+The two incident white lines have zero cone volume. Incident shaded
+triangles give the (pi,0,0) limiting angles and contribute zero as
+well. Thus (12) retains the marked cusp and every actual facet; it
+is not a separately maximized local-polyhedron comparison.
+
+Evaluate the homogeneous source polynomial at these curvatures, with
+the two constant faces set to zero. Its limiting normalized real log,
+including the target monomial of (7), is
+
+    Phi=sum_(shaded triangles)F(a_f0,a_f1,a_f2)
+                                      -sum_(quadratic f)log a_f.
+
+The angle sums at every bounded white circle are 2pi. Equations
+(11),(12) therefore give the ABSOLUTE identity
+
+    2pi Phi=sum_tri V_tri=2Vol(Q),
+    Phi=Vol(Q)/pi=Vol(actual augmented complement)/(2pi). (13)
+
+The remaining original fixed-channel scalars have not been discarded.
+For shrinking folded deficits, N^-1 log beta_a^2 tends to
+2J(2a/N)-4J(a/N), hence to zero because J(1)=J(1/2)=0.
+The positive root forced product has logarithmic size O(s) on these
+curvature compacts, including a zero endpoint curvature; its normalized
+rate also tends to zero. The factors k_a and 1/N are polynomial, and
+the retained half-twist powers have modulus one at actual integer
+labels. Their exact values stay in (7).
+
+The original finite-r face diagonals have one common quadratic scale
+(b_ref/s_frame)N^2 rho^2 and relative error O(N^-1); their two constant
+diagonals divided by that scale tend to zero. Total homogeneity of
+degree dR cancels this common complex scale against the target monomial
+EXACTLY. The six source packets, with their retained top monomials and
+nonzero Bessel factors, then give the same normalized real rate (13).
+Their finite transport factors are not reset to one; they have zero
+normalized logarithmic rate. The nearby critical displacement in (9)
+changes N^-1 Re g_N by o(1), so it has the same value (13).
+
+This proves the absolute rate of the original marked boundary sample
+and of the constructed local transverse period. It still does not
+prove that an original finite-support period contains that local
+contour with nonzero coefficient, or control cancellation in the full
+auxiliary-label sum or in external filling colors.
+
+## 7. Focused source and absolute-normalization checks
+
+The [focused audit](../experiments/audit_actual_original_boundary_stationary_character.py),
+with [recorded results](../experiments/actual_original_boundary_stationary_character_results.json),
+checks 34 literal marked-cap ratios and 34 physical cup/cap scalar
+pairs, 60 actual Morse charts with 810 signed face indices and zero
+marked forces, 48 original LARGE-H Ward identities in all six boundary
+regimes, 40 original LDL products, nine reciprocal-radius circle-angle
+identities, three absolute determinant-rate/Lobachevsky comparisons,
+and seven cyclic-polygon fan cancellations. The arithmetic is at
+90 digits. Twenty-four finite force errors are retained as convergence
+diagnostics, not substituted for the uniform derivative proof.
+
+The Morse region compiler is shared with the independently audited
+full marked coefficient transformation. The local all-label circle
+identity has its separate original-white/dual/cup audit in the positive
+face-polynomial theorem. No new source-cycle assertion is attached to
+these numerical checks.
+
+Independent primary full analytical review: PASS. The reader checked
+the six source-force branches, signed Morse index and literal mark,
+uniform implicit-function and Gaussian constants, absolute LDL anchor,
+actual facet coning, and all source/connected-geometry scope distinctions.
+
+Independent full peer analytical review: PASS. The reader independently
+rederived the literal circle and mark scalars and all six force limits,
+then checked the local transverse proof and the absolute factor
+2Vol(Q). A fresh redirected replay reproduced every reported count
+at 90 digits. The original cycle and full auxiliary-label sum remain separate.

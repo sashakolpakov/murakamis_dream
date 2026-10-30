@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A common positive face radius gives the global channel maximum · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a><p><span class="badge">Uniform all-channel rate and strict maximum</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_positive_face_channel_rate.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_positive_face_channel_rate.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_positive_face_channel_rate_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="a-common-positive-face-radius-gives-the-global-channel-maximum">A common positive face radius gives the global channel maximum</h1>
+<p>30 October 2026. Independently reviewed. This is a finite determinant/rate theorem for the original positive face polynomials. The exact marked coefficient interface is proved separately. No external filling-color packet or filled-knot equality is claimed here.</p>
+<h2 id="the-original-finite-factors-and-one-common-radius">1. The original finite factors and one common radius</h2>
+<p>Use the matrices and scalar normalization in <a href="actual_complete_circle_positive_face_polynomial.html">the exact positive circle</a>. Put d=N-1, a in {0,…,floor(d/2)}, s=d-2a, and mu=a/N. Write</p>
+<pre><code>D_a(x,b,y)=det[bI+(x/2)H_-+(y/2)H_+],
+P_s(x,y)=product_(j=a+1)^(d-a)(x-Q^j y),
+B_(N,a)(x,b,c,y)=beta_a^2 D_a(x,b,y)D_a(x,c,y)P_s(x,y).</code></pre>
+<p>The fixed multiplicity k_a is between1 and2 and does not change a normalized logarithmic rate. The retained half-twist omega_a^epsilon has modulus1 for an integer channel; it must still be kept in a channel SUM. Each circle uses the SAME face radius for every shared face.</p>
+<p>Set the two original marked face variables u,v to zero, and put all other face radii in a fixed positive compact set. The actual simple white-face sphere has no matching edge between u,v, because their edge is the original MAIN cut. Consequently x,y are not both zero. Each triangle has at least one positive radius. If one outer radius vanishes, at least one of b,c is positive: otherwise three distinct faces would be u or v. These are exactly the nondegenerate patterns used below. The result also holds when all four radii are positive.</p>
+<h2 id="uniform-logarithmic-determinant-rate-including-both-endpoints">2. Uniform logarithmic determinant rate, including both endpoints</h2>
+<p>Let</p>
+<pre><code>c(t)=cos(pi t),
+E_b(t)=x+y+2b c(t)^2
+            +2c(t)sqrt[b^2 c(t)^2+b(x+y)+xy],
+lambda_b(t)=E_b(t)/(4c(t)^2).</code></pre>
+<p>Then, uniformly over ALL integer a and the stated positive compact sets with their fixed zero pattern,</p>
+<pre><code>(1/N)log D_a(x,b,y)
+    = integral_0^mu log lambda_b(t) dt + o(1).       (1)</code></pre>
+<p>All logarithms in (1) are real. Here is a direct finite-matrix proof. Away from t=0,1/2, the actual diagonal and squared adjacent modulus converge uniformly, with error O(N^-1), to</p>
+<pre><code>A_b(t)=b+(x+y)/(2c(t)^2),
+B_b(t)=[(x+y)^2-4xy c(t)^2]/(16c(t)^4).</code></pre>
+<p>Thus lambda_b=(A_b+sqrt(A_b^2-4B_b))/2. No matrix of virtual size beyond the maximal folded channel is introduced.</p>
+<p>If b&gt;0, every principal matrix is bounded below by bI. If x,y&gt;0, the exact <a href="actual_q_hahn_positive_total_boundary_normals.html">sum gap</a> H_-+H_+&gt;=cos(pi/N)I gives the same uniform positive lower bound. On an interior index interval the matrices also have a uniform upper bound. Partition that interval into blocks of length ell tending to infinity with ell/N tending to zero. Removing each connecting adjacent entry is a rank-two perturbation. Both the original matrix and its block diagonal pinching lie between the same positive lower bound and a fixed upper bound. Eigenvalue interlacing, or integration of log det along this positive interpolation, bounds the log-determinant change by a constant times the number of removed edges.</p>
+<p>Within a block, freezing the coefficients changes operator norm by O(ell/N); the positive lower bound makes its log-determinant change O(ell^2/N). After a diagonal unitary gauge the frozen block is the real constant Jacobi matrix. Its eigenvalues are A_b+2sqrt(B_b)cos(j*pi/(ell+1)). Their logarithmic Riemann sum is</p>
+<pre><code>(1/pi)integral_0^pi log(A_b+2sqrt(B_b)cos theta)dtheta
+  =log[(A_b+sqrt(A_b^2-4B_b))/2].</code></pre>
+<p>For the last identity, factor the expression as lambda_b |1+sqrt(B_b)/lambda_b * exp(i theta)|^2; the second logarithm has mean zero by its convergent Fourier expansion. The positive spectral gap keeps the ratio below1 uniformly on this interior interval. The total block error is O(N/ell+ell), hence o(N). The same estimates allow a last shorter block, uniformly in a.</p>
+<p>For completeness the endpoint truncations are uniform, not a fixed-a argument. At either cut index a removed connecting edge has bounded size depending only on the chosen endpoint cutoff epsilon, and its rank-two cost is O_epsilon(1). A terminal block has a positive constant lower spectral bound and the Hadamard upper bound from the ACTUAL diagonal. Its log determinant is bounded in absolute value by</p>
+<pre><code>C epsilon N(1+|log epsilon|)+O(log N)</code></pre>
+<p>at the fold, and C epsilon N+O(1) at zero. Indeed the diagonal is at most C/[cos(n<em>pi/N)cos((n+1)</em>pi/N)]; summing its logarithm gives the displayed integrable endpoint bound through both parities. The limiting log lambda has the same integrable majorant. First let N increase, then let epsilon decrease. This proves uniform (1).</p>
+<p>The only remaining allowed case is b=0 and exactly one of x,y positive. Here D_a is a scalar multiple of det H_+ or det H_-, and the ACTUAL Cholesky pivots are</p>
+<pre><code>p_(n-1)=sin(n*pi/N)/[cos(n*pi/N)sin((2n-1)*pi/N)].</code></pre>
+<p>Their exact product proves (1) directly by the same endpoint-truncated Riemann sums; its bulk ratio is x/(4cos(pi t)^2) or its y counterpart. This avoids using a positive spectral gap in this single-summand case. The empty determinant at a=0 is included.</p>
+<h2 id="the-circle-rate-increases-strictly-to-the-fold">3. The circle rate increases strictly to the fold</h2>
+<p>Define</p>
+<pre><code>I(v)=integral_0^v log(2sin(pi t))dt,
+J_mu(x,y)=integral_mu^(1-mu) log|x-exp(2pi i t)y|dt.</code></pre>
+<p>The exact sine products, with their integrable endpoint logarithms, give uniformly in a</p>
+<pre><code>(1/N)log beta_a = I(2mu)-2I(mu)+o(1),
+(1/N)log P_s(x,y) = J_mu(x,y)+o(1).                (2)</code></pre>
+<p>When x=y the second integrand has endpoint logarithmic singularities; the elementary sine-product comparison gives the same uniform o(1). If one outer radius is zero, the assertion is immediate from the single monomial. The positive coefficient identity fixes P_s&gt;0.</p>
+<p>Combine (1),(2) to obtain the continuous uniform circle rate</p>
+<pre><code>F_mu=2I(2mu)-4I(mu)
+   +integral_0^mu [log lambda_b(t)+log lambda_c(t)]dt
+   +J_mu(x,y).                                    (3)</code></pre>
+<p>For 0&lt;mu&lt;1/2, put</p>
+<pre><code>D_xy(mu)=(x-y)^2+4xy sin(pi mu)^2.</code></pre>
+<p>Direct differentiation, retaining the scalar beta and forced product, gives the cancellation</p>
+<pre><code>partial_mu F_mu = log[E_b(mu)E_c(mu)/D_xy(mu)] &gt;0. (4)</code></pre>
+<p>Indeed the scalar derivative is4log(2cos(pi mu)), while the two determinant denominators multiply to16cos(pi mu)^4. The derivative of J is minus log D_xy. If xy&gt;0, then E_b,E_c&gt;=x+y and D_xy&lt;(x+y)^2. If exactly one outer radius vanishes, at least one of b,c is positive, making at least one E strictly larger than x+y. Thus strictness holds in every actual pattern. Formula (3) is continuous at both endpoints even when the derivative at zero diverges.</p>
+<p>There is therefore a strict diagram-dependent gap on every region mu&lt;=1/2-epsilon. For a fixed graph, multiplying the original factors at their shared radii and summing any polynomial number of channel choices preserves that exponential gap whenever at least one channel stays epsilon away from the fold. This upper estimate is at one common radius; it does not sum incompatible independent local optimizers.</p>
+<p>Near the fold (4) also gives the explicit classical quadratic gap. Write A=x+y&gt;0 and</p>
+<pre><code>T_b=sqrt[bA+xy], T_c=sqrt[cA+xy].</code></pre>
+<p>At mu=1/2-delta,</p>
+<pre><code>partial_mu F_mu = 2pi delta(T_b+T_c)/A+O(delta^2),
+F_(1/2)-F_(1/2-delta)
+       = pi(T_b+T_c)delta^2/A+O(delta^3).          (5)</code></pre>
+<p>The coefficient is strictly positive in the actual patterns. This is a statement about the limiting action. Uniform finite relative asymptotics on delta of order N^-1/2, and cancellation of the retained half-twist phases in the whole channel sum, require a further proof; the o(1) in (1)–(3) is NOT used as such a relative estimate.</p>
+<h2 id="scope-of-the-whole-source-upper-bound">4. Scope of the whole-source upper bound</h2>
+<p>The <a href="actual_original_marked_face_coefficient.html">exact marked coefficient theorem</a> makes every coefficient nonnegative before the explicit half-twist scalar. Evaluating its polynomial at the SAME positive radius bounds the selected coefficient by that value divided by its prescribed radius monomial. Equations (1)–(4) then control the entire finite channel sum from above, with all original scalar factors and only polynomial counting cost.</p>
+<p>The absolute endpoint value is computed separately from the actual facet coning and marked source normalization. A positive central coefficient with that value supplies a lower bound for an UNTWISTED channel sum, as assembled in the <a href="general_untwisted_augmented_source_volume.html">complete untwisted theorem</a>. Signed half twists require a noncancellation theorem. External crossing-circle colors needed for long Dehn fillings are not the internal a labels in this note and are not estimated here.</p>
+<p>Focused audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_positive_face_channel_rate.py">original finite channel factors</a>, with <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_positive_face_channel_rate_results.json">saved results</a>. It checks six symbolic identities, 704 all-label circles, 1408 original determinants, 528 independent Newton comparisons, 176 exact LDL products and 576 adjacent-channel ratios, including 64 maximal folds of each parity. The 72 rate samples are diagnostics only.</p>
+<p>Independent full analytical review: PASS. The reviewer checked the uniform block-pinching argument, positive matrix gap, actual endpoint truncations, scalar cancellation and strict channel derivative in every allowed zero pattern. Primary full proof/code review and fresh redirected 85-digit audit: PASS; maximum exact identity error below 5.7e-85. No finite-window signed Gaussian or external-color theorem is inferred.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_positive_face_channel_rate.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-original-finite-factors-and-one-common-radius">1. The original finite factors and one common radius</a><a href="#uniform-logarithmic-determinant-rate-including-both-endpoints">2. Uniform logarithmic determinant rate, including both endpoints</a><a href="#the-circle-rate-increases-strictly-to-the-fold">3. The circle rate increases strictly to the fold</a><a href="#scope-of-the-whole-source-upper-bound">4. Scope of the whole-source upper bound</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>
