@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A positive Fourier partition with the original shared constraints · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Fourier and energy</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a> · <a href="../library.html#fourier">Fourier, weighted Cauchy, and energy</a><p><span class="badge">Exact shared positive partition; upper bound</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_graph_positive_fourier_partition.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_matching_graph_positive_fourier_partition.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_matching_graph_positive_fourier_partition_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="a-positive-fourier-partition-with-the-original-shared-constraints">A positive Fourier partition with the original shared constraints</h1>
+<p>30 October 2026. The exact shared-cycle compiler admits a fully positive coefficient comparison whose scalar weight is explicit in the ORIGINAL source normalization. Every matching label, integral Kirchhoff equation and physical-cycle Fourier congruence is retained. This is an upper bound for the original complete-circle source, not a volume equality or a noncancellation theorem.</p>
+<h2 id="original-endpoint-scalars-including-the-high-degree-adapter">1. Original endpoint scalars, including the high-degree adapter</h2>
+<p>Use the notation and recorded physical-port orders of <a href="actual_matching_graph_shared_cycle_fourier_compiler.html">the exact shared-cycle compiler</a>. Thus q=exp(pi i/N), d=N-1, s_j=product_(h=1)^j 2sin(pi h/N), 0&lt;=a&lt;=floor(d/2), r=a+w, |w|&lt;=a. The physical total and its low adapter are</p>
+<pre><code>T=d+w,             t=d-|w|.</code></pre>
+<p>Write c_W=W_a(b,T-b;r), b=max(0,T-d), for the actual first endpoint of the original Clebsch column. Then</p>
+<pre><code>|c_W|=s_a/(s_|w| s_(a-|w|)).                    (1)</code></pre>
+<p>Here is a proof retaining the normalization. If r&lt;=a, the endpoint has first physical index zero. In the original coproduct Delta F=F tensor 1+K^-1 tensor F, only its second summand can reach that endpoint from the highest column. Dividing by the original ordinary-channel descendant factors gives, with F_j=(Q;Q)_j,</p>
+<pre><code>c_W=q^(-dr) F_(d-a+r)/(F_(d-a)F_r).             (2)</code></pre>
+<p>The highest endpoint is one. Taking absolute values and using s_(d-j)=N/s_j proves (1) when w&lt;=0.</p>
+<p>For the other half use the ACTUAL Chevalley maps</p>
+<pre><code>J_L |u&gt; = q^(-(L+1)u) |L-u&gt;,
+S=P(J_d tensor J_d).</code></pre>
+<p>For the balanced source generators, J_L exchanges F and Ecal and exchanges K and K^-1. The flip in S consequently gives S Delta F=Delta Ecal S and S Delta Ecal=Delta F S. In the original generic Clebsch image, uniqueness of its highest vector gives</p>
+<pre><code>S W_a=kappa W_a J_(2a).</code></pre>
+<p>This is a rational generic identity, then specialized; it does not assume semisimplicity at the root. Squaring it yields</p>
+<pre><code>kappa^2=q^(-2Nd+2a(2a+1)).                     (3)</code></pre>
+<p>The original W column and its Chevalley image have nonzero finite highest endpoints at the root, so the identity specializes there; alternatively (3) already makes any scalar singularity removable. All coefficients of the two J maps and kappa have modulus one at the root. The low endpoint (0,t) maps to the HIGH endpoint (d-t,d), exactly the endpoint used in the compiler. Thus its modulus is unchanged under r-&gt;2a-r. This proves (1) for both halves and both level parities.</p>
+<p>The original white map is</p>
+<pre><code>pi_a(r;u,v)=G_(a,r)^-1 conjugate(W_a(v,u;r)),
+G_(a,r)=s_(2a)/(s_r s_(2a-r))&gt;0.</code></pre>
+<p>The normalized physical column has unit-modulus final endpoint, so its first-endpoint scalar satisfies</p>
+<pre><code>|c_pi|=|c_W|/G_(a,r).                           (4)</code></pre>
+<p>Both physical vertices have the same t and a. Their positive Fourier polynomials are normalized by c_(t,a) from the compiler, with |c_(t,a)|=1/s_a. Finally retain the actual complete-circle weight</p>
+<pre><code>h0_a=k_a N s_(2a)/s_a^2,
+k_a=1 if 2a=d, and k_a=2 otherwise.</code></pre>
+<p>Equations (1)–(4) give the exact positive scalar</p>
+<pre><code>B_N(a,w)
+  :=h0_a |c_W c_pi c_(t,a)^2|
+   =k_a N s_(a+|w|)
+                /(s_a^2 s_|w|^2 s_(a-|w|)).     (5)</code></pre>
+<p>There is no omitted exponential row, face or ordinary-channel metric in (5). The original physical cups have modulus N and ordinary caps modulus 1/N. Their numbers agree in the closed Morse diagram, so those moduli cancel globally. The original marked cap is handled by the exact charged-cap ratio in the compiler, rather than included in this cancellation.</p>
+<h2 id="the-shared-state-space-and-all-fourier-congruences">2. The shared state space and all Fourier congruences</h2>
+<p>Let R be the number of original matching circles and C the number of restored physical cycles. Collapse those cycles to the graph Gamma, orienting each matching edge from its pi cycle to its W cycle. A shared state consists of</p>
+<pre><code>a_i in {0,...,floor(d/2)},
+w_i in {-a_i,...,a_i},          div_Gamma w=0,
+k_v in {0,...,a_i}             at EACH of the two ends v of i.</code></pre>
+<p>Set t_i=d-|w_i|. On a fixed physical cycle, propagate its actual indices as literal affine functions of one starting coordinate x. Let epsilon_v in {+1,-1} be the slope of the recorded FIRST physical coordinate at vertex v, and epsilon_b the same slope at a physical cup or restored cap b. The total character is</p>
+<pre><code>m_c(a,k)=sum_(v on c) epsilon_v(d-2a_i+2k_v)
+                          +d sum_(b on c) epsilon_b.          (6)</code></pre>
+<p>The actual bipartite cycle proof shows m_c is always even. All affine offsets, high-degree shifts and the terms -t_i k_v are retained in the remaining coefficient phase. They do not affect (6). Put b_c=0 except b_(c_*)=1 on the marked cycle, whose variable is the SECOND marked coordinate. Retain EVERY equation</p>
+<pre><code>m_c(a,k)=2b_c modulo 2N.                        (7)</code></pre>
+<p>Write S_N for this finite state space: the capacities, exact Kirchhoff equations, and all congruences (7), jointly. There are at most N^(4R) states: N choices for each a_i and each w_i, and N choices for each of the 2R coefficient indices. Constraints can only decrease this bound. No variables on separate vertices or cycles have been optimized independently.</p>
+<h2 id="exact-phase-bearing-sum-and-one-cauchy-inequality">3. Exact phase-bearing sum and one Cauchy inequality</h2>
+<p>For a state in S_N, let Theta_N(a,w,k) be the phase left by the EXACT compiler after removing the positive factors (5) and the positive coefficients p_(t_i,a_i,k_v). Its modulus is one. This definition is explicit: multiply the original endpoint phases, c_(t_i,a_i), cup/cap monomials, recorded half-twist omega phases, and the affine-offset terms in compiler equation (7), then divide by their moduli. The global q<sup>(-d</sup>2) marked phase is written separately below. All these factors are nonzero; no arbitrary phase or framing normalization is introduced.</p>
+<p>The original complete-circle source is therefore EXACTLY</p>
+<pre><code>A_(D,N)=q^(-d^2) N^(C-1)
+   sum_(S_N) Theta_N(a,w,k)
+      product_i B_N(a_i,w_i)
+      product_(v incident to i) p_(t_i,a_i,k_v). (8)</code></pre>
+<p>Define the fully positive shared coefficient partition</p>
+<pre><code>Z_F(N)=sum_(S_N)
+      product_i B_N(a_i,w_i)^2
+      product_(v incident to i) p_(t_i,a_i,k_v)^2.             (9)</code></pre>
+<p>ONE finite Cauchy inequality applied to the full sum (8) gives</p>
+<pre><code>|A_(D,N)|^2 &lt;= N^(4R+2C-2) Z_F(N).              (10)</code></pre>
+<p>The sharper factor |S_N| N^(2C-2) is equally valid. If S_N is empty, both sides of (8) vanish and (10) is immediate. The half-twist phases disappear only in (9),(10); they remain in the exact source (8). In particular, (9) retains the marked charge, all other cycle charges and the same matching magnetic label at both ends of every edge. Dropping these restrictions would give a different, generally weaker comparison problem.</p>
+<h2 id="its-local-variational-interface-and-its-limit">4. Its local variational interface and its limit</h2>
+<p>For a fixed diagram, the loss in (10) is polynomial in N. The local positive coefficients in (9) are precisely those in <a href="actual_q_hahn_fourier_coefficient_variational.html">the proved coefficient variational theorem</a>, with complete-channel parameters tau=t_i/N and xi=a_i/N. Its interior coefficient action may therefore be used in this JOINT constrained partition, with the original scalar (5). Its theorem does not supply uniform boundary asymptotics where these parameters or k_v/N approach the boundary.</p>
+<p>For clarity, the exact finite cycle charge also controls the limiting local momentum. Set lambda_v=k_v/N, xi_i=a_i/N and</p>
+<pre><code>Y_v^*=exp[2pi i(lambda_v+1/2-xi_i)].</code></pre>
+<p>This is the selected radial coefficient saddle momentum on the interior parameter domain of that theorem. Since q<sup>(d-2a_i+2k_v)=q</sup>-1 Y_v^*, equations (6),(7) give EXACTLY</p>
+<pre><code>product_(v on c) (Y_v^*)^epsilon_v
+       (-1)^(sum_(b on c) epsilon_b)
+   =Q^(E_c/2+b_c),
+E_c=sum_(v on c)epsilon_v+sum_(b on c)epsilon_b in 2Z.        (11)</code></pre>
+<p>The finite pivotal correction and original marked charge have not been dropped. Equation (11) is a phase constraint supplied by the Fourier extraction; it is not yet a proof of all marked complex gluing equations. In particular, the positive partition can lose cancellation between its states, and a constrained maximum alone need not supply a contributing original cycle. Neither equality in exponential rate in (10) nor identification of the constrained maximum with hyperbolic volume is asserted.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_matching_graph_positive_fourier_partition.py">original endpoint norms and shared coefficient partition</a>.</p>
+<p>Independent review: the root agent and cluster/source agent checked the complete proof, including the generic Chevalley adapter, original white metric, scalar (5), all shared constraints, the single Cauchy inequality, and the exact pivotal/marked phase (11). A fresh cluster replay passed 4,922 original source entries, 279 endpoint/white/scalar identities, 2,491 Chevalley entries, and four full constrained coefficient partitions compared with the literal marked Morse source at 80-digit precision. These finite checks supply no noncancellation or volume assertion.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_graph_positive_fourier_partition.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#original-endpoint-scalars-including-the-high-degree-adapter">1. Original endpoint scalars, including the high-degree adapter</a><a href="#the-shared-state-space-and-all-fourier-congruences">2. The shared state space and all Fourier congruences</a><a href="#exact-phase-bearing-sum-and-one-cauchy-inequality">3. Exact phase-bearing sum and one Cauchy inequality</a><a href="#its-local-variational-interface-and-its-limit">4. Its local variational interface and its limit</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual matching source as shared cycle Fourier periods · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a> · <a href="../library.html#fourier">Fourier, weighted Cauchy, and energy</a><p><span class="badge">Exact shared flows and marked Fourier charge</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_graph_shared_cycle_fourier_compiler.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_matching_graph_shared_cycle_fourier_compiler.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_matching_graph_shared_cycle_fourier_compiler_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="the-actual-matching-source-as-shared-cycle-fourier-periods">The actual matching source as shared cycle Fourier periods</h1>
+<p>30 October 2026. Fixing the matching magnetic labels reduces every physical component of the original complete-circle source to a one-variable cycle or marked path. The matching magnetic labels are bounded integral Kirchhoff flows. The exact unused-node zeros permit a full N-node Fourier sum, with literal affine lifts and no wrapping of the physical indices. The actual cups and caps cancel the half-character parity at BOTH level parities. The original mark selects a specified Fourier charge.</p>
+<p>This supplies a joint positive comparison energy of coherent cycle periods. It does not identify that energy’s maximum with hyperbolic volume or prove survival of the original summed contribution.</p>
+<h2 id="freeze-the-actual-matching-labels-not-the-physical-wires">1. Freeze the actual matching labels, not the physical wires</h2>
+<p>Use the original complete-circle source of <a href="general_matching_graph_full_normal_source.html">the full matching-graph theorem</a>. Put q=exp(pi i/N), Q=q^2, d=N-1, M=floor(d/2). At circle i retain its folded label a_i and its ordinary matching magnetic index r_i:</p>
+<pre><code>0&lt;=a_i&lt;=M, 0&lt;=r_i&lt;=2a_i,
+W_(a_i) pi_(a_i)=sum_(r_i) W_(a_i)[r_i] pi_(a_i)[r_i].</code></pre>
+<p>All original white maps, including their reversal and positive ordinary channel metric, are the actual pi maps. No paired norm pi_a W_a is inverted. The original circle multiplier is still h0_a omega_a^epsilon, as in the full source theorem.</p>
+<p>After these indices are fixed, every W or pi vertex has two physical ports. Its only support condition is the EXACT integer equation</p>
+<pre><code>u+v=T_i=d-a_i+r_i.                               (1)</code></pre>
+<p>Every physical cup or ordinary cap has support u+v=d. Straight segments identify their endpoint indices. Thus the physical graph is a disjoint union of cycles. The one original unrestricted mark cuts its cycle into a path with a dense endpoint functional. The matching labels are still shared by their two incident vertices; they have not been maximized or summed independently.</p>
+<p>At the root the original physical cup, cap, and mark are</p>
+<pre><code>pV(u,d-u)=N q^(-d^2) q^(du),
+ellV(u,d-u)=N^-1 q^(du),
+mark(u,v)=N^-2 q^(dv).                           (2)</code></pre>
+<p>These are the given source tensors, in their recorded order. The last row is unrestricted; it is not an invariant cap substituted for the physical mark. Any exterior framing line remains the one already recorded for the original invariant.</p>
+<p>Let F_c(a,r) denote the coherent physical contraction of component c, with every actual local scalar in it. The source is EXACTLY</p>
+<pre><code>A_(D,N)=sum_(a,r) product_i[h0_(a_i)omega_(a_i)^epsilon_i]
+                                  product_c F_c(a,r). (3)</code></pre>
+<p>This is the root source identity itself. Its circle normals are already retained in h0_a pi_a, and its physical mark remains (2). It is not obtained by differentiating a truncated root formula.</p>
+<h2 id="every-fixed-physical-vertex-has-the-same-finite-continuation">2. Every fixed physical vertex has the same finite continuation</h2>
+<p>For a vertex with (a,r), define</p>
+<pre><code>T=d-a+r, t=min(T,2d-T), b=max(0,T-d).</code></pre>
+<p>Then d-a&lt;=t&lt;=d. In its actual first physical coordinate u its nonzero entries have the form</p>
+<pre><code>V(u,T-u)=c_V f_(t,a)(u-b),                       (4)</code></pre>
+<p>where c_V is the ACTUAL endpoint entry V(b,T-b), and f_(t,a)(0)=1. For W, this follows by normalizing its physical column and using the original root partner identity. The high-degree block is the actual translated low block, not a freely changed framing. For pi, the exact relation</p>
+<pre><code>pi_a(r;u,v)=G_(a,r)^-1 conjugate(W_a(v,u;r))</code></pre>
+<p>and the root column reflection f_(t,a)(t-y)=f_(t,a)(t) conjugate(f_(t,a)(y)) give (4), with its own actual endpoint c_V. The endpoint has modulus one before the W/metric scalar. Both local maps therefore use the same normalized finite f; their different constants are retained.</p>
+<p>The <a href="actual_q_hahn_magnetic_complex_corridor.html">literal magnetic polynomial</a> gives a degree-a polynomial G_(t,a) satisfying</p>
+<pre><code>f_(t,a)(y)=q^[(d-2a)y] G_(t,a)(Q^y),
+G_(t,a)(q^t z)=c_(t,a) P_(t,a)(z),
+P_(t,a)(z)=sum_(k=0)^a p_(t,a,k) z^k,
+p_(t,a,k)&gt;0,
+c_(t,a)=q^[a(t+a-d)]/(Q;Q)_a.                    (5)</code></pre>
+<p>For a=0 the polynomial is one. Every power in (5) has its literal specified exponent. In particular this is a finite continuation at ALL integer y, including values outside the physical range. Its unused-node zeros are</p>
+<pre><code>G_(t,a)(Q^y)=0, t+1&lt;=y&lt;=d.                       (6)</code></pre>
+<p>The positivity and zeros in (5),(6) were proved from the original coproduct. They are not inferred from a Fourier fit to samples.</p>
+<p>Equivalently, each physical vertex in (4) has the finite expansion</p>
+<pre><code>V(u,T-u)=c_V c_(t,a)
+     sum_(k=0)^a p_(t,a,k)
+                 q^[(d-2a+2k)(u-b)-tk].         (7)</code></pre>
+<p>The scalar and the t-dependent phase in (7) must both be retained. Only the p coefficients are declared positive.</p>
+<h2 id="the-first-failure-zero-lemma-permits-a-full-grid">3. The first-failure zero lemma permits a full grid</h2>
+<p>Choose a starting physical leg with value x in {0,…,d}. Along an ordinary vertex the other leg is T-x; at a cup or cap it is d-x. Straight intervals preserve the value. Hence all succeeding leg indices are literal affine functions</p>
+<pre><code>u_e=epsilon_e x+b_e, epsilon_e in {1,-1}, b_e integer. (8)</code></pre>
+<p>No modulo-N reduction is made in (8). The admissible x originally form an integer interval, with the final cycle closure imposed. Nevertheless the product of the continued factors (7) is zero at every x outside that interval.</p>
+<p>To prove this, take the FIRST vertex where a legal incoming index u in [0,d] would produce an illegal outgoing index. Cups and caps cannot cause that failure. If T=t&lt;=d, it means u&gt;t. If the incoming port is the first port, the polynomial argument is u in the unused range of (6). If it is the second port, the argument is t-u&lt;0; its residue modulo N lies in {t+1,…,d}, again a zero of G.</p>
+<p>If T=2d-t&gt;d, failure means u&lt;T-d. On the first port the normalized argument is u-(T-d)&lt;0, whose residue modulo N is in {t+1,…,d}. On the second port it is d-u, directly in that unused range. The same zeros hold for the actual white dual by (4), or directly by conjugating its reversed column. Thus that first illegal vertex has zero continued coefficient. Later affine indices need not be repaired; all later finite exponential polynomials remain defined.</p>
+<p>Therefore the cycle or path variable may be summed over ALL x=0,…,d. This lemma does not make f periodic: at even levels it is antiperiodic under y-&gt;y+N. Literal exponents in (7),(8) avoid losing precisely those signs.</p>
+<p>For an unmarked cycle the final value is epsilon x+B. Its exact closure may be replaced by</p>
+<pre><code>delta_N((epsilon-1)x+B).                         (9)</code></pre>
+<p>Indeed, whenever the product is nonzero all propagated leg values are in [0,d], so congruence of the final and initial values implies their equality. There is no surviving false winding state. At the marked component the final and initial values are instead inserted in the original dense row in (2); no closure delta is imposed.</p>
+<h2 id="integral-kirchhoff-flow-and-the-actual-mark">4. Integral Kirchhoff flow and the actual mark</h2>
+<p>Restore the ordinary cap only for the purpose of recording the physical graph. Its nodes have a canonical bipartition: W and cup nodes have two outgoing ports; pi and cap nodes have two incoming ports. Every original straight physical interval joins opposite types. Each physical cycle therefore has an EVEN number of nodes, including its cups and caps. Contracting these bivalent cup/cap nodes prematurely would hide this parity statement.</p>
+<p>Collapse every physical cycle to a vertex of a graph Gamma, and orient matching edge i from its pi cycle to its W cycle. Set</p>
+<pre><code>w_i=r_i-a_i,       -a_i&lt;=w_i&lt;=a_i.               (10)</code></pre>
+<p>An ordinary physical cycle closes if and only if its signed alternating sum of total degrees is zero. With the bipartition just specified, that defect is</p>
+<pre><code>B_c=sum_(W on c)(d-a_i+r_i)-sum_(pi on c)(d-a_i+r_i)
+                        +d(#cups on c-#caps on c)
+   =sum_(W on c) w_i-sum_(pi on c) w_i
+   =(div_Gamma w)_c.                            (11)</code></pre>
+<p>All d terms cancel because the two bipartite classes on a cycle have equal size. Each matching edge contributes with opposite signs to its two ends, so sum_c B_c=0 identically. Nonzero unmarked cycle contractions force their EXACT defects B_c=0, not just congruence modulo N. The omitted equation on the marked cycle then follows from the others. Thus (3) can be restricted EXACTLY to the bounded integral flow space</p>
+<pre><code>w in ker(div_Gamma:Z^R-&gt;Z^C), |w_i|&lt;=a_i.        (12)</code></pre>
+<p>There may be further quantum cancellations inside this support. The assertion is not that every flow gives a nonzero source term.</p>
+<p>On such a flow the marked endpoints are complementary. Let x be the SECOND coordinate of the original mark, so its first coordinate is d-x. Only now compare it with the ordinary cap in (2):</p>
+<pre><code>mark(d-x,x)/ellV(d-x,x)
+              =N^-1 q^(-d^2) Q^(dx).            (13)</code></pre>
+<p>This is the original specified mark, not a redefinition of it. Since d=-1 modulo N, it supplies a one-unit Fourier character. If instead the first marked coordinate were called x, its charge and constant phase would have the opposite displayed convention.</p>
+<h2 id="the-exact-shared-cycle-fourier-compiler">5. The exact shared-cycle Fourier compiler</h2>
+<p>Insert (7) at every W or pi vertex of a physical component, and insert the monomials (2) at its cups/caps or marked endpoint. By (8), the dependence on x in each term is a SINGLE character</p>
+<pre><code>q^[m_c(k)x],</code></pre>
+<p>where m_c(k) is an explicitly determined integer affine function of the LOCAL Fourier indices k_v. All remaining factors consist of the positive product product_v p_(t_v,a_v,k_v), the original scalar endpoint/cup factors, and explicit q phases depending on the SAME matching labels and Fourier indices.</p>
+<p>For an arbitrary formal cycle one could expand its closure as</p>
+<pre><code>delta_N((epsilon-1)x+B)
+  =N^-1 sum_(h=0)^d q^[2hB+2h(epsilon-1)x].      (14)</code></pre>
+<p>Thus its x sum is evaluated exactly by</p>
+<pre><code>S_N(m)=sum_(x=0)^d q^(mx)
+  = N                         if m=0 mod 2N,
+  = 0                         if m even but not 0 mod 2N,
+  = 2/(1-q^m)                if m odd.            (15)</code></pre>
+<p>For the ACTUAL source the odd case in (15) disappears for a proved reason. Every W/pi node has carrier parity d-2a=d modulo 2; every cup/cap and the dense mark has carrier parity d as well. The sign of the affine coordinate does not change that parity. Since the restored component has an even number of nodes, its total frequency m_c(k) is even for every Fourier tuple, at both level parities. The marked path has one fewer ordinary node and the mark supplies the last carrier. Thus the same conclusion holds before replacing the mark by its charged cap. The terms 2k and the closure terms in (14) do not alter the parity. Omitting a pivotal cup/cap carrier would destroy this argument.</p>
+<p>On a flow (12), let L_c(X) be the finite Laurent polynomial obtained by multiplying the ACTUAL continued ordinary vertex and cup/cap factors on c, with X=Q^x. It exists by this even-frequency result. Use the second marked coordinate for the variable on the marked cycle c_*. Let [X^b]_N denote cyclic coefficient extraction modulo X^N-1, summing every Laurent coefficient of exponent b modulo N. The full-grid lemma and (13)–(15) give</p>
+<pre><code>A_(D,N)=q^(-d^2) N^(C-1)
+  sum_(a,w:div w=0, |w_i|&lt;=a_i)
+    product_i[h0_(a_i)omega_(a_i)^epsilon_i]
+    *[X_(c_*)^1]_N L_(c_*)(X_(c_*))
+    *product_(c!=c_*) [X_c^0]_N L_c(X_c).         (16)</code></pre>
+<p>Here C is the number of restored physical cycles. Every constant endpoint, cup, cap and source phase is included in L_c. For the marked cycle the Fourier sum contributes N and the original ratio (13) contributes 1/N; this explains the exact N^(C-1), including its phase q<sup>(-d</sup>2). Formula (16) is valid at BOTH level parities.</p>
+<p>It can be evaluated by cyclic convolution of coefficient arrays of length N, without enumerating all Fourier tuples. In an expanded form it is a finite sum with positive local p coefficients, the original scalar factors, explicit t_v-dependent phases, integral Kirchhoff constraints (12), and coupled Fourier congruences from (16). Those phases are not removed by positivity of the p’s.</p>
+<h2 id="a-joint-energy-with-every-shared-state-retained">6. A joint energy, with every shared state retained</h2>
+<p>Define the explicit positive comparison</p>
+<pre><code>Z_cycle(N)=sum_(a,r) product_i h0_(a_i)^2
+                                  product_c |F_c(a,r)|^2.     (17)</code></pre>
+<p>Each cycle period in (17) is evaluated coherently BEFORE its absolute square. The matching labels and their magnetic indices remain common to both incident vertices and to all components they connect. If there are R original circles, the number of matching states is at most N^(2R), so finite Cauchy gives</p>
+<pre><code>|A_(D,N)|^2 &lt;= N^(2R) Z_cycle(N).                (18)</code></pre>
+<p>The circle half-twist phases have modulus one, but are removed only in this stated upper bound, not from the exact identity (3). This is one joint comparison energy for arbitrary fixed bridge width. It neither maximizes each vertex independently nor replaces each F_c by a product of column norms.</p>
+<p>To turn (17) into the desired geometric theorem, one must still control the coherent cycle periods with their shared labels and identify the resulting constrained action, including its phases, with the actual marked gluing equations. The real Legendre action of positive Fourier coefficients alone is not such an identification. A lower bound or contributing-cycle argument for (3) is still required; (18) allows complete cancellation in the original source.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_matching_graph_shared_cycle_fourier_compiler.py">original fixed-label cycles and full Fourier kernels</a>.</p>
+<p>Independent review: the root agent and cluster/source agent checked the complete proof, including the original white normalization, both-port first-failure zeros, exact Kirchhoff support, both-parity carrier cancellation, and the original marked charge. The cluster agent freshly replayed the audit: 40 literal fixed-label plats, 440 physical vertex polynomials, 117 first-failure zeros, 80 even carrier components, and 17 exact charged coefficients passed. This review does not assert a global energy asymptotic or noncancellation of the original source.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_graph_shared_cycle_fourier_compiler.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#freeze-the-actual-matching-labels-not-the-physical-wires">1. Freeze the actual matching labels, not the physical wires</a><a href="#every-fixed-physical-vertex-has-the-same-finite-continuation">2. Every fixed physical vertex has the same finite continuation</a><a href="#the-first-failure-zero-lemma-permits-a-full-grid">3. The first-failure zero lemma permits a full grid</a><a href="#integral-kirchhoff-flow-and-the-actual-mark">4. Integral Kirchhoff flow and the actual mark</a><a href="#the-exact-shared-cycle-fourier-compiler">5. The exact shared-cycle Fourier compiler</a><a href="#a-joint-energy-with-every-shared-state-retained">6. A joint energy, with every shared state retained</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

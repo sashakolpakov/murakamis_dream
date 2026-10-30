@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The native highest-weight energy has a geometric action · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Geometry</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#geometry">Angle optimization and actual geometry</a> · <a href="../library.html#fourier">Fourier, weighted Cauchy, and energy</a><p><span class="badge">Local energy cells; global phase gap retained</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_native_magnetic_energy_local_geometry.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_native_magnetic_energy_local_geometry.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_native_magnetic_energy_local_geometry_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="the-native-highest-weight-energy-has-a-geometric-action">The native highest-weight energy has a geometric action</h1>
+<p>30 October 2026. The exponential native projector cost is already geometric in a simple physical block. Its exact normalization also shows why a general comparison cannot assign a positive volume to every normalized magnetic summand or discard the phases at a maximum.</p>
+<h2 id="exact-highest-weight-energy-both-parities">1. Exact highest-weight energy, both parities</h2>
+<p>Put q=exp(pi i/N), d=N-1, s_r=product_(h=1)^r 2sin(pi h/N), and choose 0&lt;=j&lt;=floor(d/2). In the physical degree t=j the original normalized column is a highest vector. Its exact entries are</p>
+<pre><code>f_u=C_j(q;j,u)=q^(ju) s_j/(s_u s_(j-u)), 0&lt;=u&lt;=j.       (1)</code></pre>
+<p>This follows directly from the original generic highest-vector ratio: at the root its negative-index Pochhammer factors give q<sup>(u</sup>2) [j choose u]<em>(q^2), and the Gaussian binomial has phase q<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and positive magnitude s_j/(s_u s</em>(j-u)). The generic source is specialized only after this calculation.</p>
+<p>The actual Christoffel–Darboux measure of this simple degree block is</p>
+<pre><code>|sigma_(j,j)|=s_(2j)/s_j^2.                         (2)</code></pre>
+<p>For 2j&lt;d, cancel the last factor in the original formula s_(2j+1)/(s_j^2 |1-q^(4j+2)|). For the odd simple midpoint 2j=d, the separately retained measure N/s_j^2 is the same expression, since s_d=N. No zero denominator is evaluated in this cancellation.</p>
+<p>Therefore its native rank-one projector norm is exactly</p>
+<pre><code>E_(j,j)=sum_(u=0)^j W_N(j,u),
+W_N(j,u)=s_j^4/[s_(2j)s_u^2 s_(j-u)^2].           (3)</code></pre>
+<p>For j&lt;d-j this is the degree-t=j block of the completed cluster projector, not the singular individual projector on larger degrees. For 2j=d it is the degree-t=j block of the isolated midpoint projector. Formula (3) does not maximize over the other physical degrees of either operator.</p>
+<h2 id="its-complete-local-variational-profile">2. Its complete local variational profile</h2>
+<p>Let J(x)=integral_0^x log(2sin(pi y))dy. The endpoint-controlled factorial estimate log s_r=N J(r/N)+O(log N), uniform for 0&lt;=r&lt;N, gives, with xi=j/N and x=u/N,</p>
+<pre><code>N^(-1)log W_N(j,u)=e(xi,x)+O(log N/N),
+e(xi,x)=4J(xi)-J(2xi)-2J(x)-2J(xi-x).            (4)</code></pre>
+<p>This is uniform on 0&lt;=x&lt;=xi&lt;=1/2, with continuous endpoint values. For fixed 0&lt;xi&lt;=1/2 the action is strictly concave in 0&lt;x&lt;xi:</p>
+<pre><code>e_x=2 log[sin(pi(xi-x))/sin(pi x)],
+e_xx=-2pi sin(pi xi)/[sin(pi x)sin(pi(xi-x))]&lt;0.  (5)</code></pre>
+<p>Its unique maximum is x=xi/2. The actual discrete support contains a point within 1/N of this maximum, and has at most N points. Bounding (3) between its largest summand and N times that summand therefore proves, whenever j/N tends to xi in [0,1/2],</p>
+<pre><code>lim N^(-1)log E_(j,j)=m(xi),
+m(xi)=4J(xi)-J(2xi)-4J(xi/2).                   (6)</code></pre>
+<p>This statement includes both level parities. Moreover</p>
+<pre><code>m&#39;(xi)=2 log[cos(pi xi/2)/cos(pi xi)]&gt;0
+                                  (0&lt;xi&lt;1/2),
+m(0)=0, m(1/2)=-4J(1/4)=v8/(2pi).              (7)</code></pre>
+<p>For even N=2h and j=h-1, the actual measure in (2) is 1/sin(pi/N); for odd N=2h+1,j=h it is one. This polynomial difference does not change the common folded limit (7). Thus the native exponential obstruction is not restricted to odd levels.</p>
+<h2 id="four-actual-ideal-tetrahedra-at-the-folded-color">3. Four actual ideal tetrahedra at the folded color</h2>
+<p>Write Lambda(a)=-integral_0^a log|2sin b|db, so J(x)=-Lambda(pi x)/pi. At xi=1/2, (4) becomes</p>
+<pre><code>2pi e(1/2,x)
+  =4[Lambda(pi x)+Lambda(pi(1/2-x))]
+  =4 Vol T(pi x,pi(1/2-x),pi/2), 0&lt;x&lt;1/2.        (8)</code></pre>
+<p>The tetrahedra in (8) have positive angles summing to pi. They also glue to an explicit convex ideal octahedron O_x. In the upper half-space boundary take its six ideal vertices to be</p>
+<pre><code>0, infinity, 1, -1, zeta, -zeta,
+zeta=exp(2pi i x).                               (9)</code></pre>
+<p>The four unit-circle vertices form a Euclidean rectangle. Their unit-hemisphere plane separates the other two vertices. The upper half is the ideal quadrangular pyramid with apex infinity; reflection in that hemisphere gives the lower half with apex zero. Split the base along the diameter from 1 to -1. The two upper tetrahedra have the Euclidean triangle (1,zeta,-1), or (1,-zeta,-1), as a horospherical triangle at infinity. Each has angles pi x,pi(1/2-x),pi/2, up to permutation. Reflection gives two more tetrahedra of the same volume.</p>
+<p>These four tetrahedra fill the convex hull in (9). One can check the supporting planes directly: the vertical halfspace over each rectangle edge contains the origin, because the rectangle contains its center. It therefore contains ALL six vertices. Reflecting that halfspace in the unit hemisphere fixes the four rectangle vertices and exchanges zero and infinity, so the four lower face halfspaces contain all six vertices as well. Their eight triangular faces form the octahedral boundary. Along a shared rectangle edge, the two interior dihedral angles sum to either 2pi x or pi-2pi x, both strictly less than pi. The remaining pyramid edges have angle pi/2. Thus the joined boundary is locally convex; equivalently its eight triangular face planes support all six vertices. There is no hidden negative-volume piece.</p>
+<p>It follows that 2pi e(1/2,x)=Vol(O_x). At x=1/4 its eight faces form the regular ideal octahedron and its volume is v8. Equation (5) gives this as the unique maximum in this family. This is a geometric interpretation of ONE native degree-block energy, not a claim that this octahedron is already a cell in the supplied link complement.</p>
+<h2 id="the-compulsory-face-subtraction-away-from-the-fold">4. The compulsory face subtraction away from the fold</h2>
+<p>The same interpretation is signed for other colors. The elementary duplication identity</p>
+<pre><code>Lambda(2a)=2Lambda(a)-2Lambda(pi/2-a)</code></pre>
+<p>converts (4), for 0&lt;x&lt;xi&lt;1/2, to</p>
+<pre><code>2pi e(xi,x)
+   =4 Vol T(pi x,pi(xi-x),pi(1-xi))
+                     -4Lambda(pi(1/2-xi)).       (10)</code></pre>
+<p>The second term is forced by the original measure (2). It is positive before its subtraction, since Lambda is positive on (0,pi/2). At x=0 the tetrahedron flattens and</p>
+<pre><code>e(xi,0)=-(2/pi)Lambda(pi(1/2-xi))&lt;0.             (11)</code></pre>
+<p>Consequently no representation of EVERY CD-normalized magnetic summand’s action as a sum of nonnegative ideal-cell volumes can be correct without additional boundary terms or cancellations. This does not prevent the completed energy from having a positive geometric maximum: (6),(7) prove that its maximum is strictly positive. It identifies a necessary normalization in any such argument.</p>
+<h2 id="what-a-shared-variable-action-must-retain">5. What a shared-variable action must retain</h2>
+<p>For general physical degree and channel, the exact local energy is sum_u |C_j(t,u)|^2/|sigma_(t,j)|. On strict compacts where the selected ordinary packet applies, its summand has the action</p>
+<pre><code>2 Re Phi_xi(tau,nu)-kappa(tau,xi),               (12)</code></pre>
+<p>where kappa is the leading logarithm of the ACTUAL measure. Here tau, nu and xi are real admissible scaled physical indices; the complex packet supplies their selected action, not a different complex-degree operator norm. In the two chambers supplied by its factorial formulas,</p>
+<pre><code>kappa=J(tau-xi)+J(tau+xi)-2J(tau), tau+xi&lt;1,
+kappa=J(tau-xi)+J(tau+xi-1)-2J(tau), tau+xi&gt;1.   (13)</code></pre>
+<p>The odd self-paired endpoint has the corresponding limit 2J(tau-1/2)-2J(tau). Polynomial factors in the finite measures do not contribute to (13). Formula (12) describes a normalized summand; the sum over u and the sum over physical degree are still to be taken.</p>
+<p>If a positive comparison energy is constructed by sewing these actual columns, its candidate action is the SUM of (12), together with the remaining original boundary weights, restricted to the SAME magnetic wire variables and exact affine degree constraints used in that sewing. Taking separate maxima in tau or nu before sewing changes that variational problem. Neither the existence of such a useful global comparison nor its equality with the manifold’s angle-volume problem is proved here.</p>
+<p>The selected geometric framing generally gives COMPLEX magnetic coordinates. The localization theorem puts them in the selected physical tube, but does not put them on the real grid defining this positive energy. An identification with a real angle polytope, or a justified deformation of the original sum, is therefore an additional step; the local complex packet alone supplies neither.</p>
+<p>There is a further exact local warning about stationarity. Equation (1) has the marked highest-weight action</p>
+<pre><code>Phi_high(xi,x)=J(xi)-J(x)-J(xi-x)+pi i xi x.</code></pre>
+<p>At the energy maximum x=xi/2,</p>
+<pre><code>partial_x Phi_high=pi i xi,
+exp(partial_x Phi_high)=exp(pi i xi).            (14)</code></pre>
+<p>At the folded value this multiplier is i, although the real energy derivative vanishes. Real-energy stationarity constrains the modulus of a transport multiplier; it does not by itself impose its marked phase or a full complex gluing equation. In a real link network those phases may cancel through the actual shared incidence and boundary characters, but that requires a separate proof. This example does not assert that an open column ought to have trivial boundary momentum.</p>
+<p>Thus the missing global bridge is precise: construct the actual sewn energy with its signed face terms and shared variables, and prove that its stationarity, INCLUDING the retained phase and peripheral conditions, gives the degree-one geometric gluing. The local octahedral volume and the correctly normalized summands alone do not establish that bridge or a nonzero original quantum period.</p>
+<h2 id="the-larger-full-folded-cost-is-twice-an-ideal-cube-volume">6. The larger full folded cost is twice an ideal cube volume</h2>
+<p>The separate <a href="actual_matching_edge_magnetic_energy_profile.html">full magnetic-energy theorem</a> now computes the full folded operator rate as 5v3/pi, with effective volume 10v3, for the odd simple projector and the actual even completed pair. This maximizes over physical degree and is strictly larger than the highest-weight block cost in (8). Here is an explicit local polyhedron with that larger two-copy volume.</p>
+<p>In Minkowski coordinates with form (-+++), let</p>
+<pre><code>V_epsilon=(sqrt(3),epsilon_1,epsilon_2,epsilon_3),
+epsilon_i in {+1,-1}.</code></pre>
+<p>These null vectors project to the eight Klein vertices of the cube [-1/sqrt(3),1/sqrt(3)]^3. The four vertices with product epsilon_i=+1 form a regular ideal tetrahedron: every distinct pair has the same Lorentz product, and the signed coordinate symmetries permute its vertices. Its face opposite V_epsilon has normal</p>
+<pre><code>n_epsilon=(1,-sqrt(3)epsilon_1,
+                -sqrt(3)epsilon_2,-sqrt(3)epsilon_3),
+&lt;n_epsilon,n_epsilon&gt;=8,
+&lt;V_epsilon,n_epsilon&gt;=-4sqrt(3).</code></pre>
+<p>Reflection in that face sends the opposite vertex to</p>
+<pre><code>V_epsilon-2&lt;V_epsilon,n_epsilon&gt;n_epsilon/8
+                              =2V_(-epsilon).                (15)</code></pre>
+<p>Thus the four adjacent corner tetrahedra are also regular ideal tetrahedra, congruent to the central one. They fill the cube without overlap. Indeed the central tetrahedron has the four Klein inequalities epsilon dot x&gt;=-1/sqrt(3), for sign triples of product +1. Inside the cube, two such inequalities cannot fail simultaneously: adding them would violate one coordinate bound of the cube. The part failing one inequality is precisely the tetrahedron with its opposite cube corner and the three neighboring central vertices. This gives the usual central tetrahedron and four corner tetrahedra as an actual geometric partition.</p>
+<p>Each original cube edge lies in one regular tetrahedron and has dihedral angle pi/3. Along each triangulated square-face diagonal, three tetrahedral angles add to pi. This is the regular ideal six-square-faced cube, with its stated angle data.</p>
+<p>Consequently this regular ideal cube has volume 5v3, and TWO copies have volume 10v3. This is an exact geometric interpretation of the local full folded COST. It supplies no face pairing, cusp marking, degree-one chain, or volume upper inequality for the original link complement. Attaching the local cube to a source diagram remains a separate shared-incidence problem.</p>
+<p>Focused audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_native_magnetic_energy_local_geometry.py">original highest vectors, CD measures and ideal shapes</a>. It verifies 817 original finite highest-vector entries with their phases, 167 bilinear measures, 23 even/odd folded measure formulas, and all four actual tetrahedron cross ratios. The global sewing and phase-matching problem is not a conclusion of these checks. The cube addition also checks all four Lorentz reflections (15) exactly.</p>
+<p>Independent analytical reviews of sections 1–5: PASS. The root reader checked the original highest-vector phase, both parity measures, uniform local action and its strict maximum, the eight supporting planes and four tetrahedra, the compulsory signed term, and the distinction between real-energy and complex-phase stationarity. A second reader independently derived those formulas and freshly replayed the focused audit, reproducing all 817 source, 167 measure, 23 parity and four shape checks. Both reviews retain the degree-block scope and infer no cells in the actual source complement, real-grid geometric saddle, or global volume equality.</p>
+<p>Section 6 review: a second reader independently checked the four Lorentz reflections, central/corner partition and regular ideal tetrahedra, and freshly replayed the enlarged audit including all four cube reflections. The resulting cube volume is a local boundary-cost interpretation only; no identification with the right-angled matching polyhedron is inferred. The primary reader also independently verified the Lorentz reflection, the impossibility of two failed central halfspaces, all five regular tetrahedra, the cube-edge and face-diagonal angle sums, and the exact 5v3 single-cube volume, with the same topology limitation.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>u(j-u)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_native_magnetic_energy_local_geometry.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-highest-weight-energy-both-parities">1. Exact highest-weight energy, both parities</a><a href="#its-complete-local-variational-profile">2. Its complete local variational profile</a><a href="#four-actual-ideal-tetrahedra-at-the-folded-color">3. Four actual ideal tetrahedra at the folded color</a><a href="#the-compulsory-face-subtraction-away-from-the-fold">4. The compulsory face subtraction away from the fold</a><a href="#what-a-shared-variable-action-must-retain">5. What a shared-variable action must retain</a><a href="#the-larger-full-folded-cost-is-twice-an-ideal-cube-volume">6. The larger full folded cost is twice an ideal cube volume</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual magnetic-energy profile and the full Steinberg cost · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Fourier and energy</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a> · <a href="../library.html#fourier">Fourier, weighted Cauchy, and energy</a><p><span class="badge">Exact Plancherel; full folded norm rate</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_edge_magnetic_energy_profile.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_matching_edge_magnetic_energy_profile.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_matching_edge_magnetic_energy_profile_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="the-actual-magnetic-energy-profile-and-the-full-steinberg-cost">The actual magnetic-energy profile and the full Steinberg cost</h1>
+<p>30 October 2026. An exact finite Fourier identity reduces the native magnetic energy to its actual center coefficient, within polynomial factors. The selected q-Hahn action therefore gives its rate without taking the absolute values of a coherent source sum. At the folded channel the degree profile is strictly increasing. The FULL odd Steinberg projector and the even maximal completed pair both have rate 5 v3/pi, larger than the highest-weight block example v8/(2pi).</p>
+<p>Here v3 is the volume of a regular ideal tetrahedron. The result is an operator boundary cost. It does not assert a volume identity for the original marked network or replace shared magnetic sums by independent local maxima.</p>
+<h2 id="exact-fourier-reduction-including-the-unused-nodes">1. Exact Fourier reduction, including the unused nodes</h2>
+<p>Use q=exp(pi i/N), Q=q^2, d=N-1 and an actual complete channel</p>
+<pre><code>0&lt;=j&lt;=floor(d/2), d-j&lt;=t&lt;=d.</code></pre>
+<p>Let fhat(u) be the literal terminating continuation of the original normalized column C_j(t,u). The <a href="actual_q_hahn_magnetic_complex_corridor.html">magnetic polynomial theorem</a> proves, with x=q^d, h=d-t and n=t+j-d,</p>
+<pre><code>fhat(u)=x^u Q^(-ju) G_t(Q^u),
+G_t(q^t z)=c_t P_t(z),
+c_t=q^(jn)/(Q;Q)_j,
+P_t(z)=B_h(z) A_n(z)=sum_(k=0)^j p_k z^k.       (1)</code></pre>
+<p>Every p_k is strictly positive. This is the proved sine-coefficient recurrence for A_n and the positive sine-binomial coefficients of B_h, not positivity of the original oscillatory magnetic column. Also G_t(Q^u)=0 for every unused physical node t&lt;u&lt;=d.</p>
+<p>Since deg G_t=j&lt;N, discrete Fourier orthogonality gives EXACTLY</p>
+<pre><code>sum_(u=0)^t |C_j(t,u)|^2
+  =sum_(u=0)^d |G_t(Q^u)|^2
+  =N/s_j^2 sum_(k=0)^j p_k^2,                  (2)
+|fhat(t/2)|^2=(sum_k p_k)^2/s_j^2.</code></pre>
+<p>All prefactors in the first line of (1) have modulus one at real u, including the possibly half-integral center. Thus no physical parity or source phase is changed in (2). The vanished nodes are essential: the whole Fourier sum is equal to the actual physical column norm, rather than a norm on a larger invented support.</p>
+<p>Cauchy’s inequality and positivity now imply</p>
+<pre><code>N/(j+1)|fhat(t/2)|^2 &lt;= ||C_j(t,.)||_2^2
+                          &lt;=N|fhat(t/2)|^2.    (3)</code></pre>
+<p>This is both an upper and a lower estimate, uniform at ALL physical degrees in the complete range. It leaves the actual cancellation already present in the center coefficient untouched.</p>
+<h2 id="the-explicit-complete-channel-energy-profile">2. The explicit complete-channel energy profile</h2>
+<p>Let J(y)=integral_0^y log(2sin(pi z))dz for 0&lt;=y&lt;=1, and let Phi_xi(tau,nu) be the ACTUAL selected action proved in the <a href="actual_q_hahn_full_physical_complex_packet.html">full physical packet</a>. For 0&lt;xi&lt;=1/2 and 1-xi&lt;=tau&lt;1 put</p>
+<pre><code>e(tau,xi)=2 Re Phi_xi(tau,tau/2)
+             -J(tau-xi)-J(tau+xi-1)+2J(tau).    (4)</code></pre>
+<p>This formula is uniform near xi=1/2. It applies to both double channels and the odd simple midpoint. More precisely, use the actual ratios xi_N=j/N and tau_N=(t+1)/N, so that the complete condition is exactly tau_N+xi_N&gt;=1. On fixed real compacts with 1/2&lt;tau_N&lt;1 and xi_N bounded away from zero,</p>
+<pre><code>log E_(t,j)=N e(tau_N,xi_N)+O(log N),           (5)</code></pre>
+<p>where E is the exact CD-normalized magnetic energy of the <a href="actual_matching_edge_native_projector_energy.html">native projector theorem</a>. The O(log N) is uniform, including the bottom complete degree.</p>
+<p>Indeed (3) changes the logarithm of the norm from that of its center by only O(log N). The original nonzero packet gives log|fhat(t/2)|=N Re Phi_(j/N)(t/N,t/(2N))+O(log N). Moving both scaled arguments by O(1/N) to the ratios in (5) costs O(1) on these compacts. The exact double CD measure is</p>
+<pre><code>|sigma_(t,j)|=N s_(t-j)s_(t+j-d)/(s_t^2 a_j^2),
+a_j=|1-Q^(2j+1)|.</code></pre>
+<p>Its log divided by N equals the three J terms subtracted in (4), to error O(log N/N). Nonzero a_j is at least a constant/N, so even the almost-folded double channels cost only O(log N). At the simple midpoint its exact measure N s_(t-j)<sup>2/s_t</sup>2 has the SAME limiting profile. Uniform factorial endpoint estimates include s_0=1. The shifted tau_N avoids assigning J a negative argument at t=d-j.</p>
+<p>The rate in (4) also has an elementary derivative. Set</p>
+<pre><code>c=-cos(pi tau), C=cos(pi xi), s=sin(pi xi),
+k=sqrt(1+2c+C^2).</code></pre>
+<p>In the strict complete interior c&gt;C&gt;=0,</p>
+<pre><code>partial_tau e
+  =2 log{ [s sqrt(1+c)+sqrt((1-c)(1+2c+C^2))]
+                                     /sqrt(2(c^2-C^2)) }&gt;0.  (6)</code></pre>
+<p>For a direct derivation, the actual selected magnetic multiplier at the real center is Y=(s+i k)^2/[2(1+c)]. It has modulus one and argument in (0,pi). The original second finite-shift equation gives</p>
+<pre><code>exp(Phi_tau)=(exp(pi i tau)-Y^-1)/(1+exp(pi i tau)).</code></pre>
+<p>Taking its modulus gives [s tan(pi tau/2)+k]/sqrt(2(1+c)). The real derivative along the center is Re Phi_tau because Re Phi_nu=0. Meanwhile the derivative of the CD action is log[(c<sup>2-C</sup>2)/(1-c^2)]. Combining these two identities proves (6). Its sign is exact: the square of the FIRST numerator term minus the denominator squared is (1-c)(1+2c+C^2)&gt;0. It follows that the entire displayed numerator is strictly larger than its denominator.</p>
+<p>Thus the complete-channel rate is strictly increasing in physical degree. For a nonfolded PAIR, the unpaired degrees j&lt;=t&lt;d-j are not covered by this assertion; no full paired-operator maximum is deduced from (6) alone.</p>
+<h2 id="a-finite-folded-determinant-controls-all-physical-degrees">3. A finite folded determinant controls ALL physical degrees</h2>
+<p>Now let N=2m+1 be odd and j=m. The full Steinberg projector is simple. By the exact high-degree adapter, it suffices to consider m&lt;=t&lt;=d=2m. Write</p>
+<pre><code>c_t=-cos(pi(t+1)/N),
+R_m(z;c)=det(z I+c D_m+K_m),                   (7)</code></pre>
+<p>where D_m is the already proved real positive matrix and K_m is real skew-symmetric. Here c_t ranges from sin(pi/(2N)) to 1. The exact source scalar and CD measure give</p>
+<pre><code>|fhat(t/2)|^2/|sigma_(t,m)|=R_m(1;c_t)^2/N.</code></pre>
+<p>Indeed beta(2m,m)=1, the sine denominator of the center column is s_t/s_(t-m), and |sigma|=N s_(t-m)<sup>2/s_t</sup>2. Therefore (3) becomes</p>
+<pre><code>R_m(1;c_t)^2/(m+1) &lt;= E_(t,m) &lt;= R_m(1;c_t)^2. (8)</code></pre>
+<p>The determinant is positive and strictly increasing for real c&gt;=0. To verify this directly, conjugate I+cD_m+K_m by D_m^-1/2. Its symmetric part is D_m^-1+cI&gt;0, so its inverse has positive definite symmetric part. Consequently</p>
+<pre><code>partial_c log R_m(1;c)
+  =tr[(I+cD_m+K_m)^-1 D_m]&gt;0.                  (9)</code></pre>
+<p>This proves finite bounds on the ENTIRE physical operator:</p>
+<pre><code>R_m(1;1)^2/(m+1) &lt;= ||Pi_St||op &lt;= R_m(1;1)^2,
+||Pi_St||op &lt;= ||Pi_St||HS &lt;= sqrt(N)||Pi_St||op. (10)</code></pre>
+<p>Every physical degree is retained. These bounds do not claim that the exact finite maximum of E_(t,m) is always at t=d; they prove that its exponential rate is determined there.</p>
+<p>There is no unproved endpoint continuity hidden here. For c&gt;=0 put S=I+cD_m. The symmetric part of (S+K_m)^-1 is bounded above by S^-1: conjugate by S^-1/2 and use Re(I+A)<sup>-1=(I-A</sup>2)^-1&lt;=I for real skew A. Integrating the trace inequality yields</p>
+<pre><code>0&lt;=log R_m(1;c)-log R_m(1;0)
+                                  &lt;=log det(I+cD_m).          (11)</code></pre>
+<p>Hadamard and the explicit diagonal (D_m)_(n,n)=1/[cos(n pi/N)cos((n+1)pi/N)] give</p>
+<pre><code>log det(I+cD_m)
+   &lt;=sum_(r=1)^m log(1+C c N^2/r^2)
+   &lt;=C N sqrt(c).                              (12)</code></pre>
+<p>The last step bounds the decreasing sum by its integral on (0,infinity). Thus the actual lowest c_t=O(1/N) and c=0 differ by o(N) in log determinant. Near c=1 the simpler bound partial_c log R_m&lt;=m/c gives uniform continuity after division by N. Together with the interior packet, (8),(11),(12) extend the folded profile continuously to BOTH degree endpoints. At its lower endpoint the native highest-column calculation gives</p>
+<pre><code>e(1/2,1/2)=v8/(2pi).</code></pre>
+<h2 id="the-endpoint-is-an-actual-cubic-fourier-sum">4. The endpoint is an actual cubic Fourier sum</h2>
+<p>The upper endpoint can be evaluated without applying an interior amplitude theorem on the boundary. At t=d,u=j=m the ORIGINAL terminating sum is, up to its displayed unit phase,</p>
+<pre><code>P_N(w_N)=sum_(a=0)^m beta(m,a)^3 w_N^a,
+w_N=q^m -&gt; i,
+C_m(d,m)=exp(pi i m)q^[-(m+1)m] P_N(w_N).       (13)</code></pre>
+<p>The denominator beta(d,m) is exactly one. The <a href="actual_q_hahn_negative_root_source_polynomial.html">negative-root theorem</a> applies to THIS physical polynomial and proves that every zero is negative real. Its positive-real asymptotic is therefore continued to i by the actual root-product normal-family argument. For completeness, uniform factorial estimates give the real Laplace phase</p>
+<pre><code>E(alpha)=-3[J(alpha)+J(1/2-alpha)], 0&lt;=alpha&lt;=1/2.</code></pre>
+<p>For every w&gt;0, E(alpha)+alpha log w has one strict interior maximum: E’=3 log cot(pi alpha), E’’&lt;0. The selected saddle is explicitly</p>
+<pre><code>alpha(w)=pi^-1 arctan(w^(1/3)).                 (14)</code></pre>
+<p>Use the positive cube root at w&gt;0 and its continuation on the slit plane C(-infinity,0]. Its argument stays in (-pi/3,pi/3), so arctan and the J terms continue holomorphically without reaching their singularities. The root-product bound |Log((w+rho)/(1+rho))|&lt;=C_K, rho&gt;0, on each slit-plane compact and the positive-real Laplace limit identify the WHOLE actual normalized logarithm with this continued saddle action. This argument includes the moving arguments w_N and does not use a triangle bound for (13).</p>
+<p>At w=i,</p>
+<pre><code>alpha=1/4+i log(3)/(4pi), z=exp(2pi i alpha)=i/sqrt(3).</code></pre>
+<p>Let eta=Im alpha. The real source rate is</p>
+<pre><code>S=Re[E(alpha)+alpha log i]
+  =-6 Re J(alpha)-(pi/2)eta
+  =3 Im Li2(z)/pi+log(3)/4
+  =3 D(z)/pi.                                  (15)</code></pre>
+<p>Here D(z)=Im Li2(z)+Arg(1-z)log|z| is the ideal tetrahedron volume. To check every constant, the analytic primitive on the sine strip is</p>
+<pre><code>J(a)=i pi(a-a^2)/2+i[Li2(exp(2pi i a))-pi^2/6]/(2pi).</code></pre>
+<p>At the displayed alpha it gives Re J(alpha)=-pi eta/4-Im Li2(z)/(2pi). Also Arg(1-z)=-pi/6 and log|z|=-log(3)/2. These prove (15).</p>
+<p>The ideal shape z has angles pi/2,pi/6,pi/3. Thus D(z)=Lambda(pi/6)+Lambda(pi/3), with Lambda(pi/2)=0. The elementary duplication identity for the integral Lambda gives Lambda(pi/6)=(3/2)Lambda(pi/3), and v3=3Lambda(pi/3). Consequently D(z)=5v3/6, so the EXACT endpoint energy rate is</p>
+<pre><code>2S=5v3/pi.                                     (16)</code></pre>
+<p>Since R_m(1;1)=sqrt(N)|C_m(d,m)|, equations (10),(13)–(16) prove</p>
+<pre><code>lim_(odd N) N^-1 log ||Pi_St||op
+  =lim_(odd N) N^-1 log ||Pi_St||HS=5v3/pi.       (17)</code></pre>
+<p>In the volume convention 2pi times a rate, this boundary cost is 10v3. It is strictly larger than the v8 cost in the highest-weight block, which has the LOWEST physical degree t=j.</p>
+<h2 id="what-is-retained-for-the-general-source">5. What is retained for the general source</h2>
+<p>The folded profile can be recorded without an implicit saddle:</p>
+<pre><code>e(tau,1/2)=5v3/pi
+   -integral_tau^1 2log{[sqrt(1+c)
+             +sqrt((1-c)(1+2c))]/(sqrt(2)c)} ds,
+c=-cos(pi s).                                   (18)</code></pre>
+<p>It is continuous on [1/2,1], strictly increasing in its interior, and has the two endpoint values proved above. The fixed-jet native theorem adds only polynomial factors to these energies.</p>
+<p>Equations (2)–(5) retain an explicit magnetic degree and the exact CD measure. The full operator norm takes a maximum over that ONE degree. In an original diagram those degrees and magnetic variables are shared by adjacent coupons, and the phases in (1),(13) remain in their signed contractions. Nothing here authorizes multiplying independently maximized local boundary costs, discarding those phases, or identifying the energy optimum with a marked geometric critical point. Those are distinct global requirements.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_matching_edge_magnetic_energy_profile.py">actual Fourier energy and folded endpoint</a>.</p>
+<h2 id="the-even-maximal-pair-has-the-same-full-rate">6. The even maximal pair has the same full rate</h2>
+<p>Let N=2h&gt;=4, j=h-1, l=h. Use the ACTUAL completed Q_j,M_j of the native-energy theorem, rather than treating the two root channels as separate simple projectors. The complete degrees are h&lt;=t&lt;=d. Their exact normalization is</p>
+<pre><code>|fhat(t/2)|^2/|sigma_(t,j)|
+   =(8/N) sin(pi(t-j)/N) R_j(1;c_t)^2.           (19)</code></pre>
+<p>For verification, a_j=2sin(pi/N), a_j s_(2j)=N and s_j^2=N/2. Substituting these identities into the center column and the DOUBLE CD measure leaves (19), because s_(t-j)/s_(t+j-d)=2sin(pi(t-j)/N). This retains the paired source normal and its measure.</p>
+<p>By (3),(9),</p>
+<pre><code>8 R_j(1;1)^2/(j+1) &lt;= max_(h&lt;=t&lt;=d) E_(t,j)
+                                  &lt;=8 R_j(1;1)^2.             (20)</code></pre>
+<p>The lower bound uses t=d, where the sine in (19) is exactly one; the upper bound uses that sine&lt;=1 and c_t&lt;=1. There is just ONE incomplete low degree, t=j, with its reflected high copy. Its normalized highest column has |f_u|=beta(j,u) and |sigma|=1/sin(pi/N), so its energy has the smaller rate v8/(2pi).</p>
+<p>At t=d the center d/2 is half-integral. Use the original physical sample u=j, only half a step away. The endpoint polynomial is</p>
+<pre><code>P_N(w_N)=sum_(a=0)^j beta(j,a)^2 beta(j+1,j-a) w_N^a,
+w_N=q^j -&gt; i.                                  (21)</code></pre>
+<p>Again beta(d,j)=1 and the external source factor has modulus one. Its coefficients differ from the cubic coefficients by the EXACT positive ratio</p>
+<pre><code>beta(j+1,j-a)/beta(j,a)=1/sin(pi(a+1)/N),</code></pre>
+<p>which is between one and O(N). Thus its uniform real Laplace profile is the same E(alpha) as in section 4. Its actual negative roots then select the same complex action at i; this does not deduce the complex rate by comparing positive coefficients alone.</p>
+<p>The center/sample comparison is also exact up to a controlled unit. At t=d the positive polynomial P_t in (1) has all roots negative real. Each factor with root -rho satisfies</p>
+<pre><code>cos(pi/(2N)) &lt;= |exp(-pi i/N)+rho|/(1+rho) &lt;=1.</code></pre>
+<p>Multiplying its j factors, with the physical prefactors of (1), gives</p>
+<pre><code>cos(pi/(2N))^j &lt;= |C_j(d,j)|/|fhat(d/2)| &lt;=1.    (22)</code></pre>
+<p>The center determinant scalar in (19) is polynomial in N, so (21),(22) prove N^-1 log R_j(1;1)^2 -&gt;5v3/pi at even levels too.</p>
+<p>Finally, M_j has exact rank-one norm E_(t,j) on the complete blocks and is zero on the incomplete block. The native-energy theorem also places ||Q_j|| between constant times the complete energy and a polynomial times the full energy, retaining the incomplete block. Equations (20)–(22) therefore prove</p>
+<pre><code>lim_(even N) N^-1 log ||M_j||op
+  =lim_(even N) N^-1 log ||Q_j||op=5v3/pi,        (23)</code></pre>
+<p>with the same limits for Hilbert–Schmidt norms. Every fixed generic-q jet of these operators has upper exponential rate at most 5v3/pi by the already proved native bounds. No equality is asserted for a derivative that might vanish or cancel.</p>
+<p>This proves a common FULL folded boundary cost at both parities, using the simple odd projector and the actual even Hermite pair in their respective source roles.</p>
+<p>Primary-agent analytical review: PASS, including the exact physical Parseval reduction, source-shift/CD derivative and its strict sign, finite determinant bounds, skew-inverse comparison and endpoint control, actual cubic endpoint and its selected dilogarithm constant, and the even measure, half-step comparison and completed Q/M norms. The review retains the one-operator boundary-cost scope and does not infer a whole-network positive pairing, gluing identity or volume limit.</p>
+<p>Independent full analytical and targeted even-parity review: PASS. The reviewer independently derived the exact Fourier support and normalization, degree profile, determinant endpoint bounds, cubic source phase and selected 5v3/pi constant, even paired measure and half-step comparison, and full Q/M norm implications. A fresh 100-digit replay passed 1,848 original physical values, 336 unused nodes, 189 Parseval/center identities, 35 odd determinant brackets, seven odd cubic endpoints, 27 even center normalizations, six even endpoint/half-step comparisons and four source-gradient checks. The displayed sequences reach levels 256/257; the written proof, not those sequences, supplies the limits and uniform estimates.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_edge_magnetic_energy_profile.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-fourier-reduction-including-the-unused-nodes">1. Exact Fourier reduction, including the unused nodes</a><a href="#the-explicit-complete-channel-energy-profile">2. The explicit complete-channel energy profile</a><a href="#a-finite-folded-determinant-controls-all-physical-degrees">3. A finite folded determinant controls ALL physical degrees</a><a href="#the-endpoint-is-an-actual-cubic-fourier-sum">4. The endpoint is an actual cubic Fourier sum</a><a href="#what-is-retained-for-the-general-source">5. What is retained for the general source</a><a href="#the-even-maximal-pair-has-the-same-full-rate">6. The even maximal pair has the same full rate</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -261,6 +261,27 @@ can itself be exponential. The remaining joint variational estimate
 must keep the actual shared wire variables and these energy terms;
 independent local maxima do not supply it.
 
+The [full folded boundary rate](actual_matching_edge_magnetic_energy_profile.md)
+is now computed by exact Plancherel and the actual selected endpoint
+polynomial. It remains valid in [all shrinking real fold windows](actual_matching_edge_shrinking_fold_native_energy.md).
+For arbitrary fixed skeletons, the
+[shared-cycle compiler](actual_matching_graph_shared_cycle_fourier_compiler.md)
+gives an exact bounded-flow source with coupled Fourier congruences
+and the original one-unit mark. Its
+[positive coefficients](actual_q_hahn_fourier_coefficient_variational.md)
+have a uniform interior variational rate. These source reductions
+retain every shared label and phase. They do not supply the general
+mixed-color packet, sharp joint geometric estimate or lower bound
+needed for the fixed-long-filling theorem.
+
+The [explicit positive partition](actual_matching_graph_positive_fourier_partition.md)
+now gives a polynomial-loss Cauchy upper bound retaining every shared
+flow and Fourier charge. Its sharp rate is not yet the hyperbolic
+volume: the [conditional radial-frame obstruction](actual_positive_fourier_radial_geometric_obstruction.md)
+prevents one proposed all-ordinary geometric reconstruction, without
+proving a numerical gap. The exact coherent source and the retained
+exceptional matching block remain the objects to estimate.
+
 The [full graph identity](general_matching_graph_full_normal_source.md)
 puts all folded labels and normals on the actual matching graph.
 The [reflection-double identity](actual_planar_three_port_reflection_double.md)

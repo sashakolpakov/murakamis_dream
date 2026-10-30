@@ -114,6 +114,29 @@ energy. That energy can grow exponentially, as proved by the degree-t=m
 block of the odd simple midpoint example with rate v8/(2pi). It must remain part of a
 joint contraction estimate with the actual shared wire constraints.
 
+The [exact Fourier energy profile](actual_matching_edge_magnetic_energy_profile.md)
+now computes the full folded native rate as 5v3/pi at both parities;
+the [real shrinking-fold corollary](actual_matching_edge_shrinking_fold_native_energy.md)
+extends it to every j/N tending to 1/2. These retain all physical
+degrees and do not enlarge the complex-normal domain. The
+[shared-cycle compiler](actual_matching_graph_shared_cycle_fourier_compiler.md)
+also rewrites the complete source using bounded integral Kirchhoff
+flows and coupled Fourier extractions, with the original marked charge.
+The [positive coefficient theorem](actual_q_hahn_fourier_coefficient_variational.md)
+gives a two-sided local variational rate and its selected momentum.
+The resulting shared action, remaining phases and global contribution
+still require a geometric and quantum proof.
+
+The [fully positive Fourier comparison](actual_matching_graph_positive_fourier_partition.md)
+now proves |A_(D,N)|^2<=N^(4R+2C-2) Z_F(N) for the actual complete
+source, with its exact scalar, Kirchhoff equations and marked charge.
+Its [radial geometric obstruction](actual_positive_fourier_radial_geometric_obstruction.md)
+rules out assembling every strict ordinary radial saddle into the
+complete geometric representation under the right-angled certificate.
+It asserts no numerical rate gap or boundary estimate. Thus the
+coherent phases and the one exceptional block remain part of the
+critical path; a positive constrained maximum alone has not closed it.
+
 The [local critical-character map](actual_augmented_plat_local_critical_character_map.md)
 now recovers the actual ordered transport and primitive auxiliary
 marking. A [regular generic geometric chart](actual_augmented_plat_regular_geometric_phase_chart.md)

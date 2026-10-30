@@ -207,3 +207,23 @@ adds only a polynomial factor. Its simple midpoint example has positive
 exponential growth, so the energy must remain in any global estimate.
 The shared-variable variational route is preserved; separate local
 maxima cannot replace the actual network constraints.
+
+The [Plancherel profile](actual_matching_edge_magnetic_energy_profile.md)
+and [real shrinking-fold theorem](actual_matching_edge_shrinking_fold_native_energy.md)
+now compute that full local cost. Its [local geometric interpretations](actual_native_magnetic_energy_local_geometry.md)
+include an octahedral degree block and a two-cube full cost, with
+the signed terms and phase conditions retained. The
+[shared-cycle source](actual_matching_graph_shared_cycle_fourier_compiler.md)
+makes the flow/Fourier route exact at arbitrary fixed width, and
+[coefficient duality](actual_q_hahn_fourier_coefficient_variational.md)
+supplies positive local variational data on its actual shared indices.
+The one exceptional geometric block and the global coherent route
+remain necessary subjects of study; a positive coefficient envelope
+alone has not resolved them.
+
+The [shared positive Fourier partition](actual_matching_graph_positive_fourier_partition.md)
+now gives that route an exact original-source Cauchy bound. The
+[radial reconstruction obstruction](actual_positive_fourier_radial_geometric_obstruction.md)
+records why one direct geometric interpretation fails under the
+right-angled certificate, without claiming a rate gap or discarding
+nonradial, boundary or exceptional-block approaches.

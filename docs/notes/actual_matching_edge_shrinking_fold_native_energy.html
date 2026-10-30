@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The full real native cost throughout every shrinking fold window · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Fourier and energy</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a> · <a href="../library.html#fourier">Fourier, weighted Cauchy, and energy</a><p><span class="badge">Full real norm rate in shrinking fold windows</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_edge_shrinking_fold_native_energy.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_matching_edge_shrinking_fold_native_energy.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_matching_edge_shrinking_fold_native_energy_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="the-full-real-native-cost-throughout-every-shrinking-fold-window">The full real native cost throughout every shrinking fold window</h1>
+<p>30 October 2026. Let j_N/N tend to 1/2, with 0&lt;=j_N&lt;=floor((N-1)/2). The FULL physical completed projector and, when paired, its actual nilpotent have exponential norm rate 5v3/pi. No restriction such as (N-1-2j_N)log N=o(N) is needed here.</p>
+<p>This concerns real integer physical degrees and magnetic indices, their Euclidean operator norms, and fixed generic-q jets. It does not extend the complex-normal corridor, supply a confluent complex amplitude, or estimate a marked whole-network contraction.</p>
+<h2 id="statement-and-the-exact-source-interfaces">1. Statement and the exact source interfaces</h2>
+<p>Put d=N-1, j=j_N, l=d-j and s=l-j. If j&lt;l, let Q_j and M_j be the ACTUAL completed target pair in the <a href="actual_matching_edge_native_projector_energy.html">native projector theorem</a>. If j=l, retain the ordinary isolated midpoint projector Pi_j. Then, for every sequence j/N-&gt;1/2,</p>
+<pre><code>N^-1 log ||Q_j||op -&gt;5v3/pi,
+N^-1 log ||M_j||op -&gt;5v3/pi                       (1)</code></pre>
+<p>on its paired subsequence, and the same limit holds for Pi_j on its simple subsequence. All statements remain true for the Hilbert–Schmidt norm. Every FIXED generic-q jet of these operators has upper exponential rate at most 5v3/pi; equality is not asserted for a derivative that can vanish.</p>
+<p>We prove the paired claim; the isolated midpoint is already covered by the <a href="actual_matching_edge_magnetic_energy_profile.html">full folded profile</a>. Here s/N-&gt;0, while s itself can tend to infinity at any sublinear rate. All original physical degrees are retained.</p>
+<p>For complete degrees l&lt;=t&lt;=d, the exact Parseval comparison is</p>
+<pre><code>N/(j+1) Z_(t,j) &lt;= E_(t,j) &lt;=N Z_(t,j),
+Z_(t,j)=|fhat_j(t/2)|^2/|sigma_(t,j)|.            (2)</code></pre>
+<p>The exact center source and double CD measure give</p>
+<pre><code>Z_(t,j)=A_(N,t,j) R_j(1;c_t)^2,
+A_(N,t,j)=a_j^2/N *s_(2j)^2/s_j^4
+                         *s_(t-j)/s_(t-l),
+c_t=-cos(pi(t+1)/N), a_j=|1-q^(4j+2)|.          (3)</code></pre>
+<p>All factorial indices lie in 0,…,d. The monic determinant R_j is the original source determinant, not an auxiliary positive replacement. It is increasing at z=1 for real c&gt;=0. In (3), c_t ranges from cos(pi j/N) to 1, so this monotonicity applies.</p>
+<p>Let J(x)=integral_0^x log(2sin(pi y))dy on [0,1]. Its continuity, J(0)=J(1/2)=J(1)=0, and the uniform factorial estimate give</p>
+<pre><code>sup_(l&lt;=t&lt;=d) |N^-1 log A_(N,t,j)| -&gt;0.          (4)</code></pre>
+<p>Indeed the factorial part divided by N is</p>
+<pre><code>2J(2j/N)-4J(j/N)
+      +J((t-j)/N)-J((t-l)/N)+O(log N/N).</code></pre>
+<p>The first two terms tend to zero. The last two arguments differ by s/N-&gt;0, uniformly over t, so their difference tends to zero by uniform continuity. The remaining a_j and N factors have logarithms O(log N), since a_j&gt;=4/N at a nonself-paired node. Thus (2)–(4), at the endpoint and throughout the complete range, prove</p>
+<pre><code>max_(l&lt;=t&lt;=d) E_(t,j)=R_j(1;1)^2 exp(o(N)).       (5)</code></pre>
+<p>This is a maximum over one genuine physical degree. It does not maximize independently over degrees of adjacent network coupons.</p>
+<h2 id="the-actual-endpoint-selects-the-same-cubic-limit">2. The actual endpoint selects the same cubic limit</h2>
+<p>Put u=floor(d/2), v=d-u and w_N=q^j. At t=d the positive coefficient polynomial appearing in the ORIGINAL physical column is</p>
+<pre><code>P_N(w)=sum_(a=0)^j beta(j,a)beta(u,a)beta(v,j-a) w^a,
+C_j(d,u)=q^((d-j)u) P_N(w_N).                    (6)</code></pre>
+<p>The denominator beta(d,j) is exactly one. The finite negative-root theorem applies to this original polynomial. Uniform factorial estimates and j/N,u/N,v/N-&gt;1/2 give uniformly over the whole support</p>
+<pre><code>N^-1 log[beta(j,a)beta(u,a)beta(v,j-a)]
+  =-3[J(a/N)+J(1/2-a/N)]+o(1).                 (7)</code></pre>
+<p>Replacing j/N by 1/2 uses only uniform continuity of J, including both endpoints. There is no assumed bound on s log N here.</p>
+<p>For every positive real w, (7) gives the same strict real Laplace action as in the full folded theorem. Its selected saddle is alpha(w)=pi^-1 arctan(w^(1/3)). The actual negative-root product bound makes N^-1 Log(P_N(w)/P_N(1)) a normal family on the slit plane. Uniqueness from the positive real axis therefore gives the same holomorphic action for this whole sequence of actual polynomials. In particular at w_N-&gt;i,</p>
+<pre><code>N^-1 log |C_j(d,u)| -&gt;5v3/(2pi).                (8)</code></pre>
+<p>This is the selected complex rate, not a conclusion from comparing positive coefficients at w=i. The exact constant was computed from alpha(i)=1/4+i log(3)/(4pi) and D(i/sqrt(3))=5v3/6 in the preceding theorem.</p>
+<p>At degree d the magnetic polynomial has all j roots negative real. If u differs from d/2 by one half, its root-product formula gives</p>
+<pre><code>cos(pi/(2N))^j &lt;= |C_j(d,u)|/|fhat_j(d/2)| &lt;=1;  (9)</code></pre>
+<p>if d is even the ratio is one. Finally the exact center scalar is</p>
+<pre><code>|fhat_j(d/2)|=R_j(1;1) s_(2j)/s_j^3.           (10)</code></pre>
+<p>Its normalized logarithm tends to zero, since J(2j/N)-3J(j/N)-&gt;0. Equations (8)–(10) prove</p>
+<pre><code>N^-1 log R_j(1;1)^2 -&gt;5v3/pi.                  (11)</code></pre>
+<h2 id="the-incomplete-band-is-smaller-using-its-own-actual-formula">3. The incomplete band is smaller, using its own actual formula</h2>
+<p>It remains to control j&lt;=t&lt;l, where the completed pair contains only its simple physical branch. The complete-range Fourier factorization is NOT assumed in this band. Instead start with the original generic finite column. Its highest-vector factor at the root is exactly</p>
+<pre><code>F_(N-j+a-1) F_(N-a-1)/(F_(N-j-1)F_(N-1))
+                       =Q^(a(a-j)) [j choose a]_Q.            (12)</code></pre>
+<p>This follows by complementing each factor 1-Q<sup>(N-r)=-Q</sup>(-r)(1-Q^r). Every denominator index is below N; (12) is valid for ALL 0&lt;=j&lt;=t&lt; N, not just complete channels. Since [n choose k]_Q=q^(k(n-k)) beta(n,k), substitution into the original divided-descendant sum gives the exact identity</p>
+<pre><code>C_j(t,u)=q^((d-j)u) sum_a E(t,j,u,a) q^(a(t+j-d)),
+E=beta(j,a)beta(u,a)beta(t-u,j-a)/beta(t,j),
+max(0,u-t+j)&lt;=a&lt;=min(j,u).                      (13)</code></pre>
+<p>To check its phase directly, the Gaussian-binomial phases, divided-descendant powers and root highest ratio leave a(t+j-1)-ju before the factor (-1)^a x^(-2a). Combining that factor with x^u and q^N=-1 gives precisely (13). Thus its real positive envelope is an authorized bound for this ACTUAL root source outside the complete chamber.</p>
+<p>Set r=t-j&lt;s=o(N). Every allowed a satisfies 0&lt;=u-a&lt;=r. Uniform factorial estimates, j/N,t/N-&gt;1/2, and that inequality imply</p>
+<pre><code>N^-1 log E(t,j,u,a)
+   =-J(x)-J(1/2-x)+o(1),                       (14)</code></pre>
+<p>uniformly throughout the incomplete band and its full support. Here x can be chosen as min(u/N,1/2). The possible excess of u/N above 1/2 is o(1), so this harmless clipping and all arguments of J are justified by its uniform continuity. In detail the beta(j,a) term supplies the displayed profile, while beta(u,a), beta(t-u,j-a), and the denominator beta(t,j) each have normalized logarithm tending uniformly to zero because their complementary indices are at most r.</p>
+<p>There are at most N summands in (13). A triangle bound therefore gives the uniform upper estimate from (14). This step is used only in the collapsing boundary band and claims no selected oscillatory rate for an interior column. The simple CD measure there is</p>
+<pre><code>|sigma_(t,j)|=s_(t-j)s_(t+j+1)/(s_t^2 a_j).</code></pre>
+<p>Its normalized logarithm tends uniformly to zero: its three factorial arguments tend respectively to 0,1,1/2. Summing the squared column bound over at most N magnetic indices yields</p>
+<pre><code>max_(j&lt;=t&lt;l) E_(t,j)
+   &lt;=exp[N(v8/(2pi)+o(1))].                    (15)</code></pre>
+<p>The smaller constant comes from the strict maximum at x=1/4 of -2J(x)-2J(1/2-x). This estimate retains endpoints and all source phases until the explicitly stated upper-bound step.</p>
+<h2 id="assemble-the-real-operator-and-retain-the-scope">4. Assemble the real operator and retain the scope</h2>
+<p>The exact generic high adapter duplicates the same physical low blocks. On each complete block M_j has norm E_(t,j); it is zero on the incomplete band. Hence (5),(11) give its full operator and Hilbert–Schmidt rate in (1). On a complete block M_j=(J_t-c_j)Q_j, with uniformly bounded J_t-c_j, providing the matching lower bound for Q_j. The native projector theorem gives its upper bound by a polynomial times the maximum or square sum of ALL energies. Equations (11),(15), and v8/(2pi)&lt;5v3/pi prove the other claim in (1). Fixed generic-q derivatives add only the uniform polynomial factors already proved there.</p>
+<p>Thus every shrinking SCALED fold window has the same explicit real boundary cost, even when s log N is not o(N). The stronger width here comes from positivity and real physical norms, not from a larger joint complex domain for paired normal currents. No fixed nonzero scaled-width assertion or whole-source volume conjecture follows from this corollary.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_matching_edge_shrinking_fold_native_energy.py">original incomplete-band formula and shrinking-fold source</a>.</p>
+<p>Primary-agent analytical review: PASS. The reader checked the exact center/CD scalar and uniform continuity estimates, original endpoint polynomial and selected negative-root continuation, half-step and center normalizations, all-j highest-factor and phase conversion, incomplete-band support collapse and simple measure, and full Q/M comparisons. The review retains real physical indices and does not enlarge the complex-normal corridor or assert a whole-source limit.</p>
+<p>Independent analytical review and fresh redirected audit: PASS. The reviewer checked the same center/CD cancellation, actual cubic endpoint selection, half-step comparison, original all-j phase and incomplete-band support, uniform real profiles, and full operator assembly. The replay passed 3,756 original phase identities, including 1,791 incomplete-band values, 202 highest-factor complements, 202 general complete center scalars, and six endpoint polynomial/half-step comparisons. Numerical samples are convention checks; the continuity, root-product and operator arguments prove the stated unrestricted shrinking real window.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_edge_shrinking_fold_native_energy.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#statement-and-the-exact-source-interfaces">1. Statement and the exact source interfaces</a><a href="#the-actual-endpoint-selects-the-same-cubic-limit">2. The actual endpoint selects the same cubic limit</a><a href="#the-incomplete-band-is-smaller-using-its-own-actual-formula">3. The incomplete band is smaller, using its own actual formula</a><a href="#assemble-the-real-operator-and-retain-the-scope">4. Assemble the real operator and retain the scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

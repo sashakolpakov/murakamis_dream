@@ -43,6 +43,12 @@ For the two ends of one crossing-circle matching edge, the [specialized scalar t
 
 The [native-energy estimate](../../notes/actual_matching_edge_native_projector_energy.md) bounds all fixed projector derivatives by a polynomial times explicit magnetic energies, for every physical degree and both parities. An exact simple-channel example proves that these energies can grow exponentially. A sharp bound for their joint contraction, with the original wire constraints, remains necessary.
 
+The [exact Fourier energy theorem](../../notes/actual_matching_edge_magnetic_energy_profile.md) computes the full folded boundary rate: $5v_3/\pi$ for the odd simple projector and the even completed pair, in operator and Hilbert–Schmidt norms. The local physical-degree maximum is retained. This is a boundary-cost theorem; it does not give the original network's volume limit.
+
+The [shrinking-fold extension](../../notes/actual_matching_edge_shrinking_fold_native_energy.md) gives this real norm rate for every sequence $j/N\to1/2$. The [complete-circle shared-cycle source formula](../../notes/actual_matching_graph_shared_cycle_fourier_compiler.md) applies at arbitrary fixed width, with bounded integer flows and the original marked Fourier charge. Its [positive local coefficients](../../notes/actual_q_hahn_fourier_coefficient_variational.md) have a uniform interior variational rate. These results retain the global phase and geometry questions.
+
+The [positive partition theorem](../../notes/actual_matching_graph_positive_fourier_partition.md) gives a polynomial-loss Cauchy upper bound for the complete-circle source with all shared constraints retained. Its sharp geometric rate and a matching lower bound remain unproved; the [radial-frame obstruction](../../notes/actual_positive_fourier_radial_geometric_obstruction.md) limits one proposed direct geometric interpretation.
+
 The [general four-port theorem](../../notes/actual_general_four_port_single_racah_kernel.md) evaluates actual inverse recoupling coefficients by one finite Racah sum, with the true normalization and normal terms. It is an exact local identity, not a global growth theorem.
 
 For supported folded colors, the [local hyperideal-volume theorem](../../notes/actual_four_port_hyperideal_angle_volume.md) proves

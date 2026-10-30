@@ -70,6 +70,30 @@ The [all-partner first-normal theorem](../../notes/actual_all_partner_first_norm
 
 ## Weighted Cauchy needs the right energy
 
+For a single complete physical column, the [exact Plancherel theorem](../../notes/actual_matching_edge_magnetic_energy_profile.md) now proves
+
+$$\frac{N}{j+1}|\widehat f(t/2)|^2\leq\sum_{u=0}^t|C_j(t,u)|^2\leq N|\widehat f(t/2)|^2.$$
+
+The unused Fourier nodes vanish in the original polynomial, so the full discrete Fourier norm equals the actual physical norm. This works at both parities, including a half-integral midpoint. Combined with the exact bilinear measure, it gives the complete-channel energy profile and the full folded operator rate $5v_3/\pi$. Shared magnetic sums and phases remain when these operators are joined.
+
+The [shrinking-fold theorem](../../notes/actual_matching_edge_shrinking_fold_native_energy.md) extends that full real operator rate to every integer sequence $j/N\to1/2$. Fixed generic derivatives add only polynomial cost. This real norm statement permits a wider channel window than the separate complex-normal theorem; it supplies no complex confluent amplitude.
+
+There is also an exact [Fourier compiler for the complete-circle matching source](../../notes/actual_matching_graph_shared_cycle_fourier_compiler.md). Its matching magnetic indices are bounded integral Kirchhoff flows on the graph of physical cycles. The actual cups and caps make every cycle frequency even at both level parities, so its Fourier sums impose coupled congruences. The original mark supplies a one-unit charge. All source phases remain in this finite formula. Cauchy then gives a joint positive comparison of coherent cycle periods with the matching labels still shared.
+
+The [coefficient-duality theorem](../../notes/actual_q_hahn_fourier_coefficient_variational.md) controls the positive Fourier coefficients themselves. Their log-concavity gives
+
+$$p_k\leq\inf_{w>0}P(w)w^{-k}\leq(j+1)p_k.$$
+
+The actual selected source action supplies the corresponding coefficient rate and an explicit positive minimizing radius on compact interior slope families. This is a two-sided local estimate. To use it globally, the actions must be joined on the compiler's flow and charge constraints, with its remaining phases retained.
+
+The [positive Fourier partition](../../notes/actual_matching_graph_positive_fourier_partition.md) now supplies an explicit full-source comparison. If $R$ is the number of matching circles and $C$ the number of restored physical cycles, its exact original scalar weights give
+
+$$|A_{D,N}|^2\leq N^{4R+2C-2}Z_F(N).$$
+
+Every Kirchhoff equation, Fourier congruence and the original marked charge remains in $Z_F$. Its summands are products of positive coefficients and explicit sine-factorial weights. The equality before Cauchy retains all phases; this upper bound does not establish their survival.
+
+The [radial reconstruction obstruction](../../notes/actual_positive_fourier_radial_geometric_obstruction.md) explains a remaining difficulty. At a strict positive radial saddle, all ordinary source factors would lie in the central selected domain. They therefore cannot all assemble into the complete geometric representation of the certified right-angled cut in one frame. This is a conditional geometric obstruction, with no asserted numerical rate gap. The exact phases and the exceptional matching-block route remain essential to investigate.
+
 A useful inequality has the form
 
 $$|K_N|^2\leq e^{o(N)}Z_N.$$
@@ -87,6 +111,8 @@ Every interior color is already coherently summed inside the half-packet. This i
 ## An upper bound is only half of equality
 
 For sources with phases, a matching lower bound requires survival of the geometric contribution. A large positive comparison partition does not exclude cancellation in the original invariant.
+
+The [local energy geometry](../../notes/actual_native_magnetic_energy_local_geometry.md) makes this distinction explicit. The highest-weight block at the fold has the volume action of a variable ideal octahedron. Away from the fold, its actual measure forces a signed boundary term. Even at the real energy maximum, the marked complex phase need not be stationary. A global argument must use the original incidence and peripheral conditions to address those phases.
 
 For the specified positive Conway expressions, positivity supplies a different route. Exact support is an additive integer semigroup, which approximates a maximizing configuration along every sufficiently large level. Uniform factorial estimates prove the whole-source variational limit. The new geometric argument then proves that the reduced maximum is strict, matches the actual quadrilateral faces, and reconstructs the complete complement of every retained cylindrical factor. The new mixed-color proof supplies the additional filling estimates: exact leaf aliases lie in a square-zero radical, a strict seed-level gap survives arbitrary positive composition, and a finite complex lattice window has a nonzero Gaussian amplitude. This proves the long-full-twist source limit. The separate exact face-map and peripheral construction now identifies its rate with actual filled volume. The unchanged pure grammar still cannot produce knots by those fillings.
 

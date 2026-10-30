@@ -52,6 +52,13 @@ python3 experiments/audit_actual_matching_edge_racah_positive_scalar.py
 python3 experiments/audit_actual_matching_edge_marked_four_port_block.py
 python3 experiments/audit_actual_matching_edge_completed_projector_block.py
 python3 experiments/audit_actual_matching_edge_native_projector_energy.py
+python3 experiments/audit_actual_matching_edge_magnetic_energy_profile.py
+python3 experiments/audit_actual_native_magnetic_energy_local_geometry.py
+python3 experiments/audit_actual_matching_edge_shrinking_fold_native_energy.py
+python3 experiments/audit_actual_q_hahn_fourier_coefficient_variational.py
+python3 experiments/audit_actual_matching_graph_shared_cycle_fourier_compiler.py
+python3 experiments/audit_actual_matching_graph_positive_fourier_partition.py
+python3 experiments/audit_actual_positive_fourier_radial_geometric_obstruction.py
 python3 experiments/audit_actual_q_hahn_physical_generic_jet_bound.py
 python3 experiments/audit_actual_q_hahn_full_physical_complex_packet.py
 python3 experiments/audit_actual_augmented_plat_selected_factor_localization.py
@@ -94,3 +101,9 @@ The full physical packet audit tests the new cone determinant, finite boundary z
 The completed-projector audit independently checks the categorical norm, full generic operator identities, actual cyclic turn, paired cluster jets and complete original-measure cancellation. It retains the nilpotent contribution and unequal scalar derivatives. Its finite checks support the written identities; they do not bound the native projectors or establish a global volume limit.
 
 The native-energy audit checks the actual generic high-degree adapter, dual measures, residue and completed-projector jets, and exact rank-one norms. The exponential midpoint-energy rate has a written Riemann-sum proof; its numerical sequence only illustrates that proof. The theorem retains the energy rather than asserting polynomial projector norms.
+
+The energy-profile audit checks actual Fourier norms, vanished unused nodes, canonical midpoints, both-parity endpoint source formulas and the selected dilogarithm constant. Its even finite full-norm samples concern the nilpotent operator; the completed projector's rate follows from the separate polynomial comparison. The local geometry audit checks original phases, measures, parity factors and all four tetrahedron shapes, without inferring global phase matching.
+
+The shrinking-fold audit checks the actual source formula outside complete support as well as its endpoint and measures. The coefficient audit checks log-concavity, tilted modes, literal complex-radius normalization and interior coefficient rates. The shared-cycle audit compares against original Morse contractions, including the first-failure zeros, both-parity carrier cancellation, exact Kirchhoff support and marked charge. The resulting global Cauchy comparison remains an upper bound.
+
+The positive-partition audit reconstructs the original endpoint and white scalars, the high-degree Chevalley adapter, and full phase-bearing sums before checking their Cauchy bound. The radial-obstruction audit checks the finite phase derivatives, adapters and cup/mark relation; its general geometric conclusion uses the separately proved common-frame obstruction. Neither audit claims a global rate gap or volume equality.

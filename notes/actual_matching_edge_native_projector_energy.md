@@ -1,5 +1,11 @@
 # Native magnetic energy controls every completed projector jet
 
+Follow-up: the [Plancherel and full folded profile](actual_matching_edge_magnetic_energy_profile.md)
+computes the full folded norm rate at both parities, and the
+[real shrinking-fold theorem](actual_matching_edge_shrinking_fold_native_energy.md)
+extends it to every j/N tending to 1/2. These are native real norm
+results; shared source contraction and global geometric selection remain open.
+
 30 October 2026. The completed target
 operators in the [matching-edge block](actual_matching_edge_completed_projector_block.md)
 have no additional exponential cost in any fixed generic-q derivative.
