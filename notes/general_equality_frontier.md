@@ -14,12 +14,23 @@ depends on the fixed diagram. N is the quantum level; the twist
 parameters are fixed before N tends to infinity. A finite matching
 test specifies which parity patterns give knots.
 
-The latest arbitrary-width step is a proved
+The [geometric quantifier corollary](general_augmented_plat_long_filling_quantifiers.md)
+proves T_geom(D) for all independently long signed and partial fillings
+under the positive marked base certificate. It assembles the multi-cusp
+rigidity and geometric completion arguments; it supplies no new quantum
+source estimate. The threshold for the general volume LIMIT remains open.
+
+The arbitrary-width local inputs include a proved
 [negative-root theorem](actual_q_hahn_negative_root_source_polynomial.md)
 and its [source-selected complex local action](actual_q_hahn_selected_complex_action.md).
-This controls the actual local Fourier cancellations on the physical
-arc. It is a leading-action theorem, not a full amplitude expansion
-or a global estimate after complexifying the magnetic variables.
+The [actual amplitude theorem](actual_q_hahn_uniform_complex_amplitude.md)
+now gives a nonzero prefactor and uniform relative error O(1/N).
+An exact magnetic factorization also proves a
+[complex magnetic corridor](actual_q_hahn_magnetic_complex_corridor.md)
+at fixed real discrete pair degree t and channel j. It includes
+canonical logarithm selection and both original integer offsets.
+Joint continuation of t and the magnetic coordinate, the channel
+endpoint and a global coherent-source estimate remain open.
 
 The [local critical-character map](actual_augmented_plat_local_critical_character_map.md)
 now recovers the actual ordered transport and primitive auxiliary
@@ -38,8 +49,8 @@ actual geometric graph at both parities. For specified planar
 the full source is a positive weighted square sum of coherent half
 packets. The packets themselves still require an asymptotic estimate.
 
-The critical path is therefore more precise: the local complex
-action and absolute geometric anchor are now proved, while global
+The critical path is therefore more precise: local complex
+amplitudes and the absolute geometric anchor are now proved, while global
 marked continuation, a nonzero selected contribution and uniform
 control of competing colors/aliases remain substantial missing
 theorems. Long twists do not by themselves resolve the magnetic
@@ -50,9 +61,17 @@ now removes one local degeneracy concern: its actual root-reduced
 channel block is diagonal, with entries -4pi i/tau_i for the primitive
 geometric cusp shapes, and its channel/magnetic cross-block vanishes.
 The block has negative real part. Channel-only elimination is therefore
-valid locally, with color Hessian pi i diag(tau_i). The remaining
-magnetic equations and the physical endpoint cycle are not solved by
-that implicit-function statement.
+valid locally, with color Hessian pi i diag(tau_i).
+
+The [actual critical-scheme theorem](actual_augmented_plat_critical_scheme.md)
+and [marked multi-cusp rigidity](general_marked_multicusp_gluing_rigidity.md)
+now solve the classical magnetic degeneracy under an actual positive
+gluing certificate: the magnetic Hessian has exactly two null directions,
+both framing. A transverse slice gives a nearby holomorphic geometric
+stationary branch, with the correct peripheral differential and absolute
+volume anchor. This removes an existence hypothesis on the classical
+branch. It does not prove that the finite source selects that branch or
+that its physical cycle coefficient is nonzero.
 
 The new [complete](actual_augmented_plat_phase_compiler.md) and
 [all-color](actual_mixed_augmented_plat_compiler.md) compilers give

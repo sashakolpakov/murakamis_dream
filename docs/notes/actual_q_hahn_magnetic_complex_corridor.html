@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual magnetic polynomial and its complex corridor · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a><p><span class="badge">Complex magnetic corridor; fixed degree and channel</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_q_hahn_magnetic_complex_corridor.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_q_hahn_magnetic_complex_corridor.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_q_hahn_magnetic_complex_corridor_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="the-actual-magnetic-polynomial-and-its-complex-corridor">The actual magnetic polynomial and its complex corridor</h1>
+<p>30 October 2026. This note concerns the original complete-circle column, at fixed integer pair degree t and channel j. Its finite continuation in the magnetic coordinate u is specified by its terminating factorial sum, not chosen from an interpolation class. An exact coproduct recurrence places every zero outside the physical magnetic strip. The original Casimir difference equation then upgrades the real magnetic amplitude theorem to a complex corridor in u/N.</p>
+<p>The continuation keeps t and j REAL and discrete. It is not a joint continuation in all magnetic/channel variables of an assembled plat. In particular it does not choose the global source integration cycle.</p>
+<h2 id="a-literal-finite-continuation-with-all-prefactors">1. A literal finite continuation, with all prefactors</h2>
+<p>Write d=N-1, q=exp(pi i/N), Q=q^2, x=q^d, and assume the actual complete-circle inequalities</p>
+<pre><code>d-j&lt;=t&lt;=d, 0&lt;=j&lt;=floor(d/2).</code></pre>
+<p>For a nonnegative integer a define the entire function</p>
+<pre><code>beta(z,a)=product_(r=0)^(a-1) 2sin(pi(z-r)/N) / s_a,
+s_a=product_(r=1)^a 2sin(pi r/N).</code></pre>
+<p>The ORIGINAL continuation is the finite sum</p>
+<pre><code>fhat_(N,t,j)(u)=exp(pi i u) q^[-(j+1)u]
+   sum_(a=0)^j q^[(t+j-d)a]
+            beta(j,a) beta(u,a) beta(t-u,j-a)/beta(t,j).           (1)</code></pre>
+<p>All exponential powers in (1) use their displayed logarithms. At an integer 0&lt;=u&lt;=t, a term outside the original support vanishes because one of its numerator sine factors is zero. Thus (1) is EXACTLY the physical Casimir column, including its original scalar and phase. Off that lattice those terms are retained; no fictitious support truncation is made.</p>
+<p>Put U=Q^u and T=Q^t. There is a polynomial G_t of degree at most j with</p>
+<pre><code>fhat_(N,t,j)(u)=x^u U^(-j) G_t(U),  G_t(1)=1.         (2)</code></pre>
+<p>An explicit polynomial, with m=j-a and w=q^(t+j-d), is</p>
+<pre><code>G_t(U)=i^(-j)s_j/beta(t,j)
+   sum_(a=0)^j w^a q^[-mt-(a(a-1)+m(m-1))/2]
+      product_(r=0)^(a-1)(U-Q^r)
+      product_(r=0)^(m-1)(T-UQ^r) / (s_a^2 s_m^2).   (3)</code></pre>
+<p>Indeed each first product in the sine expression contributes i<sup>(-a)q</sup>[-au-a(a-1)/2], and the second contributes i<sup>(-m)q</sup>[-mt-mu-m(m-1)/2]. Their common u factor is q^(-ju). This proves (2)–(3), including the degree, rather than inferring an interpolation from its values.</p>
+<h2 id="the-original-coproduct-proves-the-root-factorization">2. The original coproduct proves the root factorization</h2>
+<p>Keep N and j fixed and let t range from d-j to d. The actual divided coproduct F, normalized by the first component, gives</p>
+<pre><code>G_(t+1)(U)=[Q^j(1-U)G_t(U/Q)
+                    +(U-Q^(t+1))G_t(U)]/(1-Q^(t+1)).              (4)</code></pre>
+<p>To check its normalization directly, the unnormalized component at degree t+1 is</p>
+<pre><code>(1-Q^u) f_t(u-1)+q^(-d+2u)(1-Q^(t+1-u))f_t(u).</code></pre>
+<p>Its u=0 value is x<sup>(-1)(1-Q</sup>(t+1)). Dividing by this value and using (2) gives (4). The term of degree j+1 cancels, so its right side is again a polynomial of degree at most j. Equality on the t+2 original physical nodes proves the polynomial identity as well.</p>
+<p>At t=d-j the actual highest vector gives the exact base</p>
+<pre><code>G_(d-j)(U)=(UQ;Q)_j/(Q;Q)_j.                        (5)</code></pre>
+<p>For example its u-th component is (-1)^u q<sup>[-(2j+1)u](Q</sup>(u+1);Q)_j/(Q;Q)_j, directly from the original highest-vector equation. There are d-j+1&gt;=j+1 physical nodes, so this determines the degree-j polynomial in (5).</p>
+<p>Set h=d-t and n=j-h=t+j-d. Define</p>
+<pre><code>B_h(z)=product_(r=0)^(h-1)(1+q^(h-1-2r)z).</code></pre>
+<p>Its coefficients are the positive sine binomials beta(h,a). Equations (4)–(5) prove the factorization</p>
+<pre><code>G_t(q^t z)=c_t B_h(z) A_n(z),
+c_t=q^(jn)/(Q;Q)_j,  A_0=1.                       (6)</code></pre>
+<p>Here A_n is a real polynomial of degree n with positive coefficients and n simple negative roots. The following direct argument proves these assertions at every step, not merely at sampled levels.</p>
+<p>When h decreases to h-1, n increases to n+1. The residual update is</p>
+<pre><code>A_(n+1)(z)=-Im[q^(-j-h)(1+q^h z)^2 A_n(qz)]/sin(h pi/N),          (7)</code></pre>
+<p>where (7) is stated for REAL z. Its holomorphic polynomial meaning is the corresponding coefficientwise difference of conjugate polynomials. Explicitly, if A_n=sum a_k z^k, then</p>
+<pre><code>a&#39;_k=[sin((j+h-k)theta)a_k
+      +2sin((j-k+1)theta)a_(k-1)
+      +sin((n-k+2)theta)a_(k-2)]/sin(h theta),
+theta=pi/N, a_k=0 outside 0&lt;=k&lt;=n.                  (8)</code></pre>
+<p>All coefficients of degrees 0 through n+1 are positive. The putative degree n+2 coefficient is zero, since j=h+n. The scalar in (6) changes by c_(t+1)=q^j c_t. To obtain (7), use</p>
+<pre><code>B_h(q^(-1)z)=(1+q^(-h)z)B_(h-1)(z),
+B_h(qz)=(1+q^h z)B_(h-1)(z)</code></pre>
+<p>in (4); its residual numerator is</p>
+<pre><code>q^(2j)(1+q^(-h)z)^2 A_n(q^(-1)z)
+      -q^(-2h)(1+q^h z)^2 A_n(qz).</code></pre>
+<p>Now suppose A_n(z) has roots -rho_k, rho_k&gt;0. At z=-r, r&gt;0, the continuous argument of the quantity inside Im in (7) is</p>
+<pre><code>-(j+h)theta+2Arg(1-q^h r)+sum_k Arg(rho_k-qr).</code></pre>
+<p>It strictly decreases from -(j+h)theta, which lies in (-pi,0), to -(n+2)pi as r tends to infinity. The limiting endpoint is not reached at finite r. Each factor stays nonzero and each individual argument strictly decreases. Therefore exactly n+1 multiples of pi are crossed, with nonzero derivative. Equation (7) has n+1 distinct negative roots. Since its degree is at most n+1, these are all its roots and the degree is exactly n+1. This starts from A_0=1 and proves (6).</p>
+<p><strong>Exact zero theorem.</strong> G_t has its h forced zeros</p>
+<pre><code>U=Q^(t+1),...,Q^d,</code></pre>
+<p>and its n residual zeros lie on U=-q^t rho with rho&gt;0. The residual zeros are simple; a residual zero can coincide with a forced zero, which causes no problem below. In the scaled magnetic variable upsilon=u/N, the latter zeros have</p>
+<pre><code>Re upsilon=(1+t/N)/2 modulo 1.</code></pre>
+<p>Every zero therefore lies OUTSIDE</p>
+<pre><code>S_tau={upsilon in C: 0&lt;Re upsilon&lt;tau}, tau=t/N.      (9)</code></pre>
+<p>The exact finite function (1) is nonzero on this entire strip, at both parities and composite levels. This conclusion is special to the original physical Fourier argument w=q^(t+j-d); it is not an assertion of joint zero-freeness in independent w and upsilon.</p>
+<h2 id="the-canonical-magnetic-logarithm-and-its-selected-limit">3. The canonical magnetic logarithm and its selected limit</h2>
+<p>Let (tau,xi)=(t/N,j/N) remain in a compact strict real parameter set with 0&lt;xi&lt;tau&lt;1, xi&lt;=1/2, tau+xi&gt;=1 in the limiting complete chamber. The actual integer parameters may have tau+xi=1-1/N; all constructions use those actual parameters and are uniform for this O(1/N) boundary displacement. Consider compact subsets inside S_tau, uniformly away from both vertical boundaries.</p>
+<p>Factorization (6) gives locally uniform bounds for</p>
+<pre><code>N^(-1)Log[fhat(N upsilon)/fhat(N upsilon_0)]           (10)</code></pre>
+<p>and all its fixed derivatives. Here upsilon_0 is near tau/2 and the logarithm is continued in the simply connected strip. For each root, the logarithmic derivative is 2pi i U/(U-zeta). The possible root locations in section 2 are uniformly separated from the image of the chosen compact set; radial roots are compactified by their radius in [0,infinity]. Integrating along compact paths bounds each root’s logarithmic ratio uniformly. There are j&lt;=N/2 roots, and the explicit exponential in (2) supplies only a bounded normalized term.</p>
+<p>The phase at the noninteger center is fixed exactly, not guessed: B_h(1)A_n(1)&gt;0 in (6), and hence a specified argument is</p>
+<pre><code>Arg fhat(t/2)=pi[d(t-j)+j^2]/(2N).                 (11)</code></pre>
+<p>This uses (Q;Q)_j=(-i)^j q<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>s_j with its original product phase. The leading imaginary action at the center is therefore pi(tau-xi+xi^2)/2. A nearest integer to t/2, together with the bounded logarithmic derivative in (10), supplies its real leading value from the actual real-magnetic theorem.</p>
+<p>Write the previously selected physical action, for REAL upsilon, as</p>
+<pre><code>Phi_(tau,xi)(upsilon)=psi_(tau,xi,upsilon)(w_star)
+                           +pi i upsilon(1-xi),
+w_star=exp[pi i(tau+xi-1)].                         (12)</code></pre>
+<p>At the center its internal saddle is alpha=xi/2+i eta. The paired J terms make Ecal(alpha) real, so Im Phi(tau/2) is exactly pi(tau-xi+xi^2)/2, agreeing with (11) to leading order. The same pairing gives Ecal’’ real negative and A(alpha)B(alpha)&gt;0. Therefore the continued Acal amplitude is positive real there. The remaining order-one phase exp[pi i(alpha-tau/2)] is -pi(tau-xi)/2, exactly the difference between (11) and N Im Phi. This checks both the additive logarithmic mark and its finite phase.</p>
+<p>The actual real-magnetic amplitude theorem supplies its values on all physical samples. Normal-family limits of (10) must have the same real part there. More precisely, adjacent physical sample ratios and bounded second derivatives give</p>
+<pre><code>exp(g&#39;(upsilon))=exp(Phi&#39;(upsilon))</code></pre>
+<p>on the real interval. Thus g’-Phi’ is a constant 2pi i integer. This sampling alias must be removed; dense samples alone do not remove it.</p>
+<p>At the center, positivity of all coefficients of B_h A_n gives</p>
+<pre><code>0&lt;=Im[N^(-1)partial_upsilon Log fhat(N upsilon)]&lt;=pi</code></pre>
+<p>in the limit, with real part zero. The selected derivative in (12) lies STRICTLY between 0 and pi on that imaginary axis. Indeed the internal saddle there is alpha=xi/2+i eta, eta&gt;=0. Its exact phase equation is</p>
+<pre><code>4Arg sin(pi(xi/2+i eta))
+ +2Arg sin(pi((tau-xi)/2+i eta))=pi(tau+xi-1).</code></pre>
+<p>Consequently</p>
+<pre><code>Phi&#39;(tau/2)=pi i(1-xi)
+               +2i Arg sin(pi((tau-xi)/2+i eta))</code></pre>
+<p>has imaginary part in [pi(1-xi),pi tau], a compact subinterval of (0,pi). The integer alias is zero. Equation (11) fixes the remaining additive constant. Compactness and the identity theorem now prove convergence of the WHOLE actual sequence, including derivatives:</p>
+<pre><code>N^(-1)Log fhat(N upsilon) -&gt; Phi_(tau,xi)(upsilon).    (13)</code></pre>
+<p>The right side is the holomorphic continuation selected by the actual polynomial. The same subsequence argument gives uniformity for compact real parameter families. It does not interpolate t or j.</p>
+<h2 id="the-exact-magnetic-difference-equation-and-its-simple-branch">4. The exact magnetic difference equation and its simple branch</h2>
+<p>Let f(upsilon)=fhat(N upsilon), h_N=1/N, U=exp(2pi i upsilon), T=exp(2pi i tau), and Jc=exp(2pi i xi). The original symmetric physical Casimir gives the exact finite difference equation</p>
+<pre><code>A_+(upsilon,h_N) f(upsilon+h_N)
+ +A_-(upsilon,h_N) f(upsilon-h_N)
+ +(D_(h_N)(upsilon)-c_(h_N))f(upsilon)=0,            (14)</code></pre>
+<p>where q=exp(pi i h_N), Q=q^2 and</p>
+<pre><code>A_+=(U-T)(1-QU)/T,
+A_-=(U-QT)(1-U)/(QT),
+D_h=(U/T)[2(q^(-1)+qT)-(q+q^(-1))U],
+c_h=q Jc+q^(-1)Jc^(-1).</code></pre>
+<p>It is an identity for the entire continuation (1). One direct check uses (2): after removing its exponential, the residual is a polynomial in U of degree at most j+1, since its top degree j+2 cancels. Its constant coefficient is zero. It also vanishes at the t+1 original physical nodes U=1,Q,…,Q^t, by the actual Casimir eigenvector equation, including both boundary rows. Since t&gt;=j, these zeros plus U=0 force the polynomial to vanish identically. No generic contiguous identity or missing endpoint equation is presumed.</p>
+<p>Put</p>
+<pre><code>A=(U-T)(1-U)/T, D=2U(1+T-U)/T,
+H(upsilon,a)=A(e^a+e^(-a))+D-(Jc+Jc^(-1)).          (15)</code></pre>
+<p>The branch selected in (13) satisfies H(upsilon,Phi’)=0. It is simple throughout the strip in the limiting complete chamber. Its characteristic discriminant is exactly</p>
+<pre><code>(Jc+Jc^(-1)-2)
+   [Jc+Jc^(-1)+2-4U(1+T-U)/T].                    (16)</code></pre>
+<p>The second factor’s zeros, after U=exp(pi i tau)X, obey</p>
+<pre><code>X^2-2cos(pi tau)X+cos^2(pi xi)=0.</code></pre>
+<p>Because tau&gt;=1-xi and xi&lt;=1/2, its finite nonzero roots are negative real. They lie on the same excluded magnetic line as the residual roots in section 2. A zero root at xi=1/2 is not a finite U. Also A has no zero inside S_tau and Jc!=1. Hence H_a!=0 there. On compact subsets it remains bounded away from zero, also for the actual O(1/N) displacement below tau+xi=1.</p>
+<h2 id="actual-complex-amplitude-from-the-magnetic-finite-shifts">5. Actual complex amplitude from the magnetic finite shifts</h2>
+<p>This section proves a fixed complex corridor theorem around any compact real magnetic interval inside (0,tau). The preceding root and discriminant estimates also permit compact paths farther inside the strip, with the continued functions specified in sections 3–4.</p>
+<p>Write G_N=N^(-1)Log f and a_N=G_N’. The exact zero theorem and (13) give bounded holomorphic derivatives and a_N-&gt;Phi’ on larger compact sets. Taylor expansion of the ACTUAL shifted ratios in (14) yields</p>
+<pre><code>f(upsilon+/-h_N)/f(upsilon)
+  =exp(+/-a_N)[1+(h_N/2)a_N&#39;+O(h_N^2)].             (17)</code></pre>
+<p>Expand the displayed finite coefficients as A_+=A+h_N A_1<sup>++O(h_N</sup>2), A_-=A+h_N A_1<sup>-+O(h_N</sup>2), and similarly for D and c. Explicitly,</p>
+<pre><code>A_1^+=-2pi i U(U-T)/T,
+A_1^-=-2pi i U(1-U)/T,
+D_1=2pi i U(T-1)/T,
+c_1=pi i(Jc-Jc^(-1)),
+H_1(upsilon,a)=A_1^+e^a+A_1^-e^(-a)+D_1-c_1.</code></pre>
+<p>Equations (14) and (17) imply</p>
+<pre><code>0=H(upsilon,a_N)
+   +h_N[H_1(upsilon,a_N)+(a_N&#39;/2)H_aa(upsilon,a_N)]
+   +O(h_N^2).</code></pre>
+<p>Uniform simplicity first gives a_N-Phi’=O(h_N). Cauchy’s estimate on a larger compact set improves its derivative to the same order. Substitution a second time proves the ACTUAL correction</p>
+<pre><code>a_N=Phi&#39;+h_N b+O(h_N^2),
+b=-[H_1(upsilon,Phi&#39;)+(Phi&#39;&#39;/2)H_aa(upsilon,Phi&#39;)]
+                                       /H_a(upsilon,Phi&#39;).       (18)</code></pre>
+<p>Let Btilde solve the scalar holomorphic equation Btilde’/Btilde=b, with its nonzero value at the real center fixed by the previous <a href="actual_q_hahn_uniform_complex_amplitude.html">actual amplitude theorem</a>. Then Btilde is holomorphic and never zero on the corridor. The center may be noninteger: use the nearest physical sample to fix the constant to relative error O(1/N), since both Btilde and the previous explicit amplitude are smooth and nonzero there. Integrating (18) from that physical sample proves</p>
+<pre><code>fhat_(N,t,j)(N upsilon)
+    =N^(-1/2) Btilde_(tau,xi)(upsilon)
+            exp[N Phi_(tau,xi)(upsilon)](1+O(N^(-1))).            (19)</code></pre>
+<p>The error is uniform on the complex corridor, with each fixed derivative on smaller compact subsets. Thus the transport solution in (18) is justified by the original polynomial and a known actual constant; it is not a formal ansatz substituted for it.</p>
+<p>The amplitude in (19) is the continuation of the earlier explicit one:</p>
+<pre><code>Btilde_(tau,xi)(upsilon)
+  =Acal_(tau,xi,upsilon)(w_star)
+         exp[pi i(alpha_(tau,xi,upsilon)(w_star)-upsilon)].         (20)</code></pre>
+<p>To see this without assuming an unproved transport identity, compare (19) with the previous actual theorem at physical real samples. Taking sequences of parameters and samples tending to any strict real point proves equality of the two nonzero amplitudes there. Their holomorphic continuations are therefore identical. The local coefficient functions are analytic across tau+xi=1, so the identity also covers the actual O(1/N) boundary displacement. This analytic identity between coefficient functions is NOT a claimed finite interpolation of t or j.</p>
+<p>The phases and the order-one factor in (20) retain both original integer offsets. No root-normal derivative has been taken. The theorem supplies an actual complex magnetic packet at fixed real t,j; global magnetic/channel summation, complex pair-degree or channel continuation, and the original global cycle remain separate.</p>
+<h2 id="a-canonical-joint-rational-continuation-without-a-joint-estimate">6. A canonical joint rational continuation, without a joint estimate</h2>
+<p>There is also a source-defined joint continuation in u and v=t-u. Set U=Q^u, V=Q^v and retain the phase x^u=exp(pi i d u/N). For fixed N and j define the finite polynomial</p>
+<pre><code>H_j(U,V)=sum_(a=0)^j [j choose a]_Q^2 q^[a(a-d)] V^a
+    product_(r=0)^(a-1)(U-Q^r)
+    product_(r=0)^(j-a-1)(V-Q^r),
+D_j(T)=product_(r=0)^(j-1)(T-Q^r).                  (21)</code></pre>
+<p>The original terminating formula, extended with its own finite sine products, is exactly</p>
+<pre><code>fhat_j(u,v)=x^u H_j(U,V)/D_j(UV).                  (22)</code></pre>
+<p>The denominator and the marked exponential are retained. This is a specified finite rational function, not a choice of factorial interpolation. In (21) the binomial is the GAUSSIAN binomial. If one uses the positive sine binomial instead, the same coefficient is</p>
+<pre><code>beta(j,a)^2 q^[a(2j-a-d)] V^a.                     (23)</code></pre>
+<p>Indeed [j choose a]_Q=q<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> beta(j,a). Confusing these two binomials changes the original phase, already at j=2.</p>
+<p>For a direct derivation, substitute the two finite sine products used in (3), and use</p>
+<pre><code>beta(t,j)=i^(-j)q^[-jt-j(j-1)/2] D_j(Q^t)/s_j.</code></pre>
+<p>Removing this denominator leaves the phase q<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> before the original w^a is included. Since w=q^(t+j-d), and Q<sup>(at)U</sup>(-a)=V^a, the remaining phase is exactly q<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. This proves (22). Restricting UV=T to an actual integer degree recovers</p>
+<pre><code>G_t(U)=U^j H_j(U,T/U)/D_j(T).                      (24)</code></pre>
+<p>No joint zero-location theorem for H_j(U,V), or joint complex asymptotic in pair degree and magnetic coordinate, is asserted here. The preceding strip theorem uses the essential restriction that UV=Q^t with t real and integer. Formula (22) specifies a possible next object without supplying the missing estimates for it.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_q_hahn_magnetic_complex_corridor.py">exact magnetic polynomial and complex corridor</a>.</p>
+<p>Independent analytical review: a second reader checked the literal terminating continuation, coproduct normalization and negative-root factorization, the strip zero exclusion, canonical center phase and sampling-alias removal, the endpoint-inclusive Casimir equation and its discriminant, and the actual finite-shift amplitude bootstrap. The real-center normalization and both original integer offsets were independently recalculated. The joint rational appendix, including the Gaussian-versus-sine binomial phase, also passed. The primary reader’s fresh audit replay was retained rather than duplicated. The theorem still fixes real discrete pair degree and channel; it supplies neither a joint complex estimate nor a selected whole-source cycle.</p>
+<p>Root review: full analytical read and fresh audit PASS. The review checked the original terminating function, exact coproduct normalization, residual root induction, canonical center phase, removal of the sampling alias, Casimir polynomial identity, simple branch and two-order derivative bootstrap. The replay included 186 independent joint sine-product checks and 32 complex magnetic amplitude regressions. The joint rational formula is exact; joint complex asymptotics and the global source remain open.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>j(j+1)/2<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>a(j-a)<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>a t+a(j-a)<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>a(2j-a-d)<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_q_hahn_magnetic_complex_corridor.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#a-literal-finite-continuation-with-all-prefactors">1. A literal finite continuation, with all prefactors</a><a href="#the-original-coproduct-proves-the-root-factorization">2. The original coproduct proves the root factorization</a><a href="#the-canonical-magnetic-logarithm-and-its-selected-limit">3. The canonical magnetic logarithm and its selected limit</a><a href="#the-exact-magnetic-difference-equation-and-its-simple-branch">4. The exact magnetic difference equation and its simple branch</a><a href="#actual-complex-amplitude-from-the-magnetic-finite-shifts">5. Actual complex amplitude from the magnetic finite shifts</a><a href="#a-canonical-joint-rational-continuation-without-a-joint-estimate">6. A canonical joint rational continuation, without a joint estimate</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

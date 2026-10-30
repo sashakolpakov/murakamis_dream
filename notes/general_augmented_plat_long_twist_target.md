@@ -51,6 +51,13 @@ link exterior with its original single marked normalization.
 The quantifier is every fixed k and every admissible fixed skeleton;
 there is no proposed universal threshold depending on k alone.
 
+Under an actual positive marked gluing certificate, the
+[geometric long-filling corollary](general_augmented_plat_long_filling_quantifiers.md)
+now proves a threshold T_geom(D) for complete hyperbolic geometry of
+every independently long signed filling. Existence of the quantum
+threshold T(D) in (1) is the remaining conjectural assertion for a
+general skeleton. These two thresholds must not be conflated.
+
 ## 2. Why twist length needs a diagram hypothesis
 
 Raw box counts do not measure geometric twisting. For the actual
@@ -139,6 +146,15 @@ The already proved long-filling transfer is independent of k once
 these inputs are available. It must not be cited as having supplied
 them for an arbitrary plat.
 
+The new [critical-scheme equivalence](actual_augmented_plat_critical_scheme.md)
+and [marked multi-cusp rigidity](general_marked_multicusp_gluing_rigidity.md)
+now supply a nearby geometric stationary branch under an actual positive
+gluing certificate. The only magnetic Hessian null directions are the
+two framing directions; a transverse slice removes them. The branch
+has the actual peripheral differential and absolute volume anchor.
+The quantum statement still requires that the original finite source
+select and contribute to this branch.
+
 The new [actual local character map](actual_augmented_plat_local_critical_character_map.md)
 proves the primitive differential on any correctly marked stationary
 branch. The [absolute endpoint regulator theorem](actual_augmented_plat_endpoint_regulator.md)
@@ -175,7 +191,13 @@ For each actual local q-Hahn column, the
 [negative-root theorem](actual_q_hahn_negative_root_source_polynomial.md)
 now proves a canonical slit-plane logarithm, and the
 [complex-action theorem](actual_q_hahn_selected_complex_action.md)
-proves its actual leading action on the physical Fourier arc.
+proves its actual leading action on the physical Fourier arc. The
+[uniform amplitude theorem](actual_q_hahn_uniform_complex_amplitude.md)
+adds a nonzero prefactor with relative error O(1/N). The
+[magnetic corridor theorem](actual_q_hahn_magnetic_complex_corridor.md)
+continues the actual finite kernel in one magnetic variable while
+the pair degree and channel stay real and discrete. It also records
+the exact joint rational kernel, without proving a joint estimate.
 This is not yet a joint complex magnetic packet or a whole-source
 asymptotic. The endpoint quadratic has monodromy, so an unspecified
 analytic continuation alone cannot identify the selected geometric

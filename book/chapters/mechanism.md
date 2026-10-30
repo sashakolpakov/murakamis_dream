@@ -26,7 +26,9 @@ After its forced zero is removed, every actual physical q-Hahn polynomial has si
 
 Consequently its logarithm, real on the positive axis, is holomorphic on the slit plane. Real factorial estimates first identify its strictly concave positive-axis variational limit. Uniform bounds from the negative roots and the identity theorem then continue the limit to a [uniquely selected holomorphic action](../../notes/actual_q_hahn_selected_complex_action.md). On the physical Fourier arc, the corresponding continued saddle is nondegenerate. This proves the actual local exponential rate while retaining its cancellations.
 
-This is a local leading-action theorem. It supplies neither a full amplitude expansion nor analytic control after the magnetic variables move to a global geometric saddle. Those are still required for the general finite source.
+The [actual amplitude theorem](../../notes/actual_q_hahn_uniform_complex_amplitude.md) now strengthens this to a nonzero prefactor and uniform relative error $O(N^{-1})$. Its proof uses the exact finite difference equation and a real normalization, retaining both original integer offsets. The scaled parameters are the actual values at level $N$, so no rate of convergence of those parameters is assumed.
+
+There is also a [complex magnetic corridor](../../notes/actual_q_hahn_magnetic_complex_corridor.md) for the original terminating kernel at fixed real integer pair degree and channel. An exact coproduct factorization places every magnetic zero outside the physical strip. This selects its logarithm, removes the possible sampling alias, and permits an actual complex amplitude estimate. A global magnetic deformation also changes pair degrees: simultaneous complex continuation in those variables, the contributing cycle, and the full coherent sum remain open.
 
 The [full matching-graph identity](../../notes/general_matching_graph_full_normal_source.md) is a complementary exact assembly tool: all folded sectors form one generic network with the original physical trace normal retained. It holds at both parities and uses the graph of the actual crossing-disk cut. No vanishing channel norm is inverted.
 

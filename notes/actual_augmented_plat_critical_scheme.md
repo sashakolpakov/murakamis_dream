@@ -1,0 +1,420 @@
+# The actual Casimir plat phase and its marked representation germ
+
+30 October 2026. On a regular chart at a complete geometric point, the
+constrained critical scheme of the ORIGINAL augmented-plat phase is
+isomorphic to the actual marked representation germ modulo one diagonal
+framing scale. This includes local Artin test rings, rather than only
+complex points or tangent dimensions. The proof reconstructs shared wire
+momenta from the event-incidence equations and supplies an inverse which
+is regular at the parabolic channel endpoint.
+
+The phase is the actual normalized Casimir/q-Hahn phase. This is not an
+application of the older braid-cut scheme claim with its different
+boundary state. Every original cup, ordinary cap, the unrestricted marked
+cap after its permitted whole-source degree restriction, and both physical
+degree adapters occur below. No quantum source quotient or asymptotic
+selection is asserted.
+
+## 1. Objects and the precise local statement
+
+Fix a literal augmented plat, its retained half twists epsilon_v, and its
+actual outside wires. Its event graph has a vertex for each cup, cap or
+two-input/two-output circle coupon, and one directed edge for each physical
+wire between successive events. Identity segments are included in that
+wire. Let B be its oriented incidence matrix, with +1 at an incoming
+half-edge and -1 at an outgoing half-edge. The leading degree constraints
+are
+
+    B x=b,  b_cup=-1, b_cap=1, b_coupon=0.               (1)
+
+Each connected component has equally many cups and caps, by counting its
+incoming and outgoing half-edges, so its entries of b sum to zero. The
+graph can have arbitrary cycles and width. We state the representation
+quotient for a CONNECTED event graph. The incidence construction below
+works componentwise without that assumption. A disconnected projection
+is a split diagram; contracting the connected local crossing-circle boxes
+does not change that connectivity. Thus the connected case includes an
+essential nonsplit augmented-plat diagram.
+
+Choose one of the actual low/high degree adapters at each coupon and a
+regular complete geometric point as in
+[the generic magnetic chart](actual_augmented_plat_regular_geometric_phase_chart.md).
+Fix its affine logarithmic lift of (1), its simple internal q-Hahn roots,
+and all logarithmic characters. All displayed local-map denominators,
+prefix diagonals, main K+1, and the chosen total F charts are units.
+We work in the corresponding formal neighborhood over C. The internal
+roots are eliminated by the exact marked critical reduction in
+[the channel-Hessian theorem](actual_augmented_plat_channel_hessian.md),
+not by substituting roots into an unadjusted phase.
+
+For each auxiliary circle retain its longitude eigenvalue J_v near -1
+and prescribe its physical meridian eigenvalue m_v near 1. The channel
+equation is the ORIGINAL one
+
+    R_(epsilon_v)=m_v^(-2).                              (2)
+
+The complete fiber has m_v=1. Equivalently the positive cosine branch
+uses m_v=exp(-pi i chi_v) and adds
+2 Log(m_v)(xi_v-1/2) to the phase, with J_v=exp(2pi i xi_v).
+
+Let Crit be the formal scheme given by magnetic criticality on ker B and
+(2), with the retained integer characters. Let Rep be the actual Morse/
+crossing-disk representation germ with the same peripheral marking:
+main meridians have their exact unipotent eigenvalue +1, auxiliary
+meridians have selected eigenvalue m_v, and the raw ordered disk product
+has selected eigenvalue J_v. All the same regular chart conditions hold.
+The main flag means the kernel of mu-I, NOT an arbitrary invariant line
+of a trace-two Artin matrix. The auxiliary flag is the selected J_v
+eigenline of its noncentral disk product.
+
+Then there is an isomorphism of formal functors
+
+    Crit = Rep / T_diag,                               (3)
+
+where T_diag acts by simultaneous projective diagonal conjugation.
+The quotient has a concrete local slice: set the momentum S on one
+chosen physical wire to 1. Every such S is a unit. No reductive-quotient
+existence theorem or reduction of a nonreduced ring is needed for (3).
+Sections 2--6 give mutually inverse constructions over every local
+Artin C-algebra with the specified residue point.
+
+## 2. Incidence criticality reconstructs all wire momenta
+
+Use physical half-edge variables before imposing (1). At a low coupon
+take the following ambient extension of its root-reduced phase:
+
+    s=x_in,1+x_in,2,  u=x_out,1, v=x_in,1,
+    f_v=Theta_bar(s,u,v,xi).
+
+The second output is recovered by degree conservation. Write D, Y_in,
+Y_out for the ACTUAL derivatives in the local character note. The four
+exponentiated half-edge derivatives of this extension are
+
+    incoming: (D Y_in,D),  outgoing: (Y_out,1).          (4)
+
+For a high coupon use the actual affine function
+Theta_bar(2-s,u-s+1,v-s+1,xi). Formula (4) remains true with
+D_high=1/(D Y_out Y_in) and the physical high head coordinates. Thus
+there is no separate high-degree gauge assumption.
+
+Let p_(v,e) be the local derivative of the chosen ambient extension and
+c_e=exp(sum_(v incident e) p_(v,e)). Magnetic criticality means
+
+    product_e c_e^(l_e)=1 for every l in ker_Z B.         (5)
+
+The integer cycle lattice is the full kernel: an oriented graph incidence
+matrix is saturated. A direct construction is enough here. Choose a
+spanning tree and one vertex value t_v0=1. Solve along its edges
+
+    c_e=t_tail(e)/t_head(e).                            (6)
+
+Every non-tree edge satisfies (6) precisely because its fundamental
+cycle satisfies (5). This constructs unit vertex values over ANY
+commutative test ring. They are unique up to one common unit per
+connected component; no extraction of roots is involved.
+
+Now define the momentum at each incident half-edge by
+
+    S_(v,e)=t_v exp(B_(v,e) p_(v,e)).                   (7)
+
+Equation (6) says exactly that the two definitions of S on a wire
+agree. At a coupon (4),(7) give
+
+    S_in=(t_v D Y_in,t_v D),
+    S_out=(t_v/Y_out,t_v).                             (8)
+
+This is the ORIGINAL local kernel formula with g=t_v D. Conversely
+shared momenta satisfying that formula give (7), hence (6),(5).
+Choosing another ambient extension changes its derivatives by a local
+multiple of the degree row and merely changes t_v, leaving S unchanged.
+
+In additive logarithmic language, (5) is grad F=B^t lambda after keeping
+the fixed integral character, and t_v=exp(-lambda_v). On a formal Artin
+neighborhood the exponential is injective on nilpotents. Thus the
+exponentiated equations and the exactly marked critical equations have
+the same infinitesimal scheme, not just the same complex zero set.
+The spanning-tree construction also proves the asserted saturation and
+the absence of hidden finite scale choices.
+
+## 3. The actual boundary maps have precisely the inverse-pair relation
+
+On their actual forced degree fibers, the leading cup, ordinary cap and
+marked cap phases are respectively
+
+    pi i(x_1-1),  pi i x_1,  pi i x_2.                 (9)
+
+The marked restriction x_1+x_2=1 follows only after all other actual
+caps and degree-preserving coupons act; it is not a local replacement
+of an unrestricted mark in a degree-changing source.
+
+Apply (7) with B=-1 at a cup and B=+1 at a cap. The two momenta are
+(-t,t) for the cup and ordinary cap, and (t,-t) for the marked cap.
+All three therefore give
+
+    X_1 X_2=1,  S_1/S_2=-1.                            (10)
+
+For an actual physical head use
+
+    K=-1/X, F=S(1-X), E=(X^(-1)-1)/S,
+    Lminus=[[1,0],[-KF,K]],
+    G=[[K,E],[FK,FE+K^(-1)]].                         (11)
+
+It has determinant one and trace -2. Its exact -1 eigenline is spanned
+by (1,S). Since K+1 is a unit, this kernel line is unique over the Artin
+ring; no nilpotent invariant-flag freedom is silently added.
+
+Equation (10) is equivalent to the actual based pair product P=I.
+For the converse, K_total=1 gives X_2=X_1^(-1), while
+
+    F_total=(1-X_1)(S_1+S_2)=0
+
+forces S_1=-S_2 because 1-X_1 is a unit. These are identities over the
+test ring. The ordinary and marked phases differ on the degree fiber
+by pi i-2pi i x_1; this retained integral character has the same
+exponentiated relation (10), but must not be deleted from the action.
+
+## 4. A regular parabolic inverse for each actual coupon
+
+The local critical map reconstructs actual ordered pair matrices from
+(X,S), preserves their ENTIRE product P, and fixes
+
+    Tr P=J+J^(-1).
+
+Conversely, given regular incoming and outgoing heads with that product,
+their ratios S_in,1/S_in,2 and S_out,2/S_out,1 determine their internal
+q-Hahn roots by the rational inverse (5) of the local map. The Jacobi
+equation is the actual trace equation, so these roots satisfy the two
+internal critical equations. Total-F preservation gives the exact D
+and therefore (8); the regular high adapter gives the same conclusion
+in the other physical chamber. The chosen simple roots eliminate any
+additional local root choice in this formal neighborhood.
+
+At J=-1 one MUST NOT divide by J-J^(-1) in an Artin ring. Here is an
+explicit replacement for the local conjugator formula. Put
+
+    Q=P-J^(-1)I,  A=A_in, A'=A_out,
+    c=Tr([Q,A](A'-A)) / Tr([Q,A](Q A-A' Q)),
+    C=I+cQ.                                            (12)
+
+At the complete point Q=H=P+I and A'=A+b[H,A]-4b^2H. The denominator
+in (12) is
+
+    Tr([H,A]([H,A]-4bH))=32,                          (13)
+
+using Tr([H,A]^2)=32 and Tr([H,A]H)=0. It is a unit throughout the
+formal neighborhood. The original generic conjugator identity now
+extends in this regular expression and gives
+
+    C A C^(-1)=A', [C,P]=0,
+    det C=R0=1+c(J-J^(-1)).                            (14)
+
+For precision, these rational identities hold on the smooth localized
+internal-root chart before imposing the global critical equations;
+their specialization therefore holds on nonreduced Artin test rings as
+well. This is not cancellation by a nonunit in such a test ring.
+
+Specify the selected auxiliary eigenvalue m and let h_J=J^(-1)-1,
+which is a unit near J=-1. The actual physical auxiliary meridian is
+
+    C_aux=m R0 h_J^(-epsilon) C^(-1)(P^(-1)-I)^epsilon.  (15)
+
+It has selected J-flag eigenvalue exactly m and
+
+    det C_aux=m^2 R0(-J)^epsilon=1                     (16)
+
+by (2). All inverses in (12),(15) are units. At completeness (15) is
+I+(epsilon/2-b)(P+I), exactly the original primitive collar matrix.
+Its inverse followed by the retained Hurwitz half twist induces C on
+the main pair. Thus the auxiliary is the literal disk-framed meridian,
+not a centralizer chosen only from its eigenvalue ratio.
+
+Conversely an actual auxiliary meridian with that eigenvalue commutes
+with P. Its inverse, composed with the retained half twist, transports
+the pair. Normalize this projective conjugator to have eigenvalue one
+on the J^(-1) flag. This divides by a unit even at the endpoint, because
+the commutant of the noncentral P is the free span of I,P. The normalized
+matrix is (12), and its eigenratio gives (2). The normalization and the
+conjugator are unique: at the complete pair a matrix commuting with
+P=-I+H has form aI+bH; commuting also with A forces b=0 since [H,A]
+has a unit entry. The same unit linear minor proves this assertion in
+the whole formal neighborhood.
+
+## 5. Assemble the actual marked representation, and invert it
+
+From a critical point, section 2 supplies shared physical heads (11).
+At every horizontal slice prefix-transport them by their actual lower
+triangular matrices. The local coupon preserves P, and each cup/cap
+has P=I, so prefixes outside the event remain unchanged. Physical wires
+therefore carry the same based meridian at both ends. At each circle,
+(15) satisfies exactly the original threading relation [2,1,1,2] and
+the retained main Hurwitz move. These are the literal van Kampen
+relations of the drilled box; inverse-pair caps close the outside plat.
+They construct a representation of the actual marked augmented link.
+
+For the reverse construction start with that representation and its
+recorded Morse basepaths. If H_1,...,H_m are the raw trace -2 main
+meridians at a slice, let P_i=H_i ... H_1, P_0=I and use
+
+    Bminus(P)=[[1,0],[-P_21,P_11]],
+    G_i=Bminus(P_(i-1)) H_i Bminus(P_(i-1))^(-1),
+    K_i=(P_i)_11/(P_(i-1))_11,
+    X_i=-1/K_i, S_i=(G_i)_21/(K_i+1).                  (17)
+
+All denominators are units by the same regular chart. This is the
+explicit inverse of the actual prefix factorization. It remains valid
+over the Artin ring. The selected channel eigenvalue fixes the actual
+trace equation and its unique regular eigenline; the rational inverse
+from section 4 recovers the internal roots. The local maps then recover
+(8),(10), and section 2 gives magnetic criticality. No root is chosen
+by an order, norm, or independent semiclassical convention.
+
+Both constructions are inverse before quotienting, except for the one
+common scale in (6). Multiplying all momenta by t conjugates every
+matrix by diag(1,t) projectively: upper entries divide by t and lower
+entries multiply by t. The prefix construction respects that same
+conjugation. Setting one wire momentum to 1 removes exactly this
+freedom and proves (3) over all local Artin test rings.
+
+## 6. Consequences and limits of the statement
+
+On the complete fiber m=1, (2) fixes J=-1 locally, scheme-theoretically.
+Indeed R_epsilon-1 vanishes identically on J=-1 and its J derivative
+there is 2b-epsilon=2/tau_geom, a unit at the actual complete cusp.
+The formal implicit-function theorem therefore gives J+1=0. This
+uses the primitive cusp normalization of the channel-Hessian theorem,
+not a semisimple endpoint quotient.
+
+At an irreducible geometric representation, changing the common
+projective frame supplies the PGL2 orbit; the diagonal scale above has
+already been quotiented. With the convention rho_g=g rho g^(-1), that
+scale acts on g by LEFT multiplication. Its two-dimensional local
+T_diag\PGL2 framing
+directions therefore remain in the critical scheme. Equation (3)
+identifies all its additional infinitesimal directions with actual
+marked representation deformations. This source equivalence alone
+does not exclude those additional deformations. The following
+corollary uses a separately checked geometric input.
+
+## 7. With an actual positive certificate, the magnetic radical is exactly framing
+
+Assume additionally an ACTUAL marked positive complete ideal gluing
+certificate for this augmented exterior. The
+[multi-cusp marked rigidity theorem](general_marked_multicusp_gluing_rigidity.md)
+identifies its decorated representation germ modulo PGL2 with a smooth
+germ whose coordinates are the primitive peripheral eigenvalue logs.
+It proves this identification on Artin rings, with the exact main
+eigenvalue conditions used above. Fix all main eigenvalues to +1 and
+fix the auxiliary eigenvalues m. The unframed germ is then a point.
+The complete geometric representation is irreducible, so its framed
+germ is a smooth PGL2 orbit. Equation (3) and its explicit one-scale
+slice therefore prove
+
+    Crit at fixed m is smooth of dimension two.          (18)
+
+This assertion holds formally over nearby auxiliary eigenvalue
+parameters as well. The dimension comes from the actual
+T_diag\PGL2 framing quotient, not from deleting two presumed redundant
+equations or counting variables and equations.
+
+At completeness write F for the root-reduced phase after its affine
+degree restriction, in free magnetic coordinates y and channels xi.
+The scheme Crit is the zero scheme of its EXACTLY marked derivatives.
+Consequently its Zariski tangent space is the kernel of Hess F, even
+before any reducedness assertion. Equation (18) now proves that this
+kernel is precisely the two-dimensional framing tangent space.
+The independently proved channel calculation gives
+
+    Hess F = [[F_yy,0],[0,diag(-4pi i/tau_geom,i)]].     (19)
+
+The channel diagonal is invertible. Hence the two framing directions
+are purely magnetic, and
+
+    ker F_yy = tangent(T_diag\PGL2), dim ker F_yy=2.    (20)
+
+There are no further magnetic infinitesimal null directions on this
+regular positive geometric germ. A local slice transverse to these
+actual frame directions has a nondegenerate holomorphic quadratic
+form. This supplies a classical normal form; it is not a computation
+of an actual source density, a finite quantum gauge factor, or a
+Gaussian coefficient on the physical summation cycle.
+
+### A nearby classical stationary branch and its absolute action
+
+There is now also a holomorphic CLASSICAL stationary branch. Choose a
+local slice transverse to the two framing directions and keep the
+geometric sheet's integer Poisson characters fixed. The marked geometric
+implicit-function theorem solves the representation uniquely on that
+slice for m_i=exp(-pi i chi_i) near 1. The inverse in (17), the regular
+internal-root maps, and the fixed local logarithms reconstruct all the
+actual principal-phase variables holomorphically. Equation (3) proves
+that these variables satisfy every exactly marked stationary equation.
+This proves existence; it is no longer an assumption about an unspecified
+classical critical branch.
+
+Its critical value phi(chi) is independent of the transverse framing
+slice. Along the connected local framing orbit all internal derivatives
+vanish, so the value of the same marked phase is constant. This statement
+does not reset any additive period or change an integer mark.
+
+The auxiliary-color normalization can be checked directly in the
+[exact entire core](actual_augmented_plat_entire_core_color_packet.md).
+Its full-algebra identity centers (-1)^h T_h into
+cos[pi(N-2j-1)chi]. On the positive cosine branch the order-N coupling
+is EXACTLY pi i(1-2xi)chi. The finite -1 contributes exp(-pi i chi)
+to the amplitude, not a new term in the principal phase. The actual
+main cups/caps, kappa^epsilon factors and original exterior line have
+no auxiliary chi dependence in this packet. Their known leading
+constant phases are retained. In particular there is no additional
+order-N exterior color character to discard or calibrate by the volume.
+
+Envelope differentiation and the proved literal peripheral marking give
+
+    partial_i phi=pi i(1-2xi_i),
+    U_i=-2pi i chi_i, V_i=4pi i(xi_i-1/2),
+    d(2pi i phi)=(1/2) sum_i V_i dU_i.                 (21)
+
+Here U,V are the centered projective meridian and preferred-longitude
+logs. The negative cosine sign requires the simultaneous reciprocal
+eigenflag convention stated in the local character note; it gives the
+same primitive differential with those consistently marked logs.
+An independently changed exterior color character would change the
+corresponding linear action/log mark and is not covered by silently
+reusing (21).
+
+The [absolute endpoint regulator comparison](actual_augmented_plat_endpoint_regulator.md)
+now applies to the complete point of this FULL stationary branch and
+fixes its value:
+
+    2pi Re phi(0)=Vol(Y_D).                             (22)
+
+Finally (21) and dV_i=tau_geom,i dU_i at completeness, or equivalently
+the channel elimination calculation, give
+
+    phi_(chi_i,chi_j)(0)=delta_ij pi i tau_geom,i.       (23)
+
+Thus the general transfer's parameter is tau_packet=tau_geom/2. These
+are statements about the actual marked PRINCIPAL action on its geometric
+sheet. They do not prove continuation from the locally lattice-selected
+q-Hahn roots, a nonzero finite-source cycle coefficient, or a uniform
+quantum packet with this action. The branch is called geometric here,
+not source-selected.
+
+## 8. Scope
+
+This is a formal classical equivalence. It neither quotients the finite
+quantum coupon algebra nor replaces its co-source. It does not locate
+the point in a physical support chamber, continue the source-selected
+local branches to it, choose its Poisson coefficient, compute a nonzero
+amplitude, or bound any competing source. The original marked action,
+peripheral factors and all finite-normal data remain unchanged.
+
+Audit: [incidence, boundary and regular centralizer certificates](../experiments/audit_actual_augmented_plat_critical_scheme.py).
+
+Independent internal review: a second reader checked the full
+incidence/momentum inverse, all actual boundary characters, high-degree
+adapter, regular centralizer and primitive auxiliary reconstruction,
+and the literal Morse presentation over Artin rings. Its fresh audit
+passed the symbolic local identities and 24 event-graph reconstructions.
+The separate multi-cusp geometric theorem was independently read and
+replayed before applying it in section 7. The physical branch,
+finite-source cycle and amplitude limitations remain as stated.
