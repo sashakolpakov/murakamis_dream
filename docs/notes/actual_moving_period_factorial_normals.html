@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The exact factorial interpolant with a moving quantum period · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">A-structure and torsors</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a> · <a href="../library.html#torsors">A-structures, torsors, and regulators</a><p><span class="badge">Exact two-period section and finite unipotent jet transport</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_moving_period_factorial_normals.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_moving_period_factorial_normals.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_moving_period_factorial_normals_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="the-exact-factorial-interpolant-with-a-moving-quantum-period">The exact factorial interpolant with a moving quantum period</h1>
+<p>30 October 2026. Independently reviewed. The existing convergent Gamma product extends to the ACTUAL moving quantum parameter. It matches every original finite integer factorial, including the fixed endpoint d=N-1, before taking derivatives. On specified complex index charts it has uniform relative bounds and polynomial cost for every fixed genuine q derivative. The index d stays N-1 when the analytic period moves; no root reflection is differentiated as though d were the moving period minus one.</p>
+<h2 id="the-same-convergent-product-at-a-complex-period">1. The same convergent product at a complex period</h2>
+<p>Fix N&gt;=3, q0=exp(pi i/N), and let</p>
+<pre><code>zeta=q0 exp(epsilon),
+P=pi i/Log zeta=N/[1+N epsilon/(pi i)],
+Q_P=exp(2pi i/P)=zeta^2.                              (1)</code></pre>
+<p>The logarithm of zeta is the local one pi i/N+epsilon. Use the analytic Log P near the positive number N and Log(Pk)=Log P+log k. Define, initially where all Gamma arguments have positive real part,</p>
+<pre><code>G_P(z)=(2pi/P)^z Gamma(z+1)
+   *product_(k&gt;=1) Gamma(Pk+z+1)
+               /[Gamma(Pk-z)(Pk)^(2z+1)],
+
+Fhat_P(z)=exp[pi i z(z+1)/(2P)-pi i z/2]G_P(z).        (2)</code></pre>
+<p>This uses the infinite Gamma product from the <a href="exact_factorial_interpolation_and_complex_contours.html">exact interpolation theorem</a>, not its finite Barnes product whose number of factors was an integer. The log of the kth factor is locally uniformly O(k^-2), with leading term -z(z+1)(2z+1)/(6P^2 k^2). Its 1/k coefficient vanishes. The Gamma-ratio expansion therefore proves local uniform convergence, including P and z derivatives. The function is holomorphic and nonzero on the initial domain and G_P(0)=1.</p>
+<p>The Gamma functional equation and the convergent sine product give EXACTLY</p>
+<pre><code>G_P(z+1)/G_P(z)=2sin(pi(z+1)/P),
+Fhat_P(z+1)=[1-Q_P^(z+1)]Fhat_P(z), Fhat_P(0)=1.       (3)</code></pre>
+<p>They also define its meromorphic continuation in z. Consequently, with n a fixed nonnegative integer,</p>
+<pre><code>Fhat_P(n)=(zeta^2;zeta^2)_n.                         (4)</code></pre>
+<p>In particular (4) holds for EVERY 0&lt;=n&lt;=d=N-1 on a neighborhood of the original root. This is equality of generic analytic germs, not merely of their root values. The marked power Q_P^z is always exp(2z Log zeta).</p>
+<p>There is also an exact SECOND difference equation,</p>
+<pre><code>G_P(z+P)=-2sin(pi z)G_P(z),
+Fhat_P(z+P)=[1-exp(2pi i z)]Fhat_P(z).                  (4a)</code></pre>
+<p>To prove its constant, first take -1&lt;Re z&lt;0, so both z and z+P are in the defining Gamma domain. The quotient of the products truncated at k=K is</p>
+<pre><code>(2pi/P)^P/[Gamma(z+1)Gamma(-z)]
+  *Gamma(P(K+1)+z+1)Gamma(PK-z)
+    /[P^(2PK)Gamma(K+1)^(2P)].</code></pre>
+<p>The last ratio tends to (2pi)<sup>(1-P)P</sup>P by the same uniform complex-sector Stirling formula, with all powers marked by Log P. The Gamma reflection identity then gives -2sin(pi z); equivalently that elementary Gamma identity follows from its convergent product and the sine product already used in (3). Meromorphic continuation proves the first equation globally. The exponential in (2) has P-shift quotient i exp(pi i z), proving the second equation with the displayed scalar ONE.</p>
+<p>The complex-P reflection is consequently exact as well:</p>
+<pre><code>G_P(z)G_P(P-1-z)=P,
+Fhat_P(z)Fhat_P(P-1-z)
+   =P exp[pi i z(z-P+1)/P].                            (4b)</code></pre>
+<p>Indeed the z derivative of the first logarithm, truncated at K, telescopes to psi(PK+z+1)-psi(P(K+1)-z), which tends to zero. Its constant is G_P(P-1). Differentiating (4a) at z=0 gives G_P’(P)=-2pi. Differentiating (3) at z=P-1 gives G_P’(P)=-(2pi/P)G_P(P-1), hence the constant is P. The marked exponentials in (2) then give the second equation of (4b).</p>
+<h2 id="the-complex-period-asymptotic-is-uniform">2. The complex-period asymptotic is uniform</h2>
+<p>Let K be a compact subset of 0&lt;Re x&lt;1. Uniformly for z=Nx, x in K, and P in a sufficiently small relative complex disk about N, put y=z/P. On a slightly smaller disk y stays in a fixed compact of the same strip. The DIRECT Stirling proof in the interpolation theorem then gives</p>
+<pre><code>Log G_P(z)=P J(y)+(1/2)Log(2P sin(pi y))
+             +pi cot(pi y)/(12P)+O_K(|P|^-3),           (5)</code></pre>
+<p>where J’=Log(2sin(pi y)) has its original mark, continued from 0&lt;y&lt;1. Formula (5) is proved for complex P term by term: the Gamma arguments z,Pk+z,Pk-z remain in fixed right-half-plane sectors; the kth Stirling remainder is O_K(|P|^-3 k^-3). Summing it is uniform. The sine product sums the leading terms and the cotangent identity sums the 1/P terms just as before. This argument does not interpolate an identity known only at integer periods.</p>
+<p>The remainder is holomorphic on a larger relative P disk, so its P derivative at FIXED z is O_K(N^-4) by Cauchy’s formula. The derivative of the leading term is</p>
+<pre><code>partial_P[P J(z/P)]=J(y)-y J&#39;(y).</code></pre>
+<p>The two elementary exponential factors in (2) also have bounded P derivatives on this chart. Thus</p>
+<pre><code>|partial_P Log Fhat_P(z)|&lt;=C_K.                       (6)</code></pre>
+<p>Since |P’(epsilon)|=|P|<sup>2/pi=O(N</sup>2), (6) implies</p>
+<pre><code>|partial_epsilon Log Fhat_(P(epsilon))(z)|&lt;=C_K N^2   (7)</code></pre>
+<p>for fixed marked z=Nx in this interior chart. The logarithm here is the relative one at epsilon=0. There is no principal-root or dilogarithm reset when epsilon varies.</p>
+<h2 id="fixed-integer-shifts-cover-the-nonreal-exterior-rows">3. Fixed integer shifts cover the nonreal exterior rows</h2>
+<p>Let K be any compact scaled-index set with</p>
+<pre><code>|x|&lt;=M, |Im x|&gt;=delta&gt;0, z=Nx.                       (8)</code></pre>
+<p>Choose on each of finitely many smaller charts an integer k_N, FIXED as epsilon moves, with |k_N|&lt;=C_K N and</p>
+<pre><code>(z+k_N)/N in a compact subset of 0&lt;Re x&lt;1.</code></pre>
+<p>Such charts cover K by shifting the real part into the middle of the strip. For k_N&gt;=0, use the exact formula</p>
+<pre><code>Fhat_P(z)=Fhat_P(z+k_N)
+              /product_(j=1)^(k_N)(1-Q_P^(z+j));        (9)</code></pre>
+<p>for k_N&lt;0 use the reciprocal-direction finite product. These are evaluations of the SAME meromorphic function by (3), not new independent factorial choices.</p>
+<p>For epsilon on the disk used below, all intermediate (z+j)/P have imaginary part bounded away from zero. Their real and imaginary parts remain bounded. Therefore each finite sine or Pochhammer factor in (9) and its inverse is bounded by constants depending only on K. Its logarithmic epsilon derivative is</p>
+<pre><code>-2(z+j) zeta^[2(z+j)]/[1-zeta^[2(z+j)]]=O_K(N).</code></pre>
+<p>There are O_K(N) factors. Combining this with (7) proves the same O_K(N^2) logarithmic derivative for these exterior rows. In particular negative rows and rows above N are controlled when their scaled imaginary parts stay away from zero. The statement does NOT give a bound across their real integer zeros or poles. Those are retained by the exact interpolation.</p>
+<h2 id="the-fixed-endpoint-and-all-physical-factorials">4. The fixed endpoint and all physical factorials</h2>
+<p>For every original fixed integer 0&lt;=n&lt;=d, use (4) itself. On a sufficiently small disk about epsilon=0,</p>
+<pre><code>partial_epsilon Log Fhat_P(n)
+   =sum_(j=1)^n -2j zeta^(2j)/(1-zeta^(2j)).             (10)</code></pre>
+<p>At the root |1-q0^(2j)|&gt;=c min(j,N-j)/N. Perturbing epsilon by at most c/[N^2(1+log N)] keeps every denominator comparable to its root value. Summing the displayed elementary bounds gives</p>
+<pre><code>|partial_epsilon Log Fhat_P(n)|
+                        &lt;=C N^2(1+log N),               (11)</code></pre>
+<p>UNIFORMLY in n, including n=d=N-1. No asymptotic estimate at the endpoint x=1 is being inferred from an interior compact. The finite index n, and specifically d, is fixed throughout.</p>
+<p>At the root one may use the already proved exact identity with N-1-z for evaluating root values. It is NOT an identity with that same fixed endpoint after P moves. For example its generic integer factorial factors have the nonzero logarithmic derivatives (10). Replacing the fixed d by P-1 during differentiation would change the source and is not part of this construction.</p>
+<p>The second period also supplies an exact normal-transport equation. Put H_N(z)=partial_epsilon Fhat_(P(epsilon))(z)|_0, with z FIXED. Since P’(0)=iN^2/pi, differentiating (4a) gives</p>
+<pre><code>H_N(z+N)=[1-exp(2pi i z)]H_N(z)
+                     -(iN^2/pi)partial_z Fhat_N(z+N).    (11a)</code></pre>
+<p>The undivided identity remains meaningful at the physical zeros. The last term is essential: the left argument in (4a) moves with P. Thus actual generic normals do not obey a root-only N-shift rule obtained by omitting that index derivative.</p>
+<p>More generally put Delta=N-P and c(z)=1-exp(2pi i z). There is the exact local analytic identity</p>
+<pre><code>Fhat_P(z+N)=exp(Delta partial_z)[c(z)Fhat_P(z)].          (11b)</code></pre>
+<p>Indeed z+N=(z+Delta)+P, so this is just (4a) at z+Delta. Modulo epsilon^(J+1), Delta belongs to the ideal (epsilon), and the exponential in (11b) is the FINITE differential operator</p>
+<pre><code>sum_(j=0)^J Delta^j partial_z^j/j!.</code></pre>
+<p>On a chart where c is a unit, divide by the root multiplier and write</p>
+<pre><code>U=c^-1 exp(Delta partial_z)c
+   =exp[Delta(partial_z+c&#39;/c)].</code></pre>
+<p>The conjugation identity follows by applying partial_z to c times a test function. Its logarithmic connection has explicit simple poles at the integers. On the order-J jet module, U-I raises the epsilon filtration and therefore (U-I)^(J+1)=0. Its inverse is the finite geometric series in -(U-I). This is an actual unipotent transport of finite quantum jets, with the differential correction (11a) at order one. The localization excludes the original c-divisors; the statement does not remove physical support zeros, prove convergence of an infinite jet expansion, or select a global degree cycle.</p>
+<p>The two exact shifts themselves form a flat rank-one difference connection. With a_P(z)=1-exp[2pi i(z+1)/P], one has a_P(z+P)=a_P(z) and c(z+1)=c(z), so applying the unit shift and the P shift in either order gives the same multiplier. At P=N, their compatibility includes the literal cyclotomic norm</p>
+<pre><code>product_(j=1)^N(1-exp[2pi i(z+j)/N])
+                                  =1-exp(2pi i z).</code></pre>
+<p>The Gamma product (2) chooses a section of this connection. These equations alone do not establish global uniqueness of a section: a factor periodic under both shifts preserves them. Nor do they determine the original source period or its cycle.</p>
+<h2 id="uniform-relative-disks-and-genuine-normal-bounds">5. Uniform relative disks and genuine normal bounds</h2>
+<p>Consider a fixed finite list of factorial arguments, each either</p>
+<ul>
+<li>a fixed original integer between 0 and N-1;</li>
+<li>z=Nx in a fixed compact of the interior strip; or</li>
+<li>z=Nx in a fixed compact satisfying (8), continued by (9).</li>
+</ul>
+<p>All indices are held fixed when the generic parameter varies. Affine O(1) offsets are allowed by enlarging the compacts slightly. For sufficiently small c_K&gt;0, on</p>
+<pre><code>|epsilon|&lt;=rho_N=c_K/[N^2(1+log N)]                     (12)</code></pre>
+<p>every listed factorial is nonzero and holomorphic, and</p>
+<pre><code>C_K^-1 &lt;= |Fhat_(P(epsilon))(z)/Fhat_N(z)| &lt;= C_K.       (13)</code></pre>
+<p>The same holds for any fixed finite product or quotient of the listed factors. Equations (7),(9),(11), integrated along the epsilon segment, prove (13), with a consistent relative logarithm. Cauchy’s formula on (12) proves for every fixed j</p>
+<pre><code>|partial_epsilon^j Fhat_(P(epsilon))(z)|_0
+   &lt;=C_(K,j)[N^2(1+log N)]^j |Fhat_N(z)|.               (14)</code></pre>
+<p>Inverse factorials have the corresponding relative bound. In particular the entire assertion holds on the smaller actual normal disk |epsilon|&lt;=c N^-10, at cost at most C_(K,j)N^(10j).</p>
+<p>The marked factors exp(pi i z), zeta<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and the original physical cup scalar N zeta<sup>(-d</sup>2) cause no further difficulty: L and all indices are O(N), so the epsilon derivative of their logarithms is O_K(N^2), and higher derivatives follow on (12). Thus the original continued cups and inverse cups formed from these factors also satisfy (13),(14). No unit phase is discarded.</p>
+<p>One can specify the formerly ambiguous off-grid symmetric gauge as well. For a fixed integer L&lt;N, set</p>
+<pre><code>b_L(epsilon,z)=zeta^[z(L-z)]
+               Fhat_P(z)Fhat_P(L-z)/Fhat_P(L),
+g_L(epsilon,z)=[b_L(epsilon,z)/b_L(0,z)]^(1/2).           (15)</code></pre>
+<p>Use the analytic square root equal to 1 at epsilon=0. Whenever the two index arguments satisfy the preceding hypotheses, (13) on a smaller disk makes this a specified holomorphic unit with the same relative jet bounds. It is symmetric under z-&gt;L-z and agrees with the original physical gauge at every admissible integer index. Its continuation is now fixed by (2), rather than inferred from bounded values on a finite integer set.</p>
+<p>At epsilon=0 the displayed phases cancel exactly, giving b_L(0,z)=G_N(z)G_N(L-z)/G_N(L). The already proved FIXED-root reflection therefore gives b_d(0,z)=1 meromorphically, also at noninteger z. This is useful for evaluating the root cup. It does not say that b_d(epsilon,z) is constant when P moves. In fact (4b) gives the exact fixed-endpoint correction</p>
+<pre><code>b_d(epsilon,z)=P/Fhat_P(d)
+   *exp[pi i z(N-P)/P]
+   *Fhat_P(d-z)/Fhat_P(P-1-z).                          (16)</code></pre>
+<p>The final quotient retains the difference between the ORIGINAL fixed d=N-1 and the moving endpoint P-1. Formula (16), or its derivative, may be used for boundary transport; replacing that quotient by one away from the root changes the genuine normal.</p>
+<h2 id="application-scope-at-the-slightly-nonreal-geometric-degree">6. Application scope at the slightly nonreal geometric degree</h2>
+<p>For the actual channel cup, the needed arguments are r=a-h and 2a-r, while the physical cups use v,d-v,l,d-l. In the joint deficient geometric corridor take a small but fixed NONZERO imaginary part of the degree. Then r/N and (2a-r)/N lie in nonreal exterior compacts, with opposite imaginary signs; the physical cup arguments have real parts strictly inside (0,1). The remaining factorials F_a,F_m,F_(2a),F_d have fixed integer indices below N. The lemma therefore controls all these explicit boundary factors and their genuine generic derivatives together.</p>
+<p>It does not justify crossing their real degree poles, deform the original support cycle, or prove a nonzero geometric contribution. Source assembly must still use the actual large-partner white columns and all original tensor marks. The present result is the moving-period analytic input for that assembly, not a replacement for its finite tensor identity or its global period argument.</p>
+<h2 id="independent-checks-and-review-scope">7. Independent checks and review scope</h2>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_moving_period_factorial_normals.py">focused audit</a> and its <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_moving_period_factorial_normals_results.json">results</a> check the actual generic integer factorials, independent Gamma/Barnes evaluations, relative disks, fixed-endpoint derivatives, exterior gauges, second-period and complex-period reflection identities, and fixed-N first and second normal transport. Its largest relative identity error at 85 digits was below 5.3e-82. These finite checks support, and do not replace, the proofs above.</p>
+<p>Independent analytical reviews by the root, cluster-source and geometry agents passed the moving-period construction and its stated bounds. The geometry agent freshly replayed the base audit; the root freshly replayed the entire augmented audit, including the transport block. The root and cluster-source agents also checked the exact second-period, moving reflection and fixed-N normal formulas; the root checked the finite-jet corollary. The review does not assert global degree transport across the retained divisors or a contributing quantum cycle.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>z(L-z-1)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_moving_period_factorial_normals.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-same-convergent-product-at-a-complex-period">1. The same convergent product at a complex period</a><a href="#the-complex-period-asymptotic-is-uniform">2. The complex-period asymptotic is uniform</a><a href="#fixed-integer-shifts-cover-the-nonreal-exterior-rows">3. Fixed integer shifts cover the nonreal exterior rows</a><a href="#the-fixed-endpoint-and-all-physical-factorials">4. The fixed endpoint and all physical factorials</a><a href="#uniform-relative-disks-and-genuine-normal-bounds">5. Uniform relative disks and genuine normal bounds</a><a href="#application-scope-at-the-slightly-nonreal-geometric-degree">6. Application scope at the slightly nonreal geometric degree</a><a href="#independent-checks-and-review-scope">7. Independent checks and review scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

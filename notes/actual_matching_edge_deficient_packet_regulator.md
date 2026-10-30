@@ -201,6 +201,16 @@ cycle is equality of all lattice residues. On a continued degree
 cycle the affine B_c character must also remain. This is not a
 guessed correction fitted to the hyperbolic volume.
 
+The subsequently proved [specified generic boundary lift](actual_matching_edge_generic_deficient_operator_lift.md)
+has root value exp(-2pi i v) K_ent. Its own character therefore
+cancels exp(2pi i v) from the actual physical turn, restoring
+C_a exactly. Thus (8) describes the bare canceled-root continuation;
+it is not an additional uncanceled magnetic character of the restored
+specified generic lift. The two off-grid continuations remain distinct,
+and the original degree logarithm and global source marks remain retained.
+This consequence uses the proved generic lift, not variation of q in
+the canceled root formula.
+
 ## 4. Exactly when the existing volume theorem applies
 
 Equations (2),(6) show that the actual deficient packet carries the
@@ -257,3 +267,7 @@ exact normalized reflection and scalar one, the exterior-square identity
 and real calibration, the literal turn character, its full affine
 pullback and marked-charge reindexing, and the limitation to full marked
 stationarity. No cycle coefficient or unproved generic lift is included.
+
+Scoped update: the final paragraph of section 3 records the exact
+character cancellation of the independently reviewed generic-lift theorem.
+It changes no residue-cycle or global-contribution claim above.

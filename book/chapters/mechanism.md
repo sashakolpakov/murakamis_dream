@@ -70,6 +70,31 @@ The [finite-propagation identity](../../notes/actual_matching_edge_polynomial_fi
 
 Separate [polynomial](../../notes/actual_matching_edge_polynomial_endpoint_control.md) and [full-resolvent](../../notes/actual_casimir_endpoint_resolvent_bound.md) bounds control the closing point $+2$ and its genuine normals on shrinking neighborhoods. They do not settle the possible geometric parabolic target $-2$, or the contour between the endpoint neighborhood and the candidate saddle. The remaining task is an estimate of the actual period and its coherent sewing.
 
+## Exact shifts transport finite quantum jets
+
+The [moving-period factorial](../../notes/actual_moving_period_factorial_normals.md) is a specified meromorphic function that equals the original quantum factorial at every supported integer index. With $P=\pi i/\log\zeta$, it satisfies two exact equations:
+
+$$\widehat F_P(z+1)=(1-e^{2\pi i(z+1)/P})\widehat F_P(z),\qquad
+\widehat F_P(z+P)=(1-e^{2\pi i z})\widehat F_P(z).$$
+
+At $P=N$, the second equation is also the cyclotomic product of the first $N$ shifts. Their multipliers satisfy the commuting-shift identity. The Gamma product fixes the actual section and its logarithmic marks; the shift equations alone are not a uniqueness theorem.
+
+Put $\Delta=N-P$ and $c(z)=1-e^{2\pi i z}$. The exact fixed-$N$ transport is
+
+$$\widehat F_P(z+N)=e^{\Delta\partial_z}\bigl(c(z)\widehat F_P(z)\bigr).$$
+
+Modulo the $(J+1)$st power of the quantum deformation parameter, this exponential stops after $J$ derivatives. Away from $c=0$, conjugating by $c$ gives a unipotent operator whose difference from the identity has nilpotence index at most $J+1$. The connection has explicit poles at the integers. They account for genuine normal residues and cannot be removed by root specialization.
+
+The [specified exceptional lift](../../notes/actual_matching_edge_generic_deficient_operator_lift.md) uses this same factorial and the original large white numerators to bound the full generic operator near the actual complex geometric frame. The [boundary theorem](../../notes/actual_matching_edge_degree_cycle_boundary.md) computes what is added when its contour crosses the channel poles. These statements organize the exact source transport; selecting a surviving geometric contribution to the whole period remains the global task.
+
+The [tensor-source connection](../../notes/actual_tensor_source_finite_jet_connection.md) gives a rational gauge for the assembled summand itself. Put $g(z)=e^{2\pi iz}/(1-e^{2\pi iz})$. Its shift ratio is exactly the nonconstant cup multiplier. Products of $g$ and its inverse at the actual ordered cup and cap arguments give a specified gauge $G$. On a primitive free head lattice, the transport in direction $b$ is
+
+$$T_b=\chi(b)\,G\,e^{(N-P)D_b}\,G^{-1},$$
+
+where $\chi$ is the retained parity character and $D_b$ is the directional derivative. These operators commute. On order-$J$ jets, every product of $J+1$ normalized differences from the identity vanishes. Constant head arguments require no gauge factor. The source remains undivided in its original period integral: $G$ can have zeros or poles on the physical lattice, whose boundary terms must still be computed.
+
+The [adjoint connection on the actual period](../../notes/actual_tensor_source_translated_cycle_normals.md) follows by finite-order integration by parts on that unchanged closed cycle. It acts on the original cotangent density multiplied by $G$, producing the required finite-part and double-pole terms. It is an exact relation between specified translated periods, with no claim that a translated head lies in the physical basis or that a geometric contour has been reached.
+
 ## Exact recoupling exposes a local geometric scalar
 
 Four external objects can be paired in two ways. The actual change of basis is computed before root specialization, with its genuine pivotal turn.

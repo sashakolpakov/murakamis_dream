@@ -13,13 +13,34 @@ neighborhood of the ACTUAL geometric frame. Degree and magnetic
 coordinates may vary together. This reaches the chamber beyond physical
 bandwidth at every fixed width under the marked geometric certificate.
 
-The [generic boundary-source theorem](actual_generic_boundary_gauge_and_source.md)
-retains the actual LARGE channel m=N-1-a and proves genuine numerator
-bounds of subexponential relative cost when (N-1-2a) log N=o(N).
-The small and large channels coincide at the root but their quantum
-normals differ. The full generic operator's boundary lift remains a
-separate step; finite physical gauge cancellation alone does not bound
-an unspecified complex interpolation.
+The [full generic exceptional lift](actual_matching_edge_generic_deficient_operator_lift.md)
+now retains both actual LARGE numerators, every original boundary
+factor and the moving scalar of the literal p/E operator. The
+[moving-period factorial](actual_moving_period_factorial_normals.md)
+supplies a specified continuation. Every fixed genuine derivative has
+subexponential relative cost when (N-1-2a) log N=o(N) on a slightly
+NONREAL geometric degree chart. These upper bounds do not prove a
+nonzero leading normal amplitude. The large and small channels coincide
+at the root but their quantum normals differ.
+
+The same factorial has exact unit and moving-period shift equations.
+The [actual tensor-source connection](actual_tensor_source_finite_jet_connection.md)
+has an explicit rational cup gauge G. After imposing the original
+primitive free head lattice, its operators are exactly
+chi(b) G exp[(N-P)D_b] G^-1. Finite quantum jets are commuting and
+unipotent after retaining their root parity character. G can carry
+leading exponential action and remains in the original period.
+The [adjoint period identity](actual_tensor_source_translated_cycle_normals.md)
+transports the retained cotangent density too, including its double-pole
+corrections. These exact identities do not wrap the physical basis.
+The
+[degree-cycle boundary theorem](actual_matching_edge_degree_cycle_boundary.md)
+adds forbidden physical points as zero ORDERED PERIODS under its actual
+free-lattice and complement-regularity hypotheses. It computes the
+channel residues, cotangent finite parts and original source-normal
+coefficients required when that enlarged cycle moves. A late-wall
+normal residue has nonzero order-one coefficient times its root density;
+this is not yet a coefficient of the whole geometric saddle.
 
 The [absolute reflected regulator](actual_matching_edge_deficient_packet_regulator.md)
 has no uncomputed constant. Exact source reflection has scalar one;
