@@ -240,6 +240,10 @@ connected negative-clock quadrant retains that equality.
 The exact factors V^a and K_a are still those of (1). No unrelated
 solution of the characteristic equation or new additive constant
 is being selected by the trace-walk calculation.
+This comparison uses the strict-tube theorem for xi>0. At xi=0,
+the present small-a/N trace bounds and scalar sums give rate zero;
+the selected boundary value there follows by continuity, without
+invoking the earlier fixed-positive-color packet at zero color.
 
 It supplies one piece of the original boundary source, not its
 global cycle coefficient or the full complementary-color gap.
