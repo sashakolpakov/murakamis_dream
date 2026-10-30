@@ -97,6 +97,10 @@ The [source-divisor transfer](../../notes/general_long_filling_source_divisor.md
 
 ## The exceptional edge now has an exact algebraic description
 
+The [finite Fourier-period theorem](../../notes/actual_positive_face_fixed_fold_packet.md) gives an exact four-component difference equation for the original complete-circle core. Its shift range is bounded independently of $N$. It retains the actual finite polynomial solution, both fold endpoints, the Fourier gauge and the full classical determinant factors. Its selected local characteristic is an explicit palindromic quartic. After the shared-face extraction, the equation couples neighboring face coefficients; a scalar equation for the whole knot has not yet been derived.
+
+The same theorem improves the relative internal-channel estimate to $O(N^{-1})$ on a fixed **real** interval, with an even analytic action and an explicit amplitude. This error is not exponentially small and therefore does not justify replacing the exact source in a Fourier transform at frequencies of order $N$. The exact difference equation provides an additional way to study that remaining problem.
+
 The previous operator and torsor approaches remain available. The exceptional operator is the original normalized Casimir polynomial, with its [general character relation](../../notes/actual_matching_edge_polynomial_geometric_action.md) and [exact resolvent period](../../notes/actual_matching_edge_continuant_operator_period.md). The original marked transport, genuine quantum normals, odd framing source, logarithmic class and relative boundary currents are preserved in the [source and torsor routes](../library.html). The new coefficient identity and signed Gaussian resolve the complete contraction without assigning an arbitrary relative cycle.
 
 The global knot quantum A-operator and its selected period have not been derived from this identity. The coefficients and source relations provide a concrete finite object for that work; they are not being renamed the knot A-polynomial.
