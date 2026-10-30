@@ -66,6 +66,15 @@ including genuine generic normals. Its magnetic contour alone cannot
 acquire a nonzero period just because the continued local packet is
 nonzero. The general long-twist volume equality remains OPEN.
 
+The [braided two-cut identity](actual_braided_two_cut_source_adapter.md)
+is now proved at arbitrary width and between different Morse levels:
+J^U 1=z1 and g^T J^U=z g^T for the actual transported source and
+genuine generic pivot. Both functionals extract the same whole scalar.
+The residual array has dimension (N-1)^2, so the result does not fix
+both head values independently or evaluate the geometric framing fiber.
+It retains the braid bands and supplies a source identity for that
+remaining global calculation.
+
 30 October 2026. The active objective is the MOST GENERAL original
 quantum equality, with the right side proved to be the actual hyperbolic
 volume. The previous long-pretzel result is an established application,

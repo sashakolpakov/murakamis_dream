@@ -92,6 +92,12 @@ Moving this enlarged cycle requires the computed channel-pole residues and cotan
 
 The [adjoint period connection](../../notes/actual_tensor_source_translated_cycle_normals.md) carries the same transport through the original closed cotangent integral. It differentiates the retained measure as well as $G$, giving explicit double-pole corrections. A literal physical cup has a nonzero translated first-normal correction, so these identities do not make the finite physical sum periodic.
 
+The [braided two-cut identity](../../notes/actual_braided_two_cut_source_adapter.md) now supplies an exact change of exposed cut at arbitrary width, including cuts at different Morse levels. If $z$ is the original marked scalar, $J^U$ is the two-cut array with its actual braid transport, and $g$ is the genuine generic pivotal vector, then
+
+$$J^U\mathbf 1=z\mathbf 1,\qquad g^{\mathsf T}J^U=z g^{\mathsf T}.$$
+
+Thus either cut gives a specified functional extracting the same whole scalar. The second functional retains its braid bands and pivotal weights; its clock is the transported first-head clock. The array still has an $(N-1)^2$-dimensional undetermined part. These identities therefore provide a source-preserving way to study the remaining framing direction, without asserting that both head indices can be fixed independently or that the geometric contribution survives.
+
 ## How far this is from the general conjecture
 
 **The main gap remains a substantial global theorem.** There are two concrete tasks:

@@ -66,6 +66,16 @@ including genuine generic normals. Its magnetic contour alone cannot
 acquire a nonzero period just because the continued local packet is
 nonzero. The general long-twist volume equality remains OPEN.
 
+The [braided two-cut theorem](actual_braided_two_cut_source_adapter.md)
+now gives an exact alternative functional for the SAME original marked
+scalar at arbitrary bridge width, also between different Morse levels.
+For the actual transported array J^U and genuine pivotal vector g,
+J^U 1=z1 and g^T J^U=z g^T. The braid bands and generic derivatives
+remain present. The residual array has dimension (N-1)^2; these
+identities do not independently fix two head values or prove a
+geometric framing coefficient. They supply a concrete source identity
+for the global transport task, without narrowing the target class.
+
 30 October 2026. The target is an original Kashaev volume equality for
 arbitrary fixed bridge number and arbitrary fixed essential twist
 skeleton. A Conway seed grammar is an established application, not the
