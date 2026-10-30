@@ -194,6 +194,22 @@ The [full local action comparison](../../notes/actual_newton_complete_local_acti
 
 The global knot quantum A-operator and its selected period have not been derived from this identity. The coefficients and source relations provide a concrete finite object for that work; they are not being renamed the knot A-polynomial.
 
+## Direct twist transport on the Casimir conic
+
+The [direct-power identity](../../notes/actual_direct_long_power_source.md) offers an alternative to the external-color expansion. Kernels on the same pair compose exactly by $H_{fg}=[z^{N-1}]H_f(x,b,z,y)H_g(x,z,c,y)$. Every fixed signed twist power can therefore remain inside its original box, with its phases and repeated Casimir-node data intact.
+
+The [crossing transport theorem](../../notes/actual_crossing_casimir_torus.md) derives a conserved quantity from the actual crossing characteristic. With the outer faces fixed, set $A=x+y$, $P=xy$. The coefficient advance satisfies
+
+$$\sigma=2+\frac{(b+z+A)^2}{P-bz},\qquad b_{j+1}+\sigma b_j+b_{j-1}+2A=0.$$
+
+Here $\sigma$ is the principal symbol of the original Casimir. On a smooth generic fiber, the quadratic cover $\lambda^2+\sigma\lambda+1=0$ supplies an explicit norm-one coordinate with transport $a\mapsto\lambda^n a$. The reference point used to trivialize the torsor is excluded from the regular stationary chart; all intermediate excluded divisors remain recorded. At $\sigma=-2$ the transport is additive, with an affine matrix satisfying $(M-I)^3=0$. The other endpoint $\sigma=2$ is a nonreduced double line and has a different action.
+
+![The actual crossing characteristic becomes multiplicative transport on a generic Casimir conic and additive transport on its parabolic fiber, with the exact quantum Gaussian retained.](../figures/casimir-twist-transport.png)
+
+The canonical two-form fixes the orientation and Hamiltonian. The existing exact Gaussian functional calculus, now checked for every integer power, retains that same Hamiltonian and all Hermite data. These are local source statements at arbitrary bridge width. Different boxes need not have commuting Casimirs, and the shared-face contraction still requires an estimate that preserves phases.
+
+There is a general reason to retain those phases. The direct-power note proves that the positive envelope obtained by taking absolute values of the canonical Hermite spectral terms has growth at least the complete drilled volume, even after shared-radius optimization. It cannot establish the strictly smaller filled-volume rate. The torsor gives explicit transport; bounding its original global period remains the decisive step.
+
 ## Existing knot results and preserved alternatives
 
 The [results chapter](results.md) retains the internally reviewed pretzel, belt-stack and signed Conway filling theorems with their original hypotheses. They do not exhaust arbitrary plats. The cube, Fourier, weighted-Cauchy, Karamata-inspired and torsor arguments remain in the [research library](../library.html), including failed intermediate estimates and their corrections. The current route adds a general exact coefficient and a whole-source augmented-link result without discarding those ideas.

@@ -93,3 +93,11 @@ The left panel draws a primitive filling curve on a schematic torus fundamental 
 The right panel shows the local sheets of the square-root cover $\ell^2=L$, the branch selected by the source, and the integral monomial shear on that cover. It is a local picture, not a claim that the torsor splits globally. The [peripheral geometry discussion](chapters/geometry.md#half-twists-preserve-the-marked-action-through-a-shear) explains why the primitive marking must be retained through filling.
 
 ![A primitive cusp filling slope and the selected local sheet of the peripheral square-root torsor.](figures/peripheral-torsor.png)
+
+## Casimir transport for arbitrary twist powers
+
+![Generic multiplicative twist transport and its additive parabolic fiber, linked to the exact quantum Gaussian.](figures/casimir-twist-transport.png)
+
+The [crossing theorem](../notes/actual_crossing_casimir_torus.md) gives a local classical transport law for every signed integer power, with the actual source normalization and stationary divisors. The [direct-power comparison](../notes/actual_direct_long_power_source.md) shows why a global volume bound must preserve its phases. The other singular fibers and the input/output orientation are specified in the theorem.
+
+[PDF](figures/casimir-twist-transport.pdf) · [SVG](figures/casimir-twist-transport.svg) · [Editable TikZ](figures/casimir-twist-transport.tex)

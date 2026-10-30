@@ -168,6 +168,17 @@ coefficient formula using only the literal R or R^-1 kernels, with
 all their scalar phases retained. This is an alternative finite
 presentation of the same source, not a new asymptotic estimate.
 
+The [direct-power theorem](actual_direct_long_power_source.md) retains
+the original phases and proves a limitation of the absolute-value
+spectral bound. The [crossing Casimir theorem](actual_crossing_casimir_torus.md)
+now solves the local classical transport uniformly in the twist power:
+on the generic spectral cover it is multiplication by lambda^n on a
+punctured norm torus, with a separate additive parabolic fiber. Its
+canonical Hamiltonian agrees with the exact full-Hermite quantum
+Gaussian. These facts hold independently of bridge width; they do not
+supply the remaining global coefficient estimate or an eliminated
+knot A-polynomial.
+
 ## 4. Inputs still needed for general signed long fillings
 
 **Full mixed-color quantum source.** The complete-image term already
