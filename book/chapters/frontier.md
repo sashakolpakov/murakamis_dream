@@ -24,6 +24,7 @@ Under the actual positive marked gluing certificate, the [geometric filling theo
 | Exceptional matching edge | Exact entire root kernel and a selected nonzero relative packet near the actual geometric frame, jointly in complex degree and magnetic coordinates | A local packet does not determine its coefficient in the original period |
 | Endpoint and normals | Closing-arc bounds and a specified full generic operator lift with subexponential derivative cost near the fold | Individual derivative amplitudes and the remaining contour are separate questions |
 | Complete local source | Nonzero marked density and local folded-channel Gaussian at both level parities | The framing orbit and the coefficient in the original global cycle remain uncomputed |
+| Framing dependence | The actual local density is a nonzero constant times $-dr\wedge ds/[s(1+s)]$ | Its relative boundary pairing with the original source cycle remains unproved |
 | General long fillings | A conditional source-to-filling theorem with the correct independent-slope quantifiers | Its general complex packet, nonzero density germ and whole-source gap still need proof |
 
 The [selected-factor theorem](../../notes/actual_augmented_plat_selected_factor_localization.md) is useful here: for the certified right-angled cut, exactly two physical-support failures can be placed at the ends of one chosen crossing-circle edge. Every other ordinary factor is on the selected physical packet. An all-central selected common frame **cannot exist**; moving all factors into that domain is therefore not an available shortcut.
@@ -80,6 +81,12 @@ The [absolute regulator comparison](../../notes/actual_matching_edge_deficient_p
 
 The [complete local marked-density theorem](../../notes/actual_augmented_plat_local_marked_density.md) now proves more than nonzero separate factors. Each fully normalized circle has an $N^{-1}$ relative packet with nonzero amplitude, and the actual marked boundary contributes another $N^{-1}$. The original paired-circle normal is already included in this root compiler. Summing the local folded-channel window gives a nonzero Gaussian coefficient at both parities, using the actual discrete nodes, weights and signed half twists. A transverse magnetic Gaussian is also nonzero per unit framing volume. This is a complete-color local theorem; it does not integrate the framing orbit, prove a global source contribution, or supply a mixed-color filling packet.
 
+The [source Ward calculation](../../notes/actual_augmented_plat_framing_density_source_ward.md) now determines that local framing density itself. Independent complex-head identities for the actual large polynomials, the original mark, and Gaussian transport with its full Jacobian give
+
+$$\Omega_{\mathrm{src}}=c_D\frac{-dr\wedge ds}{s(1+s)},\qquad c_D\ne0.$$
+
+The coefficient $c_D$ is independent of the framing point and retains the source's fixed phases and normalization. With $A_{\mathrm{cut}}=(1+s)^{-1}$ fixed, the residual differential is $c_D\,d(r/s)$, with the recorded orientation. It is exact on this affine chart. The required contribution therefore depends on the actual relative ends and excluded divisors; the local formula does not assign a nonzero value to their pairing.
+
 The dense forbidden lattice zeros still rule out a uniform nowhere-zero single-term asymptotic on a neighborhood containing an open real forbidden region. The new packet is in a complex chart. At a fixed forbidden integer separation, the whole original physical slice is zero. Deforming only its magnetic variables cannot turn the local nonzero packet into a nonzero slice period.
 
 ## Exact transport retains the boundary terms
@@ -97,6 +104,8 @@ The [braided two-cut identity](../../notes/actual_braided_two_cut_source_adapter
 $$J^U\mathbf 1=z\mathbf 1,\qquad g^{\mathsf T}J^U=z g^{\mathsf T}.$$
 
 Thus either cut gives a specified functional extracting the same whole scalar. The second functional retains its braid bands and pivotal weights; its clock is the transported first-head clock. The array still has an $(N-1)^2$-dimensional undetermined part. These identities therefore provide a source-preserving way to study the remaining framing direction, without asserting that both head indices can be fixed independently or that the geometric contribution survives.
+
+The [actual residual current](../../notes/actual_braided_residual_framing_current.md) uses the two neighboring off-diagonal bands of that transported tensor. It gives an exact finite difference equation and integration by parts on every physical subinterval, retaining both ends and all genuine quantum derivatives. At completeness its Fourier current is supported on three neighboring nodes, with coefficient equal to the unknown whole scalar $z$. The conservation equation does not determine $z$. Each band also has a specified meromorphic period and a change-of-cycle rule, but a common off-grid Ward identity and the pushforward of its original chain to the framing boundary remain to be established.
 
 ## How far this is from the general conjecture
 

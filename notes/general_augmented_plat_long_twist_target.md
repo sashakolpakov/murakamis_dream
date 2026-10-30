@@ -66,6 +66,22 @@ including genuine generic normals. Its magnetic contour alone cannot
 acquire a nonzero period just because the continued local packet is
 nonzero. The general long-twist volume equality remains OPEN.
 
+The [actual framing-density theorem](actual_augmented_plat_framing_density_source_ward.md)
+now identifies the local source form as
+Omega_src=-c_D dr wedge ds/[s(1+s)], with c_D nonzero and independent
+of the framing point. Its proof uses the actual independent-head
+large-polynomial Ward identities, finite offsets, original marked
+co-source and Gaussian Jacobian. At fixed first-cut clock the residual
+form is c_D d(r/s), so its actual relative ends still matter.
+
+The [finite residual current](actual_braided_residual_framing_current.md)
+retains two routed off-diagonal bands and gives exact integration by
+parts with both physical interval ends and genuine quantum derivatives.
+Its complete Fourier current has three-node support but still has the
+unknown whole scalar as coefficient. Its band periods are specified;
+a common off-grid current and the original chain's pushforward to the
+geometric framing boundary are not supplied by this finite identity.
+
 The [braided two-cut theorem](actual_braided_two_cut_source_adapter.md)
 now gives an exact alternative functional for the SAME original marked
 scalar at arbitrary bridge width, also between different Morse levels.

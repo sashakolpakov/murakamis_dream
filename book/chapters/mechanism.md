@@ -99,6 +99,8 @@ The [complete local marked-density theorem](../../notes/actual_augmented_plat_lo
 
 The [braided change of cut](../../notes/actual_braided_two_cut_source_adapter.md) keeps this global question within the original source. Transporting a matrix-unit insertion by the recorded braid gives an exact second functional extracting the same marked scalar, with its genuine generic pivot and every derivative retained. The construction is independent of bridge width and permits different Morse levels. It does not eliminate the remaining two-cut array or evaluate the framing integral.
 
+Two further calculations specify that remaining integral. The [local source Ward theorem](../../notes/actual_augmented_plat_framing_density_source_ward.md) proves that its framing density is $-c_D\,dr\wedge ds/[s(1+s)]$, with a nonzero framing-independent coefficient and the original mark retained. The [finite residual-current theorem](../../notes/actual_braided_residual_framing_current.md) supplies the corresponding source-defined off-diagonal bands and exact interval boundary terms. These are distinct results: transporting the actual finite chain to the geometric relative boundary, and evaluating its coefficient there, is still required.
+
 ## Exact recoupling exposes a local geometric scalar
 
 Four external objects can be paired in two ways. The actual change of basis is computed before root specialization, with its genuine pivotal turn.
