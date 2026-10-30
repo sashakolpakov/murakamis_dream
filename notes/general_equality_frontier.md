@@ -1,26 +1,79 @@
 # General equality: proved scope and the remaining original-source problem
 
-29 October 2026. The active objective is the MOST GENERAL original
+30 October 2026. The active objective is the MOST GENERAL original
 quantum equality, with the right side proved to be the actual hyperbolic
 volume. The previous long-pretzel result is an established application,
 not the endpoint of this broader goal.
+
+The current target is the [general long-twist conjecture at arbitrary
+bridge width](general_augmented_plat_long_twist_target.md): for every
+fixed essential hyperbolic augmented 2k-plat skeleton, k>=2, prove
+the original Kashaev volume equality for every independently
+sufficiently long fixed signed filling vector. The threshold T(D)
+depends on the fixed diagram. N is the quantum level; the twist
+parameters are fixed before N tends to infinity. A finite matching
+test specifies which parity patterns give knots.
+
+The new [complete](actual_augmented_plat_phase_compiler.md) and
+[all-color](actual_mixed_augmented_plat_compiler.md) compilers give
+the exact arbitrary-plat source, including generic confluence normals,
+phases and inverse measures. An [entire finite Fourier core](actual_augmented_plat_entire_core_color_packet.md)
+has exact two-parity reconstruction and Parseval. These are finite
+identities, not a bound for the full coherent sum. All aliases and
+their exponential rates remain to be controlled in a general plat.
+
+The [actual matching-graph geometry](general_augmented_plat_matching_geometry.md)
+provides a complete metric, primitive cusp markings and a positive
+ideal triangulation whenever its labeled positive certificate is
+supplied. The [complete geometric character](actual_augmented_plat_geometric_channel_endpoint.md)
+lies at the folded Casimir endpoint c=-2, with a ramified trace map
+resolved by retaining the marked longitude. This locates the branch
+to be selected; it does not establish its quantum coefficient.
+
+The [general positive gluing certificate](general_marked_positive_gluing_certificate.md)
+removes the convex-polyhedron requirement from that geometric input.
+It proves directly that a strict volume critical point on the actual
+ideal triangulation is equivalent to complete positive gluing, with
+unique maximum equal to actual volume. Its algebraic certificate
+and algebraic optimum do not identify a quantum period. The
+[endpoint tensor obstruction](actual_central_endpoint_magnetic_phase_obstruction.md)
+rules out universal separate-leg positivity, leaving the coherent
+global source problem explicit.
+
+The [source-divisor transfer](general_long_filling_source_divisor.md)
+now permits a nonzero density germ that vanishes at completeness.
+Assuming the full packet, gap and actual geometric action, it gives
+equality off an analytic exceptional divisor and for density one of
+long slopes in each signed box. A monomial times a unit gives all
+independently long slopes. This reduces an amplitude obstruction;
+it does not supply the missing general source asymptotic.
+
+The central unresolved step is therefore still substantial: prove a
+uniform complex packet and a whole-physical-source gap, with a
+nonzero selected period on the actual geometric branch. A positive
+triangulation or algebraic gluing solution alone does not prove that
+quantum statement. The general conjecture remains OPEN.
 
 The [research-routes index](research_routes_and_preserved_ideas.md)
 preserves the cube constructions and other approaches, including their
 counterexamples and unresolved extensions. A narrower proved scope is
 recorded without discarding the idea.
 
-The [signed Conway knot and link theorem](actual_odd_conway_long_filling_volume.md)
-now extends the full original-source equality to every C(FG), with
-both children robust, arbitrary fixed signed half-twist patterns,
+The [arbitrary-width extension](actual_conway_arbitrary_width_seeds.md)
+of the [signed Conway knot and link theorem](actual_odd_conway_long_filling_volume.md)
+extends the full original-source equality to every C(FG), with
+both children built from seeds A_s=h^s of any fixed widths s>=3,
+arbitrary fixed signed half-twist patterns,
 and independently sufficiently long fixed signed integral fillings
 of any auxiliary subset. Every such expression admits a constructive
 one-main-component pattern; filling all its auxiliary circles gives
 knots with arbitrary allowed diagram branching and turn depth. Its
 rate is the ACTUAL filled hyperbolic volume, using the changed primitive
 meridians, full calibrated action, and smooth geometric completion.
-The minimal C(A), arbitrary short fillings, and arbitrary knot diagrams
-remain outside this filling theorem.
+Isolated C(h^s) are also covered for s>=4. The minimal C(h^3),
+arbitrary short fillings, and arbitrary knot diagrams remain outside
+this filling theorem. This enlarged grammar is an application, not
+a replacement for the arbitrary-plat target.
 
 The [all-partner first-normal theorem](actual_all_partner_first_normal_bound.md)
 now controls the ACTUAL generic first normal on every supported partner

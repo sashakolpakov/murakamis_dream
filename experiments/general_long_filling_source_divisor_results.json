@@ -1,0 +1,211 @@
+{
+  "status": "PASS",
+  "implicit_saddle": {
+    "implicit_derivative_at_zero": "Matrix([[1/(2*tau1), 0], [0, 1/(2*tau2)]])",
+    "coordinate_factorization": "xi_i=epsilon_i times a unit",
+    "nonlinear_mixed_phase_included": "a*x1**4 + b*x1**2*x2**2 + c*x2**4 + I*pi*(tau1*x1**2 + tau2*x2**2)"
+  },
+  "amplitude_models": {
+    "coordinate_monomial_pullback": "epsilon1**2*epsilon2**4/((epsilon1 + 2*I)**2*(epsilon2 + 2*I)**4)",
+    "nonmonomial_divisor_factorization": "4*I*(epsilon1 - epsilon2)*(epsilon1*epsilon2 + I*(epsilon1 + epsilon2))/((epsilon1 + 2*I)**2*(epsilon2 + 2*I)**2)",
+    "same_sign_diagonal_ray": "identically exceptional",
+    "ray_q_1_2_leading_constant": "-3/16 at order 2",
+    "ray_q_1_minus1": "leading polynomial vanishes but order-3 coefficient -i/2 survives",
+    "partial_filling_warning": "a(x,y)=y^2 restricts identically to zero at y=0"
+  },
+  "integer_slope_diagnostics": {
+    "amplitude_model": "a(x,y)=x^2-y^2; tau1=tau2=i",
+    "boxes": [
+      {
+        "T": 8,
+        "signs": [
+          1,
+          1
+        ],
+        "exceptional_tuples": 9,
+        "total_tuples": 81,
+        "exact_fraction": "1/9"
+      },
+      {
+        "T": 8,
+        "signs": [
+          1,
+          -1
+        ],
+        "exceptional_tuples": 0,
+        "total_tuples": 81,
+        "exact_fraction": "0"
+      },
+      {
+        "T": 8,
+        "signs": [
+          -1,
+          1
+        ],
+        "exceptional_tuples": 0,
+        "total_tuples": 81,
+        "exact_fraction": "0"
+      },
+      {
+        "T": 8,
+        "signs": [
+          -1,
+          -1
+        ],
+        "exceptional_tuples": 9,
+        "total_tuples": 81,
+        "exact_fraction": "1/9"
+      },
+      {
+        "T": 16,
+        "signs": [
+          1,
+          1
+        ],
+        "exceptional_tuples": 17,
+        "total_tuples": 289,
+        "exact_fraction": "1/17"
+      },
+      {
+        "T": 16,
+        "signs": [
+          1,
+          -1
+        ],
+        "exceptional_tuples": 0,
+        "total_tuples": 289,
+        "exact_fraction": "0"
+      },
+      {
+        "T": 16,
+        "signs": [
+          -1,
+          1
+        ],
+        "exceptional_tuples": 0,
+        "total_tuples": 289,
+        "exact_fraction": "0"
+      },
+      {
+        "T": 16,
+        "signs": [
+          -1,
+          -1
+        ],
+        "exceptional_tuples": 17,
+        "total_tuples": 289,
+        "exact_fraction": "1/17"
+      },
+      {
+        "T": 32,
+        "signs": [
+          1,
+          1
+        ],
+        "exceptional_tuples": 33,
+        "total_tuples": 1089,
+        "exact_fraction": "1/33"
+      },
+      {
+        "T": 32,
+        "signs": [
+          1,
+          -1
+        ],
+        "exceptional_tuples": 0,
+        "total_tuples": 1089,
+        "exact_fraction": "0"
+      },
+      {
+        "T": 32,
+        "signs": [
+          -1,
+          1
+        ],
+        "exceptional_tuples": 0,
+        "total_tuples": 1089,
+        "exact_fraction": "0"
+      },
+      {
+        "T": 32,
+        "signs": [
+          -1,
+          -1
+        ],
+        "exceptional_tuples": 33,
+        "total_tuples": 1089,
+        "exact_fraction": "1/33"
+      },
+      {
+        "T": 64,
+        "signs": [
+          1,
+          1
+        ],
+        "exceptional_tuples": 65,
+        "total_tuples": 4225,
+        "exact_fraction": "1/65"
+      },
+      {
+        "T": 64,
+        "signs": [
+          1,
+          -1
+        ],
+        "exceptional_tuples": 0,
+        "total_tuples": 4225,
+        "exact_fraction": "0"
+      },
+      {
+        "T": 64,
+        "signs": [
+          -1,
+          1
+        ],
+        "exceptional_tuples": 0,
+        "total_tuples": 4225,
+        "exact_fraction": "0"
+      },
+      {
+        "T": 64,
+        "signs": [
+          -1,
+          -1
+        ],
+        "exceptional_tuples": 65,
+        "total_tuples": 4225,
+        "exact_fraction": "1/65"
+      }
+    ],
+    "scope": "Exact finite counts in a model; the general density-one theorem is proved separately."
+  },
+  "absolute_stationary_phase_model": {
+    "exact_relative_correction_for_fixed_slope": "(-2*c*p**2 + I*p)/(pi*N)",
+    "absolute_amplitude": "xi^2+1/(2NA)",
+    "warning": "The O_p(1/N) coefficient grows like p^2; no joint level/slope limit is claimed.",
+    "real_contour_model_checks": [
+      {
+        "slope": -4,
+        "model_level": 20,
+        "relative_integration_error": "7.3584484e-81"
+      },
+      {
+        "slope": -4,
+        "model_level": 40,
+        "relative_integration_error": "1.5992279e-80"
+      },
+      {
+        "slope": 4,
+        "model_level": 20,
+        "relative_integration_error": "7.3584484e-81"
+      },
+      {
+        "slope": 4,
+        "model_level": 40,
+        "relative_integration_error": "1.5992279e-80"
+      }
+    ],
+    "scope": "An elementary Gaussian model, not a Kashaev source or a verification of the global source hypotheses."
+  },
+  "scope": "Exact saddle and source-divisor algebra plus explicitly labeled analytic models. The transfer retains the original source/gap/geometry hypotheses; finite counts do not prove general density one or any new knot volume equality."
+}

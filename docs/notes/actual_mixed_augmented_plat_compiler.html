@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Every actual auxiliary color in the arbitrary-plat source compiler · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a><p><span class="badge">Exact all-color formula</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_mixed_augmented_plat_compiler.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_mixed_augmented_plat_compiler.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_mixed_augmented_plat_compiler_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="every-actual-auxiliary-color-in-the-arbitrary-plat-source-compiler">Every actual auxiliary color in the arbitrary-plat source compiler</h1>
+<p>30 October 2026. The original augmented-plat compiler extends to ALL ordinary auxiliary colors 1&lt;=n&lt;=N and signed local coupons R^epsilon L_n, epsilon in {0,+1,-1}. Its value and first-normal columns, inverse measures, color phases and source are explicit. No unknown recoupling inverse remains. The additional normal and color factors have uniform polynomial bounds; all exponential factorial profiles are displayed rather than absorbed in that claim.</p>
+<p>This is a finite ROOT-LEVEL source theorem at arbitrary fixed bridge width. It does not assert a coherent global gap or a uniform complex color interpolation, and is not yet an arbitrary-plat filling theorem. In particular the exact root normal below must not be confused with the generic-q normal of the whole original pointed invariant.</p>
+<h2 id="the-circle-polynomial-is-fixed-by-the-original-typed-source">1. The circle polynomial is fixed by the original typed source</h2>
+<p>Use d=N-1, q=exp(pi i/N), Q=q^2, x=q^d, kappa=q<sup>(d</sup>2/2). The ordinary n-dimensional auxiliary module has its ACTUAL pivot K_n^(1-N), with no new factor 1/n. The typed threading [2,1,1,2] followed by that pivot trace gives, as a full physical matrix,</p>
+<pre><code>L_n=l_n(Omega),
+l_n(z)=(-1)^(n-1) P_(n-1)(z), P_r(z)=U_r(z/2),
+P_0=1, P_1=z, P_(r+1)=z P_r-P_(r-1).                 (1)</code></pre>
+<p>Thus L_1=I and L_2=-Omega. This normalization, including the sign, is the proved <a href="actual_crossing_circle_source_and_filling.html">original mixed-circle identity</a>. It is not a replacement of an ordinary module by an N-dimensional ADO component at a putative meridian value.</p>
+<p>For an actual physical pair degree S set t=min(S,2d-S) and translate the first index by max(0,S-d), exactly as in the complete compiler. Use the canonical physical columns</p>
+<pre><code>v_j=f(c_j), w_j=f&#39;(c_j),
+c_j=q^(2j+1)+q^(-2j-1), nu_j=(-1)^j q^[j(j+1)].</code></pre>
+<p>All j=0,…,t are retained, grouped by equal nodes. The only double pair is j,l=d-j. The self-paired odd-level node is SIMPLE. Ordinary colors also retain the unpaired simple nodes killed by L_N.</p>
+<h2 id="an-exact-generic-finite-formula-for-the-normal-column">2. An exact generic finite formula for the normal column</h2>
+<p>The root formula for v_j is the q-Hahn sum in the <a href="actual_augmented_plat_phase_compiler.html">complete phase compiler</a>. To compute its first NORMAL, one must first use the actual generic highest-weight-d family, not differentiate a root-only simplification.</p>
+<p>Let zeta vary near q, Q=zeta^2, x=zeta^d and F_b=(Q;Q)_b. Define</p>
+<pre><code>R_(j,a)=F_(N-j+a-1) F_(N-a-1) /
+                          [F_(N-j-1) F_(N-1)],
+
+C_(j,u,a)(zeta)=(-1)^a x^(u-2a)
+   Q^[a(t-u)+a(a-1)/2] R_(j,a)
+   [u choose a]_Q [t-u choose j-a]_Q/[t choose j]_Q,
+
+C_(j,u)(zeta)=sum_(max(0,u-t+j)&lt;=a&lt;=min(j,u)) C_(j,u,a).
+                                                           (2)</code></pre>
+<p>Every factorial index lies in 0,…,d, so these are regular finite functions at the actual root. They are the normalized actual generic Clebsch columns. One direct derivation starts with the highest vector of degree j, whose a-th coefficient is</p>
+<pre><code>(-1)^a x^-a Q^[a(j-1)-a(a-1)/2] R_(j,a).</code></pre>
+<p>Apply F_tot^(t-j)/F_(t-j), with F_tot=F tensor I+K^-1 tensor F. The q-binomial expansion contributes x<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>Q<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> [u choose a][t-u choose j-a]. Its first component is x<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> [t choose j], which is a unit. Dividing by it gives precisely (2). Thus its eigenvalue is</p>
+<pre><code>lambda_j(zeta)=zeta^(2N-1-2j)+zeta^(-2N+1+2j).          (3)</code></pre>
+<p>At the root, R_(j,a)=Q<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> [j choose a]_Q, recovering the previous physical column and its exact Fourier phase. This equality is used for the VALUES, not for their zeta derivatives.</p>
+<p>For a double pair j&lt;l=d-j, put D=zeta d/dzeta. Then exactly</p>
+<pre><code>w_(j,u)=[D C_(j,u)(q)-D C_(l,u)(q)] /
+              [-2N(q^(2j+1)-q^(-2j-1))].              (4)</code></pre>
+<p>Indeed C_(j,u)=f_u(zeta,lambda_j(zeta)); subtracting derivatives cancels the common derivative of f with respect to zeta. The remaining eigenvalue gap derivative from (3) is the displayed denominator. This retains the actual generic confluence.</p>
+<p>The differentiated sum in (4) is fully explicit. Write</p>
+<pre><code>H_b=D log F_b=-2 sum_(r=1)^b r Q^r/(1-Q^r), H_0=0,
+Hbin(v,w)=H_v-H_w-H_(v-w).</code></pre>
+<p>At the root each summand derivative is its ORIGINAL root value times</p>
+<pre><code>Gamma_(j,u,a)=d(u-2a)+2a(t-u)+a(a-1)
+   +H_(N-j+a-1)-H_(N-j-1)+H_(N-a-1)-H_(N-1)
+   +Hbin(u,a)+Hbin(t-u,j-a)-Hbin(t,j).                 (5)</code></pre>
+<p>Thus (4) is a difference of two finite factorial/Fourier sums with known q-harmonic coefficients. No chosen solution of a homogeneous recurrence or unidentified normal amplitude has been inserted.</p>
+<h2 id="explicit-bilinear-measures-and-every-signed-mixed-kernel">3. Explicit bilinear measures and every signed mixed kernel</h2>
+<p>Put CalP_t(z)=product_(r=0)^t(z-c_r) and B_t=(-1)^t s_t^2. At a simple node define</p>
+<pre><code>sigma_j=x^t nu_j CalP_t&#39;(c_j)/B_t.</code></pre>
+<p>At a double node c=c_j=c_l put Q_j=CalP_t/(z-c)^2 and</p>
+<pre><code>sigma_j=x^t nu_j Q_j(c)/B_t,
+rho_j=-(d-2j)/[2(q^(2j+1)-q^(-2j-1))],
+eta_j=rho_j+Q_j&#39;(c)/Q_j(c).                           (6)</code></pre>
+<p>These are the actual Christoffel–Darboux measures. In particular sigma_j never vanishes. The bilinear Gram block of (v_j,w_j) is sigma_j [[0,1],[1,eta_j]], with inverse sigma_j^-1 [[-eta_j,1],[1,0]]. The value rho_j is the spectral logarithmic derivative of the original normalized crossing R/kappa.</p>
+<p>For EVERY auxiliary color n and either sign, the entire contribution of a double node to R^epsilon L_n is therefore</p>
+<pre><code>kappa^epsilon nu_j^epsilon /sigma_j *
+  { [l_n&#39;(c)+(epsilon rho_j-eta_j)l_n(c)] v_j v_j^T
+                +l_n(c)(v_j w_j^T+w_j v_j^T) }.       (7)</code></pre>
+<p>A simple node contributes</p>
+<pre><code>kappa^epsilon nu_j^epsilon l_n(c_j)
+                                  v_j v_j^T/sigma_j. (8)</code></pre>
+<p>Proof: in the actual Jordan chain, a function A(Omega) has matrix [[A(c),A’(c)],[0,A(c)]]. Multiplying by the displayed bilinear inverse gives sigma^-1[(A’-eta A)vv<sup>T+A(vw</sup>T+wv^T)]. Here A(c)=kappa^epsilon nu_j^epsilon l_n(c) and A’(c)=kappa^epsilon nu_j^epsilon[l_n’(c)+epsilon rho_j l_n(c)]. This proves (7), including epsilon=-1. It is a bilinear physical identity; conjugating a column would give the wrong coupon.</p>
+<p>Summing (7),(8) over ALL distinct nodes gives the original full matrix. In particular n=N collapses to the complete-circle formula: at a double node l_N(c)=0, leaving its specified first normal, and at an unpaired simple node l_N(c)=0. The self-paired simple value is treated separately. This reduction checks, rather than assumes, the complete-image formula.</p>
+<h2 id="color-dependence-and-uniform-polynomial-factors">4. Color dependence and uniform polynomial factors</h2>
+<p>The color dependence is explicit and coherent. With theta_j=(2j+1)pi/N,</p>
+<pre><code>l_n(c_j)=(-1)^(n-1) sum_(b=0)^(n-1)
+                           q^[(2j+1)(n-1-2b)].        (9)</code></pre>
+<p>All its n-dependent phases remain. The derivative is the derivative of the SAME polynomial in z; it is not a derivative of a chosen eigenvalue lift. Away from sin theta=0 it can also be written</p>
+<pre><code>l_n&#39;(2cos theta)=(-1)^(n-1)
+  [sin(n theta)cos theta-n cos(n theta)sin theta] /
+                                         [2sin(theta)^3]. (10)</code></pre>
+<p>At the odd self-node c=-2 use its polynomial limit, with l_n(-2)=n. There is no 0/0 cancellation left to a numerical prescription.</p>
+<p>Uniformly for every 1&lt;=n&lt;=N and every real node in [-2,2],</p>
+<pre><code>|l_n(c)|&lt;=n,   |l_n&#39;(c)|&lt;=n(n^2-1)/6.                  (11)</code></pre>
+<p>For the second bound group the finite Laurent expression for U into pairs 2cos(m theta). Its z derivative is m sin(m theta)/sin theta, whose absolute value is at most m^2 by the finite geometric sum. The sum of these positive-frequency squares is n(n^2-1)/6. This also proves the endpoint bound by continuity, without dividing by an endpoint sine.</p>
+<p>Every H_b in (5) has magnitude O(N^2(1+log N)), since sin(pi r/N)&gt;=2min(r,N-r)/N. The remaining exponents in (5) are O(N^2). The denominator of (4) has modulus at least eight. Consequently, with Ebar_(t,j,u) the sum of the two positive q-Hahn envelopes at j,l,</p>
+<pre><code>|v_(j,u)|&lt;=E_(t,j,u),
+|w_(j,u)|&lt;=C N^2(1+log N) Ebar_(t,j,u).               (12)</code></pre>
+<p>The known node gap bound also gives |rho_j|&lt;=N^2/8 and |eta_j|&lt;=C N^3. Thus every color and every extra normal factor in (7) is polynomially controlled, uniformly over the ENTIRE physical color interval, with normal order at most one on each local column.</p>
+<p>The inverse measure is NOT hidden in this statement. If a_j=|1-Q^(2j+1)|, its exact magnitudes are</p>
+<pre><code>unpaired simple: |sigma_j|=s_(t-j)s_(t+j+1)/(s_t^2 a_j),
+double: |sigma_j|=N s_(t-j)s_(t+j-d)/(s_t^2 a_j^2),
+odd self-paired: |sigma_j|=N s_(t-j)^2/s_t^2.          (13)</code></pre>
+<p>Its phase is explicitly fixed by (6) or the simple product. All factorial indices are below N. Therefore an all-input bound for (7),(8) is a fixed polynomial times the sum of the products of the stated column envelopes divided by |sigma_j|. The exponential growth of those factorial profiles has not been proved to disappear.</p>
+<h2 id="arbitrary-fixed-plats-and-the-remaining-filling-problem">5. Arbitrary fixed plats and the remaining filling problem</h2>
+<p>Insert (7),(8) at every original augmented region of any fixed 2k-head plat and perform the literal wire contractions. Retain the original cup, ordinary caps, unrestricted marked cap, pivots and external line. The whole-source integer-degree argument permitting the final marked-pair restriction is the same as in the complete compiler. This yields an exact finite formula for EVERY physical auxiliary-color tuple (n_1,…,n_b), not merely a coefficientwise upper envelope or a complete-color value.</p>
+<p>Expanding (4),(5),(9) makes all color/normal couplings explicit: they are the original finite Fourier factors, factorial weights and bounded-order q-harmonic prefactors. For a fixed diagram the number of discrete variables and the total number of normal factors are fixed. Contracting does not increase that normal order with N. One may also use the finite polynomial values (1) directly; the two expressions are identities of the original matrices.</p>
+<p>This supplies a concrete all-color input to the existing exact full-twist resolution for any fixed signed slopes p_i. A prospective geometric threshold T(D) concerns the fixed skeleton and the sizes of those integer twists, not the quantum level N. The compiler alone gives no such threshold or nonzero geometric period.</p>
+<p>In particular an explicit finite formula is NOT automatically the uniform holomorphic packet required by analytic filling transfer. The naive expression sin(n theta)/sin theta is singular at the odd self-node theta=pi for nonintegral n; its cancellation at integer n does not authorize that continuation. A valid complex-color packet must specify its whole finite continuation and prove its uniform estimates, preserving all these endpoint and normal contributions.</p>
+<p>Likewise the polynomial bounds in (11),(12) leave the column and inverse-measure factorial rates present. A geometric global gap, source-preserving complex deformation, selected nonzero amplitude germ and actual marked regulator identification are separate tasks. The new result removes the UNKNOWN mixed local kernel and normal formula; it does not replace those analytic and geometric proofs.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_mixed_augmented_plat_compiler.py">generic normals and all original mixed signed operators</a>. Fresh exact finite-field checks pass N=2,…,12: 143 physical blocks, 2,904 canonical value entries, 1,177 generic-confluence normal entries, and 231 full signed mixed-color operator identities. The normal columns from (2)–(5) are compared with independent continuant derivatives. Every compiled matrix is compared with the original coproduct Casimir polynomial and original signed crossing matrices.</p>
+<p>Primary-agent independent analytical review and fresh audit: PASS. The review checked the generic Clebsch derivative and Gamma factor, both signed Jordan formulas, the exact normalizer phases, the n(n^2-1)/6 derivative bound and the retained inverse-measure factorial rates. All 231 full signed mixed-color matrix identities passed.</p>
+<p>A second independent analytical review checked the actual generic descendant powers, root complementation only for values, the exact eigenvalue-gap derivative, full bilinear inverse and both crossing signs, all ordinary simple nodes, and the polynomial normal bounds. Its fresh replay passed all 143 blocks, 2,904 values, 1,177 normals and 231 signed mixed matrices. No uniform complex-color or coherent gap conclusion is inferred from these identities.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>-(t-j-u+a)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>a(t-j-u+a)<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>-(t-j)<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>a(a-j)<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_mixed_augmented_plat_compiler.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-circle-polynomial-is-fixed-by-the-original-typed-source">1. The circle polynomial is fixed by the original typed source</a><a href="#an-exact-generic-finite-formula-for-the-normal-column">2. An exact generic finite formula for the normal column</a><a href="#explicit-bilinear-measures-and-every-signed-mixed-kernel">3. Explicit bilinear measures and every signed mixed kernel</a><a href="#color-dependence-and-uniform-polynomial-factors">4. Color dependence and uniform polynomial factors</a><a href="#arbitrary-fixed-plats-and-the-remaining-filling-problem">5. Arbitrary fixed plats and the remaining filling problem</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What simplifies at the geometric endpoint, and a magnetic gauge obstruction · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Obstructions</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#frontier">Obstructions and the general conjecture</a><p><span class="badge">Exact leg-gauge obstruction; resummation open</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_central_endpoint_magnetic_phase_obstruction.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_central_endpoint_magnetic_phase_obstruction.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_central_endpoint_magnetic_phase_obstruction_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="what-simplifies-at-the-geometric-endpoint-and-a-magnetic-gauge-obstruction">What simplifies at the geometric endpoint, and a magnetic gauge obstruction</h1>
+<p>30 October 2026. At every ODD level, fixing all complete-circle channels to the genuine simple endpoint makes each retained half twist an explicit scalar. The local q-Hahn critical equation also has no saddle collision on its physical endpoint domain. Nevertheless the actual central black spin tensor cannot be made entrywise positive by separate nonzero gauges on its three magnetic legs, already at N=3.</p>
+<p>The obstruction is an exact gauge-invariant six-entry ratio. It does not rule out a larger coherent resummation or a positive final scalar. It identifies why selecting endpoint channels and adjusting separate leg phases is not itself a general positive-source proof.</p>
+<h2 id="all-retained-half-twists-become-known-endpoint-scalars">1. All retained half twists become known endpoint scalars</h2>
+<p>Let N=2m+1, d=2m, q=exp(pi i/N), x=q^d and kappa=q<sup>(d</sup>2/2). The complete-circle node c_m=-2 is SIMPLE. Its physical summand is the actual intertwiner W:V_N-&gt;V_N tensor V_N of the <a href="actual_trivalent_steinberg_central_anchor.html">central Clebsch theorem</a>, with genuine dual pi=W^dagger P and pi W=I. Its projector is E_St=W pi, and</p>
+<pre><code>L_(N,m)=N E_St,   E_St^2=E_St,
+R E_St=omega_m E_St,
+omega_m=kappa (-1)^m q^[m(m+1)], |omega_m|=1.           (1)</code></pre>
+<p>Therefore for any original fixed ordered plat or source-certified matching circuit, its simultaneous endpoint contribution satisfies</p>
+<pre><code>Z_endpoint(epsilon)=omega_m^(sum_i epsilon_i)
+                                           Z_endpoint(0), (2)</code></pre>
+<p>before the independently specified exterior framing line is restored. All cups, caps, the original unrestricted marked cut and wire ordering are unchanged. Equation (2) is just an all-input scalar identity on each actual endpoint image; it does not use positivity or replace a structural crossing elsewhere in the diagram.</p>
+<p>At even N the last folded node is DOUBLE and L_N is nilpotent there. Equation (1) must not be copied to that level as a projector identity. Its actual first-normal source is required, as in the existing even central black/white calculations.</p>
+<h2 id="the-endpoint-local-saddle-roots-do-not-collide">2. The endpoint local saddle roots do not collide</h2>
+<p>For the raw physical q-Hahn phase in the <a href="actual_augmented_plat_phase_compiler.html">augmented-plat compiler</a>, put T=exp(2pi i tau), U=exp(2pi i upsilon), and let Z be the exponentiated internal summation variable. At the continuum endpoint xi=j/N-&gt;1/2, its Jc=exp(2pi i xi) equals -1. The exact candidate quadratic from that LEADING phase simplifies to</p>
+<pre><code>[U(T+1)-4T]Z^2+2U(T-1)Z+U(T+1)=0.                     (3)</code></pre>
+<p>Its discriminant is</p>
+<pre><code>Delta=16TU(T+1-U).                                    (4)</code></pre>
+<p>On the entire real physical domain</p>
+<pre><code>1/2&lt;=tau&lt;=1,   0&lt;=upsilon&lt;=tau,</code></pre>
+<p>one has |T+1-U|&gt;=1, hence |Delta|&gt;=16. Indeed, with phi=2pi tau and psi=2pi upsilon,</p>
+<pre><code>|1+exp(i phi)-exp(i psi)|^2-1
+   =4cos(phi/2)[cos(phi/2)-cos(psi-phi/2)]&gt;=0.          (5)</code></pre>
+<p>Here cos(phi/2)&lt;=0, while |psi-phi/2|&lt;=phi/2&lt;=pi makes the second factor nonpositive. The quadratic coefficient also has modulus at least 4-|T+1|&gt;=2. Thus both roots remain simple; no division by a vanishing quadratic coefficient or hidden branch collision occurs on this domain. At tau=1/2 a root can be zero, so a logarithmic chart there still needs its boundary treatment.</p>
+<p>This removes one possible local obstruction. It does NOT select which root the actual finite q-Hahn sum carries. For an interior endpoint state with 1/2&lt;tau&lt;1, its internal Fourier derivative still has argument pi(tau-1/2), strictly between zero and pi/2. Hence the raw summation does not have a real interior saddle. A complex source deformation or an exact resummation is still needed.</p>
+<h2 id="an-exact-n3-obstruction-to-positive-magnetic-leg-gauges">3. An exact N=3 obstruction to positive magnetic leg gauges</h2>
+<p>Use the ACTUAL endpoint invariant</p>
+<pre><code>Theta=(W tensor I)p,
+Theta_(a,b,c)=N x^-c W_(d-c)(a,b),
+a+b+c=3m,                                            (6)</code></pre>
+<p>with the original cup p. The central black vertex is a known NONZERO scalar times Theta, as proved by its finite quartic transform. No scalar is inferred here from an unknown graph evaluation.</p>
+<p>At N=3, m=1, q=(1+i sqrt(3))/2 and x=q^2. The actual highest vector is W_0=|0,1&gt;+q|1,0&gt;; its descendants are</p>
+<pre><code>W_r=F_pair W_(r-1)/(1-Q^r),
+F_pair=F tensor I+K^-1 tensor F,
+F|a&gt;=(1-Q^(a+1))|a+1&gt;, K|a&gt;=x Q^-a |a&gt;.</code></pre>
+<p>These finite equations and (6) give the six NONZERO entries</p>
+<table>
+<thead>
+<tr>
+<th>Magnetic triple</th>
+<th style="text-align: right;">Actual Theta entry</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(2,1,0)</td>
+<td style="text-align: right;">3q</td>
+</tr>
+<tr>
+<td>(1,2,0)</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>(0,2,1)</td>
+<td style="text-align: right;">-3</td>
+</tr>
+<tr>
+<td>(0,1,2)</td>
+<td style="text-align: right;">3q^2</td>
+</tr>
+<tr>
+<td>(1,0,2)</td>
+<td style="text-align: right;">-3</td>
+</tr>
+<tr>
+<td>(2,0,1)</td>
+<td style="text-align: right;">3</td>
+</tr>
+</tbody>
+</table>
+<p>Consequently</p>
+<pre><code>Theta_210 Theta_021 Theta_102 /
+                     (Theta_120 Theta_012 Theta_201)
+   =q^-1=(1-i sqrt(3))/2,                             (7)</code></pre>
+<p>which is not real.</p>
+<p>Under ANY separate nonzero leg gauges</p>
+<pre><code>Theta_abc -&gt; A_a B_b C_c Theta_abc,</code></pre>
+<p>the numerator and denominator of (7) contain exactly the same multiset of labels on EACH leg. Every gauge factor therefore cancels. A common vertex scalar cancels too. If every nonzero coefficient could be made positive real, (7) would be positive real, a contradiction. This obstruction allows arbitrary nonzero complex diagonal gauges, not just unit phases. Reversing or conjugating the displayed ratio does not make it real.</p>
+<p>Thus the actual central BLACK tensor already prevents the proposed independent-leg positive normalization. The known endpoint half-twist scalars in (2) do not change this ratio. No information about the marked white tensor was suppressed to obtain the obstruction.</p>
+<h2 id="what-this-does-and-does-not-rule-out">4. What this does and does not rule out</h2>
+<p>The actual ordinary white and marked white packets are distinct from the black tensor and must stay in the complete source. The source- certified two-vertex contractions have already been resummed to positive expressions at both parities; those proofs sum additional indices and retain the original mark. They are fully consistent with (7), which concerns entrywise magnetic positivity before such sums.</p>
+<p>For an arbitrary fixed matching graph or plat, the next step is a COHERENT resummation of its original contracted endpoint tensors, or a controlled complex saddle with that source. A full non-diagonal basis change could also be investigated, but its actual inverse, exponential norm and transported marked source would need estimates. Neither the local no-collision statement (4) nor endpoint half-twist scalarity (2) supplies that global comparison.</p>
+<p>In particular (7) does not disprove an arbitrary-plat volume limit, positivity of a resummed scalar, or a possible geometric period. It excludes one precise proposed shortcut while retaining the actual root phases and source normalization. The displayed counterexample concerns N=3: it rules out an all-level independent-leg normalization, but by itself does not classify the larger levels or exclude an asymptotic normalization with a controlled phase error.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_central_endpoint_magnetic_phase_obstruction.py">original endpoint projectors, six-entry ratio and discriminant</a>.</p>
+<p>Independent root review: full analytical read and fresh audit PASS. The reviewer independently recomputed the N=3 descendants and all six entries, their gauge-invariant ratio, and the endpoint discriminant with its physical-domain lower bound.</p>
+<p>Independent coherent-partner review: full proof review and fresh audit PASS. The reviewer separately computed both N=3 descendant vectors, checked all six tensor entries and cancellation of arbitrary nonzero diagonal leg gauges, and rederived the endpoint quadratic and both uniform bounds. The retained-source and finite-level scope were checked.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_central_endpoint_magnetic_phase_obstruction.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#all-retained-half-twists-become-known-endpoint-scalars">1. All retained half twists become known endpoint scalars</a><a href="#the-endpoint-local-saddle-roots-do-not-collide">2. The endpoint local saddle roots do not collide</a><a href="#an-exact-n3-obstruction-to-positive-magnetic-leg-gauges">3. An exact N=3 obstruction to positive magnetic leg gauges</a><a href="#what-this-does-and-does-not-rule-out">4. What this does and does not rule out</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

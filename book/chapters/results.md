@@ -4,13 +4,13 @@ The project seeks equality for broad classes of hyperbolic knots, with the right
 
 ## Full original-source equalities
 
-The broadest complete-link result starts with a crossing-circle box, turns it by a quarter turn, and calls the resulting piece $h$. Stack three such pieces to form the seed $A=h^3$. Build larger tangles by stacking previously built tangles or rotating them by a quarter turn $R$, retaining every auxiliary crossing circle. The grammar $E::=A\mid RE\mid EE$ records those operations. A cylindrical closure joins corresponding top and bottom endpoints around the outside; cap closure instead pairs endpoints on each end.
+The Conway results start with a crossing-circle box, turn it by a quarter turn, and call the resulting piece $h$. Stack $s$ such pieces to form a seed $A_s=h^s$. The [arbitrary-width extension](../../notes/actual_conway_arbitrary_width_seeds.md) allows every fixed $s\geq3$, including mixtures of widths. Build larger tangles by stacking previously built tangles or rotating them by a quarter turn $R$, retaining every auxiliary crossing circle. The grammar $E::=A_s\mid RE\mid EE$ records those operations. A cylindrical closure joins corresponding top and bottom endpoints around the outside; cap closure instead pairs endpoints on each end.
 
 The [signed Conway filling theorem](../../notes/actual_odd_conway_long_filling_volume.md) now gives a knot and link result across arbitrary finite branching and turn depth. Take a cylindrical closure $C(FG)$ with both children robust. Independently retain a positive half twist, a negative half twist, or no half twist at every leaf, then fill any subset of crossing circles with sufficiently long fixed signed integral full twists. The full original invariant satisfies
 
 $$\lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(L)|=\operatorname{Vol}(S^3\setminus L).$$
 
-For **every such expression**, a constructive parity assignment joins the main strands into one component; filling every auxiliary circle then gives knots. Both level parities and composite levels are included. No fixed diagram width is imposed, but the diagram and slopes remain fixed before the limit. The minimal $C(A)$ is excluded from this mixed-color filling theorem. The result does not identify the grammar with all alternating or all arborescent knots.
+For **every such expression**, a constructive parity assignment joins the main strands into one component; filling every auxiliary circle then gives knots. Both level parities and composite levels are included. No fixed diagram width is imposed, but the diagram and slopes remain fixed before the limit. The width extension also covers isolated closures $C(h^s)$ for $s\geq4$. The minimal $C(h^3)$ remains excluded from this mixed-color filling theorem. The result does not identify the grammar with all alternating or all arborescent knots.
 
 The proof keeps the entire changed source, including the aliases introduced by half twists. Its selected action is the calibrated primitive of the actual marked peripheral branch, and the filling equation uses the primitive meridian of the changed link. This establishes the volume of the intended filled complement.
 
@@ -33,9 +33,11 @@ The signed marked theta link has original-source limit $4v_8$, with a separate s
 
 For every retained cylindrical robust Conway factor, the [long-filling theorem](../../notes/actual_conway_long_filling_source_limit.md) proves the full original-invariant limit equals the actual filled hyperbolic volume. Any subset of auxiliary circles may be filled along independently sufficiently long fixed signed integral slopes. Both parities and composite levels are included. The proof controls every source color and constructs the actual marked peripheral representation, including its absolute regulator.
 
-These pure fillings always remain links: each pure seed has two internal main components that full twists cannot join. The signed-coupon theorem above changes the strand pattern and supplies the required new source proof, giving the broader knot subfamily. It does not alter this component obstruction for the pure diagrams.
+These pure fillings always remain links: each pure seed $h^s$ has $s-1\geq2$ internal main components that full twists cannot join. The signed-coupon theorem above changes the strand pattern and supplies the required new source proof, giving the broader knot subfamily. It does not alter this component obstruction for the pure diagrams.
 
 ## General identities with a smaller conclusion
+
+For arbitrary fixed plat width, the [complete source compiler](../../notes/actual_augmented_plat_phase_compiler.md), [all-color compiler](../../notes/actual_mixed_augmented_plat_compiler.md), and [entire Fourier core](../../notes/actual_augmented_plat_entire_core_color_packet.md) now give explicit finite formulas retaining the original phases and normal terms. The [geometric certificate](../../notes/general_augmented_plat_matching_geometry.md) supplies the actual complete complement when a positive labeled realization is available. Neither result alone proves a volume asymptotic for arbitrary plats. The [general long-twist conjecture](../../notes/general_augmented_plat_long_twist_target.md) records the intended broader statement and its remaining source estimates.
 
 The [general four-port theorem](../../notes/actual_general_four_port_single_racah_kernel.md) evaluates actual inverse recoupling coefficients by one finite Racah sum, with the true normalization and normal terms. It is an exact local identity, not a global growth theorem.
 

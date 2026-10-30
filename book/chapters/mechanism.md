@@ -8,6 +8,18 @@ At a root of unity, paired spectral channels can merge. Terms that vanish at the
 
 The [torsor status note](../../notes/a_polynomial_torsor_status.md) explains how this viewpoint relates to earlier work in the repository. A classical A-polynomial alone has not supplied the selected period or its absolute geometric normalization.
 
+## Exact finite functions at arbitrary bridge width
+
+The [complete-color](../../notes/actual_augmented_plat_phase_compiler.md) and [all-color](../../notes/actual_mixed_augmented_plat_compiler.md) formulas now apply to every fixed plat. They specify the physical columns, normal terms, inverse measures and phases before any asymptotic estimate.
+
+Their [entire core function](../../notes/actual_augmented_plat_entire_core_color_packet.md) has the explicit form
+
+$$C_N(\chi)=\sum_{\mathbf j} A_N(\mathbf j)\prod_i\cos(\pi m_{j_i}\chi_i),\qquad m_j=N-2j-1.$$
+
+Here $\chi$ is the auxiliary color deficit divided by $N$. The coefficients are actual marked channel contractions. This finite function has exact Fourier reconstruction and Parseval identities at both parities, including the odd zero-frequency endpoint. At physical high colors it is the source's core; the full source also contains the explicitly retained alias terms.
+
+Thus the Fourier proposal has a concrete object to estimate. Parseval controls a norm, while the desired invariant is a particular coherent contraction. A uniform complex asymptotic, physical alias suppression and survival of the geometric contribution still require proof for a general plat.
+
 ## Exact recoupling exposes a local geometric scalar
 
 Four external objects can be paired in two ways. The actual change of basis is computed before root specialization, with its genuine pivotal turn.

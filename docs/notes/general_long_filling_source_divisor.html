@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Long filling across a finite-order zero of the original source amplitude · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Equality results</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#equality">Volume equality for knot and link families</a><p><span class="badge">Conditional general transfer</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/general_long_filling_source_divisor.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_general_long_filling_source_divisor.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/general_long_filling_source_divisor_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="long-filling-across-a-finite-order-zero-of-the-original-source-amplitude">Long filling across a finite-order zero of the original source amplitude</h1>
+<p>30 October 2026. The general original-source filling theorem does not need its leading analytic amplitude to be a unit at the complete point. A NONZERO amplitude germ is sufficient away from its pulled-back analytic zero set. That exceptional set occupies density zero among large signed integer slope boxes. Suitable rational rays avoid it eventually; a coordinate monomial times a unit avoids it at EVERY independently sufficiently long slope tuple.</p>
+<p>This removes one source hypothesis. It does not construct the required whole-source gap or complex packet for an arbitrary plat, and it does not prove that an unknown original source has a nonzero amplitude germ. The source, its full normal terms and all peripheral factors remain the ones in the <a href="general_original_source_long_filling_transfer.html">general transfer</a>.</p>
+<h2 id="the-precise-weaker-packet-hypothesis">1. The precise weaker packet hypothesis</h2>
+<p>Fix a diagram and a chosen nonempty set of b filled circle ports. Keep the exact all-input full-twist identity, known nonzero outer factor chi_N, entire physical color-complement gap, and exponentially accurate finite corridor interpolation of the general transfer theorem. The finite packet C_N is holomorphic and even separately in all b coordinates on the SAME fixed complex neighborhood required there. Replace only its relative unit-amplitude assumption by</p>
+<pre><code>C_N(x)=N^mu exp[N phi(x)] [a(x)+r_N(x)],
+sup |r_N| &lt;= C/N,                                      (1)</code></pre>
+<p>uniformly holomorphically on that neighborhood. Here a is a nonzero holomorphic GERM, allowed to satisfy a(0)=0; phi is separately even,</p>
+<pre><code>phi(0)=F0 real,
+phi&#39;&#39;(0)=2pi i diag(tau_1,...,tau_b), Im tau_i&gt;0.         (2)</code></pre>
+<p>The explicit original unit phase eta_N stays outside C_N, as before. An absolute holomorphic remainder in (1) is essential. A pointwise estimate on physical colors, or an estimate obtained by division by an amplitude that vanishes, does not supply this hypothesis.</p>
+<p>Separate evenness of a follows even if not assumed: the holomorphic functions N^(-mu) exp[-N phi] C_N are separately even and converge uniformly to a. The same is then true of r_N. Their fixed derivatives are uniformly bounded on smaller domains by Cauchy’s formula. The upper Gaussian corridor estimate uses boundedness of a+r_N, not a lower bound for a, so it remains valid.</p>
+<p>If some auxiliary cusps are UNFILLED, first set their color variables to zero in the actual packet and action. The amplitude required here is the resulting restricted germ a_I(x_I)=a(x_I,0). A nonzero full germ need not have a nonzero restriction: a(x_1,x_2)=x_2^2 vanishes identically when only port 1 is filled. Such a restriction needs its own first nonzero asymptotic coefficient; it is not covered by (1).</p>
+<h2 id="the-actual-filling-map-and-its-source-divisor">2. The actual filling map and its source divisor</h2>
+<p>Put epsilon_i=1/p_i for the fixed nonzero integer slopes. The minimal charge source saddle xi(epsilon) solves</p>
+<pre><code>phi_i(xi)+pi i epsilon_i(xi_i-1)=0, 1&lt;=i&lt;=b.            (3)</code></pre>
+<p>The analytic implicit-function theorem gives a unique small solution, xi(0)=0, and DIRECT differentiation gives</p>
+<pre><code>D xi(0)=diag(1/(2 tau_1),...,1/(2 tau_b)).               (4)</code></pre>
+<p>In particular xi is a local biholomorphism. The factor 2 in (4) comes from the original full-twist convention and must be retained.</p>
+<p>There is a stronger coordinatewise statement. Separate evenness writes phi_i(x)=x_i psi_i(x), where psi_i is analytic and psi_i(0)=2pi i tau_i. Equation (3) becomes</p>
+<pre><code>xi_i=epsilon_i u_i(epsilon),
+u_i(epsilon)=pi i/[psi_i(xi(epsilon))+pi i epsilon_i],
+u_i(0)=1/(2 tau_i).                                    (5)</code></pre>
+<p>Every u_i is a unit on a sufficiently small common polydisk. Thus xi_i is nonzero whenever epsilon_i is nonzero, independently of the relative sizes and signs of the other coordinates.</p>
+<p>Define the pulled-back source germ</p>
+<pre><code>f(epsilon)=a(xi(epsilon)),
+Z={epsilon: f(epsilon)=0}.                             (6)</code></pre>
+<p>It is nonzero because xi is locally invertible. Therefore Z is a proper complex analytic zero set, with its multiplicities supplied by f. Multiplying a by a nowhere-zero analytic change of source trivialization leaves Z unchanged. This is the source divisor used here; it is not inferred from the classical A-polynomial.</p>
+<p>The map (3) involves the marked analytic action and logarithmic coordinates. Even if the exponentiated shape branch is algebraic, Z is NOT asserted to be Zariski closed in epsilon or in the slopes.</p>
+<h2 id="full-source-transfer-off-the-divisor">3. Full-source transfer off the divisor</h2>
+<p>For every independently sufficiently long fixed signed tuple p with f(1/p)!=0, the full original invariant has the SAME action and N-power as the general transfer:</p>
+<pre><code>K_N(p)=chi_N eta_N kappa^(-sum p_i)
+    N^mu D(p) exp[N S_p] [1+O_p(N^-1)],                (7)</code></pre>
+<p>where</p>
+<pre><code>S_p=phi(xi)+(pi i/2) sum_i (xi_i-1)^2/p_i.              (8)</code></pre>
+<p>The coefficient D(p) is nonzero. Its source-amplitude factor is exactly a(xi); no value a(0) is inserted in its place.</p>
+<p>Here is the required modification of the proof, rather than an application of a theorem whose unit hypothesis has failed. Use the same local Fourier critical map xi_F(z), action Psi(z), and determinant branches as in the general transfer. Analytic finite-window stationary phase applied to (1) gives the ABSOLUTE expansion</p>
+<pre><code>F_N(z)=N^(mu+b/2) exp[N Psi(z)] [B(z)+O(N^-1)],
+B(z)=(2pi)^(b/2) a(xi_F(z)) /
+                          sqrt(det[-phi&#39;&#39;(xi_F(z))]). (9)</code></pre>
+<p>Both the remainder and its fixed derivatives are uniform on a smaller fixed complex neighborhood. The proof expands the bounded analytic amplitude a+r_N on the translated Gaussian contour, so it never divides by a or B. Thus (9) is valid also on their zero sets.</p>
+<p>Every global-color, finite-color-endpoint, noncentral Fourier and large-charge estimate in the transfer uses an UPPER bound for C_N and its controlled derivatives. Those estimates are unchanged by (1). The strict ordering of nonminimal charges depends on phi, not on a lower amplitude bound. For fixed p their exponential losses dominate all the bounded amplitude factors.</p>
+<p>At the second saddle use (9) in its absolute form. Put</p>
+<pre><code>z_i*=(xi_i-1)/(2p_i),
+T_1(z)=Psi(z)-2pi i sum_i(p_i z_i^2+z_i).</code></pre>
+<p>Then T_1(z*)=S_p and the leading coefficient is</p>
+<pre><code>D(p)=Gamma(p) a(xi),
+Gamma(p)=2^b (2pi)^b product_i sinh(2pi i z_i*) /
+   [sqrt(det[-phi&#39;&#39;(xi)]) sqrt(det[-T_1&#39;&#39;(z*)])].      (10)</code></pre>
+<p>The determinants are nonzero on the chosen translated contours. Equation (5) and smallness imply z_i* is nonzero for each finite p_i; also |z_i*|&lt;1/4, so its sinh factor is nonzero. Hence Gamma(p)!=0. At fixed p with a(xi)!=0, division by this now NONZERO leading coefficient turns the absolute O_p(N^-1) into the relative error in (7). Its constant may increase as p approaches Z.</p>
+<p>The 2^b minimal signed-charge sectors still ADD. Under a sign change of one charge, its saddle coordinate changes sign; the exact packet and its leading amplitude are separately even. The charge times sinh factor, determinant branch and exact parity character have the same transformation as in the original proof. This argument uses the exact source symmetry, not positivity of a.</p>
+<p>Consequently</p>
+<pre><code>lim_N (2pi/N) log|K_N(p)|=2pi Re S_p.                   (11)</code></pre>
+<p>If the SAME source branch has the actual marked representation, primitive peripheral equations and complete regulator anchor required by the general geometric completion theorem, the right side is the actual filled hyperbolic volume. Nothing in this amplitude extension supplies those independent certificates.</p>
+<p>Points in Z are excluded from this particular leading-coefficient argument. They are NOT counterexamples to a volume limit: a later Gaussian or source coefficient may give the same exponential rate. The diagram and slopes remain fixed BEFORE N tends to infinity; no joint large-N/large-slope uniformity is asserted.</p>
+<h2 id="coordinate-zeros-permit-every-independently-long-slope">4. Coordinate zeros permit every independently long slope</h2>
+<p>Suppose on the chosen filled-coordinate chart</p>
+<pre><code>a(x)=product_i x_i^(2 nu_i) v(x), nu_i&gt;=0,
+v(0)!=0.                                             (12)</code></pre>
+<p>The even powers are consistent with the actual separate evenness. Combining (5) and (12) gives the exact germ factorization</p>
+<pre><code>f(epsilon)=product_i epsilon_i^(2 nu_i) V(epsilon),
+V(0)!=0.                                             (13)</code></pre>
+<p>Thus EVERY independently sufficiently large signed nonzero tuple p avoids Z, and uniformly over those tuples,</p>
+<pre><code>c product_i |p_i|^(-2 nu_i) &lt;= |a(xi(1/p))|
+                          &lt;= C product_i |p_i|^(-2 nu_i). (14)</code></pre>
+<p>No slope-comparability condition enters. The conclusion is therefore as strong in its slope quantifier as the old unit-amplitude transfer. For ONE filled cusp every nonzero separately-even analytic germ automatically has the form (12), so the complete-point unit assumption can always be dropped in that one-variable case.</p>
+<p>For completeness the known filling prefactor also has a uniform magnitude comparison. Here z_i*=(-epsilon_i/2)(1+O(||epsilon||)) and</p>
+<pre><code>diag(epsilon_i) T_1&#39;&#39;(z*)=-4pi i I+O(||epsilon||).</code></pre>
+<p>The other Hessian remains bounded and invertible. Formula (10) gives |Gamma(p)| comparable to product_i |p_i|^(-3/2), on each signed orthant, and hence on their finite union. Under (12), |D(p)| is comparable to product_i |p_i|^(-2 nu_i-3/2). This is a statement about the slope-dependent leading coefficient, not a uniform error estimate when slopes grow with quantum level N.</p>
+<h2 id="rational-ray-survival-for-a-general-nonzero-amplitude">5. Rational-ray survival for a general nonzero amplitude</h2>
+<p>Let d be the vanishing order of f at zero, including d=0 for a unit, and let P_d be its first nonzero homogeneous Taylor polynomial. For fixed nonzero signed integers q_1,…,q_b with</p>
+<pre><code>P_d(1/q_1,...,1/q_b)!=0,                              (15)</code></pre>
+<p>the ray p_i=n q_i satisfies</p>
+<pre><code>f(1/(nq))=n^(-d)[P_d(1/q)+O_q(n^-1)].                 (16)</code></pre>
+<p>Every sufficiently large n therefore avoids Z, with magnitude comparable to n^(-d). Applying (7) separately at each fixed ray point gives its full quantum volume limit whenever the geometric certificates hold. The ray parameter n is not the quantum level N.</p>
+<p>There is such a rational ray in EVERY prescribed sign orthant. Indeed multiply P_d(1/q) by product_i q_i^d. The result is a nonzero polynomial in the q_i. A nonzero polynomial cannot vanish on the entire product of infinite one-sided integer sets: fix all but one variable, use the finite root count, and induct on the number of variables. This proves existence without assuming rational or algebraic coefficients for P_d.</p>
+<p>Condition (15) is sufficient, not necessary. A ray on which P_d vanishes may have a nonzero higher-order coefficient in f.</p>
+<h2 id="density-one-in-every-large-signed-integer-box">6. Density one in every large signed integer box</h2>
+<p>Fix signs sigma_i. Among tuples</p>
+<pre><code>p_i=sigma_i n_i, T&lt;=n_i&lt;=2T, n_i integers,</code></pre>
+<p>the number lying in Z is o(T^b) as the integer scale T tends to infinity. Thus the proportion for which (7) applies tends to one. This does not assert that ALL tuples avoid Z or that its exact integer points lie in a fixed algebraic hypersurface.</p>
+<p>Here is an elementary counting proof. Put t_i=n_i/T in [1,2]. Uniform analytic Taylor remainder estimates on this compact set give</p>
+<pre><code>T^d f(sigma_1/(Tt_1),...,sigma_b/(Tt_b))
+                     =P_d(sigma_1/t_1,...,sigma_b/t_b)+O(T^-1).</code></pre>
+<p>Therefore a bad tuple satisfies |Q(t)|&lt;=C/T, where the NONZERO polynomial</p>
+<pre><code>Q(t)=product_i t_i^d P_d(sigma_1/t_1,...,sigma_b/t_b)</code></pre>
+<p>has no negative powers. Choose a nonzero real polynomial R from the real or imaginary part of Q. On [1,3]^b its first derivatives are bounded. To each bad grid point t attach the disjoint half-open cube product_i[t_i,t_i+1/T). Every point of that cube then satisfies |R|&lt;=C’/T, with one fixed constant C’. Hence</p>
+<pre><code>#bad/T^b &lt;= volume{x in [1,3]^b: |R(x)|&lt;=C&#39;/T}.        (17)</code></pre>
+<p>A nonzero real polynomial has zero set of Lebesgue measure zero. For a direct proof, write it as a polynomial in its last variable. Except on the common zero set of its coefficients, contained in the zero set of one nonzero lower-dimensional coefficient, every fiber has finitely many roots. Induction and Fubini prove the claim. The sublevel sets on the right of (17) decrease to that zero set, so continuity of finite measure makes their volumes tend to zero. This proves the stated density without a quantitative sublevel or Diophantine theorem. The unit case d=0 is immediate as well.</p>
+<h2 id="finite-level-classes-and-exact-scope">7. Finite level classes and exact scope</h2>
+<p>The argument also covers finitely many level classes, for example even and odd N, with the SAME phi and separate uniform expansions (1) having nonzero germs a_r. All original class-dependent unit phases are retained. Use the finite union of their divisors. Outside it each class has (7), possibly with its own nonzero coefficient; the exponential limit (11) holds along the full sequence.</p>
+<p>The union still has density zero in each signed slope box. A rational ray avoiding the product of the finitely many first nonzero Taylor polynomials avoids every divisor eventually. If each amplitude is a coordinate monomial times a unit, every independently long tuple works at all the level classes. For partial fillings these nonzero-germ checks must again be made AFTER restricting the unfilled variables.</p>
+<p>The advance is removal of the complete-point UNIT requirement, including arithmetic survival of many long fillings. A proven nonzero finite-order marked source amplitude can now be used even when its complete value vanishes. The exact mixed source, its global gap, its uniform complex packet and its actual geometric marking remain necessary. No arbitrary-plat equality, whole knot A-polynomial identification, or nonzero-source theorem is inferred from this lemma.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_general_long_filling_source_divisor.py">implicit saddle, coordinate zeros and integer-slope examples</a>. The density-one statement is proved by the analytic rescaling and measure argument above, not by the finite counts in that audit.</p>
+<p>Independent internal analytical review: the primary agent and a second reader checked the factor-two implicit saddle, absolute two-stage stationary expansion, unchanged full-source error budget, minimal charge addition, coordinate divisor, rational rays, density-one mesh argument and the partial-filling restriction. Both fresh audit replays passed. The source and geometric hypotheses remain conditional as stated; these reviews do not establish them for arbitrary plats.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/general_long_filling_source_divisor.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-precise-weaker-packet-hypothesis">1. The precise weaker packet hypothesis</a><a href="#the-actual-filling-map-and-its-source-divisor">2. The actual filling map and its source divisor</a><a href="#full-source-transfer-off-the-divisor">3. Full-source transfer off the divisor</a><a href="#coordinate-zeros-permit-every-independently-long-slope">4. Coordinate zeros permit every independently long slope</a><a href="#rational-ray-survival-for-a-general-nonzero-amplitude">5. Rational-ray survival for a general nonzero amplitude</a><a href="#density-one-in-every-large-signed-integer-box">6. Density one in every large signed integer box</a><a href="#finite-level-classes-and-exact-scope">7. Finite level classes and exact scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>
