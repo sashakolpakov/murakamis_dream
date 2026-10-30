@@ -47,6 +47,14 @@ python3 experiments/audit_actual_augmented_plat_selected_local_certificate.py
 python3 experiments/audit_actual_q_hahn_small_channel_generic_normals.py
 python3 experiments/audit_actual_q_hahn_partner_normal_collision.py
 python3 experiments/audit_actual_q_hahn_physical_partner_normal_bound.py
+python3 experiments/audit_actual_q_hahn_near_fold_complex_partner_bound.py
+python3 experiments/audit_actual_matching_edge_racah_positive_scalar.py
+python3 experiments/audit_actual_matching_edge_marked_four_port_block.py
+python3 experiments/audit_actual_matching_edge_completed_projector_block.py
+python3 experiments/audit_actual_matching_edge_native_projector_energy.py
+python3 experiments/audit_actual_q_hahn_physical_generic_jet_bound.py
+python3 experiments/audit_actual_q_hahn_full_physical_complex_packet.py
+python3 experiments/audit_actual_augmented_plat_selected_factor_localization.py
 python3 experiments/audit_actual_right_angled_selected_framing_obstruction.py
 python3 experiments/audit_general_matching_graph_full_normal_source.py
 python3 experiments/audit_actual_planar_three_port_reflection_double.py
@@ -78,3 +86,11 @@ python3 tools/build_book.py
 The main README is deliberately short. The long research log, all existing technical note paths, and audit imports are preserved.
 
 The physical paired-normal audit checks the original Casimir entries, weighted Dirichlet identity, double-node reflection and actual generic derivative. Its polynomial estimate is proved on the physical grid; it is not a complex-neighborhood or whole-source theorem.
+
+The near-fold complex audit retains the full large generic source and checks the resonant recurrence on a small complex circle. Its subexponential theorem requires shrinking scaled channel windows. The matching-edge audits reconstruct the actual generic four-port matrices, pivotal signs, root first jets and original row measure. They retain unequal partner derivatives and do not infer a completed positive matrix norm from the scalar formula.
+
+The full physical packet audit tests the new cone determinant, finite boundary zeros, generic matrix lifts and actual amplitudes outside the old central wedge. The physical generic-jet audit retains both forward and backward q recurrences and nonzero higher divided-pair jets. The localization audit checks the exact low/high flag formulas; its general conclusion is the separately reviewed continuation and geometric argument. None establishes a contributing global cycle.
+
+The completed-projector audit independently checks the categorical norm, full generic operator identities, actual cyclic turn, paired cluster jets and complete original-measure cancellation. It retains the nilpotent contribution and unequal scalar derivatives. Its finite checks support the written identities; they do not bound the native projectors or establish a global volume limit.
+
+The native-energy audit checks the actual generic high-degree adapter, dual measures, residue and completed-projector jets, and exact rank-one norms. The exponential midpoint-energy rate has a written Riemann-sum proof; its numerical sequence only illustrates that proof. The theorem retains the energy rather than asserting polynomial projector norms.

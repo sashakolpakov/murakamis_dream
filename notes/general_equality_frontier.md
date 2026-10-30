@@ -34,23 +34,33 @@ and [joint amplitude theorem](actual_q_hahn_joint_complex_amplitude.md)
 now permit t and the magnetic coordinate to move together complexly
 on a fixed central domain, uniformly through the folded channel limit.
 The selected local sheet has an explicit principal-square-root test.
-The channel remains a discrete index. The new
-[small-channel generic-normal theorem](actual_q_hahn_small_channel_generic_normals.md)
+The [full physical complex packet](actual_q_hahn_full_physical_complex_packet.md)
+now extends the ACTUAL selected action and nonzero amplitude to every
+fixed compact of the whole strict physical tube. Its Hermitian cone
+proof retains the necessary finite-level upper boundary correction.
+The channel remains discrete, with scaled value in a compact subset
+of (0,1/2] for the amplitude statement. Its small-generic and near-fold
+paired bounds extend to that same full physical domain.
+The new [small-channel generic-normal theorem](actual_q_hahn_small_channel_generic_normals.md)
 bounds every fixed actual generic derivative with polynomial relative cost
 on compact subsets of the joint domain. The
 [partner collision theorem](actual_q_hahn_partner_normal_collision.md)
 gives the exact large-partner first normal as a transverse derivative,
 including its surviving tail. That tail has genuine additional poles;
 the ordinary-column theorem cannot be extended to all individual normals
-on the same whole domain. Smaller near-fold corridors and cancellations
-in the complete coupon remain to be controlled.
+on the same whole domain. The new [complex near-fold bound](actual_q_hahn_near_fold_complex_partner_bound.md)
+controls the FULL paired normal on a fixed complex compact when
+s=l-j satisfies s log N=o(N), including square-root windows. Its
+relative cost is subexponential. Fixed nonzero scaled channel shifts
+and a nonzero leading normal amplitude remain unresolved.
 
 The [physical paired-normal theorem](actual_q_hahn_physical_partner_normal_bound.md)
 now bounds every actual complete-channel first-normal entry relative to
 its ordinary column by N^6/256+N^2/8, with O_K(N^4) cost away from
 scaled degree one. The original generic large partner and both parities
-are retained. This closes the physical entrywise estimate, not the
-complex corridor or cancellation problem for the full source.
+are retained. This closes the physical entrywise estimate. The separate complex
+near-fold theorem controls shrinking channel windows; the global
+cancellation problem remains open.
 
 The [physical framing criterion](actual_augmented_plat_physical_framing_criterion.md)
 and [finite selected-local certificate](actual_augmented_plat_selected_local_certificate.md)
@@ -68,10 +78,41 @@ strict physical support, regardless of bridge width. The polarization
 kernel is a line through the white-normal convex polyhedron; its two
 facet exits are exactly those failures. Any two distinct facets can be
 prescribed, including the pair adjacent to the original marked physical
-edge; the source and mark stay fixed. All other factors are strictly
-physical but need not belong to the smaller central domain. This isolates
-a possible continuation/resummation problem without proving its estimates,
-its selected branches outside that domain, or a global cycle coefficient.
+edge; the source and mark stay fixed. The
+[selected-factor localization](actual_augmented_plat_selected_factor_localization.md)
+now uses the full physical packet and continued flag branches to make
+EVERY other ordinary factor source-selected. Choosing the two ends of
+one crossing-circle matching edge puts the remaining exceptions in one
+exact block. Its completed estimate and global cycle coefficient still
+require proof; the ordinary domain/sheet gap for the other factors is closed.
+
+For the original COMPLETE-circle source, the two exceptional facets
+can be chosen at the ends of one matching edge and combined by the
+[exact marked four-port identity](actual_matching_edge_marked_four_port_block.md).
+The [positive scalar theorem](actual_matching_edge_racah_positive_scalar.md)
+controls every target channel and fixed generic jet, including high
+partners and both parities. The original circle measure cancels the
+exponential row gauge exactly; the physical cup bend costs only a
+polynomial. The [completed-projector formula](actual_matching_edge_completed_projector_block.md)
+now cancels the target scalar gauge too and pairs the colliding channels
+before specialization. Its weighted upper bound leaves the native
+completed projectors and complementary-network first jets explicit;
+the scalar divided difference retains the second weight derivatives.
+Their sharp
+geometric costs and a nonzero global contribution are still unproved.
+No mixed-color packet or filling theorem follows from this local rewrite.
+
+The [physical generic-jet theorem](actual_q_hahn_physical_generic_jet_bound.md)
+also proves polynomial relative bounds for every fixed q derivative of
+ALL admissible physical columns and completed divided pairs. It uses
+the actual generic forward and backward recurrences, including the
+variation of their matrix and eigenvalue gap. This is an integer-grid
+statement. The [native-projector energy theorem](actual_matching_edge_native_projector_energy.md)
+now supplies the exact measures and column representation: every fixed
+operator derivative costs a polynomial times the original magnetic
+energy. That energy can grow exponentially, as proved by the degree-t=m
+block of the odd simple midpoint example with rate v8/(2pi). It must remain part of a
+joint contraction estimate with the actual shared wire constraints.
 
 The [local critical-character map](actual_augmented_plat_local_critical_character_map.md)
 now recovers the actual ordered transport and primitive auxiliary

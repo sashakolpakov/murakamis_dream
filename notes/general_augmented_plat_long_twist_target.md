@@ -209,8 +209,12 @@ now proves that an all-central selected frame cannot exist for the actual
 certified right-angled cut. Generic geometric strip flags localize the
 weaker strict physical-support failures to exactly TWO factors, for
 arbitrary bridge width. Those facets can be prescribed, including the pair
-adjacent to the original marked physical edge. The other factors need not lie in the central
-domain. Thus continuation or coherent resummation is required.
+adjacent to the original marked physical edge. The
+[full physical packet](actual_q_hahn_full_physical_complex_packet.md)
+and [selected-factor corollary](actual_augmented_plat_selected_factor_localization.md)
+now put EVERY other ordinary factor in its actual selected physical
+packet, with no central-support hypothesis. The two exceptions can
+instead be placed together at one crossing-circle matching edge.
 The [selected local certificate](actual_augmented_plat_selected_local_certificate.md)
 remains a conditional local theorem; it does not establish a whole-source
 cycle or sum estimate. The
@@ -220,13 +224,42 @@ retain the original derivatives. The latter exposes additional individual
 normal poles, so a full-domain paired-normal estimate cannot be assumed.
 The [physical paired-normal theorem](actual_q_hahn_physical_partner_normal_bound.md)
 does prove polynomial relative cost on the whole complete physical grid,
-retaining the actual large partner and both parities. A complex corridor
-for that normal and a whole-source estimate still require proof.
+retaining the actual large partner and both parities. The [complex near-fold theorem](actual_q_hahn_near_fold_complex_partner_bound.md)
+now supplies subexponential relative cost on a fixed complex compact
+when (l-j) log N=o(N). A fixed nonzero scaled channel shift and a
+whole-source asymptotic remain open.
+Every fixed generic q jet of all physical columns and completed divided
+pairs is also controlled by the
+[physical generic-jet theorem](actual_q_hahn_physical_generic_jet_bound.md).
+Its forward/backward proof does not supply a completed boundary tensor
+norm. The full physical packet extends the complex near-fold bound to
+all fixed physical compacts, still with a shrinking scaled channel window.
 These local results are not a whole-source asymptotic. Outside the
 specified marked domain the endpoint quadratic has monodromy, so an unspecified
 analytic continuation alone cannot identify the selected geometric
 root. A controlled simultaneous continuation and a global cycle
 estimate remain necessary.
+
+Choosing the exceptional pair at a crossing-circle matching edge
+also gives the [exact marked four-port rewrite](actual_matching_edge_marked_four_port_block.md)
+of the COMPLETE-circle source. Its original row measure cancels the
+exponential factorial gauge, and the
+[positive scalar theorem](actual_matching_edge_racah_positive_scalar.md)
+controls every recoupling target and fixed generic jet. The
+[completed-projector formula](actual_matching_edge_completed_projector_block.md)
+also cancels the target scalar gauge and combines the collision pairs
+before taking the first normal, retaining their nilpotent part.
+The remaining native projector/complement costs are explicit but not yet sharply
+bounded by the geometric action. This is not the general mixed-color
+packet required for fixed long fillings.
+
+The [native-projector energy theorem](actual_matching_edge_native_projector_energy.md)
+now bounds every fixed generic operator derivative by a polynomial
+times its explicit magnetic energy, uniformly at both parities and
+all physical degrees. A simple midpoint channel proves that energy
+can itself be exponential. The remaining joint variational estimate
+must keep the actual shared wire variables and these energy terms;
+independent local maxima do not supply it.
 
 The [full graph identity](general_matching_graph_full_normal_source.md)
 puts all folded labels and normals on the actual matching graph.

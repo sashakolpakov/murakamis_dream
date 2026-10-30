@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Native magnetic energy controls every completed projector jet · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Fourier and energy</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a> · <a href="../library.html#fourier">Fourier, weighted Cauchy, and energy</a><p><span class="badge">Native projector jets; exponential energy retained</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_edge_native_projector_energy.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_matching_edge_native_projector_energy.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_matching_edge_native_projector_energy_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="native-magnetic-energy-controls-every-completed-projector-jet">Native magnetic energy controls every completed projector jet</h1>
+<p>30 October 2026. The completed target operators in the <a href="actual_matching_edge_completed_projector_block.html">matching-edge block</a> have no additional exponential cost in any fixed generic-q derivative. Their cost is the explicit, original-basis magnetic energy below. That energy itself can be exponentially large, already for an odd simple channel. Consequently this is a quantitative source interface, not a polynomial operator bound or a whole-network estimate.</p>
+<h2 id="the-source-and-its-exact-generic-high-degree-adapter">1. The source and its exact generic high-degree adapter</h2>
+<p>Put N&gt;=3, d=N-1, q0=exp(pi i/N), q=q0 exp(epsilon), Q=q^2. The balanced ordinary highest-weight-d representation has the ACTUAL generators</p>
+<pre><code>F|u&gt;=(1-Q^(u+1))|u+1&gt;,
+Ecal|u&gt;=q^-N(1-Q^(N-u))|u-1&gt;,
+K|u&gt;=q^(d-2u)|u&gt;.</code></pre>
+<p>Use Omega=F_tot Ecal_tot+q K_tot+q^-1 K_tot^-1, with the original coproducts. Its degree-t matrix for 0&lt;=t&lt;=d is J_t(q) in the <a href="actual_q_hahn_physical_generic_jet_bound.html">physical generic-jet theorem</a>. Write its upper and lower entries a_r<sup>+,a_r</sup>- and its normalized column C_m(q;t,0)=1, with eigenvalue</p>
+<pre><code>lambda_m(q)=q^(2N-2m-1)+q^(-2N+2m+1), 0&lt;=m&lt;=t.</code></pre>
+<p>The high-degree adapter is exact BEFORE root specialization. Define</p>
+<pre><code>W(q)|u&gt;=q^(-Nu)|d-u&gt;.</code></pre>
+<p>Direct substitution gives WF=Ecal W, WEcal=FW and WK=K^-1W. The commutator Ecal F-F Ecal=(q-q<sup>-1)(K-K</sup>-1) then proves that P(W tensor W) commutes with Omega. On degree t its coefficient is the constant q^(-Nt). Hence, for 0&lt;=k&lt;=d,</p>
+<pre><code>J_(2d-k)[d-k+r,d-k+s]=J_k[r,s]                 (1)</code></pre>
+<p>as GENERIC matrices. The constant cancels in conjugation. The same identity follows by substituting u=d-k+r into the three explicit diagonals of the actual matrix. Thus every generic jet, including large-partner jets, obeys the translated low-degree identity. This statement strengthens the earlier root-only high-degree comparison; it does not differentiate that root-only formula.</p>
+<h2 id="the-magnetic-energy-and-the-operator-theorem">2. The magnetic energy and the operator theorem</h2>
+<p>Choose a completed pair 0&lt;=j&lt;l=d-j. This is the target pair g=j, g’=l, but the compiler’s channel indices are reversed. Let Pi_m be the generic projector with eigenvalue lambda_m above, and define</p>
+<pre><code>Q_j=Pi_j+Pi_l,
+M_j=(Omega-lambda_j I)Q_j.                      (2)</code></pre>
+<p>Thus M_j is EXACTLY the target nilpotent operator in the preceding block theorem, with its target-index convention. It is not a spectral derivative substituted for a generic-q derivative.</p>
+<p>For each j&lt;=t&lt;=d put f=C_j(q0;t,.). If t&lt;l, let sigma_(t,j)=f^T f. If t&gt;=l, let sigma_(t,j)=f^T w, where w is the original divided pair, equivalently the spectral derivative of the root forward recurrence. Define</p>
+<pre><code>E_(t,j)=||f||_2^2/|sigma_(t,j)|,
+E_j^full=[E_(d,j)^2+2 sum_(t=j)^(d-1) E_(t,j)^2]^(1/2). (3)</code></pre>
+<p>These are explicit nonzero bilinear measures, not a chosen positive metric on the channels. With s_r=product_(k=1)^r 2sin(pi k/N) and a_j=|1-Q0^(2j+1)|, their magnitudes are</p>
+<pre><code>|sigma_(t,j)|=s_(t-j)s_(t+j+1)/(s_t^2 a_j), t&lt;l,
+|sigma_(t,j)|=N s_(t-j)s_(t+j-d)/(s_t^2 a_j^2), t&gt;=l. (4)</code></pre>
+<p>The root columns are the original finite q-Hahn sums. Thus (3),(4) contain no undetermined projector or inverse-frame norm. If their normalized logarithms have a uniform limiting profile, the square sum in (3) takes a maximum over the ONE physical degree of this operator. It is not a product of maxima over independent local degrees. In a network the magnetic indices and degrees remain shared along the actual wires; applying separate local maxima can lose precisely that incidence. The energy may have an explicit variational rate without being polynomial or subexponential.</p>
+<p>For every fixed r&gt;=0 there is a constant C_r, uniform over N and all pairs, such that in the ORIGINAL physical Hilbert–Schmidt norm</p>
+<pre><code>||[epsilon^r]Q_j||_HS &lt;= C_r N^(8(r+1)) E_j^full,
+||[epsilon^r]M_j||_HS &lt;= C_r N^(8r) E_j^full.    (5)</code></pre>
+<p>For the operator norm the same bounds hold with E_j^full replaced by max_(j&lt;=t&lt;=d) E_(t,j), since the physical degree blocks are an orthogonal direct sum. They retain all physical total degrees and both members of every pair. On a complete degree t&gt;=l one has the stronger exact root identity</p>
+<pre><code>M_j(q0)|_t=f f^T/sigma_(t,j),
+||M_j(q0)|_t||_HS=||M_j(q0)|_t||op=E_(t,j).     (6)</code></pre>
+<p>On j&lt;=t&lt;l, Q_j is the ordinary simple projector, its two displayed norms equal E_(t,j), and M_j vanishes identically even generically. Below degree j both operators vanish. In particular E_j^full is bounded by C||Q_j(q0)||_HS: on complete blocks use M_j=(J_t-c_j)Q_j and the uniform bound for the entries and bandwidth of J_t(q0); on the other blocks use the exact rank-one norm. Thus (5) also bounds every generic jet by a polynomial times the actual root cluster norm. It does not bound that root norm itself by a polynomial.</p>
+<p>For odd N and the simple midpoint m=d/2, replace (3) by the same sum over t&gt;=m, with</p>
+<pre><code>|sigma_(t,m)|=N s_(t-m)^2/s_t^2.</code></pre>
+<p>Then its isolated projector obeys</p>
+<pre><code>||[epsilon^r]Pi_m||_HS &lt;= C_r N^(8r) E_m^full,
+||Pi_m(q0)||_HS=E_m^full.                       (7)</code></pre>
+<h2 id="generic-dual-measures-and-the-proof">3. Generic dual measures and the proof</h2>
+<p>The actual generic matrix is not symmetric. Retain its symmetrizer</p>
+<pre><code>G_0=1, G_u=product_(r=0)^(u-1) a_r^+/a_r^-,
+G=diag(G_u), GJ_t=J_t^T G.                     (8)</code></pre>
+<p>At the root G=I. For a generic simple node its left row is C_m^T G. The continuant Christoffel–Darboux identity gives exactly</p>
+<pre><code>C_m^T G C_m
+  =C_m(q;t,t) product_(h!=m)(lambda_m-lambda_h)
+                          /product_(r=0)^(t-1) a_r^-. (9)</code></pre>
+<p>One can derive (9) directly by subtracting the two tridiagonal recurrences, multiplying by the weights (8), and telescoping. In monic continuants it is P_t’(lambda_m)p_t(lambda_m)/product a_r<sup>+a_r</sup>-; since p_t=C_m(t) product a_r^+, this is (9). The endpoint is the original generic monomial</p>
+<pre><code>C_m(q;t,t)=(-1)^m q^[dt-2Nm+m^2+m].</code></pre>
+<p>Suppose t&gt;=l, and put delta=lambda_j-lambda_l. Define the units</p>
+<pre><code>b_m=C_m(q;t,t) product_(h!=j,l)(lambda_m-lambda_h)
+                          /product a_r^-,  m=j,l,
+R_m=C_m C_m^T G/b_m.                            (10)</code></pre>
+<p>Equations (9),(10) yield the exact generic identities</p>
+<pre><code>Pi_j=R_j/delta, Pi_l=-R_l/delta,
+Q_j=(R_j-R_l)/delta, M_j=R_l.                   (11)</code></pre>
+<p>At the root both b_m equal sigma_(t,j). This follows either by the double-node specialization of (9), or from sigma=f^T w=C_j(t) product_(h!=j,l)(c_j-c_h)/product a_r^-. It proves (6), including its sign. The identities are consistent with the actual target gap being -delta.</p>
+<p>Here are uniform bounds on a genuine generic disk. Choose the constant c in rho=cN^-8 sufficiently small. The physical-jet theorem gives, for BOTH m=j,l,</p>
+<pre><code>|C_m(q;t,u)| &lt;= C |f_u|, |epsilon|&lt;=rho.        (12)</code></pre>
+<p>The same theorem bounds every original offdiagonal ratio, while the endpoint monomial has exponent O(N^2). All other root node differences in (10) have magnitude at least 16/N^2 and generic derivative O(N). Their relative change is O(N^3 rho), and there are at most N factors. Therefore</p>
+<pre><code>||G||&lt;=C, |b_m/sigma|+|sigma/b_m|&lt;=C,
+||R_m||_HS&lt;=C E_(t,j)                          (13)</code></pre>
+<p>throughout the disk. No separate exponential estimate of a factorial product has entered (13); it is a RELATIVE unit bound.</p>
+<p>The actual collision gap is</p>
+<pre><code>delta=(q^s-q^-s)(q^N-q^-N), s=l-j.</code></pre>
+<p>On |epsilon|=rho its magnitude is at least c rho: its linear coefficient has magnitude 4N sin(pi s/N)&gt;=8, and the two explicit factors have uniformly controlled relative variation. The analytic completed projector therefore has norm at most C rho^-1 E_(t,j) on that circle by (11). Its holomorphy also follows directly from the coprime quadratic cluster factor of the full characteristic polynomial. Cauchy’s formula proves its bound in (5). The regular identity M_j=R_l gives the better M exponent in (5).</p>
+<p>For t&lt;l use (9) without deleting a partner: its norm is a unit relative to the nonzero simple sigma, so (12),(13) give the simple projector bound directly. The odd midpoint is identical. Finally (1) duplicates each low block except t=d. Orthogonality of the physical degree spaces in the original Euclidean basis gives exactly the square sum (3), proving (5),(7) for the whole pair.</p>
+<h2 id="the-energy-is-genuinely-exponential">4. The energy is genuinely exponential</h2>
+<p>The distinction in (5) is necessary. Take odd N=2m+1 and the simple midpoint channel in degree t=m. Its normalized original highest column has</p>
+<pre><code>|f_u|=s_m/(s_u s_(m-u)), 0&lt;=u&lt;=m,
+|sigma|=N/s_m^2=1.</code></pre>
+<p>Consequently its projector norm is EXACTLY</p>
+<pre><code>E_(m,m)=sum_(u=0)^m [s_m/(s_u s_(m-u))]^2.       (14)</code></pre>
+<p>This is a native physical operator norm, not a bound obtained by discarding phases in a contraction. Let J(x)=integral_0^x log(2sin(pi y))dy. Elementary endpoint-controlled Riemann sums give log s_floor(Nx)=N J(x)+O(log N), uniformly on [0,1/2]. Since J(1/2)=0, the largest summand in (14) occurs asymptotically at u/N=1/4: the derivative of -J(x)-J(1/2-x) is log cot(pi x). Bounding the sum between its largest term and (m+1) times that term proves</p>
+<pre><code>lim_(odd N) N^-1 log E_(m,m)
+   =-4 J(1/4)=2 Catalan/pi=v8/(2pi)&gt;0.          (15)</code></pre>
+<p>The integral identity follows directly by integrating the Fourier series for log(2sin), or may be taken as the defining integral for the constant. Thus no uniform polynomial bound for the native projector norms in the preceding block theorem is possible. The scalar target normalization has been removed exactly, and generic derivatives now add only polynomial cost. The remaining magnetic energy must still be handled by coherent sewing, a sharp variational estimate, or a different justified inner product.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_matching_edge_native_projector_energy.py">actual generic projectors, dual measures and high blocks</a>.</p>
+<p>The focused audit checks 54 original generic high-block identities, 12 full Chevalley/Casimir commutations, 819 original column four-jets, 161 generic dual norms, 78 actual residue four-jets, 39 completed cluster three-jets, 83 simple projector four-jets and 39 exact rank-one nilpotent blocks. Independent actual highest columns also check the native energy normalization in (14). The finite energy sequence through N=513 illustrates the proved limit (15); it is not the proof of that limit or of the uniform estimates.</p>
+<p>Primary-agent analytical review independently checked the actual Chevalley commutator and high-degree adapter, generic dual measure, collision sign M=R_l, relative unit and gap bounds, whole-degree assembly and the exact Steinberg exponential rate. Independent source review rederived the same normalizations, including the double-node measure and both root-measure regimes, and freshly replayed every focused audit count above. Both reviews passed. Their scope is the displayed native-energy bounds and obstruction; no graph-wide positive pairing or sharp volume estimate follows.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_edge_native_projector_energy.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-source-and-its-exact-generic-high-degree-adapter">1. The source and its exact generic high-degree adapter</a><a href="#the-magnetic-energy-and-the-operator-theorem">2. The magnetic energy and the operator theorem</a><a href="#generic-dual-measures-and-the-proof">3. Generic dual measures and the proof</a><a href="#the-energy-is-genuinely-exponential">4. The energy is genuinely exponential</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

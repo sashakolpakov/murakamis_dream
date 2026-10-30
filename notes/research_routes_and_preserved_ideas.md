@@ -170,3 +170,40 @@ retains its actual first normal and surviving tail, whose additional poles
 exclude an unrestricted individual-normal continuation. The accompanying
 [complex-growth exploration](../experiments/actual_partner_normal_complex_growth_exploration.json)
 is preserved as a diagnostic, not as a proved exponential lower bound.
+
+
+The subsequent [complex near-fold estimate](actual_q_hahn_near_fold_complex_partner_bound.md)
+controls the full paired normal on fixed complex compacts for
+(l-j) log N=o(N). The [matching-edge scalar](actual_matching_edge_racah_positive_scalar.md)
+and [marked four-port block](actual_matching_edge_marked_four_port_block.md)
+preserve another route: regroup the two exceptional factors at a
+crossing-circle edge, retain every target and the trace normal, and
+use the exact cancellation with the original complete-circle measure.
+Target/complement boundary estimates and the mixed-color/global cycle
+problem remain open. No existing route or diagnostic is removed.
+
+
+The [full physical ordinary packet](actual_q_hahn_full_physical_complex_packet.md)
+now removes the central-domain restriction on fixed compacts, with an
+explicit finite-level boundary correction. The
+[selected-factor corollary](actual_augmented_plat_selected_factor_localization.md)
+puts every ordinary factor except one chosen matching-edge pair on that
+actual selected packet. The two failures and the exact block remain;
+target/complement estimates and the global period do not follow from
+local selection. The [all-physical generic-jet theorem](actual_q_hahn_physical_generic_jet_bound.md)
+retains another complementary domain, with every fixed q derivative
+controlled on integer physical columns and divided pairs.
+
+The [completed target-projector identity](actual_matching_edge_completed_projector_block.md)
+removes the remaining target scalar factor and pairs the colliding
+channels generically. It retains the nilpotent term and the genuine
+first derivatives of the regular operators. Their native norms and
+the joint contraction remain separate estimates; the exact cancellation
+does not make those costs polynomial.
+
+The [native-energy theorem](actual_matching_edge_native_projector_energy.md)
+makes the operator cost explicit and proves that every fixed derivative
+adds only a polynomial factor. Its simple midpoint example has positive
+exponential growth, so the energy must remain in any global estimate.
+The shared-variable variational route is preserved; separate local
+maxima cannot replace the actual network constraints.

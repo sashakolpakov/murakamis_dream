@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The original matching-edge block, its row measure, and its boundary cost · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a> · <a href="../library.html#fourier">Fourier, weighted Cauchy, and energy</a><p><span class="badge">Exact marked block; row cancellation; boundary costs open</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_edge_marked_four_port_block.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_matching_edge_marked_four_port_block.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_matching_edge_marked_four_port_block_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="the-original-matching-edge-block-its-row-measure-and-its-boundary-cost">The original matching-edge block, its row measure, and its boundary cost</h1>
+<p>30 October 2026. This is an exact four-port rewrite of ONE matching edge of the original complete-circle source, at every level parity. It retains the physical cups, the categorical dual, the fixed gamma factor, every new recoupling channel, and the whole-network first normal. The original circle measure cancels the exponential row normalizer. The remaining estimate separates a positive scalar from an explicitly specified target tensor and complementary-network cost.</p>
+<p>This is not a positive norm formula for the completed block or a full-source volume bound. The retained half-twist phases, high-channel Laurent terms, and surrounding contraction are not discarded.</p>
+<h2 id="the-actual-typed-block-and-its-natural-bend">1. The actual typed block and its natural bend</h2>
+<p>Use the conventions of the <a href="general_matching_graph_full_normal_source.html">full matching-graph source</a>. Put d=N-1, q=exp(pi i/N), zeta=q exp(t), and 0&lt;=a&lt;=floor(d/2). The matching object has highest weight E=2a. The two physical objects have highest weight d. Write W_a=W_dd^(2a), with its first highest entry one, and use the ACTUAL physical cup and inverse cap</p>
+<pre><code>pV(u,d-u)=N zeta^(-d^2) (-1)^u
+             zeta^[u(d-u-1)] F_u F_(d-u)/F_d,
+ellV=pV^-1, F_r=(zeta^2;zeta^2)_r.                    (1)</code></pre>
+<p>The ordinary channel cup p_E has first coefficient one. Keep</p>
+<pre><code>gamma_a=q^(2-a^2)/N^2                              (2)</code></pre>
+<p>as a FIXED root constant. The regular generic lift of the original root channel is exactly</p>
+<pre><code>pi_a=gamma_a^-1 p_E^T W_a^T
+                   (ellV^T tensor ellV^T) P,
+K_a=W_a pi_a,                                      (3)</code></pre>
+<p>where P reverses the two physical heads. No inverse of pi_a W_a is used: that root composition is zero on every paired sector. This is the allowed regular Hopf lift of the root map, not an assertion that its entire moving-q germ equals the original circle’s germ.</p>
+<p>For an operator K on V_d tensor V_d define the cup bend by</p>
+<pre><code>B(K)=K(pV tensor pV)P,
+B(K)_(a,b,c,e)=sum_(u,v) K_(a,b;u,v) pV(u,e)pV(v,c),
+B^-1(Psi)=Psi P(ellV tensor ellV).                  (4)</code></pre>
+<p>Thus the four outside ports are ordered a,b,c,e. This is the actual reversal already present in (3), not a permutation chosen to improve a recoupling coefficient. Every external object is V_d, independently of the ribbon order elsewhere in the matching graph.</p>
+<p>The exact generic identity is</p>
+<pre><code>B(K_a)=gamma_a^-1 S_(2a),
+S_(2a)=W_a p_E W_a^T.                              (5)</code></pre>
+<p>Here is the sign and scale check. Canonical cups satisfy</p>
+<pre><code>ell_A^T p_A=(-1)^A K_A^-1,
+p_A^T=(-1)^A p_A K_A.</code></pre>
+<p>Scaling p_A and inversely scaling ell_A leaves the first identity unchanged. The two physical (-1)^d signs therefore cancel in (4). Hopf covariance gives W_a K_E=(K_d tensor K_d)W_a, so the remaining factor is p_E^T K_E^-1=p_E because E=2a is even. This proves (5) with the physical scale in (1), before specialization.</p>
+<h2 id="the-exact-recoupling-and-the-unchanged-marked-normal">2. The exact recoupling and the unchanged marked normal</h2>
+<p>The <a href="actual_general_four_port_single_racah_kernel.html">generic all-port theorem</a> now applies with A=B=C=D=d. Its actual target tensor includes the turn</p>
+<pre><code>T_(2g)(u,v,w,z)=(-1)^d zeta^(d-2u)
+    [(W_dd^(2g) tensor W_dd^(2g))p_(2g)](v,w,z,u).</code></pre>
+<p>Consequently</p>
+<pre><code>K_a=gamma_a^-1 sum_(g=0)^d
+                          L_(2g,2a) B^-1(T_(2g)).  (6)</code></pre>
+<p>All g=0,…,d are present. In particular the high targets 2g&gt;=N are genuine meromorphic generic tensors. They are not removed using the root folded-channel range of the ORIGINAL matching edge.</p>
+<p>Fix all other original matching labels. After (6) is inserted into the actual network, denote its ordinary generic closure functional on the four-port operator by C(t). It includes the original outside ordering and bends. Keep the original exposed mark on a physical edge. The proved whole-network identity first replaces that marked scalar by the normal of its ORDINARY closure:</p>
+<pre><code>Z_Delta(a,others)=nu_N^-1 [t^1] C(t)(K_a(t)),
+nu_N=2N(-1)^N/(q-q^-1).                            (7)</code></pre>
+<p>The functional C is holomorphic because its remaining original coupons and physical cups/caps are regular. Equation (7) is not obtained by moving a bare marked row through a local cap. It follows from the ordinary whole-network trace D_N(t) times a regular open scalar, exactly as in the full matching-graph theorem.</p>
+<p>For the original complete circle the outside scalar remains</p>
+<pre><code>h0_a=k_a N s_(2a)/s_a^2,
+k_a=2 if 2a&lt;d, k_a=1 if 2a=d,
+omega_a=q^(d^2/2)(-1)^a q^[a(a+1)],
+s_r=product_(v=1)^r 2sin(pi v/N).                   (8)</code></pre>
+<p>The coupon’s signed half twist contributes omega_a^epsilon. Its unit absolute value does not authorize removing its phase from the sum over a.</p>
+<h2 id="the-original-measure-cancels-the-row-gauge">3. The original measure cancels the row gauge</h2>
+<p>Write the genuine seven-factorial Racah sum as S_ag and put</p>
+<pre><code>G_ag=(-1)^d S_ag/[N]_zeta,
+R_N(a,g)=G_ag(q)&gt;0.                                (9)</code></pre>
+<p>The division is in each original summand. The <a href="actual_matching_edge_racah_positive_scalar.html">matching-edge scalar theorem</a> proves analyticity, the positive formula</p>
+<pre><code>R_N(a,g)=sum_(r=max(0,a-g))^(min(a,d-g))
+    [s_(g+r)/(s_(g+r-a)s_r s_(a-r))]^2,             (10)</code></pre>
+<p>and fixed generic jet bounds polynomial times R_N(a,g). Its full generic germ is tail-free: the original numerator never reaches [2N].</p>
+<p>The actual source coefficient, with all boundary products as defined in the all-port theorem, is</p>
+<pre><code>L_(2g,2a)=rho_a G_ag h_g,
+rho_a=(-1)^d [N]_zeta chi_(2a) X_(2a)/S0,
+h_g=1/(b_(2g) J_(d-g) V_(d-g)).                    (11)</code></pre>
+<p>In particular h_g depends on g,N,t but NOT on a. Its b,J,V are the actual first-entry and Casimir products, not a chosen orthogonality measure. For completeness, with n=d-g and Q=zeta^2,</p>
+<pre><code>S0=[2d+1]!/([d-a]!^2[a]!^2),
+V_n=zeta^n (Q^(-d-g-1);Q)_n /
+              [(Q;Q)_n^2 (Q^(-2d-1);Q)_n],
+J_n=zeta^[-n(d+1)] F_d^2/F_g^2,
+b_(2g)=(-1)^d zeta^(d-2g) h_dd^(2g)(d-g)
+                (-1)^(d-g) zeta^[-d^2+2d(d-g)-(d-g)(d-g+1)],
+h_dd^(2g)(r)=(-1)^r zeta^[r(d-2g-r-1)]
+                         F_(g+r)F_(d-r)/(F_g F_d). (12)</code></pre>
+<p>The target product also has the exact symmetric-factorial form</p>
+<pre><code>h_g=(-1)^d zeta^(g^2+d)
+   [g]!^2[d-g]!^2[2g+1]![2d+1]! /
+                   ([d]!^2[d+g+1]!^2).            (12a)</code></pre>
+<p>One can check (12a) directly by writing each negative Pochhammer in (12) as a ratio of F-factorials; the residual zeta exponent is g^2+d. If a_src(g)=chi_(2g)X_(2g)/S0 denotes the generic row formula, continued through the entire target range, this gives</p>
+<pre><code>a_src(g) h_g=[2g+1](Delta_g^2)^2,
+[N]^2 a_src(g) h_g=[2g+1]D_g^2.                   (12b)</code></pre>
+<p>Here Delta_g and D_g are the actual face factors of the scalar theorem, with D_g(q)=1. Thus even the target normalization is a specified boundary product. Equation (12b) is a generic bilinear identity, not positivity of the completed root channel measure.</p>
+<p>There is an especially useful exact simplification of the row:</p>
+<pre><code>chi_(2a) X_(2a)=(-1)^d zeta^[2a(a-d)-d]
+                             F_d^2/(F_(d-a)^2 F_(2a)),
+rho_a=zeta^(-a^2-d)
+      [d]!^2[a]!^2 / ([2a]! ([2d+1]!/[N])).         (13)</code></pre>
+<p>To check the exponent independently, converting the displayed F ratio to symmetric factorials contributes 2da-3a^2; adding 2a(a-d)-d gives -a^2-d. The powers of 1-Q cancel. At the root,</p>
+<pre><code>[2d+1]!/[N]=(-1)^d[d]!^2,
+rho_a(0)=(-1)^d q^(-a^2-d) s_a^2/s_(2a),
+h0_a gamma_a^-1 rho_a(0)
+                   =(-1)^d k_a N^3 q^(-d-2).       (14)</code></pre>
+<p>Thus the row’s exponential factorial cost cancels against the ORIGINAL circle measure. This is not an adjusted normalization. Let u_a(t)=rho_a(t)/rho_a(0). All factors of (13), after its one [N] cancellation, are root units. The same elementary harmonic product bound used for (9) proves, for each fixed m,</p>
+<pre><code>|[t^m]u_a(t)| &lt;= C_m P_N^m,
+|[t^m]G_ag(t)| &lt;= C_m P_N^m R_N(a,g),
+P_N=N^2(1+log N),                                 (15)</code></pre>
+<p>uniformly in every allowed a,g. This retains the actual generic derivatives; root equality of partner values is not differentiated.</p>
+<h2 id="the-full-first-normal-formula-and-the-precise-bound-it-gives">4. The full first-normal formula and the precise bound it gives</h2>
+<p>Set</p>
+<pre><code>H_g(t)=t h_g(t) T_(2g)(t).                         (16)</code></pre>
+<p>Every H_g is holomorphic. Indeed h_g has a simple pole exactly when 2g&lt;d, while the target cup can have a simple pole only when 2g&gt;=N. These ranges are disjoint. The Clebsch factors in T have the regular canceled physical coproduct expressions. This is the simple-pole result of the matching-edge scalar theorem, now with the actual typed source interface included.</p>
+<p>Combining (6)–(16) gives the exact original weighted sector</p>
+<pre><code>h0_a omega_a^epsilon Z_Delta(a,others)
+  =(-1)^d k_a N^3 q^(-d-2) omega_a^epsilon/nu_N
+     *sum_(g=0)^d [t^2]
+          {u_a(t) G_ag(t) C(t)(B^-1(t)H_g(t))}.    (17)</code></pre>
+<p>Only Taylor orders zero, one and two of each regular factor in (17) are needed. The regular full source requires a first normal; the second-order budget in (17) is exactly the cost of its singular recoupling coordinates. No termwise root evaluation replaces it.</p>
+<p>Here is one explicit bound, in the standard physical basis. Use the Hilbert–Schmidt norm for four-port matrices and its dual for C, and define the N-dependent quantities</p>
+<pre><code>J_C=max_(0&lt;=m&lt;=2) ||[t^m]C(t)||,
+J_g=max_(0&lt;=m&lt;=2) ||[t^m]H_g(t)||_HS.              (18)</code></pre>
+<p>They are finite, fully specified ORIGINAL tensor and complement costs. They are not postulated to be subexponential. At the root each nonzero entry of pV has magnitude N, since s_u s_(d-u)=N. Therefore</p>
+<pre><code>||B^-1(0)||_(HS-&gt;HS)=N^-2,
+||[t^m]B^-1(t)||_(HS-&gt;HS)&lt;=C_m N^-2 P_N^m
+                                  (0&lt;=m&lt;=2).       (19)</code></pre>
+<p>The second bound follows directly from the nonzero cup entries in (1) and their harmonic logarithmic derivative bounds. Thus the physical cup scale contributes no exponential cost. Expanding (17), using (15),(18),(19), and noting |nu_N|=N/sin(pi/N), gives</p>
+<pre><code>|h0_a omega_a^epsilon Z_Delta(a,others)|
+   &lt;= C k_a sin(pi/N) P_N^2 J_C
+                        sum_(g=0)^d R_N(a,g) J_g.  (20)</code></pre>
+<p>The constant is universal for these fixed jet orders. Weighted Cauchy also gives</p>
+<pre><code>sum_g R_N(a,g)J_g
+   &lt;= (sum_g R_N(a,g))^(1/2)
+                          (sum_g R_N(a,g)J_g^2)^(1/2). (21)</code></pre>
+<p>Equations (20),(21) are source-exact upper estimates with every boundary cost displayed. They do not define a positive root inner product on the original paired-nilpotent channels. Summing them over a and the other original labels retains all their original scalar weights and yields an upper bound, not a lower bound or a nonvanishing statement. Retaining the phases in (17) is necessary for an equality.</p>
+<h2 id="what-this-resolves-and-the-remaining-costs">5. What this resolves and the remaining costs</h2>
+<p>The prescribed-pair geometric localization can put both exceptional facets at the ends of this ONE matching edge. Its four outside objects are then all V_d, so (5)–(20) apply at arbitrary plat width. A main-edge pair does not have this automatic all-physical port type.</p>
+<p>The exceptional scalar is positive, tail-free, and polynomially stable at all fixed generic jet orders. The original row measure and physical bend introduce no exponential loss. The remaining local cost J_g consists exactly of the target normalization h_g and the regularized target tensor, through order two. The complement cost J_C consists of its actual contraction and derivatives, also through order two. No theorem here controls those costs sharply by the geometric action. In particular the remaining vertices are not automatically in the central selected-kernel domain merely because their weaker support defects have been localized elsewhere.</p>
+<p>A full-source volume argument still requires such a coherent bound and a nonzero selected contribution with its physical cycle. The explicit row cancellation and finite Laurent budget remove two particular normalization obstacles; they do not supply that cycle.</p>
+<p>Audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_matching_edge_marked_four_port_block.py">actual typed bend, original measure, and full recoupling</a>. The focused audit passed 30 generic physical matrix families and all 154 target coefficients, comparing 32,114 original operator entries; 19 actual root bend first-jet families, comparing 64,882 jet entries; 239 canceled row germs with 956 retained coefficients; and 54 target normalizers against their original boundary products. Odd pivotal-sign regressions and paired-nilpotent sectors are included. These finite checks supplement the generic tensor and harmonic-product proofs.</p>
+<p>Two independent analytical reviews passed the typed bend, original cup signs and gamma, both product normalizers, exact circle-measure cancellation, whole-network normal extraction and Taylor-two budget, and the norm factors in (19),(20). One reviewer also independently replayed the full focused audit and reproduced all reported counts. The reviews retain the stated complete-circle scope and the explicit, uncontrolled native target and complement costs. No positive completed Hermite metric or full-source asymptotic is inferred.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_matching_edge_marked_four_port_block.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-typed-block-and-its-natural-bend">1. The actual typed block and its natural bend</a><a href="#the-exact-recoupling-and-the-unchanged-marked-normal">2. The exact recoupling and the unchanged marked normal</a><a href="#the-original-measure-cancels-the-row-gauge">3. The original measure cancels the row gauge</a><a href="#the-full-first-normal-formula-and-the-precise-bound-it-gives">4. The full first-normal formula and the precise bound it gives</a><a href="#what-this-resolves-and-the-remaining-costs">5. What this resolves and the remaining costs</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

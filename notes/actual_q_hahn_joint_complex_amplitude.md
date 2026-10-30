@@ -1,5 +1,14 @@
 # The actual joint magnetic and pair-degree amplitude
 
+Subsequent full-domain result: the
+[full strict physical packet](actual_q_hahn_full_physical_complex_packet.md)
+extends the actual ordinary amplitude and the stated small/near-fold
+complex bounds to fixed physical compacts, with the necessary finite-level
+boundary correction. The [selected-factor corollary](actual_augmented_plat_selected_factor_localization.md)
+then selects every ordinary factor outside one prescribed matching-edge
+block. Global contraction and period estimates remain open. The argument
+below keeps its original domain and proof scope.
+
 30 October 2026. This note continues the ORIGINAL terminating q-Hahn
 kernel jointly in the pair degree t and the magnetic coordinate u.
 The channel j remains an integer. The exact accretive determinant,

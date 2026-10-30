@@ -10,13 +10,13 @@ Exact source formulas, joint local complex amplitudes and the marked geometric b
 
 ## The joint local domain
 
-The blue diamond shows where the [joint kernel theorem](../notes/actual_q_hahn_joint_complex_amplitude.md) applies in the real parts of the two physical wire coordinates. Both the pair degree and magnetic coordinate may vary complexly. The diagonal seam and outer boundary are excluded. The [framing criterion](../notes/actual_augmented_plat_physical_framing_criterion.md) gives finite inequalities for placing all coupons in this domain. The right-angled obstruction below rules out satisfying them on every selected sheet in the certified cut.
+The blue region shows the limiting [full strict physical domain](../notes/actual_q_hahn_full_physical_complex_packet.md) in the real parts of the two wire coordinates. Both the pair degree and magnetic coordinate may vary complexly. The seam and outer boundary are excluded. At finite level the proved zero-free region also excludes a band of width $1/(2N)$ on each side of the seam. Every fixed compact in the limiting domain is covered eventually.
 
-![The joint central domain in the real parts of two wire coordinates; low and high degree adapters are separated by the excluded total-degree seam.](figures/joint-kernel-domain.png)
+![The full strict physical domain in two wire coordinates, with low and high adapters and the necessary finite-level seam correction.](figures/joint-kernel-domain.png)
 
 ## Two exceptional factors at arbitrary bridge width
 
-Under the geometric strip conditions, the common framing flags determine a line through the convex hull of the normalized white face normals. A generic line meets exactly two facets. The [framing obstruction and localization](../notes/actual_right_angled_selected_framing_obstruction.md) prove that these are exactly the two local factors failing strict physical support. The two facets can be prescribed, including those adjacent to the original marked physical edge. The other factors need not lie in the smaller central domain; quantum continuation and the global estimate remain open.
+Under the geometric strip conditions, the common framing flags determine a line through the convex hull of the normalized white face normals. A generic line meets exactly two facets. The [framing obstruction and localization](../notes/actual_right_angled_selected_framing_obstruction.md) prove that these are exactly the two local factors failing strict physical support. The two facets can be prescribed, including those adjacent to the original marked physical edge. The [selected-factor theorem](../notes/actual_augmented_plat_selected_factor_localization.md) now puts every other ordinary factor on the selected full physical packet. The exceptional block and the global contraction still need a sharp estimate.
 
 ![Schematic planar section of the white-normal convex hull, with two facet exits locating the exceptional factors.](figures/two-exceptional-factors.png)
 

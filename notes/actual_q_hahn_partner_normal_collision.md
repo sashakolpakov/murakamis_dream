@@ -1,5 +1,12 @@
 # The actual partner normal is transverse to a generic collision
 
+Subsequent complex estimate: the
+[near-fold theorem](actual_q_hahn_near_fold_complex_partner_bound.md)
+controls the full paired normal on a fixed complex compact when
+(l-j) log N=o(N). It is a relative upper bound in a shrinking scaled
+channel window; fixed nonzero scaled shifts and a leading normal
+amplitude remain open. The theorem below retains its original scope.
+
 30 October 2026. The large partner in the original mixed-circle column
 can be compared with the small column BEFORE specializing q. Their
 equality holds on a generic spectral-collision hypersurface. This gives

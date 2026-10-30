@@ -1,5 +1,12 @@
 # A polynomial bound for the actual partner normal on the physical grid
 
+Subsequent complex estimate: the
+[near-fold theorem](actual_q_hahn_near_fold_complex_partner_bound.md)
+controls the full paired normal on a fixed complex compact when
+(l-j) log N=o(N). It is a relative upper bound in a shrinking scaled
+channel window; fixed nonzero scaled shifts and a leading normal
+amplitude remain open. The theorem below retains its original scope.
+
 30 October 2026. Every original physical magnetic entry of a complete
 double Casimir channel has a polynomially bounded confluent normal
 relative to its nonzero ordinary value. This includes both halves of
