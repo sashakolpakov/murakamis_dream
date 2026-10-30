@@ -101,6 +101,8 @@ The [braided change of cut](../../notes/actual_braided_two_cut_source_adapter.md
 
 Two further calculations specify that remaining integral. The [local source Ward theorem](../../notes/actual_augmented_plat_framing_density_source_ward.md) proves that its framing density is $-c_D\,dr\wedge ds/[s(1+s)]$, with a nonzero framing-independent coefficient and the original mark retained. The [finite residual-current theorem](../../notes/actual_braided_residual_framing_current.md) supplies the corresponding source-defined off-diagonal bands and exact interval boundary terms. These are distinct results: transporting the actual finite chain to the geometric relative boundary, and evaluating its coefficient there, is still required.
 
+The [common charged head chart](../../notes/actual_matching_graph_common_band_ward_current.md) now constructs the Ward currents meromorphically before contraction, retaining the distinct band-support cycles. At the resonant boundary, [factorial estimates for growing head indices](../../notes/actual_moving_period_factorial_logarithmic_escape.md), [root polynomial packets](../../notes/actual_q_hahn_resonant_hard_edge.md), and the [genuine moving-parameter packet](../../notes/actual_q_hahn_generic_resonant_hard_edge.md) give controlled pieces of the required matching calculation. Their scope is explicit: the whole source and its selected relative cycle still need to be assembled.
+
 ## Exact recoupling exposes a local geometric scalar
 
 Four external objects can be paired in two ways. The actual change of basis is computed before root specialization, with its genuine pivotal turn.

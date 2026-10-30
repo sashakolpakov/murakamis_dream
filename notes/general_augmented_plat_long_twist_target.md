@@ -66,6 +66,19 @@ including genuine generic normals. Its magnetic contour alone cannot
 acquire a nonzero period just because the continued local packet is
 nonzero. The general long-twist volume equality remains OPEN.
 
+The [common charged-current theorem](actual_matching_graph_common_band_ward_current.md)
+now constructs the meromorphic Ward equations on one primitive lattice
+before finite contraction, retaining every band's own support cycle.
+The [logarithmically escaping factorial estimate](actual_moving_period_factorial_logarithmic_escape.md)
+and [original root boundary packets](actual_q_hahn_resonant_hard_edge.md)
+control specified factors at r of order N. The
+[genuine quantum boundary packet](actual_q_hahn_generic_resonant_hard_edge.md)
+keeps t=N^2 epsilon: its normalized limit is
+0F1(;1-t/(pi i);-K), with exact source normalization and true normal
+limits. Root partner zeros and excluded divisors remain. These local
+boundary results do not yet supply a whole-source relative coefficient
+or the complementary-color gap required for the general equality.
+
 The [actual framing-density theorem](actual_augmented_plat_framing_density_source_ward.md)
 now identifies the local source form as
 Omega_src=-c_D dr wedge ds/[s(1+s)], with c_D nonzero and independent
@@ -79,8 +92,9 @@ retains two routed off-diagonal bands and gives exact integration by
 parts with both physical interval ends and genuine quantum derivatives.
 Its complete Fourier current has three-node support but still has the
 unknown whole scalar as coefficient. Its band periods are specified;
-a common off-grid current and the original chain's pushforward to the
-geometric framing boundary are not supplied by this finite identity.
+the common-current theorem above supplies the off-grid equations, while
+the original chain's pushforward to the geometric framing boundary
+remains unproved.
 
 The [braided two-cut theorem](actual_braided_two_cut_source_adapter.md)
 now gives an exact alternative functional for the SAME original marked

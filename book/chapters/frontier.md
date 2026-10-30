@@ -105,7 +105,21 @@ $$J^U\mathbf 1=z\mathbf 1,\qquad g^{\mathsf T}J^U=z g^{\mathsf T}.$$
 
 Thus either cut gives a specified functional extracting the same whole scalar. The second functional retains its braid bands and pivotal weights; its clock is the transported first-head clock. The array still has an $(N-1)^2$-dimensional undetermined part. These identities therefore provide a source-preserving way to study the remaining framing direction, without asserting that both head indices can be fixed independently or that the geometric contribution survives.
 
-The [actual residual current](../../notes/actual_braided_residual_framing_current.md) uses the two neighboring off-diagonal bands of that transported tensor. It gives an exact finite difference equation and integration by parts on every physical subinterval, retaining both ends and all genuine quantum derivatives. At completeness its Fourier current is supported on three neighboring nodes, with coefficient equal to the unknown whole scalar $z$. The conservation equation does not determine $z$. Each band also has a specified meromorphic period and a change-of-cycle rule, but a common off-grid Ward identity and the pushforward of its original chain to the framing boundary remain to be established.
+The [actual residual current](../../notes/actual_braided_residual_framing_current.md) uses the two neighboring off-diagonal bands of that transported tensor. It gives an exact finite difference equation and integration by parts on every physical subinterval, retaining both ends and all genuine quantum derivatives. At completeness its Fourier current is supported on three neighboring nodes, with coefficient equal to the unknown whole scalar $z$. The conservation equation does not determine $z$.
+
+The [common charged-current construction](../../notes/actual_matching_graph_common_band_ward_current.md) now gives the corresponding meromorphic equations before the finite sums. A spanning tree supplies one primitive lattice for the neighboring charged bands; cutting and reclosing its remaining edges constructs explicit difference currents from the actual tensor identities. Disconnected graphs require charge balance in every component. Each band keeps its own original support cycle, so the construction does not equate their periods or compute the pushforward to the geometric relative boundary.
+
+## The original source at the resonant boundary
+
+At the actual resonant cut, $r\sim N$ can send coupled magnetic indices to imaginary size $N\log N$. The [moving-factorial estimate](../../notes/actual_moving_period_factorial_logarithmic_escape.md) controls relative genuine quantum derivatives on these growing domains. It retains the factorials' absolute values and characters; it does not cross their zero or pole divisors.
+
+For the original white polynomials, the [root boundary calculation](../../notes/actual_q_hahn_resonant_hard_edge.md) retains exact Newton endpoint normalizations and proves uniform Bessel packets when one clock grows like $N^2$ or the other shrinks like $N^{-2}$. In a marked puncture configuration the limiting factor is an $I_0$ function with a proved zero-free domain. When the two clocks escape in opposite directions, the result retains a whole polynomial and all forced partner zeros, with a relative estimate on its stated complex domain. For the actual right-angled cut, the original white-reflection prefixes force the limiting total onto the positive ray, so this domain contains the genuine mixed boundary configuration without a change of marking.
+
+The [genuine quantum boundary packet](../../notes/actual_q_hahn_generic_resonant_hard_edge.md) keeps $t=N^2\epsilon$ before specialization. Its normalized limit is
+
+$$\sum_{\ell\ge0}\frac{(-K)^\ell}{\ell!\,(1-t/(\pi i))_\ell}.$$
+
+At $t=0$ this is the root Bessel series. Its parameter derivatives give the actual normalized quantum jets; differentiating a root-only formula would miss them. The exact original normalization, including its possible powers of $N$, stays in the result. These are boundary-factor theorems, not a whole-operator estimate or a proof that the geometric component contributes to the original cycle.
 
 ## How far this is from the general conjecture
 
