@@ -16,15 +16,21 @@ The blue region shows the limiting [full strict physical domain](../notes/actual
 
 ## Two exceptional factors at arbitrary bridge width
 
-Under the geometric strip conditions, the common framing flags determine a line through the convex hull of the normalized white face normals. A generic line meets exactly two facets. The [framing obstruction and localization](../notes/actual_right_angled_selected_framing_obstruction.md) prove that these are exactly the two local factors failing strict physical support. The two facets can be prescribed, including those at both ends of one crossing-circle matching edge. The [selected-factor theorem](../notes/actual_augmented_plat_selected_factor_localization.md) now puts every other ordinary factor on the selected full physical packet. The exceptional block and the global contraction still need a sharp estimate.
+Under the geometric strip conditions, the common framing flags determine a line through the convex hull of the normalized white face normals. A generic line meets exactly two facets. The [framing obstruction and localization](../notes/actual_right_angled_selected_framing_obstruction.md) prove that these are exactly the two local factors failing strict physical support. The two facets can be prescribed, including those at both ends of one crossing-circle matching edge. The [selected-factor theorem](../notes/actual_augmented_plat_selected_factor_localization.md) now puts every other ordinary factor on the selected full physical packet. The later [positive coefficient and signed-source proof](../notes/general_signed_augmented_source_volume.md) resolves the complete contraction. The exceptional operator route is preserved for deformations and generic normals.
 
 ![Schematic planar section of the white-normal convex hull, with two facet exits locating the exceptional factors.](figures/two-exceptional-factors.png)
 
 ## Two framing directions and a primitive transverse slice
 
-For the certified original matching graph, the finite boundary cores equate all quadratic white-face potentials. The two constant-prefix faces leave exactly two flat directions. The marked physical head and one neighboring original physical head detect them with determinant $\pm1$. The [rank and curvature theorem](../notes/actual_original_boundary_transverse_rank.md) therefore gives a uniformly invertible transverse Hessian. This is a choice of source coordinates. The [positive face coefficient theorem](../notes/actual_positive_face_coefficient_saddle.md) uses the same connected graph to establish its global saddle; signed channel sums and external filling colors remain separate.
+For the certified original matching graph, the finite boundary cores equate all quadratic white-face potentials. The two constant-prefix faces leave exactly two flat directions. The marked physical head and one neighboring original physical head detect them with determinant $\pm1$. The [rank and curvature theorem](../notes/actual_original_boundary_transverse_rank.md) therefore gives a uniformly invertible transverse Hessian. This is a choice of source coordinates. The [positive face coefficient theorem](../notes/actual_positive_face_coefficient_saddle.md) uses the same connected graph to establish its global saddle; the [signed Gaussian theorem](../notes/general_signed_augmented_source_volume.md) also controls the complete channel sum. External filling colors remain separate.
 
 ![Two constant-face potentials and the neighboring original physical heads that give a primitive transverse slice.](figures/face-potential-rank.png)
+
+## The cusp rectangle and the Fourier Gaussian
+
+The [external reflection and cusp theorem](../notes/actual_external_circle_reflection_and_cusp.md) places the exact complete-circle cosine term on the same primitive cusp normalization as the geometry. One polyhedral rectangle has width $W$ and height $H$; two rectangles give a meridian of length $H$ and a longitude of length $2W$. Thus $C=\pi H/W$ and the retained half-twist Gaussian has $Z=C-\pi i\epsilon$ and primitive cusp shape $\tau=2\pi i/Z$. The Fourier limit is proved on the scale $h=z\sqrt N$. The full mixed-color source and fixed-color filling packet still require additional estimates.
+
+![The primitive cusp basis from two rectangles and its exact factor of two in the folded Gaussian normalization.](figures/cusp-gaussian.png)
 
 ## The exceptional operator and its selected scalar action
 
@@ -34,7 +40,7 @@ The scalar polynomial and original resolvent have different analytic roles. All 
 
 ## The exact support boundary
 
-The prescribed geometric frame puts the exceptional edge beyond physical bandwidth. The [support calculation](../notes/actual_matching_edge_geometric_support_zero_chamber.md) identifies the failed inequality exactly. The [entire finite kernel](../notes/actual_matching_edge_entire_operator_kernel.md) cancels its apparent poles while retaining every physical lattice zero. The [joint deficient packet](../notes/actual_q_hahn_joint_deficient_degree_packet.md) now controls its selected asymptotic on a complex neighborhood of the actual geometric frame. The contribution to the original global period remains open. The axis depicts the folded limiting channel, not the finite-level bandwidth endpoint $a/N$; the geometric packet has complex magnetic coordinates.
+The prescribed geometric frame puts the exceptional edge beyond physical bandwidth. The [support calculation](../notes/actual_matching_edge_geometric_support_zero_chamber.md) identifies the failed inequality exactly. The [entire finite kernel](../notes/actual_matching_edge_entire_operator_kernel.md) cancels its apparent poles while retaining every physical lattice zero. The [joint deficient packet](../notes/actual_q_hahn_joint_deficient_degree_packet.md) now controls its selected asymptotic on a complex neighborhood of the actual geometric frame. The later positive coefficient theorem establishes the complete-source contribution; this local picture by itself does not control external-color deformations. The axis depicts the folded limiting channel, not the finite-level bandwidth endpoint $a/N$; the geometric packet has complex magnetic coordinates.
 
 ![The limiting physical bandwidth, the selected complex geometric packet, and the remaining global period problem.](figures/support-wall.png)
 

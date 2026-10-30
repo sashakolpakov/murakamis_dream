@@ -6,25 +6,24 @@ slopes fixed before the quantum level tends to infinity. It remains a
 CONJECTURE for a general essential hyperbolic augmented skeleton.
 
 There is now a whole-source intermediate theorem: the
-[original untwisted augmented source](general_untwisted_augmented_source_volume.md)
+[original signed augmented source](general_signed_augmented_source_volume.md)
 has limit equal to the actual complete volume for every fixed connected
-plat with the stated labeled right-angled certificate. Both parities and
-composite levels are included. This is an augmented-LINK theorem, not a
-long-filled knot theorem; zero-half-twist standard plats have several
-main components, and full twists do not join them.
+plat with the stated labeled right-angled certificate and any retained
+half-twist pattern. Both parities and composite levels are included.
+This is an augmented-LINK theorem, including patterns whose main strands
+form one component; it is not yet the general long-filled knot theorem.
 
-The new proof uses the [exact positive face coefficient](actual_original_marked_face_coefficient.md),
+The proof uses the [exact positive face coefficient](actual_original_marked_face_coefficient.md),
 its [global torus saddle](actual_positive_face_coefficient_saddle.md), the
 [uniform all-channel bound](actual_positive_face_channel_rate.md), and the
 [absolute facet-coning volume](actual_original_boundary_stationary_character.md).
-All original scalar factors and the primitive finite-grid measure are
-retained. The complete untwisted contraction no longer needs an assumed
-relative-cycle coefficient. General retained half twists still require
-signed-channel noncancellation. General long fillings additionally require
-the complex packet and full complementary/alias estimate in EXTERNAL
-crossing-circle colors; these are not the internal folded labels just
-controlled. The current dependency map is in the
-[frontier chapter](../book/chapters/frontier.md).
+The signed extension derives a uniform relative folded Gaussian from
+the original continuants and sums the actual phases to a nonzero leading
+coefficient. All original factors and the primitive grid measure remain.
+General long fillings still require the complex packet and full
+complementary/alias estimate in EXTERNAL crossing-circle colors; these
+are not the internal folded labels now controlled. The current dependency
+map is in the [frontier chapter](../book/chapters/frontier.md).
 
 The older source, operator, Fourier and torsor tools are preserved below
 with their own scopes. They are not an assertion that the general filling

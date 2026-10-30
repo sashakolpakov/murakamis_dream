@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>External circle reflection and its primitive cusp normalization · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a><p><span class="badge">Exact reflection; mesoscopic Fourier and primitive cusp</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_external_circle_reflection_and_cusp.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_external_circle_reflection_and_cusp.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_external_circle_reflection_and_cusp_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="external-circle-reflection-and-its-primitive-cusp-normalization">External circle reflection and its primitive cusp normalization</h1>
+<p>30 October 2026. Independently reviewed and frozen. The original color N-h circle splits exactly into a cosine-weighted COMPLETE circle and a literal small-color circle. This gives a precise interface to the positive face coefficient without discarding any root Casimir normal. The rectangle calculation independently identifies the primitive cusp shape associated with the folded Gaussian. Neither calculation proves the missing general complex external-color packet or its global gap. The exact cosine core was already identified in the <a href="actual_augmented_plat_entire_core_color_packet.html">entire core-color compiler</a>. The new interface here is its positive face-coefficient realization, its retained small-color and normal terms, and the independent primitive rectangle normalization.</p>
+<h2 id="the-actual-full-matrix-polynomial-identity">1. The actual full-matrix polynomial identity</h2>
+<p>Put N&gt;=2, d=N-1, q=exp(pi i/N). To distinguish the two Chebyshev normalizations, write</p>
+<pre><code>C_m(z)=2T_m(z/2), P_m(z)=U_m(z/2),
+C_0=2, C_1=z; P_0=1, P_1=z.</code></pre>
+<p>The <a href="actual_crossing_circle_source_and_filling.html">literal mixed-circle theorem</a> proves, on the two ORIGINAL complete physical targets,</p>
+<pre><code>L_n=(-1)^(n-1)P_(n-1)(Omega), 1&lt;=n&lt;=N,
+C_N(Omega)=-2I.                                    (1)</code></pre>
+<p>The auxiliary module has dimension n and its actual pivot K_n^(1-N). There is no additional 1/n trace factor. Equation (1) includes every double-node Jordan coefficient and the odd simple Steinberg node. Define L_0=0.</p>
+<p>For 1&lt;=h&lt;N the elementary sine subtraction formula proves the POLYNOMIAL identity</p>
+<pre><code>P_(N-h-1)(z)=T_h(z/2)P_(N-1)(z)
+                              -T_N(z/2)P_(h-1)(z).</code></pre>
+<p>Substitution of (1), with its signs, gives</p>
+<pre><code>L_(N-h)=(-1)^h T_h(Omega/2)L_N+(-1)^N L_h.          (2)</code></pre>
+<p>The same equation holds at h=0 using T_0=1 and L_0=0. The value T_N(Omega/2)=-I is supplied by the actual full pair relation, not by checking only its repeated eigenvalues.</p>
+<p>For the INTERNAL complete-circle label 0&lt;=a&lt;=floor(d/2), put</p>
+<pre><code>s_a=d-2a, c_a=q^(2a+1)+q^(-2a-1),
+L_(N,a)=h0_a W_a pi_a.</code></pre>
+<p>These are the actual complete sectors, including the nilpotent ones. At a double node L_N(c_a)=0, so multiplying by T_h retains exactly T_h(c_a/2)L_N’(c_a); its apparent T_h’ term is multiplied by zero. At the odd simple node the ordinary value is retained. Therefore</p>
+<pre><code>(-1)^h T_h(Omega/2)L_N
+     =sum_a cos(pi h s_a/N) L_(N,a).               (3)</code></pre>
+<p>Here (-1)^h cos(pi h(2a+1)/N)=cos(pi h s_a/N) follows from 2a+1=N-s_a and the INTEGER external deficit h. In particular no auxiliary color is being identified with an internal channel.</p>
+<h2 id="an-exact-subset-expansion-of-the-original-mixed-source">2. An exact subset expansion of the original mixed source</h2>
+<p>At R specified original circle ports substitute (2), tensor with all spectators, and keep each R_i^epsilon_i, physical cup/cap, unrestricted original mark and exterior framing line. Multilinearity gives a sum over subsets J of the ports. At i in J retain the literal small-color operator L_(h_i); at i outside J retain the weighted complete sum (3). The subset scalar is (-1)^(N|J|). A port with h_i=0 cannot occur in a nonzero such subset term.</p>
+<p>The term J=empty is EXACTLY</p>
+<pre><code>F_N(h)=chi_(D,N) N^R sum_a
+   product_i[k_ai beta_ai^2 omega_ai^epsilon_i
+                       cos(pi h_i s_ai/N)] C_(N,a), (4)</code></pre>
+<p>where C_(N,a) is the <a href="actual_original_marked_face_coefficient.html">original positive face coefficient</a>, beta_a=S_(2a)/S_a^2, k_a=1 at s_a=0 and2 otherwise, and omega_a=q<sup>(d</sup>2/2)(-1)^a q<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. The physical-source notation and finite scalar of that theorem are unchanged. Equation (4) applies to its connected original plat scope, independently of the additional geometric certificate used for asymptotics.</p>
+<p>Consequently F_N(Nx) is an entire, separately even finite cosine polynomial in the EXTERNAL variables x_i. Its frequencies are the INTERNAL integer deficits s_ai. This is a specified exact finite function, not an interpolation inferred from sampled asymptotics.</p>
+<p>The nonempty-J terms are not known errors. They contain ordinary simple channels killed by L_N and the full value/normal blocks of the <a href="actual_mixed_augmented_plat_compiler.html">mixed compiler</a>, equations(7),(8). They must remain until a bound on their ACTUAL contractions is proved.</p>
+<p>There is a necessary far-end cancellation even for one port. Since s_a=d modulo2, the polynomial in (4) satisfies</p>
+<pre><code>F_N(N-h)=(-1)^(N-1)F_N(h).                         (5)</code></pre>
+<p>Thus the complete cosine term alone has an opposite-end alias with the full complete rate. It cannot provide the entire external-color gap. Outside the physical high-color range, F_N is the displayed algebraic subset term, not a redefinition of the older compiler’s physical low-color core, which was set to zero. Extending the algebraic convention to h=N, the two terms in (2) cancel exactly to L_0=0. This does not wrap a physical auxiliary color; it records the endpoint cancellation that an estimate of the combined original source must respect.</p>
+<h2 id="the-genuine-first-normal-has-explicit-additional-terms">3. The genuine first normal has explicit additional terms</h2>
+<p>Keep d fixed and let zeta=q exp(epsilon). Define the signed STANDARD-pivot polynomial family</p>
+<pre><code>Ltilde_j(epsilon)=(-1)^(j-1)P_(j-1)(Omega(epsilon)),
+Delta_N(epsilon)=C_N(Omega(epsilon))+2I.</code></pre>
+<p>The polynomial identity before specialization is</p>
+<pre><code>Ltilde_(N-h)=(-1)^h T_h Ltilde_N+(-1)^N Ltilde_h
+                      +(-1)^(N+1)Delta_N Ltilde_h/2. (6)</code></pre>
+<p>All T_h here have the actual moving Casimir argument. Delta_N(0)=0 but Delta_N’(0) is generally nonzero. Its first-normal contribution cannot be deleted by differentiating the root relation (1).</p>
+<p>In fact that defect itself has an exact complete-sector resolution:</p>
+<pre><code>Delta_N&#39;(0)=sum_a (-1)^N N s_a
+           [q^(2a+1)-q^(-2a-1)] L_(N,a).          (7)</code></pre>
+<p>To prove this without a differentiated root identity, use the actual generic eigenvalues from the mixed compiler. At a double pair a,d-a, put w=q^(2a+1), A=2N-1-2a, B=2a+1. The eigenvalues are zeta<sup>A+zeta</sup>-A and zeta<sup>B+zeta</sup>-B. Their difference is -2N(w-w<sup>-1)epsilon+O(epsilon</sup>2). The corresponding Delta values are -N^2 A^2 epsilon<sup>2+O(epsilon</sup>4) and -N^2 B^2 epsilon<sup>2+O(epsilon</sup>4). Their divided difference is therefore</p>
+<pre><code>[2N^2 s_a/(w-w^-1)] epsilon+O(epsilon^2).</code></pre>
+<p>The exact linear interpolation on this generic two-dimensional spectral block now gives Delta_N’(0) as that coefficient times its root Casimir nilpotent. Dividing by the original L_N’(c_a)=(-1)^d 2N/(4-c_a^2) proves (7). Unpaired simple blocks have zero first derivative; the odd self-node has s_a=0 and also contributes zero. This proves (7) on every physical degree block.</p>
+<p>There is a SECOND distinction: the original moving auxiliary pivot is K_j^(1-N), not its fixed-root replacement (-1)^(j-1)K_j. Let H_j have weights j-1-2r and let M_j(epsilon) be the literal typed monodromy [2,1,1,2]. Exactly,</p>
+<pre><code>K_j^(1-N)=(-1)^(j-1)K_j exp(-N epsilon H_j).</code></pre>
+<p>Thus, with the actual standard trace identity kept before the limit,</p>
+<pre><code>(Llit_j)&#39;(0)=(Ltilde_j)&#39;(0)-N B_j,
+B_j=(-1)^(j-1)Tr_aux[K_j(q)H_j M_j(q)].             (8)</code></pre>
+<p>Set B_0=0 along with the algebraic convention L_0=0.</p>
+<p>Combining (6),(8) gives the literal first-normal reflection: retain the derivatives of (-1)^h T_h L_N and (-1)^N L_h, then add</p>
+<pre><code>(-1)^(N+1)Delta_N&#39;(0)L_h/2
+   +N[(-1)^h T_h B_N+(-1)^N B_h-B_(N-h)].          (9)</code></pre>
+<p>The derivative of T_h(Omega(epsilon)/2) is included. Every spectator, source cup, mark and exposed trace normalization still has its own derivative when the identity is contracted. No whole-source generic normal is replaced by a root value. Equations(2),(3) already retain the spectral normals f’(c); these are distinct from epsilon derivatives.</p>
+<h2 id="the-actual-tangent-circle-rectangle-fixes-the-factor-two">4. The actual tangent-circle rectangle fixes the factor two</h2>
+<p>At one original crossing disk let x,y be the outer white-circle curvatures and b,c its two middle curvatures. They are the SAME shared face variables (circle curvatures) used by the coefficient theorem, with zero for either of the two marked white lines. Put</p>
+<pre><code>A=x+y, T_b=sqrt(bA+xy), T_c=sqrt(cA+xy),
+C=pi(T_b+T_c)/A.                                  (10)</code></pre>
+<p>The certified rectangle is nondegenerate, so A&gt;0 and T_b+T_c&gt;0. For positive x,y,b,c put the outer tangency at z=0 and their centers at1/x and -1/y. Under the conformal inversion w=1/z their circles become the white lines Re w=x/2 and Re w=-y/2.</p>
+<p>For a middle circle of curvature b above that tangency, its original center is</p>
+<pre><code>(x-y)/(bA)+i 2T_b/(bA), radius1/b.</code></pre>
+<p>This follows by squaring its two external tangency equations. Its center norm squared minus radius squared is4/(bA); inversion therefore gives center (x-y)/4-i T_b/2 and radius A/4. The middle c circle on the other side gives center (x-y)/4+i T_c/2. The orthogonal shaded planes are the horizontal lines through these centers. Hence the actual crossing-circle rectangle has</p>
+<pre><code>white-line width W=A/2,
+shaded-line height H=(T_b+T_c)/2.                 (11)</code></pre>
+<p>The zero-curvature cases follow by the same formulas and continuous line limits. No auxiliary color or finite off-critical frame has been substituted for this complete circle packing.</p>
+<p>The <a href="general_augmented_plat_matching_geometry.html">original two-rectangle cusp marking</a>, section6, has even meridian spanning height H and disk longitude spanning TWO widths. In its positive orientation,</p>
+<pre><code>tau_geom,0=2i W/H=2i A/(T_b+T_c)=2pi i/C.          (12)</code></pre>
+<p>The area of this primitive basis is2WH, the area of the two actual rectangles. This accounts for the factor2; one rectangle width alone would give the wrong longitude.</p>
+<p>For the SOURCE half twist R^epsilon, the already typed collar calibration in the <a href="actual_augmented_plat_channel_hessian.html">channel Hessian theorem</a>, section3, gives</p>
+<pre><code>tau_geom,epsilon=tau_geom,0/(1-epsilon tau_geom,0/2)
+                =2pi i/(C-pi i epsilon).           (13)</code></pre>
+<p>Source epsilon=-1 is the geometric ‘+’ collar. This is the marked diagonal meridian in the half-twisted cusp lattice, not a claim that half of the longitude is an integral loop in the original lattice.</p>
+<h2 id="the-exact-empty-subset-term-has-a-mesoscopic-complex-gaussian-law">5. The exact empty-subset term has a mesoscopic complex Gaussian law</h2>
+<p>Assume the fixed connected labeled right-angled certificate of the <a href="general_signed_augmented_source_volume.html">signed complete-source theorem</a>. Let A_N^epsilon=F_N(0) be the original complete signed source. Let l_N be its all-maximal positive coefficient radius, and retain Z_i,N=C_i(l_N)-pi i epsilon_i with Re Z_i,N&gt;=c&gt;0. For every fixed compact complex polydisc K,</p>
+<pre><code>F_N(sqrt(N) z)/A_N^epsilon
+   =exp[-pi^2 sum_i z_i^2/Z_i,N] [1+o(1)]          (14)</code></pre>
+<p>uniformly for z in K. All fixed z derivatives converge uniformly on smaller compact polydiscs to the derivatives of the displayed Gaussian. This is an absolute derivative statement, not a relative estimate at zeros of a differentiated Gaussian.</p>
+<p>Here is a direct proof retaining both finite lattices. Write a_i=M-t_i, M=floor(d/2), s0=d-2M in {0,1}. The signed theorem gives the actual relative sector weights uniformly for max t_i&lt;=N^(1/2+delta), 0&lt;delta&lt;1/6, as</p>
+<pre><code>exp[-sum_i Z_i,N t_i(t_i+s0)/N] [1+o(1)].</code></pre>
+<p>The extra factor is cos(pi z_i(2t_i+s0)/sqrt(N)). At odd levels k_M=1 and all other multiplicities are2; at even levels all are2. Thus u=t+s0/2 gives the full integer or half-integer Gaussian, with the retained factor exp(Z_i,N s0^2/(4N)). Uniform Riemann summation on either lattice gives</p>
+<pre><code>sqrt(N) integral_R exp(-Z x^2)cos(2pi z x) dx
+   =sqrt(pi N) Z^(-1/2) exp(-pi^2 z^2/Z).</code></pre>
+<p>The square root has positive real part. The integral follows first for real positive Z and then by holomorphy on Re Z&gt;0. Its convergence is uniform on the stated compact sets of Z and complex z.</p>
+<p>The original source tails remain controlled. The cosine product costs at most C exp(C sum_i t_i/sqrt(N)), so the central absolute majorant is exp(-c|t|^2/N+C|t|/sqrt(N)). The uniform relative sector error therefore contributes o(N^(R/2)). Beyond the mesoscopic window and below the fixed macroscopic cutoff, the proved common-radius bound is a fixed polynomial times that same Gaussian majorant, and its tail tends to zero. Beyond the macroscopic cutoff the original rate gap exp(-cN+o(N)) loses at most exp(C sqrt(N)), and remains a gap. Thus these sums concern the full finite F_N, not just a chosen window. Divide by the nonzero signed complete asymptotic. Its common exterior phase and omega_M factors cancel literally. The Gaussian is bounded away from zero on K. Finally Cauchy’s formula on a slightly larger compact polydisc proves the derivative assertion.</p>
+<p>Equation (14) concerns the EXACT empty-subset term. It does not bound any nonempty-J small-color diagram, identify it with the whole mixed source, or give a fixed complex neighborhood of h/N.</p>
+<h2 id="the-primitive-hessian-matching-and-remaining-external-problem">6. The primitive Hessian matching and remaining external problem</h2>
+<p>The <a href="general_signed_augmented_source_volume.html">signed complete-source theorem</a> has folded weight exp[-Z t(t+s0)/N], where Z=C-pi i epsilon, s0=d-2floor(d/2), and s=s0+2t. The cosine in (3) is therefore in exactly the normalization whose Gaussian transform has the candidate quadratic external action</p>
+<pre><code>phi(x_ext)=Phi-pi^2 x_ext^2/Z+O(x_ext^4).          (15)</code></pre>
+<p>Equation (14) proves this Gaussian normalization on its mesoscopic scale; it does NOT assert a general fixed-neighborhood external asymptotic or an analytic action phi. If the required packet is proved, its retained similarity coordinates U=-2pi i x_ext and V=-2phi’ give V/U=tau_geom,epsilon to first order by (13).</p>
+<p>In particular phi’‘(0)=pi i tau_geom,epsilon. The transfer template which writes phi’’=2pi i tau_packet uses</p>
+<pre><code>tau_packet=tau_geom,epsilon/2=pi i/Z.              (16)</code></pre>
+<p>This agrees with the existing marked channel elimination and keeps the primitive cusp shape separate from the packet’s Hessian convention.</p>
+<p>A real sqrt(N) folded-window estimate does not imply a relative packet on a fixed COMPLEX external neighborhood: the relevant complex internal displacement is then of order N. The general nonempty-J small-color contractions, the combined far-color and alias gap, and the actual nonlinear marked regulator comparison remain necessary inputs to <a href="general_original_source_long_filling_transfer.html">general long-filling transfer</a>, equations(2)–(5). None is claimed here. The external h_i and the internal s_i,a_i remain different variables throughout.</p>
+<h2 id="a-strict-bound-for-the-all-small-untwisted-subset">7. A strict bound for the all-small untwisted subset</h2>
+<p>One subset admits an immediate literal bound. Assume EVERY circle is replaced by L_(h_i), h_i&gt;=1, and every retained epsilon_i is zero. Write B_N^small(h) for this original marked contraction. In the original balanced complete physical basis,</p>
+<pre><code>F|u&gt;=(1-Q^(u+1))|u+1&gt;,
+Ecal|u&gt;=(Q^(-u)-1)|u-1&gt;, K|u&gt;=q^d Q^(-u)|u&gt;.</code></pre>
+<p>Thus ||F||,||Ecal||&lt;=2 and ||K||=||K^-1||=1. The original coproducts F12=F tensor I+K^-1 tensor F and Ecal12=Ecal tensor K+I tensor Ecal have norms at most4. Hence ||Omega||&lt;=18. Its exact Chebyshev recurrence gives by induction ||L_h||&lt;=19^(h-1), retaining its actual full matrix.</p>
+<p>The k bottom cups have norms N^(3/2), the k-1 ordinary caps have norms N^(-1/2), and the unrestricted marked cap has norm N^-1: their respective supported entries have moduli N,1/N,1/N^2, with N,N,N^2 entries. The exterior framing factor is a unit. The literal matrix contraction therefore satisfies</p>
+<pre><code>|B_N^small(h)|&lt;=N^(k-1/2) 19^[sum_i(h_i-1)].       (17)</code></pre>
+<p>If any h_i=0 this algebraic subset term is zero. Equation(17) is subexponential for h_i=O(sqrt(N)). For a fixed certified positive-volume exterior, it also gives a strict gap below F0=Vol(Y_D)/(2pi) throughout 1&lt;=h_i&lt;=delta N whenever delta R log19&lt;F0.</p>
+<p>This covers only J=all ports and epsilon_i=0. A proper subset still contains its actual complete coupons; a signed port still contains R^epsilon. Neither may be deleted from the norm estimate. No general proper-subset gap, signed small-color bound, or mixed packet follows from (17), and no generic-q normal is inferred from this root estimate.</p>
+<h2 id="verification-and-review">8. Verification and review</h2>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_external_circle_reflection_and_cusp.py">focused audit</a>, with <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_external_circle_reflection_and_cusp_results.json">recorded results</a>, checks 78 formal polynomial identities, 54 full root matrix reflections, 204 actual complete-sector weights, 54 genuine polynomial first jets, and nine full Casimir-relation normal defects. Fourteen independently built original typed circle/pivot jets and fourteen literal first-normal reflections check both terms of (9), including the moving pivot. Six exact inversion identities and nine primitive/packet Hessian identities check the geometric normalization. An additional 216 complex Gaussian comparisons retain both finite fold lattices and their first two derivatives; they are checks of the Gaussian step, not substitutes for the source-tail proof of (14). The latter follows from the reviewed signed source theorem as shown above.</p>
+<p>Independent primary full analytical and audit-code review, followed by a fresh redirected replay: PASS. The reader checked the full root reflection, both first-normal defects, exact sector resolution, primitive rectangle and source sign, complete mesoscopic tail argument, and the narrow all-small untwisted norm bound. Every recorded audit count was reproduced, with Gaussian comparison error below1.7e-18.</p>
+<p>Independent peer analytical review: PASS. The reader independently checked the reflection and generic defect signs, original moving pivot, primitive factor2 and the actual finite-lattice mesoscopic proof, including its complex and derivative scope. The all-small bound was separately checked against the literal generators and original boundary norms. No fixed-neighborhood mixed-color packet, proper-subset gap or filled-knot limit is inferred.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>a(a+1)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_external_circle_reflection_and_cusp.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-full-matrix-polynomial-identity">1. The actual full-matrix polynomial identity</a><a href="#an-exact-subset-expansion-of-the-original-mixed-source">2. An exact subset expansion of the original mixed source</a><a href="#the-genuine-first-normal-has-explicit-additional-terms">3. The genuine first normal has explicit additional terms</a><a href="#the-actual-tangent-circle-rectangle-fixes-the-factor-two">4. The actual tangent-circle rectangle fixes the factor two</a><a href="#the-exact-empty-subset-term-has-a-mesoscopic-complex-gaussian-law">5. The exact empty-subset term has a mesoscopic complex Gaussian law</a><a href="#the-primitive-hessian-matching-and-remaining-external-problem">6. The primitive Hessian matching and remaining external problem</a><a href="#a-strict-bound-for-the-all-small-untwisted-subset">7. A strict bound for the all-small untwisted subset</a><a href="#verification-and-review">8. Verification and review</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

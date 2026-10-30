@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Volume equality for the original signed augmented source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Equality results</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#equality">Volume equality for knot and link families</a> · <a href="../library.html#frontier">Obstructions and the general conjecture</a><p><span class="badge">General certified signed augmented-link theorem</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/general_signed_augmented_source_volume.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_general_signed_augmented_source_volume.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/general_signed_augmented_source_volume_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="volume-equality-for-the-original-signed-augmented-source">Volume equality for the original signed augmented source</h1>
+<p>30 October 2026. Independently reviewed. This note proves a uniform relative folded-channel estimate from the ORIGINAL finite continuants, then sums the actual half-twist phases. It concerns a fixed connected certified right-angled augmented diagram, at arbitrary fixed bridge width, through both parities and all sufficiently large levels. The external crossing-circle colors needed for long fillings are not the internal channels estimated here.</p>
+<h2 id="exact-source-and-statement">1. Exact source and statement</h2>
+<p>Use the labeled geometric certificate and original marked normalization of the <a href="general_untwisted_augmented_source_volume.html">untwisted theorem</a>. Let R be the number of crossing circles, d=N-1, M=floor(d/2), and s0=d-2M in {0,1}. Retain any fixed vector of actual half twists epsilon_i in {0,1,-1}, and the separately specified exterior framing unit chi_(D,N). Write Y_D^epsilon for the certified complete augmented exterior with those recorded face pairings. Its volume is 2Vol(Q_D), unchanged by the half-twist pairings.</p>
+<p>The <a href="actual_original_marked_face_coefficient.html">exact marked coefficient identity</a> is</p>
+<pre><code>A_(D,N)^epsilon = chi_(D,N) N^R
+   sum_(0&lt;=a_i&lt;=M) product_i[k_ai omega_ai^epsilon_i] F_N(a),
+F_N(a)=product_i beta_ai^2 * C_(N,a),                 (1)</code></pre>
+<p>where C_(N,a) is the specified nonnegative face coefficient of product_i[D_ai,in D_ai,out P_(d-2ai)]. The two marked faces are set to zero; all the other face variables are shared. Here</p>
+<pre><code>beta_a=S_(2a)/S_a^2, S_j=product_(r=1)^j 2sin(pi r/N),
+omega_a=q^(d^2/2)(-1)^a q^[a(a+1)], q=exp(pi i/N),
+k_a=1 if 2a=d, and k_a=2 otherwise.</code></pre>
+<p>No trace normal is missing from (1): the original complete-circle coefficient is already included in these factors. This is the root complete source identity, not a differentiation of an off-grid root formula or a statement about individual generic-q normals.</p>
+<p>Let l_N be the unique positive critical radius of the all-maximal coefficient, with one finite face radius fixed by homogeneity. The <a href="actual_positive_face_coefficient_saddle.html">global coefficient theorem</a> gives l_N -&gt; l^geom. For circle i, let (x_i,b_i,c_i,y_i) be its actual four face radii at l_N, including the prescribed zeros, and put</p>
+<pre><code>A_i=x_i+y_i,
+C_i(l_N)=pi[ sqrt(b_i A_i+x_i y_i)
+                +sqrt(c_i A_i+x_i y_i)]/A_i,
+Z_i,N=C_i(l_N)-pi i epsilon_i.                       (2)</code></pre>
+<p>The actual zero patterns have A_i&gt;0 and C_i&gt;0. All their positive coordinates stay in compact sets, so Re Z_i,N has a uniform positive lower bound. Each square root of Z_i,N below has positive real part. We prove the stronger asymptotic</p>
+<pre><code>A_(D,N)^epsilon
+  =chi_(D,N) N^R F_N(M,...,M) product_i omega_M^epsilon_i
+     *(pi N)^(R/2) product_i Z_i,N^(-1/2) *[1+o(1)]. (3)</code></pre>
+<p>In particular the original signed source is nonzero for all sufficiently large N, and</p>
+<pre><code>lim_(N-&gt;infinity) (2pi/N) log|A_(D,N)^epsilon|
+                  =2Vol(Q_D)=Vol(Y_D^epsilon).      (4)</code></pre>
+<p>All quantifiers hold for each fixed connected diagram with its actual nondegenerate labeled certificate; the diagram does not grow with N. Neither one main component nor a restricted graph grammar is required. The statement includes signed complete augmented link exteriors, including those whose main strands form one component, that satisfy the certificate. It does not assert the volume limit after independently long Dehn fillings of the crossing circles.</p>
+<h2 id="an-endpoint-safe-recurrence-for-the-normalized-determinant">2. An endpoint-safe recurrence for the normalized determinant</h2>
+<p>For one actual triangle write</p>
+<pre><code>D_a(x,b,y)=det[bI+(x/2)H_-+(y/2)H_+],
+Z_a^b=beta_a D_a(x,b,y), e_a=Z_a^b/Z_(a-1)^b,
+A=x+y&gt;0, theta=pi/N.</code></pre>
+<p>The original tridiagonal entries and sine products give EXACTLY</p>
+<pre><code>e_1=A+2b cos(theta),
+e_a=(1+tau_a)[A+2b cos(a theta)cos((a-1)theta)]
+      -tau_a[A^2-4xy cos^2((a-1)theta)]/e_(a-1),
+tau_a=tan((a-1)theta)/tan(a theta), 2&lt;=a&lt;=M.        (5)</code></pre>
+<p>For clarity, beta_a/beta_(a-1) equals sin((2a-1)theta)sin(2a theta)/sin^2(a theta). Multiplying the literal continuant recurrence by this ratio gives (5); its off-diagonal product becomes tau_a times the displayed quadratic. No matrix of virtual size beyond M is used.</p>
+<p>Since 0&lt;=tau_a&lt;1 and 0&lt;=4xy&lt;=A^2, induction in (5) proves</p>
+<pre><code>A&lt;=e_a&lt;=2A+4b.                                    (6)</code></pre>
+<p>If T_b=sqrt(bA+xy)=0, necessarily b=0 and xy=0, and e_a=A identically. This single-variable case is retained separately. In every other fixed zero pattern T_b/A is bounded above and below by positive constants on the positive radius compact.</p>
+<p>Set k=N/2-a, so k_min=N/2-M=(s0+1)/2, and set</p>
+<pre><code>E_k=e_a/A, lambda_b=2pi T_b/A,
+E_k^*=exp(lambda_b k/N).</code></pre>
+<p>Then (5) becomes, with tau=tan(k theta)/tan((k+1)theta),</p>
+<pre><code>E_k=(1+tau)[1+(2b/A)sin(k theta)sin((k+1)theta)]
+   -tau[1-(4xy/A^2)sin^2((k+1)theta)]/E_(k+1).    (7)</code></pre>
+<p>Choose a sufficiently small fixed delta0&gt;0. Substituting E^* in (7), its residual R_k satisfies uniformly for k_min&lt;=k&lt;=2delta0 N</p>
+<pre><code>|R_k|&lt;=C[k/N^2+k^3/N^3].                          (8)</code></pre>
+<p>Here is the cancellation behind this estimate. Uniform Taylor expansion gives tau=k/(k+1)+O(k/N^2). The two terms linear in k/N cancel. The quadratic k<sup>2/N</sup>2 terms cancel because lambda_b<sup>2=4pi</sup>2(b/A+xy/A^2). The finite k+1 offset leaves an O(k/N^2) term, which must not be dropped; the remaining Taylor terms are O(k<sup>3/N</sup>3). Taylor remainders are uniform when k theta is in the stated small compact interval, including k=1/2 and k=1.</p>
+<p>This approximate solution selects the actual positive solution without an asymptotic boundary condition. Start at k0 in [2delta0 N-2,2delta0 N] on the actual integer or half-integer lattice. By (6) both E_k0 and E_k0^* are bounded. Subtracting (7) for the two sequences gives an error recurrence with nonnegative multiplier</p>
+<pre><code>K_k=tau[1-(4xy/A^2)sin^2((k+1)theta)]
+                                  /(E_(k+1)E_(k+1)^*)
+       &lt;=tau exp[-lambda_b(k+1)/N].</code></pre>
+<p>The exact telescope of the tau factors therefore bounds propagation from j to k by</p>
+<pre><code>P_kj&lt;=C(k/j) exp[-c(j^2-k^2)/N].                  (9)</code></pre>
+<p>For k&lt;=delta0 N the starting error is exponentially small, because the recurrence was started at twice this cutoff. Summing (8) with (9) gives</p>
+<pre><code>|E_k-E_k^*|&lt;=C[N^-1+k^2/N^2]+Ce^(-cN),
+|log(e_a/A)-lambda_b k/N|
+                   &lt;=C[N^-1+k^2/N^2]+Ce^(-cN).   (10)</code></pre>
+<p>Indeed the residual sum is at most Ck sum_(j&gt;=k) exp[-c(j<sup>2-k</sup>2)/N](N%5E-2+j%5E2/N%5E3). For k&lt;=sqrt(N), comparison with Gaussian integrals bounds it by Ck/N^(3/2)&lt;=C/N. For k&gt;=sqrt(N), write j=k+l and use j<sup>2-k</sup>2&gt;=2kl to obtain C[N<sup>-1+k</sup>2/N^2]. This proves (10) at both physical fold endpoints. The exact constant case T_b=0 satisfies it with zero error.</p>
+<h2 id="the-original-circle-has-a-relative-folded-packet">3. The original circle has a relative folded packet</h2>
+<p>For t=M-a&gt;=0, the t removed pivots have k=k_min,…,k_min+t-1, hence sum k=t(t+s0)/2. Summing (10),</p>
+<pre><code>Z_(M-t)^b/Z_M^b
+  =A^(-t) exp[-pi T_b t(t+s0)/(AN)]
+                  *exp[O(t/N+t^3/N^2)].           (11)</code></pre>
+<p>The original forced product changes by the EXACT paired factors</p>
+<pre><code>P_(s0+2t)(x,y)/P_s0(x,y)
+   =product_(k=k_min)^(k_min+t-1)
+                     [A^2-4xy sin^2(k theta)]
+   =A^(2t) exp[O(t^3/N^2)].                       (12)</code></pre>
+<p>Combining the two triangles, the powers of A cancel. With B_(N,a)=beta_a^2 D_a(x,b,y)D_a(x,c,y)P_(d-2a)(x,y),</p>
+<pre><code>log[B_(N,M-t)/B_(N,M)]
+   =-C(x,b,c,y)t(t+s0)/N+O(t/N+t^3/N^2),
+C=pi(T_b+T_c)/A&gt;0.                               (13)</code></pre>
+<p>This is uniform on the stated radius compacts for 0&lt;=t&lt;=delta0 N. For any fixed 0&lt;delta&lt;1/6, it is a relative 1+o(1) packet uniformly for t&lt;=N^(1/2+delta). Choosing delta0 smaller if necessary also gives</p>
+<pre><code>B_(N,M-t)/B_(N,M)&lt;=C0 exp[-c0 t^2/N]
+                            (0&lt;=t&lt;=delta0 N).     (14)</code></pre>
+<p>The O(t/N) term in (13) is absorbed by a constant plus a small multiple of t^2/N; the cubic term is absorbed by choosing delta0. No limiting-rate error has been used as a relative estimate.</p>
+<p>We also need finite radius derivatives, but not derivatives of the sharp error (10). For any actual principal matrix M_j at real positive radii, a fixed sufficiently small complex logarithmic radius change gives</p>
+<pre><code>M_j(z)=M_j(0)^(1/2)(I+E)M_j(0)^(1/2), ||E||&lt;1/4</code></pre>
+<p>uniformly j,N. This follows from its sum of positive semidefinite radius summands; zero faces stay zero. If v=M_j(0)^(-1/2)e_last, the ratio of the last inverse entries is v<sup>*(I+E)</sup>(-1)v/(v^*v)=1+O(||E||), uniformly even when M_j is ill-conditioned. Its reciprocal is the ratio of the original Schur pivots. Thus the marked logarithm of each pivot ratio is uniformly bounded on this polydisc. Cauchy estimates give all fixed logarithmic radius derivatives O(1). The paired factors in (12) have the same property near the fold. Consequently</p>
+<pre><code>partial_z^j log[B_(N,M-t)/B_(N,M)]=O_j(t), j&gt;=1,  (15)</code></pre>
+<p>uniformly there. This is a finite matrix estimate, including the single-variable and both maximal-fold cases.</p>
+<h2 id="transfer-from-shared-radius-values-to-actual-coefficients">4. Transfer from shared-radius values to actual coefficients</h2>
+<p>Use the fixed n=R-1 log-radius gauge of the coefficient theorem. Put f_t(z)=log[product_i B_(N,M-ti)(l^geom exp z)]-d sum_f log l_f; the beta factors are constant in z. Let z_t be its unique positive critical radius, and z_0 that of the all-maximal vector. For max t_i&lt;=N^(1/2+delta), the global coefficient theorem supplies both critical points in the same fixed neighborhood, with Hessians between cN and CN, fixed higher derivatives O(N), and its relative O(N^-1) coefficient formula uniformly. Its hypotheses hold since sum s_i=o(N).</p>
+<p>Write</p>
+<pre><code>A_t=sum_i t_i(t_i+s0)/N,
+eta_t=C sum_i(t_i/N+t_i^3/N^2).</code></pre>
+<p>Equation (13), uniformly on a real neighborhood, says</p>
+<pre><code>f_t(z)-f_0(z)
+    =-sum_i C_i(z)t_i(t_i+s0)/N+error,
+|error|&lt;=eta_t.                                  (16)</code></pre>
+<p>The C_i have bounded first derivatives. Comparing the minimum of f_t with its value at z_0 and using the strong convexity of f_0 gives</p>
+<pre><code>|z_t-z_0|&lt;=C[A_t/N+sqrt(eta_t/N)],
+f_t(z_t)-f_0(z_0)
+   =-sum_i C_i(z_0)t_i(t_i+s0)/N
+                          +O(eta_t+A_t^2/N).     (17)</code></pre>
+<p>For example, the lower comparison is obtained by completing the square in cN|z-z_0|^2-C A_t|z-z_0|-eta_t, while the upper comparison uses z=z_0. This argument does not differentiate the remainder in (16).</p>
+<p>By (15) and the O(N) third derivatives of f_0, the Hessians at their respective minima differ by</p>
+<pre><code>O(sum_i t_i)+O(N|z_t-z_0|).</code></pre>
+<p>Their determinant ratio therefore tends to1 uniformly in this window. For delta&lt;1/6, eta_t=o(1), A_t^2/N=o(1), and the displacement in (17) is o(1). Restoring the uniform relative coefficient formulas yields the actual finite-source sector ratio</p>
+<pre><code>F_N(M-t_1,...,M-t_R)/F_N(M,...,M)
+   =exp[-sum_i C_i(l_N)t_i(t_i+s0)/N] *[1+o(1)]    (18)</code></pre>
+<p>uniformly on the whole stated window. All beta/CD normalization, the two physical fold offsets and the shared radius constraints have been retained. There is no continuous-color interpolation assumption.</p>
+<h2 id="the-full-signed-channel-sum-including-its-tails">5. The full signed channel sum, including its tails</h2>
+<p>The original finite half-twist has the exact ratio</p>
+<pre><code>omega_(M-t)/omega_M=exp[pi i t(t+s0)/N].           (19)</code></pre>
+<p>Its (-1)^a factor cancels the apparent nearest-node alternation; it cannot be discarded before expanding the quadratic exponent. Multiply (18) by (19) and retain k_a from (1). If N is odd, k_M=1 and all other k_a=2, giving the full integer Gaussian. If N is even all k_a=2 and t(t+1)=(t+1/2)^2-1/4, giving the full half-integer Gaussian. In either case, uniformly for Z in compact subsets of Re Z&gt;0,</p>
+<pre><code>sum_(t&gt;=0) k_(M-t) exp[-Z t(t+s0)/N]
+                   =sqrt(pi N)/sqrt(Z) *[1+o(1)], (20)</code></pre>
+<p>where the notation on the left extends the corresponding multiplicity pattern to the infinite Gaussian lattice. This follows directly by the real Riemann sum for exp(-Zx^2), with Gaussian tail domination; the integral is sqrt(pi)/sqrt(Z) by analytic continuation from Z&gt;0. The even factor exp(Z/4N) tends to1. Truncation at the window of (18) has exponentially small Gaussian tails.</p>
+<p>The uniform o(1) in (18) causes o(N^(R/2)) absolute error in the normalized signed sum, since its absolute Gaussian majorant has that order. The product of the nonzero integrals in (20) has order N^(R/2) with a fixed positive lower bound on its modulus after normalization. This proves a nonzero signed leading coefficient on the window.</p>
+<p>It remains to justify deleting every other original channel. Evaluate each positive coefficient at the SAME all-maximal critical radius l_N. The central coefficient formula gives, with n=R-1,</p>
+<pre><code>F_N(M-t)/F_N(M)
+   &lt;=C N^(n/2) product_i[B_(N,M-ti)(l_N)/B_(N,M)(l_N)]. (21)</code></pre>
+<p>When all t_i&lt;=delta0 N but some t_i&gt;N^(1/2+delta), (14) makes the right side at most a polynomial times exp(-cN^(2delta)). The polynomial number of labels and their bounded k factors are harmless. The proof of (14) started at 2delta0 N, so no unresolved initial continuant error remains at this mesoscopic cutoff.</p>
+<p>If some t_i&gt;delta0 N, the <a href="actual_positive_face_channel_rate.html">uniform all-channel common-radius theorem</a> gives a strict macroscopic rate gap, uniformly at l_N -&gt; l^geom. All other circle rates are bounded above by their fold values. Dividing by the central coefficient, whose rate is the same fold value, leaves exp(-cN+o(N)); again the number of labels is polynomial. All phases have modulus1. Thus neither tail affects the window’s leading coefficient. Equations (18)–(21) establish (3).</p>
+<p>Finally the <a href="actual_original_boundary_stationary_character.html">absolute source coning anchor</a> and the central coefficient theorem give N^-1 log F_N(M,…,M) -&gt; Vol(Y_D^epsilon)/(2pi). Every additional factor in (3) is polynomial or a unit, and its displayed Gaussian product is nonzero. This proves (4).</p>
+<h2 id="scope-and-verification">6. Scope and verification</h2>
+<p>This closes cancellation of the retained half-twist phases for the ORIGINAL complete augmented source under the stated general geometric certificate. It uses the exact marked compact-torus coefficient, not an assumed geometric intersection number or an independently normalized local thimble. The distinct external-color packet and its aliases needed to pass to independently long filled knots remain unproved by this theorem. No whole-source generic-q normal or growing-diagram uniformity is claimed.</p>
+<p>Focused audit: <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_general_signed_augmented_source_volume.py">original signed finite sources and folded factors</a>, with <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/general_signed_augmented_source_volume_results.json">saved results</a>. At 90 digits it checks 1260 original normalized pivots, 280 direct original determinants, 180 exact single-summand pivots, 756 forced pairs and 756 circle ratios, 108 literal half-twist ratios and their fold multiplicities, and 476 complex-radius pivot comparisons. Ten whole original W/pi source sums at bridge widths two and three are compared with the independently summed face coefficients, retaining all phases, physical cups and the original marked cap. These finite source fixtures are normalization tests, not geometric certificates; their possible zeros do not assert a failure of the theorem’s nondegenerate certificate hypothesis. Forty all-channel tetrahedral signed sums and 168 local folded packets are asymptotic diagnostics. The uniform estimates and noncancellation are proved above.</p>
+<p>Two independent full analytical reviews: PASS. The readers checked the literal source normalization and common half-twist phase, endpoint-safe continuant, uniform residual and contraction, shared-radius minimum and Hessian comparison, both exact channel lattices, signed Gaussian and both tail ranges. Independent full audit-code read and fresh redirected 90-digit replay: PASS, reproducing every recorded count and maximum exact relative error below 1.2e-89. The conclusion is the stated complete signed augmented-link equality; external filling colors remain separate.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/general_signed_augmented_source_volume.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-source-and-statement">1. Exact source and statement</a><a href="#an-endpoint-safe-recurrence-for-the-normalized-determinant">2. An endpoint-safe recurrence for the normalized determinant</a><a href="#the-original-circle-has-a-relative-folded-packet">3. The original circle has a relative folded packet</a><a href="#transfer-from-shared-radius-values-to-actual-coefficients">4. Transfer from shared-radius values to actual coefficients</a><a href="#the-full-signed-channel-sum-including-its-tails">5. The full signed channel sum, including its tails</a><a href="#scope-and-verification">6. Scope and verification</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

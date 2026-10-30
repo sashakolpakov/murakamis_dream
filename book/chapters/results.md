@@ -2,15 +2,15 @@
 
 The project seeks equality for broad classes of hyperbolic knots, with the right side established as the volume of the actual complement. The results below are research proofs recorded and internally reviewed in this repository. They are not claims of external peer review.
 
-## Complete untwisted augmented links at arbitrary width
+## Complete signed augmented links at arbitrary width
 
-The [general untwisted source theorem](../../notes/general_untwisted_augmented_source_volume.md) covers every fixed connected augmented plat carrying a labeled convex ideal right-angled polyhedron for its actual projection and crossing-disk cut. There is no restriction on bridge width, matching graph, or a Conway grammar. With every retained half-twist exponent zero, the original marked complete-circle source satisfies
+The [general signed source theorem](../../notes/general_signed_augmented_source_volume.md) covers every fixed connected augmented plat carrying a labeled convex ideal right-angled polyhedron for its actual projection and crossing-disk cut. There is no restriction on bridge width, matching graph, or a Conway grammar. For any fixed pattern of retained half twists $\epsilon_i\in\{0,1,-1\}$, the original marked complete-circle source satisfies
 
-$$\lim_{N\to\infty}\frac{2\pi}{N}\log|A_{D,N}|=2\operatorname{Vol}(Q_D)=\operatorname{Vol}(Y_D).$$
+$$\lim_{N\to\infty}\frac{2\pi}{N}\log|A_{D,N}^{\boldsymbol\epsilon}|=2\operatorname{Vol}(Q_D)=\operatorname{Vol}(Y_D^{\boldsymbol\epsilon}).$$
 
-Both level parities and composite levels are included. The proof converts the whole finite source into positive face coefficients, proves a global coefficient saddle and an all-channel upper bound at shared geometric radii, and computes the absolute action by coning the actual facets. Every original scalar, support condition and marked measure remains in the identity.
+Both level parities and composite levels are included. The proof converts the whole finite source into positive face coefficients, proves a global coefficient saddle and an all-channel upper bound at shared geometric radii, and computes the absolute action by coning the actual facets. A uniform relative estimate from the original continuants then sums the retained phases to a nonzero Gaussian coefficient. Every original scalar, support condition and marked measure remains in the identity. The [untwisted proof](../../notes/general_untwisted_augmented_source_volume.md) remains a shorter entry to the positive argument.
 
-This is a complete augmented-link result. In a standard adjacent-cap plat, the untwisted main strands have several components; full twists cannot join them. General signed half-twist cancellation and the external-color packet needed for long fillings remain open. The theorem also requires the labeled geometric certificate; it does not assert that every reduced plat supplies one. The [coverage comparison](../../notes/general_untwisted_augmented_source_literature_coverage.md) credits earlier overlapping link results and checks the parallel-belt parity obstruction.
+This is a complete augmented-link result, including patterns whose main strands form one component. The external-color complex packet and full complementary-region estimate needed for independently long fillings remain open in this generality. The theorem also requires the labeled geometric certificate; it does not assert that every reduced plat supplies one. The [coverage comparison](../../notes/general_untwisted_augmented_source_literature_coverage.md) credits earlier overlapping link results and checks the parallel-belt parity obstruction.
 
 ## Full original-source equalities
 

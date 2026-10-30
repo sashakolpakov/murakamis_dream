@@ -10,7 +10,7 @@ We pursue this through the pointed quantum A-structure, exact finite source form
 
 The current target allows every fixed bridge width $k\geq2$: start with an essential hyperbolic augmented plat, then put independently sufficiently many signed twists into each designated region. The diagram and twists stay fixed as $N$ grows. The [frontier](frontier.md) separates the exact formulas and geometric certificates already available from the general quantum asymptotic still needed.
 
-**The general conjecture remains open in this repository.** The notes now include a whole-source equality for connected certified untwisted augmented links at arbitrary fixed width, as well as the specified knot families, general identities and obstructions. Internal proof review, finite checks, and exploratory calculations are distinguished throughout this guide.
+**The general conjecture remains open in this repository.** The notes now include a whole-source equality for connected certified augmented links with arbitrary retained half-twist patterns at arbitrary fixed width, as well as the specified knot families, general identities and obstructions. Internal proof review, finite checks, and exploratory calculations are distinguished throughout this guide.
 
 ![The general route: exact source, local complex amplitudes and a marked geometric branch under a positive gluing certificate; global selection and estimates remain open.](../figures/research-map.png)
 
@@ -33,8 +33,8 @@ Start with [the equality results](results.md) for the exact knot and link famili
 | General geometric branch | Under a positive gluing certificate, marked rigidity and the actual critical scheme give a stationary branch with the true volume anchor; contributing source sheet still to be established |
 | Common geometric framing | Exactly two prescribed physical-support failures for the certified right-angled cut; every other ordinary factor is on the selected full physical packet, at arbitrary bridge width |
 | Exceptional matching block | Exact generic Casimir polynomial and original resolvent period; selected scalar character relation, strict-support Green action and endpoint jets; contributing contour and joint contraction remain open |
-| Whole positive source limit | Every connected certified untwisted augmented plat, at arbitrary fixed width and both level parities; exact face coefficients and actual polyhedral volume |
-| General signed long-filled knot equality | Signed channel cancellation and the external-color complex packet with its complementary-region and alias bounds remain unresolved |
+| Whole complete source limit | Every connected certified augmented plat with any retained half-twist pattern, at arbitrary fixed width and both level parities; exact face coefficients, a nonzero signed Gaussian and actual polyhedral volume |
+| General signed long-filled knot equality | The external-color complex packet with its complementary-region and alias bounds remains unresolved |
 
 The cube, Fourier, torsor, and alternative approaches are preserved. A failed intermediate estimate is useful evidence about the argument; it is retained beside the corrected scope.
 

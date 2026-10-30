@@ -1,6 +1,6 @@
 # The current general frontier
 
-The target remains a volume theorem at **every fixed bridge width**, with independently long signed twists. The general filled-knot conjecture is open. There is now a complete-source equality for a broader intermediate class: untwisted augmented links whose actual diagram carries the labeled right-angled polyhedral certificate.
+The target remains a volume theorem at **every fixed bridge width**, with independently long signed twists. The general filled-knot conjecture is open. There is now a complete-source equality for a broader intermediate class: augmented links with any fixed retained half-twist pattern whose actual diagram carries the labeled right-angled polyhedral certificate.
 
 ## The class and the order of quantifiers
 
@@ -16,14 +16,14 @@ Under a positive marked gluing certificate, the [geometric filling theorem](../.
 
 ## A whole-source equality at arbitrary fixed width
 
-The [untwisted augmented-source theorem](../../notes/general_untwisted_augmented_source_volume.md) proves
+The [signed augmented-source theorem](../../notes/general_signed_augmented_source_volume.md) proves
 
 $$\lim_{N\to\infty}\frac{2\pi}{N}\log|A_{D,N}|
 =2\operatorname{Vol}(Q_D)=\operatorname{Vol}(Y_D).$$
 
-Here $A_{D,N}$ is the original marked complete-circle source, with its actual normalization and retained exterior framing factor. The input is a connected original plat projection and a **labeled convex ideal right-angled polyhedron** realizing its actual cut and face pairings. Every retained half-twist exponent is zero. The width and matching graph are arbitrary and fixed; both level parities and composite levels are included.
+Here $A_{D,N}$ is the original marked complete-circle source, with its actual normalization and retained exterior framing factor. The input is a connected original plat projection and a **labeled convex ideal right-angled polyhedron** realizing its actual cut and face pairings. Each retained half-twist exponent may independently be $0,+1,-1$. The width and matching graph are arbitrary and fixed; both level parities and composite levels are included.
 
-This is a theorem about complete augmented **links**. In the standard adjacent-cap plat, removing every half twist leaves several main components, which full twists do not join. The result therefore does not supply the requested knot family merely by declaring its filling slopes long. It also does not assert that every reduced plat has the required geometric certificate. Parallel belts producing a white bigon fail this certificate; the [coverage check](../../notes/general_untwisted_augmented_source_literature_coverage.md) explains why their known even-level zeros are compatible with the theorem.
+This is a theorem about complete augmented **links**, including patterns whose main strands form one component. Filling their crossing circles still requires the external-color estimates below. The theorem does not assert that every reduced plat has the required geometric certificate. Parallel belts producing a white bigon fail this certificate; the [coverage check](../../notes/general_untwisted_augmented_source_literature_coverage.md) explains why their known even-level zeros are compatible with the theorem.
 
 The proof is recorded and independently reviewed within this project. That is distinct from external peer review.
 
@@ -47,7 +47,7 @@ $$A_{D,N}=\chi_{D,N}N^R\sum_{\mathbf a}
 
 Every scalar is specified by the original source. The mark removes exactly the two face exponents $u,v$. The other $R$ target exponents already use the entire degree $dR$, so there is no additional Fourier alias. Local polynomial zeros enforce the original unwrapped support; the primitive face grid supplies the exact power $N^R$. Even-level carries cancel only after the whole marked expression is assembled.
 
-For $\epsilon_i=0$, this is a positive sum after removing the common unit phase $\chi_{D,N}$. With half twists, the same coefficients remain positive but their channel phases remain present.
+For $\epsilon_i=0$, this is a positive sum after removing the common unit phase $\chi_{D,N}$. With half twists, the same coefficients remain positive and their channel phases are summed explicitly by the signed theorem.
 
 ## Why the coefficient has the actual geometric rate
 
@@ -57,25 +57,47 @@ The proof uses one circle-packing radius for each shared white face. It does not
 2. The [global coefficient theorem](../../notes/actual_positive_face_coefficient_saddle.md) bounds the entire coefficient torus. A finite positive-matrix contraction gives exponential decay away from its unique angular maximum, followed by a nonzero relative Gaussian asymptotic.
 3. The [absolute action calculation](../../notes/actual_original_boundary_stationary_character.md) cones the marked ideal vertex to the actual white and shaded facets. Their Lobachevsky contributions give $2\operatorname{Vol}(Q_D)$, with the additive constant fixed by the original determinant normalization.
 4. The [uniform channel-rate theorem](../../notes/actual_positive_face_channel_rate.md) controls every internal label at those same radii. Its circle rate increases strictly to the fold. This bounds the whole source from above; one positive folded coefficient supplies the matching lower bound in the untwisted case.
+5. The [signed extension](../../notes/general_signed_augmented_source_volume.md) proves a uniform relative Gaussian estimate from the original finite continuants. It sums the actual half-twist phases and bounds all remaining labels. Its leading coefficient is nonzero at both level parities.
+
+More precisely, put $M=\lfloor(N-1)/2\rfloor$, $s_0=N-1-2M$ and $t_i=M-a_i$. If $F_N(\mathbf a)$ denotes the positive sector coefficient including its $\beta$ factors, the actual shared-radius saddle gives
+
+$$\frac{F_N(\mathbf M-\mathbf t)}{F_N(\mathbf M)}
+=\exp\!\left[-\sum_i C_{i,N}\frac{t_i(t_i+s_0)}{N}\right](1+o(1)),\qquad C_{i,N}>0.$$
+
+The exact phase ratio is $\omega_{M-t}/\omega_M=\exp[\pi i t(t+s_0)/N]$. Retaining the original multiplicities, the channel sum therefore contributes
+
+$$ (\pi N)^{R/2}\prod_i(C_{i,N}-\pi i\epsilon_i)^{-1/2}(1+o(1)). $$
+
+Here $C_{i,N}$ is evaluated at the exact finite critical radius and tends to a positive geometric value $C_i$. The factor cannot vanish. The estimate is relative throughout a window wider than $\sqrt N$, and the proof controls both its intermediate and macroscopic tails.
 
 ![The two constant-face directions and the neighboring original physical heads that give a primitive transverse slice.](../figures/face-potential-rank.png)
 
 ## How far this is from the requested knot theorem
 
-The complete untwisted source now has a global equality. Two substantial extensions remain for general long-filled knots:
+The complete signed source now has a global equality. The remaining general problem is passage to independently long fillings:
 
 | Required extension | What is available | What still needs proof |
 | --- | --- | --- |
-| Retained signed half twists | The exact positive coefficients and explicit channel phases; the same sharp global upper bound | Uniform relative estimates in the folded channel window and a nonzero coefficient after summing its phases |
-| Independently long fillings | The exact filling transform, primitive peripheral marks and geometric long-filling threshold | A complex packet in the **external** crossing-circle colors and a bound for the whole complementary region and its aliases |
+| Local deformed source | Exact all-color formulas, the complete signed source and primitive peripheral marks | A uniform complex packet in the **external** crossing-circle colors, with its actual marked geometric action |
+| Whole filling transform | Exact filling transform and geometric long-filling threshold | A bound for the entire complementary color region and its aliases, retaining all small-color terms |
 
-Internal deficits $s_i=N-1-2a_i$ and external filling-color deficits $h_i=N-j_i$ are different variables. The new internal-channel theorem does not provide the missing external-color estimate. Likewise, a leading logarithmic rate does not justify a relative Gaussian estimate in a window of width $\sqrt N$.
+Internal deficits $s_i=N-1-2a_i$ and external filling-color deficits $h_i=N-j_i$ are different variables. The new internal-channel theorem does not provide the missing external-color estimate. Fixed nonzero external parameters require control beyond the internal $\sqrt N$ window.
+
+The [external reflection theorem](../../notes/actual_external_circle_reflection_and_cusp.md) gives an exact interface. An original color $N-h$ circle is a cosine-weighted complete circle plus a literal color $h$ circle. The complete term has a proved Fourier limit for $h=z\sqrt N$, and its coefficient matches the primitive cusp shape:
+
+$$\frac{F_N(\sqrt N\,\mathbf z)}{A_{D,N}^{\boldsymbol\epsilon}}
+=\exp\!\left[-\sum_i\frac{\pi^2z_i^2}{Z_i}\right](1+o(1)),
+\qquad \tau_{\mathrm{geom},i}=\frac{2\pi i}{Z_i},\quad Z_i=C_i-\pi i\epsilon_i.$$
+
+This holds uniformly for bounded complex $\mathbf z$, with fixed derivatives. It is a theorem about the specified complete term. The full mixed source also contains small-color terms, and the complete term has a full-size opposite-end alias. At that endpoint the small-color term cancels it exactly. A proof for the filling transform must retain this cancellation and control the entire combined source.
+
+![Two actual cusp rectangles fix the primitive longitude factor of two and the normalization of the mesoscopic Fourier Gaussian.](../figures/cusp-gaussian.png)
 
 The [source-divisor transfer](../../notes/general_long_filling_source_divisor.md) explains the final quantifier: a nonzero analytic amplitude germ gives a result outside an exceptional divisor, while all independently long slopes require the stronger unit or coordinate-monomial condition. Those hypotheses still need to be verified for the general source.
 
 ## The exceptional edge now has an exact algebraic description
 
-The previous operator and torsor approaches remain available. The exceptional operator is the original normalized Casimir polynomial, with its [general character relation](../../notes/actual_matching_edge_polynomial_geometric_action.md) and [exact resolvent period](../../notes/actual_matching_edge_continuant_operator_period.md). The original marked transport, genuine quantum normals, odd framing source, logarithmic class and relative boundary currents are preserved in the [source and torsor routes](../library.html). The new coefficient identity resolves the complete untwisted contraction without assigning an arbitrary relative cycle.
+The previous operator and torsor approaches remain available. The exceptional operator is the original normalized Casimir polynomial, with its [general character relation](../../notes/actual_matching_edge_polynomial_geometric_action.md) and [exact resolvent period](../../notes/actual_matching_edge_continuant_operator_period.md). The original marked transport, genuine quantum normals, odd framing source, logarithmic class and relative boundary currents are preserved in the [source and torsor routes](../library.html). The new coefficient identity and signed Gaussian resolve the complete contraction without assigning an arbitrary relative cycle.
 
 The global knot quantum A-operator and its selected period have not been derived from this identity. The coefficients and source relations provide a concrete finite object for that work; they are not being renamed the knot A-polynomial.
 
