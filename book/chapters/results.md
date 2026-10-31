@@ -17,7 +17,15 @@ The new estimate treats a single attached leaf and its gate together with the co
 
 The previous uniform two-leaf estimate remains the base of this induction. Its 288 exact inequalities cover the trees that defeated the older leafwise test, including $C(A_2\mathcal R(A_4))$. The isolated three-leaf case retains its separate marked regrouping and elementary bound. Isolated $C(A_2)$ remains excluded.
 
-The theorem concerns the stated finite tangle grammar. Coverage of every arborescent presentation is open. The later [quarter-index packet](../../notes/actual_conway_quarter_index_color_packet.md) and [general strict-mask geometry](../../notes/actual_conway_general_strict_mask_geometry.md) supply local analytic and complete geometric inputs beyond that grammar. Whole-source signed bounds and the corresponding marked deformation remain separate requirements. No claim of new knot isotopy classes follows from the enlarged presentation grammar.
+The theorem concerns the stated finite tangle grammar. Coverage of every arborescent presentation is open. The later general core and marked-mask theorems extend the local analytic and marked filling inputs to every strict knot pattern. The remaining general source requirement is the nonempty-alias estimate. No claim of new knot isotopy classes follows from the enlarged presentation grammar.
+
+## Root-star companions and the general core theorem
+
+The [root-star theorem](../../notes/actual_conway_root_star_long_filling_volume.md) treats the literal expressions $C(h_0T(h_1\cdots h_s))$ for every fixed $s\ge2$. Every physical pure/odd pattern giving a knot is allowed. Independently sufficiently long fixed signed auxiliary fillings have the original invariant's volume limit, through all levels, with the knot cusp unfilled.
+
+The [child estimate](../../notes/actual_conway_root_star_full_jet_localization.md) retains values and normal derivatives; the [root contraction](../../notes/actual_conway_root_character_fourier_contraction.md) uses their exact Fourier cancellation. The [coverage comparison](../../notes/actual_conway_root_star_prior_source_coverage.md) identifies the already proved outer-kernel identity and the all-odd overlap with the octahedral-belt source. The mixed pure/odd source alphabet is broader, but a scalar identity does not classify knot types.
+
+More generally, the [quarter bound and core theorem](../../notes/actual_conway_general_core_packet_and_gap.md) prove the all-core packet and its global complement estimate for every strict knot pattern. The [marked-mask theorem](../../notes/actual_conway_general_mask_marked_filling.md) supplies the actual peripheral deformation and filled-volume calibration. Arbitrary strict trees still require a nonempty-alias estimate. These are companion research notes; the published manuscript retains its completed-root theorem.
 
 ## A global source upper bound and the classification of its maxima
 

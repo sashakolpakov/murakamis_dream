@@ -1,5 +1,9 @@
 # Publication status
 
+The latest companion update records the general strict-tree quarter bound, core estimate and marked filling geometry, together with the full root-star source and long-filling volume assembly. The Markdown guide and Sphinx companion state their scope and the remaining general nonempty-alias estimate. The published manuscript retains its completed-root theorem.
+
+The coverage audit explicitly identifies the earlier outer-kernel Fourier cancellation and the all-odd overlap with the octahedral-belt source. Mixed pure/odd leaves extend the recorded source alphabet; no new knot isotopy classification is claimed. Internal analytical reviews passed, both documentation builds passed, and 26,708 local resource links passed. The unchanged manuscript certificate suite was not rerun for this documentation and companion-proof update.
+
 The 31 October manuscript release adds the **77-page long-twist volume manuscript**, four editable TikZ illustrations, an exact certificate suite, and an illustrated Sphinx companion. The Markdown book now has a manuscript chapter and direct PDF navigation.
 
 The theorem treats the stated completed Conway grammar with two completed root children, any fixed finite size and turn depth, and independently sufficiently long fixed signed auxiliary fillings. The resulting volume is the **knot complement volume**; the knot cusp remains unfilled. The wider arborescent problem remains open.

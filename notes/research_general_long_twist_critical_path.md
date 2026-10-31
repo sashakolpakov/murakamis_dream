@@ -97,18 +97,32 @@ For the broader source approach there are four further durable results:
   positive comparison has the same positive pressure, but this alone
   cannot transfer the actual signed negative-axis rate.
 
-The next general step concerns arbitrary root-leaf closures and turned
-bare-leaf atoms. Two further reviewed inputs are now available: the
-[quarter-index color packet](actual_conway_quarter_index_color_packet.md)
-controls the original local source across the distinct-root equal-modulus
-boundary, and the [general strict-mask construction](actual_conway_general_strict_mask_geometry.md)
-proves the actual untwisted complete geometry for all strict syntax.
-Neither supplies the remaining whole-source signed bounds or a general
-marked deformation. In particular, extending the local packet does not
-automatically extend the positive alias comparison. No coverage theorem
-for all arborescent templates has been proved. The older plat, cap, Green and Fourier approaches
-below remain preserved inputs and alternative routes. Their unresolved
-general steps are not erased by the new certified tangle theorem.
+The [general quarter and core theorem](actual_conway_general_core_packet_and_gap.md)
+places every complete leaf of a strict closed tree at index at least
+\(1/4\). For strict knot patterns, gate curvature controls every primitive
+direction when there are at least three leaves; a pure leaf supplies the
+needed curvature in the two-leaf case. The original all-core sum then has
+a nonzero complex packet and a strict physical-color complement gap. The [marked-mask theorem](actual_conway_general_mask_marked_filling.md)
+extends the actual primitive peripheral deformation and absolute filling
+calibration to all those trees. For strict knot patterns, the remaining
+global source input is a bound on the total nonempty alias contribution
+at the geometric rate, or an equally sufficient bound after exact filling.
+
+The [root-star assembly](actual_conway_root_star_long_filling_volume.md)
+supplies the whole invariant limit for \(C(h_0T(h_1\cdots h_s))\),
+\(s\ge2\), with arbitrary fixed pure/odd patterns that give a knot and
+independently sufficiently long fixed signed twists. Its child proof
+retains the full Hermite jets and spectral localization; the root proof
+uses the exact missing Fourier mode. The [prior-source comparison](actual_conway_root_star_prior_source_coverage.md)
+records that this Fourier cancellation was already in the outer-kernel
+note and that all-odd star scalars overlap the older belt-stack source.
+Inner pure leaves extend the recorded two-type source alphabet, but no
+new knot isotopy classification follows. Arbitrary internally turned
+children still need a global alias estimate, and general presentation
+coverage remains open. The completed-root manuscript is unchanged.
+
+The older plat, cap, Green and Fourier routes below remain preserved
+inputs and alternatives, with their original scopes.
 
 ## New classical criteria for the actual signed exterior
 

@@ -22,5 +22,6 @@ The knot cusp stays unfilled. The threshold depends on the fixed expression and 
    manuscript
    reproducibility
    scope
+   research
 
 The `Markdown research book <../index.html>`_ provides the longer source-note archive. The `repository <https://github.com/sashakolpakov/murakamis_dream>`_ contains the manuscript, native TikZ figures, exact certificate data, and verification scripts.
