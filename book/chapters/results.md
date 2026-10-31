@@ -10,7 +10,16 @@ $$|W_N|\le Ce^{-cN}E_N,$$
 
 where $E_N$ is the original positive window envelope. The [positive two-state tail](../../notes/research_positive_eta_word_transfer.md) handles the outer relative phase. The [four-state source identity](../../notes/research_original_one_sided_four_state_transfer.md) and [analytic switch theorem](../../notes/research_analytic_switching_suppression.md) handle a mismatched middle phase while retaining both boundary terms. The unrestricted source includes the direct $i=j$ path; the disjoint regular windows considered in this estimate exclude it explicitly.
 
-On one shared face torus, inconsistent $0/\pi$ incidence constraints force at least one port to have this exponential loss. The original coefficient targets are unchanged. This is a proved improvement relative to the specified envelope, not a new volume-equality theorem: the envelope comparison, compatible phase systems and irregular windows remain to be controlled.
+The supported boundary cases now have their own exact proofs. With [one outer face protected](../../notes/research_protected_outer_window_phase_exclusion.md), the active transfer becomes scalar and the three supported phases determine alignment. With [one middle face protected](../../notes/research_protected_middle_window_phase_exclusion.md), the initial row is fixed exactly; only a strict regular stop maximum is needed, and finite row reflection gives the protected-output case. Neither result includes two zero weights or a pole-touching maximum.
+
+The [mixed theorem](../../notes/research_mixed_cross_window_cycle_packing.md) also allows whole CROSS coupons between these windows. Their majorant is $C\log^2(N+1)P_{\mathrm{CROSS},N}(L;0)$, with exponential loss away from equality of all supported phases, uniformly over real spectra. Protected zero incidences have no phase. This majorant is distinct from a moving window's positive envelope.
+
+On the original incidence graph, the [fractional cycle-packing criterion](../../notes/research_regular_window_cycle_packing.md) assigns capacities to the certified local losses. Odd $0/\pi$ cycles force a total loss $\kappa>0$, including cycles that pass through CROSS ports. The unchanged shared coefficient satisfies
+
+$$|\text{original window coefficient}|\le C e^{-\kappa N}
+\frac{\prod_e\mathcal E_{e,N}(L)}{\prod_f L_f^{t_f(N)}}.$$
+
+This is a conditional rate certificate at arbitrary fixed width. The local capacities must be certified at one common phase threshold, and the positive quotient's rate minus $\kappa$ must be compared with $\Phi_D$. Universal validity of that comparison, compatible phase systems and coverage of the remaining windows are open.
 
 ## From coefficient Cauchy to a shared volume inequality
 

@@ -21,6 +21,8 @@ The [four-state audit](../../experiments/audit_research_original_four_state_tran
 
 These validate finite indexing and retained factors. The original physical-matrix interface is inherited from the previously reviewed numerator formula. The positive transfer, analytic gauge, strict boundary gaps and shared-torus phase exclusion are proved analytically and independently reviewed; these finite checks do not prove their exponential estimates or a global volume bound.
 
+The [protected-window and mixed-cycle extensions](../../notes/research_mixed_cross_window_cycle_packing.md) have full internal analytical reviews. The outer-zero proof specializes the exact transfer; the middle-zero proof retains the actual initial seed and proves its output reflection by finite tilings. The whole-CROSS input uses the already reviewed central factorization and cofactor angular theorem. Fractional cycle packing is a finite combinatorial argument. No new numerical asymptotic audit is claimed for these consequences, and the global majorant comparison remains conditional.
+
 ## A focused starting set
 
 From the repository root, install the core research dependencies in an environment of your choice:

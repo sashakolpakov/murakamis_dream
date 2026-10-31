@@ -14,9 +14,9 @@ For the half-row straddling window, the only unsuppressed local alignment is
 
 $$\vartheta_x=\vartheta_y=\vartheta_b=\vartheta_c-\pi.$$
 
-The full-row version uses the actual signs of the unused-row factor at each endpoint. If the resulting $0/\pi$ constraints are inconsistent on the original incidence graph, compactness of the shared phase torus supplies a uniformly mismatched port. The original Cauchy integral then gains $e^{-cN}$ relative to the product of the same positive window envelopes, with one radius per face and unchanged targets.
+The full-row version uses the actual signs of the unused-row factor at each endpoint. The [mixed cycle criterion](../../notes/research_mixed_cross_window_cycle_packing.md) now includes the proved single-protected-outer and single-protected-middle windows, and whole CROSS coupons with their exact positive endpoint majorants. Only supported incidences enter the $0/\pi$ constraints. Fractional packing of odd cycles turns the certified local losses into a shared Cauchy improvement $e^{-\kappa N}$, with one radius per original face and unchanged targets. The [results section](results.md#phase-cancellation-on-regular-source-windows) groups these four extensions and their precise hypotheses.
 
-This closes a local phase-cancellation step. It does not compare that envelope with $e^{N\Phi_D}$, cover compatible phase systems, or control spectral caps, protected degeneracies and boundary maxima. Those remain separate parts of the general source problem. The coefficient-energy criterion below is another proved reduction of that problem; neither route currently establishes universal diagram coverage.
+The next quantitative step is to prove that the positive majorant rate minus the cycle loss is below $\Phi_D$, with uniform estimates for an exhaustive source decomposition. That inequality is not automatic. Compatible phase systems, double-zero specializations, spectral caps and irregular boundary maxima remain separate parts of the general problem. The coefficient-energy criterion below is another proved reduction; neither route currently establishes universal diagram coverage.
 
 ## From coefficient Cauchy to a shared volume inequality
 
