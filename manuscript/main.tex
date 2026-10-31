@@ -1,0 +1,83 @@
+\documentclass[11pt,oneside]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage[margin=30mm,headheight=15pt]{geometry}
+\usepackage{booktabs,longtable,array,enumitem,xcolor,graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,fit,decorations.pathreplacing,patterns,intersections}
+\usepackage[unicode,colorlinks=true,linkcolor=blue!45!black,citecolor=green!35!black,urlcolor=blue!55!black]{hyperref}
+\usepackage{xurl}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small\nouppercase{\leftmark}}\fancyhead[R]{\thepage}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+\setlength{\emergencystretch}{3em}
+\setlist{topsep=5pt,itemsep=3pt}
+\numberwithin{equation}{chapter}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\NN}{\mathbb N}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\Bhat}{\widehat B}
+\newcommand{\Turn}{\mathsf T}
+\newcommand{\Cheb}{\mathsf C}
+\newcommand{\Closure}{\mathsf C\!\ell}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\Res}{\operatorname{Res}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\arccot}{\operatorname{arccot}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\co}{\operatorname{co}}
+\newcommand{\poly}{\operatorname{poly}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\sourcefile}[1]{\texttt{\detokenize{#1}}}
+\newcommand{\proofinput}[1]{\par\smallskip\noindent\textit{Source record.} \sourcefile{#1}.\par\smallskip}
+\tikzset{box/.style={draw,rounded corners,fill=blue!4,align=center,inner sep=7pt}, arr/.style={-{Latex[length=2mm]},thick}, port/.style={draw,fill=white,minimum size=4mm,circle,inner sep=0pt}}
+\title{\Huge Long-twist volume limits\\[8pt]\Large for a compositional class of arborescent knots\\[18pt]\large Exact finite sources, ideal-cell geometry,\\rational alias certificates, and the full filling period}
+\author{}
+\date{31 October 2026\\[8pt]\small Research manuscript with an executable certificate companion}
+\begin{document}
+\hypersetup{pageanchor=false}
+\maketitle
+\clearpage
+\hypersetup{pageanchor=true}
+\frontmatter
+\chapter*{Abstract}
+We give a detailed proof of a long-twist volume theorem for a recursively specified class of arborescent knot diagrams. The elementary object is the turned crossing-circle tangle. Completed expressions are generated from a two-leaf block by ordered products, quarter-turns, and attachment of one further leaf to either side. The two children of the cylindrical closing product are required to be completed. For every fixed expression and a half-twist choice giving one main component, all sufficiently long, independently chosen signed auxiliary fillings satisfy the volume limit along the entire sequence of root-of-unity levels. The limiting volume is that of the knot complement after all auxiliary circles have been filled.
+
+The proof retains the original finite invariant, its single cut, its repeated Casimir roots and their first normal directions. A positive Newton multiplication law gives the exact complete source and its strict angle problem. Explicit pyramids and ordered prisms identify that problem with the actual augmented-link metric. Two finite rational supporting-plane certificates control the color aliases under composition. The selected complex packet is then inserted into the complete Fourier--Hermite filling transform, including endpoint currents and all Fourier charges. We distinguish the analytic proof from the finite certificate verification and provide build and reproduction instructions. No assertion is made for arbitrary arborescent knots or arbitrary root-leaf closures.
+\tableofcontents
+\mainmatter
+\input{sections/01-introduction}
+\input{sections/02-finite-source}
+\input{sections/03-entropy}
+\input{sections/04-geometry}
+\input{sections/05-alias}
+\input{sections/06-packet}
+\input{sections/07-marked-geometry}
+\input{sections/08-filling}
+\input{sections/09-reproduction}
+\appendix
+\input{sections/A-finite-identities}
+\input{sections/B-analytic-estimates}
+\input{sections/C-certificate-arithmetic}
+\input{sections/D-marked-cell-calibration}
+\backmatter
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

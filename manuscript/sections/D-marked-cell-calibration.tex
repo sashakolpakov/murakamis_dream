@@ -1,0 +1,448 @@
+\chapter{Original marked cell maps and absolute calibration}
+\label{app:marked-calibration}
+
+This appendix supplies the complete rational dictionary behind
+Chapter~\ref{ch:marked}. Its scope is the completed grammar in
+Definition~\ref{def:grammar}, with two completed cylindrical root children.
+The quadrilateral ports are auxiliary cut data; no physical
+four-punctured-boundary representation is inferred from their moduli.
+The original closed bowtie cut fixes the link group and every peripheral
+path. All matrices below are projective, and all logarithms continue from
+the strict complete chamber. An unfilled main cusp remains unfilled
+after all auxiliary crossing-circle fillings.
+
+\section{Two global incidence checks for the complete anchor}
+The complete cells and ordered stack maps are constructed in
+Chapter~\ref{ch:geometry}. Two points in that construction deserve an
+explicit check before one uses the group presentation.
+
+First, strict output dihedral angles keep the matching quadrilateral a
+maximal supported face. Cells on opposite supporting sides intersect only
+in that face inside hyperbolic space. Their ideal closures can meet only
+on its supporting circle. An additional ideal vertex on that circle would
+enlarge the supporting face beyond a quadrilateral edge, contradicting
+its strictly nonflat angle. Thus there are no unrecorded ideal coincidences.
+
+Second, at every open stage the four output corners are four unpaired
+original terminal singletons. Product consumes $F_2/G_1$ and $F_3/G_0$
+and retains $F_0,F_1,G_2,G_3$; turns only permute these singletons.
+Consumed pairs never reappear on a port. At the root, all four pairs
+under $C_j^F\mapsto C_{3-j}^G$ join the disjoint root subtrees. Therefore
+every main vertex is exactly a two-terminal pair, not a chain of
+identifications, and a leaf's four corners stay distinct. Its two
+shaded triangles share only their original apex. An edge and its partner
+in the other shaded triangle are distinct, so the complete four-step
+cycle contains four distinct edge occurrences. The horospherical links
+are positive rectangles, and the canonical shaded-side decoration gives
+the actual complete cusp tori described in Chapter~\ref{ch:geometry}.
+
+\section{The selected mixed action and the full face words}
+Write the pure leaf action and its color derivative as
+\[
+ g(x,t)=J(2x)-2J(x)-J(x-t)-J(x+t),\qquad
+ v=g_t=\operatorname{Log}\frac{\sin\pi(x-t)}{\sin\pi(x+t)}.
+\]
+For physical sign $\eps\in\{0,1,-1\}$, the source-selected shear is
+\begin{equation}\label{eq:app-shear}
+ \chi=t-\frac{\eps v}{2\pi\ii},\qquad
+ f_\eps(x,\chi)=g(x,t)-\frac{\eps v^2}{4\pi\ii},\qquad
+ \dd f_\eps=g_x\,\dd x+v\,\dd\chi.
+\end{equation}
+At completeness its implicit derivative is $1-\eps\ii\cot\pi x\ne0$.
+Here \(J(u)=\int_0^u\operatorname{Log}(2\sin\pi s)\,\dd s\), on the
+continued complete branch. The finite packet identifies the shear and
+its constant. An explicit algebraic check is useful: put
+\(E=e^{2\pi\ii x}\), \(H=e^{2\pi\ii\chi}\), and
+\(K=e^{-\partial_x f_-}\). The selected source quadratic gives
+\begin{equation}\label{eq:app-source-port-curve}
+ K^2(1+E)^2+K[(H+H^{-1})E^2+2]+(1-E)^2=0.
+\end{equation}
+At \(H=1\), it factors as
+\((K+1)[K(1+E)^2+(1-E)^2]\), and the source branch is
+\(K=\tan^2(\pi x)\). For the negative shear in
+\eqref{eq:app-shear}, setting \(T=e^{2\pi\ii t}\) gives
+\[
+ H=\frac{T(E-T)}{ET-1},\qquad
+ T^2+E(H-1)T-H=0,\qquad
+ K=\frac{(E-T)(1-ET)}{T(1+E)^2}.
+\]
+Eliminating \(T\) gives \eqref{eq:app-source-port-curve} with the same
+branch. This identifies the \(x\) derivative. The remaining
+\(\chi\)-dependent constant is zero by the actual endpoint normalization.
+For fixed small \(\chi\), at \(x=1/2\) one has \(v=0\), so the
+hidden pure color tends to \(t=\chi\), not to zero. On the continued
+branch \(J(1)=J(1/2)=0\) and
+\(J(1/2+t)=-J(1/2-t)\), hence \(g(1/2,t)=0\) and the shear
+quadratic vanishes. The finite-source action is
+\(g(x,\chi)+S(x,\chi)-S(x,0)\), where
+\(S(x,\chi)=\int_x^{1/2}\operatorname{Log}\mu(u,\chi)\,\dd u\).
+The selected root is regular with \(\mu(1/2,\chi)=1\); both integrals
+therefore tend to zero. This verifies the fixed-color constant on the
+same holomorphic branch.
+Schwarz reflection gives the positive sign. Thus the geometry below
+does not select a new source solution or discard a quadratic color phase.
+
+Normalize an ordered leaf port to $(0,\infty,1,R)$, put
+$E=e^{2\pi\ii x}$, $T=e^{2\pi\ii t}$, and select
+\[
+ Z=\frac{1+E}{1+T},\qquad
+ R=\frac{T(1+E)^2}{E(1+T)^2},\qquad
+ Z^2-(1+E)Z+ER=0.
+\]
+The two projection charts have apices $Z$ and $Z/E$. Their four universal
+WHITE or completion maps are
+\begin{equation}\label{eq:app-white-matrices}
+\begin{aligned}
+ W_0&=\begin{pmatrix}1&0\\0&E\end{pmatrix},&
+ W_1&=\begin{pmatrix}1&E-1\\0&E\end{pmatrix},\\
+ W_2&=\begin{pmatrix}E-R&R(1-E)\\E-1&1-ER\end{pmatrix},&
+ W_3&=\begin{pmatrix}R&0\\1-E&ER\end{pmatrix}.
+\end{aligned}
+\end{equation}
+At a leaf $W_0,W_2$ are its actual WHITE maps; $W_1,W_3$ are completion
+maps supplied by the attached prism at its CAP edges. All matrix identities
+here are projective. The pure shaded map and the two odd cross-copy maps are
+\[
+ S=\begin{pmatrix}0&-ER\\1&-1-E\end{pmatrix},\qquad
+ A=\begin{pmatrix}R&-R\\1&ER-1-E\end{pmatrix},\qquad
+ B=\begin{pmatrix}R/E-1-1/E&R\\-1&R\end{pmatrix}.
+\]
+They send the original labeled triangle vertices to their prescribed
+partners. The apex equation verifies the fourth flag without any
+unit-modulus assumption.
+
+For a prism, transport all $W_j$ to the coordinates in
+\eqref{eq:ordered-stack}. Direct rational substitution gives
+\begin{align}
+ W_{F,1}=W_{G,1}=W_{p,1}&=W_{\rm top},&
+ W_{F,3}=W_{G,3}=W_{p,3}&=W_{\rm bottom},\notag\\
+ W_{F,2}&=W_{G,0},&
+ W_{p,0}=W_{F,0},\quad W_{p,2}&=W_{G,2}.
+ \label{eq:app-nine-prism-identities}
+\end{align}
+Here \(p\) denotes the output port, not a filling slope.
+The nine identifications are identities of entire maps, not just
+cross ratios. They can be verified without geometric continuation:
+use independent phase variables
+\(\mathsf a=e^{2\pi\ii p}\), \(\mathsf b=e^{2\pi\ii r}\),
+\(\mathsf c=e^{2\pi\ii q}\), and the rational coordinates
+\[
+\begin{aligned}
+v_0&=1,\quad v_1=\mathsf a,\quad
+v_2=\mathsf a\mathsf b,\quad v_3=\mathsf a\mathsf b\mathsf c,\\
+P&=1+\mathsf a-
+\frac{\mathsf a[\mathsf a\mathsf b(1+\mathsf c)-1-\mathsf a]}
+ {\mathsf a^2\mathsf b^2\mathsf c-\mathsf a}.
+\end{aligned}
+\]
+The three wire phases are
+\(\mathsf b\mathsf c,\mathsf a\mathsf b,\mathsf a\mathsf b\mathsf c\).
+Normalize each ordered port by
+\[
+M_{a,b,c}(z)=\frac{(z-a)(c-b)}{(z-b)(c-a)},\qquad
+R=M_{a,b,c}(d).
+\]
+In world coordinates its white map is
+\(\overline M^{-1}W_jM\), where the bar replaces
+\(\mathsf a,\mathsf b,\mathsf c\) by their reciprocals, as prescribed
+by the second chart. Inserting these formulas into
+\eqref{eq:app-nine-prism-identities} gives equality entry by entry
+up to a common scalar. Thus no unit-circle restriction or missing
+translation is hidden in the identities.
+
+The turn
+map $T_Q(z)=(R-1)/(z-1)$ and closing map $C_Q(z)=(z-R)/(z-1)$ satisfy
+\[
+ T_QW_{j+1}(E,R)=W_j(E^{-1},1-R)T_Q,\qquad
+ C_QW_j(E^{-1},R)=W_{2-j}(E,R)C_Q.
+\]
+Thus every triangular piece in a single original WHITE face has the same
+map, even when its deformed image is not planar. For pure leaves,
+writing $\overline S$ for $S$ with $E$ replaced by $E^{-1}$, the edge words are
+\[
+ W_0S=\overline S W_0,\quad W_2S=\overline S W_2,\quad
+ W_3S=\overline S W_1.
+\]
+For odd leaves they are
+\[
+ W_0^{-1}BW_2^{-1}A=I,\quad
+ W_2^{-1}BW_0^{-1}A=I,\quad
+ W_1^{-1}BW_3^{-1}A=I.
+\]
+All hold for independent nearby $E,R$. They include translation and
+dilation, and the reverse words are inverses. The original closed cut
+therefore supplies a representation of the actual half-twist partner
+group: use its dual two-skeleton presentation, with exactly these WHITE
+seams and shaded four-step relations. No representation is inferred from
+port moduli alone. The second charts depend holomorphically on the source
+parameters by the reflected-minus convention, rather than by conjugating
+those parameters.
+
+A main meridian is $W_{j-1}^{-1}W_j$ at the corresponding corner.
+The two maps fix that corner and have equal derivatives there:
+\(E^{-1}\) at \(C_0,C_2\), and \(E\) at \(C_1,C_3\), using the
+finite coordinate at infinity. Thus its
+multiplier is one identically. It is nonidentity at completeness and
+stays parabolic nearby. Its commuting peripheral partner is consequently
+a translation as well. Every main cusp remains parabolic.
+
+\section{Primitive logs, the absolute regulator, and filling}
+Put
+\[
+ \rho=\frac{Z}{1+E-Z},\qquad Q=\frac{E-Z}{Z-1}.
+\]
+The original disk longitude is $W_2^{-1}W_0$, with multiplier $Q^2$ in
+the selected flag-at-infinity frame. The pure meridian is $S^{-1}$,
+with multiplier $\rho$. The two actual odd meridians are
+$A^{-1}W_0$ and $W_0^{-1}B$, with multipliers $\rho Q$ and $\rho/Q$.
+Returning to the original complete leaf coordinate, their translations
+are $-2$ and $2E$, while the disk longitude is $-2(E+1)$.
+The two-rectangle lattice fixes their primitive integral marking and
+orientation. The sign is fixed by the original threading convention:
+for the negative coupon, the typed loop \([2,1,1,2]\) followed by
+\(R^{-1}\) has auxiliary matrix
+\[
+ M_{\mathrm{aux}}=I-\frac{P+I}{1+E},\qquad \Tr P=-2,
+\]
+where \(P\) is the actual disk-product matrix and the preferred
+projective longitude is \(-P\). Its translation ratio is \(1+E\),
+identifying the first path above. Reversing the retained half twist
+changes the meridian by one disk longitude and gives the second.
+Thus the physical \(R^{-1}\) coupon uses the first path and \(R\)
+the second, with no sign inferred solely from a Hessian. Consequently
+\[
+ \rho=e^{-2\pi\ii t},\qquad Q=e^{-v},\qquad
+ U=-2\pi\ii t-\frac{\eps V}{2}=-2\pi\ii\chi,
+ \qquad V=-2v.
+\]
+The half-longitude shear is a relation between the two actual primitive
+cusp markings. It does not assert that half a longitude is an integral
+loop or replace the actual link by a pure rational filling.
+The centered similarity multipliers used for \(U,V\) are squares of
+the corresponding eigenvalues. The original lift and pivot character
+are retained in the finite source; no additional square-root choice
+changes a peripheral word here.
+
+Let $\Phi_\eps(\chi)$ be the selected stationary action in all free wires.
+The envelope identity in \eqref{eq:app-shear} gives
+\begin{equation}\label{eq:app-primitive}
+ U_\ell=-2\pi\ii\chi_\ell,\qquad
+ V_\ell=-2\partial_\ell\Phi_\eps,\qquad
+ G=2\pi\ii\Phi_\eps,\qquad
+ \dd G=\frac12\sum_\ell V_\ell\,\dd U_\ell.
+\end{equation}
+The source primitive includes the local term $-\eps_\ell V_\ell^2/8$.
+It is retained before taking volume. At the complete point,
+$\operatorname{Im}G(0)=2\pi F_0$ is the actual half-twist partner volume
+from the explicit complete cells and original pairings.
+
+For the nearby framed representation, triangulate the same original cut
+balls and retain their peripheral decoration. The ideal-tetrahedron
+variation follows directly from the Bloch--Wigner formula
+\[
+ \dd D(z)=\log|z|\,\dd\arg(1-z)
+                    -\log|1-z|\,\dd\arg z.
+\]
+In the sum over the original oriented tetrahedra, face terms have equal
+flags and opposite orientations and cancel. On a peripheral torus,
+cut along the recorded primitive \(\mu,\lambda\) to a parallelogram.
+The opposite sides cancel except for their two eigenline scale factors;
+the remaining alternating product is
+\(-2\,\mathcal M\wedge\mathcal L\), where
+\(\mathcal M=e^u,\mathcal L=e^v\) and \(u=U/2,v=V/2\).
+Here the sign is the boundary orientation of the truncated original
+fundamental chain, and the factor two retains both eigenline flags.
+Applying the displayed differential to that alternating product gives
+\(2(\Re v\,\dd\Im u-\Re u\,\dd\Im v)\).
+Different boundary tori have zero mutual intersection, and the
+parabolic main tori have zero log contribution. Thus
+\[
+ \dd\Vol(\rho)
+ =\frac12\sum_\ell\bigl(\operatorname{Re}V_\ell\,
+       \dd\operatorname{Im}U_\ell
+       -\operatorname{Re}U_\ell\,
+       \dd\operatorname{Im}V_\ell\bigr).
+\]
+Using \eqref{eq:app-primitive}, this is the differential of
+$\operatorname{Im}G-\frac12\sum\operatorname{Re}U\operatorname{Im}V$.
+The complete anchor fixes the constant on the same connected marked
+branch. Therefore the absolute identity is
+\begin{equation}\label{eq:app-absolute-regulator}
+ \Vol(\rho_\chi)=\operatorname{Im}G
+       -\frac12\sum_\ell\operatorname{Re}U_\ell\operatorname{Im}V_\ell.
+\end{equation}
+This uses the original relative fundamental chain and its actual nearby
+representation, not equal differentials on unrelated components.
+
+\section{Smooth completion on the actual primitive filled topology}
+We give the metric argument used here, including its uniformity in the
+independently chosen slopes. Let \(M=Y_E^\eps\) carry the oriented
+complete metric constructed above, with holonomy \(\rho_0\). A nearby
+\emph{framed} representation consists of the actual face-paired
+representation \(\rho\) and, at each cusp, its selected common fixed
+flag. In a frame sending that flag to infinity, the two peripheral maps
+are complex similarities. Their uniquely small multiplier logs are the
+\(U,V\) just computed. We construct one neighborhood of this framed
+complete point before choosing the filling slopes.
+
+\subsection{An actual positive metric on the core and its ends}
+Choose a compact cusp-truncated core with a slightly larger collar,
+finitely many evenly covered balls, and a smooth partition of unity.
+Write \(\eta_{j,\gamma}\) for its lifts, with one chosen lift of each
+ball and \(\gamma\in\pi_1(M)\). In the future unit hyperboloid model
+of hyperbolic space put
+\[
+ Y_\rho(x)=\sum_{j,\gamma}\eta_{j,\gamma}(x)
+                 \rho(\gamma)\rho_0(\gamma)^{-1}x,
+ \qquad
+ E_\rho(x)=\frac{Y_\rho(x)}
+                   {\sqrt{-\langle Y_\rho(x),Y_\rho(x)\rangle}}.
+\]
+Every summand is future timelike; their convex average is future
+timelike too, so the normalization is defined. Reindexing the sum proves
+\(E_\rho(\rho_0(\delta)x)=\rho(\delta)E_\rho(x)\).
+Only finitely many terms occur on a compact fundamental part, and at
+\(\rho_0\) the map is the identity. Thus it is \(C^1\)-close to the
+identity and is an orientation-preserving local diffeomorphism in one
+fixed representation neighborhood. This does not assume that the
+deformed action is already discrete or free.
+
+For one complete cusp write its universal coordinates as
+\((w,s)\in\CC\times[s_0,\infty)\), with translation lattice
+\(\Lambda\), and complete development \((w,e^s)\) in upper
+half-space. Denote the deformed affine peripheral action by
+\(A_\lambda(z)=a_\lambda z+b_\lambda\). Choose a nonnegative compactly
+supported smooth \(\eta\) with
+\(\sum_{\lambda\in\Lambda}\eta(w-\lambda)=1\), and define
+\[
+ d_\rho(w)=\sum_{\lambda\in\Lambda}\eta(w-\lambda)
+                              A_\lambda(w-\lambda).
+\]
+Then \(d_\rho(w+\lambda)=A_\lambda d_\rho(w)\). On a fixed closed
+fundamental parallelogram it is \(C^1\)-close to \(w\), so its real
+Jacobian is positive; equivariance propagates that fact everywhere.
+Let \(\xi_\rho\) be the real-linear extension of
+\(\lambda\mapsto\log|a_\lambda|\). The map
+\[
+ F_\rho(w,s)=\bigl(d_\rho(w),e^{s+\xi_\rho(w)}\bigr)
+\]
+is exactly peripheral-equivariant. Its differential has positive
+determinant \(e^{s+\xi_\rho(w)}\det_\RR Dd_\rho(w)\) for every
+\(s\ge s_0\). Restore the moving flag frame and extend to all cusp
+lifts by equivariance. Geodesically interpolate \(E_\rho\) and
+\(F_\rho\) on the compact collar with an invariant smooth cutoff.
+There both maps are \(C^1\)-close to the complete development, so the
+interpolation remains a positive local diffeomorphism after one further
+uniform shrink. Pullback of the hyperbolic metric now gives an actual
+oriented nonsingular metric on the original manifold with its ideal
+ends deleted.
+
+\subsection{The logarithmic link and its primitive angular period}
+At a cusp to be filled, the equation \(U+pV=-2\pi\ii\) ensures that
+at least one multiplier differs from one. Commuting affine maps then
+have a common finite fixed point \(q\), in addition to infinity. For
+either generator with \(a\ne1\), \(q=b/(1-a)\). Its numerator stays
+away from zero near completeness, whereas both generator multipliers
+tend to one; hence \(|q|\to\infty\) uniformly, even if one multiplier
+equals one. The developed fundamental parallelogram and fixed generator
+paths have uniformly bounded images and lengths. After shrinking the
+neighborhood they miss \(q\), and equivariance implies that the entire
+development misses \(q\).
+
+On the simply connected link cover choose
+\(f=\operatorname{Log}(d_\rho-q)\). Its differential is invertible
+as a real map and is invariant under deck transformations. Consequently
+\(|\dd f|^2\) descends to a nonsingular Euclidean metric on the compact
+torus, hence is complete. Lifting Euclidean segments proves that its
+developing local isometry \(f\) covers \(\CC\); because the plane is
+simply connected, this is a global isometry. Its periods form an
+injective real rank-two lattice. A fixed generator path of developed
+length at most \(L\), contained in \(|d_\rho|\le R\), satisfies
+\[
+ |\Delta f|\le\frac{L}{|q|-R}\longrightarrow0.
+\]
+Exponentiating its increment gives the corresponding similarity
+multiplier. The increment and its prescribed small log therefore differ
+by an integer multiple of \(2\pi\ii\) which is exactly zero near
+completeness. Thus the actual two log-link periods are \(U,V\),
+before they are multiplied by any large slope. This is why the same
+representation neighborhood works for all slopes.
+
+Translate \(q\) to zero. On the compact link quotient the function
+\(e^{s_0+\xi_\rho(w)}/|d_\rho(w)-q|\) is bounded above. The explicit
+end therefore contains an entire equivariant epigraph
+\(y>A|d_\rho-q|\). With
+\[
+ r=\frac{y}{|d_\rho-q|},\qquad
+ R=\operatorname{arsinh}(1/r),\qquad
+ \theta=\Im f,\qquad
+ X=\Re f+\tfrac12\log(1+r^2),
+\]
+direct substitution into the upper-half-space metric gives
+\begin{equation}\label{eq:app-smooth-tube}
+ \dd s^2=\dd R^2+\cosh^2R\,\dd X^2+
+                           \sinh^2R\,\dd\theta^2.
+\end{equation}
+The epigraph contains a whole punctured tube \(0<R<R_0\). A log period
+\(L\) acts by \((X,\theta)\mapsto(X+\Re L,\theta+\Im L)\).
+The actual primitive curve \(\mu+p\lambda\) has period
+\(-2\pi\ii\), exactly one angular turn. Its complementary primitive
+period can be taken to be \(V\), which has nonzero real part since
+\(U,V\) are real-linearly independent. Adding the axis \(R=0\) in
+\eqref{eq:app-smooth-tube} is therefore a smooth hyperbolic solid torus,
+whose meridian is exactly \(\mu+p\lambda\). Its affine holonomy is
+the identity, since it fixes both \(q\) and infinity with multiplier
+one. The representation descends to the actual filled group. Reversing
+the angular sign changes the parametrization of the meridian, not the
+orientation of the metric.
+
+At an unfilled main cusp both multipliers are one. The same construction
+gives a translation-equivariant Euclidean link development, globally
+the plane by completeness of the compact link; \(\xi_\rho=0\).
+Its end contains a full horoball quotient, so it is complete and has
+finite volume. The remaining region is compact. Attaching the finitely
+many bounded-radius solid tori therefore gives a complete finite-volume
+hyperbolic metric on precisely the filled topology. Its complete
+universal developing map covers simply connected hyperbolic space,
+so the holonomy is discrete and faithful. This proof used one fixed
+framed neighborhood and no comparison between different slope sizes.
+
+\subsection{The source saddle and its absolute knot-complement volume}
+The full source filling transform selects a critical point of
+\[
+ S_{\eps,\mathbf p}(\chi)=\Phi_\eps(\chi)
+       +\frac{\pi\ii}{2}\sum_\ell\frac{(\chi_\ell-1)^2}{p_\ell}.
+\]
+Its equations are exactly $U_\ell+p_\ell V_\ell=-2\pi\ii$.
+For existence set \(r_\ell=1/p_\ell\) and write them as
+\(V_\ell+r_\ell U_\ell=-2\pi\ii r_\ell\). At \(r=0\) their
+\(\chi\)-Jacobian is \(-4\pi\ii\,\diag(\tau_\ell)\), with
+\(\Im\tau_\ell>0\), by the source packet. It is invertible.
+The holomorphic implicit-function theorem thus gives one nearby solution
+for all \(r\) in a fixed polydisk, independently of their relative
+sizes and signs. It lies in the framed neighborhood just constructed
+after that polydisk is shrunk once more.
+For independently sufficiently long fixed signed integral $p_\ell$, the
+marked geometric completion gives smooth angle $2\pi$ on these primitive
+filled curves, with the unfilled main cusp parabolic. The physical leaf
+power is $R^{\eps_\ell-2p_\ell}$, once, in its original disk framing.
+At this saddle, \eqref{eq:app-absolute-regulator} is
+\[
+ \Vol\bigl(S^3\setminus K_{F,G,\eps}(\mathbf p)\bigr)
+  =2\pi\operatorname{Re}S_{\eps,\mathbf p}(\chi_*).
+\]
+All auxiliary circles have been filled and the chosen main component is
+the knot. The knot cusp is unfilled. The separate full-source alias,
+complex-packet and entire Fourier-period arguments are what identify this
+geometric action with the original invariant's limiting rate.
+
+\paragraph{Proof records.}
+The full calculations and original source conventions are retained in:
+\begin{itemize}
+\item \path{notes/actual_newton_ideal_prism_and_associativity.md};
+\item \path{notes/actual_conway_bowtie_projection_cut.md};
+\item \path{notes/actual_conway_single_leaf_geometric_composition.md};
+\item \path{notes/actual_conway_marked_peripheral_deformation.md};
+\item \path{notes/actual_odd_conway_marked_peripheral_deformation.md};
+\item \path{notes/general_source_regulator_hyperbolic_equality.md}.
+\end{itemize}

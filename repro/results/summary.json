@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "python": "3.14.6",
+  "checks": [
+    {
+      "name": "two-leaf-block",
+      "status": "PASS",
+      "scope": "Both alias configurations on the entire original two-leaf domain; 16 slope intervals and 288 endpoint/vertex comparisons.",
+      "matches_stored_record": true,
+      "minimum_lower": "210002102902309638093785766005979344329/5000000000000000000000000000000000000000",
+      "output": "two-leaf-block.json"
+    },
+    {
+      "name": "single-leaf-attachment",
+      "status": "PASS",
+      "scope": "Single-leaf dual gap on the full slope square and product tetrahedron; 55 rectangles and 880 corner/vertex comparisons.",
+      "matches_stored_record": true,
+      "minimum_lower": "55437191760019874892517972684020763373/10000000000000000000000000000000000000000",
+      "output": "single-leaf-attachment.json"
+    },
+    {
+      "name": "single-leaf-endpoint",
+      "status": "PASS",
+      "scope": "Four-vertex endpoint certificate used with the separately proved monotone-response lemma.",
+      "matches_stored_record": true,
+      "minimum_lower": "613089614904949907163494204377649845509/10000000000000000000000000000000000000000",
+      "output": "single-leaf-endpoint.json"
+    },
+    {
+      "name": "elementary-rational-endpoints",
+      "status": "PASS",
+      "leaf_gap_lower": "57269/136687500",
+      "isolated_three_leaf_gap_lower": "5747/25344",
+      "scope": "Exact rational arithmetic only. The alternating-series, logarithm-tail and geometric volume inequalities are proved in the manuscript and source notes."
+    }
+  ],
+  "source_sha256": {
+    "experiments/conway_single_leaf_attachment_certificate.json": "82e0004b7c48370ec67425da6d1de98208fbf995273837ac72ac38806a172121",
+    "experiments/conway_single_leaf_attachment_certificate_results.json": "2d7636d1083543aea07d2d402545cf26678f68d75431a76813c3363959125167",
+    "experiments/conway_single_leaf_endpoint_certificate_results.json": "6f5ae08bcc112341000b00f37f3715305f7f296d6c78c5321899ae3fc6141881",
+    "experiments/conway_two_leaf_block_alias_certificate.json": "a2ec32e54b193eeecafacfdcead189007f70165fcff20d24b37db63207f4e7df",
+    "experiments/conway_two_leaf_block_alias_certificate_results.json": "2e26eafb0fd1df83de6cd030843e5ed51c7087214b2e14154a93763de2e0da3f",
+    "experiments/verify_conway_single_leaf_attachment_certificate.py": "0544a1d1188cd466466452377c090c6d5f045d34a7c9f0e7ed8213c8bb15b5fc",
+    "experiments/verify_conway_single_leaf_endpoint_certificate.py": "29890e58f7ce9d57a2e80398ccda4b3be38016ee2d5d76be59e70f6b97b403a6",
+    "experiments/verify_conway_two_leaf_block_alias_certificate.py": "38f8ed583a48ed053c5ce738a90093753a32562ab090190dc11549703e841957",
+    "repro/verify.py": "9c5540536592edb2880db00114ab229550f62f3175bb0e2e0961587f1c02c7fb"
+  },
+  "scope": "Exact finite certificates and rational endpoint identities. This does not certify the topological invariant dictionary, geometric gluing, analytic interpolation, or filling-period theorem."
+}

@@ -1,0 +1,49 @@
+\chapter{Reproduction, proof provenance, and limits}\label{ch:reproduction}
+
+\section{Three different kinds of evidence}
+The manuscript contains analytic proofs, exact finite certificates, and optional finite audits. They have different logical roles. The matrix identities, support and strictness arguments, geometric incidence, complex estimates and filling analysis are proved in the text. The rational certificates are finite parts of the proof: the continuum inequalities reduce to their exact feasibility, coverage and supporting-plane checks. Finite matrix or numerical asymptotic audits provide independent checks of formulas and normalizations, but do not establish a theorem by extrapolation.
+
+The complete source notes and their internal review records remain available in the repository for provenance. This manuscript reorganizes their arguments into one proof and does not require a reader to infer a theorem from a list of links. Internal review is not external peer review, and the repository does not claim formal verification of the entire analytic argument.
+
+\section{Replaying the exact certificates}
+From the repository root, run
+\begin{verbatim}
+python3 repro/verify.py --output repro/results
+\end{verbatim}
+The serial runner uses the standard Python library. It replays the two-leaf block certificate, the attachment square certificate and the optional endpoint certificate, compares their exact results with the recorded data, and checks the elementary rational leaf and isolated-three-leaf margins. Its report records the source and data hashes. Candidate generation and numerical optimization are not run by verification.
+
+The principal proof files are
+\begin{center}\small
+\begin{tabular}{p{0.44\textwidth}p{0.46\textwidth}}\toprule
+Certificate & Mathematical coverage\\\midrule
+\path{verify_conway_two_leaf_block_alias_certificate.py}
+& Sixteen slope intervals; both alias types; 288 corner/vertex inequalities.\\[5pt]
+\path{verify_conway_single_leaf_attachment_certificate.py}
+& Exact 55-rectangle cover; 880 corner/vertex inequalities on the full child/parent slope square.\\[5pt]
+Endpoint certificate in the runner's manifest
+& Optional stronger margin at the monotone-response endpoint; not needed for the main theorem.\\\bottomrule
+\end{tabular}
+\end{center}
+All paths are resolved relative to the repository or script directory, rather than an author's temporary working directory. The runner's proof-input guide lists the written dependencies separately from executable checks.
+
+\section{Building the two reading views}
+The TeX source is in \sourcefile{manuscript/}; its native illustrations are in \sourcefile{manuscript/figures/}. A TeX Live or MacTeX installation with \sourcefile{latexmk} builds the paper:
+\begin{verbatim}
+python3 tools/build_manuscript.py
+\end{verbatim}
+The output is \sourcefile{manuscript/build/main.pdf}. The build manifest records the hashes of all TeX and bibliography inputs and the generated PDF. It is a typesetting record, not a mathematical certificate.
+
+The Sphinx reading site and the existing Markdown book are built separately:
+\begin{verbatim}
+python3 tools/build_sphinx.py
+python3 tools/build_book.py
+python3 tools/check_book.py
+\end{verbatim}
+Sphinx is written to \sourcefile{docs/sphinx/}; the Markdown book remains in \sourcefile{docs/}. Documentation builds do not execute research scripts. The pinned Sphinx environment is described in \sourcefile{repro/requirements-docs.txt}. Both reading views link the same authored PDF and preserve the distinction between the main theorem and broader open questions.
+
+\section{What has and has not been proved}
+The theorem is uniform in the level for each fixed finite completed expression and each fixed sufficiently long signed filling tuple. It includes both parity sequences and composite levels. The filling threshold is allowed to depend on the expression, its complete geometry and the half-twist pattern. It does not depend on a ratio between the sizes of the long slopes.
+
+The theorem does not identify all arborescent knots with the completed grammar. It does not turn an equality in $\cH_N$ into a tangle isotopy. It does not prove a quantum theorem for arbitrary short or rational fillings, and it does not infer volume from an unsigned bound on a larger source envelope. The main knot cusp stays unfilled in the conclusion.
+
+There are natural extensions beyond the present theorem. More general strict syntax can have leaf-type or reflected-leaf-type output intervals, and root-leaf closures can meet the quarter-index dominance boundary. Local packet extensions and complete geometric constructions at that boundary do not by themselves supply the missing global signed-source estimates or the marked filling comparison for every such expression. Those obligations must be checked on the whole source with its original targets and phases. This manuscript deliberately keeps the proved completed-root theorem separate from that frontier.

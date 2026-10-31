@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "docs"
 REPO = "https://github.com/sashakolpakov/murakamis_dream"
 CHAPTERS = [
-    ("index", "Overview"), ("results", "Equality results"),
+    ("index", "Overview"), ("manuscript", "The manuscript"), ("results", "Equality results"),
     ("mechanism", "The mechanism"), ("geometry", "Actual geometry"),
     ("frontier", "Current frontier"), ("notation", "Notation"),
     ("audits", "Reproducing audits"),
@@ -105,7 +105,7 @@ def page(url, title, body, active, source=None, topic="Research guide", status="
 <div class="mobile-bar"><a href="{base}index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
 <aside class="sidebar" id="sidebar"><a class="brand" href="{base}index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
 <button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation">{nav}</nav>
-<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="{REPO}">Repository ↗</a><a href="{REPO}/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<div class="sidebar-bottom">Research edition · 31 October 2026<br>General conjecture remains open.<a href="{base}sphinx/index.html">Sphinx documentation ↗</a><a href="{REPO}">Repository ↗</a><a href="{REPO}/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
 <main id="main" class="layout"><div class="eyebrow">{escape(topic)}</div><div class="reading-grid"><article class="content">{context}{body}{chapter_nav}
 <footer class="page-footer">{source_link}<a href="{REPO}">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article>{toc}</div></main>
 <dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
@@ -127,13 +127,24 @@ def main():
     # Authored chapters may link to these generated navigation pages.
     mapping["book/library.html"] = "library.html"
     mapping["book/archive.html"] = "archive.html"
+    manuscript_pdf = ROOT / "manuscript/build/main.pdf"
+    if manuscript_pdf.is_file():
+        mapping["manuscript/build/main.pdf"] = "papers/conway-composition.pdf"
+        (OUT / "papers").mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(manuscript_pdf, OUT / "papers/conway-composition.pdf")
     for source in sorted((ROOT / "notes").glob("*.md")):
         mapping[source.relative_to(ROOT).as_posix()] = f"notes/{source.stem}.html"
     figures = [p for p in (ROOT / "book/figures").iterdir() if p.suffix in (".png", ".svg", ".pdf", ".tex")]
     for source in figures:
         mapping[source.relative_to(ROOT).as_posix()] = f"assets/figures/{source.name}"
+    manuscript_figures = sorted(
+        p for p in (ROOT / "manuscript/build/figures").glob("*")
+        if p.suffix in (".png", ".pdf")
+    )
+    for source in manuscript_figures:
+        mapping[source.relative_to(ROOT).as_posix()] = f"assets/figures/manuscript-{source.name}"
     (OUT / "assets/figures").mkdir(parents=True, exist_ok=True)
-    for source in figures:
+    for source in [*figures, *manuscript_figures]:
         shutil.copyfile(source, OUT / mapping[source.relative_to(ROOT).as_posix()])
     for filename in ("site.css", "site.js"):
         shutil.copyfile(ROOT / "book" / filename, OUT / "assets" / filename)

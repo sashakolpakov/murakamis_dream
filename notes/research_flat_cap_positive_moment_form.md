@@ -1,0 +1,279 @@
+# An exact positive moment form for the original flat-cap coefficients
+
+31 October 2026. Internally reviewed analytical research lemma. Root
+derived the proof; two independent readers checked it in full. This
+constructs a positive inner
+product from the original cap weights. It does not prove that the adjacent
+CROSS polynomial is a contraction for that form, or establish the open
+original-demand convolution bound.
+
+## 1. The actual finite weights
+
+Fix an integer N>=3, d=N-1 and theta=pi/N. The raw protected cap
+coefficient is (-1)^j U_j, where
+
+    U_j=csc^2(theta/2) product_(r=1)^j
+                       sin^2(r theta)/sin^2((r+1/2)theta),
+    0<=j<=d.
+
+Write m_j=U_j/U_0. The statement is that there is a positive random
+variable X_N such that
+
+    E X_N^j=m_j, 0<=j<=d.                         (1)
+
+Its support is not confined to [0,1]. In particular no Hausdorff-moment
+or pointwise contraction conclusion follows from (1).
+
+## 2. Exact Euler product and beta factors
+
+Euler's sine product gives, with positive factors for this whole range,
+
+    m_j=[Gamma(j+1)Gamma(3/2)/Gamma(j+3/2)]^2
+          product_(k>=1) B_(kN)(j)^2,             (2)
+
+where
+
+    B_a(s)= Gamma(a)Gamma(a-s-1/2)
+             /[Gamma(a-1/2)Gamma(a-s)]
+          * Gamma(a+s+1)Gamma(a+3/2)
+             /[Gamma(a+1)Gamma(a+s+3/2)].         (3)
+
+Indeed each k contributes, before squaring,
+
+    product_(r=1)^j
+       [(kN-r)/(kN-r-1/2)] [(kN+r)/(kN+r+1/2)],
+
+which is exactly (3). The remaining product r/(r+1/2) is the
+prefactor in (2). This derives the shifts and constants from the
+literal cap, not from a free choice of moment functional.
+
+Let T_1,T_2 be independent Beta(1,1/2) variables. For each k>=1 and
+i=1,2 let independently
+
+    A_(k,i) ~ Beta(kN-1/2,1/2),
+    B_(k,i) ~ Beta(kN+1,1/2),
+    Z_(k,i)=B_(k,i)/A_(k,i).
+
+All variables mentioned are mutually independent. The elementary beta
+integral gives
+
+    E T_i^s=Gamma(s+1)Gamma(3/2)/Gamma(s+3/2),
+    E Z_(k,i)^s=B_(kN)(s),                         (4)
+
+for -1<s<N-1/2; these restrictions are sufficient simultaneously
+for the factors here. In particular all moments in (1) are finite.
+
+Define finite positive products
+
+    X_(N,K)=T_1 T_2 product_(k=1)^K Z_(k,1)Z_(k,2).
+
+Equations (2)--(4) give the desired moments in the limit, once
+convergence and uniform integrability are checked.
+
+## 3. Convergence with no formal infinite-product inference
+
+For fixed s in a compact subinterval of (-1,N-1/2), the gamma ratio
+expansion in (3) gives
+
+    log B_a(s)=O_s(a^-2), a->infinity.             (5)
+
+The a^-1 terms of the inverse-beta and beta factors are respectively
+s/(2a) and -s/(2a), and cancel. The expansion and its first two s
+derivatives are uniform on a small neighborhood of zero. Consequently
+
+    E log Z_(k,i)=O((kN)^-2),
+    Var(log Z_(k,i))=O((kN)^-2).                  (6)
+
+Also log T_i belongs to L2 by its beta density at zero and one.
+The means are absolutely summable. Independence makes the centered
+partial sums Cauchy in L2, since their tail variance is the sum of the
+tail variances. Thus log X_(N,K) converges in L2 to a finite real random
+variable Y_N. Set X_N=exp(Y_N)>0. The products converge in probability.
+
+Fix an integer 1<=j<=d. Choose epsilon>0 with j+epsilon<N-1/2.
+The beta moments at that exponent exist; (5) shows
+
+    sup_K E X_(N,K)^(j+epsilon)<infinity.         (7)
+
+Hence X_(N,K)^j are uniformly integrable. Convergence in probability
+and uniform integrability give convergence of their expectations to
+E X_N^j. Equations (2)--(4) identify the limit as m_j. The zero moment
+is one. This proves (1) with every original weight retained.
+
+Removing any one factor leaves the same convergent log series, measurable
+in the other independent variables. Thus the separated factor remains
+independent of the positive limiting remainder.
+The measure is non-atomic and has unbounded support. For non-atomicity,
+separate the independent T_1 factor, which has a continuous positive
+density on (0,1). For unbounded support, separate the independent
+1/A_(1,1) factor, which is unbounded, from the remaining positive random
+product. The remainder is bounded below by some positive number on an
+event of positive probability. Independence then gives arbitrarily
+large X_N with positive probability.
+
+## 4. Exact finite-dimensional Cauchy inequality
+
+For m with 2m<=d, put on polynomials of degree at most m
+
+    <p,q>_N=U_0 E[p(X_N) conjugate(q(X_N))].
+
+Its matrix in the monomial basis is EXACTLY (U_(i+j))_(0<=i,j<=m).
+It is positive definite: a nonzero polynomial has finitely many roots,
+while X_N is non-atomic. Thus
+
+    |<p,q>_N|^2 <= <p,p>_N <q,q>_N.               (8)
+
+At the even levels N=2m0 of the original cap/CROSS problem, its cutoff
+M=m0-1 satisfies 2M=d-1. The entire original cutoff polynomial space
+therefore carries this positive Gram form. The alternating cap character
+is retained by evaluating p at -X_N, rather than deleting (-1)^j.
+
+To express the precise missing step, use the coefficients C_(j,h) and
+range J_n of the reviewed original-demand convolution. Define the
+literal projected polynomial
+
+    F_(N,n)(t)=sum_(j in J_n) C_(j,n-j) t^j.
+
+Then its actual signed coefficient is exactly
+
+    (-1)^d U_0 E F_(N,n)(-X_N).                  (9)
+
+For n>M the cutoff in J_n remains in F; (9) is not a full-sum
+replacement or an orthogonality claim. Formula (8) supplies a genuine
+positive inner product, but no bound here compares its quadratic norm
+of F_(N,n)(-t) with the endpoint convolution involving V_j. That
+comparison is the remaining issue. In particular unbounded support
+prevents replacing the expectation by a maximum on [0,1].
+
+No numerical asymptotic test is needed for (1)--(9). They neither
+transport projected sectors through the full Casimir source nor prove
+the original invariant's volume conjecture.
+
+## 5. The moment threshold and the original even-level cutoff
+
+The convergence argument also gives E X_N^s<infinity for EVERY real
+0<=s<N-1/2: choose a slightly larger moment exponent still inside that
+interval and apply the same uniform-integrability argument. Conversely,
+separate the independent factor A_(1,1)^(-1) from the limiting product.
+The beta density gives
+
+    E A_(1,1)^(-s)=infinity whenever s>=N-1/2.
+
+The remaining factor is strictly positive and independent. Tonelli's
+theorem therefore gives the sharp statement
+
+    E X_N^s<infinity  iff  0<=s<N-1/2.             (10)
+
+Here the equivalence is restricted to nonnegative s. No assertion about
+negative moments is needed. A nonzero polynomial p of degree r satisfies
+|p(t)|^2>=c t^(2r) for all sufficiently large positive t, while the lower
+degree terms bound its squared modulus above by C(1+t^(2r)). Consequently
+its squared norm is finite exactly when 2r<N-1/2.
+
+At even N=2m0 this is r<=m0-1=M, precisely the original RIGHT cutoff.
+Thus that entire polynomial space has finite positive norm, while every
+polynomial of the next or a higher degree has infinite norm. At odd
+levels the maximal degree is floor((N-1)/2); its identification with an
+original one-sided sector is NOT asserted, since the odd central row
+belongs to CROSS.
+
+There is also an exact finite functional relation. Define
+L_N(p)=U_0 E p(X_N), and let D=t partial_t act diagonally on monomials.
+Sines of D mean the corresponding finite diagonal operators. The literal
+ratio U_(j+1)/U_j gives
+
+    L_N( t sin^2(theta(D+3/2))p
+                  - sin^2(theta(D+1))p )=0,
+    deg p<=d-1.                                   (11)
+
+Indeed (11) on t^j is exactly
+sin^2((j+3/2)theta)U_(j+1)-sin^2((j+1)theta)U_j=0.
+The degree restriction is essential. At j=d the formal numerator
+sin^2(N theta) vanishes, but the other term would require the divergent
+Nth moment. Equation (11) is not an identity on all degree-d polynomials
+and does not authorize deleting that terminal contribution. It supplies
+no self-adjointness or contraction claim for the adjacent continuant.
+
+## 6. A finite algebraic evaluation at even levels
+
+The beta product proves positivity, but the required finite functional
+also has an exact algebraic realization. Keep N=2m0 and M=m0-1, so
+d=2M+1. In this section L_N includes the original factor U_0.
+Gram--Schmidt on 1,t,...,t^M gives monic orthogonal polynomials p_r
+and positive squared norms h_r=L_N(p_r^2), 0<=r<=M.
+All these coefficients are real algebraic: the moments U_j are products
+of squared sines at rational multiples of pi, hence belong to a real
+cyclotomic field, and Gram--Schmidt uses only field operations.
+
+Define the (M+1)-by-(M+1) symmetric tridiagonal matrix J_cap by
+
+    (J_cap)_(r,r)=L_N(t p_r^2)/h_r, 0<=r<=M,
+    (J_cap)_(r-1,r)=(J_cap)_(r,r-1)=sqrt(h_r/h_(r-1)), 1<=r<=M.
+
+Every displayed moment is finite: the largest degree is 2M+1=d.
+For any vector v, let P_v=sum_r v_r p_r/sqrt(h_r). Orthogonality
+implies that multiplication by t has exactly the displayed entries,
+since t p_r has degree r+1. Thus
+
+    v^* J_cap v=L_N(t |P_v(t)|^2)>0 for v!=0.
+
+The matrix is positive definite; its off-diagonal entries are positive.
+Its eigenvalues lambda_1,...,lambda_(M+1) are therefore positive and
+simple, and every eigenvector has nonzero first coordinate (use the
+tridiagonal recurrence starting at that coordinate). Define
+
+    w_a=U_0 |(unit eigenvector at lambda_a)_0|^2>0.
+
+The characteristic polynomial p_(M+1) is still orthogonal to every
+polynomial of degree at most M. To check this without asserting its
+squared norm, define it by the last tridiagonal recurrence: the t p_M
+term pairs to zero against p_s for s<=M-2 by symmetry, and the chosen
+last two recurrence coefficients cancel its pairings with p_(M-1)
+and p_M. Only moments through 2M+1 occur. Its square need not be
+integrable, and in fact is not.
+
+For any polynomial f of degree at most 2M+1, divide it by p_(M+1):
+
+    f=p_(M+1) q+r, deg q<=M, deg r<=M.
+
+The first term has zero L_N value and vanishes at every eigenvalue.
+The spectral measure above reproduces L_N on degree<=M: by the
+tridiagonal recurrence, p_j(J_cap)e_0 is a multiple of e_j for j<=M,
+so both functionals vanish on p_j for 1<=j<=M and give U_0 on p_0.
+It follows that
+
+    L_N(f)=sum_(a=1)^(M+1) w_a f(lambda_a),
+    deg f<=d.                                     (12)
+
+All nodes and weights are real algebraic in a finite algebraic extension
+of the moment field. In particular the original cap convolution (9) is
+an exact finite algebraic evaluation with positive weights. Its original
+cutoff remains in F_(N,n). Formula (12) does not extend to degree d+1:
+the original moment there diverges, while the finite quadrature would
+assign it a finite number.
+
+This constructs the cap's own positive Jacobi matrix. It does not
+identify it with the different Jacobi matrix obtained by normalizing
+the adjacent continuant. No norm comparison between those two metrics,
+or volume bound for the original source, follows from (12).
+
+## Inputs and review scope
+
+The weights are those of the [exact protected cap](research_trace_one_mark_and_cap_turn_interface.md).
+The polynomial in (9) is precisely the [original-demand cap/CROSS
+convolution](research_two_port_main_cap_original_demand_convolution.md).
+No triangle factor, unused spectral product or projected endpoint is
+changed by defining this inner product.
+
+Both independent readers checked the Euler/Gamma shifts, moment strip,
+cancellation of the inverse-size terms, L2 log convergence, uniform
+integrability through degree d, non-atomicity and unbounded support,
+Gram degree cutoff and formula (9). They reported PASS. These are
+internal analytical reviews, not external peer review. The missing
+comparison with the endpoint convolution is not a proved assertion.
+Root additionally derived the sharp nonnegative-moment threshold and
+the degree-restricted functional relation (10)--(11); an independent
+reader checked both, including the divergent terminal moment, PASS.
+Root derived the finite algebraic quadrature (12); the independent reader
+checked the positive Jacobi form, finite cross-moment orthogonality,
+polynomial division, exact degree bound and algebraicity, PASS.

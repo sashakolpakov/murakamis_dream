@@ -1,0 +1,201 @@
+\chapter{The whole filling period}\label{ch:filling}
+
+\section{The analytic inputs are now proved}
+For the fixed diagram, Chapters~\ref{ch:alias} and \ref{ch:packet} give a global physical-color gap, an exponentially accurate separately even corridor packet, and a uniform holomorphic asymptotic. In this chapter write $b=H$ for the number of filled circles, $\varphi=\Phi_\eps$, and
+\[
+ \varphi''(0)=2\pi\ii\diag(\tau_1,\ldots,\tau_b),\qquad
+ \tau_\ell=\frac{\ii X_\ell}{1-\eps_\ell\ii X_\ell},\qquad
+ \Im\tau_\ell>0.
+\]
+The different cusps need not have equal $\tau_\ell$. The packet exponent is $\mu=3/2$.
+
+The coefficient mass bound in \eqref{eq:exact-filling} shows that the global source error and the corridor comparison error cost only a polynomial in $N$ for fixed twists. They remain exponentially below $e^{NF_0}$. This removal takes place before folding colors: an alias need not be even and is not artificially made so. It remains to analyze the exact even corridor.
+
+Let $H_N=\lfloor\delta N\rfloor$, and define its finite Fourier polynomial
+\begin{equation}\label{eq:finite-Fourier}
+ \mathcal F_N(\mathbf z)=
+ \sum_{|h_\ell|\le H_N}C_N(\mathbf h/N)
+ e^{2\pi\ii\mathbf h\cdot\mathbf z}.
+\end{equation}
+This is an entire, one-periodic function in each variable and is separately even. It is finite at every $N$; no infinite-lattice extension has been made.
+
+\section{An exact Fourier bound away from zero frequency}
+We record the finite contour estimate that controls the physical endpoints. In one coordinate suppose
+\[
+ |C_N(x+\ii y)|\le N^C e^{N(F-a x^2+B y^2)}
+\]
+on a fixed tube. For a fixed $\phi_0>0$ and fixed nonnegative integer $r$,
+\begin{equation}\label{eq:noncentral-Fourier}
+ \left|\sum_{h=-H_N}^{H_N}h^rC_N(h/N)e^{\ii\phi h}\right|
+ \le N^{C_r}e^{N(F-g)},\qquad
+ \dist(\phi,2\pi\ZZ)\ge\phi_0,
+\end{equation}
+for some $g>0$.
+
+To prove it, reduce $\phi$ to $[\phi_0,2\pi-\phi_0]$ and use the rectangle in the unscaled variable $z$ with real sides $\pm(H_N+1/2)$ and imaginary sides $\pm\sigma N$. The exact residue formula is
+\[
+ \frac1{2\pi\ii}\oint z^r C_N(z/N)e^{\ii\phi z}
+ (\pi\cot\pi z-\ii\pi)\,\dd z.
+\]
+The kernel equals $2\pi\ii/(e^{2\pi\ii z}-1)$. On the upper and lower horizontal sides the products with $e^{\ii\phi z}$ are bounded by $4\pi e^{-\phi\sigma N}$ and $4\pi e^{-(2\pi-\phi)\sigma N}$. On a vertical half-integer side the bound is $2\pi e^{-\phi_0|\Im z|}$. Choose $\sigma$ first so that $B\sigma^2$ is smaller than both half the horizontal loss and half the real boundary loss. All four sides then have a strict exponential gap. This proves \eqref{eq:noncentral-Fourier}; fixed derivatives are treated by the factor $h^r$. The argument is uniform in the other real colors and in a smaller complex neighborhood of any remaining parameters.
+
+\section{The total derivative and the zero-charge cancellation}
+The exact Fourier--Hermite interpolation of Appendix~\ref{app:fourier} has a useful combined form. In one color, for the normalized power $r_N^{2P}$, put
+\[
+ U_N(z)=e^{2\pi\ii PNz^2}\sinh(2\pi\ii z)\mathcal F_N(z),\qquad
+ z_k=(k+1/2)/N-1/2.
+\]
+Then the folded color pairing is exactly
+\begin{equation}\label{eq:sampled-derivative}
+ \sum_{h=0}^{H_N}\beta_{N-h-1}^{P}C_N(h/N)
+ =\frac{(-1)^d\kappa^{-P}}{2\pi\ii N^2}
+ \sum_{k=0}^{N-1}U_N'(z_k).
+\end{equation}
+The derivative contains both the $h$ term and the linear normal term from the Hermite data. Removing either would change this identity.
+
+The endpoint values satisfy
+\[
+ U_N(1/2)=U_N(-1/2)=0,\qquad
+ U_N'(1/2)=U_N'(-1/2).
+\]
+The periodic extension of $U_N'$ is continuous and piecewise smooth. Two integrations by parts give an absolutely summable Fourier series at each fixed $N$. Midpoint Fourier selection followed by one integration by parts gives
+\begin{equation}\label{eq:one-charge}
+ (-1)^d\kappa^{-P}
+ \sum_{m\ne0}(-1)^{md}m
+ \int_{-1/2}^{1/2}e^{2\pi\ii N(Pz^2-mz)}
+ \sinh(2\pi\ii z)\mathcal F_N(z)\,\dd z.
+\end{equation}
+There is no zero charge: it vanishes from the two exact endpoint zeros. For an even source the terms at $m$ and $-m$ are equal, because both $m$ and the hyperbolic sine change sign. This equality precedes any saddle approximation.
+
+Taking $P_\ell=-p_\ell$ in every color and restoring the Cartan factors gives the full corridor expression
+\begin{multline}\label{eq:full-charge}
+ \chi_N\eta_N(-1)^{bd}\kappa^{-\sum p_\ell}
+ \sum_{\mathbf m\in(\ZZ\setminus\{0\})^b}
+ (-1)^{d\sum m_\ell}\prod_\ell m_\ell\\
+ \times\int_{[-1/2,1/2]^b}
+ e^{-2\pi\ii N\sum_\ell(p_\ell z_\ell^2+m_\ell z_\ell)}
+ \prod_\ell\sinh(2\pi\ii z_\ell)\mathcal F_N(\mathbf z)\,\dd\mathbf z.
+\end{multline}
+This is a sum of commuting color-register functionals. No physical box is commuted through another box.
+
+\section{Uniform charge tails and their endpoint currents}
+Absolute convergence at each $N$ is not a uniform exponential tail estimate. We prove the latter before using a Gaussian approximation. By \eqref{eq:noncentral-Fourier}, $\mathcal F_N$ and its first few derivatives are exponentially small on fixed complex strips based at $z=\pm1/2$. Fix a small strip height $\sigma$ using only this source estimate.
+
+For $m>0$, shift the one-dimensional Fourier integral down by $\sigma$. On the horizontal side the source's physical support gives a bound with exponent
+\[
+ F_0-2\pi\sigma(m-|P|-\delta).
+\]
+The two vertical sides must be paired. Their common Fourier endpoint phase is $(-1)^{mN}$, and their difference is
+\[
+ V_N(v)=U_N(1/2-\ii v)-U_N(-1/2-\ii v),\qquad0\le v\le\sigma.
+\]
+Periodicity of the finite Fourier polynomial and the exact endpoint relations give $V_N(0)=V_N'(0)=0$. Keeping the chirp's height-dependent cost, rather than bounding it at the top of the strip, gives
+\[
+ |V_N(v)|\le\poly(N,P)v^2e^{N(F_0-g_1)+2\pi|P|Nv}.
+\]
+Therefore
+\begin{equation}\label{eq:paired-current}
+ \left|m\int_0^\sigma e^{-2\pi mNv}V_N(v)\,\dd v\right|
+ \le\frac{\poly(N,P)m}{N^3(m-|P|)^3}e^{N(F_0-g_1)},
+ \qquad m>|P|.
+\end{equation}
+This is summable for $m>2|P|+2\delta+2$. The upper shift treats negative $m$. Neither vertical current has been set to zero.
+
+In several variables, remove tails one at a time while all other chirps remain on real grids or finite real integrals. If $D_i$ is the exact sampled derivative functional and $D_i^{\rm lo}$ its finite-charge restriction, use the exact identity
+\[
+ \prod_iD_i-\prod_iD_i^{\rm lo}
+ =\sum_i\left(\prod_{j<i}D_j^{\rm lo}\right)
+ (D_i-D_i^{\rm lo})\left(\prod_{j>i}D_j\right).
+\]
+The low-charge functionals have finite supremum norm; the sampled ones and their fixed derivatives cost powers of $N$ and the fixed slopes. All spectator chirps have modulus one. Thus each term has the exponential gap of \eqref{eq:paired-current}, without a factor $e^{N|p_j|}$ from a different cusp. This is the point that permits independently unequal long slopes.
+
+\section{The central Fourier packet}
+The implicit-function theorem defines $\boldsymbol\xi(\mathbf z)$ by
+\[
+ \nabla\varphi(\boldsymbol\xi)+2\pi\ii\mathbf z=0.
+\]
+Set
+\begin{equation}\label{eq:Fourier-action}
+ \Psi(\mathbf z)=\varphi(\boldsymbol\xi(\mathbf z))
+      +2\pi\ii\boldsymbol\xi(\mathbf z)\cdot\mathbf z,
+ \qquad
+ B(\mathbf z)=\frac{(2\pi)^{b/2}a_\eps(\boldsymbol\xi(\mathbf z))}
+ {\sqrt{\det[-\varphi''(\boldsymbol\xi(\mathbf z))]}}.
+\end{equation}
+Both functions are separately even, $B(0)\ne0$, and
+\begin{equation}\label{eq:Psi-quadratic}
+ \Psi(\mathbf z)=F_0-\pi\ii\sum_\ell\frac{z_\ell^2}{\tau_\ell}
+ +O(\|\mathbf z\|^4).
+\end{equation}
+Exact half-grid cotangent rectangles applied to \eqref{eq:finite-Fourier} turn it into $N^b$ times its finite real integral, with exponentially small boundary and nonconstant-mode errors. Translate that integral to the parallel real contour through $\boldsymbol\xi(\mathbf z)$. The strict complex Gaussian estimate controls the connectors. Gaussian integration gives, uniformly on a fixed complex polydisk,
+\begin{equation}\label{eq:Fourier-packet}
+ \mathcal F_N(\mathbf z)=N^{\mu+b/2}B(\mathbf z)e^{N\Psi(\mathbf z)}
+ (1+O(N^{-1})).
+\end{equation}
+This argument applies to the exact $C_N$, not to a pointwise real-grid approximation whose error might have uncontrolled Fourier behavior.
+
+\section{Local charges for independently signed slopes}
+For a nonzero integer vector $\mathbf m$, define
+\[
+ T_{\mathbf m}(\mathbf z)=\Psi(\mathbf z)
+ -2\pi\ii\sum_\ell(p_\ell z_\ell^2+m_\ell z_\ell).
+\]
+Write $e_\ell=1/p_\ell$ and $t_\ell=m_\ell/p_\ell$. The saddle equations are
+\begin{equation}\label{eq:charge-saddle}
+ z_\ell=-\frac{t_\ell}{2}
+       +\frac{e_\ell\Psi_\ell(\mathbf z)}{4\pi\ii}.
+\end{equation}
+At $\mathbf e=0$ their derivative in $\mathbf z$ is the identity, so one fixed polydisk in $(\mathbf t,\mathbf e)$ has a unique holomorphic solution. Completing the square yields
+\begin{equation}\label{eq:charge-square}
+ T_{\mathbf m}(\mathbf z(\mathbf t,\mathbf e))
+ =\frac{\pi\ii}{2}\sum_\ell\frac{t_\ell^2}{e_\ell}
+ +\widehat B(t_1^2,\ldots,t_b^2,\mathbf e),
+\end{equation}
+where the remainder is holomorphic even at $e_\ell=0$. For real parameters the first term is purely imaginary. Put $b_\ell=\pi\Im\tau_\ell/|\tau_\ell|^2>0$. Equation~\eqref{eq:Psi-quadratic} gives
+\[
+ \partial_{t_\ell^2}\Re\widehat B(0,0)=-b_\ell/4.
+\]
+On one smaller fixed real box these derivatives are at most $-b_\ell/8$. Integrating along the squared coordinates proves
+\begin{equation}\label{eq:charge-gap}
+ \Re T_{\mathbf m}(\mathbf z_{\mathbf m})
+ \le\Re T_{\mathbf1}(\mathbf z_*)
+ -\sum_\ell\frac{b_\ell}{8}\frac{m_\ell^2-1}{p_\ell^2}
+\end{equation}
+for all local nonzero charges. The strict loss holds unless every $|m_\ell|=1$. This is an exact analytic inequality on a fixed parameter box, not a conclusion from a truncated expansion with comparable slopes.
+
+Separate evenness writes $\Psi_\ell=z_\ell Q_\ell(z_1^2,\ldots,z_b^2)$. Thus
+\[
+ z_\ell=-\frac{t_\ell}{2(1-e_\ell Q_\ell/(4\pi\ii))}.
+\]
+For a nonzero charge, $z_\ell\ne0$; on the small neighborhood $\sinh(2\pi\ii z_\ell)\ne0$. The real part of the translated-contour Hessian stays negative definite. Hence the local Gaussian coefficient is nonzero for negative as well as positive slopes.
+
+There are finitely many charges left after the tails were removed. A charge outside the local ratio box has some $|m_i/p_i|\ge t_0$. Split its real interval at $|z_i|=t_0/4$. Outside, the source Fourier bound has a fixed loss. Inside,
+$|m_i+2p_i z_i|\ge |p_i|t_0/2$; a small imaginary displacement of the appropriate sign decreases the filling phase. The displacement can be chosen within the fixed source tube, and its joining segments are estimated with the same nonstationary inequality and the endpoint Fourier loss. Spectator coordinates are still real. This supplies a fixed exponential loss for every such nonlocal charge. For local saddles, the connector height is $O(|p_i|^{-1}|m_i/p_i|)$ by the displayed factorization, which keeps their boundary losses below the selected saddle. These estimates are detailed in Appendix~\ref{app:filling-contours}.
+
+\section{Noncancellation and the final action}
+The $2^b$ charges with $|m_\ell|=1$ have identical complex critical action. Under $(m_\ell,z_\ell)\mapsto(-m_\ell,-z_\ell)$, the product $m_\ell\sinh(2\pi\ii z_\ell)$, the parity character and the integral are unchanged. They add exactly. For these charges the factor $(-1)^{bd+d\sum m_\ell}$ in \eqref{eq:full-charge} is one.
+
+Combining \eqref{eq:Fourier-packet} with the $b$-dimensional Gaussian gives
+\begin{equation}\label{eq:final-asymptotic}
+ \langle K(\mathbf p)\rangle_N
+ =\chi_N\eta_N\kappa^{-\sum p_\ell}N^{3/2}
+ D(\mathbf p)e^{NT_{\mathbf1}(\mathbf z_*)}
+ (1+O_{\mathbf p}(N^{-1})),
+\end{equation}
+where
+\begin{equation}\label{eq:final-amplitude}
+ D(\mathbf p)=
+ \frac{2^b(2\pi)^{b/2}B(\mathbf z_*)
+ \prod_\ell\sinh(2\pi\ii z_{*,\ell})}
+ {\sqrt{\det[-T_{\mathbf1}''(\mathbf z_*)]}}\ne0.
+\end{equation}
+The Gaussian branches are fixed by the translated original real contours. The selected real action tends to $F_0$ as all $1/p_\ell\to0$. Enlarge the fixed slope threshold so that it lies above every source, endpoint, nonlocal-charge and interpolation error level. Equation~\eqref{eq:final-asymptotic} then holds for the whole source, not only for the corridor.
+
+Finally $\Psi_\ell=2\pi\ii\xi_\ell$ and the charge-one saddle equation give $\xi_\ell=1+2p_\ell z_{*,\ell}$. Substitution into the Legendre expression shows
+\[
+ T_{\mathbf1}(\mathbf z_*)
+ =\varphi(\boldsymbol\xi)+\frac{\pi\ii}{2}
+ \sum_\ell\frac{(\xi_\ell-1)^2}{p_\ell}
+ =S_{\eps,\mathbf p}(\boldsymbol\xi).
+\]
+Equations~\eqref{eq:filled-volume}, \eqref{eq:final-asymptotic} and Proposition~\ref{prop:normalization} prove Theorem~\ref{thm:main}. The construction fills precisely the auxiliary cusps. The surviving cusp is the knot cusp, so the right side is the knot complement volume.

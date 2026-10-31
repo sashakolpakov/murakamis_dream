@@ -1,0 +1,168 @@
+\chapter{Alias estimates that survive composition}\label{ch:alias}
+
+\section{Coefficient envelopes on the true support}
+Write each mixed leaf as core plus alias, using \eqref{eq:core-alias} and then applying \eqref{eq:half-twist} when required. A low physical color has no core. A high physical color has the displayed positive core before its half twist. The resulting signed arrays are always propagated through the full Newton multiplication law.
+
+The endpoint-uniform factorial estimates and the selected complete half-twist recurrence give the following coefficient bounds, uniformly in every physical color and Newton index:
+\begin{equation}\label{eq:leaf-envelopes}
+ \begin{aligned}
+ |[\Bhat_r]C_j^\eps|&\le \exp\{N[\widetilde g(r/N)+e_N]\},
+       &&0\le r\le M,\\
+ |[\Bhat_r]A_j^\eps|&\le N^C e^{Nk(r/N)},
+       &&0\le r\le d,\\
+ \widetilde g(u)&=g(\max(u,1/4)),\qquad
+ k(u)=-2J(u/2).
+ \end{aligned}
+\end{equation}
+Here $e_N\to0$ uniformly over colors and indices. No polynomial prefactor is asserted for the core through spectral collisions. Zero coefficients satisfy the same bounds. The first profile is constant below $1/4$ and agrees with $g$ above it; its derivative joins continuously at zero. The second follows directly from the triangular transport: the logarithmic rate of a term with upper index $v/N=w$ is
+\[
+ J(w)-J(u)-J(w-u),\qquad w\ge\max(u,1/2).
+\]
+Its maximum is at $w=(1+u)/2$. Reflection and duplication of $J$ reduce that value to $-2J(u/2)$. The untransformed alias coefficients in \eqref{eq:low-alias} are bounded by $N/2$, so they have no additional exponential cost. The detailed finite derivation and the core recurrence estimate are in Appendix~\ref{app:selected-source}.
+
+The gate domain is the entire tetrahedron
+\begin{equation}\label{eq:alias-domain}
+ D=\{(u,v,w):u,v\ge0,\ \max(u,v)\le w\le u+v\le1\}.
+\end{equation}
+In particular, an aliased input can exceed $1/2$. All three functions $\widetilde g$, $k$ and $m$ are concave on their stated domains. For $k$, this is $k''(u)=-(\pi/2)\cot(\pi u/2)<0$; for $m$, it follows from \eqref{eq:gate-atoms}. This global concavity is what makes a finite supporting-plane certificate possible.
+
+\section{Why a block estimate is needed}
+At a pure leaf $a$, the tangent deficit against an alias is
+\[
+ I(a)=\min_{0\le u\le1}\{g(a)+g'(a)(u-a)-k(u)\}.
+\]
+It can be negative in part of the interval allowed by \eqref{eq:leaf-window}. Thus an induction that assigns a positive loss to every individual leaf would fail. The multiplication gate provides a compensating contribution. We first treat an entire $hh$ seed, then a new leaf together with the gate attaching it to a completed child.
+
+\begin{lemma}[Two-leaf block]\label{lem:two-leaf-gap}
+At the pure stationary $hh$ block, write
+\[
+ X=\cot\pi a,\quad \cot\pi b=X-\frac1{2X},\quad
+ F_2(b)=2g(a)+m(a,a,b),\quad \lambda=2\log(2X^2).
+\]
+For $1/2\le X\le1$, each of the two alias dual envelopes satisfies
+\begin{align}
+ \max_{D,\ v\le1/2}\{k(u)+\widetilde g(v)+m(u,v,w)-\lambda w\}
+ &\le F_2(b)-\lambda b-\frac1{100},\label{eq:AC-gap}\\
+ \max_D\{k(u)+k(v)+m(u,v,w)-\lambda w\}
+ &\le F_2(b)-\lambda b-\frac1{100}.\label{eq:AA-gap}
+\end{align}
+\end{lemma}
+\begin{proof}
+Let $P(\lambda)$ be the pure dual maximum with both inputs at most $1/2$. At $(a,a,b)$, $m_u=m_v=-2\log X$, $m_w=2\log(2X^2)$ and $g'(a)=2\log X$. Concavity therefore gives $P(\lambda)=F_2(b)-\lambda b$.
+
+Choose a rational feasible pure point $p$ and a rational strict point $v$ for an alias action $H$. The pure value bounds $P$ below; concavity gives the global upper tangent $H(w)\le H(v)+\nabla H(v)\cdot(w-v)$. The vertices of $D$ are
+\[
+ (0,0,0),\ (1,0,1),\ (0,1,1),\ (1/2,1/2,1/2).
+\]
+Cutting by the core condition $v\le1/2$ gives instead
+\[
+ (0,0,0),\ (1,0,1),\ (1/2,1/2,1/2),\
+ (0,1/2,1/2),\ (1/2,1/2,1).
+\]
+Partition $\lambda/\log2\in[-2,2]$ into sixteen intervals of length $1/4$. The certificate supplies one pure point and two alias tangent points on each interval. For every vertex and both interval endpoints it verifies
+\[
+ A(p)-\lambda p_w-H(v)-\nabla H(v)\cdot(w-v)+\lambda w_w>\frac1{100}.
+\]
+The expression is affine in the slope and in $w$, so these checks cover the whole interval and polytope. There are 288 rationally enclosed inequalities. Their least certified lower bound is
+\[
+ \frac{210002102902309638093785766005979344329}
+ {5000000000000000000000000000000000000000}>\frac1{25}.
+\]
+Appendix~\ref{app:certificate} proves the enclosure rules and specifies the finite data and replay. No optimizer, sampled covering, or assertion about the alias maximizer is used in verification.
+\end{proof}
+
+\section{A leaf attached to an arbitrary completed child}
+Let $(B,X,Y)$ be the selected child port and $(B_p,X,Y_p)$ the parent port. Put
+\begin{equation}\label{eq:attachment-slopes}
+ \begin{gathered}
+ a=\arccot X/\pi,\quad b=\arccot B/\pi,\quad
+ c=\arccot B_p/\pi,\qquad B_p=X-\frac1{X+B},\\
+ \mu=f_E'(b)=2\log(X/Y),\qquad
+ \lambda=f_{hE}'(c)=\mu+2\log(X+B).
+ \end{gathered}
+\end{equation}
+The proper-port bounds give $1/2<X<1$ and $1/(2X)-X<B<X$. Define
+\begin{align}
+ P(\mu,\lambda)&=\max_{D,\ u\le1/2}
+       \{g(u)+m(u,v,w)+\mu v-\lambda w\},\label{eq:single-P}\\
+ Q(\mu,\lambda)&=\max_D
+       \{k(u)+m(u,v,w)+\mu v-\lambda w\}.\label{eq:single-Q}
+\end{align}
+Only the new leaf is restricted below half in $P$. The child variable $v$ retains its whole interval; it is represented by its output tangent, not by a second bare leaf.
+
+\begin{lemma}[Attachment gap]\label{lem:attachment-gap}
+At every proper attachment in the completed-root grammar,
+\begin{equation}\label{eq:attachment-gap}
+ P(\mu,\lambda)-Q(\mu,\lambda)\ge\frac1{2500}.
+\end{equation}
+The pure maximum in \eqref{eq:single-P} is attained at $(a,b,c)$ from \eqref{eq:attachment-slopes}.
+\end{lemma}
+\begin{proof}
+The three derivatives there are $m_u=-2\log X$, $m_v=-\mu$, $m_w=\lambda$. Thus the pure objective is stationary, and concavity gives its global maximum. The same is true with $\widetilde g$ replacing $g$, because $a>1/4$ and the two functions agree near $a$.
+
+For $1/2<X\le2/3$, both slopes belong to $[-2\log2,0]$. Indeed, either child or parent has $Y<1$, so $2\log(X/Y)>2\log X>-2\log2$, while $Y^2\ge1-X^2>X^2$ gives the upper bound zero. On this entire square an exact certificate proves $P-Q>1/1000$. It uses 55 dyadic rectangles, a rational pure point and a global alias tangent on each rectangle. For the four slope corners and four vertices of $D$, it checks
+\begin{multline}\label{eq:single-certificate}
+ g(p_1)+m(p)-\{H(v)+\nabla H(v)\cdot(w-v)\}\\
+ +\mu(p_2-w_2)-\lambda(p_3-w_3)>\frac1{1000},
+ \qquad H=k+m.
+\end{multline}
+The 880 inequalities and exact recursive square coverage imply the global assertion. The least lower bound is
+\[
+ \frac{55437191760019874892517972684020763373}{10^{40}}
+ >\frac1{1000}.
+\]
+This uses the same outward rational engine as the block certificate.
+
+For $X\ge2/3$, the elementary one-leaf estimate is
+\begin{equation}\label{eq:leaf-tangent-certificate}
+ k(u)\le g(a)+g'(a)(u-a)-\frac1{2500},\qquad 0\le u\le1.
+\end{equation}
+Here is a direct proof of its endpoint margin. For $a\ge\arctan\sqrt2/\pi$, the minimum deficit occurs at $u=1$, and it equals
+\[
+ g(a)+(1-a)g'(a)=\frac2\pi\operatorname{Ti}_2(X)+\log X,
+ \quad \operatorname{Ti}_2(X)=\int_0^X\frac{\arctan t}{t}\,\dd t.
+\]
+It decreases with $a$. At $X=2/3$, four alternating terms give
+$\operatorname{Ti}_2(2/3)>1708762/2679075$; the logarithm series gives
+$\log(3/2)\le177391/437500$. With $\pi<22/7$, the difference is greater than $57269/136687500>1/2500$. For $1/4\le a\le\arctan\sqrt2/\pi$, the interior minimizing alias index is
+$u=(2/\pi)\arcsin(\tan^2(\pi a)/2)>a$, so the deficit decreases with $a$ and its endpoint is larger than the same bound. The exact rational checks are included in the reproduction suite.
+
+Finally add the tangent of the concave gate and the child linear term. The three variable coefficients cancel by stationarity, proving \eqref{eq:attachment-gap}.
+\end{proof}
+
+\begin{figure}[ht]
+\centering
+\input{figures/attachment-tangents}
+\caption{The child retains its output tangent and its original index. The new estimate is a leaf--gate comparison; it does not substitute a leaf for the child.}\label{fig:alias-induction}
+\end{figure}
+
+\section{The whole-tree induction}
+For every completed subtree at its selected output $b_E$, write $\lambda_E=f_E'(b_E)$. We prove, uniformly over all colors and all output indices,
+\begin{equation}\label{eq:subtree-tangent}
+ |[\Bhat_r]E_S|\le
+ \exp\!\left(N\left[f_E(b_E)+\lambda_E(r/N-b_E)-\delta_S+e_N\right]\right),
+ \quad e_N\to0,
+\end{equation}
+where $S$ is a specified alias subset, $\delta_\varnothing=0$, and $\delta_S>0$ when $S\ne\varnothing$. Lemma~\ref{lem:two-leaf-gap} supplies the base. A turn reverses the index, negates the slope, and adds only the fixed affine correction from $d/N=1-1/N$. A completed/completed product adds both child tangents and the gate tangent. The internal derivatives cancel, while any inherited loss remains.
+
+For $hE$, the exact split is
+\[
+ C_{hE}=C_h\star C_E,\qquad
+ A_{hE}=A_h\star C_E+C_h\star A_E+A_h\star A_E,
+\]
+where $\star$ is \eqref{eq:positive-product} with $i+j\le d$. A new alias loses at least $1/2500$ by Lemma~\ref{lem:attachment-gap}; a child alias carries its old loss; when both occur the losses add. A core leaf uses the tangent of $\widetilde g$ with zero new loss. Thus the parent may take the minimum of its child loss and $1/2500$. The order $Eh$ has the same algebraic bound without moving a coupon through a turn.
+
+At the root, the two output tangents cancel on $i+j=d$. The finite affine shifts contribute $O(1)$ to the exponent. There are only polynomially many wire states and finitely many alias subsets for a fixed tree. We obtain constants $\gamma>0$ and $C$ such that the total aliased source satisfies
+\begin{equation}\label{eq:whole-alias-gap}
+ |\mathcal A_N-\mathcal A_N^{\rm core}|
+ \le N^C e^{N(F_0-\gamma)}
+\end{equation}
+uniformly over all physical colors.
+
+The all-core majorant also has a unique maximum at the complete strict state. On its high-index neighborhood it agrees with the strictly concave complete action. If another global maximum existed, concavity would make the segment joining it to the strict maximum constant, contradicting the negative Hessian near that maximum. Compactness therefore gives a fixed loss outside a fixed state window. Inside the window, the exact local core bound has a strict loss when any complementary color $h_\ell$ is at least a fixed positive multiple of $N$. Combining the two alternatives yields
+\begin{equation}\label{eq:physical-color-gap}
+ \max_\ell h_\ell\ge\delta N
+ \quad\Longrightarrow\quad
+ |\mathcal A_N(\mathbf h)|\le N^C e^{N(F_0-\gamma_\delta)}.
+\end{equation}
+The uniform global envelope and the strict color estimate are proved in Appendix~\ref{app:global-core-envelope}. Equations~\eqref{eq:whole-alias-gap} and \eqref{eq:physical-color-gap} are the global estimates required for filling. They concern the entire physical color range, not only a formal small-color series.

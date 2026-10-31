@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A sharp spectral maximum does not by itself define the original torsor · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/manuscript.html" class="">The manuscript</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 31 October 2026<br>General conjecture remains open.<a href="../sphinx/index.html">Sphinx documentation ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a><p><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/research_sharp_spectral_phase_obstruction.md">Markdown source</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="a-sharp-spectral-maximum-does-not-by-itself-define-the-original-torsor">A sharp spectral maximum does not by itself define the original torsor</h1>
+<p>Workspace research draft, 31 October 2026. Not approved for publication. Exact local result. This concerns the actual LEFT coefficient, including its omitted-half scalar and unused rows. It exhibits a strict real spectral maximum of its absolute leading rate for which the usual positive-clock physical adapter cannot transport the original ordered meridian pair. A missing sign character is identified explicitly. This is NOT a global shared-source growth counterexample, nor an obstruction to a properly constructed signed-clock/phase adapter.</p>
+<h2 id="a-literal-coefficient-with-one-protected-outer-face">1. A literal coefficient with one protected outer face</h2>
+<p>Use the original even-level notation</p>
+<pre><code>N=2m, d=N-1,
+alpha_r(delta)=4cos²(pi(r+1/2)/N)-4sin²(pi delta),
+s_r=2sin(pi r/N).</code></pre>
+<p>Set y=0. Then every dimer vanishes, so the actual tail is the single monomer product</p>
+<pre><code>K_(i,j)=x^(j-i) product_(r=i+1)^j s_r².</code></pre>
+<p>Consequently the coefficient of x<sup>(j-i)b</sup>i c^(d-j) in the original LEFT factor, up to its recorded overall sign, is EXACTLY</p>
+<pre><code>a_N(delta)=A_rest(delta)
+           product_(r&lt;i) alpha_r(delta)
+           product_(j&lt;r&lt;m) alpha_r(delta)
+           product_(r=i+1)^j s_r².                          (1)</code></pre>
+<p>This follows from actual_global_left_weighted_spectral_envelope.md (1); no absolute recurrence or endpoint replacement has been introduced.</p>
+<p>Take N divisible by12, i=N/6, j=N/3 and delta=1/4. The omitted-half Chebyshev scalar has modulus2, since m is divisible by6 and sigma=0. No alpha_r vanishes: its zero would require r+1/2=N/4, with an integer right side. Thus (1) is nonzero at every one of these levels.</p>
+<p>More generally, write mu=i/N, nu=j/N and assume</p>
+<pre><code>0&lt;mu&lt;t_c=1/2-delta&lt;nu&lt;1/2.</code></pre>
+<p>The unused intervals avoid the moving zero. Their absolute Riemann rate, with the same monomer interval and zero-rate omitted half, is</p>
+<pre><code>h_delta(mu,nu)
+  = integral_0^mu log|alpha(t,delta)|dt
+    +integral_nu^(1/2) log|alpha(t,delta)|dt
+    +integral_mu^nu log(4sin²(pi t))dt,                     (2)
+
+alpha(t,delta)=4[cos²(pi delta)-sin²(pi t)].</code></pre>
+<p>At the specified point (2) is the ACTUAL coefficient limit N^(-1)log|a_N(1/4)| along N divisible12. The smoothly varying rate functional (2) is not asserted to approximate through every dense zero of A_rest on a fixed spectral interval.</p>
+<h2 id="a-strict-free-spectral-maximum-and-all-row-equations">2. A strict free-spectral maximum and all row equations</h2>
+<p>Hold mu=1/6 and nu=1/3 fixed. At delta=1/4,</p>
+<pre><code>alpha(t)=2cos(2pi t), alpha_delta=-4pi,
+alpha_(delta delta)=0.</code></pre>
+<p>Reflection t -&gt;1/2-t interchanges the two unused intervals and negates alpha. Hence direct differentiation of (2) gives</p>
+<pre><code>partial_delta h=0,
+partial_delta² h
+   =-4pi² [integral_0^(1/6) sec²(2pi t)dt
+            +integral_(1/3)^(1/2) sec²(2pi t)dt]
+   =-4pi sqrt(3)&lt;0.                                        (3)</code></pre>
+<p>This is a strict interior maximum in the FREE real spectral coordinate. No branch-contour assertion is involved.</p>
+<p>At shared positive face multipliers x=b=1,c=3, add the original degree terms mu log b+(1-nu)log c to (2). The x term is zero because x=1. Both row equations hold as well. Indeed, with y=0,</p>
+<pre><code>L_delta(t)=sin²(pi t)/|cos²(pi delta)-sin²(pi t)|,
+L_(1/4)(1/6)=1=b, L_(1/4)(1/3)=3=c.                      (4)</code></pre>
+<p>Thus partial_mu=log b-log L(mu)=0 and partial_nu=log L(nu)-log c=0. The outer-degree constraint is literal: xi=nu-mu=1/6, since all outer degree lies at x and y is protected.</p>
+<p>These are exactly the local real equations one would encounter when using (2) as an absolute-rate functional with common face multipliers. The local datum need not extend to a globally maximizing shared flow; no such extension is claimed.</p>
+<h2 id="the-original-physical-casimir-fails-on-one-leg">3. The original physical Casimir fails on one leg</h2>
+<p>For the original physical adapter H/(bc)^(d/2), the endpoint derivatives of the absolute stationary action give</p>
+<pre><code>p_in=exp(-2pi i mu), p_out=exp(-2pi i nu).                  (5)</code></pre>
+<p>This is the LEFT sign convention of the calibrated endpoint Green calculation, including its integer c character; inversion of either p does not change the following scalar test. The original crossing Casimir in the same clock chart is</p>
+<pre><code>Sigma(z,p)=2+[(p-1)²/p] (z+x)(z+y)/z².                     (6)</code></pre>
+<p>It is the actual principal formula in notes/actual_cross_cofactor_marked_action.md (12), not a freely chosen trace convention. Equal whole ordered products necessarily have equal traces, independently of the common scale or outer momentum.</p>
+<p>At the exact datum (3)–(4),</p>
+<pre><code>p_in=(1-i sqrt3)/2, p_out=(-1-i sqrt3)/2,
+Sigma(1,p_in)=0=sigma,
+Sigma(3,p_out)=-2 != sigma.                               (7)</code></pre>
+<p>Thus these positive-clock absolute equations cannot supply the original pair-preserving centralizer. The discrepancy is not repaired by choosing the reciprocal spectral eigenline. In contrast</p>
+<pre><code>Sigma(-3,p_out)=0.                                       (8)</code></pre>
+<p>The output’s row equation after the pole is the conic with c replaced by -c. This is a genuine clock sign, not a zero spectral boundary or a discarded protected-face singularity.</p>
+<p>An all-positive companion exists: x=y=b=1,c=5, delta=1/4, sin²(pi mu)=1/8, sin²(pi nu)=25/32, and xi=(nu-mu)/2. Symmetry gives the unique outer tilt x/y=1. The absolute stationary spectral derivative vanishes, with fixed-row second derivative -2pi sqrt7. Its two positive-clock traces are0 and -5/2, and replacing c by -5 gives0. The protected monomer example above is sufficient and does not need a general coefficient Legendre theorem.</p>
+<h2 id="the-exact-character-that-the-modulus-discarded">4. The exact character that the modulus discarded</h2>
+<p>In the strict straddling regime every unused prefix row r&lt;i has alpha_r&gt;0, while every unused suffix row j&lt;r&lt;m has alpha_r&lt;0. Its EXACT sign is</p>
+<pre><code>(-1)^(m-1-j)=(-1)^(d-j) (-1)^(m-1-d).                     (9)</code></pre>
+<p>The first factor depends on the physical c exponent. It is precisely the change c -&gt; -c in that summand; the second is a retained scalar. The omitted-half scalar A_rest is still present and has its own two oscillatory Chebyshev modes. Its zero exponential modulus does not license deleting its phase or its derivatives.</p>
+<p>At even levels these modes can be printed exactly:</p>
+<pre><code>A_rest=2(-1)^m cos(N pi delta)
+      =(-1)^m[exp(i pi N delta)+exp(-i pi N delta)].        (10)</code></pre>
+<p>For odd N=2m+1 the exact formula from the same source is</p>
+<pre><code>A_rest=4(-1)^m sin(pi delta) sin(N pi delta).</code></pre>
+<p>On a fixed strict spectral interior its two exponential modes have the same derivatives +/-i pi; the displayed sine prefactor has zero principal derivative after division by N. No endpoint continuation of that prefactor is assumed.</p>
+<p>Within the strict straddling chamber the suffix sign in (9) is independent of delta. Thus the principal spectral derivative of each of these two RETAINED modes is</p>
+<pre><code>partial_delta h + i pi,  or  partial_delta h - i pi.        (11)</code></pre>
+<p>At (3) it equals +i pi or -i pi, not zero. A consistent face-character absorption changes only the recorded integer monomial phase and does not remove (10). If a corresponding actual longitude-polarized representation were constructed, its normalization U=partial_delta A would therefore give U=+/-i pi, hence M²=-1, rather than a killed meridian. This last sentence is a conditional interpretation using the existing primitive-log convention, not a representation constructed from the absolute datum.</p>
+<p>Therefore partial_delta h=0 asserts stationarity of a REAL absolute rate only. It does not imply that the full complex original phase has zero primitive auxiliary meridian log, nor that a formally written ratio H_c/E_b=1 is its actual primitive collar.</p>
+<p>The endpoint identity/hybrid construction at delta=0 does not see this post-pole character, because no pole lies inside a strict lower interval. Extending that construction requires a consistent shared face-character assignment and the original omitted-half/peripheral phases. It cannot follow from the absolute row and spectral equations alone.</p>
+<p>This identifies a precise missing adapter, not an impossibility theorem. A signed-clock assignment could restore the two conics locally; whether those signs sew at every original face, cup, cap and unrestricted mark is a separate incidence and phase problem.</p>
+<p>A focused exact audit was recorded during the original investigation. That historical diagnostic is not included in this public snapshot or in the manuscript reproduction suite.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/research_sharp_spectral_phase_obstruction.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#a-literal-coefficient-with-one-protected-outer-face">1. A literal coefficient with one protected outer face</a><a href="#a-strict-free-spectral-maximum-and-all-row-equations">2. A strict free-spectral maximum and all row equations</a><a href="#the-original-physical-casimir-fails-on-one-leg">3. The original physical Casimir fails on one leg</a><a href="#the-exact-character-that-the-modulus-discarded">4. The exact character that the modulus discarded</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

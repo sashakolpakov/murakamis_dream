@@ -1,0 +1,123 @@
+\chapter{The selected complex color packet}\label{ch:packet}
+
+\section{A finite holomorphic object}
+Let $\mathbf k\in\ZZ^K$ be the primitive wire coordinates from \eqref{eq:lattice-dimension}. Every other wire has the exact form
+\begin{equation}\label{eq:affine-offsets}
+ r_w=N\ell_w(\mathbf x)+\delta_w,\qquad \mathbf x=\mathbf k/N,
+\end{equation}
+with an integral affine function $\ell_w$ and a fixed integer $\delta_w$. In particular, each use of $d=N-1$ contributes to the offsets. Choose a closed rectangular box about the strict complete maximizer, lying wholly inside the retained support. By Lemma~\ref{lem:port-bounds}, every leaf lies in a fixed compact subinterval of $(1/4,1/2)$.
+
+For pure leaves, the exact color coefficient on this box is
+\[
+ \frac{N^2s_{2r}}{s_r^2s_{r-h}s_{r+h}},\qquad t=h/N.
+\]
+Use the canonical factorial continuation for the paired arguments $r-h,r+h$. For signed leaves use the finite continuant sum, with its continuous $q^{h^2}$ chirp and its selected high-index recurrence solution. The precise construction, including the endpoint source anchor and exponential interpolation error, is proved in Appendix~\ref{app:selected-source}. In particular, no interpolation is chosen merely because it agrees to order $N^{-1}$ on the real grid.
+
+Define $C_N(\mathbf t)$ by the \emph{finite} rectangular wire sum of the exact continued-color leaf factors and the original integer gate coefficients. At each fixed integer wire index, only the color is continued: the signed leaf remains its finite source sum with the canonical chirp. Index interpolants are introduced afterward as a proof device and replace this exact window only with exponentially small error. This is the definition in \eqref{eq:b1-exact-window}. It is holomorphic on a fixed complex polydisk and separately even in every $t_\ell$. It agrees with the original source in the small physical color corridor up to the exponentially small errors established in Chapter~\ref{ch:alias} and the local interpolation proof.
+
+\section{The selected local action}
+For a pure leaf the action is
+\begin{equation}\label{eq:pure-color-action}
+ g(x,t)=J(2x)-2J(x)-J(x-t)-J(x+t).
+\end{equation}
+For a signed half twist, the selected action $f_\eps$ is an analytic shear of this action. Put
+\begin{equation}\label{eq:local-shear}
+ \chi=t-\frac{\eps g_t(x,t)}{2\pi\ii},\qquad
+ f_\eps(x,\chi)=g(x,t)-\frac{\eps g_t(x,t)^2}{4\pi\ii},
+ \qquad \eps\in\{0,\pm1\}.
+\end{equation}
+For $\eps=0$ this is the identity. For $\eps\ne0$, the implicit map is nonsingular near the selected complete leaf. The finite recurrence selects this branch and fixes its additive constant; the relation is not used to choose an arbitrary solution after taking a semiclassical limit.
+
+Let $F_\eps(\mathbf x,\boldsymbol\chi)$ be the sum of the $f_{\eps_\ell}$ and the unchanged gate actions. The implicit-function theorem gives a unique nearby stationary point $\mathbf x_*(\boldsymbol\chi)$, and define
+\[
+ \Phi_\eps(\boldsymbol\chi)
+ =F_\eps(\mathbf x_*(\boldsymbol\chi),\boldsymbol\chi).
+\]
+The same relation holds after eliminating all internal wires:
+\[
+ \chi_\ell=t_\ell-\frac{\eps_\ell\partial_{t_\ell}\Phi_0}{2\pi\ii},\qquad
+ \Phi_\eps(\boldsymbol\chi)
+ =\Phi_0(\mathbf t)-\sum_\ell
+ \frac{\eps_\ell(\partial_{t_\ell}\Phi_0)^2}{4\pi\ii}.
+\]
+At fixed $\chi$, differentiation of \eqref{eq:local-shear} gives $(f_\eps)_x=g_x$ and $(f_\eps)_\chi=g_t$. Thus the wire stationary equations are the pure equations evaluated at the implicitly changed colors. This proves the global shear by the envelope theorem, with the complete value $F_0$ as its anchor.
+
+\section{Offsets, powers of the level, and the Gaussian}
+On a compact complex strict window, the factorial expansion is
+\begin{equation}\label{eq:factorial-local}
+ G_N(N\alpha+c)=\sqrt{2N\sin\pi\alpha}\,
+ e^{NJ(\alpha)}(2\sin\pi\alpha)^c\bigl(1+O(N^{-1})\bigr).
+\end{equation}
+The square roots and logarithms continue from positive real arguments. The integer shift $c$ is essential. For a signed leaf the corresponding offset factor is $e^{\delta\partial_x f_\eps}$, evaluated at the changed critical point, not at the complete point or with $g$ in place of $f_\eps$.
+
+Each leaf has prefactor $N^{1/2}$; each of the $H-2$ retained gates has prefactor $N^{-3/2}$. Hence the summand has $N^{3-H}$. A $K=2H-3$ dimensional lattice Gaussian contributes $N^{K/2}$, leaving $N^{3/2}$. More explicitly, if
+\[
+ I_N(\mathbf x,\boldsymbol\chi)
+ =N^{3-H}b_\eps(\mathbf x,\boldsymbol\chi)
+ e^{NF_\eps(\mathbf x,\boldsymbol\chi)}(1+O(N^{-1})),
+\]
+then the leading packet amplitude is
+\begin{equation}\label{eq:packet-amplitude}
+ a_\eps(\boldsymbol\chi)=
+ \frac{(2\pi)^{K/2}b_\eps(\mathbf x_*(\boldsymbol\chi),\boldsymbol\chi)}
+ {\sqrt{\det[-\partial^2_{\mathbf x}F_\eps(\mathbf x_*,\boldsymbol\chi)]}}.
+\end{equation}
+Every factor in $b_\eps$ is specified by \eqref{eq:factorial-local}, the finite signed recurrence, and the offsets \eqref{eq:affine-offsets}.
+
+\begin{theorem}[Exact corridor packet]\label{thm:packet}
+For the fixed completed-root expression there are a fixed complex polydisk, a nonzero holomorphic $a_\eps$, and a separately even holomorphic $\Phi_\eps$ such that
+\begin{equation}\label{eq:packet}
+ C_N(\boldsymbol\chi)=N^{3/2}a_\eps(\boldsymbol\chi)
+ e^{N\Phi_\eps(\boldsymbol\chi)}(1+O(N^{-1}))
+\end{equation}
+uniformly there. The physical source has the comparison
+\begin{equation}\label{eq:packet-comparison}
+ |\mathcal A_N(\mathbf h)-\eta_N C_N(\mathbf h/N)|
+ \le N^C e^{N(F_0-\gamma)},\qquad 0\le h_\ell\le\delta N,
+\end{equation}
+where $\eta_N=\exp(\ii\pi d\sum_\ell\eps_\ell/4)$ is the retained unit phase. At zero,
+\begin{equation}\label{eq:color-hessian}
+ \Phi_\eps(0)=F_0,\qquad
+ \partial_{\chi_\ell}\partial_{\chi_j}\Phi_\eps(0)
+ =-\frac{2\pi X_\ell}{1-\eps_\ell\ii X_\ell}\delta_{\ell j}.
+\end{equation}
+The statement holds at both parities and all sufficiently large levels.
+\end{theorem}
+\begin{proof}
+The local finite interpolation and its exponentially small error are proved in Appendix~\ref{app:selected-source}. Apply the finite complex lattice Laplace lemma of Appendix~\ref{app:lattice-laplace} to the full rectangular window. That lemma uses exact cotangent residues, bounds every vertical side and nonconstant cotangent mode, and translates the ordinary integral to the unique complex critical point. It gives \eqref{eq:packet} and \eqref{eq:packet-amplitude}.
+
+At completeness, the signed multiplier relative to the positive amplitude is
+\[
+ \prod_{\eps_\ell\ne0}\sqrt{\sin\pi a_\ell}
+ \exp(-\ii\eps_\ell\pi a_\ell/2),
+\]
+which is nonzero. The positive amplitude is positive by the strict Gaussian. For pure colors, separate evenness makes the mixed wire--color derivative vanish at zero, and direct differentiation of \eqref{eq:pure-color-action} gives $-2\pi X_\ell$. The shear transforms it to \eqref{eq:color-hessian}. Its real part is strictly negative. The source estimates of Chapter~\ref{ch:alias}, together with the finite-window local error, prove \eqref{eq:packet-comparison}. All lattice offsets are fixed integers and no parity-dependent lattice density occurs.
+\end{proof}
+
+After shrinking the polydisk, this implies a source-specific Gaussian upper bound
+\begin{equation}\label{eq:complex-gaussian-bound}
+ |C_N(\mathbf x+\ii\mathbf y)|
+ \le N^C\exp N\{F_0-a_0\|\mathbf x\|^2+B_0\|\mathbf y\|^2\},
+ \qquad a_0>0.
+\end{equation}
+This bound is needed for the finite Fourier contours. A pointwise asymptotic on the physical grid would not imply it.
+
+\section{An exact three-leaf calibration}\label{sec:isolated}
+For $C(h^3)$ choose the three leaf indices $i,j,k$ as free coordinates. The surviving gate output is $d-k$, so its limiting output is $1-x_3$ with integer offset $-1$. The complete phase is
+\[
+ F(\mathbf x)=\sum_{\ell=1}^3g(x_\ell)+m(x_1,x_2,1-x_3).
+\]
+Its stationary point is $x_\ell=a=\arctan2/\pi$. The negative Hessian is
+\[
+ A=\frac{25\pi}{4}(I_3+\mathbf1\mathbf1^T),\qquad
+ \sqrt{\det A}=\frac{125\pi^{3/2}}4.
+\]
+The three unshifted leaf amplitudes are $\sqrt{10}/8$, the unshifted gate amplitude is $5\sqrt{10}/16$, and the gate offset is $e^{-m_z}=4$ at completeness. Thus $b=125/512$ and $a_0=\sqrt2/64$. The complete rate is $F_0=2v_8/\pi$, so the augmented volume is $4v_8$. At a changed color the offset is $e^{-m_z}$ evaluated at the changed critical point; it is not the constant four.
+
+The alias proof for this isolated case uses the exact symmetric kernel
+\[
+ \phi(\Bhat_i\Bhat_j\Bhat_k)
+ =\frac{s_{i+j}s_{i+k}s_{j+k}}
+ {N s_i s_j s_k s_{i+j+k-d}}
+\]
+on $i+j,i+k,j+k\le d$ and $i+j+k\ge d$, and zero elsewhere. It follows from \eqref{eq:positive-product} and $s_rs_{d-r}=N$. For one or two aliases, algebraic reassociation groups the aliased leaves into a two-leaf block and uses Lemma~\ref{lem:two-leaf-gap} at $X=1/2$; the remaining core tangent cancels the output slope, with only $\log4/N$ from the closing shift. For three aliases, $k\le v_3/\pi$ and $m\le3v_3/\pi$, while $6v_3<2v_8$. The exact rational margin and its elementary bounds are included in the reproduction suite. This is a source identity, not a tangle move. The one-leaf cap seam in the geometric closure is $\pi/2$, as in Chapter~\ref{ch:geometry}. These observations supply the same packet and filling argument for the isolated three-leaf case.

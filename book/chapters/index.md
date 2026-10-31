@@ -8,23 +8,22 @@ $$\lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(K)|=\operatorname{Vol}(S^3\setminus K)
 
 We pursue this through the pointed quantum A-structure, exact finite source formulas, positive energies, and hyperbolic angle optimization. The original marked source and peripheral factors stay part of the problem.
 
-The current target allows every fixed bridge width $k\geq2$: start with an essential hyperbolic augmented plat, then put independently sufficiently many signed twists into each designated region. The diagram and twists stay fixed as $N$ grows. The [frontier](frontier.md) separates the exact formulas and geometric certificates already available from the general quantum asymptotic still needed.
+The current target is a theorem about composing **Conway algebraic, or arborescent, tangles**: fix any admissible finite tangle tree, then put independently sufficiently many signed twists into its designated boxes. The diagram and twists stay fixed as $N$ grows. Bridge number is not the organizing parameter. The right side is the knot complement volume; Dehn filling removes auxiliary crossing-circle cusps and leaves the knot cusp unfilled.
 
-**A full-invariant family is now proved at every fixed width $k\geq2$.** The [one-end layer theorem](../../notes/general_one_end_layer_long_filling_volume.md) allows $3k-3$ independently long fixed signed twist regions and gives the actual filled hyperbolic volume. Its congruence subfamilies have minimal bridge number exactly $k$. The wider [balance theorem](../../notes/general_complete_radius_balance_filling_volume.md) applies to every certified diagram satisfying its finite complete-packing condition. The unrestricted conjecture remains open; this construction does not cover all $k$-bridge knots or arbitrary plat diagrams.
+**The full-invariant theorem now permits repeated single-leaf attachments as well as completed products and quarter-turns.** The [current theorem](../../notes/actual_arborescent_single_leaf_long_twist_volume.md) starts from $hh$ and allows $T(E)$, $E_1E_2$, $hE$ and $Eh$, closing with two completed children. Any finite number and depth of these operations is allowed. Constructible knot parity patterns and independently sufficiently long fixed signed twists give the knot complement volume, through both level parities and composite levels. The earlier isolated seed closures of width at least three remain included; isolated two-leaf closure remains excluded.
 
-The [simultaneous bridge-gap theorem](../../notes/general_simultaneous_bridge_gap_filling_volume.md) now permits a separate depth $m_j$ at every initial bridge gap, giving $3k-3+2\sum_jm_j$ independent twist regions. Exact transport in square-root curvature controls all the added ports. The earlier marked unit-chain extension is its first-gap special case; the full diagram stays fixed during the quantum limit.
+The new estimate combines the attached leaf, its original multiplication gate, and the completed child's output tangent. Joint concavity and exact rational inequalities prove a uniform alias loss that survives further attachments. The original complex packet and primitive peripheral action then give the full invariant limit. The [tangle formulation](../../notes/general_arborescent_tangle_volume_target.md) distinguishes this class from the remaining problem: arbitrary root-leaf closures, turned bare leaves, and coverage of all arborescent presentations. A subsequent local packet extension handles the quarter-index boundary, and a refined geometric construction handles all strict untwisted syntax; the broader whole-source signed estimate remains open.
 
-The [new coefficient-energy theorem](../../notes/actual_one_sided_relative_spectral_energy.md) now supplies a uniform triangle bound for every one-sided coefficient. Weighted Cauchy and a measure-preserving angle rearrangement reduce the remaining general estimate to an explicit optimization over the original shared face flows. The [combined entropy criterion](../../notes/general_endpoint_conditioned_source_energy.md) gives the full actual-volume limit whenever that optimization has a strict gap; universal validity remains open.
-
-The [global sharp-source theorem](../../notes/research_global_sharp_coefficient_limsup_majorant.md) now gives a uniform upper bound on the entire closed spectral and degree domain. Its [maximizers are classified](../../notes/research_full_fiber_sharp_stationary_classification.md) using the original face constraints: ordinary zero incidences and diagonals disappear, common finite weights exist, and every non-CROSS port forces an odd incidence cycle. Converting that sign obstruction into an absolute volume-rate bound remains open; a flat cap prevents an automatic local exponential-loss argument. The [results section](results.md#a-global-source-upper-bound-and-the-classification-of-its-maxima) presents this general reduction together.
-
-A separate [mixed phase-cancellation criterion](../../notes/research_mixed_cross_window_cycle_packing.md) now combines regular windows, their single-protected-face extensions, and whole CROSS coupons. An exact transfer and an analytic gauge retain both boundary terms and all unused factors. Fractional packing of inconsistent sign cycles gives a quantitative shared-torus loss with unchanged face targets. Comparing the remaining majorant with complete volume and covering the other windows are still open; the [results section](results.md#phase-cancellation-on-regular-source-windows) records the hypotheses together.
-
-The [finite-sector cover theorem](../../notes/general_actual_sector_cover_filling_volume.md) now permits finer shared-radius bounds on genuine source branches. A rigorously certified seventeen-region example fails the simpler anchored test but passes forty refined branches. The universal question is whether every eligible plat admits strict bounds for all its genuine non-CROSS sectors; that remains open.
+The earlier plat constructions, complete-packing certificates, weighted Cauchy estimates, Fourier methods and torsor calculations remain in [the equality results](results.md) and [the frontier](frontier.md). They provide other certified families and approaches to the general problem. The current research theorem does not establish the conjecture for all arborescent or all hyperbolic knots, and its internal reviews are not external peer review.
 
 ![The general route: exact source, local complex amplitudes and a marked geometric branch under a positive gluing certificate; global selection and estimates remain open.](../figures/research-map.png)
 
 ## Read the argument in order
+
+The [Conway composition manuscript](manuscript.md) gives the current theorem
+as a detailed paper, with preliminaries, proofs, illustrations and a
+reproducibility suite. A [Sphinx edition](https://sashakolpakov.github.io/murakamis_dream/sphinx/)
+provides a second documentation format.
 
 The [research library](../library.html) organizes the work by question: equality results, quantum sources, geometry, torsors, Fourier methods, the cube, and the general frontier. Each route gives a main argument, its scope, and supporting notes. The [figure gallery](../figures.md) introduces the main objects visually.
 
@@ -36,7 +35,7 @@ Start with [the equality results](results.md) for the exact knot and link famili
 
 | Part of the argument | Current scope |
 | --- | --- |
-| Volume limit of the original invariant | Signed Conway families with mixed seeds $h^s$, $s\geq3$, arbitrary fixed trees and constructible knot patterns, after sufficiently long signed full fillings; isolated $C(h^s)$ for $s\geq4$; specified pretzel and belt-stack families |
+| Volume limit of the original invariant | Every fixed completed tree generated by $hh$, $T(E)$, $E_1E_2$, $hE$, $Eh$, with two completed children at $C(FG)$; also isolated $C(h^s)$ for $s\ge3$. Knot parity and independently long fixed signed twists give the knot complement volume at both parities and composite levels. |
 | Exact finite source identities | Original arbitrary-Casimir-coupon source as one homogeneous face coefficient, including disconnected replacements and both parity carries; the complete-circle positive formula is its special case |
 | Boundary first-normal defect | An explicit two-insertion formula from the full root channel; finite Plancherel gives polynomial cost $O(N^2)$, without determining the scalar derivative or estimating that channel by the geometric volume |
 | Local quantum action | Selected ordinary amplitude on full physical complex compacts; fixed generic jets for all integer-grid physical columns and divided pairs; subexponential complex paired-normal bounds in shrinking channel windows |
@@ -53,7 +52,7 @@ Start with [the equality results](results.md) for the exact knot and link famili
 | Full original long-filled invariant under balance | A global remainder gap and the actual filled-volume limit for every fixed certified diagram passing the complete-radius test |
 | Full invariant beyond complete-packing balance | Finite genuine-sector covers; exact examples strictly separate balance, anchored and refined certificates |
 | General sharp-source upper problem | Uniform closed-domain coefficient bound; full-fiber maxima have finite common weights and classified branches, with an odd source cycle at every non-CROSS port |
-| General signed long-filled knot equality | Quantitative cancellation at the classified maxima, or the combined entropy gap on original shared flows, remains open |
+| General arborescent knot equality | Arbitrary root-leaf closures, turned bare-leaf operations, and general presentation coverage remain open. |
 
 The cube, Fourier, torsor, and alternative approaches are preserved. A failed intermediate estimate is useful evidence about the argument; it is retained beside the corrected scope.
 

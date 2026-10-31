@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The constrained Hessian of the original sharp source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/manuscript.html" class="">The manuscript</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 31 October 2026<br>General conjecture remains open.<a href="../sphinx/index.html">Sphinx documentation ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a><p><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/research_sharp_source_constrained_hessian.md">Markdown source</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="the-constrained-hessian-of-the-original-sharp-source">The constrained Hessian of the original sharp source</h1>
+<p>31 October 2026. <strong>Internally reviewed analytical research reduction.</strong> Root and a separate reader completed full analytical/source-scope reviews, PASS. These are internal reviews, not external peer review. This derives an exact second-variation test on the original shared transport fiber. The local obstruction below shows why an odd MAIN four-cycle does not alone supply an unstable direction. It is not a globally realized stable maximum, an absolute source bound, or a volume theorem.</p>
+<h2 id="the-actual-fixed-spectrum-row-hessian">1. The actual fixed-spectrum row Hessian</h2>
+<p>Use the <a href="research_full_fiber_sharp_boundary_activation.html">full-fiber activation</a> and <a href="research_full_fiber_sharp_stationary_classification.html">stationary classification</a>. Work at a classified datum with finite common positive ordinary weights, on its actual protected-coordinate face. All ordinary incidences are positive. For the restricted non-CROSS maximum, retain the hypothesis that its value is at least Phi_D and that some middle load is strictly greater than 1/2; then the small two-sided variations used below remain admissible.</p>
+<p>At a LEFT Green write q=(xi,mu,1-nu,nu-mu-xi), with actual common weights (x,b,c,y). Put</p>
+<pre><code>g(t,l,delta)=log Lambda_delta(t;exp(l),1)-log|alpha_delta(t)|,
+a(t)=partial_l log Lambda_delta(t;exp(l),1),
+V=int_mu^nu partial_l^2 log Lambda_delta(t;exp(l),1) dt.</code></pre>
+<p>The alpha and Lambda are exactly those of the full sharp functional; both unused intervals are retained. At the actual minimizing tilt, V&gt;0 when both outer incidences are ordinary. Differentiation of that Legendre minimum gives, at fixed delta,</p>
+<pre><code>d^2 h_delta = -g_t(mu) dmu^2 + g_t(nu) dnu^2
+      -[-a(mu)dmu+a(nu)dnu-dxi]^2/V.              (1)</code></pre>
+<p>There is no omitted scalar or spectral normalization in (1). The common weighted linear face terms have zero Hessian. A strict straddling Green has g_t(mu)&gt;0 and g_t(nu)&lt;0, so (1) is negative definite in the free local row coordinates. Protected middle coordinates are omitted, not varied. If one outer incidence is protected, specialize the exact monomer first: there is no independent xi coordinate or tilt, and only the two diagonal row terms remain. RIGHT is the literal row reflection.</p>
+<p>At a complete CROSS port the same argument at delta=0 applies: its start lies before 1/2 and its stop after 1/2, so the two row signs in (1) again give negative definiteness. Equivalently, write its entropy as the maximum of C(alpha)+C(beta) over the actual latent two-triangle split. On all free triangle coordinates, f’’(t)=-2pi/sin(2pi t)&lt;=-2pi. The projection to the four original loads has squared operator norm at most 2. Consequently</p>
+<pre><code>d^2 h_CROSS(q)[v,v] &lt;= -pi ||v||^2               (2)</code></pre>
+<p>for every original row-tangent v, with protected coordinates removed. This follows either by differentiating the unique latent optimizer or directly from strong concavity and the same linear projection. The permitted protected monomial half contributes no independent coordinate; the other half supplies the remaining strict concavity.</p>
+<p>Thus the negative fixed-spectrum row Hessian K is positive definite on the product of the free noncap row-coordinate spaces. This does not say that the joint row/spectral Hessian is negative definite.</p>
+<h2 id="exact-original-target-schur-complement">2. Exact original-target Schur complement</h2>
+<p>Let v collect the noncap row displacements in any fixed linear row-simplex coordinates. Let s collect the spectral displacements of the strict Green ports. Hold the complete CROSS spectra at zero and cap spectra at 1/2 for this test. At the stationary datum write the second variation as</p>
+<pre><code>Q(v,s)=-v^T K v+2v^T B s+s^T D s,              (3)</code></pre>
+<p>where B is the actual mixed row/spectral derivative and D is diagonal because spectra are local to the original coupons. No separate local maximum or local-to-global minimax exchange is asserted.</p>
+<p>If there are no residual caps, let T be the original ordinary-face balance map in these row coordinates: feasible v satisfy Tv=0. Redundant face equations are retained harmlessly. If residual caps are present, let T_0 be the noncap face map and T_cap the actual cap row map. A cap action is identically zero at its held spectrum. Its free row displacement w can compensate precisely T_0 v in im(T_cap). Hence set</p>
+<pre><code>T=P T_0,</code></pre>
+<p>where P is the orthogonal projection onto ker(T_cap^T). Then Tv=0 is exactly the condition that some actual cap displacement w makes the original face targets unchanged. All ordinary loads are positive, so these infinitesimal row displacements are realized by sufficiently small positive and negative displacements in the original fiber. This elimination is linear second-variation bookkeeping, not a change of the source or a new merged-face theorem.</p>
+<p>Define</p>
+<pre><code>W=D+B^T K^(-1)B,
+R=T K^(-1)B,
+C=T K^(-1)T^T.</code></pre>
+<p>The Moore–Penrose inverse C^dagger is needed only for redundant target equations. Since range(C)=range(T), every column of R is in range(C). Completing the square, or a constrained quadratic minimization, gives</p>
+<pre><code>max_(Tv=0) Q(v,s)=s^T [W-R^T C^dagger R] s,     (4)
+v_*=K^(-1)B s-K^(-1)T^T C^dagger R s.          (5)</code></pre>
+<p>Thus a positive eigenvalue of</p>
+<pre><code>S=W-R^T C^dagger R                             (6)</code></pre>
+<p>excludes the alleged sharp maximum. A genuine maximum necessarily has S&lt;=0. Conversely S&lt;=0 only passes this particular second-order test; it does not establish a local maximum or a global maximum. The matrix R^T C^dagger R is the exact nonnegative cost of repairing the row-optimal spectral displacement to the original face targets.</p>
+<p>The diagonal entries of W at a strict Green are positive. In fact the local row-optimal response at held common weights is K_e^(-1)B_e. For A=x+y, P=xy, z=sin^2(pi delta), D_0=A^2-4Pz and C_0=A+2bz, the absolutely normalized stationary action has derivative log(T_c/E_b), where</p>
+<pre><code>E_b=C_0+sqrt(C_0^2-D_0),
+T_c=2cz-A+sqrt((2cz-A)^2-D_0).</code></pre>
+<p>These are the larger-root branch factors, distinct from the target map T above. At (c-b)z=A, its second derivative is</p>
+<pre><code>W_e=2(c-b) pi sin(2pi delta)/sqrt(C_0^2-D_0)&gt;0. (7)</code></pre>
+<p>This is precisely the reviewed local weighted spectral minimum. It is W, not S. The shared repair term in (6) cannot be discarded just because the original incidence graph has an odd signed four-cycle. That cycle is a phase statement; (4) is an unsigned constrained quadratic test.</p>
+<h2 id="an-exact-forced-edge-mode-with-negative-combined-curvature">3. An exact forced-edge mode with negative combined curvature</h2>
+<p>Take the actual protected-outer monomer specialization y=0 and</p>
+<pre><code>(mu,nu,delta)=(1/6,1/3,1/4),
+(x,b,c)=(1,1,3),
+q=(1/6,1/6,2/3,0).                            (8)</code></pre>
+<p>The original row equations give b=L_delta(mu)=1 and c=L_delta(nu)=3; the spectral equation is (c-b)sin^2(pi delta)=x. Thus this is exact local Green stationary data with its original loads. For reference, if u=tan(pi mu), v=tan(pi nu), r=tan(pi delta), the retained monomer integrals give</p>
+<pre><code>partial_delta h=2[atanh_abs(vr)-atanh_abs(ur)],
+atanh_abs(t)=(1/2)log|(1+t)/(1-t)|.</code></pre>
+<p>The original monomer Hessian in (mu,nu,delta) at (8) is</p>
+<pre><code>[[-4pi sqrt(3), 0,            -4pi],
+ [0,            -4pi/sqrt(3),-4pi],
+ [-4pi,         -4pi,        -4pi sqrt(3)]].  (9)</code></pre>
+<p>Its fixed-degree spectral entry is strictly negative. Optimizing that spectral displacement, equivalently differentiating the already reviewed <a href="actual_protected_outer_spectral_energy.html">sharp spectral action</a> D_f(mu,nu-mu), gives the row Schur complement</p>
+<pre><code>(4pi/sqrt(3)) [[-2,1],[1,0]].                 (10)</code></pre>
+<p>Its positive eigenvalue is a local fact. The forced ordinary MAIN edge of this protected port is (x,c). The exact elementary circulation through its neighboring port changes only the x and c loads of each of those two ports, with opposite changes at the neighbor. In the Green row this fixes mu and varies nu. Therefore (10) gives ZERO for the largest possible Green second variation along this edge circulation. Following the optimal spectral response cannot make it positive.</p>
+<p>If the neighboring port is strict CROSS, its original row displacement has two nonzero entries of opposite size s. Formula (2) gives at most -2pi s^2. Hence the entire two-port circulation, even after the Green spectrum is optimized, has strictly negative second variation for s!=0. Allowing the CROSS spectrum to move from zero cannot repair this sign: its mixed degree/spectral derivative is zero by evenness, and its pure spectral second derivative is negative. The latter follows directly from the outside-alpha and positive-root integrals; at least one genuine half has a positive ordinary middle or two positive outers, so it is not the zero derivative monomial exception.</p>
+<p>This is an obstruction to the inference</p>
+<pre><code>odd forced MAIN four-cycle =&gt; positive feasible second variation.</code></pre>
+<p>It uses the literal MAIN-supported circulation and original row loads, not an arbitrary port-local variation. It does NOT exhibit a complete diagram whose full stationary data realize (8) with that neighbor and all other face targets, nor a stable full-source maximum. Other graph directions may still yield a positive eigenvalue of (6).</p>
+<h2 id="what-would-settle-this-route">4. What would settle this route</h2>
+<p>A general instability proof must control the original repair matrix in (6), for example by producing some s with</p>
+<pre><code>s^T R^T C^dagger R s &lt; s^T W s.</code></pre>
+<p>Neither the positive local entries (7), the common-weight dominance, nor the qualitative odd MAIN cycle presently proves that inequality. The published relative phase bounds and the local cap obstruction are independent of this exact Hessian reduction. No coefficient asymptotic, signed-source cancellation, or absolute Phi_D comparison is deduced here.</p>
+<p>Inputs: the published <a href="research_full_fiber_sharp_stationary_classification.html">full-fiber stationary classification</a>; the exact <a href="actual_global_left_weighted_spectral_envelope.html">LEFT weighted spectral envelope</a> (its normalized branch derivative); the <a href="actual_protected_outer_spectral_energy.html">protected-outer sharp spectral action</a>; and the already recorded <a href="research_joint_entropy_triangle_decomposition.html">local D_f nonconcavity</a>. The new statements are the original-target Schur complement and the precise failure of the elementary forced-edge instability inference. No numerical test is needed for these identities.</p>
+<h2 id="internal-validation">Internal validation</h2>
+<p>Root and a separate reader each read the complete derivation and checked the Legendre Hessian, strong-concavity constant, actual cap-image elimination, pseudoinverse range, normalized spectral curvature, exact monomer matrices and original MAIN circulation. Both reported PASS. No finite numerical audit is needed or claimed for these analytical identities. The global-realization and absolute-bound limitations remain unchanged.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/research_sharp_source_constrained_hessian.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-actual-fixed-spectrum-row-hessian">1. The actual fixed-spectrum row Hessian</a><a href="#exact-original-target-schur-complement">2. Exact original-target Schur complement</a><a href="#an-exact-forced-edge-mode-with-negative-combined-curvature">3. An exact forced-edge mode with negative combined curvature</a><a href="#what-would-settle-this-route">4. What would settle this route</a><a href="#internal-validation">Internal validation</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

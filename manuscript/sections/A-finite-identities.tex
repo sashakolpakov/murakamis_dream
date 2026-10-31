@@ -1,0 +1,163 @@
+\chapter{Finite algebra and normalization identities}\label{app:finite}
+
+\section{The crossing comparison and enhancement}\label{app:normalization}
+This section supplies the finite normalization calculation used in Proposition~\ref{prop:normalization}. Put $\omega=Q$ and
+\[
+ p_j=\prod_{h=1}^{j}(1-\omega^h),\qquad
+ \bar p_j=\prod_{h=1}^{j}(1-\omega^{-h}),\qquad p_0=1.
+\]
+Kashaev's unbraided four-index matrix may be written by introducing nonnegative residues
+\[
+ u=[j-i-1],\quad v=[i-l],\quad t=[l-k],\quad h=[k-j].
+\]
+Its support conditions are equivalent to $u+v+t+h=N-1$, and on that support
+\begin{equation}\label{eq:A-original-crossing}
+ R^o_{(i,j);(k,l)}=
+ \frac{N\omega^{1-(t+h)(u+h)}}{p_u\bar p_vp_t\bar p_h}.
+\end{equation}
+One free $j$ and such a composition specify one entry. Let $F_{ij}=\omega^{ij}/\sqrt N$. Its full Fourier transform has only the ordinary-integer-conserving entries
+\begin{equation}\label{eq:A-Fourier-crossing}
+ ((F^{-1}\otimes F^{-1})R^o(F\otimes F))_{(a-k,b+k);(a,b)}
+ =\omega^{1+(a-k)(b+1)}\frac{p_ap_{b+k}}{p_{a-k}p_bp_k},
+\end{equation}
+for $0\le k\le\min(a,N-1-b)$.
+
+Here is the finite summation. Define
+\[
+ S_m(X)=\sum_{j=0}^m\frac{X^j}{p_j\bar p_{m-j}}
+ =\frac{\prod_{j=1}^m(X-\omega^j)}{p_m}.
+\]
+The equality follows by induction from $\bar p_m=(-1)^m\omega^{-m(m+1)/2}p_m$ and
+$(1-\omega^m)S_m=(X-\omega^m)S_{m-1}$. The free Fourier index imposes conservation modulo $N$. The two remaining factors are
+$S_{N-1-z}(\omega^{c-z})S_z(\omega^{z-a})$; their zeros force $c\le z\le a$. With $m=a-c$, the residual sum is
+\[
+ \omega^{1+c(b+1)}\frac{p_a}{p_c}
+ \sum_{j=0}^m\frac{(-1)^j\omega^{j(j-1)/2}\omega^{(b+1)j}}
+ {p_jp_{m-j}}
+ =\omega^{1+c(b+1)}\frac{p_a}{p_c}
+ \frac{(\omega^{b+1};\omega)_m}{p_m}.
+\]
+If $b+m\ge N$, the product contains $1-\omega^N$ and vanishes. Otherwise it is $p_{b+m}/p_b$, proving \eqref{eq:A-Fourier-crossing} with integer, rather than merely residue, conservation.
+
+Set $G_j=p_j/(1-\omega)^j=q^{j(j-1)/2}[j]_q!$, $D_j=(-q)^j$, and $\gamma=\omega q^{-d^2/2}$. Substitution into \eqref{eq:universal-crossing} gives exactly
+\[
+ (F^{-1}\otimes F^{-1})R^o(F\otimes F)
+ =\gamma(DG\otimes G)\mathscr R(G^{-1}\otimes G^{-1}D^{-1}).
+\]
+For the enhanced braid conventions take
+\[
+ B_K=P(R^o)^T,\quad\mu_K=-qS,\quad\alpha_K=-q,
+ \qquad B_q=P\mathscr R^T,\quad\mu_q=K^{-1},\quad
+ \alpha_q=q^{(N^2-1)/2},
+\]
+where $S v_j=v_{j+1\bmod N}$. On $b$ strands, the single similarity
+\[
+ U_b=F^{-\otimes b}\bigotimes_{j=1}^b(G^{-1}D^{j-1})
+\]
+works for every adjacent generator because the quantum crossing conserves integer weight and commutes with $D\otimes D$. It also sends $\mu_q^{\otimes b}$ to $\mu_K^{\otimes b}$, and $\gamma\alpha_q=\alpha_K$. The writhe characters cancel exactly. The partial traces commute with the remaining module generators; distinct $K$ weights and nonzero $F$ arrows imply scalarity. Thus every internal similarity cancels, including the one open factor of a reduced cut. This proves the finite enhanced comparison used in Chapter~\ref{ch:source}. Large factorial gauges are never estimated by their norms.
+
+The primal/dual change of basis is $Bv_j=(-1)^jq^{j(j-N)}v_{d-j}$. Direct generator substitution conjugates $K^{-1}$ to the primal pivot and the crossing to the recorded primal convention. At completeness $g_{\rm ADO}=(-1)^dK$ and the twist has the corresponding sign. A $b$-strand closure of writhe $w$ and $c$ components has $w\equiv b-c\pmod2$, so the remaining enhancement ratio is $(-1)^{d(c-1)}$. Its modulus is one, and for a knot it is one in this convention.
+
+\section{The block polynomial and the physical Newton turn}\label{app:newton}
+For completeness we justify the block minimal polynomial used in Lemma~\ref{lem:commutant}. Before specialization, the ordinary highest-weight module of highest weight $d$ has weights $d-2a$. In the pair, a highest vector of total degree $j$ is obtained by solving the bidiagonal raising equation. If its coefficient at $|a,j-a\rangle$ is $u_a$, the equation at $|a,j-a-1\rangle$ determines $u_{a+1}/u_a$ as the negative ratio of the two nonzero raising entries. Thus for generic $q$ there is one such vector in each degree $j=0,\ldots,d$. Its highest weight is $2d-2j$, its Casimir is $q^{2d-2j+1}+q^{-2d+2j-1}$, and its successive lowering vectors are nonzero through the usual length. The dimensions $2d-2j+1$ sum to $N^2$. Distinct generic Casimirs make these submodules independent.
+
+In degree $T\le d$, precisely the highest vectors $j\le T$ contribute one descendant each. Their eigenvalues give the block characteristic polynomial. At $q=e^{\pi\ii/N}$ it becomes
+\[
+ \prod_{j=0}^{T}(z-c_j),\qquad c_j=q^{2j+1}+q^{-2j-1}.
+\]
+All physical matrix entries specialize regularly. The nonzero adjacent entries of the tridiagonal block make a boundary vector cyclic, so this characteristic polynomial is also minimal even when roots coincide. At $T=d$ it is $P_N$. The elementary identity
+\[
+ \prod_{j=0}^{N-1}(z-q^{2j+1}-q^{-2j-1})=2T_N(z/2)+2
+\]
+can also be checked by putting $z=w+w^{-1}$: the roots correspond to $w^N=-1$, and the monic degree and leading coefficient agree. The generating property of $W_d$ propagates its vanishing to the full pair.
+
+Now $B_r(\Omega)$ annihilates every degree block $W_T$ with $T<r$, with multiplicities, and has first-color bandwidth at most $r$. In the turned matrix its first-color displacement is $d-(a+b)$, so $\Turn B_r$ annihilates every $W_T$ with $T<d-r$. Its representing polynomial is therefore divisible by $B_{d-r}$.
+
+For the reverse degree bound, its first middle-block column is
+\[
+ (\Turn B_r)_{a0}=x^{a-d}(B_r(\Omega))_{(d-a,0);(d-a,0)},
+\]
+which vanishes for $a>d-r$. A polynomial of degree $k<N$ in the cyclic tridiagonal middle block has a nonzero $k$th coordinate on the first basis vector, from its unique outermost path. Thus $\deg\Turn B_r\le d-r$, proving $\Turn B_r=C_rB_{d-r}$.
+
+Use the physical entry from $(d-r,0)$ to $(0,d-r)$. On the turned side it is the unique $r$-step path in the high-degree block, whose factors are
+\[
+ Q^{j-r}(1-Q^{r-j})(1-Q^{j+1}),\qquad0\le j<r.
+\]
+Including the leading coefficient $(-1)^r$ gives $s_r^2$. The corresponding path for $B_{d-r}$ in the low block gives $s_{d-r}^2$. All turn monomials in this entry equal one. Hence
+\[
+ \Turn B_r=\frac{s_r^2}{s_{d-r}^2}B_{d-r},
+ \qquad \Turn\Bhat_r=\Bhat_{d-r}.
+\]
+Finally $s_rs_{d-r}=N$ and \eqref{eq:leading-trace} give
+$\phi(\Bhat_i\Bhat_j)=\delta_{i+j,d}$: use degree below $d$, leading coefficient at $d$, and full divisibility by $P_N$ above it. This proves Proposition~\ref{prop:newton-turn} by physical support and exact paths.
+
+\section{Circle coefficients and the signed alias}\label{app:colors}
+The generic Chebyshev--Newton identity is
+\begin{equation}\label{eq:A-Cheb-newton}
+ U_{j-1}(z/2)=\sum_{r=0}^{j-1}(-1)^r
+ \genfrac{[}{]}{0pt}{}{j+r}{2r+1}_q B_r(z).
+\end{equation}
+To prove it, successively divide
+$1-zt+t^2=(1-c_rt+t^2)+t(c_r-z)$. The formal identity is
+\[
+ \frac1{1-zt+t^2}
+ =\sum_{r\ge0}\frac{(-t)^rB_r(z)}{\prod_{i=0}^{r}(1-c_it+t^2)}.
+\]
+After $r$ steps the remainder is divisible by $t^{r+1}$. The denominator factors as a consecutive $q$-string, and the Gaussian Pascal recurrence gives its reciprocal coefficient. Taking the coefficient of $t^{j-1}$ gives \eqref{eq:A-Cheb-newton}. For $j\le\lfloor N/2\rfloor$, every factorial index is below $N$; specializing and turning proves \eqref{eq:low-alias}.
+
+For higher colors use the polynomial identity
+\[
+ U_{N-h-1}=\tfrac12(\Cheb_hU_{N-1}-\Cheb_NU_{h-1}).
+\]
+Since $\Cheb_N=-2$ in the full algebra,
+\[
+ L_{N-h}=(-1)^h\tfrac12\Cheb_hL_N+(-1)^NL_h.
+\]
+The $v$th turned coefficient of the first term is
+$(-1)^hN\sum_{k=0}^{d}\cos(h(2k+1)\pi/N)\Bhat_v(c_k)$.
+This finite sum can be evaluated without a zero denominator. Put $z=w+w^{-1}$. The factorization of $B_v$ is the consecutive string
+\[
+ B_v(w+w^{-1})=(-1)^vw^{-v}
+ \prod_{j=0}^{2v-1}\left(w-q^{-(2v-1)+2j}\right).
+\]
+For $0\le v,h\le M$, all its Fourier exponents after multiplication by $w^{\pm h}$ have absolute value below $N$. Summing at $w=q^{2k+1}$ extracts only the constant coefficient. The finite Gaussian product gives that coefficient as zero for $v<h$, and as
+$(-1)^h s_{2v}/(s_{v-h}s_{v+h})$ for $v\ge h$. Dividing by $s_v^2$ and multiplying the two factors of $N$ proves \eqref{eq:core-alias}, including $h=0$ and both parities.
+
+For the half twist, multiplication by $z$ in Newton coordinates is the lower bidiagonal matrix $Z$ with $Z_{rr}=c_r$ and $Z_{r+1,r}=-4\sin^2((r+1)\pi/N)$. The one-crossing matrix is
+\[
+ (R(Z))_{ij}=\kappa(-1)^iq^{i(j+1)}\frac{s_i}{s_js_{i-j}},\qquad i\ge j.
+\]
+Its first column is the finite Newton expansion of the crossing. Substituting the two neighboring ratios shows that it commutes with $Z$; since the first coordinate is cyclic, this determines the full matrix. Reversal on both sides gives \eqref{eq:half-twist}. Coefficient conjugation gives the inverse crossing because its full Hermite values and logarithmic derivatives are conjugate. This argument retains all normal directions.
+
+\section{Fourier--Hermite interpolation of an arbitrary twist}\label{app:fourier}
+For an integer $\ell$, let $f_{N,\ell}$ be the degree-below-$N$ remainder of $r_N^\ell$ modulo $P_N$. Negative powers exist because all its nodal values are nonzero. At $w_k=q^{2k+1}$ define
+\[
+ h_k=\bigl((-1)^kq^{k(k+1)}\bigr)^\ell,
+ \qquad d_k=-\frac\ell2(d-2k)h_k.
+\]
+At a double node, $d_k=(w_k-w_k^{-1})f_{N,\ell}'(c_k)$; at the odd simple node both sides of the logarithmic derivative condition vanish without prescribing an extra derivative. Put
+\[
+ H_n=\frac1N\sum_kh_kw_k^{-n},\qquad
+ D_n=\frac1N\sum_kd_kw_k^{-n},\qquad0\le n<N.
+\]
+Then
+\begin{equation}\label{eq:A-Hermite-Fourier}
+ f_{N,\ell}(z)=a_0+\sum_{n=1}^{d}a_n\Cheb_n(z),\qquad
+ a_0=H_0,\quad a_n=\frac{D_n+(N-n)H_n}{N}.
+\end{equation}
+Indeed the Laurent polynomial $f(w+w^{-1})$ has symmetric coefficients $a_n$ at $w^{\pm n}$. At $w_k^N=-1$ its values and logarithmic derivatives have aliases
+\[
+ H_n=a_n-a_{N-n},\qquad
+ D_n=na_n+(N-n)a_{N-n}.
+\]
+Solving gives \eqref{eq:A-Hermite-Fourier}. At the even middle index $H_{N/2}=0$ and the derivative equation still determines the coefficient. Paired nodes give the required compatibility, and the odd simple root imposes exactly one condition. Thus no root or normal is omitted.
+
+Set $a_N=a_{N+1}=0$ and
+\[
+ \beta_j^{\ell/2}=(-1)^j(a_j-a_{j+2}),\qquad0\le j<N.
+\]
+The identity $\Cheb_n=U_n-U_{n-2}$ gives the circle expansion. Since $|h_k|=1$ and $|d_k|\le|\ell|N/2$, one has $|a_0|\le1$, $|a_n|\le1+|\ell|/2$, and
+\[
+ \sum_j|\beta_j^{\ell/2}|\le2N(1+|\ell|/2).
+\]
+For $\ell=2P$, these are the coefficients used in \eqref{eq:sampled-derivative}. To obtain that formula directly, substitute the two finite Fourier sums into $a_j-a_{j+2}$, set $j=N-h-1$, and pair $h$ with $-h$ in an even corridor. The difference of the two exponentials gives $\sinh(2\pi\ii z_k)$; the differentiated data give the linear factor $2PNz_k+h$, and differentiating the hyperbolic sine gives its cosine. Their sum is precisely $U_N'(z_k)/(2\pi\ii)$. The constant phase is $(-1)^d\kappa^{-P}$ and the two averaging factors give $N^{-2}$. This verifies \eqref{eq:sampled-derivative} with both normal terms and both parity conventions.

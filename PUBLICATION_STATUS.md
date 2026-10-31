@@ -1,5 +1,15 @@
 # Publication status
 
+The 31 October manuscript release adds the **77-page long-twist volume manuscript**, four editable TikZ illustrations, an exact certificate suite, and an illustrated Sphinx companion. The Markdown book now has a manuscript chapter and direct PDF navigation.
+
+The theorem treats the stated completed Conway grammar with two completed root children, any fixed finite size and turn depth, and independently sufficiently long fixed signed auxiliary fillings. The resulting volume is the **knot complement volume**; the knot cusp remains unfilled. The wider arborescent problem remains open.
+
+The manuscript and figures were rebuilt from the public checkout. LaTeX and Sphinx reported no warnings; the exact certificates matched their stored records; 26,483 local resource links passed. Eight reading routes were checked at desktop and mobile widths, including images, PDF delivery, search and navigation. These are internal analytical and reproducibility checks, not external peer review or a machine-verified proof of the entire theorem.
+
+[Read the manuscript](https://sashakolpakov.github.io/murakamis_dream/papers/conway-composition.pdf) · [Sphinx companion](https://sashakolpakov.github.io/murakamis_dream/sphinx/) · [Reproduction instructions](repro/README.md)
+
+## Earlier publication history
+
 The [illustrated research guide](https://sashakolpakov.github.io/murakamis_dream/) is live on GitHub Pages. The public home and geometry pages, full-text search, native math rendering and compiled figures were verified after successful deployment. The repository homepage points to this guide.
 
 Published at [sashakolpakov/murakamis_dream](https://github.com/sashakolpakov/murakamis_dream), with public visibility confirmed by the unauthenticated GitHub repository API.

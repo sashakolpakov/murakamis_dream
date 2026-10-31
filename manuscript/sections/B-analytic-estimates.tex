@@ -1,0 +1,26 @@
+\chapter{Analytic estimates for finite source packets}\label{app:analytic}
+\input{sections/B1-high-index-packet}
+\input{sections/B2-global-core-envelope}
+
+\section{Nonlocal filling charges and local contour connectors}\label{app:filling-contours}
+We give the additional contour details used after the infinite tails have been removed in Chapter~\ref{ch:filling}. All constants below are chosen from one fixed source neighborhood. They do not depend on the relative sizes of different filling slopes.
+
+The exact finite Fourier polynomial satisfies a strict real gap whenever one coordinate lies outside a fixed small interval about zero. Its fixed derivatives have the same property. This follows from the cotangent rectangle estimate \eqref{eq:noncentral-Fourier}; summing the other physical colors in absolute value costs powers of $N$ under the source Gaussian bound. The estimate persists in a small complex strip in that coordinate, since an imaginary displacement of height $v$ costs at most $e^{2\pi\delta N|v|}$ on the physical support.
+
+Fix a sufficiently small local ratio radius $t_0$. For a finite charge with $|m_i/p_i|\ge t_0$, split the real interval in coordinate $i$ into $|z_i|\le t_0/4$ and its complement. In the first interval,
+\[
+ |m_i+2p_i z_i|\ge |p_i|t_0/2.
+\]
+Choose the sign of the imaginary shift to decrease the real part of
+$-2\pi\ii(p_i z_i^2+m_i z_i)$. On this interval its derivative in the shift direction is bounded above by $-\pi|p_i|t_0$. The Fourier source grows at most $e^{2\pi\delta N|v|}$, and its analytic local action has bounded derivatives on the fixed tube. For sufficiently long $|p_i|$, the chirp decrease dominates uniformly. A fixed small shift gives a strict gap on the displaced segment.
+
+The two joining segments start at $z_i=\pm t_0/4$, where the real Fourier source already has a fixed loss. Choose their common height small enough that this source loss is preserved. On the remainder of the real interval the source Fourier gap applies directly, so it need not be displaced. This proves a strict nonlocal-charge loss. The other variables remain real at this stage; their chirps have modulus one. The finite number of charges depends on the fixed slopes but is independent of $N$.
+
+For a local charge, its critical point satisfies the separately even factorization in Chapter~\ref{ch:filling}. For real $\mathbf t,\mathbf e$, analyticity and the real complete coefficients give
+\[
+ |\Im z_i(\mathbf t,\mathbf e)|\le C|e_i||t_i|,
+ \qquad |\Re z_i+t_i/2|\le C|e_i||t_i|.
+\]
+Translate a small real box to this critical point. On its real boundary the Fourier action has a quadratic loss relative to its critical value. The chirp's real change on a connector is bounded by a constant times $|p_i||\Im z_i|$ times the boundary displacement; the critical equation cancels the linear term at the saddle. Shrinking the fixed local ratio box first and then increasing the slope threshold leaves the quadratic boundary loss strict. The real part of the Hessian on the translated real tangent space is close to that of $\Psi''(0)$ and remains negative definite. Taylor expansion gives the Gaussian with its branch fixed by this translated contour. Odd cubic terms integrate to zero; the first relative correction is $O(N^{-1})$.
+
+These connector estimates are applied only after the tails have been removed by the real-spectator telescoping argument. They therefore introduce no uncontrolled exponential factor from a larger slope at another cusp. Finally, the selected action tends to $F_0$ as all reciprocal slopes tend to zero. A single threshold absorbs the fixed source and contour losses. The proof never exchanges the limit $N\to\infty$ with a slope tending to infinity.

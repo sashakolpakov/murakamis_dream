@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A spectral-pole endpoint cannot maximize the sharp shared functional · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/manuscript.html" class="">The manuscript</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 31 October 2026<br>General conjecture remains open.<a href="../sphinx/index.html">Sphinx documentation ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a><p><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/research_sharp_interval_pole_endpoint_exclusion.md">Markdown source</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="a-spectral-pole-endpoint-cannot-maximize-the-sharp-shared-functional">A spectral-pole endpoint cannot maximize the sharp shared functional</h1>
+<p>Unpublished workspace analytical theorem, 31 October 2026. Root and coherent completed full internal analytical reviews; this is not external peer review. This is a calculus theorem for the ORIGINAL full-interval sharp coefficient majorant. It uses the actual unused prefix/suffix logarithms and makes no lower asymptotic or nonzero claim for finite coefficients at sampled spectral zeros.</p>
+<h2 id="statement-with-the-exact-gain">1. Statement with the exact gain</h2>
+<p>Fix 0&lt;=mu&lt;nu&lt;=1, w=nu-mu&gt;0, and any closed outer degree 0&lt;=xi&lt;=w. Use the original sharp full-row functional</p>
+<pre><code>H_delta=B_delta+inf_(l in R)[Phi_delta(l)-xi l],
+B_delta=int_0^mu log|alpha_delta(t)|dt
+                   +int_nu^1 log|alpha_delta(t)|dt,
+Phi_delta(l)=int_mu^nu log Lambda_delta(t;exp(l),1)dt,
+alpha_delta(t)=4[cos^2(pi delta)-sin^2(pi t)].       (1)</code></pre>
+<p>The two simple spectral poles at 0&lt;delta_0&lt;1/2 are</p>
+<pre><code>p_-=1/2-delta_0, p_+=1/2+delta_0.</code></pre>
+<p>Assume at least one endpoint mu or nu equals one of these poles. Let m be the number of such endpoint contacts, so m=1 or2. There is a sign s in {+1,-1} such that delta_epsilon=delta_0+s epsilon moves every contacted pole INTO the fixed active interval [mu,nu]. For all sufficiently small epsilon&gt;0,</p>
+<pre><code>H_(delta_epsilon)-H_(delta_0)
+                   =m epsilon log(1/epsilon)+O(epsilon). (2)</code></pre>
+<p>The constant is independent of xi, including xi=0,w, and independent of the outer Cauchy tilt. It is locally uniform on a compact fixed- contact stratum: delta stays inside(0,1/2), w stays positive, and every noncontact endpoint-to-pole distance has a positive lower bound. No uniformity as w-&gt;0 or delta approaches0,1/2 is asserted.</p>
+<p>Thus no such positive-length datum can maximize H with a free real spectral coordinate. The same conclusion holds in the original shared-flow problem: varying only this delta changes none of its face degrees, protected targets or row supplies.</p>
+<h2 id="there-is-always-a-compatible-inward-direction">2. There is always a compatible inward direction</h2>
+<p>The four single-contact choices are</p>
+<pre><code>mu=p_- : s=-1,     nu=p_- : s=+1,
+mu=p_+ : s=+1,     nu=p_+ : s=-1.                (3)</code></pre>
+<p>Both endpoints cannot equal the same pole because mu&lt;nu. The only possible two-contact case is mu=p_-, nu=p_+, where s=-1 moves the lower pole right and the upper pole left. Thus no two endpoint contacts demand conflicting directions. Choose epsilon smaller than the fixed interval length and the other indicated separations. Protected mu=0 or nu=1 cannot itself be a pole at interior delta, but it is permitted as the other endpoint throughout this proof.</p>
+<h2 id="the-original-unused-products-supply-one-logarithmic-gain-per-contact">3. The original unused products supply one logarithmic gain per contact</h2>
+<p>The exact factorization is</p>
+<pre><code>log|alpha_delta(t)|=log4
+   +log|sin(pi(t-p_-(delta)))|
+   +log|sin(pi(t-p_+(delta)))|.                (4)</code></pre>
+<p>For delta in a compact subset of(0,1/2), write each sine logarithm as log|t-p| plus log(|sin(pi(t-p))|/|t-p|). The latter extends smoothly through t=p and has uniformly bounded first derivatives on t in[0,1]. Its variation in either outside integral is O(epsilon).</p>
+<p>Suppose first that p=mu and p moves to mu+epsilon. Its lower unused prefix changes by EXACTLY</p>
+<pre><code>int_0^mu [log(mu+epsilon-t)-log(mu-t)]dt
+  =(mu+epsilon)log(mu+epsilon)-mu log mu
+                                  -epsilon log epsilon
+  =epsilon log(1/epsilon)+O(epsilon).          (5)</code></pre>
+<p>Here mu is bounded away from0 because it is an interior spectral pole. The same pole’s upper unused suffix is separated by w&gt;0 and changes by O(epsilon). If p=nu and moves to nu-epsilon, the upper unused suffix has the same expression with mu replaced by 1-nu, while the prefix changes by O(epsilon).</p>
+<p>Any other pole not at an outside endpoint contributes O(epsilon), even if it lies INSIDE an unused interval. To see this without differentiating an absolute singular integrand, use the exact primitive</p>
+<pre><code>F(r)=r log|r|-r, F(0)=0,
+int_a^b log|t-p|dt=F(b-p)-F(a-p).</code></pre>
+<p>Its p derivative is finite whenever neither fixed endpoint equals p. The stated noncontact separations give the uniform bound. In the two-contact case apply (5) once to each endpoint. Therefore</p>
+<pre><code>B_(delta_epsilon)-B_(delta_0)
+                   =m epsilon log(1/epsilon)+O(epsilon). (6)</code></pre>
+<p>This retains BOTH actual unused intervals. For a lower-half LEFT presentation, the omitted upper-half integral is exactly zero, so (6) agrees with the retained A_rest normalization. It is not a claim that a sampled zero finite product has a nonzero logarithm.</p>
+<h2 id="uniform-control-of-the-active-tail-before-taking-any-infimum">4. Uniform control of the active tail, before taking any infimum</h2>
+<p>Write a=sin(pi t), k=cos(pi delta), s=sin(pi delta), A=x+y, P=xy and R=sqrt((x-y)^2 a<sup>2+4Pk</sup>2). The ORIGINAL tail root is</p>
+<pre><code>Lambda=2a(Aa+R).</code></pre>
+<p>For x,y&gt;0 and 0&lt;t&lt;1,</p>
+<pre><code>partial_delta log Lambda
+  =-4pi Pks/[R(Aa+R)],
+|partial_delta log Lambda|&lt;=pi tan(pi delta),  (7)</code></pre>
+<p>because R(Aa+R)&gt;=R<sup>2&gt;=4Pk</sup>2. This bound is independent of x/y, hence holds on ALL outer tilts, including unbounded sequences of tilts used to approach a closed coefficient degree. If P=0 the literal monomer root has zero delta derivative and satisfies the same bound. At t=0,1 use the integrable sine endpoint limit; a single endpoint of integration has measure zero.</p>
+<p>On a small fixed spectral interval around delta_0, integration of (7) gives</p>
+<pre><code>|Phi_(delta_epsilon)(l)-Phi_(delta_0)(l)|
+                          &lt;=C w epsilon                (8)</code></pre>
+<p>for EVERY real l, with the same C. Subtract xi l and take infima in both directions. Since the Legendre values are finite for 0&lt;=xi&lt;=w, their difference is bounded by Cw epsilon. This requires neither a finite minimizing tilt nor differentiability in xi. Combining (6) and (8) proves (2), with its exact integer m.</p>
+<h2 id="actual-source-and-shared-maximum-scope">5. Actual source and shared-maximum scope</h2>
+<p>The original finite coefficient is its unused-row scalar product times one coefficient of the actual full-interval K_(i,j). No tail recurrence is replaced by its absolute matrix, and no omitted-half mode is differentiated away. The separately proved uniform upper coefficient estimate uses positivity of the actual eta-word and upper logarithmic Riemann sums, so sampled zeros only improve that upper bound. Its tail estimate remains regular when a row endpoint meets alpha=0; the unused-product estimate already allows such zeros. Thus on otherwise regular coefficient charts, this pole calculus does not require a new finite LOWER coefficient theorem.</p>
+<p>For CROSS one may use the single full interval directly. There is no need to choose a possibly singular latent half allocation; the uniform estimate (8) survives its equivalent outer Legendre split. For LEFT or RIGHT the same argument uses the corresponding half interval. Closed outer degrees and an exact protected start0 or stop1 are permitted in the calculus statement.</p>
+<p>Consequently a genuine maximum of the sharp shared upper functional cannot have a positive-length interval with an endpoint at a free interior spectral pole. This does not remove diagonal intervals, terminal row seams unrelated to a pole, spectral0 or1/2 corners, ordinary-radius escape, phase-cocycle obstructions, or the need for an absolute bound on inconsistent-phase contributions. It also does not assert that arbitrary remaining KKT data are limits of coherent regular solutions. No numerical audit is required for the elementary integral identity and the tilt-uniform bound proved here.</p>
+<h2 id="dependencies-and-review-scope">Dependencies and review scope</h2>
+<p>The <a href="research_original_one_sided_four_state_transfer.html">original full-interval source</a> and <a href="research_positive_eta_word_transfer.html">positive eta-word</a> supply the finite source normalization. The <a href="research_sharp_regular_coefficient_limsup_majorant.html">regular coefficient upper bound</a> and <a href="research_regular_shared_spectral_stationary_reduction.html">shared stationary reduction</a> state the upper-functional setting used here.</p>
+<p>Both internal reviews checked all four inward directions, the compatible two-contact direction, the exact logarithmic gain from the original unused rows, the all-tilt active-root derivative estimate, and the closed-degree shared-target scope. This analytical theorem has no numerical audit, lower coefficient asymptotic, phase-compatibility assertion or density assertion for boundary maximizers.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/research_sharp_interval_pole_endpoint_exclusion.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#statement-with-the-exact-gain">1. Statement with the exact gain</a><a href="#there-is-always-a-compatible-inward-direction">2. There is always a compatible inward direction</a><a href="#the-original-unused-products-supply-one-logarithmic-gain-per-contact">3. The original unused products supply one logarithmic gain per contact</a><a href="#uniform-control-of-the-active-tail-before-taking-any-infimum">4. Uniform control of the active tail, before taking any infimum</a><a href="#actual-source-and-shared-maximum-scope">5. Actual source and shared-maximum scope</a><a href="#dependencies-and-review-scope">Dependencies and review scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -2,6 +2,23 @@
 
 The project seeks equality for broad classes of hyperbolic knots, with the right side established as the volume of the actual complement. The results below are research proofs recorded and internally reviewed in this repository. They are not claims of external peer review.
 
+## Arbitrarily large Conway trees with single-leaf attachments
+
+The [current composition theorem](../../notes/actual_arborescent_single_leaf_long_twist_volume.md) starts from $hh$ and permits arbitrary finite applications of $T(E)$, $E_1E_2$, $hE$ and $Eh$. The retained closure $C(FG)$ has two completed children. This includes repeated single-leaf additions such as $E_{n+1}=hT(E_n)$. The earlier theorem also includes every isolated $C(h^s)$ with $s\ge3$. There is no additional individual-leaf condition.
+
+For any allowed loop-free knot half-twist pattern and independently sufficiently long fixed signed full twists, the original invariant satisfies
+
+$$\lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(K)|
+   =\operatorname{Vol}(S^3\setminus K).$$
+
+Both level parities and composite levels are included. The diagram and slopes are fixed before the limit, and the threshold may depend on that diagram. Only auxiliary crossing-circle cusps are filled; the knot cusp remains unfilled.
+
+The new estimate treats a single attached leaf and its gate together with the completed child's output tangent. A 55-cell exact certificate checks 880 rational inequalities on the full slope square and original product domain. Together with the retained large-$X$ leaf estimate, it gives a margin $1/2500$ at every proper attachment. The exact source induction retains all colors, Hermite directions and phases. The geometric induction automatically keeps every leaf in the original packet's strict high-index range.
+
+The previous uniform two-leaf estimate remains the base of this induction. Its 288 exact inequalities cover the trees that defeated the older leafwise test, including $C(A_2\mathcal R(A_4))$. The isolated three-leaf case retains its separate marked regrouping and elementary bound. Isolated $C(A_2)$ remains excluded.
+
+The theorem concerns the stated finite tangle grammar. Coverage of every arborescent presentation is open. The later [quarter-index packet](../../notes/actual_conway_quarter_index_color_packet.md) and [general strict-mask geometry](../../notes/actual_conway_general_strict_mask_geometry.md) supply local analytic and complete geometric inputs beyond that grammar. Whole-source signed bounds and the corresponding marked deformation remain separate requirements. No claim of new knot isotopy classes follows from the enlarged presentation grammar.
+
 ## A global source upper bound and the classification of its maxima
 
 The [closed-domain majorant theorem](../../notes/research_global_sharp_coefficient_limsup_majorant.md) now bounds every coefficient of the original spectral numerator, uniformly over all real spectra, closed degree boundaries, both level parities and sampled zeros. Its continuous sharp functional is denoted by $H_\delta(q)$. On the **original** shared flow polytope $\mathcal P_D$, define

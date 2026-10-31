@@ -1,0 +1,325 @@
+\section{A uniform global envelope through the source collisions}
+\label{app:global-core-envelope}
+
+The local interpolation of Section~\ref{app:selected-source} is used
+only on a fixed high-index interval. Here we prove the different estimate
+needed before restricting to that interval: a uniform exponential-rate
+bound for every physical color and every core index. The proof retains
+the other recurrence branch, including its repeated-root colors.
+Here $C_j^\eps$ always denotes the core polynomial of a single physical
+leaf of color $j$ and half-twist sign $\eps$, as in
+\eqref{eq:core-alias}; it does not denote the whole analytic packet.
+
+\subsection{The complete-diagonal normalization and its literal wall}
+
+Use $q,Q,d,M,F_r$ as in Section~\ref{app:selected-source}. For a physical
+integer $0\le h\le M$, interpret the finite sum $A_{h,r}$ in
+\eqref{eq:b1-A-source} with lower endpoint $\max(r,h)$. Thus all its
+factorials have nonnegative arguments. Set
+\[
+ V_{h,r}=\frac{q^{h^2}A_{h,r}}{D_{0,r}},\qquad
+ \chi=\frac{\pi h}{N},\qquad H=Q^h,\qquad Z=Q^{r+1}.
+\]
+The denominator is the complete diagonal, which is nonzero at every
+$0\le r\le M$. The Ward identity, or its polynomial version before
+cancellation of zero endpoint factors, gives
+\begin{equation}\label{eq:b2-global-recurrence}
+\begin{aligned}
+ V_{h,r}&=p_{h,N}(r)V_{h,r+1}+q_N(r)V_{h,r+2},\\
+ p_{h,N}(r)
+ &=-\frac{Z^{-1}[(H+H^{-1})Z^2+1+Q^{-1}]}{(1-Z)^2},\\
+ q_N(r)
+ &=-\frac{Q^{-2}Z^{-2}(1-QZ^2)(1+QZ)}
+ {(1-Z)^2(1-QZ)} .
+\end{aligned}
+\end{equation}
+It holds also when $r<h$: the omitted lower terms of the polynomial
+Ward telescope have their zero numerator factors, rather than divided
+negative factorials. More explicitly, the certificate
+$g_h(z)$ in Section~\ref{app:selected-source} vanishes at the lower
+endpoint $z=Q^{\max(r,h)}$: its factor $1-z/Y$ applies when $r\ge h$,
+and its factor $1-z/H$ applies when $r<h$.
+At $r=M-1$ one has $q_N(r)=0$ at both parities.
+We may therefore set the unused auxiliary value $V_{h,M+1}=0$.
+The actual remaining terminal value obeys the exact identity
+\begin{equation}\label{eq:b2-terminal}
+ |V_{h,M}|=\frac{s_M^2}{s_{M-h}s_{M+h}}
+ =\begin{cases}
+ 1,&N\ \hbox{odd},\\
+ \cos\chi,&N\ \hbox{even}.
+ \end{cases}
+\end{equation}
+Indeed $s_a s_{N-1-a}=N$. For odd $N=2M+1$, both products in
+\eqref{eq:b2-terminal} equal $N$. For even $N=2m$, $M=m-1$,
+$s_M^2=N/2$ and
+$s_{M-h}s_{M+h}=N/(2\cos\chi)$. Thus the source at the wall has
+modulus at most one uniformly over the entire physical color range.
+
+The finite triangular transport and the marked factorial phases give
+the following exact modulus in the normalized Newton basis:
+\begin{equation}\label{eq:b2-source-coefficient}
+ \bigl|[\Bhat_r]C_{N-h}^{\,\eps}\bigr|
+   =\frac{N^2s_{2r}}{s_r^4}|V_{h,r}|,\qquad
+ 0\le r\le M,\quad \eps\in\{-1,1\}.
+\end{equation}
+One can obtain this directly by interchanging the two finite sums in
+\eqref{eq:b1-signed-finite}; the coefficient in the unnormalized basis
+$B_r$ is $N^2s_{2r}V_{h,r}/s_r^6$ times a unit phase.
+Multiplication by $s_r^2$ gives \eqref{eq:b2-source-coefficient}.
+The positive sign is the conjugate of the negative sign on the
+physical grid. Phases have been used only to compute the modulus,
+not deleted from the finite source.
+
+\subsection{The spectral ellipse}
+
+Let $T_N(r)$ be the companion matrix of
+\eqref{eq:b2-global-recurrence}, so that
+$(V_{h,r},V_{h,r+1})^t=T_N(r)(V_{h,r+1},V_{h,r+2})^t$.
+Freeze $u=(r+1)\pi/N$ and let $Q\to1$ while
+$Z=e^{2\ii u}$ and $H=e^{2\ii\chi}$ stay fixed. The limiting
+matrix $T_0(u,\chi)$ has eigenvalues $Z^{-1}v$, where
+\begin{equation}\label{eq:b2-ellipse-polynomial}
+ v^2-bv-c=0,\qquad
+ c=\cot^2u,\qquad
+ b=(c-1)\cos^2\chi-2\ii\sqrt c\,\sin^2\chi.
+\end{equation}
+We claim
+\begin{equation}\label{eq:b2-spectral-envelope}
+ \rho(T_0(u,\chi))\le \rho_0(u):=\max(1,\cot^2u),
+ \qquad 0<u\le\pi/2,\quad0\le\chi\le\pi/2.
+\end{equation}
+
+For $0<c<1$, a root on the unit circle would give $b=v-c/v$.
+The unit-root locus in the $b$ plane is therefore the ellipse
+\[
+ \left(\frac{\Re b}{1-c}\right)^2+
+ \left(\frac{\Im b}{1+c}\right)^2=1.
+\]
+For the value in \eqref{eq:b2-ellipse-polynomial}, its left side is
+\[
+ \cos^4\chi+\frac{4c}{(1+c)^2}\sin^4\chi\le1,
+\]
+strictly less than one when $\chi>0$. At $b=0$ the roots have
+modulus $\sqrt c<1$. The line segment to an interior point of this
+ellipse cannot cross the unit-root locus, so both roots remain in
+the open unit disk. Continuity treats the ellipse boundary.
+For $c>1$, apply the same argument to $v/c$, with parameter $1/c$.
+At $c=1$ the roots of
+$v^2+2\ii\sin^2\chi\,v-1$ have modulus one. At $c=0$ they are
+$0$ and $-\cos^2\chi$. This proves
+\eqref{eq:b2-spectral-envelope} without selecting an eigenbasis.
+
+In particular, if $\chi_0>0$ and
+$I\subset(\pi/4,\pi/2)$ is a fixed closed interval, then
+\begin{equation}\label{eq:b2-strict-spectral}
+ \sup_{\substack{u\in I\\\chi_0\le\chi\le\pi/2}}
+ \rho(T_0(u,\chi))\le\theta<1.
+\end{equation}
+The endpoint color $\chi=\pi/2$ is included: there the two roots
+coalesce, but their common modulus is $\sqrt c<1$.
+
+\subsection{Frozen blocks and the singular lower endpoint}
+
+Define
+\begin{equation}\label{eq:b2-envelope-action}
+ E(u)=
+ \begin{cases}
+ \displaystyle\frac2\pi\int_u^{\pi/4}\log\cot v\,\dd v,
+       &0\le u<\pi/4,\\
+ 0,&\pi/4\le u\le\pi/2.
+ \end{cases}
+\end{equation}
+We prove the two uniform assertions
+\begin{align}
+ \limsup_{N\to\infty}
+ \max_{0\le h,r\le M}
+ \left\{N^{-1}\log|V_{h,r}|-E(\pi r/N)\right\}
+ &\le0,\label{eq:b2-global-rate}\\
+ \limsup_{N\to\infty}
+ \max_{\substack{\delta N\le h\le M\\0\le r\le\beta N}}
+ \left\{N^{-1}\log|V_{h,r}|-E(\pi r/N)\right\}
+ &\le-\gamma_{\delta,\beta},
+ \label{eq:b2-far-color}
+\end{align}
+where $0<\delta<1/2$, $0<\beta<1/2$, and
+$\gamma_{\delta,\beta}>0$. We use $\log0=-\infty$.
+
+First fix a lower cutoff $a>0$. On $a\le u\le\pi/2$ the exact
+coefficients and their first $u$ derivatives are uniformly bounded,
+independently of the physical color. The exact normalized matrices
+$B_N(r)=T_N(r)/\rho_0(u_r)$, $u_r=(r+1)\pi/N$, differ by
+$O_a(N^{-1})$ from the bounded Lipschitz family
+$B(u_r,\chi)=T_0(u_r,\chi)/\rho_0(u_r)$.
+
+For any bounded $2$ by $2$ matrix $B$ whose eigenvalues have modulus
+at most one, Cayley--Hamilton gives
+\begin{equation}\label{eq:b2-CH}
+ \|B^L\|\le L\|B\|+L-1\le C_aL.
+\end{equation}
+The coefficient of $B$ is
+$\sum_{j=0}^{L-1}\lambda_1^{L-1-j}\lambda_2^j$, of modulus at
+most $L$, and the constant coefficient has modulus at most $L-1$.
+These expressions remain valid at a double root. If both roots
+instead have modulus at most $\theta<1$, the same calculation gives
+$\|B^L\|\le C_aL\theta^{L-1}$.
+
+Choose a fixed block length $L$. Telescoping a product of $L$
+adjacent exact normalized matrices against its frozen value gives
+\[
+ B_N(r)\cdots B_N(r+L-1)
+   =B(u_r,\chi)^L+O_{a,L}(N^{-1}),
+\]
+uniformly in $\chi$. For a prescribed $\epsilon>0$, choose $L$
+so that $C_aL<e^{\epsilon L}$, and then take $N$ sufficiently
+large. Partition any propagation product into these blocks.
+The incomplete end blocks cost a fixed constant, and all ordinary
+blocks together cost at most $C_{a,\epsilon}e^{2\epsilon N}$.
+
+For the strict estimate, choose
+$I\subset(\max(\pi\beta,\pi/4),\pi/2)$. Every propagation from
+the physical wall to $r\le\beta N$ crosses this interval. By
+\eqref{eq:b2-strict-spectral}, increase the same fixed $L$ until
+each full block in $I$ has norm at most $e^{-\gamma_0L}$ for some
+$\gamma_0>0$. There are $N|I|/(\pi L)+O(1)$ such blocks.
+Choose $\epsilon<\gamma_0|I|/(8\pi)$. Their strict negative budget
+then exceeds the cost of all ordinary blocks.
+
+Only $u=0$ has a singular coefficient. Directly from
+\eqref{eq:b2-global-recurrence}, for $u_r\le a<\pi/8$,
+\begin{equation}\label{eq:b2-endpoint-matrices}
+ \|T_N(r)\|\le C\frac{N^2}{(r+1)^2}.
+\end{equation}
+Here $|H+H^{-1}|\le2$, $|1-Z|\ge4(r+1)/N$, and the ratio
+$|1-QZ^2|/|1-QZ|$ is bounded by an absolute constant in this
+range. If $K\le aN/\pi$, the product of the bounds in
+\eqref{eq:b2-endpoint-matrices} is at most
+$C^KN^{2K}/(K!)^2$. Hence the entire omitted initial segment
+costs
+\[
+ \exp\{O(Na\log(1/a))+O(\log N)\},
+\]
+uniformly in its starting index. This cost has rate tending to
+zero as $a\downarrow0$.
+
+Finally $\log\rho_0(u)$ is decreasing until it reaches zero, so
+the right-endpoint Riemann sum satisfies
+\begin{equation}\label{eq:b2-Riemann-envelope}
+ \sum_{j=r}^{M-1}\log\rho_0((j+1)\pi/N)
+       \le N E(\pi r/N).
+\end{equation}
+Combine this scalar product with \eqref{eq:b2-terminal}, the frozen
+blocks, and the endpoint bound. For \eqref{eq:b2-global-rate},
+take $N\to\infty$ first and then let $a,\epsilon\downarrow0$.
+For \eqref{eq:b2-far-color}, first fix $I$ and its negative
+budget, then make $a\log(1/a)$ and $\epsilon$ small compared with
+that budget, and finally take $N$ large. This proves both estimates
+with their stated uniformity. There is no adiabatic eigenvector
+argument and no polynomial bound claimed at a spectral collision.
+
+\subsection{The actual coefficient envelopes and the macroscopic color loss}
+
+The elementary sine-factorial estimate is uniform up to both endpoints:
+\begin{equation}\label{eq:b2-factorial-endpoints}
+ \log s_j=NJ(j/N)+O(\log N),\qquad 0\le j<N.
+\end{equation}
+For example, subtract $\log t+\log(1-t)$ from
+$\log(2\sin\pi t)$ on $[0,1]$. The remainder is continuously
+differentiable, so its Riemann-sum error is bounded; the two removed
+terms are ordinary factorials and have $O(\log N)$ errors by
+Stirling's inequalities. This also proves the uniform assertion
+when one of the factorial indices is zero.
+
+The complete prefactor in \eqref{eq:b2-source-coefficient} has rate
+$g(x)=J(2x)-4J(x)$. Since $g'(x)=2\log\cot\pi x$,
+\begin{equation}\label{eq:b2-g-plus-E}
+ g(x)+E(\pi x)=g(\max(x,1/4))=\widetilde g(x).
+\end{equation}
+Consequently \eqref{eq:b2-global-rate} supplies a sequence
+$e_N\downarrow0$ after taking its decreasing upper envelope, such that
+\[
+ |[\Bhat_r]C_{N-h}^{\,\eps}|
+ \le \exp\{N[\widetilde g(r/N)+e_N]\},
+ \qquad 0\le h,r\le M,\quad\eps\in\{-1,1\}.
+\]
+The same estimate holds for the pure sign. Its coefficient is zero
+for $r<h$ and otherwise is
+$N^2s_{2r}/(s_r^2s_{r-h}s_{r+h})$. Its rate is
+$g(x)-\Delta(x,t)$, where
+\[
+ \Delta(x,t)=J(x-t)+J(x+t)-2J(x),\qquad 0\le t\le x\le1/2.
+\]
+For $t>0$ and $x<1/2$,
+\[
+ \partial_t\Delta
+  =\log\frac{\sin\pi(x+t)}{\sin\pi(x-t)}>0,
+\]
+because the difference of the two sines is
+$2\cos\pi x\sin\pi t>0$. Continuity includes the integrable
+boundary $t=x$. Thus pure cores have a uniform strict loss when
+$x$ lies in a fixed compact high interval and $t\ge\delta>0$.
+For signed cores the same conclusion follows from
+\eqref{eq:b2-far-color}, choosing $\beta$ above that high interval.
+Both parities, the largest physical color, and all zero coefficients
+are retained.
+
+For completeness, the alias bound in \eqref{eq:leaf-envelopes}
+requires no recurrence. We first prove the finite bound on the
+untransformed alias. Write $\theta=\pi/N$. Its coefficient from
+\eqref{eq:low-alias}, for $1\le j\le\lfloor N/2\rfloor$ and
+$0\le r<j$, has modulus
+\[
+ b_{j,r}=\frac{s_r^2}{s_{2r+1}}
+           \prod_{u=-r}^{r}2\sin((j+u)\theta).
+\]
+As a function of real $j$ in $r<j<N-r$, this positive product is
+log concave and symmetric about $N/2$, so its maximum is there.
+Cancelling $(2\sin u\theta)(2\cos u\theta)=2\sin2u\theta$
+gives the upper bound
+\[
+ B_r=2\,
+ \frac{\prod_{u=1}^{r}2\sin(2u\theta)}
+      {\prod_{u=0}^{r}2\sin((2u+1)\theta)},\qquad
+ \frac{B_{r+1}}{B_r}
+    =\frac{\sin((2r+2)\theta)}{\sin((2r+3)\theta)}.
+\]
+The ratio is at most one and then at least one, with only one
+possible switch, at $(4r+5)\theta=\pi$. Therefore the maximum
+over $0\le r\le\lfloor N/2\rfloor-1$ is at an endpoint.
+The first is $B_0=\csc\theta$. At the other endpoint, the even
+and odd sine products give $B_{N/2-1}=N/2$ when $N$ is even;
+when $N=2m+1$, reflection of the sine factors gives
+$B_{m-1}=\csc\theta$. The even product identities follow by
+evaluating the factorizations of $z^m-1$ and $z^m+1$ at $z=1$.
+Finally $\sin(\pi/N)\ge2/N$. We have proved
+$b_{j,r}\le N/2$ at every color and both parities.
+
+A triangular half-twist entry has modulus
+$s_v/(s_rs_{v-r})$, so \eqref{eq:b2-factorial-endpoints} gives
+the rate
+\[
+ J(w)-J(u)-J(w-u),\qquad u=r/N,\quad w=v/N\ge\max(u,1/2).
+\]
+For $0<u<1$ its derivative in $w$ is
+$\log[\sin(\pi w)/\sin(\pi(w-u))]$; it changes from positive to
+negative at $w=(1+u)/2$. Reflection
+$J(1-z)=-J(z)$ and duplication give the maximum
+\[
+ J((1+u)/2)-J(u)-J((1-u)/2)=-2J(u/2)=k(u).
+\]
+The two endpoint cases follow by continuity. All factorial errors
+are $O(\log N)$, and there are at most $N$ summands. This proves
+the alias bound with a polynomial prefactor, on its full original
+index range $0\le r\le d$.
+
+To pass from these leaf estimates to the complete source, first fix
+the positive compositional alias margins and the compact core-state
+gap in Chapter~\ref{ch:alias}. Every fixed tree has finitely many
+leaves and gates and only polynomially many lattice states. Absorb
+their uniform $e_N$ and the $O(\log N)/N$ gate errors into half the
+fixed margin. Inside the remaining strict state window, the
+macroscopic-color loss just proved supplies the other half of the
+argument. This gives the whole-source bounds
+\eqref{eq:b1-source-restoration}--\eqref{eq:b1-color-complement}.
+The result is a uniform exponential-rate envelope at all colors;
+the polynomial leading packet remains the separate regular local
+theorem of Section~\ref{app:selected-source}.

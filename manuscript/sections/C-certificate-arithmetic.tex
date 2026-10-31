@@ -1,0 +1,62 @@
+\chapter{The exact certificate arithmetic}\label{app:certificate}
+
+\section{A finite proof object}
+The two main certificates consist of rational points and exact coverage data. The two-leaf block table has sixteen closed slope intervals, one rational feasible pure point and two strict alias tangent points per interval. The attachment table is a recursively subdivided dyadic cover of $[-2,0]^2$ with 55 leaves, one pure point and one alias tangent point per leaf. The verifier checks feasibility and coverage before evaluating an inequality. It then checks every slope corner and every vertex of the appropriate product polytope.
+
+The mathematical reason this finite object is sufficient is independent of the way candidate points were found. A feasible pure value is a lower bound for the pure maximum. A tangent to a concave alias action is a global upper bound, including at boundary points and on the core plateau. The difference is affine in the slope parameters and the product-domain point. Corner and vertex checks therefore prove the continuum inequality. An approximate optimizer could produce a poor candidate, but could not create a false verification result.
+
+The exact files are
+\begin{itemize}
+\item \sourcefile{experiments/conway_two_leaf_block_alias_certificate.json};
+\item \sourcefile{experiments/conway_single_leaf_attachment_certificate.json};
+\item the corresponding \sourcefile{verify_conway_..._certificate.py} programs and recorded result files.
+\end{itemize}
+The reproduction runner supplies the complete, unambiguous path list and verifies fresh results against the committed records. The optional endpoint certificate strengthens the attachment margin but is not required by Theorem~\ref{thm:main}.
+
+\section{Outward rational intervals}
+Every interval endpoint is an integer multiple of $10^{-40}$. Addition and subtraction are exact on this grid. Products and quotients use floor and ceiling integer division in the outward directions, with sign cases handled explicitly. A denominator interval must avoid zero. Intersections and monotone range reductions are checked, rather than inferred from floating-point values.
+
+The constant $\pi$ is enclosed by Machin's formula
+\[
+ \pi=16\arctan(1/5)-4\arctan(1/239).
+\]
+Forty terms of each alternating arctangent series, with the next-term remainder, suffice for the recorded precision. Sine arguments are reflected into $(0,\pi/2]$. The Taylor polynomial through degree 41 has error at most the next degree-43 term there. Cosine is evaluated as the sine of the complementary angle.
+
+For a positive logarithm argument, scale by an explicitly recorded power of two. On the resulting range let $z=(x-1)/(x+1)$, with the verifier checking $0\le z<1/2$. Then
+\[
+ \log x=2\sum_{j=0}^{79}\frac{z^{2j+1}}{2j+1}+R,
+ \qquad 0\le R\le\frac{2z^{161}}{161(1-z^2)}.
+\]
+The same series at $z=1/3$ encloses $\log2$. Negative logarithms are handled by reciprocal and sign, with outward intervals preserved.
+
+\section{The integrated sine product}
+For $0<t<1/2$, Euler's sine product gives
+\begin{equation}\label{eq:C-J-series}
+ J(t)=t\log(2\pi t)-t
+ -\sum_{n=1}^{\infty}\frac{\zeta(2n)t^{2n+1}}{n(2n+1)}.
+\end{equation}
+To justify termwise integration, expand $\log(1-t^2/k^2)$ on compact subintervals below one, where the absolute double series converges; the initial logarithm is integrable at zero. The remaining terms all have the same sign. Use $\zeta(2)=\pi^2/6$, and for $2\le n\le20$ the rational bounds
+\[
+ \sum_{k=1}^{64}k^{-2n}\le\zeta(2n)
+ \le\sum_{k=1}^{64}k^{-2n}+\frac{64^{1-2n}}{2n-1}.
+\]
+Since $\zeta(2n)<2$, the tail after $n=20$ in \eqref{eq:C-J-series} is bounded by
+\[
+ \frac{2t^{43}}{21\cdot43(1-t^2)}.
+\]
+The exact identities $J(0)=J(1/2)=J(1)=0$ and $J(1-t)=-J(t)$ reduce every action argument to this range. Thus every action and derivative used by the certificates has a proved rational enclosure.
+
+\section{Gradients and coverage}
+The derivatives evaluated by the verifier are
+\begin{align*}
+ g'(y)&=2\log\cot\pi y,& k'(x)&=-\log(2\sin(\pi x/2)),\\
+ m_x&=\log\frac{\sin\pi(x+y)\sin\pi(z-x)}{\sin\pi x\sin\pi(x+y-z)},&
+ m_y&=\log\frac{\sin\pi(x+y)\sin\pi(z-y)}{\sin\pi y\sin\pi(x+y-z)},\\
+ m_z&=\log\frac{\sin\pi z\sin\pi(x+y-z)}{\sin\pi(z-x)\sin\pi(z-y)}.
+\end{align*}
+Every tangent point is strict, and the core tangent point in the block certificate lies above $1/4$, so these derivatives are finite and select the intended branch. The entire action remains concave even where a maximizer could lie on the boundary; differentiability is needed only at the chosen tangent point.
+
+For the square certificate, each nonterminal rectangle is split into its four dyadic children. The verifier checks equality with these children, their endpoints and their depth. Thus the 55 leaves cover the square exactly. It does not infer coverage from a list of sampled centers or from an approximate total area. The 880 corner/vertex inequalities are then enclosed from below. Their minimum is the rational number printed in Chapter~\ref{ch:alias}; outward error can only weaken the lower bound.
+
+\section{What execution establishes}
+A successful replay establishes the finite supporting inequalities, their exact domains, the recorded rational margins and consistency of the immutable data. It does not numerically establish strict geometry, the complex recurrence asymptotic, or the filling theorem. Those are analytic arguments in the preceding chapters and Appendix~\ref{app:analytic}. The optional finite matrix audits check independent instances of the exact identities; their logical role is supplementary, not an extrapolation from tested levels.

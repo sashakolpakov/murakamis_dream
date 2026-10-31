@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The original Green generating relation on a signed straddling chart · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/manuscript.html" class="">The manuscript</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 31 October 2026<br>General conjecture remains open.<a href="../sphinx/index.html">Sphinx documentation ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a><p><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/research_signed_straddling_green_relation.md">Markdown source</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="the-original-green-generating-relation-on-a-signed-straddling-chart">The original Green generating relation on a signed straddling chart</h1>
+<p>Workspace research draft, 31 October 2026. Not approved for publication. This proves a LOCAL regular action and ordered-character identity, including the omitted-half scalar. It does not construct the global marked signed pattern or its relative regulator.</p>
+<h2 id="strict-chart-and-the-actual-stationary-integral">1. Strict chart and the actual stationary integral</h2>
+<p>Let x,y,b,c&gt;0, A=x+y, P=xy, 0&lt;delta&lt;1/2, and write</p>
+<pre><code>z=sin²(pi delta), k=cos(pi delta), D=A²-4Pz&gt;0,
+T_b=sqrt(bA+P+b²z),
+T_c^-=sqrt(c²z-cA+P).</code></pre>
+<p>Assume c&gt;L_end=(A+sqrt D)/(2z). The original lower interval has stationary endpoints</p>
+<pre><code>sin²(pi mu)=k²b²/[(b+x)(b+y)],
+sin²(pi nu)=k²c²/[(c-x)(c-y)],
+0&lt;mu&lt;1/2-delta&lt;nu&lt;1/2.                                  (1)</code></pre>
+<p>All signs and endpoint intervals are part of the chart. It is localized at the displayed nonzero factors and at the ordinary Gauss units used below. No squaring is used to choose the post-pole root.</p>
+<p>Let alpha=4[k²-sin²(pi t)] and let Lambda be the positive cleared root in the original cofactor action. The actual absolute stationary value, retaining both unused intervals, is</p>
+<pre><code>G=mu log b+(1-nu)log c+integral_mu^nu log(Lambda/|alpha|)dt
+ =Q_b+log c-J_c,                                         (2)</code></pre>
+<p>where Q_b is the calibrated pre-pole triangle action and</p>
+<pre><code>J_c=nu log c+integral_0^nu log|alpha|dt
+                   +integral_nu^(1/2) log Lambda dt.</code></pre>
+<p>The equality follows from integral_0^(1/2)log|alpha|=0, after keeping the actual outside products; it is the reviewed LEFT identity.</p>
+<h2 id="exact-analytic-continuation-to-the-signed-clock">2. Exact analytic continuation to the signed clock</h2>
+<p>Use the physical output clock c_tilde=-c. Choose</p>
+<pre><code>Log c_tilde=log c-pi i,
+T_(c_tilde)=-T_c^-,
+Log alpha=log|alpha|+pi i after t_c=1/2-delta.</code></pre>
+<p>Before t_c its logarithm is real. The analytic stationary primitive of the ORIGINAL source triangle, continued with these logarithms, is exactly</p>
+<pre><code>Q_(c_tilde)
+  =nu Log c_tilde+integral_0^nu Log alpha dt
+                        +integral_nu^(1/2) Log Lambda dt
+  =J_c-pi i t_c.                                        (3)</code></pre>
+<p>The two imaginary terms are -pi i nu and +pi i(nu-t_c); their sum fixes the constant in (3). The contour is the continuation past the logarithmic alpha zero on its specified side, rather than an undefined principal-log integral. Locally all endpoints are away from that zero, so (3) gives an analytic germ. Its row equation is Log c_tilde+Log alpha(nu)-Log Lambda(nu)=0 exactly.</p>
+<p>The lower Green action on these SAME signed physical clocks is</p>
+<pre><code>S_G=Q_b-Q_(c_tilde)+Log c_tilde
+   =G-pi i(1/2+delta).                                  (4)</code></pre>
+<p>In particular its head derivatives equal those of G evaluated with the signed clock. Its spectral derivative is</p>
+<pre><code>partial_delta S_G=log(H_c/E_b)-pi i,
+E_b=A+2bz+2sqrt(z)T_b,
+H_c=2cz-A+2sqrt(z)T_c^-.                                 (5)</code></pre>
+<p>This agrees with the exact analytic branch E_(c_tilde)=-H_c, Log E_(c_tilde)=log H_c-pi i.</p>
+<h2 id="both-retained-finite-scalar-modes">3. Both retained finite scalar modes</h2>
+<p>In the strict straddling chamber the exact unused suffix sign is (-1)^(m-1-j). Evaluating its c monomial at the physical clock -c contributes (-1)^(d-j). At even N their product is (-1)^m; this cancels the (-1)^m in</p>
+<pre><code>A_rest=(-1)^m[exp(pi i N delta)+exp(-pi i N delta)].</code></pre>
+<p>Thus, apart from the already recorded overall source sign, the two actual principal modes at these signed clocks are</p>
+<pre><code>S_-=G-pi i delta=S_G+pi i/2,
+S_+=G+pi i delta=S_G+pi i/2+2pi i delta.                  (6)</code></pre>
+<p>At odd N the retained scalar is 4(-1)^m sin(pi delta)sin(N pi delta). The same sign computation leaves two modes with the same actions (6), with explicit nonzero scalar multiples of sin(pi delta) on the strict chart. The principal actions are unchanged; no sine endpoint is included.</p>
+<p>Both differences from (4) are independent of all face/head variables. Their real parts are zero on the real chart. The two spectral logarithms differ by2pi i, as expected from the two actual modes; neither mode may be deleted merely because its modulus has zero rate.</p>
+<h2 id="all-head-derivatives-and-the-whole-ordered-product">4. All head derivatives and the whole ordered product</h2>
+<p>Here is a direct algebraic check beyond matching a scalar trace. For a generic possibly signed middle q, use a root</p>
+<pre><code>T²=qA+P+q²(1-k²), d_D²=(x-y)²+4xy k²=D.</code></pre>
+<p>Set the exponentiated middle and outer forces to</p>
+<pre><code>p(q)=(T-iqk)/(T+iqk),
+E_y(q)=[y(x-y)+q(x+y(2k²-1))+2iykT]/[(y+q)d_D].          (7)</code></pre>
+<p>These are the exponential logarithmic derivatives of the same triangle primitive. At b use T=T_b; at c_tilde use T=-T_c^-. Equation (4), with the ORIGINAL physical adapter H/(b c_tilde)^(d/2), gives</p>
+<pre><code>p_in=p(b), p_out=p(c_tilde),
+g_out/g_in=E_y(b)/E_y(c_tilde).                           (8)</code></pre>
+<p>No magnetic reciprocal is changed from the proved physical convention. Put gamma=g_in E_y(b)=g_out E_y(c_tilde).</p>
+<p>For one endpoint, the original Gauss heads with X1=-x/q, X2=-q/y, S1=-g p, S2=g have total coordinates</p>
+<pre><code>K_tot=y/x,
+E_tot=[y(q+x)/(xp)-(y+q)]/(qg),
+F_tot=g[-p(q+x)+x(y+q)/y]/q.</code></pre>
+<p>Substitution of (7) gives EXACTLY</p>
+<pre><code>E_tot=-d_D/(x gamma), F_tot=d_D gamma/y,
+P=B A=
+   [[y/x, -d_D/(x gamma)],
+    [d_D gamma/x, sigma-y/x]],
+sigma=-2+4z.                                            (9)</code></pre>
+<p>For a finite symbolic check, clear the displayed denominators and reduce by T²=qA+P+q²(1-k²) and d_D²=(x-y)²+4xy k². The numerators of xg E_tot E_y+d_D and yF_tot/g-d_D E_y both reduce to zero. Thus BOTH physical legs preserve the same ENTIRE ordered product.</p>
+<p>The existing actual ordered-character formula now identifies the primitive projective centralizer eigenratio. The Green output uses the reciprocal triangle root D/E_(c_tilde), so</p>
+<pre><code>R0=E_b/E_(c_tilde)=-E_b/H_c,
+C=I+(R0-1)/(J-J^(-1))(P-J^(-1)I),
+J=-exp(-2pi i delta).                                   (10)</code></pre>
+<p>This is the original three-contact ordering, not an independently chosen matrix with the right trace. Its determinant is R0; the original determinant-one/auxiliary lift is chosen only after that projective map has been fixed. Formula (10) agrees with the actual ordered-character identity R0=e_in e_out/D for its lower output root. It transports both raw trace-minus-two heads.</p>
+<p>At a free critical point of the real absolute G,</p>
+<pre><code>H_c=E_b,  (c-b)z=A,  R0=-1.                              (11)</code></pre>
+<p>Hence the untwisted actual auxiliary meridian has squared eigenvalue -1 and trace0 on this local regular chart. The retained-half-twist fixed-word interpretation is stated separately in <a href="research_signed_spectral_peripheral_gap.html">the conditional peripheral-gap note</a>.</p>
+<h2 id="global-conditions-that-are-still-not-proved">5. Global conditions that are still not proved</h2>
+<p>These local signed clock choices must come from ONE face assignment on the original source. The exact obstruction is the incidence-cycle test in <a href="research_spectral_face_sign_cocycle.html">the sign-cocycle note</a>. A true complex saddle may instead require general complex clocks; independent local sign flips do not define it.</p>
+<p>When the common clock assignment and all original head stationarity equations are genuinely supplied on a regular chart, (9)–(10) are the local ordered maps used by the original Morse reconstruction. They do not by themselves prove that every absolute shared maximum has such an assignment. Nor do they supply the forced marked-line flags: the formula (9) divides by x,y, so a protected outer face requires its own literal boundary adapter. No limit is claimed to recover those flags solely from a scalar quadratic.</p>
+<p>Finally the real equality of local actions in (4),(6) is not yet the absolute GLOBAL relative-volume identity. One must sew the actual original fundamental chain with its unchanged marked decoration. The old failure of local Gauss-reference invariance remains relevant. No source period, spectral-cycle contribution or general upper bound is asserted by this local lemma.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/research_signed_straddling_green_relation.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#strict-chart-and-the-actual-stationary-integral">1. Strict chart and the actual stationary integral</a><a href="#exact-analytic-continuation-to-the-signed-clock">2. Exact analytic continuation to the signed clock</a><a href="#both-retained-finite-scalar-modes">3. Both retained finite scalar modes</a><a href="#all-head-derivatives-and-the-whole-ordered-product">4. All head derivatives and the whole ordered product</a><a href="#global-conditions-that-are-still-not-proved">5. Global conditions that are still not proved</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

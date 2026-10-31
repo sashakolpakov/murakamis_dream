@@ -2300,5 +2300,181 @@
       "PYTHONPATH=/private/tmp/md-analytic-phase-doc-deps /Users/sasha/.venvs/global/bin/python /private/tmp/md-check-sharp-seam-public-browser.py"
     ],
     "commit_or_push_performed": false
+  },
+  "conway_manuscript_publication": {
+    "id": "conway-composition-manuscript-2026-10-31",
+    "validated_utc": "2026-10-31T19:05:09.044489+00:00",
+    "base_commit": "667400a3c37115bec33435f4c43d9b72b0fb3e08",
+    "scope": "Completed expressions E::=hh|T(E)|E1E2|hE|Eh, with completed F,G in C(FG). Fixed knot half-twist pattern and independently sufficiently long fixed signed auxiliary fillings; all integer levels. Knot cusp remains unfilled. No all-arborescent coverage assertion.",
+    "manuscript": {
+      "pdf": "manuscript/build/main.pdf",
+      "pages": 77,
+      "pdf_sha256": "4ebef124f77c2af63ec2006b30cf255bb9dda32d0aa48d24e4d9a165f5d8b514",
+      "latex_warnings": [],
+      "frozen_source_count": 31,
+      "frozen_source_hashes_match": true,
+      "illustrations": 4,
+      "review": "Internal analytical review and rendered-page inspection. No external peer review or formal verification claim."
+    },
+    "clean_build": "Rebuilt manuscript and figures with --clean from the public snapshot, then Sphinx with -W and the Markdown book.",
+    "certificate_suite": {
+      "status": "PASS",
+      "python": "3.14.6",
+      "checks": [
+        {
+          "name": "two-leaf-block",
+          "status": "PASS",
+          "scope": "Both alias configurations on the entire original two-leaf domain; 16 slope intervals and 288 endpoint/vertex comparisons.",
+          "matches_stored_record": true,
+          "minimum_lower": "210002102902309638093785766005979344329/5000000000000000000000000000000000000000",
+          "output": "two-leaf-block.json"
+        },
+        {
+          "name": "single-leaf-attachment",
+          "status": "PASS",
+          "scope": "Single-leaf dual gap on the full slope square and product tetrahedron; 55 rectangles and 880 corner/vertex comparisons.",
+          "matches_stored_record": true,
+          "minimum_lower": "55437191760019874892517972684020763373/10000000000000000000000000000000000000000",
+          "output": "single-leaf-attachment.json"
+        },
+        {
+          "name": "single-leaf-endpoint",
+          "status": "PASS",
+          "scope": "Four-vertex endpoint certificate used with the separately proved monotone-response lemma.",
+          "matches_stored_record": true,
+          "minimum_lower": "613089614904949907163494204377649845509/10000000000000000000000000000000000000000",
+          "output": "single-leaf-endpoint.json"
+        },
+        {
+          "name": "elementary-rational-endpoints",
+          "status": "PASS",
+          "leaf_gap_lower": "57269/136687500",
+          "isolated_three_leaf_gap_lower": "5747/25344",
+          "scope": "Exact rational arithmetic only. The alternating-series, logarithm-tail and geometric volume inequalities are proved in the manuscript and source notes."
+        }
+      ],
+      "source_sha256": {
+        "experiments/conway_single_leaf_attachment_certificate.json": "82e0004b7c48370ec67425da6d1de98208fbf995273837ac72ac38806a172121",
+        "experiments/conway_single_leaf_attachment_certificate_results.json": "2d7636d1083543aea07d2d402545cf26678f68d75431a76813c3363959125167",
+        "experiments/conway_single_leaf_endpoint_certificate_results.json": "6f5ae08bcc112341000b00f37f3715305f7f296d6c78c5321899ae3fc6141881",
+        "experiments/conway_two_leaf_block_alias_certificate.json": "a2ec32e54b193eeecafacfdcead189007f70165fcff20d24b37db63207f4e7df",
+        "experiments/conway_two_leaf_block_alias_certificate_results.json": "2e26eafb0fd1df83de6cd030843e5ed51c7087214b2e14154a93763de2e0da3f",
+        "experiments/verify_conway_single_leaf_attachment_certificate.py": "0544a1d1188cd466466452377c090c6d5f045d34a7c9f0e7ed8213c8bb15b5fc",
+        "experiments/verify_conway_single_leaf_endpoint_certificate.py": "29890e58f7ce9d57a2e80398ccda4b3be38016ee2d5d76be59e70f6b97b403a6",
+        "experiments/verify_conway_two_leaf_block_alias_certificate.py": "38f8ed583a48ed053c5ce738a90093753a32562ab090190dc11549703e841957",
+        "repro/verify.py": "9c5540536592edb2880db00114ab229550f62f3175bb0e2e0961587f1c02c7fb"
+      },
+      "scope": "Exact finite certificates and rational endpoint identities. This does not certify the topological invariant dictionary, geometric gluing, analytic interpolation, or filling-period theorem."
+    },
+    "documentation": {
+      "sphinx_warnings": 0,
+      "static_check": {
+        "status": "PASS",
+        "HTML_pages": 1003,
+        "local_resource_links": 26483,
+        "images_with_alt": 65,
+        "technical_notes_indexed": 985,
+        "search_records": 2546,
+        "failures": []
+      },
+      "browser_check": {
+        "status": "PASS",
+        "checks": [
+          {
+            "width": 1440,
+            "route": "index.html",
+            "status": "PASS"
+          },
+          {
+            "width": 1440,
+            "route": "guide/manuscript.html",
+            "status": "PASS"
+          },
+          {
+            "width": 1440,
+            "route": "guide/results.html",
+            "status": "PASS"
+          },
+          {
+            "width": 1440,
+            "route": "sphinx/index.html",
+            "status": "PASS"
+          },
+          {
+            "width": 1440,
+            "route": "sphinx/mathematics.html",
+            "status": "PASS"
+          },
+          {
+            "width": 1440,
+            "route": "sphinx/manuscript.html",
+            "status": "PASS"
+          },
+          {
+            "width": 1440,
+            "route": "sphinx/reproducibility.html",
+            "status": "PASS"
+          },
+          {
+            "width": 1440,
+            "route": "sphinx/scope.html",
+            "status": "PASS"
+          },
+          {
+            "width": 390,
+            "route": "index.html",
+            "status": "PASS"
+          },
+          {
+            "width": 390,
+            "route": "guide/manuscript.html",
+            "status": "PASS"
+          },
+          {
+            "width": 390,
+            "route": "guide/results.html",
+            "status": "PASS"
+          },
+          {
+            "width": 390,
+            "route": "sphinx/index.html",
+            "status": "PASS"
+          },
+          {
+            "width": 390,
+            "route": "sphinx/mathematics.html",
+            "status": "PASS"
+          },
+          {
+            "width": 390,
+            "route": "sphinx/manuscript.html",
+            "status": "PASS"
+          },
+          {
+            "width": 390,
+            "route": "sphinx/reproducibility.html",
+            "status": "PASS"
+          },
+          {
+            "width": 390,
+            "route": "sphinx/scope.html",
+            "status": "PASS"
+          }
+        ],
+        "javascript_errors": [],
+        "search_and_mobile_navigation": "PASS",
+        "pdf_http_hash_match": true,
+        "scope": "Browser checks of the built public snapshot; not mathematical proof verification."
+      }
+    },
+    "mathematical_frontier": "Local quarter-index packet and general strict-mask complete geometry are preserved as separate research notes. General signed-source control, marked extensions and a generic main-meridian quantum A-operator remain open.",
+    "publication_policy": "Only authored manuscript/figure PDFs are added. Existing private-input redactions retained; unavailable historical diagnostic path replaced by an explicit scope statement.",
+    "commands": [
+      "python3 repro/verify.py --output <fresh-results>",
+      "python3 tools/build_manuscript.py --clean",
+      "python3 tools/build_sphinx.py",
+      "python3 tools/build_book.py",
+      "python3 tools/check_book.py"
+    ]
   }
 }

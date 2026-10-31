@@ -1,0 +1,154 @@
+\chapter{Finite support, entropy, and a strict complete state}\label{ch:entropy}
+
+\section{The exact compiler}
+Expand an expression into its individual leaves, turns and binary products. A leaf has the positive support $[0,M]\cap\ZZ$. A turn replaces an index $r$ by $d-r$. A product is governed by \eqref{eq:gate-support}. Thus the source is a finite sum over a fixed tree of integer labels, with a positive coefficient at every admissible state in the complete pure case. The closure selects output $d$.
+
+The finite support can be computed without evaluating any transcendental number. If a positive expression has interval support $[l,u]\cap\ZZ$, its turn has support $[d-u,d-l]\cap\ZZ$. If two children have supports $[l_1,u_1]$ and $[l_2,u_2]$, their product is zero when $l_1+l_2>d$. Otherwise its support is
+\begin{equation}\label{eq:interval-compiler}
+ [\max(l_1,l_2),\,\min(d,u_1+u_2)]\cap\ZZ.
+\end{equation}
+To verify that no integer in this interval is missing, fix such an output $r$. Choose $i\le r$ and $j\le r$ in the two intervals with $r\le i+j\le d$. Starting at the smallest permitted inputs and increasing them one at a time produces every intermediate sum up to $\min(d,u_1+u_2)$. The lower bound $r\ge\max(l_1,l_2)$ ensures that both individual caps $i,j\le r$ leave enough room. The coefficient is then positive by Theorem~\ref{thm:positive-product}.
+
+At a cylindrical closing product, $i+j=d$ is forced and $\mu_{ij,d}=1$. Delete this gate only after retaining that exact relation. It is the unique forced flat gate in the completed-root construction.
+
+\section{Strict output types}
+The limiting support inequalities for a retained product are
+\begin{equation}\label{eq:strict-domain}
+ x>0,\quad y>0,\quad \max(x,y)<z<x+y<1.
+\end{equation}
+A strict leaf has $0<x<1/2$. A turn has output $1-x$. For arbitrary syntax made from $h$, turn and product, the possible strict output intervals are
+\[
+ L=(0,1/2),\qquad H=(1/2,1),\qquad A=(0,1),\qquad\varnothing.
+\]
+Turn exchanges $L$ and $H$ and fixes $A$. Product has the following table; an empty child makes the product empty.
+\begin{center}
+\begin{tabular}{c|ccc}
+ & $L$ & $H$ & $A$\\\hline
+$L$ & $A$ & $H$ & $A$\\
+$H$ & $H$ & $\varnothing$ & $H$\\
+$A$ & $A$ & $H$ & $A$
+\end{tabular}
+\end{center}
+For example, a high child forces the output above $1/2$, and two high inputs violate $x+y<1$. For two low inputs and any prescribed $z\in(0,1)$, choose both in $(z/2,\min(z,1/2))$. The other entries follow by the same interval choices. At closure a strict reduced state exists exactly when the two intervals meet after reflection $y\mapsto1-y$.
+
+\begin{lemma}[Strict feasibility]\label{lem:strict-feasible}
+Every completed expression has a strict state at every output $b\in(0,1)$. Every completed/completed cylindrical closure has a strict reduced state.
+\end{lemma}
+\begin{proof}
+For $hh$, choose equal leaves $a\in(b/2,\min(b,1/2))$. For a completed product choose its two outputs in the same interval and use induction in each child. For $hE$ or $Eh$, use that number for the bare leaf and for the completed child's output. A turn uses the child's strict state at $1-b$. At the closing product prescribe $1/2,1/2$ and remove its forced gate. All remaining inequalities are strict.
+\end{proof}
+
+The distinction between strict support and every boundary coordinate is useful. At even $N$, $hh$ has top support $2M=d-1$, not $d$. This missing boundary coordinate does not affect the strict rounding argument below. Conversely, an empty strict interval does not imply a zero source at every level: $\Turn h\,\Turn h$ is zero at even levels but has a boundary-only odd contribution.
+
+\section{The primitive integer lattice}
+Suppose there are $H$ leaves. The uncontracted tree has $H-1$ product gates. Remove the final forced gate and contract every turn by $r\mapsto d-r$. There are then $H$ leaf outputs and $H-2$ retained product outputs, with one closing relation. Solving that relation for one output in one of the two disjoint root subtrees leaves
+\begin{equation}\label{eq:lattice-dimension}
+ K=2H-3
+\end{equation}
+free integer coordinates. Every other index is an integer affine function of these coordinates with bounded, tree-dependent coefficients. No relation $2r=d$ is introduced.
+
+Choose a strict reduced state and round its $d$-scaled free coordinates to integers. Reconstruct the eliminated indices exactly. The errors are bounded, whereas every strict inequality has a fixed positive slack times $d$. Therefore all constraints hold for every sufficiently large $N$, with either parity. For an open prescribed output, first fix $r_N/d$ in its actual strict interval and use a continuous strict state at that output; then round the remaining coordinates. This gives a genuine all-level lower sequence. It does not rely on a subsequence whose denominator happens to divide $d$.
+
+\section{The action and its uniform finite approximation}
+Define
+\begin{equation}\label{eq:log-sine}
+ J(t)=\int_0^t\log(2\sin\pi u)\,\dd u,\qquad 0\le t\le1,
+\end{equation}
+with its continuous endpoint values. Reflection gives $J(1-t)=-J(t)$ and $J(1/2)=0$. The leaf and gate actions are
+\begin{align}
+ g(x)&=-2J(x)-2J(1/2-x)=J(2x)-4J(x),\label{eq:g-action}\\
+ m(x,y,z)&=J(x+y)+J(z)-J(x)-J(y)\notag\\
+ &\hspace{15mm}-J(z-x)-J(z-y)-J(x+y-z).\label{eq:m-action}
+\end{align}
+Let $\mathcal A_E$ be the sum of these terms over the leaves and retained gates, on the compact polytope defined by the non-strict support inequalities, the turn relations and the closing relation.
+
+\begin{lemma}[Uniform factorial estimate]\label{lem:factorial-action}
+Uniformly for $0\le r<N$,
+\[
+ \log s_r=NJ(r/N)+O(\log N).
+\]
+For a fixed tree, every nonzero complete state of scaled labels $\mathbf r/d$ has weight
+\begin{equation}\label{eq:uniform-state-action}
+ \log w_N(\mathbf r)=N\mathcal A_E(\mathbf r/d)+O_E(\log N).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Away from the endpoints, compare the sum of $\log(2\sin\pi u)$ with its integral on consecutive mesh cells. Near zero and one, subtract $\log u$ or $\log(1-u)$; the remaining function has bounded derivative, and the logarithmic part is controlled by factorials. The total discrepancy is $O(\log N)$, uniformly in the stopping index. Apply this estimate to \eqref{eq:positive-product} and \eqref{eq:complete-leaf}. The shifts between $r/N$ and $r/d$, and between $M/N$ and $1/2$, change $NJ$ by at most $O(\log N)$ because $J$ has modulus of continuity $O(\delta|\log\delta|)$. There are a fixed number of factors.
+\end{proof}
+
+There are at most $N^K$ states. The upper bound from \eqref{eq:uniform-state-action}, together with strict-state rounding at the maximizing state once strictness is proved, will give the complete-source limit.
+
+\section{Tetrahedral concavity and the boundary barrier}
+For $a+b+c=1$, $a,b,c\ge0$, put
+\[
+ V(a,b,c)=-\pi\bigl(J(a)+J(b)+J(c)\bigr).
+\]
+For positive angles this is the volume of the ideal tetrahedron with dihedral angles $\pi a,\pi b,\pi c$. It extends continuously by zero to the boundary. Its Hessian on the positive angle simplex is negative definite. This can be checked directly from $J''(t)=\pi\cot\pi t$: after eliminating $c$, the determinant is positive by the cotangent identity for three angles summing to $\pi$, while both diagonal entries of the volume Hessian are negative.
+
+For a product write
+\[
+ p=z-x,\quad q=z-y,\quad r=x+y-z,\quad w=1-x-y,
+ \qquad p+q+2r+w=1.
+\]
+Substitution and reflection of $J$ give
+\begin{align}
+ \pi g(x)&=2V(x,1/2-x,1/2),\label{eq:leaf-atoms}\\
+ \pi m(x,y,z)&=V(y,x,w)+V(p,q,2r+w)
+                  +V(p+q,r,r+w).\label{eq:gate-atoms}
+\end{align}
+Every triple in these expressions sums to one. Thus the entire action is concave on its original shared-label polytope.
+
+\begin{proposition}[Unique strict maximum]\label{prop:strict-maximum}
+After deleting the forced closing gate, the complete action has a unique strict maximizer. Its Hessian on the primitive coordinates is negative definite. The fixed-output profile $f_E(b)=\max\mathcal A_E$ is real analytic on $0<b<1$ for every completed expression.
+\end{proposition}
+\begin{proof}
+Move from any boundary point toward the strict state of Lemma~\ref{lem:strict-feasible}. A tetrahedron of type $(0,a,1-a)$, $0<a<1$, has derivative $+\infty$ in this direction, since $-J(t)=-t\log t+O(t)$ near zero. A vertex-flat tetrahedron $(0,0,1)$ has a finite derivative: its two logarithmic singularities cancel. A positive tetrahedron also has a finite derivative. Hence no atom contributes a negative infinite term.
+
+An endpoint wire descends through turns and products to a nonvertex-flat atom. At output zero both product inputs are zero; at output one they sum to one, giving $(y,x,0)$ unless an endpoint child permits further descent. A finite descent terminates at a leaf with atom $(0,1/2,1/2)$. Once all proper wires are interior, each remaining product boundary $p=0$, $q=0$, $r=0$ or $w=0$ exposes a nonvertex-flat atom in \eqref{eq:gate-atoms}. A leaf at $1/2$ does the same. Thus every nonforced boundary point has a direction of positive infinite derivative and cannot maximize.
+
+At a strict point the sum of the tetrahedral Hessians is strictly negative on every nonzero reduced tangent. Indeed, annihilating all leaf angle maps and all three product angle maps annihilates every leaf and product wire; turns then annihilate their wires. The only removed gate was already determined by its two children and the closing relation. Strict concavity gives uniqueness, and the implicit-function theorem on each fixed-output slice gives analyticity.
+\end{proof}
+
+\begin{corollary}[Complete source limit]\label{cor:complete-limit}
+For the positive complete scalar $Z_{E,N}$,
+\[
+ \lim_{N\to\infty}\frac1N\log Z_{E,N}=F_0,
+ \qquad F_0=\max\mathcal A_E.
+\]
+\end{corollary}
+\begin{proof}
+The number of states is polynomial, so Lemma~\ref{lem:factorial-action} gives the upper bound. Round the strict maximizer in the primitive lattice. Its positive state weight gives the matching lower bound at every sufficiently large level.
+\end{proof}
+
+\section{Stationary ports and the leaf interval}
+The ordered output metric will be described in Chapter~\ref{ch:geometry}. Its useful algebraic coordinates are
+\begin{equation}\label{eq:port-def}
+ B=\cot\pi b,\quad \varkappa=e^{-f_E'(b)},\quad
+ X=\sqrt{\frac{1+B^2}{1+\varkappa}},\quad Y=\sqrt{\varkappa}\,X.
+\end{equation}
+They satisfy $X^2+Y^2-B^2=1$. A leaf has $(B,X,Y)=(X,X,1)$. At a stationary product, the two children share $X$, and direct differentiation of \eqref{eq:m-action} gives
+\begin{equation}\label{eq:port-product}
+ B_o=\frac{B_1B_2+X^2-1}{B_1+B_2},\qquad
+ Y_o=\frac{Y_1Y_2}{B_1+B_2},\qquad B_1+B_2>0.
+\end{equation}
+A turn sends $(B,X,Y)$ to $(-B,Y,X)$.
+
+\begin{lemma}[Proper port inequalities]\label{lem:port-bounds}
+Every completed port satisfies $-Y<B<X$. In a completed/completed closure every completed descendant has $0<X,Y<1$, and every leaf satisfies
+\begin{equation}\label{eq:leaf-window}
+ \frac12<X_\ell=\cot\pi a_\ell<1,
+ \qquad \frac14<a_\ell<\frac{\arctan2}{\pi}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The base $hh$ has $B=X-1/(2X)$ and $Y=1/(2X)$. Turns preserve the claimed inequality. For a single attachment, \eqref{eq:port-product} becomes
+\[
+ B_o=X-\frac1{X+B},\qquad Y_o=\frac{Y}{X+B}.
+\]
+For $X\ge1$, the child inequality forces $B>\sqrt{X^2-1}$ and the result follows. For $X<1$, let $h_0=\sqrt{1-X^2}$ and $\alpha=\arccos X$. Express a child as $(B,Y)=(h_0\cot\beta,h_0\csc\beta)$. A bare leaf has $\beta=\alpha$, a completed child has $\beta>\alpha$, and product adds the angles, with their sum below $\pi$. This proves the strict upper bound and the lower bound $B_o+Y_o=h_0\cot((\beta_1+\beta_2)/2)>0$. It also proves the completed/completed step when $X<1$. When $X\ge1$, both completed children satisfy $\sqrt{X^2-1}<B_i<X$. Hence $0<X-B_i<X-\sqrt{X^2-1}\le1$, so $(X-B_1)(X-B_2)<1$. Formula~\eqref{eq:port-product} then gives $B_o<X$, while $B_o>0$ proves the lower bound.
+
+At closure the two ports are $(B,X,Y)$ and $(-B,X,Y)$. Applying both inequalities gives $|B|<\min(X,Y)$; the hyperboloid relation implies $X,Y<1$. In the angle chart, parent $Y<1$ puts the sum of child angles below $\pi-\alpha$, while each child angle is at least $\alpha$. Every completed child therefore has $Y<1$, and turns exchange the bounds. Finally, at a single attachment $Y_o<1$ gives
+$1<2X(X+B)<4X^2$. At an $hh$ base it gives $1/(2X)<1$. Thus every leaf has $X>1/2$, proving \eqref{eq:leaf-window}.
+\end{proof}
+
+For a fixed tree the inequalities give a compact neighborhood of every selected leaf inside $(1/4,1/2)$. This is the precise input needed for the complex source analysis. It is not a uniform bound over an unbounded family of trees.

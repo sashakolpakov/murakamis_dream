@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Working calculation: actual target frames with real anti-diagonal rows · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/manuscript.html" class="">The manuscript</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 31 October 2026<br>General conjecture remains open.<a href="../sphinx/index.html">Sphinx documentation ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a><p><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/working_target_cross_central_frames.md">Markdown source</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="working-calculation-actual-target-frames-with-real-anti-diagonal-rows">Working calculation: actual target frames with real anti-diagonal rows</h1>
+<p>30 October 2026. WORKING, not a global feasibility theorem. The local rank-one equations below are exact. Their compatibility with the common selected frame for the ENTIRE augmented link is unproved. In particular the first local branch must not be used to claim that the Green-kernel theorem applies at the complete global critical point.</p>
+<h2 id="local-inverse-turn-data">Local inverse-turn data</h2>
+<p>Use the ACTUAL inverse-turn pairs of <a href="actual_matching_edge_polynomial_geometric_action.html">the polynomial generating-action note</a>. For a target trace below -2, put</p>
+<pre><code>J=-exp(-2 eta), eta&gt;0, S=sinh eta,
+T=diag(J,J^-1),
+R=(1+iS)/(1-iS), D=diag(R,1).</code></pre>
+<p>The first incoming target meridian can be put, by a centralizer conjugacy, in the form</p>
+<pre><code>A_t=[[a,1],[kappa,d]],
+a=-2J/(J+1), d=-2/(J+1),
+kappa=-(J-1)^2/(J+1)^2.</code></pre>
+<p>The second is B_t=T A_t^-1. Both have trace -2 and determinant one. The first outgoing target meridian is D A_t D^-1. This retains the actual ordered target conjugator; it is not a freely chosen diagonal.</p>
+<p>Choose a real total physical degree parameter tau in (1/2,1), and write</p>
+<pre><code>E=exp(-2pi i tau), e=exp(-pi i tau), c_tau=-cos(pi tau)&gt;0,
+p=(E-J^-1)/(J-J^-1),
+h=1/(2S^2), K=h^2(c_tau^2+S^2).</code></pre>
+<p>For a rank-one trace-one projector</p>
+<pre><code>Pi=[[p,q],[r,1-p]],</code></pre>
+<p>the target total diagonal is Tr(T Pi)=E. Define X=r/e and Y=kappa q/e. Then the rank-one condition is exactly XY=K, and</p>
+<pre><code>Tr(A_t Pi)/e=-2h c_tau+X+Y,
+Tr(D A_t D^-1 Pi)/e=-2h c_tau+R X+R^-1 Y.       (1)</code></pre>
+<h2 id="two-exact-real-anti-diagonal-branches">Two exact real anti-diagonal branches</h2>
+<p>Demand that the two expressions in (1) are respectively</p>
+<pre><code>q_in=rho+i sqrt(1-rho^2),
+q_out=rho-i sqrt(1-rho^2), -1&lt;rho&lt;1.            (2)</code></pre>
+<p>They then have modulus one and are conjugates. Solve the two linear equations (1) for X,Y. Direct substitution in XY=K gives</p>
+<pre><code>[(1+S^2)rho+c_tau]^2=S^2+2,
+rho_+=[sqrt(S^2+2)-c_tau]/(1+S^2),
+rho_-=[-sqrt(S^2+2)-c_tau]/(1+S^2).             (3)</code></pre>
+<p>The projector is reconstructed by r=eX, q=eY/kappa. Consequently these are ACTUAL common local frames for the ordered inverse-turn pair, not independent choices of three magnetic variables.</p>
+<p>The original physical-coordinate dictionary is U=-1/a_1 and T_physical=1/a_2. With the marked argument in (2), its rows are</p>
+<pre><code>nu_out=(tau-1)/2+acos(rho)/(2pi),
+nu_in=tau-nu_out.                             (4)</code></pre>
+<p>Thus strict physical cross-central support is equivalent to</p>
+<pre><code>-1&lt;rho&lt;c_tau.</code></pre>
+<p>The stronger two finite-propagation windows at the folded row are</p>
+<pre><code>0&lt;nu_out&lt;tau-1/2, 1/2&lt;nu_in&lt;tau,</code></pre>
+<p>and, together with physical support, are equivalent to</p>
+<pre><code>-c_tau&lt;rho&lt;c_tau.                             (5)</code></pre>
+<p>For tau&gt;3/4, one has c_tau&gt;1/sqrt(2), and</p>
+<pre><code>0&lt;rho_+&lt;c_tau</code></pre>
+<p>for EVERY eta&gt;0: the upper inequality is exactly c_tau&gt;1/sqrt(S^2+2). Hence the plus branch supplies a local real anti-diagonal frame satisfying (5), uniformly without a small-eta restriction.</p>
+<p>For the minus branch, (5) is equivalent to</p>
+<pre><code>c_tau&gt;sqrt(S^2+2)/S^2.</code></pre>
+<p>It can therefore be arranged with tau sufficiently close to one precisely when S^2&gt;2, equivalently the crossing-circle rectangle ratio c=sech eta is below 1/sqrt(3). This is a sufficient local frame statement, not a proof that the link’s other disks allow it.</p>
+<p>There is an EXACT finite-source discriminator beyond these local frame equations. Since J is tridiagonal, p_a(J) has bandwidth at most a. In the anti-diagonal coordinates (4), the scaled row distance is</p>
+<pre><code>nu_in-nu_out=1-acos(rho)/pi=1/2+asin(rho)/pi.   (5a)</code></pre>
+<p>The plus branch has rho_+&gt;0, so its distance is strictly greater than 1/2. For the folded row a/N-&gt;1/2, all sufficiently close integer row pairs therefore have IDENTICALLY ZERO polynomial matrix entry. This rules out that branch as a direct nonzero real-row exceptional kernel, independently of its strip diagnostics. The minus branch has distance below 1/2 and does not have this support obstruction. This does not prove it is selected or nonzero in the surrounding contraction. The finite-propagation identity concerns action on a whole continuant vector; its safe output window must not be confused with support of an individual input-output entry.</p>
+<h2 id="the-actual-frame-pullback-cannot-be-omitted">The actual frame pullback cannot be omitted</h2>
+<p>The inverse pivotal turn changes the basepoint. If the original first based meridian is A_out, the local lower-Borel formula gives</p>
+<pre><code>Pi_target=A_out Pi_old / Tr(A_out Pi_old),
+Pi_old=A_out^-1 Pi_target / Tr(A_out^-1 Pi_target). (6)</code></pre>
+<p>To verify (6), in a physical frame the first lower matrix is L_1=[[1,0],[-G_21,G_11]]. Its cyclic base change sends the projector E_11 to L_1^-1 E_11 L_1=G E_11/G_11. Conjugating back gives (6). The denominators in this calculation are nonzero at the strict unit-diagonal local frames above.</p>
+<p>The common shaded-exterior/selected-strip conditions must be tested on Pi_old and its actual prefixes. They cannot be tested on Pi_target as if the turn left the frame unchanged.</p>
+<p>Diagnostic calculations in the canonical original A,B,C matrices, with eta=.2,1,2 and tau=.8,.875,.99, put the PLUS-branch old image and kernel flags outside the crossing disk’s own selected strip. For the MINUS branch at eta=1.2, arcosh(2),2, the tested flags lie inside that one strip. These observations are NOT a proof of those inequalities throughout either family. They give no information about all the OTHER disk circles of an arbitrary matching graph.</p>
+<p>Thus local real Green rows are achievable, but their simultaneous compatibility with the already selected complementary boundary state remains the precise missing geometric condition. No common-frame, Green-branch, contour or full-source asymptotic theorem follows from this working calculation.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/working_target_cross_central_frames.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#local-inverse-turn-data">Local inverse-turn data</a><a href="#two-exact-real-anti-diagonal-branches">Two exact real anti-diagonal branches</a><a href="#the-actual-frame-pullback-cannot-be-omitted">The actual frame pullback cannot be omitted</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

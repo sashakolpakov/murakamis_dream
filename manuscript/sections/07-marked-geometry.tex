@@ -1,0 +1,47 @@
+\chapter{The marked deformation and its volume primitive}\label{ch:marked}
+
+\section{A metric modulus is not yet a peripheral coordinate}
+The real port metric $e^{-f_E'(b)}$ describes an ordered ideal quadrilateral. To identify the filling action with volume, one must also construct the nearby representation on the same link exterior, specify the two auxiliary peripheral curves, and fix the additive constant of its regulator. Matching only a Hessian or an unmarked cusp shape would not suffice.
+
+Appendix~\ref{app:marked-calibration} gives the local rational face maps and their compositions. The construction starts at the complete metric of Chapter~\ref{ch:geometry}. It continues the leaf apex flags and the prism coordinates in the selected source variables. The input and output maps obey the nine local prism compatibility identities, so the white-face map is independent of the sequence of glued cells. The pure and signed shaded pairings give pointwise edge relations. The main cusps stay parabolic. The resulting framed representation is holomorphic on the same sufficiently small parameter neighborhood used by the packet.
+
+\begin{proposition}[Marked source primitive]\label{prop:marked-primitive}
+For the completed-root source, with the original disk framings and half-twist signs, the selected deformation has centered primitive auxiliary logarithms
+\begin{equation}\label{eq:UV}
+ U_\ell=-2\pi\ii\chi_\ell,\qquad
+ V_\ell=-2\partial_{\chi_\ell}\Phi_\eps.
+\end{equation}
+Its absolute complex volume primitive can be chosen as
+\begin{equation}\label{eq:regulator}
+ G=2\pi\ii\Phi_\eps,
+ \qquad dG=\frac12\sum_\ell V_\ell\,dU_\ell,
+ \qquad \Im G(0)=\Vol(Y_E^\eps)=2\pi F_0.
+\end{equation}
+The half-twist contribution is the specified quadratic correction $-\eps_\ell V_\ell^2/8$ in $G$. The physical filling power is $\eps_\ell-2p_\ell$.
+\end{proposition}
+\begin{proof}
+The local rational identities and original peripheral paths are proved in Appendix~\ref{app:marked-calibration}. Differentiating the shear \eqref{eq:local-shear} gives the same boundary covectors as the pure source after the primitive meridian shear. In each glued port the two internal covectors cancel, leaving only the auxiliary boundary terms. Thus the differential is \eqref{eq:regulator}. The complete polyhedron fixes its imaginary constant, so no arbitrary additive volume normalization remains. The sign of the meridian shear is determined by the original collar path, not merely by the unmarked half-twist pairing.
+\end{proof}
+
+For perspective, in the leaf coordinate $E=e^{2\pi\ii a}$ the complete disk longitude has translation $-2(E+1)$. The two signed meridian collar paths have translations $-2$ and $2E$, differing by that longitude. Each pair spans the area of the two cusp rectangles and is primitive. Their relation to the quantum sign is checked with the recorded crossing convention. This explains why the two signs can have the same complete volume but different filling equations.
+
+\section{Geometric completion for long primitive slopes}
+The local deformation is a representation of the actual augmented-link group near its oriented complete holonomy, with a bounded finite collection of framed vertices and face maps. The strict complete shapes remain nondegenerate in a small neighborhood. The primitive equations
+\begin{equation}\label{eq:filling-equations}
+ U_\ell+p_\ell V_\ell=-2\pi\ii
+\end{equation}
+have a unique nearby solution for all independently sufficiently large signed $p_\ell$. One can see the local existence by writing $1/p_\ell$ as independent small parameters and applying the implicit-function theorem to the cusp equations. The sign and the integer on the right side are fixed by the primitive collar, not chosen after solving a formal equation.
+
+The geometric completion argument in Appendix~\ref{app:marked-calibration} constructs a smooth solid-torus completion at each filled cusp on this branch. The remaining main cusp stays complete. It applies on one fixed neighborhood, hence requires only a lower bound on each $|p_\ell|$, with no comparison between them. The resulting complete metric is on the topology obtained by the specified auxiliary disk fillings. After the knot pairing choice and all such fillings, that topology is $S^3\setminus K_{F,G,\eps}(\mathbf p)$.
+
+Set
+\begin{equation}\label{eq:filled-action}
+ S_{\eps,\mathbf p}(\boldsymbol\chi)=\Phi_\eps(\boldsymbol\chi)
+ +\frac{\pi\ii}{2}\sum_\ell\frac{(\chi_\ell-1)^2}{p_\ell}.
+\end{equation}
+Its critical equations are exactly \eqref{eq:filling-equations}, by \eqref{eq:UV}. The regulator with the solid-torus correction gives
+\begin{equation}\label{eq:filled-volume}
+ 2\pi\Re S_{\eps,\mathbf p}(\boldsymbol\chi_*)
+ =\Vol\bigl(S^3\setminus K_{F,G,\eps}(\mathbf p)\bigr).
+\end{equation}
+This is an equality on the selected, correctly marked branch. Chapter~\ref{ch:filling} proves that the full finite invariant has a nonzero leading contribution with precisely this action.

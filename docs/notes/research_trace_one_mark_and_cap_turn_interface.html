@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trace-one top marks and the exact protected cap-turn interface · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/manuscript.html" class="">The manuscript</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 31 October 2026<br>General conjecture remains open.<a href="../sphinx/index.html">Sphinx documentation ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a><p><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/research_trace_one_mark_and_cap_turn_interface.md">Markdown source</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="trace-one-top-marks-and-the-exact-protected-cap-turn-interface">Trace-one top marks and the exact protected cap-turn interface</h1>
+<p>Unpublished workspace source-algebra theorem, 31 October 2026. Root and coherent independently completed full internal analytical/source reviews; this is not external peer review. This records exact finite identities and the limit of two proposed cap simplifications. It neither rewires the original diagram nor proves an absolute shared-source or volume bound.</p>
+<h2 id="any-trace-one-matrix-at-the-same-original-top-cap">1. Any trace-one matrix at the same original top cap</h2>
+<p>Fix the original complete-colored polynomial-Casimir source and one top cap, with all full crossings and original turn conventions retained. Write d=N-1, q=exp(pi i/N), Q=q^2 and x0=q^d. In the balanced basis the ordinary cap and the original unrestricted marked cap are</p>
+<pre><code>ell_(i,j)=x0^j g_i/N delta_(i+j,d),
+m_(i,j)=x0^j/N^2.</code></pre>
+<p>For ANY matrix e, insert D_e=g^(-1)e on the same primal cap input. The literal contraction, before a support restriction, gives</p>
+<pre><code>m^e_(i,j)=x0^j/N * e_(d-j,i).                       (1)</code></pre>
+<p>Every polynomial Casimir coupon and the actual R/R^-1 preserves the unwrapped total of its two physical heads. The original bottom cups and other top caps therefore force i+j=d at the exposed top pair. On this actual whole-source support,</p>
+<pre><code>m^e_(i,j)=N e_(i,i) m_(i,j).                        (2)</code></pre>
+<p>Off-diagonal entries do not contribute. In particular e=E_aa gives</p>
+<pre><code>m^a_(i,j)=x0^j/N delta_(i,a)delta_(j,d-a),
+m^a p=1, p_(i,j)=N x0^(-j)delta_(i+j,d).            (3)</code></pre>
+<p>The <a href="research_arbitrary_casimir_top_mark_transport.html">scalar-open-cap proof</a> shows that the remaining vector is a scalar times this ORIGINAL cup. Thus its evaluation by (1) is that scalar times Tr(e). Every e with Tr(e)=1 gives exactly the same full marked scalar, including e=E_aa. No positivity, idempotence or generic-q normalization is required for e. This is a statement for the full original source, not transport of e through a projected local sector.</p>
+<h2 id="exact-face-grid-meaning-fixing-a-clock-does-not-change-the-targets">2. Exact face-grid meaning: fixing a clock does not change the targets</h2>
+<p>The original centered head formula at this top cap is</p>
+<pre><code>q^(d i)=q^(d^2/2)(L_u/L_v)^(d/2).</code></pre>
+<p>Its lifted clock equality, equivalently the explicit physical head assignment, is</p>
+<pre><code>L_v/L_u=q^(d-2i)=x0 Q^(-i).                       (4)</code></pre>
+<p>Therefore (3) fixes L_v/L_u=t_a=x0 Q^(-a). At odd N this is an ordinary Q-grid point; at even N it is on the original odd gap-parity coset. No half-power lift or head offset is changed.</p>
+<p>Let P=prod_e H_(f_e) be the original homogeneous numerator, of total degree dR. Fix L_u=1. The original marked source is the normalized N^(R+1)-point average of</p>
+<pre><code>P(1,L_v,L_ordinary)/prod_ordinary L_f^d.</code></pre>
+<p>Equation (2) multiplies by N and restricts the one v-grid coordinate to t_a. Thus the E_aa-marked source is EXACTLY</p>
+<pre><code>N^(-R) sum_(original ordinary grid)
+         P(1,t_a,L_ordinary)/prod_ordinary L_f^d. (5)</code></pre>
+<p>All exponents of P are nonnegative. Each ordinary grid average requires an exponent congruent to d modulo N, whose least nonnegative value is d. There are R ordinary faces and total degree dR. Consequently EVERY ordinary exponent equals d and both u,v exponents equal zero. The remaining even-grid phases are one, because each exponent equals its target. It follows that (5) is</p>
+<pre><code>[prod_ordinary L_f^d] P |_(L_u=L_v=0),             (6)</code></pre>
+<p>independently of a or the nonzero value t_a. More generally (2) gives Tr(e) times (6). All N factors have been accounted for: the factor N in (2) cancels the removed v average, and no extra mark scalar remains.</p>
+<p>In particular the alternate E_00 mark does NOT replace the protected-zero coefficient by a positive ordinary-radius coefficient or eliminate its cap corners. A physical marked head index a fixes a face clock; it is not the polynomial row-degree index j of a cap coefficient. Identifying these indices would require another actual source transform.</p>
+<h2 id="the-cap-comparison-polynomial-is-an-actual-crossing-corner-modulus">3. The cap comparison polynomial is an actual crossing corner modulus</h2>
+<p>Now specialize the ordered local quartet to x=b=0. Put theta=pi/N. At sigma=+2 the literal full numerator has</p>
+<pre><code>H_V(0,0,c,y)=sum_(j=0)^d (-1)^j A_j c^(d-j)y^j,
+A_j=csc^2(theta/2)
+       prod_(r=1)^j sin^2(r theta)/sin^2((r+1/2)theta). (7)</code></pre>
+<p>This follows from the exact full-interval expansion and the shifted sine product prod_(r=0)^d 4sin^2((r+1/2)theta)=4. It includes both parities and the omitted half. The ratios A_j/A_(j-1) are less than one up to the unique middle crossing of sin(j theta)=sin((j+1/2)theta), then greater than one. Hence the maximum occurs at an endpoint. A_0=csc<sup>2(theta/2)&lt;=N</sup>2 by the elementary sine chord bound, and the ordinary sine product gives A_d=N^2. Thus 0&lt;A_j&lt;=N^2 for every j. Any original LEFT window is a subpolynomial of this coefficient modulus.</p>
+<p>The published exact normalized crossing coefficient on b^i x^k y^l c^t, i+k+l+t=d, is</p>
+<pre><code>(-1)^(k+l+1) q^[kl-(i+1)(t+1)] N/(S_i S_k S_l S_t),
+S_a=prod_(r=1)^a 2sin(pi r/N).</code></pre>
+<p>Set i=k=0,l=j,t=d-j and use S_j S_(d-j)=N. This gives</p>
+<pre><code>H_(r_N)(0,0,c,y)=sum_(j=0)^d (-q)^j c^(d-j)y^j,
+H_(r_N^-1)(0,0,c,y)=sum_(j=0)^d (-q^-1)^j c^(d-j)y^j. (8)</code></pre>
+<p>The inverse formula includes the confluent data, not just conjugate nodal eigenvalues. The actual face operator T has real monomial coefficients at this root: each displayed q/Q combination is invariant under q -&gt; q^(-1). The <a href="actual_signed_small_circle_face_kernel.html">frozen signed-kernel theorem</a>, section 1 and (6a), expresses r_N=sum_r(-q)^r Bhat_r and its ACTUAL Hermite inverse as sum_r(-q<sup>(-1))</sup>r Bhat_r, where Bhat_r has real spectral nodes and real sine-product normalization. Hence the inverse face kernel is coefficientwise complex conjugate in this real polynomial basis, including every repeated node derivative. This justifies using q^(-1) in (8).</p>
+<p>The ACTUAL crossing R^epsilon has the additional original scalar lambda0^epsilon, lambda0=q<sup>(d</sup>2/2), of unit modulus. Therefore</p>
+<pre><code>|H_V(0,0,c,y)|_coeff &lt;= N^2 H1(c,y),
+H1(c,y)=sum_(j=0)^d c^(d-j)y^j
+       =|H_(R^epsilon)(0,0,c,y)|_coeff, epsilon=+/-1. (9)</code></pre>
+<p>Here coefficient modulus is taken before evaluating positive c,y. The last equality retains the unit scalar’s modulus; it does not delete its phase in a signed contraction. Crucially, the identity coupon on the ORIGINAL quartet instead has</p>
+<pre><code>H_(identity)(0,0,c,y)=c^d,</code></pre>
+<p>because its two middle variables are b,c. Thus (9) is not the standard identity-insertion polynomial on the original middle pair.</p>
+<h2 id="the-exact-boundary-contraction-and-what-it-does-not-identify">4. The exact boundary contraction, and what it does not identify</h2>
+<p>Let P(c,y;Z) be any complementary polynomial in these two ordinary faces and all remaining variables Z. Then, with coefficient operators in Z retained unchanged,</p>
+<pre><code>[c^d y^d] H1(c,y) P(c,y;Z)=[t^d] P(t,t;Z).        (10)</code></pre>
+<p>For epsilon=+/-1 let zeta=-q^epsilon. Equation (8) gives instead the SIGNED actual half-crossing corner identity</p>
+<pre><code>[c^d y^d] H_(R^epsilon)(0,0,c,y) P(c,y;Z)
+     =lambda0^epsilon [t^d]P(zeta t,t;Z).         (11)</code></pre>
+<p>So the actual turn carries a nontrivial shared-face phase, not the positive merge in (10). On the only relevant c-degree truncation, define D_A by D_A(c^j y^h)=A_j c^j y^h for 0&lt;=j&lt;=d. The raw cap identity is</p>
+<pre><code>[c^d y^d] H_V(0,0,c,y)P(c,y;Z)
+                     =[t^d](D_A P)(-t,t;Z).      (12)</code></pre>
+<p>The coefficient bound gives a positive merged-polynomial upper bound via N<sup>2[t</sup>d]|P|(t,t;Z). It does not turn (12) into (11), nor show that the signed complementary contraction has the same bound or rate as a geometrically smoothed source.</p>
+<p>The merged pair c,y is an OUTPUT MAIN edge. Its two incident white triangles belong to two different original matching coupons. Removing the two triangles of the cap coupon is therefore not the same combinatorial operation as contracting that MAIN edge. A physical rewiring would have to retain the neighbor coupon, its boundary typing, and the phase/degree operator in (11)–(12). No such two-port turn or volume comparison is proved here.</p>
+<h2 id="dependencies-and-internal-review">5. Dependencies and internal review</h2>
+<p>The exact inputs are the <a href="actual_homogeneous_casimir_face_source.html">homogeneous source</a>, sections 1–4 and (10); the <a href="actual_signed_small_circle_face_kernel.html">signed kernel</a>, section 1 and (6a); the <a href="quantum_bridge_cap_source.html">original marked cap</a>, (2.1)–(2.4); and the <a href="research_arbitrary_casimir_top_mark_transport.html">top-mark transport theorem</a>. The <a href="research_double_protected_cap_finite_collar_obstruction.html">finite-collar obstruction</a> remains unchanged.</p>
+<p>Root and coherent independently checked all four sections, including the physical index/clock dictionary, the removed grid normalization, degree exhaustion, endpoint maximum of A_j, inverse Hermite conjugation, and the three distinct coefficient contractions (10)–(12). The existing <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/research_audit_arbitrary_casimir_top_mark_transport.py">mark audit</a> already verifies the scalar-cup identity entrywise and hence all E_aa evaluations in its fixtures. No new finite replay, physical rewiring, absolute shared-source estimate or volume assertion is claimed here.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/research_trace_one_mark_and_cap_turn_interface.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#any-trace-one-matrix-at-the-same-original-top-cap">1. Any trace-one matrix at the same original top cap</a><a href="#exact-face-grid-meaning-fixing-a-clock-does-not-change-the-targets">2. Exact face-grid meaning: fixing a clock does not change the targets</a><a href="#the-cap-comparison-polynomial-is-an-actual-crossing-corner-modulus">3. The cap comparison polynomial is an actual crossing corner modulus</a><a href="#the-exact-boundary-contraction-and-what-it-does-not-identify">4. The exact boundary contraction, and what it does not identify</a><a href="#dependencies-and-internal-review">5. Dependencies and internal review</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

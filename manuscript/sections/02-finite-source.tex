@@ -1,0 +1,236 @@
+\chapter{The original finite invariant and its source algebra}\label{ch:source}
+
+\section{Crossings and the one-cut normalization}
+Fix $N\ge2$, and set
+\begin{equation}\label{eq:root-notation}
+ d=N-1,\qquad q=e^{\pi\ii/N},\qquad Q=q^2,\qquad
+ x=q^d,\qquad \kappa=q^{d^2/2},\qquad \rho=q-q^{-1}.
+\end{equation}
+There is no restriction to prime or odd $N$. One convenient unbalanced realization of the complete physical color has basis $v_0,\ldots,v_d$ and
+\[
+ H v_j=(d-2j)v_j,\quad K=q^H,\quad
+ E v_j=[j]_q^2v_{j-1},\quad Fv_j=v_{j+1},
+ \qquad [j]_q=\frac{q^j-q^{-j}}{q-q^{-1}}.
+\]
+Missing endpoint vectors are zero. The finite universal crossing, including its Cartan factor, is
+\begin{equation}\label{eq:universal-crossing}
+ \mathscr R=q^{H\otimes H/2}
+ \sum_{k=0}^{d}\frac{q^{k(k-1)/2}\rho^k}{[k]_q!}
+ E^k\otimes F^k.
+\end{equation}
+Every denominator is nonzero. The physical braided crossing is obtained with the fixed exchange and transpose convention; the inverse is the actual matrix inverse. The framing and enhancement are part of the definition, not an unspecified factor appended to an asymptotic formula.
+
+For the balanced source coordinates used below, the same physical module has
+\begin{equation}\label{eq:balanced-module}
+ \mathcal E|a\rangle=(Q^{-a}-1)|a-1\rangle,\quad
+ \mathcal F|a\rangle=(1-Q^{a+1})|a+1\rangle,\quad
+ K|a\rangle=xQ^{-a}|a\rangle.
+\end{equation}
+The ordinary cup and cap, and the one marked cap, have entries
+\begin{equation}\label{eq:cups}
+ p_{ab}=Nx^{-b}\delta_{a+b,d},\qquad
+ \ell_{ab}=\frac{x^a}{N}\delta_{a+b,d},\qquad
+ m_{ab}=\frac{x^b}{N^2}.
+\end{equation}
+The ordinary duality satisfies both snake identities. The marked contraction has $mp=1$. If $g=K^{1-N}=(-1)^dK$, the original cylindrical scalar of an intertwining two-head box is
+\begin{equation}\label{eq:phi-physical}
+ \phi(A)=\frac1N\Tr_{V_N\otimes V_N}\bigl[(I\otimes g)A\bigr].
+\end{equation}
+The factor $1/N$ in this expression is the single cut average. It is not repeated at the auxiliary circles.
+
+\begin{proposition}[Normalization]\label{prop:normalization}
+Let $A_{\rm raw}$ be the scalar obtained from the original crossings, turns, ordinary auxiliary traces and the single mark. In the enhanced reduced Kashaev convention,
+\[
+ |\langle L\rangle_N|=|A_{\rm raw}(L)|.
+\]
+In the full modified one-cut convention the modulus is $N^{-1}|A_{\rm raw}(L)|$. The changes of recorded component framing contribute only unit phases at the complete color.
+\end{proposition}
+\begin{proof}
+The exact Fourier comparison is recorded in Appendix~\ref{app:normalization}. It is a simultaneous similarity of every adjacent braid generator and its inverse, together with an exact equality of enhancements. The factorial changes of basis cancel on every internal or traced wire. On the one remaining head the partial trace is scalar: it commutes with $E,F,K$, whose distinct weights and nonzero adjacent coefficients force scalarity. Hence the open-factor similarity cancels as well.
+
+For clarity, the complete modified dimension is evaluated as a whole meridian germ. With the original meridian $M=-q q^\alpha=e^u$,
+\[
+ d_N(\alpha)=-q^{N(1-N)/2}
+ \frac{q^{\alpha+1}-q^{-\alpha-1}}{q^{N\alpha}-q^{-N\alpha}}
+ =\ii^{N+3}\frac{\sinh u}{\sinh Nu}.
+\]
+Its removable value at $u=0$ is $\ii^{N+3}/N$. Exactly one component receives this factor. The twist at completeness is $q^{-d^2/2}=\kappa^{-1}$, of modulus one. These facts prove the asserted absolute normalization without estimating any large change-of-basis matrix.
+\end{proof}
+
+\section{The full pair algebra}
+The balanced pair generators and Casimir are
+\begin{equation}\label{eq:pair-casimir}
+ \mathcal E_{12}=\mathcal E_1K_2+\mathcal E_2,\quad
+ \mathcal F_{12}=\mathcal F_1+K_1^{-1}\mathcal F_2,\quad
+ K_{12}=K_1K_2,\quad
+ \Omega=\mathcal F_{12}\mathcal E_{12}+qK_{12}+q^{-1}K_{12}^{-1}.
+\end{equation}
+Let $\Cheb_n(z)=2T_n(z/2)$, where $T_n$ is the usual Chebyshev polynomial. Thus $\Cheb_0=2$, $\Cheb_1=z$ and $\Cheb_{n+1}=z\Cheb_n-\Cheb_{n-1}$. Define
+\begin{equation}\label{eq:hermite-algebra}
+ P_N(z)=\Cheb_N(z)+2=\prod_{j=0}^{d}(z-c_j),\qquad
+ c_j=q^{2j+1}+q^{-2j-1},\qquad
+ \cH_N=\CC[z]/(P_N).
+\end{equation}
+The list of roots includes multiplicity. Since $c_{d-j}=c_j$, all distinct roots are double except the simple root $-2$ at odd $N$.
+
+\begin{lemma}[Full commutant]\label{lem:commutant}
+The endomorphisms of $V_N\otimes V_N$ commuting with the three pair generators are exactly $\CC[\Omega]\simeq\cH_N$.
+\end{lemma}
+\begin{proof}
+Let $W_T$ be the span of $|a,T-a\rangle$. The $K_{12}$ eigenvalue one occurs only on $W_d$. The matrices $\mathcal E_{12}:W_{T+1}\to W_T$ for $T<d$, and $\mathcal F_{12}:W_T\to W_{T+1}$ for $T\ge d$, have triangular maximal minors with nonzero diagonals. Consequently the entire pair is generated from $W_d$ by these raising and lowering operators.
+
+On $W_d$, the Casimir is a symmetric tridiagonal matrix with adjacent entries $-(1-Q^{a+1})^2\ne0$. Its first basis vector is cyclic: the $k$th power has last possible coordinate $k$, with coefficient equal to the nonzero product of the first $k$ adjacent entries. An operator commuting with this block is therefore a unique polynomial of degree below $N$ in that block. Subtracting the same polynomial in $\Omega$ from a pair intertwiner gives zero on $W_d$, hence zero everywhere by generation.
+
+The elementary quantum-shift product gives $P_N(\Omega)=0$. The cyclic block has minimal polynomial of degree $N$; its continuant, or the generic highest-weight decomposition followed by regular specialization, gives precisely \eqref{eq:hermite-algebra}. This proves the claim with all first normal directions intact.
+\end{proof}
+
+The distinction from a semisimple value algebra is essential. At a double node, $f(c)$ and $f'(c)$ are independent data. A polynomial vanishing at every distinct node need not vanish in $\cH_N$.
+
+\section{The actual turn and the Newton basis}
+Put
+\begin{equation}\label{eq:newton-basis}
+ s_r=\prod_{u=1}^{r}2\sin\frac{\pi u}{N},\quad s_0=1,\qquad
+ B_r(z)=\prod_{j=0}^{r-1}(c_j-z),\qquad
+ \Bhat_r(z)=\frac{B_r(z)}{s_r^2},\quad 0\le r\le d.
+\end{equation}
+The quarter-turn is the literal contraction
+\[
+ \Turn(A)=(I^{\otimes2}\otimes\ell)(I\otimes A\otimes I)
+ (p\otimes I^{\otimes2}).
+\]
+Its entries in the recorded all-primal chart are
+\[
+ \Turn(A)_{(a,b);(c,e)}=x^{a-e}A_{(b,d-e);(d-a,c)}.
+\]
+The cups and caps are those of \eqref{eq:cups}. A different source-normalized rotation can carry an additional power of $x$; throughout this manuscript $\Turn$ is the unscaled genuine turn.
+
+\begin{proposition}[Newton turn and closure]\label{prop:newton-turn}
+In the full algebra,
+\begin{equation}\label{eq:newton-turn}
+ \Turn\Bhat_r=\Bhat_{d-r},\qquad
+ \phi\left(\sum_{r=0}^{d}\alpha_r\Bhat_r\right)=\alpha_d,
+ \qquad
+ \phi(\Bhat_i\Bhat_j)=\delta_{i+j,d}.
+\end{equation}
+\end{proposition}
+The finite verification is given in Appendix~\ref{app:newton}. It uses the physical turn, its nonzero adjacent charge-block entries and the finite quantum-binomial recurrence. In particular, \eqref{eq:newton-turn} is not a generic-$q$ continuation of a formula checked only on distinct root values. The turn is linear and involutive in this basis, but is not multiplicative.
+
+The same closure can be displayed directly in Hermite coordinates:
+\begin{equation}\label{eq:hermite-trace}
+ \phi(f)=(-1)^d\sum_{c\ {m double}}
+ \bigl((4-c^2)f'(c)-cf(c)\bigr)
+ +\mathbf1_{N\ {m odd}}f(-2).
+\end{equation}
+Equivalently,
+\begin{equation}\label{eq:leading-trace}
+ \phi(f)=(-1)^dN^2[z^d](f\bmod P_N).
+\end{equation}
+For example, at a double root $c$, writing $Q_c=P_N/(z-c)^2$ gives
+$Q_c(c)=N^2/(4-c^2)$ and $Q_c'(c)/Q_c(c)=c/(4-c^2)$ from the Chebyshev differential equation. The residue of $f/P_N$ is exactly the corresponding term of \eqref{eq:hermite-trace} after multiplication by $(-1)^dN^2$. Summing residues proves \eqref{eq:leading-trace}; the simple odd root has $P_N'(-2)=N^2$. The sole shortest tridiagonal path from the first to the last coordinate has product $(-1)^dN^2$, which also identifies this scalar with the original endpoint matrix element.
+
+\section{Positive multiplication with every normal retained}
+\begin{theorem}[Multiplication law]\label{thm:positive-product}
+If $i+j<N$, then
+\begin{equation}\label{eq:positive-product}
+ \Bhat_i\Bhat_j=\sum_{r=\max(i,j)}^{i+j}\mu_{ijr}\Bhat_r,
+ \qquad
+ \mu_{ijr}=\frac{s_{i+j}s_r}
+ {s_i s_j s_{r-i}s_{r-j}s_{i+j-r}}>0.
+\end{equation}
+If $i+j\ge N$, the product is zero in the full algebra. In particular, a product gate has precisely the integer support
+\begin{equation}\label{eq:gate-support}
+ i+j\le d,\qquad \max(i,j)\le r\le i+j.
+\end{equation}
+\end{theorem}
+\begin{proof}
+At a generic parameter $\zeta$, put $t=-(\zeta-\zeta^{-1})^2$. The unnormalized coefficients are
+\[
+ B_iB_j=\sum_r
+ t^{i+j-r}\frac{[i]![j]![i+j]!}
+ {[r]![r-i]![r-j]![i+j-r]!}\,B_r.
+\]
+Multiplication by $c_i-z$ and the identity
+$(c_i-z)B_r=B_{r+1}+(c_i-c_r)B_r$, with
+$c_i-c_r=t[r+i+1][r-i]$, reduce induction to
+\[
+ [i+1][i+j+1]=[r][r-j]+[r+i+1][i+j+1-r].
+\]
+This follows by expanding the four powers of $\zeta$. Endpoint coefficients follow from the same zero factors. At the principal root, all factorial indices in the case $i+j<N$ are below $N$. Since $[u]!=s_u/(2\sin(\pi/N))^u$, normalization by $s_i^2s_j^2/s_r^2$ gives \eqref{eq:positive-product}.
+
+For $i+j\ge N$, use the exact polynomial identity $B_N/B_j=B_{N-j}$, a consequence of $c_{d-u}=c_u$. Then $B_iB_j$ is divisible by $B_N=(-1)^NP_N$ with multiplicities. This proves the zero assertion without dropping the first normal directions.
+\end{proof}
+
+\section{The literal crossing circle and its colors}
+For $1\le j\le N$, the auxiliary module is the ordinary $j$-dimensional highest-weight module. Its loop is the actual block-braiding word $[2,1,1,2]$, with the intermediate strand dimensions retained, followed by its ordinary pivot $K_j^{1-N}$. There is no auxiliary $1/j$ or $1/N$.
+
+\begin{proposition}[Circle identity]\label{prop:circle}
+The resulting two-head operator is
+\begin{equation}\label{eq:circle}
+ L_j=(-1)^{j-1}U_{j-1}(\Omega/2).
+\end{equation}
+Here $U_0=1$, $U_1(z/2)=z$, and $U_{n+1}(z/2)=zU_n(z/2)-U_{n-1}(z/2)$.
+\end{proposition}
+\begin{proof}
+At generic $q$, evaluate the closed monodromy on a target highest vector of weight $n$. In one direction the positive raising terms annihilate that vector; in the return direction a positive lowering term cannot return to its highest coefficient. The two Cartan factors and the auxiliary pivot give
+\[
+ \sum_{a=0}^{j-1}q^{(n+1)(j-1-2a)}
+ =U_{j-1}\bigl((q^{n+1}+q^{-n-1})/2\bigr).
+\]
+The generic pair highest vectors have distinct Casimirs and descendants of total dimension $N^2$, so this proves the full matrix identity. All finite crossing denominators have indices below $N$, and the identity specializes regularly. Finally $K_j^{1-N}=(-1)^{j-1}K_j$ at the root, proving \eqref{eq:circle}, including its nilpotent coefficients.
+\end{proof}
+
+In particular $L_N=(-1)^dP_N'(\Omega)/N$. The trace identity
+\begin{equation}\label{eq:circle-trace}
+ \phi(L_Nf)=N\sum_{j=0}^{d}f(c_j)
+\end{equation}
+counts the repeated roots. It follows first by Lagrange interpolation for a polynomial with distinct roots and then by polynomial continuation in its coefficients. At even levels $L_N^2=0$; at odd levels $L_N^2=N^2E_{-2}$, with the simple-node projector $E_{-2}$. Thus complete color alone cannot be inverted to reconstruct a filling.
+
+Let $M=\lfloor d/2\rfloor$ and $h_j=\Turn L_j$. The complete leaf has the exact positive expansion
+\begin{equation}\label{eq:complete-leaf}
+ h_N=\sum_{v=0}^{M}a_{N,v}\Bhat_v,
+ \qquad a_{N,v}=\frac{N^2s_{2v}}{s_v^4}>0.
+\end{equation}
+For $0\le h\le M$, with $h_0=0$, the full color decomposition is
+\begin{equation}\label{eq:core-alias}
+ h_{N-h}=\sum_{v=h}^{M}
+ \frac{N^2s_{2v}}{s_v^2s_{v-h}s_{v+h}}\Bhat_v+(-1)^Nh_h.
+\end{equation}
+For $1\le h\le\lfloor N/2\rfloor$,
+\begin{equation}\label{eq:low-alias}
+ h_h=\sum_{r=0}^{h-1}(-1)^{h-1+r}
+ \frac{s_r^2s_{h+r}}{s_{2r+1}s_{h-r-1}}\Bhat_{d-r}.
+\end{equation}
+These are identities in $\cH_N$. A derivation from the finite Chebyshev generating function is given in Appendix~\ref{app:colors}. The first term in \eqref{eq:core-alias} is the core; the second is the alias. The alias is signed and lies in the complementary high Newton indices before a half twist.
+
+\section{Half twists and exact filling}
+A retained half twist acts on a turned leaf by
+$\Turn_\eps(f)=\Turn(R^\eps\Turn f)$, for $\eps=\pm1$. Its exact transport is
+\begin{equation}\label{eq:half-twist}
+ \Turn_\eps\Bhat_v=\kappa^\eps(-1)^v
+ \sum_{r=0}^{v}q^{\eps v(r+1)}
+ \frac{s_v}{s_rs_{v-r}}\Bhat_r.
+\end{equation}
+The triangular formula retains the full Cartan phase and all normals. Its derivation uses the finite continuant expansion and root factorial reflection; the two signs are coefficient conjugates in the real Newton basis. A half-twisted alias may occupy every Newton coordinate, so the pure alias support cannot be reused after \eqref{eq:half-twist}.
+
+The $N$ circle polynomials $L_1,\ldots,L_N$ form a basis of $\cH_N$. The full crossing has a Hermite polynomial $R=\kappa r_N(\Omega)$ with
+\[
+ r_N(c_k)=(-1)^kq^{k(k+1)},\qquad
+ \frac{r_N'(c_k)}{r_N(c_k)}
+ =-\frac{d-2k}{2(q^{2k+1}-q^{-2k-1})}
+\]
+at each double node, and the stated value at the odd simple node. Fourier--Hermite interpolation therefore gives, for every integer $p$,
+\begin{equation}\label{eq:exact-filling}
+ R^{-2p}=\kappa^{-2p}\sum_{j=1}^{N}\beta_{j-1}^{-p}L_j,
+ \qquad \sum_{j=1}^{N}|\beta_{j-1}^{-p}|\le2N(1+|p|).
+\end{equation}
+The notation $\beta_{j-1}^{-p}$ denotes the full interpolation coefficient, not a power of a scalar eigenvalue. Its value and derivative data are specified in Appendix~\ref{app:fourier}.
+
+Insert \eqref{eq:exact-filling} at every original auxiliary disk, tensoring with the spectators before taking the unchanged closure. If $\mathcal A_N(\mathbf h)$ is the actual mixed source with colors $N-h_\ell$, then
+\begin{equation}\label{eq:whole-filling-source}
+ \langle K(\mathbf p)\rangle_N
+ =\chi_N\kappa^{-2\sum p_\ell}
+ \sum_{j_1,\ldots,j_H=1}^{N}
+ \left(\prod_\ell\beta_{j_\ell-1}^{-p_\ell}\right)
+ \mathcal A_N(N-j_1,\ldots,N-j_H).
+\end{equation}
+Here $|\chi_N|=1$ in the reduced convention. This is an all-input finite identity. The remainder of the proof analyzes this complete sum, rather than replacing it by the complete-color term.

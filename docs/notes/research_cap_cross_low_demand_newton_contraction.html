@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A low-demand signed cap/CROSS contraction from the original Newton source · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/manuscript.html" class="">The manuscript</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 31 October 2026<br>General conjecture remains open.<a href="../sphinx/index.html">Sphinx documentation ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a><p><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/research_cap_cross_low_demand_newton_contraction.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_research_cap_cross_low_demand_newton_contraction.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/research_cap_cross_low_demand_newton_contraction_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="a-low-demand-signed-capcross-contraction-from-the-original-newton-source">A low-demand signed cap/CROSS contraction from the original Newton source</h1>
+<p>31 October 2026. <strong>Internally reviewed analytical research theorem.</strong> Root and coherent completed full independent internal proof/source reviews; this is not external peer review. This concerns the actual fixed spectral pair at even levels. It retains the original A-face demand, all unused factors, and the genuine cutoff. No uniform-coupon semisimple model or positive moment norm is used.</p>
+<h2 id="original-coefficients-and-an-auxiliary-full-slice">1. Original coefficients and an auxiliary full slice</h2>
+<p>Let N=2m&gt;=4, d=N-1, M=m-1, theta=pi/N. Write</p>
+<pre><code>c_r=2cos((2r+1)theta), a_r=2+c_r,
+gamma_r=2-c_r, s_r=2sin(r theta),
+P_r=product_(j=1)^r s_j, P_0=1.</code></pre>
+<p>Use the original C_(j,h), U_j and V_j from the <a href="research_two_port_main_cap_original_demand_convolution.html">original-demand convolution</a>, extending their literal formulas to all 0&lt;=j,h&lt;=d where meaningful. In particular</p>
+<pre><code>C_(j,h)=[A^j Z^(d-h-j)] K_(d-h)(A,Z)
+                     product_(r=d-h+1)^d a_r,
+U_j=4 P_j^2/product_(r=0)^j gamma_r,
+V_j=4 P_j^2/product_(r=0)^j a_r,
+C_(0,n)=N^2 product_(r=0)^(n-1)a_r/P_n^2
+       =V_(d-n).                                      (1)</code></pre>
+<p>For every 0&lt;=n&lt;=d define only as an algebraic auxiliary</p>
+<pre><code>S_n^full=sum_(j=0)^n (-1)^j U_j C_(j,n-j).               (2)</code></pre>
+<p>For 0&lt;=n&lt;=M this is exactly the ORIGINAL projected cap/CROSS sum S_(N,n), because its J_n is 0..n. No equality with the projected sum is asserted for n&gt;M.</p>
+<p>The new identity is</p>
+<pre><code>gamma_n S_n^full+s_n^2 S_(n-1)^full=4 C_(0,n),
+0&lt;=n&lt;=d, S_(-1)^full=0.                               (3)</code></pre>
+<p>In particular it keeps the original top-boundary coefficient that was undetermined by the previous C_(j,h) recurrence.</p>
+<h2 id="literal-three-port-completion-and-its-turn-dictionary">2. Literal three-port completion and its turn dictionary</h2>
+<p>Use the actual two-bridge slot word [1,0,1], with first top cap marked. Its ordered face quartets are</p>
+<pre><code>E=(A,u,C,Z), F=(u,A,v,C), G=(v,C,u,Z),</code></pre>
+<p>with protected faces u=v=0. At E put the actual V_N(-2), at F the actual V_N(2), and at G put</p>
+<pre><code>g_n(Omega)=product_(r=0)^(n-1)(Omega-c_r).</code></pre>
+<p>The specialization of G is (0,C,0,Z). In the original face operator, (-T-c_(d-r)) acting on C^(d-r) has only the monomer transition -s_(d-r)^2 Z C^(d-r-1). Since c_(d-r)=c_r and s_(d-r)=s_(r+1), successive factors give EXACTLY</p>
+<pre><code>H_(g_n)(0,C,0,Z)=(-1)^n P_n^2 C^(d-n) Z^n.              (4)</code></pre>
+<p>Thus the unchanged targets A^d C^d Z^d select (2), and the raw marked scalar of this three-port completion is</p>
+<pre><code>Z(E,F,g_n)=(-1)^(d+n) P_n^2 S_n^full
+         =(-1)^(n+1) P_n^2 S_n^full.                   (5)</code></pre>
+<p>Here the raw E(-2) source is (-1)^d times its positive endpoint polynomial. The full F(2) monomer coefficient is (-1)^j U_j. Equation (4) is a genuine polynomial coupon, not a sector projector.</p>
+<p>For completeness the exact rational-tangle dictionary needed below is</p>
+<pre><code>Z(E,F,G)=phi(G R(F R(E))),                              (6)</code></pre>
+<p>where R is the genuine UNSCALED original quarter-turn and phi(B)=N^-1 Tr[(I tensor g)B] is the original marked Frobenius functional. This identity includes all original turns and their scalar factors. It can be verified directly as follows. Put x=q^d. Label the bottom physical pairs (s,d-s),(b,d-b); the successive box entries are</p>
+<pre><code>E_(t,v;d-s,b), F_(d-a,u;s,t), G_(a,b;u,v).</code></pre>
+<p>The unwrapped conservation laws force the first top pair to be (d-a,a). Two original cups, the first marked cap and the remaining ordinary cap contribute</p>
+<pre><code>N^-1 x^(s+a+2b-2d).</code></pre>
+<p>On the right side of (6), expand</p>
+<pre><code>R(B)_(a,b;c,e)=x^(a-e) B_(d-a,c;b,d-e),
+g_b=x^(2b-d).</code></pre>
+<p>Expanding the right side of (6) in its literal matrix order first gives</p>
+<pre><code>N^-1 sum x^(u+h+2b-2d) G_(a,b;u,v)
+              F_(d-u,a;h,k) E_(d-h,v;k,b).</code></pre>
+<p>The actual root pair Casimir, and hence every polynomial F in it, is symmetric and invariant under the simultaneous swap/complement J(a,b)=(d-b,d-a). Explicitly,</p>
+<pre><code>F_(r,s;p,t)=F_(p,t;r,s)
+          =F_(d-s,d-r;d-t,d-p).</code></pre>
+<p>The latter identity can be checked directly on the original diagonal and two transition entries: under U-&gt;Q^-1 V^-1, V-&gt;Q^-1 U^-1, the diagonal and corresponding upward/downward transition coefficients are unchanged. It then holds for all powers and polynomials, including every Jordan component. Apply both identities to obtain</p>
+<pre><code>F_(d-u,a;h,k)=F_(d-a,u;d-k,d-h).</code></pre>
+<p>Set s=d-k, t=d-h. The E entry becomes exactly E_(t,v;d-s,b). Unwrapped conservation in this F entry gives d-a+u=s+t, so its phase becomes</p>
+<pre><code>x^(u+h+2b-2d)=x^(s+a+2b-2d).</code></pre>
+<p>Thus all three matrix entries and the original turn/mark factor agree term by term with the physical contraction above. This proves (6) before spectral evaluation or the Newton change of coordinates. No generic semisimple recoupling or reset mark is used.</p>
+<h2 id="original-newton-algebra-gives-the-recurrence">3. Original Newton algebra gives the recurrence</h2>
+<p>Use the reviewed <a href="actual_newton_turn_positive_gram.html">genuine Newton packet</a></p>
+<pre><code>Bhat_r(z)=product_(j=0)^(r-1)(c_j-z)/P_r^2,
+R Bhat_r=Bhat_(d-r),
+phi(Bhat_i Bhat_j)=1_(i+j=d).</code></pre>
+<p>Multiplication by z in these coordinates is the full lower-bidiagonal matrix Z_N:</p>
+<pre><code>(Z_N)_(r,r)=c_r,
+(Z_N)_(r,r-1)=-s_r^2,
+Z_N^T=P_rev Z_N P_rev.                              (7)</code></pre>
+<p>All repeated roots and Jordan data remain. If alpha_E is the Newton coefficient column of E, then (6) and the displayed transpose relation imply</p>
+<pre><code>Z(E,F,G)=alpha_E^T F(Z_N) P_rev alpha_G.               (8)</code></pre>
+<p>For E=V_N(-2) the divided-difference formula for the ACTUAL numerator gives</p>
+<pre><code>(alpha_E)_r=-V_r.</code></pre>
+<p>Indeed chi_N(-2)=4 at even levels, and the coefficient is 4(-1)^r P_r<sup>2/product_(j=0)</sup>r(-2-c_j)=-V_r. For G=g_n,</p>
+<pre><code>alpha_G=(-1)^n P_n^2 e_n.</code></pre>
+<p>For F=V_N(2), the FULL minimal-polynomial identity chi_N(Z_N)=0 gives</p>
+<pre><code>F(Z_N)=4(2I-Z_N)^(-1),                               (9)</code></pre>
+<p>because chi_N(2)=4 and every gamma_r&gt;0. Combining (5),(8),(9) cancels the exact nonzero factor (-1)<sup>(n+1)P_n</sup>2 and yields</p>
+<pre><code>S_n^full=V^T [4(2I-Z_N)^(-1)] e_(d-n).                (10)</code></pre>
+<p>Let w<sup>T=V</sup>T[4(2I-Z_N)^(-1)]. Its defining identity w<sup>T(2I-Z_N)=4V</sup>T gives</p>
+<pre><code>gamma_j w_j+s_(j+1)^2 w_(j+1)=4V_j.</code></pre>
+<p>Set j=d-n and use (1), c_(d-n)=c_n, and s_(d-n+1)=s_n. This is exactly (3). No norm estimate or total-variation bound for this inverse has been inserted.</p>
+<p>Equivalently, the explicit inverse of the bidiagonal matrix gives</p>
+<pre><code>S_n^full=4 sum_(h=0)^n (-1)^(n-h) C_(0,h)
+          product_(r=h+1)^n s_r^2
+                     /product_(r=h)^n gamma_r.       (11)</code></pre>
+<p>This is an exact fixed-pair signed summation identity, with cancellation retained.</p>
+<h2 id="a-macroscopic-low-demand-contraction">4. A macroscopic low-demand contraction</h2>
+<p>Define the same normalized scalar as the fixed-resolvent reduction,</p>
+<pre><code>R_n=gamma_n S_n^full/(4 C_(0,n)).</code></pre>
+<p>Since C_(0,n)/C_(0,n-1)=a_(n-1)/s_n^2, (3) becomes the INHOMOGENEOUS scalar recurrence</p>
+<pre><code>R_0=1,
+R_n=1-t_n R_(n-1),
+t_n=s_n^4/[a_(n-1)gamma_(n-1)]
+   =4sin^4(n theta)/sin^2((2n-1)theta).              (12)</code></pre>
+<p>The n=0 convention agrees with the original R definition. This is not a scalar orthogonal-polynomial assertion.</p>
+<p>For every even N&gt;=4,</p>
+<pre><code>|R_n|&lt;=1, 0&lt;=n&lt;=floor(N/4).                         (13)</code></pre>
+<p>Here is a direct proof, including the small levels. The positive function t(v)=4sin^4(v theta)/sin^2((2v-1)theta) is increasing for 1&lt;=v&lt;=M: its logarithmic derivative is 4theta[cot(v theta)-cot((2v-1)theta)]&gt;=0. If N=4k+2, then theta&lt;=pi/6 and</p>
+<pre><code>t_k=(1-sin theta)^2/cos^2(2theta)&lt;=1,</code></pre>
+<p>because sin theta&lt;=1/2. Thus all k successive maps in (12) preserve [0,1]. If N=4k, every n&lt;=k-1 has t_n&lt;=1 by comparison with v=k-1/2 (for k&gt;=2 the same preceding inequality applies). The final coefficient is t_k=sec^2 theta&lt;=2. Therefore the first k-1 values lie in [0,1], and R_k belongs to [1-sec^2 theta,1] subset [-1,1]. At N=4 there is no preliminary step and R_1=-1 directly. At N=6, R_1=0. This proves (13).</p>
+<p>Throughout this range n&lt;=M, the full slice is the genuine original projected sum. Its endpoint comparator D_(N,n) is a sum of positive terms and contains V_0 C_(0,n), where V_0=4/a_0. Hence</p>
+<pre><code>|S_(N,n)| &lt;=4 C_(0,n)/gamma_n
+           &lt;=[a_0/gamma_n] D_(N,n)
+           &lt;=N^2 D_(N,n),
+0&lt;=n&lt;=floor(N/4).                                  (14)</code></pre>
+<p>The sharper factor a_0/gamma_n is bounded independently of N on every fixed macroscopic interval rho N&lt;=n&lt;=N/4, rho&gt;0. The raw coefficient differs only by (-1)^d. The original A^d extraction and remaining C,Z exponents have not changed.</p>
+<h2 id="exact-scope-and-validation">5. Exact scope and validation</h2>
+<p>Equation (3) holds for the full auxiliary slices, while the bound (14) applies to the ORIGINAL projected cap/CROSS coefficient in the stated low-demand range at even levels. It is complementary to the separately proved <a href="research_cap_cross_high_demand_signed_contraction.html">high-demand theorem</a>. It does not yet cover N/4&lt;n&lt;=M, the middle cutoffs n&gt;M, or the odd-level source. The forward recurrence can be unstable when t_n&gt;1, so (13) must not be extrapolated without a further argument. A simple uniform bound for the actual full inverse in (10) is neither proved nor required.</p>
+<p>The proof inputs are the original-demand convolution, the <a href="actual_homogeneous_casimir_face_source.html">full homogeneous face theorem</a>, the literal root swap/complement symmetry, and the genuine Newton turn/Frobenius identities. The literal physical-index verification (6) supplies the source adapter. A focused independent direct calculation of the original K recurrence at 90 digits checked (3) for all full slices at N=4,6,8,10,12,16,20 (76 coefficients); maximum relative residual below 6e-81. This is a finite identity check, not the proof of the general estimate. A separate <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_research_cap_cross_low_demand_newton_contraction.py">portable exact-field audit</a>, with <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/research_cap_cross_low_demand_newton_contraction_results.json">recorded results</a>, independently contracts the actual three-port physical tensors at four even levels. It verifies 28 original marked scalars, 28 full auxiliary recurrences, 14 original low-cutoff identifications and 28 Newton resolvent entries. The root reviewer completed a fresh redirected replay with the same results. These finite checks support the source dictionary; inequality (14) is proved analytically above.</p>
+<p>The full internal analytical reviews checked the original C_(0,n)=V_(d-n) normalization, the Newton exterior monomial and raw sign, the physical swap/complement reindexing and unwrapped conservation, the all-node resolvent, the missing top coefficient in the exact recurrence, and both small-level endpoints of the quarter-demand estimate. They do not establish a bound beyond the stated demand range or at odd levels.</p>
+<p>Additional source reference: <a href="actual_pair_casimir_commutant_and_rotated_trace.html">full physical pair commutant and genuine marked trace</a>, sections 2–4.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/research_cap_cross_low_demand_newton_contraction.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#original-coefficients-and-an-auxiliary-full-slice">1. Original coefficients and an auxiliary full slice</a><a href="#literal-three-port-completion-and-its-turn-dictionary">2. Literal three-port completion and its turn dictionary</a><a href="#original-newton-algebra-gives-the-recurrence">3. Original Newton algebra gives the recurrence</a><a href="#a-macroscopic-low-demand-contraction">4. A macroscopic low-demand contraction</a><a href="#exact-scope-and-validation">5. Exact scope and validation</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

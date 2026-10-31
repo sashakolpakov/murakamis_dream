@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Complete-radius balance depends on the original marked cap · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/manuscript.html" class="">The manuscript</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 31 October 2026<br>General conjecture remains open.<a href="../sphinx/index.html">Sphinx documentation ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a><p><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/research_complete_balance_mark_dependence.md">Markdown source</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="complete-radius-balance-depends-on-the-original-marked-cap">Complete-radius balance depends on the original marked cap</h1>
+<p>PRIVATE exact observation, 31 October 2026. This concerns the finite geometric sufficient condition, not invariance or failure of the actual knot invariant. It uses TWO legitimate original top-cap marks on the SAME literal source word. No arbitrary local re-framing or new quantum mark is introduced.</p>
+<p>Use the already proved width-three word D=(1,3,2,4,1,3). Its face labels are u,a0,a1,a2,e1,e2,b1,b2 =0,…,7, and its original quartets are</p>
+<p>(1,0,4,2),(2,0,5,3),(4,2,6,5), (5,3,7,0),(1,4,0,6),(6,5,0,7). (1)</p>
+<p>With the FIRST top cap marked the protected pair is(0,1). Its normalized packing is exactly</p>
+<p>a1=(sqrt2,1;1), a2=(2-sqrt2,r;r), e1=(0,3/2;1/2), e2=(0,1/2;1/2), b1=(-sqrt2,1;1), b2=(sqrt2-2,r;r), r=3-2sqrt2,</p>
+<p>between linesY=0,2. This original mark passes Q-balance at all six ports.</p>
+<p>The SECOND original top-cap mark has protected pair(0,6), as the literal Morse compiler confirms. Its contact on Y=0 is p=-sqrt2. The ONE global Möbius transformation</p>
+<pre><code>                     w=-4/(z+sqrt2)                   (2)</code></pre>
+<p>sends that contact to infinity, keeps the lower halfplane as u, and sends the b1 disk to the upper halfplaneY&gt;=2. It maps the entire same packing, retaining all source labels and contact orders. Its actual curvatures are</p>
+<p>(u,a0,a1,a2,e1,e2,b1,b2) =(0,1,2,3+2sqrt2,2,1,0,1). (3)</p>
+<p>Indeed a circle(X,Y;R) not through p has transformed curvature [((X-p)<sup>2+Y</sup>2-R^2)/(4R)]; the old lineY=2 becomes curvature1. The original b1 disk becomes the zero-curvature upper line. Every other listed value follows directly. This formula is a common whole-packing mark change, not independent modification of triangle weights.</p>
+<p>At the fourth port(5,3,7,0), the new quartet is</p>
+<pre><code>              (x,b,c,y)=(1,3+2sqrt2,1,0).</code></pre>
+<p>Let F(r)=Q(1,r,0)=(2/pi)Ti2(sqrt r), with the original source constant. Put t=sqrt2-1 and G=Ti2(1), Catalan’s constant. The balance gap at this port is exactly</p>
+<p>F((1+sqrt2)<sup>2)+F(1)-log((1+sqrt2)</sup>2) =(2/pi)[Ti2(t)+G]-log(1+sqrt2). (4)</p>
+<p>It is strictly NEGATIVE, with an elementary rational certificate:</p>
+<p>Ti2(t)&lt;t&lt;29/70, G&lt;1-1/9+1/25=209/225, pi&gt;31/10, log(1+sqrt2)&gt;log(12/5) &gt;2[7/17+(7/17)<sup>3/3+(7/17)</sup>5/5]. (5)</p>
+<p>For completeness, sqrt2&gt;140/99 and &lt;99/70 follow by squaring rational bounds. Thus t&gt;41/99, and pi=8atan(t)&gt;8[41/99-(41/99)^3/3] =9092816/2910897&gt;31/10. The Ti2 and Catalan estimates are their elementary integral/alternating series bounds; the logarithm bound is the positive atanh series. The exact difference of the lower logarithm and upper first term in(4) is</p>
+<p>2[7/17+(7/17)<sup>3/3+(7/17)</sup>5/5] -(20/31)(209/225+29/70) =114290888/13864903605 &gt;1/200.</p>
+<p>Therefore the second-cap marked source fails complete-radius balance by at least1/200 at this actual port, whereas the first-cap marked source is balanced. In particular a legitimate different protected edge CAN remove a failed balance test for the same literal diagram (choose the first cap instead of the second).</p>
+<p>The conclusion is only presentation/mark dependence of this sufficient geometric test. It does not show a failure of any source volume equality, and it does not assert that every failing diagram has a successful mark. Applying a quantum theorem after changing a mark must still retain that original cap’s exact source conventions; no generic open-word regulator invariance is used here.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/research_complete_balance_mark_dependence.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A complete-angle penalty for a prescribed diagonalization · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/manuscript.html" class="">The manuscript</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 31 October 2026<br>General conjecture remains open.<a href="../sphinx/index.html">Sphinx documentation ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a><p><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/research_prescribed_diagonal_flip_penalty.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/research_prescribed_diagonal_flip_penalty_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="a-complete-angle-penalty-for-a-prescribed-diagonalization">A complete-angle penalty for a prescribed diagonalization</h1>
+<p>31 October 2026. <strong>Internally reviewed analytical research theorem.</strong> Unpublished. This is a quantitative sufficient condition for a prescribed simple chart. It does not assert that the condition holds for every prescribed chart, or that different diagonalizations define the same filled knot.</p>
+<h2 id="data-and-the-exact-image-restriction">1. Data and the exact image restriction</h2>
+<p>Fix the original simple spherical MAIN quadrangulation, a prescribed simple diagonalization D, and one retained MAIN mark uv. Every port disk has four distinct cyclic vertices (x,b,y,c). Ordinary vertices retain target one and u,v retain target zero. All norms below count actual triangle-corner incidences, even if two cells have the same vertex labels.</p>
+<p>Let f be the source-normalized triangle function, with f(0)=f(1/2)=0, f(1/2-t)=f(t), and f’’(t)=-2pi/sin(2pi t). The complete entropy is the sum of f over the triangle corners. For a LEFT degree row write</p>
+<pre><code>(q_x,q_b,q_c,q_y)=(a,b,1-nu,d),  nu=a+b+d&lt;=1/2.</code></pre>
+<p>Here a,b,d are degrees, not face weights. A protected input has its corresponding coordinate fixed to zero. A protected child c gives no such row. The sharp Green value is G=f(a)+f(b)+f(d)-f(nu).</p>
+<p>Flip xy to bc inside this original disk and use the exact allocation</p>
+<pre><code>T(a,b,d)=(0,a,1/2-a; b,d,1/2-b-d),                 (1)</code></pre>
+<p>in the ordered new triangles (b,x,c),(b,y,c). Its exact entropy gain is</p>
+<pre><code>C(T)-G=g(a,b,d):=f(a)+f(b+d)+f(nu).               (2)</code></pre>
+<p>Thus the image is not an unrestricted complete angle simplex. In addition to the forced zero at the first b-corner, it satisfies alpha_x&lt;=beta_c, equivalently nu&lt;=1/2. Equation (1) preserves every original vertex load, including the protected zeros. RIGHT is obtained by exchanging the middle labels before applying this formula. These triangle lists specify corner incidence orders, not oriented boundary-chain orders. An orientation-preserving physical flip can use the quartet (b,y,x,c). Its middle-reflected convention (b,x,y,c) has exactly the same full homogeneous Casimir polynomial, by the original middle-reflection identity, as well as the same complete capacity.</p>
+<p>For a set I of flipped disks, call the resulting triangular cellulation T_I. It may have parallel matching edges. Its complete capacity is Phi_I, with the same fixed mark and original vertex targets. If the complete fiber is empty, no original sector transported into it exists. Otherwise its compact fiber has a unique entropy optimizer theta^I, by strict concavity. In a simple T_I, its ordinary corners are strictly positive, with a supported singleton row having its one entry 1/2. Its capacity is the actual complete polyhedron volume divided by pi. For a nonsimple feasible chart, the reviewed complete block-capacity theorem supplies the corresponding sum over simple blocks.</p>
+<h2 id="a-closed-algebraic-local-penalty">2. A closed algebraic local penalty</h2>
+<p>For any complete optimizer theta and any feasible complete flow z, closed strong concavity gives</p>
+<pre><code>C(z)&lt;=Phi-pi ||z-theta||^2.                       (3)</code></pre>
+<p>This is the same normalization as the fixed-triangle boundary lemma; it uses a segment from the optimizer and no boundary derivative. Also the concavity of f(t)-pi<em>t</em>(1/2-t), which is zero at both endpoints, gives the closed scalar bound</p>
+<pre><code>f(t)&gt;=pi*t*(1/2-t).                              (4)</code></pre>
+<p>Consider one flipped port of theta^I, and abbreviate its two rows as</p>
+<pre><code>theta_e=(p_b,p_x,p_c; r_b,r_y,r_c).</code></pre>
+<p>Both rows sum to 1/2, and their protected entries are zero. Define</p>
+<pre><code>K=1/2+||theta_e||^2-p_c-r_c,
+v=(p_x-p_c, r_b-r_c, r_y-r_c),
+Delta_J={s&gt;=0: sum s=1/2, s_i=0 for protected inputs i}.</code></pre>
+<p>At least one of the three inputs is ordinary, because the quadrilateral has four distinct vertices, the child is ordinary, and only two vertices are protected. Hence Delta_J is nonempty. Let s*=Proj_(Delta_J)(v), the ordinary Euclidean projection, with protected coordinates fixed zero. Set</p>
+<pre><code>beta_e(theta_e)
+  =pi min{K, K-1/4+||s*-v||^2-||v||^2}.           (5)</code></pre>
+<p>This is an explicit nonnegative, piecewise quadratic function of the six complete corner loads. The projection requires only the scalar water-filling equation</p>
+<pre><code>s_i*=max(v_i-tau,0) for allowed i,
+sum_allowed max(v_i-tau,0)=1/2;</code></pre>
+<p>the other coordinates are zero. In particular no Green optimization or spectral variable appears in (5).</p>
+<p>For every closed LEFT row (including pure-child and seam endpoints),</p>
+<pre><code>pi ||T(a,b,d)-theta_e||^2+g(a,b,d)&gt;=beta_e(theta_e). (6)</code></pre>
+<p>To verify the constants and the minimization, put s=(a,b,d). The quadratic minorant from (4), divided by pi, is</p>
+<pre><code>Q_theta(s)=||T(s)-theta_e||^2
+   +a(1/2-a)+(b+d)(1/2-b-d)+nu(1/2-nu)
+  =K-2 v.s-2(ab+ad+bd).                          (7)</code></pre>
+<p>On each ray s=t p, sum p=1 and p&gt;=0, this is concave in t on [0,1/2]. Its minimum is therefore at t=0 or t=1/2, also when only one coordinate is allowed and the expression is affine. The first value is K. At t=1/2, use 2(ab+ad+bd)=1/4-||s||^2; minimization is precisely the projection in (5). This proves (5)–(6) and its nonnegativity without any numerical minimization.</p>
+<p>If T_I is SIMPLE, beta_e is strictly positive for every allowed child. Indeed Q_theta is a sum of a squared distance and three nonnegative scalar terms. Their simultaneous vanishing forces either nu=0, or nu=1/2 with a=0 or a=1/2. At nu=0 the two transported rows are pure at c, so some other ordinary input corner is zero; such an input exists as noted above. At the seam with a=0 the second c-corner is zero, and with a=1/2 the first c-corner is zero. The child c is ordinary in both cases. None is the strictly positive allowed-corner optimizer of a simple chart. Compactness then proves that the minimum in (5) is strictly positive. This argument retains all protected and singleton rows explicitly.</p>
+<p>The other exact allocation (assigning the b-load to the first triangle) can be used as well. It gives the same argument after exchanging the two outer labels and the two new triangles. Taking the larger of the two resulting valid lower bounds is permitted. No pointwise choice of face radii or separate optimization of shared loads is involved.</p>
+<h2 id="a-prescribed-chart-geometric-certificate">3. A prescribed-chart geometric certificate</h2>
+<p>For each nonempty flip set I whose complete fiber is feasible, compute theta^I and Phi_I. For every e in I, evaluate (5) separately for each allowed original overloaded middle. Let beta_(e,I) be the smaller of these values, or the sole value if only one child is allowed. One may use the improved outer-exchanged bound just described on each side. For nonsimple charts these formulas remain nonnegative but need not be strictly positive. It is also valid simply to set their penalties to zero if only their complete block capacities are available.</p>
+<p>For an original feasible flow whose genuinely overloaded ports are exactly I, use (1) on those ports and optimal complete splits on the remaining CROSS ports. Combining (2), (3), and (6), discarding only the nonnegative squared errors at unflipped ports, gives</p>
+<pre><code>sum_e barH(q_e)&lt;=Phi_I-sum_(e in I) beta_(e,I).    (8)</code></pre>
+<p>Every shared target in (8) is the original target. In particular this is not an independent maximization of local volume gains.</p>
+<p>Consequently the finite, entirely complete-geometric condition</p>
+<pre><code>Phi_D &gt; max_(nonempty feasible I)
+             [Phi_I-sum_(e in I) beta_(e,I)]     (9)</code></pre>
+<p>implies a uniform strict sharp entropy gap on the original closed non-CROSS fiber. A maximum over no feasible flip sets is ignored. Indeed any genuinely overloaded datum has the uniform finite gap in (9). A datum with no genuine overload but in the closed non-CROSS set is a CROSS seam: at least one original middle equals 1/2. The original simple complete optimizer has every ordinary middle strictly below 1/2 and every protected middle zero. Uniqueness and compactness give the separate strict seam gap. Equivalently use the existing explicit seam constant pi*a_D^2/2 in original incidence norm. Combining the two gaps covers pure-child and all seam limits.</p>
+<p>All complete-capacity-maximizing prescribed charts pass (9): every simple flipped chart has Phi_I&lt;=Phi_D and a positive sum of penalties; every nonsimple one has Phi_I&lt;Phi_D by the last-flip theorem. Since there are finitely many charts, these inequalities give a positive margin. Condition (9) also permits Phi_I&gt;Phi_D, provided its excess is smaller than the explicit boundary penalty. Section 5 gives one exact finite certificate of this phenomenon on an already recorded MAIN quadrangulation. We do not claim (9) for arbitrary prescribed charts.</p>
+<p>For an actual original source satisfying the reviewed simple-white packet/action hypotheses, the exact sharp-G conditional theorem now gives the full original long-filling volume limit under (9). The fixed diagram and half-twist data are retained; all filling parameters are chosen independently, with either sign, sufficiently long and fixed before N tends to infinity. The limiting volume is that of the original filled knot exterior. This uses the exact original numerator and its whole Fourier period, not a quantum equality between flips.</p>
+<h2 id="why-the-boundary-gain-alone-is-not-yet-a-universal-comparison">4. Why the boundary gain alone is not yet a universal comparison</h2>
+<p>The formula above deliberately keeps a quantitative part of the forced boundary loss. There is a useful check against a hidden old minimax step. When a flipped chart is simple, let L^I be its complete face weights. The exact local Bregman divergence for its two triangle rows satisfies, for the same transport,</p>
+<pre><code>D_e(T(q),theta_e)+g(q)
+  =Q(b,x,c)+Q(b,y,c)-[G(q)+sum_f q_f log L_f].     (10)</code></pre>
+<p>Here D_e includes the usual tangent linear term; row constants cancel. It is defined on the supported simplex: protected zero coordinates are omitted from logarithmic terms, and a singleton row has divergence zero. This is an identity, not the squared-distance lower estimate. Taking the local infimum on the closed LEFT simplex yields</p>
+<pre><code>Q(b,x,c)+Q(b,y,c)
+   -max{log c,Q(x,b,y)+(1/2)log c}.               (11)</code></pre>
+<p>Equation (11) is just the already known anchored LEFT weighted bound, evaluated at the flipped complete vector. Thus discarding the original shared coupling and minimizing each exact Bregman penalty separately does not prove a new universal volume inequality. Condition (9) is a checkable complete-angle sufficient certificate; proving that every prescribed chart satisfies a sufficient global comparison remains a separate task. No isotopy, filling transport, or marked target change is asserted here.</p>
+<h2 id="a-certified-nonmaximal-prescribed-chart-on-one-existing-graph">5. A certified nonmaximal prescribed chart on one existing graph</h2>
+<p>This is a finite witness for the distinction between (9) and exact capacity maximality, not the proof strategy for arbitrary diagrams. Start with the already recorded reduced-width-three source whose literal original quartets are</p>
+<pre><code>(1,0,4,2), (2,0,5,3), (4,2,6,5), (1,4,0,6), (6,5,0,3),</code></pre>
+<p>with mark (0,1). Change only the first matching diagonal. The prescribed chart D has, in the middle-reflected incidence convention, quartets</p>
+<pre><code>(0,1,2,4), (2,0,5,3), (4,2,6,5), (1,4,0,6), (6,5,0,3).</code></pre>
+<p>For an orientation-preserving disk frame use (0,2,1,4) at the first port instead. The two differ only by the exact middle reflection of the full H_f, so the full source, CROSS degree closure, both one-sided orientations together, and the certificate are unchanged. The audit uses the displayed incidence convention and checks both allowed child sides; it makes no claim of a reflected physical disk isotopy.</p>
+<p>This is a simple matched sphere on the same five-port MAIN quadrangulation, with all original MAIN edges and the same marked pair. The new general Morse realization supplies its own actual augmented link. No flat-plat realization or isotopy with the old link is asserted. Its ordinary complete weights, ordered 2,…,6, are</p>
+<pre><code>(1,1,3-2sqrt(2),4-2sqrt(2),3-2sqrt(2)).</code></pre>
+<p>The independent flip set is encoded by a five-bit integer relative to THIS prescribed chart. There are eighteen simple choices, with the following exact ordinary complete weights; all other choices are nonsimple. This is the entire finite list, not a search over new knots.</p>
+<pre><code>mask   weights on vertices 2,3,4,5,6
+  0    1,1,3-2sqrt(2),4-2sqrt(2),3-2sqrt(2)
+  1    1,(3+sqrt(5))/2,(3+sqrt(5))/2,2+sqrt(5),1
+  2    1,1,1/9,4/9,1/9
+  3    1,3+2sqrt(2),2,2,1
+  4    1,9/4,1/4,7,1/4
+  5    1,4,4,12,1
+  6    1,4,1/4,9/4,1/4
+  7    1,9,4,4,1
+  9    1,3+2sqrt(2),1,4+2sqrt(2),3+2sqrt(2)
+ 11    1,25,1,4,9
+ 13    1,9,1,28,4
+ 15    1,25,1,9,4
+ 16    1,25/9,1/9,4/9,1/9
+ 17    1,3+2sqrt(2),2,2,1
+ 20    1,25/4,1/4,9/4,1/4
+ 21    1,9,4,4,1
+ 25    1,9,1,4,9
+ 29    1,16,1,9,4.</code></pre>
+<p>Here is a complete finite certificate method. For each triangle put T=sqrt(L_i L_j+L_i L_k+L_j L_k) and theta_i=atan(L_i/T)/pi, with exact zero and singleton conventions. For each of the ninety ordinary vertex equations, exact algebra proves</p>
+<pre><code>product_(triangles containing f) (T+iL_f)/(T-iL_f)=1.</code></pre>
+<p>An enclosing interval for the sum of its positive angles lies between 0.99 and 1.01. Thus its normalized sum is exactly one, not merely close to one. The local triangle sums are 1/2. The positive-weight triangle Legendre identity and these exact demands prove that the displayed angle flow is the unique complete optimizer. This uses no numerical root solving or assumption that a rounded critical point is exact.</p>
+<p>For a nonsimple choice, the audit enumerates all ordinary subsets S. Whenever exactly 2|S| triangle rows touch S, their total supply equals the entire demand of S. Consequently all their corners outside S are zero in every feasible flow. Intersect these exact forced supports. If n_t allowed corners remain in row t, concavity gives the capacity upper bound sum_t n_t f(1/(2n_t)). All fourteen nonsimple choices have such a bound less than 4.18. An infeasible fiber would be harmless; the bounds do not assert its feasibility or a new block decomposition.</p>
+<p>For the simple choices, (5) can be certified without choosing the exact active set of its projection. For ANY rational tau, completion of the square in the simplex Lagrangian gives</p>
+<pre><code>min_(s in Delta_J) [||s||^2-2v.s]
+   &gt;= -tau-sum_(i allowed) max(v_i-tau,0)^2.      (12)</code></pre>
+<p>Use (12) in (5), and the better of the two outer allocations on each allowed child side. The audit supplies rational tau witnesses and encloses every resulting bound; correctness does not depend on their being minimizers.</p>
+<p>All entropy values are enclosed by the finite Fourier sum for the Lobachevsky function, with M=8192 and the explicit tail 1/(2M) per Lobachevsky term. Thus each f value has error at most 1/(pi M). The remaining operations use Arb at 192 bits, including square roots, arctangents, positive parts, minima, maxima, and the quadratic bounds. The author exact/interval replay gives</p>
+<pre><code>4.99985 &lt; Phi_D &lt; 5.00142,
+Phi_(mask 1)-Phi_D &gt; 0.17855,
+min_(all 31 nonempty flip choices)
+    [Phi_D-Phi_I+sum_e beta_(e,I)] &gt; 0.01342 &gt; 0.01. (13)</code></pre>
+<p>For the nonsimple choices, replace Phi_I by the proved support upper bound and use zero penalties. Their certificate margins exceed 0.8. The second inequality in (13) proves that the prescribed chart is NOT capacity-maximizing. The third proves (9), with a uniform flip margin 0.01. Seam-only data retain the separate original seam gap.</p>
+<p>This proves a strict extension beyond the maximal-diagonalization hypothesis for prescribed matched charts, with the accompanying independently replayed finite certificate. It does not claim that the resulting unmarked knot family is outside every older balance, sector, or differently presented family. Its actual long filled-knot conclusion uses the same source-realization and analytic inputs as section 3, with its own original half-twist pattern and framing normalization.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/research_audit_prescribed_diagonal_flip_penalty.py">portable exact/interval certificate</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/research_prescribed_diagonal_flip_penalty_results.json">its saved output</a> retain the full finite witness and its scope. The earlier floating diagnostic was used only to suggest these fixed algebraic weights. It is not invoked by the finite certificate or (13).</p>
+<h2 id="dependencies-and-status">Dependencies and status</h2>
+<p>The geometric inputs are the <a href="research_maximal_diagonalization_source_gap.html">exact flip transport and nonsimple last-flip theorem</a>, <a href="actual_fixed_triangle_boundary_capacity_gap.html">closed strong concavity</a>, and <a href="actual_smoothed_source_capacity_blocks.html">complete capacities with strict supported positivity on simple spheres</a>. The local source and original full-period consequence use the <a href="research_sharp_green_spectral_maximum.html">sharp Green maximum and its conditional filling theorem</a>. For the new actual prescribed chart, the <a href="research_matched_sphere_morse_source.html">general Morse realization</a> and <a href="research_general_morse_cross_action.html">CROSS action/packet adapter</a> provide the source and geometric inputs; the new non-CROSS gap restores the full source just as in the <a href="general_maximal_diagonal_augmentation_volume.html">integrated augmentation theorem</a>. The middle-reflection convention is the exact local source identity in <a href="research_diagonal_flip_quantum_polarization.html">the diagonal-flip polarization theorem</a>, section 9. The old five-port chart and its literal flat source are recorded in the <a href="general_anchored_shared_radius_filling_volume.html">anchored shared-radius theorem</a>, sections 4–5.</p>
+<p>Root independently reviewed the full analytical proof, certificate code, and a fresh exact/Arb replay. The coherent-source reviewer independently read the full proof/code and freshly replayed the final verifier, with output exactly matching the author’s result. Both reported PASS. The final labeling clarification distinguishes an incidence convention from the orientation-preserving physical frame. These are internal reviews, not external peer review.</p>
+<p>The certificate covers exactly one existing five-face MAIN quadrangulation, its 32 diagonalizations, 18 algebraic complete charts with 90 exact ordinary-face equations, 14 nonsimple tight-Hall support bounds, and all 31 nonempty flip tests. It certifies a prescribed-chart extension beyond exact capacity maximality. It does not establish a universal prescribed-chart inequality or novelty of the unmarked knot families relative to every earlier presentation or criterion.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/research_prescribed_diagonal_flip_penalty.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#data-and-the-exact-image-restriction">1. Data and the exact image restriction</a><a href="#a-closed-algebraic-local-penalty">2. A closed algebraic local penalty</a><a href="#a-prescribed-chart-geometric-certificate">3. A prescribed-chart geometric certificate</a><a href="#why-the-boundary-gain-alone-is-not-yet-a-universal-comparison">4. Why the boundary gain alone is not yet a universal comparison</a><a href="#a-certified-nonmaximal-prescribed-chart-on-one-existing-graph">5. A certified nonmaximal prescribed chart on one existing graph</a><a href="#dependencies-and-status">Dependencies and status</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

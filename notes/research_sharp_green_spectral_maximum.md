@@ -1,0 +1,397 @@
+# The exact spectral maximum of a full Green interval
+
+31 October 2026. **Internally reviewed analytical research theorem.** This identifies the
+spectral maximum of the original sharp coefficient UPPER functional.
+It does not assert a coefficient lower limit, phase compatibility,
+representation volume, or a shared maximum bounded by Phi_D.
+
+## 1. Statement on the original degree simplex
+
+Use the jointly continuous, absolutely normalized sharp action H_delta(q)
+of the [global closed sharp coefficient upper theorem](research_global_sharp_coefficient_limsup_majorant.md). Its row
+order is q=(q_x,q_b,q_c,q_y), with total one. On the closed LEFT domain
+q_c>=1/2 set
+
+    s_x=q_x, s_b=q_b, s_y=q_y, nu=s_x+s_b+s_y=1-q_c.
+
+Let f be the actual triangle summand, f(0)=f(1/2)=0 and
+
+    f'(s)=log cot(pi s),
+    f''(s)=-2pi/sin(2pi s),        0<s<1/2.
+
+Then the exact calculus identity is
+
+    max_(0<=delta<=1/2) H_delta(q)
+       = G(q):=f(s_x)+f(s_b)+f(s_y)-f(nu).                 (1)
+
+For strictly positive s_x,s_b,s_y and nu<1/2, the maximizing spectrum
+is unique and lies in (0,1/2). It satisfies
+
+    sin^2(pi delta_*)
+      = cos(pi nu)cos(pi s_b)/[cos(pi s_x)cos(pi s_y)].    (2)
+
+The reflected statement holds on the closed RIGHT domain, with its
+original overloaded middle as child. On the closed CROSS domain the
+[closed CROSS comparison](research_sharp_cross_degree_domination_and_seam_gap.md) already gives max_delta H_delta=h_0.
+At the seams, (1) equals the actual complete triangle entropy, so these
+statements fit continuously. All spectra remain independent at the
+different original ports; this is a pointwise local identity, with no
+shared minimax exchange.
+
+## 2. Construct the strict spectral stationary point from its degrees
+
+Assume the three input loads are positive and their sum nu is below
+1/2. Define dimensionless positive common weights
+
+    x=tan(pi s_x), b=tan(pi s_b), y=tan(pi s_y),
+    A=x+y, P=xy, S=1-bA-P.
+
+The addition formula and nu<1/2 give S>0 and
+
+    c=tan(pi nu)=(A+b-bP)/S,
+    c-b=A(1+b^2)/S,
+    c-b-A=A(b+x)(b+y)/S>0.                               (3)
+
+Put
+
+    z=S/(1+b^2),  k^2=1-z=(b+x)(b+y)/(1+b^2),
+    delta=(1/pi)arcsin(sqrt(z)).                          (4)
+
+Both z and k^2 are strictly between zero and one. The last identity
+in (2) follows from cos(pi nu)=S cos(pi s_x)cos(pi s_b)cos(pi s_y).
+
+The original root is
+
+    alpha_delta(t)=4[k^2-sin^2(pi t)],
+    Lambda_delta(t;x,y)
+      =2sin(pi t)[A sin(pi t)
+           +sqrt((x-y)^2 sin^2(pi t)+4k^2xy)],
+    L_delta=Lambda_delta/|alpha_delta|.
+
+The exact pre-pole and post-pole row equations are
+
+    sin^2(pi mu)=k^2 b^2/[(b+x)(b+y)],
+    sin^2(pi nu)=k^2 c^2/[(c-x)(c-y)].                    (5)
+
+Equations (3)--(4) give mu=s_b and the specified nu. For the second
+equation one may verify directly
+
+    (c-x)(c-y)/(1+c^2)=(b+x)(b+y)/(1+b^2).
+
+The input is on the increasing pre-pole branch because
+k^2-sin^2(pi mu)=(bA+P)/(1+b^2)>0. The output is on the decreasing
+post-pole branch because
+k^2-sin^2(pi nu)=(P-Ac)/(1+c^2)<0. Thus this is a strict straddle,
+not a spurious squared solution. Its spectral stationary condition
+(c-b)z=A is exactly (3)--(4), with the [original normalized branch derivative](research_full_fiber_sharp_stationary_classification.md)
+log(T_c/E_b) equal to zero.
+
+## 3. Verify the actual outer coefficient, not just its row equations
+
+The outer degree is the derivative of the literal integrated root at
+the minimizing tilt log(x/y). Write d=x-y and
+D=A^2-4Pz>0. Direct differentiation and integration give
+
+    a(t)=partial_(log x) log Lambda_delta(t;x,y)
+        =1/2+d sin(pi t)/[2sqrt(d^2 sin^2(pi t)+4k^2P)],
+
+    int_mu^nu a(t)dt=(nu-mu)/2
+      +[asin(d cos(pi mu)/sqrt D)
+        -asin(d cos(pi nu)/sqrt D)]/(2pi).                (6)
+
+All inverse sines here are their real principal values. To check their
+difference without selecting an unproved sign, put
+
+    B=bA+2P>0, V=sqrt(d^2+B^2),
+    R=sqrt((1+x^2)(1+y^2)), theta=atan x-atan y.
+
+Then D=V^2/(1+b^2), and the two inverse-sine arguments in (6) are
+
+    I_b=d/V,       I_c=dS/(VR).
+
+For I_c use sqrt(1+c^2)=sqrt((1+x^2)(1+b^2)(1+y^2))/S.
+Furthermore
+
+    sin theta=d/R, cos theta=(1+P)/R,
+    sin(asin I_b-theta)=d(1+P-B)/(VR)=I_c.
+
+Since 1+P-B=S>0, tan(asin I_b)=d/B and tan theta=d/(1+P)
+have the same sign and |asin I_b|>=|theta|. Their difference remains
+in (-pi/2,pi/2), so
+
+    asin I_b-asin I_c=theta=pi(s_x-s_y).
+
+The equality case d=0 is included directly. Equation (6) therefore
+equals s_x; its complementary outer degree is s_y. This verifies the
+original outer-coefficient Legendre equation and fixes the actual
+load vector q, not just a formal conic or two row roots.
+
+## 4. Absolute action and uniqueness
+
+Let H_*(s) denote H_delta(q) at the smooth stationary data just
+constructed. Every degree is interior, the minimizing outer tilt is
+finite and unique, and the spectrum is a strict nonpole stationary
+point. The ordinary envelope rule therefore gives
+
+    partial_(s_i) H_* = log(c/w_i),   i=x,b,y.             (7)
+
+This is also obtained by adding the original face-weight term to the
+local simplex action: its derivative is zero, and increasing an input
+decreases the child load by the same amount. No common scalar is
+dropped. Since w_i=tan(pi s_i) and c=tan(pi nu), the right side of (7)
+is f'(s_i)-f'(nu). On the connected domain s_i>0, sum s_i<1/2,
+H_*-G is consequently constant.
+
+Scale s_i toward zero in fixed positive ratios. Formula (2) gives
+delta_* ->1/2 and q tends to the pure-child vertex. Joint continuity
+of the ORIGINAL closed sharp action gives H_* ->0, as does G. Hence
+the constant is zero. This uses the proved continuous upper functional,
+not a coefficient limit or a collision claim about dilogarithms.
+
+Conversely any strict spectral stationary point at these degrees must
+be the one constructed above. At its actual finite outer tilt define
+x,y>0 and b=L_delta(mu), c=L_delta(nu). The normalized pre/pre and
+post/post branch derivatives cannot vanish, so the point straddles
+the pole and (c-b)z=A. In particular c>b+A. Set
+
+    T^2=[Abc+P(c-b)]/[c-b-A]>0.
+
+The exact row equations imply tan(pi mu)=b/T and tan(pi nu)=c/T.
+Rescale all four weights by T. The tangent-addition identity now gives
+atan(x/T)+atan(b/T)+atan(y/T)=atan(c/T); the angle sum is below pi/2
+because T^2-bA-P=A(b+x)(b+y)/(c-b-A)>0. Repeating the exact outer
+calculation (6) shows s_x=atan(x/T)/pi and s_y=atan(y/T)/pi.
+Thus all ratios w_i/T, and then z, are fixed by q and agree with (2).
+
+## 5. Why the stationary value is the whole spectral maximum
+
+For fixed strict q, joint continuity makes the maximum on
+delta in [0,1/2] exist. The [fixed-degree small-delta
+perturbation](research_regular_shared_spectral_stationary_reduction.md#4a-a-one-sided-nonterminal-maximum-cannot-have-delta0) excludes delta=0 when the interval has positive length
+and nu<1/2. The cap value is zero, whereas strict concavity of f and
+f(0)=0 give G>0 for these three positive inputs. A spectral value at
+which an interval endpoint equals an alpha pole cannot maximize: the
+[original unused-log perturbation](research_sharp_interval_pole_endpoint_exclusion.md) into the interval has a positive
+epsilon log(1/epsilon) gain uniformly before the outer infimum.
+These are exactly the reviewed endpoint and pole exclusions for the
+same sharp functional and unchanged degree vector.
+
+At every remaining spectral value the original coefficient tilt is
+finite, unique and smooth. A maximum is therefore a strict spectral
+stationary point. Section 4 proves that there is exactly one, and its
+value is G. This proves (1)--(2) on the strict LEFT degree domain.
+
+The map q -> max_delta H_delta(q) is continuous on the entire closed
+simplex because H is jointly continuous and the spectral interval is
+compact. The right side of (1) is continuous as well. Approximation by
+the strict LEFT degrees thus proves (1) on the full closed LEFT
+domain, including zero ordinary inputs in the standalone local
+formula, protected specializations, diagonal intervals and the seam.
+No positivity or nonzero A_rest is inferred at any finite level.
+
+For nu=1/2, f(nu)=0 and (1) is precisely the complete input triangle
+entropy; the output is its actual pure-middle triangle. This agrees
+with the independently normalized CROSS formula at the shared seam.
+
+## 6. Exact reduced row Hessian and the remaining global problem
+
+On the strict input simplex the Hessian of the optimized Green action
+is especially simple:
+
+    D^2 G = -2pi diag(1/sin(2pi s_i))
+              +[2pi/sin(2pi nu)] 1 1^T.                 (8)
+
+There is exactly one positive eigenvalue and two negative eigenvalues.
+Indeed the positive rank-one update crosses zero precisely when
+sum_i sin(2pi s_i)>sin(2pi nu), which is strict for positive inputs
+whose total angle is below pi. A protected-zero input is removed
+before differentiation; with two positive inputs the signature is
+one positive and one negative. This recovers the prior monomer Hessian.
+
+Equivalently, for original local row displacements summing to zero,
+
+    D^2 G[v,v]
+      =-2pi sum_(input i) v_i^2/sin(2pi q_i)
+         +2pi v_child^2/sin(2pi(1-q_child)).               (9)
+
+The full original constrained second variation after optimizing the
+strict Green spectra is the sum of (9) and the actual negative CROSS
+row Hessians, restricted to the ORIGINAL row and face balances; cap
+rows retain their zero action. Formula (9) is a diagonal incidence
+form before imposing these constraints. It does not itself produce a
+positive feasible direction: the shared repair problem is still real.
+
+The general sharp upper variational problem can now maximize the
+explicit piecewise local function: actual CROSS entropy on CROSS
+degrees, and (1) on either overloaded-middle domain. Spectra optimize
+independently, so this elimination is legitimate; no face-weight
+infimum is exchanged with a shared maximum. A proof that this original
+shared maximum is at most Phi_D, or a cancellation-aware replacement
+when it exceeds Phi_D, remains separate. No universal full-Hessian
+instability or hyperbolic volume bound is claimed.
+
+## 7. A general full-invariant criterion with no spectral variables
+
+This corollary keeps the original labeled simple-white geometric
+certificate and full-source conventions. It is a sufficient criterion,
+not an assertion that every such diagram satisfies its inequality.
+Fix an actual width k>=2 flat-plat skeleton D, its permitted mark and
+fixed retained half twists epsilon_e in {0,+1,-1}, whose endpoint
+permutation gives a knot. Let Phi_D=Vol(Y_D)/(2pi) be its drilled
+volume rate. The common full-V source and Phi_D are the ones in the
+[whole all-CROSS filling theorem](general_all_cross_long_filling_volume.md),
+including the actual full crossing scalars and final framing character.
+
+Define a continuous local function barH on the full degree simplex:
+
+    barH(q)=h_0(q),                    q_b,q_c<=1/2;
+    barH(q)=sum_(i=x,b,y) f(q_i)-f(1-q_c), q_c>=1/2;
+    barH(q)=sum_(i=x,c,y) f(q_i)-f(1-q_b), q_b>=1/2.       (10)
+
+The seam agreements proved above make (10) unambiguous. Let P_D be
+the ORIGINAL compact transport fiber: each port supplies one, every
+ordinary face demands one, and the two protected faces demand zero.
+Repeated incidences retain their original labels. Put
+
+    P_NC={q in P_D : max_(e,middle b or c) q_(e,middle)>=1/2},
+    M_D^NC=max_(q in P_NC) sum_e barH(q_e).                 (11)
+
+If P_NC is empty the corresponding upper condition is vacuous and its
+asymptotic non-CROSS arrays are absent. Otherwise suppose the fixed
+diagram satisfies the explicit, purely degree-variable inequality
+
+    M_D^NC < Phi_D.                                       (12)
+
+Then there is a finite threshold T(D), including this certificate in
+the fixed data, such that for every independently signed integer
+twist vector p with all |p_e|>T(D), fixed BEFORE N tends to infinity,
+
+    lim_(N->infinity) (2pi/N) log|K_N(K_D(p))|
+       =Vol(S^3 minus K_D(p)).                            (13)
+
+Both level parities and composite levels are included. There is no
+comparability condition among the twist magnitudes, no growing-twist
+limit, and no threshold asserted uniformly over different diagrams.
+Equation (13) concerns the original filled knot invariant and its
+actual smooth filled exterior, not the drilled volume.
+
+Proof. Spectra optimize independently at the original ports. The
+closed CROSS comparison and (1) give the exact pointwise identity
+
+    max_(delta_1,...,delta_R in [0,1/2])
+        sum_e H_(delta_e)(q_e)=sum_e barH(q_e).             (14)
+
+Take the literal non-CROSS remainder, namely the full-V source minus
+its actual all-CROSS path sector. Every original coefficient array in
+this remainder has a one-sided or diagonal port. Its d=N-1 normalized
+limiting degree lies in P_NC; possible finite half-mesh conventions
+only give a uniformly vanishing distance from this closed set.
+The global uniform coefficient LIMSUP theorem applies through all
+row, outer-degree and spectral boundaries, including sampled zeros.
+There are polynomially many original arrays at fixed D. Equations
+(12)--(14) and uniform continuity therefore give a fixed gamma_D>0
+and, uniformly on the entire real spectral cube and at both parities,
+
+    |S_N^NC(-2cos(2pi delta))|
+       <= exp[N(Phi_D-gamma_D)]                           (15)
+
+for all sufficiently large N. The estimate also bounds the sum of
+absolute values of these arrays; no phase alignment or lower
+coefficient limit is required.
+
+The remainder S_N^NC is still an actual polynomial of degree at most
+d in each sigma_e. Its degree/path projection is spectrum independent.
+Thus the cosine-Bernstein and whole-domain three-integration-by-parts
+argument of the [global sector theorem, section 4](actual_global_diagonal_spectral_sector_gap.md)
+applies verbatim to (15). A sufficiently thin fixed complex spectral
+strip retains a positive loss. Source-only Cauchy estimates control
+the required derivatives; the original sine factors and Gaussian
+endpoint matching retain the second-derivative endpoint currents.
+The actual charge factors then leave the absolutely summable product
+of |ell_e|^(-2). Consequently some kappa_D>0 satisfies
+
+    |I_N^NC(p)| <= C_(D,p) exp[N(Phi_D-kappa_D)]             (16)
+
+for each fixed signed p. This is the entire original Fourier period,
+not an infinite sum of sharply cut local charge cubes. The polynomial
+dependence on N and on the fixed slopes n_e=epsilon_e-2p_e is absorbed
+by retaining a smaller positive loss.
+
+The proved all-CROSS whole period is eventually nonzero and has rate
+
+    lim_(N->infinity) N^(-1)log|I_N^CROSS(p)|
+       =Phi_fill(p)
+       =Phi_D-O_D(sum_e |n_e|^(-2)).                      (17)
+
+Here Phi_fill(p)=Vol(S^3 minus K_D(p))/(2pi), with the same original
+normalization, half twists and framing. Choose T(D) large enough that
+this existing theorem applies and Phi_fill(p)>Phi_D-kappa_D/2 for
+all independent signed vectors in the stated range. Then (16)--(17)
+give I_N^NC/I_N^CROSS ->0 exponentially, at both parities. Adding the
+two literal sectors and retaining their common original normalization
+proves (13). The unproved general step is (12), not this conditional
+full-source implication.
+
+## 8. Radial convexity and the exact local weighted transform
+
+Take positive face weights (x,b,c,y), and write the LEFT inputs as
+s_i=t p_i, where p_i>=0, sum p_i=1 and 0<=t<=1/2. For at least two
+positive p_i, differentiation on the open radial interval gives
+
+    d^2/dt^2 G(t p)
+      =2pi[1/sin(2pi t)-sum_(p_i>0) p_i^2/sin(2pi t p_i)]
+      >0.                                                 (18)
+
+Indeed u/sin u is strictly increasing on (0,pi), so each term in
+the sum is at most p_i/sin(2pi t), strictly when 0<p_i<1.
+If only one p_i is positive, G is identically zero. Thus G is convex
+on every closed radial segment, by continuity at its endpoints.
+
+The added weight term is affine in t:
+
+    sum_f q_f log L_f=(1-t)log c+t sum_i p_i log w_i.
+
+Its radial maximum is therefore attained at t=0 or t=1/2. At t=0
+the value is log c. At t=1/2 the input has its actual triangle
+entropy, and maximizing its allocation gives
+
+    sup_(closed LEFT q) [barH(q)+sum_f q_f log L_f]
+       =max{log c, Q(x,b,y)+(1/2)log c}.                   (19)
+
+Here Q is the original weighted complete triangle action, with total
+triangle load 1/2; no degree normalization has changed. RIGHT has the
+reflected formula with b and c interchanged. On CROSS, the two genuine
+triangle allocations give the weighted supremum Q(x,b,y)+Q(x,c,y).
+Since a pure-middle triangle is allowed in its closed degree simplex,
+Q(x,c,y)>=(1/2)log c and Q(x,b,y)>=(1/2)log b. Hence the exact full
+simplex transform is
+
+    sup_q [barH(q)+sum_f q_f log L_f]
+       =max{Q(x,b,y)+Q(x,c,y), log b, log c}.              (20)
+
+All weights in (18)--(20) are positive; degree-boundary allocations
+are included by the established continuous extension. Formula (20)
+is exactly the local weighted transform of the original positive
+Fejer endpoint source in the [complete Cauchy-capacity theorem](actual_complete_source_cauchy_capacity_gap.md).
+Thus replacing that source by the spectrally optimized sharp action
+does not improve the bound obtained by reoptimizing a single shared
+positive radius vector. The original face constraints still couple
+the radial motions. No shared maximum and infimum have been exchanged,
+and (20) proves neither (12) nor the universal volume comparison.
+
+## Internal review and dependencies
+
+Root and an independent reader completed full analytical/source reviews
+of sections 1--8, PASS. The review checked the unsquared outer-angle
+identity, original row/tilt normalization, absolute action constant,
+uniqueness, endpoint exclusions and closed extension; the original
+non-CROSS polynomial/whole-period implication and fixed-twist quantifiers;
+and the exact radial weighted transform without a shared minimax exchange.
+These are internal
+reviews, not external peer review. No numerical audit is claimed.
+
+The dependencies are the closed global sharp upper functional;
+the strict stationary branch derivatives and outer tilt equation;
+the fixed-degree delta=0 exclusion; the pole-endpoint exclusion; and
+the proved closed CROSS comparison. All occur in the existing
+reviewed source notes. No numerical search is used in this proof.

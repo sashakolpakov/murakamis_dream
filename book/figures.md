@@ -1,6 +1,14 @@
 # Figure gallery
 
-These diagrams introduce the objects and constructions used in the guide. The geometric drawings are combinatorial projections; their captions state what the colors and highlighted faces mean. Each figure can be opened at full resolution or downloaded as SVG, PDF, or editable TikZ.
+These diagrams introduce the objects and constructions used in the guide. Captions distinguish incidence schematics from boundary-plane constructions and explain the colors and highlighted faces. Figures include PDF and editable TikZ downloads, with SVG versions where available.
+
+## The manuscript's ideal cells
+
+![Boundary-plane construction of the multiplication prism, with four vertices on the unit circle and the intersection P outside it. The sixth ideal vertex is infinity.](../manuscript/build/figures/prism-boundary.png)
+
+The numerical parameters shown give a strict prism. The drawing displays its boundary-plane construction; the manuscript supplies the ordered ports and face maps.
+
+[Vector PDF](../manuscript/build/figures/prism-boundary.pdf) · [Editable TikZ](../manuscript/figures/prism-boundary.tex) · [Read the manuscript chapter](chapters/manuscript.md)
 
 ## The global sharp-source upper problem
 

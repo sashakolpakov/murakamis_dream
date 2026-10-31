@@ -1,0 +1,725 @@
+\section{The selected high-index source and its complex lattice packet}
+\label{app:selected-source}
+
+This section proves the local source estimate used in the completed-root
+theorem. Its hypothesis is a fixed compact interval
+\begin{equation}\label{eq:b1-high-interval}
+ I=[\tau_0,\tau_1]\subset(1/4,1/2)
+\end{equation}
+for every retained complete leaf coordinate. All constants may depend on
+this interval and the fixed source tree. The color neighborhood and every
+complex index neighborhood below are fixed independently of the level.
+We work with the actual finite low core and its specified factorial
+continuation. No homogeneous solution of a recurrence is substituted for
+that source. In particular, an inverse-power approximation on the real
+index grid will not be used as if it were an exponentially accurate
+complex interpolation.
+
+\subsection{Canonical factorials and the literal mixed coefficient}
+
+Retain
+\[
+ d=N-1,\quad M=\lfloor d/2\rfloor,\quad
+ q=e^{\pi\ii/N},\quad Q=q^2,\quad \kappa=q^{d^2/2},\quad
+ F_r=(Q;Q)_r.
+\]
+In this section $x$ denotes a scaled Newton index, rather than the
+physical-frame scalar $q^d$. The sine factorial has the exact continuation
+\begin{equation}\label{eq:b1-factorial}
+ G_N(z)=\left(\frac{2\pi}{N}\right)^z\Gamma(z+1)
+ \prod_{k=1}^{\infty}
+ \frac{\Gamma(Nk+z+1)}{\Gamma(Nk-z)(Nk)^{2z+1}},
+ \qquad -1<\Re z<N.
+\end{equation}
+All positive-base powers use their real logarithms. The logarithm of the
+$k$th factor is $O_K(k^{-2})$ on compact subsets of the strip: in the
+Gamma-ratio expansion its $k^{-1}$ term cancels. Thus the product is
+holomorphic and zero-free there. Gamma's functional equation and the
+convergent sine product give
+\begin{equation}\label{eq:b1-factorial-shift}
+ \frac{G_N(z+1)}{G_N(z)}=2\sin\frac{\pi(z+1)}N,
+ \qquad G_N(0)=1,\qquad G_N(r)=s_r\quad(0\le r<N).
+\end{equation}
+The marked quantum factorial is
+\begin{equation}\label{eq:b1-marked-factorial}
+ \widehat F_N(z)=
+ e^{\pi\ii z(z+1)/(2N)-\pi\ii z/2}G_N(z).
+\end{equation}
+Consequently
+\[
+ \widehat F_N(z+1)=(1-Q^{z+1})\widehat F_N(z),
+ \qquad \widehat F_N(r)=F_r,
+ \qquad Q^z=e^{2\pi\ii z/N}.
+\]
+These identities fix the continuation and its phase, not just its
+asymptotic expansion. On a compact subset of $0<\Re z<1$, direct
+Stirling expansion of \eqref{eq:b1-factorial} gives
+\begin{equation}\label{eq:b1-factorial-asymptotic}
+ \begin{aligned}
+ \log G_N(Nz)
+ &=NJ(z)+\frac12\operatorname{Log}(2N\sin\pi z)
+   +\frac{\pi\cot\pi z}{12N}+O(N^{-3}),\\
+ J(z)&=\int_0^z\operatorname{Log}(2\sin\pi u)\,\dd u.
+ \end{aligned}
+\end{equation}
+Here the logarithm continues the real positive factorial branch. One
+way to verify the uniform remainder is to expand the $k$th Gamma ratio:
+its error is $O_K(N^{-3}k^{-3})$. These errors are summable; the
+leading and half-log terms sum by the sine product. The first correction
+sums by
+\[
+ z^{-1}+\sum_{k\ge1}\bigl((k+z)^{-1}-(k-z)^{-1}\bigr)
+ =\pi\cot\pi z.
+\]
+Cauchy's estimate supplies the corresponding derivative bounds on
+smaller compact sets.
+
+Let $h$ be a physical color deficit and put $t=h/N$. At an integer
+index $r>h$ the pure core coefficient is the literal factorial expression
+\begin{equation}\label{eq:b1-pure-coefficient}
+ A_N(r,t)=\frac{N^2s_{2r}}
+ {s_r^2G_N(r-Nt)G_N(r+Nt)}.
+\end{equation}
+For a retained half-twist sign $\eps\in\{1,-1\}$, the exact triangular
+Newton transport gives
+\begin{equation}\label{eq:b1-signed-finite}
+ d_N^\eps(r,t)=\kappa^\eps
+ \sum_{v=r}^{M}(-1)^v q^{\eps v(r+1)}
+ \frac{s_v}{s_rs_{v-r}} A_N(v,t),
+ \qquad d_N^0(r,t)=A_N(r,t).
+\end{equation}
+For complex $t$ in a sufficiently small fixed disk, only the two
+color-shifted factorials are continued. All their arguments remain in
+regular strips. Equation \eqref{eq:b1-signed-finite} is then an exact
+finite, even holomorphic function. At every physical integer $h<r$ it
+is the original transported core, including all first normal directions.
+
+The cancellation inside this finite sum is encoded by
+\begin{align}
+ A_{h,r}
+ &=\sum_{v=r}^{M}
+ \frac{Q^{-vr}F_{2v}}
+ {F_v\widehat F_N(v-h)\widehat F_N(v+h)F_{v-r}},
+ \label{eq:b1-A-source}\\
+ D_{h,r}
+ &=\frac{Q^{-r^2}F_{2r}}
+ {F_r\widehat F_N(r-h)\widehat F_N(r+h)},
+ \qquad U_{h,r}=A_{h,r}/D_{h,r}.
+ \label{eq:b1-D-source}
+\end{align}
+The sum starts at $r$ in the present corridor. For physical $r<h$ its
+lower endpoint would be $h$; those low indices belong to the separate
+global envelope, not to the interpolation asserted here. The terminal
+source in \eqref{eq:b1-D-source} is exactly $U_{h,M}=1$.
+
+\subsection{A finite Ward equation with its actual endpoint}
+
+Put $H=Q^h=e^{2\pi\ii t}$, $T_h=H+H^{-1}$ and $Y=Q^r$. The
+literal finite sum satisfies
+\begin{multline}\label{eq:b1-Ward}
+ QY^2(1-Q^2Y)A_{h,r+2}
+ +Y(T_hQ^3Y^2+Q+1)A_{h,r+1}\\
+ -Q(QY+1)(QY^2-1)A_{h,r}=0,
+ \qquad A_{h,M+1}=0.
+\end{multline}
+Here and below an absent term beyond the finite upper support is zero.
+We give the summation certificate, since the endpoint fixes which
+solution of this second-order equation is the physical one.
+
+For the summand of \eqref{eq:b1-A-source}, write $z=Q^v$. Its ratio
+under $v\mapsto v+1$ is
+\[
+ \frac{Y^{-1}(1-Qz^2)(1+Qz)}
+ {(1-Qz/H)(1-QHz)(1-Qz/Y)}.
+\]
+Use the rational certificate
+\[
+ g_h(z)=\frac{(1-z/H)(1-Hz)(1-z/Y)}{z^2}.
+\]
+The telescoping difference, divided by the original summand, is
+\begin{equation}\label{eq:b1-Ward-certificate}
+ \left(\frac1{YQ^2}-1\right)z^{-2}
+ +\left(\frac1{YQ}+H+H^{-1}+\frac1Y\right)z^{-1}
+ -\frac1{YQ}-1-\frac{H+H^{-1}}Y.
+\end{equation}
+The lower endpoint has $z=Y$ and hence vanishes. The upper endpoint
+contains $F_{2M+2}=0$. The ratio for the shift $r\mapsto r+1$ is
+$z^{-1}-Y^{-1}$. Expressing the first two $z^{-1}$ moments in terms of
+$A_{h,r+1}$ and $A_{h,r+2}$ in
+\eqref{eq:b1-Ward-certificate} gives \eqref{eq:b1-Ward} by multiplication
+of its displayed denominators. This argument remains exact for complex
+$h=Nt$: the shifted factorial equations are exact and the lower zero
+is still $z=Y$. It does not use interpolation from finitely many colors.
+
+Normalize by the actual $D_{h,r}$ and set
+\[
+ \operatorname{den}_r=(1-QY/H)(1-QYH).
+\]
+Then
+\begin{equation}\label{eq:b1-normalized-recurrence}
+ U_r=p_N(r,t)U_{r+1}+q_N(r,t)U_{r+2},
+\end{equation}
+where the exact rational coefficients are
+\begin{align}
+ p_N&=-\frac{Q^{-2}Y^{-1}(T_hQ^3Y^2+Q+1)}
+                 {\operatorname{den}_r},
+ \label{eq:b1-p-coefficient}\\
+ q_N&=-\frac{Q^{-4}Y^{-2}(1-Q^2Y)(1-Q^3Y^2)(1+Q^2Y)}
+ {\operatorname{den}_r\operatorname{den}_{r+1}}.
+ \label{eq:b1-q-coefficient}
+\end{align}
+All these denominators are bounded away from zero on the corridor used
+below. At the last recurrence row one has the exact wall
+\begin{equation}\label{eq:b1-wall}
+ q_N(M-1,t)=0,
+ \qquad U_{M-1}=p_N(M-1,t),\qquad U_M=1.
+\end{equation}
+For odd $N=2m+1$, $M=m$ and the factor $1-Q^3Y^2$ vanishes.
+For even $N=2m$, $M=m-1$ and $1+Q^2Y$ vanishes.
+The zero is independent of $H$. In particular no nonexistent
+$D_{h,M+1}$ is divided out and no arbitrary terminal ratio is imposed.
+
+\subsection{The selected analytic root and a source-exact continued fraction}
+
+Regard \eqref{eq:b1-p-coefficient}--\eqref{eq:b1-q-coefficient} as
+holomorphic functions $p(x,t,\varepsilon_N)$ and
+$q_c(x,t,\varepsilon_N)$, where
+$\varepsilon_N=N^{-1}$, $Y=e^{2\pi\ii x}$ and
+$Q=e^{2\pi\ii\varepsilon_N}$. At $\varepsilon_N=0$, put
+\begin{equation}\label{eq:b1-leading-recurrence}
+ \begin{split}
+ D_t&=(1-Y/H)(1-YH),\\
+ p_0&=-Y^{-1}\frac{(H+H^{-1})Y^2+2}{D_t},\qquad
+ q_0=-Y^{-2}\frac{(1-Y^2)^2}{D_t^2}.
+ \end{split}
+\end{equation}
+The two roots of $\mu^2-p_0\mu-q_0=0$ at $t=0$ are
+\begin{equation}\label{eq:b1-two-roots}
+ \mu_s(x,0)=-Y^{-1},\qquad
+ \mu_f(x,0)=Y^{-1}\cot^2(\pi x).
+\end{equation}
+On a compact real interval in $(1/4,3/4)$ containing
+$[\tau_0,1/2]$, the selected branch $\mu=\mu_s$ is nonzero,
+$\Re\mu>0$, and $|\mu_f/\mu|<1$. The same inequalities, with uniform
+strict constants, hold on a fixed complex neighborhood and a sufficiently
+small complex $t$ disk. Indeed at $t=0$ these assertions follow directly
+from \eqref{eq:b1-two-roots}; nonvanishing and a separated quadratic root
+persist on a small complex thickening. Write
+\begin{equation}\label{eq:b1-dominance}
+ \left|\frac{\mu_f}{\mu}\right|\le k_0<1,
+ \qquad \Re\mu\ge m_0>0.
+\end{equation}
+The endpoint $x=1/2$ is included. Direct substitution gives
+$\mu(1/2,t)=1$, while $q_0$ has a double zero there and its first
+$\varepsilon_N$ derivative also vanishes. The selected root and its
+normalization are regular at the physical terminal point.
+
+Choose $\sigma_0>0$ so small that
+$[\tau_0-\sigma_0,1-\tau_0+4\sigma_0]\subset(1/4,3/4)$.
+Use a fixed complex neighborhood of this larger interval on which
+\eqref{eq:b1-dominance} holds, and put
+\[
+ \mathcal L_N=\left\lceil(1/2-\tau_0+2\sigma_0)N\right\rceil,
+ \qquad \mathcal F_x(z)=p(x,t,\varepsilon_N)
+                  +\frac{q_c(x,t,\varepsilon_N)}z.
+\]
+Define the finite continued fraction
+\begin{equation}\label{eq:b1-ratio-interpolant}
+ v_N(x,t)=\mathcal F_x\circ\mathcal F_{x+\varepsilon_N}\circ
+ \cdots\circ\mathcal F_{x+(\mathcal L_N-1)\varepsilon_N}
+ \bigl(\mu(x+\mathcal L_N\varepsilon_N,t)\bigr).
+\end{equation}
+This is defined on a fixed complex neighborhood of $[\tau_0,1/2]$.
+For a constant $C$ independent of $N$, the disks of radius
+$C\varepsilon_N$ around the respective selected roots are invariant
+under backward iteration. To prove this, note first that
+\[
+ \mathcal F_x(\mu(x+\varepsilon_N,t))-\mu(x,t)
+ =O(\varepsilon_N).
+\]
+On those disks the derivative in the continued-fraction argument has
+modulus at most $k_0+O(\varepsilon_N)$. Choose $k_1\in(k_0,1)$ and then
+$C$ so that the $O(\varepsilon_N)$ error plus
+$k_1C\varepsilon_N$ is at most $C\varepsilon_N$. This proves the
+invariance inductively. The disks avoid zero, so every iterate is
+holomorphic, nonzero, and has uniformly bounded inverse. In particular
+\begin{equation}\label{eq:b1-ratio-leading}
+ v_N(x,t)=\mu(x,t)+O(N^{-1})
+\end{equation}
+uniformly holomorphically on a fixed smaller domain.
+
+At a physical $x=r/N$, the continued fraction reaches the row $M-1$.
+By \eqref{eq:b1-wall}, that row forgets its entire remaining tail and
+takes exactly the value $p_N(M-1,t)$. Backward induction from the literal
+source $U_M=1$ therefore proves
+\begin{equation}\label{eq:b1-exact-ratio}
+ v_N(r/N,t)=\frac{U_{Nt,r}}{U_{Nt,r+1}},
+ \qquad \tau_0N\le r<M.
+\end{equation}
+This also proves that the displayed physical source values are nonzero.
+The equality holds uniformly for complex $t$ in the fixed disk. There is
+no assertion about a nonexistent physical ratio at $r=M$.
+
+Adding one more future step to \eqref{eq:b1-ratio-interpolant} changes
+the future value by $O(\varepsilon_N)$, and the preceding
+$\mathcal L_N$ contractions reduce that change by $k_1^{\mathcal L_N}$.
+Thus its Riccati defect is exponentially small. This explains why the
+analytic tail used to define the interpolant cannot hide a macroscopic
+change of the original source.
+
+\subsection{First transport correction and absolute amplitude normalization}
+
+Let $p_1=\partial_{\varepsilon}p|_{\varepsilon=0}$ and
+$q_1=\partial_{\varepsilon}q_c|_{\varepsilon=0}$, differentiating the
+explicit rational coefficients. Define
+\begin{equation}\label{eq:b1-nu}
+ \nu=\frac{p_1+q_1/\mu-q_0\mu_x/\mu^2}
+                  {1+q_0/\mu^2}.
+\end{equation}
+The denominator is $1-\mu_f/\mu$, bounded away from zero by
+\eqref{eq:b1-dominance}. Substitution of
+$\mu+\varepsilon_N\nu$ into the one-step Riccati equation gives a
+residual $O(\varepsilon_N^2)$. The same contracting backward iteration
+then gives
+\begin{equation}\label{eq:b1-ratio-first}
+ v_N=\mu+N^{-1}\nu+O(N^{-2})
+\end{equation}
+on a fixed smaller complex neighborhood. For example, subtract the
+trial iterate from the exact one at each step. The resulting error is
+bounded by the geometric sum of its $O(N^{-2})$ local defects and the
+contracted terminal discrepancy. Cauchy estimates give the corresponding
+uniform derivative expansions.
+
+Use the logarithm with positive real part in
+\eqref{eq:b1-dominance}, continuing from $\mu(1/2,t)=1$, and set
+\begin{equation}\label{eq:b1-action-amplitude}
+ \begin{split}
+ S(x,t)&=\int_x^{1/2}\operatorname{Log}\mu(u,t)\,\dd u,\\
+ C(x,t)&=\sqrt{\mu(x,t)}
+ \exp\left(\int_x^{1/2}\frac{\nu(u,t)}{\mu(u,t)}\,\dd u\right).
+ \end{split}
+\end{equation}
+The square root is one at $1/2$. The integral branches are fixed by the
+actual selected source; $C$ is holomorphic and nonzero.
+
+Summing logarithms of the exact ratios in
+\eqref{eq:b1-exact-ratio}, using \eqref{eq:b1-ratio-first} and the first
+Euler--Maclaurin endpoint term, gives
+\begin{equation}\label{eq:b1-U-leading}
+ U_{Nt,r}=C(r/N,t)e^{NS(r/N,t)}[1+O(N^{-1})].
+\end{equation}
+The product stops at $M-1$, because $U_M=1$. Replacing the true endpoint
+$M/N$ by $1/2$ costs only $O(N^{-1})$: the displacement is $O(N^{-1})$
+at either parity, and $\operatorname{Log}\mu(1/2,t)=0$. The remaining
+endpoint terms in the correction are likewise $O(N^{-1})$. In
+particular there is no free terminal matching constant.
+
+At $t=0$, direct differentiation of
+\eqref{eq:b1-p-coefficient}--\eqref{eq:b1-q-coefficient} yields
+\[
+ \operatorname{Log}\mu=\pi\ii-2\pi\ii x,
+ \qquad \frac\nu\mu=-\frac\pi2\cot(\pi x)-\frac{5\pi\ii}2.
+\]
+Therefore
+\begin{equation}\label{eq:b1-complete-calibration}
+ S(x,0)=\pi\ii(1/2-x)^2,\qquad
+ C(x,0)=\sqrt{\sin\pi x}\,
+                 e^{-3\pi\ii(1/2-x)/2}.
+\end{equation}
+This calculation fixes the absolute amplitude from the finite source,
+rather than from the value of an unknown closed invariant.
+
+\subsection{Exponential interpolation before an oscillatory saddle}
+
+Equation \eqref{eq:b1-U-leading} is not sufficient by itself for a
+complex wire saddle. Its relative error is only inverse polynomial and
+could exceed a fixed oscillatory cancellation. The exact ratio
+\eqref{eq:b1-exact-ratio} supplies the needed stronger estimate.
+
+Put $f_N(x,t)=\operatorname{Log}v_N(x,t)$ and $b_N=M/N$.
+On a fixed larger complex tube the $f_N$ are uniformly bounded and
+holomorphic. On an inner tube, Cauchy's estimate gives constants
+$B,a>0$, independent of $N,t$, such that
+\begin{equation}\label{eq:b1-Cauchy}
+ |\partial_x^k f_N(x,t)|\le Bk!a^{-k}.
+\end{equation}
+For $K_N=\lfloor c_aN\rfloor$, with a sufficiently small fixed
+$c_a>0$, form the holomorphic expression
+\begin{align}
+ E_N(x,t)
+ &=N\int_x^{b_N}f_N(u,t)\,\dd u
+       +\frac{f_N(x,t)-f_N(b_N,t)}2
+ \notag\\
+ &\quad+\sum_{k=1}^{K_N}
+ \frac{B_{2k}}{(2k)!}N^{1-2k}
+ \bigl[\partial_x^{2k-1}f_N(b_N,t)
+       -\partial_x^{2k-1}f_N(x,t)\bigr].
+ \label{eq:b1-optimal-EM}
+\end{align}
+The Bernoulli polynomial bound
+$|B_{2k}(u)|\le4(2k)!/(2\pi)^{2k}$ together with
+\eqref{eq:b1-Cauchy} bounds the Euler--Maclaurin remainder by
+\[
+ C N\left(\frac{K_N}{\pi aN}\right)^{2K_N}
+ \le C e^{-cN}
+\]
+after decreasing $c_a$. This is uniform in the complex color disk and
+on the physical high grid. Since the product of the exact ratios is
+precisely $U_r$, it follows that
+\begin{equation}\label{eq:b1-exponential-grid}
+ U_{Nt,r}=e^{E_N(r/N,t)}[1+R_{N,r}(t)],
+ \qquad |R_{N,r}(t)|\le C e^{-cN}.
+\end{equation}
+The empty terminal product equals one. The residual is retained as a
+source term, rather than reinterpreted as a homogeneous solution.
+
+The same explicit expression is holomorphic in the index $x$.
+Using \eqref{eq:b1-ratio-first} in
+\eqref{eq:b1-optimal-EM}, the higher Bernoulli terms sum to $O(N^{-1})$
+on an inner fixed tube, and hence
+\begin{equation}\label{eq:b1-interpolant-leading}
+ e^{E_N(x,t)}=C(x,t)e^{NS(x,t)}[1+O(N^{-1})]
+\end{equation}
+uniformly holomorphically. Equations
+\eqref{eq:b1-exponential-grid} and
+\eqref{eq:b1-interpolant-leading} have distinct roles: the former is
+an exponentially accurate comparison with the original finite source,
+and the latter is a leading expansion of a specified complex function.
+
+\subsection{The canonical chirp and the signed local action}
+
+Remove only the known external phase by defining
+\[
+ \ell_N^\eps(r,t)=e^{-\ii\eps\pi d/4}d_N^\eps(r,t),
+ \qquad \eta_N=\exp\left(\frac{\ii\pi d}4
+                               \sum_{\ell}\eps_\ell\right).
+\]
+The positive sign is the coefficientwise conjugate of the negative sign
+on real parameters. Its holomorphic continuation uses Schwarz
+reflection, not conjugation of a free holomorphic variable.
+
+The original factorial phase gives the exact identity
+\begin{equation}\label{eq:b1-color-phase}
+ q^{h^2}\frac{D_{h,r}}{D_{0,r}}
+ =\frac{G_N(r)^2}{G_N(r-h)G_N(r+h)}.
+\end{equation}
+It follows immediately from \eqref{eq:b1-marked-factorial}; the linear
+and quadratic exponents in the two shifted arguments must both be kept.
+Combining \eqref{eq:b1-signed-finite}--\eqref{eq:b1-D-source} with
+\eqref{eq:b1-color-phase} gives the negative-sign interpolant
+\begin{align}
+ A_N^{\rm hol}(x,t)
+ &=\frac{N^2G_N(2Nx)}
+ {G_N(Nx)^2G_N(N(x-t))G_N(N(x+t))},
+ \notag\\
+ \nu_N(z)&=e^{-\pi\ii z+\pi\ii z(z+1)/N},
+ \qquad P_N^{\rm ch}(x)=\frac{\kappa^{-1}e^{\pi\ii d/4}}{\nu_N(Nx)},
+ \notag\\
+ I_N^-(x,t)&=A_N^{\rm hol}(x,t)P_N^{\rm ch}(x)e^{E_N(x,t)}.
+ \label{eq:b1-signed-interpolant}
+\end{align}
+The superscript on $P_N^{\rm ch}$ distinguishes this chirp factor from
+the Casimir polynomial. At every integer $r$,
+$\nu_N(r)=(-1)^rq^{r(r+1)}$. Its displayed analytic continuation is
+fixed before any contour deformation. In particular,
+\begin{equation}\label{eq:b1-chirp-cancellation}
+ P_N^{\rm ch}(x)e^{NS(x,0)}
+   =e^{\pi\ii(3/4-x-1/(2N))}.
+\end{equation}
+Changing the continuation of $(-1)^r$ would change a lattice frequency;
+that change is not permitted. Equation
+\eqref{eq:b1-exponential-grid} proves that
+$I_N^-(r/N,t)$ agrees with the actual $\ell_N^-(r,t)$ up to a
+relative exponential residual. For the positive sign set
+$I_N^+(x,t)=\overline{I_N^-(\bar x,\bar t)}$; for the pure sign use
+$I_N^0=A_N^{\rm hol}$, which agrees exactly on the grid.
+
+Define
+\begin{align}
+ g(x,t)&=J(2x)-2J(x)-J(x-t)-J(x+t),
+ \notag\\
+ f_0(x,t)&=g(x,t),\qquad
+ f_-(x,t)=g(x,t)+S(x,t)-S(x,0),
+ \notag\\
+ f_+(x,t)&=\overline{f_-(\bar x,\bar t)}.
+ \label{eq:b1-local-actions}
+\end{align}
+The factorial expansion and \eqref{eq:b1-chirp-cancellation} yield
+\begin{equation}\label{eq:b1-local-asymptotic}
+ I_N^\eps(x,t)=N^{1/2}b_\eps(x,t)e^{Nf_\eps(x,t)}
+                                      [1+O(N^{-1})],
+\end{equation}
+uniformly holomorphically on fixed smaller domains, with
+\begin{align}
+ b_0(x,t)&=
+ \frac{\sqrt{\sin(2\pi x)}}
+ {2^{3/2}\sin(\pi x)
+       \sqrt{\sin(\pi(x-t))\sin(\pi(x+t))}},
+ \notag\\
+ b_-(x,t)&=b_0(x,t)e^{\pi\ii(3/4-x)}C(x,t),\qquad
+ b_+(x,t)=\overline{b_-(\bar x,\bar t)}.
+ \label{eq:b1-local-amplitudes}
+\end{align}
+All square roots continue their positive complete factorial branches.
+At completeness,
+\begin{equation}\label{eq:b1-amplitude-at-zero}
+ \frac{b_\eps(x,0)}{b_0(x,0)}
+ =\sqrt{\sin(\pi x)}e^{-\ii\eps\pi x/2},
+ \qquad \eps\in\{-1,1\}.
+\end{equation}
+These factors are nonzero. The remaining $e^{-\pi\ii/(2N)}$ in
+\eqref{eq:b1-chirp-cancellation} belongs to the stated inverse-power
+error; it is not an omitted constant or parity phase.
+
+\subsection{An exact source action identity and its Hessian}
+
+The action above can also be characterized without integrating the
+quadratic root. For each physical sign $\eps\in\{0,1,-1\}$ solve
+near $s=t=0$ the equation
+\begin{equation}\label{eq:b1-shear}
+ t=s-\frac{\eps}{2\pi\ii}g_s(x,s).
+\end{equation}
+Its $s$ derivative at zero is $1-\eps\ii\cot(\pi x)$, which is
+nonzero. Then the source-selected action satisfies
+\begin{equation}\label{eq:b1-shear-action}
+ f_\eps(x,t)=g(x,s)-\frac{\eps}{4\pi\ii}g_s(x,s)^2,
+ \qquad (f_\eps)_x=g_x(x,s),\qquad (f_\eps)_t=g_s(x,s).
+\end{equation}
+The derivative identities follow by differentiating
+\eqref{eq:b1-shear}. To identify the value with the actual selected
+source, consider the negative sign. Put
+$E=e^{2\pi\ii x}$, $H=e^{2\pi\ii t}$ and $T=e^{2\pi\ii s}$.
+Exponentiating \eqref{eq:b1-shear} gives
+\[
+ H=\frac{T(E-T)}{ET-1},\qquad
+ T^2+E(H-1)T-H=0,
+ \qquad T=1\text{ at }H=1.
+\]
+For $K=e^{-g_x(x,s)}=-(1-E/T)(1-ET)/(1+E)^2$, elimination of $T$
+gives
+\begin{equation}\label{eq:b1-action-polynomial}
+ K^2(1+E)^2+K[(H+H^{-1})E^2+2]+(1-E)^2=0.
+\end{equation}
+On the other hand \eqref{eq:b1-local-actions} and the selected quadratic
+give $e^{-(f_-)_x}=E\mu D_t/(1+E)^2$, satisfying exactly
+\eqref{eq:b1-action-polynomial}. At $H=1$, both constructions take
+the branch $K=\tan^2(\pi x)$; their logarithms agree by their complete
+marks. Hence their $x$ derivatives agree. The possible remaining function
+of $t$ is zero by the limit $x\to1/2$: there $S=0$,
+$J(1/2+t)=-J(1/2-t)$, and the implicit shear has $s=t$, $g_s=0$.
+Schwarz reflection proves the positive sign. This fixes the source
+action, not merely a Hessian with the same entries.
+
+In particular, all local actions are even in $t$, equal $g(x,0)$ at
+zero, and
+\begin{equation}\label{eq:b1-local-hessian}
+ (f_\eps)_{tt}(x,0)
+ =-\frac{2\pi\cot(\pi x)}{1-\eps\ii\cot(\pi x)},
+ \qquad \eps\in\{0,1,-1\}.
+\end{equation}
+Their real parts are strictly negative on the fixed high interval.
+
+\subsection{The exact finite wire window and its lattice saddle}
+\label{app:lattice-laplace}
+
+We now specify the function to which the complex saddle argument is
+applied. Let the fixed completed-root expression have $H$ leaves and
+$K=2H-3$ primitive free integer wires. The last forced product is removed
+using its exact relation $i+j=d$, whose coefficient is one. Every
+remaining wire has the affine form
+\[
+ r_w=NL_w(y)+\delta_w,
+ \qquad y=k/N,\quad k\in\ZZ^K,
+\]
+where the integer offsets $\delta_w$ are fixed by the original compiler.
+Take a small fixed rectangular window $B$ about the strict complete
+optimizer. All leaf coordinates lie in intervals of the form
+\eqref{eq:b1-high-interval}, and every retained gate inequality is
+strict on a fixed neighborhood of the closure of $B$.
+
+The exact finite window is
+\begin{equation}\label{eq:b1-exact-window}
+ \mathcal C_N(\mathbf t)
+ =\sum_{k/N\in B}
+  \prod_{\ell=1}^{H}\ell_N^{\eps_\ell}(r_\ell,t_\ell)
+  \prod_{g=1}^{H-2}\mu_N(r_{g,1},r_{g,2},r_{g,3}).
+\end{equation}
+Its support is independent of the complex colors. It is a finite,
+separately even holomorphic function. For all sufficiently large $N$,
+every state in this window is a true core state at every physical small
+color deficit. The factors $\mu_N$ are the original positive Newton
+coefficients, not their leading asymptotic replacements.
+
+Replace each exact local factor by its canonical holomorphic
+interpolant only after keeping its residual. The gate interpolation is
+the same seven-factorial expression with $G_N$, and agrees exactly on
+its integer grid. For the signed leaves, use
+\eqref{eq:b1-signed-interpolant}. The total error in the finite sum is
+bounded absolutely by
+\begin{equation}\label{eq:b1-grid-error-before-saddle}
+ \poly(N)\exp\{N(F_0+C\|\mathbf t\|^2-c)\}
+\end{equation}
+for some fixed $c>0$. Indeed there are polynomially many states, all
+actions are even analytic perturbations of the common complete real
+action, and the relative leaf errors in
+\eqref{eq:b1-exponential-grid} are exponentially small. This estimate
+is made before any oscillatory cancellation. Shrink the fixed color
+polydisk so that \eqref{eq:b1-grid-error-before-saddle} is exponentially
+below the nearby selected critical action.
+
+The interpolated summand has phase
+\begin{equation}\label{eq:b1-wire-phase}
+ \mathcal F(y,\mathbf t)
+ =\sum_{\ell}f_{\eps_\ell}(L_\ell(y),t_\ell)
+  +\sum_g m(L_{g,1}(y),L_{g,2}(y),L_{g,3}(y)).
+\end{equation}
+At zero color it is the original complete action. Its wire Hessian at
+the strict optimizer is negative definite. Thus it has one holomorphic
+critical branch $y_*(\mathbf t)$, with
+\[
+ \Phi(\mathbf t)=\mathcal F(y_*(\mathbf t),\mathbf t).
+\]
+The local gate amplitude is
+\[
+ b_\mu(x,y,z)=2^{-3/2}
+ \sqrt{\frac{\sin\pi(x+y)\sin\pi z}
+ {\sin\pi x\sin\pi y\sin\pi(z-x)\sin\pi(z-y)\sin\pi(x+y-z)}}.
+\]
+Multiply all leaf and gate amplitudes by the exact leading offset factor
+\begin{equation}\label{eq:b1-offset-factor}
+ \exp\left[
+  \sum_\ell\delta_\ell\partial_x f_{\eps_\ell}
+  +\sum_g\nabla m(L_g(y))\mathbin{\cdot}\delta_g\right]
+\end{equation}
+to obtain the nonzero holomorphic density $b_E(y,\mathbf t)$.
+The changed $f_\eps$ is used in \eqref{eq:b1-offset-factor}, including
+at nonzero complex color; a pure offset factor would be incorrect.
+The interpolated summand is
+\[
+ N^{3-H}b_E(y,\mathbf t)e^{N\mathcal F(y,\mathbf t)}
+ [1+O(N^{-1})].
+\]
+
+For clarity we give the finite-lattice contour step. Choose the vertical
+faces of the rectangle at half-grid values. In each coordinate the exact
+summation kernel is $\pi N\cot(\pi Nz)$, with residue one at $z=k/N$.
+On a vertical half-grid line, $|\cot(\pi Nz)|\le1$. Those faces lie
+away from the strict real optimizer and retain a fixed phase gap.
+On a horizontal line of fixed height $a>0$, the cotangent differs from
+its constant value $\mp\ii$ by $O(e^{-2\pi Na})$. At complete color,
+the real part of the phase grows under this small imaginary displacement
+by at most $Ca^2$; the even color perturbation costs at most
+$C\|\mathbf t\|^2$. Choose $a$ so $Ca^2<\pi a$, and then choose the
+color polydisk small enough. Every nonconstant kernel term has an
+exponential gap, including all side connectors. Applying this argument
+successively in the $K$ primitive coordinates retains the full product
+contour and its orientations. The constant horizontal terms give
+$N^K$ times the ordinary integral. Replacing the moving half-grid
+rectangle by $B$ costs only exponentially small boundary strips.
+
+Translate that integral to the nearby complex critical point. The
+endpoint connectors remain below its action, and the real tangent
+Gaussian is uniformly nondegenerate. Extend its local Gaussian range
+with exponentially small error. The odd first correction integrates to
+zero, giving a relative $O(N^{-1})$ expansion. Thus
+\begin{equation}\label{eq:b1-window-asymptotic}
+ \mathcal C_N(\mathbf t)
+ =N^{3/2}a_E(\mathbf t)e^{N\Phi(\mathbf t)}[1+O(N^{-1})],
+ \qquad
+ a_E(\mathbf t)=\frac{(2\pi)^{K/2}b_E(y_*(\mathbf t),\mathbf t)}
+                    {\sqrt{\det[-\mathcal F_{yy}(y_*(\mathbf t),\mathbf t)]}}.
+\end{equation}
+The determinant square root is selected from the positive complete
+Gaussian. The power is
+$3-H+K/2=3/2$. The exponential grid error
+\eqref{eq:b1-grid-error-before-saddle} is smaller than this answer by
+the prior choice of color disk, and is added back only now. Both level
+parities have the same primitive density and displayed normalization.
+
+At completeness,
+\begin{equation}\label{eq:b1-global-amplitude}
+ \Phi(0)=F_0,\qquad
+ a_E(0)=a_E^{\rm pure}(0)
+ \prod_{\eps_\ell\ne0}
+   \sqrt{\sin(\pi x_{\ell,*})}e^{-\ii\eps_\ell\pi x_{\ell,*}/2}\ne0.
+\end{equation}
+Evenness gives $\mathcal F_{yt_\ell}(y,0)=0$, so the wire Schur
+correction to the color Hessian vanishes. With
+$c_\ell=\cot(\pi x_{\ell,*})$, one obtains
+\begin{equation}\label{eq:b1-global-hessian}
+ \partial_{t_\ell}\partial_{t_j}\Phi(0)
+ =-\frac{2\pi c_\ell}{1-\eps_\ell\ii c_\ell}\delta_{\ell j}
+ =2\pi\ii\tau_\ell\delta_{\ell j},
+ \qquad \tau_\ell=\frac{\ii c_\ell}{1-\eps_\ell\ii c_\ell},
+ \qquad \Im\tau_\ell>0.
+\end{equation}
+On a smaller fixed complex box,
+\begin{equation}\label{eq:b1-finite-packet-envelope}
+ |\mathcal C_N(u+\ii v)|
+ \le\poly(N)e^{N(F_0-a\|u\|^2+B\|v\|^2)},\qquad a>0.
+\end{equation}
+This bound is for the exact finite function
+\eqref{eq:b1-exact-window}, by
+\eqref{eq:b1-window-asymptotic}, not just its leading formal action.
+
+\subsection{Restoring the whole finite source}
+
+We finish by stating precisely how the independent alias estimates are
+used. The compositional proof in the main text gives a uniform positive
+gap for every nonempty alias sector on the entire physical color cube.
+It also gives a concave all-core majorant with the unique strict complete
+maximizer used above. The latter uniqueness is global: it agrees with the
+strict complete action near that point, and a second maximum of a concave
+function would give a constant segment through that strictly concave
+neighborhood.
+
+Hence all core states outside the fixed wire window have a fixed gap,
+uniformly in physical colors. Within that window the actual local
+far-color recurrence estimate loses a fixed positive amount whenever
+one physical deficit exceeds a fixed small corridor. Polynomial state
+counting and the finite number of sectors therefore give constants
+$\delta,\gamma>0$ such that the literal mixed scalar $\mathcal A_N$ obeys
+\begin{align}
+ \max_{0\le h_\ell\le\delta N}
+ \left|\mathcal A_N(\mathbf h)-
+          \eta_N\mathcal C_N(\mathbf h/N)\right|
+ &\le\poly(N)e^{N(F_0-\gamma)},
+ \label{eq:b1-source-restoration}\\
+ \max_{\exists\ell:\,h_\ell>\delta N}
+ |\mathcal A_N(\mathbf h)|
+ &\le\poly(N)e^{N(F_0-\gamma)}.
+ \label{eq:b1-color-complement}
+\end{align}
+The maximum in the second line is over the entire original physical
+color cube, not just the low-core band. No alias is folded into the even
+analytic packet. The external $\eta_N$ is exactly the retained unit
+phase defined above.
+
+The global coherent-core input here is its uniform exponential-rate
+envelope, of the form $\exp\{N(\widetilde g+o(1))\}$ with the
+$o(1)$ uniform over all physical indices and colors. It is not a
+polynomial-prefactor assertion through every spectral collision.
+To obtain \eqref{eq:b1-source-restoration}--\eqref{eq:b1-color-complement},
+first fix the strictly positive variational and far-color margins, then
+absorb the uniform $o(N)$ errors into, for example, half their minimum.
+Polynomial counting and the remaining finite prefactors are harmless
+after that reduction of $\gamma$. The polynomial-prefactor local packet
+proved above is a separate estimate on its fixed regular high interval.
+
+These estimates preserve the whole-source remainder through the finite
+filling sum. For each fixed signed filling tuple, the exact Hermite
+coefficient bound is $\sum_j|\beta_{j-1}^{-p_\ell}|\le2N(1+|p_\ell|)$.
+Thus \eqref{eq:b1-source-restoration} and
+\eqref{eq:b1-color-complement} incur only a polynomial multiplier in
+that whole sum. The finite analytic packet, rather than its pointwise
+leading approximation, is then used for the Fourier endpoint and charge
+arguments. Its exact evenness, complex estimate
+\eqref{eq:b1-finite-packet-envelope}, nonzero amplitude and Hessian
+\eqref{eq:b1-global-hessian} are the needed inputs. The retained filling
+analysis supplies the smaller filled action and a nonzero leading
+coefficient; the source gap is not itself a replacement for that analysis.
+
+The argument in this section requires
+\eqref{eq:b1-high-interval}. No continuation through a quarter-index
+dominance boundary, no additional root-leaf closure, and no theorem for
+arbitrary tangle syntax is used in the manuscript's completed-root result.
