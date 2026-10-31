@@ -103,14 +103,22 @@ The [crossing theorem](../notes/actual_crossing_casimir_torus.md) gives a local 
 [PDF](figures/casimir-twist-transport.pdf) · [SVG](figures/casimir-twist-transport.svg) · [Editable TikZ](figures/casimir-twist-transport.tex)
 
 
-## From the source to the full invariant under balance
+## From the source to the full invariant with shared-radius certificates
 
-![The complete endpoint, whole CROSS period and conditional full invariant theorem; arbitrary-width coverage is the remaining step.](figures/shared-entropy-frontier.png)
+![The complete endpoint, whole CROSS period, shared-radius certificates and full invariant; universal diagram coverage remains open.](figures/shared-entropy-frontier.png)
 
-The [endpoint theorem](../notes/general_fejer_endpoint_source_volume.md) gives the actual complete augmented volume. The local complex packet and [whole-CROSS theorem](../notes/general_all_cross_long_filling_volume.md) then give the actual smooth filled volume on the entire CROSS period, including every Fourier charge. The [complete-radius balance theorem](../notes/general_complete_radius_balance_filling_volume.md) bounds the full complementary source and proves the original invariant's limit under a finite condition on the same marked packing. The algebraic test in the diagram is sufficient, including its equality case. The last boxes record proved coverage at every bridge width and the remaining extension to general diagrams.
+The [endpoint theorem](../notes/general_fejer_endpoint_source_volume.md) gives the actual complete augmented volume. The local complex packet and [whole-CROSS theorem](../notes/general_all_cross_long_filling_volume.md) then give the actual smooth filled volume on the entire CROSS period, including every Fourier charge. The [anchored shared-radius theorem](../notes/general_anchored_shared_radius_filling_volume.md) bounds the full complementary source using at most twice as many shared-face vectors as twist regions. Complete-packing balance remains sufficient; the new criterion also passes an exactly certified marked example where balance fails. The last boxes record the proved family at every bridge width and the remaining extension to general diagrams.
 
 ## An exact packing seed for every larger width
 
 ![The width-four packing and scalar recurrence used for every width at least four.](figures/symmetric-plat-balance-seed.png)
 
 The curvatures and contact heights are exact. The [family proof](../notes/general_reduced_layer_long_filling_volume.md) derives the recurrence from the original marked packing, excludes its other branch, and uses strict convexity to compare with translated copies of this seed. It obtains the required curvature bound for the reduced family at every $k\geq4$. The [one-end extension](../notes/general_one_end_layer_long_filling_volume.md) uses the same comparison with a nonzero right boundary, plus exact width-two and width-three packings, to cover every $k\geq2$. The general balance theorem then gives the full invariant's filled-volume limit. Fox-coloring congruences separately ensure minimal bridge number $k$.
+
+## Add regions without changing the core packing
+
+![An arbitrary marked unit chain in the empty strip component.](figures/marked-unit-chain-extension.png)
+
+The [closure theorem](../notes/general_marked_unit_chain_filling_volume.md) adds the literal prefix $(1,2)^m$ to a balanced certified core with the stated first-cap mark. The old disks stay fixed; the new disks have unit radius. The resulting $3k-3+2m$-region families have arbitrary fixed depth at every fixed bridge width. New boxes use the first four physical strands; no claim about arbitrary full-width stacking is made.
+
+[SVG](figures/marked-unit-chain-extension.svg) · [PDF](figures/marked-unit-chain-extension.pdf) · [TikZ source](figures/marked-unit-chain-extension.tex)

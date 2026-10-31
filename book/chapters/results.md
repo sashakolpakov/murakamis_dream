@@ -2,6 +2,16 @@
 
 The project seeks equality for broad classes of hyperbolic knots, with the right side established as the volume of the actual complement. The results below are research proofs recorded and internally reviewed in this repository. They are not claims of external peer review.
 
+## A broader finite certificate for the full invariant
+
+The [anchored shared-radius theorem](../../notes/general_anchored_shared_radius_filling_volume.md) removes the requirement that one complete packing bound every sector. For a fixed certified simple-white diagram with $R$ twist regions, it asks for at most $2R$ positive face vectors: one for each surviving LEFT or RIGHT choice at a specified region. Each vector is shared by **all** regions in that coefficient estimate; the original two protected variables stay zero.
+
+At the selected region use its proved one-sided bound. At every other region use the full local bound. If their sum, minus the original face targets, is strictly below $\Phi_D=\operatorname{Vol}(Y_D)/(2\pi)$ for every selected choice, the full original invariant has the actual filled-volume limit for all independently long fixed signed twists. These are finite convex tests in logarithmic face variables. A strict witness suffices; an attained optimum is unnecessary.
+
+Complete-packing balance implies this criterion. The converse fails for the original marked five-region plat with slot word $(1,3,2,1,3)$: its exact golden-ratio packing fails balance, while six rational shared vectors pass the new test. Rigorous interval bounds give gaps greater than $0.50$, $0.71$, and $1.35$ in reflected pairs. The [audit](../../experiments/audit_general_anchored_shared_radius_filling_volume.py) checks the original incidences and exact contacts, then encloses the entropy with explicit Fourier-series tails.
+
+The remaining general question is whether every eligible plat admits such certificates, or whether its one-sided terms need a sharper estimate. The [fixed-triangle lemma](../../notes/actual_fixed_triangle_boundary_capacity_gap.md) proves a quantitative loss on boundary faces of the original angle polytope. Fractional mixtures with identity terms still need a general bound; optimizing their individual endpoints separately would not prove it.
+
 ## An explicit full-invariant family at every width $k\geq2$
 
 The [one-end layer theorem](../../notes/general_one_end_layer_long_filling_volume.md) proves the volume limit for a family with $3k-3$ independently long signed twist regions, for **every fixed $k\geq2$**. In conventional braid-generator numbering, take the standard plat closure of
@@ -28,6 +38,16 @@ Here the equation holds at the interior indices $1\leq j\leq k-2$. After $v_j=\l
 ![The earlier reduced width-four packing supplies the exact comparison seed.](../figures/symmetric-plat-balance-seed.png)
 
 This proves a family at each $k\geq2$, rather than all $k$-bridge knots. The earlier reduced-layer family at $k\geq4$ is [preserved separately](../../notes/general_reduced_layer_long_filling_volume.md). The wider complete-radius criterion remains available for other diagrams; the unrestricted conjecture remains open.
+
+## Arbitrarily many twist regions at each fixed width
+
+The [marked unit-chain theorem](../../notes/general_marked_unit_chain_filling_volume.md) extends any balanced certified core whose first box has zero-based slot $1$, which uses no slot $0$, and whose first cap is marked. Prepend $(1,2)^m$, assigning each new box its own even signed exponent. The original knot parity and marked cap are retained.
+
+In the actual circle packing, the prefix inserts $2m$ unit disks into an empty component between the two marked lines. Every old disk stays fixed. For $m>0$, all new ports satisfy balance and the changed first core port has a larger balance margin. This proves a closure operation for every $m$, without inferring it from a finite list of packings.
+
+![A marked unit chain adds regions while leaving the core packing unchanged.](../figures/marked-unit-chain-extension.png)
+
+Applied to the every-width core above, this gives **$3k-3+2m$ independently long signed twist regions for every fixed $k\geq2$ and $m\geq0$**. Each fixed diagram has the full original invariant's actual filled-volume limit; its threshold may depend on both $k$ and $m$. The mod-$3$ exponent condition again gives minimal bridge number exactly $k$. The added boxes use the first four physical strands. This is a general closure rule, not coverage of arbitrary multilayer plats.
 
 ## A full filling theorem with a finite geometric hypothesis
 

@@ -11,10 +11,6 @@ import json
 from pathlib import Path
 import numpy as np
 
-from audit_actual_nc_morse_graph_first_normal_source_reduction import Local
-from audit_general_odd_endpoint_matching_network import apply_pair
-
-
 def morse_faces(k, boxes, marked=None):
     if marked is None:
         marked=k-1
@@ -144,6 +140,8 @@ def evaluate(poly,values,p):
 
 
 def original_source(loc,chart,labels,signs):
+    from audit_general_odd_endpoint_matching_network import apply_pair
+
     N,p=loc.N,loc.p
     state=np.array([1],dtype=np.int64)
     marked=np.array([1],dtype=np.int64)
@@ -165,6 +163,8 @@ def original_source(loc,chart,labels,signs):
 
 
 def case(N,k,boxes,labels,grid=True,marked=None):
+    from audit_actual_nc_morse_graph_first_normal_source_reduction import Local
+
     loc=Local(N)
     p,q,d=loc.p,loc.q,loc.d
     chart=morse_faces(k,boxes,marked)

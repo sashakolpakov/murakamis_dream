@@ -11,7 +11,7 @@
  panel/.style={draw=blue,fill=blue!4,rounded corners,align=center,inner sep=12pt,text width=13cm},
  pending/.style={panel,draw=amber,fill=amber!4,dashed}]
  \node[font=\sffamily\large\bfseries] at (0,2.2)
- {A full volume theorem under complete-radius balance};
+ {Full volume from shared-radius certificates};
  \node[panel] (source) at (0,0)
  {\textbf{Original source and complete geometry}\\[8pt]
  Fixed certified simple-white plat; prescribed knot-producing parity.\\
@@ -27,14 +27,15 @@
  =\operatorname{Vol}(S^3\setminus K_D(\mathbf p))$};
  \draw[->,blue,thick] (source)--(cross);
  \node[panel] (balance) at (0,-8.4)
- {\textbf{Actual balance at the same complete packing}\\[8pt]
- $\displaystyle Q(x,b,y)+Q(x,c,y)>\log t\quad(t\in\{b,c\},\ t>0)$\\[7pt]
- One sufficient test, with $A=x+y>0$, is\\[4pt]
- $\displaystyle (A+b)(A+c)\geq\max\{b^2,c^2\}.$\\[7pt]
- The explicit family also uses the sharper zero-middle test $e/A\leq9/4$.};
+ {\textbf{At most $2R$ shared-radius certificates}\\[8pt]
+ Choose one LEFT/RIGHT region; bound every other region in full.\\
+ Each test uses one common face vector, with protected zeros.\\[7pt]
+ $\displaystyle C_{e,s}(L^{e,s})<\Phi_D\quad\hbox{for every surviving anchor}.$\\[7pt]
+ Complete-packing balance implies this condition.\\
+ Six rational witnesses certify a marked diagram where balance fails.};
  \draw[->,blue,thick] (cross)--(balance);
  \node[panel] (full) at (0,-12.9)
- {\textbf{Full original invariant: proved under that condition}\\[8pt]
+ {\textbf{Full original invariant: proved under the certificate}\\[8pt]
  The LEFT/RIGHT remainder has a strict global exponential gap.\\[7pt]
  $\displaystyle \lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(K_D(\mathbf p))|
  =\operatorname{Vol}(S^3\setminus K_D(\mathbf p))$\\[7pt]
@@ -43,14 +44,14 @@
  \draw[->,blue,thick] (balance)--(full);
  \node[panel] (family) at (0,-17.2)
  {\textbf{Proved family at EVERY fixed bridge width $k\geq2$}\\[8pt]
- Three original layers, $3k-3$ independently long signed twist regions.\\
- A uniform packing recurrence verifies the balance hypothesis.\\[7pt]
+ Three-layer core plus an arbitrary marked unit-chain prefix.\\
+ $3k-3+2m$ independent regions, for every fixed $m\geq0$.\\[7pt]
  Exponents divisible by $3$ give minimal bridge number exactly $k$.};
  \draw[->,blue,thick] (full)--(family);
  \node[pending] (coverage) at (0,-21.0)
  {\textbf{Open: extend to general plat diagrams}\\[8pt]
- The finite balance theorem applies beyond this family whenever its test holds.\\
- A general estimate when balance fails remains to be proved.};
+ The finite shared-radius theorem applies wherever its tests hold.\\
+ Their validity for every eligible plat remains to be proved.};
  \draw[->,amber,thick,dashed] (family)--(coverage);
 \end{tikzpicture}
 \end{document}

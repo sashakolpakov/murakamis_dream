@@ -12,6 +12,10 @@ The current target allows every fixed bridge width $k\geq2$: start with an essen
 
 **A full-invariant family is now proved at every fixed width $k\geq2$.** The [one-end layer theorem](../../notes/general_one_end_layer_long_filling_volume.md) allows $3k-3$ independently long fixed signed twist regions and gives the actual filled hyperbolic volume. Its congruence subfamilies have minimal bridge number exactly $k$. The wider [balance theorem](../../notes/general_complete_radius_balance_filling_volume.md) applies to every certified diagram satisfying its finite complete-packing condition. The unrestricted conjecture remains open; this construction does not cover all $k$-bridge knots or arbitrary plat diagrams.
 
+The [unit-chain extension](../../notes/general_marked_unit_chain_filling_volume.md) gives $3k-3+2m$ independently long twist regions for every fixed $k\geq2$ and $m\geq0$, preserving the core packing and the exact-bridge congruence subfamilies. The threshold may depend on the full diagram.
+
+The [new shared-radius criterion](../../notes/general_anchored_shared_radius_filling_volume.md) also covers marked diagrams where complete-packing balance fails. At most $2R$ finite convex certificates control the full remainder for a diagram with $R$ regions. A rigorous five-region example verifies that extension; universal coverage remains open.
+
 ![The general route: exact source, local complex amplitudes and a marked geometric branch under a positive gluing certificate; global selection and estimates remain open.](../figures/research-map.png)
 
 ## Read the argument in order
@@ -41,7 +45,8 @@ Start with [the equality results](results.md) for the exact knot and link famili
 | Localized original filling period | A nonzero relative asymptotic on a fixed real cube at both parities, including the finite local charge sector and actual filled-volume rate; independently signed twists are fixed before the level limit |
 | Explicit full original invariant at every $k\geq2$ | Three layers, $3k-3$ independent twist regions, actual filled volume, exact-bridge subfamilies |
 | Full original long-filled invariant under balance | A global remainder gap and the actual filled-volume limit for every fixed certified diagram passing the complete-radius test |
-| General signed long-filled knot equality | Extend beyond the proved one-end layer family and finite balance class; control the one-sided sectors when balance fails |
+| Full invariant beyond complete-packing balance | At most $2R$ shared-radius certificates; an exact marked fixture fails the old test and passes all new bounds |
+| General signed long-filled knot equality | Prove the shared-radius certificates for every eligible diagram, or obtain a sharper general remainder estimate |
 
 The cube, Fourier, torsor, and alternative approaches are preserved. A failed intermediate estimate is useful evidence about the argument; it is retained beside the corrected scope.
 
