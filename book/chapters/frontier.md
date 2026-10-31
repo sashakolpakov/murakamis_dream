@@ -32,7 +32,18 @@ $$
 
 Its formerly conditional positive-growth hypothesis is now satisfied for the covered knots. Removing the factor changes the state: $B$ annihilates $(Y-1)F_N$, which vanishes at completeness, and the original invariant is recovered from its normal derivative. Localizing the meridian to rational functions discards the corresponding boundary quotient. That quotient and the derivative data must be retained when interpreting the operator geometrically.
 
-An exact regularization is already available. Interpolate the ordinary colors by a polynomial $P_N^{\mathrm{ord}}(Y)$ of degree at most $N-2$, and subtract it before dividing by $S_N(Y)=1+Y+\cdots+Y^{N-1}$. The resulting Laurent polynomial has the same complete exponential rate and satisfies an affine recurrence with a polynomially bounded source. Its shifted values involve derivatives of the original state, so the obstruction above does not apply to it automatically. The next open step is to control this regular remainder as the main meridian varies and compare its selected branch with the geometric longitude. A complete-value limit alone does not establish either assertion.
+An exact regularization is already available. Interpolate the ordinary colors by a polynomial $P_N^{\mathrm{ord}}(Y)$ of degree at most $N-2$, and subtract it before dividing by $S_N(Y)=1+Y+\cdots+Y^{N-1}$. The resulting Laurent polynomial has the same complete exponential rate and satisfies an affine recurrence with a polynomially bounded source. Its shifted values involve derivatives of the original state, so the obstruction above does not apply to it automatically.
+
+For the figure-eight knot, the [meridian profile theorem](../../notes/actual_paired_factor_meridian_profile.md) now controls this regular remainder on the scale $Y=e^{z/N}$ for every fixed compact set of complex $z$. Its centered profile satisfies $\rho_N\to1$, including the ordinary-color resonances and every fixed derivative. The first correction is
+
+$$
+N(\rho_N(z)-1)\longrightarrow\frac{\tau}{8\pi i}z^2,
+\qquad \tau=2\sqrt3\,i.
+$$
+
+Here $\tau$ is the cusp shape computed from the preferred meridian and longitude. The proof obtains the coefficient directly from the finite sum; a separate matrix calculation fixes its geometric interpretation and sign.
+
+For a general Conway composition, the next step remains an estimate on the signed sum as the main meridian varies. The new note gives a sufficient condition: the sum of absolute weights must be controlled relative to the invariant, and the terms near the endpoints must be small under that same comparison. The figure-eight sum is positive and concentrated away from the endpoints, so both conditions hold. Bounds on individual factors in an arbitrary signed sum do not establish them. The existing Conway volume theorem leaves the main meridian parabolic; it does not yet give this more detailed profile.
 
 ## What the Fourier transform preserves
 

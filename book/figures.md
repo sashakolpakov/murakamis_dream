@@ -14,6 +14,35 @@ The lower blue box gives two other exact formulations of the same invariant: a s
 
 [SVG](figures/research-map.svg) · [PDF](figures/research-map.pdf) · [TikZ source](figures/research-map.tex)
 
+## Varying the figure-eight meridian near completeness
+
+![The reduced figure-eight invariant approaches a sine profile on the imaginary parameter axis, while its centered regular part approaches one.](figures/figure-eight-meridian-profile.png)
+
+Keep the quantum parameter at \(q_N=e^{\pi i/N}\) and write the
+meridian eigenvalue as \(M=e^{it/(2N)}\). The left panel plots the
+reduced invariant divided by its complete value at levels
+\(N=24,47,80\). Its limiting curve is \(2\sin(t/2)/t\), with value
+one at zero.
+
+The right panel shows the error after subtracting the polynomial
+interpolating the ordinary colors, dividing by
+\(1+Y+\cdots+Y^{N-1}\), and applying the centering displayed below
+the axes. Here \(Y=M^2\). At the marked nonzero multiples of
+\(2\pi\), numerator and denominator both vanish; the dots use the
+removable derivative values. The logarithmic vertical scale makes
+the small errors visible.
+
+The [profile theorem](../notes/actual_paired_factor_meridian_profile.md)
+proves convergence on every fixed complex compact set, including
+these points, and identifies the first correction with the
+preferred cusp shape \(2\sqrt3\,i\). Its proof uses the positive
+finite figure-eight sum. A separate criterion states the estimate
+needed to extend the argument to signed sums for other knots.
+
+[Vector figure](figures/figure-eight-meridian-profile.svg) ·
+[PDF](figures/figure-eight-meridian-profile.pdf) ·
+[Reproduction script](../experiments/plot_figure_eight_meridian_profile.py)
+
 ## The operations that build the knot diagram
 
 ![Three panels show the actual connections for stacking two four-ended tangles, rotating a tangle by a quarter-turn, and taking the cylindrical closure.](../manuscript/build/figures/tangle-construction.png)

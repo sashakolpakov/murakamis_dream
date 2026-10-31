@@ -105,6 +105,59 @@ The [pointed quantum A-period corollary](../../notes/actual_conway_pointed_quant
 
 The same corollary applies to the net-twist theorem: the normalized presentation constructs the same knot and hence the same selected invariant. No equality of two presentation-dependent recurrence operators is required.
 
+## A meridian profile and cusp shape for the figure-eight knot
+
+The complete value is one member of a polynomial family. Fix
+$q_N=e^{\pi i/N}$ and let $f_N(Y)$ be the reduced ADO invariant of
+the figure-eight knot, where $Y=M^2$ is the squared meridian
+eigenvalue. Then $f_N(1)=K_N(4_1)$. Moving to $Y=e^{z/N}$ keeps the
+meridian close to completeness while allowing any fixed complex $z$.
+The [profile theorem](../../notes/actual_paired_factor_meridian_profile.md)
+proves
+
+$$
+\frac{f_N(e^{z/N})}{K_N(4_1)}
+\longrightarrow \frac{2\sinh(z/2)}z
+$$
+
+uniformly on compact sets, with every fixed derivative. The value
+at $z=0$ is understood by continuity.
+
+To remove the ordinary-color values, let $P_N^{\mathrm{ord}}$ be
+their unique interpolating polynomial of degree at most $N-2$, and put
+
+$$
+R_N(Y)=\frac{f_N(Y)-P_N^{\mathrm{ord}}(Y)}
+                  {1+Y+\cdots+Y^{N-1}},\qquad
+\rho_N(z)=e^{(N-1)z/(2N)}
+          \frac{N R_N(e^{z/N})}{K_N(4_1)}.
+$$
+
+The quotient $R_N$ is a Laurent polynomial. Its profile satisfies
+$\rho_N=1+O(N^{-1})$ on every fixed compact set, including the
+ordinary-color resonances $z=2\pi i k$. Moreover,
+
+$$
+N(\rho_N(z)-1)\longrightarrow\frac{\tau}{8\pi i}z^2,
+\qquad \tau=2\sqrt3\,i.
+$$
+
+The number $\tau$ is the oriented cusp shape for the preferred
+meridian and longitude of the figure-eight complement. The proof
+computes it from those two group elements and matches it with the
+coefficient obtained independently from the finite sum.
+It also gives the uniform volume limit
+$(2\pi/N)\log|R_N(e^{z/N})|\to\operatorname{Vol}(S^3\setminus4_1)$
+on every such compact set.
+
+![The finite meridian profile and the error after ordinary-color subtraction, shown along the imaginary z-axis.](../figures/figure-eight-meridian-profile.png)
+
+This is a result for the figure-eight knot. The same note proves
+a criterion for passing local factor estimates through a signed
+sum, but its hypotheses have not been established for general
+Conway main-meridian deformations. That extension is distinct
+from the complete-value volume theorems above.
+
 ## Included tree families and the manuscript
 
 The [weighted-tree theorem](../../notes/actual_conway_weighted_tree_long_twist_volume.md) supplies an explicit construction with one independent integer per vertex, arbitrary fixed branching, and chains of vertices. Its literal closure is specified in the theorem. If $H$ is the number of basic pieces and $v_{\mathrm{oct}}$ the volume of a regular ideal octahedron, its complete augmented exterior has volume $2v_{\mathrm{oct}}(H-1)$. The knot volume is the separately calibrated value after filling; it is not replaced by that complete volume.

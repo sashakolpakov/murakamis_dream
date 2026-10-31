@@ -15,6 +15,13 @@ profile limit exists for a general hyperbolic knot. It also keeps
 the fixed-root meridian normal distinct from the moving-q
 integral-color normal.
 
+For the figure-eight knot, the [paired-factor theorem](actual_paired_factor_meridian_profile.md)
+now proves these limits for the actual finite sum:
+$g_N\to2\sinh(z/2)/z$ and $\rho_N\to1$, uniformly on complex
+compact sets with all fixed derivatives. It also computes the first
+correction from the preferred cusp shape. The general comparison
+below remains useful without asserting these limits for other knots.
+
 ## 1. Exact actual functions and the tail assumption used here
 
 Use the actual functions of

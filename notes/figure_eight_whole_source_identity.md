@@ -11,6 +11,12 @@ The figure-eight is a prototype for source elimination at arbitrary
 bridges. This result does not narrow the main target to this knot and
 does not prove the original volume conjecture for a broad knot class.
 
+The [meridian profile theorem](actual_paired_factor_meridian_profile.md)
+uses this identity to prove locally uniform asymptotics at
+$Y=e^{z/N}$. After ordinary-color subtraction, its first correction
+recovers the preferred cusp shape. That result includes every fixed
+complex compact set and every fixed derivative.
+
 ## 1. The identity and the marked four-plat
 
 Let N>=2, q=exp(pi*i/N), Q=q^2, x=-M/q, and Y=M^2=Qx^2. Write
