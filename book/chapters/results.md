@@ -2,6 +2,16 @@
 
 The project seeks equality for broad classes of hyperbolic knots, with the right side established as the volume of the actual complement. The results below are research proofs recorded and internally reviewed in this repository. They are not claims of external peer review.
 
+## Phase cancellation on regular source windows
+
+The [regular-window theorem](../../notes/research_regular_spectral_window_phase_exclusion.md) proves a phase-sensitive estimate for the actual source, with all four incident weights positive at each selected port and strict interior start/stop maxima. Away from its local alignment,
+
+$$|W_N|\le Ce^{-cN}E_N,$$
+
+where $E_N$ is the original positive window envelope. The [positive two-state tail](../../notes/research_positive_eta_word_transfer.md) handles the outer relative phase. The [four-state source identity](../../notes/research_original_one_sided_four_state_transfer.md) and [analytic switch theorem](../../notes/research_analytic_switching_suppression.md) handle a mismatched middle phase while retaining both boundary terms. The unrestricted source includes the direct $i=j$ path; the disjoint regular windows considered in this estimate exclude it explicitly.
+
+On one shared face torus, inconsistent $0/\pi$ incidence constraints force at least one port to have this exponential loss. The original coefficient targets are unchanged. This is a proved improvement relative to the specified envelope, not a new volume-equality theorem: the envelope comparison, compatible phase systems and irregular windows remain to be controlled.
+
 ## From coefficient Cauchy to a shared volume inequality
 
 The [new local energy theorem](../../notes/actual_one_sided_relative_spectral_energy.md) controls **every** one-sided coefficient of the actual spectral numerator, uniformly over the full real spectral interval, both level parities and all degree boundaries. Relative to the positive endpoint coefficient $p_N$, it gives
@@ -13,11 +23,11 @@ The proof combines an exact weighted Cauchy inequality with an explicit rearrang
 
 ![Weighted Cauchy, a measure-preserving folded angle, and the remaining shared entropy comparison.](../figures/spectral-energy-rearrangement.png)
 
-The [general shared-flow criterion](../../notes/general_endpoint_conditioned_source_energy.md) combines this bound with the earlier one-sided envelope. Write $h$ for the known endpoint coefficient entropy, $g$ for the triangle energy bound above (and $g=h$ on CROSS), and $h_{\rm env}$ for the earlier envelope, also equal to $h$ on CROSS. On each original feasible flow set
+The [general shared-flow criterion](../../notes/general_endpoint_conditioned_source_energy.md) combines this bound with the earlier one-sided envelope. Write $h$ for the known endpoint coefficient entropy, $g$ for the triangle energy bound above (and $g=h$ on CROSS), and $h_{\mathrm{env}}$ for the earlier envelope, also equal to $h$ on CROSS. On each original feasible flow set
 
-$$h_{\rm sharp}=\min\{h_{\rm env},(h+g)/2\}.$$
+$$h_{\mathrm{sharp}}=\min\{h_{\mathrm{env}},(h+g)/2\}.$$
 
-If the maximum of $\sum_e h_{\rm sharp}(q_e)$ over the closed non-CROSS shared-flow set is strictly below $\Phi_D$, the full original invariant has the actual filled-volume limit for independently sufficiently long fixed signed twists. This is a **proved sufficient reduction with an explicit finite-dimensional hypothesis**. The universal entropy inequality is still open. The source's face loads are retained throughout; the two terms are evaluated on the same flow, not independently maximized.
+If the maximum of $\sum_e h_{\mathrm{sharp}}(q_e)$ over the closed non-CROSS shared-flow set is strictly below $\Phi_D$, the full original invariant has the actual filled-volume limit for independently sufficiently long fixed signed twists. This is a **proved sufficient reduction with an explicit finite-dimensional hypothesis**. The universal entropy inequality is still open. The source's face loads are retained throughout; the two terms are evaluated on the same flow, not independently maximized.
 
 The [protected-outer theorem](../../notes/actual_protected_outer_spectral_energy.md) is sharp: with one outer face zero, the optimized relative-energy rate is exactly $C(w,\tfrac12-w,0)$, where $w$ is the outer degree. The general interior bound needs no new local asymptotic conjecture. What remains is the global comparison with the actual hyperbolic volume.
 

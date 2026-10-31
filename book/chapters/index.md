@@ -16,6 +16,8 @@ The [simultaneous bridge-gap theorem](../../notes/general_simultaneous_bridge_ga
 
 The [new coefficient-energy theorem](../../notes/actual_one_sided_relative_spectral_energy.md) now supplies a uniform triangle bound for every one-sided coefficient. Weighted Cauchy and a measure-preserving angle rearrangement reduce the remaining general estimate to an explicit optimization over the original shared face flows. The [combined entropy criterion](../../notes/general_endpoint_conditioned_source_energy.md) gives the full actual-volume limit whenever that optimization has a strict gap; universal validity remains open.
 
+A separate [phase-cancellation theorem](../../notes/research_regular_spectral_window_phase_exclusion.md) now controls strict regular start/stop windows of the original source. An exact four-state transfer and an analytic gauge retain both boundary terms and all unused factors. Inconsistent local sign requirements yield exponential loss on the shared face torus, relative to the same window envelope. Comparing that envelope with complete volume and controlling the remaining windows are still open.
+
 The [finite-sector cover theorem](../../notes/general_actual_sector_cover_filling_volume.md) now permits finer shared-radius bounds on genuine source branches. A rigorously certified seventeen-region example fails the simpler anchored test but passes forty refined branches. The universal question is whether every eligible plat admits strict bounds for all its genuine non-CROSS sectors; that remains open.
 
 ![The general route: exact source, local complex amplitudes and a marked geometric branch under a positive gluing certificate; global selection and estimates remain open.](../figures/research-map.png)

@@ -2,6 +2,14 @@
 
 These diagrams introduce the objects and constructions used in the guide. The geometric drawings are combinatorial projections; their captions state what the colors and highlighted faces mean. Each figure can be opened at full resolution or downloaded as SVG, PDF, or editable TikZ.
 
+## Exact switches and phase cancellation
+
+![The before, active and after source states, direct diagonal path, both analytic-gauge boundary terms and the remaining global volume comparison.](figures/analytic-source-switching.png)
+
+The [four-state identity](../notes/research_original_one_sided_four_state_transfer.md) includes every original start/end path, including $i=j$. The lower panels restrict to disjoint regular windows and apply the [analytic gauge](../notes/research_analytic_switching_suppression.md): its residual is exponentially small, but both boundary terms and the original switch products remain. The [window theorem](../notes/research_regular_spectral_window_phase_exclusion.md) gives the required boundary action gaps and a shared-Cauchy improvement when the local phase constraints are inconsistent. The last panel records the missing volume comparison and irregular-window estimates.
+
+[SVG](figures/analytic-source-switching.svg) · [PDF](figures/analytic-source-switching.pdf) · [TikZ source](figures/analytic-source-switching.tex)
+
 ## The route to volume equality
 
 Exact source formulas, joint local complex amplitudes and the marked geometric branch are now available at arbitrary fixed width under their stated hypotheses. The diagram highlights the remaining global selection and estimate problem. The [frontier](chapters/frontier.md) states the precise gap; the [results chapter](chapters/results.md) states the families already covered by the recorded proofs.

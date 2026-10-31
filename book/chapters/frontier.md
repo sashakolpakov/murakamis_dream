@@ -2,6 +2,22 @@
 
 The target remains a volume theorem for broad classes at every fixed bridge width. The [new one-end layer family](../../notes/general_one_end_layer_long_filling_volume.md) now gives the full original invariant's limit for every $k\geq2$, with $3k-3$ independently long fixed signed twist regions and exact-bridge-$k$ subfamilies. The wider [balance theorem](../../notes/general_complete_radius_balance_filling_volume.md) applies to every certified diagram passing its finite complete-packing test. The unrestricted conjecture remains open.
 
+## A phase-sensitive bound on the original regular windows
+
+The [exact source transfer](../../notes/research_original_one_sided_four_state_transfer.md) has a before state, a two-state active block and an after state. Its direct before-to-after entry retains the original diagonal path $i=j$. All prefix and suffix rows, omitted-half scalar modes and raw signs stay in the identity.
+
+The [positive active transfer](../../notes/research_positive_eta_word_transfer.md) contracts a nonzero outer relative phase. For a mismatched middle phase, the [analytic gauge theorem](../../notes/research_analytic_switching_suppression.md) leaves an exponentially small switch residual **and both exact boundary terms**. The [regular-window theorem](../../notes/research_regular_spectral_window_phase_exclusion.md) supplies strict action gaps for those boundaries. It applies to disjoint start/stop windows with all four incident weights positive at each selected port and strict interior maxima, including full-row windows on either side of the original spectral poles.
+
+![The exact four-state source, both gauge boundary terms, and the proved regular-window loss; the comparison with complete volume remains open.](../figures/analytic-source-switching.png)
+
+For the half-row straddling window, the only unsuppressed local alignment is
+
+$$\vartheta_x=\vartheta_y=\vartheta_b=\vartheta_c-\pi.$$
+
+The full-row version uses the actual signs of the unused-row factor at each endpoint. If the resulting $0/\pi$ constraints are inconsistent on the original incidence graph, compactness of the shared phase torus supplies a uniformly mismatched port. The original Cauchy integral then gains $e^{-cN}$ relative to the product of the same positive window envelopes, with one radius per face and unchanged targets.
+
+This closes a local phase-cancellation step. It does not compare that envelope with $e^{N\Phi_D}$, cover compatible phase systems, or control spectral caps, protected degeneracies and boundary maxima. Those remain separate parts of the general source problem. The coefficient-energy criterion below is another proved reduction of that problem; neither route currently establishes universal diagram coverage.
+
 ## From coefficient Cauchy to a shared volume inequality
 
 The [new local energy theorem](../../notes/actual_one_sided_relative_spectral_energy.md) controls **every** one-sided coefficient of the actual spectral numerator, uniformly over the full real spectral interval, both level parities and all degree boundaries. Relative to the positive endpoint coefficient $p_N$, it gives
@@ -13,11 +29,11 @@ The proof combines an exact weighted Cauchy inequality with an explicit rearrang
 
 ![Weighted Cauchy, a measure-preserving folded angle, and the remaining shared entropy comparison.](../figures/spectral-energy-rearrangement.png)
 
-The [general shared-flow criterion](../../notes/general_endpoint_conditioned_source_energy.md) combines this bound with the earlier one-sided envelope. Write $h$ for the known endpoint coefficient entropy, $g$ for the triangle energy bound above (and $g=h$ on CROSS), and $h_{\rm env}$ for the earlier envelope, also equal to $h$ on CROSS. On each original feasible flow set
+The [general shared-flow criterion](../../notes/general_endpoint_conditioned_source_energy.md) combines this bound with the earlier one-sided envelope. Write $h$ for the known endpoint coefficient entropy, $g$ for the triangle energy bound above (and $g=h$ on CROSS), and $h_{\mathrm{env}}$ for the earlier envelope, also equal to $h$ on CROSS. On each original feasible flow set
 
-$$h_{\rm sharp}=\min\{h_{\rm env},(h+g)/2\}.$$
+$$h_{\mathrm{sharp}}=\min\{h_{\mathrm{env}},(h+g)/2\}.$$
 
-If the maximum of $\sum_e h_{\rm sharp}(q_e)$ over the closed non-CROSS shared-flow set is strictly below $\Phi_D$, the full original invariant has the actual filled-volume limit for independently sufficiently long fixed signed twists. This is a **proved sufficient reduction with an explicit finite-dimensional hypothesis**. The universal entropy inequality is still open. The source's face loads are retained throughout; the two terms are evaluated on the same flow, not independently maximized.
+If the maximum of $\sum_e h_{\mathrm{sharp}}(q_e)$ over the closed non-CROSS shared-flow set is strictly below $\Phi_D$, the full original invariant has the actual filled-volume limit for independently sufficiently long fixed signed twists. This is a **proved sufficient reduction with an explicit finite-dimensional hypothesis**. The universal entropy inequality is still open. The source's face loads are retained throughout; the two terms are evaluated on the same flow, not independently maximized.
 
 The [protected-outer theorem](../../notes/actual_protected_outer_spectral_energy.md) is sharp: with one outer face zero, the optimized relative-energy rate is exactly $C(w,\tfrac12-w,0)$, where $w$ is the outer degree. The general interior bound needs no new local asymptotic conjecture. What remains is the global comparison with the actual hyperbolic volume.
 

@@ -8,6 +8,19 @@ An exact symbolic identity can verify a stated algebraic step for independent fo
 
 Each technical note specifies its proof and the narrower role of its audit. The archive keeps scripts and result files accessible together.
 
+## Exact transfers supporting the phase estimate
+
+The new analytic phase argument has two focused finite checks:
+
+```sh
+python3 experiments/audit_research_original_four_state_transfer.py
+python3 experiments/audit_research_regular_spectral_window_phase_exclusion.py
+```
+
+The [four-state audit](../../experiments/audit_research_original_four_state_transfer.py) checks 196 recurrence/path comparisons and 85 exact omitted-half scalar identities across ten levels and both parities. The [window audit](../../experiments/audit_research_regular_spectral_window_phase_exclusion.py) checks 402 exact restricted matrix/path identities for half and full rows, including sampled spectral zeros and zero outer weights. Its equality is sign-adjusted on both sides; the common raw sign is established in the source proof.
+
+These validate finite indexing and retained factors. The original physical-matrix interface is inherited from the previously reviewed numerator formula. The positive transfer, analytic gauge, strict boundary gaps and shared-torus phase exclusion are proved analytically and independently reviewed; these finite checks do not prove their exponential estimates or a global volume bound.
+
 ## A focused starting set
 
 From the repository root, install the core research dependencies in an environment of your choice:
