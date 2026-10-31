@@ -2,6 +2,33 @@
 
 The project seeks equality for broad classes of hyperbolic knots, with the right side established as the volume of the actual complement. The results below are research proofs recorded and internally reviewed in this repository. They are not claims of external peer review.
 
+## An explicit full-invariant family at every width $k\geq2$
+
+The [one-end layer theorem](../../notes/general_one_end_layer_long_filling_volume.md) proves the volume limit for a family with $3k-3$ independently long signed twist regions, for **every fixed $k\geq2$**. In conventional braid-generator numbering, take the standard plat closure of
+
+$$\left(\prod_{j=1}^{k-1}\sigma_{2j}^{\alpha_j}\right)
+\left(\prod_{j=1}^{k-1}\sigma_{2j+1}^{\beta_j}\right)
+\left(\prod_{j=1}^{k-1}\sigma_{2j}^{\gamma_j}\right).$$
+
+Choose the first-layer exponents odd and the other two layers even. This gives one knot component. For each fixed width and retained half-twist sign pattern, sufficiently large absolute full-twist parameters, independently chosen and fixed before $N\to\infty$, give
+
+$$\lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(K)|
+=\operatorname{Vol}(S^3\setminus K).$$
+
+The right side is the actual smooth filled hyperbolic volume. Both level parities are included, with no ratio condition between twist magnitudes. The global remainder is bounded by the balance theorem below.
+
+There is also a subfamily with **minimal bridge number exactly $k$**: require every box exponent to be divisible by $3$, keeping the same odd/even pattern. The [Fox-coloring certificate](../../notes/actual_fox_coloring_exact_plat_bridge.md) gives exactly $3^k$ colorings; a $b$-bridge knot has at most $3^b$. This congruence is needed for the bridge lower bound, not for the volume theorem.
+
+The geometric proof is uniform. Reflection of the actual marked packing reduces its contact heights to
+
+$$ (1+z_{j-1})(1-z_j^2)(1+z_{j+1})=1,\qquad z_0=0,\quad z_{k-1}=1. $$
+
+Here the equation holds at the interior indices $1\leq j\leq k-2$. After $v_j=\log(1+z_j)$, strict convexity gives a comparison principle; the right boundary is $v_{k-1}=\log2$ and is never substituted into the singular interior function. Translated copies of the exact three-node seed $(2/3,4/5,2/3)$ prove $z_j\geq2/3$ when $k\geq4$. The cases $k=2,3$ have exact small packings. For $k\geq3$, the final circle occupies its actual bounded tangency gap; $k=2$ uses its explicit three-unit-circle packing. Together these facts give $e_j/(a_{j-1}+a_j)\leq9/4$ at every relevant port, so the [zero-middle lemma](../../notes/actual_zero_middle_nine_quarter_balance.md) proves strict source balance.
+
+![The earlier reduced width-four packing supplies the exact comparison seed.](../figures/symmetric-plat-balance-seed.png)
+
+This proves a family at each $k\geq2$, rather than all $k$-bridge knots. The earlier reduced-layer family at $k\geq4$ is [preserved separately](../../notes/general_reduced_layer_long_filling_volume.md). The wider complete-radius criterion remains available for other diagrams; the unrestricted conjecture remains open.
+
 ## A full filling theorem with a finite geometric hypothesis
 
 Take a fixed certified simple-white augmented plat and its original marked complete packing. At each crossing region write the four face curvatures as $(x,b,c,y)$; the two protected curvatures stay exactly zero. Put $A=x+y>0$. The [algebraic balance lemma](../../notes/actual_triangle_entropy_algebraic_balance.md) shows that
@@ -19,7 +46,7 @@ The right side is the volume of the actual smooth filled exterior. The twists ar
 
 The sharper hypothesis is $Q_b(0)+Q_c(0)>\log b,\log c$ for the positive middles, where $Q$ is the original triangle action. Its proof follows three steps. The [entire CROSS period](../../notes/general_all_cross_long_filling_volume.md) has the filled-volume rate, with every Fourier charge and endpoint current controlled. The [global LEFT/RIGHT estimate](../../notes/actual_global_left_weighted_spectral_envelope.md) bounds every surviving one-sided factor strictly below its CROSS rate under balance, at all face phases on the same coefficient torus. Finally, integration by parts on the original whole domains makes the full remainder exponentially smaller than the nonzero CROSS contribution.
 
-**The remaining coverage problem is geometric.** We need a proved family of these actual marked packings at every fixed width $k\geq2$, or a replacement for balance that controls the remaining sectors. Numerical packing checks are candidates for that proof, not family theorems.
+**Coverage now includes the explicit family above at every $k\geq2$.** Its recurrence proves actual $Q$-balance uniformly via the zero-middle $9/4$ bound; the stronger product test can fail for this family. Extending to general plat diagrams remains open.
 
 ## Complete signed augmented links at arbitrary width
 

@@ -10,7 +10,7 @@ We pursue this through the pointed quantum A-structure, exact finite source form
 
 The current target allows every fixed bridge width $k\geq2$: start with an essential hyperbolic augmented plat, then put independently sufficiently many signed twists into each designated region. The diagram and twists stay fixed as $N$ grows. The [frontier](frontier.md) separates the exact formulas and geometric certificates already available from the general quantum asymptotic still needed.
 
-**The unrestricted conjecture remains open.** A new [complete-radius balance theorem](../../notes/general_complete_radius_balance_filling_volume.md) proves the full original invariant's filled-volume limit for every fixed certified diagram satisfying a finite condition on its actual complete packing. A simple sufficient condition is algebraic in the four face curvatures at each crossing region. The theorem allows independent fixed signed twists and both level parities. Proving coverage at arbitrary bridge width remains the current task; a conditional theorem alone does not establish that coverage.
+**A full-invariant family is now proved at every fixed width $k\geq2$.** The [one-end layer theorem](../../notes/general_one_end_layer_long_filling_volume.md) allows $3k-3$ independently long fixed signed twist regions and gives the actual filled hyperbolic volume. Its congruence subfamilies have minimal bridge number exactly $k$. The wider [balance theorem](../../notes/general_complete_radius_balance_filling_volume.md) applies to every certified diagram satisfying its finite complete-packing condition. The unrestricted conjecture remains open; this construction does not cover all $k$-bridge knots or arbitrary plat diagrams.
 
 ![The general route: exact source, local complex amplitudes and a marked geometric branch under a positive gluing certificate; global selection and estimates remain open.](../figures/research-map.png)
 
@@ -39,8 +39,9 @@ Start with [the equality results](results.md) for the exact knot and link famili
 | Positive endpoint source at arbitrary width | Complete augmented-volume limit through all even levels under the labeled certificate; strict loss for nonempty identity insertions; odd regularization has the same full entropy and gives exact spectral-derivative bounds at both parities |
 | Full spectral numerator near completeness | A nonzero fixed-complex relative asymptotic on the original shared face torus at both parities, retaining the finite action, normalization and repeated-node data |
 | Localized original filling period | A nonzero relative asymptotic on a fixed real cube at both parities, including the finite local charge sector and actual filled-volume rate; independently signed twists are fixed before the level limit |
+| Explicit full original invariant at every $k\geq2$ | Three layers, $3k-3$ independent twist regions, actual filled volume, exact-bridge subfamilies |
 | Full original long-filled invariant under balance | A global remainder gap and the actual filled-volume limit for every fixed certified diagram passing the complete-radius test |
-| General signed long-filled knot equality | Prove arbitrary-width coverage of the balance test, or control the remaining macroscopic one-sided sectors without it |
+| General signed long-filled knot equality | Extend beyond the proved one-end layer family and finite balance class; control the one-sided sectors when balance fails |
 
 The cube, Fourier, torsor, and alternative approaches are preserved. A failed intermediate estimate is useful evidence about the argument; it is retained beside the corrected scope.
 

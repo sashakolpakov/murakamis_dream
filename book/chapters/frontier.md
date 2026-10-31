@@ -1,6 +1,6 @@
 # The current general frontier
 
-The target remains a volume theorem at **every fixed bridge width**, with independently long fixed signed twists. **The unrestricted conjecture remains open.** A new [complete-radius balance theorem](../../notes/general_complete_radius_balance_filling_volume.md) proves the full original invariant's filled-volume limit for every fixed certified diagram satisfying a finite condition on its actual complete packing. A simple sufficient condition is algebraic in the four face curvatures at each crossing region. The theorem allows independent fixed signed twists and both level parities. Proving coverage at arbitrary bridge width remains the current task; a conditional theorem alone does not establish that coverage.
+The target remains a volume theorem for broad classes at every fixed bridge width. The [new one-end layer family](../../notes/general_one_end_layer_long_filling_volume.md) now gives the full original invariant's limit for every $k\geq2$, with $3k-3$ independently long fixed signed twist regions and exact-bridge-$k$ subfamilies. The wider [balance theorem](../../notes/general_complete_radius_balance_filling_volume.md) applies to every certified diagram passing its finite complete-packing test. The unrestricted conjecture remains open.
 
 ## The class and the order of quantifiers
 
@@ -13,6 +13,33 @@ $$\min_i |m_i|>T(D)\quad\Longrightarrow\quad
 The diagram and every signed full-twist number $m_i$ are fixed **before** the quantum level $N$ tends to infinity. The prescribed parity pattern must give a knot. The threshold may depend on the diagram; no threshold depending only on $k$ is asserted.
 
 Under a positive marked gluing certificate, the [geometric filling theorem](../../notes/general_augmented_plat_long_filling_quantifiers.md) supplies a geometric threshold for independently long signed fillings. The quantum threshold is now proved under the complete-radius balance condition below. Its availability for general plats remains open.
+
+## An explicit full-invariant family at every width $k\geq2$
+
+The [one-end layer theorem](../../notes/general_one_end_layer_long_filling_volume.md) proves the volume limit for a family with $3k-3$ independently long signed twist regions, for **every fixed $k\geq2$**. In conventional braid-generator numbering, take the standard plat closure of
+
+$$\left(\prod_{j=1}^{k-1}\sigma_{2j}^{\alpha_j}\right)
+\left(\prod_{j=1}^{k-1}\sigma_{2j+1}^{\beta_j}\right)
+\left(\prod_{j=1}^{k-1}\sigma_{2j}^{\gamma_j}\right).$$
+
+Choose the first-layer exponents odd and the other two layers even. This gives one knot component. For each fixed width and retained half-twist sign pattern, sufficiently large absolute full-twist parameters, independently chosen and fixed before $N\to\infty$, give
+
+$$\lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(K)|
+=\operatorname{Vol}(S^3\setminus K).$$
+
+The right side is the actual smooth filled hyperbolic volume. Both level parities are included, with no ratio condition between twist magnitudes. The global remainder is bounded by the balance theorem below.
+
+There is also a subfamily with **minimal bridge number exactly $k$**: require every box exponent to be divisible by $3$, keeping the same odd/even pattern. The [Fox-coloring certificate](../../notes/actual_fox_coloring_exact_plat_bridge.md) gives exactly $3^k$ colorings; a $b$-bridge knot has at most $3^b$. This congruence is needed for the bridge lower bound, not for the volume theorem.
+
+The geometric proof is uniform. Reflection of the actual marked packing reduces its contact heights to
+
+$$ (1+z_{j-1})(1-z_j^2)(1+z_{j+1})=1,\qquad z_0=0,\quad z_{k-1}=1. $$
+
+Here the equation holds at the interior indices $1\leq j\leq k-2$. After $v_j=\log(1+z_j)$, strict convexity gives a comparison principle; the right boundary is $v_{k-1}=\log2$ and is never substituted into the singular interior function. Translated copies of the exact three-node seed $(2/3,4/5,2/3)$ prove $z_j\geq2/3$ when $k\geq4$. The cases $k=2,3$ have exact small packings. For $k\geq3$, the final circle occupies its actual bounded tangency gap; $k=2$ uses its explicit three-unit-circle packing. Together these facts give $e_j/(a_{j-1}+a_j)\leq9/4$ at every relevant port, so the [zero-middle lemma](../../notes/actual_zero_middle_nine_quarter_balance.md) proves strict source balance.
+
+![The earlier reduced width-four packing supplies the exact comparison seed.](../figures/symmetric-plat-balance-seed.png)
+
+This proves a family at each $k\geq2$, rather than all $k$-bridge knots. The earlier reduced-layer family at $k\geq4$ is [preserved separately](../../notes/general_reduced_layer_long_filling_volume.md). The wider complete-radius criterion remains available for other diagrams; the unrestricted conjecture remains open.
 
 ## A full filling theorem with a finite geometric hypothesis
 
@@ -31,7 +58,7 @@ The right side is the volume of the actual smooth filled exterior. The twists ar
 
 The sharper hypothesis is $Q_b(0)+Q_c(0)>\log b,\log c$ for the positive middles, where $Q$ is the original triangle action. Its proof follows three steps. The [entire CROSS period](../../notes/general_all_cross_long_filling_volume.md) has the filled-volume rate, with every Fourier charge and endpoint current controlled. The [global LEFT/RIGHT estimate](../../notes/actual_global_left_weighted_spectral_envelope.md) bounds every surviving one-sided factor strictly below its CROSS rate under balance, at all face phases on the same coefficient torus. Finally, integration by parts on the original whole domains makes the full remainder exponentially smaller than the nonzero CROSS contribution.
 
-**The remaining coverage problem is geometric.** We need a proved family of these actual marked packings at every fixed width $k\geq2$, or a replacement for balance that controls the remaining sectors. Numerical packing checks are candidates for that proof, not family theorems.
+**Coverage now includes the explicit family above at every $k\geq2$.** Its recurrence proves actual $Q$-balance uniformly via the zero-middle $9/4$ bound; the stronger product test can fail for this family. Extending to general plat diagrams remains open.
 
 ## A whole-source equality at arbitrary fixed width
 
@@ -110,9 +137,9 @@ The complete signed source, the full local packet, and the entire CROSS filling 
 | --- | --- | --- |
 | Entire CROSS period, including all charges | Proved with the actual filled-volume rate | No remote-charge restriction in this sector |
 | Full one-sided remainder at balanced complete radii | Proved; yields the full invariant limit | The finite balance hypothesis must hold on the actual marked packing |
-| Arbitrary-width family coverage | Open | Prove the balance condition for an unbounded-width family, or replace it by a more general shared estimate |
+| Actual family coverage | Proved for every $k\geq2$, with exact-bridge subfamilies | Extend beyond this family and the finite balance criterion |
 
-These are separate statements: a theorem for every diagram passing a test does not prove that the test has the intended broad coverage. The diagonal and short-moving sector estimates also survive without balance, but do not cover every macroscopic one-sided sector.
+These are separate statements: the conditional theorem applies to every passing diagram, while the recurrence proves coverage for the explicit family. The diagonal and short-moving sector estimates also survive without balance, but do not cover every macroscopic one-sided sector.
 
 The external-color reflection route is also retained below, with its own corridor and alias estimates. Its internal deficits $s_i=N-1-2a_i$ and external filling-color deficits $h_i=N-j_i$ are different variables. The [fixed complex core theorem](../../notes/actual_complete_core_complex_packet.md) now controls the complete-image term with $\boldsymbol\chi=\mathbf h/N$ in a fixed complex neighborhood:
 
@@ -283,7 +310,7 @@ $$W_D=\max_{q\in\mathcal Q_D}\sum_e h(q_e),$$
 
 where $\mathcal Q_D$ retains every shared-face target and both protected zeros. No fixed half-label filter is needed for this full-source formula. The earlier [test at $N_*=10R+2$](../../notes/actual_fejer_shared_entropy_variational.md) remains useful when individual cross/left/right patterns are kept: it detects finite degree offsets that a limiting pattern alone can miss.
 
-![The entire CROSS period has the filled-volume rate; complete-radius balance gives the full invariant. Arbitrary-width coverage remains open.](../figures/shared-entropy-frontier.png)
+![The entire CROSS period has the filled-volume rate; complete-radius balance gives the full invariant. An explicit family is covered at every width; general diagram coverage remains open.](../figures/shared-entropy-frontier.png)
 
 The geometric upper bound uses exact source reductions. Pure-middle maximizing ports become literal identity coupons, and their [forest contraction](../../notes/actual_fejer_diagonal_identity_forest_reduction.md) preserves the rate and marked targets. The [hybrid Hall theorem](../../notes/actual_fejer_hybrid_tight_cut_reduction.md) keeps cross ports as two triangle rows and every strict one-sided port as one row. Its forced zeros give only permitted digon cuts; no one-sided difference is split into independent capacities. The [boundary regularity argument](../../notes/actual_fejer_nondiagonal_maximizer_regularity.md) then supplies finite positive shared multipliers on the resulting pieces.
 
@@ -360,4 +387,4 @@ The coefficient is nonzero, and all $2^R$ charge signs contribute equally. This 
 
 The same formula governs the **finite local charge sector** $0<|\ell_i|\leq\lfloor a|n_i|\rfloor$: all its nonunit contributions are exponentially smaller. This local theorem alone establishes neither dominance over remote charges nor a bound for the original invariant. The whole-CROSS and balance theorems above supply those additional steps in their stated scopes. The exact remaining period consists of finitely many selected-charge integrals outside $K_b$, plus every other charge on its whole original domain. The remote inside/outside sharp-cube series are not separately summed; they need not inherit the absolute summability of the original full-domain series. Endpoint currents are already encoded in the exact spectral identity.
 
-The [fixed-root direct-power scope](../../notes/fixed_root_direct_power_scope.md) separates this remaining task from generic-$q$ deformation: this route needs no genuine-$q$ normal theorem. The whole-CROSS theorem and complete-radius balance estimate supply the subsequent global bounds under their stated hypotheses. The general independently long fixed signed filled-knot theorem remains open because arbitrary-width balance coverage, or a replacement when balance fails, is not established.
+The [fixed-root direct-power scope](../../notes/fixed_root_direct_power_scope.md) separates this remaining task from generic-$q$ deformation: this route needs no genuine-$q$ normal theorem. The whole-CROSS theorem and complete-radius balance estimate supply the subsequent global bounds under their stated hypotheses. The one-end layer family now satisfies balance at every $k\geq2$. General diagram coverage, or a replacement when balance fails, remains open.

@@ -131,8 +131,10 @@ fixed parity pattern EVERY fixed integer vector p gives a knot with
 box exponents epsilon_i-2p_i. The [geometric long-filling theorem](general_augmented_plat_long_filling_quantifiers.md) gives
 a threshold T_geom(D,epsilon) for independently long signed p_i, with
 no comparability requirement. Each resulting knot has a k-bridge
-PRESENTATION, hence minimal bridge number at most k. No equality
-b(K)=k or growth of the minimal bridge number is proved here.
+PRESENTATION, hence minimal bridge number at most k. This class construction alone does not prove b(K)=k. The later
+[Fox certificate](actual_fox_coloring_exact_plat_bridge.md) does prove it
+when every box exponent is divisible by3, independently of the quantum
+asymptotic problem.
 
 ## 4. Exact coverage and threshold dependence
 
@@ -147,14 +149,15 @@ only on k. A maximum over the finitely many cusp subsets gives one
 threshold for partial fillings as well, with unfilled inverse slopes0.
 
 The endpoint/complete-source results apply with their separately stated
-source and parity scopes. The desired original-invariant theorem for
-ALL independently long fixed signed twists still additionally requires
-the phase-sensitive Gaussian period, all complementary Fourier charges,
-the actual contributing cycle and its nonzero coefficient, and the
-required genuine-q normals. This class construction does not prove
-those quantum inputs, does not identify all essential hyperbolic plats
-with the simple-white class, and does not certify an arbitrary abstract
-matched graph as an original plat.
+source and parity scopes. The later [balance theorem](general_complete_radius_balance_filling_volume.md)
+proves the full fixed long-filling limit under its additional geometric
+condition. The [one-end layer family](general_one_end_layer_long_filling_volume.md)
+establishes that condition for its actual words at every k>=2. This class
+construction alone does not prove balance or the quantum limit for all
+its diagrams. The direct fixed-root route needs no separate genuine-q
+normals; the older mixed-color route has its own hypotheses. Neither
+result identifies all essential hyperbolic plats with this class or
+certifies an arbitrary abstract matched graph as an original source.
 
 ## 5. Focused verification
 

@@ -50,6 +50,16 @@ fixed-root route; see the [scope audit](fixed_root_direct_power_scope.md).
 The older mixed-color route and its conditions are preserved below as
 alternative approaches.
 
+The [one-end layer theorem](general_one_end_layer_long_filling_volume.md)
+now proves actual balance for a family at EVERY fixed k>=2, with
+3k-3 independently long signed twist regions. An exact packing
+recurrence and convex comparison prove its curvature bound uniformly.
+The [Fox certificate](actual_fox_coloring_exact_plat_bridge.md) gives
+subfamilies of minimal bridge number exactly k. This establishes
+genuinely unbounded bridge complexity at every k>=2, but not every
+k-bridge diagram. The earlier reduced-layer family remains separately
+recorded with its original k>=4 scope.
+
 There is now a whole-source intermediate theorem: the
 [original signed augmented source](general_signed_augmented_source_volume.md)
 has limit equal to the actual complete volume for every fixed connected
@@ -543,3 +553,17 @@ graphs and a containing-link corollary. Its abstract does not assert
 These are coverage observations, not imported proofs or an exhaustive
 novelty claim. The definitions and source normalizations must still
 be compared before identifying any covered family.
+
+
+A further primary-statement coverage check on 31 October 2026 distinguishes
+three nearby claims. [Giambrone](https://arxiv.org/abs/1310.8414v3) states
+coarse volume bounds for certain plat closures via stable Jones
+coefficients. [Lee](https://arxiv.org/abs/2307.09903v2) takes the twist
+parameters to infinity to obtain a limiting skein element before studying
+its root-of-unity growth. [Shen](https://arxiv.org/abs/2609.11839v3) states
+long fixed signed filling results for SO(3) Turaev-Viro and WRT invariants
+of fundamental shadow-link fillings along odd levels. These abstract
+statements have different invariants or quantifiers from the full
+Kashaev knot limit here. This checks stated coverage only: no proof
+correctness, equivalence of invariants, or exhaustive novelty conclusion
+is inferred, and no proof technique from these papers is used above.

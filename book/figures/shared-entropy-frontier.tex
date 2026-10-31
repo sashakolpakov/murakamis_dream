@@ -27,11 +27,11 @@
  =\operatorname{Vol}(S^3\setminus K_D(\mathbf p))$};
  \draw[->,blue,thick] (source)--(cross);
  \node[panel] (balance) at (0,-8.4)
- {\textbf{Finite sufficient condition on the same complete packing}\\[8pt]
- Each port has face curvatures $(x,b,c,y)$, with $A=x+y>0$.\\[7pt]
- $\displaystyle (A+b)(A+c)\geq\max\{b^2,c^2\}$\\[7pt]
- A simpler sufficient test is $|b-c|\leq x+y$.\\
- Protected zero curvatures remain exactly zero.};
+ {\textbf{Actual balance at the same complete packing}\\[8pt]
+ $\displaystyle Q(x,b,y)+Q(x,c,y)>\log t\quad(t\in\{b,c\},\ t>0)$\\[7pt]
+ One sufficient test, with $A=x+y>0$, is\\[4pt]
+ $\displaystyle (A+b)(A+c)\geq\max\{b^2,c^2\}.$\\[7pt]
+ The explicit family also uses the sharper zero-middle test $e/A\leq9/4$.};
  \draw[->,blue,thick] (cross)--(balance);
  \node[panel] (full) at (0,-12.9)
  {\textbf{Full original invariant: proved under that condition}\\[8pt]
@@ -41,11 +41,16 @@
  Every independently long fixed signed twist vector;\\
  threshold depends on $D$. Twists are fixed before $N\to\infty$.};
  \draw[->,blue,thick] (balance)--(full);
- \node[pending] (coverage) at (0,-17.2)
- {\textbf{Open: prove broad coverage at arbitrary bridge width}\\[8pt]
- Construct actual marked packings satisfying balance for a\\
- family at each fixed width $k\geq2$, or find a wider estimate.\\[7pt]
- A wide presentation or numerical sample does not prove coverage.};
- \draw[->,amber,thick,dashed] (full)--(coverage);
+ \node[panel] (family) at (0,-17.2)
+ {\textbf{Proved family at EVERY fixed bridge width $k\geq2$}\\[8pt]
+ Three original layers, $3k-3$ independently long signed twist regions.\\
+ A uniform packing recurrence verifies the balance hypothesis.\\[7pt]
+ Exponents divisible by $3$ give minimal bridge number exactly $k$.};
+ \draw[->,blue,thick] (full)--(family);
+ \node[pending] (coverage) at (0,-21.0)
+ {\textbf{Open: extend to general plat diagrams}\\[8pt]
+ The finite balance theorem applies beyond this family whenever its test holds.\\
+ A general estimate when balance fails remains to be proved.};
+ \draw[->,amber,thick,dashed] (family)--(coverage);
 \end{tikzpicture}
 \end{document}
