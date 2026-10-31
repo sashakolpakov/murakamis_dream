@@ -15,7 +15,20 @@ $$\sup_{\boldsymbol\delta}|S_N(\boldsymbol\delta)|\le e^{N(M_D+o(1))}.$$
 
 This is an upper bound for the actual raw shared numerator. It asserts neither equality of rates nor a nonzero lower asymptotic.
 
-On a certified simple-white diagram, the [full-fiber activation theorem](../../notes/research_full_fiber_sharp_boundary_activation.md) excludes every ordinary zero incidence and every diagonal port at a global maximum. The [stationary classification](../../notes/research_full_fiber_sharp_stationary_classification.md) then gives finite common positive ordinary face weights. Each port is complete strict CROSS at $\delta=0$, a strict pole-straddling LEFT/RIGHT branch at $0<\delta<1/2$, or one of at most two marked cap corners. A cap has two protected zero incidences, $0<\nu<1/2$, and equal remaining ordinary weights. Protected zeros are retained throughout. For a maximum restricted to the non-CROSS union, the theorem requires value at least $\Phi_D$ and a strict non-CROSS middle margin.
+On a certified simple-white diagram, the [full-fiber activation theorem](../../notes/research_full_fiber_sharp_boundary_activation.md) excludes every ordinary zero incidence and every diagonal port at a global maximum. The [stationary classification](../../notes/research_full_fiber_sharp_stationary_classification.md) then gives finite common positive ordinary face weights. Each port is complete strict CROSS at $\delta=0$, a strict pole-straddling LEFT/RIGHT branch at $0<\delta<1/2$, or one of at most two marked cap corners. A cap has two protected zero incidences, $0<\nu<1/2$, and equal remaining ordinary weights. Protected zeros are retained throughout. For a maximum restricted to the closed non-CROSS union with value at least $\Phi_D$, the strict middle margin is now automatic by the seam theorem below.
+
+The [CROSS-degree domination and seam theorem](../../notes/research_sharp_cross_degree_domination_and_seam_gap.md) proves $H_\delta(q)\le h(q)$ for every real spectrum whenever both original middle loads are at most $1/2$. Write $q^{\mathrm{geom}}$ for the actual complete endpoint allocation and set
+
+$$a_D=\min_e\{\tfrac12-q^{\mathrm{geom}}_{e,b},\tfrac12-q^{\mathrm{geom}}_{e,c}\}>0,
+\qquad \gamma_D=\frac\pi2 a_D^2.$$
+
+Every seam-only flow has sharp entropy at most $\Phi_D-\gamma_D$. The proof uses strong concavity on the actual latent triangle allocations, projected to the original incidence loads. Compactness then gives a uniform strict overload margin for all high-value non-CROSS candidates and a fixed neighborhood of the seams with an absolute source gap.
+
+For independently sufficiently long fixed signed fillings, the **whole seam-neighborhood period**, with all original charges and endpoint currents, is exponentially negligible relative to the nonzero actual filled-volume all-CROSS period:
+
+$$\frac{I_{\mathrm{seam}}}{I_{\mathrm{CROSS}}}=O_{\mathbf p}(e^{-c_DN}),\qquad c_D>0.$$
+
+Both level parities are included. This removes the seam remainder; the macroscopic, strictly overloaded non-CROSS contribution remains open.
 
 The [elementary odd-cycle theorem](../../notes/research_stationary_noncross_main_cycle_obstruction.md) further proves that every non-CROSS port at such a maximum forces an odd four-cycle on the actual port/face incidence graph. Thus a phase-coherent maximum must be entirely complete CROSS. This is a qualitative sign obstruction, not a quantitative cancellation estimate.
 
