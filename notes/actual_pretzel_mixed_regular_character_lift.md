@@ -1,7 +1,7 @@
 # The selected mixed pretzel packet has an explicit regular character lift
 
 29 October 2026. This identifies the regular algebraic branch selected by
-the ORIGINAL mixed inner source with an explicit auxiliary meridian. It
+the original mixed inner source with an explicit auxiliary meridian. It
 does not identify a representation by matching cusp Hessians. The source
 Riccati ratio fixes the internal critical root, the literal factorial
 ratios fix its two remaining conjugate variables, and a two-by-two matrix
@@ -69,7 +69,7 @@ The exact mixed summand changes it by
 
     S=S_0-2Li2(X)+Li2(X/H)+Li2(XH)+(Log H)^2/2.       (4)
 
-The last term is the ORIGINAL q^(h^2) factor, not an adjustable
+The last term is the original q^(h^2) factor, not an adjustable
 flattening. The original common kappa and all quarter-turn phases remain
 as in the source theorem. Differentiating the actual product-log chart
 gives

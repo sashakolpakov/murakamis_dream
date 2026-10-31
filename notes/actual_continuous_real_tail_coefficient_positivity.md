@@ -1,6 +1,6 @@
 # Continuous real-spectral positivity of each exact tail continuant
 
-Independently reviewed exact lemma, 31 October 2026. This strengthens the local tail estimate used in the [global CROSS theorem](actual_global_cross_spectral_gap.md). It gives no positivity statement for the full spectral numerator or for the signed prefix factors.
+exact lemma, 31 October 2026. This strengthens the local tail estimate used in the [global CROSS theorem](actual_global_cross_spectral_gap.md). It gives no positivity statement for the full spectral numerator or for the signed prefix factors.
 
 Write $\theta=\pi/N$, $s_j=2\sin(j\theta)$, and
 
@@ -60,4 +60,4 @@ This is an absolute polynomial-norm extension, not a coefficientwise extension o
 
 ## Validation and scope
 
-The row-independent identity and induction were derived independently, and the root reviewed the complete proof. The reviews retain the original starting rows and avoid the zero sine denominator. This exact lemma needs no numerical asymptotic test. It proves neither a shared one-sided capacity bound nor positivity of the full numerator.
+The row identity uses the original starting rows and avoids the zero sine denominator. It proves neither a shared one-sided capacity bound nor positivity of the full numerator.

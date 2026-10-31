@@ -9,7 +9,7 @@ such that, for every N>=2 and every integer ell,
     ||B_N^ell||_op
        <= C N^A(1+|ell|) exp[N(2v_3+v_8)/pi].           (1)
 
-B_N is the ORIGINAL complete crossing in the balanced physical metric,
+B_N is the original complete crossing in the balanced physical metric,
 with its original unit Cartan and framing factors. The HS estimate costs
 one further factor N. No spectrum-only or semisimplicity assumption is
 used. The proof retains the actual nilpotent blocks by the meridian
@@ -163,10 +163,7 @@ geometric survival.
 
 ## 4. Verification
 
-The root agent independently checked the actual factorial-frame proof
-and replayed its 240 generic-meridian signed-degree comparisons. Two
-other agents independently verified (2)--(7), including the circular
-interval and endpoint shifts. The supplementary audit
+The supplementary audit
 `experiments/audit_actual_twist_block_projector_barrier.py` checks the
 profile inequalities, exact factorial products after zero removal,
 physical endpoint domains and convergence at the maximizing profile.

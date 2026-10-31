@@ -3,7 +3,7 @@
 28 October 2026. This proves a discrete-to-continuous comparison, including
 the selected finite endpoints. It is a theorem for the displayed finite
 factorial sum. The [finite whole-source transform](five_two_cyclotomic_transform_proof.md)
-now proves that this is the ORIGINAL 5_2 invariant, including the whole
+now proves that this is the original 5_2 invariant, including the whole
 fixed-root meridian family. That identification is an exact finite
 calculation, rather than an inference from finite checks.
 

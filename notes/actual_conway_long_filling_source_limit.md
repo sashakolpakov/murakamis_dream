@@ -18,7 +18,7 @@ Let C(E) be C(A), A=h^3, or C(FG) with F,G robust expressions generated
 by A, the actual quarter-turn and actual product. Fix the entire
 compiled diagram, its retained auxiliary circles and original mark.
 Choose a subset I of the auxiliary circles. At each i in I substitute
-the ORIGINAL full twist R^(-2p_i) through its exact Fourier--Hermite
+the original full twist R^(-2p_i) through its exact Fourier--Hermite
 auxiliary-color kernel. Unfilled colors stay at their complete value;
 they are not assigned p_i=0.
 
@@ -147,7 +147,7 @@ below, not merely agreement with the complete cusp Hessian.
 
 The [marked deformation proof](actual_conway_marked_peripheral_deformation.md)
 now supplies an actual bounded framed representation near the complete
-one, with the ORIGINAL peripheral marking and full action differential. Here U,V are logarithms of
+one, with the original peripheral marking and full action differential. Here U,V are logarithms of
 projective similarity multipliers, equivalently squared SL(2,C)
 peripheral eigenvalues:
 
@@ -183,12 +183,8 @@ branching and turn depth. A new knot theorem needs different source
 connectivity, such as suitable retained odd half-twist coupons, with
 its own phase and source estimates. The filled-volume identification does not remove that requirement.
 
-Independent internal analytical review checked the exact filling substitutions,
-all source hypotheses, the lattice and framing normalization, critical
-equations, quadratic rate expansion, and the distinction between packet
-and primitive cusp ratios. The subsequent marked deformation supplies
-the actual geometric interface used in the final theorem.
+The subsequent marked deformation supplies the geometric interface used in the final theorem.
 
-Completion of the geometric interface: both independent agents and the primary agent reviewed the actual marked deformation proof and replayed its exact rational-function audit. The resulting representation, primitive unit filling equation, and absolute regulator establish (11); the original quantum proof (1)--(7) is unchanged.
+The marked representation, primitive unit filling equation, and absolute regulator establish (11). They are the geometric inputs needed in addition to the quantum argument (1)–(7).
 
 The later [signed half-twist extension](actual_odd_conway_long_filling_volume.md) changes the original leaf connectivity and proves its separately selected source and peripheral geometry. For C(FG) with robust children it gives long-filled knot and link families at arbitrary fixed diagram branching and turn depth. The pure component obstruction in section 5 remains unchanged.

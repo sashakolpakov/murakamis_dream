@@ -189,8 +189,4 @@ No files in the frozen publication snapshot were modified in proving
 this addendum. Its proof is analytical; no sampled numerical evidence
 is used for the slope-uniform assertion.
 
-Independent analytical review: the root and a second reader each
-checked the affine divisibility, all-direction lower bound, contraction
-and anisotropic errors, primitive-topology input, and both volume
-coefficients. Both reported PASS. The uniform assertions follow from
-the proof above, not from a finite collection of slope samples.
+The uniform assertions follow from the proof above, not from a finite collection of slope samples.

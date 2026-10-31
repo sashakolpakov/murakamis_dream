@@ -66,8 +66,7 @@ it does not give the required metric bound for its fixed filled knots.
 The arbitrary-source estimates and obstructions below retain that
 broader unresolved scope.
 
-**Mixed-source progress, 29 October.** The independently reviewed
-[mixed-cusp period proof](actual_pretzel_mixed_cusp_period_survival.md)
+**Mixed-source progress, 29 October.** The [mixed-cusp period proof](actual_pretzel_mixed_cusp_period_survival.md)
 now gives a nonzero uniform leading term on a fixed small real-color
 corridor for every fixed odd s>=5. Its discrete analytic summation
 uses an exact half-grid cotangent contour with all endpoint currents
@@ -78,7 +77,7 @@ filled source. The [exact filling chirp](actual_coherent_filling_gaussian_chirp.
 retains those colors and the Fresnel endpoint terms; estimating their
 whole coherent contribution remains necessary for fixed filled knots.
 
-**Latest concrete metric, 29 October.** The ORIGINAL complete crossing
+**Latest concrete metric, 29 October.** The original complete crossing
 circle now supplies a positive semidefinite form on the entire physical
 pair: [C=PL_N and H=L_NP](actual_complete_circle_reflection_positive.md).
 The ordinary cap has exact squared dual norm 1/(2N^3) in C; the
@@ -103,7 +102,7 @@ the geometric Rivin partition. The boundary Cauchy step is complete;
 the sharp whole-source energy comparison and a survival/lower bound
 remain unproved.
 
-**Direct answer to the Cauchy question.** Yes. For the ORIGINAL row b
+**Direct answer to the Cauchy question.** Yes. For the original row b
 and state v, any positive Hermitian G gives
 
     |bv|^2 <= (b G^(-1) b^*) (v^* G v).
@@ -222,7 +221,7 @@ equations, rather than assumed harmless.
 
 29 October 2026. The proposed comparison is precisely weighted
 Cauchy--Schwarz. Its substantive input is a positive metric on the
-ORIGINAL state, with controlled dual source and geometric energy.
+original state, with controlled dual source and geometric energy.
 
 Write the unchanged invariant as `K_N=a_N^*v_N`, including its actual
 peripheral and normalization factors in this pairing. For any positive

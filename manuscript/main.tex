@@ -46,9 +46,8 @@
 \newcommand{\poly}{\operatorname{poly}}
 \newcommand{\eps}{\varepsilon}
 \newcommand{\sourcefile}[1]{\texttt{\detokenize{#1}}}
-\newcommand{\proofinput}[1]{\par\smallskip\noindent\textit{Source record.} \sourcefile{#1}.\par\smallskip}
 \tikzset{box/.style={draw,rounded corners,fill=blue!4,align=center,inner sep=7pt}, arr/.style={-{Latex[length=2mm]},thick}, port/.style={draw,fill=white,minimum size=4mm,circle,inner sep=0pt}}
-\title{\Huge Long-twist volume limits\\[8pt]\Large for a compositional class of arborescent knots\\[18pt]\large Exact finite sources, ideal-cell geometry,\\rational alias certificates, and the full filling period}
+\title{\Huge Long-twist volume limits\\[8pt]\Large for arborescent knots built by tangle composition\\[18pt]\large A specified construction class, its finite invariant,\\and the hyperbolic volume after filling}
 \author{}
 \date{31 October 2026\\[8pt]\small Research manuscript with an executable certificate companion}
 \begin{document}
@@ -58,9 +57,12 @@
 \hypersetup{pageanchor=true}
 \frontmatter
 \chapter*{Abstract}
-We give a detailed proof of a long-twist volume theorem for a recursively specified class of arborescent knot diagrams. The elementary object is the turned crossing-circle tangle. Completed expressions are generated from a two-leaf block by ordered products, quarter-turns, and attachment of one further leaf to either side. The two children of the cylindrical closing product are required to be completed. For every fixed expression and a half-twist choice giving one main component, all sufficiently long, independently chosen signed auxiliary fillings satisfy the volume limit along the entire sequence of root-of-unity levels. The limiting volume is that of the knot complement after all auxiliary circles have been filled.
+We prove the volume conjecture for a specified recursive family of arborescent knot diagrams with sufficiently many twists in each designated region. The construction starts with two-strand tangles surrounded by auxiliary crossing circles. It uses vertical stacking, quarter-turns, and attachment of one new elementary tangle. Two boxes, each built from at least two elementary pieces by the stated rule, are joined by a cylindrical closure. We define these operations geometrically before introducing their notation. After choosing a parity pattern that gives one main component, filling the auxiliary circles produces the knots of the theorem.
 
-The proof retains the original finite invariant, its single cut, its repeated Casimir roots and their first normal directions. A positive Newton multiplication law gives the exact complete source and its strict angle problem. Explicit pyramids and ordered prisms identify that problem with the actual augmented-link metric. Two finite rational supporting-plane certificates control the color aliases under composition. The selected complex packet is then inserted into the complete Fourier--Hermite filling transform, including endpoint currents and all Fourier charges. We distinguish the analytic proof from the finite certificate verification and provide build and reproduction instructions. No assertion is made for arbitrary arborescent knots or arbitrary root-leaf closures.
+For each fixed construction, every sufficiently large tuple of independently signed filling integers gives a hyperbolic knot whose reduced Kashaev invariant has exponential growth equal to its knot complement volume. The integers are fixed before the root-of-unity level tends to infinity, and the limit includes both parities and composite levels. Only auxiliary circles are filled; the knot cusp remains unfilled.
+
+The proof starts from the finite matrices defining the invariant. Their polynomial algebra retains derivative data at repeated roots. Positive multiplication coefficients give an angle maximization problem, and explicit ideal hyperbolic cells realize its complete value on the actual augmented link. Rigorous rational inequalities control the signed complementary color terms throughout the recursive construction. A holomorphic asymptotic for the remaining finite sum is then inserted into the exact filling transform. The contour argument retains its boundary contributions and all Fourier modes, and its leading action is identified with the volume after filling. Detailed appendices and an executable certificate companion support the proof. The theorem concerns the stated construction class; it does not classify all arborescent knots.
+
 \tableofcontents
 \mainmatter
 \input{sections/01-introduction}

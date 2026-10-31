@@ -1,6 +1,6 @@
 # Moving-period factorial normals along logarithmically escaping heads
 
-30 October 2026. Independently reviewed source estimate. The marked Gamma
+30 October 2026. source estimate. The marked Gamma
 factorial remains controlled when a head has imaginary part of order
 N log N. This is a bound for the actual factorial factors and fixed
 quantum jets. It does not provide a packet for a polynomial whose
@@ -155,9 +155,4 @@ recurrences and 12 actual opposite-head cup gauges, at 85 digits.
 The maximum identity error was 2.18e-75. These are diagnostics of the
 specified function; the uniform estimate is proved above.
 
-Independent parent and geometry reviews passed the full proof,
-including the growing Gamma domain, near/tail cancellation, nonreal
-shift nonvanishing, fixed endpoint and marked quadratic gauges.
-Both freshly replayed the focused audit successfully. Their scope
-is the relative factorial/cup estimate and its genuine fixed jets,
-not an absolute magnitude, turning packet or global period.
+The estimate concerns relative factorial/cup quantities and their genuine fixed jets. It does not bound an absolute magnitude, establish a turning packet or give a global period.

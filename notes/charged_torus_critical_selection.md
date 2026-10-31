@@ -41,7 +41,7 @@ All are nonzero and nondegenerate. The unique highest real part of
 log f is therefore log(47/10), at z=-10, independent of its chosen
 logarithmic mark.
 
-But on the ORIGINAL source circle the triangle inequality gives
+But on the original source circle the triangle inequality gives
 
     |f(exp(i theta))|<=391/200<47/10.
 
@@ -127,7 +127,7 @@ The rational interval root/critical-value certificates are reproduced
 with 256-bit complex balls in the audit, not taken from a numerical
 plot.
 
-Now use the ORIGINAL source circle |z|=R=1/3. The exact identity
+Now use the original source circle |z|=R=1/3. The exact identity
 
     P(z)=(1-z^4)^2(1+z+z^2)^2(1+z^2+z^4)
 
@@ -245,7 +245,7 @@ the next overevent supplies input-block length d-h_(tau(v)); and its
 one underencounter supplies spectator incidence d. The spectator
 contribution is the sum of that crossing's two block lengths d-h and h,
 independent of its sign. The closure pivots change phases, not degrees.
-Consequently the exact ORIGINAL incidence defect is
+Consequently the exact original incidence defect is
 
     S_v-2d=h_v-h_(tau(v)).                            (10)
 

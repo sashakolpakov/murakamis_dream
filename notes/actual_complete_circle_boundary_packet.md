@@ -268,15 +268,10 @@ sewing must still be identified with this packet by an exact source
 map. They are not inferred merely from the spectral parameter eta.
 
 Audit: [literal finite circle coefficients, quantum recurrence/chirp and boundary Gaussian](../experiments/audit_actual_complete_circle_boundary_packet.py),
-fresh replay PASS: eleven literal all-parity full sources and first
+the finite checks cover eleven literal all-parity full sources and first
 normals, exact symbolic chirped recurrence/transport, and six growing-N
 complex-packet/normal/retained-belt calibrations. The analytic proof,
 not those finite calibrations, establishes the fixed neighborhood and
 the exponential current bounds.
 
-Independent review: the global critical-path auditor reread the exact
-transport direction, source barrier and anchor, holomorphic EM/cotangent
-argument, uniform angular gap and Gaussian constants, then freshly
-replayed the finite audit; PASS. This review concerns the stated
-spectral packet and complete retained-belt source, with the physical
-color/filling identification still separate.
+The theorem concerns the stated spectral packet and complete retained-belt source. The physical color and filling identification is separate.

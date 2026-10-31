@@ -1,6 +1,6 @@
 # Whole original mixed-source volume in the untwisted corridor
 
-30 October 2026. Independently reviewed and frozen. The whole
+30 October 2026. The whole
 original mixed source has the actual geometric volume limit throughout
 a fixed near-complete corridor at its untwisted external circle ports.
 This follows from the frozen source gap, complex core and marked
@@ -63,10 +63,4 @@ filled-knot invariant equality or uniformity over growing diagrams
 is asserted. Equations (1)--(2) use only already frozen uniform theorems
 and need no new numerical audit.
 
-Root full analytical review of the corollary and its quantifiers: PASS.
-The finite-N phase remains in the relative core asymptotic; only its
-uniform limiting action is used for the exponential comparison and
-the volume limit. No off-grid or genuine-q identity is inferred.
-Independent coherent full analytical review: PASS, including uniform
-core nonvanishing, both level parities, physical integer deficits,
-untwisted varied ports and the complete signed complement.
+The finite-N phase remains in the relative core asymptotic; only its uniform limiting action is used for the exponential comparison and the volume limit. No off-grid or genuine-q identity is inferred.

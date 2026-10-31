@@ -1,7 +1,7 @@
 # The actual six-port source has a smaller regular generic-q module
 
 29 October 2026. The complete root invariant space is larger than the
-source space reachable by an ORIGINAL complete-color plat. There is a
+source space reachable by an original complete-color plat. There is a
 canonical, proper, braid- and circle-stable module obtained by regular
 generic-q specialization. This is an actual source restriction, not a
 semisimple deletion of the original Casimir normal coefficients.
@@ -17,7 +17,7 @@ such blocks is not supplied by the rank theorem alone.
 
 ## 1. The whole root space and its exact octahedral lattice
 
-Use q=exp(pi i/N), Q=q^2, d=N-1 and the ORIGINAL balanced V_N.
+Use q=exp(pi i/N), Q=q^2, d=N-1 and the original balanced V_N.
 The [complete source theorem](actual_complete_source_multiplicity_module.md),
 section5, identifies
 

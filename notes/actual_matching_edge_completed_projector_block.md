@@ -36,7 +36,7 @@ These are generic rational identities, including high g. The last
 scalar follows from covariance and the generic highest-weight basis.
 No root value of theta_g is inverted.
 
-Let Omega be the ORIGINAL generic two-physical-head Casimir. Its
+Let Omega be the original generic two-physical-head Casimir. Its
 distinct generic eigenvalues are
 
     lambda_g=zeta^(2g+1)+zeta^(-2g-1), 0<=g<=d,
@@ -242,7 +242,7 @@ Then the exact signed weighted sector is
                  *[t^1]{u_a v_N C(t)(A(t)E_a(t))}.  (18)
 
 The retained phase omega_a^epsilon remains unchanged. For a concrete
-upper bound define, in the ORIGINAL physical basis,
+upper bound define, in the original physical basis,
 
     J_C^(1)=max_(r=0,1)||[t^r]C||,
     J_g^cl=max_(r=0,1)(||[t^r]Q_g||_HS+||[t^r]M_g||_HS),
@@ -286,15 +286,6 @@ cluster second jets, their first-order idempotent and moving-gap
 nilpotent identities, 33 weighted Hermite second jets, and fourteen
 complete original-measure cancellations.
 
-An independent analytical review and fresh audit replay passed the
-extreme-entry norm derivation, all target/root signs and valuations,
-the categorical bend and cyclic turn, the phase-free k_a N factor,
-and the regular paired identity with its retained nilpotent term and
-second scalar derivatives. The replay reproduced all reported counts.
-It did not infer a bound for the native completed projector norms.
+The paired block retains its nilpotent term and second scalar derivatives. No bound for the native completed projector norms is inferred.
 
-A second independent full analytical review also passed the genuine
-theta derivation, beta and k_a N cancellations, target-gap orientation,
-regular Hermite pairing, scalar-versus-cluster derivative orders, and
-the P_N^2 estimate. The completed projector norms and coherent global
-energy remain outside this result.
+The completed projector norms and coherent global energy remain outside this result.

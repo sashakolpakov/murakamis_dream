@@ -41,7 +41,7 @@ For the logarithm of \(P_Q(q\mathcal E_1F_2)\), the only
 extra surviving term is the resonance \(m=N\):
 \[
  -\frac{q_N^N}{N}\mathcal E_1^N
-       \otimes\left[\frac{F_2^N}{1-Q^N}\right]_{\rm root}
+       \otimes\left[\frac{F_2^N}{1-Q^N}\right]_{\mathrm{root}}
    =\mathcal E_1^N\otimes T_2.
 \]
 Here \(q_N^N=-1\) at every level. For \(m=jN\), \(j\ge2\),

@@ -1,6 +1,6 @@
 # The controlled exceptional kernel tube misses the selected global frame
 
-30 October 2026. Independently reviewed. This is an exact
+30 October 2026. This is an exact
 classical-coordinate consequence of the actual inverse turn. The
 [source-matching complex root kernel](actual_matching_edge_antidiagonal_operator_packet.md)
 is a valid nonzero packet on its stated tube. That tube does not
@@ -76,7 +76,7 @@ For the HIGH target adapter the prefix traces are instead
 original magnetic exponentials in (4) simply exchange. The total
 and the support conclusions remain unchanged.
 
-The canonical ORIGINAL low logarithms dictated by (1),(4) are
+The canonical original low logarithms dictated by (1),(4) are
 
     tau_old=1-delta,
     nu_old,in=lambda,
@@ -94,7 +94,7 @@ Hence BOTH original factors lie in the full strict physical domain.
 
 If the target input/output order is reversed, the original physical
 total is 1+delta, with magnetic rows lambda+delta and 1-nu.
-The actual ORIGINAL high adapter subtracts delta from both rows and
+The actual original high adapter subtracts delta from both rows and
 reverses the total, yielding exactly (5). This proves (6) for all
 the stated adapters and orders without a reality assumption.
 
@@ -141,13 +141,4 @@ This is an analytical corollary of the audited inverse-turn dictionary,
 physical adapters, full-domain sheet theorem and white-normal proof.
 It claims no new finite-kernel audit counts or asymptotic estimates.
 
-Primary-agent full analytical review: PASS. The reader checked the
-inverse-turn prefix ratios, the integer-one lifts, both adapters and
-the exact hypotheses of the reused white-normal argument.
-
-Two independent targeted analytical reviews: PASS. The source reader
-checked the stated tube against the actual root-kernel formula; the
-global-source reader independently derived both target adapters and
-the reversed-order high lift. All three readers retain the global K
-hypothesis and distinguish the coordinate obstruction from a failure
-of the finite packet theorem or the volume conjecture.
+The coordinate obstruction assumes the global K hypothesis. It does not show a failure of the finite packet theorem or of the volume conjecture.

@@ -1,6 +1,6 @@
 # An explicit cancellation bound for an original half-triangle determinant
 
-31 October 2026. Internally reviewed analytical research lemma. This concerns the actual
+31 October 2026. analytical research lemma. This concerns the actual
 positive half-determinant at two equal, opposite face arguments. It is
 not yet a theorem for a raw cleared cofactor, a whole cap star, or a
 filled invariant. In particular, coefficientwise positive comparisons
@@ -260,11 +260,4 @@ spectral star with all its shared phases, the absolute shared-volume
 comparison, and the maximal Green pairing remain separate. No general
 long-twist theorem follows from this determinant lemma alone.
 
-Root derived and read the finite matrix calculation and the complete
-upper-bound proof. An independent source/analysis reader checked the
-original entries, transfer roots, both endpoint costs, all-parity
-normalization, the uniform prefix extension (5a), and the limitation
-on signed cofactor comparisons. The complete analytical/source review
-passed; this is internal review, not external peer review.
-Numerical determinant evaluations were exploratory checks, not premises
-of this proof or an asserted lower asymptotic.
+The opposite-equal determinant values are exploratory diagnostics, not lower asymptotic bounds.

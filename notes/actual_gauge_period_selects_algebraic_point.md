@@ -354,6 +354,4 @@ of the two rational expressions away from their poles.
 and [saved results](../experiments/actual_gauge_critical_evaluation_results.json)
 check the exact moment, two-period and cyclic-source equations
 at finite-field roots. High-precision fixed-degree samples
-diagnose the proved algebraic evaluation limit. A separate
-agent independently verified the reflection/q-binomial moment
-proof and its error estimate before this note was written.
+diagnose the proved algebraic evaluation limit.

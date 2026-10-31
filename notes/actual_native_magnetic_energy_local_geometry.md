@@ -266,22 +266,6 @@ actual tetrahedron cross ratios. The global sewing and phase-matching
 problem is not a conclusion of these checks.
 The cube addition also checks all four Lorentz reflections (15) exactly.
 
-Independent analytical reviews of sections 1--5: PASS. The root reader checked the
-original highest-vector phase, both parity measures, uniform local
-action and its strict maximum, the eight supporting planes and four
-tetrahedra, the compulsory signed term, and the distinction between
-real-energy and complex-phase stationarity. A second reader independently
-derived those formulas and freshly replayed the focused audit, reproducing
-all 817 source, 167 measure, 23 parity and four shape checks. Both reviews
-retain the degree-block scope and infer no cells in the actual source
-complement, real-grid geometric saddle, or global volume equality.
+The theorem concerns a degree block. It does not identify cells in the actual source complement, a real-grid geometric saddle, or a global volume equality.
 
-Section 6 review: a second reader independently checked the four Lorentz
-reflections, central/corner partition and regular ideal tetrahedra, and
-freshly replayed the enlarged audit including all four cube reflections.
-The resulting cube volume is a local boundary-cost interpretation only;
-no identification with the right-angled matching polyhedron is inferred.
-The primary reader also independently verified the Lorentz reflection,
-the impossibility of two failed central halfspaces, all five regular
-tetrahedra, the cube-edge and face-diagonal angle sums, and the exact
-5v3 single-cube volume, with the same topology limitation.
+The cube volume is a local boundary-cost interpretation. It is not identified with the right-angled matching polyhedron; the topology of those constructions remains distinct.

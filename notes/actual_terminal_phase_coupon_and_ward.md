@@ -205,6 +205,4 @@ literal coproduct Ward operators, full lowest/Hermite multiplicity
 maps, every input column of (8), all packet coefficients, the exact
 N=2 coupon, and the macroscopic original-source norm in (5).
 
-Fresh replay: PASS six all-input physical Ward/terminal-completion levels,
-the exact symbolic N=2 coupon, and eight source-norm levels through N=129.
-Compilation passes. No closed-knot geometric estimate is inferred.
+The terminal Ward checks do not establish closed-knot geometry.

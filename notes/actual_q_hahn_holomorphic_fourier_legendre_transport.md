@@ -161,7 +161,7 @@ classical lambda equation is (11), with
 
     y_v=2pi i(delta_v+epsilon_v X_c).
 
-It recovers the ORIGINAL coordinate nu_v, with either actual degree
+It recovers the original coordinate nu_v, with either actual degree
 adapter and the original white-map reversal. It does not force the
 new y_v to be real. This is the precise action-level distinction from
 the [all-radial obstruction](actual_positive_fourier_radial_geometric_obstruction.md).
@@ -198,15 +198,6 @@ analytic statement about those coefficients or the full source cycle.
 
 Focused audit: [source prefactor and Legendre derivative identities](../experiments/audit_actual_q_hahn_holomorphic_fourier_legendre_transport.py).
 
-Primary-agent full analytical review: PASS. The reader recomputed the
-finite product phase and absolute constant, both derivative shifts,
-critical-value restoration, exclusion of the caustic on the full tube,
-and exact winding and finite charge terms. Both actual degree adapters
-and the white-map reversal retain their original scope.
+Both degree adapters and the white-map reversal retain their stated domains.
 
-Independent full analytical review and fresh audit: PASS. A second
-reader checked the same source-normalized action identities and the
-continued square-root convention, and reproduced the five exact audit
-identities. Neither review infers complex finite coefficient indices,
-global injectivity from the local argument, or a contributing source
-cycle.
+The local transport theorem does not introduce complex finite coefficient indices, prove global injectivity, or identify a contributing source cycle.

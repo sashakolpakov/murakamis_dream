@@ -1,6 +1,6 @@
 # Long fillings of the isolated three-leaf Conway source
 
-31 October 2026. Internally reviewed original-source theorem.
+31 October 2026. original-source theorem.
 The isolated closure $C(A_3)=C(hhh)$ has a whole-source alias gap and a
 physical-color complement gap for every fixed pure or signed half-twist
 pattern. Its existing finite complex packet and marked geometry therefore
@@ -371,15 +371,8 @@ arithmetic is being substituted for tangle isotopy. This extension makes
 no assertion about isolated $C(A_2)$, arbitrary algebraic tangles, or
 diagrams varying without bound as $N$ grows.
 
-## Internal review and validation scope
+## scope and validation scope
 
-The complete private source and packet proof, including the exact triple
-kernel, original finite supports, endpoint tangent cancellation, elementary
-three-alias margin, primitive three-dimensional lattice, gate offset,
-changed amplitude and color Hessian, and marked filling interfaces, received
-full analytical/source reviews from the primary agent and both independent
-peer agents. The complementary alias-gap proof received an additional full
-source review. These are internal reviews, not external peer review.
 
 The proof uses the retained original coefficient, packet and marked-geometry
 theorems at the strict isolated state and the exact rational certificate

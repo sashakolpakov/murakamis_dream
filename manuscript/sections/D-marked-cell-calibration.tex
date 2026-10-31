@@ -1,14 +1,12 @@
-\chapter{Original marked cell maps and absolute calibration}
+\chapter{Face maps, peripheral markings, and the absolute volume}
 \label{app:marked-calibration}
 
 This appendix supplies the complete rational dictionary behind
 Chapter~\ref{ch:marked}. Its scope is the completed grammar in
 Definition~\ref{def:grammar}, with two completed cylindrical root children.
-The quadrilateral ports are auxiliary cut data; no physical
+The quadrilateral gluing faces are auxiliary cut data; no physical
 four-punctured-boundary representation is inferred from their moduli.
-The original closed bowtie cut fixes the link group and every peripheral
-path. All matrices below are projective, and all logarithms continue from
-the strict complete chamber. An unfilled main cusp remains unfilled
+The original closed cut fixes the link group and every peripheral path. At each crossing circle its two shaded triangles meet at their common ideal apex; their union is the configuration called a bowtie. We retain both triangles and their labels. All matrices below are projective: multiplying a matrix by a nonzero scalar does not change its Möbius transformation. All logarithms continue from the strict complete chamber. An unfilled main cusp remains unfilled
 after all auxiliary crossing-circle fillings.
 
 \section{Two global incidence checks for the complete anchor}
@@ -26,7 +24,7 @@ its strictly nonflat angle. Thus there are no unrecorded ideal coincidences.
 Second, at every open stage the four output corners are four unpaired
 original terminal singletons. Product consumes $F_2/G_1$ and $F_3/G_0$
 and retains $F_0,F_1,G_2,G_3$; turns only permute these singletons.
-Consumed pairs never reappear on a port. At the root, all four pairs
+Consumed pairs never reappear among the exposed vertices of a gluing face. At the root, all four pairs
 under $C_j^F\mapsto C_{3-j}^G$ join the disjoint root subtrees. Therefore
 every main vertex is exactly a two-terminal pair, not a chain of
 identifications, and a leaf's four corners stay distinct. Its two
@@ -36,7 +34,7 @@ cycle contains four distinct edge occurrences. The horospherical links
 are positive rectangles, and the canonical shaded-side decoration gives
 the actual complete cusp tori described in Chapter~\ref{ch:geometry}.
 
-\section{The selected mixed action and the full face words}
+\section{The selected color action and the complete face-pairing maps}
 Write the pure leaf action and its color derivative as
 \[
  g(x,t)=J(2x)-2J(x)-J(x-t)-J(x+t),\qquad
@@ -82,15 +80,14 @@ same holomorphic branch.
 Schwarz reflection gives the positive sign. Thus the geometry below
 does not select a new source solution or discard a quadratic color phase.
 
-Normalize an ordered leaf port to $(0,\infty,1,R)$, put
+Normalize the ordered gluing face of an elementary pyramid to $(0,\infty,1,R)$, put
 $E=e^{2\pi\ii x}$, $T=e^{2\pi\ii t}$, and select
 \[
  Z=\frac{1+E}{1+T},\qquad
  R=\frac{T(1+E)^2}{E(1+T)^2},\qquad
  Z^2-(1+E)Z+ER=0.
 \]
-The two projection charts have apices $Z$ and $Z/E$. Their four universal
-WHITE or completion maps are
+The two projection charts have apices $Z$ and $Z/E$. Their four maps are listed below. A white map pairs pieces coming from the projection sphere. A completion map is the same algebraic expression at an attachment edge where the adjacent prism supplies the actual face. We distinguish these roles before using the maps in a group relation:
 \begin{equation}\label{eq:app-white-matrices}
 \begin{aligned}
  W_0&=\begin{pmatrix}1&0\\0&E\end{pmatrix},&
@@ -99,8 +96,7 @@ WHITE or completion maps are
  W_3&=\begin{pmatrix}R&0\\1-E&ER\end{pmatrix}.
 \end{aligned}
 \end{equation}
-At a leaf $W_0,W_2$ are its actual WHITE maps; $W_1,W_3$ are completion
-maps supplied by the attached prism at its CAP edges. All matrix identities
+At an elementary pyramid, $W_0,W_2$ are its actual white-face maps. The expressions $W_1,W_3$ become actual maps when the adjacent prism is attached at the edges called cap edges in Chapter~\ref{ch:geometry}. All matrix identities
 here are projective. The pure shaded map and the two odd cross-copy maps are
 \[
  S=\begin{pmatrix}0&-ER\\1&-1-E\end{pmatrix},\qquad
@@ -120,7 +116,7 @@ For a prism, transport all $W_j$ to the coordinates in
  W_{p,0}=W_{F,0},\quad W_{p,2}&=W_{G,2}.
  \label{eq:app-nine-prism-identities}
 \end{align}
-Here \(p\) denotes the output port, not a filling slope.
+Here \(p\) denotes the output gluing face, not a filling slope.
 The nine identifications are identities of entire maps, not just
 cross ratios. They can be verified without geometric continuation:
 use independent phase variables
@@ -137,7 +133,7 @@ P&=1+\mathsf a-
 \]
 The three wire phases are
 \(\mathsf b\mathsf c,\mathsf a\mathsf b,\mathsf a\mathsf b\mathsf c\).
-Normalize each ordered port by
+Normalize each ordered quadrilateral gluing face by
 \[
 M_{a,b,c}(z)=\frac{(z-a)(c-b)}{(z-b)(c-a)},\qquad
 R=M_{a,b,c}(d).
@@ -156,8 +152,7 @@ map $T_Q(z)=(R-1)/(z-1)$ and closing map $C_Q(z)=(z-R)/(z-1)$ satisfy
  T_QW_{j+1}(E,R)=W_j(E^{-1},1-R)T_Q,\qquad
  C_QW_j(E^{-1},R)=W_{2-j}(E,R)C_Q.
 \]
-Thus every triangular piece in a single original WHITE face has the same
-map, even when its deformed image is not planar. For pure leaves,
+The identities show that the map on a white face is independent of which constituent cell is used to compute it. Thus every triangular piece of one original white face has the same map, even when its deformed image is not planar. For pure leaves,
 writing $\overline S$ for $S$ with $E$ replaced by $E^{-1}$, the edge words are
 \[
  W_0S=\overline S W_0,\quad W_2S=\overline S W_2,\quad
@@ -172,9 +167,8 @@ For odd leaves they are
 All hold for independent nearby $E,R$. They include translation and
 dilation, and the reverse words are inverses. The original closed cut
 therefore supplies a representation of the actual half-twist partner
-group: use its dual two-skeleton presentation, with exactly these WHITE
-seams and shaded four-step relations. No representation is inferred from
-port moduli alone. The second charts depend holomorphically on the source
+group: use its dual two-skeleton presentation, with exactly these white-face seams and shaded four-step relations. No representation is inferred from
+the shape parameters of the gluing faces alone. The second charts depend holomorphically on the source
 parameters by the reflected-minus convention, rather than by conjugating
 those parameters.
 
@@ -187,6 +181,8 @@ stays parabolic nearby. Its commuting peripheral partner is consequently
 a translation as well. Every main cusp remains parabolic.
 
 \section{Primitive logs, the absolute regulator, and filling}
+
+We next compute the holonomy of the two actual peripheral curves. Their being primitive is a topological statement about the cusp lattice, so we check their complete translations before using their logarithms. The logarithms below are those of similarity multipliers; they are twice eigenvalue logarithms. This convention explains the factors of two in the volume differential and in the filling equation.
 Put
 \[
  \rho=\frac{Z}{1+E-Z},\qquad Q=\frac{E-Z}{Z-1}.
@@ -286,6 +282,8 @@ are complex similarities. Their uniquely small multiplier logs are the
 complete point before choosing the filling slopes.
 
 \subsection{An actual positive metric on the core and its ends}
+
+The first task is to turn nearby holonomy data into local hyperbolic coordinate charts on the same manifold. On a compact truncated part we average small changes of the complete developing map. On each end we use an equivariant affine construction. Both maps are close to the original one on their common compact collar, allowing them to be joined without losing local invertibility.
 Choose a compact cusp-truncated core with a slightly larger collar,
 finitely many evenly covered balls, and a smooth partition of unity.
 Write \(\eta_{j,\gamma}\) for its lifts, with one chosen lift of each
@@ -338,6 +336,8 @@ oriented nonsingular metric on the original manifold with its ideal
 ends deleted.
 
 \subsection{The logarithmic link and its primitive angular period}
+
+At a filled cusp, the nearby peripheral similarities have two common fixed points. Sending one to infinity and translating the other to zero makes them multiplications. Their logarithms then act by translations on a Euclidean plane. We must show that the translations are exactly the selected small logs $U,V$, with no unnoticed multiple of $2\pi\ii$. Only after this check may the large integer $p$ be used in the relation $U+pV=-2\pi\ii$.
 At a cusp to be filled, the equation \(U+pV=-2\pi\ii\) ensures that
 at least one multiplier differs from one. Commuting affine maps then
 have a common finite fixed point \(q\), in addition to infinity. For
@@ -435,14 +435,3 @@ All auxiliary circles have been filled and the chosen main component is
 the knot. The knot cusp is unfilled. The separate full-source alias,
 complex-packet and entire Fourier-period arguments are what identify this
 geometric action with the original invariant's limiting rate.
-
-\paragraph{Proof records.}
-The full calculations and original source conventions are retained in:
-\begin{itemize}
-\item \path{notes/actual_newton_ideal_prism_and_associativity.md};
-\item \path{notes/actual_conway_bowtie_projection_cut.md};
-\item \path{notes/actual_conway_single_leaf_geometric_composition.md};
-\item \path{notes/actual_conway_marked_peripheral_deformation.md};
-\item \path{notes/actual_odd_conway_marked_peripheral_deformation.md};
-\item \path{notes/general_source_regulator_hyperbolic_equality.md}.
-\end{itemize}

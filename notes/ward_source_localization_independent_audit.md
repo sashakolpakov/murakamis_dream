@@ -116,7 +116,7 @@ closed pivot ratios contributes
 \(q^{-Nm+2Na_j}\). The inverse-writhe twist ratio contributes
 \(q^{Nm\ell}\). Their product is exactly
 \[
- q^{Nm(\ell-b+1)+2N\sum_{\rm closed}a_j}.
+ q^{Nm(\ell-b+1)+2N\sum_{\mathrm{closed}}a_j}.
 \]
 Knot parity makes its root value one. Its logarithmic
 derivative still contains the closed-position moment;

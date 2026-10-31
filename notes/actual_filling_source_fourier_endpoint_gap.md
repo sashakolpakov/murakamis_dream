@@ -3,7 +3,7 @@
 29 October 2026. The full finite filling kernel, including its linear
 normal weight, has exponentially small endpoint-frequency strips when
 paired with an analytic source having a strict complete-color maximum.
-This is an estimate on a truncated ORIGINAL color corridor. It does not
+This is an estimate on a truncated original color corridor. It does not
 bound colors outside that corridor or prove survival of the remaining
 filled saddle. No Fresnel endpoint remainder is replaced by a polynomial
 error.
@@ -117,7 +117,7 @@ dist(phi_k,2pi Z)>=2pi eta_0 on the retained endpoint strips.
 Apply (3) for r=0,1 and sum the N original k values. It follows that
 
 \[
- \boxed{\left\|\frac12\sum_{h=-H}^H K_P^{\rm end}(h)c_h\right\|
+ \boxed{\left\|\frac12\sum_{h=-H}^H K_P^{\mathrm{end}}(h)c_h\right\|
           \le C_P N^{B_P}e^{N(F-g)}.}                 \tag{8}
 \]
 
@@ -287,7 +287,7 @@ Fourier endpoint phase is (-1)^(mN), and their difference is
 
     V_N(v)=U_N(1/2-iv)-U_N(-1/2-iv), 0<=v<=sigma.
 
-The ORIGINAL integer Fourier polynomial mathcalF_N is periodic.
+The original integer Fourier polynomial mathcalF_N is periodic.
 Together with the sinh zeros this gives V_N(0)=V_N'(0)=0 exactly,
 as already checked before (11). The source derivative bound on the
 two vertical strips, with the chirp cost explicitly retained, gives
@@ -327,9 +327,9 @@ registers; they do NOT commute or reorder physical Hopf boxes or
 matrix-valued exterior coefficients. Exact telescoping gives
 
 \[
- \prod_iD_i-\prod_iD_i^{\rm lo}
- =\sum_i\left(\prod_{j<i}D_j^{\rm lo}\right)
-                   D_i^{\rm tail}\left(\prod_{j>i}D_j\right). \tag{14a}
+ \prod_iD_i-\prod_iD_i^{\mathrm{lo}}
+ =\sum_i\left(\prod_{j<i}D_j^{\mathrm{lo}}\right)
+                   D_i^{\mathrm{tail}}\left(\prod_{j>i}D_j\right). \tag{14a}
 \]
 
 For fixed M_j, the real-integral functional D_j^lo has supremum

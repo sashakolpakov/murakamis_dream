@@ -1,6 +1,6 @@
 # Exact monotone alias response of a two-leaf Conway block
 
-31 October 2026. Internally reviewed analytical and original-source
+31 October 2026. analytical and original-source
 statement. The one- and two-alias conjugate gaps of an actual two-leaf
 seed increase with its complete output slope throughout the proper-port
 range. The proof retains the original multiplication constraints and
@@ -309,14 +309,3 @@ The local envelopes remain upper bounds rather than asserted
 signed coefficient limits. The full quantum and filled-volume
 conclusion still uses the separately proved packet and primitive
 geometric interfaces.
-
-## Internal review
-
-The primary reviewer and coherent-source reviewer each independently
-read §§1–4 in full: PASS. The review checked the proper-angle
-restriction, all fixed-output nonvertex-flat boundary cases, strict
-input concavity, both core response branches and their seam, the
-symmetric two-alias derivative, and compact conjugate-argmax
-separation. These are internal analytical reviews, not external
-peer review. No numerical optimizer or asymptotic sampling is
-used to infer the response theorem.

@@ -70,16 +70,11 @@ conflated.
 
 ## 4. Verification and limits of the checks
 
-The primary agent read the new positive-core, primitive-period and
-compact-log/tube proofs against the existing source, port and regulator
-statements. Independent reviewers checked the primitive spin and angle,
-the complete tube and its degree, the positive-core construction, and
-the Casson--Rivin first variation on arbitrary angle tangents. The
-source and geometric thresholds were checked for signed unequal slopes.
+The completion argument combines the positive core, primitive period, complete log-link tube and Casson–Rivin variation on all angle tangents. Both the source and geometric thresholds allow independently signed unequal slopes.
 
-A fresh primary-agent run of
+The finite audit
 `experiments/audit_actual_long_pretzel_primitive_filling_angle.py`
-passed its exact spin/angle algebra,120 signed core families,32 small-log
+checks the exact spin/angle algebra,120 signed core families,32 small-log
 calibrations and5 Fermi metric checks. These checks calibrate formulas;
 the uniform proof of smooth completion is in the notes, not inferred
 from those finite examples. The previous full-source audits and their

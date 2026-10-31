@@ -264,4 +264,4 @@ average. The coefficient \(1/48\) is exact. The entropy and covering
 inequalities are analytical; these finite checks are not a proof of a
 general covering topology or of the open universal sector bound.
 
-Independent full analytical review and exact-source replay: coherent partner, PASS. The review retains the open universal-capacity scope.
+The universal capacity comparison remains open.

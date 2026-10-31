@@ -41,7 +41,7 @@ the fixed cover:
 
 One can instead use a fixed nonsingular linear combination of the
 derivatives if a coordinate cover requires it; all norm comparisons then
-have fixed constants. It is necessary to use the ORIGINAL exponentiated
+have fixed constants. It is necessary to use the original exponentiated
 equations, not powers that introduce additional solution components.
 Integer changes of the recorded flattening do not change (2).
 

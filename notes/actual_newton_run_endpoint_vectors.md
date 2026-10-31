@@ -68,7 +68,7 @@ For every FIXED k>0 and FIXED h>=0, set
                          exp[-i pi N(l-epsilon/2)^2/k].    (5)
 
 This is algebraic and periodic in N modulo8k. With C_(N,k) exactly
-the phase in that theorem, the ORIGINAL source obeys
+the phase in that theorem, the original source obeys
 
     phi(r^k Bhat_h)
        = C_(N,k) N^(3/2+2h)/(pi^(2h)(h!)^2) G_(k,h)(N)
@@ -219,10 +219,4 @@ They supplement the all-k pairing/Vandermonde proof above; a successful
 specialization is not itself a proof of an identity over the complex
 cyclotomic field.
 
-Independent analytical reviews passed for the exact all-m endpoint
-identities, full fixed-h Hermite fold/asymptotic, and the universal
-paired Gaussian/Vandermonde nonvanishing theorem. The expanded audit
-passes eleven full original source families,360 coefficient checks,
-42 Gaussian profiles and1656 exact cyclotomic modal residue vectors.
-These finite checks supplement the universal pairing proof; they do
-not extrapolate it from the tested twist powers.
+The finite audit checks original source families, coefficient identities, Gaussian profiles and cyclotomic modal residue vectors. These checks supplement the universal pairing proof; they do not extrapolate it from the tested twist powers.

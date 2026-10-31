@@ -52,7 +52,7 @@ The source is preserved while the positive energy is reduced.
 
 ## 2. The literal pair-CD polynomials, not a new spectral model
 
-Let A be the ORIGINAL middle-degree pair Casimir, in the physical
+Let A be the original middle-degree pair Casimir, in the physical
 basis |a,d-a>, a=0,...,d. Its entries are
 
     A_(a,a)=D_a=4qQ^a-q(1+Q)Q^(2a),
@@ -184,9 +184,4 @@ would be a substantive next step.
 
 Audit: [literal marked braid sources, pair CD, coherent grid and tensor Parseval](../experiments/audit_actual_marked_multiport_chebyshev_source_packet.py).
 
-Independent analytical review rederived the physical C/H conjugations,
-the unrestricted-to-middle marked-source step, all normalization
-powers, the two-parity DCT reproducing kernel and exact dual norm.
-A separate fresh replay passed seven original CD levels, 21 all-input
-tensor packets and four coupled six-head marked braid sources. These
-checks do not assert a sharp geometric bound or a generic-q germ.
+The marked Chebyshev packet does not give a sharp geometric bound or a generic-q germ.

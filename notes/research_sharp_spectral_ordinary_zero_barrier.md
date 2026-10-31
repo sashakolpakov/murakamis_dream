@@ -1,13 +1,6 @@
 # Ordinary-zero barriers for the sharp spectral interval entropy
 
-31 October 2026. **Internally reviewed research reduction.** Root and a
-separate reader completed full analytical reviews. This concerns the ORIGINAL
-positive-eta tail and both unused intervals at a fixed real spectral
-parameter. It is not the fractional perspective entropy. The shared
-conclusion is conditional on a feasible activation direction and on the
-stated regularity of every affected local term. It does not establish
-universal regularity of all source maxima or finite positive multipliers
-on structural-zero strata.
+The zero barrier is at fixed real spectra and retains the positive unused intervals. Feasible activation and the stated regularity assumptions are essential; it does not prove regularity or finite multipliers at every global maximum.
 
 ## 1. Exact functional and source qualification
 
@@ -45,8 +38,7 @@ large levels. The usual tail is K_(i,j)=product_(r=i+1)^j s_r^2 Q_(i,j).
 All unused alpha rows and the omitted-half scalar still multiply it.
 
 The positive word's coefficient entropy equals J^*: for mu>0 and
-strict outer proportions this is the reviewed
-[positive-transfer Perron/coefficient theorem](research_positive_eta_word_transfer.md). The same rate identification extends to
+strict outer proportions this is the [positive-transfer Perron/coefficient theorem](research_positive_eta_word_transfer.md). The same rate identification extends to
 mu=0 by endpoint truncation. For precision, cut the first aN letters,
 with a>0 fixed and small. Their total coefficient mass at any bounded
 positive tilt has normalized logarithm O(a log(1/a)), since
@@ -288,7 +280,7 @@ of all diagonal/pole/terminal strata, and no complete-volume inequality.
 
 ## 6. Terminal-row calculus, with the KKT boundary retained
 
-The six ordinary-zero coefficients in the reviewed barrier theorem remain
+The six ordinary-zero coefficients in the barrier theorem remain
 valid at nu=1/2 when 0<=mu<nu and delta lies in a fixed compact subset
 of (0,1/2). Only the affine directions allowed by the original LEFT
 bound are used: dot_nu<=0 at this endpoint.
@@ -318,7 +310,7 @@ additional KKT multiplier can remain. No terminal retagging, complete
 triangle substitution, or all-interior spectral classification is
 licensed by this extension.
 
-## Dependencies and review scope
+## Dependencies
 
 The [original one-sided source](actual_global_left_weighted_spectral_envelope.md)
 retains both unused row products and the omitted-half scalar. The
@@ -327,11 +319,4 @@ the coefficient input used above. This note proves its own directional
 boundary estimates and bounded-flow activation criterion; it does not
 borrow concavity or atomization from a different entropy.
 
-Root and an independent reader checked the entire proof: endpoint
-truncation, both tilt scales, all six singular coefficients, finite Hall
-cuts and residual activation, and the negative fixed-spectrum examples.
-The terminal-row calculus extension received separate full analytical
-review with its active-inequality qualification. No numerical asymptotic
-audit is claimed. The open strata and conditional
-source-identification scope in sections 1, 3 and 5 remain part of the
-theorem.
+The active terminal inequality is essential. Sections 1, 3 and 5 concern the specified open strata.

@@ -274,13 +274,7 @@ matrix construction and compare all colors j<N through complete knot
 cuts, including four-strand words and non-highest open inputs. A separate
 closed-component failure is checked explicitly.
 
-Fresh result: **PASS**, seven quotient levels N=2,...,8, 228 whole-knot
-quotient-cut comparisons, and 22 literal signed-cable families through
-N=9, including boundary colors j=N-1 and both level parities.
-An additional 28 exact cut comparisons at generic x and -x, away
-from the integer-color orbit, independently check the even M descent
-used to pass to the Y-coordinate. No full-state pole is evaluated.
-[Saved results](../experiments/actual_ordinary_color_comparison_results.json).
+The finite fixtures check the stated ordinary comparison. They do not establish a full-state pole bound.
 
 The checks supplement the all-level arguments above. The result is a
 verification of the ordinary-color polynomial bound's input, not a

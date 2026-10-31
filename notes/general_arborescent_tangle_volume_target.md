@@ -87,7 +87,7 @@ tangle do not by themselves prove such closure.
 
 ## 2. The baseline grammar and its subsequent enlargements
 
-The existing internally reviewed Conway results already give a
+The existing Conway results already give a
 constructive subclass with unbounded branching and turn depth. After
 ALL auxiliary circles are filled, write
 
@@ -280,7 +280,7 @@ The [algebraic boundary-curve theorem](research_cap_algebraic_boundary_curve_and
 constructs these explicitly for the original one-cap exterior and
 reconstructs its quantum root density from the same branch. Restoring
 the original complete cap gives a unique algebraic point and an
-absolutely normalized period equal to the ORIGINAL drilled hyperbolic
+absolutely normalized period equal to the original drilled hyperbolic
 volume divided by 2pi. This is an actual geometric calibration, not
 a claim that an arbitrary eliminated curve carries that volume.
 

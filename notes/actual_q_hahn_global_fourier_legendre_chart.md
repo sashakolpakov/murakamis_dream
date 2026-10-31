@@ -111,13 +111,4 @@ global period questions keep the scopes of their separate theorems.
 
 Focused audit: [reflection and momentum injectivity identities](../experiments/audit_actual_q_hahn_global_fourier_legendre_chart.py).
 
-Primary-agent full analytical review: PASS. The reader checked the
-complementary convex cone, normalized slit root, reflection sign,
-injective root and Möbius momentum, source calibration along complex
-tau paths, marked exponential strip and global inverse onto its image.
-
-Independent full analytical review and fresh focused audit: PASS. A
-second reader checked the same proof, including repeated roots and
-xi=1/2, and reproduced the three exact algebraic identities. Both
-reviews retain the open-image scope and infer no finite complex-index
-coefficient theorem or contributing global source cycle.
+The chart is a global inverse onto its open image. It does not define finite complex-index coefficients or identify a contributing global-source cycle.

@@ -5,7 +5,7 @@ Euler/Gaussian completion whose error raises the TOTAL INTEGER
 head degree by N. On b strands all positive multiples-of-N errors
 form a source-null ideal with bth power zero. Consequently every
 SIGNED braid word in the completed generators and their literal
-inverses has exactly the ORIGINAL full one-cut pivotal matrix.
+inverses has exactly the original full one-cut pivotal matrix.
 This holds at every root and as the whole original meridian family.
 
 The bounded nilpotence concerns the error between two realizations,
@@ -32,7 +32,7 @@ is C(f^a e_k)=f_total^a(e_0 tensor e_k). Its physical kernel is
     C_(u,v;a,k)=x^(u-a) F_a F_v/[F_(a-u)F_k]
        if 0<=u<=a, v=k+a-u<N; otherwise zero.       (1)
 
-Retain the ORIGINAL common Cartan scalar kappa=R_(00,00). It can
+Retain the original common Cartan scalar kappa=R_(00,00). It can
 equally be recorded in its prescribed external Hom/normalization line;
 it is not reset in this calculation. The positive crossing R commutes
 with the actual diagonal Borel action, so C^-1 R C is RIGHT
@@ -175,7 +175,7 @@ need not satisfy the braid relation as matrices: the exact audit
 finds nonzero positive-weight braid defects. No unrestricted new
 braided tensor functor is claimed.
 
-## 5. The ORIGINAL full first-cut matrix kills the ideal
+## 5. The original full first-cut matrix kills the ideal
 
 Use the actual pivotal closure on all heads except the first,
 with the original diagonal pivots g_i=K_i^(1-N). In a matrix entry
@@ -204,7 +204,7 @@ rational meridian families, not only their complete values. It
 therefore preserves their M-normal germs, all meridian derivatives,
 all defined orbit values M->q^j M, and the full peripheral rational
 map/source-lattice product. Any specified root-specialized
-annihilator of the ORIGINAL meridian period also annihilates the
+annihilator of the original meridian period also annihilates the
 completed period. No assertion of a generic-q annihilator or a
 new ordering of the classical A-polynomial is needed for this
 consequence.
@@ -250,7 +250,7 @@ complex. It must not be promoted to that stronger statement.
 
 ## 6. What has moved on the critical path
 
-The ORIGINAL root state at arbitrary braid index now has an exact
+The original root state at arbitrary braid index now has an exact
 realization using explicit Euler and marked Gaussian factors with
 no local nonwrapped-path cutoff, modulo a SOURCE-NULL ideal of
 uniformly bounded nilpotence. This is a genuine extension beyond
@@ -298,7 +298,7 @@ crossing and the natural finite-kernel continuation of (3) are
 
 At Q=-1 their difference has only degree +2, as proved above.
 Off root it also has the degree-zero term
--(Q+1)x^-2 E_(11,11). On the ORIGINAL three-strand figure-eight
+-(Q+1)x^-2 E_(11,11). On the original three-strand figure-eight
 word (1,-2,1,-2), use the actual pivot diag(x^-1,Q/x), the
 literal negative inverses and the highest first-input cut. Exact
 symbolic multiplication gives
@@ -348,6 +348,4 @@ the characteristic-zero q-normal counterexample (11)-(13).
 
 There are 74 nonzero full-word errors, so the source equality is
 not merely equality of the two tensor matrices. The proofs above
-are all-level. Another agent independently derived (2) and checked
-the grading, inverse, full-cut argument and the nonzero E coupon.
-Finite exact checks verify conventions and scope.
+are all-level. Finite exact checks verify conventions and scope.

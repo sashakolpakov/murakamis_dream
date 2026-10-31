@@ -230,12 +230,4 @@ complement or an automatic survival theorem after coherent sewing.
 
 Audit: [finite reflection, joint saddles and complex packets](../experiments/audit_actual_trivalent_candidate_racah_partition_geometry.py).
 
-Independent internal analytical review passed the unique saddle,
-four-angle concavity, all-color scalar gap, half-step amplitude,
-joint cubic and actual normalizer calculation. A fresh primary
-replay passed eleven exact all-triple reflection families, the
-symbolic amplitude identity, four all-parity joint Laplace families
-and two canonical complex factorial windows. The separate finite
-source identity and its phases passed root and independent internal
-proof reviews and a fresh all-order exact algebra replay. No external
-peer review or full-tensor geometric conclusion is asserted.
+The scalar saddle theorem and finite source identity do not imply a full-tensor geometric conclusion.

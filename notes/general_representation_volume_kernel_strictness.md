@@ -1,6 +1,6 @@
 # Strict representation-volume loss from an actual kernel
 
-30 October 2026. Independently reviewed. This proves a geometric implication
+30 October 2026. This proves a geometric implication
 once the source capacity has been identified with the indicated
 representation volume. It does not identify smoothed blocks with JSJ
 pieces or supply that representation by itself.
@@ -369,7 +369,7 @@ this corollary.
 ## 5. Scope still needed for degenerate smoothing
 
 To apply this geometric strictness result to the actual smoothed
-capacity one must construct a representation of the ORIGINAL
+capacity one must construct a representation of the original
 complete source group whose volume is the sum of the proved capacity
 blocks, and show that the actual essential deleted crossing meridian
 lies in its kernel. For a connected certified hyperbolic smoothed
@@ -388,17 +388,4 @@ matrix bound, cusp-flux control, and kernel-exclusion argument above
 are supplied here rather than importing that theorem's proof. No
 novelty claim is made for natural-map volume rigidity.
 
-Primary full analytical review: PASS, including the
-nonperturbative axial quantile estimate, whole-Hessian lower bound,
-fixed-s cusp-volume identification, matrix maximum, and propagation
-of the normalized local isometry limit, together with the actual
-filling-cap normalization in section4.
-
-Independent full analytical review: PASS. The reviewer checked the
-same map and cusp arguments, the kernel-preserving target normalization,
-and both the axial and rank-one parabolic filling-cap cases. The regular
-smoothing source corollary retains its exact certificate, marking, and
-untwisted polynomial-insertion hypotheses. Neither a degenerate block
-sum representation nor a signed-small-port quantum bound is inferred.
-No finite numerical test is used as a substitute for these analytic
-arguments.
+The smoothing corollary requires its exact certificate, marking and untwisted polynomial-insertion hypotheses. It does not construct a representation from a degenerate block sum or bound signed small ports.

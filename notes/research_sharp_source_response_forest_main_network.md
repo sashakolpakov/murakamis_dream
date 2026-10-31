@@ -1,7 +1,7 @@
 # Exact Green responses and an original MAIN-network instability certificate
 
-31 October 2026. **Internally reviewed analytical research continuation**
-of the reviewed constrained-Hessian reduction. No universal instability, globally realized
+31 October 2026. **analytical research continuation**
+of the constrained-Hessian reduction. No universal instability, globally realized
 stable counterexample, or absolute source/volume bound is claimed.
 
 ## 1. Scope and the exact Green response
@@ -12,14 +12,13 @@ ordinary face has demand one. Local rows have supply one and positive
 load on every ordinary incidence. Complete CROSS spectra are held at
 zero; strict Green spectra vary; residual cap spectra are held at 1/2.
 For a constrained non-CROSS maximum retain the inherited high-value
-hypothesis. Its strict overload is automatic by the independently reviewed
-[closed CROSS comparison and seam-gap theorem](research_sharp_cross_degree_domination_and_seam_gap.md).
+hypothesis. Its strict overload is automatic by the [closed CROSS comparison and seam-gap theorem](research_sharp_cross_degree_domination_and_seam_gap.md).
 No enlarged angle fiber is used here.
 
 Let v denote local row-simplex coordinates, K the positive fixed-spectrum
 row stiffness, and B the row/spectral derivative. The preferred local
 row displacement of a Green under a unit spectral change is K_e^{-1}B_e.
-Let r_e be its vector of ORIGINAL face-load changes.
+Let r_e be its vector of original face-load changes.
 
 For LEFT, write A=x+y, P=xy, z=sin^2(pi delta),
 D_0=A^2-4Pz and C_0=A+2bz. At a strict critical Green,
@@ -304,7 +303,7 @@ The exact response has
     z=sin^2(pi delta),
     Delta=sqrt((x+y+2bz)^2-[(x+y)^2-4xyz]).
 
-At the already reviewed protected-outer local datum
+At the protected-outer local datum
 
     (mu,nu,delta)=(1/6,1/3,1/4), (x,b,c,y)=(1,1,3,0),
 
@@ -347,17 +346,7 @@ No numerical search or source asymptotic claim enters this addendum.
 
 ## Internal validation and remaining scope
 
-Root read the complete analytical/source derivation, PASS. An independent
-reader checked the complete cap-projected rank argument and MAIN-network
-construction in sections 2--4, PASS, including actual spectator incidence,
-repeated-port budgets, range conditions and the variational resistance
-inequality. These are internal reviews, not external peer review.
-The local Hessian/Schur-complement predecessor has separate full reviews.
-Root and a separate reader also completed full analytical/source reviews
-of the additional sections 5--8, PASS: the maximal-child component count,
-exact CROSS compliance, conditional spectator-repair obstruction and
-geometric-ratio comparison with its explicit limitation.
-No numerical audit or diagnostic search is used as proof.
+The network gives a conditional spectator-repair test. No universal inequality for the full constrained Hessian follows from it.
 
 The original MAIN/MATCHING incidence used here is that of the
 [certified augmented plat dictionary](general_augmented_plat_matching_geometry.md).

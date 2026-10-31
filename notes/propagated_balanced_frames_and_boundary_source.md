@@ -164,7 +164,7 @@ to be proved.
 
 There is also a direct obstruction to erasing the boundary co-source
 by moving each radius gauge along the knot to its marked cut. Put
-D(t)|a>=t^a|a>. In the ORIGINAL complete crossing a positive transfer k
+D(t)|a>=t^a|a>. In the original complete crossing a positive transfer k
 has input (a,b), output (b+k,a-k); a negative transfer has output
 (b-k,a+k). Consequently, EXACTLY,
 
@@ -191,7 +191,7 @@ positive crossing (its unit scalar cancels in the writhe-zero word)
     W=R_2^(-1) R_1 R_2^(-1) R_1,
     mu(X)=Tr[(e tensor g tensor g) W X].
 
-Direct exact multiplication gives the ORIGINAL figure-eight value
+Direct exact multiplication gives the original figure-eight value
 mu(1)=5 and, for the same radius gauge placed on the three heads,
 
     mu(D(t) tensor I tensor I)=5(1+t)/2,

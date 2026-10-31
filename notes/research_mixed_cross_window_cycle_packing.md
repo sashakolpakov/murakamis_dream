@@ -1,11 +1,6 @@
 # Mixed whole-CROSS and regular-window phase losses
 
-31 October 2026. **Internally reviewed research theorem and conditional
-source-rate criterion.** Root and a separate reader completed full
-analytical reviews. This combines the original
-whole-CROSS cofactor angular bound with regular moving windows on the same
-face torus. The majorants below are exact finite source quantities. No
-comparison of their product with the complete volume is assumed.
+The cycle-packing conclusion is conditional on the stated hypotheses. A product formula for the complete capacity is not assumed.
 
 ## 1. The whole-CROSS polynomial, with both parities retained
 

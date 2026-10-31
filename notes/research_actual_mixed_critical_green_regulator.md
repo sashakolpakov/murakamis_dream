@@ -1,12 +1,6 @@
 # Correct mixed-color symbols at a critical signed Green collar
 
-Unpublished workspace research theorem, 31 October 2026. Internally
-reviewed local source identity, with exact author verification and a
-fresh independent portable replay for both reciprocal auxiliary flags,
-both central lifts and every retained half sign. This
-repairs the color error in the quarantined20/25-symbol notes.
-The universal Gauss maps in those notes were correct, but their
-symbols had put color-1 on an auxiliary strand whose color is not-1.
+31 October 2026. This local source identity uses the actual transported auxiliary colors. It corrects the color error in the quarantined 20/25-symbol notes: their universal Gauss maps were correct, but their symbols assigned color 1 to an auxiliary strand whose color is not 1.
 
 The result below concerns the ACTUAL mixed crossing Bloch sum on the
 stated regular critical collar. It does not identify that sum with
@@ -31,7 +25,7 @@ universal Gauss update applies to arbitrary Casimirs; this is why
 the previously verified matrix maps survive the correction.
 
 There is also an explicit non-dilog part. Let l1=Log chi1,
-l2=Log chi2, a=Log A,b=Log B,t=Log C, with the ORIGINAL unwrapped
+l2=Log chi2, a=Log A,b=Log B,t=Log C, with the original unwrapped
 Cartan and parity branches. Writing the leading coefficient as
 exp[N W/(2pi i)], the literal mixed formula gives
 
@@ -121,7 +115,7 @@ may flip the auxiliary central sign. No unrecorded logarithm reset
 is made. Covering both f and both lifts avoids assigning the original
 scalar mode from trace alone.
 
-## 3. Propagate colors in the ORIGINAL four-crossing word
+## 3. Propagate colors in the original four-crossing word
 
 Start with colors(-1,-1,chi_aux) and apply positions[2,1,1,2].
 They propagate as
@@ -209,31 +203,9 @@ The author-passed exact verifier and complete corrected shape lists are
     experiments/research_audit_actual_mixed_critical_green_regulator.py
     experiments/research_actual_mixed_critical_green_regulator_results.json
 
-The [portable direct verifier](../experiments/research_audit_actual_mixed_critical_green_regulator.py)
-accepts --output and reconstructs EVERY universal head and actual
-mixed symbol from its input heads and transported colors. It reads
-no private result file. Its helper supplies only the already checked
-universal Gauss maps, factor arithmetic and formal-shape domain
-certificate. The symbols themselves are generated directly from(1).
-No formal-symbol result is relabeled as an actual-source result.
-The expanded portable direct replay passed all twelve cases: three
-preferred-word identities,54 returned head coordinates,36 color/flag
-identities,12 actual mixed differential tensors and280 endpoint
-valuations. A separate focused check then proved all560 uncancelled
-leading numerator/denominator anchor values nonzero before ratio
-cancellation. Coherent subsequently completed a fresh independent
-replay of the strengthened PORTABLE twelve-case verifier, reproducing
-all those counts including all560 uncancelled checks. The saved main
-result beside the verifier is that complete independent replay; the
-earlier focused supplemental record is
-[retained separately](../experiments/research_mixed_critical_green_uncancelled_anchor_results.json).
+The [portable direct verifier](../experiments/research_audit_actual_mixed_critical_green_regulator.py) accepts --output and reconstructs every universal head and actual mixed symbol from its input heads and transported colors. It reads no private result file. Its helper supplies only the already checked universal Gauss maps, factor arithmetic and formal-shape domain certificate. The symbols themselves are generated directly from(1). No formal-symbol result is relabeled as an actual-source result. Its twelve cases check the preferred words, returned heads, color/flag identities, mixed differential tensors and endpoint valuations. The 560 uncancelled leading numerator and denominator anchor values are tested for nonvanishing before ratio cancellation. The [supplemental record](../experiments/research_mixed_critical_green_uncancelled_anchor_results.json) retains the separate anchor calculation.
 
-Internal review: root completed the corrected source/proof and direct
-code review and a fresh selected-flag six-case replay. Coherent
-completed the full corrected proof/code review, the selected-flag
-six-case replay, and the strengthened direct twelve-case replay.
-These are internal analytical and exact-algebra checks, not external
-peer review. The theorem remains unpublished and local.
+The regulator theorem remains local.
 
 The actual global chain question remains open. In
 crossing_fundamental_cycle.md, the determinant/five-term comparison

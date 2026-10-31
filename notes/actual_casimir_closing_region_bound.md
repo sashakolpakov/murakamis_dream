@@ -1,6 +1,6 @@
 # The original operator period has a controlled closing region at two
 
-30 October 2026. Independently reviewed. A whole right half-disk
+30 October 2026. A whole right half-disk
 at the spectral endpoint has vanishing exponential cost as its radius
 tends to zero. The bound is uniform over EVERY physical degree and
 every original matrix entry, including the Jordan blocks. Fixed genuine
@@ -212,7 +212,7 @@ from this overlap alone.
 
 ## 4. Actual generic normals remain controlled
 
-For each fixed j>=1 the displayed ORIGINAL generic matrix satisfies
+For each fixed j>=1 the displayed original generic matrix satisfies
 
     ||partial_h^j J_t(q exp(h)) evaluated_(h=0)||op<=C_j N^j.
 
@@ -326,20 +326,4 @@ block by an uncontrolled environment is not a completed volume bound.
 
 Audit: [dyadic path comparison, all-prefix determinants and original Green entries](../experiments/audit_actual_casimir_closing_region_bound.py).
 
-Independent review of Sections 1--5: the root and geometry agents
-checked the full analytical proof, including the angular cone and its
-strict-prefix overlap. The geometry agent freshly replayed the audit:
-128 dyadic partitions and deleted-spring matrices, 6,951 block scales,
-1,089 all-prefix congruences and positive determinant comparisons,
-5,445 original Green entries and exact product cancellations, 264
-characteristic half-plane comparisons, 12 first and 12 second genuine
-q-resolvent identities, 24 spectral identities, 254 node-distance
-bounds and 2,025 angular characteristic-product bounds passed.
-The finite spectral-count samples are explicitly diagnostics; the
-uniform estimates are proved above. The Section 6 assembly uses only
-the two independently reviewed bounds and the displayed Leibniz count.
-The root and source agents independently checked that assembly,
-including the actual face factor, conservative power of N, arbitrary
-shrinking radii for k=0, fixed angular exclusion and the explicit
-surrounding-environment limitation: PASS. No new numerical test is
-needed for this finite Leibniz consequence.
+The finite spectral-count samples are diagnostics. The uniform estimates come from the proof. Section 6 uses the two bounds and the displayed Leibniz count, retaining the actual face factor, conservative power of N, arbitrary shrinking radii when k=0, fixed angular exclusion and the stated surrounding-environment limitation.

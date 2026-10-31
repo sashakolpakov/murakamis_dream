@@ -14,7 +14,7 @@ framework. It is not a new quantum invariant or a selected-cycle theorem.
 Let N>=2, h=2pi*i/N, d=N-1 and use the exactly normalized functions
 Fhat_N and G_N of
 [the factorial theorem](exact_factorial_interpolation_and_complex_contours.md).
-Let Psi be the ORIGINAL positive full function and
+Let Psi be the original positive full function and
 
     phi_N=Psi(h)=sqrt(N)exp{i pi[1/4-(N+1/N)/12]}.
 
@@ -78,7 +78,7 @@ is real. The proved conjugation identity therefore gives |Psi|=1.
 As |phi_N|=sqrt(N), we have |H|=1 on this entire vertical line.
 Equation (3) now forces m=0. This proves (1), including its phase.
 
-## 2. Exact five-function ORIGINAL crossing coefficient
+## 2. Exact five-function original crossing coefficient
 
 For the positive physical crossing with input (a,b), total transfer k,
 and output (b+k,a-k), the original coefficient is

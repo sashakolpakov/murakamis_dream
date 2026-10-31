@@ -1,7 +1,7 @@
 # A uniform opposite-equal-face bound for the original cleared cofactor
 
-31 October 2026. Internally reviewed analytical research theorem.
-This concerns the ORIGINAL raw cleared cofactor R_j, not only its
+31 October 2026. analytical research theorem.
+This concerns the original raw cleared cofactor R_j, not only its
 complete determinant. It is a signed evaluation at x=-C,b=C,y=Z>=0,
 uniform over every real spectral value. No original shared-source
 Phi_D bound or filled-invariant conclusion is asserted.
@@ -404,13 +404,4 @@ bound, an all-face-phase bound, a Green-star endpoint comparison,
 or an absolute bound by the original complete source volume.
 Other shared face targets and other coupons remain to be controlled.
 
-Inputs are the exact source/node adapter, the reviewed determinant
-prefix bound, and elementary positive transfer/interpolation.
-No numerical scan or finite asymptotic test is used.
-Internal review: root full analytical/source read, PASS; coherent partner
-full independent analytical/source read, PASS, including the closed Z=0
-extension. Geometry independently checked the exact integral identity
-and the closed-face uniformity, PASS. The reviews concern the original
-raw cofactor and its stated real face specialization; no arbitrary-face
-torus or Phi_D conclusion is included. No numerical audit is required
-for these exact identities and analytical upper bounds.
+This raw-cofactor bound is for the specified real-face specialization, including $Z=0$. It does not cover an arbitrary face-phase torus or prove a complete-volume comparison.

@@ -1,6 +1,6 @@
 # Effective boundary response and the original global cap variance
 
-31 October 2026. **Internally reviewed analytical research theorem.**
+31 October 2026. **analytical research theorem.**
 Unpublished. This concerns the exact ONE-cap
 coefficient at cap spectrum +2 and all other original CROSS spectra -2,
 on ODD levels. It supplies a classical positive Hessian test for the
@@ -200,7 +200,7 @@ For two distinct supported corners, direct differentiation gives
 The diagonal is the sum of the incident g values by homogeneity. A
 protected endpoint contributes no log variable and no such edge;
 when exactly two weights are supported, (10) still holds with the
-third weight zero. Sum these edge conductances over the ORIGINAL
+third weight zero. Sum these edge conductances over the original
 exterior triangles. Then H is their graph Laplacian with the boundary
 vertex C grounded, and
 
@@ -237,7 +237,7 @@ requirements for a filled-period theorem. The conclusion in (8) is
 only the stated original one-cap/all-CROSS endpoint sector, with every
 source normalization and target retained.
 
-## Dependencies and internal review
+## Dependencies
 
 The local determinant and curvature inputs are
 [the actual determinant curvature theorem](actual_q_hahn_boundary_model_curvature.md) and
@@ -249,12 +249,3 @@ omitted-tail gap are in
 [the global negative-axis reduction](research_global_cap_negative_axis_and_mahler_bound.md).
 The geometric alternative is
 [the original one-cap chain budget](research_one_cap_original_chain_volume_budget.md).
-
-Root derivation complete. Coherent independently read sections 1–4
-in full and reported analytical/source PASS, including the anchored
-Hessian, actual positive coefficient torus, fixed complex neighborhood,
-derivative convergence and fixed-spectrum scope. The explicit
-conductance formulas (10)–(12) received a separate independent full
-written review: PASS, including the zero-corner conventions, absence of
-an extra energy factor, and the Bernoulli upper bound. These are internal proof reviews,
-not external peer review.

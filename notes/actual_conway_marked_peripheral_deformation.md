@@ -23,7 +23,7 @@ Fix a retained cylindrical factor C(A), A=h^3, or C(FG), where F,G
 belong to the robust turn/product grammar. Delete its final forced-flat
 product and retain the exact relation between the two final wire labels.
 For its free wire coordinates y and independent auxiliary parameters t_i
-write the ORIGINAL mixed-core action
+write the original mixed-core action
 
     f(y,t)=sum_i g(x_i(y),t_i)+sum_products m(x,y,z),
     g(x,t)=J(2x)-2J(x)-J(x-t)-J(x+t),
@@ -393,19 +393,9 @@ and its separately checked quantum source, such as retained odd twists.
 
 Audit: [exact peripheral and transport matrices](../experiments/audit_actual_conway_marked_peripheral_deformation.py)
 and [results](../experiments/actual_conway_marked_peripheral_deformation_results.json).
-PASS for all nine generic prism identities over Q(A,B,C), all four
+The finite audit checks all nine generic prism identities over Q(A,B,C), all four
 turn identities, all four cylindrical closure identities, the three
 pointwise shaded-edge identities, and every main/auxiliary peripheral
 matrix check. No sampled phase values are used in this audit.
 
-Independent internal review: the coherent-source agent read the full
-closed-cut representation construction, main meridian topology,
-opposite-root/holomorphic continuation, primitive auxiliary logs,
-absolute regulator and filling sign, and reported PASS. Its independent
-replay of the exact symbolic audit also passed.
-The local-cell/source agent independently read the full proof and
-replayed the audit with PASS. It additionally recomputed the two white
-slopes in the original leaf coordinate and their longitude composition,
-recovering the complete translation -2(E+1) and the multiplier (16).
-
-Primary-agent full analytical review and fresh symbolic audit: PASS. The review checked ordered child-port metrics, plus/reflected-minus world frames, all prism/turn/closure and shaded-edge identities, the actual closed-cut group presentation, both main peripheral multipliers, primitive auxiliary paths, holomorphic continuation, and the boundary-corrected absolute regulator.
+In the original leaf coordinate, the two white slopes compose to the complete longitude translation -2(E+1), with multiplier (16).

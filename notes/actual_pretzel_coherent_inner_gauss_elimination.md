@@ -370,7 +370,7 @@ its strict lower-range profile gap. The
 states that additional gate explicitly before applying (17) to the
 original marked residue.
 
-Fresh audit replay: PASS eight independent generic finite transforms,
+The finite audit checks eight independent generic finite transforms,
 39 complete root families N=2,...,40 (EVERY r, both exact transformed
 phases and the source Ward), six complex-amplitude profiles through
 N=256, and four literal high-packet central-window families at

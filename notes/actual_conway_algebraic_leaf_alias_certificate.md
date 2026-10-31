@@ -1,6 +1,6 @@
 # The exact alias-tangent threshold and a rational port certificate
 
-31 October 2026. **Internally reviewed analytic and original-source certificate.**
+31 October 2026. **analytic and original-source certificate.**
 The exact algebraic port condition below gives a uniform mixed-source gap;
 it is a sufficient condition on the actual complete optimizer, not an
 automatic property of every two-leaf expression.
@@ -324,19 +324,12 @@ remaining cusped link complement. This conditional transfer does not
 assert that every two-leaf expression passes (13) or (14), and does not
 replace the original signed knot by a different diagonal or pure partner.
 
-## Dependencies and review scope
+## Dependencies
 
 - [Whole original mixed-source gap](actual_odd_conway_uniform_mixed_source_gap.md)
 - [Full Newton transport and normal terms](actual_odd_conway_newton_transport.md)
 - [Uniform all-color core envelope](actual_pretzel_global_core_spectral_gap.md)
 - [Actual seed port formulas](actual_conway_arbitrary_width_seeds.md)
-
-Internal independent reviews: root read the full threshold and conditional
-transfer proof, independently checked the inverse-tangent identity and
-exact rational arithmetic, and approved preservation. The cluster/source
-agent independently read sections 1-5 in full, including the actual alias
-support, whole-color complement, and unchanged source normalization.
-These are internal reviews, not external peer review.
 
 No numerical asymptotic audit is used as proof. Native MathML and
 AST dependency checks validate the document rather than its conclusions.

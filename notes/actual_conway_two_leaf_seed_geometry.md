@@ -1,6 +1,6 @@
 # Two-leaf seeds in the actual complete Conway geometry
 
-31 October 2026. Internally reviewed geometric extension and dependency
+31 October 2026. geometric extension and dependency
 audit. Keep the original retained crossing-circle leaf \(h\), its literal
 turns and identity stacks. Allow seeds \(A_s=h^s\) for every fixed \(s\ge2\)
 and the grammar
@@ -401,7 +401,7 @@ supplied. A separately proved condition such as
 \(\cot(\pi x_i)\ge2/3\) at every complete leaf can supply the new
 alias estimate; it is not automatic from (5).
 
-## Dependencies and internal review
+## Dependencies
 
 The proof extends the local cells, ordered maps and primitive
 markings of the linked original notes. In particular, the
@@ -409,13 +409,4 @@ markings of the linked original notes. In particular, the
 keeps geometry, the finite complex packet, and the whole-source
 gap as distinct inputs. No previous theorem file is changed.
 
-Author analytical audit: complete. The source-transport reviewer
-independently read §§1–6 and passed the strict base, port propagation,
-completed-cell geometry, source branch and primitive filled-volume
-interfaces. The coherent-source reviewer independently passed the
-deformed and marked interface in §6. The primary reviewer independently
-passed §§1–6, including the local shear, original primitive marking
-and absolute volume normalization, with the invariant limit conditional
-on the separate source estimates. These are internal proof reviews,
-not external peer review. No numerical test is used to infer this
-uniform geometric extension or a quantum asymptotic.
+The geometric extension is uniform on its stated domain. The invariant limit additionally requires the separate source estimates; it does not follow from geometry alone.

@@ -3,7 +3,7 @@
 29 October 2026. For every fixed odd number of boxes \(s\geq5\),
 the high-band terms in the exact cusp-color split are exponentially
 smaller than the complete augmented geometric period on a sufficiently
-small, fixed cusp-color corridor. This is a bound on the ORIGINAL
+small, fixed cusp-color corridor. This is a bound on the original
 source, including all Casimir normal coefficients. The complete-color
 circle estimate is used coherently before passing to its Hermite norm.
 

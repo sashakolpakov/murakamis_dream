@@ -41,7 +41,7 @@ concerns the specified RAW marked source A_(s,N); an external chi_N
 is not implicitly set to one or assigned a growth rate.
 
 The [complete-point normalization proof](actual_complete_augmented_source_normalization.md)
-now checks that the ORIGINAL reduced Kashaev link evaluation has
+now checks that the original reduced Kashaev link evaluation has
 |<L_s>_N|=|A_(s,N)|. Its framing and component-dependent enhancement
 characters have modulus one. Thus (1) proves the actual link statement
 
@@ -121,7 +121,7 @@ It follows in particular that
         <=((R+1)/(R-1))^2 B_r(-R).                       (6)
 
 The right side is positive because every c_a>-2 and R+R^(-1)>2.
-This is a bound for the ORIGINAL finite Newton factor; no positivity
+This is a bound for the original finite Newton factor; no positivity
 of its monomial coefficients or unproved root-location assertion is
 used.
 

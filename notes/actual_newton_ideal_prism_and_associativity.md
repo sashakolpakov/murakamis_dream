@@ -375,11 +375,4 @@ and test coplanarity of the four endpoints of the alternative cut.
 The uniform proof is the geometric and algebraic argument above;
 the finite checks do not infer arbitrary link geometry.
 
-Independent internal review: the primary agent read the full local
-geometry, ordered source maps, phase-symbol identity and reflected-cube
-alternative cut, and freshly replayed the audit: PASS. The coherent
-source agent independently checked the same analytical ingredients.
-The Conway geometry agent separately checked the cell and port data
-used by the global construction. The explicit converse normalization
-in section 2 identifies the alternative pieces with this source prism
-family; no general polyhedron rigidity theorem is assumed there.
+The explicit converse normalization in section 2 identifies the alternative pieces with this source prism family; no general polyhedron rigidity theorem is assumed there.

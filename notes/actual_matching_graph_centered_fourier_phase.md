@@ -150,11 +150,4 @@ the quadratic form alone.
 
 Audit: [original paired phases and full centered cycle convolutions](../experiments/audit_actual_matching_graph_centered_fourier_phase.py).
 
-Independent review: the root agent and cluster/source agent checked
-the complete phase identity, endpoint convention, low/high centering,
-integer parity, source mark and normalized phase derivative. The
-cluster agent freshly replayed 488 original paired endpoint phases,
-3,279 full flow states and 70,524 cycle coefficients, including all
-global scalar cancellations and marked extractions. This review
-asserts the exact phase identity, not a contributing saddle or
-equality of exponential rates.
+The result is an exact phase identity, not an assertion of a contributing saddle or equality of exponential rates.

@@ -1,4 +1,4 @@
-\section{A uniform global envelope through the source collisions}
+\section{A global coefficient bound, including repeated recurrence roots}
 \label{app:global-core-envelope}
 
 The local interpolation of Section~\ref{app:selected-source} is used
@@ -10,7 +10,7 @@ Here $C_j^\eps$ always denotes the core polynomial of a single physical
 leaf of color $j$ and half-twist sign $\eps$, as in
 \eqref{eq:core-alias}; it does not denote the whole analytic packet.
 
-\subsection{The complete-diagonal normalization and its literal wall}
+\subsection{Normalization and the finite upper endpoint}
 
 Use $q,Q,d,M,F_r$ as in Section~\ref{app:selected-source}. For a physical
 integer $0\le h\le M$, interpret the finite sum $A_{h,r}$ in
@@ -72,9 +72,13 @@ not deleted from the finite source.
 
 \subsection{The spectral ellipse}
 
+The characteristic roots of the limiting two-by-two recurrence matrix control the exponential size of a long matrix product. They may coincide for some colors. We first locate both roots using a quadratic equation and an ellipse in its coefficient plane. The next subsection bounds powers of the matrix directly, so no singular eigenvector basis is required at a collision.
+
 Let $T_N(r)$ be the companion matrix of
-\eqref{eq:b2-global-recurrence}, so that
-$(V_{h,r},V_{h,r+1})^t=T_N(r)(V_{h,r+1},V_{h,r+2})^t$.
+\eqref{eq:b2-global-recurrence}. Thus
+\[
+ (V_{h,r},V_{h,r+1})^t=T_N(r)(V_{h,r+1},V_{h,r+2})^t.
+\]
 Freeze $u=(r+1)\pi/N$ and let $Q\to1$ while
 $Z=e^{2\ii u}$ and $H=e^{2\ii\chi}$ stay fixed. The limiting
 matrix $T_0(u,\chi)$ has eigenvalues $Z^{-1}v$, where
@@ -119,6 +123,8 @@ The endpoint color $\chi=\pi/2$ is included: there the two roots
 coalesce, but their common modulus is $\sqrt c<1$.
 
 \subsection{Frozen blocks and the singular lower endpoint}
+
+Over a fixed number of consecutive indices, the exact recurrence matrix changes by $O(N^{-1})$. We compare that short product with a power of one constant matrix. The block length is chosen first and $N$ is then taken large. A separate factorial bound treats the small indices where the coefficients are singular. This order of estimates gives a uniform exponential rate without asserting a polynomial prefactor at every color.
 
 Define
 \begin{equation}\label{eq:b2-envelope-action}

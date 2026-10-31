@@ -1,10 +1,6 @@
 # Independent audit of the physical-face outward action theorem
 
-28 October 2026. Independent proof read of
-[the physical-face theorem](actual_physical_face_outward_action.md),
-including the complete quantum Gamma packet in Section 7: **PASS**
-within its stated local hypotheses. This is not an audit claiming the
-remaining global cycle/gluing or knot-volume estimate is proved.
+28 October 2026. This note checks the local hypotheses and formulas of [the physical-face theorem](actual_physical_face_outward_action.md), including its quantum Gamma packet. The remaining global cycle, gluing and knot-volume estimate are not established here.
 
 The theorem concerns a NONEMPTY one-component braid word. The empty
 one-head unknot has a constant factorial density and zero radial q;
@@ -85,9 +81,4 @@ chart transitions, valid physical residues swept in a larger move,
 side curtains, repeated visits and escaping tangential regions still
 need the separate global control identified in the original note.
 
-Fresh independent replay of
-[the exact audit](../experiments/audit_actual_physical_face_outward_action.py)
-passed 7 signed original braid words, 790 proper physical faces,
-4,877 exact maximal-minor checks and 28 logarithmic phase diagnostics.
-I also read the witness construction and face enumeration; their
-finite checks agree with, but do not replace, the uniform proof.
+The [exact audit](../experiments/audit_actual_physical_face_outward_action.py) checks seven signed braid words, 790 proper physical faces, 4,877 maximal minors and 28 logarithmic phase diagnostics. These finite tests supplement the uniform witness and face-enumeration proof.

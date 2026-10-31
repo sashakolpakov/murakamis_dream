@@ -152,7 +152,4 @@ No external proof techniques were used. The theorem's own proof remains
 the exact source/coefficient identity, its global coefficient asymptotic,
 the uniform channel upper rate, and its absolute geometric normalization.
 
-Independent targeted review: `conway_reduced_geometry` checked the literal
-parallel-Belt annulus/bigon and the even-level middle-face degree obstruction
-in section2: PASS. This review does not audit the external volume proofs or
-the other bibliographical comparisons.
+The comparison in Section 2 concerns the literal parallel-belt annulus/bigon and the even-level middle-face degree obstruction. It is not a verification of the external volume proofs.

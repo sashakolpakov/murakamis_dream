@@ -28,7 +28,7 @@ Its columns are indexed by alpha=(T,j), with
     0<=T<=2d, l=min(T,2d-T),
     0<=j<=d-j<=l.
 
-Let v_alpha(a) be the canonical eigenvector in the ORIGINAL degree-T
+Let v_alpha(a) be the canonical eigenvector in the original degree-T
 block, normalized to one at its smallest physical first color. Extend
 it by zero outside max(0,T-d)<=a<=min(d,T). The actual CD coefficient is
 
@@ -165,7 +165,7 @@ physical row identities are
 
 Insert (2) ONCE on every graph edge. Contract its endpoint F factors
 using (4). With the fixed cyclic order at each vertex, the resulting
-whole ORIGINAL raw scalar is
+whole original raw scalar is
 
     Z_G,N=N^(-6b-1) sum_(alpha:E(G)->CD labels)
        [product_(v black) U_(alpha around v)]
@@ -247,7 +247,7 @@ as planar tangles. This does not rule out a larger coherent reflected
 construction with actual extra crossings and their full kernels.
 
 Nor can the ordinary white cap be silently used to avoid the marked
-distinction. Closing any honest all-ordinary ORIGINAL complete-color
+distinction. Closing any honest all-ordinary original complete-color
 ribbon tangle is zero:
 cut one complete-color component to obtain an actual Hopf endomorphism
 of the simple original V_N, hence a scalar, and its ordinary pivotal
@@ -340,7 +340,7 @@ actual cup insertion order can be read without any topology theorem:
 remove an innermost adjacent matched pair repeatedly and then reverse
 these removals. Each reverse step is the original p inserted in the
 specified gap. Top caps are the corresponding removals. Thus (15a)
-is a finite literal ORIGINAL Morse diagram, not a vector-space
+is a finite literal original Morse diagram, not a vector-space
 permutation pretending to be a braid. Its root source also has a
 regular generic Hopf lift: use the actual regular generic cups and
 the corresponding polynomial in the generic pair Casimir for each
@@ -541,8 +541,4 @@ dipole transfers. It also verifies the rejected naive cube's nonzero
 ordinary closure. These are finite source/normal audits; no asymptotic
 or geometric conclusion is inferred from their numerical range.
 
-Independent analytical review and a separate fresh replay passed the
-ordered noncrossing Morse/cube certificate, full marked-degree typing,
-the physical open dipole(17), the observed-only qualification of(18),
-and its exact even-level two-belt-neck annihilation. The review does
-not assert a graph volume or a global coherent survival estimate.
+Formula (18) retains its observed-only qualification. The vertex-kernel statement does not assert a graph volume or global coherent survival estimate.

@@ -318,9 +318,4 @@ positive auxiliary meridian eigenvalue. Neither choice is inferred
 just from(19). The geometric boundary calculation supplies its
 explicit path, while preserving that distinction.
 
-Independent analytical review checked the regular signed local
-ports, all complete matrices and flags, and the oriented pants
-boundary word; the root independently checked the all-face anchor.
-The focused exact audit passes 52 checks. The global filled-volume
-assembly has its separate internal proof reviews; this local note
-does not replace them or describe an external peer-review process.
+The local signed boundary charts and oriented pants word are inputs to the separate global filled-volume assembly, not a replacement for it.

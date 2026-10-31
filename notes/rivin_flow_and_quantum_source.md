@@ -14,7 +14,7 @@ the original finite period.
 
 Current source frontier (27 October):
 [exact complete Fourier localization](universal_resonant_fourier_source_completion.md)
-places the ORIGINAL period entirely at the resonant row; regular
+places the original period entirely at the resonant row; regular
 finite Fourier rows vanish exactly. The
 [all-strand Euler/Cauchy theorem](all_strand_euler_cauchy_cap.md)
 now expresses that original period as a specified finite coefficient
@@ -1366,7 +1366,7 @@ remain unproved.
 ## 29. Whole clock flow has an explicit flat endpoint lattice
 
 The [endpoint-completed current](endpoint_completed_normal_clock_euler_current.md)
-is now an exact identity of ORIGINAL whole divided matrices. Set
+is now an exact identity of original whole divided matrices. Set
 Z=Q^N and C_Q=Q^S Z^R. Inverting their interior divided arrows
 gives regular e^dagger,f^dagger with complementary endpoint kernels.
 For a retained clock function g, keeping its shifted argument gives
@@ -1418,7 +1418,7 @@ agree. This is a constructive clock-flow resolution before jets.
 The [global P1 source](global_frobenius_cech_source_and_endpoints.md)
 also retains the actual source/co-source as global sections and
 Serre residue classes. Its weighted relative interval gives an
-explicit rational whole co-source, with the ORIGINAL pairing unit
+explicit rational whole co-source, with the original pairing unit
 as density and a root-identity unipotent gauge to the normalized
 uniform row. The [relative endpoint analysis](actual_frobenius_relative_endpoint_period.md)
 keeps the moving endpoint rows and their connection correction.
@@ -1542,7 +1542,7 @@ not identify its source with the high-color or geometric ones.
 ## 32. The whole source itself is an actual norm-torsor trace
 
 The [Fermat-cover source theorem](whole_frobenius_source_fermat_trace.md)
-now constructs a source function from the ORIGINAL integral divided
+now constructs a source function from the original integral divided
 powers, rather than defining a new list of normal jets. On residue
 string s of high color m=N(N+1)-1 put L_s=m-s and
 
@@ -1605,7 +1605,7 @@ developed-prefix conjugation remains necessary.
 
 The [actual atom theorem](unfolded_atom_cyclotomic_divisors_and_two_nome_source.md)
 now proves an exact source extension before taking quantum jets.
-For the ORIGINAL unfolded Ward factorial F(Q,z)=1/(z;Q)_infinity
+For the original unfolded Ward factorial F(Q,z)=1/(z;Q)_infinity
 retain U independently and put R=F(Q,zU)/F(Q,z). At a fixed n-th
 root, Q=zeta_n exp(epsilon), the marked normal slope
 U=exp(t n epsilon) has the whole sectorial exceptional period
@@ -1811,7 +1811,7 @@ The independent wall divisors 1-Q^N and 1-lambda^N therefore
 cannot be equated or canceled without their actual word/source map.
 
 Finally, the [actual zero-source Fourier current](actual_fourier_source_cancellation.md)
-is not an abstract countermodel. For the ORIGINAL two-cut tensor,
+is not an abstract countermodel. For the original two-cut tensor,
 
     W=[(I tensor B)T(I tensor B inverse)-T]/(Q-1)
 

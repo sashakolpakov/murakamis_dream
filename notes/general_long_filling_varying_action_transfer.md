@@ -1,6 +1,6 @@
 # Long filling with the actual finite-level critical action
 
-30 October 2026. Independently reviewed and frozen. The complete
+30 October 2026. The complete
 core theorem retains a holomorphic action S_N in its exponential. Its
 convergence to S does not justify replacing exp(N S_N) by exp(N S).
 The long-filling argument can retain S_N throughout. This removes that
@@ -202,9 +202,4 @@ proves those mixed-source gaps nor extends the complete-core theorem to
 filled knots by itself. No additional finite Taylor expansion of S_N,
 nor an exchange of a level limit with the filling transform, is used.
 
-Independent analytical review checked the exact saddle conversion,
-both Gaussian powers and the coefficient (8), uniform complex and charge
-estimates, finite-level evenness, noncancellation, and the actual core
-normalization and cusp factor. No new finite computation is claimed:
-this is a uniform extension of the stated conditional transfer proof,
-not a numerical test of its missing source hypotheses.
+This is a uniform extension of the conditional transfer theorem. It does not verify its source hypotheses for additional diagrams.

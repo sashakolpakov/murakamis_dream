@@ -320,23 +320,9 @@ paper's proof nor its asymptotic formula is an input above. The
 reusable result established here is the full original-source DCT
 energy bridge and its specified physical belt seam.
 
-Independent final publication review (29 October 2026) rechecked the
-actual opening, full mirror/F^2 source, and the odd outer collar's
-SIMULTANEOUS exchange of pants triangles and physical punctures. The
-resulting local permutation0132, canonical horospheres, component
-counts, marked collar and single retained belt agree with the complete
-source asymptotic, including its literal kappa square-root convention.
-No additional hypothesis or mathematical defect was found beyond the
-stated fixed nonempty word and fixed signed a before N tends to infinity.
+The odd outer collar simultaneously exchanges the pants triangles and the physical punctures, giving permutation 0132. Its canonical horospheres, component counts and marked collar use the complete source’s specified kappa square root. The word is fixed and nonempty, and the signed outer twist a is fixed before N tends to infinity.
 
-Fresh independent replays passed the exact source/cell audit at both
-collar parities (16 cell cases), the complete all-sign/outer-power
-source audit, and nine supplemental literal-diagram checks. The
-860 phase checks in the source audit use high-precision arithmetic;
-the phase identities themselves are proved algebraically in its note.
-Software recognition and finite profiles remain supplemental, not
-premises for the topology or asymptotic theorem. Fillings, branched
-six-port gluing and literature novelty are outside this review's claim.
+The finite source/cell audit checks both collar parities, all signs and outer powers. Software recognition and finite profiles are supplementary, not premises for the topology or asymptotic theorem. Fillings, branched six-port gluing and literature novelty are not concluded here.
 
 Audit: [literal balanced sources and exact cyclic face certificate](../experiments/audit_actual_balanced_octahedral_belt_stack_volume.py).
 The optional literal-diagram/software comparison is supplemental;

@@ -227,34 +227,16 @@ The exact holomorphic reversed-cap isometry jointly inverts both
 peripheral generators; it interchanges m=+1 and -1 and preserves
 (9). No mu_+ -> mu_- framing shear occurs.
 
-The ORIGINAL coherent source has no zero charge, and all 2^s unit
+The original coherent source has no zero charge, and all 2^s unit
 signed charges were proved to add. Thus it is exactly the quantum
 selected channels, rather than an imposed primitive filling, that
 meet the smooth-angle condition.
 
 ## 5. Scope and the direct geometric lemmas used for completion
 
-The result proves the actual peripheral lift, loxodromic core
-orientation and primitive smooth-angle calibration, using the
-positive geometric cusp-link deformation near the established
-complete anchor. It does NOT infer a hyperbolic metric from a bare
-PSL representation. The independent
-[finite-center positive-core proof](actual_long_pretzel_geometric_filling_completion.md)
-now supplies the face-compatible local metric and these cusp links.
-The [log-link/tube completion proof](long_pretzel_equality_critical_audit.md)
-identifies the ENTIRE end with a standard punctured tube before
-adding its smooth core. Both constructions have passed this note's
-independent analytical review; no imported Dehn filling theorem is
-being assumed correct without proof.
+The result proves the actual peripheral lift, loxodromic core orientation and primitive smooth-angle calibration, using the positive geometric cusp-link deformation near the established complete anchor. It does not infer a hyperbolic metric from a bare PSL representation. The independent [finite-center positive-core proof](actual_long_pretzel_geometric_filling_completion.md) now supplies the face-compatible local metric and these cusp links. The [log-link/tube completion proof](long_pretzel_equality_critical_audit.md) identifies the entire end with a standard punctured tube before adding its smooth core.
 
-The final completion review checks the finite face-orbit centers and
-cell cones, exact identity of each contractible edge-star holonomy
-(including zero axis dilation), winding-one continuity, finite-vertex
-spherical covering degree one, ideal similarity links and actual
-vertical epigraphs. It also checks the signed surgery convention:
-straightening mu+p lambda uses phi'=phi-p theta and inserts -p full
-turns, so the original retained R^(-1) becomes R^(-(2p+1)). Thus the
-completed oriented manifold is the actual source's filled knot.
+Straightening the primitive curve $\mu+p\lambda$ uses $\phi'=\phi-p\theta$ and inserts $-p$ full turns. Thus the retained $R^{-1}$ crossing becomes $R^{-(2p+1)}$. Smooth completion also requires the full identity edge holonomy, including zero axis dilation; the filling angle alone is insufficient.
 
 Combined with the independently proved complete log-link and
 whole-source/regulator theorems, this is a FULL equality certificate

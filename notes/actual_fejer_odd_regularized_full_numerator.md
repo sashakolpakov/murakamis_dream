@@ -1,6 +1,6 @@
 # Odd spectral regularization has the same full shared entropy
 
-31 October 2026. Independently reviewed and frozen. All derivatives here
+31 October 2026. All derivatives here
 are SPECTRAL derivatives at the fixed original root. No genuine-q normal
 is obtained by differentiating a root-only identity. The actual positive
 coupon below includes the semisimple derivative data of the full V.
@@ -264,10 +264,10 @@ spectral-radius coefficient bounds. The maximum identity error is below
 3.90e-73. These are exact-source/formula checks, not numerical proofs
 of the uniform entropy limit or of the volume theorem.
 
-Root independently reviewed the full analytical proof through section4
+Root the full analytical proof through section4
 and supplied/checked the exact whole spectral-jet corollary. Geometry
-independently reviewed the full proof, including every closed-coefficient
-and seam argument, then reviewed the complete audit code and freshly
+the full proof, including every closed-coefficient
+and seam argument, then the complete audit code and freshly
 replayed it with redirected output. Geometry also separately checked
 section5's all-parity Cauchy constant. Public promotion changes only
 links, formatting and file-relative audit paths; its author replay

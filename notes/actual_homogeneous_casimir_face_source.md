@@ -1,7 +1,7 @@
 # Homogeneous face kernels for the original Casimir coupons
 
-30 October 2026. Independently reviewed and frozen. This stays
-within the ORIGINAL fixed flat-plat presentation. No arbitrary matched
+30 October 2026. This stays
+within the original fixed flat-plat presentation. No arbitrary matched
 graph-to-plat adapter is being assumed.
 
 ## 1. One homogeneous local polynomial
@@ -14,7 +14,7 @@ the [source-normalized small-circle face operator](actual_small_circle_polynomia
     F z^j=sum_(a,beta>=0; a+beta<=j)
        M_f(j;a,beta) x^a y^beta z^(j-a-beta).
 
-Define a HOMOGENEOUS polynomial in the four ORIGINAL faces by
+Define a HOMOGENEOUS polynomial in the four original faces by
 
     H_f(x,b,c,y)=sum_(j=0)^d sum_(a,beta)
        M_f(j;a,beta) x^a b^(j-a-beta)c^(d-j)y^beta.  (1)
@@ -129,7 +129,7 @@ The centered first head on a cup/cap has outside region o and inside
 region z, so q^(di)=q^(d^2/2)(L_o/L_z)^(d/2). Thus each cup constant
 is N q^(-d^2/2), each ordinary cap constant is N^-1 q^(d^2/2), and
 their k pairs cancel EXACTLY. The mark-to-ordinary-cap ratio is
-N^-1 q^(-d^2)Q^(dj)=N^-1(L_v/L_u)^d, with the ORIGINAL SECOND head
+N^-1 q^(-d^2)Q^(dj)=N^-1(L_v/L_u)^d, with the original SECOND head
 j. This uses the whole-source complementary constraint already proved
 above, rather than restricting the original mark in advance.
 
@@ -405,25 +405,6 @@ fixtures. They include all-deleted and disconnected substitutions.
 These finite checks support the exact proof; they do not numerically
 prove universal shared-radius certificates or a volume limit.
 
-The author audit and the independent redirected full source replay pass:
-970 complete and 1,940 signed complete polynomial coefficients;
-2,720 retained crossing phases; 9,427 original physical entries,
-including 3,046 wrong-unwrapped-total zeros; 106 whole original
-sources, 45 nonzero; 3,801 original face-grid points and 4,704 illegal
-box totals; 35 exact white and 276 exact shaded support checks for
-the actual local certificate. The final geometric gap uses an
-outward-rounded 256-bit Arb evaluation of a 100-term Lobachevsky
-series with an explicit total tail below 0.01910. Its independent
-targeted replay also passes and certifies a lower bound above
-0.46643723013, stronger than (17).
+The source audit compares complete and signed polynomial coefficients, retained crossing phases, physical entries, whole sources and face-grid points, including illegal-total zeros. It also checks exact white and shaded support. The geometric gap is certified by a 256-bit outward-rounded Arb evaluation of a 100-term Lobachevsky series, with total tail below 0.01910 and lower bound above 0.46643723013, stronger than (17).
 
-Root full analytical and audit-code review of the original homogeneous
-source, index/cap normalization, degree argument and crossing phase:
-PASS, including the final finite shared-radius criterion. Independent
-source reviewer full analytical/code read and fresh
-redirected replay: PASS, including the final shared-radius criterion
-and whole-source corridor in sections 5--6. Independent geometry
-review of the original face lifts, even carries, coefficient
-normalization, I-only entropy-preserving contraction/lift, and the
-final corridor: PASS. These approvals retain the sufficient-certificate,
-physical-root and fixed-original-presentation scope.
+The conclusion retains the sufficient-certificate, physical-root and fixed-presentation scope.

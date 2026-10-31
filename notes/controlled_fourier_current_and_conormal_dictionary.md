@@ -24,9 +24,9 @@ for the head index, A=Q_N^S and B=Q_N^R. Let V increase S modulo N.
 Take the explicitly normalized Fourier matrix
 
 \[
- {\cal F}_{S',S}=N^{-1}Q_N^{S'S},\quad
- {\cal F}^{-1}_{S,S'}=Q_N^{-SS'},\quad
- H_0=G(I\otimes{\cal F}),\quad
+ {\mathcal{F}}_{S',S}=N^{-1}Q_N^{S'S},\quad
+ {\mathcal{F}}^{-1}_{S,S'}=Q_N^{-SS'},\quad
+ H_0=G(I\otimes{\mathcal{F}}),\quad
  G=\sum_R P_R\otimes V^R.
 \]
 
@@ -44,8 +44,8 @@ geometric-series multiplication gives
  H_0 A H_0^{-1}&=V^{-1},&
  H_0 V H_0^{-1}&=B^{-1}A,\\
  H_0 B H_0^{-1}&=B,&
- H_0e_{\rm Fr}H_0^{-1}&=e_{\rm Fr}V^{-1},&
- H_0f_{\rm Fr}H_0^{-1}&=f_{\rm Fr}V.
+ H_0e_{\mathrm{Fr}}H_0^{-1}&=e_{\mathrm{Fr}}V^{-1},&
+ H_0f_{\mathrm{Fr}}H_0^{-1}&=f_{\mathrm{Fr}}V.
  \end{split}                                                   \tag{2}
 \]
 
@@ -63,7 +63,7 @@ of terminology.
 
 ## 2. Actual transformed Ward operators, including the endpoints
 
-First keep the ORIGINAL INTEGRAL head frame of the wall source.
+First keep the original INTEGRAL head frame of the wall source.
 Let M^2=1 and x=-M/q_N. The sign M is the retained meridian lift;
 in the high r=N color it is (-1)^N before its specified
 one-dimensional lift adapter. The genuine Hopf scaling is
@@ -71,7 +71,7 @@ Ecal=rho^2 E. With C_q=diag(q_N^S), the actual root matrices are
 
 \[
  K=xA^{-1},\quad
- {\cal E}=M\rho V^{-1}(C_q-C_q^{-1}),\quad
+ {\mathcal{E}}=M\rho V^{-1}(C_q-C_q^{-1}),\quad
  F=V(q_NC_q-q_N^{-1}C_q^{-1})/\rho.                 \tag{3}
 \]
 
@@ -93,7 +93,7 @@ in the SAME wall source frame, are
 \[
  \begin{split}
  K^{H_0}&=xV,\\
- {\cal E}^{H_0}&=M\rho BA^{-1}(\Psi_+-\Psi_-),\\
+ {\mathcal{E}}^{H_0}&=M\rho BA^{-1}(\Psi_+-\Psi_-),\\
  F^{H_0}&=B^{-1}A(q_N\Psi_+-q_N^{-1}\Psi_-)/\rho.
  \end{split}                                                   \tag{4}
 \]
@@ -127,7 +127,7 @@ If one defines a FRESH unit shift and unit Fourier gauge H_B in
 those balanced coordinates, its formulas are
 
 \[
- {\cal E}^{H_B}=BA^{-1}(MV-M^{-1}),\quad
+ {\mathcal{E}}^{H_B}=BA^{-1}(MV-M^{-1}),\quad
  F^{H_B}=B^{-1}A(1-Q_NV^{-1}),\quad K^{H_B}=xV.       \tag{4a}
 \]
 
@@ -251,7 +251,7 @@ In the old complete critical frame, both cut-Borel generators obey
 
 \[
  \delta p_h=0,\qquad
- \delta q=-2(1-A_{\rm old}).                         \tag{11}
+ \delta q=-2(1-A_{\mathrm{old}}).                         \tag{11}
 \]
 
 Here delta p_h=0 is exactly ker(ell), the fixed inverse-cut-flag
@@ -261,8 +261,8 @@ Equation (6) carries their CUT components to
 
 \[
  \delta q'=\delta Q_R=0,\quad
- \delta p'_h=-2(1-A_{\rm old}),\quad
- \delta p'_R=2(1-A_{\rm old}).                       \tag{12}
+ \delta p'_h=-2(1-A_{\mathrm{old}}),\quad
+ \delta p'_R=2(1-A_{\mathrm{old}}).                       \tag{12}
 \]
 
 They lie in the relative conormal direction (8). Their independence
@@ -278,7 +278,7 @@ clock value. Before specializing let Q=q^2, Z=Q^N,
 delta=1-Z, and retain the actual unwrapped color clock
 
 \[
-               C_Q=Q^{J_{\rm un}}=Q^S Z^R.         \tag{13}
+               C_Q=Q^{J_{\mathrm{un}}}=Q^S Z^R.         \tag{13}
 \]
 
 Let e(q)=tau E^(N)(q) and f(q)=F^(N)(q) be the actual generic
@@ -311,7 +311,7 @@ co-source rows.
 ### The full head resolvent in the correct polarization
 
 The whole transformed clock can itself be written explicitly.
-Write zeta=Q_N while Q remains the variable in the ORIGINAL
+Write zeta=Q_N while Q remains the variable in the original
 q-family, and keep H_0 fixed at zeta. Equation (3a) gives
 
 \[
@@ -354,8 +354,8 @@ The extra R term of (15b) alone supplies the remaining normal
 interaction:
 
 \[
- [e_t(0),-RV^{-1}]=-e_{\rm Fr}V^{-2},\qquad
- [f_t(0),-RV^{-1}]=f_{\rm Fr}.                      \tag{15c}
+ [e_t(0),-RV^{-1}]=-e_{\mathrm{Fr}}V^{-2},\qquad
+ [f_t(0),-RV^{-1}]=f_{\mathrm{Fr}}.                      \tag{15c}
 \]
 
 These are precisely -C_0 e_t(0) and C_0 f_t(0) from (15), with

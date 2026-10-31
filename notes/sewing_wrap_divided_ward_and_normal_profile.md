@@ -1,7 +1,7 @@
 # Actual sewing shifts are divided-Ward images of the wrap source
 
 28 October 2026. The unit shifts in the exact cyclic sewing have
-an explicit relation to the ORIGINAL integral divided Hopf adjoint.
+an explicit relation to the original integral divided Hopf adjoint.
 The relation holds on the actual balanced head, including an exact
 whole-q source profile. The large scalar powers cancel between the
 two ends of a transfer. Thus these shifts need not be assigned an
@@ -10,7 +10,7 @@ auxiliary unipotent action.
 This does not yet give a geometric centralizer chain map. There is
 a first explicit obstruction to the simplest proposed extension:
 independent head adjoints are not the full mixed coproduct adjoint.
-Their difference has a nonzero ORIGINAL crossing-cap pairing.
+Their difference has a nonzero original crossing-cap pairing.
 The internal geometric interval cannot be inferred by omitting it.
 
 ## 1. The literal integral head and its two wrap coupons
@@ -39,7 +39,7 @@ The mixed terms in (2) remain even when E^(N),F^(N) individually
 vanish on the N-dimensional head. These are linear adjoint images;
 no assertion that a single A_h is a square-zero differential is made.
 
-## 2. Exact root identities in the ORIGINAL balanced basis
+## 2. Exact root identities in the original balanced basis
 
 At `q=exp(pi*i/N)` one has `[m choose k]_q=1` for every k.
 Indeed each numerator factor `[N-s]_q` equals `[s]_q`, with
@@ -196,7 +196,7 @@ identities as if they already had coproduct naturality.
 
 ## 5. The geometric endpoint condition is now specific
 
-There is also a precise target on the ORIGINAL whole word,
+There is also a precise target on the original whole word,
 not only on a separate source cone. The already proved
 [actual Borel Ward calculation](actual_borel_ward_cut_contraction.md)
 gives the complete principal conjugation fields

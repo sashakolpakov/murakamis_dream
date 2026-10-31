@@ -21,7 +21,7 @@ kernel is
     C_ij=kappa(-1)^i q^(i+j^2) [i choose j]_Q,
           0<=j<=i<=d;  C_ij=0 above the diagonal.         (1)
 
-It is multiplication by the ORIGINAL checked R, including its common
+It is multiplication by the original checked R, including its common
 Cartan, all Jordan derivatives, and the true q^(ij) half-clock phase.
 The actual turn is the reversal P_rev and both original closures are
 coordinate rows. None of these facts is an independent-eigenline model.
@@ -262,7 +262,7 @@ would be reducible. This is the four-port case of
 [the faithful cap certificate](actual_parabolic_cap_trace_certificate.md).
 
 Thus any REGULAR irreducible intersection of the transported cap with
-the closing cap is an actual representation of the ORIGINAL rational
+the closing cap is an actual representation of the original rational
 word closure. This is global parabolic character gluing for arbitrary
 rational words, not merely a formal cubic at each isolated crossing.
 Reducible and escaping/normal intersections are not discarded, and
@@ -347,7 +347,7 @@ Bloch period, and the actual cap lies on the exceptional corner in
 section5, where a regular seam-telescoping argument cannot replace its
 normal source. A chain-level comparison with the actual signed
 crossing blocks and marked boundary is still required. Such a global
-comparison is already proved for the ORIGINAL factorial crossing
+comparison is already proved for the original factorial crossing
 symbols in [the fundamental-cycle note](crossing_fundamental_cycle.md),
 for arbitrary diagrams and their regular complete representations.
 It supplies the classical regulator bound, not the missing global

@@ -33,10 +33,10 @@ head period PLUS its explicit aggregate scalar cut-wall current.
 Every original radial source is retained by that identity; the
 current's global growth and geometric selection remain open.
 
-Use the strict ORIGINAL physical crossing order in
+Use the strict original physical crossing order in
 [the literal Euler network](actual_euler_gaussian_cauchy_network.md),
 the [continuous Gaussian](actual_continuous_gaussian_cyclic_network.md),
-and the ORIGINAL physical boundary sources in
+and the original physical boundary sources in
 [the coupled-cap theorem](actual_coupled_caps_interval_source.md).
 Insert scalar Hardy identities before/after elementary gates, in the
 same harmless initial chamber as before. All head variables are z_v.
@@ -62,7 +62,7 @@ are ordinary Hardy kernels with coefficient
 They carry the exact Gaussian weight sqrt(N/(2*pi))exp(-Nxi^2/2).
 Every other spectator/reset is 1/(1-z_out/z_in).
 
-The physical cup/ordinary cap/ORIGINAL marked cap are exactly (4) of
+The physical cup/ordinary cap/original marked cap are exactly (4) of
 the coupled-cap note, including their distinct powers of N and color.
 The full marked row is restricted to D=d only by whole integer degree,
 as proved there; no Ward identity is reapplied to a summand.

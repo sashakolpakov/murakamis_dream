@@ -1,6 +1,6 @@
 # The retained Newton sign and the actual local peripheral branch
 
-30 October 2026. Independently reviewed and frozen. The actual alternating
+30 October 2026. The actual alternating
 low-color Newton sum has a localized critical scheme whose eliminated
 quadratic is exactly the polynomial closure of the original untwisted
 primitive-collar trace relation. Its selected complete germ is fixed
@@ -299,7 +299,6 @@ chain must still account for its endpoints, crossed divisors and marks.
 No representation of the original group or peripheral branch is inferred
 from equations(4)--(10) alone.
 
-
 ## 5. The actual primitive-collar polynomial closure and selected germ
 
 Use the [actual primitive collar](actual_deformed_circle_primitive_collar.md),
@@ -403,7 +402,6 @@ the full Newton and core actions, an additive or monomial normalization,
 or their original contributing cycles. It provides no contribution
 coefficient or exponential estimate for the finite alternating sum.
 
-
 ## 6. Verification and remaining source question
 
 [The focused audit](../experiments/audit_actual_alternating_newton_peripheral_branch.py)
@@ -423,15 +421,4 @@ critical point proves exponential cancellation, nonvanishing, a
 regulator equality for the low-color period, or a global volume bound.
 
 
-Root full analytical and audit-code review PASS, including the exact
-finite-ratio characteristic, recorded localized units, reverse four-branch
-reconstruction, unsquared primitive collar and reciprocal external-momentum
-selector.
-
-Independent full analytical/code review and fresh85-digit redirected replay
-PASS:15 exact symbolic identities;12 literal signed finite ratios and their
-12 factorial telescopings;12 external-color telescopings;40 reverse/uncleared
-shared-face reconstructions;20 unsquared marked collars and20 reciprocal
-momentum pairs;4 selected complete-germ checks. Maximum residual was
-1.27e-82. The review does not infer a full-action normalization, endpoint
-analysis, original finite-sum contribution or global low-color volume bound.
+The peripheral-branch identities do not supply full-action normalization, endpoint analysis, a contribution to the finite sum, or a global low-color volume bound.

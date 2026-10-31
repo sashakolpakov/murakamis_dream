@@ -2,7 +2,7 @@
 
 28 October 2026. The short-complement forest representation is exact,
 but its individual source channels do not automatically satisfy the
-hyperbolic-volume bound. This failure already occurs for the ORIGINAL
+hyperbolic-volume bound. This failure already occurs for the original
 figure-eight source AFTER its forced full block has been contracted.
 An explicit all-short spanning-tree term has rate
 

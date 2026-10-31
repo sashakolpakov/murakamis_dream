@@ -1,8 +1,7 @@
 # Original coefficient blocks, stationary touching, and the absolute cap budget
 
-31 October 2026. **Internally reviewed analytical research lemma.**
-Unpublished. Root and a separate geometry reviewer completed full
-independent analytical/source reads. No full-source or filling theorem is asserted.
+31 October 2026. **analytical research lemma.**
+Unpublished. No full-source or filling theorem is asserted.
 The purpose is
 to identify an exact usable closure statement and the two missing steps
 between the proved whole-star estimate and an absolute Phi_D bound.
@@ -22,7 +21,7 @@ Fix the original marked diagram. Every coupon has degree d=N-1;
 ordinary targets are d and protected targets are zero. Keep the actual
 finite LEFT/CROSS/RIGHT restrictions whenever a sector is specified.
 Let B be a collection of coupons and I a set of ordinary faces all of
-whose incidences belong to B. Define the ORIGINAL contracted polynomial
+whose incidences belong to B. Define the original contracted polynomial
 
     B_N(Y;theta)=[prod_(a in I) A_a^d] prod_(e in B) P_e,N(A,Y;theta_e).
 
@@ -97,7 +96,7 @@ A spectral cover is harmless: at a fixed theta, estimates from different
 block decompositions bound the SAME full coefficient. Thus one may take
 the minimum of their full capacities from (3), and use a finite spectral
 cover on which this minimum is below Phi_D by a uniform positive margin.
-That is the same logical operation as the reviewed mark-spectral cover.
+That is the same logical operation as the mark-spectral cover.
 
 A cover in INDIVIDUAL INTERNAL INCIDENCE ARRAYS is different. A mask
 cutting (2) preserves B_N exactly if it is constant on each fiber of
@@ -211,7 +210,7 @@ cap-only classified datum, with caps indexed by F,
 
     F_sharp(q)=H_endpoint(q)+2 sum_F f(nu_F).          (9)
 
-This is an identity on the ORIGINAL flow, not a smoothing or a changed
+This is an identity on the original flow, not a smoothing or a changed
 triangle allocation. The endpoint theorem and unique geometric maximum
 give H_endpoint<=Phi_D. More quantitatively let
 
@@ -292,7 +291,7 @@ replacement operator is needed.
 
 Two logically distinct claims are sometimes conflated:
 
-  A. every high maximum of the ORIGINAL sharp functional has a
+  A. every high maximum of the original sharp functional has a
      cancellation block giving some positive loss;
   B. the actual source has rate at most Phi_D.
 
@@ -308,7 +307,7 @@ Nor can the SAME estimate simply be applied again to subtract another
 b. After replacing the original upper by the minimum of new bounds,
 its new maxima can occur on a switch between bounds and need not
 satisfy the original sharp stationary equations. The boundary
-activation and cap-leaf theorems classify maxima of the ORIGINAL
+activation and cap-leaf theorems classify maxima of the original
 functional on its original fiber. They have not been proved for these
 new contracted, often nonsmooth upper functionals. Reusing their
 conclusion there would be circular.
@@ -320,7 +319,7 @@ positive endpoint source or an absolute terminal bound. Current
 cap-leaf selection proves existence of an applicable relative star
 at certain original maxima; it does not supply these iteration data.
 
-The reviewed stellar identity reinforces the distinction: it preserves
+The stellar identity reinforces the distinction: it preserves
 M_cap-Phi while increasing the cap incidence degree. It transports a
 CLASSICAL sector optimization, not the finite signed boundary
 polynomial or its needed compensation (12).
@@ -340,7 +339,7 @@ contiguity; omitting them would alter the source.
 
 An ordinary self-adjoint Casimir model would bound the scalar inverse
 by its spectral distance, but cannot be assumed to preserve the
-complete-colored quotient. The reviewed even coupon
+complete-colored quotient. The even coupon
 L_N=(-1)^d U_d(z/2) has L_N^2=0 modulo chi_N and vanishes at every
 distinct spectral node, whereas the [actual conditioned coefficients](research_cap_cross_high_demand_signed_contraction.md#8-low-demand-still-detects-the-actual-casimir-jordan-data)
 Lambda_n(1,L_N) are strictly positive for every 0<=n<=M,
@@ -353,7 +352,7 @@ bound not intertwining arbitrary coupons.
 ## 8. Current concrete missing lemma
 
 The precise new candidate is a cancellation-aware boundary comparison
-for a whole cap/CROSS star at ORIGINAL A^d, either (12), or a weaker
+for a whole cap/CROSS star at original A^d, either (12), or a weaker
 weighted coefficient bound whose loss satisfies the explicit budget
 in (11) after a legitimate reduced-flow maximization (3). It must
 retain every boundary face degree and the actual parity reference.
@@ -369,15 +368,9 @@ No global counterexample has been proved here. The existing shared-star
 and structural notes state their limitations correctly; the gap is in
 the unproved bridge one might try to infer from them.
 
-## Internal review and scope
+## scope
 
-Root and the independent geometry reviewer each completed full
-analytical/source reviews of sections 1–8, including the stationary
-touching normalization, the exact negative endpoint cap entropy,
-block-fiber localization and the non-iteration limitation. The formal independent-coefficient explanation in section 2
-implements root's requested precision. These are internal proof reviews,
-not external peer review. No numerical audit is needed for the finite
-coefficient identities, compact upper-bound argument or entropy budget.
+Block localization uses independent formal local coefficients. Its stationary touching identity retains the negative endpoint cap entropy and the non-iteration limitation; a relative block loss alone does not pay an absolute volume deficit.
 
 The all-parity original target, actual sector projections, protected
 zeros, and distinction between endpoint compensation and a positive

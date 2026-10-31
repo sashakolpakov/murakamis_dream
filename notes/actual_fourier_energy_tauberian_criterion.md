@@ -14,7 +14,7 @@ source-scope audit, not a proof of the conjecture.
 
 ## 1. The exact original energy and its existing bound
 
-Use the ORIGINAL unitary color Fourier transform and original reduced
+Use the original unitary color Fourier transform and original reduced
 normalization from [the independently audited Plancherel identity](ordinary_color_plancherel_bound_audit.md).
 For every fixed knot presentation,
 
@@ -150,7 +150,7 @@ By (10) this difference is at most
 n^(A0+1)exp(L delta n)E_n. Hence
 liminf log E_n/n>=lambda-Ldelta. Let delta decrease to zero;
 the upper bound E_n<=S(n) proves (11). Combining (3),(5),(10)
-therefore proves the ORIGINAL volume limit with V=pi*lambda.
+therefore proves the original volume limit with V=pi*lambda.
 
 An O(1) bound on each negative neighboring log-increment implies
 (10). In contrast, a polynomial comparison at ONE neighboring step,
@@ -195,7 +195,7 @@ with a specified spectral edge. Either construction, with the
 original source and nonzero edge weight verified, could supply
 Tauberian input. The existing level-dependent Gram identity does not.
 
-There is even a small exact ORIGINAL hyperbolic-source warning against
+There is even a small exact original hyperbolic-source warning against
 assuming cross-level moment/log-convex structure for raw E_N. For 4_1,
 the independently proved whole-source formula gives
 

@@ -28,9 +28,9 @@ actual head/auxiliary reordering understood. For EVERY actual total
 Hopf operator retain
 
 \[
- K_{\rm tot}^{mem}=L_b(\Delta^{b-1}K\otimes I_{aux})L_b^{-1},
- \quad E_{\rm tot}^{mem}=L_b(\Delta^{b-1}Ecal\otimes I_{aux})L_b^{-1},
- \quad F_{\rm tot}^{mem}=L_b(\Delta^{b-1}F\otimes I_{aux})L_b^{-1}.
+ K_{\mathrm{tot}}^{mem}=L_b(\Delta^{b-1}K\otimes I_{aux})L_b^{-1},
+ \quad E_{\mathrm{tot}}^{mem}=L_b(\Delta^{b-1}Ecal\otimes I_{aux})L_b^{-1},
+ \quad F_{\mathrm{tot}}^{mem}=L_b(\Delta^{b-1}F\otimes I_{aux})L_b^{-1}.
                                                                \tag{2}
 \]
 

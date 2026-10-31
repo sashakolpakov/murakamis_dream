@@ -159,7 +159,7 @@ bound on the actual small-\(X\) port set; they are not needed for (6).
 
 For every completed subtree the inductive estimate is its selected
 output tangent, with zero loss for its core and positive loss for any
-nonempty alias sector. The reviewed \(hh\) block supplies the base.
+nonempty alias sector. The \(hh\) block supplies the base.
 Turns reverse the slope. Completed/completed products add the child
 tangents and the gate tangent; stationary equations cancel the internal
 linear terms.
@@ -252,9 +252,4 @@ extends the local selected packet through that boundary. It does not
 supply the whole-source alias and physical-color estimates for those
 closures. The completed-root restriction in (1) remains in force.
 
-The generic main-meridian quantum A-operator and coverage of all desired
-arborescent presentations remain open. The present theorem uses the
-original quantum source and its marked algebraic deformation, with the
-specified analytic and geometric dependencies. Its component proofs and
-exact certificates have independent internal reviews; this is a research
-proof, not external peer review or a new audit of every earlier dependency.
+The generic main-meridian quantum A-operator and coverage of all desired arborescent presentations remain open. The present theorem uses the original quantum source and its marked algebraic deformation, with the specified analytic and geometric dependencies.

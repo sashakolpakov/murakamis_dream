@@ -1,11 +1,6 @@
 # Exact top-cap mark transport for the original arbitrary-Casimir source
 
-Unpublished workspace theorem, 31 October 2026. Root and coherent completed
-full internal analytical/source and code reviews and independent fresh
-finite replays; this is not external peer review. The result is an equality
-of the ORIGINAL complete-color finite sources. It is not a termwise mark
-transport for a LEFT/CROSS/RIGHT projection or a theorem about the maxima
-of their absolute envelopes.
+The equality concerns full complete-colored sources. It does not transport individual sectors or their positive envelopes.
 
 ## 1. Statement with the permitted cuts fixed
 
@@ -89,7 +84,7 @@ of V_d commuting with the generators. It is scalar: K has distinct
 weights generically, and the consecutive nonzero F arrows force all
 diagonal entries equal. Write C_r(q)=a_r(q)I.
 
-Equivalently the remaining two-head vector is a_r(q) times its ORIGINAL
+Equivalently the remaining two-head vector is a_r(q) times its original
 cup. The scalar is regular at q_N: it is one matrix entry of the open
 network in the regular frames just constructed. This argument needs no
 ordinary quantum dimension at the root and introduces no new mark.
@@ -239,27 +234,8 @@ or [anchored shared-radius theorem](general_anchored_shared_radius_filling_volum
 The [finite-collar obstruction](research_double_protected_cap_finite_collar_obstruction.md)
 is unchanged. No literature proof theorem is used here.
 
-## 6. Internal review and finite verification
+## 6. scope and finite verification
 
-Root and coherent independently read the analytical transport proof and
-audit code, including the regular polynomial lift, generic-only dimension
-division, exact root pivot sign and unrestricted marked normalization.
-Both independently replayed the final finite audit. Root and coherent
-also checked the explicit section 5 certificate corollary against all
-three linked full-source theorems and the original Fourier normalization. The preserved
-[portable audit](../experiments/research_audit_arbitrary_casimir_top_mark_transport.py)
-and its [results](../experiments/research_arbitrary_casimir_top_mark_transport_results.json)
-check original physical coproduct matrices, complete divided-polynomial
-numerators at sigma=-2,2,0,3, arbitrary Casimir polynomials, and the actual
-positive and negative crossings. They verify the remaining two-head
-vector entrywise against its scalar times the original cup before
-comparing the original top marks.
+The preserved [portable audit](../experiments/research_audit_arbitrary_casimir_top_mark_transport.py) and its [results](../experiments/research_arbitrary_casimir_top_mark_transport_results.json) check original physical coproduct matrices, complete divided-polynomial numerators at sigma=-2,2,0,3, arbitrary Casimir polynomials, and the actual positive and negative crossings. They verify the remaining two-head vector entrywise against its scalar times the original cup before comparing the original top marks.
 
-The exact finite fixtures reproduce 34 cases (31 nonzero), 82 marked
-contractions, 2092 scalar-cup entries, 21 same-component comparisons and
-45 different-component comparisons. Compatible root fields and a
-conservative int64 bound are checked explicitly. The portable workspace
-replay reproduces the reviewed private JSON exactly. These fixtures
-support the normalization; the general theorem is proved in sections
-1–4. They are not an audit of generic-q derivatives, projected sectors,
-absolute envelopes or an asymptotic assertion.
+The exact fixtures use compatible finite fields and check the stated integer overflow bounds. They verify the full source identity at the tested levels, not projected-sector identities or an asymptotic theorem.

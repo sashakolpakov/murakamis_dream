@@ -1,8 +1,6 @@
 # Exact original before, active and after transfer
 
-31 October 2026. **Internally reviewed exact source identity.** The proof,
-audit code and a fresh redirected replay received independent review. No
-asymptotic branch is selected, and no unused row is deleted.
+31 October 2026. An exact source identity: no asymptotic branch is selected and no unused row is deleted.
 
 Put \(N\ge3\), \(d=N-1\), \(m=\lfloor N/2\rfloor\), \(M=m-1\), and
 \(\sigma=-2\cos(2\pi\delta)\). Define
@@ -140,5 +138,5 @@ and its [results](../experiments/research_original_four_state_transfer_results.j
 check the finite transfer against the independent start/end expansion at
 both parities and the exact scalar modes: 10 levels, 49 spectral values,
 196 transfer/path comparisons and 85 scalar-mode identities. The original matrix interface is
-inherited from the reviewed local numerator formula; these checks are not
+inherited from the local numerator formula; these checks are not
 advertised as a new independent audit of the physical matrix.

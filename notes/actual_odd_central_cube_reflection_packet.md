@@ -1,7 +1,7 @@
 # An actual positive central-sector period for the primitive cube
 
 29 October 2026. For every odd level the all-Steinberg sector of the
-ORIGINAL ordered cube source is an explicit strictly positive Newton
+original ordered cube source is an explicit strictly positive Newton
 period, times its recorded edge-twist phase. The physical mark, all
 circle factors and all root normals are retained. The reduction is a
 generic pivotal contraction followed by a regular specialization; it
@@ -349,9 +349,4 @@ positive-period prefactor calibrations. Finite checks supplement the
 pivotal and full-polynomial proofs above; they do not establish a
 whole-color or all-parity source limit.
 
-Independent internal review: the crossing-period agent read the full
-analytical proof, including the clocked rung table (9a), full generic
-cup/projector identity (9b), exposed physical trace quotient and complete
-root polynomial, and independently replayed the focused audit: PASS.
-This records a separate proof check, not external peer review or a
-whole-source cube equality theorem.
+The result concerns the stated reflected source, not equality with the whole cube invariant.

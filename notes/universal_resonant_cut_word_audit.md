@@ -1,6 +1,6 @@
 # Independent word/source audit of the universal first-slot cut
 
-27 October 2026. Proof pass of
+27 October 2026. Detailed examination of
 [the universal resonant-cut theorem](universal_resonant_cut_and_actual_source.md).
 The inverse-pair insertion is an actual source-preserving presentation
 change. On the established regular geometric critical branch its added

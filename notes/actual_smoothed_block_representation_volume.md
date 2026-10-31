@@ -1,6 +1,6 @@
 # Connected untwisted smoothing has a strict source-capacity gap
 
-30 October 2026. Independently reviewed and frozen. Let D be a fixed
+30 October 2026. Let D be a fixed
 connected augmented flat plat with the original labeled nondegenerate
 convex ideal right-angled certificate. Its original two marked white
 faces and literal physical/matching port orders are retained. Delete a
@@ -11,7 +11,7 @@ ports may retain their original signed half twists.
 The [exact capacity decomposition](actual_smoothed_source_capacity_blocks.md)
 supplies simple white blocks and zero-capacity double triangles. If a
 loop occurs, its capacity is -infinity. Otherwise the construction
-below gives a representation of the ORIGINAL drilled group, killing
+below gives a representation of the original drilled group, killing
 every deleted meridian, with volume
 
   2 sum_blocks Vol(Q_block)=2pi Phi_sm < Vol(Y_D)=2pi Phi_D. (1)
@@ -58,7 +58,7 @@ two-main-arc sphere, or the corresponding meridional annulus after
 deleting cusp neighborhoods. This is the familiar componentwise
 connected-sum situation, with the actual meridian identified.
 
-MATCHING/MATCHING: the two ORIGINAL shaded pairings cross the cut
+MATCHING/MATCHING: the two original shaded pairings cross the cut
 pieces. They must not be replaced by gluing entire artificial cusp
 tori. In particular no equality of the two blocks' cusp shapes is
 required. The local algebra gives the needed actual collar directly.
@@ -242,9 +242,9 @@ rank deficient) with their actual commuting peripheral words.
 
 Finally restore the original deleted solid-torus cusps. Their meridians
 are trivial. The [proved axis/parabolic flattening](general_representation_volume_kernel_strictness.md) gives a
-zero-volume filling cap, so the representation of the ORIGINAL
+zero-volume filling cap, so the representation of the original
 drilled exterior has exactly the same volume. The complete original
-meridian was nontrivial; the independently reviewed strict-kernel
+meridian was nontrivial; the strict-kernel
 theorem therefore gives Phi_sm<Phi_old for every such nonempty
 connected untwisted smoothing with finite capacity.
 
@@ -309,29 +309,6 @@ inputs. No finite tensor product over the capacity blocks was used.
 
 ## 6. Verification and precise scope
 
-Root full analytical review: PASS, including the corrected common-
-horosphere finite-chain construction, the short-edge volume bound and
-the uniform corridor in section5.
-Independent cluster full analytical review: PASS, including the literal
-MAIN/MAIN and MATCHING/MATCHING cuts, contact centralizers, fixed second-
-ball reflection and the corrected incidence-point approximation.
-Independent coherent full section5 review: PASS, including fixed
-positive-radius regularization, finite subset margins, both parities,
-remaining signed complete ports and exact disconnected vanishing.
+The finite-chain construction uses common horospheres and the specified fixed second-ball reflection. Section 5 requires fixed positive-radius regularization and finite subset margins, retaining signed complete ports and exact disconnected vanishing.
 
-[The focused audit](../experiments/audit_actual_smoothed_block_representation_volume.py)
-and its [saved results](../experiments/actual_smoothed_block_representation_volume_results.json)
-pass: 10 typed spherical sources and 56 actual two-edge cuts; 18 shaded
-contact maps, 27 literal threading/Hurwitz words, 9 restored deleted
-meridians, 72 white pairings using one second-ball reflection, 36 prefix
-relations and 2 nonparabolic deleted outer products; 54 finite-incidence
-horosphere checks and 36 short-edge checks at 70 digits. Three explicit
-constant-shape ideal-coalescence counterchecks guard the distinction
-needed in section4. These checks do not purport to prove the topological
-disk quotient or the general strict-volume theorem.
-Root full audit-code review: PASS. Independent cluster fresh redirected
-replay: PASS, reproducing every reported count and the 70-digit error
-bound. The reviewed proof retains the actual cut types, primitive
-peripheral words, original mark and original source measure.
-The representation can be nondiscrete and its assembled circle diagram
-can overlap globally; only its individual blocks are developed convexly.
+The representation may be nondiscrete and the global circle configuration may overlap. The argument uses convexity of each individual block, not global packing embeddedness.

@@ -145,7 +145,7 @@ already vanishes at every root, so its trace is zero. This proves
 (8) with all multiplicities, including N=2 and both parities.
 
 Thus complete-circle/turn/multiplication circuits give a genuine
-all-level positive family inside the ORIGINAL source theory.
+all-level positive family inside the original source theory.
 Their exact zeros remain important: for even N the support in (8)
 starts at N/2, so L_N^2=0 by (2). Positivity does not hide that zero.
 
@@ -204,7 +204,3 @@ Audit: [generic finite products and full root-algebra verification](../experimen
 The uniform proofs above establish positivity; finite tests independently
 check the formulas, the actual repeated-root quotient and complete-circle
 coefficients. They are not a general graph volume theorem.
-
-Independent analytical review by the global audit agent checked the
-generic induction, root normalization, repeated-root divisibility,
-trace identity, circle support and odd projector/positive period.

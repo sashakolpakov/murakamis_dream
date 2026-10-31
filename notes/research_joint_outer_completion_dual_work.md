@@ -45,7 +45,7 @@ In particular tau>0 at every nonterminal row with positive mu, or with
 both input outer corners positive. The zero-slack nonterminal cases are
 zero joint-entropy monomial degeneracies, not positive-area regular rows.
 
-Complete the local port by retaining alpha on its ORIGINAL input triangle
+Complete the local port by retaining alpha on its original input triangle
 (x,parent,y) and putting the original output triangle at its pure child
 vertex, with child load1/2. These are two genuine nonnegative half-supply
 triangle allocations. Their quartet load differs from q by exactly
@@ -113,7 +113,7 @@ so its EXACT term in B is zeta_e. From beta_x+beta_y=delta_e,
 
     Delta dot log L >= -sum_e omega_e delta_e.
 
-Let P_s be the ORIGINAL shared-flow polytope: each port has total1,
+Let P_s be the original shared-flow polytope: each port has total1,
 ordinary face targets1 and protected0; CROSS middles<=1/2; the selected
 one-sided child>=1/2. All these constraints are linear. Define
 
@@ -169,9 +169,7 @@ all feasible original flows, potentially using the outer-transfer graph
 and the positive Fourier kernel of f. Neither the middle-only cocycle nor
 a lossless cover of the original projection supplies that compensation.
 
-The root and an independent peer completed full analytical reviews of
-the identities, equality cases, original load defect, dual-work formula,
-and sufficient LP criterion: PASS. No new diagram coverage is asserted without a verified certificate.
+No new diagram coverage is asserted without a certificate verifying the stated sufficient criterion.
 
 The local score is the one in the [joint source criterion](general_endpoint_conditioned_source_energy.md);
 its exact three-gap form is recorded in the [triangle decomposition](research_joint_entropy_triangle_decomposition.md).

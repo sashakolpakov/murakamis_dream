@@ -1,6 +1,6 @@
 # Source-normalized triangle entropy and an algebraic complete-radius balance test
 
-Independently reviewed exact lemma, 31 October 2026. This uses the original complete triangle potential and its proved closed coefficient entropy. It supplies a sufficient local test for the [complete-radius balance theorem](general_complete_radius_balance_filling_volume.md). Realization at arbitrary width remains separate. The full Fejér entropy $h$ is [not everywhere nonnegative](actual_fejer_entropy_signs_and_tail_insertion.md); no such assertion is used here.
+exact lemma, 31 October 2026. This uses the original complete triangle potential and its proved closed coefficient entropy. It supplies a sufficient local test for the [complete-radius balance theorem](general_complete_radius_balance_filling_volume.md). Realization at arbitrary width remains separate. The full Fejér entropy $h$ is [not everywhere nonnegative](actual_fejer_entropy_signs_and_tail_insertion.md); no such assertion is used here.
 
 ## 1. The exact source normalization
 
@@ -107,5 +107,3 @@ At an actual certified simple-white port, $A>0$ because its outer pair is MATCHI
 This lemma does not establish that every diagram satisfies (6), or that some diagram satisfying it exists at every bridge width. It does not prove the full Fejér entropy $h$ nonnegative, identify an independently optimized shared capacity, or interchange a minimax. The only entropy used in (2)–(4) is the triangle entropy.
 
 ## Validation
-
-The scalar concavity proof was derived independently. Root and geometry reviewers read the full source-normalization and boundary proof and reported PASS, including the half-degree Legendre identity, exact zero specialization, equality in the product test, and the golden-ratio boundary. No numerical audit is substituted for this elementary analytical argument.

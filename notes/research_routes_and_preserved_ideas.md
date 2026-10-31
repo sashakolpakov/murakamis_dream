@@ -12,11 +12,11 @@ routes, and do not yet prove the general contributing source period.
 29 October 2026. This is a navigation and scope record, not a new proof
 or a replacement for the underlying notes. No route below is abandoned
 because another has advanced. “Proved” refers to the repository's
-internally reviewed research arguments; broader statements remain open.
+research arguments; broader statements remain open.
 
 Start with the [current frontier](general_equality_frontier.md) and
 [pretzel-to-general strategy](pretzel_to_general_source_strategy.md).
-The objective remains the broad ORIGINAL-source equality with the
+The objective remains the broad original-source equality with the
 ACTUAL hyperbolic volume, retaining the mark, normal terms and peripheral
 normalizations. A projected sector, local volume formula or upper bound
 is not a substitute for that objective.

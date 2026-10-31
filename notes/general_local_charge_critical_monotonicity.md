@@ -7,7 +7,7 @@ now supplies the separate contour and nonvanishing proof. Combining it
 with the comparison below proves dominance within a finite local charge
 sector. The complete global remainder remains open.
 
-31 October 2026. Internally reviewed. This is a local analytic
+31 October 2026. . This is a local analytic
 statement about the actual normalized source action. It compares
 critical VALUES; it does not prove intersection with an original
 integration cycle, a nonzero amplitude, or control of remote charges.

@@ -27,7 +27,7 @@ rho=q-q^(-1), F_a=(Q;Q)_a. On the original balanced V=V_d use
     Ecal|a>=(Q^(-a)-1)|a-1>, K|a>=xQ^(-a)|a>,
     H|a>=(d-2a)|a>, 0<=a<=d.                            (1)
 
-Missing endpoint arrows are zero. The ORIGINAL coproduct is
+Missing endpoint arrows are zero. The original coproduct is
 
     F_12=F_1+K_1^(-1)F_2,
     E_12=Ecal_1 K_2+Ecal_2, K_12=K_1K_2.                (2)
@@ -267,7 +267,7 @@ The removed scalar is t_0/alpha=(-1)^N rho Hbar, where
 Hbar=N^(-1)sum_u sum_(j<=u)(1-Q^j)^(-1). Its absolute value
 is at most pi(1+log N). Hence [Jp,Jt] has condition at most
 (pi/sqrt(3))[1+pi(1+log N)]^2. This is a proved tame
-recoupling of the ORIGINAL two-dimensional source packet into
+recoupling of the original two-dimensional source packet into
 the complete multiplicity module, not an ambient q-Racah bound.
 
 For arbitrary complete multiplicities there are specified coherent
@@ -332,7 +332,7 @@ their literal inverses. The first consists of the known unit-value
 and polynomial first-jet blocks; the second retains the FULL
 coherent Racah transport.
 
-Both ORIGINAL sources in this metric are polynomial. Put
+Both original sources in this metric are polynomial. Put
 u=V^(-1)Jp and a=ell J^(-1)V. From the exact endpoint source
 (12) and CD inverse (18a), their entries at each double node are
 
@@ -428,7 +428,7 @@ substituted for W_ch.
 
 ## 4b. A local cap-Ward quotient does not propagate through an adjacent crossing
 
-There is a minimal ORIGINAL-source test for quotienting currents before
+There is a minimal original-source test for quotienting currents before
 taking a positive norm. Set D=A-c_*I on the complete W above. Since
 ell D=0, the ordinary-cap row descends to the LINEAR quotient
 
@@ -490,7 +490,7 @@ gives the whole V map. For fixed r>=1 this dimension is
 O_r(N^(2r-1)); r=0 means the one-dimensional scalar Hom.
 No internal channel between successive braid gates is projected.
 
-Now take an ORIGINAL 2k-head plat, r=k-1, b=2k-1. Define
+Now take an original 2k-head plat, r=k-1, b=2k-1. Define
 
     Phi_w=(I_w tensor I)p
       =N sum_(a=0)^d x^(a-d) F_b^a H_r(w)/F_a
@@ -522,7 +522,7 @@ Most importantly the FULL original top source is retained. Set
 Then Phi_(w0)=p^tensor k, and EXACTLY
 
     (ell^tensor(k-1) tensor m) Phi_w=lambda(w),
-    ORIGINAL plat scalar=chi_N lambda B_word w_0.        (22)
+    original plat scalar=chi_N lambda B_word w_0.        (22)
 
 To prove it, compose I_w with the first k-1 ORDINARY caps.
 This is a Hopf map V->V and hence scalar. Its highest matrix
@@ -591,22 +591,7 @@ source (22), rather than any phase-free path majorant.
 
 ## 7. Verification and scope
 
-[Audit](../experiments/audit_actual_complete_source_multiplicity_module.py)
-uses an independent original finite-root E/F and signed R implementation.
-Fresh replay: PASS seven complete three-head families N=2,...,8,
-all descendants, both full signed braid matrices, all sources,
-anti-Pascal phases, Casimir cyclicity, ordinary and unrestricted
-marked contractions. Ten further full-source plat families include
-2,4,6 and8 physical heads, every signed generator, the exact
-Casimirs (24)--(25), and full original word/source comparisons.
-The audit also checks the exact full-channel Racah and BOTH source
-profiles (18e), and twelve Hermite source-embedding/recoupling norm
-families through N=128.
-The proof above establishes the all-level/all-width statements;
-finite tests are supplementary. Original kappas and turns are retained.
-The same fresh replay checks the cap-current primitive and the exact
-nonzero adjacent-crossing overlap in Section4b at all seven complete
-three-head levels; no arbitrary coupon algebra is used for that test.
+The finite audit uses the actual signed crossing matrices and their $E,F$ actions. Its scope is the specified word algebra, not an arbitrary coupon algebra; finite checks do not replace the all-level proof.
 
 This is different from the auxiliary classical Clebsch memory in
 [the degree-elevation dilation](clebsch_memory_dilation_and_actual_r_excursions.md).

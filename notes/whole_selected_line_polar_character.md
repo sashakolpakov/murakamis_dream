@@ -54,7 +54,7 @@ used here,
 
 Consequently the character exp(S_geo/h_N) has precisely the desired
 volume rate. This character and an ordinary leading Gaussian
-coefficient are different data. The question is whether the ORIGINAL
+coefficient are different data. The question is whether the original
 selected quantum period has this character, with only lower-rate
 factors remaining.
 

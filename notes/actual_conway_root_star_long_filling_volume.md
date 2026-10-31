@@ -1,6 +1,6 @@
 # Root-star compositions and the knot complement volume
 
-31 October 2026. Internally reviewed assembly. This note concerns the
+31 October 2026. assembly. This note concerns the
 literal composition \(C(h_0T(h_1\cdots h_s))\), with \(s\ge2\).
 The analytic argument treats the correlated root character together with
 its child. It does not replace the original signed source by a positive
@@ -225,18 +225,3 @@ such a bound when the turned child is a product of physical leaves.
 It does not prove the necessary spectral localization for an arbitrary
 child with internal turns. Presentation coverage and a generic
 main-meridian quantum A-operator theorem remain separate open tasks.
-
-
-## Internal review and verification scope
-
-The source-transport and coherent-source reviewers independently read
-all five sections, including the whole alias split, exact original
-normalization, fixed complex packet and full filling transfer. The
-marked-geometry reviewer independently checked the actual topology,
-primitive slopes, absolute regulator and smooth metric completion.
-The primary reviewer checked those interfaces and the comparison with
-prior source results. All analytical reviews passed after the stated
-notation and coverage clarifications. These are internal reviews, not
-external peer review or formal verification. Native rendering and link
-checks preserve the written proof; no finite numerical experiment is
-used to establish the asymptotic theorem.

@@ -210,15 +210,4 @@ nor a general long-twist volume theorem follows from it alone.
 Focused audit: [phase-canceled source and every physical support
 range](../experiments/audit_actual_matching_edge_entire_operator_kernel.py).
 
-Primary-agent full analytical review: PASS. The reader checked the
-original normalization and complete phase cancellation, both forbidden
-ranges, determinant divisibility and its persistent recurrence factor,
-physical adapters and the exact scope of the dense-zero obstruction.
-
-Independent full analytical review and fresh focused replay: PASS.
-The reader reproduced 14,079 original physical entries, including
-5,305 residual-product zeros and 504 double-determinant zeros, 378
-forced-factor checks and 108 parity identities. Twelve independent
-original-source comparisons, 230 forbidden physical zeros and six
-nonzero off-grid values at forbidden degree also passed at 140 digits.
-Neither review infers a generic-q lift or a second-chart asymptotic.
+The entire operator kernel does not imply a generic-q lift or a second-chart asymptotic.

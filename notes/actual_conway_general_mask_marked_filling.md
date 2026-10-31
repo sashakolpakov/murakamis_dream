@@ -1,6 +1,6 @@
 # Actual marked deformation and smooth filling for every strict Conway mask tree
 
-31 October 2026. Internally reviewed geometric and local-source theorem.
+31 October 2026. geometric and local-source theorem.
 This extends the [general strict-mask complete geometry](actual_conway_general_strict_mask_geometry.md)
 to the original pure/odd face pairings, primitive peripheral paths and
 absolute filled-volume calibration. Every complete leaf is at or above
@@ -565,15 +565,3 @@ then identifies (23) with the original invariant's full-sequence rate,
 retaining the original currents, charges, parity and nonzero coefficient.
 No general alias bound follows from port rigidity, the masked geometry,
 or the all-core result. No theorem for all arborescent knots is claimed.
-
-## Internal review scope
-
-The parent reviewed the full masked construction, primitive marking,
-absolute calibration, quarter proof and expanded packet/core argument.
-The independent coherent-source reviewer read all sections analytically
-and checked their original-source and topology scope. The local-source
-reviewer independently checked the full finite-lattice/window/core part.
-All reported PASS. The generic rational matrix identities are the
-previously independently verified exact identities; this extension uses
-no new numerical sampling. These are internal proof reviews, not external
-peer review. The earlier manuscript and public theorem are unchanged.

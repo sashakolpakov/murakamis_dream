@@ -190,7 +190,7 @@ Equation(14) is an inequality, not a claim that the off-diagonal
 Gram terms vanish. It explicitly pays a polynomial factor when
 they are estimated. Other coherent packet Grams can improve it.
 
-## 5. A full ORIGINAL signed-plat consequence
+## 5. A full original signed-plat consequence
 
 The actual Pascal/fusion alphabet proves, without any source-null
 remainder,
@@ -231,7 +231,7 @@ positive physical-path sum
              |u_(i_0)|^2 1_cap(i_L)
                   product_(j=1)^L |C'hat_j[i_j,i_(j-1)]|^2. (19)
 
-Here |u_i|^2=N^-k on the ORIGINAL input cup-complement states
+Here |u_i|^2=N^-k on the original input cup-complement states
 and zero elsewhere. Every physical index lies in0,...,d and
 every transfer has its exact unwrapped support. Then
 
@@ -265,7 +265,7 @@ the literal finite inverse, exact four-weight phases, doubled
 Kraus/Fourier sum, operator inequalities, and complete original
 signed-plat source bounds.
 
-Fresh replay: PASS four exact mixed-copy/Fourier packet families and
+The finite audit checks four exact mixed-copy/Fourier packet families and
 four complete original signed-plat source inequalities, with literal
 Cartan scalar and pivots retained. The all-level statements follow
 from the displayed finite operator identities and Cauchy inequalities.

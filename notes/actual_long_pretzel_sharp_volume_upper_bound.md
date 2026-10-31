@@ -21,7 +21,7 @@ the following property. Let p_1,...,p_s be independently chosen
 fixed signed integers satisfying |p_i|>=p_s, and let K be the
 original odd pretzel knot with boxes R^(-(2p_i+1)). Assume its
 complement is hyperbolic, as in the standing project hypothesis.
-Then the ORIGINAL normalized Kashaev invariant satisfies
+Then the original normalized Kashaev invariant satisfies
 
     lim_(N->infinity) (2pi/N)log|<K>_N|
         =Vol(rho_p) <= Vol(S^3 minus K).                  (1)
@@ -127,7 +127,7 @@ geometric anchor fixes their SAME absolute constant V_s. Thus Dsrc
 is the regulator of the representation constructed above throughout
 the selected connected local branch.
 
-The ORIGINAL Gaussian filling action is
+The original Gaussian filling action is
 
     W=G+sum_i (z_i-2pi i)^2/(4p_i).
 

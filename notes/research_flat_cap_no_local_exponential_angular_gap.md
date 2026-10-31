@@ -1,9 +1,6 @@
 # A flat cap has no uniform local exponential angular mismatch bound
 
-31 October 2026. **Internally reviewed exact source observation.** Root and
-geometry completed full independent analytical and original-source scope
-reviews, PASS. This is a limitation of one local phase estimate, not a
-lower bound for the original shared source or its filling period.
+The flat-cap example is a local limitation on phase suppression. It is not a lower bound for the full source or a filling period.
 
 At the residual cap \(x=b=0\), \(\sigma=2\), the literal raw coefficient is
 
@@ -92,10 +89,7 @@ coefficient extraction, a combined analytic block estimate with other
 ports, or a different source-preserving treatment of the cap boundaries.
 It makes no assertion that \(W_N\) occurs uncoupled in the full invariant.
 
-The proof is exact for every \(N\ge3\) and window lying in the stated
-range. It uses no asymptotic coefficient formula or numerical experiment.
-The complete written proof received independent internal reviews from
-root and geometry. No numerical audit is needed or claimed.
+The proof is exact for every \(N\ge3\) and window lying in the stated range. It uses no asymptotic coefficient formula or numerical experiment.
 
 The [stationary MAIN-cycle theorem](research_stationary_noncross_main_cycle_obstruction.md)
 uses the cap character while keeping this limitation explicit.

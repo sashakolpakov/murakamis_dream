@@ -27,7 +27,7 @@ For any two-head box define its actual rigid quarter-turn by
    =x^{u-e}B_{(d-u,v);(b,d-e)}.                      \tag{1}
 \]
 
-This is a linear tangle rotation using the ORIGINAL turns. It is not
+This is a linear tangle rotation using the original turns. It is not
 a multiplicative map for vertical box composition and is not asserted
 to preserve matrix positivity. The original crossing rotation/snakes
 give \(\mathscr R(R^{-1})=R\), with full Cartan retained; also
@@ -340,7 +340,7 @@ base is exactly zero. For \(N=3\), (6) is
 \(z_3(z)=q^2z-1-5i\sqrt3\); (14) at \(s=3\) recovers exactly
 \(-189+81i\sqrt3\).
 
-There is also an exact ORIGINAL one-variable residue and its finite
+There is also an exact original one-variable residue and its finite
 integer windings. For any \(R>1\), parametrizing the enclosing
 \(z\)-ellipse by \(z=w+w^{-1}\) gives
 

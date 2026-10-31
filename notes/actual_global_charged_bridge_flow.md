@@ -28,7 +28,7 @@ assembled diagonal matrix. Hence the actual scalar is
 
     K_N=chi_N/N *Tr[(I tensor g tensor ... tensor g) W].  (1)
 
-The external ORIGINAL dimension/framing line chi_N remains. This
+The external original dimension/framing line chi_N remains. This
 uses integer-degree conservation BEFORE any Fourier or bridge
 decomposition. It is not a sectorwise replacement of the marked row,
 a claim about arbitrary inserted currents, or an extra pivotal trace.
@@ -337,7 +337,7 @@ for coefficient/determinant reformulations in general is intended.
 The independent statement proved above is the exact original-source
 clock bijection, event charge and absence of cyclic anchor aliases.
 
-The proof is for the ORIGINAL complete braid word and its stated
+The proof is for the original complete braid word and its stated
 scalar source. An inserted degree-changing coupon need not permit
 (1) and would need its own charged source form. The theorem does
 not discard such a coupon or claim the same charge automatically.
@@ -349,6 +349,6 @@ not discard such a coupon or claim the same charge automatically.
 The audit verifies the signed undertransport and event/segment
 bijection, pointwise homogeneous bridge forms with all original
 normalizations, the alias-free root-grid coefficient identity, and
-the full formula (12) against ORIGINAL signed physical word matrices
+the full formula (12) against original signed physical word matrices
 and their actual averaged pivotal scalar, including its external
 framing/dimension line.

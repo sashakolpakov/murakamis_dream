@@ -230,7 +230,7 @@ r-d through -H-1, entirely negative and strictly above
 -N. Thus the original N-point SUM, not merely a formal
 constant term, is exactly zero in this region.
 
-## 5. Whole ORIGINAL post-reduction sanity check: 5_2
+## 5. Whole original post-reduction sanity check: 5_2
 
 Use the independently identified original word
 [1,1,1,2,-1,2] and its actual averaged cut and two
@@ -247,7 +247,7 @@ The remaining wire5 occurs only in the under-output
 of crossing1 and the input of that reduced bridge.
 Their actual parameters satisfy ab=Q: a=Q^(r+1)/z3
 and b=z6/x, while z6=x z3 Q^(-r). Every other
-crossing, reduced bridge factor and ORIGINAL boundary
+crossing, reduced bridge factor and original boundary
 coupon is independent of wire5. Thus (9)--(11) apply
 to the ENTIRE remaining source, with its full scalar.
 

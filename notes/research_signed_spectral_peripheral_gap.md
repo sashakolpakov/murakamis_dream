@@ -1,6 +1,6 @@
 # A conditional signed spectral route to an actual peripheral volume gap
 
-Workspace research draft, 31 October 2026. Not approved for publication.
+Workspace research draft, 31 October 2026.
 The incidence-character statements below are proved finite algebra.
 The source-to-group and absolute-regulator assertions in Section 3 are
 explicit missing hypotheses, not a new representation theorem.
@@ -117,7 +117,7 @@ following properties:
    original cap, cup and unrestricted mark remain present.
 3. The resulting full physical derivatives preserve the SAME ordered
    product on both legs of every port and sew to an ACTUAL SL2(C)
-   representation rho of the ORIGINAL drilled group, with its fixed
+   representation rho of the original drilled group, with its fixed
    based peripheral words and the primitive normalization above.
 4. Its absolute action is identified with that representation's
    canonical relative volume, in the precise longitude form

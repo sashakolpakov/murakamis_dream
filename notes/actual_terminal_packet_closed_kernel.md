@@ -155,7 +155,7 @@ write its physical states as
 
 The two terminal crossings and final cap force the first crossing's
 transfer to n-r and the second crossing's transfer to 0. Substituting
-the ORIGINAL signed-color formula, with both common Cartan factors,
+the original signed-color formula, with both common Cartan factors,
 gives the terminal coefficient
 
 \[
@@ -325,7 +325,7 @@ every input column with (3), (6), (9), and (13); checks the exact rank
 and shifted-Durfee/Green identities; and verifies the literal angle
 metrics separately over the complex principal roots.
 
-Fresh replay: PASS ten complete original open matrices at N=2,...,10,12,
+The finite audit checks ten complete original open matrices at N=2,...,10,12,
 including every input column, original row-sum source and benchmark
 packet; eleven complex-root three-port angle-metric families.
 

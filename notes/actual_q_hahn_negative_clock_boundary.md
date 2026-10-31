@@ -1,6 +1,6 @@
 # The actual finite-clock boundary determinant through the fold
 
-30 October 2026. Independently reviewed. The original 222
+30 October 2026. The original 222
 boundary has two finite negative raw clocks, by the literal
 [right-angled prefix sign theorem](actual_right_angled_resonant_prefix_signs.md).
 At the ROOT this puts its actual white numerator in a positive
@@ -223,7 +223,7 @@ total degree one, which lies on that tube's boundary. Unlike the
 whole rational column, the numerator determinant has no omitted
 Delta_a(UV) denominator. This note estimates the numerator only.
 
-The action in (7) has the ORIGINAL selected normalization. To check
+The action in (7) has the original selected normalization. To check
 this directly, rotate both raw clocks to X_delta=e^(-i delta)X and
 Y_delta=e^(-i delta)Y, with fixed small delta>0. Their actual heads
 lie in the earlier strict physical tube for all sufficiently large N.
@@ -257,15 +257,6 @@ bound, six independent dense trace calculations and 42 positive
 Schur-tail inequalities. The 36 leading-rate diagnostics supplement
 the written proof; they are not its justification.
 
-Independent validation: a full analytical reader checked the original
-source identity, retained phases, uniform trace correction, trace-walk
-limit, folded Schur tail and large-partner scope, then freshly replayed
-the focused audit with all counts reproduced. A second reader separately
-checked the entire leading-rate and folded-endpoint argument, including
-the nonuniform initial rows and compact parameter dependence. Both
-reviews passed. These conclusions concern the root numerator only;
-no generic quantum-normal or global-period conclusion is inferred.
+The conclusion concerns the root numerator. It does not establish generic-$q$ normal data or a global period.
 
-The selected-action boundary comparison was additionally checked by the
-second reader, with the actual half-index offsets and positive-center
-branch retained; targeted review PASS.
+The selected boundary calculation retains the original half offsets and the positive branch specified above.

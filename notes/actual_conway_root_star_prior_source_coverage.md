@@ -126,8 +126,3 @@ stated theorem scopes. It does not reprove their asymptotic or geometric
 dependencies, claim a new tangle equivalence, or assert coverage of every
 algebraic link. Mathematical rendering and relative-link checks are
 preservation checks; no numerical asymptotic experiment is used.
-
-The primary and coherent-source reviewers independently passed the exact
-coverage comparison. The primary reviewer also read this preserved note
-in full and checked the outer-power identity and angular-coordinate signs.
-These are internal source/scope reviews, not external peer review.

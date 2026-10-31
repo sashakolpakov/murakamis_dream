@@ -1,10 +1,6 @@
 # A spectral-pole endpoint cannot maximize the sharp shared functional
 
-Unpublished workspace analytical theorem, 31 October 2026. Root and coherent
-completed full internal analytical reviews; this is not external peer review. This is a calculus theorem for
-the ORIGINAL full-interval sharp coefficient majorant. It uses the actual
-unused prefix/suffix logarithms and makes no lower asymptotic or nonzero
-claim for finite coefficients at sampled spectral zeros.
+The sharp-pole calculus does not establish a lower rate or nonvanishing at sampled zeros.
 
 ## 1. Statement with the exact gain
 
@@ -105,7 +101,7 @@ claim that a sampled zero finite product has a nonzero logarithm.
 ## 4. Uniform control of the active tail, before taking any infimum
 
 Write a=sin(pi t), k=cos(pi delta), s=sin(pi delta), A=x+y,
-P=xy and R=sqrt((x-y)^2 a^2+4Pk^2). The ORIGINAL tail root is
+P=xy and R=sqrt((x-y)^2 a^2+4Pk^2). The original tail root is
 
     Lambda=2a(Aa+R).
 
@@ -164,8 +160,7 @@ not assert that arbitrary remaining KKT data are limits of coherent
 regular solutions. No numerical audit is required for the elementary
 integral identity and the tilt-uniform bound proved here.
 
-
-## Dependencies and review scope
+## Dependencies
 
 The [original full-interval source](research_original_one_sided_four_state_transfer.md)
 and [positive eta-word](research_positive_eta_word_transfer.md) supply the
@@ -173,9 +168,4 @@ finite source normalization. The [regular coefficient upper bound](research_shar
 and [shared stationary reduction](research_regular_shared_spectral_stationary_reduction.md)
 state the upper-functional setting used here.
 
-Both internal reviews checked all four inward directions, the compatible
-two-contact direction, the exact logarithmic gain from the original unused
-rows, the all-tilt active-root derivative estimate, and the closed-degree
-shared-target scope. This analytical theorem has no numerical audit, lower
-coefficient asymptotic, phase-compatibility assertion or density assertion
-for boundary maximizers.
+No phase-density or boundary-maximizer conclusion follows from this local calculation.

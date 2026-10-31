@@ -163,14 +163,3 @@ larger levels or exclude an asymptotic normalization with a controlled
 phase error.
 
 Audit: [original endpoint projectors, six-entry ratio and discriminant](../experiments/audit_actual_central_endpoint_magnetic_phase_obstruction.py).
-
-Independent root review: full analytical read and fresh audit PASS.
-The reviewer independently recomputed the N=3 descendants and all six
-entries, their gauge-invariant ratio, and the endpoint discriminant
-with its physical-domain lower bound.
-
-Independent coherent-partner review: full proof review and fresh audit
-PASS. The reviewer separately computed both N=3 descendant vectors,
-checked all six tensor entries and cancellation of arbitrary nonzero
-diagonal leg gauges, and rederived the endpoint quadratic and both
-uniform bounds. The retained-source and finite-level scope were checked.

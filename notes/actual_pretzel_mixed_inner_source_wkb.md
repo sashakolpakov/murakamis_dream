@@ -353,7 +353,7 @@ checks the original finite mixed coefficients, balanced transform,
 all-r Ward and normalized endpoint wall at both parities; verifies
 the holomorphic source ratios and the calibrated selected amplitudes.
 
-Fresh replay: PASS 17 complete finite-field families N=2,...,18,
+The finite audit checks 17 complete finite-field families N=2,...,18,
 with EVERY admissible integer color and inner index, the original
 low-core marked phases and odd mixed finite transformation; four
 independent canonical complex-Fhat source cases; and six full selected

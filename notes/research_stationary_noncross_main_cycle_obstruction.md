@@ -1,9 +1,6 @@
 # Every positive-value non-CROSS sharp maximum has an elementary odd MAIN cycle
 
-31 October 2026. **Internally reviewed source/combinatorial theorem.** Root and geometry completed full independent analytical and original-source scope reviews, PASS. This uses the reviewed
-full-fiber activation and stationary classification. It does not construct
-a representation or prove an absolute exponential phase gap. No cap collar
-is used.
+31 October 2026. This source/combinatorial theorem uses full-fiber activation and stationary classification. It does not construct a representation or prove an absolute exponential phase gap, and uses no cap collar.
 
 ## 1. Exact hypotheses inherited from the original maximum
 
@@ -163,14 +160,9 @@ when that comparison is used. A competing non-CROSS maximum of high value
 is necessarily phase-inconsistent.
 
 An odd cycle alone is NOT an absolute upper bound for the oscillatory
-source. On regular windows the reviewed cycle-packing theorem subtracts
+source. On regular windows the cycle-packing theorem subtracts
 an explicit local phase loss from a positive envelope; comparing that
 result to \(\Phi_D\) remains necessary. Residual flat caps do not automatically
 satisfy a regular-window exponential angular gap. The [exact flat-cap calculation](research_flat_cap_no_local_exponential_angular_gap.md) exhibits this limitation. No full invariant or volume theorem is inferred.
 
-Dependencies are the [full-fiber boundary reduction](research_full_fiber_sharp_boundary_activation.md),
-[stationary classification](research_full_fiber_sharp_stationary_classification.md),
-[exact source expansion](research_original_one_sided_four_state_transfer.md), and
-[original MAIN/MATCHING dictionary](general_augmented_plat_matching_geometry.md).
-The [flat-cap companion](research_flat_cap_no_local_exponential_angular_gap.md) retains its exact raw coefficient and phase.
-Root proposed the general Green argument. Root and geometry reviewed this complete written proof; geometry and cluster also independently checked the local original-edge cases. These are internal analytical reviews, not external peer review. No numerical audit is needed or claimed.
+Dependencies are the [full-fiber boundary reduction](research_full_fiber_sharp_boundary_activation.md), [stationary classification](research_full_fiber_sharp_stationary_classification.md), [exact source expansion](research_original_one_sided_four_state_transfer.md), and [original MAIN/MATCHING dictionary](general_augmented_plat_matching_geometry.md). The [flat-cap companion](research_flat_cap_no_local_exponential_angular_gap.md) retains its exact raw coefficient and phase.

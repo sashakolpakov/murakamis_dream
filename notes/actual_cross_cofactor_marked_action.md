@@ -2,14 +2,14 @@
 
 The [whole-source local packet](general_full_spectral_numerator_geometric_packet.md) now assembles these results for the actual full numerator. The original global spectral filling period remains open.
 
-31 October 2026. Internally reviewed. The exact
+31 October 2026. . The exact
 central-cofactor formulas are in [actual cross cofactor factorization](actual_cross_cofactor_factorization.md).
 This note identifies their indicated principal branch, including its
 absolute normalization and the actual primitive logs. It does NOT prove
 that a particular global quantum cycle selects it or that every complex
 cofactor has a single-branch relative asymptotic.
 
-Use spectral w=-sigma-2 (the cofactor note calls it u); the ORIGINAL
+Use spectral w=-sigma-2 (the cofactor note calls it u); the original
 protected white faces are still named u,v and remain zero. At every
 port put A=x+y>0 and P=xy. The principal diagonal and cleared tail root
 are
@@ -144,7 +144,7 @@ If b=0 and xy=0, (3) is exactly
 
                          F_w=(1/2)Log A,               (11)
 
-independent of w, just as the ORIGINAL cofactor is the monomer product
+independent of w, just as the original cofactor is the monomer product
 A^n product_(j=1)^n s_j^2. For b=0 and xy>0, (9) is its nonconstant
 spectral force. These include every allowed triangle of the original
 marked dictionary. Both outer faces cannot be the two protected MAIN
@@ -168,7 +168,7 @@ cofactors, including the exact monomer case. For a summed ordinary
 middle b>0 and for the original shared coefficient, the corresponding
 relative packet is a separate requirement.
 
-## 3. The ORIGINAL physical conic and all momenta
+## 3. The original physical conic and all momenta
 
 By (4), the physical input momentum p=exp(-2pi i mu) satisfies exactly
 
@@ -226,7 +226,7 @@ For a fixed original certified D, form the stationary face action
          -sum_(ordinary f)Log l_f +pi i sum_i epsilon_i delta_i^2}.
                                                                (16)
 
-The two ORIGINAL marked faces remain zero. The existing face Hessian,
+The two original marked faces remain zero. The existing face Hessian,
 marked circle reconstruction and source IFT give its selected local
 analytic branch and one common circle family. By (6) it is exactly the
 candidate full-V CROSS branch with the retained half-twist character.
@@ -289,7 +289,7 @@ For the original unit charge ell_i=1 this is the already calibrated
 primitive smooth filling equation. Reciprocal delta/J branches reverse
 the corresponding logs and charges; kappa or the trace alone cannot
 choose them. The charge0 contribution is identically zero in the
-ORIGINAL spectral total-derivative formula and must not be resurrected
+original spectral total-derivative formula and must not be resurrected
 as a complete-point saddle. Higher charges remain actual terms of that
 formula; (22) alone neither selects them nor supplies a smooth filled
 metric at nonunit charge.
@@ -320,7 +320,7 @@ a nonzero charge sum, or a complementary Gaussian-contour bound.
 The reproducible helper
 `../experiments/audit_actual_cross_cofactor_marked_action.py` accepts `--output`.
 Its saved author result is
-`../experiments/actual_cross_cofactor_marked_action_results.json`, PASS at
+`../experiments/actual_cross_cofactor_marked_action_results.json`, evaluated at
 75 digits. It checks the b=0 antiderivative symbolically, 24 independent
 integrations of the literal beta/determinant/forced source against (3),
 17 derivatives of that integral, and 12 actual Gauss configurations with
@@ -330,10 +330,6 @@ action error is 2.77e-76; the finite-difference force error is 8.62e-41;
 the matrix error is 1.97e-73. These checks supplement the analytic proof;
 they do not prove a relative packet or a contributing quantum cycle.
 
-Review: root full analytic proof and audit-code PASS; independent
-coherent full analytic PASS; independent cluster full analytic/code
-PASS and a fresh redirected replay with matching results.
-The reviews cover the stated action/geometry identities and finite
-verification only, with the original-period selection limitation retained.
+The action and geometry identities do not select a contributing original period.
 
 [Focused audit](../experiments/audit_actual_cross_cofactor_marked_action.py) · [Recorded output](../experiments/actual_cross_cofactor_marked_action_results.json). These finite checks supplement the written proof and retain the scope recorded in their output.

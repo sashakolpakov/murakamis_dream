@@ -1,6 +1,6 @@
 # Independent audit of the whole Ward atom and its two-nome completion
 
-27 October 2026. Independent proof pass of
+27 October 2026. Detailed examination of
 [the cyclotomic-divisor and two-nome construction](unfolded_atom_cyclotomic_divisors_and_two_nome_source.md),
 especially Sections 2, 3, 5 and 6. The fixed-level sectorial nature
 of the assertions is necessary and is stated in that note. This audit
@@ -69,8 +69,7 @@ Both half-power factors are required: their combined exponent is
 -N on nu, producing the factor (1-X) inverse in the preceding
 formula. The first shift x to x+c/N changes S by cV and changes
 g_D by (1-z)/nu, which combine to the original Ward multiplier
-1-z. The second shift x to x+c gives the multiplier 1-X. All
-these signs and the original central norm 1-X pass independently.
+1-z. The second shift x to x+c gives the multiplier 1-X. The original central norm is 1-X.
 The stated conclusion is the radial/sectorial fixed-N value; the
 calculation alone does not prove holomorphic extension around a
 whole root neighborhood.

@@ -1,6 +1,6 @@
 # A local curvature certificate for every signed color subset
 
-30 October 2026. Independently reviewed and frozen. At any fixed bridge
+30 October 2026. At any fixed bridge
 width, a local algebraic test on one actual marked circle packing
 supplies ALL the shared-radius certificates for a joint signed/unsigned
 color corridor. If each varied port's nonzero curvatures differ by at
@@ -110,7 +110,7 @@ At these fixed radii all operator constants C_b are finite. Choose a
 single delta(D)>0 so their total small-color exponential-rate cost on h_e<=delta N is
 less than eta/8, then shrink inside the established core neighborhood.
 Precisely, [the homogeneous theorem](actual_homogeneous_casimir_face_source.md),
-section6, now gives constants c,delta>0 such that the ORIGINAL mixed
+section6, now gives constants c,delta>0 such that the original mixed
 source and its exact complete-image core satisfy
 
     A_N(N-h_E,N_else)/F_N^E(h)=1+O(exp(-cN))
@@ -133,7 +133,6 @@ full intended class remains open. This corollary does not solve the
 entropy redistribution problem when a mixed maximum has a middle
 load greater than1/2.
 
-
 ## 4. Verification scope
 
 The proof uses the existing exact homogeneous source and core theorems;
@@ -146,14 +145,4 @@ checks concern the local inequality; they do not construct a new
 family of diagram realizations.
 
 
-Root full analytical and audit-code review PASS: the actual marked-zero
-dictionary, source-normalized equal-weight constants, elementary strict
-margin and one shared all-subset regularization were checked.
-
-Independent full analytical/code review and fresh256-bit Arb replay PASS:
-all10 allowed zero-position patterns, two exact elementary constant
-identities and1024-term outward-rounded Fourier bounds were reproduced.
-A separate independent analytical read also passed. These reviews concern
-the stated sufficient certificate and its proved corridor consequence;
-they do not assert realizability at every width or a far-color/filling
-theorem.
+The sufficient certificate gives the stated corridor consequence. It does not prove realizability at every width or a far-color/filling theorem.

@@ -18,7 +18,7 @@ On one actual Frobenius residue string, let
 Here c=Q^s for the original physical clock. The actual divided
 e(q),f(q) have nonzero interior arrow coefficients at the root.
 Invert just those finite arrows and set the absent endpoint arrow
-to zero. This defines regular ORIGINAL whole germs e^dagger,f^dagger
+to zero. This defines regular original whole germs e^dagger,f^dagger
 with
 \[
  e^\dagger e=I-P_0,\qquad f^\dagger f=I-P_N.          \tag{1}
@@ -85,7 +85,7 @@ For the actual spectral string let
 \]
 Then P_N(C_Q)=0 exactly, whereas
 \[
- P_N(ZC_Q)=P_N(cZ^{N+1})P_N^{\rm top},\qquad
+ P_N(ZC_Q)=P_N(cZ^{N+1})P_N^{\mathrm{top}},\qquad
  P_N(cZ^{N+1})=
        c^{N+1}Z^{N(N+1)/2}\prod_{j=1}^{N+1}(Z^j-1). \tag{3}
 \]
@@ -95,7 +95,7 @@ P_N and the zero function have the SAME actual matrix value, but
 their currents differ. With delta=1-Z, (2)--(3) give
 \[
  \mathcal J_Z(P_N)=(-1)^N c_0^{N+1}(N+1)!
-                 \delta^N P_N^{\rm top}+O(\delta^{N+1}). \tag{4}
+                 \delta^N P_N^{\mathrm{top}}+O(\delta^{N+1}). \tag{4}
 \]
 The defect is invisible to every normal truncation below order N.
 This is an exact reason why a bounded-order jet calculation cannot

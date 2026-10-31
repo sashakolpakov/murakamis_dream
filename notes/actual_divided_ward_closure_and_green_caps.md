@@ -128,7 +128,7 @@ specialize its regular matrices. This is the actual divided-cap
 argument of [the marked-edge note](divided_adjoint_marked_edge_pairing.md),
 now applied to the coupled currents (2.3).
 
-Let Phi_A(C)=Tr(A C) be the ORIGINAL cut row, allowing its whole
+Let Phi_A(C)=Tr(A C) be the original cut row, allowing its whole
 q-dependent source, pivot and normalization. Its exact dual row is
 
     D_h^vee(A)=sum_(h) rho(S h_2) A rho(h_1)

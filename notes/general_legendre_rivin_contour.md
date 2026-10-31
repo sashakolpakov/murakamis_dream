@@ -10,7 +10,7 @@ period, with every boundary prism exponentially smaller. Gaussian
 Schur complements preserve the same positive half-plane structure.
 
 These are general contour constructions, not assumptions of
-noncancellation. They do not assert that the ORIGINAL quantum
+noncancellation. They do not assert that the original quantum
 source has already been changed into this positive chart. The
 original figure-eight indefinite chart and the five-crossing
 bent-source calculation show why that last transport is substantive.
@@ -234,7 +234,7 @@ the two selected periods differ by
 O(N^B exp[N(V_*-delta_Q)/(2pi)]). No coefficient is set to
 one by normalization. If a_0(x_*) is a unit, each chain has
 one selected oriented saddle (multiplicity one), with its
-nonzero ORIGINAL density, contour Jacobian and Gaussian
+nonzero original density, contour Jacobian and Gaussian
 determinant retained. The numerical coefficient is their
 specified product, not the number one. Nonvanishing follows
 directly from the unique maximum, (11), and the negative
@@ -316,7 +316,7 @@ But the sum over ALL edge angles is exactly 2pi t, and hence
 the omitted edge has total 2pi(1-sum k_e). Its positivity
 forces sum k_e<=0. Consequently EVERY k_e is zero.
 
-Thus any strictly positive alias cell has its ORIGINAL edge
+Thus any strictly positive alias cell has its original edge
 angle equations. If m!=0, invertibility of B makes its remaining
 meridian-angle shift a nonzero integer multiple of 2pi. Such
 cells are distinct fixed-meridian-angle slices of the SAME full

@@ -1,76 +1,78 @@
 # Murakami’s Dream
 
-## Quantum invariants and actual hyperbolic volume
+## The question and the knots under consideration
 
-The question driving this project is whether the original quantum invariant of a hyperbolic knot has exponential growth determined by the volume of its complement:
+For a knot $K$ and an integer $N\geq2$, Kashaev’s invariant $K_N(K)$ is a complex number obtained by evaluating a finite sum at a root of unity. We use the reduced normalization, in which the unknot has value one. If the knot complement admits a complete hyperbolic metric of finite volume, the volume conjecture predicts that
 
-$$\lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(K)|=\operatorname{Vol}(S^3\setminus K).$$
+\[
+\lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(K)|
+=\operatorname{Vol}(S^3\setminus K).
+\]
 
-We pursue this through the pointed quantum A-structure, exact finite source formulas, positive energies, and hyperbolic angle optimization. The original marked source and peripheral factors stay part of the problem.
+The left side measures exponential growth: a value of the form $N^a e^{NV/(2\pi)}$ has limit $V$, because the polynomial factor disappears after taking the logarithm and dividing by $N$. The right side is the volume of the knot complement. The knot remains removed from the three-sphere.
 
-The current target is a theorem about composing **Conway algebraic, or arborescent, tangles**: fix any admissible finite tangle tree, then put independently sufficiently many signed twists into its designated boxes. The diagram and twists stay fixed as $N$ grows. Bridge number is not the organizing parameter. The right side is the knot complement volume; Dehn filling removes auxiliary crossing-circle cusps and leaves the knot cusp unfilled.
+This project studies the conjecture by cutting knot diagrams into tangles and keeping track of how their finite evaluations compose. The main family consists of **Conway algebraic, or arborescent, knots**. These are built from rational tangles by joining and turning pieces. The theorem below applies to specified constructions in this family, with sufficiently many twists in each designated region.
 
-**The latest theorem covers every fixed strict Conway composition tree.**
-The [finite type test and exact theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md)
-allow arbitrary finite branching and mixtures of flagged and unflagged
-junctions. For each fixed presentation, independently sufficiently long
-signed integer twists with knot-producing pairing give the original
-invariant's actual knot complement volume limit through all integer levels.
+## How the construction works
 
-The proof controls each unflagged component with a positive norm probe
-at its original geometric action, then transports every physical-color
-loss through the whole tree. The probe is used only in an inequality.
-The original marked source supplies its own packet and smooth filling
-geometry. [The pointed quantum A-period](../../notes/actual_conway_pointed_quantum_a_volume.md) has the same proved volume limit. [General presentation coverage and identification of the classical geometric factor](frontier.md) remain open.
+A two-string tangle consists of two arcs in a ball, with four specified endpoints on its boundary. Draw the ball as a rectangle with two endpoints at the top and two at the bottom. There are two operations. To stack two tangles, put one above the other and join the adjacent pairs of endpoints without adding crossings. To turn a tangle, rotate its entire diagram through a quarter-turn. The order of the pieces matters.
 
-The [weighted-tree theorem](../../notes/actual_conway_weighted_tree_long_twist_volume.md)
-is an explicit included family with one weight per vertex. The
-[manuscript](manuscript.md) gives the earlier completed-root class in
-detailed TeX form; the strict-tree extension is a separately reviewed
-companion.
+Start with an elementary box containing two strands with an integer number of half twists, and turn that box through a quarter-turn. Make finitely many such pieces, each with its own integer twist number. Repeated stacking and turning gives larger tangles. Finally, stack two such tangles and close the diagram by connecting the bottom-left endpoint to the top-left endpoint outside the box, and likewise on the right. This is the *cylindrical closure* used here. A finite check of the endpoint connections determines whether the resulting diagram has one component and hence is a knot.
 
-The earlier plat constructions, complete-packing certificates, weighted Cauchy estimates, Fourier methods and torsor calculations remain in [the equality results](results.md) and [the frontier](frontier.md). They provide other certified families and approaches to the general problem. The current research theorem does not establish the conjecture for all arborescent or all hyperbolic knots, and its internal reviews are not external peer review.
+The construction can have arbitrarily many pieces and arbitrarily deep nesting. It is recorded by a finite ordered tree: its leaves are the elementary twist pieces, and its internal operations are stacking and turning. A tree in this description records a construction; it is not a drawing of the knot.
 
-![The general route: exact source, local complex amplitudes and a marked geometric branch under a positive gluing certificate; global selection and estimates remain open.](../figures/research-map.png)
+The [manuscript guide](manuscript.md) gives drawings, worked examples, and the precise recursive class treated in the paper. The [results chapter](results.md) also explains the larger class covered by the companion theorem.
 
-## Read the argument in order
+## The volume theorem and its quantifiers
 
-The [Conway composition manuscript](manuscript.md) gives the completed-root theorem
-as a detailed paper, with preliminaries, proofs, illustrations and a
-reproducibility suite. A [Sphinx edition](https://sashakolpakov.github.io/murakamis_dream/sphinx/)
-provides a second documentation format.
+The companion theorem applies when the construction tree passes a finite test called **strictness**. This test assigns one of three types to each intermediate tangle and checks the allowed pair at each stacking operation and at the closure. Its geometric meaning is that the associated ideal cells can be assigned angles satisfying all the required strict inequalities. The [theorem statement](../../notes/actual_conway_all_strict_tree_long_twist_volume.md) gives the full type table; the [results chapter](results.md) explains how to use it.
 
-The [research library](../library.html) organizes the work by question: equality results, quantum sources, geometry, torsors, Fourier methods, the cube, and the general frontier. Each route gives a main argument, its scope, and supporting notes. The [figure gallery](../figures.md) introduces the main objects visually.
+Fix a construction $\tau$ passing this test, with $H$ elementary pieces. There is a finite threshold $B(\tau)$ such that, whenever the integer twist numbers satisfy
 
-Start with [the equality results](results.md) for the exact knot and link families and their quantifiers. Then read [the mechanism](mechanism.md): what the source formulas do, where weighted Cauchy enters, and why a local scalar estimate does not finish the problem. [The geometry chapter](geometry.md) explains what certifies the volume of the actual complement.
+\[
+|n_i|>B(\tau)\qquad(1\leq i\leq H)
+\]
 
-[The current frontier](frontier.md) identifies the remaining general steps. [Notation](notation.md) and [reproducing audits](audits.md) are reference chapters. The searchable archive contains the full technical notes, scripts, and recorded results; it is not a second reading list to complete before understanding the project.
+and the endpoint connections give a knot, the resulting knot $K_\tau(\mathbf n)$ is hyperbolic and
 
-## Where the evidence stands
+\[
+\lim_{N\to\infty}\frac{2\pi}{N}
+\log|K_N(K_\tau(\mathbf n))|
+=\operatorname{Vol}(S^3\setminus K_\tau(\mathbf n)).
+\]
 
-| Part of the argument | Current scope |
-| --- | --- |
-| Volume limit of the original invariant | Every fixed strict literal Conway composition tree, with loop-free knot pairing and independently long fixed signed integer twists; all quantum levels and the actual knot complement volume. |
-| Exact finite source identities | Original arbitrary-Casimir-coupon source as one homogeneous face coefficient, including disconnected replacements and both parity carries; the complete-circle positive formula is its special case |
-| Boundary first-normal defect | An explicit two-insertion formula from the full root channel; finite Plancherel gives polynomial cost $O(N^2)$, without determining the scalar derivative or estimating that channel by the geometric volume |
-| Local quantum action | Selected ordinary amplitude on full physical complex compacts; fixed generic jets for all integer-grid physical columns and divided pairs; subexponential complex paired-normal bounds in shrinking channel windows |
-| General geometric branch | Under the labeled certificate, the full spectral numerator selects the marked local action with its boundary flags and primitive peripheral words; the unit-fill critical value is the actual filled volume |
-| Common geometric framing | Exactly two prescribed physical-support failures for the certified right-angled cut; every other ordinary factor is on the selected full physical packet, at arbitrary bridge width |
-| Exceptional matching block | Exact Casimir polynomial and resolvent period; full complex packet and entire CROSS period with the actual filled-volume rate |
-| Whole complete source limit | Every connected certified augmented plat with any retained half-twist pattern, at arbitrary fixed width and both level parities; exact face coefficients, a nonzero signed Gaussian and actual polyhedral volume |
-| Complete-image external colors | A nonzero asymptotic on a fixed complex neighborhood; its limiting action is the actual marked geometric regulator, with the necessary complex boundary correction |
-| Whole mixed source near completeness | Actual representation-volume limit at any set of untwisted varied ports; joint signed/unsigned corridors under finite shared-radius certificates, including disconnected subsets |
-| Positive endpoint source at arbitrary width | Complete augmented-volume limit through all even levels under the labeled certificate; strict loss for nonempty identity insertions; odd regularization has the same full entropy and gives exact spectral-derivative bounds at both parities |
-| Full spectral numerator near completeness | A nonzero fixed-complex relative asymptotic on the original shared face torus at both parities, retaining the finite action, normalization and repeated-node data |
-| Localized original filling period | A nonzero relative asymptotic on a fixed real cube at both parities, including the finite local charge sector and actual filled-volume rate; independently signed twists are fixed before the level limit |
-| Explicit full original invariant at every $k\geq2$ | Three layers, $3k-3$ independent twist regions, actual filled volume, exact-bridge subfamilies |
-| Full original long-filled invariant under balance | A global remainder gap and the actual filled-volume limit for every fixed certified diagram passing the complete-radius test |
-| Full invariant beyond complete-packing balance | Finite genuine-sector covers; exact examples strictly separate balance, anchored and refined certificates |
-| General sharp-source upper problem | Uniform closed-domain coefficient bound; full-fiber maxima have finite common weights and classified branches, with an odd source cycle at every non-CROSS port |
-| General arborescent knot equality | The full theorem holds for the finite strict grammar, including mixed hubs. The selected quantum A-period has the same limit; universal presentation coverage and identification of the classical geometric factor remain open. |
+Each twist number may have either sign. There is no requirement that different twist numbers have comparable magnitudes. The threshold depends on the fixed construction. Choose the construction and all its twist numbers first; then let $N$ tend to infinity through the integers. The theorem does not let the tree or the twist numbers grow with $N$.
 
-The cube, Fourier, torsor, and alternative approaches are preserved. A failed intermediate estimate is useful evidence about the argument; it is retained beside the corrected scope.
+This includes arbitrary finite branching within the strict class. It does not establish that every arborescent knot has a presentation satisfying the test and the twist bounds. The [weighted-tree family](../../notes/actual_conway_weighted_tree_long_twist_volume.md) gives an explicit collection of examples with one integer weight at each vertex.
 
-## About this edition
+The TeX manuscript proves an earlier, more restrictive construction rule. The companion theorem extends that result to all strict trees. The [manuscript page](manuscript.md) states the difference so that the scope of the PDF and the later notes can be checked separately.
 
-This guide organizes the research snapshot of 31 October 2026. Its chapters explain the current argument; linked technical notes contain the detailed proofs and qualifications. Historical checkpoints remain in the archive and should be read with their dates and later corrections in mind.
+## Why the proof has both an analytic and a geometric part
+
+The proof begins by removing the long twists and placing an auxiliary circle around the two strands in each twist region. The resulting *augmented link* remembers where the twists will be restored. Assigning integer labels, called colors, to these auxiliary circles produces a finite evaluation depending on those labels. The notes call this evaluation the *source*.
+
+At each level $N$, the source is an exact finite sum. Its leading exponential growth is described by a real function of the summation indices divided by $N$. Maximizing that function produces angles for ideal hyperbolic cells. The geometric part of the proof shows that these cells fit together with precisely the face identifications of the augmented link complement. This establishes which manifold supplies the volume.
+
+Restoring the twists requires another finite sum over the auxiliary colors. Its terms have complex phases, so their absolute values alone do not determine its growth. The analytic part proves a nonzero leading contribution and bounds the rest of this whole sum. It also follows the chosen geometric structure through the fillings that restore the twists.
+
+Filling an auxiliary crossing circle means removing that auxiliary cusp by attaching a solid torus with the specified slope. The cusp belonging to the knot is left unfilled. Consequently the final critical value is the volume of the resulting **knot complement**, rather than the volume of the augmented link used at the beginning.
+
+![The finite evaluation, estimates for strict Conway trees, and geometric identification of the knot complement volume.](../figures/research-map.png)
+
+The [mechanism chapter](mechanism.md) develops the finite sum and its estimates. The [geometry chapter](geometry.md) explains the ideal cells, peripheral curves, and the volume comparison. These two parts are both needed: constructing a hyperbolic metric does not by itself estimate the quantum invariant, and estimating a finite sum does not by itself identify its exponential rate with the volume of a particular complement.
+
+## The quantum A-polynomial formulation
+
+There is also a recurrence formulation. A quantum A-operator is a finite difference operator annihilating the color-dependent invariant. Its coefficients depend on the quantum parameter and a peripheral variable; a shift changes the color. An operator alone generally has more than one solution. Initial values and the prescribed behavior at singular specializations select the solution corresponding to the knot invariant.
+
+The [pointed quantum A-period theorem](../../notes/actual_conway_pointed_quantum_a_volume.md) gives an exact reconstruction of $K_N(K)$ from this operator and finite initial data, retaining the peripheral factors. For the knots covered above, this reconstructed value therefore has the same hyperbolic volume limit. The theorem also gives a positive determinant expression whose exponential rate is the volume.
+
+A further question is how the classical polynomial obtained from the operator selects the geometric component of the knot’s peripheral character variety. That question remains separate from the exact recurrence reconstruction and its established limit. The [frontier chapter](frontier.md) explains the remaining step.
+
+## Reading and checking the arguments
+
+Read the [manuscript](manuscript.md) for a continuous account with definitions, proof details, and illustrations. Use [the results chapter](results.md) to compare the exact families and hypotheses, and [the notation chapter](notation.md) when consulting technical notes. The [reproduction chapter](audits.md) distinguishes the finite rational inequalities checked by the supplied programs from the analytic and geometric arguments proved in writing.
+
+The [research library](../library.html) organizes the supporting notes by question. It retains the Fourier, weighted Cauchy, torsor, cube, and other approaches, including estimates that failed and the explanations of their failure. Those historical routes are useful evidence about the problem; they are not additional prerequisites for reading the main theorem.
+
+The [figure gallery](../figures.md) explains what each diagram represents and links to editable sources. The general volume conjecture remains open.

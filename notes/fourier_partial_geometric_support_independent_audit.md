@@ -1,6 +1,6 @@
 # Independent audit of the Fourier partial geometric-support theorem
 
-27 October 2026. Proof pass of Section 7 of
+27 October 2026. Detailed examination of Section 7 of
 [the partial-support theorem](partial_geometric_support_theorem.md),
 with the source category and normalization checked against
 [the whole wire polarization](actual_two_cut_fourier_polarization_and_cap.md)
@@ -152,7 +152,7 @@ transported by its ordered Ore gauge.
 ## 5. Independent check of the whole wire map and bounded-test formula
 
 The Lagrange inverse, both truncated-shift carries and the actual
-Ecal,F,K transforms in the whole polarization note pass algebraically.
+Ecal,F,K transforms in the whole polarization note hold algebraically.
 In particular their endpoint terms have coefficients 1-Q^N and
 M-M inverse separately. The derivative connection
 A_Q=(D_Q V)V inverse=J_eval(V J V inverse) has the displayed order;

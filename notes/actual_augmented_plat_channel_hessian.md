@@ -106,7 +106,7 @@ valid in the actual high physical coordinates.
 
 ## 3. The primitive cusp translations fix the factor and sign
 
-The collar is the ORIGINAL threading word [2,1,1,2], followed by the
+The collar is the original threading word [2,1,1,2], followed by the
 retained main half twist R^epsilon. The
 [proved endpoint reconstruction](actual_augmented_plat_endpoint_regulator.md),
 section 3, supplies its raw trace -2 auxiliary meridian
@@ -232,10 +232,4 @@ does not turn it into an interior finite-state saddle.
 Audit: [exact cusp and channel calculation](../experiments/audit_actual_augmented_plat_channel_hessian.py),
 [results](../experiments/actual_augmented_plat_channel_hessian_results.json).
 
-Independent character/current review: full analytical read and fresh
-audit PASS. The review checked the retained internal integer characters,
-implicit root derivatives, actual primitive cusp orientation and signed
-shear, both physical adapters, the channel-independent affine degree
-restriction and the channel-only implicit-function theorem. Six cusp
-cases and three rectangle/color-Hessian checks passed. No magnetic
-quotient rigidity, physical cycle or global source estimate is inferred.
+No magnetic quotient rigidity, physical cycle or global source estimate follows from the channel-only Hessian theorem.

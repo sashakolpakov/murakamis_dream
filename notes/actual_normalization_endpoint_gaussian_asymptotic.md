@@ -210,7 +210,7 @@ volume contribution from this sector.
 
 ### A sharp all-input normal current of one complete original crossing
 
-There is a direct local consequence, with an ordinary ORIGINAL pivotal
+There is a direct local consequence, with an ordinary original pivotal
 closure and arbitrary outside spectators retained. Put
 g_b=theta Q^(-b), theta=x^(1-N), x=q^d, kappa=q^(d^2/2), and define
 
@@ -285,7 +285,7 @@ The original finite bound |P_j|<=N+4s_j^2 gives
 
 \[
  \max_a|u_a|\le N^2+4\sum_js_j^2,\qquad
- |u_a|\le4N^3(1+s_a^2)\quad\hbox{for every }a.           \tag{17}
+ |u_a|\le4N^3(1+s_a^2)\quad\text{for every }a.           \tag{17}
 \]
 
 Here is a source-aware proof of the pointwise version. Let
@@ -311,7 +311,7 @@ first-normal norm for BOTH original signs:
 
 \[
  \boxed{\displaystyle
- \log\|\mathcal M_\pm'(1)\|_{\rm op}
+ \log\|\mathcal M_\pm'(1)\|_{\mathrm{op}}
                   =\frac{v_3}{\pi}N+O(\log N).}        \tag{18}
 \]
 
@@ -336,7 +336,7 @@ also checks the nonzero leading normalization and the reflected Green
 tail on growing levels. These tests supplement the uniform proof in
 Sections2--3; no lower bound is inferred from a fitted numerical rate.
 
-Fresh replay: PASS nine literal full-R-cubed original pivotal sources
+The finite audit checks nine literal full-R-cubed original pivotal sources
 N=2,...,10, including every open-cut column and the full Cartan scalar;
 768 literal signed twisted-Markov polynomial coefficients at ALL
 physical inputs, their exact Ward recurrences and normal endpoints;
@@ -344,6 +344,4 @@ thirteen exact quadratic-source/Green/current levels through N=768;
 and three
 finite-integral Poisson boundary checks. The latter use an exact finite
 Gaussian-erf formula with both endpoints, independently checked against
-direct integration before testing truncated Poisson sums. Another agent
-independently reread the complete analytic proof and found no gap in the
-parity, endpoint, Gaussian error or reflected-tail calculations.
+direct integration before testing truncated Poisson sums.

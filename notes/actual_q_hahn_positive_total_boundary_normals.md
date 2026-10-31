@@ -1,6 +1,6 @@
 # Genuine numerator normals at positive-total framing boundaries
 
-30 October 2026. Independently reviewed. A uniform spectral gap
+30 October 2026. A uniform spectral gap
 for the SUM of the two original positive matrices controls the actual
 generic numerator in both the202 and222 boundary regimes. The actual
 total square root and every logarithmic head lift remain in the source
@@ -119,7 +119,7 @@ infer an inverse bound from positivity alone.
 
 ## 3. A genuine generic disk and its cofactor
 
-The all-degree ORIGINAL generic recurrence, with B=Q^-N retained, is
+The all-degree original generic recurrence, with B=Q^-N retained, is
 
     R_(n+1)=(z+alpha_n)R_n+beta_n R_(n-1).
 
@@ -157,7 +157,7 @@ entry has absolute value at least c/N for every n=1,...,a-1.
 The first bound follows directly from
 sin((2n-1)theta)sin((2n+1)theta)<=sin^2(2n theta)
 and the displayed formula for B_n.
-Keep it in its ORIGINAL orientation and put the other generic entry
+Keep it in its original orientation and put the other generic entry
 equal to -beta_n/(w^2 frozen_entry). The diagonal is X^-1+alpha_n/w.
 At the root this is exactly M_a, with all edge phases intact. At
 generic q its determinant and every leading principal minor are
@@ -191,7 +191,7 @@ positive real compact and these r lie near N/2, every added factor
 is bounded above and away from zero. In particular H_m^1 is nonzero.
 
 On the boundary of (7), the original folded spectral differences
-are at least c rho_N; all others are at least cN^-2. The ORIGINAL
+are at least c rho_N; all others are at least cN^-2. The original
 generic recurrence coefficients alpha_n/w and beta_n/w^2 are
 therefore at most C rho_N^-1 and C rho_N^-2. Starting from (8),
 propagating the s rows costs at most (CN^20)^s.
@@ -205,7 +205,7 @@ then throughout its disk,
     |H_m^B(U(q),V(q))/H_m^1(U(q0),V(q0))|
                         <=C(CN^20)^s.                  (9)
 
-The passage inside uses the ORIGINAL finite H_m sum: all its
+The passage inside uses the original finite H_m sum: all its
 generic factorial denominators have indices below N and are units
 on this disk. Singular monic R_m factors were never assigned a
 holomorphic root value. Cauchy's formula now gives, for each fixed k,
@@ -240,15 +240,4 @@ differ, verifying why marked lifts cannot be reset. Maximum source
 error was below 3.3e-119. These finite checks supplement the proof;
 they do not establish its uniform estimates by numerical sampling.
 
-Independent full analytical reviews checked the finite endpoint gap,
-actual marked source normalization, both coercive boundary domains,
-oriented larger-edge construction through an exactly zero opposite
-edge, generic determinant and cofactor perturbation, folded spectral
-denominators, retained K_m/P_s scalar factors, and holomorphy of the
-original finite sum before Cauchy's estimate. Fresh redirected audit
-replays passed all stated checks at 120 digits. The primary reader's
-separate full proof review and fresh replay also passed, including
-the marked-lift normal differences. The result remains the stated
-individual-numerator, shrinking-channel normal bound; no leading
-normal amplitude, whole-network contraction estimate or global
-relative-cycle coefficient is inferred.
+The result remains the stated individual-numerator, shrinking-channel normal bound; no leading normal amplitude, whole-network contraction estimate or global relative-cycle coefficient is inferred.

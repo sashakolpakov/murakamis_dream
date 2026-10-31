@@ -37,14 +37,14 @@ Let \(u_j\) be the ordinary highest-weight basis with
 \(\mathcal E=\rho^2E\).
 Then
 \[
- e_j=u_j/(Q;Q)_j                                  \tag{2}
+ e_j=u_j/(Q;Q)_{j}                                  \tag{2}
 \]
 gives exactly (1). For every fixed \(N\), this gauge is invertible
 on \(0<\lambda\le1\), including at \(q_N\); all factors have
 index \(j<N\). It is singular at \(q=1\).
 The balanced coupon \(e_{ij}=1/N\) becomes
 \[
- e^{\rm ordinary}_{ij}
+ e^{\mathrm{ordinary}}_{ij}
      =\frac{(Q;Q)_j}{N(Q;Q)_i}.                  \tag{3}
 \]
 Its normalization remains one, but its separate source and
@@ -53,8 +53,8 @@ co-source flags need not have a regular \(q=1\) limit.
 There is a second useful exact gauge, regular also at \(q=1\).
 In the polynomial basis it gives
 \[
- \mathcal E_{\rm sym}=v^{-1}(T_q-T_q^{-1}),\qquad
- F_{\rm sym}=v(q^nT_q^{-1}-q^{-n}T_q),\quad n=N-1.
+ \mathcal E_{\mathrm{sym}}=v^{-1}(T_q-T_q^{-1}),\qquad
+ F_{\mathrm{sym}}=v(q^nT_q^{-1}-q^{-n}T_q),\quad n=N-1.
 \]
 The diagonal conjugation from (1) is
 \[
@@ -82,8 +82,8 @@ transported; normalized trace is not a replacement on all matrices.
 ## 2. The pivotal adapter is essential off the root
 
 The generic integral-color quantum invariant uses the ordinary
-pivot \(g_{\rm int}=K\). The root ADO pivot is
-\(g_{\rm root}=K^{1-N}\). Away from \(Q^N=1\),
+pivot \(g_{\mathrm{int}}=K\). The root ADO pivot is
+\(g_{\mathrm{root}}=K^{1-N}\). Away from \(Q^N=1\),
 \[
  S^2=\operatorname{Ad}K\ne\operatorname{Ad}K^{1-N}.
 \]
@@ -95,8 +95,8 @@ crossings are genuine.
 For a \(b\)-strand knot braid of writhe \(\mathfrak w\), the
 ordinary integral twist and frozen ADO twist at \(\alpha=n\) are
 \[
- \theta_{\rm int}=q^{n(n+2)/2},\qquad
- \theta_{\rm root}=q^{-n^2/2}.
+ \theta_{\mathrm{int}}=q^{n(n+2)/2},\qquad
+ \theta_{\mathrm{root}}=q^{-n^2/2}.
 \]
 Their ratio is \(q^{-Nn}\). The exact difference of the two
 zero-framed state arrays is therefore the weight
@@ -278,7 +278,7 @@ Writing \(\varepsilon=1-\lambda\), the two inverse-flag bubbles are
 Each has degree \(-1\). Accordingly its signed weak current
 has limit
 \[
- \omega_{\rm FS}-\delta_{T=0}-\delta_{T=1}.
+ \omega_{\mathrm{FS}}-\delta_{T=0}-\delta_{T=1}.
 \]
 For a direct check, the inverse-flag latitude tends to \(T\)
 in the interior but has endpoint values \(1,0\); integration

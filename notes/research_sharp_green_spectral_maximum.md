@@ -1,6 +1,6 @@
 # The exact spectral maximum of a full Green interval
 
-31 October 2026. **Internally reviewed analytical research theorem.** This identifies the
+31 October 2026. **analytical research theorem.** This identifies the
 spectral maximum of the original sharp coefficient UPPER functional.
 It does not assert a coefficient lower limit, phase compatibility,
 representation volume, or a shared maximum bounded by Phi_D.
@@ -144,7 +144,7 @@ H_*-G is consequently constant.
 
 Scale s_i toward zero in fixed positive ratios. Formula (2) gives
 delta_* ->1/2 and q tends to the pure-child vertex. Joint continuity
-of the ORIGINAL closed sharp action gives H_* ->0, as does G. Hence
+of the original closed sharp action gives H_* ->0, as does G. Hence
 the constant is zero. This uses the proved continuous upper functional,
 not a coefficient limit or a collision claim about dilogarithms.
 
@@ -173,7 +173,7 @@ f(0)=0 give G>0 for these three positive inputs. A spectral value at
 which an interval endpoint equals an alpha pole cannot maximize: the
 [original unused-log perturbation](research_sharp_interval_pole_endpoint_exclusion.md) into the interval has a positive
 epsilon log(1/epsilon) gain uniformly before the outer infimum.
-These are exactly the reviewed endpoint and pole exclusions for the
+These are exactly the endpoint and pole exclusions for the
 same sharp functional and unchanged degree vector.
 
 At every remaining spectral value the original coefficient tilt is
@@ -216,7 +216,7 @@ Equivalently, for original local row displacements summing to zero,
 
 The full original constrained second variation after optimizing the
 strict Green spectra is the sum of (9) and the actual negative CROSS
-row Hessians, restricted to the ORIGINAL row and face balances; cap
+row Hessians, restricted to the original row and face balances; cap
 rows retain their zero action. Formula (9) is a diagonal incidence
 form before imposing these constraints. It does not itself produce a
 positive feasible direction: the shared repair problem is still real.
@@ -249,7 +249,7 @@ Define a continuous local function barH on the full degree simplex:
     barH(q)=sum_(i=x,c,y) f(q_i)-f(1-q_b), q_b>=1/2.       (10)
 
 The seam agreements proved above make (10) unambiguous. Let P_D be
-the ORIGINAL compact transport fiber: each port supplies one, every
+the original compact transport fiber: each port supplies one, every
 ordinary face demands one, and the two protected faces demand zero.
 Repeated incidences retain their original labels. Put
 
@@ -379,19 +379,12 @@ positive radius vector. The original face constraints still couple
 the radial motions. No shared maximum and infimum have been exchanged,
 and (20) proves neither (12) nor the universal volume comparison.
 
-## Internal review and dependencies
+## scope and dependencies
 
-Root and an independent reader completed full analytical/source reviews
-of sections 1--8, PASS. The review checked the unsquared outer-angle
-identity, original row/tilt normalization, absolute action constant,
-uniqueness, endpoint exclusions and closed extension; the original
-non-CROSS polynomial/whole-period implication and fixed-twist quantifiers;
-and the exact radial weighted transform without a shared minimax exchange.
-These are internal
-reviews, not external peer review. No numerical audit is claimed.
+The weighted radial transform does not exchange the shared minimum and maximum. The non-CROSS filling implication retains its stated strict entropy hypothesis and fixed-twist quantifiers.
 
 The dependencies are the closed global sharp upper functional;
 the strict stationary branch derivatives and outer tilt equation;
 the fixed-degree delta=0 exclusion; the pole-endpoint exclusion; and
 the proved closed CROSS comparison. All occur in the existing
-reviewed source notes. No numerical search is used in this proof.
+source notes. No numerical search is used in this proof.

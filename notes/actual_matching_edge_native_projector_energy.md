@@ -88,7 +88,7 @@ lose precisely that incidence. The energy may have an explicit
 variational rate without being polynomial or subexponential.
 
 For every fixed r>=0 there is a constant C_r, uniform over N and
-all pairs, such that in the ORIGINAL physical Hilbert--Schmidt norm
+all pairs, such that in the original physical Hilbert--Schmidt norm
 
     ||[epsilon^r]Q_j||_HS <= C_r N^(8(r+1)) E_j^full,
     ||[epsilon^r]M_j||_HS <= C_r N^(8r) E_j^full.    (5)
@@ -244,12 +244,4 @@ check the native energy normalization in (14). The finite energy
 sequence through N=513 illustrates the proved limit (15); it is
 not the proof of that limit or of the uniform estimates.
 
-Primary-agent analytical review independently checked the actual
-Chevalley commutator and high-degree adapter, generic dual measure,
-collision sign M=R_l, relative unit and gap bounds, whole-degree
-assembly and the exact Steinberg exponential rate. Independent
-source review rederived the same normalizations, including the
-double-node measure and both root-measure regimes, and freshly
-replayed every focused audit count above. Both reviews passed.
-Their scope is the displayed native-energy bounds and obstruction;
-no graph-wide positive pairing or sharp volume estimate follows.
+The native-energy bounds and obstruction do not imply a graph-wide positive pairing or a sharp volume estimate.

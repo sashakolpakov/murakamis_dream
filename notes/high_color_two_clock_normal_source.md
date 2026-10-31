@@ -142,9 +142,9 @@ zeroth-order block-clock values are one. For the required r=N,
 the normalization in the second expression is N^2 exactly.
 
 The block number is intrinsic to the actual root divided action:
-\(R=(r-[e_{\rm cl},f_{\rm cl}])/2\). Its clock satisfies
-\(Bf_{\rm cl}B^{-1}=Zf_{\rm cl}\) and
-\(Be_{\rm cl}B^{-1}=Z^{-1}e_{\rm cl}\).
+\(R=(r-[e_{\mathrm{cl}},f_{\mathrm{cl}}])/2\). Its clock satisfies
+\(Bf_{\mathrm{cl}}B^{-1}=Zf_{\mathrm{cl}}\) and
+\(Be_{\mathrm{cl}}B^{-1}=Z^{-1}e_{\mathrm{cl}}\).
 These are literal finite matrix identities for the graded source,
 not an assumed scalar holonomy character.
 
@@ -161,9 +161,9 @@ The actual divided generators in the high-color proof give exact
 normalized moments
 
 \[
- E=\lambda e_{\rm cl}\psi/r=\frac{t}{1+tu},\quad
- F=\lambda f_{\rm cl}\psi/r=\frac{u}{1+tu},\quad
- H=\lambda h_{\rm cl}\psi/r=\frac{1-tu}{1+tu}.          \tag{4.1}
+ E=\lambda e_{\mathrm{cl}}\psi/r=\frac{t}{1+tu},\quad
+ F=\lambda f_{\mathrm{cl}}\psi/r=\frac{u}{1+tu},\quad
+ H=\lambda h_{\mathrm{cl}}\psi/r=\frac{1-tu}{1+tu}.          \tag{4.1}
 \]
 
 They satisfy H^2+4EF=1. These are single-insertion matrix moments,
@@ -230,12 +230,12 @@ matrix entries,
 
 \[
  \begin{array}{lll}
- f_{\rm cl}\psi=\partial_t\psi,&
- e_{\rm cl}\psi=(rt-t^2\partial_t)\psi,&
- h_{\rm cl}\psi=(r-2t\partial_t)\psi,\\
- \ell e_{\rm cl}=\partial_u\ell,&
- \ell f_{\rm cl}=(ru-u^2\partial_u)\ell,&
- \ell h_{\rm cl}=(r-2u\partial_u)\ell.
+ f_{\mathrm{cl}}\psi=\partial_t\psi,&
+ e_{\mathrm{cl}}\psi=(rt-t^2\partial_t)\psi,&
+ h_{\mathrm{cl}}\psi=(r-2t\partial_t)\psi,\\
+ \ell e_{\mathrm{cl}}=\partial_u\ell,&
+ \ell f_{\mathrm{cl}}=(ru-u^2\partial_u)\ell,&
+ \ell h_{\mathrm{cl}}=(r-2u\partial_u)\ell.
  \end{array}                                                    \tag{4.6}
 \]
 
@@ -244,11 +244,11 @@ rt-t^2 partial_t, and the bottom by partial_t. Consequently
 
 \[
  \begin{split}
- \sigma_r([e_{\rm cl},C])
+ \sigma_r([e_{\mathrm{cl}},C])
        &=(\partial_u+t^2\partial_t)\sigma_r(C),\\
- \sigma_r([f_{\rm cl},C])
+ \sigma_r([f_{\mathrm{cl}},C])
        &=-(\partial_t+u^2\partial_u)\sigma_r(C),\\
- \sigma_r([h_{\rm cl},C])
+ \sigma_r([h_{\mathrm{cl}},C])
        &=2(t\partial_t-u\partial_u)\sigma_r(C).        \tag{4.7}
  \end{split}
 \]
@@ -263,10 +263,10 @@ For example
 
 \[
  \begin{split}
- \sigma_r(e_{\rm cl}C)&=(\partial_u+rt/(1+tu))\sigma_r(C),\\
- \sigma_r(Ce_{\rm cl})&=(-t^2\partial_t+rt/(1+tu))\sigma_r(C),\\
- \sigma_r(f_{\rm cl}C)&=(-u^2\partial_u+ru/(1+tu))\sigma_r(C),\\
- \sigma_r(Cf_{\rm cl})&=(\partial_t+ru/(1+tu))\sigma_r(C).
+ \sigma_r(e_{\mathrm{cl}}C)&=(\partial_u+rt/(1+tu))\sigma_r(C),\\
+ \sigma_r(Ce_{\mathrm{cl}})&=(-t^2\partial_t+rt/(1+tu))\sigma_r(C),\\
+ \sigma_r(f_{\mathrm{cl}}C)&=(-u^2\partial_u+ru/(1+tu))\sigma_r(C),\\
+ \sigma_r(Cf_{\mathrm{cl}})&=(\partial_t+ru/(1+tu))\sigma_r(C).
  \end{split}                                                    \tag{4.8}
 \]
 

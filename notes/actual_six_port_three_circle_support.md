@@ -3,7 +3,7 @@
 29 October 2026. Three disjoint complete-circle insertions have a genuine
 source restriction: their observed joint channels lie in a tetrahedral
 simplex, rather than an independent spectral cube. This necessary support
-and a rank bound follow from the ORIGINAL saturated source, without an
+and a rank bound follow from the original saturated source, without an
 assumed regular-cube eigenframe. The subsequent
 [all-channel positive scalar theorem](actual_trivalent_all_channel_positive_scalar_and_regular_cubes.md)
 now proves nonvanishing on EVERY surviving block, identifies its actual
@@ -237,7 +237,7 @@ that analytic comparison. The support restriction(3)--(6) itself is
 an exact source theorem and is available before that estimate.
 
 Audit: [exact folded incidence, simplex count and truncated-cube rank lemma](../experiments/audit_actual_six_port_three_circle_support.py).
-Fresh checks pass all folded channels at N=2,...,40 and the four
+The finite audit checks all folded channels at N=2,...,40 and the four
 r=0,1,2,3 regular-cube algebra models. These integer/model checks
 supplement the cleared-projector proof; they do not extrapolate
 actual interior top-normal nonvanishing from finite examples.

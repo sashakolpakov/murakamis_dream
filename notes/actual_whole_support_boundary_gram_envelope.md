@@ -316,14 +316,4 @@ simple axes and saturation corners. The largest displayed K is below
 2.78; this finite observation is not used to choose the polynomial
 exponent or prove its uniformity.
 
-Independent internal analytical review: the Euler-atom agent re-derived
-the entire support/half-step/range argument, both bands of (12), first-
-band midpoint, common-disk fixed jets, full prefactor zero count and
-the actual positive tau lower bound, and reported PASS. This is an
-internal proof check, not external peer review or a global source
-volume theorem.
-
-The primary agent independently checked the half-step domains, exact
-partner transformation, midpoint admissibility, both signs of the
-global sine-product inequality, root-zero accounting and the uniform
-fixed-jet argument, then freshly replayed the focused audit: PASS.
+The whole-support boundary envelope is not a global source-volume theorem.

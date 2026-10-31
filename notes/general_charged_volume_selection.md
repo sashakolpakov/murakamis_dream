@@ -190,7 +190,7 @@ Ordinary dominant-saddle Stokes persistence is consistent with this:
 in a proper deformation with a strictly highest-action saddle, its
 top action-graded coefficient is preserved against jumps involving
 only lower saddles. To use this observation here one still needs a
-NONZERO ORIGINAL-source coefficient in one chamber and control of
+NONZERO original-source coefficient in one chamber and control of
 singular/boundary competitors throughout the deformation. The
 positive constrained-lens reference chain supplies neither original
 cycle comparison by itself. Representation-volume rigidity at complete

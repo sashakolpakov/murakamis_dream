@@ -35,7 +35,7 @@ The [actual projective cut theorem](integral_projective_cut_duality.md)
 applies this hypothesis to
 
     C_(b,R)=End_(E,F,K)(V_M^(tensor b)), R=k[[M-1]],
-    tau=d_N(M) times the ORIGINAL pivotal first cut.
+    tau=d_N(M) times the original pivotal first cut.
 
 Its pairing is perfect over R and on the complete fibre, with
 rank N^(2b-3) for b>=2. Thus there is no proper exact quotient
@@ -79,7 +79,7 @@ two heads it is exactly
            [0,0,0,0]],   Omega^2=0, Omega!=0.
 
 The full two-head centralizer is k[Omega], of dimension two.
-With the ORIGINAL averaged first-cut Phi and closed pivot
+With the original averaged first-cut Phi and closed pivot
 (-i,i), direct contraction gives
 
     Phi(1)=0, Phi(Omega)=-4,
@@ -98,8 +98,8 @@ three heads form the original figure-eight word
     W=R_(1)^+ R_(2)^- R_(1)^+ R_(2)^-
 
 in its operator-action order. Its writhe is zero, so the
-crossings' common Cartan factors cancel. With both ORIGINAL
-closed pivots and the ORIGINAL first-cut average, exactly
+crossings' common Cartan factors cancel. With both original
+closed pivots and the original first-cut average, exactly
 
     Phi_3(W)=5, Phi_3(1)=0.                       (3)
 
@@ -225,7 +225,7 @@ The actual weights in (5) satisfy
 
     w_(n+1)=A(Q^(n+1))w_n, w_0=1, w_N=0.
 
-Consequently telescoping the ORIGINAL finite sum gives, for every
+Consequently telescoping the original finite sum gives, for every
 Laurent polynomial insertion f, EXACTLY
 
     mu_N((I-B_Q)f)=f(1).                         (8)

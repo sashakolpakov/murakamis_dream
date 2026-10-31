@@ -1,6 +1,6 @@
 # The original complete core has a finite coupled face-coefficient system
 
-30 October 2026. Independently reviewed. The original four-component
+30 October 2026. The original four-component
 circle system admits a polynomial source gauge that preserves its first
 component. Tensoring it on the actual shared face variables gives an exact
 whole-source system coupling only finitely shifted face coefficients.
@@ -74,7 +74,7 @@ The exact polynomial-gauge recurrence is
 Indeed N_j=G_j M_j G_(j-1)^-1 on the localized field. Its only
 apparent denominator is w_j^2/Delta_(j-1), and it cancels exactly
 as displayed. Thus (2) is polynomial and extends across that divisor.
-The ORIGINAL finite sequence is zero outside 0,...,d. The equations at
+The original finite sequence is zero outside 0,...,d. The equations at
 j=0 and j=N remain true: the first uses u_0=0 and U_-1=0; the last
 uses the two actual terminal scalar relations and u_N=0. There is no
 periodic closing arrow or omitted endpoint current.
@@ -187,7 +187,7 @@ jump; the constructions in different registers commute. Polynomiality
 then follows from (1), not from an assertion about arbitrary operator
 solutions. The adapters can equally be recorded coefficientwise in (7).
 
-Let u,v be the two ORIGINAL marked faces and define n* by
+Let u,v be the two original marked faces and define n* by
 
     n*_u=n*_v=0, n*_f=d for every other face f.
 
@@ -364,7 +364,7 @@ and local ordered-character interface are what is established here.
 
 Focused [exact source audit](../experiments/audit_actual_whole_source_coupled_face_difference_system.py),
 with [saved results](../experiments/actual_whole_source_coupled_face_difference_system_results.json):
-PASS. It constructs 50 literal homogenized Newton polynomials and checks
+It constructs 50 literal homogenized Newton polynomials and checks
 300 canceled source components, 360 polynomial recurrence rows, 15 exact
 core Fourier pairings, 192 coupled rows with 27,254 shared-face coefficient
 equalities, and 12 marked tetrahedral-graph coefficient extractions. Seven
@@ -375,17 +375,6 @@ and 48 full finite-system rank checks through N=18 and both parities.
 The rank counts concern the explicitly localized operator field; finite
 fixtures do not assert a geometric certificate or an asymptotic theorem.
 
-Independent root review of the full proof and audit source: PASS. Its fresh
-redirected replay reproduced all recorded symbolic, polynomial, shared-face
-coefficient and fold-selection checks. The review includes the original
-incoming-b/output-c convention and the full magnetic, total and channel
-character identities; it does not extend those regular-chart identities to
-a reconstructed marked zero-face representation.
+The incoming-b/output-c convention and magnetic, total and channel characters are part of the regular-chart identity. It does not reconstruct a marked zero-face representation.
 
-Independent source/transport review: PASS for the polynomial gauge, exact
-whole-source coefficient system, source-selected fold jump, and final
-ordered magnetic/total momentum comparison. The three-dimensional even
-operator freedom and its elimination by the literal source adapter were
-also checked independently. The original finite system, source polynomial
-and audit are frozen; the geometric boundary and period qualifications in
-section 5 remain part of the result.
+The geometric-boundary and period qualifications in Section 5 remain part of the finite difference-system result.

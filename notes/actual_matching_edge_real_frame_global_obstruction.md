@@ -1,6 +1,6 @@
 # A real exceptional target cannot preserve the selected global complement
 
-30 October 2026. Independently reviewed. The
+30 October 2026. The
 [real-target classification](actual_matching_edge_real_target_frames.md)
 constructs local real cross-central frames for every strict geometric
 target c<1. They cannot also preserve the selected physical ordinary
@@ -43,7 +43,7 @@ Retain the original incoming pair and transport
     A_o=C A C^-1, B_o=C B C^-1.
 
 The target input/output pair is (A_o^-1,A) and (B_o,B^-1), with
-target product T=B^-1 B_o=A A_o^-1. Let Pi be the ORIGINAL frame,
+target product T=B^-1 B_o=A A_o^-1. Let Pi be the original frame,
 and Pi_t its inverse-turn frame. The actual basepath change is
 
     Pi_t=A_o Pi/Tr(A_o Pi).                        (1)
@@ -141,7 +141,7 @@ the ordinary complete-channel physical domain.
 
 For q in the lower half-plane, the actual physical total is instead
 1+delta, with physical magnetic rows v and 1-u. Applying the
-ORIGINAL high-degree adapter subtracts delta from those rows and
+original high-degree adapter subtracts delta from those rows and
 reverses the total. The normalized total and rows are again
 
     1-delta,  u and 1-v.                          (9)
@@ -207,13 +207,6 @@ remain outside the strict local classification used here.
 
 Focused audit: [actual inverse-turn flags and both physical adapters](../experiments/audit_actual_matching_edge_real_frame_global_obstruction.py).
 
-Primary-agent full analytical review: PASS. The reader checked the
-actual projector pullback, strip heights, all original low/high
-logarithms and the precise reuse of the geometric strict-support
-obstruction. Distinct limiting target rows are explicitly required.
+Distinct limiting target rows are required.
 
-Independent full analytical review and fresh redirected replay: PASS.
-A second reader reproduced seventeen matrix/trace identities,
-seventy-two actual frames, 144 strip flags and 144 normalized original
-factor checks. Both reviews retain the explicit local-prefix projector
-and make no conclusion about a different global source route.
+The argument uses the explicit local-prefix projector. It makes no conclusion about a different global source route.

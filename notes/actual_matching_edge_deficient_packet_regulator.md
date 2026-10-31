@@ -24,7 +24,7 @@ Use the actual monic determinant R_a(z;c) and define
     c_t=-cos(pi(t+1)/N), h=d-t.
 
 After the removable ordinary-column denominators are canceled, the
-ORIGINAL circle-channel coefficient has the entire continuation
+original circle-channel coefficient has the entire continuation
 
     C_a(t;r,s)=k_a beta_a^2 V_a(h) q^[d(r+s-t)]
                  *R_a(q^(t-2r);c_t) R_a(q^(t-2s);c_t).       (1)
@@ -248,26 +248,12 @@ It checks the rational involution and full wedge difference, original
 Newton numerators in both parity families, literal nested cups and turn,
 the unchanged cyclic mark, and the absolute regulator calibration.
 
-Independent source review: section 1 and the reflected absolute anchors
-PASS. The reader rederived the original column normalization, residual
-product sign, q^(dN) sign, and their exact cancellation, including both
-finite index offsets. No generic moving-q lift is inferred from them.
+The reflected root anchors do not imply a generic moving-q lift.
 
-Independent full analytical review and fresh audit: PASS. The reader
-checked the exact reflection, rational regulator involution, absolute
-real calibration, both physical adapters, and the original marked-charge
-reindexing. A fresh redirected audit reproduced eight rational checks,
-the full wedge identity, three exponent identities, 24 comparisons each
-of the reflection, measure normalization and literal turn, 48 cyclic
-charge checks, and three regulator calibrations. This review makes no
-claim about a contributing global degree cycle.
+The regulator identity does not establish a contributing global degree cycle.
 
-Primary-agent full analytical review: PASS. The reader checked the
-exact normalized reflection and scalar one, the exterior-square identity
-and real calibration, the literal turn character, its full affine
-pullback and marked-charge reindexing, and the limitation to full marked
-stationarity. No cycle coefficient or unproved generic lift is included.
+The conclusion requires full marked stationarity and includes neither a cycle coefficient nor an unproved generic lift.
 
 Scoped update: the final paragraph of section 3 records the exact
-character cancellation of the independently reviewed generic-lift theorem.
+character cancellation of the generic-lift theorem.
 It changes no residue-cycle or global-contribution claim above.

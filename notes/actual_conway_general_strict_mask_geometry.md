@@ -1,6 +1,6 @@
 # Actual complete geometry for all strict Conway source trees
 
-31 October 2026. Internally reviewed complete-geometry theorem. This note
+31 October 2026. complete-geometry theorem. This note
 extends the original ideal-cell construction to every literal
 \(h/T/\mathrm{product}\) expression with a strict reduced cylindrical
 state. Four individual edge masks replace the insufficient
@@ -427,7 +427,7 @@ expressions can contain quarter-index leaves; the analytic treatment
 of those leaves and the required global source estimates are separate
 from this complete geometry.
 
-## Inputs and internal review
+## Inputs
 
 The proof uses the
 [strict-type and rounding theorem](actual_conway_single_leaf_source_composition.md),
@@ -438,13 +438,3 @@ and the [independent original bowtie cut](actual_conway_bowtie_projection_cut.md
 Sections 2–6 audit the additional type, mask, ideal-coincidence and
 cellulation obligations rather than assuming the older completed-only
 scope.
-
-The author and primary agent completed full analytical/source reviews of
-§§1–7. An independent coherent-source reviewer checked the full topology,
-individual seam angles, ideal support-circle argument, exact terminal
-matching, oriented ribbon identification and complete cusp construction
-against the original prism and bowtie inputs. The three-type port and
-profile calculation also received an independent source review.
-All reported PASS. These are internal proof reviews, not external peer
-review or numerical manifold recognition. Native mathematics and
-dependency links are validated separately.

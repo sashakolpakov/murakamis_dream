@@ -257,15 +257,6 @@ choices, and computes the exact diagonal peripheral derivative. The test
 curves are explicitly chosen primitive bases of that fixture; they are
 not substituted for the original crossing-disk marking of another link.
 
-Independent character/current review: full analytical read and fresh audit
-PASS. The reviewer checked edge-row dependencies, the componentwise
-peripheral pairing basis, positive polarized Jacobian, actual developing/
-cross-ratio inverse over Artin rings, exact eigenflags, and all eight mixed
-marked Jacobians in the three-cusp fixture. No source critical-scheme
-comparison or automatic positive-triangulation existence was inferred.
+The gluing theorem does not supply a source critical-scheme comparison or automatic existence of a positive triangulation.
 
-Root review: full analytical read and fresh audit PASS. The review checked
-the torus Euler count, vertex-sum rank argument, quad-coordinate sign,
-real-Lagrangian transversality, decorated-representation Artin inverse,
-exact-eigenvalue distinction and commuting-similarity cusp derivative.
-The stated positive marked geometric certificate remains a hypothesis.
+The positive geometric certificate remains a hypothesis of the multicusp theorem.

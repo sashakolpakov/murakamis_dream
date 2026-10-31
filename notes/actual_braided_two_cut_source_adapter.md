@@ -1,6 +1,6 @@
 # A braided second-cut co-source with its actual pivotal weights
 
-30 October 2026. Reviewed finite-source theorem. The literal second identity
+30 October 2026. finite-source theorem. The literal second identity
 cut cannot be replaced by another normalized boundary state, or even by
 an untransported pivotal marginal. There is an exact repair: retain the
 actual braid carrying the selected wire to the exposed position. Its
@@ -220,12 +220,4 @@ their inverses, and verify the whole-source trace normal. These finite
 checks supplement the generic proof; they do not test a geometric fiber
 integral.
 
-Independent validation: root fully reviewed the generic proof, pivot
-germ, ordered route and rectangular trace extension, and freshly replayed
-the focused audit (16 sources, 476 entry coefficients, 116 weighted
-column coefficients). The coherent-source reviewer independently read
-the parallel-width proof and source/character scope and freshly reproduced
-the same audit. The geometry reviewer independently checked the ordered
-trace argument, residual kernel, actual cup character, and the cut-line
-transition in Sections 3-5. These reviews do not assert survival of the selected
-geometric fiber under the retained co-source.
+These identities do not assert that the selected geometric fiber survives contraction with the retained co-source.

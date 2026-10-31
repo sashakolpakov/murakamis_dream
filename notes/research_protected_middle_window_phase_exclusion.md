@@ -1,6 +1,6 @@
 # Regular stop-window exclusion with a protected input middle
 
-31 October 2026. **Internally reviewed research local theorem.**
+31 October 2026. **research local theorem.**
 This keeps the original specialization \(b=0\) exactly, hence the start
 row is \(i=0\). It assumes a strict regular maximum only for the stop.
 There is no regular start maximum, inverse zero-face weight, or inverse
@@ -314,10 +314,4 @@ spectral cap, or pole-touching window is included. The theorem controls
 these specified source windows only; global window coverage and the
 complete-volume comparison remain separate.
 
-Independent analytical review: root and cluster each completed a full proof
-read with PASS. The reviews checked the exact positive seed without an initial
-gauge inverse, bulk-only angular contraction, the seed-independent Perron
-ratio, both stop boundary terms and residual comparisons, exact common zeros,
-and the finite reflected FULL/RIGHT source at both parities. No numerical
-asymptotic check substitutes for these arguments. The conclusion retains all
-strict-window and positive-supported-weight hypotheses above.
+The conclusion retains every strict-window and positive-supported-weight hypothesis stated above.

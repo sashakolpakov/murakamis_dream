@@ -1,6 +1,6 @@
 # The global LEFT weighted spectral envelope
 
-Independently reviewed theorem, 31 October 2026. This bounds the actual triangular-face LEFT sector at fixed positive face moduli. It is not a coefficientwise inequality or an optimized shared-capacity theorem. All original unused prefix and suffix rows are retained.
+theorem, 31 October 2026. This bounds the actual triangular-face LEFT sector at fixed positive face moduli. It is not a coefficientwise inequality or an optimized shared-capacity theorem. All original unused prefix and suffix rows are retained.
 
 ## 1. The original finite sector and its continuum upper envelope
 
@@ -226,4 +226,4 @@ because $Q_b(0)\geq\tfrac12\log b$, $Q_c(0)\geq\tfrac12\log c$, and a geometric 
 
 ## Validation and scope
 
-Root and an independent peer read the complete proof and reported PASS. The reviews checked both parity factors, the arbitrary-interval transfer bound and both unused outside products, the ordered endpoint maximum, the post-sign-change derivative constant, the larger-root sign test, protected limits, exact continuant positivity at all face phases, and the bounded-cost spectral cap. The recurrence is used only from its second step. This review establishes the weighted local theorem, not a coefficientwise comparison or an unproved shared capacity equality.
+The recurrence is used only from its second step. This is a weighted local theorem, not a coefficientwise comparison or a shared capacity equality.

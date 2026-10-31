@@ -32,7 +32,7 @@ has the correct second-component sign:
 it is \(B_{C,\lambda}+dK_\lambda\beta_C\).
 This retains the explicit polar-fibre primitive and source residue.
 
-Near resonance, \(a_\lambda=\eta_{\rm phys}/k+a e^{-cT}+O(k)\)
+Near resonance, \(a_\lambda=\eta_{\mathrm{phys}}/k+a e^{-cT}+O(k)\)
 and the printed Jacobian expansion follow from
 \(e^{-c\lambda T}=e^{-cT}(1-k)^T\).
 Since \(f_C\) has degree at most \(n\) in \(a\), its

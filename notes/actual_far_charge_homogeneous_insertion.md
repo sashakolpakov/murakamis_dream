@@ -1,6 +1,6 @@
 # Exact homogeneous insertion for a far-charge coupon, and why it is not an identity insertion
 
-Independently reviewed, 31 October 2026. This accompanies the [whole-domain large-charge theorem](actual_whole_domain_large_charge_tail.md). It supplies an exact
+, 31 October 2026. This accompanies the [whole-domain large-charge theorem](actual_whole_domain_large_charge_tail.md). It supplies an exact
 source coefficient bound, not a shared volume or capacity theorem.
 
 ## 1. The full face-grid transform gives a coefficient bound
@@ -43,8 +43,8 @@ are thus recovered WITHOUT aliases by the three-dimensional inverse
 DFT on this grid, with the fixed coset phases removed. Consequently
 
 $$
-|h_{a,i,t,s}|\leq N\max_{\rm physical\ entries}|F_{\rm entry}|
-\leq N\|F\|_{\rm op}.\tag{2}
+|h_{a,i,t,s}|\leq N\max_{\mathrm{physical\ entries}}|F_{\mathrm{entry}}|
+\leq N\|F\|_{\mathrm{op}}.\tag{2}
 $$
 
 The remaining exponent $t=d-a-i-s$ is fixed by homogeneity. In particular
@@ -56,7 +56,7 @@ Let $h_d(x,b,c,y)=\sum_{a+i+t+s=d}x^ab^ic^ty^s$ denote the complete
 homogeneous polynomial with all coefficients $1$. Then
 
 $$
-|H_F|_{\rm coef}\preceq N\|F\|h_d.\tag{3}
+|H_F|_{\mathrm{coef}}\preceq N\|F\|h_d.\tag{3}
 $$
 
 An entire spectral function of $\Omega$ still reduces to its unique
@@ -65,7 +65,7 @@ far-charge coupon $T_{N,n;M}$ as well. Combined with the tail theorem,
 for $M=\lceil|n|/2+1+D\rceil$,
 
 $$
-|H_T|_{\rm coef}\preceq e^{N\varepsilon(D)+o(N)}h_d.\tag{4}
+|H_T|_{\mathrm{coef}}\preceq e^{N\varepsilon(D)+o(N)}h_d.\tag{4}
 $$
 
 with the horizontal tail already made decreasing. The $o(N)$ is uniform
@@ -174,4 +174,4 @@ these near-+2 coupons and shifted targets, not replacement by identity.
 
 ## Validation and scope
 
-The root and source reviewers independently checked the exact three-clock transform, the true even-level carry, the negative original coefficient entropy, and both endpoint asymptotic constants. The finite carry check uses the actual original Casimir entry; it is not a new large-level estimate. The fixed-level large-charge limits in (9)–(10) are never interchanged with the level limit. For the complete entropy range and the remaining insertion problem, see the [entropy-sign theorem](actual_fejer_entropy_signs_and_tail_insertion.md).
+The finite carry check uses the actual original Casimir entry; it is not a new large-level estimate. The fixed-level large-charge limits in (9)–(10) are never interchanged with the level limit. For the complete entropy range and the remaining insertion problem, see the [entropy-sign theorem](actual_fejer_entropy_signs_and_tail_insertion.md).

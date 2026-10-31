@@ -2,7 +2,7 @@
 
 Research theorem, 27 October 2026. At an actual root, the first-slot
 cut in the [universal resonant presentation](universal_resonant_cut_and_actual_source.md)
-has the exact ORIGINAL finite Fourier array
+has the exact original finite Fourier array
 
     J_(a,j)(1)=P_N(1) delta_(j,0)                     (1)
 
@@ -302,7 +302,7 @@ checks every matrix unit against all three Hopf-adjoint generators,
 the generic-M endpoint equation (18), all-input equation (15),
 complete delta localization and full matrix projector identity (19). Its
 [saved results](../experiments/universal_resonant_fourier_source_results.json)
-report PASS on 36 signed-word/cut cases at N=2,...,6, comprising
+record 36 signed-word/cut cases at N=2,...,6, comprising
 598 matrix input units and three generator checks per unit.
 The full d_N, original pivots and twists are retained in every
 case. These finite tests support the direct proof above; they

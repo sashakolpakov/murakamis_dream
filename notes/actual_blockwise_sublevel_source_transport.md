@@ -1,7 +1,7 @@
 # Polynomial-cost sublevel cycles for arbitrarily wide blockwise source cores
 
 28 October 2026. There is a constructive higher-anchor case of the missing
-mass theorem. Articulation points split the ORIGINAL coefficient, master,
+mass theorem. Articulation points split the original coefficient, master,
 and torus by an explicit unimodular monomial change of variables. If every
 remaining biconnected block is either a two-anchor block or a balanced
 unit-factor block, the resulting product cycle has polynomial logarithmic
@@ -51,7 +51,7 @@ common gauge, and use Y_(a,u)=X_u/X_v for u in C_a. Then
     f=gamma product_a f_a.                       (3)
 
 This is a unimodular monomial isomorphism, so the logarithmic top form
-and the ORIGINAL torus generator are the product forms and generators,
+and the original torus generator are the product forms and generators,
 with the common orientation fixed accordingly. Iterating at further
 articulations gives the biconnected-block factorization. Each factor
 belongs to exactly one block.
@@ -129,7 +129,7 @@ it. Repeated or arbitrarily clustered unit roots are permitted.
 Assume EVERY biconnected block is either two-anchor or satisfies (5).
 For each balanced block retain its unit torus; for each two-anchor block
 use the circle above. Their product, followed by the inverse monomial
-isomorphism (3), is homologous to the ORIGINAL source torus. Its absolute
+isomorphism (3), is homologous to the original source torus. Its absolute
 logarithmic top-form mass is exactly the product of the block masses,
 because the monomial logarithmic determinant is +/-1.
 

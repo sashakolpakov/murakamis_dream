@@ -123,4 +123,4 @@ The exact far Fourier tails retain covariance and alternating spectral data that
 
 ## Validation and scope
 
-Independent analytical review checked the exact original coefficient, the global entropy floor, the triangle-vertex zero criterion, the protected MAIN versus MATCHING incidence, and the compact restricted-capacity gap. No numerical sample is used to prove these statements. The local negative-entropy obstruction does not disprove a general shared-source bound, and the positive mixed comparison remains restricted to the explicitly stated subset of its original flow polytope.
+The local negative-entropy obstruction does not disprove a general shared-source bound, and the positive mixed comparison remains restricted to the explicitly stated subset of its original flow polytope.

@@ -1,5 +1,7 @@
 \chapter{The exact certificate arithmetic}\label{app:certificate}
 
+The inequalities in Chapter~\ref{ch:alias} concern continuous domains. Their certificates are finite because concavity bounds each alias action by a tangent plane, while a feasible pure point bounds the pure maximum from below. The remaining difference is affine in the domain variables and slope parameters. It is therefore enough to check finitely many vertices and corners, provided coverage and all transcendental errors are controlled. This appendix supplies those controls.
+
 \section{A finite proof object}
 The two main certificates consist of rational points and exact coverage data. The two-leaf block table has sixteen closed slope intervals, one rational feasible pure point and two strict alias tangent points per interval. The attachment table is a recursively subdivided dyadic cover of $[-2,0]^2$ with 55 leaves, one pure point and one alias tangent point per leaf. The verifier checks feasibility and coverage before evaluating an inequality. It then checks every slope corner and every vertex of the appropriate product polytope.
 

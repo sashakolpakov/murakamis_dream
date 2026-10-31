@@ -8,7 +8,7 @@ isomorphism between the \(N\)-dimensional unit group and the
 one-dimensional geometric centralizer.
 
 It constructs the full **peripheral** period
-\(\Log(M^2)/(M-M^{-1})\). It does not construct the internal knot
+\(\operatorname{Log}(M^2)/(M-M^{-1})\). It does not construct the internal knot
 Gaussian pushforward, identify a selected Bloch period, or prove
 volume growth.
 
@@ -211,8 +211,8 @@ zero at the identity. Formal integration in \(R\), or continuation
 on the same marked logarithmic chart, gives
 \[
  \boxed{\int_0^M\mathcal T_N^*\omega_M
-   =\frac{\Log(M^{2N})}{N\kappa}
-   =\frac{\Log(M^2)}{\kappa}=L(M).}                            \tag{5.2}
+   =\frac{\operatorname{Log}(M^{2N})}{N\kappa}
+   =\frac{\operatorname{Log}(M^2)}{\kappa}=L(M).}                            \tag{5.2}
 \]
 Thus the cyclic Ward block carries the full required peripheral
 relative period, not merely its complete value or determinant.

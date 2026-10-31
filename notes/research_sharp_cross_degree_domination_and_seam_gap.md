@@ -1,12 +1,6 @@
 # Sharp CROSS-degree domination and a uniform original seam gap
 
-31 October 2026. Internally reviewed analytical theorem. Root and
-coherent completed full independent internal analytical/source reviews;
-this is not external peer review. The comparison below is between the
-explicitly defined sharp functionals. Its proof is direct; it does not
-turn a coefficient LIMSUP into a coefficient limit. The original global
-coefficient upper theorem then supplies the finite source consequence,
-including both parities and all spectral boundaries.
+31 October 2026. The comparison is between the explicitly defined sharp functionals. It does not turn a coefficient limsup into a coefficient limit. The global coefficient upper theorem supplies the finite source consequence at both parities and all spectral boundaries.
 
 ## 1. The full closed-domain functional
 
@@ -312,7 +306,7 @@ macroscopic, strictly overloaded non-CROSS contribution remains to be
 controlled. The nonzero all-CROSS contribution is the cited theorem,
 not a new lower-period claim from the present coefficient upper bound.
 
-## 6. Dependencies and internal review
+## 6. Dependencies
 
 The [global coefficient majorant](research_global_sharp_coefficient_limsup_majorant.md)
 supplies (2), closed continuity and the uniform original coefficient
@@ -329,15 +323,6 @@ and [stationary classification](research_full_fiber_sharp_stationary_classificat
 are downstream applications of the uniform overload statement (12a),
 not premises of the direct CROSS comparison or seam gap.
 
-Root and coherent independently checked the direct comparison and
-original-source reduction: the exact cosine-log arc and its integrable
-singularities, pointwise comparison at every finite tilt, the closed
-outer Legendre convolution, unique original endpoint normalization,
-seam and uniform overload gaps, d-normalized target arrays, and the
-polynomial/whole-domain transfer with all endpoint currents retained.
-Cluster supplied a third full proof read and independently checked the
-additional explicit strong-concavity gap (11)–(11a) and filled-period
-comparison (15)–(17), proposed and independently derived by root.
 
 No numerical audit or coefficient lower limit is used. The comparison
 covers only CROSS degrees and the resulting seam neighborhood;

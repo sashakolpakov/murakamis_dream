@@ -1,6 +1,6 @@
 # The complete crossing circle is positive after the literal face reflection
 
-29 October 2026. The ORIGINAL complete-color crossing-circle operator
+29 October 2026. The original complete-color crossing-circle operator
 has a positive reflected tensor at every level and in every physical
 integer-degree block. Its original ordinary cap has an exact polynomial
 dual cost in this semidefinite form. Same-pair signed twists are exact
@@ -16,7 +16,7 @@ Put (d=N-1), (q=e^{\pi i/N}), (Q=q^2), (x=q^d), and
  s_a=|(Q;Q)_a|,\qquad s_0=1,\qquad 0\leq a\leq d.
 \]
 
-On the two ORIGINAL complete physical heads let \(\Omega\) be the
+On the two original complete physical heads let \(\Omega\) be the
 coproduct Casimir, including the original Cartan normalization. The
 [literal mixed-circle calculation](actual_crossing_circle_source_and_filling.md)
 proved, with the actual auxiliary pivot and no new color average,
@@ -175,7 +175,7 @@ gives for every physical \(2r+1\)-head vector \(\psi\)
                                                     \psi\rangle. \tag{11}
 \]
 
-It applies to the ORIGINAL marked scalar when the already proved
+It applies to the original marked scalar when the already proved
 whole-intertwiner theorem converts that scalar to this specified
 ordinary-cap matrix element. Arbitrary inserted marked exteriors
 retain their actual marked row. In particular \(p\) lies in the
@@ -288,7 +288,7 @@ to \(4\Lambda(\pi/4)=v_8/2\). Thus
        =Nv_8/(2\pi)+O(\log N).                       \tag{16}
 \]
 
-This is a quantitative, positive, nonzero ORIGINAL local circle
+This is a quantitative, positive, nonzero original local circle
 channel at all levels. It is not a nonzero geometric coefficient of
 an arbitrary assembled augmented-link source.
 
@@ -321,7 +321,7 @@ checks every physical block, the exact CD positive resolution, original
 cup/ordinary/marked typing, same-pair actual signed twists, and the
 positive corner/profile, with separate literal mixed-circle checks.
 
-Fresh replay: PASS six literal mixed universal/pivotal circles at
+The finite audit checks six literal mixed universal/pivotal circles at
 \(N=2,\ldots,7\); eleven complete physical PSD/CD/source/twist families
 at \(N=2,\ldots,12\), including every high-degree mirror; four uniform
 positive-corner profiles through \(N=128\).

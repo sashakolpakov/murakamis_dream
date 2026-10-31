@@ -97,7 +97,7 @@ representation below.
 
 ## 3. A generic positive-at-the-root representation
 
-Keep zeta generic and put Q=zeta^2, z=Z+Z^-1. The ORIGINAL polynomial
+Keep zeta generic and put Q=zeta^2, z=Z+Z^-1. The original polynomial
 is the finite series with numerator parameters
 `(Q^-a,Q^(a+1),zeta/Z,zeta Z)` and denominator parameters
 `(Q,Q^-d,Q^(d+2))`. Apply the same own Sears identity, now retaining
@@ -179,16 +179,5 @@ eight inverse-trace and root-gap matrices, and 104 genuine generic
 joint-disk samples at 100 digits. The uniform bounds follow from the
 displayed finite formulas and harmonic estimates, not from those samples.
 
-Root full analytical review: PASS. The review checked the exact Sears
-normalization and positive convolution, elementary lower induction,
-LDL inverse/trace/root separation, every generic root-unit factor,
-the harmonic epsilon/Z bounds and pointwise Z lift, and multivariable
-Cauchy with the full face-unit disk retained.
 
-Independent geometry-agent full proof review and fresh redirected
-audit: PASS. The reviewer independently rederived both finite transforms,
-the convolution and lower bound, the telescoping matrix inverse and
-quantitative root gap, and the joint generic disk without a holomorphic
-square-root assumption. All 426/210/1,679/8/104 audit counts were
-reproduced. The note and focused audit are frozen; neither review
-includes contour deformation or source-saddle dominance.
+The endpoint estimates do not deform contours or establish source-saddle dominance.

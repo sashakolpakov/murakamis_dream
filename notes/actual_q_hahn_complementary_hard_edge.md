@@ -1,6 +1,6 @@
 # Actual complementary heads and the outgoing large-clock packet
 
-30 October 2026. Independently reviewed. Two exact source
+30 October 2026. Two exact source
 identities extend the proved boundary packets. Generic Chevalley
 complementation transports the retained 0F1 normals to the small
 second-clock regime. A separate positive-matrix comparison controls
@@ -217,11 +217,4 @@ root220 relative-rate, generic002 packet and genuine002 first/second
 normal diagnostics. These finite checks supplement the proofs and do
 not prove their uniform asymptotic estimates.
 
-Independent analytical reviews checked the generic Ward uniqueness
-and scalar, marked complement normalization, both uniform Hermitian
-comparisons through the fold, actual root determinant and forced
-partner factors, and the squared geometric collar ratio. A separate
-fresh redirected audit replay passed every stated check at 95 digits.
-The review covers the exact reciprocity, genuine002 normals and
-root220 numerator packet; it does not supply generic220 normals,
-a completed boundary-circle packet or a global period coefficient.
+The result gives exact reciprocity, genuine 002 normals and a root 220 numerator packet. It supplies neither generic 220 normals, a completed boundary-circle packet nor a global period coefficient.

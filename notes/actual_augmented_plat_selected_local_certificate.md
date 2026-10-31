@@ -115,7 +115,7 @@ In affine coordinates a representative of the local common frame is
 
     g=[[1,-w],[1,-z]].
 
-Direct substitution into the ORIGINAL head and prefix formulas gives
+Direct substitution into the original head and prefix formulas gives
 
     U_phys=(z-w)/(z-w+1),
     T_phys=(z-w)/(4wz+3w+z+1),
@@ -270,11 +270,4 @@ merely by having a stationary point with the correct volume.
 
 Audit: [exact original-head, adapter and strip identities](../experiments/audit_actual_augmented_plat_selected_local_certificate.py).
 
-Independent analytical reviews: PASS. Two readers checked the finite
-certificate, original low/high input/output conventions, connected-domain
-sheet continuation, the actual primitive-collar strip and prefix
-pullbacks, and the distinction between classical continuation and a
-finite-channel or full-source asymptotic. A fresh independent audit
-replay passed all four root identities, the exact strip translation,
-and 2,000 selector comparisons on 1,000 central frames. The reviews
-establish no general existence of the certificate or contributing cycle.
+The certificate distinguishes classical continuation from a finite-channel or whole-source asymptotic. Its general existence and the existence of a contributing cycle are not established here.

@@ -114,7 +114,7 @@ coordinate w_triangle=ext(v_triangle) is
     w_triangle_(0,b,d-b,d)=N^2 x^(-(d-b)), 0<=b<=d,
     all other coefficients zero.                        (7)
 
-The ORIGINAL whole marked co-source on W is
+The original whole marked co-source on W is
 
     lambda=ell12 tensor ell34,
     ell_(a,b)=x^a/N delta_(a+b,d).                       (8)
@@ -253,11 +253,4 @@ analytic step; the tensor-cube sampling proof does not supply it.
 
 Audit: [literal six-head source, full Hermite projector and marked/unmarked forms](../experiments/audit_actual_three_belt_saturated_source_and_marked_metric.py).
 
-Independent full analytical review and fresh replay passed: seven
-divided-source/full-Hermite levels, four literal all-input six-head
-marked comparisons and three independent complex positive forms.
-The exact local E/F moment-current identities were checked too.
-The source-compatible multivariate positive correction is now
-[the marked middle-degree Chebyshev packet](actual_marked_multiport_chebyshev_source_packet.md),
-with an explicit original corner and tensor Parseval. Its geometric
-energy estimate remains separate.
+The source-compatible multivariate positive correction is now [the marked middle-degree Chebyshev packet](actual_marked_multiport_chebyshev_source_packet.md), with an explicit original corner and tensor Parseval. Its geometric energy estimate remains separate.

@@ -110,7 +110,7 @@ root sign included in E_s, so their root values are f,e. Write
 \]
 The exponentials are finite because these matrices are strictly
 triangular. Their root values are B_k=1 and A_k=binom(N,k).
-Define ORIGINAL whole source and homogeneous dual
+Define original whole source and homogeneous dual
 \[
  \begin{split}
  \psi(q)&=\alpha^N\sum_k B_k(q)v_k,\\

@@ -23,7 +23,7 @@ root orbit U=1, its forward inhomogeneous recurrence is
     T_Q=[-c0/c+, -c-/c+; 1,0],
     f_Q=(D/c+,0)^t, Y_(j+1)=Q Y_j.                  (1)
 
-This is the ORIGINAL affine source, not an arbitrary homogeneous
+This is the original affine source, not an arbitrary homogeneous
 initial vector. The equation is used away from zeros of c+ only.
 Its global root singularities and complete-point normal pointing
 remain exactly those in the actual operator/source theorem.

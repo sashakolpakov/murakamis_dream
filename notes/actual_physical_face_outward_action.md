@@ -1,6 +1,6 @@
 # A nonzero outward action gradient at every physical state face
 
-28 October 2026. In the ORIGINAL one-component scalar source, adjacent
+28 October 2026. In the original one-component scalar source, adjacent
 head factorials can be combined before estimating a boundary. Their
 exponents are even, whereas every independent transfer has exponent
 minus one. This elementary parity forces a nonzero radial logarithmic
@@ -478,11 +478,7 @@ retained, and the selected outside cotangent integers have exactly
 zero residue. It does not glue different face collars, prove a
 global mass bound, or classify every nested tangential escape.
 
-Independent source-agent proof review: Sections 1--6 verified,
-including endpoint-independent q_F, transfer parity, the direct TU
-minor argument and the exact residue-functional qualification.
-Section 7 supplies the finite-N whole-packet estimate; no scalar
-noncancellation or full volume theorem is inferred.
+Section 7 supplies the finite-N whole-packet estimate; no scalar noncancellation or full volume theorem is inferred.
 
 [Independent face audit](../experiments/audit_actual_physical_face_outward_action.py):
 790 proper physical faces of seven original signed words, 4877 exact

@@ -95,7 +95,7 @@ rotation of wI+L_A by exp(-i beta_N/2) gives
 
 The perturbation (4) costs at most C/N^2 in (8). Every compact of
 H_beta has a positive margin in its right side; (5)--(8) therefore
-give the claimed uniform inverse bound for the ORIGINAL prefix.
+give the claimed uniform inverse bound for the original prefix.
 The sign conjugation is unitary and does not alter determinants.
 
 ## 3. Determining the actual logarithm, without an assumed WKB solution
@@ -186,14 +186,4 @@ of the root prefix, not generic-q derivatives of the whole source.
 
 Focused audit: [original prefix, exact row residual and selected action](../experiments/audit_actual_casimir_off_spectrum_prefix_action.py).
 
-Primary and independent analytical reviews: PASS. The independent
-review checked the retained Dirichlet endpoint, exact residual,
-rotated halfplane, matrix-log branch, closed-path trace argument,
-normal-family continuation and selected integral. A fresh independent
-replay passed both symbolic row identities, 577 original prefix entries,
-18 Dirichlet forms and 54 rotated inverse checks. Eighteen selected-log
-and eighteen trace-moment diagnostics agree with the proved limits;
-their finite tolerances are not a proof of those limits. The strict
-half-prefix, root-spectral-derivative and leading-action scopes were
-checked explicitly. No relative amplitude or source-cycle contribution
-is included in either review.
+The theorem requires a strict half-prefix and concerns root spectral derivatives and the leading action. It includes no relative amplitude or source-cycle contribution. Finite logarithm and trace-moment samples check the formulas, not the limiting theorem.

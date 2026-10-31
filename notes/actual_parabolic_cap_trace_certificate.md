@@ -159,7 +159,7 @@ bound for such jets is inferred from radical equality.
 
 ### Exact interval-Casimir Ward identities already provide a faithful list
 
-There is a particularly direct ORIGINAL quantum certificate which does
+There is a particularly direct original quantum certificate which does
 not need independent single-head witness operators. Let iota_p insert
 the original cup into two adjacent tensor positions a,a+1. It is a Hopf
 map from the trivial representation: E_p p=F_p p=0 and K_p p=p.
@@ -273,7 +273,7 @@ exact symbolic cubic reconstruction, source-line caps, all-width
 counterexample/witnesses, nonreduced normal qualification, and bounded
 representatives for explicit irreducible unipotent tuples.
 
-Fresh replay: PASS 37 literal all-position quantum cup AND ordinary-cap
+The finite audit checks 37 literal all-position quantum cup AND ordinary-cap
 E/F/K/Casimir interval deletions, including empty intervals and levels
 of both parities; exact symbolic cubic/source/prefix-witness/normal
 identities; the six-head insufficiency example; and four bounded

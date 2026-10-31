@@ -1,8 +1,8 @@
 # A global spectral gap for short-moving source sectors
 
-Independently reviewed analytical theorem, 31 October 2026. This retains the actual
+analytical theorem, 31 October 2026. This retains the actual
 full numerator, original two protected targets and entire Fourier
-period. It extends the reviewed diagonal/CROSS sector lemma to a fixed
+period. It extends the diagonal/CROSS sector lemma to a fixed
 small outer-degree corridor. It does not bound remote one-sided paths
 of arbitrary macroscopic displacement.
 Here "moving" refers to the original triangular face path degree;
@@ -103,8 +103,7 @@ repeated spectral nodes are included in these polynomial identities.
 Fix the actual certified diagram $D$ and a nonempty set $I$ of ports.
 At $I$ take the projection $L_{N,\eta}$; elsewhere take the exact CROSS
 projection. Keep the original ordinary targets $d$ and protected
-targets $0$. The global CROSS coefficient bound from the reviewed
-[cofactor interpolation lemma](actual_cross_cofactor_factorization.md) is
+targets $0$. The global CROSS coefficient bound from the [cofactor interpolation lemma](actual_cross_cofactor_factorization.md) is
 
 $$
 |P_{\mathrm{cross}}(\sigma)|_{\mathrm{coef}}
@@ -216,14 +215,3 @@ counterexample with outer load tending to $1/4$ is compatible with (11).
 Nor does the statement bound a partial-far-charge source with an
 uncontrolled original $R^n$ coupon at another port. Those remain
 separate global phase-sensitive questions.
-
-## Scoped verification
-
-Root and an independent peer read the complete analytical proof and
-reported PASS: the repeated-node divided differences, scaled endpoint
-derivative formula, actual path/coefficient counts, truncated original
-support, compact upper-capacity continuity, both parities, fixed complex
-strip and entire all-charge consequence were checked. The finite-source
-endpoint/IBP audit of the preceding diagonal lemma remains its relevant
-audit dependency; no numerical test is claimed to prove the compactness
-or infinite-charge steps here. The promotion changes only mathematical typesetting and dependency links.

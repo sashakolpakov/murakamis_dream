@@ -354,16 +354,6 @@ factorial certificates, full source-lattice collision argument and
 Laurent-order comparison above. Exact finite checks supplement it;
 they do not infer sixty-four symmetry from sampled knots.
 
-Fresh replay passes four uniform symbolic reciprocal-prefactor
-certificates, 112 actual generic cyclic-source families, 28,292
-distinct partner values across all supported folded tuples at
-N=3,...,10, and the exact nonsymmetric first-normal certificate.
-Both the crossing/source agent and the global audit agent independently
-read the FULL analytical proof, including the saturated lattice,
-complete collision range, odd/simple Laurent orders and retained
-[2N] current: PASS. The global audit agent also freshly replayed
-the four uniform factorial certificates and 112 cyclic-source
-families/270 inverse entries. No generic-jet equality or full marked
-graph inference was included in either review.
+The reflection tests do not establish equality of generic jets or a full-graph estimate.
 
-Primary-agent review: full analytical read of the actual cyclic inverse, uniform factorial certificate, saturated analytic lattice, complete collision range, Laurent comparison and weighted current identities passed. The reciprocal-prefactor audit was inspected independently; no positive Hermitian transport or generic-jet invariance is inferred.
+No positive Hermitian transport or generic-jet invariance follows from the reflection identity.

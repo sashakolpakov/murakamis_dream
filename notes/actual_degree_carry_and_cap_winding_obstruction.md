@@ -1,6 +1,6 @@
 # The actual cap has affine winding one and a degree-blind unit carry wall
 
-28 October 2026. The ORIGINAL cap has an exact charged winding
+28 October 2026. The original cap has an exact charged winding
 equation D+1=N, with the affine +1 forced by its actual dual color.
 Its signed carry current is nevertheless identically zero. The original marked
 cap detects the canonical cyclic/noncyclic wall with the nonzero
@@ -17,7 +17,7 @@ evaluation together.
 
 ## 1. The source fixes the cyclic wrap ratio
 
-Use the ORIGINAL semicyclic heads V(x,phi), with
+Use the original semicyclic heads V(x,phi), with
 
     K v_a=xQ^-a v_a,
     F v_a=v_(a+1) (a<d), F v_d=phi v_0,
@@ -124,7 +124,7 @@ zero cyclic sum; the single common wall retains the fundamental
 unit cyclic class. An edge-winding comparison needs this
 augmented class, not just D.
 
-## 3. The ORIGINAL marked source detects the missing class
+## 3. The original marked source detects the missing class
 
 Use the balanced basis w_a=v_a/F_a only to display the actual
 source simply. From [the exact bridge cap](quantum_bridge_cap_source.md),
@@ -404,6 +404,4 @@ or establish a lower bound for its complex matrix coefficient.
 The same exact audit checks 33 paired cyclic parameters, both
 wraps and operator orders, the normalization (13), and every
 moment m=0,...,N. Eighteen positive real-slice diagnostics check
-the orthogonal-density and norm identities (16). Independent
-proof review checked (10)--(15), including the retained Q^-m
-factor for the unshifted clock.
+the orthogonal-density and norm identities (16). Equations (10)--(15) retain the Q^-m factor for the unshifted clock.

@@ -1,6 +1,6 @@
 # A complete geometric double of a one-cap stationary exterior
 
-31 October 2026. **Internally reviewed analytical research theorem.**
+31 October 2026. **analytical research theorem.**
 Unpublished. This concerns ONE residual cap
 and complete CROSS rows at every other original port. The original MAIN
 mark, face targets and matching are retained until the explicitly defined
@@ -53,7 +53,7 @@ duplicate triangle nor any repeated nonboundary edge.
 The inherited triangle pairing is an actual matching: every port lies
 in one copy and its four vertices remain distinct. The four glued edges
 remain MAIN. In particular T^dbl has a simple MAIN quadrangulation and
-admits the reviewed complete packing/angle-capacity theorem, with mark
+admits the complete packing/angle-capacity theorem, with mark
 uv. If T has R ports, T^dbl has 2(R-1) ports. This is a new matched
 sphere, not a re-presentation of the old filled knot.
 
@@ -178,7 +178,7 @@ the rows duplicated here are all complete CROSS rows.
 
 ## 4. The remaining absolute inequality is now geometric, but unproved
 
-Let C0=2f(1/4) and retain the ORIGINAL prescribed chart D_orig. At a
+Let C0=2f(1/4) and retain the original prescribed chart D_orig. At a
 strict stationary one-cap datum, the earlier exact constrained dual is
 
 \[
@@ -219,7 +219,7 @@ required. No abstract concave function is asserted to be realizable by
 an actual positive triangulated disk.
 
 If the geometric comparison in (9) is certified for a particular
-one-cap configuration, the [reviewed signed spectral-star theorem](research_cap_cross_shared_star_spectral_gap.md)
+one-cap configuration, the [signed spectral-star theorem](research_cap_cross_shared_star_spectral_gap.md)
 supplies the further strict loss below Phi(D_orig). More strongly,
 Phi(T^dbl)<2Phi(D_orig) already gives an unsigned cap-sector gap.
 These are scoped consequences for that sector, not the full non-CROSS
@@ -228,7 +228,7 @@ remainder or a general prescribed-diagram filling theorem.
 ## Scope and dependencies
 
 The only external mathematical inputs used here are the already
-reviewed original cap cut, compact complete triangle duality, and the
+original cap cut, compact complete triangle duality, and the
 simple matched-sphere packing/capacity theorem in this project. Relevant
 durable sources are:
 
@@ -238,10 +238,4 @@ durable sources are:
 * [matched-sphere source realization](research_matched_sphere_morse_source.md), for the distinction
   between the newly constructed matched sphere and the old source.
 
-The parent and a separate agent independently read the complete proof
-and reported analytical/topological/source-scope PASS. The independent
-review's endpoint-feasibility precision is included in section 2. These
-are internal proof reviews, not external peer review. No numerical scan,
-finite audit, or universal volume comparison is claimed. The preserved
-statement is limited to one cap with all remaining original ports CROSS;
-the doubled matched sphere is not identified with the original source.
+The statement is limited to one cap with all remaining original ports CROSS. The doubled matched sphere is not identified with the original source, and no universal volume comparison is claimed.

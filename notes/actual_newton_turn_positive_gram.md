@@ -118,10 +118,10 @@ have real coefficients. Equations (4)--(5) prove the positive
 definite all-input identity
 \[
  \boxed{\quad
- \langle f,g\rangle_{\rm Newt}
+ \langle f,g\rangle_{\mathrm{Newt}}
        :=\phi(f^\sharp\mathscr Rg)
        =\sum_{r=0}^d\overline{\alpha_r}\beta_r,\qquad
- \|\mathscr R f\|_{\rm Newt}=\|f\|_{\rm Newt}.
+ \|\mathscr R f\|_{\mathrm{Newt}}=\|f\|_{\mathrm{Newt}}.
  \quad}                                                   \tag{6}
 \]
 The metric is prescribed independently of any knot or exterior.
@@ -149,11 +149,11 @@ from \(\widehat B_r(B)e_d=e_{d-r}\).
 Consequently
 \[
  \phi(f\,\mathscr Rg)=(f(B)e_d)^T(g(B)e_d),\qquad
- f(B)e_d\mapsto P_{\rm rev}f(B)e_d
+ f(B)e_d\mapsto P_{\mathrm{rev}}f(B)e_d
  \text{ under }\mathscr R .                              \tag{8}
 \]
 
-The ORIGINAL closures, with unrestricted marked cap and actual pivot,
+The original closures, with unrestricted marked cap and actual pivot,
 are
 \[
  m f(\Omega)p=f(c_0)=\alpha_0,\qquad \phi(f)=\alpha_d .
@@ -171,7 +171,7 @@ In Newton coordinates multiplication by \(z\) is the real LOWER
 bidiagonal matrix
 \[
  Z_{rr}=c_r,\qquad Z_{r+1,r}=-|1-Q^{r+1}|^2,\qquad
- Z^T=P_{\rm rev} ZP_{\rm rev}.                           \tag{10}
+ Z^T=P_{\mathrm{rev}} ZP_{\mathrm{rev}}.                           \tag{10}
 \]
 Every literal signed crossing power acts by
 \[
@@ -234,7 +234,7 @@ in (13a), and \(R^\sharp=R^{-1}\) proves the inverse.
 
 Thus an arbitrary genuine rational circuit has an explicit alphabet:
 unitary reversal, the lower sine-binomial kernel (13a), and its
-coefficient conjugate. Its oscillation is the ORIGINAL half-clock
+coefficient conjugate. Its oscillation is the original half-clock
 \(q^{ij}\); replacing it by \(Q^{ij}\) would change the source.
 Its absolute entry also has the exact angle identity
 \[
@@ -282,7 +282,7 @@ and output arrays. Its factorial gauge is on the NEWTON register;
 it is not an unrecorded physical-head gauge. Although its endpoint
 factors at \(0,d\) are only \(1,N\), its interfaces with a turn must
 remain explicit:
-\(P_{\rm rev}D_FP_{\rm rev}=ND_\nu D_F^{-1}\).
+\(P_{\mathrm{rev}}D_FP_{\mathrm{rev}}=ND_\nu D_F^{-1}\).
 Consequently (13d) alone is not a polynomial-cost global
 replacement of every twist/turn network.
 
@@ -311,7 +311,7 @@ not an assertion that every plane-reflected diagram supplies it.
 For an arbitrary genuine two-port word \(W\), starting with \(1\),
 the original numerator closure now has the exact source Cauchy bound
 \[
- |m\,W(1)(\Omega)p|^2\leq\|W(1)\|_{\rm Newt}^2 .         \tag{15}
+ |m\,W(1)(\Omega)p|^2\leq\|W(1)\|_{\mathrm{Newt}}^2 .         \tag{15}
 \]
 All internal turns in this energy are the fixed unitary reversal
 and all twist kernels are the known matrices (12). No terminal word
@@ -323,12 +323,12 @@ Let \(A\) be ANY finite typed word in genuine turns and signed crossing
 multiplications. Form its ADJOINT WORD by reversing the order and
 using the exact replacements (14). It is again a literal rational
 tangle circuit with the original turns and signed crossings.
-The ORIGINAL numerator closure of its doubled circuit satisfies
+The original numerator closure of its doubled circuit satisfies
 \[
  \boxed{\qquad
  m\,[A^\dagger A(1)](\Omega)p
-       =\langle1,A^\dagger A1\rangle_{\rm Newt}
-       =\|A1\|_{\rm Newt}^2>0 .
+       =\langle1,A^\dagger A1\rangle_{\mathrm{Newt}}
+       =\|A1\|_{\mathrm{Newt}}^2>0 .
  \qquad}                                                \tag{16}
 \]
 All generators of \(A\) are invertible, so the strict inequality
@@ -366,7 +366,7 @@ noncancellation operation, not that remaining geometric estimate.
 The known complete packet \(z_N=\mathscr R(R^{-1}L_N)\) now gives
 an ENTIRE positive original source with an explicit exponential rate:
 \[
- E_N:=\phi(z_N^\sharp\mathscr Rz_N)=\|z_N\|_{\rm Newt}^2,
+ E_N:=\phi(z_N^\sharp\mathscr Rz_N)=\|z_N\|_{\mathrm{Newt}}^2,
  \qquad
  \boxed{\ \lim_{N\to\infty}\frac1N\log E_N=\frac{v_8}{\pi}\ } .
  \tag{17}
@@ -432,10 +432,4 @@ so it does not alter (17).
 
 Audit: [literal turn, full Newton/Frobenius packet, signed star and reflected original sources](../experiments/audit_actual_newton_turn_positive_gram.py).
 
-Independent analytical review and a fresh audit replay checked the
-full physical turn, repeated-node minimal polynomials, extremal-path
-normalization, complete Frobenius divisibility, unit original closures,
-and the full-Cartan adjoint. The complete-packet rate proof in section 6
-was independently re-derived. Its geometric identification is supplied
-by the separate octahedral certificate above; neither proof supplies
-a sharp energy bound for arbitrary words.
+Its geometric identification is supplied by the separate octahedral certificate above; neither proof supplies a sharp energy bound for arbitrary words.

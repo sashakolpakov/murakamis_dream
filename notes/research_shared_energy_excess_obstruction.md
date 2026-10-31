@@ -1,6 +1,6 @@
 # The shared spectral energy can exceed the complete volume rate
 
-31 October 2026. **Reviewed research result; not approved for publication.**
+31 October 2026.
 On one certified original seven-port source, the endpoint-conditioned
 energy exceeds the complete rate by more than 0.50, already at one
 fixed real spectral corner. This disproves the stronger proposed bound
@@ -233,15 +233,9 @@ remain open. No lower bound for the original oscillatory source, no
 failure of its volume limit, and no obstruction to the weaker energy
 budget follows from this counterexample.
 
-## 5. Review and verification scope
+## 5. verification scope
 
-The private proof and exact verifier received full independent analytical
-reviews from the root and cluster agents. Cluster also completed a fresh
-redirected Arb replay. The fixed-corner sine-product strengthening (8)--(9)
-received a separate independent analytical review. The portable verifier
-preserves the reviewed `verify` function's complete syntax tree and the
-registered certificate bytes; only imports and output/default paths were
-changed. It has no optional numerical builder or optimizer dependency.
+The portable verifier preserves the `verify` function's complete syntax tree and the registered certificate bytes; only imports and output/default paths were changed. It has no optional numerical builder or optimizer dependency.
 
 Its finite checks establish the original incidence, rational feasibility,
 support slack, and certified entropy inequalities. The asymptotic step

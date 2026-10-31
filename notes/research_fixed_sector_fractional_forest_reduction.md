@@ -204,11 +204,6 @@ multipliers; their existence is not asserted. This research note proves no
 new group representation, relative fundamental class, universal sector
 bound, or original-invariant asymptotic.
 
-## Review scope
+## Scope
 
-An independent peer reviewed the complete structural derivation, including
-the bounded-flow network, exact gap forest and leakage, endpoint KKT
-inequalities, strict perspective equality and mass-matrix kernel. The final
-wording distinguishes deterministic transition blocks from permutation
-blocks; transient monomial trees are pruned before identifying recurrent
-cycles. This review does not supply the open inequality (8).
+Deterministic transition blocks need not be permutation blocks. Transient monomial trees are pruned before recurrent cycles are identified. The reduction does not establish inequality (8).

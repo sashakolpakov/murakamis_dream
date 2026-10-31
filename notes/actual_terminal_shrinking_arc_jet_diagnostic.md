@@ -195,7 +195,7 @@ or exact asymptotic for the normal insertion (8).
 ## 5. Audit and current limitation
 
 [Audit](../experiments/audit_actual_terminal_shrinking_arc_jet_diagnostic.py)
-uses ORIGINAL E/F/R matrices and physical terminal projectors for nine
+uses original E/F/R matrices and physical terminal projectors for nine
 exact finite-root source checks. It verifies (1),(3),(5),(6), all
 normalizers, the full first-jet coefficients, and the all-input
 normal-current row (13). Ten high-precision

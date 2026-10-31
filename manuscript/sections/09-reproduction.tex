@@ -1,9 +1,11 @@
-\chapter{Reproduction, proof provenance, and limits}\label{ch:reproduction}
+\chapter{Checking the certificates and understanding the scope}\label{ch:reproduction}
+
+The theorem has two kinds of proof obligations. Most are analytic or geometric arguments written in this manuscript. Two local inequalities are reduced to finite rational certificates supplied with the paper. This chapter explains how to inspect and replay those certificates, what a successful replay establishes, and what remains outside the theorem's construction class.
 
 \section{Three different kinds of evidence}
 The manuscript contains analytic proofs, exact finite certificates, and optional finite audits. They have different logical roles. The matrix identities, support and strictness arguments, geometric incidence, complex estimates and filling analysis are proved in the text. The rational certificates are finite parts of the proof: the continuum inequalities reduce to their exact feasibility, coverage and supporting-plane checks. Finite matrix or numerical asymptotic audits provide independent checks of formulas and normalizations, but do not establish a theorem by extrapolation.
 
-The complete source notes and their internal review records remain available in the repository for provenance. This manuscript reorganizes their arguments into one proof and does not require a reader to infer a theorem from a list of links. Internal review is not external peer review, and the repository does not claim formal verification of the entire analytic argument.
+The proof is given in the chapters and appendices of this manuscript. The repository also supplies the exact certificate data and verification programs. Those programs check the finite inequalities described below; they do not formally verify the analytic or geometric arguments.
 
 \section{Replaying the exact certificates}
 From the repository root, run
@@ -46,4 +48,4 @@ The theorem is uniform in the level for each fixed finite completed expression a
 
 The theorem does not identify all arborescent knots with the completed grammar. It does not turn an equality in $\cH_N$ into a tangle isotopy. It does not prove a quantum theorem for arbitrary short or rational fillings, and it does not infer volume from an unsigned bound on a larger source envelope. The main knot cusp stays unfilled in the conclusion.
 
-There are natural extensions beyond the present theorem. More general strict syntax can have leaf-type or reflected-leaf-type output intervals, and root-leaf closures can meet the quarter-index dominance boundary. Local packet extensions and complete geometric constructions at that boundary do not by themselves supply the missing global signed-source estimates or the marked filling comparison for every such expression. Those obligations must be checked on the whole source with its original targets and phases. This manuscript deliberately keeps the proved completed-root theorem separate from that frontier.
+The construction rule is a sufficient hypothesis used by this paper, not a characterization of arborescent knots. If one allows a single elementary piece on one side of the final closure, some complete stationary parameters can equal $1/4$. The recurrence analysis proved here assumes a compact interval strictly above that value. Likewise, a different rule for composing tangles requires new global bounds for its signed color terms, even if its complete ideal cells can be constructed. Such extensions need their own stated hypotheses and proofs. The theorem in this manuscript remains exactly Definition~\ref{def:grammar} and Theorem~\ref{thm:main}; no broader result is incorporated by an informal change of terminology.

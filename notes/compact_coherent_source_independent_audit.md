@@ -129,7 +129,7 @@ it has exactly the displayed kernel form with \(n=m-2\), after
 increasing the allowed pole order if necessary. The primitive
 therefore proves
 \[
- H^2_{\rm dR}(X)
+ H^2_{\mathrm{dR}}(X)
     =k\left[\frac{dw\wedge dz}{(1+wz)^2}\right].
 \]
 Its period is \(-2\pi i\), so it is nonzero. This is the fixed
@@ -143,14 +143,14 @@ normalized \(G\)-expectation in the column
 Both primitive matrices actually have bounds independent of \(N\).
 For the off-diagonal part the exact integral
 \[
- B_{\rm off}
+ B_{\mathrm{off}}
    =\frac1{2\pi}\int_0^{2\pi}
        i(\theta-\pi)e^{i\theta J_0}Ae^{-i\theta J_0}\,d\theta
 \]
 has entry \(A_{ij}/(i-j)\) off the diagonal and zero diagonal.
 The conjugations are \(G\)-unitary, so
 \[
- \|B_{\rm off}\|_G\le\frac\pi2\|A\|_G.
+ \|B_{\mathrm{off}}\|_G\le\frac\pi2\|A\|_G.
 \]
 For the raising part, let
 \(s_j=\sum_{k=0}^j(A_{kk}-\tau)\).
@@ -163,7 +163,7 @@ Its weighted shift entry is
  \frac{s_j}{j+1}\sqrt{\frac{j+1}{n-j}},
 \]
 whose modulus is at most \(2\|A\|_G\). Therefore
-\(\|B_{\rm diag}\|_G\le2\|A\|_G\).
+\(\|B_{\mathrm{diag}}\|_G\le2\|A\|_G\).
 These strengthen the polynomial estimates without changing the
 primitive or source.
 
@@ -181,14 +181,14 @@ companion matrices, fixed initial column \(v_0\), and last-coordinate
 row \(\ell\). For
 \[
  H_N=A_{N-r}\cdots A_{j_0},\qquad
- R_N^{\rm left}(q)=v_0(q)\ell H_N(q)
+ R_N^{\mathrm{left}}(q)=v_0(q)\ell H_N(q)
 \]
 the all-level color theorem gives
-\(\operatorname{Tr}R_N^{\rm left}=\ell H_Nv_0=C_N(q)\).
+\(\operatorname{Tr}R_N^{\mathrm{left}}=\ell H_Nv_0=C_N(q)\).
 Applying the coherent calculus at matrix size \(r\), rather
 than color size \(N\), therefore gives
 \[
- \Omega_N=r\,\omega_{(r,R_N^{\rm left})},\qquad
+ \Omega_N=r\,\omega_{(r,R_N^{\mathrm{left}})},\qquad
  \int_\Gamma\Omega_N=C_N(q).
 \]
 The surface, cycle and pole-order bound \(r+1\) are independent
@@ -199,14 +199,14 @@ The whole companion product has poles of order at most the
 uniform total leading-germ budget. Write its outer product at
 the marked root as
 \[
- R_N^{\rm left}(q)=\sum_{j=-B}^{\infty}R_{N,j}\epsilon^j .
+ R_N^{\mathrm{left}}(q)=\sum_{j=-B}^{\infty}R_{N,j}\epsilon^j .
 \]
 Because \(C_N(q)\) is regular, every negative coefficient has
 trace zero. For each such coefficient the global primitive gives
-\(\omega_{(r,R_{N,j})}=d_{\rm ext}\eta_{R_{N,j}}\).
+\(\omega_{(r,R_{N,j})}=d_{\mathrm{ext}}\eta_{R_{N,j}}\).
 Subtracting
 \[
- d_{\rm ext}\left(
+ d_{\mathrm{ext}}\left(
        r\sum_{j=-B}^{-1}\epsilon^j\eta_{R_{N,j}}\right)
 \]
 therefore removes every normal pole, leaves the period unchanged,
@@ -217,7 +217,7 @@ in the same fixed pole-order top-form space.
 The order matters for interpreting this pole removal. The alternative
 matrix
 \[
- R_N^{\rm right}=H_Nv_0\ell
+ R_N^{\mathrm{right}}=H_Nv_0\ell
 \]
 is already regular entrywise: its column \(H_Nv_0\) consists of
 actual Laurent-polynomial colors. The earlier ordering used in this
@@ -225,7 +225,7 @@ audit was therefore valid for the period identity but made polar
 removal vacuous. In the revised left ordering, nonzero traceless
 polar coefficients can occur. The exact difference
 \[
- R_N^{\rm left}-R_N^{\rm right}
+ R_N^{\mathrm{left}}-R_N^{\mathrm{right}}
        =[v_0\ell,H_N]
 \]
 has trace zero, and its global primitive identifies the two

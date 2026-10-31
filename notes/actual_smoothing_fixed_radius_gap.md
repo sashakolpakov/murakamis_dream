@@ -1,8 +1,8 @@
 # A fixed-radius smoothing bound and its explicit limitation
 
-30 October 2026. Independently reviewed; source-coverage correction below.
+30 October 2026. ; source-coverage correction below.
 A one-variable test at
-the ORIGINAL positive face variables gives a strict source upper bound after a
+the original positive face variables gives a strict source upper bound after a
 literal untwisted L_1 insertion. It needs neither a balanced split nor
 an attained smoothed capacity. The test is not universal: an explicit
 certified family below makes its best possible gap tend to minus
@@ -25,7 +25,7 @@ distinct, and b,c are distinct unmarked faces. All repeated incidences
 after the identification are retained. The deleted port's original
 half twist must be zero; a remaining R^epsilon is not an identity.
 
-Let l^0 be the ORIGINAL positive finite face curvatures (reciprocals
+Let l^0 be the original positive finite face curvatures (reciprocals
 of Euclidean circle radii), with the two marked line variables zero.
 The established term "fixed-radius bound" refers to these face variables;
 it does not identify them with Euclidean radii. Write F for the source-normalized local fold
@@ -290,30 +290,10 @@ optimized one-variable profiles and one positive-marked regularization
 check diagnose the exact normalization. The analytic argument, not
 those finite profiles, proves the all-n limitation in (9).
 
-Primary full analytical proof and audit-code review: PASS. Independent
-targeted geometric review: PASS, including the literal embedded matched graph,
-perfect matching, interstice insertion, convex supporting-halfspace
-induction, and the actual opposite-face smoothing. These reviews do
-not infer a full optimized smoothing gap or an L_h alias bound.
+No full optimized smoothing gap or L_h alias bound is inferred.
 
-Independent full analytical proof/code review and fresh redirected
-80-digit replay: PASS. Every reported source, certificate, and profile
-count was reproduced. The review retains the sufficient nature of (3),
-the exact charge/alias qualifications after (5), and the fixed-old-face
-scope of the counterfamily.
+Condition (3) is sufficient. The charge and alias qualifications after (5), and the fixed-old-face scope of the counterfamily, remain essential.
 
 ### Source-coverage correction, 30 October 2026
 
-The earlier wording called the section3 family an original source
-counterexample to the fixed-radius strategy. The verified statement is
-the narrower geometric matched-graph CAPACITY obstruction (9). The
-frozen exact face identity proves a fixed flat-plat formula, not the
-general Morse formula that the earlier inference would need. An
-arbitrary link-to-plat isotopy does not verify preservation of the
-designated complete-circle tensors, their original mark or the face
-coefficient normalization. All displayed geometry, functional formulas
-and asymptotics remain unchanged. The audit code and saved results are
-unchanged; no rerun or new original-source comparison is claimed by
-this correction.
-Independent coherent targeted review of this coverage correction:
-PASS. No mathematical geometry or functional estimate was changed.
+The family in Section 3 proves the geometric matched-graph capacity obstruction (9). It is not a source counterexample to the fixed-radius strategy: the exact face identity proves a fixed flat-plat formula, whereas that inference would require a general Morse formula. A link-to-plat isotopy alone does not preserve the designated complete-circle tensors, mark or face-coefficient normalization.

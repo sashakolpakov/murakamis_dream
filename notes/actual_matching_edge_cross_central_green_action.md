@@ -1,6 +1,6 @@
 # The original cross-central Green kernel has a selected spectral action
 
-30 October 2026. Independently reviewed. The exact exceptional
+30 October 2026. The exact exceptional
 operator period now has a source-selected leading Green-kernel action
 when its two physical rows lie strictly on opposite sides of the
 midpoint. The actual characteristic denominator, all phases and both
@@ -14,7 +14,7 @@ nor proves that its geometric critical point contributes.
 
 ## 1. Exact original phases and the anti-diagonal sign
 
-Use the ORIGINAL root matrix J_t of
+Use the original root matrix J_t of
 [the continuant operator period](actual_matching_edge_continuant_operator_period.md),
 with 0<=t<=d=N-1. Let 0<=u<=v<=t, q=exp(pi i/N), theta=pi/N, and
 
@@ -57,7 +57,7 @@ the physical half-prefix implies Delta_u(z)!=0 for every real z;
 its proof needs only u<=floor(t/2), not a complete-channel
 assumption. See the explicit extension in the
 [physical generic-jet theorem](actual_q_hahn_physical_generic_jet_bound.md).
-Equation (3) is the sign of the ORIGINAL matrix entry. It does not
+Equation (3) is the sign of the original matrix entry. It does not
 replace the surrounding state or mark by a positive functional.
 
 ## 2. A fully normalized leading Green action
@@ -126,7 +126,7 @@ negative sign (3).
 ## 3. The genuine generic-q Green normals have relative polynomial bounds
 
 Keep a fixed compact of the parameter and spectral domain (4),(6),
-and now use the ORIGINAL generic matrix J_t(q exp(h)), including
+and now use the original generic matrix J_t(q exp(h)), including
 its distinct upper and lower entries. Write R_uv(h,z) for its
 Green entry. For all sufficiently large N there are constants c,C>0, independent of N and the
 physical integer labels in this compact, such that
@@ -144,7 +144,7 @@ for every fixed r. The inverse Green entry has the corresponding
 relative bound. These are upper bounds; no nonzero asymptotic
 amplitude for a particular normal is inferred.
 
-Here is a proof retaining the source factors. Each ORIGINAL
+Here is a proof retaining the source factors. Each original
 generic entry in the physical tridiagonal block has h derivative
 O(N) for |h|<=c/N^2. Its finitely many exponent factors have size
 O(N), and their moduli are bounded on that disk. Fixed bandwidth
@@ -218,13 +218,4 @@ control such a segment.
 
 Audit: [actual Green phases, strict anti-diagonal signs and selected logarithms](../experiments/audit_actual_matching_edge_cross_central_green_action.py).
 
-Independent review: the root agent checked the full analytical proof,
-including the genuine generic-q relative bounds in Section 3. The
-geometry agent independently checked that proof and freshly replayed
-the expanded audit: 539 reversed prefixes, 1,815 exact Green phases,
-249 anti-diagonal phases, 56 actual inverse/sign comparisons, 12
-selected logarithmic rates and 12 derivative rates, 80 genuine generic
-circle ratio/inverse checks, and 20 q derivatives passed. The source
-agent also independently checked the analytical proof. These reviews
-cover the stated integrand and normal bounds, not contour selection
-or a geometric contribution to the full source.
+The theorem bounds the stated integrand and normals. It does not select a contour or prove a geometric contribution to the full source.

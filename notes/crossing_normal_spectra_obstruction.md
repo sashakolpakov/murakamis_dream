@@ -88,12 +88,12 @@ coproduct, its eigenvalue (1) has multiplicity \(N\).
 Set \(c=2\pi i\), \(H_0=c/N\). The matched first-normal parameters
 may be written
 \[
- q=q_0(1+\epsilon/N),\quad M_{\rm col}=-q^N=1+\epsilon,
- \qquad q=q_0,\quad M_{\rm root}=1+\epsilon,\quad \epsilon^2=0 .
+ q=q_0(1+\epsilon/N),\quad M_{\mathrm{col}}=-q^N=1+\epsilon,
+ \qquad q=q_0,\quad M_{\mathrm{root}}=1+\epsilon,\quad \epsilon^2=0 .
 \]
 These are the tangents of
-\(H=H_0/(1-b/N)\), \(M_{\rm col}=e^{Hb/2}\) and
-\(M_{\rm root}=e^{H_0b/2}\), with \(\epsilon=cb/(2N)\).
+\(H=H_0/(1-b/N)\), \(M_{\mathrm{col}}=e^{Hb/2}\) and
+\(M_{\mathrm{root}}=e^{H_0b/2}\), with \(\epsilon=cb/(2N)\).
 
 To make the normalization explicit, let \(R_0\) have the common
 Cartan \(q^{\alpha^2/2}\) removed, put \(x=q^\alpha=-M/q\), and use
@@ -101,15 +101,15 @@ Cartan \(q^{\alpha^2/2}\) removed, put \(x=q^\alpha=-M/q\), and use
  \mathcal R=x^nR_0 .
 \]
 This is exactly the same-auxiliary zero-framing crossing
-\(R/\theta_{\rm aux}\), since
-\(\theta_{\rm aux}=q^{\alpha^2/2-n\alpha}\).
+\(R/\theta_{\mathrm{aux}}\), since
+\(\theta_{\mathrm{aux}}=q^{\alpha^2/2-n\alpha}\).
 At \(N=2\),
 \[
- \operatorname{Tr}\mathcal R_{\rm col}=3q-q^{-1}
+ \operatorname{Tr}\mathcal R_{\mathrm{col}}=3q-q^{-1}
        =4q_0+\epsilon q_0,
 \]
 \[
- \operatorname{Tr}\mathcal R_{\rm root}
+ \operatorname{Tr}\mathcal R_{\mathrm{root}}
        =2q_0(M+M^{-1})=4q_0+O(\epsilon^2).       \tag{3}
 \]
 Thus even the first-normal traces differ in this specified
@@ -120,10 +120,10 @@ normalization dependence.
 There is also an independent module invariant. With
 \(\gamma=(-1)^{N-1}\), the actual \(K^N\) matrices are
 \[
- K_{\rm col}^N
+ K_{\mathrm{col}}^N
    =\gamma\,\operatorname{diag}
        (1+\epsilon(n-2j))_{j=0}^{N-1},\qquad
- K_{\rm root}^N=\gamma(1+N\epsilon)I .
+ K_{\mathrm{root}}^N=\gamma(1+N\epsilon)I .
 \]
 Their trace derivatives are \(0\) and \(\gamma N^2\).
 The moving-\(q\) first normal has a nonzero traceless component;
@@ -155,16 +155,16 @@ The full output is
 The positive result that remains available is the full-source
 bulk insertion theorem. Its exact source factor is
 \[
- W_{\rm aux}=\frac1N x^{n\kappa}
-    Q^{n\sum_{\rm closed}i}\prod_t r_{0,t},
- \qquad \kappa=\operatorname{writhe}-b_{\rm strands}+1 .
+ W_{\mathrm{aux}}=\frac1N x^{n\kappa}
+    Q^{n\sum_{\mathrm{closed}}i}\prod_t r_{0,t},
+ \qquad \kappa=\operatorname{writhe}-b_{\mathrm{strands}}+1 .
 \]
 The ordinary/auxiliary adapter
 \(q^{Nn\kappa}(Q^N)^{\sum i}\) removes the pivot-dependent
 linear response. Hence the remaining insertion is
 \((\mathcal E-1)\mathcal A\), including the constant
 \(c\kappa/2\) of the marked whole action. On a flattened
-critical block it is \(-S_{\rm geo}/c\). These source and
+critical block it is \(-S_{\mathrm{geo}}/c\). These source and
 constant signs agree directly with the literal adapter.
 This proves a local formal block response; it supplies neither
 a same-fiber crossing similarity nor a selected global period.

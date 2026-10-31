@@ -55,7 +55,7 @@ Under the actual triangular fusion, the original highest-input,
 all-ones-output pivotal cap has the following exact values:
 
 \[
- \Lambda_{\rm act}(f^a e_k)=
+ \Lambda_{\mathrm{act}}(f^a e_k)=
  x^{1-N-a}Q^{-b}\frac{F_b}{F_k}
  \begin{cases}
  1,&k+a<N,\\
@@ -85,11 +85,11 @@ Write z=xf and define the finite polynomials
  \quad \gamma=Nx^{2-2N}Q.                                \tag{5}
 \]
 
-On phi_1=phi_2=0, the ORIGINAL cap is exactly
+On phi_1=phi_2=0, the original cap is exactly
 
 \[
  \boxed{\quad
- \Lambda_{\rm act}(a)=\gamma\rho_0\big(v_2(z)\,a\,u(z)\big).
+ \Lambda_{\mathrm{act}}(a)=\gamma\rho_0\big(v_2(z)\,a\,u(z)\big).
  \quad}                                                   \tag{6}
 \]
 
@@ -135,7 +135,7 @@ and (6) has the equivalent exact form
 
 \[
  \boxed{\quad
- \Lambda_{\rm act}(a)=\gamma\rho_0
+ \Lambda_{\mathrm{act}}(a)=\gamma\rho_0
        \left[J_Q(z)\,u(z)^{-1}a\,u(z)\right].\quad}        \tag{8}
 \]
 
@@ -188,12 +188,12 @@ and the explicit element
                         f^{N-1-a}e_b.                   \tag{10}
 \]
 
-Then the exact ORIGINAL whole cap is
+Then the exact original whole cap is
 
 \[
  \boxed{\quad
- C_{\rm act}=C_E-x^N\phi_1 W,\qquad
- \Lambda_{\rm act}(a)=\Lambda_E(a)-x^N\phi_1\tau(Wa).
+ C_{\mathrm{act}}=C_E-x^N\phi_1 W,\qquad
+ \Lambda_{\mathrm{act}}(a)=\Lambda_E(a)-x^N\phi_1\tau(Wa).
  \quad}                                                  \tag{11}
 \]
 
@@ -271,7 +271,7 @@ Then the exact actual co-source equation is
 
 \[
  \boxed{\begin{aligned}
- \Lambda_{\rm act}(\delta(a))
+ \Lambda_{\mathrm{act}}(\delta(a))
  &=\gamma c\rho_0\big(Vtu+cV-v_2V\big)
                          -x^N\phi_1\tau(W\delta(a)).
  \end{aligned}}                                          \tag{16}
@@ -291,10 +291,10 @@ On the actual nilpotent source phi_1=phi_2=0, both right-hand
 terms vanish. Thus this is the exact dressed Ward identity
 
 \[
-           \Lambda_{\rm act}(T(a)-Q^{-1}a)=0.              \tag{17}
+           \Lambda_{\mathrm{act}}(T(a)-Q^{-1}a)=0.              \tag{17}
 \]
 
-It is a statement about the ORIGINAL cap, not just a homogeneous
+It is a statement about the original cap, not just a homogeneous
 formal solution. At nonzero centers (16) specifies the affine
 defect and the source's first-leg wrap term. Treating (17) as
 homogeneous on that whole family would erase actual source data.
@@ -315,9 +315,9 @@ is 1/[r(1-Q^r)], which proves these formulas by differentiation.
 Differentiating (6) therefore gives exactly
 
 \[
- \partial_x\Lambda_{\rm act}(a)
- =\frac{2-2N}{x}\Lambda_{\rm act}(a)
-    +\Lambda_{\rm act}(\partial_xa+aA-A_2a).              \tag{18}
+ \partial_x\Lambda_{\mathrm{act}}(a)
+ =\frac{2-2N}{x}\Lambda_{\mathrm{act}}(a)
+    +\Lambda_{\mathrm{act}}(\partial_xa+aA-A_2a).              \tag{18}
 \]
 
 The scalar gamma character has been retained. In particular

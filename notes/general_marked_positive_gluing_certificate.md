@@ -508,13 +508,4 @@ and variational certificate, not a quantum source selection theorem.
 
 [Recorded results](../experiments/general_marked_positive_gluing_certificate_results.json).
 
-Primary-agent and separate independent analytical reviews: PASS, with
-fresh replays of the exact audit. Both reviews checked E=T and unit
-edge winding, complete torus links, actual primitive topology, the
-signed horocycle length constant, both directions of the variational
-criterion, dependent constraints and repeated edge incidences, the
-strict boundary maximum, the algebraic phase/multiplier certificate,
-and the precise positive cusp-decoration torsor. The Bloch boundary
-claim is explicitly rational. These reviews certify the stated
-geometric implication; they do not assert positive-certificate
-existence for every diagram or select its quantum period.
+The Bloch-boundary statement is rational. The gluing criterion does not establish existence of a positive certificate for every diagram or select its quantum period.

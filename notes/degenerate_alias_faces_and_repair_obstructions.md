@@ -132,7 +132,7 @@ Direct multiplication gives
 \]
 
 Exactly tetrahedra (0,2,3,4) are flat; tetrahedra (1,5) are strictly
-positive. Every ORIGINAL angle structure, satisfying the local sums one
+positive. Every original angle structure, satisfying the local sums one
 and \(E\alpha=2\mathbf1\), obeys the identity
 
 \[

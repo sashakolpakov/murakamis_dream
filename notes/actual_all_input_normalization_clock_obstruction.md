@@ -93,7 +93,7 @@ W(z)=sum Q^(b^2)s^b z^b/F_b^2 satisfies
 W(z)-2W(Qz)+(1-sQz)W(Q^2z)=0. Compare coefficients of U(z)W(z).
 This proves (4) at the root without using any denominator F_N.
 
-Let P_i be the ORIGINAL Green register,
+Let P_i be the original Green register,
 
 \[
  P_0=1,\qquad P_i=(1-Q^i)^2P_{i-1}+Q^i.
@@ -120,7 +120,7 @@ normalization leaf merely because its value at t=1 is a scalar.
 
 ## 3. The source endpoint forces a large interior current
 
-The all-parity ORIGINAL source endpoint has the independently derived
+The all-parity original source endpoint has the independently derived
 quadratic-Gaussian asymptotic
 
 \[
@@ -218,7 +218,7 @@ for EVERY fixed c>0,
 \[
  \boxed{\displaystyle
  \liminf_N\frac1N\log
-    \sup_{|t-1|\leq c/N}\|\mathcal C_N(t)\|_{\rm op}
+    \sup_{|t-1|\leq c/N}\|\mathcal C_N(t)\|_{\mathrm{op}}
                                   \geq\gamma>0.}            \tag{14}
 \]
 
@@ -256,7 +256,7 @@ The terminal C_d' is polynomial, while (13) is exponential. Telescoping
 the physical differences and using |1-Q^(a+1)|>=4/N proves
 
 \[
- \liminf_N N^{-1}\log\|[F,\mathcal C_N'(1)]\|_{\rm op}
+ \liminf_N N^{-1}\log\|[F,\mathcal C_N'(1)]\|_{\mathrm{op}}
                                       \geq\gamma.            \tag{16}
 \]
 
@@ -271,15 +271,15 @@ A_cap=ell tensor I, and let U=I tensor R_phys^2 act on the FULL
 physical pair space, not only its degree-d block. Define
 
 \[
- \mathcal J_F(t)=A_{\rm cap}U K_1^{-1}F_2 t^{J_2}S,\qquad
- \mathcal J_E(t)=A_{\rm cap}U E_{{\rm cal},2}t^{J_2}K_3S.
+ \mathcal J_F(t)=A_{\mathrm{cap}}U K_1^{-1}F_2 t^{J_2}S,\qquad
+ \mathcal J_E(t)=A_{\mathrm{cap}}U E_{{\mathrm{cal}},2}t^{J_2}K_3S.
 \]
 
 The actual coproduct and cup/cap intertwinings give
 
 \[
  [F,\mathcal C_N(t)]=(1-t)\mathcal J_F(t),\qquad
- [E_{\rm cal},\mathcal C_N(t)]=(1-t^{-1})\mathcal J_E(t).      \tag{17}
+ [E_{\mathrm{cal}},\mathcal C_N(t)]=(1-t^{-1})\mathcal J_E(t).      \tag{17}
 \]
 
 Indeed only the middle-head term in the total coproduct fails to
@@ -311,7 +311,7 @@ recurrence, the exact derivative current, literal inverse row masses,
 and finite inequality (12). The endpoint Gaussian input has its
 separate all-level proof and original-source audit.
 
-Fresh replay: PASS twelve literal all-input physical normalization
+The finite audit checks twelve literal all-input physical normalization
 operators at N=2,...,12,14, their exact root Ward jets and Hopf
 commutators; ten complete complex current/lower-bound families through
 N=96. Numerical jet rates are recorded only as diagnostics, not used

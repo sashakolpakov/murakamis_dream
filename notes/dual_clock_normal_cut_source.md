@@ -122,7 +122,7 @@ For each fixed h, the leading r=h term in (3) gives
 The factorial majorant proves the WHOLE locally uniform limit
 \[
               P_{N,e^{z/N}}^{\vee}(b)\longrightarrow e^{-zb}
-                     \quad\hbox{on }\mathbb C_z\times\mathbb C_b.
+                     \quad\text{on }\mathbb C_z\times\mathbb C_b.
                                                                \tag{9}
 \]
 This also proves convergence of every fixed derivative by Cauchy's
@@ -195,12 +195,12 @@ factor as the scaled-meridian and Gamma-source calculations.
 
 Use the normal centralizer coordinate \(b=-a/\eta\) and
 \[
- \nu_{\rm cut}=-\frac{d\eta}{\eta}\wedge
+ \nu_{\mathrm{cut}}=-\frac{d\eta}{\eta}\wedge
                          \frac{\Omega_0}{1-\eta v}.
 \]
 For every h, expansion of the geometric denominator gives
 \[
- \operatorname{Res}_{E}(b^h\nu_{\rm cut})
+ \operatorname{Res}_{E}(b^h\nu_{\mathrm{cut}})
                            =-(-T)^h\Omega_0 .
 \]
 Linearity, (3), and (5) yield the exact source pairing
@@ -208,7 +208,7 @@ Linearity, (3), and (5) yield the exact source pairing
  \frac1N\operatorname{Tr}(w^JC)
    =\frac1{2\pi i}\int_\Gamma
       \operatorname{Res}_{E}
-           \left(P_{N,w}^\vee(b)f_C\nu_{\rm cut}\right). \tag{13}
+           \left(P_{N,w}^\vee(b)f_C\nu_{\mathrm{cut}}\right). \tag{13}
 \]
 This is a SOURCE-KERNEL lift; it is not asserted to be the internal
 Gaussian image of that kernel.
@@ -220,14 +220,14 @@ The north and south torsor coordinates obey
 \]
 Use \(P(b_N)\) north and \(P(b_S-1)\) south. Their difference is
 divisible by the Gauss-wall factor. After multiplication by
-\(\nu_{\rm cut}\) the Gauss-wall pole cancels, leaving only
+\(\nu_{\mathrm{cut}}\) the Gauss-wall pole cancels, leaving only
 \(\eta^{-r}d\eta\wedge\Omega_0\) with \(r\ge2\).
 Each has an explicit normal primitive and zero E-residue.
 Thus (13) retains a compatible affine Cech moment marking.
 Bare \(P(b_S)\) would have the wrong residue polynomial.
 
 At finite N the normal pole degree can reach N, since
-\(\deg P^\vee=N-1\) and \(\nu_{\rm cut}\) already has a simple
+\(\deg P^\vee=N-1\) and \(\nu_{\mathrm{cut}}\) already has a simple
 normal pole. It must not be replaced by a bounded normal jet.
 After taking the explicit residue formula, (8)--(9) do allow
 locally uniform convergence of the whole residue to its exponential
@@ -237,11 +237,11 @@ is claimed.
 ## 5. Exact finite cut-current endpoints
 
 For an arbitrary zero-extended finite current \(J_j\), set
-\(\lambda_{N,w}^{\rm head}(J)=N^{-1}\sum_{j=0}^{N-1}w^jJ_j\).
+\(\lambda_{N,w}^{\mathrm{head}}(J)=N^{-1}\sum_{j=0}^{N-1}w^jJ_j\).
 For \(w\ne0\), direct summation by parts gives
 \[
- \lambda_{N,w}^{\rm head}((S-1)J)
-   =(w^{-1}-1)\lambda_{N,w}^{\rm head}(J)
+ \lambda_{N,w}^{\mathrm{head}}((S-1)J)
+   =(w^{-1}-1)\lambda_{N,w}^{\mathrm{head}}(J)
                +\frac{w^{N-1}J_N-w^{-1}J_0}{N}.        \tag{14}
 \]
 Including both actual tails gives the full finite row
@@ -251,7 +251,7 @@ Its z-derivatives retain every normalized position-moment endpoint.
 
 The original raw Green arrays already contain \(1/N\).
 Equations (5), (13), and (14) use matrix-normalized arrays;
-\(I_{\rm mat}=NI_{\rm raw}\), \(J_{\rm mat}=NJ_{\rm raw}\).
+\(I_{\mathrm{mat}}=NI_{\mathrm{raw}}\), \(J_{\mathrm{mat}}=NJ_{\mathrm{raw}}\).
 Equivalently use N times these rows on raw arrays.
 No factor N is absorbed into an endpoint.
 

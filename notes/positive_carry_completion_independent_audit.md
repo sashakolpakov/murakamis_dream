@@ -60,7 +60,7 @@ the finite inverse of 1+n after factoring out the actual crossing.
 It holds for every signed word, with no restriction on word length.
 
 The completed word differs from the original by an element of n.
-Close all but the first strand with their ORIGINAL pivots. A
+Close all but the first strand with their original pivots. A
 possibly nonzero cut entry from first input a to first output c
 would have total degree change c-a, which lies strictly between
 -N and N. It cannot be a positive multiple of N. Consequently

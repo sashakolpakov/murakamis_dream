@@ -12,7 +12,7 @@ maximum. This is a local three-circle result, not a general graph theorem.
 ## 1. Literal original source, before any channel decomposition
 
 Let C be the actual auxiliary [2,1,1,2] three-braid, closed on its
-third head with the ORIGINAL pivot. Its complete-color value is L_N
+third head with the original pivot. Its complete-color value is L_N
 by the [all-input circle theorem](actual_crossing_circle_source_and_filling.md).
 It is an actual additional link component, with no division by its
 zero ordinary quantum dimension.
@@ -22,7 +22,7 @@ R^(e_2)L_N on heads34, and R^(e_3)L_N on heads56. Use the matching
 
     (16),(23),(45)
 
-at the bottom and the top. At the bottom use the ORIGINAL cups;
+at the bottom and the top. At the bottom use the original cups;
 at the top use ordinary caps on23 and45, and the sole original
 unrestricted marked row on16. Explicitly they are
 
@@ -282,9 +282,3 @@ coefficients, all eight actual half-twist face/cusp patterns, and
 eighteen original full-Cartan signed marked tensor sources against
 the literal s=3 pretzel transfer. No software volume recognition or
 numerical constant fit is used in this certificate.
-
-An independent analytical reader checked the original ordered source,
-all sixteen-tetrahedron edge equations by hand, the full-twist collar,
-the single marked normalization and the six-pants boundary geometry,
-and reported PASS. A fresh independent replay of the focused audit
-also passed. These are internal proof reviews, not external peer review.

@@ -1,7 +1,7 @@
 # Actual Rogers blocks and the full marked source at arbitrary bridge number
 
 28 October 2026. This note connects the newly proved finite Rogers
-transform to the ORIGINAL two-head fusion kernel and folds all the
+transform to the original two-head fusion kernel and folds all the
 actual plat turns through that kernel. The result is an exact recursion
 for any admissible colored `2k`-plat, with one explicit marked output row,
 all other outputs fixed corners, and no restriction on bridge number.
@@ -206,7 +206,7 @@ integer total degree and has `X_+^N=0`. Set
     D_(x,y)|a,b>=(-1)^b Q^(b(b-1)/2)(xy)^-b |a,b>.
 
 Then `u_N(X)v_N(X)=I` for every nilpotent X of order at most N.
-The ORIGINAL checked crossings satisfy
+The original checked crossings satisfy
 
     R_+^(x,y) = kappa_(x,y) C_y
                       D_(x,y) u_N(x^-1 X_+) C_x^-1,
@@ -290,7 +290,7 @@ color x_* for the original marked right cap; by choosing the
 standard orientation of that marked pair, (8) applies. Let
 `e_in=|d,0> tensor ... tensor |d,0>` and let `e_out(r)` put
 `(r,d-r)` at the marked pair and `(0,d)` at all other pairs.
-The ORIGINAL reduced scalar is exactly
+The original reduced scalar is exactly
 
     P_(beta,N) = chi_beta N^(-(k-1))
             sum_(r=0)^d mu_(x_*)(r)
@@ -409,7 +409,7 @@ multiply to I. Therefore it is outside this chart with finite
 nonzero p_A. A regular interior symplectic map alone cannot move
 the bridge source into a chosen positive geometric chart.
 
-The same issue is visible directly in the ORIGINAL marked row,
+The same issue is visible directly in the original marked row,
 without assigning a symbol to a finite nilpotent matrix. Fix total
 degree d, a=r, and multiply the physical-u summand of (1) by (8).
 Apart from a factor independent of u, this summand is

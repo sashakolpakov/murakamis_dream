@@ -167,7 +167,7 @@ Writing n_distinct=ceil(N/2), it gives
     p^*G_0p=||u||^2/N<=8N^2.                         (15)
 
 The last constant includes N=2. All normalizer phases in (14) remain.
-Thus (9) becomes the explicit ORIGINAL-SOURCE positive-energy bound
+Thus (9) becomes the explicit original-SOURCE positive-energy bound
 
     |K_N|^2<=|chi_N|^2 (n_distinct/N) E_N(W),
     E_N(W)=||W_ch u||^2/N=(Wp)^*G_0(Wp).             (16)
@@ -200,6 +200,6 @@ recoupling, both P-unitary generators, all source phases and unitary
 Fourier endpoints, full Hermite-source normalizers, and actual coherent
 word Cauchy energies in positive and P-compatible metrics.
 
-Fresh replay: PASS twelve complete original Casimir/braid/source modules,
+The finite audit checks twelve complete original Casimir/braid/source modules,
 including the full Hermite boundary metric, coherent signed-word Cauchy
 energy and non-diagonal P-compatible positive metrics. Compilation passes.

@@ -1,10 +1,6 @@
 # Complex third faces and near-opposite MAIN phases in the actual raw cofactor
 
-31 October 2026. **Internally reviewed analytical research theorem.**
-Unpublished. Root and a separate source reviewer completed full independent
-analytical/source reads. Every
-matrix, node, degree and unused factor is at the original level N.
-No absolute shared-volume comparison is asserted.
+The raw cofactor theorem applies to the original levels with the specified complex phases. It does not give a shared-volume comparison.
 
 Inputs are the [exact nodal adapter](actual_cross_cofactor_global_angular_gap.md),
 section 1; the [uniform complex determinant prefix bound](research_opposite_equal_triangle_determinant_bound.md),
@@ -260,7 +256,7 @@ the pair of log moduli in D_sym with
 where the logarithms vanish at w=0. Define the tail action using
 log(4Csin^2(pi t))+Log(-r_in). These expressions are holomorphic in
 the disk and REAL for 0<w<1. On that interval, they are exactly the
-real quantities in the reviewed real cancellation identity. Their
+real quantities in the real cancellation identity. Their
 sum with L(alpha) therefore equals .5 log C as a complex identity
 on a real interval. The identity theorem gives that equality on the
 entire disk. Taking real parts proves (13) for |z|<C.
@@ -276,7 +272,7 @@ The tail uses Log z+log(4sin^2(pi t))+Log(r_out/w).
 The TOTAL coefficient of Log z is alpha+(1/2-alpha)=1/2.
 Subtracting .5 Log z therefore gives a single-valued holomorphic
 function on the exterior, including infinity. It is real and zero
-on w>1 by the same reviewed real identity. The identity theorem
+on w>1 by the same real identity. The identity theorem
 shows it is identically zero, proving (13) outside the circle.
 
 The endpoint cases in alpha and the circle |z|=C follow by continuity.
@@ -438,16 +434,7 @@ that the resulting star envelope is at most Phi_D. It also makes no
 claim that spectral interpolation preserves a local sector's matrix
 covariance: only the exact cofactor polynomial is interpolated.
 
-## Internal review and scope
-
-Root and the independent source reviewer each completed full analytical/source
-reads of sections 1–7: PASS. They checked the exact nodal normalization,
-finite scalar Jacobi structure, fixed-block estimate at Jordan points,
-uniform logarithmic endpoint control, holomorphic branches and their
-normalizations, the maximum-versus-average phase budget, omitted-node
-interpolation, near-opposite perturbation bounds and the exact torus
-maximum. The source reviewer separately checked the finite Jacobi paragraph.
-These are internal reviews, not external peer review.
+## scope
 
 No numerical audit or asymptotic sampling is needed or claimed. This is
 an upper bound for the original raw cofactor on the stated face and

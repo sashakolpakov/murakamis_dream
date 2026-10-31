@@ -181,14 +181,4 @@ show that the geometric contribution is nonzero.
 
 Focused audit: [actual ground-state congruence, halves and full endpoint resolvent](../experiments/audit_actual_casimir_endpoint_resolvent_bound.py).
 
-Primary and independent analytical reviews: PASS. The independent read
-checked the unitary congruence rather than a claimed similarity, the
-two half-block bounds uniformly through t=N-1, the duplicated bridge
-conductance, exact characteristic-product lower bound and full Schur
-denominator, and the genuine generic perturbation. A fresh independent
-replay passed 187 original full blocks, 5,030 congruence entries, 251
-half-inverse, positive-determinant and trace checks, 187 characteristic
-products, and 170 exact Schur determinants. The numerical full norms
-are diagnostics; the stated uniform exponent comes from the proof.
-No contour deformation or geometric contribution is included in these
-reviews.
+The matrix relation is a unitary congruence, not a similarity. The proof includes the duplicated bridge conductance and full Schur denominator. Numerical full norms are diagnostics; the uniform exponent comes from the analytical estimate. No contour deformation or geometric contribution follows.

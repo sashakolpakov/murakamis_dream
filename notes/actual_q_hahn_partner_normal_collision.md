@@ -33,7 +33,7 @@ has the finite expression
        /[(BQ;Q)_k (T^(-1);Q)_k (Q;Q)_k].              (1)
 
 In (1), B is temporarily an independent variable. Its specialization
-B=Q^(-N) is the ORIGINAL generic source; B is not a replacement
+B=Q^(-N) is the original generic source; B is not a replacement
 quantization. All displayed denominator factors are units near a
 primitive N-th root with B=1, except the indicated T divisors.
 
@@ -166,7 +166,7 @@ For k>j the single vanishing numerator factor has derivative
     [y partial_y(y;Q)_k]_(y=Q^(-j))
                     =-(a;Q)_j(Q;Q)_(k-j-1).
 
-Thus the ORIGINAL normal is
+Thus the original normal is
 
     w_j=x^u/Delta * {
        sum_(k=0)^j c_k [L_k(b)-L_k(a)]
@@ -220,17 +220,4 @@ ordinary-column joint theorem to this canonical generic normal.
 
 Audit: [generic collision, original normal and pole certificates](../experiments/audit_actual_q_hahn_partner_normal_collision.py).
 
-Independent analytical review and fresh audit: PASS. A second reader
-rederived the Newton-basis coefficient ratio, checked the fixed-degree
-Laurent-support extension, actual eigenvalue-gap sign, transverse factor,
-core and tail signs, and the noncanceling highest-coefficient poles.
-The fresh audit passed 4,123 original generic-q normal comparisons,
-445 nonphysical tail checks and 614 nonzero extra-pole residues, as
-well as the generic transformations and noncyclotomic collisions.
-No smaller-corridor estimate or full-coupon pole is inferred.
-
-Primary-agent independent analytical review and fresh replay: PASS.
-It checked the actual-source ratio recurrence and all-degree extension,
-the tensor-eigenvalue gap convention, transverse derivative and tail
-factor two, and the nonzero leading pole residues. The same focused
-audit counts passed; the stated scope is unchanged.
+The collision calculation does not imply a smaller-corridor estimate or a pole of the full coupon.

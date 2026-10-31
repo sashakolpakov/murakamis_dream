@@ -1,14 +1,12 @@
 # Regular signed spectral circle development and original group sewing
 
-Workspace research draft, 31 October 2026. Independently reviewed at the
-explicit conditional scope below; not approved for publication. This is a regular-stratum
-GROUP lemma. It does not identify the globally sewn regulator with the
+31 October 2026. This is a conditional group lemma on the regular stratum. It does not identify the globally sewn regulator with the
 sharp absolute rate and does not cover every compact maximum.
 
 ## 1. Exact hypotheses and the proposed conclusion
 
 Keep the actual labeled simple-white sphere of an original certified
-flat plat, its port matching, and its ORIGINAL adjacent protected
+flat plat, its port matching, and its original adjacent protected
 MAIN faces u,v. At every ordinary face give a finite magnitude L_f>0.
 At the two protected faces keep the exact zero targets.
 
@@ -42,7 +40,7 @@ selected local source phases:
 
 Then the proposed conclusion is that these data develop to ONE set
 of white circle/line reflections and their literal primitive collars,
-and hence to a representation of the ORIGINAL drilled group. The
+and hence to a representation of the original drilled group. The
 following proof explains why no convex embedding is needed and where
 the marked flags enter. It does not assert that hypotheses1--4 hold
 at an arbitrary maximum of an absolute envelope.
@@ -85,7 +83,7 @@ generating relation. The signed q<0 does not invalidate the law of
 cosines: (q+y)/(qy)>0 is its actual internal-tangent distance.
 In the selected branch all three angles lie in (0,pi) and sum to pi.
 The input/output signs sigma_t in (1) orient their placement relative
-to the ORIGINAL white triangle order.
+to the original white triangle order.
 
 At a line corner the same assertions use the explicit finite line
 matrices, not an inference from a vanished scalar root. The two finite
@@ -216,7 +214,4 @@ boundary reduction for escaping ordinary multipliers and free KKT
 strata. Those are necessary before it could yield a general quantum
 upper bound.
 
-Independent review: coherent_partner_currents read the complete
-conditional GROUP argument and checked the exact two-line closure
-above. This review does not supply the source hypotheses or the
-separate regulator comparison.
+The conditional group argument and exact two-line closure do not supply the source hypotheses or the separate regulator comparison.

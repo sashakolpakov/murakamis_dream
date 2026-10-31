@@ -5,7 +5,7 @@ has an explicit positive Gram, independent of the braid word and its
 unknown value. All Casimir value AND derivative channels are retained.
 The original incoming cup and outgoing cap have polynomial norms in
 this metric. Their exact weighted norms below provide an honest
-Cauchy inequality for the ORIGINAL reduced scalar.
+Cauchy inequality for the original reduced scalar.
 
 This independently checks the full source formulas in
 [the complete multiplicity theorem](actual_complete_source_multiplicity_module.md#4a-a-complete-positive-hermite-metric-with-both-original-sources-polynomial).
@@ -149,7 +149,7 @@ norm squared is `S_N/N=O(N^2)`. In particular
     |K_N|^2<=|chi_N|^2 [ceil(N/2)/N] E_bal(W).       (11b)
 
 This version needs no additional polynomial Cauchy loss: it uses
-the ORIGINAL unnormalized incoming cup. It is the same positive
+the original unnormalized incoming cup. It is the same positive
 Gram up to its specified scalar, not a different source.
 
 ## 4. Positive CD measure: exact weighted source norms

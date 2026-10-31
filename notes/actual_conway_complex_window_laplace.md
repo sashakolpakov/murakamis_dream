@@ -320,13 +320,6 @@ argument for (17) or the complex-window theorem.
 Audit: [exact calibration and finite positive sums](../experiments/audit_actual_conway_complex_window_laplace.py)
 and [results](../experiments/actual_conway_complex_window_laplace_results.json).
 
-Independent internal analytical review: the source-transport agent
-checked the full lattice count, integer-offset amplitude, tensor
-cotangent orientations and errors, complex saddle deformation, and
-positive-core comparison, and reported PASS. The root agent separately
-reviewed the full proof and derived the calibration (15)--(17);
-the present exact audit independently reproduces its constants.
-These proof reviews do not replace the separate source-algebra or
-alias audits.
+The complex-window argument retains the primitive lattice count, integer offsets and finite contour errors. It requires the separate source-algebra and alias results.
 
-Primary-agent full analytical review and fresh calibration audit: PASS. The review checked the primitive integer coordinates, D=N-1 offset factors, finite tensor-cotangent contours and all boundary/mode gaps, uniform complex Gaussian remainder, and the exact H3 prefactor. The [whole-source assembly](actual_conway_long_filling_source_limit.md) combines this packet with separately proved alias and marked geometric results.
+The [whole-source assembly](actual_conway_long_filling_source_limit.md) combines this packet with separately proved alias and marked geometric results.

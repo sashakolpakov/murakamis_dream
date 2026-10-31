@@ -1,7 +1,7 @@
 # Long-filling volume for one-end-layer plats at every bridge width
 
-Independently reviewed theorem, 31 October 2026. This is a
-right-end extension of the [reviewed reduced-layer construction](general_reduced_layer_long_filling_volume.md). It
+theorem, 31 October 2026. This is a
+right-end extension of the [reduced-layer construction](general_reduced_layer_long_filling_volume.md). It
 retains the original flat-plat source, first-cap mark, all half twists
 and all independently signed full twists. The proof covers every $k\geq2$;
 it does not assert balance for every certified plat.
@@ -101,8 +101,7 @@ outside lower half-plane $Y\leq0$ and $a_0$ the outside upper half-plane
 $Y\geq2$. Uniqueness of the marked positive curvature solution up to
 scale, followed by unique contact-center development, realizes the
 automorphism by a vertical reflection. Translate its axis to $X=0$.
-This is precisely the uniqueness/reflection argument in the reviewed
-reduced-family proof, with the same connected ordinary-face Hessian.
+This is precisely the uniqueness/reflection argument in the reduced-family proof, with the same connected ordinary-face Hessian.
 In particular the actual curvatures satisfy $A_i=B_i$.
 
 Put $L=k-1$. The fixed graph cycle is
@@ -314,15 +313,13 @@ full twists. This identifies unbounded actual bridge complexity,
 without putting a congruence restriction on the volume theorem.
 
 No finite search over k or numerical packing values are used to prove
-this uniform statement. The previously reviewed reduced-family proof
+this uniform statement. The reduced-family proof
 supplies the recurrence algebra, comparison principle and source Q
 normalization; this note proves the changed right boundary and the
 literal all-width incidence explicitly.
 
-
 ## Validation and scope
 
-Root and independent geometry/source reviewers checked the complete all-width proof, including the literal right-end box and first-cap mark, the changed $y_L=0$ boundary, the linear $w=1$ equation, the comparison that never evaluates $f(\log2)$, both small-width seeds, the unique positive final-circle branch, and the original full-source and Fox-coloring implications. The proof applies to every fixed width, but does not provide a single filling threshold independent of the diagram or width. It proves this explicit family, not a universal balance condition for every certified plat.
+The proof applies to every fixed width, but does not provide a single filling threshold independent of the diagram or width. It proves this explicit family, not a universal balance condition for every certified plat.
 
-
-The [focused exact audit](../experiments/audit_general_one_end_layer_long_filling_volume.py) and [recorded results](../experiments/general_one_end_layer_long_filling_volume_results.json) check the original right-end box incidences, first mark, reflection and knot parity at 39 widths, six changed-boundary identities, and all 36 exact circle-support pairs and nine port tests of the width-two and width-three seeds. Root and geometry independently reviewed the audit code and replayed it with identical results. This supplements the analytical proof; the old interior recurrence audit is not repeated, and finite tests are not used to infer the uniform or asymptotic conclusion.
+The [focused exact audit](../experiments/audit_general_one_end_layer_long_filling_volume.py) and [recorded results](../experiments/general_one_end_layer_long_filling_volume_results.json) check the original right-end box incidences, first mark, reflection and knot parity at 39 widths, six changed-boundary identities, and all 36 exact circle-support pairs and nine port tests of the width-two and width-three seeds. This supplements the analytical proof; the old interior recurrence audit is not repeated, and finite tests are not used to infer the uniform or asymptotic conclusion.

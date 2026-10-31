@@ -327,22 +327,7 @@ Audit: [finite equation, amplitude, and physical offsets](../experiments/audit_a
 The finite computations test conventions and the predicted error;
 the all-level uniform statement is proved by (5)--(14).
 
-Root analytical review: full proof read PASS, including the exact finite
-shift ordering, actual derivative bootstrap, prefactor normalization,
-shifted midpoint remainder and both physical integer offsets.
 
-Independent geometric review: full analytical read and fresh audit PASS.
-The replay checked 8,720 finite polynomials, 29,068 coefficient equations
-including 17,440 support endpoints, 650 independently constructed
-physical Casimir entries, and 45 complex plus 15 physical amplitude
-calibrations at 140 digits. The reviewer separately checked the
-nonvanishing selected saddle, square-root normalization and compact
-uniform error argument. The review retains the strict REAL magnetic
-parameter hypothesis and makes no assembled-source claim.
+The magnetic parameter remains strictly real. No assembled-source conclusion follows from the local complex-amplitude theorem.
 
-Independent character/current review: full analytical read and fresh
-140-digit audit PASS with the same exact counts and numerical results.
-The reviewer independently checked the finite support, both bootstrap
-orders, factorial constant, arbitrary lattice offset and physical
-phases. This review likewise does not extend the theorem to complex
-magnetic parameters or an assembled-source asymptotic.
+The theorem does not extend to complex magnetic parameters or an assembled-source asymptotic.

@@ -1,6 +1,6 @@
 # An exact bridge-number certificate for odd-prime-divisible plat boxes
 
-Independently reviewed elementary certificate, 31 October 2026. This result is independent of the source asymptotics and circle-packing balance condition. It identifies exact-bridge congruence subfamilies when the prescribed plat parity gives a knot. Geometric balance must be established separately.
+elementary certificate, 31 October 2026. This result is independent of the source asymptotics and circle-packing balance condition. It identifies exact-bridge congruence subfamilies when the prescribed plat parity gives a knot. Geometric balance must be established separately.
 
 ## 1. Fox colors and the signed crossing map
 
@@ -115,4 +115,4 @@ For example, the [simple-white family's component-parity construction](general_s
 
 ## Validation and scope
 
-Root and source reviewers independently read the full proof and reported PASS, including signed powers, coloring invariance, slot registers versus strand permutations, the bridge propagation injection, and all parity and congruence conditions. No numerical sample is needed for these exact arguments. This certificate proves no circle-packing balance assertion on its own.
+The Fox certificate does not imply circle-packing balance.

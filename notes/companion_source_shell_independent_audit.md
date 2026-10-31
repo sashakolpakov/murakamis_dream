@@ -2,7 +2,7 @@
 
 27 October 2026. The classification and polynomial comparison in
 [the pointed source theorem](pointed_companion_source_and_polynomial_hilbert90.md)
-pass over the stated commutative coefficient rings, including
+hold over the stated commutative coefficient rings, including
 nonreduced bases. They require no quantum-gap division or imported
 multiplicative-quiver classification. The full actual word and
 selected regulator norm remain additional data.

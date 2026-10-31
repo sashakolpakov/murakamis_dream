@@ -237,7 +237,7 @@ star. If a+b+c=d, root reflection gives
     w_N(a,b,c)=1/[s_N(a)s_N(b)s_N(c)]
                 =|[a+b choose a]_Q|/N.           (11)
 
-The exact ORIGINAL source-preserving balanced star--triangle
+The exact original source-preserving balanced star--triangle
 identity in [the general fusion theorem](actual_general_flow_fusion.md)
 has scalar modulus |[a+b choose a]_Q|, with its full phase and
 typed outer factors retained. It is the FULL binomial, namely
@@ -254,7 +254,7 @@ Thus a uniform local one-tetrahedron comparison which simply
 replaces this scalar by sqrt(w_N) pays an exponential cost.
 Two-tetrahedron assignments, a genuinely different doubled
 contraction, or the exact exponentially varying internal gauges
-could compensate it. Their compensation at the ORIGINAL full
+could compensate it. Their compensation at the original full
 source has to be proved; it cannot be inferred from the factorial
 identity(11) or absorbed into an unknown knot normalization.
 

@@ -1,6 +1,6 @@
 # Independent audit of the actual horizontal meridian source transport
 
-27 October 2026. Proof pass of the revised SECOND-wire construction in
+27 October 2026. Detailed examination of the revised SECOND-wire construction in
 [the actual open-meridian theorem](actual_open_meridian_horizontal_source_transport.md).
 The main scaled Vandermonde is a whole source-preserving basis change
 on arbitrary finite tensors. The optional first-wire construction has
@@ -164,7 +164,7 @@ This extra factor alpha is necessary. It makes the finite-filter
 ratio alpha^N times [(1-lambda^N)/(1-alpha^N lambda^N)] squared,
 with the printed M derivative at one. The finite sampling identity
 on p^N=S has numerator N S lambda^(N-1); antiperiodic S=-1
-therefore retains its minus sign. All these formulas pass.
+therefore retains its minus sign.
 
 The proven Möbius/single-pole framing theorem is complete-M only.
 The horizontal gauge alone does not extend that theorem to general

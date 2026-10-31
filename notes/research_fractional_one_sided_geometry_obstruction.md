@@ -26,12 +26,7 @@ four incidences remain in their original positions. If c is protected,
 the finite LEFT sector is identically zero; it is not assigned a positive
 regularized geometric value here.
 
-The second atom in (1) fixes the ORIGINAL output triangle (x,c,y) to
-(0,1/2,0), retaining the input triangle. Root's new workspace lemma
-`notes/actual_fixed_triangle_boundary_capacity_gap.md` proves its exact
-shared-radius duality and quantitative strict capacity loss, with all
-shared equations. I independently reviewed that complete proof: PASS.
-The first atom is the pure c endpoint of the actual identity coupon H_1.
+The second atom forces the output $(0,1/2,0)$; the first pure-middle atom has the stated identity contribution. The linked triangle-capacity duality retains these boundary allocations.
 
 There is also a useful uniform statement for arbitrary pure atom patterns.
 Choose, at every selected LEFT/RIGHT port, either its identity endpoint or
@@ -113,7 +108,7 @@ Thus the actual full-h volume/unique-maximum theorem cannot be applied
 pointwise to replace h_env by h. This is a local comparison obstruction,
 not a counterexample to a shared capacity bound.
 
-## 4. Why the reviewed geometric construction does not transfer
+## 4. Why the geometric construction does not transfer
 
 At an interior fractional stationary row, 0<t<1, variation of alpha
 in (3) gives the actual triangle angles alpha at the shared positive

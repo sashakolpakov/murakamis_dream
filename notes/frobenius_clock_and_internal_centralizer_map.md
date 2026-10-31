@@ -62,16 +62,16 @@ Its exact pullback is
  \Xi_N=-\frac{N\alpha_N}{1+\alpha_NT}\Omega .
 \]
 The marked chord logarithm satisfies
-\(\Log(Q_N^{-1})=-c/N\). Hence
+\(\operatorname{Log}(Q_N^{-1})=-c/N\). Hence
 \[
  \int_{\Gamma_N}\Xi
-      =cN\Log(Q_N^{-1})=-c^2=4\pi^2 .                 \tag{1}
+      =cN\operatorname{Log}(Q_N^{-1})=-c^2=4\pi^2 .                 \tag{1}
 \]
 This is the same integer wall flux as the old physical cycle.
 
 The explicit continuation is
 \[
- \widetilde T_N(T)=-\frac N c\Log(1+\alpha_NT).
+ \widetilde T_N(T)=-\frac N c\operatorname{Log}(1+\alpha_NT).
 \]
 It has \(\widetilde T_N(0)=0\), \(\widetilde T_N(1)=1\)
 on that marked sheet. The finite graph is the physical graph
@@ -95,9 +95,9 @@ alone is not the same operation.
 
 ## 2. An algebraic map to the original two-frame torsor is impossible
 
-The ORIGINAL internal two-frame form is
+The original internal two-frame form is
 \[
- \Omega_{\rm cut}=d\tau\wedge d\log A,\qquad
+ \Omega_{\mathrm{cut}}=d\tau\wedge d\log A,\qquad
  A=(1+s)^{-1},\quad\tau=r/s .
 \]
 Fix \(A=A_N(T)\) as above, or the physical limit \(A=e^{cT}\).
@@ -110,7 +110,7 @@ Writing \(d\log A=g(T)dT\), with \(g\ne0\), forces
 \[
               \partial_v\tau=\frac{\kappa(T)}{g(T)v}. \tag{3}
 \]
-Thus \(\tau=(\kappa/g)\Log v+\tau_0(T)\) locally.
+Thus \(\tau=(\kappa/g)\operatorname{Log} v+\tau_0(T)\) locally.
 
 No single-valued rational or finite-algebraic tau can satisfy (3).
 Fix generic T and pass to a place above v=0 on a finite algebraic
@@ -120,14 +120,14 @@ multiplied by the ramification index. This proves the obstruction.
 
 On the MARKED LOG cover, one may instead take
 \[
-                         \tau=\Log v/c .
+                         \tau=\operatorname{Log} v/c .
 \]
 Then the exact finite graph gives
 \[
  d\tau\wedge d\log A_N=\widetilde T_N'\Omega .
 \]
 At the physical limit the multiplier is one. The deck
-transformation \(\Log v\mapsto\Log v+c\) gives
+transformation \(\operatorname{Log} v\mapsto\operatorname{Log} v+c\) gives
 \(\tau\mapsto\tau+1\): it is precisely a relative centralizer
 endpoint, not an algebraic finite-cover identification.
 Changing tau by a function of A does not change this two-form;
@@ -153,7 +153,7 @@ Under the logarithmic centralizer map of Section 2,
 This is a concrete vertical-current match on the marked cover.
 
 By contrast, under the old PHYSICAL SPRINGER map
-\(v=1/p\), \(T=\Log A/c\), the SAME current changes the
+\(v=1/p\), \(T=\operatorname{Log} A/c\), the SAME current changes the
 COMMON DIAGONAL MOMENTUM p and leaves A fixed. That old map
 forgets the original internal centralizer coordinate r.
 It is therefore not the above identification of the vertical
@@ -162,8 +162,8 @@ centralizer as a separate logarithmic coordinate is essential.
 
 There is an exact finite quantum distinction as well:
 \[
- \sigma(\Log Q_N^{-R})=-cT,\qquad
- \Log\sigma(Q_N^{-R})=-c\widetilde T_N .
+ \sigma(\operatorname{Log} Q_N^{-R})=-cT,\qquad
+ \operatorname{Log}\sigma(Q_N^{-R})=-c\widetilde T_N .
 \]
 Their equality holds only at leading N-order. Passing from the
 linear actual Cartan moment to a logarithm of the clock symbol
@@ -192,7 +192,7 @@ Then
 The inverse has the same lower bound, by reversing that cycle.
 Consequently
 \[
- \operatorname{cond}_{\rm coherent}(G)
+ \operatorname{cond}_{\mathrm{coherent}}(G)
        \ge\binom n{\lfloor n/2\rfloor}
        \ge\frac{2^n}{n+1}.                            \tag{4}
 \]
@@ -255,7 +255,7 @@ The same bound holds for its trace-functional norm.
 
 The source orientation is important. Under the Frobenius
 BINOMIAL COORDINATE change
-\(D_{\rm Fr}=\operatorname{diag}\binom Nk\), source coefficients
+\(D_{\mathrm{Fr}}=\operatorname{diag}\binom Nk\), source coefficients
 become \(\binom Nk\), dual coefficients become \(2^{-N}\),
 and the Frobenius metric becomes \(1/\binom Nk\).
 These transform together and reproduce exactly (5);
@@ -305,13 +305,13 @@ cannot be discarded.
 
 ## 6. The actual polarization changes the physical clock
 
-Let \(A_{\rm old}=Q^S\) be the original head clock and V the
+Let \(A_{\mathrm{old}}=Q^S\) be the original head clock and V the
 unit cyclic head shift. The actual source gauge is
 \(H_0=G(I\otimes\mathcal F)\), with
 \(\mathcal F_{s,t}=Q^{st}/N\). Direct finite Fourier calculation gives
 \[
- H_0A_{\rm old}H_0^{-1}=V^{-1},\qquad
- H_0V_{\rm old}H_0^{-1}=Q^{-R}Q^S.                   \tag{7}
+ H_0A_{\mathrm{old}}H_0^{-1}=V^{-1},\qquad
+ H_0V_{\mathrm{old}}H_0^{-1}=Q^{-R}Q^S.                   \tag{7}
 \]
 Thus the OLD physical clock is a NEW SHIFT. The new constraint
 \(Q^S=Q^R\) concerns the new POSITION coordinate. The finite
@@ -333,20 +333,20 @@ These actual moments are different at root order, even though
 the unweighted closed knot matrix is scalar.
 
 The root generating kernel is
-\(N^{-1}Q^{s_{\rm old}(s_{\rm new}-R)}\).
+\(N^{-1}Q^{s_{\mathrm{old}}(s_{\mathrm{new}}-R)}\).
 On marked logarithmic coordinates its canonical phase is
 \[
- W=q_{\rm old}(q_{\rm new}-q_R).
+ W=q_{\mathrm{old}}(q_{\mathrm{new}}-q_R).
 \]
 With the usual stationary transform convention,
 \[
- p'_{\rm head}=q_{\rm old},\quad
- p_{\rm old}=q_R-q_{\rm new},\quad
- p'_R=p_R-q_{\rm old}.
+ p'_{\mathrm{head}}=q_{\mathrm{old}},\quad
+ p_{\mathrm{old}}=q_R-q_{\mathrm{new}},\quad
+ p'_R=p_R-q_{\mathrm{old}}.
  \tag{8}
 \]
 For the source \(\psi(t)\), the coupled conormal relation is
-\(p'_R+p'_{\rm head}=\Log t\). This is a Fourier/Legendre
+\(p'_R+p'_{\mathrm{head}}=\operatorname{Log} t\). This is a Fourier/Legendre
 polarization change, not the equality of the two position clocks.
 Its whole q-germ is still the supplied finite matrix gauge;
 a root generating phase alone does not specify all its q-jets.
@@ -354,8 +354,8 @@ a root generating phase alone does not specify all its q-jets.
 There is a useful exact NEUTRAL CURRENT formed from the charged
 physical clock. In the new factor coordinates,
 \[
- \widetilde E=(e_{\rm Fr}\otimes I)V^{-1},\qquad
- \widetilde F=(f_{\rm Fr}\otimes I)V .
+ \widetilde E=(e_{\mathrm{Fr}}\otimes I)V^{-1},\qquad
+ \widetilde F=(f_{\mathrm{Fr}}\otimes I)V .
 \]
 These are precisely the actual endpoint-completed ladders built
 from divided powers and the first-normal wrap arrows.
@@ -369,8 +369,8 @@ finite-source identity, not yet the full geometric current map.
 The whole lift of the original position clock matters too.
 For \(C_Q=Q^SZ^R=Q^J\),
 \[
- [e(q),C_Q]/\delta\longrightarrow-A_{\rm head}e_0,\qquad
- [f(q),C_Q]/\delta\longrightarrow A_{\rm head}f_0 .
+ [e(q),C_Q]/\delta\longrightarrow-A_{\mathrm{head}}e_0,\qquad
+ [f(q),C_Q]/\delta\longrightarrow A_{\mathrm{head}}f_0 .
 \]
 In contrast the reduced head clock \(Q^S\) commutes with these
 divided operators for every q. The scaled commutator is therefore
@@ -405,7 +405,7 @@ actual Fourier matrix F_(S,T)=Q_N^(ST)/N has
 F^*F=I/N, so H_0=G(I tensor F) is a scalar N^(-1/2) times a
 unitary map in (9). Its condition number is ONE. Conjugation by
 H_0 is isometric on both the operator and Hilbert--Schmidt norms.
-These statements concern the ORIGINAL finite Fourier adapter,
+These statements concern the original finite Fourier adapter,
 including its 1/N; it has not been replaced by a different source.
 
 The original source coupon e_+ tensor e_h is an orthogonal
@@ -466,7 +466,7 @@ not by itself an exponential operator-norm obstruction.
 The SOURCE comparison on the surviving endpoint is different.
 For the normalized endpoint W=f^N/N!=E_(N,0),
 \[
- \Phi_{\rm Fr,uniform}(W)=\frac1{N+1},\qquad
+ \Phi_{\mathrm{Fr,uniform}}(W)=\frac1{N+1},\qquad
  \lambda_+ W\psi_+=2^{-N},\qquad
  \Phi_D(W\otimes H)=2^{-N}H_{00}.                  \tag{13}
 \]
@@ -483,7 +483,7 @@ polarization dictionary in Section 6.
 
 Indeed even in (9) the uniform Fr coupon has squared norm
 \[
- \|\psi_+\lambda_{\rm uniform}\|^2
+ \|\psi_+\lambda_{\mathrm{uniform}}\|^2
        =\frac{2^N}{(N+1)^2}\sum_{R=0}^N\binom NR^{-1}
        \ge\frac{2^{N+1}}{(N+1)^2}.                 \tag{14}
 \]

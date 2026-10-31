@@ -24,14 +24,14 @@ basis \(w_{a,s}\), \(0\le a\le r\), \(0\le s<N\).
 At the root the ordinary head matrices are independent of a.
 The divided matrices are
 \[
- \mathsf E=[E^N/[N]_q!]_{q_N}=\tau e_{\rm cl},\qquad
- \mathsf F=[F^N/[N]_q!]_{q_N}=f_{\rm cl},
+ \mathsf E=[E^N/[N]_q!]_{q_N}=\tau e_{\mathrm{cl}},\qquad
+ \mathsf F=[F^N/[N]_q!]_{q_N}=f_{\mathrm{cl}},
  \qquad \tau=(-1)^{Nr-1}.
 \]
-The root block number is \(a=(r-h_{\rm cl})/2\), so multiplication
+The root block number is \(a=(r-h_{\mathrm{cl}})/2\), so multiplication
 by a is a degree-one classical enveloping operator.
 
-Give \(e_{\rm cl},f_{\rm cl},h_{\rm cl}\) PBW degree one.
+Give \(e_{\mathrm{cl}},f_{\mathrm{cl}},h_{\mathrm{cl}}\) PBW degree one.
 On two strands use total degree for
 \(U(\mathfrak{sl}_2\oplus\mathfrak{sl}_2)\).
 Head matrix coefficients have degree zero. The full root crossing
@@ -125,8 +125,8 @@ normal value proportional to \(r-a+1\). The other head factors
 are nonzero. In the beta gauge its remaining sign is independent
 of a: for input head s<k the total sign is
 \((-1)^{kr+1+s}\). Thus this contribution is an actual
-\(e_{\rm cl}\) factor with a head coefficient. The F boundary
-likewise gives \(b+1\), hence \(f_{\rm cl}\), with no remaining
+\(e_{\mathrm{cl}}\) factor with a head coefficient. The F boundary
+likewise gives \(b+1\), hence \(f_{\mathrm{cl}}\), with no remaining
 block-dependent sign. If both sides cross, their two zeros
 give order \(\delta^2\), so nothing survives in the first normal.
 

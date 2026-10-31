@@ -17,7 +17,7 @@ the regulator comparison, selected growth, or a global profile.
 Use [the first-normal construction](first_quantum_normal_connection.md).
 Fix \(Q=\zeta(1+\epsilon)\), \(\epsilon^2=0\), and put
 \[
- E=\mathbb C(Y),\quad K_{\rm cent}=\mathbb C(U),\quad U=Y^N,
+ E=\mathbb C(Y),\quad K_{\mathrm{cent}}=\mathbb C(U),\quad U=Y^N,
  \qquad \sigma_Q f(Y)=f(QY).
 \]
 Retain the specified whole Laurent Ore preoperator
@@ -44,14 +44,14 @@ Write
  \quad \iota:\mathcal K\longrightarrow\mathcal C .
 \]
 The root \(T_0\) has order \(N\) on these two spaces.
-Their invariants descend to \(K_{\rm cent}\), and
+Their invariants descend to \(K_{\mathrm{cent}}\), and
 \[
  D_N:\mathcal K^{T_0}\longrightarrow\mathcal C^{T_0},
  \qquad D_N(v)=\pi L_1v/N^2
 \]
 has the already proved Leibniz rule
 \[
- D_N(cv)=cD_N(v)+Uc'(U)\iota(v),\qquad c\in K_{\rm cent}. \tag{1}
+ D_N(cv)=cD_N(v)+Uc'(U)\iota(v),\qquad c\in K_{\mathrm{cent}}. \tag{1}
 \]
 
 The first-coordinate map identifies \(\mathcal K^{T_0}\) with
@@ -79,7 +79,7 @@ operator modulo the fixed root Laurent Ore operator \(P_0\).
 Its two nonzero endpoint coefficients permit positive and
 negative shifts; different remainders agree on the solution.
 
-This is a well-defined \(K_{\rm cent}\)-linear map
+This is a well-defined \(K_{\mathrm{cent}}\)-linear map
 \[
  R_N:\mathcal K^{T_0}\longrightarrow\mathcal C^{T_0}.     \tag{4}
 \]
@@ -94,7 +94,7 @@ Jordan splitting, or inverse of \(\iota\) is used.
 
 Define
 \[
- \nabla_{\rm act}=D_N-R_N:
+ \nabla_{\mathrm{act}}=D_N-R_N:
        \mathcal K^{T_0}\longrightarrow\mathcal C^{T_0}. \tag{5}
 \]
 It has symbol \(\iota\).
@@ -116,7 +116,7 @@ Apply the exact factorization
 \]
 and project to \(\mathcal C\). This proves
 \[
- D_N(v)=R_N(v),\qquad \nabla_{\rm act}(v)=0.             \tag{6}
+ D_N(v)=R_N(v),\qquad \nabla_{\mathrm{act}}(v)=0.             \tag{6}
 \]
 It does not assert \(D_N(v)=0\).
 
@@ -159,7 +159,7 @@ usual canonical kernel/cokernel comparison.
 Suppose both \(v\) and \(c(U)v\) admit the same whole first-order
 lifting rule. By (1), (4), and (6),
 \[
- 0=\nabla_{\rm act}(cv)-c\nabla_{\rm act}(v)
+ 0=\nabla_{\mathrm{act}}(cv)-c\nabla_{\mathrm{act}}(v)
                  =Uc'(U)\iota(v).                       \tag{7}
 \]
 If \(\iota(v)\ne0\) in the generic descended cokernel, then
@@ -214,7 +214,7 @@ The root operator is \(P=(S-1)^2\). Its companion monodromy
 has a nontrivial Jordan block at one; its kernel lies in its
 image, so \(\iota=0\) on the invariant solution line.
 Moreover \(\partial_Z\mathcal A=1-S\) kills every root
-central section, and \(\nabla_{\rm act}=0\) there.
+central section, and \(\nabla_{\mathrm{act}}=0\) there.
 
 For constants \(A,B\), the section \(A+B Y^N\) is another
 exact lift for the SAME whole operator, with root ratio
@@ -245,7 +245,7 @@ the frozen operator is \(P=S-1\). Thus
 gives
 \[
  R_N(f)=-\frac{U}{1-U}f,\qquad
- \nabla_{\rm act}=U\partial_U+\frac{U}{1-U}.             \tag{8}
+ \nabla_{\mathrm{act}}=U\partial_U+\frac{U}{1-U}.             \tag{8}
 \]
 Its rational horizontal sections are exactly \(C(1-U)\),
 the actual root factorial and its constants. The unsourced

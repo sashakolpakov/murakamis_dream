@@ -236,7 +236,7 @@ Solvability of this finite linear system over the field extension
 \(F/E\) implies solvability over \(E\), by equality of matrix and
 augmented ranks under field extension. Hence
 \[
- D_N(v_0)=0\quad\hbox{in the rational descended cokernel}. \tag{7}
+ D_N(v_0)=0\quad\text{in the rational descended cokernel}. \tag{7}
 \]
 If \(c(X^N)v_0\) also admits a first lift for the SAME whole
 homogenized operator, (6), (7), and the Leibniz rule imply

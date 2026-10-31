@@ -73,7 +73,7 @@ the audit compares (4) with RationalTangle(13,5).numerator_closure();
 both give isosig gLLPQccdefffhggaacv_aBBb. None of the coefficient or
 phase calculations below depends on a numerical knot recognition.
 
-Put N=2r+1, d=2r and choose the ORIGINAL overclocks
+Put N=2r+1, d=2r and choose the original overclocks
 
     h=(0,r,r,r,0,r), r>=1.                          (5)
 
@@ -100,7 +100,7 @@ The last column is a feasible head-charge, not its phase exponent.
 | 12 | 4 -> 8 | 2r | -2 | r |
 
 The sum of the common alpha^L exponents is zero. The last three
-rows are the ORIGINAL source closures, including both pivots.
+rows are the original source closures, including both pivots.
 Every row is obtained from the original signed event formulas;
 the table is not an auxiliary graph chosen to create a phase.
 

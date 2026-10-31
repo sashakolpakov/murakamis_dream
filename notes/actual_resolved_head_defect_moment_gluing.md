@@ -17,7 +17,7 @@ excess-volume counterexample.
 
 ## 1. The original matrices and the endpoint relation
 
-Use the classical limits of the ORIGINAL physical matrices in
+Use the classical limits of the original physical matrices in
 [bounded quantum meridian transport](actual_bounded_quantum_meridian_transport.md):
 
     L_-(K,f)=[[1,0],[-K f,K]], L_+(K,e)=[[K,e],[0,1]],
@@ -54,7 +54,7 @@ of a genuine crossing preserve these moment matrices.
 
 ## 2. Precise one-defect theorem, including the original source premise
 
-Consider an ORIGINAL one-component closed braid, with its justified
+Consider an original one-component closed braid, with its justified
 whole-word averaged trace source
 
     chi_N/N Tr[(I tensor g tensor ... tensor g)W_N]. (5)
@@ -233,7 +233,7 @@ All based meridians are then
 
     H_j=-I-z_j E_21.                                (11)
 
-Direct substitution in the ORIGINAL based Hurwitz law shows that
+Direct substitution in the original based Hurwitz law shows that
 BOTH crossing signs simply SWAP adjacent z_i,z_(i+1). Equivalently
 their unbased f map is (f_i,f_(i+1))->(-f_(i+1),-f_i). This preserves
 the lower Borel product exactly, as it must.

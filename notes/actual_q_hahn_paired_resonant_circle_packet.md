@@ -1,6 +1,6 @@
 # A source-normalized paired resonant circle packet
 
-30 October 2026. Independently reviewed. The incoming200 and
+30 October 2026. The incoming200 and
 outgoing220 packets combine into the FULL original root circle
 coefficient with its measure, turn character and finite clock corrections.
 The actual generic220 numerator also has polynomial-cost fixed quantum
@@ -12,7 +12,7 @@ does not follow.
 ## 1. Keep both roots, the measure and the original character
 
 Put d=N-1, a<=floor(d/2), m=d-a, s=m-a, q=exp(pi i/N), Q=q^2.
-Use the normalized ORIGINAL circle coordinates (sigma;R,S), and put
+Use the normalized original circle coordinates (sigma;R,S), and put
 
     U_o=Q^R, V_o=Q^(sigma-R),
     U_i=Q^S, V_i=Q^(sigma-S), T=U_o V_o=U_i V_i,
@@ -117,7 +117,7 @@ LARGE generic numerator satisfies
 For s=0 the right side is C. For s>0 the proof first bounds the
 boundary circle and then uses holomorphy. Consequently every fixed k
 has the corresponding Cauchy bound with the extra factor C_k N^(10k).
-This is an upper bound for the ORIGINAL B=Q^-N deformation. It
+This is an upper bound for the original B=Q^-N deformation. It
 does not differentiate the root collision in (1).
 
 Here are the source and uniform estimates. Use the all-degree generic
@@ -175,7 +175,7 @@ so it costs only C^s. Finally
 
 This last estimate is why no artificial N^(2s) loss occurs: |T(q0)|
 and |V_o(q0)| are both comparable to N^2, and the root partner
-product is retained. It proves (4) on the circle. The ORIGINAL
+product is retained. It proves (4) on the circle. The original
 finite H_m sum is holomorphic inside it, since m<N and all its
 generic factorial denominators stay away from zero. The maximum
 principle and Cauchy's formula apply to that full H_m, not to the
@@ -242,14 +242,4 @@ estimates. The full generic operator bound is the stated exact
 factor-by-factor consequence; no full leading normal amplitude is
 claimed by those finite tests.
 
-Independent full analytical reviews checked the exact original
-circle/turn normalization, finite-clock root prefactor, Bessel
-nonvanishing and its scope, scaled all-degree generic recurrence,
-both small determinant and cofactor bounds, folded spectral gaps,
-large-partner scalar cancellation, original H_m holomorphy and every
-specified moving-factorial argument. A separate fresh redirected
-140-digit replay passed all the focused checks. The reviewed result
-is a nonzero local ROOT circle packet and the stated genuine generic
-operator NORMAL UPPER bound, with the original marked source germ
-retained. It does not fix a leading normal amplitude or the global
-relative-cycle coefficient.
+The result is a nonzero local root-circle packet and the stated upper bound on genuine generic operator normals, with the marked source germ retained. It does not determine a leading normal amplitude or global relative-cycle coefficient.

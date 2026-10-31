@@ -304,12 +304,4 @@ required; (18) allows complete cancellation in the original source.
 
 Audit: [original fixed-label cycles and full Fourier kernels](../experiments/audit_actual_matching_graph_shared_cycle_fourier_compiler.py).
 
-Independent review: the root agent and cluster/source agent checked
-the complete proof, including the original white normalization,
-both-port first-failure zeros, exact Kirchhoff support, both-parity
-carrier cancellation, and the original marked charge. The cluster
-agent freshly replayed the audit: 40 literal fixed-label plats,
-440 physical vertex polynomials, 117 first-failure zeros, 80 even
-carrier components, and 17 exact charged coefficients passed.
-This review does not assert a global energy asymptotic or
-noncancellation of the original source.
+The exact Fourier compiler does not assert a global energy asymptotic or noncancellation of the source.

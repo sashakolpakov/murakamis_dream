@@ -69,7 +69,7 @@ the original full-Psi source note. Put
 
     q_c=-l/h+p(c), q_l=N-c/h-p(h-l).
 
-Then d_c S_N=q_c S_N, d_l S_N=q_l S_N. Differentiating the ORIGINAL
+Then d_c S_N=q_c S_N, d_l S_N=q_l S_N. Differentiating the original
 invariant (1) gives the safe cross-multiplied form
 
     D d_c I_N+NV I_N=d_c B_N-q_c S_N,
@@ -343,7 +343,7 @@ The following coupled version makes the required check explicit.
 
 ## 8. Disjoint original sink fibers and their coupled descent presentation
 
-In the ORIGINAL reduced atomic graph, an eligible beta sink has
+In the original reduced atomic graph, an eligible beta sink has
 three incident atoms, all pointing into it before factorial reflection:
 one reciprocal factorial, one positive Euler transfer, and one positive
 factorial. Its finite coefficient contraction is exactly B_N from (1).

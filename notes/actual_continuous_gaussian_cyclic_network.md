@@ -111,7 +111,7 @@ The same bound covers the typed products $(x_jx_{j+1})^{\pm1}$.
 Insert a Hardy identity-reset layer before every elementary
 factor. Given preceding output radii $R_j$, first put
 $r_j=\rho R_j/2$. Before a transfer decrease its numerator
-radius, if needed, so $r_{\rm num}/r_{\rm den}
+radius, if needed, so $r_{\mathrm{num}}/r_{\mathrm{den}}
 \le\rho\lambda/2$.
 
 For the factor's output radii use
@@ -176,18 +176,18 @@ preceding radius. If $L$ is the number of elementary
 factors, put
 
 $$
- c_{\rm reset}=\min(\rho/2,\rho^2\lambda/4),\qquad
- c_* =c_{\rm reset}\rho/(2C_c)>0.
+ c_{\mathrm{reset}}=\min(\rho/2,\rho^2\lambda/4),\qquad
+ c_* =c_{\mathrm{reset}}\rho/(2C_c)>0.
 $$
 
 An induction gives, at every layer,
 
 $$
- -\log r_j\le C_{\rm word}
+ -\log r_j\le C_{\mathrm{word}}
                  +2\sum_{\ell=1}^{m}|\xi_\ell|.        \tag{8}
 $$
 
-One may take $C_{\rm word}$ to be a fixed multiple of
+One may take $C_{\mathrm{word}}$ to be a fixed multiple of
 $L|\log c_*|$. Minima in the radius construction only
 replace one radius by a fixed constant times another;
 they do not introduce products of previously accumulated
@@ -205,7 +205,7 @@ resonant logarithmic coefficients cancel exactly. All
 Hardy and Gaussian-dilation kernels are bounded by
 $(1-\rho)^{-1}$.
 
-Every reflected factorial contributes its ORIGINAL factor
+Every reflected factorial contributes its original factor
 $N$ and a monomial whose radius ratio is fixed at $2/\rho$.
 Every source exponent has magnitude at most $N-1$.
 Consequently the absolute scalar density, apart from the
@@ -237,7 +237,7 @@ Gaussian boundary terms at real infinity.
 
 Let $\mathcal H_{\ell,N}(\boldsymbol\xi)$ be the kernels of
 the cyclic/Hardy network with each finite Gaussian replaced
-by (4). Let $m$ be their Gaussian count. The ORIGINAL
+by (4). Let $m$ be their Gaussian count. The original
 full fused-plat period is exactly
 
 $$
@@ -248,7 +248,7 @@ $$
        \int_{\mathbb R^m} e^{-N\|\boldsymbol\xi\|^2/2}\\
  &\quad\cdot
        \int_{\Gamma(\boldsymbol\xi)}
-       (z^0)^{a_{\rm in}}(z^L)^{-a_{\rm out}}
+       (z^0)^{a_{\mathrm{in}}}(z^L)^{-a_{\mathrm{out}}}
          \prod_{\ell=1}^{L}
              \mathcal H_{\ell,N}(\boldsymbol\xi)
          \prod_{\ell,j}\frac{dz_j^\ell}{2\pi iz_j^\ell}

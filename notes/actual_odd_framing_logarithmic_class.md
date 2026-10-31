@@ -1,6 +1,6 @@
 # The marked logarithmic class of the source-preserving odd form
 
-30 October 2026. Independently reviewed and frozen. The underlying odd framing
+30 October 2026. The underlying odd framing
 form is the pullback of an explicit integral logarithmic class.
 Keeping q0 gives a stronger two-integer noncancellation criterion.
 Neither calculation assigns those integers to the original quantum
@@ -273,18 +273,6 @@ follow by the displayed changes of variables, Stokes argument and
 integer-degree calculation; the finite source and routed geometry
 are audited in the cited odd-period theorem.
 
-Independent source-agent full analytical review: PASS. The reader
-checked the marked map, exact primitive and wedge signs, closed-cycle
-degree normalization, both finite-q integer classes and their bound,
-cover transfer multiplicity, retained relative term and coherent base
-weight, common-pair sampling with its window limitation, and the
-class-wide geometric/quantum quantifiers. No original geometric
-winding or mixed-color packet is supplied by this review.
+The logarithmic-class calculation supplies neither the geometric winding nor a mixed-color packet.
 
-Primary-agent full analytical review: PASS. The reader independently
-checked the exact-term sign, integral-degree normalization, finite-q
-lower bound, common-pair normalized sample, cover transfer and all
-fixed-diagram/fixed-slope quantifiers. The logarithmic criterion remains
-separate from the actual weighted quantum cycle and the three-manifold
-regulator. No additional numerical audit is required for this elementary
-derivation from the already audited source and geometry identities.
+The logarithmic criterion remains separate from the actual weighted quantum cycle and the three-manifold regulator.

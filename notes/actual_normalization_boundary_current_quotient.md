@@ -95,7 +95,7 @@ each leaf has the precise form (2), and after contracting a leaf the
 next prescribed cell has that form. Contract leaves in this order.
 Induction proves that every zero-pointing leaf packet disappears
 exactly, and each surviving cell is replaced by its specified A_0,
-in the ORIGINAL operator order. This is an all-width source theorem,
+in the original operator order. This is an all-width source theorem,
 not a claim that every braid admits such a pruning or that arbitrary
 internal projectors can be slid to a cap.
 
@@ -131,7 +131,7 @@ Re sigma<1 set
 
 This is holomorphic there, by integrable domination on compact
 sigma-sets. Its derivatives are the literal insertions
-(-log t)^r in the ORIGINAL radial current. At sigma=0 (5) is (4),
+(-log t)^r in the original radial current. At sigma=0 (5) is (4),
 with the original phase and coefficient, not a rescaled boundary state.
 Sigma is a Mellin-normal coordinate of this atom source. It is NOT
 being identified with the knot's meridian parameter or with a normal

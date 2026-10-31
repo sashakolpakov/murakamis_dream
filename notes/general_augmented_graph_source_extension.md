@@ -23,7 +23,7 @@ Put \(d=N-1, q=e^{\pi i/N}, Q=q^2, x=q^d\), and
 
 The [full physical commutant theorem](actual_pair_casimir_commutant_and_rotated_trace.md)
 identifies this algebra faithfully with every \(E,F,K\)-intertwiner on the
-ORIGINAL \(V_N\otimes V_N\), by \(z\mapsto\Omega\). It includes all degrees,
+original \(V_N\otimes V_N\), by \(z\mapsto\Omega\). It includes all degrees,
 even and composite levels, and the odd simple node. The operators \(L_a\)
 are the [literal auxiliary ordinary-circle traces](actual_crossing_circle_source_and_filling.md),
 with their original pivotal trace and no division by \(a\).
@@ -48,7 +48,7 @@ The scaled \(Z_B=x^{-d}\mathscr R B\) used in the older charge-block
 conjugation is different notation. Here every turn is (2), so no
 \(x^d\) is lost. Rotation is a linear automorphism, **not** a product map.
 
-The ORIGINAL marked functional is
+The original marked functional is
 
 \[
  \phi(f)=\frac1N\operatorname{Tr}[(I\otimes K^{1-N})f(\Omega)]
@@ -163,8 +163,8 @@ the marked row by an ordinary cap was used.
 For the distinct roots of \(P_N\), put
 
 \[
- \|f\|_{\rm H}=\max_c|f(c)|+
-                   N^{-2}\max_{c\ {\rm double}}|f'(c)|.
+ \|f\|_{\mathrm{H}}=\max_c|f(c)|+
+                   N^{-2}\max_{c\ {\mathrm{double}}}|f'(c)|.
  \tag{10}
 \]
 
@@ -172,8 +172,8 @@ At an odd simple node only its value occurs. This is a faithful
 submultiplicative norm. Let \(f=\sum_{a=1}^{N}\beta_aL_a\). Then
 
 \[
- \|f\|_{\rm H}\leq\tfrac32N^{3/2}\|\beta\|_2,
- \qquad \|\beta\|_2\leq6N^{3/2}\|f\|_{\rm H}.        \tag{11}
+ \|f\|_{\mathrm{H}}\leq\tfrac32N^{3/2}\|\beta\|_2,
+ \qquad \|\beta\|_2\leq6N^{3/2}\|f\|_{\mathrm{H}}.        \tag{11}
 \]
 
 For the first estimate use 
@@ -192,28 +192,28 @@ transforms \(H_n,D_n\) obey
 
 Indeed the two aliases are \(H_n=a_n-a_{N-n}\) and
 \(D_n=na_n+(N-n)a_{N-n}\). Since 
-\(|h_k|\leq\|f\|_{\rm H}\) and 
-\(|d_k|\leq2N^2\|f\|_{\rm H}\), (12) proves (11), including the even
+\(|h_k|\leq\|f\|_{\mathrm{H}}\) and
+\(|d_k|\leq2N^2\|f\|_{\mathrm{H}}\), (12) proves (11), including the even
 middle Fourier index and the odd simple node.
 
 The original full crossing satisfies, for EVERY signed integer \(e\),
 
 \[
- \|R^e\|_{\rm H}\leq1+|e|/8.                       \tag{13}
+ \|R^e\|_{\mathrm{H}}\leq1+|e|/8.                       \tag{13}
 \]
 
 Its nodal values have modulus one. The exact full-Cartan derivative is
 \( (R^e)'/R^e=-e(d-2k)/[2(w_k-w_k^{-1})]\). At a double node
 \(|\sin((2k+1)\pi/N)|\geq\sin(\pi/N)\geq2/N\); division by \(N^2\)
 gives (13). Negative powers are literal inverses, and their derivatives
-are included. Also \(\|L_a\|_{\rm H}\leq3N/2\).
+are included. Also \(\|L_a\|_{\mathrm{H}}\leq3N/2\).
 
 The [global full-colored packet bound](actual_pretzel_global_alias_and_colored_source_gap.md),
 sections 3--4, gives a sequence \(\epsilon_N\to0\), independent of \(a\),
 such that
 
 \[
- \max_{1\leq a\leq N}\|z_{N,a}\|_{\rm H}
+ \max_{1\leq a\leq N}\|z_{N,a}\|_{\mathrm{H}}
          \leq\exp[N(j_0+\epsilon_N)],\qquad j_0=v_8/\pi.
  \tag{14}
 \]
@@ -224,7 +224,7 @@ full high band; that band's upper rate
 Apply (11) to \(Rf\), expand in \(L_a\), and apply (8). It follows that
 
 \[
- \|\mathscr R\|_{{\rm H}\to{\rm H}}
+ \|\mathscr R\|_{{\mathrm{H}}\to{\mathrm{H}}}
              \leq7N^2\exp[N(j_0+\epsilon_N)].          \tag{15}
 \]
 
@@ -233,7 +233,7 @@ basis condition number:
 
 \[
  \boxed{\quad\lim_{N\to\infty}N^{-1}
-                    \log\|\mathscr R\|_{{\rm H}\to{\rm H}}=j_0.\quad}
+                    \log\|\mathscr R\|_{{\mathrm{H}}\to{\mathrm{H}}}=j_0.\quad}
  \tag{16}
 \]
 
@@ -242,7 +242,7 @@ has polynomial norm. For every fixed odd \(s\geq3\), the
 [proved original complete period](actual_pretzel_coherent_circle_and_period_asymptotic.md)
 has 
 \(N^{-1}\log|\phi(z_N^s)|\to A_s=V_s/(2\pi)\), whereas
-\(|\phi(f)|\leq3N^3\|f\|_{\rm H}\) and the norm is submultiplicative.
+\(|\phi(f)|\leq3N^3\|f\|_{\mathrm{H}}\) and the norm is submultiplicative.
 Hence the lower rate is at least \(A_s/s\). Its explicit volume formula
 gives \(A_s/s\to8\Lambda(\pi/4)/\pi=v_8/\pi\). First take the limit
 in \(N\) for EACH fixed \(s\), then the supremum in \(s\); no exchange
@@ -252,7 +252,7 @@ of two growing parameters is needed.
 
 Consider any fixed finite typed two-port syntax circuit with leaves
 \(R^{e_i}\) and ordinary circle operators \(L_{a_i}\), product vertices,
-and \(t\) genuine turns (2). Close by either ORIGINAL closure (3) or (9).
+and \(t\) genuine turns (2). Close by either original closure (3) or (9).
 All colors \(1\leq a_i\leq N\) are allowed. For fixed signed powers,
 
 \[
@@ -261,8 +261,8 @@ All colors \(1\leq a_i\leq N\) are allowed. For fixed signed powers,
 \]
 
 This follows inductively from submultiplicativity, (13)--(15),
-\(|\phi|\leq3N^3\|\cdot\|_{\rm H}\), and 
-\(|f(c_0)|\leq\|f\|_{\rm H}\). The only exponential cost is an
+\(|\phi|\leq3N^3\|\cdot\|_{\mathrm{H}}\), and
+\(|f(c_0)|\leq\|f\|_{\mathrm{H}}\). The only exponential cost is an
 ACTUAL turn. No additional turn is charged for the numerator closure.
 The same proof allows growing exponents if
 \(\sum_i\log(1+|e_i|)=o(N)\).
@@ -314,12 +314,12 @@ Since \(P_N'=NU_{N-1}\), one has
 \(L_N=(-1)^dP_N'/N\) in the FULL algebra. At a double node,
 \(L_N(c)=0\) and
 \((4-c^2)L_N'(c)=(-1)^d2N\). At the odd simple node
-\(L_N(-2)=N\). Substitution in the ORIGINAL trace formula gives
+\(L_N(-2)=N\). Substitution in the original trace formula gives
 
 \[
  \boxed{\quad
-  \phi(L_Nfg)=N\sum_{c\ {\rm distinct}}m_c f(c)g(c),
-  \qquad m_c=2\ {\rm(double)},\quad m_{-2}=1\ {\rm(simple)} .
+  \phi(L_Nfg)=N\sum_{c\ {\mathrm{distinct}}}m_c f(c)g(c),
+  \qquad m_c=2\ {\mathrm{(double)}},\quad m_{-2}=1\ {\mathrm{(simple)}} .
  \quad}                                                   \tag{18}
 \]
 
@@ -352,7 +352,7 @@ Repeatedly applying the all-exterior resolution (7) at a leaf proves
 
 \[
  \boxed{\qquad
- Z_{\rm tree}=\phi\!\left(L_N^{|E|}\prod_v f_v\right).
+ Z_{\mathrm{tree}}=\phi\!\left(L_N^{|E|}\prod_v f_v\right).
  \qquad}                                                 \tag{20}
 \]
 
@@ -362,10 +362,10 @@ there is no inverse of a nilpotent circle operator.
 For \(|E|\geq2\), it specializes further to
 
 \[
- Z_{\rm tree}=
+ Z_{\mathrm{tree}}=
  \begin{cases}
-  0,&N\ {\rm even},\\
-  N^{|E|}\prod_v f_v(-2),&N\ {\rm odd}.
+  0,&N\ {\mathrm{even}},\\
+  N^{|E|}\prod_v f_v(-2),&N\ {\mathrm{odd}}.
  \end{cases}                                             \tag{21}
 \]
 

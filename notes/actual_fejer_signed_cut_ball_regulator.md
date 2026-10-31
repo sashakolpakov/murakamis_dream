@@ -1,6 +1,6 @@
 # The global signed cut-ball regulator, with the original marked apex
 
-31 October 2026. Independently reviewed conditional stationary-stratum lemma. Hypotheses are exactly the
+31 October 2026. conditional stationary-stratum lemma. Hypotheses are exactly the
 finite-positive-ordinary-radius stationary stratum and signed/cooriented
 circle development of [the marked signed-development lemma](actual_fejer_marked_signed_development.md).
 This proof does NOT use invariance of an open crossing regulator under
@@ -60,7 +60,7 @@ The shaded face of t is the ideal triangle of the three pairwise
 contacts of its tangent white circles. For a finite or one-line
 triangle its Euclidean angles are (pi-theta_(t,f))/2. Its orientation
 in the common plane is sigma_t times the original positive convention.
-Consequently coning this ORIGINAL ordered shaded triangle to infinity
+Consequently coning this original ordered shaded triangle to infinity
 gives
 
   sigma_t sum_(f in t) Lambda((pi-theta_(t,f))/2).      (3)
@@ -77,7 +77,7 @@ Summing (2),(3) for one abstract cut ball gives
 The developed boundary can overlap or fold. Equation (4) is the volume
 of its oriented chain, not the volume of an embedded region.
 
-## 3. Why this is the ORIGINAL representation fundamental chain
+## 3. Why this is the original representation fundamental chain
 
 Use the TWO literal topological cut balls of the original augmented
 projection, with their original white/shaded cellulation and face
@@ -92,7 +92,7 @@ actual abstract triangulation once and for all: fan each incident white
 face from the original marked vertex p; triangulate every nonincident
 white face compatibly; then cone p to the nonincident triangles. The
 certified convex ball proves that this is a degree-one triangulation of
-the ORIGINAL ball. Keep that exact labeled abstract chain and merely
+the original ball. Keep that exact labeled abstract chain and merely
 change its developed ideal vertices to the signed circle contacts.
 Its volume is the cone of the boundary cycle to p=infinity; triangles
 already incident to p contribute zero cone terms. No new interior ideal
@@ -134,7 +134,7 @@ selected for the second map. Its whole ideal face is paired, not only
 the common auxiliary fixed point. These are precisely the untwisted
 Morse/threading pairings already used to construct the representation.
 
-Hence the two abstract ball chains descend, with THEIR ORIGINAL
+Hence the two abstract ball chains descend, with THEIR original
 multiplicities and orientations, to an equivariant relative fundamental
 chain of the original exterior. In particular an immersed white polygon
 is not replaced by its image counted once, and an overloaded winding-
@@ -200,10 +200,4 @@ change an eventually feasible forest type into a cross type: the exact
 finite support can prevent that even when their limiting local entropy
 and degree vector coincide.
 
-Independent analytical status: root and coherent completed full proof
-review, including the explicit original within-copy shaded permutations,
-one reflected second-ball map, original convex-certificate triangulation,
-whole peripheral horosphere preservation and signed cyclic fan constants.
-The conclusion is restricted to the stated stationary stratum. Neither
-review establishes the free-boundary maximum inequality or a quantum
-contributing cycle.
+The cut-ball comparison is on the stated stationary stratum. It does not cover every boundary maximum or select a quantum cycle.

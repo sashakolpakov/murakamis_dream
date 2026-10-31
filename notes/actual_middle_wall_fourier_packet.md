@@ -1,6 +1,6 @@
 # An actual dressed middle wall is a Fourier-mode projector
 
-28 October 2026. A literal aggregate of the ORIGINAL middle-wall
+28 October 2026. A literal aggregate of the original middle-wall
 operators has an exact Fourier/Plancherel reduction. Its two Euler
 factors can separately have exponential norm, and its wall has both
 zero and positive integer carry. Their COMPLETE packet is nevertheless
@@ -209,7 +209,7 @@ or an untransported wall in an unrelated slot. A full middle-move
 comparison must exhibit (13)--(15), or another exact matching of
 its actual interfaces, before invoking (9)--(12).
 
-For a concrete source check, the ORIGINAL cup has Xp=Q^(-1)p.
+For a concrete source check, the original cup has Xp=Q^(-1)p.
 Thus Lp=0, while the bare wall has the known nonzero mWp.
 This distinction is compulsory: the packet cannot be substituted
 for the bare wall in the old endpoint formula. If an explicitly
@@ -237,7 +237,7 @@ this degree-d sector is unitary: its two simultaneous endpoint
 wraps cancel the mark. Hence P_cap is an orthogonal rank-one
 projector for every nonzero typed mark at complete color.
 
-Use the ORIGINAL cup and ordinary right cap
+Use the original cup and ordinary right cap
 
     p_(a,b)=N x^(-b) delta_(a+b,d),
     l_(a,b)=x^b g_a/N delta_(a+b,d),

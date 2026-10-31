@@ -195,7 +195,7 @@ gives x_(l,*)>1/4 for every leaf of every such factor. Then
             [sqrt(sin(pi x_(l,*))) exp(-i epsilon_l pi x_(l,*)/2)]
          *[1+O(N^-1)].                                (12)
 
-Here a_E(0)>0 and phi_E(0) are the ORIGINAL pure-source normalization
+Here a_E(0)>0 and phi_E(0) are the original pure-source normalization
 and action from the finite Conway packet. The displayed leading
 coefficient is nonzero. Both parities, every normal direction and
 every fixed mixture of half-twist signs are included.
@@ -247,15 +247,4 @@ now complete the required interfaces for the
 
 Audit: [full physical transport, alias bounds and complete-source calibration](../experiments/audit_actual_odd_conway_newton_transport.py).
 
-Independent internal analytical review by the coherent-current agent
-checked both full normal transport matrices and their Cartan phases,
-the global and retained-color alias envelopes, the concave plateau
-argument, and the nonzero complete-source leading multiplier. A fresh
-replay passed 108 physical transport columns, 243 marked mixed-sign
-sources, 27,900 alias checks and 30 finite complete-source diagnostics.
-The diagnostics are not used to infer any asymptotic theorem.
-
-Primary-agent analytical review and fresh audit replay also passed.
-The full-algebra transport, signed phase, uniform alias envelope and
-nonzero complete multiplier were checked independently of the finite
-rate diagnostics.
+The finite transport and alias checks are diagnostics for the exact formulas. They do not establish the asymptotic estimates by sampling.

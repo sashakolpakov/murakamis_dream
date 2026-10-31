@@ -43,8 +43,8 @@ index in the backward difference of the positive head weights
 is \(\binom Nj/(N2^N)\). At zero the extra coefficient is
 \(-1/N\); at \(N\) the binomial endpoint remains. Therefore
 \[
- \lambda^+_{\rm head}((S-1)J)=B_N(J)-J_0/N,\qquad
- \lambda^-_{\rm head}((S-1)J)=-B_N(J)+J_N/N .
+ \lambda^+_{\mathrm{head}}((S-1)J)=B_N(J)-J_0/N,\qquad
+ \lambda^-_{\mathrm{head}}((S-1)J)=-B_N(J)+J_N/N .
 \]
 The negative and positive tails in the relative extensions
 supply \(+J_0/N\) and \(-J_N/N\), respectively.
@@ -52,14 +52,14 @@ Their sum is exactly the ordinary normalized full-index sum.
 The \(j=N\) entry in \(B_N\) cannot be dropped.
 
 The original Green arrays already include \(1/N\). The current
-note correctly sets \(I_{\rm mat}=NI_{\rm raw}\) and
-\(J_{\rm mat}=NJ_{\rm raw}\) before applying matrix-normalized
+note correctly sets \(I_{\mathrm{mat}}=NI_{\mathrm{raw}}\) and
+\(J_{\mathrm{mat}}=NJ_{\mathrm{raw}}\) before applying matrix-normalized
 rows. In raw coordinates the rows are \(N\lambda^\pm\),
 the wall row is \(NB_N\), and the endpoint terms are
-\(J_{{\rm raw},0}\), \(J_{{\rm raw},N}\).
+\(J_{{\mathrm{raw}},0}\), \(J_{{\mathrm{raw}},N}\).
 This is an exact conversion, not an absorbed endpoint constant.
 
-The conclusion \(B_N(J_{\rm cut})=0\) is justified for the stated
+The conclusion \(B_N(J_{\mathrm{cut}})=0\) is justified for the stated
 UNWEIGHTED original cut: each hemisphere is \(F_N/2\), its
 actual scalar annihilator kills this, and all other zero-extended
 flow differences sum to zero. The proof does not extend scalar
@@ -114,7 +114,7 @@ The subsequent
 [normal residue/current theorem](centralizer_normal_residue_and_actual_cut_moments.md)
 has been checked independently in its current form.
 Expansion of \(1/(1-\eta v)\) gives
-\(\operatorname{Res}_E(b_N^h\nu_{\rm cut})=-(-T)^h\Omega\).
+\(\operatorname{Res}_E(b_N^h\nu_{\mathrm{cut}})=-(-T)^h\Omega\).
 The south representative must be \(P(b_S-1)\).
 Its difference from the north polynomial is divisible by the
 Gauss-wall factor; the stated \(\Xi_h\) integrates its remaining
@@ -129,8 +129,8 @@ Their difference is the retained endpoint class
 With a nonconstant source kernel the product correction is
 essential:
 \[
- d\,\iota_{V_b}(P f_C\nu_{\rm cut})
-              =(P'f_C-XP\partial_Tf_C)\nu_{\rm cut}.
+ d\,\iota_{V_b}(P f_C\nu_{\mathrm{cut}})
+              =(P'f_C-XP\partial_Tf_C)\nu_{\mathrm{cut}}.
 \]
 Its residue equals minus the differential of the current
 residue, as required when \(d\eta/\eta\) is written first.

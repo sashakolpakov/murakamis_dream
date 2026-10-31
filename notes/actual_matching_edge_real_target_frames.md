@@ -1,6 +1,6 @@
 # Which actual geometric target frames have real magnetic rows?
 
-30 October 2026. Independently reviewed. This is a local
+30 October 2026. This is a local
 classification for the ACTUAL inverse-turn target, not a common-frame
 existence theorem for the whole link. It supplies a real cross-central
 frame for every strict certified target c<1. Its total degree can be
@@ -225,14 +225,6 @@ with a continuant, or infer that a real spectral saddle contributes.
 
 Focused audit: [actual target traces, classification and bandwidth](../experiments/audit_actual_matching_edge_real_target_frames.py).
 
-Primary-agent full analytical review: PASS. The reader checked the
-rank-one trace equations, both physical adapters, exclusion of the
-nonconjugate branch, both exact roots and their support intervals,
-the generic bandwidth argument, and the inverse-turn pullback. The
-input/output ordering in (9) is explicit.
+The input/output ordering in (9) is part of the statement.
 
-Independent full analytical review and fresh redirected replay: PASS.
-A second reader reproduced eight formal identities, thirty-six actual
-local frames, seventy-two adapter row checks, thirty nonconjugate
-support failures and 222 exact generic bandwidth entries. Neither
-review infers compatibility with the other disks of the link.
+Compatibility with the other disks of the link is not established by the local-frame theorem.

@@ -35,7 +35,7 @@ Renormalization \(a=-\eta b\) gives exactly
 \]
 recovers every projective frame on \(\eta\ne0\); its south
 representative is \(-v\) times its north representative.
-Hence \(Y\setminus E_{\rm exc}\) is all \(PGL_2\), not only a
+Hence \(Y\setminus E_{\mathrm{exc}}\) is all \(PGL_2\), not only a
 birational open chart. At the boundary the matrix has rank one,
 the second flag is transverse to the retained first-column
 direction, and the original constant centralizer action vanishes.
@@ -63,8 +63,8 @@ zero. Both this logarithmic form and its residue are therefore
 global. Its residue is \(-dv\wedge da=2\pi i\,\omega_I\),
 with the correct compact trace normalization.
 The canonical-bundle identities
-\(K_Y=O(2)\), \(O(E_{\rm exc})=O(-2)\), and
-\(K_Y(E_{\rm exc})=O\) agree with the explicit form.
+\(K_Y=O(2)\), \(O(E_{\mathrm{exc}})=O(-2)\), and
+\(K_Y(E_{\mathrm{exc}})=O\) agree with the explicit form.
 
 The actual bridge, rather than a guessed Haar measure, fixes
 the interior scalar:
@@ -77,7 +77,7 @@ Its Jacobian is exactly
 \]
 Consequently
 \[
- \Omega_{\rm cut}\wedge d\log p
+ \Omega_{\mathrm{cut}}\wedge d\log p
        =\frac{H_G}{1-\eta v}.
 \]
 The adapter cannot be discarded in the interior. Its boundary
@@ -85,10 +85,10 @@ value is one, which proves the printed residue without an
 adjustable numerical multiplier.
 
 On the already marked Gaussian phase and common base line,
-\(\Omega_{\beta,0}=c_\beta\Omega_{\rm cut}\) with
+\(\Omega_{\beta,0}=c_\beta\Omega_{\mathrm{cut}}\) with
 \(c_\beta^2=-T_\beta/2\ne0\). Keeping that recorded line gives
 \[
- \frac1{2\pi i}\operatorname{Res}_{E_{\rm exc}}
+ \frac1{2\pi i}\operatorname{Res}_{E_{\mathrm{exc}}}
     (\Omega_{\beta,0}\wedge d\log p)
        =c_\beta\omega_I.
 \]

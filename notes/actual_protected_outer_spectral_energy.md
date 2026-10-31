@@ -1,6 +1,6 @@
 # Exact spectral coefficient energy at a protected outer face
 
-31 October 2026. **Independently reviewed theorem.** A one-sided original
+31 October 2026. **theorem.** A one-sided original
 coefficient with one outer degree zero has an explicit real-spectral
 maximum, uniformly through all closed index boundaries and at both level
 parities. Its endpoint-conditioned energy is exactly a triangle entropy
@@ -289,10 +289,6 @@ other triangle allocations generally fixes the middle transport uniquely.
 A global redistribution argument remains necessary before (5) can bound
 the [shared conditioned energy](general_endpoint_conditioned_source_energy.md).
 
-Root and an independent peer completed full analytical reviews of the
-literal coefficient, both parity grids, uniform logarithmic mesh bounds,
-odd derivative, unique spectral maximum, and identity (15): PASS.
-
 The [focused audit](../experiments/audit_actual_protected_outer_spectral_energy.py),
 with [results](../experiments/actual_protected_outer_spectral_energy_results.json),
 builds the physical coproduct Casimir and extracts coefficients by the
@@ -303,8 +299,5 @@ avoidances, three symbolic identities and six fixed integral identities.
 These exact checks supplement the proof; no large-\(N\) rate samples are
 used as proof of (4) or of a shared energy bound.
 
-An independent full code review and redirected replay reproduced all counts
-at 75 digits, with maximum fixed-identity residual below \(1.8\times10^{-75}\).
-The original coefficients are extracted from the physical coproduct, not
-constructed from the monomer product being tested.
+The coefficients are extracted from the physical coproduct, independently of the monomer product against which they are compared.
 

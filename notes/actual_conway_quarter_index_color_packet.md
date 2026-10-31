@@ -1,6 +1,6 @@
 # The actual signed color packet through the quarter-index boundary
 
-31 October 2026. Internally reviewed local source theorem. This extends the LOCAL original
+31 October 2026. local source theorem. This extends the LOCAL original
 mixed-color coefficient theorem across $x=1/4$. The selected branch has a
 source-fixed nonzero amplitude on a fixed joint complex neighborhood, with
 an exponentially small relative error on the physical Newton grid. Both
@@ -480,16 +480,6 @@ separate hypotheses of the long-filling transfer theorem. This note gives
 a local analytical input that was previously unavailable, with its exact
 source normalization preserved.
 
-## Internal review and preservation
+## scope and preservation
 
-The primary agent and geometry agent independently completed full analytical
-and source reviews of §§1–8. They checked the literal factorial continuation,
-both terminal parities, the source anchor and both channels, the uniform
-complex-parameter action barrier, interaction-picture errors, holomorphic
-Euler–Maclaurin interpolation, first-order Riccati correction and endpoint
-normalization, and the signed chirp/shear/local-window consequence. Neither
-review infers a global source gap or a new volume theorem. These are internal
-research reviews, not external peer review. No numerical calibration is used
-as an asymptotic proof, and no new runtime audit is needed for this analytic
-extension. The native mathematical presentation and relative links are
-validated separately.
+The quarter-index packet is local. It does not supply a global source gap or a new filling-volume theorem.

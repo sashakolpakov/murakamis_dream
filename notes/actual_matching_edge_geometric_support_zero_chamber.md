@@ -1,6 +1,6 @@
 # The two geometric defects lie across the complete-channel support wall
 
-30 October 2026. Independently reviewed. For the prescribed-pair
+30 October 2026. For the prescribed-pair
 frame on any actual certified right-angled matching cut, the two failed
 ordinary factors at one matching edge have a precise common chart.
 Their normalized total degree has real part BELOW 1/2; their magnetic
@@ -38,7 +38,7 @@ are 3pi-beta and pi+beta-theta, with sum 4pi-theta. Hence
     theta<0: 0<Re(x1+x2)=-theta/(2pi)<1/2,
     theta>0: 3/2<Re(x1+x2)=2-theta/(2pi)<2.         (1)
 
-Use the ORIGINAL degree adapters even though the complete channel
+Use the original degree adapters even though the complete channel
 is no longer in their physical support. Define
 
     low:  sigma=x1+x2, r=x1;
@@ -90,7 +90,7 @@ Undoing their actual inverse-turn relation gives target exponentials
 
 Their canonical physical logarithms have total 1+r-s and rows
 1-s, sigma-s. If Re r<Re s, this target is low. If Re r>Re s,
-apply its ORIGINAL high adapter: the normalized total is 1-r+s
+apply its original high adapter: the normalized total is 1-r+s
 and the rows are 1-r, sigma-r. For an original high adapter,
 the exponentials are instead V_input=O/S,U_output=1/S; this
 only reverses the target input/output order in the same calculation.
@@ -151,13 +151,4 @@ This is a direct structural corollary of the audited prefix, adapter,
 prescribed-facet and inverse-turn identities. No new finite-kernel
 asymptotic, nonvanishing contribution or global equality is claimed.
 
-Primary-agent full analytical review: PASS. The reader checked both
-argument lifts, equality of the full complex degree, the original and
-target high adapters, the proper middle-ratio seam, and all target
-support and midpoint inequalities.
-
-Independent full analytical review: PASS. A second reader independently
-derived the deficient-degree chart, strict facet-interior consequence,
-both target input/output exponentials and actual logarithmic lifts.
-The multi-block limitation remains conditional on the common K frame;
-no finite continuation through the wall is inferred.
+The multi-block conclusion is conditional on a common K frame. No finite continuation through the wall is inferred.

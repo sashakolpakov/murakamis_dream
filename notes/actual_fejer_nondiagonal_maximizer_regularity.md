@@ -1,6 +1,6 @@
 # Non-diagonal maximizers have no free zero degrees
 
-Independently reviewed, 31 October 2026. This uses the actual shared
+, 31 October 2026. This uses the actual shared
 entropy theorem and the labeled complete geometric all-cross flow. It
 does not assume a global entropy redistribution or exchange inf and max.
 It supplies ordinary finite positive Lagrange multipliers on a precise
@@ -238,10 +238,4 @@ identity-deletion/block argument or another global entropy exchange.
 The lemma does not settle those strata or the phase-sensitive filling
 asymptotic.
 
-Root and both independent analytical reviews checked every corner
-coefficient, joint-corner absorption, actual geometric mixing, finite
-row-space multipliers, and the forced one-/two-line equations. The
-underlying exact entropy and finite coefficient checks are in the linked
-half-block theorem. This finite-dimensional proof does not require a
-new numerical asymptotic audit. The global signed-chain invocation was
-also independently reviewed with its original pairings and marked apex.
+The underlying exact entropy and finite coefficient checks are in the linked half-block theorem. This finite-dimensional proof does not require a new numerical asymptotic audit. The global signed-chain argument retains its original pairings and marked apex.

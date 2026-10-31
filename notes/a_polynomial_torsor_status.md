@@ -88,7 +88,7 @@ records the exact advance and next actual source problem.
 
 Latest exact whole-source result, 28 October: the
 [balanced four-full-Psi kernel](actual_balanced_fourier_crossing_kernel.md)
-equals the ORIGINAL crossing operator at the complete color. The
+equals the original crossing operator at the complete color. The
 original E-coproduct identity and injectivity on high-degree blocks
 eliminate the formerly allowed degree-N aliases exactly. Thus the
 [whole-word comparison](regular_balanced_fermat_word_source.md)
@@ -141,7 +141,7 @@ geometric section. A balanced base change has a nonzero local section,
 but the original global source has not been shown to factor through it.
 Thus no new broad knot class or general volume limit is asserted.
 
-Latest selected-source theorem, 28 October: the ORIGINAL trivalent
+Latest selected-source theorem, 28 October: the original trivalent
 source now has an [exact beta decomposition](actual_trivalent_quantum_beta_source.md)
 into a nonzero balanced geometric residue and its retained central
 current. The [normalizer is fixed exactly](actual_trivalent_beta_normalizer.md)
@@ -159,7 +159,7 @@ source, and hence the broad volume conjecture, remain unproved.
 Latest exact source advance, 28 October: an
 [atomic-window resolution](atomic_window_total_source_resolution.md)
 removes every compact artificial Cauchy cluster, including dependent
-circuits, by a coefficient-independent identity of the ORIGINAL
+circuits, by a coefficient-independent identity of the original
 whole source. Its full-Psi/interval normal block has determinant -1;
 finite regular atomic endpoints cannot be stationary. The source can
 use fixed head radii. This is stronger than estimating the previously
@@ -223,7 +223,7 @@ general geometric survival, a lower bound, or a sharp global volume bound.
 
 Latest, 28 October: the
 [cyclic-dilogarithm/continuous-Gaussian period](actual_continuous_gaussian_cyclic_network.md)
-now represents the ORIGINAL whole signed word by the literature
+now represents the original whole signed word by the literature
 norm-one cyclic functions, Hardy Cauchy kernels and ordinary Gaussian
 weights, with its specified source, initial cycle and all original scalar
 factors. Ordered factorial
@@ -236,7 +236,7 @@ not an inferred equality of scalar asymptotics. Its initial cycle has
 not been transported to the geometric Rivin cycle.
 
 The independent [cut-strand peeling theorem](original_source_cyclic_variation_peeling.md)
-proves, path by path in the ORIGINAL Kashaev coordinates, that the cut
+proves, path by path in the original Kashaev coordinates, that the cut
 strand stays zero. It removes that strand with explicit q-Pascal boundary
 operators and the original pivotal scalar. The
 [charged-simplex action](original_crossing_winding_convexity.md)
@@ -482,7 +482,7 @@ not substitution of a momentum for the old band-cap variable.
 Its [geometric normal block](actual_fourier_polarized_geometric_normal_block.md)
 has the same regulator action and birational framing coordinates.
 The [one-index source reduction](actual_one_index_fourier_source_and_ward_reduction.md)
-leaves exactly one exterior Fourier-label sum for the ORIGINAL
+leaves exactly one exterior Fourier-label sum for the original
 root period, with a controlled whole Ward defect. The
 [partial-support proof, Sections 7--8](partial_geometric_support_theorem.md#7-a-source-preserving-fourier-partial-family-has-the-same-geometric-factor)
 preserves a geometric A-factor before that last sum. Nonzero
@@ -529,7 +529,7 @@ volume theorem is inferred from this unfolding.
 | Make that actual source compatible with the meridian connection | [Horizontal open-word transport](actual_open_meridian_horizontal_source_transport.md), [independent audit](open_meridian_horizontal_independent_audit.md) | The scaled second-wire Vandermonde removes the exact slot half-character, preserves all current/source pairings and normal jets, and is an isometry of the root cyclic complex on the unit meridian arc. The longitude remains the actual bulk insertion, not its critical value; the selected geometric quotient is still missing. |
 | Normalize the complete geometric boundary in an actual presentation | [Universal resonant cut](universal_resonant_cut_and_actual_source.md) | An exact braid/inverse pair moves a noncommuting meridian to a first-slot second cut, with a proved nonempty regular atom chart. Its prefix is V=I, its principal density has pole p=1, and its escaping scale is r=N/zeta-beta*s. The original state and source are unchanged. Whole quantum completion, higher chart gluing and selected survival are not inferred. |
 | Make the new framing coordinates birational and retain a nonzero geometric block | [Fourier normal-block theorem](actual_fourier_polarized_geometric_normal_block.md), [partial A-support, Sections 7--8](partial_geometric_support_theorem.md#7-a-source-preserving-fourier-partial-family-has-the-same-geometric-factor) | At complete discrete-faithful holonomy, (cut position, wave momentum) is birational. The actual open phase has a nondegenerate bordered Hessian and unchanged action; the finite root certificate forces A_geo. Its proper root lift is not equated with the whole inverse Fourier q-normal germ. |
-| Reduce the original period to one exterior source index | [Fixed-column/Ward source theorem](actual_one_index_fourier_source_and_ward_reduction.md), [independent audit](one_index_fourier_source_independent_audit.md) | Root scalarity permits any fixed input column with the ORIGINAL output row; only the Fourier-label sum remains. Good algebraic phases avoid finite bad fibers. The whole source defect has an O(N^(3/2)) Ward primitive, and power marks retain all normal terms. Selected geometric survival in that last sum remains unproved. |
+| Reduce the original period to one exterior source index | [Fixed-column/Ward source theorem](actual_one_index_fourier_source_and_ward_reduction.md), [independent audit](one_index_fourier_source_independent_audit.md) | Root scalarity permits any fixed input column with the original output row; only the Fourier-label sum remains. Good algebraic phases avoid finite bad fibers. The whole source defect has an O(N^(3/2)) Ward primitive, and power marks retain all normal terms. Selected geometric survival in that last sum remains unproved. |
 | Classify the actual finite source frame before jets | [Aligned cyclic frame](flat_cyclic_source_frame_and_scalar_period.md), [rank-one moment/orbit source](actual_rank_one_multiplicative_moment_and_orbit_source.md) | The endpoint-corrected crossed product is exactly Mat_N. Source alignment and flat saturation are necessary; the original co-source requires its orbit sum. These fix the frame and its two walls, while a closed intertwiner still has an arbitrary scalar unless its actual word is used. |
 | Unfold the fixed cyclic shell while retaining its pointed source | [Pointed companion/polynomial comparison](pointed_companion_source_and_polynomial_hilbert90.md), [independent proof](companion_source_shell_independent_audit.md) | The cyclic sourced scheme is explicitly an open affine (N-1)-space over Q. A polynomial clock gauge retains the residual spectral factor in the co-source; mixed moments recover it with primitive-root Jacobian N. The actual repair gives the cyclotomic polynomial. A different actual meridian transport is required before assigning any geometric A-polynomial. |
 | Check the auxiliary shell against the actual meridian state | [Actual-state compatibility](actual_meridian_companion_source_compatibility.md) | The actual orbit state fails the shell's highest-clock equation universally. Canonical subtraction gives a highest residual with pairing K_N, so normalizing it would divide by the target. The existing regularized affine source retains the value; no selected geometric comparison is supplied. |

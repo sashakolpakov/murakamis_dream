@@ -1,6 +1,6 @@
 # A whole-source gap from exact two-leaf Conway block transport
 
-31 October 2026. Internally reviewed original-source theorem.
+31 October 2026. original-source theorem.
 For every fixed closed $C(FG)$ built from seeds $A_s=h^s$, $s\ge2$,
 actual turns and products, the full mixed source has a uniform alias gap
 and a physical-color complement gap at both parities. No individual-leaf
@@ -119,7 +119,7 @@ single global marked closure is unchanged.
 
 ## 3. Uniform closed-domain envelopes, including inputs above half
 
-Use the ORIGINAL local upper rates
+Use the original local upper rates
 
 $$
 \begin{aligned}
@@ -282,7 +282,7 @@ compact gap. Inside, every leaf lies below a fixed beta<1/2; if some original
 color is outside the small complete corridor, the existing strict actual
 core recurrence estimate loses a positive amount at that leaf. These two
 regions give a uniform whole-core complement gap. Add(13) to get the entire
-physical-source complement gap. The already reviewed exact complex packet,
+physical-source complement gap. The exact complex packet,
 primitive lattice and marked geometric interfaces are unchanged.
 
 More explicitly, for each sufficiently small fixed $\delta>0$ there is
@@ -305,7 +305,7 @@ The separate primitive slope, nonzero normalization and fixed sufficiently
 long filling hypotheses remain those of the original transfer theorem.
 This does not identify every arborescent template with the stated grammar.
 
-## Inputs and review scope
+## Inputs
 
 Exact identities(1)–(6): [original positive Newton multiplication](actual_positive_newton_multiplication.md) §§1–2;
 [exact pure-color core and alias](actual_pure_conway_auxiliary_color_leaf.md) §§1–4,6;
@@ -314,11 +314,3 @@ Exact identities(1)–(6): [original positive Newton multiplication](actual_posi
 [original variational action](actual_positive_conway_variational_limit.md) §§1–2,4. Strict complete state,
 ports and unchanged packet: [two-leaf source and packet interface](actual_conway_two_leaf_seed_source.md) and
 [two-leaf complete and marked geometry](actual_conway_two_leaf_seed_geometry.md). No private diagnostic is an input.
-Author finite/source proof complete. The primary agent, the coherent-source
-reviewer and the geometric reviewer each independently fully read sections
-1–5 of the finite/block argument: PASS. The separate uniform block lemma
-received full mathematical and exact-code reviews and independent rational
-replays; its result supplies (12) here. These internal reviews retain the
-original coefficient, packet and marked-geometry inputs rather than
-claiming independent reproofs of those earlier theorems. No floating-point
-optimization or numerical asymptotic extrapolation is used in the proof.

@@ -1,6 +1,6 @@
 # The original Newton and complete-core local actions on the reciprocal branch
 
-30 October 2026. Independently reviewed and frozen. Original untwisted port;
+30 October 2026. Original untwisted port;
 x,b,c,y>0, with the literal input b/output c convention. The theorem
 is an equality on the selected HOLOMORPHIC GERM near alpha=0 and any
 fixed positive face base. The real formulas below use 0<alpha<1/2 to
@@ -239,16 +239,4 @@ collar, and the full action including its imaginary constant. Its
 are classical identity checks, not numerical evidence for a finite
 source cycle deformation or a selected asymptotic contribution.
 
-Root full analytical and public audit-code review: PASS. Two independent
-full analytical reviews also checked the canonical lifts, strict K
-polytope, outer-angle identity, sine continuation, peripheral momentum
-and additive constant. The author and independent redirected 70-digit
-audits reproduce two symbolic identities, 24 full critical actions,
-120 raw stationarity/external derivatives, 96 marked face derivatives
-and 24 unsquared collar checks, with maximum error below 1.74e-69.
-A separate root implementation of the triangle normalization and
-imaginary-delta collar integral checked eight additional equal,
-asymmetric and large-ratio cases at 65 digits, with error below
-6.72e-66. These reviews certify the stated local holomorphic action
-identity; they do not certify a finite-cycle contribution or an
-amplitude comparison.
+The action identity is local and holomorphic. It does not determine the amplitude or a contributing cycle.

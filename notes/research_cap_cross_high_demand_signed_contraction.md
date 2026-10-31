@@ -1,6 +1,6 @@
 # Exact signed cap/CROSS contraction in a macroscopic high-demand range
 
-31 October 2026. **Internally reviewed, unpublished analytical theorem**
+31 October 2026. **, unpublished analytical theorem**
 for the exact two-port incidence in the
 [original-demand convolution](research_two_port_main_cap_original_demand_convolution.md).
 The original internal face demand, both remaining degrees, and both
@@ -346,8 +346,7 @@ f,g define the actual low-demand functional
 The full homogeneous source fixes every raw normalization in (14).
 It is legitimate to study unprojected coupons here. In the fixed pair
 f=V(2), g=V(-2), the original RIGHT/CROSS projections are automatically
-satisfied after these degrees are extracted, as section 6's separately reviewed
-low-demand identity proves.
+satisfied after these degrees are extracted, as section 6's low-demand identity proves.
 
 The following proposed stronger realization is impossible: a
 semisimple realization of the ACTUAL E Casimir on a space, satisfying
@@ -443,10 +442,9 @@ No estimate for the signed coefficient, no hyperbolic-volume statement,
 and no obstruction to the original volume conjecture is inferred.
 The only inputs are the actual homogeneous source, its full complete
 polynomial with confluent data, and the exact positive determinant
-formula, all already independently reviewed.
+formula, all already .
 
-
-## Inputs and internal review
+## Inputs
 
 The exact normalization and local incidence are those of the
 [original two-port source reduction](research_two_port_main_cap_original_demand_convolution.md).
@@ -455,20 +453,5 @@ The full-interval source used in section 6 is the
 its [homogeneous physical adapter](actual_homogeneous_casimir_face_source.md)
 keeps the original pair order and all matrix data.
 
-Root and cluster independently read the complete high-demand proof
-and original-source scope in sections 1--5, reporting PASS. Cluster additionally read the complete written low-demand coefficient
-identity in section 6, including all-index raw signs and source factors,
-and reported PASS. Root separately checked the same all-index cap and
-source derivation. These are internal analytical
-reviews, not external peer review. No numerical asymptotic experiment
-or new finite audit is used as proof.
 
-Root supplied and fully checked the odd extension in section 7. Coherent
-and cluster independently read its complete written proof and checked
-the original odd support, spectral-derivative sign, central-zero handling,
-and all endpoint normalization products, each reporting PASS.
-
-Root and cluster independently read the complete exact source obstruction
-in section 8 and reported PASS, including its all-low-degree positivity
-and its restriction to coupon-uniform semisimple adapters. No runtime
-experiment is used for that algebraic statement.
+The obstruction is to a coupon-uniform semisimple adapter. It does not rule out a special identity for the fixed coupon or an explicit treatment of confluent terms.

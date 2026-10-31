@@ -1,6 +1,6 @@
 # Full original long filling from anchored shared-radius certificates
 
-Independently reviewed theorem, 31 October 2026. At most $2R$ finite tests on shared face radii imply the full original independently long-filling volume theorem. These tests strictly extend balance at the complete packing for a fixed marked source. They are not asserted for every certified diagram. The proof makes no exchange of a maximum and an infimum and uses no coefficientwise LEFT comparison.
+theorem, 31 October 2026. At most $2R$ finite tests on shared face radii imply the full original independently long-filling volume theorem. These tests strictly extend balance at the complete packing for a fixed marked source. They are not asserted for every certified diagram. The proof makes no exchange of a maximum and an infimum and uses no coefficientwise LEFT comparison.
 
 ## 1. The original source and the finite certificate
 
@@ -207,6 +207,6 @@ At $t=0$ this is pure $c$; at $t=1$ it is a triangle plus pure half-$c$. Protect
 
 The [identity forest reduction](actual_fejer_diagonal_identity_forest_reduction.md) controls the exact identity endpoint $t=0$. A [fixed-triangle capacity loss](actual_fixed_triangle_boundary_capacity_gap.md) controls $t=1$. At fractional $t$, the positive triangle has a changed row supply. Simply retaining its unscaled geometric angles changes the face stars by $(1-t)(\alpha-e_c/2)$, which need not vanish. The old hybrid representation therefore cannot be reused for an arbitrary mixture without further proof. The present theorem supplies a strictly broader sufficient certificate for marked sources; whether every original certified diagram passes an optimized sector or anchor test remains open.
 
-## 7. Independent review
+## 7. Exact certificate checks
 
-Root and an independent source reviewer read the full proof and audit code. Both fresh redirected Arb192 replays reproduced all six rational certificates and twenty exact pair checks; the smallest certified gap exceeds $0.5023$. A separate geometry review checked the original quartets, first mark, exact packing, simple-sphere certificate and six surviving sides. These are internal analytical reviews, not external peer review. No optimizer result or finite asymptotic sampling is used as a proof.
+The six rational certificates and twenty exact pair checks have smallest certified gap greater than $0.5023$. They use the specified quartets, first mark, exact packing, simple-sphere certificate and six surviving sides. Numerical optimization and finite asymptotic samples are not proof inputs.

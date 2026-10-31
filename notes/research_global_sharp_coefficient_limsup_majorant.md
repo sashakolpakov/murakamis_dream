@@ -1,10 +1,6 @@
 # A global closed-domain coefficient majorant from the original full tail
 
-Analytical research theorem, 31 October 2026. Root and coherent
-completed full internal analytical reviews; this is not external peer review. This extends the reviewed regular
-LIMSUP estimate to all closed row and degree boundaries and the entire real
-spectral interval. It remains only an upper bound. No nonzero coefficient
-limit, phase cancellation, or quantum-cycle contribution is claimed.
+The global majorant is an upper bound. It does not give a lower coefficient limit or select a phase or cycle.
 
 ## 1. Exact treatment of the final spectral cap
 
@@ -55,7 +51,7 @@ The negative case implies kappa^2<(1-cos theta)/2. Hence uniformly
 
     |k_eff-kappa|<=sqrt(1-cos theta)=O(1/N).           (3)
 
-The ORIGINAL unused alpha_r(delta) factors are NOT changed to delta_eff.
+The original unused alpha_r(delta) factors are NOT changed to delta_eff.
 If any of them, or the retained A_rest factor, vanishes, the coefficient
 is zero and automatically satisfies the upper bound.
 
@@ -248,10 +244,4 @@ the cap on the full row range. The
 is a downstream consequence together with the separate boundary lemmas;
 it is not a premise of the coefficient upper bound.
 
-Both internal reviews checked the exact recurrence and row indices, the
-absolute-lambda substitution and effective spectral parameter, the signed
-normalized transfer and repeated-root block bound, uniform unused-product
-upper sums, uniform clipping of all tilts, closed continuity, degree
-normalization and the original shared-target upper bound. No numerical
-audit, lower coefficient rate, signed-source positivity at the cap, phase
-alignment, geometric bound on M_D or full-period conclusion is claimed.
+No coefficient lower bound, positivity at the cap, phase alignment, complete-volume comparison or full-period estimate follows from this upper bound.

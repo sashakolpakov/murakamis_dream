@@ -262,7 +262,7 @@ inverse signed quantum prefix is exactly
     [(-1)^(j-1) product_(i<j)K_i]^(-1)
           =(q/M)^(j-1) product_(i<j)Q^(J_i).       (5.2)
 
-It is a product of ORIGINAL diagonal edge clocks, with its full
+It is a product of original diagonal edge clocks, with its full
 q/M meridian factor. It is not an invented density or a scalar
 chosen after source evaluation. Its principal symbol is ell_V^(-1).
 The ordered crossing/cap currents of this insertion remain those

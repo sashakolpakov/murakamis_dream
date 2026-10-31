@@ -1,6 +1,6 @@
 # Hybrid Fejer flow: all proper tight sets come from permitted digon cuts
 
-31 October 2026. Independently reviewed and frozen. This is a finite incidence
+31 October 2026. This is a finite incidence
 theorem for the ACTUAL loopless white triangular cellulation obtained
 after source-preserving identity smoothing. The
 [closed local entropy](actual_fejer_half_block_entropy.md) and
@@ -41,7 +41,7 @@ capacity. The finite flow criterion is C_H(S)>=|S| for every S.
 Take a nonempty proper S among the R ordinary vertices, and put
 U=V(T)\S, n=|U|. The induced embedded graph G=T[U] is loopless and
 contains the retained protected edge uv. Let p be the number of
-ORIGINAL triangular cells wholly supported on U. Each is still an
+original triangular cells wholly supported on U. Each is still an
 actual face of G; a triangular face of G enclosing removed vertices
 does NOT count in p. Every other original triangle touches S, so
 
@@ -205,16 +205,9 @@ positive multipliers and the global relative chain. The present proof
 is the complete finite support/witness classification, not an assertion
 that independent Green capacities factor across arbitrary digons.
 
-## Independent review and scope
+## Scope
 
-Root independently derived and reviewed the induced-face Euler argument,
-including disconnected induced graphs, genuine digon faces and the
-proper-subset exception. Cluster and geometry independently reviewed the
-complete proof: hybrid capacity correction, same-endpoint green-hole
-merging, forced-arc criterion, relative-interior witness and the fixed-green-
-chamber corner argument. The iterative cut paragraph states explicitly
-the variational C+C bookkeeping used in those reviews; it is not a new
-finite-coupon replacement.
+The induced-face Euler argument includes disconnected induced graphs, digon faces and the proper-subset exception. The iterative cut uses variational C+C bookkeeping; it is not a finite-coupon replacement.
 
 Geometry additionally target-read the final iterative paragraph and
 confirmed its Cartesian flow product, unchanged outside targets,

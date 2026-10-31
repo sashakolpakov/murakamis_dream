@@ -4,7 +4,7 @@
 from the previous two-leaf extension. The argument contracts an entire
 two-leaf block before estimating its aliases. The resulting uniform
 bound applies automatically to every proper seed in the stated grammar.
-This is an internally reviewed theorem for an explicit arborescent
+This is an theorem for an explicit arborescent
 class, not a theorem for every arborescent or hyperbolic knot.
 
 ## 1. The class and theorem
@@ -210,8 +210,4 @@ proved. The exact quantum boundary contraction and the signed estimate
 must survive those additional operations before claiming that scope.
 Likewise no generic main-meridian quantum A-operator is produced here.
 
-The component proofs and new exact certificate have independent internal
-analytical, source and geometric reviews. They are not external peer
-review, and the application retains the previously proved local packet
-and marked-completion dependencies. The active general objective remains
-open beyond the stated composition class.
+The theorem applies the stated packet and marked-completion results to this recursive class. Extension beyond that class remains a separate question.

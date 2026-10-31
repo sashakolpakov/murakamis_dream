@@ -197,15 +197,6 @@ it does not replace its remaining contraction and period estimates.
 
 Focused audit: [finite phase derivatives and adapter identities](../experiments/audit_actual_positive_fourier_radial_geometric_obstruction.py).
 
-Primary-agent analytical review: PASS. The reader checked the strict
-complete-channel hypothesis, both degree adapters and the actual white
-input/output convention, the conditional central-frame contradiction,
-the exact residual phase and multiplier signs, finite pivotal charge,
-and the unsquared interior action. No rate gap or boundary conclusion
-is inferred.
+The radial obstruction does not give a rate gap or a boundary conclusion.
 
-Independent analytical review and fresh focused replay: PASS. A second
-reader verified the same adapter and phase identities, including the
-real-center equation, and reproduced all eleven exact audit identities.
-Both reviews retain the conditional common-frame scope and the original
-exceptional-block route.
+The common-frame hypothesis and exceptional-block route remain essential.

@@ -1,8 +1,6 @@
 # A triangle upper bound for every one-sided relative-energy coefficient
 
-31 October 2026. Root derivation for independent review. The proof below is
-local and retains the actual full spectral numerator and positive endpoint
-reference at both parities. It does not yet prove a shared global energy bound.
+31 October 2026. The proof is local and retains the full spectral numerator and positive endpoint reference at both parities. A shared global energy bound is not proved here.
 
 ## 1. Positive dependence on a single spectral parameter
 
@@ -58,7 +56,7 @@ For the actual LEFT exponent $v=(k,i,d-j,r-k)$, write
 $a_N(v;\sigma)=B_N(\delta)q_{i,j,k}(\lambda)$ with $\sigma=-2\cos(2\pi\delta)$.
 Here $B_N$ contains the exact omitted-half scalar, all unused lower prefix
 and suffix diagonals, and $\prod_{r=i+1}^j s_r^2$. The original endpoint
-reference is $p_N(v)=B_N^{\rm ref}q_{i,j,k}(\lambda_0)$, $B_N^{\rm ref}>0$.
+reference is $p_N(v)=B_N^{\mathrm{ref}}q_{i,j,k}(\lambda_0)$, $B_N^{\mathrm{ref}}>0$.
 At even levels the reference is $-V_N(-2)$; at odd levels it is
 $V_N(-2)-N^{-2}\partial_\sigma V_N(-2)$. For a one-sided odd path the
 central zero is unused, so the derivative removes precisely that zero;
@@ -69,7 +67,7 @@ Consequently (2) implies
 
 $$
 \sum_{k=0}^{r}\frac{|a_N(v;\sigma)|^2}{p_N(v)}x^ky^{r-k}
-\leq\frac{|B_N(\delta)|^2}{B_N^{\rm ref}}
+\leq\frac{|B_N(\delta)|^2}{B_N^{\mathrm{ref}}}
  q_{i,j}\left(x,y;\lambda^2/\lambda_0\right).
 \tag{3}
 $$
@@ -90,12 +88,12 @@ z=\sin^2(\pi\delta),\quad k_\delta^2=1-z,
 $$
 
 The effective parameter in (2) satisfies
-$\cos^2(\pi\delta_{\rm eff})\to k_\delta^4$ uniformly in $\delta$.
+$\cos^2(\pi\delta_{\mathrm{eff}})\to k_\delta^4$ uniformly in $\delta$.
 The exact finite parameter stays in the original positive-tail range.
 Define
 
 $$
-\Lambda_{\rm eff}(t)=2s\left[As+
+\Lambda_{\mathrm{eff}}(t)=2s\left[As+
  \sqrt{(x-y)^2s^2+4xy k_\delta^4}\right],
 \qquad \alpha_\delta(t)=4(c^2-z).
 $$
@@ -108,7 +106,7 @@ $$
 \int_\mu^\nu\log\mathcal L_\delta(t;x,y)\,dt,
 \qquad
 \mathcal L_\delta=
- \frac{\Lambda_{\rm eff}\alpha_0}{|\alpha_\delta|^2}.
+ \frac{\Lambda_{\mathrm{eff}}\alpha_0}{|\alpha_\delta|^2}.
 \tag{4}
 $$
 
@@ -208,7 +206,7 @@ RIGHT follows by the original row reflection. If a protected outer is zero,
 only its exponent-zero coefficients survive, and the already derived sharp
 boundary formula attains (10).
 
-The middle degrees remain $\mu$ and $1-\nu$ in the ORIGINAL shared flow.
+The middle degrees remain $\mu$ and $1-\nu$ in the original shared flow.
 Although the entropy bound depends only on the two outer degrees, it is
 not permission to reassign middle loads independently. The global energy
 comparison still requires a proof using the original shared targets.

@@ -9,7 +9,7 @@ then selects every ordinary factor outside one prescribed matching-edge
 block. Global contraction and period estimates remain open. The argument
 below keeps its original domain and proof scope.
 
-30 October 2026. This note continues the ORIGINAL terminating q-Hahn
+30 October 2026. This note continues the original terminating q-Hahn
 kernel jointly in the pair degree t and the magnetic coordinate u.
 The channel j remains an integer. The exact accretive determinant,
 the canonical center phase and two original finite-shift equations
@@ -331,42 +331,10 @@ It is a checkable additional condition on a geometric candidate,
 not a proof that every coupon of a general plat satisfies it in
 one common frame. The contributing-cycle problem remains separate.
 
-Audit: [the original joint source, both shifts and amplitudes](../experiments/audit_actual_q_hahn_joint_complex_amplitude.py).
-The primary reader's fresh run and an independent fresh replay passed.
-The finite comparisons test the normalization and correction formulas;
-sections 2--5 supply the uniform analytical proof.
+Audit: [the original joint source, both shifts and amplitudes](../experiments/audit_actual_q_hahn_joint_complex_amplitude.py). The finite comparisons test the normalization and correction formulas; sections 2--5 supply the uniform analytical proof.
 
-Independent source-transport review: full analytical read PASS. The
-reviewer checked the exact scalar and principal matrix-logarithm
-normalization, noninteger center phase, joint normal-family selection,
-both original finite shifts, discriminant exclusion throughout the
-central wedge, both subleading gradient corrections, closed amplitude
-form, and the normalized lattice anchor including +(1/2)log N.
-The review retains the integer-channel hypothesis and does not infer
-a contributing global cycle or a bound on an assembled coherent sum.
-Fresh independent 160-digit audit replay also PASS: 476 exact
-off-lattice coproduct identities, 32 independent terminating-source/
-determinant comparisons, 32 joint amplitude calibrations and eight
-actual folded-channel gradient corrections. The maximum scaled
-relative error was 0.476 and the maximum N-squared gradient remainder
-was 0.407; these finite checks confirm the conventions, while the
-written argument supplies the uniform theorem.
+The joint amplitude theorem retains the integer-channel hypothesis. It does not identify a contributing global cycle or bound an assembled coherent sum.
 
-Independent analytical review: a second reader checked the exact
-source-to-sine normalization and canonical matrix logarithm, joint
-normal-family selection using nearby physical degrees and the marked
-center phase, simplicity on the full central tube including xi=1/2,
-and both source-exact finite shifts. The two subprincipal corrections
-were independently expanded with their signs and integer offsets.
-The review also checked Cauchy control of their remainders, closedness
-from the actual mixed derivatives, and normalization at moving lattice
-samples before integration. The proof passed. This review does not
-supply a common physical frame, selected whole-source cycle, or
-continuation of the discrete channel.
+The theorem does not supply a common physical frame, select a whole-source cycle, or continue the discrete channel.
 
-The explicit selected-sheet formula in section 7 received a separate
-independent analytical review. Its characteristic equation and recovered
-square root were checked by two formal polynomial identities, and four
-complex saddle comparisons distinguished the selected and opposite signs.
-Those additional focused checks passed; no global sheet or cycle assertion
-was added.
+Two formal polynomial identities verify the characteristic equation and recovered square root in Section 7. Four complex saddle comparisons distinguish the selected and opposite signs; they do not establish a global sheet or cycle.

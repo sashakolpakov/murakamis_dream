@@ -8,7 +8,7 @@ gauge gives a useful local matrix estimate. It does not turn
 the original period into a positive pairing or license the old
 Hankel deformation term by term.
 
-There is an explicit source-visible pole witness in the ORIGINAL
+There is an explicit source-visible pole witness in the original
 positive crossing: its two sewn cross pieces have nonzero double
 poles absent from the nilpotent resolvent. Their contributions
 must accompany any subsequent cut deformation.
@@ -44,7 +44,7 @@ Multiplying by the marked analytic inverse-D germ and integrating
 on rho<min(1,|a|) kills those three terms entrywise. Other word
 factors do not alter that conclusion, since they use different
 integration variables. Consequently the at most 2^(3m) surviving
-cross-sector networks retain the ORIGINAL source exactly on the
+cross-sector networks retain the original source exactly on the
 original product of small circles.
 
 ## 2. The balancing gauge and its quantitative scope
@@ -107,11 +107,11 @@ Pole residues or the corresponding marked finite-part chains
 must be retained. Matrix balancing in Section 2 does not remove
 this change of relative cycle.
 
-## 4. An exact ORIGINAL positive-crossing source witness
+## 4. An exact original positive-crossing source witness
 
 Take N=2, M=1, Q=-1, q=i, x=i. In the opposite-root
 realization of the actual U_+ factor, a=Q^-1 x^-1=i.
-Use the ORIGINAL fusion C and Gaussian D=I from the strict
+Use the original fusion C and Gaussian D=I from the strict
 crossing factorization, and the original averaged first-cut
 functional Phi with pivotal entries (-i,i). Keep its common
 Cartan scalar and external line separately, unchanged.
@@ -184,17 +184,7 @@ rational factors. The tensor prescription retains the required
 corner subtractions. It preserves the source, while still not
 making its resulting scalar a positive quadratic pairing.
 
-The completed [regularized cut theorem](cyclic_sewing_regularized_cut_cycle.md)
-passes this independent proof review. In particular its derivative
-identity has the positive factor 1/[u...(u+p-1)] for p=1,2.
-At every integration-by-parts step the boundary term at infinity
-is O(x^(-(N-1)/2)), and its zero-end finite constant vanishes
-because u is nonintegral. The final derivative integral converges
-at both ends. Its whole-word tensor prescription follows from the
-finite sum of products of one-variable factors, with only coordinate
-pole loci. The unit-circle/completeness scope excludes new poles
-in the interior of a radial cut. No additional boundary term was
-found, and the theorem explicitly leaves geometric coupling open.
+The [regularized cut theorem](cyclic_sewing_regularized_cut_cycle.md) has positive derivative factor 1/[u...(u+p-1)] for p=1,2. At every integration-by-parts step the boundary term at infinity is O(x^(-(N-1)/2)), and the zero-end finite constant vanishes because u is nonintegral. The final derivative integral converges at both ends. The whole-word tensor prescription is a finite sum of products of one-variable factors, with only coordinate pole loci. The unit-circle/completeness hypothesis excludes additional poles inside a radial cut. Geometric coupling remains separate.
 
 [Exact and quantitative audit](../experiments/audit_two_head_cyclic_sewing_independent.py)
 and [saved results](../experiments/two_head_cyclic_sewing_independent_results.json).

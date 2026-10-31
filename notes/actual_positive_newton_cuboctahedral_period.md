@@ -28,7 +28,7 @@ Newton theorem. That theorem gives
                                     b_i b_j mu_(i,j,k),
     W_N=sum_(k=0)^d a_k a_(d-k).                    (2)
 
-The last equation is the ORIGINAL full Frobenius pairing, not a
+The last equation is the original full Frobenius pairing, not a
 value-only trace. Every a_k is strictly positive. Its summation labels
 can be written (i,j,u,v,k), with the first pair producing k and the
 second producing d-k. There are only polynomially many such labels.

@@ -1,6 +1,6 @@
 # Original crossing layers: a punctured Casimir norm torus and its parabolic limit
 
-30 October 2026. Independently reviewed and frozen. This is derived from the ACTUAL
+30 October 2026. This is derived from the ACTUAL
 homogeneous root crossing kernel and its coefficient composition.
 It solves the local classical transport for every integer power.
 It does not prove a selected finite-cycle contribution, a kernel norm
@@ -107,7 +107,7 @@ by (6). A cancelled pair can have a nonisolated middle critical
 variable; the finite identity is (1), not a claim about a Gaussian
 saddle of that identity kernel.
 
-## 3. The invariant is the principal ORIGINAL Casimir
+## 3. The invariant is the principal original Casimir
 
 The original face operator T has principal symbol
 
@@ -341,10 +341,4 @@ DERIVATIVE assertion is the analytical node-and-derivative proof in
 section5 and its existing source theorem; these 70 value checks are
 not advertised as an independent numerical derivative audit.
 
-Root full analytical and audit-code review: PASS. Independent full
-analytical/code review and fresh redirected exact replay: PASS,
-including inverse conventions, positive companion chart, norm
-trivialization, punctures, Darboux factor and both endpoint schemes.
-The public promotion changes only paths, formatting and explanatory
-scope; its author replay also passes. No quantum norm, selected
-finite-cycle contribution or long-filled volume estimate is inferred.
+The crossing-Casimir torsor does not determine a quantum norm, a selected finite-cycle contribution or a long-filled volume estimate.

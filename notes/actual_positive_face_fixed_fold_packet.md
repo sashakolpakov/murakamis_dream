@@ -1,6 +1,6 @@
 # The actual face factor on a fixed real fold interval
 
-30 October 2026. Independently reviewed. An analytic first
+30 October 2026. An analytic first
 continuant correction improves the folded relative estimate to O(N^-1)
 on a FIXED real interval. The action and displayed amplitude extend
 holomorphically across the fold. This does not by itself continue the
@@ -381,13 +381,4 @@ determinant. The maximum original-source relative error is below
 with maximum N times relative error below .055; they do not prove an
 actual complex degree continuation.
 
-Two independent full analytical reviews: PASS. The readers checked
-the analytic residual divisibility, original real contraction,
-midpoint action and amplitude, literal large-source reflection,
-localized tensor system, both fold bridges and finite endpoints,
-Fourier ordering and retained gauge, and the full characteristic
-factor u^8D^3. Independent full code read and fresh redirected
-90-digit replay: PASS, reproducing every recorded count and exact
-maximum error. The bounded shift order and the distinction from a
-generic-q AJ operator are explicit. No actual complex-color packet
-or ordinary-color alias gap is inferred.
+The shift order is bounded, and the operator is distinct from a generic-q AJ operator. No complex-color packet or ordinary-color alias gap is inferred.

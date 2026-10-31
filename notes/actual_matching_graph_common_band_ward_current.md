@@ -1,6 +1,6 @@
 # A common head chart for the original charged Ward currents
 
-30 October 2026. Independently reviewed. This makes the off-diagonal Ward construction
+30 October 2026. This makes the off-diagonal Ward construction
 on a specified tensor source explicit before its finite head sums.
 The charge-zero and neighboring charge-one bands use one primitive
 head lattice. Cutting a spanning tree reduces the proof to the
@@ -242,7 +242,7 @@ arrow there.
 
 ## 5. Original period chains, endpoints and the remaining global step
 
-For every charged band keep its ORIGINAL support polytope in (3)
+For every charged band keep its original support polytope in (3)
 and its ordered product-cotangent tori Gamma_delta. These supports
 are different at neighboring bands and at adjacent a,l. A constant
 forbidden polar stratum remains its original zero state. When a
@@ -274,7 +274,7 @@ Pairing the first head with beta_a requires only its exact finite
 sum; no new meromorphic interpolation of beta is used. The first-head
 and second-head ends of a selected finite window remain the interval
 terms in that theorem. The individual meromorphic continuations of
-an outside-head term are not set to zero; its ORIGINAL source cycle
+an outside-head term are not set to zero; its original source cycle
 is empty, and transport out of that source domain is accounted for
 by these chain differences.
 
@@ -300,12 +300,4 @@ untruncated endpoint-normal defects. These checks do not establish
 equality of the different charged support cycles or a geometric-cycle
 coefficient.
 
-Independent validation: the primary and coherent-source readers fully
-checked the typed incidence equations, disconnected component criterion,
-tree covariance and reclosure currents, boundary signs, complete generic
-source coefficients, and separation of interior identities from physical
-support cycles. The coherent-source reader freshly replayed the focused
-audit and independently rederived the E current (8a). The geometry reader
-checked the primitive charge chart, routed-graph connectedness requirement
-and endpoint/divisor scope. No equality of charged cycles or nonzero
-geometric-period coefficient is included in these reviews.
+The reduction requires the routed graph to be connected, the primitive chart to be fixed, and the endpoint divisors to be retained. It does not identify the charged cycles or a geometric period.

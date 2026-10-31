@@ -86,8 +86,8 @@ This distinction is essential and is retained.
 
 Since \(\pi_0G=\pi_0\), transforming the actual source pair gives
 \[
- \psi_{\rm new}=D_{\rm head}e^{-u/d}\psi,\qquad
- \phi_{\rm new}=\phi D_{\rm head}^{-1}\pi_0.
+ \psi_{\mathrm{new}}=D_{\mathrm{head}}e^{-u/d}\psi,\qquad
+ \phi_{\mathrm{new}}=\phi D_{\mathrm{head}}^{-1}\pi_0.
 \]
 Their pairing is one. The corresponding coupon has
 entries \(\eta^{i-j}e^{-u/d}/N\) followed by evaluation at zero.
@@ -105,8 +105,8 @@ source regularity from unchanged vacuum normalization.
 Conjugation preserves the literal identity \(g=K^{1-N}\).
 The regular root clock therefore selects
 \[
- g_{\rm lit}=U g_{\rm red},\qquad
- g_{\rm red}=x^{1-N}A^{-1}.
+ g_{\mathrm{lit}}=U g_{\mathrm{red}},\qquad
+ g_{\mathrm{red}}=x^{1-N}A^{-1}.
 \]
 The paired inverse defect has the opposite \(U^{-1}\)
 factor. This agrees with the revised Mellin source adapters

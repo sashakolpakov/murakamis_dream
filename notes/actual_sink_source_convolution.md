@@ -1,12 +1,12 @@
 # Exact sink convolution and a growing actual trivalent source
 
-28 October 2026. The ORIGINAL trivalent sink source has a finite
+28 October 2026. The original trivalent sink source has a finite
 q-binomial polynomial, an explicit inhomogeneous central current,
 and an exact balanced-residue/Barnes decomposition. The balanced
 source has an exact POSITIVE norm ratio. This removes phase
 cancellation from its magnitude, including geometric root lifts.
 On a nonempty open boundary chamber its marked geometric rate
-strictly exceeds the retained current rate, so the ORIGINAL sink
+strictly exceeds the retained current rate, so the original sink
 has that growing rate with a nonzero coefficient.
 
 This is a local source theorem, for a literal original sink. No
@@ -33,7 +33,7 @@ Put Q=exp(2pi*i/N), d=N-1, F_a=(Q;Q)_a, and
 These are respectively the Psi_+ and Psi_- coefficients below
 order N. At the original sink its U-diagonal, V-transfer and
 positive-factorial orders satisfy h_0+h_4+h_2=d. Reflect the last
-order: a=d-h_2=h_0+h_4. The ORIGINAL coefficients are then
+order: a=d-h_2=h_0+h_4. The original coefficients are then
 
     F_a * (1/F_(h_0)) * p_(h_4).
 
@@ -128,7 +128,7 @@ Use compatible logs in the chamber
     0<gamma=Arg(v/u)<pi,
     Log v=Log u+Log(v/u).
 
-Write h=2pi*i/N, c=Log(v/u) and use the ORIGINAL full function
+Write h=2pi*i/N, c=Log(v/u) and use the original full function
 
     g(a)=exp(a Log u) Psi_+(c)/Psi_+(c+ha).                  (8)
 
@@ -289,7 +289,7 @@ is the imaginary part, divided by 2pi, of
 
 It cannot be discarded as a central factor with limit one.
 
-## 5. An open local class where the ORIGINAL sink grows geometrically
+## 5. An open local class where the original sink grows geometrically
 
 Let delta_norm=max(0,log|v|). Equation (4) gives
 |D_N|<=C exp(N delta_norm) on the present rho<1 chamber.
@@ -302,7 +302,7 @@ Equations (13), (15), and (18) then prove
     B_N(u,v)=R_N(u,v)[1+O(N^C exp(-N eta))],
     log|B_N(u,v)|=N Lambda(u,v)+O(log N).                  (21)
 
-This is noncancellation of the ORIGINAL local source. Its
+This is noncancellation of the original local source. Its
 balanced contribution has coefficient exactly one, and its
 remaining original current is exponentially smaller under
 the stated checked inequality. No complex phase of the

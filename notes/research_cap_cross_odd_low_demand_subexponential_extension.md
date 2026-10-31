@@ -1,10 +1,6 @@
 # Odd raw source: the same low-demand recurrence and contour bound
 
-31 October 2026. Internally reviewed analytical parity extension. Root and coherent
-completed full independent internal source/proof reviews. This is not
-external peer review. The even theorem is preserved separately. The regularized odd coupon is used only for the positive
-endpoint comparator. The signed numerator remains the original raw pair
-\(V_N(-2),V_N(2)\).
+31 October 2026. The even theorem is recorded separately. The regularized odd coupon is used only in the positive endpoint comparator; the signed numerator remains the raw pair \(V_N(-2),V_N(2)\).
 
 ## 1. Original odd supports and an all-parity Newton identity
 
@@ -73,7 +69,7 @@ The bidiagonal resolvent equation and literal row reflection yield
 \]
 Here \(B_nB_{d-n}=N^2\), and the reflected unused product is exactly
 the last product. This forcing is nonzero for \(n\le M\).
-Therefore the ORIGINAL raw odd coefficient obeys
+Therefore the original raw odd coefficient obeys
 \[
  R_n=\frac{\gamma_n S_{N,n}}{4C_{0,n}},\qquad
  R_0=1,\quad R_n=1-t_nR_{n-1},\quad
@@ -149,7 +145,7 @@ support, spectral pair, and all original face demands stay raw.
 
 ## Validation and open scope
 
-A private exact-field specialization of the reviewed physical
+A private exact-field specialization of the physical
 three-port audit checked \(N=3,5,7,9\): 24 original physical scalars,
 24 full auxiliary recurrences, 10 explicit low-cutoff identifications,
 and 24 Newton resolvent entries. It uses the literal tail product
@@ -159,7 +155,4 @@ These checks support only the parity/source dictionary, not the
 analytic estimate (9).
 
 No polynomial full-low estimate, nearby-spectral bound, or projected
-middle-demand conclusion is inferred. Root and coherent independently checked the full raw parity/source
-identity, the unchanged analytic contour argument, and the actual
-regularized comparator. Root also completed a fresh exact-field
-replay with the same counts; the portable replay matches it exactly.
+middle-demand conclusion is inferred.

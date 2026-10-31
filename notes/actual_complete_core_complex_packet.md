@@ -1,6 +1,6 @@
 # A fixed complex external-color packet for the original complete core
 
-30 October 2026. Independently reviewed and frozen. This note assembles the
+30 October 2026. This note assembles the
 exponentially accurate local interpolation into the actual shared-face
 period. The theorem applies to each fixed certified augmented plat at
 arbitrary fixed bridge width. Its object is the exact complete-image term
@@ -317,21 +317,6 @@ fixed diagram; the twist numbers are fixed before N tends to infinity.
 
 ## Verification scope
 
-The argument uses the independently checked original coefficient,
-signed-source, exact-reflection, and exponential-interpolation theorems.
-Primary and two independent full analytical reviews: PASS. The reviews
-include the fixed bulk angular gap, all mixed cotangent contours and
-their boundary terms, both parity anchors, the original normalization,
-uniform complex nonvanishing, and holomorphic action convergence.
+The argument uses the coefficient, signed-source, exact-reflection and exponential-interpolation theorems, with the original normalization and both parity anchors.
 
-The [focused audit](../experiments/audit_actual_complete_core_complex_packet.py)
-and [saved results](../experiments/actual_complete_core_complex_packet_results.json)
-check 10 literal original W/pi sources with off-grid external clocks,
-24 shared K4 complex cores and exact face coefficients, 768 retained
-reflection entries, 20 cotangent basis identities and two full
-two-register contour identities, and 36 original fixed-window matrix
-gap samples. Independent full code review and fresh 75-digit replay:
-PASS. Finite complex-value and nonzero samples are diagnostics; the
-uniform estimates are established by the written proof. These checks
-make no claim about the remaining marked-geometric or mixed-source
-steps in the knot theorem.
+The [focused audit](../experiments/audit_actual_complete_core_complex_packet.py) and [saved results](../experiments/actual_complete_core_complex_packet_results.json) check 10 literal original W/pi sources with off-grid external clocks, 24 shared K4 complex cores and exact face coefficients, 768 retained reflection entries, 20 cotangent basis identities and two full two-register contour identities, and 36 original fixed-window matrix gap samples. Finite complex values and nonzero samples are diagnostics. The written proof supplies the uniform estimates; these checks do not settle the remaining marked-geometric or mixed-source steps.

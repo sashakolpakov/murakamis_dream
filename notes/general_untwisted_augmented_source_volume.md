@@ -1,6 +1,6 @@
 # Volume equality for the original untwisted augmented source
 
-30 October 2026. Independently reviewed. This theorem
+30 October 2026. This theorem
 concerns the original complete-circle source of every fixed connected
 augmented plat carrying the stated labeled right-angled geometric
 certificate, with NO retained half twists. Its bridge width and matching
@@ -29,7 +29,7 @@ not merely the existence of an unlabeled polyhedron or a positive
 triangulation of unspecified topology. There is no restriction on R,
 bridge width, a Conway grammar, or an octahedral decomposition.
 
-Let A_(D,N) be the ORIGINAL marked complete-circle root source of
+Let A_(D,N) be the original marked complete-circle root source of
 [the full matching-graph identity](general_matching_graph_full_normal_source.md),
 with epsilon_i=0 at every box. Write chi_(D,N) for its separately
 specified exterior framing factor (one when absent); it has modulus1
@@ -143,6 +143,6 @@ examples, estimated limiting graph values, or unverified literature
 proof replaces any of these steps. No novelty or literature-coverage
 claim is made by this note.
 
-Independent source and geometry reviews of the complete theorem and its dependency chain: PASS. The primary reader checked every dependency and freshly replayed its focused audit. The reviewers confirmed the N^R measure, retained common exterior phase, all-label upper bound, positive central-sector lower bound, both folded parities and absolute 2Vol(Q) normalization. This is the stated complete untwisted augmented-link theorem; the general signed long-filled knot conjecture remains open.
+The result is the stated complete untwisted augmented-link theorem. It does not settle the general signed long-filled knot conjecture.
 
 The [primary-statement coverage comparison](general_untwisted_augmented_source_literature_coverage.md) records prior overlapping families and root conventions. In particular, the parallel-belt examples with even-level zeros fail the required nondegenerate cut certificate; the exact coefficient formula reproduces their zeros. No external proof or priority claim is used.

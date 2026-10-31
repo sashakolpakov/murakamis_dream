@@ -30,7 +30,7 @@ highest chart, are
 \]
 
 All off-diagonal coefficients in (1) are nonzero. Put c*=q+q^(-1).
-The ORIGINAL cup and ordinary cap are
+The original cup and ordinary cap are
 
 \[
  p_j=Nx^{j-d},\qquad \ell_j=x^{-j}Q^{-j}/N=x^j/N.
@@ -95,7 +95,7 @@ including the exceptional N=2 case.
 In the original positive physical norm,
 
 \[
- \|\Xi_0(A)\|_{\rm op}=N|\rho|^2\leq4\pi^2/N.                \tag{5}
+ \|\Xi_0(A)\|_{\mathrm{op}}=N|\rho|^2\leq4\pi^2/N.                \tag{5}
 \]
 
 Indeed ||p||^2=N^3 and ||ell||^2=1/N. This rank-one normal source
@@ -282,7 +282,7 @@ For any polynomial f of degree<d, (14) also gives the elementary
 operator-norm separation
 
 \[
- \|R_{23}-f(B)\|_{\rm op}\geq1/N,                            \tag{15}
+ \|R_{23}-f(B)\|_{\mathrm{op}}\geq1/N,                            \tag{15}
 \]
 
 since the original source has dual product ||ell|| ||p||=N.
@@ -328,7 +328,7 @@ all-level filtrations and source values, and the literal full-Cartan
 crossing coefficient. It does not infer a geometric norm from algebra
 dimension or from a finite numerical rank fit.
 
-Fresh replay: PASS twelve literal coproduct/source modules at
+The finite audit checks twelve literal coproduct/source modules at
 N=2,...,12,14, every rank-one observable generator and strict
 source flag, the retained normal between two actual crossings,
 and actual-braid recovery at the tested prime levels.

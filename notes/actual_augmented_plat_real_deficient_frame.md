@@ -1,6 +1,6 @@
 # A global selected frame with one real deficient degree
 
-30 October 2026. Independently reviewed. For every chosen matching
+30 October 2026. For every chosen matching
 edge of an actual certified right-angled augmented plat, there is a
 common algebraic frame whose two support failures occur precisely at
 that edge. Their normalized total is the REAL number sigma=1/6,
@@ -79,7 +79,7 @@ strictly inside BOTH actual input/output prefix triangles. These
 are exactly the strict failed-triangle tests, with no boundary limit
 taken in the final frame.
 
-Their canonical physical wire sums are 2-sigma, so the ORIGINAL
+Their canonical physical wire sums are 2-sigma, so the original
 high adapter gives the EXACT normalized complex degree sigma, with
 zero imaginary part. Write its two normalized magnetic rows as r_in,
 r_out. The actual high coordinates are
@@ -197,7 +197,7 @@ For W(z)=1-2C0 z, equations (8) give perfect squares
 Take sqrt W positive at negative real z and continue through the
 upper or lower half-plane, respectively. Its values are
 -iC0(L+2ir) at the input and +iC0(L+2i(r-H)) at the output.
-Substitution of (9) in the ORIGINAL magnetic momentum formula
+Substitution of (9) in the original magnetic momentum formula
 Y=(1-U)(TZ+U)/[-(U-Z)(T-U)], T=exp(2pi i sigma), yields exactly
 
     Y_geo(z)=(z-i sqrt W(z))^2/[1-2C0 z+z^2].       (11)
@@ -239,17 +239,4 @@ and thirty-six geometric characteristic comparisons. The global convex
 cut and avoidance arguments are the proofs in sections 1--3, not claims
 inferred from sampled polyhedra.
 
-Primary-agent full analytical review: PASS. The reader checked the
-actual prefix/cusp normalization, bounded outward disks, fixed-degree
-construction, strict two-facet localization, every stated regular-chart
-exclusion, algebraic frame choice and exact branch signs. The reader
-independently substituted both internal roots in the original magnetic
-momentum formula and obtained (11).
-
-Independent full analytical review and fresh redirected replay: PASS.
-A second reader checked the fixed-d circle argument and finite divisor
-list, both row asymptotics, and the output C^-1 normalization, and also
-independently verified both rational branch identities. Its fresh audit
-reproduced all fourteen identities, eighteen disk frames and thirty-six
-characteristic comparisons. Neither review supplies a finite
-second-chamber packet or a nonzero global period.
+The real deficient-frame construction does not supply a finite second-chamber packet or a nonzero global period.

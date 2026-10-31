@@ -36,7 +36,7 @@ The full scalar is fixed, for ANY old-grid reference pair, by
     c_sigma=M_sigma(Zout*,Zin*)
                       /[Pout(Zout*)Pin(Zin*)].      (3)
 
-Here M_sigma is the ORIGINAL exact balanced Fourier entry, including
+Here M_sigma is the original exact balanced Fourier entry, including
 kappa, the actual Gaussian, every affine logarithmic mark and all
 central factors. It is not an unknown knot period. Every denominator
 in (3) is nonzero on the regular old grids. Crucially c_sigma depends
@@ -84,7 +84,7 @@ In fact the scalar (3) is elementary for EVERY signed role:
     c_(-,over) =kappa^(-1)/N (-1)^h Q^(-h(h+1)/2) z7^h,
     c_(-,under)=kappa^(-1)/N (-1)^h Q^(-h(h+1)/2) z1^(-h). (4a)
 
-These include the ORIGINAL full Cartan scalar. Here is a derivation
+These include the original full Cartan scalar. Here is a derivation
 from the physical matrix, independent of an asymptotic full-function
 normalizer. The original positive coefficient, for input (a,b),
 output (a+b-j,j), is
@@ -250,7 +250,7 @@ in the opposite order. This is a separate conditional statement.
 ## 4. Simultaneous whole-source overbridge unwinding
 
 Take ANY signed braid network in the regular propagated frames,
-with the ORIGINAL endpoint source. Include every specified cup,
+with the original endpoint source. Include every specified cup,
 ordinary cap, FULL marked cap, pivot and external scalar exactly.
 At an existing source coupon stop a bridge; this does not remove or
 replace the coupon. A pure pivotal continuation could instead be
@@ -312,7 +312,7 @@ are still required for a volume limit.
 
 The audit checks every complementary clock pair at several primitive
 roots and arbitrary parameters, all four signed port tables against
-ORIGINAL physical crossing matrices, arbitrary-length mixed-sign
+original physical crossing matrices, arbitrary-length mixed-sign
 bridge contractions, and simultaneous whole signed-word elimination
-with the ORIGINAL full cup/cap/marked source. No replacement invariant
+with the original full cup/cap/marked source. No replacement invariant
 or arbitrary boundary vector is used for the whole-source tests.

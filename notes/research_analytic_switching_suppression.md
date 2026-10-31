@@ -1,7 +1,6 @@
 # Exponential suppression of an analytic discrete switch
 
-31 October 2026. Root derivation and a separate agent's full analytical
-review PASS. This is internal review, not external peer review.
+31 October 2026.
 This is a finite difference normal-form theorem with an explicit error.
 It does not identify one eigenbranch as the growth rate of a general
 slowly varying recurrence. Its application to the original middle-row

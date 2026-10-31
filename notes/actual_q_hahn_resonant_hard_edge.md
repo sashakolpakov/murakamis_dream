@@ -1,6 +1,6 @@
 # The original q-Hahn source at a resonant framing boundary
 
-30 October 2026. Independently reviewed. The actual prefix words
+30 October 2026. The actual prefix words
 give an explicit degeneration of the original white arguments when the
 residual framing parameter tends to infinity. One of its large-clock
 regimes has a uniform, source-normalized Bessel limit. The numerator is
@@ -57,7 +57,7 @@ If X_i=exp(2pi i x_i) with the recorded logarithmic lift, set
 
 This prescription applies to the PHYSICAL V_d heads. It gives every
 physical cup/cap i_1+i_2=N-1 and q_N^(d-2i_i)=-1/X_i. At a white
-vertex define the channel row by its ORIGINAL equation
+vertex define the channel row by its original equation
 r0=i_1+i_2-(d-a), with the actual discrete a retained. An auxiliary
 V_(2a) head is not assigned the same universal -1/2 offset. Its finite
 color is equivalently (a+1/2)/N. Thus degree constraints remain exact,
@@ -427,15 +427,4 @@ It checks 9 exact geometric identities, all 8 incidence patterns,
 identities and 24 complex relative 202 packets. These are focused checks
 of the proof, not a global-period experiment.
 
-Primary-agent full analytical review and fresh audit: PASS. The reviewer
-checked the exact endpoints, complete coefficient normalization and tail
-bounds, physical/channel offset distinction, both Bessel models, and the
-relative 202 shift expansion with forced partner roots retained.
-
-Independent full analytical review and fresh redirected audit: PASS.
-The reviewer rederived the original large-H coefficient phases, both
-endpoint models, all-l domination, the two finite correction expansions,
-and the actual geometric 200/002 calibrations. A further targeted review
-and independent symbolic check passed the literal first-slot RA202
-positive-ray certificate. No generic-normal or global-cycle claim was
-inferred from these root-value results.
+The root-value results do not imply a generic-normal or global-cycle statement.

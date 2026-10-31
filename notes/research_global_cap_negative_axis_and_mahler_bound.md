@@ -1,6 +1,6 @@
 # The original one-cap coefficient reduces to two negative-axis suprema
 
-31 October 2026. **Internally reviewed exact-source and analytic reduction.**
+31 October 2026. **exact-source and analytic reduction.**
 Unpublished. The original
 diagram, mark, and every ordinary degree target remain fixed. All noncap
 coupons are at their actual CROSS endpoint sigma=-2; the cap is at +2.
@@ -49,7 +49,7 @@ has been assigned independently to a face occurrence.
 
 ## 2. Complete the finite cap sum, with a strictly smaller omitted tail
 
-Let R(s) be the ORIGINAL residual complete-triangle capacity with
+Let R(s) be the original residual complete-triangle capacity with
 A load s, C load 1-s, all other ordinary loads one, and the two original
 protected loads zero. It is upper semicontinuous on its compact feasible
 interval, with value minus infinity when the fiber is empty. The same
@@ -216,7 +216,7 @@ Such abstract examples are NOT asserted to arise from an original
 stationary triangulated exterior. The original R(s), genuine circle
 packing and fixed exterior targets are additional necessary data.
 
-For a strict one-cap stationary exterior, the reviewed original-chain
+For a strict one-cap stationary exterior, the original-chain
 theorem supplies M_cap-Phi_D<=W(nu)/pi-g/(2pi). A sufficient next
 statement is a bound on both actual quantities in (15) that pays the
 actual positive normalization's excess over Phi_D; the whole-star
@@ -354,16 +354,7 @@ and [positive physical pencils](actual_q_hahn_boundary_model_curvature.md)
 give (13). The [original one-cap chain budget](research_one_cap_original_chain_volume_budget.md)
 provides the geometric sufficient comparison discussed after (19).
 
-Root and a separate source reviewer completed full independent internal
-analytical/source reviews of sections 1–6: PASS. They checked the original
-exterior extraction and both parity cutoffs, the strict omitted-tail
-gap, the finite final-moment split, genuine odd stability, the Mahler
-and variance bounds, and the root-count sufficient criterion. The
-dual wording precision is included: common weights give the same
-upper bound for every s and attain it at nu. These are internal proof
-reviews, not external peer review. Preservation changes mathematical
-formatting and relative links; root parameters are renamed lambda to
-distinguish them from the actual coefficients p_(N,j).
+Common weights give the same upper bound for every boundary split and attain it at the stationary split $\nu$. This is a sufficient criterion, not a universal absolute-volume comparison.
 
 This supplies no near-spectrum extension and no complete fixed-plat or
 filled-period theorem. No numerical scan or source lower asymptotic is

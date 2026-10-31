@@ -1,6 +1,6 @@
 # Alternating generator signs do not make the charged-flow maximum a real saddle
 
-28 October 2026. This is an exact obstruction in the ORIGINAL enhanced
+28 October 2026. This is an exact obstruction in the original enhanced
 Kashaev source. It applies at arbitrary braid width. It concerns a real
 charged-flow approach, not the existence of a selected complex geometric
 cycle or the volume conjecture itself.
@@ -159,7 +159,7 @@ period. Concavity remains useful after that transport; it does not
 perform the transport.
 
 The [audit](../experiments/audit_alternating_braid_real_phase_obstruction.py)
-checks (3) against the independently implemented ORIGINAL crossing and
+checks (3) against the independently implemented original crossing and
 actual inverse over finite fields, verifies its complex sine phase, and
 checks the full symbolic phase and entropy critical point. These tests
 supplement the uniform proof above.

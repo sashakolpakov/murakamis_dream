@@ -9,7 +9,7 @@ The source object being compared is the exact period in
 
 \[
  q_*=e^{\pi i/N},\quad \zeta(t)=q_*e^t,\qquad
- Z_\Gamma={C_\Gamma\over\nu_N}
+ Z_\Gamma=\frac{C_\Gamma}{\nu_N}
        \left.(S_\Gamma\Xi_\Gamma)'\right|_{t=0}.
 \]
 
@@ -72,7 +72,7 @@ each unzip must receive at least that many augmentation rings. At
 \(A=e^{\pi i/(2N)}\), the normalized invariant is
 \(\phi_N^{\theta}N^r\mathrm{sixj}_N^{t+1}\) for odd \(N\), and zero for
 even \(N\), where \(t\) counts triangle moves, \(r\) rings, and
-\(\mathrm{sixj}_N=\sum_{k=0}^{(N-1)/2}[{(N-1)/2\atop k}]^4\).
+\(\mathrm{sixj}_N=\sum_{k=0}^{(N-1)/2}\left[\begin{matrix}(N-1)/2\\ k\end{matrix}\right]^4\).
 Its outside has volume \((2t+2)v_8\). Normalization divides by the bracket
 of the \(s\)-fold unlink for **split components**, not all link components.
 Thus this is substantial augmented-graph/odd-\(N\) coverage, with an exact

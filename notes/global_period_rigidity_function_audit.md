@@ -39,7 +39,7 @@ has no hidden local rational-coefficient freedom.
 The regularity condition matters. On a punctured neighborhood of
 \(Q=1\), choose the local logarithm and put
 \[
- U(Q)=\exp\!\left(\frac{4\pi^2}{\Log Q}\right).
+ U(Q)=\exp\!\left(\frac{4\pi^2}{\operatorname{Log} Q}\right).
 \]
 It is a nonzero holomorphic unit there and \(U(Q_N)=1\) for all large
 \(N\), but \(U\ne1\). It has exponential growth of order \(1/|Q-1|\).

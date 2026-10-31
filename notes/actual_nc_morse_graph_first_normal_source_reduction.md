@@ -160,7 +160,7 @@ The h0_j and G_j can have factorial exponential growth. They have
 not been declared polynomial or suppressed. A single gamma_j occurs
 per edge, because that edge meets exactly one white vertex.
 
-Let F_Gamma(t) be the ordinary closed ORIGINAL physical graph with
+Let F_Gamma(t) be the ordinary closed original physical graph with
 the regular lifted coupons (1),(4), and with an ordinary cap also at
 the eventually marked arc. Genuine local duality gives
 
@@ -323,18 +323,4 @@ its closed complete-circle source value is now annihilated by the
 separate physical support theorem. No off-complete auxiliary-color
 or arbitrary open-current cancellation is inferred.
 
-Internal review history: the initial review and positive tests missed
-the exposed-versus-nested bare-mark distinction. The additional test
-in section4a found it. The pointing hypothesis and the dipole fixture
-have been corrected explicitly; all local source/jet formulas remain
-unchanged. The corrected audit passes five local jet families, sixteen
-exposed original source cases and the inner-mark rejection. These are
-internal checks, not an external peer review or a geometric
-identification of the network.
-
-The corrected exposed statements and the additional whole-source
-six-port pruning were subsequently checked independently by root and
-the global audit agent. The latter also freshly replayed the typed
-sewing/pruning regressions, including its negative nested-cut case.
-The original mark-scope correction is retained above rather than
-being hidden by that later review.
+The exposed bare mark and a nested bare mark have different contraction laws. The pointing hypothesis and the dipole correction are required; no network geometry follows from the finite source identity.

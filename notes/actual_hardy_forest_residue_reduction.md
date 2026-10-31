@@ -4,7 +4,7 @@
 [the continuous-Gaussian cyclic period](actual_continuous_gaussian_cyclic_network.md)
 admit a simultaneous ordinary-residue reduction. The surviving
 cycle is specified explicitly. Every other annulus component is
-retained first and then proved zero against the ORIGINAL source
+retained first and then proved zero against the original source
 by a one-way negative-index barrier.
 
 The normal residue coefficient is exactly $+1$. This is the
@@ -27,7 +27,7 @@ Every Hardy factor connects consecutive variables of ONE
 head in word time:
 
 $$
- K_e=\frac1{1-g_e z_{\rm out}/z_{\rm in}}.
+ K_e=\frac1{1-g_e z_{\mathrm{out}}/z_{\mathrm{in}}}.
 $$
 
 Here $g_e=1$, except at an actual Gaussian dilation where
@@ -41,7 +41,7 @@ segments.
 Choose one terminal variable per segment and set
 
 $$
- u_e=\frac{z_{\rm in}}{g_ez_{\rm out}}.                \tag{1}
+ u_e=\frac{z_{\mathrm{in}}}{g_ez_{\mathrm{out}}}.                \tag{1}
 $$
 
 The logarithmic incidence matrix is triangular/unimodular.
@@ -65,7 +65,7 @@ substituted source and cyclic arguments.
 The pole graph sets $u_e=1$:
 
 $$
- z_{\rm in}=g_ez_{\rm out}.                          \tag{3}
+ z_{\mathrm{in}}=g_ez_{\mathrm{out}}.                          \tag{3}
 $$
 
 After imposing it, retain one complex variable per
@@ -141,7 +141,7 @@ its phase, is imposed; (4)--(5) give its radii.
 All logarithms of the chosen radii satisfy
 
 $$
- |\log r_j|\le C_{\rm word}
+ |\log r_j|\le C_{\mathrm{word}}
                   \left(1+\sum_\ell|\xi_\ell|\right). \tag{6}
 $$
 
@@ -202,14 +202,14 @@ circuits.
 Nothing is shrunk to zero or infinity. Any information
 inside an inner circuit, including possible distant
 branch divisors, is still represented by that circuit.
-The assertion below is that its ORIGINAL source
+The assertion below is that its original source
 pairing is zero, not that it is zero in unpointed
 twisted homology.
 
 On each inner circle,
 
 $$
- K_e=-\sum_{a<0}(g_ez_{\rm out}/z_{\rm in})^a.         \tag{8}
+ K_e=-\sum_{a<0}(g_ez_{\mathrm{out}}/z_{\mathrm{in}})^a.         \tag{8}
 $$
 
 It is precisely the negative-Laurent current at that
@@ -370,11 +370,11 @@ The reduced elementary phase relations give:
 $$
 \begin{array}{c|c}
 \text{kernel}&\text{canonical input/output relation}\\ \hline
-\mathcal U(z/w)& B_{\rm out}=B_{\rm in}=B,\quad
+\mathcal U(z/w)& B_{\mathrm{out}}=B_{\mathrm{in}}=B,\quad
                     z=w(1-B)\\
 N(z/w)^d\mathcal V(Qw/z)&
- B_{\rm out}=B_{\rm in}=B,\quad z=w/(1-B)\\
-\text{Gaussian}& B_{\rm out}=B_{\rm in}=B,\quad
+ B_{\mathrm{out}}=B_{\mathrm{in}}=B,\quad z=w/(1-B)\\
+\text{Gaussian}& B_{\mathrm{out}}=B_{\mathrm{in}}=B,\quad
                     w=c_sB^s z
 \end{array}                                                   \tag{10}
 $$

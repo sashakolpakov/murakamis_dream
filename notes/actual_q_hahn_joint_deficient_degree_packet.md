@@ -1,6 +1,6 @@
 # A joint complex packet in the deficient geometric chamber
 
-30 October 2026. Independently reviewed. The actual monic
+30 October 2026. The actual monic
 q-Hahn numerator has an N-independent joint complex-degree and
 magnetic corridor around the real deficient frame. Both its selected
 root amplitude and its genuine generic-q numerator derivatives are
@@ -19,7 +19,7 @@ Fix
 
 Put theta=pi/N, a/N=alpha in [alpha_0,1/2], with the actual integer
 channel 0<=a<=floor((N-1)/2). The degree t=N sigma may be complex.
-Use the ORIGINAL root monic numerator R_a(z;c) from the joint source
+Use the original root monic numerator R_a(z;c) from the joint source
 theorem, with
 
     c=-cos(pi(sigma+1/N)), C=-c,
@@ -312,7 +312,7 @@ neighborhood of the actual geometric frame. At a maximal folded
 channel the residual product remains empty or one factor as
 specified by the exact source, so both level parities are kept.
 
-The normal estimate (17) is for the ORIGINAL q-Hahn numerators.
+The normal estimate (17) is for the original q-Hahn numerators.
 The full exceptional generic operator still has its unspecialized
 boundary factors and requires its own lift; it cannot be obtained
 by varying q in the canceled root kernel. In particular, an actual
@@ -335,23 +335,6 @@ amplitudes and 72 genuine numerator checks pass. The finite matrix
 and asymptotic samples remain diagnostics; the uniform estimates
 are proved above.
 
-Primary-agent full analytical review: PASS. The reader checked the
-exact determinant, bounded tail correction through the folded
-endpoint, Schur inverse and logarithmic trace bounds, joint reflected
-anchor with its -2 offset, both finite-shift orders, genuine small
-numerator normal disk and the finite-X geometric coverage. The
-full generic operator and selected degree period remain open.
+The full generic operator and selected degree period remain open.
 
-Independent geometric and analytical review: PASS. A second reader
-checked the positive-tail argument, joint high anchor, marked
-geometric upper/lower branches and finite-X neighborhood, including
-the residual sine strip. The small/large generic partner distinction
-and the exact zero-slice limitation are retained.
-
-Independent source and analytic review with fresh audit replay: PASS.
-A third reader checked the original recurrence and both finite-shift
-orders, the exact joint reflected anchor, the determinant perturbation
-with bounded marked lifts, and all source-normalization limitations.
-Its redirected replay reproduced all 248/124 exact source/shift checks,
-72 determinant/Schur checks, 24 positive tails, 586 coefficient checks,
-12 literal anchors, 24 amplitudes and 72 genuine numerator checks.
+The small/large generic partner distinction and the exact zero-slice limitation are retained.

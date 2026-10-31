@@ -1,6 +1,6 @@
 # The original Gaussian resolvent has a positive numerator and a controlled closing cap
 
-31 October 2026. Independently reviewed. The exact original numerator has
+31 October 2026. The exact original numerator has
 a positive path expansion and a Fejer all-color formula, while the Gaussian
 resolvent has a subexponential closing cap at +2. No global contour selection,
 source asymptotic or generic-q continuation of the Gaussian is asserted.
@@ -145,7 +145,7 @@ original marked contraction preserve it linearly.
 
 For a set E of spectral ports, the contracted product of these signed
 numerators is consequently the exact finite sum over 1<=h_e<=N of
-the ORIGINAL external-color source, with weights 1 at h_e=N and
+the original external-color source, with weights 1 at h_e=N and
 2cosh((N-h_e)w_e) at h_e<N. Every retained crossing on a complementary
 port remains in its actual order. There is no free interpolation or
 new mark. At a V-only selected port the coupon is literally L_h, with
@@ -236,7 +236,7 @@ full-Hermite Fourier formula.
 
 ## 6. A precise remaining input
 
-A sufficient next theorem would control the ORIGINAL marked, shared-face
+A sufficient next theorem would control the original marked, shared-face
 resolvent numerator after sewing, uniformly on a specified spectral
 cycle and on the needed complex face torus. It must include the full
 V (or V and V'), not just positive complete samples, and prove:
@@ -259,7 +259,7 @@ The exact positive path theorem (2) is a concrete input,
 but (4) explains why replacing its shared coefficient by an unrestricted
 local norm would not complete the argument.
 
-## Validation and reviewed scope
+## Validation and scope
 
 The [focused original-source audit](../experiments/audit_actual_gaussian_resolvent_numerator_and_cap.py)
 and its [results](../experiments/actual_gaussian_resolvent_numerator_and_cap_results.json)
@@ -268,11 +268,4 @@ coproduct/physical-grid entries (including 1,000 wrong-unwrapped-total
 zeros), and 4,039 nonnegative path/complex majorant checks. They do not
 numerically establish any asymptotic or contour claim.
 
-Primary full analytical and audit-code review: PASS. Independent full
-analytical/code review and fresh redirected replay: PASS. The reviews
-checked the existing all-block endpoint estimates, Gaussian joining cap,
-full multiplicities in the path expansion, Fejer and parity identities,
-strictly positive-quartet rate comparison, source target normalization
-and charge signs. The joining radius was clarified to remain inside
-both the endpoint disk and an arbitrarily shrinking outer cap. The
-remaining bulk/shared-source requirements in Section 6 are not proved.
+The joining radius must remain inside both the endpoint disk and an arbitrarily shrinking outer cap. The remaining bulk/shared-source requirements in Section 6 are not proved.

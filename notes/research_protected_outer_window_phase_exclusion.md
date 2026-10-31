@@ -1,7 +1,6 @@
 # Regular-window phase exclusion with one protected outer face
 
-31 October 2026. **Internally reviewed research local theorem.** Root and
-a separate reader completed full analytical reviews.
+31 October 2026. **research local theorem.**
 This is the exact scalar-active extension of the
 [regular-window phase theorem](research_regular_spectral_window_phase_exclusion.md).
 It treats \(y=0\) and \(x,b,c\ne0\), with their moduli uniformly
@@ -222,6 +221,6 @@ No universal packing capacity, envelope margin or filled-volume theorem
 is inferred from this extension.
 
 The finite dictionary is an algebraic specialization of the already
-reviewed four-state and restricted-window identities, whose existing
+four-state and restricted-window identities, whose existing
 audits include a zero outer weight. The exponential estimate above is
 analytical; no additional finite-level test is claimed as its proof.

@@ -17,7 +17,7 @@ There is nevertheless an exact source polynomial that can be evaluated
 at that trace. The fully normalized original Racah scalar is a degree-a
 polynomial in the target Casimir, generically before specialization.
 Consequently the completed target operator is that polynomial of the
-ORIGINAL Casimir. This retains all its normal derivatives. Its scalar
+original Casimir. This retains all its normal derivatives. Its scalar
 evaluation below trace -2 is positive and has a direct variational limit.
 
 This is not yet an asymptotic for that operator in the surrounding
@@ -197,7 +197,7 @@ Both sides of (9) are symmetric in a,g, which covers a>g.
 
 ## 4. Exact completed-operator identity, with every normal retained
 
-Let Omega and Pi_g be the ORIGINAL generic two-head Casimir and its
+Let Omega and Pi_g be the original generic two-head Casimir and its
 generic projectors in the [completed target theorem](actual_matching_edge_completed_projector_block.md).
 Its scalar is `F_ag=G_ag D_g`. Equation (8) gives the operator identity
 
@@ -325,7 +325,7 @@ maximum would again pay the previously computed 10v3 boundary cost.
 
 Audit: [typed target, original polynomial, normal and scalar-rate checks](../experiments/audit_actual_matching_edge_geometric_target_polynomial.py).
 It passes exact symbolic nested-cup/prefix/primitive-collar identities,
-4,485 generic ORIGINAL seven-factorial comparisons, eleven original
+4,485 generic original seven-factorial comparisons, eleven original
 Casimir polynomial matrices (6,453 entries), 529 four-jet comparisons
 before specialization and 251 actual divided-normal comparisons with
 the spectral derivative. Twelve positive scalar evaluations at 80
@@ -333,24 +333,4 @@ digits check the stated variational normalization and selected mode.
 These checks supplement the displayed finite and asymptotic proofs;
 none tests or asserts a surrounding coherent operator asymptotic.
 
-Independent geometry-agent proof review and fresh redirected audit: PASS.
-The review independently checked the nested-cup basepaths and full lower
-Borel preservation, the actual middle target and primitive half-twist
-cancellation, the generic finite polynomial, retained normal, positive
-scalar terms and endpoint-uniform logarithmic error. It also checked
-that the strict-quarter obstruction concerns the measured primitive
-rectangles. The fresh replay reproduced every recorded count. No
-scalar-to-operator asymptotic was included in that verdict.
-
-Root full analytical review: PASS. The review separately checked the
-typed nesting and collar trace, both finite Sears transformations and
-their original prefactor and termination, the generic operator identity
-and retained normal, the positive root products and uniform endpoint
-Riemann estimate, and the unique scalar saddle.
-
-Independent coherent-source review and fresh redirected audit: PASS.
-The full proof read checked the actual lower Borel basing and target,
-the half-twist cancellation, generic source normalization through both
-finite transforms, the completed spectral polynomial and true divided
-normal, and the scalar action and generic-jet scope. Its fresh replay
-reproduced all recorded counts. The note and focused audit are frozen.
+The strict-quarter obstruction concerns the measured primitive rectangles. No scalar-to-operator asymptotic follows.

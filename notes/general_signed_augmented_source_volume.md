@@ -1,7 +1,7 @@
 # Volume equality for the original signed augmented source
 
-30 October 2026. Independently reviewed. This note proves a
-uniform relative folded-channel estimate from the ORIGINAL finite
+30 October 2026. This note proves a
+uniform relative folded-channel estimate from the original finite
 continuants, then sums the actual half-twist phases. It concerns a fixed
 connected certified right-angled augmented diagram, at arbitrary fixed
 bridge width, through both parities and all sufficiently large levels.
@@ -325,7 +325,7 @@ displayed Gaussian product is nonzero. This proves (4).
 ## 6. Scope and verification
 
 This closes cancellation of the retained half-twist phases for the
-ORIGINAL complete augmented source under the stated general geometric
+original complete augmented source under the stated general geometric
 certificate. It uses the exact marked compact-torus coefficient, not
 an assumed geometric intersection number or an independently normalized
 local thimble. The distinct external-color packet and its aliases
@@ -348,11 +348,4 @@ nondegenerate certificate hypothesis. Forty all-channel tetrahedral
 signed sums and 168 local folded packets are asymptotic diagnostics.
 The uniform estimates and noncancellation are proved above.
 
-Two independent full analytical reviews: PASS. The readers checked the
-literal source normalization and common half-twist phase, endpoint-safe
-continuant, uniform residual and contraction, shared-radius minimum and
-Hessian comparison, both exact channel lattices, signed Gaussian and
-both tail ranges. Independent full audit-code read and fresh redirected
-90-digit replay: PASS, reproducing every recorded count and maximum
-exact relative error below 1.2e-89. The conclusion is the stated complete
-signed augmented-link equality; external filling colors remain separate.
+The conclusion is the stated complete signed augmented-link equality; external filling colors remain separate.

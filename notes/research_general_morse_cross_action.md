@@ -257,25 +257,10 @@ full-packet restoration was used here.
 
 ## Verdict
 
-PASS for the general Morse extension of the CROSS geometric action,
-actual group sewing, primitive peripheral normalization and absolute
-regulator, and for H1/H2 under the retained certificate and original
-local analytic inputs.
-The source extension requires only replacing the fixed-width slice
-notation by its actual variable region sequence. No flat-forest source
-restoration, generic-q normal, or scalar word-regulator shortcut is used.
-Full-numerator restoration must be supplied by the new non-CROSS gap,
-not inferred from this audit.
-
+The extension retains the original positive certificate and local analytic hypotheses. It supplies the general Morse action and the two stated spectral estimates. Restoring the full source requires the new non-CROSS gap, rather than the earlier flat-forest argument.
 
 The unchanged local collar and global regulator inputs are the
 [primitive collar](actual_deformed_circle_primitive_collar.md),
 [complete-core group and regulator assembly](actual_complete_core_geometric_deformation.md),
 [marked gluing rigidity](general_marked_multicusp_gluing_rigidity.md), and
-[peripheral action boundary correction](complex_peripheral_action_and_conversion_bound.md).
-The source-realization theorem retains its full independent topology/source
-reviews. The coherent-source reviewer independently checked the complete
-H1/H2 dependency chain, including its fixed degree targets and allowed
-zero patterns. This note records the explicit dependency extension and
-does not assert a new finite audit, full-numerator restoration, or a
-global period bound for the full source.
+[peripheral action boundary correction](complex_peripheral_action_and_conversion_bound.md). This dependency extension does not assert full-numerator restoration or a global period bound for the full source.

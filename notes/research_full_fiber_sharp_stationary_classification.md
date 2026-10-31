@@ -1,11 +1,6 @@
 # Finite shared multipliers and the stationary branches after full-fiber activation
 
-31 October 2026. **Internally reviewed analytical research addendum.**
-Root and a separate reader completed full analytical reviews. This is a
-calculus theorem for the original sharp full-source upper functional. It
-uses the reviewed full-fiber boundary reduction and the original weighted
-cofactor primitives. It makes no local weighted-maximality, strong-duality,
-phase-compatibility, cap-geometry or volume-comparison assertion.
+The stationary classification gives neither separate weighted local maximality nor strong duality. Phase compatibility, cap geometry and volume comparison remain separate.
 
 ## 1. The original maximum and its remaining degrees
 
@@ -344,7 +339,7 @@ No lower coefficient asymptotic, finite-level relabeling, loss of an
 unused scalar, shared sign compatibility, geometric cap continuation,
 absolute bound by \(\Phi_D\), or filling-period conclusion is inferred.
 
-## Inputs and review scope
+## Inputs
 
 The source functional and both-parity closed-domain upper scope are in
 the [global closed-domain coefficient majorant](research_global_sharp_coefficient_limsup_majorant.md).
@@ -357,9 +352,3 @@ their use in the present full-fiber setting is shown in sections3--5.
 The present new points are applying smoothness to the entire reduced
 protected face, obtaining finite multipliers without an extra hypothesis,
 using the full-fiber row equation at a half seam, and recording (16).
-Both internal readers checked all these points, the strict-spectrum
-CROSS and half-seam exclusions, every allowed protected specialization,
-the original normalization of the row primitives, and the strict-margin
-qualification in the non-CROSS variant. These are internal proof reviews,
-not external peer review. No numerical asymptotic test is claimed or
-needed for this calculus addendum.

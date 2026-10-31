@@ -1,6 +1,6 @@
 # A specified generic exceptional-operator lift at nonreal deficient degree
 
-30 October 2026. Independently reviewed. The original generic
+30 October 2026. The original generic
 exceptional polynomial has a source-preserving meromorphic lift to a
 nonreal deficient-degree neighborhood. It uses the actual LARGE-channel
 white numerators and an explicitly chosen moving-period factorial.
@@ -20,7 +20,7 @@ global cycle is asserted.
 Fix N>=3, d=N-1, 0<=a<=floor(d/2), m=d-a, s=d-2a, and
 zeta=q0 exp(epsilon), q0=exp(pi i/N), Q=zeta^2. All complex
 powers use this Log zeta and the specified logarithmic row lifts.
-Use the ORIGINAL generic identity
+Use the original generic identity
 
     p_a(Omega)=D_a/(rho_a beta_N) B^(-1) R^(-1) S_(2a),
     S_(2a)=W_a p_(2a) W_a^T,                             (1)
@@ -278,17 +278,6 @@ largest root-character relative error was below 1.2e-94; the largest
 literal generic/normal error was below 1.6e-91. Uniformity and all-fixed-
 jet conclusions come from the proof, not these finite samples.
 
-Primary-agent full analytical review: PASS. It checked the literal
-generic p/E provenance, two large numerators, high reversal scalar,
-root character and restored normalization, supported initial cycle,
-and full relative upper bound with its nonreal-degree requirement.
-An independent geometric/source review also checked the restoring
-turn and the sign of the explicit actual-frame variation. Neither
-review supplies a nonzero global period coefficient.
+The relative upper bound requires nonreal degree in the stated domain. It does not supply a nonzero global period coefficient.
 
-Independent full analytical review and fresh redirected audit: PASS. The
-review independently checked the literal generic p/E germ and moving face
-scalar, high reversal, every root-character phase, actual nonreal-frame
-variation, retained meromorphic divisors and all-normal upper bound. The
-replay reproduced every count and error bound above. It supplies no
-nonzero leading normal amplitude or global cycle contribution.
+The meromorphic divisors remain in the lifted source. No nonzero leading normal amplitude or global cycle contribution is inferred.

@@ -1,6 +1,6 @@
 # A source-exact full half-clock dilation of the physical head
 
-28 October 2026. At complete color the ORIGINAL N-dimensional head is
+28 October 2026. At complete color the original N-dimensional head is
 an invariant orthogonal window in an explicit 2N-clock representation.
 The weighted cyclic shifts have zeros at both window boundaries.
 The unrolled H, full half-Cartan, genuine dual, N-normalized turns,
@@ -17,7 +17,7 @@ charge is already present in the original unrolled degree equations.
 ## 1. Exact complete-color generators
 
 Put q=exp(pi*i/N), Q=q^2, d=N-1, x=q^d=-q^-1, and c=q-q^-1.
-Use the ORIGINAL balanced basis w_a=v_a/(Q;Q)_a. The original head is
+Use the original balanced basis w_a=v_a/(Q;Q)_a. The original head is
 
     H w_a=(d-2a)w_a,       K w_a=x Q^-a w_a,
     F w_a=(1-Q^(a+1))w_(a+1),
@@ -59,7 +59,7 @@ Replacing H by a residue class would lose this justification.
 
 ## 2. The full Cartan and the genuine dual
 
-Use the ORIGINAL finite universal crossing, in its original order,
+Use the original finite universal crossing, in its original order,
 
     Rcheck=Flip q^(H tensor H/2)
           sum_(n=0)^d q^[n(n-1)/2] c^n/[n]_q!
@@ -83,7 +83,7 @@ On W_epsilon tensor W_eta its ratio to the original Cartan is
 the two unrolled H shifts before taking q powers. The restriction
 statement itself does not require dropping this phase elsewhere.
 
-Use the GENUINE dual W^*, with the ORIGINAL antipode and pivotal
+Use the GENUINE dual W^*, with the original antipode and pivotal
 duality. It is V_d^* direct_sum V_(d-2N)^*. In the copied original
 dual basis u_(N epsilon+a)^vee its H weights are
 
@@ -205,7 +205,7 @@ is not X. Put
     P_wall=|d><d|+|2N-1><2N-1|,
     S_hat=X(I-P_wall)+X^(1-N)P_wall.                             (14a)
 
-Then S_hat is the direct sum of the two ORIGINAL N-cyclic shifts,
+Then S_hat is the direct sum of the two original N-cyclic shifts,
 so S_hat^N=I. Directly on every basis vector,
 
     T^2 S_hat=Q S_hat T^2,

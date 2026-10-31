@@ -306,11 +306,4 @@ Audit: [true root factorials, partner ranges and retained Taylor coefficients](.
 The common phase, metric, uniform action and jet arguments above are
 independent of the proposed actual four-port source identity.
 
-Independent internal review: the global audit agent completed a full
-analytical read of sections1–6 and a fresh primary replay. The harmonic
-unit-factor estimate and inverse jets, exact high-partner current,
-N=4 nonzero normal, source pole orders and norm orders all passed.
-The replay checked eight exhaustive folded levels, 1202 supported
-tuples, 686 partner metrics, the retained-current fixture and six
-metric-action calibrations. That verdict does not include a full
-partner-jet bound or a positive completed physical recoupling Gram.
+The result does not include a full partner-jet bound or a positive completed physical recoupling Gram.

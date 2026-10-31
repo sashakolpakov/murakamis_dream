@@ -193,7 +193,7 @@ endpoint the native highest-column calculation gives
 ## 4. The endpoint is an actual cubic Fourier sum
 
 The upper endpoint can be evaluated without applying an interior
-amplitude theorem on the boundary. At t=d,u=j=m the ORIGINAL
+amplitude theorem on the boundary. At t=d,u=j=m the original
 terminating sum is, up to its displayed unit phase,
 
     P_N(w_N)=sum_(a=0)^m beta(m,a)^3 w_N^a,
@@ -361,22 +361,6 @@ This proves a common FULL folded boundary cost at both parities,
 using the simple odd projector and the actual even Hermite pair
 in their respective source roles.
 
-Primary-agent analytical review: PASS, including the exact physical
-Parseval reduction, source-shift/CD derivative and its strict sign,
-finite determinant bounds, skew-inverse comparison and endpoint
-control, actual cubic endpoint and its selected dilogarithm constant,
-and the even measure, half-step comparison and completed Q/M norms.
-The review retains the one-operator boundary-cost scope and does not
-infer a whole-network positive pairing, gluing identity or volume limit.
+The theorem concerns the boundary cost of one operator. It does not imply a positive whole-network pairing, gluing identity or volume limit.
 
-Independent full analytical and targeted even-parity review: PASS.
-The reviewer independently derived the exact Fourier support and
-normalization, degree profile, determinant endpoint bounds, cubic
-source phase and selected 5v3/pi constant, even paired measure and
-half-step comparison, and full Q/M norm implications. A fresh
-100-digit replay passed 1,848 original physical values, 336 unused
-nodes, 189 Parseval/center identities, 35 odd determinant brackets,
-seven odd cubic endpoints, 27 even center normalizations, six even
-endpoint/half-step comparisons and four source-gradient checks.
-The displayed sequences reach levels 256/257; the written proof,
-not those sequences, supplies the limits and uniform estimates.
+The displayed finite sequences reach levels 256/257 and check the normalizations. The written determinant and endpoint arguments supply the limits and uniform estimates.

@@ -208,7 +208,7 @@ scalar vacuum. Its full-Phi scalar, both radial pieces
 and every finite boundary current are retained.
 
 Consequently substituting (15) for P(n_-) in the
-displayed R_0 gives the ORIGINAL crossing as a matrix
+displayed R_0 gives the original crossing as a matrix
 identity, before choosing a cut entry or a closing
 tangle. Its common Cartan/framing/peripheral line and
 the original cups and caps therefore remain unchanged.

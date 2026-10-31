@@ -86,7 +86,7 @@ only exp(-Li_2(z)/H) also leaves every nonzero cyclotomic point
 unchanged as a singularity.
 
 This disproves automatic applicability of the strict one-variable
-meromorphic-line criterion to the ORIGINAL UNFOLDED ATOM. It does
+meromorphic-line criterion to the original UNFOLDED ATOM. It does
 not prove that singularities cannot cancel in a completed whole
 word or selected period; that cancellation would need its actual
 source theorem.
@@ -231,7 +231,7 @@ Then the COMPLETE factorization is
 Every determinant root, its half-power mark, and the logarithmic
 period is retained. In the actual cyclic Ward substitution
 z=-t e one has X=-kappa_N t^N, so 1-X=1+kappa_N t^N is exactly
-the ORIGINAL norm, not an arbitrarily dropped central factor.
+the original norm, not an arbitrarily dropped central factor.
 
 The source/transport check is decisive. Under x->x+H_N, g_D
 multiplies by (1-z)/nu, while S changes by 2pi i V. Their factors

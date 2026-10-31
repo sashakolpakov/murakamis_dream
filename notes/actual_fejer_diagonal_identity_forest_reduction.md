@@ -1,6 +1,6 @@
 # Diagonal Fejer ports reduce to a true identity smoothing
 
-31 October 2026. Independently reviewed diagonal and identity-forest reduction. This keeps the original
+31 October 2026. diagonal and identity-forest reduction. This keeps the original
 protected targets and all remaining cross/left/right data. It does not
 factor arbitrary Green ports across matching/matching digon cuts.
 
@@ -37,7 +37,7 @@ No remaining one-sided port is changed.
 ## 2. Feasibility forces the diagonal middle graph to be a forest
 
 Take any selected set D of diagonal ports in a feasible limiting
-source flow. Its middle b-c edges lie in the ORIGINAL gap graph.
+source flow. Its middle b-c edges lie in the original gap graph.
 The only possible cycles are the entire internal even-gap cycles,
 each containing the protected exterior vertex u. If a component has
 n vertices and at least n edges, its identity edge loads already sum
@@ -159,9 +159,4 @@ maximum is attained on the regular signed-development stratum, nor
 bound the remaining coupled matching cuts. No general diagonal-boundary
 volume inequality is asserted.
 
-Independent analytical review: root and cluster checked the exact
-diagonal coefficients, fixed-half upper-bound scope, tree target
-accounting, unique integral identity allocations, loop count and the
-limiting-only pure-middle cross distinction. The full-kernel companion
-provides the separately reviewed rate-level cross-seam reduction.
-No independent Green-block factorization across matching cuts is claimed.
+The full-kernel companion gives the rate-level CROSS-seam reduction. No independent Green-block factorization across matching cuts is asserted.

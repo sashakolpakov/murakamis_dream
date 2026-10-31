@@ -1,7 +1,7 @@
 # An actual noncentral trivalent source packet with two Steinberg legs
 
 29 October 2026. The odd central quartic transform extends to EVERY
-retained node on one leg of the ORIGINAL black trivalent source, with
+retained node on one leg of the original black trivalent source, with
 the other two legs central. It gives an exact common-phase positive
 factorial sum, a fixed complex color packet, and a strict physical
 complement gap. This is one actual magnetic coefficient, not a
@@ -13,7 +13,7 @@ normalizations are those of the [full vertex kernel](actual_trivalent_complete_c
 
 ## 1. Actual source coefficient and exact positive evaluation
 
-For 0<=j<=m put t=d-j. In the ORIGINAL physical pair define
+For 0<=j<=m put t=d-j. In the original physical pair define
 
     h^(j)_a=q^(a^2)[t choose a]_Q at |a,t-a>,
     W^(j)_r=F_pair^r h^(j)/F_r, 0<=r<=2j.             (1)
@@ -229,9 +229,3 @@ triple-partition graph can be estimated by this positive packet.
 Audit: [literal source and all-node finite transform](../experiments/audit_actual_trivalent_one_channel_source_packet.py).
 Tests supplement the finite proof and contour estimate; no sewn-graph
 survival or new hyperbolic-volume claim is inferred from them.
-
-Independent internal analytical review passed the all-node finite
-transform, actual source phase, entire-color gap, half-step amplitude
-and exact complex-window contour argument. A fresh primary replay
-passed ten original all-node families N=3,...,21, three whole-color
-Laplace profiles and two canonical complex factorial windows.

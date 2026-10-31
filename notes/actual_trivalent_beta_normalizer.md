@@ -1,6 +1,6 @@
 # Exact normalizer of the original trivalent source
 
-28 October 2026. The central factor of the ORIGINAL balanced trivalent
+28 October 2026. The central factor of the original balanced trivalent
 source is determined exactly. It is not an arbitrary periodic multiplier
 or an assumed tame normalization. The proof uses its actual finite
 source, the two root shifts, the zero of the full function, and global
@@ -21,7 +21,7 @@ Its normalizer is EXACTLY
 
     A_N(u)=(N/phi_N) u^N Psi_+(h-Log u).               (1)
 
-Consequently the complete ORIGINAL sink polynomial satisfies
+Consequently the complete original sink polynomial satisfies
 
     B_N(u,v)=(N/phi_N) u^N
        exp[-Log(v/u)Log u/h]
@@ -251,7 +251,7 @@ positive Parseval proof in
 the same rate on its overlapping |u|<1 chamber.
 
 In particular there is the following genuine volume limit for the
-ORIGINAL local polynomial, uniform for theta in compact subsets
+original local polynomial, uniform for theta in compact subsets
 of (0,pi):
 
     lim_(N->infinity) (2*pi/N)log|B_N(exp(-i*theta),1)|

@@ -1,6 +1,6 @@
 # Actual representation and signed volume from hybrid tight-cut pieces
 
-31 October 2026. Independently reviewed conditional representation and
+31 October 2026. conditional representation and
 relative-volume theorem. The [hybrid tight-cut theorem](actual_fejer_hybrid_tight_cut_reduction.md)
 supplies the finite-flow input. This note proves the geometric and
 original-source topology step for its exact output, without an
@@ -9,7 +9,7 @@ endpoint source, not the original phase-sensitive filled-knot period.
 
 ## 1. Precisely the decomposition data required
 
-Start with the actual connected identity smoothing of the ORIGINAL
+Start with the actual connected identity smoothing of the original
 certified flat plat. Its full positive-kernel maximum is the same W_D
 by the [full-kernel identity reduction, §3](actual_fejer_full_kernel_entropy_identity_reduction.md)
 and its [literal forest contraction](actual_fejer_diagonal_identity_forest_reduction.md). At a chosen maximum, remove every
@@ -80,7 +80,7 @@ with each adjacent pair distinct and tangent. Its developed image may
 fold. Its signed two-ball chain volume is exactly the sum of sigma V
 for its original triangles, by the [signed cyclic-polygon and contact-triangle identities, §§1–2](actual_fejer_signed_cut_ball_regulator.md).
 
-## 3. Glue the pieces, retaining every ORIGINAL port pairing
+## 3. Glue the pieces, retaining every original port pairing
 
 Root the actual cut tree. A child's marked ordered tangent pair is mapped
 to its already assigned parent pair by an orientation-preserving Mobius
@@ -102,7 +102,7 @@ For a GREEN port both triangles lie in the same piece, so its actual
 source collar C is already supplied by the [literal signed Green formula, §3](actual_fejer_marked_signed_development.md)
 and is conjugated by that piece's ONE gluing map.
 
-For an ORIGINAL CROSS port whose two triangles lie in different pieces,
+For an original CROSS port whose two triangles lie in different pieces,
 its outer white pair x,y is common. Let P=r_y r_x=-I+H. It is noncentral
 parabolic. Each ordered triangle gives an actual raw first meridian A
 with trace-2 and with Tr((P+I)A)=4. After H=[[0,h],[0,0]], h!=0, this says
@@ -148,7 +148,7 @@ pairings. Added tetrahedra have an edge of length O(1/T), so
   |Vol tetra|<=2pi ell cosh^2 ell
 
 makes their total volume vanish. Cut-disk collapse has relative degree
-one in the abstract domain. It leaves every ORIGINAL shaded triangle
+one in the abstract domain. It leaves every original shaded triangle
 uncut and retains its actual C map even when its partner lies in a
 different block. These are geometric chain operations, not source
 factorizations.
@@ -172,7 +172,7 @@ triangles are the forced two-line V=0 configurations. The original
 mark and target degrees were retained in the identity and tight-cut
 steps; no new quantum mark or 1/N normalization is introduced.
 
-## 5. Return to the ORIGINAL drilled group
+## 5. Return to the original drilled group
 
 Restore each actual deleted UNTWISTED port. Its middle faces were
 identified, so its ordered input and output pairs agree. Assign the
@@ -183,7 +183,7 @@ remaining tangency. Choose its recorded peripheral flag and use the
 [proved zero-volume axis/parabolic filling-cap construction, §4](general_representation_volume_kernel_strictness.md). No artificial
 outer contact is inserted.
 
-This gives a representation rho of the ORIGINAL drilled group, factoring
+This gives a representation rho of the original drilled group, factoring
 through the actual meridional identity smoothing, with
 
   Vol(rho)=Vol(rho_sm)=2pi W_D                         (2)
@@ -200,9 +200,9 @@ or the exclusion of every further free KKT stratum. It records exactly
 what geometry follows from those finite-flow outputs, and preserves
 all original group, peripheral and chain data needed for the comparison.
 
-## Independent review and scope
+## Scope
 
-Root, coherent and cluster independently reviewed the complete conditional
+Root, coherent and cluster the complete conditional
 proof: the matching-mark CROSS boundary rows, cooriented piece development,
 original three-contact collar maps across pieces, one global reflected
 copy, actual digon-disk chain collapse and restored identity meridians.
@@ -218,8 +218,8 @@ replacement. [The focused audit](../experiments/audit_actual_fejer_hybrid_piece_
 checks 270 signed cyclic fans, four repeated-contact fans, four angle sums,
 24 actual circle/line tangencies, eight contact-triangle volumes and two
 oriented two-ball strip chains. Its [recorded results](../experiments/actual_fejer_hybrid_piece_representation_results.json)
-use 80-digit arithmetic; root independently reviewed the code and cluster
-independently reviewed and replayed it. These finite geometric identities
+use 80-digit arithmetic; root the code and cluster
+and replayed it. These finite geometric identities
 supplement the analytic proof; they do not prove general source pairings,
 relative degree or the cut-disk collapse. The conditional geometric
 conclusion does not by itself supply an asymptotic for the original

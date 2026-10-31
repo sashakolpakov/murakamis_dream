@@ -305,14 +305,6 @@ The finite tests supplement the recurrence, drift and generic source
 proofs above. They do not certify transport for a nonempty [2N]
 tail or an all-partner higher-jet theorem.
 
-Independent internal analytical review by the Euler agent checked
-the exact finite degree recurrence, all sine ranges, the drift and
-three-sine identity, killed-chain inverse/gap, spectral product bound,
-actual source-prefactor/first-normal identity, and the finite Sears
-cotangent calculation. The review specifically retained the empty
-tail in the one-flip case and the unproved nonempty-tail boundary.
-Fresh primary audit: one exact seven-parameter recurrence certificate,
-1,792 root families, 613 full first-normal identities, fifteen exact
-cotangent identities, and the N=5 nonzero-tail regression.
+The one-flip case has an empty tail. The nonempty-tail boundary remains unestimated.
 
-Primary-agent review: the finite recurrence, sine drift inequality, killed-chain inverse bound, spectral derivative estimate and source-normal conversion were read in full. The tail-free restriction and the unestimated nonempty [2N] current remain explicit; the review does not extend the theorem to that current.
+The theorem is restricted to the tail-free case; it does not extend to the nonempty [2N] current.

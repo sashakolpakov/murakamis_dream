@@ -28,7 +28,7 @@ equivalent to (1) is
     B_N(u,w)=(N/phi_N)u^N Psi_+(h-z)Psi_+(c)
                                       exp(-cz/h).         (2)
 
-The left side is the ORIGINAL finite polynomial. All full-Psi marks
+The left side is the original finite polynomial. All full-Psi marks
 and the scalar on the right are the ones already fixed by its
 defining integral and original coefficient moments.
 
@@ -152,7 +152,7 @@ is therefore explicitly
     S_N=(N/phi_N)u^N Psi_+(h-Log u)Psi_+(c)
                                            exp(-c Log u/h). (7)
 
-There is an exact version in the ORIGINAL reflected field variables.
+There is an exact version in the original reflected field variables.
 Write z=Log U, c_0=Log(V/U), and retain the actual tags
 u=Q^2U,v=QV with Log u=z+2h and c=c_0-h. The backward full-Psi
 shift gives the balanced part of its constant coefficient as
@@ -161,7 +161,7 @@ shift gives the balanced part of its constant coefficient as
        *U^(N+1)(U-Q^(-1))(U-Q^(-1)V)/V^2
        *Psi_+(-z)Psi_+(c_0)exp(-c_0 z/h), d=N-1.           (7a)
 
-Its remaining ORIGINAL current is exactly
+Its remaining original current is exactly
 
     C_N^(current)=Q^(-d)/N*(1-U^N+V^N)I_N(Q^2U,QV).        (7b)
 
@@ -214,7 +214,7 @@ Consequently every compact family with
 
     Lambda>max(0,log|u|,log|v|)
 
-by a fixed positive margin has ORIGINAL local source
+by a fixed positive margin has original local source
 B_N=S_N(1+O(N^C exp(-eta N))). This extends the local
 [positive-norm growth theorem](actual_sink_source_convolution.md)
 beyond its elementary |u|<1 product estimate. The exact

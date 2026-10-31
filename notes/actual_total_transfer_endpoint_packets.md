@@ -17,7 +17,7 @@ normalization cell.
 ## 1. Use the original coherently summed crossing
 
 Put d=N-1, Q=exp(2pi*i/N), x=-exp(-pi*i/N), F_r=(Q;Q)_r.
-The ORIGINAL positive crossing, with its common unit scalar kappa
+The original positive crossing, with its common unit scalar kappa
 retained, sends input (a,b) to (b+k,a-k), where
 0<=k<=min(a,d-b), with exact coefficient
 
@@ -104,7 +104,7 @@ source. In particular one may not fix bridge clocks and ignore W_h.
 
 ### Exact thin-source reduction and the regular top-collar criterion
 
-The top packet has an additional ORIGINAL-source description:
+The top packet has an additional original-source description:
 
     E_top,+(R)=sum_(a-j>=d-R)
                   (I tensor E_j)R_plus(E_a tensor I).       (6a)
@@ -180,7 +180,7 @@ normalization; it is not legitimate to discard it from (6c).
 
 ## 4. The maximal-transfer Markov corner is exactly normalization
 
-Let theta=x^(1-N), the ORIGINAL complete twist line. At k=d, (1)
+Let theta=x^(1-N), the original complete twist line. At k=d, (1)
 has only a=d,b=0, and its coefficient is kappa N. Therefore
 
     E_top,+ at R=0 =kappa N |d,0><d,0|,

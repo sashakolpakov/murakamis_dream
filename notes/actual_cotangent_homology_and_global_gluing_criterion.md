@@ -2,7 +2,7 @@
 
 28 October 2026. The physical-face collars and quantitative regular
 gradient estimate are compatible local analytic ingredients. They do
-not alone prove a low-action deformation of the ORIGINAL scalar.
+not alone prove a low-action deformation of the original scalar.
 There is an exact source-homology obstruction to applying that argument
 as one ordinary contour homotopy of its undecomposed holomorphic
 summand. The obstruction occurs for the SAME hyperbolic knot after
@@ -19,7 +19,7 @@ not yet proved for the full cotangent atlas.
 
 Let F_N be holomorphic on the swept region Omega_N in C^r. Let Gamma_0
 be the original product residue contour around the finite integer box
-in the independent ORIGINAL source coordinates. For every valid state
+in the independent original source coordinates. For every valid state
 p in that box, the ordinary product Cauchy kernel gives
 
     F_N(p)=(2pi*i)^(-r) integral_(Gamma_0)
@@ -228,13 +228,7 @@ pointed-A information must enter where that barrier is exceeded.
 
 ## 5. Independent audit of the source-specific A-boundary alternative
 
-I independently read
-[the actual A-boundary Schur theorem](actual_a_boundary_schur_transport.md)
-and reran its audit: **PASS**. The initial weighted identity-row
-source gives g_I=0 exactly when those colors are retained in B.
-Completing the square gives H=-P_II^(-1)P_IB and the positive Schur
-operator S with ker P=E ker S. Consistency gives
-beta=g_B^* S^+ g_B, not an independently chosen border normalization.
+The [A-boundary Schur theorem](actual_a_boundary_schur_transport.md) uses the initial weighted identity-row source: $g_I=0$ exactly when those colors are retained in $B$. Completing the square gives $H=-P_{II}^{-1}P_{IB}$ and the positive Schur operator $S$, with $\ker P=E\ker S$. Consistency fixes $\beta=g_B^*S^+g_B$; the border normalization is not independently chosen.
 
 I checked the positive bordered Gram and the selected coefficient
 formula [lambda^nu z]D/[lambda^nu]Q, including the retained kernel:

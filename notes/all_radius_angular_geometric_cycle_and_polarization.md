@@ -9,7 +9,7 @@ with a strict boundary gap. This is not restricted to the positive
 angle polytope or to shapes of modulus below one.
 
 The corresponding reference relative cycle has unit local geometric
-degree. Its equality with the ORIGINAL reduced quantum cycle has
+degree. Its equality with the original reduced quantum cycle has
 not been proved. In particular, the lifted endpoints need not glue
 without a nonzero monodromy/keyhole completion.
 

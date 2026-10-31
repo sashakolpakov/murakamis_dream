@@ -1,10 +1,6 @@
 # Concave triangle radii and the overload obstacle projection
 
-31 October 2026. **Research reduction; the universal comparison remains open.**
-The concavity, clipping theorem and exact counterexamples below have received
-independent analytical reviews. They concern one fixed actual
-LEFT/CROSS/RIGHT sector and preserve its original protected faces and targets.
-They do not establish a new general filling theorem.
+31 October 2026. The universal comparison remains open. The concavity, clipping and counterexample statements concern one fixed LEFT/CROSS/RIGHT sector and preserve its protected faces and targets. They do not establish a general filling theorem.
 
 The [finite-sector criterion](general_actual_sector_cover_filling_volume.md)
 explains the desired application. The
@@ -280,8 +276,4 @@ middle equality at positive ordinary radii at all: equality with its root
 sets those radii to zero and requires a separate target adapter. Neither
 (18) nor concavity of \(F\) is an existing smoothing-volume upper bound.
 
-The source identities, clipping reduction, exact obstruction and their scope
-were independently reviewed. The focused exact source and interval checks
-were independently replayed. They establish (11) and refute the proposed
-monotonicity and greatest-projection bounds; the universal optimized
-fixed-sector inequality remains open.
+The exact source and interval calculations establish (11) and refute the proposed monotonicity and greatest-projection bounds. The universal optimized fixed-sector inequality remains open.

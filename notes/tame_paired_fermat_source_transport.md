@@ -6,7 +6,7 @@ Fermat frames. The paired source, its marked dual, and a full invertible
 frame are explicit. The frame and inverse are uniformly bounded on
 one fixed central neighborhood, for every level. Conjugating the
 whole actual word and all currents gives a pointwise identity of the
-ORIGINAL invariant, including its full meridian family and scalar lines.
+original invariant, including its full meridian family and scalar lines.
 
 This is a theorem about the selected boundary source. It does not
 factor the new crossing into a positive geometric tetrahedron kernel,
@@ -28,7 +28,7 @@ uses the input/marked corner e_+=|d,0> and ordinary output
 corner e_-=|0,d> in this channel.
 
 Put epsilon=a^N and delta=(1-epsilon)^(1/N), delta(0)=1.
-Take the ORIGINAL normalized cap frames from
+Take the original normalized cap frames from
 [the exact cap theorem](actual_cap_pachner_wall_charge.md),
 using the SAME a on the two heads, and project their tensor
 product to (1). In the basis indexed by j this gives
@@ -232,7 +232,7 @@ These are bounds for whole algebraic functions on an N-independent
 disc. They do not require truncating the source to a fixed list
 of Taylor coefficients or shrinking its central neighborhood.
 
-The norm is the fixed Euclidean norm in the ORIGINAL relative-head
+The norm is the fixed Euclidean norm in the original relative-head
 basis of the exact Rogers presentation. Conjugating back by a
 physical fusion matrix C_x need not preserve these estimates;
 that separate matrix can be exponentially conditioned. The

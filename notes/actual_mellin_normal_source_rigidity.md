@@ -261,15 +261,15 @@ For a supplied rational affine equation
 \(\sigma v=C_Av+c\), its augmented monodromy has the form
 
 \[
-               H_{\rm aug}=\begin{pmatrix}H_A&s\\0&1\end{pmatrix}.
+               H_{\mathrm{aug}}=\begin{pmatrix}H_A&s\\0&1\end{pmatrix}.
                                                                \tag{6.1}
 \]
 
 If \(I-H_A\) is invertible, its characteristic polynomial satisfies
 
 \[
- \Delta_{\rm aug}(t)=(t-1)\det(tI-H_A),\qquad
- \Delta'_{\rm aug}(1)=\det(I-H_A)\ne0.                 \tag{6.2}
+ \Delta_{\mathrm{aug}}(t)=(t-1)\det(tI-H_A),\qquad
+ \Delta'_{\mathrm{aug}}(1)=\det(I-H_A)\ne0.                 \tag{6.2}
 \]
 
 Thus it has a simple eigenvalue one. Translation by the unique

@@ -1,6 +1,6 @@
 # Correlated neighboring bands of the original boundary source
 
-30 October 2026. Independently reviewed. The exact ratio of two
+30 October 2026. The exact ratio of two
 neighboring charged source products is rational in their actual clocks.
 On the original six-type resonant boundary chart, their root packet
 errors are correlated strongly enough to divide by the odd-source
@@ -292,7 +292,7 @@ finite quotient has not been evaluated.
 
 ## 5. What contraction would additionally require
 
-This is a theorem about the ORIGINAL uncontracted products on a common
+This is a theorem about the original uncontracted products on a common
 affine band path. Their coherent first-cut weight, the original internal
 head measure and the two original support cycles have not been removed.
 A ratio of sums or periods is not the sum or period of the pointwise
@@ -322,21 +322,6 @@ parities and fixed neighboring folded labels are retained. The local
 signed fixtures cover all six types, including an explicitly supplemental
 202/202 face pair; they are not a numerical global-network proof.
 
-Independent full analytical geometric/model review: PASS. The reviewer
-rederived the root cup reflection and character, literal dual and
-reciprocal scalar, checked every model on the cN complex head disk,
-the positive-total forced-root separation through the fold, and the
-exact finite-clock 222 determinant. The first logarithmic derivative
-bounds, correlated Cauchy estimate and normalized absolute error were
-checked. The review retains the uncontracted, controlled-presentation
-scope and supplies no Gaussian reduction or period coefficient.
+The theorem concerns an uncontracted source in the specified controlled presentation. It supplies no Gaussian reduction or period coefficient.
 
-Independent primary full proof review, focused audit code review and
-fresh redirected replay: PASS. The reviewer checked the actual charged
-product with its exposed scalar cap removed, the omission of the
-charge-zero Xi_N formula, every exact quotient and cup character,
-all six co-varying finite models, uniform divisor separation and
-first logarithmic derivative bounds, and the Cauchy/normalization
-argument. The fresh replay reproduced all reported counts and
-errors. No contracted, arbitrary routed, or model-limit conclusion
-is included in that validation.
+The charged product has its exposed scalar cap removed, and the charge-zero Xi_N formula is omitted. No contracted, arbitrarily routed, or model-limit conclusion follows.

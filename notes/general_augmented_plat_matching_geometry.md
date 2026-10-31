@@ -22,7 +22,7 @@ Fix a 2k-plat word together with a disjoint collection of two-strand
 crossing boxes covering ALL crossings. The outside strands, original
 caps and cups have no remaining crossing. One may first take maximal
 twist regions, but the chosen boxes and their order are recorded data.
-Put a crossing circle around each box and retain its ORIGINAL twice-
+Put a crossing circle around each box and retain its original twice-
 punctured spanning disk. Remove full twists, retaining epsilon_i in
 {0,+1,-1} as its half-twist sign. Full twist integers remain recorded
 in the peripheral collar marking when they are to be restored.
@@ -280,7 +280,7 @@ r=4 and two nonmatching 4-cycles, so it cannot literally be a source
 with 3b edge circles and trivalent NC vertices. Its geometry was proved
 separately; it is not an instance of that NC theorem by relabeling.
 
-Even facial triangles alone would not certify the existing ORIGINAL
+Even facial triangles alone would not certify the existing original
 NC source: its black/white ordering and its two noncrossing triple
 partitions must also match the actual cups and caps. The graph,
 matching, ribbon order and original marked source all matter.
@@ -354,9 +354,4 @@ certificate, twist reduction, or a quantum asymptotic from a graph.
 
 [Recorded results](../experiments/general_augmented_plat_matching_geometry_results.json).
 
-Independent analytical review of sections 1--8 and a fresh audit replay:
-PASS. The review checked the original half-disk ball cut, all oriented
-medial rotations, four-piece edge holonomy and cusp decoration,
-primitive collar paths, the literal filled-knot component test, and
-the exact Fisher-subclass restriction. It does not extend the stated
-positive-certificate hypothesis or supply a source asymptotic.
+The matching geometry retains the stated positive-certificate hypothesis and Fisher-subclass restriction. It supplies no source asymptotic.

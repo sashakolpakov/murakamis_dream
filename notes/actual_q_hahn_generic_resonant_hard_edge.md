@@ -1,6 +1,6 @@
 # The actual generic white numerator at the resonant hard edge
 
-30 October 2026. Independently reviewed source theorem. A genuine quantum
+30 October 2026. source theorem. A genuine quantum
 deformation of the original white numerator has a uniform boundary
 packet. Its root limit is a Bessel function, while its retained
 quantum normals differentiate the ORDER parameter of a confluent
@@ -204,10 +204,4 @@ scaled-parameter packets, 24 genuine scaled first/second normals,
 normalizations and both harmonic normal formulas. Finite convergence
 errors are recorded as diagnostics, separately from the uniform proof.
 
-Independent parent, geometry and source analytical reviews passed
-the exact generic ratio, denominator sign, uniform finite-series
-bound, absolute error at V=1, fixed-head Cauchy normals and retained
-top-term phases. The parent also freshly replayed the full audit and
-reproduced every count. The result is restricted to the specified
-white numerator and its normalization, with limiting zeros retained;
-it is not a full-operator or selected-period theorem.
+The result is restricted to the specified white numerator and its normalization, with limiting zeros retained; it is not a full-operator or selected-period theorem.

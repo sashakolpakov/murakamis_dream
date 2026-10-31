@@ -4,7 +4,7 @@
 an exact quantum-source graph at every ODD level. Splitting the actual
 simple complete-color projectors yields a typed trivalent pivotal
 network on Delta itself. Its ordinary closure has a simple quantum-
-dimension factor, and the ORIGINAL exposed marked endpoint contribution
+dimension factor, and the original exposed marked endpoint contribution
 is its specified first normal. This works for every fixed actual plat,
 without a Conway-tree, bipartite, or NC/Fisher assumption.
 
@@ -114,7 +114,7 @@ are regular, hence z_Delta is holomorphic. Closing that arc gives
     D_N(0)=0,
     nu_N=D_N'(0)=2N(-1)^N/(q-q^-1) !=0.                  (6)
 
-The ORIGINAL marked root row satisfies m pV(0)=1 and therefore
+The original marked root row satisfies m pV(0)=1 and therefore
 extracts precisely z_Delta(0). It follows that
 
     Z_endpoint=N^r omega_m^(sum_i epsilon_i)
@@ -176,7 +176,7 @@ positive resummation has to use those contractions coherently.
 
 ## 4. What is actually established beyond local vertices
 
-The primitive cube supplies one nontrivial calibration. Its ORIGINAL
+The primitive cube supplies one nontrivial calibration. Its original
 odd central sector was reduced by a generic, clocked, all-input rung
 identity to a positive Newton period. The exact first normal survives
 that reduction, and its exponential rate contains the shared geometric

@@ -1,7 +1,7 @@
 # Complete figure-eight clock sectors and diagonal Gram metrics
 
 29 October 2026. The exact factorial length frame has a polynomial
-ORIGINAL clock co-source. Nevertheless one fully anchor-contracted
+original clock co-source. Nevertheless one fully anchor-contracted
 clock sector of the original figure-eight knot has twice the desired
 volume rate. Consequently every positive DIAGONAL clock metric has
 an exponentially excessive Cauchy budget on this actual source.
@@ -76,7 +76,7 @@ Then the COMPLETE table coefficient is exactly
 
     C_(N;(0,2k,k,2k))=N q^(3k^2-2k) S_k/F_k.          (3)
 
-In particular the ORIGINAL sector modulus is
+In particular the original sector modulus is
 
     |K_(N;(0,2k,k,2k))|=|chi_N| S_k/s_k.              (4)
 

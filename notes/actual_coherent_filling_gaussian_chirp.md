@@ -151,7 +151,7 @@ The all-N, all-parity exact formula is
 
 \[
  \boxed{a(n)=\kappa^{-P}
-   \sum_{\ell\in\mathbb Z}^{\rm symmetric}(-1)^\ell
+   \sum_{\ell\in\mathbb Z}^{\mathrm{symmetric}}(-1)^\ell
         \{(\ell+1)I_{P,N}(n+N\ell)-J_{P,N}(n)\}.}       \tag{8}
 \]
 
@@ -180,7 +180,7 @@ it vanishes under a later complex-color deformation.
 For physical INTEGER n, J=0 and (8) simplifies to
 
 \[
- a_n=\kappa^{-P}\sum_\ell^{\rm symmetric}
+ a_n=\kappa^{-P}\sum_\ell^{\mathrm{symmetric}}
                       (-1)^\ell(\ell+1)I_{P,N}(n+N\ell).
                                                                \tag{9}
 \]
@@ -214,7 +214,7 @@ P=-p into (5),(9) gives an ALL-INPUT identity for the filled box:
 \[
  \boxed{\mathscr R(R^{-(2p+1)})
   =\kappa^{-p}\sum_{n=0}^{N-1}\eta_n^B
-      \sum_\ell^{\rm symmetric}(-1)^\ell(\ell+1)
+      \sum_\ell^{\mathrm{symmetric}}(-1)^\ell(\ell+1)
                               I_{-p,N}(n+N\ell).}       \tag{11}
 \]
 
@@ -325,7 +325,7 @@ be discarded against an exponentially smaller filled rate.
 ## 6. The actual circle difference cancels its current and folds EXACTLY
 
 The current J in (8) is periodic in n with period1. It therefore
-cancels TERMWISE in the ORIGINAL circle-basis difference. Define
+cancels TERMWISE in the original circle-basis difference. Define
 the canonical ENTIRE extension
 
     b_ext(j)=exp(pi i(j-1))[a(j-1)-a(j+1)],
@@ -335,7 +335,7 @@ The physical circle coefficient for color j is beta_(j-1).
 For 1<=j<N it equals b_ext(j); for the last color,
 
 \[
- \beta_{N-1}=\tfrac12 b_{\rm ext}(N).                   \tag{12d}
+ \beta_{N-1}=\tfrac12 b_{\mathrm{ext}}(N).                   \tag{12d}
 \]
 
 The half is compulsory: the original aliases give a(N)=0 and
@@ -388,7 +388,7 @@ for this folded kernel. With c=ell+1 and b=Nc-h,
 
 \[
  K_P(h)=\kappa^{-P}e^{\pi i(N-h-1)}
-       \sum_\ell^{\rm symmetric}(-1)^\ell c
+       \sum_\ell^{\mathrm{symmetric}}(-1)^\ell c
                          [I_{P,N}(b-1)-I_{P,N}(b+1)].   \tag{12h}
 \]
 

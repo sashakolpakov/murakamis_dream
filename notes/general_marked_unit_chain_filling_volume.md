@@ -1,6 +1,6 @@
 # Arbitrary-depth marked unit-chain extensions of balanced plats
 
-Independently reviewed structural theorem, 31 October 2026. A balanced original plat can admit arbitrarily many additional independently twisted regions at the **same fixed bridge width**. The construction below preserves its original marked cap and every old circle radius. It is a literal source operation, not a claim about arbitrary stacking of plats or abstract gluing of matched graphs.
+structural theorem, 31 October 2026. A balanced original plat can admit arbitrarily many additional independently twisted regions at the **same fixed bridge width**. The construction below preserves its original marked cap and every old circle radius. It is a literal source operation, not a claim about arbitrary stacking of plats or abstract gluing of matched graphs.
 
 ## 1. Hypotheses and full-invariant conclusion
 
@@ -126,6 +126,6 @@ If the original parity gives a knot and all old and new full exponents are addit
 
 The operation applies to every core satisfying the stated hypotheses, not only the one-end template. It does not prove balance for arbitrary multilayer plats or arbitrary marks. It preserves the original protected edge and all old disk coordinates; no generic re-framing invariance is used.
 
-Root and an independent source reviewer checked the exact gap dictionary, actual empty complementary marked gap, circle supports and cyclic order, old first-port replacement, uniform local balance margin, retained half twists and mark, knot parity, Fox condition and nonuniform filling threshold. The focused audit checks finite literal core/depth charts and exact width-two/width-three packing extensions. These checks supplement the general source patch and empty-gap proof; they do not infer the uniform or quantum theorem by sampling.
+The focused audit checks finite literal core/depth charts and exact width-two/width-three packing extensions. These checks supplement the general source patch and empty-gap proof; they do not infer the uniform or quantum theorem by sampling.
 
-The [focused exact audit](../experiments/audit_general_marked_unit_chain_filling_volume.py) and [recorded results](../experiments/general_marked_unit_chain_filling_volume_results.json) reproduce 56 original extended charts, 1176 quartets, 2352 triangles, 3528 edges and 56 knot-parity checks, together with 12 exact seed extensions, 1084 circle/line pair supports, 84 new unit-port tests and 12 changed core-port tests. Root and the independent source reviewer read the complete proof and audit code; an independent redirected replay reproduced the exact counts.
+The [focused exact audit](../experiments/audit_general_marked_unit_chain_filling_volume.py) and [recorded results](../experiments/general_marked_unit_chain_filling_volume_results.json) reproduce 56 original extended charts, 1176 quartets, 2352 triangles, 3528 edges and 56 knot-parity checks, together with 12 exact seed extensions, 1084 circle/line pair supports, 84 new unit-port tests and 12 changed core-port tests.

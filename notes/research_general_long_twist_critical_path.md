@@ -1,9 +1,8 @@
 # General long twisting: the current research checkpoint
 
 31 October 2026. Unpublished workspace scope checkpoint. This records
-reviewed inputs and remaining requirements; it is not a new general
+proved inputs and remaining requirements; it is not a new general
 volume-conjecture theorem.
-
 
 ## Every strict Conway composition tree
 
@@ -83,7 +82,6 @@ presentation coverage and a generic main-meridian quantum A-operator
 remain open. Neither the source normal form nor this theorem asserts a
 new knot isotopy classification.
 
-
 ## Current target: Conway tangles and the knot complement
 
 The user has selected Conway algebraic/arborescent knots as the natural
@@ -131,14 +129,7 @@ contracts two original leaves WITH their multiplication gate and proves
  \qquad \frac12\le X\le1,\quad 0\le z\le1.
 \]
 
-Joint concavity reduces this universal inequality to 288 exact rational
-endpoint/vertex comparisons covering the whole slope interval and the
-entire true polytope. Every transcendental remainder has a proved bound;
-two independent exact replays match. Optimizer diagnostics are not proof
-inputs. The [finite block transport](actual_conway_two_leaf_block_source_gap.md)
-then supplies the whole-source gap with the original Hermite data,
-normalization and shared demands. The already reviewed primitive lattice,
-complex packet and actual marked geometry supply the full volume limit.
+Joint concavity reduces this universal inequality to 288 exact rational endpoint/vertex comparisons covering the whole slope interval and the entire true polytope. Every transcendental remainder has a proved bound. Optimizer diagnostics are not proof inputs. The [finite block transport](actual_conway_two_leaf_block_source_gap.md) then supplies the whole-source gap with the original Hermite data, normalization and shared demands. The primitive lattice, complex packet and actual marked geometry supply the full volume limit.
 
 The [monotone response theorem](actual_conway_two_leaf_monotone_alias_response.md)
 explains why both contracted gaps increase with output slope, including
@@ -151,8 +142,7 @@ The [isolated three-leaf extension](actual_conway_isolated_three_leaf_long_twist
 uses exact symmetric marked regrouping for one/two aliases and an
 elementary volume bound for three aliases. Its distinct pi/2 CAP seam,
 primitive three-dimensional packet, essential offset4 and peripheral
-marking are retained. Isolated C(A_2) remains excluded. These are
-internally reviewed research proofs, not external peer review.
+marking are retained. Isolated C(A_2) remains excluded.
 The [tangle target](general_arborescent_tangle_volume_target.md)
 separates this theorem from the all-arborescent closure problem.
 
@@ -218,7 +208,7 @@ so its roots give parameters lambda in [0,1]. Its Mahler loss
 L_N=-sum log max(lambda,1-lambda) bounds both suprema. The
 [effective-response theorem](research_global_cap_effective_response_criterion.md)
 identifies the normalized variance with the Schur complement kappa_D
-of the ORIGINAL exterior gluing Hessian. This is an exact effective
+of the original exterior gluing Hessian. This is an exact effective
 conductance in a finite network of original triangle weights; no
 replacement star or independent face demands are used.
 
@@ -403,7 +393,7 @@ three-coordinate vector onto a simplex. If
 
     Phi_D > max_(nonempty feasible I) [Phi_I-sum_(e in I) beta_(e,I)],
 
-then the ORIGINAL prescribed chart has the required strict non-CROSS
+then the original prescribed chart has the required strict non-CROSS
 gap, and its independently long fixed signed knot fillings have the
 original Kashaev limit equal to their ACTUAL filled hyperbolic volume.
 All maximal charts pass, but maximality is not required: the penalty
@@ -530,7 +520,7 @@ proved lower coefficient asymptotic.
 
 Consequently the remaining unsigned route has one explicit compact
 degree-only test: maximize the sum of these piecewise functions on the
-ORIGINAL shared flow fiber with at least one middle load at least
+original shared flow fiber with at least one middle load at least
 \(1/2\). A strict result below \(\Phi_D\) implies the full original
 independently long signed filling volume theorem, by the whole-period
 transfer and nonzero actual filled-volume all-CROSS asymptotic. That
@@ -605,14 +595,14 @@ signed integer vector \(p\) with all \(|p_e|>T(D)\),
 The twists are fixed BEFORE taking \(N\to\infty\), with no ratio or
 common-sign restriction; both parities and composite levels are included.
 The threshold may depend on the whole diagram, not just \(k\). The right
-side is the ORIGINAL KNOT COMPLEMENT volume. The independently proved
+side is the original KNOT COMPLEMENT volume. The independently proved
 [geometric filling threshold](general_augmented_plat_long_filling_quantifiers.md)
 does not by itself supply this quantum threshold. The general target
 remains open beyond the already proved certified subclasses.
 
 ## What is already reduced at a maximum
 
-The reviewed [full-fiber boundary reduction](research_full_fiber_sharp_boundary_activation.md)
+The [full-fiber boundary reduction](research_full_fiber_sharp_boundary_activation.md)
 now combines fixed-load spectral variations with ONE geometric feasible
 segment and independent spectral retuning. On the original simple-white
 certified fiber, an unrestricted global maximum has positive load on
@@ -702,22 +692,7 @@ of its positive envelope. A uniform local exponential angular gap there
 is false. This is a local calculation, not a lower bound on the full
 shared source.
 
-[Exact top-mark transport](research_arbitrary_casimir_top_mark_transport.md),
-now extended to every MAIN edge as described above,
-is proved for the full original source with arbitrary finite Casimir
-polynomial coupons and retained physical crossing factors. All original
-top-cap positions give the same polynomial in the spectra, even on
-different main components when all carry the same complete color.
-The proof uses a regular generic highest-weight lift, one scalar open
-cup, and generic quantum-dimension cancellation before regular root
-specialization. The original unrestricted mark is normalized directly.
-Independent finite-field replays check the same 34 cases and 82 marks;
-they supplement, rather than replace, the general algebraic proof.
-The new general-Morse adapter supplies the extension beyond original
-top marks. Neither theorem transports projected sectors or positive
-envelopes. The separately checked full-source H1/H2 argument now allows
-the finite certificates at any MAIN cut; existence of a successful
-mark for every diagram is still open.
+[Exact top-mark transport](research_arbitrary_casimir_top_mark_transport.md), now extended to every main edge as described above, is proved for the full original source with arbitrary finite Casimir polynomial coupons and retained physical crossing factors. All original top-cap positions give the same polynomial in the spectra, even on different main components when all carry the same complete color. The proof uses a regular generic highest-weight lift, one scalar open cup, and generic quantum-dimension cancellation before regular root specialization. The original unrestricted mark is normalized directly. The new general-Morse adapter supplies the extension beyond original top marks. Neither theorem transports projected sectors or positive envelopes. The separately checked full-source H1/H2 argument now allows the finite certificates at any MAIN cut; existence of a successful mark for every diagram is still open.
 
 The [trace-one mark calculation](research_trace_one_mark_and_cap_turn_interface.md)
 also checks the stronger attempt to change the marking matrix itself.
@@ -926,7 +901,7 @@ with a per-port conductance budget that prevents double-counting.
 Whether the original demands force that inequality is open.
 The maximal Green-child cap component is a tree, and every other noncap
 port incident to it is CROSS. Exact triangle compliance gives a lower
-bound on the cost of spectator-only repair. At the reviewed local datum
+bound on the cost of spectator-only repair. At the local datum
 \((x,b,c,y)=(1,1,3,0)\), that cost is at least \(9\), exceeding
 its preferred spectral gain \(4\pi/\sqrt3\), whenever the datum
 occurs as a maximal child. No global occurrence is asserted. This
@@ -955,20 +930,4 @@ unpublished workspace results. The guide's source chapters have been
 updated locally. No public checkout or deployment was changed in this
 research turn; its checked HEAD remains `667400a` and is clean.
 
-The reviewed source, boundary, stationary and cap-limitation notes were
-published with a native TikZ diagram and a grouped book collection in
-commit `e015ca3`. Commit `667400a` adds the all-spectrum CROSS comparison,
-explicit seam gap, automatic strict overload, and negligible seam period
-relative to the actual filled-volume asymptotic. That exact commit is
-deployed and verified on the public site. The mark transport, constrained
-response, cap metric and finite tensor calculations remain workspace
-research. The new selected-diagram theorem, general Morse adapters,
-prescribed-chart penalty criterion and exact nonmaximal certificate,
-quantum polarization theorem, both-parity all-demand and two-spectrum
-contractions, whole-CROSS-star spectral gap, and the cap-component and
-stellar reductions also remain workspace research. The exact Green
-period, all-node multiplier/Plancherel theorem, complex opposite-face
-cofactor bound, one-cap geometric double and original-chain volume
-budget are also unpublished workspace results. The
-general prescribed-diagram target is still open; the publication records
-that limitation explicitly.
+The general prescribed-diagram target remains open. The results above provide source bounds, boundary reductions and conditional geometric comparisons; they do not establish the missing global estimate for every prescribed diagram.

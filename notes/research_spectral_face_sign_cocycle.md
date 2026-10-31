@@ -1,6 +1,6 @@
 # Exact face-sign absorption and its cycle obstruction
 
-Workspace research draft, 31 October 2026. Not approved for publication. Finite-source lemma. This separates a genuine
+Workspace research draft, 31 October 2026. Finite-source lemma. This separates a genuine
 Z/2 face-character test from a representation or regulator theorem.
 It applies to the literal homogeneous marked coefficient, before
 introducing physical half-power lifts.
@@ -54,7 +54,7 @@ kappa_e in F_2 solve
 
 Then the exact local variable substitution L_f -> (-1)^gamma_f L_f
 absorbs every incidence sign, up to the row scalar (-1)^(kappa_e d).
-At the ORIGINAL shared coefficient, their aggregate is the known
+At the original shared coefficient, their aggregate is the known
 constant
 
     (-1)^[ d sum_(ordinary f)gamma_f + d sum_e kappa_e ].       (3)

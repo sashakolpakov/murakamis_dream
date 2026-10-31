@@ -1,6 +1,6 @@
 # Exact root-character contraction and a correlated spectral localization lemma
 
-31 October 2026. Internally reviewed original-source theorem. The exact
+31 October 2026. original-source theorem. The exact
 root-character contraction retains the full repeated-root algebra and
 all first normal directions. A correlated spectral estimate proves the
 whole-source alias and physical-color gaps for every fixed root star
@@ -321,10 +321,7 @@ is allowed to grow with N, and no endpoint current is omitted.
 
 ## 6. Actual all-s root-star source theorem and its remaining boundary
 
-The independent input is now proved and fully cross-reviewed in
-[the full-jet star localization theorem](actual_conway_root_star_full_jet_localization.md),
-§§1–8. For every
-fixed $s\ge2$, take the literal expression
+The required input is [the full-jet star localization theorem](actual_conway_root_star_full_jet_localization.md), §§1–8. For every fixed $s\ge2$, take the literal expression
 
 $$
 \begin{aligned}
@@ -442,7 +439,7 @@ This is a genuine every-level lower bound, not an upper-only normalization.
 There are $H=s+1\ge3$ literal leaves. The complete star has inner leaf
 labels 1/4 and root label $\arctan(s)/\pi$. At each inner prefix the exact port
 is $(B,X,Y)=(1/r,1,1/r)$, so every retained gate is strict. The original
-wire lattice still has $K=2H-3$ coordinates. The reviewed [general all-core and quarter-packet argument](actual_conway_general_core_packet_and_gap.md)
+wire lattice still has $K=2H-3$ coordinates. The [general all-core and quarter-packet argument](actual_conway_general_core_packet_and_gap.md)
 uses the strict gate Hessians and the high/quarter source theorems; it
 provides the unique complete all-core maximum, its state complement gap,
 and the original nonzero local $N^{3/2}$ packet with all offsets and phases.
@@ -463,7 +460,7 @@ node values; silently replacing it by a semisimple quotient would lose
 precisely the normal contribution in (4). That broader spectral
 localization is the remaining general task.
 
-## 7. Independent review of the pre-existing envelope obstruction
+## 7. The envelope obstruction
 
 The following elementary calculation explains why a separate positive
 root-alias envelope does not suffice.
@@ -479,16 +476,3 @@ The last inequality uses $\pi<22/7$. This is only failure of a proposed
 positive upper bound to certify a gap, not a lower bound on the signed
 alias or a counterexample to a volume limit. The correlated Fourier
 contraction above avoids applying that separate root envelope.
-
-## Internal review and validation scope
-
-The primary reviewer read the entire source, Fourier and contour proof,
-including the actual star assembly, with analytical PASS. An independent
-coherent-source reviewer rederived the residue weights, missing frequency,
-normal-coordinate formula, calibrated chirp, endpoint repair, both joining
-currents and their summation; the full proof and source scope received PASS.
-The child localization input received a separate full source/analytical
-review, and the general all-core packet input was independently checked.
-These are internal analytical reviews, not external peer review or formal
-verification. Native mathematical rendering and relative-link validation
-are preservation checks. No numerical asymptotic experiment is used.

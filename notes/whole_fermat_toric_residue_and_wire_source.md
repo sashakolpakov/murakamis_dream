@@ -1,7 +1,7 @@
 # The whole original Fermat source as a toric residue, with its wire seams
 
 28 October 2026. The exact balanced Fourier crossing theorem gives a
-single scalar period for the ORIGINAL complete knot source. Its
+single scalar period for the original complete knot source. Its
 co-source is an explicit rational function of bounded degree on the
 finite Fermat grids. This note computes its root-grid Jacobian and the
 different Jacobian of a wire-pole pushforward.
@@ -42,7 +42,7 @@ g_a=x^(1-N)Q^(-a)=(x/s)Q^(-a), so its adapter is
     E_g(y,x0)=(x/s)[1-D/C]/[N(1-Q^(-1)y/x0)].       (3)
 
 At a removable collision the original finite K_N is understood. The
-unpivoted first trace, where present, has its ORIGINAL external
+unpivoted first trace, where present, has its original external
 normalization; it is not absorbed into (3).
 
 For completeness, use the actual physical pair sources proved in

@@ -1,8 +1,6 @@
 # Full volume from finite covers of the actual source sectors
 
-31 October 2026. General sufficient theorem for a fixed original marked plat.
-Internal independent proof review and exact certificate replays passed.
-Universal applicability to every eligible plat remains open.
+31 October 2026. A sufficient theorem for a fixed marked plat. Universal applicability to every eligible plat remains open.
 
 ## 1. The theorem and its geometric scope
 

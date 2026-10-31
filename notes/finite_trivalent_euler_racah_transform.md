@@ -256,12 +256,4 @@ must not be relabelled as an already proved full vertex norm bound.
 
 Audit: [all finite coefficient stages and source phases](../experiments/audit_finite_trivalent_euler_racah_transform.py).
 
-Root and independent internal proof reviews passed the complete
-finite bridge, both Sears prefactors, all root denominator ranges,
-the original source phase, positive symmetric series and every-label
-extension. A fresh exact replay passed fifteen full supported root
-families through N=16 at every intermediate finite stage, with a
-symbolic check of the remaining phase multiple. The root's independent
-[square-linearization proof](actual_trivalent_square_linearization_bridge.md)
-reaches the same H_c without the Jackson-Leibniz/Newton route.
-Tests are supplementary; the finite proofs establish the identity.
+The [square-linearization proof](actual_trivalent_square_linearization_bridge.md) reaches the same H_c without the Jackson-Leibniz/Newton route. Tests are supplementary; the finite proofs establish the identity.

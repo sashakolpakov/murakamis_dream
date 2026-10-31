@@ -1,6 +1,6 @@
 # A common positive face radius gives the global channel maximum
 
-30 October 2026. Independently reviewed. This is a
+30 October 2026. This is a
 finite determinant/rate theorem for the original positive face polynomials.
 The exact marked coefficient interface is proved separately. No
 external filling-color packet or filled-knot equality is claimed here.
@@ -193,4 +193,4 @@ not the internal a labels in this note and are not estimated here.
 
 Focused audit: [original finite channel factors](../experiments/audit_actual_positive_face_channel_rate.py), with [saved results](../experiments/actual_positive_face_channel_rate_results.json). It checks six symbolic identities, 704 all-label circles, 1408 original determinants, 528 independent Newton comparisons, 176 exact LDL products and 576 adjacent-channel ratios, including 64 maximal folds of each parity. The 72 rate samples are diagnostics only.
 
-Independent full analytical review: PASS. The reviewer checked the uniform block-pinching argument, positive matrix gap, actual endpoint truncations, scalar cancellation and strict channel derivative in every allowed zero pattern. Primary full proof/code review and fresh redirected 85-digit audit: PASS; maximum exact identity error below 5.7e-85. No finite-window signed Gaussian or external-color theorem is inferred.
+No finite-window signed Gaussian or external-color theorem follows from the channel-rate estimate.

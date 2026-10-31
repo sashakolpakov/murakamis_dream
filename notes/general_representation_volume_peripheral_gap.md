@@ -122,17 +122,6 @@ set of marked crossing-circle meridians is within the theorem's scope.
 
 ## Validation and scope
 
-Root full analytical review: PASS. The review checked the uniform
-interior measure estimates despite varying cusp maps, the fixed-pair
-volume identity, normalized isometry propagation, the use of exact
-equivariance to recover the marked character, and the finite-fixed-word
-quantifier. No numerical test substitutes for this analytic argument.
-The source action/period upper bound and the complementary-color
-cancellation remain separate requirements.
+The source action, period upper bound and cancellation of the complementary contribution remain separate requirements.
 
-Independent full analytical review: PASS. The reviewer checked the
-fixed-pair cusp normalization versus representation-independent interior
-estimates, the propagated isometric limit, convergence of the conjugated
-isometries from four noncoplanar points, and the fixed finite peripheral
-quantifier. The absolute-volume orientation alternative and the source
-limitations remain explicit. The theorem is frozen after these reviews.
+The cusp normalization uses a fixed pair, whereas the interior estimates are representation-independent. The peripheral quantifier is over the specified finite set. The absolute-volume orientation alternative and source limitations remain as stated.

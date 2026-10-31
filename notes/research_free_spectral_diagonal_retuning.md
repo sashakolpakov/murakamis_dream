@@ -1,11 +1,6 @@
 # Free spectral retuning removes the negative diagonal singularity
 
-31 October 2026. **Internally reviewed research lemma.** Root and a
-separate reader completed full analytical reviews. This uses the ORIGINAL sharp
-interval entropy, not the fractional envelope. Spectra are independently
-free real parameters. The conclusion concerns global maxima of that
-variational functional; it is not a statement about local maxima with a
-fixed spectrum, nor a finite-N estimate uniform at a spectral cap.
+Retuning applies to a global maximum with freely varying spectra. It is not a statement about fixed-spectrum local maxima or a uniform finite-$N$ estimate in a shrinking cap neighborhood.
 
 ## 1. A uniform lower bound from one exact word
 
@@ -189,7 +184,7 @@ all such vertices or all structural identity strata.
 
 The finite Hall/residual-cycle test from the ordinary-zero barrier
 note still decides whether an incidence can be activated in the
-ORIGINAL fiber. No larger fractional network, projected cover, or
+original fiber. No larger fractional network, projected cover, or
 independent local reassignment is substituted. Pole-touching non-diagonal
 rows can still have a negative singular term and remain outside this
 global lemma unless separately controlled.
@@ -212,7 +207,7 @@ coefficient identification has been established. It does not identify
 the rate of a signed sum of central CROSS paths, construct a volume
 representation, or prove a universal complete-volume comparison.
 
-## Review scope
+## Scope
 
 Root and an independent reader checked the complete argument, including
 the exact half/full normalizations, the constants one and two in the

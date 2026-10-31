@@ -1,7 +1,7 @@
 # The actual Casimir plat phase and its marked representation germ
 
 30 October 2026. On a regular chart at a complete geometric point, the
-constrained critical scheme of the ORIGINAL augmented-plat phase is
+constrained critical scheme of the original augmented-plat phase is
 isomorphic to the actual marked representation germ modulo one diagonal
 framing scale. This includes local Artin test rings, rather than only
 complex points or tangent dimensions. The proof reconstructs shared wire
@@ -49,7 +49,7 @@ not by substituting roots into an unadjusted phase.
 
 For each auxiliary circle retain its longitude eigenvalue J_v near -1
 and prescribe its physical meridian eigenvalue m_v near 1. The channel
-equation is the ORIGINAL one
+equation is the original one
 
     R_(epsilon_v)=m_v^(-2).                              (2)
 
@@ -123,7 +123,7 @@ agree. At a coupon (4),(7) give
     S_in=(t_v D Y_in,t_v D),
     S_out=(t_v/Y_out,t_v).                             (8)
 
-This is the ORIGINAL local kernel formula with g=t_v D. Conversely
+This is the original local kernel formula with g=t_v D. Conversely
 shared momenta satisfying that formula give (7), hence (6),(5).
 Choosing another ambient extension changes its derivatives by a local
 multiple of the degree row and merely changes t_v, leaving S unchanged.
@@ -410,11 +410,4 @@ peripheral factors and all finite-normal data remain unchanged.
 
 Audit: [incidence, boundary and regular centralizer certificates](../experiments/audit_actual_augmented_plat_critical_scheme.py).
 
-Independent internal review: a second reader checked the full
-incidence/momentum inverse, all actual boundary characters, high-degree
-adapter, regular centralizer and primitive auxiliary reconstruction,
-and the literal Morse presentation over Artin rings. Its fresh audit
-passed the symbolic local identities and 24 event-graph reconstructions.
-The separate multi-cusp geometric theorem was independently read and
-replayed before applying it in section 7. The physical branch,
-finite-source cycle and amplitude limitations remain as stated.
+The critical-scheme identification retains the stated physical-branch, finite-source-cycle and amplitude limitations.

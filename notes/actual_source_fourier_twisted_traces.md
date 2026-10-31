@@ -107,7 +107,7 @@ The matrix Frobenius functional and Nakayama map are
     T(ab)=T(b nu(a)).
 
 Changing from the local head to (2) sends its word coefficient
-to nu^j of the local coefficient. Therefore the ORIGINAL source
+to nu^j of the local coefficient. Therefore the original source
 from the all-strand theorem becomes EXACTLY
 
     P_W=chi_W gamma_0 T(D b),
@@ -316,7 +316,7 @@ The [audit](../experiments/audit_actual_source_fourier_twisted_traces.py)
 and [saved results](../experiments/actual_source_fourier_twisted_traces_results.json)
 check seven levels N=2,...,8, all basis relative-line compressions,
 twisted cyclicity, sector inverses, exact norm equations, the sharp
-zero-sector nilpotence index, and the common-frame ORIGINAL source
+zero-sector nilpotence index, and the common-frame original source
 on six signed words of braid indices two, three and four. The
 noninvariance and E-commutation witnesses use literal original
 crossing matrices and pivots, not replacement traces.

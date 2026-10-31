@@ -39,7 +39,7 @@ Q_i=H_i ... H_1, Q_0=I. For a determinant-one matrix Q with Q_11!=0 put
     Bminus(Q)=[[1,0],[-Q_21,Q_11]],
     Bplus(Q)=[[Q_11,Q_12],[0,1]].
 
-Then Q=Bminus(Q)^-1 Bplus(Q). Consequently the ORIGINAL physical
+Then Q=Bminus(Q)^-1 Bplus(Q). Consequently the original physical
 head at slot i is
 
     G_i=Bminus(Q_(i-1)) H_i Bminus(Q_(i-1))^-1,

@@ -1,6 +1,6 @@
 # Global real-spectral gap of the actual all-CROSS source
 
-Independently reviewed, 31 October 2026. This estimates the ORIGINAL
+, 31 October 2026. This estimates the original
 CROSS path sectors on the entire real spectral interval. The local bound
 is a weighted VALUE bound, not a coefficientwise strict inequality.
 The original face Cauchy period and its previously proved angular gap
@@ -266,7 +266,7 @@ by the value at positive faces. For all $\delta$ the same estimate without
 $-\gamma_\eta$ holds. In particular every other port has a controlled
 endpoint rate while one separated port supplies a strict loss.
 
-## 4. Sewing the ORIGINAL marked Cauchy period
+## 4. Sewing the original marked Cauchy period
 
 Fix the actual positive complete ordinary radii, with both protected
 variables zero. Their endpoint weighted exponent after the original
@@ -311,14 +311,9 @@ The [whole all-CROSS period theorem](general_all_cross_long_filling_volume.md)
 performs that transfer and obtains the filled-volume asymptotic for this
 sector. It does not identify the all-CROSS sector with the full invariant.
 
-## Reviewed scope and focused finite checks
+## Scope and focused finite checks
 
-The root, source and geometry reviewers independently read the entire
-analytical proof and reported PASS. Their reviews included the defective
-transfer endpoint, moving logarithmic zeros, the exact upper-action
-maximization, marked-zero exceptions and original face-period sewing.
-Equation (12) is an equality for $F_{\mathrm{abs}}$; (8) remains a LIMSUP upper
-bound for the actual cofactor, whose cancellations may make it smaller.
+The equality in (12) concerns the absolute envelope. Equation (8) is a limsup bound for the actual cofactor; cancellation can make its rate smaller.
 
 The [focused audit](../experiments/audit_actual_global_cross_spectral_gap.py)
 and its [results](../experiments/actual_global_cross_spectral_gap_results.json) check four symbolic identities, 120 original recurrence/start-sum
@@ -327,7 +322,4 @@ identities at 65 digits, across both parities and all stated zero
 patterns. Author replay maximum relative identity error was 1.26e-64.
 Its 120 finite weighted-rate comparisons are explicitly diagnostics.
 They do not substitute for the uniform proof or numerically verify
-the original shared coefficient gap. The root independently reviewed
-the focused audit and freshly replayed it, reproducing the recorded
-JSON exactly. Its analytical proof has the three recorded independent
-reviews.
+the original shared coefficient gap.

@@ -304,11 +304,4 @@ beyond simple-spectrum or smooth-curve assumptions. Extending that
 estimate to arbitrary reduced words, and controlling the corresponding
 original marked closure, remains the quantum critical path.
 
-Independent analytical review passed the written winding, cusp,
-polarized-Jacobian, algebraicity and full-angle arguments. The
-[exact winding audit](../experiments/audit_finite_real_algebraic_geometric_certificate.py)
-checks all eight edges of the actual reflected two-octahedron base
-in 284 exact shape orders, positive/negative real intermediate
-products, and rejection of product-one lists of winding two or three.
-These finite checks supplement the general proof; they do not prove
-the existence of positive charts or quantum asymptotics in general.
+The [exact winding audit](../experiments/audit_finite_real_algebraic_geometric_certificate.py) checks all eight edges of the actual reflected two-octahedron base in 284 exact shape orders, positive/negative real intermediate products, and rejection of product-one lists of winding two or three. These finite checks supplement the general proof; they do not prove the existence of positive charts or quantum asymptotics in general.

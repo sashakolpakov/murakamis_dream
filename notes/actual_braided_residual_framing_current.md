@@ -1,6 +1,6 @@
 # The actual braided residual-framing current
 
-30 October 2026. Independently reviewed. After a legitimate
+30 October 2026. After a legitimate
 coherent functional fixes the first cut, the actual Hopf adjoint gives
 an exact current in the second cut. Its coefficients are two routed
 OFF-DIAGONAL bands of the original tensor. They are not reconstructed
@@ -201,7 +201,7 @@ the selected geometric component survives there.
 
 There is a source-preserving residue realization of the coefficients
 in (6), not a new interpolation of those finite values. Expand their
-ORIGINAL generic tensors, including the routed crossings, in the
+original generic tensors, including the routed crossings, in the
 specified finite white/cup/cap presentation. For U and U^-1 this is
 the FULL generic spectral expansion of each original crossing, with
 both small and large partner channels and their actual spectral
@@ -214,7 +214,7 @@ higher jet. This is the source class of the
 [actual tensor connection](actual_tensor_source_finite_jet_connection.md).
 
 For each admissible assignment and each off-diagonal band retain its
-own primitive affine head lattice and ORIGINAL finite support. The
+own primitive affine head lattice and original finite support. The
 band source has a fixed integral charge offset. At every allowed
 integer point its moving-period coefficient is the actual generic
 matrix entry. Its small product-cotangent torus therefore gives
@@ -294,7 +294,7 @@ finite band-momentum boundary family; it does not license a general
 second diagonal functional or simultaneous evaluation of two heads.
 
 There is an exact whole-source absorption of this insertion. Let
-H=C(I)=P_V[AB]=zI, with the ORIGINAL pivots and all other source
+H=C(I)=P_V[AB]=zI, with the original pivots and all other source
 factors. Equation (12) gives
 
     Tr[e_t C(X(p))]/b_N(t,p)=Tr[e_eff H],
@@ -372,7 +372,7 @@ periods and charged support cycles reproduce that coefficient.
 ## 6. What covariance fixes in the genuine normal
 
 There is an exact freedom at every N. Write tau_e(X)=Tr(g_e X),
-D_e=tau_e(I), with the ORIGINAL generic pivot, and put
+D_e=tau_e(I), with the original generic pivot, and put
 
     B_e(X)=D_e X-tau_e(X)I.                              (15)
 
@@ -527,34 +527,8 @@ universal integer-shift chain rule and its
 resonant cotangent finite part. They do not audit an off-grid Ward
 identity or a stationary framing pushforward.
 
-Independent validation: the primary and coherent-source readers fully
-checked the actual generic adjoint, four routed bands, coherent dual
-row, endpoint arrows, rectangular maps, and finite interval identity;
-both freshly replayed the full focused audit, including the added
-complete Fourier corollary. The geometry reader independently checked
-the principal residual field, complete-source normalization, cotangent
-change-of-chain rule and all three resonant coefficients. These reviews
-retain the explicit distinction between finite contracted currents,
-off-grid Ward assembly and an original geometric-period coefficient.
+Finite currents, off-grid Ward identities and a geometric period are distinct levels of the argument.
 
-The added off-node section 5 received independent full primary and
-coherent-source reviews. The latter freshly replayed the extended
-audit, including the true generic defects and limiting Fourier zero.
-Those reviews cover the literal finite rank-one source, unwrapped
-charge proof and root boundary profile; they do not determine z,
-differentiate its root factor, or identify a selected transverse period.
-The subsequent whole-source absorption (13a),(13b),(14a) also received
-independent primary and coherent-source reviews of its exact kernel,
-gauge orientation, position tilt and retained generic defect. Its
-conclusion is reduction to the existing one-cut coherent family,
-not an independent localization of the residual framing direction.
+The off-node result concerns the finite rank-one source, unwrapped charge and root boundary profile. It does not determine z, differentiate its root factor, or select a transverse period. The absorption identities (13a),(13b),(14a) reduce the whole source to the existing one-cut coherent family; they do not independently localize the residual framing direction.
 
-The genuine-normal section 6 also received an independent full
-coherent-source review of (15)--(21), including a fresh symbolic
-check of the original N=2 family and its arbitrary-power identity.
-The primary reader independently checked the original crossing,
-pivot, restored Cartan factor and general free pivotal channel.
-These reviews distinguish tensor-span freedom from the two actual
-connected source words, and full-root-map lift independence from
-determination by the scalar z. No geometric-period obstruction is
-inferred from the counterexample.
+Freedom in the normal tensor span is distinct from freedom among two actual connected words. Independence of a lift is not determination by a scalar root coordinate, and no geometric-period obstruction follows.

@@ -12,18 +12,18 @@ of the remaining geometric boundary terms. No test reruns were needed.
 
 For \(A^N=U\),
 \[
- D_{\rm phys}=A\partial_A+NU\partial_U
+ D_{\mathrm{phys}}=A\partial_A+NU\partial_U
 \]
 preserves the relation, and
-\(\nabla=D_{\rm phys}/N\) has
-\(\nabla\Log U=1\). With the marked \(\alpha^N=U\),
+\(\nabla=D_{\mathrm{phys}}/N\) has
+\(\nabla\operatorname{Log} U=1\). With the marked \(\alpha^N=U\),
 the elements \(A/\alpha\), hence every \(\epsilon_j\),
 are horizontal. The map
 \[
- v_{rN+j}\longmapsto\epsilon_j(\Log U)^r/r!
+ v_{rN+j}\longmapsto\epsilon_j(\operatorname{Log} U)^r/r!
 \]
 is therefore a topological linear isomorphism carrying
-\(B\) to \(\nabla\), \(T\) to multiplication by \(\Log U\),
+\(B\) to \(\nabla\), \(T\) to multiplication by \(\operatorname{Log} U\),
 and the coherent kernel to \(\epsilon_jU^s\).
 The averaged trace and its \(U=1\) value give precisely
 the stated original vacuum cut.
@@ -69,43 +69,43 @@ The displayed formulas in
 [the Mellin note](fock_cyclic_normal_mellin_map.md)
 are correct for the **root-reduced lift**
 \[
- g_{\rm red}=x^{1-N}A^{-1},\quad
- D_{\rm red}=g_{\rm red}^{-1}e.
+ g_{\mathrm{red}}=x^{1-N}A^{-1},\quad
+ D_{\mathrm{red}}=g_{\mathrm{red}}^{-1}e.
 \]
 They have adapters \(\alpha^{-1}\) and \(\alpha\),
-and physical derivatives \(-g_{\rm red}\) and
-\(+D_{\rm red}\), respectively.
+and physical derivatives \(-g_{\mathrm{red}}\) and
+\(+D_{\mathrm{red}}\), respectively.
 
 The revised note separately retains the literal power
 of \(K_U=xA^{-1}\):
 \[
- g_{\rm lit}=K_U^{1-N}
-   =x^{1-N}A^{N-1}=U g_{\rm red}.
+ g_{\mathrm{lit}}=K_U^{1-N}
+   =x^{1-N}A^{N-1}=U g_{\mathrm{red}}.
 \]
-Its matching defect is \(D_{\rm lit}=U^{-1}D_{\rm red}\).
+Its matching defect is \(D_{\mathrm{lit}}=U^{-1}D_{\mathrm{red}}\).
 The adapters are then \(\alpha^{N-1}\) and
 \(\alpha^{1-N}\), and
 \[
- D_{\rm phys}(g_{\rm lit})=(N-1)g_{\rm lit},\qquad
- D_{\rm phys}(D_{\rm lit})=(1-N)D_{\rm lit}.
+ D_{\mathrm{phys}}(g_{\mathrm{lit}})=(N-1)g_{\mathrm{lit}},\qquad
+ D_{\mathrm{phys}}(D_{\mathrm{lit}})=(1-N)D_{\mathrm{lit}}.
 \]
 Both choices give \(gD=e\) and the same finite source at
 \(U=1\), but their individual normal jets differ. The revised
 proof now states this \(U^{\pm1}\) adapter explicitly.
 
 Residual normal-current section 6 is consistent with these
-formulas. The divided Frobenius shift is \(-D_{\rm phys}\),
+formulas. The divided Frobenius shift is \(-D_{\mathrm{phys}}\),
 the averaged trace satisfies
-\(\tau D_{\rm phys}=NU\partial_U\tau\), and its paired
+\(\tau D_{\mathrm{phys}}=NU\partial_U\tau\), and its paired
 matrix row has the same covariance for either lift.
 Its coefficientwise extension is explicitly separated
 from \(\Gamma_U\), so the latter's extra finite-vacuum
 normal derivative has not been dropped.
 
 The physical \(2\pi i\) caveat is correct:
-\(\tau_{\rm geo}\Log A/H_N=\tau_{\rm geo}\Log U/(2\pi i)\).
-The bare kernel \(U^{s_{\rm Fock}}\) therefore needs
-\(s_{\rm Fock}=\tau_{\rm geo}/(2\pi i)\); its unit
+\(\tau_{\mathrm{geo}}\operatorname{Log} A/H_N=\tau_{\mathrm{geo}}\operatorname{Log} U/(2\pi i)\).
+The bare kernel \(U^{s_{\mathrm{Fock}}}\) therefore needs
+\(s_{\mathrm{Fock}}=\tau_{\mathrm{geo}}/(2\pi i)\); its unit
 endpoint cannot silently be identified with the
 geometric unit meridian interval.
 

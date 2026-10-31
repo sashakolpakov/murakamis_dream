@@ -7,7 +7,7 @@ not replace the general long-twist target by one family.
 
 ## 1. The existing simple-sphere construction applies to the actual source
 
-Start with an ORIGINAL ordered 2k-strand flat plat, k>=2, whose boxes
+Start with an original ordered 2k-strand flat plat, k>=2, whose boxes
 cover all crossings, retaining the original cups, caps, marked top cap,
 cyclic port order and crossing-disk matching. Build its actual plane
 cubic matching graph and dual white triangular cellulation by the
@@ -56,7 +56,7 @@ Number adjacent strand slots from0 to2k-2. Put
     O_k=(1,3,...,2k-3), E_k=(0,2,...,2k-2),
     w_k=O_k E_k O_k, R=3k-2.                            (1)
 
-These are the ORIGINAL bottom-to-top box slots; no isotopy or abstract
+These are the original bottom-to-top box slots; no isotopy or abstract
 matching-to-plat adapter is needed. Denote the exterior by u, the k
 bottom odd-gap regions by a_0,...,a_(k-1), the k top odd-gap regions
 by b_0,...,b_(k-1), and the intermediate bounded even-gap regions by
@@ -103,7 +103,7 @@ Consequently every w_k, k>=3, meets the simple-white certificate.
 
 ## 3. Width two and the knot parity
 
-For k=2 take the ORIGINAL slot word (1,0,1), with R=3. Its actual
+For k=2 take the original slot word (1,0,1), with R=3. Its actual
 quartets are
 
     (1,0,3,2), (0,1,4,3), (4,3,0,2).
@@ -169,7 +169,3 @@ occurrences, sphere counts and one-component parity at widths 2 through
 finite checks support the source dictionary; the symbolic formulas and
 construction above prove the arbitrary-width statement. They do not prove
 minimal bridge number or the phase-sensitive quantum filling limit.
-
-Root and an independent internal reviewer checked the entire class
-argument, the all-width incidence formulas, geometric dependencies and
-parity proof. The portable source audit was read and replayed by root.

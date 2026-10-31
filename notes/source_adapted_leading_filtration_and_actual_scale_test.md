@@ -19,7 +19,7 @@ not assert that remaining step or a new volume conjecture proof.
 
 ## 1. An exact source-adapted normal-jet functor
 
-Use the ORIGINAL reduced state and marks of
+Use the original reduced state and marks of
 [the normal-period theorem](peripheral_normal_period.md):
 
     q_N=exp(pi*i/N), Q_N=q_N^2, Y=M^2,
@@ -103,7 +103,7 @@ Consequently v_0 in (2) has polynomial norm. It is NONZERO:
 the ordinary one-color anchor is C_1(q_N)=1, so its r=1
 coordinate is Q_N-1. Its normal valuation is therefore zero.
 
-For the ORIGINAL figure-eight knot, the independently proved
+For the original figure-eight knot, the independently proved
 [whole source identity and volume evaluation](figure_eight_whole_source_identity.md)
 give
 

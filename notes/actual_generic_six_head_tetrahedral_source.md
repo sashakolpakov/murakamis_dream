@@ -334,9 +334,4 @@ and exact cancellation of every pole and ordinary trace constant.
 These finite checks supplement the derivations and do not establish
 conditioning or a new graph volume limit.
 
-Internal review: the primary agent and the independent conditioning
-agent read the full finite source and marked-normal derivation. The
-latter also replayed the audit and independently checked the complete
-phase in (11), all high-partner pole cancellations, the Z/nu_N sign,
-and the required orders in (16). Both reviews passed. This records
-internal proof review, not external peer review or a conditioning theorem.
+The finite source and normal formulas do not constitute a conditioning theorem.

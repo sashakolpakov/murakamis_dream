@@ -1,6 +1,6 @@
 # A matched spherical triangulation has the original general Morse source
 
-31 October 2026. Internally reviewed research theorem. This is a finite
+31 October 2026. This is a finite
 topology/source extension, not a volume asymptotic and not a claim that a
 new presentation has a prescribed flat-plat width.
 
@@ -334,16 +334,10 @@ Those hypotheses must be checked on the chosen diagram. In
 particular no old flat-plat gap forest or prescribed bridge width
 has been transported merely by constructing a general Morse source.
 
-## Internal review and limits
+## scope
 
-Root and geometry independently read the complete written topology/source
-proof and gave full analytical/source PASS, including the local collar
-straightening, the actual terminal pairing, and the new-network winding
-compiler. Cluster independently read section 6 and gave a full targeted
-source/normalization PASS, retaining the Hermite data, ordered multilinearity,
-whole-domain charge series, and separate framing/modified scalars.
 
-All finite matrix ingredients are the previously reviewed original duality,
+All finite matrix ingredients are the original duality,
 homogeneous source, all-MAIN compiler, and local full-Hermite filling
 functional. No new numerical audit is asserted for this constructive proof.
 No global spectral comparison, filling asymptotic, prescribed plat width,

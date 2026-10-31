@@ -2,7 +2,7 @@
 
 29 October 2026. For every \(j=N-r\) with
 \(0\leq r\leq\lfloor(N-1)/2\rfloor\), the literal rotated pretzel
-circle box has a positive half-degree core plus an ORIGINAL crossing
+circle box has a positive half-degree core plus an original crossing
 times a degree-\(r-1\) polynomial. The entire second band, including
 every Casimir normal jet, has norm at most \(56^r\) in a faithful
 source-compatible Hermite norm. Thus it costs \(\exp(O(\delta N))\)
@@ -174,9 +174,9 @@ with room to spare. No \(N^{O(r)}\) loss occurs.
 There is also a full physical operator bound
 
 \[
- \|P_{N,r}(\Omega)\|_{\rm op}\leq120^r,
- \qquad \|R P_{N,r}(\Omega)\|_{\rm op}
-                                  \leq120^r\|R\|_{\rm op}. \tag{8}
+ \|P_{N,r}(\Omega)\|_{\mathrm{op}}\leq120^r,
+ \qquad \|R P_{N,r}(\Omega)\|_{\mathrm{op}}
+                                  \leq120^r\|R\|_{\mathrm{op}}. \tag{8}
 \]
 
 Indeed every physical \(\Omega\) block has norm at most18; the same

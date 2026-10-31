@@ -152,7 +152,7 @@ Equations (4) and (6) give the exact original pretzel scalar
                                  \mathcal A_{s,N}(j_1,\ldots,j_s). \tag{7}
 \]
 
-The \(\chi_N\) here is the ORIGINAL filled pretzel's line. It is
+The \(\chi_N\) here is the original filled pretzel's line. It is
 not replaced by a guessed normalization or framing of the augmented
 diagram. For each fixed \(s\) the coefficient mass is at most
 \(\prod_i2N(1+|p_i|)\). The formula treats arbitrary odd \(s\),

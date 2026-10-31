@@ -1,11 +1,6 @@
 # The actual magnetic polynomial and its complex corridor
 
-Subsequent joint extension: the [accretive determinant](actual_q_hahn_joint_accretive_determinant.md)
-and [joint amplitude theorem](actual_q_hahn_joint_complex_amplitude.md)
-now allow pair degree and magnetic coordinate to vary together on a
-central complex domain. The channel remains discrete. The theorem below
-keeps its larger fixed-degree magnetic strip; its original review scope
-records the state before that subsequent extension.
+The subsequent joint-domain theorem retains the central magnetic domain and discrete channels. This note treats the larger fixed-degree magnetic strip; the two domains are distinct.
 
 30 October 2026. This note concerns the original complete-circle column,
 at fixed integer pair degree t and channel j. Its finite continuation in
@@ -31,7 +26,7 @@ For a nonnegative integer a define the entire function
     beta(z,a)=product_(r=0)^(a-1) 2sin(pi(z-r)/N) / s_a,
     s_a=product_(r=1)^a 2sin(pi r/N).
 
-The ORIGINAL continuation is the finite sum
+The original continuation is the finite sum
 
     fhat_(N,t,j)(u)=exp(pi i u) q^[-(j+1)u]
        sum_(a=0)^j q^[(t+j-d)a]
@@ -419,22 +414,6 @@ next object without supplying the missing estimates for it.
 
 Audit: [exact magnetic polynomial and complex corridor](../experiments/audit_actual_q_hahn_magnetic_complex_corridor.py).
 
-Independent analytical review: a second reader checked the literal
-terminating continuation, coproduct normalization and negative-root
-factorization, the strip zero exclusion, canonical center phase and
-sampling-alias removal, the endpoint-inclusive Casimir equation and
-its discriminant, and the actual finite-shift amplitude bootstrap.
-The real-center normalization and both original integer offsets were
-independently recalculated. The joint rational appendix, including the
-Gaussian-versus-sine binomial phase, also passed. The primary reader's
-fresh audit replay was retained rather than duplicated. The theorem
-still fixes real discrete pair degree and channel; it supplies neither
-a joint complex estimate nor a selected whole-source cycle.
+The theorem still fixes real discrete pair degree and channel; it supplies neither a joint complex estimate nor a selected whole-source cycle.
 
-Root review: full analytical read and fresh audit PASS. The review checked
-the original terminating function, exact coproduct normalization, residual
-root induction, canonical center phase, removal of the sampling alias,
-Casimir polynomial identity, simple branch and two-order derivative
-bootstrap. The replay included 186 independent joint sine-product checks
-and 32 complex magnetic amplitude regressions. The joint rational formula
-is exact; joint complex asymptotics and the global source remain open.
+The conclusion is a fixed-degree estimate, not a global source bound. The joint complex-domain extension is a separate theorem.

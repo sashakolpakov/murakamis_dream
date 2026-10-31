@@ -1,6 +1,6 @@
 # Independently long integer twists on weighted Conway trees
 
-31 October 2026. Internally reviewed research theorem. The class is specified
+31 October 2026. The class is specified
 by literal ordered tangle operations. Every finite rooted ordered tree
 with at least two vertices gives such a presentation; its branching,
 valence and depth are unrestricted. A fixed knot-producing parity pattern
@@ -293,8 +293,7 @@ not a classification of all arborescent knot presentations, a uniform
 threshold over growing trees, or a generic main-meridian quantum
 A-polynomial theorem. Those broader parts of the active goal remain open.
 
-
-## Coverage and internal review
+## Coverage and scope
 
 The [repository comparison](actual_conway_root_star_prior_source_coverage.md)
 identifies the earlier outer-kernel cancellation and the one-hub all-odd
@@ -309,14 +308,3 @@ states a volume-conjecture theorem for an infinite family of links.
 It is a relevant comparator; no equivalence of its knot types with all
 presentations (1)–(2), or novelty classification, is proved here. Its
 proof is not an input to this argument.
-
-Two source reviewers independently checked all six proof sections,
-including the complementary-color expansion, the original unit phase,
-the two-leaf knot case and the full filling transfer. The geometry
-reviewer checked the literal weighted-tree construction, strictness,
-primitive slopes, absolute calibration and independent signed-weight
-quantifiers. The primary reviewer checked these interfaces and the
-separate source and classical derivations of \(F_0\). All passed after
-the displayed phase and notation clarifications. These are internal
-analytical reviews, not external peer review or formal whole-proof
-verification. No numerical asymptotic is a proof input.

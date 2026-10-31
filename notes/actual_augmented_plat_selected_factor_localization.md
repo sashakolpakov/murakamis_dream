@@ -22,7 +22,7 @@ Use the following two established inputs, with their distinct scopes:
   shaded facets at the ends of e. All other ordinary input/output factors
   have their actual canonical low or high physical coordinates.
 * The [full physical complex packet](actual_q_hahn_full_physical_complex_packet.md)
-  concerns the ORIGINAL finite q-Hahn column. Its limiting domain is
+  concerns the original finite q-Hahn column. Its limiting domain is
 
       P={ (tau,nu) in C^2 : 1/2<Re tau<1, 0<Re nu<Re tau }.       (1)
 
@@ -198,14 +198,4 @@ and four sheet-involution identities. These are new exact algebraic
 checks only; the outside-central finite-source comparisons belong to
 the separate full-physical packet audit.
 
-Independent analytical reviews: PASS. The root reader independently
-solved the low flag quadratic and checked the high-adapter discriminant
-and triple reversal. A second reader checked the actual prefix and
-open-circle-side continuation; a third checked the entire corollary
-against the full physical packet and its precise complex normal ranges.
-All checked the continued, rather than pointwise principal, square root,
-the prescribed matching-edge pair, and the distinction between an
-ordinary local product and the uncontrolled complementary contraction.
-The proof also uses the existing prescribed-pair audit and the separately
-reviewed full-physical packet; no numerical fixture is used to infer the
-global frame or selected branch.
+The square root is continued from the prescribed matching-edge pair, rather than chosen pointwise as a principal root. The local product theorem does not control the complementary contraction. The proof uses the prescribed-pair identity and the full physical packet; a numerical fixture alone cannot select the global frame or branch.

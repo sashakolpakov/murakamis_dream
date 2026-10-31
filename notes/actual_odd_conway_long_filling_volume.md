@@ -258,13 +258,6 @@ the finite-source packet and the whole-color bound.
 
 ## 7. Verification and limits
 
-The new source gap and selected complex packet, complete and deformed
-geometry, and this assembly received independent internal analytical
-reviews. The general transfer and explicit geometric completion were
-also rechecked at the application-specific interfaces. The primary
-agent read the new proofs and replayed the full transport, geometry,
-complex-packet and six-leaf audits. These are internal research
-reviews, not external peer review.
 
 The [independent six-leaf certificate](../experiments/audit_actual_odd_conway_six_leaf_calibration.py)
 checks C(A A) beyond the old three-leaf examples. It proves the nine

@@ -1,8 +1,7 @@
 # The constrained Hessian of the original sharp source
 
-31 October 2026. **Internally reviewed analytical research reduction.**
-Root and a separate reader completed full analytical/source-scope reviews,
-PASS. These are internal reviews, not external peer review. This derives an exact second-variation test on the original shared transport
+31 October 2026. **analytical research reduction.**
+This derives an exact second-variation test on the original shared transport
 fiber. The local obstruction below shows why an odd MAIN four-cycle does
 not alone supply an unstable direction. It is not a globally realized
 stable maximum, an absolute source bound, or a volume theorem.
@@ -126,7 +125,7 @@ T above. At (c-b)z=A, its second derivative is
 
     W_e=2(c-b) pi sin(2pi delta)/sqrt(C_0^2-D_0)>0. (7)
 
-This is precisely the reviewed local weighted spectral minimum. It is
+This is precisely the local weighted spectral minimum. It is
 W, not S. The shared repair term in (6) cannot be discarded just because
 the original incidence graph has an odd signed four-cycle. That cycle
 is a phase statement; (4) is an unsigned constrained quadratic test.
@@ -155,8 +154,7 @@ The original monomer Hessian in (mu,nu,delta) at (8) is
      [-4pi,         -4pi,        -4pi sqrt(3)]].  (9)
 
 Its fixed-degree spectral entry is strictly negative. Optimizing that
-spectral displacement, equivalently differentiating the already reviewed
-[sharp spectral action](actual_protected_outer_spectral_energy.md)
+spectral displacement, equivalently differentiating the [sharp spectral action](actual_protected_outer_spectral_energy.md)
 D_f(mu,nu-mu), gives the row Schur complement
 
     (4pi/sqrt(3)) [[-2,1],[1,0]].                 (10)
@@ -210,12 +208,3 @@ action](actual_protected_outer_spectral_energy.md); and the already recorded
 [local D_f nonconcavity](research_joint_entropy_triangle_decomposition.md). The new statements are the original-target
 Schur complement and the precise failure of the elementary forced-edge
 instability inference. No numerical test is needed for these identities.
-
-## Internal validation
-
-Root and a separate reader each read the complete derivation and checked
-the Legendre Hessian, strong-concavity constant, actual cap-image
-elimination, pseudoinverse range, normalized spectral curvature, exact
-monomer matrices and original MAIN circulation. Both reported PASS. No
-finite numerical audit is needed or claimed for these analytical identities.
-The global-realization and absolute-bound limitations remain unchanged.

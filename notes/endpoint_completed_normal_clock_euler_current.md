@@ -23,7 +23,7 @@ In its fixed sign frame write w_(R,S), 0<=R<=N, 0<=S<N, and set
  Z=Q^N,\quad\delta=1-Z,\quad J=NR+S,\quad C_Q=Q^J=Q^S Z^R.
 \]
 
-Keep the ORIGINAL generic integral divided matrices
+Keep the original generic integral divided matrices
 
 \[
  e(q)=\tau E^{(N)}(q),\qquad f(q)=F^{(N)}(q),\quad
@@ -121,7 +121,7 @@ At the root A=Q_N^S, (3) gives
 
 \[
  \mathcal E(g):=[\mathcal J_Z(g)]_0
-                  =A\partial_A g(Q_N,A)\,I_{\rm Fr}. \tag{5}
+                  =A\partial_A g(Q_N,A)\,I_{\mathrm{Fr}}. \tag{5}
 \]
 
 The shifted argument in (2) has the same leading divided commutator
@@ -157,7 +157,7 @@ Thus (5) is the actual clock conormal-jet derivative
 It is a derivation relative to the root evaluation, not a discarded
 normal direction on the fixed fiber. Write uniquely
 g=g_0+(t^N-1)g_1 modulo its square, with both g_i of degree<N.
-For the ORIGINAL averaged cut phi_N, the exact source row is
+For the original averaged cut phi_N, the exact source row is
 
 \[
                  \phi_N(\mathcal E(g))=N\phi_N(g_1). \tag{7}
@@ -289,7 +289,7 @@ head Ward boundary. Let K=xA^(-1) and let B_cut be the actual
 matrix of the Ward contraction, [K,B_cut]=e_h-I/N. Since [K,L_h]=0,
 
 \[
- \Phi_h([L_h,H])=-\operatorname{Tr}([B_{\rm cut},L_h][K,H]). \tag{8c}
+ \Phi_h([L_h,H])=-\operatorname{Tr}([B_{\mathrm{cut}},L_h][K,H]). \tag{8c}
 \]
 
 This follows by applying the original cut homotopy and Jacobi; the
@@ -354,7 +354,7 @@ torsor. Put h=Log Q near h_N=2pi i/N and retain
 
 \[
        \operatorname{Log}C_Q=hJ,\qquad
-       \operatorname{Log}Z=Nh\quad\hbox{near }2\pi i.
+       \operatorname{Log}Z=Nh\quad\text{near }2\pi i.
 \]
 
 This is not the branch of Log Z near zero. A retained polynomial

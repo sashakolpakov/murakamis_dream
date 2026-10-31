@@ -2,7 +2,7 @@
 
 28 October 2026. Every terminal pair source can be peeled by exact
 coefficients before taking a critical-point limit. The resulting source
-is a coupled geometric polynomial, including at the ORIGINAL marked
+is a coupled geometric polynomial, including at the original marked
 cap. An exact interval identity retains its complete numerator and gives
 a regular complex Lagrangian on which the actual framed meridians are
 inverse. This supplies the classical cap equation missing from treating
@@ -34,7 +34,7 @@ physical basis vector indexed by (a,b), the cup and ordinary right cap are
     cup_x(a,b)=N x^(a-d) delta_(a+b,d),
     cap_x(a,b)=N^(-1) y^a delta_(a+b,d).             (1)
 
-The ORIGINAL averaged marked right cap, before any Ward-corner
+The original averaged marked right cap, before any Ward-corner
 replacement, is
 
     mark_x(a,b)=x^b/N^2,       0<=a,b<N.            (2)
@@ -97,7 +97,7 @@ q-binomial theorem; the second follows from
 (t;Q)_d=(1-t^N)/(1-Q^(-1)t). Both numerator and denominator are retained,
 with the ratio extended as its polynomial.
 
-For completeness, the fused ORIGINAL marked row m_x=mark_x C_x on the
+For completeness, the fused original marked row m_x=mark_x C_x on the
 same degree fiber has
 
     m_x(r,d-r)=x^(d-r)(-1)^r Q^(-r(r+1)/2) F_r^2/N^2.      (6)
@@ -142,10 +142,10 @@ Substituting (7) into (4) gives the exact boundary kernels
 
 In particular the original marked normalization is x^d/N after
 introducing its one interval, not 1. These formulas can be inserted in
-the ORIGINAL whole physical word. They are exact scalar source
+the original whole physical word. They are exact scalar source
 identities, including with its continuous Gaussian variables.
 
-Concretely, if W_beta is the ORIGINAL physical word on 2k heads, its
+Concretely, if W_beta is the original physical word on 2k heads, its
 original selected scalar is the pairing of W_beta with k copies of (1)
 as input, k-1 ordinary cap rows, and the one row (2), times the unchanged
 external scalar line chi_beta,N. Equations (3)--(8) replace only those
@@ -467,7 +467,7 @@ All Gaussian/cap variables and pure-imaginary integer logarithmic
 terms remain in this calculation. An unrelated constrained maximum
 of the real part of W does not satisfy this stationarity hypothesis.
 
-Next the ORIGINAL physical projector kernel is, in the actual
+Next the original physical projector kernel is, in the actual
 position frames,
 
     (F_out E_j F_in^(-1))(zout,zin)

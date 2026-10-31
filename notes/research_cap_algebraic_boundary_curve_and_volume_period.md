@@ -1,6 +1,6 @@
 # Original one-cap pressure: global real continuation and an algebraic boundary response
 
-31 October 2026. **Internally reviewed analytical research theorem.**
+31 October 2026. **analytical research theorem.**
 Unpublished. The original source boundary curve has an atom-free,
 log-algebraic pressure-root density and an exact selected logarithmic
 period equal to the original **drilled** hyperbolic volume. No filled
@@ -13,7 +13,7 @@ the stronger nu>1/4, but that stronger inequality is not needed below.
 Work on the ODD-level original binary polynomial P_N(A,C), with every
 other ordinary face extracted to its original demand d=N-1.
 
-Inputs are the reviewed local complex pressure theorem, its root-measure
+Inputs are the local complex pressure theorem, its root-measure
 reconstruction, the original half-triangle potential and compact flow
 duality. No signed coefficient lower asymptotic is assumed. This note
 does not prove chi_D >= M_cap-Phi_D.
@@ -21,7 +21,7 @@ does not prove chi_D >= M_cap-Phi_D.
 ## 1. The positive-real gluing branch exists for every finite boundary ratio
 
 Put A=exp(z), C=1; let I be the other ordinary faces, with weights exp(w_i).
-For the ORIGINAL exterior triangles define
+For the original exterior triangles define
 
 \[
 \mathcal F(z,w)=\sum_tQ_t(L)-\sum_{i\in I}w_i.\tag{1}
@@ -91,7 +91,7 @@ F_\mu(z)=M_{\mathrm{cap}}+\int_{[0,1]}
 \]
 
 is real analytic on all R (locally the denominator is uniformly away
-from zero). The reviewed local theorem says F_cl=F_mu near zero.
+from zero). The local theorem says F_cl=F_mu near zero.
 The identity theorem for real analytic functions therefore gives
 
 \[
@@ -119,7 +119,7 @@ packing realizes a residual s>1/2: the restored cap's uAC triangle
 has A load alpha_A in (0,1/2), so its exterior A demand is
 1-alpha_A in (1/2,1). Thus the two extrema are 0 and 1. Convexity
 supplies every intervening value. This uses the literal half-supply
-network and the ORIGINAL complete packing, not a new mark or source.
+network and the original complete packing, not a new mark or source.
 
 Compact concave duality now gives, including both endpoints,
 
@@ -314,7 +314,7 @@ q'(z)=\frac{\arctan(e^{z/2})}{\pi},\\
 \end{gathered}\tag{19}
 \]
 
-Restoring the two ORIGINAL cap triangles and their two target logs
+Restoring the two original cap triangles and their two target logs
 gives the exact full-capacity formula
 
 \[
@@ -364,7 +364,7 @@ G is Catalan's constant, the exact relative logarithmic period is
 
 Equivalently the integrand is Log_lift(B_D B_cap)/(2pi i), with lift
 2pi i[m_D+a_cap-1], not independently reset principal logarithms.
-The value is the ORIGINAL drilled hyperbolic volume divided by2pi
+The value is the original drilled hyperbolic volume divided by2pi
 by the already proved complete packing/capacity theorem. This is an
 absolute geometric consequence of that theorem and the specified
 constant M_cap+C0; it does not require a new representation-volume
@@ -403,7 +403,7 @@ real z, no analytic continuation of an individual complex saddle
 through every branch point, no knot A-polynomial identification, and
 no signed original coefficient lower rate is used or asserted.
 
-## Inputs and internal review
+## Inputs
 
 The [original effective-response theorem](research_global_cap_effective_response_criterion.md),
 sections 1–3, supplies the local complex pressure germ and the grounded
@@ -418,14 +418,6 @@ The [complete packing capacity](actual_smoothed_source_capacity_blocks.md)
 identifies the selected complete value with the original drilled volume.
 The [one-cap original chain budget](research_one_cap_original_chain_volume_budget.md)
 supplies the still separate geometric upper bound discussed after (22).
-
-The root independently reviewed all sections, including the final
-complete-cap closure (20a)–(20c): PASS. Coherent independently reviewed
-sections 1–2 in full: PASS. Cluster independently reviewed sections 3–5
-in full, including the algebraic branch, density, endpoint integrability,
-selected primitive and complete-volume closure: PASS. The complementary
-independent reviews cover the whole proof. These are internal analytical
-and original-source reviews, not external peer review.
 
 Preservation changes mathematical formatting and supplies durable links.
 No numerical audit, signed coefficient lower asymptotic, arbitrary complex

@@ -8,7 +8,7 @@ the actual half-color weight, every Fourier charge and the original
 marked source. It does not estimate the complementary physical colors,
 and therefore is not yet a theorem about the whole filled knot.
 
-## 1. The precise truncated ORIGINAL scalar
+## 1. The precise truncated original scalar
 
 Use q,Q,kappa,d and the original mixed marked source A_(s,N)(h).
 For an integer P let beta_j^(P) be the ACTUAL circle-basis coefficient
@@ -257,14 +257,4 @@ N^(3/2) density and parity pairing on explicit analytic packets.
 The actual pretzel source hypotheses are the independently proved
 finite-packet and charge theorems linked above.
 
-Fresh replay: PASS 44 exact original full-normal coefficient families
-N=2,...,12, both signs; ten complete coherent analytic-packet
-asymptotic calibrations through N=513, including even/odd levels and
-unrelated signed slopes. The source Fourier companion also passed
-21 exact normal/spectator splits, 12 finite side-current contour
-identities, 32 quantitative Fourier bounds, three exact paired-charge
-packets, three paired high-charge contours and 12 central complex
-Fourier calibrations. These checks supplement the proofs; the
-analytic-packet samples do not replace the actual pretzel source
-construction. Independent proof reads checked the source Fourier
-tail, central density, original phases and local assembly.
+The finite checks retain the original source and Fourier normalization. They supplement the analytic proof and do not establish uniform estimates by sampling.

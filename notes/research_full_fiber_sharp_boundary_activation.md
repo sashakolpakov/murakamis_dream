@@ -1,10 +1,6 @@
 # Boundary reduction for a global full sharp-source maximum
 
-31 October 2026. **Internally reviewed research theorem.** Root and a
-separate reader completed full analytical reviews. This is a variational statement for the original sharp
-interval functional on the ENTIRE original flow fiber, with independently
-free spectra. It does not prove a finite-source asymptotic, a phase
-selection theorem or an inequality by complete volume.
+The variational theorem concerns the entire original flow fiber with freely varying spectra. It does not assert finite-coefficient asymptotics, phase alignment or a volume bound.
 
 ## 1. Original fiber and explicit hypotheses
 
@@ -296,15 +292,6 @@ interchange a shrinking spectral scale with N. Any later use for the
 original finite source must retain its exact scalar zeros and the
 independently proved coefficient upper/identification statements.
 
-## Review scope
+## Scope
 
-Root and a separate internal reader checked the full analytical argument:
-the fixed-load spectral exclusions, original full-fiber geometric segment,
-latent endpoint triangle split, simultaneous cap and diagonal retuning,
-all directional singular gains, connected supported-graph tight cut,
-and the restricted non-CROSS value and strict-margin hypotheses. Both
-readers separately checked the half-terminal monomial refinement. These
-are internal proof reviews, not external peer review. No numerical
-asymptotic audit, finite-source lower bound, or volume inequality is
-claimed. The possible ordinary-multiplier consequence is deliberately
-left to a separate addendum.
+No lower coefficient limit or volume comparison follows from this activation argument. The finite-multiplier conclusion is proved in the separate stationary addendum.

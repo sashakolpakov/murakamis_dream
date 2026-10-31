@@ -1,61 +1,23 @@
-# Publication status
+# Published edition
 
-The latest companion release proves the original invariant's actual knot complement volume limit for every fixed strict literal Conway composition tree, including mixed flagged and unflagged junctions, with knot pairing and independently long fixed signed integer twists. A positive full-normal probe gives the unflagged component estimate at its geometric action; spectral localization and physical-color losses compose throughout the tree.
+The illustrated guide is the documentation site. It introduces the knot
+construction, states the theorem with its hypotheses, explains the proof,
+and links to the detailed arguments. Former Sphinx URLs redirect to the
+corresponding guide pages.
 
-The same theorem is stated as an exact pointed quantum A-period limit using the already constructed genuine all-level ADO annihilator and bounded-order quantum-parameter jets. Operator existence is proved. Identification of the selected classical geometric factor, and universal arborescent presentation coverage, remain separate tasks.
+The manuscript has 85 pages. It treats the stated recursive family of
+Conway tangle compositions, with a fixed construction and independently
+sufficiently long signed twists. The companion notes state the extension
+to every construction passing the strict type test and give the quantum
+A-operator formulation. The right side of each knot limit is the volume
+of the knot complement; only auxiliary crossing-circle cusps are filled.
 
-Five reviewed notes, a native TikZ diagram, and both documentation formats are included. The completed-root TeX manuscript and exact certificates retain their earlier scope. Builds and local-link checks pass; these are internal analytical and reproduction checks.
+The guide distinguishes those results from broader questions about
+arborescent presentations, short twists, and the selected classical
+geometric factor. The full research archive remains available.
 
-## Earlier publication records
-
-The weighted-tree companion release proves the original invariant's knot complement volume limit for every fixed finite rooted ordered tree with at least two vertices in the displayed literal closure, with one independent sufficiently large signed integer weight per vertex and loop-free knot pairing. Arbitrary branching and unary chains are included. Four reviewed notes give the exact hub normal form, recursive full-Hermite estimate, absolute geometric calibration and full filling assembly.
-
-The complete augmented volume is 2 v_oct(H−1); the filled knot limit is its separately calibrated critical value. Mixed flagged/unflagged source trees and general arborescent presentation coverage remain open. A native TikZ syntax diagram and both documentation formats are updated. Builds and 26,893 local links pass. These are internal analytical and reproduction checks. The published TeX manuscript and its exact certificates retain their earlier scope.
-
-The latest companion update records the general strict-tree quarter bound, core estimate and marked filling geometry, together with the full root-star source and long-filling volume assembly. The Markdown guide and Sphinx companion state their scope and the remaining general nonempty-alias estimate. The published manuscript retains its completed-root theorem.
-
-The coverage audit explicitly identifies the earlier outer-kernel Fourier cancellation and the all-odd overlap with the octahedral-belt source. Mixed pure/odd leaves extend the recorded source alphabet; no new knot isotopy classification is claimed. Internal analytical reviews passed, both documentation builds passed, and 26,708 local resource links passed. The unchanged manuscript certificate suite was not rerun for this documentation and companion-proof update.
-
-The 31 October manuscript release adds the **77-page long-twist volume manuscript**, four editable TikZ illustrations, an exact certificate suite, and an illustrated Sphinx companion. The Markdown book now has a manuscript chapter and direct PDF navigation.
-
-The theorem treats the stated completed Conway grammar with two completed root children, any fixed finite size and turn depth, and independently sufficiently long fixed signed auxiliary fillings. The resulting volume is the **knot complement volume**; the knot cusp remains unfilled. The wider arborescent problem remains open.
-
-The manuscript and figures were rebuilt from the public checkout. LaTeX and Sphinx reported no warnings; the exact certificates matched their stored records; 26,483 local resource links passed. Eight reading routes were checked at desktop and mobile widths, including images, PDF delivery, search and navigation. These are internal analytical and reproducibility checks, not external peer review or a machine-verified proof of the entire theorem.
-
-[Read the manuscript](https://sashakolpakov.github.io/murakamis_dream/papers/conway-composition.pdf) · [Sphinx companion](https://sashakolpakov.github.io/murakamis_dream/sphinx/) · [Reproduction instructions](repro/README.md)
-
-## Earlier publication history
-
-The [illustrated research guide](https://sashakolpakov.github.io/murakamis_dream/) is live on GitHub Pages. The public home and geometry pages, full-text search, native math rendering and compiled figures were verified after successful deployment. The repository homepage points to this guide.
-
-Published at [sashakolpakov/murakamis_dream](https://github.com/sashakolpakov/murakamis_dream), with public visibility confirmed by the unauthenticated GitHub repository API.
-
-The latest `gh repo view` check also succeeds and reports public visibility with default branch `main`. Normal Git pushes publish the subsequent research updates; the current frontier and recent-advances notes describe their scope.
-
-The prepared research history was merged with the user's existing initial commit, preserving that commit and its Python ignore rules. The research snapshot was pushed normally to `main` at `700ca05cb9b702ad489970735d4ed6166c55f989`; fetching the remote branch confirmed the identical commit. No force push was used.
-
-The snapshot contains the internally reviewed positive Newton multiplication theorem, cuboctahedral period, odd central/four-rung cube packets, generic recoupling/Racah source identity, and their dependencies and audits. It retains the corrected exposed-mark hypothesis and exact nested-cap counterexample. The recent-advances note and frontier state the precise theorem scopes.
-
-The current update adds the general four-port Racah kernel, the supported scalar normal estimates, the uniform local hyperideal-volume theorem, and the whole positive Conway variational limit. It also preserves the literature coverage comparison and historical partner-value diagnostic, with later exact results distinguished from those finite checks. The research-routes index retains the cube, Fourier, torsor, pretzel and global geometric approaches together with their unresolved steps.
-
-The repository now has an illustrated research guide: seven chapters, a separate figure gallery, full-text search, a topic-filtered archive, and six editable TikZ figures with compiled PNG, SVG and PDF versions. The main README is short; the historical log and all technical source paths remain available. `tools/build_book.py` rebuilds `docs/`, and `tools/check_book.py` checks navigation, assets and archive coverage.
-
-The latest reviewed additions prove a rational Bloch-regulator formula for every robust positive Conway source, including boundary and nonunique maxima, over its conjugation-stable shape field. An exact cap-sum theorem simultaneously decomposes actual links, original sources and angle polytopes. The actual complement comparison is now proved for every retained cylindrical robust Conway factor, with arbitrary finite branching and turn depth. Explicit ideal pyramids and prisms, ordered face maps, the reversible crossing-disk cut, four-step edge cycles and complete cusps identify the limit with the actual hyperbolic volume. The source Bloch class equals the geometric fundamental class over a common finite number field. The new full mixed-color gap, uniform complex packet and exact marked peripheral deformation now extend this to independently sufficiently long fixed signed integral fillings of any subset of auxiliary circles. These full-twist fillings remain links with at least 2S+1 main components for S robust seeds; arbitrary knots and arbitrary short fillings remain outside the theorem.
-
-For the retained Racah currents, a finite Fourier identity proves the formerly diagnostic all-high cotangent formula and a first-normal bound when the maximal face is repeated. The Ward/Fourier relations alone leave at most two first-normal currents; the new positive full-source presentation bounds the first normal on every one of the 64 partner branches and bounds the coherent tail value. Fixed higher jets are controlled on face-supported and tail-free branches. General higher normals and a positive completed physical transport estimate remain open. Historical diagnostics are preserved with updated status banners.
-
-The general volume conjecture, full cube source control, and source transport for arbitrary graphs remain open. Internal proof reviews and finite audits are distinguished in the notes; finite checks alone do not prove an asymptotic theorem. Work still under review is retained in the research workspace until its status is ready to publish.
-
-Earlier `gh` API checks failed, and a read-only Git probe reported DNS failure. Fetching, merging and pushing subsequently succeeded, and `gh` now succeeds too. These earlier connection errors no longer describe the publication status.
-
-The local `origin` points to this repository. The accompanying Git bundle is refreshed after the publication-status commit and preserves the same committed history.
-
-The current reviewed extension proves actual filled hyperbolic volume equality for the entire retained robust Conway class, at both parities and composite levels. Exact rational-function face identities produce the original link-group representation and primitive peripheral logs; the calibrated regulator fixes the absolute volume. The closed topology proof was repaired using the entire oriented bowtie ribbon graph, without treating an open quadrilateral as a physical four-punctured boundary. A strict quarter theorem locates every complete optimizer leaf above 1/4 for the next odd-half-twist analysis. No new knot-family equality is claimed from these pure even fillings.
-
-The signed Conway extension now proves full original-invariant equality with actual filled hyperbolic volume for every fixed C(FG), both children robust, arbitrary fixed pure or signed odd-half-twist patterns, and independently sufficiently long signed integral fillings of any auxiliary subset. Every expression admits a constructive knot pattern after all auxiliary fillings. The proof retains the selected finite complex packet, whole-color supporting-plane bound, actual odd-link primitive meridians and absolute regulator. The marked double cover ell^2=L makes the half-longitude shear integral without confusing the odd-link topology with a pure rational filling. The minimal C(A) mixed-color filling case, arbitrary short fillings, and arbitrary knot diagrams remain open here.
-
-The 30 October update sets the general target at every fixed plat width k>=2 with essential hyperbolic augmentation and independently long fixed signed twists. New exact complete-color, all-color and entire Fourier-core formulas retain the original phases, repeated-root normals and physical aliases. A conditional matching-graph certificate constructs the actual complete geometry and primitive markings; its geometric disk character is the folded-channel endpoint. These finite and geometric statements do not establish the general source asymptotic or selected period.
-
-The internally reviewed Conway extension allows mixed seed widths h^s with s>=3 and isolated closures for s>=4. The minimum h^3 closure remains excluded from its mixed-filling theorem. A separate conditional source-divisor theorem allows a nonzero amplitude germ to vanish at completeness; it gives generic long-slope conclusions only after the full analytic and geometric hypotheses are supplied. The broad all-plat, all-long-slopes conjecture remains open.
-
-A direct general marked positive-gluing criterion now proves both directions of the Casson–Rivin variational equivalence, unique closed-polytope volume maximum, algebraic shapes, and the positive cusp-decoration torsor. This supplies a geometric certificate without a convex-polyhedron requirement. A separate exact endpoint tensor obstruction excludes universal entrywise positivity by independent magnetic-leg gauges; coherent resummation remains open. All new technical claims received independent analytical review and focused audit replays.
+The publication checks cover paper compilation, native mathematical
+typesetting, images, navigation, and the research-check runner. Exact
+mathematical certificate inputs and algorithms are unchanged by this
+editorial revision. Their purpose and limitations are explained in the
+reproduction guide.

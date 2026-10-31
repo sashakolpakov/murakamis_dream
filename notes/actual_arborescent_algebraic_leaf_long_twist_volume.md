@@ -5,7 +5,7 @@ three-or-more-leaf seed grammar to include two-leaf seeds. Its additional
 hypothesis is a finite inequality on the selected complete geometric
 solution. The conclusion concerns the original invariant and the
 **hyperbolic volume of the knot complement**. It is not a theorem for all
-arborescent knots, and internal proof review is not external peer review.
+arborescent knots.
 
 ## 1. The precise class and conclusion
 
@@ -272,14 +272,3 @@ geometric certificate or cover every arborescent template. Nor does
 it construct a generic main-meridian quantum A-operator. The selected
 algebraic boundary branch, its logarithmic lifts and its calibrated
 period remain essential data beyond an elimination polynomial.
-
-## Review scope
-
-This assembly and the three new component proofs received full internal written reviews:
-the primary agent read their source/packet, geometry/peripheral, and
-leaf-certificate arguments; the source and geometry agents checked
-one another's interfaces, and the analytical agent checked the
-source packet and conditional transfer. These extend the retained
-local theorems and general filling transfer; they are not independent
-reproofs of every earlier dependency. Native formula rendering and
-link checks are presentation validation, not mathematical evidence.

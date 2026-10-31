@@ -1,6 +1,6 @@
 # The positive Newton capacity can exceed the complete rate
 
-30 October 2026. Independently reviewed. This concerns the proposed
+30 October 2026. This concerns the proposed
 absolute Newton majorant, not the original alternating low-color source.
 The exact local kernel and one-port source interface below apply to the
 proved flat-plat compiler. The obstruction family is an actual certified
@@ -14,7 +14,7 @@ restriction is a lower bound. No signed-source conclusion is made.
 
 Put q=exp(pi i/N), d=N-1, s_j=2sin(pi j/N), S_j=product_(k=1)^j s_k,
 and B_r(z)=product_(k=0)^(r-1)(q^(2k+1)+q^(-2k-1)-z),
-Bhat_r=B_r/S_r^2. For the ORIGINAL untwisted face operator T of
+Bhat_r=B_r/S_r^2. For the original untwisted face operator T of
 [the exact one-port correspondence](actual_small_circle_polynomial_face_insertion.md),
 including its q^(dp) character, the finite identity is
 
@@ -303,7 +303,6 @@ reason that the positive critical scheme is not the original one.
 
 ## Appendix: proof of the finite positive Newton identity
 
-
 One may first work at generic q, writing s_j=(q^j-q^-j)/i and
 c_j=q^(2j+1)+q^(-2j-1). The original operator acts by
 
@@ -379,17 +378,7 @@ cases. The finite coefficient/entropy profiles are diagnostics; the
 limit and positive gap follow from the written analytic arguments.
 The audit does not label the graph family as a flat-plat source fixture.
 
-Independent targeted reviews have checked the two-sided supporting
-halfspaces, perfect matching, protected mark and the exact four load
-equations; and separately the one-triangle PSD coefficient saddle,
-integer flow rounding and zero exponential rate of the true b coefficient.
-Those reviews do not supply the missing flat-plat/compiler adapter.
+The two-sided supporting-halfspace, matching, mark and load calculations do not supply the missing flat-plat compiler adapter.
 
-Root full analytical and audit-code review: PASS, including the exact
-local kernel, shared capacities, integer rounding and one-triangle
-asymptotic in the stated polynomial scope. Independent full analytical
-review and fresh redirected80-digit replay: PASS, reproducing all
-source, geometry and rounding counts with maximum support residual
-3.56e-79. The geometric complete capacity and the conditional original
-source interface remain distinct. The note, audit and results are frozen.
+The classical capacity identity is geometric. Its use for the source remains conditional on the stated source interface.
 

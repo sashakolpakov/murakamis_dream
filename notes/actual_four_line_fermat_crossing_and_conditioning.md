@@ -1,7 +1,7 @@
 # The actual four-line Fermat crossing and its unavoidable exponential action
 
 28 October 2026. The compactified cap sources form an explicit full
-head frame with an exact inverse and the ORIGINAL basis as its
+head frame with an exact inverse and the original basis as its
 normalized cap value. This gives a four-Fermat-line formula for the
 actual crossing. The full frame and EACH selected corner have a
 sharp positive exponential norm on fixed-log root charts, although
@@ -98,7 +98,7 @@ w^N-v^N=u^N. Its compensating root u must not be dropped.
 
 ## 3. The original crossing in four Fermat lines
 
-Let R be either ORIGINAL mixed crossing, with its original
+Let R be either original mixed crossing, with its original
 Cartan scalar inside R or in the specified external line.
 Choose Fermat triples f_i on its two incoming and two outgoing
 heads. Define R_F=(M_3^-1 tensor M_4^-1)R(M_1 tensor M_2).
@@ -298,17 +298,4 @@ remains the next comparison; no broad volume claim follows here.
 
 ## 7. Reproducible checks
 
-The [audit](../experiments/audit_actual_four_line_fermat_crossing.py)
-and [saved output](../experiments/actual_four_line_fermat_crossing_results.json)
-pass 56 full coherent/circulant frames at N=2,...,8, including
-the dual inverse, exact nonlinear clock transport and all column
-normalizations. They check 56 mixed positive/negative ORIGINAL
-crossing entries by an independent sum using the literal E and
-Cartan coefficients, with the full four-line kernel retained.
-The 8,771 support witness coefficients are nonzero at every
-matrix position in these levels. Five norm-scale diagnostics
-through N=256 approach the limits in (9)--(10); the limits are
-proved by the uniform product estimates, not those samples.
-Independent proof review and rerun checked the exact dual,
-reflected inverse, all conditioning rates, actual kernel order,
-full-support witness, and physical-versus-relative source scope.
+The [audit](../experiments/audit_actual_four_line_fermat_crossing.py) and [saved output](../experiments/actual_four_line_fermat_crossing_results.json) pass 56 full coherent/circulant frames at N=2,...,8, including the dual inverse, exact nonlinear clock transport and all column normalizations. They check 56 mixed positive/negative original crossing entries by an independent sum using the literal E and Cartan coefficients, with the full four-line kernel retained. The 8,771 support witness coefficients are nonzero at every matrix position in these levels. Five norm-scale diagnostics through N=256 approach the limits in (9)--(10); the limits are proved by the uniform product estimates, not those samples.

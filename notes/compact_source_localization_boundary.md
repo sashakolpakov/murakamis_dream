@@ -50,7 +50,7 @@ On it,
 \[
  \omega_0=dw\wedge db=d(w\,db).                    \tag{2}
 \]
-The selected class therefore restricts to zero in \(H^2_{\rm dR}(U)\).
+The selected class therefore restricts to zero in \(H^2_{\mathrm{dR}}(U)\).
 
 Deleting both fibres \(t=0,1\) gives the still more familiar chart
 \[
@@ -83,9 +83,9 @@ Define the divisor-support complex directly by
 Its projection to \(\Omega^\bullet(X)\) is a chain map.
 The standard exact sequence of this explicit cone contains
 \[
- H^1_{\rm dR}(U)\longrightarrow
+ H^1_{\mathrm{dR}}(U)\longrightarrow
  H^2(C^\bullet_{L_\infty}(X))\longrightarrow
- H^2_{\rm dR}(X)\longrightarrow H^2_{\rm dR}(U).
+ H^2_{\mathrm{dR}}(X)\longrightarrow H^2_{\mathrm{dR}}(U).
 \]
 Both outer groups vanish because \(U=\mathbb A^2\). One elementary
 proof is polynomial radial contraction: a closed positive-degree
@@ -240,20 +240,20 @@ matrix size, independently of the color level.
 There is a stronger canonical statement for that companion source.
 Slide the actual source to its regular right representative
 \[
- R_N^{\rm right}=H_Nv_0\ell,\qquad \ell=e_r^t.
+ R_N^{\mathrm{right}}=H_Nv_0\ell,\qquad \ell=e_r^t.
 \]
 Since \(J_-\) lowers the index, \(\ell J_-^k=0\) for every \(k>0\).
 Thus
 \[
- \operatorname{Tr}(J_-^kR_N^{\rm right})=0\ (k>0),\qquad
- \operatorname{PP}\beta_{R_N^{\rm right}}
+ \operatorname{Tr}(J_-^kR_N^{\mathrm{right}})=0\ (k>0),\qquad
+ \operatorname{PP}\beta_{R_N^{\mathrm{right}}}
        =-\frac{C_N(q)}{2\pi i\,r}\frac{db}{b}.     \tag{11}
 \]
-The scaled actual A-form \(r\,\omega_{R_N^{\rm right}}\)
+The scaled actual A-form \(r\,\omega_{R_N^{\mathrm{right}}}\)
 therefore has exactly its one logarithmic boundary coefficient
 \(-C_N(q)/(2\pi i)\). This representative is also regular in
 the quantum normal. The exact source slide from
-\(R_N^{\rm left}=v_0\ell H_N\) removes both apparent quantum-normal
+\(R_N^{\mathrm{left}}=v_0\ell H_N\) removes both apparent quantum-normal
 poles and higher boundary-pole modes without normalizing by
 \(C_N\).
 
@@ -319,7 +319,7 @@ algebraic divisor silently changes that analytic map.
 
 Finally, a globally regular class-preserving map from \(X\) to a
 split framing surface with
-\(\Omega_{\rm cut}=d(\tau\,d\log A)\) would make \(\omega_0\)
+\(\Omega_{\mathrm{cut}}=d(\tau\,d\log A)\) would make \(\omega_0\)
 exact, contradicting its compact period. The cotangent-torsor
 transition
 \[
@@ -333,8 +333,8 @@ the corresponding relative/logarithmic period data can retain
 this class; an unmarked split chart cannot.
 
 The physical half-form scale checks exactly in this convention.
-For \(\Omega_{\rm phys}=2\pi i\,\omega_0\) and
-\(h_N=2\pi i/N\), the curvature \(\Omega_{\rm phys}/h_N\)
+For \(\Omega_{\mathrm{phys}}=2\pi i\,\omega_0\) and
+\(h_N=2\pi i/N\), the curvature \(\Omega_{\mathrm{phys}}/h_N\)
 is \(N\omega_0\), the curvature of \(O(N)\) with connection
 \(N\lambda\). The holomorphic half-form is
 \(K_{\mathbb P^1}^{1/2}=O(-1)\), so the corrected section space is

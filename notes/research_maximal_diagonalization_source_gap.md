@@ -1,6 +1,6 @@
 # A maximal diagonalization has a strict full-source entropy gap
 
-31 October 2026. **Internally reviewed analytical research theorem.**
+31 October 2026. **analytical research theorem.**
 Unpublished. This is an exact local and
 global entropy transport on the original face targets. Sections 4--5
 prove a structural selection theorem: every finite connected SIMPLE
@@ -89,7 +89,7 @@ actual normalized complete angle capacity of the changed cellulation,
 not the original Phi_D. At seams, use their actual closed CROSS/Green
 agreement; no finite path label is reassigned in a quantum polynomial.
 
-The reviewed simple-block construction applies to this classical
+The simple-block construction applies to this classical
 capacity, including parallel-edge splitting: if feasible, it is the
 sum of the new simple-block polyhedron volumes divided by pi, with zero
 from double-triangle blocks. The explicit transported flow already
@@ -141,7 +141,7 @@ four-distinct-vertex quadrilaterals.
 Let Phi(T;u,v) denote each chart's complete angle capacity, allowing
 -infinity if its fiber is empty. Every nonempty fiber is compact and
 has a maximizer. The simple chart just constructed has finite positive
-capacity by the reviewed simple-sphere packing/angle theorem. Therefore
+capacity by the simple-sphere packing/angle theorem. Therefore
 the largest capacity among the finitely many charts is finite and
 attained.
 
@@ -197,11 +197,7 @@ EVERY global capacity-maximizing chart is therefore simple. This
 argument does not assert that each intermediate digon flip has a
 strict gain; strictness at the final simple chart is sufficient.
 
-In particular the maximum equals the maximum over simple charts. Their
-capacities are the actual labeled polyhedron volumes divided by pi and
-are independent of the adjacent marked pair, by the reviewed packing
-construction. It follows that the maximum over all diagonalizations is
-itself independent of which original MAIN edge is marked.
+In particular the maximum equals the maximum over simple charts. Their capacities are the actual labeled polyhedron volumes divided by pi and are independent of the adjacent marked pair, by the packing construction. It follows that the maximum over all diagonalizations is itself independent of which original main edge is marked.
 
 ## 5. A sharp global inequality for every maximizing diagonalization
 
@@ -248,7 +244,7 @@ the local exact G. No full-kernel endpoint forest theorem, physical
 pure-middle deletion or flat-gap assumption is used in this argument.
 
 For an ACTUAL eligible original flat-plat source D whose white chart
-is such a maximizing diagonalization, the already reviewed conditional
+is such a maximizing diagonalization, the conditional
 theorem in the exact-G note now gives the full original independently
 signed long-filling volume limit, for all fixed sufficiently long twist
 vectors, both level parities and the original normalization. No new
@@ -265,7 +261,7 @@ same fixed bridge width and independent original twist boxes. That
 source realization is a separate issue. No change of the original knot
 or equality between different diagonalized quantum sources is asserted.
 
-## Dependencies and internal review
+## Dependencies
 
 The local inputs are the [exact sharp Green spectral maximum](research_sharp_green_spectral_maximum.md), sections 1--5, and the
 [absolutely normalized triangle entropy](actual_triangle_entropy_algebraic_balance.md).
@@ -276,13 +272,6 @@ independence of a simple chart's capacity from its adjacent marked pair.
 The stated corollary for an already eligible original flat source uses
 section 7 of the exact-G note and its original whole-period dependencies.
 
-Root and the cluster-source reviewer independently read the full
-analytical argument, including the exact load transport, digon removal,
-last-flip strictness, and all three non-CROSS boundary cases, and reported
-PASS. Both also checked the broader quadrangulation input and its initial
-purely combinatorial simplification, including R=2. These are internal reviews, not
-external peer review. No numerical experiment or finite asymptotic test
-is used as a proof.
 
 The conclusion selects a maximizing diagonalization in a finite family.
 It does not assert that every prescribed diagonalization is maximizing,

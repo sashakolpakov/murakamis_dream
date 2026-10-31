@@ -145,7 +145,7 @@ every product still lies in the SAME domain in (8). The actual
 turn equations and final closing input relation are the same affine
 relations as before. Thus one may add (4),(7),(8) for any one of
 these expanded states, even when it lies outside the pure-leaf
-polytope. All linear terms cancel by stationarity of the ORIGINAL
+polytope. All linear terms cancel by stationarity of the original
 pure action in its free wire coordinates. The resulting upper rate is
 
     F0-|S|c0.                                         (9)
@@ -222,12 +222,4 @@ Audit: [exact port, tangent and transport certificates](../experiments/audit_act
 The all-expression proof is the supporting-plane argument above,
 not an extrapolation from finitely sampled source values.
 
-Independent analytical review checked the actual all-color Ward
-recurrence and terminal value, the spectral ellipse including Jordan
-collisions, the fixed-block product estimate, the stricter proper-seed
-interval, and the supporting-plane argument on expanded alias support.
-Fresh replays of the gap certificate, old mixed-core audit and full
-Newton transport audit passed. The primary-agent review also checked
-the tangent-gap derivative, its exact positive lower bound, and the
-finite affine shifts. This review does not supply the separately
-required changed complex packet or marked geometric deformation.
+The mixed-source gap requires a separately established changed complex packet and marked geometric deformation.

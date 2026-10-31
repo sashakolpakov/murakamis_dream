@@ -1,7 +1,7 @@
 # Exact boundary reduction of the original quantum-A energy
 
 28 October 2026. This implements the proposed boundary-to-interior
-strategy at the level of the ORIGINAL pointed operator. A regular
+strategy at the level of the original pointed operator. A regular
 interior with a weighted symbol gap can be eliminated with controlled
 cost. Its entire effect is an explicit positive operator on the retained
 boundary packets. This operator retains the original source, turning

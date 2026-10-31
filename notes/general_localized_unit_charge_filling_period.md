@@ -1,6 +1,6 @@
 # The original localized spectral period has a nonzero unit-charge filling contribution
 
-Independently reviewed analytical theorem, 31 October 2026. This proves a relative asymptotic on an **actual fixed real spectral cube**, with its original Fourier charges, sine factors, parity and marked coefficient. It does not estimate the integral outside that cube or the remote charge sum.
+analytical theorem, 31 October 2026. This proves a relative asymptotic on an **actual fixed real spectral cube**, with its original Fourier charges, sine factors, parity and marked coefficient. It does not estimate the integral outside that cube or the remote charge sum.
 
 The inputs are the [full spectral numerator packet](general_full_spectral_numerator_geometric_packet.md), the [local charge comparison](general_local_charge_critical_monotonicity.md), and the exact period (13a) in the [cross-cofactor source interface](actual_cross_cofactor_factorization.md). The finite-root spectral identity is also recorded in the [spectral total-derivative theorem](actual_spectral_total_derivative_source.md).
 
@@ -353,7 +353,7 @@ A_{\boldsymbol\epsilon}&=A_0+\pi i\sum_i\epsilon_i\delta_i^2.
 \end{aligned}
 $$
 
-Thus the half twists occur ONCE. The [reviewed marked action and collar identity](actual_cross_cofactor_marked_action.md) gives the actual primitive saddle equation
+Thus the half twists occur ONCE. The [marked action and collar identity](actual_cross_cofactor_marked_action.md) gives the actual primitive saddle equation
 
 $$
 U_{\boldsymbol\epsilon,i}+p_iV_i=-2\pi i\ell_i.
@@ -392,4 +392,4 @@ are already retained in (1)-(2).
 
 ## Validation and scope
 
-The full analytical proof was independently reviewed by the source, geometry and root reviewers. The source reviewer also checked the promoted TeX formulas against the reviewed proof. The review checked the exact raw marked prefactor, both Gaussian determinant branches, all translated side currents, the finite local-charge comparison, and the corrected grouping of the original remainder. No numerical audit is claimed for this analytical consequence. The result proves a localized contribution and its finite local charge sector; it does not prove a bound for the remaining original period or the general filled-knot volume conjecture.
+The result proves a localized contribution and its finite local charge sector; it does not prove a bound for the remaining original period or the general filled-knot volume conjecture.

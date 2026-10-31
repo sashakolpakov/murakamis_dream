@@ -1,6 +1,6 @@
 # Complete ordinary-cap trees have one positive angle-simplex energy
 
-29 October 2026. An arbitrary binary tree of the ORIGINAL ordinary-cap
+29 October 2026. An arbitrary binary tree of the original ordinary-cap
 reassociation packets contracts exactly. Its internal factorials telescope,
 its actual phases remain explicit, and its full squared kernel is ONE
 positive angle-simplex weight. After its known row normalization the
@@ -221,7 +221,7 @@ coproduct-derived reassociation with the literal ordinary cap, all
 middle-index cancellations, exact complete tree q-factorial/phase
 formula, angle-simplex bijection, row energies, and coherent overlaps.
 
-Fresh replay: PASS five levels of literal original cap/reassociation
+The finite audit checks five levels of literal original cap/reassociation
 matrices and complete tree phases, and twenty all-tree-shape families
 checking metric kernels, positive simplex incidence, full mixed overlaps
 and retained arbitrary root co-sources. Python compilation passes.

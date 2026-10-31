@@ -1,7 +1,7 @@
 # Uniformly bounded physical quantum meridians through every actual braid
 
 28 October 2026. The particular Heisenberg meridian matrices of the
-ORIGINAL quantum crossing are uniformly bounded in N along any fixed
+original quantum crossing are uniformly bounded in N along any fixed
 signed braid word, despite the possible exponential condition number
 of its crossing matrices. The reason is the EXACT quantum Hurwitz law:
 their conjugates are fixed Nielsen words in the initial meridians,
@@ -22,7 +22,7 @@ q=exp(pi*i/N), Q=q^2, x=-q^(-1), rho=q-q^(-1). Put
     K=x Z^(-1), e=q rho^2 E, f=F,
     Z w_a=Q^a w_a.
 
-These are the ORIGINAL finite quantum-group matrices. Explicitly
+These are the original finite quantum-group matrices. Explicitly
 
     f w_a=(1-Q^(a+1))w_(a+1), a<d, f w_d=0,
     e w_(a+1)=(x^(-1)-xQ^(-a))w_a, a<d.
@@ -82,7 +82,7 @@ also have this property by (4).
 
 ## 3. Exact all-word Heisenberg transport and its uniform bound
 
-Let B_i be the ORIGINAL checked crossing on heads i,i+1, with its
+Let B_i be the original checked crossing on heads i,i+1, with its
 full common Cartan scalar either included or retained in the unchanged
 external line. The direct finite proof in
 [the shared quantum flags](actual_shared_quantum_flags_and_charged_exchange.md)
@@ -172,7 +172,7 @@ obeyed the actual closed-meridian matching equations in mean square,
 its limiting measure would be supported on honest knot representations.
 For a polynomial matrix constraint F, the statement follows from
 Tr(Gamma_N F_N^*F_N)->0 and positivity. Establishing that property for
-the ORIGINAL relative closing is a remaining theorem, not a consequence
+the original relative closing is a remaining theorem, not a consequence
 of (10) or an assertion of this note.
 
 ## 5. Why final cut vectorization does not supply those constraints

@@ -104,7 +104,7 @@ section is much stronger than algebraicity at each separate N.
 
 ## 3. An original-source obstruction to a regular central-fibre comparison
 
-Take the ORIGINAL figure-eight knot. The independently proved
+Take the original figure-eight knot. The independently proved
 [whole-source identity](figure_eight_whole_source_identity.md)
 gives
 

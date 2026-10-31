@@ -1,6 +1,6 @@
 # A finite algebraic dominant-root certificate for the actual backward cubic
 
-29 October 2026. This is an exact spectral input for the next ORIGINAL
+29 October 2026. This is an exact spectral input for the next original
 Newton source packet in
 [the endpoint theorem](actual_twist_endpoint_gaussian_certificate.md).
 It proves a strict dominant-mode gap on every closed subinterval of
@@ -93,9 +93,7 @@ where
     C=-243v^6+3240v^5-12492v^4+6666v^3
                                       +61295v^2-138366v+89982.
 
-These are displayed polynomial identities, independently replayed by
-exact symbolic arithmetic in the audit. No fitted spectral curve or
-floating-point root count is used.
+The audit verifies the displayed polynomial identities by exact symbolic arithmetic. No fitted spectral curve or floating-point root count is used.
 
 ## 3. Only one interior parameter can have an equal-modulus pair
 

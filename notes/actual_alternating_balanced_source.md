@@ -5,7 +5,7 @@ one-component diagram, vanishing of every individual anchor defect
 forces all overcrossing clocks to be equal. This is a topological
 incidence statement, not a knot census.
 
-For the ORIGINAL figure-eight state the resulting diagonal clock
+For the original figure-eight state the resulting diagonal clock
 sectors are ALL annihilated, at every level. More strongly, every
 nonzero clock sector has an anchor defect of size at least (N-1)/2.
 Thus individual sublinear-defect star estimates, or a positive
@@ -71,7 +71,7 @@ the actual overclock at the first +sigma_1 crossing is
     h_0=[b-c-1],                                  (4)
 
 where brackets mean the representative in 0,...,d. The same-grid
-crossing is the exact finite Fourier transform of the ORIGINAL R,
+crossing is the exact finite Fourier transform of the original R,
 even where its old raw four-Psi presentation was singular. The
 closed polynomial port formulas extend there; their normalizer
 is a nonzero monomial.
@@ -244,7 +244,7 @@ defect core can never be reduced or analyzed geometrically.
 The audit verifies the sign-independent physical successor and
 incidence formula on actual alternating signed words after all
 original closures, the local cyclic-support dictionary directly
-against both ORIGINAL R matrices, the general reduced figure-eight
+against both original R matrices, the general reduced figure-eight
 block table, and exact zero of every diagonal sector at multiple
 levels. It separately checks the regular-grid support implications
 without replacing them by coefficient-modulus estimates.

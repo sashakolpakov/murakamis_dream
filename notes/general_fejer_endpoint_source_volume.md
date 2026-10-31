@@ -1,7 +1,7 @@
 # The full even Fejér endpoint source has the actual complete volume
 
-31 October 2026. Independently reviewed general endpoint-volume theorem. This is an endpoint
-theorem for the ORIGINAL positive polynomial numerator. It does not
+31 October 2026. general endpoint-volume theorem. This is an endpoint
+theorem for the original positive polynomial numerator. It does not
 rename that numerator Kashaev's invariant, prove its Gaussian filling
 transform, or assert the fixed long-filled knot conjecture.
 
@@ -105,7 +105,7 @@ same entropy. The full-kernel flow theorem with identity nodes gives
 the reverse inequality, so these rates are EXACTLY equal. No finite
 cross monomial with zero outer degree is invented.
 
-The selected middle edges form a forest in the ORIGINAL gap graph.
+The selected middle edges form a forest in the original gap graph.
 Every possible original middle cycle contains the protected exterior;
 its unit edge supplies would exceed its vertices' total demand. A tree
 cannot contain both protected vertices either, by the same load count.
@@ -146,7 +146,7 @@ not. It never decreases capacity. The [hybrid Hall theorem](actual_fejer_hybrid_
   Every other ordinary arc is positive in one common feasible witness.
 
 For completeness, the counting behind this classification is exact.
-On the induced graph of U=V\S, let p count ORIGINAL triangle faces and
+On the induced graph of U=V\S, let p count original triangle faces and
 n=|U|. Euler and boundary-walk length at least2 give p<=2n-4; equality
 forces a connected induced graph whose other faces are genuine digons.
 Hybrid equality additionally forbids a GREEN edge from separating a
@@ -182,7 +182,7 @@ the actual tangent-circle formula for each C row and the actual Green
 equations L(mu;x,y)=b, L(nu;x,y)=c for each E port, with their proved
 one-line/two-line limits. Every ordinary signed star sums to0 or2pi.
 
-## 5. The entropy is the volume of a representation of the ORIGINAL group
+## 5. The entropy is the volume of a representation of the original group
 
 The [hybrid-piece representation theorem](actual_fejer_hybrid_piece_representation.md) applies to exactly these data.
 Its essentials are included here to specify the volume being bounded.
@@ -196,14 +196,14 @@ Along the actual cut tree, map each child's ordered tangent boundary
 planes to the parent's pair by ONE Mobius map. This gives one reflection
 for each occurrence of an actual shared white face. A GREEN port remains
 within one piece and retains its entire local source collar. At an
-ORIGINAL CROSS port spanning pieces, the common outer product P is
+original CROSS port spanning pieces, the common outer product P is
 noncentral parabolic. Its two raw first meridians have trace-2 and
 Tr((P+I)A)=4. The parabolic centralizer acts simply transitively on them,
 so there is a unique C mapping the WHOLE ordered input pair to the output
 pair and all three recorded contact flags. This is the original shaded
 pairing, even when its two triangles lie in different pieces.
 
-Use the two ORIGINAL topological cut balls and the original face maps.
+Use the two original topological cut balls and the original face maps.
 One global reflection develops the second ball. Their proper digon-cut
 disks have both ends at the same tangent-pair contact. Compatible finite
 incidence horospheres and the short-edge tetrahedron bound make the added
@@ -219,7 +219,7 @@ Mobius invariance is used for geometric tetrahedron volumes, not for
 an open crossing expression with a reset Gauss flag. The failed local
 re-framing argument is neither needed nor reinstated.
 
-Finally restore the deleted ORIGINAL auxiliary meridians as identities.
+Finally restore the deleted original auxiliary meridians as identities.
 The ordered physical pairs coincide across each identity smoothing.
 Their outer product need not be parabolic; the established axial
 (loxodromic or elliptic), parabolic, or central zero-volume filling cap
@@ -241,7 +241,7 @@ every even level and its rate is -infinity. Otherwise its original identity grap
 forest with at most one protected vertex per tree, and its coefficient
 contracts exactly. The full-kernel theorem gives a compact maximum.
 Any further pure-middle maximum ports can be added to I: lifting the
-identity degrees gives a feasible pure-middle assignment in the ORIGINAL
+identity degrees gives a feasible pure-middle assignment in the original
 graph, so the union is again a permitted forest. The hybrid argument
 and actual representation assembly then apply unchanged.
 
@@ -273,14 +273,7 @@ before the filled hyperbolic volume can be concluded.
 The general original Kashaev volume conjecture remains OPEN. Its target
 has not been replaced by (2).
 
-
-## 8. Independent review and focused verification
-
-Root and all three independent reviewers checked the complete proof,
-including the original normalization, full-support entropy, exact identity
-contraction, hybrid cut regularity, actual group/relative chain, and the
-strict identity-insertion corollary. This is internal analytical review,
-not a claim of external peer review.
+## 8. Finite verification
 
 The [focused structural audit](../experiments/audit_general_fejer_endpoint_source_volume.py)
 and [recorded results](../experiments/general_fejer_endpoint_source_volume_results.json)

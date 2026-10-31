@@ -189,7 +189,7 @@ The transfer has no new classical characteristic actions:
 \]
 On a regular limiting chart \(j/N\to u,\ Y=e^{2\pi iu}\), the
 off-diagonal block tends to
-\(2uY\partial_YA_{\rm cl}(Y)\). Thus the first-normal extension
+\(2uY\partial_YA_{\mathrm{cl}}(Y)\). Thus the first-normal extension
 doubles the characteristic of the actual operator; it does not
 introduce a new regulator action. Identification of a geometric
 factor and excitation of its marked branch are further assertions.
@@ -343,8 +343,3 @@ estimate for that coupling, through its singular lattice charts.
 Classical etaleness does not establish it: (16)--(18) preserve the
 localized characteristic and hide its contribution at the wall.
 The required regular pointed comparison must distinguish that change.
-
-Independent proof check by the quantum-parameter agent confirmed the
-normal descriptor, its scaled derivative and the Gaussian-factorization
-and higher-normal identities (18)--(19). No numerical test is used
-in these proofs.

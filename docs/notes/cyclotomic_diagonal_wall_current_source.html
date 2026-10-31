@@ -7,7 +7,7 @@
 <div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
 <aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
 <button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/manuscript.html" class="">The manuscript</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
-<div class="sidebar-bottom">Research edition · 31 October 2026<br>General conjecture remains open.<a href="../sphinx/index.html">Sphinx documentation ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<div class="sidebar-bottom">Research edition · 31 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
 <main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a><p><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/cyclotomic_diagonal_wall_current_source.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_cyclotomic_diagonal_wall_current_source.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/cyclotomic_diagonal_wall_current_source_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="a-cyclotomic-diagonal-source-and-an-actual-endpoint-completed-wall-ladder">A cyclotomic diagonal source and an actual endpoint-completed wall ladder</h1>
 <p>Research proof, 27 October 2026. The degree-N binomial wall row can be coupled to the original head index by an intrinsic cyclotomic projector in an actual high integral color. Actual divided powers, together with their first-normal wrap entries, give an exact classical SL2 action on the resulting N+1-state string. The coupling is a controlled cyclic head-shift gauge, rather than an unspecified Kronecker insertion.</p>
 <p>This supplies an exact finite source/current realization. It does not make the projector commute with the original whole crossing. A literal first-normal charged crossing entry below proves that this stronger assertion fails. Whole gauge transport is exact if all crossings, pivots, sources and internal projectors are transported together.</p>
@@ -31,22 +31,22 @@
  \lambda_+\psi_+=1.
 </annotation></semantics></math></p>
 <p>The original head average is the rank-one coupon e_h=psi_h phi_h, where psi_h=sum_S v_S and phi_h(v_S)=1/N. Let e_prod=e_+ tensor e_h. This is the actual divided-coherent Frobenius source times the original head source; its Frobenius dual is binomial, and is not silently identified with a uniform average over the entire high color. Then</p>
-<p><span class="math display">$$
- \operatorname{Tr}(e_{\rm prod}P)=\frac1N,\qquad
- e_D=NP e_{\rm prod}P                              \tag{3}
-$$</span></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">Tr</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>e</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow></msub><mi>P</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mn>1</mn><mi>N</mi></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>e</mi><mi>D</mi></msub><mo>=</mo><mi>N</mi><mi>P</mi><msub><mi>e</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow></msub><mi>P</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \operatorname{Tr}(e_{\mathrm{prod}}P)=\frac1N,\qquad
+ e_D=NP e_{\mathrm{prod}}P.                              \tag{3}
+</annotation></semantics></math></p>
 <p>is an idempotent of trace one. Its source and co-source on (2) are exactly sum_j z_j and sum_j 2^(-N) binom(N,j) z_j^*.</p>
 <p>For any array J_0,…,J_N over a commutative coefficient algebra, use the actual diagonal insertion</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">𝒥</mi><mo>=</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>J</mi><mi>N</mi></msub><mo>−</mo><msub><mi>J</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><msub><mi>P</mi><mrow><mi>R</mi><mo>=</mo><mi>N</mi></mrow></msub><mo>,</mo></mrow><annotation encoding="application/x-tex">
  \mathcal J=J(S)+(J_N-J_0)P_{R=N},                    \tag{4}
 </annotation></semantics></math></p>
 <p>where J(S) has entries J_0,…,J_(N-1). Its restriction to (2) is diag(J_0,…,J_N). Consequently</p>
-<p><span class="math display">$$
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>N</mi></mfrac><mrow><mi mathvariant="normal">Tr</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>e</mi><mi>D</mi></msub><mi mathvariant="script">𝒥</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mi mathvariant="normal">Tr</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>e</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow></msub><mi>P</mi><mi mathvariant="script">𝒥</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mn>1</mn><mrow><mi>N</mi><msup><mn>2</mn><mi>N</mi></msup></mrow></mfrac><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>N</mi></munderover><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mi>N</mi><mi>j</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>J</mi><mi>j</mi></msub><mo>=</mo><msub><mi>B</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>J</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
  \frac1N\operatorname{Tr}(e_D\mathcal J)
- =\operatorname{Tr}(e_{\rm prod}P\mathcal J)
+ =\operatorname{Tr}(e_{\mathrm{prod}}P\mathcal J)
  =\frac1{N2^N}\sum_{j=0}^{N}{N\choose j}J_j
  =B_N(J).                                          \tag{5}
-$$</span></p>
+</annotation></semantics></math></p>
 <p>This is the wall row from <a href="actual_gauss_wall_cut_current_complex.html">the actual Gauss-wall current complex</a>, with both its 1/N and its j=N endpoint. It applies coefficientwise to the original retained logarithmic/polynomial Green arrays. It is not a pointwise multiplication of coherent symbols.</p>
 <p>In that current complex the original arrays already contain 1/N: I_mat=N I_raw and J_mat=N J_raw. Thus (5) applies to J_mat; its raw version is N B_N(J_raw). This factor cannot be silently absorbed.</p>
 <p>The normalized source Tr(e_D C) returns the actual high-color knot scalar when C is its scalar long-knot operator. At the root this is the original K_N by the already proved all-color periodicity. The unnormalized wall source returns K_N/N. The old marked ADO/peripheral line and its full twists are retained; this construction does not replace them by a fictitious high-level normalization.</p>
@@ -69,31 +69,31 @@ $$</span></p>
  D^\dagger=\operatorname{diag}(0,[1]^{-1},\ldots,[N-1]^{-1}).
 </annotation></semantics></math></p>
 <p>Every displayed denominator is nonzero at the marked root. Integral divided multiplication and [N+1]_(q_N)=-1 give</p>
-<p><span class="math display">$$
- E^{(N+1)}=e\otimes E_{\rm St},\qquad
- F^{(N+1)}=-f\otimes F_{\rm St}.                      \tag{7}
-$$</span></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>E</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo>=</mo><mi>e</mi><mo>⊗</mo><msub><mi>E</mi><mrow><mi mathvariant="normal">S</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><msup><mi>F</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo>=</mo><mi>−</mi><mi>f</mi><mo>⊗</mo><msub><mi>F</mi><mrow><mi mathvariant="normal">S</mi><mi mathvariant="normal">t</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ E^{(N+1)}=e\otimes E_{\mathrm{St}},\qquad
+ F^{(N+1)}=-f\otimes F_{\mathrm{St}}.                      \tag{7}
+</annotation></semantics></math></p>
 <p>Indeed E<sup>(N)=(-1)</sup>(N-1)e and ordinary E=(-1)^N E_St, and E<sup>(N)E=[N+1]E</sup>(N+1); the F identity is identical without the two E signs. The literal first-normal wrap matrices are</p>
-<p><span class="math display">$$
- [E_{\rm cross}/\delta]_0
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><msub><mi>E</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">s</mi></mrow></msub><mi>/</mi><mi>δ</mi><msub><mo stretchy="false" form="postfix">]</mo><mn>0</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>N</mi><mo>+</mo><mn>1</mn></mrow></msup><msup><mi>ρ</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>e</mi><mo>⊗</mo><msub><mi>E</mi><mrow><mi>N</mi><mo>−</mo><mn>1</mn><mo>,</mo><mn>0</mn></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">[</mo><msub><mi>F</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">s</mi></mrow></msub><mi>/</mi><mi>δ</mi><msub><mo stretchy="false" form="postfix">]</mo><mn>0</mn></msub><mo>=</mo><msup><mi>ρ</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>f</mi><mo>⊗</mo><msub><mi>E</mi><mrow><mn>0</mn><mo>,</mo><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ [E_{\mathrm{cross}}/\delta]_0
    =(-1)^{N+1}\rho^{-1}e\otimes E_{N-1,0},\qquad
- [F_{\rm cross}/\delta]_0
+ [F_{\mathrm{cross}}/\delta]_0
    =\rho^{-1}f\otimes E_{0,N-1}.                     \tag{8}
-$$</span></p>
+</annotation></semantics></math></p>
 <p>Both are regular divisions in the original q-family, not divisions of zero root matrices. Combining (7) and (8) with the specified operator orders gives</p>
-<p><span class="math display">$$
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mover><mi>E</mi><mo accent="true">̃</mo></mover></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><msup><mi>E</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>⊗</mo><msup><mi>D</mi><mo>†</mo></msup><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>ρ</mi><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>N</mi><mo>+</mo><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">[</mo><msub><mi>E</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">s</mi></mrow></msub><mi>/</mi><mi>δ</mi><msub><mo stretchy="false" form="postfix">]</mo><mn>0</mn></msub><mo>=</mo><mi>e</mi><mo>⊗</mo><msup><mi>V</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mover><mi>F</mi><mo accent="true">̃</mo></mover></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mi>−</mi><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>⊗</mo><msup><mi>D</mi><mo>†</mo></msup><mo stretchy="false" form="postfix">)</mo><msup><mi>F</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo>+</mo><mi>ρ</mi><mo stretchy="false" form="prefix">[</mo><msub><mi>F</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">s</mi></mrow></msub><mi>/</mi><mi>δ</mi><msub><mo stretchy="false" form="postfix">]</mo><mn>0</mn></msub><mo>=</mo><mi>f</mi><mo>⊗</mo><mi>V</mi><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mover><mi>H</mi><mo accent="true">̃</mo></mover></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mi>h</mi><mo>⊗</mo><mi>I</mi><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
  \begin{split}
  \widetilde E
  &amp;=E^{(N+1)}(I\otimes D^\dagger)
-      +\rho(-1)^{N+1}[E_{\rm cross}/\delta]_0
+      +\rho(-1)^{N+1}[E_{\mathrm{cross}}/\delta]_0
    =e\otimes V^{-1},\\
  \widetilde F
  &amp;=-(I\otimes D^\dagger)F^{(N+1)}
-      +\rho[F_{\rm cross}/\delta]_0
+      +\rho[F_{\mathrm{cross}}/\delta]_0
    =f\otimes V,\\
  \widetilde H&amp;=h\otimes I.
  \end{split}                                                   \tag{9}
-$$</span></p>
+</annotation></semantics></math></p>
 <p>For example E_St D^dagger is the noncyclic unit backward shift; the first term misses only S=0, which (8) completes. For F the pseudoinverse acts on the OUTPUT, exactly as printed. Thus [Etilde,Ftilde]=Htilde and the other two SL2 relations hold on the WHOLE actual high-color vector space. All three commute with P. On its selected string they act as</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>E</mi><mo accent="true">̃</mo></mover><msub><mi>z</mi><mi>j</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mo>−</mo><mi>j</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><msub><mi>z</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><mover><mi>F</mi><mo accent="true">̃</mo></mover><msub><mi>z</mi><mi>j</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><msub><mi>z</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
  \widetilde E z_j=(N-j+1)z_{j-1},\qquad
@@ -117,10 +117,10 @@ $$</span></p>
 </annotation></semantics></math></p>
 <p>Thus this is also an explicit finite clock shear: the head clock becomes the inverse of the cyclotomic constraint charge. No classical geometric Egorov identification is inferred from (11).</p>
 <p>The root Fourier matrix with entries Q^(ST)/N sends psi_h to v_0 and phi_h to v_0^* under the inverse dual map. It maps e_h to P_0. It is a scalar multiple of a unitary matrix and has condition number one. Consequently H_0=G(I tensor Fourier) conjugates the divided-coherent product rank-one source exactly to e_D, including its off-diagonal entries. If every crossing is replaced by</p>
-<p><span class="math display">$$
- R^{H_0}=(H_0\otimes H_0)R_{\rm high}(H_0^{-1}\otimes H_0^{-1}),
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>R</mi><msub><mi>H</mi><mn>0</mn></msub></msup><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>H</mi><mn>0</mn></msub><mo>⊗</mo><msub><mi>H</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><msub><mi>R</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">h</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><msubsup><mi>H</mi><mn>0</mn><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo>⊗</mo><msubsup><mi>H</mi><mn>0</mn><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ R^{H_0}=(H_0\otimes H_0)R_{\mathrm{high}}(H_0^{-1}\otimes H_0^{-1}),
                                                                \tag{12}
-$$</span></p>
+</annotation></semantics></math></p>
 <p>and pivots, duals, coupons and internal projectors are conjugated with their endpoint H_0’s, the full arbitrary word and all its q-jets are exactly gauge equivalent. This is ordinary finite matrix basis change in the actual integral family. It makes no assertion that P commutes with the original R, or that R^H already has the required geometric Gaussian/source comparison.</p>
 <h2 id="literal-whole-source-germs-and-an-off-diagonal-ward-adapter">5. Literal whole source germs and an off-diagonal Ward adapter</h2>
 <p>The generic integral divided matrices determine finite source germs Psi_S(q), Lambda_S(q), u_S(q)=Lambda_S Psi_S exactly as in the high-color source theorem; u_S(q_N)=1. Put</p>
@@ -140,11 +140,11 @@ $$</span></p>
  B_{ij}=\frac{\Delta_{ij}}{i-j}\ (i\ne j),\qquad B_{ii}=0.
 </annotation></semantics></math></p>
 <p>The diagonal of Delta is identically zero, at every q in the germ. Consequently</p>
-<p><span class="math display">$$
- \Delta=[J_{\rm un},B],\qquad
- \operatorname{Tr}(\Delta C)=-\operatorname{Tr}(B[J_{\rm un},C])
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mo>=</mo><mo stretchy="false" form="prefix">[</mo><msub><mi>J</mi><mrow><mi mathvariant="normal">u</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>,</mo><mi>B</mi><mo stretchy="false" form="postfix">]</mo><mo>,</mo><mspace width="2.0em"></mspace><mrow><mi mathvariant="normal">Tr</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi mathvariant="normal">Δ</mi><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><mrow><mi mathvariant="normal">Tr</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="prefix">[</mo><msub><mi>J</mi><mrow><mi mathvariant="normal">u</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>,</mo><mi>C</mi><mo stretchy="false" form="postfix">]</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+ \Delta=[J_{\mathrm{un}},B],\qquad
+ \operatorname{Tr}(\Delta C)=-\operatorname{Tr}(B[J_{\mathrm{un}},C])
                                                                \tag{14}
-$$</span></p>
+</annotation></semantics></math></p>
 <p>for EVERY matrix C. Hence the one-sided projected product source and the compressed source agree on weight-zero actual cut arrays, while their full off-diagonal Ward discrepancy has not been erased.</p>
 <p>The alternative whole germ G e_0(q) G^(-1), obtained by transporting one original residue-string coupon, has the same root as d(q). Its higher diagonal source weights generally differ: d samples the actual S=R mod N string, while G e_0 G^(-1) samples S=0 before transport. Their source and co-source ratios are regular units with root one. Those units and u_P must be carried when comparing whole jets; equality of their numerical root binomial rows does not remove them.</p>
 <p>These source units can also be retained by an EXPLICIT whole-germ gauge, rather than an unspecified choice of extension. Write v=Psi, w=Lambda, v_c=Pv and w_c=wP/u_P. Thus wv=w_c v_c=1 and d=v_c w_c. Put v_t=H_0v, w_t=wH_0^(-1), e_t=v_t w_t and</p>
@@ -158,20 +158,20 @@ $$</span></p>
 </annotation></semantics></math></p>
 <p>Consequently H(q)=K(q)H_0 transports that actual divided-coherent whole source to the compressed source exactly. Conjugating every crossing, pivot, dual, coupon and internal projector by H(q) gives an exact whole-word source comparison, including all source-normal derivatives and the unit u_P. This is a same-color gauge theorem. It neither equates the high and original low-color q-jets nor establishes the geometric Gaussian image of the transformed word. Only H(q_N), not its behavior on a growing q-neighborhood, has the polynomial cost established above.</p>
 <p>There is also an explicit adapter if the incoming high-color coupon is the uniform average in this fixed basis. On the Frobenius factor put lambda_av(v_R)=1/(N+1), and write lambda_bin=lambda_+. Then</p>
-<p><span class="math display">$$
- K_{\rm Fr}=I+\psi_+(\lambda_{\rm av}-\lambda_{\rm bin}),\qquad
- K_{\rm Fr}^{-1}=I-\psi_+(\lambda_{\rm av}-\lambda_{\rm bin}).
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mrow><mi mathvariant="normal">F</mi><mi mathvariant="normal">r</mi></mrow></msub><mo>=</mo><mi>I</mi><mo>+</mo><msub><mi>ψ</mi><mo>+</mo></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>λ</mi><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">v</mi></mrow></msub><mo>−</mo><msub><mi>λ</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msubsup><mi>K</mi><mrow><mi mathvariant="normal">F</mi><mi mathvariant="normal">r</mi></mrow><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo>=</mo><mi>I</mi><mo>−</mo><msub><mi>ψ</mi><mo>+</mo></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>λ</mi><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">v</mi></mrow></msub><mo>−</mo><msub><mi>λ</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ K_{\mathrm{Fr}}=I+\psi_+(\lambda_{\mathrm{av}}-\lambda_{\mathrm{bin}}),\qquad
+ K_{\mathrm{Fr}}^{-1}=I-\psi_+(\lambda_{\mathrm{av}}-\lambda_{\mathrm{bin}}).
                                                                \tag{14c}
-$$</span></p>
+</annotation></semantics></math></p>
 <p>The rank-one correction squares to zero, since both rows pair with psi_+ to one. It fixes the source vector and sends the uniform coupon to the binomial coupon by conjugation. Both K_Fr and its inverse have norm O(sqrt(N+1)). Tensoring with the head identity and using the same near-identity construction (14a) joins the constant uniform source to the actual divided-coherent WHOLE germ. Composing it with H(q) therefore retains the precise incoming source, including all its normal jets. If a different integral/balanced basis is used, its actual source adapter must first be included; (14c) is not a license to replace its off-diagonal row by an average. All these conjugations compare the high color with itself.</p>
 <h2 id="an-actual-mixed-normal-crossing-changes-the-total-charge">6. An actual mixed-normal crossing changes the total charge</h2>
 <p>The entire root crossing commutes with the TOTAL charge C tensor C, although it need not preserve the individual zero-charge projectors. The original first-normal crossing need not even preserve total zero charge. Here is an explicit entry of the actual positive R.</p>
 <p>Take input (R_1,S_1)=(1,0), (R_2,S_2)=(N-1,0), and transfer k=1. Its total root charge is zero. The un-checked output is (0,N-1),(N-1,1), whose total charge is -1 modulo N. The transfer coefficient has exactly one normal zero, and</p>
-<p><span class="math display">$$
- [R_{\rm entry}/\delta]_0
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><msub><mi>R</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">y</mi></mrow></msub><mi>/</mi><mi>δ</mi><msub><mo stretchy="false" form="postfix">]</mo><mn>0</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>N</mi><mo>+</mo><mn>1</mn></mrow></msup><mi>N</mi><mspace width="0.167em"></mspace><msubsup><mi>q</mi><mi>N</mi><mrow><msub><mi>H</mi><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msub><msub><mi>H</mi><mrow><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mn>1</mn></mrow></msub><mi>/</mi><mn>2</mn></mrow></msubsup><mo>≠</mo><mn>0</mn><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ [R_{\mathrm{entry}}/\delta]_0
    =(-1)^{N+1}N\,
        q_N^{H_{N-1}H_{N(N-1)+1}/2}\ne0,              \tag{15}
-$$</span></p>
+</annotation></semantics></math></p>
 <p>where H_i=m-2i and the common half-Cartan character is exactly the one in the original R. This follows directly from the E wrap coefficient (-1)^(N+1)N/rho, the nonzero F head coefficient [1]=1, and the k=1 nilpotent coefficient rho. Checked R only swaps its output factors and has the same total charge defect. Thus deleting all charged neighbors at first normal order changes an actual crossing coefficient. A full-source current theorem cannot silently apply P before and after each original crossing.</p>
 <p>There is nevertheless an exact bounded-charge filtration. For any transfer k=aN+b, 0&lt;=b&lt;N, write the two possible head carries as c_E=1_(S_1&lt;b) and c_F=1_(S_2+b&gt;=N). Then</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>R</mi><mn>1</mn></msub><mo>+</mo><msub><mi>R</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>c</mi><mi>F</mi></msub><mo>−</mo><msub><mi>c</mi><mi>E</mi></msub><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi mathvariant="normal">Δ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>S</mi><mn>1</mn></msub><mo>+</mo><msub><mi>S</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><mi>N</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>c</mi><mi>F</mi></msub><mo>−</mo><msub><mi>c</mi><mi>E</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">

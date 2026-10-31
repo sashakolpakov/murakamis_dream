@@ -14,7 +14,7 @@ source survival or geometric maximum is claimed.
 ## 1. The actual simple channel and its full Clebsch columns
 
 Let N=2m+1>=3, d=2m, q=exp(pi i/N), Q=q^2, x=q^d=-q^(-1),
-F_r=(Q;Q)_r. Use the ORIGINAL balanced Ecal,F,K and their ordered
+F_r=(Q;Q)_r. Use the original balanced Ecal,F,K and their ordered
 coproducts. Define a physical pair vector of degree m by
 
     h=sum_(a=0)^m h_a |a,m-a>,
@@ -91,7 +91,7 @@ Since F_m^2=N(-1)^m q^[m(m+1)], the total scalar is
 q^(-2mN)=1. This proves the first equation(6). In the second equation,
 only s=0 survives in (5); the value is x^(-m)N/F_m^2=q^(-m^2).
 
-Let f_a(z) be the ORIGINAL middle-degree Casimir continuants normalized
+Let f_a(z) be the original middle-degree Casimir continuants normalized
 by f_0=1. The node -2 is SIMPLE at odd N. Consequently
 
     W_m(a,d-a)=q^(-m^2) f_a(-2).                       (8)
@@ -328,9 +328,4 @@ this one coefficient. Those are the next genuine branching estimates.
 
 Audit: [actual generators, every finite Clebsch entry, source endpoint and central invariant tensor](../experiments/audit_actual_trivalent_steinberg_central_anchor.py).
 
-Independent full analytical review and a separate fresh replay passed
-all ten original odd Clebsch/source/quartic levels and five scalar
-Laplace calibrations. The review independently rederived the second
-q-Chu phases, the finite full-J inversion, and the affine-shift factor
-1/4 in(23). Even confluence, the marked white packet, full Theta norm
-and sewn geometric survival remain separate.
+Even confluence, the marked white packet, full Theta norm and sewn geometric survival remain separate.

@@ -13,7 +13,7 @@ requirements; genuine q normals are bounded here only at physical rows.
 ## 1. Exact original root identity
 
 Put d=N-1, q=exp(pi i/N), s_n=product_(r=1)^n 2sin(pi r/N),
-and 0<=a<=floor(d/2). Let J_t be the ORIGINAL physical Casimir block
+and 0<=a<=floor(d/2). Let J_t be the original physical Casimir block
 in total degree 0<=t<=d, in its original order u=0,...,t. Let p_a be
 the [original exceptional polynomial](actual_matching_edge_geometric_target_polynomial.md).
 Choose u<=v with u+v=t and set h=v-u. If h>a, then
@@ -228,7 +228,7 @@ For fixed actual alpha=a/N, take compact subsets of the convex tube
 The channel remains an integer. Put tau_prime=1-delta-1/N.
 For all large N, (tau_prime,nu) and (tau_prime,lambda) lie in
 fixed compacts of the proved full physical ordinary tube. If fhat
-denotes that ORIGINAL finite continuation, define
+denotes that original finite continuation, define
 
     fhat_a^#(tau,nu)=conjugate(fhat_a(conjugate(tau),conjugate(nu))),
 
@@ -322,20 +322,6 @@ construction is still required.
 Focused audit: [original matrices, generic tensor jets and actual complex
 kernel amplitudes](../experiments/audit_actual_matching_edge_antidiagonal_operator_packet.py).
 
-Primary-agent full analytical review: PASS. The reader checked the exact
-original reshuffle, cup/turn phases, white-map square, complete-column
-support, retained integer offsets and genuine generic single-term
-tensor, then the full entry formula, finite entire sine product,
-holomorphic conjugate, exact trapezoidal endpoints and complex root
-amplitude. Complex generic normals and global geometric membership
-remain excluded as stated.
+Complex generic normals and global geometric membership remain excluded as stated.
 
-Independent full analytical review of sections 1--6 and fresh focused
-replays: PASS. The reader reproduced 175 anti-diagonal generic tensor
-four-jets, 460 positive-square identities and 510 four-jet bandwidth
-zeros, followed by 2,901 general original entries, 430 all-entry generic
-tensor four-jets and 268 finite scalar products. Twelve anti-diagonal
-amplitudes at 140 digits and twelve real/complex kernel amplitudes with
-24 independent literal-source comparisons at 160 digits also passed.
-The review distinguishes the root complex packet from genuine q normals
-at complex rows, and from a global geometric selected-frame assertion.
+The root complex packet is distinct from genuine q normals at complex rows and from a selected-frame assertion for the global geometry.

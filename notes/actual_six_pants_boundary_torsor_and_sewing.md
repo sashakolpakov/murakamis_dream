@@ -196,7 +196,7 @@ Equations (3)--(11) concern precisely the regular surviving cells.
 
 The actual marked pairing (5) need not be a product of three
 two-dimensional axis pairings. There is already an exact counterexample
-at N=4 and a=b=c=1. Reduce its ORIGINAL physical matrices in the
+at N=4 and a=b=c=1. Reduce its original physical matrices in the
 cyclotomic field Q(q), q^4=-1, by the homomorphism
 
     q -> 762 modulo the prime 1009.
@@ -285,10 +285,3 @@ finite square-root congruence, and the exact residue certificate
 the genuine theta, dipole and corrected cube source diagrams.
 The finite algebraic proofs above establish the general regular-cell
 claims; no polynomial conditioning or general graph volume is inferred.
-
-The root independently read the topology, actual Frobenius determinant,
-finite square-root construction, exact source/dual costs, cyclotomic
-nonfactorization inference and synchronized-normal scope and reported
-analytical PASS. The exact residue arithmetic was separately replayed
-by the focused physical audit. These are internal checks, not external
-peer review.

@@ -115,7 +115,7 @@ The signed right list minus the left list is the specified
 FIRST negative boundary. These signs and quads are fixed below
 by the actual finite operators.
 
-## 3. The genuine finite cut and the ORIGINAL crossing atom
+## 3. The genuine finite cut and the original crossing atom
 
 Let E_d(T) be the original second-head index-d projector and put
 
@@ -226,7 +226,7 @@ y_cl,J_cl,a_cl of Section 2. Thus the five developed signed
 arguments of (12) are the literal FIRST table (3)--(4).
 
 There is also a useful fixed-degree ordered Ptolemy form, involving
-the ORIGINAL unsplit atom a rather than a guessed scalar quotient:
+the original unsplit atom a rather than a guessed scalar quotient:
 
     G_first=1-a=1-c+Tc,
     J=G_first^(-1)T,
@@ -245,7 +245,7 @@ and the fourth-face quad r therefore satisfy exact ordered equations
 on the original physical heads, with the strict c-wall retained.
 They are not products of separately compressed coordinate ports.
 
-Combining (9)--(12) embeds the identity in the ORIGINAL crossing:
+Combining (9)--(12) embeds the identity in the original crossing:
 
     R_0=D P F_H F^(-1)
         =D Y^(-1)F_H P F^(-1).                   (15)
@@ -297,7 +297,7 @@ one does not replace it by a scalar source value.
 
 ## 6. Original cup, marker, and uncanceled marked scalar
 
-Keep the ORIGINAL balanced cup and full marker
+Keep the original balanced cup and full marker
 
     p=N sum_(j=0)^d x^(j-d)|j,d-j>,
     m|a,b>=x^b/N^2, mp=1.                        (18)

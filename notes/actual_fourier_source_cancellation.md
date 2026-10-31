@@ -2,7 +2,7 @@
 
 Research theorem, 27 October 2026. The last Fourier-label source has
 an explicit, uniformly tame cyclic current complex. A literal Cartan
-port current of the ORIGINAL knot tensor lies in its zero-source
+port current of the original knot tensor lies in its zero-source
 subspace, retains the actual highest-input one-sided support, and on
 the proved regular geometric chart has a NONZERO formal block with
 the SAME regulator action. Thus nonzero geometric partial support,
@@ -221,7 +221,7 @@ With A_j[c,a]=T^V_(c,j;a,j), it proves
 The equality is entrywise: D_K multiplies that entry by Q_N^-c-1.
 The highest moment row c=0 forces q=0 in the uninserted conserving
 tensor and is constant in j at the root. Its exact beta norm is
-sqrt((N^2-1)/12). This decomposition retains the ORIGINAL orbit
+sqrt((N^2-1)/12). This decomposition retains the original orbit
 row and its Ward sector; it does not compute the unknown scalar
 P_N or move the regular good-A geometric block to A=1.
 

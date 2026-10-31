@@ -292,10 +292,4 @@ and geometric overlap remain separate problems.
 Audit: [literal generic source transformation and support checks](../experiments/audit_actual_all_partner_first_normal_bound.py)
 and [recorded results](../experiments/actual_all_partner_first_normal_bound_results.json).
 
-Independent root review checked the maximal-opposite-pair presentation,
-all root-unit ranges, the exact generic prefactor cancellation and the
-star-to-Ward covering argument. Fresh replay passed 79,649 supported
-face-bit classifications, 2,384 live face branches, 430 complete generic
-presentations through four Taylor coefficients, and 13,852 star routes.
-The analytic bounds follow from the proof; the finite checks supplement
-the source and incidence identities.
+The analytic bounds follow from the proof; the finite checks supplement the source and incidence identities.

@@ -22,12 +22,11 @@ and [results](../experiments/atomic_window_total_source_resolution_results.json)
 check nine original whole-word source identities at independent moment
 parameters, with genuinely present high tails and no intermediate head
 projection. They also check the normal determinant, finite endpoint
-exclusion, and exact interval kernels. The key tail support scope has
-been independently checked by the other two proof agents.
+exclusion, and exact interval kernels.
 
 ## 1. The source annihilates every nonempty atomic high-tail product
 
-Start with the ORIGINAL convergent full-Psi flow chamber, after or
+Start with the original convergent full-Psi flow chamber, after or
 before its valid head-Hardy forest contraction. Write s_j=A_j/t_j for
 its atomic Cauchy ratios. The continuous coefficient-independent
 support theorem in
@@ -297,14 +296,14 @@ these and F=0 are the actual linear angle/flow constraints; positivity
 cuts out a convex domain. The usual strict tetrahedral concavity
 holds on the quotient by directions leaving every angle unchanged.
 
-This is an identity for the newly constructed ORIGINAL source, not
+This is an identity for the newly constructed original source, not
 a newly defined positive model. Its scope is essential: the original
 signed nine-atom atlas is not known to place its geometric point in
 one simultaneous positive chamber, and such a choice cannot be
 assumed from geometricity alone. The previously found indefinite
 actual-phase Hessian precludes repairing that issue by arbitrary
 real Gaussian changes. Transport to a positive chart and control of
-the ORIGINAL interval cycle still require proof. Equations (8)--(9)
+the original interval cycle still require proof. Equations (8)--(9)
 explain which flow and volume optimization that transport must carry;
 they do not supply its missing geometric coefficient.
 

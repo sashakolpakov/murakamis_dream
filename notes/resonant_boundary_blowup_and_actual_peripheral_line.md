@@ -1,7 +1,7 @@
 # The resonant framing blowup and the actual peripheral line
 
 27 October 2026. This note proves exact identities on the geometric
-framing chart of the ORIGINAL first-slot inverse-pair cut. The full
+framing chart of the original first-slot inverse-pair cut. The full
 ADO dimension cancels the chart's apparent first-order pole before
 specialization. The paired principal Gaussian line also extends.
 Neither statement constructs the required map from the actual finite
@@ -121,7 +121,7 @@ dlog A_cut=-ds/(M+s), its exact expression is
 This is an algebraic identity, not a claim about a selected integration
 cycle or a uniform Gaussian expansion.
 
-Now retain the ORIGINAL dimension line, including its phase:
+Now retain the original dimension line, including its phase:
 
     d_N(M)=eta_N/u_N(M),  eta_N=i^(N+3),
     u_N(M)=(M^N-M^(-N))/(M-M^(-1)).

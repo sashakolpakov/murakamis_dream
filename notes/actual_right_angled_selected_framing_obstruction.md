@@ -341,7 +341,7 @@ an algebraic positive certificate the flags may also be chosen
 algebraic: the strict feasible set is open in a rational chart of
 the sphere-pair space, and algebraic points are dense there.
 
-In particular take the two shaded triangles incident to the ORIGINAL
+In particular take the two shaded triangles incident to the original
 marked physical main edge of the matching graph. They are distinct
 and meet at that edge's ideal vertex in Q. The two exceptional ordinary
 column factors can be localized at those two vertices, without moving
@@ -376,30 +376,10 @@ exit checks, and 936 reflected selected
 halfspace checks. This finite fixture does not replace section 3's actual
 Morse-basepath proof or section 2's general facet-incidence argument.
 
-
-Independent geometric/source review: a second reader checked the
-closest-facet argument, outward-halfspace signs, the white-normal Gram
-matrix and closed facet sphere, and the literal Morse two-white-face
-bigon including half-twisted boxes. The canonical puncture pair and
-trace -2 lift telescope were independently recalculated. The same reader
-checked the generic two-facet statement, both endpoint and cup/cap seam
-exclusions, and positive normal rescaling. The analytical review passed.
-
-Root review: full analytical read and fresh exact audit PASS. The review
-checked the actual prefix dictionary, full shaded-facet coverage, the
-selected strip orientation, the polarization kernel and its endpoints,
-and the convex-hull contradiction. It separately checked the exactly-two
-localization and generic avoidance argument. The source conclusion is
+The source conclusion is
 restricted to an ALL-CENTRAL selected frame; the larger physical-domain
 statement is geometric with the oriented strip sides imposed. No volume
 conjecture, unfolded critical germ, or contour outside that central route
 is refuted by this result.
 
-Prescribed-pair corollary review: the root reader and two independent
-readers checked the facet-circle construction, outward in-plane
-perturbations, strict chord intersection, and the open family permitting
-all earlier exclusions. The original marked main edge is selectable
-without transporting its mark. The exact fixture now also checks all six
-distinct facet pairs of the regular ideal octahedron. These reviews retain
-the limitations on central support and source estimates for the other
-factors and for the exceptional block itself.
+The original marked main edge is selectable without transporting its mark. The exact fixture checks all six distinct facet pairs of the regular ideal octahedron. Central support and source estimates for the other factors and the exceptional block remain additional restrictions.

@@ -210,11 +210,4 @@ statement or general open-graph source factorization.
 
 Audit: [exact phases/folding and all-parity whole-label sums](../experiments/audit_actual_trivalent_marked_theta_label_asymptotic.py).
 
-Root's independent analytical review passed the whole-label action,
-strict gap, actual half-step prefactor, separate evenness, both parity
-folds, literal Omega_N and each Gaussian square-root branch, including
-the relative O_e(1/N) error. A fresh primary audit passed 4,159 exact
-rational root-phase checks, 127 exact parity-fold families, symbolic
-action identities and six complete-label families with 24 coherent
-signed profiles. The separately proved full-normal marked source
-identity is the input; numerical profiles supplement this proof.
+The full-normal marked source identity is an input. Finite source and Gaussian-profile checks supplement the uniform analytical proof.

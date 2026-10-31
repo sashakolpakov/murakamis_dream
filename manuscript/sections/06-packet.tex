@@ -1,4 +1,8 @@
-\chapter{The selected complex color packet}\label{ch:packet}
+\chapter{A holomorphic asymptotic near the complete maximum}\label{ch:packet}
+
+The preceding chapter removes the alias terms and the states far from the complete maximum with an exponential error. What remains is a finite sum over a fixed neighborhood of that maximum. We now continue its color parameters to complex values and compute its leading term. This finite holomorphic function is the \emph{packet} used later in the filling integral.
+
+The order of the construction matters. We first define the finite function by continuing the exact elementary coefficients, with their original phases. We then compare it with analytic index interpolants to exponential accuracy and apply a lattice saddle argument. An error of order $N^{-1}$ on the real grid would not suffice: after an oscillatory filling transform, such an error could be larger than the desired leading answer.
 
 \section{A finite holomorphic object}
 Let $\mathbf k\in\ZZ^K$ be the primitive wire coordinates from \eqref{eq:lattice-dimension}. Every other wire has the exact form
@@ -11,11 +15,13 @@ For pure leaves, the exact color coefficient on this box is
 \[
  \frac{N^2s_{2r}}{s_r^2s_{r-h}s_{r+h}},\qquad t=h/N.
 \]
-Use the canonical factorial continuation for the paired arguments $r-h,r+h$. For signed leaves use the finite continuant sum, with its continuous $q^{h^2}$ chirp and its selected high-index recurrence solution. The precise construction, including the endpoint source anchor and exponential interpolation error, is proved in Appendix~\ref{app:selected-source}. In particular, no interpolation is chosen merely because it agrees to order $N^{-1}$ on the real grid.
+Use the canonical factorial continuation for the paired arguments $r-h,r+h$. For a piece with a retained crossing, use its finite continuant sum, meaning the solution of the displayed second-order recurrence fixed by the finite upper endpoint. Retain the continuous quadratic phase $q^{h^2}$, often called a chirp, and the recurrence branch selected by that exact sum. The precise construction, including the endpoint source anchor and exponential interpolation error, is proved in Appendix~\ref{app:selected-source}. In particular, no interpolation is chosen merely because it agrees to order $N^{-1}$ on the real grid.
 
 Define $C_N(\mathbf t)$ by the \emph{finite} rectangular wire sum of the exact continued-color leaf factors and the original integer gate coefficients. At each fixed integer wire index, only the color is continued: the signed leaf remains its finite source sum with the canonical chirp. Index interpolants are introduced afterward as a proof device and replace this exact window only with exponentially small error. This is the definition in \eqref{eq:b1-exact-window}. It is holomorphic on a fixed complex polydisk and separately even in every $t_\ell$. It agrees with the original source in the small physical color corridor up to the exponentially small errors established in Chapter~\ref{ch:alias} and the local interpolation proof.
 
 \section{The selected local action}
+
+The pure action depends on a scaled Newton index $x$ and a scaled color deficit $t$. A retained half twist changes the relation between this pure parameter and the complex parameter $\chi$ that will become a peripheral coordinate. The following implicit change of variables describes that relation. Its branch is fixed by the finite recurrence, so both its derivative and its additive constant are determined.
 For a pure leaf the action is
 \begin{equation}\label{eq:pure-color-action}
  g(x,t)=J(2x)-2J(x)-J(x-t)-J(x+t).
@@ -43,6 +49,8 @@ The same relation holds after eliminating all internal wires:
 At fixed $\chi$, differentiation of \eqref{eq:local-shear} gives $(f_\eps)_x=g_x$ and $(f_\eps)_\chi=g_t$. Thus the wire stationary equations are the pure equations evaluated at the implicitly changed colors. This proves the global shear by the envelope theorem, with the complete value $F_0$ as its anchor.
 
 \section{Offsets, powers of the level, and the Gaussian}
+
+The exponential action alone is not enough to prove noncancellation. We also need a nonzero leading coefficient and its exact power of $N$. Integer shifts such as $d=N-1$ affect that coefficient even though they disappear from the limiting action. We keep these shifts before applying the Gaussian integral in the free lattice coordinates.
 On a compact complex strict window, the factorial expansion is
 \begin{equation}\label{eq:factorial-local}
  G_N(N\alpha+c)=\sqrt{2N\sin\pi\alpha}\,

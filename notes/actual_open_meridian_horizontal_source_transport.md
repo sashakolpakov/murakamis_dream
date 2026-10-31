@@ -23,7 +23,7 @@ Use the literal tensor convention
     T_(c,d;a,b0)=ptr_other[A E_(b0,d)^(ell) B].
 
 Thus d is the position immediately BEFORE the removed identity and
-b0 immediately AFTER it. Every ORIGINAL pivotal matrix remains in
+b0 immediately AFTER it. Every original pivotal matrix remains in
 ptr_other; opening this wire neither removes its old cap nor adds a
 new pivot. Put nu=d-b0. Conservation gives c=a-nu for the uninserted
 tensor. All four physical head bounds and internal finite supports

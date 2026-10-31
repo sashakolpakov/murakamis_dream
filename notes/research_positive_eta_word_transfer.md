@@ -1,12 +1,6 @@
 # A positive two-state transfer for the actual spectral tail
 
-31 October 2026. **Internally reviewed local theorem.** The complete
-analytical proof received independent review; this is not external peer review.
-This is an exact model of the original normalized tail, including negative
-recurrence coefficients in its usual two-term form. It gives compact-interior
-Perron and outer-angular estimates. It is not yet an exponentially accurate
-interpolation in the starting and ending rows or a global sign-cancellation
-theorem.
+31 October 2026. This exact model of the normalized tail includes the negative coefficients of its usual two-term recurrence. It gives compact-interior Perron and outer-angular estimates, not an exponentially accurate interpolation in both endpoint rows or a global sign-cancellation theorem.
 
 ## 1. Exact normalization and word expansion
 

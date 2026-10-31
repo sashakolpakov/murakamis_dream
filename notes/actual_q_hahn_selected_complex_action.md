@@ -12,7 +12,7 @@ or a noncancellation theorem for the assembled plat source.
 
 ## 1. The exact finite polynomial and its logarithm
 
-Use the ORIGINAL coefficients of the
+Use the original coefficients of the
 [phase compiler](actual_augmented_plat_phase_compiler.md):
 
     P_N(w)=sum_a E(t_N,j_N,u_N,a) w^a,
@@ -223,17 +223,6 @@ Audit: [actual Fourier columns and selected complex action](../experiments/audit
 The analytic proof above is uniform; finite numerical checks only
 verify the formula conventions and the selected continuation.
 
-Independent source-transport review: full analytical read and fresh
-100-digit audit PASS for twelve actual finite polynomials, including
-the folded endpoint and both level parities. The reviewer separately
-checked the uniform real Laplace step, slit-plane normal-family
-argument, compact parameter continuity, removal of endpoint mass in
-the positive root measure, and the nonvanishing saddle derivative on
-the physical quadrant. The actual logarithmic sheets and remaining
-global/amplitude limitations were retained in the review.
+The selected-complex-action theorem retains its actual logarithmic sheets and the stated global and amplitude limitations.
 
-Independent geometric review: full analytical read and fresh 100-digit
-replay PASS as well, including the root-measure endpoint masses,
-strict support strip and nonzero derivative in the physical quadrant.
-The review does not extend the real magnetic parameter theorem to
-an unproved complex global source packet.
+The real magnetic-parameter theorem does not imply a complex global-source packet.

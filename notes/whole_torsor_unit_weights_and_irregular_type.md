@@ -124,9 +124,9 @@ Equivalently the two mixed derivatives commute directly.
 There is no claim that the naive product translation on
 \(L,W\) makes (6) a regular principal connection at \(t=0\).
 
-On the marked branch \(L=\Log u\), its horizontal period is
+On the marked branch \(L=\operatorname{Log} u\), its horizontal period is
 \[
- W=\exp(t^{-d}\Log u).
+ W=\exp(t^{-d}\operatorname{Log} u).
 \]
 Restricting \(t=1/N\) gives exactly \(u(Q)^{N^d}\).
 The connection has fixed algebraic rank and presentation, while

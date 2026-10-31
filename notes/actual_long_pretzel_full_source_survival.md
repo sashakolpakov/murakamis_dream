@@ -170,11 +170,7 @@ in the name of the source action.
 
 ## 4. Verification and its scope
 
-The global complement proof and the corridor proof have each passed
-independent analytic reviews, including signed unequal slopes,
-the even-level middle color, and the paired high-charge endpoint
-currents. The assembly above has also passed an independent review.
-Fresh root replays of all four supporting audits passed:
+The finite checks supporting the complement and corridor proofs are:
 
 - `audit_actual_pretzel_global_alias_and_colored_source_gap.py`:
   exact physical band identities, normal coefficients, spectral

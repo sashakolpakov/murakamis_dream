@@ -1,6 +1,6 @@
 # The actual marked line-circle pattern near the complete source
 
-30 October 2026. Independently reviewed. This note reconstructs
+30 October 2026. This note reconstructs
 a local analytic circle pattern on the ACTUAL labeled white-face sphere,
 including its two marked line faces. Its radii agree with the stationary
 limiting face action. It also retains the selected fixed-point germs of
@@ -263,16 +263,4 @@ cuboctahedral checkerboard fixtures; 24 real/complex deformed patterns;
 1.1e-13. These finite fixtures audit the general Jacobian argument; they
 do not replace it or prove an auxiliary primitive-collar formula.
 
-
-Independent full analytical review and fresh redirected audit: PASS.
-The reviewer checked the actual simplicial/signed-line assumptions,
-all 3R-1 Jacobian variables and equations, scale removal, coverage of
-every finite center, propagation through the remaining disk, source
-angle closure and both ordered line-flag adapters. All reported finite
-checks were reproduced. The auxiliary primitive-collar identification
-remains outside this result.
-
-Primary full proof/code review and fresh redirected audit: PASS.
-The review independently verified the determinant-one line matrices,
-selected eigenvalues, exact angle-gradient identities, shared strip
-normalization and all numerical residuals, with the same scope.
+The auxiliary primitive-collar identification is separate from the marked circle-pattern theorem.

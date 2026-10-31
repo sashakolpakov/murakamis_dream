@@ -308,10 +308,4 @@ Audit: [implicit saddle, coordinate zeros and integer-slope examples](../experim
 The density-one statement is proved by the analytic rescaling and
 measure argument above, not by the finite counts in that audit.
 
-Independent internal analytical review: the primary agent and a second
-reader checked the factor-two implicit saddle, absolute two-stage
-stationary expansion, unchanged full-source error budget, minimal
-charge addition, coordinate divisor, rational rays, density-one mesh
-argument and the partial-filling restriction. Both fresh audit replays
-passed. The source and geometric hypotheses remain conditional as
-stated; these reviews do not establish them for arbitrary plats.
+The source and geometric hypotheses remain conditional as stated. They are not established here for arbitrary plats.

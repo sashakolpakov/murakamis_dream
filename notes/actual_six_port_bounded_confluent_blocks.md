@@ -1,6 +1,6 @@
 # Complete six-port confluence in blocks of at most eight channels
 
-29 October 2026. The saturated ORIGINAL six-port source decomposes by
+29 October 2026. The saturated original six-port source decomposes by
 regular joint idempotents of the three disjoint pair Casimirs. Each
 block has rank at most eight. Relative to primitive generic eigenline
 columns, its Smith exponents are between0 and3. Thus only three normal
@@ -282,7 +282,7 @@ The six-port bounds3,7,10 above are explicit and require no such
 additional tree. No high-width norm or volume bound follows from
 this fixed-jet observation.
 
-## 8. Exact checks and analytical review
+## 8. Exact checks and analytical scope
 
 [The focused exact audit](../experiments/audit_actual_six_port_bounded_confluent_blocks.py)
 passes nineteen physical spectral-gap families N=2,...,20 using
@@ -295,7 +295,4 @@ pole argument cannot in general promise fewer than three saturation
 steps. These lattice stress tests are explicitly NOT a bound or an
 identification of an unknown physical Gram matrix.
 
-The full proof has passed an independent analytical read. That review
-corrected the signs in the derivative of c_0-c_a in section4; the
-nonzero multiplicities and all bounds were unaffected. The uniform
-normal-factorial estimate has separately passed independent review.
+Section 4 uses the corrected signs in the derivative of c_0-c_a. The nonzero multiplicities and bounds are unchanged.

@@ -6,7 +6,7 @@ regular, explicitly normalized full-Psi Fourier kernel. All three
 finite source norms vanish on this frame's Fermat multisection.
 The resulting operator is EXACTLY the original physical crossing.
 The proof first bounds every possible alias error to degree +N,
-then eliminates it with one exact ORIGINAL E-coproduct Ward identity.
+then eliminates it with one exact original E-coproduct Ward identity.
 Consequently all original words, currents, caps and sources are retained.
 
 This is stronger than setting a central scalar to one inside the old
@@ -18,7 +18,7 @@ prove a nonzero global geometric intersection or scalar volume limit.
 ## 1. Original kernel and the finite frames
 
 Use q=exp(pi*i/N), Q=q^2, d=N-1, x=-q^(-1),
-s=x^N, so s^2=1. Retain the ORIGINAL common Cartan scalar
+s=x^N, so s^2=1. Retain the original common Cartan scalar
 kappa. The exact [complete positive layer](actual_trivalent_layer_crossing_source.md)
 is the original physical finite block of
 
@@ -59,9 +59,9 @@ operator by
 The factor N^(-3) in (4) is exact: N^(-2) is the two-head
 Fourier kernel normalization and N^(-1) is internal root averaging.
 
-**Exact-operator theorem.** Rhat_+=R_+, including its ORIGINAL
+**Exact-operator theorem.** Rhat_+=R_+, including its original
 Cartan line. Section 2 first proves that their difference can
-only have degree +N in the ORIGINAL finite index basis. Section 5
+only have degree +N in the original finite index basis. Section 5
 then proves that this difference is zero, using the actual E current.
 
 ## 2. The exact degree/carry proof
@@ -88,7 +88,7 @@ External inverse Fourier extraction folds a,c modulo N. On p=0,
 an input a>=N folds to a-N and adds degree N; an output c<0 folds
 to c+N and also adds degree N. These two cases cannot coincide:
 the former has original input total>=N, the latter original
-output total<d. All remaining p=0 terms are exactly the ORIGINAL
+output total<d. All remaining p=0 terms are exactly the original
 physical finite block of (1). This proves the theorem. All root
 radius factors are retained in the folding; they are nonzero
 scalars and do not alter the degree calculation.
@@ -289,10 +289,10 @@ theta1=theta2=theta3=theta4=pi/2, the regular octahedron.
 The existence of this local chart does not place the complete
 global geometric critical point on its sewn original source.
 
-## 5. An exact ORIGINAL E-current eliminates every possible alias
+## 5. An exact original E-current eliminates every possible alias
 
 The degree +N allowance in Section 2 can be removed. Retain the
-ORIGINAL complete scaled head current and coproduct
+original complete scaled head current and coproduct
 
     Ecal|a>=(Q^(-a)-1)|a-1>, Ecal|0>=0,
     K|a>=x Q^(-a)|a>,
@@ -328,7 +328,7 @@ q=-1/x and Q=x^(-2). Substituting (17) proves the rational identity
 This is precisely the matrix relation E_total,out M=M E_total,in.
 The factors Q^(-1) on the right come from transposing the
 finite input difference: z_j^(-1) at its shifted row becomes
-Q^(-1)z_input^(-1). Thus (18) is the ORIGINAL quantum-group
+Q^(-1)z_input^(-1). Thus (18) is the original quantum-group
 current, not merely its commuting symbol. Decoding the four
 finite frames proves [Rhat_+,E_total]=0.
 
@@ -402,7 +402,7 @@ source are recorded in
 
 This theorem resolves the local circle/current normalization by an
 actual finite polarization. It supplies a nonzero local Fourier
-kernel with the ORIGINAL closed scalar retained. Global selected
+kernel with the original closed scalar retained. Global selected
 geometric survival, source-angle bounds, and dominance still require
 control of the sewn finite Fourier sum and the retained adapters.
 

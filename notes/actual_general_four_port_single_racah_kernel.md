@@ -463,7 +463,7 @@ positive, unitary, polynomially conditioned or sharply controlled
 under cycle sewing.
 
 Audit: [uniform certificates and independent literal source tensors](../experiments/audit_actual_general_four_port_single_racah_kernel.py).
-Fresh replay passes two universal Fricke/AW identities, 381 generic
+The finite audit checks two universal Fricke/AW identities, 381 generic
 all-port external families and 1125 single-sum source entries,
 including half-integral spins with the true (-1)^A cyclic sign.
 Eight root zero-order families check all 40,820 channel entries,
@@ -472,11 +472,4 @@ inverse pole bound two and full-term first-normal budget four.
 Finite tests supplement the displayed uniform proof; they are not
 a polynomial-fitting argument.
 
-Independent internal review: root completed a full analytical read
-and fresh primary replay of the actual source theorem, seven-factorial
-conversion and scalar metric gauge. The crossing/source agent also
-completed a full independent analytical read and fresh primary replay,
-then separately checked (25)--(28), the surviving zeta^n phase and
-the added finite pole/first-normal budget (31). All 1125 source
-entries were checked in both one-sum conventions. No energy or
-full-root positivity conclusion was included in either verdict.
+The single-Racah identity does not imply an energy bound or positivity at every root.

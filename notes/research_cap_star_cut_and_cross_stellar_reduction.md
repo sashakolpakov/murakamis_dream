@@ -1,9 +1,9 @@
 # Cap-star cuts and exact CROSS stellar elimination
 
-31 October 2026. **Internally reviewed analytical research theorem.**
+31 October 2026. **analytical research theorem.**
 Unpublished. Original unit face demands and the original protected MAIN
 edge are retained throughout. Sections 1–2
-are source-flow statements at the reviewed stationary classification;
+are source-flow statements at the stationary classification;
 sections 3–5 are exact classical entropy surgery. No finite signed
 coupon identity, universal cap exclusion, or volume theorem is asserted.
 
@@ -22,7 +22,7 @@ q_{F,A}=1-\nu,\quad q_{F,C}=\nu,\quad 0<\nu<\tfrac12,\quad L_A=L_C>0.
 \]
 
 All ordinary demands are one and all ordinary incidences are positive.
-Assume the reviewed classification into complete CROSS, strict Green,
+Assume the classification into complete CROSS, strict Green,
 and residual marked caps. We do not assume that the other A ports are
 CROSS.
 
@@ -67,7 +67,7 @@ If E is Green, W is its child and the exact common-weight relation
 implies L_W>L_A (the other outer v is protected). Thus the cap has an
 outgoing strict increase in child weight. If E is another cap, its
 other zero incidence must be Z=u. Hence D is a single triangle and
-E is the other port adjacent to the ORIGINAL mark. Its split nu'
+E is the other port adjacent to the original mark. Its split nu'
 satisfies nu'<=nu. The inequality is strict whenever an additional
 positive A incidence remains outside F and E. Equality can only occur
 when A belongs exclusively to those two ports; no classification of
@@ -315,7 +315,7 @@ contraction theorem. Replacing individual positive CROSS coefficients
 inside an alternating cap sum loses its cancellation. No inequality
 between those finite signed sums is inferred from entropy surgery.
 
-## Dependencies and review scope
+## Dependencies
 
 - [Full-fiber stationary classification](research_full_fiber_sharp_stationary_classification.md): original common weights, ordinary positivity, and residual cap classification.
 - [Exact Green spectral maximum](research_sharp_green_spectral_maximum.md): strict Green weight order and the original closed sharp entropy.
@@ -323,14 +323,7 @@ between those finite signed sums is inferred from entropy surgery.
 - [Exact cap/CROSS incidence](research_cap_cross_incidence_and_disjoint_assembly.md): the internal-face criterion and its matching requirement.
 - [Matched-sphere Morse sources](research_matched_sphere_morse_source.md): actual sources for the simple matched spheres in (10), not equality of the different sources.
 
-Root, cluster_source_transport, and coherent_partner_currents completed
-independent analytical/source reviews of sections 1–5, including the
-maximal-component leaf refinement: PASS. These are internal reviews,
-not external peer review. They checked the original whole-port cut,
-actual at-most-two-cap forest, unsquared angle identity, absolute
-Fourier calibration, closed fixed-boundary duality and the changed
-matching in (10). The clarification distinguishing retained old
-circle-packing data from the replaced coupon E is included above.
+The stellar refinement retains the old circle-packing data but replaces the coupon E and changes its matching as in (10). It is not a finite signed-source identity or an assertion that the original knot is unchanged.
 
 No numerical audit is needed or claimed. The results do not assert a
 coefficient lower rate, finite signed-source rewiring, a universal

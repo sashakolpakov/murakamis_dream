@@ -166,7 +166,7 @@ Let B_h be the actual head matrix [K,B_h]=e_h-I/N. In the target
 let K_Fr=Q^(-J_N) and put
 
 \[
- (B_{\rm Fr})_{ij}=\frac1{(N+1)(Q^{-i}-Q^{-j})}
+ (B_{\mathrm{Fr}})_{ij}=\frac1{(N+1)(Q^{-i}-Q^{-j})}
        \quad(i\ne j,\ \{i,j\}\ne\{0,N\}),
 \]
 
@@ -175,9 +175,9 @@ denominator is a unit near Q_N. The omitted corners of T_s(C) are
 IDENTICALLY zero, so the actual trace homotopies give
 
 \[
- \Phi_h(C)-\Phi_{\rm Fr}(T_sC)
+ \Phi_h(C)-\Phi_{\mathrm{Fr}}(T_sC)
  =-\operatorname{Tr}(B_h[K,C])
-       +\operatorname{Tr}(B_{\rm Fr}[K_{\rm Fr},T_sC]). \tag{10}
+       +\operatorname{Tr}(B_{\mathrm{Fr}}[K_{\mathrm{Fr}},T_sC]). \tag{10}
 \]
 
 The last commutator equals T_s((Ad_K-I)C) K_Fr. Thus (10) is an

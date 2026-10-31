@@ -1,6 +1,10 @@
-\chapter{Finite support, entropy, and a strict complete state}\label{ch:entropy}
+\chapter{From the finite sum to an angle maximization problem}\label{ch:entropy}
 
-\section{The exact compiler}
+At complete auxiliary color, every elementary coefficient and every multiplication coefficient is positive. We can therefore determine its exponential growth by maximizing the growth rate of an individual summand. This chapter makes that statement precise in three steps: determine the exact allowed integer indices, pass to their scaled compact polytope, and prove that the resulting action has a unique maximum away from every nonforced boundary. The same functions will then be recognized as hyperbolic volumes.
+
+The distinction between an exact integer constraint and its limiting inequality matters here. We use $d=N-1$ in every finite relation. The replacement by a continuous variable is made only after those relations have been solved, so no parity condition or half-lattice factor is lost.
+
+\section{Following the allowed indices through the construction}
 Expand an expression into its individual leaves, turns and binary products. A leaf has the positive support $[0,M]\cap\ZZ$. A turn replaces an index $r$ by $d-r$. A product is governed by \eqref{eq:gate-support}. Thus the source is a finite sum over a fixed tree of integer labels, with a positive coefficient at every admissible state in the complete pure case. The closure selects output $d$.
 
 The finite support can be computed without evaluating any transcendental number. If a positive expression has interval support $[l,u]\cap\ZZ$, its turn has support $[d-u,d-l]\cap\ZZ$. If two children have supports $[l_1,u_1]$ and $[l_2,u_2]$, their product is zero when $l_1+l_2>d$. Otherwise its support is
@@ -12,6 +16,8 @@ To verify that no integer in this interval is missing, fix such an output $r$. C
 At a cylindrical closing product, $i+j=d$ is forced and $\mu_{ij,d}=1$. Delete this gate only after retaining that exact relation. It is the unique forced flat gate in the completed-root construction.
 
 \section{Strict output types}
+
+The word \emph{strict} means that a state lies in the interior of every support inequality that has not been forced by closure. It is useful to classify a box by the possible values of its scaled output index. The letters in the following table name intervals, not new kinds of physical tangles. The table is a concise way of checking that the recursive construction leaves room for positive angles at every step.
 The limiting support inequalities for a retained product are
 \begin{equation}\label{eq:strict-domain}
  x>0,\quad y>0,\quad \max(x,y)<z<x+y<1.
@@ -41,6 +47,8 @@ For $hh$, choose equal leaves $a\in(b/2,\min(b,1/2))$. For a completed product c
 The distinction between strict support and every boundary coordinate is useful. At even $N$, $hh$ has top support $2M=d-1$, not $d$. This missing boundary coordinate does not affect the strict rounding argument below. Conversely, an empty strict interval does not imply a zero source at every level: $\Turn h\,\Turn h$ is zero at even levels but has a boundary-only odd contribution.
 
 \section{The primitive integer lattice}
+
+A lattice is called primitive here when the remaining free indices range over the ordinary integer lattice, with no hidden congruence restriction. We prove this by solving the closing relation with coefficient one. This gives both the correct number of summation variables and an admissible integer state near any fixed strict real state at every large level.
 Suppose there are $H$ leaves. The uncontracted tree has $H-1$ product gates. Remove the final forced gate and contract every turn by $r\mapsto d-r$. There are then $H$ leaf outputs and $H-2$ retained product outputs, with one closing relation. Solving that relation for one output in one of the two disjoint root subtrees leaves
 \begin{equation}\label{eq:lattice-dimension}
  K=2H-3
@@ -50,6 +58,8 @@ free integer coordinates. Every other index is an integer affine function of the
 Choose a strict reduced state and round its $d$-scaled free coordinates to integers. Reconstruct the eliminated indices exactly. The errors are bounded, whereas every strict inequality has a fixed positive slack times $d$. Therefore all constraints hold for every sufficiently large $N$, with either parity. For an open prescribed output, first fix $r_N/d$ in its actual strict interval and use a continuous strict state at that output; then round the remaining coordinates. This gives a genuine all-level lower sequence. It does not rely on a subsequence whose denominator happens to divide $d$.
 
 \section{The action and its uniform finite approximation}
+
+The factorials in the finite coefficients are products of sines. Their logarithms are Riemann sums for a single integrable function. We use its integral $J$ to express the exponential rates of an elementary piece and a stacking operation. The word \emph{action} below means this logarithmic growth function, with the normalization fixed by the finite coefficients.
 Define
 \begin{equation}\label{eq:log-sine}
  J(t)=\int_0^t\log(2\sin\pi u)\,\dd u,\qquad 0\le t\le1,
@@ -79,6 +89,8 @@ Away from the endpoints, compare the sum of $\log(2\sin\pi u)$ with its integral
 There are at most $N^K$ states. The upper bound from \eqref{eq:uniform-state-action}, together with strict-state rounding at the maximizing state once strictness is proved, will give the complete-source limit.
 
 \section{Tetrahedral concavity and the boundary barrier}
+
+The geometric content of the action appears in its second derivatives and in its boundary behavior. Each local term is a sum of ideal-tetrahedron volumes. Their concavity will give uniqueness; their infinite one-sided derivative at a nontrivial flat angle will prevent a maximum from escaping to the boundary. We check both points because concavity alone would allow a boundary maximum.
 For $a+b+c=1$, $a,b,c\ge0$, put
 \[
  V(a,b,c)=-\pi\bigl(J(a)+J(b)+J(c)\bigr).
@@ -120,7 +132,9 @@ For the positive complete scalar $Z_{E,N}$,
 The number of states is polynomial, so Lemma~\ref{lem:factorial-action} gives the upper bound. Round the strict maximizer in the primitive lattice. Its positive state weight gives the matching lower bound at every sufficiently large level.
 \end{proof}
 
-\section{Stationary ports and the leaf interval}
+\section{Boundary parameters and the leaf interval}
+
+For an open completed box, fix its output parameter $b$ and maximize over all its other indices. The resulting function is the profile $f_E(b)$. Its derivative measures how the optimum changes when the output is varied. We package that derivative and $b$ into three positive-branch coordinates $(B,X,Y)$. Chapter~\ref{ch:geometry} identifies their ratio with the shape of an ordered quadrilateral attachment face. For now they provide an efficient exact recursion for locating the stationary leaf parameters.
 The ordered output metric will be described in Chapter~\ref{ch:geometry}. Its useful algebraic coordinates are
 \begin{equation}\label{eq:port-def}
  B=\cot\pi b,\quad \varkappa=e^{-f_E'(b)},\quad
@@ -133,8 +147,8 @@ They satisfy $X^2+Y^2-B^2=1$. A leaf has $(B,X,Y)=(X,X,1)$. At a stationary prod
 \end{equation}
 A turn sends $(B,X,Y)$ to $(-B,Y,X)$.
 
-\begin{lemma}[Proper port inequalities]\label{lem:port-bounds}
-Every completed port satisfies $-Y<B<X$. In a completed/completed closure every completed descendant has $0<X,Y<1$, and every leaf satisfies
+\begin{lemma}[Bounds on the boundary parameters]\label{lem:port-bounds}
+The boundary parameters of every completed box satisfy $-Y<B<X$. In a completed/completed closure every completed descendant has $0<X,Y<1$, and every leaf satisfies
 \begin{equation}\label{eq:leaf-window}
  \frac12<X_\ell=\cot\pi a_\ell<1,
  \qquad \frac14<a_\ell<\frac{\arctan2}{\pi}.
@@ -147,7 +161,7 @@ The base $hh$ has $B=X-1/(2X)$ and $Y=1/(2X)$. Turns preserve the claimed inequa
 \]
 For $X\ge1$, the child inequality forces $B>\sqrt{X^2-1}$ and the result follows. For $X<1$, let $h_0=\sqrt{1-X^2}$ and $\alpha=\arccos X$. Express a child as $(B,Y)=(h_0\cot\beta,h_0\csc\beta)$. A bare leaf has $\beta=\alpha$, a completed child has $\beta>\alpha$, and product adds the angles, with their sum below $\pi$. This proves the strict upper bound and the lower bound $B_o+Y_o=h_0\cot((\beta_1+\beta_2)/2)>0$. It also proves the completed/completed step when $X<1$. When $X\ge1$, both completed children satisfy $\sqrt{X^2-1}<B_i<X$. Hence $0<X-B_i<X-\sqrt{X^2-1}\le1$, so $(X-B_1)(X-B_2)<1$. Formula~\eqref{eq:port-product} then gives $B_o<X$, while $B_o>0$ proves the lower bound.
 
-At closure the two ports are $(B,X,Y)$ and $(-B,X,Y)$. Applying both inequalities gives $|B|<\min(X,Y)$; the hyperboloid relation implies $X,Y<1$. In the angle chart, parent $Y<1$ puts the sum of child angles below $\pi-\alpha$, while each child angle is at least $\alpha$. Every completed child therefore has $Y<1$, and turns exchange the bounds. Finally, at a single attachment $Y_o<1$ gives
+At closure the boundary triples of the two boxes are $(B,X,Y)$ and $(-B,X,Y)$. Applying both inequalities gives $|B|<\min(X,Y)$; the hyperboloid relation implies $X,Y<1$. In the angle chart, parent $Y<1$ puts the sum of child angles below $\pi-\alpha$, while each child angle is at least $\alpha$. Every completed child therefore has $Y<1$, and turns exchange the bounds. Finally, at a single attachment $Y_o<1$ gives
 $1<2X(X+B)<4X^2$. At an $hh$ base it gives $1/(2X)<1$. Thus every leaf has $X>1/2$, proving \eqref{eq:leaf-window}.
 \end{proof}
 

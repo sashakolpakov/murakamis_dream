@@ -11,7 +11,7 @@ Write q=Q in the proof, `d=N-1`, `F_a=(q;q)_a`, and
     H_n(x)=sum_(j=0)^n {n choose j}_q x^j,
     T_n(Y)=product_(r=1)^n(Y+Y^-1-q^r-q^-r).
 
-Then the ORIGINAL reduced whole source satisfies
+Then the original reduced whole source satisfies
 
     F_N(Y)=sum_(n=0)^d C_n(q)T_n(Y),
     C_n(q)=(-1)^n q^(-n(n+3)/2)H_n(q^(-n-1)).   (1)
@@ -198,7 +198,7 @@ This proves (14) at every parity and composite level.
 Take x=1 in (14) and substitute into (13). This gives
 exactly (1), proving the candidate (6.1) of the source note.
 At Y=1, `T_n(1)=(-1)^n q^(-n(n+1)/2)F_n^2`, so in
-the ORIGINAL Q orientation the exact reduced state is
+the original Q orientation the exact reduced state is
 
     <5_2>_N=sum_(0<=j<=n<N)
             Q^[-n(n+2)-j(n+1)](Q;Q)_n^3
@@ -220,7 +220,7 @@ obtained by differentiating the root identity in Q.
 This proves a finite source transform; it does not establish
 the saddle selection or the exponential volume lower bound.
 Those analyses may now use (17) as an identity of the
-ORIGINAL state, with its original normalization.
+original state, with its original normalization.
 
 [Exact audit](../experiments/audit_five_two_finite_chu_bridge.py)
 checks the reusable generic identities, every intermediate

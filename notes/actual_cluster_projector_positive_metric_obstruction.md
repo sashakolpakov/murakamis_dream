@@ -141,4 +141,4 @@ supported and tail-free branches.
 Audit: [exact cyclotomic source calculation](../experiments/audit_actual_cluster_projector_positive_metric_obstruction.py)
 and [recorded certificate](../experiments/actual_cluster_projector_positive_metric_obstruction_results.json).
 
-Primary-agent analytical review checked the complete-cluster ranks, second-Taylor-coefficient Ward normalization, exact real-cyclotomic division and the positive-projection trace contradiction. Fresh replay of the exact N=7 certificate passed. This excludes the stated common orthogonal metric shortcut, not a general volume conjecture.
+This excludes the stated common orthogonal metric shortcut, not a general volume conjecture.

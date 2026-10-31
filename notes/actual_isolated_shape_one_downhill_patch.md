@@ -22,7 +22,7 @@ log coordinates; complete it by fixed linear coordinates y. The
 coordinate change has N-independent condition number. A purely external
 meridian specialization is not an available normal contour direction.
 
-The argument A includes every ORIGINAL Q/q/color tag of that full-Psi
+The argument A includes every original Q/q/color tag of that full-Psi
 factor. If its classical signed monomial differs by an O(1/N) logarithmic
 shift, keep that shift in u exactly. It moves the collision center by
 O(1/N), which is inside the collar since alpha<1; the uniform estimates
@@ -270,7 +270,7 @@ on the original convergent anchored branches; no floating branch
 unwrapping is assumed. They compare both signs of (4),(7), retaining
 the norm factor, through N=256 and both level parities. Separate
 phase calculations test both outgoing sectors with adverse polynomial
-background derivatives. Fresh result: **PASS**, 36 exact normal-chart
+background derivatives. The finite audit checks 36 exact normal-chart
 transitions and 48 signed two-sector downhill checks.
 [Saved results](../experiments/actual_isolated_shape_one_patch_results.json).
 

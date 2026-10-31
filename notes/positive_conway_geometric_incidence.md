@@ -235,4 +235,4 @@ marked closures](../experiments/audit_positive_conway_geometric_incidence.py).
 The written disk induction proves the all-s topology; finite checks
 do not infer it from a numerical invariant or manifold recognition.
 
-Independent internal review: the crossing/source agent and primary agent read the exact closure seams, literal disk-and-rectangle model, meridian-removal induction and essential-annulus obstruction. The actual embedded disks, rather than the scalar or linking graph alone, are the topological evidence. No arbitrary-tree volume identification is included.
+The actual embedded disks, rather than the scalar or linking graph alone, are the topological evidence. No arbitrary-tree volume identification is included.

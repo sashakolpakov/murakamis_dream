@@ -230,7 +230,7 @@ defects do not ALONE force nonzero source projection.
 ## 6. Critical-path conclusion
 
 The endpoint connection and mixed clock transport are exact tools for
-the ORIGINAL state, with bounded endpoint complexity and full macro
+the original state, with bounded endpoint complexity and full macro
 coefficients. They do not yet prove anything stronger about geometric
 selection than the previously known regular critical correspondence.
 In particular there is no new broad-class volume lower bound here.

@@ -25,12 +25,12 @@ figure-eight energy upper bound. It remains a valid Cauchy metric.
 The obstruction concerns this explicitly specified complete energy,
 not every coherent metric or a source-specific regrouping.
 
-## 1. The complete metric and the ORIGINAL word
+## 1. The complete metric and the original word
 
 Use N>=2, d=N-1, q=exp(pi*i/N), Q=q^2, x=-q^-1=q^d,
 F_a=(Q;Q)_a, and kappa=q^(d^2/2). On the complete N-dimensional
 three-head Hom space W use the physical basis |a,d-a>.
-Let R be the ORIGINAL positive pair crossing on degree d, including
+Let R be the original positive pair crossing on degree d, including
 kappa, and let J be the exact symmetric anti-Pascal recoupling from
 [the complete module](actual_complete_source_multiplicity_module.md).
 The original pair source is
@@ -125,7 +125,7 @@ Consequently the full simple-channel coordinate is
 All kappa factors have been accounted for, rather than dropped.
 
 Here is a source-exact finite evaluation of y^T v. Substitution
-of the ORIGINAL negative crossing into (8), followed only by
+of the original negative crossing into (8), followed only by
 root complementation of factorials, gives for every 0<=i<=d
 
     v_i=x^(i-d)(-1)^i Q^[i(i+1)/2-d] F_(d-i)/F_i

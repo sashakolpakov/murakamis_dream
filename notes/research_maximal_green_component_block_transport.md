@@ -1,13 +1,13 @@
 # Exact cap-tree and lower-block transport at a maximal Green child
 
-31 October 2026. Internally reviewed analytical research theorem. This
+31 October 2026. analytical research theorem. This
 preserves the original face targets and every finite LEFT/cap cutoff. It
 gives an exact mixed-block reduction, not an absolute bound by Phi_D.
 No numerical test or publication claim is used.
 
 ## 1. The actual maximal-child component
 
-Use the reviewed classified common-weight datum. Choose a strict LEFT
+Use the classified common-weight datum. Choose a strict LEFT
 Green port E with maximal child weight among all Green ports, and call
 its child c. RIGHT is handled by the literal row reflection. Let S be
 the connected component of actual residual cap edges containing c.
@@ -49,7 +49,7 @@ Its genuine strict-child support is s<=M at BOTH parities.
 
 ## 2. Original target extraction solves every cap index
 
-Expand the CROSS product in its ORIGINAL component-face variables:
+Expand the CROSS product in its original component-face variables:
 
     P_N(z,Y)=sum_(k in Z_+^S) p_k(Y) product_v z_v^(k_v).
 
@@ -125,8 +125,7 @@ and expectation may be interchanged on this finite truncated space.
 One must NOT put the untruncated full P_N inside the expectation
 before extracting the coefficient. Its degree in a descendant
 subtree may exceed d; the cap law has no such general finite moment.
-This is the same exact finite-moment restriction as in the reviewed
-shared-star theorem, now applied to a real cap tree.
+This is the same exact finite-moment restriction as in the shared-star theorem, now applied to a real cap tree.
 
 The formula retains nontrivial quantum information beyond the
 classical component-sum quotient. Already the monomials z_c^s and
@@ -146,7 +145,7 @@ spectral reduction. Set theta=pi/N, m=floor(N/2), M=m-1, and
     u=-(sigma+2), alpha_r(u)=a_r+u,
     A_-(u)=product_(r=0)^M alpha_r(u).
 
-Let R_j(x,b,y;u) be the ORIGINAL lower cleared cofactor:
+Let R_j(x,b,y;u) be the original lower cleared cofactor:
 
     R_0=1,
     R_j=b^j product_(r<j)alpha_r
@@ -193,7 +192,7 @@ contains alpha_a=0. For j>=a, the exact cofactor identity is
     R_j(u_a)=K_(a,j)(u_a) R_a(u_a).
 
 Here K_(a,a)=1, and K is the original interval continuant. The
-reviewed coefficientwise nodal theorem proves
+coefficientwise nodal theorem proves
 
     R_a(x,b,y;u_a)>=0,
     K_(a,j)(x,y;u_a)>=0, j<=M.                                (11)
@@ -327,7 +326,7 @@ Phi_D estimate, an instability theorem, or a proof of the prescribed
 long-twist volume statement. No globally feasible maximum or
 counterexample is manufactured by these identities.
 
-## Exact input provenance and review
+## Exact input provenance and scope
 
 Inputs: [actual response network and maximal-child component](research_sharp_source_response_forest_main_network.md) section 5
 for the maximal-child component; [original cap positive moment form](research_flat_cap_positive_moment_form.md)
@@ -336,9 +335,4 @@ for (7)-(10), and section 8 equations (22)-(26) for nodal positivity
 and interpolation. Original cap/cutoff conventions agree with
 [original cap and cutoff conventions](research_cap_cross_all_demand_subexponential_contraction.md).
 
-Internal review: root full analytical/source read, PASS; independent
-geometry full analytical/source read of sections 1–7, PASS. The reviews
-cover the original subtree demands, finite moment cutoff, both-parity
-source factors, nodal child character and polynomial interpolation.
-No numerical scan, asymptotic lower claim or external peer-review claim
-is involved.
+The exact transport retains finite moment cutoffs and original subtree demands; no asymptotic lower bound follows.

@@ -29,7 +29,7 @@ $$
  J_-z^a=\begin{cases}z^{a-1}&a>0,\\0&a=0.\end{cases}
 $$
 
-They have no upper cutoff. Define the ORIGINAL finite polynomials
+They have no upper cutoff. Define the original finite polynomials
 
 $$
  u_N(t)=\sum_{h=0}^{N-1}\frac{t^h}{F_h},\qquad
@@ -49,7 +49,7 @@ and define $U_+^\infty,V_+^\infty$ by reversing the two shifts.
 Only the lower polynomial wall is imposed.
 
 Extend each existing finite diagonal kernel by zero outside its
-ORIGINAL active-head support:
+original active-head support:
 
 $$
 \begin{split}
@@ -204,7 +204,7 @@ fused $2k$-plat formula
 
 $$
  P_{\beta,N}=\chi_{\beta,N}N^{1-k}
-       \langle e_{\rm out},B_\beta e_{\rm in}\rangle.  \tag{7}
+       \langle e_{\mathrm{out}},B_\beta e_{\mathrm{in}}\rangle.  \tag{7}
 $$
 
 Here every input pair is $(d,0)$; every ordinary output pair

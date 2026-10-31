@@ -313,6 +313,6 @@ completion remains in that proof's dependency chain; the maximum alone
 does not identify a smooth filled end.
 
 The conclusion remains restricted to every fixed odd s>=25 and all
-independently sufficiently long fixed signed p_i, with the ORIGINAL
+independently sufficiently long fixed signed p_i, with the original
 source and normalization. It is not a conclusion for all hyperbolic
 knots, short fillings, or slopes growing with the quantum level.

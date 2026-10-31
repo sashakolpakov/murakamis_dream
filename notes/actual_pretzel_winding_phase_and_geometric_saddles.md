@@ -12,7 +12,7 @@ are supplied in the linked proof.
 one-variable residue with finitely many integer windings. Its literal
 factorial coefficients give a positive-shape stationary family for every
 fixed odd number of boxes. The action and the full Hessian can be computed
-explicitly. This identifies candidate exponential rates of the ORIGINAL
+explicitly. This identifies candidate exponential rates of the original
 period; it does not prove that its selected cycle has a nonzero coefficient
 at those saddles or that every other contribution is smaller.
 

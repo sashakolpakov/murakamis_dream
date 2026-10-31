@@ -39,7 +39,7 @@ Its full coefficient includes the original phase; in this gauge its
 magnitude is N/(s_a^2 s_c^2 s_k). All through-head feedback is the
 actual strict shift and unitary clock, not a scalar substitution.
 
-Let T:W_1->C^N be the ORIGINAL complete terminal packet. It has
+Let T:W_1->C^N be the original complete terminal packet. It has
 [the closed all-input kernel](actual_terminal_packet_closed_kernel.md),
 including its partial factorial Green register P_t. On W_1 the
 physical product gauge is one. Thus that literal T matrix is unchanged.
@@ -229,7 +229,7 @@ not a free contraction in this optimization.
 
 ## 5. Why it does not yet telescope through an arbitrary prefix
 
-For an ORIGINAL preceding braid B and its original source w_0,
+For an original preceding braid B and its original source w_0,
 (6) is the genuine pointed bound
 
     ||T L B w_0||^2
@@ -254,7 +254,7 @@ is needed or claimed by this local optimization theorem.
 
 [Audit](../experiments/audit_actual_coherent_terminal_bridge_metric.py):
 eleven levels N=2,...,12. The code constructs L directly from the
-ORIGINAL R and cap, T from its independently verified closed kernel,
+original R and cap, T from its independently verified closed kernel,
 and tests (4) on all open columns, arbitrary two-column spectator
 states, exact paired-source invariance, both coercive bounds,
 log convexity and the minimizing charge equation. Finite numerical

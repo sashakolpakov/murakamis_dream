@@ -176,7 +176,7 @@ column has first entry conjugate(f_t(conjugate z)); its first-row
 error is a multiple of p_(t+1)(z), so its forward recurrence agrees
 to this order. Setting r=t in the value identity gives |f_t|=1.
 
-The endpoint normal has a particularly simple ORIGINAL generic
+The endpoint normal has a particularly simple original generic
 calculation. At u=t only a=m survives in the generic Clebsch sum,
 and its highest-vector ratio R_(m,m) is identically 1. Thus
 
@@ -228,20 +228,6 @@ relative-normal bounds passed; the audit also checked 288 positive
 prefix matrices and 2,384 conductance inequalities. These finite
 checks supplement the uniform proof above.
 
-An independent analytical review checked the original source
-conventions, weighted Dirichlet identity, conductance minimum,
-Poincare bound and N^6 constant, the reflected recurrence modulo
-the double characteristic zero, and the generic endpoint exponent
-difference N(l-j). It also checked that the high-degree adapter
-transports the actual root spectral column without assuming flatness
-of an individual generic derivative. Its verdict covers the stated
-physical-grid theorem only.
+The high-degree adapter transports the root spectral column without assuming that an individual generic derivative is flat. The theorem is restricted to the physical grid.
 
-A second independent analytical review and fresh replay passed.
-That reader verified the weighted row identity independently as a
-formal Laurent identity, the alternating conjugation and boundary
-Dirichlet term, the conductance and resolvent constants, and the
-first-order reflection with the actual generic endpoint sign. The
-fresh audit passed all reported exact and high-precision checks,
-including 8,578 original generic paired normals and 571 endpoints.
 No complex magnetic continuation or whole-source bound is inferred.

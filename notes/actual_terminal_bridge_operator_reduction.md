@@ -218,7 +218,7 @@ triple is (t,n-t,d-n). These are coupled integer port constraints,
 not independently adjustable spectator variables or a full ideal-edge
 sum. The partial Green and its coherent clock/shift ordering are not
 replaced by a scalar norm when composing (12).
-By the terminal packet theorem, the row sum factors the ORIGINAL
+By the terminal packet theorem, the row sum factors the original
 co-source. Consequently
 
     H_epsilon=(T^(4)L_epsilon)^*(T^(4)L_epsilon)
@@ -345,7 +345,7 @@ a unitary factor that can be discarded from (8) or (12).
 
 [Audit](../experiments/audit_actual_terminal_bridge_operator_reduction.py)
 uses original signed R matrices and the full original E/F
-intertwiner construction. Fresh replay PASS: seven all-input signed
+intertwiner construction. the finite checks cover seven all-input signed
 bridge maps N=2,...,8; three COMPLETE six-head-to-four-head terminal
 identities N=2,3,4; and seven physical source/current metric families.
 It verifies the complete phases in (4),(6),(8),(9), both gauges,

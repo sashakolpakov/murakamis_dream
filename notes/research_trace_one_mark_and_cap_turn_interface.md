@@ -1,10 +1,6 @@
 # Trace-one top marks and the exact protected cap-turn interface
 
-Unpublished workspace source-algebra theorem, 31 October 2026. Root and
-coherent independently completed full internal analytical/source reviews;
-this is not external peer review. This records exact finite identities
-and the limit of two proposed cap simplifications. It neither rewires
-the original diagram nor proves an absolute shared-source or volume bound.
+31 October 2026. These exact finite identities delimit two proposed cap simplifications. They neither rewire the diagram nor establish an absolute shared-source or volume bound.
 
 ## 1. Any trace-one matrix at the same original top cap
 
@@ -34,7 +30,7 @@ Off-diagonal entries do not contribute. In particular e=E_aa gives
     m^a p=1, p_(i,j)=N x0^(-j)delta_(i+j,d).            (3)
 
 The [scalar-open-cap proof](research_arbitrary_casimir_top_mark_transport.md)
-shows that the remaining vector is a scalar times this ORIGINAL cup.
+shows that the remaining vector is a scalar times this original cup.
 Thus its evaluation by (1) is that scalar times Tr(e). Every e with
 Tr(e)=1 gives exactly the same full marked scalar, including e=E_aa.
 No positivity, idempotence or generic-q normalization is required for e.
@@ -136,7 +132,7 @@ lambda0^epsilon, lambda0=q^(d^2/2), of unit modulus. Therefore
 Here coefficient modulus is taken before evaluating positive c,y. The
 last equality retains the unit scalar's modulus; it does not delete its
 phase in a signed contraction. Crucially, the identity coupon on the
-ORIGINAL quartet instead has
+original quartet instead has
 
     H_(identity)(0,0,c,y)=c^d,
 
@@ -177,7 +173,7 @@ rewiring would have to retain the neighbor coupon, its boundary typing,
 and the phase/degree operator in (11)--(12). No such two-port turn or
 volume comparison is proved here.
 
-## 5. Dependencies and internal review
+## 5. Dependencies
 
 The exact inputs are the [homogeneous source](actual_homogeneous_casimir_face_source.md),
 sections 1–4 and (10); the [signed kernel](actual_signed_small_circle_face_kernel.md),
@@ -186,10 +182,7 @@ section 1 and (6a); the [original marked cap](quantum_bridge_cap_source.md),
 The [finite-collar obstruction](research_double_protected_cap_finite_collar_obstruction.md)
 remains unchanged.
 
-Root and coherent independently checked all four sections, including the
-physical index/clock dictionary, the removed grid normalization, degree
-exhaustion, endpoint maximum of A_j, inverse Hermite conjugation, and the
-three distinct coefficient contractions (10)–(12). The existing
+The existing
 [mark audit](../experiments/research_audit_arbitrary_casimir_top_mark_transport.py)
 already verifies the scalar-cup identity entrywise and hence all E_aa
 evaluations in its fixtures. No new finite replay, physical rewiring,

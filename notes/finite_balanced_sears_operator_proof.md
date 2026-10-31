@@ -136,9 +136,4 @@ still requires the separate source/Euler coefficient calculation.
 
 Audit: [finite operator, rational Sears and actual root parameter checks](../experiments/audit_finite_balanced_sears_operator_proof.py).
 
-Root and independent internal analytical reviews passed the pole
-cancellations, finite bandwidth/product coefficient, eigenpolynomial
-uniqueness, rational specialization and all root prefactor denominator
-ranges. A fresh replay passed 200 exact operator actions, 330 generic
-balanced identities and fifteen full supported root families. The
-finite operator proof establishes the identity; tests supplement it.
+The finite operator proof establishes the balanced Sears identity. Exact operator, generic balanced-identity and supported-root-family checks supplement that proof.

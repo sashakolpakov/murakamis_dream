@@ -1,6 +1,6 @@
 # A complete-angle penalty for a prescribed diagonalization
 
-31 October 2026. **Internally reviewed analytical research theorem.**
+31 October 2026. **analytical research theorem.**
 Unpublished. This is a
 quantitative sufficient condition for a prescribed simple chart. It does
 not assert that the condition holds for every prescribed chart, or that
@@ -51,7 +51,7 @@ Otherwise its compact fiber has a unique entropy optimizer theta^I,
 by strict concavity. In a simple T_I, its ordinary corners are strictly
 positive, with a supported singleton row having its one entry 1/2.
 Its capacity is the actual complete polyhedron volume divided by pi.
-For a nonsimple feasible chart, the reviewed complete block-capacity
+For a nonsimple feasible chart, the complete block-capacity
 theorem supplies the corresponding sum over simple blocks.
 
 ## 2. A closed algebraic local penalty
@@ -179,7 +179,7 @@ smaller than the explicit boundary penalty. Section 5 gives one exact
 finite certificate of this phenomenon on an already recorded MAIN
 quadrangulation. We do not claim (9) for arbitrary prescribed charts.
 
-For an actual original source satisfying the reviewed simple-white
+For an actual original source satisfying the simple-white
 packet/action hypotheses, the exact sharp-G conditional theorem now
 gives the full original long-filling volume limit under (9). The fixed
 diagram and half-twist data are retained; all filling parameters are
@@ -324,13 +324,7 @@ The second inequality in (13) proves that the prescribed chart is
 NOT capacity-maximizing. The third proves (9), with a uniform flip
 margin 0.01. Seam-only data retain the separate original seam gap.
 
-This proves a strict extension beyond the maximal-diagonalization
-hypothesis for prescribed matched charts, with the accompanying independently replayed finite certificate. It does not
-claim that the resulting unmarked knot family is outside every older
-balance, sector, or differently presented family. Its actual long
-filled-knot conclusion uses the same source-realization and analytic
-inputs as section 3, with its own original half-twist pattern and
-framing normalization.
+This proves a strict extension beyond the maximal-diagonalization hypothesis for prescribed matched charts, with the accompanying finite certificate. It does not claim that the resulting unmarked knot family is outside every older balance, sector, or differently presented family. Its actual long filled-knot conclusion uses the same source-realization and analytic inputs as section 3, with its own original half-twist pattern and framing normalization.
 
 The [portable exact/interval certificate](../experiments/research_audit_prescribed_diagonal_flip_penalty.py) and
 [its saved output](../experiments/research_prescribed_diagonal_flip_penalty_results.json)
@@ -354,13 +348,7 @@ The middle-reflection convention is the exact local source identity in
 The old five-port chart and its literal flat source are recorded in the
 [anchored shared-radius theorem](general_anchored_shared_radius_filling_volume.md), sections 4--5.
 
-Root independently reviewed the full analytical proof, certificate code,
-and a fresh exact/Arb replay. The coherent-source reviewer independently
-read the full proof/code and freshly replayed the final verifier, with
-output exactly matching the author's result. Both reported PASS.
-The final labeling clarification distinguishes an incidence convention
-from the orientation-preserving physical frame. These are internal
-reviews, not external peer review.
+The quartet table is an incidence convention. Its exact middle reflection distinguishes it from the orientation-preserving physical frame, as explained above.
 
 The certificate covers exactly one existing five-face MAIN
 quadrangulation, its 32 diagonalizations, 18 algebraic complete charts

@@ -3,7 +3,7 @@
 Research construction, 27 October 2026. Once two actual physical
 edge positions a,b have been retained, their zero-extended array is
 one matrix with independent row and column clocks. Both finite Green
-currents, all boundary rows/columns/corners, and the ORIGINAL 1/N
+currents, all boundary rows/columns/corners, and the original 1/N
 co-source have an exact Laurent/coherent realization. This does not
 identify a physical single-port Hopf action with matrix multiplication,
 and does not assume that the geometric Gaussian commutes with the
@@ -193,7 +193,7 @@ Gamma=h_0(E_N-N). Replace h_0 by
 \]
 
 Then d_1h_0^I=I-E_N Phi_full, while the other identities remain
-unchanged. The 1/N in the ORIGINAL source is therefore preserved
+unchanged. The 1/N in the original source is therefore preserved
 by the pointed complex; it has not become 1/N^2. This section is
 a specified homotopy anchor, not a claim that every physical
 two-cut tangle has identity matrix.

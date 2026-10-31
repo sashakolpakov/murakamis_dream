@@ -2,7 +2,7 @@
 
 29 October 2026. For every retained C(FG), with F and G robust, and
 every fixed choice of pure or signed odd-half-twist coupons, the
-ORIGINAL mixed-color source has the finite analytic packet required
+original mixed-color source has the finite analytic packet required
 by the general filling theorem. Its uniform complex asymptotic has
 power N^(3/2), a nonzero marked amplitude, and both level parities.
 The changed odd action is explicitly identified with a local shear
@@ -67,7 +67,7 @@ delta_w. The remaining lattice is primitive Z^d. Define
        product_leaves ell_N^(epsilon_l)(r_l,t_l)
        product_retained_gates mu_N(r_left,r_right,r_out).       (4)
 
-The mu_N are the ORIGINAL positive Newton multiplication coefficients,
+The mu_N are the original positive Newton multiplication coefficients,
 not their asymptotic equivalents. Thus (4) is a finite, explicit,
 separately-even holomorphic function. For all sufficiently large N,
 each state in its fixed window is an actual admissible core state
@@ -401,13 +401,4 @@ calibrations across both parities. These computations check finite
 normalizations; the uniform estimates and their error bounds are
 proved above.
 
-Independent analytical review checked the finite source phases,
-continuous chirp, both endpoint parities, all integer offsets, the
-N^(3/2) power, and the conversion of the relative interpolation
-residual into an absolute bound before the complex saddle. A fresh
-replay of the audit passed all 18 finite-source, 12 chirp and eight
-complex-amplitude checks. The primary-agent review independently
-confirmed the original coefficient phase and the exact cancellation
-of q^(h^2) against the shifted factorial phases.
-
-Primary-agent analytical review and fresh audit replay: PASS. The review independently derived the cancellation of the quadratic color phase, the continuous lattice chirp, the selected action shear and endpoint constant, the exact finite-packet comparison before oscillatory cancellation, integer offsets, nonzero amplitude and the negative-definite real part of the color Hessian. No finite calibration is used to infer complex uniformity.
+The quadratic color phase q^(h^2) cancels the shifted factorial phases. Integer offsets and the N^(3/2) power remain in the finite packet. The interpolation residual is converted to an absolute bound before the complex saddle is evaluated.

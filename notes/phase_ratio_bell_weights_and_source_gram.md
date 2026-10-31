@@ -1,6 +1,6 @@
 # Exact Bell weights and a source-balanced positive Gram
 
-29 October 2026. The phase-ratio coefficient of the ORIGINAL conjugate
+29 October 2026. The phase-ratio coefficient of the original conjugate
 source has one positive angle-energy profile, rather than its square.
 Its radius factors and normalization are explicit. A second result
 constructs a canonical positive Gram for the ACTUAL right/left Fermat
@@ -126,7 +126,7 @@ identifying it with the fixed-center estimate.
 ## 3. An explicit non-diagonal Bell Cauchy metric
 
 For the full positive array f in (2), give an exterior array b the
-norm squared sum f_(s,r)|b_(s,r)|^2. Its ORIGINAL source functional
+norm squared sum f_(s,r)|b_(s,r)|^2. Its original source functional
 sum c_(s,r)b_(s,r) has exact Riesz norm squared
 
     sum |c_(s,r)|^2/f_(s,r)=kappa_N^2 sum f_(s,r).                (6)
@@ -221,7 +221,7 @@ In the literal cap orientation Q_s=Q, put epsilon=v^N,
 
     u=Q^(-j)(1-epsilon)^(1/N), |epsilon|<=rho=1/16.
 
-For j>=1 use the ORIGINAL normalized frames
+For j>=1 use the original normalized frames
 
     Phat_j=v^(N-j)P/alpha_j,
     Lhat_j=v^j L/beta_j,

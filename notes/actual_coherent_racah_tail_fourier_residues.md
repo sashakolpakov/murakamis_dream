@@ -319,8 +319,4 @@ positive completed recoupling metric or identify a global complement.
 Audit: [exact finite-field Fourier and tail checks](../experiments/audit_actual_coherent_racah_tail_fourier_residues.py)
 and [recorded results](../experiments/actual_coherent_racah_tail_fourier_residues_results.json).
 
-Independent full analytical review of the Fourier residue identity,
-phase conversion, retained residual and first-normal scope passed.
-The exact audit freshly replayed 13,132 balanced arrays and 32 all-high
-identities. The uniform proof is the algebraic argument above; these
-finite checks are supplementary.
+The algebraic argument proves the Fourier residue identity uniformly. The finite balanced-array and all-high checks are supplementary.

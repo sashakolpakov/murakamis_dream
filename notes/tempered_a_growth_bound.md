@@ -301,7 +301,7 @@ the remaining arc. Hence
             =2 Vol(4_1).                               (6.1)
 
 The last equality is the already calibrated
-[classical cone/regulator identity](quantum_a_volume.md#34-the-figure-eight-knot-a-complete-example),
+[classical cone/regulator comparison (historical context omitted)](quantum_a_volume.md),
 not an identification of that note's custom transfer state with
 Kashaev. This factor of two shows why the full-circle largest-root
 integral is not the desired selected volume. The quantum boundary

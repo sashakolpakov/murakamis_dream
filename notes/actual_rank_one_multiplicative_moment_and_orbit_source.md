@@ -86,7 +86,7 @@ different normal directions.
 
 ## 3. The actual co-source is a required finite orbit path
 
-The natural moment covector is w. The ORIGINAL output row is
+The natural moment covector is w. The original output row is
 ell=ones transpose. It is recovered exactly by the finite path
 
 \[

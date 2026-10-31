@@ -5,7 +5,7 @@ but by itself it pays the pointwise singular-value envelope. There is a
 stronger, useful strict-convexity statement: a bistochastic mixing map
 which fixes the regulator observable can mix only equal-regulator
 channels. That property makes the exponential action weights telescope
-and gives an endpoint bound for the ORIGINAL source energy. The actual
+and gives an endpoint bound for the original source energy. The actual
 quantum connection has not been proved to possess this property.
 
 ## 1. The general log-majorization inequality
@@ -147,7 +147,7 @@ the endpoint exp(N r_(i,m)), up to ordering. Thus every top-r
 log-majorization bound telescopes to an endpoint sum, not an
 integral of separately sorted local increments.
 
-For the ORIGINAL pure input rho_0=s s^* and output ell, (7) gives
+For the original pure input rho_0=s s^* and output ell, (7) gives
 
     ell^*rho_m ell <=exp(2sum epsilon_j)
            ||G_m ell||^2 ||G_0^(-1)s||^2.         (9)

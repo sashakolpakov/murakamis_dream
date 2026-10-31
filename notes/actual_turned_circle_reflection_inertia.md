@@ -4,7 +4,7 @@
 NOT remain positive through the genuine cup/cap quarter-turn used in
 the actual four-rung contraction. This is an all-level finite theorem,
 including the complete Hermite normals. Its obstruction is already
-present on the ORIGINAL cup and its canonical normal direction, not
+present on the original cup and its canonical normal direction, not
 only on an arbitrary ambient input. An explicit full-rank positive
 metric repairs Cauchy at polynomial ordinary source cost; controlling
 its energy through overlapping recouplings is a separate problem.
@@ -18,7 +18,7 @@ Set N>=2, d=N-1, q=exp(pi i/N), Q=q^2, x=q^d, and
     P_N(z)=2T_N(z/2)+2,
     Bhat_v(z)=product_(k=0)^(v-1)(c_k-z)/s_v^2.
 
-Let Omega be the ORIGINAL physical pair Casimir, P the literal
+Let Omega be the original physical pair Casimir, P the literal
 physical swap, and L_N=(-1)^d U_d(Omega/2). The full operator
 identities already proved are
 
@@ -94,7 +94,7 @@ does not rule out a different positive metric or a source-dependent
 coherent regrouping of a whole graph. In particular it does not
 contradict positivity of the actual full cube scalar.
 
-## 3. The obstruction survives on the completed ORIGINAL source packet
+## 3. The obstruction survives on the completed original source packet
 
 Use exactly the original degree-d cup p, ordinary cap ell, marked
 row m and canonical Hermite direction t from the
@@ -154,9 +154,4 @@ Audit: [literal turn, source packet and Hermite square-root checks](../experimen
 The all-N proof is (2)--(7); complex inertia tests supplement it.
 No general graph growth or volume theorem is asserted here.
 
-Independent internal review: the crossing/source agent completed a
-full analytical read and fresh replay of eleven exact physical
-turn/source cases and six complex full-Hermite families. The review
-checked the source-plane determinant, ordinary source costs, inertia
-and retained derivative directions without identifying the constructed
-positive repair with a physical mirror.
+The positive repair is not identified with a physical mirror.

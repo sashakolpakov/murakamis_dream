@@ -230,12 +230,4 @@ The source is zero for J<d by the independent Fourier degree theorem.
 This entire finite proof concerns the actual black scalar. It does
 not bound its magnetic tensor or replace the marked white co-source.
 
-Audit: [finite product, weighted coefficient and root bridge](../experiments/audit_actual_trivalent_square_linearization_bridge.py).
-The separate [full-source audit](../experiments/audit_actual_trivalent_general_scalar_candidate.py)
-compares the final phase and normalization with original coproduct
-columns. Two independent analytical reviews checked Sections 1--3;
-the independent longer Fourier/Newton route checks the full symmetric
-source identity. A further independent analytical review of Section 4
-rederived its seven-factorial prefactor, phase congruence and positive
-R_0 K_0 K_2 normalization without invoking a maximal-order source
-symmetry. Finite checks supplement these all-parameter proofs.
+Audit: [finite product, weighted coefficient and root bridge](../experiments/audit_actual_trivalent_square_linearization_bridge.py). The separate [full-source audit](../experiments/audit_actual_trivalent_general_scalar_candidate.py) compares the final phase and normalization with original coproduct columns. The finite proofs establish the all-parameter identities; these checks supplement them.

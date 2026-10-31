@@ -1,6 +1,6 @@
 # The actual six-crossing source: a proved triple reduction and the missing finite transform
 
-28 October 2026. This note reduces the ORIGINAL six-crossing four-plat,
+28 October 2026. This note reduces the original six-crossing four-plat,
 with every turn and framing factor retained, to a three-index finite sum.
 The proof uses literal finite transfer elimination and the independently
 proved terminating three-factor q-Chu identity. It does not assume a
@@ -32,7 +32,7 @@ We keep this handedness throughout the source calculation; mirroring
 replaces Q by Q^-1 in the final scalar.
 
 Top colors/orientations are (x,xvee,xvee,x), (+,-,-,+). Cut the fourth
-leg with the ORIGINAL left-trace coupon D0=g E00. As in the earlier
+leg with the original left-trace coupon D0=g E00. As in the earlier
 proof, the input is
 
     (a,d-a,d,0), with coefficient N² x^(a-2d).       (2)

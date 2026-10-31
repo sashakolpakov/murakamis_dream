@@ -291,7 +291,7 @@ recursion by integration and products therefore gives
 \]
 
 The same proof applies to exp(-ue)exp(uE_N), and to the right
-interaction exp(uE_N)exp(-ue). Consequently the ORIGINAL source
+interaction exp(uE_N)exp(-ue). Consequently the original source
 and co-source jets, after their recorded root unipotent rotations,
 are obtained by degree-at-most-2j operators on their fixed rank-one
 source and dual. This is an operator result, not a criterion which

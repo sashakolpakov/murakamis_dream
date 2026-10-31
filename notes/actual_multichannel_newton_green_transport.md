@@ -10,7 +10,7 @@ previous tame UL response cannot exist in this universal Newton basis.
 There is nevertheless a source-exact two-channel replacement. Both endpoint
 source vectors have polynomial norms. Forward and backward Green transport
 therefore give a strictly sharper coefficient barrier than the one-sided
-largest-root bound. Combining it with the ORIGINAL complete evaluation,
+largest-root bound. Combining it with the original complete evaluation,
 and then the audited root-color Plancherel identity, gives an unconditional
 quantitative upper bound for this full source. Its barrier is about
 0.57776, whereas the selected invariant's known rate is about 0.45011.
@@ -183,7 +183,7 @@ its logarithm as -N J(n/N)+O(log N), uniformly for n>=1. Thus
     (1/N)log|C_n| <=h(n/N)+o(1),
     h(x)=min{H(x), H(1)-H(x)+J(x)}.              (9)
 
-Retain the ORIGINAL complete evaluation T_n(1)=|F_n|^2 in (1).
+Retain the original complete evaluation T_n(1)=|F_n|^2 in (1).
 The triangle bound on this exact sum, now with its n-dependent
 coefficient transport retained, gives
 

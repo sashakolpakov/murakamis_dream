@@ -1,10 +1,10 @@
 # Root-channel H insertions and their actual relative-period transport
 
-30 October 2026. Independently reviewed and frozen. The two root insertions
+30 October 2026. The two root insertions
 in the [normal adapter](actual_explicit_root_channel_normal_adapter.md)
 admit a specified meromorphic representative with polynomial size on
 the original resonant chart. This is an exact change of representative
-of the ORIGINAL finite root period. Its different relative boundary
+of the original finite root period. Its different relative boundary
 currents are computed below; no off-grid equality with the generic
 descendant or finite clock polynomial is asserted.
 
@@ -213,7 +213,7 @@ k=D_b l its integral slope. Keep delta fixed in the X(p)H band.
 Any retained external weight not covered by this proved quasiperiod
 keeps its shifted value explicitly; an interpolated coherent row,
 for example, is not assigned the tensor's parity character.
-Write I_Gamma for the ORIGINAL cotangent period, with its complete
+Write I_Gamma for the original cotangent period, with its complete
 marked source and normalization. Changing variables and using (7)
 gives the exact identities
 
@@ -316,7 +316,7 @@ H_R M_R-H_L M_(L-1) remain. They are not determined by scalarity.
 Equations (5), (9), and (11)--(14) give a concrete reduction: the
 adapter's TWO inserted root periods may use tame, algebraically
 specified head weights, with explicit relative-transport currents.
-What remains is the pushforward of those ORIGINAL charged cycles and
+What remains is the pushforward of those original charged cycles and
 their endpoint/divisor chain to the geometric framing boundary.
 Neither a nonzero relative end, a geometric contribution coefficient,
 a bound for the full root channel, nor z'(0) is computed here.
@@ -333,19 +333,6 @@ and six clock-growth checks at 75 digits; the maximum identity error
 is below 6.05e-72. These finite and analytic checks do not assert a
 global contour deformation or a relative contribution coefficient.
 
-Independent current-agent full analytical review: PASS. The reader
-checked the actual generic descendant normalization, equality of the
-Gamma and algebraic representatives, explicit cyclic descent,
-removable-node and general-carry constants, sharpened insertion
-bound, primitive cotangent/weight conventions, weighted Ward collapse,
-and the retained end in (14a). The independent audit implementation
-passed, and the theorem author freshly replayed it to a separate
-output with every reported count reproduced.
+The H-period transport retains the end contribution in (14a).
 
-Primary-agent full analytical review: PASS. The reader independently
-checked additive descent, the full pole classification and periodic
-uniqueness argument, the direct insertion bound, all carry constants,
-the conditional source quasiperiod and the scalarity-only Ward
-conclusion. The general carry/residue table was independently
-rederived. No original geometric relative end is evaluated by this
-review or theorem.
+The source quasiperiod is conditional, and the Ward conclusion is scalarity only. The theorem does not evaluate the geometric relative end.

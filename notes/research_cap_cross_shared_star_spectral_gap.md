@@ -1,12 +1,6 @@
 # A full spectral-strip gap for an original cap and its whole CROSS star
 
-31 October 2026. **Internally reviewed analytical research theorem, unpublished.**
-Root and an independent geometry reviewer completed full proof/source reviews.
-The cap varies
-in a small COMPLEX disk about +2; every neighboring CROSS spectrum may
-range over the ENTIRE real fold, with a sufficiently thin fixed complex
-strip. This is a relative weighted star theorem, not an absolute Phi_D
-bound. The original face targets and both parity cutoffs remain unchanged.
+31 October 2026. The cap varies in a small complex disk about +2; every neighboring CROSS spectrum may range over the entire real fold with a sufficiently thin fixed complex strip. This is a relative weighted-star theorem, not an absolute Phi_D bound. The face targets and both parity cutoffs are unchanged.
 
 ## 1. Original source and theorem
 
@@ -41,7 +35,7 @@ classified stationary cap with only CROSS neighbors it follows from
 the SAME original demand: L_A=L_C and
 F'(0)=sum_(e!=F) q_(e,A)=1-q_(F,A)=nu in (0,1/2).
 
-Put d=N-1 and M=floor(N/2)-1. For cap spectrum sigma the ORIGINAL
+Put d=N-1 and M=floor(N/2)-1. For cap spectrum sigma the original
 projected polynomial and the extracted star are
 
 \[
@@ -134,7 +128,7 @@ For later rate estimates put
 The triangle on the opposite side of original MAIN edge AC from
 (u,A,C) belongs to a different port in P_N^delta. It contains the two
 supported positive variables A,C. Fix phi_0 in (0,pi/8) and a small
-radial interval |t|<=T_0. The reviewed cofactor angular theorem gives
+radial interval |t|<=T_0. The cofactor angular theorem gives
 gamma>0 and a FIXED strip height h_0>0 such that
 
 \[
@@ -292,7 +286,7 @@ All functions are analytic in zeta and sigma on the fixed parameter
 rectangle; the bounds are uniform. This constructs an exact finite
 antidifference, not an asymptotic solution for a discrete coefficient.
 
-Consequently the ORIGINAL window kernel satisfies EXACTLY
+Consequently the original window kernel satisfies EXACTLY
 
 \[
 \sum_{j=l}^rw_j
@@ -493,7 +487,7 @@ The fixed-spectrum argument also does not supply a coefficientwise
 comparison with the paired endpoint reference: it is the same
 weighted, phase-uniform star estimate as the main theorem.
 
-## Inputs and internal reviews
+## Inputs
 
 The original cap factors follow from the exact polynomial tail formula
 in the [all-demand source proof](research_cap_cross_all_demand_subexponential_contraction.md)
@@ -518,19 +512,6 @@ The [incidence and assembly note](research_cap_cross_incidence_and_disjoint_asse
 explains why the present whole-star operation is different from attaching
 a two-port estimate to an exterior carrying A.
 
-Root and the independent geometry reviewer read the full source and
-analytic proof in sections 1–8 and reported PASS. They checked the
-exact cap recurrence, original global coefficient majorant, both parity
-central factors, all-fold angular input, finite antidifference and nested
-tubes, total-degree tails, both window endpoints and both contour joining
-currents, and the order of choosing fixed losses and spectral neighborhoods.
-The only requested wording clarification names both nonzero bulk
-denominators; no mathematical correction was required.
+All divisions in the antidifference argument are confined to the bulk, where both g_(j+1) and a_N-1 are nonzero. The proof retains both window endpoints and both contour-joining currents.
 
-The endpoint moment argument in section 9 separately has full root,
-coherent and geometry analytical/source reviews. Its last finite moment,
-total cutoff, bounded-only use of the full product and all four deficits
-were independently checked. These are internal reviews, not external
-peer review. Preservation changes mathematical formatting and working
-relative links. No numerical audit or new runtime evidence is needed or
-claimed for these analytical arguments.
+The endpoint moment argument in Section 9 uses only the finite d-th moment. The full product is evaluated on the bounded central interval, not integrated beyond the available moment range.

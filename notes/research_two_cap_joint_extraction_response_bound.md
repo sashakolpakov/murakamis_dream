@@ -1,9 +1,9 @@
 # Actual two-cap extraction and an original-demand response certificate
 
-31 October 2026. **Internally reviewed exact-source and analytical research theorem.**
+31 October 2026. **exact-source and analytical research theorem.**
 Unpublished. The response inequality below is a sufficient certificate;
 its universal passage is not claimed.
-The source is the ORIGINAL simple matched sphere with the original protected
+The source is the original simple matched sphere with the original protected
 MAIN pair u,v. There are two strict residual caps, all other coupons are
 CROSS at their actual endpoint -2, and both caps are at +2. The geometric
 classification has already proved that the two ordinary cap pairs are
@@ -195,7 +195,7 @@ isometry v -> (sqrt(A_tf)v)_f), so Z_t^*Z_t<=I. Therefore
 The inequality includes singular Z_t by continuity. All pair traces
 are real and nonnegative. There is no commutativity assumption.
 
-Define the normalized ORIGINAL loads and conductances
+Define the normalized original loads and conductances
 
 \[
 \begin{gathered}
@@ -406,7 +406,7 @@ and compute their actual conductance matrices and loads. If
  F(L^{(2)})-\frac{z_2}{2}-\delta_1(L^{(2)})\right\}<\Phi_D.\tag{23}
 \]
 
-then the ORIGINAL two-cap sector at the specified endpoint spectra
+then the original two-cap sector at the specified endpoint spectra
 has a strict exponential gap below Phi_D along odd levels. This follows
 from (3),(8),(17),(21), with only four terms. Replacing < by <= gives
 the corresponding weak upper bound. No sector has been moved to a
@@ -584,7 +584,7 @@ Nor does zero in (28) prove factorization. The response bound in
 sections 3-6 applies regardless of this diagnostic and never requires
 restoring joint stability.
 
-## Dependencies and review scope
+## Dependencies
 
 - [Original two-cap geometry and summed volume budget](research_two_cap_cylindrical_exterior_volume_budget.md)
 - [Original negative-axis extraction and strict one-cap tail](research_global_cap_negative_axis_and_mahler_bound.md)
@@ -594,13 +594,6 @@ restoring joint stability.
 - [Original conductance and coefficient-response normalization](research_global_cap_effective_response_criterion.md)
 - [Closed endpoint coefficient entropy](actual_fejer_half_block_entropy.md)
 - [Original positive coefficient saddle and torus measure](actual_positive_face_coefficient_saddle.md)
-
-Internal independent reviews: root completed a full analytical/source read
-of sections 1-8, including the determinant trace constants, pair Fourier
-phase, mixed strips, response corollary, grouped saddle and factorization
-obstruction. Geometry independently reviewed sections 1-2, the ordinary
-connectivity argument in section 3, and the source/geometry scope of
-section 6. These are internal reviews, not external peer review.
 
 No numerical audit or asymptotic experiment is used as proof. Native
 MathML rendering and dependency-link checks validate the document, not

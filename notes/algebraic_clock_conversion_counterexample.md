@@ -96,6 +96,4 @@ remain separate, essential questions.
 Gaussian-integer triangular products, identity (1), the independently
 iterated scalar companion, and asymptotic tail/rate checks.
 
-An independent agent checked the full proof and freshly reran the audit:
-PASS. Its review retained the distinction between an algebraic clock
-example and an actual quantum-meridian operator.
+The algebraic clock is not identified with an actual quantum meridian.

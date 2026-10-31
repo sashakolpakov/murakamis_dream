@@ -16,7 +16,7 @@ remaining contributions small, and it is not a volume bound.
 ## 1. Keep the original crossing and its carry extension
 
 Put d=N-1, Q=exp(2 pi i/N), x=-exp(-pi i/N). Let R_plus and
-R_minus=R_plus^(-1) be the ORIGINAL complete balanced crossings,
+R_minus=R_plus^(-1) be the original complete balanced crossings,
 including their common Cartan scalar. The independently proved
 [Euler completion](actual_crossing_euler_completion_and_weight_source.md)
 has
@@ -128,7 +128,7 @@ coefficient magnitudes, by the finite Euler convolution. Equation
     ||C^(-1)||<=exp[(3/2+log2)N].                 (9)
 
 For example the three inverse factors in (8) have norms at most
-2^N exp(N/2), exp(N/2), exp(N/2). These are bounds in the ORIGINAL
+2^N exp(N/2), exp(N/2), exp(N/2). These are bounds in the original
 balanced physical and relative monomial metrics. They do not claim
 that C is isometric.
 

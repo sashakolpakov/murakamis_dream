@@ -39,7 +39,7 @@ x=-1. At a current pair (a,b,p,r), the elementary principal maps are:
 | D_+ | 0 | r -> -r/b |
 | D_- | 0 | r -> -br |
 
-Read the ORIGINAL strict factorization in traversal order:
+Read the original strict factorization in traversal order:
 
     C^(-1): U_2, V_-, U_1, F_2;
     positive center: U_+, D_+;

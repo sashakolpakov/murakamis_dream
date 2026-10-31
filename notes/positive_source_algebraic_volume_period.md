@@ -225,10 +225,4 @@ is a segment. Adding the rational inequality x<=1/6 moves the
 maximum to that boundary face, with x=1/6 and the same free z.
 The theorem covers both cases without a global strictness assumption.
 
-The [finite audit](../experiments/audit_positive_source_algebraic_volume_period.py)
-checks the Hessian determinant identity, exact critical polynomial,
-its isolating interval, and the rank after removing the flat direction.
-These checks supplement the proof in sections 1--3; they do not
-identify a triangulation. An independent full analytical read by the
-geometry agent passed, including the boundary-face and rational-kernel
-steps and the absence of a claimed Bloch-cycle or manifold conclusion.
+The algebraic-volume check does not construct a triangulation, a Bloch class or a manifold.

@@ -11,7 +11,7 @@ On this constrained chart the complete fixed-radii reference chain
 has a unique volume maximum, a nonzero Gaussian coefficient, and a
 strict boundary gap. Every geometric atom lies inside the already
 proved coefficient-one finite-Euler region. This removes a classical
-polarization obstruction; it does not identify the ORIGINAL quantum
+polarization obstruction; it does not identify the original quantum
 cycle with this reference chain or select its logarithmic sheet.
 
 The [exact/Arb audit](../experiments/audit_constrained_lens_geometric_chart.py)
@@ -198,7 +198,7 @@ coefficient one by their D_+ theorem.
 The earlier 8_1 example shows that all-subunit shapes may force B
 singular. It does NOT force an exterior geometric atom if one retains
 the linear constraints (2). In that same exact five-tetrahedron
-geometry the unique lens rotation is (1,1,1,1,0). Using the ORIGINAL
+geometry the unique lens rotation is (1,1,1,1,0). Using the original
 meridian row and independent edge rows (0,1,2,3,5), B has rank THREE:
 there are two constraints and a nondegenerate three-variable phase.
 The constraint matrix from the exact elimination is
@@ -225,7 +225,7 @@ replays the existing combinatorial identification with 8_1.
 This is a general construction for supplied positive triangulations,
 not a new knot-by-knot strategy. It avoids one reason for leaving the
 coefficient-one atom domain. The remaining requirement is still to
-transport the ORIGINAL source, lattice and logarithmic marks to this
+transport the original source, lattice and logarithmic marks to this
 constrained chart and compute its geometric relative coefficient.
 Neither classical linear elimination nor a formal Fourier delta is
 being asserted to perform that quantum/source comparison.

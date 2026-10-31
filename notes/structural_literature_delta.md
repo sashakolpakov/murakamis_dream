@@ -1317,7 +1317,7 @@ checks that exact distinction. No Jones asymptotic or published
 creative-telescoping theorem is used as a premise.
 
 The subsequent [whole clock-current proof](endpoint_completed_normal_clock_euler_current.md)
-derives the Jackson difference directly from the ORIGINAL divided
+derives the Jackson difference directly from the original divided
 matrices and their two anchored inverse arrows. Its shifted function,
 endpoint polynomial, explicit head Ward correction and marked Green
 carry are retained before normal restriction. The

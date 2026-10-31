@@ -63,7 +63,7 @@ while window restriction has precisely its displayed boundary rows.
 For d_x=x^-1-1,d_y=y^-1-1 the displayed h_0,h_1 satisfy all three
 contraction identities with their printed signs. The identity-matrix
 anchor is correct too: Gamma=h_0(E_N-N) has differential E_N-N,
-so subtracting Gamma times the ORIGINAL source changes the section
+so subtracting Gamma times the original source changes the section
 to E_N without changing the other identities. It does not introduce
 1/N^2 or declare every physical tangle to have that anchor.
 
@@ -108,7 +108,7 @@ port matrices have the stated sums of such shifted bands. This is
 a lossless finite current map, including the genuine endpoint
 coefficients and all original phase marks.
 
-For every current tensor the ORIGINAL source is
+For every current tensor the original source is
 \[
  \Phi^{(2)}(T)=\sum_{p,a,b}(e_0)_{a,a+p}J^{p,0}_{ab}.
                                                                \tag{4}
@@ -174,7 +174,7 @@ The cut value is one, giving
 Internal tree contributions cancel by critical momentum matching.
 Using the old momentum without its frame factor would change (5).
 
-## 5. A reviewed physical two-parabolic chart and its sign target
+## 5. A physical two-parabolic chart and its sign target
 
 In a common ACTUAL physical chart, take a normalized cut meridian
 g_0=[[1,1],[0,1]], a trace-two meridian g_e=[[a,b],[c,d]],
@@ -258,7 +258,7 @@ one-cut obstruction does not apply. Local transverse Gaussian
 transport also has both physical base variables and the bounded
 band currents just proved. These are genuine improvements.
 
-The whole selected comparison still needs the ORIGINAL internal
+The whole selected comparison still needs the original internal
 finite head projections. In the known relative/Rees diagram their
 actual maps are, with all head flags retained,
 \[

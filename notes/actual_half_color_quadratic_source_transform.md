@@ -1,7 +1,7 @@
 # A finite half-color quadratic transform for the original source
 
 29 October 2026. This proves the exact simple-channel coefficient
-of the ORIGINAL figure-eight four-plat in the complete Casimir frame.
+of the original figure-eight four-plat in the complete Casimir frame.
 The finite proof uses one terminating q-Chu identity, proved below by
 finite binomial expansion. It retains all root phases, common Cartan
 factors and the actual original cup/cap opening.
@@ -90,7 +90,7 @@ finite algebra, without an infinite-product interpretation.
 
 Now use the principal `q=exp(pi*i/N)`, `Q=q^2`, `d=2m`,
 `x=q^d=Q^m`, `nu_m=(-1)^m q^[m(m+1)]`. Let R_1,R_2 be the
-two ORIGINAL generators on the complete source multiplicity module,
+two original generators on the complete source multiplicity module,
 including their common Cartan kappa. The TRUE four-plat action order
 is `[2,-1,2,2]`, hence
 

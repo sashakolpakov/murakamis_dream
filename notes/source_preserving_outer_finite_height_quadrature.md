@@ -145,7 +145,7 @@ amplitude is more explicitly
 with its inherited square-root mark. Only the bound (5) is
 needed for the outer error criterion below.
 
-## 4. Exact finite-height residue formula with the ORIGINAL integers
+## 4. Exact finite-height residue formula with the original integers
 
 Let a<=b be integers in the allowed outer range. Set
 

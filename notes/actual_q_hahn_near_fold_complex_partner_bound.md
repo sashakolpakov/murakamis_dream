@@ -259,18 +259,6 @@ error was below 1.1e-206. Both bounded and square-root-sized
 channel separations occur in these checks. The uniform conclusion
 is the proved circle estimate, not an inference from the samples.
 
-An independent analytical review checked the all-degree rational
-recurrence, every intervening folded denominator, the inverse
-cofactor starting ratio, the exact K_l/K_j cancellation, and the
-holomorphy of the original C_l before applying Cauchy's formula.
-It also checked the actual gap and the s log N=o(N) scope. No
-fixed positive scaled-channel displacement or amplitude theorem
-is included in that review.
+The estimate requires s log N=o(N). It does not include a fixed positive scaled-channel displacement or an amplitude theorem.
 
-A second independent full analytical review and fresh audit replay
-also passed. It checked the formal recurrence lift, the resonant
-circle lower bounds, the retained scalar cancellation, and the
-holomorphy of the full large-channel source despite its singular
-monic factors. Its replay reproduced all exact and 220-digit
-counts above. The conclusion remains a relative upper bound in
-the stated shrinking channel window on a fixed magnetic corridor.
+The conclusion remains a relative upper bound in the stated shrinking channel window on a fixed magnetic corridor.

@@ -1,6 +1,6 @@
 # The original state has charged simplex amplitudes and a retained quadratic phase
 
-28 October 2026. This is a statement about the ORIGINAL enhanced Kashaev
+28 October 2026. This is a statement about the original enhanced Kashaev
 state, before a Fourier or Fermat change of basis. Each nonzero crossing
 entry has four nonnegative factorial indices adding to N-1. Its absolute
 action is concave on that charged simplex, strictly concave on each face
@@ -127,7 +127,7 @@ the brackets in (1). The crossing indices are then affine functions of
 these colors; their sum is exactly 1-1/N. Nonnegativity defines a convex
 polytope for each choice of lifts. There are finitely many choices for
 a fixed word, independently of N. The pivotal closures must be imposed
-with their ORIGINAL shifts, not as unshifted equality of colors.
+with their original shifts, not as unshifted equality of colors.
 
 On a region with all four coordinates positive at every crossing,
 the Hessian of the whole absolute action has kernel exactly the
@@ -188,7 +188,7 @@ POSITION word, (3) implies that changing any crossing signs changes
 neither its supported state set nor any absolute-state summand. The
 enhancement mu=-s S is a unit-modulus cyclic shift, and the writhe
 normalization also has modulus one, so the statement holds through the
-ORIGINAL full closure. Yet crossing changes can change the knot or
+original full closure. Yet crossing changes can change the knot or
 unknot it. For example the position word (1,2,1,2) has the trefoil
 closure with all signs positive and the figure-eight closure with
 alternating signs. Their actual values differ, while their entire

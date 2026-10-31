@@ -20,7 +20,7 @@ Use the balanced factorial basis of the
     d=N-1, Q=exp(2 pi i/N), x=-exp(-pi i/N),
     F_k=(Q;Q)_k, F_0=1.
 
-Let B be the ORIGINAL checked positive crossing, with its common
+Let B be the original checked positive crossing, with its common
 nonzero Cartan scalar retained externally. In these actual balanced
 coordinates its coefficient for
 
@@ -178,6 +178,6 @@ is not decided by these tests.
 
 An action-normalized microlocal correspondence could still solve the
 problem, but it must construct the geometric summand and prove that
-the ORIGINAL source has nonzero image there. Rewriting its conclusion
+the original source has nonzero image there. Rewriting its conclusion
 as a positive rank in a critical field does not bypass that step.
 No new broad-class exponential lower bound is proved by this audit.

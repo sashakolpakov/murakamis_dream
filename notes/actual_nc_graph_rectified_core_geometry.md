@@ -265,11 +265,4 @@ No proof or quantum-invariant identification from those sources is used
 in the construction above, and no novelty of the geometric operation
 is asserted.
 
-Independent analytical review: the global audit agent checked the
-construction through sections 1--4, including all vertex formulas,
-canonical horospheres, actual Fisher incidence and odd-parity face
-maps. The exact cube audit additionally identifies its six square
-faces from the literal NC source's opposite black/white ribbon orders.
-The vertex-graft closure paragraph received a separate independent
-review; its minimizing-path proof includes the exact common triangle
-and excludes escape to an ideal end.
+The cube audit determines the six square faces from the source’s opposite black/white ribbon orders. In the vertex-graft argument, minimizing paths use the exact common triangle and cannot escape to an ideal end.

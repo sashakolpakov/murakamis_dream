@@ -62,7 +62,7 @@ In the second identity only the unchanged middle height contributes to
 the diagonal: mu_c from the last vertex cancels the denominator mu_c of
 U_m, leaving exactly the weight mu_a on the length-m walk.
 
-These recursions identify the trace with the ORIGINAL fundamental
+These recursions identify the trace with the original fundamental
 quantum trace. Indeed the latter has K=diag(q,q^(-1)) and U block
 [[q,-1],[-1,q^(-1)]] on (01,10), zero on (00,11); its partial K-trace
 is I and Tr K=delta. Both traces therefore satisfy (2), with value one
@@ -145,7 +145,7 @@ The conventions agree after the explicit signs are kept:
 
 The braid permutation is a b-cycle, so its writhe w satisfies
 w=b-1 modulo 2. The resulting sign is
-epsilon_j^(b-1-w)=1. Consequently the ORIGINAL even meridian family
+epsilon_j^(b-1-w)=1. Consequently the original even meridian family
 satisfies F_N(Q^j)=C_j(q), with F_N(1)=K_N. This is the filtered
 matrix argument of `root_orbit_pointing.md`, with the precise
 one-component and framing hypotheses exposed.
@@ -228,13 +228,7 @@ zeros or exponentially small values would invalidate that inference.
 
 ## 5. What is verified, and what remains
 
-The existing audit `experiments/audit_regularized_kashaev_period.py`
-was independently rerun during this check: all 30 positive-path versus
-original-cut comparisons, 62 ordinary-color inequalities, and ten exact
-finite-field polar/orbit calculations passed. Those finite checks
-supplement the uniform proofs above; they do not prove a volume limit.
-Two fresh independent audits also passed and were read and rerun by the
-root agent:
+The finite Plancherel checks do not establish a volume limit. The remaining analytical questions are stated below.
 
 * [Positive path algebra](ordinary_color_positive_trace_independent_audit.md):
   both Markov identities on noncommuting words, the full projection

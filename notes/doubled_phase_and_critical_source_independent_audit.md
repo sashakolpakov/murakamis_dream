@@ -3,7 +3,7 @@
 27 October 2026. The current proofs in
 [the doubled-phase optimizer](doubled_phase_rivin_optimizer.md)
 and [the irreducible critical-source theorem](irreducible_critical_source_and_whole_norm.md)
-pass independently, with the corrected requirement that a density on
+require that a density on
 a reducible etale algebra be a unit on every selected component.
 
 ## 1. The phase map and the optimizer

@@ -1,22 +1,28 @@
-\chapter{Ideal cells, ordered gluing, and complete cusps}\label{ch:geometry}
+\chapter{Constructing the complete augmented hyperbolic metric}\label{ch:geometry}
+
+An ideal hyperbolic polyhedron has its vertices on the sphere at infinity. Truncating such a vertex by a horosphere gives a Euclidean polygon; after the face pairings, these polygons form the cross sections of the cusp ends. We shall build one polyhedron from the stationary angles and use two copies of it to recover the complement of the actual augmented diagram.
+
+There are three separate verifications. The cells must fit isometrically along their ordered faces. Their labeled face identifications must recover the original link exterior. Finally, the Euclidean cusp polygons must glue without dilation, so that the metric is complete. A numerical agreement of volumes, or an agreement of face counts alone, would not establish these facts.
 
 \section{Why the local volume identity is not enough}
 The angle identity \eqref{eq:gate-atoms} proves concavity, but an abstract sum of tetrahedral volumes is not yet the volume of a link complement. We construct the cells, identify the ordered input maps, and then compare the closed colored boundary with the literal projection cut. This supplies both the topology and the degree of the geometric realization. The construction does not require a polyhedron existence theorem; Rivin's variational approach \cite{Rivin1994} provides useful context, but is not a premise of this explicit argument.
 
 \section{The leaf pyramid}
-In upper half-space, place the apex at $O=\infty$ and the ordered port vertices at
+
+We use the upper-half-space model of hyperbolic three-space, with boundary $\CC\cup\{\infty\}$. An elementary piece will contribute an ideal pyramid. Its two shaded faces correspond to the two sides of a half crossing disk; the white faces come from regions of the projection sphere. These colors record different kinds of face pairings. The remaining quadrilateral is a gluing face used while the construction is still open. Its four ideal vertices are ordered: that order determines which vertex must be sent to which when two faces are identified.
+In upper half-space, place the apex at $O=\infty$ and the ordered vertices of the gluing face at
 \begin{equation}\label{eq:leaf-vertices}
  (C_0,C_1,C_2,C_3)=(1,e^{2\pi\ii a},-1,-e^{2\pi\ii a}),
  \qquad 0<a<1/2.
 \end{equation}
-Their convex hull is an ideal quadrangular pyramid. Its four apex edges are right angled. The base edge angles alternate $\pi a$ and $\pi(1/2-a)$. A diagonal of the base gives the two tetrahedra of \eqref{eq:leaf-atoms}, so its volume is $\pi g(a)$. Color the side triangles $(O,C_1,C_2)$ and $(O,C_3,C_0)$ shaded; the other two side triangles are white. The base is the output port.
+Their convex hull is an ideal quadrangular pyramid. Its four apex edges are right angled. The base edge angles alternate $\pi a$ and $\pi(1/2-a)$. A diagonal of the base gives the two tetrahedra of \eqref{eq:leaf-atoms}, so its volume is $\pi g(a)$. Color the side triangles $(O,C_1,C_2)$ and $(O,C_3,C_0)$ shaded; the other two side triangles are white. The base is the output gluing face.
 
-Call edges $01,23$ of an output port \emph{free}, and edges $12,30$ \emph{cap}. A leaf has free angles $\pi a$ and cap angles $\pi(1/2-a)$. A completed cell will have free angles $\pi b$ and cap angles $\pi(1-b)$.
+Call edges $01,23$ of an output gluing face \emph{free}, and edges $12,30$ \emph{cap}. A leaf has free angles $\pi a$ and cap angles $\pi(1/2-a)$. A completed cell will have free angles $\pi b$ and cap angles $\pi(1-b)$.
 
 \begin{figure}[ht]
 \centering
 \input{figures/leaf-pyramid}
-\caption{One leaf contributes two shaded crossing-disk triangles and one ordered port. The one-leaf cap angle is $\pi(1/2-a)$; replacing it by the completed cap angle would give the wrong seam.}\label{fig:leaf}
+\caption{One leaf contributes two shaded crossing-disk triangles and one ordered quadrilateral gluing face. The one-leaf cap angle is $\pi(1/2-a)$; replacing it by the completed cap angle would give the wrong seam.}\label{fig:leaf}
 \end{figure}
 
 \section{The multiplication prism}
@@ -31,7 +37,7 @@ The consecutive half-arcs are $p,r,q,r+w$. Let $P$ be the intersection of the li
  P=v_1+\frac{\sin\pi x\sin\pi r}{\sin\pi w\sin\pi p}(v_1-v_0)
   =v_2+\frac{\sin\pi y\sin\pi r}{\sin\pi w\sin\pi q}(v_2-v_3).
 \end{equation}
-In particular $|P|>1$. Attach the tetrahedron $(\infty,P,v_1,v_2)$ to the quadrangular pyramid $(\infty,v_0,v_1,v_2,v_3)$, on opposite sides of their common face. The two coplanar face pairs merge. The result is a convex ideal triangular prism with white triangular faces $(P,v_1,v_2)$ and $(\infty,v_0,v_3)$ and ordered ports
+In particular $|P|>1$. Attach the tetrahedron $(\infty,P,v_1,v_2)$ to the quadrangular pyramid $(\infty,v_0,v_1,v_2,v_3)$, on opposite sides of their common face. The two coplanar face pairs merge. The result is a convex ideal triangular prism with white triangular faces $(P,v_1,v_2)$ and $(\infty,v_0,v_3)$ and three quadrilateral gluing faces, with the indicated vertex orders
 \begin{equation}\label{eq:prism-ports}
  F_x=(\infty,v_0,v_1,P),\quad
  F_y=(\infty,v_3,v_2,P),\quad
@@ -75,14 +81,16 @@ The lower and upper stack maps are exactly
  (C_0,C_1,C_2,C_3)\mapsto(v_0,v_1,P,\infty),\qquad
  (C_0,C_1,C_2,C_3)\mapsto(\infty,P,v_2,v_3).
 \end{equation}
-Both invert the port metric. At each internal wire, stationarity says that the child output derivative and parent input derivative sum to zero. Hence $\varkappa_{\rm child}\varkappa_{\rm parent}=1$, precisely the isometry condition for \eqref{eq:ordered-stack}. This verifies the full face map, rather than only an edge-product equation.
+Both invert the shape parameter of the gluing face. At each internal wire, stationarity says that the child output derivative and parent input derivative sum to zero. Hence $\varkappa_{\rm child}\varkappa_{\rm parent}=1$, precisely the isometry condition for \eqref{eq:ordered-stack}. This verifies the full face map, rather than only an edge-product equation.
 
 \section{Convex assembly and the closed cut}
 Attach child cells to the two prism inputs on opposite supported sides. A leaf cap edge meets a prism edge with total angle $\pi/2$; a completed cap edge gives $\pi$ and merges two white faces. The common input edge has angle $\pi(w+x+y)=\pi$. The two free output seams have angles $\pi(p+x)=\pi z$ and $\pi(q+y)=\pi z$, while the cap output angles are $\pi(1-z)$.
 
-These inequalities prove local convexity at each finite seam. To justify global convexity directly, a length-minimizing sequence between two finite points of the union stays in a compact hyperbolic ball. A shortest path exists. Local convexity makes it an ambient geodesic at every finite point, so it is the unique ambient segment and lies in the union. Ideal vertices are not finite points and introduce no additional exception. Thus each completed expression gives a convex ideal cell with one supported port and the claimed free/cap pattern. Its nonport edges remain right angled, and its two shaded triangles per leaf keep their labels.
+These inequalities prove local convexity at each finite seam. To justify global convexity directly, a length-minimizing sequence between two finite points of the union stays in a compact hyperbolic ball. A shortest path exists. Local convexity makes it an ambient geodesic at every finite point, so it is the unique ambient segment and lies in the union. The argument concerns finite points. To control the ideal boundary as well, observe that a strict quadrilateral gluing face is a maximal supported face. Cells attached on opposite sides can have no extra ideal intersection away from its supporting circle. An extra vertex on that circle would enlarge the supported face across one of its strictly nonflat edges. This is excluded by the strict output angles. Appendix~\ref{app:marked-calibration} gives the corresponding incidence argument in detail.
 
-At the final closure, the outputs are $b$ and $1-b$. Stationarity gives equal ordered port metrics. The gluing is
+There is also a combinatorial issue: repeated identifications must not collapse two corners of one leaf. At every open stage the four exposed corners are still unpaired original endpoints. A product consumes two disjoint pairs and never exposes those endpoints again; a turn only permutes the four remaining endpoints. Thus each consumed pair is permanent, and later gluing cannot extend it into a chain of identifications. The root pairs endpoints from the two disjoint final boxes. Each leaf therefore retains four distinct corners and its original apex. Together these geometric and combinatorial checks show that every completed box gives the claimed convex ideal cell, with right-angled edges outside the gluing face and two distinct shaded triangles per elementary piece.
+
+At the final closure, the outputs are $b$ and $1-b$. Stationarity gives equal shape parameters for their ordered gluing faces. The gluing is
 \begin{equation}\label{eq:closing-map}
  F:C_j\longmapsto G:C_{3-j}\qquad(j\bmod4).
 \end{equation}
@@ -91,6 +99,8 @@ It implements both the stack interface and the two outside closing wires. Free a
 For topology, cut the literal augmented diagram along its projection sphere and the recorded half crossing disks. In each projection ball the auxiliary semicircles are boundary-parallel along those half disks. Drilling them and then cutting returns a ball. A disk contributes precisely the two shaded triangles $(O,C_1,C_2)$ and $(O,C_3,C_0)$. The remaining regions are white. The original stack identifies lower corners $2,3$ with upper corners $1,0$ and preserves the exposed order $(F_0,F_1,G_2,G_3)$. Turns rotate that order, and the final closure pairs $0$ with $3$ and $1$ with $2$. These rules determine every oriented white facial walk. They are exactly the rules induced by \eqref{eq:ordered-stack} and \eqref{eq:closing-map}. The labeled sphere cellulation therefore agrees with the projection cut; its identification extends over each ball. Reversing the cuts gives the stated link exterior with degree one.
 
 \section{Complete cusps and half-twist partners}
+
+The polyhedron is only one of the two balls obtained by cutting along the projection sphere. We now describe how the two balls are reassembled. A complete cusp requires more than a total angle of $2\pi$: the face maps must return pointwise around every edge, and their restrictions to the horospheres must have no dilation. The following pairing and length checks establish those conditions on the original labeled diagram.
 Take two oppositely oriented copies of $P_E$. Pair white faces between copies by their projection labels. In a pure leaf, pair its two shaded triangles within each copy, fixing $O$ and sending $C_1\mapsto C_0$, $C_2\mapsto C_3$. The edge words alternate white and shaded gluings, contain four right angles, and return pointwise: the copied white maps and the inverse triangle maps cancel. Thus there is no translation along an edge hidden by an angle count.
 
 At each ideal vertex, a horosphere cuts a Euclidean rectangle. Scale it so that its two opposite shaded sides have length one. Every shaded triangle then has the same canonical corner horocycles. All shaded and white pairings preserve the decoration. Uniform shrinking makes the horospheres disjoint. The links glue without dilation to the actual compact cusp tori, while their complement is compact. The resulting metric is complete and has volume
@@ -106,7 +116,9 @@ A half twist rotates one side of the twice-punctured disk by $\pi$, exchanging b
 They go across the two copies, not within one copy. White maps are unchanged. The explicit edge matrices in Chapter~\ref{ch:marked} show pointwise cancellation of all three odd edge words. The length-one triangle decorations are also preserved, so every fixed half-twist pattern has the same complete volume $2\pi F_0$. The two half-twist signs have the same unmarked pairing but different collar paths; those paths are kept for filling.
 
 \section{A constructive knot choice}\label{sec:pairings}
-For ports $(0,1,2,3)$ in cyclic order, write
+
+The hyperbolic construction initially keeps all main components. To obtain a knot after the auxiliary fillings, we must choose the retained half twists so that the final main diagram is connected. This can be checked without any geometry. A box connects its four boundary points in one of three pairings; the table below follows the two actual identity arcs of a stack. It also records the only way stacking creates a closed internal main component.
+For the four tangle endpoints $(0,1,2,3)$ in cyclic order, write
 \[
  I=(0,3)(1,2),\qquad U=(0,1)(2,3),\qquad X=(0,2)(1,3).
 \]

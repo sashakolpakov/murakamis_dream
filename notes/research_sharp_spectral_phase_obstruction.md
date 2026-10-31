@@ -1,6 +1,6 @@
 # A sharp spectral maximum does not by itself define the original torsor
 
-Workspace research draft, 31 October 2026. Not approved for publication. Exact local result. This concerns the actual LEFT
+Workspace research draft, 31 October 2026. Exact local result. This concerns the actual LEFT
 coefficient, including its omitted-half scalar and unused rows. It exhibits
 a strict real spectral maximum of its absolute leading rate for which the
 usual positive-clock physical adapter cannot transport the original ordered
@@ -193,4 +193,4 @@ A signed-clock assignment could restore the two conics locally; whether
 those signs sew at every original face, cup, cap and unrestricted mark
 is a separate incidence and phase problem.
 
-A focused exact audit was recorded during the original investigation. That historical diagnostic is not included in this public snapshot or in the manuscript reproduction suite.
+The historical diagnostic for this calculation is not included in the public reproduction suite.

@@ -1,5 +1,7 @@
 \chapter{Finite algebra and normalization identities}\label{app:finite}
 
+This appendix proves the finite identities on which the asymptotic argument rests. The first calculation compares the chosen crossing matrices and reduced trace with the conventional invariant. The next two calculations establish the Newton basis, its genuine geometric turn, and the exact color decomposition. The last calculation expands an arbitrary twist power while keeping derivatives at repeated roots. No limiting argument is used in these identities.
+
 \section{The crossing comparison and enhancement}\label{app:normalization}
 This section supplies the finite normalization calculation used in Proposition~\ref{prop:normalization}. Put $\omega=Q$ and
 \[
@@ -92,6 +94,8 @@ Finally $s_rs_{d-r}=N$ and \eqref{eq:leading-trace} give
 $\phi(\Bhat_i\Bhat_j)=\delta_{i+j,d}$: use degree below $d$, leading coefficient at $d$, and full divisibility by $P_N$ above it. This proves Proposition~\ref{prop:newton-turn} by physical support and exact paths.
 
 \section{Circle coefficients and the signed alias}\label{app:colors}
+
+We derive the coefficient formulas rather than infer them from values at the distinct Casimir roots. That distinction is necessary because the quotient algebra also contains first derivatives at double roots. The generating-function calculation first gives a polynomial identity at a generic parameter; regular specialization then retains all those derivatives automatically.
 The generic Chebyshev--Newton identity is
 \begin{equation}\label{eq:A-Cheb-newton}
  U_{j-1}(z/2)=\sum_{r=0}^{j-1}(-1)^r
@@ -130,6 +134,8 @@ For the half twist, multiplication by $z$ in Newton coordinates is the lower bid
 Its first column is the finite Newton expansion of the crossing. Substituting the two neighboring ratios shows that it commutes with $Z$; since the first coordinate is cyclic, this determines the full matrix. Reversal on both sides gives \eqref{eq:half-twist}. Coefficient conjugation gives the inverse crossing because its full Hermite values and logarithmic derivatives are conjugate. This argument retains all normal directions.
 
 \section{Fourier--Hermite interpolation of an arbitrary twist}\label{app:fourier}
+
+Ordinary interpolation prescribes values. Hermite interpolation also prescribes derivatives at a repeated node. Here the crossing power supplies both data, and the change of variable $z=w+w^{-1}$ turns the interpolation problem into a finite Fourier calculation. The two Fourier equations below solve simultaneously for the coefficients that ordinary value interpolation would fail to distinguish.
 For an integer $\ell$, let $f_{N,\ell}$ be the degree-below-$N$ remainder of $r_N^\ell$ modulo $P_N$. Negative powers exist because all its nodal values are nonzero. At $w_k=q^{2k+1}$ define
 \[
  h_k=\bigl((-1)^kq^{k(k+1)}\bigr)^\ell,

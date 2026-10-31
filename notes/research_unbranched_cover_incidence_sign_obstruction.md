@@ -1,8 +1,6 @@
 # Why an unbranched exterior cover does not repair the replicated incidence sign obstruction
 
-Unpublished research lemma, 31 October 2026. Full independent analytical and topological-scope reviews: root and geometry, PASS. This is a
-source-preserving cover obstruction, not a fractional atomization argument
-and not an assertion that all covers of a link exterior are trivial.
+31 October 2026. This is an obstruction to a source-preserving cover, not a fractional atomization argument or a claim that every cover of a link exterior is trivial.
 
 ## 1. The proposed construction and the exact scope
 
@@ -216,10 +214,4 @@ need their own exact source/action comparison and fundamental-chain proof.
 It also does not prove a source upper bound from the unresolved magnitude
 and phase-cancellation estimates.
 
-Dependencies inspected: [exact face-sign criterion](research_spectral_face_sign_cocycle.md),
-[conditional signed group sewing](research_regular_signed_spectral_group_sewing.md),
-[original cut-ball construction](general_augmented_plat_matching_geometry.md) §§1--4,
-[original paired fundamental chain](actual_fejer_signed_cut_ball_regulator.md) §3, and the fractional-cover
-obstruction above. Geometry independently checked the resolved cut-ball
-argument and the ordinary-outer gauge identification. Root subsequently completed a full independent review, PASS. No numerical audit is needed for this finite graph/topological
-implication.
+The proof uses [exact face-sign criterion](research_spectral_face_sign_cocycle.md), [conditional signed group sewing](research_regular_signed_spectral_group_sewing.md), [original cut-ball construction](general_augmented_plat_matching_geometry.md) §§1--4, [original paired fundamental chain](actual_fejer_signed_cut_ball_regulator.md) §3, and the fractional-cover obstruction above.

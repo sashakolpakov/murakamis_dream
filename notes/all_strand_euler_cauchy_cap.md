@@ -172,7 +172,7 @@ Euler-conjugated word in the canonical free basis of A_0:
              =sum_(k,j=0)^(N-1) b_(lambda,k,j) f^k e_j,
     B_lambda(Z)=sum_(k=0)^(N-1) b_(lambda,k,0) x_1^-k Z^k.
 
-Then the ORIGINAL period is exactly
+Then the original period is exactly
 
     P_W=chi_W x_1^(N-1)/(1-Q)
              sum_lambda gamma_lambda
@@ -202,7 +202,7 @@ their coefficients are the full N-dependent transformed word, and
 their differences and sum can cancel. Formula (8) supplies no
 unproved nonvanishing or rigidity assumption.
 
-There is a precise quantitative form for the ORIGINAL complete
+There is a precise quantitative form for the original complete
 reduced invariant. Put Q_N=exp(2pi*i/N), x_N=-exp(-pi*i/N).
 For b>=3 label the heads lambda=(t,j) as in (1); for b=2 there
 is one head and take j=0. Define, without dividing by any invariant,
@@ -212,7 +212,7 @@ is one head and take j=0. Define, without dividing by any invariant,
 
 For the actual complete word every retained external crossing/framing
 factor, apart from d_N, has modulus one, and |d_N(1)|=1/N.
-Removing d_N to return from the full ADO period to the ORIGINAL
+Removing d_N to return from the full ADO period to the original
 reduced Kashaev period gives the EXACT modulus identity
 
     |Kashaev_N(K)|=N/|1-Q_N| * |S_N|.               (10)
@@ -267,7 +267,4 @@ original physical pivotal cap, (6) and the exact two-point formula
 (8), retaining the actual
 half-Cartan, framing and complete modified-dimension factors.
 
-A separate agent reran those checks and checked the unequal-color
-cap (5) on 203 basis elements at levels 2--8 and six unequal-color
-tail decompositions. The theorem rests on the basis and trace proof
-above; these tests check its conventions and implementation.
+The unequal-color cap (5) is checked on 203 basis elements at levels 2–8 and six unequal-color tail decompositions. The theorem rests on the basis and trace proof above; these tests check its conventions and implementation.

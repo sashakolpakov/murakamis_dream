@@ -216,10 +216,4 @@ it is not a new broad bridge-family or hyperbolic-volume claim.
 
 Audit: [original source, exact folded current, algebraic criticals and interval spectral profiles](../experiments/audit_actual_newton_rank_three_folded_packet.py).
 
-Two independent complete proof reviews passed. Fresh replays confirm
-eleven full original source/current families, the exact modulus
-resultant and Sturm counts, and8192 outward-rounded whole-cell
-spectral disks. The root proposals are never used without the stated
-Rouche validation. Both reviewers rederived the freeze-block bound,
-the actual source projection and the reflected profile overlap; no
-topological or volume identification was inferred.
+The proposed roots are used only after the stated Rouché validation. Finite source/current families, exact resultants and Sturm counts, and outward-rounded whole-cell disks check the formulas. No topological or volume identification follows.

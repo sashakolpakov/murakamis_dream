@@ -1,12 +1,6 @@
 # Phase exclusion for an original regular spectral window
 
-31 October 2026. **Internally reviewed local theorem.** The straddling-window
-proof in §§1–6 received root and independent full analytical review. It
-estimates a literal start/end window, with every unused row, omitted-half
-mode and raw sign retained. Its conclusion is a local exponential loss
-relative to that window's positive envelope, not a bound by hyperbolic
-volume. The full-row extension and shared-torus consequence in §§7–8
-also received independent full analytical review.
+31 October 2026. The straddling-window theorem in §§1–6 estimates a literal start/end window, retaining every unused row, omitted-half mode and raw sign. Its conclusion is an exponential loss relative to that window’s positive envelope, not a bound by hyperbolic volume. Sections 7–8 give the full-row extension and shared-torus consequence.
 
 ## 1. Literal window and hypotheses
 

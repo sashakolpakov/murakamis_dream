@@ -4,7 +4,7 @@ Research construction, 27 October 2026. The standard two-nome
 product already constructed in the repository defines a flat
 rank-one DIFFERENCE object over four independent coordinates.
 Its finite first-period transports are exactly the Pochhammer
-factors in the ORIGINAL crossing matrices. Consequently every
+factors in the original crossing matrices. Consequently every
 actual finite word and its original source have a realization in
 this whole transport algebra before quantum jets are taken.
 
@@ -111,7 +111,7 @@ universal period transport. It does not omit their common scalar.
 
 ## 3. Universal finite-word preservation, with the actual lattice
 
-Take the ORIGINAL finite coefficient array at fixed level, with
+Take the original finite coefficient array at fixed level, with
 all actual crossing coefficients, cup/cap factors, pivots, framing
 and meridian lifts, cut row and full modified dimension. Replace
 each finite Pochhammer by (2.1), and each Gaussian by (2.4), on

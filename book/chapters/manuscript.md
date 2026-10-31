@@ -1,70 +1,72 @@
-# The Conway composition manuscript
+# A guide to the manuscript
 
-The paper presents the volume identity for knots built from a specified
-class of finite Conway tangle compositions. It starts with the invariant
-and tangle conventions, develops the finite source and its geometric
-optimization, and follows the selected complex action through the
-crossing-circle fillings.
+[Read the manuscript PDF](../../manuscript/build/main.pdf). The [editable sources and build instructions](../../manuscript/README.md) are available alongside it.
 
-[Read the PDF](../../manuscript/build/main.pdf) ·
-[TeX sources and build instructions](../../manuscript/README.md) ·
-[Sphinx edition](https://sashakolpakov.github.io/murakamis_dream/sphinx/)
+The paper proves the volume conjecture for a specified family of knots built by composing two-strand tangles. It explains the finite quantum invariant, the hyperbolic cells, the estimates needed to control cancellation, and the passage from an augmented link to the final knot complement. This page introduces the construction before giving a route through that proof.
 
-## The theorem's scope
+## The knot construction, without the shorthand
 
-Starting with a two-leaf block $hh$, completed tangles may be turned,
-stacked, or extended by a single leaf on either side:
+Start with two strands in a box whose four endpoints are labeled and kept in order. Insert an integer number of signed half-twists. A positive and a negative count give opposite crossing directions. Turn the box through a quarter-turn; this is the basic piece used in the construction.
 
-$$E::=hh\mid T(E)\mid E_1E_2\mid hE\mid Eh.$$
+Two boxes can be stacked in order, and a constructed box can itself be turned. After finitely many such operations, join the remaining outside endpoints by the prescribed cylindrical closure. Following the strands determines whether this produces a knot or a link. The theorem requires one component, with no closed component hidden inside a box.
 
-The cylindrical closure has two completed children. Choose a fixed
-half-twist pattern giving a knot. For every fixed finite expression,
-independently sufficiently long signed full twists give
+The notation in the paper abbreviates these operations:
 
-$$\lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(K)|
-  =\operatorname{Vol}(S^3\setminus K).$$
+| Notation | Meaning |
+| --- | --- |
+| $R^n$ | Two strands with $n$ signed half-twists. |
+| $T(F)$ | The quarter-turn of the tangle box $F$, with its endpoint order retained. |
+| $h_i(n_i)=T(R^{n_i})$ | The $i$th basic twist piece. Different subscripts carry independent integers. |
+| $FG$ | The ordered stack of $F$ and $G$. |
+| $C(FG)$ | The prescribed closure of the four outside endpoints of that stack. |
 
-The expression and twists are fixed before $N$ tends to infinity.
-Both parities and composite levels are included. The threshold may
-depend on the expression. Earlier isolated seed closures of width at
-least three are treated separately.
+These are operations on actual tangles. The notation does not mean that formal arithmetic with rational fractions has replaced an isotopy argument.
 
-The right side is the knot complement volume. Filling the auxiliary
-crossing circles inserts twists, and leaves the knot cusp unfilled.
-The paper does not claim coverage of every arborescent presentation.
+For the paper's main family, first stack two basic pieces. Thereafter one may turn a constructed box, stack two constructed boxes, or attach one additional basic piece on either side. The technical notes call a box obtained by these rules **completed**. This is a recursive name for a class of boxes; it does not mean that a Dehn filling has already been performed. Construct two such boxes $F$ and $G$, then close $FG$. The paper also handles its stated isolated stacks of at least three basic pieces.
 
-## Reading the proof
+## The theorem and its quantifiers
 
-The finite source uses the full Newton algebra, including repeated-root
-directions. The same leaf and multiplication weights define a concave
-angle problem. Its unique strict optimizer supplies the complete
-augmented-link geometry and the local quantum action.
+For each fixed permitted construction there is a threshold. Choose the twist integers independently, with either sign, beyond that threshold in absolute value, and choose their parities so that the endpoint pairing gives a knot. Fix all those integers. The theorem then proves
 
-A separate estimate controls every alias and the physical colors away
-from completeness. The key composition step combines one leaf with its
-gate and the completed child's output tangent. The complex packet and
-the full Fourier filling calculation then give a nonzero leading term.
-The marked peripheral equations identify its real exponent with the
-volume of the resulting knot complement.
+$$
+\lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(K)|
+=\operatorname{Vol}(S^3\setminus K).
+$$
 
-![The new leaf and completed child's output tangent enter the same Newton gate; the parent retains the inherited and new alias losses.](../../manuscript/build/figures/attachment-tangents.png)
+Here $K$ is the resulting knot, $K_N(K)$ is the reduced Kashaev invariant at integer level $N$, and the right side is its hyperbolic complement volume. The limit includes even and odd levels and composite levels. The twist counts do not grow with $N$, and no restriction is imposed on their relative sizes. The threshold may depend on the entire construction.
 
-[Vector PDF](../../manuscript/build/figures/attachment-tangents.pdf) ·
-[Editable TikZ](../../manuscript/figures/attachment-tangents.tex)
+To analyze the geometry, the proof first places an auxiliary crossing circle around each twist region. The resulting augmented link has a convenient decomposition into ideal hyperbolic cells. Filling an auxiliary circle means attaching a solid torus along the prescribed meridian so as to insert the twists. In the knot theorem **all auxiliary circles are filled**. The cusp of the knot itself remains unfilled. Thus the conclusion is about the knot complement, not a closed three-manifold.
 
-## Reproduction
+The [current strict-tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md) covers a larger set of expressions than the paper's recursive family. The [results chapter](results.md) gives its finite admissibility test and explains the difference. The manuscript retains its own theorem; later extensions are not silently attributed to its proof.
+
+## How to read the proof
+
+The first part fixes the invariant normalization and derives the finite algebra of the tangle operations. A color is an integer label in that finite calculation. It is not an additional component of the final knot. The source formula retains values and first derivatives at repeated spectral points, which explains the use of Hermite interpolation. Newton polynomials make the allowed integer indices at a product explicit. These support conditions are kept before taking a continuum limit.
+
+The geometric part associates normalized state variables with angles of ideal pyramids and prisms. An ideal vertex lies at infinity in hyperbolic space. Strict angle inequalities produce genuine cells, and the ordered endpoint data determine their face identifications. A strictly concave angle functional has a unique geometric maximum. The proof then follows actual paths on the cusps to identify the meridian and longitude used for filling.
+
+The source estimates address a different issue: a signed sum can be much smaller than the sum of the absolute values of its terms. The exact reflection formula separates a central contribution from extra terms called aliases. The paper bounds all of those terms while preserving their finite supports. Concavity and supporting tangents reduce two important estimates to finite rational certificates.
+
+![Supporting tangents used to control a single-piece attachment over its entire allowed state region.](../../manuscript/build/figures/attachment-tangents.png)
+
+Near the geometric maximum, a complex asymptotic formula gives an exponential action, a nonzero leading coefficient and a controlled error. The paper calls this a local packet. The estimates outside that neighborhood show why the packet really determines the invariant; locating a critical point by itself would not rule out a missing or canceled contribution.
+
+Finally, the filling transform is evaluated with all its Fourier modes and boundary terms. The marked meridian-longitude convention identifies the real part of its critical action with the volume after filling. This last normalization is what connects the finite invariant to the actual knot constructed at the beginning.
+
+The technical appendices supply the finite algebra, analytic interpolation estimates, certificate details and marked geometric calibration used in this chain. They are intended to make the proof readable without treating links to working notes as substitutes for arguments.
+
+## Reproduce the finite certificates
+
+From the repository root, run:
 
 ```sh
 python3 repro/verify.py --list
+python3 repro/verify.py --plan
 python3 repro/verify.py --output repro/results
 ```
 
-The suite replays the exact two-leaf, single-leaf and endpoint
-certificates, and checks their stored rational results. The
-[reproduction guide](../../repro/README.md) explains the arithmetic;
-the [proof-input map](../../repro/PROOF_INPUTS.md) distinguishes the
-finite checks from the analytic, geometric and topological proofs.
+The first two commands describe the checks. The third runs them serially, writes fresh results and compares them with the committed reference records. The [reproduction guide](../../repro/README.md) explains the software requirements and outputs; the [proof-input map](../../repro/PROOF_INPUTS.md) locates the written arguments behind each certificate.
 
-The older research routes remain accessible through the library.
-The paper provides a continuous argument for its stated composition
-class; the archive preserves the calculations and alternative approaches.
+These checks use rational bounds with explicit remainders, not a numerical search for maxima. They verify finite arithmetic used in the proof. They do not mechanically verify the topology, the invariant normalization, or every analytic step of the manuscript.
+
+To build the paper and guide, use the commands in the [manuscript source guide](../../manuscript/README.md). The mathematical illustrations are supplied as editable TikZ sources as well as rendered assets. For the attachment diagram above, download the [vector PDF](../../manuscript/build/figures/attachment-tangents.pdf) or the [TikZ source](../../manuscript/figures/attachment-tangents.tex).

@@ -1,7 +1,7 @@
 # Exact global cut jets of the original charged source
 
 28 October 2026. Every anchor cluster has an exact finite normal-jet
-description in the ORIGINAL charged source. A negative cut deficit
+description in the original charged source. A negative cut deficit
 kills the source. A zero deficit factors it. Fixed, and even sublinear,
 deficits have subexponential boundary-choice cost for a fixed diagram.
 These assertions retain the two resulting periods; they are not scalar

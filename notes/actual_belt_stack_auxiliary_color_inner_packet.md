@@ -43,7 +43,7 @@ For the physical low core, interchanging its two finite sums gives
       Q^(-vr)F_(2v)/[F_v F_(v-h)F_(v+h)F_(v-r)],
     B_r(c)=product_(a<r)(c_a-c).                           (2)
 
-These are exact root identities with their ORIGINAL marked phases.
+These are exact root identities with their original marked phases.
 No upper band, source normal or normalization is suppressed.
 
 ## 2. A source-selected complex-color channel THROUGH the quarter point
@@ -183,7 +183,7 @@ on fixed complex disks about zero. The exact finite packet satisfies
 
 uniformly on smaller fixed complex disks. Its amplitude is nonzero.
 
-Proof: (4) supplies an exponentially accurate ORIGINAL-grid
+Proof: (4) supplies an exponentially accurate original-grid
 interpolant. Canonical factorials and the half-shift Newton factor
 are regular on this window and have the same optimal EM residual
 bound. The exact half-grid cotangent rectangle retains every vertical
@@ -382,7 +382,7 @@ For the second assertion use the uniform angular gap of the finite
 packet on the compact r-window, the H-residual(13), and the fact
 that the original R^m has unit nodal values and at most a polynomial
 first-normal cost. Derivatives of the fixed n-factor product cost
-only another polynomial. Thus the ORIGINAL physical spectral
+only another polynomial. Thus the original physical spectral
 complement, not just the interpolant, is estimated.
 
 On smaller fixed complex theta/color disks, the exact function
@@ -409,7 +409,7 @@ complement required BEFORE the outer-color Fourier-Hermite
 transform; no contour endpoint or alias is set to zero here.
 
 Audit: [actual mixed-circle operators, canonical complex quarter source and original crossing normals](../experiments/audit_actual_belt_stack_auxiliary_color_inner_packet.py).
-Fresh replay PASS: seven full physical mixed-circle finite-field
+the finite checks cover seven full physical mixed-circle finite-field
 families and seven entire low-color alias families; two canonical
 complex-Fhat source families across the quarter point; nine
 high-precision literal crossing/first-normal families; and six
@@ -419,8 +419,4 @@ endpoint-normalized C exp(NS), not just a formal root. These finite
 calibrations supplement the analytic proof of its uniform domains,
 exponential interpolation residuals and source gaps.
 
-Independent analytical review by the global critical-path auditor
-passed the parameterized source/barrier argument, uniform R->1
-strict inner-color gap, and the full-node local/spectral-complement
-interface in section6. The physical outer-color transform and
-geometric holonomy remain separate as stated.
+The physical outer-color transform and geometric holonomy remain separate from the inner packet theorem.

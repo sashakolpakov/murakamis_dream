@@ -83,7 +83,7 @@ The other terms of S depend only on Y,w, so (1) proves
 
     F(rho_*,theta_*,phi_*;w)=F(0,phi_*,phi_*;w).       (2)
 
-In particular the diagonal boundary of the ORIGINAL radius is not
+In particular the diagonal boundary of the original radius is not
 strictly below the candidate interior action.
 
 ## 3. It is precisely the maximum on that boundary edge
@@ -163,7 +163,7 @@ permission to omit their chart-change currents.
 Near delta=0 and a compact tangential neighborhood of the equal-action
 point, Fhat(delta) is holomorphic, nonzero and Fhat(0)=1; all other
 scaled factorial arguments lie in regular compact substrips. Thus the
-cot pole at delta=0 has its ORIGINAL NONZERO residue (6). Conversely
+cot pole at delta=0 has its original NONZERO residue (6). Conversely
 1/Fhat(delta) has simple zeros at delta=-1,-2,...,-m for any fixed
 small normal collar m<N, canceling those newly enclosed cot poles
 provided the remaining factors stay regular. This permits the familiar

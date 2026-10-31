@@ -1,6 +1,6 @@
 # Intrinsic probe geometry for unflagged Conway components
 
-31 October 2026. Internally reviewed geometric and classical-action theorem.
+31 October 2026. geometric and classical-action theorem.
 It supplies the exact parameter range and absolute pressure used by the
 separate [full-normal coefficient-cone bound](actual_conway_unflagged_core_probe_bound.md).
 The classical probe does not insert a physical circle into the invariant.
@@ -181,7 +181,6 @@ exactly the original complete action. The bare probe appearing in
 \(F_{\mathrm{probe}}\) is an intrinsic classical dual used to determine
 a constant; it is not an extra physical auxiliary color, and it does
 not add an uncharged \(2G_0\) to the quantum source.
-
 
 ## 5. Scope of the probe
 
@@ -390,16 +389,7 @@ arbitrary turn to be charged to a new physical leaf. There is no new
 source-circle insertion, isotopy, geometric volume replacement, or
 full mixed-hub theorem here.
 
-
-## Internal proof review
-
-The primary agent and both independent collaborators fully reviewed the
-component-probe geometry, original parameter ranges, absolute constants
-and root calibration. The primary agent and both collaborators fully
-reviewed the universal product-pressure proof, including its unsquared
-branch, derivative comparison, explicit rational gap and reflection
-orientation. The source collaborator independently checked that these
-are the exact geometric hypotheses used by its coefficient-cone theorem.
+## scope
 
 This is an analytical proof, with no numerical test or inferred
 topological re-rooting. The signed coefficient bound, local packet,

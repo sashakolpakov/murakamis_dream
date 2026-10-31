@@ -1,6 +1,6 @@
 # An exact positive moment form for the original flat-cap coefficients
 
-31 October 2026. Internally reviewed analytical research lemma. Root
+31 October 2026. analytical research lemma. Root
 derived the proof; two independent readers checked it in full. This
 constructs a positive inner
 product from the original cap weights. It does not prove that the adjacent
@@ -129,7 +129,7 @@ therefore carries this positive Gram form. The alternating cap character
 is retained by evaluating p at -X_N, rather than deleting (-1)^j.
 
 To express the precise missing step, use the coefficients C_(j,h) and
-range J_n of the reviewed original-demand convolution. Define the
+range J_n of the original-demand convolution. Define the
 literal projected polynomial
 
     F_(N,n)(t)=sum_(j in J_n) C_(j,n-j) t^j.
@@ -257,7 +257,7 @@ identify it with the different Jacobi matrix obtained by normalizing
 the adjacent continuant. No norm comparison between those two metrics,
 or volume bound for the original source, follows from (12).
 
-## Inputs and review scope
+## Inputs
 
 The weights are those of the [exact protected cap](research_trace_one_mark_and_cap_turn_interface.md).
 The polynomial in (9) is precisely the [original-demand cap/CROSS
@@ -265,15 +265,4 @@ convolution](research_two_port_main_cap_original_demand_convolution.md).
 No triangle factor, unused spectral product or projected endpoint is
 changed by defining this inner product.
 
-Both independent readers checked the Euler/Gamma shifts, moment strip,
-cancellation of the inverse-size terms, L2 log convergence, uniform
-integrability through degree d, non-atomicity and unbounded support,
-Gram degree cutoff and formula (9). They reported PASS. These are
-internal analytical reviews, not external peer review. The missing
-comparison with the endpoint convolution is not a proved assertion.
-Root additionally derived the sharp nonnegative-moment threshold and
-the degree-restricted functional relation (10)--(11); an independent
-reader checked both, including the divergent terminal moment, PASS.
-Root derived the finite algebraic quadrature (12); the independent reader
-checked the positive Jacobi form, finite cross-moment orthogonality,
-polynomial division, exact degree bound and algebraicity, PASS.
+The positive moment metric retains the stated degree cutoff. The endpoint norm comparison remains unproved, and the next square moment diverges.

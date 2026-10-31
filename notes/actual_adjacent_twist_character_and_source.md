@@ -133,7 +133,7 @@ the two homogeneous multipliers of (7) at A=c_j(Y) are
     -Q^(j+1)Y^(-1)=lambda_(j+1)/lambda_j,
     -Q^(-j)Y=lambda_(j-1)/lambda_j.                    (9)
 
-These are precisely the neighboring ratios of the ORIGINAL twist
+These are precisely the neighboring ratios of the original twist
 phases, not independently selected semiclassical characters.
 
 ## 4. A strict spectral window, rather than a cyclic replacement
@@ -176,7 +176,7 @@ not yet evaluate the resulting multidimensional contour.
 
 ## 5. The original cup port gives the parabolic total character
 
-At completeness let p be the ORIGINAL cup on heads 1,2. Its actual
+At completeness let p be the original cup on heads 1,2. Its actual
 Hopf identities E_tot p=F_tot p=0 and K_tot p=p imply that both
 two-head coproduct triangular matrices are identity on p. Consequently
 

@@ -125,8 +125,7 @@ filled crossing circles. Its possible containment in previously
 known Whitehead-chain families retains the earlier coverage caveat.
 
 For a!=0, (1)--(5) retain the literal original outer R^a insertion
-with all of its source scalars. The independently reviewed
-[outer-collar puncture permutation/isometry certificate](actual_balanced_octahedral_belt_stack_volume.md#3a-any-fixed-integer-outer-crossing-power)
+with all of its source scalars. The [outer-collar puncture permutation/isometry certificate](actual_balanced_octahedral_belt_stack_volume.md#3a-any-fixed-integer-outer-crossing-power)
 identifies its ACTUAL complement with the same complete regular-cell
 gluing, of volume2n v8. Its component count is n+3 for even a and
 n+2 for odd a. Thus the original volume equality holds for every
@@ -135,7 +134,7 @@ topological assertion comes from that literal collar certificate,
 not from the quantum rate.
 
 Audit: [full original sign-word/outer-twist sources, high-precision nodal phase checks and coherent Gaussian calibrations](../experiments/audit_actual_coherent_octahedral_belt_stack_asymptotic.py).
-Fresh replay PASS: seven full physical levels,210 all-sign word
+the finite checks cover seven full physical levels,210 all-sign word
 operators and490 complete original outer-twist closures;860
 100-digit all-parity nodal phase checks; six growing-N families of
 complete coherent Gaussian calibrations. The phase identities themselves

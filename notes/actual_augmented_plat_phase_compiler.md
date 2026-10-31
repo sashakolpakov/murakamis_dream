@@ -1,6 +1,6 @@
 # An exact phase compiler for arbitrary fixed augmented plats
 
-30 October 2026. Every fixed 2k-head plat made from the ORIGINAL
+30 October 2026. Every fixed 2k-head plat made from the original
 complete crossing-circle coupons R^epsilon L_N, epsilon in {0,+1,-1},
 has an explicit finite factorial sum with its entire original phase.
 There is no restriction on k>=2 or on the graph formed by its twist
@@ -123,7 +123,7 @@ the two internal summation variables have no individual square term.
 ## 3. Compile any fixed augmented 2k-plat
 
 Fix the positions and order of the twist regions in a literal
-2k-head plat. Augment every chosen region by its ORIGINAL auxiliary
+2k-head plat. Augment every chosen region by its original auxiliary
 circle and retain its prescribed parity epsilon. Use the original
 bottom cups, ordinary top caps and ONE unrestricted marked top cap:
 
@@ -274,9 +274,4 @@ checked. The symbolic phase cancellation and quadratic degree are
 also checked exactly. These are source-identity checks, not numerical
 evidence for an unproved all-plat volume limit.
 
-Independent internal analytical review checked the physical high-degree
-translation, bilinear CD normalization, retained first normal, original
-cup/cap powers, complete phase cancellation and rational stationary
-equation. A separate reader and the primary agent freshly replayed the
-operator/marked-plat audit: PASS. This certifies the finite compiler,
-not its missing mixed-color packet or geometric cycle selection.
+The finite compiler does not supply a mixed-color packet or select a geometric cycle.

@@ -94,7 +94,7 @@ The differentiated sum in (4) is fully explicit. Write
     H_b=D log F_b=-2 sum_(r=1)^b r Q^r/(1-Q^r), H_0=0,
     Hbin(v,w)=H_v-H_w-H_(v-w).
 
-At the root each summand derivative is its ORIGINAL root value
+At the root each summand derivative is its original root value
 times
 
     Gamma_(j,u,a)=d(u-2a)+2a(t-u)+a(a-1)
@@ -256,16 +256,4 @@ columns from (2)--(5) are compared with independent continuant
 derivatives. Every compiled matrix is compared with the original
 coproduct Casimir polynomial and original signed crossing matrices.
 
-Primary-agent independent analytical review and fresh audit: PASS.
-The review checked the generic Clebsch derivative and Gamma factor,
-both signed Jordan formulas, the exact normalizer phases, the
-n(n^2-1)/6 derivative bound and the retained inverse-measure factorial
-rates. All 231 full signed mixed-color matrix identities passed.
-
-A second independent analytical review checked the actual generic
-descendant powers, root complementation only for values, the exact
-eigenvalue-gap derivative, full bilinear inverse and both crossing
-signs, all ordinary simple nodes, and the polynomial normal bounds.
-Its fresh replay passed all 143 blocks, 2,904 values, 1,177 normals
-and 231 signed mixed matrices. No uniform complex-color or coherent
-gap conclusion is inferred from these identities.
+The generic matrix identities do not supply a uniform complex-color estimate or coherent gap.

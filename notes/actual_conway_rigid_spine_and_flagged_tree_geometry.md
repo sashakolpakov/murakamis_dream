@@ -1,6 +1,6 @@
 # Rigid spines and the geometry of fully flagged Conway trees
 
-1 November 2026. Internally reviewed structural and complete-geometry
+1 November 2026. structural and complete-geometry
 theorem. This note uses the [strict-output compiler](actual_conway_single_leaf_source_composition.md),
 the [general complete-mask geometry](actual_conway_general_strict_mask_geometry.md)
 and the [original marked filling calibration](actual_conway_general_mask_marked_filling.md).
@@ -373,13 +373,6 @@ response (7), the constant identity (10), or the complete value (14).
 An unflagged hub requires a different operator, with no original
 character at that vertex; adding a new circle would change the source.
 
-## Internal proof review
+## scope
 
-The primary agent and both independent collaborators fully reviewed the
-rigid-spine, intrinsic-state, absolute-constant and fully flagged
-geometric derivation. The source collaborator separately checked the
-exact reduced-hub tensor identity and positive complete kernel; its
-all-parity action agrees with (14). The weighted-tree dictionary records
-the exact authorized literal recursion and separates the one-child
-root's source identity from topology. No numerical experiment or
-topological re-rooting claim is part of this proof.
+The reduced-hub tensor identity and positive complete kernel give the same all-parity action as (14). The weighted-tree dictionary separates the one-child root source identity from topology; no topological rerooting is asserted.

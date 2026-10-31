@@ -27,7 +27,7 @@ put Q_N=exp(2pi*i/N) and
     V_(j,b)=Q_N^(jb), (V^-1)_(b,j)=Q_N^(-jb)/N,
     T^V=(I tensor V)T(I tensor V^-1).
 
-Keep the ORIGINAL first-cut row: define the RAW partial array
+Keep the original first-cut row: define the RAW partial array
 
     Jtilde_(a,j)=sum_c T^V_(c,j;a,j).             (1)
 

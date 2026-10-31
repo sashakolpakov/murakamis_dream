@@ -1,53 +1,64 @@
 # Murakami’s Dream
 
-Kashaev invariants, Conway tangle composition, and hyperbolic knot complements.
+Kashaev invariants and the hyperbolic volumes of knot complements.
 
-**[Read the illustrated research guide →](https://sashakolpakov.github.io/murakamis_dream/)**
-
+**[Read the illustrated guide](https://sashakolpakov.github.io/murakamis_dream/)** ·
 [Manuscript and PDF](manuscript/README.md) ·
-[Reproduce the certificates](repro/README.md) ·
-[Sphinx documentation](https://sashakolpakov.github.io/murakamis_dream/sphinx/)
+[Reproduction instructions](repro/README.md)
 
-The current paper studies knots obtained from a specified class of
-arbitrarily large finite Conway tangle trees, with independently
-sufficiently long fixed signed twists. Its volume identity concerns the
-resulting knot complement. Auxiliary crossing-circle cusps are filled;
-the knot cusp remains unfilled. The composition rules and closure
-restriction are part of the theorem.
+The volume conjecture predicts that the exponential growth of Kashaev’s
+root-of-unity invariant recovers the volume of a hyperbolic knot complement.
+This project studies that comparison by assembling knots from tangles.
 
-![The route from the original quantum source to actual hyperbolic volume](book/figures/research-map.png)
+The manuscript treats a specified family of Conway tangle constructions.
+Start with elementary twist pieces, join them in order, turn intermediate
+tangles, and apply the prescribed closure. For each allowed finite
+construction, independently sufficiently large positive or negative twist
+numbers give the volume limit. The construction and all twist numbers stay
+fixed while the quantum level tends to infinity.
 
-The guide explains the argument in eight chapters. The **[research library](https://sashakolpakov.github.io/murakamis_dream/library.html)** organizes the detailed work into reading routes, with a main argument, its scope, and supporting notes. Audits and recorded results are linked from the notes they accompany.
+A [companion theorem](https://sashakolpakov.github.io/murakamis_dream/notes/actual_conway_all_strict_tree_long_twist_volume.html)
+extends the result to every construction passing a finite angle-feasibility
+test called strictness. The
+[results chapter](https://sashakolpakov.github.io/murakamis_dream/guide/results.html)
+explains this test, the closure condition, and the exact quantifiers.
+Another companion reconstructs the invariant from a quantum A-operator
+and initial data, giving the same volume limit in recurrence form.
 
-The [figure gallery](https://sashakolpakov.github.io/murakamis_dream/figures.html) shows the research route, recoupling, cube channels, geometric cells, and the peripheral torsor. Figures include PDF and editable TikZ downloads, with SVG versions where available.
+![The finite evaluation, estimates for strict Conway trees, and the volume of the resulting knot complement](book/figures/research-map.png)
 
-**The general volume conjecture remains open.** The repository contains internally reviewed research proofs for specified families, general local identities, and explicit obstructions to proposed extensions. Finite audits and numerical diagnostics retain their stated scope.
+The general conjecture remains open. In particular, the theorem does not
+classify all arborescent knots or cover arbitrary short twist numbers.
 
-## Repository structure
+## Finding the material
+
+The guide gives a continuous explanation of the results and their proofs.
+The [research library](https://sashakolpakov.github.io/murakamis_dream/library.html)
+organizes supporting arguments by question, and the
+[figure gallery](https://sashakolpakov.github.io/murakamis_dream/figures.html)
+explains the constructions with editable drawings. The Fourier, torsor,
+weighted Cauchy, cube, and other approaches remain available there.
 
 | Directory | Contents |
 | --- | --- |
-| `manuscript/` | Detailed TeX manuscript, bibliography, editable figures and compiled paper |
-| `repro/` | Serial exact-certificate runner, expected inputs and verification scope |
-| `book/chapters/` | Readable guide: results, mechanism, geometry, frontier, notation, audits |
-| `book/collections.json` | Curated research routes and their main arguments |
-| `book/figures/` | Editable TikZ diagrams and compiled PNG, SVG, and PDF figures |
-| `docs/` | Generated research guide; `site/` contains Sphinx sources and `sphinx/` its rendered edition |
-| `notes/` | Detailed arguments at their original stable paths |
-| `experiments/` | Audit scripts and recorded results |
-| `tools/` | Guide builder and figure renderer |
+| `manuscript/` | TeX paper, bibliography, figures, and compiled PDF |
+| `repro/` | Exact-certificate runner and explanation of what it checks |
+| `book/` | Guide chapters, reading routes, and editable diagrams |
+| `docs/` | Rendered illustrated guide |
+| `notes/` | Detailed mathematical arguments and historical research notes |
+| `experiments/` | Verification programs and recorded results |
+| `tools/` | Paper, guide, and figure builders |
 
-All research routes are retained, including the cube, Fourier, torsor, and pretzel approaches. The previous long README is preserved in [the historical research log](RESEARCH_LOG.md).
-
-## Local reading and reproduction
+## Reading locally
 
 ```sh
-python3 repro/verify.py --output repro/results
 python3 -m http.server 8000 --directory docs
 ```
 
-Open `http://localhost:8000`. The [guide maintenance instructions](book/README.md) cover rebuilding the site and figures. Research-audit dependencies are in `requirements-core.txt`; the guide explains the focused checks and their limits.
+Open `http://localhost:8000`. See the [guide maintenance instructions](book/README.md)
+for rebuilding the pages, and [reproduction instructions](repro/README.md)
+for the exact arithmetic checks.
 
-The publication manifest records source hashes and exclusions. The authored
-paper and generated illustrations are included. Private background
-manuscripts, credentials, environments, and session metadata are excluded.
+The [research log](RESEARCH_LOG.md) preserves the earlier working history.
+The publication manifest records the files and hashes included in each
+release.

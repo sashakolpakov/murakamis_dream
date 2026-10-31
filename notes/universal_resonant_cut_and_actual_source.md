@@ -1,7 +1,7 @@
 # An actual cut with a universal complete framing pole
 
 Research theorem, 27 October 2026. For every complete discrete-faithful
-knot representation, an exact inverse-pair insertion in the ORIGINAL
+knot representation, an exact inverse-pair insertion in the original
 braid places a noncommuting meridian on the first slot at a second
 physical cut. The actual prefix there is V=I. Its Fourier momentum
 is a Möbius coordinate whose inverse framing map and density have
@@ -223,7 +223,7 @@ must be retained. Equation (10) provides neither its missing
 value nor a no-cancellation theorem.
 
 More strongly, the exact actual localization just cited says the
-regular-node contribution of the ORIGINAL array is zero, even
+regular-node contribution of the original array is zero, even
 though the sum of this isolated PRINCIPAL coefficient is (10).
 That principal sum is therefore not a bulk approximation to the
 actual complete array. The geometric formal block can be nonzero

@@ -40,7 +40,7 @@ is Z_N(T)=sum_(k in P_N)w_N(k). On its allowed lattice progression,
     (pi/N)log Z_N(T)->Vol(M).                       (1)
 
 This is the independently proved positive-volume theorem in
-[the original comparison note](quantum_a_volume.md#5-a-broad-theorem-for-a-positive-angle-state-comparison).
+[the comparison note (historical context omitted)](quantum_a_volume.md).
 The desired upper comparison is
 
     |K_N|² <= exp(o(N)) Z_N(T),                     (2)

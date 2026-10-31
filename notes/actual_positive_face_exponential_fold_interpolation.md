@@ -1,6 +1,6 @@
 # An exponentially accurate analytic interpolation of the actual fold factors
 
-30 October 2026. Independently reviewed and frozen. The construction below
+30 October 2026. The construction below
 uses analytic contractions on shrinking disks, then the actual positive
 finite recurrence. It produces an even holomorphic fold interpolation
 whose error on the original channel grid is exponentially small, uniformly
@@ -295,15 +295,11 @@ normal theorem is inferred here.
 The focused [audit](../experiments/audit_actual_positive_face_exponential_fold_interpolation.py)
 and its [recorded results](../experiments/actual_positive_face_exponential_fold_interpolation_results.json)
 check 20 symbolic identities and 24 complex-face residual identities.
-Numerical analytic-iteration prototypes are compared with the ORIGINAL
+Numerical analytic-iteration prototypes are compared with the original
 beta/D/P factors: four pivot cases through N=1024 and eight complete-circle
 comparisons at both parities, including fixed complex face parameters.
 These finite projections are diagnostics of the construction; they are
 not premises for the uniform exponential estimate proved above.
 
-Root and coherent_partner_currents independently reviewed the full
-analytic proof, including the nested-domain single-loss iteration,
-complex-face source matching and centered primitive. An independent
-redirected replay reproduced every focused audit result at 65 digits.
 No full mixed-color packet, ordinary-subset gap, or generic-q normal
-claim is included in these validations.
+claim follows from this interpolation theorem.

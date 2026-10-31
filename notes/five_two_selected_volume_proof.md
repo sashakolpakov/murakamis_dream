@@ -1,7 +1,7 @@
 # A selected-contour proof for the original five-crossing prototype
 
 28 October 2026. This assembles an independent, computer-assisted proof
-of the volume asymptotic for the ORIGINAL normalized Kashaev invariant
+of the volume asymptotic for the original normalized Kashaev invariant
 of the marked 7/3 five-crossing knot 5_2. It uses exact finite source
 transforms, explicit contours, and outward-rounded interval bounds.
 No Jones asymptotic or published quantum-state asymptotic theorem is an
@@ -294,14 +294,4 @@ check the displayed nonzero prefactor and marked action against the
 exact original double sum through N=192. They support the normalization
 audit; the proof of the limit is the argument and interval certificate
 above, not extrapolation of those values.
-
-Assembly audit, 28 October: two independent agent reviews checked the
-whole proof, including the finite source identity, both quadratures,
-the analytic maximum reductions and outward-rounded certificate, the
-fixed-neighborhood Gaussian expansion, its prefactor and contour
-orientation, and the exact Bloch/three-tetrahedron calibration. Both
-reported no remaining conditional source or cycle identification for
-this prototype. The root review independently checked the source
-transform, quadrature signs and endpoint estimates, reran the rigorous
-certificate, and verified the marked finite-level normalization.
 

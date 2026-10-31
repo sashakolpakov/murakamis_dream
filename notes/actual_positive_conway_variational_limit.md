@@ -225,8 +225,4 @@ supplement (1)--(8). They verify 800 additive integer support cases,
 including an independent whole-theta formula and the exact polynomial
 turned closures. Numerical rates are diagnostics, not the proof of (5).
 
-Independent internal review: the crossing/source agent read the full
-support, uniform leaf/gate action, every-residue lower bound, angle
-identity, algebraic critical equations and two calibrations, and
-reported PASS. No actual manifold-volume claim for arbitrary Conway
-expressions was included in that review.
+No manifold-volume claim for arbitrary Conway expressions follows from this variational result.

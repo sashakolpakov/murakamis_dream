@@ -1,13 +1,13 @@
 # Independent audit of the Möbius framing fiber and flat source frame
 
-27 October 2026. Independent proof audit of
+27 October 2026. Detailed examination of
 [the Möbius framing and norm-pole theorem](mobius_fourier_framing_and_intrinsic_norm_pole.md)
 and [the flat cyclic source-frame theorem](flat_cyclic_source_frame_and_scalar_period.md).
-The substantive algebraic claims pass. The derivative and base-ring
+The derivative and base-ring
 qualifications below should be retained. No new selected-period
 comparison follows merely from these source-frame identifications.
 
-## 1. The actual prefix Möbius formula and its orientation pass
+## 1. The actual prefix Möbius formula and its orientation
 
 Factor U-V=u v, with v=(a,b) and w=v V inverse=(c,d). Since
 U,V have determinant one and UV inverse is nontrivial trace two,
@@ -117,7 +117,7 @@ reported and is now explicit in the current note. It does not affect
 the actual regular normal coefficient ring or the preceding
 classification over arbitrary commutative bases.
 
-## 4. The whole corrected algebra and the nonaligned family pass
+## 4. The whole corrected algebra and the nonaligned family
 
 Evaluation at Q^j makes tau(X)=Q inverse times (X-delta e_0(X))
 the predecessor cyclic permutation of the actual clock nodes.

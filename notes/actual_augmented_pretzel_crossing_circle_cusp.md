@@ -195,12 +195,12 @@ identification or select the half-twist sign by itself.
 
 There is a concrete source sign to check in making that identification.
 For the literal auxiliary color \(j=N-h\), put \(H=Q^h\).
-The centered auxiliary meridian \(M_{\rm aux}=-q^j\) has
-\(2\Log M_{\rm aux}=-\Log H\). Thus if a phase calculation uses
-\(z=\Log H\) and \(G_z=\Log L_H\), its ratio with this auxiliary
+The centered auxiliary meridian \(M_{\mathrm{aux}}=-q^j\) has
+\(2\operatorname{Log} M_{\mathrm{aux}}=-\operatorname{Log} H\). Thus if a phase calculation uses
+\(z=\operatorname{Log} H\) and \(G_z=\operatorname{Log} L_H\), its ratio with this auxiliary
 meridian is \(-2G_{zz}\), not \(+2G_{zz}\). The positive sign in
 the preceding comparison requires, for example, the dual longitude
-\(L_{\rm geom}=L_H^{-1}\). This is a coordinate/peripheral sign
+\(L_{\mathrm{geom}}=L_H^{-1}\). This is a coordinate/peripheral sign
 that must be proved; it cannot be hidden in the rectangle count.
 
 For coverage only, the statement of Theorem 1.1 in

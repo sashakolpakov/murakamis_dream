@@ -3,7 +3,7 @@
 28 October 2026. Two local steps are now explicit. The independently
 proved charged full-Phi pentagon has a genuine REAL internal cycle
 selecting its geometric bipyramid block with multiplicity one,
-uniformly on compact positive families. Separately, the ORIGINAL
+uniformly on compact positive families. Separately, the original
 scalar head source has exact zero internal charge after its positive
 factorial orders are reflected, with an explicit full-Phi Gaussian
 field and OUTER-ray source retained.
@@ -11,7 +11,7 @@ field and OUTER-ray source retained.
 These facts are not yet an identification of that reflected
 circle/outer-ray fiber with the positive charged real contour. The
 remaining comparison is a definite twisted beta/Pochhammer contour
-problem described in Section 6. Its ORIGINAL growing source is now
+problem described in Section 6. Its original growing source is now
 resolved further by the exact
 [norm-pole/Barnes cycle](actual_trivalent_quantum_beta_source.md),
 which retains its nonzero balanced block and normalization remainder.
@@ -205,7 +205,7 @@ It may be zero on both sides. If charges are themselves integrated,
 the known phase mu_b stays INSIDE that functional; it is not pulled
 out as though it were constant.
 
-## 4. The ORIGINAL source law, checked on the actual reduced graph
+## 4. The original source law, checked on the actual reduced graph
 
 The original moment/head graph has positive-factorial atomic orders
 reflected by d=N-1. At a cap-free trivalent vertex its three atomic
@@ -223,7 +223,7 @@ nine atom slots in traversal order have the actual internal laws
 Each triple has one positive-factorial edge. This holds pointwise
 in the external moment/Gaussian variables, independently of the
 full-Psi coefficient values or choice of circle/ray piece. It is
-an incidence equation of the ORIGINAL full source, not a condition
+an incidence equation of the original full source, not a condition
 imposed only at its geometric critical point.
 
 There is an exact global unreflection. For each positive-factorial
@@ -331,7 +331,7 @@ in (18), then
 
 Thus its multiplier-one locus is the Frobenius copy of precisely
 the linear stationary gluing polynomial (19). This is a genuine
-local support candidate. The ORIGINAL relative coefficient source
+local support candidate. The original relative coefficient source
 can be inhomogeneous under this shift, so (19a) alone does not
 place that source on M_N=1 or remove either denominator divisor.
 
@@ -390,5 +390,5 @@ prove uniqueness or a tame scalar inverse of (21).
 The local positive kernel-line transport, the exact original
 unreflection/descent and the outstanding fiber transport have been
 kept distinct. Completing the last step is necessary before using
-the positive contour as the ORIGINAL knot source's cycle or claiming
+the positive contour as the original knot source's cycle or claiming
 its geometric coefficient survives the move.

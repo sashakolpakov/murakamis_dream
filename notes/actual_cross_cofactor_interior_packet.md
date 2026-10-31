@@ -2,7 +2,7 @@
 
 The [whole-source local packet](general_full_spectral_numerator_geometric_packet.md) now assembles these results for the actual full numerator. The original global spectral filling period remains open.
 
-31 October 2026. Internally reviewed. This concerns the
+31 October 2026. . This concerns the
 original finite homogeneous cofactor, not an arbitrary interpolation of
 its complete-channel samples. The middle face b is positive. The separate
 protected-middle proof treats b=0. Exactly one protected outer face x=0
@@ -215,7 +215,7 @@ t_b(0), since its derivative is Log[b/L(t;x,y)] and L is strictly
 increasing from0 to infinity. Choose ell,r so those tails have a fixed
 gap c_6>0, uniformly over the real compact.
 
-For small complex u, apply the ORIGINAL unused-row product bound to
+For small complex u, apply the original unused-row product bound to
 each term in (2). The product of all nonzero lower-row ratios is at
 most exp[N theta(|u|)+O(log N)], theta(v)=arcosh(1+v/2).
 This also covers odd terminal n=m: the cofactor excludes alpha_m=0.
@@ -301,7 +301,7 @@ prove a global face-torus gap or selected Gaussian contribution.
 
 Private helper ../experiments/audit_actual_cross_cofactor_interior_packet.py compares the
 row-replaced determinant directly with the cleared recurrence and compares
-its physical-node values with the independently built ORIGINAL positive
+its physical-node values with the independently built original positive
 q-Hahn matrices. At 85 digits, N=3,...,18, real/complex faces and each
 one-protected-outer specialization, it passes1056 row determinants,
 352 matrix node adapters,352 exact sine scalars and960 tail factorizations;
@@ -309,8 +309,8 @@ maximum relative error is below2e-85. These checks validate the finite
 adapter. The relative complex asymptotic is the analytical proof above,
 not a conclusion inferred from finite node or rate samples.
 
-## Independent review
+## Scope
 
-Root, coherent_partner_currents and conway_reduced_geometry independently reviewed the full analytical packet proof: PASS. Root also checked the explicit optimal Euler--Maclaurin remainder. The focused finite adapter audit is separately scoped above. Stable private proof; no whole face-torus or Gaussian-cycle claim is made here.
+This is an interior cofactor packet. It does not establish a whole-face torus bound or a contributing Gaussian cycle.
 
 [Focused audit](../experiments/audit_actual_cross_cofactor_interior_packet.py) · [Recorded output](../experiments/actual_cross_cofactor_interior_packet_results.json). These finite checks supplement the written proof and retain the scope recorded in their output.

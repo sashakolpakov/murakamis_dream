@@ -1,6 +1,6 @@
 # The original source has no automatic positive reflection form
 
-27 October 2026. A universal reflection/Gram argument for the ORIGINAL
+27 October 2026. A universal reflection/Gram argument for the original
 Kashaev source fails at every level: its identity value is zero while
 an actual normalized unknot word has nonzero value. A two-channel
 reflection square has source -2. The standard alternating three-strand

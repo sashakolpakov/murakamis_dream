@@ -139,7 +139,7 @@ and nonzero too:
 
 Multiplication by either factor changes normalized logarithmic growth
 by o(1), and preserves zeros at all sufficiently large levels. In
-particular the ray group (5) in a Markov-stabilized ORIGINAL figure-eight
+particular the ray group (5) in a Markov-stabilized original figure-eight
 knot has the independently proved rate Vol(4_1)/(2*pi), not a strict
 smaller rate. This is a whole-knot example; the exterior has not been
 replaced by a scalar toy model.

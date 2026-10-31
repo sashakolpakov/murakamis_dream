@@ -31,7 +31,7 @@ Its exact root differential laws are
 Thus this is the actual Sym^N source cone, not an auxiliary
 representation.
 
-It also has a specified ORIGINAL whole q-germ on every residue
+It also has a specified original whole q-germ on every residue
 string s:
 \[
  \psi_s(q;a,b)=
@@ -194,18 +194,18 @@ The invariant Haar form and the actual compensated framing form
 are respectively
 \[
  \widehat\Omega=-\frac{dr\wedge ds}{s^2},\qquad
- \Omega_{\rm cut}=-\frac{dr\wedge ds}{s(1+s)} .
+ \Omega_{\mathrm{cut}}=-\frac{dr\wedge ds}{s(1+s)} .
 \]
 Substitution of (5) gives the exact source identities
 \[
  \widehat\Omega=-\frac2C\,\omega_H\wedge\omega_U,
  \qquad
- \boxed{\ \Omega_{\rm cut}=\frac A N\,d\log U\wedge dm\ }. \tag{8}
+ \boxed{\ \Omega_{\mathrm{cut}}=\frac A N\,d\log U\wedge dm\ }. \tag{8}
 \]
 The constant D drops out. Hence the rank-two co-source form is
 recovered from SCALE plus DESCENDANT, not from Berry curvature.
 Its covariance under (6) is exactly
-\(\operatorname{div}_{\Omega_{\rm cut}}\xi_i=2A\).
+\(\operatorname{div}_{\Omega_{\mathrm{cut}}}\xi_i=2A\).
 The Haar form instead is invariant. This retains the source-density
 correction needed by the actual geometric Ward currents.
 

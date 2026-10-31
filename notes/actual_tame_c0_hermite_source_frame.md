@@ -1,7 +1,7 @@
 # A tame Hermite frame for the original source channel
 
 29 October 2026. The colliding c_0 Casimir channel containing the
-ORIGINAL cup has an explicit generalized vector with harmonic-sum
+original cup has an explicit generalized vector with harmonic-sum
 coefficients. Its source-adapted Hermite frame has UNIFORMLY bounded
 physical condition number after a common N^(3/2) scale. In that frame
 the original marked and
@@ -28,7 +28,7 @@ Fix `q=exp(pi*i/N)`, `Q=q^2`, `d=N-1`, `rho=q-q^(-1)`,
 
 Missing endpoint arrows are zero. Work on the physical integer-degree
 d subspace with basis `|u,d-u>`, `0<=u<=d`. Let `c_*=q+q^(-1)`.
-The ORIGINAL cup, ordinary pivotal cap and marked row restrict here to
+The original cup, ordinary pivotal cap and marked row restrict here to
 
     p_u=N x^(u-d), ell_u=x^(-u)Q^(-u)/N,
     m_u=x^(d-u)/N^2.                               (1)
@@ -218,7 +218,7 @@ just the two extreme singular-value bounds: the other column's
 relative norm lies in `[1/2,pi/sqrt(6)]`, and `pi/sqrt(6)<2`.
 The condition number is therefore at most two; N=2 attains two.
 
-The exact inverse on its range is still the two ORIGINAL rows m,ell
+The exact inverse on its range is still the two original rows m,ell
 by (10). The ordinary row on the full physical degree-d space has
 a larger norm because it also sees other channel directions; its
 restriction here is precisely the coordinate dual of t_N. No inverse

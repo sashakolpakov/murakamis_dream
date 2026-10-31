@@ -1,14 +1,6 @@
 # Direct signed circle fans and the untwisted relative fundamental chain
 
-Unpublished workspace research theorem, 31 October 2026. Conditional on the
-original source and group-sewing hypotheses below. Root and coherent
-completed internal analytical reviews and separate fresh exact replays.
-This is not external peer review. The local identity below uses actual
-white and shaded contact polygons, not the incorrectly complete-colored
-20-symbol word. The corrected mixed-color word is an independent local
-calculation. The global conclusion is conditional on the explicitly stated
-original group-sewing data; it does not establish those data at every
-maximum of the sharp absolute coefficient entropy.
+The source-to-group sewing is conditional on the stated hypotheses. Contact polygons do not supply the incorrectly inferred complete-color symbol, and the construction is not established at every sharp maximum.
 
 ## 1. Critical local chart and actual contact coordinates
 
@@ -34,7 +26,7 @@ sqrt(D)/x and sqrt(D)/y. Z_q is the middle-circle center and its
 geometric radius is sqrt(D)/|q|. O is the selected lower intersection
 of the outer circles, the actual P:J flag, where J=-exp(-2pi i delta).
 The two p's are the MAIN tangent contacts. The normalization is a
-Euclidean similarity fixing the ORIGINAL cone apex infinity. There is
+Euclidean similarity fixing the original cone apex infinity. There is
 no resetting of an independent Gauss reference flag.
 
 Define the four literal fan shapes
@@ -59,7 +51,7 @@ The source force angles and their Legendre normalization are retained:
 Here G is the actual sharp real action, including the outside-row
 products; the retained scalar modes are pure imaginary on this real
 chart. The definition and absolute normalization of Q,J,G are those
-of the reviewed signed-straddling generating relation.
+of the signed-straddling generating relation.
 
 **Local theorem.** On this connected physical critical chart,
 
@@ -87,7 +79,7 @@ infinity has volume D_BW((O-p_x)/(p_y-p_x)); thus the shaded face
 contributes -2D_BW(z_q) to twice the ball volume. This proves (2)
 directly from the actual boundary orientation.
 
-The output triangle has the opposite ORIGINAL white-triangle order.
+The output triangle has the opposite original white-triangle order.
 Its displayed contact coordinates may lie on the same side as the
 input after folding, but its combinatorial order is not changed.
 Its contribution is therefore -V(-c,-T). The two abstract cut balls
@@ -181,7 +173,7 @@ connectedness, and (7) prove the absolute identity (4).
 ## 4. Literal marked-line limits
 
 The local assertion includes the nondegenerate single-line limits
-by the same contact formulas, in the ORIGINAL apex frame. Here are
+by the same contact formulas, in the original apex frame. Here are
 their explicit limits, with y=1 by the same harmless similarity.
 
 When b->0 with x>0, put T_0=sqrt(x) and
@@ -370,20 +362,11 @@ and its [saved result](../experiments/research_critical_circle_fan_fundamental_c
 check four generic contact-coordinate identities, the eight actual
 fan shapes and 49-position differential tensor, eight real endpoint
 values and sixteen separately nonzero uncancelled leading anchor
-factors. The author replay passed. The verifier imports only rational
-factor/differential utilities from the quarantined formal-word audit;
-no complete-color mixed-symbol claim is imported. Root and coherent
-completed full conditional analytical/code reviews and separate fresh
-redirected replays, reproducing all counts. The saved result is the
-author result; both independent results agree on all counts and exact
-identities. The portable workspace verifier was compared by Python AST
-to the replayed stable private verifier after exactly two documented
-changes: its helper import is relative to its own file, and its default
-result path is beside that file. No separate portable runtime is claimed.
+factors. The verifier imports only rational factor and differential utilities from the formal-word audit; no complete-color mixed-symbol claim is imported.
 
 The global chain uses the original combinatorics of
 [matching geometry](general_augmented_plat_matching_geometry.md), the
-reviewed abstract-chain construction in the
+abstract-chain construction in the
 [endpoint signed cut-ball proof](actual_fejer_signed_cut_ball_regulator.md),
 and the canonical normalization and uniform conclusion of the
 [fixed peripheral-word volume gap](general_representation_volume_peripheral_gap.md).
@@ -412,7 +395,7 @@ being asserted to cover the missing global remainder.
 The [shared-stationarity reduction](research_regular_shared_spectral_stationary_reduction.md)
 also checks the following extension for general stationary data.
 Some one-sided ports may have delta=0 while another is strict
-positive-spectral Green. Retain their ORIGINAL endpoint signed
+positive-spectral Green. Retain their original endpoint signed
 triangle fans from the tangent cut-ball theorem; do not replace
 their parabolic collars by identity.
 
@@ -436,8 +419,7 @@ spectral Green port still supplies the uniform trace-zero gap.
 If all spectral parameters are0, the existing endpoint noncross
 entropy gap applies separately; no trace-zero conclusion is made.
 
-Root and coherent independently reviewed this explicit endpoint
-adapter and its mixed-chain implication. For MAXIMA of the sharp
+For MAXIMA of the sharp
 interval functional, the new reduction gives more: a positive-
 length nonterminal one-sided delta=0 port can be improved at fixed
 face loads, so such mixed endpoint ports cannot occur on that

@@ -149,4 +149,4 @@ strict local regime required by the proposed odd-half-twist packet.
 It does not itself identify that packet with the pure source or
 prove survival of its summed complex amplitude.
 
-Primary-agent independent analytical review: PASS. The product identities were derived directly using D=(U+V)Z-UV+1; the seed inequalities, both X>=1 and X<1 preservation cases, closure inequalities, macro-only downward propagation, and separate C(A) endpoint were checked. No uniform margin over all expressions or odd-coupon source theorem is inferred.
+No uniform margin over all expressions or odd-coupon source theorem follows from this leaf-parameter bound.

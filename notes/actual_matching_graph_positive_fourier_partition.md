@@ -2,7 +2,7 @@
 
 30 October 2026. The exact shared-cycle
 compiler admits a fully positive coefficient comparison whose scalar
-weight is explicit in the ORIGINAL source normalization. Every
+weight is explicit in the original source normalization. Every
 matching label, integral Kirchhoff equation and physical-cycle Fourier
 congruence is retained. This is an upper bound for the original
 complete-circle source, not a volume equality or a noncancellation
@@ -200,12 +200,4 @@ of the constrained maximum with hyperbolic volume is asserted.
 
 Audit: [original endpoint norms and shared coefficient partition](../experiments/audit_actual_matching_graph_positive_fourier_partition.py).
 
-Independent review: the root agent and cluster/source agent checked
-the complete proof, including the generic Chevalley adapter, original
-white metric, scalar (5), all shared constraints, the single Cauchy
-inequality, and the exact pivotal/marked phase (11). A fresh cluster
-replay passed 4,922 original source entries, 279 endpoint/white/scalar
-identities, 2,491 Chevalley entries, and four full constrained
-coefficient partitions compared with the literal marked Morse source
-at 80-digit precision. These finite checks supply no noncancellation
-or volume assertion.
+The exact constrained coefficient partition does not establish noncancellation or a volume statement.

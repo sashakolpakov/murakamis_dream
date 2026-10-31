@@ -99,7 +99,7 @@ sources and multiplicities are included in the operator norm.
 
 ## 4. Exact finite-interval boundary observability
 
-Suppose u is the ORIGINAL response on J and satisfies (1)=f on all
+Suppose u is the original response on J and satisfies (1)=f on all
 rows whose stencil is inside J. Let J_in=[a+d,b-d]; retaining this
 slightly smaller row set works for both shift orientations. Zero
 extend u from J and call it u_J. Then exactly

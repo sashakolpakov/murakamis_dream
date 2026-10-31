@@ -208,6 +208,4 @@ pass 23 exact finite-field levels N=2,...,24. They check the
 actual Euler quotients, inverses, both UNREDUCED source equations,
 exact endpoints, nonzero polynomial carry and both cyclic norm
 factors. Nine complex diagnostics through N=4096 check the
-separately proved coefficient bounds. Another agent independently
-derived the coefficient phases, estimates and exact endpoint
-formula from its polynomial Ward equation.
+separately proved coefficient bounds.

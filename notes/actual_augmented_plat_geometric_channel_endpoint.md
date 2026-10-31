@@ -75,7 +75,7 @@ representation scheme. Thus (2) imposes c=-2 on this geometric
 classical pair character. It is not a relabeling of a Newton output
 coordinate as a knot meridian.
 
-The complete-circle source compiler uses the ORIGINAL folded nodes
+The complete-circle source compiler uses the original folded nodes
 
     c_j=2cos((2j+1)pi/N), 0<=j<=floor((N-1)/2).
 
@@ -134,9 +134,4 @@ The all-plat statement follows from the labeled disk/cusp argument
 and the already proved original quantum character identity, not from
 the finite-level examples in the audit.
 
-Two independent analytical reviews and fresh audit replays: PASS.
-They checked the actual based disk flags, the peripheral commutation
-and common-trace sign, the original ordered Casimir symbol, both
-level parities, and the distinction between the etale square-root
-cover and the ramified trace map. All 17 endpoint parity checks
-passed. These checks establish no quantum concentration or gap.
+The endpoint result distinguishes the étale square-root cover from the ramified trace map. It gives no quantum concentration or gap.

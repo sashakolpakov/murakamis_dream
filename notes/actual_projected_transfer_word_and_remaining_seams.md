@@ -17,7 +17,7 @@ of tame linear projections onto the intertwiner space.
 Use Rhat_sigma(z) of
 [the lower](actual_projected_transfer_cot_completion.md) and
 [upper](actual_projected_transfer_upper_collar.md) collar theorems. It
-acts on the ORIGINAL orthonormal two-head space H_N tensor H_N. Every
+acts on the original orthonormal two-head space H_N tensor H_N. Every
 physical input index remains an integer in 0,...,d, d=N-1. The full
 original Cartan factor kappa is included. Write D|a,b>=(a+b)|a,b> and
 
@@ -117,7 +117,7 @@ There is a stronger estimate than bounding the individual sinc entries.
 It controls the complete interval/interface aggregate, with no N-dependent
 conditioning. Embed the original finite head space isometrically in
 L^2([0,2pi],dtheta/(2pi)). If S is the head swap and D_r(z) is diagonal
-on the ORIGINAL finite input basis with entries r(a,b;z), then literally
+on the original finite input basis with entries r(a,b;z), then literally
 
     Rhat_+(z)=P_N^(tensor 2) M_z S D_r(z),
     (M_z f)(theta1,theta2)
@@ -209,7 +209,7 @@ r(0,0;1/2)=kappa x^(1/2)/Fhat(-1/2) is nonzero, and
 pointwise five-function density into the complete crossing Ward
 solution.
 
-This defect is visible to an ORIGINAL source. At N=2 use precisely
+This defect is visible to an original source. At N=2 use precisely
 the balanced cup and FULL marked row
 
     p_(a,b)=2 x^(a-1) delta_(a+b,1),

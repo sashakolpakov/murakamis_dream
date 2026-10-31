@@ -45,7 +45,7 @@ therefore specifies an actual tangle recursively, including its port
 order, orientation and all auxiliary circles. No scalar three-port
 Frobenius vertex is introduced at a branching node.
 
-Close a resulting box by the ORIGINAL one-cut closure phi: close one
+Close a resulting box by the original one-cut closure phi: close one
 main object by its original ordinary pivotal trace, and point the
 remaining physical component with m. In matrices this is
 
@@ -188,9 +188,4 @@ Finite exact-field identities supplement the ribbon compilation and
 positive-support proof. Principal-root sign conclusions use (4),(6),
 not signs of residues. No volume theorem is inferred from the audit.
 
-Independent internal analytical review by the Euler agent checked the
-typed turn and original one-cut phi, all-parity full-normal circle
-coefficients, 3M>=d support paths, product/turn induction, and the N=2
-exception. The source-only and four-punctured-seam qualifications were
-retained. The primary exact audit passes eleven physical levels and
-143 whole tree operators with all-input pivotal closures.
+The theorem is restricted to the stated source and four-punctured seam, including the N=2 exception. Its finite audit checks physical levels and whole tree operators with all-input pivotal closures.

@@ -178,7 +178,7 @@ that all nonground or current contributions are negligible.
 ## 5. What remains on the critical path
 
 We now have an exact polynomially conditioned signed transport with
-the ORIGINAL functional, without dropping peripheral or endpoint/current terms.
+the original functional, without dropping peripheral or endpoint/current terms.
 This answers a specified transport-norm question for this presentation.
 It does not identify a geometric quotient, prove that L_W^G is nonzero
 on the marked Bloch-regulator sector, or bound the total remainder by

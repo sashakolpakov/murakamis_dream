@@ -78,15 +78,15 @@ semilinear transport \(T_i(v)=A_i\sigma(v)\), source \(s_i\), and cut
 \(\ell_i\), for \(i=1,2\). Form the cyclic matrices
 
 \[
- V_i^{\rm cyc}=[s_i,T_i s_i,\ldots,T_i^{r-1}s_i].
+ V_i^{\mathrm{cyc}}=[s_i,T_i s_i,\ldots,T_i^{r-1}s_i].
 \]
 
 Assume their determinants are units on the marked lattice chart. Define
 
 \[
- C=V_2^{\rm cyc}(V_1^{\rm cyc})^{-1},\qquad
- a_i=(V_i^{\rm cyc})^{-1}T_i^r s_i,\qquad
- m_i=\ell_i V_i^{\rm cyc}.                         \tag{2}
+ C=V_2^{\mathrm{cyc}}(V_1^{\mathrm{cyc}})^{-1},\qquad
+ a_i=(V_i^{\mathrm{cyc}})^{-1}T_i^r s_i,\qquad
+ m_i=\ell_i V_i^{\mathrm{cyc}}.                         \tag{2}
 \]
 
 Then \(C\) and its inverse are regular on that chart, and
@@ -104,7 +104,7 @@ Indeed every such comparison must send each \(T_1^j s_1\) to
 the first \(r-1\) cyclic vectors. On the last vector it vanishes exactly
 when their last cyclic relations \(a_i\) agree. Equivalently,
 \[
- A_i\sigma(V_i^{\rm cyc})=V_i^{\rm cyc}\operatorname{Comp}(a_i);
+ A_i\sigma(V_i^{\mathrm{cyc}})=V_i^{\mathrm{cyc}}\operatorname{Comp}(a_i);
 \]
 substituting (2) proves the transport identity. The cut identity is
 exactly equality of the two rows \(m_i\).
@@ -280,7 +280,7 @@ This is a fixed Heisenberg times additive-logarithm torsor, before
 level restriction. With \(x=\xi+2\mu\),
 \[
  W=H+2\mu\ell-x^2/2,\qquad
- \theta_{\rm Gauss}-\theta_{\rm source}
+ \theta_{\mathrm{Gauss}}-\theta_{\mathrm{source}}
      =dW+(x-2\ell)d\mu .
 \]
 Both the sign and the peripheral correction follow by direct

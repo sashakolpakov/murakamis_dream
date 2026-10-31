@@ -1,7 +1,7 @@
 # A source-exact bulk Agmon energy for the actual pointed quantum-A system
 
 28 October 2026. The actual bounded-jet pointed system admits a positive
-weighted energy with its ORIGINAL boundary source. On any compact arc
+weighted energy with its original boundary source. On any compact arc
 whose weighted classical symbol has a fixed gap from zero, a direct
 localized Plancherel argument bounds the interior energy by that source
 and explicit boundary packets. No eigenvector diagonalization, global
@@ -118,7 +118,7 @@ the displayed difference bound. Since sum_l ||chi_l L_phi u||^2
 This is (8). The proof handles block coefficients, repeated roots
 away from the weighted circle, and nonnormal actual transfers.
 
-## 3. Apply it to the ORIGINAL response, keeping boundary currents
+## 3. Apply it to the original response, keeping boundary currents
 
 Let chi be a smooth cutoff supported in I and equal to one on a
 smaller interval I'. Let B_chi contain all its transition colors and

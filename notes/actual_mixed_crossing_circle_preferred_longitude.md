@@ -8,7 +8,7 @@ source coordinate L_H=(H-X)/(1-HX) gives
     preferred SL2 longitude lambda=-L_H^(-1),
     centered longitude ell=-lambda=L_H^(-1).              (0)
 
-The minus is forced by the ORIGINAL ordinary auxiliary pivot. It
+The minus is forced by the original ordinary auxiliary pivot. It
 is not a choice of a different geometric component. This note proves
 the mixed local transport/framing certificate and records the exact
 central character. A geometric representation lift and regulator

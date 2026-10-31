@@ -39,14 +39,14 @@ pivot, with no extra factor 1/j,
 
 \[
  L_j=(-1)^{j-1}U_{j-1}(z/2),\quad 1\le j\le N,
- \qquad h_j=R_{\rm turn}L_j.                                 \tag{2}
+ \qquad h_j=R_{\mathrm{turn}}L_j.                                 \tag{2}
 \]
 
 The [actual turn and marked closure](actual_positive_newton_multiplication.md)
 satisfy
 
 \[
- R_{\rm turn}\widehat B_r=\widehat B_{D-r},\qquad
+ R_{\mathrm{turn}}\widehat B_r=\widehat B_{D-r},\qquad
  \phi(\widehat B_i\widehat B_j)=\delta_{i+j,D},\qquad
  \phi(L_Nf)=N\sum_{k=0}^{D}f(c_k).                           \tag{3}
 \]
@@ -54,7 +54,7 @@ satisfy
 The sum counts each of the N listed roots, including repetitions.
 These equations hold in the repeated-root algebra (1), not just its
 quotient consisting of values at the distinct nodes. In particular
-the \(\widehat B_v\) coefficient of \(R_{\rm turn}f\) is
+the \(\widehat B_v\) coefficient of \(R_{\mathrm{turn}}f\) is
 \(\phi(f\widehat B_v)\).
 
 ## 2. A generic Chebyshev--Newton identity
@@ -341,7 +341,7 @@ coefficient \(b_{j,j-1}=s_{j-1}^2\), so
 
 \[
  h_1,\ldots,h_{\lfloor N/2\rfloor}
-       \quad\hbox{are a basis of }\mathfrak n_N.             \tag{21}
+       \quad\text{are a basis of }\mathfrak n_N.             \tag{21}
 \]
 
 Thus the signed alias is exactly part of the source's radical data.
@@ -372,12 +372,3 @@ steps needed before invoking a long-filling transfer theorem.
 Audit: [generic polynomial identities, all root coefficients and literal physical turns](../experiments/audit_actual_pure_conway_auxiliary_color_leaf.py).
 The principal-root inequalities are proved above; finite-field
 calculations are used only to verify exact identities.
-
-Independent internal analytical review by the coherent-current agent
-checked the generic generating-series identity, full-algebra
-Chebyshev split, finite Fourier coefficients, exact N/2 bound,
-marked complex prefactor and nilradical basis. A fresh replay passed
-36 generic identities, 2,079 full root polynomials, 54 actual turns,
-14 literal mixed crossing loops, 143,450 alias inequalities and
-146,299 core-domination inequalities. The root agent also completed
-an independent analytical review of the local proof.

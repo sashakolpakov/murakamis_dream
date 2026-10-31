@@ -3,14 +3,12 @@
 29 October 2026. The positive original circuit
 \[
  E_N=\phi\!\left(\mathscr R(RL_N)\,R^{-1}L_N\right)
-       =\|\,\mathscr R(R^{-1}L_N)\,\|_{\rm Newt}^{\,2}       \tag{1}
+       =\|\,\mathscr R(R^{-1}L_N)\,\|_{\mathrm{Newt}}^{\,2}       \tag{1}
 \]
 has a genuine four-component hyperbolic interpretation. The labeled
 cut-and-reglue certificate below gives two regular ideal octahedra,
 volume \(2v_8\). This is a complete-base calibration, not yet a new
-broad family of filled knots. The literal cut/face matching and the
-exact metric certificate have now passed independent analytical
-review and a fresh audit replay; software recognition is not their proof.
+broad family of filled knots.
 
 ## 1. Exact source diagram and cut-open port table
 
@@ -143,10 +141,10 @@ its recorded unit phase; the optional one-cut modified convention
 adds \(1/N\), not one factor per component. Therefore
 \[
  \lim_{N\to\infty}\frac{2\pi}{N}
-       \log|\langle L_{\rm ref}\rangle_N|
-           =2v_8=\operatorname{Vol}(S^3\setminus L_{\rm ref}). \tag{3}
+       \log|\langle L_{\mathrm{ref}}\rangle_N|
+           =2v_8=\operatorname{Vol}(S^3\setminus L_{\mathrm{ref}}). \tag{3}
 \]
-Here \(L_{\rm ref}\) is the explicit diagram (2), not a census name.
+Here \(L_{\mathrm{ref}}\) is the explicit diagram (2), not a census name.
 
 There is an exact reusable non-scalar tangle gluing:
 \[
@@ -190,9 +188,4 @@ Software census names and numerical volumes, when requested in the
 audit, are diagnostics only; the written proof is the reversible
 disk/projection cut and the exact metric checks above.
 
-Independent analytical review rechecked the actual auxiliary disk,
-the quarter-turned four-port partitions, all shaded/white face maps,
-the inverse collar reconstruction, exact horosphere preservation,
-and the complete cusp links. The focused exact audit was separately
-replayed with its optional literal-diagram cross-check. Both passed;
-no general graph/filling scope is inferred from this base certificate.
+This base certificate does not establish a general graph or filling theorem.

@@ -1,6 +1,6 @@
 # The original crossing torus transports the actual meridians
 
-31 October 2026. Independently reviewed and frozen. The full physical
+31 October 2026. The full physical
 phase of the [original crossing torus](actual_crossing_casimir_torus.md)
 induces the actual signed Hurwitz transport, including its common
 magnetic scale. Full regular critical points of the layered direct-power
@@ -52,7 +52,7 @@ gamma derivative exactly at this order. Differentiation gives
     Theta_t=2pi i(K+I+T-1)=-2pi i L,
     Theta_gamma=K+I+T+L-1=0.                        (0c)
 
-For the ORIGINAL kernel convention, input raising-shift symbols
+For the original kernel convention, input raising-shift symbols
 differentiate positively and output symbols negatively. Restoring a
 nonzero common input scale g gives
 
@@ -111,7 +111,7 @@ Then the ordered physical meridians are
     A=G1, B=Lminus1^-1 G2 Lminus1, P=B A.              (3)
 
 They have determinant one and trace minus two. Direct multiplication
-gives P11=y/x and Tr(P)=sigma; this is the ORIGINAL ordered pair
+gives P11=y/x and Tr(P)=sigma; this is the original ordered pair
 Casimir, not just an abstract first integral. These formulas are on
 the same Gauss units as the original compiler; any additional scale
 or total-F denominator needed below is explicitly localized.
@@ -194,7 +194,7 @@ imposed; none of these identities assigns a coefficient to that branch.
 
 ## Full regular direct-power critical points and the filled group
 
-Fix the ORIGINAL flat-plat index word and integer exponents
+Fix the original flat-plat index word and integer exponents
 n_e=epsilon_e-2p_e. Expand each nonzero power into |n_e| literal signed
 crossings, preserving the original cups, caps and unrestricted marked
 cap. This is the same finite source by the
@@ -288,8 +288,7 @@ the regular representation correspondence does not bound or select them.
 Identifying the actual original cycle and obtaining the required global
 phase-preserving estimate remain the substantive missing steps.
 
-
-## Verification and review
+## Verification and scope
 
 [The focused audit](../experiments/audit_actual_crossing_torus_meridian_transport.py)
 checks the four full physical-phase derivatives, both signed input/output
@@ -302,8 +301,4 @@ selection or an asymptotic. The global assembly uses the separately proved
 primitive incidence and literal Morse presentation, rather than a finite
 collection of diagrams.
 
-Root full analytical/audit-code review and fresh independent replay PASS.
-Independent full analytical/code review and fresh redirected replay PASS,
-including the corrected coefficient-to-physical inverse, all common-scale
-derivatives and the forward localized full-critical morphism. Neither
-review infers a converse, a boundary extension, or a contributing period.
+The morphism is forward and localized to the full-critical locus. No converse, boundary extension or contributing period is inferred.

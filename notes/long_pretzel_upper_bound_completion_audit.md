@@ -65,14 +65,9 @@ fixes the absolute additive constant.
 
 ## Verification
 
-The source and geometric arguments received independent analytical
-reviews. Fresh primary-agent runs of the four analytic supporting
-audits passed; their exact scope is recorded in section4 of the
-whole-source theorem. Controlled analytic Gaussian packets in those
-scripts calibrate signs and densities; they are not substituted for
-proofs of the actual-source uniform estimates.
+The supporting finite audits calibrate signs and densities using analytic Gaussian packets. They are not substituted for the uniform estimates for the actual source; section 4 of the whole-source theorem states their scope.
 
-Fresh final primary-agent replays also passed:
+The finite checks are:
 
 - `audit_actual_pretzel_port_lift_and_geometric_anchor.py`: exact port
   matrices, six reverse-cap families, seven complete white and both
@@ -81,11 +76,7 @@ Fresh final primary-agent replays also passed:
   noncommuting tensor families, six full-cap families and six complete
   holomorphic generator/peripheral families.
 
-Independent final reviewers checked the preferred-longitude and local
-character-lift audits as well as the signed unequal-slope quantifiers,
-the PSL descent, absolute regulator and finite filling-chain argument.
-Finite experiments verify identities and conventions; the linked
-analytic arguments supply the asymptotic theorem.
+Finite experiments verify identities and conventions; the linked analytic arguments supply the asymptotic theorem.
 
 ## What remains beyond this milestone
 

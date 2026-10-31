@@ -2,7 +2,7 @@
 
 The [whole-source local packet](general_full_spectral_numerator_geometric_packet.md) now assembles these results for the actual full numerator. The original global spectral filling period remains open.
 
-31 October 2026. Internally reviewed. This concerns the actual
+31 October 2026. . This concerns the actual
 fixed-root lower cofactor with b=0. It is not a whole-source saddle,
 filling-cycle or genuine-q theorem. All products below stay at level N.
 
@@ -151,6 +151,6 @@ No claim is made here for an independently summed positive starting
 row b>0, the original shared face torus, or the original Gaussian
 filling period. Those require additional arguments.
 
-Root and two independent reviewers checked the complete normal-form proof. The finite diagnostic below compares the actual recurrence and explicit product at 40 positive/complex parameter and level choices; it does not establish the uniform theorem by itself.
+The finite diagnostic below compares the actual recurrence and explicit product at 40 positive/complex parameter and level choices; it does not establish the uniform theorem by itself.
 
 [Focused audit](../experiments/audit_actual_cross_cofactor_protected_packet.py) · [Recorded output](../experiments/actual_cross_cofactor_protected_packet_results.json). These finite checks supplement the written proof and retain the scope recorded in their output.

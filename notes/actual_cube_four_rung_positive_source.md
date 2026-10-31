@@ -295,10 +295,4 @@ nilpotents and the full half-degree turn are checked as operators.
 The complex positivity and global support follow from the analytical
 proof above, not a sign or nonvanishing interpretation in a finite field.
 
-Independent internal review: the crossing-period agent read the full
-analytical proof and replayed all five levels, 369 untwisted original
-sources and five signed cases: PASS. The review checked the generic
-physical-U clocks, regular paired rung maps, canonical/physical cup
-normalizations, complete phase cancellation, support, monotonicity and
-whole four-color gap. This is an internal proof audit, not external
-peer review or a full cube invariant equality.
+The four-rung source result is not an equality for the full cube invariant.

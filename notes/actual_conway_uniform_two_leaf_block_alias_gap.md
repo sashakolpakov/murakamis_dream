@@ -1,6 +1,6 @@
 # A uniform alias gap for an entire two-leaf Conway block
 
-31 October 2026. This internally reviewed proof treats two leaves and
+31 October 2026. This proof treats two leaves and
 their original multiplication gate together. It holds on the entire
 proper-seed range and removes the earlier individual-leaf condition
 \(X\ge2/3\). Its finite certificate uses exact rational inequalities
@@ -252,7 +252,7 @@ in the exponent, and fixed trees have polynomially many wire states.
 
 The all-core concave majorant and original far-color core estimate
 then give the complete physical-color complement gap. The previously
-reviewed primitive lattice, complex packet and marked geometry for
+primitive lattice, complex packet and marked geometry for
 this entire grammar are unchanged. Consequently the original filling
 transfer gives the hyperbolic knot complement volume after all
 auxiliary fillings and a loop-free knot parity choice, without the
@@ -265,12 +265,7 @@ represent every arborescent template.
 
 ## Verification and scope
 
-The primary agent derived the certificate and read the exact source
-application. Two independent agents fully reviewed the mathematics and
-verifier and reproduced every rational lower bound. A third reviewed
-the written proof and geometric application. These are internal
-research reviews, not external peer review. The exact verification
-is reproducible with the standard Python library:
+The exact verification is reproducible with the standard Python library:
 
 ```sh
 python experiments/verify_conway_two_leaf_block_alias_certificate.py

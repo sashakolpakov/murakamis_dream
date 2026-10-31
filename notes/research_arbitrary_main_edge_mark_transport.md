@@ -1,6 +1,6 @@
 # Every original MAIN edge gives the same full marked coefficient
 
-31 October 2026. Internally reviewed, unpublished finite source theorem.
+31 October 2026. , unpublished finite source theorem.
 This extends the existing top-cap statement by an actual spherical
 rerouting and a general Morse compiler. It does not insert a newly reset
 mark into an internal head of the old presentation. No source sector or
@@ -15,7 +15,7 @@ N>=3, d=N-1, q_N=exp(pi i/N). Each original box carries its full matrix
 
 in the original order, with the full Cartan/crossing scalar. The f_e
 are arbitrary finite polynomials; their coefficients may depend on N
-and on additional spectral parameters. Let H_e be their ORIGINAL
+and on additional spectral parameters. Let H_e be their original
 homogeneous face polynomials, of degree d. Treat the crossing as its
 actual root polynomial only when forming H_e; its auxiliary generic
 lift below uses the actual finite universal crossing.
@@ -304,7 +304,7 @@ Multiplying (7),(9), the ordinary face character is therefore
     product_f L_f^((d/2)(T_f-M_f))
       =L_a^d product_(f!=a)L_f^(-d).                (11)
 
-At the exposed marked cap the ORIGINAL second head gives
+At the exposed marked cap the original second head gives
 
     mark/cap=N^(-1)(L_b/L_a)^d.                    (12)
 
@@ -416,12 +416,6 @@ and [primitive integral face-potential lattice](actual_original_boundary_transve
 The full fixed-coupon sphere rerouting is written in section 4; it does
 not require an unrecorded planar-frame transformation.
 
-Root and geometry independently read the complete analytical/source
-proof and audit code, reporting PASS. Geometry independently supplied
-and checked the fixed-coupon topology construction as well. Both peers
-freshly replayed the final exact audit with separate output paths. Their
-outputs agree exactly with the author output and the portable replay.
-These are internal reviews, not external peer review.
 
 The [focused audit](../experiments/research_audit_arbitrary_main_edge_mark_transport.py)
 and its [results](../experiments/research_arbitrary_main_edge_mark_transport_results.json)

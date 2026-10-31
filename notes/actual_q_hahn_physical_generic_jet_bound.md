@@ -181,7 +181,7 @@ The derivative holds N,t,u fixed, as the original compiler does.
 
 ## 4. The completed divided pair also has fixed generic jets
 
-Suppose j<l, j+l=d and l<=t. Put s=l-j and define the ORIGINAL
+Suppose j<l, j+l=d and l<=t. Put s=l-j and define the original
 generic divided pair
 
     W_(j,l)(q;t,u)=
@@ -247,10 +247,4 @@ It retains 4,816 column and 1,134 pair coefficients; 323 tested second
 pair jets are nonzero. Those checks verify source and normal conventions,
 while the prefix perturbation proof supplies the uniform bounds.
 
-Two independent analytical reviews passed the genuine generic matrix,
-the all-t prefix coercivity, exact backward endpoint normalization,
-polynomial disk and offdiagonal estimates, and the original removable
-gap with its retained generic derivatives. One reviewer independently
-replayed the focused audit and reproduced all reported counts. The
-reviews preserve the integer physical domain and do not infer a
-completed four-port norm or a fixed complex magnetic neighborhood.
+The theorem retains the integer physical domain. It gives neither a completed four-port norm nor a fixed complex magnetic neighborhood.

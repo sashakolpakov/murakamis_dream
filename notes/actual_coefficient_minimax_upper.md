@@ -51,7 +51,7 @@ component around 0 and one around infinity, of degrees q and p.
 
 The finite boundary Gamma_R of the component around 0 is a smooth
 closed level curve |f|=R. It winds once around 0, and so represents
-the ORIGINAL positive generator in (1). This proves
+the original positive generator in (1). This proves
 
     |I| <= R/(2*pi) integral_(Gamma_R)|dz/z|.       (3)
 

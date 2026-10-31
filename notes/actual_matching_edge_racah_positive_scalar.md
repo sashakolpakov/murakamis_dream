@@ -226,17 +226,4 @@ but DIFFERENT generic first derivatives. The audit retains that distinction;
 its finite cases test conventions, while the written harmonic-product
 argument proves the uniform jet bound.
 
-Independent source-transport review and fresh audit replay: PASS. The
-reviewer independently specialized the actual boundary prefactors,
-including the pure-phase highest endpoint, and checked every root-unit
-and zero interval. The positive squared formula, half-integral physical
-spin phase, face roots, full generic sector argument, disjoint coefficient
-and target-cup poles, and Taylor-order-two budget all passed. The fresh
-replay reproduced all reported exact counts, including the unequal
-partner derivatives.
-
-Root analytical review: PASS. The review separately checked a=0,
-the actual scalar gauge convention, full generic fixed-jet bounds,
-all boundary product units, and coefficient extraction with a regular
-surrounding contraction. Neither review infers a native matrix norm
-or a whole-source estimate from the face metric's root values.
+The positive scalar Racah model does not supply a norm for the native matrix source or control a whole source from root-face values.

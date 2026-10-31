@@ -6,7 +6,7 @@ binomial coherent source. Its Kummer-cover trace, norm and first
 quantum-normal flag transport are explicit. This supplies a source
 object before taking jets, with every power and phase retained.
 
-This is a choice of whole coupons in the ORIGINAL integral color.
+This is a choice of whole coupons in the original integral color.
 An explicit root-identity pair gauge compares it with the previously
 specified divided-exponential coupons. Operators and all partial
 sources must be transported by that gauge. No equality with a new
@@ -53,7 +53,7 @@ the ket is the homogeneous polynomial
  B_s(q;c,d)=\sum_k A_{k,s}(q)c^{N-k}d^k,
        \quad B_s(q;1,t)=P_s(q,t).                 \tag{3}
 \]
-Normalize by this ORIGINAL pairing unit on its marked chart.
+Normalize by this original pairing unit on its marked chart.
 At c=d=1 the normalized dual has coefficients A_k/P_s(q,1).
 The root value P_s(q_N,1)=2^N is retained, not set to one before
 normalization. Scaling the ket by alpha^N and the dual inversely

@@ -10,7 +10,7 @@ so it does not automatically see the smaller filled volume.
 
 ## 1. Complete data and the positive metric
 
-Use the ORIGINAL kernel and conventions of
+Use the original kernel and conventions of
 [the Fourier--Hermite theorem](actual_twist_circle_fourier_kernel.md).
 For an integer crossing power ell let h_k=nu_k^ell,
 d_k=-ell(d-2k)h_k/2, w_k=q^(2k+1), d=N-1. Put
@@ -40,7 +40,7 @@ alias inverse a=K y is
  \begin{pmatrix}a_n\\a_m\end{pmatrix}
  =\frac1{\sqrt2}\begin{pmatrix}1-r&1\\-r&1\end{pmatrix}
               \begin{pmatrix}y_{n,H}\\y_{n,D}\end{pmatrix},
- \qquad a_{N/2}=y_{\rm mid}.                              \tag{1}
+ \qquad a_{N/2}=y_{\mathrm{mid}}.                              \tag{1}
 \]
 
 Define the real difference matrix S by
@@ -215,7 +215,7 @@ exact scalar identity and do not change this norm. The unframed
 p=0 filled knot is still J. By (9),
 
 \[
- E_N^{\rm inserted}(J)\geq\frac34|K_N(J)|^2 Z_N^2.           \tag{11}
+ E_N^{\mathrm{inserted}}(J)\geq\frac34|K_N(J)|^2 Z_N^2.           \tag{11}
 \]
 
 For the independently proved benchmark J=4_1, K_N(J)=Z_N, so this
@@ -236,6 +236,6 @@ costs, all-input operator inequality, original mixed-color scalar
 tangles, and the two actual source fillings (8). No geometric energy
 bound is inferred from interpolation or from coefficient mass.
 
-Fresh replay: PASS seven complete positive Grams with49 signed
+The finite audit checks seven complete positive Grams with49 signed
 dual-source costs; five literal all-input mixed-circle packets
 N=2,...,6; six complete original two-filling energy discriminants.

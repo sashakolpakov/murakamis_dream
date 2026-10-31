@@ -356,7 +356,7 @@ slopes sufficiently long for that fixed datum, then all N tending to infinity.
 It must not assert that every A_2 diagram passes the extra condition. The
 explicit example in §5 shows why such an assertion would be unsupported.
 
-## Inputs and review scope
+## Inputs
 
 Existing workspace inputs are [original physical Conway source](actual_positive_complete_circle_conway_trees.md),
 [whole-source variational limit](actual_positive_conway_variational_limit.md), [original complete geometry](actual_positive_conway_hyperbolic_volume.md),
@@ -364,17 +364,4 @@ Existing workspace inputs are [original physical Conway source](actual_positive_
 [original half-twist Newton transport](actual_odd_conway_newton_transport.md), [whole mixed-source gap](actual_odd_conway_uniform_mixed_source_gap.md),
 and [literal half-twist partner geometry](actual_conway_half_twist_partner_geometry.md). The new steps are the A_2
 strict seed, explicit every-level interior rounding, source-interface audit,
-and exact C(A_2 T(A_4)) tangent failure. No existing theorem file is changed.
-Author proof complete. The coherent-source reviewer independently fully
-read sections 1–6: PASS, including strict every-level rounding, primitive
-lattice, original finite changed coefficients, integer offset amplitude,
-nonzero packet and the conditional whole-source restoration. The geometric
-reader independently fully read sections 1–6: PASS, including the exact
-stationary example, primitive lattice, changed packet and signed primitive
-filling interface. The primary agent independently fully read sections 1–6: PASS as an
-extension conditional on the retained original coefficient, packet and
-marked-geometry theorems and, for the mixed-source transfer, $\min_l I(a_l)>0$.
-That review checked strict rounding, primitive lattice dimension, powers of
-$N$, actual ports, the tangent counterexample and the transfer interfaces.
-These are internal reviews, not external peer review. No runtime test is
-used to infer the extension.
+and exact C(A_2 T(A_4)) tangent failure. The mixed-source transfer also requires $\min_l I(a_l)>0$.

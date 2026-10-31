@@ -1,11 +1,6 @@
 # An exact cap/CROSS convolution with the original MAIN-face demand
 
-31 October 2026. **Unpublished research reduction.** The finite source
-identities and the scoped obstruction below received a full independent
-analytical reviews by the root and cluster agents. The proposed polynomial comparison
-in (8) is **open**. The numerical probe is separate and is not evidence
-for a general inequality. No source-volume or knot-volume bound is claimed. This reduction is for
-even levels only; its formulas below retain that original scope.
+The proposed inequality (8) remains open. This note keeps the even-level, original-demand convolution; an unconstrained positive envelope is a different problem.
 
 **Later status, 31 October 2026.** The
 [all-demand contraction theorem](research_cap_cross_all_demand_subexponential_contraction.md)
@@ -222,11 +217,4 @@ is not part of this note's supporting evidence. No rate, universal
 polynomial comparison, or theorem for the remaining skeletons is
 inferred from those values.
 
-The root reviewed the exact reduction (1)–(7), original MAIN typing,
-raw sign, cap reflection and the scoped obstruction (9) in full, and
-separately checked both extreme-coefficient comparisons in §3. Cluster
-independently read the complete finite reduction, original source
-incidence and scoped obstruction, also PASS. These are internal reviews.
-The open inequality is retained explicitly so the next analytical step
-starts with the original finite sum rather than an unconstrained
-local envelope.
+Any proof of (8) must control the original finite constrained sum, not replace it by an unconstrained envelope.

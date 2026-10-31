@@ -1,13 +1,13 @@
 # The one-cap exterior has an original group representation, with a positive pyramid deficit
 
-31 October 2026. **Internally reviewed analytical research theorem.**
+31 October 2026. **analytical research theorem.**
 Unpublished. Hypotheses are the
-strict ONE-cap stationary configuration of the reviewed geometric-double
+strict ONE-cap stationary configuration of the geometric-double
 theorem: the original simple matched sphere has protected MAIN edge uv,
 F=(u,A,v,C), all other original ports CROSS, all ordinary incidences
 positive and finite common weights. The cap split is 1/4<nu<1/2.
 
-This constructs a representation of the ORIGINAL UNTWISTED drilled
+This constructs a representation of the original UNTWISTED drilled
 group using the positive exterior packing. It is NOT the failed direct
 specialization of the signed sigma=+2 source chart. The latter's [raw central/noncentral obstruction](research_double_protected_cap_finite_collar_obstruction.md) is unchanged. The construction gives a
 quantified absolute budget, not the desired nonpositive cap deficit.
@@ -160,7 +160,7 @@ across paired faces. Degree one comes from the original positive
 polyhedron's abstract domain certificate, not from convexity or planarity
 of these newly developed polygons.
 
-The first-ball shaded cap pairing is \(\mathcal C\) with its ORIGINAL permutation
+The first-ball shaded cap pairing is \(\mathcal C\) with its original permutation
 
 \[
 (O,1,0)\longmapsto(O,\infty,-1).
@@ -170,7 +170,7 @@ The second-ball pairing is r_u \(\mathcal C\) r_u. It fixes the SAME O because
 r_u swaps the two fixed flags and \(\mathcal C\) fixes both. It sends the other
 two reflected contacts in the same recorded order. All other shaded
 pairings are unchanged. Consequently these assignments give the
-ORIGINAL degree-one relative fundamental chain, with the original
+original degree-one relative fundamental chain, with the original
 within-copy untwisted permutations and one common choice of all other
 flags. They are not the differently marked chain of the doubled link.
 
@@ -311,7 +311,7 @@ M_{\mathrm{cap}}-\Phi_D
 
 There is also a strict representation-theoretic improvement at any
 fixed configuration. The actual primitive auxiliary meridian has
-trace squared 4cos^2(psi)<4. The reviewed fixed-peripheral-word gap gives
+trace squared 4cos^2(psi)<4. The fixed-peripheral-word gap gives
 some g>0 for the fixed original exterior and meridian (uniform when nu
 ranges in a compact subset of (1/4,1/2) with those data fixed), with
 
@@ -351,12 +351,6 @@ cap. The canonical ideal-chain volume equality for an axis cusp is
 The optional strict inequality (15) uses
 [the fixed-peripheral-word volume gap](general_representation_volume_peripheral_gap.md).
 
-The parent and a separate agent completed full independent internal
-analytical/source reviews, including the ordered collar, the exceptional
-same-flag decoration, the original white and shaded pairings, the
-explicit relative-chain boundary and its subtraction sign, the canonical
-axis-cusp normalization, and the integral and strict peripheral gap.
-These are internal proof reviews, not external peer review. No numerical
-or source-period assertion is used. In particular the
+In particular the
 old finite-collar obstruction at the signed real spectral cap remains
 valid and is not overridden by this different positive exterior chart.

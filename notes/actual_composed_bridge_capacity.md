@@ -252,9 +252,4 @@ and geometric survival remain to be proved.
 checks the actual finite operator product, its exact row Gram,
 the unique angle optimizer and growing-level capacity bounds.
 
-Fresh audit: PASS four full original marked sources through ten heads,
-seven complete finite compositions including both signed physical
-crossing formulas, the optimizer equations, and five growing-level
-norm sandwiches. An independent analytic review checked the strict
-Hessian, boundary exclusion, remainder gap and lower bound. The
-finite support strip is accounted for explicitly in Section 3.
+The finite audit compares marked sources, signed crossing compositions, optimizer equations and norm sandwiches. The finite support strip is included explicitly in Section 3.

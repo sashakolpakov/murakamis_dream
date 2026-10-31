@@ -18,13 +18,7 @@ augmented volume V_s. The angle constraints must be those of the actual
 filled slopes. A maximum for the unfilled cusp problem would not prove
 the desired equality.
 
-The geometric completion inputs are the [positive-core construction](actual_long_pretzel_geometric_filling_completion.md),
-the [primitive angle certificate](actual_long_pretzel_primitive_filling_angle.md)
-and the [log-link/tube lemma](long_pretzel_equality_critical_audit.md).
-Their proofs and independent reviews now accompany this note;
-stationarity is not substituted for smooth end completion. The
-[completion audit](long_pretzel_volume_equality_completion_audit.md)
-records the full original-source equality and its exact scope.
+The geometric completion inputs are the [positive-core construction](actual_long_pretzel_geometric_filling_completion.md), the [primitive angle certificate](actual_long_pretzel_primitive_filling_angle.md) and the [log-link/tube lemma](long_pretzel_equality_critical_audit.md). Stationarity does not replace smooth end completion. The [completion argument](long_pretzel_volume_equality_completion_audit.md) gives the full source equality and its scope.
 
 ## 1. The essential established quantum inputs
 

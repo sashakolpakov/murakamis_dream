@@ -1,6 +1,6 @@
 # The original Green generating relation on a signed straddling chart
 
-Workspace research draft, 31 October 2026. Not approved for publication.
+Workspace research draft, 31 October 2026.
 This proves a LOCAL regular action and ordered-character identity,
 including the omitted-half scalar. It does not construct the global
 marked signed pattern or its relative regulator.
@@ -37,7 +37,7 @@ where Q_b is the calibrated pre-pole triangle action and
                        +integral_nu^(1/2) log Lambda dt.
 
 The equality follows from integral_0^(1/2)log|alpha|=0, after keeping
-the actual outside products; it is the reviewed LEFT identity.
+the actual outside products; it is the LEFT identity.
 
 ## 2. Exact analytic continuation to the signed clock
 
@@ -48,7 +48,7 @@ Use the physical output clock c_tilde=-c. Choose
     Log alpha=log|alpha|+pi i after t_c=1/2-delta.
 
 Before t_c its logarithm is real. The analytic stationary primitive
-of the ORIGINAL source triangle, continued with these logarithms,
+of the original source triangle, continued with these logarithms,
 is exactly
 
     Q_(c_tilde)
@@ -118,7 +118,7 @@ Set the exponentiated middle and outer forces to
 
 These are the exponential logarithmic derivatives of the same
 triangle primitive. At b use T=T_b; at c_tilde use T=-T_c^-.
-Equation (4), with the ORIGINAL physical adapter H/(b c_tilde)^(d/2),
+Equation (4), with the original physical adapter H/(b c_tilde)^(d/2),
 gives
 
     p_in=p(b), p_out=p(c_tilde),

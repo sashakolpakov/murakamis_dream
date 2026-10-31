@@ -50,7 +50,7 @@ For example the commutator f acts on the normalized symbol by
 Restriction to t=-1/u gives exactly the second line of (3).
 The other formulas follow the same way or by matrix units.
 
-For the ORIGINAL whole divided string gauge B_s of the head-Ward
+For the original whole divided string gauge B_s of the head-Ward
 map, use instead
 \[
           \mathfrak o_{N,s}(D)=\mathfrak o_N(B_s^{-1}DB_s). \tag{4}
@@ -117,9 +117,9 @@ The unit-fork calculation above is an independent proof audit.
 
 The uniform rank-one Fr cut and the selected coherent Fr cut give
 \[
- \Phi_{\rm uni}(E_{N,0})=\frac1{N+1},\qquad
+ \Phi_{\mathrm{uni}}(E_{N,0})=\frac1{N+1},\qquad
  \Phi_+(E_{N,0})=2^{-N},\qquad
- \Phi_{\rm uni}(f^N)=\frac{N!}{N+1}.                 \tag{7}
+ \Phi_{\mathrm{uni}}(f^N)=\frac{N!}{N+1}.                 \tag{7}
 \]
 These are literal matrix pairings in the actual divided basis.
 Under B_s the frozen uniform row acquires the retained whole
@@ -188,9 +188,9 @@ Split E=E_0+E_1 using its two terms, so
 on the indicated finite spectra,
 \[
  \begin{split}
- E(g(J_{\rm head})C)
+ E(g(J_{\mathrm{head}})C)
        &=g(J_N)E_0(C)+g(J_N-1)E_1(C),\\
- E(Cg(J_{\rm head}))
+ E(Cg(J_{\mathrm{head}}))
        &=E_0(C)g(J_N)+E_1(C)g(J_N-1).               \tag{11}
  \end{split}
 \]

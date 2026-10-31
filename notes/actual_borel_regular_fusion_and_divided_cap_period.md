@@ -95,7 +95,7 @@ physical heads and set u_t=e_0 tensor ones tensor e_t. Then
 
 \[
  A_\Phi\otimes R^{N^{b-2}}\longrightarrow V_1\otimes\cdots\otimes V_b,
-        \quad a\otimes t\longmapsto a u_t                 \tag{4}
+        \quad a\otimes t\longmapsto a u_{t}                 \tag{4}
 \]
 
 is again an isomorphism. The projector e_j selects the unique
@@ -290,7 +290,7 @@ positive balanced R gives
 \]
 
 Here (f e_0)^2=0 and the second term lies in the nilpotent radical.
-The ORIGINAL cap (9)-(10) satisfies
+The original cap (9)-(10) satisfies
 
 \[
                  \Lambda_{cap}(I)=0,\qquad

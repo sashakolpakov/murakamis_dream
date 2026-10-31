@@ -7,9 +7,11 @@
 <div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
 <aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
 <button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/manuscript.html" class="">The manuscript</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="active">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="">Search the archive</a></nav>
-<div class="sidebar-bottom">Research edition · 31 October 2026<br>General conjecture remains open.<a href="../sphinx/index.html">Sphinx documentation ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<div class="sidebar-bottom">Research edition · 31 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
 <main id="main" class="layout"><div class="eyebrow">Research guide</div><div class="reading-grid"><article class="content"><h1 id="notation-and-conventions">Notation and conventions</h1>
-<p>The technical notes were developed over time and sometimes reuse letters. This guide uses the conventions below; each linked proof remains authoritative for its own definitions.</p>
+<p>The guide uses the conventions below. Some older notes use the same letter for different objects, so their local definitions must be checked before formulas are combined. In particular, a tangle turn, a crossing matrix and a shift of the meridian variable are different operations.</p>
+<h2 id="the-invariant-and-the-order-of-limits">The invariant and the order of limits</h2>
+<p>Fix the knot diagram, its tangle expression and all integer twist weights first. Then let the quantum level <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> tend to infinity through all sufficiently large integers. A theorem with this order of limits does not give a threshold uniform over trees whose size grows with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>.</p>
 <table>
 <colgroup>
 <col style="width: 50%" />
@@ -18,66 +20,110 @@
 <thead>
 <tr>
 <th>Symbol</th>
-<th>Meaning in this guide</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math></td>
-<td>Quantum level; the diagram and filling slopes are fixed before <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>→</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">N\to\infty</annotation></semantics></math></td>
+<td>Quantum level, an integer at least two.</td>
 </tr>
 <tr>
-<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>π</mi><mi>i</mi><mi>/</mi><mi>N</mi></mrow></msup></mrow><annotation encoding="application/x-tex">q=e^{\pi i/N}</annotation></semantics></math></td>
-<td>Principal root used in the displayed symmetric quantum integers</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>N</mi></msub><mo>=</mo><msup><mi>e</mi><mrow><mi>π</mi><mi>i</mi><mi>/</mi><mi>N</mi></mrow></msup></mrow><annotation encoding="application/x-tex">q_N=e^{\pi i/N}</annotation></semantics></math></td>
+<td>The root of unity used for the original symmetric quantum integers.</td>
 </tr>
 <tr>
 <td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ζ</mi><annotation encoding="application/x-tex">\zeta</annotation></semantics></math></td>
-<td>Generic parameter before root specialization</td>
+<td>A generic quantum parameter when differentiating before root specialization.</td>
 </tr>
 <tr>
-<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>r</mi><msub><mo stretchy="false" form="postfix">]</mo><mi>ζ</mi></msub></mrow><annotation encoding="application/x-tex">[r]_\zeta</annotation></semantics></math></td>
-<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msup><mi>ζ</mi><mi>r</mi></msup><mo>−</mo><msup><mi>ζ</mi><mrow><mi>−</mi><mi>r</mi></mrow></msup><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mi>ζ</mi><mo>−</mo><msup><mi>ζ</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\zeta^r-\zeta^{-r})/(\zeta-\zeta^{-1})</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>r</mi><msub><mo stretchy="false" form="postfix">]</mo><mi>ζ</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msup><mi>ζ</mi><mi>r</mi></msup><mo>−</mo><msup><mi>ζ</mi><mrow><mi>−</mi><mi>r</mi></mrow></msup><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mi>ζ</mi><mo>−</mo><msup><mi>ζ</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">[r]_\zeta=(\zeta^r-\zeta^{-r})/(\zeta-\zeta^{-1})</annotation></semantics></math></td>
+<td>Symmetric quantum integer.</td>
 </tr>
 <tr>
 <td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d=N-1</annotation></semantics></math></td>
-<td>Top physical color index; some notes call it <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math></td>
+<td>Top basis index in the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>-dimensional physical color.</td>
 </tr>
 <tr>
-<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>j</mi><mi>e</mi></msub><annotation encoding="application/x-tex">j_e</annotation></semantics></math></td>
-<td>Integer spin in the folded scalar theorem</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>K</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">K_N(K)</annotation></semantics></math></td>
+<td>The original reduced Kashaev invariant of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>, with unknot value one in the stated convention.</td>
 </tr>
 <tr>
-<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi><mo>,</mo><mi>C</mi><mo>,</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">A,B,C,D</annotation></semantics></math></td>
-<td>Integer highest weights in the general four-port theorem; these can represent half-integral spins</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>n</mi><mi>i</mi></msub><annotation encoding="application/x-tex">n_i</annotation></semantics></math></td>
+<td>A fixed integer twist weight in the filled diagram. In a discussion of auxiliary colors the same letter may be used locally for a representation label; that local use is stated.</td>
 </tr>
 <tr>
-<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>,</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">E,G</annotation></semantics></math></td>
-<td>Intermediate highest weights for the two four-port pairings</td>
-</tr>
-<tr>
-<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mi>N</mi></msub><annotation encoding="application/x-tex">K_N</annotation></semantics></math></td>
-<td>The specified original reduced or marked invariant, with convention stated in its theorem</td>
-</tr>
-<tr>
-<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>W</mi><mi>N</mi></msub><annotation encoding="application/x-tex">W_N</annotation></semantics></math></td>
-<td>Positive face-normalized local Racah scalar; not the full knot invariant</td>
-</tr>
-<tr>
-<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Z</mi><mrow><mi>E</mi><mo>,</mo><mi>N</mi></mrow></msub><annotation encoding="application/x-tex">Z_{E,N}</annotation></semantics></math></td>
-<td>Whole positive source of the specified Conway expression <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>i</mi></msub><mo>=</mo><msub><mi>ϵ</mi><mi>i</mi></msub><mo>−</mo><mn>2</mn><msub><mi>p</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">n_i=\epsilon_i-2p_i</annotation></semantics></math></td>
+<td>Twist decomposition: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ϵ</mi><mi>i</mi></msub><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>±</mi><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\epsilon_i\in\{0,\pm1\}</annotation></semantics></math> is a retained half twist and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>p</mi><mi>i</mi></msub><annotation encoding="application/x-tex">p_i</annotation></semantics></math> is the signed integral filling parameter.</td>
 </tr>
 <tr>
 <td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mn>3</mn></msub><mo>,</mo><msub><mi>v</mi><mn>8</mn></msub></mrow><annotation encoding="application/x-tex">v_3,v_8</annotation></semantics></math></td>
-<td>Volumes of the regular ideal tetrahedron and regular ideal octahedron</td>
+<td>Volumes of a regular ideal tetrahedron and a regular ideal octahedron.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="three-distinctions-that-matter">Three distinctions that matter</h2>
-<p><strong>A generic normal versus a level asymptotic.</strong> A derivative in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ζ</mi><mo>=</mo><mi>q</mi><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\zeta=q\exp(t)</annotation></semantics></math> keeps <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> fixed and differentiates the genuine generic source. It is not the same operation as taking another term in a large-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> expansion.</p>
-<p><strong>A source normal versus a zero root value.</strong> A factor such as <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>2</mn><mi>N</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[2N]</annotation></semantics></math> vanishes at <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math> but has a nonzero derivative. Removing it before the prescribed normal is taken can change the invariant.</p>
-<p><strong>Complete versus filled volume.</strong> The augmented complement and a complement obtained by Dehn filling generally have different volumes. The filling theorem compares the deformed original source with the actual filled geometry, using its specified peripheral slopes.</p>
-<p>The longitude variable <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math> in an A-polynomial, a complete-circle operator called <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mi>N</mi></msub><annotation encoding="application/x-tex">L_N</annotation></semantics></math>, and a recoupling coefficient denoted <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mrow><mi>G</mi><mo>,</mo><mi>E</mi></mrow></msub><annotation encoding="application/x-tex">L_{G,E}</annotation></semantics></math> are distinct objects. Likewise, a genuine turn and an inverse recoupling matrix can both be called <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math> in older notes. Consult their typed definitions before combining formulas.</p>
+<p>The augmented exterior still contains the auxiliary crossing circles. Filling their cusps inserts the twists and produces the stated knot or link exterior. Its volume generally differs from the complete augmented volume. The main knot cusp is not filled.</p>
+<h2 id="finite-sums-colors-and-derivatives">Finite sums, colors and derivatives</h2>
+<p>A <strong>color</strong> is a representation label carried by a strand or auxiliary circle. An internal <strong>channel</strong> is a representation label introduced by a change of basis. These are integer labels in a finite sum; allowing a related scaled variable to become complex requires a specified interpolation.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Notation or term</th>
+<th>Meaning and purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Source</td>
+<td>The complete prescribed quantum expression: matrices, index sums, cups, caps, marked functional and scalar factors. “Full source” means the full quantum sum.</td>
+</tr>
+<tr>
+<td>Core</td>
+<td>A specified term in an exact color decomposition, usually the part carried by the complete-circle operator.</td>
+</tr>
+<tr>
+<td>Alias</td>
+<td>The complementary term in that same exact decomposition. Its smallness must be proved; the name does not make it negligible.</td>
+</tr>
+<tr>
+<td>Packet</td>
+<td>A local asymptotic formula with its action, nonzero prefactor and controlled remainder.</td>
+</tr>
+<tr>
+<td>Normal</td>
+<td>A derivative needed at a repeated spectral node or in a generic parameter. The differentiated variable is always part of the definition.</td>
+</tr>
+<tr>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Z</mi><mrow><mi>E</mi><mo>,</mo><mi>N</mi></mrow></msub><annotation encoding="application/x-tex">Z_{E,N}</annotation></semantics></math></td>
+<td>The positive complete quantum sum of the specified expression <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>, when that positive specialization is being discussed. It is not a name for every signed filled invariant.</td>
+</tr>
+<tr>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>W</mi><mi>N</mi></msub><annotation encoding="application/x-tex">W_N</annotation></semantics></math></td>
+<td>A positive normalized local Racah scalar in the calculation with four external representation factors, not the entire knot invariant.</td>
+</tr>
+</tbody>
+</table>
+<p>At fixed <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>, differentiating in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ζ</mi><mo>=</mo><msub><mi>q</mi><mi>N</mi></msub><msup><mi>e</mi><mi>t</mi></msup></mrow><annotation encoding="application/x-tex">\zeta=q_Ne^t</annotation></semantics></math> is different from taking another term in an expansion as <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>→</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">N\to\infty</annotation></semantics></math>. A zero root value can have a nonzero generic derivative. Similarly, values of a polynomial at repeated eigenvalues do not determine its first normal coefficients. Both distinctions are necessary for the original invariant.</p>
+<h2 id="tangles-and-geometric-variables">Tangles and geometric variables</h2>
+<p>A geometric gluing face is a quadrilateral with four ordered ideal vertices. Its vertex order determines the actual face identification. Some technical notes call this face a port; in algebraic formulas the same word can instead mean an external representation factor or a boundary index, which must be specified.</p>
+<p>A tangle box has four ordered endpoints. Multiplication means the specified stack of two boxes. A physical quarter-turn rotates the box. The cylindrical closure joins lower endpoints to upper endpoints, whereas the cap closure joins the two upper endpoints together and the two lower endpoints together. Those closures can have different topology.</p>
+<p>The guide writes <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math> for a crossing operator and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math> for a tangle turn when discussing this grammar. Some older notes use <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math> for the turn. In a quantum <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>-equation below, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math> instead denotes a difference operator; its action is explicitly given.</p>
+<p>In a local theorem with four external representation factors, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi><mo>,</mo><mi>C</mi><mo>,</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">A,B,C,D</annotation></semantics></math> may denote the four highest weights and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>,</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">E,G</annotation></semantics></math> two intermediate highest weights. They are not the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>-polynomial or the whole Conway expression. The half-shifted variable <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>e</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>j</mi><mi>e</mi></msub><mo>+</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">a_e=(j_e+1/2)/N</annotation></semantics></math> determines a dihedral angle <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>α</mi><mi>e</mi></msub><mo>=</mo><mi>π</mi><mo>−</mo><mn>2</mn><mi>π</mi><msub><mi>a</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">\alpha_e=\pi-2\pi a_e</annotation></semantics></math>. A cusp shape <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mi>i</mi></msub><annotation encoding="application/x-tex">\tau_i</annotation></semantics></math> is the complex ratio of two primitive translations on the marked Euclidean cusp torus.</p>
+<p>For the auxiliary-color deformation, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>i</mi></msub><mo>,</mo><msub><mi>V</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">U_i,V_i</annotation></semantics></math> denote specified logarithms of peripheral multipliers. They include branch choices and refer to the primitive curves of the actual diagram. A shape field or an algebraic elimination relation does not by itself identify those variables with the main knot’s meridian and longitude.</p>
+<h2 id="the-main-meridian-quantum-a-period">The main-meridian quantum <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>-period</h2>
+<p>The raw unrolled representation coordinate is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msubsup><mi>q</mi><mi>N</mi><mi>α</mi></msubsup></mrow><annotation encoding="application/x-tex">x=q_N^\alpha</annotation></semantics></math>. The marked meridian coordinate is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mi>−</mi><msub><mi>q</mi><mi>N</mi></msub><mi>x</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ M=-q_Nx.
+</annotation></semantics></math> Thus the complete color <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\alpha=N-1</annotation></semantics></math> has <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">M=1</annotation></semantics></math>, while a quotient color <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mi>j</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\alpha=j-1</annotation></semantics></math> has <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mi>−</mi><msubsup><mi>q</mi><mi>N</mi><mi>j</mi></msubsup></mrow><annotation encoding="application/x-tex">M=-q_N^j</annotation></semantics></math>. The reduced ADO family <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>M</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">F_N(M)</annotation></semantics></math> satisfies <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>K</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>K</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>−</mi><msubsup><mi>q</mi><mi>N</mi><mi>j</mi></msubsup><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>C</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>q</mi><mi>N</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ F_N(1)=K_N(K),\qquad F_N(-q_N^j)=C_j(q_N),
+</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">C_j(q)</annotation></semantics></math> is the ordinary reduced <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>-color period.</p>
+<p>In an equation <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mo>,</mo><mi>M</mi><mo>,</mo><mi>T</mi><mo stretchy="false" form="postfix">)</mo><mi>F</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P(q,M,T)F=0</annotation></semantics></math>, the shift is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>T</mi><mi>F</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>M</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mi>M</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(TF)(M)=F(qM)</annotation></semantics></math>, so <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mi>M</mi><mo>=</mo><mi>q</mi><mi>M</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">TM=qMT</annotation></semantics></math>. A classical longitude variable is usually called <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>. It is distinct from a complete-circle operator <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mi>N</mi></msub><annotation encoding="application/x-tex">L_N</annotation></semantics></math> and from a recoupling coefficient <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mrow><mi>G</mi><mo>,</mo><mi>E</mi></mrow></msub><annotation encoding="application/x-tex">L_{G,E}</annotation></semantics></math>.</p>
+<p>The selected operator period also needs its fixed initial-color data. When a companion matrix has a pole at a root level, the prescribed value is the constant term of the entire product’s Laurent expansion. One does not evaluate numerator and denominator separately at zero. The full ADO state carries its exact modified-dimension factor; at the complete marked point its value is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>i</mi><mrow><mi>N</mi><mo>+</mo><mn>3</mn></mrow></msup><msub><mi>K</mi><mi>N</mi></msub><mi>/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">i^{N+3}K_N/N</annotation></semantics></math>.</p>
+<p>The <a href="../notes/actual_conway_pointed_quantum_a_volume.html">pointed operator theorem</a> proves the volume limit for this actual period on the covered strict long-twist knots. Identifying its selected classical main-meridian geometric factor remains a separate statement.</p>
 <nav class="chapter-nav" aria-label="Chapter navigation"><a href="../guide/frontier.html">← Current frontier</a><a href="../guide/audits.html">Next: Reproducing audits</a></nav>
-<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/book/chapters/notation.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#three-distinctions-that-matter">Three distinctions that matter</a></aside></div></main>
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/book/chapters/notation.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-invariant-and-the-order-of-limits">The invariant and the order of limits</a><a href="#finite-sums-colors-and-derivatives">Finite sums, colors and derivatives</a><a href="#tangles-and-geometric-variables">Tangles and geometric variables</a><a href="#the-main-meridian-quantum-a-period">The main-meridian quantum A-period</a></aside></div></main>
 <dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
 </body></html>

@@ -78,7 +78,7 @@ such a term cannot reach the top monomial of total degree kd.
 This is the algebraic version of the whole-source alias argument,
 and includes polynomials with large degrees in individual anchors.
 
-The ORIGINAL invariant therefore has the identical descriptions
+The original invariant therefore has the identical descriptions
 
     K_N=chi_N/N sum_(h over-monotone) W_h lambda_C(P_h)
        =chi_N/N sum_(h over-monotone) W_h lambda_0(P_h). (8)

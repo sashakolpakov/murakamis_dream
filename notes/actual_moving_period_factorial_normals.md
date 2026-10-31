@@ -1,6 +1,6 @@
 # The exact factorial interpolant with a moving quantum period
 
-30 October 2026. Independently reviewed. The existing convergent
+30 October 2026. The existing convergent
 Gamma product extends to the ACTUAL moving quantum parameter. It
 matches every original finite integer factorial, including the fixed
 endpoint d=N-1, before taking derivatives. On specified complex
@@ -305,7 +305,7 @@ In fact (4b) gives the exact fixed-endpoint correction
        *exp[pi i z(N-P)/P]
        *Fhat_P(d-z)/Fhat_P(P-1-z).                          (16)
 
-The final quotient retains the difference between the ORIGINAL
+The final quotient retains the difference between the original
 fixed d=N-1 and the moving endpoint P-1. Formula (16), or its
 derivative, may be used for boundary transport; replacing that
 quotient by one away from the root changes the genuine normal.
@@ -329,7 +329,7 @@ columns and all original tensor marks. The present result is the
 moving-period analytic input for that assembly, not a replacement
 for its finite tensor identity or its global period argument.
 
-## 7. Independent checks and review scope
+## 7. Finite checks and scope
 
 The [focused audit](../experiments/audit_actual_moving_period_factorial_normals.py)
 and its [results](../experiments/actual_moving_period_factorial_normals_results.json)
@@ -340,12 +340,4 @@ and fixed-N first and second normal transport. Its largest relative
 identity error at 85 digits was below 5.3e-82. These finite checks
 support, and do not replace, the proofs above.
 
-Independent analytical reviews by the root, cluster-source and
-geometry agents passed the moving-period construction and its
-stated bounds. The geometry agent freshly replayed the base audit;
-the root freshly replayed the entire augmented audit, including
-the transport block. The root and cluster-source agents also
-checked the exact second-period, moving reflection and fixed-N
-normal formulas; the root checked the finite-jet corollary. The
-review does not assert global degree transport across the retained
-divisors or a contributing quantum cycle.
+The moving-period theorem does not transport degree globally across retained divisors or identify a contributing quantum cycle.

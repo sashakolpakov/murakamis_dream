@@ -15,10 +15,10 @@ positive checked crossing on W, and let T be the actual terminal
 projector map. The verified identities are
 
 \[
- T=N^{-1}X R P_{\rm rev}R,\qquad
- H:=TR^{-1}=N^{-1}X R P_{\rm rev},\qquad
+ T=N^{-1}X R P_{\mathrm{rev}}R,\qquad
+ H:=TR^{-1}=N^{-1}X R P_{\mathrm{rev}},\qquad
  X=\operatorname{diag}(x^j),\quad
- P_{\rm rev}=\operatorname{diag}(P_{d-j}),                    \tag{1}
+ P_{\mathrm{rev}}=\operatorname{diag}(P_{d-j}),                    \tag{1}
 \]
 
 where P0=1 and the ACTUAL endpoint satisfies
@@ -131,14 +131,14 @@ The statement also quantifies what an adaptive metric has to change.
 Suppose positive metrics G_before,G_after obey
 
 \[
- G_{\rm before}\preceq A_N G_N,\qquad
- G_{\rm after}\succeq B_N^{-1}G_N,
+ G_{\mathrm{before}}\preceq A_N G_N,\qquad
+ G_{\mathrm{after}}\succeq B_N^{-1}G_N,
 \]
 
 and a propagation inequality is asserted:
 
 \[
- R^\dagger G_{\rm after}R\preceq C_N G_{\rm before}.
+ R^\dagger G_{\mathrm{after}}R\preceq C_N G_{\mathrm{before}}.
 \]
 
 Testing v_N proves, without additional assumptions,
@@ -204,6 +204,6 @@ open terminal kernel. It checks the original cup, all coherent
 energies in (4),(8), and the regularized finite quotient rather than
 diagonalizing an unresolved near-singular Gram.
 
-Fresh replay: PASS seven original complete terminal modules; nineteen
+The finite audit checks seven original complete terminal modules; nineteen
 literal signed-crossing/source/Gram families at N=2,...,20; five
 large-level exact energy quotients through N=384.

@@ -146,7 +146,7 @@ They make no claim that this region is zero-free: the scalar roots
 are above 2 and can enter a fixed disk as N grows.
 
 The actual resolvent still has its own nearby spectral poles. Any
-bound on a closing part of the ORIGINAL contour must combine (6)
+bound on a closing part of the original contour must combine (6)
 or (7) with its actual resolvent estimate and retain the permitted
 contour and all residues. The present theorem by itself neither
 selects that contour nor proves geometric saddle dominance or a
@@ -155,14 +155,4 @@ nonzero source contribution.
 Focused audit: [canceled original Sears terms, removable spectral
 denominators and genuine joint jets](../experiments/audit_actual_matching_edge_polynomial_closing_region_bound.py).
 
-Primary-agent full analytical review: PASS. The reader checked the exact
-prefactor cancellations and exponents, all remaining root-unit
-denominators, the positive endpoint comparison, pointwise spectral lift,
-and genuine q/spectral Cauchy estimates.
-
-Independent full analytical review and fresh redirected audit: PASS.
-The second reader checked sections 1--4 and reproduced 168 generic
-identities, 224 removable-denominator cases, 108 genuine joint four-jet
-comparisons, 180 positive endpoint terms and 84 fixed-region samples at
-100-digit precision. Neither review infers a zero-free fixed disk or a
-contributing contour.
+The closing-region bounds do not give a zero-free fixed disk or identify a contributing contour.

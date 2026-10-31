@@ -2,7 +2,7 @@
 
 28 October 2026. This is an independent audit of the proposed extension
 from the original selected 5_2 period to many bridges or long twist regions.
-The result below is an exact obstruction inside the ORIGINAL repeated
+The result below is an exact obstruction inside the original repeated
 crossing, rather than an arbitrary oscillatory example. It identifies why
 one useful quadrature theorem cannot simply be iterated after aggregating
 long twists. It is not an obstruction to the volume conjecture.
@@ -139,7 +139,7 @@ The next genuinely structural theorem is therefore an endpoint transport
 and bound for a whole bridge move: express every finite-source boundary
 correction as a specified lower-complexity pointed period, with a proven
 rate below the geometric main period, uniformly over a diagram class.
-That is a concrete target suggested by the 5_2 error bound by the ORIGINAL
+That is a concrete target suggested by the 5_2 error bound by the original
 figure-eight invariant. It has not yet been established for arbitrary
 plats, arbitrary alternating diagrams, or a nontrivial infinite family
 with unbounded bridge number.

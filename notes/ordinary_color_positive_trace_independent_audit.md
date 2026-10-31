@@ -4,7 +4,7 @@
 in Section 2 of `regularized_kashaev_period.md`. No published volume,
 Jones asymptotic, positivity theorem or recoupling identity is a premise.
 The local path matrices, trace, projections, cabling and framing estimate
-are proved below. The separate identification with the ORIGINAL reduced
+are proved below. The separate identification with the original reduced
 ordinary-color cut is being audited in
 `actual_ordinary_color_comparison_audit.md`.
 
@@ -195,10 +195,4 @@ traces, cabled-braid preservation and both crossing signs. Whole colored
 closures include their zero-framing unit phases. These finite checks
 supplement the uniform proofs above and are not a premise for (10).
 
-An additional independent proof reread checked the trace recursion without
-semisimplicity, the expanded square calculation in (6), preservation of
-the two color projections under block braiding, the j=N-1 endpoint and
-the empty-cable N=2 case. It found no substantive gap in this path-algebra
-argument. A fresh run of the audit passed; those computations remain
-supplementary to the all-level proof, and do not replace the separate
-comparison with the original ordinary-color cut.
+The path-algebra proof does not use semisimplicity. It retains both color projections, the terminal index and the empty-cable case. Comparison with the original ordinary-color cut remains separate.

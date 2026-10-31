@@ -6,7 +6,7 @@ passes this independent normalization, order and source check.
 No test rerun was needed.
 
 The common head root and Hopf scales cancel in the crossing argument:
-\(\mathcal E_{\rm hat,1}F_{\rm hat,2}\) is precisely the conjugate of
+\(\mathcal E_{\mathrm{hat,1}}F_{\mathrm{hat,2}}\) is precisely the conjugate of
 \(\mathcal E_1F_2\). Separate roots instead retain their stated ratio.
 Consequently the universal series can be conjugated coefficientwise
 with a central bookkeeping variable; local nilpotence after this
@@ -57,7 +57,7 @@ give the stated obstruction
 to any generic regular same-fiber matrix replacement. This is
 consistent with a canonical operator transporting the center.
 
-Finally \(i_{\rm new}=Ci\), \(p_{\rm new}=pC^{-1}\) prove the exact
+Finally \(i_{\mathrm{new}}=Ci\), \(p_{\mathrm{new}}=pC^{-1}\) prove the exact
 finite-head pairing. Their normalized product does not remove the
 source exponential \(e^{-\sum p_i u_i/d}\), the head ratios, or
 the exponential at each internal projector. The literal pivot,

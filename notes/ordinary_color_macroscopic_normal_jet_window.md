@@ -15,7 +15,7 @@ state.
 
 ## 1. Exact original family and statement
 
-Let C_j(q) denote the ORIGINAL reduced, zero-framed ordinary integral
+Let C_j(q) denote the original reduced, zero-framed ordinary integral
 color-j knot scalar. The ordinary pivot is K(q), with its matching
 ribbon twist. At q_N=exp(pi*i/N), j<N, its equality with the original
 reduced root state is the independently proved quotient/cabling

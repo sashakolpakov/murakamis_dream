@@ -83,7 +83,7 @@ Define the four-port tensor by
     T_(a,b)^(c,d)=[P(A E_bd^(t) B)]_(c,a).          (2.1)
 
 This is an explicit reconstruction using N^2 insertions in the
-ORIGINAL network. The inserted matrix unit replaces the identity
+original network. The inserted matrix unit replaces the identity
 on that one edge; no extra color, trace, state, cap or pivot has
 been introduced. The same definition works in any cup/cap/plat
 diagram: replace that literal wire identity by E_bd and contract
@@ -95,7 +95,7 @@ Since sum_b E_bb=I, re-closing just this identity edge gives
     C_(c,a)=sum_b T_(a,b)^(c,b).                    (2.2)
 
 If the original diagram happens to put a diagonal transport on
-this edge, it is retained on its ORIGINAL side in (2.1), or its
+this edge, it is retained on its original side in (2.1), or its
 known entries are included in T. An independently added g_b
 would change (2.2). In particular cutting an ordinary internal
 identity edge does NOT authorize a second pivotal trace.
@@ -182,7 +182,7 @@ generic-q/M matrices are genuine Hopf intertwiners. It applies
 directly on the original root family or on the genuine integral
 q-family, and keeps the actual defect rows on another lift.
 
-## 4. The off-diagonal port bands and the ORIGINAL source
+## 4. The off-diagonal port bands and the original source
 
 Retain the complete bands
 
@@ -271,7 +271,7 @@ factorial/Cartan ratios therefore give, on the strict interior,
 
     I^(p,q)=R_(p,q)(q,M,clocks) I^(0,0).            (5.1)
 
-This is an identity derived from the ORIGINAL coefficients.
+This is an identity derived from the original coefficients.
 R_(p,q) is a finite product of the recorded rational shift ratios
 and meridian/lift monomials. Every common base-only Cartan,
 compact-factor and peripheral line remains common; it is not

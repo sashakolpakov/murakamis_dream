@@ -1,11 +1,6 @@
 # A Fourier Hilbert representation of the local entropy defect
 
-31 October 2026. Workspace research lemma; root derivation and a separate
-agent's full analytical review PASS. This is internal review, not external
-peer review; the note is unpublished.
-This is an exact identity for the entropy function, not a claim that the
-original quantum series has a Plancherel bound. The original shared face
-constraints still need to be imposed separately.
+The entropy identity is not a quantum Plancherel theorem. A global application must impose the original shared face constraints.
 
 Put \(\ell=1/2\) and
 
@@ -171,8 +166,6 @@ conditionally negative definite kernels.
 
 ## 5. A positive interval-cut realization of the same defect
 
-This additional section also passed a separate full analytical review,
-including the interval measure, integrability, and transported closure.
 
 The kernel also has a realization in which the local slack is a positive
 intersection measure. Keep the circle length \(\ell=1/2\), and put
@@ -196,25 +189,25 @@ On \((0,\ell/2)\times(\mathbb R/\ell\mathbb Z)\), use the positive
 measure \(d\nu=\tfrac12w(a)\,da\,ds\), and set
 \[
  v(a,s)=1_{A_0^a}(s),\qquad
- u_{\rm cut}(t)(a,s)=1_{A_t^a}(s)-1_{A_0^a}(s).
+ u_{\mathrm{cut}}(t)(a,s)=1_{A_t^a}(s)-1_{A_0^a}(s).
 \]
 Both functions belong to \(L^2(\nu)\):
 \(\|v\|^2=\tfrac12\int_0^{\ell/2}a w(a)\,da<\infty\).
 Equations (7) and the interval identity show
 \[
- \|u_{\rm cut}(t)\|^2=f(t),\qquad
- \|u_{\rm cut}(t)-u_{\rm cut}(s)\|^2=f(t-s).           \tag{8}
+ \|u_{\mathrm{cut}}(t)\|^2=f(t),\qquad
+ \|u_{\mathrm{cut}}(t)-u_{\mathrm{cut}}(s)\|^2=f(t-s).           \tag{8}
 \]
 Translation of the circle variable gives the same unitary cocycle and
 transported closure (5)--(6).
 
 There is a useful pointwise feature beyond a generic Hilbert embedding.
-For fixed \((a,s)\), all nonzero \(u_{\rm cut}(t)(a,s)\) have the SAME
+For fixed \((a,s)\), all nonzero \(u_{\mathrm{cut}}(t)(a,s)\) have the SAME
 sign: they are \(-1\) inside \(A_0^a\), and \(+1\) outside it. Write
 \(E_t=\{(a,s):s\in A_t^a\mathbin\triangle A_0^a\}\). Then
 \[
- u_{\rm cut}(t)u_{\rm cut}(s)=1_{E_t\cap E_s},\qquad
- u_{\rm cut}(t)\bigl(u_{\rm cut}(t)-u_{\rm cut}(s)\bigr)
+ u_{\mathrm{cut}}(t)u_{\mathrm{cut}}(s)=1_{E_t\cap E_s},\qquad
+ u_{\mathrm{cut}}(t)\bigl(u_{\mathrm{cut}}(t)-u_{\mathrm{cut}}(s)\bigr)
                                       =1_{E_t\setminus E_s}.
 \]
 For the original endpoint triples \(\alpha,\beta\), equations (3)--(4)

@@ -176,7 +176,7 @@ to a=N-1. The exact finite-kernel identity is now
  \begin{aligned}
  x C R_f-xQ U^{-1}C R_fD_a
  &=C(1-QD_a)(1-D_j)\\
- &\quad -(1-Q^N)C(1-D_j)\Pi_{\rm top}.                  \tag{11}
+ &\quad -(1-Q^N)C(1-D_j)\Pi_{\mathrm{top}}.                  \tag{11}
  \end{aligned}
 \]
 

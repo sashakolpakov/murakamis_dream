@@ -1,6 +1,6 @@
 # Maximal volume fixes the actual marked endpoint configuration
 
-31 October 2026. Internally reviewed general concentration theorem. This strengthens
+31 October 2026. general concentration theorem. This strengthens
 the already proved positive endpoint rate. It does not identify a
 phase-sensitive filling cycle, a genuine-q normal, or a Gaussian contour.
 All group conjugacies below are in PSL2(C); central SL2 lift signs are not
@@ -85,17 +85,16 @@ incidence-flow entropy
     H_D(q)=sum_e h(q_e), q in Q_D,
     W_D=max H_D=Phi_D=Vol(Y_D)/(2pi).                   (5)
 
-The last equality and all boundary reductions are the reviewed
-[full endpoint theorem](general_fejer_endpoint_source_volume.md). Let q be ANY maximizer, choosing maximizing triangle
+The last equality and all boundary reductions are the [full endpoint theorem](general_fejer_endpoint_source_volume.md). Let q be ANY maximizer, choosing maximizing triangle
 allocations at CROSS ports.
 
 No port of q is pure-middle. Otherwise the exact identity reduction and
-hybrid-piece representation construct a representation of the ORIGINAL
+hybrid-piece representation construct a representation of the original
 pi_1(Y_D) with volume 2pi H_D(q)=Vol(Y_D), killing an essential original
 crossing-circle meridian. The strict-kernel theorem forbids this. Thus
 there is no identity contraction at a maximum.
 
-Consequently the source white triangulation is still the ORIGINAL
+Consequently the source white triangulation is still the original
 simplicial sphere. Its induced graphs have no parallel-edge digons, so
 the hybrid tight-set classification gives no proper tight set. The
 positive hybrid witness and the proved corner expansions then give
@@ -106,7 +105,7 @@ cut-ball representation rho are the regular marked ones, with volume
 Vol(Y_D). There are no independent pieces or arbitrary closing cusps in
 this equality case.
 
-Apply (4). It remains to show that conjugacy of the ORIGINAL marked
+Apply (4). It remains to show that conjugacy of the original marked
 representation actually determines its labeled face geometry. At every
 original MAIN contact, the based meridian supplied by the literal
 prefix/turn dictionary is noncentral parabolic and fixes exactly that
@@ -125,7 +124,7 @@ labeled developed white circle/line is carried to its original complete
 white circle/line. This uses the source dictionary as well as the
 representation; an unlabeled character alone would not suffice.
 
-Normalize both configurations at their ORIGINAL marked MAIN contact
+Normalize both configurations at their original marked MAIN contact
 p=infinity. The conjugacy sends p to p because it carries that based
 noncentral meridian. It is therefore affine, z->a z+b, a!=0. Affine
 maps preserve bounded disks and oriented center triangles. The two
@@ -215,13 +214,6 @@ a bound on an oscillatory filling transform away from the controlled
 spectral region, or a nonzero contribution of the original filling
 cycle. Those remain separate quantum statements.
 
-## 4. Review and scope
+## 4. scope
 
-Root and three independent internal reviewers checked the complete written
-argument, including the fixed-representation Cartan compactness step,
-the original based contact dictionary, affine recovery of signs and
-the compact gaps. This is internal analytical review, not external peer
-review. The result is a structural consequence of the linked analytic
-and geometric proofs; finite numerical tests are not used to infer
-maximal-volume rigidity or uniqueness. The fixed long-filled Kashaev
-volume conjecture remains open.
+The structural conclusion uses the linked analytic and geometric proofs. Numerical tests do not establish maximal-volume rigidity or uniqueness, and this note does not settle the fixed long-filled Kashaev limit.

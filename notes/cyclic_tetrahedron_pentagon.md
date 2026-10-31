@@ -249,7 +249,7 @@ checks nine primitive cyclic pentagons at N=2,3,4,5,6,8,9,10,12
 and five full N^3-dimensional tetrahedral identities at N=2,...,6.
 It checks all five shear maps, the final clock/shift roots, the
 bare permutation identity, projective matrix equality and the
-recorded raw determinant equations. All pass. The normalized
+recorded raw determinant equations.  The normalized
 phase is fixed by the uniform anchored proof, rather than by
 unrelated finite-field choices of gamma roots.
 [Results](../experiments/cyclic_tetrahedron_pentagon_results.json).

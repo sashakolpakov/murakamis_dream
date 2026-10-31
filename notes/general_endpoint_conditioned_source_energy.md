@@ -435,12 +435,6 @@ coherent reflected circuits; it does not bound arbitrary source energies.
 The [length-normalized star](actual_length_normalized_star_gram.md) retains
 both coefficient and dual weights, which cannot be dropped.
 
-The finite source/parity formulas, shared Cauchy inequality, weakest rate
-budget, spectral maximum reduction, and conditional whole-period transfer
-have independent analytical reviews. The new joint and combined-score
-reductions use the proved uniform local theorem; their global strict
-inequalities remain hypotheses, not general volume comparison theorems.
+The new joint and combined-score reductions use the proved uniform local theorem; their global strict inequalities remain hypotheses, not general volume comparison theorems.
 
-Root and both independent peers also reviewed the joint and combined-score
-reductions in sections 5–6: PASS. This review proves the conditional
-reductions, not their still-open universal strict entropy hypotheses.
+Sections 5–6 prove conditional reductions; their universal strict entropy hypotheses remain open.

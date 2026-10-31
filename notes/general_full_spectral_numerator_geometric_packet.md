@@ -1,8 +1,8 @@
 # The original full spectral numerator has the marked geometric packet
 
-31 October 2026. Internally reviewed. This assembles the exact
+31 October 2026. . This assembles the exact
 local cofactors, their independently proved relative packets and their
-angular estimates with the ORIGINAL shared coefficient period. The
+angular estimates with the original shared coefficient period. The
 full Gaussian filling cycle is not selected here.
 
 ## 1. Original source and exact local reference
@@ -93,7 +93,7 @@ neighborhood of the common-phase point on the remaining $(R-1)\text{-torus}$,
 a bounded-length ordinary-face path contains a separated edge. One
 actual triangle contains its two finite endpoints, hence has (2).
 
-It follows, uniformly for small fixed complex $\boldsymbol\delta$, that the ORIGINAL
+It follows, uniformly for small fixed complex $\boldsymbol\delta$, that the original
 Cauchy integrand of $C_N$ has an exponential angular gap off that
 neighborhood. Its positive endpoint logarithmic scale at the complete
 radii is $\Phi=\operatorname{Vol}(Y_D)/(2\pi)$. The product of finitely many polynomial
@@ -234,7 +234,7 @@ critical exponential rate supplied by (7) is that filled hyperbolic
 volume, with the original normalization.
 
 The source face-torus coefficient in (7) is now selected and nonzero.
-The ORIGINAL spectral Gaussian period is still a separate integral and
+The original spectral Gaussian period is still a separate integral and
 charge sum. Its global deformation, nonzero contribution of the unit
 charge, and suppression/cancellation of all other spectral regions and
 charges are not proved here. A local packet and the correct filled
@@ -242,7 +242,7 @@ critical value do not by themselves establish the general Kashaev limit.
 
 The [fixed-root scope audit](fixed_root_direct_power_scope.md) confirms that the original invariant route requires its spectral Hermite data, not a separate generic-q normal estimate.
 
-Root and two independent internal reviewers checked the complete assembly, including all spectator strip costs, the original common-scale quotient and measure, the finite-N phase and Hessian, full-numerator restoration, and half twists counted exactly once. This is internal analytical review, not external peer review. No finite numerical check is used to infer the saddle theorem or spectral-cycle survival.
+The assembly retains the common-scale quotient and measure, the finite-N phase and Hessian, and counts every half twist exactly once. The saddle theorem and spectral-cycle survival require the analytical arguments above.
 
 The subsequent [localized spectral-period theorem](general_localized_unit_charge_filling_period.md)
 now proves that the original unit-charge integral on a fixed real spectral

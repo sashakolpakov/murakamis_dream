@@ -2,7 +2,7 @@
 
 28 October 2026. The literal middle five-point crossing identity has an
 exact ordered version of the polynomial which removes the spurious
-cleared Pachner component. It holds on the ORIGINAL finite heads with
+cleared Pachner component. It holds on the original finite heads with
 their missing arrow retained. The ordinary commutative polynomial is
 not zero as an actual sourced operator: its error is an explicitly
 retained commutator current. A two-component source presentation keeps
@@ -25,7 +25,7 @@ Use the complete original heads and conventions of the
     XZ=QZX, X^N=Z^N=1.
 
 The cyclic heads have the required opposite wrap when N is even.
-Let E_0 be the ORIGINAL first-clock projector onto index zero. Thus
+Let E_0 be the original first-clock projector onto index zero. Thus
 
     E_0(1-Z)=0.
 
@@ -276,7 +276,7 @@ chart. It does not construct a uniform symbol chart at every
 singular scalar endpoint.
 
 The missing analytic step is specific. One still has to prove that
-all exponentially relevant pieces of the ORIGINAL relative cycle
+all exponentially relevant pieces of the original relative cycle
 admit such a compatible source/current reduction, or bound the
 remaining pieces directly. The exact current in (9) can have the
 same exponential rate as the underlying period; neither local

@@ -1,8 +1,8 @@
 # Exact incidence for a cap/CROSS contraction, and what planarity does not force
 
-31 October 2026. **Internally reviewed analytical research lemma.**
+31 October 2026. **analytical research lemma.**
 Unpublished. This concerns the original
-marked source and the reviewed fixed spectral pair (+2,-2). No general
+marked source and the fixed spectral pair (+2,-2). No general
 spectral-neighborhood estimate or filled-volume conclusion is asserted.
 
 ## 1. The literal two-port condition is quadrangulation degree two
@@ -25,7 +25,7 @@ statement after relabeling. The protected vertices are still u,v, not
 new zeros introduced by a contraction.
 
 For any vertex a, let d_T(a) be its triangle valence and let m_T(a)
-count matching edges incident to it. Then its number of ORIGINAL port
+count matching edges incident to it. Then its number of original port
 incidences is
 
 \[
@@ -80,7 +80,7 @@ high-value stationary cap.
 
 ## 2. At the classified maximum, the degree-two neighbor is CROSS
 
-Assume the reviewed positive-value maximum classification: all ordinary
+Assume the positive-value maximum classification: all ordinary
 incidences have positive load, ordinary demands are one, and ports are
 complete strict CROSS, strict straddling Green, or residual marked caps.
 At (1), its common positive weights satisfy L_A=L_C and the cap loads
@@ -99,7 +99,7 @@ are the whole tetrahedral sphere. E could then only be another cap
 or CROSS. Two caps saturate the two ordinary demands and have total
 sharp value zero; cap plus strict CROSS cannot supply the C demand.
 Neither occurs at the stated positive-value maximum. This also follows
-from the reviewed cap-cap exception in the odd MAIN-cycle theorem.
+from the cap-cap exception in the odd MAIN-cycle theorem.
 
 For the algebraic assembly below it is harmless to allow Z=v: setting
 Z=0 selects the missing C^d coefficient, since M+H=N-2<d. Both
@@ -199,7 +199,7 @@ is the embedded K_(2,n), with ports
 up to cyclic frame choice. All quadrilaterals have four distinct
 vertices, and T is simple. Every MAIN mark joins one apex and one
 equatorial vertex. For mark B z_0, either possible residual cap has
-overloaded child A, whose ORIGINAL port-incidence degree is n.
+overloaded child A, whose original port-incidence degree is n.
 For mark A z_0 the roles reverse. Hence for n>=3 NO possible residual
 cap at ANY allowed MAIN mark has the required internal face. For n=3
 this is already the valence-three counterexample in section 1.
@@ -209,7 +209,7 @@ with minimum degree at least three: subdivide each face of a cube into
 an l by l square grid, consistently across cube edges. The eight old
 corners have degree three and all new vertices have degree four.
 There are 6l^2 port disks, each with four distinct vertices. The
-reviewed diagonalization theorem gives simple choices and the general
+diagonalization theorem gives simple choices and the general
 Morse construction gives actual sources. In EVERY choice, Q and its
 vertex degrees are unchanged. Thus no marked cap can meet the
 two-port internal-face condition anywhere in this family, for any mark.
@@ -262,14 +262,14 @@ N>=16, and r=N/8, the original sine products give
  \ge3^{N/8+1}. \tag{7}
 \]
 
-This is precisely the already reviewed uncontracted-pair obstruction,
+This is precisely the uncontracted-pair obstruction,
 now expressed as the missing internal-demand shift. It uses a boundary
 CROSS monomial with zero ordinary incidences and therefore does NOT
 disprove a possible shifted estimate restricted to the positive-incidence
 stationary regime. It does show why (4) cannot simply be attached to an
 A-dependent exterior or promoted to an all-shifts identity.
 
-## Dependencies and internal review
+## Dependencies
 
 The source bound is the [all-demand, both-parity signed contraction](research_cap_cross_all_demand_subexponential_contraction.md),
 with the exact typing and coefficients in the
@@ -282,13 +282,7 @@ The actual general-source realization is the
 its simple-chart existence input is the
 [maximal-diagonalization theorem](research_maximal_diagonalization_source_gap.md).
 
-Root and the cluster-source reviewer independently read the complete
-corrected analytical/source argument in sections 1--5 and reported PASS.
-They checked the matching-sensitive degree-two criterion, CROSS neighbor,
-tetrahedral exception, simultaneous coefficientwise replacement, and the
-exact scope of both structural and shifted-demand obstructions. These
-are internal reviews, not external peer review. The final preservation
-changes only mathematical formatting, relative references and this record.
+The assembly requires the stated degree-two internal faces and exact unshifted demands. It does not assert that every stationary cap has that incidence pattern.
 
 No numerical audit or purported global realization of a non-CROSS
 maximum is used. The false preliminary converse “valence three implies

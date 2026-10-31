@@ -1,6 +1,6 @@
 # The actual cut has a nonzero universal radial symbol
 
-28 October 2026. The radial integrals in the ORIGINAL all-inverse
+28 October 2026. The radial integrals in the original all-inverse
 cut cycle can be evaluated asymptotically, uniformly for bulk cut
 labels and every actual coefficient order. Their leading symbol
 is an explicit Gamma quotient and never vanishes. Their remaining
@@ -24,7 +24,7 @@ j-th cut has
     g_(epsilon,j)(r)=(r-1)^u h_(epsilon,j)(r).
 
 The non-endpoint logarithms have their specified radial marks.
-Define its ORIGINAL, jump-weighted coefficient moment by
+Define its original, jump-weighted coefficient moment by
 
     R_(epsilon,N)(j,a)=sin(pi u)/pi
         * integral_1^infinity h_(epsilon,j)(r)r^(-a-1)dr,
@@ -217,7 +217,7 @@ N^(-u-1/2) cancel to the universal N^(-3/2).
 
 Consider the exact full all-inverse word with s=9m cut variables,
 and restrict its angular labels j_l/N to compact subintervals of
-(0,1). Expand the ORIGINAL rational source into its finitely many
+(0,1). Expand the original rational source into its finitely many
 coefficient orders a_l>=0. Its exact radial integration is the
 product of the moments (1). Formula (9) therefore supplies
 

@@ -1,7 +1,7 @@
 # The adjoint finite-jet connection on the original source cycle
 
-30 October 2026. Independently reviewed and frozen. The exact tensor-source
-transport has a corresponding identity for the ORIGINAL cotangent
+30 October 2026. The exact tensor-source
+transport has a corresponding identity for the original cotangent
 period. Its adjoint acts on the cotangent density as well as on the
 explicit source gauge. The resulting double-pole and finite-part terms
 are retained. This does not make the finite head sum periodic or move
@@ -87,7 +87,7 @@ gives
 
     I_(Gamma+Nb)[S]=I_Gamma[S(epsilon,x+Nb)],              (4)
 
-because the ORIGINAL W is N-periodic. This is an identity of the
+because the original W is N-periodic. This is an identity of the
 specified continued source at that translated cycle. It does not say
 the shifted head values are admissible original states or vanish
 outside the physical basis. In particular the meromorphic continuation
@@ -125,7 +125,7 @@ in (6), rather than an arbitrarily assigned boundary coefficient.
 It is not yet a nonzero global geometric contribution.
 
 For a primitive direction with several nonzero b_j, D_b differentiates
-the corresponding ORIGINAL cotangent factors. A chosen degree h need
+the corresponding original cotangent factors. A chosen degree h need
 not be a primitive free variable. For h=A0 x_j+B0 at fixed other
 coordinates, the weight is (pi/A0)cot(pi(h-B0)/A0) dh. The finite-part
 rules of the boundary theorem apply with that weight. Neither (3) nor
@@ -192,19 +192,6 @@ the original moving-Gamma Laurent coefficients. The latter agree with
 (9) to relative error below 5.3e-38 at 100 digits. These are checks of
 the retained local periods, not evidence for a global saddle coefficient.
 
-Primary-agent full analytical review: PASS. The reader checked the
-closed-cycle exact-differential argument, finite Taylor/Laurent order,
-the adjoint sign, original mark and trace normalization, and the actual
-cup double-pole and translated finite-part calculation. The result
-retains all source and gauge divisors and makes no contributing-cycle
-assertion.
+The result retains all source and gauge divisors and makes no contributing-cycle assertion.
 
-Independent current-agent full analytical review and fresh redirected
-audit: PASS. The reader checked the primitive top-form normalization,
-Stokes argument and adjoint sign, the actual cotangent measure and
-dependent-degree Jacobian, root-regular or cleared-Laurent jet orders,
-and the original exposed-trace normalization. The literal moving-Gamma
-cup Laurent coefficients and reversed-cup turn were independently
-rederived before replaying all 60 exact adjoint residues and 12 actual
-translated first-normal finite parts. No wrapped physical state or
-geometric contribution was inferred.
+No wrapped physical state or geometric contribution is inferred from the translated normal identities.

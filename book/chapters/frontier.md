@@ -1,551 +1,283 @@
-# The current general frontier
+# What remains to be proved
 
-The current target is a volume theorem for Conway algebraic/arborescent knots assembled from arbitrarily many tangles, with independently sufficiently long fixed signed twists. The right side is the hyperbolic volume of the knot complement. Bridge width remains useful for the earlier plat families, but is no longer the organizing parameter. The unrestricted conjecture remains open.
+The volume limit is now proved for every fixed Conway tangle expression that passes the strict type test, with independently sufficiently long signed twists and a knot-producing endpoint pairing. The [results chapter](results.md#every-strict-conway-composition-tree) defines the construction and the test. For that class, the passage from the full invariant to the volume of the actual knot complement is complete.
 
-## Every strict Conway composition tree
+The main questions beyond it are coverage of knot presentations, short twists, and the relation between the quantum recurrence and its selected classical geometric factor. Other approaches to arbitrary plat diagrams remain useful. Their open hypotheses are described below as questions about those broader approaches, not as missing steps in the strict-tree theorem.
 
-The [strict-tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md)
-now covers every fixed literal \(C(FG)\) that passes the finite strict type
-test: leaves have type L, turns exchange L/H and preserve A; the nonempty
-products are LL/LA/AA→A and HL/HA→H, and the root pair is AA, AL, AH or LH.
-Equivalently, each reduced product hub has at most one flagged original
-leaf. Mixtures of flagged and unflagged hubs are included.
+## The boundary of the current Conway theorem
 
-For each such presentation there is a finite \(B(\tau)\). Every fixed tuple
-of independently signed integer weights with \(|n_i|>B(\tau)\) at every
-leaf, and loop-free one-component pairing, gives the original invariant's hyperbolic knot
-complement volume limit through all levels. The presentation and twists
-are fixed before the quantum limit. The auxiliary crossing circles are
-filled; the main knot cusp stays unfilled.
+The [strict-tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md) concerns a specified ordered expression made from turned two-strand twist boxes, stacking, quarter-turns and closure. Its finite test asks whether the normalized state constraints admit strict interior values. It does not prove that every arborescent knot has such a presentation with all twist magnitudes large.
 
-The new [positive probe bound](../../notes/actual_conway_unflagged_core_probe_bound.md)
-controls each maximal unflagged component at its actual intrinsic
-boundary action. The [spectral propagation theorem](../../notes/actual_conway_mixed_core_spectral_propagation.md)
-transports every physical-color loss through that component and restores
-angular localization. The [geometric adapter](../../notes/actual_conway_unflagged_probe_geometry.md)
-proves that these boundary actions sum to the original complete action.
-The exact complementary-color identity restores the original packet;
-its primitive marked filling action is the actual knot complement volume.
+Three estimates close the previously missing mixed-tree case. The [positive probe theorem](../../notes/actual_conway_unflagged_core_probe_bound.md) controls a whole internal component while keeping its coefficient targets. The [spectral propagation theorem](../../notes/actual_conway_mixed_core_spectral_propagation.md) carries losses in every physical color through that component. The [geometric comparison](../../notes/actual_conway_unflagged_probe_geometry.md) identifies the constants with the original boundary action. These are proofs for the full signed source, not just an unsigned upper bound at an isolated critical point.
 
-The [pointed quantum A-period corollary](../../notes/actual_conway_pointed_quantum_a_volume.md)
-also writes this limit through a genuine all-level ADO operator, its
-finite initial data and bounded quantum-parameter jets. Existence of
-the operator was already proved from the finite cut-state source.
+What remains is to understand presentations outside the strict test and how different tangle presentations of the same knot are related. Equality of two algebraic source contractions does not itself establish a tangle isotopy or preserve the meridian and longitude. The threshold in the proved theorem may depend on the entire fixed tree. It is not uniform over growing trees, and the theorem does not cover arbitrary short twists.
 
-The remaining general tasks are presentation coverage beyond this strict
-literal class and identification of the selected classical main-meridian
-geometric factor with the marked regulator module. No
-threshold uniform over growing trees or conclusion for arbitrary short
-weights is asserted. The earlier completed-root TeX manuscript retains
-its stated theorem. The earlier plat, energy, Fourier and torsor approaches remain available as separate routes to broader classes.
+There is also a precise operator question. A genuine all-level recurrence for the ADO invariant and finite initial data selecting its solution are already available. The [pointed quantum A-period theorem](../../notes/actual_conway_pointed_quantum_a_volume.md) reconstructs the Kashaev invariant from that data, including the required derivatives at singular steps, and gives its volume limit for the covered knots. The unresolved stronger question is the identification of the selected classical geometric factor and the quantum module carrying its marked logarithmic regulator data. Operator existence and the scalar period theorem should not be listed as open for this class.
 
+## Language used in the alternative routes
 
-## What remains after the strict-tree theorem
+The remaining sections concern several exact representations of the invariant. A **source** is a finite polynomial, tensor contraction or sum that equals the specified invariant after its indices are contracted. A **coupon** is one local operator in that contraction, usually attached to a crossing circle or twist box. A **color** is an integer representation label in the finite calculation.
 
-The general source estimate is now proved for the entire strict literal
-Conway grammar. For this class, the critical path through the full
-original invariant and the actual knot complement volume is complete.
+A **shared-face coefficient** is obtained by assigning a variable to each face of a diagram, multiplying the local polynomials, and extracting the prescribed power of every ordinary face variable. The same face has one variable wherever it occurs. Taking separate local maxima would discard this constraint. The two faces at the mark are protected: their variables are set to zero in the appropriate coefficient formula.
 
-The next question is geometric and combinatorial coverage: which
-arborescent knot presentations admit this strict long-weight form, and
-which require operations beyond it? The exact source criterion is at most
-one flagged original leaf per reduced hub. An equality of source tensors
-does not by itself give an isotopy or a new presentation theorem.
+A **spectral parameter** is a variable in the polynomial functional calculus of a local operator. Repeated spectral nodes require values and derivatives; the first derivative data are often called normal terms. A derivative in this spectral variable is different from a derivative in the quantum parameter $q$.
 
-A genuine all-level ADO annihilator and its finite pointing were already
-constructed from the actual cut-state source. The new volume theorem
-therefore also gives the selected quantum A-period's volume limit.
-The stronger remaining question is which classical geometric factor and
-quantum module carry the original marked regulator germ. Existence of an
-annihilator and evaluation of its pointed period do not settle that
-classical-factor identification.
+An **action** is the function whose value gives an exponential rate, usually in an expression of the form $e^{N A}$. A **local packet** includes that exponential, a nonzero leading coefficient and a uniform error near a selected critical point. A **period** is the contour or finite Fourier expression used to reconstruct the invariant. Showing that one packet exists does not prove that its period dominates every other term.
 
-The completed-root manuscript, weighted-tree theorem and all earlier
-methods remain preserved. The alternative general routes below retain
-their own unresolved hypotheses; they are not prerequisites for the
-strict-tree theorem.
+## The general plat target and its quantifiers
 
-## The global upper problem now has a stationary classification
+A $2k$-strand plat is a braid closed by pairing neighboring endpoints at the top and bottom. Fix a diagram $D$, its crossing-circle augmentation $Y_D$, and the actual meridian-longitude markings. The [general plat target](../../notes/general_augmented_plat_long_twist_target.md) asks for a threshold $T(D)$ such that every knot-producing fixed signed twist tuple with $\min_i|m_i|>T(D)$ satisfies
 
-The [global sharp majorant](../../notes/research_global_sharp_coefficient_limsup_majorant.md) covers the whole closed real spectral and degree domain, including both parities and the final cap. It reduces the original raw numerator to a compact upper problem with the original shared targets:
-
-$$\sup_{\boldsymbol\delta}|S_N(\boldsymbol\delta)|\le e^{N(M_D+o(1))},
-\qquad M_D=\max_{q\in\mathcal P_D,\;\boldsymbol\delta\in[0,1/2]^R}
-\sum_e H_{\delta_e}(q_e).$$
-
-At an unrestricted maximum on a certified simple-white diagram, [boundary activation](../../notes/research_full_fiber_sharp_boundary_activation.md) removes all ordinary zero incidences and diagonal ports. The [stationary theorem](../../notes/research_full_fiber_sharp_stationary_classification.md) supplies finite common weights and leaves only complete CROSS, strict straddling LEFT/RIGHT branches, and at most two double-protected marked cap corners. Every non-CROSS port then forces an [elementary odd MAIN four-cycle](../../notes/research_stationary_noncross_main_cycle_obstruction.md). For a constrained non-CROSS maximum of value at least $\Phi_D$, the strict middle margin is now automatic.
-
-The [new seam theorem](../../notes/research_sharp_cross_degree_domination_and_seam_gap.md) proves $H_\delta\le h$ on the full closed CROSS degree domain. With $a_D$ the smallest geometric middle deficit from $1/2$, every seam-only flow has gap $\gamma_D=\pi a_D^2/2$. A fixed seam neighborhood has an absolute source gap, and its entire original period satisfies $I_{\mathrm{seam}}/I_{\mathrm{CROSS}}=O_{\mathbf p}(e^{-c_DN})$ for independently sufficiently long fixed signed fillings. Thus high-value non-CROSS candidates have a uniform overload margin. The macroscopic, strictly overloaded contribution still requires control.
-
-The question has narrowed from arbitrary boundary configurations to a quantitative cancellation problem on these classified maxima. An odd cycle prevents a common phase assignment, but does not by itself compare the remaining absolute source rate with $\Phi_D$. At the [flat cap](../../notes/research_flat_cap_no_local_exponential_angular_gap.md), a uniform local exponential angular gap is false. The [results section](results.md#a-global-source-upper-bound-and-the-classification-of-its-maxima) records the complete theorem chain and its qualifications. The general invariant theorem remains open.
-
-## A phase-sensitive bound on the original regular windows
-
-The [exact source transfer](../../notes/research_original_one_sided_four_state_transfer.md) has a before state, a two-state active block and an after state. Its direct before-to-after entry retains the original diagonal path $i=j$. All prefix and suffix rows, omitted-half scalar modes and raw signs stay in the identity.
-
-The [positive active transfer](../../notes/research_positive_eta_word_transfer.md) contracts a nonzero outer relative phase. For a mismatched middle phase, the [analytic gauge theorem](../../notes/research_analytic_switching_suppression.md) leaves an exponentially small switch residual **and both exact boundary terms**. The [regular-window theorem](../../notes/research_regular_spectral_window_phase_exclusion.md) supplies strict action gaps for those boundaries. It applies to disjoint start/stop windows with all four incident weights positive at each selected port and strict interior maxima, including full-row windows on either side of the original spectral poles.
-
-![The exact four-state source, both gauge boundary terms, and the proved regular-window loss; the comparison with complete volume remains open.](../figures/analytic-source-switching.png)
-
-For the half-row straddling window, the only unsuppressed local alignment is
-
-$$\vartheta_x=\vartheta_y=\vartheta_b=\vartheta_c-\pi.$$
-
-The full-row version uses the actual signs of the unused-row factor at each endpoint. The [mixed cycle criterion](../../notes/research_mixed_cross_window_cycle_packing.md) now includes the proved single-protected-outer and single-protected-middle windows, and whole CROSS coupons with their exact positive endpoint majorants. Only supported incidences enter the $0/\pi$ constraints. Fractional packing of odd cycles turns the certified local losses into a shared Cauchy improvement $e^{-\kappa N}$, with one radius per original face and unchanged targets. The [results section](results.md#phase-cancellation-on-regular-source-windows) groups these four extensions and their precise hypotheses.
-
-The next quantitative step is to prove that the positive majorant rate minus the cycle loss is below $\Phi_D$, with uniform estimates for an exhaustive source decomposition. That inequality is not automatic. The new classification excludes phase-compatible non-CROSS maxima under its stated hypotheses. Quantitative control near the classified maxima, including the marked cap corners, remains necessary. The coefficient-energy criterion below is another proved reduction; neither route currently establishes universal diagram coverage.
-
-## From coefficient Cauchy to a shared volume inequality
-
-The [new local energy theorem](../../notes/actual_one_sided_relative_spectral_energy.md) controls **every** one-sided coefficient of the actual spectral numerator, uniformly over the full real spectral interval, both level parities and all degree boundaries. Relative to the positive endpoint coefficient $p_N$, it gives
-
-$$\frac1N\log\frac{\sup_\sigma|a_N(q;\sigma)|^2}{p_N(q)}
-\le C(q_x,q_y,\tfrac12-q_x-q_y)+o(1).$$
-
-The proof combines an exact weighted Cauchy inequality with an explicit rearrangement of the spectral angle. Its folded angle has the same uniform distribution as the original angle, so the weighted integral is bounded by a terminal complete-triangle integral. It keeps all unused rows and the odd derivative reference; it does not assume a coefficient limit from a weighted limit.
-
-![Weighted Cauchy, a measure-preserving folded angle, and the remaining shared entropy comparison.](../figures/spectral-energy-rearrangement.png)
-
-The [general shared-flow criterion](../../notes/general_endpoint_conditioned_source_energy.md) combines this bound with the earlier one-sided envelope. Write $h$ for the known endpoint coefficient entropy, $g$ for the triangle energy bound above (and $g=h$ on CROSS), and $h_{\mathrm{env}}$ for the earlier envelope, also equal to $h$ on CROSS. On each original feasible flow set
-
-$$h_{\mathrm{sharp}}=\min\{h_{\mathrm{env}},(h+g)/2\}.$$
-
-If the maximum of $\sum_e h_{\mathrm{sharp}}(q_e)$ over the closed non-CROSS shared-flow set is strictly below $\Phi_D$, the full original invariant has the actual filled-volume limit for independently sufficiently long fixed signed twists. This is a **proved sufficient reduction with an explicit finite-dimensional hypothesis**. The universal entropy inequality is still open. The source's face loads are retained throughout; the two terms are evaluated on the same flow, not independently maximized.
-
-The [protected-outer theorem](../../notes/actual_protected_outer_spectral_energy.md) is sharp: with one outer face zero, the optimized relative-energy rate is exactly $C(w,\tfrac12-w,0)$, where $w$ is the outer degree. The general interior bound needs no new local asymptotic conjecture. What remains is the global comparison with the actual hyperbolic volume.
-
-## A general finite cover of the source sectors
-
-The [finite-sector cover theorem](../../notes/general_actual_sector_cover_filling_volume.md) gives the full original filled-volume limit whenever a finite cover of all non-CROSS source strings has strict shared-radius bounds. Each branch keeps genuine CROSS/LEFT/RIGHT labels and uses one common face vector with the original protected zeros. The diagram, half-twist pattern and independently long signed filling parameters remain fixed before the quantum limit.
-
-This strictly extends the [anchored criterion](../../notes/general_anchored_shared_radius_filling_volume.md). On the **same original seventeen-region marked plat**, an exact rational flow proves that one anchored bound exceeds the complete volume rate by more than $0.025$, for every choice of radii. A refined cover with forty branches has a certified gap greater than $0.04$ below that rate. The [separation theorem](../../notes/actual_shared_radius_certificate_separation.md) and its portable verifier establish both inequalities using rational data and explicit interval errors.
-
-![A coarser certificate fails on an actual source, while forty genuine sector branches pass.](../figures/sector-certificate-separation.png)
-
-Complete-packing balance still implies the anchored criterion. The earlier marked five-region example with word $(1,3,2,1,3)$ fails balance but passes six anchored witnesses. We now have two strict extensions of certificate classes, without claiming an inclusion theorem for unmarked knots with arbitrary alternative presentations.
-
-The [undivided-capacity theorem](../../notes/actual_complete_source_cauchy_capacity_gap.md) also identifies why optimizing one positive torus is insufficient: at a strictly unbalanced complete packing, even level-dependent optimal radii lose an exponential factor. The actual coefficient still has the complete volume rate.
-
-The remaining universal target is precise:
-
-$$\inf_{L>0}\left[\sum_e A_{e,\sigma_e}(L)-\sum_f\log L_f\right]<\Phi_D
-\quad\text{for each genuine non-CROSS string }\sigma.$$
-
-This condition would finish the full invariant theorem for every certified diagram where it holds. Its validity for all eligible plats remains open. The unrefined anchored condition is now known to be non-universal. Fractional one-sided comparison flows require a global estimate; their pure endpoints and the [fixed-triangle gap](../../notes/actual_fixed_triangle_boundary_capacity_gap.md) do not settle the intermediate mixtures.
-
-## The class and the order of quantifiers
-
-Fix an essential $2k$-strand plat diagram $D$, $k\geq2$, with a hyperbolic augmented exterior $Y_D$ and its actual primitive cusp markings. The [general target](../../notes/general_augmented_plat_long_twist_target.md) asks for a threshold $T(D)$ such that
-
-$$\min_i |m_i|>T(D)\quad\Longrightarrow\quad
+$$
 \lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(K_{D,\mathbf m})|
-=\operatorname{Vol}(S^3\setminus K_{D,\mathbf m}).$$
+=\operatorname{Vol}(S^3\setminus K_{D,\mathbf m}).
+$$
 
-The diagram and every signed full-twist number $m_i$ are fixed **before** the quantum level $N$ tends to infinity. The prescribed parity pattern must give a knot. The threshold may depend on the diagram; no threshold depending only on $k$ is asserted.
+The diagram and twist tuple are fixed before $N$ grows. The threshold is allowed to depend on the diagram, not merely on the number of strands. The [geometric filling theorem](../../notes/general_augmented_plat_long_filling_quantifiers.md) supplies the geometric part under its positive marked gluing hypothesis. A quantum source estimate is a further requirement.
 
-Under a positive marked gluing certificate, the [geometric filling theorem](../../notes/general_augmented_plat_long_filling_quantifiers.md) supplies a geometric threshold for independently long signed fillings. The quantum threshold is proved under the finite-sector cover criterion, including the simpler anchored and complete-radius conditions below. Universal fixed-sector coverage remains open.
+One finite geometric certificate is the [simple-white criterion](../../notes/general_simple_white_plat_class.md): the actual white cellulation must be a simple triangulated sphere with the specified matching. It allows separating triangles and arbitrary fixed width. It supplies a labeled convex ideal right-angled polyhedron for the cut diagram. It does not assert that every hyperbolic plat passes the test or that the presentation is minimal.
 
-## An explicit full-invariant family at every width $k\geq2$
+Several explicit families already satisfy the required source estimates. The [one-end layer family](../../notes/general_one_end_layer_long_filling_volume.md) works at every fixed width $k\ge2$. The [bridge-gap extension](../../notes/general_simultaneous_bridge_gap_filling_volume.md) permits independent fixed insertion depths, and the [marked unit-chain operation](../../notes/general_marked_unit_chain_filling_volume.md) adds arbitrarily many regions to its specified cores. Their constructions and thresholds are explained in the results chapter. The [Fox-coloring argument](../../notes/actual_fox_coloring_exact_plat_bridge.md) gives exact bridge number under an additional congruence; the [earlier reduced-layer theorem](../../notes/general_reduced_layer_long_filling_volume.md) is a separate included family. These are not classifications of all plats at those widths.
 
-The [one-end layer theorem](../../notes/general_one_end_layer_long_filling_volume.md) proves the volume limit for a family with $3k-3$ independently long signed twist regions, for **every fixed $k\geq2$**. In conventional braid-generator numbering, take the standard plat closure of
+![A comparison packing used in the explicit family at arbitrary fixed width.](../figures/symmetric-plat-balance-seed.png)
 
-$$\left(\prod_{j=1}^{k-1}\sigma_{2j}^{\alpha_j}\right)
-\left(\prod_{j=1}^{k-1}\sigma_{2j+1}^{\beta_j}\right)
-\left(\prod_{j=1}^{k-1}\sigma_{2j}^{\gamma_j}\right).$$
+![Independent circle-chain insertions in the first-layer bridge gaps.](../figures/each-bridge-gap-chain.png)
 
-Choose the first-layer exponents odd and the other two layers even. This gives one knot component. For each fixed width and retained half-twist sign pattern, sufficiently large absolute full-twist parameters, independently chosen and fixed before $N\to\infty$, give
+![The marked unit-chain extension preserves the original core packing.](../figures/marked-unit-chain-extension.png)
 
-$$\lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(K)|
-=\operatorname{Vol}(S^3\setminus K).$$
+## The complete augmented source is understood
 
-The right side is the actual smooth filled hyperbolic volume. Both level parities are included, with no ratio condition between twist magnitudes. The global remainder is bounded by the balance theorem below.
+Before the crossing circles are filled, the [signed augmented-source theorem](../../notes/general_signed_augmented_source_volume.md) proves the complete-link equality
 
-There is also a subfamily with **minimal bridge number exactly $k$**: require every box exponent to be divisible by $3$, keeping the same odd/even pattern. The [Fox-coloring certificate](../../notes/actual_fox_coloring_exact_plat_bridge.md) gives exactly $3^k$ colorings; a $b$-bridge knot has at most $3^b$. This congruence is needed for the bridge lower bound, not for the volume theorem.
+$$
+\lim_{N\to\infty}\frac{2\pi}{N}\log|A_{D,N}|
+=2\operatorname{Vol}(Q_D)=\operatorname{Vol}(Y_D).
+$$
 
-The geometric proof is uniform. Reflection of the actual marked packing reduces its contact heights to
+Here $Q_D$ is the labeled ideal right-angled polyhedron for the cut diagram, and $A_{D,N}$ is the marked complete-circle source with its framing normalization. Retained half-twists may independently have sign $0,+1,-1$. Both level parities and composite levels are included. The theorem does not manufacture the geometric certificate for an arbitrary diagram. The [coverage comparison](../../notes/general_untwisted_augmented_source_literature_coverage.md) explains prior overlaps and why parallel belts with a white bigon fall outside this certificate.
 
-$$ (1+z_{j-1})(1-z_j^2)(1+z_{j+1})=1,\qquad z_0=0,\quad z_{k-1}=1. $$
+The algebra behind the result is useful more generally. The [homogeneous source theorem](../../notes/actual_homogeneous_casimir_face_source.md) assigns to every Casimir-polynomial coupon $f_e$ a homogeneous polynomial $H_{f_e}$ of degree $d=N-1$ in its four face variables. The exact marked contraction is
 
-Here the equation holds at the interior indices $1\leq j\leq k-2$. After $v_j=\log(1+z_j)$, strict convexity gives a comparison principle; the right boundary is $v_{k-1}=\log2$ and is never substituted into the singular interior function. Translated copies of the exact three-node seed $(2/3,4/5,2/3)$ prove $z_j\geq2/3$ when $k\geq4$. The cases $k=2,3$ have exact small packings. For $k\geq3$, the final circle occupies its actual bounded tangency gap; $k=2$ uses its explicit three-unit-circle packing. Together these facts give $e_j/(a_{j-1}+a_j)\leq9/4$ at every relevant port, so the [zero-middle lemma](../../notes/actual_zero_middle_nine_quarter_balance.md) proves strict source balance.
+$$
+Z_N=\left[\prod_{f\ \mathrm{ordinary}}L_f^d\right]
+\left.\prod_e H_{f_e}\right|_{L_u=L_v=0}.
+$$
 
-![The earlier reduced width-four packing supplies the exact comparison seed.](../figures/symmetric-plat-balance-seed.png)
+The bracket means coefficient extraction, and $u,v$ are the two marked faces. The identity keeps the cup, cap, mark, parity and endpoint factors. The finite face grid and total degree rule out extra whole-level aliases; one does not choose an order for eliminating interacting operators.
 
-This proves a family at each $k\geq2$, rather than all $k$-bridge knots. The earlier reduced-layer family at $k\geq4$ is [preserved separately](../../notes/general_reduced_layer_long_filling_volume.md). The wider complete-radius criterion remains available for other diagrams; the unrestricted conjecture remains open.
+![Local four-face polynomials are joined by one coefficient extraction with shared face variables.](../figures/homogeneous-face-source.png)
 
-## Independent tangle depth at every initial bridge gap
+For a complete circle, the [positive face-polynomial formula](../../notes/actual_complete_circle_positive_face_polynomial.md) uses
 
-The [simultaneous bridge-gap theorem](../../notes/general_simultaneous_bridge_gap_filling_volume.md) permits a separate fixed depth $m_j\geq0$ at every first-layer bridge gap of the one-end core. Replace its zero-based slot $2j-1$ by
+$$
+D_a(x,b,y)=\det\!\left[bI+\frac{x}{2}H_-+\frac{y}{2}H_+\right],\qquad
+\widetilde P_s(x,y)=\sum_{j=0}^s\frac{S_s}{S_jS_{s-j}}x^{s-j}y^j,
+$$
 
-$$ (2j-1,2j)^{m_j}(2j-1),\qquad 1\leq j\leq k-1. $$
+where $H_\pm$ are the specified positive Hermitian matrices, $S_j=\prod_{r=1}^j2\sin(\pi r/N)$, and $s=d-2a$. Their coefficients are nonnegative and their combined degree is $d$. The [marked coefficient theorem](../../notes/actual_original_marked_face_coefficient.md) gives the entire source as the sum over folded labels $a$ of these shared coefficients, multiplied by the explicit source scalars, multiplicities and half-twist phases. The normalization includes the factor $N^R$ for $R$ crossing circles. Even-level carries cancel only in the whole marked expression.
 
-The later two layers stay in their original order. The resulting family has
+The geometric rate follows from a sequence of global results. The [transverse rank theorem](../../notes/actual_original_boundary_transverse_rank.md) removes the two framing directions and fixes the common scale. The [positive coefficient saddle theorem](../../notes/actual_positive_face_coefficient_saddle.md) controls the entire coefficient torus and gives a nonzero Gaussian contribution. The [absolute action calculation](../../notes/actual_original_boundary_stationary_character.md) cones the actual facets and fixes the additive volume constant. The [uniform channel-rate theorem](../../notes/actual_positive_face_channel_rate.md) controls all folded labels at the same radii.
 
-$$ R=3k-3+2\sum_{j=1}^{k-1}m_j $$
+Near the maximal folded label $M=\lfloor(N-1)/2\rfloor$, write $a_i=M-t_i$ and $s_0=N-1-2M$. The sector ratio has the relative form
 
-independently long signed twist regions. For every fixed width, depth vector and prescribed knot-producing half-twist pattern, sufficiently long fixed fillings have the **full original invariant's actual hyperbolic-volume limit**. The threshold may depend on this whole diagram. Taking new exponents even preserves the original knot parity automatically; more general fixed half-twist patterns are allowed when the resulting permutation gives a knot. The mod-$3$ exponent condition again supplies minimal bridge number exactly $k$.
+$$
+\frac{F_N(\mathbf M-\mathbf t)}{F_N(\mathbf M)}
+=\exp\!\left[-\sum_i C_{i,N}\frac{t_i(t_i+s_0)}N\right](1+o(1)),
+\qquad C_{i,N}>0.
+$$
 
-![Exact square-root-curvature transport inside each original bridge gap.](../figures/each-bridge-gap-chain.png)
+The exact half-twist phases sum to the nonzero factor $(\pi N)^{R/2}\prod_i(C_{i,N}-\pi i\epsilon_i)^{-1/2}$. Thus the signed conclusion does not follow by discarding phases from the positive proof. The estimates control the intermediate and macroscopic tails as well as this central window.
 
-The geometry is explicit. In each original empty gap between the exterior line and two disks of curvatures $A\leq B$, insert a chain with
+![The face directions and marked transverse slice used in the coefficient saddle.](../figures/face-potential-rank.png)
 
-$$ \sqrt{C_n}=\sqrt B+n\sqrt A. $$
+## The positive endpoint and its unique geometric maximum
 
-The original core disks remain fixed, and the gaps have disjoint interiors. The exact original face sweep verifies that simultaneous insertions have precisely these contacts. New ports have largest middle curvature at most $9/4$ times the sum of their outer curvatures, so the proved entropy bound gives balance. The one-end core's increasing side curvatures verify $A\leq B$ uniformly in width. This supplies arbitrary independent tangle depths across the first layer; it does not classify all $k$-bridge knots or arbitrary plat words.
+Another useful comparison source is the positive spectral endpoint. For even $N$, the [endpoint theorem](../../notes/general_fejer_endpoint_source_volume.md) gives rate
 
-## Arbitrarily many twist regions at each fixed width
+$$
+W_D=\frac{\operatorname{Vol}(Y_D)}{2\pi}
+$$
 
-The [marked unit-chain theorem](../../notes/general_marked_unit_chain_filling_volume.md) extends any balanced certified core whose first box has zero-based slot $1$, which uses no slot $0$, and whose first cap is marked. Prepend $(1,2)^m$, assigning each new box its own even signed exponent. The original knot parity and marked cap are retained.
+for the marked source with $P_N=-V_N(-2)=4(2+\Omega_N)^{-1}$ at every crossing region. Here $\Omega_N$ is the Casimir operator and $V_N$ its polynomial resolvent numerator. This comparison source is not the filled knot invariant.
 
-In the actual circle packing, the prefix inserts $2m$ unit disks into an empty component between the two marked lines. Every old disk stays fixed. For $m>0$, all new ports satisfy balance and the changed first core port has a larger balance margin. This proves a closure operation for every $m$, without inferring it from a finite list of packings.
+The [closed half-block estimates](../../notes/actual_fejer_half_block_entropy.md) and [full-kernel identity](../../notes/actual_fejer_full_kernel_entropy_identity_reduction.md) give a continuous local entropy $h$ on the entire degree simplex. Every monomial of degree $N-1$ occurs in the full positive kernel, so the global rate is the maximum of $\sum_e h(q_e)$ subject to the same shared-face demands. If individual cross and one-sided patterns are retained, the [finite-level support test](../../notes/actual_fejer_shared_entropy_variational.md) detects offsets that the limiting polytope alone can miss.
 
-![A marked unit chain adds regions while leaving the core packing unchanged.](../figures/marked-unit-chain-extension.png)
+Several reductions prove that this maximum is geometric. [Identity-forest contraction](../../notes/actual_fejer_diagonal_identity_forest_reduction.md) removes pure-middle identity coupons without changing targets. The [hybrid Hall reduction](../../notes/actual_fejer_hybrid_tight_cut_reduction.md) keeps cross factors as two triangle rows and one-sided factors as single rows. [Boundary regularity](../../notes/actual_fejer_nondiagonal_maximizer_regularity.md) recovers positive shared multipliers on the resulting pieces. The [representation assembly](../../notes/actual_fejer_hybrid_piece_representation.md) then constructs a representation of the original augmented-link group with relative volume $2\pi W_D$.
 
-Applied to the every-width core above, this gives **$3k-3+2m$ independently long signed twist regions for every fixed $k\geq2$ and $m\geq0$**. Each fixed diagram has the full original invariant's actual filled-volume limit; its threshold may depend on both $k$ and $m$. The mod-$3$ exponent condition again gives minimal bridge number exactly $k$. The added boxes use the first four physical strands. This is a general closure rule, not coverage of arbitrary multilayer plats.
+That volume calculation uses the [signed cut-ball regulator chain](../../notes/actual_fejer_signed_cut_ball_regulator.md). It does not assume that an open regulator remains unchanged when its reference flag is reset. The previously found fixed-degree convexity counterexample is also not used as a false shortcut. The [unique-maximizer theorem](../../notes/actual_fejer_unique_geometric_maximizer.md) identifies the only maximizing flow with the marked complete geometry. Compactness gives a strict gap outside every fixed neighborhood, but not a gap uniform over all diagrams.
 
-## A full filling theorem with a finite geometric hypothesis
+Identity insertions have a strictly lower rate or give zero, because the resulting representation kills an essential meridian. The [serial-coupon estimate](../../notes/actual_fejer_serial_coupon_bound.md) separately shows that a fixed literal chain on one ordered pair changes the positive source by at most a polynomial factor. It does not justify replacing arbitrary separating cuts by serial chains.
 
-Take a fixed certified simple-white augmented plat and its original marked complete packing. At each crossing region write the four face curvatures as $(x,b,c,y)$; the two protected curvatures stay exactly zero. Put $A=x+y>0$. The [algebraic balance lemma](../../notes/actual_triangle_entropy_algebraic_balance.md) shows that
+Odd levels need the independent spectral derivative. The [odd regularization theorem](../../notes/actual_fejer_odd_regularized_full_numerator.md) uses
 
-$$ (A+b)(A+c)\geq\max\{b^2,c^2\} $$
-
-at every region is sufficient for the [full invariant theorem](../../notes/general_complete_radius_balance_filling_volume.md). The stronger test $|b-c|\leq x+y$ is often simpler to check. All regions use the **same actual complete packing**, with one common scale; separately chosen local radii do not give this certificate.
-
-For each such fixed diagram $D$, there is a threshold $T(D)$ so that every independently signed fixed full-twist vector with $|p_i|>T(D)$, and the prescribed knot-producing parity, satisfies
-
-$$\lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(K_D(\mathbf p))|
-=\operatorname{Vol}(S^3\setminus K_D(\mathbf p)).$$
-
-The right side is the volume of the actual smooth filled exterior. The twists are fixed before $N$ grows; no bound on their relative sizes is imposed. This theorem does not assert minimal bridge number, a width-only threshold, or that all certified diagrams pass the test.
-
-The sharper hypothesis is $Q_b(0)+Q_c(0)>\log b,\log c$ for the positive middles, where $Q$ is the original triangle action. Its proof follows three steps. The [entire CROSS period](../../notes/general_all_cross_long_filling_volume.md) has the filled-volume rate, with every Fourier charge and endpoint current controlled. The [global LEFT/RIGHT estimate](../../notes/actual_global_left_weighted_spectral_envelope.md) bounds every surviving one-sided factor strictly below its CROSS rate under balance, at all face phases on the same coefficient torus. Finally, integration by parts on the original whole domains makes the full remainder exponentially smaller than the nonzero CROSS contribution.
-
-**Coverage now includes the explicit family above at every $k\geq2$.** Its recurrence proves actual $Q$-balance uniformly via the zero-middle $9/4$ bound; the stronger product test can fail for this family. Extending to general plat diagrams remains open.
-
-## A whole-source equality at arbitrary fixed width
-
-The [signed augmented-source theorem](../../notes/general_signed_augmented_source_volume.md) proves
-
-$$\lim_{N\to\infty}\frac{2\pi}{N}\log|A_{D,N}|
-=2\operatorname{Vol}(Q_D)=\operatorname{Vol}(Y_D).$$
-
-Here $A_{D,N}$ is the original marked complete-circle source, with its actual normalization and retained exterior framing factor. The input is a connected original plat projection and a **labeled convex ideal right-angled polyhedron** realizing its actual cut and face pairings. Each retained half-twist exponent may independently be $0,+1,-1$. The width and matching graph are arbitrary and fixed; both level parities and composite levels are included.
-
-This is a theorem about complete augmented **links**, including patterns whose main strands form one component. The older mixed-color route to filling their crossing circles uses the external-color estimates below; the new fixed-root balance theorem provides a separate route. The theorem does not assert that every reduced plat has the required geometric certificate. Parallel belts producing a white bigon fail this certificate; the [coverage check](../../notes/general_untwisted_augmented_source_literature_coverage.md) explains why their known even-level zeros are compatible with the theorem.
-
-The proof is recorded and independently reviewed within this project. That is distinct from external peer review.
-
-## The original source as one homogeneous coefficient
-
-The [homogeneous source theorem](../../notes/actual_homogeneous_casimir_face_source.md) now applies to **every original Casimir-polynomial coupon**. For a coupon $f_e(\Omega)$, its exact face operator gives one polynomial $H_{f_e}(x,b,c,y)$ of degree $d=N-1$, with nonnegative integer exponents and its original complex coefficients. The whole marked contraction is
-
-$$Z_N=\left[\prod_{f\ \mathrm{ordinary}}L_f^d\right]
-\left.\prod_e H_{f_e}\right|_{L_u=L_v=0}.$$
-
-The identity retains the actual cup/cap factors, physical endpoint zeros, the second-head mark, and both parity cosets. It includes small colors, signed crossings, arbitrary polynomial combinations and disconnected replacements. No smoothing forest or ordering of dependent operators is needed. The finite face grid has $N^{R+1}$ points; its local inverse Fourier factors and mark give exactly the coefficient above. Degree $dR$ excludes every additional level alias.
-
-![Every original coupon becomes a homogeneous polynomial on its four original faces; one shared-face coefficient gives the whole marked source.](../figures/homogeneous-face-source.png)
-
-Complete circles recover the earlier positive formula below: their $H$ contains an exact factor $N$, followed by the original folded-channel sum. Thus the general identity and the complete-source normalization agree.
-
-Let $R$ be the number of crossing circles, $d=N-1$, and $a_i$ the original internal channel labels. At each circle, the [literal source identity](../../notes/actual_complete_circle_positive_face_polynomial.md) gives two determinant polynomials and one forced-zero polynomial:
-
-$$D_a(x,b,y)=\det\!\left[bI+\frac{x}{2}H_-+\frac{y}{2}H_+\right],\qquad
-\widetilde P_s(x,y)=\sum_{j=0}^{s}\frac{S_s}{S_jS_{s-j}}x^{s-j}y^j,
-\quad s=d-2a.$$
-
-The matrices are the original positive Hermitian matrices, and $S_j=\prod_{r=1}^j2\sin(\pi r/N)$. These polynomials have nonnegative coefficients for **every** folded label. Their combined degree at a circle is $2a+s=d$.
-
-The [exact marked coefficient theorem](../../notes/actual_original_marked_face_coefficient.md) then converts the actual finite head sum into one coefficient:
-
-$$A_{D,N}=\chi_{D,N}N^R\sum_{\mathbf a}
-\left(\prod_i k_{a_i}\beta_{a_i}^2\omega_{a_i}^{\epsilon_i}\right)
-\left[\prod_{f\ne u,v}L_f^d\right]
-\left.\prod_i D_{a_i,\mathrm{in}}D_{a_i,\mathrm{out}}
-\widetilde P_{s_i}\right|_{L_u=L_v=0}.$$
-
-Every scalar is specified by the original source. The mark removes exactly the two face exponents $u,v$. The other $R$ target exponents already use the entire degree $dR$, so there is no additional Fourier alias. Local polynomial zeros enforce the original unwrapped support; the primitive face grid supplies the exact power $N^R$. Even-level carries cancel only after the whole marked expression is assembled.
-
-For $\epsilon_i=0$, this is a positive sum after removing the common unit phase $\chi_{D,N}$. With half twists, the same coefficients remain positive and their channel phases are summed explicitly by the signed theorem.
-
-## Why the coefficient has the actual geometric rate
-
-The proof uses one circle-packing radius for each shared white face. It does not independently maximize the tensor factors.
-
-1. The [rank and curvature theorem](../../notes/actual_original_boundary_transverse_rank.md) leaves exactly two flat framing directions. Removing the two marked faces and fixing the common scale gives a positive Hessian of size $N$.
-2. The [global coefficient theorem](../../notes/actual_positive_face_coefficient_saddle.md) bounds the entire coefficient torus. A finite positive-matrix contraction gives exponential decay away from its unique angular maximum, followed by a nonzero relative Gaussian asymptotic.
-3. The [absolute action calculation](../../notes/actual_original_boundary_stationary_character.md) cones the marked ideal vertex to the actual white and shaded facets. Their Lobachevsky contributions give $2\operatorname{Vol}(Q_D)$, with the additive constant fixed by the original determinant normalization.
-4. The [uniform channel-rate theorem](../../notes/actual_positive_face_channel_rate.md) controls every internal label at those same radii. Its circle rate increases strictly to the fold. This bounds the whole source from above; one positive folded coefficient supplies the matching lower bound in the untwisted case.
-5. The [signed extension](../../notes/general_signed_augmented_source_volume.md) proves a uniform relative Gaussian estimate from the original finite continuants. It sums the actual half-twist phases and bounds all remaining labels. Its leading coefficient is nonzero at both level parities.
-
-More precisely, put $M=\lfloor(N-1)/2\rfloor$, $s_0=N-1-2M$ and $t_i=M-a_i$. If $F_N(\mathbf a)$ denotes the positive sector coefficient including its $\beta$ factors, the actual shared-radius saddle gives
-
-$$\frac{F_N(\mathbf M-\mathbf t)}{F_N(\mathbf M)}
-=\exp\!\left[-\sum_i C_{i,N}\frac{t_i(t_i+s_0)}{N}\right](1+o(1)),\qquad C_{i,N}>0.$$
-
-The exact phase ratio is $\omega_{M-t}/\omega_M=\exp[\pi i t(t+s_0)/N]$. Retaining the original multiplicities, the channel sum therefore contributes
-
-$$ (\pi N)^{R/2}\prod_i(C_{i,N}-\pi i\epsilon_i)^{-1/2}(1+o(1)). $$
-
-Here $C_{i,N}$ is evaluated at the exact finite critical radius and tends to a positive geometric value $C_i$. The factor cannot vanish. The estimate is relative throughout a window wider than $\sqrt N$, and the proof controls both its intermediate and macroscopic tails.
-
-![The two constant-face directions and the neighboring original physical heads that give a primitive transverse slice.](../figures/face-potential-rank.png)
-
-## How far this is from the requested knot theorem
-
-The complete signed source, the full local packet, and the entire CROSS filling period are proved. The new balance condition also closes the full original remainder. The remaining distance to the requested general theorem is now:
-
-| Required step | Status | Remaining scope |
-| --- | --- | --- |
-| Entire CROSS period, including all charges | Proved with the actual filled-volume rate | No remote-charge restriction in this sector |
-| Full one-sided remainder at balanced complete radii | Proved; yields the full invariant limit | The finite balance hypothesis must hold on the actual marked packing |
-| Actual family coverage | Proved for every $k\geq2$, with exact-bridge subfamilies | Extend beyond this family and the finite balance criterion |
-
-These are separate statements: the conditional theorem applies to every passing diagram, while the recurrence proves coverage for the explicit family. The diagonal and short-moving sector estimates also survive without balance, but do not cover every macroscopic one-sided sector.
-
-The external-color reflection route is also retained below, with its own corridor and alias estimates. Its internal deficits $s_i=N-1-2a_i$ and external filling-color deficits $h_i=N-j_i$ are different variables. The [fixed complex core theorem](../../notes/actual_complete_core_complex_packet.md) now controls the complete-image term with $\boldsymbol\chi=\mathbf h/N$ in a fixed complex neighborhood:
-
-$$\frac{F_N(N\boldsymbol\chi)}{F_N(0)}
-=e^{N(S_N(\boldsymbol\chi)-S_N(0))}
-\sqrt{\frac{\det K_N(0)}{\det K_N(\boldsymbol\chi)}}
-\bigl(1+O(N^{-1})\bigr).$$
-
-Here $S_N$ is the selected joint critical action and $K_N$ its nonsingular Hessian. The square root is fixed at $\boldsymbol\chi=0$. The theorem proves nonvanishing uniformly and $S_N\to S$ holomorphically. The [geometric deformation theorem](../../notes/actual_complete_core_geometric_deformation.md) identifies this limiting action on the actual marked peripheral branch:
-
-$$2\pi\operatorname{Re}S(\boldsymbol\chi)
-=\operatorname{Vol}(\rho_{\boldsymbol\chi})
-+\frac12\sum_i\operatorname{Re}U_i\operatorname{Im}V_i,
-\qquad U_i=-2\pi i\chi_i.$$
-
-Thus for small **real** $\boldsymbol\chi$, the exact complete-core polynomial has rate $\operatorname{Vol}(\rho_{\boldsymbol\chi})$. At zero this is the complete augmented-link volume. For complex meridians the displayed boundary correction is necessary. The relative asymptotic still retains $S_N$; convergence alone does not justify substituting $S$ in its exponential. The [finite-level action transfer](../../notes/general_long_filling_varying_action_transfer.md) now proves that the filling calculation can retain $S_N$ throughout and take its limit at the end. Its remaining hypotheses are the full mixed-source estimates.
-
-The [external reflection theorem](../../notes/actual_external_circle_reflection_and_cusp.md) gives an exact interface. An original color $N-h$ circle is a cosine-weighted complete circle plus a literal color $h$ circle. The complete term has a proved Fourier limit for $h=z\sqrt N$, and its coefficient matches the primitive cusp shape:
-
-$$\frac{F_N(\sqrt N\,\mathbf z)}{A_{D,N}^{\boldsymbol\epsilon}}
-=\exp\!\left[-\sum_i\frac{\pi^2z_i^2}{Z_i}\right](1+o(1)),
-\qquad \tau_{\mathrm{geom},i}=\frac{2\pi i}{Z_i},\quad Z_i=C_i-\pi i\epsilon_i.$$
-
-This holds uniformly for bounded complex $\mathbf z$, with fixed derivatives. It is a theorem about the specified complete term. The full mixed source also contains small-color terms, and the complete term has a full-size opposite-end alias. At that endpoint the small-color term cancels it exactly. A proof for the filling transform must retain this cancellation and control the entire combined source.
-
-![Two actual cusp rectangles fix the primitive longitude factor of two and the normalization of the mesoscopic Fourier Gaussian.](../figures/cusp-gaussian.png)
-
-The [source-divisor transfer](../../notes/general_long_filling_source_divisor.md) explains the final quantifier: a nonzero analytic amplitude germ gives a result outside an exceptional divisor, while all independently long slopes require the stronger unit or coordinate-monomial condition. The established complete core has a unit amplitude. To use it for the original filled invariant, the other terms and the color complement must still have a proved gap.
-
-## The exceptional edge now has an exact algebraic description
-
-The [finite Fourier-period theorem](../../notes/actual_positive_face_fixed_fold_packet.md) gives an exact four-component difference equation for the original complete-circle core. Its shift range is bounded independently of $N$. It retains the actual finite polynomial solution, both fold endpoints, the Fourier gauge and the full classical determinant factors. Its selected local characteristic is an explicit palindromic quartic. After the shared-face extraction, the equation couples neighboring face coefficients; a scalar equation for the whole knot has not yet been derived.
-
-The [exponential interpolation theorem](../../notes/actual_positive_face_exponential_fold_interpolation.md) improves the original fixed-real estimate to an exponentially accurate comparison on the actual channel grid, uniformly for complex face radii. Analytic iterations on nested disks and contraction of the actual finite recurrence establish that comparison. The complete-core theorem then converts the finite channel grid by exact cotangent contours and evaluates the joint saddle. This closes the fixed-neighborhood analytic step for the complete term.
-
-The [coupled polynomial system](../../notes/actual_whole_source_coupled_face_difference_system.md) retains every shared-face coefficient and the exact fold-selection relation. It matches the ordered classical momenta on regular charts. At a triangle with two marked zero faces the local quadratic has a double root. The [marked circle-pattern theorem](../../notes/actual_marked_deformed_circle_pattern.md) recovers the shared strip, all source-stationary face radii, and selected eigenline germs directly from a nonsingular finite geometric system. The [primitive collar calculation](../../notes/actual_deformed_circle_primitive_collar.md) then fixes the actual disk word, half-twist shear and line-face limit. Its single side pairing has multiplier $E_bE_c/D$; the double-reflection word has its square. Keeping that distinction and the actual eigenflag lets the global theorem verify every group relation and the regulator differential.
-
-## What the remaining small-color terms now reduce to
-
-The [exact small-circle operator](../../notes/actual_small_circle_polynomial_face_insertion.md) preserves the face polynomial ring after summing all original paths. Its apparent negative powers cancel because the physical endpoint coefficients vanish. The original total-degree argument then excludes every whole-level Fourier alias. At fixed positive radii, a color $h$ insertion costs at most $C^{h-1}$ in the weighted coefficient norm.
-
-The [simultaneous correspondence](../../notes/actual_simultaneous_small_circle_face_correspondence.md) now covers **every untwisted subset with connected identity smoothing**, including protected outgoing faces and cyclic dependencies between operators. Its proof checks polynomiality separately in each merged-face component, while retaining all other formal path choices. It needs no global elimination order. The earlier [ordered construction](../../notes/actual_ordered_small_circle_face_insertions.md) remains a useful special case.
-
-Disconnected identity smoothings have a different exact conclusion. If the inserted colors satisfy
-
-$$2\sum_{i\in J}(h_i-1)<N-1,$$
-
-their entire original subset contribution is **zero**. The ordinary face targets require more degree than the retained Laurent terms can supply. This includes the mesoscopic window at both level parities, with every remaining complete-circle phase retained. Deleted ports carrying a half twist are still outside these results.
-
-For the required geometric gap, the [smoothing-capacity theorem](../../notes/actual_matching_smoothing_angle_capacity.md) supplies a sufficient angle-flow and entropy condition when an untwisted color-one circle is deleted. The polynomial operator carries any compatible strict gap to small colors, at the stated $C^{h-1}$ cost. It does not supply the gap itself.
-
-The [fixed-radius criterion](../../notes/actual_smoothing_fixed_radius_gap.md) gives another sufficient bound without requiring a regular smoothed minimizer. Its explicit certified matched-graph family shows that the corresponding capacity test can fail when only the merged face varies. A source-coverage correction distinguishes that functional example from an original flat-plat source counterexample: the latter would need a presentation adapter that has not been proved. The graph geometry and capacity calculation remain valid.
-
-The [capacity decomposition](../../notes/actual_smoothed_source_capacity_blocks.md) now handles those boundary limits. Compact angle duality remains exact even when the positive-radius infimum is not attained. Loops give an infeasible angle problem; separating two-edge cycles split the capacity into an additive sum. Each nontrivial simple block has a constructed circle packing and an actual convex ideal right-angled polyhedron, with
-
-$$\Phi_{\mathrm{smoothed}}=\sum_B\frac{\operatorname{Vol}(Q_B)}{\pi}.$$
-
-Double-triangle blocks contribute zero. The formula is independent of each block's adjacent marked pair; it does not move the quantum mark or factor the finite quantum source.
-
-The [strict representation-volume theorem](../../notes/general_representation_volume_kernel_strictness.md) supplies the strict comparison when the smoothed source is itself certified hyperbolic. Its actual filling quotient kills an essential meridian. An independently checked natural-map argument proves that a representation with such a kernel has strictly smaller absolute volume. Thus the connected regular smoothing has a strict capacity gap, and the simultaneous operator estimate transfers it to small colors. A simple smoothed white triangulation supplies its required polyhedron by the block construction.
-
-The [actual block representation](../../notes/actual_smoothed_block_representation_volume.md) now closes the nonzero degenerate-block case. It retains the original cuts and face pairings, including matching cuts whose shaded pairings run between blocks. Compatible finite horospherical corners and a uniform short-edge tetrahedron bound identify the regulator with the sum of block volumes. The representation kills the deleted meridians, so the strict-volume theorem applies. No geometric decomposition of the whole smoothed exterior or finite quantum factorization is assumed.
-
-Combining that strict gap with the exact subset identities proves a **general untwisted color corridor**. For any fixed set $E$ of untwisted varied ports, the other ports staying complete with their original signs, there are $\delta(D),\gamma(D)>0$ such that
-
-$$\left|A_N(N-\mathbf h_E,N_{\mathrm{else}})-F_N^E(\mathbf h)\right|
-\leq N^{K(D)}e^{N(\operatorname{Vol}(Y_D)/(2\pi)-\gamma(D))},
-\qquad 0\leq h_i\leq\delta(D)N.$$
-
-The [whole-source corollary](../../notes/general_untwisted_mixed_source_volume_corridor.md) combines this gap with the zero-free core. After shrinking the corridor, their ratio is $1+O(e^{-cN})$. Consequently, for any physical integer sequence $\mathbf h_N/N\to\boldsymbol\chi$ in that corridor,
-
-$$\lim_{N\to\infty}\frac{2\pi}{N}\log\left|A_N(N-\mathbf h_{N,E},N_{\mathrm{else}})\right|=\operatorname{Vol}(\rho_{\boldsymbol\chi}).$$
-
-This is a limit for the **whole original mixed source**, with the actual marked geometric representation on the right. It holds at arbitrary fixed width and both level parities. A complete metric on a filled knot is a further assertion, and the full filling transform still needs its complementary-color estimates.
-
-The [homogeneous theorem](../../notes/actual_homogeneous_casimir_face_source.md) also gives a joint signed/unsigned corridor under an explicit finite certificate. Put $F_e=F(x,b,y)+F(x,c,y)$ for an unchanged circle, and use the four-angle potential $G(b,x,y,c)$ for a replaced signed circle. For an unsigned replacement the sharper potential is $I(b,c)=\log\max(b,c)$. For every nonempty reflected subset $S$, it suffices to find shared positive face weights with
-
-$$\mathcal C_S(\ell)=\sum_{e\notin S}F_e(\ell)
-+\sum_{e\in S}\Psi_{\epsilon_e}(\ell)
--\sum_{f\ \mathrm{ordinary}}\log\ell_f
-<\frac{\operatorname{Vol}(Y_D)}{2\pi},\qquad
-\Psi_0=I,\quad\Psi_{\pm1}=G.$$
-
-A face has one weight wherever it occurs; different subsets may use different choices. The graph has finitely many subsets. Their strict margins absorb the $C^{h_i-1}$ insertion costs on one sufficiently small fixed color cube. This proves an exponentially accurate ratio to the geometric core and the same whole-source representation-volume limit displayed above. The proof covers interacting signed ports and disconnected subsets. What remains unproved generally is the **existence** of these certificates.
-
-The simpler original-packing test $g_e=F_e-G_e>0$ at every varied port implies the certificate, including marked-zero limits after regularization. It is sufficient and is not automatic. A rationally certified width-three instance proves that the criterion has actual diagram examples. The earlier [one-port theorem](../../notes/actual_signed_small_circle_face_kernel.md) and its explicit curvature tests remain useful special cases.
-
-![A schematic slice of external colors: the untwisted corridor, joint signed corridors under shared-radius certificates, and the remaining full color complement.](../figures/external-color-corridor.png)
-
-The [positive Newton calculation](../../notes/actual_positive_newton_capacity_obstruction.md) explains why the far-color problem cannot be reduced to a presumed universal entropy comparison on all certified matched graphs. Its exact local kernel has nonnegative coefficients, but an explicit shared-face feasible state gives a capacity above the geometric complete value. The coefficient lower bound retains the true Newton weights. The graph family has not yet been adapted to the original flat-plat compiler, so this remains a polynomial-capacity obstruction, not a claimed flat-plat source counterexample. In the actual alternating expansion the omitted sign changes a critical equation. A proof using that expansion must retain the sign.
-
-The [resummed small-circle formula](../../notes/actual_resummed_small_circle_face_kernel.md) now gives every local coefficient by a finite rational generating function, with an explicit Fourier formula when one outer degree vanishes. It also disproves a tempting far-color shortcut: even after the Newton cancellations, a unique-path coefficient can be exponentially larger than the corresponding crossing coefficient. This is a local norm obstruction, not a counterexample to a bound after the full shared-face extraction. For this external-color route, general signed-certificate existence and the entire complementary color region, including combined opposite-end aliases, remain unresolved. The direct-power spectral route below has a proved full local source packet.
-
-The [near-maximal-volume theorem](../../notes/general_representation_volume_peripheral_gap.md) gives a general geometric criterion for the latter problem. For a fixed finite list of marked peripheral words, keeping any $|\operatorname{tr}^2\rho(\mu_i)-4|$ bounded away from zero forces a uniform positive volume gap. Its proof derives convergence to the marked complete representation from near-maximal volume. Using this criterion for the quantum source still requires a bound on the actual full period; a characteristic equation or the complete-image term alone does not provide that bound.
-
-The previous operator and torsor approaches remain available. The exceptional operator is the original normalized Casimir polynomial, with its [general character relation](../../notes/actual_matching_edge_polynomial_geometric_action.md) and [exact resolvent period](../../notes/actual_matching_edge_continuant_operator_period.md). The original marked transport, genuine quantum normals, odd framing source, logarithmic class and relative boundary currents are preserved in the [source and torsor routes](../library.html). The new coefficient identity and signed Gaussian resolve the complete contraction without assigning an arbitrary relative cycle.
-
-The [retained Newton critical equations](../../notes/actual_alternating_newton_peripheral_branch.md) provide a further algebraic comparison. Keeping the actual alternating sign and finite sine-factorial ratios yields a localized quadratic relation. After the shared-face equations are eliminated, an explicit rational change identifies its closure with the original untwisted primitive-collar trace relation. The selected square roots and meridian lift remain specified. The external action derivative distinguishes reciprocal Newton branches that have the same trace square. Their real Newton indices lie outside the terminating low-color range, so this comparison does not establish a contributing finite-sum cycle or a global volume bound.
-
-The [full local action comparison](../../notes/actual_newton_complete_local_action.md) goes further on the explicitly selected reciprocal logarithmic sheet: $\Psi_{\mathrm{Newton}}=S_{\mathrm{core}}+\pi i$ as holomorphic germs near completeness. It matches every shared-face derivative, the external momentum, and the additive phase. This theorem concerns an untwisted local port. The physical $h=1$ kernel has only its $r=0$ Newton term, whereas this continued critical point has $r/N>1/2$; matching the action therefore does not select a contribution to that finite sum. The full-source estimate must still retain the actual endpoints and signed compositions.
-
-The global knot quantum A-operator and its selected period have not been derived from this identity. The coefficients and source relations provide a concrete finite object for that work; they are not being renamed the knot A-polynomial.
-
-## Direct twist transport on the Casimir conic
-
-The [direct-power identity](../../notes/actual_direct_long_power_source.md) offers an alternative to the external-color expansion. Kernels on the same pair compose exactly by $H_{fg}=[z^{N-1}]H_f(x,b,z,y)H_g(x,z,c,y)$. Every fixed signed twist power can therefore remain inside its original box, with its phases and repeated Casimir-node data intact.
-
-The [crossing transport theorem](../../notes/actual_crossing_casimir_torus.md) derives a conserved quantity from the actual crossing characteristic. With the outer faces fixed, set $A=x+y$, $P=xy$. The coefficient advance satisfies
-
-$$\sigma=2+\frac{(b+z+A)^2}{P-bz},\qquad b_{j+1}+\sigma b_j+b_{j-1}+2A=0.$$
-
-Here $\sigma$ is the principal symbol of the original Casimir. On a smooth generic fiber, the quadratic cover $\lambda^2+\sigma\lambda+1=0$ supplies an explicit norm-one coordinate with transport $a\mapsto\lambda^n a$. The reference point used to trivialize the torsor is excluded from the regular stationary chart; all intermediate excluded divisors remain recorded. At $\sigma=-2$ the transport is additive, with an affine matrix satisfying $(M-I)^3=0$. The other endpoint $\sigma=2$ is a nonreduced double line and has a different action.
-
-![The actual crossing characteristic becomes multiplicative transport on a generic Casimir conic and additive transport on its parabolic fiber, with the exact quantum Gaussian retained.](../figures/casimir-twist-transport.png)
-
-The canonical two-form fixes the orientation and Hamiltonian. The existing exact Gaussian functional calculus, now checked for every integer power, retains that same Hamiltonian and all Hermite data. These are local source statements at arbitrary bridge width. Different boxes need not have commuting Casimirs, and the shared-face contraction still requires an estimate that preserves phases.
-
-The [physical meridian theorem](../../notes/actual_crossing_torus_meridian_transport.md) now connects this transport to the actual filled diagram. The half powers in the original physical kernel give the reciprocal momentum $p=r_H^{-1}$. The outer head derivative fixes the common scale of the two meridian flags. With both included, a positive crossing gives the literal Hurwitz move
-
-$$ (A,B)\longmapsto(A^{-1}BA,A),\qquad P=BA, $$
-
-and the negative crossing gives its inverse. The entire ordered product $P$ is preserved. The trace alone would not fix these conventions.
-
-For any fixed plat width and any fixed integer powers, the shared wire equations and the original cup/cap/mark phases then assemble **every full regular layered critical point** into a boundary-parabolic representation of the actual filled knot group. This is a regular forward morphism, with its excluded divisors and logarithmic characters specified. It does not show that a root of a cleared whole-box equation lifts to that chart. It also does not classify protected-zero, singular or escaping critical points of the original marked coefficient. In particular it supplies no nonzero coefficient for the geometric branch in the finite sum.
-
-There is a general reason to retain those phases. The direct-power note proves that the positive envelope obtained by taking absolute values of the canonical Hermite spectral terms has growth at least the complete drilled volume, even after shared-radius optimization. It cannot establish the strictly smaller filled-volume rate. The torsor gives explicit transport; bounding its original global period remains the decisive step.
-
-## The full spectral numerator and the remaining estimate
-
-Put $\chi_N(\sigma)=2T_N(\sigma/2)+2$ and $V_N(\sigma)=\chi_N(\sigma)(\sigma-\Omega)^{-1}$. The [spectral total-derivative identity](../../notes/actual_spectral_total_derivative_source.md) rewrites each original twist operator using this polynomial numerator, including both the ordinary projector and the nilpotent term at every repeated node. Its exact Fourier formula has zero charge identically zero; the nonzero charges and endpoint currents remain. Values of the complete-channel kernel alone do not determine the independent derivative data.
-
-The [Gaussian numerator theorem](../../notes/actual_gaussian_resolvent_numerator_and_cap.md) gives a concrete object to estimate after sewing:
-
-$$(-1)^{N-1}V_N(-2\cosh w)
-=L_N+2\sum_{h=1}^{N-1}\cosh((N-h)w)L_h.$$
-
-Here the $L_h$ are the original physical-color coupons, with any separately retained half crossing multiplied on both sides in its original order. This is a polynomial identity retaining all repeated-node data. At $w=0$ it is the Fejer polynomial in the actual Casimir. After the displayed common sign $(-1)^{N-1}$, the homogeneous numerator at $\sigma=-2-u$ has nonnegative coefficients in $u$ and the four face variables, so its path expansion supplies a positive majorant for complex $\sigma$. The same face must still carry one shared weight throughout the diagram.
-
-The Gaussian times the full resolvent also has a controlled closing cap near $+2$: its cost is $e^{o(N)}$ on a shrinking cap for each fixed twist power. The endpoint theorem and the full complex packet below now control the actual shared coefficient near $-2$, including its independent spectral derivative data. A local positive-weight norm can still exceed the complete geometric rate, and the twist Gaussian grows on one side of a fixed spectral ellipse. The later whole-CROSS theorem controls its intervening contour and every Fourier charge; the full source additionally requires the balance estimate or a replacement for it.
-
-There is now an exact [even-level reduction of that shared coefficient](../../notes/actual_fejer_cross_half_source_reduction.md). The positive numerator splits into paths crossing the two middle spectral rows and paths staying on one side. If $H_M$ is the original maximal complete-channel polynomial, its crossing part satisfies
-
-$$\frac{N}{2}H_M\ \leq\ P_{\mathrm{cross}}\ \leq\ \frac{3N}{2}H_M$$
-
-coefficientwise. The original marked coefficient with crossing paths at every port therefore has the known complete-volume rate, under the same labeled geometric certificate. Every other nonzero term has one-sided ports forming a rooted forest: a one-sided port occupies more than half of a middle face's allowed degree, so no face can receive two such ports, and the original gap graph excludes a surviving cycle. The forest terms need not vanish, and their literal half-size blocks still use level $N$. This positive path partition is distinct from a decomposition into covariant color coupons.
-
-The [global CROSS gap](../../notes/actual_global_cross_spectral_gap.md) and [whole-period theorem](../../notes/general_all_cross_long_filling_volume.md) now control this sector on its entire original contour. The [balance theorem](../../notes/general_complete_radius_balance_filling_volume.md) controls the full complementary source when its finite condition holds. Without that condition, the remaining obstruction is the macroscopic one-sided sector, not an uncomputed local geometric coefficient.
-
-## Existing knot results and preserved alternatives
-
-The [results chapter](results.md) retains the internally reviewed pretzel, belt-stack and signed Conway filling theorems with their original hypotheses. They do not exhaust arbitrary plats. The cube, Fourier, weighted-Cauchy, Karamata-inspired and torsor arguments remain in the [research library](../library.html), including failed intermediate estimates and their corrections. The current route adds a general exact coefficient and a whole-source augmented-link result without discarding those ideas.
-
-
-The [simple-white criterion](../../notes/general_simple_white_plat_class.md) supplies the geometric certificate whenever the **actual** white cellulation is a simple triangulated sphere. This is a finite test on the given plat and its original matching. The proof permits arbitrary fixed width and separating triangles; an explicit slot-word construction gives knot-producing parity patterns at every supplied width. It does not assert that this presentation is minimal, or that every hyperbolic plat satisfies the test.
-
-## The positive endpoint source has the actual complete volume
-
-The [general endpoint theorem](../../notes/general_fejer_endpoint_source_volume.md) proves the full positive-source limit for every fixed connected original flat plat at arbitrary fixed bridge width, under its labeled convex ideal right-angled certificate. Let $Y_D$ be that actual untwisted augmented exterior, and let $Z_{D,N}$ be the original marked coefficient with the coupon $P_N=-V_N(-2)=4(2+\Omega_N)^{-1}$ at every port. Then
-
-$$\lim_{\substack{N\to\infty\\N\ \mathrm{even}}}\frac{1}{N}\log Z_{D,N}
-=W_D=\frac{\operatorname{Vol}(Y_D)}{2\pi}.$$
-
-This includes every even level, with the original cup, cap, mark and coefficient normalization. It is a theorem about the specified positive endpoint source; that source is not renamed the filled knot invariant.
-
-The [closed half-block estimates](../../notes/actual_fejer_half_block_entropy.md) and [full-kernel entropy theorem](../../notes/actual_fejer_full_kernel_entropy_identity_reduction.md) give a continuous local function $h$ on the entire degree-one simplex. Every degree-$N-1$ monomial occurs in the full positive kernel, so ordinary integral flow rounding gives
-
-$$W_D=\max_{q\in\mathcal Q_D}\sum_e h(q_e),$$
-
-where $\mathcal Q_D$ retains every shared-face target and both protected zeros. No fixed half-label filter is needed for this full-source formula. The earlier [test at $N_*=10R+2$](../../notes/actual_fejer_shared_entropy_variational.md) remains useful when individual cross/left/right patterns are kept: it detects finite degree offsets that a limiting pattern alone can miss.
-
-![The entire CROSS period has the filled-volume rate; complete-radius balance gives the full invariant. An explicit family is covered at every width; general diagram coverage remains open.](../figures/shared-entropy-frontier.png)
-
-The geometric upper bound uses exact source reductions. Pure-middle maximizing ports become literal identity coupons, and their [forest contraction](../../notes/actual_fejer_diagonal_identity_forest_reduction.md) preserves the rate and marked targets. The [hybrid Hall theorem](../../notes/actual_fejer_hybrid_tight_cut_reduction.md) keeps cross ports as two triangle rows and every strict one-sided port as one row. Its forced zeros give only permitted digon cuts; no one-sided difference is split into independent capacities. The [boundary regularity argument](../../notes/actual_fejer_nondiagonal_maximizer_regularity.md) then supplies finite positive shared multipliers on the resulting pieces.
-
-The [actual group and chain assembly](../../notes/actual_fejer_hybrid_piece_representation.md) retains the original port pairings across those pieces and reconstructs a representation of $\pi_1(Y_D)$. Its relative volume is $2\pi W_D$, so the representation-volume bound proves the reverse inequality to the known all-cross lower bound. This uses the [signed cut-ball chain](../../notes/actual_fejer_signed_cut_ball_regulator.md), not the failed claim that an open regulator is invariant under resetting its reference flag. The fixed-degree convexity counterexample also remains valid; neither shortcut is needed.
-
-Every fixed nonempty set of identity insertions has a strictly smaller rate, or gives the zero source: the reconstructed representation kills an essential original meridian. Separately, the [serial-coupon theorem](../../notes/actual_fejer_serial_coupon_bound.md) gives $H_{P_N}\leq H_{P_N^\ell}\leq N^{2\ell-2}H_{P_N}$ for the same ordered pair. It preserves the rate of a literal fixed serial chain, without asserting a replacement for arbitrary separating cuts.
-
-The [unique-maximizer theorem](../../notes/actual_fejer_unique_geometric_maximizer.md) strengthens the endpoint equality: its only maximizing incidence flow is the original marked geometric one. Equality in the volume bound forces the constructed representation to be conjugate to complete holonomy; the actual based peripheral words then recover all labeled contacts and white circles. Compactness gives a strict entropy gap outside every fixed neighborhood, including the entire one-sided remainder. This holds at every fixed certified width; it supplies neither a diagram-independent gap nor control of the oscillatory filling cycle.
-
-
-## Odd regularization and exact spectral derivatives
-
-The [odd-level theorem](../../notes/actual_fejer_odd_regularized_full_numerator.md) retains the independent semisimple derivative through the actual covariant coupon
-
-$$F_N=\begin{cases}
+$$
+F_N=\begin{cases}
 -V_N(-2),&N\text{ even},\\
 V_N(-2)-N^{-2}\partial_\sigma V_N(-2),&N\text{ odd}.
-\end{cases}$$
+\end{cases}
+$$
 
-The odd coupon has the same uniform full local entropy $h$. Its original shared source $Z_{D,N;F_N}$ therefore has rate $W_D=\operatorname{Vol}(Y_D)/(2\pi)$ at both parities. The derivative in this formula is spectral, at the fixed root; it is not a genuine-$q$ normal.
+It has the same local entropy and global rate. If $S_N$ is the shared contraction of the numerators, then
 
-Let $S_N(\boldsymbol\sigma)$ be the entire original shared contraction of the $V_N(\sigma_e)$ numerators, with all marked targets unchanged. For every multiindex $\alpha$ the finite estimate is
+$$
+|\partial_{\boldsymbol\sigma}^{\alpha}S_N(-2,\ldots,-2)|
+\le e^R\alpha!N^{2|\alpha|}Z_{D,N;F_N}.
+$$
 
-$$\left|\partial_{\boldsymbol\sigma}^{\alpha}S_N(-2,\ldots,-2)\right|
-\leq e^R\alpha!N^{2|\alpha|}Z_{D,N;F_N}.$$
+This derivative is in the spectral parameter, not in $q$. Positive path estimates also control shrinking complex disks. The [spectral complement theorem](../../notes/actual_fejer_spectral_polydisk_complement.md) carries the strict one-sided gap to a small fixed neighborhood, with explicit cost $\sum_e\operatorname{arcosh}(1+r_e/2)$ for disk radii $r_e$.
 
-Positive path comparisons also bound the full numerator on shrinking complex spectral disks at upper rate $W_D$. These results retain the semisimple data missing from complete-channel samples. The later relative packet uses independently proved actual cofactor asymptotics to extend this control to a fixed complex neighborhood.
+## From a local packet to a whole filling period
 
-The [spectral remainder theorem](../../notes/actual_fejer_spectral_polydisk_complement.md) now carries the strict one-sided entropy gap to a small fixed complex neighborhood of $\sigma_e=-2$. If $\gamma_D>0$ is that gap and $\theta(r)=\operatorname{arcosh}(1+r/2)$, the absolute remainder exponent is at most $W_D-\gamma_D+\sum_e\theta(r_e)$. Small fixed radii preserve a gap; shrinking radii retain the full gap. The comparison preserves original path endpoints and the shared coefficient targets. It is an absolute bound. The all-cross asymptotic below supplies a nonzero reference on a fixed smaller neighborhood, where this remainder becomes exponentially small relative to the actual main term.
+The [full spectral packet theorem](../../notes/general_full_spectral_numerator_geometric_packet.md) gives a nonzero asymptotic for the entire numerator on a fixed complex neighborhood of $\sigma_e=-2$. Writing $\sigma_e=-2\cos(2\pi\delta_e)$, it has the form
 
-## The full numerator has a fixed complex geometric packet
-
-The [full spectral packet theorem](../../notes/general_full_spectral_numerator_geometric_packet.md) concerns the entire original shared numerator $S_N(\boldsymbol\sigma)$, with $\sigma_e=-2\cos(2\pi\delta_e)$. For every fixed certified diagram, a fixed complex neighborhood of $\boldsymbol\delta=0$ has
-
-$$S_N(\boldsymbol\sigma(\boldsymbol\delta))
-=(-1)^{(N-1)R}\frac{N^{2R}e^{N A_N(\boldsymbol\delta)}}
+$$
+S_N(\boldsymbol\sigma(\boldsymbol\delta))
+=(-1)^{(N-1)R}
+\frac{N^{2R}e^{N A_N(\boldsymbol\delta)}}
 {(2\pi N)^{(R-1)/2}\sqrt{\det H_N(\boldsymbol\delta)}}
-\bigl(1+O(N^{-1})\bigr).$$
+\bigl(1+O(N^{-1})\bigr).
+$$
 
-Here $A_N$ is the critical value of the exactly anchored finite complete-fold interpolants after the **one original shared-face extraction**, and $H_N$ is their normalized face Hessian after fixing the common scale. The square root is continued from its positive endpoint value. The finite anchors, mark, protected zeros, parity offsets and explicit $N^{2R}$ are retained. The numerator is nonzero on this fixed neighborhood for all sufficiently large $N$, and the estimate includes fixed derivatives and both level parities. It descends to a fixed spectral neighborhood of $\sigma_e=-2$.
+The finite action $A_N$ and normalized Hessian $H_N$ come from the one shared-face saddle, with the original parity offsets and mark. The square root is continued from its positive value. Convergence of $A_N$ alone would not justify replacing it by its limit inside an exponential; the proof keeps the finite action until the end.
 
-The proof begins with [exact central cofactor factorizations](../../notes/actual_cross_cofactor_factorization.md). The [ordinary-middle packet](../../notes/actual_cross_cofactor_interior_packet.md) retains the sum over every physical starting row, while the [protected-middle packet](../../notes/actual_cross_cofactor_protected_packet.md) treats the original zero middle face and the initial row separately. Their analytic growth bounds and the exact physical nodes give [exponential interpolation rigidity](../../notes/actual_cross_cofactor_interpolant_rigidity.md). This controls the actual off-node numerator; it does not differentiate an arbitrary interpolation of repeated-node values.
+The local inputs are the [exact cofactor factorization](../../notes/actual_cross_cofactor_factorization.md), [ordinary-middle packet](../../notes/actual_cross_cofactor_interior_packet.md), and [protected-middle packet](../../notes/actual_cross_cofactor_protected_packet.md). [Interpolation rigidity](../../notes/actual_cross_cofactor_interpolant_rigidity.md) proves exponential accuracy for the actual off-node polynomial, rather than for an arbitrary interpolation of repeated-node values. The [global angular estimate](../../notes/actual_cross_cofactor_global_angular_gap.md), with its separate [protected-middle proof](../../notes/actual_cross_cofactor_protected_angular_gap.md), bounds the rest of the coefficient torus.
 
-The [global angular estimate](../../notes/actual_cross_cofactor_global_angular_gap.md) uses positive path comparisons, original determinant contraction and exact finite interpolation. It includes all terminal rows and protected-zero patterns; the [protected-middle angular proof](../../notes/actual_cross_cofactor_protected_angular_gap.md) is an independent direct recurrence argument. Connected shared-face incidence then bounds the entire angular complement. The original Cauchy torus supplies the nonzero Gaussian factor, and the strict one-sided entropy gap restores the full numerator relatively.
-
-The [absolute marked-action theorem](../../notes/actual_cross_cofactor_marked_action.md) identifies $A_N\to A_0$ with the untwisted longitude action, including all face momenta and the marked line limits. Restore half twists exactly once by
+The [marked-action theorem](../../notes/actual_cross_cofactor_marked_action.md) fixes the peripheral normalization. Restoring half-twists gives
 
 $$A_{\boldsymbol\epsilon}=A_0+\pi i\sum_e\epsilon_e\delta_e^2,
-\qquad U_e=\partial_{\delta_e}A_{\boldsymbol\epsilon},
-\qquad V_e=-4\pi i\delta_e.$$
+\qquad U_e=\partial_{\delta_e}A_{\boldsymbol\epsilon},\qquad V_e=-4\pi i\delta_e.$$
 
-For the actual Gaussian exponent $n_e=\epsilon_e-2p_e$ and Fourier charge $\ell_e$, the critical equation is $U_e+p_eV_e=-2\pi i\ell_e$. At the unit-charge sufficiently long smooth-filling germ, its exact peripheral boundary correction cancels the Gaussian terms, giving the actual filled hyperbolic volume as the critical exponential rate. The following localized-period theorem establishes a contribution from this critical point. The subsequent whole-CROSS theorem controls its global charge sum.
+Here $U_e,V_e$ are the chosen logarithmic meridian and longitude variables. For crossing exponent $n_e=\epsilon_e-2p_e$ and Fourier charge $\ell_e$, the critical equation is $U_e+p_eV_e=-2\pi i\ell_e$. At the unit-charge long-filling branch, the boundary correction cancels the Gaussian terms and gives the actual filled volume.
 
-The [local charge comparison](../../notes/general_local_charge_critical_monotonicity.md) now proves that the all-unit positive integer charge has the largest critical value within a fixed small scaled box. For independently signed slopes $n_i$ of sufficiently large magnitude and $1\leq\ell_i\leq a|n_i|$,
+The [local charge comparison](../../notes/general_local_charge_critical_monotonicity.md) makes the unit charge strictly largest in a fixed scaled box, with a lower gap proportional to $\sum_i(\ell_i^2-1)/n_i^2$. This compares critical values only. The [localized-period theorem](../../notes/general_localized_unit_charge_filling_period.md) additionally moves the original cube to the finite saddle, keeps all joining currents, and proves a nonzero Gaussian coefficient. All $2^R$ unit-charge signs contribute equally. Neither local statement by itself controls remote charges.
 
-$$\operatorname{Re}S(\mathbf n,\mathbf1)-\operatorname{Re}S(\mathbf n,\boldsymbol\ell)
-\geq\sum_i\frac{C_i}{2n_i^2}(\ell_i^2-1).$$
+The [whole cross-period theorem](../../notes/general_all_cross_long_filling_volume.md) supplies that global control for the central source sector. The [complete-radius balance theorem](../../notes/general_complete_radius_balance_filling_volume.md) then controls the entire complementary source when its hypothesis holds. Its algebraic sufficient test is
 
-The inequality is strict for every other charge in that box, with no restriction on ratios between the slope magnitudes. It follows from separate evenness of the actual action and an exact derivative formula at its coupled saddle. This lemma compares **local critical values**. The original contour contribution requires the additional argument below, and charges outside this box remain uncontrolled.
+$$ (x+y+b)(x+y+c)\ge\max(b^2,c^2), $$
 
-## A nonzero localized original filling contribution
+using the four curvatures from one common complete packing. The [triangle balance lemma](../../notes/actual_triangle_entropy_algebraic_balance.md) proves this test, while the sharper [zero-middle $9/4$ estimate](../../notes/actual_zero_middle_nine_quarter_balance.md) covers the explicit every-width family even when the simpler product test fails. The [global one-sided estimate](../../notes/actual_global_left_weighted_spectral_envelope.md) is uniform over the phases of that shared coefficient torus.
 
-The [localized-period theorem](../../notes/general_localized_unit_charge_filling_period.md) now evaluates the original spectral integral on a fixed closed real cube $K_b=[-b,b]^R$. For every fixed vector of independently signed crossing powers $n_i=\epsilon_i-2p_i$ of sufficiently large magnitude, it translates that actual cube to the horizontal plane through the finite-$N$ saddle. All side currents are retained and have a fixed exponential gap. The Gaussian determinant branch is fixed by its positive real part, so the contour coefficient is proved rather than assigned.
+For arbitrary certified plats, the unresolved issue is a replacement for balance when it fails. It is not a missing local geometric coefficient. The [fixed-root scope note](../../notes/fixed_root_direct_power_scope.md) also explains that this route does not require a generic-$q$ normal theorem.
 
-Let $\mathcal U_{N,\mathbf n;b}$ be the sum of the original charges $\ell_i=\pm1$ on that cube. Then
+![The cross period has the filled-volume rate. A bound for the whole complementary source is needed beyond the diagrams satisfying balance.](../figures/shared-entropy-frontier.png)
 
-$$\mathcal U_{N,\mathbf n;b}
-=q^{\frac{(N-1)^2}{4}\sum_i n_i}(-2i)^R\sqrt{2\pi}\,N^{R+1/2}
-\frac{\prod_i\sin(2\pi\delta_{N,\mathbf1,i})}
-{\sqrt{\det H_N(\boldsymbol\delta_{N,\mathbf1})}\sqrt{\det Q_{N,\mathbf1}}}
- e^{N S_{N,\mathbf1}}\bigl(1+O_{\mathbf n}(N^{-1})\bigr).$$
+## The classified global upper problem
 
-The coefficient is nonzero, and all $2^R$ charge signs contribute equally. This is the raw marked contraction; its recorded final-diagram framing/component character multiplies the formula when converting to the final invariant convention. The finite action $S_{N,\mathbf1}$ remains in the exponential. At both level parities its limiting real part gives the actual smooth filling volume. The diagram and twists are fixed before $N$ tends to infinity, with no restriction on ratios between their magnitudes.
+The [global sharp majorant](../../notes/research_global_sharp_coefficient_limsup_majorant.md) controls every closed degree and real spectral parameter. Let $q$ record the normalized shared loads, let $H_\delta(q)$ be its local upper rate, and let $\mathcal P_D$ impose the original face demands. Then
 
-The same formula governs the **finite local charge sector** $0<|\ell_i|\leq\lfloor a|n_i|\rfloor$: all its nonunit contributions are exponentially smaller. This local theorem alone establishes neither dominance over remote charges nor a bound for the original invariant. The whole-CROSS and balance theorems above supply those additional steps in their stated scopes. The exact remaining period consists of finitely many selected-charge integrals outside $K_b$, plus every other charge on its whole original domain. The remote inside/outside sharp-cube series are not separately summed; they need not inherit the absolute summability of the original full-domain series. Endpoint currents are already encoded in the exact spectral identity.
+$$
+\sup_{\boldsymbol\delta}|S_N(\boldsymbol\delta)|\le e^{N(M_D+o(1))},\qquad
+M_D=\max_{q\in\mathcal P_D,\;\boldsymbol\delta\in[0,1/2]^R}
+\sum_eH_{\delta_e}(q_e).
+$$
 
-The [fixed-root direct-power scope](../../notes/fixed_root_direct_power_scope.md) separates this remaining task from generic-$q$ deformation: this route needs no genuine-$q$ normal theorem. The whole-CROSS theorem and complete-radius balance estimate supply the subsequent global bounds under their stated hypotheses. The one-end layer family now satisfies balance at every $k\geq2$. General diagram coverage, or a replacement when balance fails, remains open.
+The source path decomposition names the central part the cross sector and the two one-sided parts the left and right sectors. In normalized degrees, cross means that both middle loads are at most $1/2$. A seam is their boundary; a non-cross load overloads one middle face. Exceptional cap corners meet both protected faces.
+
+[Boundary activation](../../notes/research_full_fiber_sharp_boundary_activation.md) and [stationary classification](../../notes/research_full_fiber_sharp_stationary_classification.md) leave only complete cross factors, strict straddling one-sided factors and at most two marked caps at a maximizing configuration. The [seam theorem](../../notes/research_sharp_cross_degree_domination_and_seam_gap.md) proves $H_\delta\le h$ on all cross degrees. If $a_D$ is the smallest geometric middle deficit, its seam gap is $\pi a_D^2/2$. The entire seam-neighborhood filling period is exponentially negligible relative to the nonzero cross period for fixed sufficiently long fillings.
+
+Consequently, a competing non-cross maximum at or above the geometric rate $\Phi_D$ must be macroscopically overloaded. The [odd-cycle obstruction](../../notes/research_stationary_noncross_main_cycle_obstruction.md) prevents a common phase assignment there. It does not give a sufficient numerical loss by itself. The [flat-cap example](../../notes/research_flat_cap_no_local_exponential_angular_gap.md) proves that a uniform local exponential angular gap is false. The unresolved question is an absolute bound at $\Phi_D$, not merely a positive relative loss from a larger envelope. See the [results discussion](results.md#a-global-source-upper-bound-and-the-classification-of-its-maxima) for the complete qualifications.
+
+## Phase estimates, energy bounds and finite covers
+
+A regular source window restricts local starting and stopping rows away from singular endpoints. The [four-state transfer identity](../../notes/research_original_one_sided_four_state_transfer.md) keeps a before state, an active two-state block and an after state, including the direct diagonal path. The [positive active transfer](../../notes/research_positive_eta_word_transfer.md) controls an outer phase mismatch. The [analytic switching theorem](../../notes/research_analytic_switching_suppression.md) controls a middle mismatch while retaining both boundary terms. The [regular-window theorem](../../notes/research_regular_spectral_window_phase_exclusion.md) supplies the strict endpoint losses needed to use that identity.
+
+![The exact transfer, its boundary terms and the regular-window phase loss.](../figures/analytic-source-switching.png)
+
+The [mixed cycle criterion](../../notes/research_mixed_cross_window_cycle_packing.md) permits supported single-protected-face windows and entire cross coupons. Only nonzero incidences have phases. Fractionally packing incompatible cycles yields a shared loss $e^{-\kappa N}$. Its scope is summarized with the local extensions in [the results chapter](results.md#phase-cancellation-on-regular-source-windows). To prove a general invariant bound, the positive majorant rate minus $\kappa$ must still be below $\Phi_D$, and the decomposition must cover the whole source.
+
+A different route uses [one-sided relative energy](../../notes/actual_one_sided_relative_spectral_energy.md). For a coefficient $a_N(q;\sigma)$ and its positive endpoint reference $p_N(q)$, weighted Cauchy bounds the exponential rate of $|a_N|^2/p_N$ by a triangle entropy. The folded-angle rearrangement is uniform through both parities and degree boundaries. The [protected-outer theorem](../../notes/actual_protected_outer_spectral_energy.md) identifies its sharp local value.
+
+The [shared-flow criterion](../../notes/general_endpoint_conditioned_source_energy.md) combines this energy $g$ with endpoint entropy $h$ and another envelope $h_{\mathrm{env}}$, using $\min\{h_{\mathrm{env}},(h+g)/2\}$ on the same feasible flow. A strict maximum below $\Phi_D$ on the non-cross set implies the full filling theorem. The missing statement is the universal shared inequality; no new local asymptotic conjecture is needed for this criterion.
+
+![A local energy estimate must still be combined with the shared face demands.](../figures/spectral-energy-rearrangement.png)
+
+The [finite-sector cover theorem](../../notes/general_actual_sector_cover_filling_volume.md) is another sufficient condition. It allows finitely many genuine cross/left/right branches, each with one common weight per face and a strict bound below the geometric rate. It extends the [anchored criterion](../../notes/general_anchored_shared_radius_filling_volume.md). On a fixed seventeen-region marked source, the [separation theorem](../../notes/actual_shared_radius_certificate_separation.md) proves that every anchored choice fails by more than $0.025$, while forty refined branches pass with gap greater than $0.04$. This establishes a strict extension of certificate classes, not a classification of unmarked knots under all possible presentations.
+
+The [undivided-capacity result](../../notes/actual_complete_source_cauchy_capacity_gap.md) explains why a single optimized positive torus can lose exponential accuracy. The [fixed-triangle boundary gap](../../notes/actual_fixed_triangle_boundary_capacity_gap.md) settles certain endpoints, not all fractional mixtures. Universal existence of the finite-sector bounds remains open for the general plat route.
+
+![A refined finite cover succeeds where a coarser certificate fails on the same source.](../figures/sector-certificate-separation.png)
+
+## The external-color route and its exact cancellations
+
+The external-color method changes the colors of the crossing circles before filling. It must distinguish internal folded-label deficits from external color deficits. The [complete complex-core theorem](../../notes/actual_complete_core_complex_packet.md) gives a nonzero relative asymptotic on a fixed complex color neighborhood. Its finite action $S_N$ and Hessian remain in the formula. The [geometric deformation theorem](../../notes/actual_complete_core_geometric_deformation.md) identifies the limiting action by
+
+$$
+2\pi\operatorname{Re}S(\boldsymbol\chi)
+=\operatorname{Vol}(\rho_{\boldsymbol\chi})
++\frac12\sum_i\operatorname{Re}U_i\operatorname{Im}V_i,
+\qquad U_i=-2\pi i\chi_i.
+$$
+
+For real small color parameters $\chi_i$, the boundary correction vanishes and the rate is the representation volume. Complex parameters require the correction. The [varying-action transfer](../../notes/general_long_filling_varying_action_transfer.md) permits the filling calculation to keep $S_N$ until its limit is taken.
+
+The [external reflection identity](../../notes/actual_external_circle_reflection_and_cusp.md) writes a color $N-h$ circle as a cosine-weighted complete term plus the literal color $h$ circle. In the window $h=z\sqrt N$, the complete term has a Gaussian limit fixed by the primitive cusp shape. At the opposite endpoint it has a full-size alias, canceled exactly by the small-color term. A bound for only the complete term would miss this cancellation.
+
+![The cusp rectangles fix the peripheral normalization in the external-color Gaussian.](../figures/cusp-gaussian.png)
+
+The [source-divisor theorem](../../notes/general_long_filling_source_divisor.md) explains why nonzero leading amplitude at one point is not enough for every long slope tuple. A nonzero analytic germ allows an exceptional divisor; an amplitude that is a unit, or a specified coordinate monomial, gives the stronger uniform conclusion. The established complete core has a unit amplitude. The remaining source terms still need their own gap before that conclusion transfers to the invariant.
+
+The finite local equation is also known. The [fixed-fold Fourier period](../../notes/actual_positive_face_fixed_fold_packet.md) gives a four-component difference equation of bounded shift range with its actual finite polynomial solution and characteristic factors. [Exponential fold interpolation](../../notes/actual_positive_face_exponential_fold_interpolation.md) controls the complex extension on the original grid. After face extraction, the equation couples neighboring coefficients; this particular local equation has not been reduced to a scalar knot equation by that elimination alone.
+
+The [coupled face system](../../notes/actual_whole_source_coupled_face_difference_system.md) preserves the shared coefficients and selected fold relation. At a marked double root, the [deformed circle-pattern theorem](../../notes/actual_marked_deformed_circle_pattern.md) recovers the geometric radii and eigenline germs from a nonsingular finite system. The [primitive collar calculation](../../notes/actual_deformed_circle_primitive_collar.md) then fixes the actual disk word and half-twist shear. Its one-side multiplier and the square from a double reflection must not be interchanged.
+
+## Small-circle insertions and smoothing
+
+The [small-circle operator](../../notes/actual_small_circle_polynomial_face_insertion.md) preserves the polynomial ring after all original paths are summed. Apparent negative powers cancel at the physical endpoints, and total degree excludes extra whole-level aliases. A color $h$ insertion costs at most $C^{h-1}$ in the stated weighted norm.
+
+The [simultaneous insertion theorem](../../notes/actual_simultaneous_small_circle_face_correspondence.md) treats every untwisted subset with connected identity smoothing, even with cyclic dependencies or protected outgoing faces. It does not require a global elimination order; the [ordered construction](../../notes/actual_ordered_small_circle_face_insertions.md) is a special case. For disconnected smoothings, the subset contribution is exactly zero when $2\sum_{i\in J}(h_i-1)<N-1$. The demanded face degree exceeds the available degree. Deleted crossing circles carrying a half-twist are outside that untwisted statement.
+
+A geometric gap can be supplied by the [smoothing-capacity condition](../../notes/actual_matching_smoothing_angle_capacity.md) or the [fixed-radius criterion](../../notes/actual_smoothing_fixed_radius_gap.md). A capacity is the optimized exponential bound from the positive angle/weight problem. The latter note includes a matched-graph example where its restricted test fails, but there is no proved adapter making it a counterexample for an original flat plat.
+
+The [capacity decomposition](../../notes/actual_smoothed_source_capacity_blocks.md) handles unattained positive-radius infima. Loops are infeasible, separating two-edge cycles split the capacity additively, and nontrivial simple blocks carry actual right-angled polyhedra. Double-triangle blocks have zero contribution. This decomposition does not move the quantum mark or assert a finite quantum factorization.
+
+The [representation-volume strictness theorem](../../notes/general_representation_volume_kernel_strictness.md) proves a strict gap when the reconstructed representation kills an essential meridian. The [block representation construction](../../notes/actual_smoothed_block_representation_volume.md) extends the argument to degenerate blocks, keeping the original cuts and shaded pairings. It identifies the regulator with the sum of block volumes without claiming that the whole exterior splits geometrically into those blocks.
+
+These ingredients give the [untwisted color corridor](../../notes/general_untwisted_mixed_source_volume_corridor.md): for all sufficiently small normalized deficits on any fixed untwisted subset, the whole mixed source differs from its geometric core by an exponentially small relative error. Both parities are included. Its limit is the volume of the selected marked representation. A complete filled knot metric and a bound on the full complementary color region are further requirements.
+
+For signed replacements, the homogeneous source theorem gives a finite shared-radius certificate. Each unchanged circle contributes its two-triangle potential; each replaced signed circle contributes its four-angle potential, while an unsigned replacement has the sharper $\log\max(b,c)$ bound. Every nonempty reflected subset must have a common face-weight choice whose total rate, after subtracting the demanded face powers, is below the complete rate. These finitely many strict margins absorb the insertion costs on one color cube. Existence of the certificates is not automatic. The [single-circle signed theorem](../../notes/actual_signed_small_circle_face_kernel.md) gives useful special cases and explicit curvature tests.
+
+![The proved small-color corridors and the complementary color region still to be controlled in the general plat route.](../figures/external-color-corridor.png)
+
+The [positive Newton obstruction](../../notes/actual_positive_newton_capacity_obstruction.md) shows that a positive local kernel can have shared capacity above the complete geometric value. Its graph example is not asserted to come from the original flat-plat compiler. The [resummed small-circle kernel](../../notes/actual_resummed_small_circle_face_kernel.md) also has a unique-path coefficient exponentially larger than its crossing reference, even after Newton cancellations. These are obstructions to local norm shortcuts, not counterexamples to a bound after the full signed extraction.
+
+The [peripheral volume-gap theorem](../../notes/general_representation_volume_peripheral_gap.md) gives another geometric tool: keeping a fixed peripheral trace square away from the parabolic value forces a uniform volume loss. Applying it to the quantum source still requires a bound for the whole period, including its finite endpoints and signs.
+
+## Direct twist transport and the classical operator question
+
+The [direct-power identity](../../notes/actual_direct_long_power_source.md) keeps a signed twist power inside its original box. Two kernels on the same pair compose by one coefficient extraction. This retains repeated-node derivative data and avoids introducing an external-color expansion.
+
+The [Casimir conic theorem](../../notes/actual_crossing_casimir_torus.md) describes the resulting local characteristic. With outer weights fixed, $A=x+y$ and $P=xy$, it reads
+
+$$
+\sigma=2+\frac{(b+z+A)^2}{P-bz},\qquad
+b_{j+1}+\sigma b_j+b_{j-1}+2A=0.
+$$
+
+On a regular generic fiber, the cover $\lambda^2+\sigma\lambda+1=0$ turns the transport into multiplication by $\lambda^n$ in a norm-one coordinate. At $\sigma=-2$ the transport is additive; at $\sigma=2$ the fiber is a nonreduced double line. The excluded divisors and choice of reference point matter. The word *torsor* in this route records that the multiplicative coordinate has no preferred origin until a reference is chosen.
+
+![Generic multiplicative transport and its degenerate endpoint fibers, with the quantum Gaussian retained.](../figures/casimir-twist-transport.png)
+
+The [physical meridian theorem](../../notes/actual_crossing_torus_meridian_transport.md) identifies the local map with the actual crossing move $(A,B)\mapsto(A^{-1}BA,A)$, preserving $BA$, and gives the inverse for a negative crossing. With the cup, cap and mark phases included, every regular layered critical point produces a representation of the filled knot group. This forward construction does not prove that every root of a cleared equation lifts to the regular chart, classify escaping or singular points, or give a nonzero finite-sum coefficient for the geometric branch.
+
+Taking absolute values of all Hermite spectral terms gives an envelope at least as large as the drilled volume. It cannot prove the smaller filled-volume rate. The [spectral total-derivative identity](../../notes/actual_spectral_total_derivative_source.md) therefore keeps the full polynomial numerator, both the ordinary and nilpotent terms at repeated nodes, all nonzero Fourier charges and endpoint currents. Its zero charge vanishes identically.
+
+The [Gaussian numerator formula](../../notes/actual_gaussian_resolvent_numerator_and_cap.md) is
+
+$$
+(-1)^{N-1}V_N(-2\cosh w)
+=L_N+2\sum_{h=1}^{N-1}\cosh((N-h)w)L_h.
+$$
+
+The $L_h$ are the physical-color coupons. This is a polynomial identity, not just an equality of sampled values. It gives a positive majorant near the negative endpoint, and a subexponential closing-cap cost near the other endpoint on a shrinking cap for fixed twists.
+
+The [even cross/one-sided reduction](../../notes/actual_fejer_cross_half_source_reduction.md) partitions the positive numerator into paths crossing the middle rows and paths staying on one side. The crossing part lies between $N H_M/2$ and $3N H_M/2$, coefficientwise, for the maximal complete-channel polynomial $H_M$. The remaining one-sided factors form a rooted forest under the stated diagram hypothesis. They need not vanish, and their half-sized blocks still have level $N$. The [global cross gap](../../notes/actual_global_cross_spectral_gap.md) and whole-period theorem control the cross contribution; a general bound for the macroscopic one-sided complement remains the issue beyond the sufficient criteria above.
+
+The earlier [matching-edge character relation](../../notes/actual_matching_edge_polynomial_geometric_action.md) and [continuant operator period](../../notes/actual_matching_edge_continuant_operator_period.md) remain exact inputs. The [retained alternating Newton equations](../../notes/actual_alternating_newton_peripheral_branch.md) match the primitive-collar trace relation after the specified elimination and rational change of variables. The [local action comparison](../../notes/actual_newton_complete_local_action.md) identifies the selected reciprocal logarithmic action with the complete-core action up to $\pi i$. Its continued critical point lies outside the terminating low-color range, so this germ identity does not select a contributing finite-sum cycle.
+
+These local comparisons do not themselves identify the classical geometric factor of the knot's quantum A-operator. That limitation coexists with the separately proved all-level operator and pointed-period theorem described at the start of this chapter. The [source and torsor library](../library.html) retains the different operator, regulator and relative-cycle approaches, including their counterexamples and corrections.
+
+## How the alternatives fit together
+
+For strict Conway trees, the full source estimate and marked filling argument already prove the knot-volume limit. For general certified plats, the complete augmented source, positive endpoint, complex geometric packet and entire cross period are established. Balance, finite sector covers and shared-flow energy inequalities give sufficient conditions for the remaining source. Universal validity of those conditions is the outstanding issue in those routes.
+
+The pretzel, belt, signed Conway, Fourier, weighted-Cauchy, cube and other constructions remain in the [results chapter](results.md) and [research library](../library.html). Their narrower hypotheses should be kept when using them. In particular, a local norm obstruction, a projected cube calculation or an equality of classical actions is not a counterexample to the volume conjecture, and it is not by itself a proof of the full invariant limit.

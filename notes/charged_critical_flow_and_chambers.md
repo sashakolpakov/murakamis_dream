@@ -127,7 +127,7 @@ not give a source intersection number for a perturbed complex saddle.
 ## 4. In the balanced case the source itself reaches every critical chamber
 
 Fix the common phase by X_k=1 and write X_i=exp(i theta_i). The exact
-sine factorization gives the ORIGINAL density on this torus as
+sine factorization gives the original density on this torus as
 
     f(exp(i theta))=C product_f 2sin((theta_i-theta_j+phi_f)/2),
                                                         (9)

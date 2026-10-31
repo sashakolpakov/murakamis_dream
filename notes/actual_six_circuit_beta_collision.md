@@ -181,7 +181,7 @@ Thus U=V=1 gives
 This all-N fusion incorporates the fixed half-step mismatch; it is
 not obtained by setting Q=1 in (3).
 
-For the ORIGINAL relative beta source write B=S+D I, where
+For the original relative beta source write B=S+D I, where
 
     D=1-u^N+v^N,
     S=(N/phi_N)u^N Psi_+(h-Logu)Psi_+(Log(v/u))

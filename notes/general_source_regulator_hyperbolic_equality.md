@@ -494,11 +494,4 @@ not only its inherited tube-coordinate formula. The universal argument
 is the analytical C1-continuity/compactness proof above; these finite
 checks make no additional knot-source or general existence claim.
 
-Two independent analytical readers checked the equivariant geometric
-construction; the second also checked the arbitrary-slope action and
-spin conversion through section7. Both reported PASS. The review
-clarified that the ENTIRE fundamental parallelogram image must avoid
-q before equivariance is used; this follows from section3's compact
-C1 estimate and is now explicit in section4. The concrete width-nine
-source extension and the general long-filling transfer have separately
-passed independent proof reads and fresh focused audit replays.
+Before equivariance is used, the entire fundamental-parallelogram image must avoid q. Section 3’s compact C1 estimate gives this exclusion, which is used explicitly in Section 4. The positive-core and primitive log-link arguments are required in addition to the representation equations.

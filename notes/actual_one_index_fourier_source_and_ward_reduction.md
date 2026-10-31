@@ -18,7 +18,7 @@ head frame
     F_(j+1,j)=1-Q_N^(j+1), 0<=j<N-1.
 
 The original signed local crossings intertwine the true coproduct.
-Closing every other strand with its ORIGINAL root pivotal cap
+Closing every other strand with its original root pivotal cap
 therefore makes the one-cut matrix C_N(M) a module endomorphism.
 The literal closure proof, including the root cap and all full
 peripheral factors, is given in

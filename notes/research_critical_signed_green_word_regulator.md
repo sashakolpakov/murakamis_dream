@@ -1,12 +1,8 @@
 # A formal five-shape identity on the critical signed Gauss word
 
-> **Source-identification correction, 31 October 2026.** The exact algebra below uses the complete-color five-shape expression at every crossing, although the auxiliary raw meridian has trace zero and color \(\chi_{aux}=\pm i\), rather than \(-1\). The universal Gauss/Hurwitz MAP remains valid, but the actual mixed crossing symbol has color factors omitted here. Therefore the asserted identification with the ORIGINAL mixed source or its diagram regulator is withdrawn. The computed rational word closure, formal-symbol differential and calibrated formal-symbol identity remain valid algebraic results. The true mixed-color symbol, its monomial boundary term, and any actual relative-volume comparison are UNPROVED in this note. All occurrences of “actual” below referring to the twenty SYMBOLS must be read subject to this correction; the actual matrix maps are unaffected. This note is unpublished and quarantined from geometric or quantum conclusions.
+> **Source-identification correction, 31 October 2026.** The exact algebra below uses the complete-color five-shape expression at every crossing, although the auxiliary raw meridian has trace zero and color \(\chi_{aux}=\pm i\), rather than \(-1\). The universal Gauss/Hurwitz MAP remains valid, but the actual mixed crossing symbol has color factors omitted here. Therefore the asserted identification with the original mixed source or its diagram regulator is withdrawn. The computed rational word closure, formal-symbol differential and calibrated formal-symbol identity remain valid algebraic results. The true mixed-color symbol, its monomial boundary term, and any actual relative-volume comparison are UNPROVED in this note. All occurrences of “actual” below referring to the twenty SYMBOLS must be read subject to this correction; the actual matrix maps are unaffected. This note is unpublished and quarantined from geometric or quantum conclusions.
 
-Internally reviewed FORMAL algebraic identity, 31 October 2026. Not
-approved for publication. The exact verifier and the complete local
-domain/calibration argument have passed separate full reviews and
-fresh replays by root and coherent_partner_currents at the scope
-stated below. These are internal checks, not external peer review.
+This section is a formal signed-Green identity. Its source and geometric interpretation require the additional hypotheses stated below.
 
 This is a FORMAL-symbol identity on the universal untwisted four-crossing
 word on its free-spectral critical straddling branch. Both auxiliary
@@ -91,7 +87,7 @@ All face weights may be divided by \(y\). This changes neither the
 physical ratios nor any head or shape below; it is not a change of
 Gauss reference. Hence set \(y=1\). A common nonzero head scale \(g\)
 rescales every \(E\) by \(g^{-1}\) and \(F\) by \(g\); every crossing
-shape uses only \(K\)'s and products \(EF\). Thus set \(g_{\rm in}=1\)
+shape uses only \(K\)'s and products \(EF\). Thus set \(g_{\mathrm{in}}=1\)
 without changing a shape.
 
 For rational calculation use independent real parameters \(b,T,v\):
@@ -119,7 +115,7 @@ L^-=\begin{pmatrix}1&0\\-KF&K\end{pmatrix}.
 
 Set \(p=(T-ibk)/(T+ibk)\), \(p'=(T-ick)/(T+ick)\).
 The input pairs \((X,S)\) are \((-x/b,-p)\) and \((-b,1)\).
-If their matrices are \(G_1,G_2,L_1^-,L_2^-\), the ORIGINAL based
+If their matrices are \(G_1,G_2,L_1^-,L_2^-\), the original based
 ordered product is
 
 \[
@@ -337,7 +333,7 @@ so the result does not silently replace \(U_0=\pm\pi i\) by zero.
 
 This calculation does not discard a global peripheral boundary
 term. To turn the sum of local identities into representation
-volume, one must still identify the ORIGINAL sewn relative
+volume, one must still identify the original sewn relative
 fundamental chain, including cups, caps, the unrestricted mark
 and any retained half twist. The conditional group construction
 is stated separately in
@@ -363,11 +359,4 @@ zero residual; the [recorded result](../experiments/research_critical_signed_gre
 is retained as an unpublished research artifact. No
 floating-point computation is used.
 
-Internal review: root and coherent_partner_currents read the complete
-proof and verifier, including constant norms, both physical lifts,
-the chart-divisor argument and fixed-positive-\(b,x\) calibration.
-Their separate redirected exact replays reproduced 18 returned head coordinates,
-2 zero differential tensors, 172 physical shape-factor incidences,
-10 physical factor reductions and 40 endpoint valuations. The
-review excludes retained half twists, protected-line limits and
-global relative-chain claims, which are not proved here.
+Retained half twists, protected-line degenerations and a global relative fundamental chain are outside this local calculation.

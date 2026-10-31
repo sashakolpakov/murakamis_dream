@@ -1,13 +1,6 @@
 # Fractional odd-cycle packing for the original regular-window source
 
-31 October 2026. **Internally reviewed research corollary and conditional
-source-rate criterion.** Root and two separate readers completed full
-analytical reviews. This refines the internally reviewed
-[regular-window phase bound](research_regular_spectral_window_phase_exclusion.md)
-on any fixed original incidence graph. It does not assert that regular
-windows cover the source or that their positive envelopes have the complete
-volume rate. The local analytic constants remain inputs requiring their
-stated hypotheses.
+This regular cycle-packing lemma has local hypotheses. It gives neither a covering statement nor equality of volume and source rates.
 
 ## 1. Original face phases and certified local losses
 

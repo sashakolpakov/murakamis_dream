@@ -1,7 +1,7 @@
 # Simultaneous terminal reduction of the actual Fejer entropy source
 
-Independently reviewed, 31 October 2026. The labeled right-angled certificate and
-the ORIGINAL protected MAIN edge are used. This does not license an
+, 31 October 2026. The labeled right-angled certificate and
+the original protected MAIN edge are used. This does not license an
 arbitrary one-port relabel, which fails in the recorded width-three
 counterexample. No diagonal or other free endpoint is removed here.
 
@@ -66,7 +66,7 @@ targets0. Integral cycle rounding, inside the floor/ceiling interval
 of every entry, gives an integer flow with the same exact balances
 and entrywise error at most1. No new auxiliary target is introduced.
 
-If d gamma>=2, its middle entries satisfy the ORIGINAL finite bounds:
+If d gamma>=2, its middle entries satisfy the original finite bounds:
 
     cross: d(1/2-gamma)+1<=m-1,
     one-sided: d(1/2+gamma)-1>=m.
@@ -108,10 +108,6 @@ outer-degree boundaries and ordinary-multiplier degenerations open.
 It also does not imply any individual finite term survives a Gaussian
 filling contour.
 
-## Review and scope
+## Scope
 
-Root independently read the full proof and checked the strict geometric
-middle margin, all-terminal selection, exact scaling by d, integral cycle
-rounding and the explicit large-N threshold. Analytical review PASS.
-This is an elementary source-support and entropy lemma; no numerical
-audit is claimed or required. The note is frozen at this scope.
+The terminal calculation concerns the finite source and entropy functional only; it gives no new quantum asymptotic estimate.

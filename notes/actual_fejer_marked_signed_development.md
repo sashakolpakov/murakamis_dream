@@ -2,7 +2,7 @@
 
 Completion: the [hybrid-piece theorem](actual_fejer_hybrid_piece_representation.md) and [general endpoint theorem](general_fejer_endpoint_source_volume.md) now handle the additional maximizing boundary strata. The failed local re-framing claim below remains withdrawn; the proof uses the original sewn relative fundamental chain.
 
-31 October 2026. Independently reviewed conditional stationary-stratum lemma. This extends the real local Green
+31 October 2026. conditional stationary-stratum lemma. This extends the real local Green
 regulator to the FORCED two marked zero curvatures. It does not remove
 additional free row/outer endpoint strata or prove that a maximum of the
 compact entropy problem satisfies the hypotheses below.
@@ -10,7 +10,7 @@ compact entropy problem satisfies the hypotheses below.
 ## 1. Exact hypotheses from the original source
 
 Let C be the actual simplicial white triangulation of the certified
-connected flat plat, with the two ORIGINAL protected vertices u,v joined
+connected flat plat, with the two original protected vertices u,v joined
 by their MAIN edge. Give every other vertex f a finite positive curvature
 l_f and set l_u=l_v=0. There are no additional zero or infinite radii.
 At each source triangle use the usual tangent-circle angle vector
@@ -148,7 +148,7 @@ alone. The actual threading word [2,1,1,2] takes raw auxiliary -C^-1,
 closes it and transports both physical ports. The original cup/cap/mark
 and all original prefix orders remain those of the source.
 
-IMPORTANT CORRECTION FROM THE ORIGINAL-WORD TEST: the local regulator
+IMPORTANT CORRECTION FROM THE original-WORD TEST: the local regulator
 is NOT invariant under an arbitrary common Mobius conjugation followed
 by resetting the Gauss reference flag. The four-crossing heads return
 correctly, but the open-port Bloch sum changes. For example, the regular
@@ -177,14 +177,13 @@ hypotheses in section1. Give each white face its ONE reflection from
 section2. Original main prefixes telescope; the actual cups/caps give
 inverse pairs. At every matching port (5) supplies its actual centralizer
 and raw auxiliary meridian. These are precisely the literal Morse and
-threading relations, so they give a representation of the ORIGINAL
+threading relations, so they give a representation of the original
 untwisted augmented group. No independent port conjugations are used.
 The actual marked main meridians, including the u/v contact, are retained.
 
 The geometric reflection representation is constructed by this argument.
-Its signed entropy regulator is computed in the separate reviewed
-[global cut-ball lemma](actual_fejer_signed_cut_ball_regulator.md), which
-uses the TWO ORIGINAL abstract cut balls and all their face pairings.
+Its signed entropy regulator is computed in the separate [global cut-ball lemma](actual_fejer_signed_cut_ball_regulator.md), which
+uses the TWO original abstract cut balls and all their face pairings.
 No local re-framing invariance is used. The all-positive calibrated
 Green regulator alone cannot cover the closed marked target.
 
@@ -195,9 +194,4 @@ hypotheses above, not the bound for every compact maximum. Additional
 flat triangles, zero or infinite ordinary multipliers, diagonal mixtures
 and other free KKT strata remain separate.
 
-Independent analytical status: root and coherent reviewed the developing
-disk, cooriented line adapters and original group relations. Cluster
-independently reviewed the same geometric/algebraic scope. All agreed
-that the generic-frame LOCAL regulator extension must be withdrawn.
-The separately reviewed [global repair](actual_fejer_signed_cut_ball_regulator.md)
-computes the sewn fundamental chain, not an invariant open crossing regulator.
+The generic-frame local regulator extension is withdrawn. The [global repair](actual_fejer_signed_cut_ball_regulator.md) computes the sewn fundamental chain, rather than an invariant regulator for an open crossing. The developing disk, cooriented line adapters and group relations retain their stated scope.

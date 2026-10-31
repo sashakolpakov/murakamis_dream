@@ -90,8 +90,8 @@ a Laurent polynomial c write c=c_north+c_mid+c_south, with powers
 respectively >=0, -N-1 through -1, and <=-N-2. Define
 
 \[
- h(c)=\left(-c_{\rm north}(z),\
-                   [z^{N+2}c_{\rm south}(z)]_{z=1/w}\right).
+ h(c)=\left(-c_{\mathrm{north}}(z),\
+                   [z^{N+2}c_{\mathrm{south}}(z)]_{z=1/w}\right).
                                                                \tag{2.1}
 \]
 
@@ -136,7 +136,7 @@ at one formal Taylor chart.
 
 ## 3. All actual whole operators lift, and finite jets have bounded order
 
-In the polynomial model the ORIGINAL root divided generators are
+In the polynomial model the original root divided generators are
 
 \[
        e=\partial_z,\qquad f=Nz-z^2\partial_z,
@@ -332,10 +332,10 @@ marked cover put s=C alpha^2,
 r_frame=(1+m)/2+D alpha^2, and
 
 \[
-       \tau=r_{\rm frame}/s
+       \tau=r_{\mathrm{frame}}/s
              =\frac{1+m}{2C\alpha^2}+\frac DC,
        \quad A=1/(1+s),\qquad
-                 d\tau\wedge d\log A=\Omega_{\rm cut}.\tag{6.3}
+                 d\tau\wedge d\log A=\Omega_{\mathrm{cut}}.\tag{6.3}
 \]
 
 At C=alpha=1,D=0, one has s=1,A=1/2 and tau=(1+m)/2.
@@ -344,7 +344,7 @@ with d tau=dm/2. Averaging its ROOT global class c_(1,m) gives
 the uniform row class
 
 \[
-       c_{\rm uni}(z)=\frac1{N+1}\sum_{k=0}^N
+       c_{\mathrm{uni}}(z)=\frac1{N+1}\sum_{k=0}^N
                             \frac{z^{-k-1}}{\binom Nk}.\tag{6.4}
 \]
 
@@ -364,7 +364,7 @@ The original normal construction has source-dependent pairing-unit
 ratios. No equality of its full operator action on arbitrary Fr
 matrices follows merely from this coherent-family character.
 
-For the ORIGINAL whole q-source, use (1.3) on its actual coefficients
+For the original whole q-source, use (1.3) on its actual coefficients
 psi_s(q),lambda_s(q), including the actual units U_s(q,m). Formula
 (6.1) is their root restriction, NOT their replacement before quantum
 differentiation. Their whole source and dual remain global Čech data.
@@ -387,7 +387,7 @@ residue string. Put E_N(q)=tau E^(N)(q), F_N(q)=F^(N)(q), and
  \end{split}                                                    \tag{7.1}
 \]
 
-Every c_k and psi coefficient comes from the ORIGINAL integral
+Every c_k and psi coefficient comes from the original integral
 divided matrices. At the root c_k=binom(N,k), psi_q=sum v_k and
 U_q(m)=1. Thus U is an actual pairing unit formally, and analytically
 on the compact interval for q sufficiently close to q_N at fixed N.
@@ -419,7 +419,7 @@ uniform source it agrees with the trace on diagonal arrays, and
 both give the actual closed scalar period. No equality on arbitrary
 off-diagonal Green insertions is inferred from that fact.
 
-Nor is the uniform Fr row the ORIGINAL head-uniform/coherent-Fr
+Nor is the uniform Fr row the original head-uniform/coherent-Fr
 coupon after the cyclotomic diagonal projector. Its Fr indices
 0 and N both map to head index S=0, so raw Fr uniform averaging
 counts that head endpoint twice. A literal match to the old head
@@ -435,7 +435,7 @@ is L_q/V_q. The normalized uniform dual on the SAME actual source
 is lambda_uni/nu_q. Define
 
 \[
- \Delta_q=L_q/V_q-\lambda_{\rm uni}/\nu_q,\qquad
+ \Delta_q=L_q/V_q-\lambda_{\mathrm{uni}}/\nu_q,\qquad
                     K_q=I+\psi_q\Delta_q.            \tag{7.4}
 \]
 
@@ -445,7 +445,7 @@ Since Delta_q psi_q=0, these are exact whole identities:
  \begin{split}
  K_q^{-1}&=I-\psi_q\Delta_q,\quad K_{q_N}=I,\\
  K_q\psi_q&=\psi_q,\qquad
-       (\lambda_{\rm uni}/\nu_q)K_q=L_q/V_q .
+       (\lambda_{\mathrm{uni}}/\nu_q)K_q=L_q/V_q .
  \end{split}                                                    \tag{7.5}
 \]
 

@@ -72,7 +72,7 @@ character, not an identically one change of the source. Its marked norm
 is
 
 \[
- \boxed{D_{\rm src}(z)
+ \boxed{D_{\mathrm{src}}(z)
    =\operatorname{Im}\overline G
                    -2\sum_i\operatorname{Re}u_i\operatorname{Im}v_i
    =\operatorname{Im}G
@@ -90,7 +90,7 @@ Writing z_i=x_i+i y_i and ell_i=a_i+i b_i, direct differentiation
 gives
 
 \[
- dD_{\rm src}=\sum_i(a_i\,dy_i-x_i\,db_i)
+ dD_{\mathrm{src}}=\sum_i(a_i\,dy_i-x_i\,db_i)
        =2\sum_i(\operatorname{Re}v_i\,d\operatorname{Im}u_i
                          -\operatorname{Re}u_i\,d\operatorname{Im}v_i).
                                                                \tag{3}
@@ -155,7 +155,7 @@ are zero. Consequently the two functions with equal differential have
 the SAME absolute constant on this connected regular branch:
 
 \[
- \boxed{D_{\rm src}(z)=D(\beta(\rho_z)).}                \tag{4}
+ \boxed{D_{\mathrm{src}}(z)=D(\beta(\rho_z)).}                \tag{4}
 \]
 
 Use a simply connected sufficiently small marked parameter
@@ -189,7 +189,7 @@ Re z_i=-2p_i Re ell_i, so
    =\operatorname{Im}G(z_*)
                        +2\sum_i p_i\operatorname{Re}\ell_i
                                            \operatorname{Im}\ell_i
-   =D_{\rm src}(z_*)=D(\beta(\rho_{z_*})).}            \tag{6}
+   =D_{\mathrm{src}}(z_*)=D(\beta(\rho_{z_*})).}            \tag{6}
 \]
 
 In particular there is no unestimated complex endpoint correction left

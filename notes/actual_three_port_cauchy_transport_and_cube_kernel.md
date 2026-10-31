@@ -253,11 +253,4 @@ and local regular generic first-normal identities. They supplement
 the all-N source/graft and positive-cone proofs, not an inference
 from measured matrix spectra or a whole-graph invariant claim.
 
-Independent internal review: the Euler-atom agent re-derived the
-socle norm, theta and cube normalizations, the non-PSD determinant,
-weighted transport, cone norm bounds, every fixed-k source count and
-the inherited rung gap, and completed a fresh focused replay: PASS.
-The distinction between the exact scalar quotient pairing and the
-independently bounded projected cross-color kernel is retained.
-This is an internal research review, not external peer review or a
-full graph invariant equality.
+The exact scalar quotient pairing and the bounded projected cross-color kernel are different objects. The latter estimate does not establish equality with a full graph invariant.

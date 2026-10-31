@@ -1,7 +1,7 @@
 # Literal port gluing and the complete geometric holonomy anchor
 
 29 October 2026. The selected regular mixed source has an explicit
-matrix lift to the ORIGINAL augmented pretzel diagram. Its common
+matrix lift to the original augmented pretzel diagram. Its common
 \(w\) and outer equation \(\prod_iU_i=1\) glue the actual ports.
 At completeness, every white AND shaded face map agrees with the
 explicit four-antiprism geometry. Thus its base representation is
@@ -181,12 +181,12 @@ This constructs a representation of the actual augmented-link
 group, with its main meridians parabolic, and its \(i\)-th auxiliary
 meridian/longitude represented by \(C_i,P_i\).
 
-At a selected filling point put \(z_i^{\rm eig}=\Log H_i\),
-\(\ell_i=\Log L_i\), using the source's continuous logarithms.
+At a selected filling point put \(z_i^{\mathrm{eig}}=\operatorname{Log} H_i\),
+\(\ell_i=\operatorname{Log} L_i\), using the source's continuous logarithms.
 The actual unit-charge filling equation is
 
 \[
- z_i^{\rm eig}+2p_i\ell_i=2\pi i m_i,\qquad m_i=\pm1.
+ z_i^{\mathrm{eig}}+2p_i\ell_i=2\pi i m_i,\qquad m_i=\pm1.
  \tag{9}
 \]
 

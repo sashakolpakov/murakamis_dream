@@ -93,7 +93,7 @@ The geometric generators are relabeled by
 the reverse physical traversal; their developed maps and their
 positive regulator are not conjugated. This geometric relabeling
 does not replace the original marked row by another local source.
-The finite tensor checks leave that row in its ORIGINAL slot.
+The finite tensor checks leave that row in its original slot.
 
 ## 4. An explicit holomorphic isometry fixes the orientation qualification
 

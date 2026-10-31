@@ -65,7 +65,7 @@ its actual factorial support.
 | 7 | U(x^(-1)z_5/z_6) | same |
 | 8 | F(z_7/z_5) | same |
 
-Here a Gaussian is still represented by its ORIGINAL moment
+Here a Gaussian is still represented by its original moment
 
     g_s=-x^(-2s)exp(-s h/2)exp(sqrt(pi)(1+i s)xi),
     sqrt(N/(2pi))exp(-Nxi^2/2)d xi,
@@ -129,7 +129,7 @@ raw positive crossing kernel is
        R_N(z_6/z_0,x^(-1)z_6/t)
        B_N(x^(-1)z_7/z_6,x^(-2)z_7/t)].                   (5)
 
-On the ORIGINAL finite input heads, the PHYSICAL finite-head
+On the original finite input heads, the PHYSICAL finite-head
 crossing is K_+=Pi_+^(6) Ktilde_+.
 All upper support and second-output lower support are already
 enforced by the three factors; only negative first-output tails

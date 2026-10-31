@@ -29,7 +29,7 @@ The lowest lift and effective coupon, with all normal coefficients, are
 \[
  D w=\sum_{k=0}^d\frac{F_{12}^{\,k}}{F_k}Lw\otimes|d-k\rangle,
  \qquad
- M_t=\xi_d^{-1}R_{\rm high}E_{123}^{,d}t^{J_2}D,
+ M_t=\xi_d^{-1}R_{\mathrm{high}}E_{123}^{,d}t^{J_2}D,
  \quad \xi_d=(-1)^dN.                                      \tag{1}
 \]
 
@@ -161,17 +161,17 @@ Input and output canonical momenta of (4), after taking the constant
 \(N\) channel, are
 
 \[
- z_{\rm in}=(1-S)/S,\qquad
- z_{\rm out}=\frac{SI/J}{1-SI/J}.                         \tag{8}
+ z_{\mathrm{in}}=(1-S)/S,\qquad
+ z_{\mathrm{out}}=\frac{SI/J}{1-SI/J}.                         \tag{8}
 \]
 
 These follow by the exact \(j\) and \(i\) ratios, respectively;
 input momentum is the inverse input ratio. Solving (7)--(8) gives
 
 \[
- z_{\rm out}=\frac{z_{\rm in}}
- {t[J(1+z_{\rm in})-1]^2},\qquad
- I=\frac{J(1+z_{\rm in})z_{\rm out}}{1+z_{\rm out}}.
+ z_{\mathrm{out}}=\frac{z_{\mathrm{in}}}
+ {t[J(1+z_{\mathrm{in}})-1]^2},\qquad
+ I=\frac{J(1+z_{\mathrm{in}})z_{\mathrm{out}}}{1+z_{\mathrm{out}}}.
 \]
 
 At (t=1) this is the original graph of (L^{-1}), consistently
@@ -193,7 +193,7 @@ literal complete Casimir matrices give
 
 \[
  X=A-2=-\frac{(1-J)^2(1+z)^2}{z},\quad
- Y=B_{\rm Cas}-2=\frac{(J-1)^2(1+z)}J,\quad
+ Y=B_{\mathrm{Cas}}-2=\frac{(J-1)^2(1+z)}J,\quad
  Z=C-2=\frac{(J-1)^2(1+z)}{Jz}.
 \]
 
@@ -202,7 +202,7 @@ They satisfy ((X+Y+Z)^2+XYZ=0). In these coordinates (9) is
 \[
  \boxed{\quad (X,Y,Z)\longmapsto\lambda(X,Y,tZ),\qquad
  \lambda=\frac{(X+Y+tZ)^2}{t(X+Y+Z)^2},\qquad
- B_{\rm clock}=-Y/X.\quad}                              \tag{10}
+ B_{\mathrm{clock}}=-Y/X.\quad}                              \tag{10}
 \]
 
 This is a nontrivial algebraic canonical action. Parseval matching of
@@ -245,8 +245,8 @@ Consequently, with (R=w/J,U=w/I,V=SI/J), the second
 correspondence is specified by (7), (11), and
 
 \[
- z_{\rm in}=\frac{1-S}{S(1-R)},\qquad
- z_{\rm out}=\frac{V(1-U)}{1-V},\qquad B_{\rm clock}=S/J.   \tag{12}
+ z_{\mathrm{in}}=\frac{1-S}{S(1-R)},\qquad
+ z_{\mathrm{out}}=\frac{V(1-U)}{1-V},\qquad B_{\mathrm{clock}}=S/J.   \tag{12}
 \]
 
 One then composes with the SAME original (L). At (t=1), away
@@ -284,7 +284,7 @@ Its interior saddle, writing (V_0=e^{hv}), satisfies
 
 \[
  JV_0^2-3JV_0+3J-1=0,\qquad
- z_{\rm source}=\frac{(1-J)^2}{J(V_0-J)}.                 \tag{14}
+ z_{\mathrm{source}}=\frac{(1-J)^2}{J(V_0-J)}.                 \tag{14}
 \]
 
 The source curve before the final \(L\) is exactly
@@ -293,7 +293,7 @@ The source curve before the final \(L\) is exactly
 chosen boundary phase.
 
 On the alias correspondence, take the irreducible terminal cap chart
-\(I\to\infty\), \(z_{\rm out}=-1+c/I+O(I^{-2})\). Put
+\(I\to\infty\), \(z_{\mathrm{out}}=-1+c/I+O(I^{-2})\). Put
 \(m=S/J\). Equations (7), (11)--(12) then give
 
 \[
@@ -358,7 +358,7 @@ identity \(\sum_{v=0}^aQ^v/F_v=1/F_a\). Hence full adjacent
 output stationarity requires
 
 \[
- z_{\rm out}=(xQ)^{-1}=-q^{-1}
+ z_{\mathrm{out}}=(xQ)^{-1}=-q^{-1}
                 =-1+h/2+O(h^2).
 \]
 

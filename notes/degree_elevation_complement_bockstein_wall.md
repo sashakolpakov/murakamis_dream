@@ -195,7 +195,7 @@ the ACTUAL paired coherent source gives
 The uniform interval row gives instead
 
 \[
-                  \Phi_{\rm uni}(w)=\frac1{N+1}.      \tag{4.3}
+                  \Phi_{\mathrm{uni}}(w)=\frac1{N+1}.      \tag{4.3}
 \]
 
 The ratio is 2^N/(N+1), GENUINELY exponential. For the unnormalized
@@ -204,7 +204,7 @@ Their actual normalization has not been hidden by declaring its
 matrix unit to be the source value one.
 
 The coupled original source makes the head endpoint explicit:
-\(\Phi_{e_D}(w\otimes H_{\rm head})=2^{-N}(H_{\rm head})_{00}\).
+\(\Phi_{e_D}(w\otimes H_{\mathrm{head}})=2^{-N}(H_{\mathrm{head}})_{00}\).
 The Fr endpoints 0 and N are the SAME cyclic head endpoint.
 The uniform interval row is not that original coherent coupon.
 Since w is root Ward-closed, no root co-source homotopy on the
@@ -234,7 +234,7 @@ is exactly
 
 \[
                     (I_1)_{(-1,+1)}=N e\otimes f
-                                      \otimes I_{\rm heads}.      \tag{5.1}
+                                      \otimes I_{\mathrm{heads}}.      \tag{5.1}
 \]
 
 This is the original universal R tail, not an appended operator:
@@ -261,7 +261,7 @@ ACTUAL adjoint normal current is
 
 \[
  \Pi_{(-1,+N)}[I_1,X\otimes Y]
-                  =N[e,X]\otimes w\otimes I_{\rm heads}.          \tag{5.2}
+                  =N[e,X]\otimes w\otimes I_{\mathrm{heads}}.          \tag{5.2}
 \]
 
 Its first factor is
@@ -275,7 +275,7 @@ coefficient; it is not a closed scalar knot invariant by itself.
 Its two legitimate paired values are different:
 
 \[
- (\Phi_{\rm uni}\otimes\Phi_{\rm uni})(5.2)
+ (\Phi_{\mathrm{uni}}\otimes\Phi_{\mathrm{uni}})(5.2)
                       =-\frac{N-1}{N+1},\qquad
  (\Phi_+\otimes\Phi_+)(5.2)
                       =-\frac{N(N-1)}{2^{2N-1}}.      \tag{5.3}
@@ -324,7 +324,7 @@ neither that construction nor (2.5) declares the full actual R
 network image-invariant. Every actual offimage current must be
 projected by (1.1) and then checked in the explicit complex (2.1).
 A CLOSED residual reduces to its ONE wall component; its value
-there uses the ORIGINAL source row, not automatically (4.3).
+there uses the original source row, not automatically (4.3).
 
 The global geometric Ward/current map, its charged head neighbors
 and the selected regulator norm remain to be proved. This result

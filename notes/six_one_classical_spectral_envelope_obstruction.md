@@ -33,9 +33,9 @@ WA-BW=\begin{pmatrix}0&R\\zR&0\end{pmatrix},\qquad
 R=z^4+(5-2t)z^3+(t^2-6t+11)z^2+(t^2-7t+12)z+5-2t.       \tag{1}
 \]
 
-Let \(W^{\rm rev}=(BA^{-1}B^{-1}A)^2\). The exponent sum is zero,
+Let \(W^{\mathrm{rev}}=(BA^{-1}B^{-1}A)^2\). The exponent sum is zero,
 so the usual peripheral word has no meridian-power correction:
-\(\Lambda=WW^{\rm rev}\). It commutes with B modulo R. Its chosen
+\(\Lambda=WW^{\mathrm{rev}}\). It commutes with B modulo R. Its chosen
 eigenvalue is \(L=\Lambda_{11}\). An explicitly checked simplification is
 
 \[
@@ -63,8 +63,7 @@ For \(|Y|=1\), b is real and \(c=\bar a\), so F is self-inversive.
 The defining matrices, cleared relation, peripheral commutation,
 rational longitude, and resultant are checked symbolically by
 [the independent audit](../experiments/audit_six_one_spectral_envelope.py).
-Swapping A and B gives the equivalent reversed convention independently
-checked by the root agent; no table identity is used in the proof.
+Swapping A and B gives the equivalent reversed convention; no table identity is used in the proof.
 
 ## 2. Exact transverse switch, without numerical branch tracking
 

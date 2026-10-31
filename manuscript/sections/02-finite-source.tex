@@ -1,4 +1,8 @@
-\chapter{The original finite invariant and its source algebra}\label{ch:source}
+\chapter{Evaluating the invariant in a finite polynomial algebra}\label{ch:source}
+
+We now turn the tangle operations of Chapter~\ref{ch:introduction} into finite matrix calculations. A strand carries a finite-dimensional vector space, a crossing acts on the two corresponding factors, and joining endpoints means contracting the appropriate indices. Closing an auxiliary circle takes a trace. Leaving one marked main strand open until the final contraction gives the reduced normalization.
+
+The purpose of the polynomial algebra introduced below is to make these contractions compositional. Every two-strand operator that occurs here is a polynomial in one matrix, the pair Casimir $\Omega$. Stacking becomes multiplication of polynomials, while the quarter-turn has a particularly simple action in the Newton basis. The last section then expresses an arbitrary filling power in the basis of colored auxiliary-circle operators. All of these statements are finite identities at each level; asymptotics begin only in Chapter~\ref{ch:entropy}.
 
 \section{Crossings and the one-cut normalization}
 Fix $N\ge2$, and set
@@ -6,7 +10,7 @@ Fix $N\ge2$, and set
  d=N-1,\qquad q=e^{\pi\ii/N},\qquad Q=q^2,\qquad
  x=q^d,\qquad \kappa=q^{d^2/2},\qquad \rho=q-q^{-1}.
 \end{equation}
-There is no restriction to prime or odd $N$. One convenient unbalanced realization of the complete physical color has basis $v_0,\ldots,v_d$ and
+There is no restriction to prime or odd $N$. The main strands carry the $N$-dimensional vector space $V_N$; this is what ``complete color'' means at this stage. The operators $H,K,E,F$ encode its quantum-group action. They are concrete matrices, which we specify so that the crossing convention can be checked. One convenient choice of basis is $v_0,\ldots,v_d$ and
 \[
  H v_j=(d-2j)v_j,\quad K=q^H,\quad
  E v_j=[j]_q^2v_{j-1},\quad Fv_j=v_{j+1},
@@ -20,7 +24,7 @@ Missing endpoint vectors are zero. The finite universal crossing, including its 
 \end{equation}
 Every denominator is nonzero. The physical braided crossing is obtained with the fixed exchange and transpose convention; the inverse is the actual matrix inverse. The framing and enhancement are part of the definition, not an unspecified factor appended to an asymptotic formula.
 
-For the balanced source coordinates used below, the same physical module has
+For calculations in the polynomial algebra it is useful to change basis on this same space. We call the new coordinates balanced; they do not define a different invariant. In this basis the operators are
 \begin{equation}\label{eq:balanced-module}
  \mathcal E|a\rangle=(Q^{-a}-1)|a-1\rangle,\quad
  \mathcal F|a\rangle=(1-Q^{a+1})|a+1\rangle,\quad
@@ -32,7 +36,7 @@ The ordinary cup and cap, and the one marked cap, have entries
  \ell_{ab}=\frac{x^a}{N}\delta_{a+b,d},\qquad
  m_{ab}=\frac{x^b}{N^2}.
 \end{equation}
-The ordinary duality satisfies both snake identities. The marked contraction has $mp=1$. If $g=K^{1-N}=(-1)^dK$, the original cylindrical scalar of an intertwining two-head box is
+The cup creates two endpoints and the cap joins them. Their two snake identities say that a bend followed by the opposite bend evaluates to a straight strand. The different marked cap implements the reduced invariant and satisfies $mp=1$. The diagonal operator $g=K^{1-N}=(-1)^dK$ is the \emph{pivot}, the correction inserted when an ordinary strand is closed by a trace. For a two-strand operator $A$ commuting with the pair quantum-group action, the original cylindrical evaluation is
 \begin{equation}\label{eq:phi-physical}
  \phi(A)=\frac1N\Tr_{V_N\otimes V_N}\bigl[(I\otimes g)A\bigr].
 \end{equation}
@@ -58,6 +62,8 @@ Its removable value at $u=0$ is $\ii^{N+3}/N$. Exactly one component receives th
 \end{proof}
 
 \section{The full pair algebra}
+
+An operator on two strands must commute with the joint action of the quantum-group generators if it is to represent one of our invariant tangle boxes. The formulas below specify that joint action. The subsequent lemma identifies all such commuting operators; this is the meaning of the term \emph{commutant}.
 The balanced pair generators and Casimir are
 \begin{equation}\label{eq:pair-casimir}
  \mathcal E_{12}=\mathcal E_1K_2+\mathcal E_2,\quad
@@ -84,9 +90,15 @@ On $W_d$, the Casimir is a symmetric tridiagonal matrix with adjacent entries $-
 The elementary quantum-shift product gives $P_N(\Omega)=0$. The cyclic block has minimal polynomial of degree $N$; its continuant, or the generic highest-weight decomposition followed by regular specialization, gives precisely \eqref{eq:hermite-algebra}. This proves the claim with all first normal directions intact.
 \end{proof}
 
-The distinction from a semisimple value algebra is essential. At a double node, $f(c)$ and $f'(c)$ are independent data. A polynomial vanishing at every distinct node need not vanish in $\cH_N$.
+At a double root $c$, reduction modulo $(z-c)^2$ leaves
+\[
+ f(z)=f(c)+f'(c)(z-c)\pmod{(z-c)^2}.
+\]
+Thus both the value and its first derivative are independent coordinates of the operator. Throughout the paper, retaining the ``full algebra'' or the ``normal data'' means retaining this derivative as well. A polynomial can vanish at every distinct root and still define a nonzero operator in $\cH_N$. Evaluating only at roots would therefore lose part of the invariant.
 
 \section{The actual turn and the Newton basis}
+
+We choose a polynomial basis adapted to successive Casimir roots, including their multiplicities. Its normalization is designed so that turning a physical box reverses the basis index exactly. The same basis makes the final closure a coefficient extraction. These are the two facts that will allow us to follow every internal summation index through a large construction.
 Put
 \begin{equation}\label{eq:newton-basis}
  s_r=\prod_{u=1}^{r}2\sin\frac{\pi u}{N},\quad s_0=1,\qquad
@@ -117,9 +129,11 @@ The finite verification is given in Appendix~\ref{app:newton}. It uses the physi
 
 The same closure can be displayed directly in Hermite coordinates:
 \begin{equation}\label{eq:hermite-trace}
- \phi(f)=(-1)^d\sum_{c\ {m double}}
+ \phi(f)=(-1)^d\sum_{c\ {
+m double}}
  \bigl((4-c^2)f'(c)-cf(c)\bigr)
- +\mathbf1_{N\ {m odd}}f(-2).
+ +\mathbf1_{N\ {
+m odd}}f(-2).
 \end{equation}
 Equivalently,
 \begin{equation}\label{eq:leading-trace}
@@ -129,6 +143,8 @@ For example, at a double root $c$, writing $Q_c=P_N/(z-c)^2$ gives
 $Q_c(c)=N^2/(4-c^2)$ and $Q_c'(c)/Q_c(c)=c/(4-c^2)$ from the Chebyshev differential equation. The residue of $f/P_N$ is exactly the corresponding term of \eqref{eq:hermite-trace} after multiplication by $(-1)^dN^2$. Summing residues proves \eqref{eq:leading-trace}; the simple odd root has $P_N'(-2)=N^2$. The sole shortest tridiagonal path from the first to the last coordinate has product $(-1)^dN^2$, which also identifies this scalar with the original endpoint matrix element.
 
 \section{Positive multiplication with every normal retained}
+
+Suppose two stacked boxes contribute basis indices $i$ and $j$. Their product is a linear combination of output indices $r$. The following coefficient formula gives both the allowed triples $(i,j,r)$ and their weights. Calling this local operation a \emph{gate} is only shorthand for this one multiplication; the geometric operation remains the vertical stack.
 \begin{theorem}[Multiplication law]\label{thm:positive-product}
 If $i+j<N$, then
 \begin{equation}\label{eq:positive-product}
@@ -161,6 +177,8 @@ For $i+j\ge N$, use the exact polynomial identity $B_N/B_j=B_{N-j}$, a consequen
 \end{proof}
 
 \section{The literal crossing circle and its colors}
+
+A color $j$ on an auxiliary circle means that the circle carries a $j$-dimensional representation. The main strands still carry $V_N$. We must compute the resulting operator on those two main strands, including the trace around the auxiliary circle, before replacing that circle by twists. The answer is a Chebyshev polynomial in $\Omega$, with the sign fixed by the pivot.
 For $1\le j\le N$, the auxiliary module is the ordinary $j$-dimensional highest-weight module. Its loop is the actual block-braiding word $[2,1,1,2]$, with the intermediate strand dimensions retained, followed by its ordinary pivot $K_j^{1-N}$. There is no auxiliary $1/j$ or $1/N$.
 
 \begin{proposition}[Circle identity]\label{prop:circle}
@@ -200,9 +218,11 @@ For $1\le h\le\lfloor N/2\rfloor$,
  h_h=\sum_{r=0}^{h-1}(-1)^{h-1+r}
  \frac{s_r^2s_{h+r}}{s_{2r+1}s_{h-r-1}}\Bhat_{d-r}.
 \end{equation}
-These are identities in $\cH_N$. A derivation from the finite Chebyshev generating function is given in Appendix~\ref{app:colors}. The first term in \eqref{eq:core-alias} is the core; the second is the alias. The alias is signed and lies in the complementary high Newton indices before a half twist.
+These identities separate two different ranges of Newton indices. The first term in \eqref{eq:core-alias}, called the \emph{core}, has positive coefficients before a half twist and occupies the lower indices. The second term, called the \emph{alias}, is an exact signed contribution from the complementary color; formula~\eqref{eq:low-alias} puts it in the higher Newton indices. An alias is therefore part of the finite invariant, not an error introduced by approximation. Appendix~\ref{app:colors} derives both formulas from the finite Chebyshev generating function. Chapter~\ref{ch:alias} will prove when the contribution of aliases is exponentially smaller after the complete tangle is assembled.
 
 \section{Half twists and exact filling}
+
+The preceding formulas describe a circle with no retained crossing. We next insert one positive or negative crossing in its original disk framing. This changes both the coefficients and their phases. We then expand a full integer twist power in the circle basis. Keeping these two steps separate ensures that the physical power is exactly $R^{\eps-2p}$, with the retained half twist counted once.
 A retained half twist acts on a turned leaf by
 $\Turn_\eps(f)=\Turn(R^\eps\Turn f)$, for $\eps=\pm1$. Its exact transport is
 \begin{equation}\label{eq:half-twist}

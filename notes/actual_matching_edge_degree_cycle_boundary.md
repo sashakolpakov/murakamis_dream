@@ -1,6 +1,6 @@
 # The actual degree cycle across the finite-head wall
 
-30 October 2026. Independently reviewed and frozen. The specified generic
+30 October 2026. The specified generic
 exceptional lift can be used on a larger original physical-grid residue
 cycle by adding explicitly proved source-null local tori. This is a
 statement about PERIODS, not multivariable removability of its poles.
@@ -206,7 +206,7 @@ the original one, or that a noncompact cap has negligible integral.
 ## 5. The late-wall first normal is the actual root density
 
 For k>=s+1, n=L+k lies in [N,2N-1]. The complementary finite
-factorial has exactly one root zero. From the ORIGINAL integer
+factorial has exactly one root zero. From the original integer
 product,
 
     partial_epsilon F_n|0=-2N^2 F_(n-N)(q0).
@@ -241,7 +241,7 @@ This does not say its cotangent finite part vanishes at an arbitrary
 off-grid point. At original physical grid points the stronger
 generic source-null theorem (3) applies.
 
-Finally the ORIGINAL exposed trace normal is
+Finally the original exposed trace normal is
 nu_N=2N(-1)^N/(q0-q0^-1). Hence
 
     P'(0)/nu_N=(-1)^(N+1) N sin(pi/N)/pi.                 (12)
@@ -261,21 +261,6 @@ the original moving-period cup Laurent coefficients, and the actual
 exposed-normal normalization. Numerical checks of local densities do
 not substitute for the ordered-cycle proof in section 2.
 
-Primary-agent full analytical review: PASS. The reader checked the
-actual large-numerator support, maximal-ideal total-degree residue
-argument, common generic germ, primitive lattice step, cup finite-part
-and complement-derivative signs, both wall ranges, and the original
-source-normal scalar. Additional divisors, constant-degree chambers,
-noncompact caps, and the global geometric intersection remain outside
-the conclusion.
+Additional divisors, constant-degree chambers, noncompact caps, and the global geometric intersection remain outside the conclusion.
 
-Independent source-agent full analytical review and fresh redirected
-audit: PASS. The reader independently checked the generic Newton zeros,
-the ordered multivariable residue argument, the actual primitive
-cotangent weights, cup Laurent coefficients and complement derivative,
-both first-normal wall ranges, and the original exposed-trace scalar.
-The replay reproduced 2588 generic numerator-zero jets, 95 early and
-70 late factor checks, 12 primitive cotangent residues, 18 ordered
-ideal checks, 8 moving-Gamma Laurent coefficients, 334 late root/normal
-checks, and 13 exposed-normal scalars. No removability, omitted-divisor,
-or global contributing-cycle assertion was used in this review.
+The residue argument does not establish removability of omitted divisors or identify a globally contributing cycle.

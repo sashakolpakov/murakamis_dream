@@ -1,12 +1,10 @@
-# A full-Hermite spectral class closed under decorated character turns
+# Controlling a turn preceded by an actual character operator
 
-31 October 2026. Internally reviewed source theorem. All polynomials are
-in the original complete pair algebra, with its original marked closure
-and full first normal coordinates. The exact recursive class below
-contains every fully flagged hub tree by the separately proved
-[reduced-hub source adapter](actual_conway_reduced_hub_source_normal_form.md).
-No assertion about the normalization of an arbitrary
-unflagged hub or arbitrary sharp geometric action is made here.
+A polynomial operator in a knot calculation is determined at a repeated spectral node by both its value and its first derivative. This note uses a norm retaining both pieces of data. It proves that a specific physical operation preserves useful bounds in that norm: multiply by the actual circle character and retained half twist, then apply the physical turn.
+
+The result has three parts. The operation adds a precisely determined exponential cost, concentrates the canonical output polynomial near the spectral point \(-2\), and gives a strict loss when any original circle color is a fixed fraction away from complete. Products preserve the same kind of estimate. Consequently one can iterate these operations through the recursive class defined in Section 4. The [reduced-hub source adapter](actual_conway_reduced_hub_source_normal_form.md) identifies that class with trees in which every multiplication hub has a distinguished original character.
+
+A turn without such a character is a different operation. Its sharp norm cost is computed in Section 5, but this cost cannot simply be added to a previously fixed geometric action. The later [positive-probe theorem](actual_conway_unflagged_core_probe_bound.md) supplies the additional estimate used for those regions in the full strict-tree proof.
 
 The finite inputs are the [original positive Newton turn and pairing](actual_newton_turn_positive_gram.md),
 the [full-Hermite localization estimates](actual_conway_root_star_full_jet_localization.md),
@@ -14,29 +12,29 @@ and the [exact root-character Fourier theorem](actual_conway_root_character_four
 The [rigid-spine geometry](actual_conway_rigid_spine_and_flagged_tree_geometry.md)
 separately identifies the complete action for the fully flagged class.
 
-## 1. The finite input and exact coefficients
+## 1. A norm that retains the full spectral data
 
-Put \(d=N-1\), \(M=\lfloor d/2\rfloor\),
+Fix the level \(N\), set \(d=N-1\) and \(M=\lfloor d/2\rfloor\), and use the following polynomial and basis. Here \(T_N\) is the Chebyshev polynomial of the first kind; the physical turn is the separate map \(T\) in (1).
 \[
  P_N(z)=2T_N(z/2)+2,\qquad
  c_k=2\cos((2k+1)\pi/N),\qquad
  \widehat B_r(z)=\frac{\prod_{a<r}(c_a-z)}{s_r^2},
  \qquad s_r=\prod_{a=1}^r2\sin(\pi a/N),\quad s_0=1.
 \]
-The algebra is \(\mathbb C[z]/(P_N)\). The turn and pairing obey
+The algebra is \(\mathbb C[z]/(P_N)\). The roots of \(P_N\) are the actual Casimir nodes: they are double except for the simple node \(-2\) at odd levels. The basis elements \(\widehat B_r\) have indices \(0\le r\le d\). The marked closure functional \(\phi\) and the physical turn obey
 \[
  T\widehat B_r=\widehat B_{d-r},\qquad
  \phi(\widehat B_r\widehat B_t)=\mathbf1_{r+t=d}.
  \tag{1}
 \]
-The faithful norm is
+At a double node \(c\), reduction modulo \((z-c)^2\) retains \(F(c)+F'(c)(z-c)\). For example, the local class \(z-c\) has zero value and nonzero derivative, so nodal values alone would not detect it. The following faithful norm measures exactly the retained Hermite data:
 \[
  \|F\|_{\mathcal J}
  =\max\{\max_{\text{double }c}(|F(c)|+|F'(c)|),
                     |F(-2)|\text{ if }N\text{ is odd}\}.
  \tag{2}
 \]
-It is submultiplicative. The original residue formula gives
+The derivative rule \((FG)'=F'G+FG'\) shows that this norm is submultiplicative. Let \(R\) be the original crossing operator, and let \(L_j(z)=(-1)^{j-1}U_{j-1}(z/2)\) be the color-\(j\) circle character, where \(U_{j-1}\) is the second-kind Chebyshev polynomial. The physical color satisfies \(1\le j\le N\), and \(\epsilon\in\{0,\pm1\}\) records the retained half twist. The residue formula and the actual crossing data give
 \[
  |\phi(F)|\le3N\|F\|_{\mathcal J},\qquad
  \|R^\epsilon L_j\|_{\mathcal J}\le CN^3
@@ -54,8 +52,7 @@ at every double node, and this has size \(O(N^2)\). The original circle is
 \(|L_j|\le N\), \(|L_j'|\le CN^3\) on \([-2,2]\).
 The odd simple node has no derivative obligation.
 
-For an arbitrary actual polynomial representative \(E_N\), of any
-degree, define the decorated character
+The input \(E_N\) may already be a product of subtree operators. It may have degree greater than \(N-1\) before reduction. The operation studied here, called a decorated character turn, is
 \[
  D_{N,j}^{\epsilon}[E_N]
        =T(R^\epsilon L_jE_N)\pmod {P_N}.
@@ -68,11 +65,16 @@ Its canonical degree-\(<N\) representative has coefficients
  \tag{5}
 \]
 Indeed (1) extracts the coefficient \(d-r\) before applying \(T\).
-Thus (5) retains all original confluent terms and all original colors.
+Formula (5) is useful because it bounds an output coefficient by the full marked pairing before reconstruction. It retains all original confluent terms and all original colors.
 In particular it is not a covariance assertion for a projected coupon.
 
-The proved Newton estimates, with absolute powers independent of all
-physical colors, are
+Define the rate function and its maximal value by
+\[
+ J(u)=\int_0^u\log(2\sin\pi t)\,dt,\quad
+ g(u)=J(2u)-4J(u),\quad
+ G_0=g(1/4)=2\,\mathrm{Catalan}/\pi.
+\]
+Here Catalan denotes \(\sum_{m=0}^{\infty}(-1)^m/(2m+1)^2\). The proved Newton estimates, with absolute powers independent of all physical colors, are
 \[
  \begin{array}{ll}
  \|\widehat B_r\|_{\mathcal J}
@@ -82,16 +84,11 @@ physical colors, are
  \end{array}
  \tag{6}
 \]
-where
-\[
- J(u)=\int_0^u\log(2\sin\pi t)\,dt,\quad
- g(u)=J(2u)-4J(u),\quad
- G_0=g(1/4)=2\,\mathrm{Catalan}/\pi.
-\]
+
 Both endpoints and both parities are included. These are §§2–3 of
 the [full-Hermite localization theorem](actual_conway_root_star_full_jet_localization.md).
 
-Combining (3), (5), and (6) proves the genuinely full-coefficient estimate
+Combining (3), (5), and (6) proves the full-coefficient estimate
 \[
  |d_r|\le CN^C\|E_N\|_{\mathcal J}
  \begin{cases}
@@ -103,7 +100,7 @@ Combining (3), (5), and (6) proves the genuinely full-coefficient estimate
 There is no sum over input coefficients and no loss depending on the
 degree of the unreduced representative \(E_N\).
 
-In particular \(E_N=1\) gives, for the WHOLE physical leaf
+In particular \(E_N=1\) gives, for the whole physical leaf
 \(h_j^\epsilon=T(R^\epsilon L_j)\),
 \[
  |[\widehat B_r]h_j^\epsilon|
@@ -118,9 +115,9 @@ This does not assert the same bound for the separate coherent core.
 The two original bands can cancel in a low coefficient. Consequently
 the plateau bound on the isolated signed core is not contradicted.
 
-## 2. The transform gains precisely the complete-circle upper rate
+## 2. Reconstructing the output and locating its angular maximum
 
-Suppose, uniformly in a specified physical input family,
+The real number \(F\) in the next hypothesis is an exponential upper rate for the input family. It is not another polynomial. Suppose, uniformly in that specified family,
 \[
  \|E_N\|_{\mathcal J}\le \exp N(F+e_N),\qquad e_N\longrightarrow0.
  \tag{9}
@@ -139,7 +136,7 @@ the high sum has only a polynomial cost. Since \(g\) has its unique
 maximum \(G_0\) at \(1/4\), (10) follows uniformly. A fixed loss in
 the input exponent \(F\) is preserved exactly in (10).
 
-More strongly, (9) alone implies that the OUTPUT polynomial has a
+More strongly, (9) alone implies that the output polynomial has a
 fixed angular Gaussian envelope. There are \(c,C,y_0>0\), independent
 of the input family and physical character color, such that
 \[
@@ -148,7 +145,7 @@ of the input family and physical character color, such that
  \quad 0\le\vartheta\le2\pi,\ |y|\le y_0.
  \tag{11}
 \]
-Here and below the polynomial in (11) is the canonical representative.
+The variables \(\vartheta\) and \(y\) describe the complex spectral ellipse \(z=2\cos(\vartheta+iy)\). Its real midpoint \(\vartheta=\pi,y=0\) is \(z=-2\). Inequality (11) gives quadratic decay away from that angle and a quadratic cost for moving a small distance off the real axis. Here and below the polynomial in (11) is the unique representative of degree less than \(N\).
 There is no claim that arbitrary unreduced representatives satisfy it.
 
 For completeness, the low Newton strip rate is
@@ -196,9 +193,9 @@ Choose \(y_0\) small compared with \(2G_0\) and reduce \(c\) so
 fixed loss. This proves the whole output envelope. No spectral gap
 for the input \(E_N\) was required in this step.
 
-## 3. The current physical character has a strict far-color loss
+## 3. A color away from complete causes a strict loss
 
-For this additional assertion suppose that an actual representative of
+A uniform norm bound alone gives Section 2. To gain a loss from the newly inserted color, the Fourier argument also needs an angular estimate for the actual input polynomial. Suppose that an actual representative of
 the input, possibly an unreduced product, obeys
 \[
  |E_N(2\cos(\vartheta+iy))|
@@ -262,9 +259,9 @@ coefficient loss at every macroscopic physical deficit, on each
 compact regular index interval. This is stronger than only bounding
 the full leaf's norm.
 
-## 4. A recursively closed class of actual sources
+## 4. Iterating products and decorated turns
 
-Start with the empty product \(1\). Form finite products, and apply
+The first example is one physical leaf: take \(E=1\) and obtain \(T(R^\epsilon L_j)\). A second example is the product of two such leaves, followed by another decorated turn. In each case the original character remains immediately before its recorded turn. Formally, start with the empty product \(1\), form finite products, and apply
 any number of operations
 \[
               E\longmapsto D_j^\epsilon[E]=T(R^\epsilon L_jE).
@@ -280,7 +277,7 @@ Every resulting coupon \(E\) with \(n(E)>0\) has:
 1. the uniform full-jet upper rate \(2n(E)G_0\);
 2. an angular Gaussian envelope of the form (16) at that same rate,
    with a strictly positive angular constant;
-3. for each fixed \(\delta>0\), a strict full-jet loss whenever ANY
+3. for each fixed \(\delta>0\), a strict full-jet loss whenever any
    one of its original physical colors satisfies \(N-j_i\ge\delta N\).
 
 The proof is finite induction. Products use the exact norm product
@@ -347,7 +344,7 @@ Induction through the fixed tree and the exact complete closure
        \lim_N N^{-1}\log Z_N(N,\ldots,N)=2n(E)G_0.
  \tag{26}
 \]
-Thus the reference in (22)–(23) is the actual pure complete source
+Equation (26) concerns this pure complete specialization. Thus the reference in (22)–(23) is the actual pure complete source
 rate. The separate [strict-source adapter](actual_conway_reduced_hub_source_normal_form.md)
 and [geometric action calculation](actual_conway_rigid_spine_and_flagged_tree_geometry.md)
 identify this recursive tree with the fully flagged hub presentation.
@@ -371,36 +368,11 @@ positive source estimate gives
 Thus (27) includes all original normal directions. It does not assign
 that cost to the geometric action of an arbitrary existing diagram.
 
-The proof preserves a specified character multiplication immediately
+The limitation of this particular induction is now explicit. It preserves a specified character multiplication immediately
 before each turn. An arbitrary internal turn with no such physical
 character is not charged to an existing original leaf by (20).
 Adding an artificial \(L_j\), treating the turn as multiplicative,
 or assigning the resulting extra \(2G_0\) to the old geometric action
-would change the problem. This is the precise remaining obstruction
-to claiming the same action-compatible norm theorem for all strict
-unflagged hub trees.
+would change the problem. Thus this lemma alone does not give the required geometric bound for a region without a character. The positive-probe and mixed-core propagation theorems treat that region separately; they are not consequences of pretending that (20) includes a bare turn.
 
-The separate original alias identity can convert (23) into the total
-nonempty-alias gap by a finite complementary-color expansion; its
-scalar signs and source adapter must be retained. The local core packet
-and marked filling theorem then remain independent inputs. No arbitrary
-tree volume statement is made here before those adapters are checked.
-
-## Internal review and preservation
-
-The primary reviewer and the independent source-transport reviewer each
-read §§1–5 in full and passed the analytical/source review. Their checks
-included the exact coefficient duality, both-parity low/high reconstruction,
-fresh Gaussian envelope from the input norm alone, uniform compact-index
-Fourier loss, hereditary physical-color deficits, and the actual complete
-positive kernel. The geometry reviewer independently checked the complete
-kernel and all-level lower normalization in §5, and the separate source
-and geometric adapters received full independent reviews.
-
-The sharp bare-turn corollary (27) is proved from the same finite bounds.
-The explicit Cauchy derivative detail records the fixed-strip uniformity
-used by the Fourier theorem. These are internal analytical reviews, not
-external peer review or a numerical asymptotic argument. Native MathML,
-link and control-byte checks validate preservation only. The original
-private proof is retained. No older proof, manuscript or public theorem
-is modified by this note.
+The original alias identity converts (23) into a total nonempty-alias gap after a finite complementary-color expansion, with its exact scalar signs and source adapter retained. The local core packet and marked filling theorem are additional inputs. The [strict-tree assembly](actual_conway_all_strict_tree_long_twist_volume.md) combines these results with the separate estimate for regions without characters. This note proves the spectral closure lemma used there, rather than a filling theorem from the norm bound alone.

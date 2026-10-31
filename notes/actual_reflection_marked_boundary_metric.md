@@ -1,6 +1,6 @@
 # Reflection-compatible original cap metrics, and the remaining leg-order test
 
-29 October 2026. The positive complete-circle form controls the ORIGINAL
+29 October 2026. The positive complete-circle form controls the original
 ordinary and marked boundaries, but with DIFFERENT literal leg flips.
 This gives an all-width positive boundary estimate with polynomial dual
 cost. It does not yet identify an arbitrary untwisted fully augmented
@@ -73,7 +73,7 @@ Therefore, on the ACTUAL incoming total degree kd,
 Put Lambda=ell^(tensor(k-1)) tensor m_d and
 
 \[
- Q_{\rm top}=C^{\otimes(k-1)}\otimes H,\qquad
+ Q_{\mathrm{top}}=C^{\otimes(k-1)}\otimes H,\qquad
  c_k=2^{-k}N^{-(3k+2)}.
 \]
 
@@ -81,8 +81,8 @@ Tensor the actual pair dual norms. This gives EXACTLY
 
 \[
  \boxed{\displaystyle
- \Lambda Q_{\rm top}^+\Lambda^\dagger=c_k,\qquad
- \Lambda^\dagger\Lambda\preceq c_k Q_{\rm top}.}             \tag{4}
+ \Lambda Q_{\mathrm{top}}^+\Lambda^\dagger=c_k,\qquad
+ \Lambda^\dagger\Lambda\preceq c_k Q_{\mathrm{top}}.}             \tag{4}
 \]
 
 For the original scalar, with its existing framing/peripheral line
@@ -90,7 +90,7 @@ chi_N unchanged, one consequently has
 
 \[
  |K_N|^2\leq|\chi_N|^2c_k
-  \langle Wp^{\otimes k},Q_{\rm top}Wp^{\otimes k}\rangle.    \tag{5}
+  \langle Wp^{\otimes k},Q_{\mathrm{top}}Wp^{\otimes k}\rangle.    \tag{5}
 \]
 
 The estimate extends to arbitrary coefficient Hilbert spaces and
@@ -113,7 +113,7 @@ The independently checked actual inverse is Rminus=P conjugate(R)P.
 Thus
 
 \[
- P R_{\rm minus}P=R^\dagger.                              \tag{6}
+ P R_{\mathrm{minus}}P=R^\dagger.                              \tag{6}
 \]
 
 This is the correct reflected-adjoint statement; P remains a leg
@@ -195,7 +195,7 @@ identity holds for arbitrary exteriors and all leg orderings. It
 does not require an extra sign or an arbitrary new crossing.
 
 If left and right self-duality conventions are instead identified,
-their exact discrepancy is the ORIGINAL pivot. Namely, with
+their exact discrepancy is the original pivot. Namely, with
 g_a=x^(-d)Q^(-a),
 
 \[

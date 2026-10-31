@@ -1,6 +1,6 @@
 # Actual prefix signs at the right-angled framing boundary
 
-30 October 2026. Independently reviewed. For the original
+30 October 2026. For the original
 right-angled matching-polyhedron cut, the limiting clock signs are
 determined by the OUTWARD face normals with their actual source lifts.
 In particular every 222 pair has two negative limiting clocks, every
@@ -234,17 +234,6 @@ matrices, 16 ordered disk triples and two half-index identities.
 Eight additional exact symbolic cases retain both primitive orientations,
 both prefix lifts and both 200/002 endpoint formulas.
 
-Primary-agent independent normal-lift calculation: PASS. The common phase,
-strict inward-halfspace signs and recorded source lifts were checked
-directly. Independent full analytical review and fresh redirected audit:
-PASS. That reader additionally checked the pattern consequences, actual
-half-index cancellation and the limited SPD conclusion. No generic
-partner differentiation, boundary asymptotic or global period is inferred.
+No generic partner differentiation, boundary asymptotic or global period is inferred.
 
-The one-main-component corollary received independent primary and
-coherent-source proof reviews: PASS. Both primitive orientations,
-the actual cusp-conjugacy argument, the two Bessel parameter reductions
-and the nonreal-argument J_0 criterion were checked. The coherent-source
-reader freshly replayed the expanded audit, including all eight signed
-cases. The local nonzero packets and the separate off-node source factor
-are not identified with a whole-source or relative-cycle coefficient.
+The resonant-prefix calculation gives local nonzero packets and off-node information, not a whole-period estimate.

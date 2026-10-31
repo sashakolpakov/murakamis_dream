@@ -1,10 +1,6 @@
 # The original cap/CROSS contraction on a complex two-spectrum neighborhood
 
-31 October 2026. Internally reviewed analytical theorem. Root and geometry
-completed full independent analytical/source reviews; this is not external
-peer review. Both polynomial spectral parameters, both actual projectors,
-and the odd central transition are retained. This is an unpublished
-research note, with the scope stated below.
+31 October 2026. Both polynomial spectral parameters, both projectors, and the odd central transition are retained. The statement is restricted to the scope below.
 
 ## 1. The original coefficient and the claim
 
@@ -50,8 +46,7 @@ T_n(\sigma,\tau)=\sum_{j\in J_n}(-1)^j b_j(\sigma)C_{j,n-j}(\tau),
 
 The remaining original degrees are C^n Z^(d−n). The common raw
 sign (−1)^d does not affect its modulus and has not been changed.
-Let D_n^ref be the same fixed positive comparator in the reviewed
-[all-demand theorem](research_cap_cross_all_demand_subexponential_contraction.md): even raw positive endpoint at both ports;
+Let D_n^ref be the same fixed positive comparator in the [all-demand theorem](research_cap_cross_all_demand_subexponential_contraction.md): even raw positive endpoint at both ports;
 odd actual regularizer V_N(−2)−N^(−2)V_N'(−2) at both reference
 ports. The numerator (1) is always RAW.
 
@@ -224,7 +219,7 @@ definitions.
 
 ## 4. A complete comparator-rate lemma, including the high corner
 
-The reviewed all-demand proof used the rate
+The all-demand proof used the rate
 
 \[
 \begin{aligned}
@@ -758,7 +753,7 @@ epsilon<=c_0 eta^2, and every term of (35) tends to zero:
 
 This proves (2). A monotone upper envelope may be used if desired.
 
-## Scope and review status
+## Scope
 
 The proof uses the original general-coupon polynomial contiguity,
 the already proved coefficientwise tau-neighborhood majorant,
@@ -767,15 +762,6 @@ propagation through the central roots, BOTH original projected
 currents, and a genuine high-corner coefficient bound. The actual
 odd central transition (6) is explicit. All fixed spectral zeros
 and Hermite data are retained; no quantum root is varied.
-
-Root and geometry completed full independent analytical/source reviews
-of this standalone proof. They checked the arbitrary-coupon sign and
-normalization; both projected currents and the odd transition; both
-exact Gamma products, their calibrated primitive and amplified
-interpolation error; the strong raw-C0 core and central-prefix bound;
-the actual singleton-compatible comparator lower supports; and both
-propagation directions and order of limits. No numerical audit is
-needed or claimed for this analytical continuation.
 
 No whole-source, larger-star, filled-period, or general volume assertion
 is made. The private cap-only derivation is historical background,

@@ -343,12 +343,6 @@ nearby-pole example explaining why the entire initial source is needed.
 The general sparse-ODE zero argument is the proof in Section 3, not a
 conclusion from those finite examples.
 
-An independent agent reread the complete argument and freshly reran the
-audit: PASS. Its review specifically checked the compact ODE-family
-quotient bound, the common radius, the shrinking exceptional cores,
-the nonnormal metric estimate, logarithmic integrability, and Cauchy
-recovery with the original entire source. The scope qualifications in
-Sections 1 and 6 remain part of that verdict.
 
 Its separate 5_2 diagnostic computes a classical cubic from the actual
 Newton coefficient curve by the previously proved canonical map.

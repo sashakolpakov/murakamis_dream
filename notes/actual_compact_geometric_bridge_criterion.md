@@ -228,7 +228,7 @@ even when its necessary intersection contains that representation.
 ## 6. The original cap packet weight is nonzero EXACTLY
 
 The cap half of an admissible real compact overlap can also be
-computed without a formal Gaussian approximation. The ORIGINAL
+computed without a formal Gaussian approximation. The original
 normalized cup has coefficients
 
     phat_(i,j)=x^(-j)delta_(i+j,d)/sqrt(N).

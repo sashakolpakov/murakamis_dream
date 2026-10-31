@@ -17,7 +17,7 @@ the unrestricted representation variety.
 The overlap need not have nonzero limiting mass. No exponential overlap
 estimate, joint atomic-shape comparison or volume bound is inferred.
 
-## 1. Exact ORIGINAL source, after its permitted whole-degree restriction
+## 1. Exact original source, after its permitted whole-degree restriction
 
 Use N>=2, d=N-1, q=exp(pi*i/N), Q=q^2 and x=-q^(-1), with the
 original balanced basis and actual pivot g_i=x^(1-N)Q^(-i). On a
@@ -35,7 +35,7 @@ Both the N and 1/N are the literal actual turn normalizations. The
 full original marked cap is m_(i,j)=x^j/N^2, with NO degree delta.
 It is not changed termwise in an arbitrary decomposed tensor.
 
-Put u=p^(tensor k). It has total INTEGER degree kd. Every ORIGINAL
+Put u=p^(tensor k). It has total INTEGER degree kd. Every original
 crossing preserves that degree, so the fully assembled W u still has
 degree kd. The k-1 ordinary top caps force degree d on each of their
 pairs. Consequently the last MARKED pair also has degree d in the

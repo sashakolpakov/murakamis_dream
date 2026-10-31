@@ -1,6 +1,6 @@
 # The actual Fejér half block: uniform coefficient entropy
 
-Independently reviewed, 31 October 2026. This gives the exact
+, 31 October 2026. This gives the exact
 level-N half-block recurrence, its weighted rate, and the uniform
 exponential rate of EVERY coefficient, including the boundary degrees.
 It also fixes the complete-triangle normalization and disproves one
@@ -367,13 +367,4 @@ proposed coefficient log-convexity. The largest anchor or entropy
 reconstruction error is below 7e-76. These finite checks do not prove
 the uniform limits; those are proved above.
 
-The weighted, strict-coefficient and closed-domain proofs were developed
-and independently reviewed in the collaborating source and coherent
-threads. The consolidated public proof and audit code received full
-root and independent analytical review. The independent redirected
-75-digit replay reproduced every stated count and error; geometry's
-targeted review checked the paired-root normalization and unsquared
-arcsine branch, including all closed endpoints.
-No shared entropy maximum is evaluated here; in particular no local
-max/min exchange, general forest-volume inequality, or signed long-filled
-knot asymptotic is claimed.
+No shared entropy maximum is evaluated here; in particular no local max/min exchange, general forest-volume inequality, or signed long-filled knot asymptotic is claimed.

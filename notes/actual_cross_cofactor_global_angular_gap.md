@@ -2,8 +2,8 @@
 
 The [whole-source local packet](general_full_spectral_numerator_geometric_packet.md) now assembles these results for the actual full numerator. The original global spectral filling period remains open.
 
-31 October 2026. Internally reviewed. All matrices,
-paths and spectral nodes are at the ORIGINAL level N. This is a local
+31 October 2026. . All matrices,
+paths and spectral nodes are at the original level N. This is a local
 cofactor estimate on a thin spectral cover strip, not a Gaussian-cycle
 or whole-source theorem.
 
@@ -57,7 +57,7 @@ normalizes K by product s_v^2, giving
 Induction on Q_r-xQ_(r-1)=y[Q_(r-1)-xQ_(r-2)]
  +(1-gamma_r)xyQ_(r-2) proves Q_r>=0, then Q_r<=A^r.
 Thus no absolute value of a sign-changing tail is assumed positive.
-The nodal positivity proof is in the reviewed cross-cofactor handoff §8.
+The nodal positivity proof is in the cross-cofactor handoff §8.
 
 ## 2. A strict gap at all far nodes
 
@@ -164,7 +164,7 @@ family after the affine change z=-1-u/2. Its exact interpolation
 Lebesgue norm on [-4,0] is O(log(N+1)); this follows from discrete
 cosine inversion on the original N-point odd-angle grid and the bound
 |D_J(t)|<=min(2J+1,1/|sin(t/2)|). This is the same exact interpolation
-used in the reviewed cofactor handoff, not interpolation of full V.
+used in the cofactor handoff, not interpolation of full V.
 
 If j=J, apply it directly to (8). If j<J, DO NOT use an unavailable
 D_a adapter at a>j. Instead put
@@ -222,6 +222,6 @@ factor under a uniform spectral bound, and retaining the original marked
 coefficient and finite central prefactors. The local theorem alone is
 not a full shared coefficient asymptotic or a selected Gaussian period.
 
-## Independent review
+## Scope
 
-Root and coherent_partner_currents independently reviewed the full analytical proof: PASS, including both far-node cases, the actual determinant pair-trace scope, all omitted terminal nodes and the thin-strip extension. Stable private proof. This is a local cofactor input, with no independent whole-source or Gaussian-cycle assertion.
+This is a local cofactor input, with no independent whole-source or Gaussian-cycle assertion.

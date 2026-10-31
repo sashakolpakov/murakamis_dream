@@ -1,9 +1,9 @@
 # Independent audit: actual Fourier currents can lose geometric support
 
-Proof audit, 27 October 2026, of
+Detailed examination, 27 October 2026, of
 [the actual Fourier cancellation theorem](actual_fourier_source_cancellation.md).
 The actual current/source equations, cyclic contraction and nonzero
-geometric formal block pass with the qualifications below. This does
+geometric formal block hold with the qualifications below. This does
 not refute the volume conjecture or show that the original uninserted
 knot period loses its geometric contribution.
 
@@ -42,7 +42,7 @@ identity for normal sources, which is the correct scope.
 
 ## 2. The formal shift uses the specified proper root lift
 
-The geometric construction uses the ORIGINAL open coefficient
+The geometric construction uses the original open coefficient
 model and its specified proper lift Q^(jq)/N. Multiplication by
 [q]_Q is consequently exactly the external shift difference
 

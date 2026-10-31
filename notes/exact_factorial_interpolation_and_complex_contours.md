@@ -14,7 +14,7 @@ framework, not a novelty claim for a special function. For coverage see
 and [Narukawa, multiple sine functions and elliptic gamma functions](https://arxiv.org/abs/math/0306164).
 Only coverage is used from those papers. The product, normalization,
 functional identities and asymptotic comparison needed here are proved
-below directly. They concern the ORIGINAL root factorial, not a newly
+below directly. They concern the original root factorial, not a newly
 normalized knot state.
 
 ## 1. A convergent whole function with the exact lattice values

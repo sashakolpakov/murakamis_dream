@@ -286,18 +286,6 @@ The Gaussian calibrations test the elementary lattice lemma, not a
 global source period. Uniformity and the exceptional continuation follow
 from the proofs above and their already audited source dependencies.
 
-Primary-agent full analytical review: PASS. The reader independently
-checked the original marked boundary scale, the h/CD +1 correction,
-literal phases and exceptional reflected anchor, the actual endpoint
-weights and half-twist ratio, and the marked discrete Gaussian estimate.
-The review distinguishes the nonzero complete local density from a
-global period, framing integral, mixed-color packet, or an individual
-nonzero generic-normal amplitude.
+The conclusion is a nonzero complete local density. It does not supply a global period, framing integral, mixed-color packet, or an individual nonzero generic-normal amplitude.
 
-Independent full analytical review and fresh redirected audit: PASS.
-The reader rederived both parity h0 values, the original mark scale,
-the sine +1 offset and literal coupon phase, the scalar-one exceptional
-anchor, all endpoint weights and channel characters, and the Gaussian
-weighted error. The replay reproduced all 49/674/5/18/18 focused checks.
-The retained magnetic transverse statement is per unit local framing
-volume; no original cycle coefficient or mixed-color theorem is inferred.
+The magnetic transverse statement is per unit local framing volume. No original cycle coefficient or mixed-color theorem is inferred.

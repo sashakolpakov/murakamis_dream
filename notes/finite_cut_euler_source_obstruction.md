@@ -91,7 +91,7 @@ amplitude is the nonzero constant \(1\). There are no poles.
 At completeness the actual density is, up to its nonzero
 frame-independent torsion/base line,
 \[
- \Omega_{\rm cut}=dt\wedge d\log A.
+ \Omega_{\mathrm{cut}}=dt\wedge d\log A.
 \]
 Multiplying it by \(f_N(A)\) and taking the already marked
 relative interval \(t=0,1\), with zero endpoint co-sources,
@@ -206,7 +206,7 @@ on the geometric chart does not give either bound.
 ## 5. Consequence for the proposed geometric source map
 
 The constant action on the \(B_1\)-torsor and
-\(\Omega_{\rm geom}=\text{nonzero constant}\cdot\Omega_{\rm cut}\)
+\(\Omega_{\mathrm{geom}}=\text{nonzero constant}\cdot\Omega_{\mathrm{cut}}\)
 correctly identify the **local** candidate coefficient. The
 specified relative geometric interval would pair it to that
 nonzero constant. The exact finite averaging identity does

@@ -264,7 +264,7 @@ and output cap residues and their pairings are preserved for an
 arbitrary number of bridges and any actual word. This is an exact
 source-preserving nonlinear quad transition at the cap wall.
 
-This statement is about the ORIGINAL full word and its transported
+This statement is about the original full word and its transported
 marker. The Ward corner in (13) cannot be applied separately to
 cyclic bulk/sewing summands that are not Hopf intertwiners. Such
 summands must retain the full marked row from the bridge theorem
@@ -380,17 +380,4 @@ that omits any one of them is not the original pointed network.
 
 ## 8. Exact checks
 
-The [audit](../experiments/audit_cap_wall_fermat_quad_residue.py) and
-[saved results](../experiments/cap_wall_fermat_quad_residue_results.json)
-check 240 generic Fermat points at N=2,...,11, the exact polynomial
-intertwiner, compulsory dual shift, whole paired scalar, and (8).
-They check all 195 projective cusps at these levels, all corner
-residue orders and constants, and nine full tensor source
-contractions with one, two and three bridges. Finite fields use
-the unnormalized matrix sqrt(N)W, so these are exact checks with
-no numerical square-root choice. Independent proof review checked
-(1)--(13), including the whole 4k normalization and Jacobian.
-Twenty high-precision micro-collar diagnostics through N=64 also
-check the source and co-source norm conventions in (14); the
-uniform proof is the product estimate in Section 6.
-The arguments above, rather than the finite checks, prove all N.
+The [audit](../experiments/audit_cap_wall_fermat_quad_residue.py) and [saved results](../experiments/cap_wall_fermat_quad_residue_results.json) check 240 generic Fermat points at N=2,...,11, the exact polynomial intertwiner, compulsory dual shift, whole paired scalar, and (8). They check all 195 projective cusps at these levels, all corner residue orders and constants, and nine full tensor source contractions with one, two and three bridges. Finite fields use the unnormalized matrix sqrt(N)W, so these are exact checks with no numerical square-root choice. Twenty high-precision micro-collar diagnostics through N=64 also check the source and co-source norm conventions in (14); the uniform proof is the product estimate in Section 6. The arguments above, rather than the finite checks, prove all N.

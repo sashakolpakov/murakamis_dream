@@ -224,8 +224,7 @@ polynomial eigenproblem and an own finite Sears conversion. The
 exceptional c=0 Jacobi diagonal is computed by the ACTUAL cup/cap
 projection; it is not obtained by canceling its identically zero
 Fricke factor. Polynomial continuation in X=Q^N includes the high
-partners. No published quantum-6j formula is a premise. An independent
-analytical review and fresh generic/vector certificate replay passed.
+partners. No published quantum-6j formula is a premise.
 
 Here is explicit normalization bookkeeping when substituting (14)
 into the proved physical trace. Its F-factor prefactor is

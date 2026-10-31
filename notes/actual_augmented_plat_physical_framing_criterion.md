@@ -345,11 +345,4 @@ The audit includes numerical argument comparisons only as regressions
 of the explicit equivalences; it is not an existence search or a proof
 of a favorable simultaneous frame for arbitrary augmented plats.
 
-Independent analytical review: PASS. A second reader checked both
-directions of the support and central-domain tests, the exact affine
-degree lift and cap marks, the common-product constructive lemma and
-its nonidentity-prefix normalization, the disk-side obstruction including
-boundary flags, and the distinction between regular bad frames and
-nonexistence of favorable frames. The initial audit was independently
-replayed; the expanded audit adds 100 exact central-feasibility checks
-for the constructive lemma. No global existence or cycle claim follows.
+The expanded audit includes 100 exact central-feasibility checks for the constructive lemma. No global existence or cycle claim follows.

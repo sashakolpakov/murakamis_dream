@@ -1,6 +1,6 @@
 # Reduced Frobenius hubs, strict support, and a positive complete-character kernel
 
-31 October 2026. Internally reviewed source theorem. The calculations use
+31 October 2026. source theorem. The calculations use
 the full repeated-root algebra, with all independent physical leaf colors
 and first normal coefficients. They give a sharp strictness criterion and
 an exact recursive source interface. No tangle isotopy is inferred from
@@ -395,7 +395,7 @@ case of (11); it is not an instance of (23) with an existing physical
 character. Mixed flagged/unflagged trees therefore remain outside
 that closure statement.
 
-## 6. Scope and internal review
+## 6. Scope
 
 The finite support lemma, reduced-hub criterion, recursive source
 identities and positive complete-character kernel follow from the
@@ -405,11 +405,3 @@ and its strict support, not all tangle isotopies or knot types.
 Transferring a source estimate to a literal knot-volume theorem
 additionally uses its original local packet, whole filling transfer
 and [marked geometric interface](actual_conway_general_mask_marked_filling.md).
-
-The primary, coherent-source and geometry reviewers independently
-read the full proof and returned analytical/source PASS. The exact
-one-child rerooting clarification (13) was separately checked in
-the preservation review. These are internal reviews, not external
-peer review or formal verification. Native mathematical rendering
-and relative-link checks are preservation checks; no numerical
-asymptotic evidence is used.

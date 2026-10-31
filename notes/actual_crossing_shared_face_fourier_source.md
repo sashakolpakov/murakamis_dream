@@ -2,9 +2,9 @@
 
 28 October 2026. The exact two-Newton/one-Rogers crossing layer
 gives a coupled source equation normal to its geometric holonomy.
-After the ORIGINAL physical finite boundary restrictions, its entire
+After the original physical finite boundary restrictions, its entire
 right side is explicit: a ground-output block, a ground-input block,
-and one rank-one carry on pair degree N. Its ORIGINAL cup/marked-cap
+and one rank-one carry on pair degree N. Its original cup/marked-cap
 value is the nonzero known number (Q(N-1)-1)/N, with the same external
 Cartan line retained.
 
@@ -17,7 +17,7 @@ Subsequent constructive resolution of the LOCAL comparison:
 [the balanced finite Fourier kernel](actual_balanced_fourier_crossing_kernel.md)
 uses an adaptive internal Fermat orbit and independent external
 finite frames. All three source norms then vanish on that actual
-sampling map, and an ORIGINAL E-current proves its four-full-Psi
+sampling map, and an original E-current proves its four-full-Psi
 kernel is EXACTLY the original crossing operator. Its uniform local
 density is nonzero and polynomial. The global sewn source and
 geometric noncancellation remain separate.
@@ -99,7 +99,7 @@ The ground-SECOND-INPUT term is particularly simple:
 
 It has rank N-1. To prove it, the two nonconstant terms of
 D_0 demand an incoming index at least N, and vanish on the
-ORIGINAL finite inputs. The constant term gives
+original finite inputs. The constant term gives
 CT F=K_N(f)K_N(r). Multiplication by Qfr and the actual
 finite boundary block yields exactly (5). In particular the
 D_0F term is NOT zero.
@@ -113,7 +113,7 @@ The ground-SECOND-OUTPUT block has rank at most N-1:
          p_j x^(-2j)/[F_(a-j-1)(1-Q^(b+j+1))]
        *|a+b,0>.                                          (6)
 
-All denominators in (6) are ORIGINAL nonzero factorial units:
+All denominators in (6) are original nonzero factorial units:
 b+j+1<=a+b<N. No singular determinant is inverted.
 
 The remaining term is one rank-one carry on pair degree N:
@@ -144,7 +144,7 @@ multiplying a primitive ground-cell Ward by a monomial may
 expose an additional top carry. One must apply the physical
 barriers AFTER the specified weighting, not beforehand.
 
-## 4. The ORIGINAL complete cap detects a known nonzero boundary
+## 4. The original complete cap detects a known nonzero boundary
 
 At completeness x=-q^(-1), Qx^2=1. Keep exactly
 
@@ -453,7 +453,7 @@ w in Section 8 obeys the exact two-sided identities
 
 Consequently the same holds for B^(-1). The original R_+
 has eigenvalue kappa on this line, and R_- has kappa^(-1).
-These are identities in the ORIGINAL physical finite heads;
+These are identities in the original physical finite heads;
 no arbitrary cut relocation is asserted.
 
 Here is an all-level proof directly from the actual fusion.
@@ -598,7 +598,7 @@ power in (26) would change the grading argument below.
 For a monomial indexed by the actual nonnegative atom
 orders, minus its t exponent is the output total head
 degree minus the input total head degree. Thus the alias
-in (26), after the ORIGINAL finite head restrictions,
+in (26), after the original finite head restrictions,
 raises integer degree by N. For the negative crossing the
 same statement follows from its exact two-Newton/Rogers
 layer, with its ONE shared continuous Gaussian retained;
@@ -607,12 +607,12 @@ the Gaussian changes coefficients and not these degrees.
 Replace ANY collection of complete internal CTs in any
 original signed word by (26). Each resulting error raises
 total degree by a positive multiple of N; all original
-crossings preserve total degree. In the ORIGINAL one-cut
+crossings preserve total degree. In the original one-cut
 pointed trace every traced head has identical input/output
 index. The remaining cut index would have to increase by
 at least N, impossible for indices 0,...,d.
 
-For the ORIGINAL k-pair pointed plat, the cups have total
+For the original k-pair pointed plat, the cups have total
 degree k d and its k-1 ordinary caps require (k-1)d.
 The marked pair would therefore have degree at least
 d+N=2N-1>2d, impossible for its two finite heads. This

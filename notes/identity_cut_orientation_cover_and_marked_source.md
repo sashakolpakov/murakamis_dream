@@ -26,8 +26,8 @@ already inside T,
 
 \[
  F(\eta)=\mathcal F_T(1,1;1,\eta),\qquad
- \Phi_{\rm id}(T)=\frac1N[\eta^0]F
-       =\mathop{\rm Res}_{\eta=0}F(\eta)\frac{d\eta}{N\eta}.       \tag{1}
+ \Phi_{\mathrm{id}}(T)=\frac1N[\eta^0]F
+       =\mathop{\mathrm{Res}}_{\eta=0}F(\eta)\frac{d\eta}{N\eta}.       \tag{1}
 \]
 
 The sums over the first output and input remain in F. This is not
@@ -131,7 +131,7 @@ the constant coefficient of vF changes the source.
 For the literal two-cut unknot tensor, which is the flip tensor,
 
 \[
- F_{\rm unknot}(\eta)
+ F_{\mathrm{unknot}}(\eta)
     =\sum_{j=-(N-1)}^{N-1}(N-|j|)\eta^j.                     \tag{7}
 \]
 

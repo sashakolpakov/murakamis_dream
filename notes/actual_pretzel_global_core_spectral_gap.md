@@ -283,7 +283,7 @@ the already proved arc inequality bounds each Newton factor by its
 negative-axis value up to a constant. The finite \(r\) sum costs
 only a factor \(N\).
 
-There is also a direct ORIGINAL-source consequence. For each fixed
+There is also a direct original-source consequence. For each fixed
 odd \(s\geq3\), choose its complete geometric radius
 \(R_s=\exp[2\operatorname{arsinh}(\tan(\pi/s))]\).
 If every color deficit is \(0\leq h_i\leq M\) and at least one

@@ -2,8 +2,8 @@
 
 Status update, 31 October 2026: the separate [full endpoint theorem](general_fejer_endpoint_source_volume.md) now proves the geometric upper bound (14), and the [unique-maximizer theorem](actual_fejer_unique_geometric_maximizer.md) proves concentration at the complete configuration. The pattern-specific support theorem below is preserved; full-kernel support no longer requires pattern selection. The filled-knot quantum limit remains open.
 
-31 October 2026. Independently reviewed. This concerns the positive
-endpoint numerator in the ORIGINAL homogeneous compiler, at even levels.
+31 October 2026. This concerns the positive
+endpoint numerator in the original homogeneous compiler, at even levels.
 It does not assert a quantum filling asymptotic or identify the new
 maximum with hyperbolic volume. All faces, incidences and marked targets
 are the actual ones. No independently optimized local norm is substituted.
@@ -208,7 +208,7 @@ A_D is nonempty,
 
     lim_(even N->infinity) N^(-1) log Z_(D,N)=W_D.      (9)
 
-Proof. Expand the ORIGINAL positive product by the three disjoint local
+Proof. Expand the original positive product by the three disjoint local
 supports in (7), then by its incidence degrees. At cross ports the exact
 coefficientwise bounds B<=P_cross<=3B permit replacing P_cross by
 B=4(x+y)D_b D_c for this rate calculation: after the other positive
@@ -298,7 +298,7 @@ marked MAIN pair, so x+y stays bounded below; a fixed power of epsilon
 would also suffice here. The Laurent factors in (12) cost at most
 exp[C_D*delta*N*(1+log(1/epsilon))], with fixed extra constants.
 There are polynomially many k choices and finitely many assignments.
-Positive Cauchy applied to the ORIGINAL target thus bounds the entire
+Positive Cauchy applied to the original target thus bounds the entire
 restricted coefficient by the complete product at that shared vector
 times this exponential cost and a polynomial in N. No shifted marked
 target is discarded.
@@ -360,20 +360,6 @@ in section5: 3045 injection coefficients, 679 paired-root comparisons,
 radius checks at 14 even levels and 90 digits. The conditional radius
 checks are not substituted for the shared regularization argument.
 
-Root full analytical review and both independent full analytical reviews
-PASS, including the closed entropy, finite forced factor, residual-flow
-repair, integer rounding, eventual feasibility and central corridor.
-The source audit code was independently read and freshly replayed, and
-the transfer proof/code have independent review and replay. All numerical
-claims retain their finite scope. The full asymptotic theorem is proved
-by sections1--4, using the uniform local theorem. The geometric maximum
-is settled in the later endpoint theorem; the phase-sensitive filled-knot
-limit remains open.
+The full asymptotic theorem follows from sections 1–4 and the uniform local theorem. The later endpoint theorem evaluates the geometric maximum. This note alone does not settle the phase-sensitive filled-knot limit.
 
-Coherent's final independent public proof and audit-code review PASS,
-including the explicit all-m terminal-relabel countercertificate.
-A fresh redirected replay reproduced all five advertised source-audit
-counts and the original 39-versus-40 width-three support distinction.
-No geometric maximum or quantum-cycle estimate was inferred from that
-finite verification. The note, portable audit and author results are
-frozen at this scope.
+The finite source checks include the all-m terminal-relabel countercertificate and the width-three support distinction of 39 versus 40. They do not establish a geometric maximum or a quantum-cycle estimate.

@@ -47,7 +47,7 @@ with length k-r and parameter a q^r. The inner sum is
 
 All signs and q powers cancel, leaving exactly (1).
 
-## 2. Applying it to the ORIGINAL triple source
+## 2. Applying it to the original triple source
 
 Start with the proved actual source formula
 

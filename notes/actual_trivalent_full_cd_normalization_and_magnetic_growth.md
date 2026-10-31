@@ -145,7 +145,7 @@ specialization; their initial nonzero column and nonzero interior
 arrows give the stated canonical tensor. The top E endpoint is
 the same finite intertwiner identity, with no division by F_N.
 
-There is a stronger ORIGINAL-source restriction:
+There is a stronger original-source restriction:
 
     U_bal=0 whenever J<d.                            (13)
 
@@ -230,6 +230,4 @@ against independently constructed ordinary 3j recursions, exact
 forbidden source blocks, and the central magnetic identity(16).
 Four separately labeled 85-digit growing-level checks calibrate(17).
 The covariance, support and growth proofs above establish the general
-claims; these checks are supplementary. An independent analytical
-reader checked the complete normalization and obstruction and reported
-PASS. No source-to-graph scalar bound is inferred from the finite range.
+claims; these checks are supplementary. No source-to-graph scalar bound is inferred from the finite range.

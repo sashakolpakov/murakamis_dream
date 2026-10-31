@@ -145,7 +145,7 @@ The original contour encloses exactly the physical transfers
 d+s+1/2, retaining both finite-height connecting pieces. The added
 integers are -s,...,-1 and N,...,N+s-1. The lower theorem and (5)
 show that every new pole of the complete density is removable.
-Consequently, as an ORIGINAL physical operator,
+Consequently, as an original physical operator,
 
     R_plus=integral_(extended rectangle)
                    pi cot(pi z)Rhat(z) dz/(2pi*i).   (8)
@@ -179,15 +179,4 @@ the whole sinc/Fourier source and every framing/pivotal/peripheral
 line remain. A claimed full-volume bound must still estimate the
 remaining bulk current with this source retained.
 
-An independent proof review verified the exact N-shift normalization
-in (4), all upper divisor orders in (5), the uniform all-input
-fractional base bound and the forward-recurrence cost. The expanded
-[projected audit](../experiments/audit_actual_projected_transfer_cot_completion.py)
-passed for EVERY physical input a,b at N=2,...,8. It checks the exact
-N-shift and fractional identity (4) off the integer lattice, the full
-upper matrix zero orders at N through N+min(3,N-2), and both-collar
-cotangent residue sums against the ORIGINAL positive and negative
-E/Cartan crossing matrices. The positive kappa=q^((N-1)^2/2) and its
-negative inverse are included explicitly. These tests supplement the
-uniform proof and do not change its full physical-source scope or
-establish a sharp whole-knot volume estimate.
+The expanded [projected audit](../experiments/audit_actual_projected_transfer_cot_completion.py) checks every physical input a,b at N=2,...,8. It checks the exact N-shift and fractional identity (4) off the integer lattice, the full upper matrix zero orders at N through N+min(3,N-2), and both-collar cotangent residue sums against the original positive and negative E/Cartan crossing matrices. The positive kappa=q^((N-1)^2/2) and its negative inverse are included explicitly. These tests supplement the uniform proof and do not change its full physical-source scope or establish a sharp whole-knot volume estimate.

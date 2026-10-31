@@ -32,7 +32,7 @@ Put h=N chi/pi, and define the finite holomorphic function
        /[F_v F_(v-r) Fhat_N(v-h)Fhat_N(v+h)], r in I_N.
 
 Here F_a=(Q;Q)_a at the physical integers, and Fhat is the canonical
-whole factorial completion with its ORIGINAL marks. Define the
+whole factorial completion with its original marks. Define the
 polynomial
 
     c_N^win(z,chi)=N^2 sum_(r in I_N) b_(N,r)(chi) B_r(z),
@@ -50,7 +50,7 @@ Its coefficients are holomorphic on a fixed complex disk, uniformly
 in the sense of domains, since each denominator Fhat(v+/-h) is
 nonzero there.
 
-Use the ORIGINAL full-Hermite marked functional
+Use the original full-Hermite marked functional
 
     Phi_2(f)=(-1)^d sum_(c double)
                   [(4-c^2)f'(c)-c f(c)]
@@ -178,7 +178,7 @@ noncentral circle parts have a fixed exponential gap for all small
 COMPLEX chi. These estimates concern only the explicit finite packet,
 whose domain contains that entire complex color polydisk.
 
-Finally insert the analytic box asymptotic into the ORIGINAL source
+Finally insert the analytic box asymptotic into the original source
 contour (3). The nearby eta saddle has nonzero Hessian, stays in
 Re eta>0, and is reached by a local contour shift with gapped
 end connectors. No pole of (3) is crossed. The original sign and
@@ -247,7 +247,7 @@ checks the literal finite polynomial/source definition, its marked
 phases, exact evenness and retained physical source decomposition;
 complex growth diagnostics supplement the uniform proof above.
 
-Fresh replay: PASS six original physical source families N=5,...,10,
+The finite audit checks six original physical source families N=5,...,10,
 each with five genuine boxes, retained color deficits, all E/F/R
 normalizations and the full marked transfer. The same packet is
 independently evaluated by the full physical pivotal trace and the

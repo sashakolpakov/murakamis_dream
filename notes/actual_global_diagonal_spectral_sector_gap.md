@@ -1,6 +1,6 @@
 # A global spectral bound for an actual diagonal source sector
 
-Independently reviewed analytical theorem, 31 October 2026. This concerns the original homogeneous face polynomial and its original shared marked coefficient. The triangular-basis diagonal sector is not identified with the identity operator. A coefficientwise inequality reduces its absolute bound to an actual identity-inserted positive source.
+analytical theorem, 31 October 2026. This concerns the original homogeneous face polynomial and its original shared marked coefficient. The triangular-basis diagonal sector is not identified with the identity operator. A coefficientwise inequality reduces its absolute bound to an actual identity-inserted positive source.
 
 ## 1. The exact diagonal polynomial and a uniform real bound
 
@@ -200,6 +200,6 @@ The first case of Section 3, where other full ports are controlled only near $-2
 
 The result is compatible with failure of a global coefficientwise endpoint bound for the full numerator. That failure already occurs at $\sigma=\sqrt3$ for a genuinely one-sided path with positive outer exponent, not for (1). Such a remote moving port is not covered by (9) or a small spectral neighborhood in (6). The [short-moving extension](actual_global_short_moving_spectral_sector_gap.md) treats a separate small outer-degree corridor; it does not exhaust macroscopic one-sided paths.
 
-Root and both independent peers read the complete analytical proof and reported PASS, including the global CROSS comparison, both-parity identity reference, odd central-path projection, source-only strip derivatives and entire charge estimate. The [focused audit](../experiments/audit_actual_global_diagonal_spectral_sector_gap.py) and [recorded results](../experiments/actual_global_diagonal_spectral_sector_gap_results.json) retain the exact finite source.
+The [focused audit](../experiments/audit_actual_global_diagonal_spectral_sector_gap.py) and [recorded results](../experiments/actual_global_diagonal_spectral_sector_gap_results.json) retain the exact finite source.
 
-Author and independent fresh 65-digit replays passed 807 zero-step/divided-Chebyshev checks, 431 removable node values, 94 disjoint parity sectors, and 18 original marked sector polynomials. The four nonzero fixtures supplied 16 one-coordinate, whole-interval three-integration-by-parts identities, all with nonzero second-derivative endpoint currents; maximum relative error was $8.26\times10^{-66}$. Root also reviewed the audit code. These checks supplement the analytical entropy and infinite-charge proofs rather than numerically establish them.
+The finite audit checks zero-step and divided-Chebyshev formulas, removable node values, parity sectors and marked sector polynomials. Its four nonzero fixtures include whole-interval three-integration-by-parts identities with nonzero second-derivative endpoint currents. These checks supplement the entropy and infinite-charge proofs.

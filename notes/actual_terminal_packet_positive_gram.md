@@ -214,8 +214,4 @@ crossings and the terminal physical projector rows independently of
 (11). It checks all rows, every input column of (7), and the
 positive-completion inequality on unrelated state vectors.
 
-Fresh replay: PASS eleven complete terminal modules through eight
-plat heads, eight exact figure-eight packet families and six positive
-full-module Grams. Independent proof review rederived the original
-four-crossing row weights, including the full common Cartan scalar,
-and checked the regularizer using the full even-plat inverse above.
+The finite tests compare complete terminal modules, figure-eight packet families and positive full-module Grams. The proof keeps the full common Cartan scalar and uses the full even-plat inverse in its regularizer.

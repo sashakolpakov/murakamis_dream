@@ -61,7 +61,7 @@ whole original word, not separately after inserting a current.
 This is the explicit knot lattice of
 [the scalar cardinal completion](actual_scalar_cardinal_source_completion.md#explicit-knot-coordinates-dimension-and-forced-cut-faces).
 It explains why the lower-transfer normals in the following theorem
-are independent even after the ORIGINAL closure is imposed.
+are independent even after the original closure is imposed.
 
 ## 2. Exact singular factor and the regular-head hypotheses
 
@@ -136,7 +136,7 @@ transfer window's digamma poles are a fixed distance from those edges.
 No assertion that the modes are harmless on arbitrary macroscopic
 complex deformations is made.
 
-Likewise the ORIGINAL full-Psi reset
+Likewise the original full-Psi reset
 
     Psi_epsilon(u)=(1-exp(Nu))
                               Psi_epsilon(u+epsilon*2pi*i) (13)
@@ -272,7 +272,7 @@ strict gap from a face of zero displacement.
 ## 6. Boundary of the theorem
 
 This supplies a simultaneous downward filling for lower-TRANSFER-only
-outer cotangent faces with regular interior heads, in the ORIGINAL
+outer cotangent faces with regular interior heads, in the original
 complete closed source at arbitrary braid width. A failure of its
 regular-head hypotheses routes
 the analysis to a physical head endpoint, another transfer endpoint,

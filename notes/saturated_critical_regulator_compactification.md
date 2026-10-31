@@ -203,7 +203,7 @@ membership in the first place.
 Uncontrolled volume of a genuine critical degeneration is no longer
 an obstruction in this algebraic compactification. A proof of the
 quantum upper bound must still show that every exponentially relevant
-boundary contribution of the ORIGINAL relative cycle is supported
+boundary contribution of the original relative cycle is supported
 on this critical closure, is canceled exactly, or obeys an independent
 estimate. Ordinary constrained endpoint maxima need not satisfy the
 full critical equations; they are not covered by (6).

@@ -454,7 +454,7 @@ Both parities and composite levels are included; the diagram and slopes
 are fixed before N tends to infinity. This improves the old threshold25.
 
 Section 8 of the same width-extension note also establishes the
-specified ORIGINAL single-cut reduced invariant for even widths s>=10,
+specified original single-cut reduced invariant for even widths s>=10,
 where the filled pretzel is a two-component link. Both main cusps remain
 complete. This is a separate link scope, with the same fixed signed
 long-filling quantifiers.
@@ -470,12 +470,7 @@ is rigorously greater than .812633708. Thus the entire off-corridor
 source gap is strict. The local packet, filling and geometric proofs
 were already valid at these widths and apply without alteration.
 
-The primary agent independently checked the radius, entropy maximum,
-frozen-block product argument, endpoint indices and rational margin,
-and replayed `audit_actual_pretzel_all_width_extension.py` successfully.
-A second independent proof read and replay also passed. Its512-cell
-outward-rounded integral certificate proves a fixed analytical upper
-bound; the theorem is not extrapolated from finitely many quantum levels.
+The 512-cell outward-rounded integral certificate proves a fixed analytical upper bound. The theorem is not extrapolated from finitely many quantum levels.
 
 Widths3,5,7 remain outside this envelope. Removing them requires
 coherent source control stronger than the present per-alias norm bound.
@@ -533,15 +528,7 @@ every auxiliary circle gives a knot for odd a and a two-component link
 for even a. This extends the complete-stack result to actual filled
 volumes, which differ from 2n v8 for nonempty sufficiently long fillings.
 
-The [typed global lift](actual_belt_stack_typed_character_composition.md)
-checks the exact outer dual-cup/coupon map, preferred longitude A^-1,
-every complete cut-piece face isometry and every actual collar. It
-retains the absolute regulator and primitive 2pi filling logs. Root
-and a separate agent read the full assembly and replayed the source,
-normal, face and mixed-duality checks. These are internal research
-proof audits, not external peer review or an arbitrary-knot theorem.
-[Literature coverage](belt_stack_filling_coverage_check.md) is recorded
-separately without using a quoted proof to close any of these gates.
+The global lift requires the stated regulator and primitive $2\pi$ completion hypotheses. These do not hold for arbitrary knots merely from the local formulas.
 
 ## 2. The hyperbolic-volume identification is now general
 
@@ -590,9 +577,7 @@ value. The [direct positive ideal chart](actual_pretzel_positive_ideal_angle_cer
 now derives a compatible all-ideal subdivision from the actual
 half-twisted polyhedra and checks the quotient rank. Thus our explicit
 class's variational proof no longer depends on a general geometric
-ideal-triangulation existence theorem. The primary agent read the
-proof and replayed its six-family 90-digit face-map check; two agents
-independently checked the complete-cusp KKT/completeness proof.
+ideal-triangulation existence theorem.
 
 ## 3. Quantum propagation is a separate, reusable theorem
 
@@ -659,24 +644,9 @@ hyperbolic-volume equality inferred from them:
   different metric from earlier Grams
   with excessive energy, and still needs a sharp geometric estimate.
 
-The six-port lattice proof and the Newton physical proof received
-independent analytical reviews. Root replayed both focused audits:
-nineteen exact root-gap families and nine model Smith patterns for
-the former; nine physical levels, twenty-seven whole reflected words
-and seven complex positive Gram checks for the latter. These finite
-checks supplement the uniform proofs, not a general source asymptotic.
+The six-port lattice and physical Newton calculations have uniform proofs. Their finite root-gap, Smith-pattern, reflected-word and complex-Gram checks do not establish a general source asymptotic.
 
-The new norm additionally gives a proved rate 2v_8 for the explicitly
-specified complete-circle reflected circuit in its section 6. The
-[literal octahedral certificate](actual_reflected_two_circle_octahedral_base.md)
-now identifies its FOUR-component complement by the actual reversible
-projection/disk cut, two regular octahedra with the listed face maps,
-unit edge winding and four complete torus cusps. Thus this specified
-complete base has full original-source volume equality. Root independently
-read the source-to-face and metric proof and replayed its exact audit
-with the optional literal-diagram cross-check; a separate agent did the
-same. This is a new calibrated base, not a theorem for arbitrary
-octahedral graphs or their fillings.
+The complete four-component base has volume $2v_8$. This calculation does not apply automatically to arbitrary graphs or fillings.
 
 The [exact canonical graph](actual_newton_twist_canonical_graph.md)
 also gives a source-exact Newton alphabet for EVERY four-plat word,
@@ -782,7 +752,7 @@ Consequently every surviving saturated source cube is regular, generated
 by the original nested cup, and the three-circle rank is exactly
 binom(3floor((N-1)/2)-(N-1)+3,3), with zero for an empty domain.
 The [joint scalar packet](actual_trivalent_candidate_racah_partition_geometry.md)
-therefore has an ORIGINAL-source unique four-angle saddle, global color
+therefore has an original-source unique four-angle saddle, global color
 gap and nonzero complex amplitude. These are scalar estimates, with
 the original phase retained; they are not full vertex norm bounds.
 
@@ -846,38 +816,7 @@ unsupported open cells, auxiliary-color currents, or nested-mark
 transport. The closed full-circle sum therefore uses supported triples
 at EVERY vertex. Its growing-color network-normal estimate remains open.
 
-The [actual finite boundary pairing](actual_six_pants_boundary_torsor_and_sewing.md)
-now gives a nondegenerate marked Frobenius form on every regular
-surviving cell, with an explicit positive Gram and exact source/dual
-costs. Its lower moments are correlated: a cyclotomic counterexample
-rules out an independent three-axis product. The
-[generic all-partner formula](actual_generic_six_head_tetrahedral_source.md)
-computes ALL those original moments, including unsupported cells,
-by at most eight explicit branch sums and Taylor order at most four.
-The generic physical factorial denominators and ordinary trace zero
-are proved, rather than inferred from a root-only scalar continuation.
-The [generic single-sum identity](actual_generic_trivalent_racah_source_identity.md)
-now identifies the original double-sum source with its fully normalized
-Racah sum BEFORE root specialization. Its proof uses the actual
-mixed-highest Casimir, a source coefficient column, uniform rational
-Jacobi certificates, the exceptional zero-channel cup projection and
-an own finite polynomial/Sears argument. High folded partners and all
-normal tails remain present. The
-[central normal envelope](central_racah_normal_jet_envelope.md)
-then proves a genuine conditioning bound: throughout one fixed central
-three-color corridor, at both level parities, all actual lower moments
-satisfy |m_I/tau|<=poly(N), hence the correlated Gram source cost
-K_j<=poly(N). The proof keeps the common-phase main sum and bounds
-the second-zero tail with a strict uniform gap. This is not inferred
-from dimension or numerical conditioning samples. The subsequent
-[whole-support envelope](actual_whole_support_boundary_gram_envelope.md)
-removes that corridor restriction: actual |m_I/tau| and K_j are
-polynomial uniformly on EVERY supported folded triple, at both
-parities. Exact half-step folding coordinates and a global sine-product
-inequality bound both root-zero bands by a positive midpoint action,
-including the saturation boundary. Independent full proof review and
-the finite algebra/source audit passed. Physical frame changes,
-general recoupling norms and global core energy remain unproved.
+The [actual finite boundary pairing](actual_six_pants_boundary_torsor_and_sewing.md) now gives a nondegenerate marked Frobenius form on every regular surviving cell, with an explicit positive Gram and exact source/dual costs. Its lower moments are correlated: a cyclotomic counterexample rules out an independent three-axis product. The [generic all-partner formula](actual_generic_six_head_tetrahedral_source.md) computes all those original moments, including unsupported cells, by at most eight explicit branch sums and Taylor order at most four. The generic physical factorial denominators and ordinary trace zero are proved, rather than inferred from a root-only scalar continuation. The [generic single-sum identity](actual_generic_trivalent_racah_source_identity.md) now identifies the original double-sum source with its fully normalized Racah sum before root specialization. Its proof uses the actual mixed-highest Casimir, a source coefficient column, uniform rational Jacobi certificates, the exceptional zero-channel cup projection and an own finite polynomial/Sears argument. High folded partners and all normal tails remain present. The [central normal envelope](central_racah_normal_jet_envelope.md) then proves a genuine conditioning bound: throughout one fixed central three-color corridor, at both level parities, all actual lower moments satisfy |m_I/tau|<=poly(N), hence the correlated Gram source cost K_j<=poly(N). The proof keeps the common-phase main sum and bounds the second-zero tail with a strict uniform gap. This is not inferred from dimension or numerical conditioning samples. The subsequent [whole-support envelope](actual_whole_support_boundary_gram_envelope.md) removes that corridor restriction: actual |m_I/tau| and K_j are polynomial uniformly on every supported folded triple, at both parities. Exact half-step folding coordinates and a global sine-product inequality bound both root-zero bands by a positive midpoint action, including the saturation boundary. Physical frame changes, general recoupling norms and global core energy remain unproved.
 
 The [pretzel-to-general strategy](pretzel_to_general_source_strategy.md)
 keeps the proved whole-source/weighted-Cauchy/Casson--Rivin route as

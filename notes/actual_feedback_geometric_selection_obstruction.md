@@ -47,7 +47,7 @@ For each fixed u the v sum is N^m if u=0 and zero otherwise.
 The extra Gaussian therefore has coefficient ONE, at every N, with
 no determinant character, unknown periodic unit or knot normalization.
 
-This statement survives the ORIGINAL source pairing, including the
+This statement survives the original source pairing, including the
 contracted closure jets. Indeed the change (2) does not change nu or h,
 and (4) holds coefficientwise before any anchor substitution, charged
 coefficient, clock sum or external scalar. Hence those operations commute
@@ -122,7 +122,7 @@ preserves the critical germ and (8) preserves its radical.
 
 One may choose a transverse framing section and obtain the already
 proved nonzero normal Gaussian block. Its two-form must still be
-paired with the specified ORIGINAL relative source. Taking an arbitrary
+paired with the specified original relative source. Taking an arbitrary
 section or assigning its relative period the value one would add a
 source selection, rather than derive it from (4).
 
@@ -148,7 +148,7 @@ But the full source coefficient which would have to be shown nonzero
 is still the original one. Neither invertibility of G_T, its unit
 coefficient norm, the perfect socle pairing, nor the nonzero transverse
 determinant computes that coefficient. The precise unproved step is
-the image of the ORIGINAL relative class in the action-normalized
+the image of the original relative class in the action-normalized
 geometric summand after the remaining framing/charge contraction.
 The Gaussian (1) does not weaken that step, since (4) eliminates it
 without changing that class.

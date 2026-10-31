@@ -1,6 +1,6 @@
 # Survival of the full original mixed-color pretzel period near completeness
 
-29 October 2026. Proof assembly independently reviewed for source
+29 October 2026. Proof assembly for source
 reconstruction, marked normalizations, analytic interpolation and
 contour estimates. The discrete summation proof below uses the exact
 finite cotangent contour, retaining every endpoint current. For every fixed
@@ -152,7 +152,7 @@ sides and fixed imaginary heights +/-d. Then
         =N/(2pi i) integral_Gamma f_N(u)cot(Nu)du.       (3a)
 
 This is the interpolated-grid sum; its retained difference from the
-ORIGINAL source grid is bounded separately below. The residue of
+original source grid is bounded separately below. The residue of
 cot(Nu) at each enclosed physical point is 1/N, so (3a) has no
 endpoint half weights or new lattice multiplicity.
 
@@ -268,7 +268,7 @@ eta=log(-w), moves the central arc to eta_*. No pole of (9) is
 crossed: Re eta remains strictly positive. The global circle gaps
 in section4 control its complement. The real Gaussian integral
 along the local vertical direction gives (1) for the low-core
-product, with the ORIGINAL sign and N^(3/2) normalization exactly
+product, with the original sign and N^(3/2) normalization exactly
 as in the complete-period proof.
 
 Finally the [uniform original alias source gap](actual_pretzel_mixed_alias_source_gap.md)

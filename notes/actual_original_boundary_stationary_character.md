@@ -1,6 +1,6 @@
 # The original marked boundary source and its transverse stationary point
 
-30 October 2026. Independently reviewed. This concerns the specified original
+30 October 2026. This concerns the specified original
 six-type boundary source, at fixed real integer channel labels approaching
 the fold. Its actual marked cap cancels the limiting linear magnetic
 force. This gives a nearby transverse stationary point and a constructed
@@ -256,7 +256,7 @@ the total middle count is 2R, while every turn and mark incidence has
 sum zero. Hence (5) defines an integral covector on face potentials
 modulo their common constant.
 
-For the ORIGINAL flat-plat presentation the signed count is stronger.
+For the original flat-plat presentation the signed count is stronger.
 At a horizontal slice let the gaps between its 2k ordered heads carry
 the actual white-region labels. A box in slot a removes the old middle
 gap a+1 at its pi vertex and introduces a new one at its W vertex.
@@ -547,13 +547,4 @@ identity has its separate original-white/dual/cup audit in the positive
 face-polynomial theorem. No new source-cycle assertion is attached to
 these numerical checks.
 
-Independent primary full analytical review: PASS. The reader checked
-the six source-force branches, signed Morse index and literal mark,
-uniform implicit-function and Gaussian constants, absolute LDL anchor,
-actual facet coning, and all source/connected-geometry scope distinctions.
-
-Independent full peer analytical review: PASS. The reader independently
-rederived the literal circle and mark scalars and all six force limits,
-then checked the local transverse proof and the absolute factor
-2Vol(Q). A fresh redirected replay reproduced every reported count
-at 90 digits. The original cycle and full auxiliary-label sum remain separate.
+The original cycle and the full auxiliary-label sum remain separate from the local transverse result.

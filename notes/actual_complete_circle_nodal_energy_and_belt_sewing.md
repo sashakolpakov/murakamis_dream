@@ -280,10 +280,4 @@ volume conjecture remains open here.
 
 Audit: [full physical belt sources and exact discrete sampling](../experiments/audit_actual_complete_circle_nodal_energy_and_belt_sewing.py).
 
-Independent analytical reviews rederived the weighted DCT, both
-endpoint parities, the fixed-ellipse order of limits, the exact
-full-normal complete-circle trace, and the arbitrary-twist nodal
-identity. The focused audit was independently replayed: seven
-physical levels and 21 entire reflected powers, 40 complex sampling
-levels and six rate diagnostics passed. These checks do not supply
-a geometry or arbitrary-six-port extension beyond the stated seam.
+The exact nodal sewing is restricted to the stated seam. It does not establish a geometric or arbitrary-six-port extension.

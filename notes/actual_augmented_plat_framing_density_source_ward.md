@@ -1,6 +1,6 @@
 # The actual marked framing density from Casimir-source Ward currents
 
-30 October 2026. Reviewed local source theorem. This concerns the leading
+30 October 2026. local source theorem. This concerns the leading
 LOCAL density of the actual complete-color augmented-plat source after
 transverse Gaussian elimination. It retains the original mark, all finite
 offsets and the actual magnetic top-form. The invariant ordered-flag
@@ -236,7 +236,7 @@ For Phi(C)=Tr(eC), the exact dual Hopf rows are
     e_E=K^(-1)e Ecal-Ecal K^(-1)e,
     e_F=eF-KF e K^(-1).                                (11)
 
-At complete color, with A=Q^a in the ORIGINAL integer-index convention,
+At complete color, with A=Q^a in the original integer-index convention,
 their diagonals are
 
     (e_K)_aa=0,
@@ -397,7 +397,7 @@ original relative boundary/current coefficient or other retained
 source weight. Equation (20) neither chooses a centralizer section
 nor discards the original cotangent, character or divisor terms.
 
-## 7. Focused source audit and independent review
+## 7. Finite source checks
 
 The [focused exact audit](../experiments/audit_actual_augmented_plat_framing_density_source_ward.py)
 and [results](../experiments/actual_augmented_plat_framing_density_source_ward_results.json)
@@ -412,14 +412,4 @@ transverse determinant derivative and full top-form Jacobian. The
 general finite-current construction and its Gaussian transport are
 proved analytically in §§3--5, not inferred from these checks.
 
-Independent geometry and source reviews passed the complete local
-argument, including the primitive Fourier/coarea handling of the K
-constraint, exact half-index offsets, opposite-shift current insertions,
-marked co-source and retained nonzero Gaussian density. The review
-scope is the local framing form (18)--(19), with the original global
-cycle coefficient and its boundary currents explicitly unproved.
-The parent independently reviewed the full proof and replayed the audit.
-The source reviewer also freshly replayed every focused audit count,
-including the amended exact half-index, coarea and fixed-Q mark-clock
-checks. Both independent replays passed. No global period assertion is
-part of those verdicts.
+The conclusion is the local framing form (18)–(19). Its global cycle coefficient and boundary currents remain unproved; no global period statement follows.

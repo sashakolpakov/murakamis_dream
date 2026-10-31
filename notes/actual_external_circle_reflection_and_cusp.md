@@ -1,6 +1,6 @@
 # External circle reflection and its primitive cusp normalization
 
-30 October 2026. Independently reviewed and frozen. The original color
+30 October 2026. The original color
 N-h circle splits exactly into a cosine-weighted COMPLETE circle and
 a literal small-color circle. This gives a precise interface to the
 positive face coefficient without discarding any root Casimir normal.
@@ -22,7 +22,7 @@ normalizations, write
     C_0=2, C_1=z; P_0=1, P_1=z.
 
 The [literal mixed-circle theorem](actual_crossing_circle_source_and_filling.md)
-proves, on the two ORIGINAL complete physical targets,
+proves, on the two original complete physical targets,
 
     L_n=(-1)^(n-1)P_(n-1)(Omega), 1<=n<=N,
     C_N(Omega)=-2I.                                    (1)
@@ -354,7 +354,7 @@ R^epsilon. Neither may be deleted from the norm estimate. No general
 proper-subset gap, signed small-color bound, or mixed packet follows
 from (17), and no generic-q normal is inferred from this root estimate.
 
-## 8. Verification and review
+## 8. Verification and scope
 
 The [focused audit](../experiments/audit_actual_external_circle_reflection_and_cusp.py),
 with [recorded results](../experiments/actual_external_circle_reflection_and_cusp_results.json),
@@ -367,20 +367,6 @@ Six exact inversion identities and nine primitive/packet Hessian
 identities check the geometric normalization. An additional 216 complex
 Gaussian comparisons retain both finite fold lattices and their first
 two derivatives; they are checks of the Gaussian step, not substitutes
-for the source-tail proof of (14). The latter follows from the reviewed
-signed source theorem as shown above.
+for the source-tail proof of (14). The latter follows from the signed source theorem as shown above.
 
-Independent primary full analytical and audit-code review, followed by
-a fresh redirected replay: PASS. The reader checked the full root
-reflection, both first-normal defects, exact sector resolution,
-primitive rectangle and source sign, complete mesoscopic tail argument,
-and the narrow all-small untwisted norm bound. Every recorded audit
-count was reproduced, with Gaussian comparison error below1.7e-18.
-
-Independent peer analytical review: PASS. The reader independently
-checked the reflection and generic defect signs, original moving pivot,
-primitive factor2 and the actual finite-lattice mesoscopic proof,
-including its complex and derivative scope. The all-small bound was
-separately checked against the literal generators and original boundary
-norms. No fixed-neighborhood mixed-color packet, proper-subset gap or
-filled-knot limit is inferred.
+No fixed-neighborhood mixed-color packet, proper-subset gap or filled-knot limit follows from this local reflection theorem.

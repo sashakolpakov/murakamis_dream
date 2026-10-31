@@ -1,7 +1,6 @@
 # The entire even low-demand range: a subexponential signed contraction
 
-31 October 2026. Internally reviewed analytical theorem. This extends the reviewed
-low-quarter estimate using its exact original-source recurrence. It
+31 October 2026. analytical theorem. This extends the low-quarter estimate using its exact original-source recurrence. It
 retains the original two half-block cutoffs. The conclusion is
 subexponential, not a polynomial estimate, and does not cover odd levels
 or the remaining projected middle-demand range.
@@ -11,7 +10,7 @@ or the remaining projected middle-demand range.
 Let \(N=2m\ge4\), \(M=m-1\), \(d=N-1\), and \(\theta=\pi/N\).
 Use the original fixed-pair cap/CROSS coefficient \(S_{N,n}\), endpoint
 comparator \(D_{N,n}\), and coefficient \(C_{0,n}>0\) of
-[the reviewed Newton source theorem](research_cap_cross_low_demand_newton_contraction.md).
+[the Newton source theorem](research_cap_cross_low_demand_newton_contraction.md).
 In particular the original \(A^d\) demand, unused products, raw signs,
 and actual spectral pair \((+2,-2)\) have not changed.
 
@@ -292,7 +291,7 @@ constant, nor a scaled contour height \(Y\) growing with \(N\).
 
 Finally the original positive comparator contains
 \(V_0C_{0,n}=4C_{0,n}/a_0\), where \(a_0=2+2\cos\theta\).
-Thus, exactly as in the reviewed quarter-range proof,
+Thus, exactly as in the quarter-range proof,
 \[
  \frac{|S_{N,n}|}{D_{N,n}}
        \le\frac{a_0}{\gamma_n}|R_n|
@@ -309,19 +308,11 @@ It is stronger than a coefficient-norm or residue-variation bound:
 those can be exponentially excessive in this same problem.
 The new argument retains the alternating sign through the contour.
 
-The reviewed low-quarter theorem still provides its sharper polynomial
+The low-quarter theorem still provides its sharper polynomial
 factor there. The present proof does not establish a polynomial bound
 on the whole low range. It also does not identify the auxiliary full
 slice with the original projected sum when \(n>M\), prove the analogous
 odd-level low bound, control nearby complex spectra, or give a whole
 source/filling theorem. Those are separate tasks.
 
-The only source input is the reviewed exact Newton recurrence and its
-original cutoff identification. The additional analytic work is
-(5)--(20). No new finite audit is being offered as a substitute for
-that argument. Root and coherent completed full independent analytical/source reviews;
-the geometry reviewer independently checked the analytic interpolation
-and contour proof. These are internal reviews, not external peer review.
-The [odd extension](research_cap_cross_odd_low_demand_subexponential_extension.md)
-proves the corresponding original odd-source statement with its actual
-regularized positive comparator.
+The source input is the exact Newton recurrence with its original cutoff. The analytical estimates are (5)–(20). The [odd extension](research_cap_cross_odd_low_demand_subexponential_extension.md) proves the corresponding odd-source statement with its regularized positive comparator.

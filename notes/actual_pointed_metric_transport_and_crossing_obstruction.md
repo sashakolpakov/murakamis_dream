@@ -1,7 +1,7 @@
 # Pointed metric certificates and the cost of a modulus crossing
 
 28 October 2026. A varying positive metric gives an exact transport
-certificate for the ORIGINAL source. It is useful only when its source
+certificate for the original source. It is useful only when its source
 cost and conditioning are bounded independently. A concrete two-channel
 calculation below shows that a full-space quadratic certificate with
 subexponential conditioning can still be forced to pay the pointwise
@@ -166,7 +166,7 @@ Give explicit candidate adjoint vectors w_j with w_n=l and defects
 
     r_j=w_j-T_j^*w_(j+1).
 
-For the ORIGINAL forward state one has the exact identity
+For the original forward state one has the exact identity
 
     A=w_0^*s-sum_(j=0)^(n-1) r_j^*v_j.           (10)
 

@@ -23,7 +23,7 @@ basis, is
 Outside-basis arrows vanish. Set \(E=\mathcal E/(\zeta-\zeta^{-1})^2\).
 Direct adjacent entries give
 \([E,F]=(K-K^{-1})/(\zeta-\zeta^{-1})\).
-For an ordered \(r\)-head block use the ORIGINAL coproducts
+For an ordered \(r\)-head block use the original coproducts
 
 \[
  \mathcal E_r=\sum_i\mathcal E_i\prod_{j>i}K_j,\qquad
@@ -151,7 +151,7 @@ Both signs in (9) include even levels. In particular
 The [complete original source construction](actual_complete_source_multiplicity_module.md),
 section 5, gives an isomorphism between the FULL root invariant space
 in six heads WITH unrolled \(H=0\) and \(W\). Throughout this note
-\(\operatorname{Inv}_{\rm root}\) includes this \(H=0\) condition, not
+\(\operatorname{Inv}_{\mathrm{root}}\) includes this \(H=0\) condition, not
 only the periodic equation \(K=1\). Write its map as \(\Phi\). Explicitly,
 
 \[
@@ -221,8 +221,8 @@ assumed flatness. Equal dimensions give the all-level identification
 \[
  \boxed{\quad
  \mathsf{ext}(S_N)=\ker(J_{\mathcal E,4}:W\to L),\qquad
- S_N=\operatorname{Inv}_{\rm root}\cap\ker J_{\mathcal E,6}
-    =\operatorname{Inv}_{\rm root}\cap
+ S_N=\operatorname{Inv}_{\mathrm{root}}\cap\ker J_{\mathcal E,6}
+    =\operatorname{Inv}_{\mathrm{root}}\cap
                          \ker J_{\mathcal E,6}\cap\ker J_{F,6}.
  \quad}                                                  \tag{12}
 \]
@@ -260,7 +260,7 @@ regular polynomial lift; no actual generic-\(q\) pivot germ is replaced
 when using this statement AT THE FIXED ROOT.
 
 Consequently \(\mathsf P\) can be inserted between reduced gates on an
-ORIGINAL source orbit without changing any original exterior co-source.
+original source orbit without changing any original exterior co-source.
 It need not commute with every reduced boundary generator on the
 UNRESTRICTED root space. An arbitrary root-only intertwiner without a
 regular generic lift is not asserted to preserve \(S_N\).

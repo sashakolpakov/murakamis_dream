@@ -203,7 +203,7 @@ determinants in the accompanying audit.
 
 Set r=Q^(-1). Its original finite Euler function is P_r; this is
 not a replacement invariant. It is an explicit auxiliary factor
-inside the following identity for the ORIGINAL P_Q crossing.
+inside the following identity for the original P_Q crossing.
 
 Let E_Q(Z_R) denote the actual spectral projector at Z_R=Q,
 transported by the SAME A in (4). Put
@@ -235,7 +235,7 @@ not the bottom zero. Consecutive factorial ratios prove
 All these factors can be constructed without knowing A: use the
 explicit rational formulas (1), (4) for C,Z_R and the root-clock
 projectors E_(Q^j)(Z_R)=N^(-1)sum_k Q^(-jk)Z_R^k. Equations
-(3)--(4) prove which ORIGINAL transported clock mark those explicit
+(3)--(4) prove which original transported clock mark those explicit
 factors carry; they do not define a new factor by an unknown
 conjugated crossing.
 
@@ -301,7 +301,7 @@ is therefore the specified negative THIRD boundary (10), with
 the above even flag order. All inverse-word interface marks are
 transported from (13), not reselected independently.
 
-## 5. Exact reflection embeds the entire word in the ORIGINAL R
+## 5. Exact reflection embeds the entire word in the original R
 
 Set B_3=P_r(a_3). Nilpotent factorial reflection gives exactly
 

@@ -432,7 +432,7 @@ classical etaleness.
 
 ## 7. Actual clock transport requires functions before finite evaluation
 
-There is now an exact instance of this distinction on the ORIGINAL
+There is now an exact instance of this distinction on the original
 high-color source. Put C_Q=Q^S Z^R, Z=Q^N, with Frobenius index
 0<=R<=N. Its actual whole divided matrices e_q,f_q obey
 

@@ -10,7 +10,7 @@ gives a finite differential source realization of these inserted
 transfer clocks and their bounded moments.
 
 The root clock identity alone is a rewriting of the old position
-clock factorization. The additional content is its ORIGINAL
+clock factorization. The additional content is its original
 first-normal block carry, bounded Frobenius differential degree,
 and canonical actual source germ. This is not yet a Gaussian
 two-framing current map.
@@ -33,7 +33,7 @@ crossing routes are
  R_+:(i,j)\mapsto(j+k,i-k),\qquad
  R_-:(i,j)\mapsto(j-k,i+k).
 \]
-Writing \(\Delta R=R_{\rm out,2}-R_{\rm in,1}\) and likewise
+Writing \(\Delta R=R_{\mathrm{out,2}}-R_{\mathrm{in,1}}\) and likewise
 \(\Delta C\), exact integer arithmetic gives
 \[
  k=\Delta C-(N+1)\Delta R\quad(+),\qquad
@@ -79,7 +79,7 @@ root E or F edge would be zero. Hence
 \[
  \Delta R\in\{0,-1\}\quad(+),\qquad
  \Delta R\in\{0,+1\}\quad(-)
-                  \quad\hbox{through first order}.     \tag{3}
+                  \quad\text{through first order}.     \tag{3}
 \]
 A putative two-boundary carry has zero first-normal coefficient.
 The negative assertion also follows by differentiating the
@@ -211,7 +211,7 @@ finite operator data that such a map must use.
 ## 6. Exact audit
 
 [The script](../experiments/audit_actual_memory_clock_and_normal_transfer.py)
-uses independently assembled ORIGINAL positive and negative
+uses independently assembled original positive and negative
 integral R entries over a finite field with dual numbers.
 At \((N,r)=(2,3),(3,3),(4,4),(5,3)\), it checks 13,188
 coefficient routes, their exact integer clock factors, all

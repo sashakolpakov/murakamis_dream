@@ -16,7 +16,7 @@ now proves lim_N (2pi/N)log|<K>_N|=Vol(rho_p)<=Vol(K) for hyperbolic
 knots of fixed odd width s>=25 and independently sufficiently large
 fixed signed twists. The actual representation lift, preferred marking,
 geometric anchor, regulator constant and finite filling-chain comparison
-have all been supplied and reviewed. See the
+have all been supplied. See the
 [completion audit](long_pretzel_upper_bound_completion_audit.md).
 The requested upper-bound alternative is achieved; equality with Vol(K)
 remains a separate geometric-completion problem. Earlier attack
@@ -238,7 +238,7 @@ global estimate, and a lower/survival proof remains separate.
 **Current original-source Cauchy target, 29 October.** The user's
 special-inner-product proposal now has two proved concrete pieces.
 [The length frame](actual_length_gauge_clock_source.md) has a polynomial
-ORIGINAL clock co-source for arbitrary fixed signed braid width, with
+original clock co-source for arbitrary fixed signed braid width, with
 all zero-length slots, phases, closures and the external line retained.
 The source-preserving normalization b_L=N^(1/4)B_L/sqrt(s_L) makes
 [balanced star scalars](actual_length_normalized_star_gram.md) exactly
@@ -307,7 +307,7 @@ removed when gluing those windows. Their sharp control is still OPEN.
 [regulator-majorization theorem](regulator_majorization_and_source_energy.md)
 proves that a bistochastic connection fixing the regulator observable
 can mix only equal-regulator blocks. This would make all intermediate
-action weights telescope with the ORIGINAL source energy retained.
+action weights telescope with the original source energy retained.
 The [actual figure-eight test](actual_figure_eight_regulator_channel_test.md)
 now rules this out in the normalized instantaneous eigenbasis: the
 polar connection mixes distinct regulator values at order 1/N, and
@@ -369,20 +369,7 @@ theorem above now supplies an exact compensation, with its state and
 source metrics transported. The global coherent energy estimate,
 including the compulsory anchor dual weights, remains necessary.
 
-The [physical full-clock dilation](actual_half_clock_source_dilation.md)
-is now exact: W=V_d direct_sum V_(d-2N) contains the original head as
-an invariant isometric window. Weighted shift zeros retain both
-endpoints, and the genuine dual, unrolled H, half-Cartan, original
-N-normalized turns and selected cut are unchanged on that window.
-For any one-component knot the cut forces this summand along the
-entire component. The full 2N Fourier transform is therefore legitimate
-with the rank-N window projector retained. The weighted physical
-generators lift exactly. An auxiliary unweighted N-cyclic shift must
-still be lifted blockwise with its explicit wall current; it cannot
-be replaced by the ambient 2N shift. Charge conservation remains the
-original strand-degree law; a triangulation angle map and edge characters still
-require a separate source calculation. Independent review and original
-signed-source checks pass.
+The [physical full-clock dilation](actual_half_clock_source_dilation.md) is now exact: W=V_d direct_sum V_(d-2N) contains the original head as an invariant isometric window. Weighted shift zeros retain both endpoints, and the genuine dual, unrolled H, half-Cartan, original N-normalized turns and selected cut are unchanged on that window. For any one-component knot the cut forces this summand along the entire component. The full 2N Fourier transform is therefore legitimate with the rank-N window projector retained. The weighted physical generators lift exactly. An auxiliary unweighted N-cyclic shift must still be lifted blockwise with its explicit wall current; it cannot be replaced by the ambient 2N shift. Charge conservation remains the original strand-degree law; a triangulation angle map and edge characters still require a separate source calculation.
 
 The alternative [positive-energy Tauberian criterion](actual_fourier_energy_tauberian_criterion.md)
 is also proved with its missing inputs explicit: a sharp positive
@@ -410,13 +397,7 @@ uses that source to prove the whole-original-invariant estimate
 
     limsup_N (1/N)log|K_N| <= integral_(1/k)^1 log rho(x) dx.
 
-The actual all-level annihilator must satisfy its stated classical-order
-condition. A common small complex-q circle avoids every leading
-denominator at polynomial cost, and the full analytic source cancels
-all enclosed poles. Shrinking neighborhoods of classical singularities
-cost exp(o(N)); a positive metric controls the remaining matrix product
-without eigenvector separation. Independent proof review and actual
-source-circle tests pass.
+The actual all-level annihilator must satisfy its stated classical-order condition. A common small complex-q circle avoids every leading denominator at polynomial cost, and the full analytic source cancels all enclosed poles. Shrinking neighborhoods of classical singularities cost exp(o(N)); a positive metric controls the remaining matrix product without eigenvector separation.
 
 The next target is now concrete: verify an actual operator and prove
 2pi integral log rho<=Vol for a broad class. Classical support cannot
@@ -447,9 +428,7 @@ The [actual six-crossing source port](six_one_actual_source_recurrence_port.md)
 now gives a proved finite three-index reduction, with every original
 source and framing factor retained. Its proposed Rogers/Newton transform
 remains unproved. The matching classical quartic is therefore still
-insufficient to claim an actual quantum color operator. Root replay of
-the literal-source and finite-reduction audits passes; this example is
-a diagnostic for the operator gate, not the requested broad-class result.
+insufficient to claim an actual quantum color operator. This example is a diagnostic for the operator gate, not the requested broad-class result.
 
 **A generic adiabatic shortcut is now excluded.** The
 [analytic two-channel theorem](analytic_two_channel_conversion_counterexample.md)
@@ -631,7 +610,7 @@ no nonflat sectors may be discarded. It does not close (U) either.
 **Fourier/Plancherel steering, 28 October.** The user proposed using the
 root-of-unity series as finite Fourier series and then applying Plancherel.
 The full-source positive target is now kept explicitly alongside (U):
-for the ORIGINAL root-color vector c=(K_N,C_1,...,C_(N-1)), prove
+for the original root-color vector c=(K_N,C_1,...,C_(N-1)), prove
 
     limsup (pi/N) log sum_k |DFT(c)_k|^2 <= Vol(M).
 
@@ -688,7 +667,7 @@ by independently checkable geometric/combinatorial conditions, prove
 
     limsup_N (2*pi/N) log |K_N(K)| <= Vol(S^3 minus K).       (U)
 
-The invariant is the ORIGINAL marked Kashaev source, including its
+The invariant is the original marked Kashaev source, including its
 peripheral, pivotal, framing and normal factors. A replacement positive
 state is not the target. The full volume conjecture additionally requires
 geometric survival and its matching lower bound; those remain active.
@@ -771,7 +750,7 @@ The higher-dimensional and full-clock source step is required.
 
 ## 4. Geometric survival, using the same source transport
 
-After the upper transport is established, follow the ORIGINAL selected
+After the upper transport is established, follow the original selected
 class into the positive geometric chart. Compute its top-volume
 coefficient, including the nilpotent source extension, rather than
 assigning a favorable cycle. The existing Legendre--Rivin contour then
@@ -804,12 +783,11 @@ estimate (U), or the broad-class geometric survival theorem in Section 4.
 
 ## 6. First execution checkpoint
 
-The first attack produced three constructive estimates, independently
-read and replayed by the root agent:
+Three constructive estimates are needed:
 
 * `actual_coefficient_minimax_upper.md`: a two-anchor coefficient is
   bounded by its largest regular critical modulus times
-  `4 m^2 log(m+1)`. The proof transports the ORIGINAL contour and bounds
+  `4 m^2 log(m+1)`. The proof transports the original contour and bounds
   its logarithmic length; it assumes neither saddle selection nor
   positivity. The same note proves a higher-dimensional logarithmic
   mass bound for cycles of specified algebraic complexity. Constructing
@@ -832,15 +810,10 @@ and an actual post-fusion figure-eight tree channel exceeds the desired
 rate (`actual_forced_source_tree_entropy.md`). Their exact audits passed.
 Neither counterexample disproves the volume conjecture.
 
-All five associated audit scripts passed on independent replay. Their
-finite checks supplement the written uniform proofs and do not extend
-their stated scope. The critical next operation is to combine the
-bounded physical meridian transport with the ORIGINAL cup/cap source
-and its joint shape data, while retaining the full clock dependence.
-The broad-class target (U) is still unproved.
+The critical next operation is to combine the bounded physical meridian transport with the original cup/cap source and its joint shape data, while retaining the full clock dependence. The broad-class target (U) is still unproved.
 
 The next source step has now been proved in
-`actual_plat_cup_cap_gram_support.md`: the ORIGINAL whole plat scalar
+`actual_plat_cup_cap_gram_support.md`: the original whole plat scalar
 is exactly `chi_N N^(k-1) <phi_N,W_N u_N>`, with specified normalized
 cup/cap states and all unitary pivots retained. Transported bottom
 constraints hold exactly; top cap constraints hold in mean square

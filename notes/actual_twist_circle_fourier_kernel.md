@@ -158,8 +158,4 @@ also proves that this metric's energy can be excessive even when
 the final knot is hyperbolic. A sharp geometric energy estimate
 requires more than the controlled filling-source norm.
 
-[Audit](../experiments/audit_actual_twist_circle_fourier_kernel.py):
-PASS 81 signed full-physical crossing-power comparisons at N=2,...,10
-and 64 complex full-Hermite/coefficient-mass cases through N=48.
-Independent proof review checked both Fourier aliases, the even
-middle index, the odd simple node, and the circle-basis conversion.
+The [audit](../experiments/audit_actual_twist_circle_fourier_kernel.py) compares 81 signed physical crossing powers at N=2,...,10 and 64 complex full-Hermite/coefficient-mass cases through N=48. The formulas retain both Fourier aliases, the even middle index and the odd simple node.

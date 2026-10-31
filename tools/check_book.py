@@ -9,12 +9,38 @@ import json
 class Links(HTMLParser):
     def __init__(self):
         super().__init__(); self.links = []; self.images = []
+        self.math_stack = []; self.math_errors = []; self.ids = set()
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if attrs.get("id"):
+            self.ids.add(attrs["id"])
+        if tag == "a" and attrs.get("name"):
+            self.ids.add(attrs["name"])
+        if tag == "span" and "math" in attrs.get("class", "").split():
+            self.math_stack.append({"depth": 1, "mathml": False, "text": []})
+        elif tag == "span" and self.math_stack:
+            self.math_stack[-1]["depth"] += 1
+        if tag == "math" and self.math_stack:
+            self.math_stack[-1]["mathml"] = True
+        if tag == "merror":
+            self.math_errors.append("MathML contains an error element")
         for key in ("href", "src"):
             if attrs.get(key): self.links.append(attrs[key])
         if tag == "img": self.images.append(attrs)
+
+    def handle_data(self, data):
+        if self.math_stack:
+            self.math_stack[-1]["text"].append(data)
+
+    def handle_endtag(self, tag):
+        if tag == "span" and self.math_stack:
+            entry = self.math_stack[-1]
+            entry["depth"] -= 1
+            if not entry["depth"]:
+                self.math_stack.pop()
+                if not entry["mathml"]:
+                    self.math_errors.append("Unrendered formula: " + "".join(entry["text"])[:180])
 
 
 def main():
@@ -23,13 +49,24 @@ def main():
     pages = sorted(docs.rglob("*.html"))
     if not pages: raise SystemExit("Build the guide first: python3 tools/build_book.py")
     failures = []; link_count = 0; image_count = 0
+    parsed = {}
     for page in pages:
         parser = Links(); parser.feed(page.read_text())
+        parsed[page.resolve()] = parser
+    for page in pages:
+        parser = parsed[page.resolve()]
+        if "sphinx" not in page.relative_to(docs).parts:
+            failures.extend({"page": str(page.relative_to(root)), "math": error}
+                            for error in parser.math_errors)
         for value in parser.links:
             url = urlsplit(value)
-            if url.scheme or url.netloc or not url.path: continue
+            if url.scheme or url.netloc: continue
+            target = (page.parent / unquote(url.path)).resolve() if url.path else page.resolve()
+            if url.fragment and target in parsed and not url.fragment.startswith(":~:"):
+                if unquote(url.fragment) not in parsed[target].ids:
+                    failures.append({"page": str(page.relative_to(root)), "missing_fragment": value})
+            if not url.path: continue
             link_count += 1
-            target = (page.parent / unquote(url.path)).resolve()
             if not target.is_relative_to(docs) or not target.is_file():
                 failures.append({"page": str(page.relative_to(root)), "link": value})
         for image in parser.images:

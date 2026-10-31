@@ -27,7 +27,7 @@ and set
 \]
 Then \(Hb=ca/N\). For the actual residual diagonal factor
 \[
- V_{N,j}(a)=\frac{{N-1\choose j}_{q,\rm sym}}{M^j},
+ V_{N,j}(a)=\frac{{N-1\choose j}_{q,\mathrm{sym}}}{M^j},
 \]
 the exact identity is
 \[
@@ -180,16 +180,16 @@ Their limits agree, but their ratio is not a unit at those
 finite-\(N\) divisors. Using \(b=a_N\) aligns them exactly.
 
 It also matches the marked power character exactly. On the
-integral-color curve \(M_{\rm col}=e^{Hb/2}\), the inverse-flux
+integral-color curve \(M_{\mathrm{col}}=e^{Hb/2}\), the inverse-flux
 period of
 [the peripheral-character calculation](gauss_wall_flux_and_actual_peripheral_character.md)
 is
 \[
- \chi_H(M_{\rm col})=e^{-2c\log M_{\rm col}/H}=e^{-cb}.
+ \chi_H(M_{\mathrm{col}})=e^{-2c\log M_{\mathrm{col}}/H}=e^{-cb}.
 \]
 The root meridian used in (7) satisfies
 \[
- \widetilde M_N^{\,2N}=e^{-cb}=\chi_H(M_{\rm col}).
+ \widetilde M_N^{\,2N}=e^{-cb}=\chi_H(M_{\mathrm{col}}).
 \]
 Thus its inverse-power character is the opposite oriented one.
 This is an identity of the specified whole functions; it does
@@ -252,7 +252,7 @@ and no even-level scalar prefactor. Its \(O(1/N)\) estimate is
 uniform over all prefix lengths by the same double difference.
 For \(j>L\), symmetric q-binomial reflection gives
 \[
- V_{N,j}=M_{\rm col}^{n-2j}V_{N,n-j};
+ V_{N,j}=M_{\mathrm{col}}^{n-2j}V_{N,n-j};
 \]
 the remaining upper comparison character has logarithm
 \((H-H_0)b(n-2j)/2=O(1/N)\), uniformly in \(j\).
@@ -260,7 +260,7 @@ This proves the claimed whole-head diagonal unit estimate.
 
 The retained chirp comparison has the exact exponent
 \[
- \log (U_{\rm col}/U_0)_j
+ \log (U_{\mathrm{col}}/U_0)_j
        =ca\left(\frac{j}{2N}-\frac{j(j+1)}{4N^2}\right).
 \]
 It and its inverse are uniformly bounded in every common
@@ -271,7 +271,7 @@ The coupon identities in the full-head theorem are exact
 coordinate statements. Both frames act on the same original
 balanced column \((1,\ldots,1)^t\) and dual row
 \((1,\ldots,1)/N\); their respective coordinate maps are
-\(U_{\rm col}\operatorname{diag}V\) and
+\(U_{\mathrm{col}}\operatorname{diag}V\) and
 \(U_0\operatorname{diag}B\). Their quotient is \(T_N\), hence
 the columns, rows and rank-one coupons transform by \(T_N\),
 \(T_N^{-1}\), and conjugation. Position moments and endpoint

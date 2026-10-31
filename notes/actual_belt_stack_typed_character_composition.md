@@ -162,7 +162,7 @@ The actual outer dictionary is
     (a,b)=(beta_phys^(-1),alpha_phys^(-1)),
     C_0=K_tot, preferred P_0=beta_phys alpha_phys=A^(-1). (13)
 
-Here is its source/collar check. Keep the unrestricted ORIGINAL
+Here is its source/collar check. Keep the unrestricted original
 marked closure, pivot and single1/N on their original side. The
 physical cup and ordinary cap matrices are
 
@@ -188,7 +188,7 @@ to the inverse. The explicit table on the outer side is therefore
     auxiliary C_0 and its original closing pivot stay UNCHANGED.
 
 Every mixed crossing incident to these ports is transported through
-the SAME snakes by ORIGINAL Hopf duality. A dual matrix port is
+the SAME snakes by original Hopf duality. A dual matrix port is
 partially transposed and conjugated by p and ell: its coupon is
 NOT held fixed while its indices are renamed. Equivalently
 (S tensor id)(R_universal)=R_universal^(-1) and

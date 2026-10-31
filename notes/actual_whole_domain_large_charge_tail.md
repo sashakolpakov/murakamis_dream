@@ -1,6 +1,6 @@
 # Whole-domain large Fourier charges: exact paired currents and a vanishing-rate operator tail
 
-Independently reviewed, 31 October 2026. This concerns the actual fixed-root
+, 31 October 2026. This concerns the actual fixed-root
 operator coupons and their original marked contraction. It does not split
 an infinite charge series at an artificial real cutoff. Twists are fixed
 before $N$. The resulting all-far-sector bound is proved; a partial-far
@@ -118,7 +118,7 @@ fixed allowance. This is a bound for the original FULL-V Fourier
 coupon, including semisimple data.
 
 Proof of the horizontal part. In the original balanced root basis $\|F\|,\|\mathcal E\|\leq2$ and $K$ is
-unitary. The literal coproduct gives $\|F_{\rm tot}\|,\|\mathcal E_{\rm tot}\|\leq4$,
+unitary. The literal coproduct gives $\|F_{\mathrm{tot}}\|,\|\mathcal E_{\mathrm{tot}}\|\leq4$,
 hence $\|\Omega\|\leq18$ on the ENTIRE physical tensor product. This
 includes high totals without changing the norm by a basis adapter.
 Equivalently the actual blocks have fixed bandwidth and uniformly
@@ -209,7 +209,7 @@ its single mark. Replacing every $R_i^{n_i}$ by $T_{N,n_i;M_i}$ gives
 EXACTLY the subseries of the original whole-domain Fourier period
 with $|\ell_i|>M_i$ for EVERY port. Finite-$N$ absolute convergence and
 multilinearity justify this identity; physical coupons are never
-commuted. Call this marked contraction $Z_{\rm allfar}$.
+commuted. Call this marked contraction $Z_{\mathrm{allfar}}$.
 
 In the same balanced physical basis, the finitely many actual turns,
 closures and single marked cap have polynomial operator/Euclidean norms
@@ -221,15 +221,15 @@ $N^{3/2}$, $N^{-1/2}$ and $N^{-1}$, and the retained right-turn pivots are
 unit phases. The number of wires and contractions is fixed by the diagram. Hence
 
 $$
-|Z_{\rm allfar}|\leq\operatorname{poly}_D(N)\prod_i\|T_{N,n_i;M_i}\|,
-\qquad\limsup_{N\to\infty}\frac1N\log|Z_{\rm allfar}|\leq\sum_i\varepsilon(D_i).\tag{11}
+|Z_{\mathrm{allfar}}|\leq\operatorname{poly}_D(N)\prod_i\|T_{N,n_i;M_i}\|,
+\qquad\limsup_{N\to\infty}\frac1N\log|Z_{\mathrm{allfar}}|\leq\sum_i\varepsilon(D_i).\tag{11}
 $$
 
 once each horizontal term has been made exponentially decreasing.
 This is an actual shared-source estimate, not a replacement of its
 coefficient by arbitrary face radii. All $n_i$ are fixed before $N$.
 
-The [geometric local unit theorem](general_localized_unit_charge_filling_period.md) gives $\Phi_{\rm fill}\geq\Phi_D/2$ for ALL
+The [geometric local unit theorem](general_localized_unit_charge_filling_period.md) gives $\Phi_{\mathrm{fill}}\geq\Phi_D/2$ for ALL
 independently sufficiently long fixed twists, after increasing a
 threshold depending only on the original diagram. Choose fixed $D_i$
 so $\sum_i\varepsilon(D_i)<\Phi_D/4$ and all horizontal exponents in (6)
@@ -263,7 +263,7 @@ $$
 $$
 
 There is no established reason for the first factor to have rate less
-than $\Phi_{\rm fill}$. The remaining signed $R$ powers are NOT uniformly unitary
+than $\Phi_{\mathrm{fill}}$. The remaining signed $R$ powers are NOT uniformly unitary
 in this basis. Their individual exponential norm bounds only supply a
 crude upper rate depending on the retained twists. Equation (7) alone
 therefore cannot remove a partial-far sector.
@@ -271,12 +271,12 @@ therefore cannot remove a partial-far sector.
 The exact finite inclusion-exclusion identity for the union is
 
 $$
-Z_{\rm full}-Z_{\rm all\,low}
+Z_{\mathrm{full}}-Z_{\mathrm{all\,low}}
 =\sum_{\varnothing\ne S\subseteq\mathrm{ports}}(-1)^{|S|+1}
 \mathcal E_{D,S,N}\!\left(\bigotimes_{i\in S}T_i\right).\tag{13}
 $$
 
-It retains the ORIGINAL full $R$ powers on the complement of $S$, rather
+It retains the original full $R$ powers on the complement of $S$, rather
 than replacing them by an uncontrolled collection of infinitely many
 spectator charge pieces. A direct sufficient new input would be a
 strict bound on these actual mixed exteriors, or a narrower estimate
@@ -287,7 +287,7 @@ $$
 \qquad0\leq v_i\leq\tau.\tag{14}
 $$
 
-with a rate strictly below $\Phi_{\rm fill}$ as $v$ tends to zero, uniformly on
+with a rate strictly below $\Phi_{\mathrm{fill}}$ as $v$ tends to zero, uniformly on
 a small fixed closing box, including simultaneous endpoint subsets.
 Every sine, Gaussian and charge character in (4)-(5) would then remain
 explicit and summably controlled. Horizontal pieces can be made as
@@ -304,4 +304,4 @@ partial-far complement theorem is claimed here.
 
 ## Validation and scope
 
-The root and source reviewers independently read the full analytical proof, including the original basis, paired endpoint currents, absolute tail summation and partial-subset limitation. The root also read the [focused audit](../experiments/audit_actual_whole_domain_large_charge_tail.py) and freshly replayed it. Its [results](../experiments/actual_whole_domain_large_charge_tail_results.json) record 48 paired endpoint entries, 16 whole-interval contour identities and 16 charge-sign identities from original physical blocks at 55 digits. These are finite normalization checks, not numerical proofs of an asymptotic rate or mixed-source gap.
+The [focused audit](../experiments/audit_actual_whole_domain_large_charge_tail.py) and its [results](../experiments/actual_whole_domain_large_charge_tail_results.json) check paired endpoint entries, whole-interval contour identities and charge-sign identities from the physical blocks. These are finite normalization checks, not proofs of an asymptotic rate or a mixed-source gap.

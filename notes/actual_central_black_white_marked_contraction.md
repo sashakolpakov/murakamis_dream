@@ -24,7 +24,7 @@ Thus pi=W^dagger P, pi W=I, and the unscaled black tensor is
     s=N^2 q^(-m^2) A_N,
     Theta=(W tensor I)p.                              (1)
 
-The ORIGINAL physical cup/cap matrices are
+The original physical cup/cap matrices are
 
     p_(a,b)=N x^(-b)delta_(a+b,d),
     ell_(a,b)=x^a/N delta_(a+b,d), p ell=ell p=I.
@@ -52,7 +52,7 @@ W_d(d,m)=q^(m^2). It gives EXACTLY
 In particular gamma is nonzero. Dualizing pi W=I and using the same
 one-dimensional Hom space gives D(pi)=gamma^(-1)W.
 The nested matching (16),(23),(45) is preserved by reversal, and its
-right dual is precisely the ORIGINAL three ordinary caps ell^S.
+right dual is precisely the original three ordinary caps ell^S.
 Therefore, with Lambda=ell^S W^tensor3,
 
     D(U)=gamma^(-3)Lambda,
@@ -162,7 +162,7 @@ is, from(1),(5),(7),
 Indeed A_N=q^[m(2-m)]S_N with S_N positive, and the remaining
 phase is q^[8m^2+4m]=q^(4mN)=1. Each of the three actual central
 circles contributes N, while(8) transports the original marked cut
-without an extra dimension. Thus the ORIGINAL raw marked central
+without an extra dimension. Thus the original raw marked central
 contribution is EXACTLY
 
     Z_St=N^3 |A_N|^2

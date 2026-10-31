@@ -174,7 +174,7 @@ The identity follows from the generating function
 
 The actual short polynomial has degree \(h-1\leq M\).
 Complex Markov on \([-2,2]\) therefore bounds its derivative
-by \((h-1)^2/2\) times its supremum. In the ORIGINAL faithful
+by \((h-1)^2/2\) times its supremum. In the original faithful
 Hermite norm, with normal scale \(N^{-2}\), this costs at most
 \(9/8\). The literal crossing also has norm at most \(9/8\).
 Thus the whole original alias obeys
@@ -226,7 +226,7 @@ followed by complex Markov and the limit of its fixed radius
  \tag{12}
 \]
 
-Apply (9),(12) to the ORIGINAL source
+Apply (9),(12) to the original source
 \(|\Phi_2(f)|\leq3N^3\|f\|_{\mathrm H}\). Any product term
 with a nonempty alias set of size \(m\) has uniform upper rate
 

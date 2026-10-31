@@ -1,8 +1,8 @@
 # The one-sided full-numerator remainder on actual spectral polydisks
 
-31 October 2026. Internally reviewed spectral remainder theorem. This is an absolute bound
-for the ORIGINAL shared polynomial numerator at the fixed root. It uses
-the reviewed unique geometric maximizer and the actual odd/even positive
+31 October 2026. spectral remainder theorem. This is an absolute bound
+for the original shared polynomial numerator at the fixed root. It uses
+the unique geometric maximizer and the actual odd/even positive
 majorants. It is not a relative estimate against an oscillatory value,
 a Gaussian cycle theorem, or a genuine-q normal estimate.
 
@@ -92,7 +92,7 @@ paths belong to the cross support; they are never relabeled noncross.
 
 ## 3. The original shared numerator and its absolute remainder
 
-Let S_N(sigma_1,...,sigma_R) be the entire ORIGINAL shared coefficient
+Let S_N(sigma_1,...,sigma_R) be the entire original shared coefficient
 of the product of H_(V_N(sigma_e)), with its original mark, cup/cap
 normalization and target degrees. Let S_N,cross be the same coefficient
 with every port restricted to the CROSS path class above. This is a
@@ -160,8 +160,4 @@ choosing a nonzero charge, moving the original cycle into that polydisk,
 or asserting a contribution to the filled-knot invariant. Those
 phase-sensitive operations remain separate.
 
-Root and an independent internal reviewer checked the complete written
-consequence, including the support-preserving path comparisons, both
-parities, fixed and shrinking radii, and spectral derivatives. This uses
-the linked exact identities and entropy proofs; it does not infer
-asymptotic cancellation control from finite numerical experiments.
+The spectral estimates use support-preserving path comparisons at both parities, with fixed or shrinking radii and the stated derivatives. Finite numerical experiments do not establish the asymptotic cancellation bounds.

@@ -15,7 +15,7 @@ whole-knot bound or geometric survival theorem.
 ## 1. Uniform condition number, including all normal coefficients
 
 Put Q=exp(2*pi*i/N), d=N-1, F_a=product_(j=1)^a(1-Q^j), and
-D=diag(F_0,...,F_d) in the ORIGINAL orthonormal balanced head basis.
+D=diag(F_0,...,F_d) in the original orthonormal balanced head basis.
 For 0<=R<=floor(d/2), let P_R project onto
 
     {0,...,R} union {d-R,...,d}.
@@ -68,7 +68,7 @@ All other heads are spectators. The original pivots commute with
 D_R because both are diagonal; an exposed cup, cap or marked row
 is transformed by the same explicit inverse pair rather than reset.
 Consequently any fixed collection of such changes preserves the
-ORIGINAL scalar exactly, for arbitrary crossing signs and braid
+original scalar exactly, for arbitrary crossing signs and braid
 width. The factors in the norm comparison are bounded by (3).
 
 Let S be the physical unilateral raising matrix, S|a>=|a+1> for
@@ -195,17 +195,12 @@ checks the norm bound, the cyclic correction, actual signed full-word
 gauge invariance, and the Fourier source with its canceled matching
 residues. These checks supplement the uniform arguments above.
 
-Independent proof reread (Euler/source agent): (1)--(13a) verified
-directly, including the exact phase in factorial reflection, the
-1/N cyclic arrow, the two band-interface arrows, both noncentral
-Gauss charts and the complete finite geometric-series seam. The
-normal-matching limitation in Section 4 is essential; no whole-source
-or geometric critical-value bound follows merely from (13a).
+The normal-matching limitation in Section 4 is essential. No whole-source or geometric critical-value bound follows merely from (13a).
 
 ## 5. Nilpotent reconstruction retains a genuine source current
 
 Let 1<=s<N, P=I-S^s(S*)^s=P_low(s-1), and let
-T_s(C)=S^s C(S*)^s on the ORIGINAL finite orthonormal head.
+T_s(C)=S^s C(S*)^s on the original finite orthonormal head.
 Direct multiplication, before any source evaluation, gives
 
     (I-T_s)C=P C+S^s[(S*)^s,C].                  (14)

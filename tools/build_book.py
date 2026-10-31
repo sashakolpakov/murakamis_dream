@@ -29,6 +29,53 @@ CHAPTERS = [
 COLLECTIONS = json.loads((ROOT / "book/collections.json").read_text())
 
 
+def repair_numbered_fragments(directory):
+    """Resolve GitHub-style numbered headings against actual Pandoc anchors."""
+    class Anchors(HTMLParser):
+        def __init__(self):
+            super().__init__()
+            self.ids = set()
+
+        def handle_starttag(self, tag, attrs):
+            attrs = dict(attrs)
+            if attrs.get("id"):
+                self.ids.add(attrs["id"])
+
+    pages = {}
+    for path in directory.rglob("*.html"):
+        content = path.read_text()
+        parser = Anchors()
+        parser.feed(content)
+        pages[path.resolve()] = (content, parser.ids)
+    repaired = 0
+    for path, (content, _) in pages.items():
+        def replace(match):
+            nonlocal repaired
+            value = unescape(match[1])
+            parts = urlsplit(value)
+            if parts.scheme or parts.netloc or not parts.fragment:
+                return match[0]
+            target = (path.parent / unquote(parts.path)).resolve() if parts.path else path
+            if target not in pages:
+                return match[0]
+            ids = pages[target][1]
+            fragment = unquote(parts.fragment)
+            candidate = re.sub(r"^[0-9][0-9.\-]*", "", fragment)
+            candidates = [candidate,
+                          re.sub(r"^[0-9]+([a-z])-", r"\1.-", fragment),
+                          candidate.replace("--", "")]
+            candidate = next((item for item in candidates if item in ids), None)
+            if fragment not in ids and candidate is not None:
+                repaired += 1
+                fixed = value.rsplit("#", 1)[0] + "#" + candidate
+                return 'href="' + escape(fixed, quote=True) + '"'
+            return match[0]
+        revised = re.sub(r'href="([^"]*)"', replace, content)
+        if revised != content:
+            path.write_text(revised)
+    return repaired
+
+
 def note_context(source, base, status):
     stem = Path(source).stem
     related = [c for c in COLLECTIONS if stem in [c["entry"], *c["notes"]]]
@@ -53,17 +100,21 @@ def title_of(text, fallback):
 
 class Headings(HTMLParser):
     def __init__(self):
-        super().__init__(); self.current = None; self.items = []
+        super().__init__(); self.current = None; self.items = []; self.annotation = 0
 
     def handle_starttag(self, tag, attrs):
+        if tag in {"annotation", "annotation-xml"}:
+            self.annotation += 1
         if tag == "h2":
             self.current = [dict(attrs).get("id", ""), []]
 
     def handle_data(self, data):
-        if self.current is not None:
+        if self.current is not None and not self.annotation:
             self.current[1].append(data)
 
     def handle_endtag(self, tag):
+        if tag in {"annotation", "annotation-xml"}:
+            self.annotation -= 1
         if tag == "h2" and self.current is not None:
             self.items.append((self.current[0], "".join(self.current[1])))
             self.current = None
@@ -105,7 +156,7 @@ def page(url, title, body, active, source=None, topic="Research guide", status="
 <div class="mobile-bar"><a href="{base}index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
 <aside class="sidebar" id="sidebar"><a class="brand" href="{base}index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
 <button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation">{nav}</nav>
-<div class="sidebar-bottom">Research edition · 31 October 2026<br>General conjecture remains open.<a href="{base}sphinx/index.html">Sphinx documentation ↗</a><a href="{REPO}">Repository ↗</a><a href="{REPO}/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<div class="sidebar-bottom">Research edition · 31 October 2026<br>General conjecture remains open.<a href="{REPO}">Repository ↗</a><a href="{REPO}/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
 <main id="main" class="layout"><div class="eyebrow">{escape(topic)}</div><div class="reading-grid"><article class="content">{context}{body}{chapter_nav}
 <footer class="page-footer">{source_link}<a href="{REPO}">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article>{toc}</div></main>
 <dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
@@ -195,6 +246,9 @@ def main():
                        for ext in (".png", ".svg", ".pdf", ".tex")):
                 return figure
             prefix = image_url.rsplit(".", 1)[0]
+            if any(f'href="{escape(prefix + ext, quote=True)}"' in body
+                   for ext in (".svg", ".pdf", ".tex")):
+                return figure
             links = " · ".join(
                 f'<a href="{escape(prefix + ext, quote=True)}">{label}</a>'
                 for ext, label in ((".svg", "Open vector figure"),
@@ -211,6 +265,8 @@ def main():
     def convert(item):
         source, target = item; text = (ROOT / source).read_text()
         result = subprocess.run(["pandoc", "--from=markdown-raw_html+tex_math_dollars+tex_math_single_backslash", "--to=html5", "--mathml", "--wrap=none"], input=text, text=True, capture_output=True, check=True)
+        if result.stderr.strip():
+            raise RuntimeError(f"Cannot publish {source}:\n{result.stderr.strip()}")
         body = rewrite(result.stdout, source, target)
         stem = Path(source).stem; is_guide = source.startswith("book/")
         topic, status = ("Research guide", "Guide") if is_guide else catalog.get(stem, ["Research archive", "See note"])
@@ -280,7 +336,30 @@ def main():
     body = f'''<h1>Research archive</h1><p>Search the complete technical notes, audit scripts, and recorded data. For an organized starting point, <a href="library.html">browse the research library</a>. Archived notes retain their own hypotheses, dates, and corrections.</p><p><strong>“PASS” in an audit is not a general proof.</strong> Uncatalogued notes carry the neutral “See note” status. Notes are shown first; select another record type to browse scripts or data.</p>
 <div class="archive-controls"><input id="archive-query" type="search" aria-label="Search archive" placeholder="Search full notes or audit names…"><select id="archive-type" aria-label="Record type"><option value="">All types</option><option>Guide</option><option selected>Note</option><option>Audit script</option><option>Recorded data</option></select><select id="archive-topic" aria-label="Research topic"><option value="">All topics</option></select><button id="archive-reset" type="button">Reset filters</button></div><p id="archive-count" class="archive-count" role="status">Loading the index…</p><div id="archive-results"></div><button id="archive-more" class="more" hidden>Show more</button><noscript><h2>Technical notes</h2><p>Enable JavaScript for search and topic filtering.</p><ul>{fallback}</ul></noscript>'''
     (OUT / "archive.html").write_text(page("archive.html", "Research archive", body, "archive"))
-    info = {"guide_chapters": len(CHAPTERS), "technical_notes": sum(r['type'] == 'Note' for r in records), "search_records": len(records), "figures": len([f for f in figures if f.suffix == '.png']), "literal_math_links_restored": len(restored_math), "unresolved_source_links": sorted(broken, key=lambda r: (r['source'], r['link']))}
+    # Keep previously published companion URLs useful without maintaining a
+    # second set of explanations or requiring a second documentation tool.
+    legacy = OUT / "sphinx"
+    if legacy.exists():
+        shutil.rmtree(legacy)
+    legacy.mkdir()
+    redirects = {
+        "index": "index.html", "manuscript": "guide/manuscript.html",
+        "mathematics": "guide/mechanism.html", "research": "guide/results.html",
+        "scope": "guide/results.html", "reproducibility": "guide/audits.html",
+        "genindex": "archive.html", "search": "archive.html",
+    }
+    for name, target in redirects.items():
+        url = "../" + target
+        (legacy / (name + ".html")).write_text(
+            '<!doctype html><html lang="en"><head><meta charset="utf-8">'
+            '<meta name="viewport" content="width=device-width,initial-scale=1">'
+            f'<meta http-equiv="refresh" content="0; url={url}">'
+            f'<link rel="canonical" href="{url}">'
+            '<title>Murakami’s Dream — illustrated guide</title></head>'
+            '<body><p>This material is now part of the illustrated guide. '
+            f'<a href="{url}">Continue to the guide.</a></p></body></html>\n')
+    repaired_fragments = repair_numbered_fragments(OUT)
+    info = {"guide_chapters": len(CHAPTERS), "technical_notes": sum(r['type'] == 'Note' for r in records), "search_records": len(records), "figures": len([f for f in figures if f.suffix == '.png']), "literal_math_links_restored": len(restored_math), "numbered_heading_links_repaired": repaired_fragments, "unresolved_source_links": sorted(broken, key=lambda r: (r['source'], r['link']))}
     (OUT / "build-info.json").write_text(json.dumps(info, indent=2) + "\n")
     print(json.dumps({k: v for k, v in info.items() if k != 'unresolved_source_links'}, indent=2))
     print(f"Unresolved historical source links: {len(broken)} (recorded in docs/build-info.json)")

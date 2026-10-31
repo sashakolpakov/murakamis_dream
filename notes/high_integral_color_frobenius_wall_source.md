@@ -44,10 +44,10 @@ entries give
 
 \[
  \begin{split}
- E&=I_{r+1}\otimes(-1)^rE_{\rm St},\qquad
- F=I_{r+1}\otimes F_{\rm St},\\
- K&=I_{r+1}\otimes(-1)^rK_{\rm St},\\
- H&=I_{r+1}\otimes H_{\rm St}
+ E&=I_{r+1}\otimes(-1)^rE_{\mathrm{St}},\qquad
+ F=I_{r+1}\otimes F_{\mathrm{St}},\\
+ K&=I_{r+1}\otimes(-1)^rK_{\mathrm{St}},\\
+ H&=I_{r+1}\otimes H_{\mathrm{St}}
                   +N\operatorname{diag}(r-2k)\otimes I_N.
  \end{split}                                                    \tag{1.3}
 \]
@@ -115,8 +115,8 @@ The beta ratios then give
 Consequently
 
 \[
- e_{\rm cl}=\tau\mathsf E,\quad f_{\rm cl}=\mathsf F,
- \quad h_{\rm cl}w_{k,s}=(r-2k)w_{k,s}                \tag{2.5}
+ e_{\mathrm{cl}}=\tau\mathsf E,\quad f_{\mathrm{cl}}=\mathsf F,
+ \quad h_{\mathrm{cl}}w_{k,s}=(r-2k)w_{k,s}                \tag{2.5}
 \]
 
 satisfy [e_cl,f_cl]=h_cl, [h_cl,e_cl]=2e_cl and
@@ -140,10 +140,10 @@ are
 
 \[
  \begin{split}
- [F_{\rm cross}/\delta]_{q_N}
-       &=\rho^{-1} f_{\rm cl}\otimes E_{0,N-1},\\
- [E_{\rm cross}/\delta]_{q_N}
-       &=(-1)^{r+1}\rho^{-1}e_{\rm cl}\otimes E_{N-1,0}.
+ [F_{\mathrm{cross}}/\delta]_{q_N}
+       &=\rho^{-1} f_{\mathrm{cl}}\otimes E_{0,N-1},\\
+ [E_{\mathrm{cross}}/\delta]_{q_N}
+       &=(-1)^{r+1}\rho^{-1}e_{\mathrm{cl}}\otimes E_{N-1,0}.
  \end{split}                                                    \tag{3.1}
 \]
 
@@ -172,8 +172,8 @@ On the multiplicity space write v_k for its basis. The actual divided
 operators in (2.5) construct the finite source and co-source
 
 \[
- \psi_+=\exp(f_{\rm cl})v_0=\sum_{k=0}^rv_k,\qquad
- \lambda_+=2^{-r}v_0^*\exp(e_{\rm cl}),
+ \psi_+=\exp(f_{\mathrm{cl}})v_0=\sum_{k=0}^rv_k,\qquad
+ \lambda_+=2^{-r}v_0^*\exp(e_{\mathrm{cl}}),
  \quad \lambda_+(v_k)=2^{-r}{r\choose k}.              \tag{4.1}
 \]
 
@@ -189,7 +189,7 @@ block operator diag(J_k) tensor I_N. Let P_s be any rank-one head
 coordinate projector and tau_high=Tr/[N(r+1)]. Then
 
 \[
- (r+1)\tau_{\rm high}
+ (r+1)\tau_{\mathrm{high}}
        [(e_+\otimes P_s)(\operatorname{diag}J\otimes I_N)]
           =\frac1{N2^r}\sum_{k=0}^r{r\choose k}J_k.     \tag{4.2}
 \]
@@ -236,7 +236,7 @@ are disjoint, hence E_coh(q)=sum_s e_s(q) is an idempotent of trace N.
 For the ACTUAL generic high-color scalar long-knot operator,
 
 \[
- \frac1N\operatorname{Tr}[E_{\rm coh}(q)C_{\rm high}(q)]
+ \frac1N\operatorname{Tr}[E_{\mathrm{coh}}(q)C_{\mathrm{high}}(q)]
                           =C_{N(r+1)}(Q)              \tag{4.4}
 \]
 
@@ -244,7 +244,7 @@ identically as a whole germ. The marked string e_s(q) gives
 the exact whole wall weights
 \(N^{-1}\Lambda_s\operatorname{diag}(J_k)\Psi_s/u_s\).
 At the root these reduce to (4.2). Their quantum derivatives are
-determined by the ORIGINAL divided matrices and the retained unit
+determined by the original divided matrices and the retained unit
 u_s, rather than inferred from the numerical binomial row.
 
 Equation (4.4) compares this color with itself. It is not an
@@ -271,9 +271,9 @@ one does NOT replace it by an imagined eta_(N(r+1))/[N(r+1)] line.
 The high-color meridian path before specializing is
 
 \[
- M_{\rm high}=-q^{N(r+1)},\quad
- Y_{\rm high}=M_{\rm high}^2=Z^{r+1},\qquad
- M_{\rm low}=-q^N,\quad Y_{\rm low}=Z.                \tag{5.2}
+ M_{\mathrm{high}}=-q^{N(r+1)},\quad
+ Y_{\mathrm{high}}=M_{\mathrm{high}}^2=Z^{r+1},\qquad
+ M_{\mathrm{low}}=-q^N,\quad Y_{\mathrm{low}}=Z.                \tag{5.2}
 \]
 
 At the root M_high=(-1)^r. In particular r=N uses the other lift

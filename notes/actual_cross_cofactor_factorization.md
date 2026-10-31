@@ -2,8 +2,8 @@
 
 The [whole-source local packet](general_full_spectral_numerator_geometric_packet.md) now assembles these results for the actual full numerator. The original global spectral filling period remains open.
 
-31 October 2026. Internally reviewed. Sections 1--3 are finite identities
-of the ORIGINAL polynomial source. Sections 4--6 distinguish a concrete
+31 October 2026. . Sections 1--3 are finite identities
+of the original polynomial source. Sections 4--6 distinguish a concrete
 remaining asymptotic theorem from those identities. No frozen file is
 modified and no filling-cycle or relative packet theorem is asserted.
 
@@ -169,7 +169,7 @@ the proved positive logarithmic rate is weaker than such a packet.
 
 ## 5. The precise relative theorem needed by the original period
 
-The reviewed spectral-polydisk-complement theorem gives, for the
+The spectral-polydisk-complement theorem gives, for the
 original shared numerator S_N and its exact all-CROSS part C_N,
 
     S_N-C_N=O(exp[N(Phi-gamma/2)])                   (11)
@@ -556,14 +556,14 @@ polynomial, already independently validated against physical coproduct
 matrices in the public Gaussian-resolvent audit. At N=3,...,12 it checks
 85 spectral values, 10395 polynomial coefficients, all 10 last-lower-
 diagonal zero cases, and 40 full complete-node/CROSS identities. Results:
-../experiments/actual_cross_cofactor_factorization_results.json, PASS.
+../experiments/actual_cross_cofactor_factorization_results.json.
 
 The same helper additionally checks 8326 central-strip derivative
 coefficient inequalities on 8786 original paths at N=8,...,15,
 70 digits, using eta=1/8 and the displayed uniform C_eta. This is
 a finite check of the exact repair statement, not the proof of its
 all-level bound. The proofs of (17)--(21) also use the separately
-reviewed endpoint volume, uniform coefficient, and unique-max theorems.
+endpoint volume, uniform coefficient, and unique-max theorems.
 It additionally checks 7324 nodal lower-cofactor coefficient bounds
 (22) at N=3,...,18, retaining all starting rows and both parities.
 

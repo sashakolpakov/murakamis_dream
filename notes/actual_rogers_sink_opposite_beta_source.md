@@ -196,7 +196,7 @@ If Lambda_R>=delta_R+eta on a compact family, (5)--(6) prove
 
     R_N(u,v)=T_N(u,v)[1+O_K(N^(-1/2)exp(-N eta))].    (11)
 
-The ORIGINAL residue has coefficient one; its entire retained
+The original residue has coefficient one; its entire retained
 normalization current is exponentially smaller. This is a genuine
 source theorem on a nonempty open family, not a knot-family claim.
 
@@ -414,7 +414,7 @@ The remaining physical barriers have precise effects:
   The original finite input space kills it.
 
 These claims hold with every clock m: the clock changes coefficients,
-not the indicated index supports. Thus on the ORIGINAL finite heads,
+not the indicated index supports. Thus on the original finite heads,
 
     K_m-(ac)K_(m+1)=H_m.                              (20)
 

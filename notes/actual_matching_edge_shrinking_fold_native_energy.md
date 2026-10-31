@@ -74,7 +74,7 @@ maximize independently over degrees of adjacent network coupons.
 ## 2. The actual endpoint selects the same cubic limit
 
 Put u=floor(d/2), v=d-u and w_N=q^j. At t=d the positive coefficient
-polynomial appearing in the ORIGINAL physical column is
+polynomial appearing in the original physical column is
 
     P_N(w)=sum_(a=0)^j beta(j,a)beta(u,a)beta(v,j-a) w^a,
     C_j(d,u)=q^((d-j)u) P_N(w_N).                    (6)
@@ -201,21 +201,6 @@ conjecture follows from this corollary.
 
 Audit: [original incomplete-band formula and shrinking-fold source](../experiments/audit_actual_matching_edge_shrinking_fold_native_energy.py).
 
-Primary-agent analytical review: PASS. The reader checked the exact
-center/CD scalar and uniform continuity estimates, original endpoint
-polynomial and selected negative-root continuation, half-step and
-center normalizations, all-j highest-factor and phase conversion,
-incomplete-band support collapse and simple measure, and full Q/M
-comparisons. The review retains real physical indices and does not
-enlarge the complex-normal corridor or assert a whole-source limit.
+The indices remain real and physical. This result does not enlarge the complex-normal corridor or assert a whole-source limit.
 
-Independent analytical review and fresh redirected audit: PASS.
-The reviewer checked the same center/CD cancellation, actual cubic
-endpoint selection, half-step comparison, original all-j phase and
-incomplete-band support, uniform real profiles, and full operator
-assembly. The replay passed 3,756 original phase identities, including
-1,791 incomplete-band values, 202 highest-factor complements, 202
-general complete center scalars, and six endpoint polynomial/half-step
-comparisons. Numerical samples are convention checks; the continuity,
-root-product and operator arguments prove the stated unrestricted
-shrinking real window.
+The continuity, root-product and operator arguments prove the shrinking real-window bounds. Finite samples check their conventions, not their uniformity.

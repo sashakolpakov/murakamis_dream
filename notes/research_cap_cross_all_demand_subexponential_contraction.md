@@ -1,10 +1,6 @@
 # The original cap/CROSS signed contraction at every demand and both parities
 
-31 October 2026. Internally reviewed analytical theorem. Root and coherent completed
-full independent analytical/source reviews, including the actual
-coefficient lower estimates and both finite cutoff currents. This is
-not external peer review. No nearby-spectrum or whole
-source/filling assertion is made.
+31 October 2026. This theorem does not assert stability for nearby spectra or a whole-source/filling estimate.
 
 ## 1. Exact statement and comparison source
 
@@ -24,7 +20,6 @@ common raw sign \((-1)^d\), is
 \]
 All original unused factors, source turns, and remaining exponents
 \(C^nZ^{d-n}\) are retained.
-
 
 For explicit normalization, put \(\theta=\pi/N\),
 \[
@@ -78,10 +73,10 @@ are positive for every nonempty range in (1).
 This is a subexponential bound, not a claimed polynomial factor.
 The raw numerator is never replaced by its regularized reference.
 
-The reviewed [even](research_cap_cross_full_low_demand_subexponential_contraction.md)
+The [even](research_cap_cross_full_low_demand_subexponential_contraction.md)
 and [odd](research_cap_cross_odd_low_demand_subexponential_extension.md)
 full-low theorems prove (2) for \(n\le M\) at both
-parities. The [reviewed high-demand theorem](research_cap_cross_high_demand_signed_contraction.md),
+parities. The [high-demand theorem](research_cap_cross_high_demand_signed_contraction.md),
 sections 1–7, proves it with explicit
 polynomial factors for
 \(n\ge n_H:=\lceil3N/4-3/2\rceil\).
@@ -130,7 +125,7 @@ Using \(\gamma_{j+1}U_{j+1}=s_{j+1}^2U_j\), equation (4) becomes
 
 For the middle indices \(n>H\), put \(L=n-H\), so
 \(J_n=[L,M]\) and \(J_{n-1}=[L-1,M]\).
-Sum (5) over the ORIGINAL range, then use (5) at \(j=L-1\)
+Sum (5) over the original range, then use (5) at \(j=L-1\)
 for the adjacent-projector difference. This proves
 \[
  \boxed{\gamma_nT_{N,n}+s_n^2T_{N,n-1}
@@ -142,7 +137,7 @@ projector has been omitted.
 
 At odd \(N=2m+1\), the first coefficient has \(h=m+1\) and
 vanishes by the actual unused central zero. Equation (6) reduces
-to the already reviewed odd flux. Its one transition index \(n=m=H\)
+to the odd flux. Its one transition index \(n=m=H\)
 was separately retained in that proof.
 
 At even \(N=2m\), \(H=M=m-1\), the two actual boundary coefficients
@@ -260,7 +255,7 @@ On all indices from M to \(n_H\), the raw recurrence coefficients
                                                                \tag{15}
 \]
 Every forward or backward subinterval product is therefore bounded.
-Propagate (6) forward from the reviewed low endpoint n=M up to
+Propagate (6) forward from the low endpoint n=M up to
 the peak of J. Every encountered current has rate at most the
 current J because J is increasing there. The initial low estimate
 has rate \(J(1/2)\). The O(N) terms and bounded propagators give
@@ -275,8 +270,7 @@ single peak costs o(1) in rate.
 
 Divide by the actual lower estimate (12). This proves the
 subexponential ratio on the even middle, uniformly in n.
-Together with the reviewed low/high intervals and the reviewed
-odd middle proof, it proves (2).
+Together with the low/high intervals and the odd middle proof, it proves (2).
 
 ## Scope
 
@@ -293,14 +287,9 @@ The new ingredients in this draft are the exact general contiguity
 seam-current comparison (13)--(14). No numerical growth experiment
 is used as proof.
 
+## scope and finite source verification
 
-## Internal review and finite source verification
-
-Root and coherent completed full independent analytical/source reviews.
-They checked the all-parity Newton contiguity, both actual cutoff currents,
-the even forced-Z coefficient LOWER with its retained cofactor scalar,
-the odd regularized LOWER, and the two monotonic branches of the limiting
-comparator rate. No finite monotonicity of individual coefficients is assumed.
+No finite monotonicity of individual coefficients is assumed.
 
 The [portable exact-field audit](../experiments/audit_research_cap_cross_all_demand_subexponential_contraction.py)
 with [recorded results](../experiments/research_cap_cross_all_demand_subexponential_contraction_results.json)

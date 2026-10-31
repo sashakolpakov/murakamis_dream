@@ -109,7 +109,7 @@ All external variables in (7) are their indicated grid values. The
 two factors 1/N from the two-head Fourier transform and its inverse
 are responsible for N^(-2); the internal orbit contributes N^(-1).
 Replacing K by its balanced full-Psi expression changes nothing in
-(7). Define its reconstruction in ORIGINAL indices by
+(7). Define its reconstruction in original indices by
 
     Rhat=F_out^(-1) B_N F_in.                         (8)
 
@@ -130,7 +130,7 @@ All other terms are the original physical block. This proves the
 claimed error grading with all Fourier radius factors retained.
 
 There is a stronger exact conclusion. The local four-function kernel
-satisfies the ORIGINAL lowering-current identity for
+satisfies the original lowering-current identity for
 
     Ecal|a>=(Q^(-a)-1)|a-1>,
     K|a>=x Q^(-a)|a>, E_total=Ecal_1 K_2+Ecal_2.

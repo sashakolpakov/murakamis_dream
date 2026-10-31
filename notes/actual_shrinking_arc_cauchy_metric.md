@@ -180,8 +180,8 @@ metric family. A numerical growth trend alone does not prove that
 derivative exponent.
 
 [Audit](../experiments/audit_actual_shrinking_arc_cauchy_metric.py):
-PASS nine exact rational Gram inverses, sharp evaluation constants
-and derivative norms; seven complete original terminal source Grams,
+The audit checks nine exact rational Gram inverses, sharp evaluation constants
+and derivative norms; seven complete original terminal source Gram matrices,
 positive completions and benchmark energy comparisons; and the exact
 degree-one localization diagnostic. The audit uses rational arithmetic
 for (6) and independent polynomial quadrature for the complex source.

@@ -26,7 +26,7 @@ Let X=diag(x^n), and let P be the actual coherent finite solution
 Put P_rev=diag(P_(d-j)). Then the ENTIRE terminal matrix is
 
 \[
- \boxed{\displaystyle T=\frac1N X R P_{\rm rev}R.}             \tag{1}
+ \boxed{\displaystyle T=\frac1N X R P_{\mathrm{rev}}R.}             \tag{1}
 \]
 
 This is an identity on every input column, independently of a prefix.
@@ -56,7 +56,7 @@ are unitary or that an unmatched source frame can be removed.
 The all-input packet immediately following a literal R12^(-1) is
 
 \[
- H_N:=TR^{-1}=\frac1N X R P_{\rm rev}.                       \tag{2}
+ H_N:=TR^{-1}=\frac1N X R P_{\mathrm{rev}}.                       \tag{2}
 \]
 
 Its original boundary row is 1^T H_N. Thus the positive completion
@@ -97,7 +97,7 @@ It independently implies the 3N^2 bound used below. The original
 trace derivation is retained as a second source check.
 
 Here is the source-specific bound on (3), including the nonsemisimple
-trace. The previously derived ORIGINAL trefoil source is
+trace. The previously derived original trefoil source is
 K_N=Q sum_j F_j=(-q)^3 Phi_N(r_N^3), so
 P_d=-q Phi_N(r_N^3). The actual pivotal functional is
 
@@ -197,7 +197,7 @@ Then (2) and (5) imply the finite operator bound
 
 \[
  \boxed{\displaystyle
- \|H_N\|_{\rm op}\leq\|R|_W\|_{\rm HS}+4M_N.}                 \tag{8}
+ \|H_N\|_{\mathrm{op}}\leq\|R|_W\|_{\mathrm{HS}}+4M_N.}                 \tag{8}
 \]
 
 Here is the full metric calculation. On the actual support h=i+j-d,
@@ -225,7 +225,7 @@ volume. The uniform sine-factorial estimate gives
 
 \[
  \log M_N=\frac{3v_3}{2\pi}N+O(\log N),\qquad
- \log\|R|_W\|_{\rm HS}=\frac{v_8}{2\pi}N+O(\log N).             \tag{9}
+ \log\|R|_W\|_{\mathrm{HS}}=\frac{v_8}{2\pi}N+O(\log N).             \tag{9}
 \]
 
 For the first formula maximize 2J(i/N)-J(k/N): J has maximum
@@ -245,7 +245,7 @@ the full open operator, not just an upper diagnostic:
 
 \[
  \boxed{\displaystyle
- \log\|T R^{-1}\|_{\rm op}
+ \log\|T R^{-1}\|_{\mathrm{op}}
            =\frac{v_8}{2\pi}N+O(\log N).}                     \tag{10}
 \]
 
@@ -270,7 +270,7 @@ Equations (8)--(10) give the SOURCE-EXACT all-prefix inequality
 
 \[
  |K_N|^2\leq |\chi_N|^2 N E_N(A)
- \leq |\chi_N|^2 N(\|R|_W\|_{\rm HS}+4M_N)^2\|Ap\|^2.        \tag{11}
+ \leq |\chi_N|^2 N(\|R|_W\|_{\mathrm{HS}}+4M_N)^2\|Ap\|^2.        \tag{11}
 \]
 
 Every displayed map can be tensored with an arbitrary exterior
@@ -307,7 +307,7 @@ formulas and all small parities, the finite bound (8), and the nonzero
 quarter-window density. Its numerical norm rates are diagnostics for
 the proved asymptotic, not a replacement for (6)--(10).
 
-Fresh replay: PASS eight original full-Cartan packet matrices;
+The finite audit checks eight original full-Cartan packet matrices;
 79 levels of the actual source endpoint and every Green color;
 ten coupled finite operator inequalities; five quarter-window
 nonzero densities through N=384.

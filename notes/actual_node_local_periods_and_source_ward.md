@@ -2,7 +2,7 @@
 
 28 October 2026. A collision of two preferred-longitude values need
 not be a collision of the original critical points. On two disjoint
-regular Morse charts of the ORIGINAL coefficient density, the local
+regular Morse charts of the original coefficient density, the local
 periods have a bounded separating insertion frame even at that
 projected node. Internal shift identities have explicit exponentially
 small relative-boundary errors on these charts. No inverse longitude
@@ -284,7 +284,7 @@ construction above strengthens the regular-node statement but does
 not evade that exact source obstruction.
 
 To exclude harmful nodal conversion for the original whole period,
-one must still do one of the following with the ORIGINAL source:
+one must still do one of the following with the original source:
 identify a bounded analytic pushforward to these separated local
 periods and bound all the currents in (11), or construct a different
 covariant multioperator module whose actual connection has the

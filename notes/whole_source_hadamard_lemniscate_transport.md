@@ -172,7 +172,7 @@ value separation or inverse R-R_sep is used. Equations (7)--(8) prove
     (2pi)^(-1)integral_(Gamma_R)|dz/z|<=C N^4.     (9)
 
 The circles are explicit components of degree-O(N) algebraic curves,
-with coefficient one. Thus this is controlled ORIGINAL-source transport,
+with coefficient one. Thus this is controlled original-source transport,
 not merely a conditional estimate for a prospective chain.
 
 ## 5. Whole-source estimate and its exact remaining scope

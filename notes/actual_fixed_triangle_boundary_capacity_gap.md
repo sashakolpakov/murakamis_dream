@@ -1,6 +1,6 @@
 # Quantitative loss on a fixed boundary face of the complete angle flow
 
-31 October 2026. Independently reviewed analytical lemma. This concerns
+31 October 2026. analytical lemma. This concerns
 the original complete triangle capacity and its actual shared face equations.
 It does not turn the weighted LEFT envelope into a coefficientwise comparison.
 
@@ -80,7 +80,7 @@ corners. With the same half-degree triangle function \(Q\), put
 Then
 
 \[
- \inf_{h\in\mathbb R^{F_{\rm ord}}} B_J(h)
+ \inf_{h\in\mathbb R^{F_{\mathrm{ord}}}} B_J(h)
        =\max_{\mathcal P_J}E. \tag{5}
 \]
 
@@ -128,9 +128,4 @@ is still necessary for a general full-invariant theorem.
 
 ## Validation
 
-The proof is analytic: scalar differentiation, strong concavity on the
-closed simplex, and finite convex separation. No finite-width experiment
-is used to infer (2), (3), or (5). Root and an independent reviewer checked
-the closed strong-concavity constant, distinct-row additive loss,
-extended-real duality, and protected and singleton-row cases. The review
-does not supply a comparison for the complete one-sided envelope.
+The proof is analytic: scalar differentiation, strong concavity on the closed simplex, and finite convex separation. No finite-width experiment is used to infer (2), (3), or (5). No comparison with the complete one-sided envelope is supplied.

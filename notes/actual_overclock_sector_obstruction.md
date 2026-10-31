@@ -2,7 +2,7 @@
 
 28 October 2026. Fixed overclock sectors cannot separately be bounded by
 the regulator of the closed knot, even after exact closure/full-block
-fusion. This is an all-level calculation in the ORIGINAL enhanced
+fusion. This is an all-level calculation in the original enhanced
 source. It identifies a remaining macroscopic current whose coherent
 clock sum is essential. It does not establish a new hyperbolic case
 or obstruct a source-specific upper bound after that sum.
@@ -24,7 +24,7 @@ and both sides of the subsequent identities by its original known
 external line. That common line is retained and has no exponential
 modulus at completeness; it is never replaced by an unknown scalar.
 
-The factor Q^(-1)=(-q)^(-2) includes the ORIGINAL closing coefficient
+The factor Q^(-1)=(-q)^(-2) includes the original closing coefficient
 and full writhe correction. No new average, source or normalization
 is introduced. The entries of this actual boundary operator are
 

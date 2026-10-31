@@ -109,7 +109,7 @@ At a simple node c_j, the bilinear block is the nonzero scalar
 
 At a double node c=c_j=c_l, put
 `Q_j(z)=P_T(z)/(z-c)^2` and let r'_j be the derivative of the
-ORIGINAL normalized crossing polynomial at c. Its exact block is
+original normalized crossing polynomial at c. Its exact block is
 
     K_j=[[0,sigma_j],[sigma_j,sigma_j eta_j]],
     sigma_j=x^T nu_j Q_j(c)/B_T,
@@ -134,7 +134,7 @@ Its simple-node specialization gives
 `P_T'(c)p_T(c)/B_T^2`. At a double node it gives
 `Q_j(c)p_T(c)/B_T^2` for f^T f', and
 `[Q_j(c)p_T'(c)+Q_j'(c)p_T(c)]/B_T^2` for f'^T f'.
-The first physical row of the ORIGINAL checked R in degree T has
+The first physical row of the original checked R in degree T has
 only the last column, with coefficient `kappa x^-T`. Therefore
 
     f_T(c_j)=x^T nu_j,
@@ -283,7 +283,7 @@ If g_0=x^-d, its columns in the canonical f,f' coordinates are
     p=N g_0 f(c_*),
     t=-(mu_N/gamma_N)p+(g_0/gamma_N)f'(c_*).        (20)
 
-This retains the ORIGINAL cup, ordinary cap and marked row. Ordinary
+This retains the original cup, ordinary cap and marked row. Ordinary
 caps vanish on other Casimir blocks and select the corresponding
 source derivative row; the cup lies in the source value channel.
 The marked row does NOT vanish on arbitrary other channels. Its

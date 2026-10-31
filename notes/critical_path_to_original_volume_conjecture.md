@@ -391,16 +391,7 @@ projector and the wall currents of auxiliary unweighted N-cyclic shifts
 remain. This proves the physical dilation for a broad class; it supplies
 no new geometric edge constraints or sharp norm comparison.
 
-**Current whole-source checkpoint, 28 October.** The
-[new spectral theorem](actual_macroscopic_a_spectral_upper_bound.md)
-proves limsup N^(-1)log|K_N| <= integral_(1/k)^1 log rho(x) dx for
-the ORIGINAL invariant and a specified actual annihilator satisfying
-the stated classical-order condition. Its boundary source is now proved
-polynomial on an entire complex normal disk at color fraction 1/k,
-using the [inclusive k-bridge plat window](ordinary_color_macroscopic_normal_jet_window.md).
-The common-circle argument keeps every exact or nearby recurrence pole;
-exceptional-region and nonnormal product bounds give the displayed
-classical integral. Independent proof review and fresh source audits pass.
+**Current whole-source checkpoint, 28 October.** The [new spectral theorem](actual_macroscopic_a_spectral_upper_bound.md) proves limsup N^(-1)log|K_N| <= integral_(1/k)^1 log rho(x) dx for the original invariant and a specified actual annihilator satisfying the stated classical-order condition. Its boundary source is now proved polynomial on an entire complex normal disk at color fraction 1/k, using the [inclusive k-bridge plat window](ordinary_color_macroscopic_normal_jet_window.md). The common-circle argument keeps every exact or nearby recurrence pole; exceptional-region and nonnormal product bounds give the displayed classical integral.
 
 This is an actual general quantitative upper estimate, not another
 identity for an unestimated period. The remaining upper-bound gate is
@@ -623,7 +614,7 @@ These results do not close geometric selection or the sharp scalar
 estimate; the distance assessment below remains in force.
 
 **Latest selected-source advance, 28 October.** Section 20 now includes
-an exact ORIGINAL trivalent source decomposition, a nonzero geometric
+an exact original trivalent source decomposition, a nonzero geometric
 residue whose central normalizer is fixed by global analytic rigidity,
 and an explicit open family where that residue dominates the complete
 local source with coefficient one. The central factor u^N is retained
@@ -672,10 +663,9 @@ gates below remain open; there is still no general selected A-module
 comparison. Earlier dated descriptions of the 5_2 candidate as open
 are superseded by this checkpoint.
 
-27 October 2026. Requested assessment against the ORIGINAL target,
+27 October 2026. Requested assessment against the original target,
 not against completion of the auxiliary torsor constructions.
-This audit uses the current proofs and independent agent
-assessments. Prior continuations proved resonant localization,
+This assessment uses the proofs cited below. Prior continuations proved resonant localization,
 the all-strand Euler/Cauchy source, actual cyclic/unipotent
 transport and the primitive comparison gauge's action. The
 subsequent calculations evaluate its resonant Gauss period and
@@ -701,7 +691,7 @@ when they remove a demonstrated part of these remaining obstacles.
 ## 1. The target and the present proof frontier
 
 For an unrestricted hyperbolic knot, or a proved sufficiently broad
-geometric subclass, establish for the ORIGINAL normalized state
+geometric subclass, establish for the original normalized state
 
     lim_(N->infinity) (2pi/N)log abs(K_N)=Vol(X),
     K_N=F_N(1)=Kashaev_N(K).
@@ -753,7 +743,7 @@ general sharp upper bound by Vol(X).
 
 The exact [one-index source reduction](actual_one_index_fourier_source_and_ward_reduction.md)
 and [cyclic current theorem](actual_fourier_source_cancellation.md)
-give the ORIGINAL raw Fourier array J_N with
+give the original raw Fourier array J_N with
 
     K_N=sum_(j=0)^(N-1)J_(N,j),
     D_N=(S-I)/(Q_N-1),
@@ -856,7 +846,7 @@ object, with these verifiable properties:
    original source, orbit co-source and full peripheral lattice.
 2. It carries actual zero-source currents to zero in the selected
    quotient, including polar and unwrapped endpoint terms.
-3. It sends the ORIGINAL selected class to a proved nonzero
+3. It sends the original selected class to a proved nonzero
    geometric class; an abstract nonzero formal solution is insufficient.
 4. Its action-normalized source has a fixed whole algebraic
    presentation, or another independently proved subexponential bound.
@@ -937,7 +927,7 @@ missing geometric comparison:
   peripheral/framing line is retained. This is a proved finite
   quantum source map, not a conjectured double-pole cap.
 * [The boundary/peripheral calculation](resonant_boundary_blowup_and_actual_peripheral_line.md)
-  proves that the ORIGINAL d_N cancels the geometric form's
+  proves that the original d_N cancels the geometric form's
   epsilon^-1 pole before specialization; the paired PRINCIPAL
   inverse-move Gaussian ratio is one. The physical atom has
   (1-AC)/epsilon -> s*zeta. An extra a/2 belongs only to a raw
@@ -955,7 +945,7 @@ that remains, rather than supplying it by a change of notation.
 
 The critical-path status remains A and local B established,
 C/D/E open. What has advanced is that a proposed whole comparison
-can now start from an explicit ORIGINAL all-strand coefficient
+can now start from an explicit original all-strand coefficient
 source, with exact endpoint and peripheral equations. No new
 general positive exponential lower bound, selected geometric
 A-factor, or sharp upper bound has been proved. No broader
@@ -1195,7 +1185,7 @@ does not change the distance assessment at the start of this audit.
 
 28 October 2026. There is now an exact
 [whole-word cyclic-dilogarithm period](actual_whole_word_cyclic_dilog_resolvent_period.md)
-for the ORIGINAL invariant. For an m-crossing braid the full version
+for the original invariant. For an m-crossing braid the full version
 uses 9m marked Kummer curves, with every factorial inside their
 differentials and the original caps, pivots, Gaussian, Cartan,
 framing and peripheral factors retained. Opposite-root identities
@@ -1257,7 +1247,7 @@ route, not evidence that the remaining lower bound is routine.
 
 28 October 2026. The attempted quantum change of chart now has a
 concrete general source theorem. On every total-index residue fibre,
-each ORIGINAL two-head nilpotent transfer is a cyclic shift with at
+each original two-head nilpotent transfer is a cyclic shift with at
 most two edges deleted. Its resolvent has an exact 2 by 2 Woodbury
 sewing formula. In the original small-circle functional calculus,
 the pure cyclic term and the diagonal sewing terms integrate to zero;
@@ -1273,7 +1263,7 @@ characters have order-one magnitudes in the relevant 1/N radial
 scale, and cannot be dropped as small corrections.
 
 The split cyclic kernels have additional poles. They survive an
-ORIGINAL crossing cap already at N=2: its uncorrected branch-cut
+original crossing cap already at N=2: its uncorrected branch-cut
 integral is approximately +0.05964 i, while the original small-circle
 period is -i. The missing cyclic-pole residue sum is approximately
 1.05964 i. The [regularized cut theorem](cyclic_sewing_regularized_cut_cycle.md)
@@ -1372,11 +1362,7 @@ explicit nonzero prefactor in the assembled theorem.
 
 This is independent proof work for an already known knot case; the
 publisher record of Ohtsuki's 2016 asymptotic theorem was checked for
-coverage only. No literature asymptotic proof is an input. Independent
-agents audited the exact transform, both quadratures, analytic contour
-inequalities, interval certificate, and Bloch calibration; the root
-agent also reran the rigorous interval certificate and checked the
-assembled normalization against exact finite sums.
+coverage only. No literature asymptotic proof is an input.
 
 **Distance update.** The selected-cycle mechanism now works for an
 oscillatory original invariant. The remaining general task is to derive
@@ -1428,15 +1414,7 @@ exponent on an original unit cup whose TOTAL value is one. The theorem
 therefore retains the exact relative pairing, rather than treating
 each wall term as small.
 
-A separate [two-head physical estimate](actual_two_head_ward_polynomial_contraction.md)
-proves ||F_s^+||<=max(1,|x|)N^2/4 at every total degree. Its proof uses
-a weighted path with an exact unimodal q-binomial kernel, in the original
-physical norm. On x=x_0 exp(u/N), a Laurent conjugation gives a
-holomorphic current contraction with the same polynomial cost and
-all kernel charges retained. Independent proof review passed; 1,386
-actual all-degree cases, 54 larger-level spectra and 48 holomorphic
-tube identities verify the formulas. This is not an iteration theorem
-for incompatible pair constraints in an arbitrary many-head word.
+A separate [two-head physical estimate](actual_two_head_ward_polynomial_contraction.md) proves ||F_s^+||<=max(1,|x|)N^2/4 at every total degree. Its proof uses a weighted path with an exact unimodal q-binomial kernel, in the original physical norm. On x=x_0 exp(u/N), a Laurent conjugation gives a holomorphic current contraction with the same polynomial cost and all kernel charges retained. This is not an iteration theorem for incompatible pair constraints in an arbitrary many-head word.
 
 The general [Legendre--Rivin contour](general_legendre_rivin_contour.md)
 constructs the intended target on every supplied positive triangulation.
@@ -1449,8 +1427,7 @@ edge windings (1,1,1,1,1,1,2,0,1), marked meridian angle zero, and
 an actual INTEGER alias preimage under the invertible gluing block B.
 Its volume lies in (3.76403,3.76404), while the geometric volume lies
 in (2.82812,2.82813). Exact cubic-field geometry, rational lattice
-arithmetic, outward-rounded Arb bounds and independent Regina move
-replay all pass; the root agent reran the full certificate.
+arithmetic, outward-rounded Arb bounds and a Regina move replay certify the stated intervals.
 
 The weak nonnegative alias locus is not the closure of a nonempty
 strictly positive wrong-edge chamber: that chamber is empty. The
@@ -1539,13 +1516,12 @@ On the real slice W/G=V^*/||V||^2, giving an orthogonal
 marked source projector with explicit Poisson diagonal weights.
 
 Conjugating every actual letter, coupon and current by these full
-frames preserves the ORIGINAL whole arbitrary-bridge scalar
+frames preserves the original whole arbitrary-bridge scalar
 POINTWISE. Ordinary output orientation uses its own matched frame;
 its zero cross-pairing is never divided out. With raw W rows the
 factor product G_out^-1 is retained. Independent tests include
 literal mixed crossings and original two-bridge words, not only
-abstract matrix identities. The root agent reran the complete
-paired audit and checked the proof and normalization.
+abstract matrix identities.
 
 The same estimates bound fixed source-jet extraction independently
 of N (by 9*16^r for the unnormalized paired kernel). This supplies an actual tame
@@ -1602,7 +1578,7 @@ majorant of the form
     N^B exp[CN+CN sum|xi_j|-(N/2)sum xi_j^2]
 
 proves absolute convergence and Fubini; the unchanged original external
-scalar is retained separately. The resulting ORIGINAL whole period has
+scalar is retained separately. The resulting original whole period has
 only literature cyclic dilogarithms, ordinary Cauchy kernels and ordinary
 continuous Gaussians in its scalar integrand. Its dimension is fixed by
 the word, independently of N. There are no remaining finite Dirichlet,
@@ -1617,7 +1593,7 @@ original reflected-factorial monomial, not an assigned angle lift.
 They have not yet been matched to every geometric Pachner-edge clock.
 
 Independently, [cyclic variation](original_source_cyclic_variation_peeling.md)
-in the ORIGINAL Kashaev coordinates proves that the cut strand stays
+in the original Kashaev coordinates proves that the cut strand stays
 zero in every supported state. Removing it gives explicit inverse
 q-Pascal boundary operators on the next strand, with the retained
 pivotal coefficient and writhe. This is an exact scalar reduction at
@@ -1640,13 +1616,7 @@ five-point certificates inside the actual crossing with these flags.
 Localizing away their nilpotent collision difference kills the finite
 module and cannot implement that comparison.
 
-All three constructions received independent proof review. The root
-reran the actual signed-word/source audits and the coupled-flag checks;
-Gaussian quadrature supplements its exact coefficient and support proof.
-These results make the whole-function period and local transport more
-concrete than the earlier bounded boundary gauge. They do NOT prove a
-broad-class lower bound, sharp volume upper bound, or nonzero geometric
-cycle coefficient. The original conjecture remains the active goal.
+These results make the whole-function period and local transport more concrete than the earlier bounded boundary gauge. They do not prove a broad-class lower bound, sharp volume upper bound, or nonzero geometric cycle coefficient. The original conjecture remains the active goal.
 
 ## 17. Exact cycle reductions and a marked full-function move at the physical root
 
@@ -1665,7 +1635,7 @@ phase and its actual cotangent coordinates are explicit.
 
 The initial monomial terminal frames still had no regular cap critical
 point. [Exact coupled caps](actual_coupled_caps_interval_source.md)
-resolve this by coefficient peeling, retaining the ORIGINAL full marked
+resolve this by coefficient peeling, retaining the original full marked
 row and using total degree, not sectorwise Ward replacement. Their
 geometric polynomial has the exact source
 
@@ -1721,16 +1691,7 @@ shows why exterior radii cannot universally be avoided while keeping
 that polarization nonsingular. The reference degree is NOT the degree
 of the original cycle.
 
-Independent proof review and the new analytic/exact audits pass. The
-root reran the physical-root marked pentagon and original cap checks,
-and proved/tested the full circle-plus-radial moments and strip symbols.
-The remaining task is now a concrete global source/cycle transport:
-realize the three actual certificate patterns in the full marked atlas,
-carry all relative boundaries to the geometric reference, and prove
-that the remaining periods do not cancel its leading exponential.
-Polynomial LOCAL radial norms alone do not prove that statement.
-No new broad knot class or general selected geometric A-factor has
-been established, and the original volume conjecture remains active.
+The remaining task is now a concrete global source/cycle transport: realize the three actual certificate patterns in the full marked atlas, carry all relative boundaries to the geometric reference, and prove that the remaining periods do not cancel its leading exponential. Polynomial LOCAL radial norms alone do not prove that statement. No new broad knot class or general selected geometric A-factor has been established, and the original volume conjecture remains active.
 
 ## 18. The actual critical values and their algebraic boundary are bounded
 
@@ -1743,8 +1704,7 @@ proves, for BOTH crossing signs, that the actual scalar full-Psi
 factorization has the same Bloch--Wigner regulator as the original
 five-symbol crossing. Its rational canonical maps agree exactly;
 the difference of their multiplicative wedges is zero; a generic
-real input fixes the regulator constant to zero. An independent
-agent checked both signs and the six-coordinate inverse identity.
+real input fixes the regulator constant to zero.
 
 For all retained integer cut marks, the exact identity is
 
@@ -1803,19 +1763,14 @@ On the cycle side, the [full scalar flow theorem](actual_full_psi_scalar_flow_cy
 now includes exact equality of continuous flow polytopes before and
 after Hardy-forest removal. The reduced cycle remains jointly
 absolutely convergent. The [global cut-wall pushforward](actual_full_psi_cut_wall_pushforward.md)
-then proves an exact ORIGINAL period identity
+then proves an exact original period identity
 
     P_original = P_bare_full_Psi + W_cut.
 
-W_cut is the specified oriented union-tube current of a single
-full-angle log-radius homotopy. Its common regularization, all wall
-intersections, source factors and Gaussian integrals are retained.
-The original and target periods converge; Stokes fixes the aggregate
-current. Independent proof review and coupled two-cut numerical
-checks pass. This does not assert that W_cut is small.
+W_cut is the specified oriented union-tube current of a single full-angle log-radius homotopy. Its common regularization, all wall intersections, source factors and Gaussian integrals are retained. The original and target periods converge; Stokes fixes the aggregate current. This does not assert that W_cut is small.
 
 In fact the [Markov normalization calculation](actual_markov_ray_normalization_and_pruning.md)
-proves that some ORIGINAL ray groups have the full invariant's
+proves that some original ray groups have the full invariant's
 exponential rate. Complete normalization groups must be contracted
 before a strict-gap assertion is even possible.
 
@@ -1844,7 +1799,7 @@ For each atomic Cauchy ratio s_j=A_j/t_j, the EXACT identity is
 The original whole-word continuous flow theorem bounds EVERY atomic
 order by N-1, independently of the atomic coefficients. Therefore
 every product containing any of the displayed high tails has zero
-ORIGINAL head/cap pairing, pointwise in the other moment and Gaussian
+original head/cap pairing, pointwise in the other moment and Gaussian
 variables. The [window theorem](atomic_window_total_source_resolution.md)
 consequently replaces all kernels simultaneously by K_N. This is
 not an arbitrary insertion quotient or a replacement invariant.
@@ -1917,20 +1872,13 @@ ordered identity extends to the specified formal normal families;
 the stronger Q-1 factor requires the stated q-torus relation.
 No small operator norm is inferred from that factor alone.
 
-Independent proof review and exact audits pass for both source
-constructions. The root reran the whole-source window and quantum
-saturation audits, including the original nonzero bare-current
-example. The [compact trace audit](actual_compact_trace_and_lefschetz_obstruction.md)
-also rules out a tempting lower-bound shortcut: the actual crossing
-cannot be a fixed finite sum of graph pullbacks on its coherent
-source; the necessary number of branches is at least N. This does
-not rule out the needed semiclassical correspondence.
+The [compact trace audit](actual_compact_trace_and_lefschetz_obstruction.md) also rules out a tempting lower-bound shortcut: the actual crossing cannot be a fixed finite sum of graph pullbacks on its coherent source; the necessary number of branches is at least N. This does not rule out the needed semiclassical correspondence.
 
 **Remaining gap after this advance.** Artificial compact Cauchy
 clusters no longer need a separate upper estimate in this
 representative. True zero ends, dilogarithmic degenerations and
 escape under a later deformation still do. The complete normal
-period at fixed A is the ORIGINAL finite Euler atom, whose known
+period at fixed A is the original finite Euler atom, whose known
 endpoint-dominated regions show why determinant -1 and a nonzero
 local density cannot determine its global geometric coefficient.
 No source-preserving transport to a positive geometric cycle with
@@ -1942,13 +1890,13 @@ C and D remain open, and E is still short of a whole-period bound.
 28 October 2026. The preceding distance-assessment turn was a status
 response, not proof progress. This continuation changes concrete parts
 of the attempted original-source comparison and proves a selected
-ORIGINAL local contribution on an open boundary family.
+original local contribution on an open boundary family.
 
 ### An actual geometric residue, its exact central factor, and noncancellation
 
 The [original beta-source theorem](actual_trivalent_quantum_beta_source.md)
 and [finite sink theorem](actual_sink_source_convolution.md) identify
-the ORIGINAL reflected trivalent source, with all Q tags, as
+the original reflected trivalent source, with all Q tags, as
 
     B_N(u,v)=sum_(a=0)^(N-1) product_(j=0)^(a-1)(u-Q^j v),
     u=Q^2 U, v=Q V, Q=exp(2*pi*i/N).
@@ -2000,7 +1948,7 @@ phi_N remains attached. If a compact family has
 
     Lambda>=max(0,log|u|,log|v|)+eta, eta>0,
 
-then the ORIGINAL source satisfies
+then the original source satisfies
 
     B_N/S_N=1+O_K(N^(-1/2) exp(-N eta)).
 
@@ -2019,13 +1967,10 @@ on compact angle subintervals. Here D is Bloch--Wigner volume and
 B_N is the original trivalent convolution above. This is a continuum
 of local bipyramid sources, not a newly proved family of knot invariants.
 
-Independent proof review covers the contour, exact normalizer and
-growth theorem; exact finite, full-Psi and numerical contour audits
-pass. The earlier positive Parseval argument gives an independent
-overlapping rate proof for |u|<1.
+The earlier positive Parseval argument gives an overlapping rate proof for |u|<1.
 
 The scope remains local. Positive geometry alone does not imply the
-gap: if |u|+|v|<1, the same ORIGINAL B_N converges to 1/(1-u+v).
+gap: if |u|+|v|<1, the same original B_N converges to 1/(1-u+v).
 The explicitly checked positive bipyramid u=-4i/5,v=1/100 lies in
 that bounded chamber. Its boundary Legendre/source terms matter.
 Exterior integration can still cancel a locally nonzero section;
@@ -2053,13 +1998,7 @@ adapter C^(-1)(1-nu)=R(Z_2X)^(-1)Z_R has norm at most 21 on unit
 wrap marks. The outgoing factorial and common-face frames are retained;
 no comparable bound for their full composition is inferred.
 
-In particular, the inverse-word common-output convention transports
-EVERY factor and current by the stated W_3 frame. Omitting that frame
-would identify the wrong developed faces. Independent proof review and
-the strengthened audits verify the complete convention. The root reran
-the FIRST audit, including whole-color cases, and the lens audit below.
-These are local operator/source realizations of all three literal
-boundaries, not yet a single glued positive quantum geometric state.
+In the inverse-word common-output convention, every factor and current is transported by the stated W_3 frame. Omitting that frame would identify the wrong developed faces. These are local operator/source realizations of the three boundaries, not a single glued positive quantum geometric state.
 
 ### The actual source has an exact flow descent after reflection
 
@@ -2133,7 +2072,7 @@ region. This supersedes the inference that singular all-subunit B
 requires an exterior geometric atom.
 
 The independently checked exact 8_1 example has rank B=3 for the
-ORIGINAL meridian marking, and rank B=4 for an explicitly different
+original meridian marking, and rank B=4 for an explicitly different
 longitude marking. The audit checks both, their marked critical
 equations, volume, nonzero Hessians and boundary gaps, as well as
 all six possible ranks in rational Lagrangian models. This is a
@@ -2141,7 +2080,7 @@ general constrained construction, not a new knot-family volume proof.
 Its lifted angular box is not assumed to be the original source's
 torus domain or logarithmic sheet.
 
-**Remaining critical path.** There is now a proved selected ORIGINAL
+**Remaining critical path.** There is now a proved selected original
 trivalent contribution with its exact central normalizer and an open
 dominance chamber. None of the three literal five-point configurations remains
 an unconstructed local operator identity, and the unshifted internal
@@ -2155,10 +2094,7 @@ critical-value bound but still no sharp whole-period estimate.
 
 ## 21. Complete crossing sources and quantitative signed transport
 
-28 October. The preceding distance response was a status assessment,
-not a proof advance. This continuation adds the following exact results
-for the original source, with independent proof reviews and actual
-finite-word audits. None asserts a newly solved broad knot class.
+28 October. The following exact source results do not establish a new broad knot class.
 
 ### All local source kernels and their shared faces are explicit
 
@@ -2197,7 +2133,7 @@ does give a source-level bridge. The complete internal Laurent kernel
 has t-exponents in [-2(N-1),N-1], so its N-point root average differs
 from its CT only by its -N Fourier coefficient. That alias raises
 total physical head degree by N. Every nonempty selection of these
-aliases vanishes under the ORIGINAL whole signed one-cut or pointed
+aliases vanishes under the original whole signed one-cut or pointed
 plat source. Thus every internal circle can simultaneously be replaced
 by a finite root orbit, for any bridge count, before splitting sectors.
 
@@ -2207,7 +2143,7 @@ period with an explicit nonzero coefficient H_N, plus its specified
 Barnes current multiplied by the actual closure defect 1-A. Every
 Gaussian phase, affine logarithmic mark and central factor in H_N is
 fixed. On the regular balanced divisor A=1 this is an exact nonzero
-reference coefficient. The ORIGINAL global source is not proved to
+reference coefficient. The original global source is not proved to
 factor through A=1. The other B/R current sectors stay present, and
 their aggregate is not bounded merely by the norm of its normal image.
 The circle-to-orbit map is proved; the complete scalar geometric
@@ -2320,7 +2256,7 @@ sector. A generic pointwise deck-compatible quotient killing that
 current kills the geometric section too. For the sewn Newton/Rogers
 pair, the character-one ideal is the joint balanced ideal (D_B,D_R),
 and the actual local section there is nonzero. No factorization of
-the ORIGINAL global exterior source through that base change is proved.
+the original global exterior source through that base change is proved.
 
 **Remaining critical path.** There is now a controlled signed transport
 and a sharply bounded complete local quantum-gluing source. The next
@@ -2362,7 +2298,7 @@ Fourier extraction initially allows only an error of integer degree +N.
 The full-function kernel satisfies the original E-coproduct identity.
 The lowering operator is injective on every physical degree at least N,
 so induction kills every allowed error. Thus the reconstructed operator
-equals the ORIGINAL R, for every level; the complete antiunitary mirror
+equals the original R, for every level; the complete antiunitary mirror
 gives the actual negative crossing as well.
 
 This is stronger than equality after a chosen closure. The
@@ -2458,12 +2394,12 @@ applies to every original signed braid at arbitrary width, with all
 source cuts and nonordinary coupons retained.
 
 Conditioned on the opposite strand's actual grid labels, every signed
-OVER crossing factors as its ORIGINAL known scalar times
+OVER crossing factors as its original known scalar times
 
     Pin(Z)=Z^(-h)(b/Z;Q)_(N-1-h),
     Pout(Z)=(a Z;Q)_h, 0<=h<N.
 
-The scalars have now been evaluated from ORIGINAL physical matrix
+The scalars have now been evaluated from original physical matrix
 coefficients: they are kappa^(+/-1)/N times an explicit unit quadratic
 phase and a spectator monomial z^(+/-h). Their moduli are uniformly
 comparable to 1/N on fixed regular central grids. Their phases are
@@ -2583,7 +2519,7 @@ and spectator feedback are specified, not removed by a norm estimate.
 A checked actual 5_2 state after overbridge elimination has absolute
 rate greater than 2.54, while the knot's volume rate is below 0.485.
 Thus that stage's absolute maximum is not the geometric volume.
-More constructively, a remaining ORIGINAL wire has a complete
+More constructively, a remaining original wire has a complete
 complementary-charge contraction proportional to
 
     [r choose N-1-H]_Q.
@@ -2680,7 +2616,7 @@ original invariant values even in the figure-eight example. Its unit
 coefficient norm is not a noncancellation theorem for the final source.
 
 All of these are exact or quantitatively controlled reductions of the
-ORIGINAL state, applicable beyond any fixed knot list. They do not
+original state, applicable beyond any fixed knot list. They do not
 show that its surviving cores have sublinear defects, nor that its
 geometric contribution is nonzero after the remaining clock sum and
 source pairing. Macroscopic defects and phase cancellation remain the
@@ -2732,7 +2668,7 @@ The [all-level alternating-source theorem](actual_alternating_balanced_source.md
 then checks applicability. After exact closure contraction, each
 alternating-knot anchor has delta_(i->j)=h_i-h_j along the cyclic
 physical overencounter order. Balance therefore forces all clocks
-equal. For the ORIGINAL figure-eight word the valid whole trace
+equal. For the original figure-eight word the valid whole trace
 source and its pointwise cyclic support imply
 
     h_0=0,             h_1+h_3>=N-1

@@ -462,9 +462,4 @@ full highest-source column/endpoint checks, and cyclic source
 covariance. These are exact checks supporting the uniform proof,
 not an inference from numerical polynomial fitting.
 
-Independent internal review: both the global audit agent and the
-crossing/source agent completed full analytical reads and fresh replays,
-including the exceptional c=0 actual cup projection, literal source-column
-bend and transpose, generic high-partner continuation, cyclic source
-phase and closed-trace exponent cancellation. No conditioning or
-asymptotic conclusion was included in either verdict.
+The generic scalar identity does not imply conditioning or asymptotic estimates.

@@ -1,10 +1,10 @@
 # An exact generic boundary gauge for the original marked source
 
-30 October 2026. Independently reviewed. A symmetric analytic
+30 October 2026. A symmetric analytic
 basis change removes the nonmonomial part of every ordinary cup and
 preserves the entire original marked source, including its retained
 trace normal. Its transformed white coefficients are given below in
-terms of the ORIGINAL generic q-Hahn numerator. This is a finite
+terms of the original generic q-Hahn numerator. This is a finite
 tensor identity on the actual modules, including the paired nilpotent
 sectors. It is not a complex magnetic continuation theorem.
 
@@ -312,7 +312,7 @@ values are units with a fixed lower bound; its 2s numerator factors
 are bounded above. Consequently |K_m/K_a|<=C^s. Also
 |zeta^(s sigma)|<=C_K^s, since the scaled marked parameters remain
 in a fixed compact. These estimates and the small-numerator bound
-prove (13) on the circle. The ORIGINAL finite H_m is holomorphic
+prove (13) on the circle. The original finite H_m is holomorphic
 inside it: all denominator Pochhammer indices are below N. Thus
 Cauchy's estimate applies to H_m, not to its singular monic R_m.
 
@@ -370,16 +370,6 @@ passed; the maximum literal-source relative error was below 3.1e-136.
 These finite checks verify the source and normalizations; the uniform
 estimates are the analytic arguments above.
 
-Independent full analytical review and fresh redirected audit: PASS.
-The review checked the actual LARGE-channel conversion in both physical
-halves, every cup/dual factor, the marked ordinary trace normal, and the
-cofactor/resonance/scalar proof of (13)--(19). The replay reproduced all
-counts above. It does not infer complex gauge bounds from physical
-samples, replace a generic large partner by its small root value, or
-claim a full exceptional-operator or global-period asymptotic.
+Physical samples do not imply complex gauge bounds. A generic large partner is not replaced by its small root value, and no full exceptional-operator or global-period asymptotic follows.
 
-Primary-agent full analytical review: PASS. It independently checked the
-large generic source index, the all-row conversion, original trace-normal
-covariance, the interpolation counterexample, and the actual near-fold
-cofactor, resonance and scalar estimates. This note and its focused
-audit are frozen; the full meromorphic operator lift is a separate result.
+The full meromorphic operator lift is a separate result.

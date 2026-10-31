@@ -15,7 +15,7 @@ or replace the sole marked white co-source by an ordinary cap.
 
 Put N>=2, d=N-1, M=floor(d/2), q=exp(pi i/N), Q=q^2,
 s_u=product_(v=1)^u 2sin(pi v/N), s_0=1. The retained pair labels
-are 0<=a,b,c<=M. Use the ORIGINAL coproduct columns
+are 0<=a,b,c<=M. Use the original coproduct columns
 
     H^(j)_k=q^(k^2)[d-j choose k]_Q,
     W^(j)_r=F_pair^r H^(j)/(Q;Q)_r.
@@ -135,7 +135,7 @@ source: the previously proved marked radical obstruction is unchanged.
 ## 4. Actual scalar packet and its sharp color maximum
 
 The [joint scalar partition theorem](actual_trivalent_candidate_racah_partition_geometry.md)
-now applies to the ORIGINAL scalar, through (1). With j0=v8/pi,
+now applies to the original scalar, through (1). With j0=v8/pi,
 
     |A_N(j)|<=poly(N)exp(Nj0).
 
@@ -185,8 +185,4 @@ face/peripheral data.
 The regular-cube theorem supplies the correct local source lattice;
 it does not replace these global requirements.
 
-The finite scalar proofs received independent internal analytical
-reviews; exact audits cover original coproduct source coefficients,
-both finite bridges, all root phases and denominator ranges. These
-are internal proof checks, not external peer review. No general
-volume-conjecture completion is claimed.
+The scalar identities for all channels do not imply a general volume-conjecture theorem.

@@ -10,7 +10,7 @@ volume bound.
 
 ## 1. The exact signed crossing norms
 
-Use the ORIGINAL coefficient ratios of
+Use the original coefficient ratios of
 [the actual geometric normal period](actual_geometric_normal_period.md),
 with Q primitive of order N, x=-M/q_N, Y=M^2 and Q x^2=Y.
 For one local crossing write
@@ -86,7 +86,7 @@ the chart where the r_j are units. Direct telescoping gives
        (1-T)\omega=(1-H)e_0,\qquad
                       \omega=\sum_{j=0}^{N-1}s_j e_j. \tag{4}
 \]
-At H=1 the invariant line has generator omega. For the ORIGINAL
+At H=1 the invariant line has generator omega. For the original
 transported co-source Lambda its exact coefficient is
 \[
                          a_N=\Lambda(\omega)
@@ -95,7 +95,7 @@ transported co-source Lambda its exact coefficient is
 For d commuting translations on the finite root cover, the same
 calculation gives the joint generator
 \[
- \omega=\prod_{i=1}^d(1+T_i+\cdots+T_i^{N-1})e_{\rm mark}.
+ \omega=\prod_{i=1}^d(1+T_i+\cdots+T_i^{N-1})e_{\mathrm{mark}}.
                                                                \tag{6}
 \]
 Its coefficients are the specified cocycle products, including all
@@ -141,7 +141,7 @@ The precise algebraic/relative moments to calculate are
 \[
  a_{N,\alpha}(p)=
  \left[\prod_i(N^{-1}w_i\partial_{w_i})^{\alpha_i}
-                \Lambda_{\rm act,rel}(\omega(\mathbf w;p))
+                \Lambda_{\mathrm{act,rel}}(\omega(\mathbf w;p))
                                       \right]_{\mathbf w=1}.   \tag{9}
 \]
 The actual source maps are independent of these transfer couplings,
@@ -182,5 +182,5 @@ table or a nonzero result alone would still not establish uniform
 cross-level growth or global dominance.
 
 [The exact local-norm audit](../experiments/audit_actual_signed_crossing_norms.py)
-checks all six ORIGINAL ratios, including even-level Gaussian
+checks all six original ratios, including even-level Gaussian
 signs and full peripheral powers. No asymptotic formula is used.

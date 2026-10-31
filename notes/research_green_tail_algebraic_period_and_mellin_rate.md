@@ -1,6 +1,6 @@
 # The original Green pairing as a finite algebraic period and its exact Mellin cost
 
-31 October 2026. **Internally reviewed analytical research theorem.**
+31 October 2026. **analytical research theorem.**
 Unpublished. The kernel below is the original nodal Green tail with its
 original face extraction.
 Its contour form is an exact reformulation, not a new quantum
@@ -108,7 +108,7 @@ valid at collisions, including zero nodes. Expanding at infinity proves
 \tag{6}
 \]
 
-The signed version of (2), followed by the ORIGINAL coefficient
+The signed version of (2), followed by the original coefficient
 extraction, therefore gives exactly
 
 \[
@@ -543,23 +543,9 @@ endpoint indices; it does not assert a good probability large-deviation
 principle there. No general prescribed-diagram volume theorem is claimed
 here.
 
-## Review and scope
+## Scope
 
-The parent derived and read the complete analytical argument. Two
-independent internal reviewers read the original period and interior-rate
-argument (now sections 1–5 and 7) in full and reported
-PASS, including the confluent residues, original coefficient demand,
-negative moments, both parity factors, uniform interior Mellin limit,
-and tilted-law proof. A further independent adversarial review of
-(11a)–(11d) checked the q-integration constants, monic division,
-colliding strings, and explicit $S_a^{-1}$ factor. The new section 6
-received a separate full analytical/source review: uniform all-node
-log-sine errors, exact surviving-degree normalization, weighted diagonal
-norm, Parseval identity, and both parity/endpoint limits all PASS.
-These are internal
-proof reviews, not external peer review. Reader/link validation is
-separate from mathematical validation; no numerical asymptotic scan
-is presented as a proof.
+The q-boundary formula retains its integration constants, monic division, colliding strings and explicit $S_a^{-1}$ factor. Section 6 uses the exact surviving-degree normalization and both parity/endpoint limits. No numerical asymptotic scan substitutes for those estimates.
 
 The [block-contraction theorem](research_original_block_contraction_and_cap_budget.md)
 still governs any use of this kernel in the complete source. A mask

@@ -2,7 +2,7 @@
 
 Status update, 31 October 2026: the [full endpoint theorem](general_fejer_endpoint_source_volume.md) now controls the entire positive source, and the [unique-maximizer theorem](actual_fejer_unique_geometric_maximizer.md) gives a strict exponential gap for the one-sided remainder under the same labeled certificate. The exact decomposition and the warnings about inferring bounds from forest topology alone remain valid.
 
-Independently reviewed, 31 October 2026. This is an exact coefficient reduction at every
+, 31 October 2026. This is an exact coefficient reduction at every
 even level N>=4 for the original connected fixed flat plat. No estimate
 of the remaining forest contribution is asserted. The shared original
 marked targets are unchanged. The geometric rate corollary assumes the
@@ -34,7 +34,7 @@ cross part consists of monomials whose b and c exponents are both<=m-1.
 The two other classes have respectively c exponent>=m or b exponent>=m.
 Thus the decomposition is also by disjoint monomial supports, without
 any cancellation or selection of a new physical state.
-The three polynomials are parts of the ORIGINAL homogeneous coupon;
+The three polynomials are parts of the original homogeneous coupon;
 they are not asserted separately to be covariant Casimir coupons or
 physical-head projections. The identity between the original source
 and the coefficient of their SUM is the frozen compiler identity.
@@ -110,7 +110,7 @@ edge pointing to that overloaded face. Each ordinary face has target
 d=2m-1, so it cannot receive TWO such arrows. Each protected face has
 target0, so it receives none.
 
-The ORIGINAL flat-plat middle graph has the
+The original flat-plat middle graph has the
 [frozen gap description](actual_simultaneous_small_circle_face_correspondence.md):
 each odd gap is a path of distinct bounded faces; each internal even
 gap is a cycle based at the SAME exterior face u, with its other faces
@@ -160,10 +160,4 @@ The source interface of the path representation is separately audited
 against the original coproduct matrices; these new checks do not relabel
 that earlier test as a new independent physical-matrix construction.
 
-Root and coherent independently reviewed the full proof and audit code.
-Geometry independently checked the original-gap forest lemma. Coherent
-freshly replayed the portable audit:4096 positive paths,922 cross
-coefficients,2044 repairs,209 half-block coefficients,189 actual gap
-forests and450 noncross marked-target support states. These reviews do not identify the
-positive path partition with the covariant complete-image/half-color
-split, nor apply an L_1 smoothing estimate to the half-block forest.
+The positive path partition is not a covariant complete-colored image or a half-colored tensor. The scalar identity does not justify an $L^1$ smoothing argument for the half-block forest.

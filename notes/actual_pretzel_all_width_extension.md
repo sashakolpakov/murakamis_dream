@@ -380,7 +380,7 @@ noncentral parabolic. The general geometric completion theorem keeps
 BOTH unfilled cusps complete; it does not collapse them to one.
 
 Consequently, with the same sufficiently long independently signed
-fixed twists, the source and volume equality extend to the ORIGINAL
+fixed twists, the source and volume equality extend to the original
 single-cut reduced two-component pretzel LINK for every fixed even
 s>=10. The knot conclusion is the odd s>=9 part. No assertion for a
 normalization that modifies every component independently is made.

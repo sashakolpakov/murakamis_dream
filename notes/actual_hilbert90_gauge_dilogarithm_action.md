@@ -171,6 +171,4 @@ coupling and selected hyperbolic action remain unproved.
 and [saved output](../experiments/actual_hilbert90_gauge_action_results.json)
 compare the literal finite v_N(z)v_N(Qz) polynomial with exp(L_N)
 and its dilogarithm action. The theorem rests on the uniform proof
-above; numerical rate samples are not used as a proof. Another
-agent independently checked its source-gauge orientation, the
-Cauchy remainder, both coefficient tails and the operator lower bound.
+above; numerical rate samples are not used as a proof.

@@ -184,7 +184,7 @@ Its first two eigenvalues are (u/baru)Q^(-s) and
 a genuine positive joint spectral norm. It is not yet a positive
 angle state or its geometric edge projector.
 
-Indeed the ORIGINAL conjugate source in this basis has coefficients
+Indeed the original conjugate source in this basis has coefficients
 
     c_(s,r)=N^(-1/2)sum_a Q^(-ra)P_a barP_(s-a).                 (11)
 

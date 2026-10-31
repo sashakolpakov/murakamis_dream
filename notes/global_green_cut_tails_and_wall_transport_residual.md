@@ -13,7 +13,7 @@ identification or a use of scalarity of the closed knot operator.
 
 ## 1. Primitive flow elimination preserves the unsummed cut grading
 
-Each ORIGINAL positive crossing sends (a,b) to (b+k,a-k), and
+Each original positive crossing sends (a,b) to (b+k,a-k), and
 each negative crossing sends it to (b-k,a+k). Thus every literal
 crossing term preserves the integer sum of positions, for each
 transfer separately. All original diagonal pivots, Cartan phases,
@@ -76,10 +76,10 @@ For any such finite array retain the matrix and two exterior tails
 Put U=sum_(a=0)^(N-2)E_(a+1,a), and use S_+f(a)=f(a+1),
 S_-f(a)=f(a-1). Exactly, with b,t still UNSUMMED,
 \[
- \begin{split}
+ \begin{aligned}
  C_N(S_+f)&=U^*C_N(f)U+f(N,b,t)E_{N-1,N-1},\\
  C_N(S_-f)&=UC_N(f)U^*+f(-1,b,t)E_{00}.             \tag{3}
- \end{split}
+ \end{aligned}
 \]
 Here star denotes the transpose partial shift in this basis,
 not an additional analytic Hermitian choice. General powers have
@@ -93,12 +93,12 @@ map unless its endpoint rows are included.
 
 The correct original relative cut source is
 \[
- \Phi_N^{\rm rel}(f)=\frac1N\left[
+ \Phi_N^{\mathrm{rel}}(f)=\frac1N\left[
        \operatorname{Tr}C_Nf+\sum_{a<0}f(a)+\sum_{a\ge N}f(a)\right]
                        =\frac1N\sum_{a\in\mathbb Z}f(a).          \tag{5}
 \]
 It annihilates the complete finite difference exactly, with b,t
-still unsummed. On the ORIGINAL kernel, whose support is in the
+still unsummed. On the original kernel, whose support is in the
 head window, it is the original normalized-average cut. For a
 Green current the two tail sums are part of the source. Replacing
 this by another high-color co-source because closed scalar periods
@@ -118,7 +118,7 @@ identity on the Fr block. Its trace on w=E_(N,0) is zero. But
 the original divided Fr matrices satisfy
 \[
        e^N w=N!E_{00},\qquad w e^N=N!E_{NN},
-       \quad\operatorname{Tr}_{\rm Fr}(e^Nw)=N!.     \tag{6}
+       \quad\operatorname{Tr}_{\mathrm{Fr}}(e^Nw)=N!.     \tag{6}
 \]
 With a literal head insertion H and pivot g_head the corresponding
 closed value is N! Tr(g_head H). A paired wall can therefore
@@ -139,12 +139,12 @@ Let (C,d) be the specified memory current complex, with the
 actual contraction (p,i,h) onto the degree-elevation image plus
 its retained wall complex:
 \[
-          I-ip=dh+hd,\quad pd=d_{\rm red}p,
-                                      di=id_{\rm red}.           \tag{7}
+          I-ip=dh+hd,\quad pd=d_{\mathrm{red}}p,
+                                      di=id_{\mathrm{red}}.           \tag{7}
 \]
 The explicit wall part is the already audited
 [Bockstein contraction](degree_elevation_complement_bockstein_wall.md).
-Let O_1,O_2 be consecutive ORIGINAL transported maps (crossings,
+Let O_1,O_2 be consecutive original transported maps (crossings,
 caps, projectors or source maps), and retain their actual current
 defects
 \[
@@ -157,12 +157,12 @@ same-base convention.
 
 There is the exact operator identity
 \[
- \begin{split}
+ \begin{aligned}
  pO_2O_1i-(pO_2i)(pO_1i)
-   &=d_{\rm red}H+Hd_{\rm red}
+   &=d_{\mathrm{red}}H+Hd_{\mathrm{red}}
        -p\Delta_2hO_1i+pO_2h\Delta_1i,\\
  H&=pO_2hO_1i .                                    \tag{9}
- \end{split}
+ \end{aligned}
 \]
 Proof: insert (7) between O_2 and O_1, move d past each O_j
 using (8), and use the two chain identities in (7). This proves
@@ -173,11 +173,11 @@ the entire weighted word.
 For the ACTUAL relative source/ket Lambda,Psi, its scalar residual
 is correspondingly
 \[
- \begin{split}
- &(\Lambda d_{\rm red})H\Psi+\Lambda H(d_{\rm red}\Psi)\\
- &\hspace{6mm}-\Lambda p\Delta_2hO_1i\Psi
+ \begin{aligned}
+ &(\Lambda d_{\mathrm{red}})H\Psi+\Lambda H(d_{\mathrm{red}}\Psi)\\
+ &\quad-\Lambda p\Delta_2hO_1i\Psi
                          +\Lambda pO_2h\Delta_1i\Psi .           \tag{10}
- \end{split}
+ \end{aligned}
 \]
 The first two terms are the specified endpoint/carry co-sources,
 not automatically zero. The other two are the inserted actual
@@ -253,7 +253,7 @@ Fr block its commutator is therefore entrywise multiplication by
 \[
                  H_{N,s}(q)-H_{0,t}(q),             \tag{12}
 \]
-an ORIGINAL rational unit of root value -2N. Inverting these
+an original rational unit of root value -2N. Inverting these
 entries gives a literal WHOLE wall extraction through the actual
 Cartan commutator. It uses neither delta division nor a guessed
 source comparison. The selected row remains the original one,
@@ -313,7 +313,7 @@ The later
 extends this to every actual cut matrix. Its two diagonal spectra
 and actual ordinary/divided F grid give a rational pole-free
 contraction End to its trace center, with an explicit homotopy for
-the ORIGINAL source. An independent proof audit checks the whole
+the original source. An independent proof audit checks the whole
 formula, absence of off-diagonal pollution, improved comb-path
 norm and two-word reduction. The root selected-source cost is
 O(N^(3/2)) for r=N. Its degree-one target is the actual image of

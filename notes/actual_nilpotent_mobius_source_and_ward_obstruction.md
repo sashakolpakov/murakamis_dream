@@ -2,10 +2,10 @@
 
 28 October 2026. A common fractional-linear change of the charged
 nilpotent anchors is an exact algebra automorphism. Its effect on the
-ORIGINAL source is computable. However, it does not provide a second
+original source is computable. However, it does not provide a second
 geometric framing integral: invariance of a homogeneous top-degree state
 is automatic, while the ordinary common action fails covariance with an
-ORIGINAL crossing. Its source-preserving weighted lift also has the wrong
+original crossing. Its source-preserving weighted lift also has the wrong
 nilpotent Jordan type to be the actual Hopf current on a head.
 
 This rules out that specific identification. It does not rule out a
@@ -16,7 +16,7 @@ network already satisfying its stated hypotheses.
 ## 1. Exact automorphism and source Jacobian
 
 Put d=N-1 and A_N=K[X]/(X^N), in characteristic zero. The source is
-the ORIGINAL functional lambda(P)=[X^d]P. For a!=0 define
+the original functional lambda(P)=[X^d]P. For a!=0 define
 
     phi_(a,c)(X)=aX/(1+cX) mod X^N.                    (1)
 
@@ -88,7 +88,7 @@ on 1,X,...,X^(N-2), and kills the separate socle X^d. At N=2 it is
 zero. The UNWEIGHTED substitution generator -X^2 partial_X likewise
 has blocks N-1 and 1, with the separate constant line instead.
 
-The ORIGINAL complete quantum E and F on one physical head have a
+The original complete quantum E and F on one physical head have a
 single Jordan block of size N. For F its consecutive coefficients in
 the actual balanced basis are 1-Q^(j+1), 0<=j<=N-2, all nonzero.
 The corresponding E coefficients are also nonzero along their whole
@@ -112,7 +112,7 @@ would have to be constructed and retained separately.
 ## 4. A literal original crossing fails common Mobius covariance
 
 This is also visible without a representation classification. Let B
-be the ORIGINAL positive checked crossing in the actual balanced
+be the original positive checked crossing in the actual balanced
 factorial basis and retain its common Cartan scalar kappa. Complete
 color means x=-q^(-1), Q=q^2, hence x^(-2)=Q. Its k=0 entries give
 

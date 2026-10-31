@@ -1,6 +1,6 @@
 # The positive face coefficient has one global saddle
 
-30 October 2026. Independently reviewed. The coefficient
+30 October 2026. The coefficient
 below has an exact compact torus integral and a uniform finite Gaussian
 asymptotic through both folded parities. The determinant contraction
 proves the global angular gap. This is a coefficient theorem; its
@@ -185,4 +185,4 @@ and mixed external filling colors remain distinct tasks. No filled-knot volume e
 
 Focused audit: [finite determinant contraction and original coefficients](../experiments/audit_actual_positive_face_coefficient_saddle.py), with [saved results](../experiments/actual_positive_face_coefficient_saddle_results.json). It checks 256 original matrix torus cases, 96 pair traces, and 16 literal tetrahedral-graph coefficients against exact finite Cauchy quadrature. Gaussian profile errors are diagnostics; the global graph-wide estimate is proved above.
 
-Two independent full analytical reviews: PASS. Both reviewers checked the finite PSD trace identity, global angular gap and primitive incidence, finite positive saddle, exact coefficient measure, relative Gaussian and absolute volume anchor. Independent fresh 85-digit replay and full audit-code review: PASS; coefficient quadrature error below 3.3e-86. The whole signed channel sum and external colors are not settled by this coefficient theorem.
+The coefficient theorem does not settle the whole signed channel sum or external colors.

@@ -22,7 +22,7 @@ the other output positions equal their input positions. Conservation
 then forces
 
 \[
- a_{\rm out}=a_{\rm in}.                                      \tag{1.1}
+ a_{\mathrm{out}}=a_{\mathrm{in}}.                                      \tag{1.1}
 \]
 
 This is an exact support equation, before taking a critical point or a
@@ -53,11 +53,11 @@ endpoints does not make them independent.
 
 ## 2. Exact rank-one obstruction at the geometric critical point
 
-Let \(H=\Log Q\), \(q=\exp(H/2)\), \(q_1=H a\), and
+Let \(H=\operatorname{Log} Q\), \(q=\exp(H/2)\), \(q_1=H a\), and
 \(\kappa_c=c+d\). The added leading boundary phase in (1.2) is
 
 \[
- g(q_1)=\Log(zw)\,q_1+\frac{\kappa_c}{2}q_1^2.                  \tag{2.1}
+ g(q_1)=\operatorname{Log}(zw)\,q_1+\frac{\kappa_c}{2}q_1^2.                  \tag{2.1}
 \]
 
 Its normalization \(G_N\) is independent of all internal variables.
@@ -68,7 +68,7 @@ The original geometric critical phase has a two-dimensional radical,
 the actual framed \(B_1\)-torsor. On its regular chart,
 
 \[
- A_{\rm cut}=\frac{M}{M+s},\qquad q_1=\log A_{\rm cut},
+ A_{\mathrm{cut}}=\frac{M}{M+s},\qquad q_1=\log A_{\mathrm{cut}},
 \qquad
  dq_1=-\frac{ds}{M+s}.                                        \tag{2.2}
 \]
@@ -85,7 +85,7 @@ have \(g'(q_1^*)=0\) on the chosen logarithmic sheet. Indeed \(dq_1\ne0\)
 there. At that point the full Hessian changes by
 
 \[
- H_{\rm new}=H_{\rm old}+\kappa_c\,dq_1\otimes dq_1.             \tag{2.3}
+ H_{\mathrm{new}}=H_{\mathrm{old}}+\kappa_c\,dq_1\otimes dq_1.             \tag{2.3}
 \]
 
 On the two-dimensional original radical, its matrix in the framing
@@ -98,8 +98,8 @@ coordinates is therefore
 Consequently \(\partial_r\) remains in the full Hessian kernel. If
 \(\kappa_c\ne0\), the old Hessian has exactly that two-dimensional kernel,
 and \(dq_1\) is nonzero on it, the new corank is exactly one. To check
-the last assertion, project \(H_{\rm new}v=0\) to the old cokernel;
-it forces \(dq_1(v)=0\), then \(H_{\rm old}v=0\).
+the last assertion, project \(H_{\mathrm{new}}v=0\) to the old cokernel;
+it forces \(dq_1(v)=0\), then \(H_{\mathrm{old}}v=0\).
 
 Thus a coherent Gaussian cut can generically remove one framing mode,
 but cannot remove both at an unchanged geometric critical point.
@@ -188,7 +188,7 @@ No endpoint term is discarded.
 
 The cyclic coefficient that was removed in (3.1) is also exact:
 \[
- \epsilon_{N-1}^{\rm cyc}
+ \epsilon_{N-1}^{\mathrm{cyc}}
    =q^{-1}x^{-1}(1-M^2)=M-M^{-1}.                             \tag{3.7}
 \]
 It is the original whole-meridian nilpotent endpoint defect, rather
@@ -297,17 +297,17 @@ and additive at \(M=1\); the finite flow (4.1) remains additive for
 all \(M\). They cannot be equated as whole meridian group schemes.
 In addition, unscaled \(e^{t\mathcal E}\) is an amplitude-scale flow
 in a semiclassical expansion. A finite canonical flow requires a
-generator divided by \(H=\Log Q\).
+generator divided by \(H=\operatorname{Log} Q\).
 
 There is a useful exact candidate at the special fiber:
 \(-\log(1+\mathcal E)\) is a finite nilpotent polynomial.
-Its principal cut symbol at \(M=1,\ p_{\rm cut}=1\) is
+Its principal cut symbol at \(M=1,\ p_{\mathrm{cut}}=1\) is
 \[
- -\log(1+e_{\rm cut})=-\log(1+s)=\log A_{\rm cut}.
+ -\log(1+e_{\mathrm{cut}})=-\log(1+s)=\log A_{\mathrm{cut}}.
 \]
 The already established geometric form obeys
 \[
- \iota_{V_J}\Omega_{\rm cut}=d\log A_{\rm cut}.
+ \iota_{V_J}\Omega_{\mathrm{cut}}=d\log A_{\mathrm{cut}}.
 \]
 This matches a scalar Hamiltonian on the framed chart. It does not
 prove that the full internal Ward action becomes \(V_J\), because

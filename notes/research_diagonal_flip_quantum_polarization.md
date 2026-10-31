@@ -1,6 +1,6 @@
 # Exact quantum polarization between diagonalizations of a MAIN quadrangulation
 
-31 October 2026. Internally reviewed research theorem; not published.
+31 October 2026. research theorem; not published.
 The full spectral source polynomials of all diagonal choices form an exact
 Newton-reversal orbit. Sections 9--11 prove this identity and the corresponding
 change of the original filled functional. Sections 1--6 distinguish it from
@@ -151,7 +151,7 @@ There is no general Kashaev descent identity supplied by a cover.
 This is a separate finite check with a proof for all integer exponents,
 not a numerical sample. At \(N=2\), put \(d=1\), \(q=i\), and
 \(\lambda=\exp(\pi i/4)\). The actual full pair algebra is
-\(\mathbb C[\Omega]/(\Omega^2)\). In the reviewed Newton basis put
+\(\mathbb C[\Omega]/(\Omega^2)\). In the Newton basis put
 
 \[
        B=\widehat B_1=-\Omega/4,\qquad B^2=0.
@@ -433,7 +433,7 @@ is invariant under a cyclic permutation.
 
 Fix the MAIN quadrangulation, one MAIN mark, and a reference choice
 \(D\) of all diagonals. For any choice let \(S_D(\sigma_1,\ldots,\sigma_R)\)
-be its ORIGINAL full marked spectral polynomial, with \(V_N(\sigma_e)\)
+be its original full marked spectral polynomial, with \(V_N(\sigma_e)\)
 at every port and all ordinary face targets retained. Each spectral
 degree is at most \(d\). There is no geometric or simplicity hypothesis
 in the following finite statement; the general Morse realization
@@ -544,9 +544,9 @@ in (13). A proof of the general volume conjecture from a maximal
 chart still needs a cancellation-aware analysis of (21), with the
 actual old peripheral action and its full source normalization.
 
-## Dependencies and review status
+## Dependencies
 
-The finite source inputs are the reviewed notes
+The finite source inputs are the notes
 [general Morse realization](research_matched_sphere_morse_source.md),
 [full pair commutant and original turn](actual_pair_casimir_commutant_and_rotated_trace.md),
 [full Newton turn and metric](actual_newton_turn_positive_gram.md),
@@ -554,15 +554,4 @@ The finite source inputs are the reviewed notes
 [original Gaussian/resolvent functional](actual_gaussian_resolvent_numerator_and_cap.md) in the notes directory.
 The geometric obstruction uses only the already identified complete
 volumes and the proved long-filling convergence, not a Kashaev
-asymptotic for a lower-capacity chart. The geometry reviewer independently
-read the full written sections 1--8 and passed the physical pairing,
-branched meridian determinant, distinguished peripheral tori, ambient
-homology, original nilpotent/Cartan normalization, full-Hermite kernel,
-same-knot turned-coupon transport, and exponential corner estimate.
-Root independently reviewed and passed sections 1--8 as well. Root and
-the geometry reviewer then each completed a full written analytical/source
-review of sections 9--11, including canonical lifts, unsupported grid
-zeros, both reflection symmetries, the spectral cube action, and the
-contragredient full-Hermite functional. All passed without mathematical
-corrections. No additional numerical audit is claimed or required by
-these finite identities.
+asymptotic for a lower-capacity chart.

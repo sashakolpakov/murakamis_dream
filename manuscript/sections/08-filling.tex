@@ -1,6 +1,10 @@
-\chapter{The whole filling period}\label{ch:filling}
+\chapter{Evaluating the complete oscillatory filling sum}\label{ch:filling}
 
-\section{The analytic inputs are now proved}
+The geometric saddle has now been identified, but the invariant is still the full finite sum over auxiliary colors in \eqref{eq:whole-filling-source}. This chapter proves that the saddle actually contributes to that sum with a nonzero coefficient, and that all other contributions are smaller. In particular, we do not infer the knot volume from the complete-color growth rate.
+
+We convert the exact Hermite interpolation coefficients into a Fourier expansion. Its integer indices are called charges. The zero charge vanishes by an exact boundary identity; the charges with absolute value one give the leading term. To justify that conclusion, we control both the infinite charge tails and the boundary integrals introduced by moving contours. The latter are the \emph{endpoint currents} mentioned below.
+
+\section{Replacing the color sum by its controlled local part}
 For the fixed diagram, Chapters~\ref{ch:alias} and \ref{ch:packet} give a global physical-color gap, an exponentially accurate separately even corridor packet, and a uniform holomorphic asymptotic. In this chapter write $b=H$ for the number of filled circles, $\varphi=\Phi_\eps$, and
 \[
  \varphi''(0)=2\pi\ii\diag(\tau_1,\ldots,\tau_b),\qquad
@@ -40,6 +44,8 @@ To prove it, reduce $\phi$ to $[\phi_0,2\pi-\phi_0]$ and use the rectangle in th
 The kernel equals $2\pi\ii/(e^{2\pi\ii z}-1)$. On the upper and lower horizontal sides the products with $e^{\ii\phi z}$ are bounded by $4\pi e^{-\phi\sigma N}$ and $4\pi e^{-(2\pi-\phi)\sigma N}$. On a vertical half-integer side the bound is $2\pi e^{-\phi_0|\Im z|}$. Choose $\sigma$ first so that $B\sigma^2$ is smaller than both half the horizontal loss and half the real boundary loss. All four sides then have a strict exponential gap. This proves \eqref{eq:noncentral-Fourier}; fixed derivatives are treated by the factor $h^r$. The argument is uniform in the other real colors and in a smaller complex neighborhood of any remaining parameters.
 
 \section{The total derivative and the zero-charge cancellation}
+
+The derivative terms in Hermite interpolation are especially important at this step. Together with the values at the roots, they combine into one total derivative on a finite midpoint grid. This exact identity determines the endpoint behavior and removes the zero Fourier mode. It is proved before any stationary-phase approximation is made.
 The exact Fourier--Hermite interpolation of Appendix~\ref{app:fourier} has a useful combined form. In one color, for the normalized power $r_N^{2P}$, put
 \[
  U_N(z)=e^{2\pi\ii PNz^2}\sinh(2\pi\ii z)\mathcal F_N(z),\qquad
@@ -79,6 +85,8 @@ Taking $P_\ell=-p_\ell$ in every color and restoring the Cartan factors gives th
 This is a sum of commuting color-register functionals. No physical box is commuted through another box.
 
 \section{Uniform charge tails and their endpoint currents}
+
+A Fourier series can converge for each $N$ without having a tail estimate uniform enough for an exponential limit. We therefore bound the tails directly. Moving the interval downward or upward adds two vertical boundary segments. Their difference vanishes to second order at height zero; this cancellation produces a summable power of the charge. We retain the pair together rather than discard either boundary segment.
 Absolute convergence at each $N$ is not a uniform exponential tail estimate. We prove the latter before using a Gaussian approximation. By \eqref{eq:noncentral-Fourier}, $\mathcal F_N$ and its first few derivatives are exponentially small on fixed complex strips based at $z=\pm1/2$. Fix a small strip height $\sigma$ using only this source estimate.
 
 For $m>0$, shift the one-dimensional Fourier integral down by $\sigma$. On the horizontal side the source's physical support gives a bound with exponent
@@ -135,6 +143,8 @@ Exact half-grid cotangent rectangles applied to \eqref{eq:finite-Fourier} turn i
 This argument applies to the exact $C_N$, not to a pointwise real-grid approximation whose error might have uncontrolled Fourier behavior.
 
 \section{Local charges for independently signed slopes}
+
+After the tail estimate, only finitely many charges remain for the fixed filling tuple. Their saddles must be compared uniformly when the filling integers have different signs and magnitudes. We use the reciprocal slopes $1/p_\ell$ and the ratios $m_\ell/p_\ell$ as independent parameters. This gives one neighborhood in which the saddle equations and the charge comparison are valid, instead of assuming the slopes are comparable.
 For a nonzero integer vector $\mathbf m$, define
 \[
  T_{\mathbf m}(\mathbf z)=\Psi(\mathbf z)

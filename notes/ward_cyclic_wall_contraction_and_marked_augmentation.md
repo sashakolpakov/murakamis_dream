@@ -90,7 +90,7 @@ and the checked positive core is D u_N(aJ_+ tensor J_-) with
 a=x^(-1). The output marked row is mu_y. The Gaussian D depends
 only on the second head, so it commutes with F_rel as a typed map.
 
-Since T p=0, the ORIGINAL marked resolvent is exactly
+Since T p=0, the original marked resolvent is exactly
 
     mu_y D R_T,in(t) p=1/t.                               (4)
 
@@ -130,7 +130,7 @@ and put
 
     c_r=mu_y D S^r p, 0<=r<N, c_0=1.
 
-The ORIGINAL cyclic residues are exactly
+The original cyclic residues are exactly
 
     w_j=Res_(beta_j) g_mu(t)dt
        =(1/N)sum_(r=0)^(N-1)c_r Q^(-jr),

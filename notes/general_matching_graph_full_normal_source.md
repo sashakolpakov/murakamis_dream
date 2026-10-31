@@ -65,7 +65,7 @@ ordering of all black vertices below all white ones. Cups/caps and
 actual head reversals are retained at every bend. One does not replace
 a cyclic turn by an unclocked index permutation.
 
-Let Z_Delta(j) denote the contraction in (3) with the ORIGINAL exposed
+Let Z_Delta(j) denote the contraction in (3) with the original exposed
 physical mark, after removing only the displayed scalar factors in (1).
 Multilinearity of the actual ordered coupon word gives
 
@@ -273,10 +273,4 @@ disjoint half twists commute with this product. These exact zeros are
 not being presented as hyperbolic counterexamples. The audit tests
 the finite source identity even on such degenerate diagrams.
 
-Independent source-transport and character/current reviews: both full
-analytical reads and fresh audit replays PASS. They checked the
-regular all-label lifts, actual cup constants and gamma, exposed
-physical mark, trace-normal sign, lift independence and the full
-finite summation. The even-zero fixture was checked as the stated
-parallel-circle obstruction. Neither review infers nonvanishing,
-a selected geometric branch or a general asymptotic from (10).
+The even-zero fixture is the stated parallel-circle obstruction. Formula (10) does not imply nonvanishing, select a geometric branch, or give a general asymptotic.

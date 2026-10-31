@@ -95,4 +95,4 @@ and [results](../experiments/actual_conway_full_filling_component_obstruction_re
 The proof of (1)--(2) is the all-expression component-preservation
 induction, not an extrapolation from the finite samples.
 
-Primary-agent analytical review checked the two permanent internal main circles in every seed, their preservation under turns/stacks, and the identity permutation of every full-twist filling. The resulting link-only scope is independent of source asymptotics.
+Every seed has two permanent internal main circles. Turns and stacks preserve them, and full-twist filling has the identity endpoint permutation. Thus the resulting link-only scope is a topological fact, independent of source asymptotics.

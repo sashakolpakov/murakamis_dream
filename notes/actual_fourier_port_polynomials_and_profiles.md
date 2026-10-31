@@ -1,6 +1,6 @@
 # Exact physical port polynomials and global conditional angular profiles
 
-28 October 2026. The ORIGINAL four-full-Psi crossing has exact
+28 October 2026. The original four-full-Psi crossing has exact
 finite-band Laurent-polynomial interpolants in each port, while the
 other three ports stay on their specified correlated grids. These
 are the actual finite Fourier interpolants, with their entire source
@@ -51,10 +51,10 @@ its original kappa and every fixed central factor. It is explicitly
 the four-full-Psi expression (14) of the linked theorem; every grid
 entry is nonzero on its regular torus.
 
-## 2. The exact ORIGINAL finite-band interpolants
+## 2. The exact original finite-band interpolants
 
 Write (v;Q)_L=product_(r=0)^(L-1)(1-Q^r v).
-For a single variable Z and all other ports fixed on the ORIGINAL
+For a single variable Z and all other ports fixed on the original
 grids, define the following Laurent polynomials:
 
     P0(Z)=Z^m (z1/(xZ);Q)_(N+m-1),
@@ -73,14 +73,14 @@ They have the exact physical spectra
 | output z7 | positive | 0,...,-m |
 
 Every coefficient inside the stated interval is nonzero. Each
-interval is contained in the ORIGINAL head band 0,...,N-1.
+interval is contained in the original head band 0,...,N-1.
 
 Choose any fixed grid value Z_* for the port under consideration.
 Then its exact original Fourier interpolation is
 
     g_port(Z)=M(Z_*) P_port(Z)/P_port(Z_*).              (3)
 
-This preserves the full ORIGINAL scalar. M(Z_*) is a known explicit
+This preserves the full original scalar. M(Z_*) is a known explicit
 local four-full-Psi value, not an unknown knot period. P_port(Z_*)
 is nonzero since its root central argument is not one. No new
 normalization is introduced by (3).
@@ -136,7 +136,7 @@ For input z1, beta+(d0-b)=G=kh. Full inversion gives
        =zeta exp[pi*i*(sqrt(N)beta/(2pi)-c_b)^2]
               *(Q^(k+1)exp(-beta);Q)_(N-k).
 
-Combining its Gaussian with the ORIGINAL kernel Gaussian leaves
+Combining its Gaussian with the original kernel Gaussian leaves
 exp(-N beta), times a factor independent of b. On the old grid
 exp(-N beta) is a known fixed central scalar. Retaining that
 scalar gives precisely P1. This is the integer alias +N b;
@@ -204,7 +204,7 @@ nonzero central compacta, uniformly in every spectator label
 and h. Their explicit Gaussian and monomial phases can still
 carry a leading oscillatory action; tameness is not positivity.
 
-Here is an independent all-level proof directly from ORIGINAL
+Here is an independent all-level proof directly from original
 coefficients. For the positive over-pair extract over-input
 physical frequency h and over-output frequency zero. Since the
 chosen Pin starts with Z^(-h) and Pout with 1, this coefficient
@@ -276,7 +276,7 @@ after the just-proved fixed aliases, are
 
 Every one belongs to (0,1), uniformly away from its ends
 on every compact positive chamber. At the regular octahedron
-they are (3/4,1/4;3/4,1/4). This agrees with the ORIGINAL
+they are (3/4,1/4;3/4,1/4). This agrees with the original
 finite-head indices, not an independently selected wave packet.
 
 Equivalently, the exact global linear alias of the original
@@ -319,7 +319,7 @@ For input z0 and output z6 use H with the sum of the two
 other relevant positive angles; for input z1 and output z7
 use J with the fixed sum of their two varying positive angles.
 By (8) these are the true leading logarithmic modulus
-profiles of the ORIGINAL finite polynomials on the whole circle.
+profiles of the original finite polynomials on the whole circle.
 Explicitly, (2pi/N)log|g_port| equals its H_delta or J_delta
 profile, plus an angularly constant normalization and
 O_K(log N/N). The profile itself is not divided by 2pi.
@@ -391,7 +391,7 @@ cycle selection, compatible elimination order, and the
 retained cap/boundary source still need a proof.
 
 The [audit](../experiments/audit_actual_fourier_port_polynomials.py)
-checks (2)--(3) against independently evaluated ORIGINAL
+checks (2)--(3) against independently evaluated original
 crossing matrices and their Fourier transforms, every
 allowed k/m frequency support and scalar normalization,
 and the analytic adapter and profile estimates.

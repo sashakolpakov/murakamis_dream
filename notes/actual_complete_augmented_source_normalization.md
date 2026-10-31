@@ -1,6 +1,6 @@
 # Complete augmented-link source normalization: no hidden exponential factor
 
-29 October 2026. At the ORIGINAL boundary-parabolic complete color,
+29 October 2026. At the original boundary-parabolic complete color,
 the marked raw augmented-link period differs from its reduced
 zero-framed quantum/Kashaev evaluation only by a unit phase. The
 full one-cut ADO modified evaluation has the additional EXACT factor
@@ -176,7 +176,7 @@ its permutation gives w congruent to b-c modulo2. Hence
 
 \[
  F_{\mathrm{red}}^{\mathrm{ADO}}(L)
-     =(-1)^{d(c-1)}\langle L\rangle_N                  \tag{6}
+     =(-1)^{d(c-1)}\langle L\rangle_{N}                  \tag{6}
 \]
 
 in those two explicitly specified enhanced-framing conventions.
@@ -197,7 +197,7 @@ constant. They are not counted a second time in chi.
 
 ## 4. What this closes, and its precise limit
 
-For the ORIGINAL one-cut enhanced Kashaev link evaluation, the
+For the original one-cut enhanced Kashaev link evaluation, the
 full raw-period asymptotic has EXACTLY the same absolute value
 and exponential rate. For the full modified ADO evaluation it
 has the factor1/N and the phase in (4); its leading N-power must

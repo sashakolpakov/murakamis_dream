@@ -1,6 +1,6 @@
 # Spectral and physical-color propagation through mixed Conway cores
 
-31 October 2026. Internally reviewed source theorem. This proves the sharp
+31 October 2026. source theorem. This proves the sharp
 canonical spectral envelope and hereditary physical-color gap for an
 unflagged component, at its actual closed-probe action. Together with the
 proved decorated-character estimate, it gives a mutual induction through
@@ -290,7 +290,7 @@ so this induction never inserts an artificial character or rate budget.
 For a closing original character, the existing exact Fourier theorem
 now supplies its own far-color loss and the norm bounds supply all
 other color losses. The complementary-color expansion can then restore
-the original all-core packet, as in the previously reviewed assembly.
+the original all-core packet, as in the assembly.
 Those final source and marked-filling adapters are not re-proved here.
 The analytic induction uses the separately proved coefficient-cone theorem
 and the original reduced-hub typing; it does not assume a prior full
@@ -301,19 +301,8 @@ physical signs, levels and finite targets remain original. The input
 and output constants may depend on the fixed finite component, and no
 claim is uniform over trees whose size grows with \(N\).
 
-## Internal review and preservation
+## scope and preservation
 
-The primary reviewer and the independent source reviewer each read all
-five proof sections and passed the analytical/source review. Their checks
-included the extension to every compact regular index interval, exact
-normal-preserving probe weights, canonical good/bad decomposition and
-Hermite interpolation, propagation of a local coefficient deficit through
-the original clean state, and the mutual induction without an assumed
-signed mixed-source bound. The cone theorem received an independent full
-review in the opposite direction.
+The mutual induction uses exact normal-preserving probe weights and the canonical good/bad decomposition. It does not assume the signed mixed-source bound that it proves.
 
-The upper-envelope wording in §2 records that arbitrary input arrays may
-vanish; no lower coefficient rate is asserted. The original private proof
-is preserved. These are internal analytical reviews, not external peer
-review or formal whole-proof verification. Native MathML, link and control
-checks validate preservation only. No numerical asymptotic is a proof input.
+An arbitrary input can vanish. The propagation argument does not give a lower coefficient rate.

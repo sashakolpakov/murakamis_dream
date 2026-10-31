@@ -283,11 +283,4 @@ and [results](../experiments/actual_positive_source_bloch_regulator_results.json
 The identities are uniform symbolic exterior-algebra calculations;
 finite numerical volumes are not used in their proof.
 
-Independent internal review: the primary agent read the full proof,
-independently expanded the conjugate-shape boundary and stationarity
-factorization, checked the five-term differential normalization and
-rational field scope, and replayed the symbolic audit successfully.
-The additional descent to the conjugation-stable shape field was
-checked separately: it uses exterior-square injectivity, not an
-unproved assertion that Bloch groups inject under field extension.
-The review leaves the marked manifold-class comparison open.
+Descent to the conjugation-stable shape field uses exterior-square injectivity. It does not assume that Bloch groups inject under field extension. The marked manifold-class comparison remains open.

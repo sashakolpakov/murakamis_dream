@@ -257,7 +257,7 @@ because h is a cut contraction, not a product of crossing norms.
 There is no claim of an N-independent complex neighborhood on
 which every whole rational unit has this root bound.
 
-The ORIGINAL root correlated coupon e_D is an orthogonal rank-one
+The original root correlated coupon e_D is an orthogonal rank-one
 projector in this hybrid metric: its selected source has squared
 norm sum_R binom(N,R)=2^N, and its original dual is that metric
 dual divided by 2^N. Consequently its functional norm is one.
@@ -269,7 +269,7 @@ a polynomial source-homotopy bound, INCLUDING the old memory wall.
 The full external modified-dimension line multiplies both sides
 and is never suppressed. A source comparison through some other
 nonunitary whole gauge requires its own norm adapter; the present
-bound concerns the specified actual hybrid frame. The ORIGINAL
+bound concerns the specified actual hybrid frame. The original
 controlled root head-shift/Fourier matrix with its literal 1/N
 normalization is a scalar N^(-1/2) times a unitary map. Its
 conjugation is therefore isometric, so simultaneous transport of

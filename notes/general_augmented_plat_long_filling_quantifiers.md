@@ -166,7 +166,7 @@ of essential marked disks. Two adjacent same-pair blocks can satisfy
     R^(2p) R^(-2p+2c)=R^(2c)
 
 with fixed c while both apparent twist counts grow. This identity holds
-in the ORIGINAL source, with its Cartan factor and marked closure. It
+in the original source, with its Cartan factor and marked closure. It
 motivates merging redundant regions and certifying the drilled topology;
 it does not disprove a uniform threshold inside the certified essential
 class.
@@ -177,9 +177,4 @@ parity and independently long signed full twists. It is not a claim that
 every k-bridge knot already lies in that long-twist class, nor that the
 full volume conjecture for that class has now been proved.
 
-Root analytical review: checked the holomorphic cusp divisibility,
-invertible Jacobian, one fixed parameter polydisk, coordinatewise bounds,
-exact partial-filling locus and every inherited hypothesis of the cited
-geometric completion theorem. The geometric threshold is proved under
-the marked positive certificate. The quantum threshold remains conditional.
-No additional finite audit is needed for this direct assembly corollary.
+The geometric threshold assumes the marked positive certificate. The quantum threshold also requires the stated source estimates.

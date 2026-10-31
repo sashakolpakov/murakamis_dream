@@ -20,7 +20,7 @@ Let s>=3 be odd, with boxes on adjacent head pairs
 
     S={(1,2s),(2,3),(4,5),...,(2s-2,2s-1)}.
 
-The outer top pair (1,2s) has the ORIGINAL marked row m; all other
+The outer top pair (1,2s) has the original marked row m; all other
 top pairs have the original ordinary cap ell. Put d=N-1,
 q=exp(pi i/N), Q=q^2, x=q^d, and retain the original common Cartan
 kappa=q^(d^2/2). Use the original physical pair operators R and L=L_N.
@@ -140,7 +140,7 @@ I_h=[max(0,h),min(d,d+h)], T=d+a-a', then
 
 \[
  M_i^h[a,a']=x^{-2a+h}
-   \sum_{j\ {\rm admitted\ at}\ T}
+   \sum_{j\ {\mathrm{admitted\ at}}\ T}
        h_{T,j}(\kappa\nu_j)^{e_i}
        v_{T,j}(a-h)\overline{v_{T,j}(d-a')}.             \tag{8}
 \]
@@ -201,7 +201,7 @@ settles arbitrary untwisted fully augmented diagrams.
 
 There is a stronger, source-exact check than merely observing that the
 two permutations in Section 2 are different. Set N=3, s=3, and every
-e_i=0, with the ORIGINAL cups and the one marked cap as in Section 1.
+e_i=0, with the original cups and the one marked cap as in Section 1.
 For ANY factor F satisfying FF^dagger=H, the actual packet Gram is
 
 \[

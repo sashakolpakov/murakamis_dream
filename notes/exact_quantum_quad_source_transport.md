@@ -4,7 +4,7 @@
 of a pointed cyclic source into its positive quad rotation. Its
 coefficient is nonzero and polynomially bounded on fixed-log root
 trajectories. This alone is not the required global bridge: that
-source parameter is a source-flag cross-ratio, and the ORIGINAL
+source parameter is a source-flag cross-ratio, and the original
 crossing has nilpotent finite-head walls.
 
 Those walls admit a useful global reduction. Each actual two-head
@@ -95,7 +95,7 @@ It supplies the entire identity operator's period as well.
 Apply (4) to all `3m` literal transfer Euler slots in the full
 `9m`-curve original-word representation. Every other factor,
 including the six factorial coefficient functionals per crossing,
-Gaussian diagonals and ORIGINAL cap, remains unchanged.
+Gaussian diagonals and original cap, remains unchanged.
 Multilinearity gives an exact sum of at most `2^(3m)` cyclic
 cross-wall sewing networks. The auxiliary head of each sewing
 map is its existing total-index residue; no number of new
@@ -135,7 +135,7 @@ in h,N. Thus the sewing matrix has an actual accretive gauge
 in the natural endpoint scale. This does not make the full
 complex contraction positive or remove its cyclic poles.
 
-Those pole corrections can be seen by the ORIGINAL cap itself.
+Those pole corrections can be seen by the original cap itself.
 At N=2,M=1,Q=-1,x=i, the opposite-root u realization has a=i
 and the actual Gaussian D is I. Keep the actual fusion C and
 the averaged original two-head pivotal cut with pivots `(-i,i)`.

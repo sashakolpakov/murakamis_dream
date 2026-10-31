@@ -1,6 +1,6 @@
 # A source-preserving polynomial-cost filling of a simple transfer seam
 
-28 October 2026. In the ORIGINAL coherently summed physical crossing,
+28 October 2026. In the original coherently summed physical crossing,
 a transfer-clock-one seam can be filled on its zero side without
 discarding any endpoint residue. The closed half-integer contour can
 be extended across a fixed small negative classical-transfer collar.
@@ -35,7 +35,7 @@ is
     r_0=kappa x^(-a-b)Q^(ab), c=x Q^(-b).              (1)
 
 Every power in (1) has its specified logarithm. At physical integers
-a,b,z this is the ORIGINAL coefficient with output(b+z,a-z), including
+a,b,z this is the original coefficient with output(b+z,a-z), including
 its source normalization. The exact equality with the same full-Psi
 completion is in [the normalization comparison](actual_factorial_full_psi_identity.md).
 No bare compact Euler function is substituted outside its valid disk.
@@ -157,7 +157,7 @@ factorial collision can cancel the zero used in Section 3. For example
 at b=0 the ratio Fhat(b+z)/Fhat(z) is identically one; at a=d the
 factor Fhat(a-z) meets a zero across z=-1, so its reciprocal has a pole.
 The scalar density can then retain cotangent poles. This scalar proof
-does not remove them. Keeping the ORIGINAL physical output Fourier
+does not remove them. Keeping the original physical output Fourier
 projection instead supplies the additional zeros counted in the
 [projected completion](actual_projected_transfer_cot_completion.md),
 which proves all newly enclosed NEGATIVE cotangent poles removable,

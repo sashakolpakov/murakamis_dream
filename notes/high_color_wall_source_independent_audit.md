@@ -6,8 +6,8 @@ passes independently, including its generic source germ and signed
 crossing/closure comparison. No additional test rerun was needed.
 
 The constant beta gauge gives precisely
-\(E=(-1)^rE_{\rm St}\), \(F=F_{\rm St}\),
-\(K=(-1)^rK_{\rm St}\) on every block, while retaining the
+\(E=(-1)^rE_{\mathrm{St}}\), \(F=F_{\mathrm{St}}\),
+\(K=(-1)^rK_{\mathrm{St}}\) on every block, while retaining the
 block-dependent unrolled H. The root Gaussian evaluation yields
 \[
  \mathsf Fw_{k,s}=(k+1)w_{k+1,s},\qquad
@@ -18,9 +18,9 @@ Thus the stated normalization gives the ordinary irreducible
 decompositions must remain distinct.
 
 The two regularized between-block edges are also correct:
-F gives \(\rho^{-1}f_{\rm cl}\otimes E_{0,N-1}\),
+F gives \(\rho^{-1}f_{\mathrm{cl}}\otimes E_{0,N-1}\),
 and E gives
-\((-1)^{r+1}\rho^{-1}e_{\rm cl}\otimes E_{N-1,0}\).
+\((-1)^{r+1}\rho^{-1}e_{\mathrm{cl}}\otimes E_{N-1,0}\).
 The first \(h=\log(q/q_N)\) factors follow from
 \(1-Q^N=-2Nh+O(h^2)\); the N is essential.
 
@@ -58,7 +58,7 @@ The remaining one-dimensional shift constants cancel against
 the retained pivot/twist by knot parity. Thus the original
 reduced Kashaev scalar is retained exactly.
 
-Finally, \(M_{\rm high}=(-1)^r\) at the root, and the full
+Finally, \(M_{\mathrm{high}}=(-1)^r\) at the root, and the full
 modified-dimension adapter is
 \((-1)^{r(N-1)}\), indeed one for r=N.
 The old external ADO line remains the appropriate one.
@@ -235,7 +235,7 @@ R or internal Gaussian currents remains a separate theorem.
 
 The revised hybrid-metric conclusions in
 [the clock/current source audit](frobenius_clock_and_internal_centralizer_map.md)
-Sections 7--8 also pass independently. Keeping the Fr binomial
+Sections 7--8 retain the distinction between the two head metrics. Keeping the Fr binomial
 metric and OLD flat head metric makes G unitary and the original
 Fourier/N scalar-unitary, so their conjugation is exactly isometric.
 The selected coupled e_D is then an orthogonal rank-one projector.

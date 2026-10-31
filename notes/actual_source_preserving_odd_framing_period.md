@@ -1,6 +1,6 @@
 # A source-preserving odd framing period
 
-30 October 2026. Independently reviewed. A specified difference
+30 October 2026. A specified difference
 of the two nearest physical bands, with its exact quantum coefficient,
 has the SAME normalized value as the original complete invariant.
 Its normalization is nonzero at every level and costs only O(N) on
@@ -163,12 +163,12 @@ Directly conjugating by F gives
 
     p_e=(R-1)/R,             k-1=(c/s)R(1-R).            (10)
 
-On its regular chart R!=0,1 and k-1!=0, the underlying ORIGINAL
+On its regular chart R!=0,1 and k-1!=0, the underlying original
 marked scalar density is
 
     Omega_src=(c_D/s) dr wedge dLog A_cut, c_D!=0.        (11)
 
-The factor c_D is independent of the framing point; the ORIGINAL
+The factor c_D is independent of the framing point; the original
 marked source and transverse Gaussian normalization is in it. The
 full channel Gaussian, when included under its proved hypotheses,
 changes it by its retained nonzero factor, not an assigned unit.
@@ -290,16 +290,6 @@ expanded audit also checks the exact inverse-clock residue identity,
 samples; the largest real-part error is 2.02e-77. These samples
 retain the stated underlying-form scope.
 
+The statement concerns the genuine first trace normal and the underlying forms in (13a,b), with the coherent base weight retained.
 
-Independent full analytical review and fresh original-source replay: PASS.
-The reader checked the exact band source, all-level normalization, genuine
-first-trace-normal scope and local residue formulas. Subsequent targeted
-review also checked the retained coherent base weight and the precise
-underlying-form scope of (13a,b).
-
-Independent geometric/source review: PASS, including the actual Hurwitz
-route, physical momentum, all residue signs, coherent base co-source,
-and the explicitly limited half-index sampling corollary.
-
-Primary-agent full analytical review and fresh expanded audit replay:
-PASS, including (13a,b), with every reported count reproduced.
+The half-index sampling corollary has only the stated limited domain.

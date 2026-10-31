@@ -505,14 +505,4 @@ construction, symbolic identities and first variation above.
 The range audit also verifies all shifted factorial arguments, exact
 quarter-grid endpoint insets and the <=N positive-term count in (19).
 
-Independent internal review: root read the full argument and supplied
-the exact regular-end cap inequalities used in section 4. The
-crossing/source agent independently read the complete analytical proof
-and replayed the permanent audit: PASS, including the selected
-positive-length sheet, compactness, ideal calibration and source scope.
-These are internal research audits, not external peer review or a
-general four-port/graph energy theorem.
-The uniform scalar consequence (19) was additionally checked against
-the supported Racah theorem by the source agent, including its exact
-half-step shifts and boundary-uniform constants. It does not extend
-that theorem's low-fold jet estimate to the retained partner current.
+The four-port theorem has the stated selected positive-length sheet and source scope; it is not a general graph-energy estimate. The scalar consequence (19) uses the supported Racah theorem with its half-step shifts and boundary-uniform constants. It does not extend the low-fold jet estimate to the retained partner current.

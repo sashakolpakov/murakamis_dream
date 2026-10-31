@@ -1,30 +1,42 @@
-# Research guide sources
+# Sources for the research guide
 
-`chapters/` contains the readable guide. `figures/` contains editable TikZ sources and their compiled figures. `collections.json` defines the research library's seven reading routes, entry arguments, and supporting notes. `catalog.json` adds explicit topic and status labels to selected technical notes; uncatalogued notes retain the neutral “See note” status.
+This directory contains the readable account of the results and their proofs. The guide starts with the knot invariant and the class of diagrams covered by the theorem, explains how the quantum estimates and hyperbolic geometry fit together, and separates those results from questions that remain open.
 
-Read the guide as chapters: [overview](chapters/index.md), [results](chapters/results.md), [mechanism](chapters/mechanism.md), [geometry](chapters/geometry.md), [frontier](chapters/frontier.md), [notation](chapters/notation.md), and [audits](chapters/audits.md). The published [research library](https://sashakolpakov.github.io/murakamis_dream/library.html) is the thematic entrance to the detailed work.
+The main theorem now applies to every fixed strict Conway composition tree with sufficiently long independent signed twist weights, provided its actual endpoint pairing gives a knot. For this class, estimates for the full quantum sum and a nonzero geometric contribution are proved. The resulting limit is the volume of the actual knot complement. A further corollary writes the same limit through a genuine quantum \(A\)-operator with fixed finite initial data, or through a positive determinant ratio. The guide does not assert a theorem for all knots, arbitrary short twists, or all arborescent presentations.
 
-Each diagram in the guide includes links to its scalable SVG, print-ready PDF, and editable TikZ source.
+Read the chapters in this order: [overview](chapters/index.md), [results](chapters/results.md), [how the proof works](chapters/mechanism.md), [the geometric volume](chapters/geometry.md), [remaining questions](chapters/frontier.md), [notation](chapters/notation.md), and [reproduction](chapters/audits.md). The [research library](https://sashakolpakov.github.io/murakamis_dream/library.html) then provides reading routes into the detailed proofs. A link to a technical note identifies the precise statement used; the note remains authoritative for its hypotheses and conventions.
 
-The [figure gallery](figures.md) gathers the diagrams with explanations and links to the chapters that use them. It is built as a separate reference page, leaving the seven-chapter reading sequence intact.
+## Files and diagrams
 
-From the repository root, rebuild in this order:
+The chapter sources are in the chapters directory. The figures directory contains editable TikZ drawings and their PDF, SVG and PNG versions. The [figure gallery](figures.md) explains what each diagram represents and links it to the relevant chapter. A schematic diagram illustrates a construction; it is not a substitute for its labeled face-pairing or analytic proof.
 
-```sh
-# Only when TikZ sources change; requires pdfLaTeX with TikZ and PyMuPDF.
-python3 tools/render_figures.py
+The file collections.json organizes the technical library into reading routes. The file catalog.json records topic and status descriptions where these have been supplied. An uncatalogued note has the neutral label “See note”; absence of a catalog entry does not change its mathematics. The original notes and experiments directories stay in place so existing proof and script links remain usable.
 
-# Requires Pandoc; copies the compiled figures into the site.
-python3 tools/build_book.py
-python3 tools/check_book.py
-```
+## Rebuilding the guide
 
-PyMuPDF is an optional documentation dependency; install it with `python3 -m pip install PyMuPDF` in your Python environment. Reading the committed guide requires none of these build dependencies.
+Reading the committed guide needs no build software. To rebuild it from the repository root, use:
 
-The check verifies local navigation, image assets, and that every technical note is indexed. Rebuild and check the guide whenever notes or chapters are added or changed, before publishing the updated snapshot.
+    python3 tools/build_book.py
+    python3 tools/check_book.py
 
-The original `notes/` and `experiments/` paths remain stable. The generated site provides topic navigation, full-text note search, and a separate audit/data archive without moving those dependencies.
+The build requires Pandoc. It converts the formulas to native MathML and copies the figure assets into the static site. The check examines local navigation, image assets and the technical-note index. It checks the publication structure, not the truth of the mathematical proofs.
 
-To maintain the organization, add an entry to `collections.json` only when it helps a reader follow a research route; place an explicit topic/status in `catalog.json` when its scope has been checked. The builder links a note to `audit_<note-stem>.py` and `<note-stem>_results.json` when those exact files exist. This is a navigation relationship, not a claim that a computation proves the note.
+When a TikZ figure changes, regenerate its PDF, SVG and PNG first:
 
-Archive browsing loads `assets/browse.json`, a short metadata index. Full-text search loads `assets/search.json` on demand. Query, type, and topic filters are retained in the URL, so a filtered archive can be bookmarked or shared.
+    python3 tools/render_figures.py
+    python3 tools/build_book.py
+    python3 tools/check_book.py
+
+Figure rendering requires pdfLaTeX with TikZ and the optional Python package PyMuPDF. The latter can be installed in a suitable environment with:
+
+    python3 -m pip install PyMuPDF
+
+The generated site can be inspected locally with:
+
+    python3 -m http.server 8000 --directory docs
+
+## Maintaining the library
+
+Add a reading-route entry when it helps explain a sequence of arguments, and give a status description only with the scope of the linked result in view. The builder can associate a note with a correspondingly named audit script and result file. That association makes the computation reproducible; it does not mean a finite computation proves an asymptotic theorem.
+
+Archive browsing uses a small metadata index. Full-text search loads its larger index only when requested. Search and topic filters are stored in the URL, so a selected part of the library can be shared without moving any underlying files.

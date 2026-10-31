@@ -14,7 +14,7 @@ whole-knot energy estimate is inferred.
 
 ## 1. The unchanged original current and factorial identity
 
-Use N>=2, q=exp(pi*i/N), Q=q^2, d=N-1 and the ORIGINAL complete
+Use N>=2, q=exp(pi*i/N), Q=q^2, d=N-1 and the original complete
 balanced head. Put
 
     Ecal|a>=(Q^-a-1)|a-1>,
@@ -48,7 +48,7 @@ Let
     G=diag(G_a).
 
 Exact root complementation gives G_a G_(d-a)=1. Thus G on both
-legs fixes every ORIGINAL cup and ordinary cap, and the full marked
+legs fixes every original cup and ordinary cap, and the full marked
 co-source after its permitted whole-network degree restriction,
 as in [the weighted physical Fourier theorem](actual_weighted_fourier_plat_energy.md).
 The original pivots commute with G. No exponential condition number

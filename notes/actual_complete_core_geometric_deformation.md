@@ -1,6 +1,6 @@
 # The complete Fourier core and the actual marked geometric deformation
 
-30 October 2026. Independently reviewed and frozen. The exact complete-image
+30 October 2026. The exact complete-image
 Fourier core has the volume rate of the actual nearby marked geometric
 representation when its small external deficits are real. For complex
 deficits the explicit peripheral boundary correction is retained. The
@@ -308,13 +308,4 @@ their marked-line limit; those checks are not replaced here.
 The algebraic-germ corollary follows from the proved Jacobian and
 finite-type equations, rather than from these numerical fixtures.
 
-Independent review: the coherent source reviewer read the entire proof,
-including the original Morse presentation dependency, literal collar
-marking, real/complex rate statement and selected algebraic-germ scope.
-Its fresh redirected audit reproduced every reported count and residual.
-The cluster source reviewer independently checked the global group and
-regulator assembly with the now-proved primitive collar as its explicit
-input. Root independently checked the complete proof and audit code and
-freshly reproduced the focused audit. All reviews retain the distinction
-between this exact complete-image core and the unresolved ordinary-color
-subset and long-filling estimates.
+The theorem concerns the exact complete-image core. Ordinary-color subsets and long-filling estimates are separate requirements.

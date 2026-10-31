@@ -1,6 +1,6 @@
 # A triangle upper bound for every one-sided relative-energy coefficient
 
-31 October 2026. **Independently reviewed local theorem.**
+31 October 2026. **local theorem.**
 Every actual LEFT or RIGHT coefficient has relative spectral energy bounded
 by one complete-triangle entropy, uniformly through both parities and all
 closed degree boundaries. The original middle degrees remain unchanged.
@@ -258,28 +258,14 @@ extension is needed here. Both parity reference normalizations are kept.
 RIGHT follows by the original row reflection. If a protected outer is zero,
 only its exponent-zero coefficients survive, and the [sharp protected-outer formula](actual_protected_outer_spectral_energy.md) attains (10).
 
-The middle degrees remain $\mu$ and $1-\nu$ in the ORIGINAL shared flow.
+The middle degrees remain $\mu$ and $1-\nu$ in the original shared flow.
 Although the entropy bound depends only on the two outer degrees, it is
 not permission to reassign middle loads independently. The global energy
 comparison still requires a proof using the original shared targets.
 
-
 ## 6. Validation and scope
 
-The root and independent reviewers checked the original tail normalization,
-the nonnegative spectral-parameter expansion, both parity reference factors,
-the effective transfer kernel, measure-preserving rearrangement, and the
-uniform closed-degree extraction. The focused
-[audit](../experiments/audit_actual_one_sided_relative_spectral_energy.py)
-and [results](../experiments/actual_one_sided_relative_spectral_energy_results.json)
-check exact finite identities and selected original coproduct coefficients.
-They do not use sampled large levels as a proof of the uniform theorem.
-The author and independent replay agree: 9 exact matching expansions,
-360 signed-parameter Cauchy checks, 344 original coefficients (50 with
-both outer degrees positive), 69 parity references, 12,069 original grid
-entries including 3,940 illegal-total zeros, 3 symbolic identities,
-15 level-set identities and 45 weighted-kernel checks. Root and both
-independent peers completed the analytical review: PASS.
+The focused [audit](../experiments/audit_actual_one_sided_relative_spectral_energy.py) and [results](../experiments/actual_one_sided_relative_spectral_energy_results.json) check exact finite identities and selected original coproduct coefficients. They do not use sampled large levels as a proof of the uniform theorem.
 
 The theorem bounds local coefficients before their original shared
 extraction. It does not move middle degrees to new faces, identify the

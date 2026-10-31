@@ -1,7 +1,6 @@
 # A strict separation between shared-radius certificate classes
 
 31 October 2026. Exact rational certificates and rigorous interval bounds.
-Internal independent proof/code reviews and fresh replays passed.
 
 The [finite-cover theorem](general_actual_sector_cover_filling_volume.md)
 allows a shared positive radius vector for each branch of genuine source
@@ -55,11 +54,11 @@ $$
 
 All logarithmic terms cancel by the exact face equations. This is weak
 duality; it requires neither an attained optimizer nor an interchange of
-an infimum and a supremum. A separate positive rational vector $L^{\rm up}$
+an infimum and a supremum. A separate positive rational vector $L^{\mathrm{up}}$
 gives the complete upper bound
 
 $$
-\Phi_D\leq\sum_eX_e(L^{\rm up})-\sum_f\log L_f^{\rm up}.
+\Phi_D\leq\sum_eX_e(L^{\mathrm{up}})-\sum_f\log L_f^{\mathrm{up}}.
 $$
 
 Arb arithmetic at 192 bits, with 8,192 Fourier terms and the explicit
@@ -148,10 +147,7 @@ a one-positive-coordinate triangle is exactly a half logarithm. Every
 Lobachevsky evaluation uses its absolutely convergent Fourier series and
 an enclosing tail ball of radius $1/(2M)$.
 
-Both [anchor](../experiments/audit_actual_shared_radius_anchor_obstruction.py)
-and [cover](../experiments/audit_actual_sector_cover.py) verifiers read saved
-rational data. Numerical optimization helped locate witnesses but is absent
-from verification. Independent code/proof review and fresh replays passed.
+Both [anchor](../experiments/audit_actual_shared_radius_anchor_obstruction.py) and [cover](../experiments/audit_actual_sector_cover.py) verifiers read saved rational data. Numerical optimization helped locate witnesses but is absent from verification.
 
 A general bound for every genuine fixed sector remains open. The endpoint
 volume theorem does not imply it: the weighted comparison permits concave

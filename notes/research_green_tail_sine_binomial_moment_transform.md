@@ -1,7 +1,7 @@
 # Exact sine-binomial coefficients and a positive finite-moment law for the original Green tail
 
-31 October 2026. Internally reviewed analytical research theorem. This starts from
-the ORIGINAL nodal tail T_(a,M) in the maximal-Green block transport.
+31 October 2026. analytical research theorem. This starts from
+the original nodal tail T_(a,M) in the maximal-Green block transport.
 It provides an exact positive-moment representation of that signed
 kernel. It does not bound the signed pairing by an endpoint source
 or by Phi_D. Every moment and polynomial truncation is explicit.
@@ -439,14 +439,4 @@ Equation (3) is its original normalized nodal recurrence.
 The positive-product construction is derived explicitly here
 rather than identified with the previous cap metric.
 
-This draft gives exact finite algebra and a finite-moment law.
-It proves neither a polynomial bound on Q_(a,N), nor a shared
-Phi_D comparison, nor a general long-filling theorem.
-No numerical scan or external proof import is used.
-Internal review: root full analytical/source review, PASS, including the
-real Mellin and finite beta-prime extensions; geometry full independent
-analytical/source review of sections 1–6, PASS. These reviews cover the
-original nodal coefficients and cutoff, exact probability laws and
-convergence, signed parent extraction, and last-moment obstruction.
-They do not assert a boundary-reference or Phi_D comparison. No external
-peer-review or numerical-audit claim is made.
+The result is an exact finite algebraic and moment identity. It supplies neither a polynomial bound for the remaining operator nor a shared capacity or filling estimate.

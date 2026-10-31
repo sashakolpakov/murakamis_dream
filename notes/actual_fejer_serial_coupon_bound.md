@@ -1,7 +1,6 @@
 # Exact serial Fejer coupons have only a polynomial composition cost
 
-31 October 2026. Independently reviewed and frozen.
-This concerns the literal SAME
+31 October 2026. This concerns the literal SAME
 ordered pair Casimir and its actual homogeneous composition. A diagrammatic
 digon may be replaced using this lemma only after its cups, dual turns and
 port order have been identified with that serial composition. No assertion
@@ -126,8 +125,8 @@ composed coefficients against BOTH bounds, with maximum relative error
 below 6.20e-74. Five full inverse-diagonal sums and 40 diagonal bounds
 retain the actual finite endpoint constants.
 
-Root independently reviewed the complete proof and audit code. Cluster
-independently reviewed the complete proof/code and freshly replayed all
+Root the complete proof and audit code. Cluster
+the complete proof/code and freshly replayed all
 checks with redirected output, including the lower comparison and the
 absence of an extra N in homogeneous composition. Public promotion only
 changed links and file-relative audit paths; the portable author replay

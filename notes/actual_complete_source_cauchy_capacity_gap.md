@@ -1,8 +1,6 @@
 # When one shared positive Cauchy torus loses exponential accuracy
 
-31 October 2026. Analytical theorem; internal independent review completed. This concerns
-the full positive endpoint source on the original shared face variables.
-It does not assert growth of the oscillatory invariant beyond volume.
+31 October 2026. The theorem concerns the full positive endpoint source on its shared face variables. It does not assert growth of the oscillatory invariant beyond volume.
 
 ## 1. The two different capacities
 
@@ -139,13 +137,13 @@ over the finitely many vertices. Its coefficient entropy is zero. Keeping
 one such monomial at each port gives
 
 $$
-G_N(h)\geq\frac dN B_{\rm port}(h)-\varepsilon_N,
+G_N(h)\geq\frac dN B_{\mathrm{port}}(h)-\varepsilon_N,
 \qquad\varepsilon_N\longrightarrow0,\tag{9}
 $$
 
-where $B_{\rm port}(h)=\sum_e\max_{f\in e\text{ ordinary}}h_f-\sum_fh_f$.
+where $B_{\mathrm{port}}(h)=\sum_e\max_{f\in e\text{ ordinary}}h_f-\sum_fh_f$.
 The two triangle rows at each port show
-$B_{\rm port}\geq B_\triangle$. Thus (6) and (9), together with the bounded
+$B_{\mathrm{port}}\geq B_\triangle$. Thus (6) and (9), together with the bounded
 value $G_N(h^*)$, put all finite-level minimizers in one fixed compact set
 for sufficiently large $N$. At each fixed level coercivity also gives
 attainment. Compact uniform convergence now proves
@@ -182,6 +180,4 @@ retains those common face constraints while permitting finer decompositions.
 A [certified original source](actual_shared_radius_certificate_separation.md)
 shows that the anchored test itself is not universal, although a finer cover succeeds.
 
-Independent source-normalization and coercivity review passed. The argument uses finite convex geometry,
-the original uniform local coefficient theorem and its actual endpoint
-volume calibration; it does not use a numerical optimizer as a proof.
+The argument uses finite convex geometry, the original uniform local coefficient theorem and its actual endpoint volume calibration; it does not use a numerical optimizer as a proof.

@@ -1,6 +1,6 @@
 # The full physical pair commutant, true box rotation, and its marked trace
 
-29 October 2026. Every endomorphism commuting with the ORIGINAL two-head
+29 October 2026. Every endomorphism commuting with the original two-head
 E,F,K action is a polynomial in its Casimir, at EVERY level N>=2.
 No generic semisimplicity or omission of projective normals is needed.
 The literal bent pretzel boxes remain in this full algebra. Their
@@ -102,7 +102,7 @@ distinct roots. In particular projective first derivatives survive.
 
 ## 3. Literal turn rotation agrees with the charge-block formula
 
-Keep the actual pair turns, with their ORIGINAL scalars:
+Keep the actual pair turns, with their original scalars:
 
     p_ab=N x^(-b) delta_(a+b,d),
     ell_ab=x^a/N delta_(a+b,d).
@@ -181,9 +181,9 @@ four original indices return. Consequently Z_R=x^(-d)R^(-1) and
 Z_(p ell)=x^(-d)I as well. These are coherent full-Hermite Fourier
 identities; the rotation is still not multiplicative.
 
-## 4. The ORIGINAL fixed-root trace is an explicit Hermite period
+## 4. The original fixed-root trace is an explicit Hermite period
 
-Let g=K^(1-N) be the ORIGINAL physical pivot and define
+Let g=K^(1-N) be the original physical pivot and define
 
 \[
  \phi(f)=\frac1N\operatorname{Tr}_{V_N\otimes V_N}
@@ -195,9 +195,9 @@ For each distinct double node c in (5), retain both f(c) and f'(c).
 Then
 
 \[
- \boxed{\phi(f)=(-1)^d\sum_{c\ {\rm double}}
+ \boxed{\phi(f)=(-1)^d\sum_{c\ {\mathrm{double}}}
        \{(4-c^2)f'(c)-c f(c)\}
-       +\mathbf1_{N\ {\rm odd}}f(-2).}                 \tag{12}
+       +\mathbf1_{N\ {\mathrm{odd}}}f(-2).}                 \tag{12}
 \]
 
 Here is an independent finite-matrix derivation, including its germ
@@ -253,7 +253,7 @@ normalizations. Also phi(p ell)=1. The trace weights in (12) have
 only polynomial size:
 
 \[
- |\phi(f)|\leq (N+1)\max_c|f(c)|+2N\max_{c\ {\rm double}}|f'(c)|.
+ |\phi(f)|\leq (N+1)\max_c|f(c)|+2N\max_{c\ {\mathrm{double}}}|f'(c)|.
                                                                \tag{14}
 \]
 

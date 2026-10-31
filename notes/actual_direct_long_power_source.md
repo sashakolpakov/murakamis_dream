@@ -1,6 +1,6 @@
 # Direct crossing powers and a limitation of phase-blind spectral bounds
 
-Independently reviewed, 30 October 2026. This is an exact root-source statement for the
+, 30 October 2026. This is an exact root-source statement for the
 original connected fixed flat-plat compiler. It retains every cap, mark,
 level coset and crossing scalar. It gives a direct formulation for fixed
 integer twist powers and rules out one particular positive spectral
@@ -154,19 +154,11 @@ to a global estimate.
 ## Validation and remaining scope
 
 The [focused audit](../experiments/audit_actual_direct_long_power_source.py)
-compares homogeneous compositions with independently built ORIGINAL
+compares homogeneous compositions with independently built original
 R matrices, including wrong-unwrapped totals and both signs. It also
 constructs the canonical Hermite basis and checks the coefficientwise
 comparison and Gaussian value/derivative data at both parities.
 [Results](../experiments/actual_direct_long_power_source_results.json)
 record the finite checks; they do not serve as a proof of an asymptotic.
 
-Root independently reviewed the full proof and audit code, including the
-composition, the all-node constants in (7)--(9), and the full-Hermite
-Gaussian extension. Geometry independently reviewed the full proof/code
-and freshly replayed the audit at90 digits:24 original powers,2592
-physical entries,828 wrong-total zeros,645 Hermite node data,8160
-coefficient comparisons,210 Gaussian values and210 derivatives, and30
-simple-node values. Maximum exact-comparison error was3.204e-89.
-Both reviews retain the stated phase-blind-envelope limitation; neither
-asserts a phase-preserving global rate or selected-cycle contribution.
+The finite audit checks the original powers, physical entries, wrong-total zeros, Hermite data, Gaussian values and derivatives. The phase-blind envelope does not imply a phase-preserving global rate or a selected-cycle contribution.

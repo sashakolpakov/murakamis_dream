@@ -1,6 +1,6 @@
 # Full-Hermite localization for an actual Conway root star
 
-31 October 2026. Internally reviewed research theorem. This proves an absolute
+31 October 2026. This proves an absolute
 whole-source upper bound and strict child-alias/child-color gaps for
 the literal scalar
 
@@ -660,6 +660,4 @@ Fourier identity and its endpoint currents remain the separate
 contraction proof.
 
 
-## Internal review
-
-The primary agent and the source-transport agent independently read the full proof in §§1–8 and passed the analytical/source review. Their checks included the exact high-coordinate normals at both parities, full Hermite conditioning, the complete trace reference, uniform logarithm truncation and arc strictness, the complex-strip bound, the canonical half-shift interpolation and nonzero quarter packet amplitudes. No numerical asymptotic or new runtime audit is used as a proof input. The original private calculation is preserved separately; this note changes only mathematical presentation, relative dependency links, and review provenance. No general turned-child or filled-volume theorem is asserted here.
+The theorem localizes the stated root-star source. It does not assert a general turned-child bound or a filled-volume theorem.

@@ -486,19 +486,6 @@ The finite checks supplement the strict-maximum proof, ordered
 geometric cells, reversible disk cut and complete-cusp construction.
 They do not identify manifolds from sampled quantum values.
 
-Independent internal reviews: the primary agent and the separate
-coherent-source agent read the full proof and independently replayed
-the audit successfully. The reviews checked the strict feasible
-segments and boundary barrier, Hessian injectivity, literal lower/upper
-port maps and cylindrical closure, convex-union argument, original
-half-crossing-disk and empty-collar cuts, pointwise four-step edge
-return, and simultaneous rectangle/triangle cusp decoration. Both
-reviews retain the complete retained-circle LINK scope and do not
-infer a knot-filling or arbitrary-knot theorem from it.
-The additional rational geometric Bloch-class comparison in section 8
-received a separate coherent-source review: it checked the common
-algebraic coordinate field, auxiliary five-term chains, matched face
-triangulations, opposite mirror orientation, and degree-one fundamental
-chain, without asserting field-extension injectivity or integral lifts.
+The conclusion concerns the complete retained-circle link. It does not imply a knot-filling theorem or a theorem for arbitrary knots. Section 8 compares rational geometric Bloch classes using a common algebraic coordinate field, compatible face triangulations, opposite mirror orientations and a degree-one fundamental chain; it does not assert field-extension injectivity or an integral lift.
 
 **Long-filling extension, 29 October 2026:** the [uniform mixed-source gap](actual_conway_uniform_mixed_source_gap.md), [complex packet](actual_conway_complex_window_laplace.md), and [actual marked deformation](actual_conway_marked_peripheral_deformation.md) now yield actual hyperbolic volume equality after independently sufficiently long signed integral fillings of any subset of auxiliary circles. The [assembly](actual_conway_long_filling_source_limit.md) retains all source normalizations and both parities. These full-twist fillings remain links; they cannot produce knots from the pure robust seed.

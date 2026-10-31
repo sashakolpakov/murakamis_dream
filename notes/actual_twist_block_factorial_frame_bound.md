@@ -253,7 +253,7 @@ norm costs only a further polynomial. Combining with (5) gives
     ||B_N(M)^ell||
         <= C_2 N^A2(1+|ell|) exp(12gamma_*N)             (13)
 
-on the entire circle, in the ORIGINAL physical metric.
+on the entire circle, in the original physical metric.
 
 The full original common Cartan has not disappeared. On the retained
 branch alpha=d+Log M/Log q it is
@@ -339,7 +339,7 @@ It checks the normalized physical fusion, its explicit Euler inverse,
 the bidiagonal Casimir intertwining, every interval-projector entry,
 the difference factorization and the one-collision count, all physical
 degree endpoints, signed powers and the full Cartan continuation.
-Fresh result: **PASS**, 240 signed meridian/degree families through
+The finite audit checks 240 signed meridian/degree families through
 N=9, including both level parities.
 [Saved results](../experiments/actual_twist_block_factorial_frame_results.json).
 

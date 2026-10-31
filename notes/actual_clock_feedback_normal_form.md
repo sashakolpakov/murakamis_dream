@@ -1,4 +1,4 @@
-# Exact underclock feedback and charge elimination in the ORIGINAL source
+# Exact underclock feedback and charge elimination in the original source
 
 28 October 2026. This note promotes the independent-parameter bridge
 generating function to an exact whole-word identity, retaining the actual
@@ -96,7 +96,7 @@ Indeed the exponent of Y_(j_s) is sum_(r>=s)n_r=h_s. This is exactly
 equation (3) of [the complete bridge-phase proof](actual_bridge_charge_phase.md),
 with every scalar, sign, Gaussian phase and endpoint retained.
 
-For a closure event on head i use its ORIGINAL numerator kernel,
+For a closure event on head i use its original numerator kernel,
 including its denominator and pivot but omitting only the explicit 1/N:
 
     C_i^0=eta_i Z_in^(-d)

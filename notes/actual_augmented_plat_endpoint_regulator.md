@@ -15,7 +15,7 @@ are separate questions. This note does not prove a source asymptotic.
 
 ## 1. The complete normalized endpoint symbol
 
-Use the ORIGINAL phase Theta_epsilon from
+Use the original phase Theta_epsilon from
 [the local character calculation](actual_augmented_plat_local_critical_character_map.md),
 equation (1), with its inverse-measure factor H, both q-Hahn columns,
 and the retained half twist epsilon in {0,+1,-1}. Write
@@ -254,7 +254,7 @@ One can use an actual positive gluing certificate to supply that geometric
 representation; (20) does not assume convexity of a particular source
 polytope or independently maximize individual regions.
 
-To pass from a Bloch symbol to the ORIGINAL action value, keep the full
+To pass from a Bloch symbol to the original action value, keep the full
 stationarity condition. In logarithmic variables z=rho+i theta the
 assembled action G=2pi i phi has the form
 
@@ -298,11 +298,4 @@ source limit or general long-filling theorem follows from (22) alone.
 Audit: [exact six-chart regulator comparison](../experiments/audit_actual_augmented_plat_endpoint_regulator.py),
 [recorded results](../experiments/actual_augmented_plat_endpoint_regulator_results.json).
 
-Independent character/current review: full analytical read and fresh audit
-PASS for both physical degree charts and all three retained half-twist
-choices (six exact cases, 54 final Gauss coordinates, six rational wedge
-identities and eighteen Bloch–Wigner checks). The reviewer checked the
-original auxiliary inverse transport, high-degree adapter, absolute real
-normalization, multi-component per-cusp degree-one argument, and the
-critical-action residual after affine degree elimination. The review
-retains all stated sheet, cycle, amplitude and source-asymptotic limits.
+The endpoint regulator retains the stated sheet, cycle, amplitude and source-asymptotic limitations.

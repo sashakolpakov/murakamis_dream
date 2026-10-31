@@ -138,7 +138,7 @@ visits each head position once, giving the exact whole equation
           =\delta (Q;Q)_{N-1}I.
 \]
 
-Consequently the ORIGINAL highest/Whittaker pair satisfies
+Consequently the original highest/Whittaker pair satisfies
 
 \[
  \ell F^N\psi=0,\qquad

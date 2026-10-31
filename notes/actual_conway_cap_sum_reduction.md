@@ -3,7 +3,7 @@
 29 October 2026. There is a general topological reduction of the actual
 positive Conway class, before any hyperbolic gluing problem is attempted.
 A cap closure of a stack is a componentwise connected sum of its cap
-closures. Its ORIGINAL full-normal quantum source factors exactly, and
+closures. Its original full-normal quantum source factors exactly, and
 its entire angle polytope and volume functional factor with it.
 
 This does not turn a Conway four-punctured sphere into a rigid pair of
@@ -241,9 +241,4 @@ explicit sphere construction, and variational Cartesian-product proof;
 they are not numerical manifold recognition or a proof for unreduced
 primitive factors.
 
-Independent internal review: the primary agent read the full literal
-two-wire sphere construction, cap-component labels, exact zero-output
-polytope factorization, and amalgam-centralizer proof, and reported
-PASS. A fresh primary-agent replay of the complete audit also passed.
-The review retains the distinction between these connected sums and
-an unreduced primitive hyperbolic complement.
+The cap-sum decomposition identifies connected sums. It does not identify an unreduced diagram with a primitive hyperbolic complement.

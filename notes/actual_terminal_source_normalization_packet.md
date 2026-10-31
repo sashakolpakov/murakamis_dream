@@ -199,7 +199,4 @@ normalization move is source-exact and usable with arbitrary spectators;
 the remaining finite-difference exterior in (10) is retained. No broad
 knot-volume upper bound or selected geometric noncancellation follows.
 
-Fresh replay: PASS nine original all-input cup-slide/source-packet levels
-N=2,...,10, including54 physical input columns; nine complex complete
-energy/optimized-metric levels through N=96; all operator-valued exterior
-currents. Compilation passes. The tests supplement the finite proofs.
+The finite terminal checks concern the displayed normalization identities only.

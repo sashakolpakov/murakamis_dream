@@ -29,7 +29,7 @@ introduce an additional choice here.
 
 Let K_sigma(t) be the COMPLETE raw signed kernel, including all finite
 Newton/Rogers factors and the original shared negative Gaussian when
-sigma=-. Let Pi_phys extract the ORIGINAL finite input/output block.
+sigma=-. Let Pi_phys extract the original finite input/output block.
 Then, identically before taking the t constant term,
 
     Pi_phys[A K_sigma(t)]=0,
@@ -50,7 +50,7 @@ and in the negative layer the last Rogers factor is
 Every monomial in either has second-output exponent e between 0 and d;
 none of the other factors contains z7. Both monomials of A contain
 z7^N. They therefore force second-output exponent at least N, which the
-ORIGINAL finite output window excludes. The first monomial also raises
+original finite output window excludes. The first monomial also raises
 the required second input by N, but that additional exclusion is not
 needed. Gaussian integration changes coefficients and cannot change
 these exponents. The same proof works term by term on any fixed scalar
@@ -156,7 +156,7 @@ Since K_sigma(t) has t exponents in [-2d,d], its average is exactly
     CT_t K_sigma+c(z1,z7) C_sigma,
     C_sigma=[t^(-N)]K_sigma.                         (5)
 
-Now apply the ORIGINAL physical windows. Every monomial of C_sigma has
+Now apply the original physical windows. Every monomial of C_sigma has
 incoming second exponent -b with b>=0 and outgoing second exponent e
 with 0<=e<=d. The first term z1^(-N)C_sigma in (5) requires incoming
 second index b+N>=N, and the second term z7^(-N)C_sigma has outgoing
@@ -208,7 +208,7 @@ complete color. Write
     s=x^N, s^2=1, T=t0^N=bd/(d-b).
 
 On the regular torus, the first Newton, final Newton, and middle Rogers
-norms in the ORIGINAL positive layer are, respectively,
+norms in the original positive layer are, respectively,
 
     D_first=T[1/(s a)-1/d],
     D_B=d[1/b-1/(s c)],

@@ -142,7 +142,7 @@ specified terminal R23^2 and actual cap, its recorded rows are
        =x^(-d) Q[conjugate(F_j)-conjugate(F_(j+1))],
     x=Q^(d/2), conjugate(F_N)=0.                        (15)
 
-Here x has its ORIGINAL mark x=q^d, q=exp(pi*i/N); the notation
+Here x has its original mark x=q^d, q=exp(pi*i/N); the notation
 Q^(d/2) retains that mark. Every full crossing scalar and source
 factor in (15) is the one in the linked original-source proof.
 
@@ -210,7 +210,7 @@ retains the forcing term
     =A_0+sum_(j=1)^d conjugate(F_j)(A_j-A_(j-1))t^j,
  H_A(t)=sum_(j=0)^d conjugate(F_j) A_j t^j.               (19)
 
-Equation (19) follows coefficientwise from the ORIGINAL recurrence.
+Equation (19) follows coefficientwise from the original recurrence.
 Dropping its finite differences would lose genuine spectator
 feedback. Controlling this forcing for complete interior crossings,
 with the geometric exponent, remains part of the broad goal. The
@@ -254,7 +254,7 @@ This uses the already proved uniform sine-factorial estimate; at a
 zero of f it is simply an upper bound. The function -J has its
 unique maximum c_*=v_3/(2pi) at u=1/6.
 
-Finite Plancherel for the ORIGINAL coefficients (15) is exact:
+Finite Plancherel for the original coefficients (15) is exact:
 
     sum_(r=0)^d |f_N(Q^r)|^2
        =N sum_(j=0)^d |F_j|^2
@@ -294,16 +294,4 @@ Thus mere norm-one control of an arbitrary diagonal exterior cannot
 replace the sublinear-frequency or geometric conditions in the
 source estimate.
 
-The [independent audit](../experiments/audit_normalization_clock_disk_independent.py)
-checks exact finite recurrences, all backward phases, factorial
-reflection and the product/integral bounds at ten levels through
-N=192, as well as three noncommuting spectator-mode packets. Its
-1,152 complex-disk samples supplement the all-disk proof; they are
-not a numerical supremum certificate. The original physical source
-identification is separately checked on every input column by the
-[cup-slide audit](../experiments/audit_actual_terminal_source_normalization_packet.py).
-Two independent analytic reviews verified the displayed constants,
-the k=0 case, the endpoint, and the growing-bandwidth limit. The
-expanded audit also checks nine complete root-sample profiles through
-N=192, including all exact sample bounds and Plancherel, while
-explicitly distinguishing discrete from continuum concentration.
+The [independent audit](../experiments/audit_normalization_clock_disk_independent.py) checks exact finite recurrences, all backward phases, factorial reflection and the product/integral bounds at ten levels through N=192, as well as three noncommuting spectator-mode packets. Its 1,152 complex-disk samples supplement the all-disk proof; they are not a numerical supremum certificate. The original physical source identification is separately checked on every input column by the [cup-slide audit](../experiments/audit_actual_terminal_source_normalization_packet.py).

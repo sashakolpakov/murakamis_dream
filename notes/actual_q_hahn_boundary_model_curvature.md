@@ -1,6 +1,6 @@
 # Finite local curvature of the original boundary models
 
-30 October 2026. Independently reviewed. The actual 220/222
+30 October 2026. The actual 220/222
 determinants and the actual 202 positive polynomial have logarithmic
 curvature bounded above and below by constant multiples of N, uniformly
 through the fold. The other retained factors have nonlinear derivatives
@@ -317,27 +317,13 @@ matrix Hessians, 153 bulk Jensen vectors and 126 complex preconditioned
 neighborhoods through both folded parities. It checks 80 original positive
 weight families, 3580 exact sine ratios, 32 separated shell masses and
 16 phase-normalized polynomial derivatives. At 85 digits it also compares
-30 derivatives of the ORIGINAL finite H sum and 30 derivatives of its
+30 derivatives of the original finite H sum and 30 derivatives of its
 literal leading-V coefficient with the determinant derivatives, with
 maximum error below 1.4e-84. Finally it checks 72 determinant logarithmic
 derivatives, 144 nonlinear corrections from all six models and 72
 interior/escaping cup corrections. Sample lower bounds and rates are
 diagnostics; the uniform assertions are proved above.
 
-Independent full analytical source/geometry review: PASS. The reviewer
-checked the noncommutative Hessian and inverse second-clock sign, actual
-Cholesky squares and Jensen lower bound at both folds, exact variance
-ratios and two-shell normalization, uniform complex logarithmic derivative
-neighborhoods, and every retained cup, forced-product and Bessel correction.
-The O(S+1) statement is explicitly about nonlinear derivatives; source
-values and first derivatives remain. No rank or stationary-point assertion
-is included in this review.
+The O(S+1) statement concerns nonlinear derivatives; source values and first derivatives remain. It makes no rank or stationary-point assertion.
 
-Independent primary full analytical review and fresh redirected audit:
-PASS. The primary reader checked the finite Hessian identity, original
-bulk-square/Jensen argument, 202 variance proof, uniform complex derivative
-bounds and retained O(s+1) corrections. The fresh replay reproduced the
-reported matrix, weight, correction and original-H/leading-coefficient
-derivative checks, including both folded parities. This validates the
-finite local theorem only; the rank and stationarity questions remain
-separate.
+This is a finite local theorem. Rank and stationarity remain separate questions.

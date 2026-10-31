@@ -1,6 +1,6 @@
 # A protected middle with strict outer loads cannot maximize at the spectral cap
 
-31 October 2026. **Analytical research lemma; full internal reviews by root and a separate reader, PASS.** This is a calculus statement for the original sharp interval functional. It does not assert a cap-uniform finite coefficient limit, a relative asymptotic, or a contributing Fourier cycle.
+The middle-cap calculus does not supply a uniform finite-coefficient limit at the cap, a relative-chain comparison, or a cycle selection.
 
 ## 1. The exact protected-start functional
 
@@ -108,5 +108,3 @@ The [exact finite reflection](research_protected_middle_window_phase_exclusion.m
 At a shared sharp-functional maximum with free real spectra, change only this port's \(\delta\) from \(1/2\) to \(\arccos(k)/\pi\). Every original face load, the fixed mark, and every other local term remain unchanged. Equations (11)–(12) therefore exclude this cap.
 
 The strict outer hypothesis is essential. If \(\xi=0\) or \(\xi=\nu\), the word is monomial, \(J_k^*=0\), and (7) is nonpositive. No exclusion of that joint protected-outer corner is claimed. Zero-length intervals, simultaneous two-terminal intervals \([0,1]\), and cap-uniform finite coefficient bounds remain separate questions. The lemma gives no source growth lower bound or original-period contribution.
-
-Both independent reviews checked the full proof and the separately stated terminal half-interval extension. The result is analytical; no numerical audit is needed or claimed.

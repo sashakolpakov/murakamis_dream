@@ -113,9 +113,9 @@ matrix coefficient one, before integration.
 With the retained endpoint \(b=M^N\), the invariant
 form integrates to
 \[
- \frac{\Log(M^{2N})}{\kappa_N}
+ \frac{\operatorname{Log}(M^{2N})}{\kappa_N}
  =\frac N{u_N(M)}
-       \frac{\Log(M^2)}{M-M^{-1}}.
+       \frac{\operatorname{Log}(M^2)}{M-M^{-1}}.
 \]
 The complete value is one. The normalization and
 the direction of the adapter \(u_N/N\) are correct;

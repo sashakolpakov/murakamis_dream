@@ -4,7 +4,7 @@
 factorial pole in a prescribed O(N) joint-state box, while leaving ALL
 original integer physical state values unchanged and killing every
 invalid integer state. This keeps the unwrapped linear output and
-closure relations. It is a scalar completion of the ORIGINAL finite
+closure relations. It is a scalar completion of the original finite
 source, not a new positive invariant or a replacement boundary state.
 
 The windows are not innocuous on general complex contours. Their
@@ -278,7 +278,7 @@ There is no geometric Jacobian or root-grid multiplicity in (9d).
 ### Explicit original action at complete color
 
 For clarity the leading action in Section 5 can be read directly
-from the retained ORIGINAL coefficients, not an unspecified operator.
+from the retained original coefficients, not an unspecified operator.
 Let x=-q^(-1), Q=q^2=exp(2pi*i/N), and use the continuous choice
 Log x=i*pi-i*pi/N. The two exact signed coefficients are
 
@@ -359,7 +359,7 @@ or geometric noncancellation of the original knot state.
 [Audit](../experiments/audit_actual_scalar_cardinal_source_completion.py):
 exact window values and finite packets, factorial divisor cancellation,
 half-plane growth, both literal signed coefficients and original full
-signed-source lattice comparisons. A fresh run passes 288 finite-mode
+signed-source lattice comparisons. The audit checks 288 finite-mode
 packets, 96 whole-plane bound checks, 108 Barnes divisor packages,
 670 exact original signed coefficient checks, and eight complete-source
 lattice comparisons on braid widths two through four. These finite

@@ -272,7 +272,7 @@ Every inserted cube creates two interval black vertices where a new
 copy can be inserted. Independent choices generate arbitrary finite
 ordered binary branching trees, not merely one cyclic chain. They
 all have a simple root at both D=1 and D=2, since the cubic factor is
--11 and -2 there. The ORIGINAL fixed-channel marked values are
+-11 and -2 there. The original fixed-channel marked values are
 
     Z_(N=3)=108^(1+3k) 11^k,
     Z_(N=4)=2^[12(1+3k)+k-1/2],                    (14)
@@ -295,11 +295,4 @@ Laurent convention cannot supply the missing fixed-normal theorem.
 Unsaturated marked-white terms in the general graph reduction remain
 retained; every vertex in the two fixed-level sectors above is supported.
 
-Independent internal review: root read the full graph proof and its
-fixed-level scope. The global audit agent independently checked the
-literal cabling constants, signed state expansion, beta positivity,
-both physical marked prefactors, NC cube insertion and canceled
-three-sum denominator, then freshly replayed the audit: PASS nine
-generic Morse/cabling graphs, six branching constructions and eleven
-original fixed-level source cases. No correction was required. These
-are internal checks, not external peer review or an all-N volume claim.
+The flow-order certificate is a fixed-level source statement, not an all-N volume claim.

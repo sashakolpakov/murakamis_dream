@@ -1,12 +1,12 @@
 # Absolute cap-star comparison: exact constrained capacity and its missing budget
 
-31 October 2026. **Internally reviewed analytical research theorem.**
+31 October 2026. **analytical research theorem.**
 Unpublished. The original ordinary targets are one, the original protected
 MAIN pair is u,v, and Phi_D is the complete capacity in the original
 normalization Vol(Y_D)/(2pi). No general absolute cap bound is asserted.
 
 The main conclusions are exact variational reductions. They explain
-why the reviewed leaf and spectral-star results do not yet prove an
+why the leaf and spectral-star results do not yet prove an
 absolute cap-only gap. Section 5 gives a literal obstruction to the
 stronger inference from LOCAL star hypotheses alone; it is explicitly
 not a common-stationary counterexample.
@@ -32,10 +32,10 @@ triangle-flow problem. The exact original cap-sector maximum is
 M_{\mathrm{cap}}=\max_{0\le s\le1/2}R(s).\tag{2}
 \]
 
-The ORIGINAL complete capacity has a different interval and a local
+The original complete capacity has a different interval and a local
 entropy term. In the complete row F, its first triangle has loads
 (0,t,1/2-t) and its second is the pure-C half-row. Hence q_A=t,
-q_C=1-t, 0<=t<=1/2, and its entropy is 2f(t). Restoring its ORIGINAL
+q_C=1-t, 0<=t<=1/2, and its entropy is 2f(t). Restoring its original
 targets in (1) therefore gives
 
 \[
@@ -145,7 +145,7 @@ unsigned absolute comparison in this formulation.
 
 If there are no Green ports, a nontrivial maximal-weight cap component
 has a nonroot leaf whose other incident ports are all CROSS. The
-reviewed star theorem therefore applies at ANY cap-child valence,
+star theorem therefore applies at ANY cap-child valence,
 with 0<nu<1/2 from the original demand. This removes the earlier
 degree-two limitation for a RELATIVE star improvement.
 
@@ -159,7 +159,7 @@ the value in (8), not an unrelated independently optimized number.
 The star theorem gives some eta>0 below that envelope. Other cap rows
 at their equal ordinary weights have polynomial weighted size at +2,
 and only an arbitrarily small extra exponential cost on a sufficiently
-small complex +2 disk. Other CROSS rows have the reviewed global-real
+small complex +2 disk. Other CROSS rows have the global-real
 coefficientwise endpoint majorant and its thin-strip continuation.
 Thus, when using these common stationary weights and retaining the
 whole internal A^d contraction, the relevant source bound has rate
@@ -260,7 +260,7 @@ edges uC,AZ,vZ,CW are distinct. Deleting them leaves a simple bipartite
 MAIN quadrangulation with four distinct vertices per port. The
 general Morse realization therefore supplies actual sources for
 this recorded incidence; no flat-plat word or knot equivalence is
-asserted. Mark the ORIGINAL MAIN pair u,v.
+asserted. Mark the original MAIN pair u,v.
 
 Use F as cap, all other ports CROSS, and choose ordinary weights
 
@@ -305,7 +305,7 @@ without using the global demands/stationarity or a genuine positive
 reference comparison. Equations (1)-(10), rather than this warning,
 are the main reduced absolute problem.
 
-## Dependencies and review status
+## Dependencies
 
 The [whole CROSS-star spectral theorem](research_cap_cross_shared_star_spectral_gap.md)
 supplies the genuine relative loss and fixed spectral neighborhoods.
@@ -321,13 +321,7 @@ supplies actual sources for (13); it does not identify them with another
 filled knot. The cap flow quotient in section 2 is classical only and
 does not change any quantum tensor.
 
-Root and coherent_partner_currents independently reviewed sections 1–5
-in full, analytically and against the original source scope: PASS.
-They checked the complementary R(s) intervals, forest target realization,
-exact dual constant, stationary attainment, relative spectral-star budget,
-missing contact and oriented fan coordinates, and the literal four-port
-nonstationary envelope example. These are internal reviews, not external
-peer review. Preservation changes formatting and supplies durable links.
+The explicit divergent-envelope example is nonstationary. It is not a counterexample at a stationary cap-only maximum.
 
 No numerical audit or scan is needed or claimed. There is no constructed
 bad common-stationary maximum, coefficient lower-rate assertion, new

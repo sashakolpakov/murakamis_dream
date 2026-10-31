@@ -236,19 +236,4 @@ be a multiplier: the proof uses the whole paired coefficient structure.
 
 Audit: [exact recurrence, dualities, finite source coefficients and root counts](../experiments/audit_actual_q_hahn_negative_root_source_polynomial.py).
 
-Independent geometric/algebraic review: full analytical read and fresh
-audit PASS. The reviewer checked the recurrence/Sturm reduction and
-factorial dualities, the sine-multiplier normalization, and separately
-every shifted high/negative-power removal and unused-operator count in
-the independent peeling proof. The replay passed 76 generic recurrences,
-6,800 finite recurrences, 8,720 dualities and peelings, and 867 original
-Casimir entries. Numerical root counts remain regression checks, not
-the all-level proof.
-
-Independent coherent-partner review: full analytical read and fresh
-audit PASS. The reviewer rederived the Sturm sign intervals and
-minimum-of-four duality reduction, checked the multiplier argument
-variation with forced zeros, and independently checked every Laurent
-peeling shift and degree bound. The actual finite compiler coefficient
-and its zero-free q^delta evaluation were checked as well. No correction
-was required.
+Numerical root counts remain regression checks, not the all-level proof.

@@ -216,12 +216,4 @@ source values check the radial sign and normalization. Eighteen
 interior coefficient sequences check the stated rate and tilt gradient.
 The uniform theorem is proved above, not inferred from those sequences.
 
-Independent analytical reviews: PASS. The root reader and an independent
-reader checked the original polynomial support and scalar, log-concavity
-including endpoints, modal infimum inequality, corrected radial sign,
-selected characteristic and strict curvature, explicit tilt, and the
-uniform trapping of finite minimizers. A fresh independent audit replay
-passed all three formal identities, 794 polynomials, 3,938 mode checks,
-nine original radial source values, and eighteen coefficient-rate checks.
-The reviews retain discrete channels, interior slopes and the distinction
-between positive coefficients and a coherently sewn graph source.
+The variational theorem concerns discrete channels and interior slopes. Positive coefficients are distinct from a coherently sewn graph source.

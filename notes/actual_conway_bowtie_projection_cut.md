@@ -232,12 +232,6 @@ the single open quadrilateral port is a physical four-punctured
 boundary, or that arbitrary deformed port matches already solve
 the full peripheral gluing equations.
 
-Independent internal reviews: the local-cell and coherent-source
-agents separately read the full closed ribbon and disk-cut argument
-and the primitive cusp marking, and reported PASS. The coherent-source
-agent also independently replayed the strengthened 69-case audit.
-The audit additionally fixes one global sphere
-orientation and compares every oriented face cycle and every vertex
-cyclic order, rather than allowing independent reversal of faces.
+The audit additionally fixes one global sphere orientation and compares every oriented face cycle and every vertex cyclic order, rather than allowing independent reversal of faces.
 
-Primary-agent analytical review checked the direct closed disk cut, actual segment matching, oriented ribbon induction, and primitive cusp marking. Fresh replay passed all 69 oriented face/rotation comparisons. The former open-port overstatement has been replaced in the complete geometry note; no deformed representation is inferred from this correction.
+The closed disk cut, segment matching and oriented ribbon induction determine the cusp marking. The correction of the former open-face statement does not construct a deformed representation.

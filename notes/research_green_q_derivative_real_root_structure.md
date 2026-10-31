@@ -1,6 +1,6 @@
 # A real-root preserving q-derivative on the original protected-Green degree range
 
-31 October 2026. Internally reviewed analytical research theorem.
+31 October 2026. analytical research theorem.
 The theorem below gives new positive structure for the FULL
 spectator polynomial. It does not claim that truncation preserves roots,
 that the full polynomial is integrable against the Green moment law, or
@@ -125,7 +125,7 @@ or external multiplier-sequence theorem is needed in this proof.
 
 ## 3. The original odd endpoint spectator really satisfies the hypotheses
 
-Consider an ORIGINAL simple marked source with R ports, R ordinary face
+Consider an original simple marked source with R ports, R ordinary face
 variables and two protected variables. Let a selected Green coupon have
 ordered faces (x,b,c,y), with y protected and x,b,c distinct ordinary
 faces. Assume every other coupon is its actual CROSS endpoint at sigma=-2.
@@ -363,7 +363,7 @@ constraints. Thus the theorem establishes a general actual-source
 positive structure, but neither an absolute \(\Phi_D\) bound nor a signed
 Green contraction.
 
-## Inputs and review record
+## Inputs
 
 The [original odd endpoint product](actual_cross_cofactor_factorization.md),
 sections 2–3, supplies (7). The [physical positive matrices](actual_q_hahn_boundary_model_curvature.md),
@@ -375,10 +375,4 @@ supplies the finite signed kernel and exact Mellin domain. The
 [original algebraic period](research_green_tail_algebraic_period_and_mellin_rate.md),
 sections 2–3, supplies the complete scalar and coefficient pairing.
 
-Author analytical proof complete. Root independently derived the Euler
-factorization and fully reviewed the written proof and original-source
-interface; it also checked the combined stable-extraction strengthening.
-Geometry independently fully reviewed the current sections 1–5, including
-(11a,b), (14a), exact zero bands, original targets, Mellin cutoff and phase
-identity. Both internal analytical/source reviews PASS. No external review,
-numerical audit or asymptotic coefficient theorem is claimed.
+The theorem concerns exact real-root structure with the stated zero bands, original targets, Mellin cutoff and phase. It does not assert an asymptotic coefficient theorem.

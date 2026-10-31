@@ -1,6 +1,6 @@
 # Independent tangle depth at every initial bridge gap
 
-Independently reviewed theorem, 31 October 2026. The [one-end plat family](general_one_end_layer_long_filling_volume.md) admits arbitrarily deep, independently chosen tangles at **every** first-layer bridge gap. The construction preserves its original marked cap and all core circle radii. It is checked on the literal source; it does not assert a theorem for arbitrary stacking or arbitrary plat diagrams.
+theorem, 31 October 2026. The [one-end plat family](general_one_end_layer_long_filling_volume.md) admits arbitrarily deep, independently chosen tangles at **every** first-layer bridge gap. The construction preserves its original marked cap and all core circle radii. It is checked on the literal source; it does not assert a theorem for arbitrary stacking or arbitrary plat diagrams.
 
 ## 1. The all-width, all-depth family
 
@@ -193,6 +193,6 @@ If every full exponent is also a multiple of $3$, the [Fox certificate](actual_f
 
 ## Validation and scope
 
-Root and independent source/geometry reviewers checked the simultaneous gap induction, finite and parallel-line branches, exact support slack, disjoint original gaps, both ratio inequalities, the two separate modified-port targets, both curvature-order proofs, extended framing, parity and all fixed-parameter quantifiers. The construction gives arbitrary independent depth at every initial bridge gap; it does not cover arbitrary multilayer plat diagrams or prove a universal balance criterion.
+The construction gives arbitrary independent depth at every initial bridge gap; it does not cover arbitrary multilayer plat diagrams or prove a universal balance criterion.
 
-The [focused audit](../experiments/audit_general_simultaneous_bridge_gap_filling_volume.py) and [recorded results](../experiments/general_simultaneous_bridge_gap_filling_volume_results.json) compare the closed dictionary against the original Morse compiler on 413 nonuniform charts, checking 11880 ports, 23760 triangles, 35640 edges, all marks and core permutations. Seven symbolic identities check tangent chains, support and inequalities. Twenty-five exact simultaneous seed packings supply 2333 circle/line supports, 168 new-port bounds and 32 modified targets. Independent code review and a redirected replay reproduced the counts. These checks supplement the general proof; finite samples do not establish its uniform or quantum conclusion.
+The [focused audit](../experiments/audit_general_simultaneous_bridge_gap_filling_volume.py) and [recorded results](../experiments/general_simultaneous_bridge_gap_filling_volume_results.json) compare the closed dictionary against the original Morse compiler on 413 nonuniform charts, checking 11880 ports, 23760 triangles, 35640 edges, all marks and core permutations. Seven symbolic identities check tangent chains, support and inequalities. Twenty-five exact simultaneous seed packings supply 2333 circle/line supports, 168 new-port bounds and 32 modified targets. These checks supplement the general proof; finite samples do not establish its uniform or quantum conclusion.

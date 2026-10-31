@@ -1,6 +1,6 @@
 # Exact source composition with single-leaf Conway attachments
 
-31 October 2026. Internally reviewed original-source theorem. For the
+31 October 2026. original-source theorem. For the
 completed grammar $E::=hh\mid T(E)\mid EE\mid hE\mid Eh$ and cylindrical
 closures $C(FG)$ with **both root children completed**, the exact source
 has a strict complete optimizer, a primitive wire lattice, the retained
@@ -331,7 +331,7 @@ $$
 
 where delta_empty=0 and delta_nonempty>0. No coefficient lower bound or
 sharpness of this envelope is asserted. A2 supplies this statement through
-the reviewed uniform block lemma. At a turn, exact coordinate reversal
+the uniform block lemma. At a turn, exact coordinate reversal
 retains it with lambda sign reversed and an O(1) affine exponent cost.
 At a product of completed subtrees, their tangents and the concavity of the
 actual gate m give the parent's tangent by stationary cancellation; child
@@ -380,7 +380,7 @@ states and finitely many sectors produces a whole-source alias gap. The
 all-core concave majorant has its unique strict maximum at the actual pure
 optimizer; compact outside-window and actual local far-color losses then
 give the whole physical-color complement gap. This is the same finite
-source-to-packet interface as the reviewed block proof, with (17) as its
+source-to-packet interface as the block proof, with (17) as its
 ONLY new analytic alias obligation. Section7 supplies it. The actual
 geometric and marked filling interfaces remain separately sourced; the finite contraction alone
 is not a new topological volume proof.
@@ -388,7 +388,7 @@ is not a new topological volume proof.
 ## 7. The exact square certificate discharges the remaining inequality
 
 Write mu=lambda_c and lambda=lambda_p. Define the two exact variational
-quantities on the ORIGINAL product tetrahedron D from (17):
+quantities on the original product tetrahedron D from (17):
 
 $$
 \begin{aligned}
@@ -450,13 +450,7 @@ lower bound for P, while the tangent provides an upper bound for Q.
 Recursive four-way subdivision proves full square coverage without gaps;
 no sampling or approximate coverage enters the argument.
 
-All interval arithmetic uses outward integer rounding at denominator10^40.
-The retained Machin arctangent, sine Taylor, atanh-log and integrated
-Euler-sine expansions have exact rational remainders. The imported
-arithmetic/analytic function AST is identical to the previously fully
-reviewed block certificate. A fresh independent replay reproduced the
-[recorded result](../experiments/conway_single_leaf_attachment_certificate_results.json)
-exactly. The least verified rational lower bound is
+All interval arithmetic uses outward integer rounding at denominator 10^40. The Machin arctangent, sine Taylor, atanh-log and integrated Euler-sine expansions have exact rational remainders. The imported arithmetic and analytic-function syntax trees are identical to those in the block certificate. The [recorded result](../experiments/conway_single_leaf_attachment_certificate_results.json) gives the least certified rational lower bound:
 
 $$
 \frac{55437191760019874892517972684020763373}{10^{40}}
@@ -490,7 +484,7 @@ Together with §5 they supply the unchanged finite complex packet and
 whole-source hypotheses for the separately verified geometric/filling
 interfaces. No additional individual leaf certificate is required.
 
-## 8. Inputs and internal review scope
+## 8. Inputs
 
 The original [physical source/compiler](actual_positive_complete_circle_conway_trees.md)
 and [positive full-Newton multiplication](actual_positive_newton_multiplication.md)
@@ -515,17 +509,5 @@ all algebraic tangles or knots, or exhibit a new isotopy class. The
 root-leaf quarter examples prevent extending the inherited packet from
 strict feasibility alone.
 
-The primary agent fully reviewed §§1–8, including the finite interval
-compiler, strict-output types, primitive lattice, normal-form scope,
-proper-port propagation, changed packet and exact alias induction. The
-geometry peer independently reviewed the finite/source and geometric
-interfaces, and the coherent-source peer fully reviewed §§1–7 including
-the square-certificate transfer. The exact certificate received full
-independent mathematical/code reviews and fresh redirected replays.
-The native mathematical presentation and relative source links are checked
-separately. These are internal reviews, not external peer review.
-
 The rational certificate uses rigorous function enclosures; no continuum
-inequality is inferred from sampled or floating-point tests. This note
-preserves the reviewed proof. Existing notes, checkpoints, status files and
-public files are unchanged.
+inequality is inferred from sampled or floating-point tests.

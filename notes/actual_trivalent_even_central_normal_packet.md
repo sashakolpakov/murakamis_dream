@@ -81,7 +81,7 @@ All denominators have index<N. This proves every phase in(6) directly.
 
 ## 2. Exact coherent scalar and the full central black tensor
 
-Let J_source=p_16 p_23 p_45 be the ORIGINAL nested cup source. For
+Let J_source=p_16 p_23 p_45 be the original nested cup source. For
 the moment use the unweighted rows W^dagger P at its three pair ports.
 At the magnetic indices(2j,j,0), its black coefficient is N^3 A_N,
 where (6) gives
@@ -298,11 +298,4 @@ or a global Casson--Rivin maximum. Those remain additional tasks.
 
 Audit: [literal even Clebsch/normal, contiguous finite transform, marked kernel and scalar density](../experiments/audit_actual_trivalent_even_central_normal_packet.py).
 
-Independent full analytical review and a separate fresh replay passed
-eight exact even source/normal levels and eight complex normal-envelope
-and scalar calibrations. The review independently checked the contiguous
-second-Chu step and its excluded endpoints, all source/CD powers and
-phases, the factor1/4 in(23), the actual nonzero E-current, and the
-forward/backward componentwise Jordan envelope. The full marked packet,
-noncentral joint-color continuation and global graph estimates remain
-outside this central theorem.
+The full marked packet, noncentral joint-color continuation and global graph estimates remain outside this central theorem.

@@ -1,12 +1,10 @@
 # What a regular original shared stationary point actually implies
 
-Unpublished workspace research reduction, 31 October 2026. Root and coherent
-completed full internal analytical reviews, including the maximum-only
-exclusion in section4a. This is not external peer review. This audits the hypotheses
+Unpublished workspace research reduction, 31 October 2026. This audits the hypotheses
 of the conditional signed-circle/group/fan theorem. No strong duality,
 concavity in the two rows, or separate weighted local maximality is
 assumed. The result is a first-order reduction on specified smooth
-strata of the ORIGINAL shared incidence problem, at every fixed width.
+strata of the original shared incidence problem, at every fixed width.
 
 ## 1. The exact functional being differentiated
 
@@ -16,7 +14,7 @@ For a LEFT port write its original limiting degrees, in order (x,b,c,y),
     0<=mu<=nu<=1/2, 0<=xi<=nu-mu.                 (1)
 
 Let alpha_delta(t)=4[cos^2(pi delta)-sin^2(pi t)] and Lambda_delta(t;x,y)
-be the positive root of the ORIGINAL cleared tail recurrence. Define
+be the positive root of the original cleared tail recurrence. Define
 
     B_delta(mu,nu)=int_0^mu log|alpha_delta| dt
                             +int_nu^(1/2) log|alpha_delta| dt,
@@ -27,7 +25,7 @@ This keeps BOTH unused intervals. The omitted-half scalar has zero
 exponential upper modulus, but its actual two phases are not discarded
 when reconstructing the source. Formula (2) is the sharp interval
 Legendre functional, not the fractional comparison t C(alpha). The
-reviewed fractional obstruction specifically prevents replacing (2)
+fractional obstruction specifically prevents replacing (2)
 by that latter concave perspective and borrowing its duality.
 
 The [global closed-domain coefficient-majorant theorem](research_global_sharp_coefficient_limsup_majorant.md)
@@ -174,11 +172,11 @@ Protected cases are specialized in the literal source BEFORE a tilt:
 * If x=0 or y=0, the tail is its exact one-monomer product. Its
   outer degree is forced, so no finite log(x/y) tilt is used. Equations
   (5)--(8) still follow for the FREE rows by that monomer action,
-  with P=0. These are the reviewed one-outer-line fan cases.
+  with P=0. These are the one-outer-line fan cases.
 * If b=0 with x,y>0, the start is exactly mu=0. Its sole-start
   primitive is Q_0, with E_0=A+2sqrt(zP). A pre-pole free stop c>0
   has log(E_c/E_0)>0. A post-pole free stop is critical precisely
-  when H_c=E_0, giving c=A/z. This is the reviewed middle-line case.
+  when H_c=E_0, giving c=A/z. This is the middle-line case.
 * If b=0 and one outer is also protected, then P=0 and E_0=A=sqrt D.
   A strict pre-pole stop has E_c>A, and a strict post-pole stop has
   H_c>A. Its spectral derivative is positive in either case.
@@ -252,9 +250,9 @@ regular MAXIMUM reduction.
 ## 5. Original face angles and the integer overload
 
 At any stationary local branch just classified, the ordinary weight
-derivatives of its stationary action are its ORIGINAL degrees q.
+derivatives of its stationary action are its original degrees q.
 This is the ordinary envelope rule at a stationary branch, not a
-strong-duality assertion. The reviewed physical triangle derivative
+strong-duality assertion. The physical triangle derivative
 gives alpha_(t,f)=theta_(t,f)/(2pi), with each triangle load sum1/2.
 The signed continuation retains the original output character:
 
@@ -309,7 +307,7 @@ issues remain:
    by itself the desired absolute comparison.
 
 Once the shared sign cocycle in2 is supplied on the stated regular
-real branches, the reviewed signed developing-disk/group dictionary
+real branches, the signed developing-disk/group dictionary
 uses (10) and the literal original marks to construct the comparison
 representation. Its original cup/cap/prefix and raw-line checks are
 still REQUIRED, but are supplied by that lemma rather than by an
@@ -328,7 +326,7 @@ Green port the frozen original reflection calculation gives
 
 including its one-line and two-line formulas. Normalize the common
 tangent point to infinity and its two outer white planes to Re w=0,1.
-Their ORIGINAL raw product is P=-[[1,2],[0,1]]. Therefore C acts by
+Their original raw product is P=-[[1,2],[0,1]]. Therefore C acts by
 w->w-2ir, preserving BOTH outer planes. The proved simultaneous head
 conjugations then carry the middle plane and all three ordered
 contacts. This establishes the same within-copy shaded pairing as
@@ -374,11 +372,4 @@ retain the original source and canonical volume conventions. The tangent
 endpoint matrix is the literal formula in
 [marked signed development](actual_fejer_marked_signed_development.md).
 
-Both internal reviewers checked the row-space argument, all pre/post
-primitive derivatives, protected zero patterns, overload targets, the
-uniform-in-tilt bound (8a)--(8b), and the endpoint parabolic collar.
-No numerical audit is needed or claimed for these elementary analytical
-reductions. The separately reviewed global coefficient-majorant theorem
-supplies only its stated upper bound. These reviews do not supply a lower
-coefficient limit, an incompatible-phase comparison with complete volume,
-or regularity and geometric control of every compact-boundary maximum.
+The global coefficient-majorant theorem supplies only its stated upper bound. These reductions do not supply a lower coefficient limit, an incompatible-phase comparison with complete volume, or regularity and geometric control of every compact-boundary maximum.

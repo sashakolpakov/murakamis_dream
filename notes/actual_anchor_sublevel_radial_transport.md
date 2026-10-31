@@ -1,6 +1,6 @@
 # Exact radial compactification and sublevel transport of strict-Hall source cores
 
-28 October 2026. For the ORIGINAL fixed-clock unit-factor source, every
+28 October 2026. For the original fixed-clock unit-factor source, every
 strict-Hall core admits an explicit radial retraction which never increases
 the modulus of its masterfunction. The retraction is piecewise monomial,
 has uniformly bounded logarithmic differential, and puts every sublevel
@@ -202,7 +202,7 @@ that it is the identity at the joining level. Only the compact range
 of |f| on the original coefficient torus is needed for its transported
 cycle, so there is no assertion of a uniform infinite-time lift.
 
-This produces a cycle Gamma_(R,epsilon) homologous in T to the ORIGINAL
+This produces a cycle Gamma_(R,epsilon) homologous in T to the original
 torus (3), with |f|<=R+epsilon. Compose it with the explicit clipping
 map C to put it in (9), preserving that sublevel and its homology class.
 The holomorphic coefficient form is closed on all of T, so its integral

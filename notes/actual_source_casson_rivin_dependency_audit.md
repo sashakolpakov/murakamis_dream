@@ -1,9 +1,6 @@
 # Adversarial audit of the source-volume Casson--Rivin argument
 
-29 October 2026. Independent analytical review. The claimed filled-volume
-identification is not circular on the proved source family, but it uses
-several substantial inputs BEFORE strict concavity. This note separates
-them and distinguishes the two volumes in the user's question.
+29 October 2026. The filled-volume identification uses several geometric and source inputs before strict concavity. This note explains those dependencies and distinguishes the complete augmented volume from the volume after filling.
 
 ## 1. The two volumes must remain distinct
 
@@ -12,7 +9,7 @@ with its crossing-circle cusps UNFILLED. The source limit for the
 actual filled link is
 
 \[
- V_{\rm src,s}(\boldsymbol p)=2\pi\operatorname{Re}\mathcal A_s(\boldsymbol p).
+ V_{\mathrm{src,s}}(\boldsymbol p)=2\pi\operatorname{Re}\mathcal A_s(\boldsymbol p).
 \]
 
 The whole-source theorem establishes this number as the original quantum
@@ -22,8 +19,8 @@ sections 2--3, gives a strict source action drop for every sufficiently
 long finite tuple:
 
 \[
- V_{\rm src,s}(\boldsymbol p)<V_s,\qquad
- V_{\rm src,s}(\boldsymbol p)\longrightarrow V_s
+ V_{\mathrm{src,s}}(\boldsymbol p)<V_s,\qquad
+ V_{\mathrm{src,s}}(\boldsymbol p)\longrightarrow V_s
        \quad\text{as }\max_i|p_i|^{-1}\longrightarrow0 .
  \tag{1}
 \]
@@ -33,7 +30,7 @@ it is stronger than an expansion with an unquantified remainder. For
 orientation, its quadratic formula (11) reads
 
 \[
- V_{\rm src,s}(\boldsymbol p)=V_s-
+ V_{\mathrm{src,s}}(\boldsymbol p)=V_s-
        2\pi^2\operatorname{Im}\tau_s
                \sum_i|1+2p_i\tau_s|^{-2}
        +O_s(\|\boldsymbol p^{-1}\|^4).
@@ -52,7 +49,7 @@ are:
 1. **Original source selection, not formal gluing.** Its section 1
    invokes [whole-source survival](actual_long_pretzel_full_source_survival.md),
    sections 1--2. This establishes the exact original invariant's
-   nonzero full-sequence asymptotic and hence its rate \(V_{\rm src}\).
+   nonzero full-sequence asymptotic and hence its rate \(V_{\mathrm{src}}\).
    The color complement, all aliases, original normal terms, endpoint
    currents and noncancellation are analytic premises. Concavity does
    not prove them.
@@ -153,7 +150,7 @@ integers \(p_i\) belong in the actual affine constraints (3).
 
 Casson--Rivin section 4 correctly uses the coisotropic edge reduction,
 not a derivative only along the much smaller representation variety.
-For \(x=\Log z,\ y=\Log z''\), direct sine-rule differentiation gives
+For \(x=\operatorname{Log} z,\ y=\operatorname{Log} z''\), direct sine-rule differentiation gives
 
 \[
  d\mathcal V(\delta\theta)
@@ -197,7 +194,7 @@ sections 1--4, uses the SAME group representation, eigenflags,
 preferred longitude and COMPLETE anchor to prove
 
 \[
- D_{\rm src}
+ D_{\mathrm{src}}
      =\operatorname{Im}G-\sum_i\operatorname{Re}z_i
                                          \operatorname{Im}\ell_i
      =D(\beta(\rho_z)).
@@ -214,7 +211,7 @@ norm. Its exact filling term is
 \]
 
 At stationarity \(\operatorname{Re}z_i=-2p_i\operatorname{Re}\ell_i\),
-so \(\operatorname{Im}W=D_{\rm src}\). Thus no unestimated complex
+so \(\operatorname{Im}W=D_{\mathrm{src}}\). Thus no unestimated complex
 endpoint term is suppressed when passing from the source action to
 the volume functional.
 
@@ -241,7 +238,7 @@ The dependency chain is
  \text{whole source rate}\ \longrightarrow\
  \text{actual marked }\rho_{\boldsymbol p}\ \longrightarrow\
  \text{positive interior angle point and filled-slope KKT}
- \ \longrightarrow\ \max\mathcal V=V_{\rm src}
+ \ \longrightarrow\ \max\mathcal V=V_{\mathrm{src}}
  \ \longrightarrow\ \text{smooth complete filled volume}.
  \tag{7}
 \]
@@ -258,7 +255,7 @@ The subsequent
 [width extension](actual_pretzel_all_width_extension.md), sections 5--6,
 supplies the missing whole-color gap for every fixed odd \(s\geq9\).
 Section 8 of that note separately verifies the parity-independent
-source and normalization and gives the ORIGINAL single-cut reduced
+source and normalization and gives the original single-cut reduced
 two-component link theorem at every fixed even \(s\geq10\).
 For even width both unfilled main cusps remain parabolic and complete;
 the boundary-pairing and completion arguments are their direct sum.

@@ -1,6 +1,6 @@
 # One common resonant chart for the original certified network
 
-30 October 2026. Independently reviewed. A fixed certified
+30 October 2026. A fixed certified
 right-angled augmented diagram with one main component admits ONE
 original boundary chart in which all six permitted root-numerator
 regimes hold simultaneously. The first-cut phase is small and positive,
@@ -32,7 +32,7 @@ the actual reflection lifts of the
     Q_f=J_f bar J_ref, (Q_f)21=-a_f bar b_ref,
     a_f>=0, with equality precisely at incident faces.       (1)
 
-There is a useful further consequence of this ORIGINAL meridian
+There is a useful further consequence of this original meridian
 normalization. The other adjacent white face at its ideal vertex has
 actual prefix -J^epsilon, epsilon=+1 or -1, according to the recorded
 orientation. Its diagonal gives b_neighbor=-b_ref. Its upper-right
@@ -263,19 +263,6 @@ dual identity error below 1.9e-91, and max N times packet relative error
 is 0.01491. These are focused finite checks; the written proof supplies
 the uniform existence and error claims.
 
-Independent full analytical review: PASS. The coherent-source reader
-checked the real reference coefficient, common small-phase seam exclusion,
-primitive orientation signs, exact (pi,3pi) total-carry argument, physical
-and auxiliary offsets, both marked total branches, every root-numerator
-domain and the finite-product error. This review includes 202/202 and
-c=1; it does not supply a generic bound, finite-color critical point or
-global relative-cycle coefficient.
+The boundary-chart theorem includes 202/202 and c=1. It does not supply a generic bound, finite-color critical point or global relative-cycle coefficient.
 
-The primary reader independently passed the common-chart proof, including
-the real reference normalization, simultaneous seams and exact total carry.
-The source reader additionally checked the literal dual total, auxiliary
-complement, generic reciprocal factor and full white-turn monomial, then
-freshly replayed the complete focused audit: PASS. Both the geometric
-factorial-domain classification and the distinction between the main
-fixtures and the supplemental 202/202 pair are retained. No source sum,
-generic normal amplitude or contributing cycle is inferred.
+The geometric factorial-domain classification and the distinction between the main fixtures and the supplemental pair are retained. No source sum, generic normal amplitude or contributing cycle follows from the boundary-chart identities.

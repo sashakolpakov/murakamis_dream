@@ -105,7 +105,7 @@ For the literal two-cut unknot, T is the flip tensor. Therefore
     F(eta)=sum_(q=-(N-1))^(N-1)(N-|q|)eta^q,
     Phi(T)=1.
 
-The finite Fourier average is N, followed by the ORIGINAL 1/N.
+The finite Fourier average is N, followed by the original 1/N.
 With an input-clock insertion f(Q^b), the selected value is
 (1/N)sum_b f(Q^b). In particular at Q=zeta the insertion f(B)=B
 has value zero, whereas retaining only b=0 has value 1/N. This
@@ -166,7 +166,7 @@ Sections 1--5 of
 [the identity-cut orientation note](identity_cut_orientation_cover_and_marked_source.md)
 are exact finite source identities. Its geometric equations remain
 valid when eta is read there as the independent chart coordinate
-eta_geo=p_e^-1. The phrases saying that the ORIGINAL cap eta=0
+eta_geo=p_e^-1. The phrases saying that the original cap eta=0
 therefore reaches B=1 require this unproved source pushforward.
 They must not be used as a deduction from a principal ratio or
 an equality of two rational one-forms alone.

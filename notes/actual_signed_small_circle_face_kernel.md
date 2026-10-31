@@ -1,6 +1,6 @@
 # Actual signed ports and a quantum-multinomial face kernel
 
-30 October 2026. Independently reviewed and frozen. This gives the exact original crossing on the
+30 October 2026. This gives the exact original crossing on the
 polynomial face source, two radius bounds, and a sufficient local
 geometric certificate for a signed one-port color corridor. It does
 not claim a universal signed smoothing gap or a simultaneous signed
@@ -8,7 +8,7 @@ norm estimate.
 
 ## 1. Exact kernel, all polynomial degrees
 
-Use the ORIGINAL root conventions N>=3, d=N-1, q=exp(pi i/N),
+Use the original root conventions N>=3, d=N-1, q=exp(pi i/N),
 Q=q^2 and lambda0=q^(d^2/2), with its prescribed square-root lift.
 Let T be the [original small-circle face operator](actual_small_circle_polynomial_face_insertion.md), with outer variables
 x,y and outgoing middle variable c:
@@ -74,7 +74,7 @@ Their divided difference has limit
 
     -nu_j (N-1-2j)/[2(q^(2j+1)-q^(-2j-1))],        (6)
 
-exactly the derivative of the [ORIGINAL crossing polynomial](casimir_braiding_and_recoupling_lattice.md),
+exactly the derivative of the [original crossing polynomial](casimir_braiding_and_recoupling_lattice.md),
 not only its nodal values.
 The finite coefficients of (4) specialize regularly. This proves (4)
 including the nilpotent component. The inverse follows either from
@@ -189,7 +189,7 @@ gives the alternative exact source bound
           P_rem(...,b,c=b+x+y,...).                 (12b)
 
 The target denominator is STILL the actual merged face weight b^d.
-The right side is a split-radius evaluation of the ORIGINAL remaining
+The right side is a split-radius evaluation of the original remaining
 polynomial; it is not its identity-smoothing evaluation. In particular
 it has no established geometric volume interpretation.
 
@@ -295,7 +295,7 @@ source of (7). Ports whose external colors remain N may have arbitrary
 retained signs. Equation (13c) is not asserted when additional ports
 are simultaneously varied.
 
-Proof. Evaluate the remaining positive factors at the ORIGINAL packing.
+Proof. Evaluate the remaining positive factors at the original packing.
 Before deletion the two ordinary middle targets contribute -log b-log c,
 and the removed fold circle contributes F(x,b,y)+F(x,c,y). Its beta and
 short forced-product factors have zero limiting logarithmic rate at the
@@ -379,11 +379,4 @@ identity, no universal signed smoothing gap, and no simultaneous signed
 norm estimate through dependent ports. The local radius test concerns
 one varied signed port; all other external colors remain complete.
 
-Independent root full analytical and audit-code review: PASS, including
-the actual Hermite derivative, every polynomial degree block, independent
-input/output weights and the original-packing rate subtraction.
-Independent cluster full analytical/code review and fresh redirected
-audit replay: PASS, reproducing all stated counts and errors.
-Independent geometry full kernel review and targeted final radius,
-entropy and corridor review: PASS. These reviews do not infer a
-simultaneous signed estimate or a global quadrilateral representation.
+The kernel bound does not imply a simultaneous signed estimate or a global quadrilateral representation.

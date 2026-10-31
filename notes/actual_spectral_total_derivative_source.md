@@ -1,6 +1,6 @@
 # An exact spectral total derivative for the original root source
 
-Independently reviewed, 31 October 2026. This is an exact fixed-root identity for the
+, 31 October 2026. This is an exact fixed-root identity for the
 original pair Casimir, retaining its simple and repeated spectral nodes.
 No contour deformation or uniform exponential estimate is asserted.
 
@@ -131,11 +131,4 @@ identity is also checked symbolically at N=2,...,14.
 [Results](../experiments/actual_spectral_total_derivative_source_results.json)
 record finite identities; they assert no uniform Fourier constants.
 
-Root independently reviewed the full proof and source audit. Coherent
-independently reviewed the Chebyshev ODE, all multiplicities, the exact
-Fourier normalization and endpoint regularity, and the semisimple-data
-limitation. Coherent also independently read the portable audit and
-freshly replayed it:13 symbolic identities,33 monomial identities and60
-original R-power identities, comparing149293 actual matrix entries.
-Both reviews retain the fixed-root scope and the absence of uniform
-Fourier estimates or selected-cycle conclusions.
+The theorem is at a fixed root of unity. It does not establish a uniform Fourier estimate or select a contributing cycle.

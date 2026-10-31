@@ -199,7 +199,7 @@ For a target T with B-T>=delta N, delta>0 fixed, the terminal term is
     <=exp(C2N) N^(-(B-T)/(2r))=exp(-Omega(N log N)).              (13)
 
 The slow term costs exp(O(1)) beyond w_T and A. Therefore, if U_a
-is polynomial, the ORIGINAL selected solution satisfies
+is polynomial, the original selected solution satisfies
 
     limsup (1/N)log||Y_T||
           <= integral_(lim a/N)^(lim T/N) log(rho(x)) dx,        (14)

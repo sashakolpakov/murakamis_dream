@@ -3,7 +3,7 @@
 29 October 2026. The finite q-Pascal matrix gives an explicit,
 invertible, source-independent local packet transform. Pulling back a
 positive factorial metric produces a full-rank NON-DIAGONAL Gram.
-For the ORIGINAL figure-eight four-plat split packet its co-source
+For the original figure-eight four-plat split packet its co-source
 norm is exactly `sqrt(N)` and its positive energy has the sharp volume
 exponent. No unknown knot value defines the transform or its metric.
 

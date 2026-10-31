@@ -1,15 +1,6 @@
 # The original sharp interval functional is a uniform regular coefficient majorant
 
-Unpublished workspace analytical theorem, 31 October 2026. Root and coherent
-completed full internal analytical reviews. This is not external peer
-review. This is an UPPER bound only.
-It needs no every-level coefficient limit, nonzero prefactor, or selected
-Fourier cycle. This historical theorem has the compact regular scope
-stated below. Its boundary-uniform extension is now proved separately in
-the [global closed-domain upper theorem](research_global_sharp_coefficient_limsup_majorant.md).
-The proof and regular conclusions here retain their original scope;
-that later extension does not assert a coefficient lower limit or boundary
-maximizer regularity.
+This compact regular-stratum majorant is an upper bound only. The boundary extension is a separate theorem; no lower rate or regularity of maximizers is inferred here.
 
 ## 1. One exact coefficient, on the original full row range
 
@@ -130,7 +121,7 @@ outer weight is used. These fixed protected strata may be included;
 uniform approach through arbitrary additional vanishing ordinary
 loads is a separate assertion, not needed for (7).
 
-## 4. LEFT and CROSS are precisely the reviewed sharp functionals
+## 4. LEFT and CROSS are precisely the sharp functionals
 
 For a LEFT interval nu<1/2, the identity
 int_(1/2)^1 log|alpha_delta|=0 makes (6) exactly h_delta in the
@@ -232,9 +223,4 @@ gives the fixed-block upper estimate and unused-product logarithmic bounds.
 The [stationary reduction](research_regular_shared_spectral_stationary_reduction.md)
 uses the resulting sharp functional without claiming local strong duality.
 
-Both internal reviews checked the full-row source indexing, positivity,
-uniform upper estimates, compact Cauchy tilts, protected specializations,
-CROSS split identity, original target counting and separate cap exclusion.
-The proof is analytical. No numerical audit or lower coefficient
-asymptotic is claimed. Its uniform statement is restricted
-to the specified compact regular charts and exact protected monomers.
+The protected-monomer comparison has the stated compact regular scope.

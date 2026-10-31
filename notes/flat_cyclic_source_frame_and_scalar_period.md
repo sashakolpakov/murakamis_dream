@@ -16,7 +16,7 @@ Fix N>=2, Q a unit, and invert only 1-Q^k for 1<=k<N. Write
     P_0 e_j=e_(j+1 mod N),
     E_0=E_00, A_0=e_0 1^t.
 
-Here 1^t is the ORIGINAL all-ones output row. These are the literal
+Here 1^t is the original all-ones output row. These are the literal
 highest-input data of
 [the actual two-wall boundary](actual_highest_whittaker_boundary_and_moving_walls.md),
 not an additional state. Direct entries give

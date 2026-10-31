@@ -1,7 +1,7 @@
 # The actual local source phase generates ordered character transport
 
 30 October 2026. The explicit augmented-plat phase has a direct algebraic
-map to the ORIGINAL ordered pair character. This note proves that map,
+map to the original ordered pair character. This note proves that map,
 including the full factorial normalization, its centralizer transport,
 and its regular parabolic limit on the longitude cover. It is a local
 critical-phase theorem, not a claimed full-source asymptotic or a new
@@ -68,7 +68,7 @@ Direct differentiation of Phi gives
 
     Y(X,Z)=e^(Phi_u)=(1-X)(TZ-XJ)/[J(X-Z)(T-X)].            (3)
 
-The principal symbol of the ORIGINAL symmetric Jacobi block is
+The principal symbol of the original symmetric Jacobi block is
 
     a(X)= (X-T)(1-X)/T,
     d(X)=2X(1+T-X)/T,
@@ -114,7 +114,7 @@ shift differentiates its input positively, and left multiplication
 differentiates its output negatively. Total-degree conservation supplies
 the common scale g. No Hermitian conjugation has been inserted.
 
-For a physical head define its ORIGINAL classical flag matrices by
+For a physical head define its original classical flag matrices by
 
     K=-1/X, F=S(1-X), E=(X^-1-1)/S,
     Lplus=[[K,E],[0,1]], Lminus=[[1,0],[-KF,K]],
@@ -230,7 +230,7 @@ additional xi derivative is -2pi i chi. Hence its channel equation is
 The opposite Fourier branch inverts the right side. The external color
 deficit chi is distinct from the internal channel xi.
 
-The primitive collar is fixed by the ORIGINAL threading word, not by
+The primitive collar is fixed by the original threading word, not by
 centralization alone. Apply the positive Hurwitz rule chronologically
 at [2,1,1,2] to the three meridians (A,B,C_aux), and put
 K=P^-1 C_aux P. The exact three outputs are
@@ -390,11 +390,4 @@ It is a reusable algebraic input to those remaining comparisons.
 
 Audit: [exact rational identities and parabolic normal checks](../experiments/audit_actual_augmented_plat_local_critical_character_map.py).
 
-Independent internal review: a second reader checked the original
-Jacobi symbol, full leading coupon normalization, kernel momentum signs,
-ordered-product and centralizer map, retained Hurwitz factor, parabolic
-normal, actual high-degree coordinate adapter, literal primitive collar
-and free-group threading word, and the conditional stationary-action
-differential. Its fresh exact symbolic audit, including all four
-high-degree conjugator entries, passed. The review retains all global branch,
-logarithmic-mark, absolute-period, and source-estimate limitations above.
+The local character map retains the stated global-branch, logarithmic-mark, absolute-period and source-estimate limitations.

@@ -229,7 +229,7 @@ are products and quotients of precisely these blocks and Cartan lines.
 For a denominator block, put B=zQ^(k+N) in (9); (10a)'s inverse
 is exactly the same atom. At the root its full norm is
 1-(zQ^k)^N, rather than an unmarked numerical multiplier. This
-identifies a specific ORIGINAL denominator-block carry that supplies
+identifies a specific original denominator-block carry that supplies
 the pole. It does not treat that block in isolation as the full
 crossing coefficient: its numerator blocks, resonant factorials,
 Cartan line and actual source remain necessary and can cancel it.
@@ -251,7 +251,7 @@ nonzero polar coefficient
 \[
  [\eta_{geo}^{-1}]R_N^-(Q_N,B(\eta_{geo}))=-\frac{s}{Nc},
  \qquad
- \mathop{\rm Res}_{\eta_{geo}=0}
+ \mathop{\mathrm{Res}}_{\eta_{geo}=0}
                   (R_N^-\Omega_{cut})=-\frac1{Nc}d\log A.   \tag{12}
 \]
 

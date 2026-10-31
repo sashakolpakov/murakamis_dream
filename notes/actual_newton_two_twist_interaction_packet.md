@@ -60,7 +60,7 @@ All estimates here use its exact physical root values.
 
 ## 2. The second source endpoint is exactly the known Gaussian
 
-Let P_d be the ORIGINAL normalization endpoint, with its already proved
+Let P_d be the original normalization endpoint, with its already proved
 identities and all-parity Gaussian asymptotic:
 
     P_d=N^2 sum_(j=0)^d Q^j/F_j^2
@@ -223,8 +223,4 @@ mixed words still require their own coherent packet/current estimate.
 
 Audit: [literal original matrices, exact sums/recurrences/endpoints and norm calibration](../experiments/audit_actual_newton_two_twist_interaction_packet.py).
 
-Independent analytical review and fresh replay passed: the reflection
-indices/current, endpoint normalization, separated-frame bound through
-the midpoint, strictly gapped Riccati lower bound, and cubic maximum
-were each rederived. The finite profiles supplement that proof; they
-are not its justification.
+The finite profiles check the normalization and reflected recurrence. They do not replace the uniform endpoint, Riccati and maximum arguments.

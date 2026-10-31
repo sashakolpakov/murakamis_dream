@@ -1,9 +1,6 @@
 # Independently long fillings of signed octahedral belt stacks
 
-29 October 2026. Root and independent global full-proof reviews
-passed. This records the precise theorem and its proved quantum,
-peripheral, regulator and geometric inputs together; the review
-statement describes the internal proof audits, not external peer review.
+29 October 2026. This note assembles the quantum, peripheral, regulator and geometric inputs for the stated theorem.
 
 ## 1. The actual family and statement
 
@@ -28,7 +25,7 @@ There is a source-dependent finite P such that, whenever
 
     min_(i in I) |p_i|>P,
 
-the actual filled complement is hyperbolic and its ORIGINAL
+the actual filled complement is hyperbolic and its original
 single-cut reduced Kashaev evaluation satisfies
 
     lim_(N->infinity) (2pi/N)log|K_N(J_(epsilon,a,I)(p))|
@@ -49,7 +46,7 @@ TWO components for even a. For a proper subset its unfilled
 auxiliary circles remain: the total is n+2-|I| for odd a and
 n+3-|I| for even a.
 
-## 2. Whole ORIGINAL quantum source, not a formal critical value
+## 2. Whole original quantum source, not a formal critical value
 
 The exact color expansion inserts every R^(-2p_i) using the
 original ordinary mixed circles L_j and the complete Hermite
@@ -200,7 +197,7 @@ comparison identify its regulator with the actual hyperbolic
 volume. Combining this with the NONZERO whole-source asymptotic
 and (3)--(4) proves(1).
 
-## 6. Scope and review ledger
+## 6. Scope ledger
 
 The theorem expands a cyclic one-belt source family. It does not
 assert an arbitrary six-port tensor estimate, arbitrary branched
@@ -209,16 +206,4 @@ number. The possible overlap of these actual belt-stack diagrams
 with known Whitehead-chain families remains a coverage caveat;
 no novelty claim about a literature family is used in the proof.
 
-Underlying independent replays: complete boundary packet; full
-inner mixed-color packet and gap; exact outer squared source;
-literal all-sign/outer-twist stack matrices and geometric collars;
-all white and shaded local face maps; exact nested main snakes
-with transported signed full-Cartan mixed coupons; primitive
-log completion and spin-preserving regulator. The detailed
-typed/marked proof is the linked composition note. Root and
-independent global full-proof reviews passed, including the
-any-subset restriction: unfilled colors remain literal L_N,
-their two geometric logs vanish by exact separate evenness,
-and the primitive completion leaves those cusps complete.
-These are internal independent analytical audits and exact finite
-checks, not a claim of external peer review.
+For partial filling, every unfilled color remains the literal L_N. Its two geometric logarithms vanish by exact separate evenness, and primitive completion leaves that cusp complete. The linked composition note gives the detailed marked proof.

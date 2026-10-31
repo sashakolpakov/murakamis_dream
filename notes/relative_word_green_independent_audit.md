@@ -25,7 +25,7 @@ including the support-shift terms.
 
 For any actual map \(O:V\to W\), differentiation of
 \[
- O_{\rm rel}(\sigma)=e^{\sigma T_W}Oe^{-\sigma T_V}
+ O_{\mathrm{rel}}(\sigma)=e^{\sigma T_W}Oe^{-\sigma T_V}
 \]
 gives the bulk chain identity. Its endpoint maps are \(O\) and
 \(e^{T_W}Oe^{-T_V}\), with the stated orientations. These maps

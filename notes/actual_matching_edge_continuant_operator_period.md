@@ -13,7 +13,7 @@ estimate is asserted.
 ## 1. The original generic matrix and its actual spectrum
 
 Put d=N-1 and use zeta=q exp(h), q=exp(pi i/N). In a physical
-total-degree block 0<=t<=d, the ORIGINAL Casimir J_t(zeta) has
+total-degree block 0<=t<=d, the original Casimir J_t(zeta) has
 diagonal A_r, upper U_r and lower L_r, r=0,...,t:
 
     Q=zeta^2,
@@ -208,11 +208,4 @@ while preserving its original source and every required normal.
 
 Audit: [actual Green entries, contour coefficients, normal poles and bandwidth](../experiments/audit_actual_matching_edge_continuant_operator_period.py).
 
-Independent review: the root agent and cluster/source agent checked
-the complete generic Green/contour proof, actual spectrum and Jordan
-structure, moving-q normal, reduced pole budget and source bandwidth.
-A fresh cluster replay passed 534 original Green three-jets, 1,902
-contour operator entries with 5,706 jet coefficients, 868 bandwidth
-zeros, and 29 genuine double clusters with their fourth-pole
-cancellations. The reviewed scope includes no contour deformation
-or scalar-to-operator asymptotic.
+The operator-period identity includes no contour deformation or scalar-to-operator asymptotic.

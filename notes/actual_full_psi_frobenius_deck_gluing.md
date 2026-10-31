@@ -1,6 +1,6 @@
 # Exact full-Psi deck characters and central gluing
 
-28 October 2026. The full functions in the ORIGINAL source and its
+28 October 2026. The full functions in the original source and its
 new beta residue factors have an exact algebraic deck character.
 Products and integral monomial gluing carry this character without
 an unknown central normalizer. Its triviality equations are the

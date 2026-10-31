@@ -200,7 +200,7 @@ with coupons W pi is therefore, by (5),(11),
     F(zeta)=gamma^3 s(zeta)^2
                      eta_j(zeta)[2j+1]_zeta/a_j(zeta)^2. (12)
 
-Cut the ORIGINAL marked physical arc before closing it. Its open
+Cut the original marked physical arc before closing it. Its open
 map is a scalar t(zeta)I on the physical highest-weight d module.
 All its entries are regular, so t is holomorphic at q. The physical
 cup has p0=N zeta^(-d^2), and direct cup/cap multiplication gives

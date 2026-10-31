@@ -1,6 +1,6 @@
 # Exact simultaneous small-circle face correspondences
 
-30 October 2026. Independently reviewed and frozen. For ANY subset of
+30 October 2026. For ANY subset of
 untwisted small-circle ports whose literal identity smoothing is connected,
 the full original source is one coefficient of a simultaneous polynomial
 face correspondence. It includes protected outgoing faces and genuine
@@ -252,7 +252,7 @@ ports with h_i<=delta N satisfies (3) when delta is sufficiently small;
 no disconnected capacity theorem is needed in that window. Retained
 R^epsilon at a small port and genuine generic-q normals remain excluded.
 
-## 7. Original-source verification and reviews
+## 7. Original-source verification and scope
 
 The [focused audit](../experiments/audit_actual_simultaneous_small_circle_face_correspondence.py),
 with [saved results](../experiments/actual_simultaneous_small_circle_face_correspondence_results.json),
@@ -260,7 +260,7 @@ checks 61,743 original full-color operator entries, 4,278 formal-word
 endpoint zeros and 544 high-total columns. The actual connected-subset
 charts supply 457 subsets, 2,659 component phase/parity checks, 2,776
 opposite-outer incidences and 218 genuine operator-dependency cycles.
-Twenty-three whole ORIGINAL simultaneous contractions agree with the
+Twenty-three whole original simultaneous contractions agree with the
 coefficient correspondence, including both parities, protected faces,
 several small colors and width three. Their formal sums contain 865,463
 negative-exponent terms before the full cancellations.
@@ -275,13 +275,4 @@ half twists retained. One original source outside the sufficient window
 is nonzero. The scalar is computed from the complete background exponent
 sum, independently of the simplified product q^(d sum p).
 
-Two independent full analytical reviews checked the formal-word source
-interface, root transpose, tree/cycle phase, componentwise polynomiality,
-original support and measure, unique alias, Laurent norm and disconnected
-degree contradiction. The second reviewer freshly replayed the entire
-expanded audit with redirected output, reproducing every count. An
-independent source-geometric review also checked the literal gap parity,
-connected forests, exterior-cycle localization and all root counts and
-exponents. These tests and reviews do not infer a signed-small-port bound,
-a generic-q normal or an unproved strict capacity gap. The note, audit
-and saved results are frozen.
+The correspondence does not imply a signed-small-port bound, a generic-q normal estimate, or a strict capacity gap.

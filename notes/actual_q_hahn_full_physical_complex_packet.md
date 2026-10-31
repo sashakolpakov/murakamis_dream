@@ -20,7 +20,7 @@ Put theta=pi/N, q=exp(i theta), Q=q^2, d=N-1 and
     t=N tau, u=N nu, xi=j/N,
     z=exp[pi i(tau-2nu)], gamma=pi(tau+1/N).
 
-The ORIGINAL joint source is exactly
+The original joint source is exactly
 
     fhat_j(u,t-u)=x^u q^(jt) [2j choose j]_Q
                   R_j(z;-cos gamma)/Delta_j(Q^t),
@@ -99,7 +99,7 @@ pi(Re tau-2Re nu), with absolute value <pi Re tau. On P_N,
 a_gamma>pi Re tau. Therefore (3) is nonzero there. The factors
 Delta_j(Q^t) are also nonzero: their zeros require tau=r/N modulo
 an integer, 0<=r<j<N/2. All remaining factors in (1) are nonzero.
-Thus the ORIGINAL finite source is holomorphic and nowhere zero
+Thus the original finite source is holomorphic and nowhere zero
 on P_N. The case j=0 is its explicit nonzero exponential.
 
 The correction in (7) cannot simply be deleted for every finite N.
@@ -280,7 +280,7 @@ necessary change in their matrix perturbation argument.
 Use M in (9) as the root tridiagonal realization. For each adjacent
 pair, freeze whichever of its two root entries has larger modulus,
 and set the opposite generic entry so their product is -beta_n(q)
-in the ORIGINAL generic recurrence. One must not always freeze
+in the original generic recurrence. One must not always freeze
 the upper entry: sin(gamma+n theta) can vanish at an integer degree.
 The chosen entry is uniformly bounded below because sqrt(b_n)>=1/2
 and
@@ -334,22 +334,6 @@ largest N-scaled relative amplitude error was 1.184 and the largest
 N-squared gradient remainder was 16.406. These are normalization
 regressions; the cone and two-shift argument give the uniform result.
 
-An independent full analytical review checked the same-polynomial
-Hermitian realization, the finite cutoff and explicit boundary
-counterexample, rotated coercivity and logarithmic estimates,
-the continued scalar logarithm, the rank-one PSD discriminant
-proof, and both amplitude bootstraps with their original central
-normalization. It also checked the larger-offdiagonal generic lift
-and the unchanged near-fold scope. The review preserves the
-fixed-compact, discrete-channel statement and does not infer a
-global contributing cycle or coherent source estimate.
+The theorem has fixed-compact, discrete-channel scope. It does not identify a global contributing cycle or give a coherent source estimate.
 
-A second independent full analytical review and fresh focused replay
-also passed. It checked the finite angular cutoff and counterexample,
-all rotated inverse and weighted trace bounds, the marked scalar-log
-continuation, W and V including the rank-one endpoint, both actual
-amplitude bootstraps, and the larger-entry generic adapter. Its
-replay reproduced all formal, exact, and 180-digit counts above.
-A further analytical reader independently checked the same source
-and domain interfaces without duplicating that replay. The reviews
-retain the finite-boundary caveat and all stated global limitations.
+The finite-boundary caveat remains essential, including for the larger-entry generic adapter.

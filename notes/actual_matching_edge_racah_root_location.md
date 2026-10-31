@@ -223,12 +223,4 @@ remain essential to the global volume problem.
 
 Audit: [original root values, the own recurrence and positive matrix shift](../experiments/audit_actual_matching_edge_racah_root_location.py).
 
-Independent review: the root agent and cluster/source agent checked
-the complete proof, including the original polynomial normalization,
-all recurrence endpoints, positive matrix shift, simple spectrum,
-canonical logarithm, and connected-slit normal-family argument.
-The cluster agent freshly replayed 3 formal identities, 6,984 original
-source values, 1,904 recurrence coefficients, 304 leading coefficients,
-25 matrix factorizations and 24 actual continued-rate diagnostics.
-This review concerns the scalar polynomial and its leading action;
-it does not substitute that scalar for the contracted operator.
+The result concerns the scalar polynomial and its leading action. It does not replace the contracted operator by that scalar.

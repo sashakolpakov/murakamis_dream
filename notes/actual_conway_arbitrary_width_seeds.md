@@ -241,10 +241,4 @@ Audit: [seed recurrences, support and interval certificates](../experiments/audi
 The proof for unbounded fixed seed widths is the induction and
 trigonometric argument above; a finite list of widths does not prove it.
 
-Independent internal review: separate source and geometry readers
-checked the all-width strictness/port argument, isolated s=4 endpoint,
-full primitive lattice, signed packet interfaces, actual bowtie/cusp
-reconstruction and loop-free knot parity choices. The primary agent
-checked the displayed recurrences, boundary argument and extension
-scope and replayed the focused audit: PASS. The claim remains the
-stated grammar, not all k-bridge or alternating knots.
+The claim concerns the stated recursive construction, not all k-bridge or alternating knots.

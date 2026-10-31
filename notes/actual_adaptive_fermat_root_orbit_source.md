@@ -1,7 +1,7 @@
 # Adaptive Fermat sampling preserves the entire original crossing source
 
 28 October 2026. The internal root-orbit source may be placed on its
-exact Fourier resonance without changing the ORIGINAL finite crossing
+exact Fourier resonance without changing the original finite crossing
 operator. Its sampling point is allowed to depend on the input/output
 heads. The old degree-zero restriction is replaced by two explicit
 physical source walls. This is not an unsupported central base change
@@ -21,7 +21,7 @@ kappa, and use the COMPLETE positive crossing polynomial
          R_N(z_6/z_0,x^(-1)z_6/t)
          B_N(x^(-1)z_7/z_6,x^(-2)z_7/t).              (1)
 
-The physical crossing is its ORIGINAL finite input/output block,
+The physical crossing is its original finite input/output block,
 with kappa retained. This is the proved Gaussian-absorbed complete
 kernel; no original Gaussian was deleted from a separated sector.
 

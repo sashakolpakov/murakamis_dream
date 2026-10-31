@@ -435,7 +435,7 @@ family by
     Ftilde_N(M;a,j)=sum_c (T^V)_(c,j;a,j)
        =(1/N)sum_(b,nu,u) Q^(j nu) W_N(M;a,b,nu,u). (7.1)
 
-Here W_N is the ORIGINAL raw open coefficient on its integral
+Here W_N is the original raw open coefficient on its integral
 flow coset, T_(a-nu,b+nu;a,b)=sum_u W_N, and u has m-1 internal
 chord coordinates. All four actual port bounds and every original
 phase/pivot/peripheral line remain in W_N. The Fourier factor 1/N

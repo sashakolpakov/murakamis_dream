@@ -126,7 +126,7 @@ The base upper source psi_+=sum_j V_j and uniform co-source
 phi_+(V_j)=1/(N+1) satisfy, for EVERY head matrix C,
 
 \[
- \phi_+m(C\otimes I)\Delta\psi_+=\Phi_{\rm head}(C). \tag{8}
+ \phi_+m(C\otimes I)\Delta\psi_+=\Phi_{\mathrm{head}}(C). \tag{8}
 \]
 
 This is exactly the uniform-average preservation in the
@@ -143,12 +143,12 @@ Clebsch index is J_total=J_head+A_aux, whose two blocks are
 J_N and J_(N-2)+1. Since these commuting operators are retained,
 
 \[
- \mathbf M(J_{\rm head})=\mathcal J_{\rm total}-\mathcal A,
- \quad\mathcal A=S^{-1}A_{\rm aux}S,\quad\mathcal A^2=\mathcal A,
+ \mathbf M(J_{\mathrm{head}})=\mathcal J_{\mathrm{total}}-\mathcal A,
+ \quad\mathcal A=S^{-1}A_{\mathrm{aux}}S,\quad\mathcal A^2=\mathcal A,
 \]
 \[
- \mathbf M(w^{J_{\rm head}})
-   =w^{\mathcal J_{\rm total}}
+ \mathbf M(w^{J_{\mathrm{head}}})
+   =w^{\mathcal J_{\mathrm{total}}}
                           [I+(w^{-1}-1)\mathcal A]. \tag{8a}
 \]
 
@@ -206,7 +206,7 @@ gD_mark=e and all their other products. Its represented e has
 rank two, and the normalized auxiliary trace is 1/2:
 
 \[
- \Phi_{\rm head}(C)=\tfrac12\operatorname{Tr}
+ \Phi_{\mathrm{head}}(C)=\tfrac12\operatorname{Tr}
                       [\mathbf M(e)\mathbf M(C)].   \tag{11}
 \]
 

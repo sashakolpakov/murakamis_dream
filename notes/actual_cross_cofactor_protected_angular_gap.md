@@ -2,7 +2,7 @@
 
 The [whole-source local packet](general_full_spectral_numerator_geometric_packet.md) now assembles these results for the actual full numerator. The original global spectral filling period remains open.
 
-31 October 2026. Internally reviewed. The middle face is the ORIGINAL protected
+31 October 2026. . The middle face is the original protected
 zero b=0. The proof uses the literal level-N recurrence and preserves
 all its endpoint coefficients. It is independent of the relative
 cofactor packet and does not assert a whole shared-face torus gap.
@@ -144,16 +144,8 @@ showing that every nontrivial face phase is detected by an appropriate
 ordinary-middle or protected-middle factor. This note supplies only
 the protected-middle local input to that argument.
 
-## Focused verification and review
+## Focused verification and scope
 
-`../experiments/audit_actual_cross_cofactor_protected_angular_gap.py` accepts an
-independent `--output` path. Its author result is
-`../experiments/actual_cross_cofactor_protected_angular_gap_results.json`, PASS at
-70 digits: one exact trigonometric identity, 4,636 original polynomial
-coefficient inequalities, 486 actual complex angular bounds, 432
-three-step matrix-entry bounds, and 16 exact monomer specializations.
-These supplement the all-level proof and do not test a whole-source
-torus claim. Independent coherent full analytic review PASS;
-independent cluster full analytic and code review PASS.
+The [audit](../experiments/audit_actual_cross_cofactor_protected_angular_gap.py) accepts an `--output` path; its [saved results](../experiments/actual_cross_cofactor_protected_angular_gap_results.json) record trigonometric, polynomial-coefficient, complex-angular, three-step matrix and monomer checks. These supplement the all-level proof and do not test a whole-source torus claim.
 
 [Focused audit](../experiments/audit_actual_cross_cofactor_protected_angular_gap.py) · [Recorded output](../experiments/actual_cross_cofactor_protected_angular_gap_results.json). These finite checks supplement the written proof and retain the scope recorded in their output.

@@ -7,7 +7,7 @@
 <div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
 <aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
 <button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/manuscript.html" class="">The manuscript</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
-<div class="sidebar-bottom">Research edition · 31 October 2026<br>General conjecture remains open.<a href="../sphinx/index.html">Sphinx documentation ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<div class="sidebar-bottom">Research edition · 31 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
 <main id="main" class="layout"><div class="eyebrow">Research archive</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a><p><span class="badge">See note</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/exact_balanced_source_normalizer_fermat.md">Markdown source</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="the-balanced-source-normalizer-is-fixed-by-its-compact-fermat-divisor">The balanced source normalizer is fixed by its compact Fermat divisor</h1>
 <p>28 October 2026. The explicit balanced finite source fixes the entire central periodic factor in the trivalent quantum-beta section. For the actual root and the original full-function marks one has EXACTLY</p>
 <pre><code>A_N(u)=(N/phi_N) u^N Psi_+(h-Log u),
@@ -17,10 +17,10 @@ phi_N=sqrt(N)exp{i*pi[1/4-(N+N^(-1))/12]}.               (1)</code></pre>
 <h2 id="the-exact-statement-on-a-balanced-source">1. The exact statement on a balanced source</h2>
 <p>Let Q=exp h and u<sup>N-w</sup>N=1. The actual polynomial is</p>
 <pre><code>B_N(u,w)=sum_(a=0)^(N-1) product_(j&lt;a)(u-Q^j w).</code></pre>
-<p>Its <a href="actual_sink_source_convolution.html#2-balanced-nonvanishing-and-its-exact-positive-norm-ratio">positive Fourier norm</a> proves B_N!=0 whenever w!=0, including u=0. Take z=Log u and c=Log(w/u), with compatible marked continuations. The identity equivalent to (1) is</p>
+<p>Its <a href="actual_sink_source_convolution.html#balanced-nonvanishing-and-its-exact-positive-norm-ratio">positive Fourier norm</a> proves B_N!=0 whenever w!=0, including u=0. Take z=Log u and c=Log(w/u), with compatible marked continuations. The identity equivalent to (1) is</p>
 <pre><code>B_N(u,w)=(N/phi_N)u^N Psi_+(h-z)Psi_+(c)
                                   exp(-cz/h).         (2)</code></pre>
-<p>The left side is the ORIGINAL finite polynomial. All full-Psi marks and the scalar on the right are the ones already fixed by its defining integral and original coefficient moments.</p>
+<p>The left side is the original finite polynomial. All full-Psi marks and the scalar on the right are the ones already fixed by its defining integral and original coefficient moments.</p>
 <p>Initially take real u&gt;1 and real positive w=(u<sup>N-1)</sup>(1/N). Set t=u^(-1), s=w/u, so s<sup>N+t</sup>N=1 with 0&lt;s,t&lt;1. Let</p>
 <pre><code>D_N(y)=product_(j=1)^(N-1)(1-Q^j y)^(j/N)</code></pre>
 <p>with every factor anchored at y=0. The independently proved rational full-function identity reads</p>
@@ -61,11 +61,11 @@ Psi_+&#39;(0)=-Psi_+(h)=-phi_N.</code></pre>
 
 S_N=(N/phi_N)u^N Psi_+(h-Log u)Psi_+(c)
                                        exp(-c Log u/h). (7)</code></pre>
-<p>There is an exact version in the ORIGINAL reflected field variables. Write z=Log U, c_0=Log(V/U), and retain the actual tags u=Q^2U,v=QV with Log u=z+2h and c=c_0-h. The backward full-Psi shift gives the balanced part of its constant coefficient as</p>
+<p>There is an exact version in the original reflected field variables. Write z=Log U, c_0=Log(V/U), and retain the actual tags u=Q^2U,v=QV with Log u=z+2h and c=c_0-h. The backward full-Psi shift gives the balanced part of its constant coefficient as</p>
 <pre><code>C_N^(bal)(U,V)=Q^(2-d)/phi_N
    *U^(N+1)(U-Q^(-1))(U-Q^(-1)V)/V^2
    *Psi_+(-z)Psi_+(c_0)exp(-c_0 z/h), d=N-1.           (7a)</code></pre>
-<p>Its remaining ORIGINAL current is exactly</p>
+<p>Its remaining original current is exactly</p>
 <pre><code>C_N^(current)=Q^(-d)/N*(1-U^N+V^N)I_N(Q^2U,QV).        (7b)</code></pre>
 <p>Indeed Psi_+(-z-h)=(1-Q^(-1)/U)Psi_+(-z) and Psi_+(c_0-h)=(1-Q^(-1)V/U)Psi_+(c_0); expanding the Gaussian accounts for Q^2 U<sup>3/V</sup>2. Thus the full physical right shapes are literally 1/U and V/U. The boundary polynomial, central U^N, Gaussian and Q^(2-d) remain. The bare fiber has the expected nonzero N^(-1/2) factor phi_N^(-1). These equations are at the original physical root; no off-root replacement of Q^N or of its derivatives is being asserted.</p>
 <p>Here I_N is its specified upward Barnes contour and is uniformly O(1) on compact positive boundary families. Equation (7) retains the original current; it does not assert that it is negligible for every positive bipyramid.</p>
@@ -83,7 +83,7 @@ Lambda=[ImLi_2(v/u)-ImLi_2(u)
 <p>All square roots and dilogarithms inherit their original upper-strip marks. The factor N/phi_N retains its exact phase and has modulus sqrt(N). Both shapes v/u and 1/u are upper. The half-density in (8a) is consequently nonzero and bounded above and below, after dividing by sqrt(N), on every compact positive boundary family. The affine 2pi*i Log u term is the retained central source, not an arbitrarily added choice of classical action.</p>
 <p>Consequently every compact family with</p>
 <pre><code>Lambda&gt;max(0,log|u|,log|v|)</code></pre>
-<p>by a fixed positive margin has ORIGINAL local source B_N=S_N(1+O(N^C exp(-eta N))). This extends the local <a href="actual_sink_source_convolution.html">positive-norm growth theorem</a> beyond its elementary |u|&lt;1 product estimate. The exact actual Q shifts u=Q^2U,v=QV and its NQ^d normalization are carried by that theorem unchanged.</p>
+<p>by a fixed positive margin has original local source B_N=S_N(1+O(N^C exp(-eta N))). This extends the local <a href="actual_sink_source_convolution.html">positive-norm growth theorem</a> beyond its elementary |u|&lt;1 product estimate. The exact actual Q shifts u=Q^2U,v=QV and its NQ^d normalization are carried by that theorem unchanged.</p>
 <p>Thus in the gap chamber the actual local source has exactly the growing two-face block (8a), with relative error O(1/N)+O(N^C exp(-eta N)). This supplies its nonzero leading coefficient rather than postulating the survival of a saddle.</p>
 <p>This is an exact local torsor/source normalization followed by a local noncancellation theorem. A broad knot proof still requires a simultaneous positive-chart and exterior-cycle comparison putting the actual relevant fibers in this gap chamber, or retaining their other currents by another method.</p>
 <p>The companion audit checks the full-Psi normalizer against the ACTUAL balanced finite source at both |u|&lt;1 and |u|&gt;1. The divisor argument, not finite numerical agreement, proves the all-level identity above.</p>

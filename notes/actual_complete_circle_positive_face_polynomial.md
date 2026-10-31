@@ -1,6 +1,6 @@
 # The actual complete circle as a positive face polynomial
 
-30 October 2026. Independently reviewed. The complete ROOT
+30 October 2026. The complete ROOT
 circle, with its original weight and literal W/pi cup normalization,
 has an exact homogeneous polynomial factorization in its four face
 diagonals. For EVERY original folded channel that polynomial has nonnegative
@@ -34,7 +34,7 @@ is r=sigma-m, with its actual complement 2a-r. Thus
     Q^R=-q^-1 x/c, Q^(sigma-R)=-q^-1 c/y.
 
 The physical half-index and the auxiliary finite color are not confused.
-Define, using the ORIGINAL Hermitian matrices H_-,H_+,
+Define, using the original Hermitian matrices H_-,H_+,
 
     D_a(x,z,y)=det[z I+(x/2)H_-+(y/2)H_+],
     Ptilde_s(x,y)=product_(j=a+1)^(d-a)(x-Q^j y).       (2)
@@ -211,14 +211,6 @@ unequal totals congruent modulo N, 5274 supported unwrapped pairs and
 calculations check the phase, outer degree and centered mark exponents.
 No numerical global source transformation is asserted by this audit.
 
-Independent full analytical local/source review: PASS. The reviewer
-checked the exact root Hopf normalization and both-parity carry sign,
-all-label sine-binomial positivity, and local modular support after
-ONE forced factor remains following the actual cup cancellation.
+The local modular support uses the one forced factor that remains after the cup cancellation.
 
-Independent primary full analytical review and fresh redirected replay:
-PASS. The primary reader checked the full scalar and head powers,
-q-binomial phase cancellation, positive mixed determinant coefficients,
-and every unwrapped-support interval case. The fresh audit reproduced
-all reported counts and errors. Both reviews retain the local source
-scope; the global face-grid, marked coefficient and rate remain separate.
+The global face grid, marked coefficient and exponential rate are separate from this local source statement.

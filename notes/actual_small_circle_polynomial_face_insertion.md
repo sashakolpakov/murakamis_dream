@@ -1,6 +1,6 @@
 # A small untwisted circle is an exact polynomial face operator
 
-30 October 2026. Independently reviewed and frozen. At one actual
+30 October 2026. At one actual
 untwisted port, the complete sum of the original small-color paths
 preserves the polynomial face ring. Its physical endpoint zeros cancel
 the negative powers that occur in individual path or clock terms.
@@ -110,7 +110,7 @@ connected flat projection. The literal identity smoothing merges b,c;
 its two original marked faces u,v remain distinct.
 
 Let P_rem be the product of the R-1 remaining positive circle
-polynomials D_a D_a Ptilde_s, retaining their ORIGINAL face incidences
+polynomials D_a D_a Ptilde_s, retaining their original face incidences
 and keeping b,c independent. Define the polynomial on the smoothed
 face graph
 
@@ -222,19 +222,6 @@ monomials all have the unique asserted target. These checks concern
 the original finite tensors; the all-diagram identity and norm bound
 are the preceding analytical arguments.
 
-An independent full analytical source/interface review checked (2)--(9),
-including the original high-total coproduct, q^(pd), ordered shifts,
-Chebyshev composition, endpoint cancellations and original marked
-measure. It also checked (10)--(12). That review makes no claim about
-multiple, marked-middle or signed small ports.
+The face-insertion theorem does not include multiple, marked-middle or signed small ports.
 
-The same independent reviewer freshly replayed the entire audit with
-redirected output, reproducing all stated counts and both original
-mark/parity cases. No source or runtime changes were made during that
-replay.
-
-A second full analytical review and audit-code read independently
-checked the original whole-source interface, the q^(pd) factor,
-physical support, polynomial endpoint cancellations, degree/alias
-argument and weighted norm estimate. Both reviews preserve the stated
-one-port scope. The theorem, audit and saved results are frozen.
+The theorem retains its one-port scope.

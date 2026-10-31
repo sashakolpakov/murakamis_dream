@@ -1,6 +1,6 @@
 # A general quarter bound and the full core estimate for strict Conway trees
 
-31 October 2026. Reviewed research proof. The assertions concern every fixed
+31 October 2026. research proof. The assertions concern every fixed
 literal strict cylindrical tree, not only the completed grammar of the
 published manuscript. The alias part of the original invariant remains
 separate. No change to that manuscript's theorem is made here.
@@ -292,16 +292,9 @@ full original-invariant volume limit for independently long fixed signed
 twists. This is a reduction of the remaining conjectural step, not an
 assertion that (10) holds for every strict tree.
 
-## Internal review and scope
+## scope
 
-The marked-geometry reviewer read the full argument in §§1–6 and
-independently checked the endpoint comparison using the exact denominator
-\(N-1\). Two source reviewers independently checked the quarter bound,
-gate rank and resulting core gap, including the two-leaf exception. These
-are internal analytical reviews, not external peer review or formal
-verification. No numerical asymptotic is a proof input. The theorem
-concerns the literal all-core source for strict knot patterns; it does
-not assume that every nonempty alias sector has a gap.
+This argument concerns the literal all-core source for strict knot patterns. A gap for every nonempty alias sector is a separate requirement.
 
 For the root-star family, the [full-jet localization](actual_conway_root_star_full_jet_localization.md)
 and [root-character Fourier contraction](actual_conway_root_character_fourier_contraction.md)

@@ -43,7 +43,7 @@ have mass exp(o(N)), and satisfy
     partial T_r = C_low,r - C - B_r + E_r.             (2)
 
 Here T_r is the transported truncated cylinder, C_low,r is supported in
-{phi<=a}, B_r is the transported side coming from the ORIGINAL boundary
+{phi<=a}, B_r is the transported side coming from the original boundary
 partial C, and E_r is the complete exit-associated current. The image
 of every term on the right lies in the legal closed window {rho<=r}.
 Thus a closed p-form omega on that window obeys the exact identity

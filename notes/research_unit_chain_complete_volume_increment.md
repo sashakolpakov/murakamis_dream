@@ -1,8 +1,7 @@
 # Complete volume added by a marked unit chain
 
-31 October 2026. Preserved analytical consequence of the reviewed
-[unit-chain closure theorem](general_marked_unit_chain_filling_volume.md).
-Not part of the frozen public batch; no new quantum estimate is claimed.
+31 October 2026. Preserved analytical consequence of the [unit-chain closure theorem](general_marked_unit_chain_filling_volume.md).
+No new quantum estimate is claimed.
 
 Let \(\Phi_D=\operatorname{Vol}(Y_D)/(2\pi)\) be the absolutely normalized
 complete source capacity. In the marked strip normalization of that theorem,
@@ -24,18 +23,13 @@ It follows from the actual complete-source volume calibration that
 
 \[
  \operatorname{Vol}(Y_{D^{(m)}})-\operatorname{Vol}(Y_D)
- =16mG=4m\,v_{\rm oct}.
+ =16mG=4m\,v_{\mathrm{oct}}.
 \]
 
-Here \(v_{\rm oct}=4G\) is the regular ideal octahedron's volume: splitting
+Here \(v_{\mathrm{oct}}=4G\) is the regular ideal octahedron's volume: splitting
 it into four ideal tetrahedra with angles \((\pi/2,\pi/4,\pi/4)\) gives
 \(4[\Lambda(\pi/2)+2\Lambda(\pi/4)]=4G\). The same difference is zero
 at \(m=0\). This proves that the added complete source regions increase
 the actual drilled volume, and are not a redundant presentation of a fixed
 augmented exterior. It does not assert additivity of the filled volumes or
 a filling threshold uniform in depth.
-
-The local action count was derived independently by geometry and root;
-the public unit-chain proof supplies its original port dictionary and
-unchanged packing. A separate public revision can include this corollary
-after its final formatting and scope review.

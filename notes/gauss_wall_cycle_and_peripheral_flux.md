@@ -51,7 +51,7 @@ For the exceptional sphere \(\eta=0\), the pullback of \(\Xi\)
 is zero. For the physical sphere
 \(\eta=(1-e^{-cT})/v\), it is \(c\Omega\). Hence
 \[
- \int_{\Gamma_{\rm phys}}\Xi=-c^2=4\pi^2,\qquad
+ \int_{\Gamma_{\mathrm{phys}}}\Xi=-c^2=4\pi^2,\qquad
  \int_{\Gamma_E}\Xi=0.                            \tag{2}
 \]
 This already excludes any homology between them in \(Y\setminus D\),
@@ -59,7 +59,7 @@ without requiring a proposed homotopy to preserve its flag coordinates.
 
 ## 2. Integral Gysin class and its orientation
 
-The radial three-chain \(\eta=\lambda\eta_{\rm phys}\) has
+The radial three-chain \(\eta=\lambda\eta_{\mathrm{phys}}\) has
 \[
  F=1-\lambda+\lambda e^{-cT}.
 \]
@@ -78,7 +78,7 @@ Thus the complex-normal orientation is opposite the
 \(-\gamma_v\). Define the tube by a positive complex-normal
 circle followed by the positive \(v\)-circle. Excision gives
 \[
- [\Gamma_{\rm phys}]-[\Gamma_E]=-\operatorname{Tube}[\gamma_v].
+ [\Gamma_{\mathrm{phys}}]-[\Gamma_E]=-\operatorname{Tube}[\gamma_v].
                                                                \tag{3}
 \]
 Its period checks the sign:
@@ -98,7 +98,7 @@ A normal neighborhood of \(D\) has the explicit normal coordinate
 Its long exact sequence gives
 \[
  0\longrightarrow H_1(D,\mathbb Z)
-   \xrightarrow{\rm Tube}H_2(Y\setminus D,\mathbb Z)
+   \xrightarrow{\mathrm{Tube}}H_2(Y\setminus D,\mathbb Z)
    \longrightarrow H_2(Y,\mathbb Z)\longrightarrow0 .
 \]
 The following intersection map is zero because the generator
@@ -152,7 +152,7 @@ Their compact period is
 \]
 This inverse-eigenvalue convention matters. The literal signed
 quantity \(\int\Xi/(c h_N)=-N\lambda\) is opposite the Chern
-degree convention \(c_1=-F_{\rm curvature}/(2\pi i)\) of the
+degree convention \(c_1=-F_{\mathrm{curvature}}/(2\pi i)\) of the
 compact \(O(N)\) source; the latter degree is \(+N\lambda\).
 Either signed curvature index can be used if identified explicitly.
 
@@ -169,10 +169,10 @@ The source connection \(\theta=-a\,dv\) obeys
  \vartheta=d\log\eta-2\theta
 \]
 is global off \(E\), with \(d\vartheta=-2\Omega\).
-For \(H_G=-d\log\eta\wedge\Omega\) and \(H_{\rm cut}=H_G/F\),
+For \(H_G=-d\log\eta\wedge\Omega\) and \(H_{\mathrm{cut}}=H_G/F\),
 the exact global primitive is
 \[
- H_{\rm cut}-H_G=dB,\qquad
+ H_{\mathrm{cut}}-H_G=dB,\qquad
  B=\tfrac12d\log F\wedge\vartheta
   =\frac{1-2va}{2F}d\eta\wedge dv.               \tag{6}
 \]
@@ -184,10 +184,10 @@ The residue is
  -d\operatorname{Res}_D B=\Omega.
 \]
 It vanishes on the radial intersection circle. Also
-\(B|_{\Gamma_{\rm phys}}=-(1-2T)\Xi/2\) has zero period.
+\(B|_{\Gamma_{\mathrm{phys}}}=-(1-2T)\Xi/2\) has zero period.
 This does not remove the distinct two-cycle class (3).
 
-Radial integration of \(H_{\rm cut}-H_G\) uses the logarithm
+Radial integration of \(H_{\mathrm{cut}}-H_G\) uses the logarithm
 along the chord from \(1\) to \(e^{-cT}\). That logarithm is
 \(-cT\) below \(T=1/2\), and \(c(1-T)\) above it; its compact
 mean is zero. The physical marked logarithm is \(-cT\) throughout.
@@ -202,9 +202,9 @@ actual quantum action still requires the actual action/source map.
 ## 5. Actual character and polynomial wall charges
 
 For the actual variable \(M\), (5) gives the direct flux
-\(I_{\rm phys}=2c\log M\). Its explicit inverse character is
+\(I_{\mathrm{phys}}=2c\log M\). Its explicit inverse character is
 \[
- \chi_H=\exp(-I_{\rm phys}/H)
+ \chi_H=\exp(-I_{\mathrm{phys}}/H)
         =\exp(-2c\log M/H).
 \]
 It is invariant under \(M\mapsto e^{H/2}M\); its marked

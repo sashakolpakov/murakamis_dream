@@ -1,6 +1,6 @@
 # Ordered small-circle insertions and the original marked face
 
-30 October 2026. Independently reviewed and frozen. This note extends
+30 October 2026. This note extends
 the exact polynomial insertion to several untwisted ports in a specified
 literal Morse class. The operators act in reverse source order, including
 on all coefficients created by later ports. It also supplies a one-port
@@ -175,7 +175,7 @@ earlier pending port weights, unlike the ordered class in section 1.
 Several protected outgoing ports, disconnected smoothings, and retained
 R^epsilon at the small ports remain separate source problems.
 
-## 5. Original-source verification and reviews
+## 5. Original-source verification and scope
 
 The [focused audit](../experiments/audit_actual_ordered_small_circle_face_insertions.py),
 with [saved results](../experiments/actual_ordered_small_circle_face_insertions_results.json),
@@ -190,13 +190,4 @@ targets are the asserted unique coefficients. An explicit original
 source gives a different answer when the reverse order is replaced
 by forward order. Coincident outer labels are also tested literally.
 
-Two independent full analytical reviews checked the source births,
-ordered summation including coefficient shifts, scalar/primitive-grid
-normalization, weighted norm and protected-face transpose adapter.
-The second reviewer freshly replayed the full audit with redirected
-output and reproduced every count. A third targeted source-geometric
-review independently checked the literal sweep, older-face forest,
-last-even-gap connectedness and retained marked-gap assertions in
-sections 1--2. None of these reviews extends the theorem to arbitrary
-mixed-direction subsets, disconnected smoothings or signed small ports.
-The note, audit and saved results are frozen.
+The theorem does not extend to arbitrary mixed-direction subsets, disconnected smoothings or signed small ports.

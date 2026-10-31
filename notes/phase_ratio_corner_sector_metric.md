@@ -1,6 +1,6 @@
 # A tame phase-ratio projector on the actual doubled corner sector
 
-29 October 2026. This is a boundary metric theorem for the ORIGINAL
+29 October 2026. This is a boundary metric theorem for the original
 normalized Fermat cap, with all source normalizers retained. On its
 selected doubled clock sector, every flat orthogonal projector is
 exactly contractive for real cap parameters and polynomially bounded
@@ -69,7 +69,7 @@ sum sectors are
     V_s=span{|a,s-a mod N>:0<=a<N},
     G|_(V_s)=diag(g_a), g_a=h_a h_(s-a).                         (6)
 
-The ORIGINAL conjugate double may equivalently be written using
+The original conjugate double may equivalently be written using
 the source-exact antiunitary reflection of
 [the reflection theorem](phase_ratio_double_and_fermat_source.md).
 That reflection preserves h and adds only its specified diagonal
@@ -191,8 +191,4 @@ parameters exponentially small in N; none substitutes epsilon=0
 before constructing the metric. The accompanying result file is
 written only after all assertions pass.
 
-Fresh replay: PASS 710 actual normalized cap sectors, 664 direct
-weighted character/sum-projector checks, and 12 opposite-root cases.
-Python compilation also passes. The numerical checks supplement the
-uniform reflected-chord proof; they do not establish interior
-preservation of the selected sector.
+The phase-ratio checks do not establish preservation of the interior domain.

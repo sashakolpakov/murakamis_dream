@@ -16,7 +16,7 @@ them for broader original sources is part of the active goal.
 Fix a diagram with b specified crossing-circle ports on original
 complete target strands. Retain its entire marked closure, all Cartan
 factors, and its literature normalization. Let A_N(h_1,...,h_b) be
-its ORIGINAL mixed-circle scalar, with auxiliary colors j_i=N-h_i.
+its original mixed-circle scalar, with auxiliary colors j_i=N-h_i.
 The [all-input circle basis](actual_crossing_circle_source_and_filling.md)
 gives the exact finite identity
 

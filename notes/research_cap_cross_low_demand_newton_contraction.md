@@ -1,6 +1,6 @@
 # A low-demand signed cap/CROSS contraction from the original Newton source
 
-31 October 2026. **Internally reviewed analytical research theorem.** Root and coherent completed full independent internal proof/source reviews; this is not external peer review. This concerns the actual fixed spectral pair at even levels. It retains the original A-face demand, all unused factors, and the genuine cutoff. No uniform-coupon semisimple model or positive moment norm is used.
+31 October 2026. The theorem concerns the fixed spectral pair at even levels. It retains the A-face demand, all unused factors and the genuine cutoff. It does not use a uniform-coupon semisimple model or a positive moment norm.
 
 ## 1. Original coefficients and an auxiliary full slice
 
@@ -23,7 +23,7 @@ For every 0<=n<=d define only as an algebraic auxiliary
 
     S_n^full=sum_(j=0)^n (-1)^j U_j C_(j,n-j).               (2)
 
-For 0<=n<=M this is exactly the ORIGINAL projected cap/CROSS sum S_(N,n), because its J_n is 0..n. No equality with the projected sum is asserted for n>M.
+For 0<=n<=M this is exactly the original projected cap/CROSS sum S_(N,n), because its J_n is 0..n. No equality with the projected sum is asserted for n>M.
 
 The new identity is
 
@@ -93,7 +93,7 @@ Thus all three matrix entries and the original turn/mark factor agree term by te
 
 ## 3. Original Newton algebra gives the recurrence
 
-Use the reviewed [genuine Newton packet](actual_newton_turn_positive_gram.md)
+Use the [genuine Newton packet](actual_newton_turn_positive_gram.md)
 
     Bhat_r(z)=product_(j=0)^(r-1)(c_j-z)/P_r^2,
     R Bhat_r=Bhat_(d-r),
@@ -179,10 +179,10 @@ The sharper factor a_0/gamma_n is bounded independently of N on every fixed macr
 
 ## 5. Exact scope and validation
 
-Equation (3) holds for the full auxiliary slices, while the bound (14) applies to the ORIGINAL projected cap/CROSS coefficient in the stated low-demand range at even levels. It is complementary to the separately proved [high-demand theorem](research_cap_cross_high_demand_signed_contraction.md). It does not yet cover N/4<n<=M, the middle cutoffs n>M, or the odd-level source. The forward recurrence can be unstable when t_n>1, so (13) must not be extrapolated without a further argument. A simple uniform bound for the actual full inverse in (10) is neither proved nor required.
+Equation (3) holds for the full auxiliary slices, while the bound (14) applies to the original projected cap/CROSS coefficient in the stated low-demand range at even levels. It is complementary to the separately proved [high-demand theorem](research_cap_cross_high_demand_signed_contraction.md). It does not yet cover N/4<n<=M, the middle cutoffs n>M, or the odd-level source. The forward recurrence can be unstable when t_n>1, so (13) must not be extrapolated without a further argument. A simple uniform bound for the actual full inverse in (10) is neither proved nor required.
 
-The proof inputs are the original-demand convolution, the [full homogeneous face theorem](actual_homogeneous_casimir_face_source.md), the literal root swap/complement symmetry, and the genuine Newton turn/Frobenius identities. The literal physical-index verification (6) supplies the source adapter. A focused independent direct calculation of the original K recurrence at 90 digits checked (3) for all full slices at N=4,6,8,10,12,16,20 (76 coefficients); maximum relative residual below 6e-81. This is a finite identity check, not the proof of the general estimate. A separate [portable exact-field audit](../experiments/audit_research_cap_cross_low_demand_newton_contraction.py), with [recorded results](../experiments/research_cap_cross_low_demand_newton_contraction_results.json), independently contracts the actual three-port physical tensors at four even levels. It verifies 28 original marked scalars, 28 full auxiliary recurrences, 14 original low-cutoff identifications and 28 Newton resolvent entries. The root reviewer completed a fresh redirected replay with the same results. These finite checks support the source dictionary; inequality (14) is proved analytically above.
+The proof inputs are the original-demand convolution, the [full homogeneous face theorem](actual_homogeneous_casimir_face_source.md), the literal root swap/complement symmetry, and the genuine Newton turn/Frobenius identities. The literal physical-index verification (6) supplies the source adapter. A focused independent direct calculation of the original K recurrence at 90 digits checked (3) for all full slices at N=4,6,8,10,12,16,20 (76 coefficients); maximum relative residual below 6e-81. This is a finite identity check, not the proof of the general estimate. A separate [portable exact-field audit](../experiments/audit_research_cap_cross_low_demand_newton_contraction.py), with [recorded results](../experiments/research_cap_cross_low_demand_newton_contraction_results.json), independently contracts the actual three-port physical tensors at four even levels. It verifies 28 original marked scalars, 28 full auxiliary recurrences, 14 original low-cutoff identifications and 28 Newton resolvent entries. These finite checks support the source dictionary; inequality (14) is proved analytically above.
 
-The full internal analytical reviews checked the original C_(0,n)=V_(d-n) normalization, the Newton exterior monomial and raw sign, the physical swap/complement reindexing and unwrapped conservation, the all-node resolvent, the missing top coefficient in the exact recurrence, and both small-level endpoints of the quarter-demand estimate. They do not establish a bound beyond the stated demand range or at odd levels.
+The stated low-demand range and parity restrictions remain essential. In particular, the omitted top coefficient belongs to the actual source and cannot be restored from an auxiliary recurrence.
 
 Additional source reference: [full physical pair commutant and genuine marked trace](actual_pair_casimir_commutant_and_rotated_trace.md), sections 2–4.

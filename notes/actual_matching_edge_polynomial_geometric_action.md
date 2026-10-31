@@ -272,25 +272,5 @@ actions and first derivatives, four endpoint second derivatives,
 and twelve general-input scalar derivatives and character equations,
 at both level parities. No operator or network asymptotic is tested.
 
-Root full analytical review: PASS, including the general-input theorem.
-The review checked the actual inverse-turn typing and ordered
-conjugator, the marked eigenratio and scalar derivative sign, the
-positive finite-source anchor and strip continuation, and the general
-four-parabolic character equation and parabolic limit.
 
-Independent geometry-agent analytical reviews and fresh redirected
-audits: PASS. The initial read independently checked the actual cyclic
-basepaths, ordered target map, primitive normalization, scalar action
-and its precise scope. A separate targeted read checked every new
-general-input formula, the input/target distinction, the character
-trace sign, all branch singularities and the continued marking. Fresh
-replays of both the original and expanded audits reproduced every
-reported count. The note and expanded audit are frozen.
-
-Independent coherent-source full analytical review and fresh expanded
-audit: PASS. The review checked the true inverse turn, ordered
-conjugator, complete and general-input derivatives, finite scalar
-anchor, continued branches and character trace signs. Its scope uses
-the stated analytic c>1 continuation without asserting realization by
-a complete geometric rectangle. No polynomial-operator substitution
-or source-cycle contribution was inferred.
+The action uses the stated analytic c>1 continuation without claiming that it is realized by a complete geometric rectangle. No polynomial-operator substitution or source-cycle contribution follows.

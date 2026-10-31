@@ -1,7 +1,11 @@
-\chapter{Alias estimates that survive composition}\label{ch:alias}
+\chapter{Controlling the signed complementary color terms}\label{ch:alias}
+
+The positive complete-color calculation does not by itself estimate the invariant after filling, because the exact filling formula uses every auxiliary color. For those colors an elementary piece contains the core and alias terms defined in Chapter~\ref{ch:source}. After a retained crossing, their coefficients can oscillate. We need a bound on the entire contribution of every selection containing at least one alias.
+
+The bound is obtained by comparing logarithmic coefficient rates with tangent planes at the complete stationary state. Internal tangent terms cancel when boxes are stacked. A positive loss left at one elementary piece or one small block then survives all later compositions. The reason for treating blocks is that an individual alias need not lie below its leaf tangent throughout the permitted interval.
 
 \section{Coefficient envelopes on the true support}
-Write each mixed leaf as core plus alias, using \eqref{eq:core-alias} and then applying \eqref{eq:half-twist} when required. A low physical color has no core. A high physical color has the displayed positive core before its half twist. The resulting signed arrays are always propagated through the full Newton multiplication law.
+Let $C_j^\eps$ and $A_j^\eps$ denote, respectively, the core polynomial and the alias polynomial of an elementary piece of color $j$ with retained half-twist sign $\eps$. For a polynomial $P$, the notation $[\Bhat_r]P$ means its coefficient in the Newton basis, not an evaluation at a root. Write each colored elementary piece as core plus alias, using \eqref{eq:core-alias} and then applying \eqref{eq:half-twist} when required. A low physical color has no core. A high physical color has the displayed positive core before its half twist. The resulting signed arrays are always propagated through the full Newton multiplication law.
 
 The endpoint-uniform factorial estimates and the selected complete half-twist recurrence give the following coefficient bounds, uniformly in every physical color and Newton index:
 \begin{equation}\label{eq:leaf-envelopes}
@@ -72,7 +76,9 @@ Appendix~\ref{app:certificate} proves the enclosure rules and specifies the fini
 \end{proof}
 
 \section{A leaf attached to an arbitrary completed child}
-Let $(B,X,Y)$ be the selected child port and $(B_p,X,Y_p)$ the parent port. Put
+
+Suppose the new elementary piece is stacked with a box that has already been constructed. We retain all the internal structure of that box through its profile $f_E$ and its output tangent. The comparison below therefore has one leaf variable, one output variable for the existing box, and the output of their stack. It is not an estimate for two bare leaves.
+Let $(B,X,Y)$ be the selected boundary triple of the child and $(B_p,X,Y_p)$ the boundary triple of the parent. Put
 \begin{equation}\label{eq:attachment-slopes}
  \begin{gathered}
  a=\arccot X/\pi,\quad b=\arccot B/\pi,\quad
@@ -81,7 +87,7 @@ Let $(B,X,Y)$ be the selected child port and $(B_p,X,Y_p)$ the parent port. Put
  \lambda=f_{hE}'(c)=\mu+2\log(X+B).
  \end{gathered}
 \end{equation}
-The proper-port bounds give $1/2<X<1$ and $1/(2X)-X<B<X$. Define
+The bounds of Lemma~\ref{lem:port-bounds} give $1/2<X<1$ and $1/(2X)-X<B<X$. Define
 \begin{align}
  P(\mu,\lambda)&=\max_{D,\ u\le1/2}
        \{g(u)+m(u,v,w)+\mu v-\lambda w\},\label{eq:single-P}\\
@@ -137,6 +143,8 @@ Finally add the tangent of the concave gate and the child linear term. The three
 \end{figure}
 
 \section{The whole-tree induction}
+
+For a fixed choice of which elementary pieces contribute aliases, evaluate that contribution through the original construction tree. Such a choice is called an \emph{alias subset}, or sector. There are only finitely many subsets because the construction is fixed. We first bound each subset separately, retaining an affine tangent in the open output index; only at the final closure are those output terms canceled.
 For every completed subtree at its selected output $b_E$, write $\lambda_E=f_E'(b_E)$. We prove, uniformly over all colors and all output indices,
 \begin{equation}\label{eq:subtree-tangent}
  |[\Bhat_r]E_S|\le

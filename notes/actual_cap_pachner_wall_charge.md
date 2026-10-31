@@ -36,7 +36,7 @@ $$
 $$
 
 with the branches equal to $1$ at $\varepsilon=0$. For
-$s,t\in\{0,d\}$ use the ORIGINAL Fermat frames
+$s,t\in\{0,d\}$ use the original Fermat frames
 
 $$
  P_n^{s}(a)=
@@ -239,7 +239,7 @@ $$
  J_{ts}(a)=\widehat P_s(a)\widehat L_t(a).
 $$
 
-These are the regular ORIGINAL cap frames. The uniform cap-wall
+These are the regular original cap frames. The uniform cap-wall
 estimate gives an absolute $C$ such that their Euclidean norms
 are at most $C$ on $|a|\le1/(16N)$. Consequently the rank-one
 kernel has trace norm at most $C^2$ there. If

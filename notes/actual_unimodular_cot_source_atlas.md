@@ -1,6 +1,6 @@
 # Exact cotangent source atlases and their universal-transport limitation
 
-28 October 2026. The TU pulling atlas of the ORIGINAL physical source
+28 October 2026. The TU pulling atlas of the original physical source
 has a finite compatible residue implementation, with explicit fixed
 integer coefficients and no exponentially conditioned chart adapter.
 Elementary cotangent changes retain calculable side currents. Artificial
@@ -64,7 +64,7 @@ The proved pulling triangulation gives finitely many cells
 with their number and matrices depending only on the fixed diagram.
 Assign shared lattice faces once using a fixed half-open convention.
 Let Lambda_j be the resulting disjoint partition of Lambda_N.
-This is a partition of the ORIGINAL finite states, not a new source.
+This is a partition of the original finite states, not a new source.
 
 Put A_j=B_j^(-1). Since d v_j is integer and A_j is unimodular,
 the joint poles of the new chart kernel are the SAME integer lattice.
@@ -261,7 +261,7 @@ currents, and exact aggregate cancellation of ARTIFICIAL cotangent
 divisors. These statements include its complete original source.
 
 A global phase-small cycle does not follow. Beyond choosing compatible
-interfaces, one must use an ORIGINAL-STATE-specific Ward/fusion
+interfaces, one must use an original-STATE-specific Ward/fusion
 identity to recombine genuine evaluation residues. The transport must
 then control the resulting full currents. A construction that stays
 universal on all holomorphic test functions cannot accomplish that

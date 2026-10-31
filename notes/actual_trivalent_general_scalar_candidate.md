@@ -118,7 +118,7 @@ white rows and their ordered sewing are additional data.
 ## 4. Exact checks and their logical limit
 
 The [independent finite-source audit](../experiments/audit_actual_trivalent_general_scalar_candidate.py)
-builds W from the ORIGINAL coproduct, instead of (2) or (5), and
+builds W from the original coproduct, instead of (2) or (5), and
 evaluates the literal source corner. It checks every retained triangle
 triple at N=2,...,16: 539 supported triples and 1,212 vanishing triples,
 including all root phases and both parities. It also checks (3) at
@@ -127,8 +127,4 @@ checked the full complex phase and modulus on all 636 triangle triples
 at N=2,...,13; an additional 305 supported triples at N=11,13,17
 were used to determine and check the candidate phase modulo N.
 
-These computations supply reproducible counterexample searches and
-normalization evidence. They do not by themselves prove the positive
-branch of (6) for arbitrary N. That proof is the finite algebra linked
-above, with an independent derivation and internal analytical reviews;
-it is not an assumed literature identity.
+These computations supply reproducible counterexample searches and normalization evidence. They do not by themselves prove the positive branch of (6) for arbitrary N. The finite algebra linked above proves the identity directly.

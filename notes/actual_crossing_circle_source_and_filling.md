@@ -1,7 +1,7 @@
 # Original crossing-circle sources and the complete twist-filling packet
 
 29 October 2026. A crossing-circle source can be calculated from the
-ORIGINAL mixed universal crossings and pivotal trace. Its complete-color
+original mixed universal crossings and pivotal trace. Its complete-color
 operator is generally noninvertible and is nilpotent at even levels.
 Therefore a fixed N-colored augmented-link scalar is not, by itself,
 an all-port filling state for the original knot.
@@ -198,7 +198,7 @@ assumed surgery formula or a semisimple Kirby-color substitution.
 Take any original marked braid/plat diagram with a fixed collection
 of disjoint, specified two-strand full-twist boxes. Write their powers
 as R_i^(2p_i), keeping all other signed crossings, turns, pivots and
-the ORIGINAL marked cut literally. An odd twist box may retain its
+the original marked cut literally. An odd twist box may retain its
 one original half twist and apply (10) only to the even remainder.
 At a dual-oriented port transport the actual whole identity by its
 given rigid duality; no independent auxiliary cut is introduced.
@@ -213,7 +213,7 @@ Section1, and the main modified/marked source is unchanged. Then
            sum_(j_1,...,j_s) product_i a_(p_i,j_i)
                               A_N(j_1,...,j_s).         (12)
 
-The displayed chi_N is the ORIGINAL filled-diagram peripheral and
+The displayed chi_N is the original filled-diagram peripheral and
 framing line. It has not been replaced by a guessed normalization of
 the augmented diagram. If a separately normalized augmented-link
 invariant is used, its precise ratio to this literal A_N must first

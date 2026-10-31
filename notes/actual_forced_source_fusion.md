@@ -1,6 +1,6 @@
 # Forced physical overbridges and charged full-block source fusion
 
-28 October 2026. This gives two constructive reductions of the ORIGINAL
+28 October 2026. This gives two constructive reductions of the original
 source, at every N, arbitrary braid width and arbitrary crossing signs.
 First, the exact bridge contractions continue through the actual
 closure pivots. A marked-cut extreme therefore removes a whole physical

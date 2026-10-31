@@ -50,7 +50,7 @@ An important presentation distinction was clarified during this audit.
 The cited scalar-to-companion construction has target
 \(M=T^N-I\). That target is not automatically the word-time head
 operator \(E\). Applying the conditional formula
-\(K_{\rm con}(I_0J)=(I_1R)P\) to this actual word still requires a
+\(K_{\mathrm{con}}(I_0J)=(I_1R)P\) to this actual word still requires a
 supplied chain map \(EJ=RP\); alternatively the general algebraic
 extension theorem can be applied directly with \(A=M\).
 The revised note states this distinction explicitly and does not

@@ -1,6 +1,6 @@
 # An elementary balance certificate for one zero middle
 
-Independently reviewed source-normalized lemma, 31 October 2026. This is a local analytic test on actual complete curvatures. It does not by itself construct a family of diagrams or assert that the test holds for one.
+source-normalized lemma, 31 October 2026. This is a local analytic test on actual complete curvatures. It does not by itself construct a family of diagrams or assert that the test holds for one.
 
 Let a port have middle curvatures $0$ and $e>0$, outer curvatures $x,y\geq0$, and $A=x+y>0$. Retain the original complete triangle potential $Q$ from the [calibrated source](actual_cross_cofactor_marked_action.md). If
 
@@ -128,4 +128,4 @@ The [reduced-layer family theorem](general_reduced_layer_long_filling_volume.md)
 
 ## Validation and scope
 
-Root and an independent source reviewer checked the complete analytical proof, including the original action normalization, worst-split comparison, monotonicity, all exact rational bounds, and protected-zero limits. The fractions in (6)–(8) were independently recomputed exactly. No numerical quadrature or sample of diagrams supplies the uniform bound.
+The bound follows from scalar comparison, monotonicity, exact rational inequalities and protected-zero limits. Numerical quadrature or a sample of diagrams cannot establish its uniformity.

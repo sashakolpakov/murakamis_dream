@@ -4,7 +4,7 @@
 explicit ordinary-channel quotient, with a once-power affine-angle
 normalization. Its original ordinary and marked co-sources have exact
 polynomial dual costs. This gives a positive all-width Cauchy form with
-the ORIGINAL whole source, rather than an ordinary positive trace.
+the original whole source, rather than an ordinary positive trace.
 
 The quotient does not erase the circle's nilpotent data: its inclusion
 and projection do NOT compose to the identity. Whole-block braiding is
@@ -278,14 +278,4 @@ operator (9), both original cap types and the full-source positive
 inequality (12). It uses the original finite generators and crossings;
 no unknown scalar period selects the basis or metric.
 
-Fresh replay: PASS seven exact original Hopf quotient families
-N=2,...,8, their complete highest Hom spaces in BOTH leg orders;
-seven full positive angle-metric and sewing families; five complete
-mixed-block braidings N=2,...,6, including both signed norm bounds;
-and nine original signed plat source inequalities through six physical
-heads. The mixed-block audit identifies the induced physical braid
-entry by entry with the ordinary-channel universal R, including its
-full Cartan. Whole-block braid naturality is separately checked on all
-input columns at N=2,...,5. The
-finite tests supplement the all-level proofs and make no macroscopic
-split-pair or global geometric-energy assertion.
+The finite quotient checks do not establish a macroscopic split-pair estimate or a global energy bound.

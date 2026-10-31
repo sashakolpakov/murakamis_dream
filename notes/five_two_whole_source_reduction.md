@@ -218,7 +218,7 @@ At Y=1, use
 
     T_n(1)=(-1)^n Q^(-n(n+1)/2)(Q;Q)_n^2.
 
-Writing F_n=(Q;Q)_n, the ORIGINAL reduced Kashaev state is therefore
+Writing F_n=(Q;Q)_n, the original reduced Kashaev state is therefore
 
     <5_2>_N=sum_(0<=j<=n<N)
           Q^[-n(n+2)-j(n+1)] F_n^3/[F_j F_(n-j)]. (6.2)

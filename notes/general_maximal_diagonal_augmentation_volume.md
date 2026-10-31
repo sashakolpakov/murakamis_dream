@@ -1,8 +1,7 @@
 # Long-twist knot volume from a maximal diagonalization of any simple spherical quadrangulation
 
 31 October 2026. Research theorem assembled from the original-source,
-geometric, and analytic proofs cited below. Three independent internal
-reviews of this assembly passed. The conclusion concerns actual Kashaev invariants
+geometric, and analytic proofs cited below. The conclusion concerns actual Kashaev invariants
 and actual filled hyperbolic volumes. The diagram is selected by a finite
 classical maximization; it is not an arbitrary prescribed diagram.
 
@@ -337,19 +336,3 @@ a particular minimal bridge number. The
 therefore remains open beyond this and the previously certified
 subclasses. For that target one still needs a source comparison on the
 given diagram, or a topology-preserving way to reach a certified chart.
-
-## Internal review record
-
-The maximal-diagonalization and finite Morse source notes have separate
-full internal analytical/source reviews. The general Morse action and
-H1/H2 extension has its own written dependency proof. The geometry,
-cluster-source, and coherent-source reviewers independently read this
-integrated statement and reported full analytical/source PASS. Their
-checks included the initial simple-sphere certificate, R=2 and separating
-triangles, both finite parity cutoffs, shared targets, full remainder
-restoration through the new gap alone, the whole charge sum and endpoint
-currents, variable-headcount group sewing, primitive slopes, and the
-actual filled-volume normalization. The root independently checked the
-assembly and the reported interfaces. No numerical growth experiment
-is used as proof. These are research proofs in this workspace, not an
-assertion of external peer review or publication.

@@ -1,6 +1,6 @@
 # A finite original-network source envelope at the resonant boundary
 
-30 October 2026. Independently reviewed. Fix the labeled positive
+30 October 2026. Fix the labeled positive
 right-angled matching-polyhedron certificate, actual cut and original
 white-prefix dictionary of an augmented diagram with one main component.
 On its single common boundary chart, the actual complete ROOT tensor
@@ -31,7 +31,7 @@ labels a_i, 0<=a_i<=floor(d/2), and write
 
 Use EXACTLY the regular Hopf lift from
 [the full matching-graph source](general_matching_graph_full_normal_source.md),
-sections 3--4. Its channel weights are held at their ORIGINAL root
+sections 3--4. Its channel weights are held at their original root
 values
 
     h0_a=k_a N s_(2a)/s_a^2,
@@ -287,23 +287,6 @@ separate focused audits. The finite-network inequalities here follow
 by the displayed exact factorization and Cauchy's formula; they are
 not a numerical estimate of a global period.
 
-Independent full analytical review and fresh focused replay: PASS. The
-source reader checked the literal reversed categorical dual (5), actual
-LARGE white, fixed root gamma/h0/omega, both folded retraction types,
-the retained physical trace normal and mark ratio, all six numerator
-domains, and the two-large-factor deficit cost. The fresh replay
-reproduced every reported coefficient, scalar, retraction, mark and
-whole-source check, including the zero full-source fixture.
+The estimate uses the specified regular lift and an uncontracted product. It is a relative upper bound, not a global period coefficient.
 
-Independent geometric/source-domain review: PASS. The geometric reader
-checked every physical and auxiliary moving-factorial argument, the exact
-dual offsets, the real exposed first-cut head, the nonzero root product
-with its finite-clock factors, and the N^9 normalization in (13).
-Both reviews retain the specified regular-lift, uncontracted-product and
-relative-upper-bound scope; neither asserts a global period coefficient.
-
-Independent primary proof review: PASS. The primary reader checked the
-literal complementary dual rows, fixed root weights, two-numerator
-deficit cost, all moving-factorial domains, normalized mark and N^9
-factor. The focused source replay is recorded separately; this proof
-review supplies no global contraction or relative-cycle conclusion.
+No global contraction or relative-cycle conclusion follows.

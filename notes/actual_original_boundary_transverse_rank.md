@@ -1,9 +1,9 @@
 # The original boundary source has exactly two flat face directions
 
-30 October 2026. Independently reviewed. On the labeled original
+30 October 2026. On the labeled original
 right-angled matching graph, the finite boundary models detect every
 homogeneous magnetic direction except two explicit face potentials.
-Two neighboring ORIGINAL physical heads give a primitive slice for those
+Two neighboring original physical heads give a primitive slice for those
 directions. This statement includes the closed source and the common
 fixed-charge two-cut lattice; arbitrary routed extra factors are excluded.
 
@@ -225,7 +225,7 @@ This section uses the separately proved local estimates in
 Retain the exact models of the
 [correlated-band theorem](actual_correlated_boundary_band_ratio.md),
 their scalar phases, the literal pi reversal, and every cup and mark.
-The statement concerns the ORIGINAL uncontracted root product. It does
+The statement concerns the original uncontracted root product. It does
 not include the nonlinear binomial co-source or replace its actual weight.
 
 Use logarithmic face coordinates, so a physical clock is multiplied by
@@ -305,7 +305,7 @@ original relative cotangent periods, their support/carry boundaries,
 the global nonzero coefficient and the mixed-color/alias estimates
 remain separate. No hyperbolic-volume equality follows here.
 
-## 7. Focused audit and review status
+## 7. Focused audit and scope
 
 The [focused audit](../experiments/audit_actual_original_boundary_transverse_rank.py)
 and [results](../experiments/actual_original_boundary_transverse_rank_results.json)
@@ -320,19 +320,6 @@ sphere regressions; the latter certify no additional geometric realization.
 The local curvature theorem has its own source-matrix audit. No numerical
 knot list replaces the class-wide proof.
 
-Independent analytical review and a fresh redirected replay: PASS. The
-review covers the integral oriented source dictionary, all six row types,
-the two-vertex connectivity proof, primitive neighboring-head slice,
-marked-open/fixed-charge cut distinctions, limiting framing Jacobian and
-the O(1+S) curvature assembly with literal dual signs. It infers no
-stationary point, first-slot routing, Gaussian contraction or original
-relative-period coefficient.
+The transverse-rank theorem does not identify a stationary point, first-slot routing, Gaussian contraction or relative-period coefficient.
 
-Root full analytical review, audit-code review and fresh redirected replay:
-PASS. The review includes the exact typed face-potential lattice, both
-retained half-twist parities, fixed-charge versus varying-charge cut scope,
-the neighboring physical-head minor, the limiting-frame Jacobian (4b),
-and the finite transverse Hessian assembly with its independently frozen
-local-curvature input. All reported focused audit counts were reproduced.
-The review does not identify a stationary sector, a transverse descending
-cycle, or a nonzero original-period contribution.
+The rank calculation does not establish a stationary sector, a descending cycle or a nonzero original period.

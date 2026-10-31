@@ -2,10 +2,10 @@
 
 The [whole-source local packet](general_full_spectral_numerator_geometric_packet.md) now assembles these results for the actual full numerator. The original global spectral filling period remains open.
 
-31 October 2026. Internally reviewed. This is a
-quantitative analytic consequence of the reviewed actual cofactor packets.
+31 October 2026. . This is a
+quantitative analytic consequence of the actual cofactor packets.
 It does not infer a generic-q derivative or select a Gaussian cycle.
-All face zeros remain the ORIGINAL protected zeros.
+All face zeros remain the original protected zeros.
 
 ## 1. Exact objects and the theorem
 
@@ -25,7 +25,7 @@ N^2 factor. Equation (2) keeps the original B_(N,M) anchor, half-index,
 forced factor, beta factors and complex face neighborhood.
 
 Fix a compact positive geometric face set in any one of its actual
-protected-zero patterns. The reviewed ordinary-middle and protected-middle
+protected-zero patterns. The ordinary-middle and protected-middle
 cofactor packets imply that, after decreasing a FIXED disk and FIXED
 complex face neighborhood, there is kappa>0 such that
 
@@ -166,12 +166,4 @@ its angular complement needs an actual uniform estimate. Nor does it
 prove the selected full Gaussian contour, the surviving charge sum, or
 a genuine-q first-normal theorem. No external-color alias is discarded.
 
-Validation is analytical: (1) has its independently reviewed original
-source audit; (2) is the frozen exponential interpolation theorem; the
-ordinary/protected cofactor packets have separate full proof reviews.
-The Cauchy--Lagrange step is an exact finite formula and is proved above,
-not inferred from numerical agreement at increasingly dense nodes.
-
-## Independent review
-
-Root and coherent_partner_currents independently reviewed the full analytical proof: PASS, including the central factors, uniform subexponential quotient, both physical grids and the exact noisy-node Cauchy--Lagrange estimates. Stable private proof; no numerical audit is substituted for this analytic corollary.
+The interpolation argument uses exact Cauchy and Lagrange formulas. Finite samples do not establish its uniform error bound.

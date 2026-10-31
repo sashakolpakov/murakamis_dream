@@ -1,6 +1,6 @@
 # Complete and marked Conway geometry with single-leaf attachments
 
-31 October 2026. Internally reviewed geometric extension and source-interface
+31 October 2026. geometric extension and source-interface
 audit. Keep the original crossing-circle leaf \(h\), literal turn \(T\),
 identity stacks, source marking and fixed disk framings. Define **completed**
 expressions by
@@ -383,7 +383,7 @@ warning against deducing a strict high-quarter packet from strict
 feasibility alone. Its separate complete geometric realization is
 not needed for the completed-root theorem.
 
-## Dependencies and internal review scope
+## Dependencies
 
 The geometric inputs are the
 [ordered ideal prism](actual_newton_ideal_prism_and_associativity.md),
@@ -397,10 +397,4 @@ The local analytic inputs are the
 and [actual marked deformation](actual_odd_conway_marked_peripheral_deformation.md).
 The separate new source and alias companions are linked above.
 
-The author, root and two independent internal reviewers completed
-full analytical and source-interface reviews of §§1–6, including
-the actual one-leaf CAP maps, completed-root propagation, primitive
-lattice, marked action constants, knot parity and the distinct
-quarter-angle frontier. This is internal proof review, not external
-peer review or a numerical audit. The note does not assert a theorem
-for arbitrary turned-leaf syntax or all arborescent links.
+This note concerns the stated completed-root construction. It does not assert a theorem for arbitrary turned-leaf expressions or all arborescent links.

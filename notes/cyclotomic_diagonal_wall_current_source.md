@@ -62,8 +62,8 @@ is binomial, and is not silently identified with a uniform average
 over the entire high color. Then
 
 \[
- \operatorname{Tr}(e_{\rm prod}P)=\frac1N,\qquad
- e_D=NP e_{\rm prod}P                              \tag{3}
+ \operatorname{Tr}(e_{\mathrm{prod}}P)=\frac1N,\qquad
+ e_D=NP e_{\mathrm{prod}}P.                              \tag{3}
 \]
 
 is an idempotent of trace one. Its source and co-source on (2) are
@@ -81,7 +81,7 @@ diag(J_0,...,J_N). Consequently
 
 \[
  \frac1N\operatorname{Tr}(e_D\mathcal J)
- =\operatorname{Tr}(e_{\rm prod}P\mathcal J)
+ =\operatorname{Tr}(e_{\mathrm{prod}}P\mathcal J)
  =\frac1{N2^N}\sum_{j=0}^{N}{N\choose j}J_j
  =B_N(J).                                          \tag{5}
 \]
@@ -145,8 +145,8 @@ Every displayed denominator is nonzero at the marked root. Integral
 divided multiplication and [N+1]_(q_N)=-1 give
 
 \[
- E^{(N+1)}=e\otimes E_{\rm St},\qquad
- F^{(N+1)}=-f\otimes F_{\rm St}.                      \tag{7}
+ E^{(N+1)}=e\otimes E_{\mathrm{St}},\qquad
+ F^{(N+1)}=-f\otimes F_{\mathrm{St}}.                      \tag{7}
 \]
 
 Indeed E^(N)=(-1)^(N-1)e and ordinary E=(-1)^N E_St,
@@ -154,9 +154,9 @@ and E^(N)E=[N+1]E^(N+1); the F identity is identical without
 the two E signs. The literal first-normal wrap matrices are
 
 \[
- [E_{\rm cross}/\delta]_0
+ [E_{\mathrm{cross}}/\delta]_0
    =(-1)^{N+1}\rho^{-1}e\otimes E_{N-1,0},\qquad
- [F_{\rm cross}/\delta]_0
+ [F_{\mathrm{cross}}/\delta]_0
    =\rho^{-1}f\otimes E_{0,N-1}.                     \tag{8}
 \]
 
@@ -168,11 +168,11 @@ operator orders gives
  \begin{split}
  \widetilde E
  &=E^{(N+1)}(I\otimes D^\dagger)
-      +\rho(-1)^{N+1}[E_{\rm cross}/\delta]_0
+      +\rho(-1)^{N+1}[E_{\mathrm{cross}}/\delta]_0
    =e\otimes V^{-1},\\
  \widetilde F
  &=-(I\otimes D^\dagger)F^{(N+1)}
-      +\rho[F_{\rm cross}/\delta]_0
+      +\rho[F_{\mathrm{cross}}/\delta]_0
    =f\otimes V,\\
  \widetilde H&=h\otimes I.
  \end{split}                                                   \tag{9}
@@ -230,7 +230,7 @@ rank-one source exactly to e_D, including its off-diagonal entries.
 If every crossing is replaced by
 
 \[
- R^{H_0}=(H_0\otimes H_0)R_{\rm high}(H_0^{-1}\otimes H_0^{-1}),
+ R^{H_0}=(H_0\otimes H_0)R_{\mathrm{high}}(H_0^{-1}\otimes H_0^{-1}),
                                                                \tag{12}
 \]
 
@@ -277,8 +277,8 @@ The diagonal of Delta is identically zero, at every q in the germ.
 Consequently
 
 \[
- \Delta=[J_{\rm un},B],\qquad
- \operatorname{Tr}(\Delta C)=-\operatorname{Tr}(B[J_{\rm un},C])
+ \Delta=[J_{\mathrm{un}},B],\qquad
+ \operatorname{Tr}(\Delta C)=-\operatorname{Tr}(B[J_{\mathrm{un}},C])
                                                                \tag{14}
 \]
 
@@ -328,8 +328,8 @@ is the uniform average in this fixed basis. On the Frobenius factor
 put lambda_av(v_R)=1/(N+1), and write lambda_bin=lambda_+. Then
 
 \[
- K_{\rm Fr}=I+\psi_+(\lambda_{\rm av}-\lambda_{\rm bin}),\qquad
- K_{\rm Fr}^{-1}=I-\psi_+(\lambda_{\rm av}-\lambda_{\rm bin}).
+ K_{\mathrm{Fr}}=I+\psi_+(\lambda_{\mathrm{av}}-\lambda_{\mathrm{bin}}),\qquad
+ K_{\mathrm{Fr}}^{-1}=I-\psi_+(\lambda_{\mathrm{av}}-\lambda_{\mathrm{bin}}).
                                                                \tag{14c}
 \]
 
@@ -358,7 +358,7 @@ Its total root charge is zero. The un-checked output is
 coefficient has exactly one normal zero, and
 
 \[
- [R_{\rm entry}/\delta]_0
+ [R_{\mathrm{entry}}/\delta]_0
    =(-1)^{N+1}N\,
        q_N^{H_{N-1}H_{N(N-1)+1}/2}\ne0,              \tag{15}
 \]

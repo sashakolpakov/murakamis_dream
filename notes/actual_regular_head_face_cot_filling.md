@@ -106,7 +106,7 @@ completed scalar is holomorphic throughout the box, equals the
 original scalar on valid integer states, and vanishes at invalid
 integer states, including simultaneous scalar poles.
 
-Consequently the ORIGINAL scalar is exactly chi_N/N times the product
+Consequently the original scalar is exactly chi_N/N times the product
 cotangent residue integral of that completed scalar in (h,k). Every
 pi*cot(pi*h) and pi*cot(pi*k_j) factor is retained. This assertion
 follows by the finite residue sum, not by dropping a transformed source

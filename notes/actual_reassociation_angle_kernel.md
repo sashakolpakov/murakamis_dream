@@ -282,5 +282,5 @@ ideal geometric triangulation.
 [Audit](../experiments/audit_actual_reassociation_angle_kernel.py):
 original coproduct-derived fusion, finite Euler inverses, all strict
 reassociation entries, half-root phases, b_0 and normalized coefficient
-factorization, exact local charge incidence and both ORIGINAL signed
+factorization, exact local charge incidence and both original signed
 crossing operators with retained common Cartan.

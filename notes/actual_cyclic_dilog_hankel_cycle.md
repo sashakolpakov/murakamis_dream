@@ -7,7 +7,7 @@ factor, all factors are inverse cyclic dilogarithms. Every cut integral
 converges at both ends, with no omitted contribution at infinity.
 
 The resulting cycle and its nonzero local-system jump coefficients are
-specified for the ORIGINAL quantum state. This is not yet a proof that
+specified for the original quantum state. This is not yet a proof that
 their full contraction has a nonzero geometric critical contribution.
 In particular the complex integrand is not made positive by the sine
 weights below.
@@ -243,7 +243,7 @@ It follows that
     Log G_j=-(j/N+1/2)Log N
                          +sum_(l=N-j)^(N-1)L_l,
 
-which is (11). Thus the endpoint is an ORIGINAL quantum-factorial
+which is (11). Thus the endpoint is an original quantum-factorial
 weight, with its complete polynomial normalization retained.
 
 For the full all-inverse construction set s=9m. At |M|=1 the

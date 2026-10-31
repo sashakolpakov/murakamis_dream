@@ -297,7 +297,7 @@ Use the existing full fused-plat source
 
 $$
  P_{\beta,N}=\chi_{\beta,N}N^{1-k}
-   \langle e_{\rm out},B_\beta e_{\rm in}\rangle,
+   \langle e_{\mathrm{out}},B_\beta e_{\mathrm{in}}\rangle,
 $$
 
 with its specified $(d,0)$ input pairs, $(0,d)$ ordinary
@@ -307,13 +307,13 @@ proof. Expand $B_\beta$ into the actual factors, replace them
 by (10), and insert the reset identities above.
 
 If the resulting scalar kernels are $\mathcal K_\ell$, the
-same ORIGINAL period is exactly
+same original period is exactly
 
 $$
  \boxed{\quad
  P_{\beta,N}=\chi_{\beta,N}N^{1-k}
  \operatorname{CT}
-   (z^0)^{a_{\rm in}}(z^{L})^{-a_{\rm out}}
+   (z^0)^{a_{\mathrm{in}}}(z^{L})^{-a_{\mathrm{out}}}
                 \prod_{\ell=1}^{L}
                   \mathcal K_\ell(z^\ell,z^{\ell-1}).
  \quad}                                                \tag{12}

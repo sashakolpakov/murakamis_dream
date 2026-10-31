@@ -1,6 +1,6 @@
 # Full original long-filling volume under the actual complete-radius balance test
 
-Independently reviewed conditional-class theorem, 31 October 2026. The condition below is imposed on the one actual complete marked circle packing. Its realization at arbitrary bridge width is not asserted. The proof controls the full original numerator and period for diagrams satisfying this condition, rather than only an all-CROSS contribution.
+conditional-class theorem, 31 October 2026. The condition below is imposed on the one actual complete marked circle packing. Its realization at arbitrary bridge width is not asserted. The proof controls the full original numerator and period for diagrams satisfying this condition, rather than only an all-CROSS contribution.
 
 ## 1. The finite geometric condition
 
@@ -101,4 +101,4 @@ Realization of this condition for arbitrary $k$ is not proved here. Neither a co
 
 ## Validation and scope
 
-Root and independent source review checked the complete conditional argument, including protected-zero vanishing, strictness of surviving one-sided sectors, the common original face torus, both parity partitions, the entire charge remainder, and the independently fixed signed-twist quantifiers. The proof uses only the linked source theorems and the explicit balance hypothesis. Its conditional full-invariant conclusion does not establish arbitrary-width coverage or a universal balance condition.
+The proof uses only the linked source theorems and the explicit balance hypothesis. Its conditional full-invariant conclusion does not establish arbitrary-width coverage or a universal balance condition.

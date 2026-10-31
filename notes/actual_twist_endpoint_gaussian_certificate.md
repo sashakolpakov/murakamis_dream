@@ -33,7 +33,7 @@ eigenvalue-only trace. At each double node,
 Since 4-c_j^2=-A_j^2, inserting f=r^k gives (1). Indices j,d-j
 give equal contributions; the odd simple node has c=-2,A=0 and is
 counted correctly by the half-sum. In particular the factor(-1)^d
-from the ORIGINAL pivot is retained. For the full crossing multiply
+from the original pivot is retained. For the full crossing multiply
 (1) and all asymptotics below by kappa^k.
 
 The small powers are explicit exceptions to a nonzero N^(3/2) leading
@@ -227,10 +227,4 @@ single-branch survival or sharp next-depth rate is asserted here.
 
 Audit: [full original signed matrices, finite coefficients and Gaussian endpoints](../experiments/audit_actual_twist_endpoint_gaussian_certificate.py).
 
-Independent proof review and primary replay passed, including the
-fixed-root pivot sign, all original positive/negative matrices,
-half-grid marks, endpoint resonances and explicit k4/k5 nonvanishing.
-The k=0,1,2 exceptions and possible vanishing of a scalar leading
-coefficient remain explicit. The
-[endpoint-vector companion](actual_newton_run_endpoint_vectors.md)
-resolves all Gaussian boundary modes even when that scalar cancels.
+The k=0,1,2 exceptions and possible vanishing of a scalar leading coefficient remain explicit. The [endpoint-vector companion](actual_newton_run_endpoint_vectors.md) resolves all Gaussian boundary modes even when that scalar cancels.

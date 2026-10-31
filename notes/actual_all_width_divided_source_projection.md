@@ -167,7 +167,7 @@ inverse J_E J_F=-2N^2 I on L_r.
 
 All original regular generic braids, interval Casimirs and polynomial
 circle coupons preserve the source subspace. Therefore (11) may be
-inserted between their reduced gates on an ORIGINAL source orbit without
+inserted between their reduced gates on an original source orbit without
 changing any literal exterior co-source. It need not commute on the
 larger unrestricted root module, and a root-only Hopf coupon with no
 regular generic lift is not covered by this assertion.

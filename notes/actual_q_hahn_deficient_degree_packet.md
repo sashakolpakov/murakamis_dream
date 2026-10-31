@@ -1,12 +1,12 @@
 # The actual q-Hahn numerator at a deficient integer degree
 
-30 October 2026. Independently reviewed. Fix an actual integer
+30 October 2026. Fix an actual integer
 degree t below the small channel a. The original generic numerator has
 an exact forced factor, which persists BEFORE root specialization.
 Its residual root polynomial is a positive-spectrum real Jacobi
 determinant. This gives a nonzero relative root amplitude at complex
 magnetic coordinates away from its explicit cuts, and polynomial
-cost for genuine q derivatives of this ORIGINAL numerator.
+cost for genuine q derivatives of this original numerator.
 
 The degree t stays an integer. A joint complex-degree estimate and
 the full exceptional operator's generic boundary factors are not
@@ -19,7 +19,7 @@ including its q normals, is zero.
 Use the exact generic source and recurrence of
 [the small-channel normal theorem](actual_q_hahn_small_channel_generic_normals.md).
 Thus N>=3, d=N-1, q varies near q0=exp(pi i/N), Q=q^2,
-B=Q^-N, and H_a^B is the ORIGINAL finite Newton numerator. Its
+B=Q^-N, and H_a^B is the original finite Newton numerator. Its
 monic reverse polynomial is
 
     R_a(q;t,z)=z^a S_a^B(q^t/z,Q^t)/(Q^(ta) K_a),
@@ -224,7 +224,7 @@ each fixed m
     |partial_epsilon^m R_a(q;t,q^(t-2u))|_(epsilon=0)
            <=C_m N^(10m) |R_a(q0;t,q0^(t-2u))|.               (16)
 
-Here the polynomial is the ORIGINAL generic R from (1), with
+Here the polynomial is the original generic R from (1), with
 B=Q^-N. It is not obtained by differentiating the root recurrence
 (5) while discarding B. A root value z alone does not fix this jet:
 replacing u by u+N L preserves z(q0) but changes its q derivative
@@ -259,7 +259,7 @@ N. The forced product has the same property there. Cauchy's
 formula proves (16). The same argument bounds the exact scalar
 K_a and monomial factors in (1), whose relative logarithmic
 derivatives are polynomial. Therefore (16) also controls the
-ORIGINAL unnormalized Newton numerator at these complex magnetic
+original unnormalized Newton numerator at these complex magnetic
 arguments. It does not divide by D_a(Q^t), which vanishes here.
 
 ## 5. The local kernel application and the remaining period problem
@@ -317,19 +317,6 @@ inferred from this local chart result.
 Focused audit: [original generic factorization, actual finite shifts
 and selected complex packets](../experiments/audit_actual_q_hahn_deficient_degree_packet.py).
 
-Primary-agent and independent full analytical reviews: PASS. The
-readers checked the generic support factor and persistent zero bridge,
-residual sign gauge and positive spectrum, root-location normal family,
-actual finite-shift bootstrap, high-total anchor with both offsets,
-bounded marked lifts and the genuine numerator perturbation estimates.
-The actual geometric branch and the identically zero physical slice
-remain distinct in these reviews.
+The selected geometric branch is distinct from the identically zero physical slice.
 
-Fresh independent focused replay: PASS. It reproduced 672 forced-node
-four-jet checks, 182 generic zero bridges, 560 tail factorizations and
-560 original numerator comparisons, followed by 280 exact finite shifts.
-Twelve positive residual matrices, 24 selected relative amplitudes and
-72 genuine numerator checks also passed at 150 digits. The maximum
-N-scaled relative error was below 1.326; the independent literal
-generic-source relative error was below 1.1e-136. Numerical rate tests
-check normalization; the uniform estimates are proved above.
+Numerical rate tests check normalization; the uniform estimates are proved above.

@@ -53,8 +53,8 @@ The [primitive-period theorem](actual_long_pretzel_primitive_filling_angle.md)
 fixes the continuous LOG SIMILARITY holonomies near completeness:
 
 \[
- U_i=\Log M_i^2=-z_i,\qquad
- V_i=\Log\lambda_i^2\text{ centered at completeness}=-2\ell_i,
+ U_i=\operatorname{Log} M_i^2=-z_i,\qquad
+ V_i=\operatorname{Log}\lambda_i^2\text{ centered at completeness}=-2\ell_i,
 \]
 \[
  U_i+p_iV_i=-2\pi i m_i,\qquad |m_i|=1.              \tag{1}
@@ -216,7 +216,7 @@ completeness. The bounded fundamental link triangles miss it;
 equivariance then shows that the ENTIRE link development misses it.
 
 On the simply connected link cover take
-\(f=\Log(d-q)\). The form \(df\) is invariant under deck
+\(f=\operatorname{Log}(d-q)\). The form \(df\) is invariant under deck
 translations and is everywhere nonzero. Hence \(|df|^2\) is a
 nonsingular flat metric on the COMPACT link torus. It is complete.
 Lifting straight Euclidean segments makes \(f\) a global
@@ -345,14 +345,6 @@ obtained by maximizing the old unfilled cusp slice. The direct
 positive finite-center metric and primitive end completion above
 do not need that additional chart.
 
-## 8. Independent completion review
+## 8. Scope of the completion argument
 
-Both independent companion reviewers read sections1--7 in full and
-reported PASS. Their checks included the finite face-orbit centers,
-strict tetrahedral positivity, the FULL identity edge transition
-(hence no axial dilation), spherical-link degree one, positive
-similarity-link triangles, bounded generator paths and actual
-epigraph ends. The primitive-log and compact-log/tube proofs were
-also independently read against these exact inputs. These are
-analytical proof checks; no finite numerical sample is substituted
-for positivity in a fixed neighborhood or the degree-one argument.
+The edge transition is the full identity, including zero axial dilation. The proof uses degree-one spherical links, positive similarity-link triangles, bounded generator paths and actual epigraph ends; finite samples cannot replace these neighborhood and degree conditions.

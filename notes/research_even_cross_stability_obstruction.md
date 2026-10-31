@@ -3,7 +3,7 @@
 31 October 2026. Research result: exact-source reduction and obstruction.
 The local nonstability and stable-reference comparison are proved in the
 stated scope; the actual global even negative-axis adapter remains open.
-The finite counterexample uses the ORIGINAL even CROSS projection at
+The finite counterexample uses the original even CROSS projection at
 sigma=-2. It is not a nearby complete-circle model. The obstruction is
 local; no failure of stability or of an absolute bound for a globally
 extracted original exterior is inferred from it.
@@ -221,7 +221,7 @@ $$
 \end{aligned}\tag{11}
 $$
 
-This uses the reviewed logarithmic-supremum continuity theorem.
+This uses the logarithmic-supremum continuity theorem.
 The passage from Q_N back to P_N at negative fugacity is NOT supplied
 by (10).
 
@@ -284,7 +284,7 @@ valid independently of stability. This note supplies no spectral
 neighborhood, no signed-source lower rate, and no general filled
 volume theorem.
 
-## Inputs and review record
+## Inputs
 
 Actual three central terms:
 [actual cofactor factorization](actual_cross_cofactor_factorization.md), sections 1–2.
@@ -296,14 +296,4 @@ Original global extraction and odd root measure:
 [original cap extraction and Mahler bound](research_global_cap_negative_axis_and_mahler_bound.md) and
 [root measure and negative-axis supremum rates](research_cap_root_measure_from_classical_pressure.md).
 
-Author exact-source derivation complete. Geometry independently fully
-reviewed sections 1–5, including the N6 original CROSS counterexample,
-the failed auxiliary pencil, the nearest-fold same-target reference,
-and the precise limitation of the positive comparison. It separately
-checked the new N8 individual-cofactor calculation (8a)--(8b) and its
-rational discriminant bound. All these internal analytical/source
-reviews PASS. The primary agent independently fully reviewed sections
-1–5, checked the original raw-path expansion at N=6 against (5)–(6),
-and rechecked the N=8 recurrence and rational inequalities. These are
-internal analytical/source reviews, not external peer review. No broad diagram search or numerical asymptotic
-extrapolation is used.
+The N=6 counterexample and N=8 individual-cofactor calculation are exact finite source obstructions. The nearest-fold positive comparison retains the same targets, but it does not control the actual negative-axis rate.

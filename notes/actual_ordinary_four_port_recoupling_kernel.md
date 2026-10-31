@@ -65,7 +65,7 @@ assuming a decomposition or a semisimple root replacement.
 
 ## 2. The ordered bilinear norm, by finite convolution
 
-The right dual of W_BA^C is a map on the ORIGINAL A,B order:
+The right dual of W_BA^C is a map on the original A,B order:
 
     D(W_BA)=p_C^T W_BA^T(ell_B^T tensor ell_A^T)P_AB,
 

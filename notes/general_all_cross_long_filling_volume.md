@@ -1,6 +1,6 @@
 # The entire original all-CROSS Fourier period from its local packet and global spectral gap
 
-Independently reviewed analytical theorem, 31 October 2026. This concerns the actual all-CROSS shared numerator and its **whole original Fourier/Hermite period**. The two source estimates used below have separate proofs. All twists are independently signed, sufficiently long, and fixed before the level tends to infinity. The remaining moving one-sided sectors of the full numerator are not estimated here.
+analytical theorem, 31 October 2026. This concerns the actual all-CROSS shared numerator and its **whole original Fourier/Hermite period**. The two source estimates used below have separate proofs. All twists are independently signed, sufficiently long, and fixed before the level tends to infinity. The remaining moving one-sided sectors of the full numerator are not estimated here.
 
 ## 1. Exact source, hypotheses, and conclusion
 
@@ -274,4 +274,4 @@ The crucial new analytic point is (14): a uniform shared endpoint gap makes part
 
 ## Validation and scope
 
-The full analytical transfer proof received independent root and geometry reviews. The review checked the raw versus sign-adjusted source convention, the paired hyperbolic-sine endpoint current, all spectator second-derivative endpoint terms, absolute summability of the partial-far union, the two distinct finite-charge cubes, and the original nonzero prefactor. No numerical audit is substituted for this analytic consequence. The theorem evaluates the entire all-CROSS sector; the moving one-sided remainder of the original full numerator remains outside its conclusion.
+The theorem evaluates the entire all-CROSS sector; the moving one-sided remainder of the original full numerator remains outside its conclusion.

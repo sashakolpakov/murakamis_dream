@@ -1,4 +1,4 @@
-\section{The selected high-index source and its complex lattice packet}
+\section{The exact local recurrence and its holomorphic asymptotic}
 \label{app:selected-source}
 
 This section proves the local source estimate used in the completed-root
@@ -16,6 +16,8 @@ index grid will not be used as if it were an exponentially accurate
 complex interpolation.
 
 \subsection{Canonical factorials and the literal mixed coefficient}
+
+To move a color parameter off the integer grid, we must specify a function that agrees with the finite coefficient and preserves its phase. The Gamma product below supplies that function for the sine factorials. Its exact shift identity will then allow the finite recurrence to remain valid at complex colors; agreement only in a leading asymptotic term would not be sufficient.
 
 Retain
 \[
@@ -112,7 +114,9 @@ lower endpoint would be $h$; those low indices belong to the separate
 global envelope, not to the interpolation asserted here. The terminal
 source in \eqref{eq:b1-D-source} is exactly $U_{h,M}=1$.
 
-\subsection{A finite Ward equation with its actual endpoint}
+\subsection{Deriving the recurrence, including its endpoint}
+
+The identity traditionally called a Ward equation here is simply a second-order recurrence obtained by telescoping the actual finite sum. A recurrence has many solutions, so we include its upper endpoint condition in the derivation. That condition is what selects the coefficient occurring in the invariant.
 
 Put $H=Q^h=e^{2\pi\ii t}$, $T_h=H+H^{-1}$ and $Y=Q^r$. The
 literal finite sum satisfies
@@ -180,6 +184,8 @@ The zero is independent of $H$. In particular no nonexistent
 $D_{h,M+1}$ is divided out and no arbitrary terminal ratio is imposed.
 
 \subsection{The selected analytic root and a source-exact continued fraction}
+
+We solve the recurrence backwards from its finite upper endpoint. On the strict high-index interval, one characteristic root dominates the other. The resulting contraction permits a holomorphic continued fraction. Crucially, an exact zero in the last recurrence row erases the artificial tail of this continued fraction, so it agrees with the original finite solution on the integer grid.
 
 Regard \eqref{eq:b1-p-coefficient}--\eqref{eq:b1-q-coefficient} as
 holomorphic functions $p(x,t,\varepsilon_N)$ and
@@ -386,7 +392,9 @@ uniformly holomorphically. Equations
 an exponentially accurate comparison with the original finite source,
 and the latter is a leading expansion of a specified complex function.
 
-\subsection{The canonical chirp and the signed local action}
+\subsection{Keeping the quadratic phase and determining the signed action}
+
+The half-twist coefficient contains a quadratic exponential in the color. Such a phase is sometimes called a chirp. Its continuation is part of the finite formula, not an arbitrary choice of interpolation. We now combine it with the recurrence solution and the continued factorials; this calculation determines the local action and the nonzero amplitude used in the saddle.
 
 Remove only the known external phase by defining
 \[
@@ -662,7 +670,7 @@ This bound is for the exact finite function
 \eqref{eq:b1-exact-window}, by
 \eqref{eq:b1-window-asymptotic}, not just its leading formal action.
 
-\subsection{Restoring the whole finite source}
+\subsection{Returning from the local sum to the original evaluation}
 
 We finish by stating precisely how the independent alias estimates are
 used. The compositional proof in the main text gives a uniform positive

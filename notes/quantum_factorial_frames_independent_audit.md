@@ -19,7 +19,7 @@ is the inverse of the coordinate-conjugation multiplier in
 [the source detour audit](integral_color_source_detour_audit.md).
 Indeed
 \[
- {n\choose j}_{\rm sym}=q^{-j(n-j)}{n\brack j}_{Q}
+ {n\choose j}_{\mathrm{sym}}=q^{-j(n-j)}{n\brack j}_{Q}
 \]
 identifies the two formulas exactly, including endpoint phases.
 The source column, dual row and cup/cap transformations in the
@@ -151,11 +151,11 @@ conjugation.
 
 For the regular balanced basis multiplier,
 \[
- D_{{\rm basis},j}U_j
-      =\frac{M^j}{{n\choose j}_{\rm sym}},
+ D_{{\mathrm{basis}},j}U_j
+      =\frac{M^j}{{n\choose j}_{\mathrm{sym}}},
  \qquad M=-q^N.
 \]
-At the root this is one, so \(U=D_{\rm basis}^{-1}\).
+At the root this is one, so \(U=D_{\mathrm{basis}}^{-1}\).
 Off the root its residual q-binomial gauge remains; it is not
 a uniformly bounded scalar normalization.
 Finally

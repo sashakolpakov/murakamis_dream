@@ -1,7 +1,7 @@
 # The original marked two-vertex contraction in every channel
 
 29 October 2026. The complete magnetic contraction of one actual black
-vertex with its ordinary white vertex and the ORIGINAL physical marked
+vertex with its ordinary white vertex and the original physical marked
 arc has a positive formula at every supported folded triple. This is a
 coherent contraction, not a replacement of white by a Hermitian adjoint.
 The paired circle is retained as a nilpotent coupon. Its first normal
@@ -198,7 +198,7 @@ generic physical source without the h0 factors is
                      s_abc(zeta)s_cba(zeta) Xi_abc(zeta). (14)
 
 The source coefficients s(zeta) are holomorphic and their root values
-are (7). Cut the ORIGINAL physical marked arc. The resulting map is
+are (7). Cut the original physical marked arc. The resulting map is
 a regular scalar t(zeta)I on the generic physical highest-weight-d
 module. Indeed its K eigenvalues are distinct and its interior F
 arrows are nonzero, so commuting with K,F forces a scalar. Direct
@@ -310,9 +310,3 @@ physical lifts. Direct ungrouped original physical sources include
 both parities, unequal labels, genuine full-normal circle summands
 and signed Cartan crossings, in eighteen closures. These tests supplement the finite
 Vandermonde, duality and regular-trace proof above.
-
-An independent analytical reader rederived the ordered magnetic
-recursions, Vandermonde, generic endpoint, all-label normal quotient
-and exact remaining phase, and reported PASS. A separate fresh replay
-of the audit also passed. These are internal proof reviews, not
-external peer review.

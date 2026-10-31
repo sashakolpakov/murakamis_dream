@@ -154,9 +154,3 @@ the exact reduction and the nonzero rate statement (4), not those
 unproved assertions for arbitrary rational/arborescent sources.
 
 Audit: [full original physical alphabet, all-input modular identity and actual reflected closures](../experiments/audit_actual_newton_coherent_turn_reduction.py).
-
-Independent analytical review passed: the finite double-binomial
-cutoff/prefactors, theta_N including kappa, the three exact source
-vectors, and the same-sign-run conjugacy/source adapter were rederived.
-The finite audit separately passes49 generic identities, nine full
-original alphabets, and90 complete reflected original sources.

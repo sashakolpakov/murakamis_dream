@@ -45,7 +45,7 @@ opposite of the upper-bound direction needed to dominate the original
 joint score. A valid proof must account for the other two D terms of every
 one-sided port, or for a distinct complete-triangle entropy gain.
 
-An exact ORIGINAL full-flow witness for nonzero leakage is retained in
+An exact original full-flow witness for nonzero leakage is retained in
 the [exact rational certificate](../experiments/research_joint_middle_interval_leakage_certificate.json),
 verified by the [portable audit](../experiments/audit_research_joint_middle_interval_leakage.py)
 and its [recorded results](../experiments/research_joint_middle_interval_leakage_results.json). It uses the literal17-port word
@@ -79,7 +79,4 @@ The [outer-completion identity](research_joint_outer_completion_dual_work.md)
 keeps the two other D terms and gives a separate sufficient shared-flow
 criterion. The middle-only obstruction here does not refute that route.
 
-An independent peer completed the full proof/code review and a fresh exact
-replay: PASS. The verifier checks 17 literal ports, 17 ordinary and two
-protected targets, all 68 rational quartet coordinates, the actual symmetric
-coefficient endpoints and the symbolic uncrossing identity.
+The verifier checks 17 literal ports, 17 ordinary and two protected targets, all 68 rational quartet coordinates, the actual symmetric coefficient endpoints and the symbolic uncrossing identity.

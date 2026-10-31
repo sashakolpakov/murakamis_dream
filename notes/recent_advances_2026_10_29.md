@@ -42,12 +42,7 @@ original source, without replacing it by an auxiliary positive model.
 
 ## The actual source now has a single Racah formula
 
-The [generic identity](actual_generic_trivalent_racah_source_identity.md)
-expresses the original trivalent source as one finite Racah sum, with
-its normalization, high fold partners and normal tails retained. Its
-proof was independently read and its algebraic certificates replayed.
-An exceptional endpoint in the uniqueness argument was repaired by a
-direct cup projection before the proof was frozen.
+The [generic identity](actual_generic_trivalent_racah_source_identity.md) expresses the trivalent source as one finite Racah sum, retaining its normalization, high fold partners and normal tails. At the exceptional endpoint, uniqueness is established by a direct cup projection.
 
 Together with the [whole-support normal-jet envelope](actual_whole_support_boundary_gram_envelope.md),
 this establishes polynomial costs for the actual correlated boundary
@@ -68,7 +63,7 @@ The unique maximum satisfies
 
 An explicit decomposition into fourteen ideal tetrahedra identifies the
 maximum with the volume of the actual ideal right-angled cuboctahedron
-\(Q_{\rm cube}\), approximately \(12.04609204009\).
+\(Q_{\mathrm{cube}}\), approximately \(12.04609204009\).
 
 The [four-rung theorem](actual_cube_four_rung_positive_source.md) then
 allows all four untwisted rung colors to vary. The sum lies between the
@@ -77,8 +72,8 @@ Consequently this partial original source has growth
 
 \[
 \lim_{\substack{N\to\infty\\N\text{ odd}}}
-\frac{2\pi}{N}\log Z_N^{\rm four\text{-}rung}
-=16v_8+2\operatorname{Vol}(Q_{\rm cube}),
+\frac{2\pi}{N}\log Z_N^{\text{four-rung}}
+=16v_8+2\operatorname{Vol}(Q_{\mathrm{cube}}),
 \]
 
 the volume of the actual augmented cube complement. Here \(v_8\) is
@@ -108,6 +103,5 @@ the certified core volume. These are substantive missing estimates.
 The earlier all-level results for the specified sufficiently long
 fillings of signed octahedral belt stacks remain in force in the notes.
 The [frontier](general_equality_frontier.md) states their quantifiers
-and the other established families. Internal proof reviews and finite
-audits are recorded separately; finite checks alone do not establish
+and the other established families. Finite checks alone do not establish
 the asymptotic theorems.

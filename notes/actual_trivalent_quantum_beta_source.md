@@ -16,7 +16,7 @@ boundary integrations.
 
 ## 1. The source and its exact finite polynomial
 
-Use the ORIGINAL full functions Psi_+, Psi_- from
+Use the original full functions Psi_+, Psi_- from
 [the circle-and-boundary source theorem](actual_modular_dilog_circle_and_boundary_source.md).
 Put N>=2, d=N-1, h=2*pi*i/N and Q=exp h. Their coefficients through
 degree d are
@@ -122,7 +122,7 @@ Assume temporarily u^N!=1 and D_N!=0, and choose alpha with
     v_*=v exp(h alpha), so u^N-v_*^N=1.              (8)
 
 Avoid parameters with a pole on the two chosen vertical sides;
-the result extends by continuation. Use the ORIGINAL sample-preserving
+the result extends by continuation. Use the original sample-preserving
 norm-corrected differential
 
     omega=2*pi*i D_N t g(a)
@@ -293,7 +293,7 @@ exterior boundary functional. Whenever |u|+|v|<=c<1,
 
 Every Newton product is bounded by c^a. For each fixed a it tends
 to (u-v)^a as Q tends to one, so dominated convergence proves both
-claims. This is an open chamber of the ORIGINAL polynomial source.
+claims. This is an open chamber of the original polynomial source.
 
 It contains genuine strictly positive signed bipyramids. For example
 take u=-4*i/5 and v=1/100. The three-side shapes and two outputs are

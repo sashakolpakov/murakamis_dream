@@ -2,7 +2,7 @@
 
 28 October 2026. Exact elimination of all overbridge interiors does NOT
 make the remaining absolute-value optimization a geometric-volume
-problem. There is a supported state of the newly reduced ORIGINAL 5_2
+problem. There is a supported state of the newly reduced original 5_2
 source with exponential modulus rate greater than 2.54. Its actual
 geometric volume rate is less than 0.485. The original averaged cut,
 both pivots and all bridge endpoint products are included.
@@ -111,7 +111,7 @@ Substitution in (2), using J(1-t)=-J(t), gives exactly
                          -2J(3/10)-2J(7/20)-2J(2/5)
        =2.5456403530804530135630814317531... .        (7)
 
-## 3. The ORIGINAL boundary source is nonzero and has zero action
+## 3. The original boundary source is nonzero and has zero action
 
 For the actual averaged first cut and two original closed pivots,
 the boundary source in these normalized Fourier frames factors as
@@ -123,7 +123,7 @@ the boundary source in these normalized Fourier frames factors as
 
 Here the comma in z_in,i denotes its head number. Formula (8) is
 exactly F_0(e tensor g tensor g)F_final^(-1), with
-e=ones/N and the ORIGINAL pivot g_a=x^(1-N)Q^(-a).
+e=ones/N and the original pivot g_a=x^(1-N)Q^(-a).
 It is not a replacement trace or independent cap normalization.
 
 The final braid permutation is a three-cycle. Each ordinary

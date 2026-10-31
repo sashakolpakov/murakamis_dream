@@ -1,6 +1,6 @@
 # An explicit root-channel adapter for the first-normal defect
 
-30 October 2026. Independently reviewed. The genuine first
+30 October 2026. The genuine first
 quantum defect of the original off-node boundary functional is an
 explicit function of TWO root-channel insertions. The adapter has
 polynomial norm O(N^2) on the actual boundary scale. It retains the
@@ -250,13 +250,4 @@ normal checks. Twenty boundary norm checks at 90 digits have maximum
 relative Parseval error below 4.2e-90. These tests retain the actual
 generic pivots; they do not infer the root-channel norm from z.
 
-Independent full analytical review: the primary and coherent-source
-readers checked the physical endpoints, generic descendant cancellation,
-two-root-insertion signs, genuine derivative convention, pivotal adapter,
-exact Fourier normalization, polynomial norm and composition scope.
-The coherent-source reader also independently checked 276 rational
-ladder entries and the root h_s/H_s/pivot formulas before reading the
-audit implementation. Its fresh redirected replay of the full focused
-audit reproduced all counts and passed. This validation concerns the
-first-normal DEFECT, not C_1 or z_1 separately, and retains the
-full-root-channel norm and original period scope.
+The estimate concerns the first-normal defect, not C_1 or z_1 separately. It retains the full-root-channel norm and the stated period scope.

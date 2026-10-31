@@ -13,7 +13,7 @@ to those proved complete-word replacements. The new representation
 still requires its selected geometric-cycle theorem.
 
 28 October 2026. The all-word Euler completion gives a strict
-factorization of the ORIGINAL crossing into scalar Euler transfer
+factorization of the original crossing into scalar Euler transfer
 operators, factorial diagonals and a marked Gaussian diagonal.
 The factorial kernels themselves are Euler polynomials. Consequently
 the entire original period is an explicit Laurent-polynomial Cauchy
@@ -148,7 +148,7 @@ These are the specified original source matrices, not a preferred
 new contour or solution. The known root scalar-closure identity
 equates their uninserted original periods.
 
-If chi_(beta,N)(M) is the ORIGINAL external modified-dimension,
+If chi_(beta,N)(M) is the original external modified-dimension,
 framing and common-Cartan line, then
 
     P_(beta,N)(M)=chi_(beta,N)(M)
@@ -179,7 +179,7 @@ gives a sum over m indices k_j in 0,...,N-1, with explicit weights
 product_j d_(k_j)^(sign_j), whose remaining coefficient integral
 contains only u_N,v_N, finite projection kernels and source
 monomials. This is the requested fixed-number-of-indices
-Euler/Gaussian realization of the ORIGINAL scalar.
+Euler/Gaussian realization of the original scalar.
 
 ## 4. The endpoint branches that a global deformation must retain
 
@@ -258,7 +258,7 @@ consequence claimed here.
 
 For the proposed broad class of positive geometric ideal
 triangulations, construct a source-preserving reduction of (5)
-and a contour deformation of its ORIGINAL marked cycle to a
+and a contour deformation of its original marked cycle to a
 relative Rivin-angle chain such that:
 
 1. Every auxiliary integration, cap, projection-numerator branch

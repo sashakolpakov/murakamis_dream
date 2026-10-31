@@ -1,6 +1,6 @@
 # Original output Fourier projection removes the colliding negative-transfer poles
 
-28 October 2026. Keeping the ORIGINAL finite physical output projection
+28 October 2026. Keeping the original finite physical output projection
 resolves the simultaneous endpoint collisions left by the scalar simple-seam
 calculation. There is an exact matrix-valued total-transfer interpolant.
 At EVERY newly crossed negative integer its projected operator has a zero,
@@ -35,7 +35,7 @@ integer its vector zero is at least simple. Orthogonality proves
 No N-dependent conditioning or a nonpositive pivotal metric is used.
 
 Let the scalar r_N(a,b;z), 0<=a,b<=d, be the EXACT factorial
-interpolation of the ORIGINAL positive crossing:
+interpolation of the original positive crossing:
 
     r_N(a,b;z)=kappa x^(-a-b+z)Q^(b(a-z))
                *Fhat(b+z)F_a/[Fhat(z)F_b Fhat(a-z)].     (3)
@@ -50,7 +50,7 @@ Define the operator-valued continuation by its actual input columns,
 This is precisely the contraction of the two original output Fourier
 projections with the scalar monomials of the physical crossing kernel.
 It is not an arbitrary change of its output source. At an integer
-0<=k<=d it equals the ORIGINAL kth transfer slice: valid outputs give
+0<=k<=d it equals the original kth transfer slice: valid outputs give
 their literal basis vectors and forbidden transfers have their exact
 factorial zeros. The opposite crossing uses its actual conjugate mirror.
 
@@ -179,7 +179,7 @@ The original integer residues 0,...,d remain enclosed. In particular
 it does not contradict the full-rate low Markov packet: no original
 residue has been declared zero or individually lower-rate.
 
-The physical input labels in (4) are the ORIGINAL finite basis labels.
+The physical input labels in (4) are the original finite basis labels.
 The bound is uniform over all of them, so it is an operator/source
 statement rather than a selected fixed-clock phase claim. If those
 input indices are themselves replaced by independent complex contour
@@ -195,15 +195,4 @@ with a knot representation: the entire physical projection must stay.
 The theorem is a quantitative full-source normal-boundary filling,
 not the global sublevel transport or volume conjecture.
 
-[Audit](../experiments/audit_actual_projected_transfer_cot_completion.py):
-original physical integer transfer slices, all simultaneous negative
-endpoint pole cancellations, fixed-height projected density limits,
-and finite-source tests including both physical input endpoints. The
-literal positive test includes the original common Cartan factor
-kappa=q^((N-1)^2/2), with its inverse in the negative crossing.
-An independent proof review verified the pole-order count, uniform
-endpoint base bounds, half-integer denominator estimates and operator
-maximum principle; the corrected full-scalar audit replay passed.
-The same audit now checks the [upper extension](actual_projected_transfer_upper_collar.md),
-its exact N-shift and fractional base identity, all physical upper
-collision orders and the two-sided expanded cotangent residue sum.
+[Audit](../experiments/audit_actual_projected_transfer_cot_completion.py): original physical integer transfer slices, all simultaneous negative endpoint pole cancellations, fixed-height projected density limits, and finite-source tests including both physical input endpoints. The literal positive test includes the original common Cartan factor kappa=q^((N-1)^2/2), with its inverse in the negative crossing. The same audit now checks the [upper extension](actual_projected_transfer_upper_collar.md), its exact N-shift and fractional base identity, all physical upper collision orders and the two-sided expanded cotangent residue sum.

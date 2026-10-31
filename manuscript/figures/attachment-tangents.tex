@@ -1,7 +1,7 @@
 \begin{tikzpicture}[node distance=14mm]
-\node[box] (h) {new leaf\\core or alias};
-\node[box,right=22mm of h] (e) {completed child $E$\\$f_E(b)+\mu(v-b)-\gamma$};
-\node[box,below=17mm of $(h)!0.5!(e)$,text width=9cm] (g) {the same Newton gate $m(u,v,w)$\\$\max(u,v)\le w\le u+v\le1$};
-\node[box,below=of g,text width=9cm,fill=green!5] (o) {parent tangent $f_{hE}(c)+\lambda(w-c)$\\loss: new alias $\delta$, inherited alias $\gamma$, both $\delta+\gamma$};
+\node[box] (h) {new elementary piece\\core or alias contribution};
+\node[box,right=22mm of h] (e) {existing completed box $E$\\$f_E(b)+\mu(v-b)-\gamma$};
+\node[box,below=17mm of $(h)!0.5!(e)$,text width=9cm] (g) {the stacking coefficient with rate $m(u,v,w)$\\$\max(u,v)\le w\le u+v\le1$};
+\node[box,below=of g,text width=9cm,fill=green!5] (o) {tangent for the stacked box $f_{hE}(c)+\lambda(w-c)$\\loss: new alias $\delta$, inherited alias $\gamma$, both $\delta+\gamma$};
 \draw[arr](h)--(g);\draw[arr](e)--(g);\draw[arr](g)--(o);
 \end{tikzpicture}

@@ -41,20 +41,20 @@ the sign is \(-1\) and the exponent is \(-lN\). Thus every
 superedge coefficient is exactly \(-N\), including even and
 composite \(N\):
 \[
- J_{\rm ad}(W)=-N\sum_{l=1}^{N-1}E_{l-1,l}.
+ J_{\mathrm{ad}}(W)=-N\sum_{l=1}^{N-1}E_{l-1,l}.
 \]
 For the literal marked row \(\Phi(T)=\operatorname{Tr}(eT)\),
-\(e_{ab}=1/N\), this gives \(\Phi(J_{\rm ad}W)=-(N-1)\).
+\(e_{ab}=1/N\), this gives \(\Phi(J_{\mathrm{ad}}W)=-(N-1)\).
 
 Consequently
 \[
- \Phi_{\rm div}(T)=-\frac{\Phi(J_{\rm ad}(TW))}{N-1}
+ \Phi_{\mathrm{div}}(T)=-\frac{\Phi(J_{\mathrm{ad}}(TW))}{N-1}
 \]
-has \(\Phi_{\rm div}(I)=1\). Its equality with the original row
+has \(\Phi_{\mathrm{div}}(I)=1\). Its equality with the original row
 on scalar cut operators is exact. The all-matrices homotopy
 \[
- \Phi_{\rm div}-\Phi
-    =(\Phi_{\rm div}-\Phi)h_W\delta_W
+ \Phi_{\mathrm{div}}-\Phi
+    =(\Phi_{\mathrm{div}}-\Phi)h_W\delta_W
 \]
 follows directly from \(h_W\delta_W=I-ip\) and the fact that the
 row difference kills \(I\). It neither assumes nor supplies a
@@ -91,9 +91,9 @@ For an arbitrary full matrix \(T\),
        =(\operatorname{ptr}_gT)W.
 \]
 Combining this with divided-adjoint naturality gives exactly
-the stated ordered formula for \(\Phi_{\rm div}\operatorname{ptr}_g\).
+the stated ordered formula for \(\Phi_{\mathrm{div}}\operatorname{ptr}_g\).
 It does not give a formula with the edge moved outside
-\(J_{\rm ad,total}\). The note retains the correct order.
+\(J_{\mathrm{ad,total}}\). The note retains the correct order.
 
 ## 3. Fusion and the even-level character
 
@@ -103,7 +103,7 @@ At degree \(kN+s\), cancellation gives
 \[
  \left[
  \frac{(Q;Q)_{kN+s}}{(1-Q^N)^k}
- \right]_{\rm root}
+ \right]_{\mathrm{root}}
  =N^k k!(Q;Q)_s.
 \]
 Thus the full root defect is

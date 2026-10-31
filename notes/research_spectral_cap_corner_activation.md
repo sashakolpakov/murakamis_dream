@@ -1,11 +1,6 @@
 # A positive ordinary-zero barrier at the remaining monomial cap corner
 
-31 October 2026. **Internally reviewed research lemma.** Root and a
-separate reader completed full analytical reviews. This uses the ORIGINAL sharp
-full/half interval functional, with both unused products and the actual
-positive-eta word. It concerns a simultaneous degree/spectrum perturbation
-at a free-spectrum maximum. It asserts no finite-N estimate uniform in a
-shrinking spectral cap.
+The cap-corner variation changes both degree and spectrum at a free maximum. It is not a shrinking-neighborhood finite-$N$ estimate.
 
 ## 1. The cap corner and the actual feasible direction
 
@@ -168,14 +163,6 @@ No simultaneous N-dependent
 retuning, nonzero bound through an omitted-half zero, sharp Fourier-cycle
 contribution, or volume comparison is asserted.
 
-## Review scope
+## Scope
 
-Root and an independent reader checked the full moving-cap calculation,
-the exact monomer baseline, the tilt scale u comparable to epsilon,
-the O(epsilon) word integral, the flat terminal retuning and both
-two-terminal coefficients. The final wording separates strict-base
-outer loads from the monomial corner and uses the sharp continuum
-functional directly. Both readers separately checked the half-terminal
-retuning to delta=0 and its geometric latent-triangle gain. These are
-internal reviews, not external peer review. No numerical asymptotic audit
-is claimed.
+The monomial corner and strict-base outer pattern are distinct. The comparison uses the actual sharp functional, not the fractional replacement.

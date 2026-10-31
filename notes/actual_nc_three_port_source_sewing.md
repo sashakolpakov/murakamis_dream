@@ -323,12 +323,4 @@ the cube triple-sum corner, the physical divided-current pruning,
 and the exact cyclotomic certificate above. No graph-volume or
 unconditional all-N cube survival claim is made.
 
-Independent internal reviews: root read the source sewing, exposed
-pointing and pruning arguments. The global audit agent independently
-read sections1--7 and the separate pruning proof, checked the C/S
-cancellations and fixed-normal quotient, and freshly replayed the
-audit: PASS nineteen sewings, five physical six-head Ward/divided-
-current pruning families, the nested-cut countercurrent and the
-exact QQ(q) order-two certificate. No correction was required to
-these corrected exposed statements. These are internal checks,
-not external peer review or an all-N primitive-core estimate.
+The exact exposed statements do not give an all-N primitive-core estimate.

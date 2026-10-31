@@ -1,6 +1,6 @@
 # The original marked source is one positive face coefficient
 
-30 October 2026. Independently reviewed and frozen. For every fixed folded
+30 October 2026. For every fixed folded
 channel assignment, the literal complete-circle plat source equals one
 coefficient of an explicit homogeneous polynomial with nonnegative real
 coefficients, times its known scalar and retained half-twist phases.
@@ -16,7 +16,7 @@ a hyperbolic-volume asymptotic.
 
 Fix a connected 2k-plat projection, k>=2, with all crossings in R
 recorded two-strand boxes. The exterior contains the actual k bottom
-cups and k top caps, one of the latter carrying the ORIGINAL unrestricted
+cups and k top caps, one of the latter carrying the original unrestricted
 mark. Retain each box's half twist epsilon_i in {0,+1,-1}. The source is
 the [original complete-circle contraction](general_matching_graph_full_normal_source.md),
 not a routed replacement. Any separately recorded exterior framing line
@@ -49,7 +49,7 @@ Use the exact local factors proved in the
     D_a(x,z,y)=det[z I+(x/2)H_-+(y/2)H_+],
     Ptilde_s(x,y)=sum_(j=0)^s S_s/[S_j S_(s-j)] x^(s-j)y^j.
 
-At box i let (f0,fin,fout,f2) be its ORIGINAL outer, input-middle,
+At box i let (f0,fin,fout,f2) be its original outer, input-middle,
 output-middle and final white regions. Define
 
     P_(N,a)(L)=product_i
@@ -261,7 +261,7 @@ degree dR. Its whole root sum is consequently zero, as required by
 the original trace-normal identity. The mark is essential to the
 nonzero admissible target, not an optional renormalization.
 
-## 6. Scope and review
+## 6. Scope
 
 Formula (3) is the original fixed-channel ROOT contraction, not merely
 an equality of off-grid interpolants or local density values. It uses
@@ -288,16 +288,4 @@ ordinary root closure zero is checked separately. These are finite
 identities over exact cyclotomic finite fields, not numerical evidence
 for an asymptotic or a nonzero coefficient in every sector.
 
-Independent primary full analytical review and fresh redirected replay:
-PASS. The reader checked the signed sweep, second-head mark, exact N^-1
-scalar, primitive parity-coset grids, global carry cancellation, local
-support interval, unique alias and original ordinary-closure zero.
-Every focused-audit count was independently reproduced.
-
-Independent peer full analytical review and fresh redirected replay:
-PASS. The reader independently checked the original unrestricted mark
-and whole-degree restriction, both-parity measure, retained forced
-factor and finite support, and exact coefficient extraction. Every
-focused-audit count was reproduced, including the nontrivial even
-carries. The connected multi-main-component scope and the absence of
-an asymptotic or a nonzero-coefficient assertion were retained.
+The finite coefficient identity allows the stated connected multi-main-component case. It does not assert an asymptotic or a nonzero coefficient.

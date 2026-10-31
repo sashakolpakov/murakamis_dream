@@ -10,56 +10,56 @@
 \begin{tikzpicture}[font=\sffamily,text=ink,>=Stealth,
  panel/.style={draw=blue,fill=blue!4,rounded corners,align=center,
  text width=13.2cm,inner sep=10pt},
- branch/.style={panel,text width=37mm,minimum height=28mm,inner sep=7pt},
+ branch/.style={panel,text width=37mm,minimum height=34mm,inner sep=7pt},
  pending/.style={panel,draw=amber,fill=amber!4,dashed},
  face/.style={circle,draw=blue,fill=white,minimum size=8mm},
  port/.style={rectangle,draw=blue,fill=blue!8,minimum size=8mm}]
-\node[font=\sffamily\large\bfseries] at (0,0)
- {The sharp source: a global upper bound and its remaining maxima};
-\node[panel] (source) at (0,-1.55)
- {\textbf{Exact original coefficients, all closed parameters}\\[6pt]
- $\displaystyle N^{-1}\log|a_N(q;\delta)|\le H_\delta(q)+o(1)$\\[5pt]
- Both parities, all row and degree boundaries, sampled zeros and the cap.\\
- This is a uniform upper bound, not a nonzero coefficient asymptotic.};
+\node[font=\sffamily\large\bfseries] at (0,.9)
+ {What a global source bound tells us};
+\node[panel] (source) at (0,-1.7)
+ {\textbf{Each crossing region contributes a finite polynomial}\\[6pt]
+ Let $a_N(q;\delta)$ be one coefficient at level $N$, with normalized\\
+ face degrees $q$ and real spectral parameter $\delta$. Its upper rate is\\[6pt]
+ $\displaystyle N^{-1}\log|a_N(q;\delta)|\le H_\delta(q)+o(1).$\\[5pt]
+ This holds at both parities and at boundary degrees, including zeros.};
 \node[panel,below=8mm of source] (fiber)
- {\textbf{One original shared flow fiber}\\[6pt]
- Port supply $1$; ordinary face target $1$; protected targets $0$.\\[4pt]
- $\displaystyle M_D=\max_{q,\boldsymbol\delta}\sum_eH_{\delta_e}(q_e),
- \qquad |S_N|\le e^{N(M_D+o(1))}.$};
+ {\textbf{The face degrees must agree across the diagram}\\[6pt]
+ Each region supplies degree $1$. Each ordinary face requires degree $1$;\\
+ the two marked faces require $0$. Maximize the sum of local rates\\
+ subject to these shared constraints, and call the maximum $M_D$.\\[6pt]
+ $\displaystyle |S_N|\le e^{N(M_D+o(1))}$ for the full shared numerator $S_N$.};
 \draw[->,thick,blue] (source)--(fiber);
 \node[panel,below=8mm of fiber] (regular)
- {\textbf{At a global maximum on the certified full fiber}\\[6pt]
- Every ordinary incidence is positive; no diagonal port remains.\\
- The original degree constraints give finite common weights $L_f>0$.\\[4pt]
- Protected zeros remain exact; no independent local maxima are assumed.};
+ {\textbf{Geometry restricts the possible maximizing configurations}\\[6pt]
+ On a diagram satisfying the geometric certificate, every ordinary\\
+ incidence has positive load and all regions use common face weights.\\
+ The marked zeros remain fixed. The possible local forms are:};
 \draw[->,thick,blue] (fiber)--(regular);
-
-\node[branch,below=12mm of regular.south] (green)
- {\textbf{Strict Green}\\[6pt]
- $0<\delta<\tfrac12$\\
- Strict pole straddling\\[5pt]
- $\displaystyle c-b=\frac{x+y}{\sin^2(\pi\delta)}$\\[4pt]
- \small RIGHT is reflected};
-\node[branch,left=7mm of green] (cross)
- {\textbf{Complete CROSS}\\[6pt]
- $\delta=0$\\
- Both middle loads $<\tfrac12$\\[5pt]
- \small No half-seam remains};
-\node[branch,right=7mm of green] (cap)
- {\textbf{Marked cap corner}\\[6pt]
- $\delta=\tfrac12,\quad x=b=0$\\
- $c=y,\quad 0<\nu<\tfrac12$\\[5pt]
- \small At most two; reflected cases included};
-\draw[->,thick,blue] (regular.south)--(green.north);
-\draw[->,thick,blue] (regular.south) -- ++(0,-.4) -| (cross.north);
-\draw[->,thick,blue] (regular.south) -- ++(0,-.4) -| (cap.north);
-
-\node[panel,below=12mm of green.south,minimum height=33mm] (cycle) {};
-\node[align=left,text width=8.2cm,anchor=west] at ($(cycle.west)+(.35,0)$)
- {\textbf{Every non-CROSS port forces an odd MAIN cycle}\\[6pt]
- The opposite triangles lie in different original ports.\\
- Face demand and common weights rule out matching signs.\\[5pt]
- Only an all-complete maximum can be phase coherent.};
+\node[branch,below=12mm of regular.south] (side)
+ {\textbf{One-sided sector}\\[7pt]
+ $0<\delta<\tfrac12$\\[6pt]
+ One middle load\\exceeds $\tfrac12$.\\[5pt]
+ The two orientations\\are left and right.};
+\node[branch,left=7mm of side] (cross)
+ {\textbf{Central cross sector}\\[7pt]
+ $\delta=0$\\[6pt]
+ Both middle loads\\are below $\tfrac12$.\\[5pt]
+ This is the complete\\geometric configuration.};
+\node[branch,right=7mm of side] (cap)
+ {\textbf{Marked cap corner}\\[7pt]
+ $\delta=\tfrac12$\\[6pt]
+ Two marked incidences\\have zero weight.\\[5pt]
+ The other weights agree;\\at most two caps occur.};
+\draw[->,thick,blue] (regular.south)--(side.north);
+\draw[->,thick,blue] (regular.south)--++(0,-.4)-|(cross.north);
+\draw[->,thick,blue] (regular.south)--++(0,-.4)-|(cap.north);
+\node[panel,below=12mm of side.south,minimum height=38mm] (cycle) {};
+\node[align=left,text width=8.3cm,anchor=west] at ($(cycle.west)+(.35,0)$)
+ {\textbf{A non-central region forces a phase mismatch}\\[6pt]
+ In the four-step incidence cycle, $0$ means equal phases\\
+ and $1$ means phases differing by $\pi$. An odd sum\\
+ cannot be satisfied around the cycle.\\[5pt]
+ This detects cancellation, but does not measure its size.};
 \node[port] (e) at ($(cycle.east)+(-3.7,.8)$) {$e$};
 \node[face] (o) at ($(cycle.east)+(-1.1,.8)$) {$o$};
 \node[port] (ep) at ($(cycle.east)+(-1.1,-.8)$) {$e'$};
@@ -68,18 +68,22 @@
 \draw[thick,blue] (o)--node[right,font=\small] {$0$}(ep);
 \draw[thick,blue] (ep)--node[below,font=\small] {$0$}(a);
 \draw[thick,blue] (a)--node[left,font=\small] {$0$}(e);
-\draw[->,thick,blue] (green.south)--(cycle.north);
+\draw[->,thick,blue] (side.south)--(cycle.north);
 \draw[->,thick,blue] (cap.south)--++(0,-.4)-|(cycle.north east);
-
-\node[pending,below=9mm of cycle] (open)
- {\textbf{OPEN: an absolute source bound at the volume rate}\\[7pt]
- An odd cycle is a sign obstruction, not a quantitative volume gap.\\[5pt]
- Regular-window loss must beat the positive envelope.\\
- A flat cap can retain a polynomial alternating remainder.\\[5pt]
- No general $M_D\le\Phi_D$ or full filling-period theorem follows here.};
-\draw[->,thick,amber,dashed] (cycle)--(open);
-\node[align=center,font=\small,text width=13.2cm,below=5mm of open]
- {Restricted non-CROSS maxima require value at least $\Phi_D$ and a strict
- non-CROSS margin.\\The four-cycle is shown in a row/face gauge; its odd sum is invariant.};
+\node[pending,below=9mm of cycle] (remaining)
+ {\textbf{What remains for general diagrams}\\[7pt]
+ Let $\Phi_D$ denote the complete geometric exponential rate.\\
+ The cancellation must be strong enough to bring the full source\\
+ below that rate outside the geometric contribution. A positive\\
+ loss relative to a larger upper bound does not establish this.\\[6pt]
+ The seam boundary is controlled; a flat cap prevents a universal\\
+ local exponential-loss argument. This route alone does not prove\\
+ $M_D\le\Phi_D$ for every certified plat.\\[6pt]
+ Strict Conway trees already have a full volume theorem by a separate argument.};
+\draw[->,thick,amber,dashed] (cycle)--(remaining);
+\node[align=center,font=\small,text width=13.2cm,below=5mm of remaining]
+ {For a maximum constrained to non-central sectors with value at least $\Phi_D$,\\
+ the seam theorem supplies a uniform positive overload margin.\\
+ Squares in the cycle are crossing regions; circles are shared faces.};
 \end{tikzpicture}
 \end{document}

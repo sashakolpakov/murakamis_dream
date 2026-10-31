@@ -1,6 +1,6 @@
 # Polynomial cost of the actual small-channel generic normals
 
-30 October 2026. This note concerns the ORIGINAL generic highest-weight
+30 October 2026. This note concerns the original generic highest-weight
 N-1 columns, including the factors that simplify only at the root of
 unity. On compact subsets of the joint central wedge, every fixed
 generic-q derivative of a small-channel column has at most polynomial
@@ -257,17 +257,6 @@ root-normal comparisons passed; 96 points on the stated polynomial
 disk were also sampled. The disk samples are regressions, not the
 proof of uniform control.
 
-An independent analytical review checked the original B deformation,
-the finite Vandermonde interpolation proof, the generic Casimir
-complete-slice argument, the moment proof and its endpoints, and
-the N^5/N^7 quotient estimates giving the N^(-8) matrix neighborhood.
-It also checked the retained scalar ratios and the fixed-t,u Cauchy
-derivative convention. This review covers the stated small-channel
-theorem only.
+The result is restricted to the stated small-channel domain and fixed-t,u Cauchy derivative convention.
 
-A second independent full analytical review and fresh focused replay
-also passed. It checked the generic source factors before specialization,
-the finite interpolation and moment arguments, both spectral-gap
-factorizations, the frozen-upper-entry determinant, and every scalar
-normalization used in the Cauchy bound. Its replay reproduced all exact
-and 100-digit counts above. The paired large channel remains excluded.
+The paired large channel is excluded.

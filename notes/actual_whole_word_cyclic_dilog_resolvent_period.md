@@ -12,7 +12,7 @@ proved in [the unfolded Ward calculation](unfolded_ward_factorial_and_regulator.
 and [the Rees crossing calculation](rees_whole_crossing_source_factorization.md).
 The [full-atom note](full_euler_atom_dilog_and_endpoint_regions.md)
 also gives their exact scalar Taylor Cauchy formula. The new
-content here is their contraction into the ORIGINAL strict signed
+content here is their contraction into the original strict signed
 word with the specified source and an explicit product cycle.
 This constructs a global algebraic period representation; it does
 not prove a geometric intersection number or a volume estimate.
@@ -78,7 +78,7 @@ its factor by the rational matrix
     mathscr R_j(t_j)=(t_j I-T_j)^-1.            (5)
 
 All other factors retain their actual values. Write B_l for
-the resulting factors. Let the ORIGINAL averaged first-cut
+the resulting factors. Let the original averaged first-cut
 functional be
 
     Phi_(b,N)(W)=(1/N) sum_(a,c,k_2,...,k_b)
@@ -102,7 +102,7 @@ projector because each T_j is the literal truncated transfer.
 It also retains all pivotal closures and the first-cut coupon.
 There is no quotient that kills the degree-zero wall terms.
 
-If chi is the ORIGINAL external dimension, framing and common
+If chi is the original external dimension, framing and common
 Cartan factor, included exactly once, then the original scalar is
 
     P_(beta,N)(M)=chi_(beta,N)(M)/(2pi*i)^r
@@ -231,7 +231,7 @@ norm is exactly `N^(b-1)`. Thus `|Phi(W)|<=N^(b-1)||W||`.
 
 Each crossing contains three transfer resolvents, three direct
 factorial kernels and three inverse-factorial kernels. Taking
-the norm of their ORIGINAL ordered product proves the uniform
+the norm of their original ordered product proves the uniform
 bound for the full all-inverse rational source
 
     |R_(beta,N)(t)|

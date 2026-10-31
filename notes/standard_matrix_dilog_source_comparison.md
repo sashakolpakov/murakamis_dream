@@ -406,7 +406,7 @@ root translations, 108 odd-level positive/negative charged definitions,
 their full integer-charge lifts, the Heisenberg commutator
 and the compatible cyclic-g normalization. All twelve normal
 source frames also match the independent leading-valuation
-calculation with their exact determinant phases. All checks pass.
+calculation with their exact determinant phases.
 [Results](../experiments/standard_matrix_dilog_comparison_results.json).
 
     python3 experiments/audit_standard_matrix_dilog_comparison.py

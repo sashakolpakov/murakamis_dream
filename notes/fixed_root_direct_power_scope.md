@@ -2,7 +2,7 @@
 
 The [whole-source local packet](general_full_spectral_numerator_geometric_packet.md) now assembles these results for the actual full numerator. The original global spectral filling period remains open.
 
-31 October 2026. Internally reviewed.
+31 October 2026. .
 
 Conclusion: the current route to the original root sequence does NOT
 require a genuine-q normal estimate. It does require the full spectral

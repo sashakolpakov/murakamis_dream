@@ -1,10 +1,6 @@
 # All odd demands: the projected flux and a concave comparator rate
 
-31 October 2026. Internally reviewed analytical theorem. Root and coherent completed
-full independent internal proof/source reviews. This concerns only the
-original fixed cap/CROSS spectral pair. It proves a subexponential
-comparison to the actual odd endpoint reference, not a polynomial
-bound or a uniform statement for nearby spectra.
+31 October 2026. The theorem concerns the fixed cap/CROSS spectral pair. It gives a subexponential comparison with the odd endpoint reference, not a polynomial bound or a uniform estimate for nearby spectra.
 
 ## 1. Statement and retained source
 
@@ -37,8 +33,7 @@ finite ranges, not complete sums introduced above the low cutoff.
 All denominators are positive in this range. The empty degree \(n=d\)
 is not included in the ratio.
 
-The already reviewed
-[odd low-demand theorem](research_cap_cross_odd_low_demand_subexponential_extension.md)
+The [odd low-demand theorem](research_cap_cross_odd_low_demand_subexponential_extension.md)
 proves (2) for \(n\le M\). The original
 [all-parity high-demand theorem](research_cap_cross_high_demand_signed_contraction.md)
 gives \(|T_n|\le4N D_n^o\) for
@@ -246,7 +241,7 @@ Divide (16) by the actual lower estimate (13). This proves (2)
 on the missing middle interval; combine it with the low and high
 theorems to obtain every \(0\le n\le N-2\).
 
-## Scope and review status
+## Scope
 
 The proof uses the raw odd projected recurrence, a genuine positive
 endpoint coefficient LOWER theorem, and a uniform two-sided
@@ -254,12 +249,4 @@ comparator rate. It does not replace the original cutoff sum by
 its full auxiliary slice above M, use a norm bound, or infer
 finite monotonicity of the individual comparator coefficients.
 
-The even projected source has an additional E-boundary term and is
-not covered by this argument. No spectral neighborhood, whole-source
-dominance, or new filled-volume conclusion is asserted.
-Root and coherent independently checked the complete source/flux
-identity, actual uniform closed coefficient lower, comparator
-concavity, and both propagation directions. These are internal
-reviews, not external peer review. The
-[all-parity theorem](research_cap_cross_all_demand_subexponential_contraction.md)
-retains this result and proves the additional even cutoff-current bound.
+The even source requires its own boundary term, which is not covered by this all-odd statement. Nearby spectra, the full source and filling asymptotics remain separate; the all-parity extension is cited above.

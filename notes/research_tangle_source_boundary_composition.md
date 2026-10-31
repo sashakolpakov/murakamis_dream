@@ -1,6 +1,6 @@
 # Composition of original matched-disk boundary data
 
-31 October 2026. **Internally reviewed exact-source and analytical research theorem.**
+31 October 2026. **exact-source and analytical research theorem.**
 Unpublished.
 This is an exact composition law for admissible disk modules built from
 WHOLE original matched ports. It concerns the actual positive CROSS
@@ -246,7 +246,7 @@ a rotated diagonal. The signed non-CROSS/cap cancellation inequality,
 even-parity negative-axis adapter, and filled-period estimates remain
 their separate original-source questions.
 
-## Inputs and internal review
+## Inputs
 
 The [original homogeneous source](actual_homogeneous_casimir_face_source.md)
 and [matched-sphere Morse construction](research_matched_sphere_morse_source.md)
@@ -264,13 +264,7 @@ supply the odd-level positive pressure identification. The
 supplies the drilled-volume identification only under the original
 marked packing hypotheses stated in section 4.
 
-The root independently reviewed sections 1–4 in full: PASS, with the
-resulting-component anchoring condition now explicit. Cluster independently
-reviewed the corrected sections 1–4 in full, analytically and against
-the original source scope: PASS. Coherent independently reviewed the
-full proof: PASS, with its protected-status, inherited-mark and
-ordinary-graph anchoring clarifications included.
-These are internal reviews, not external peer review.
+Every resulting ordinary component must satisfy the stated anchoring condition. Gluing also preserves protected versus ordinary status and the inherited marked pair.
 
 No numerical audit is used or claimed. This theorem composes actual
 admissible source boundary data. It does not prove that every Conway

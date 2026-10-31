@@ -1,13 +1,13 @@
 # Two residual caps: exact topology, a complete flat cylinder, and the original volume budget
 
-31 October 2026. **Internally reviewed analytical research theorem.**
+31 October 2026. **analytical research theorem.**
 Unpublished. Assume classified
-finite-common-weight stationary data on the ORIGINAL simple matched
+finite-common-weight stationary data on the original simple matched
 sphere, positive at every ordinary incidence, with exactly TWO strict
 residual caps and CROSS at every other port. The original protected MAIN
 edge is uv. A cap child receives 1-nu>1/2 and its ordinary outer receives
 nu in (0,1/2); their positive weights agree. The positive-value hypothesis
-excludes the already reviewed all-cap tetrahedral exception.
+excludes the all-cap tetrahedral exception.
 
 No adjacent-mark sphere theorem is applied to nonadjacent zero vertices.
 The new construction below is a complete Euclidean CYLINDER. The resulting
@@ -304,8 +304,8 @@ stationary value with the original closed two-cap-sector maximum.
 Use this one positive exterior family to form the actual original
 reflection heads. The restored original MAIN edge uv is the contact
 at infinity of the two parallel lines. At each removed cap use the
-explicit ordered collar from the [reviewed one-cap chain theorem](research_one_cap_original_chain_volume_budget.md),
-with its original local frame and its own nu_i. Retain the ORIGINAL
+explicit ordered collar from the [one-cap chain theorem](research_one_cap_original_chain_volume_budget.md),
+with its original local frame and its own nu_i. Retain the original
 oriented exterior fan when choosing that local chart. Depending on the
 recorded disk order, this may be the conjugate of the displayed one-cap
 normalization; no single affine normalization is presumed to send both
@@ -318,7 +318,7 @@ Conjugate every local formula back by its actual coordinate change before
 sewing. The tangent CROSS
 collars are unchanged. The same literal Morse prefix, cup/cap and
 ordered-conjugation relations therefore construct a representation
-of the ORIGINAL untwisted drilled group, not of a periodic quotient.
+of the original untwisted drilled group, not of a periodic quotient.
 
 There is a small generalization of the one-cap flag rule. Fix u as
 the ONE reference reflection. At cap e let x_e be its protected outer
@@ -340,14 +340,14 @@ even when both lie on the same protected white face.
 
 Keep the original compatible face fans and degree-one abstract ball
 chains. The actual full peripheral subgroup at each exceptional cap
-preserves its axis; all other cusps are parabolic. The [reviewed general-peripheral ideal-chain theorem](general_peripheral_representation_volume_bound.md) therefore computes the
+preserves its axis; all other cusps are parabolic. The [general-peripheral ideal-chain theorem](general_peripheral_representation_volume_bound.md) therefore computes the
 canonical original representation volume, with no extra boundary
 constant or source-action identification.
 
 ## 7. The two inward pyramids and the quantified remaining budget
 
 In each local normalization the two collar flags lie on the existing
-exterior side of its flat quadrilateral. The reviewed original-chain
+exterior side of its flat quadrilateral. The original-chain
 boundary identity replaces that face by the four-triangle inward cone,
 whose signed volume is -W(nu_i). In a conjugate local chart use the
 original oriented fan and tetrahedron orientation together; the same
@@ -392,12 +392,12 @@ signed source by this volume without its remaining phase compensation.
 No real-spectral cap is silently replaced by these different geometric
 collars.
 
-## Review dependencies and exact open scope
+## dependencies and exact open scope
 
 Inputs are the [original stationary cap classification](research_full_fiber_sharp_stationary_classification.md),
 the cap-cut/forest theorem linked above, the
 [complete triangle angles and strict sector support](actual_smoothed_source_capacity_blocks.md),
-the reviewed one-cap ordered collar and pyramid chain, and the
+the one-cap ordered collar and pyramid chain, and the
 [actual general-Morse group dictionary](research_general_morse_cross_action.md).
 The absolute volume normalization and fixed-word gap use the linked
 original general-peripheral theorems. The new topology, complete-cylinder
@@ -405,14 +405,7 @@ development, two-cap flag rule and volume assembly are proved here;
 they are not applications of an adjacent-mark packing theorem to
 nonadjacent marked vertices.
 
-The parent completed a full analytical/source review of sections 1–7.
-One independent agent fully reviewed sections 3–5, including completeness,
-developing injectivity, sector support and the finite exterior. A second
-independent agent reviewed sections 1–2 and 6–7, including the literal
-cap topology, one-line fan exclusion, original two-cap flags and oriented
-pyramid assembly. All reported PASS; the local conjugate-chart and strict
-support precisions are included. These are internal reviews, not external
-peer review. No numerical audit is claimed.
+The two local cap charts must be returned to the same global coordinates. When a conjugate chart is required, its oriented fan is retained; one cannot choose the two cap sides independently. Completeness and developing injectivity are established before sector support and the finite exterior are used.
 
 No quantum sector transport, universal absolute cap inequality, or
 filled-volume theorem is asserted. In particular the one-cap signed

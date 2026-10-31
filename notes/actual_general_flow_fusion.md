@@ -216,7 +216,7 @@ choice. A common nonzero rescaling of all a_i is simply the scale
 of the introduced anchor and is canceled by the retained scalar.
 
 This has a genuinely nonzero, nondegenerate typed application inside
-the ORIGINAL source, rather than only in an auxiliary graph. For the
+the original source, rather than only in an auxiliary graph. For the
 figure-eight word [1,-2,1,-2], its actual clocks
 
     h=(0,a,b,a+b), a>0, b>0, a+b<d,

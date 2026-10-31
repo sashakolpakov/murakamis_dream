@@ -1,6 +1,6 @@
 # An ordinary pivotal cap coherently collapses reassociation to one angle weight
 
-29 October 2026. Contracting the ORIGINAL ordinary pivotal cap with
+29 October 2026. Contracting the original ordinary pivotal cap with
 the actual three-head reassociation packet annihilates every middle
 input except the top index d=N-1. The surviving map is a phase times
 weighted truncated addition. In the source-fixing quarter-factorial
@@ -90,7 +90,7 @@ literal polynomial value. This works at every even and composite
 level as well.
 
 Thus b=d, r=0, s=a, n=c+a, with the strict condition n<=d.
-Substitution of the ORIGINAL cap coefficient gives precisely(7).
+Substitution of the original cap coefficient gives precisely(7).
 This is cancellation of the full finite packet, not one selected
 term or an assumed homogeneous-source quotient.
 
@@ -237,7 +237,7 @@ full original finite packet matrices, ordinary cap and cup source,
 complete phases and forced indices, exact mixed-copy Gram,
 one-weight norms, and the unrestricted marked packet.
 
-Fresh replay: PASS seven levels N=2,...,8 and all 1,295 three-head
+The finite audit checks seven levels N=2,...,8 and all 1,295 three-head
 input columns, checking the full original cap and inverse-cup matrices,
 the retained marked packet, phases, mixed-copy Gram and one-weight
 norms. The algebraic proofs above establish the all-level statements;

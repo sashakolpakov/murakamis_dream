@@ -10,7 +10,7 @@ volume in the stated normalization.
 
 This closes a classical chart restriction. It does not carry the
 original quantum cycle into that chamber. An exact calculation in
-the ORIGINAL figure-eight flow chart shows why that transport is
+the original figure-eight flow chart shows why that transport is
 necessary: its geometric fixed-radii angular Hessian is indefinite,
 even after the two framing variables are fixed.
 
@@ -197,7 +197,7 @@ of the off-critical dilogarithm action with Rivin volume; its
 angular Hessian and its critical value suffice.
 
 Equation (9) shows that a source-preserving change from the
-ORIGINAL quantum flow coordinates to that positive chart is
+original quantum flow coordinates to that positive chart is
 substantive. The original Cauchy cycle and every projection,
 Gaussian, normal source, peripheral factor and matched residue
 must pass through it. Neither the classical gradient degree nor

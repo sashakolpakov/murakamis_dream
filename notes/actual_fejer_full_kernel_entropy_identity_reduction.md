@@ -2,7 +2,7 @@
 
 Completion: the [general endpoint theorem](general_fejer_endpoint_source_volume.md) assembles this local result into the actual augmented-volume equality. Its [unique geometric maximum](actual_fejer_unique_geometric_maximizer.md) gives concentration; the original filling conjecture remains open.
 
-31 October 2026. Independently reviewed full-kernel entropy and identity-reduction theorem. This uses the [proved uniform closed local coefficient limits](actual_fejer_half_block_entropy.md). It does not assume that an infeasible
+31 October 2026. full-kernel entropy and identity-reduction theorem. This uses the [proved uniform closed local coefficient limits](actual_fejer_half_block_entropy.md). It does not assume that an infeasible
 fixed half-label pattern becomes feasible. It sums the full positive
 local kernel before forgetting its type.
 
@@ -116,8 +116,4 @@ asymmetric Green loads; their complete-source block factorization is
 not assumed. The remaining geometry must retain the actual smoothing
 and, when restoring deleted cusps, its literal identity meridians.
 
-Independent analytical review: root, coherent and cluster each completed
-a full proof read of the continuous seam values, uniform local rate,
-unrestricted original coefficient rounding, mixed H1 supports and exact
-maximum identity reduction. This review does not infer a volume bound
-for every non-simple smoothed source or a quantum filling asymptotic.
+The rate-level identity reduction does not give a volume bound for every nonsimple smoothed source or a quantum filling asymptotic.

@@ -71,7 +71,7 @@ For a=0 both equalities hold everywhere. A negative upper limit
 or an excessive lower limit denotes an empty window. These are
 exact finite identities, independent of any limit or positivity.
 
-In particular take the ORIGINAL degree-a polynomial p_a of
+In particular take the original degree-a polynomial p_a of
 [the geometric target theorem](actual_matching_edge_geometric_target_polynomial.md).
 For 0<=a<=floor(d/2), all of its displayed generic coefficients
 are root regular. Its actual completed exceptional operator is
@@ -146,15 +146,6 @@ a degree-O(N) functional-calculus approximation.
 
 Focused audit: [actual generic Casimir propagation and sharp boundary defects](../experiments/audit_actual_matching_edge_polynomial_finite_propagation.py).
 
-Primary-agent full analytical review: PASS. The reader checked the
-forward/backward endpoint signs, generic root units, actual high adapter,
-first affected row, resolvent-column identity, and the precise missing
-environment and complex-row continuation assumptions.
+The finite-propagation result requires the stated environment and complex-row continuation assumptions.
 
-Independent full analytical review and fresh focused replay: PASS. A
-second reader checked the original upper/lower continuant normalization,
-polynomial division, sharp path factor and retained generic jets, and
-reproduced 104 continuants, 1212 safe-row four-jet identities, 260 nonzero
-first defects and 104 endpoint determinants, totaling 4848 retained jet
-coefficients. Neither review identifies an arbitrary boundary state with
-a continuant or infers a whole-source asymptotic.
+An arbitrary boundary state is not identified with a continuant, and no whole-source asymptotic is inferred.

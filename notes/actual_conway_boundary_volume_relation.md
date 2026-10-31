@@ -318,10 +318,4 @@ sequences. It also checks (13) and its relative wedge identity exactly.
 The all-sequence and algebraic-branch conclusions are proved above;
 sampled large-level growth is not used to infer them.
 
-Independent analytical review checked the arbitrary prescribed-output
-and endpoint constructions, closed-profile continuity, the full strict
-optimizer barrier, Hessian injectivity, selected algebraic branch and
-relative boundary normalization. Fresh audit passed 3,000 full-output
-anchors, 1,392 interior corrections, 1,312 sublinear endpoint corrections,
-1,592 exact strict interior assignments and the symbolic normalization.
-The knot-peripheral A-operator comparison is not asserted by this review.
+No identification with a knot-peripheral A-operator is asserted.

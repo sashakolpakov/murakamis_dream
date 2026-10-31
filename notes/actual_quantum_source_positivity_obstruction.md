@@ -16,7 +16,7 @@ trace, or from a positive semisimplification which discards its jets.
 ## 1. Keep the actual turns and boundary projector
 
 Put N>=2, d=N-1, q=exp(pi*i/N), Q=q^2 and x=-q^(-1).
-Use the ORIGINAL balanced factorial basis w_a. The actual pivot is
+Use the original balanced factorial basis w_a. The actual pivot is
 
     g_a=x^(1-N)Q^(-a), sum_a g_a=0, |g_a|=1.          (1)
 
@@ -32,7 +32,7 @@ turns to obtain a desired state. Define Pi_N=p l. Then
 
     l p=sum_i g_i=0, Pi_N^2=0, rank Pi_N=1.          (3)
 
-The ORIGINAL pivotal partial closing is
+The original pivotal partial closing is
 
     Phi_N(T)=Tr_2[T(I tensor g)].                     (4)
 

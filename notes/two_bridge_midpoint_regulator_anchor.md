@@ -174,7 +174,4 @@ above; no novelty is claimed for the representation classification.
 generic leading coefficients, actual two-bridge sign words, the
 trace-free polynomial recurrence, and the exact finite-order relation.
 
-An independent agent reviewed the entire proof, including the longitude
-marking and finite-limit argument: PASS. The fresh root audit checks
-84 generic sign words and 41 two-bridge midpoint sign words, with
-simple roots and the exact finite-order relation.
+The finite audit checks 84 generic sign words and 41 two-bridge midpoint sign words, including simple roots and the exact finite-order relation.

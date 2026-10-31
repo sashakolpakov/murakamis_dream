@@ -1,6 +1,6 @@
 # The classical boundary-pressure germ determines the cap root loss
 
-31 October 2026. **Internally reviewed analytical research reduction.**
+31 October 2026. **analytical research reduction.**
 Unpublished. This concerns the original ONE-cap coefficient at cap
 spectrum +2 and all other CROSS spectra -2, at ODD levels. It strengthens
 the effective-response criterion without assuming a global continuation
@@ -29,7 +29,7 @@ That theorem gives a fixed complex neighborhood of zero on which
 \]
 
 Convergence is locally uniform and the logarithm continues from real
-positive weights. Here F is obtained from the ORIGINAL finite exterior
+positive weights. Here F is obtained from the original finite exterior
 potential by eliminating precisely the extracted ordinary log weights.
 It is not an assumed asymptotic of a modified signed coefficient.
 
@@ -400,14 +400,3 @@ This is a closure counterexample, not an actual two-cap source counterexample.
 Even levels, spectral neighborhoods, the original Green
 truncations and the full filled-knot assembly retain their stated
 requirements. The general prescribed long-twist conjecture remains open.
-
-## Internal review record
-
-The root and an independent agent checked the full moment reconstruction,
-Mahler limit, Bernstein hierarchy and conductance improvement. The local
-response-integral and fourth-derivative refinements have independent root
-review. The logarithmic-supremum continuity proof was written by a separate
-agent and fully reviewed by the root and the first agent, including both
-endpoint singularities and the finite-mass convention. The finite
-common-variable certificate was independently checked by both agents.
-These are internal analytical reviews, not external peer review.

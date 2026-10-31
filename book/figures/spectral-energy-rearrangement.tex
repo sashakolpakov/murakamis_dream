@@ -10,9 +10,10 @@
 \begin{tikzpicture}[font=\sffamily,text=ink,>=Stealth,
  panel/.style={draw=blue,fill=blue!4,rounded corners,align=center,inner sep=10pt,text width=12.5cm},
  pending/.style={panel,draw=amber,fill=amber!4,dashed}]
-\node[font=\large\bfseries] at (0,2.5) {A source energy becomes a triangle entropy};
+\node[font=\large\bfseries] at (0,2.5) {A proved local bound and its global use};
 \node[panel] at (0,.5) {\textbf{Exact coefficient Cauchy inequality}\\[6pt]
-The positive tail expansion gives, for every real spectral parameter,\\[5pt]
+$q_k$ is a nonzero tail polynomial with nonnegative coefficients.\\
+For every real $\lambda$ and positive reference $\lambda_0$,\\[5pt]
 $\displaystyle \frac{|q_k(\lambda)|^2}{q_k(\lambda_0)}
  \leq q_k(\lambda^2/\lambda_0).$};
 \draw[->,thick,blue] (0,-.6)--(0,-1.1);
@@ -32,20 +33,32 @@ $\displaystyle \frac{|q_k(\lambda)|^2}{q_k(\lambda_0)}
 \node[align=left,anchor=west,text width=4cm,font=\small] at (.57,.32)
 {Shown: $\delta=\tfrac14$.\\[5pt]
 $\displaystyle t'=\frac1\pi\arctan|R_\delta(t)|$.\\[6pt]
+{\scriptsize$\displaystyle R_\delta(t)=
+\frac{\sin(2\pi t)}{\cos(2\pi t)+\cos(2\pi\delta)}$.}\\[6pt]
 For every $\delta$,\\
 $|\{t:t'>u\}|=\tfrac12-u$.};
 \end{scope}
-\node[panel] (local) at (0,-7.7) {\textbf{Proved uniformly for every one-sided coefficient}\\[6pt]
-$\displaystyle \frac1N\log\frac{\sup_{\sigma\in[-2,2]}|a_N(q;\sigma)|^2}{p_N(q)}
+\node[panel] (local) at (0,-8.0) {\textbf{Proved local estimate, at both level parities}\\[6pt]
+$\displaystyle \frac1N\log\frac{\sup_{\sigma\in[-2,2]}|a_N(v;\sigma)|^2}{p_N(v)}
  \leq C(q_x,q_y,\tfrac12-q_x-q_y)+o(1).$\\[6pt]
-Both level parities; original unused rows and protected zeros retained.};
+$q=v/(N-1)$ is the original scaled degree; $a_N$ is its coefficient,\\
+$p_N$ the positive endpoint reference, and $C$ the triangle entropy.\\
+The bound retains all original degree constraints.};
 \draw[->,thick,blue] (0,-6.15)--(local.north);
-\node[pending,below=9mm of local] (global) {\textbf{Remaining global comparison}\\[6pt]
-Keep all original face loads and combine estimates on each shared flow.\\[5pt]
+\node[pending,below=9mm of local] (global) {\textbf{A sufficient test for another diagram}\\[6pt]
+Combine the local bounds while retaining every shared face load:\\[5pt]
 $\displaystyle \max_{q\in\mathcal P_D^{\rm NC}}
   \sum_e\min\!\left\{h_{{\rm env},e}(q_e),
              \frac{h_e(q_e)+g_e(q_e)}2\right\}<\Phi_D.$\\[6pt]
-This sufficient inequality is explicit; universal validity is open.};
+The minimum selects between two local upper rates.\\
+$\mathcal P_D^{\rm NC}$ retains the shared degree constraints;\\
+$\Phi_D$ is the complete action of diagram $D$.\\
+This particular inequality is not proved for arbitrary diagrams.};
 \draw[->,thick,amber,dashed] (local)--(global);
+\node[panel,below=9mm of global] (known) {\textbf{Volume equality is already proved in specified classes}\\[6pt]
+Strict Conway trees and the stated certified plat families satisfy\\
+their volume theorems under their own long-twist hypotheses.\\[5pt]
+Those proofs do not assert that the displayed sufficient test\\
+holds for every covered diagram.};
 \end{tikzpicture}
 \end{document}

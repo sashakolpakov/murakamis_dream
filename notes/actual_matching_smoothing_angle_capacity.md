@@ -1,6 +1,6 @@
 # A finite angle-flow certificate for matching-edge smoothing
 
-30 October 2026. Independently reviewed. This note gives a
+30 October 2026. This note gives a
 sufficient, source-compatible strict capacity comparison after replacing
 ONE untwisted crossing-circle operator by L_1=I. It is not a theorem
 that every proper small-color subset has an exponential gap. In
@@ -162,7 +162,7 @@ Proof. The adjusted old angles theta+v have sums pi+eta at b,c,
 2pi-2eta at x, and the required unchanged sums elsewhere. Insert
 the deleted triangles with angles (eta,pi-eta,0) in their literal
 orders (x,b,y),(x,c,y). This is a feasible angle assignment for the
-ORIGINAL source. The new triangles are permitted boundary points;
+original source. The new triangles are permitted boundary points;
 no positive geometric realization of this assignment is presumed.
 
 At the smoothed maximizer the entropy gradient at a movable corner is
@@ -174,7 +174,7 @@ remainder and the first inequality in (6) give
     sum_t[V(theta_t+v_t)-V(theta_t)]
           >=2eta log(l_x/z)-||v||_2^2/[2sin(sigma/2)].          (8)
 
-Add the two new entropies. Formula (2), evaluated at the ORIGINAL
+Add the two new entropies. Formula (2), evaluated at the original
 packing radii, bounds the entropy of every feasible original angle
 assignment by 2pi Phi_old. Equations (3), (6), (8) imply (7).
 This comparison retains the shared variables and the actual target
@@ -248,16 +248,4 @@ The entropy examples use stated combinatorial bipyramid/split incidences,
 not newly asserted labeled right-angled knot certificates. They audit
 the sufficient inequality, not its universal applicability.
 
-
-Independent full analytical review and fresh redirected audit: PASS.
-The reviewer checked the literal smoothing target, finite Hall criterion,
-split-side divergences, entropy normalization and Taylor bound, and every
-new A=0/A>0 local zero-pattern case. All reported audit counts were
-reproduced at 75-digit source precision. The attained shared-capacity and
-explicit finite-flow inequality hypotheses remain essential; no universal
-contraction or h>1 source estimate was inferred.
-
-Primary full analytical proof/code review and fresh redirected audit:
-PASS. The review independently checked the exact face balance, sign of
-the stationary linear term, Hessian bound, small-eta entropy gain and
-all degenerate source factors, with the same scoped conclusions.
+The attained shared-capacity and explicit finite-flow inequality hypotheses remain essential; no universal contraction or h>1 source estimate was inferred.

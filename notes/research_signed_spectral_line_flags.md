@@ -1,6 +1,6 @@
 # Literal line flags for the signed spectral Green collar
 
-Workspace research draft, 31 October 2026. Not approved for publication.
+Workspace research draft, 31 October 2026.
 This gives local GROUP and selected-flag adapters at a protected face.
 It makes no global circle-development or regulator assertion.
 

@@ -195,13 +195,7 @@ not annihilate the critical ideal. A toric-residue comparison must
 retain the differential source or construct its exact adapter, not
 replace this functional by evaluation on critical points.
 
-An independent proof review and fresh audit replay verified the phase
-normalization, strict-Hall coercivity, covariance Hessian, original
-coefficient/probability identity, log-concavity and source-preserving
-cycle rounding. The hypothesis L_e<=N-1 is essential: a length-N Fermat
-block has missing interior coefficients, so strict Hall alone would
-not imply the lower bound (9). No full-clock or knot-class conclusion
-is added by this review.
+The hypothesis L_e<=N-1 is essential: a length-N Fermat block has missing interior coefficients, so strict Hall alone would not imply the lower bound (9). The theorem does not extend to a full-clock or knot-class statement.
 
 [Audit](../experiments/audit_actual_flat_block_sublevel_transport.py):
 root-Pochhammer phases, unbalanced strict-Hall examples, convex critical

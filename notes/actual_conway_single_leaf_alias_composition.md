@@ -1,6 +1,6 @@
 # A single-leaf alias gap that composes with an arbitrary completed child
 
-31 October 2026. Internally reviewed source-envelope theorem. The proof
+31 October 2026. source-envelope theorem. The proof
 retains the actual seven-factorial multiplication gate and the completed
 child's output tangent. It uses no child coefficient lower asymptotic or
 replacement coupon. The [finite source and lattice adapter](actual_conway_single_leaf_source_composition.md)
@@ -154,11 +154,7 @@ has minimum certified lower bound
  >\frac1{1000}.
 \]
 
-The verifier uses the unchanged, independently audited rational engine of
-the two-leaf certificate. Its outward arithmetic and sine, logarithm,
-Machin and integrated Euler-product remainders are explicit there.
-Independent exact replay reproduced every rational result. No optimizer
-is called by verification, and candidate-state accuracy is not a premise.
+The verifier uses the same rational engine as the two-leaf certificate. Its outward arithmetic and sine, logarithm, Machin and integrated Euler-product remainders are explicit there. No optimizer is called, and candidate-state accuracy is not a premise.
 
 ## 3. The actual new-leaf inequality and inherited gap
 
@@ -243,7 +239,7 @@ including $hT(E)$ when $T(E)$ is a proper completed child. The closing
 demand and all turns still use $d/N=1-1/N$, so their total finite
 error is $O(1)$ in the exponent for a fixed tree.
 
-The reviewed two-leaf block lemma supplies the $A_2$ base. Larger
+The two-leaf block lemma supplies the $A_2$ base. Larger
 original seeds may use their earlier leaf proof or the proved composition
 where proper. Every nonempty alias sector in a proper completed/completed
 closure therefore has a positive global gap. The all-core concave
@@ -373,16 +369,8 @@ dominance boundary there, not an eigenvalue collision or a forced-flat
 geometric cell. Equations (11)–(13) do not remove that separate packet
 obligation.
 
-## Internal review and exact verification
+## scope and exact verification
 
-The primary agent independently reviewed sections 1–5. The source-transport
-agent independently reviewed all five sections and replayed the endpoint
-certificate. The geometry agent independently reviewed sections 1–4,
-including the fiber barriers, quadratic branch, response signs, endpoint
-maximizer and parameter path. The square verifier and original rational
-engine received separate full code/proof reviews and exact independent
-replays; all rational results agree. These are internal research reviews,
-not external peer review.
 
 The square certificate is the primary proof of the uniform compositional
 margin. The response argument and endpoint certificate independently

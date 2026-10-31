@@ -235,13 +235,8 @@ continues to exclude C(A), although the complete theorem here covers it.
 
 Audit: [exact odd edge words, cusp paths and constructive knot patterns](../experiments/audit_actual_conway_half_twist_partner_geometry.py)
 and [results](../experiments/actual_conway_half_twist_partner_geometry_results.json).
-PASS for all three generic odd edge words, both primitive diagonal
+The finite audit checks all three generic odd edge words, both primitive diagonal
 markings and their two-rectangle areas, all nine products of pairing
 sets, 69 literal expression witnesses and 483 signed full-twist checks.
 
-Independent internal review: the local-cell/source agent read the full
-actual half-disk cut, all three pointwise edge words, the complete
-rectangle decoration and primitive collar markings, and reported PASS.
-Its independent fresh audit replay also passed.
-
-Primary-agent review and fresh symbolic/topological audit: PASS. The closed half-disk cut, cross-copy orientation, complete cusp decoration, primitive marking areas, matching-set induction and preservation under full twists were checked. Complete geometry alone is not used to claim a filled quantum theorem.
+Complete geometry alone is not used to claim a filled quantum theorem.

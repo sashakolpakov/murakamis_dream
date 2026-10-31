@@ -5,7 +5,7 @@
 section 6, has an exact tridiagonal determinant. Its Hermitian part is
 positive on a joint complex domain in the pair degree and the magnetic
 coordinate. This proves joint zero exclusion and uniform logarithmic
-derivative bounds for the ORIGINAL finite source, including both
+derivative bounds for the original finite source, including both
 parities, composite levels and the folded channel endpoint. The domain
 is a central wedge; it is smaller than the fixed-real-degree strip.
 No global source cycle, magnetic stationary point, or volume limit is
@@ -270,19 +270,4 @@ though (14) is an exact algebraic identity.
 
 Audit: [exact joint determinant and source checks](../experiments/audit_actual_q_hahn_joint_accretive_determinant.py).
 
-Independent analytical review: a second reader checked the exact finite
-source normalization, Gaussian Vandermonde scalar, complete-slice and
-T=0 continuation argument, finite-moment proof with its endpoint degree
-bounds, three-term and determinant signs, positive principal minors,
-both accretive resolvent estimates, the joint domain and its poles,
-and the exact noninteger center phase. The proof passed. The review
-retains the distinction between this local joint theorem and a global
-source frame, asymptotic amplitude, or selected cycle.
-
-The independent fresh audit replay also passed: five formal-Q source
-identities, 400 coefficient recurrences, 968 determinant values,
-121 principal-minor formulas, 80 nonphysical source values, nine
-complex pair-degree/magnetic comparisons, and three noninteger
-center-phase checks. A further independent analytical reader and the
-root reader checked the full proof and reported no defect. The exact
-finite theorem and its stated global limitations are unchanged.
+This is a local joint theorem. It does not supply a global source frame, asymptotic amplitude or selected cycle.

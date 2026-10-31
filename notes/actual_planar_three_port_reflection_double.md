@@ -22,7 +22,7 @@ F:V_N^tensor a -> V_N^tensor b put
 
 This reverses composition and tensor order. It is a whole-word
 operation, not a partial transpose of one leg. Set d=N-1,
-q=exp(pi i/N), x=q^d. For the ORIGINAL physical cup and cap,
+q=exp(pi i/N), x=q^d. For the original physical cup and cap,
 
     p_(u,v)=N x^-v delta_(u+v,d),
     ell_(u,v)=x^u delta_(u+v,d)/N,
@@ -124,7 +124,7 @@ Let D_N be the supported folded triples
 
     0<=a,b,c<=floor((N-1)/2),       a+b+c>=N-1.
 
-Write theta_N(a,b,c)>0 for the RAW ORIGINAL marked theta source with
+Write theta_N(a,b,c)>0 for the RAW original marked theta source with
 these three full-circle sectors and no twists. Its positivity and
 normalization are proved in the all-channel marked-theta theorem.
 Let Z_Gamma(a,b,c) be the original coherent source with these three
@@ -227,17 +227,6 @@ none of its cycle colors is frozen to the central channel.
 
 Audit: [whole-word reflection and full physical doubles](../experiments/audit_actual_planar_three_port_reflection_double.py).
 
-Independent geometric/source review: full analytical read and fresh
-audit PASS at six levels and twelve full twenty-one-circle sources.
-The reviewer checked the whole-word cup scales, full-normal circle
-reflection, common generic trace factor for legitimate cuts, regular
-three-port column in the actual sewn Morse disk, saturated-source
-pruning, and the one-circle seam normalization. This is an internal
-proof audit, not a claimed full-source volume estimate.
+The reflection-double identities do not give a full-source volume estimate.
 
-Independent coherent-partner review: full analytical read and fresh
-six-level/twelve-source replay PASS. The reviewer separately checked
-the whole-word reflection and cut scalar, full Hermite sector identity,
-single generic theta normal, saturated boundary pruning, and inclusion
-of every interior and seam color at both parities. No correction was
-required; the remaining coherent half-packet size estimate is explicit.
+The size estimate for the remaining coherent half-packet is separate from these identities.

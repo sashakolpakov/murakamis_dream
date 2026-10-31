@@ -251,10 +251,4 @@ regulator. Combined with the source theorem above, it gives the
 [any-subset long-filling volume equality](actual_long_filled_octahedral_belt_stack_volume.md).
 The spectral-to-color transform alone is not used to infer that equality.
 
-Independent full proof review rederived the exact alias cancellation,
-squared kernel, all boundary bounds, Gaussian normalization and the
-joint real/complex parameter quantifiers.
-The focused audit checks the polynomial identity with exact arithmetic,
-literal physical marked traces over finite fields, and separately
-labeled high-precision Gaussian examples. Such examples do not prove
-the analytic source hypotheses for an unrelated diagram.
+The focused audit checks the polynomial identity with exact arithmetic, literal physical marked traces over finite fields, and separately labeled high-precision Gaussian examples. Such examples do not prove the analytic source hypotheses for an unrelated diagram.

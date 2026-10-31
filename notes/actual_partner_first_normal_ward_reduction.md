@@ -276,9 +276,6 @@ relations alone leave two free components, even after every known
 bounded vertex and every applicable involution is used. They do not
 prove the general first-normal estimate or higher-order transport.
 
-The primary agent independently read the Ward and Fourier-combined
-proofs, and the Fourier agent independently checked the full uniform
-two-current elimination and the explicit surviving functions: PASS.
 The focused audit freshly passes 33 actual source families, all 64
 first-normal reconstructions for each family, 3,000 deficit-pattern
 classifications (including the cylinder and unique-face implications),

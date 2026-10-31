@@ -1,6 +1,6 @@
 # Weighted complete-crossing norms and the actual Green-source gap
 
-28 October 2026. The ORIGINAL complete crossing has a uniform compact
+28 October 2026. The original complete crossing has a uniform compact
 variational formula for its exponential norm in real boundary metrics.
 At the flat metric its unique maximum is the regular octahedral point
 and its rate is 2 Catalan/pi. The COMPLETE Green source, including its
@@ -29,7 +29,7 @@ kappa retained, has input (a,b), output (a+b-j,j), and coefficient
 
 when 0<=j<=a<N, 0<=b<N and a+b-j<N; otherwise it is zero.
 Every displayed factor is nonzero on this range. This is the
-ORIGINAL crossing coefficient, independently checked against its
+original crossing coefficient, independently checked against its
 gate word, not a positive surrogate.
 
 Give input and output basis vectors real exponential metrics

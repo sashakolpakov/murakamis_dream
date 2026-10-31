@@ -1,11 +1,6 @@
 # The double-protected spectral cap does not admit the naive finite collar
 
-Unpublished workspace local algebraic result, 31 October 2026. Root and
-coherent completed full internal analytical/source-scope reviews; this is
-not external peer review. This tests the literal
-marked line-chart continuation, not all possible blowups or global
-reductions. No representation of the whole original group, killed global
-meridian, or volume conclusion is asserted.
+The obstruction concerns finite continuation in the specified chart. It does not exclude other blowup coordinates or prove a global group, killed-meridian, or volume obstruction.
 
 ## 1. The original cap coefficient and the remaining parameter
 
@@ -61,7 +56,7 @@ For signed middle q and its actual root T_q^2=qy+q^2 s^2,
 
 At the protected input b=0, T_b=0 and
 J_b=[[i,-4k^2/y],[0,i]]. These are the actual two marked line lifts;
-their height is 2k^2/y. Define, with the ORIGINAL head order,
+their height is 2k^2/y. Define, with the original head order,
 
     A_q=J_q conjugate(J_x), B_q=J_y conjugate(J_q),
     P=B_q A_q=J_y conjugate(J_x).                     (3)
@@ -99,7 +94,7 @@ There is a useful diagnostic family with the SAME protected faces, even
 though its terminal row need not be among the surviving global maxima.
 For 0<delta<1/2 set c=y/s^2 and take q=-c,T_q=0. The local endpoint
 equations then have nu=1/2, and the existing centralizer has R0=-1.
-Write h=sin(2pi delta)>0. In the ORIGINAL frame its projective matrix is
+Write h=sin(2pi delta)>0. In the original frame its projective matrix is
 
     C=[[0,-h/y],[-y/h,0]], C^2=I.                   (6)
 
@@ -149,10 +144,4 @@ for the exact finite sign, the [literal signed line flags](research_signed_spect
 for (2)--(3), and the [regular stationary reduction](research_regular_shared_spectral_stationary_reduction.md)
 for the terminal strict-critical restriction.
 
-Both internal reviews checked the exact coefficient and both parity signs,
-the signed-clock convention, original ordered anti-Mobius products,
-central/noncentral obstruction, explicit conjugator and its singular
-projective limit. The scope excludes arbitrary blowup gauges, a global
-group representation, any killed global meridian or a volume conclusion.
-The calculations are explicit two-by-two identities; no numerical audit
-is claimed.
+The finite-collar calculation retains the stated chart and ordered pair. No global representation or volume conclusion follows.

@@ -191,7 +191,7 @@ V_N tensor Q_a channel, whose -2 node is simple at both parities.
 The left ordinary channel c is the actual vector
 W^(c)_(a+c-b) in degree D0, and has a regular generic Clebsch lift.
 Equations(5)--(9) provide an explicit finite overlap to its simple
-right channel. Relating that overlap to the ORIGINAL triangular
+right channel. Relating that overlap to the original triangular
 corner requires all the bending and 3j normalization factors. Those
 factors are not proved merely from the existence of this chart. The
 separate completed coefficient proof of(4) does not supply an unstated

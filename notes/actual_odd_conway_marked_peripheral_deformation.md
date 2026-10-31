@@ -318,7 +318,7 @@ representation branches of different face-paired topologies.
 
 Whenever the separately proved odd-source whole-color gap and exact
 complex packet supply the analytic transfer hypotheses, (21) is
-therefore the FULL ORIGINAL invariant's actual filled hyperbolic
+therefore the FULL original invariant's actual filled hyperbolic
 volume limit. For retained C(FG) these are the current source inputs;
 the stronger all-color theorem does not include the small C(h^3)
 exception merely because the geometric construction also works there.
@@ -332,21 +332,10 @@ links or a fixed-width twist/pretzel subclass.
 
 Audit: [generic odd transport, actual peripheral flags and selected-source shear](../experiments/audit_actual_odd_conway_marked_peripheral_deformation.py)
 and [results](../experiments/actual_odd_conway_marked_peripheral_deformation_results.json).
-PASS for the three odd edge words over Q(E,R), both peripheral
+The finite audit checks the three odd edge words over Q(E,R), both peripheral
 commutators, all apex and primitive multiplier formulas, the actual
 meridian/source resultants at both signs, and the exact implicit
 generating-function derivatives. No complete-R specialization or
 numerical phase samples are used.
 
-Independent internal reviews: the root agent read the full argument
-and replayed the exact audit with PASS, including the selected-source
-phase, bounded frames and actual collar sign. The coherent-source
-agent separately reviewed the full topology/peripheral construction,
-primitive threading calibration, implicit shear, absolute anchor and
-smooth-completion scope, and independently replayed the audit with
-PASS. Neither review substitutes a pure-link rational filling for
-the actual odd-link primitive equation.
-The local-cell/source agent independently checked the entire marked
-argument and replayed its audit with PASS, including Y=E in the
-original typed R^-1 sign calibration and the endpoint constant in
-the selected-source action comparison.
+The odd-link construction uses its own primitive filling equation, not a rational filling of the pure link. The sign calibration uses Y=E in the specified R^-1 convention, and the selected action retains its endpoint constant.

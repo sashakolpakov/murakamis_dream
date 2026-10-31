@@ -134,16 +134,4 @@ then verifies its full observed zero on an unsaturated boundary.
 The all-N proof is the regular-source membership and the already
 proved all-N source support (1), not extrapolation from those levels.
 
-Independent internal review: root read the complete typed argument
-against the source-support theorem and confirmed the cap-removal
-order, exact saturated-lattice membership, regular lifts and disjoint
-coupon commutation. The focused audit passes nineteen sewings and
-five actual six-head ordinary/divided-current and pruning families;
-the nested-cap countercurrent is explicitly retained. This is a
-source theorem, not a norm estimate or a general graph-volume claim.
-
-The global audit agent subsequently read the full pruning and whole
-three-port sewing proofs and freshly replayed those physical tests,
-including the nonzero source before the unsupported circle product
-and the nested-cap countercurrent: PASS. No further correction was
-required after the exposed-pointing hypothesis was made explicit.
+The source theorem retains the nested-cap countercurrent and requires the stated cap-removal order, saturated-lattice membership, regular lifts and disjoint coupon commutation. It is not a norm estimate or a general graph-volume claim.

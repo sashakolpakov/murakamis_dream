@@ -171,7 +171,7 @@ of the old physical head clock under this same gauge.
 Consequently (1)--(12) give an explicit actual-clock algebraic
 cycle with the correct marked geometric flux, and its regular
 logarithmic source reparametrization. Using it as the image of
-the knot's ORIGINAL physical cut or its independent internal
+the knot's original physical cut or its independent internal
 centralizer current additionally requires the exact Fourier/
 conormal operator dictionary and the full star/current transport.
 Matching functions, symplectic forms or winding alone does not

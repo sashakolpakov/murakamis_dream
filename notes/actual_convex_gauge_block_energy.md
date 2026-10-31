@@ -26,7 +26,7 @@ At each endpoint the only restrictions are
 
     s_(odd,a)+s_(even,d-a)=0, d=N-1.                   (1)
 
-These make the endpoint gauges fix the ORIGINAL paired cups, ordinary
+These make the endpoint gauges fix the original paired cups, ordinary
 caps, and the marked cap after its legitimate whole-degree restriction.
 All scalar, pivotal and framing lines stay as before. An internal
 wire has a single gauge on its entire segment between incident gates.
@@ -212,7 +212,7 @@ Expanding and using the single-head Casimir identity gives
        -(q+q^(-1))K_1^(-1)K_2
        +F_1 Ecal_2+K_1^(-1)Ecal_1 F_2K_2,
 
-so ||Omega||<=14 in the ORIGINAL flat balanced metric.
+so ||Omega||<=14 in the original flat balanced metric.
 
 Let P_N(z)=T_N(z)+2, T_0=2,T_1=z,T_(n+1)=zT_n-T_(n-1).
 The proved actual polynomial identity is B=lambda_0 r_N(Omega),

@@ -1,6 +1,6 @@
 # Long filling from a spectral cover by original main-edge cuts
 
-31 October 2026. Internally reviewed, unpublished sufficient theorem.
+31 October 2026. , unpublished sufficient theorem.
 The conclusion is the original invariant's actual filled hyperbolic
 volume. The sufficient covering condition below is not yet proved for
 every eligible plat.
@@ -23,7 +23,7 @@ the full polynomial coefficient
 
 All ordered local polynomials and the R original spectral variables
 are unchanged. The [all-MAIN marking theorem](research_arbitrary_main_edge_mark_transport.md)
-gives S_(N,m)=S_N, the ORIGINAL full numerator, identically as a
+gives S_(N,m)=S_N, the original full numerator, identically as a
 polynomial in every spectrum. This is not an equality of projected
 sectors. In particular a different choice of m at a different real
 spectral point still bounds the same S_N.
@@ -165,7 +165,7 @@ at a complex point.
 The proof of the [entire all-CROSS period theorem](general_all_cross_long_filling_volume.md)
 uses precisely its two stated inputs: the relative packet H1 near zero
 and the whole spectral strip gap H2 away from zero. All subsequent
-estimates concern that entire polynomial and the ORIGINAL Fourier
+estimates concern that entire polynomial and the original Fourier
 functional. They also require separate evenness and period one, the
 cosine polynomial degree bound, and the specified sine/Gaussian factors.
 The full source S_N has all these properties.
@@ -262,17 +262,5 @@ the shared P_m and the order of the spectral/mark choices explicit.
 Neither a minimum of separately optimized port bounds nor transport of
 individual LEFT/CROSS/RIGHT contributions follows from the theorem.
 
-## 7. Internal proof review
 
-Root wrote and checked the argument. The geometry and cluster-source
-reviewers independently read the complete proof, including the any-MAIN
-certificate extension in section 5 and its cited source dependencies,
-and reported PASS. They checked uniform finite-mark errors, the order
-of minimum and maximum, the product-Poisson strip estimate, original
-raw normalization, and the use of the old full-source packet in the
-whole-domain charge argument. This is internal review, not external
-peer review. The marking author separately checked the full-source
-normalization and the certificate extension; the original half twists
-occur exactly once, in the Fourier exponents. No numerical experiment
-is used as a proof of the covering
-inequality, whose universal validity remains open.
+The original half twists occur exactly once in the Fourier exponents. The covering inequality remains a hypothesis; its universal validity is open.

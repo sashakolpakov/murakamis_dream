@@ -116,7 +116,7 @@ checked in a singular Pachner operator before applying (5).
 ## 3. Arbitrary meromorphic operators on the cap cover
 
 There is also a separate statement that needs no central descent.
-Define the ORIGINAL normalized source frames
+Define the original normalized source frames
 
     p_hat_s=a^sigma P^s/alpha_s,
     l_hat_t=a^t L^t/beta_t.
@@ -164,7 +164,7 @@ The original Cartan, framing, turn and peripheral lines multiply
 the same expressions. Independent source variables tensor with
 the displayed constants. For a fixed word and bounded pole orders
 and signed-character support, the total extraction cost is a fixed
-power of N relative to the ORIGINAL Laurent-coefficient norms.
+power of N relative to the original Laurent-coefficient norms.
 These are the specified relative-head coordinate norms. No equality
 with the physical tensor metric across a nonunitary fusion is asserted,
 and an exponentially large coefficient matrix remains exponentially

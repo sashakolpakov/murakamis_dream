@@ -1,6 +1,6 @@
 # Both original crossing signs have the same flat Green transport
 
-28 October 2026. At complete color, the ORIGINAL negative crossing
+28 October 2026. At complete color, the original negative crossing
 is the flip-conjugate of the positive crossing in the SAME balanced
 flat metric. The apparent diagonal comparison in an unbalanced frame
 cancels to a phase depending only on total integer degree. This
@@ -20,7 +20,7 @@ and eta=exp(pi*i/(2N)). Write the original crossings as
     kappa=eta^((N-1)^2), |kappa|=1.
 
 Let P swap the two heads and let C be coefficientwise conjugation
-in the ORIGINAL balanced basis. Then EXACTLY
+in the original balanced basis. Then EXACTLY
 
     R_-=P overline(R_+)P,
     K_0^-=P overline(K_0^+)P.                         (1)
@@ -73,7 +73,7 @@ by the exact antiunitary transport
     K_m^-=P overline(K_m^+)P,
     H_m^-=P overline(H_m^+)P.                         (4)
 
-At m=0 this is the literal ORIGINAL negative crossing with its
+At m=0 this is the literal original negative crossing with its
 common scalar removed. These definitions transport a specified
 original clock insertion; they do not replace the negative crossing
 by its transpose or assume a new local metric. Both families are

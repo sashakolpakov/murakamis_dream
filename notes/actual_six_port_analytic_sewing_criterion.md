@@ -16,7 +16,7 @@ The theorem below does not assume a tame 6j/Smith frame.
 
 ## 1. The literal physical interface is polynomially conditioned
 
-Retain N,d=N-1,q,Q,x and the ORIGINAL turns, with |x|=1:
+Retain N,d=N-1,q,Q,x and the original turns, with |x|=1:
 
     p_ab=N x^(-b) delta_(a+b,d),
     ell_ab=x^a delta_(a+b,d)/N,

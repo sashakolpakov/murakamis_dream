@@ -1,11 +1,6 @@
 # An exponential obstruction to the bare cap-moment Cauchy estimate
 
-31 October 2026. Workspace analytical research lemma. The complete
-proof and original-source scope received independent internal analytical
-reviews by the root and coherent agents, both PASS. This concerns the exact original-demand cap/CROSS convolution
-at even levels. It disproves one proposed positive-norm strengthening,
-not the signed convolution comparison, a shared-source estimate, or a
-volume conjecture. No numerical growth test is an input to the proof.
+This obstruction keeps the original even-level demand. It disproves the proposed strengthening by a positive Cauchy norm, not the signed convolution, a shared source estimate, or a volume-conjecture limit.
 
 ## 1. The original coefficient and the particular proposed norm bound
 
@@ -356,14 +351,9 @@ endpoint rate, nor does it change the original source or its cutoffs.
 
 ## Proof inputs and validation scope
 
-The exact source (1)--(3), the positive beta moments, and the uniform
-closed endpoint coefficient limits have already received independent
-internal proof reviews. The single-factor tensor construction and
+The single-factor tensor construction and
 norms (6)--(7) are also derived in
 [actual continuant and cap tensor metric](research_cap_demand_continuant_jacobi_interface.md), §§6--7;
 the algebra needed here is stated explicitly above. The new inputs are
 the single-component lower bound (8), the elementary maximization
-(11), and their consequence (5). The root and coherent agents independently completed full analytical
-reviews of those new steps, the original degree restrictions, and the
-exact source normalization, both PASS. No finite numerical sampling is offered as proof of
-the asymptotic obstruction.
+(11), and their consequence (5). No finite numerical sampling is used to prove the asymptotic obstruction.

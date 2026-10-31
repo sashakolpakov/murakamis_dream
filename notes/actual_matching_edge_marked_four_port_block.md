@@ -83,7 +83,7 @@ Consequently
 
 All g=0,...,d are present. In particular the high targets 2g>=N
 are genuine meromorphic generic tensors. They are not removed using
-the root folded-channel range of the ORIGINAL matching edge.
+the root folded-channel range of the original matching edge.
 
 Fix all other original matching labels. After (6) is inserted into
 the actual network, denote its ordinary generic closure functional
@@ -185,7 +185,7 @@ gives -a^2-d. The powers of 1-Q cancel. At the root,
                        =(-1)^d k_a N^3 q^(-d-2).       (14)
 
 Thus the row's exponential factorial cost cancels against the
-ORIGINAL circle measure. This is not an adjusted normalization.
+original circle measure. This is not an adjusted normalization.
 Let u_a(t)=rho_a(t)/rho_a(0). All factors of (13), after its one
 [N] cancellation, are root units. The same elementary harmonic
 product bound used for (9) proves, for each fixed m,
@@ -229,7 +229,7 @@ define the N-dependent quantities
     J_C=max_(0<=m<=2) ||[t^m]C(t)||,
     J_g=max_(0<=m<=2) ||[t^m]H_g(t)||_HS.              (18)
 
-They are finite, fully specified ORIGINAL tensor and complement
+They are finite, fully specified original tensor and complement
 costs. They are not postulated to be subexponential. At the root each
 nonzero entry of pV has magnitude N, since s_u s_(d-u)=N. Therefore
 
@@ -292,11 +292,4 @@ normalizers against their original boundary products. Odd pivotal-sign
 regressions and paired-nilpotent sectors are included. These finite
 checks supplement the generic tensor and harmonic-product proofs.
 
-Two independent analytical reviews passed the typed bend, original
-cup signs and gamma, both product normalizers, exact circle-measure
-cancellation, whole-network normal extraction and Taylor-two budget,
-and the norm factors in (19),(20). One reviewer also independently
-replayed the full focused audit and reproduced all reported counts.
-The reviews retain the stated complete-circle scope and the explicit,
-uncontrolled native target and complement costs. No positive completed
-Hermite metric or full-source asymptotic is inferred.
+The block theorem retains the complete-circle hypothesis and the explicit, uncontrolled native target and complement costs. It supplies neither a positive completed Hermite metric nor a full-source asymptotic.

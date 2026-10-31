@@ -1,7 +1,7 @@
 # The actual cyclic sewing has a canonical regularized cut cycle
 
 28 October 2026. The exact two-head cyclic sewing comparison introduces
-additional poles which do survive the ORIGINAL source. This note carries
+additional poles which do survive the original source. This note carries
 those terms to the original cyclic-dilogarithm cuts without dropping them.
 At a ramified endpoint only two Taylor subtraction terms are needed;
 equivalently, at most two ordinary derivatives make its radial integral

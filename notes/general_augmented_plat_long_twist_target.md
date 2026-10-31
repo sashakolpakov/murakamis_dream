@@ -192,7 +192,7 @@ has the exact identity
 The source A is defined before the displayed recorded outer factor
 chi_N; it is not normalized using the unknown answer. All repeated
 Casimir-root normals are part of beta. Multilinearity applies each
-substitution in its ORIGINAL operator order. Physical crossings at
+substitution in its original operator order. Physical crossings at
 different boxes need not commute. Only the independent color-register
 functionals commute.
 
@@ -246,7 +246,7 @@ knot A-polynomial.
 
 The [physical meridian transport](actual_crossing_torus_meridian_transport.md)
 now gives a further width-independent algebraic result. Differentiating
-the ORIGINAL physical kernel, including its half powers and the outer
+the original physical kernel, including its half powers and the outer
 head derivative, fixes the physical momentum as the reciprocal of the
 coefficient momentum. The resulting matrices obey the full signed
 Hurwitz relations, not merely conservation of their Casimir trace.

@@ -1,6 +1,6 @@
 # Exact resummed small-circle face kernels and a local norm obstruction
 
-30 October 2026. Independently reviewed. All assertions concern the
+30 October 2026. All assertions concern the
 literal root kernel of the [homogeneous original-source theorem](actual_homogeneous_casimir_face_source.md).
 The formulas retain the Chebyshev cancellations before absolute values. They
 neither identify a shared-face capacity with representation volume nor bound
@@ -150,7 +150,6 @@ Equations (1),(2),(8) provide actual resummed coefficient data for
 further shared-face analysis. They do not yet control the other outer
 coefficients, signed crossing composition, or global filling periods.
 
-
 ## 5. Verification and source interface
 
 [The focused audit](../experiments/audit_actual_resummed_small_circle_face_kernel.py)
@@ -166,11 +165,4 @@ exponential limit independently. The saved
 [results](../experiments/actual_resummed_small_circle_face_kernel_results.json)
 record these separate scopes.
 
-Root analytical proof and audit-code review PASS: the path resolvent weights,
-removed dimer diagonals, boundary q-binomial phases, unique physical path,
-weighted-norm obstruction and strictly concave edge-sector rate were checked.
-Independent full analytical/code review and fresh redirected replay PASS:
-3,654 full resolvent coefficients, 1,148 boundary Fourier coefficients and
-161 unique-path cases were reproduced. The local-norm, fixed-root and
-non-global scope was checked separately from the homogeneous original-source
-interface. The note, focused audit and saved results are frozen.
+The resolvent kernel has the stated local-norm and fixed-root scope. It does not give a global source estimate.

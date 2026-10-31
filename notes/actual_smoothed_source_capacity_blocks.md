@@ -1,6 +1,6 @@
 # Smoothed source capacity, simple blocks and their actual polyhedra
 
-30 October 2026. Independently reviewed and frozen. This concerns the L_1 opposite smoothing,
+30 October 2026. This concerns the L_1 opposite smoothing,
 not deletion of the old white edge xy or an asserted three-manifold JSJ
 decomposition. The new source is assumed connected and its two original
 marked white vertices u,v are distinct and still joined by their actual
@@ -275,12 +275,4 @@ radius scales. The positive primal excess decreases toward zero;
 the double-triangle capacity is checked separately. No finite quantum
 factorization or strict smoothing loss is tested or inferred.
 
-Independent review: the cluster source reviewer checked the full
-convex-duality, loop/digon, strict Hall, developed-disk and supporting
-halfspace proofs, and freshly reproduced every audit count and residual.
-Root independently checked the entire proof and audit code, including
-the fixed-boundary Hall subtraction, strict exclusion of nonedge disk
-contacts, actual polyhedron construction and adjacent-mark independence.
-Both reviews preserve the distinction between capacity decomposition,
-finite quantum factorization, actual JSJ identification and the still
-unproved universal strict smoothing comparison.
+Capacity decomposition, finite quantum factorization and an actual JSJ decomposition are different claims. The universal strict smoothing comparison remains unproved.

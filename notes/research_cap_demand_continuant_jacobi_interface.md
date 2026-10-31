@@ -1,6 +1,6 @@
 # Actual continuant recurrences and an explicit positive cap tensor metric
 
-31 October 2026. **Internally reviewed, unpublished analytical continuation**
+31 October 2026. **, unpublished analytical continuation**
 of the [original-demand convolution](research_two_port_main_cap_original_demand_convolution.md).
 All statements below retain its even-level restriction and original
 summation cutoff. The polynomial comparison (8) in that note remains
@@ -130,7 +130,7 @@ The original signed coefficient is
     (-1)^d sum_(j=max(0,n-M))^(min(M,n))
                    (-1)^j U_j C_(j,n-j).          (9)
 
-The independently reviewed [positive cap moment construction](research_flat_cap_positive_moment_form.md) gives
+The [positive cap moment construction](research_flat_cap_positive_moment_form.md) gives
 U_j/U_0=E X_N^j for every 0<=j<=d, with X_N>0, non-atomic and
 unbounded. Thus (9) is exactly (-1)^d U_0 E F_(N,n)(-X_N), with
 F_(N,n)(t)=sum_(j in J_n) C_(j,n-j)t^j. Moments through
@@ -442,20 +442,9 @@ contains only exact field arithmetic. It concerns this
 finite scalar-identification obstruction only; it is not an audit of
 the analytical metric theorems or an asymptotic numerical experiment.
 
+## scope and exact remaining question
 
-## Internal review and exact remaining question
-
-Root and geometry independently read the complete analytical/source
-proof, including the operator appendix, single-factor eigenbasis,
-finite cross-moment treatment and exact norms, and reported PASS.
-Cluster independently reviewed sections 1--4 in full, also PASS.
-Root and geometry additionally read the complete section 8 proof and
-verifier and each completed a fresh exact redirected replay, PASS.
-The portable verifier changes only its sibling default-output filename;
-its verification-function AST is identical to the reviewed private code.
-The portable replay reproduces both independent results exactly.
-These are internal reviews, not external peer review. No numerical
-asymptotic diagnostic is used as proof.
+The portable finite audit checks the displayed identities. It does not establish an asymptotic norm comparison.
 
 The two positive metrics must remain distinct: the source continuant
 has the Jacobi measure of section 2, while the original cap has the

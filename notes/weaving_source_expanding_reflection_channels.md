@@ -4,7 +4,7 @@
 evade the exact indefinite-Gram obstruction at the leading exponential
 scale. This note tests a specific way to obtain that correction:
 ordinary-color unitary traces and finitely many of their source jets.
-The ORIGINAL five-strand weaving source does not admit that particular
+The original five-strand weaving source does not admit that particular
 reflection-positive decomposition. Its retained projective source has
 nonreal EXPANDING moment channels, not only the constant channel seen
 at N=2.
@@ -18,7 +18,7 @@ tail of the [regular meridian period](regularized_kashaev_period.md).
 
 ## 1. The exact arbitrary-width reflection pairing
 
-At complete color the ORIGINAL balanced crossing matrices are symmetric:
+At complete color the original balanced crossing matrices are symmetric:
 
     R_plus^t=R_plus, R_minus^t=R_minus.
 
@@ -104,7 +104,7 @@ supports total integer degrees 0,...,8. The exact arithmetic represents
 a+b omega by the integer matrix [[a,-b],[b,a-b]], so the calculation
 uses neither floating eigenvalues nor approximate cancellation.
 The local matrices and pivot are also checked directly against the
-existing independently assembled ORIGINAL balanced crossing.
+existing independently assembled original balanced crossing.
 
 ## 3. The retained source couples to nonreal expanding modes
 

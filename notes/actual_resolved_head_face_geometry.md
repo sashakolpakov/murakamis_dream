@@ -3,7 +3,7 @@
 28 October 2026. A physical clock B tending to one need not make its
 meridian central. The resolved chart f=(1-B)p finite contains a genuine
 noncentral unipotent. The restricted positive crossing at input b=0,
-including bulk transfer, is exactly the projection of the ORIGINAL
+including bulk transfer, is exactly the projection of the original
 Hurwitz graph in this chart. Its action can have nonzero regulator.
 
 This local resolution does not identify arbitrary restricted-face
@@ -92,7 +92,7 @@ U one can choose
 
     tau=(1-U^-1)/e1.                                 (7)
 
-The limit is the ORIGINAL crossing graph, not a replacement map. Its
+The limit is the original crossing graph, not a replacement map. Its
 output clocks and positions are
 
     C=U, E=A/U,
@@ -127,7 +127,7 @@ The original output/input position terms are
 Stationarity in u and v gives EXACTLY (8). The omitted incoming second
 position is replaced by (7), finite in tau and divergent in r=tau/s.
 Thus every regular point of this restricted local canonical relation
-lifts to the resolved ORIGINAL local graph. This is a useful positive
+lifts to the resolved original local graph. This is a useful positive
 local theorem. It includes bulk k; such a face must not be declared
 central merely because B=1.
 

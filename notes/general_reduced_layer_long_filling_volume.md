@@ -1,6 +1,6 @@
 # Long-filling volume for reduced-layer plats of unbounded bridge number
 
-Independently reviewed theorem, 31 October 2026. Fix $k\geq4$ and signs $\epsilon_j\in\{1,-1\}$ for $1\leq j\leq k-1$. In conventional one-based braid-generator notation, form the standard $2k$-plat of
+theorem, 31 October 2026. Fix $k\geq4$ and signs $\epsilon_j\in\{1,-1\}$ for $1\leq j\leq k-1$. In conventional one-based braid-generator notation, form the standard $2k$-plat of
 
 $$
 \beta_k(\mathbf p)=
@@ -368,7 +368,6 @@ it makes no balance claim for the reduced $k=3$ word.
 
 ## Validation and scope
 
-Root and independent geometry/source reviewers checked the complete proof, including the original slot incidence and mark, the reflection and oriented two-disk development, both height endpoints, the physical recurrence branch, the translated three-node comparison, the exact curvature ratio, the source-normalized balance gap, and the separate knot-parity and bridge arguments. The general statement follows analytically for every fixed $k\geq4$; finite packing samples are not used as its proof.
+The general statement follows analytically for every fixed $k\geq4$; finite packing samples are not used as its proof.
 
-
-The [focused exact audit](../experiments/audit_general_reduced_layer_long_filling_volume.py) and [recorded results](../experiments/general_reduced_layer_long_filling_volume_results.json) check the literal original Morse incidences, mark, reflection and knot parity at 38 widths, five symbolic tangency/root/curvature identities, the three rational seed equations, the rational balance bound, and all 44 circle-support pairs and eight port tests of the exact width-four seed. Root independently reviewed the audit code and replayed it with identical results. These finite checks support the source and algebra interfaces; the uniform comparison and the asymptotic invariant theorem are analytical conclusions, not extrapolations from sampled packings.
+The [focused exact audit](../experiments/audit_general_reduced_layer_long_filling_volume.py) and [recorded results](../experiments/general_reduced_layer_long_filling_volume_results.json) check the literal original Morse incidences, mark, reflection and knot parity at 38 widths, five symbolic tangency/root/curvature identities, the three rational seed equations, the rational balance bound, and all 44 circle-support pairs and eight port tests of the exact width-four seed. Root the audit code and replayed it with identical results. These finite checks support the source and algebra interfaces; the uniform comparison and the asymptotic invariant theorem are analytical conclusions, not extrapolations from sampled packings.
