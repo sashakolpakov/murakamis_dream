@@ -17,15 +17,20 @@ construction, independently sufficiently large positive or negative twist
 numbers give the volume limit. The construction and all twist numbers stay
 fixed while the quantum level tends to infinity.
 
-A [companion theorem](https://sashakolpakov.github.io/murakamis_dream/notes/actual_conway_all_strict_tree_long_twist_volume.html)
-extends the result to every construction passing a finite angle-feasibility
-test called strictness. The
+A [companion theorem](https://sashakolpakov.github.io/murakamis_dream/notes/actual_conway_net_twist_volume.html)
+starts with any fixed ordered composition closed by the prescribed
+cylindrical closure. An explicit tangle reduction groups its twist numbers
+into disjoint sums. Unless the result is an elementary two-strand braid
+closure, sufficiently large magnitudes of these sums give the volume
+limit whenever the closed diagram is a knot. These are the *net twist
+numbers*: large positive and negative twists in one group can cancel.
+The reduction preserves the actual knot and its complement. The
 [results chapter](https://sashakolpakov.github.io/murakamis_dream/guide/results.html)
-explains this test, the closure condition, and the exact quantifiers.
+explains the groups, the closure condition, and the exact quantifiers.
 Another companion reconstructs the invariant from a quantum A-operator
 and initial data, giving the same volume limit in recurrence form.
 
-![The finite evaluation, estimates for strict Conway trees, and the volume of the resulting knot complement](book/figures/research-map.png)
+![Tangle reduction, the finite quantum evaluation, and the volume of the resulting knot complement](book/figures/research-map.png)
 
 The general conjecture remains open. In particular, the theorem does not
 classify all arborescent knots or cover arbitrary short twist numbers.

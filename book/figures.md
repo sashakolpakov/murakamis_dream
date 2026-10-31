@@ -2,15 +2,15 @@
 
 The drawings below explain the constructions used in the guide. Some show actual circle configurations in the boundary plane of hyperbolic space. Others show only incidence, algebraic composition, or the sequence of a proof. Each caption states which kind of drawing it is, defines the important labels, and explains the result for which it is used.
 
-The volume theorem is proved for the stated strict Conway trees and for several separately certified plat families. A remaining question attached to a local method is not an unresolved step in those theorems. The first diagram makes that distinction explicit.
+The volume theorem applies to the stated ordered Conway compositions with sufficiently long net twists and to several separately certified plat families. A remaining question attached to a local method is not an unresolved step in those theorems. The first diagram makes that distinction explicit.
 
 ## Established results and remaining scope
 
-![The proved route from the full quantum invariant to knot volume for strict Conway trees, its quantum A-operator formulations, and the separate questions that remain.](figures/research-map.png)
+![The reduction to long net twists, the full quantum invariant and knot volume, with quantum A-operator formulations and the remaining questions.](figures/research-map.png)
 
-Fix a literal Conway composition tree that passes the theorem's finite strictness test. Then fix sufficiently long, independently signed twist weights whose endpoint pairing gives a knot. The three upper boxes describe the proved argument for that knot: retain the exact finite invariant, control the whole signed sum while keeping a nonzero geometric contribution, and identify its growth with the volume of the actual knot complement. Only the auxiliary crossing-circle cusps are filled; the knot cusp remains unfilled.
+Fix an ordered Conway composition with the prescribed cylindrical closure. Reduce it by the explicit twist slides and combinations, excluding an elementary two-strand braid output. Then choose sufficiently long net twists for which the actual closed diagram is a knot. The reduction identifies this knot with one covered by the strict-tree estimates. The three upper boxes describe the proved argument for that knot: reduce the tangle by exact isotopies, control the whole signed quantum sum while keeping a nonzero geometric contribution, and identify its growth with the volume of the actual knot complement. Only the auxiliary crossing-circle cusps are filled; the knot cusp remains unfilled.
 
-The lower blue box gives two other exact formulations of the same invariant: a selected period of a quantum difference operator and a positive ratio of Gram determinants. These also have the stated volume limits. The amber box concerns broader presentation coverage, arbitrary short twists, and identification of a selected classical main-meridian factor. It does not leave the full-sum estimate open for the covered class. See the [results chapter](chapters/results.md) for the precise hypotheses.
+The lower blue box gives two other exact formulations of the same invariant: a selected period of a quantum difference operator and a positive ratio of Gram determinants. These also have the stated volume limits. The amber box concerns arbitrary short net twists, more general knot families, and identification of a selected classical main-meridian factor. It does not leave the full-sum estimate open for the covered class. See the [results chapter](chapters/results.md) for the precise hypotheses.
 
 [SVG](figures/research-map.svg) · [PDF](figures/research-map.pdf) · [TikZ source](figures/research-map.tex)
 
@@ -23,6 +23,16 @@ Each box contains a tangle whose internal strands have been suppressed. The blac
 The right panel adds the two exterior arcs defining the cylindrical closure \(C(FG)\). These arcs determine the final endpoint pairing and hence whether the result is a knot or a link. The picture introduces the [manuscript's construction](chapters/manuscript.md); the theorem then imposes its explicit recursive and knot-pairing conditions.
 
 [PDF](../manuscript/build/figures/tangle-construction.pdf) · [TikZ source](../manuscript/figures/tangle-construction.tex)
+
+## Moving a twist box and combining signed twists
+
+![An integral twist box moves past a tangle with a specified half-turn; adjacent twist boxes then combine by addition.](figures/net-twist-reduction.png)
+
+Products are read from bottom to top. In the upper row, moving the integral box $R^a$ past $F$ replaces $F$ by $\rho^a(F)$, where $\rho$ is the half-turn about the stacking axis. An even $a$ leaves $F$ unchanged; an odd $a$ retains that half-turn. The four outside endpoints stay fixed. Rotating the inner tangle and interpolating through the empty end collars gives the isotopy proved in the [net-twist theorem](../notes/actual_conway_net_twist_volume.md).
+
+The lower row combines adjacent integral boxes: their signed weights add. Each surviving twist in the general reduction is the sum over a disjoint group of original boxes. The example $(a+2m)+(-2m)=a$ explains why large original magnitudes alone cannot supply the theorem's size condition. The condition is imposed on the final sums. The marked point and any ribbon framing are transported through the moves.
+
+[SVG](figures/net-twist-reduction.svg) · [PDF](figures/net-twist-reduction.pdf) · [TikZ source](figures/net-twist-reduction.tex)
 
 ## The leaf pyramid and multiplication prism
 

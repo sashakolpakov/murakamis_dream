@@ -1,18 +1,38 @@
 # What remains to be proved
 
-The volume limit is now proved for every fixed Conway tangle expression that passes the strict type test, with independently sufficiently long signed twists and a knot-producing endpoint pairing. The [results chapter](results.md#every-strict-conway-composition-tree) defines the construction and the test. For that class, the passage from the full invariant to the volume of the actual knot complement is complete.
+The volume limit is proved for fixed ordered cylindrical tangle compositions whose reduced net twists are sufficiently long and whose closed diagram is a knot, with elementary two-strand braid closures excluded. The [results chapter](results.md#arbitrarily-many-tangles-with-sufficiently-long-net-twists) defines the reduction and its size condition. For this class, the theorem concerns the full invariant and the volume of the actual knot complement.
 
-The main questions beyond it are coverage of knot presentations, short twists, and the relation between the quantum recurrence and its selected classical geometric factor. Other approaches to arbitrary plat diagrams remain useful. Their open hypotheses are described below as questions about those broader approaches, not as missing steps in the strict-tree theorem.
+The remaining questions include short net twists, knot families outside these constructions, and the selected classical geometric factor of the quantum recurrence. The alternative plat methods below have their own open hypotheses. Those hypotheses are not missing steps in the proved Conway theorem.
 
 ## The boundary of the current Conway theorem
 
-The [strict-tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md) concerns a specified ordered expression made from turned two-strand twist boxes, stacking, quarter-turns and closure. Its finite test asks whether the normalized state constraints admit strict interior values. It does not prove that every arborescent knot has such a presentation with all twist magnitudes large.
+The [net-twist theorem](../../notes/actual_conway_net_twist_volume.md) removes the requirement that the original written expression pass the strict type test. Its explicit isotopies bring integral twist boxes together, retaining the half-turns of intervening tangles. The resulting groups of twist numbers are fixed by the original expression. The output is either a strict template or an elementary braid closure. The large-twist hypothesis applies to the sums in those groups.
 
-Three estimates close the previously missing mixed-tree case. The [positive probe theorem](../../notes/actual_conway_unflagged_core_probe_bound.md) controls a whole internal component while keeping its coefficient targets. The [spectral propagation theorem](../../notes/actual_conway_mixed_core_spectral_propagation.md) carries losses in every physical color through that component. The [geometric comparison](../../notes/actual_conway_unflagged_probe_geometry.md) identifies the constants with the original boundary action. These are proofs for the full signed source, not just an unsigned upper bound at an isolated critical point.
+The analytic input is still the [strict-tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md). Its positive probe bound, spectral propagation and geometric comparison control the full signed source for the reduced template. The new topological reduction transfers that theorem to the same filled knot in its original presentation. It also carries the meridian, preferred longitude and invariant normalization.
 
-What remains is to understand presentations outside the strict test and how different tangle presentations of the same knot are related. Equality of two algebraic source contractions does not itself establish a tangle isotopy or preserve the meridian and longitude. The threshold in the proved theorem may depend on the entire fixed tree. It is not uniform over growing trees, and the theorem does not cover arbitrary short twists.
+A small or vanishing final sum remains a real limitation. Making the original written exponents large by inserting opposite twist pairs cannot remove it. Optional deletion of a zero box can change the reduction or expose a connected-sum decomposition; the companion note treats those operations separately. The threshold depends on the entire fixed construction, and no uniform bound over growing trees is proved. Nor does the reduction classify all presentations of a given knot.
 
-There is also a precise operator question. A genuine all-level recurrence for the ADO invariant and finite initial data selecting its solution are already available. The [pointed quantum A-period theorem](../../notes/actual_conway_pointed_quantum_a_volume.md) reconstructs the Kashaev invariant from that data, including the required derivatives at singular steps, and gives its volume limit for the covered knots. The unresolved stronger question is the identification of the selected classical geometric factor and the quantum module carrying its marked logarithmic regulator data. Operator existence and the scalar period theorem should not be listed as open for this class.
+There is also a precise operator question. A genuine all-level recurrence for the ADO invariant and finite initial data selecting its solution are already available. The [pointed quantum A-period theorem](../../notes/actual_conway_pointed_quantum_a_volume.md) reconstructs the Kashaev invariant from that data, including the derivatives required at singular steps, and gives its volume limit for the covered knots. Identifying the selected classical geometric factor and the quantum module carrying its marked logarithmic regulator remains a further problem. A scalar limit at the complete meridian does not by itself control the invariant as that meridian varies.
+
+## What the actual meridian state requires
+
+The [nearby-zero theorem](../../notes/actual_ado_complete_meridian_zero_accumulation.md) makes the obstruction more precise. For the reduced ADO state in the marked meridian coordinate, the exact values are
+
+$$
+F_N(1)=K_N(K),\qquad F_N(q_N)=1,\qquad q_N=e^{\pi i/N}.
+$$
+
+The first value has positive exponential growth for the knots covered above. The second point is only order $1/N$ from the first. The crossing formulas give a Laurent degree bound of order $N$; factoring that polynomial then proves that actual zeros approach $M=1$ within distance $O(1/N)$. Consequently the unchanged state cannot have a holomorphic, nonvanishing branch asymptotic on a fixed neighborhood of completeness.
+
+The same ordinary-color values force a boundary factor in every polynomial annihilator. In the squared coordinate $Y=M^2$, write the shift as $\mathsf S Y=q^2Y\mathsf S$. The [peripheral normal-period theorem](../../notes/peripheral_normal_period.md) gives
+
+$$
+P=B(Y-1).
+$$
+
+Its formerly conditional positive-growth hypothesis is now satisfied for the covered knots. Removing the factor changes the state: $B$ annihilates $(Y-1)F_N$, which vanishes at completeness, and the original invariant is recovered from its normal derivative. Localizing the meridian to rational functions discards the corresponding boundary quotient. That quotient and the derivative data must be retained when interpreting the operator geometrically.
+
+An exact regularization is already available. Interpolate the ordinary colors by a polynomial $P_N^{\mathrm{ord}}(Y)$ of degree at most $N-2$, and subtract it before dividing by $S_N(Y)=1+Y+\cdots+Y^{N-1}$. The resulting Laurent polynomial has the same complete exponential rate and satisfies an affine recurrence with a polynomially bounded source. Its shifted values involve derivatives of the original state, so the obstruction above does not apply to it automatically. The next open step is to control this regular remainder as the main meridian varies and compare its selected branch with the geometric longitude. A complete-value limit alone does not establish either assertion.
 
 ## Language used in the alternative routes
 

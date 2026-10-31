@@ -6,11 +6,11 @@ A recurrence operator does not determine a knot invariant by itself: a recurrenc
 
 At a root of unity, some coefficients of the recurrence may have poles when solved in forward form. The reconstruction keeps the whole Laurent expansion, so those poles can cancel before evaluation. Only a bounded number of derivatives of the initial data is needed, with a bound determined by the fixed operator and independent of the quantum level.
 
-For the sufficiently long fixed knots of the [strict Conway theorem](actual_conway_all_strict_tree_long_twist_volume.md), this exact reconstruction has exponential growth equal to the knot complement volume. The proof transfers the established invariant-volume theorem through an exact identity. It does not infer the volume from a norm of the recurrence matrix, and it does not identify the operator's selected classical geometric factor merely from its existence.
+For the knots of the [net-twist theorem](actual_conway_net_twist_volume.md), this exact reconstruction has exponential growth equal to the knot complement volume. That class includes every sufficiently long strict Conway presentation and its extensions by the explicit tangle reduction. The proof transfers the invariant-volume theorem through an exact identity. The selected classical geometric factor remains a separate question.
 
 ## 1. The knot and the two meridian coordinates
 
-Fix a knot supplied by the strict Conway theorem. Its construction starts with separately labeled two-strand twist boxes \(R^{n_i}\), turns each basic box to form \(h_i=T(R^{n_i})\), and then uses ordered stacking and quarter-turns before cylindrical closure. The type test in that theorem specifies which finite expressions are allowed. Fix such an expression \(\tau=C(FG)\), choose all integer weights beyond its threshold, and require that the endpoint pairing give one component and no internal closed component. Set
+Fix a knot supplied by the net-twist theorem. Its original ordered cylindrical construction is isotopic to a strict presentation \(\tau=C(FG)\) whose combined twist numbers satisfy the long-twist bound. In what follows, \(\mathbf n\) denotes those combined numbers, and \(\tau\) denotes the reduced presentation. Its basic boxes are \(h_i=T(R^{n_i})\), where \(R^{n_i}\) is an integral two-strand braid and \(T\) turns a box through a quarter-turn. The actual closed link has one component, including the count of any circles closed inside intermediate boxes. Set
 
 \[
  K=K_\tau(\mathbf n),\qquad
@@ -193,7 +193,7 @@ The entries of \(J_k(N)\) are \(q_N^k C_j^{(k)}(q_N)/k!\), for finitely many fix
 
 The same statement holds for the localized minimum-order generator. The scalar inside the logarithm is nonzero for all sufficiently large \(N\).
 
-The proof is the exact identity (11) followed by the strict Conway volume theorem. The identity identifies the complete signed scalar at every sufficiently large level; the knot theorem supplies its nonzero asymptotic and its limit. No regular-orbit or semisimplicity assumption is inserted at singular steps, and no new root-level solution is selected. This is an operator expression for the proved volume limit, not an independent estimate obtained by bounding the companion matrix entries separately.
+The proof is the exact identity (11) followed by the strict Conway volume theorem on the reduced presentation. The tangle isotopy preserves the normalized invariant and the actual knot exterior, so the conclusion also holds for the original presentation. The identity retains the complete signed scalar at every sufficiently large level; the knot theorem supplies its nonzero asymptotic and its limit. No equality between operators computed from different presentations is required. This is an operator expression for the volume limit, obtained by reconstructing the selected invariant exactly.
 
 ### Restoring the full peripheral normalization
 
@@ -295,5 +295,9 @@ These are norm equalities for the selected periods. They do not identify an enti
 For the knots in the theorem, three objects are available: a genuine all-level ADO annihilator, fixed finite data selecting its solution, and an exact complete period with the knot-volume limit. The operator exists before the period is evaluated. Its initial jets contain no level-dependent exponential normalization, and (11) shows that a different invariant has not been substituted.
 
 A stronger problem is to identify the selected geometric factor in the \(q\to1\) characteristic polynomial and compare its pointed quantum module with the marked regulator germ. The crossing-circle deformation used to prove the volume theorem keeps the main meridian complete. It is not by itself a semiclassical theorem for varying that main-meridian ADO coordinate. Likewise, a rational root-state solution always gives a central monodromy eigenvalue \(1\); this does not identify its central spectral curve with the classical knot \(A\)-polynomial.
+
+The [complete-meridian zero theorem](actual_ado_complete_meridian_zero_accumulation.md) gives an explicit restriction on that comparison. Exactly \(F_N(q_N)=1\), whereas \(F_N(1)=K_N(K)\) has positive volume growth. Actual zeros therefore approach \(M=1\) within \(O(1/N)\), and a uniform nonzero scalar branch for the unchanged state across completeness is impossible. The full modified state has a pole at \(M=q_N\).
+
+The ordinary-color argument also forces every polynomial annihilator in the squared coordinate to have the right factor \(Y-1\), as proved in the [peripheral normal-period theorem](peripheral_normal_period.md). This condition now holds for all knots covered here. It retains a boundary module and a normal derivative of the state; it does not identify the geometric longitude factor. The [regular-period construction](regularized_kashaev_period.md) subtracts the ordinary-color polar data and gives an affine equation for the resulting regular remainder. Its neighborhood asymptotics remain an additional problem.
 
 No equality of full annihilator ideals with another knot recurrence ideal, equality of classical symbols, or efficient minimal-order algorithm is asserted here. Nor does the corollary enlarge the knot class to arbitrary short twists, trees growing with \(N\), or all arborescent presentations. None of these additional statements is needed for the exact reconstruction and limits (14), (20) and (21).

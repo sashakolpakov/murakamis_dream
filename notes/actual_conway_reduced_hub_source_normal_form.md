@@ -10,9 +10,11 @@ The flag-free case reduces to source estimates already proved for the
 completed grammar and isolated three-leaf closure. The case with one
 flagged leaf at every hub is covered by the companion
 [decorated-character spectral theorem](actual_conway_decorated_character_spectral_closure.md).
-Mixed flagged and unflagged hubs retain a distinct unresolved analytic
-operation, specified below. This note itself does not assemble a filling
-or knot-volume theorem.
+Mixed flagged and unflagged hubs require a further analytic operation,
+specified below. The later [positive probe bound](actual_conway_unflagged_core_probe_bound.md)
+and [spectral propagation theorem](actual_conway_mixed_core_spectral_propagation.md)
+provide it, completing the [strict-tree volume theorem](actual_conway_all_strict_tree_long_twist_volume.md).
+This note proves the finite algebra and support statements used in that argument.
 
 ## 1. Source conventions and the exact local tensor
 
@@ -392,8 +394,9 @@ and finite products, at exactly this complete rate. Together with
 the source adapter above, this covers the case in which every hub
 is flagged. An unflagged hub requires \(E\mapsto T(E)\), the second
 case of (11); it is not an instance of (23) with an existing physical
-character. Mixed flagged/unflagged trees therefore remain outside
-that closure statement.
+character. Mixed flagged/unflagged trees therefore require more than
+that closure statement. The later positive probe and spectral propagation
+theorems cited in the introduction supply the additional estimates.
 
 ## 6. Scope
 

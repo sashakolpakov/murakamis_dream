@@ -11,6 +11,42 @@ Here $K_N$ is the reduced Kashaev invariant in the normalization fixed in the pr
 
 There are two main ways to specify the proved families. The Conway construction builds a knot from two-strand tangles according to a finite tree. The plat construction starts with a braid and pairs its endpoints. The hypotheses for these constructions are different, so they are described separately. Later sections explain useful conditional theorems and local identities whose conclusions are smaller than a full knot-volume theorem.
 
+## Arbitrarily many tangles with sufficiently long net twists
+
+Fix an ordered construction from two-strand twist boxes, quarter-turns and stacking, followed by the cylindrical closure of a product of two boxes. Each original twist box has its own integer $n_i$. The number of boxes and the depth of their nesting may be arbitrary, but remain fixed in the theorem.
+
+The [net-twist theorem](../../notes/actual_conway_net_twist_volume.md) gives a finite reduction of this construction. It partitions the original boxes into disjoint groups $B_1,\ldots,B_s$ and assigns each surviving box the sum
+
+$$
+W_j=\sum_{i\in B_j}n_i.
+$$
+
+The groups depend on the written construction, before the integers are chosen. Moving a twist box past another tangle can rotate that tangle through a half-turn. The reduction records these rotations. Thus the ordered output may depend on the parities of the integers, although the groups and their sums do not.
+
+The output is either a strict presentation of the kind described in the next section, or the closure of a single two-strand braid. The second possibility gives a torus link or knot and is excluded from the hyperbolic conclusion. In the first case, there is a finite threshold $B$ depending on the original construction such that
+
+$$
+|W_j|>B\qquad(1\le j\le s)
+$$
+
+implies the volume equality above whenever the actual closed link is a knot. The reduction and the type of its output are determined before taking a quantum limit. The twist integers are then fixed, and $N$ tends to infinity through all integer levels. The threshold is uniform over the finitely many parity choices; the magnitudes of the different sums need not be comparable.
+
+For example, let $h(c)$ be a quarter-turned box with $c$ half-twists, and consider
+
+$$
+C\bigl(R^a h(c)R^b h(d)\bigr).
+$$
+
+Here $R^a$ and $R^b$ are integral braid boxes in the same stack. They can be brought together and replaced by $R^{a+b}$. The standard rational box $h(c)$ is preserved by the half-turn needed during this move. The reduced closing expression has one integral box and the two ordinary boxes $h(c),h(d)$, so it passes the strict test. Its size conditions concern $|a+b|$, $|c|$ and $|d|$. Replacing $a,b$ by $a+2m,b-2m$ leaves the knot and the sum $a+b$ unchanged, even though both written magnitudes can become arbitrarily large. This is why the theorem uses net twists.
+
+![Sliding a twist box past a tangle carries a specified half-turn; adjacent integral twist boxes then combine by addition.](../figures/net-twist-reduction.png)
+
+The knot condition concerns all strands, including any circles already closed inside an intermediate box. Checking only the pairing of its four exposed endpoints can miss such a component. The proof retains the component count. A one-component closed link has no internal closed circle, because that circle would remain separate from the component formed by closing the remaining arcs.
+
+The reduction is an ambient isotopy of the filled link. It therefore preserves the reduced invariant at every level and identifies the knot exteriors. Applying the strict theorem to the output supplies a complete hyperbolic metric; pulling that metric back to the original exterior gives exactly the volume in the equality. The argument compares the filled knots. Their auxiliary augmented links need not be the same.
+
+This gives a theorem for arbitrary fixed ordered cylindrical compositions with sufficiently long net twists, subject to the knot condition and the elementary exception. It does not prove the conjecture for every short-twist arborescent knot. The note also describes cap closures and vanishing sums separately; those reductions can split a link into connected-sum factors and require their stated additional hypotheses.
+
 ## Every strict Conway composition tree
 
 Begin with two strands carrying $n_i$ signed half-twists, denoted by $R^{n_i}$. Turn the box through a quarter-turn $T$ to obtain the basic piece $h_i(n_i)=T(R^{n_i})$. The subscript distinguishes the pieces; their integers are independent. Ordered multiplication $FG$ stacks two boxes, and $C(FG)$ is the prescribed cylindrical closure of their remaining endpoints. The endpoint order, the turns and the closing convention are part of the presentation.
@@ -36,6 +72,8 @@ The estimate for a general tree must preserve cancellation across large internal
 ![A source component and the positive comparison used to estimate it. The probe is part of the proof, not an extra crossing circle in the knot.](../figures/mixed-conway-probe.png)
 
 The [pointed quantum A-period corollary](../../notes/actual_conway_pointed_quantum_a_volume.md) gives an operator formulation of the same result. A genuine recurrence for the ADO invariant, together with finite initial data, selects the knot's solution. At singular steps it retains a bounded number of derivatives in the quantum parameter. The resulting signed scalar period is exactly the Kashaev invariant and therefore has the same volume limit. This is a statement about that selected scalar, not about a matrix norm or a sum of absolute values.
+
+The same corollary applies to the net-twist theorem: the normalized presentation constructs the same knot and hence the same selected invariant. No equality of two presentation-dependent recurrence operators is required.
 
 ## Included tree families and the manuscript
 

@@ -10,17 +10,21 @@ line. The derivative has a polynomially bounded source. Its size is
 therefore an inverse-operator and source-coupling problem, in the natural
 cyclic trace metric.
 
-These are necessary-condition and conditional period theorems, with
-uniform proofs below. The rank condition and the boundary-factor
-condition are not asserted for every hyperbolic knot operator. The
-regulator norm and original volume conjecture remain unproved.
+The statements below separate a necessary boundary factor from a further
+rank condition. The positive volume limit is now proved for the knots of
+the [net-twist theorem](actual_conway_net_twist_volume.md). For every such
+knot, Section 2 therefore proves the boundary-factor condition for every
+polynomial all-level annihilator. The special-fiber rank condition in
+Section 4 remains additional; the scalar volume theorem does not prove
+it or identify a full quantum module with the geometric regulator.
 
 The subsequent [actual Weyl-descent proof](actual_weyl_descent.md)
 constructs P=B*(Y-1) from the primitive minimal normal operator for
 every knot and proves its unitary reciprocity. Thus those symmetry
 data in Section 6 are available for the canonical actual operator.
-The special-fiber injectivity and norm estimates remain additional;
-Section 2's necessity test still concerns every polynomial annihilator.
+Those symmetry statements do not prove special-fiber injectivity or
+give direct estimates for the inverse below. Section 2's necessity
+test still concerns every polynomial annihilator.
 
 The subsequent [peripheral-fusion proof](actual_peripheral_fusion.md)
 derives the regular normal boundary lattice from the actual fundamental
@@ -101,10 +105,18 @@ b_i(q,Y)*(q^(2i)Y-1). A monic operator over C(q,Y) can have poles
 on those divisors; an ordinary evaluation of that localized operator
 cannot replace the cleared equation used above.
 
-The result is a dichotomy, not a proof that all hyperbolic operators
-already satisfy (2.3). If an actual hyperbolic-knot annihilator violated
-it, (2.2) would contradict its positive-volume conjecture. Conversely
-(2.3) alone supplies no exponential lower bound.
+The result is a dichotomy for an arbitrary knot. For the knots covered
+by the strict-tree and net-twist volume theorems, their positive volume
+limit rules out (2.2), so every polynomial annihilator satisfies (2.3).
+For a hyperbolic knot outside the proved class, this remains a necessary
+condition for its conjectured positive-volume limit. Conversely, the
+boundary factor alone supplies no exponential lower bound.
+
+The [nearby-zero theorem](actual_ado_complete_meridian_zero_accumulation.md)
+gives another consequence of the same ordinary-color values: zeros of
+the actual reduced state approach the complete meridian at distance
+$O(1/N)$. Its final section also records the two-sign version of the
+boundary factor for operators in the unsquared coordinate $M$.
 
 ## 3. The missing component is a fixed boundary module
 
@@ -285,10 +297,14 @@ singular values. No largest-eigenvalue prescription is being used.
 
 The geometric action already has imaginary value Vol at completeness,
 by the [actual action proof](quantum_longitude_and_regulator_action.md).
-What remains is to prove that (6.2), with these exact overlaps, has
-that regulator norm. Neither (6.3) nor the existence of a geometric
-critical point proves that estimate. Extra left operator factors can
-also create small singular values with zero relevant overlap.
+For a knot covered by the net-twist theorem, whenever the stated rank
+condition holds, (6.2) is an exact expression for its invariant and
+therefore has the scalar volume growth proved there. Deriving this
+growth directly from the inverse and identifying the geometric
+regulator at the module level remain additional tasks. Neither (6.3)
+nor a geometric critical point by itself controls the two overlaps.
+Extra left operator factors can create small singular values with
+zero relevant overlap.
 
 ### A Weyl symmetry isolates the relevant inverse
 
@@ -514,5 +530,8 @@ involutions and source parity above were obtained by direct operator
 identities, with all monomial phases retained.
 The [geometric triangulation bridge](triangulation_regulator_bridge.md)
 supplies the marked Bloch action for the comparison with this normal
-period. Its norm, the actual geometric factor's survival, and the
-original volume conjecture remain open in this project.
+period. The scalar volume equality is established for the stated
+strict and net-twist knot classes. The survival and identification of
+the actual geometric factor, the additional rank conditions in this
+note, and the volume conjecture outside the established classes remain
+open.

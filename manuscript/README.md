@@ -8,6 +8,8 @@ The theorem fixes the finite construction and a parity pattern giving a knot. It
 
 Chapters 2–3 define the finite invariant and derive its angle maximization problem. Chapter 4 constructs the complete augmented hyperbolic metric. Chapters 5–6 control the signed color terms and prove a holomorphic asymptotic for the finite sum. Chapters 7–8 identify the peripheral filling curves and evaluate the full oscillatory filling transform. Detailed algebraic, analytic, geometric and certificate arguments appear in the appendices. Technical terms such as color, source, core, alias and packet are defined in Chapter 1 and again where their formulas are introduced.
 
+The [net-twist companion theorem](../notes/actual_conway_net_twist_volume.md) treats a broader class of ordered tangle expressions. It uses exact tangle reductions and the later strict-tree estimates; its hypothesis concerns the combined twist numbers left after reduction. This extension is stated in the [results chapter](../book/chapters/results.md), separately from the theorem proved in this PDF.
+
 ## Build the paper
 
 From the repository root, run:
