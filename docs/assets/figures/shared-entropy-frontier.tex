@@ -11,7 +11,7 @@
  panel/.style={draw=blue,fill=blue!4,rounded corners,align=center,inner sep=12pt},
  pending/.style={panel,draw=amber,fill=amber!4,dashed}]
  \node[font=\sffamily\large\bfseries] at (0,2.4)
- {From the full positive source to the actual augmented volume};
+ {From the original source to the filled geometric saddle};
  \node[panel,text width=13cm] (source) at (0,0)
  {\textbf{Original positive endpoint source}\\[8pt]
  $\displaystyle Z_{D,N}=[\prod_{f\ \mathrm{ordinary}} L_f^{N-1}]
@@ -42,10 +42,24 @@
  Exact identity contraction, hybrid flow cuts, and the\\
  relative fundamental chain of the original augmented-link group.};
  \draw[->,blue,thick] (limit)--(volume);
- \node[pending,text width=13cm] (filling) at (0,-17.5)
- {\textbf{Open: the original phase-sensitive filling sum}\\[7pt]
- Select the geometric cycle and control cancellation and its complement\\
- to obtain the volume of each fixed, sufficiently long filled knot.};
- \draw[->,amber,thick,dashed] (volume)--(filling);
+ \node[panel,text width=13cm] (packet) at (0,-17.7)
+ {\textbf{Proved: full complex spectral source near completeness}\\[8pt]
+ Original face torus, nonzero relative asymptotic,\\
+ all repeated-node spectral data retained.\\[7pt]
+ The unit-charge filling critical value is
+ $\operatorname{Vol}(S^3\setminus K_D(p))/(2\pi)$.};
+ \draw[->,blue,thick] (volume)--(packet);
+ \node[panel,text width=13cm] (localperiod) at (0,-22.0)
+ {\textbf{Proved: the localized original spectral integral}\\[8pt]
+ Nonzero unit-charge contribution and finite local charge dominance\\
+ for independently long, fixed signed twists.\\[7pt]
+ $\displaystyle \lim_{N\to\infty}\frac{2\pi}{N}\log|U_{N,n;b}|
+       =\operatorname{Vol}(S^3\setminus K_D(p))$};
+ \draw[->,blue,thick] (packet)--(localperiod);
+ \node[pending,text width=13cm] (filling) at (0,-26.1)
+ {\textbf{Open: control the exact global remainder}\\[7pt]
+ Selected charges outside the cube; every other charge on its full domain.\\
+ Their total must not cancel or dominate the proved local contribution.};
+ \draw[->,amber,thick,dashed] (localperiod)--(filling);
 \end{tikzpicture}
 \end{document}

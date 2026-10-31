@@ -1,0 +1,574 @@
+# The full numerator after localization: exact cross cofactors and the packet interface
+
+The [whole-source local packet](general_full_spectral_numerator_geometric_packet.md) now assembles these results for the actual full numerator. The original global spectral filling period remains open.
+
+31 October 2026. Internally reviewed. Sections 1--3 are finite identities
+of the ORIGINAL polynomial source. Sections 4--6 distinguish a concrete
+remaining asymptotic theorem from those identities. No frozen file is
+modified and no filling-cycle or relative packet theorem is asserted.
+
+The source normalization is that of
+actual_homogeneous_casimir_face_source.md; the full resolvent numerator,
+not a complete-image interpolation, is used throughout.
+
+## 1. Actual polynomial block and cleared lower cofactors
+
+Put d=N-1, m=floor(N/2), theta=pi/N, sigma=-2-u, and
+
+    P_N(u)=(-1)^d H_(V_N(-2-u)),
+    a_j=2+2cos((2j+1)theta), s_j=2sin(j theta),
+    A=x+y, P=xy.
+
+The original triangular matrix 2+Omega+u has diagonal a_j+u and
+negative lowering entries -s_j^2 A and -s_j s_(j-1)P. All physical
+endpoint zeros remain in these entries. A numerator path j to i
+has middle monomial b^i c^(d-j), its positive step product, and the
+product of a_r+u over exactly its UNUSED rows. This is a polynomial
+identity also at every zero of a_r+u.
+
+Take the lower block with rows 0,...,m-1. Initially off its poles let
+
+    A_-(u)=product_(r=0)^(m-1)(a_r+u), K_-=(2+Omega+u)_-^(-1),
+    D(b)=A_- sum_(i=0)^(m-1) b^i (K_-)_(i,m-1),
+    E(b)=A_- sum_(i=0)^(m-2) b^i (K_-)_(i,m-2).       (1)
+
+These are CLEARED cofactors, hence polynomials, with degrees m-1
+and m-2 in (x,b,y). Set E=0 for m=1. Define polynomials R_j(b)
+without any denominators by R_0=1, absent negative indices zero, and
+
+    R_j(b)=b^j product_(r<j)(a_r+u)
+             +s_j^2 A R_(j-1)(b)
+             +s_j s_(j-1)(a_(j-1)+u)P R_(j-2)(b).   (2)
+
+The source path recursion, splitting at its first step from j, gives
+
+    D(b)=R_(m-1)(b),
+    E(b)=(a_(m-1)+u)R_(m-2)(b).                     (3)
+
+For odd N also use R_m, with the same original s_m and a_(m-1).
+Neither (2) nor (3) is a lower-level quantum source; the level stays N.
+There is also an exact determinant realization. In the block on rows
+0,...,j, replace the LAST row of 2+Omega+u by (1,b,...,b^j). Its
+determinant is R_j(b), by the row-replacement formula
+det(A)(w A^-1)_j. This remains polynomial at singular A and does not
+assert that the row-replaced matrix is positive or Hermitian.
+
+## 2. Exact central-cross factorization at both parities
+
+For EVEN N=2m the CROSS support is i<=m-1,j>=m. Its polynomial is
+
+    P_cross(u)=s_m^2 A D(b)D(c)
+       +s_m s_(m-1)P [D(b)E(c)+E(b)D(c)].           (4)
+
+Proof: every decreasing path crosses the central cut exactly once,
+by m->m-1, m+1->m-1, or m->m-2. These are precisely the three terms.
+Row reflection r->d-r identifies the upper and lower diagonal
+products and exchanges the corresponding one- and two-step weights.
+The full diagonal product is A_-^2, which cancels the two cleared
+cofactor denominators. This proves (4) off a finite set; polynomial
+continuation proves it everywhere, including u=-a_(m-1).
+
+For ODD N=2m+1 the CROSS support is i<=m,j>=m. Put
+
+    G(b)=A_- b^m+s_m^2 A D(b)+s_m s_(m-1)P E(b)=R_m(b).
+
+Then exactly
+
+    P_cross(u)=G(b)G(c)+u s_m s_(m+1)P D(b)D(c).    (5)
+
+Visited-central paths split at row m, giving the first product. A
+cross path skipping m has the unique two-step jump m+1->m-1; its
+UNUSED central row supplies u, giving the second term. Here s_(m+1)
+=s_m. The original full diagonal product is u A_-^2, but (5) has no
+division by u and no discarded derivative term. In particular its
+u derivative retains both differentiated visited-central paths and
+the central-skipping term. Thus (4)--(5) include the actual semisimple
+information; they are not identities only at the complete nodes.
+
+Products of (4) or (5), followed by the ONE original shared target
+coefficient and protected targets zero, give the exact all-CROSS
+shared numerator. Distinct ports keep their distinct spectral u_e.
+There is no new N factor, local mark, or independent face summation.
+
+## 3. Exact complete-node anchor and what it does not imply
+
+At a paired physical node c_a, the full-Hermite identity gives
+
+    L_(N,a)=(-1)^d (2/N)V_N(c_a).
+
+At the odd simple endpoint c_*=-2 it instead gives
+
+    L_(N,*)=V_N(-2)/N.
+
+The original homogeneous complete-circle theorem writes
+
+    H_(L_(N,a))=N k_a B_(N,a),
+    B_(N,a)=beta_a^2 D_a(x,b,y)D_a(x,c,y)P_(d-2a)(x,y),
+    k_a=2 paired, k_*=1 simple.
+
+Consequently, UNIFORMLY over both multiplicity types,
+
+    (-1)^d H_(V_N(c_a))=N^2 B_(N,a).                (6)
+
+The right side has b,c degrees at most a<=floor(d/2), hence lies
+entirely in the CROSS support. Thus (4)--(5) agree with the FULL
+numerator at EVERY folded spectral node. On the fold cover
+
+    sigma(delta)=-2cos(2pi delta),
+    u(delta)=-4sin^2(pi delta),
+    delta_a=(d-2a)/(2N),                            (7)
+
+equation (6) supplies the exact original anchor for comparison with
+actual_positive_face_exponential_fold_interpolation.md.
+
+It does NOT justify differentiating that interpolation to get V'.
+There are fewer distinct spectral nodes than the degree of V, and
+the semisimple interpolation ambiguity is real. Nor does (4) imply
+that its three summands have a common nonvanishing complex phase.
+The new identity makes the remaining object explicit; it does not
+settle its Stokes structure or a relative amplitude.
+
+## 4. A concrete continuum candidate, not a claimed packet
+
+For a fixed starting row i, its cleared interval continuant obeys
+
+    K_(i,j)=s_j^2 A K_(i,j-1)
+             +s_j s_(j-1)(a_(j-1)+u)P K_(i,j-2).
+
+With s(t)=2sin(pi t), a(t)=4cos^2(pi t), its positive constant-block
+root at real u>=0 is
+
+    Lambda(t;u)=[s(t)^2 A
+          +sqrt(s(t)^4 A^2+4s(t)^2(a(t)+u)P)]/2.     (8)
+
+At the upper fold t=1/2 its discriminant is nonzero whenever A>0.
+Thus clearing the half cofactor removes the artificial a_j^-1
+singularity there. It does not remove the lower endpoint t=0.
+
+The corresponding candidate action for D(b), normalized at u=0, is
+
+    F_u(x,b,y)=max_(0<=mu<=1/2)
+       [mu log b+int_0^mu log(a(t)+u)dt
+                    +int_mu^(1/2)log Lambda(t;u)dt]. (9)
+
+For b>0, its interior saddle solves b(a(mu)+u)=Lambda(mu;u), hence
+
+    sin^2(pi mu)=b^2(1+u/4)/[(b+x)(b+y)].            (10)
+
+Under (7), this is the already recorded deformed middle-angle
+equation. At u=0, the proved half-block weighted theorem normalizes
+(9) to the actual triangle F(x,b,y), with no arbitrary constant.
+For b=0 the initial row is forced to i=0. If also xy=0 the recurrence
+is an exact monomer product; otherwise the lower-endpoint transfer
+eigenvalues approach equal modulus and must be treated explicitly.
+
+Equations (8)--(10) are an explicit candidate and algebraic saddle
+calculation. This handoff does NOT claim uniform complex asymptotics
+or a nonzero relative prefactor from this calculation. In particular,
+the proved positive logarithmic rate is weaker than such a packet.
+
+## 5. The precise relative theorem needed by the original period
+
+The reviewed spectral-polydisk-complement theorem gives, for the
+original shared numerator S_N and its exact all-CROSS part C_N,
+
+    S_N-C_N=O(exp[N(Phi-gamma/2)])                   (11)
+
+on a sufficiently small FIXED spectral polydisk, at both parities.
+It also gives exact spectral-jet bounds on radius N^-2. These are
+absolute estimates, not a nonzero approximation for C_N.
+
+A useful next theorem must give C_N on the ACTUAL delta cover near
+the saddles used by the original spectral cycle, after the original
+shared face coefficient extraction. It may be a single branch only
+where that is proved, or a finite branch sum with its actual sector
+coefficients. Schematically one needs
+
+    C_N(delta)=sum_tau N^(beta_tau) A_(tau,N)(delta)
+                      exp[N S_(tau,N)(delta)]
+                     + controlled relative/absolute remainder, (12)
+
+uniformly on specified complex sectors or saddle neighborhoods,
+with nonzero amplitudes for the selected contributions and enough
+holomorphic margins to differentiate. Finite-N actions must retain
+the actual parity anchor and all original scalar characters.
+
+The theorem must include the original face torus: a local pointwise
+cofactor formula alone does not license Gaussian reduction of the
+shared coefficient. The old complete-source face Hessian and torus
+gap provide a plausible starting point at delta=0, but their transfer
+to (4)--(5) still requires relative control, including every protected
+zero pattern. A fixed complex disk free of zeros or Stokes curves is
+NOT imposed here; a sectorial finite-branch theorem sufficient on the
+contributing saddle neighborhoods would suffice.
+
+Once such a packet has real rate at least Phi-gamma/4 on those
+neighborhoods, (11) is exponentially smaller there. Uniform
+holomorphic errors then legitimately control the V' semisimple term
+by Cauchy. This would use an estimate of the ACTUAL cofactors, not
+differentiation of complete node samples.
+
+## 6. Why shrinking endpoint disks do not by themselves suffice
+
+For a fixed integer crossing power n the exact full-Hermite Gaussian is
+
+    R^n=q^(n d^2/4) exp[n N K(Omega)/(4pi i)],
+    K(sigma(delta))=-(2pi delta)^2.
+
+The retained scalar q^(n d^2/4) remains outside the local phase. In
+the exact midpoint Fourier formula of
+actual_spectral_total_derivative_source.md, put phi=pi-2pi delta.
+The charge ell contributes, apart from its recorded constant sign,
+
+    exp[N(pi i n delta^2+2pi i ell delta)].          (13)
+
+More explicitly, let I_(D,n) denote the original marked contraction
+with the actual coupon R^(n_e) at each port. Any separately recorded
+exterior framing scalar stays outside this formula. The existing
+single-coupon total-derivative identity, followed by the exact shared
+coefficient extraction, gives the following WHOLE-source formula:
+
+    I_(D,n)=q^[(d^2/4)sum_e n_e] (-i)^R
+      sum_(ell in (Z\{0})^R)
+        [product_e ell_e] (-1)^[(N+1)sum_e ell_e]
+      int_[-1/2,1/2]^R [product_e sin(2pi delta_e)]
+        S_N(-2cos(2pi delta_1),...,-2cos(2pi delta_R))
+        exp{N sum_e[pi i n_e delta_e^2
+                              +2pi i ell_e delta_e]} ddelta.  (13a)
+
+Indeed the one-coupon prefactor -iN^2/2 times the Fourier measure
+1/(2pi) times B_f=2sin(phi)fV/N^2 is -i/(2pi). Substitution
+phi=pi-2pi delta supplies 2pi, while the midpoint sign (-1)^ell
+and exp(-pi i N ell) combine to the displayed sign. Thus all N^2
+factors cancel in the period prefactor, not in S_N itself. For each
+fixed N the sum is absolutely convergent by the proved C^1 periodic
+endpoint regularity and Fourier O(|j|^-3) bound. Its constants need
+not be uniform in N.
+
+Because S_N and the Gaussian are even in EACH delta_e, reversing a
+single ell_e reverses its integral and also the prefactor ell_e.
+Thus the terms are equal under independent charge sign reversal;
+one may equivalently sum over positive ell_e with prefactor (-2i)^R.
+This is an exact parity identity, not proof that only ell_e=1 survives.
+Endpoint currents remain encoded by the actual finite interval and
+its periodic regularity; integration by parts cannot silently erase
+them. Formula (13a) uses the original FULL V at every port.
+
+The ell=0 integral of the total derivative is EXACTLY zero. For a
+bounded surviving nonzero charge, the local critical equation is
+
+    partial_delta S(delta)+2pi i n delta+2pi i ell=0. (14)
+
+Its candidate near-parabolic solution is delta=O(1/n), with the
+diagram's coupled derivatives included. For independently large
+FIXED twists, this displacement is fixed as N grows. The required
+packet is therefore near a nonzero fixed delta*, not just on the
+N^-2 spectral disk (delta=O(1/N)) controlled by endpoint jets.
+
+Even a proved (12) would leave the source-preserving cycle comparison,
+the nonzero charges and their possible cancellations, and the global
+complement to check. The +2 Gaussian closing cap is already proved
+in actual_gaussian_resolvent_numerator_and_cap.md and is not a new
+missing endpoint estimate. Its bulk sign warning still applies: a
+whole spectral ellipse has a Gaussian-growing side. Largeness of n
+does not by itself justify dropping it. The existing strict physical
+prefix and cross-central Green actions are selected integrand rates;
+they neither identify (4)--(5) on complex face sectors nor prove (12).
+Likewise actual_q_hahn_full_physical_complex_packet.md has a different
+strict physical/complex-magnetic chart and an integer channel, so an
+explicit adapter would be needed before importing its relative bound.
+
+## 7. A proved central-strip relative bound and the endpoint amplitude anchor
+
+This section is stronger than a bare endpoint jet majorant but still
+has a SHRINKING spectral domain. It does not prove (12) at fixed delta*.
+
+Fix 0<eta<1/4 and N>=1/eta. Restrict a local numerator to endpoints
+
+    i<=N(1/2-eta), j>=N(1/2+eta),
+
+and denote it P_eta(u). A fixed integer rounding of these inequalities
+does not matter. The following is COEFFICIENTWISE in all four faces:
+
+    [u^k]P_eta(u) <= binom(N,k) C_eta^k P_eta(0),    (15)
+    C_eta=max{1/[4sin^2(pi eta/2)],
+                    1/[4cos(pi eta)cos(2pi eta)]}.
+
+Here and below a zero coefficient on the right also forces zero on
+the left. In particular this is not an estimate only after choosing
+positive face radii.
+
+Proof. Expand each one-step factor x+y into its two labeled terms.
+A coefficient of u^k consists of an actual path and a k-element set
+S of unused rows, at which the factor a_r+u contributes u rather
+than a_r. For a selected row outside the open central strip
+N(1/2-eta)<r<N(1/2+eta), leave the path unchanged and restore a_r.
+Its weight ratio is 1/a_r<=1/[4sin^2(pi eta/2)].
+
+A selected central row lies strictly between both endpoints. If
+unused it MUST be skipped by the step r+1->r-1. Replace that dimer
+by r+1->r->r-1, assigning x to the first step and y to the second.
+This preserves the exact outer exponents and both middle exponents.
+The old dimer with its selected unused factor removed has weight
+s_(r+1)s_r xy; the repaired two steps have weight
+s_(r+1)^2s_r^2 xy. Their ratio is 1/[s_r s_(r+1)], bounded by the
+second quantity in C_eta. Selected skipped rows cannot be adjacent,
+so all these repairs are compatible. Given S and the repaired
+labeled path, collapsing exactly those two-step runs recovers the
+original path. Thus the map is injective for each S, with weight
+ratio at most C_eta^k. There are at most binom(N,k) choices of S.
+
+At odd N a surviving term from a path skipping m necessarily selects
+m in S: otherwise its unselected a_m factor is zero. Repair then
+visits m, exactly as required for P_eta(0). All other repaired paths
+also have nonzero zero-spectral weights. This proves (15) at BOTH
+parities without dividing by the zero row.
+
+Summing (15), for complex u with |u|<=r,
+
+    |P_eta(u)-P_eta(0)|_coef
+          <=[(1+C_eta r)^N-1] P_eta(0).             (16)
+
+Now choose eta from the unique geometric maximizer, so every actual
+geometric middle load is <=1/2-4eta. Let
+
+    Z_N(u)=(-1)^(dR) S_N(-2-u_1,...,-2-u_R)
+
+be the actual shared numerator, and Z_eta its restriction to these
+central-strip endpoints at every port. The complement lies in a
+closed incidence set separated from q_geom: for all sufficiently
+large N some middle load is >=1/2-2eta. The same uniform full-h
+entropy and support-preserving spectral comparison used for the
+one-sided gap therefore give a number gamma_eta>0 and one fixed
+spectral polydisk such that
+
+    |Z_N(u)-Z_eta(u)|<=exp[N(Phi-gamma_eta)].        (17)
+
+Shrinking the fixed polydisk absorbs its spectral majorant cost.
+At u=0, Z_N(0)>0 and log Z_N(0)/N -> Phi: for even N this is the
+proved full endpoint theorem; for odd N it is the exact simple-fold
+complete coefficient. Positivity gives Z_eta(0)<=Z_N(0). Applying
+(16) before the original shared coefficient extraction consequently
+proves, uniformly in this polydisk,
+
+    |Z_N(u)/Z_N(0)-1|
+       <= product_e(1+C_eta |u_e|)^N-1+O(e^(-cN)).  (18)
+
+Choose fixed c0>0 so exp(R C_eta c0)-1<1/2. The full numerator is
+then nonzero on |u_e|<=c0/N for all sufficiently large N, and is
+uniformly 1+O(N max|u_e|)+O(e^(-cN)) relative to its actual endpoint
+value when max|u_e|=o(1/N). Cauchy on c0/N also gives, for every
+multiindex alpha and sufficiently large N,
+
+    |partial_sigma^alpha S_N(-2,...,-2)|
+        <=2 alpha! (N/c0)^|alpha| |S_N(-2,...,-2)|. (19)
+
+These are spectral derivatives only. The constant c0 is attached to
+the fixed original diagram; no growing-width uniformity is claimed.
+
+There is a useful EXACT-SOURCE amplitude anchor. For even N the
+maximal complete node has delta_min=1/(2N) and
+u_min=-4sin^2(pi/(2N))=O(N^-2). Apply (18) at that node in every
+port and use the exact node identity (6). If
+
+    B_top=[original ordinary targets] product_e B_(N,M),
+
+with the original two protected targets zero, then
+
+    (-1)^(dR) S_N(-2,...,-2)
+             =N^(2R) B_top [1+O(N^-1)]   (N even), (20)
+    S_N(-2,...,-2)=N^(2R) B_top          (N odd).  (21)
+
+The odd formula is the exact simple-node identity, not an asymptotic
+consequence of (18). Formula (20) controls the actual even semisimple
+endpoint amplitude against the known complete-fold anchor. It still
+does not extend a relative packet to the fixed O(1/n) delta saddle:
+the zero-free disk just proved has delta size O(N^-1/2).
+
+## 8. Exact cofactor interpolation and a global all-CROSS spectral bound
+
+Write J=floor((N-1)/2) at even levels and J=m at odd levels. Thus
+J=m-1 for N=2m and J=m for N=2m+1. Every R_j, 0<=j<=J, has
+spectral degree at most j. The J+1 distinct physical nodes are
+
+    u_a=-a_a=-2-2cos((2a+1)pi/N), 0<=a<=J.
+
+The following coefficientwise fact supplies the needed nodal control:
+
+    0<=R_j(b;u_a)<=R_j(b;0), for all j,a<=J.         (22)
+
+If j<=a, every diagonal a_r-a_a actually used by (2) is nonnegative
+and no larger than a_r; (22) follows directly by induction. If j>a,
+the inhomogeneous term of (2) vanishes after row a, giving exactly
+
+    R_j(u_a)=K_(a,j)(u_a) R_a(u_a).                 (23)
+
+Normalize q_r=K_(a,a+r)/product_(v=a+1)^(a+r)s_v^2.
+The exact trigonometric identity
+
+    a_(j-1)-a_a=-s_(j+a)s_(j-a-1),
+    s_j s_(j-1)-s_(j+a)s_(j-a-1)=s_a s_(a+1)
+
+gives q_0=1,q_1=x+y and
+
+    q_r=(x+y)q_(r-1)-gamma_r xy q_(r-2),
+    gamma_r=1-s_a s_(a+1)/[s_j s_(j-1)] in [0,1],
+    j=a+r<=J.                                     (24)
+
+In particular q_r>=0 COEFFICIENTWISE: induct on
+
+    q_r-xq_(r-1)
+      =y[q_(r-1)-xq_(r-2)]+(1-gamma_r)xyq_(r-2)>=0.
+
+Also q_r<=(x+y)^r, by (24) and induction. At u=0 the same interval
+continuant contains its all-monomer term plus only nonnegative
+terms. Hence K_(a,j)(u_a)<=K_(a,j)(0). Together with the j=a case
+of (22), the product in (23) is bounded by K_(a,j)(0)R_a(0), a
+literal subset of the zero-spectral paths contributing R_j(0)
+(those whose start is at most a and which visit a). This proves (22).
+The nodal K factors were not assumed positive without proof.
+
+Even N has the m shifted Chebyshev-root nodes. Odd N has m+1
+reflected Chebyshev-Radau nodes, including u=0. Since deg_u R_j<=J,
+ordinary Lagrange interpolation is EXACT. Its Lebesgue function on
+[-4,0] is bounded by C log(N+1). One elementary proof uses the
+full N-point odd-angle cosine grid, pairing reflected nodes. For
+even N the cosine degree is at most m-1 and the Dirichlet kernel
+has degree m-1; for odd N it has degree m. Discrete cosine inversion
+is exact on these spaces. The sum of absolute normalized kernel
+values is O(log N), by |D_k(t)|<=min(2k+1,1/|sin(t/2)|) and the
+harmonic sum over equally spaced points. Pairing cannot increase
+that bound. No interpolation is being applied directly to full V.
+
+Apply interpolation separately to each FACE coefficient in (22):
+
+    |R_j(u)|_coef<=C log(N+1) R_j(0), -4<=u<=0.    (25)
+
+On the delta cover, the ordinary polynomial Bernstein-Walsh bound
+in z=-1-u/2=-cos(2pi delta) then gives
+
+    |R_j(u(delta))|_coef
+       <=C log(N+1) exp[2pi j |Im delta|] R_j(0).   (26)
+
+For completeness, this bound follows by writing z=(w+w^-1)/2:
+the exterior maximum principle for w^(-j)p((w+w^-1)/2) bounds it
+by sup_[-1,1]|p|, with |w|=exp(2pi|Im delta|). Apply this scalar
+argument to each coefficient polynomial of actual degree at most j.
+
+Return to the exact central formulas (4)--(5). On any fixed strip
+|Im delta|<=T, the factors |u| and |a_(m-1)+u| are bounded by a
+constant depending only on T. The other cofactor products compare
+COEFFICIENTWISE to the zero-spectral central kernel. Indeed at even N,
+
+    D_b(0)>=s_(m-1)^2 (x+y) R_(m-2)(b;0),
+    (x+y)^2>=2xy,
+
+so either xy D_b(0)R_(m-2)(c;0) term is bounded by a constant
+times (x+y)D_b(0)D_c(0). The constants are uniform for N>=4.
+The latter is itself a summand of P_cross(0). At odd N,
+
+    G_b(0)>=s_m^2(x+y)D_b(0),
+    G_b(0)G_c(0)>=2s_m^4 xy D_b(0)D_c(0).
+
+Thus (26) yields the all-level coefficientwise bound
+
+    |P_cross(u(delta))|_coef
+       <=C_T log^2(N+1) exp[2pi d |Im delta|]
+                                            P_cross(0).       (27)
+
+It respects each actual original face exponent, so taking products
+and the ONE original marked shared coefficient gives
+
+    |S_(N,cross)(sigma(delta))|
+       <=[C_T log^2(N+1)]^R
+          exp[2pi d sum_e |Im delta_e|] Z_(N,cross)(0). (28)
+
+In particular the all-CROSS numerator has global REAL-spectral
+upper rate Phi throughout the complete real interval [-2,2]. This
+is stronger than a small endpoint-disk bound, but is not an angular
+gap on the face torus and not yet a FULL-numerator bound on that
+interval. It retains the actual shared targets and no independent
+choice of face radii.
+
+For clarity, the remaining one-sided issue has an exact formulation.
+At even N, P_left(u) is A_-(u) times the lower-block adjugate
+generating polynomial (with its actual c^m factor), and
+A_-(u)=2(-1)^m T_m((-2-u)/2) is bounded by 2 on the real interval.
+The adjugate entries have degree at most m-1 and thus the same exact
+interpolation. At a node a an entry i,j is zero unless i<=a<=j;
+its surviving expression has factors K_(i,a)K_(a,j), nonnegative,
+but also product_(r>j)(a_r-a_a), with sign (-1)^(m-1-j). Separate
+absolute prefix/suffix ratios against u=0 can be exponentially
+large. A uniform comparison of their COMBINED nodal coefficients
+has not been proved here. The global bound (28) must not be extended
+to the full one-sided remainder by silently dropping these factors.
+
+In fact such a POLYNOMIAL COEFFICIENTWISE extension to the full real
+interval is false. Take N=4k, m=N/2=2k, and j=k-1. The LEFT monomial
+x^j c^(d-j), with b=y=0, has exactly one path, using j one-steps.
+Its full-numerator coefficient is
+
+    A_-(u) [product_(r=1)^j s_r^2]
+                       product_(r=j+1)^(m-1)(a_r+u).           (29)
+
+At u=-4, equivalently sigma=+2, |A_-(-4)|=A_-(0)=2. Its absolute
+ratio to the positive endpoint coefficient at u=0 is therefore
+
+    product_(r=k)^(2k-1) tan^2((r+1/2)pi/N).         (30)
+
+The logarithmic rate of (30) is
+
+    2 integral_(1/4)^(1/2) log tan(pi t)dt
+        =2 Catalan/pi>0.                             (31)
+
+The endpoint logarithm is integrable; deleting a fixed small terminal
+interval and using the elementary sine-product bound there proves
+the midpoint Riemann limit, with no numerical extrapolation. Thus
+the combined one-sided adjugate coefficients really can exceed their
+u=0 values exponentially, even after restoring A_-(u). The issue is
+not merely a weakness of separate prefix/suffix estimates.
+
+It also occurs at a FIXED STRICT INTERIOR spectral point, not just
+at the already controlled closing cap. Take sigma=sqrt(3),
+u=-2-sqrt(3), and N divisible by24. Then m=N/2 is divisible by12,
+so A_-(u)=2T_m(cos(pi/6))=2. The same coefficient ratio is
+
+    product_(r=N/4)^(N/2-1) [sqrt(3)-c_r]/[2+c_r]
+        >=(sqrt(3)/2)^(N/12) (1+sqrt(3))^(N/6)
+        =(3+2sqrt(3))^(N/12).                       (32)
+
+Indeed c_r<=0 throughout the product and c_r<=-1 on its last N/6
+indices. This exact positive exponential lower bound requires no
+asymptotic extrapolation or endpoint limit.
+
+This is a LOCAL COEFFICIENT obstruction. It is not a counterexample
+to a shared-source spectral bound or to the original +2 physical
+resolvent cap. The marked coefficient may enforce additional global
+cancellations and incidence constraints. It shows precisely why the
+all-CROSS coefficientwise theorem cannot be substituted for a full
+real-spectral numerator theorem on the original period.
+
+## Finite validation
+
+../experiments/audit_actual_cross_cofactor_factorization.py compares the
+factorization with the original full-numerator unused-row path
+polynomial, already independently validated against physical coproduct
+matrices in the public Gaussian-resolvent audit. At N=3,...,12 it checks
+85 spectral values, 10395 polynomial coefficients, all 10 last-lower-
+diagonal zero cases, and 40 full complete-node/CROSS identities. Results:
+../experiments/actual_cross_cofactor_factorization_results.json, PASS.
+
+The same helper additionally checks 8326 central-strip derivative
+coefficient inequalities on 8786 original paths at N=8,...,15,
+70 digits, using eta=1/8 and the displayed uniform C_eta. This is
+a finite check of the exact repair statement, not the proof of its
+all-level bound. The proofs of (17)--(21) also use the separately
+reviewed endpoint volume, uniform coefficient, and unique-max theorems.
+It additionally checks 7324 nodal lower-cofactor coefficient bounds
+(22) at N=3,...,18, retaining all starting rows and both parities.
+
+The factorization comparisons are exact finite-field tests. No new
+independent physical matrix audit, fixed-complex relative packet (12),
+or finite-cycle survival is advertised here.
+
+[Focused audit](../experiments/audit_actual_cross_cofactor_factorization.py) · [Recorded output](../experiments/actual_cross_cofactor_factorization_results.json). These finite checks supplement the written proof and retain the scope recorded in their output.

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A relative packet for the cleared cofactor at a protected middle face · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a><p><span class="badge">Relative complex packet at protected middle</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_cross_cofactor_protected_packet.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_cross_cofactor_protected_packet.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_cross_cofactor_protected_packet_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="a-relative-packet-for-the-cleared-cofactor-at-a-protected-middle-face">A relative packet for the cleared cofactor at a protected middle face</h1>
+<p>The <a href="general_full_spectral_numerator_geometric_packet.html">whole-source local packet</a> now assembles these results for the actual full numerator. The original global spectral filling period remains open.</p>
+<p>31 October 2026. Internally reviewed. This concerns the actual fixed-root lower cofactor with b=0. It is not a whole-source saddle, filling-cycle or genuine-q theorem. All products below stay at level N.</p>
+<h2 id="exact-recurrence-and-statement">1. Exact recurrence and statement</h2>
+<p>Let x,y range in a sufficiently small fixed complex neighborhood of ANY fixed positive pair, let u range in a sufficiently small complex disk about 0, and put A=x+y, P=xy. Write h=1/N, s_j=2sin(pi<em>j/N), a_j=4cos^2(pi</em>(j+1/2)/N). The original cleared cofactor recurrence at b=0 is</p>
+<p>R_0=1, R_(-1)=0, R_j=s_j^2 A R_(j-1)+s_j s_(j-1)(a_(j-1)+u)P R_(j-2).</p>
+<p>Set L_j=R_j/(product_(r=1)^j s_r). Then EXACTLY</p>
+<p>L_j=s_j A L_(j-1)+(a_(j-1)+u)P L_(j-2), (L_0,L_(-1))=(1,0). (1)</p>
+<p>The normalization causes no loss at j=1: its second term multiplies L_(-1)=0. Fix 0&lt;t_0&lt;1/2 and take t_0 N&lt;=n&lt;=N/2. Define</p>
+<p>T_h(t)=[[2sin(pi<em>t) A, P(4cos^2(pi</em>(t-h/2))+u)],[1,0]], lambda_+(t), lambda_-(t)=its two eigenvalues, g(t)=lambda_+(t)-lambda_-(t).</p>
+<p>The square-root branch has g&gt;0 at real x,y&gt;0,u=0. Write lambda_(j,+) for lambda_+(j/N), and similarly for minus and g. The matrix at t=0 is only a reference eigenbasis; it does not change the initial vector. For all sufficiently large N these branches are holomorphic and</p>
+<p>C_j=(lambda_(j-1,+)-lambda_(j,-))/g_j =1+O(h), A_(N,n)=lambda_(n,+)/g_0 product_(j=1)^n C_j, E_(N,n)=product_(j=1)^n [s_j lambda_(j,+)].</p>
+<p>Then uniformly on the stated FIXED complex neighborhood,</p>
+<p>R_n(0;x,y;u)=A_(N,n) E_(N,n) [1+O(N^-1)]. (2)</p>
+<p>The explicit amplitude A_(N,n) is holomorphic, uniformly bounded and bounded away from zero. The same relative error has fixed parameter derivative bounds on every smaller neighborhood, by Cauchy. The finite-N product E retains all endpoint factors and parity dependence; no scalar normalization is discarded.</p>
+<h2 id="the-eigenvalues-have-an-algebraic-gap-even-at-the-lower-endpoint">2. The eigenvalues have an algebraic gap even at the lower endpoint</h2>
+<p>For positive real x,y, u=0 and h=0, the discriminant is</p>
+<p>4sin<sup>2(pi*t)A</sup>2+16cos^2(pi*t)P&gt;0, 0&lt;=t&lt;=1/2.</p>
+<p>Its minimum and lambda_+ are positive on this compact interval. They remain uniformly separated from zero for sufficiently small complex parameter perturbations and small real h&gt;=0. In particular |g|&gt;=c and |lambda_+|&gt;=c. All derivatives needed below are uniformly bounded on a small extension of this interval. lambda_- may vanish; no inverse of lambda_- is used.</p>
+<p>Put r(t)=lambda_-(t)/lambda_+(t). At t=0, r(0)=-1 EXACTLY, also for complex parameters. Since lambda_++lambda_-=2sin(pi*t)A,</p>
+<p>r’(0)=2pi A/lambda_+(0).</p>
+<p>Its real part is uniformly positive near the positive real parameters. Therefore |r(t)|&lt;=exp(-c t) for 0&lt;=t&lt;=epsilon with uniform c&gt;0, after shrinking the parameter neighborhood. On [epsilon,1/2], the real unperturbed |r| is strictly less than1; compactness extends a bound |r(t)|&lt;=exp(-c t) there as well. These estimates are uniform in sufficiently small h. Equality of the eigenvalue MODULI at t=0 therefore does not imply coalescence: |1-r| stays uniformly positive.</p>
+<h2 id="a-one-step-normal-form-including-the-initial-negative-branch">3. A one-step normal form, including the initial negative branch</h2>
+<p>Use E(t)=[[lambda_+(t),lambda_-(t)],[1,1]]. For the state vector v_j=(L_j,L_(j-1))^T, set w_j=E(jh)^(-1)v_j. The exact update is</p>
+<p>w_j=diag(lambda_(j,+),lambda_(j,-)) B_j w_(j-1), B_j=E(jh)^(-1)E((j-1)h).</p>
+<p>Here (B_j)<em>(++)=C_j. Divide out product lambda</em>(j,+) C_j, so the normalized update has the form</p>
+<p>M_j=diag(1,d_j)+F_j, d_j=r(jh)(B_j)_(–)/C_j, F_j diagonal entries 0, offdiagonal entries O(h).</p>
+<p>These matrices are samples of smooth functions of t, with F’(t)=O(h), |1-d(t)|&gt;=c, and |d_j|&lt;=exp(Ch-c<em>j</em>h). Choose the offdiagonal near-identity correction X_j by</p>
+<p>(X_j)_12=-(F_j)_12/(1-d_j), (X_j)_21= (F_j)_21/(1-d_j), diag X_j=0.</p>
+<p>Then X_j=O(h), X_j-X_(j-1)=O(h^2). Direct multiplication gives</p>
+<p>(I+X_j)^(-1) M_j (I+X_(j-1)) =diag(1,d_j)+O(h^2). (3)</p>
+<p>Only 1-d_j is divided out. This remains valid when d_j=0 and when r(0)=-1. The diagonal product norms are at most exp(Cnh), and the same holds for the corrected matrices, since each step has norm at most exp(Ch)+O(h^2). Telescoping their n-fold products in operator norm gives an O(nh^2)=O(h) error from the diagonal product. Meanwhile</p>
+<p>|product_(j=1)^n d_j|&lt;=exp(Cnh-c h n(n+1)/2)=O(exp(-c’ N))</p>
+<p>for t_0 N&lt;=n&lt;=N/2. Thus the initial negative branch is retained and then proved exponentially suppressed; it is not discarded by fiat.</p>
+<p>The initial eigenvector coordinates are exactly (1/g_0,-1/g_0). The near-identity corrections change them by O(h). Inverting the final basis yields</p>
+<p>L_n=[product lambda_(j,+) C_j] lambda_(n,+)/g_0 [1+O(h)],</p>
+<p>uniformly, since lambda_(n,+)/g_0 is bounded away from zero. This is (2). The amplitude product is bounded and nonzero because every C_j=1+O(h) and n=O(N). Uniform holomorphy proves the asserted Cauchy bounds.</p>
+<h2 id="scope-and-exact-degenerate-outer-faces">4. Scope and exact degenerate outer faces</h2>
+<p>If b=0 and exactly one of x,y vanishes, the original recurrence is instead the EXACT monomer product</p>
+<p>R_n=(x+y)^n product_(j=1)^n s_j^2,</p>
+<p>independent of u. No limiting inverse of xy is used. If both outer faces vanish and n&gt;0, the same original recurrence is zero; this is not part of the positive geometric triangle chart.</p>
+<p>For x,y&gt;0 the terminal ratios following from (2), uniformly on a smaller neighborhood, are</p>
+<p>R_n/R_(n-1)=s_n lambda_(n,+) [1+O(N^-1)]</p>
+<p>when n is m or m-1, m=floor(N/2). The limiting ratio is</p>
+<p>Lambda_*=2[A+sqrt(A^2+uP)].</p>
+<p>Consequently E(b)/D(b) tends to u/Lambda_* at this protected middle, with absolute O(N^-1) error. The case u=0 retains its actual small finite-N factor a_(m-1); the displayed limit does not replace that factor in any exact source identity.</p>
+<p>No claim is made here for an independently summed positive starting row b&gt;0, the original shared face torus, or the original Gaussian filling period. Those require additional arguments.</p>
+<p>Root and two independent reviewers checked the complete normal-form proof. The finite diagnostic below compares the actual recurrence and explicit product at 40 positive/complex parameter and level choices; it does not establish the uniform theorem by itself.</p>
+<p><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_cross_cofactor_protected_packet.py">Focused audit</a> · <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_cross_cofactor_protected_packet_results.json">Recorded output</a>. These finite checks supplement the written proof and retain the scope recorded in their output.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_cross_cofactor_protected_packet.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-recurrence-and-statement">1. Exact recurrence and statement</a><a href="#the-eigenvalues-have-an-algebraic-gap-even-at-the-lower-endpoint">2. The eigenvalues have an algebraic gap even at the lower endpoint</a><a href="#a-one-step-normal-form-including-the-initial-negative-branch">3. A one-step normal form, including the initial negative branch</a><a href="#scope-and-exact-degenerate-outer-faces">4. Scope and exact degenerate outer faces</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

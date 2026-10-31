@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A global angular gap for the actual cleared cross cofactors · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Fourier and energy</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a> · <a href="../library.html#fourier">Fourier, weighted Cauchy, and energy</a><p><span class="badge">Global local-angle bound on a thin spectral strip</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_cross_cofactor_global_angular_gap.md">Markdown source</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="a-global-angular-gap-for-the-actual-cleared-cross-cofactors">A global angular gap for the actual cleared cross cofactors</h1>
+<p>The <a href="general_full_spectral_numerator_geometric_packet.html">whole-source local packet</a> now assembles these results for the actual full numerator. The original global spectral filling period remains open.</p>
+<p>31 October 2026. Internally reviewed. All matrices, paths and spectral nodes are at the ORIGINAL level N. This is a local cofactor estimate on a thin spectral cover strip, not a Gaussian-cycle or whole-source theorem.</p>
+<h2 id="statement-and-exact-source-inputs">1. Statement and exact source inputs</h2>
+<p>Put d=N-1, J=floor(d/2), theta=pi/N,</p>
+<p>a_r=4cos^2((r+1/2)theta), s_r=2sin(r theta), A=x+y, P=xy, p_r=s_r^2 A, q_r(u)=s_r s_(r-1)(a_(r-1)+u)P.</p>
+<p>For j=J-k, with 0&lt;=k&lt;=k0 fixed, let R_j(b,u) be the actual cleared cofactor with recurrence</p>
+<p>R_j=b^j product_(r&lt;j)(a_r+u)+p_j R_(j-1)+q_j(u)R_(j-2). (1)</p>
+<p>This includes D,E’s R factor, and odd G. A zero face remains zero. Assume the positive entries of (x,b,y) range in a fixed positive compact, A&gt;0, and at least TWO entries are positive. Let epsilon&gt;0. If the circular phases of the positive face entries have diameter at least epsilon, then there exist gamma&gt;0,C,K and a FIXED strip height tau&gt;0 such that, uniformly for |Im delta|&lt;=tau and all real Re delta,</p>
+<p>|R_j(x exp(i theta_x),b exp(i theta_b),y exp(i theta_y); -4sin^2(pi delta))| &lt;=C N^K exp(-gamma N) R_j(x,b,y;0). (2)</p>
+<p>The statement includes b=0 and either single protected outer face. For b=0,xy=0 there is only one positive variable and the cofactor is an exact monomial; there is no relative-angle condition to assert. The case x=y=0 is excluded by the actual marked matching-edge dictionary.</p>
+<p>The exact node adapter, proved independently from the original matrices, is, for 0&lt;=a&lt;=j,</p>
+<p>R_j(b,-a_a)=K_(a,j)(-a_a) S_(2a)D_a(x,b,y), (3) R_a(b,-a_a)=S_(2a)D_a(x,b,y).</p>
+<p>Here K_(a,a)=1, K_(a,a-1)=0, and K follows p_v,q_v above. Also</p>
+<p>0&lt;=R_a(b,-a_a)&lt;=R_a(b,0), 0&lt;=K_(a,j)(-a_a)&lt;=K_mono(a,j):=product_(v=a+1)^j p_v. (4)</p>
+<p>These are COEFFICIENTWISE statements. For completeness the latter normalizes K by product s_v^2, giving</p>
+<p>Q_r=A Q_(r-1)-gamma_r xy Q_(r-2), gamma_r=1-s_a s_(a+1)/(s_(a+r)s_(a+r-1)) in [0,1].</p>
+<p>Induction on Q_r-xQ_(r-1)=y[Q_(r-1)-xQ_(r-2)] +(1-gamma_r)xyQ_(r-2) proves Q_r&gt;=0, then Q_r&lt;=A^r. Thus no absolute value of a sign-changing tail is assumed positive. The nodal positivity proof is in the reviewed cross-cofactor handoff §8.</p>
+<h2 id="a-strict-gap-at-all-far-nodes">2. A strict gap at all far nodes</h2>
+<p>Choose a fixed small delta0&gt;0, for example delta0&lt;1/8. Call a node far if a/N&lt;=1/2-delta0. This definition only separates nodes for this proof. It does not alter the physical folded label or its half-index. We prove, whenever at least two faces are positive,</p>
+<p>R_j(b,-a_a)&lt;=C exp(-gamma_far N)R_j(b,0) (5)</p>
+<p>uniformly over ALL these far nodes. This estimate needs no angular separation. Polynomial factors are harmless and can be absorbed by slightly reducing gamma_far.</p>
+<p>First suppose xy&gt;0; b may be zero. The fixed interval</p>
+<p>I=[1/2-delta0/2, 1/2-delta0/4]</p>
+<p>lies AFTER every far row a and BEFORE j for all sufficiently large N. On it every ratio</p>
+<p>q_v(0)/(p_v p_(v-1)) =(a_(v-1)xy)/(s_v s_(v-1)(x+y)^2)</p>
+<p>is bounded below by a positive compact-set constant. Choose cN disjoint pairs of adjacent steps in this interval. Starting with the all-monomer path from j to a, either retain each selected pair or replace it by its original dimer. The choices are independent and all paths are physical. Their sum therefore gives</p>
+<p>K_(a,j)(0)&gt;=exp(c’ N)K_mono(a,j). (6)</p>
+<p>On the other hand, K_(a,j)(0)R_a(b,0) is precisely the subset of paths in R_j(b,0) whose starting row is at most a and which visit a. There is no multiplicity in splitting a path at that row. Combining (4),(6) proves (5). All selected rows stay in a fixed strict bulk interval, so neither a near-zero initial row nor the actual folded endpoint affects the constants.</p>
+<p>Now suppose xy=0 and b&gt;0. Write A for the sole positive outer face. The recurrence is first order and its actual zero-spectral starting terms are</p>
+<p>W_i=b^i product_(r&lt;i)a_r product_(v=i+1)^j [s_v^2 A], R_j(b,0)=sum_(i=0)^j W_i.</p>
+<p>For a far node, all starts i&gt;a vanish exactly, and for i&lt;=a the ratio to W_i is product_(r&lt;i)(1-a_a/a_r). Uniformly for sufficiently large N, a_a&gt;=c_delta0&gt;0 and a_r&lt;=4. Hence starts i&gt;=eta N have ratio at most (1-c_delta0/4)^(eta N).</p>
+<p>The remaining short starts have an independent exact gap. Choose fixed eta&gt;0 small enough that, on the given positive compact,</p>
+<p>W_(i+1)/W_i=b a_i/(s_(i+1)^2 A)&gt;=1+c for all 0&lt;=i&lt;=2eta N</p>
+<p>and all sufficiently large N. Such eta exists from the displayed original sine/cosine entries. Each i&lt;=eta N is then exponentially smaller than W_floor(2eta N), by at least eta N consecutive ratios. Summing at most N terms gives</p>
+<p>sum_(i&lt;=eta N) W_i&lt;=CN exp(-c’eta N)R_j(b,0).</p>
+<p>Combining the two ranges proves (5), including x=0 and y=0. The only remaining case b=0,xy=0 is the excluded one-variable angular case.</p>
+<h2 id="the-near-nodes-have-the-original-determinant-angular-gap">3. The near nodes have the original determinant angular gap</h2>
+<p>For a/N&gt;=1/2-delta0, a&gt;=a0N for a fixed a0&gt;0. Apply the EXACT PSD contraction of actual_positive_face_coefficient_saddle.md §2 to</p>
+<p>D_a=det[bI+(x/2)H_-+(y/2)H_+].</p>
+<p>Its finite pair-trace lower bounds hold for every a0N&lt;=a&lt;=floor(d/2), not only a deficit o(N): this is the explicit scope and bulk-square proof in actual_q_hahn_boundary_model_curvature.md §§1–4.</p>
+<p>When x,b,y are all positive, the b–x and b–y pair traces are at least cN. If the positive-phase diameter is at least epsilon, one of these two phase differences is at least epsilon/2. When one outer face is zero, its single remaining pair has the same bound (220/022). When b=0 and x,y&gt;0, the original 202 variance/pair trace is at least cN. Consequently in every applicable zero pattern,</p>
+<p>|D_a(x exp(i theta_x),b exp(i theta_b),y exp(i theta_y))| &lt;=exp(-gamma_ang N)D_a(x,b,y). (7)</p>
+<p>This is a determinant modulus inequality on the ENTIRE phase torus, not a local complex-log estimate. The positive polynomial K in (3) has modulus at most its positive-radius value. Equations (3),(4),(7) therefore prove the same exponential nodal bound relative to R_j(0). For far nodes, (5) and the positive coefficient statement (4) already prove the bound at arbitrary phases. Thus ALL nodes a=0,…,j satisfy</p>
+<p>|R_j(faces with phases;-a_a)| &lt;=C exp(-gamma0 N)R_j(positive faces;0). (8)</p>
+<h2 id="exact-interpolation-including-the-omitted-last-nodes">4. Exact interpolation, including the omitted last nodes</h2>
+<p>The actual spectral degree of R_j is at most j. The full physical node family a=0,…,J is the even Chebyshev-root or odd Chebyshev-Radau family after the affine change z=-1-u/2. Its exact interpolation Lebesgue norm on [-4,0] is O(log(N+1)); this follows from discrete cosine inversion on the original N-point odd-angle grid and the bound |D_J(t)|&lt;=min(2J+1,1/|sin(t/2)|). This is the same exact interpolation used in the reviewed cofactor handoff, not interpolation of full V.</p>
+<p>If j=J, apply it directly to (8). If j&lt;J, DO NOT use an unavailable D_a adapter at a&gt;j. Instead put</p>
+<p>p(u)=R_j(faces with phases;u), Q(u)=p(u) product_(a=j+1)^J (u+a_a).</p>
+<p>The degree of Q is at most J. At the retained nodes its absolute value is bounded by 4^k times the right side of (8); at the omitted nodes it is EXACTLY zero. Full-grid interpolation gives</p>
+<p>||Q||_[-4,0]&lt;=C_k log(N+1) exp(-gamma0 N)R_j(0). (9)</p>
+<p>Division by these k fixed-in-number factors costs only a polynomial in N, even though their roots cluster at the endpoint. Here is an elementary bound with no spacing assumption. A polynomial p of degree j and interval supremum M has derivative supremum at most C(j+1)^3 M: expand in Chebyshev polynomials, whose coefficients have magnitude at most2M, and use ||T_l’||&lt;=l^2. Around a point attaining M, a one-sided interval of length c/(j+1)^3 has |p|&gt;=M/2. Remove small neighborhoods of the k roots occupying less than half that interval. At a remaining point every factor has magnitude at least c_k/(j+1)^3. Hence</p>
+<p>||p||<em>[-4,0]&lt;=C_k(j+1)^(3k)||Q||</em>[-4,0]. (10)</p>
+<p>This also holds for complex p, by the same cosine coefficient bound. Thus every required literal terminal cofactor satisfies an exponential angular gap on the WHOLE real spectral interval, with a polynomial prefactor. No last row or parity node has been silently replaced.</p>
+<p>Finally the elementary polynomial Bernstein bound on [-4,0] gives</p>
+<p>|p(-4sin^2(pi delta))| &lt;=exp(2pi j |Im delta|)||p||_[-4,0]. (11)</p>
+<p>Indeed z=-1-u/2=-cos(2pi delta)=(w+w^-1)/2 with |w|=exp(2pi|Im delta|); apply the exterior maximum principle to the polynomial of degree j after this substitution. Since j&lt;=N/2, choosing pi tau&lt;gamma0/2 makes (9)–(11) imply (2), with a possibly reduced gamma. The estimate is uniform for the full real fold interval and its periodic copies, not only near delta=0.</p>
+<h2 id="scope">5. Scope</h2>
+<p>This proof uses exact original node identities, finite positive paths, actual PSD angular bounds and finite polynomial interpolation. No complex starting-row contour or generic off-node PSD representation is required. Every physical starting row and the protected-middle i=0 contribution remains. The one-variable monomials are explicitly exempt because their sole phase is a common homogeneous phase.</p>
+<p>The local factors can serve a whole shared-face angular argument only after checking the actual connected phase graph, keeping every other factor under a uniform spectral bound, and retaining the original marked coefficient and finite central prefactors. The local theorem alone is not a full shared coefficient asymptotic or a selected Gaussian period.</p>
+<h2 id="independent-review">Independent review</h2>
+<p>Root and coherent_partner_currents independently reviewed the full analytical proof: PASS, including both far-node cases, the actual determinant pair-trace scope, all omitted terminal nodes and the thin-strip extension. Stable private proof. This is a local cofactor input, with no independent whole-source or Gaussian-cycle assertion.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_cross_cofactor_global_angular_gap.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#statement-and-exact-source-inputs">1. Statement and exact source inputs</a><a href="#a-strict-gap-at-all-far-nodes">2. A strict gap at all far nodes</a><a href="#the-near-nodes-have-the-original-determinant-angular-gap">3. The near nodes have the original determinant angular gap</a><a href="#exact-interpolation-including-the-omitted-last-nodes">4. Exact interpolation, including the omitted last nodes</a><a href="#scope">5. Scope</a><a href="#independent-review">Independent review</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

@@ -12,6 +12,34 @@ a [unique geometric maximum](actual_fejer_unique_geometric_maximizer.md).
 This settles the positive endpoint optimization at every certified fixed
 width. The remaining task is the original phase-sensitive filling period.
 
+The [full spectral numerator theorem](general_full_spectral_numerator_geometric_packet.md)
+now proves a nonzero relative asymptotic on a fixed complex neighborhood
+of the geometric endpoint, including every spectral Hermite datum. Its
+ordinary-face cycle is the original Cauchy torus. The
+[absolute marked action](actual_cross_cofactor_marked_action.md) identifies
+the unit-charge filling critical value with the actual filled volume.
+The [local charge comparison](general_local_charge_critical_monotonicity.md)
+proves strict dominance of the all-unit charge among nearby positive
+integer charges, uniformly for independent signed twists with no ratio
+condition. These results hold under the supplied simple-white geometric
+certificate at arbitrary fixed plat width.
+
+The [localized original-period theorem](general_localized_unit_charge_filling_period.md)
+now deforms the actual restricted spectral contour to that saddle,
+retains its boundary currents, and proves its coefficient is nonzero.
+The finite local charge sector therefore has the actual filled volume
+as its normalized logarithmic growth rate, at both level parities.
+
+What remains on this direct route is the **exact global remainder**:
+outside-cube integrals of the finitely selected charges and the complete
+original integrals of every remaining charge. Their total must not
+cancel or dominate the proved local sector. The ordinary-face cycle
+and the localized spectral contribution have both been established.
+A separate generic-q normal estimate is unnecessary for this exact
+fixed-root route; see the [scope audit](fixed_root_direct_power_scope.md).
+The older mixed-color route and its conditions are preserved below as
+alternative approaches.
+
 There is now a whole-source intermediate theorem: the
 [original signed augmented source](general_signed_augmented_source_volume.md)
 has limit equal to the actual complete volume for every fixed connected
@@ -214,8 +242,9 @@ retain both semisimple and nilpotent data of every original pair Casimir.
 The numerator is an exact coherent transform of ALL physical colors;
 its positive path expansion can be sewn with the same shared face
 targets. The closing cap near spectral +2 is controlled at fixed twist
-power. The remaining global contour, its nonzero Fourier charges, and
-the shared numerator estimate are explicit outstanding problems. Long
+power. The fixed complex shared numerator estimate is now proved. The remaining
+global spectral contour and its Fourier charge sum are explicit
+outstanding problems. Long
 twisting alone does not damp both sides of a spectral contour.
 
 The [full positive endpoint theorem](general_fejer_endpoint_source_volume.md)
@@ -229,10 +258,17 @@ The [unique-maximizer theorem](actual_fejer_unique_geometric_maximizer.md)
 identifies the only endpoint maximum with the original marked complete
 geometry and gives a strict gap for its complement, including the entire
 one-sided remainder. These are positive-source and spectral statements.
-The original Gaussian filling cycle, nonzero geometric contribution and
-full complementary-contour estimates remain the phase-sensitive gap.
+The localized spectral Gaussian unit-charge contribution is now proved.
+The exact complementary spectral/charge remainder is the phase-sensitive gap.
 
-## 4. Inputs still needed for general signed long fillings
+## 4. Remaining inputs and preserved alternative routes
+
+For the current direct fixed-root route, the full local numerator packet,
+its contributing ordinary-face saddle and the marked filled critical
+value are proved by the results linked at the start. The remaining
+input is the exact global remainder after the proved localized charge sector. The mixed-color
+requirements in this section concern the older alternative route and
+must not be added as prerequisites to the direct one.
 
 **Full mixed-color quantum source.** The complete-image term already
 has its exact holomorphic packet and a uniform complex asymptotic.
