@@ -45,6 +45,70 @@ Here $\tau$ is the cusp shape computed from the preferred meridian and longitude
 
 For a general Conway composition, the next step remains an estimate on the signed sum as the main meridian varies. The new note gives a sufficient condition: the sum of absolute weights must be controlled relative to the invariant, and the terms near the endpoints must be small under that same comparison. The figure-eight sum is positive and concentrated away from the endpoints, so both conditions hold. Bounds on individual factors in an arbitrary signed sum do not establish them. The existing Conway volume theorem leaves the main meridian parabolic; it does not yet give this more detailed profile.
 
+## What is now exact when the main meridian moves
+
+The [oriented tangle calculation](../../notes/actual_main_meridian_newton_compiler.md)
+now keeps the two strand directions throughout a Conway construction.
+A strand and its reverse carry the dual colors \(V_+\) and \(V_-\).
+Pairs of equally directed strands have a moving Casimir polynomial;
+pairs with opposite directions have a constant one. Turns connect
+these different spaces through the original evaluation and
+coevaluation maps. Treating every pair as one unchanged algebra
+would lose that distinction.
+
+Several parts of this calculation are proved uniformly in the level.
+Changing the normalized Newton basis costs at most a polynomial in
+\(N\) on each bounded microscopic meridian disk, and the inverse
+change has the same property. An exact trace pairing recovers every
+coefficient of the physical tangle. Although repeated turns can
+produce higher apparent poles during a recursive calculation, every
+final coefficient has at most a simple ordinary-color pole.
+The primitive closing trace supplies exactly
+\(H_N(z)=\sinh(z/2)/(N\sinh(z/(2N)))\). The prescribed ordinary-color
+subtraction remains necessary at its zeros.
+
+The [multiplication formula](../../notes/actual_main_meridian_newton_multiplication.md)
+shows exactly how this algebra changes. At completeness a product
+of Newton basis elements with indices \(i+j\ge N\) vanishes.
+Moving the meridian generally makes it nonzero. The formula gives
+the signs of the resulting coefficients and their exponential
+rates when the normalized indices stay away from the boundary.
+
+Their nonzero first derivatives have a precise explanation: the
+Newton basis itself moves. Keep the complete basis fixed instead.
+The relation defining the algebra then changes only by
+\[
+\Delta_s=2\cos(2\pi s)-2.
+\]
+Since \(\Delta'_0=0\), multiplication in these fixed coordinates has
+zero first derivative. Multiplication by the Casimir changes by
+one matrix entry, of magnitude \(|\Delta_s|/N^2\).
+This simplifies the algebraic deformation, but does not yet bound
+the high-degree polynomials and turns used to calculate the knot.
+The sum over all internal indices, with its signs retained, still
+needs an estimate.
+
+There is a second route through the recurrence. The
+[finite matrix criterion](../../notes/actual_main_meridian_finite_matrix_criterion.md)
+retains the whole finite-cut operator before root specialization,
+including its first derivative in the quantum parameter. In the
+central variable \(U=Y^N\), the minors used to describe its kernel
+have bounded Laurent degree. The original finite sum separately
+bounds the degree of the selected state's free coordinates.
+Their normal equation therefore becomes a linear system whose
+number of unknown coefficients is independent of \(N\).
+
+Uniform conditioning of that system, together with the stated
+reconstruction bounds, would prove a volume limit on a fixed small
+disk in \(z\), hence on a meridian disk of radius \(O(1/N)\).
+For the covered knots, the right side would remain the volume of
+the same knot complement. The criterion is proved; its conditioning
+hypotheses have not been verified for a general Conway family.
+This gives two concrete next estimates: control the deformed tangle
+contraction, including the additional coefficients, or control this
+finite operator system. Neither estimate is supplied merely by the
+complete scalar volume theorem.
+
 ## What the Fourier transform preserves
 
 The Fourier transform gives an exact algebraic correspondence, but one must keep the equations produced by the starting point of the color sequence. Write $Q=q^2$, let $T$ shift the color, and let $S_Xg(X)=g(QX)$. The substitution

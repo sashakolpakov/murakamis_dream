@@ -43,6 +43,32 @@ needed to extend the argument to signed sums for other knots.
 [PDF](figures/figure-eight-meridian-profile.pdf) ·
 [Reproduction script](../experiments/plot_figure_eight_meridian_profile.py)
 
+## Products of tangle polynomials as the meridian varies
+
+![Two triangles distinguish the Newton products that are nonzero at completeness from those that can become nonzero after changing the meridian.](figures/moving-newton-products.png)
+
+A two-strand tangle operator is expressed in the normalized Newton
+basis \(e_0,\ldots,e_{N-1}\) of its Casimir polynomial algebra.
+Joining two boxes requires multiplying their polynomials. Here
+\(i,j\) are the indices of two basis elements; the axes show
+\(x=i/N\) and \(y=j/N\). At the complete meridian \(s=0\),
+the product \(e_i e_j\) is zero whenever \(i+j\ge N\).
+For a generic displacement \(M=q_N^s\), those products become
+nonzero. The [multiplication theorem](../notes/actual_main_meridian_newton_multiplication.md)
+gives every coefficient and explains the special displacements
+where some coefficients vanish again.
+
+This is a picture of multiplication in a specified basis. The basis
+also changes with \(s\); its motion accounts for the nonzero first
+derivatives of the new coefficients. Keeping the complete basis
+fixed makes the first derivative of multiplication zero.
+Neither description by itself estimates the knot invariant, which
+also requires turns, summation over shared indices, and closure.
+
+[Vector figure](figures/moving-newton-products.svg) ·
+[PDF](figures/moving-newton-products.pdf) ·
+[Reproduction script](../experiments/audit_main_meridian_newton_algebra.py)
+
 ## The operations that build the knot diagram
 
 ![Three panels show the actual connections for stacking two four-ended tangles, rotating a tangle by a quarter-turn, and taking the cylindrical closure.](../manuscript/build/figures/tangle-construction.png)

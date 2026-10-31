@@ -158,6 +158,39 @@ sum, but its hypotheses have not been established for general
 Conway main-meridian deformations. That extension is distinct
 from the complete-value volume theorems above.
 
+## An exact calculation for oriented tangles at a varying meridian
+
+There is also a general finite result, independent of any
+large-twist assumption. The [oriented tangle theorem](../../notes/actual_main_meridian_newton_compiler.md)
+expresses every fixed Conway construction using its actual strand
+colors, turns, products and primitive closing trace. It retains the
+dual color on a reversed strand and all repeated-root information.
+The Newton coordinate changes and their inverses have polynomial
+bounds in \(N\) when the displacement \(s\), defined by \(M=q_N^s\),
+stays in a fixed compact set.
+
+The accompanying [multiplication theorem](../../notes/actual_main_meridian_newton_multiplication.md)
+gives every coefficient explicitly. It includes the products with
+\(i+j\ge N\), where \(i,j\) are Newton basis indices. These products
+vanish at completeness but generally become nonzero when \(s\)
+moves. Their signs and interior exponential rates are determined
+by the formula. Their nonzero first derivatives come entirely from
+the moving basis: in fixed polynomial coordinates multiplication
+has zero first derivative at completeness. In those coordinates,
+multiplication by the Casimir changes by a single matrix entry.
+
+![The index pairs below the line i+j=N give nonzero Newton products at completeness. Products on and above the line vanish there and can become nonzero when the meridian moves.](../figures/moving-newton-products.png)
+
+These are identities and estimates for the algebra used to
+calculate the invariant. An asymptotic theorem for the resulting
+signed sum requires further control. The [operator criterion](../../notes/actual_main_meridian_finite_matrix_criterion.md)
+provides another precise sufficient condition: uniform bounds for
+the reconstruction frame and a lower singular-value bound for a
+linear system of bounded size. Under those conditions, an already
+proved complete volume limit extends uniformly to a small
+microscopic meridian disk. The conditions have not yet been proved
+for a general Conway family.
+
 ## Included tree families and the manuscript
 
 The [weighted-tree theorem](../../notes/actual_conway_weighted_tree_long_twist_volume.md) supplies an explicit construction with one independent integer per vertex, arbitrary fixed branching, and chains of vertices. Its literal closure is specified in the theorem. If $H$ is the number of basic pieces and $v_{\mathrm{oct}}$ the volume of a regular ideal octahedron, its complete augmented exterior has volume $2v_{\mathrm{oct}}(H-1)$. The knot volume is the separately calibrated value after filling; it is not replaced by that complete volume.
