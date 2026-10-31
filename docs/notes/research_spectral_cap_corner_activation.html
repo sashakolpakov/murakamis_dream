@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A positive ordinary-zero barrier at the remaining monomial cap corner · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Fourier and energy</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#sharp-source">The sharp source and its stationary maxima</a><p><span class="badge">Joint cap and degree retuning activates ordinary zeros</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/research_spectral_cap_corner_activation.md">Markdown source</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="a-positive-ordinary-zero-barrier-at-the-remaining-monomial-cap-corner">A positive ordinary-zero barrier at the remaining monomial cap corner</h1>
+<p>31 October 2026. <strong>Internally reviewed research lemma.</strong> Root and a separate reader completed full analytical reviews. This uses the ORIGINAL sharp full/half interval functional, with both unused products and the actual positive-eta word. It concerns a simultaneous degree/spectrum perturbation at a free-spectrum maximum. It asserts no finite-N estimate uniform in a shrinking spectral cap.</p>
+<h2 id="the-cap-corner-and-the-actual-feasible-direction">1. The cap corner and the actual feasible direction</h2>
+<p>At delta=1/2 take the positive-length monomial corner</p>
+<pre><code>mu=0, 0&lt;nu0&lt;1/2, xi=0, zeta=nu0.</code></pre>
+<p>The original face loads in order (x,b,c,y) are (0,0,1-nu0,nu0). Let an admissible original affine direction give</p>
+<pre><code>mu_eps=eps B, xi_eps=eps X, nu_eps=nu0+O(eps),
+B,X&gt;=0.</code></pre>
+<p>Fix K&gt;0 and choose the open real spectrum by</p>
+<pre><code>k_eps^2=cos^2(pi delta_eps)=eps K.                  (1)</code></pre>
+<p>Then</p>
+<pre><code>h_(delta_eps)(q_eps)
+  =(B+X)eps log(1/eps)+O(eps).                     (2)</code></pre>
+<p>The base cap value is zero. Thus any activation of the parent middle or the zero outer degree gives a strictly positive singular gain. The other outer-zero case is the literal x/y symmetry; exact finite row reversal gives the protected-output/RIGHT version. These operations do not change original shared targets.</p>
+<h2 id="monomer-baseline-including-the-initial-removed-interval">2. Monomer baseline, including the initial removed interval</h2>
+<p>Put g_k(t)=log[sin^2(pi t)/|k<sup>2-sin</sup>2(pi t)|]. The sharp action is</p>
+<pre><code>h_delta=I_k(nu)-int_0^mu g_k(t)dt+J_k^*,
+I_k(nu)=int_0^nu g_k(t)dt,
+J_k^*=inf_(x&gt;0)[int_mu^nu log rho_k(t;x)dt-xi log x],
+rho_k(t;x)=[1+x+sqrt((1-x)^2+4k^2 x/sin^2(pi t))]/2.</code></pre>
+<p>The exact total half integral of g_k is zero. Since nu stays a fixed positive distance from0, the suffix is regular for small k, giving</p>
+<pre><code>I_k(nu)=-k^2 cot(pi nu)/pi+O(k^4)=O(eps).          (3)</code></pre>
+<p>On 0&lt;=t&lt;=eps B, sin^2(pi t)=pi^2 t<sup>2[1+O(t</sup>2)] and k^2=eps K. The entire removed interval lies before the small pole when B is fixed. With t=eps s,</p>
+<pre><code>g_k(eps s)=log eps+log(pi^2 s^2/K)+O(eps s^2),
+int_0^(eps B)g_k(t)dt=B eps log eps+O(eps).         (4)</code></pre>
+<p>The logarithm at s=0 is integrable. If B=0 the interval is empty. Equation (4) has one log eps, not two: the unused spectral scale k^2 is itself proportional to eps.</p>
+<h2 id="uniform-tilted-root-estimates-at-this-moving-cap-scale">3. Uniform tilted-root estimates at this moving cap scale</h2>
+<p>Suppose X&gt;0. Let u denote the positive x/y tilt in this section, and put</p>
+<pre><code>D=sqrt((1-u)^2+4eta u), eta=k^2/sin^2(pi t).</code></pre>
+<p>The exact derivative is</p>
+<pre><code>partial_(log u)log rho
+    =1/2+(u-1)/(2D)=2eta u/[D(D+1-u)].             (5)</code></pre>
+<p>For 0&lt;u&lt;=1/2 it is uniformly comparable to min(1,eta u), with constants independent of k. On the interval under consideration sin(pi t) is comparable to t. With a=k sqrt u, integration therefore gives</p>
+<pre><code>partial_(log u)J(mu,nu,u) asymp a^2/(mu+a).       (6)</code></pre>
+<p>At any fixed small u0&gt;0, the left side is comparable to k~sqrt eps, which is much larger than the required xi=eps X. Strict tilt convexity thus puts the unique minimizing tilt below u0. Apply (6) at the minimizer: since mu=eps B,</p>
+<pre><code>a asymp eps, u=a^2/k^2 asymp eps.                (7)</code></pre>
+<p>These constants depend on the fixed B,X,K and nu0, but not eps. There is no reuse of a bound proved only for k bounded away from zero.</p>
+<p>Furthermore J&gt;=0 and J&lt;=Ca. To verify the upper bound, for eta u&lt;=1 use log rho&lt;=Ceta u. Where eta u&gt;1 use log rho&lt;=C+log(a/t). Split the integral at t=a; the lower part is O(a), and the upper part is bounded by C int_a^nu a<sup>2/t</sup>2 dt=O(a). Thus</p>
+<pre><code>J=O(eps),
+J_k^*=-X eps log eps+O(eps).                     (8)</code></pre>
+<p>If X=0 the normalized word is exactly monomial and J_k^*=0. Combining (3), minus (4), and (8) proves (2), including B=0 or X=0.</p>
+<h2 id="the-flat-terminal-monomial-cases">4. The flat terminal monomial cases</h2>
+<p>At nu0=1/2, mu=xi=0, the monomer interval is a whole half interval, so h_delta=0 for EVERY delta. At the full interval mu=0,nu=1 with one outer degree zero, the same is true by reflection. At a global free-spectrum maximum one may therefore retune these base ports to ANY fixed strict delta before perturbing their degrees, with no base cost. The <a href="research_sharp_spectral_ordinary_zero_barrier.html">fixed-spectrum corner barrier</a> applies to the half-terminal case even if the full-source perturbation extends nu through1/2.</p>
+<p>There is a stronger half-terminal conclusion on the full original flow fiber when the perturbation is toward its actual geometric all-CROSS flow. Retune the zero-valued half-terminal monomial base to delta=0. In its exact latent two-triangle split the output triangle is the pure-middle vertex. The geometric output middle is strictly less than 1/2, so dot_nu&gt;0 and that triangle gains</p>
+<pre><code>2 dot_nu eps log(1/eps)+O(eps).</code></pre>
+<p>The input triangle has no negative singular contribution. The gain persists even when its parent middle and zero outer incidence are both protected. Thus a half-terminal monomial at any initial spectrum cannot occur at the global maximum covered by the <a href="research_full_fiber_sharp_boundary_activation.html">full-fiber activation theorem</a>. Exact reflection gives the upper half-terminal case. This uses the full original fiber and its actual latent split, not a relabeling inside a fixed LEFT or RIGHT support.</p>
+<p>For completeness the full two-terminal corner has the following exact fixed-spectrum extension. Set mu=eps B, 1-nu=eps C and keep delta in a strict compact. If both base outer loads are positive, use xi=xi0+eps dot_xi with 0&lt;xi0&lt;1. The endpoint expansions Lambda~constant times t and constant times(1-t) give coefficient B+C of eps log(1/eps). At the monomial outer corner instead set xi=eps X. Then the beta baseline contributes 2(B+C), and the tilted mean is comparable to</p>
+<pre><code>u/(eps B+sqrt u)+u/(eps C+sqrt u).</code></pre>
+<p>For X&gt;0 this forces u~eps^2; the word action is O(eps) and its Legendre term contributes 2X. For X=0 it is exactly zero. The resulting coefficient is 2(B+C+X), or its outer reflection. Thus these flat monomial corners also have a positive activation barrier whenever an ordinary zero is activated. This two-terminal statement is about the full original interval, not a simultaneous use of two independently chosen half rows.</p>
+<h2 id="scope-of-a-shared-use">5. Scope of a shared use</h2>
+<p>Equation (2) can be applied at every remaining monomial cap corner in the same original feasible segment. If B=X=0, both zero incidences stay zero; one can simply keep the flat cap value zero, or use the <a href="research_free_spectral_diagonal_retuning.html">uniform cap-retuning lower bound</a> to make its cost negligible. When a zero incidence is ordinary and the actual geometric all-CROSS direction is used, its activation slope is strictly positive. If both zeros are protected, both slopes vanish and there is no ordinary zero to remove.</p>
+<p>This lemma does not, by itself, classify every possible cap maximum. It must be combined with the separate fixed-load cap exclusions and the other local directional estimates. In particular the negative pole-start singularity at a different non-diagonal port cannot be ignored.</p>
+<p>For each fixed eps&gt;0 the new delta lies strictly inside the real spectral interval. Evaluate the sharp continuum functional at that fixed eps, then let eps tend to zero in the variational contradiction. If a separate coefficient identification is used, its N limit is taken with eps fixed. No simultaneous N-dependent retuning, nonzero bound through an omitted-half zero, sharp Fourier-cycle contribution, or volume comparison is asserted.</p>
+<h2 id="review-scope">Review scope</h2>
+<p>Root and an independent reader checked the full moving-cap calculation, the exact monomer baseline, the tilt scale u comparable to epsilon, the O(epsilon) word integral, the flat terminal retuning and both two-terminal coefficients. The final wording separates strict-base outer loads from the monomial corner and uses the sharp continuum functional directly. Both readers separately checked the half-terminal retuning to delta=0 and its geometric latent-triangle gain. These are internal reviews, not external peer review. No numerical asymptotic audit is claimed.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/research_spectral_cap_corner_activation.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-cap-corner-and-the-actual-feasible-direction">1. The cap corner and the actual feasible direction</a><a href="#monomer-baseline-including-the-initial-removed-interval">2. Monomer baseline, including the initial removed interval</a><a href="#uniform-tilted-root-estimates-at-this-moving-cap-scale">3. Uniform tilted-root estimates at this moving cap scale</a><a href="#the-flat-terminal-monomial-cases">4. The flat terminal monomial cases</a><a href="#scope-of-a-shared-use">5. Scope of a shared use</a><a href="#review-scope">Review scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

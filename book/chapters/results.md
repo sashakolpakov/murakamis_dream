@@ -2,6 +2,27 @@
 
 The project seeks equality for broad classes of hyperbolic knots, with the right side established as the volume of the actual complement. The results below are research proofs recorded and internally reviewed in this repository. They are not claims of external peer review.
 
+## A global source upper bound and the classification of its maxima
+
+The [closed-domain majorant theorem](../../notes/research_global_sharp_coefficient_limsup_majorant.md) now bounds every coefficient of the original spectral numerator, uniformly over all real spectra, closed degree boundaries, both level parities and sampled zeros. Its continuous sharp functional is denoted by $H_\delta(q)$. On the **original** shared flow polytope $\mathcal P_D$, define
+
+$$M_D=\max_{q\in\mathcal P_D,\;\boldsymbol\delta\in[0,1/2]^R}
+\sum_e H_{\delta_e}(q_e).$$
+
+Each port supplies one, each ordinary face demands one, and the two protected faces demand zero. Polynomially many original degree arrays then give the uniform upper bound
+
+$$\sup_{\boldsymbol\delta}|S_N(\boldsymbol\delta)|\le e^{N(M_D+o(1))}.$$
+
+This is an upper bound for the actual raw shared numerator. It asserts neither equality of rates nor a nonzero lower asymptotic.
+
+On a certified simple-white diagram, the [full-fiber activation theorem](../../notes/research_full_fiber_sharp_boundary_activation.md) excludes every ordinary zero incidence and every diagonal port at a global maximum. The [stationary classification](../../notes/research_full_fiber_sharp_stationary_classification.md) then gives finite common positive ordinary face weights. Each port is complete strict CROSS at $\delta=0$, a strict pole-straddling LEFT/RIGHT branch at $0<\delta<1/2$, or one of at most two marked cap corners. A cap has two protected zero incidences, $0<\nu<1/2$, and equal remaining ordinary weights. Protected zeros are retained throughout. For a maximum restricted to the non-CROSS union, the theorem requires value at least $\Phi_D$ and a strict non-CROSS middle margin.
+
+The [elementary odd-cycle theorem](../../notes/research_stationary_noncross_main_cycle_obstruction.md) further proves that every non-CROSS port at such a maximum forces an odd four-cycle on the actual port/face incidence graph. Thus a phase-coherent maximum must be entirely complete CROSS. This is a qualitative sign obstruction, not a quantitative cancellation estimate.
+
+![The uniform original-source upper bound, full-fiber stationary classification, forced odd cycles and the remaining absolute volume comparison.](../figures/sharp-source-boundary-classification.png)
+
+The remaining general step is to turn these forced mismatches into an absolute bound at the complete-volume rate. The [flat-cap counterexample](../../notes/research_flat_cap_no_local_exponential_angular_gap.md) explains one limitation: a locally mismatched alternating cap window can retain a polynomial fraction of its positive envelope. Neither $M_D\le\Phi_D$ nor the full general filling-period bound follows from the classification. The previously proved knot families and conditional certificates below remain unchanged.
+
 ## Phase cancellation on regular source windows
 
 The [regular-window theorem](../../notes/research_regular_spectral_window_phase_exclusion.md) proves a phase-sensitive estimate for the actual source, with all four incident weights positive at each selected port and strict interior start/stop maxima. Away from its local alignment,

@@ -2,6 +2,18 @@
 
 The target remains a volume theorem for broad classes at every fixed bridge width. The [new one-end layer family](../../notes/general_one_end_layer_long_filling_volume.md) now gives the full original invariant's limit for every $k\geq2$, with $3k-3$ independently long fixed signed twist regions and exact-bridge-$k$ subfamilies. The wider [balance theorem](../../notes/general_complete_radius_balance_filling_volume.md) applies to every certified diagram passing its finite complete-packing test. The unrestricted conjecture remains open.
 
+## The global upper problem now has a stationary classification
+
+The [global sharp majorant](../../notes/research_global_sharp_coefficient_limsup_majorant.md) covers the whole closed real spectral and degree domain, including both parities and the final cap. It reduces the original raw numerator to a compact upper problem with the original shared targets:
+
+$$\sup_{\boldsymbol\delta}|S_N(\boldsymbol\delta)|\le e^{N(M_D+o(1))},
+\qquad M_D=\max_{q\in\mathcal P_D,\;\boldsymbol\delta\in[0,1/2]^R}
+\sum_e H_{\delta_e}(q_e).$$
+
+At an unrestricted maximum on a certified simple-white diagram, [boundary activation](../../notes/research_full_fiber_sharp_boundary_activation.md) removes all ordinary zero incidences and diagonal ports. The [stationary theorem](../../notes/research_full_fiber_sharp_stationary_classification.md) supplies finite common weights and leaves only complete CROSS, strict straddling LEFT/RIGHT branches, and at most two double-protected marked cap corners. Every non-CROSS port then forces an [elementary odd MAIN four-cycle](../../notes/research_stationary_noncross_main_cycle_obstruction.md). A constrained non-CROSS maximum needs value at least $\Phi_D$ and a strict middle margin for this reduction.
+
+The question has narrowed from arbitrary boundary configurations to a quantitative cancellation problem on these classified maxima. An odd cycle prevents a common phase assignment, but does not by itself compare the remaining absolute source rate with $\Phi_D$. At the [flat cap](../../notes/research_flat_cap_no_local_exponential_angular_gap.md), a uniform local exponential angular gap is false. The [results section](results.md#a-global-source-upper-bound-and-the-classification-of-its-maxima) records the complete theorem chain and its qualifications. The general invariant theorem remains open.
+
 ## A phase-sensitive bound on the original regular windows
 
 The [exact source transfer](../../notes/research_original_one_sided_four_state_transfer.md) has a before state, a two-state active block and an after state. Its direct before-to-after entry retains the original diagonal path $i=j$. All prefix and suffix rows, omitted-half scalar modes and raw signs stay in the identity.
@@ -16,7 +28,7 @@ $$\vartheta_x=\vartheta_y=\vartheta_b=\vartheta_c-\pi.$$
 
 The full-row version uses the actual signs of the unused-row factor at each endpoint. The [mixed cycle criterion](../../notes/research_mixed_cross_window_cycle_packing.md) now includes the proved single-protected-outer and single-protected-middle windows, and whole CROSS coupons with their exact positive endpoint majorants. Only supported incidences enter the $0/\pi$ constraints. Fractional packing of odd cycles turns the certified local losses into a shared Cauchy improvement $e^{-\kappa N}$, with one radius per original face and unchanged targets. The [results section](results.md#phase-cancellation-on-regular-source-windows) groups these four extensions and their precise hypotheses.
 
-The next quantitative step is to prove that the positive majorant rate minus the cycle loss is below $\Phi_D$, with uniform estimates for an exhaustive source decomposition. That inequality is not automatic. Compatible phase systems, double-zero specializations, spectral caps and irregular boundary maxima remain separate parts of the general problem. The coefficient-energy criterion below is another proved reduction; neither route currently establishes universal diagram coverage.
+The next quantitative step is to prove that the positive majorant rate minus the cycle loss is below $\Phi_D$, with uniform estimates for an exhaustive source decomposition. That inequality is not automatic. The new classification excludes phase-compatible non-CROSS maxima under its stated hypotheses. Quantitative control near the classified maxima, including the marked cap corners, remains necessary. The coefficient-energy criterion below is another proved reduction; neither route currently establishes universal diagram coverage.
 
 ## From coefficient Cauchy to a shared volume inequality
 

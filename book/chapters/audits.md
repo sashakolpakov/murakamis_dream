@@ -8,6 +8,12 @@ An exact symbolic identity can verify a stated algebraic step for independent fo
 
 Each technical note specifies its proof and the narrower role of its audit. The archive keeps scripts and result files accessible together.
 
+## The global sharp-source and boundary proofs
+
+The [closed-domain upper theorem](../../notes/research_global_sharp_coefficient_limsup_majorant.md), [full-fiber activation](../../notes/research_full_fiber_sharp_boundary_activation.md) and [stationary classification](../../notes/research_full_fiber_sharp_stationary_classification.md) have full internal analytical reviews. Their boundary inputs prove the directional entropy gains, free-spectrum retuning and protected cap exclusions directly. The [odd MAIN-cycle theorem](../../notes/research_stationary_noncross_main_cycle_obstruction.md) uses exact source characters and original face demands; the [flat-cap limitation](../../notes/research_flat_cap_no_local_exponential_angular_gap.md) is an exact alternating-sum inequality.
+
+No new numerical asymptotic audit is claimed for this batch. The existing four-state and window audits below support the retained finite source factors and indices; they do not establish the analytic majorant, classify its maxima, or prove a global volume comparison. The written proofs and their internal review scope are recorded in each note. They are not external peer review.
+
 ## Exact transfers supporting the phase estimate
 
 The new analytic phase argument has two focused finite checks:

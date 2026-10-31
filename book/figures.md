@@ -2,6 +2,14 @@
 
 These diagrams introduce the objects and constructions used in the guide. The geometric drawings are combinatorial projections; their captions state what the colors and highlighted faces mean. Each figure can be opened at full resolution or downloaded as SVG, PDF, or editable TikZ.
 
+## The global sharp-source upper problem
+
+![Uniform source coverage, boundary activation, finite shared weights, forced odd incidence cycles and the remaining quantitative gap.](figures/sharp-source-boundary-classification.png)
+
+The [global upper theorem](../notes/research_global_sharp_coefficient_limsup_majorant.md) retains all original coefficients and targets. The [stationary classification](../notes/research_full_fiber_sharp_stationary_classification.md) follows from the independently reviewed boundary lemmas. At its positive-value maxima, each non-CROSS port forces an [odd MAIN cycle](../notes/research_stationary_noncross_main_cycle_obstruction.md). The amber panel distinguishes that exact sign obstruction from the still-open absolute source estimate; the [flat-cap inequality](../notes/research_flat_cap_no_local_exponential_angular_gap.md) prevents extending the regular-window angular estimate without another argument.
+
+[SVG](figures/sharp-source-boundary-classification.svg) · [PDF](figures/sharp-source-boundary-classification.pdf) · [TikZ source](figures/sharp-source-boundary-classification.tex)
+
 ## Exact switches and phase cancellation
 
 ![The before, active and after source states, direct diagonal path, both analytic-gauge boundary terms and the remaining global volume comparison.](figures/analytic-source-switching.png)

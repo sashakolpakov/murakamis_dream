@@ -16,6 +16,8 @@ The [simultaneous bridge-gap theorem](../../notes/general_simultaneous_bridge_ga
 
 The [new coefficient-energy theorem](../../notes/actual_one_sided_relative_spectral_energy.md) now supplies a uniform triangle bound for every one-sided coefficient. Weighted Cauchy and a measure-preserving angle rearrangement reduce the remaining general estimate to an explicit optimization over the original shared face flows. The [combined entropy criterion](../../notes/general_endpoint_conditioned_source_energy.md) gives the full actual-volume limit whenever that optimization has a strict gap; universal validity remains open.
 
+The [global sharp-source theorem](../../notes/research_global_sharp_coefficient_limsup_majorant.md) now gives a uniform upper bound on the entire closed spectral and degree domain. Its [maximizers are classified](../../notes/research_full_fiber_sharp_stationary_classification.md) using the original face constraints: ordinary zero incidences and diagonals disappear, common finite weights exist, and every non-CROSS port forces an odd incidence cycle. Converting that sign obstruction into an absolute volume-rate bound remains open; a flat cap prevents an automatic local exponential-loss argument. The [results section](results.md#a-global-source-upper-bound-and-the-classification-of-its-maxima) presents this general reduction together.
+
 A separate [mixed phase-cancellation criterion](../../notes/research_mixed_cross_window_cycle_packing.md) now combines regular windows, their single-protected-face extensions, and whole CROSS coupons. An exact transfer and an analytic gauge retain both boundary terms and all unused factors. Fractional packing of inconsistent sign cycles gives a quantitative shared-torus loss with unchanged face targets. Comparing the remaining majorant with complete volume and covering the other windows are still open; the [results section](results.md#phase-cancellation-on-regular-source-windows) records the hypotheses together.
 
 The [finite-sector cover theorem](../../notes/general_actual_sector_cover_filling_volume.md) now permits finer shared-radius bounds on genuine source branches. A rigorously certified seventeen-region example fails the simpler anchored test but passes forty refined branches. The universal question is whether every eligible plat admits strict bounds for all its genuine non-CROSS sectors; that remains open.
@@ -50,7 +52,8 @@ Start with [the equality results](results.md) for the exact knot and link famili
 | Explicit full original invariant at every $k\geq2$ | Three layers, $3k-3$ independent twist regions, actual filled volume, exact-bridge subfamilies |
 | Full original long-filled invariant under balance | A global remainder gap and the actual filled-volume limit for every fixed certified diagram passing the complete-radius test |
 | Full invariant beyond complete-packing balance | Finite genuine-sector covers; exact examples strictly separate balance, anchored and refined certificates |
-| General signed long-filled knot equality | Prove the explicit combined entropy gap on original shared flows; uniform local coefficient bounds are now established |
+| General sharp-source upper problem | Uniform closed-domain coefficient bound; full-fiber maxima have finite common weights and classified branches, with an odd source cycle at every non-CROSS port |
+| General signed long-filled knot equality | Quantitative cancellation at the classified maxima, or the combined entropy gap on original shared flows, remains open |
 
 The cube, Fourier, torsor, and alternative approaches are preserved. A failed intermediate estimate is useful evidence about the argument; it is retained beside the corrected scope.
 
