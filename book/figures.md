@@ -179,3 +179,14 @@ For the shown parameter the folded angle is a tent map: each height has two prei
 ![One integer twist weight per vertex, arbitrary branching and unary chains, and the retained literal closure.](figures/weighted-conway-tree.png)
 
 This is a composition-tree diagram, not a knot projection. The [weighted-tree theorem](../notes/actual_conway_weighted_tree_long_twist_volume.md) fixes this tree and its knot parity, then permits independently sufficiently long signed weights. [TikZ](figures/weighted-conway-tree.tex), [SVG](figures/weighted-conway-tree.svg), [PDF](figures/weighted-conway-tree.pdf).
+
+
+## A norm probe for mixed Conway compositions
+
+![An unflagged component between actual decorated modules, and the separate positive comparison used to estimate it.](figures/mixed-conway-probe.png)
+
+The [strict-tree theorem](../notes/actual_conway_all_strict_tree_long_twist_volume.md)
+uses this estimate at the component's intrinsic geometric action.
+The drawing is source syntax and a norm inequality, not a knot projection.
+[TikZ](figures/mixed-conway-probe.tex), [SVG](figures/mixed-conway-probe.svg),
+[PDF](figures/mixed-conway-probe.pdf).

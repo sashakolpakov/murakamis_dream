@@ -2,75 +2,68 @@
 
 The current target is a volume theorem for Conway algebraic/arborescent knots assembled from arbitrarily many tangles, with independently sufficiently long fixed signed twists. The right side is the hyperbolic volume of the knot complement. Bridge width remains useful for the earlier plat families, but is no longer the organizing parameter. The unrestricted conjecture remains open.
 
-## Weighted trees with independently long integer entries
+## Every strict Conway composition tree
 
-The [weighted-tree theorem](../../notes/actual_conway_weighted_tree_long_twist_volume.md)
-now covers every fixed finite rooted ordered tree with \(H\ge2\) vertices,
-one actual integer twist weight at each vertex, arbitrary branching and
-unary chains. Nonroot tangles satisfy
-\[
- Q_v=T\!\left(R^{n_v}\prod_w Q_w\right),
-\]
-and the retained closure is
-\(C(T(R^{n_0})T(\prod_wQ_w))\).
-For each fixed tree there is a finite \(B(\mathcal T)\). Every fixed,
-independently signed tuple with \(|n_v|>B(\mathcal T)\) at every vertex
-and a loop-free one-component terminal pairing has the original
-invariant's actual knot complement volume limit through all levels.
-The tree and weights are fixed before \(N\) grows. Only the auxiliary
-crossing circles are filled.
+The [strict-tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md)
+now covers every fixed literal \(C(FG)\) that passes the finite strict type
+test: leaves have type L, turns exchange L/H and preserve A; the nonempty
+products are LL/LA/AA→A and HL/HA→H, and the root pair is AA, AL, AH or LH.
+Equivalently, each reduced product hub has at most one flagged original
+leaf. Mixtures of flagged and unflagged hubs are included.
 
-The [decorated-character estimate](../../notes/actual_conway_decorated_character_spectral_closure.md)
-is closed under arbitrary products and \(T(R^\epsilon L_jE)\).
-It retains the full Hermite jets, restores angular localization, and
-propagates every physical-color deficit with a strict loss. The exact
-complementary-color identity then bounds the total nonempty alias
-contribution. The pure complete rate is \(2G_0(H-1)\), independently
-calibrated by the [positive kernel](../../notes/actual_conway_reduced_hub_source_normal_form.md)
-and [rigid-spine geometry](../../notes/actual_conway_rigid_spine_and_flagged_tree_geometry.md).
-The complete augmented volume is \(2v_{\mathrm{oct}}(H-1)\); the filled
-knot limit is the distinct marked critical value.
+For each such presentation there is a finite \(B(\tau)\). Every fixed tuple
+of independently signed integer weights with \(|n_i|>B(\tau)\) at every
+leaf, and loop-free one-component pairing, gives the original invariant's hyperbolic knot
+complement volume limit through all levels. The presentation and twists
+are fixed before the quantum limit. The auxiliary crossing circles are
+filled; the main knot cusp stays unfilled.
 
-The exact reduced-source criterion permits at most one flagged original
-leaf per product hub. The no-flag case reduces to the earlier completed
-grammar; the new estimate covers the case with one flag at every hub.
-Mixed trees still require a sharp bound for turns without an adjacent
-original character. Their full-Hermite norm costs \(2G_0\) exponentially,
-and that cost cannot simply be added to the geometric action. General
-presentation coverage and a generic main-meridian quantum A-operator
-remain open. Neither the source normal form nor this theorem asserts a
-new knot isotopy classification.
+The new [positive probe bound](../../notes/actual_conway_unflagged_core_probe_bound.md)
+controls each maximal unflagged component at its actual intrinsic
+boundary action. The [spectral propagation theorem](../../notes/actual_conway_mixed_core_spectral_propagation.md)
+transports every physical-color loss through that component and restores
+angular localization. The [geometric adapter](../../notes/actual_conway_unflagged_probe_geometry.md)
+proves that these boundary actions sum to the original complete action.
+The exact complementary-color identity restores the original packet;
+its primitive marked filling action is the actual knot complement volume.
+
+The [pointed quantum A-period corollary](../../notes/actual_conway_pointed_quantum_a_volume.md)
+also writes this limit through a genuine all-level ADO operator, its
+finite initial data and bounded quantum-parameter jets. Existence of
+the operator was already proved from the finite cut-state source.
+
+The remaining general tasks are presentation coverage beyond this strict
+literal class and identification of the selected classical main-meridian
+geometric factor with the marked regulator module. No
+threshold uniform over growing trees or conclusion for arbitrary short
+weights is asserted. The earlier completed-root TeX manuscript retains
+its stated theorem. The earlier plat, energy, Fourier and torsor approaches remain available as separate routes to broader classes.
 
 
-## The current tangle frontier
+## What remains after the strict-tree theorem
 
-The [current single-leaf theorem](../../notes/actual_arborescent_single_leaf_long_twist_volume.md) covers every fixed completed expression generated by $hh$, $T(E)$, $E_1E_2$, $hE$ and $Eh$, with two completed root children at $C(FG)$. Isolated $C(h^s)$, $s\ge3$, remain included separately. The child-output tangent and an exact concave dual inequality allow the alias bound to pass through repeated single-leaf attachments. Ordered geometry keeps all leaves strictly above index $1/4$; the original packet and marked action give the knot complement volume.
+The general source estimate is now proved for the entire strict literal
+Conway grammar. For this class, the critical path through the full
+original invariant and the actual knot complement volume is complete.
 
-The [general quarter and core theorem](../../notes/actual_conway_general_core_packet_and_gap.md)
-places every complete leaf of a strict closed tree at index at least
-\(1/4\). For strict knot patterns, gate curvature controls every primitive
-direction when there are at least three leaves; a pure leaf supplies the
-needed curvature in the two-leaf case. The original all-core sum then has
-a nonzero complex packet and a strict physical-color complement gap. The [marked-mask theorem](../../notes/actual_conway_general_mask_marked_filling.md)
-extends the actual primitive peripheral deformation and absolute filling
-calibration to all those trees. For strict knot patterns, the remaining
-global source input is a bound on the total nonempty alias contribution
-at the geometric rate, or an equally sufficient bound after exact filling.
+The next question is geometric and combinatorial coverage: which
+arborescent knot presentations admit this strict long-weight form, and
+which require operations beyond it? The exact source criterion is at most
+one flagged original leaf per reduced hub. An equality of source tensors
+does not by itself give an isotopy or a new presentation theorem.
 
-The [root-star assembly](../../notes/actual_conway_root_star_long_filling_volume.md)
-supplies the whole invariant limit for \(C(h_0T(h_1\cdots h_s))\),
-\(s\ge2\), with arbitrary fixed pure/odd patterns that give a knot and
-independently sufficiently long fixed signed twists. Its child proof
-retains the full Hermite jets and spectral localization; the root proof
-uses the exact missing Fourier mode. The [prior-source comparison](../../notes/actual_conway_root_star_prior_source_coverage.md)
-records that this Fourier cancellation was already in the outer-kernel
-note and that all-odd star scalars overlap the older belt-stack source.
-Inner pure leaves extend the recorded two-type source alphabet, but no
-new knot isotopy classification follows. Arbitrary internally turned
-children still need a global alias estimate, and general presentation
-coverage remains open. The completed-root manuscript is unchanged.
+A genuine all-level ADO annihilator and its finite pointing were already
+constructed from the actual cut-state source. The new volume theorem
+therefore also gives the selected quantum A-period's volume limit.
+The stronger remaining question is which classical geometric factor and
+quantum module carry the original marked regulator germ. Existence of an
+annihilator and evaluation of its pointed period do not settle that
+classical-factor identification.
 
-The plat, cap, Green and Fourier routes below remain active alternatives. Their certificates and obstructions are preserved; they are not missing prerequisites for the newly proved tangle class.
+The completed-root manuscript, weighted-tree theorem and all earlier
+methods remain preserved. The alternative general routes below retain
+their own unresolved hypotheses; they are not prerequisites for the
+strict-tree theorem.
 
 ## The global upper problem now has a stationary classification
 

@@ -26,4 +26,4 @@ The knot cusp stays unfilled. The threshold depends on the fixed expression and 
 
 The `Markdown research book <../index.html>`_ provides the longer source-note archive. The `repository <https://github.com/sashakolpakov/murakamis_dream>`_ contains the manuscript, native TikZ figures, exact certificate data, and verification scripts.
 
-The later :doc:`research` companion proves a weighted-tree theorem with arbitrary finite branching and unary chains, while retaining the manuscript's stated scope.
+The later :doc:`research` companion proves the full volume limit for every fixed strict literal Conway tree, including mixed junctions, while retaining the manuscript's stated scope.

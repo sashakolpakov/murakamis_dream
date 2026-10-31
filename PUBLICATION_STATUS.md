@@ -1,5 +1,13 @@
 # Publication status
 
+The latest companion release proves the original invariant's actual knot complement volume limit for every fixed strict literal Conway composition tree, including mixed flagged and unflagged junctions, with knot pairing and independently long fixed signed integer twists. A positive full-normal probe gives the unflagged component estimate at its geometric action; spectral localization and physical-color losses compose throughout the tree.
+
+The same theorem is stated as an exact pointed quantum A-period limit using the already constructed genuine all-level ADO annihilator and bounded-order quantum-parameter jets. Operator existence is proved. Identification of the selected classical geometric factor, and universal arborescent presentation coverage, remain separate tasks.
+
+Five reviewed notes, a native TikZ diagram, and both documentation formats are included. The completed-root TeX manuscript and exact certificates retain their earlier scope. Builds and local-link checks pass; these are internal analytical and reproduction checks.
+
+## Earlier publication records
+
 The weighted-tree companion release proves the original invariant's knot complement volume limit for every fixed finite rooted ordered tree with at least two vertices in the displayed literal closure, with one independent sufficiently large signed integer weight per vertex and loop-free knot pairing. Arbitrary branching and unary chains are included. Four reviewed notes give the exact hub normal form, recursive full-Hermite estimate, absolute geometric calibration and full filling assembly.
 
 The complete augmented volume is 2 v_oct(H−1); the filled knot limit is its separately calibrated critical value. Mixed flagged/unflagged source trees and general arborescent presentation coverage remain open. A native TikZ syntax diagram and both documentation formats are updated. Builds and 26,893 local links pass. These are internal analytical and reproduction checks. The published TeX manuscript and its exact certificates retain their earlier scope.

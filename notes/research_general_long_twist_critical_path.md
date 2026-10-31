@@ -4,6 +4,46 @@
 reviewed inputs and remaining requirements; it is not a new general
 volume-conjecture theorem.
 
+
+## Every strict Conway composition tree
+
+The [strict-tree theorem](actual_conway_all_strict_tree_long_twist_volume.md)
+now covers every fixed literal \(C(FG)\) that passes the finite strict type
+test: leaves have type L, turns exchange L/H and preserve A; the nonempty
+products are LL/LA/AA→A and HL/HA→H, and the root pair is AA, AL, AH or LH.
+Equivalently, each reduced product hub has at most one flagged original
+leaf. Mixtures of flagged and unflagged hubs are included.
+
+For each such presentation there is a finite \(B(\tau)\). Every fixed tuple
+of independently signed integer weights with \(|n_i|>B(\tau)\) at every
+leaf, and loop-free one-component pairing, gives the original invariant's hyperbolic knot
+complement volume limit through all levels. The presentation and twists
+are fixed before the quantum limit. The auxiliary crossing circles are
+filled; the main knot cusp stays unfilled.
+
+The new [positive probe bound](actual_conway_unflagged_core_probe_bound.md)
+controls each maximal unflagged component at its actual intrinsic
+boundary action. The [spectral propagation theorem](actual_conway_mixed_core_spectral_propagation.md)
+transports every physical-color loss through that component and restores
+angular localization. The [geometric adapter](actual_conway_unflagged_probe_geometry.md)
+proves that these boundary actions sum to the original complete action.
+The exact complementary-color identity restores the original packet;
+its primitive marked filling action is the actual knot complement volume.
+
+The [pointed quantum A-period corollary](actual_conway_pointed_quantum_a_volume.md)
+also writes this limit through a genuine all-level ADO operator, its
+finite initial data and bounded quantum-parameter jets. Existence of
+the operator was already proved from the finite cut-state source.
+
+The remaining general tasks are presentation coverage beyond this strict
+literal class and identification of the selected classical main-meridian
+geometric factor with the marked regulator module. No
+threshold uniform over growing trees or conclusion for arbitrary short
+weights is asserted. The earlier completed-root TeX manuscript retains
+its stated theorem. Older scope discussions below record the steps that
+preceded this extension; their mixed-source obstruction is now resolved
+for the strict class.
+
 ## Weighted trees with independently long integer entries
 
 The [weighted-tree theorem](actual_conway_weighted_tree_long_twist_volume.md)

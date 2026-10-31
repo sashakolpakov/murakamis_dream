@@ -10,13 +10,24 @@ We pursue this through the pointed quantum A-structure, exact finite source form
 
 The current target is a theorem about composing **Conway algebraic, or arborescent, tangles**: fix any admissible finite tangle tree, then put independently sufficiently many signed twists into its designated boxes. The diagram and twists stay fixed as $N$ grows. Bridge number is not the organizing parameter. The right side is the knot complement volume; Dehn filling removes auxiliary crossing-circle cusps and leaves the knot cusp unfilled.
 
-**The latest theorem allows any fixed finite weighted Conway tree with at least two vertices.** Put one integer twist weight at each vertex, retain the [displayed ordered recursion and closure](../../notes/actual_conway_weighted_tree_long_twist_volume.md), and choose parities giving a knot. Independently sufficiently large signed weights then give the original invariant's knot complement volume limit. Branching, valence and unary-chain length are unrestricted; the threshold depends on the fixed tree.
+**The latest theorem covers every fixed strict Conway composition tree.**
+The [finite type test and exact theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md)
+allow arbitrary finite branching and mixtures of flagged and unflagged
+junctions. For each fixed presentation, independently sufficiently long
+signed integer twists with knot-producing pairing give the original
+invariant's actual knot complement volume limit through all integer levels.
 
-The proof controls the original full Hermite source under each character-decorated turn, then uses an exact complementary-color expansion to control all aliases. Its marked filling action is the actual knot complement volume. [Mixed flagged/unflagged source trees](frontier.md) and universal arborescent presentation coverage remain open.
+The proof controls each unflagged component with a positive norm probe
+at its original geometric action, then transports every physical-color
+loss through the whole tree. The probe is used only in an inequality.
+The original marked source supplies its own packet and smooth filling
+geometry. [The pointed quantum A-period](../../notes/actual_conway_pointed_quantum_a_volume.md) has the same proved volume limit. [General presentation coverage and identification of the classical geometric factor](frontier.md) remain open.
 
-**The manuscript treats completed products, turns and repeated single-leaf attachments.** The [current theorem](../../notes/actual_arborescent_single_leaf_long_twist_volume.md) starts from $hh$ and allows $T(E)$, $E_1E_2$, $hE$ and $Eh$, closing with two completed children. Any finite number and depth of these operations is allowed. Constructible knot parity patterns and independently sufficiently long fixed signed twists give the knot complement volume, through both level parities and composite levels. The earlier isolated seed closures of width at least three remain included; isolated two-leaf closure remains excluded.
-
-The new estimate combines the attached leaf, its original multiplication gate, and the completed child's output tangent. Joint concavity and exact rational inequalities prove a uniform alias loss that survives further attachments. The original complex packet and primitive peripheral action then give the full invariant limit. The [tangle formulation](../../notes/general_arborescent_tangle_volume_target.md) distinguishes this class from the remaining problem: arbitrary root-leaf closures, turned bare leaves, and coverage of all arborescent presentations. The later [general core theorem](../../notes/actual_conway_general_core_packet_and_gap.md) covers every strict knot pattern, and [marked filling geometry](../../notes/actual_conway_general_mask_marked_filling.md) now covers every strict tree. The remaining general source requirement is the nonempty-alias estimate. A [root-star companion theorem](../../notes/actual_conway_root_star_long_filling_volume.md) proves the full limit for $C(h_0T(h_1\cdots h_s))$, $s\ge2$, including mixed pure/odd leaves. Its [overlap with the earlier belt source](../../notes/actual_conway_root_star_prior_source_coverage.md) is recorded explicitly; no new knot classification is claimed.
+The [weighted-tree theorem](../../notes/actual_conway_weighted_tree_long_twist_volume.md)
+is an explicit included family with one weight per vertex. The
+[manuscript](manuscript.md) gives the earlier completed-root class in
+detailed TeX form; the strict-tree extension is a separately reviewed
+companion.
 
 The earlier plat constructions, complete-packing certificates, weighted Cauchy estimates, Fourier methods and torsor calculations remain in [the equality results](results.md) and [the frontier](frontier.md). They provide other certified families and approaches to the general problem. The current research theorem does not establish the conjecture for all arborescent or all hyperbolic knots, and its internal reviews are not external peer review.
 
@@ -24,7 +35,7 @@ The earlier plat constructions, complete-packing certificates, weighted Cauchy e
 
 ## Read the argument in order
 
-The [Conway composition manuscript](manuscript.md) gives the current theorem
+The [Conway composition manuscript](manuscript.md) gives the completed-root theorem
 as a detailed paper, with preliminaries, proofs, illustrations and a
 reproducibility suite. A [Sphinx edition](https://sashakolpakov.github.io/murakamis_dream/sphinx/)
 provides a second documentation format.
@@ -39,7 +50,7 @@ Start with [the equality results](results.md) for the exact knot and link famili
 
 | Part of the argument | Current scope |
 | --- | --- |
-| Volume limit of the original invariant | Every fixed weighted tree in the displayed recursion, with independently long integer weights and knot pairing; also every fixed completed tree generated by $hh$, $T(E)$, $E_1E_2$, $hE$, $Eh$, with two completed children at $C(FG)$; also isolated $C(h^s)$ for $s\ge3$. Knot parity and independently long fixed signed twists give the knot complement volume at both parities and composite levels. |
+| Volume limit of the original invariant | Every fixed strict literal Conway composition tree, with loop-free knot pairing and independently long fixed signed integer twists; all quantum levels and the actual knot complement volume. |
 | Exact finite source identities | Original arbitrary-Casimir-coupon source as one homogeneous face coefficient, including disconnected replacements and both parity carries; the complete-circle positive formula is its special case |
 | Boundary first-normal defect | An explicit two-insertion formula from the full root channel; finite Plancherel gives polynomial cost $O(N^2)$, without determining the scalar derivative or estimating that channel by the geometric volume |
 | Local quantum action | Selected ordinary amplitude on full physical complex compacts; fixed generic jets for all integer-grid physical columns and divided pairs; subexponential complex paired-normal bounds in shrinking channel windows |
@@ -56,7 +67,7 @@ Start with [the equality results](results.md) for the exact knot and link famili
 | Full original long-filled invariant under balance | A global remainder gap and the actual filled-volume limit for every fixed certified diagram passing the complete-radius test |
 | Full invariant beyond complete-packing balance | Finite genuine-sector covers; exact examples strictly separate balance, anchored and refined certificates |
 | General sharp-source upper problem | Uniform closed-domain coefficient bound; full-fiber maxima have finite common weights and classified branches, with an odd source cycle at every non-CROSS port |
-| General arborescent knot equality | Core packets and marked filling geometry cover every strict knot pattern; mixed flagged/unflagged alias control and presentation coverage remain open. Fully flagged trees now have the weighted-tree full-source theorem. |
+| General arborescent knot equality | The full theorem holds for the finite strict grammar, including mixed hubs. The selected quantum A-period has the same limit; universal presentation coverage and identification of the classical geometric factor remain open. |
 
 The cube, Fourier, torsor, and alternative approaches are preserved. A failed intermediate estimate is useful evidence about the argument; it is retained beside the corrected scope.
 
