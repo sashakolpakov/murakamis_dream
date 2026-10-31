@@ -1,5 +1,9 @@
 # Publication status
 
+The weighted-tree companion release proves the original invariant's knot complement volume limit for every fixed finite rooted ordered tree with at least two vertices in the displayed literal closure, with one independent sufficiently large signed integer weight per vertex and loop-free knot pairing. Arbitrary branching and unary chains are included. Four reviewed notes give the exact hub normal form, recursive full-Hermite estimate, absolute geometric calibration and full filling assembly.
+
+The complete augmented volume is 2 v_oct(H−1); the filled knot limit is its separately calibrated critical value. Mixed flagged/unflagged source trees and general arborescent presentation coverage remain open. A native TikZ syntax diagram and both documentation formats are updated. Builds and 26,893 local links pass. These are internal analytical and reproduction checks. The published TeX manuscript and its exact certificates retain their earlier scope.
+
 The latest companion update records the general strict-tree quarter bound, core estimate and marked filling geometry, together with the full root-star source and long-filling volume assembly. The Markdown guide and Sphinx companion state their scope and the remaining general nonempty-alias estimate. The published manuscript retains its completed-root theorem.
 
 The coverage audit explicitly identifies the earlier outer-kernel Fourier cancellation and the all-odd overlap with the octahedral-belt source. Mixed pure/odd leaves extend the recorded source alphabet; no new knot isotopy classification is claimed. Internal analytical reviews passed, both documentation builds passed, and 26,708 local resource links passed. The unchanged manuscript certificate suite was not rerun for this documentation and companion-proof update.

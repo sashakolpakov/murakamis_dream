@@ -172,3 +172,10 @@ The [separation theorem](../notes/actual_shared_radius_certificate_separation.md
 For the shown parameter the folded angle is a tent map: each height has two preimages whose density sums to one. The [general proof](../notes/actual_one_sided_relative_spectral_energy.md) establishes the same uniform distribution for every spectral parameter. A pointwise kernel inequality then gives the triangle entropy bound. The dashed final box retains the original shared-face optimization still needed for universal coverage.
 
 [SVG](figures/spectral-energy-rearrangement.svg) · [PDF](figures/spectral-energy-rearrangement.pdf) · [TikZ source](figures/spectral-energy-rearrangement.tex)
+
+
+## Weighted Conway trees
+
+![One integer twist weight per vertex, arbitrary branching and unary chains, and the retained literal closure.](figures/weighted-conway-tree.png)
+
+This is a composition-tree diagram, not a knot projection. The [weighted-tree theorem](../notes/actual_conway_weighted_tree_long_twist_volume.md) fixes this tree and its knot parity, then permits independently sufficiently long signed weights. [TikZ](figures/weighted-conway-tree.tex), [SVG](figures/weighted-conway-tree.svg), [PDF](figures/weighted-conway-tree.pdf).

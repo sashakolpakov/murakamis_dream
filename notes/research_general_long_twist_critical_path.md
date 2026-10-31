@@ -4,6 +4,46 @@
 reviewed inputs and remaining requirements; it is not a new general
 volume-conjecture theorem.
 
+## Weighted trees with independently long integer entries
+
+The [weighted-tree theorem](actual_conway_weighted_tree_long_twist_volume.md)
+now covers every fixed finite rooted ordered tree with \(H\ge2\) vertices,
+one actual integer twist weight at each vertex, arbitrary branching and
+unary chains. Nonroot tangles satisfy
+\[
+ Q_v=T\!\left(R^{n_v}\prod_w Q_w\right),
+\]
+and the retained closure is
+\(C(T(R^{n_0})T(\prod_wQ_w))\).
+For each fixed tree there is a finite \(B(\mathcal T)\). Every fixed,
+independently signed tuple with \(|n_v|>B(\mathcal T)\) at every vertex
+and a loop-free one-component terminal pairing has the original
+invariant's actual knot complement volume limit through all levels.
+The tree and weights are fixed before \(N\) grows. Only the auxiliary
+crossing circles are filled.
+
+The [decorated-character estimate](actual_conway_decorated_character_spectral_closure.md)
+is closed under arbitrary products and \(T(R^\epsilon L_jE)\).
+It retains the full Hermite jets, restores angular localization, and
+propagates every physical-color deficit with a strict loss. The exact
+complementary-color identity then bounds the total nonempty alias
+contribution. The pure complete rate is \(2G_0(H-1)\), independently
+calibrated by the [positive kernel](actual_conway_reduced_hub_source_normal_form.md)
+and [rigid-spine geometry](actual_conway_rigid_spine_and_flagged_tree_geometry.md).
+The complete augmented volume is \(2v_{\mathrm{oct}}(H-1)\); the filled
+knot limit is the distinct marked critical value.
+
+The exact reduced-source criterion permits at most one flagged original
+leaf per product hub. The no-flag case reduces to the earlier completed
+grammar; the new estimate covers the case with one flag at every hub.
+Mixed trees still require a sharp bound for turns without an adjacent
+original character. Their full-Hermite norm costs \(2G_0\) exponentially,
+and that cost cannot simply be added to the geometric action. General
+presentation coverage and a generic main-meridian quantum A-operator
+remain open. Neither the source normal form nor this theorem asserts a
+new knot isotopy classification.
+
+
 ## Current target: Conway tangles and the knot complement
 
 The user has selected Conway algebraic/arborescent knots as the natural

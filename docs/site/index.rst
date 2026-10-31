@@ -25,3 +25,5 @@ The knot cusp stays unfilled. The threshold depends on the fixed expression and 
    research
 
 The `Markdown research book <../index.html>`_ provides the longer source-note archive. The `repository <https://github.com/sashakolpakov/murakamis_dream>`_ contains the manuscript, native TikZ figures, exact certificate data, and verification scripts.
+
+The later :doc:`research` companion proves a weighted-tree theorem with arbitrary finite branching and unary chains, while retaining the manuscript's stated scope.

@@ -2,6 +2,48 @@
 
 The project seeks equality for broad classes of hyperbolic knots, with the right side established as the volume of the actual complement. The results below are research proofs recorded and internally reviewed in this repository. They are not claims of external peer review.
 
+## Weighted trees with independently long integer entries
+
+The [weighted-tree theorem](../../notes/actual_conway_weighted_tree_long_twist_volume.md)
+now covers every fixed finite rooted ordered tree with \(H\ge2\) vertices,
+one actual integer twist weight at each vertex, arbitrary branching and
+unary chains. Nonroot tangles satisfy
+\[
+ Q_v=T\!\left(R^{n_v}\prod_w Q_w\right),
+\]
+and the retained closure is
+\(C(T(R^{n_0})T(\prod_wQ_w))\).
+For each fixed tree there is a finite \(B(\mathcal T)\). Every fixed,
+independently signed tuple with \(|n_v|>B(\mathcal T)\) at every vertex
+and a loop-free one-component terminal pairing has the original
+invariant's actual knot complement volume limit through all levels.
+The tree and weights are fixed before \(N\) grows. Only the auxiliary
+crossing circles are filled.
+
+The [decorated-character estimate](../../notes/actual_conway_decorated_character_spectral_closure.md)
+is closed under arbitrary products and \(T(R^\epsilon L_jE)\).
+It retains the full Hermite jets, restores angular localization, and
+propagates every physical-color deficit with a strict loss. The exact
+complementary-color identity then bounds the total nonempty alias
+contribution. The pure complete rate is \(2G_0(H-1)\), independently
+calibrated by the [positive kernel](../../notes/actual_conway_reduced_hub_source_normal_form.md)
+and [rigid-spine geometry](../../notes/actual_conway_rigid_spine_and_flagged_tree_geometry.md).
+The complete augmented volume is \(2v_{\mathrm{oct}}(H-1)\); the filled
+knot limit is the distinct marked critical value.
+
+The exact reduced-source criterion permits at most one flagged original
+leaf per product hub. The no-flag case reduces to the earlier completed
+grammar; the new estimate covers the case with one flag at every hub.
+Mixed trees still require a sharp bound for turns without an adjacent
+original character. Their full-Hermite norm costs \(2G_0\) exponentially,
+and that cost cannot simply be added to the geometric action. General
+presentation coverage and a generic main-meridian quantum A-operator
+remain open. Neither the source normal form nor this theorem asserts a
+new knot isotopy classification.
+
+
+![A weighted composition tree, including branching and a unary chain; each vertex carries one independent integer twist. The drawing specifies syntax, not a knot projection.](../figures/weighted-conway-tree.png)
+
 ## Arbitrarily large Conway trees with single-leaf attachments
 
 The [current composition theorem](../../notes/actual_arborescent_single_leaf_long_twist_volume.md) starts from $hh$ and permits arbitrary finite applications of $T(E)$, $E_1E_2$, $hE$ and $Eh$. The retained closure $C(FG)$ has two completed children. This includes repeated single-leaf additions such as $E_{n+1}=hT(E_n)$. The earlier theorem also includes every isolated $C(h^s)$ with $s\ge3$. There is no additional individual-leaf condition.

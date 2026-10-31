@@ -11,6 +11,6 @@ The theorem does not claim:
 * a tangle isotopy from equality of source scalars;
 * a general volume bound from a positive envelope alone.
 
-The isolated closures :math:`C(h^s)`, :math:`s\ge3`, are separately established cases. The isolated :math:`C(hh)` is excluded. The later companion research extends the core estimate and marked geometry to every strict knot pattern, and proves a whole-source theorem for root stars. General nonempty-alias control and presentation coverage remain open. These extensions are recorded in :doc:`research` and do not change the theorem stated in this manuscript.
+The isolated closures :math:`C(h^s)`, :math:`s\ge3`, are separately established cases. The isolated :math:`C(hh)` is excluded. The later companion research extends the core estimate and marked geometry to every strict knot pattern, and proves a whole-source theorem for weighted Conway trees, including arbitrary finite branching and unary chains. Mixed flagged/unflagged source estimates and general presentation coverage remain open. These extensions are recorded in :doc:`research` and do not change the theorem stated in this manuscript.
 
 All review statements in this project describe internal analytical review or reproducible finite checks. They are not claims of external peer review or journal acceptance.
