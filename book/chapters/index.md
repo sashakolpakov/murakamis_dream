@@ -53,6 +53,8 @@ Choose the entire construction and all twist integers first; then let $N$ grow t
 
 This covers arbitrarily large fixed compositions when their reduced twists satisfy the bound. It does not cover arbitrary short twists or classify every arborescent knot up to all possible presentation changes. The TeX manuscript proves an earlier included family; the companion strict-tree estimates and exact tangle reduction give the extension stated here. The [manuscript page](manuscript.md) distinguishes those scopes.
 
+The [closure extension](../../notes/actual_conway_arbitrary_closure_volume.md) also permits cap closures, which join each upper and lower endpoint pair, and twist sums that vanish exactly. Removing these zero sums can split the diagram into connected-sum factors. If the input is hyperbolic and every surviving strict factor has long net twists, the proof shows that just one strict factor remains and all others are unknots. The original knot is isotopic to that covered factor. The [results chapter](results.md#cap-closures-and-exact-cancellations) gives the precise criterion, including a sufficient condition on the original subset sums.
+
 ## Why the proof has both an analytic and a geometric part
 
 After the exact tangle reduction, the analytic and geometric proof begins by removing the surviving long twists and placing an auxiliary circle around the two strands in each twist region. The resulting *augmented link* remembers where the twists will be restored. Assigning integer labels, called colors, to these auxiliary circles produces a finite evaluation depending on those labels. The notes call this evaluation the *source*.

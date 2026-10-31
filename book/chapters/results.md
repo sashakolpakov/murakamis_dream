@@ -45,7 +45,37 @@ The knot condition concerns all strands, including any circles already closed in
 
 The reduction is an ambient isotopy of the filled link. It therefore preserves the reduced invariant at every level and identifies the knot exteriors. Applying the strict theorem to the output supplies a complete hyperbolic metric; pulling that metric back to the original exterior gives exactly the volume in the equality. The argument compares the filled knots. Their auxiliary augmented links need not be the same.
 
-This gives a theorem for arbitrary fixed ordered cylindrical compositions with sufficiently long net twists, subject to the knot condition and the elementary exception. It does not prove the conjecture for every short-twist arborescent knot. The note also describes cap closures and vanishing sums separately; those reductions can split a link into connected-sum factors and require their stated additional hypotheses.
+This gives a theorem for arbitrary fixed ordered cylindrical compositions with sufficiently long net twists, subject to the knot condition and the elementary exception. It does not prove the conjecture for every short-twist arborescent knot. The following extension handles cap closures and exact cancellations explicitly.
+
+## Cap closures and exact cancellations
+
+A cap closure joins the two upper endpoints to each other and the two lower endpoints to each other. Write it as $D(E)=C(TE)$. Unlike a cylindrical closure, a cap closure of a stack can split along a sphere meeting the link in two points:
+
+$$
+D(FG)=D(F)\mathbin{\#}D(G).
+$$
+
+The two pieces are joined along the components containing the cut arcs. If the input is a knot, both pieces must be knots. A zero twist can expose this operation: the quarter-turn of the zero braid is a cup and a cap, so $C(h(0)Q)=D(Q)$.
+
+![Cutting a cap-closed stack along a sphere meeting its two connecting strands gives the specified cap closures of the lower and upper tangles.](../figures/conway-cap-splitting.png)
+
+The [arbitrary-closure theorem](../../notes/actual_conway_arbitrary_closure_volume.md) repeatedly makes these cuts, combines twists, and removes zero sums. It retains all components and all labels. Its terminal factors are strict presentations, two-strand torus braid closures, or explicit unknots. Every surviving strict weight is still a sum of a disjoint group of original integers. The groups can now change when a sum vanishes. There are only finitely many possibilities for a fixed expression, so one threshold covers them all.
+
+Suppose the original knot is hyperbolic and every surviving strict weight exceeds this threshold in absolute value. Then there is exactly one strict factor, and all other factors are unknots. To see why, take a meridian in each nontrivial factor. Both a hyperbolic factor and a torus-knot factor contain another commuting element outside the cyclic meridian subgroup. Two such factors would produce two elements which commute with the common meridian but not with each other. In a complete hyperbolic knot group this is impossible: the centralizer of a nontrivial parabolic consists of commuting translations. A sole torus factor is excluded by its nontrivial center.
+
+Removing the unknot summands now gives an actual isotopy to the long strict knot. This proves the volume equality for the original complement, as well as the same pointed quantum A-period and Gram limits. It is a broader test for presentations of already covered knot types; the analytic theorem for the strict factor is unchanged.
+
+An optional sufficient condition is especially simple. For every nonempty set $B$ of original boxes, require
+
+$$
+\sum_{i\in B}n_i=0
+\quad\text{or}\quad
+\left|\sum_{i\in B}n_i\right|>B_E.
+$$
+
+Then every hyperbolic knot from the chosen expression satisfies the volume equality. In particular, for a fixed integer vector $a$, take $n_i=t a_i$. Every nonzero subset sum has magnitude at least $|t|$, so the conclusion applies to the hyperbolic knots obtained when $|t|>B_E$. The integer $t$ is fixed before $N$ grows. A given ray need not contain hyperbolic knots: the terminal factors determine that topological question.
+
+One can also avoid assuming hyperbolicity in advance. Under the longness condition and the one-component test, the input is hyperbolic exactly when the reduction contains one strict factor and all others are unknots. The elementary factors are explicit: $D(R^s)$ is always an unknot, and the knot $C(R^s)$ is an unknot exactly for $s=\pm1$. The proof supplies a finite criterion; it does not supply numerical values for the analytic thresholds.
 
 ## Every strict Conway composition tree
 

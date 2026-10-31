@@ -30,6 +30,15 @@ explains the groups, the closure condition, and the exact quantifiers.
 Another companion reconstructs the invariant from a quantum A-operator
 and initial data, giving the same volume limit in recurrence form.
 
+The [closure extension](https://sashakolpakov.github.io/murakamis_dream/notes/actual_conway_arbitrary_closure_volume.html)
+also allows cap closures and exact cancellation of twist sums. Its
+reduction can split the diagram into connected-sum factors. For a
+hyperbolic input, if every surviving strict factor has sufficiently long
+net twists, exactly one such factor remains and all other factors are
+unknots. The original knot is therefore isotopic to a covered long-twist
+knot. This extends the criterion for presentations, without adding an
+estimate for short twists.
+
 ![Tangle reduction, the finite quantum evaluation, and the volume of the resulting knot complement](book/figures/research-map.png)
 
 The general conjecture remains open. In particular, the theorem does not

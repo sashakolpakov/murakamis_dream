@@ -455,6 +455,8 @@ This preliminary root reduction is structural and does not test numerical weight
 
 The same explicit one-strict-factor-and-unknots corollary applies to a general root. Without that condition, the decomposition itself is the topological conclusion. No claim of hyperbolicity is made for a connected sum of nontrivial factors.
 
+The later [arbitrary-closure theorem](actual_conway_arbitrary_closure_volume.md) proves that this condition follows from hyperbolicity of the input, provided every surviving strict factor has sufficiently long weights. It takes a finite maximum of thresholds over parity and subset-sum zero patterns, and uses the meridian centralizer to exclude two nontrivial factors. It also gives an explicit topological criterion for hyperbolicity under that longness hypothesis. The fixed-partition theorem above is unchanged.
+
 ## Inputs and scope
 
 The local geometric moves are given in full in Sections 2–3. Their original endpoint convention is the one in [the ordered stack and closing construction](actual_conway_bowtie_projection_cut.md), §2. The component labels in the cap splitting are those of [the cap-closure splitting theorem](actual_conway_cap_sum_reduction.md), §2. The [reduced-junction source construction](actual_conway_reduced_hub_source_normal_form.md) has compatible graph bookkeeping. Its commutative Frobenius identities are not premises of this topological proof.

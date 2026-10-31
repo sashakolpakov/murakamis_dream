@@ -10,7 +10,7 @@ The [net-twist theorem](../../notes/actual_conway_net_twist_volume.md) removes t
 
 The analytic input is still the [strict-tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md). Its positive probe bound, spectral propagation and geometric comparison control the full signed source for the reduced template. The new topological reduction transfers that theorem to the same filled knot in its original presentation. It also carries the meridian, preferred longitude and invariant normalization.
 
-A small or vanishing final sum remains a real limitation. Making the original written exponents large by inserting opposite twist pairs cannot remove it. Optional deletion of a zero box can change the reduction or expose a connected-sum decomposition; the companion note treats those operations separately. The threshold depends on the entire fixed construction, and no uniform bound over growing trees is proved. Nor does the reduction classify all presentations of a given knot.
+A small nonzero surviving twist remains a limitation. Making the original written exponents large by inserting opposite twist pairs cannot remove it. Exact zero sums can be treated by a further topological reduction: the [closure extension](../../notes/actual_conway_arbitrary_closure_volume.md) permits cap closures and the resulting connected-sum factors. When the input is hyperbolic and every surviving strict weight is long, the input is isotopic to one covered strict knot. This strengthens the criterion for presentations; it adds no short-twist estimate. The threshold depends on the entire fixed construction, and no uniform bound over growing trees is proved. Nor does the reduction classify all presentations of a given knot.
 
 There is also a precise operator question. A genuine all-level recurrence for the ADO invariant and finite initial data selecting its solution are already available. The [pointed quantum A-period theorem](../../notes/actual_conway_pointed_quantum_a_volume.md) reconstructs the Kashaev invariant from that data, including the derivatives required at singular steps, and gives its volume limit for the covered knots. Identifying the selected classical geometric factor and the quantum module carrying its marked logarithmic regulator remains a further problem. A scalar limit at the complete meridian does not by itself control the invariant as that meridian varies.
 
@@ -33,6 +33,22 @@ $$
 Its formerly conditional positive-growth hypothesis is now satisfied for the covered knots. Removing the factor changes the state: $B$ annihilates $(Y-1)F_N$, which vanishes at completeness, and the original invariant is recovered from its normal derivative. Localizing the meridian to rational functions discards the corresponding boundary quotient. That quotient and the derivative data must be retained when interpreting the operator geometrically.
 
 An exact regularization is already available. Interpolate the ordinary colors by a polynomial $P_N^{\mathrm{ord}}(Y)$ of degree at most $N-2$, and subtract it before dividing by $S_N(Y)=1+Y+\cdots+Y^{N-1}$. The resulting Laurent polynomial has the same complete exponential rate and satisfies an affine recurrence with a polynomially bounded source. Its shifted values involve derivatives of the original state, so the obstruction above does not apply to it automatically. The next open step is to control this regular remainder as the main meridian varies and compare its selected branch with the geometric longitude. A complete-value limit alone does not establish either assertion.
+
+## What the Fourier transform preserves
+
+The Fourier transform gives an exact algebraic correspondence, but one must keep the equations produced by the starting point of the color sequence. Write $Q=q^2$, let $T$ shift the color, and let $S_Xg(X)=g(QX)$. The substitution
+
+$$
+Y\longmapsto S_X,\qquad T\longmapsto X^{-1}
+$$
+
+preserves the quantum-torus relation $TY=QYT$. Applied to the finite-start generating series $Z(q,X)=\sum_{n\ge n_0}C_n(q)X^n$, an annihilator produces an inhomogeneous equation $AZ=\mathcal B$. The nonzero term $\mathcal B$ is fixed by finitely many initial colors. It is part of the transformed equation.
+
+The [Fourier and boundary-factor note](../../notes/actual_mellin_boundary_multiplicity.md) proves two restrictions on using this correspondence. At a root of unity, rational meridian functions satisfy $T^N=1$, whereas rational Mellin functions satisfy $S_X^N=1$. Under the substitution above, these give different equations on the center. Their finite orbit fibres meet at $Y^N=T^N=1$, where the discrete Fourier transform matches the meridian values with the Mellin residue numerator. This finite transform alone does not identify either function as its parameter varies. A finite matrix lift through the quantum parameter is impossible: the relation would force $Q^N=1$ even to first order away from the root.
+
+There is also a specific multiplicity obstruction for the covered positive-volume knots. Their factorization $P=B(Y-1)$ becomes $A=\Phi(B)(S_X-1)$, so $A$ kills constants. Homogenizing the actual sourced equation therefore leaves two independent rational solutions: the constant function and $Z_N$. The associated monodromy has an eigenvalue-one eigenspace of dimension at least two. A simple eigenvalue cannot be the hypothesis used to select the invariant in this presentation.
+
+The source still distinguishes the two solutions: $A(1)/\mathcal B=0$ and $AZ_N/\mathcal B=1$. The prescribed series also starts at degree $n_0>0$, which excludes the added constant. These are exact selection data. The remaining geometric comparison must preserve them, the regular meridian data, and the functional giving $K_N$. The finite Fourier identity and its norm identity alone do not supply that comparison.
 
 ## Language used in the alternative routes
 

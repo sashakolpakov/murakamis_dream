@@ -34,6 +34,16 @@ The lower row combines adjacent integral boxes: their signed weights add. Each s
 
 [SVG](figures/net-twist-reduction.svg) · [PDF](figures/net-twist-reduction.pdf) · [TikZ source](figures/net-twist-reduction.tex)
 
+## Splitting a cap-closed stack
+
+![A sphere around the lower tangle and its bottom cap meets the two interface strands. Cutting produces the cap closures of both boxes, with the summing arcs marked in amber.](figures/conway-cap-splitting.png)
+
+The product places $F$ below $G$. The sphere $S$ encloses $F$ and its lower cap; its only intersections with the link are the two marked points. Cutting along $S$ and capping on each side gives $D(F)$ and $D(G)$. The amber arcs specify how to reconstruct the original stack by a connected sum. When a factor is a link with several components, these specified arcs determine which components are joined.
+
+The [closure theorem](../notes/actual_conway_arbitrary_closure_volume.md) uses this operation after removing exact zero twist sums and when processing an initial cap closure. For a hyperbolic input with long surviving strict weights, the decomposition contains one strict factor and otherwise only unknots.
+
+[Vector figure](figures/conway-cap-splitting.svg) · [PDF](figures/conway-cap-splitting.pdf) · [TikZ source](figures/conway-cap-splitting.tex)
+
 ## The leaf pyramid and multiplication prism
 
 ![An ideal quadrangular pyramid for a leaf and an ideal triangular prism for a product. The blue quadrilaterals are the faces along which cells are glued.](figures/conway-cells.png)

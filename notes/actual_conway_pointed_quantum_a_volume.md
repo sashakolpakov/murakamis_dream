@@ -6,11 +6,11 @@ A recurrence operator does not determine a knot invariant by itself: a recurrenc
 
 At a root of unity, some coefficients of the recurrence may have poles when solved in forward form. The reconstruction keeps the whole Laurent expansion, so those poles can cancel before evaluation. Only a bounded number of derivatives of the initial data is needed, with a bound determined by the fixed operator and independent of the quantum level.
 
-For the knots of the [net-twist theorem](actual_conway_net_twist_volume.md), this exact reconstruction has exponential growth equal to the knot complement volume. That class includes every sufficiently long strict Conway presentation and its extensions by the explicit tangle reduction. The proof transfers the invariant-volume theorem through an exact identity. The selected classical geometric factor remains a separate question.
+For the knots of the [net-twist theorem](actual_conway_net_twist_volume.md) and its [closure extension](actual_conway_arbitrary_closure_volume.md), this exact reconstruction has exponential growth equal to the knot complement volume. Every admitted knot is isotopic to a sufficiently long strict Conway knot. The closure extension also allows cap closures and zero sums, retaining the connected-sum factors until the hyperbolic input is shown to equal one strict factor. The proof transfers the invariant-volume theorem through an exact identity. The selected classical geometric factor remains a separate question.
 
 ## 1. The knot and the two meridian coordinates
 
-Fix a knot supplied by the net-twist theorem. Its original ordered cylindrical construction is isotopic to a strict presentation \(\tau=C(FG)\) whose combined twist numbers satisfy the long-twist bound. In what follows, \(\mathbf n\) denotes those combined numbers, and \(\tau\) denotes the reduced presentation. Its basic boxes are \(h_i=T(R^{n_i})\), where \(R^{n_i}\) is an integral two-strand braid and \(T\) turns a box through a quarter-turn. The actual closed link has one component, including the count of any circles closed inside intermediate boxes. Set
+Fix a knot supplied by either reduction theorem. Its original construction is isotopic to a strict presentation \(\tau=C(FG)\) whose combined twist numbers satisfy the long-twist bound. In what follows, \(\mathbf n\) denotes those combined numbers, and \(\tau\) denotes the reduced presentation. Its basic boxes are \(h_i=T(R^{n_i})\), where \(R^{n_i}\) is an integral two-strand braid and \(T\) turns a box through a quarter-turn. The actual closed link has one component, including the count of any circles closed inside intermediate boxes. Set
 
 \[
  K=K_\tau(\mathbf n),\qquad
