@@ -1,6 +1,6 @@
 # The current general frontier
 
-The target remains a volume theorem at **every fixed bridge width**, with independently long signed twists. The general filled-knot conjecture is open. Under the original labeled right-angled certificate, the [full spectral numerator now has a nonzero relative asymptotic](../../notes/general_full_spectral_numerator_geometric_packet.md) on a fixed complex neighborhood of completeness, at both level parities. Its action has the actual marked filling critical volume. The [localized original unit-charge period](../../notes/general_localized_unit_charge_filling_period.md) now has a nonzero relative asymptotic with that volume rate, also after summing a fixed finite local charge sector. Controlling the exact remaining full period is still open. The complete signed augmented-link source and positive endpoint volume are already proved.
+The target remains a volume theorem at **every fixed bridge width**, with independently long fixed signed twists. **The unrestricted conjecture remains open.** A new [complete-radius balance theorem](../../notes/general_complete_radius_balance_filling_volume.md) proves the full original invariant's filled-volume limit for every fixed certified diagram satisfying a finite condition on its actual complete packing. A simple sufficient condition is algebraic in the four face curvatures at each crossing region. The theorem allows independent fixed signed twists and both level parities. Proving coverage at arbitrary bridge width remains the current task; a conditional theorem alone does not establish that coverage.
 
 ## The class and the order of quantifiers
 
@@ -12,7 +12,26 @@ $$\min_i |m_i|>T(D)\quad\Longrightarrow\quad
 
 The diagram and every signed full-twist number $m_i$ are fixed **before** the quantum level $N$ tends to infinity. The prescribed parity pattern must give a knot. The threshold may depend on the diagram; no threshold depending only on $k$ is asserted.
 
-Under a positive marked gluing certificate, the [geometric filling theorem](../../notes/general_augmented_plat_long_filling_quantifiers.md) supplies a geometric threshold for independently long signed fillings. The quantum threshold in the displayed implication remains unproved for general plats.
+Under a positive marked gluing certificate, the [geometric filling theorem](../../notes/general_augmented_plat_long_filling_quantifiers.md) supplies a geometric threshold for independently long signed fillings. The quantum threshold is now proved under the complete-radius balance condition below. Its availability for general plats remains open.
+
+## A full filling theorem with a finite geometric hypothesis
+
+Take a fixed certified simple-white augmented plat and its original marked complete packing. At each crossing region write the four face curvatures as $(x,b,c,y)$; the two protected curvatures stay exactly zero. Put $A=x+y>0$. The [algebraic balance lemma](../../notes/actual_triangle_entropy_algebraic_balance.md) shows that
+
+$$ (A+b)(A+c)\geq\max\{b^2,c^2\} $$
+
+at every region is sufficient for the [full invariant theorem](../../notes/general_complete_radius_balance_filling_volume.md). The stronger test $|b-c|\leq x+y$ is often simpler to check. All regions use the **same actual complete packing**, with one common scale; separately chosen local radii do not give this certificate.
+
+For each such fixed diagram $D$, there is a threshold $T(D)$ so that every independently signed fixed full-twist vector with $|p_i|>T(D)$, and the prescribed knot-producing parity, satisfies
+
+$$\lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(K_D(\mathbf p))|
+=\operatorname{Vol}(S^3\setminus K_D(\mathbf p)).$$
+
+The right side is the volume of the actual smooth filled exterior. The twists are fixed before $N$ grows; no bound on their relative sizes is imposed. This theorem does not assert minimal bridge number, a width-only threshold, or that all certified diagrams pass the test.
+
+The sharper hypothesis is $Q_b(0)+Q_c(0)>\log b,\log c$ for the positive middles, where $Q$ is the original triangle action. Its proof follows three steps. The [entire CROSS period](../../notes/general_all_cross_long_filling_volume.md) has the filled-volume rate, with every Fourier charge and endpoint current controlled. The [global LEFT/RIGHT estimate](../../notes/actual_global_left_weighted_spectral_envelope.md) bounds every surviving one-sided factor strictly below its CROSS rate under balance, at all face phases on the same coefficient torus. Finally, integration by parts on the original whole domains makes the full remainder exponentially smaller than the nonzero CROSS contribution.
+
+**The remaining coverage problem is geometric.** We need a proved family of these actual marked packings at every fixed width $k\geq2$, or a replacement for balance that controls the remaining sectors. Numerical packing checks are candidates for that proof, not family theorems.
 
 ## A whole-source equality at arbitrary fixed width
 
@@ -23,7 +42,7 @@ $$\lim_{N\to\infty}\frac{2\pi}{N}\log|A_{D,N}|
 
 Here $A_{D,N}$ is the original marked complete-circle source, with its actual normalization and retained exterior framing factor. The input is a connected original plat projection and a **labeled convex ideal right-angled polyhedron** realizing its actual cut and face pairings. Each retained half-twist exponent may independently be $0,+1,-1$. The width and matching graph are arbitrary and fixed; both level parities and composite levels are included.
 
-This is a theorem about complete augmented **links**, including patterns whose main strands form one component. Filling their crossing circles still requires the external-color estimates below. The theorem does not assert that every reduced plat has the required geometric certificate. Parallel belts producing a white bigon fail this certificate; the [coverage check](../../notes/general_untwisted_augmented_source_literature_coverage.md) explains why their known even-level zeros are compatible with the theorem.
+This is a theorem about complete augmented **links**, including patterns whose main strands form one component. The older mixed-color route to filling their crossing circles uses the external-color estimates below; the new fixed-root balance theorem provides a separate route. The theorem does not assert that every reduced plat has the required geometric certificate. Parallel belts producing a white bigon fail this certificate; the [coverage check](../../notes/general_untwisted_augmented_source_literature_coverage.md) explains why their known even-level zeros are compatible with the theorem.
 
 The proof is recorded and independently reviewed within this project. That is distinct from external peer review.
 
@@ -85,12 +104,15 @@ Here $C_{i,N}$ is evaluated at the exact finite critical radius and tends to a p
 
 ## How far this is from the requested knot theorem
 
-The complete signed source has a global equality. The direct-power route controls the full local spectral numerator and a nonzero localized filling contribution. The remaining passage to independently long fillings is:
+The complete signed source, the full local packet, and the entire CROSS filling period are proved. The new balance condition also closes the full original remainder. The remaining distance to the requested general theorem is now:
 
-| Required step | What is proved | What remains open |
+| Required step | Status | Remaining scope |
 | --- | --- | --- |
-| Full spectral source near completeness | A relative fixed-complex asymptotic on the original shared face torus, including all repeated-node data and both parities | A phase-sensitive estimate for the global spectral remainder |
-| Localized original filling period | A nonzero unit-charge contribution on a fixed real cube, dominating the finite local charge box, with the actual filled-volume rate | Selected charges outside that cube and every other charge on its whole original domain |
+| Entire CROSS period, including all charges | Proved with the actual filled-volume rate | No remote-charge restriction in this sector |
+| Full one-sided remainder at balanced complete radii | Proved; yields the full invariant limit | The finite balance hypothesis must hold on the actual marked packing |
+| Arbitrary-width family coverage | Open | Prove the balance condition for an unbounded-width family, or replace it by a more general shared estimate |
+
+These are separate statements: a theorem for every diagram passing a test does not prove that the test has the intended broad coverage. The diagonal and short-moving sector estimates also survive without balance, but do not cover every macroscopic one-sided sector.
 
 The external-color reflection route is also retained below, with its own corridor and alias estimates. Its internal deficits $s_i=N-1-2a_i$ and external filling-color deficits $h_i=N-j_i$ are different variables. The [fixed complex core theorem](../../notes/actual_complete_core_complex_packet.md) now controls the complete-image term with $\boldsymbol\chi=\mathbf h/N$ in a fixed complex neighborhood:
 
@@ -229,7 +251,7 @@ $$(-1)^{N-1}V_N(-2\cosh w)
 
 Here the $L_h$ are the original physical-color coupons, with any separately retained half crossing multiplied on both sides in its original order. This is a polynomial identity retaining all repeated-node data. At $w=0$ it is the Fejer polynomial in the actual Casimir. After the displayed common sign $(-1)^{N-1}$, the homogeneous numerator at $\sigma=-2-u$ has nonnegative coefficients in $u$ and the four face variables, so its path expansion supplies a positive majorant for complex $\sigma$. The same face must still carry one shared weight throughout the diagram.
 
-The Gaussian times the full resolvent also has a controlled closing cap near $+2$: its cost is $e^{o(N)}$ on a shrinking cap for each fixed twist power. The endpoint theorem and the full complex packet below now control the actual shared coefficient near $-2$, including its independent spectral derivative data. A local positive-weight norm can still exceed the complete geometric rate, and the twist Gaussian grows on one side of a fixed spectral ellipse. Controlling the intervening original contour requires a phase-sensitive estimate; neither positivity nor a large twist supplies it automatically.
+The Gaussian times the full resolvent also has a controlled closing cap near $+2$: its cost is $e^{o(N)}$ on a shrinking cap for each fixed twist power. The endpoint theorem and the full complex packet below now control the actual shared coefficient near $-2$, including its independent spectral derivative data. A local positive-weight norm can still exceed the complete geometric rate, and the twist Gaussian grows on one side of a fixed spectral ellipse. The later whole-CROSS theorem controls its intervening contour and every Fourier charge; the full source additionally requires the balance estimate or a replacement for it.
 
 There is now an exact [even-level reduction of that shared coefficient](../../notes/actual_fejer_cross_half_source_reduction.md). The positive numerator splits into paths crossing the two middle spectral rows and paths staying on one side. If $H_M$ is the original maximal complete-channel polynomial, its crossing part satisfies
 
@@ -237,7 +259,7 @@ $$\frac{N}{2}H_M\ \leq\ P_{\mathrm{cross}}\ \leq\ \frac{3N}{2}H_M$$
 
 coefficientwise. The original marked coefficient with crossing paths at every port therefore has the known complete-volume rate, under the same labeled geometric certificate. Every other nonzero term has one-sided ports forming a rooted forest: a one-sided port occupies more than half of a middle face's allowed degree, so no face can receive two such ports, and the original gap graph excludes a surviving cycle. The forest terms need not vanish, and their literal half-size blocks still use level $N$. This positive path partition is distinct from a decomposition into covariant color coupons.
 
-For the general knot theorem, the decisive missing statement is a **phase-sensitive bound for the exact global remainder**. The full numerator packet and the localized-period theorem below supply a nonzero contribution from the actual restricted real spectral contour. The remainder retains the selected charges outside that cube and all other charges on their whole original domains; it is not estimated by the local theorem.
+The [global CROSS gap](../../notes/actual_global_cross_spectral_gap.md) and [whole-period theorem](../../notes/general_all_cross_long_filling_volume.md) now control this sector on its entire original contour. The [balance theorem](../../notes/general_complete_radius_balance_filling_volume.md) controls the full complementary source when its finite condition holds. Without that condition, the remaining obstruction is the macroscopic one-sided sector, not an uncomputed local geometric coefficient.
 
 ## Existing knot results and preserved alternatives
 
@@ -261,7 +283,7 @@ $$W_D=\max_{q\in\mathcal Q_D}\sum_e h(q_e),$$
 
 where $\mathcal Q_D$ retains every shared-face target and both protected zeros. No fixed half-label filter is needed for this full-source formula. The earlier [test at $N_*=10R+2$](../../notes/actual_fejer_shared_entropy_variational.md) remains useful when individual cross/left/right patterns are kept: it detects finite degree offsets that a limiting pattern alone can miss.
 
-![The endpoint volume, fixed-complex numerator packet and localized filling contribution are proved; the exact global remainder remains open.](../figures/shared-entropy-frontier.png)
+![The entire CROSS period has the filled-volume rate; complete-radius balance gives the full invariant. Arbitrary-width coverage remains open.](../figures/shared-entropy-frontier.png)
 
 The geometric upper bound uses exact source reductions. Pure-middle maximizing ports become literal identity coupons, and their [forest contraction](../../notes/actual_fejer_diagonal_identity_forest_reduction.md) preserves the rate and marked targets. The [hybrid Hall theorem](../../notes/actual_fejer_hybrid_tight_cut_reduction.md) keeps cross ports as two triangle rows and every strict one-sided port as one row. Its forced zeros give only permitted digon cuts; no one-sided difference is split into independent capacities. The [boundary regularity argument](../../notes/actual_fejer_nondiagonal_maximizer_regularity.md) then supplies finite positive shared multipliers on the resulting pieces.
 
@@ -313,7 +335,7 @@ $$A_{\boldsymbol\epsilon}=A_0+\pi i\sum_e\epsilon_e\delta_e^2,
 \qquad U_e=\partial_{\delta_e}A_{\boldsymbol\epsilon},
 \qquad V_e=-4\pi i\delta_e.$$
 
-For the actual Gaussian exponent $n_e=\epsilon_e-2p_e$ and Fourier charge $\ell_e$, the critical equation is $U_e+p_eV_e=-2\pi i\ell_e$. At the unit-charge sufficiently long smooth-filling germ, its exact peripheral boundary correction cancels the Gaussian terms, giving the actual filled hyperbolic volume as the critical exponential rate. The following localized-period theorem establishes a contribution from this critical point; the global charge sum remains separate.
+For the actual Gaussian exponent $n_e=\epsilon_e-2p_e$ and Fourier charge $\ell_e$, the critical equation is $U_e+p_eV_e=-2\pi i\ell_e$. At the unit-charge sufficiently long smooth-filling germ, its exact peripheral boundary correction cancels the Gaussian terms, giving the actual filled hyperbolic volume as the critical exponential rate. The following localized-period theorem establishes a contribution from this critical point. The subsequent whole-CROSS theorem controls its global charge sum.
 
 The [local charge comparison](../../notes/general_local_charge_critical_monotonicity.md) now proves that the all-unit positive integer charge has the largest critical value within a fixed small scaled box. For independently signed slopes $n_i$ of sufficiently large magnitude and $1\leq\ell_i\leq a|n_i|$,
 
@@ -336,6 +358,6 @@ $$\mathcal U_{N,\mathbf n;b}
 
 The coefficient is nonzero, and all $2^R$ charge signs contribute equally. This is the raw marked contraction; its recorded final-diagram framing/component character multiplies the formula when converting to the final invariant convention. The finite action $S_{N,\mathbf1}$ remains in the exponential. At both level parities its limiting real part gives the actual smooth filling volume. The diagram and twists are fixed before $N$ tends to infinity, with no restriction on ratios between their magnitudes.
 
-The same formula governs the **finite local charge sector** $0<|\ell_i|\leq\lfloor a|n_i|\rfloor$: all its nonunit contributions are exponentially smaller. This establishes neither dominance over remote charges nor a bound for the original invariant. The exact remaining period consists of finitely many selected-charge integrals outside $K_b$, plus every other charge on its whole original domain. The remote inside/outside sharp-cube series are not separately summed; they need not inherit the absolute summability of the original full-domain series. Endpoint currents are already encoded in the exact spectral identity.
+The same formula governs the **finite local charge sector** $0<|\ell_i|\leq\lfloor a|n_i|\rfloor$: all its nonunit contributions are exponentially smaller. This local theorem alone establishes neither dominance over remote charges nor a bound for the original invariant. The whole-CROSS and balance theorems above supply those additional steps in their stated scopes. The exact remaining period consists of finitely many selected-charge integrals outside $K_b$, plus every other charge on its whole original domain. The remote inside/outside sharp-cube series are not separately summed; they need not inherit the absolute summability of the original full-domain series. Endpoint currents are already encoded in the exact spectral identity.
 
-The [fixed-root direct-power scope](../../notes/fixed_root_direct_power_scope.md) separates this remaining task from generic-$q$ deformation: this route needs no genuine-$q$ normal theorem. A global phase-sensitive remainder estimate preventing cancellation of the proved local contribution is still missing. The independently long fixed signed filled-knot theorem at arbitrary width therefore remains open.
+The [fixed-root direct-power scope](../../notes/fixed_root_direct_power_scope.md) separates this remaining task from generic-$q$ deformation: this route needs no genuine-$q$ normal theorem. The whole-CROSS theorem and complete-radius balance estimate supply the subsequent global bounds under their stated hypotheses. The general independently long fixed signed filled-knot theorem remains open because arbitrary-width balance coverage, or a replacement when balance fails, is not established.

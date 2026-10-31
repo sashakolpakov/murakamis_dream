@@ -52,7 +52,7 @@ The blue square schematically represents the proved [whole-source untwisted corr
 
 ## The exceptional operator and its selected scalar action
 
-The scalar polynomial and original resolvent have different analytic roles. All polynomial zeros lie above $2$, while the physical Casimir nodes lie in $[-2,2]$. The actual geometric target is at most $-2$ under the marked complete certificate. The direct-power contour retains the full fixed-root numerator, including independent spectral derivatives. Its local packet at $-2$ and a nonzero localized filling contribution are now proved, while the closing estimate at $+2$ still leaves the exact global spectral remainder to control. Generic-$q$ normals remain part of a separate deformation problem. See [the current critical path](chapters/frontier.md#the-exceptional-edge-now-has-an-exact-algebraic-description).
+The scalar polynomial and original resolvent have different analytic roles. All polynomial zeros lie above $2$, while the physical Casimir nodes lie in $[-2,2]$. The actual geometric target is at most $-2$ under the marked complete certificate. The direct-power contour retains the full fixed-root numerator, including independent spectral derivatives. Its local packet at $-2$ and entire CROSS filling period are now proved. Complete-radius balance also controls the full remainder; unrestricted coverage of that condition is open. Generic-$q$ normals remain part of a separate deformation problem. See [the current critical path](chapters/frontier.md#the-exceptional-edge-now-has-an-exact-algebraic-description).
 
 ![The exact polynomial-resolvent period and its spectral regions, with the contributing global period still open.](figures/exceptional-period.png)
 
@@ -103,10 +103,8 @@ The [crossing theorem](../notes/actual_crossing_casimir_torus.md) gives a local 
 [PDF](figures/casimir-twist-transport.pdf) · [SVG](figures/casimir-twist-transport.svg) · [Editable TikZ](figures/casimir-twist-transport.tex)
 
 
-## From positive endpoint volume to a localized filling contribution
+## From the source to the full invariant under balance
 
-![Endpoint volume, the fixed-complex numerator packet and the localized original filling contribution are proved; the exact global spectral remainder remains open.](figures/shared-entropy-frontier.png)
+![The complete endpoint, whole CROSS period and conditional full invariant theorem; arbitrary-width coverage is the remaining step.](figures/shared-entropy-frontier.png)
 
-The [general endpoint theorem](../notes/general_fejer_endpoint_source_volume.md) proves $W_D=\operatorname{Vol}(Y_D)/(2\pi)$ at arbitrary fixed bridge width under the original labeled geometric certificate. Full monomial support, identity forests, hybrid cuts and the actual relative chain supply that comparison. The [full numerator packet](../notes/general_full_spectral_numerator_geometric_packet.md) then uses exact cofactors, exponential nodal rigidity and angular decay to evaluate the original shared face torus on a fixed complex neighborhood, with both parity normalizations retained. Its marked action gives the correct unit-fill critical volume. The [localized-period theorem](../notes/general_localized_unit_charge_filling_period.md) proves a nonzero contribution on the original fixed real cube and unit-charge dominance within its finite local charge sector. The [frontier](chapters/frontier.md#a-nonzero-localized-original-filling-contribution) retains the exact global remainder as open; the diagram asserts neither remote-charge dominance nor the general filled-knot limit.
-
-[PDF](figures/shared-entropy-frontier.pdf) · [SVG](figures/shared-entropy-frontier.svg) · [Editable TikZ](figures/shared-entropy-frontier.tex)
+The [endpoint theorem](../notes/general_fejer_endpoint_source_volume.md) gives the actual complete augmented volume. The local complex packet and [whole-CROSS theorem](../notes/general_all_cross_long_filling_volume.md) then give the actual smooth filled volume on the entire CROSS period, including every Fourier charge. The [complete-radius balance theorem](../notes/general_complete_radius_balance_filling_volume.md) bounds the full complementary source and proves the original invariant's limit under a finite condition on the same marked packing. The algebraic test in the diagram is sufficient, including its equality case. The amber final box records the remaining coverage problem at every fixed width $k\geq2$; it does not recast the conditional theorem as a theorem for all plats.

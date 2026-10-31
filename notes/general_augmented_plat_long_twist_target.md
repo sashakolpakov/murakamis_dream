@@ -10,7 +10,7 @@ proves the actual augmented volume for the full positive numerator, with
 [odd regularization](actual_fejer_odd_regularized_full_numerator.md) and
 a [unique geometric maximum](actual_fejer_unique_geometric_maximizer.md).
 This settles the positive endpoint optimization at every certified fixed
-width. The remaining task is the original phase-sensitive filling period.
+width. The whole-period and conditional full-invariant results below now extend this endpoint calculation.
 
 The [full spectral numerator theorem](general_full_spectral_numerator_geometric_packet.md)
 now proves a nonzero relative asymptotic on a fixed complex neighborhood
@@ -30,11 +30,21 @@ retains its boundary currents, and proves its coefficient is nonzero.
 The finite local charge sector therefore has the actual filled volume
 as its normalized logarithmic growth rate, at both level parities.
 
-What remains on this direct route is the **exact global remainder**:
-outside-cube integrals of the finitely selected charges and the complete
-original integrals of every remaining charge. Their total must not
-cancel or dominate the proved local sector. The ordinary-face cycle
-and the localized spectral contribution have both been established.
+The [entire CROSS period theorem](general_all_cross_long_filling_volume.md)
+now controls every original Fourier charge and the whole spectral contour
+for the CROSS sector, with its actual filled-volume rate. The
+[complete-radius balance theorem](general_complete_radius_balance_filling_volume.md)
+also proves the FULL original invariant limit whenever the actual marked
+complete packing satisfies its finite test at every port. A sufficient
+[algebraic criterion](actual_triangle_entropy_algebraic_balance.md) is
+
+$$ (x+y+b)(x+y+c)\geq\max\{b^2,c^2\}. $$
+
+The theorem permits every independently long fixed signed twist vector,
+with no slope-ratio condition. What remains is broad geometric coverage
+of this condition, or a bound for the macroscopic one-sided sectors when
+it fails. In particular, arbitrary supplied plat width or a numerical
+packing experiment does not by itself prove the desired family coverage.
 A separate generic-q normal estimate is unnecessary for this exact
 fixed-root route; see the [scope audit](fixed_root_direct_power_scope.md).
 The older mixed-color route and its conditions are preserved below as
@@ -135,8 +145,9 @@ simple triangulated sphere. The existing angle optimization and labeled
 cut construction then supply its complete right-angled geometry, with
 all prescribed half-twist patterns and primitive markings. This class
 has explicit examples at every fixed supplied width. It is a sufficient
-class for the geometric and endpoint results; the quantum assertion (1)
-remains open even in this class.
+class for the geometric and endpoint results. Assertion (1) is now proved
+in its complete-radius balanced subclass; without that additional test
+it remains open.
 
 ## 2. Why twist length needs a diagram hypothesis
 
@@ -242,10 +253,11 @@ retain both semisimple and nilpotent data of every original pair Casimir.
 The numerator is an exact coherent transform of ALL physical colors;
 its positive path expansion can be sewn with the same shared face
 targets. The closing cap near spectral +2 is controlled at fixed twist
-power. The fixed complex shared numerator estimate is now proved. The remaining
-global spectral contour and its Fourier charge sum are explicit
-outstanding problems. Long
-twisting alone does not damp both sides of a spectral contour.
+power. The fixed complex shared numerator and entire CROSS spectral
+period are now proved. Complete-radius balance also controls the full
+one-sided remainder. Without that condition, its macroscopic sectors
+remain to be estimated. Long twisting alone does not damp both sides
+of a spectral contour.
 
 The [full positive endpoint theorem](general_fejer_endpoint_source_volume.md)
 now proves W_D=Vol(Y_D)/(2pi) for the original even numerator under the
@@ -259,14 +271,17 @@ identifies the only endpoint maximum with the original marked complete
 geometry and gives a strict gap for its complement, including the entire
 one-sided remainder. These are positive-source and spectral statements.
 The localized spectral Gaussian unit-charge contribution is now proved.
-The exact complementary spectral/charge remainder is the phase-sensitive gap.
+The entire CROSS period and balanced full remainder are now controlled
+as well; unrestricted geometric coverage remains the gap.
 
 ## 4. Remaining inputs and preserved alternative routes
 
 For the current direct fixed-root route, the full local numerator packet,
 its contributing ordinary-face saddle and the marked filled critical
-value are proved by the results linked at the start. The remaining
-input is the exact global remainder after the proved localized charge sector. The mixed-color
+value are proved by the results linked at the start. The whole-CROSS
+period and full balanced-class limit are also proved. The remaining
+input is broad coverage of balance or a more general full remainder
+estimate. The mixed-color
 requirements in this section concern the older alternative route and
 must not be added as prerequisites to the direct one.
 

@@ -8,58 +8,44 @@
 \begin{document}
 \hyphenpenalty=10000\exhyphenpenalty=10000
 \begin{tikzpicture}[font=\sffamily,text=ink,>=Stealth,
- panel/.style={draw=blue,fill=blue!4,rounded corners,align=center,inner sep=12pt},
+ panel/.style={draw=blue,fill=blue!4,rounded corners,align=center,inner sep=12pt,text width=13cm},
  pending/.style={panel,draw=amber,fill=amber!4,dashed}]
- \node[font=\sffamily\large\bfseries] at (0,2.4)
- {From the original source to the filled geometric saddle};
- \node[panel,text width=13cm] (source) at (0,0)
- {\textbf{Original positive endpoint source}\\[8pt]
- $\displaystyle Z_{D,N}=[\prod_{f\ \mathrm{ordinary}} L_f^{N-1}]
-        \prod_{e=1}^{R}P_e\big|_{L_u=L_v=0}$\\[6pt]
- Original faces, marked targets and level $N$ retained.};
- \node[panel,text width=5.8cm] (flow) at (-3.65,-4.7)
- {\textbf{Full polynomial support}\\[8pt]
- Every local degree-$N-1$ monomial\\[5pt]
- Exact integer incidence flows\\[5pt]
- One compact flow polytope $\mathcal Q_D$};
- \node[panel,text width=5.8cm] (entropy) at (3.65,-4.7)
- {\textbf{Uniform coefficient entropy}\\[8pt]
- $h(q_e)$ on the entire closed simplex\\[5pt]
- Cross and one-sided branches agree\\[5pt]
- at their terminal seams};
- \draw[->,blue,thick] (source.south)--++(0,-.3)-|(flow.north);
- \draw[->,blue,thick] (source.south)--++(0,-.3)-|(entropy.north);
- \node[panel,text width=13cm] (limit) at (0,-9.1)
- {\textbf{Proved positive-source limit at every fixed plat width}\\[10pt]
+ \node[font=\sffamily\large\bfseries] at (0,2.2)
+ {A full volume theorem under complete-radius balance};
+ \node[panel] (source) at (0,0)
+ {\textbf{Original source and complete geometry}\\[8pt]
+ Fixed certified simple-white plat; prescribed knot-producing parity.\\
+ Exact shared-face coefficient, marked zeros, both level parities.\\[6pt]
  $\displaystyle \lim_{N\to\infty}\frac{\log Z_{D,N}}{N}
-       =W_D=\max_{q\in\mathcal Q_D}\sum_e h(q_e)$\\[7pt]
- Even endpoint; odd levels use the actual spectral regularization.};
- \draw[->,blue,thick] (flow.south)--++(0,-.3)-|(limit.north);
- \draw[->,blue,thick] (entropy.south)--++(0,-.3)-|(limit.north);
- \node[panel,text width=13cm] (volume) at (0,-13.3)
- {\textbf{Proved under the original labeled geometric certificate}\\[8pt]
- $\displaystyle W_D=\frac{\operatorname{Vol}(Y_D)}{2\pi}$\\[7pt]
- Exact identity contraction, hybrid flow cuts, and the\\
- relative fundamental chain of the original augmented-link group.};
- \draw[->,blue,thick] (limit)--(volume);
- \node[panel,text width=13cm] (packet) at (0,-17.7)
- {\textbf{Proved: full complex spectral source near completeness}\\[8pt]
- Original face torus, nonzero relative asymptotic,\\
- all repeated-node spectral data retained.\\[7pt]
- The unit-charge filling critical value is
- $\operatorname{Vol}(S^3\setminus K_D(p))/(2\pi)$.};
- \draw[->,blue,thick] (volume)--(packet);
- \node[panel,text width=13cm] (localperiod) at (0,-22.0)
- {\textbf{Proved: the localized original spectral integral}\\[8pt]
- Nonzero unit-charge contribution and finite local charge dominance\\
- for independently long, fixed signed twists.\\[7pt]
- $\displaystyle \lim_{N\to\infty}\frac{2\pi}{N}\log|U_{N,n;b}|
-       =\operatorname{Vol}(S^3\setminus K_D(p))$};
- \draw[->,blue,thick] (packet)--(localperiod);
- \node[pending,text width=13cm] (filling) at (0,-26.1)
- {\textbf{Open: control the exact global remainder}\\[7pt]
- Selected charges outside the cube; every other charge on its full domain.\\
- Their total must not cancel or dominate the proved local contribution.};
- \draw[->,amber,thick,dashed] (localperiod)--(filling);
+ =\max_{q\in\mathcal Q_D}\sum_e h(q_e)
+ =\frac{\operatorname{Vol}(Y_D)}{2\pi}$};
+ \node[panel] (cross) at (0,-4.1)
+ {\textbf{Entire CROSS filling period: proved}\\[8pt]
+ Nonzero geometric saddle; all original Fourier charges and\\
+ whole-domain endpoint currents controlled.\\[6pt]
+ $\displaystyle \lim_{N\to\infty}\frac{2\pi}{N}\log|I_{\mathrm{cross},N}|
+ =\operatorname{Vol}(S^3\setminus K_D(\mathbf p))$};
+ \draw[->,blue,thick] (source)--(cross);
+ \node[panel] (balance) at (0,-8.4)
+ {\textbf{Finite sufficient condition on the same complete packing}\\[8pt]
+ Each port has face curvatures $(x,b,c,y)$, with $A=x+y>0$.\\[7pt]
+ $\displaystyle (A+b)(A+c)\geq\max\{b^2,c^2\}$\\[7pt]
+ A simpler sufficient test is $|b-c|\leq x+y$.\\
+ Protected zero curvatures remain exactly zero.};
+ \draw[->,blue,thick] (cross)--(balance);
+ \node[panel] (full) at (0,-12.9)
+ {\textbf{Full original invariant: proved under that condition}\\[8pt]
+ The LEFT/RIGHT remainder has a strict global exponential gap.\\[7pt]
+ $\displaystyle \lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(K_D(\mathbf p))|
+ =\operatorname{Vol}(S^3\setminus K_D(\mathbf p))$\\[7pt]
+ Every independently long fixed signed twist vector;\\
+ threshold depends on $D$. Twists are fixed before $N\to\infty$.};
+ \draw[->,blue,thick] (balance)--(full);
+ \node[pending] (coverage) at (0,-17.2)
+ {\textbf{Open: prove broad coverage at arbitrary bridge width}\\[8pt]
+ Construct actual marked packings satisfying balance for a\\
+ family at each fixed width $k\geq2$, or find a wider estimate.\\[7pt]
+ A wide presentation or numerical sample does not prove coverage.};
+ \draw[->,amber,thick,dashed] (full)--(coverage);
 \end{tikzpicture}
 \end{document}

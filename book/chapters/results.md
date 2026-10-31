@@ -2,6 +2,25 @@
 
 The project seeks equality for broad classes of hyperbolic knots, with the right side established as the volume of the actual complement. The results below are research proofs recorded and internally reviewed in this repository. They are not claims of external peer review.
 
+## A full filling theorem with a finite geometric hypothesis
+
+Take a fixed certified simple-white augmented plat and its original marked complete packing. At each crossing region write the four face curvatures as $(x,b,c,y)$; the two protected curvatures stay exactly zero. Put $A=x+y>0$. The [algebraic balance lemma](../../notes/actual_triangle_entropy_algebraic_balance.md) shows that
+
+$$ (A+b)(A+c)\geq\max\{b^2,c^2\} $$
+
+at every region is sufficient for the [full invariant theorem](../../notes/general_complete_radius_balance_filling_volume.md). The stronger test $|b-c|\leq x+y$ is often simpler to check. All regions use the **same actual complete packing**, with one common scale; separately chosen local radii do not give this certificate.
+
+For each such fixed diagram $D$, there is a threshold $T(D)$ so that every independently signed fixed full-twist vector with $|p_i|>T(D)$, and the prescribed knot-producing parity, satisfies
+
+$$\lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(K_D(\mathbf p))|
+=\operatorname{Vol}(S^3\setminus K_D(\mathbf p)).$$
+
+The right side is the volume of the actual smooth filled exterior. The twists are fixed before $N$ grows; no bound on their relative sizes is imposed. This theorem does not assert minimal bridge number, a width-only threshold, or that all certified diagrams pass the test.
+
+The sharper hypothesis is $Q_b(0)+Q_c(0)>\log b,\log c$ for the positive middles, where $Q$ is the original triangle action. Its proof follows three steps. The [entire CROSS period](../../notes/general_all_cross_long_filling_volume.md) has the filled-volume rate, with every Fourier charge and endpoint current controlled. The [global LEFT/RIGHT estimate](../../notes/actual_global_left_weighted_spectral_envelope.md) bounds every surviving one-sided factor strictly below its CROSS rate under balance, at all face phases on the same coefficient torus. Finally, integration by parts on the original whole domains makes the full remainder exponentially smaller than the nonzero CROSS contribution.
+
+**The remaining coverage problem is geometric.** We need a proved family of these actual marked packings at every fixed width $k\geq2$, or a replacement for balance that controls the remaining sectors. Numerical packing checks are candidates for that proof, not family theorems.
+
 ## Complete signed augmented links at arbitrary width
 
 The [general signed source theorem](../../notes/general_signed_augmented_source_volume.md) covers every fixed connected augmented plat carrying a labeled convex ideal right-angled polyhedron for its actual projection and crossing-disk cut. There is no restriction on bridge width, matching graph, or a Conway grammar. For any fixed pattern of retained half twists $\epsilon_i\in\{0,1,-1\}$, the original marked complete-circle source satisfies
@@ -10,7 +29,7 @@ $$\lim_{N\to\infty}\frac{2\pi}{N}\log|A_{D,N}^{\boldsymbol\epsilon}|=2\operatorn
 
 Both level parities and composite levels are included. The proof converts the whole finite source into positive face coefficients, proves a global coefficient saddle and an all-channel upper bound at shared geometric radii, and computes the absolute action by coning the actual facets. A uniform relative estimate from the original continuants then sums the retained phases to a nonzero Gaussian coefficient. Every original scalar, support condition and marked measure remains in the identity. The [untwisted proof](../../notes/general_untwisted_augmented_source_volume.md) remains a shorter entry to the positive argument.
 
-This is a complete augmented-link result, including patterns whose main strands form one component. The external-color complex packet and full complementary-region estimate needed for independently long fillings remain open in this generality. The theorem also requires the labeled geometric certificate; it does not assert that every reduced plat supplies one. The [coverage comparison](../../notes/general_untwisted_augmented_source_literature_coverage.md) credits earlier overlapping link results and checks the parallel-belt parity obstruction.
+This is a complete augmented-link result, including patterns whose main strands form one component. The separate balance theorem above now supplies independently long fillings under its additional finite geometric condition; unrestricted filling coverage remains open. The theorem also requires the labeled geometric certificate; it does not assert that every reduced plat supplies one. The [coverage comparison](../../notes/general_untwisted_augmented_source_literature_coverage.md) credits earlier overlapping link results and checks the parallel-belt parity obstruction.
 
 ## Full original-source equalities
 
