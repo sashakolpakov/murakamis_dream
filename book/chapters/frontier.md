@@ -235,10 +235,30 @@ There is now an exact [even-level reduction of that shared coefficient](../../no
 
 $$\frac{N}{2}H_M\ \leq\ P_{\mathrm{cross}}\ \leq\ \frac{3N}{2}H_M$$
 
-coefficientwise. The original marked coefficient with crossing paths at every port therefore has the known complete-volume rate, under the same labeled geometric certificate. Every other nonzero term has one-sided ports forming a rooted forest: a one-sided port occupies more than half of a middle face's allowed degree, so no face can receive two such ports, and the original gap graph excludes a surviving cycle. The forest terms need not vanish. Bounding their weights remains open; their literal half-size blocks still use level $N$. This positive path partition is distinct from a decomposition into covariant color coupons.
+coefficientwise. The original marked coefficient with crossing paths at every port therefore has the known complete-volume rate, under the same labeled geometric certificate. Every other nonzero term has one-sided ports forming a rooted forest: a one-sided port occupies more than half of a middle face's allowed degree, so no face can receive two such ports, and the original gap graph excludes a surviving cycle. The forest terms need not vanish, and their literal half-size blocks still use level $N$. This positive path partition is distinct from a decomposition into covariant color coupons.
 
 For the general knot theorem, the decisive missing statement is still a **global asymptotic for the original phase-sensitive source**: a nonzero geometric contribution, with its actual marked action, and control of every complementary color, charge and boundary contribution. The regular representation morphism and the endpoint estimate are inputs to that statement, not substitutes for it.
 
 ## Existing knot results and preserved alternatives
 
 The [results chapter](results.md) retains the internally reviewed pretzel, belt-stack and signed Conway filling theorems with their original hypotheses. They do not exhaust arbitrary plats. The cube, Fourier, weighted-Cauchy, Karamata-inspired and torsor arguments remain in the [research library](../library.html), including failed intermediate estimates and their corrections. The current route adds a general exact coefficient and a whole-source augmented-link result without discarding those ideas.
+
+
+## The positive endpoint source now has a general limit
+
+The [closed half-block theorem](../../notes/actual_fejer_half_block_entropy.md) proves the logarithmic rate of every local coefficient, uniformly up to the endpoint rows and zero outer degrees. The [shared entropy theorem](../../notes/actual_fejer_shared_entropy_variational.md) then proves, for every fixed connected original flat plat with a nonempty eventual support,
+
+$$\lim_{\substack{N\to\infty\\N\ \mathrm{even}}}\frac{1}{N}\log Z_{D,N}
+=W_D=\max_{s\in\mathcal A_D}\max_{q\in\mathcal P_s}\sum_e E_{s_e}(q_e).$$
+
+Here $Z_{D,N}$ is the original positive endpoint numerator, $s$ chooses cross, left or right paths at each port, and $\mathcal P_s$ keeps every shared-face target and both original protected zeros. The local function $E$ is explicit, with a finite Lobachevsky formula; the triangular cross terms use its complete endpoint. This is an equality for the actual shared coefficient, not just a positive-radius upper bound.
+
+The admissible set $\mathcal A_D$ is determined by an exact bounded integer flow test at the single level $N_*=10R+2$, where $R$ is the number of ports. The finite offsets matter: a limiting support inequality can hold with equality while the original source violates it by one degree. A seven-port certificate in the proof shows that changing just one terminal half block into a cross block can cause precisely this failure.
+
+![The general positive-source limit is proved; the geometric maximum comparison and the original filling cycle remain separate open steps.](../figures/shared-entropy-frontier.png)
+
+Under the existing labeled geometric certificate, the all-cross contribution gives $W_D\geq\operatorname{Vol}(Y_D)/(2\pi)$. The reverse inequality is the remaining geometric problem. It is already proved in the central forest corridor: if every noncross excess is at most $\delta N$, its rate is between the geometric rate and that rate plus $C_D\delta(1+\log(1/\delta))$. In particular, any sublinear excess restriction, together with all-cross, has exactly the geometric rate. The proof retains the shifted protected-face targets and regularizes the original shared radii before taking the level limit.
+
+Thus the unresolved positive-source comparison is confined to macroscopic excesses. A proposed convexity shortcut fails for actual fixed-degree coefficients, so it is not used. A separate proposed regulator extension also failed a change-of-reference-flag test and is withheld pending a global boundary-chain proof. Neither issue affects the shared entropy theorem.
+
+Even a proof that $W_D=\operatorname{Vol}(Y_D)/(2\pi)$ would concern this positive endpoint source. The original phase-sensitive filling transform still needs a contributing geometric cycle and control of the remaining colors and spectral charges to establish the volume of the fixed filled knot.

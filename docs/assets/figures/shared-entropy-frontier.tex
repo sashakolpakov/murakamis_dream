@@ -1,0 +1,49 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb}
+\usetikzlibrary{arrows.meta,positioning}
+\definecolor{ink}{HTML}{183444}
+\definecolor{blue}{HTML}{1B6780}
+\definecolor{amber}{HTML}{AD601A}
+\begin{document}
+\hyphenpenalty=10000\exhyphenpenalty=10000
+\begin{tikzpicture}[font=\sffamily,text=ink,>=Stealth,
+ panel/.style={draw=blue,fill=blue!4,rounded corners,align=center,inner sep=12pt},
+ pending/.style={panel,draw=amber,fill=amber!4,dashed}]
+ \node[font=\sffamily\large\bfseries] at (0,2.4)
+ {One entropy problem at every fixed bridge width};
+ \node[panel,text width=13cm] (source) at (0,0)
+ {\textbf{Original positive endpoint source}\\[8pt]
+ $\displaystyle Z_{D,N}=[\prod_{f\ \mathrm{ordinary}} L_f^{N-1}]
+        \prod_{e=1}^{R}P_e\big|_{L_u=L_v=0}$\\[6pt]
+ Original faces, marked targets and level $N$ retained.};
+ \node[panel,text width=5.8cm] (flow) at (-3.65,-4.7)
+ {\textbf{Exact finite support}\\[8pt]
+ Bounded integer incidence flows\\[5pt]
+ One test level: $N_*=10R+2$\\[5pt]
+ Eventually admissible patterns $\mathcal A_D$};
+ \node[panel,text width=5.8cm] (entropy) at (3.65,-4.7)
+ {\textbf{Uniform coefficient entropy}\\[8pt]
+ $E(\mu,\nu,\xi)$ on the closed domain\\[5pt]
+ All endpoint rows and outer degrees\\[5pt]
+ Shared limiting flow polytope $\mathcal P_s$};
+ \draw[->,blue,thick] (source.south)--++(0,-.3)-|(flow.north);
+ \draw[->,blue,thick] (source.south)--++(0,-.3)-|(entropy.north);
+ \node[panel,text width=13cm] (limit) at (0,-9.1)
+ {\textbf{Proved for this positive source, through even levels}\\[10pt]
+ $\displaystyle \lim_{N\to\infty}\frac{\log Z_{D,N}}{N}
+       =W_D=\max_{s\in\mathcal A_D}\max_{q\in\mathcal P_s}
+            \sum_e E_{s_e}(q_e)$};
+ \draw[->,blue,thick] (flow.south)--++(0,-.3)-|(limit.north);
+ \draw[->,blue,thick] (entropy.south)--++(0,-.3)-|(limit.north);
+ \node[pending,text width=13cm] (volume) at (0,-13.0)
+ {\textbf{Open geometric comparison}\\[8pt]
+ $\displaystyle W_D\stackrel{?}{=}\frac{\operatorname{Vol}(Y_D)}{2\pi}$\\[7pt]
+ Lower bound and sublinear-excess corridor proved under the\\
+ labeled geometric certificate; macroscopic patterns remain.};
+ \draw[->,amber,thick,dashed] (limit)--(volume);
+ \node[amber,align=center,text width=13cm,font=\sffamily\small] at (0,-15.5)
+ {The original Kashaev filling cycle is a further step.\\
+ The positive endpoint theorem is not the filled-knot volume conjecture.};
+\end{tikzpicture}
+\end{document}

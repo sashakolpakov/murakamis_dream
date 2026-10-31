@@ -36,10 +36,11 @@ Start with [the equality results](results.md) for the exact knot and link famili
 | Whole complete source limit | Every connected certified augmented plat with any retained half-twist pattern, at arbitrary fixed width and both level parities; exact face coefficients, a nonzero signed Gaussian and actual polyhedral volume |
 | Complete-image external colors | A nonzero asymptotic on a fixed complex neighborhood; its limiting action is the actual marked geometric regulator, with the necessary complex boundary correction |
 | Whole mixed source near completeness | Actual representation-volume limit at any set of untwisted varied ports; joint signed/unsigned corridors under finite shared-radius certificates, including disconnected subsets |
+| Positive endpoint source at arbitrary width | Exact shared entropy limit at even levels, with a finite support test; its complete geometric lower bound and sublinear-excess corridor are proved, while the full geometric upper bound remains open |
 | General signed long-filled knot equality | Bounds for every remaining reflected color term and the combined far aliases remain unresolved |
 
 The cube, Fourier, torsor, and alternative approaches are preserved. A failed intermediate estimate is useful evidence about the argument; it is retained beside the corrected scope.
 
 ## About this edition
 
-This guide organizes the research snapshot of 30 October 2026. Its chapters explain the current argument; linked technical notes contain the detailed proofs and qualifications. Historical checkpoints remain in the archive and should be read with their dates and later corrections in mind.
+This guide organizes the research snapshot of 31 October 2026. Its chapters explain the current argument; linked technical notes contain the detailed proofs and qualifications. Historical checkpoints remain in the archive and should be read with their dates and later corrections in mind.

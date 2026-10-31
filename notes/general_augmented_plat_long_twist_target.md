@@ -1,6 +1,6 @@
 # The general long-twist target at arbitrary bridge number
 
-30 October 2026 update. The target remains arbitrary fixed k>=2 and
+31 October 2026 update. The target remains arbitrary fixed k>=2 and
 independently sufficiently long FIXED signed twists, with the knots and
 slopes fixed before the quantum level tends to infinity. It remains a
 CONJECTURE for a general essential hyperbolic augmented skeleton.
@@ -201,6 +201,15 @@ targets. The closing cap near spectral +2 is controlled at fixed twist
 power. The remaining global contour, its nonzero Fourier charges, and
 the shared numerator estimate are explicit outstanding problems. Long
 twisting alone does not damp both sides of a spectral contour.
+
+The [general shared entropy theorem](actual_fejer_shared_entropy_variational.md)
+now gives an exact all-even-level limit W_D for the positive endpoint
+numerator at every fixed width. Its admissible assignments are selected
+by one exact integer-flow test at N_*=10R+2. Under the labeled geometric
+certificate W_D is at least Vol(Y_D)/(2pi), and all sublinear noncross
+excesses have exactly that geometric rate. The upper bound for the FULL
+compact maximum remains open. This positive endpoint equality is not a
+phase-sensitive filled-knot asymptotic.
 
 ## 4. Inputs still needed for general signed long fillings
 

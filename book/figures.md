@@ -101,3 +101,12 @@ The right panel shows the local sheets of the square-root cover $\ell^2=L$, the 
 The [crossing theorem](../notes/actual_crossing_casimir_torus.md) gives a local classical transport law for every signed integer power, with the actual source normalization and stationary divisors. The [direct-power comparison](../notes/actual_direct_long_power_source.md) shows why a global volume bound must preserve its phases. The other singular fibers and the input/output orientation are specified in the theorem.
 
 [PDF](figures/casimir-twist-transport.pdf) · [SVG](figures/casimir-twist-transport.svg) · [Editable TikZ](figures/casimir-twist-transport.tex)
+
+
+## The general shared entropy problem
+
+![Exact finite support and uniform coefficient entropy give the positive endpoint limit; the full volume comparison and filling cycle remain open.](figures/shared-entropy-frontier.png)
+
+The [shared entropy theorem](../notes/actual_fejer_shared_entropy_variational.md) applies at arbitrary fixed bridge width. Its flow test retains the original finite degree offsets before passing to the compact optimization. The [frontier chapter](chapters/frontier.md#the-positive-endpoint-source-now-has-a-general-limit) separates this proved positive-source limit from the geometric maximum and the phase-sensitive filled-knot conjecture.
+
+[PDF](figures/shared-entropy-frontier.pdf) · [SVG](figures/shared-entropy-frontier.svg) · [Editable TikZ](figures/shared-entropy-frontier.tex)

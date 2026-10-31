@@ -113,3 +113,10 @@ The energy-profile audit checks actual Fourier norms, vanished unused nodes, can
 The shrinking-fold audit checks the actual source formula outside complete support as well as its endpoint and measures. The coefficient audit checks log-concavity, tilted modes, literal complex-radius normalization and interior coefficient rates. The shared-cycle audit compares against original Morse contractions, including the first-failure zeros, both-parity carrier cancellation, exact Kirchhoff support and marked charge. The resulting global Cauchy comparison remains an upper bound.
 
 The positive-partition audit reconstructs the original endpoint and white scalars, the high-degree Chevalley adapter, and full phase-bearing sums before checking their Cauchy bound. The radial-obstruction audit checks the finite phase derivatives, adapters and cup/mark relation; its general geometric conclusion uses the separately proved common-frame obstruction. Neither audit claims a global rate gap or volume equality.
+
+
+## The shared endpoint entropy theorem
+
+The half-block audit compares the original numerator coefficients, the positive path recurrence, negative roots, exact extreme coefficients, and the finite Lobachevsky formula. Its finite rate profiles remain diagnostics; the uniform closed-domain limit has a written proof.
+
+The shared-source audit checks 228 original coefficients, 4590 support patterns, 748302 affine-cut conditions, 118 one-level support certificates and 236 eventual-flow tests. A separate transfer audit checks 39599 Laurent coefficient comparisons and the path injection used in the central corridor. Independent full proof and code reviews and fresh audit replays accompany these results. These checks do not certify the still-open inequality between the full entropy maximum and hyperbolic volume.
