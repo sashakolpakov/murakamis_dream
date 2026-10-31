@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 import numpy as np
 from audit_actual_nc_morse_graph_first_normal_source_reduction import Local
-from audit_general_odd_endpoint_matching_network import apply_pair
+from original_source_tensor import apply_pair
 from audit_actual_q_hahn_partner_normal_collision import original_column
 
 

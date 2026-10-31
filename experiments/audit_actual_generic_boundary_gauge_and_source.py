@@ -18,7 +18,7 @@ from audit_high_color_first_normal_r_degree import root_field
 from audit_actual_matching_edge_antidiagonal_operator_packet import factorials, clebsch, cup
 from audit_actual_q_hahn_small_channel_generic_normals import source_S, scalar_K, determinant
 from audit_actual_nc_morse_graph_first_normal_source_reduction import Local, mm, kron, trans
-from audit_general_odd_endpoint_matching_network import apply_pair
+from original_source_tensor import apply_pair
 
 
 def sqrt_one(x):

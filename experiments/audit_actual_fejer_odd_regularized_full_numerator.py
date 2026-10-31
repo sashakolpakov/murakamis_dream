@@ -9,7 +9,7 @@ import sympy as sp
 from audit_actual_small_circle_polynomial_face_insertion import Local,casimir
 from audit_actual_gaussian_resolvent_numerator_and_cap import paths
 from audit_actual_original_marked_face_coefficient import morse_faces,substitute,mul,local_polynomials
-from audit_general_odd_endpoint_matching_network import apply_pair
+from original_source_tensor import apply_pair
 
 
 def field_kernels(loc):

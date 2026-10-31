@@ -139,3 +139,12 @@ The [simultaneous theorem](../notes/general_simultaneous_bridge_gap_filling_volu
 The [separation theorem](../notes/actual_shared_radius_certificate_separation.md) gives exact rational witnesses in both directions. A feasible fractional flow bounds every anchored radius choice from below; forty actual-sector branches have explicit shared-radius upper bounds. All face targets and the original mark remain fixed. The final dashed box records the universal genuine-sector inequality still needed.
 
 [SVG](figures/sector-certificate-separation.svg) · [PDF](figures/sector-certificate-separation.pdf) · [TikZ source](figures/sector-certificate-separation.tex)
+
+
+## A measure-preserving spectral rearrangement
+
+![The angle fold at delta one quarter and its role in the uniform triangle-energy bound.](figures/spectral-energy-rearrangement.png)
+
+For the shown parameter the folded angle is a tent map: each height has two preimages whose density sums to one. The [general proof](../notes/actual_one_sided_relative_spectral_energy.md) establishes the same uniform distribution for every spectral parameter. A pointwise kernel inequality then gives the triangle entropy bound. The dashed final box retains the original shared-face optimization still needed for universal coverage.
+
+[SVG](figures/spectral-energy-rearrangement.svg) · [PDF](figures/spectral-energy-rearrangement.pdf) · [TikZ source](figures/spectral-energy-rearrangement.tex)

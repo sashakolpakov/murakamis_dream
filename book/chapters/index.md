@@ -14,6 +14,8 @@ The current target allows every fixed bridge width $k\geq2$: start with an essen
 
 The [simultaneous bridge-gap theorem](../../notes/general_simultaneous_bridge_gap_filling_volume.md) now permits a separate depth $m_j$ at every initial bridge gap, giving $3k-3+2\sum_jm_j$ independent twist regions. Exact transport in square-root curvature controls all the added ports. The earlier marked unit-chain extension is its first-gap special case; the full diagram stays fixed during the quantum limit.
 
+The [new coefficient-energy theorem](../../notes/actual_one_sided_relative_spectral_energy.md) now supplies a uniform triangle bound for every one-sided coefficient. Weighted Cauchy and a measure-preserving angle rearrangement reduce the remaining general estimate to an explicit optimization over the original shared face flows. The [combined entropy criterion](../../notes/general_endpoint_conditioned_source_energy.md) gives the full actual-volume limit whenever that optimization has a strict gap; universal validity remains open.
+
 The [finite-sector cover theorem](../../notes/general_actual_sector_cover_filling_volume.md) now permits finer shared-radius bounds on genuine source branches. A rigorously certified seventeen-region example fails the simpler anchored test but passes forty refined branches. The universal question is whether every eligible plat admits strict bounds for all its genuine non-CROSS sectors; that remains open.
 
 ![The general route: exact source, local complex amplitudes and a marked geometric branch under a positive gluing certificate; global selection and estimates remain open.](../figures/research-map.png)
@@ -46,7 +48,7 @@ Start with [the equality results](results.md) for the exact knot and link famili
 | Explicit full original invariant at every $k\geq2$ | Three layers, $3k-3$ independent twist regions, actual filled volume, exact-bridge subfamilies |
 | Full original long-filled invariant under balance | A global remainder gap and the actual filled-volume limit for every fixed certified diagram passing the complete-radius test |
 | Full invariant beyond complete-packing balance | Finite genuine-sector covers; exact examples strictly separate balance, anchored and refined certificates |
-| General signed long-filled knot equality | Prove strict genuine-sector bounds for every eligible diagram, or a sharper remainder estimate; universal anchoring is false |
+| General signed long-filled knot equality | Prove the explicit combined entropy gap on original shared flows; uniform local coefficient bounds are now established |
 
 The cube, Fourier, torsor, and alternative approaches are preserved. A failed intermediate estimate is useful evidence about the argument; it is retained beside the corrected scope.
 

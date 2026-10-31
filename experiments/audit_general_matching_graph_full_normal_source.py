@@ -7,7 +7,7 @@ import numpy as np
 from audit_actual_two_cut_ports import balanced_data
 from audit_actual_marked_multiport_chebyshev_source_packet import pair_circle
 from audit_actual_nc_morse_graph_first_normal_source_reduction import Local,mm,kron
-from audit_general_odd_endpoint_matching_network import apply_pair
+from original_source_tensor import apply_pair
 from audit_general_augmented_plat_matching_geometry import plat_matching,cubic_dictionary
 
 

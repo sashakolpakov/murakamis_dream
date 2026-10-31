@@ -13,9 +13,10 @@ import numpy as np
 import sympy as sp
 
 from audit_actual_original_marked_face_coefficient import (
-    Local, add, local_polynomials, morse_faces, mul, substitute,
+    add, local_polynomials, morse_faces, mul, substitute,
 )
-from audit_general_odd_endpoint_matching_network import apply_pair
+from audit_actual_nc_morse_graph_first_normal_source_reduction import Local
+from original_source_tensor import apply_pair
 
 
 def casimir(loc):

@@ -179,3 +179,12 @@ The [general finite-cover theorem](../../notes/general_actual_sector_cover_filli
 The [separation verifier](../../experiments/audit_actual_shared_radius_certificate_separation.py) checks that both certificates use exactly the same original seventeen-port source and mark. An 84-variable rational flow rules out one anchored test by more than $0.025$; an 83-variable complete flow and forty rational radius vectors certify the refined cover by more than $0.04$. All face equations are exact, and Arb evaluations include explicit Fourier-series tails. The public scripts contain no numerical optimizer or private diagnostic inputs.
 
 The [undivided positive-capacity obstruction](../../notes/actual_complete_source_cauchy_capacity_gap.md) is analytical. Its proof establishes coercivity, rules out escaping level-dependent radii, and distinguishes the bound's exponential loss from the actual coefficient's correct volume rate. Finite positive-source normalization and the pure-face entropy values were independently reviewed.
+
+
+## Uniform coefficient energy and rearrangement
+
+The [protected-outer audit](../../experiments/audit_actual_protected_outer_spectral_energy.py) constructs the physical coproduct Casimir and extracts coefficients by the original finite Fourier transform. It verifies both parity reference factors and exact spectral sampling nodes. Symbolic identities and fixed integral checks supplement the analytical uniform boundary proof.
+
+The [general one-sided audit](../../experiments/audit_actual_one_sided_relative_spectral_energy.py) separately verifies the nonnegative parameter expansion, signed-parameter Cauchy inequalities, interior original coefficients, and the rearrangement identities. The uniform transfer estimate and compact finite-tilt argument are proved analytically, rather than inferred from sampled large levels. Independent readers checked the full local theorem and the conditional shared-flow consequence; no audit claims the remaining global entropy inequality.
+
+Four earlier audit consumers now import the physical `Local` class from its defining public module. The lightweight face compiler remains independent of quantum-only imports. Its tensor-contraction helper is now included explicitly and imported by the ten published consumers. The existing small-circle audit replays with results exactly matching its recorded output.

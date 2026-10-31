@@ -2,6 +2,25 @@
 
 The target remains a volume theorem for broad classes at every fixed bridge width. The [new one-end layer family](../../notes/general_one_end_layer_long_filling_volume.md) now gives the full original invariant's limit for every $k\geq2$, with $3k-3$ independently long fixed signed twist regions and exact-bridge-$k$ subfamilies. The wider [balance theorem](../../notes/general_complete_radius_balance_filling_volume.md) applies to every certified diagram passing its finite complete-packing test. The unrestricted conjecture remains open.
 
+## From coefficient Cauchy to a shared volume inequality
+
+The [new local energy theorem](../../notes/actual_one_sided_relative_spectral_energy.md) controls **every** one-sided coefficient of the actual spectral numerator, uniformly over the full real spectral interval, both level parities and all degree boundaries. Relative to the positive endpoint coefficient $p_N$, it gives
+
+$$\frac1N\log\frac{\sup_\sigma|a_N(q;\sigma)|^2}{p_N(q)}
+\le C(q_x,q_y,\tfrac12-q_x-q_y)+o(1).$$
+
+The proof combines an exact weighted Cauchy inequality with an explicit rearrangement of the spectral angle. Its folded angle has the same uniform distribution as the original angle, so the weighted integral is bounded by a terminal complete-triangle integral. It keeps all unused rows and the odd derivative reference; it does not assume a coefficient limit from a weighted limit.
+
+![Weighted Cauchy, a measure-preserving folded angle, and the remaining shared entropy comparison.](../figures/spectral-energy-rearrangement.png)
+
+The [general shared-flow criterion](../../notes/general_endpoint_conditioned_source_energy.md) combines this bound with the earlier one-sided envelope. Write $h$ for the known endpoint coefficient entropy, $g$ for the triangle energy bound above (and $g=h$ on CROSS), and $h_{\rm env}$ for the earlier envelope, also equal to $h$ on CROSS. On each original feasible flow set
+
+$$h_{\rm sharp}=\min\{h_{\rm env},(h+g)/2\}.$$
+
+If the maximum of $\sum_e h_{\rm sharp}(q_e)$ over the closed non-CROSS shared-flow set is strictly below $\Phi_D$, the full original invariant has the actual filled-volume limit for independently sufficiently long fixed signed twists. This is a **proved sufficient reduction with an explicit finite-dimensional hypothesis**. The universal entropy inequality is still open. The source's face loads are retained throughout; the two terms are evaluated on the same flow, not independently maximized.
+
+The [protected-outer theorem](../../notes/actual_protected_outer_spectral_energy.md) is sharp: with one outer face zero, the optimized relative-energy rate is exactly $C(w,\tfrac12-w,0)$, where $w$ is the outer degree. The general interior bound needs no new local asymptotic conjecture. What remains is the global comparison with the actual hyperbolic volume.
+
 ## A general finite cover of the source sectors
 
 The [finite-sector cover theorem](../../notes/general_actual_sector_cover_filling_volume.md) gives the full original filled-volume limit whenever a finite cover of all non-CROSS source strings has strict shared-radius bounds. Each branch keeps genuine CROSS/LEFT/RIGHT labels and uses one common face vector with the original protected zeros. The diagram, half-twist pattern and independently long signed filling parameters remain fixed before the quantum limit.

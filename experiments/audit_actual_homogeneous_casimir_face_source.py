@@ -92,7 +92,7 @@ def physical_grid():
 
 def whole_case(N,boxes,ports,hs,epss,marked=1,width=2,pattern=False,grid=False):
  from audit_actual_original_marked_face_coefficient import morse_faces,substitute,evaluate
- from audit_general_odd_endpoint_matching_network import apply_pair
+ from original_source_tensor import apply_pair
  loc=Local(N);p,q,Q,d=loc.p,loc.q,loc.Q,loc.d
  chart=morse_faces(width,boxes,marked);nf=chart['faces'];M=d//2
  colors=physical_colors(loc);_,_,_,Rs=original_crossings(N)
