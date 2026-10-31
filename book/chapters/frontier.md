@@ -2,15 +2,24 @@
 
 The target remains a volume theorem for broad classes at every fixed bridge width. The [new one-end layer family](../../notes/general_one_end_layer_long_filling_volume.md) now gives the full original invariant's limit for every $k\geq2$, with $3k-3$ independently long fixed signed twist regions and exact-bridge-$k$ subfamilies. The wider [balance theorem](../../notes/general_complete_radius_balance_filling_volume.md) applies to every certified diagram passing its finite complete-packing test. The unrestricted conjecture remains open.
 
-## A broader finite certificate for the full invariant
+## A general finite cover of the source sectors
 
-The [anchored shared-radius theorem](../../notes/general_anchored_shared_radius_filling_volume.md) removes the requirement that one complete packing bound every sector. For a fixed certified simple-white diagram with $R$ twist regions, it asks for at most $2R$ positive face vectors: one for each surviving LEFT or RIGHT choice at a specified region. Each vector is shared by **all** regions in that coefficient estimate; the original two protected variables stay zero.
+The [finite-sector cover theorem](../../notes/general_actual_sector_cover_filling_volume.md) gives the full original filled-volume limit whenever a finite cover of all non-CROSS source strings has strict shared-radius bounds. Each branch keeps genuine CROSS/LEFT/RIGHT labels and uses one common face vector with the original protected zeros. The diagram, half-twist pattern and independently long signed filling parameters remain fixed before the quantum limit.
 
-At the selected region use its proved one-sided bound. At every other region use the full local bound. If their sum, minus the original face targets, is strictly below $\Phi_D=\operatorname{Vol}(Y_D)/(2\pi)$ for every selected choice, the full original invariant has the actual filled-volume limit for all independently long fixed signed twists. These are finite convex tests in logarithmic face variables. A strict witness suffices; an attained optimum is unnecessary.
+This strictly extends the [anchored criterion](../../notes/general_anchored_shared_radius_filling_volume.md). On the **same original seventeen-region marked plat**, an exact rational flow proves that one anchored bound exceeds the complete volume rate by more than $0.025$, for every choice of radii. A refined cover with forty branches has a certified gap greater than $0.04$ below that rate. The [separation theorem](../../notes/actual_shared_radius_certificate_separation.md) and its portable verifier establish both inequalities using rational data and explicit interval errors.
 
-Complete-packing balance implies this criterion. The converse fails for the original marked five-region plat with slot word $(1,3,2,1,3)$: its exact golden-ratio packing fails balance, while six rational shared vectors pass the new test. Rigorous interval bounds give gaps greater than $0.50$, $0.71$, and $1.35$ in reflected pairs. The [audit](../../experiments/audit_general_anchored_shared_radius_filling_volume.py) checks the original incidences and exact contacts, then encloses the entropy with explicit Fourier-series tails.
+![A coarser certificate fails on an actual source, while forty genuine sector branches pass.](../figures/sector-certificate-separation.png)
 
-The remaining general question is whether every eligible plat admits such certificates, or whether its one-sided terms need a sharper estimate. The [fixed-triangle lemma](../../notes/actual_fixed_triangle_boundary_capacity_gap.md) proves a quantitative loss on boundary faces of the original angle polytope. Fractional mixtures with identity terms still need a general bound; optimizing their individual endpoints separately would not prove it.
+Complete-packing balance still implies the anchored criterion. The earlier marked five-region example with word $(1,3,2,1,3)$ fails balance but passes six anchored witnesses. We now have two strict extensions of certificate classes, without claiming an inclusion theorem for unmarked knots with arbitrary alternative presentations.
+
+The [undivided-capacity theorem](../../notes/actual_complete_source_cauchy_capacity_gap.md) also identifies why optimizing one positive torus is insufficient: at a strictly unbalanced complete packing, even level-dependent optimal radii lose an exponential factor. The actual coefficient still has the complete volume rate.
+
+The remaining universal target is precise:
+
+$$\inf_{L>0}\left[\sum_e A_{e,\sigma_e}(L)-\sum_f\log L_f\right]<\Phi_D
+\quad\text{for each genuine non-CROSS string }\sigma.$$
+
+This condition would finish the full invariant theorem for every certified diagram where it holds. Its validity for all eligible plats remains open. The unrefined anchored condition is now known to be non-universal. Fractional one-sided comparison flows require a global estimate; their pure endpoints and the [fixed-triangle gap](../../notes/actual_fixed_triangle_boundary_capacity_gap.md) do not settle the intermediate mixtures.
 
 ## The class and the order of quantifiers
 
@@ -22,7 +31,7 @@ $$\min_i |m_i|>T(D)\quad\Longrightarrow\quad
 
 The diagram and every signed full-twist number $m_i$ are fixed **before** the quantum level $N$ tends to infinity. The prescribed parity pattern must give a knot. The threshold may depend on the diagram; no threshold depending only on $k$ is asserted.
 
-Under a positive marked gluing certificate, the [geometric filling theorem](../../notes/general_augmented_plat_long_filling_quantifiers.md) supplies a geometric threshold for independently long signed fillings. The quantum threshold is proved under the anchored shared-radius certificate, including the simpler complete-radius balance condition below. Its availability for every eligible plat remains open.
+Under a positive marked gluing certificate, the [geometric filling theorem](../../notes/general_augmented_plat_long_filling_quantifiers.md) supplies a geometric threshold for independently long signed fillings. The quantum threshold is proved under the finite-sector cover criterion, including the simpler anchored and complete-radius conditions below. Universal fixed-sector coverage remains open.
 
 ## An explicit full-invariant family at every width $k\geq2$
 

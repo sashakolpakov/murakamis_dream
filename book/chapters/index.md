@@ -14,7 +14,7 @@ The current target allows every fixed bridge width $k\geq2$: start with an essen
 
 The [simultaneous bridge-gap theorem](../../notes/general_simultaneous_bridge_gap_filling_volume.md) now permits a separate depth $m_j$ at every initial bridge gap, giving $3k-3+2\sum_jm_j$ independent twist regions. Exact transport in square-root curvature controls all the added ports. The earlier marked unit-chain extension is its first-gap special case; the full diagram stays fixed during the quantum limit.
 
-The [new shared-radius criterion](../../notes/general_anchored_shared_radius_filling_volume.md) also covers marked diagrams where complete-packing balance fails. At most $2R$ finite convex certificates control the full remainder for a diagram with $R$ regions. A rigorous five-region example verifies that extension; universal coverage remains open.
+The [finite-sector cover theorem](../../notes/general_actual_sector_cover_filling_volume.md) now permits finer shared-radius bounds on genuine source branches. A rigorously certified seventeen-region example fails the simpler anchored test but passes forty refined branches. The universal question is whether every eligible plat admits strict bounds for all its genuine non-CROSS sectors; that remains open.
 
 ![The general route: exact source, local complex amplitudes and a marked geometric branch under a positive gluing certificate; global selection and estimates remain open.](../figures/research-map.png)
 
@@ -45,8 +45,8 @@ Start with [the equality results](results.md) for the exact knot and link famili
 | Localized original filling period | A nonzero relative asymptotic on a fixed real cube at both parities, including the finite local charge sector and actual filled-volume rate; independently signed twists are fixed before the level limit |
 | Explicit full original invariant at every $k\geq2$ | Three layers, $3k-3$ independent twist regions, actual filled volume, exact-bridge subfamilies |
 | Full original long-filled invariant under balance | A global remainder gap and the actual filled-volume limit for every fixed certified diagram passing the complete-radius test |
-| Full invariant beyond complete-packing balance | At most $2R$ shared-radius certificates; an exact marked fixture fails the old test and passes all new bounds |
-| General signed long-filled knot equality | Prove the shared-radius certificates for every eligible diagram, or obtain a sharper general remainder estimate |
+| Full invariant beyond complete-packing balance | Finite genuine-sector covers; exact examples strictly separate balance, anchored and refined certificates |
+| General signed long-filled knot equality | Prove strict genuine-sector bounds for every eligible diagram, or a sharper remainder estimate; universal anchoring is false |
 
 The cube, Fourier, torsor, and alternative approaches are preserved. A failed intermediate estimate is useful evidence about the argument; it is retained beside the corrected scope.
 

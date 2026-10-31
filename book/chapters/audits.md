@@ -170,3 +170,12 @@ The [unit-chain theorem](../../notes/general_marked_unit_chain_filling_volume.md
 ## Simultaneous insertions at every initial bridge gap
 
 The [simultaneous theorem](../../notes/general_simultaneous_bridge_gap_filling_volume.md) has independent full proof/code reviews and redirected exact replays. Its audit checks 413 nonuniform-depth source charts, seven exact symbolic transport/ratio identities, and 25 joint small packings with 2,333 support checks. The analytical proof establishes the general source induction, disjoint-gap construction, curvature order and all port bounds. The extended diagram retains its own full normalization; no equality of its framing scalar with the core's scalar is asserted.
+
+
+## Refined sector covers and a rigorous obstruction
+
+The [general finite-cover theorem](../../notes/general_actual_sector_cover_filling_volume.md) has independent full analytical and scope reviews. Its source partition and entire Fourier-remainder transfer use the original shared face targets and both level parities.
+
+The [separation verifier](../../experiments/audit_actual_shared_radius_certificate_separation.py) checks that both certificates use exactly the same original seventeen-port source and mark. An 84-variable rational flow rules out one anchored test by more than $0.025$; an 83-variable complete flow and forty rational radius vectors certify the refined cover by more than $0.04$. All face equations are exact, and Arb evaluations include explicit Fourier-series tails. The public scripts contain no numerical optimizer or private diagnostic inputs.
+
+The [undivided positive-capacity obstruction](../../notes/actual_complete_source_cauchy_capacity_gap.md) is analytical. Its proof establishes coercivity, rules out escaping level-dependent radii, and distinguishes the bound's exponential loss from the actual coefficient's correct volume rate. Finite positive-source normalization and the pure-face entropy values were independently reviewed.

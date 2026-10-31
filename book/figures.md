@@ -107,7 +107,7 @@ The [crossing theorem](../notes/actual_crossing_casimir_torus.md) gives a local 
 
 ![The complete endpoint, whole CROSS period, shared-radius certificates and full invariant; universal diagram coverage remains open.](figures/shared-entropy-frontier.png)
 
-The [endpoint theorem](../notes/general_fejer_endpoint_source_volume.md) gives the actual complete augmented volume. The local complex packet and [whole-CROSS theorem](../notes/general_all_cross_long_filling_volume.md) then give the actual smooth filled volume on the entire CROSS period, including every Fourier charge. The [anchored shared-radius theorem](../notes/general_anchored_shared_radius_filling_volume.md) bounds the full complementary source using at most twice as many shared-face vectors as twist regions. Complete-packing balance remains sufficient; the new criterion also passes an exactly certified marked example where balance fails. The last boxes record the proved family at every bridge width and the remaining extension to general diagrams.
+The [endpoint theorem](../notes/general_fejer_endpoint_source_volume.md) gives the actual complete augmented volume. The local complex packet and [whole-CROSS theorem](../notes/general_all_cross_long_filling_volume.md) then give the actual smooth filled volume on the entire CROSS period, including every Fourier charge. The [finite-sector cover theorem](../notes/general_actual_sector_cover_filling_volume.md) bounds the full complementary source by a finite cover of genuine labels. The simpler anchored and complete-packing tests remain sufficient; finer covers can succeed when those tests fail. The last boxes record the proved family at every bridge width and the remaining extension to general diagrams.
 
 ## An exact packing seed for every larger width
 
@@ -130,3 +130,12 @@ The [closure theorem](../notes/general_marked_unit_chain_filling_volume.md) adds
 The [simultaneous theorem](../notes/general_simultaneous_bridge_gap_filling_volume.md) performs a separate original-source insertion in each initial bridge gap. The shown finite-circle example has old curvatures $A=1$, $B=4$ and new curvatures $9$, $16$. Exact translation of square-root curvature controls any fixed chain length. Shared boundary disks remain unchanged, so the disjoint gaps can be treated together.
 
 [SVG](figures/each-bridge-gap-chain.svg) · [PDF](figures/each-bridge-gap-chain.pdf) · [TikZ source](figures/each-bridge-gap-chain.tex)
+
+
+## Refining source bounds without changing the invariant
+
+![The same marked source fails an anchored certificate and passes a complete forty-branch refinement.](figures/sector-certificate-separation.png)
+
+The [separation theorem](../notes/actual_shared_radius_certificate_separation.md) gives exact rational witnesses in both directions. A feasible fractional flow bounds every anchored radius choice from below; forty actual-sector branches have explicit shared-radius upper bounds. All face targets and the original mark remain fixed. The final dashed box records the universal genuine-sector inequality still needed.
+
+[SVG](figures/sector-certificate-separation.svg) · [PDF](figures/sector-certificate-separation.pdf) · [TikZ source](figures/sector-certificate-separation.tex)
