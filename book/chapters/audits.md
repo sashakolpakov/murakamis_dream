@@ -166,3 +166,7 @@ The [fixed-triangle capacity lemma](../../notes/actual_fixed_triangle_boundary_c
 ## A structural extension at arbitrary fixed depth
 
 The [unit-chain theorem](../../notes/general_marked_unit_chain_filling_volume.md) proves the literal prefix dictionary and an exact extension into the empty marked gap. Its proof preserves every old disk and checks all added ports analytically; depth is arbitrary. The focused audit checks 56 original source charts and 12 exact small seed extensions, including 1,084 circle/line support pairs. Root and an independent reviewer freshly replayed it. These finite checks support the source dictionary and geometry, while the proof establishes the unbounded-depth statement.
+
+## Simultaneous insertions at every initial bridge gap
+
+The [simultaneous theorem](../../notes/general_simultaneous_bridge_gap_filling_volume.md) has independent full proof/code reviews and redirected exact replays. Its audit checks 413 nonuniform-depth source charts, seven exact symbolic transport/ratio identities, and 25 joint small packings with 2,333 support checks. The analytical proof establishes the general source induction, disjoint-gap construction, curvature order and all port bounds. The extended diagram retains its own full normalization; no equality of its framing scalar with the core's scalar is asserted.

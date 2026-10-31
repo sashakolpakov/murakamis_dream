@@ -122,3 +122,11 @@ The curvatures and contact heights are exact. The [family proof](../notes/genera
 The [closure theorem](../notes/general_marked_unit_chain_filling_volume.md) adds the literal prefix $(1,2)^m$ to a balanced certified core with the stated first-cap mark. The old disks stay fixed; the new disks have unit radius. The resulting $3k-3+2m$-region families have arbitrary fixed depth at every fixed bridge width. New boxes use the first four physical strands; no claim about arbitrary full-width stacking is made.
 
 [SVG](figures/marked-unit-chain-extension.svg) · [PDF](figures/marked-unit-chain-extension.pdf) · [TikZ source](figures/marked-unit-chain-extension.tex)
+
+## Independent chain depth at every initial bridge gap
+
+![A finite tangent-circle gap with exact square-root-curvature transport.](figures/each-bridge-gap-chain.png)
+
+The [simultaneous theorem](../notes/general_simultaneous_bridge_gap_filling_volume.md) performs a separate original-source insertion in each initial bridge gap. The shown finite-circle example has old curvatures $A=1$, $B=4$ and new curvatures $9$, $16$. Exact translation of square-root curvature controls any fixed chain length. Shared boundary disks remain unchanged, so the disjoint gaps can be treated together.
+
+[SVG](figures/each-bridge-gap-chain.svg) · [PDF](figures/each-bridge-gap-chain.pdf) · [TikZ source](figures/each-bridge-gap-chain.tex)

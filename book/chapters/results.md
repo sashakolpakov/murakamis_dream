@@ -39,6 +39,26 @@ Here the equation holds at the interior indices $1\leq j\leq k-2$. After $v_j=\l
 
 This proves a family at each $k\geq2$, rather than all $k$-bridge knots. The earlier reduced-layer family at $k\geq4$ is [preserved separately](../../notes/general_reduced_layer_long_filling_volume.md). The wider complete-radius criterion remains available for other diagrams; the unrestricted conjecture remains open.
 
+## Independent tangle depth at every initial bridge gap
+
+The [simultaneous bridge-gap theorem](../../notes/general_simultaneous_bridge_gap_filling_volume.md) permits a separate fixed depth $m_j\geq0$ at every first-layer bridge gap of the one-end core. Replace its zero-based slot $2j-1$ by
+
+$$ (2j-1,2j)^{m_j}(2j-1),\qquad 1\leq j\leq k-1. $$
+
+The later two layers stay in their original order. The resulting family has
+
+$$ R=3k-3+2\sum_{j=1}^{k-1}m_j $$
+
+independently long signed twist regions. For every fixed width, depth vector and prescribed knot-producing half-twist pattern, sufficiently long fixed fillings have the **full original invariant's actual hyperbolic-volume limit**. The threshold may depend on this whole diagram. Taking new exponents even preserves the original knot parity automatically; more general fixed half-twist patterns are allowed when the resulting permutation gives a knot. The mod-$3$ exponent condition again supplies minimal bridge number exactly $k$.
+
+![Exact square-root-curvature transport inside each original bridge gap.](../figures/each-bridge-gap-chain.png)
+
+The geometry is explicit. In each original empty gap between the exterior line and two disks of curvatures $A\leq B$, insert a chain with
+
+$$ \sqrt{C_n}=\sqrt B+n\sqrt A. $$
+
+The original core disks remain fixed, and the gaps have disjoint interiors. The exact original face sweep verifies that simultaneous insertions have precisely these contacts. New ports have largest middle curvature at most $9/4$ times the sum of their outer curvatures, so the proved entropy bound gives balance. The one-end core's increasing side curvatures verify $A\leq B$ uniformly in width. This supplies arbitrary independent tangle depths across the first layer; it does not classify all $k$-bridge knots or arbitrary plat words.
+
 ## Arbitrarily many twist regions at each fixed width
 
 The [marked unit-chain theorem](../../notes/general_marked_unit_chain_filling_volume.md) extends any balanced certified core whose first box has zero-based slot $1$, which uses no slot $0$, and whose first cap is marked. Prepend $(1,2)^m$, assigning each new box its own even signed exponent. The original knot parity and marked cap are retained.

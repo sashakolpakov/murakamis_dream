@@ -12,7 +12,7 @@ The current target allows every fixed bridge width $k\geq2$: start with an essen
 
 **A full-invariant family is now proved at every fixed width $k\geq2$.** The [one-end layer theorem](../../notes/general_one_end_layer_long_filling_volume.md) allows $3k-3$ independently long fixed signed twist regions and gives the actual filled hyperbolic volume. Its congruence subfamilies have minimal bridge number exactly $k$. The wider [balance theorem](../../notes/general_complete_radius_balance_filling_volume.md) applies to every certified diagram satisfying its finite complete-packing condition. The unrestricted conjecture remains open; this construction does not cover all $k$-bridge knots or arbitrary plat diagrams.
 
-The [unit-chain extension](../../notes/general_marked_unit_chain_filling_volume.md) gives $3k-3+2m$ independently long twist regions for every fixed $k\geq2$ and $m\geq0$, preserving the core packing and the exact-bridge congruence subfamilies. The threshold may depend on the full diagram.
+The [simultaneous bridge-gap theorem](../../notes/general_simultaneous_bridge_gap_filling_volume.md) now permits a separate depth $m_j$ at every initial bridge gap, giving $3k-3+2\sum_jm_j$ independent twist regions. Exact transport in square-root curvature controls all the added ports. The earlier marked unit-chain extension is its first-gap special case; the full diagram stays fixed during the quantum limit.
 
 The [new shared-radius criterion](../../notes/general_anchored_shared_radius_filling_volume.md) also covers marked diagrams where complete-packing balance fails. At most $2R$ finite convex certificates control the full remainder for a diagram with $R$ regions. A rigorous five-region example verifies that extension; universal coverage remains open.
 
