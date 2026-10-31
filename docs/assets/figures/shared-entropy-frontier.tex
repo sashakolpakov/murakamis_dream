@@ -11,39 +11,41 @@
  panel/.style={draw=blue,fill=blue!4,rounded corners,align=center,inner sep=12pt},
  pending/.style={panel,draw=amber,fill=amber!4,dashed}]
  \node[font=\sffamily\large\bfseries] at (0,2.4)
- {One entropy problem at every fixed bridge width};
+ {From the full positive source to the actual augmented volume};
  \node[panel,text width=13cm] (source) at (0,0)
  {\textbf{Original positive endpoint source}\\[8pt]
  $\displaystyle Z_{D,N}=[\prod_{f\ \mathrm{ordinary}} L_f^{N-1}]
         \prod_{e=1}^{R}P_e\big|_{L_u=L_v=0}$\\[6pt]
  Original faces, marked targets and level $N$ retained.};
  \node[panel,text width=5.8cm] (flow) at (-3.65,-4.7)
- {\textbf{Exact finite support}\\[8pt]
- Bounded integer incidence flows\\[5pt]
- One test level: $N_*=10R+2$\\[5pt]
- Eventually admissible patterns $\mathcal A_D$};
+ {\textbf{Full polynomial support}\\[8pt]
+ Every local degree-$N-1$ monomial\\[5pt]
+ Exact integer incidence flows\\[5pt]
+ One compact flow polytope $\mathcal Q_D$};
  \node[panel,text width=5.8cm] (entropy) at (3.65,-4.7)
  {\textbf{Uniform coefficient entropy}\\[8pt]
- $E(\mu,\nu,\xi)$ on the closed domain\\[5pt]
- All endpoint rows and outer degrees\\[5pt]
- Shared limiting flow polytope $\mathcal P_s$};
+ $h(q_e)$ on the entire closed simplex\\[5pt]
+ Cross and one-sided branches agree\\[5pt]
+ at their terminal seams};
  \draw[->,blue,thick] (source.south)--++(0,-.3)-|(flow.north);
  \draw[->,blue,thick] (source.south)--++(0,-.3)-|(entropy.north);
  \node[panel,text width=13cm] (limit) at (0,-9.1)
- {\textbf{Proved for this positive source, through even levels}\\[10pt]
+ {\textbf{Proved positive-source limit at every fixed plat width}\\[10pt]
  $\displaystyle \lim_{N\to\infty}\frac{\log Z_{D,N}}{N}
-       =W_D=\max_{s\in\mathcal A_D}\max_{q\in\mathcal P_s}
-            \sum_e E_{s_e}(q_e)$};
+       =W_D=\max_{q\in\mathcal Q_D}\sum_e h(q_e)$\\[7pt]
+ Even endpoint; odd levels use the actual spectral regularization.};
  \draw[->,blue,thick] (flow.south)--++(0,-.3)-|(limit.north);
  \draw[->,blue,thick] (entropy.south)--++(0,-.3)-|(limit.north);
- \node[pending,text width=13cm] (volume) at (0,-13.0)
- {\textbf{Open geometric comparison}\\[8pt]
- $\displaystyle W_D\stackrel{?}{=}\frac{\operatorname{Vol}(Y_D)}{2\pi}$\\[7pt]
- Lower bound and sublinear-excess corridor proved under the\\
- labeled geometric certificate; macroscopic patterns remain.};
- \draw[->,amber,thick,dashed] (limit)--(volume);
- \node[amber,align=center,text width=13cm,font=\sffamily\small] at (0,-15.5)
- {The original Kashaev filling cycle is a further step.\\
- The positive endpoint theorem is not the filled-knot volume conjecture.};
+ \node[panel,text width=13cm] (volume) at (0,-13.3)
+ {\textbf{Proved under the original labeled geometric certificate}\\[8pt]
+ $\displaystyle W_D=\frac{\operatorname{Vol}(Y_D)}{2\pi}$\\[7pt]
+ Exact identity contraction, hybrid flow cuts, and the\\
+ relative fundamental chain of the original augmented-link group.};
+ \draw[->,blue,thick] (limit)--(volume);
+ \node[pending,text width=13cm] (filling) at (0,-17.5)
+ {\textbf{Open: the original phase-sensitive filling sum}\\[7pt]
+ Select the geometric cycle and control cancellation and its complement\\
+ to obtain the volume of each fixed, sufficiently long filled knot.};
+ \draw[->,amber,thick,dashed] (volume)--(filling);
 \end{tikzpicture}
 \end{document}

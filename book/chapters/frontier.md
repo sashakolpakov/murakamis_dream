@@ -229,7 +229,7 @@ $$(-1)^{N-1}V_N(-2\cosh w)
 
 Here the $L_h$ are the original physical-color coupons, with any separately retained half crossing multiplied on both sides in its original order. This is a polynomial identity retaining all repeated-node data. At $w=0$ it is the Fejer polynomial in the actual Casimir. After the displayed common sign $(-1)^{N-1}$, the homogeneous numerator at $\sigma=-2-u$ has nonnegative coefficients in $u$ and the four face variables, so its path expansion supplies a positive majorant for complex $\sigma$. The same face must still carry one shared weight throughout the diagram.
 
-The Gaussian times the full resolvent also has a controlled closing cap near $+2$: its cost is $e^{o(N)}$ on a shrinking cap for each fixed twist power. This settles that endpoint, not the surrounding contraction. A local positive-weight norm can exceed the complete geometric rate, and the twist Gaussian grows on one side of a fixed spectral ellipse. The next estimate must therefore use the actual shared coefficient and a justified contour; neither positivity nor a large twist supplies it automatically.
+The Gaussian times the full resolvent also has a controlled closing cap near $+2$: its cost is $e^{o(N)}$ on a shrinking cap for each fixed twist power. The endpoint theorem below now controls the actual shared coefficient near $-2$, including its full spectral derivatives. A local positive-weight norm can still exceed the complete geometric rate, and the twist Gaussian grows on one side of a fixed spectral ellipse. Controlling the intervening original contour requires a phase-sensitive estimate; neither positivity nor a large twist supplies it automatically.
 
 There is now an exact [even-level reduction of that shared coefficient](../../notes/actual_fejer_cross_half_source_reduction.md). The positive numerator splits into paths crossing the two middle spectral rows and paths staying on one side. If $H_M$ is the original maximal complete-channel polynomial, its crossing part satisfies
 
@@ -244,21 +244,52 @@ For the general knot theorem, the decisive missing statement is still a **global
 The [results chapter](results.md) retains the internally reviewed pretzel, belt-stack and signed Conway filling theorems with their original hypotheses. They do not exhaust arbitrary plats. The cube, Fourier, weighted-Cauchy, Karamata-inspired and torsor arguments remain in the [research library](../library.html), including failed intermediate estimates and their corrections. The current route adds a general exact coefficient and a whole-source augmented-link result without discarding those ideas.
 
 
-## The positive endpoint source now has a general limit
+The [simple-white criterion](../../notes/general_simple_white_plat_class.md) supplies the geometric certificate whenever the **actual** white cellulation is a simple triangulated sphere. This is a finite test on the given plat and its original matching. The proof permits arbitrary fixed width and separating triangles; an explicit slot-word construction gives knot-producing parity patterns at every supplied width. It does not assert that this presentation is minimal, or that every hyperbolic plat satisfies the test.
 
-The [closed half-block theorem](../../notes/actual_fejer_half_block_entropy.md) proves the logarithmic rate of every local coefficient, uniformly up to the endpoint rows and zero outer degrees. The [shared entropy theorem](../../notes/actual_fejer_shared_entropy_variational.md) then proves, for every fixed connected original flat plat with a nonempty eventual support,
+## The positive endpoint source has the actual complete volume
+
+The [general endpoint theorem](../../notes/general_fejer_endpoint_source_volume.md) proves the full positive-source limit for every fixed connected original flat plat at arbitrary fixed bridge width, under its labeled convex ideal right-angled certificate. Let $Y_D$ be that actual untwisted augmented exterior, and let $Z_{D,N}$ be the original marked coefficient with the coupon $P_N=-V_N(-2)=4(2+\Omega_N)^{-1}$ at every port. Then
 
 $$\lim_{\substack{N\to\infty\\N\ \mathrm{even}}}\frac{1}{N}\log Z_{D,N}
-=W_D=\max_{s\in\mathcal A_D}\max_{q\in\mathcal P_s}\sum_e E_{s_e}(q_e).$$
+=W_D=\frac{\operatorname{Vol}(Y_D)}{2\pi}.$$
 
-Here $Z_{D,N}$ is the original positive endpoint numerator, $s$ chooses cross, left or right paths at each port, and $\mathcal P_s$ keeps every shared-face target and both original protected zeros. The local function $E$ is explicit, with a finite Lobachevsky formula; the triangular cross terms use its complete endpoint. This is an equality for the actual shared coefficient, not just a positive-radius upper bound.
+This includes every even level, with the original cup, cap, mark and coefficient normalization. It is a theorem about the specified positive endpoint source; that source is not renamed the filled knot invariant.
 
-The admissible set $\mathcal A_D$ is determined by an exact bounded integer flow test at the single level $N_*=10R+2$, where $R$ is the number of ports. The finite offsets matter: a limiting support inequality can hold with equality while the original source violates it by one degree. A seven-port certificate in the proof shows that changing just one terminal half block into a cross block can cause precisely this failure.
+The [closed half-block estimates](../../notes/actual_fejer_half_block_entropy.md) and [full-kernel entropy theorem](../../notes/actual_fejer_full_kernel_entropy_identity_reduction.md) give a continuous local function $h$ on the entire degree-one simplex. Every degree-$N-1$ monomial occurs in the full positive kernel, so ordinary integral flow rounding gives
 
-![The general positive-source limit is proved; the geometric maximum comparison and the original filling cycle remain separate open steps.](../figures/shared-entropy-frontier.png)
+$$W_D=\max_{q\in\mathcal Q_D}\sum_e h(q_e),$$
 
-Under the existing labeled geometric certificate, the all-cross contribution gives $W_D\geq\operatorname{Vol}(Y_D)/(2\pi)$. The reverse inequality is the remaining geometric problem. It is already proved in the central forest corridor: if every noncross excess is at most $\delta N$, its rate is between the geometric rate and that rate plus $C_D\delta(1+\log(1/\delta))$. In particular, any sublinear excess restriction, together with all-cross, has exactly the geometric rate. The proof retains the shifted protected-face targets and regularizes the original shared radii before taking the level limit.
+where $\mathcal Q_D$ retains every shared-face target and both protected zeros. No fixed half-label filter is needed for this full-source formula. The earlier [test at $N_*=10R+2$](../../notes/actual_fejer_shared_entropy_variational.md) remains useful when individual cross/left/right patterns are kept: it detects finite degree offsets that a limiting pattern alone can miss.
 
-Thus the unresolved positive-source comparison is confined to macroscopic excesses. A proposed convexity shortcut fails for actual fixed-degree coefficients, so it is not used. A separate proposed regulator extension also failed a change-of-reference-flag test and is withheld pending a global boundary-chain proof. Neither issue affects the shared entropy theorem.
+![Full-simplex entropy, exact identity reduction and hybrid cuts prove the positive endpoint volume; the original Gaussian and filling cycle remain open.](../figures/shared-entropy-frontier.png)
 
-Even a proof that $W_D=\operatorname{Vol}(Y_D)/(2\pi)$ would concern this positive endpoint source. The original phase-sensitive filling transform still needs a contributing geometric cycle and control of the remaining colors and spectral charges to establish the volume of the fixed filled knot.
+The geometric upper bound uses exact source reductions. Pure-middle maximizing ports become literal identity coupons, and their [forest contraction](../../notes/actual_fejer_diagonal_identity_forest_reduction.md) preserves the rate and marked targets. The [hybrid Hall theorem](../../notes/actual_fejer_hybrid_tight_cut_reduction.md) keeps cross ports as two triangle rows and every strict one-sided port as one row. Its forced zeros give only permitted digon cuts; no one-sided difference is split into independent capacities. The [boundary regularity argument](../../notes/actual_fejer_nondiagonal_maximizer_regularity.md) then supplies finite positive shared multipliers on the resulting pieces.
+
+The [actual group and chain assembly](../../notes/actual_fejer_hybrid_piece_representation.md) retains the original port pairings across those pieces and reconstructs a representation of $\pi_1(Y_D)$. Its relative volume is $2\pi W_D$, so the representation-volume bound proves the reverse inequality to the known all-cross lower bound. This uses the [signed cut-ball chain](../../notes/actual_fejer_signed_cut_ball_regulator.md), not the failed claim that an open regulator is invariant under resetting its reference flag. The fixed-degree convexity counterexample also remains valid; neither shortcut is needed.
+
+Every fixed nonempty set of identity insertions has a strictly smaller rate, or gives the zero source: the reconstructed representation kills an essential original meridian. Separately, the [serial-coupon theorem](../../notes/actual_fejer_serial_coupon_bound.md) gives $H_{P_N}\leq H_{P_N^\ell}\leq N^{2\ell-2}H_{P_N}$ for the same ordered pair. It preserves the rate of a literal fixed serial chain, without asserting a replacement for arbitrary separating cuts.
+
+The [unique-maximizer theorem](../../notes/actual_fejer_unique_geometric_maximizer.md) strengthens the endpoint equality: its only maximizing incidence flow is the original marked geometric one. Equality in the volume bound forces the constructed representation to be conjugate to complete holonomy; the actual based peripheral words then recover all labeled contacts and white circles. Compactness gives a strict entropy gap outside every fixed neighborhood, including the entire one-sided remainder. This holds at every fixed certified width; it supplies neither a diagram-independent gap nor control of the oscillatory filling cycle.
+
+
+## Odd regularization and exact spectral derivatives
+
+The [odd-level theorem](../../notes/actual_fejer_odd_regularized_full_numerator.md) retains the independent semisimple derivative through the actual covariant coupon
+
+$$F_N=\begin{cases}
+-V_N(-2),&N\text{ even},\\
+V_N(-2)-N^{-2}\partial_\sigma V_N(-2),&N\text{ odd}.
+\end{cases}$$
+
+The odd coupon has the same uniform full local entropy $h$. Its original shared source $Z_{D,N;F_N}$ therefore has rate $W_D=\operatorname{Vol}(Y_D)/(2\pi)$ at both parities. The derivative in this formula is spectral, at the fixed root; it is not a genuine-$q$ normal.
+
+Let $S_N(\boldsymbol\sigma)$ be the entire original shared contraction of the $V_N(\sigma_e)$ numerators, with all marked targets unchanged. For every multiindex $\alpha$ the finite estimate is
+
+$$\left|\partial_{\boldsymbol\sigma}^{\alpha}S_N(-2,\ldots,-2)\right|
+\leq e^R\alpha!N^{2|\alpha|}Z_{D,N;F_N}.$$
+
+Positive path comparisons also bound the full numerator on shrinking complex spectral disks at upper rate $W_D$. These results include the semisimple data missing from complete-channel samples. They do not establish an exponentially relative packet away from the endpoint.
+
+The [spectral remainder theorem](../../notes/actual_fejer_spectral_polydisk_complement.md) now carries the strict one-sided entropy gap to a small fixed complex neighborhood of $\sigma_e=-2$. If $\gamma_D>0$ is that gap and $\theta(r)=\operatorname{arcosh}(1+r/2)$, the absolute remainder exponent is at most $W_D-\gamma_D+\sum_e\theta(r_e)$. Small fixed radii preserve a gap; shrinking radii retain the full gap. The comparison preserves original path endpoints and the shared coefficient targets. It is an absolute bound, so a nonzero relative asymptotic for the all-cross part remains to be proved.
+
+The remaining general problem is the original phase-sensitive Gaussian period: its selected cycle and nonzero geometric contribution, a strict complementary bound with every nonzero spectral charge retained, and the required genuine-$q$ peripheral normals. The independently long fixed signed filling theorem for arbitrary plats remains open.

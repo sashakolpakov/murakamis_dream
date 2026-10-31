@@ -10,7 +10,7 @@ We pursue this through the pointed quantum A-structure, exact finite source form
 
 The current target allows every fixed bridge width $k\geq2$: start with an essential hyperbolic augmented plat, then put independently sufficiently many signed twists into each designated region. The diagram and twists stay fixed as $N$ grows. The [frontier](frontier.md) separates the exact formulas and geometric certificates already available from the general quantum asymptotic still needed.
 
-**The general conjecture remains open in this repository.** The notes now include a whole-source equality for connected certified augmented links with arbitrary retained half-twist patterns at arbitrary fixed width, as well as the specified knot families, general identities and obstructions. Internal proof review, finite checks, and exploratory calculations are distinguished throughout this guide.
+**The general conjecture remains open in this repository.** The notes include a whole-source equality for connected certified augmented links with arbitrary retained half-twist patterns at arbitrary fixed width, as well as the specified knot families, general identities and obstructions. A separate general theorem now identifies the full positive spectral endpoint rate with the actual complete augmented volume, with an odd regularization and exact spectral-derivative bounds. It does not select the original filled-knot period. Internal proof review, finite checks, and exploratory calculations are distinguished throughout this guide.
 
 ![The general route: exact source, local complex amplitudes and a marked geometric branch under a positive gluing certificate; global selection and estimates remain open.](../figures/research-map.png)
 
@@ -36,8 +36,8 @@ Start with [the equality results](results.md) for the exact knot and link famili
 | Whole complete source limit | Every connected certified augmented plat with any retained half-twist pattern, at arbitrary fixed width and both level parities; exact face coefficients, a nonzero signed Gaussian and actual polyhedral volume |
 | Complete-image external colors | A nonzero asymptotic on a fixed complex neighborhood; its limiting action is the actual marked geometric regulator, with the necessary complex boundary correction |
 | Whole mixed source near completeness | Actual representation-volume limit at any set of untwisted varied ports; joint signed/unsigned corridors under finite shared-radius certificates, including disconnected subsets |
-| Positive endpoint source at arbitrary width | Exact shared entropy limit at even levels, with a finite support test; its complete geometric lower bound and sublinear-excess corridor are proved, while the full geometric upper bound remains open |
-| General signed long-filled knot equality | Bounds for every remaining reflected color term and the combined far aliases remain unresolved |
+| Positive endpoint source at arbitrary width | Complete augmented-volume limit through all even levels under the labeled certificate; strict loss for nonempty identity insertions; odd regularization has the same full entropy and gives exact spectral-derivative bounds at both parities |
+| General signed long-filled knot equality | The original Gaussian cycle, nonzero geometric contribution, complementary color/charge estimates and genuine-$q$ peripheral normals remain unresolved |
 
 The cube, Fourier, torsor, and alternative approaches are preserved. A failed intermediate estimate is useful evidence about the argument; it is retained beside the corrected scope.
 

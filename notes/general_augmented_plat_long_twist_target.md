@@ -1,9 +1,16 @@
-# The general long-twist target at arbitrary bridge number
+# The general long-twist target at arbitrary fixed plat width
 
 31 October 2026 update. The target remains arbitrary fixed k>=2 and
 independently sufficiently long FIXED signed twists, with the knots and
 slopes fixed before the quantum level tends to infinity. It remains a
 CONJECTURE for a general essential hyperbolic augmented skeleton.
+
+The latest [endpoint theorem](general_fejer_endpoint_source_volume.md)
+proves the actual augmented volume for the full positive numerator, with
+[odd regularization](actual_fejer_odd_regularized_full_numerator.md) and
+a [unique geometric maximum](actual_fejer_unique_geometric_maximizer.md).
+This settles the positive endpoint optimization at every certified fixed
+width. The remaining task is the original phase-sensitive filling period.
 
 There is now a whole-source intermediate theorem: the
 [original signed augmented source](general_signed_augmented_source_volume.md)
@@ -56,7 +63,7 @@ their twist parameters as independent. The fixed upper and lower
 pairings together with the permutation of the epsilon word must give
 one component. This is a finite permutation/matching test: adding a
 full twist does not change it. Thus every p gives a knot with a
-k-bridge presentation; k need not be its minimal bridge number.
+k-bridge presentation, so b(K_D(p))<=k; equality is not asserted.
 
 Drill one actual crossing circle around each box, remove the full
 twists, and retain its specified half twist. Denote the resulting
@@ -93,6 +100,15 @@ now proves a threshold T_geom(D) for complete hyperbolic geometry of
 every independently long signed filling. Existence of the quantum
 threshold T(D) in (1) is the remaining conjectural assertion for a
 general skeleton. These two thresholds must not be conflated.
+
+A [finite sufficient geometric criterion](general_simple_white_plat_class.md)
+is now available: the ACTUAL white cellulation of the flat plat is a
+simple triangulated sphere. The existing angle optimization and labeled
+cut construction then supply its complete right-angled geometry, with
+all prescribed half-twist patterns and primitive markings. This class
+has explicit examples at every fixed supplied width. It is a sufficient
+class for the geometric and endpoint results; the quantum assertion (1)
+remains open even in this class.
 
 ## 2. Why twist length needs a diagram hypothesis
 
@@ -202,14 +218,19 @@ power. The remaining global contour, its nonzero Fourier charges, and
 the shared numerator estimate are explicit outstanding problems. Long
 twisting alone does not damp both sides of a spectral contour.
 
-The [general shared entropy theorem](actual_fejer_shared_entropy_variational.md)
-now gives an exact all-even-level limit W_D for the positive endpoint
-numerator at every fixed width. Its admissible assignments are selected
-by one exact integer-flow test at N_*=10R+2. Under the labeled geometric
-certificate W_D is at least Vol(Y_D)/(2pi), and all sublinear noncross
-excesses have exactly that geometric rate. The upper bound for the FULL
-compact maximum remains open. This positive endpoint equality is not a
-phase-sensitive filled-knot asymptotic.
+The [full positive endpoint theorem](general_fejer_endpoint_source_volume.md)
+now proves W_D=Vol(Y_D)/(2pi) for the original even numerator under the
+labeled right-angled certificate, at every fixed plat width. Its full
+local support gives one unrestricted incidence-flow polytope; the older
+single-level support test remains useful only for fixed branch patterns.
+The [odd regularization](actual_fejer_odd_regularized_full_numerator.md)
+has the same rate and supplies explicit bounds for fixed spectral jets.
+The [unique-maximizer theorem](actual_fejer_unique_geometric_maximizer.md)
+identifies the only endpoint maximum with the original marked complete
+geometry and gives a strict gap for its complement, including the entire
+one-sided remainder. These are positive-source and spectral statements.
+The original Gaussian filling cycle, nonzero geometric contribution and
+full complementary-contour estimates remain the phase-sensitive gap.
 
 ## 4. Inputs still needed for general signed long fillings
 

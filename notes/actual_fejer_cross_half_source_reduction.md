@@ -1,5 +1,7 @@
 # The even Fejér source: complete crossing paths and a forest remainder
 
+Status update, 31 October 2026: the [full endpoint theorem](general_fejer_endpoint_source_volume.md) now controls the entire positive source, and the [unique-maximizer theorem](actual_fejer_unique_geometric_maximizer.md) gives a strict exponential gap for the one-sided remainder under the same labeled certificate. The exact decomposition and the warnings about inferring bounds from forest topology alone remain valid.
+
 Independently reviewed, 31 October 2026. This is an exact coefficient reduction at every
 even level N>=4 for the original connected fixed flat plat. No estimate
 of the remaining forest contribution is asserted. The shared original

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Odd spectral regularization has the same full shared entropy · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 30 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">The original quantum source</a> · <a href="../library.html#fourier">Fourier, weighted Cauchy, and energy</a> · <a href="../library.html#frontier">Obstructions and the general conjecture</a><p><span class="badge">Odd full entropy; exact all-parity spectral derivatives</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_fejer_odd_regularized_full_numerator.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_fejer_odd_regularized_full_numerator.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_fejer_odd_regularized_full_numerator_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="odd-spectral-regularization-has-the-same-full-shared-entropy">Odd spectral regularization has the same full shared entropy</h1>
+<p>31 October 2026. Independently reviewed and frozen. All derivatives here are SPECTRAL derivatives at the fixed original root. No genuine-q normal is obtained by differentiating a root-only identity. The actual positive coupon below includes the semisimple derivative data of the full V.</p>
+<h2 id="exact-odd-normalization-and-one-comparison-block">1. Exact odd normalization and one comparison block</h2>
+<p>Let N=2m+1&gt;=3, d=2m, theta=pi/N. On the literal polynomial source block z^j, 0&lt;=j&lt;=d, write A=2+Omega, with diagonal and lowering coefficients</p>
+<pre><code>a_j=2+c_j=4cos^2((j+1/2)theta),
+s_j=2sin(j theta),
+A z^j=a_j z^j-s_j^2(x+y)z^(j-1)
+                     -s_j s_(j-1)xy z^(j-2).</code></pre>
+<p>The sole zero diagonal is a_m=0. All other diagonals and all allowed lowering weights are positive. The original endpoint zeros are retained. Let</p>
+<pre><code>P_N(u)=H_(V_N(-2-u)), P0=P_N(0), Q=P_N&#39;(0),
+F_N=V_N(-2)-N^(-2) V_N&#39;(-2),
+H_(F_N)=P0+N^(-2)Q.                              (1)</code></pre>
+<p>V_N is the <a href="actual_gaussian_resolvent_numerator_and_cap.html">full original polynomial numerator</a> chi_N(sigma)/(sigma-Omega), chi_N=2T_N(sigma/2)+2. The second prime in (1) differentiates sigma; the Q prime differentiates u. Thus the minus sign in F_N is literal.</p>
+<p>The unused-row product expansion gives nonnegative coefficients of P_N(u) in u,x,b,c,y. At odd N its full diagonal product is</p>
+<pre><code>product_j(a_j+u)= -chi_N(-2-u)
+                =2cosh(N theta_u)-2,
+theta_u=arccosh(1+u/2).</code></pre>
+<p>Its first two Taylor coefficients give exactly</p>
+<pre><code>product_(j!=m)a_j=N^2,
+sum_(j!=m) a_j^(-1)=(N^2-1)/12.                  (2)</code></pre>
+<p>Replace ONLY the zero central diagonal of A by a_m<sup>*=N</sup>(-2), keeping all lowering coefficients and other diagonals unchanged. Call this positive triangular block Atilde, and let Ktilde be the homogeneous polynomial of Atilde^(-1). It is a comparison kernel, NOT asserted to be a covariant physical coupon. Its full diagonal product equals1.</p>
+<p>Split the coefficient Q according to whether its underlying path visits m. Write Q_skip for the paths not visiting m. The unused-row formula and (2) give EXACTLY</p>
+<pre><code>Ktilde=P0+N^(-2)Q_skip,
+0&lt;=Q-Q_skip&lt;=((N^2-1)/12)P0.</code></pre>
+<p>The second inequality is coefficientwise: on each path visiting m, the derivative adds the sum of reciprocal UNUSED noncentral diagonals. Consequently the ACTUAL polynomial coupon has the finite comparison</p>
+<pre><code>Ktilde &lt;= H_(F_N) &lt;= (13/12)Ktilde.              (3)</code></pre>
+<p>In particular both have every degree-d monomial, with positive coefficient. One may also see this by the path consisting entirely of one-steps. No spectral projector has been substituted for V’.</p>
+<h2 id="exact-half-and-cross-pieces-of-ktilde">2. Exact half and cross pieces of Ktilde</h2>
+<p>As usual an input j and output i contribute b^i c^(d-j), with total outer degree j-i. Partition its full monomial support into</p>
+<pre><code>left: c&gt;=m+1; right: b&gt;=m+1; cross: b,c&lt;=m.      (4)</code></pre>
+<p>For a left coefficient i&lt;=j&lt;=m-1 no path visits m. Define Q_ij by the ACTUAL lower-block recurrence</p>
+<pre><code>Q_ii=1,
+Q_ij=(s_j^2/a_j)(x+y)Q_(i,j-1)
+              +(s_j s_(j-1)/a_j)xyQ_(i,j-2),</code></pre>
+<p>with the missing second term zero. Then the coefficient at x^k b^i c<sup>(d-j)y</sup>(j-i-k) is EXACTLY</p>
+<pre><code>a_i^(-1)[x^k y^(j-i-k)]Q_ij.                    (5)</code></pre>
+<p>The right piece is its literal row-reflection b&lt;-&gt;c; the steps and diagonals have this exact symmetry.</p>
+<p>Every cross path either visits m or skips it by the unique two-step m+1-&gt;m-1. Replace that skipped step by the two one-steps through m. Since xy &lt;= (x+y)^2/2 coefficientwise, its weight is at most</p>
+<pre><code>[1/(2N^2 s_m s_(m+1))] times the repaired path.  (6)</code></pre>
+<p>The repair is injective and its endpoints are unchanged. The paths visiting m have EXACTLY the P0 weights because the new reciprocal central diagonal is N^2. Therefore</p>
+<pre><code>P0 &lt;= Ktilde_cross
+          &lt;=[1+1/(2N^2 s_m s_(m+1))] P0.        (7)</code></pre>
+<p>The same visited-central path split gives an exact factorization</p>
+<pre><code>P0=N^2 D_m(x,b,y)D_m(x,c,y),                    (8)</code></pre>
+<p>with D_m monic of degree m in its middle variable. This is also the actual odd simple-fold factorization (the sine beta_m equals1). It can be proved without a value-only interpolation: split each original path at m and reflect its upper part. If D_m(x,b,y)=sum_i b^i G_i(x,y), then G_m=1 and, for i&lt;m,</p>
+<pre><code>G_i=[s_m^2(x+y)Q_(i,m-1)
+            +s_m s_(m-1)xyQ_(i,m-2)]/a_i,      (9)</code></pre>
+<p>where a nonexistent Q term is zero. Equations (5)–(9) retain every physical endpoint and every finite outer unit.</p>
+<h2 id="uniform-closed-coefficient-entropy-on-the-shifted-odd-mesh">3. Uniform CLOSED coefficient entropy on the shifted odd mesh</h2>
+<p>The <a href="actual_fejer_half_block_entropy.html">closed half-block proof</a> applies to (5), with the following explicit checks rather than an inference from a weighted limit. For j&lt;=m-1,</p>
+<pre><code>a_j=4sin^2((m-j)theta),
+s_j=2sin(j theta).</code></pre>
+<p>On any fixed interior interval j/N in [eta,1/2-eta], the recurrence coefficients converge uniformly to the SAME positive monomer/dimer coefficients, with Perron root</p>
+<pre><code>L^2-(x+y)tan^2(pi t)L-xy tan^2(pi t)=0.</code></pre>
+<p>The corresponding normalized Jacobi recurrence has positive, uniformly bounded interior coefficients and hence the same bounded negative-root and Bernoulli local coefficient estimate. The boundary estimates also remain unchanged in order: for j near0, s_j is comparable to j/N; for r=m-j near0, a_j is comparable to (r/N)^2, with r&gt;=1. Thus removing eta N endpoint indices costs at most</p>
+<pre><code>O(eta N log(1/eta)+log N)</code></pre>
+<p>in the monomer products and upper bounds. There is no zero coefficient inside either lower half. The all-monomer x/y choices realize every outer degree, including the extreme coefficients. These are precisely the ingredients of the closed proof: finite-tilt compact-cover upper bounds, trim/fill lower bounds at endpoints, the interior coefficient estimate on the trimmed interval, and the collapsing-interval bound. They prove uniformly for ALL 0&lt;=i&lt;=j&lt;=m-1 and 0&lt;=k&lt;=j-i</p>
+<pre><code>N^(-1)log([x^k y^(j-i-k)]Q_ij)
+                 =E(i/N,j/N,k/N)+o(1).          (10)</code></pre>
+<p>The factor a_i^(-1) has logarithm O(log N), uniformly. Formula (9) then gives the same uniform TRIANGLE coefficient entropy for D_m. For i&lt;m its first term supplies every permitted k by choosing x or y; one of k or k-1 lies in [0,m-1-i]. All arguments in (10) differ by O(1/N) from the desired endpoint E(i/N,1/2,k/N). The second term only adds another argument with the same O(1/N) displacement. Their finite positive weights have polynomial upper/lower bounds. Closed continuity therefore proves the upper and lower limits uniformly. The corner i=m is the exact coefficient1 and entropy zero.</p>
+<p>Normalize all local exponents by d=2m. For D_m each triple divided by d has sum1/2; changing i/N,k/N to i/d,k/d changes them by O(1/N). Thus its absolute limit is the ALREADY normalized</p>
+<pre><code>C(alpha)=E(alpha_b,1/2,alpha_x)=V(2pi alpha)/(2pi).</code></pre>
+<p>The positive convolution (8), with O(N) summands and integer split endpoints, has the same uniform cross entropy max(C+C). Equations (5) and (7), closed continuity at both seams and the constant comparison (3) now prove, for every degree-d local exponent n,</p>
+<pre><code>N^(-1)log [L^n]H_(F_N)=h(n/d)+o(1)              (11)</code></pre>
+<p>UNIFORMLY on the full closed simplex. This is the same h as the even full Fejer theorem, not only its positive-radius weighted maximum.</p>
+<h2 id="actual-shared-coefficient-and-full-complex-spectral-disks">4. Actual shared coefficient and full complex spectral disks</h2>
+<p>For a fixed original certified flat plat retain its original ordinary targets d and protected targets0. The actual polynomial coupon F_N in (1) is admissible in the original homogeneous compiler. By positivity, (11), and unrestricted integral flow rounding, its whole shared source satisfies</p>
+<pre><code>N^(-1)log Z_(D,N;F_N at every port) -&gt; W_D.       (12)</code></pre>
+<p>Here W_D is EXACTLY the same finite-dimensional full h maximum as at even levels. The separate <a href="general_fejer_endpoint_source_volume.html">even endpoint volume theorem</a> therefore identifies W_D=Vol(Y_D)/(2pi). No odd identity-deletion or geometric reconstruction has been inferred by differentiating an even statement.</p>
+<p>For u&gt;=0 define C_N(0)=1 and</p>
+<pre><code>C_N(u)=product_(j!=m)(1+u/a_j)
+  =[sinh(N theta_u/2)/(N sinh(theta_u/2))]^2
+  &lt;=exp((N-1)theta_u).                          (13)</code></pre>
+<p>The product of UNUSED noncentral ratios on any path is at most C_N(u). Visiting-central paths start from P0; skipping paths have their one central factor u. Consequently the exact positive path comparison is</p>
+<pre><code>P_N(u)&lt;=C_N(u)[P0+u Q_skip]
+       &lt;=C_N(u)max(1,N^2u) H_(F_N).             (14)</code></pre>
+<p>For arbitrary complex sigma the source-proved factorwise majorant is |H_(V_N(sigma))|_coef&lt;=P_N(|sigma+2|). Multiplying (14) at all original ports and taking the UNCHANGED shared marked coefficient bounds the absolute full numerator contraction by</p>
+<pre><code>Z_(D,N;F_N) product_e
+   {exp((N-1)theta_(u_e)) max(1,N^2u_e)},
+u_e=|sigma_e+2|.                                (15)</code></pre>
+<p>In particular it has upper rate at most W_D+sum_e arccosh(1+u_e/2) on fixed bounded spectral disks, and upper rate at most W_D uniformly on ANY shrinking polydisks |sigma_e+2|&lt;=r_N-&gt;0. This includes all actual semisimple numerator data. Cauchy estimates may be applied to spectral derivatives with their stated disk-radius cost; they are not genuine-q normal estimates. No Gaussian contour selection, complement estimate, or nonzero filling-cycle contribution is concluded here.</p>
+<h2 id="exact-whole-source-spectral-jets-both-parities">5. Exact whole-source spectral jets, both parities</h2>
+<p>Let S_N(sigma_1,…,sigma_R) be the ENTIRE shared contraction of the original V_N numerators, with the original homogeneous face targets and protected zero specialization. Use F_N from (1) at odd levels and F_N=-V_N(-2)=P_N at even levels. For each variable choose the actual Cauchy radius r=N^(-2). The elementary inequality cosh t&gt;=1+t^2/2 gives</p>
+<pre><code>arccosh(1+1/(2N^2))&lt;=1/N,
+max(1,N^2r)=1.</code></pre>
+<p>At odd levels (14)–(15) therefore bound |S_N| on the whole polydisk by e^R Z_(D,N;F_N). At even levels the exact unused-factor comparison instead has factor</p>
+<pre><code>product_j(1+r/a_j)=cosh^2(N theta_r/2)&lt;=exp(N theta_r)&lt;=e,</code></pre>
+<p>at every port, and gives the SAME bound. Cauchy’s formula yields for every multiindex alpha the finite all-parity estimate</p>
+<pre><code>|partial_sigma^alpha S_N(-2,...,-2)|
+   &lt;= e^R alpha! N^(2|alpha|) Z_(D,N;F_N).       (16)</code></pre>
+<p>There is no unspecified exponential constant in (16): its right side is the actual positive shared source whose rate is W_D. This includes the full spectral semisimple derivatives at the parabolic endpoint. It does not identify these spectral jets with genuine-q normal jets, and it does not select any Gaussian or filling cycle.</p>
+<h2 id="validation-and-scope">Validation and scope</h2>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_fejer_odd_regularized_full_numerator.py">focused audit</a> and its <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_fejer_odd_regularized_full_numerator_results.json">results</a> independently construct V and its SPECTRAL derivative on the original coproduct matrices. They compare 3,672 physical-grid entries, including 1,200 wrong-unwrapped-total zeros, and six whole original marked F_N sources. Four literal simple-fold factorizations retain the root scalar. The 75-digit positive checks cover 2,510 derivative paths, 1,035 full- support coefficient comparisons, 783 central-cross repairs and 3,105 spectral-radius coefficient bounds. The maximum identity error is below 3.90e-73. These are exact-source/formula checks, not numerical proofs of the uniform entropy limit or of the volume theorem.</p>
+<p>Root independently reviewed the full analytical proof through section4 and supplied/checked the exact whole spectral-jet corollary. Geometry independently reviewed the full proof, including every closed-coefficient and seam argument, then reviewed the complete audit code and freshly replayed it with redirected output. Geometry also separately checked section5’s all-parity Cauchy constant. Public promotion changes only links, formatting and file-relative audit paths; its author replay reproduced the same counts and errors. No genuine-q normal, Gaussian contour selection or nonzero filling-cycle claim is part of this result.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_fejer_odd_regularized_full_numerator.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#exact-odd-normalization-and-one-comparison-block">1. Exact odd normalization and one comparison block</a><a href="#exact-half-and-cross-pieces-of-ktilde">2. Exact half and cross pieces of Ktilde</a><a href="#uniform-closed-coefficient-entropy-on-the-shifted-odd-mesh">3. Uniform CLOSED coefficient entropy on the shifted odd mesh</a><a href="#actual-shared-coefficient-and-full-complex-spectral-disks">4. Actual shared coefficient and full complex spectral disks</a><a href="#exact-whole-source-spectral-jets-both-parities">5. Exact whole-source spectral jets, both parities</a><a href="#validation-and-scope">Validation and scope</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

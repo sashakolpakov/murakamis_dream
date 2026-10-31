@@ -103,10 +103,10 @@ The [crossing theorem](../notes/actual_crossing_casimir_torus.md) gives a local 
 [PDF](figures/casimir-twist-transport.pdf) · [SVG](figures/casimir-twist-transport.svg) · [Editable TikZ](figures/casimir-twist-transport.tex)
 
 
-## The general shared entropy problem
+## The positive endpoint volume theorem
 
-![Exact finite support and uniform coefficient entropy give the positive endpoint limit; the full volume comparison and filling cycle remain open.](figures/shared-entropy-frontier.png)
+![Full-simplex entropy, exact identity reduction and hybrid cuts prove the complete positive endpoint volume; the original Gaussian and filling cycle remain open.](figures/shared-entropy-frontier.png)
 
-The [shared entropy theorem](../notes/actual_fejer_shared_entropy_variational.md) applies at arbitrary fixed bridge width. Its flow test retains the original finite degree offsets before passing to the compact optimization. The [frontier chapter](chapters/frontier.md#the-positive-endpoint-source-now-has-a-general-limit) separates this proved positive-source limit from the geometric maximum and the phase-sensitive filled-knot conjecture.
+The [general endpoint theorem](../notes/general_fejer_endpoint_source_volume.md) proves $W_D=\operatorname{Vol}(Y_D)/(2\pi)$ at arbitrary fixed bridge width under the original labeled geometric certificate. Full monomial support gives the compact entropy problem; identity forests, hybrid Hall cuts and the original relative chain give its geometric upper bound. The fixed-pattern flow test remains available when individual half labels are retained. The [frontier chapter](chapters/frontier.md#the-positive-endpoint-source-has-the-actual-complete-volume) also explains the odd regularization and exact spectral derivatives, while keeping the phase-sensitive filled-knot conjecture open.
 
 [PDF](figures/shared-entropy-frontier.pdf) · [SVG](figures/shared-entropy-frontier.svg) · [Editable TikZ](figures/shared-entropy-frontier.tex)

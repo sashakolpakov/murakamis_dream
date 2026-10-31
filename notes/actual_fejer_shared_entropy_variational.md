@@ -1,5 +1,7 @@
 # The actual Fejér source: a general shared entropy theorem
 
+Status update, 31 October 2026: the separate [full endpoint theorem](general_fejer_endpoint_source_volume.md) now proves the geometric upper bound (14), and the [unique-maximizer theorem](actual_fejer_unique_geometric_maximizer.md) proves concentration at the complete configuration. The pattern-specific support theorem below is preserved; full-kernel support no longer requires pattern selection. The filled-knot quantum limit remains open.
+
 31 October 2026. Independently reviewed. This concerns the positive
 endpoint numerator in the ORIGINAL homogeneous compiler, at even levels.
 It does not assert a quantum filling asymptotic or identify the new
@@ -317,9 +319,9 @@ This argument does not use a downhill-radius condition. It shows that
 the unresolved positive-source maximum requires a genuinely macroscopic
 one-sided excess, rather than an omitted central endpoint window.
 
-## 6. The remaining geometric and quantum assertions
+## 6. The geometric comparison and the remaining quantum assertion
 
-The general geometric problem is now the explicit inequality
+The geometric problem isolated by this variational theorem was the inequality
 
     W_D<=Vol(Y_D)/(2pi).                               (14)
 
@@ -333,9 +335,9 @@ At full interior critical points, the half-block equations have the
 parabolic Casimir energy sigma=-2 and the actual local action
 F(x,b,y)-F(x,c,y)+log c (or its reflected version). Developing these
 critical points and their boundary strata into actual augmented-group
-representations with the correct regulator could prove (14); it is
-not assumed in (9). Nor does the positive endpoint identity (9), even
-if (14) is proved, select the original Gaussian filling cycle or its
+representations with the correct regulator proves (14) in the separate
+[endpoint theorem](general_fejer_endpoint_source_volume.md); it is not
+assumed in (9). The positive endpoint identity (9) still does not select the original Gaussian filling cycle or its
 nonzero geometric coefficient. The fixed signed long-filled knot
 volume conjecture remains a further phase-sensitive assertion.
 
@@ -364,8 +366,9 @@ repair, integer rounding, eventual feasibility and central corridor.
 The source audit code was independently read and freshly replayed, and
 the transfer proof/code have independent review and replay. All numerical
 claims retain their finite scope. The full asymptotic theorem is proved
-by sections1--4, using the uniform local theorem; the geometric maximum
-and the phase-sensitive filled-knot limit remain open.
+by sections1--4, using the uniform local theorem. The geometric maximum
+is settled in the later endpoint theorem; the phase-sensitive filled-knot
+limit remains open.
 
 Coherent's final independent public proof and audit-code review PASS,
 including the explicit all-m terminal-relabel countercertificate.
