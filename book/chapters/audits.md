@@ -6,6 +6,16 @@ An exact symbolic calculation can establish an identity in formal variables. A r
 
 The current [strict Conway tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md) includes bounds for the full quantum sum, a nonzero selected contribution, the original normalization and the actual marked filling geometry. Its proof is not waiting for a theorem about all knots. The more specialized general-plat calculations catalogued below retain their own hypotheses and limitations.
 
+## The quantitative short-twist estimate
+
+The [analytic criterion](../../notes/actual_all_circle_curvature_filling_limit.md) uses an explicit two-variable action on every edge and a uniform estimate for Newton polynomials on a complex strip. Its focused checks run with:
+
+```sh
+python3 repro/run_research_checks.py curvature-fillings
+```
+
+Python, SymPy and mpmath are required. The program verifies the wire critical equation, two derivatives of the selected action, and its Hessian determinant symbolically. It then checks 990 complex-strip samples at 70-digit precision, including even and odd levels from 160 to 256. The [saved results](../../experiments/all_circle_curvature_packet_results.json) also record the constants separating the first critical action from the discarded-state bounds. These samples check the formulas; the proof supplies their uniform validity. No test in this group certifies the topology or the hyperbolic volume of a short-filled knot.
+
 ## Arbitrary multiplication regions
 
 The [general component theorem](../../notes/actual_main_meridian_general_component_comparison.md) permits connected groups of product junctions of any fixed size and valence. Its new finite identities can be checked with one command:

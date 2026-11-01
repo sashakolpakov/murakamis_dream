@@ -79,6 +79,22 @@ The [exact scalar calculation](../../notes/actual_main_meridian_exact_scalar.md)
 
 The remaining limits are substantial. The disk shrinks like $1/N$ in the meridian coordinate and stops before $s=\pm1$, the first ordinary-color resonances. The general ordinary-color-subtracted state has not been continued through those resonances with the asserted profile. Short surviving twists, trees or twist numbers growing with $N$, a classification of all arborescent knots under arbitrary presentation changes, and the selected classical geometric factor of the recurrence also remain outside this theorem. Arbitrary bare-component valence and adjacency are no longer open restrictions.
 
+## How short twists can enter the analytic estimate
+
+There is now a quantitative extension of the finite-sum argument for trees in which every junction carries an original crossing-circle operator. The vertices of this tree represent those circles, and its edges represent the quarter-turns joining their ordered products. Let \(d_v\) be the number of edges incident to a vertex and \(n_v\) its signed crossing power. These integers describe the fixed presentation; neither grows with the quantum level.
+
+The [new estimate](../../notes/actual_all_circle_curvature_filling_limit.md) proves the logarithmic limit and the same normalized meridian profile under the explicit condition
+
+\[
+\sum_v\frac{d_v}{d_v^2+n_v^2}\le2^{-25}.
+\]
+
+The limiting value is \(2\pi\operatorname{Re}\mathcal C(\mathbf1)\), where \(\mathcal C(\mathbf1)\) is the critical value of the original joint Fourier action at the first positive integer frequency in every variable. The proof shows that this contribution is nonzero and that the other frequencies and discarded states are exponentially smaller. It does not assume those conclusions as hypotheses.
+
+A large twist makes its summand small. A large number of incident branches can also make it small, even if that vertex has zero or one crossing. For example, a star with \(B\) branches has a central contribution at most \(1/B\). If every terminal crossing power has magnitude at least \(B\), the total is less than \(2/B\). The conservative displayed bound therefore permits an arbitrary fixed central power once \(B\ge2^{26}\). These constants are intentionally coarse; the example establishes that the criterion is nonempty, not that it is practical at small crossing numbers. The original knot and parity conditions still apply.
+
+The geometric question remains distinct. At a high-degree circle the angular variables can be small while the primitive meridian logarithm accumulates a full turn. The earlier proof of smooth filling near the complete logarithms cannot be invoked solely from that angular estimate. To extend the knot-volume theorem to these short-twist cases, one must construct the positively oriented cells with their original face identifications and verify the actual primitive logarithmic periods. Until that is done, the new result is an explicit quantum limit; its limiting constant is not being advertised as the hyperbolic volume outside the already covered long-filling cases.
+
 ## The moving-meridian growth already established
 
 The [source-growth theorem](../../notes/actual_main_meridian_source_bounds.md), extended by the [general component comparison](../../notes/actual_main_meridian_general_component_comparison.md), controls every fixed strict Conway tree before its auxiliary crossing circles are filled. It retains the full ranges of their independent colors and the original component hypotheses. Its early separated-junction examples illustrate one included case, not a current adjacency condition.
