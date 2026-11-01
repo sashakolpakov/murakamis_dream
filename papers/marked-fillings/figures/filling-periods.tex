@@ -1,0 +1,37 @@
+\begin{tikzpicture}[x=1cm,y=1cm,>=Latex,font=\small,
+ period/.style={very thick,->,blue!60!black},
+ boundary/.style={thin,gray!65}]
+ \begin{scope}[shift={(0,0)}]
+  \coordinate (o) at (0,1.8);
+  \coordinate (m) at (0,-.4);
+  \coordinate (v) at (3,2.5);
+  \coordinate (mv) at (3,.3);
+  \fill[blue!5] (o)--(v)--(mv)--(m)--cycle;
+  \draw[boundary] (o)--(v)--(mv)--(m)--cycle;
+  \draw[period] (o)--(m) node[midway,left] {$m=-2\pi\ii$};
+  \draw[period] (o)--(v) node[midway,above] {$V$};
+  \draw[->,gray!65] (m)--(mv);
+  \draw[->,gray!65] (v)--(mv);
+  \fill (o) circle (1.2pt);
+  \node[above left] at (o) {$0$};
+  \node[below,align=center] at (1.5,-.65)
+       {Logarithmic link\\$U=m-pV$};
+ \end{scope}
+ \draw[->,thick] (3.7,1.05)--(4.8,1.05)
+      node[midway,above] {fill};
+ \begin{scope}[shift={(5.3,1.05)}]
+  \draw[gray!55] (0,-.7)--(3.8,-.7);
+  \draw[gray!55] (0,.7)--(3.8,.7);
+  \draw[gray!55] (0,0) ellipse (.25 and .7);
+  \draw[gray!55] (3.8,0) ellipse (.25 and .7);
+  \draw[very thick,orange!70!black,->] (-.15,0)--(4.2,0)
+      node[right] {$X$};
+  \draw[blue!65!black,thick,->]
+       (1.2,-.7) arc[start angle=-90,end angle=235,
+                     x radius=.25,y radius=.7];
+  \node[above,blue!65!black] at (1.2,.85) {$\theta\bmod 2\pi$};
+  \node[below,align=center] at (1.9,-1.7)
+      {Smooth tube about $R=0$\\
+       $V:(X,\theta)\mapsto(X+\Re V,\theta+\Im V)$};
+ \end{scope}
+\end{tikzpicture}

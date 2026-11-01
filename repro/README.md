@@ -35,23 +35,29 @@ estimate and the geometric volume equality are explicit inputs. The
 package also assembles distinct nonzero limits on finitely many residue
 classes, including even and odd levels, when their action limits have
 the same real part. Every rate uses the original level as denominator.
-The
-optional command is separate from the Std-only check above; it requires
+It also proves the finite weighted-graph energy and Laplacian identities,
+including the constant kernel and strict positivity after fixing one
+vertex. Identifying that matrix with the geometric Hessian remains a
+written argument. The optional command is separate from the Std-only
+check above; it requires
 Mathlib and its substantially larger compiled library.
 
 The separate [research papers](../papers/README.md) include bounded
-checks of their finite algebra:
+checks of their finite algebra and rational constants. Run them together:
 
 ~~~sh
-python3 papers/local-coefficients/check.py --output repro/results/local-coefficients.json
-python3 papers/oscillatory-fillings/check.py --output repro/results/oscillatory-fillings.json
+python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 ~~~
 
-These require SymPy. The first compares polynomial resolvents, path
-partitions, cofactors and interpolation at specified small levels.
-The second checks the algebraic normalizations in the filling-sum proof.
-Neither command establishes a uniform large-level estimate or supplies
-the analytic hypotheses for a knot.
+The runner requires SymPy, saves each program's output and stops on a
+failed check. It checks polynomial resolvents and path partitions, the
+source's positive-matrix identities and parity-dependent anchors, the
+filling-sum normalization, and symbolic peripheral and metric-coordinate
+identities. The fifth program encloses the three-braid proof's fixed
+constants by outward rational arithmetic. Each paper-local `check.py`
+can also be run separately with `--output` naming its result file.
+These commands do not establish uniform large-level estimates, packing
+existence or metric completeness; those conclusions use the written proofs.
 
 The statement-level dependency map for the retained volume families has a separate
 standard-library command:

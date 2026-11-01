@@ -1,10 +1,12 @@
-# Concrete real and complex volume transfer
+# Concrete analytic transfer and weighted graph energy
 
 This optional Lean package realizes the elementary analytic interfaces of
 [VolumeTransfer](../formal/VolumeLogic/VolumeTransfer.lean) using Mathlib's
 complex numbers, complex modulus and real logarithm. It depends on the
 existing Std-only package by the relative path `../formal`; its sources are
 not copied. The ordinary Std-only check does not need this package or Mathlib.
+The package also proves the real finite quadratic-form implication used in
+the circle-pattern Hessian argument.
 
 ## What is proved
 
@@ -79,6 +81,61 @@ entire complementary remainder, and the geometric action-volume equality
 remain explicit application inputs. This package does not formalize the
 saddle analysis or hyperbolic gluing that supplies those inputs.
 
+## Weighted graph energy
+
+[WeightedGraph.lean](WeightedGraph.lean) contains seven definitions and
+nineteen theorems in `VolumeLogic.WeightedGraph`. An edge label `e` has
+endpoints `src e` and `dst e`, a real weight `w e`, and a real vertex
+function `f`. The constructed energy is
+
+\[
+E(f)=\sum_e w_e\bigl(f(\operatorname{src}e)-f(\operatorname{dst}e)\bigr)^2.
+\]
+
+Edge labels are retained, so parallel edges are allowed. A loop contributes
+zero. Connectivity means that every pair of vertices is joined by a finite
+path of actual **positive-weight** edges, expressed by the reflexive
+transitive closure of the endpoint relation. It is not an assumption that
+the energy already has constant kernel. Ordinary graph connectivity and
+strictly positive weights imply this path condition.
+
+The main implications are:
+
+| Theorem | Conclusion and explicit inputs |
+| --- | --- |
+| `energy_nonneg` | Nonnegative edge weights imply nonnegative energy. |
+| `energy_eq_zero_iff` | Under the same hypothesis, energy is zero exactly when `f` agrees across every positive-weight edge. Zero-weight edges impose no equality. |
+| `equal_of_positive_path` | Endpoint equality propagates by induction on an actual finite path. |
+| `energy_eq_zero_iff_constant` | A connected positive support has exactly the constant functions as its zero-energy functions. |
+| `grounded_energy_eq_zero_iff` and `grounded_energy_pos` | If one specified vertex has value zero, then zero energy forces `f = 0`; every nonzero grounded function has strictly positive energy. |
+| `laplacian_form` and `laplacian_quadratic` | The explicit matrix `L = BᵀWB`, formed from signed edge incidences `B`, has bilinear form equal to the edge sum, and quadratic form equal to `E(f)`. |
+| `grounded_laplacian_pos` | The explicit Laplacian quadratic form is strictly positive on every nonzero grounded function. |
+
+The supporting theorems prove symmetry and linearity of the edge form and
+invariance of energy under addition of a constant. The matrix identities
+require a finite vertex set as well as a finite edge set; they are proved
+by expanding the finite sums.
+
+For the intended application, [the marked circle-pattern proof](../notes/actual_marked_deformed_circle_pattern.md)
+identifies its Hessian with this energy. Its vertices are ordinary faces,
+and an edge is a triangle together with an unordered pair of its ordinary
+corners. If those corners have positive curvatures `w_i,w_j`, their weight is
+
+\[
+\kappa^t_{ij}=\frac{w_iw_j}{2\pi D_t(w_i+w_j)},
+\qquad
+D_t^2=\sum_{\{a,b\}\subset t}w_aw_b,
+\]
+
+where the sum is over ordinary corner pairs. A triangle with only one
+ordinary corner contributes no edge. Different triangles may supply
+parallel edges. The geometric differentiation giving this Hessian formula,
+positivity of its conductances, and identification of the connected
+ordinary-face graph remain **written inputs**. The actual finite real
+quadratic-form implication from those inputs is proved here. This module
+does not formalize circle-pattern existence, the rest of the geometric
+Jacobian argument, or an implicit function theorem.
+
 ## Pinned dependencies
 
 - Lean: `leanprover/lean4:v4.32.2`.
@@ -107,7 +164,12 @@ lake exe cache get \
   Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic \
   Mathlib.Analysis.SpecialFunctions.Pow.Real \
   Mathlib.Analysis.SpecialFunctions.Log.Basic \
-  Mathlib.Tactic.Linarith
+  Mathlib.Tactic.Linarith \
+  Mathlib.Data.Real.Basic \
+  Mathlib.Algebra.Order.BigOperators.Group.Finset \
+  Mathlib.Algebra.BigOperators.Ring.Finset \
+  Mathlib.Logic.Relation \
+  Mathlib.Tactic.Ring
 cd ..
 python3 repro/check_concrete_limits.py
 ```
@@ -139,7 +201,8 @@ whose logs are removed afterward. `--lake` can select a Lake executable;
 the executed Lean version must still match the pin.
 
 The checker rebuilds the Std-only path dependency, compiles
-`RealTransfer.lean`, and runs [AxiomAudit.lean](AxiomAudit.lean). Every new
+`RealTransfer.lean` and `WeightedGraph.lean`, and runs
+[AxiomAudit.lean](AxiomAudit.lean). Every
 definition and theorem must appear exactly once in the audit. Only Lean's
 standard foundational axioms `propext`, `Classical.choice` and `Quot.sound`
 are permitted; placeholders and additional axioms fail the check.
@@ -147,12 +210,15 @@ are permitted; placeholders and additional axioms fail the check.
 `summary.json` records every declaration, its axioms, all dependency pins,
 and the SHA-256 hashes of the optional package, checker and Std-only sources.
 It contains relative paths and omits timestamps so identical inputs produce
-the same summary. Eight negative controls check altered pins, missing or
+the same summary. Ten negative controls check altered pins, missing or
 duplicate dependencies, an absolute local dependency, incomplete or
-duplicate declaration audits, and an unexpected logical axiom. A failed run
+duplicate declaration audits, an omitted graph module or grounded-energy
+audit entry, and an unexpected logical axiom. A failed run
 removes any old success summary in its output directory.
 
-The optional count is **two definitions and twenty-two theorems**, separate
-from the Std-only theorem count. The audit checks these proofs and the
+The optional count is **nine definitions and forty-one theorems**, separate
+from the Std-only theorem count: `RealTransfer` has two definitions and
+twenty-two theorems, and `WeightedGraph` has seven definitions and nineteen
+theorems. The audit checks these proofs and the
 listed dependency pins; it does not certify that a particular knot family
 satisfies the remaining written analytic and geometric hypotheses.

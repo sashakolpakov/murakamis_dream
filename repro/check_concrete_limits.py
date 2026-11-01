@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check the optional Mathlib realization of complex-modulus volume transfer.
+"""Check the optional Mathlib transfer and finite weighted-graph proofs.
 
 The Std-only package is a path dependency and remains independently usable.
 This checker never downloads dependencies or updates the manifest. Provision
@@ -24,7 +24,10 @@ ROOT = Path(__file__).resolve().parents[1]
 PACKAGE = ROOT / "formal-real"
 FORMAL = ROOT / "formal"
 TOOLCHAIN = "leanprover/lean4:v4.32.2"
-NAMESPACE = "VolumeLogic.RealModel."
+MODULE_NAMESPACES = {
+    "RealTransfer": "VolumeLogic.RealModel",
+    "WeightedGraph": "VolumeLogic.WeightedGraph",
+}
 ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 # The complete expected Git dependency set, not merely the direct Mathlib pin.
 EXPECTED_GIT = {
@@ -88,17 +91,22 @@ def uncomment_lean(text: str) -> str:
 
 
 def declaration_inventory(paths: list[Path]) -> dict[str, str]:
+    if len(paths) != len(MODULE_NAMESPACES) or {p.name for p in paths} != {
+        module + ".lean" for module in MODULE_NAMESPACES
+    }:
+        raise ValueError("Every registered optional module must be present exactly once.")
     result = {}
     pattern = re.compile(r"^\s*(?:noncomputable\s+)?(def|theorem)\s+(\w+)", re.M)
     unsupported = re.compile(r"^\s*(?:private\s+|protected\s+)?(?:lemma|instance|abbrev|opaque|axiom|structure|class|inductive|constant|example)\b", re.M)
     for path in paths:
+        namespace = MODULE_NAMESPACES[path.stem]
         code = uncomment_lean(path.read_text())
         if re.search(r"\b(?:sorry|admit)\b", code) or unsupported.search(code):
             raise ValueError(f"Unsupported or unchecked declaration in {path.name}; extend the explicit inventory first.")
-        if re.findall(r"^namespace\s+(\S+)", code, re.M) != [NAMESPACE[:-1]]:
+        if re.findall(r"^namespace\s+(\S+)", code, re.M) != [namespace]:
             raise ValueError(f"Unexpected namespace layout in {path.name}.")
         for kind, name in pattern.findall(code):
-            full_name = NAMESPACE + name
+            full_name = namespace + "." + name
             if full_name in result:
                 raise ValueError("Duplicate declaration: " + full_name)
             result[full_name] = kind
@@ -109,10 +117,13 @@ def declaration_inventory(paths: list[Path]) -> dict[str, str]:
 
 def validate_audit(names: dict[str, str], source: str) -> None:
     code = uncomment_lean(source)
+    imports = re.findall(r"^import (\S+)$", code, re.M)
+    if len(imports) != len(set(imports)) or set(imports) != set(MODULE_NAMESPACES):
+        raise ValueError("AxiomAudit.lean must import every registered optional module exactly once.")
     inspected = re.findall(r"^#print axioms (\S+)$", code, re.M)
     if len(inspected) != len(set(inspected)) or sorted(inspected) != sorted(names):
         raise ValueError("AxiomAudit.lean must inspect every definition and theorem exactly once.")
-    if any(line.strip() and line.strip() != "import RealTransfer" and
+    if any(line.strip() and line.strip() not in {"import " + m for m in MODULE_NAMESPACES} and
            not re.fullmatch(r"#print axioms \S+", line.strip()) for line in code.splitlines()):
         raise ValueError("Unexpected command in the axiom audit.")
 
@@ -156,6 +167,12 @@ def negative_controls(manifest: dict, names: dict[str, str], audit: str) -> list
     reject("duplicate_declaration_audit", validate_audit, names, audit + "\n#print axioms " + first + "\n")
     reject("unexpected_logical_axiom", parse_axioms, {first: names[first]},
            f"'{first}' depends on axioms: [sorryAx]\n")
+    reject("omitted_weighted_graph_module", declaration_inventory, [PACKAGE / "RealTransfer.lean"])
+    graph_name = "VolumeLogic.WeightedGraph.grounded_energy_pos"
+    if graph_name not in names:
+        raise ValueError("The registered grounded-energy theorem is missing.")
+    reject("omitted_grounded_energy_audit", validate_audit, names,
+           audit.replace("#print axioms " + graph_name, ""))
     return checks
 
 
@@ -182,6 +199,11 @@ def main() -> None:
             if (PACKAGE / "lean-toolchain").read_text().strip() != TOOLCHAIN or (FORMAL / "lean-toolchain").read_text().strip() != TOOLCHAIN:
                 raise ValueError("Both packages must use the pinned Lean toolchain.")
             config = tomllib.loads((PACKAGE / "lakefile.toml").read_text())
+            libraries = [item.get("name") for item in config.get("lean_lib", [])]
+            targets = config.get("defaultTargets", [])
+            if (len(libraries) != len(MODULE_NAMESPACES) or set(libraries) != set(MODULE_NAMESPACES)
+                    or len(targets) != len(MODULE_NAMESPACES) or set(targets) != set(MODULE_NAMESPACES)):
+                raise ValueError("Lake must register and build every optional module.")
             requires = {entry["name"]: entry for entry in config.get("require", [])}
             if set(requires) != {"volumeLogic", "mathlib"} or len(config["require"]) != 2:
                 raise ValueError("Unexpected direct dependency set.")
@@ -218,11 +240,11 @@ def main() -> None:
             version = checked_run([args.lake, "env", "lean", "--version"], PACKAGE).strip()
             if not re.search(r"Lean \(version 4\.32\.2(?:,|\))", version):
                 raise ValueError("The executed Lean version does not match the pin: " + version)
-            compiled = PACKAGE / ".lake/build/lib/lean/RealTransfer.olean"
-            compiled.parent.mkdir(parents=True, exist_ok=True)
-            commands = [(["build", "VolumeLogic"], "std-build.txt"),
-                        (["env", "lean", "-o", ".lake/build/lib/lean/RealTransfer.olean", "RealTransfer.lean"], "bridge.txt"),
-                        (["env", "lean", "AxiomAudit.lean"], "axioms.txt")]
+            (PACKAGE / ".lake/build/lib/lean").mkdir(parents=True, exist_ok=True)
+            commands = [(["build", "VolumeLogic"], "std-build.txt")]
+            commands += [(["env", "lean", "-o", f".lake/build/lib/lean/{module}.olean", module + ".lean"],
+                          module + ".txt") for module in MODULE_NAMESPACES]
+            commands += [(["env", "lean", "AxiomAudit.lean"], "axioms.txt")]
             logs = {}
             for command, filename in commands:
                 result = subprocess.run([args.lake, *command], cwd=PACKAGE, text=True,
@@ -235,13 +257,17 @@ def main() -> None:
             if any(sha256(ROOT / path) != digest for path, digest in hashes.items()):
                 raise ValueError("A recorded source changed during this replay; rerun on stable inputs.")
             report = {
-                "scope": "Concrete complex modulus and real logarithmic level scale; equivalence with ordinary real convergence; unit phases, nonzero limiting amplitudes, finite complex actions and fixed real level powers; finite-residue and explicit even/odd packet assembly with the original level denominator; strict whole-remainder noncancellation and conditional 2*pi-scaled volume transfer.",
-                "explicit_inputs_remaining": ["the actual invariant's exact finite source identity", "the nonzero packet coefficient and finite-action convergence (a common limit, or a limit on every residue class with equal real action)", "a strict bound for the whole complementary remainder", "the actual geometric action-volume equality"],
+                "scope": "Concrete complex modulus and real logarithmic level scale; finite-residue packet assembly, whole-remainder noncancellation and conditional volume transfer; actual finite real weighted graph energy, positive-edge paths, constant kernel, grounded strict positivity and the explicit Laplacian quadratic identity.",
+                "explicit_inputs_remaining": ["the actual invariant's exact finite source identity", "the nonzero packet coefficient and finite-action convergence (a common limit, or a limit on every residue class with equal real action)", "a strict bound for the whole complementary remainder", "the actual geometric action-volume equality", "geometric Hessian differentiation, conductance signs, and identification of the connected ordinary-face graph"],
                 "residue_assembly": {"period": "any fixed positive natural number", "denominator": "original level N, including on N=p*n+r", "amplitudes": "each residue limit is nonzero; the complex limits may differ", "actions": "the complex residue limits may differ; their real parts agree", "unit_character": "may depend arbitrarily on N and need not converge", "conclusion": "ordinary all-integer-level convergence and eventual nonvanishing"},
                 "toolchain": TOOLCHAIN,
                 "dependency_pins": materialized,
                 "local_dependency": {"name": "volumeLogic", "path": "../formal", "sources_copied": False},
                 "commands": [["lake", *command] for command, _ in commands],
+                "modules": {module: {"namespace": namespace,
+                    "definitions": sum(kind == "def" and name.startswith(namespace + ".") for name, kind in names.items()),
+                    "theorems": sum(kind == "theorem" and name.startswith(namespace + ".") for name, kind in names.items())}
+                    for module, namespace in MODULE_NAMESPACES.items()},
                 "definitions": sorted(n for n, kind in names.items() if kind == "def"),
                 "theorems": sorted(n for n, kind in names.items() if kind == "theorem"),
                 "axioms": dict(sorted(axioms.items())),
@@ -252,9 +278,10 @@ def main() -> None:
             (output / "summary.json").write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
         except (ValueError, OSError, KeyError) as error:
             raise SystemExit(str(error)) from error
-        print(f"Checked {len(report['definitions'])} definitions and {len(report['theorems'])} concrete-limit theorems.")
+        print(f"Checked {len(report['definitions'])} definitions and {len(report['theorems'])} optional concrete theorems.")
         print(f"Validated all {len(EXPECTED_GIT)} Git dependency pins and {len(controls)} negative controls.")
         print("The exact source, uniform analytic estimates and geometric calibration remain explicit inputs.")
+        print("The geometric Hessian identity and connected conductance graph remain written inputs.")
         if args.output:
             print(f"Report: {output / 'summary.json'}")
 

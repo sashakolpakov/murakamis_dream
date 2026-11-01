@@ -43,6 +43,9 @@
     },
     "limit_comparison": {
       "title": "Elementary rate comparison"
+    },
+    "finite_graph_energy": {
+      "title": "Finite weighted graph energy"
     }
   },
   "nodes": [
@@ -484,20 +487,12 @@
       "statement": "Classical construction: a simple triangulated white sphere admits positive triangle-angle multipliers and a globally embedded disk packing. The calibrated triangle potential gives its actual right-angled polyhedral volume. This constructs geometric data before any terminal fans or quantum dominance assertion.",
       "sources": [
         {
-          "path": "manuscript/sections/L-balanced-terminal-fans.tex",
-          "anchor": "\\label{bl:a-simple-sphere-supplies-the-actual-metric}"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:packing}"
         },
         {
-          "path": "manuscript/sections/L-balanced-terminal-fans.tex",
-          "anchor": "\\label{bl:G0}"
-        },
-        {
-          "path": "notes/actual_smoothed_source_capacity_blocks.md",
-          "anchor": "## 3. Terminal blocks and finite positive multipliers"
-        },
-        {
-          "path": "notes/actual_smoothed_source_capacity_blocks.md",
-          "anchor": "## 5. Absolute capacity and independence of the adjacent marked pair"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:Phi}"
         }
       ],
       "depends_on": []
@@ -509,16 +504,20 @@
       "statement": "The actual matching, cyclic order, marked nonmatching edge, disk sides and inverse cut give the original augmented link in S^3, with a complete positive metric. The complete action is anchored by 2 pi Phi = Vol of that original augmented exterior; no replacement link or flat-plat presentation is used.",
       "sources": [
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:sec-2}"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:topology}"
         },
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:eq-4}"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:even-corners}"
         },
         {
-          "path": "manuscript/sections/L-balanced-terminal-fans.tex",
-          "anchor": "\\label{bl:from-a-matched-sphere-to-an-actual-knot-diagram}"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:odd-corners}"
+        },
+        {
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:complete-volume}"
         }
       ],
       "depends_on": [
@@ -535,26 +534,34 @@
       "statement": "For the actual simple-sphere Morse source, the surviving ordinary graph is connected, the common-scale quotient has dimension R-1, the face-difference lattice is primitive, and the complete shared face critical point has positive Hessian on that quotient. Matching outer pairs cannot be the protected pair, so each factor has a nonmonomial triangle.",
       "sources": [
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mca:sec-2}"
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:stationarity}"
         },
         {
-          "path": "notes/actual_positive_face_coefficient_saddle.md",
-          "anchor": "## 3. The finite positive critical radius"
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:laplacian}"
         },
         {
-          "path": "notes/actual_original_boundary_transverse_rank.md",
-          "anchor": "## 2. The exact finite-clock rank"
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:Psi}"
+        },
+        {
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:AH}"
         }
       ],
       "depends_on": [
         {
           "id": "finite_global_source",
-          "reason": "Fixes the actual shared face variables, targets, protected pair and homogeneous coefficient measure."
+          "reason": "Retains the shared face variables, original targets and total degree."
         },
         {
           "id": "geo_simple_sphere_packing",
-          "reason": "Supplies complete stationary radii and the calibrated triangle potential; no full invariant asymptotic is used."
+          "reason": "Supplies the positive stationary radii for the matched-sphere application; the analytic theorem states stationarity as a hypothesis."
+        },
+        {
+          "id": "finite_weighted_graph_kernel",
+          "reason": "After differentiating the entropy, connected positive conductances make the grounded face Hessian positive definite."
         }
       ]
     },
@@ -599,26 +606,26 @@
       "statement": "Exact cofactor interpolation and determinant contraction give a strict angular loss off the primitive shared angular saddle. The monomial-triangle exception is handled by the connected ordinary graph and at least one nonmonomial triangle at every crossing.",
       "sources": [
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mca:sec-3}"
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:triangle-gap}"
         },
         {
-          "path": "notes/actual_cross_cofactor_global_angular_gap.md",
-          "anchor": "## 2. A strict gap at all far nodes"
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:cofactor-gap}"
         },
         {
-          "path": "notes/actual_cross_cofactor_global_angular_gap.md",
-          "anchor": "## 3. The near nodes have the original determinant angular gap"
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:global-angular}"
         }
       ],
       "depends_on": [
         {
-          "id": "analytic_fold_interpolation",
-          "reason": "Transfers the actual cofactor, including endpoint normals, to the controlled determinant chart."
+          "id": "finite_local_fourier",
+          "reason": "Provides the actual cofactors and their finite nodal eigenpolynomials."
         },
         {
-          "id": "analytic_morse_face_saddle",
-          "reason": "Connectivity and primitive incidence rows exclude additional angular aliases after common face extraction."
+          "id": "finite_cofactor_nodal_bounds",
+          "reason": "Supplies the finite coefficientwise comparison and nodal interpolation used to extend the positive determinant phase loss to every real spectrum."
         }
       ]
     },
@@ -626,33 +633,37 @@
       "id": "analytic_morse_h1",
       "title": "H1: finite holomorphic central coefficient packet",
       "group": "local_asymptotics",
-      "statement": "The common face coefficient has a nonzero Gaussian packet with finite holomorphic action A_N, face Hessian H_N, exact raw sign and N^(2R) factor, and a relative O(1/N) error on a fixed complex spectral chart. Its limiting action is even in every spectral variable and has strictly negative diagonal spectral Hessian at the complete point.",
+      "statement": "The common face coefficient has a nonzero Gaussian packet with finite holomorphic action A_N, face Hessian H_N, exact raw sign and N^(2R) factor, and a relative O(1/N) error on a fixed complex spectral chart. Its limiting action is even in every spectral variable and has strictly negative diagonal spectral Hessian at the complete point. The current direct proof defines A_N from the exact normalized polynomial; the archived fold-interpolation route is an alternative, not an additional required premise.",
       "sources": [
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mca:eq-H1}"
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:main}"
         },
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mca:sec-4}"
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:H1}"
         },
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:eq-30}"
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:saddle}"
+        },
+        {
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:exact-B}"
         }
       ],
       "depends_on": [
         {
           "id": "analytic_morse_face_saddle",
-          "reason": "Provides the unique primitive face saddle, quotient dimension and nonzero determinant."
+          "reason": "Supplies the positive grounded Hessian and the primitive common-phase quotient."
         },
         {
-          "id": "analytic_fold_interpolation",
-          "reason": "Provides the actual finite holomorphic phase and normalization, rather than an unnormalized limiting action."
+          "id": "analytic_actual_cofactor_logs",
+          "reason": "Defines the finite phase from the exact zero-free central polynomial, including its normalization."
         },
         {
           "id": "analytic_cofactor_angular_gap",
-          "reason": "Controls side faces and the remainder of the actual shared Cauchy torus."
+          "reason": "Bounds the complementary shared Cauchy torus, so the local Gaussian has coefficient one."
         }
       ]
     },
@@ -685,16 +696,12 @@
       "statement": "The exact starting-row recurrence admits a uniform slow-transfer upper bound and prefix maximum. Away from the complete fold its optimized rate drops strictly for each nonmonomial triangle; this is a central-cofactor statement, not a bound for the full numerator.",
       "sources": [
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mca:sec-5}"
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:real-upper}"
         },
         {
-          "path": "notes/actual_global_cross_spectral_gap.md",
-          "anchor": "## 1. Original cofactors and a uniform slow-transfer upper bound"
-        },
-        {
-          "path": "notes/actual_global_cross_spectral_gap.md",
-          "anchor": "## 3. Strict local spectral decrease, with the monomial exception"
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:spectral}"
         },
         {
           "path": "papers/local-coefficients/main.tex",
@@ -715,16 +722,16 @@
       "statement": "On the entire real spectral cube outside any fixed complete-fold neighborhood, the original shared central coefficient has a strict exponential gap below Phi; the gap persists on a fixed thin complex strip and for each fixed derivative. Constants depend on the fixed diagram and neighborhood.",
       "sources": [
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mca:eq-H2}"
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:H2}"
         },
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mca:sec-5}"
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:spectral}"
         },
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:eq-31}"
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:Poisson}"
         }
       ],
       "depends_on": [
@@ -871,24 +878,16 @@
       "statement": "For the original simple-sphere Morse source and each fixed sufficiently long signed filling tuple satisfying the original knot qualification, the entire central Fourier-Hermite period has the displayed nonzero first-charge asymptotic, exact chirp and parity cancellation, Gaussian power N^(R+1/2), finite action and exponentially smaller other charges. This theorem alone concerns the central contribution, not the full invariant.",
       "sources": [
         {
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:export}"
+        },
+        {
+          "path": "papers/oscillatory-fillings/main.tex",
+          "anchor": "\\label{of:main}"
+        },
+        {
           "path": "papers/oscillatory-fillings/main.tex",
           "anchor": "\\label{of:source-result}"
-        },
-        {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mca:eq-4}"
-        },
-        {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:sec-9}"
-        },
-        {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:eq-32}"
-        },
-        {
-          "path": "manuscript/sections/L-balanced-terminal-fans.tex",
-          "anchor": "\\label{bl:every-other-fourier-charge-is-controlled}"
         }
       ],
       "depends_on": [
@@ -922,23 +921,19 @@
       "id": "geo_morse_deformed_pattern",
       "title": "One marked deformed pattern and the classical source critical point",
       "group": "marked_geometry",
-      "statement": "The full square center/radius equations at the complete packing have invertible marked Jacobian. Their holomorphic deformation is a single shared line-circle pattern, and its center-angle equations identify the actual stationary source radii. This is a classical identification, independent of quantum saddle dominance.",
+      "statement": "The normalized square center/radius equations have invertible Jacobian at the complete marked packing. Their holomorphic solution is one shared line-circle pattern. The explicit classical angle potential has this pattern as its unique grounded critical germ. No finite quantum source or quantum asymptotic is used.",
       "sources": [
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:sec-4}"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:pattern-rank}"
         },
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:complete-radius-hessian}"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:circle-system}"
         },
         {
-          "path": "notes/actual_marked_deformed_circle_pattern.md",
-          "anchor": "## 2. Proof of the full Jacobian rank, including the line faces"
-        },
-        {
-          "path": "notes/actual_marked_deformed_circle_pattern.md",
-          "anchor": "## 4. Identification with the stationary source radii"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:angle-gradient}"
         }
       ],
       "depends_on": [
@@ -947,8 +942,8 @@
           "reason": "Fixes the complete marked packing, protected lines and original incidence."
         },
         {
-          "id": "finite_global_source",
-          "reason": "Fixes the classical source potential and target equations whose critical radii are identified; no asymptotic conclusion is imported."
+          "id": "finite_weighted_graph_kernel",
+          "reason": "Supplies the finite kernel implication after the geometric Hessian is calculated; strip normalization and center-motion propagation finish the written Jacobian proof."
         }
       ]
     },
@@ -959,24 +954,20 @@
       "statement": "Common reflection maps satisfy every wire, cup/cap, disk-side and retained half-twist relation, including variable headcount prefixes. Full peripheral matrices identify the original primitive meridian and longitude logarithms U and V, with their continuous marked branches rather than only eigenvalue derivatives.",
       "sources": [
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:sec-5}"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:ordered-pairs}"
         },
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:eq-12}"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:C}"
         },
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:eq-15}"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:peripheral}"
         },
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:eq-16}"
-        },
-        {
-          "path": "notes/actual_deformed_circle_primitive_collar.md",
-          "anchor": "## 4. The auxiliary meridian and a retained half twist"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:meridian-matrix}"
         }
       ],
       "depends_on": [
@@ -997,24 +988,16 @@
       "statement": "Differentiating the calibrated source critical value gives the actual primitive periods. Its Legendre boundary correction equals the regulator on the same marked representation, with the integration constant fixed by the complete original augmented volume. This first identifies representation volume, not yet a complete metric.",
       "sources": [
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:sec-6}"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:normal-flow}"
         },
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:eq-18}"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:volume-differential}"
         },
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:eq-20}"
-        },
-        {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:eq-24}"
-        },
-        {
-          "path": "notes/general_source_regulator_hyperbolic_equality.md",
-          "anchor": "## 6. Absolute regulator calibration for any such source branch"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:absolute-regulator}"
         }
       ],
       "depends_on": [
@@ -1039,20 +1022,16 @@
       "statement": "Given a complete framed augmented metric and a nearby full marked representation satisfying the primitive filling equations with the specified nonunit peripheral multipliers, a positive core developing map, complete flat logarithmic links and explicit tubes construct the smooth filled metric. Small logs are fixed before multiplication by the large slope. This is a geometric theorem with explicit hypotheses, not an assertion for arbitrary representations.",
       "sources": [
         {
-          "path": "notes/general_source_regulator_hyperbolic_equality.md",
-          "anchor": "## 1. General geometric completion theorem"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:completion-prop}"
         },
         {
-          "path": "notes/general_source_regulator_hyperbolic_equality.md",
-          "anchor": "## 4. The small multiplier logs are the actual log-link periods"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:actual-periods}"
         },
         {
-          "path": "notes/general_source_regulator_hyperbolic_equality.md",
-          "anchor": "## 5. Primitive filling gives a complete smooth hyperbolic manifold"
-        },
-        {
-          "path": "manuscript/sections/L-balanced-terminal-fans.tex",
-          "anchor": "\\label{bl:the-precise-metric-completion-theorem-used-after-filling}"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:tube-metric}"
         }
       ],
       "depends_on": []
@@ -1064,16 +1043,12 @@
       "statement": "The limiting first-charge critical branch converges in the full marked representation neighborhood as all signed powers become independently long. Its positive imaginary spectral coordinates give nonunit auxiliary multipliers; exact primitive slope periods yield smooth solid tori, while the main cusp stays complete. These are the original S^3 disk surgeries with n=epsilon-2p.",
       "sources": [
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:sec-7}"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:main}"
         },
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:eq-26}"
-        },
-        {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:eq-28}"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:completion-prop}"
         }
       ],
       "depends_on": [
@@ -1102,16 +1077,20 @@
       "statement": "At the original first-charge filling branch, the primitive Gaussian/Legendre boundary terms cancel and the representation regulator equals the volume of the constructed complete hyperbolic metric. Thus 2 pi Re(S_0,1) is the actual original knot-complement volume, not only a formal gluing action or representation volume.",
       "sources": [
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:eq-25}"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:volume}"
         },
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:sec-7}"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:absolute-regulator}"
         },
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mca:eq-26}"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:boundary-cancel}"
+        },
+        {
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:boundary-homotopy}"
         }
       ],
       "depends_on": [
@@ -1132,16 +1111,20 @@
       "statement": "Combining the nonzero entire central period with the primitive metric calibration identifies its rate with the actual filled knot-complement volume at both parities. A separate whole complementary-source estimate is still required before concluding the full invariant has that rate.",
       "sources": [
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mca:sec-8}"
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:export}"
         },
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:sec-8}"
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:Q-derivative}"
         },
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:eq-29}"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:Q}"
+        },
+        {
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:interface-cor}"
         }
       ],
       "depends_on": [
@@ -1152,6 +1135,10 @@
         {
           "id": "geo_morse_volume_calibration",
           "reason": "Identifies its real limiting action with the original complete hyperbolic volume."
+        },
+        {
+          "id": "analytic_signed_interval_transfer",
+          "reason": "Its normalized local action has the same complete value and spectral derivative as the classical geometric potential, fixing the equality of limiting actions."
         }
       ]
     },
@@ -2603,30 +2590,26 @@
       "statement": "For the limiting classical source action, the complete spectral Hessian is diagonal negative and the action is separately even. The reciprocal-slope implicit-function theorem gives a unique small solution of U+pV=-2 pi i for independently long signed powers. Writing A_0,e=-2 delta_e B_e with Re(B_e)>0 gives Im(delta_e)>0 by the explicit critical equation. This uses the limiting classical potential and full marked family, not H1, a Gaussian amplitude or quantum charge dominance.",
       "sources": [
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:eq-21}"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:critical}"
         },
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:eq-22}"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:sign}"
         },
         {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mcg:eq-23}"
-        },
-        {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mca:eq-17}"
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:action-peripheral}"
         }
       ],
       "depends_on": [
         {
-          "id": "geo_morse_action_regulator",
-          "reason": "Provides the limiting source action on the same marked representation and identifies its derivatives with the primitive periods."
+          "id": "geo_morse_primitive_words",
+          "reason": "Identifies the derivatives of the classical action with the actual primitive periods."
         },
         {
           "id": "geo_morse_deformed_pattern",
-          "reason": "Supplies the positive complete configuration and its holomorphic marked deformation, so the small critical solution converges in the full framed representation."
+          "reason": "Provides the positive grounded critical germ, separate evenness and negative diagonal channel Hessian."
         }
       ]
     },
@@ -2684,8 +2667,8 @@
     {
       "id": "analytic_circle_charge_path",
       "title": "Classical charge path inside the positive angular chart",
-      "group": "local_asymptotics",
-      "statement": "The common classical critical equations have a holomorphic path from charge zero to charge one with small angular coordinates and Im(tau_v)<0. The summed criterion and the vertexwise contraction are alternative sufficient hypotheses; directed conditional stationary values are identified with this branch by backward substitution into the simultaneous uniqueness polydisk. No volume conclusion is imported to construct the path.",
+      "group": "marked_geometry",
+      "statement": "The common classical critical equations have a holomorphic path from charge zero to charge one with small angular coordinates and Im(tau_v)<0. The summed criterion and the vertexwise contraction are alternative sufficient hypotheses; directed conditional stationary values are identified with this branch by backward substitution into the simultaneous uniqueness polydisk. No volume conclusion is imported to construct the path. This is a classical continuation inside the stated positive angular chart, not a quantum asymptotic estimate.",
       "sources": [
         {
           "path": "manuscript/sections/E-quantitative-finite-sums.tex",
@@ -3344,6 +3327,87 @@
         {
           "id": "geo_filled_meridian_germ",
           "reason": "For the circle-tree cases, ensures a genuine nonconstant meridian coordinate using the positive augmented triangulation rather than an assumed filled positive triangulation; M verifies the directed hypotheses. The strict bare-junction case instead uses the whole-germ identification supplied by the preceding strict-tree node. Together with the nonzero symbol, the relevant nonconstant germ gives the height-one prime argument."
+        }
+      ]
+    },
+    {
+      "id": "analytic_actual_cofactor_logs",
+      "title": "Actual cofactor logarithms on a fixed complex chart",
+      "group": "local_asymptotics",
+      "statement": "For each fixed face zero pattern with x+y>0 and the other positive faces in a compact set, the actual terminal cofactors have zero-free fixed complex neighborhoods, normalized holomorphic logarithmic limits and fixed derivative convergence. The interior-start and protected-middle cases are proved separately. The exact central phase is defined from B_N=P_C/N^2, retaining the odd skipping term and both fold anchors.",
+      "sources": [
+        {
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:local-log}"
+        },
+        {
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:interior-packet}"
+        },
+        {
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:protected-packet}"
+        },
+        {
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:central-unit}"
+        },
+        {
+          "path": "papers/source-asymptotics/main.tex",
+          "anchor": "\\label{sa:exact-B}"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "finite_local_fourier",
+          "reason": "Identifies the exact local cofactor recurrence and its physical normalization."
+        },
+        {
+          "id": "analytic_signed_interval_transfer",
+          "reason": "Controls omitted starting rows and supplies the absolute limiting triangle action."
+        }
+      ]
+    },
+    {
+      "id": "finite_weighted_graph_kernel",
+      "title": "Weighted graph kernel and grounded positivity",
+      "group": "finite_graph_energy",
+      "statement": "For the explicit finite real edge energy, nonnegative weights and connected positive-edge paths give precisely the constant kernel. Fixing one vertex gives strict positivity on every nonzero variation. The explicit incidence-matrix Laplacian has this quadratic form; identifying a geometric Hessian remains a separate written calculation.",
+      "sources": [
+        {
+          "path": "formal-real/WeightedGraph.lean",
+          "anchor": "theorem energy_eq_zero_iff_constant"
+        },
+        {
+          "path": "formal-real/WeightedGraph.lean",
+          "anchor": "theorem grounded_laplacian_pos"
+        }
+      ],
+      "depends_on": []
+    },
+    {
+      "id": "finite_cofactor_nodal_bounds",
+      "title": "Exact nodal positivity and full-interval cofactor comparison",
+      "group": "finite_spectral",
+      "statement": "The original cofactor recurrence factors at its actual folded nodes into a positive finite eigenpolynomial and a nonnegative tail. Chebyshev/Radau interpolation gives polynomial-factor comparison over the entire real spectral interval; the central numerator retains the odd skipped-row term.",
+      "sources": [
+        {
+          "path": "papers/local-coefficients/main.tex",
+          "anchor": "\\label{lc:nodal-positive}"
+        },
+        {
+          "path": "papers/local-coefficients/main.tex",
+          "anchor": "\\label{lc:interpolation}"
+        },
+        {
+          "path": "papers/local-coefficients/main.tex",
+          "anchor": "\\label{lc:central-comparison}"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "finite_local_fourier",
+          "reason": "Supplies the actual banded operator and physical cofactor normalization."
         }
       ]
     }

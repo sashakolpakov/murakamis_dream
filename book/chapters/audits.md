@@ -240,7 +240,7 @@ remain written proofs.
 The Std-only project has 241 compiled declarations with inspected
 axiom dependencies. The count describes the formal statements,
 not how much of the volume proof has been verified. In particular,
-Appendix O's positive radius Hessian, complex cofactor estimates,
+Appendix O's geometric Hessian calculation, complex cofactor estimates,
 charge comparison, paired endpoint currents and filled metric are
 written arguments. The current analytic reading retains both level
 parities and independently sufficiently long fixed signed powers.
@@ -261,9 +261,32 @@ different nonzero amplitude limits on even and odd levels. More generally,
 it handles every residue class modulo a fixed positive integer, provided
 the limiting actions have the same real part. Lean proves that the finitely
 many thresholds combine into one all-level estimate. The denominator
-remains the actual level \(N\) on every subsequence. The optional package
-now contains two definitions and twenty-two theorems; the saddle, source
-gap and geometric identity remain written application inputs.
+remains the actual level \(N\) on every subsequence.
+
+The same optional package now formalizes the finite graph argument in
+the Hessian proof. For a graph with endpoints \(s_e,t_e\) and real
+weights \(w_e\), it constructs
+
+\[
+ E(f)=\sum_e w_e(f(s_e)-f(t_e))^2.
+\]
+
+With nonnegative weights, this energy vanishes exactly when the values
+agree across every positive-weight edge. Lean propagates that equality
+along finite paths. If the positive support is connected, the kernel
+therefore consists of constant functions; fixing one vertex to zero
+makes the energy strictly positive on every nonzero variation. The
+module also constructs the signed incidence matrix and proves that
+its weighted Laplacian has precisely this quadratic form. Parallel
+edges and loops are allowed.
+
+The geometric differentiation identifying the circle-pattern Hessian
+with this energy, the positivity of its particular weights and its
+graph connectivity remain written inputs. The optional package has
+nine definitions and forty-one theorems. Its axiom audit covers all
+fifty declarations, separately from the Std-only project. The saddle
+estimates, whole-source gap and geometric volume identity also remain
+written application inputs.
 
 ## Joining certified diagrams
 

@@ -276,7 +276,7 @@ ordinary target. Formula \eqref{braid:eq-12} is the normalization with pole curv
 one.
 
 The complete-geometry assertion used below has two ingredients. First,
-the simple-sphere construction of \cite[Sections 2--3]{Packing} turns
+the packing construction of \cite[Proposition 2.1]{MarkedFillings} turns
 this packing into the labeled right-angled ideal polyhedron: white
 faces correspond to the displayed circles and shaded triangles to the
 interstices. Its hypotheses hold because the contact graph just
@@ -287,7 +287,7 @@ half disks gives two balls with these labeled faces. White faces pair
 across the projection copies; shaded faces pair according to
 \eqref{braid:eq-2}, with the retained half twist exchanging their copies
 and punctures when prescribed. These are precisely the inverse-cut
-identifications of \cite[Section 2]{MorseGeometry}. Thus that construction
+identifications of \cite[Section 2]{MarkedFillings}. Thus that construction
 applies to \(Y_m^\epsilon\), with its original disks and main strands.
 No change to a different shaded-face matching is made.
 
@@ -695,34 +695,38 @@ lengths tend to infinity. The main cusp remains complete. There is no
 condition on the relative sizes or signs of the fixed filling integers.
 \end{foundation}
 
-The analytic conclusion is \cite[Sections 1--8]{MorsePeriod}. Its
-passage from the nonzero local expansion and the shared spectral gap to
-the entire filling sum is now stated separately in
-\cite[Theorem 1.1]{OscillatoryFillings}. The construction of those two
-source estimates remains in the former reference. The
-original topology, marked primitive words, smooth completion and absolute
-volume calibration are \cite[Sections 1--9]{MorseGeometry}, reproduced
-as the two parts of Appendix O in \cite{ProofCollection}. These are
-substantial companion proofs. They give the central contribution, not
-the full invariant. The missing complementary bound is proved in this
-paper. The complete simple-sphere geometry used in their hypotheses is
-constructed in \cite[Sections 2--3]{Packing}; the packing below also
-provides its explicit circle configuration.
+Three companion results supply this statement.
+Theorem 1.1 of \cite{SourceAsymptotics} proves the nonzero holomorphic
+expansion and the shared spectral gap for the actual central coefficient.
+Theorem 1.1 of \cite{OscillatoryFillings} then evaluates its entire
+filling sum. Section 7 of \cite{SourceAsymptotics} records the resulting
+normalization, including both level parities.
+Theorem 1.1 of \cite{MarkedFillings} constructs the original exterior,
+its primitive fillings and the absolute action-volume equality.
+Its local angle potential agrees with the limiting cofactor action by
+\cite[Lemma 5.1]{LocalBounds}: their values at zero and their spectral
+derivatives agree, with the same continued roots and logarithms.
+These results determine the central contribution. The complementary
+estimate for the full invariant is proved in the present paper.
+The packing in Section~\ref{braid:sec-3} supplies the explicit
+stationary radii required by the source theorem.
 
 The simple sphere, positive labeled packing, connected ordinary graph,
 primitive rank-\(m-1\) face quotient, and nonmonomial triangle at each
 matching edge have been checked in Sections~\ref{braid:sec-1}--\ref{braid:sec-3} and~\ref{source:sec-4}. These are precisely the
-hypotheses of \cite{MorsePeriod} and
-\cite{MorseGeometry}. They concern the
+hypotheses of \cite{SourceAsymptotics} and
+\cite{MarkedFillings}. They concern the
 original all-central projection \eqref{source:eq-A7}; they do not require complete-radius
 balance, a middle forest, a flat sweep or a full positive-endpoint
 source theorem.
 
 Choose retained \(\epsilon_j\in\{-1,0,1\}\) with the prescribed parities
 and write \(n_j=\epsilon_j-2p_j\). Let \(A_N(\delta)\) be the finite
-face-critical action in the companion period theorem: the shared face
-variables have been evaluated at their selected stationary point,
-with the original scalar removed as specified in that theorem. Define
+face-critical action of \cite[Sections 3 and 5]{SourceAsymptotics}.
+There each actual central cofactor polynomial is divided by \(N^2\)
+before taking its logarithm, and the shared face variables are evaluated
+at their selected stationary point. All remaining finite-level terms
+stay in \(A_N\). Define
 \[
  \mathcal S_{N,\mathbf1}(\delta)
  =A_N(\delta)+\pi i\sum_j n_j\delta_j^2+2\pi i\sum_j\delta_j.
@@ -763,7 +767,7 @@ S_{\mathbf1}=A_0(\boldsymbol\delta)
 shaded-side map before inserting the retained half twist. The original
 meridian threading follows its inverse, so its pure logarithm is
 \(-\operatorname{Log}R_{0,j}\), as in
-\cite[Section 5, equations (14)--(16)]{MorseGeometry}. Let
+\cite[Section 4]{MarkedFillings}. Let
 \(U_j,V_j\) be the continuous logarithmic similarities of
 \(\mu_j,\lambda_j\), with their zero values at the complete augmented
 structure fixing the branches. The actual primitive logs satisfy \begin{equation}\label{source:eq-A38}
@@ -916,9 +920,6 @@ Jones polynomials and the simplicial volume of a knot}, Acta Math.
 \emph{Cusp areas of Farey manifolds and applications to knot theory},
 Int. Math. Res. Not. 2010, 4434--4497.
 \href{https://arxiv.org/abs/0808.2716}{arXiv:0808.2716}.
-\bibitem{ProofCollection} \emph{Volume limits from planar tangles},
-completed-proof collection, Appendices N and O.
-\href{https://sashakolpakov.github.io/murakamis_dream/manuscript.pdf}{Proof collection}.
 \bibitem{FillingPaper} \emph{Finite spectral evaluation and uniform filling
 bounds}, Theorems 1.1, 9.1 and 10.1, and Corollary 9.2.
 \href{https://sashakolpakov.github.io/murakamis_dream/papers/filling-bounds.pdf}{Companion paper}.
@@ -928,18 +929,12 @@ sources}, Theorem 1.1.
 \bibitem{OscillatoryFillings} \emph{Oscillatory filling sums with
 independently long twists}, Theorem 1.1.
 \href{https://sashakolpakov.github.io/murakamis_dream/papers/oscillatory-fillings.pdf}{Companion paper}.
-\bibitem{SectorCover} \emph{Full-source volume from a cover of genuine
-sectors}.
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/general_actual_sector_cover_filling_volume.html}{Shared-sector conventions}.
-\bibitem{Packing} \emph{Balanced terminal decorations and volume limits
-beyond tangle-operation trees}, Sections 2--3.
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_balanced_terminal_fan_volume.html}{Original simple-sphere packing and cut}.
-\bibitem{MorsePeriod} \emph{The geometric contribution and all Fourier
-charges for matched spherical diagrams}, Sections 1--8.
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_morse_cross_filling_period.html}{Central-period proof}.
-\bibitem{MorseGeometry} \emph{The original complement and its geometric
-contribution}, Sections 1--9.
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_morse_geometric_contribution.html}{Primitive filling and absolute volume proof}.
+\bibitem{SourceAsymptotics} \emph{Holomorphic asymptotics of central
+shared face coefficients}, Theorem 1.1 and Section 7.
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/source-asymptotics.pdf}{Companion paper}.
+\bibitem{MarkedFillings} \emph{Circle patterns and primitive fillings
+of augmented links}, Theorem 1.1.
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/marked-fillings.pdf}{Companion paper}.
 \bibitem{Constants} \emph{Rational enclosures for the fixed constants
 of the cyclic source proof}, portable verifier and rational output.
 \href{https://github.com/sashakolpakov/murakamis_dream/blob/main/repro/check_cyclic_source_constants.py}{Verifier};

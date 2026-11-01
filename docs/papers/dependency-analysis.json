@@ -1,7 +1,7 @@
 {
   "scope": "Consistency and source-location checks on the declared mathematical dependency graph, not proof verification.",
-  "nodes": 90,
-  "edges": 212,
+  "nodes": 93,
+  "edges": 217,
   "component_edges": [
     [
       "action_volume",
@@ -85,10 +85,6 @@
     ],
     [
       "diagram_evaluation",
-      "marked_geometry"
-    ],
-    [
-      "diagram_evaluation",
       "planar_criteria"
     ],
     [
@@ -98,6 +94,14 @@
     [
       "diagram_evaluation",
       "tree_criteria"
+    ],
+    [
+      "finite_graph_energy",
+      "local_asymptotics"
+    ],
+    [
+      "finite_graph_energy",
+      "marked_geometry"
     ],
     [
       "finite_spectral",
@@ -141,6 +145,10 @@
     ],
     [
       "local_asymptotics",
+      "action_volume"
+    ],
+    [
+      "local_asymptotics",
       "braid_application"
     ],
     [
@@ -149,15 +157,7 @@
     ],
     [
       "local_asymptotics",
-      "marked_geometry"
-    ],
-    [
-      "local_asymptotics",
       "planar_criteria"
-    ],
-    [
-      "local_asymptotics",
-      "tree_criteria"
     ],
     [
       "marked_geometry",
@@ -183,7 +183,10 @@
     "finite_bernstein",
     "finite_local_fourier",
     "analytic_signed_interval_transfer",
+    "analytic_actual_cofactor_logs",
     "analytic_cross_spectral_gap",
+    "finite_cofactor_nodal_bounds",
+    "analytic_cofactor_angular_gap",
     "finite_remainder",
     "finite_hermite",
     "finite_crossing",
@@ -193,10 +196,12 @@
     "finite_pivotal_mark",
     "finite_global_source",
     "analytic_fold_interpolation",
+    "analytic_morse_h2",
     "finite_invariant_normalization",
     "finite_resolvent",
     "finite_spectral_source",
     "finite_remainder_transfer",
+    "finite_weighted_graph_kernel",
     "geo_circle_ordered_cut",
     "geo_circle_positive_edge_charts",
     "geo_circle_primitive_periods",
@@ -208,9 +213,7 @@
     "geo_positive_marked_gluing",
     "geo_simple_sphere_packing",
     "analytic_morse_face_saddle",
-    "analytic_cofactor_angular_gap",
     "analytic_morse_h1",
-    "analytic_morse_h2",
     "analytic_morse_local_charge",
     "analytic_morse_charge_tails",
     "analytic_morse_central_period",
@@ -271,31 +274,31 @@
   "shared_prerequisites": [
     {
       "id": "finite_local_fourier",
-      "downstream": 58
+      "downstream": 54
     },
     {
       "id": "finite_remainder",
-      "downstream": 55
-    },
-    {
-      "id": "finite_hermite",
-      "downstream": 53
-    },
-    {
-      "id": "finite_crossing",
-      "downstream": 49
-    },
-    {
-      "id": "finite_pivotal_mark",
       "downstream": 48
     },
     {
+      "id": "finite_hermite",
+      "downstream": 46
+    },
+    {
+      "id": "finite_crossing",
+      "downstream": 42
+    },
+    {
+      "id": "finite_pivotal_mark",
+      "downstream": 41
+    },
+    {
       "id": "finite_global_source",
-      "downstream": 47
+      "downstream": 40
     },
     {
       "id": "geo_simple_sphere_packing",
-      "downstream": 32
+      "downstream": 30
     },
     {
       "id": "finite_invariant_normalization",
@@ -303,7 +306,11 @@
     },
     {
       "id": "analytic_signed_interval_transfer",
-      "downstream": 20
+      "downstream": 23
+    },
+    {
+      "id": "finite_weighted_graph_kernel",
+      "downstream": 19
     },
     {
       "id": "geo_circle_ordered_cut",
@@ -318,15 +325,11 @@
       "downstream": 15
     },
     {
-      "id": "analytic_fold_interpolation",
-      "downstream": 14
-    },
-    {
-      "id": "analytic_morse_face_saddle",
-      "downstream": 14
-    },
-    {
       "id": "elementary_rate_transfer",
+      "downstream": 14
+    },
+    {
+      "id": "finite_cofactor_nodal_bounds",
       "downstream": 14
     },
     {
@@ -342,7 +345,15 @@
       "downstream": 13
     },
     {
+      "id": "analytic_actual_cofactor_logs",
+      "downstream": 12
+    },
+    {
       "id": "analytic_circle_charge_path",
+      "downstream": 12
+    },
+    {
+      "id": "analytic_morse_face_saddle",
       "downstream": 12
     },
     {
@@ -390,10 +401,6 @@
       "downstream": 10
     },
     {
-      "id": "geo_morse_action_regulator",
-      "downstream": 10
-    },
-    {
       "id": "geo_nonparabolic_edge_character",
       "downstream": 10
     },
@@ -435,6 +442,10 @@
     },
     {
       "id": "finite_bernstein",
+      "downstream": 8
+    },
+    {
+      "id": "geo_morse_action_regulator",
       "downstream": 8
     },
     {
@@ -578,6 +589,10 @@
       "downstream": 1
     },
     {
+      "id": "analytic_fold_interpolation",
+      "downstream": 0
+    },
+    {
       "id": "braid_alternating_generator_volume",
       "downstream": 0
     },
@@ -641,20 +656,14 @@
     "notes/actual_filling_source_fourier_endpoint_gap.md": "1f03f69212b1fee6dceb6315b9582acb56aa647e4893ee3483113eff142ad982",
     "notes/general_localized_unit_charge_filling_period.md": "9f7e9edcbfd38ad823d52992e6bd682cfc9b21fe48e639a87280e8d0026dafc9",
     "notes/actual_complete_augmented_source_normalization.md": "29541886b2d34dfe0ce3cd60123344085988732d54ecc26b7ce9e54186d24f2f",
-    "manuscript/sections/L-balanced-terminal-fans.tex": "4c5b03317602d547a44028908a99e8cd449922f391c27ba80e8dafd5156f4775",
-    "notes/actual_smoothed_source_capacity_blocks.md": "af78e91d8c50b18ca83839fd33d20e79dedb66859cfab011b0f1d18d60ef237d",
+    "papers/marked-fillings/main.tex": "a0d792eea4336ea0bbe7c9c274780539db2b57e80836525210ba16728661000e",
+    "papers/source-asymptotics/main.tex": "b39a4b036ed8c7acd9966d224bd5a8055b183b1ee6307354174119bc15bd2808",
     "manuscript/sections/O-morse-geometric-contribution.tex": "cb6206d13e0dbeb13f8101c8488f0380367588e8d66beea0ca46574d2ffda3c0",
-    "notes/actual_positive_face_coefficient_saddle.md": "59d84f45fef7a0b28158f6009bebb0769081185db1b7af1ab408fc6070909d1d",
-    "notes/actual_original_boundary_transverse_rank.md": "178e96eaa7f715cb76cf88611f394d96b9f1f29ed7c03952724d0c6f04c5563e",
     "notes/actual_positive_face_exponential_fold_interpolation.md": "e27e1144815025faa4ddd8e1c91c0c575ad2c6754e6a2671acdf43f95b16d1d1",
     "notes/actual_cross_cofactor_interpolant_rigidity.md": "85c5d2a0da2c504c0c8965b374f87b7b9405c2c7892ffb5204ff4c0307d10f5d",
-    "notes/actual_cross_cofactor_global_angular_gap.md": "348c759eb32c13659248006daf0d6b44f0a5921f8107bc949bb511fc8ddfec4e",
     "papers/local-coefficients/main.tex": "86da78c17f6535c58d7d17d919f10914f8eb9452143a66c2fb2e2fa7b7b5965c",
-    "notes/actual_global_cross_spectral_gap.md": "841203d4a8343436c01a03228d1c7060a30c048e8e7c0cffbb471210dfac472d",
-    "notes/actual_marked_deformed_circle_pattern.md": "3996e91ef00f4d0148307c103a5f8a81421b47cc9ece4f90fb908e677d4031e7",
-    "notes/actual_deformed_circle_primitive_collar.md": "9463458a3a1da8efe8ff49080076d53ad256827eb43506e3f3e78ebfb3773463",
-    "notes/general_source_regulator_hyperbolic_equality.md": "2e86cdb646af4cb348081d0e76a698c109af98286904dfe66664954a043ed8ac",
     "manuscript/sections/P-weak-balance.tex": "2fa93c0a481941f1075feef21a1fc05915457abc2c3d1a125b9508ab130130aa",
+    "manuscript/sections/L-balanced-terminal-fans.tex": "4c5b03317602d547a44028908a99e8cd449922f391c27ba80e8dafd5156f4775",
     "manuscript/sections/Q-protected-triangular-sums.tex": "7b9336b24b0088760aa73db35e584fd089c62ee9f699a6a11e7c5d02cdced195",
     "experiments/actual_sector_cover_certificate.json": "54f6087e25e9e6c48e123ea61497cab2a2bb2eb3e4d92a2eb3f9b6e76452eadb",
     "experiments/actual_shared_radius_anchor_obstruction_certificate.json": "8e9ca9b9baf9383449a54840a4204ac4008b20cd9a56684ffc9a0a45c65bba27",
@@ -673,7 +682,7 @@
     "manuscript/sections/F-quantitative-octahedral-geometry.tex": "4348d40531fe83415223b88e26b1e3aedcb01daa9c6e17f030ae596000f8f268",
     "manuscript/sections/08a-quantitative-circle-trees.tex": "cfd7fa0dafd66bdc0e0e5151f415b2bc6b28c49a63ad6d1e0a244829b1db70f0",
     "manuscript/sections/K-directed-circle-messages.tex": "7eff3a7658079dff75802b8044d7213e040795eeff89c7795bb1476aee04c03a",
-    "papers/three-braids/main.tex": "232ae8bd37ca6216d5ca67d2bdec3a14f12e00847dd33980dedac6851a106ffd",
+    "papers/three-braids/main.tex": "9bad961bfcb9893bf0b6035a084d95436e0c146b3acda10850ba7d374a832c76",
     "repro/check_cyclic_source_constants.py": "302e25fa4a42784e67ecd502f004bfe98c9c08a1246c4ff64019bda46e5cee05",
     "manuscript/sections/I-geometric-characteristic.tex": "d6e7a10052866edca5369cce3aeb3a4b9758a7b9807386af2d08816da57313f2",
     "manuscript/sections/J-strict-tree-geometric-characteristic.tex": "a7abe912fbc16874f19818551fc737926375dcf0b4a3f8a8e9104e9e52a6642b",
@@ -693,6 +702,7 @@
     "manuscript/sections/M-directed-all-orders.tex": "90bde811854ea8d259b9086516703bde0684a6de7d07b99e92a56e0adab49986",
     "manuscript/sections/H-filtered-characteristic.tex": "8e8eda6cf1412a08581be941ac3cd63f792786636dc32edbf3ed4b6ffecc61ec",
     "formal/VolumeLogic/FormalRegrading.lean": "9fe0b604cfe2857cc26569442ee9c608c214307adb5fdfd666e154fcbadc7a2c",
-    "papers/dependencies.json": "d198beba4d4a769d4da19c393002f6f54b74c898e92ffc805454150a4d10dd69"
+    "formal-real/WeightedGraph.lean": "3e3d77275515fcc861bc861ac8b5e4988e5c5d2775636931ee561db7ce56fecf",
+    "papers/dependencies.json": "0150841584296b63eb754ba37505bdd7b39774b8e82642b2e9947c85b1842844"
   }
 }

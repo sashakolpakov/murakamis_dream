@@ -1,4 +1,5 @@
 import RealTransfer
+import WeightedGraph
 
 #print axioms VolumeLogic.RealModel.complexMagnitude
 #print axioms VolumeLogic.RealModel.constant_div_nat_rate
@@ -24,3 +25,30 @@ import RealTransfer
 #print axioms VolumeLogic.RealModel.residue_gaussian_packet_hasRate
 #print axioms VolumeLogic.RealModel.complex_residue_packet_volume_transfer
 #print axioms VolumeLogic.RealModel.complex_parity_packet_volume_transfer
+
+#print axioms VolumeLogic.WeightedGraph.edgeStep
+#print axioms VolumeLogic.WeightedGraph.positiveStep
+#print axioms VolumeLogic.WeightedGraph.connected
+#print axioms VolumeLogic.WeightedGraph.connected_of_positive_weights
+#print axioms VolumeLogic.WeightedGraph.energy
+#print axioms VolumeLogic.WeightedGraph.form
+#print axioms VolumeLogic.WeightedGraph.energy_nonneg
+#print axioms VolumeLogic.WeightedGraph.energy_constant
+#print axioms VolumeLogic.WeightedGraph.energy_eq_zero_iff
+#print axioms VolumeLogic.WeightedGraph.equal_of_positive_step
+#print axioms VolumeLogic.WeightedGraph.equal_of_positive_path
+#print axioms VolumeLogic.WeightedGraph.energy_eq_zero_iff_constant
+#print axioms VolumeLogic.WeightedGraph.grounded_energy_eq_zero_iff
+#print axioms VolumeLogic.WeightedGraph.grounded_energy_pos
+#print axioms VolumeLogic.WeightedGraph.energy_eq_form_self
+#print axioms VolumeLogic.WeightedGraph.form_symm
+#print axioms VolumeLogic.WeightedGraph.form_add_left
+#print axioms VolumeLogic.WeightedGraph.form_smul_left
+#print axioms VolumeLogic.WeightedGraph.energy_add_constant
+#print axioms VolumeLogic.WeightedGraph.incidence
+#print axioms VolumeLogic.WeightedGraph.laplacian
+#print axioms VolumeLogic.WeightedGraph.incidence_pairing
+#print axioms VolumeLogic.WeightedGraph.laplacian_symm
+#print axioms VolumeLogic.WeightedGraph.laplacian_form
+#print axioms VolumeLogic.WeightedGraph.laplacian_quadratic
+#print axioms VolumeLogic.WeightedGraph.grounded_laplacian_pos

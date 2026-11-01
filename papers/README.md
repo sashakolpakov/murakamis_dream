@@ -30,6 +30,13 @@ and normalization calculations included. The graph keeps them as
 separate components because the abstract norm theorem does not use
 that contraction argument.
 
+The current source-asymptotics proof defines its finite action directly
+from the exact cofactor polynomial. The earlier fold interpolation
+remains in the reference account and guide as an alternative construction;
+the direct proof does not require both routes. This is one concrete way
+the dependency analysis shortens the presentation without removing a
+needed argument.
+
 Three other distinctions determine the division. The classical filling
 construction does not need a nonzero quantum asymptotic; their comparison
 comes later, through the same marked critical equations. A nonzero
@@ -88,6 +95,38 @@ hypotheses explicitly. For a knot source, construction of those hypotheses
 and identification of the critical action with volume remain separate
 theorems.
 
+**Holomorphic asymptotics of central shared face coefficients.**
+[TeX source](source-asymptotics/main.tex) ·
+[PDF](../docs/papers/source-asymptotics.pdf)
+
+Theorem 1.1 supplies the two source estimates used by the filling-sum
+paper. Given positive stationary face weights, it proves a nonzero
+holomorphic Gaussian expansion for the actual central coefficient and
+a strict spectral bound away from its complete point. The proof treats
+the entire shared face torus, including the regions outside the Gaussian
+neighborhood. It retains both level parities, the original coefficient
+targets and the odd skipped-row term. A tetrahedral example illustrates
+why repeated face labels denote one variable and why the Gaussian measure
+has no extra integer-lattice factor. Section 7 states the exact normalized
+input to the oscillatory theorem. Bounding the other degree sectors of
+the invariant remains the task of an application theorem.
+
+**Circle patterns and primitive fillings of augmented links.**
+[TeX source](marked-fillings/main.tex) ·
+[PDF](../docs/papers/marked-fillings.pdf)
+
+This is the classical geometric foundation. Starting from the marked
+matched sphere, the paper constructs its complete augmented exterior
+and one common deformed circle pattern. It calculates the peripheral
+paths through each original crossing disk, including retained half
+twists. The critical equations then specify a primitive filling slope.
+The proof constructs the smooth complete metric and compares its volume
+with the absolute critical action using the same fundamental chain.
+Theorem 1.1 holds for independently sufficiently long signed fillings;
+it does not assume a quantum asymptotic. Two drawings explain the single
+disk pairing and the logarithmic torus periods. The final corollary
+states the exact action comparison used by the quantum applications.
+
 **Volume limits for long alternating-generator three-braids.**
 [TeX source](three-braids/main.tex) ·
 [PDF](../docs/papers/three-braids.pdf)
@@ -111,9 +150,10 @@ filling contribution with its absolute volume calibration. Those
 dependencies are substantial. The finite input and local upper bounds are
 proved in the first two papers above. The filling-sum paper proves the
 analytic implication once its local expansion and global gap are supplied.
-The construction of that expansion and gap, and the marked geometric
-volume comparison, still have their complete accounts in the reference
-manuscript and its cited technical notes.
+The source-asymptotics paper constructs that expansion and gap. The
+circle-pattern paper supplies the marked geometric volume comparison.
+The application now cites numbered statements in these companion papers,
+and checks their common normalization and hypotheses.
 
 ## What still needs its own paper
 
@@ -123,17 +163,11 @@ purposes:
 
 | Subject | Result to explain and prove | Dependencies that must remain visible |
 | --- | --- | --- |
-| Holomorphic source asymptotics | A nonzero local expansion for the shared coefficient and a strict spectral gap away from it | Exact local formulas, the common face lattice and estimates outside the local chart |
-| Marked hyperbolic fillings | The classical critical action is the volume of the smoothly filled knot complement | The complete packing, deformed circle pattern, primitive peripheral curves and absolute volume normalization |
 | Sufficient conditions on planar compositions | Weak balance, decoration and joining operations control the full remainder | The source, analytic and geometric results above |
 | Ordered tangle trees | Explicit degree and twist conditions give the volume limit | The recursive finite evaluation and its geometric construction |
 | Geometric longitude and recurrences | All-order meridian expansions force the selected geometric factor to divide a classical symbol | The full expansion, its normalization and the geometric longitude |
 
-This is a proposed division, not a claim that five more finished papers
-already exist. The filling-sum theorem now has its own paper, but its
-source hypotheses and the classical geometry still need separate accounts.
-A short reference chapter that cites proofs elsewhere would not supply
-those accounts by itself. Each
+These remaining subjects still need their own complete accounts. Each
 candidate needs a precise theorem, complete proofs of its own claims,
 defined notation, and an explicit list of imported theorems.
 
@@ -141,10 +175,10 @@ For a citation between papers, the exporting paper must state a numbered
 theorem with its normalization, degree restrictions, level parity and
 uniformity assumptions. The importing paper must name that theorem and
 check those hypotheses. A reference to a folder of calculations is not
-a substitute. At present the four drafts above are written; several of
-their shared foundations still have their complete accounts in the
-reference manuscript and technical notes. The dependency graph makes
-that remaining editorial work visible.
+a substitute. The six drafts above separate one application and its
+foundations. The other retained knot families and the longitude results
+still require the remaining editorial and proof review. The dependency
+graph keeps those obligations visible.
 
 The illustrated guide retains the broader approaches and unsuccessful
 comparisons. The reference manuscript remains available for the existing
@@ -179,17 +213,21 @@ It generates the interactive graph, vector overview and source-hash
 record in `docs/papers/`. These checks validate the declared dependency
 record, not the proofs at its nodes.
 
-The rational constants in the three-braid argument have a separate command:
+Replay the papers' finite identities and the three-braid rational constants
+with one command, using Python and SymPy:
 
 ```sh
-python3 repro/check_cyclic_source_constants.py --output repro/results/cyclic-source-constants.json
+python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 ```
 
-It uses outward rational bounds with explicit series remainders. The
-argument for every even number of factors is written in the paper; it is
-not inferred from computations for finitely many braid lengths.
+The runner saves a separate record and log for each check, and stops on
+failure. The constant verifier uses outward rational bounds with explicit
+series remainders. The argument for every even number of factors is
+written in the paper; it is not inferred from computations for finitely
+many braid lengths. The finite checks complement the written proofs of
+the analytic estimates and geometric constructions.
 
-The two analytic papers each have one additional reproduction command:
+The local-bound and filling-sum checks can also be run separately:
 
 ~~~sh
 python3 papers/local-coefficients/check.py --output repro/results/local-coefficients.json

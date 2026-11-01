@@ -118,6 +118,132 @@
       "Classical.choice",
       "Quot.sound",
       "propext"
+    ],
+    "VolumeLogic.WeightedGraph.connected": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.connected_of_positive_weights": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.edgeStep": [],
+    "VolumeLogic.WeightedGraph.energy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.energy_add_constant": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.energy_constant": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.energy_eq_form_self": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.energy_eq_zero_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.energy_eq_zero_iff_constant": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.energy_nonneg": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.equal_of_positive_path": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.equal_of_positive_step": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.form": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.form_add_left": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.form_smul_left": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.form_symm": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.grounded_energy_eq_zero_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.grounded_energy_pos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.grounded_laplacian_pos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.incidence": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.incidence_pairing": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.laplacian": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.laplacian_form": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.laplacian_quadratic": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.laplacian_symm": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.WeightedGraph.positiveStep": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
     ]
   },
   "commands": [
@@ -138,12 +264,27 @@
       "lake",
       "env",
       "lean",
+      "-o",
+      ".lake/build/lib/lean/WeightedGraph.olean",
+      "WeightedGraph.lean"
+    ],
+    [
+      "lake",
+      "env",
+      "lean",
       "AxiomAudit.lean"
     ]
   ],
   "definitions": [
     "VolumeLogic.RealModel.complexMagnitude",
-    "VolumeLogic.RealModel.realLogScale"
+    "VolumeLogic.RealModel.realLogScale",
+    "VolumeLogic.WeightedGraph.connected",
+    "VolumeLogic.WeightedGraph.edgeStep",
+    "VolumeLogic.WeightedGraph.energy",
+    "VolumeLogic.WeightedGraph.form",
+    "VolumeLogic.WeightedGraph.incidence",
+    "VolumeLogic.WeightedGraph.laplacian",
+    "VolumeLogic.WeightedGraph.positiveStep"
   ],
   "dependency_pins": {
     "Cli": {
@@ -196,12 +337,25 @@
     "the actual invariant's exact finite source identity",
     "the nonzero packet coefficient and finite-action convergence (a common limit, or a limit on every residue class with equal real action)",
     "a strict bound for the whole complementary remainder",
-    "the actual geometric action-volume equality"
+    "the actual geometric action-volume equality",
+    "geometric Hessian differentiation, conductance signs, and identification of the connected ordinary-face graph"
   ],
   "local_dependency": {
     "name": "volumeLogic",
     "path": "../formal",
     "sources_copied": false
+  },
+  "modules": {
+    "RealTransfer": {
+      "definitions": 2,
+      "namespace": "VolumeLogic.RealModel",
+      "theorems": 22
+    },
+    "WeightedGraph": {
+      "definitions": 7,
+      "namespace": "VolumeLogic.WeightedGraph",
+      "theorems": 19
+    }
   },
   "negative_controls": [
     "changed_mathlib_revision",
@@ -211,7 +365,9 @@
     "absolute_local_dependency",
     "omitted_definition_audit",
     "duplicate_declaration_audit",
-    "unexpected_logical_axiom"
+    "unexpected_logical_axiom",
+    "omitted_weighted_graph_module",
+    "omitted_grounded_energy_audit"
   ],
   "residue_assembly": {
     "actions": "the complex residue limits may differ; their real parts agree",
@@ -222,14 +378,15 @@
     "unit_character": "may depend arbitrarily on N and need not converge"
   },
   "result": "All optional declarations compiled; every definition and theorem has only the permitted foundational axioms.",
-  "scope": "Concrete complex modulus and real logarithmic level scale; equivalence with ordinary real convergence; unit phases, nonzero limiting amplitudes, finite complex actions and fixed real level powers; finite-residue and explicit even/odd packet assembly with the original level denominator; strict whole-remainder noncancellation and conditional 2*pi-scaled volume transfer.",
+  "scope": "Concrete complex modulus and real logarithmic level scale; finite-residue packet assembly, whole-remainder noncancellation and conditional volume transfer; actual finite real weighted graph energy, positive-edge paths, constant kernel, grounded strict positivity and the explicit Laplacian quadratic identity.",
   "source_sha256": {
     "formal-real/.gitignore": "fde850d24186b6e99c8c0debd641fb3ab85198b109eb66f71a1fea02bd6ea1b3",
-    "formal-real/AxiomAudit.lean": "6d1546a54c3aa71c894b551e39d871bba73301eba3e9db8c35be9933ffdf8dff",
-    "formal-real/README.md": "135a3108ddc09d21b4a379cdce396a60383f4467eb91a0265ab9800aac5fc90f",
+    "formal-real/AxiomAudit.lean": "79e6cf0ec1c51329d4bbfc1924f35ff2c4086921059a2c66a7bde76ee91c6cec",
+    "formal-real/README.md": "a2d4268acb4112e54dae3f02174fac734607ed57b92454c06108abc48b95760c",
     "formal-real/RealTransfer.lean": "fd41a1469999ec0e455e64a08c5d81a947a38797054c8f850a3a2371023c545a",
+    "formal-real/WeightedGraph.lean": "3e3d77275515fcc861bc861ac8b5e4988e5c5d2775636931ee561db7ce56fecf",
     "formal-real/lake-manifest.json": "e4b572de88e8c9a6bf79817a5b36f982d825c86725f6d161e65bad42aadd6b5b",
-    "formal-real/lakefile.toml": "22fab20fa38f079672b4830e81df36799723ffb08443ba88387f57c16ac42b46",
+    "formal-real/lakefile.toml": "2619fc32ce87784fae474a8ee20b2c9ce371320f3bda8bc6257dd8e6c15fe605",
     "formal-real/lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
     "formal/VolumeLogic.lean": "371d7a33df4ca8057e50a55fa32d7138df9f2d9aed566ac502f4e8f294f9934c",
     "formal/VolumeLogic/FaceGridSupport.lean": "4baeeee58f794f7a610f880a5f465af13bb00beb6598f1041ac58fb9a74d8705",
@@ -250,7 +407,7 @@
     "formal/lake-manifest.json": "94a62178292dabc02ac925f33a78081a26da3b9fc9b5c3ea33e97e9a8dce25da",
     "formal/lakefile.toml": "d4fbe5befdea32352528a400922442a9814ad56dd607ec3dbbff3639120d947b",
     "formal/lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
-    "repro/check_concrete_limits.py": "ebfe1a58efe4edab03f4ffddf6642c899dda0483e521c3d183e50da6d6b8d3a5"
+    "repro/check_concrete_limits.py": "1c01f6926c3f20a95eb666a3f438139beb8fc0bf90e3f632adc00ceebca94867"
   },
   "theorems": [
     "VolumeLogic.RealModel.amplitude_hasRate_of_residue_limits",
@@ -274,7 +431,26 @@
     "VolumeLogic.RealModel.residue_gaussian_packet_hasRate",
     "VolumeLogic.RealModel.residue_index_tendsto",
     "VolumeLogic.RealModel.tendsto_residue_iff",
-    "VolumeLogic.RealModel.unit_norm_hasRate"
+    "VolumeLogic.RealModel.unit_norm_hasRate",
+    "VolumeLogic.WeightedGraph.connected_of_positive_weights",
+    "VolumeLogic.WeightedGraph.energy_add_constant",
+    "VolumeLogic.WeightedGraph.energy_constant",
+    "VolumeLogic.WeightedGraph.energy_eq_form_self",
+    "VolumeLogic.WeightedGraph.energy_eq_zero_iff",
+    "VolumeLogic.WeightedGraph.energy_eq_zero_iff_constant",
+    "VolumeLogic.WeightedGraph.energy_nonneg",
+    "VolumeLogic.WeightedGraph.equal_of_positive_path",
+    "VolumeLogic.WeightedGraph.equal_of_positive_step",
+    "VolumeLogic.WeightedGraph.form_add_left",
+    "VolumeLogic.WeightedGraph.form_smul_left",
+    "VolumeLogic.WeightedGraph.form_symm",
+    "VolumeLogic.WeightedGraph.grounded_energy_eq_zero_iff",
+    "VolumeLogic.WeightedGraph.grounded_energy_pos",
+    "VolumeLogic.WeightedGraph.grounded_laplacian_pos",
+    "VolumeLogic.WeightedGraph.incidence_pairing",
+    "VolumeLogic.WeightedGraph.laplacian_form",
+    "VolumeLogic.WeightedGraph.laplacian_quadratic",
+    "VolumeLogic.WeightedGraph.laplacian_symm"
   ],
   "toolchain": "leanprover/lean4:v4.32.2"
 }

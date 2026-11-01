@@ -2,13 +2,16 @@
 
 The current PDF is a 374-page reference account. Its results are being
 rewritten as [papers organized by subject](../../papers/README.md), each at
-most 30 pages including references. Four drafts now separate finite
-spectral evaluation, uniform local coefficient bounds, the complete
-oscillatory filling sum, and the long three-braid application. The
-filling-sum theorem states its local-expansion and global-gap hypotheses;
-constructing those estimates for the knot source still needs a separate
-paper, as does the classical geometry. The reference PDF remains frozen
-while this division is prepared.
+most 30 pages including references. Six drafts now separate finite
+spectral evaluation, uniform local coefficient bounds, holomorphic
+source asymptotics, the complete oscillatory filling sum, classical
+geometric filling, and the long three-braid application. The source
+paper proves the local expansion and shared spectral gap required by
+the filling-sum theorem; the geometric paper constructs the original
+smooth filling and calibrates its volume. The application checks these
+numbered inputs explicitly. The other retained families still need
+separate accounts. The reference PDF remains frozen while this division
+is prepared.
 
 [Read the manuscript PDF](../../manuscript/build/main.pdf). The [editable sources and build instructions](../../manuscript/README.md) are available alongside it.
 

@@ -1,0 +1,84 @@
+#!/usr/bin/env python3
+"""Replay the finite algebra and rational constants used by the companion papers.
+
+Requires SymPy. These checks do not verify analytic uniformity, geometric
+existence, or a volume conjecture. Each result states its own finite scope.
+The scripts run in isolated Python processes with assertions enabled.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import subprocess
+import sys
+import tempfile
+
+ROOT = Path(__file__).resolve().parents[1]
+CHECKS = {
+    "local-coefficients": "papers/local-coefficients/check.py",
+    "source-asymptotics": "papers/source-asymptotics/check.py",
+    "oscillatory-fillings": "papers/oscillatory-fillings/check.py",
+    "marked-fillings": "papers/marked-fillings/check.py",
+    "cyclic-source-constants": "repro/check_cyclic_source_constants.py",
+}
+
+
+def digest(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def replay(output: Path) -> None:
+    output.mkdir(parents=True, exist_ok=True)
+    summary = output / "summary.json"
+    summary.unlink(missing_ok=True)
+    sources = [ROOT / script for script in CHECKS.values()]
+    sources += sorted(p for p in (ROOT / "papers").rglob("*")
+                      if p.suffix in {".tex", ".bib"} and "build" not in p.parts)
+    sources.append(Path(__file__).resolve())
+    before = {str(p.relative_to(ROOT)): digest(p) for p in sources}
+    records = []
+    for name, script in CHECKS.items():
+        result_path = output / (name + ".json")
+        result_path.unlink(missing_ok=True)
+        command = [sys.executable, "-I", str(ROOT / script),
+                   "--output", str(result_path)]
+        result = subprocess.run(command, cwd=ROOT, text=True,
+                                stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        (output / (name + ".log")).write_text(result.stdout)
+        if result.returncode:
+            raise SystemExit(f"{name} failed; see {output / (name + '.log')}\n"
+                             + result.stdout[-3000:])
+        if not result_path.is_file():
+            raise SystemExit(f"{name} returned without its result record.")
+        json.loads(result_path.read_text())
+        records.append({"name": name, "script": script,
+                        "result": result_path.name,
+                        "sha256": digest(result_path)})
+        print(f"Completed {name}.", flush=True)
+    if any(digest(ROOT / path) != value for path, value in before.items()):
+        raise SystemExit("A recorded input changed during the replay; rerun on stable sources.")
+    summary.write_text(json.dumps({
+        "scope": "Finite symbolic identities and outward rational constant bounds; "
+                 "not verification of analytic or geometric existence theorems.",
+        "checks": records,
+        "source_sha256": before,
+    }, indent=2, sort_keys=True) + "\n")
+    print(f"Five finite checks completed. Report: {summary}")
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path,
+                        help="Keep result records here; otherwise use a temporary directory.")
+    args = parser.parse_args()
+    if args.output:
+        replay(args.output.resolve())
+    else:
+        with tempfile.TemporaryDirectory(prefix="murakamis-paper-algebra-") as directory:
+            replay(Path(directory))
+
+
+if __name__ == "__main__":
+    main()

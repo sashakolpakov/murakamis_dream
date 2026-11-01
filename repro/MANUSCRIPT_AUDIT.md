@@ -108,8 +108,14 @@ the written source adapter.
 The added complete-radius calculation in O differentiates the triangle
 potential into a weighted graph Laplacian. Its positive edge weights
 and connected ordinary graph leave only the common-scale kernel;
-the fixed protected strip removes that scale. This is a written
-Jacobian argument, not a new Lean theorem. The analytic reading also
+the fixed protected strip removes that scale. The optional
+[weighted-graph module](../formal-real/WeightedGraph.lean) now proves
+the finite quadratic-form step: it constructs the edge energy and
+Laplacian, propagates equality along positive-weight paths, and proves
+strict positivity after one vertex is fixed. The differentiation that
+identifies the geometric Hessian, the conductance signs and the
+connectivity of this particular graph remain written arguments.
+The analytic reading also
 checks the signed charge derivative, the order of the two contour
 neighborhoods and the exact paired endpoint current. It uses the
 whole shared complex-strip estimate, including real spectator spectra.
@@ -141,7 +147,7 @@ correction changes the theorem's scope.
 The statement-level map for N–R can be checked with
 `python3 repro/check_manuscript_logic.py --output repro/results/manuscript-logic`.
 It detects missing premise roles, lost hypotheses, level mismatches and
-cycles, and rejects ten deliberately invalid substitutions. It retains
+cycles, and rejects fourteen deliberately invalid substitutions. It retains
 the open general remainder. This is a consistency check of a declared
 proof map, not a verification of its mathematical assertions.
 
@@ -277,6 +283,9 @@ The detailed records are organized by the implication being checked:
 | [Local Casimir and face polynomial](manuscript_audit/local-casimir-source-followup.md) | Actual annihilating relation, crossing values and normals, and the direct Fourier adapter with its endpoint and phase conditions |
 | [Positive local source inputs](manuscript_audit/positive-local-source-followup.md) | The pair-trace and cofactor identities entering the central analytic estimates, with their uniformity assumptions |
 | [Marked source and face coefficient](manuscript_audit/marked-source-adapter-followup.md) | Primitive face grids, original cup and cap factors, parity cosets, total-degree selection, and the limitations of the finite formal support proof |
+| [Central coefficient companion](manuscript_audit/source-asymptotics-companion.md) | The exact cofactor phase, fixed complex neighborhoods, entire face torus, primitive Gaussian measure, shared spectral gap and all-parity normalization; includes the necessary positive outer-sum hypothesis |
+| [Geometric companion's regulator](manuscript_audit/marked-fillings-regulator.md) | The explicit cusp-side logarithms, the distinction between coefficient-row and tangent pairings, absolute integration constant, and comparison on the same filled fundamental chain |
+| [Geometric companion's construction](manuscript_audit/marked-fillings-construction.md) | Positive packing, the original augmented exterior, marked deformation, primitive peripheral words, signed classical saddle and smooth completion; fixed-basis logarithmic periods are checked before multiplication by the filling integers |
 
 The detailed records cover the finite functional in Appendix N, the
 geometric interface from O to P, the recursive source estimates in
@@ -382,10 +391,26 @@ to a nonzero value, and a convergent complex action. Its final theorem
 proves eventual nonvanishing and the ordinary `2π/N` logarithmic limit.
 These elementary analytic steps are formalized. The exact source
 identity, the diagram-specific asymptotics, the whole-remainder estimate
-and the geometric volume comparison remain written arguments. The
-packet theorem assumes one coefficient limit; parity-dependent
-coefficients require separate parity arguments before their rates are
-combined.
+and the geometric volume comparison remain written arguments.
+The original packet theorem assumes one coefficient limit. The added
+residue-class theorem permits a different nonzero amplitude limit and
+a different complex action limit on each class, provided all action
+limits have the same real part. Its parity corollary proves the
+even/odd assembly directly, retaining the original denominator
+\(N\), including when \(N=2n+1\).
+
+The optional package also constructs the real energy
+\(E(f)=\sum_e w_e(f(s_e)-f(t_e))^2\) and its incidence-matrix
+Laplacian. Nonnegative weights and actual finite paths through the
+positive support imply that the zero-energy functions are constant.
+Fixing one vertex then gives strict positivity for every nonzero
+variation. This is the linear-algebra implication used after the
+written geometric Hessian calculation, not a formal proof of that
+calculation or of circle-pattern existence. The package contains nine
+definitions and forty-one theorems, with all fifty declarations
+included in its axiom audit. Its replay checks nine pinned Git
+dependencies and ten negative controls. These counts are separate
+from the 241 declarations in the Std-only project.
 
 The dependency map now also records the recursive construction, the
 summed, local and directed tree criteria, and terminal decoration.
@@ -395,6 +420,20 @@ consistency check on the map, separate from the Lean implications and
 from the mathematical proofs of its premises.
 
 ## Where this research phase ends
+
+The companion-paper review found two issues that a list of successful
+finite calculations would not resolve. The local cofactor logarithm
+needs \(x+y>0\); with both outer variables zero its zeros approach
+the complete spectral point. The actual matched-sphere construction
+excludes that case, and the local proposition now states the hypothesis.
+The geometric paper also needed an explicit dictionary between its
+normal-flow vectors and the actual cusp logarithms. It now develops
+the positively ordered tetrahedron \((0,\infty,1,z)\), lists all four
+cusp-side tables, derives similarity holonomy by telescoping triangle
+scales, and distinguishes the row pairing from the induced tangent
+form. Its symbolic checker now tests the side-coordinate formulas as
+well as the bilinear identity. The written topological and analytic
+arguments remain necessary.
 
 The scope is now frozen at the stated restricted families, including
 ordinary triangular insertion. A broader knot class, a smaller explicit

@@ -1,0 +1,187 @@
+{
+  "identities": [
+    {
+      "identity": "g(0)=0",
+      "name": "midpoint_zero_left",
+      "residual": "0"
+    },
+    {
+      "identity": "g(2*pi)=0",
+      "name": "midpoint_zero_right",
+      "residual": "0"
+    },
+    {
+      "identity": "g'(0)=g'(2*pi)",
+      "name": "midpoint_equal_first_derivatives",
+      "residual": "0"
+    },
+    {
+      "identity": "-N^(-2) times N times i*N*ell equals -i*ell",
+      "name": "midpoint_fourier_scalar",
+      "residual": "0"
+    },
+    {
+      "identity": "sin(pi-2*pi*delta)=sin(2*pi*delta)",
+      "name": "midpoint_sine_substitution",
+      "residual": "0"
+    },
+    {
+      "identity": "the midpoint chirp becomes pi*i*n*N*delta^2",
+      "name": "midpoint_chirp_substitution",
+      "residual": "0"
+    },
+    {
+      "identity": "2*cos(phi) becomes -2*cos(2*pi*delta)",
+      "name": "midpoint_spectral_substitution",
+      "residual": "0"
+    },
+    {
+      "identity": "midpoint parity and Fourier endpoint parity add to (N+1)*ell",
+      "name": "midpoint_parity_exponent",
+      "residual": "0"
+    },
+    {
+      "identity": "sin(2*pi*(1/2+i*v))=-i*sinh(2*pi*v)",
+      "name": "right_endpoint_sine",
+      "residual": "0"
+    },
+    {
+      "identity": "sin(2*pi*(-1/2+i*v))=-i*sinh(2*pi*v)",
+      "name": "left_endpoint_sine",
+      "residual": "0"
+    },
+    {
+      "identity": "right-left=2*i*sinh(2*pi*v)*sinh(pi*n*N*v)",
+      "name": "paired_endpoint_current",
+      "residual": "0"
+    },
+    {
+      "identity": "the paired current has zero first derivative at v=0",
+      "name": "paired_current_has_quadratic_zero",
+      "residual": "0"
+    },
+    {
+      "identity": "J0=E0/lam-E1/lam^2+(E2-J3)/lam^3",
+      "name": "three_integrations_by_parts",
+      "residual": "0"
+    },
+    {
+      "identity": "zero values and equal first derivatives leave (E2-J3)/lam^3",
+      "name": "retained_second_derivative_current",
+      "residual": "0"
+    },
+    {
+      "identity": "Im[-(ell/n)/(1+i*(a+i*b)/(pi*n))]=ell*a/(pi*n^2*|denominator|^2)",
+      "name": "critical_imaginary_part",
+      "residual": "0"
+    },
+    {
+      "identity": "for n=s>0 the imaginary part is pi*ell*a/[a^2+(pi*s-b)^2]",
+      "name": "positive_twist_form",
+      "residual": "0"
+    },
+    {
+      "identity": "for n=-s<0 the imaginary part is pi*ell*a/[a^2+(pi*s+b)^2]",
+      "name": "negative_twist_form",
+      "residual": "0"
+    },
+    {
+      "identity": "the displayed critical point solves the quadratic phase equation",
+      "name": "quadratic_stationarity",
+      "residual": "0"
+    },
+    {
+      "identity": "Re S=Phi-pi^2*c*L^2/(c^2+pi^2*n^2)",
+      "name": "quadratic_real_action",
+      "residual": "0"
+    },
+    {
+      "identity": "d_L Re S=-2*pi*Im z",
+      "name": "quadratic_charge_derivative",
+      "residual": "0"
+    },
+    {
+      "identity": "the exact quadratic loss from charge 1 to L is positive for L>1",
+      "name": "quadratic_positive_charge_loss",
+      "residual": "0"
+    },
+    {
+      "identity": "reflecting charge and coordinate reverses both odd factors",
+      "name": "weighted_sine_reflection",
+      "residual": "0"
+    },
+    {
+      "identity": "the quadratic and linear phases are unchanged",
+      "name": "reflected_phase",
+      "residual": "0"
+    },
+    {
+      "identity": "the reflected parity exponents differ by the even integer -2*(N+1)*ell",
+      "name": "reflected_parity_even_difference",
+      "residual": "0"
+    },
+    {
+      "identity": "raw-source and Fourier exponents add to the even integer 2*N*r",
+      "name": "source_and_fourier_parity_cancel",
+      "residual": "0"
+    },
+    {
+      "identity": "each coordinate's two unit signs multiply -i by 2",
+      "name": "unit_charge_factor",
+      "residual": "0"
+    },
+    {
+      "identity": "alpha-r/2=r+1/2 for the face packet",
+      "name": "level_power",
+      "residual": "0"
+    },
+    {
+      "identity": "the net exponent of 2*pi is 1/2",
+      "name": "gaussian_measure_power",
+      "residual": "0"
+    },
+    {
+      "identity": "bottom=top-right_side-left_side when the oriented rectangle boundary is zero",
+      "name": "rectangle_orientation",
+      "residual": "0"
+    }
+  ],
+  "identity_count": 29,
+  "method": "SymPy exact simplification; all displayed residuals are zero identities. Deliberately incorrect controls are required to have nonzero exact residuals.",
+  "negative_control_count": 5,
+  "negative_controls": [
+    {
+      "incorrect_variant": "using the right endpoint alone as an O(v^2) current",
+      "name": "unpaired_endpoint_cannot_have_quadratic_zero",
+      "nonzero_residual": "-2*I*pi"
+    },
+    {
+      "incorrect_variant": "replacing E2-J3 by E2+J3 after three integrations by parts",
+      "name": "wrong_third_integral_sign",
+      "nonzero_residual": "-2*J3/lam**3"
+    },
+    {
+      "incorrect_variant": "using n instead of n^2 in the imaginary-part numerator denominator",
+      "name": "incorrect_signed_twist_denominator",
+      "nonzero_residual": "-2*pi/(1 + pi**2)"
+    },
+    {
+      "incorrect_variant": "dropping +1 from (N+1)*ell fails at N=3, ell=1",
+      "name": "wrong_fourier_parity",
+      "nonzero_residual": "2"
+    },
+    {
+      "incorrect_variant": "retaining only one unit charge instead of both loses a factor 2",
+      "name": "lost_unit_reflection_factor",
+      "nonzero_residual": "I"
+    }
+  ],
+  "positivity_scope": "The imaginary-part expressions have positive numerator and strictly positive denominator under the stated real assumptions; no numerical sample establishes a uniform analytic estimate.",
+  "scope": "Exact finite symbolic algebra only. No contour bounds, uniformity, Gaussian asymptotics, H1/H2, actual-source amplitude, or volume theorem is proved.",
+  "source_sha256": {
+    "check.py": "f662f50f2f503085d39f91ccfb572ff42f626eb8b8cbaca3b4e1825390337c41",
+    "figures/whole-interval.tex": "3ac7757010a959e0d11f806dd4b8023c1ada94e8f4c0cc26235d5edd7697dda5",
+    "main.tex": "275d76a8e12d963c6a4fc45bb828e0b7742761c94e4242272f15c64b56f3f203"
+  },
+  "sympy_version": "1.14.0"
+}
