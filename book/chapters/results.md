@@ -25,6 +25,18 @@ when the remaining part of the invariant has not been bounded.
 The local identities and conditional estimates near the end of this
 chapter are stated with those smaller conclusions.
 
+The following table separates the principal conclusions. The subsequent
+sections define each construction and give its proof and restrictions.
+
+| Diagram or input | Additional hypothesis | Conclusion |
+| --- | --- | --- |
+| Recursive ordered tangles | The stated construction rule and sufficiently long surviving twists | Full knot-invariant volume limit |
+| Ordered circle trees | A summed, local, or directed degree-and-twist criterion | Full volume limit; the simple directed twist bound is independent of tree size |
+| Matched spherical diagrams after terminal insertions | The prescribed finite decoration, knot pairing, and long twists at every old and new circle | Full volume limit for the decorated knot |
+| Unchanged matched spherical diagrams | Knot pairing without extra main components, weak balance or its quantified variant, and long twists | Full volume limit for the unchanged diagram |
+| A general unchanged matched spherical diagram | The stated geometric construction and long twists | Nonzero geometric contribution with the actual volume rate; the remaining contribution still needs a separate estimate |
+| A genuine fixed quantum recurrence | The stated initial values, peripheral factors, and regularized evaluation | Exact reconstruction of the invariant; a volume limit follows in the covered knot classes |
+
 ## Decorating a planar diagram
 
 The [planar decoration theorem](../../notes/actual_balanced_terminal_fan_volume.md)
@@ -170,6 +182,138 @@ The finite checks replay the recurrence, rational gap bound, oriented
 triangle subdivision, parity extension, and endpoint pairing. The
 written proof supplies the uniform estimates and metric completion;
 those conclusions are not inferred from numerical examples.
+
+## An unchanged diagram satisfying weak balance
+
+The [weak-balance theorem](../../notes/general_weak_balance_volume.md),
+proved in Appendix P of the manuscript, gives a condition under which
+no terminal tangles need to be inserted. Start with the same simple
+triangulated sphere, matching, and marked strand as above. Let
+\(w_f^*\) be the curvature of its complete packing circle at vertex
+\(f\). The two protected vertices have curvature zero. All other
+curvatures are positive.
+
+At a matching edge, write the two triangles as \((x,b,y)\) and
+\((x,c,y)\), using their curvatures as arguments. Use the triangle
+potential \(F\) defined in the preceding section and set
+\[
+ X_e=F(w_x^*,w_b^*,w_y^*)+F(w_x^*,w_c^*,w_y^*).
+\]
+The **weak balance condition** is
+\[
+ X_e\ge\log w_b^*\quad(w_b^*>0),\qquad
+ X_e\ge\log w_c^*\quad(w_c^*>0)
+\]
+at every matching edge \(e\). A condition with zero middle curvature
+is omitted because the corresponding part of the finite polynomial
+vanishes. Equality is allowed. These inequalities concern the actual
+complete packing; the theorem does not claim that all packings satisfy
+them.
+
+**Conclusion.** Fix a retained half-twist pattern whose strand
+connections give one knot. Under weak balance, independently sufficiently
+long signed twists at the existing crossing circles give the full
+Kashaev volume limit for that knot. The limit runs through all integer
+levels. The diagram and all twist numbers remain fixed. The threshold
+may depend on the diagram and its packing. The theorem has no bound on
+the number of crossing circles and requires no tangle-tree decomposition.
+
+### Why equality in the local condition is enough
+
+Cauchy’s coefficient inequality allows any positive radius for each
+ordinary face variable. These radii need not themselves be circle
+packing curvatures. This freedom is useful when a balance inequality
+holds with equality: the complete packing supplies the reference
+geometry, and a nearby choice of coefficient radii supplies a strict
+bound.
+
+Put \(q_f=\log w_f^*\) at ordinary vertices, and define
+\[
+ f(a)=\frac{\Lambda(\pi a)+\Lambda(\pi/2-\pi a)}{\pi},
+ \qquad 0\le a\le\tfrac12.
+\]
+For each original triangle \(\tau\), let \(I_\tau\) be its set of
+ordinary vertices. Its potential in logarithmic coordinates is
+\[
+ Q_\tau(q)=
+ \max_{\substack{a_i\ge0\ (i\in I_\tau)\\
+                 \sum_{i\in I_\tau}a_i=1/2}}
+       \sum_{i\in I_\tau}\{f(a_i)+a_iq_i\}.
+\]
+Thus \(Q_\tau(q)\) is the same function as \(F\), with the weights
+written as exponentials. A zero-curvature corner is removed from the
+simplex of allowed \(a_i\). It is never replaced by a small positive
+number. The complete action is
+\[
+ P(q)=\sum_\tau Q_\tau(q)-\sum_{f\ \mathrm{ordinary}}q_f,
+ \qquad
+ P(q)=\Phi_D=\frac{\operatorname{Vol}(Y_D)}{2\pi}
+\]
+at the complete packing. Here \(Y_D\) is the augmented link complement.
+The subtracted sum is the cost of taking the original shared coefficient.
+The packing equations give \(\nabla P(q)=0\).
+
+For \(0<t<1\), replace every ordinary coefficient radius by
+\((w_f^*)^{1-t}\), leaving the protected radii zero. The full increase
+in the action obeys
+\[
+ 0\le P((1-t)q)-P(q)\le\frac{t^2}{2}\mathcal E,
+ \qquad
+ \mathcal E=\frac1{4\pi}
+       \sum_\tau\sum_{\{i,j\}\subset I_\tau}(q_i-q_j)^2.
+\]
+The inner sum is over unordered pairs of distinct ordinary vertices
+in that triangle. Shared edges are counted once for each incident
+triangle. This defines the constant \(\mathcal E\) completely; it is
+finite for the fixed packing.
+
+Let \(a_{\tau i}\) be the maximizing loads in \(Q_\tau(q)\). Define
+its entropy by
+\[
+ E_\tau=\sum_{i\in I_\tau}f(a_{\tau i}).
+\]
+For a surviving left term, use the triangle \((x,c,y)\); for a
+surviving right term, use \((x,b,y)\). Each of these triangles has
+at least two ordinary corners, so its entropy is positive. Let \(h_*\) be the smallest of these finitely
+many positive entropies. The local estimates show that each surviving
+one-sided term loses at least \(t h_*\) relative to the central term
+under weak balance. Every noncentral choice contains at least one
+such term. Its shared coefficient therefore has rate at most
+\[
+ \Phi_D+\frac{t^2}{2}\mathcal E-t h_*.
+\]
+If \(\mathcal E>0\), take
+\(t=\min\{1/2,h_*/\mathcal E\}\). The last expression is at most
+\(\Phi_D-t h_*/2<\Phi_D\). If \(\mathcal E=0\), take \(t=1/2\).
+If there are no surviving one-sided terms, the complementary polynomial
+is already zero and no minimum \(h_*\) is needed.
+
+![The linear entropy gain and quadratic action cost for illustrative constants h*=1 and E=1. Their positive difference is the strict remainder gap.](../figures/weak-balance-gain.svg)
+
+The horizontal variable is the fixed coefficient-weight perturbation
+\(t\), not the quantum level. The figure uses
+\(h_*=\mathcal E=1\) solely to display the two orders of vanishing;
+the proof computes these constants from the original packing.
+
+The finite filling bound transfers this strict gap to the filled
+remainder. The geometric-contribution theorem supplies a nonzero term
+whose real action tends to \(\Phi_D\) as the fixed twist magnitudes
+become large. For sufficiently long twists it exceeds the remainder’s
+rate. Its real action is the volume of the smoothly filled knot complement
+divided by \(2\pi\), with the knot cusp still complete. This gives both the upper and lower
+bounds needed for the full invariant’s limit.
+
+Appendix P also quantifies how much the balance inequalities may fail.
+For a surviving side at \(e\), let \(z\) be its middle vertex and put
+\(\epsilon_{e,z}=\max\{0,q_z-X_e\}\). Write \(h_{e,z}\) for the
+entropy of its triangle. It is enough to find \(0<t<1\) with
+\[
+ \min_{(e,z)}\{t h_{e,z}-(1-t)\epsilon_{e,z}\}
+                   >\frac{t^2}{2}\mathcal E.
+\]
+This is another explicit sufficient test on the unchanged packing.
+It provides no universal bound for arbitrary diagrams and no threshold
+uniform over diagrams growing with \(N\).
 
 ## One twist threshold for arbitrarily many tangles
 
@@ -773,41 +917,102 @@ The [shared-flow criterion](../../notes/general_endpoint_conditioned_source_ener
 
 ## A general finite cover of the source sectors
 
-Fix a marked plat with the labeled geometric hypotheses of the finite-sector
-cover theorem. A sector specifies which of the three disjoint recurrence-path
-pieces is used at each crossing region. The full complement consists
-of all sectors containing at least one one-sided piece. A finite cover
-groups these actual sectors into finitely many branches; it does not
-introduce a new decomposition of the knot.
+The [finite-sector criterion for a plat](../../notes/general_actual_sector_cover_filling_volume.md)
+has a [version for a matched spherical diagram](../../notes/general_morse_sector_cover_volume.md).
+Both are proved sufficient criteria. They require a strict estimate
+that must be checked for the chosen diagram. They do not assert that
+such an estimate exists for every diagram.
 
-For a branch, choose one positive weight \(L_f\) for every ordinary
-face and keep the protected weights zero. If \(B_e(L)\) is a valid
-weighted exponential bound for the allowed local pieces at region
-\(e\), coefficient extraction gives the shared upper rate
+A **sector** specifies one of the three disjoint recurrence-path pieces
+at every crossing region: central, left, or right. The complementary
+polynomial is the sum over the strings containing at least one left
+or right piece. A protected zero middle variable can make a local piece
+vanish; such a piece is omitted. The odd central row belongs to the
+central piece exactly once. This is a partition of the original finite
+polynomial, with every shared face target retained.
+
+Let \(\Sigma\) be the finite set of surviving noncentral strings.
+A **finite cover** is a collection \(\mathscr B\) of nonempty subsets
+of \(\Sigma\) whose union is \(\Sigma\). Its elements group choices
+of polynomial pieces; they are not covering spaces of a knot complement.
+For each group \(B\), choose positive weights \(L_f^B\) on all ordinary
+faces, and retain the two protected zeros. Use the triangle potential
+\(F\) defined above. At a crossing with arguments \((x,b,c,y)\), set
 \[
-              \sum_e B_e(L)-\sum_{f\ \mathrm{ordinary}}\log L_f.
+\begin{aligned}
+ A_{e,\mathrm C}(L)&=F(L_x,L_b,L_y)+F(L_x,L_c,L_y),\\
+ A_{e,\mathrm L}(L)&=\max\{\log L_c,
+                     F(L_x,L_b,L_y)+\tfrac12\log L_c\},\\
+ A_{e,\mathrm R}(L)&=\max\{\log L_b,
+                     F(L_x,L_c,L_y)+\tfrac12\log L_b\}.
+\end{aligned}
 \]
-The subtraction is the cost of the original face targets. The
-[finite-sector cover theorem](../../notes/general_actual_sector_cover_filling_volume.md)
-proves the full limit when every branch has a whole shared vector
-making this rate strictly less than
-\(\Phi_D=\operatorname{Vol}(Y_D)/(2\pi)\). Different branches may
-use different vectors, but a face must use the same value at all its
-occurrences within one bound. Since the cover is finite, its positive
-gaps have a positive minimum.
+Here the letters \(\mathrm C,\mathrm L,\mathrm R\) denote the central,
+left, and right pieces. The left formula is used only when \(L_c>0\),
+and the right formula only when \(L_b>0\).
+The criterion is
+\[
+ G_B(L^B):=
+ \max_{s\in B}\sum_e A_{e,s_e}(L^B)
+       -\sum_{f\ \mathrm{ordinary}}\log L_f^B
+ <\Phi_D=\frac{\operatorname{Vol}(Y_D)}{2\pi}
+ \qquad(B\in\mathscr B).
+\]
+A face uses the same value at all its occurrences within one bound.
+Different groups may use different vectors. The subtraction accounts
+for the original coefficient targets. Since the cover is finite, its
+strict gaps have a positive minimum. The finite filling estimate and
+the nonzero geometric contribution then give the full volume limit
+for independently sufficiently long fixed signed twists, subject to
+the original knot-component and geometric hypotheses.
 
-The [anchored criterion](../../notes/general_anchored_shared_radius_filling_volume.md)
-is a simpler instance: specify one surviving one-sided region, use its
-sharper estimate, and allow every local piece at the other regions.
-At most twice the number of crossing regions need be tested.
-A finite cover can refine those branches when the anchored bounds
-are too large.
+An **anchored bound** fixes one surviving left or right piece and
+allows all three choices at the other regions. It gives a convenient
+coarse cover with at most twice the number of crossing regions.
+A finer cover can fix more of these choices. The two scalar branches
+inside a displayed maximum are comparison bounds, however; they are
+not two additional pieces of the finite polynomial. Splitting a maximum
+formally does not create a finer source partition.
 
-The extension is strict for a specified seventeen-region marked plat. An exact rational flow makes every anchored bound exceed the geometric rate by more than $0.025$, whereas forty refined branches give a gap greater than $0.04$ below it. The [separation theorem and verifier](../../notes/actual_shared_radius_certificate_separation.md) establish both statements. A five-region example with word $(1,3,2,1,3)$ separately fails balance but passes six anchored witnesses. These compare certificates on fixed presentations; they do not classify all alternative presentations of the same knots.
+The known examples distinguish three outcomes:
 
-![A coarse bound fails on the fixed source, while a refined finite cover succeeds.](../figures/sector-certificate-separation.png)
+| Fixed diagram | What the certificates establish |
+| --- | --- |
+| The five-region word \((1,3,2,1,3)\) | Complete-packing balance fails, but six anchored choices of shared weights suffice. |
+| A specified seventeen-region marked plat | Every anchored bound exceeds the geometric rate by more than \(0.025\), while forty refined groups lie below it by more than \(0.04\). |
+| A specified fifty-four-region matched spherical diagram | Even one fixed genuine sector has optimized envelope more than \(1/5\) above the complete action. Further refinement by the same three local labels cannot repair it. |
 
-The [undivided-capacity theorem](../../notes/actual_complete_source_cauchy_capacity_gap.md) explains why optimizing a single positive coefficient torus can lose an exponential factor even when the coefficient itself has the correct rate. The remaining general sector question is whether every relevant non-cross string has a strict optimized shared bound below $\Phi_D$. Pure endpoints and the [fixed-triangle boundary gap](../../notes/actual_fixed_triangle_boundary_capacity_gap.md) do not settle fractional mixtures.
+The first two statements are in the
+[certificate-separation results](../../notes/actual_shared_radius_certificate_separation.md).
+The third has a separate
+[exact obstruction and reproduction suite](../../notes/actual_singleton_sector_envelope_obstruction.md).
+Its sector is left at region 32 and central at all other 53 regions.
+The proof checks the oriented sphere, matching, mark, and a knot-producing
+parity pattern. It also proves that this shared sector is nonzero at
+every sufficiently large even level, so it cannot be discarded as an
+empty term. Exact rational dual loads give a lower bound for every
+choice of positive shared weights, and a separate rational witness gives
+an upper bound for the complete action.
+
+![The upper panels compare two bounds on one seventeen-region source. The separated final panel concerns the different fifty-four-region source whose fixed sector defeats this envelope.](../figures/sector-certificate-separation.png)
+
+In the upper panels, the width-three plat has six strands. The words
+\(O=(1,3)\) and \(E=(0,2,4)\) list adjacent-strand gap indices, numbered
+from zero; \(O(EO)^3\) specifies its seventeen regions. The function
+\(C_{12,R}\) is the anchored cost with the right piece fixed at region
+12. The set \(J=\{2,4,7,12\}\) lists the regions used in the
+refinement. In the next panel, \(B\) is a group of sector strings,
+\(L^B\) its shared weight vector, and \(G_B\) the cost defined above.
+Each example uses its own complete action \(\Phi_D\).
+
+Thus the universal version of this particular envelope criterion is
+false on the larger class of unchanged matched spherical diagrams.
+The obstruction concerns an upper-bound method: it supplies no lower
+bound on the signed quantum coefficient or on the invariant. It does
+not refute the volume conjecture, nor does it exclude a sharper estimate
+retaining more phase information. It also makes no claim about every
+alternative mark or presentation of the same knot, or every member of
+the narrower flat-plat class.
 
 ## Complete signed augmented links at arbitrary width
 

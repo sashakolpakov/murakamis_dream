@@ -233,13 +233,13 @@ The remainder is a topic-by-topic map of the earlier calculations. It retains th
 
 ## Coefficient regions in the general-plat method
 
-In this group of notes, a degree records how much of a face variable occurs in a polynomial coefficient. The labels CROSS, LEFT and RIGHT name regions of those degree inequalities; they are not new types of knot crossing. A protected variable is one fixed by the marked coefficient extraction. A seam is a boundary shared by two such degree regions. These definitions explain why a theorem on one region need not control the whole coefficient sum.
+In this group of notes, a degree records how much of a face variable occurs in a polynomial coefficient. The labels central, left and right name regions of those degree inequalities; they are not new types of knot crossing. A protected variable is one fixed by the marked coefficient extraction. A seam is a boundary shared by two such degree regions. These definitions explain why a theorem on one region need not control the whole coefficient sum.
 
 ### Sharp bounds and boundary arguments
 
 The [closed-domain upper theorem](../../notes/research_global_sharp_coefficient_limsup_majorant.md), [full-fiber activation](../../notes/research_full_fiber_sharp_boundary_activation.md) and [stationary classification](../../notes/research_full_fiber_sharp_stationary_classification.md) prove the corresponding boundary and stationary statements. Their arguments establish the directional entropy gains, free-spectrum retuning and protected cap exclusions directly. The [odd main-strand cycle theorem](../../notes/research_stationary_noncross_main_cycle_obstruction.md) uses exact source characters and original face demands; the [flat-cap limitation](../../notes/research_flat_cap_no_local_exponential_angular_gap.md) is an exact alternating-sum inequality.
 
-The [seam theorem](../../notes/research_sharp_cross_degree_domination_and_seam_gap.md) concerns the boundary between two degree regions of the original coefficient sum. Its moving cosine-log integral and pointwise tail comparison prove all-spectrum CROSS-degree domination; exact latent-triangle strong concavity gives the explicit gap $\gamma_D=\pi a_D^2/2$. The existing whole-domain integration-by-parts theorem retains all charge currents and gives seam-period negligibility for fixed long fillings. These conclusions are analytical. For this general-plat route, the remaining macroscopic non-CROSS part is not controlled by the seam theorem alone.
+The [seam theorem](../../notes/research_sharp_cross_degree_domination_and_seam_gap.md) concerns the boundary between two degree regions of the original coefficient sum. Its moving cosine-log integral and pointwise tail comparison prove all-spectrum central-degree domination; exact latent-triangle strong concavity gives the explicit gap $\gamma_D=\pi a_D^2/2$. The existing whole-domain integration-by-parts theorem retains all charge currents and gives seam-period negligibility for fixed long fillings. These conclusions are analytical. For this general-plat route, the remaining macroscopic noncentral part is not controlled by the seam theorem alone.
 
 The four-state and window audits below support the retained finite source factors and indices; they do not establish the analytic majorant, classify its maxima, or prove a global volume comparison. Each linked note states the domain and hypotheses of its proof.
 
@@ -253,7 +253,7 @@ The [four-state audit](../../experiments/audit_research_original_four_state_tran
 
 These validate finite indexing and retained factors. The original physical-matrix interface is inherited from the stated original numerator formula. The positive transfer, analytic gauge, strict boundary gaps and shared-torus phase exclusion are proved analytically; these finite checks do not prove their exponential estimates or a global volume bound.
 
-The [protected-window and mixed-cycle extensions](../../notes/research_mixed_cross_window_cycle_packing.md) combine local transfer identities with a finite packing of graph cycles. The outer-zero proof specializes the exact transfer; the middle-zero proof retains the actual initial seed and proves its output reflection by finite tilings. The whole-CROSS input uses the central factorization and cofactor angular theorem. Fractional cycle packing is a finite combinatorial argument. Those consequences use no extrapolation of numerical rates; the stated global majorant comparison remains conditional.
+The [protected-window and mixed-cycle extensions](../../notes/research_mixed_cross_window_cycle_packing.md) combine local transfer identities with a finite packing of graph cycles. The outer-zero proof specializes the exact transfer; the middle-zero proof retains the actual initial seed and proves its output reflection by finite tilings. The whole-central input uses the central factorization and cofactor angular theorem. Fractional cycle packing is a finite combinatorial argument. Those consequences use no extrapolation of numerical rates; the stated global majorant comparison remains conditional.
 
 ## A focused starting set
 
@@ -347,9 +347,9 @@ The exact remainder keeps the finitely many selected charges outside the cube an
 
 ## Whole-domain bounds and the balanced full invariant
 
-The [large-charge audit](../../notes/actual_whole_domain_large_charge_tail.md) checks original operator entries, both signed Gaussian exponents, and paired endpoint currents. The [diagonal-sector audit](../../notes/actual_global_diagonal_spectral_sector_gap.md) includes removable physical nodes, exact path partitions and sewn polynomial integration-by-parts checks. The [CROSS audit](../../notes/actual_global_cross_spectral_gap.md) checks the start decomposition, rescaled transfer matrices and finite characteristic formulas. Their recorded finite checks support the exact formulas. The uniform bounds are established by the written proofs.
+The [large-charge audit](../../notes/actual_whole_domain_large_charge_tail.md) checks original operator entries, both signed Gaussian exponents, and paired endpoint currents. The [diagonal-sector audit](../../notes/actual_global_diagonal_spectral_sector_gap.md) includes removable physical nodes, exact path partitions and sewn polynomial integration-by-parts checks. The [central audit](../../notes/actual_global_cross_spectral_gap.md) checks the start decomposition, rescaled transfer matrices and finite characteristic formulas. Their recorded finite checks support the exact formulas. The uniform bounds are established by the written proofs.
 
-The [whole-CROSS period](../../notes/general_all_cross_long_filling_volume.md), [all-angle LEFT envelope](../../notes/actual_global_left_weighted_spectral_envelope.md), and [complete-radius balance theorem](../../notes/general_complete_radius_balance_filling_volume.md) prove the stated conditional full-invariant result. Their arguments retain entire-domain remote charge sums and endpoint currents, including both level parities. The elementary [entropy lemma](../../notes/actual_triangle_entropy_algebraic_balance.md) checks the absolute half-degree normalization and all protected-zero cases. These arguments prove a full invariant theorem under the stated balance hypothesis. Those conditional arguments alone do not prove realization. The uniform family construction below supplies it, without treating numerical experiments as a proof.
+The [whole-central period](../../notes/general_all_cross_long_filling_volume.md), [all-angle left envelope](../../notes/actual_global_left_weighted_spectral_envelope.md), and [complete-radius balance theorem](../../notes/general_complete_radius_balance_filling_volume.md) prove the stated conditional full-invariant result. Their arguments retain entire-domain remote charge sums and endpoint currents, including both level parities. The elementary [entropy lemma](../../notes/actual_triangle_entropy_algebraic_balance.md) checks the absolute half-degree normalization and all protected-zero cases. These arguments prove a full invariant theorem under the stated balance hypothesis. Those conditional arguments alone do not prove realization. The uniform family construction below supplies it, without treating numerical experiments as a proof.
 
 ## Uniform width and exact bridge number
 
@@ -388,3 +388,20 @@ The [protected-outer audit](../../experiments/audit_actual_protected_outer_spect
 The [general one-sided audit](../../experiments/audit_actual_one_sided_relative_spectral_energy.py) separately verifies the nonnegative parameter expansion, signed-parameter Cauchy inequalities, interior original coefficients, and the rearrangement identities. The uniform transfer estimate and compact finite-tilt argument are proved analytically, rather than inferred from sampled large levels. The local theorem and its shared-flow consequence have their stated hypotheses; the audit does not establish a stronger global entropy inequality.
 
 Four earlier audit consumers now import the physical `Local` class from its defining public module. The lightweight face compiler remains independent of quantum-only imports. Its tensor-contraction helper is now included explicitly and imported by the ten published consumers. The existing small-circle audit replays with results exactly matching its recorded output.
+
+## Reproducing the fixed-sector obstruction
+
+Run both exact checks with one command:
+
+```sh
+python3 repro/run_research_checks.py singleton-envelope
+```
+
+The [obstruction proof](../../notes/actual_singleton_sector_envelope_obstruction.md)
+explains the two independent computations. The first checks exact rational
+loads on the original shared faces and a strict entropy excess. The
+second checks the oriented sphere, dual matching, mark, and one-component
+strand pairing. The proof of nonzero support is written separately from
+the envelope inequality. The resulting obstruction concerns that
+particular coefficient bound; it gives no lower bound for the signed
+invariant. Both programs require only Python’s standard library.

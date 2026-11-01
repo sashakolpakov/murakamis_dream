@@ -3,7 +3,7 @@
 [Read the manuscript PDF](../../manuscript/build/main.pdf). The [editable sources and build instructions](../../manuscript/README.md) are available alongside it.
 
 The paper contains completed proofs of volume equalities for decorated
-planar diagrams and ordered-tree constructions, together with several
+planar diagrams, unchanged diagrams satisfying weak balance, and ordered-tree constructions, together with several
 completed theorems whose conclusions are narrower. It derives the finite
 quantum expression, constructs the labeled hyperbolic geometry, bounds
 competing terms and performs the specified auxiliary fillings.
@@ -40,6 +40,27 @@ geometric contribution, all Fourier tails and boundary terms, and
 completion to the actual smooth knot complement. The
 [results page](results.md#decorating-a-planar-diagram) gives a detailed
 introduction with the same figure.
+
+## The packing criterion for an unchanged diagram
+
+Appendix P proves the full volume limit under weak balance in the complete
+circle packing. Its diagram is the original matched sphere; no terminal
+pieces are added. The appendix defines the triangle potential before
+stating the condition and derives its Hessian explicitly. It then changes
+all ordinary coefficient radii from \(w_f\) to \(w_f^{1-t}\), leaving
+the protected zeros fixed. Triangle entropy gives a positive linear loss
+for every noncentral term, while stationarity bounds the full increase
+in action by a quadratic function of \(t\).
+
+A sufficiently small fixed \(t\) gives a strict bound for the entire
+remaining polynomial. Appendix N transfers it through the original
+filling functional, and Appendix O supplies the nonzero geometric
+contribution and its actual knot-complement volume. Thus Appendix P
+contains a full-invariant theorem under its explicit packing condition.
+Without that condition or another proved remainder estimate, Appendix O
+continues to have its narrower conclusion. The
+[worked explanation](results.md#an-unchanged-diagram-satisfying-weak-balance)
+states the constants and shows why the linear gain dominates.
 
 ## The directed full expansion
 
@@ -80,7 +101,7 @@ is not a volume-limit theorem for a new diagram.
 
 Appendix O treats the unchanged diagrams determined by simple matched
 spheres. It proves a nonzero long-filling asymptotic for the central
-recurrence-path contribution, called CROSS in the finite formula.
+recurrence-path contribution, called central in the finite formula.
 The leading rate is the volume of the original filled complement,
 with the correct primitive peripheral curves. This contribution is
 one specified part of the invariant. The appendix does not bound

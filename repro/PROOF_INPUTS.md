@@ -12,6 +12,7 @@ statement.
 | Recursive tangle volume theorem | Chapters 2–8, Appendices A–D | Exact rational certificates are finite parts of the stated estimates. |
 | Summed, local and directed circle-tree criteria | Chapters 9–11, Appendices E–G and K | Constant and finite-source checks supplement the analytic induction and geometric completion. |
 | Decorated planar volume theorem | Chapter 13, Appendix L | Exact fan, orientation and pairing checks supplement the packing and full-source proof. |
+| Unchanged diagrams satisfying weak balance | Appendix P, using the finite estimate of N and the geometric contribution of O | The entropy and Hessian inequalities are proved symbolically; finite samples are not used to infer the uniform bound. |
 | Preferred longitude and selected recurrence factor | Chapter 12, Appendices H–J; directed extension in Chapter 14 and Appendix M | Local matrix identities are checked; global gluing, all-order asymptotics and algebraic rigidity are proved in the text. The factor conclusion assumes an existing all-level annihilator. |
 | Uniform finite filling norm | Appendix N | Finite algebra checks supplement the all-level norm proof. An additional exponential source estimate is needed to deduce a new volume class. |
 | Geometric contribution for unchanged matched spheres | Appendix O | The entire Fourier period and actual geometric completion are proved. The complementary signed source is not bounded by this theorem. |
@@ -198,3 +199,20 @@ proof keeps both level parities, the entire Fourier period and the
 primitive metric completion. Its volume-rate conclusion is for this
 contribution; a strict bound on the complementary signed contribution
 remains a separate requirement for a full-invariant theorem.
+
+## The weak-balance theorem
+
+[Appendix P](../manuscript/sections/P-weak-balance.tex) controls the entire
+complementary polynomial on a single set of shared face weights. It proves
+the triangle entropy and Hessian identities, a quadratic bound for the
+complete action, and the linear gain in each surviving one-sided term.
+Weak balance makes the gain strict after a small common perturbation;
+the quantified alternative permits the stated positive defects.
+
+The argument then uses the level-independent filling norm from Appendix N
+and the nonzero geometric contribution from Appendix O. Their hypotheses
+are checked for the original finite polynomial and the unchanged matched
+sphere. The final action is calibrated by the primitive filling and
+regulator proof in O. This is a completed implication for diagrams passing
+the stated packing test. It contains no universal assertion about passing
+that test and uses no numerical extrapolation.

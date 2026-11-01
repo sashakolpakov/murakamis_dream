@@ -448,9 +448,25 @@ The [simultaneous construction](../notes/general_simultaneous_bridge_gap_filling
 
 ![One fixed marked seventeen-region expression fails a coarse radius test but satisfies a forty-branch refinement of the same degree constraints.](figures/sector-certificate-separation.png)
 
-The diagram and invariant do not change between the panels. The first test fixes one right-sided degree sector and estimates every other region without retaining its sector label. An exact feasible flow proves that no choice of radii can make that coarse bound less than the geometric rate \(\Phi_D\).
+The first four panels concern the same seventeen-region diagram and invariant. The final panel, below the dashed separator, concerns a different fifty-four-region diagram. The first test fixes one right-sided degree sector and estimates every other region without retaining its sector label. An exact feasible flow proves that no choice of radii can make that coarse bound less than the geometric rate \(\Phi_D\).
 
 The refinement keeps genuine sector labels at four specified regions. Fifteen nonempty right-sided choices and twenty-five remaining anchors give forty branches covering every unwanted sector string. Each branch has one shared rational radius vector, and explicit interval bounds leave a gap greater than \(0.04\). The [separation theorem](../notes/actual_shared_radius_certificate_separation.md) therefore proves a full filled-volume result for this example while disproving necessity of the simpler test. It neither changes the knot nor proves that every diagram admits such a cover.
+
+The gap indices in \(O=(1,3)\) and \(E=(0,2,4)\) are numbered
+from zero in a six-strand plat; \(O(EO)^3\) has seventeen regions.
+\(C_{12,R}\) is the anchored bound fixing the right piece at region
+12, while \(J\) lists the four regions whose labels are retained in
+the refinement. A group \(B\) of sector strings has shared weights
+\(L^B\) and cost \(G_B\), as defined in the
+[finite-cover explanation](chapters/results.md#a-general-finite-cover-of-the-source-sectors).
+\(\Phi_D\) always means the augmented volume of the relevant diagram
+divided by \(2\pi\).
+
+The [separate fixed-sector obstruction](../notes/actual_singleton_sector_envelope_obstruction.md)
+proves the final panel. Its single sector is nonzero at sufficiently
+large even levels, but no positive shared weights make this particular
+envelope smaller than the complete action. This explains a failure of
+the method; it gives no lower bound for the signed invariant.
 
 [SVG](figures/sector-certificate-separation.svg) · [PDF](figures/sector-certificate-separation.pdf) · [TikZ source](figures/sector-certificate-separation.tex)
 
@@ -501,3 +517,19 @@ The blue vector is the image of the augmented longitude on the filled knot cusp.
 The open vertices are product junctions without a crossing-circle operator. Each has three incident branches, counting the attachments to the filled vertices. These graphs record tangle operations: consecutive unturned products have already been grouped, and every displayed edge is a physical quarter-turn. A fixed tree of any size is allowed by the [trivalent meridian theorem](../notes/actual_main_meridian_trivalent_filled_volume.md). This is a retained special case: the [general component theorem](../notes/actual_main_meridian_general_component_comparison.md) now also permits arbitrary higher-valence junctions and arbitrary mixtures of these valences.
 
 [Vector drawing](figures/trivalent-bare-components.svg) · [PDF](figures/trivalent-bare-components.pdf) · [TikZ source](figures/trivalent-bare-components.tex)
+
+## Turning weak balance into a strict remainder estimate
+
+![A linear entropy gain exceeds the quadratic action cost at a small positive perturbation. The example constants in this plot are h*=E=1.](figures/weak-balance-gain.svg)
+
+The parameter \(t\) replaces each ordinary coefficient radius \(w_f\)
+by \(w_f^{1-t}\). The blue line is the lower bound \(t h_*\) for
+entropy loss in a noncentral term. The amber curve is the upper bound
+\(t^2\mathcal E/2\) for the cost to the full action. Their difference
+is positive for a sufficiently small fixed \(t>0\). The constants in
+the drawing illustrate the estimate; the
+[weak-balance theorem](chapters/results.md#an-unchanged-diagram-satisfying-weak-balance)
+defines them from the complete packing and proves the bounds.
+
+[SVG](figures/weak-balance-gain.svg) · [PDF](figures/weak-balance-gain.pdf) ·
+[TikZ source](figures/weak-balance-gain.tex)

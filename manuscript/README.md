@@ -38,6 +38,15 @@ The [net-twist companion theorem](../notes/actual_conway_net_twist_volume.md) tr
 
 [Appendix N](sections/N-uniform-filling-bound.tex) proves a level-independent finite bound for inserting fixed twist powers. Its transfer to a further volume theorem explicitly assumes an exponential estimate for the shared source. [Appendix O](sections/O-morse-geometric-contribution.tex) proves that the specified geometric contribution for an unchanged matched spherical diagram is nonzero and has the volume rate of its actual long-filled complement. This is a contribution to the original exact invariant, not a new topological invariant. A general bound on its complementary signed contribution is not asserted. These appendices do not enlarge the full-invariant claims.
 
+[Appendix P](sections/P-weak-balance.tex) supplies a full-invariant
+theorem for an unchanged matched sphere whose complete packing satisfies
+weak balance. Equality in the local condition is allowed. The proof
+derives the entropy and Hessian estimates, chooses one shared coefficient
+weight, and uses Appendices N and O to bound the full remainder and
+identify the surviving action. A quantified variant permits small
+balance defects. No assertion that every diagram satisfies either test
+is part of this theorem.
+
 ## Build the paper
 
 From the repository root, run:

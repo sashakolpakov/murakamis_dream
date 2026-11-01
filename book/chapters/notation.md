@@ -80,6 +80,37 @@ Changing coordinates, changing the quotient product, and applying a physical tur
 
 The **source** is the full prescribed expression: physical matrices, their index ranges, cups, caps, the marked cut, and every scalar factor. A **coupon** is one specified operator inserted in a tangle box. A source polynomial is a way of storing the matrix entries of such an operator or the coefficients of a whole contraction.
 
+A **simple triangulated sphere** is a finite graph embedded in the
+two-sphere with triangular complementary faces, with no loops or
+multiple edges. Its dual has a vertex for each triangle and an edge
+for each shared side. Every dual vertex has degree three. A **perfect
+matching** of that dual chooses one incident edge at every dual
+vertex, pairing all the triangles. Each pair gives one ordered
+four-face crossing region. If there are \(R\) pairs, the sphere has
+\(2R\) triangles, \(3R\) edges and \(R+2\) vertices: the first edge
+count follows by counting three sides per triangle twice, and the
+vertex count then follows from Euler's formula.
+
+The marked main edge is an original strand edge, not one of the
+white edges selected by this matching. Its two endpoints \(u,v\)
+are the protected white vertices. Thus the same graph vocabulary
+can refer to two different edges: a matched diagonal describes a
+crossing region; a nonmatching marked edge records the cut in a
+main strand. The cyclic orders and the terminal strand pairing
+remain part of the source data. A matching alone does not establish
+that the resulting link has one component.
+
+A **Morse presentation** draws the original strands with respect to
+a height function whose local maxima and minima are isolated and
+nondegenerate. A horizontal slice between events has a fixed
+number of strand intersections. A cup increases that number by
+two, a cap decreases it by two, and a crossing acts on the strands
+present at its height. A flat plat puts all upper cups and lower
+caps outside one braid region; a general Morse presentation can
+have cups and caps between crossing regions. The general source
+identity retains these intervening maps. It does not replace the
+diagram by a flat plat without proving such a transformation.
+
 The face construction uses three successive operations. First multiply
 the local polynomials, then extract one shared face coefficient, then
 apply the functionals that insert the prescribed twists. The variables
@@ -123,14 +154,38 @@ Several decompositions of the source are used:
 | Complete-color source | The original contraction with every designated auxiliary color equal to \(N\). |
 | Color core | The term retaining the complete-circle part of each exact external-color identity. It can be an entire function of \(\chi\). |
 | Color alias | A complementary small-color term in that identity. Its exponential smallness is a theorem to be proved, not part of its definition. |
-| CROSS sector | The specified central-cut support in a local continuant/cofactor spectral numerator. |
-| LEFT or RIGHT sector | One of the complementary one-sided supports in that same numerator. |
-| All-CROSS contraction | The coefficient or period obtained by selecting CROSS at every box, while retaining the shared face targets and original trace. |
+| central sector | The specified central-cut support in a local continuant/cofactor spectral numerator. |
+| left or right sector | One of the complementary one-sided supports in that same numerator. |
+| All-central contraction | The coefficient or period obtained by selecting central at every box, while retaining the shared face targets and original trace. |
 | Full contraction | The sum over all the prescribed sector choices, with their signs and normal data. |
 
-The capitalized sector names are finite-support labels; CROSS does not mean a physical crossing matrix. A color core and an all-CROSS projection arise from different decompositions and must not be identified by their names. A nonzero all-CROSS period with the correct geometric rate does not by itself prove the full invariant's rate: the other sectors might contribute or cancel it. The [cofactor theorem](../../notes/actual_cross_cofactor_factorization.md) defines that projection, and the [balanced planar theorem](../../notes/actual_balanced_terminal_fan_volume.md) explains a sufficient comparison with the remaining sectors.
+These sector names describe finite subsets of the recurrence paths; central does not mean a physical crossing matrix. A color core and an all-central projection arise from different decompositions and must not be identified by their names. A nonzero all-central period with the correct geometric rate does not by itself prove the full invariant's rate: the other sectors might contribute or cancel it. The [cofactor theorem](../../notes/actual_cross_cofactor_factorization.md) defines that projection, and the [balanced planar theorem](../../notes/actual_balanced_terminal_fan_volume.md) explains a sufficient comparison with the remaining sectors.
 
-A **finite-sector cover** groups genuine CROSS/LEFT/RIGHT choices for estimates. A branch has one full shared face-weight vector; it does not assign unrelated weights to the two occurrences of a face. The maxima inside a scalar upper bound are comparison terms, not additional quantum sectors. This combinatorial use of “cover” is different from a covering space of a link complement. The [methods chapter](methods.md#refining-the-coefficient-estimate-by-genuine-sectors) gives the cost and the remaining coverage question.
+A **finite-sector cover** groups genuine central/left/right choices for estimates. A branch has one full shared face-weight vector; it does not assign unrelated weights to the two occurrences of a face. The maxima inside a scalar upper bound are comparison terms, not additional quantum sectors. This combinatorial use of “cover” is different from a covering space of a link complement. The [methods chapter](methods.md#refining-the-coefficient-estimate-by-genuine-sectors) gives the cost and the remaining coverage question.
+
+## Norms used in the estimates
+
+The same notation for a norm can hide different mathematical objects.
+These are the main choices in the guide:
+
+| Expression | Definition and object being bounded |
+| --- | --- |
+| \(\|H\|_{[-2,2]^R}\) | \(\sup_{\boldsymbol\sigma\in[-2,2]^R}|H(\boldsymbol\sigma)|\), for the complex spectral polynomial after the shared face coefficient has been extracted. |
+| \(\|v\|_2^2\) | \(\sum_j|v_j|^2\), for a specified finite vector and basis. |
+| \(\|A\|_{2\to2}\) | \(\sup_{v\ne0}\|Av\|_2/\|v\|_2\), the largest singular value of the matrix in that basis. |
+| \(\|v\|_G^2\) | \(v^*Gv\), where \(G\) is a specified positive definite Hermitian matrix. |
+| \(\sum_\alpha|c_\alpha|\boldsymbol\rho^\alpha\) | The absolute coefficient sum of \(P(\boldsymbol L)=\sum_\alpha c_\alpha\boldsymbol L^\alpha\), evaluated at positive radii \(\boldsymbol\rho\); it is an upper bound on the face torus, not the original signed evaluation. |
+
+In the last row, \(\alpha\) is a tuple of nonnegative integers and
+\(\boldsymbol\rho^\alpha=\prod_f\rho_f^{\alpha_f}\). A star on a
+vector or matrix denotes conjugate transpose. A nonunitary change
+of basis changes matrix norms, even when it preserves an exact
+contraction. The physical cup/cap pairing and the Frobenius
+coefficient trace are also not automatically positive Hermitian
+inner products. Their endpoint costs must be proved when a
+positive norm is introduced. The
+[weighted-Cauchy section](methods.md#weighted-cauchy-and-the-cost-of-joining-pieces)
+shows those costs explicitly.
 
 ## Tangles and geometric variables
 
@@ -214,6 +269,16 @@ A strict **exponential gap** at rate \(\Phi\) means an estimate such as
 uniformly on the parameter set stated in that theorem. A polynomial factor \(N^C\) does not change the rate. The constants and starting level may depend on the fixed diagram, fixed twists, compact domain, and derivative order. Uniformity through a complex neighborhood is stronger than a bound at physical integer samples.
 
 A Hessian records second derivatives of the relevant phase. The face Cauchy integral and the spectral filling integral use different Hessians and different determinant branches. “Primitive lattice” means the retained integer summation coordinates have no hidden finite-index multiplicity. “First charge” refers to the unit Fourier magnitudes in the exact filling transform; other charges and endpoint currents remain part of the original period until estimated.
+
+An estimate \(r_N(s)=O_C(N^{-k})\) on a compact parameter set \(C\)
+means that one constant \(B_C\) bounds
+\(|r_N(s)|\le B_CN^{-k}\) for every \(s\in C\) and all sufficiently
+large \(N\). A statement to all asymptotic orders supplies such a
+remainder after every prescribed finite truncation; it need not
+give a convergent infinite series. The notation \(o(N)\), uniform
+on \(C\), means that its supremum in absolute value divided by
+\(N\) tends to zero. The relevant compact set and any derivative
+order belong to the statement.
 
 ## Augmented and filled complements; peripheral coordinates
 
@@ -301,6 +366,17 @@ A quantum \(A\)-operator is a specified finite difference operator
 \]
 Here \(r\) is the operator order, fixed independently of \(N\); it is not the top color index \(d\). The \(a_j\) are fixed rational functions in the formal quantum and meridian variables. A **genuine all-level annihilator** satisfies \(P(q_N,M,T)F_N(M)=0\) as an identity of meridian functions at every sufficiently large root level, with the original state and normalization. The finite-source theorem constructs such operators; the selected-factor theorem applies to any operator satisfying these hypotheses. Choosing a new ratio of two evaluated values at each level does not meet them.
 
+The associated **Ore ring** is the ring of these difference
+operators with the multiplication rule
+\[
+             T\,a(q,M)=a(q,qM)\,T.
+\]
+For example, \(T(MF)(M)=qM\,F(qM)\), which proves \(TM=qMT\)
+directly from the action. The **annihilator left ideal** is the
+set of operators killing the specified state. It is closed
+under addition and under applying another operator on the left.
+The side matters because the operators do not commute.
+
 An equation \(PF=0\) does not select its solution by itself. The **pointed period** also retains a fixed vector \(c_0(q)\) of small-color Laurent polynomials and the prescribed companion transport row \(r_N(q)\). At a root pole its value is
 \[
        K_N(K)=\operatorname{CT}_{t=0}
@@ -309,6 +385,25 @@ An equation \(PF=0\) does not select its solution by itself. The **pointed perio
 The constant term is taken after multiplying the entire Laurent germs. The parameter \(t\) here is a local evaluation variable, not the geometric deformation \(M=e^{\pi it}\) used in another note. The [pointed operator theorem](../../notes/actual_conway_pointed_quantum_a_volume.md) explains the finite initial data and its volume statement.
 
 To form a classical symbol, first clear the specified rational denominators and remove the common power of \(q-1\), then take the first nonzero specialization and replace the commuting shift variable by \(L\). The **geometric \(A\)-curve** records the meridian and preferred-longitude eigenvalues of the selected geometric representations of the knot group. An arbitrary eliminated source equation can contain other components or points excluded from its original chart.
+
+A **germ** records a function or curve only in a neighborhood of
+the specified point, with two representatives identified if they
+agree on a smaller neighborhood. A **jet of order \(k\)** retains
+only the derivatives through order \(k\); it is less information
+than a germ. A selected irreducible Laurent factor is a polynomial
+in \(M^{\pm1},L^{\pm1}\) which vanishes on the chosen algebraic
+curve and does not split into two nonconstant factors over the
+stated coefficient field. Multiplication by a nonzero constant
+or a monomial does not change its zero set in
+\((\mathbb C^\times)^2\). The field matters: a factor irreducible
+over \(\mathbb Q\) can split over \(\mathbb C\).
+
+Thus the assertion that the selected geometric factor divides
+a classical symbol is a statement about one component. It does
+not specify the symbol's other factors or their multiplicities,
+and it does not identify the whole noncommutative annihilator
+ideal. Scalar gauges, denominator factors and the selected
+longitude lift are retained before making that comparison.
 
 In the geometric convention, \(M\) is the positive main meridian eigenvalue and \(L\) is the preferred-longitude eigenvalue on the same line. The source cut selects the \(M^{-1}\) line, so \(L\) is the inverse longitude eigenvalue there. At the complete filled knot, \(M=1\) and \(L=-1\). On the covered strict-tree germ,
 \[
@@ -336,6 +431,16 @@ For a regular quantum difference module at a root of order \(m\), a chosen scala
                   \prod_{j=0}^{m-1}\sigma^j(a)=v,
 \]
 where \(\sigma\) is the prescribed cyclic field automorphism and \(v\) a central eigenvalue. Replacing the frame by \(f\) changes \(a\) to \(a\,\sigma(f)/f\). This algebraic norm is not the absolute value of the knot invariant, nor an operator norm. The [intrinsic norm-torsor construction](../../notes/intrinsic_quantum_a_norm_torsor.md) states the additional hypotheses needed to compare its selected period with a regulator.
+
+The gauge factor has cyclic product one:
+\[
+ \prod_{j=0}^{m-1}\frac{\sigma^{j+1}(f)}{\sigma^j(f)}
+                     =\frac{\sigma^m(f)}{f}=1.
+\]
+This explains why the algebraic norm is unchanged. It gives no
+bound for the complex absolute value of \(f\) or its inverse.
+The [Hilbert-90 discussion](algebraic.md#hilbert-90-solves-a-transport-equation)
+shows an actual finite gauge with exponential operator cost.
 
 A third local example is the [Casimir transport conic](../../notes/actual_crossing_casimir_torus.md): after choosing a spectral sheet and a reference point, crossing powers act multiplicatively on its regular fibers. The endpoint fibers degenerate, and the original excluded divisors and boundary targets remain part of the problem. An abstract norm torus or a local conic does not by itself identify a knot's geometric longitude or prove a nonzero source asymptotic.
 

@@ -1,38 +1,6 @@
 # Reproducing the calculations
 
 
-## Uniform bounds for inserting twists
-
-With SymPy and NumPy installed, run:
-
-~~~sh
-python3 repro/run_research_checks.py filling-supremum
-~~~
-
-The program checks the finite derivative interpolation formula in
-cyclotomic fields, the repeated and simple Chebyshev residues, and the
-reconstruction of positive and negative powers of the original crossing
-matrices. It also checks the lower-block numerator derivatives against
-the corresponding spectral projectors. The [proof](../notes/actual_uniform_filling_supremum_bound.md)
-establishes the norm bounds for every level. The finite checks do not
-estimate a volume limit.
-
-## Balanced terminal decorations
-
-~~~sh
-python3 repro/run_research_checks.py balanced-terminal-fans
-~~~
-
-This standard-library group checks exact polynomial recurrences, rational
-balance constants, oriented stellar subdivisions, the matching and face
-parity, and the actual endpoint pairing of even terminal stacks. Results
-are saved in the [result file](../experiments/actual_balanced_terminal_fans_results.json)
-and runner logs. The all-real choice of fan counts, the uniform source
-estimates, and hyperbolic completion are analytic proofs in the
-[theorem](../notes/actual_balanced_terminal_fan_volume.md); the checks do
-not replace those proofs or extrapolate from sampled quantum invariants.
-
-
 The manuscript proves inequalities on continuous regions of state variables. Some of those inequalities are reduced, by concavity and supporting tangent planes, to a finite set of rational comparisons. This directory provides the scripts and reference records for those comparisons. The quantitative circle-tree theorem also has a group of symbolic, geometric and finite numerical checks, described below.
 
 ## Run the checks
@@ -63,6 +31,37 @@ A *leaf* is one basic two-strand twist piece in the manuscript's tangle construc
 Here a *slope* is a derivative of an entropy function used in the source estimate. It is not a Dehn-filling slope. The interval engine bounds sine, logarithm, pi and the integrated log-sine function by rational series with explicit remainder estimates. It does not infer a continuum inequality from samples or call a numerical optimizer to certify a maximum.
 
 The written proof explains why concavity and affine parameter dependence reduce the continuum statement to these finite comparisons. The [proof-input map](PROOF_INPUTS.md) identifies those arguments and the exact records used by the runner.
+
+## Uniform bounds for inserting twists
+
+With SymPy and NumPy installed, run:
+
+~~~sh
+python3 repro/run_research_checks.py filling-supremum
+~~~
+
+The program checks the finite derivative interpolation formula in
+cyclotomic fields, the repeated and simple Chebyshev residues, and the
+reconstruction of positive and negative powers of the original crossing
+matrices. It also checks the lower-block numerator derivatives against
+the corresponding spectral projectors. The [proof](../notes/actual_uniform_filling_supremum_bound.md)
+establishes the norm bounds for every level. The finite checks do not
+estimate a volume limit.
+
+## Balanced terminal decorations
+
+~~~sh
+python3 repro/run_research_checks.py balanced-terminal-fans
+~~~
+
+This standard-library group checks exact polynomial recurrences, rational
+balance constants, oriented stellar subdivisions, the matching and face
+parity, and the actual endpoint pairing of even terminal stacks. Results
+are saved in the [result file](../experiments/actual_balanced_terminal_fans_results.json)
+and runner logs. The all-real choice of fan counts, the uniform source
+estimates, and hyperbolic completion are analytic proofs in the
+[theorem](../notes/actual_balanced_terminal_fan_volume.md); the checks do
+not replace those proofs or extrapolate from sampled quantum invariants.
 
 ## The quantitative circle-tree theorem
 
@@ -147,3 +146,21 @@ python3 tools/check_book.py
 ```
 
 The certificate runner itself still requires only Python's standard library. Keeping rendering and verification separate makes a failed build distinguishable from a failed mathematical certificate.
+
+## A limit of the shared-weight envelope method
+
+```sh
+python3 repro/run_research_checks.py singleton-envelope
+```
+
+This standard-library group checks the fifty-four-region example in the
+[fixed-sector obstruction](../notes/actual_singleton_sector_envelope_obstruction.md).
+One program replays the oriented sphere moves and verifies the rational
+face loads and entropy bounds. The other checks the sphere links,
+matching, marked edge, and knot-producing strand parity. The written
+argument also proves that the selected sector has nonzero shared
+coefficient support at all sufficiently large even levels.
+
+The conclusion is that one proposed upper-bound method cannot prove a
+strict volume gap for this fixed source. It is not a lower bound for
+the quantum invariant and is not a counterexample to the volume conjecture.

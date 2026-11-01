@@ -1,0 +1,375 @@
+\chapter{Weak balance in the complete circle packing}
+\label{app:weak-balance}
+
+The strict balance condition in Appendix~\ref{app:balanced-terminal-fans}
+is sufficient to control the complementary part of the invariant. We now
+allow equality in that condition. The change is useful because the face
+weights used in a coefficient estimate need not remain the curvatures
+of a circle packing. Moving them a small distance from the complete
+packing creates a first-order local gain. Stationarity makes the cost
+to the complete action only second order. We account for both changes
+on the same shared face variables.
+
+\section{The unchanged diagram and the volume statement}
+
+Fix a finite simple triangulation of the sphere with at least four
+vertices, a perfect matching of its cubic dual, and one nonmatching
+edge as the reduced mark. Use the augmented diagram and its labeled
+crossing disks constructed in Appendix~\ref{app:morse-geometric-contribution}.
+There are $R$ matched pairs of triangles and $R+2$ white vertices.
+The marked edge joins the protected vertices $u,v$; let $V$ be the
+set of the $R$ ordinary vertices. The complete packing has curvatures
+$w_u^*=w_v^*=0$ and $w_f^*>0$ for $f\in V$. Curvature is the
+reciprocal radius of a finite circle. Write
+\[
+ q_f=\log w_f^*,\qquad
+ \Phi=\frac{\Vol(Y_D)}{2\pi},
+\]
+where $Y_D$ is the actual augmented link complement.
+
+At a crossing region the cyclic face order is $(x,b,y,c)$ and the
+matched diagonal is $xy$. The polynomial arguments are ordered
+$(x,b,c,y)$. To state the condition, define
+\[
+ \Lambda(s)=-\int_0^s\log|2\sin z|\,\dd z,
+ \qquad f(a)=\frac{\Lambda(\pi a)+\Lambda(\pi/2-\pi a)}{\pi}
+       \quad(0\le a\le\tfrac12).
+\]
+For a triple of nonnegative weights $w=(w_1,w_2,w_3)$ with at least
+one positive entry, its triangle potential is
+\[
+ Q(w)=\max_{\substack{a_i\ge0\ (w_i>0)\\
+                     \sum_{i:w_i>0}a_i=1/2}}
+           \sum_{i:w_i>0}\{f(a_i)+a_i\log w_i\}.
+\]
+The zero-weight corners are omitted from this maximization. If only
+$w_i$ is positive, then $Q(w)=\tfrac12\log w_i$. These conventions
+avoid taking a logarithm of a protected zero. Put
+\[
+ X_e=Q(w_x^*,w_b^*,w_y^*)+Q(w_x^*,w_c^*,w_y^*).
+\]
+Only positive middle curvatures occur inside logarithms below.
+
+\begin{theorem}[Volume limit under weak balance]\label{wb:volume}
+Suppose the actual complete packing satisfies
+\begin{equation}\label{wb:balance}
+ X_e\ge\log w_b^*\quad(w_b^*>0),\qquad
+ X_e\ge\log w_c^*\quad(w_c^*>0)
+\end{equation}
+at every crossing region. Fix retained half twists
+$\epsilon_e\in\{0,\pm1\}$ whose original strand connections give
+one knot, with no additional closed main component. There is a
+threshold $T$, depending on these fixed data, such that independently
+chosen fixed integers $p_e$ with $|p_e|>T$ give a hyperbolic knot
+$K_{\boldsymbol p}$ and
+\[
+ \lim_{N\to\infty}\frac{2\pi}{N}
+       \log|\langle K_{\boldsymbol p}\rangle_N|
+       =\Vol(S^3\setminus K_{\boldsymbol p}).
+\]
+The crossing powers are $n_e=\epsilon_e-2p_e$. The invariant is the
+original reduced, zero-framed Kashaev invariant with unknot value one,
+and the limit includes both parities and composite levels. The
+diagram, its mark, and all powers are fixed before $N$ varies.
+\end{theorem}
+
+No terminal tangles are inserted in this theorem. Its restriction is
+the packing inequality~\eqref{wb:balance}; it is not a theorem for all
+unchanged matched spheres. A quantified extension below permits some
+positive defects in that inequality. The proof uses the full geometric
+contribution of Appendix~\ref{app:morse-geometric-contribution} and the
+finite norm bound of Appendix~\ref{app:uniform-filling-bound}.
+
+\section{Triangle entropy, its Hessian, and the complete action}
+
+For an original triangle $t$, let $I_t\subset V$ be its ordinary
+corners. This set is nonempty. Put
+\begin{equation}\label{wb:triangle}
+\begin{split}
+ f(a)&=\frac{\Lambda(\pi a)+\Lambda(\pi/2-\pi a)}{\pi},
+       \qquad 0\le a\le\tfrac12,\\
+ Q_t(q')&=\max_{\substack{a_i\ge0\ (i\in I_t)\\
+                         \sum_{i\in I_t}a_i=1/2}}
+               \sum_{i\in I_t}\bigl(f(a_i)+a_iq'_i\bigr),
+\end{split}
+\end{equation}
+where $\Lambda(s)=-\int_0^s\log|2\sin z|\,\dd z$.
+Protected corners are deleted from the supported simplex; their weights
+remain exactly zero. The notation $Q(w_x,w_b,w_y)$ means this function
+with $q'_i=\log w_i$ at the positive coordinates. This is the absolute
+normalization of the cofactor action, including the determinant, beta
+and half-index factors. In particular a singleton row has
+$Q_t(q')=q'_i/2$.
+
+Direct differentiation gives
+\[
+ f(0)=f(1/2)=0,\qquad f'(a)=\log\cot(\pi a),\qquad
+ f''(a)=-\frac{2\pi}{\sin(2\pi a)}<0.
+\]
+Thus $f(a)>0$ for $0<a<1/2$. If two or three weights are positive,
+write $w_i=e^{q'_i}$ and
+\begin{equation}\label{wb:angles}
+ D_t^2=\sum_{\{i,j\}\subset I_t}w_iw_j,
+ \qquad a_{ti}=\frac1\pi\arctan\frac{w_i}{D_t}.
+\end{equation}
+These loads sum to $1/2$. For three weights this follows from
+$D_t^2-w_iw_j=w_k(w_i+w_j)$ and the addition formula for tangent;
+for two weights the two tangent ratios are reciprocal. Moreover,
+$f'(a_{ti})+q'_i=\log D_t$. Strict concavity proves that these are
+the unique maximizing loads in~\eqref{wb:triangle}. Consequently
+\[
+ \partial_{q'_i}Q_t=a_{ti},\qquad
+ E_t(q'):=Q_t(q')-q'\cdot\nabla Q_t(q')
+        =\sum_{i\in I_t}f(a_{ti}).
+\]
+The row entropy $E_t$ is positive on a nonsingleton row and zero on
+a singleton row.
+
+For distinct ordinary corners, differentiating~\eqref{wb:angles} gives
+\begin{equation}\label{wb:hessian}
+ \partial_{q'_iq'_j}Q_t=-\kappa_{ij}^t,
+ \qquad
+ \kappa_{ij}^t=\frac{w_iw_j}{2\pi D_t(w_i+w_j)}
+                    \le\frac1{4\pi}.
+\end{equation}
+For three corners, the cancellation uses
+$D_t^2+w_i^2=(w_i+w_j)(w_i+w_k)$. The upper bound follows from
+$D_t\ge\sqrt{w_iw_j}$ and $w_i+w_j\ge2\sqrt{w_iw_j}$.
+Homogeneity gives zero row sums in the Hessian. Its quadratic form is
+therefore
+\[
+ h^{\mathsf t}\nabla^2Q_t(q')h
+       =\sum_{\{i,j\}\subset I_t}\kappa_{ij}^t(h_i-h_j)^2.
+\]
+This also proves positive semidefiniteness directly.
+
+Set
+\begin{equation}\label{wb:action}
+ P(q')=\sum_tQ_t(q')-\sum_{f\in V}q'_f.
+\end{equation}
+At the complete packing $q$, the face-star equations and calibrated
+geometric action of Appendix~\ref{app:morse-geometric-contribution} give
+\begin{equation}\label{wb:stationary}
+ \sum_{t\ni f}a_{tf}=1,\qquad \nabla P(q)=0,
+ \qquad P(q)=\Phi.
+\end{equation}
+These are statements about the complete geometric contribution. They
+do not assume a bound for the complementary part of the invariant.
+
+\section{Changing the common weights}
+
+For $0<t<1$, replace every ordinary weight by
+\[
+             w_f(t)=(w_f^*)^{1-t}.
+\]
+Keep the two protected weights zero. These numbers specify one valid
+Cauchy coefficient torus. They need not describe another packing.
+Define
+\begin{equation}\label{wb:energy}
+ \mathcal E=\frac1{4\pi}
+       \sum_t\sum_{\{i,j\}\subset I_t}(q_i-q_j)^2
+   =\frac1{2\pi}\sum_{\substack{ij\text{ a white edge}\\i,j\in V}}
+                         (q_i-q_j)^2.
+\end{equation}
+The second expression counts the two triangles incident to each
+ordinary white edge. Taylor's formula, \eqref{wb:hessian}, and
+\eqref{wb:stationary} give the entire action cost
+\begin{equation}\label{wb:cost}
+ 0\le P((1-t)q)-\Phi
+   =\int_0^t(t-s)q^{\mathsf t}\nabla^2P((1-s)q)q\,\dd s
+   \le\tfrac12t^2\mathcal E.
+\end{equation}
+
+The local gain is first order. Put
+$E_t(\beta)=Q_t(\beta q)-\beta q\cdot\nabla Q_t(\beta q)$ for
+$0<\beta\le1$. Differentiation gives
+\[
+ E_t'(\beta)=-\beta q^{\mathsf t}\nabla^2Q_t(\beta q)q\le0.
+\]
+Integrating the derivative of $Q_t(\beta q)/\beta$ yields
+\begin{equation}\label{wb:entropy-gain}
+ Q_t(\beta q)=\beta Q_t(q)+
+     \beta\int_\beta^1\frac{E_t(s)}{s^2}\,\dd s
+ \ge\beta Q_t(q)+(1-\beta)E_t(q).
+\end{equation}
+Singleton rows satisfy the same identity, with zero entropy.
+
+At a crossing region, abbreviate $Q_b=Q(x,b,y)$ and $Q_c=Q(x,c,y)$.
+The three local rates, uniform in face phases and throughout the
+real spectral interval, are
+\begin{equation}\label{wb:rates}
+ A_C=X=Q_b+Q_c,\quad
+ A_L=\max(\log c,Q_b+\tfrac12\log c),\quad
+ A_R=\max(\log b,Q_c+\tfrac12\log b).
+\end{equation}
+A left or right label with protected overloaded middle is omitted:
+its finite polynomial is identically zero. The source estimates
+behind~\eqref{wb:rates} are the coefficient bound for the central
+cofactor and the complete unused-prefix and unused-suffix estimate
+for a one-sided path, as used in
+Section~\ref{bl:every-sector-containing-a-one-sided-crossing-circle-has-a-global-spectral-gap}.
+They hold at arbitrary fixed positive ordinary weights. Their derivation
+precedes any use of complete balance.
+
+For a surviving side $(e,s)$, let $z$ be its overloaded middle and let
+$t(e,s)$ be the triangle containing $z$. Define, at the complete packing,
+\begin{equation}\label{wb:defects}
+ \epsilon_{e,s}=\max(0,q_z-X_e(q)),\qquad
+ h_{e,s}=E_{t(e,s)}(q)>0.
+\end{equation}
+The strict positivity needs a geometric incidence observation. The
+outer edge is matched, whereas the protected edge is nonmatching.
+Since the sphere is simple, the outer pair cannot be precisely the
+two protected vertices. Hence the triangle containing a positive
+overloaded middle has another ordinary corner.
+
+For the left side the exact loss is
+\[
+ X-A_L=\min(X-\log c,Q_c-\tfrac12\log c).
+\]
+At completeness the second expression is positive: the pure-middle
+simplex vertex has value $\tfrac12\log c$, while the unique maximizer
+has positive load at every allowed corner. Apply
+\eqref{wb:entropy-gain} to both expressions and put $\beta=1-t$.
+The first receives the entropy of both triangles, while the second
+receives that of the overloaded triangle. This proves, for either side,
+\begin{equation}\label{wb:loss}
+ (X_e-A_s)((1-t)q)
+       \ge t h_{e,s}-(1-t)\epsilon_{e,s}.
+\end{equation}
+All weights in this comparison belong to the same global vector.
+
+\section{A quantitative criterion and the full complementary sum}
+
+Suppose for some $0<t<1$ that
+\begin{equation}\label{wb:criterion}
+ \gamma_0:=\min_{(e,s)\text{ surviving}}
+        \{t h_{e,s}-(1-t)\epsilon_{e,s}\}
+                    -\tfrac12t^2\mathcal E>0.
+\end{equation}
+This is a sufficient condition even when weak balance fails. If no
+one-sided label survives, the complement is exactly zero and the
+criterion is unnecessary. Otherwise put $h_* =\min h_{e,s}>0$.
+Under weak balance all defects vanish. Choose
+\begin{equation}\label{wb:choice}
+ t_0=\begin{cases}
+       \min(1/2,h_*/\mathcal E),&\mathcal E>0,\\
+       1/2,&\mathcal E=0.
+     \end{cases}
+\end{equation}
+Then $\gamma_0\ge t_0h_*/2>0$; when $\mathcal E=0$ the stronger
+value is $h_*/2$. This proves that any number of equalities in
+\eqref{wb:balance} cause no exceptional sector. More generally,
+$\max\epsilon_{e,s}<t_0h_*/2$ suffices, with gap at least
+$t_0h_*/2-\max\epsilon_{e,s}$.
+
+Here is the passage from these real functions to the original invariant.
+Put $d=N-1$ and write $S_N(\boldsymbol\sigma)$ for the exact shared
+spectral polynomial of the Morse source. Its local numerator is
+\[
+ V_N(\sigma;\Omega)=
+ \frac{\chi_N(\sigma)-\chi_N(\Omega)}{\sigma-\Omega},
+ \qquad \chi_N(z)=2T_N(z/2)+2,
+\]
+where division is polynomial division and
+$T_N(\cos\theta)=\cos(N\theta)$. Thus each spectral degree is at
+most $d$, including the derivative data at repeated roots.
+The shared polynomial is
+\[
+ S_N=[\prod_{f\in V}L_f^d]\,
+       \left.\prod_eH_{V_N}
+        (L_{x_e},L_{b_e},L_{c_e},L_{y_e};\sigma_e)
+       \right|_{L_u=L_v=0}.
+\]
+The original marked cut, face measure and even-level coset are included
+in this identity. No further factor $N^R$ is inserted.
+
+Let $C_N$ select the central path sector at every crossing region,
+with the odd central row included once, and let $D_N=S_N-C_N$.
+A genuine label string in $D_N$ contains at least one left or right
+choice. Denote its one-sided positions by $J$. Cauchy's coefficient
+inequality on the single torus $|L_f|=(w_f^*)^{1-t}$, together with
+\eqref{wb:cost} and~\eqref{wb:loss}, bounds its logarithmic rate by
+\[
+ \Phi+\tfrac12t^2\mathcal E
+    -\sum_{(e,s)\in J}
+                  \{t h_{e,s}-(1-t)\epsilon_{e,s}\}
+ \le\Phi-\gamma_0.
+\]
+Condition~\eqref{wb:criterion} makes every summand in braces
+positive, so other one-sided choices cannot undo the loss. The local
+bounds are uniform in all face phases and real spectral values.
+The original target is $d$, and $d/N=1-1/N$ changes the normalized
+logarithm by only $O(1/N)$ at these fixed weights. There are at most
+$3^R-1$ strings, a number independent of $N$. Hence
+\begin{equation}\label{wb:remainder}
+ \limsup_{N\to\infty}\frac1N
+         \log\|D_N\|_{[-2,2]^R}\le\Phi-\gamma_0.
+\end{equation}
+The statement includes both level parities and retains all shared
+face targets.
+
+\begin{figure}[ht]
+\centering
+\input{figures/weak-balance-gain}
+\caption{The estimates used to create a strict remainder bound. The plot
+uses $h_*=\mathcal E=1$ to illustrate their different orders in $t$.
+For an actual packing, both constants are defined from its original
+triangles. The difference between the upper line and lower curve is
+$t h_*-t^2\mathcal E/2$.}\label{fig:weak-balance-gain}
+\end{figure}
+
+\section{The original filling and the actual hyperbolic volume}
+
+The finite norm theorem of Appendix~\ref{app:uniform-filling-bound}
+applies because $D_N$ has degree at most $d$ in each spectral variable.
+For the original filling functionals it gives
+\begin{equation}\label{wb:transfer}
+ \left|\left(\bigotimes_e\mathcal L_N^{n_e}\right)D_N\right|
+       \le\prod_e(1+|n_e|/2)\,\|D_N\|_{[-2,2]^R}.
+\end{equation}
+The twists are fixed, so this costs no exponential rate. The exact
+finite identity also gives
+$Z_N=(\bigotimes_e\mathcal L_N^{n_e})S_N$ and
+$Z_{N,C}=(\bigotimes_e\mathcal L_N^{n_e})C_N$.
+
+Appendix~\ref{app:morse-geometric-contribution} supplies, for
+independently sufficiently long fixed signed powers,
+\[
+ Z_{N,C}=a_{N,\boldsymbol n}e^{N\mathcal A_{\boldsymbol n}},
+ \qquad \frac1N\log|a_{N,\boldsymbol n}|\longrightarrow0,
+\]
+with nonzero amplitude for all sufficiently large levels, and
+\begin{equation}\label{wb:filled-action}
+ \Re\mathcal A_{\boldsymbol n}
+   =\Phi-O_D\!\left(\sum_en_e^{-2}\right),\qquad
+ 2\pi\Re\mathcal A_{\boldsymbol n}
+   =\Vol(S^3\setminus K_{\boldsymbol p}).
+\end{equation}
+The second identity uses the original primitive peripheral basis.
+The actual periods satisfy the filling equation for
+$\mu_e+p_e\lambda_e$, and the completed auxiliary end is a smooth
+solid torus with cone angle $2\pi$. The main knot cusp stays complete.
+The regulator's boundary correction cancels the filling correction
+in the critical action. These are the geometric completion steps
+proved there, not a new identification inferred from a shared
+stationary equation.
+
+Choose $0<\eta<\gamma_0$ and increase the common twist threshold
+until the drop in~\eqref{wb:filled-action} is less than $\eta/2$.
+Equations~\eqref{wb:remainder}--\eqref{wb:transfer} then give
+\[
+ \frac{Z_N}{Z_{N,C}}=1+O_{\boldsymbol n}(e^{-cN})
+\]
+for some $c>0$. The prescribed complete-color framing and component
+factors have modulus one. In the full one-cut modified convention
+the additional factor is $i^{N+3}/N$, which also has zero exponential
+rate. Thus the same limit holds for the normalized invariant in
+Theorem~\ref{wb:volume}, proving it. The argument also proves its
+extension under~\eqref{wb:criterion}.
+
+The theorem supplies an unchanged-diagram sufficient condition of
+arbitrary finite size. It does not impose a tree or bridge-width
+restriction. Whether a diagram satisfies the condition is a separate
+geometric question; the theorem supplies neither a universal balance
+claim nor a filling threshold uniform over growing diagrams.

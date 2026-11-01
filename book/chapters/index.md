@@ -39,6 +39,20 @@ main knot cusp complete.
 
 ![A triangle is subdivided by an added circle, preserving the old matching edge and adding a new one.](../figures/balanced-terminal-fans.png)
 
+## A criterion requiring no added tangles
+
+The [weak-balance theorem](results.md#an-unchanged-diagram-satisfying-weak-balance)
+applies directly to a matched spherical diagram when its complete packing
+satisfies explicit non-strict inequalities at every crossing region.
+If the original strand connections give one knot with no extra closed
+main component, independently long signed twists give the full volume
+equality.
+The proof changes the coefficient radii by a small common power: its
+entropy gain is linear in the perturbation, while the cost to the
+stationary complete action is quadratic. The condition is not asserted
+for every diagram. The linked explanation defines the potential,
+entropies, and precise inequality before deriving the estimate.
+
 ## The ordered-tree constructions
 
 For the specified construction with an integer braid at every

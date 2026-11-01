@@ -33,11 +33,15 @@ The geometric leading term is nonzero, and primitive completion identifies
 its action with the actual knot-complement volume. The proof includes
 general Morse diagrams, where cups and caps may occur between boxes.
 
-For the unchanged simple matched sphere, the [geometric contribution](../../notes/actual_morse_geometric_contribution.md) is now established directly from the original Morse source. Its [entire Fourier period](../../notes/actual_morse_cross_filling_period.md) is nonzero at sufficiently large levels of both parities, and its exponential rate is the volume of the original complement after independently sufficiently long fixed signed fillings. This statement concerns the central recurrence-path contribution, called CROSS in the finite formula; it is not a new invariant or a full-invariant volume theorem.
+For the unchanged simple matched sphere, the [geometric contribution](../../notes/actual_morse_geometric_contribution.md) is now established directly from the original Morse source. Its [entire Fourier period](../../notes/actual_morse_cross_filling_period.md) is nonzero at sufficiently large levels of both parities, and its exponential rate is the volume of the original complement after independently sufficiently long fixed signed fillings. This statement concerns the central recurrence-path contribution, called central in the finite formula; it is not a new invariant or a full-invariant volume theorem.
 
 The undecorated problem is the strict bound for the full source minus
 that geometric contribution. A simple white sphere alone does not yet
 supply this bound, and adding tangles generally changes the knot.
+There is now an unchanged-diagram sufficient condition:
+[weak balance in the complete packing](../../notes/general_weak_balance_volume.md)
+permits equality in the local comparisons and still proves the full
+volume limit. The condition and the mechanism are explained below.
 Arbitrary short fillings, cores with loops or repeated white edges, and
 the general volume conjecture remain outside the planar result. This
 result is at the complete main meridian; extending its full meridian
@@ -75,6 +79,26 @@ smaller filled volume. Thus the finite norm result simplifies the
 remaining estimate without adding a new knot family to the volume
 theorems.
 
+More explicitly, let \(C_N\) be the contribution obtained by selecting
+the central recurrence paths at every crossing region, and put
+\(\mathcal D_N=S_N-C_N\). A sufficient estimate is
+\[
+ \limsup_{N\to\infty}\frac1N
+    \log\|\mathcal D_N\|_{[-2,2]^r}
+       \le \Phi_D-\eta,\qquad \eta>0,
+ \qquad \Phi_D=\frac{\operatorname{Vol}(Y_D)}{2\pi}.
+\]
+The finite functional bound then controls the filled remainder.
+The nonzero central contribution has a rate tending to \(\Phi_D\)
+as all fixed twists become long. Choosing their threshold so that
+its volume drop is less than \(\eta\) gives the full invariant
+limit. This is the precise use of an augmented-source gap in a
+filled-volume theorem. A direct estimate of the filled remainder
+could also suffice; a uniform spectral supremum bound is a method,
+not part of the volume conjecture itself.
+
+
+## The completed recursive constructions
 
 The volume limit is proved for fixed ordered cylindrical tangle compositions whose reduced net twists are sufficiently long and whose closed diagram is a knot, with elementary two-strand braid closures excluded. The [results chapter](results.md#arbitrarily-many-tangles-with-sufficiently-long-net-twists) defines the reduction and its size condition. For this class, the theorem concerns the full invariant and the volume of the actual knot complement.
 
@@ -195,9 +219,11 @@ a positive path and smooth completion. That condition alone
 does not prove the quantum volume limit.
 
 The outstanding analytic problem is to cover more of this
-geometric region and other short-twist constructions. Cyclic
-interaction graphs are handled by the planar decoration theorem only
-under its separate construction and long-filling hypotheses. Diagrams
+geometric region and other short-twist constructions. For cyclic
+interaction graphs, the planar decoration theorem and the
+unchanged-diagram balance or finite-sector criteria have their
+own long-filling hypotheses; the tree induction does not apply
+to them automatically. Diagrams
 growing with \(N\) remain outside both proofs. The
 [directed all-orders extension](../../notes/actual_all_circle_directed_all_orders.md)
 now supplies the shifted-chart estimates for every directed certificate;
@@ -430,6 +456,15 @@ A **spectral parameter** is a variable in the polynomial functional calculus of 
 
 An **action** is the function whose value gives an exponential rate, usually in an expression of the form $e^{N A}$. A **local packet** includes that exponential, a nonzero leading coefficient and a uniform error near a selected critical point. A **period** is the contour or finite Fourier expression used to reconstruct the invariant. Showing that one packet exists does not prove that its period dominates every other term.
 
+A **sector** fixes one piece of the exact local path partition at
+each crossing region. The central piece is denoted \(C\), or central
+in the technical formulas; \(L,R\) denote the two one-sided pieces.
+A genuine sector retains one such choice at every region. An
+**envelope** is an upper bound for its absolute value. Replacing
+several alternatives by their maximum can make the envelope larger
+than the original sum. A lower bound for that optimized envelope
+therefore does not give a lower bound for the signed source.
+
 ## The general plat target and its quantifiers
 
 A $2k$-strand plat is a braid closed by pairing neighboring endpoints at the top and bottom. Fix a diagram $D$, its crossing-circle augmentation $Y_D$, and the actual meridian-longitude markings. The [general plat target](../../notes/general_augmented_plat_long_twist_target.md) asks for a threshold $T(D)$ such that every knot-producing fixed signed twist tuple with $\min_i|m_i|>T(D)$ satisfies
@@ -498,7 +533,11 @@ The exact half-twist phases sum to the nonzero factor $(\pi N)^{R/2}\prod_i(C_{i
 
 ## The positive endpoint and its unique geometric maximum
 
-Another useful comparison source is the positive spectral endpoint. For even $N$, the [endpoint theorem](../../notes/general_fejer_endpoint_source_volume.md) gives rate
+Another useful comparison source is the positive spectral endpoint.
+This paragraph retains the theorem's certified original flat-plat
+scope. The general Morse source identity alone does not extend its
+forest reduction to an arbitrary matched sphere.
+For even $N$, the [endpoint theorem](../../notes/general_fejer_endpoint_source_volume.md) gives rate
 
 $$
 W_D=\frac{\operatorname{Vol}(Y_D)}{2\pi}
@@ -506,7 +545,19 @@ $$
 
 for the marked source with $P_N=-V_N(-2)=4(2+\Omega_N)^{-1}$ at every crossing region. Here $\Omega_N$ is the Casimir operator and $V_N$ its polynomial resolvent numerator. This comparison source is not the filled knot invariant.
 
-The [closed half-block estimates](../../notes/actual_fejer_half_block_entropy.md) and [full-kernel identity](../../notes/actual_fejer_full_kernel_entropy_identity_reduction.md) give a continuous local entropy $h$ on the entire degree simplex. Every monomial of degree $N-1$ occurs in the full positive kernel, so the global rate is the maximum of $\sum_e h(q_e)$ subject to the same shared-face demands. If individual cross and one-sided patterns are retained, the [finite-level support test](../../notes/actual_fejer_shared_entropy_variational.md) detects offsets that the limiting polytope alone can miss.
+The [closed half-block estimates](../../notes/actual_fejer_half_block_entropy.md)
+and [full-kernel identity](../../notes/actual_fejer_full_kernel_entropy_identity_reduction.md)
+give a continuous local entropy \(h(\boldsymbol a_e)\). The vector
+\(\boldsymbol a_e\) records the four face exponents at region \(e\),
+divided by \(N\); their limiting sum is one. Entropy here means the
+limiting logarithm of a positive coefficient divided by \(N\).
+Every degree-\((N-1)\) monomial occurs in the full positive kernel,
+so the global rate is the maximum of \(\sum_eh(\boldsymbol a_e)\)
+subject to the original shared-face demands. At an ordinary face
+the incident loads sum to one, and at a protected face they are
+zero. If individual central and one-sided patterns are retained,
+the [finite-level support test](../../notes/actual_fejer_shared_entropy_variational.md)
+also checks the integer offsets that the limiting polytope can miss.
 
 Several reductions prove that this maximum is geometric. [Identity-forest contraction](../../notes/actual_fejer_diagonal_identity_forest_reduction.md) removes pure-middle identity coupons without changing targets. The [hybrid Hall reduction](../../notes/actual_fejer_hybrid_tight_cut_reduction.md) keeps cross factors as two triangle rows and one-sided factors as single rows. [Boundary regularity](../../notes/actual_fejer_nondiagonal_maximizer_regularity.md) recovers positive shared multipliers on the resulting pieces. The [representation assembly](../../notes/actual_fejer_hybrid_piece_representation.md) then constructs a representation of the original augmented-link group with relative volume $2\pi W_D$.
 
@@ -534,7 +585,14 @@ This derivative is in the spectral parameter, not in $q$. Positive path estimate
 
 ## From a local packet to a whole filling period
 
-The [full spectral packet theorem](../../notes/general_full_spectral_numerator_geometric_packet.md) gives a nonzero asymptotic for the entire numerator on a fixed complex neighborhood of $\sigma_e=-2$. Writing $\sigma_e=-2\cos(2\pi\delta_e)$, it has the form
+For the same certified original flat plats, the
+[full spectral packet theorem](../../notes/general_full_spectral_numerator_geometric_packet.md)
+gives a nonzero asymptotic for the entire numerator on a fixed
+complex neighborhood of \(\sigma_e=-2\). For general simple-sphere
+Morse diagrams, the [proved packet](../../notes/actual_morse_cross_filling_period.md)
+at this stage concerns its central contribution. Keeping this
+distinction, the full flat-plat packet has the following form,
+with \(\sigma_e=-2\cos(2\pi\delta_e)\):
 
 $$
 S_N(\boldsymbol\sigma(\boldsymbol\delta))
@@ -565,23 +623,78 @@ using the four curvatures from one common complete packing. The [triangle balanc
 
 For arbitrary certified plats, the unresolved issue is a replacement for balance when it fails. It is not a missing local geometric coefficient. The [fixed-root scope note](../../notes/fixed_root_direct_power_scope.md) also explains that this route does not require a generic-$q$ normal theorem.
 
+### Weak balance and a shared change of weights
+
+The [weak-balance theorem](../../notes/general_weak_balance_volume.md)
+applies directly to the original simple-sphere Morse diagram.
+At each crossing region let \(x,b,c,y\) be its complete curvatures
+and let
+\[
+ X_e=Q(x,b,y)+Q(x,c,y).
+\]
+The source-normalized triangle potential \(Q\) is the angle
+maximization defined in the [notation chapter](notation.md#circle-packings-shapes-and-geometric-actions).
+The hypothesis is \(X_e\ge\log b\) and \(X_e\ge\log c\) for
+positive middles; a protected zero middle has no one-sided term.
+This condition permits equality.
+
+The proof changes only the weights in Cauchy's coefficient estimate.
+Write \(q_f=\log w_f^*\) for the positive complete curvatures and
+replace them by \(e^{(1-t)q_f}\), with \(0<t<1\). The protected
+weights stay zero. The complete shared action
+\[
+ P(q)=\sum_{\text{triangles }a}Q_a(q)-\sum_fq_f
+\]
+is stationary at \(q\), so its change is quadratic in \(t\).
+The entropy of the triangle containing an overloaded middle is
+strictly positive, giving a linear loss for each surviving
+one-sided choice. For a sufficiently small common \(t\), the
+linear loss exceeds the entire quadratic cost. Every genuine
+noncentral sector is then below \(\Phi_D\) on the same weight
+vector. The finite filling estimate and the nonzero general-Morse
+central period give the volume of the original filled knot.
+
+The changed weights need not form a packing. They are parameters
+of an estimate and do not change the diagram, its metric or its
+peripheral curves. The theorem also gives an explicit tolerance
+for a small positive balance defect. It does not assert that some
+choice of mark makes every diagram weakly balanced.
+
 ![The cross period has the filled-volume rate. A bound for the whole complementary source is needed beyond the diagrams satisfying balance.](../figures/shared-entropy-frontier.png)
 
 ## The classified global upper problem
 
-The [global sharp majorant](../../notes/research_global_sharp_coefficient_limsup_majorant.md) controls every closed degree and real spectral parameter. Let $q$ record the normalized shared loads, let $H_\delta(q)$ be its local upper rate, and let $\mathcal P_D$ impose the original face demands. Then
+The [global sharp majorant](../../notes/research_global_sharp_coefficient_limsup_majorant.md)
+controls every allowed degree and real spectral parameter.
+Let \(\boldsymbol a\) record the normalized face loads just
+described, and let \(\mathcal P_D\) be their compact feasible
+polytope. Write \(H_\delta(\boldsymbol a_e)\) for the upper rate
+of a coefficient at region \(e\), with spectral variable
+\(\sigma_e=-2\cos(2\pi\delta_e)\). Then
 
 $$
 \sup_{\boldsymbol\delta}|S_N(\boldsymbol\delta)|\le e^{N(M_D+o(1))},\qquad
-M_D=\max_{q\in\mathcal P_D,\;\boldsymbol\delta\in[0,1/2]^R}
-\sum_eH_{\delta_e}(q_e).
+M_D=\max_{\boldsymbol a\in\mathcal P_D,\;\boldsymbol\delta\in[0,1/2]^R}
+\sum_eH_{\delta_e}(\boldsymbol a_e).
 $$
 
 The source path decomposition names the central part the cross sector and the two one-sided parts the left and right sectors. In normalized degrees, cross means that both middle loads are at most $1/2$. A seam is their boundary; a non-cross load overloads one middle face. Exceptional cap corners meet both protected faces.
 
 [Boundary activation](../../notes/research_full_fiber_sharp_boundary_activation.md) and [stationary classification](../../notes/research_full_fiber_sharp_stationary_classification.md) leave only complete cross factors, strict straddling one-sided factors and at most two marked caps at a maximizing configuration. The [seam theorem](../../notes/research_sharp_cross_degree_domination_and_seam_gap.md) proves $H_\delta\le h$ on all cross degrees. If $a_D$ is the smallest geometric middle deficit, its seam gap is $\pi a_D^2/2$. The entire seam-neighborhood filling period is exponentially negligible relative to the nonzero cross period for fixed sufficiently long fillings.
 
-Consequently, a competing non-cross maximum at or above the geometric rate $\Phi_D$ must be macroscopically overloaded. The [odd-cycle obstruction](../../notes/research_stationary_noncross_main_cycle_obstruction.md) prevents a common phase assignment there. It does not give a sufficient numerical loss by itself. The [flat-cap example](../../notes/research_flat_cap_no_local_exponential_angular_gap.md) proves that a uniform local exponential angular gap is false. The unresolved question is an absolute bound at $\Phi_D$, not merely a positive relative loss from a larger envelope. See the [results discussion](results.md#a-global-source-upper-bound-and-the-classification-of-its-maxima) for the complete qualifications.
+Consequently, a competing one-sided maximum at or above the geometric
+rate \(\Phi_D\) must exceed a middle load of \(1/2\) by a fixed
+positive amount. The [odd-cycle obstruction](../../notes/research_stationary_noncross_main_cycle_obstruction.md)
+prevents all local phases from being aligned there: a shared face
+has one phase, so the separate phase choices preferred by different
+crossing regions can be incompatible around a cycle. This does not
+give the size of the resulting loss. The
+[flat-cap example](../../notes/research_flat_cap_no_local_exponential_angular_gap.md)
+also shows why a uniform local exponential phase gap is unavailable.
+The remaining estimate must bring the absolute rate below
+\(\Phi_D\); a relative improvement over a larger envelope is
+insufficient. The [results discussion](results.md#a-global-source-upper-bound-and-the-classification-of-its-maxima)
+retains the exact hypotheses of this classification.
 
 ## Phase estimates, energy bounds and finite covers
 
@@ -599,9 +712,33 @@ The [shared-flow criterion](../../notes/general_endpoint_conditioned_source_ener
 
 The [finite-sector cover theorem](../../notes/general_actual_sector_cover_filling_volume.md) is another sufficient condition. It allows finitely many genuine cross/left/right branches, each with one common weight per face and a strict bound below the geometric rate. It extends the [anchored criterion](../../notes/general_anchored_shared_radius_filling_volume.md). On a fixed seventeen-region marked source, the [separation theorem](../../notes/actual_shared_radius_certificate_separation.md) proves that every anchored choice fails by more than $0.025$, while forty refined branches pass with gap greater than $0.04$. This establishes a strict extension of certificate classes, not a classification of unmarked knots under all possible presentations.
 
-The [undivided-capacity result](../../notes/actual_complete_source_cauchy_capacity_gap.md) explains why a single optimized positive torus can lose exponential accuracy. The [fixed-triangle boundary gap](../../notes/actual_fixed_triangle_boundary_capacity_gap.md) settles certain endpoints, not all fractional mixtures. Universal existence of the finite-sector bounds remains open for the general plat route.
+The [undivided-capacity result](../../notes/actual_complete_source_cauchy_capacity_gap.md) explains why a single optimized positive torus can lose exponential accuracy. The [fixed-triangle boundary gap](../../notes/actual_fixed_triangle_boundary_capacity_gap.md) settles certain endpoints, not all fractional mixtures.
 
-![A refined finite cover succeeds where a coarser certificate fails on the same source.](../figures/sector-certificate-separation.png)
+There is also a limit to refinement by the three genuine labels.
+For a different fixed simple-sphere Morse source with fifty-four
+crossing regions, the [singleton obstruction](../../notes/actual_singleton_sector_envelope_obstruction.md)
+selects left at region \(32\) and central at every other region.
+The shared coefficient of this sector is nonzero at every sufficiently
+large even level, so it cannot be discarded for lack of support.
+Nevertheless its optimized envelope satisfies
+\[
+             \inf_{L>0}G_\sigma(L)>\Phi_D+\frac15 .
+\]
+Here \(L\) is one shared positive weight per ordinary face, the two
+protected variables stay zero, and \(G_\sigma\) is the sum of the
+selected local envelopes minus the original face demands.
+Any branch containing this singleton has at least this cost.
+Thus further subdivision only by central, left and right cannot
+produce the required bound for this source and mark.
+
+The lower bound is for the envelope, not for the signed coefficient.
+It leaves open bounds using its cancellations, a different mark or
+presentation, or a direct estimate after filling. It also does not
+place the example in the narrower original flat-plat class merely
+by realizing it as a Morse diagram. The general source estimate
+therefore remains a separate question.
+
+![Refinement succeeds for the seventeen-region source shown above. The last panel concerns a different fifty-four-region simple-sphere source: one genuine nonzero sector already exceeds the geometric rate in this envelope method. Neither envelope comparison is a lower bound for a signed knot invariant.](../figures/sector-certificate-separation.png)
 
 ## The external-color route and its exact cancellations
 
@@ -713,6 +850,14 @@ and the negative longitude lift. The [source and torsor library](../library.html
 
 ## How the alternatives fit together
 
-For strict Conway trees, the full source estimate and marked filling argument already prove the knot-volume limit. For general certified plats, the complete augmented source, positive endpoint, complex geometric packet and entire cross period are established. Balance, finite sector covers and shared-flow energy inequalities give sufficient conditions for the remaining source. Universal validity of those conditions is the outstanding issue in those routes.
+For strict Conway trees, the full source estimate and marked filling
+argument prove the knot-volume limit. For certified original flat
+plats, the positive endpoint and the full local packet are also
+established. For general simple-sphere Morse diagrams, the complete
+geometry and nonzero central period are established without a balance
+assumption. Strict or weak balance, and the stated finite-sector or
+shared-flow criteria, supply full-invariant conclusions where their
+hypotheses hold. The unrestricted complementary-source estimate is
+still a separate problem.
 
 The pretzel, belt, signed Conway, Fourier, weighted-Cauchy, cube and other constructions remain in the [results chapter](results.md) and [research library](../library.html). Their narrower hypotheses should be kept when using them. In particular, a local norm obstruction, a projected cube calculation or an equality of classical actions is not a counterexample to the volume conjecture, and it is not by itself a proof of the full invariant limit.

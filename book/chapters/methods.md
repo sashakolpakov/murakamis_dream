@@ -10,7 +10,7 @@ Throughout, \(K\) is a fixed knot, \(N\ge2\) is the quantum level, and \(K_N(K)\
 \]
 Both roots occur in the literature. A formula written with \(q_N\) must not be compared with a formula written with \(\zeta_N\) without translating that convention. All diagrams and twist numbers are fixed before \(N\) tends to infinity. The [notation chapter](notation.md) gives the conventions used in the detailed calculations.
 
-The starting references are Kashaev's [definition of the invariant](https://arxiv.org/abs/q-alg/9504020) and [volume proposal](https://arxiv.org/abs/q-alg/9601025). The [Murakami–Murakami paper](https://arxiv.org/abs/math/9905075) relates it to the colored Jones formulation. The finite invariant used here is specified directly; that relation is not a replacement for the source calculations.
+The starting references are Kashaev's [triangulated construction](https://arxiv.org/abs/hep-th/9411147), its [R-matrix formulation](https://arxiv.org/abs/q-alg/9504020), and the [volume proposal](https://arxiv.org/abs/q-alg/9601025). The [Murakami–Murakami paper](https://arxiv.org/abs/math/9905075) relates it to the colored Jones formulation. The finite invariant used here is specified directly; that relation is not a replacement for the source calculations.
 
 ## The estimate and the geometric identification
 
@@ -62,7 +62,7 @@ For the marked spherical construction with \(r\) crossing regions, there are \(r
 \]
 The brackets mean coefficient extraction. The parameter \(\sigma_e\) is the spectral variable of crossing region \(e\). The two zero substitutions encode the original marked cut; they are not optional boundary conditions. The [finite source proof](../../notes/actual_homogeneous_casimir_face_source.md) and its [general Morse version](../../notes/research_matched_sphere_morse_source.md) establish this identity with the scalar and endpoint conventions.
 
-The terms **CROSS**, **LEFT**, and **RIGHT** describe supports of this local polynomial. With \(h=\lfloor d/2\rfloor\), CROSS retains monomials for which both middle-face exponents \(i,t\) are at most \(h\). LEFT and RIGHT retain the two possible one-sided alternatives. Since \(i+t\le d\), both exponents cannot exceed \(h\). Expanding the product of these local choices splits \(S_N\) into its all-CROSS part and its complement. These are sectors of one prescribed calculation, not new knot invariants. The [geometric contribution theorem](../../notes/actual_morse_geometric_contribution.md) estimates the original filling functional applied to the all-CROSS sector; a full-invariant theorem must also control the complementary sectors.
+The terms **central**, **left**, and **right** describe supports of this local polynomial. With \(h=\lfloor d/2\rfloor\), central retains monomials for which both middle-face exponents \(i,t\) are at most \(h\). left and right retain the two possible one-sided alternatives. Since \(i+t\le d\), both exponents cannot exceed \(h\). Expanding the product of these local choices splits \(S_N\) into its all-central part and its complement. These are sectors of one prescribed calculation, not new knot invariants. The [geometric contribution theorem](../../notes/actual_morse_geometric_contribution.md) estimates the original filling functional applied to the all-central sector; a full-invariant theorem must also control the complementary sectors.
 
 For a simple illustration of why the variables must remain shared,
 \[
@@ -92,7 +92,7 @@ If \(H\) vanishes at every root of \(\chi_N\), including the odd-level simple ro
  |\mathcal L_N^n H|\le\frac{N-1}{N}\|H\|_{[-2,2]}.
 \]
 The crossing-power factor disappears from this bound, but the derivatives of \(H\) at double roots can still contribute. For the shared difference
-\(\mathcal D_N=S_{N,\mathrm{full}}-S_{N,\mathrm{CROSS}}\), the degree is at most \(N-1\) in each spectral variable and values vanish on the product of the spectral node sets. This is weaker than vanishing whenever any single variable is a node. Expanding the full functional in all variables cancels exactly its term with no derivatives and yields
+\(\mathcal D_N=S_{N,\mathrm{full}}-S_{N,\mathrm{central}}\), the degree is at most \(N-1\) in each spectral variable and values vanish on the product of the spectral node sets. This is weaker than vanishing whenever any single variable is a node. Expanding the full functional in all variables cancels exactly its term with no derivatives and yields
 \[
  \left|\left(\bigotimes_{e=1}^{r}\mathcal L_N^{n_e}\right)\mathcal D_N\right|
  \le
@@ -141,6 +141,27 @@ For one positively oriented ideal tetrahedron with angle triple \((\alpha,\beta,
  \qquad \alpha+\beta+\gamma=\pi.
 \]
 The total volume is strictly concave on the positive angle domain. This is the concavity used in the Casson–Rivin variational approach; the volume is not described as a convex function to be minimized. Stationarity in all allowed directions supplies the remaining length and gluing conditions. The peripheral equations and the actual face identifications still have to be retained. The [marked positive gluing proof](../../notes/general_marked_positive_gluing_certificate.md) carries out these steps for its stated triangulation certificate.
+
+For one tetrahedron this concavity can be checked directly. Use
+\(\alpha,\beta\) as coordinates and put \(\gamma=\pi-\alpha-\beta\).
+The negative Hessian of its volume is
+\[
+ -\nabla^2V=
+ \begin{pmatrix}
+ \cot\alpha+\cot\gamma&\cot\gamma\\
+ \cot\gamma&\cot\beta+\cot\gamma
+ \end{pmatrix}.
+\]
+Its first diagonal entry is
+\(\sin\beta/(\sin\alpha\sin\gamma)>0\), and its determinant is one,
+using
+\(\cot\alpha\cot\beta+\cot\beta\cot\gamma+\cot\gamma\cot\alpha=1\).
+It is therefore positive definite. This calculation also explains why
+one cannot assume that every individual cotangent is positive: one
+angle may exceed \(\pi/2\), while the constrained Hessian still has
+the required sign. Summing these quadratic forms and restricting to
+the allowed linear variations gives strict concavity for the entire
+positive angle structure.
 
 One can see how the equations enter by differentiating:
 \[
@@ -207,9 +228,29 @@ A second use of Cauchy's name concerns *coefficient estimates*. For a polynomial
 \]
 The inequality follows by retaining one term of the positive evaluation. Minimizing the right-hand side is often called a capacity bound. There must still be one radius for each shared face, with all its incident factors evaluated there. For signed coefficients, the analogous elementary bound uses the polynomial obtained by taking absolute values of the coefficients, not \(|P(\boldsymbol\rho)|\). For instance \(P(z)=1-z\) vanishes at \(z=1\) although its coefficient of \(z\) has modulus one. The [complete-source capacity obstruction](../../notes/actual_complete_source_cauchy_capacity_gap.md) shows that even optimizing all positive shared radii can overestimate the geometric rate in its stated source class. That obstruction concerns this comparison method, not the knot invariant itself.
 
+For a worked positive example, take \(P(z)=(1+z)^m\) and a target
+\(0<k<m\). The bound is
+\[
+ {m\choose k}\le\frac{(1+\rho)^m}{\rho^k}.
+\]
+Differentiation with respect to \(\log\rho\) gives
+\(m\rho/(1+\rho)-k\). Its zero is
+\(\rho=k/(m-k)\), so the optimized bound is
+\[
+ {m\choose k}\le
+       \left(\frac{m}{k}\right)^k
+       \left(\frac{m}{m-k}\right)^{m-k}.
+\]
+At \(m=2,k=1\), it gives \(2\le4\), not an exact evaluation.
+The stationarity equation has balanced the expected degree with
+the target degree. In the face source there is one such equation
+for each ordinary face, coupled through all the factors containing
+that face. This is why a local optimum at every box is not yet a
+shared coefficient estimate.
+
 ## Refining the coefficient estimate by genuine sectors
 
-A single positive comparison can be too coarse even when a more detailed finite comparison succeeds. The [sector-cover theorem](../../notes/general_actual_sector_cover_filling_volume.md) makes this precise for its original certified marked plats. It uses the actual CROSS, LEFT and RIGHT polynomials, not arbitrary pieces of an upper-bound formula.
+A single positive comparison can be too coarse even when a more detailed finite comparison succeeds. The [sector-cover theorem for certified marked plats](../../notes/general_actual_sector_cover_filling_volume.md) and its [general Morse formulation](../../notes/general_morse_sector_cover_volume.md) make this precise for their stated original sources. They use the actual central, left and right polynomials, not arbitrary pieces of an upper-bound formula.
 
 For nonnegative weights \(w_1,w_2,w_3\), not all zero, define the [source-normalized triangle potential](../../notes/actual_triangle_entropy_algebraic_balance.md) by
 \[
@@ -233,7 +274,7 @@ The local bounds on the entire real spectral interval have rates
 \]
 If the overloaded middle coordinate is protected, its one-sided polynomial is exactly zero and that label is omitted. A protected zero never becomes a small positive weight. These are bounds uniform in the phases on the face coefficient torus; they do not assert coefficientwise positivity of the one-sided polynomial.
 
-A branch \(B\) allows a specified subset \(S_{B,e}\) of genuine labels at each crossing region. For example, one branch can require LEFT at region 1, allow CROSS or RIGHT at region 2, and allow all labels elsewhere. It has the shared cost
+A branch \(B\) allows a specified subset \(S_{B,e}\) of genuine labels at each crossing region. For example, one branch can require left at region 1, allow central or right at region 2, and allow all labels elsewhere. It has the shared cost
 \[
  G_B(\boldsymbol L)
    =\sum_e\max_{a\in S_{B,e}}A_{e,a}(\boldsymbol L)
@@ -241,11 +282,138 @@ A branch \(B\) allows a specified subset \(S_{B,e}\) of genuine labels at each c
 \]
 The target \(d=N-1\) accounts for the last sum at the leading exponential scale. Every face still has just one weight within this branch. Different branches may use different full vectors of weights.
 
-Choose finitely many branches covering every non-CROSS label string. If each has one fixed positive shared vector with \(G_B<\Phi_D\), where \(2\pi\Phi_D\) is the complete augmented volume, their finitely many strict gaps give a common bound on the full complementary polynomial. The original filling estimate transfers that bound to the complementary scalar. For independently sufficiently long fixed twists, the nonzero all-CROSS contribution has a rate closer to \(\Phi_D\) than this remainder does; multiplying that rate by \(2\pi\) gives the actual filled volume. When the original endpoint pairing gives a knot, this comparison proves its full volume limit under the certificate hypotheses.
+More generally a branch can be any specified finite set \(B\) of
+genuine label strings. Its cost is
+\[
+ G_B(\boldsymbol L)
+    =\max_{\boldsymbol s\in B}\sum_e A_{e,s_e}(\boldsymbol L)
+                   -\sum_{f\ \mathrm{ordinary}}\log L_f.
+\]
+The preceding sum of local maxima is the special case where
+all combinations of the allowed local labels belong to \(B\).
+For example, a two-region branch containing only
+\((L,C)\) and \((C,R)\) has the maximum of
+\(A_{1,L}+A_{2,C}\) and \(A_{1,C}+A_{2,R}\).
+Taking separate local maxima would also allow \((L,R)\),
+which is not in that branch and can have a larger bound.
+Retaining such correlations refines an estimate without changing
+the original source labels.
 
-An **anchored** test requires one specified LEFT or RIGHT region and allows all labels at every other region. Refining that test splits its allowed strings into smaller branches. The [certificate-separation example](../../notes/actual_shared_radius_certificate_separation.md) proves that all positive weights fail one anchored test on a fixed original source, while forty refined branches pass. It refutes universal applicability of the anchored test, not the volume conjecture or the possibility of a finer certificate. Existence of a successful finite cover for every eligible plat remains open.
+Choose finitely many branches covering every noncentral label string. If each has one fixed positive shared vector with \(G_B<\Phi_D\), where \(2\pi\Phi_D\) is the complete augmented volume, their finitely many strict gaps give a common bound on the full complementary polynomial. The original filling estimate transfers that bound to the complementary scalar. For independently sufficiently long fixed twists, the nonzero all-central contribution has a rate closer to \(\Phi_D\) than this remainder does; multiplying that rate by \(2\pi\) gives the actual filled volume. When the original endpoint pairing gives a knot, this comparison proves its full volume limit under the certificate hypotheses.
 
-This is a finite cover of a set of sector choices. It is unrelated to a finite covering space of a knot complement. The theorem also does not split the two scalar expressions inside \(A_L\) into separate physical sectors: both expressions bound the same LEFT polynomial.
+An **anchored** test requires one specified left or right region and allows all labels at every other region. Refining that test splits its allowed strings into smaller branches. The [certificate-separation example](../../notes/actual_shared_radius_certificate_separation.md) proves that all positive weights fail one anchored test on a fixed original source, while forty refined branches pass. It refutes universal applicability of the anchored test, not the volume conjecture or the possibility of a finer certificate.
+
+Existence of a successful finite cover is a separate condition on
+the chosen envelopes and diagram. Refinement does not prove it:
+even a branch containing a single genuine string still requires
+one shared weight vector giving the stated strict inequality.
+
+There is an exact obstruction at this last level. The
+[54-region example](../../notes/actual_singleton_sector_envelope_obstruction.md)
+has one left region and central at all other regions. For this fixed
+string \(\boldsymbol s\), every positive shared vector satisfies
+\[
+          G_{\{\boldsymbol s\}}(\boldsymbol L)>\Phi_D+\frac15.
+\]
+The proof assigns rational angle loads to the original triangles
+so that their face totals match every original coefficient target.
+The logarithmic weights then cancel, leaving an entropy lower
+bound valid for every shared vector. A separate rational trial
+vector bounds the complete action from above. The shared sector
+is also nonzero at every sufficiently large even level, so it
+cannot simply be discarded as an unsupported label choice.
+Any branch containing this string has at least its envelope
+cost. Subdivision by genuine labels therefore cannot make these
+particular envelopes a universal criterion. This conclusion gives
+no lower bound for the signed coefficient or filled invariant;
+cancellation and stronger estimates remain possible.
+
+This is a finite cover of a set of sector choices. It is unrelated to a finite covering space of a knot complement. The theorem also does not split the two scalar expressions inside \(A_L\) into separate physical sectors: both expressions bound the same left polynomial.
+
+### Why weak balance can still give a strict gap
+
+There is a sufficient condition that constructs the shared weights
+directly. Let \(w_f^*>0\) be the ordinary curvatures of the complete
+marked packing, with the protected weights zero. At every region
+put \(X_e=Q(x,b,y)+Q(x,c,y)\), evaluated at these weights.
+The [weak-balance theorem](../../notes/general_weak_balance_volume.md)
+assumes
+\[
+ X_e\ge\log w_b^*\quad(w_b^*>0),\qquad
+ X_e\ge\log w_c^*\quad(w_c^*>0).
+\]
+Equality is allowed. These inequalities are a geometric hypothesis,
+not a consequence of the definition of a matched sphere.
+
+The proof changes only the coefficient-estimate weights:
+\[
+                    w_f(t)=(w_f^*)^{1-t},\qquad 0<t<1.
+\]
+The protected weights stay zero. This new vector need not be a
+circle packing. It is a permitted torus of positive moduli for
+the same original coefficient.
+
+Here is why a strict margin appears. Put
+\(\xi_f=\log w_f^*\), and let \(Q_\triangle(\boldsymbol\xi)\) denote the
+triangle potential evaluated at the exponentials of its ordinary
+coordinates, with its protected coordinates zero. The complete
+shared action is
+\[
+ \mathcal P(\boldsymbol\xi)
+     =\sum_{\text{original triangles }\triangle}Q_\triangle(\boldsymbol\xi)
+                         -\sum_{f\ \mathrm{ordinary}}\xi_f,
+ \qquad
+ \nabla\mathcal P(\boldsymbol\xi)=0,\qquad
+ \mathcal P(\boldsymbol\xi)=\Phi_D.
+\]
+For the maximizing normalized angles \(\alpha_{\triangle,f}\), its
+triangle entropy is
+\[
+ E_\triangle=Q_\triangle-\sum_f\alpha_{\triangle,f}\xi_f
+                         =\sum_f f(\alpha_{\triangle,f}).
+\]
+It is positive when the triangle has at least two ordinary
+corners. Every surviving left or right label has such a triangle
+containing its overloaded middle. Let \(h_*>0\) be the minimum
+of those entropies. If no one-sided label survives the protected
+specialization, the complementary polynomial is zero and this
+minimum is unnecessary.
+
+The exact triangle Hessian and the complete stationary equations
+give a bound on the cost of changing every shared weight:
+\[
+ \mathcal P((1-t)\boldsymbol\xi)-\Phi_D
+       \le \frac{t^2}{2}\mathcal E,\qquad
+ \mathcal E=
+ \frac1{2\pi}\sum_{\substack{\{f,g\}\text{ a white edge}\\
+                              f,g\ \mathrm{ordinary}}}
+                           (\xi_f-\xi_g)^2 .
+\]
+Meanwhile each one-sided region gains at least \(t h_*\)
+relative to its central bound. This is proved for both expressions
+inside its maximum. Thus every noncentral string has a bound at most
+\[
+                 \Phi_D-t h_*+\frac{t^2}{2}\mathcal E.
+\]
+For this fixed diagram, the linear gain exceeds the quadratic
+cost when \(t\) is sufficiently small. The entropy and Hessian
+calculation, rather than a claim of strictness at the original
+packing, deals with the equality cases.
+
+The same proof allows a measured failure of weak balance. If
+\(\epsilon_*\) is the maximum positive part of
+\(\log w_z^*-X_e\) over surviving overloaded middles \(z\), a
+sufficient inequality is
+\[
+ t h_*-(1-t)\epsilon_*-\frac{t^2}{2}\mathcal E>0.
+\]
+These criteria yield the complementary-source gap. The finite
+filling norm and the nonzero Morse geometric contribution then
+give the full knot-volume theorem for the stated original
+pairing and sufficiently long fixed signed fillings. A large
+value of \(\mathcal E\), or failure of this inequality, proves
+no failure of the invariant: it only leaves this particular
+shared-weight test inconclusive.
 
 ## What Fourier transformation preserves
 
@@ -277,6 +445,17 @@ In the actual color transform, put \(c_0=K_N(K)\) and \(c_j=C_j(q_N)\) for \(1\l
        \qquad 1\le R_N^{\mathrm{ord}}\le C N^B,
 \]
 with constants \(C,B\) depending on the fixed presentation. The superscript distinguishes this ordinary-color remainder from the earlier geometric remainder \(R_N\). The identification and polynomial bound are additional source statements; they are not part of abstract Parseval. If \(\log E_N/N\to\lambda>0\), then the Kashaev volume rate is \(\pi\lambda\).
+
+The last implication uses subtraction of the known remainder:
+\[
+ \frac{|K_N(K)|^2}{E_N}
+       =1-\frac{R_N^{\mathrm{ord}}}{E_N}
+       =1-o(1).
+\]
+An exponential positive energy dominates a polynomial remainder.
+Taking the logarithm then halves the energy rate. If the remainder
+had an uncontrolled exponential size instead, Parseval alone would
+not justify this step.
 
 In particular \(C_1=1\), explaining the lower bound on \(R_N^{\mathrm{ord}}\). The ordinary-color bound uses the actual reduced root evaluation and its finite unitary realization, including the normalization cost.
 
@@ -367,6 +546,18 @@ specifies a possible longitude as the meridian varies. It does not select the qu
 
 The classical reference is [Cooper, Culler, Gillet, Long, and Shalen, *Plane curves associated to character varieties of 3-manifolds*](https://homepages.math.uic.edu/~culler/papers/PlaneCurves/curves.pdf). The peripheral basis and the choice between eigenvalues and squared eigenvalues are part of the definition.
 
+Concretely, a representation assigns a determinant-one complex
+\(2\times2\) matrix to each knot-group element and preserves
+multiplication. Conjugating all matrices changes their frame but
+not the representation's character, the function taking a group
+element to the trace of its matrix. The meridian and longitude
+commute, so their matrices have a common eigenline. The selected
+eigenvalues on that line give \(M,L\). Eliminating the internal
+matrix coordinates gives algebraic equations in these two
+variables. The geometric branch is the one containing the
+holonomy of the actual complete hyperbolic knot exterior, with
+its chosen lift and peripheral marking.
+
 A quantum recurrence acts on a specified sequence or function. For example, on a color sequence \(f_j\), one may set
 \[
  (\widehat M f)_j=q^j f_j,\qquad
@@ -385,6 +576,23 @@ There is also a distinction between a fixed-level equation and an equation for t
 
 This is the meaning of a **pointed recurrence** in the guide: the recurrence is accompanied by the data selecting its solution. The [pointed quantum A theorem](../../notes/actual_conway_pointed_quantum_a_volume.md) retains those data, including derivatives at singular steps, for its covered family. Expressing an already proved limit through that recurrence is different from proving that an arbitrary quantization of the classical \(A\)-polynomial has the same limit.
 
+Even a nonvanishing scalar change must be recorded. If
+\(F(M)=G(M)f(M)\), then \(PF=0\) becomes
+\[
+ (G^{-1}PG)f=0,\qquad
+ G^{-1}PG=\sum_j a_j(q,M)
+                  \frac{G(q^jM)}{G(M)}T^j.
+\]
+This is the precise meaning of a scalar gauge change for this
+operator. At a root, a level-dependent gauge can change a sign
+that survives in the classical equation. For example,
+\(G_N(M)=M^N\) satisfies \(G_N(q_NM)=-G_N(M)\).
+The constant function satisfies \(Tf=f\), whereas
+\(F_N(M)=M^N\) satisfies \(TF_N=-F_N\). This elementary example
+is not a knot invariant; it shows why an omitted scalar can
+interchange \(L-1\) and \(L+1\). The reduced/full-state conversion
+in the actual proof retains its meridian factors and shift signs.
+
 Prior recurrence results include [Garoufalidis and Lê on colored-Jones q-holonomicity](https://arxiv.org/abs/math/0309214) and [Brown, Dimofte, Garoufalidis, and Geer on the ADO family](https://arxiv.org/abs/2005.08176). The latter's Theorem 4.4 retains an explicit framing and variable substitution. [Wilf and Zeilberger's multisum theory](https://sites.math.rutgers.edu/~zeilberg/mamarim/mamarimhtml/multiwz.html) provides the general creative-telescoping background. The local finite-source proof retains the actual boundary and root-normal data. These references do not supply a general identification of the classical geometric component. The proposed characteristic/deformation comparison is formulated in [Garoufalidis's 2004 paper](https://arxiv.org/abs/math/0306230).
 
 Here *q-holonomic* describes a finiteness property of a module of q-difference equations; in the present one-variable application it supplies a nonzero finite-order recurrence. Creative telescoping eliminates internal summation indices. Its basic mechanism is an identity
@@ -398,6 +606,37 @@ The external results have different roles: Garoufalidis–Lê prove q-holonomici
 The [geometric-characteristic theorem](../../notes/actual_strict_tree_geometric_characteristic.md) proves a factor statement under its full asymptotic hypotheses: the selected geometric irreducible factor divides the first nonzero classical symbol of every genuine all-level annihilator. It does not identify every factor, multiplicity, or the complete annihilator ideal. The [moving-meridian argument](../../notes/actual_main_meridian_filled_volume.md) supplies the actual state on its specified shrinking meridian neighborhood. The domain and derivative control are essential when substituting an asymptotic expansion into a recurrence.
 
 To define that symbol, clear the operator's rational denominators and remove the common power of \(q-1\), then take the first nonzero coefficient as \(q\to1\); at this point the shift and multiplication variables commute. The exact changes between reduced and full states must be carried through before making this comparison. The [filtered expansion](../../notes/actual_main_meridian_filtered_characteristic.md) and its [directed-criterion extension](../../notes/actual_all_circle_directed_all_orders.md) provide more than a cusp tangent: they control every finite expansion order on the shifted parameter regions required by the operator, with a polynomial degree bound selecting the whole longitude germ. The factor is a selected complex irreducible component. Over rational coefficients, the theorem uses the rational polynomials vanishing on that component; their irreducible generator may split into several components over \(\mathbb C\). This conclusion is weaker than equality with the full classical A-polynomial or with a quantum operator ideal.
+
+Here is the role of that degree bound. Write \(M=q_N^s\) and
+\[
+ H_N(s)=\frac{\sin\pi s}{N\sin(\pi s/N)},\qquad H_N(0)=1.
+\]
+For the covered reduced ADO state \(F_N\), with \(F_N(1)=K_N(K)\),
+the normalized logarithm has the expansion
+\[
+ \log\frac{F_N(q_N^s)}{K_N(K)H_N(s)}
+       \sim\sum_{r\ge1}N^{-r}p_r(s),
+                 \qquad \deg p_r\le r+1 .
+\]
+“Every order” means that truncation at any prescribed finite order
+has a proved uniform remainder on the stated compact sets; it does
+not claim convergence of the infinite series. The coefficients of
+\(s^{r+1}\) recover the successive Taylor coefficients of one
+critical action. Any stated parity dependence of lower coefficients
+is retained; the selected leading action is common. The exact recurrence needs the same expansion
+at \(s,s+1,\ldots,s+\operatorname{ord}P\), which is why the
+translated complex parameter regions are part of the theorem.
+Only after this compatibility step can the full selected
+longitude germ be substituted into the classical symbol.
+
+A finite cusp jet cannot replace this argument. For fixed
+\(a,c\in\mathbb C\), the distinct algebraic curves
+\(L=-1+a(M-1)\) and
+\(L=-1+a(M-1)+c(M-1)^{k+1}\), with \(k\ge1\) and \(c\ne0\),
+agree through order \(k\) at \(M=1\). Equality of a prescribed
+finite collection of derivatives therefore does not identify
+the whole curve. These are illustrative curves, not asserted
+knot A-polynomials.
 
 ## Torsors, logarithms, and the absolute volume
 
@@ -419,6 +658,21 @@ under its continuous single-valued interpretation. The dilogarithm initially sat
 The volume is positive for the positive orientation \(\operatorname{Im}z>0\). [Neumann's extended Bloch-group paper](https://arxiv.org/abs/math/0307092) explains how logarithmic lifts enter the complex regulator. The ordinary Bloch–Wigner volume and that lifted complex quantity must be distinguished.
 
 Algebraic gluing equations can make the selected shapes algebraic. That does not make their dilogarithm values algebraic numbers. Nor does algebraicity select an integration cycle for a quantum sum. To identify an action with volume, the proofs retain the actual shapes and based peripheral words, compare their differentials, and fix the additive constant at a known complete structure.
+
+A **period** is the integral of a specified differential form
+over a specified cycle. A relative cycle may have boundary in
+a prescribed boundary set, so its endpoints are part of the
+data. The elementary identity
+\(\int_a^b df=f(b)-f(a)\) shows why an exact differential need
+not integrate to zero on such a cycle. Likewise, deforming a
+contour across a pole can change the value by a residue.
+The [rational-period construction](../../notes/rational_period_pushforward.md)
+retains the original contour, translates it with its orientation,
+and uses common cutoffs around the new poles before taking the
+alternating sum. Specifying its algebraic integrand alone would
+leave out those data. Choosing a logarithm or a square-root
+sheet solves another part of the marking problem; it does not
+by itself select this relative cycle or bound its period.
 
 For a filled auxiliary cusp, let \(U,V\) be the logarithms of the similarity multipliers of its primitive meridian and longitude. Equivalently, these are twice the selected eigenvalue logarithms, with the eigenvalues divided by their complete central signs before taking logarithms. In the convention used by the general Morse theorem, filling the primitive slope \(\mu+p\lambda\) imposes
 \[
@@ -574,7 +828,7 @@ The following references identify the origin and established scope of the method
 
 The citations beside the methods identify the relevant statement and its role. For a first reading, the following sequence is useful:
 
-1. **Invariant and volume question:** Kashaev's 1995 definition and 1997 volume paper, followed by Murakami–Murakami for the colored Jones relation.
+1. **Invariant and volume question:** Kashaev's triangulated and R-matrix constructions, followed by the volume paper and Murakami–Murakami for the colored Jones relation.
 2. **Geometric optimization:** Rivin's variational paper and Futer–Guéritaud for angle structures, allowed tangent directions, and the precise critical-point criterion.
 3. **Norm estimates:** Terras for finite Fourier analysis; Marshall–Olkin–Arnold and Horn for majorization and product singular values. Weighted Cauchy and finite Parseval are proved explicitly above.
 4. **Cross-level asymptotics:** Taylor's Tauberian notes. Compare the cumulative conclusion with the additional source-transport condition in the local criterion.

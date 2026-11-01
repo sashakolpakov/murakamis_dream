@@ -6,6 +6,14 @@ must prove. The [results chapter](results.md) then states the families
 covered by the arguments. The [methods chapter](methods.md) develops the
 estimates and the alternative approaches.
 
+The invariant originates in Kashaev’s
+[1994 construction using cyclic quantum dilogarithms](https://arxiv.org/abs/hep-th/9411147).
+His [1995 paper](https://arxiv.org/abs/q-alg/9504020) gives the crossing-matrix
+formulation, and his [volume paper](https://arxiv.org/abs/q-alg/9601025)
+proposes the exponential comparison with the hyperbolic complement.
+We use the finite crossing formulation and keep its normalization explicit.
+The later relation to the colored Jones polynomial is a separate identification.
+
 ## Knots, complements, and tangles
 
 **Definition (knot and exterior).** A knot \(K\) is a smoothly embedded

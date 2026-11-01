@@ -30,7 +30,7 @@ and records restrictions such as odd levels or a specified link family.
 
 ## Planar constructions with arbitrarily many tangles
 
-The broadest construction begins with a finite simple triangulation of
+One general construction begins with a finite simple triangulation of
 the sphere and a pairing of its triangles across selected edges. Every
 triangle belongs to exactly one pair. The paired triangles specify
 crossing-circle tangles and the connections between their strands.
@@ -65,6 +65,22 @@ terms exponentially smaller. The geometric contribution is nonzero.
 Its peripheral equations complete the auxiliary cusps by smooth solid
 tori while leaving the main knot cusp complete, so the limiting action
 is the volume of the actual knot complement.
+
+## When the original diagram already satisfies the packing condition
+
+A further theorem requires no added tangles. If the complete circle
+packing satisfies the explicit **weak balance inequalities**, independently
+sufficiently long signed twists at the existing crossing circles give
+the full volume limit, provided the original strand connections form one
+knot with no extra closed main component. Equalities in the packing
+condition are allowed.
+The proof perturbs the radii used in the coefficient estimate: a linear
+entropy gain dominates the quadratic increase of the stationary action.
+
+This is a condition on the unchanged diagram, not a claim about every
+circle packing. [The statement and proof explanation](https://sashakolpakov.github.io/murakamis_dream/guide/results.html#an-unchanged-diagram-satisfying-weak-balance)
+define all its quantities. Appendix P gives the proof and a quantified
+extension allowing small failures of the local inequalities.
 
 ## Ordered tangle trees and explicit bounds
 
@@ -112,7 +128,7 @@ The [manuscript](manuscript/README.md) is the continuous proof account.
 Chapter 1 separates full volume theorems from completed partial results:
 a finite filling estimate and a theorem about one geometric contribution
 do not assert the volume limit for an arbitrary original invariant.
-New generalizations are included only when their arguments are complete.
+Each full-invariant theorem names the estimate that bounds its remaining terms. A completed implication retains its hypothesis; it is not counted as a proof that the hypothesis holds for every diagram.
 The open remainder estimate for unchanged general diagrams is not a
 premise of the restricted-family proofs.
 

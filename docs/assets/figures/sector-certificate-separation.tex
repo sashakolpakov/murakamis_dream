@@ -10,34 +10,37 @@
 \begin{tikzpicture}[font=\sffamily,text=ink,>=Stealth,
  panel/.style={draw=blue,fill=blue!4,rounded corners,align=center,inner sep=11pt,text width=12.6cm},
  caution/.style={panel,draw=amber,fill=amber!4},
- pending/.style={caution,dashed}]
+ limitation/.style={caution}]
 \node[font=\large\bfseries] at (0,1.5) {Which source bounds retain the volume?};
 \node[panel] (source) at (0,0) {
 \textbf{One original marked source, seventeen regions}\\[6pt]
 Width $3$; word $O(EO)^3$, with $O=(1,3)$, $E=(0,2,4)$.\\
 All faces, targets and the two protected zeros stay shared.};
 \node[caution,below=10mm of source] (anchor) {
-\textbf{One RIGHT anchor; all other regions bounded in full}\\[6pt]
+\textbf{One right anchor; all other regions bounded in full}\\[6pt]
 $\displaystyle \inf_L C_{12,R}(L)>\Phi_D+0.025$\\[6pt]
 An exact feasible flow proves that no radius choice can pass.};
 \draw[->,thick,blue] (source)--(anchor);
 \node[panel,below=10mm of anchor] (split) {
 \textbf{Refine genuine source labels at four regions}\\[6pt]
-At $B=\{2,4,7,12\}$ retain RIGHT versus CROSS/LEFT.\\
-$15$ nonempty RIGHT subsets $+\ 25$ remaining anchors.\\[6pt]
-These forty branches cover every non-CROSS source string.};
+At $J=\{2,4,7,12\}$ retain right versus central/left.\\
+$15$ nonempty right subsets $+\ 25$ remaining anchors.\\[6pt]
+These forty branches cover every noncentral source string.};
 \draw[->,thick,blue] (anchor)--(split);
 \node[panel,below=10mm of split] (pass) {
 \textbf{One shared rational radius vector per branch}\\[6pt]
 $\displaystyle \Phi_D>19.90751095350,\quad
 \max_B G_B(L^B)<19.85303956990$\\[6pt]
-Certified gap $>0.04$; exact data and explicit interval errors.\\
-The general cover theorem gives the actual filled-volume limit.};
+Gap $>0.04$ from rational data and interval bounds.\\
+With a knot pairing, long fixed twists give the volume limit.};
 \draw[->,thick,blue] (split)--(pass);
-\node[pending,below=10mm of pass] (open) {
-\textbf{General target: every eligible original plat}\\[6pt]
-Prove a strict optimized bound for each genuine non-CROSS sector.\\
-Fractional one-sided flows still need a global volume inequality.};
-\draw[->,thick,amber,dashed] (pass)--(open);
+\node[limitation,below=14mm of pass] (limit) {
+\textbf{A different source: fifty-four crossing regions}\\[6pt]
+left at region $32$, central at the other $53$ regions.\\
+This genuine sector is nonzero at large even levels.\\[6pt]
+$\displaystyle \inf_L G_\sigma(L)>\Phi_D+\frac15$\\[6pt]
+Refining these three labels cannot lower its envelope.\\
+The signed-source estimate remains a separate question.};
+\draw[amber,dashed] ([yshift=-7mm]pass.south west)--([yshift=-7mm]pass.south east);
 \end{tikzpicture}
 \end{document}

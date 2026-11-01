@@ -44,16 +44,39 @@ An **ideal vertex** lies at the boundary at infinity of hyperbolic space. A smal
 
 An **angle structure** assigns positive dihedral angles to the proposed cells while satisfying their internal angle relations and the sum around every glued edge. Its volume is the sum of the cell volumes. The angles still retain the actual incidence equations: two copies of one manifold edge are not independent variables. At an interior maximum, variation in every allowed direction gives the shape-matching equations. The proof must then show that these equations produce the original face pairings and complete ends.
 
+A **developing map** places the lifted cells in hyperbolic space.
+Following a based closed path compares its initial and final
+placements by an isometry. These isometries form the **holonomy
+representation** of the fundamental group. In matrix formulas an
+orientation-preserving isometry is represented by a determinant-one
+complex \(2\times2\) matrix, up to sign. A **peripheral eigenflag**
+is the common invariant line selected for the commuting meridian
+and longitude matrices at a torus end. The face maps must transport
+that line together with the based paths.
+
 A **marked** construction retains the chosen peripheral curves and their basepaths. This matters after filling. The equation that closes a meridian disk depends on a primitive pair of curves on the torus, not just on an unlabeled complex cusp shape. Replacing a primitive longitude by twice that curve would change the filling problem.
+
+The geometric identification has three parts. The cut identifies the
+manifold and its boundary curves. The positive shapes and their return
+maps identify a metric on that manifold. Finally, comparison with the
+finite source fixes the numerical factor and additive constant in the
+action. None of these statements says how much of an oscillating
+quantum sum comes from that metric. That last question requires the
+nonzero leading term and remainder estimates stated in the analytic
+theorems.
 
 ## The circle packing for a general planar core
 
 A **simple white triangulation** is a triangulation of the projection
 sphere with no loop or repeated edge. Its vertices label white faces of
-the cut diagram. A perfect matching of the cubic dual pairs its triangles
-into crossing disks; the cyclic orders record the four surrounding
-strand ends. This matching and the chosen half twists determine which
-main strands join, so the knot condition is a separate component test.
+the cut diagram. The **dual graph** has one vertex for each triangle
+and one edge for each shared triangle side. It is cubic because each
+triangle has three sides. A **perfect matching** chooses one dual edge
+at every dual vertex. Its pairs of triangles become the crossing disks.
+The four-sided boundary of a pair records the surrounding strand ends
+in cyclic order. This matching and the chosen half twists determine
+which main strands join, so the knot condition is a separate component
+test.
 
 In these packing formulas, a face label also denotes its **curvature**:
 a finite circle of curvature \(a>0\) has radius \(1/a\), and a
@@ -70,9 +93,12 @@ The [planar decoration theorem](../../notes/actual_balanced_terminal_fan_volume.
 constructs the geometry of every such labeled simple sphere. Remove
 one triangle and prescribe three mutually tangent boundary circles.
 Maximize the concave angle function subject to angle sum \(\pi\) in
-each triangle and \(2\pi\) at each interior vertex. The proof establishes
-strict feasibility by a finite counting argument, so the maximum has
-positive angles. Its multipliers give positive circle radii.
+each triangle and \(2\pi\) at each interior vertex. A finite counting
+argument first supplies a strictly positive feasible assignment.
+A separate boundary variation compares a putative flat maximizer with
+that assignment: the entropy gained at its zero angles excludes a
+boundary maximum. Strict concavity then gives one interior maximum,
+whose multipliers determine positive circle radii.
 
 Euclidean triangles with side lengths equal to sums of adjacent radii
 then develop into one embedded disk. Their angle sums remove interior
@@ -80,6 +106,17 @@ holonomy, and the convex triangular boundary gives degree one. This
 proves that the circles have precisely the prescribed contacts.
 The white-circle planes and the circles through the three contact points
 of each triangle bound the required convex ideal right-angled polyhedron.
+
+The angle argument serves a specific purpose. Positive numbers satisfying
+the linear angle sums are feasible data for a variational problem;
+they do not yet give circles with the required contacts. At its interior
+maximum, differentiation supplies the radii, and the development proves
+that distant disks do not overlap. This separates existence of an angle
+assignment from existence of the prescribed packing. The general
+volume-variation method is developed in
+[Rivin's work on simplicial surfaces](https://annals.math.princeton.edu/1994/139-3/p02);
+the linked simple-sphere proof supplies the boundary counting and
+embedding argument for these particular face labels.
 
 A terminal insertion adds the circle in one triangular gap. All old
 circles remain fixed. Its three new supporting disks lie inside the old
@@ -103,6 +140,18 @@ that slope. The main meridian and longitude remain parabolic and the
 knot cusp is complete. Thus the final volume is that of the knot
 complement; it is generally smaller than the augmented volume.
 
+The logarithmic equation is stronger than its exponential. An equation
+\(e^{U_e+p_eV_e}=1\) alone would allow an unnoticed integer multiple of
+\(2\pi i\), or a nontrivial parabolic matrix with eigenvalue one.
+The [Morse completion proof](../../notes/actual_morse_geometric_contribution.md#7-completing-the-specified-hyperbolic-filling)
+follows the actual developed generator paths. At the selected
+long-filling point the auxiliary longitude has a multiplier of
+nonunit modulus. Its two fixed points give a logarithmic coordinate
+on the cusp cover; the original periods in that coordinate make the
+filling slope one full angular turn with zero axial displacement.
+Adding the core then gives a smooth solid torus. The same boundary
+triangulation compares the regulator with the volume of this metric.
+
 
 ## Filling conditions checked at individual circles
 
@@ -120,8 +169,20 @@ period \(-2\pi i c\), for \(0\le c\le1\). At \(c=1\) it makes
 exactly one full turn, and the endpoint is the smooth metric on
 the original knot complement. The main knot cusp remains complete.
 
-The volume decreases along this path by the Schläfli formula.
-Its constant is fixed at the complete augmented exterior, which
+Write \(\alpha_v\) for the cone angle around an added core and
+\(\ell_v\) for its geodesic length. Along the positive deformation,
+the Schläfli formula is
+\[
+                 d\operatorname{Vol}
+                    =-\frac12\sum_v\ell_v\,d\alpha_v .
+\]
+Thus increasing the cone angles decreases the volume. In the path
+above, \(\alpha_v=2\pi c\). This is the cone-manifold volume formula
+used, for example, by
+[Hodgson and Kerckhoff, equation (23)](https://arxiv.org/pdf/math/0204345).
+Here existence of the entire path comes from the explicit cell
+construction and its stated bound. Its volume constant is fixed
+at the complete augmented exterior, which
 has two regular ideal octahedra per tree edge. This proves that
 the continued action is the actual hyperbolic volume. To obtain
 a quantum volume equality one also needs the finite-sum estimate;
@@ -308,6 +369,9 @@ The multiplication prism has volume \(\pi m(x,y,z)\).
 These are the local terms of the original coefficient asymptotic.
 The [cell construction](../../notes/actual_newton_ideal_prism_and_associativity.md)
 gives the ordered ideal vertices and verifies these volume formulas.
+These cells occur in a single projection half. The complete exterior
+uses its two specified copies, which accounts for the factor
+\(2\pi\) in the normalized complete action \(\Phi_D\).
 
 ![An ideal hyperbolic leaf pyramid and multiplication prism. Each blue quadrilateral has the displayed ordered ideal vertices; the two shaded triangles of the leaf retain the crossing-disk pairing. The formulas above give their volumes.](../figures/conway-cells.svg)
 
@@ -354,7 +418,19 @@ their orientations; the gluing relations remove its boundary.
 [Neumann's extended Bloch-group construction](https://arxiv.org/abs/math/0307092)
 also records logarithmic choices needed for the complex
 Cheeger–Chern–Simons invariant. Here the real volume regulator is
-calibrated on the specified geometric fundamental chain. The [Bloch regulator calculation](../../notes/actual_positive_source_bloch_regulator.md) proves that the conjugate-antisymmetrized shape sum is a rational Bloch class with regulator equal to the source maximum. For the retained cylindrical factors, the new actual cell realization supplies its geometric interpretation. The class comparison takes place after passing to a common finite conjugation-stable number field containing the source shapes and all glued ideal vertex coordinates. The two copies have opposite mirror orientations, producing precisely the shape symbols $[z]-[\overline z]$ of the geometric fundamental chain; no identification with the geometric trace field is claimed.
+calibrated on the specified geometric fundamental chain. A
+**fundamental chain** is an oriented sum of tetrahedra representing
+the manifold once; internal faces cancel under the prescribed gluings.
+It records more than an equality between numerical dilogarithm sums.
+The [Bloch regulator calculation](../../notes/actual_positive_source_bloch_regulator.md)
+proves that the conjugate-antisymmetrized shape sum is a rational
+Bloch class with regulator equal to the source maximum. For the
+retained cylindrical factors, the cell realization identifies that
+class with the chain of the complement. The comparison is made in
+a common finite number field containing the source shapes, their
+conjugates, and all glued ideal vertices. The mirror orientations
+give the symbols \([z]-[\overline z]\); this common field is not
+asserted to be the geometric trace field.
 
 For a fixed positive Conway expression \(E\) in that earlier seed-generated grammar, let \(Z_{E,N}\) be its complete quantum sum. Its statement is
 
@@ -472,6 +548,20 @@ An identity smoothing replaces a specified crossing-disk coupon by the identity 
 
 The chain argument uses a controlled finite degeneration: cut corners have a common horospherical height and mutual distance $O(T^{-1})$. A uniform short-edge tetrahedron estimate makes the added volume vanish. Arbitrary ideal vertices merely approaching one another would not justify this step. The [near-maximal-volume corollary](../../notes/general_representation_volume_peripheral_gap.md) also gives uniform gaps from fixed marked peripheral trace conditions; applying those gaps to the remaining quantum color complement is still a source-estimate problem.
 
+Here **representation volume** means the oriented hyperbolic volume
+assigned to a homomorphism from the original manifold group to
+\(\mathrm{PSL}_2(\mathbb C)\), using an equivariant map and the
+prescribed treatment of its cusp ends. It can be defined when the
+homomorphism is not discrete or faithful. At geometric holonomy it
+equals the metric volume; maximal-volume rigidity restricts when
+equality can occur. See
+[Francaviglia's construction for cusped manifolds](https://arxiv.org/abs/math/0305275)
+and [Francaviglia–Klaff's volume-rigidity theorem](https://arxiv.org/abs/math/0411050).
+To use such a theorem for a source term, the source equations must
+first produce a representation of the same group with the same
+peripheral words. An absolute-value coefficient envelope has no such
+interpretation merely because its variables resemble shapes.
+
 ## A local tetrahedron is a genuine geometric result
 
 The [local hyperideal theorem](../../notes/actual_four_port_hyperideal_angle_volume.md)
@@ -498,6 +588,11 @@ the Gram matrix of outward face normals in Lorentz space,
 recovers the edge lengths, checks the volume differential and
 fixes the constant at an ideal configuration. Boundary values
 are continuous volume extensions.
+Here Lorentz space is four-dimensional real space with a bilinear
+form of signature \((3,1)\). Its hyperboloid model realizes
+hyperbolic three-space, and the Gram matrix records the pairwise
+Lorentz inner products of the face normals. This is how the
+algebraic matrix determines the cell's metric.
 
 ![A truncated tetrahedron in a combinatorial projection. Blue triangles indicate polar truncation faces; the hyperbolic metric comes from the Gram matrix.](../figures/truncated-tetrahedron.png)
 
@@ -514,7 +609,8 @@ The [source-volume certificate](../../notes/source_volume_casson_rivin_certifica
 ## A general certificate through volume maximization
 
 For an ideal tetrahedron, its three positive
-dihedral angles \(\alpha,\beta,\gamma\) have sum \(\pi\), and its
+dihedral angles \(\alpha,\beta,\gamma\), one for each pair of
+opposite edges, have sum \(\pi\), and its
 volume is
 \[
  \Lambda(\alpha)+\Lambda(\beta)+\Lambda(\gamma),\qquad
@@ -526,8 +622,12 @@ Casson and Rivin's variational method recovers the nonlinear shape
 equations by differentiating the sum of these volumes.
 [Rivin's 1994 paper](https://annals.math.princeton.edu/1994/139-3/p02)
 is a primary source for the volume method; the
-[proof by Futer and Guéritaud](https://arxiv.org/abs/1004.0440)
+[proof by Futer and Guéritaud, Theorem 1.2 and §5](https://arxiv.org/pdf/1004.0440)
 explains the completeness implication in terms of angle variations.
+Their formulation concerns a fixed ideal triangulation of an
+orientable manifold with torus boundary. The maximum on the closed
+angle polytope can lie on its boundary; an interior critical point
+must therefore be established for the triangulation being used.
 
 For an actual marked ideal triangulation with torus vertex links, the [positive gluing criterion](../../notes/general_marked_positive_gluing_certificate.md) gives a direct proof of the Casson–Rivin equivalence: an interior critical point of the ideal-tetrahedron volume function is exactly a complete positive gluing. Strict concavity makes it the unique maximum, including over the closed angle polytope, and its value is the actual complement volume.
 

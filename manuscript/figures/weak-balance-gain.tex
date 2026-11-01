@@ -1,0 +1,21 @@
+\begin{tikzpicture}[x=6.8cm,y=4.6cm,>=Latex,font=\small]
+  \definecolor{gainblue}{HTML}{1B6780}
+  \definecolor{costamber}{HTML}{AD601A}
+  \fill[gainblue!10] plot[domain=0:.82,samples=60] (\x,\x)
+    -- plot[domain=.82:0,samples=60] (\x,{.5*\x*\x}) -- cycle;
+  \draw[->] (0,0)--(1.06,0) node[right] {$t$};
+  \draw[->] (0,0)--(0,.96) node[above,align=center] {change in\\logarithmic rate};
+  \draw[gainblue,very thick] plot[domain=0:.84] (\x,\x);
+  \draw[costamber,very thick] plot[domain=0:1,samples=60] (\x,{.5*\x*\x});
+  \node[gainblue,anchor=west] at (.84,.84) {$t h_*$};
+  \node[costamber,anchor=west] at (1,.5) {$\tfrac12 t^2\mathcal E$};
+  \draw[dashed,gray] (.5,0)--(.5,.5);
+  \draw[<->,gainblue] (.5,.125)--(.5,.5);
+  \node[anchor=west,align=left] at (.53,.32) {strict gap};
+  \node[below] at (0,0) {$0$};
+  \draw (.5,.012)--(.5,-.012) node[below] {$\tfrac12$};
+  \draw (1,.012)--(1,-.012) node[below] {$1$};
+  \node[anchor=north,align=center,text width=11cm] at (.54,-.16)
+    {The linear entropy gain exceeds the quadratic action cost
+     for a sufficiently small positive $t$.};
+\end{tikzpicture}
