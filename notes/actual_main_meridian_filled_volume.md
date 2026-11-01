@@ -46,7 +46,12 @@ Thus all allowed \(n_i\) have their prescribed parity. The resulting knot is den
 
 There is a single constant \(B\), depending on the fixed strict presentation and its original knot/parity conventions, such that the following holds whenever all the fixed signed integers \(n_i\) satisfy \(|n_i|\ge B\). Their signs are independent, and no ratio between their absolute values is bounded. They and the presentation are fixed before \(N\) tends to infinity. The constant \(B\) is independent of the subsequently chosen radius \(0\le R<1\).
 
-Put \(q_N=e^{\pi i/N}\). Let \(F_N(M)\) be the actual zero-framed reduced ADO invariant of \(K_{\mathbf n}\), in the marked coordinate \(M\), with unknot value one. Section 2 fixes this normalization and defines an explicit scalar \(A_N(s)\) from the original finite compiler. Then, uniformly for \(|s|\le R<1\), through both even and odd levels,
+Put \(q_N=e^{\pi i/N}\). Let \(F_N(M)\) be the actual zero-framed reduced ADO invariant of \(K_{\mathbf n}\), in the marked coordinate \(M\), with unknot value one. Section 2 fixes this normalization. The exact scalar from the original finite compiler is
+\[
+ A_N(s)=q_N^{a(D)s^2/2},\qquad
+ a(D)=-w(D)-\sum_i n_i,
+\]
+where \(w(D)\) is the oriented writhe of the filled diagram, and each \(n_i\) uses the original checked-braid convention. Then, uniformly for \(|s|\le R<1\), through both even and odd levels,
 \[
  \boxed{\displaystyle
  \frac{F_N(q_N^s)}{F_N(1)}
@@ -75,7 +80,20 @@ There is a precise first correction after the exact scalar factors are divided o
                       +O_{\mathbf n,R}(N^{-2}).
  \tag{7}
 \]
-The sum is over the physical turn edges, not the artificial edges introduced when resolving a bare product into binary gates. It is evaluated at the filled saddle, not at the complete augmented optimizer. Formula (7) makes no identification with a cusp shape or with a classical \(A\)-polynomial factor.
+The sum is over the physical turn edges, not the artificial edges introduced when resolving a bare product into binary gates. It is evaluated at the filled saddle, not at the complete augmented optimizer. The [preferred-longitude calculation](actual_main_meridian_preferred_cusp.md) identifies the full first correction geometrically. In the meridian-longitude basis of the knot complement, let \(\tau_K\) be the translation of the preferred longitude when the meridian translates by one. Then
+\[
+ \tau_K=a(D)+2i\sum_e\cot(\pi x_e^{\mathrm{fill}}).
+ \tag{7a}
+\]
+Combining (7a) with the exact scalar above gives
+\[
+ \boxed{\displaystyle
+ \frac{F_N(q_N^s)}{F_N(1)H_N(s)}
+ =1+\frac{\pi i s^2\tau_K}{2N}
+                 +O_{\mathbf n,R}(N^{-2}).}
+ \tag{7b}
+\]
+This is also the normalized profile of the full modified-trace invariant, by (12). The geometric proof of (7a) applies to the broader strict-tree class; the asymptotic (7b) retains the component condition of this theorem. Neither statement identifies a classical \(A\)-polynomial factor.
 
 ## 2. The actual invariant and its scalar factors
 
@@ -154,7 +172,12 @@ For example, a zero-framing correction of writhe \(w\) has the exact ratio \(q_N
                           =o(N).
  \tag{16}
 \]
-These statements follow from the original scalar formulas, not from a bound on the unknown knot invariant. The other factors in (15) and their inverses are uniformly bounded on every fixed disk. Keeping \(A_N\) exact is stronger and safer than silently replacing it by one.
+These bounds follow from the original scalar formulas. The [exact scalar calculation](actual_main_meridian_exact_scalar.md) simplifies their complete product:
+\[
+ A_N(s)=q_N^{[-w(D)-\sum_i n_i]s^2/2}.
+ \tag{16f}
+\]
+It proves the cancellation of all intermediate turn factors and the remaining closing factor separately. Thus \(A_N(s)\to1\) uniformly on each fixed microscopic disk. Keeping its first term is necessary for (7b): it supplies the integer part of the preferred cusp shape.
 
 ### Why mixed-order products have no missing crossing factor
 
@@ -484,7 +507,7 @@ The variable \(z=2\pi i s\) converts (7)'s residual term to
                     \sum_e\cot(\pi x_e^{\mathrm{fill}}).
  \tag{44}
 \]
-This is merely a coordinate rewrite. It does not identify the sum, or the sum together with the exact scalar ledger, with the main-cusp modulus. Such an identification requires a separate comparison of the original main peripheral deformation.
+The exact scalar contributes \(a(D)z^2/(8\pi iN)\). The [geometric longitude theorem](actual_main_meridian_preferred_cusp.md) identifies its sum with (44) as \(\tau_Kz^2/(8\pi iN)\), proving (7b). The two calculations are independent: the quantum calculation fixes the scalar, and the geometric calculation follows the actual longitude through the face pairings and disk fillings. The reduced ratio consequently tends to \(\sin(\pi s)/(\pi s)\) without an additional scalar normalization. The normalized full modified-trace invariant tends to one.
 
 ## 8. What this theorem does and does not extend
 

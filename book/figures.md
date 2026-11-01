@@ -357,3 +357,12 @@ The amber box \(p_0\) is an actual character coupon. The boxes \(L_i\) are polyn
 The norm \(\|Q_N\|_{\mathcal J}\) records values and first derivatives at the spectral nodes, including repeated ones. The comparison replaces boundary coefficient arrays by their absolute values and closes the resulting expression against the positive polynomial \(W_N\). This polynomial is a device for proving an upper bound, not an additional crossing circle in the knot. The [probe theorem](../notes/actual_conway_unflagged_core_probe_bound.md) controls it at the component's actual geometric action, and the subsequent propagation theorem carries the bound through further operations. This supplies the mixed-composition step in the [strict-tree volume proof](../notes/actual_conway_all_strict_tree_long_twist_volume.md).
 
 [SVG](figures/mixed-conway-probe.svg) · [PDF](figures/mixed-conway-probe.pdf) · [TikZ source](figures/mixed-conway-probe.tex)
+
+
+## The preferred longitude after filling crossing circles
+
+![Two fundamental parallelograms of the same filled cusp lattice. The meridian is fixed; the preferred longitude differs from the augmented longitude by four meridians in the illustrated case.](figures/main-cusp-longitude-shear.svg)
+
+The blue vector is the image of the augmented longitude on the filled knot cusp. To obtain the preferred longitude, add \(\sum_i p_i\ell_i^2\) meridians, where \(p_i\) is the filling coefficient and \(\ell_i\) is the linking number with crossing circle \(i\). The drawing uses one coefficient \(p=1\) and \(|\ell|=2\), so the orange vector differs by four meridians. The [longitude proof](../notes/actual_main_meridian_preferred_cusp.md) derives this correction in the homology of the actual filled complement.
+
+[Vector drawing](figures/main-cusp-longitude-shear.svg) · [PDF](figures/main-cusp-longitude-shear.pdf) · [TikZ source](figures/main-cusp-longitude-shear.tex)

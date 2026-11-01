@@ -152,10 +152,9 @@ on every such compact set.
 
 ![The finite meridian profile and the error after ordinary-color subtraction, shown along the imaginary z-axis.](../figures/figure-eight-meridian-profile.png)
 
-The passage through ordinary-color resonances and the identification
-of the correction with the preferred cusp shape are results for the
-figure-eight knot. The Conway theorem below gives a moving-meridian
-profile on a smaller disk, before those resonances.
+The passage through ordinary-color resonances in this form is a result
+for the figure-eight knot. The Conway theorem below gives a moving-meridian
+profile and a preferred-cusp correction on a smaller disk, before those resonances.
 
 ## The volume limit while the meridian varies
 
@@ -179,7 +178,12 @@ Put \(q_N=e^{\pi i/N}\) and let \(M=q_N^s\). For every fixed \(R<1\),
 
 Both even and odd levels are included. This is uniform at every meridian in the indicated disk, and the invariant is nonzero there for all sufficiently large levels. The disk has radius of order \(1/N\) in the \(M\)-coordinate. The twist threshold does not depend on \(R\), although the required starting level may.
 
-The proof gives more than logarithmic growth. Let \(A_N(s)\) be the explicitly prescribed scalar obtained from the strand orientations, crossing powers, bends and zero-framing correction. It is calculated from those finite operations, before evaluating the invariant. Then
+The proof gives more than logarithmic growth. The original crossing and framing factors have an exact combined value:
+\[
+ A_N(s)=q_N^{a(D)s^2/2},\qquad
+ a(D)=-w(D)-\sum_i n_i.
+\]
+Here \(w(D)\) is the oriented writhe, and each \(n_i\) is the signed crossing power in its original braid box. The [scalar calculation](../../notes/actual_main_meridian_exact_scalar.md) derives this from the finite tangle operations. Then
 
 \[
 \frac{F_N(q_N^s)}{F_N(1)A_N(s)}
@@ -187,13 +191,26 @@ The proof gives more than logarithmic growth. Let \(A_N(s)\) be the explicitly p
        \bigl(1+O(N^{-1})\bigr),
 \]
 
-with the value one assigned to the displayed quotient at \(s=0\). After this exact normalization, the profile tends to \(\sin(\pi s)/(\pi s)\). Section 2 of the theorem lists the scalar factors, including the different factors for the two orders of oppositely directed strands. Keeping them is necessary even though they do not change the logarithmic volume.
+with the value one assigned to the sine quotient at \(s=0\). Since \(A_N(s)\) tends uniformly to one, the reduced ratio \(F_N(q_N^s)/F_N(1)\) itself tends to \(\sin(\pi s)/(\pi s)\). The scalar still contributes to the first correction below.
 
 The main analytic issue is cancellation after the twists are restored. The proof expresses the actual crossing powers by Fourier integrals and compares all Fourier indices at a common critical point. This matters when the twist sizes are very different: a small error controlled for one crossing cannot simply be compared with the total change in volume. The joint comparison proves that the first Fourier term has a nonzero coefficient and that all remaining terms have a smaller exponential rate. Thus it supplies the lower bound as well as the upper bound.
 
 The geometric calculation then identifies the critical action with the marked Dehn-filling action of the original augmented complement. The peripheral equation uses the primitive filling curve, with one full angular turn. The resulting solid tori fill the auxiliary crossing-circle cusps; the knot cusp remains complete and unfilled. The volume in the formula is therefore the volume of the actual knot complement.
 
-The theorem also computes the first correction after division by \(A_N(s)\) and the sine quotient. Its geometric interpretation as a preferred cusp shape has not been established for this class. Nor does the argument pass through \(s=\pm1\), the first ordinary-color resonances, or identify a classical geometric factor of the quantum recurrence.
+The first correction records the shape of the knot cusp. A horospherical cross-section is a Euclidean torus. Choose its coordinate so that the meridian translates by one, and write \(\tau_K\) for the translation of the preferred longitude, the curve with zero linking number with the knot. With
+\[
+ H_N(s)=\frac{\sin\pi s}{N\sin(\pi s/N)},
+\]
+the result is
+\[
+ \frac{F_N(q_N^s)}{F_N(1)H_N(s)}
+ =1+\frac{\pi i s^2\tau_K}{2N}+O(N^{-2}).
+\]
+The [geometric proof](../../notes/actual_main_meridian_preferred_cusp.md) computes this longitude from the original face identifications and corrects its marking after surgery on the crossing circles. It does not infer the cusp shape from the asymptotic formula. The full modified-trace invariant has exactly the displayed normalized profile because its modified dimension cancels \(H_N\).
+
+![The preferred longitude on the filled cusp: the same Euclidean lattice with the augmented and surgery-corrected choices of longitude.](../figures/main-cusp-longitude-shear.svg)
+
+The geometric longitude identity holds for all the strict presentations considered there. This asymptotic still has the additional junction condition stated above. Passage through \(s=\pm1\), the first ordinary-color resonances, and identification of a classical geometric factor of the quantum recurrence remain open for this class.
 
 ## Source growth near the complete main meridian
 

@@ -6,6 +6,18 @@ An exact symbolic calculation can establish an identity in formal variables. A r
 
 The current [strict Conway tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md) includes bounds for the full quantum sum, a nonzero selected contribution, the original normalization and the actual marked filling geometry. Its proof is not waiting for a theorem about all knots. The more specialized general-plat calculations catalogued below retain their own hypotheses and limitations.
 
+## The preferred cusp correction
+
+The exact crossing and framing calculation and the geometric longitude calculation can be reproduced together:
+
+```sh
+python3 repro/run_research_checks.py meridian-cusp
+```
+
+The scalar program composes signed crossing words and compatible typed products from their local formulas, retaining negative powers and both orders of opposite colors. It also checks the shifted-grid phase algebra. The geometric program verifies the rational meridian frames, the product and turn coordinate maps, the two half-twist signs, and the longitude correction under surgery. Python and SymPy are sufficient.
+
+The [scalar proof](../../notes/actual_main_meridian_exact_scalar.md) and [longitude proof](../../notes/actual_main_meridian_preferred_cusp.md) explain the global conclusions. The programs check their local identities; the identification of the preferred peripheral curves and the uniform large-level estimate are arguments in those proofs.
+
 ## Running a named group
 
 The [research-check runner](../../repro/run_research_checks.py) executes a selected group serially. The [group manifest](../../repro/research_check_groups.json) contains every command in its recorded order. Listing and previewing groups do not run a scientific calculation:

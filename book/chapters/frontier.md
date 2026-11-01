@@ -66,7 +66,11 @@ The theorem keeps the actual strand colors and the zero-framing normalization. A
 
 It proves nonvanishing and a uniform logarithmic limit at each point of the disk. The lower bound comes from a nonzero term in a joint Fourier calculation. The proof compares all Fourier indices with the same filled critical action, so the fixed twist magnitudes can be independently large without a bound on their ratios.
 
-Three distinctions remain essential. First, this stronger result has the extra component condition; the complete-value theorem at \(M=1\) retains its broader scope. Second, the disk shrinks like \(1/N\) in \(M\), so this does not contradict the nearby zeros described above. Third, the first correction is computed from the complex edge labels of the filled critical point, but has not been identified with the preferred main-cusp modulus.
+The [longitude calculation](../../notes/actual_main_meridian_preferred_cusp.md) now identifies the first correction with the preferred cusp shape \(\tau_K\). After division by the displayed sine quotient, the normalized invariant equals
+\[
+ 1+\frac{\pi i s^2\tau_K}{2N}+O(N^{-2}).
+\]
+The [exact scalar calculation](../../notes/actual_main_meridian_exact_scalar.md) supplies the integer framing term; the geometric proof determines the same term from the longitude and the auxiliary surgery. The geometric identity holds for the broader strict-tree class. The asymptotic still requires the extra component condition, and its disk still shrinks like \(1/N\) in \(M\). The complete-value theorem retains its broader scope.
 
 The open extensions are the moving-meridian theorem for bare components failing the path test, continuation of the ordinary-color-subtracted state through its resonance divisors, and identification of the selected classical geometric factor of the recurrence. The filled theorem does not depend on these extensions.
 
