@@ -57,7 +57,9 @@ product of all spectral node sets, then \begin{equation}\label{uf:eq-4}
        -\prod_e\left(\frac1N+\frac{|n_e|}{2}\right)\right\}
                          \|\mathcal D\|_{[-2,2]^r}.
 \end{equation} For the actual numerator one may take
-\(\mathcal D=S_{\mathrm{full}}-S_{\mathrm{CROSS}}\). The coefficient in
+\(\mathcal D=S_{\mathrm{full}}-S_{\mathrm C}\), where
+\(S_{\mathrm C}\) retains the central piece at every crossing region
+(defined in Section~\ref{mca:sec-1}). The coefficient in
 braces has degree at most \(r-1\) in the quantities \(|n_e|\): the
 highest product cancels exactly. None of \eqref{uf:eq-1}--\eqref{uf:eq-4} assumes positivity of
 spectral coefficients, asymptotic localization, or dominance of a
@@ -276,11 +278,11 @@ In the
 \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_cross_cofactor_factorization.html}{original
 central-cut decomposition}, the lower and upper pieces have the factor
 \eqref{uf:eq-21}. The full numerator is the sum of those pieces and the central
-crossing piece, denoted CROSS in the source formulas. At odd levels the
+piece defined by the endpoint conditions in Section~\ref{mca:sec-1}. At odd levels the
 central row belongs to that crossing piece. Hence every local full
-numerator agrees with CROSS at every spectral node. Multiplication and
+numerator agrees with its central piece at every spectral node. Multiplication and
 the one original shared coefficient extraction show \begin{equation}\label{uf:eq-25}
-(S_{\mathrm{full}}-S_{\mathrm{CROSS}})
+(S_{\mathrm{full}}-S_{\mathrm C})
                     (c_{a_1},\ldots,c_{a_r})=0
 \end{equation} for all choices of nodes, including odd simple nodes. Applying \eqref{uf:eq-4} to
 this unsplit difference avoids summing the absolute values of
@@ -332,7 +334,7 @@ fillings}\label{uf:sec-the-estimate-needed-for-long-fillings}
 
 It is useful to state the remaining comparison with its quantifiers. Fix
 the diagram, and write \[
- \mathcal D_N=S_{N,\mathrm{full}}-S_{N,\mathrm{CROSS}}.
+ \mathcal D_N=S_{N,\mathrm{full}}-S_{N,\mathrm C}.
 \] This polynomial does not depend on the twist powers. Suppose one
 proves, for some fixed \(\eta>0\), \begin{equation}\label{uf:eq-26}
 \|\mathcal D_N\|_{[-2,2]^r}
@@ -349,7 +351,7 @@ not claim uniformity in twist powers growing with \(N\).
 
 Suppose separately that the crossing contribution has a nonzero
 asymptotic \begin{equation}\label{uf:eq-28}
-Z_{N,\mathrm{CROSS}}(\boldsymbol n)
+Z_{N,\mathrm C}(\boldsymbol n)
        =a_N\exp(N\mathcal A_{\boldsymbol n}),\qquad
        N^{-1}\log|a_N|\longrightarrow0,
 \end{equation} where \(\Re\mathcal A_{\boldsymbol n}>\Phi-\eta\). Equations \eqref{uf:eq-27} and

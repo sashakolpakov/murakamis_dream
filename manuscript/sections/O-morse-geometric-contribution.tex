@@ -15,9 +15,9 @@ charges}\label{mca:unit}
 For a fixed link diagram, the exact finite formula is a coefficient in
 face variables followed by a linear functional in each crossing
 variable. Its local polynomial splits into three specified pieces. The
-central piece, called CROSS in the source formulas, contains paths
-passing through the middle of the finite recurrence. The other two
-pieces contain paths restricted to one side. Selecting CROSS at every
+central piece is defined by the two endpoint indices of each finite
+recurrence path. The other two pieces contain paths restricted to one side.
+The precise degree conditions are given below. Selecting the central piece at every
 crossing region gives a contribution to the original invariant; it does
 not define another topological invariant.
 
@@ -41,7 +41,7 @@ volume theorem.
 
 Fix a finite connected Morse diagram whose actual white triangulation is
 a simple sphere, with its actual matching, cyclic orders, crossing-disk
-frames and marked MAIN edge. Let the marked edge join the two protected
+frames and marked main edge. Let the marked edge join the two protected
 white faces \(u,v\). The diagram has \(R\) matching edges, \(R+2\) white
 faces, and \(R\) ordinary face targets. Assume the labeled positive
 convex right-angled certificate and its marked complete packing are
@@ -58,8 +58,30 @@ matched spherical triangulation has the original general Morse source},
 terminal decorations and volume limits beyond tangle-operation trees},
 §5. In particular all physical cups, caps, the unrestricted marked row,
 the integrated even-level coset and the original component/framing
-factors are retained. With \(N\ge3\), \(d=N-1\), \(q=e^{\pi i/N}\),
-define \begin{equation}\label{mca:eq-1}
+factors are retained. Put \(N\ge3\), \(d=N-1\), \(q=e^{\pi i/N}\), and
+\(h=\lfloor d/2\rfloor\). At a crossing region, write the homogeneous
+local numerator as
+\[
+ H_{V_N}(x,b,c,y;\sigma)
+   =\sum_{i+k+\ell+t=d}
+       a_{i,k,\ell,t}(\sigma)b^i x^k y^\ell c^t .
+\]
+Here \(x,b,c,y\) are the four adjacent face variables, and \(\sigma\)
+is the spectral parameter. The coefficients \(a_{i,k,\ell,t}\) are
+the matrix coefficients prescribed by the finite source identity.
+Define \(H_{V_N,\mathrm C}\) by retaining precisely the terms with
+\(i\le h\) and \(t\le h\). The left piece retains \(t>h\); the right
+piece retains \(i>h\). These three supports are disjoint and exhaustive,
+since \(i+t\le d\). More explicitly, a recurrence path from index
+\(j\) to index \(i\), with \(0\le i\le j\le d\), contributes middle
+powers \(b^ic^{d-j}\). It belongs to the central piece when
+\(i\le h\) and \(d-j\le h\). The word central describes these endpoint
+conditions: a two-step path may skip the intervening row and still
+belong to this piece. At odd levels the central zero-step path is
+also included, exactly once.
+
+Selecting the central piece at every crossing gives
+\begin{equation}\label{mca:eq-1}
 \begin{split}
  C_N(\boldsymbol\delta)
  &=\left[\prod_{f\ne u,v}L_f^d\right]
@@ -68,15 +90,18 @@ define \begin{equation}\label{mca:eq-1}
        \right|_{L_u=L_v=0},\\
  \sigma_e&=-2\cos(2\pi\delta_e).
  \end{split}
-\end{equation} Here CROSS means the literal central-cut path support. It is selected
-by polynomial linearity after the full physical source has been
-identified; it is not declared an independent covariant coupon. Write
+\end{equation}
+The brackets extract the displayed coefficient in the ordinary face
+variables. The protected variables \(L_u,L_v\) are set to zero before
+extraction. Thus the definition uses the same face demands and reduced
+mark as the full invariant. This is a projection of the known local
+polynomial, not a new topological evaluation. Write
 \(P_{\mathrm C}=(-1)^dH_{V_N,\mathrm C}\) for the positive endpoint
 convention. Thus \eqref{mca:eq-1} is the raw coefficient and contains
 \((-1)^{dR}\).
 
 For fixed nonzero signed crossing powers \(n_e=\epsilon_e-2p_e\), its
-exact all-CROSS period is \begin{equation}\label{mca:eq-2}
+exact all-central period is \begin{equation}\label{mca:eq-2}
 \begin{split}
  I_{N,\mathbf n}^{\mathrm C}
  ={}&q^{d^2\sum_e n_e/4}(-i)^R
@@ -96,7 +121,7 @@ framing/component character multiplies the raw contraction when
 converting to the specified invariant convention; it has modulus one at
 complete color. The full one-cut modified convention additionally
 retains its stated \(i^{N+3}/N\). These conventions are not changed by a
-CROSS projection.
+central projection.
 
 There is a fixed small complex polydisk and finite holomorphic actions
 \(A_N\), face Hessians \(H_N\), such that the following two source
@@ -163,7 +188,7 @@ edge belongs to an original shaded triangle with two positive
 finite-face variables.
 
 No matching edge can have the protected pair as its endpoints: their
-unique sphere edge is the marked MAIN edge. Consequently every crossing
+unique sphere edge is the marked main edge. Consequently every crossing
 circle has \(x+y>0\). At least one of its two triangles is nonmonomial.
 If both outers are positive, \(xy>0\); if one outer is protected, at
 most one middle can be the other protected face, so the other middle is
@@ -206,7 +231,7 @@ P_{\mathrm C,e}(\delta_e;L)
 \end{equation} on a fixed complex spectral and face neighborhood, with protected
 variables still exactly zero. This is
 \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_cross_cofactor_interpolant_rigidity.html}{Actual
-all-CROSS cofactors and the complete-fold interpolant}, §§1--4, based on
+all-central cofactors and the complete-fold interpolant}, §§1--4, based on
 \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_positive_face_exponential_fold_interpolation.html}{An
 exponentially accurate analytic interpolation of the actual fold
 factors} and the independent complex packets of the actual cofactors.
@@ -294,7 +319,7 @@ C_e=\frac{\pi(T_{b_e}+T_{c_e})}{x_e+y_e}>0,
 Section~\ref{mca:sec-2} ensures that at least one
 summand is positive. Thus \eqref{mca:eq-3} holds, and on a smaller fixed
 complex chart \(\operatorname{Re}A_N''\) is uniformly negative definite.
-This proves \eqref{mca:eq-H1} directly for CROSS. The full-numerator
+This proves \eqref{mca:eq-H1} directly for the central piece. The full-numerator
 restoration in §4 of
 \href{https://sashakolpakov.github.io/murakamis_dream/notes/general_full_spectral_numerator_geometric_packet.html}{The
 original full spectral numerator has the marked geometric packet} is not
@@ -314,7 +339,7 @@ R_j(b,\delta)=\sum_{i=0}^{j}b^i
  \qquad\Lambda=2\sin(\pi t)\rho.
 \end{equation} The proof in
 \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_global_cross_spectral_gap.html}{Global
-real-spectral gap of the actual all-CROSS source}, §§1--2, handles the
+real-spectral gap of the actual all-central source}, §§1--2, handles the
 possible repeated transfer root by its Cayley--Hamilton power formula.
 It uses fixed finite blocks away from \(t=0\), a uniform
 \(O(\eta\log(1/\eta))\) endpoint allowance, and uniformly integrable
@@ -346,7 +371,7 @@ for all real spectral parameters. Combining the two regions on the same
 original radii proves \eqref{mca:eq-H2}. To make endpoint neighborhoods
 precise, first use separation \(\eta/2\), then shrink the strip.
 Cauchy's estimate gives the fixed derivative version. Neither the
-inequality comparing LEFT/RIGHT rates with complete radii nor a choice
+inequality comparing left/right rates with complete radii nor a choice
 of different radii at separate crossing regions occurs in this proof.
 
 \subsection{The first packet, its phase, and charge
@@ -494,7 +519,7 @@ previously fixed endpoint, far-charge, bounded-bad and
 outer-cube-complement gaps. Also ensure \(a n_0\ge1\). All complementary
 contributions are then exponentially smaller than the nonzero unit
 packet. This proves \eqref{mca:eq-4}--\eqref{mca:eq-6} for the whole
-all-CROSS period.
+all-central period.
 
 \subsection{The geometric interface and the precise remaining
 problem}\label{mca:sec-8}
@@ -515,7 +540,7 @@ hyperbolic volume. This identifies the asymptotic of the sector
 \eqref{mca:eq-2}, not automatically that of the full invariant.
 
 The independent issue remains a bound or cancellation statement for the
-entire original LEFT/RIGHT remainder. Complete-radius balance is one
+entire original left/right remainder. Complete-radius balance is one
 sufficient mechanism in the terminal-fan theorem. The present proof does
 not assume it and supplies no replacement. In particular a nonzero
 sector with the correct geometric rate can still be canceled by another
@@ -554,8 +579,8 @@ factors} §§1--6 & Exact finite anchor and exponential interpolation in
 fixed complex face neighborhoods & Local actual triangles and
 protected-zero patterns only \\
 \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_cross_cofactor_interpolant_rigidity.html}{Actual
-all-CROSS cofactors and the complete-fold interpolant} §§1--4 & Actual
-off-node CROSS polynomial, including odd derivative term & Independent
+all-central cofactors and the complete-fold interpolant} §§1--4 & Actual
+off-node central polynomial, including odd derivative term & Independent
 actual cofactor growth plus interpolation; local only \\
 \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_cross_cofactor_global_angular_gap.html}{A
 global angular gap for the actual cleared cross cofactors} §§1--4 &
@@ -568,9 +593,9 @@ connected ordinary triangle graph; no flat gap forest \\
 \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_original_boundary_transverse_rank.html}{The
 original boundary source has exactly two flat face directions} §2 &
 Ordinary graph connectivity after the protected pair is removed & Simple
-sphere and marked MAIN edge \\
+sphere and marked main edge \\
 \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_global_cross_spectral_gap.html}{Global
-real-spectral gap of the actual all-CROSS source} §§1--4 & Uniform
+real-spectral gap of the actual all-central source} §§1--4 & Uniform
 start-row/tail estimates, strict real-spectral decrease and shared strip
 gap & Local recurrences plus the same ordinary graph and complete
 radii \\
@@ -585,7 +610,7 @@ contribution} §§2--5 & Fixed independent signed saddle, actual side
 currents, nonzero first packet & H1 and exact scalar/evenness only; the
 old flat-plat opening is not used \\
 \href{https://sashakolpakov.github.io/murakamis_dream/notes/general_all_cross_long_filling_volume.html}{The
-entire original all-CROSS Fourier period from its local packet and
+entire original all-central Fourier period from its local packet and
 global spectral gap} §§2--5 & Whole-domain charge tails and finite
 bad-charge separation & H1, H2 and entire polynomial degree only \\
 \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_balanced_terminal_fan_volume.html}{Balanced
@@ -599,7 +624,8 @@ No new analytic hypothesis is imposed on a certified simple-sphere Morse
 source beyond these literal inputs. The original presentation's physical
 normalization and its marked geometric applicability must still be
 supplied, as stated in Section~\ref{mca:sec-1}. There is
-no full undeformed simple-sphere volume theorem in this note.
+no full-invariant volume theorem for general unchanged matched spheres
+in this appendix.
 
 
 \section{The original complement and its geometric
@@ -607,7 +633,7 @@ contribution}\label{mcg:unit}
 
 A simple triangulated sphere with a perfect matching of its cubic dual
 determines an actual augmented link diagram when the cyclic orders,
-strand pairings and crossing disks are retained. This note follows that
+strand pairings and crossing disks are retained. This section follows that
 diagram through its exact finite source, its geometric critical point,
 and the filling of its original auxiliary cusps.
 
@@ -618,7 +644,9 @@ the primitive peripheral words, the finite scalar factors and both
 parities of the quantum level. No terminal tangles are inserted, and no
 local balance assumption is imposed.
 
-The name CROSS denotes the central recurrence-path piece of each
+The central piece is the part of each local numerator defined by the
+degree conditions in Section~\ref{mca:sec-1}. Equivalently, it consists
+of the central recurrence paths of each
 original homogeneous numerator. Selecting it at every crossing region is
 an algebraic decomposition of the original evaluation, not a new
 invariant. The
@@ -683,7 +711,7 @@ relative size, the following assertions hold.
   with every main cusp unfilled. If the recorded component test is a
   knot, it is \(S^3\setminus K_{\boldsymbol p}\).
 \item
-  The all-CROSS term of the original complete-color Morse contraction
+  The all-central term of the original complete-color Morse contraction
   has a nonzero relative first-charge asymptotic, at both parities of
   the level \(N\). Its selected critical action \(S_{\boldsymbol 1}\)
   satisfies \begin{equation}\label{mcg:eq-2}
@@ -692,7 +720,7 @@ relative size, the following assertions hold.
 \end{equation} in the knot case, and the analogous original link-complement
   identity otherwise.
 \item
-  In particular, for that all-CROSS contraction
+  In particular, for that all-central contraction
   \(\mathcal I_{N,\mathrm C}\), \begin{equation}\label{mcg:eq-3}
 \lim_{N\to\infty}\frac{2\pi}{N}
            \log|\mathcal I_{N,\mathrm C}|
@@ -811,7 +839,7 @@ endpoint support is imposed before the root reduction, so no coefficient
 is aliased into a wrong endpoint. This proves \eqref{mcg:eq-5} with its
 original phases at arbitrary Morse height and both level parities.
 
-Replace each homogeneous factor in \eqref{mcg:eq-5} by its CROSS
+Replace each homogeneous factor in \eqref{mcg:eq-5} by its central
 cofactor factor and retain the physical spectral trace. Write
 \(C_N^{\mathrm{raw}}(\boldsymbol\delta)\) for the resulting entire
 spectral numerator, with each node \(-2\cos(2\pi\delta_e)\). It is even
@@ -839,7 +867,7 @@ finite proof is
 matched-sphere source, sections 5--7}.
 
 No operation in \eqref{mcg:eq-5}--\eqref{mcg:eq-7} changes a disk, a
-strand pairing, or a peripheral curve. In particular the all-CROSS
+strand pairing, or a peripheral curve. In particular the all-central
 source for the original sphere exists before a fan construction, and its
 ordinary-face targets are still \(d\).
 
@@ -1201,19 +1229,19 @@ Section~\ref{mcg:sec-9} records its exact normalization.
 For an unchanged opposite-offset even bipyramid, its displayed circle
 packing is a positive certificate and its oriented top and bottom
 quartets are exactly the general Morse source \eqref{mcg:eq-5}.
-Consequently this theorem applies to its all-CROSS term at every fixed
+Consequently this theorem applies to its all-central term at every fixed
 size, with the original parity/knot qualification. No Conway-tree
 decomposition or new plat presentation is required.
 
 What remains for its \textbf{full} invariant is a strict estimate of the
-signed contribution outside CROSS, for example \begin{equation}\label{mcg:eq-29}
+signed contribution outside central, for example \begin{equation}\label{mcg:eq-29}
 \bigl|\mathcal I_{N,\mathrm{full}}
             -\mathcal I_{N,\mathrm C}\bigr|
  \le \exp\!\left[
        N\left\{\frac{\operatorname{Vol}(S^3\setminus K_{\boldsymbol p})}
                        {2\pi}-\eta\right\}+o(N)\right].
 \end{equation} Failure of complete-radius balance at every mark neither invalidates
-the all-CROSS theorem nor proves \eqref{mcg:eq-29} false. It removes one
+the all-central theorem nor proves \eqref{mcg:eq-29} false. It removes one
 known sufficient method of proving \eqref{mcg:eq-29}. The present result
 makes no claim of cancellation or domination for those remaining
 sectors.
@@ -1250,7 +1278,7 @@ while the shared angular estimate uses the connected ordinary graph and
 its primitive face-difference rows. The separated real-spectral estimate
 comes from the exact cofactor starting-row maximum. Its only monomial
 exception is harmless because every crossing factor has a nonmonomial
-triangle. These prove \eqref{mcg:eq-30},\eqref{mcg:eq-31} for the all-CROSS projection of the exact
+triangle. These prove \eqref{mcg:eq-30},\eqref{mcg:eq-31} for the all-central projection of the exact
 coefficient \eqref{mcg:eq-5}; they are not inferred from a value-only
 local recurrence.
 
@@ -1328,6 +1356,6 @@ Equations \eqref{mcg:eq-30}--\eqref{mcg:eq-36} give the nonzero lower as
 well as the upper asymptotic. Taking its logarithm and using
 \eqref{mcg:eq-25} and the metric construction proves
 \eqref{mcg:eq-2},\eqref{mcg:eq-3}. Thus the flat-plat wording in the
-older all-CROSS theorem is a limitation of its stated input, not a
+older all-central theorem is a limitation of its stated input, not a
 remaining mathematical restriction after these separate Morse source,
 analytic, and geometric arguments.

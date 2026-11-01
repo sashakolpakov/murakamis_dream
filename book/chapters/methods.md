@@ -190,7 +190,7 @@ This is Cauchy–Schwarz applied to the vectors
 
 Weights can redistribute a cost, but cannot recover a phase discarded by the inequality. Indeed the infimum of the displayed right-hand side over positive weights is \((\sum_\alpha|a_\alpha|)^2\), attained by \(w_\alpha=|a_\alpha|\) when no entry vanishes and approached otherwise. For \(a_1=1,a_2=-1\), the exact sum is zero while even this optimized bound is four. The application therefore needs structural information about the joined source, not just an optimized positive weight for every separate term.
 
-The matrix form says the same thing. If \(G\) is a positive definite Hermitian matrix, \(v\) is the source vector, and \(b\) is the row implementing the original closure, then
+The matrix form allows a further possibility: its off-diagonal entries can retain interference between different coefficients. If \(G\) is a positive definite Hermitian matrix, \(v\) is the source vector, and \(b\) is the row implementing the original closure, then
 \[
                    |bv|^2
                 \le (bG^{-1}b^*)(v^*Gv).
@@ -218,6 +218,162 @@ Set \(F_A(j)=Z_A(j)/\sqrt{\theta_N(j)}\), and define \(F_B\) likewise. Cauchy bo
 It gives no lower bound on their overlap: the two vectors can be orthogonal.
 
 The [whole-support boundary estimate](../../notes/actual_whole_support_boundary_gram_envelope.md) and [exact joining identity](../../notes/actual_nc_three_port_source_sewing.md) establish useful local inputs. For a reflected double, the two halves can be genuine complex conjugates in the specified pairing, giving a positive sum of squares. The [reflection-double theorem](../../notes/actual_planar_three_port_reflection_double.md) proves precisely that identity. Its internal half-evaluations still contain their original phases. The general problem is to transport the estimates through the whole diagram and prove that the required contribution survives.
+
+### Moment matrices: positivity with interference retained
+
+A **moment** of a positive probability measure \(\mu\) on the real line is
+\(m_j=\int t^j\,d\mu(t)\), when that integral is finite. For a
+nonnegative integer \(r\), if the moments through degree \(2r\) exist, the matrix
+\[
+ H=(m_{i+j})_{0\le i,j\le r}
+\]
+is positive semidefinite. Indeed, for \(p(t)=\sum_{j=0}^r a_jt^j\),
+\[
+ a^*Ha=\int|p(t)|^2\,d\mu(t)\ge0.
+\]
+This is a *Gram matrix*: its entries are the inner products of the
+monomials \(1,t,\ldots,t^r\). Its entries with \(i\ne j\) are the
+cross terms in the squared polynomial. They need not be discarded
+when applying Cauchy.
+
+For example, take the uniform probability measure on \([0,1]\) and
+\(p(t)=1-2t\). Then
+\[
+ H=\begin{pmatrix}1&1/2\\1/2&1/3\end{pmatrix},
+ \qquad \int_0^1p(t)\,dt=0,\qquad
+ \int_0^1|p(t)|^2\,dt=\frac13.
+\]
+Keeping only the diagonal of \(H\) would instead give
+\(1+4/3=7/3\). The full positive form retains some cancellation, but
+Cauchy's bound \(0\le1/3\) still does not compute the zero expectation.
+This distinction matters at exponential scale.
+
+The source has an exact example. For \(N\ge3\), put
+\(d=N-1\), \(M=\lfloor N/2\rfloor-1\), and \(\theta=\pi/N\).
+The notes call the following one-sided polynomial a *protected cap*:
+two of its four face variables are the protected zeros, and \(A,C\)
+are the remaining ordinary variables. At spectral value \(2\), it is
+\[
+ H_{\mathrm{cap}}(A,C;2)=
+ \sum_{j=0}^{M}(-1)^jU_jA^{d-j}C^j,\qquad
+ U_j=\csc^2(\theta/2)
+       \prod_{r=1}^{j}
+       \frac{\sin^2(r\theta)}{\sin^2((r+1/2)\theta)}.
+\]
+The product formula defines \(U_j\) for \(0\le j\le d\), with the empty
+product equal to one. The polynomial uses only \(0\le j\le M\),
+its original one-sided support. The
+[positive cap-moment theorem](../../notes/research_flat_cap_positive_moment_form.md)
+constructs a probability measure \(\mu_N\) satisfying
+\[
+ \int t^j\,d\mu_N(t)=\frac{U_j}{U_0}\quad(0\le j\le d).
+\]
+Thus, for arbitrary coefficients \(a_j\) and
+\(p(t)=\sum_{j=0}^{M}a_jt^j\),
+\[
+ \sum_{j=0}^{M}(-1)^jU_ja_j
+      =U_0\int p(-t)\,d\mu_N(t),\qquad
+ \left|\sum_{j=0}^{M}(-1)^jU_ja_j\right|^2
+      \le U_0^2\int|p(-t)|^2\,d\mu_N(t).
+\]
+The degree check is \(2M\le d\). The measure has unbounded support,
+so a bound for \(p\) on \([0,1]\) cannot replace the integral.
+The [cap-moment norm obstruction](../../notes/research_cap_moment_cauchy_norm_obstruction.md)
+shows that the resulting Cauchy upper bound can exceed the original
+positive endpoint comparison exponentially, even with the original two-piece
+degree constraint imposed. It does not show that the signed
+expectation exceeds that comparison. A positive norm exists;
+the required source estimate can still fail for that norm.
+
+At even level \(N=2m\), the same moment theorem also gives an exact
+\(m\)-point **Gaussian quadrature**: an integral of any polynomial of
+degree at most \(2m-1=d\) is a positive weighted sum of its values at
+\(m\) positive nodes. Its symmetric tridiagonal matrix has entries
+\(\int t\,p_i(t)p_j(t)\,d\mu_N(t)\), where \(0\le i,j<m\) and
+\(p_i\) is the orthonormal polynomial of degree \(i\). The nodes
+are its eigenvalues. “Orthonormal” means that the integrals of
+products of distinct basis polynomials are zero and the integral of
+each squared polynomial is one. This finite evaluation is useful
+computationally; it is not an estimate of its summands. The standard matrix construction
+is explained by [Golub and Welsch, *Calculation of Gauss Quadrature
+Rules*, §§1–2](https://www.ams.org/journals/mcom/1969-23-106/S0025-5718-69-99647-1/S0025-5718-69-99647-1.pdf).
+The source note separately proves that its particular moments and
+degree cutoff permit that construction.
+
+### Cancellation after collecting every neighbor of a face
+
+An estimate can retain more cancellation by combining an entire
+shared sum before applying a norm. For the cap just displayed,
+collect **every** other factor incident to \(A\), assume these
+factors are central, and write their product at spectral value
+\(-2\), after removing its fixed common sign, as
+\[
+ P_N(A,\boldsymbol Y)=\sum_{j\ge0}p_{N,j}(\boldsymbol Y)A^j.
+\]
+The vector \(\boldsymbol Y\) comprises the remaining ordinary face
+variables, including \(C\); protected variables stay zero and variables
+shared by neighbors are still identified.
+This collection is the *whole \(A\)-star*. The one prescribed degree
+on \(A\) gives
+\[
+ B_N(\boldsymbol Y)
+   =[A^d]H_{\mathrm{cap}}P_N
+   =\sum_{j=0}^{M}(-1)^jU_jC^jp_{N,j}(\boldsymbol Y).
+\]
+The index \(j\) is the **total** degree from all neighbors. Assigning
+a separate cutoff to each neighbor would change the source.
+In this original marked diagram, \(A,C\) are also endpoints of a
+strand edge. The triangle on the other side of that edge belongs to
+one of the central neighboring factors. This incidence supplies the
+angular estimate used below; the argument is not a statement about
+an arbitrary polynomial product with positive coefficients.
+
+Here is the scope of the proved
+[whole-star cancellation theorem](../../notes/research_cap_cross_shared_star_spectral_gap.md).
+Fix positive radii \(\rho_f\) for the ordinary faces, with
+\(\rho_A=\rho_C\), and put
+\(P_N^+(a)=P_N(a,\boldsymbol\rho_Y)\). Assume the following limit is
+locally uniform for real \(t\) and differentiable at zero:
+\[
+ F(t)=\lim_{N\to\infty}\frac1N\log P_N^+(\rho_Ce^t)
+ \quad\text{satisfies}\quad 0<F'(0)<\frac12.
+\]
+The derivative is the limiting total \(A\)-degree divided by \(N\)
+under these positive weights. The theorem gives a fixed \(\eta>0\)
+such that, at every sufficiently large level of either parity,
+\[
+ \sup_{|Y_f|=\rho_f}|B_N(\boldsymbol Y)|
+             \le e^{-\eta N}P_N^+(\rho_C).
+\]
+The linked theorem also treats its specified complex spectral
+neighborhood. The derivative condition and the assumption that every
+other \(A\)-incident factor is central are substantive hypotheses.
+
+At the displayed fixed spectra, the moment proof explains the
+mechanism. For \(t\) near one, evaluating the neighboring product
+at \(A=-Ct\) forces a phase difference near \(\pi\) across the actual
+adjacent triangle, and its cofactor has a strict angular loss. Small
+\(t\) lowers the positive weighted action. Large \(t\) is controlled
+without integrating the full neighboring product, which may have
+too high a degree: for any fixed \(\delta>0\),
+\[
+ \int_{t\ge1+\delta}t^M\,d\mu_N(t)
+ \le (1+\delta)^{-(d-M)}\int t^d\,d\mu_N(t),
+ \qquad
+ \int t^d\,d\mu_N(t)=N^2\sin^2\frac{\pi}{2N}\le\frac{\pi^2}{4}.
+\]
+The total-degree cutoff and \(F'(0)<1/2\) also control the omitted
+high-degree terms near one. Both features are needed; the alternating
+sign alone is not a proof of exponential cancellation.
+
+This gives a strict improvement relative to the displayed weighted
+star value. Attaching the unchanged exterior still requires a bound
+for that exterior on the **same** shared radii and targets. The combined
+weighted value has not in general been shown to lie at or below the
+geometric rate. The local cancellation theorem therefore does not
+settle the general signed remainder or the volume conjecture.
+
+### Coefficient estimates use shared radii
 
 A second use of Cauchy's name concerns *coefficient estimates*. For a polynomial \(P(\boldsymbol L)\) with nonnegative coefficients, a target exponent vector \(\boldsymbol t\), and positive radii \(\boldsymbol\rho\),
 \[
