@@ -8,9 +8,9 @@ The volume conjecture asks whether the growth of a sequence of finite knot invar
 \]
 The normalization of $\langle K\rangle_N$ matters: throughout this paper the unknot has value one, and Chapter~\ref{ch:source} specifies the matrices and traces defining the invariant. Kashaev introduced the finite invariant in \cite{Kashaev1995} and the volume proposal in \cite{Kashaev1997}. Its relation with the root-of-unity colored Jones polynomial is described in \cite{MurakamiMurakami2001}.
 
-The first theorem proves this limit for the recursive family of knot diagrams constructed below, once every designated twist region has sufficiently many twists. The family permits arbitrary finite branching and nesting, subject to its precise construction rule. Chapters~\ref{ch:quantitative-circle-trees} and~\ref{ch:local-circle-messages} treat ordered trees with one crossing-circle operator at every junction. They give two explicit sufficient conditions involving degrees and signed crossing powers: one summed over vertices, and one imposed separately at each vertex. Both permit some short coefficients. We first explain the geometric operations and then state the construction scopes. Every construction records an actual diagram, including the order of its pieces and the positions where they are joined.
+The first theorem proves this limit for the recursive family of knot diagrams constructed below, once every designated twist region has sufficiently many twists. The family permits arbitrary finite branching and nesting, subject to its precise construction rule. Chapters~\ref{ch:quantitative-circle-trees}, \ref{ch:local-circle-messages} and~\ref{ch:directed-circle-messages} treat ordered trees with one crossing-circle operator at every junction. They give explicit sufficient conditions involving degrees and signed crossing powers, both summed over vertices and imposed locally. The strongest simple local bound allows each vertex to have either sufficiently large degree or sufficiently many twists. We first explain the geometric operations and then state the construction scopes. Every construction records an actual diagram, including the order of its pieces and the positions where they are joined.
 
-All these theorems take the same quantum limit. Choose a finite construction and signed integer twist numbers satisfying the applicable hypothesis, and hold them fixed. Then let $N$ tend to infinity. Neither the diagram nor its twist numbers grow with $N$. In the first theorem the individual twists can have different signs and arbitrarily different large magnitudes. In the quantitative theorems their sizes and junction degrees enter the sum in Theorem~\ref{thm:circle-quantitative} or the maximum in Theorem~\ref{thm:local-circle-volume}.
+All these theorems take the same quantum limit. Choose a finite construction and signed integer twist numbers satisfying the applicable hypothesis, and hold them fixed. Then let $N$ tend to infinity. Neither the diagram nor its twist numbers grow with $N$. In the first theorem the individual twists can have different signs and arbitrarily different large magnitudes. In the quantitative theorems their sizes and junction degrees enter the sum in Theorem~\ref{thm:circle-quantitative}, the maximum in Theorem~\ref{thm:local-circle-volume}, or the directed conditions in Theorem~\ref{thm:directed-degree-twist}.
 
 \section{Building the diagrams from four-ended tangles}\label{sec:geometric-construction}
 A \emph{two-string tangle} is a pair of arcs in a ball whose four endpoints are fixed on its boundary. We draw its ball as a box, with two endpoints at the bottom and two at the top. Closed curves may also be present inside a box. In the augmented diagrams used in the proof, some of those curves are distinguished auxiliary circles. Composition can create further closed main components, so the eventual requirement that the filled diagram be a knot must be checked rather than assumed.
@@ -96,8 +96,18 @@ Theorem~\ref{thm:local-circle-volume} gives another sufficient condition for thi
 \]
 Its proof evaluates each subtree as a polynomial in its remaining boundary variable and normalizes that polynomial by its exact value at zero. The next trace spends only the change of action at its current vertex. This gives a numerical bound independent of the number of vertices, although error constants and starting levels may depend on the fixed diagram. The separate geometric condition $\sqrt{d_v^2+n_v^2}\ge630$ constructs the positive metric without either quantum condition; it alone does not assert a volume limit.
 
+Chapter~\ref{ch:directed-circle-messages} strengthens the local argument.
+Theorem~\ref{thm:directed-degree-twist} proves the volume identity if
+$d_v\ge2^{28}$ or $|n_v|\ge2^{27}$ at each vertex, with the alternative
+chosen independently at each vertex. Its full criterion uses a separate
+decay constant for each outgoing subtree polynomial and places no
+outgoing requirement on the vertex evaluated last. This also constructs
+knots with arbitrary fixed short-twist cores by adding even stacks of
+long terminal pieces. The additions preserve the knot-component test
+but generally change the knot.
+
 \section{The preferred longitude and the classical recurrence}
-For the trees of crossing circles, Chapter~\ref{gc:chapter} identifies
+For the covered strict Conway constructions, Chapter~\ref{gc:chapter} identifies
 more than the volume and cusp shape. It constructs the deformation of
 the original knot representation as the main meridian eigenvalue $M$
 varies, and proves an explicit formula for the preferred longitude
@@ -117,7 +127,7 @@ invariant. Combining it with the geometric identity proves that the
 selected geometric factor divides the classical symbol of every
 fixed all-level annihilating operator under the stated source
 hypotheses. Appendix~\ref{app:geometric-characteristic} gives the
-complete representation and algebraic proofs. This factor statement
+circle-tree representation and algebraic proofs. Appendix~\ref{app:strict-tree-geometric-characteristic} treats the unmarked product junctions and transfers the intrinsic result through the net-twist and closure reductions. This factor statement
 does not identify the other factors of a recurrence or extend the
 volume limits to arbitrary short twists.
 

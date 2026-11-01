@@ -6,6 +6,26 @@ An exact symbolic calculation can establish an identity in formal variables. A r
 
 The current [strict Conway tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md) includes bounds for the full quantum sum, a nonzero selected contribution, the original normalization and the actual marked filling geometry. Its proof is not waiting for a theorem about all knots. The more specialized general-plat calculations catalogued below retain their own hypotheses and limitations.
 
+## The directed degree and twist bound
+
+Run the new exact rational comparisons with one command:
+
+~~~sh
+python3 repro/run_research_checks.py directed-tree-fillings
+~~~
+
+This uses only Python's standard library. It checks the inequalities in the [directed criterion](../../notes/actual_all_circle_directed_volume.md), including the uniform twist bound and the star whose center has power two. The comparisons use rational upper and lower bounds rather than decimal estimates. The written proof supplies the uniform kernel estimate, induction, noncancellation and identification with the actual hyperbolic volume. The program does not estimate a quantum limit.
+
+## Inserting a circle at an unmarked junction
+
+With SymPy installed, run:
+
+~~~sh
+python3 repro/run_research_checks.py strict-tree-geometry
+~~~
+
+The program checks local rational identities in the [strict-tree longitude proof](../../notes/actual_strict_tree_geometric_characteristic.md): the normalization of the white face maps, the primitive disk longitude, the two incident radius formulas, and the response at a possible half-angle fold. The based meridian paths, ordered boundary gluing and stationary elimination are proved in the text. They cannot be verified merely by equality of matrix traces.
+
 ## Reproducing the local tree argument
 
 This group requires Python and mpmath. Run it using one command:

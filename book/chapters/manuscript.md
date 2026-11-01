@@ -41,25 +41,43 @@ Two companion results extend the paper's recursive family. The [strict-tree theo
 
 ## A bound independent of the tree size
 
-The new local chapter proves that one sufficient twist threshold
-works for every finite ordered circle tree. It starts with the
-exact polynomial obtained by evaluating a subtree while retaining
-its attaching variable. The proof then establishes its nonzero
-value at zero, its normalized real and complex bounds, and the
-nonzero leading term of the next trace. Each error is compared
-with the current vertex's filling, rather than the total change
-from all vertices.
-
-The hypothesis is
+The chapter on directed subtree estimates gives one sufficient
+twist threshold for every finite ordered circle tree with at
+least one edge:
 \[
-                   \max_v\frac{d_v}{d_v^2+n_v^2}\le2^{-120}.
+                         |n_v|\ge2^{27}
 \]
-Thus every \(|n_v|\ge2^{119}\) suffices, subject to the knot test,
-for any finite number of vertices. This explicit constant is
-deliberately coarse. The local chapter includes the full induction
-and the geometric path needed to identify its action with the
-original complement volume. The earlier summed theorem below
-remains a useful alternative with a better numerical constant.
+at every vertex, with either sign. The actual strand pairing
+must give one knot without an internal closed component. A more
+flexible consequence lets each vertex independently have this
+twist magnitude or degree \(d_v\ge2^{28}\). The degree alternative
+permits any fixed signed power. The whole tree and all powers
+are fixed before the quantum level grows.
+
+The [directed criterion](../../notes/actual_all_circle_directed_volume.md)
+is proved from the exact polynomial obtained by evaluating a
+subtree while retaining its attaching variable. The proof
+establishes its nonzero value at zero, normalized bounds on
+real and complex angles, and a nonzero first Fourier contribution
+to the next trace. Each error is compared with the filling at
+the current vertex. Different subtrees can have different decay
+bounds. At the final vertex there is no outgoing variable, so
+the proof does not impose an unnecessary outgoing bound.
+
+The chapter and its full technical appendix retain the actual
+finite trace, its boundary contributions and its orientation
+factors. The geometric path identifies the resulting action
+with the volume of the original knot complement. The earlier
+local-message chapter proves an included, more restrictive
+criterion, and the summed theorem below remains useful for
+individual diagrams.
+
+One consequence attaches an even stack of sufficiently many
+long odd terminal pieces at each vertex of any fixed core
+whose endpoint pairing is a knot. The insertion preserves
+the pairing but generally changes the knot type. It supplies
+covered knots with arbitrary prescribed powers at the core
+vertices; it does not prove the theorem for the unchanged core.
 
 ## The quantitative circle-tree chapter
 
@@ -93,21 +111,39 @@ calculations separately.
 
 ## The geometric longitude and the quantum recurrence
 
-A further chapter proves that the longitude selected by the circle-tree
-source is the preferred geometric longitude of the knot complement.
-The proof constructs nonparabolic representations of the two-octahedron
-pieces, keeps the puncture eigenlines through each half twist, and
-assembles the original boundary words. It then uses a rational-function
-argument: the auxiliary peripheral equations leave only a function of
-the main meridian, and regular reconstruction at every nonzero meridian
-value forces that function to be the known framing monomial.
+The geometric-characteristic chapter identifies the longitude
+selected by the source with the preferred geometric longitude
+of the knot complement. It first constructs nonparabolic
+representations for trees of crossing circles, retaining the
+puncture eigenlines through each half twist. A rational-function
+argument then determines the remaining framing factor.
 
-Appendix H gives the full expansion and its implication for a genuine
-all-level recurrence. Appendix I supplies the geometric construction,
-algebraic rigidity, and the sign fixed by a Seifert surface. Together
-they identify the geometric irreducible factor in the classical symbol
-for the covered circle-tree classes. They do not assert that this is
-the entire A-polynomial or the entire recurrence ideal.
+The [strict-tree extension](../../notes/actual_strict_tree_geometric_characteristic.md)
+allows product junctions without crossing circles, of arbitrary
+valence and adjacency. Insert a circle around a literal identity
+box at each such junction, then fill its meridian. This restores
+the original framed collar and its ordered based puncture loops.
+Eliminating the added angular variable gives the original product
+action, including at a possible half-edge fold. The argument
+therefore identifies the full marked representation germ of
+the original long-filled knot.
+
+Appendix H supplies the full microscopic expansion and its
+implication for a genuine all-level recurrence. Appendix I
+contains the circle-tree geometry, algebraic rigidity and
+Seifert-surface sign. Appendix J gives the strict-tree extension,
+the zero-crossing collar and the intrinsic transfer to covered
+net-twist and arbitrary-closure presentations.
+
+Together these results identify the selected complex geometric
+irreducible factor in the first nonzero classical symbol for
+every covered strict long-filling source, as well as the
+previously established circle-tree sources under the summed
+condition or the local bound \(2^{-120}\). The operator conclusion uses the full expansion and
+its shifted parameter neighborhoods; it does not follow just
+from the leading profile in a new numerical criterion.
+No assertion identifies the entire A-polynomial, the
+multiplicities of its factors or the entire recurrence ideal.
 
 ## How to read the proof
 

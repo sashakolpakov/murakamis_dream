@@ -2,12 +2,21 @@
 \label{gc:chapter}
 
 The meridian profile contains more information than its first cusp
-correction. For the ordered trees of crossing circles, its full
-classical characteristic is the preferred-longitude curve of the
-original knot complement. This chapter states that identification
-and explains its geometric proof. Its consequence for a quantum
-recurrence uses the separate all-order source theorem; the geometric
-statement alone does not supply a new asymptotic estimate.
+correction. For every covered fixed strict Conway tree with
+independently sufficiently long signed twists, its full classical
+characteristic is the preferred-longitude curve of the original
+knot complement. Product junctions may have arbitrary valence and
+may be adjacent. Ordered trees carrying a crossing circle at every
+junction also retain their separate quantitative filling criteria.
+
+We first establish the identity for the circle trees. Inserting a
+circle around a zero-crossing box then supplies the geometric
+extension to a bare product junction. Eliminating its angular
+variable recovers the original stationary action with its constant,
+while the ordered boundary paths recover the original knot group.
+The consequence for a quantum recurrence uses the separate all-order
+source theorem; the geometric statement alone supplies no new
+asymptotic estimate for short fillings.
 
 \section{The marked equations and their geometric branch}
 \label{gc:equations}
@@ -219,12 +228,135 @@ constant, proving \eqref{gc:longitude}.
 Appendix~\ref{app:geometric-characteristic} gives the marked
 matrices, regularity argument and frame proof in full.
 
+\section{Product junctions without crossing circles}
+\label{gc:strict-extension}
+
+A bare junction is a maximal consecutive product that contains no
+crossing-circle operator. A binary association used to calculate its
+kernel introduces hidden labels, but adds no physical quarter-turns.
+The strict construction retains the original ordered products,
+turns and cylindrical closure. Its real angle domain contains a
+point at which every original leaf angle lies in $(0,1/2)$ and
+every retained binary gate obeys
+\[
+                 \max(u,v)<w<u+v<1.
+\]
+The original endpoint test must give one knot, including any circles
+closed inside a tangle. The two-leaf pure-leaf qualification and all
+original parity conditions remain in force.
+
+Let $\mathcal E_T$ denote the physical turn edges of the reduced
+junction tree. Their covariant index $x_e$ is shared by the two ends
+after lowering the trace pairing. When an incidence is exposed as
+the ordinary output of its rooted branch, that output angle is
+$1-x_e$. Put $X_e=e^{2\pi ix_e}$; this is the variable denoted $E_e$
+in the preceding circle-tree formulas.
+
+\begin{theorem}[The longitude for a strict Conway tree]
+\label{gc:strict-longitude-theorem}
+Fix such a strict ordered knot presentation and independently
+sufficiently long signed powers, with the diagram and all its powers
+fixed before the level varies. Its original complete hyperbolic
+filled knot has a regular geometric main-meridian germ on which
+\begin{equation}\label{gc:strict-longitude}
+ L_{\mathrm{geom}}(M)
+   =-M^{a(D)}\prod_{e\in\mathcal E_T}
+           \frac{M^2-X_e(M)}{1-M^2X_e(M)},
+ \qquad a(D)=-w(D)-\sum_i n_i.
+\end{equation}
+The $x_e(M)$ are selected by the original strict-tree action
+continued with the physical-edge insertion
+\begin{equation}\label{gc:strict-phase}
+\begin{aligned}
+ \Phi_t&=\Phi+\sum_{e\in\mathcal E_T}
+       \{2J(x_e)-J(x_e+t)-J(x_e-t)\}
+                 +\frac{\pi i a(D)}2t^2,\\
+ &\hspace{32mm}M=e^{\pi it}.
+\end{aligned}
+\end{equation}
+The preferred peripheral curves and the filled complement are those
+of the original knot.
+\end{theorem}
+
+The proof begins with the framed collar in
+Figure~\ref{fig:strict-zero-circle-junction}. Insert the literal
+identity $R^0=I$ immediately before the ordered child product at
+each bare junction, and encircle its two straight strands. Filling
+that new circle along its primitive meridian restores the same
+framed tangle. This operation creates no turn edge, crossing power
+or preferred-longitude shear. It therefore leaves both
+$\mathcal E_T$ and $a(D)$ unchanged.
+
+There is a unique regular angular variable for each new circle.
+If $x_1,\ldots,x_m$ are its incident covariant labels at the complete
+strict optimizer, then $0<x_j\le1/2$, at most one label equals
+$1/2$, and $\sum_jx_j>1$. With $k=\tanh(y/2)$, its zero-power
+first-charge equation is
+\begin{equation}\label{gc:zero-angular}
+ \sum_j\arctan\bigl(k\tan\pi x_j\bigr)=\pi,
+ \qquad \tau=-iy,\quad Q=e^y>1.
+\end{equation}
+A half label contributes $\pi/2$. The left side increases strictly
+from zero or $\pi/2$ to $\pi\sum_jx_j$, so the solution exists,
+is unique, and has a nonzero angular Hessian.
+
+Let $V_m(\mathbf x)$ be the whole product action, after its original
+hidden binary labels have been optimized. The exact elimination
+identity is
+\begin{equation}\label{gc:zero-legendre}
+ V_m(\mathbf x)=\operatorname*{stat}_{\tau}
+                  \left[\sum_j b(x_j,\tau)-i\tau\right].
+\end{equation}
+Both sides evaluate the same complete polynomial trace: one uses
+the positive binary product, the other its first Fourier charge.
+The constrained Laurent-coefficient calculation in
+Appendix~\ref{app:strict-tree-geometric-characteristic} proves the
+identity with its absolute constant. It continues holomorphically
+through the possible half label.
+
+The group marking requires a separate argument. In the fixed
+product collar, the two based puncture loops satisfy
+$a_{\mathrm{out}}=a_{\mathrm{in}}$ and
+$b_{\mathrm{out}}=b_{\mathrm{in}}$, with disk-boundary word $ba$.
+The complete old white-face maps identify the added primitive
+longitude as $W_1^{-1}W_3$, up to its recorded orientation. Its
+determinant-one normalization has trace $-(Q+Q^{-1})$, with
+the same $Q>1$ as in \eqref{gc:zero-angular}. Pulling the old
+holonomy back through the literal meridian-filling quotient keeps
+both puncture generators and their paths. The resulting ordered
+page conjugacies are the native all-circle conjugacies. Their
+puncture pairs are irreducible, so the page intertwiners are unique
+in the projective group. This identifies representations, including
+the original odd seams, rather than matching only their traces.
+
+At an internal half edge, $X_e=-1$ may be a double root of the
+edge quadratic. The normalized character matrices remain regular.
+One therefore retains the joint stationary system. The new angular
+Hessian block is invertible; its Schur complement is exactly the
+old strict reduced Hessian by \eqref{gc:zero-legendre}. The full
+system is nondegenerate without inverting an individual edge
+quadratic. Its rational longitude identity consequently extends
+through this fold.
+
+The selected added longitude remains semisimple near $Q>1$.
+Its commuting meridian of eigenvalue ratio one is therefore
+projectively identity, which removes the potential unipotent
+ambiguity. The old marked deformation and sufficiently long
+fillings identify the resulting main-meridian germ with that of
+the original complete filled knot. Applying the all-circle
+identity, and the same filled-knot Seifert sign, proves
+\eqref{gc:strict-longitude}. No quantum estimate for the newly
+drilled diagram is required; all quantum estimates remain those
+of the original strict presentation.
+
 \section{The resulting factor of a genuine quantum recurrence}
 \label{gc:operator}
 
-Now impose the all-order source hypotheses as well. For the present
-circle trees they are available under independently sufficiently
-long fixed signed powers, the summed condition
+Now impose the all-order source hypotheses as well. They hold for
+all the fixed strict Conway presentations in
+Theorem~\ref{gc:strict-longitude-theorem} under independently
+sufficiently long signed powers. For circle trees they also hold
+under the summed condition
 $\sum_vd_v/(d_v^2+n_v^2)\le2^{-25}$, or the local condition
 $\max_vd_v/(d_v^2+n_v^2)\le2^{-120}$.
 All original qualifications remain, and no data grow with the level.
@@ -250,9 +382,12 @@ $s,s+1,\ldots,s+d$, away from ordinary resonances.
 Its filtered logarithm selects the critical-value germ
 $L_{\mathrm{eff}}=-e^{\mathcal S'(\log M)}$.
 The exact edge insertion gives the right side of
-\eqref{gc:longitude}, and \eqref{gc:first-charge} fixes the
-same filled branch. Theorem~\ref{gc:longitude-theorem} therefore
-identifies $L_{\mathrm{eff}}$ with $L_{\mathrm{geom}}$.
+\eqref{gc:strict-longitude}, with the original physical edge set.
+The marked first-charge branch and the zero-circle elimination
+fix the same filled representation. Theorems~\ref{gc:longitude-theorem}
+and~\ref{gc:strict-longitude-theorem} therefore identify
+$L_{\mathrm{eff}}$ with $L_{\mathrm{geom}}$ in their respective
+source classes.
 
 The reduced/full conversion retains its meridian factor: before
 formal-domain cancellation the classical equation is
@@ -278,3 +413,37 @@ ideal. Nor does it give a fixed-$M\ne1$ quantum asymptotic by
 substituting $s$ of order $N$. The full geometric germ is obtained
 from all orders on fixed microscopic charts and the separate
 marked representation argument above.
+
+\section{Transfer under an ordered reduction of the presentation}
+\label{gc:intrinsic-transfer}
+
+The reduced ADO function and the preferred eigenvalue germ belong
+to the marked, zero-framed knot. Suppose the existing ordered
+net-twist reduction gives an ambient isotopy from the input to a
+covered strict presentation. The isotopy carries the knot
+orientation, positive meridian, preferred zero-linking longitude
+and cut mark. After correcting the transported ribbon framing to
+zero, the full function $F_N(M)$ agrees at every level, as does
+its rational continuation. Any genuine annihilator of that
+intrinsic family therefore has the factor in \eqref{gc:factor}.
+Presentation-specific recurrence formulas need not agree.
+
+The same conclusion applies to an arbitrary-closure reduction
+when it produces one covered strict knot factor and only unknot
+factors. Under the reduction theorem's long surviving-factor
+hypotheses, a hyperbolic knot input has precisely that form.
+Removing the exhibited unknot summands is an ambient isotopy,
+and its exterior map carries the preferred peripheral pair.
+No assertion about quantum-growth multiplicativity for connected
+sums is used here.
+
+For a fixed original expression there are finitely many reduction
+and parity branches. Taking the maximum of their strict source
+and geometric thresholds gives a uniform sufficient threshold
+for the surviving signed net powers. Large powers that cancel
+to a short net power do not satisfy this condition. The integer
+$a(D)$ and the edge factors are computed on the covered strict
+diagram; only their preferred-longitude product and the selected
+geometric factor are transferred intrinsically. The full proof
+and precise reduction references are in
+Section~\ref{gj:transfer-to-presentations-with-net-twists-and-arbitrary-closures}.

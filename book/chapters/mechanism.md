@@ -33,6 +33,39 @@ This yields two global facts. Every physical color tuple obeys the required uppe
 
 Finally, an exact finite Fourier identity inserts the prescribed integer twists into the original leaf frames. The local packet produces a nonzero saddle contribution. Estimates on the whole Fourier domain, including its boundary terms, make the remaining part exponentially smaller. The [marked filling theorem](../../notes/actual_conway_general_mask_marked_filling.md) identifies the resulting action with the volume of the actual knot complement. Only auxiliary crossing-circle cusps are filled. The main knot cusp remains complete and unfilled.
 
+## Subtree estimates with a uniform twist threshold
+
+For the ordered tree construction with at least one edge
+and an integer braid at every junction, the [directed subtree theorem](../../notes/actual_all_circle_directed_volume.md)
+uses an exact finite recursion with one attaching angle left
+free. Its outgoing polynomial always has degree at most
+\(N-1\), even for a large subtree. The proof establishes
+nonvanishing at angle zero, then divides by that exact value,
+retaining its phases and framing factors.
+
+The ratio has a real decay estimate and a complex estimate
+on a fixed rectangle. These bounds control the next finite
+crossing trace, including its Fourier endpoint terms.
+Its first contribution has coefficient one at both level
+parities, and the other contributions are strictly smaller.
+Different subtrees may use different decay constants. The
+last vertex needs no outgoing estimate because its value
+is the final scalar.
+
+This gives a finite numerical criterion and, in particular,
+the sufficient condition
+\[
+                  |n_v|\ge2^{27}\quad\text{or}\quad d_v\ge2^{28}
+\]
+at each vertex independently. Here \(n_v\) is the signed
+crossing power and \(d_v\) the number of incident tree edges.
+The original strand pairing must form a knot. The theorem
+controls its actual invariant and identifies the limit with
+its complement volume. The tree and all powers are fixed
+before \(N\) grows. This numerical result complements the
+strict-tree long-filling proof; it does not narrow that
+proof to circle trees.
+
 ## The same limit written through a quantum \(A\)-operator
 
 A quantum \(A\)-operator is a finite difference operator in a meridian variable. It is more data than a classical algebraic curve, but an equation alone can still have several solutions. The actual solution is selected here by its original quantum-group definition and finitely many fixed small-color values.
@@ -56,7 +89,7 @@ Here \(c_0\) is a fixed vector of small-color Laurent polynomials, \(r_N\) is th
 
 The [pointed quantum \(A\)-volume corollary](../../notes/actual_conway_pointed_quantum_a_volume.md) proves that this exact signed scalar has the knot-volume limit above. It also gives a positive ratio of coefficients of Gram determinants, equal to a sum of squared color periods, with the corresponding volume limit. The signed scalar is not replaced by a matrix norm or by a sum of absolute values. The full ADO normalization is retained as a rational factor whose whole value at \(M=1\) is \(i^{N+3}/N\).
 
-The [geometric longitude theorem](../../notes/actual_all_circle_geometric_characteristic.md) supplies a separate nonparabolic main-meridian construction for the circle trees. It identifies the selected curve with the preferred-longitude deformation. Combined with the full microscopic expansion, it identifies the selected geometric factor of the first nonzero classical symbol. The full quantum-module comparison and extension to other strict presentations remain open; the earlier auxiliary-color deformation alone does not provide those statements.
+The [strict-tree geometric longitude theorem](../../notes/actual_strict_tree_geometric_characteristic.md) identifies the selected curve with the preferred-longitude deformation for every covered strict long-filling presentation, including arbitrary product junctions without crossing circles. The full microscopic expansion then forces the selected geometric irreducible factor to divide the first nonzero classical symbol of every genuine all-level reduced annihilator. The corresponding earlier circle-tree theorem retains its summed condition or its local bound \(2^{-120}\). These operator conclusions require estimates for the whole expansion on shifted parameter neighborhoods; the leading profile of a new numerical criterion alone is not a substitute. Full quantum-module or recurrence-ideal equality remains a separate problem.
 
 ## Other local tools, and their different scope
 

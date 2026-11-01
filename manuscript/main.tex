@@ -59,19 +59,21 @@
 \chapter*{Abstract}
 We prove the volume conjecture for two specified classes of arborescent knot diagrams built by ordered stacking and quarter-turns of two-string tangles. The first is a recursive construction in which independently sufficiently large signed twist numbers give a hyperbolic knot and the volume limit. Its elementary pieces retain their original crossing circles, disk framings and endpoint order.
 
-For ordered trees with one crossing-circle operator at every vertex, we give two explicit sufficient conditions. If $d_v$ is the degree of a vertex and $n_v$ is its signed crossing power, either
+For ordered trees with one crossing-circle operator at every vertex, we give explicit sufficient conditions in the vertex degree $d_v$ and signed crossing power $n_v$. One condition is
 \[
- \sum_v\frac{d_v}{d_v^2+n_v^2}\le2^{-25},
- \qquad\text{or}\qquad
- \max_v\frac{d_v}{d_v^2+n_v^2}\le2^{-120}
+                  \sum_v\frac{d_v}{d_v^2+n_v^2}\le2^{-25}.
 \]
-suffices whenever the original strand pairing gives a knot. The first condition gives the explicit bound $|n_v|\ge8192\sqrt E$ for a tree with $E$ edges. The second removes the sum over vertices and permits the bound $|n_v|\ge2^{119}$ independently of the tree size. Both allow short or zero powers at sufficiently large-degree vertices. Every diagram, parity choice and integer power is fixed before the root-of-unity level $N$ tends to infinity. The limits include both parities and composite levels, and only auxiliary circles are filled.
+A separate local argument proves the volume identity whenever, at every vertex,
+\[
+                   d_v\ge2^{28}\qquad\hbox{or}\qquad |n_v|\ge2^{27}.
+\]
+Thus $|n_v|\ge2^{27}$ suffices independently of the number of tangles. The degree alternative also permits any fixed short or zero powers at sufficiently large-degree vertices. A more flexible finite criterion allows a separate decay constant on each attaching edge and distinguishes the final vertex of the calculation. Every diagram and all its integer powers are fixed before the root-of-unity level $N$ tends to infinity. The original strand connections must give one knot, with no internally closed extra component.
 
-The proof starts with the finite matrices defining the invariant and retains their derivative data at repeated spectral roots. For the long-twist construction, positive multiplication coefficients and exact rational inequalities control the signed color terms. For the quantitative tree theorems, a literal projection cut gives two octahedra per edge. Positive deformations of these cells fit in the original cyclic order, and their actual primitive periods give smooth filling even when the total meridian logarithm has left a small neighborhood of zero. A separate metric condition, $\sqrt{d_v^2+n_v^2}\ge630$ at every vertex, constructs these geometric fillings without a summed condition. The local quantum argument evaluates each subtree as an exact polynomial and normalizes it by its own value at zero. The full Fourier calculation keeps the charge tails and boundary contributions, identifies a nonzero leading term, and matches its calibrated action with the volume of the original knot complement.
+The proof begins with the finite matrices defining the invariant and retains their derivative data at repeated spectral roots. For the long-twist construction, positive multiplication coefficients and exact rational inequalities control the signed color terms. For the quantitative tree theorems, a cut of the actual augmented exterior gives two octahedra per edge. Their positive deformations and primitive peripheral periods construct the metric after filling. The quantum calculation evaluates subtrees as exact polynomials, keeps their values at zero, and bounds every Fourier contribution relative to the next conditional critical value. This proves noncancellation and identifies the limiting action with the volume of the original knot complement. Only auxiliary circles are filled; the main knot cusp remains complete.
 
-Both quantitative theorems give a uniform microscopic main-meridian profile for the zero-framed reduced ADO invariant, with its exact crossing and framing factor retained. Under the summed criterion we also identify the first correction with the preferred cusp shape of the filled knot. The construction hypotheses and the knot-pairing test are stated explicitly; the results do not classify all arborescent knots.
+The same calculation gives a uniform microscopic main-meridian profile for the zero-framed reduced ADO invariant. The exact crossing and framing factors remain in the formula. The summed theorem also identifies the first correction with the preferred cusp shape. By attaching even stacks of sufficiently long terminal tangles to any fixed knot-paired circle-tree core, the degree alternative produces examples retaining arbitrarily many prescribed short-twist pieces. These attachments preserve the endpoint pairing and can change the knot.
 
-For the circle-tree constructions, we also identify the geometric longitude selected by the full microscopic expansion. The nonparabolic edge representations glue with the original half-twist markings. The boundary pairing and an algebraic constants argument reduce any discrepancy in the longitude to a rational function of the main meridian. Regular reconstruction over every nonzero meridian value makes this function a monomial; the preferred framing and the complete longitude lift fix it. Consequently the geometric irreducible factor divides the first nonzero classical symbol of every genuine all-level annihilator satisfying the source hypotheses. This does not identify the entire A-polynomial or the full recurrence ideal.
+Finally, the full asymptotic source determines the preferred geometric longitude on the previously covered strict Conway branches, including product junctions without crossing circles. The proof first treats circle trees by explicit representations and algebraic rigidity. At an unmarked junction, inserting a zero-crossing box and an auxiliary circle preserves the original tangle after meridian filling; an exact stationary elimination and the based boundary maps extend the longitude identity. It follows that the selected geometric irreducible factor divides the first nonzero classical symbol of every genuine all-level annihilator under the stated full-source hypotheses. This is a statement about the selected factor, not the entire A-polynomial or recurrence ideal.
 
 \tableofcontents
 \mainmatter
@@ -85,6 +87,7 @@ For the circle-tree constructions, we also identify the geometric longitude sele
 \input{sections/08-filling}
 \input{sections/08a-quantitative-circle-trees}
 \input{sections/08b-local-circle-messages}
+\input{sections/08d-directed-circle-messages}
 \input{sections/08c-geometric-characteristic}
 \input{sections/09-reproduction}
 \appendix
@@ -97,6 +100,8 @@ For the circle-tree constructions, we also identify the geometric longitude sele
 \input{sections/G-local-tree-messages}
 \input{sections/H-filtered-characteristic}
 \input{sections/I-geometric-characteristic}
+\input{sections/J-strict-tree-geometric-characteristic}
+\input{sections/K-directed-circle-messages}
 \backmatter
 \bibliographystyle{plain}
 \bibliography{references}

@@ -14,14 +14,17 @@ The left side measures exponential growth: a value of the form $N^a e^{NV/(2\pi)
 This project studies the conjecture by cutting knot diagrams into tangles and keeping track of how their finite evaluations compose. The main family consists of **Conway algebraic, or arborescent, knots**. These are built from rational tangles by joining and turning pieces. The results below give sufficient conditions on specified constructions in this family. One requires long net twists; another gives an explicit bound that can also permit short twists at junctions with many branches.
 
 For the specified construction with an integer braid at every
-vertex of an ordered tree, a [single twist threshold works for
-every finite tree](results.md#one-twist-threshold-for-arbitrarily-many-tangles).
-An explicit sufficient local condition is
-\(\max_v d_v/(d_v^2+n_v^2)\le2^{-120}\). Here \(d_v\) counts incident
-branches and \(n_v\) counts signed half-twists. It implies the
-volume equality whenever the actual strand pairing gives a knot.
-The constant is coarse, but does not deteriorate as the number
-of tangles increases.
+vertex of an ordered tree with at least one edge, a [single twist threshold works for
+every finite tree](results.md#one-twist-threshold-for-arbitrarily-many-tangles):
+\[
+                         |n_v|\ge2^{27}.
+\]
+The integer \(n_v\) counts signed half-twists. The actual endpoint
+pairing must form one knot, with no additional closed component.
+The threshold is independent of the size, depth and degrees of
+the tree. A more flexible sufficient condition lets each vertex
+have either this twist magnitude or degree \(d_v\ge2^{28}\).
+The entire diagram is still fixed before the quantum level grows.
 
 ## How the construction works
 
@@ -65,30 +68,49 @@ This covers arbitrarily large fixed compositions when their reduced twists satis
 
 The [closure extension](../../notes/actual_conway_arbitrary_closure_volume.md) also permits cap closures, which join each upper and lower endpoint pair, and twist sums that vanish exactly. Removing these zero sums can split the diagram into connected-sum factors. If the input is hyperbolic and every surviving strict factor has long net twists, the proof shows that just one strict factor remains and all others are unknots. The original knot is isotopic to that covered factor. The [results chapter](results.md#cap-closures-and-exact-cancellations) gives the precise criterion, including a sufficient condition on the original subset sums.
 
-## A numerical condition for trees of crossing circles
+## Numerical conditions for trees of crossing circles
 
-For an ordered tree with a crossing circle at every junction, let
-\(d_v\) count the branches at that circle and let \(n_v\) be its signed
-crossing power. The [quantitative theorem](../../notes/actual_all_circle_quantitative_volume.md)
-proves hyperbolicity and the same volume limit if the strand pairing
-is a knot and
-
+In this construction every product junction contains an integer
+two-strand braid. To describe its geometry, place a crossing circle
+around that braid and retain its parity as a half twist. Let \(d_v\)
+be the number of incident tree edges and \(n_v\) its signed crossing
+power. The [directed subtree theorem](../../notes/actual_all_circle_directed_volume.md)
+proves the actual hyperbolic knot-volume equality when, independently
+at each vertex,
 \[
- \sum_v\frac{d_v}{d_v^2+n_v^2}\le2^{-25}.
+                 |n_v|\ge2^{27}\quad\text{or}\quad d_v\ge2^{28},
 \]
+and the original strand pairing gives one knot. Its more detailed
+finite criterion assigns a separate decay bound to each subtree;
+the displayed condition is a simple consequence of that criterion.
 
-The [results chapter](results.md#an-explicit-bound-that-also-permits-some-short-twists)
-defines this tangle construction and gives explicit consequences.
-For a tree with \(E\) edges, twists of magnitude at least
-\(8192\sqrt E\) suffice. A circle with many incident branches can
-instead carry a short power. The bound is deliberately conservative,
-and the tree stays fixed while \(N\) grows.
+The degree alternative allows short and zero powers. For example,
+start with any fixed ordered core whose strand pairing is a knot.
+At an existing product slot at each vertex, insert an even stack
+of \(B\ge2^{28}\) new terminal pieces, each with an odd power of
+magnitude at least \(2^{27}+1\). The stack has the same endpoint
+pairing as two straight strands and creates no internal circle.
+The resulting knot satisfies the theorem. This is a way to construct
+new covered knots; it generally changes the knot represented by
+the original core.
 
-This theorem includes the geometric step: the limiting action is the
-volume of the original knot complement. The new manuscript chapter and its technical appendices
-explain the actual octahedral cut, its positive deformation and the
-primitive filling slopes. It also derives the first meridian correction
-from the preferred longitude of the knot.
+The [summed criterion](../../notes/actual_all_circle_quantitative_volume.md)
+gives a different sufficient test:
+\[
+                  \sum_v\frac{d_v}{d_v^2+n_v^2}\le2^{-25}.
+\]
+For a tree with \(E\) edges, every \(|n_v|\ge8192\sqrt E\)
+suffices. This can be numerically better for a particular diagram.
+The earlier local condition is also retained in its original note.
+All these theorems keep the tree and the twist integers fixed
+while \(N\) grows through both parities.
+
+Both the finite-sum estimate and its geometric interpretation are
+proved. The original octahedral pieces deform with their marked
+filling curves, and the final metric is smooth on the original knot
+complement. The main knot cusp remains unfilled. The
+[results chapter](results.md) gives the exact scope and the
+[manuscript guide](manuscript.md) locates the full proofs.
 
 ## Why the proof has both an analytic and a geometric part
 
@@ -110,13 +132,13 @@ There is also a recurrence formulation. A quantum A-operator is a finite differe
 
 The [pointed quantum A-period theorem](../../notes/actual_conway_pointed_quantum_a_volume.md) gives an exact reconstruction of $K_N(K)$ from this operator and finite initial data, retaining the peripheral factors. For the knots covered above, this reconstructed value therefore has the same hyperbolic volume limit. The theorem also gives a positive determinant expression whose exponential rate is the volume.
 
-For the covered circle-tree presentations, the classical symbol now contains the geometric meridian--longitude factor. The [geometric longitude proof](../../notes/actual_all_circle_geometric_characteristic.md) establishes the whole curve, including its preferred framing. The [frontier chapter](frontier.md) distinguishes this factor theorem from equality of complete recurrence ideals and from extensions to other knot classes.
+For every covered strict long-filling presentation, the [geometric longitude proof](../../notes/actual_strict_tree_geometric_characteristic.md) identifies the whole selected curve with the preferred meridian--longitude deformation of the knot complement. Junctions without crossing circles may have arbitrary valence and adjacency. The earlier summed circle-tree theorem and the local theorem with bound \(2^{-120}\) also have the required geometric identification and full expansion. The selected complex geometric irreducible factor therefore divides the first nonzero classical symbol of every genuine all-level annihilator of the reduced invariant. This does not identify the other factors, their multiplicities, or the full recurrence ideal.
 
 The actual meridian state imposes a concrete constraint: its complete value has volume growth, but its value one quantum shift away is exactly one. The [nearby-zero theorem](../../notes/actual_ado_complete_meridian_zero_accumulation.md) proves that zeros approach completeness at distance $O(1/N)$. A nonvanishing scalar asymptotic for the unchanged state therefore cannot hold on a fixed neighborhood.
 
 There is now a uniform volume limit on smaller disks \(M=q_N^s\), \(|s|\le R<1\), for every fixed strict Conway tree with independently sufficiently long signed twists. Product junctions can have arbitrary fixed valence and adjacency. The ratio to the complete value tends to \(\sin(\pi s)/(\pi s)\); after division by the exact finite sine quotient, its first correction is determined by the preferred cusp shape. The [moving-meridian theorem](results.md#the-volume-limit-while-the-meridian-varies) states the normalization, the threshold and the whole-sum comparison.
 
-The same intrinsic volume, nonvanishing and cusp conclusions pass through the net-twist and closure reductions under their stated hypotheses, because the ambient isotopies preserve the entire zero-framed meridian family and the preferred peripheral curves. This does not make the auxiliary augmented links of different presentations identical. The disk still stops before the ordinary-color resonances; extending the subtracted state through them and extending the geometric-factor theorem beyond the circle-tree presentations remain further questions.
+The same intrinsic volume, nonvanishing, cusp and selected-factor conclusions pass through the net-twist and closure reductions under their stated hypotheses. Their ambient isotopies preserve the entire zero-framed meridian family and the preferred peripheral curves. The comparison may use the reduced strict diagram to compute its factors; it does not identify the auxiliary augmented links of different presentations. The disk still stops before the ordinary-color resonances. Continuation through them and coverage of other knot classes remain further questions.
 
 ## Reading and checking the arguments
 

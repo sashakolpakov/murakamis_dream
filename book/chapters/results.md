@@ -13,68 +13,91 @@ There are two main ways to specify the proved families. The Conway construction 
 
 ## One twist threshold for arbitrarily many tangles
 
-There is a stronger statement about the quantifiers for the ordered
-circle-tree construction described below. A single integer threshold
-works for every finite tree in that construction. It does not have
-to be increased when more tangle boxes are added or when their
-nesting becomes deeper.
-
-Let \(d_v\) be the number of tree edges incident to vertex \(v\),
-and let \(n_v\) be the signed number of half-twists in its braid.
-The [local theorem](../../notes/actual_all_circle_local_message_volume.md)
-assumes
+For the ordered circle-tree construction below, with at least one
+edge, the
+[directed subtree theorem](../../notes/actual_all_circle_directed_volume.md)
+gives a sufficient twist threshold independent of the number of
+pieces, their nesting depth, and the vertex degrees:
 \[
-                 \max_v\frac{d_v}{d_v^2+n_v^2}\le2^{-120}.
+                         |n_v|\ge2^{27}
 \]
-The actual strand pairing must give one knot, with no extra closed
-component inside a tangle. Under these conditions the knot complement
-is hyperbolic, and the Kashaev volume equality at the top of this page
-holds through both even and odd levels. The theorem also gives the
-uniform normalized meridian profile on \(|s|\le R<1\).
+at every vertex. Here \(n_v\) is the signed number of half-twists
+in the braid at vertex \(v\). Its sign is arbitrary. The original
+strand pairing must form one knot and must have no extra component
+closed inside an intermediate tangle.
 
-For \(n\ne0\), the elementary inequality
+Under these conditions the original knot complement is hyperbolic
+and its reduced Kashaev invariant has the volume limit at the top
+of this page, through both even and odd levels. The theorem also
+gives the normalized meridian profile on every fixed disk
+\(|s|\le R<1\). Fix the whole tree and every twist integer before
+letting \(N\) tend to infinity. The theorem does not allow the
+diagram or its powers to grow with the quantum level.
+
+Let \(d_v\) count the tree edges incident to \(v\). A more flexible
+consequence permits the choice
 \[
-                 \frac{d}{d^2+n^2}\le\frac1{2|n|}
+              \boxed{|n_v|\ge2^{27}\quad\text{or}\quad d_v\ge2^{28}}
 \]
-shows that \(|n_v|\ge2^{119}\) at every vertex suffices. The huge
-number is an explicit sufficient threshold, not a proposed sharp
-bound. The assertion of interest is that it is independent of the
-number of tangles. Each tree and every twist count is still fixed
-before \(N\) grows. The theorem allows either twist sign and does
-not require the magnitudes at different vertices to be comparable.
+independently at each vertex. Vertices meeting the degree bound
+may carry any fixed signed power, including zero. These are
+conservative sufficient constants. The full theorem states a
+finite criterion with separate bounds at each subtree, and can
+certify additional diagrams outside the displayed alternatives.
 
-Here is the reason that a local condition is enough. Evaluate a
-subtree but leave its attaching edge variable \(u\) free. Its exact
-finite evaluation is a polynomial \(M_{v,N}(u)\). Only the attaching
-edge contains \(u\), so its trigonometric degree is at most \(N-1\),
-regardless of how many boxes lie below it. The proof shows that
-\(M_{v,N}(0)\ne0\) and controls the ratio
-\(M_{v,N}(u)/M_{v,N}(0)\). Factoring out this exact denominator
-preserves the contribution already obtained from the subtree.
-At the next vertex the error needs to be smaller only than the
-change caused by that vertex's filling. The proof supplies this
-comparison, including all high indices, repeated-root derivatives,
-and Fourier boundary contributions.
+This also gives a precise construction with arbitrary prescribed
+short powers. Begin with a fixed ordered circle-tree core whose
+original strand pairing closes to a knot and has no internal
+closed component. Keep every core power. At an actual product
+slot beside each core braid, insert a consecutive even stack of
+\(B\ge2^{28}\) terminal pieces. Give every added piece an odd
+power of magnitude at least \(2^{27}+1\). A turned odd braid has
+diagonal endpoint pairing; an even stack has the pairing of two
+straight strands. Thus the insertion preserves the original
+component count. Every core vertex meets the degree bound and
+every added leaf meets the twist bound.
+
+The resulting knot has the proved volume limit. Its knot type
+generally differs from that of the core: preserving endpoint
+pairing is not an isotopy deleting the new tangles. The number
+attached at each core vertex need not increase with the number
+of core vertices, but the entire enlarged construction is fixed before
+the limit is taken.
+
+Here is why a local criterion can suffice. Evaluate a subtree
+while leaving its attaching angle \(u\) free. Its exact finite
+evaluation is an even trigonometric polynomial \(M_{v,N}(u)\)
+of degree at most \(N-1\), regardless of the subtree's size.
+The proof establishes \(M_{v,N}(0)\ne0\), then bounds the ratio
+\(M_{v,N}(u)/M_{v,N}(0)\) on real angles and a complex rectangle.
+The denominator is the subtree's own exact value, including
+all phases. At the next vertex the error is compared with the
+new filling contribution at that vertex.
 
 ![The complete edge kernel connects the parent angle u to the current angle t. The child subtree polynomials are multiplied before the crossing trace is taken.](../figures/tree-boundary-message.png)
 
-The triangles abbreviate subtrees of the construction. The angle
-\(u\) is retained; the trace acts on \(t\). The figure's denominator
-is the exact subtree value whose nonvanishing is proved in the
-induction.
+The triangles abbreviate subtrees. The angle \(u\) is retained,
+while the trace acts on \(t\). The proof keeps high indices,
+derivatives at repeated spectral points, and the boundary terms
+of the finite Fourier transform. Separate decay bounds may be
+assigned to different outgoing subtrees. The final vertex needs
+no outgoing bound, since there is no further attaching variable.
+Choosing that vertex changes only the order of a finite tensor
+contraction; it does not change the physical tangle or its framing.
 
-The critical point produced by this calculation solves the same
-equations as the positive deformation of the original octahedral
-pieces. Its primitive filling periods give cone angle \(2\pi\)
-at the endpoint, so the completed metric is smooth on the original
-knot complement. The volume constant is fixed by the complete
-augmented link. Thus the geometric identification and the
-noncancellation estimate are both proved for this class.
+The selected critical point solves the same equations as the
+positive deformation of the original octahedral pieces. The
+primitive filling periods produce cone angle \(2\pi\), hence a
+smooth metric on the original knot complement. The volume
+constant is fixed at the complete augmented link. Both this
+geometric identification and noncancellation in the finite
+invariant are part of the theorem.
 
-The local and summed conditions below are alternative sufficient
-tests. The summed condition has a substantially better numerical
-constant; the local condition has no restriction on the total
-number of vertices. Neither includes every short-twist knot.
+The earlier [local criterion](../../notes/actual_all_circle_local_message_volume.md),
+\(\max_v d_v/(d_v^2+n_v^2)\le2^{-120}\), remains a valid included
+result. The summed condition below is a useful alternative and
+can give a smaller numerical bound for an individual diagram.
+None of these tests includes every short-twist knot.
 
 ## An explicit bound that also permits some short twists
 
@@ -111,7 +134,10 @@ fixed powers, and attach \(B\) terminal circles to each vertex. If the
 added powers have magnitudes at least \(B\), the sum is less than
 \(2m/B\). Hence \(B\ge2^{26}m\) suffices, provided the resulting strand
 pairing is a knot. These very large constants make the result explicit;
-they are not proposed as sharp thresholds.
+they are not proposed as sharp thresholds. Attaching terminal
+circles generally changes the knot; this statement concerns
+the resulting diagram. The preceding even-stack construction
+gives a separate way to preserve a chosen core's endpoint pairing.
 
 A product junction without a braid can be represented by the identity
 braid \(R^0\). Adding its crossing circle changes the augmented link;
@@ -347,7 +373,7 @@ The [geometric proof](../../notes/actual_main_meridian_preferred_cusp.md) comput
 
 ![The preferred longitude on the filled cusp: the same Euclidean lattice with the augmented and surgery-corrected choices of longitude.](../figures/main-cusp-longitude-shear.svg)
 
-The geometric longitude identity and this asymptotic apply to the same strict-tree class under the stated long-twist hypotheses. Passage through $s=\pm1$, the first ordinary-color resonances, remains open for the general strict-tree profile. The selected classical geometric factor is identified for the covered trees of crossing circles; extending that identification to strict presentations with bare junctions remains open. The construction and twists cannot grow with $N$, and small surviving twists are not covered.
+The [full geometric longitude identity](../../notes/actual_strict_tree_geometric_characteristic.md) and this asymptotic apply to the same strict-tree class under the stated long-twist hypotheses. They identify the selected classical geometric factor even with arbitrary bare junctions. Passage through $s=\pm1$, the first ordinary-color resonances, remains open for the general strict-tree profile. The construction and twists cannot grow with $N$. Short surviving twists need a separate sufficient theorem, such as the numerical circle-tree criteria above.
 
 The [intrinsic transfer under tangle reduction](../../notes/actual_main_meridian_filled_volume.md#net-twists-and-other-conway-closures) gives the same uniform volume limit, nonvanishing and preferred-cusp expansion for the net-twist and arbitrary-closure presentations described earlier. For a cylindrical input, its reduction must give a strict knot with sufficiently long surviving net twists. For either cylindrical or cap closure with zero sums, the input must satisfy the closure theorem: a hyperbolic input with sufficiently long surviving strict weights reduces to one strict knot factor and unknot factors. The reduction is an actual ambient isotopy after those unknot factors are removed.
 
@@ -590,24 +616,42 @@ Removing the cycle restrictions, controlling the full cube invariant and treatin
 ## A classical characteristic selected by the full expansion
 
 The [filtered characteristic theorem](../../notes/actual_main_meridian_filtered_characteristic.md)
-applies to the proved strict-tree and quantitative circle-tree
-source classes, including the local criterion above. Given a
-genuine all-level annihilator, it proves that the full microscopic
+applies to the proved strict long-filling sources and the
+earlier circle-tree sources under the summed condition or
+the local bound \(2^{-120}\). Given a genuine all-level
+annihilator, it proves that the full microscopic
 expansion selects an analytic curve in its classical symbol.
 The selected factor is reciprocal and has an explicit rational
 peripheral expression. Its tangent is the preferred cusp shape.
 
-For the circle-tree presentations, the [geometric longitude theorem](../../notes/actual_all_circle_geometric_characteristic.md)
-now identifies the entire selected curve with the knot's preferred
-meridian--longitude deformation. If \(n_v\) are the original crossing
-powers and \(w(D)\) is their oriented writhe, its longitude is
+The [strict-tree geometric longitude theorem](../../notes/actual_strict_tree_geometric_characteristic.md)
+identifies the entire selected curve for every covered strict
+long-filling presentation, with no restriction on the valence or
+adjacency of bare product junctions. The earlier summed
+circle-tree theorem and the local theorem with bound
+\(2^{-120}\) also supply the required geometric theorem
+and full expansion. If \(n_v\) are the original crossing powers and \(w(D)\) is their oriented
+writhe, the preferred longitude is
 \[
  L(M)=-M^{-w(D)-\sum_v n_v}
-       \prod_e\frac{M^2-E_e(M)}{1-M^2E_e(M)}.
+       \prod_{e\in\mathcal E_T}
+       \frac{M^2-X_e(M)}{1-M^2X_e(M)}.
 \]
-The edge variables \(E_e\) solve the stated rational gluing equations
-on the branch obtained from the original filling path. This branch
-condition matters: elimination alone retains other representations.
+Here \(\mathcal E_T\) is the original set of physical quarter-turn
+edges, and \(X_e=e^{2\pi ix_e}\) comes from the corresponding
+stationary index \(x_e\). The branch is selected by the original
+marked filling path. This condition matters: algebraic
+elimination alone retains other representations.
+
+To pass from circle trees to a bare product junction, the proof
+inserts a literal zero-crossing box and a circle around it.
+Meridian filling removes that circle and restores the original
+framed collar, including its ordered based puncture loops.
+Eliminating the added angular variable gives exactly the old
+product action. The full stationary system stays regular even
+at the possible half-edge fold. This identifies the actual
+representation germ of the original knot, rather than inferring
+geometry from an equality of scalar traces.
 
 The proof first constructs the nonparabolic representations of the
 pieces and joins them along their labeled twice-punctured disks.
@@ -625,8 +669,19 @@ fixes that constant and exponent, and the Seifert-surface calculation
 fixes the remaining sign.
 
 Combining this result with the full quantum expansion proves that the
-selected geometric factor divides the first nonzero classical symbol
-of every genuine all-level annihilator in the covered circle-tree
-classes. The other factors of the symbol, the full recurrence ideal,
-and the extension to other strict presentations are separate questions.
-The existing volume theorems keep their broader stated scopes.
+selected complex geometric irreducible factor divides the first
+nonzero classical symbol of every genuine all-level annihilator
+of the reduced invariant in these covered classes. The full and
+reduced normalizations have different gauge factors, which the
+proof keeps before removing common factors.
+
+The intrinsic conclusion also transfers to net-twist and arbitrary
+closure inputs that are carried by the stated marked ambient
+isotopies to a covered strict knot. The entire zero-framed family
+and preferred peripheral curves agree under that isotopy. The
+presentation-dependent edge factors are computed on the strict
+output; they are not asserted to match term by term in the input.
+No equality with the full A-polynomial, no factor multiplicity,
+and no identification of the entire recurrence ideal is claimed.
+Ordinary resonances and knots outside the covered classes remain
+separate questions.

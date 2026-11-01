@@ -6,7 +6,7 @@ A recurrence operator does not determine a knot invariant by itself: a recurrenc
 
 At a root of unity, some coefficients of the recurrence may have poles when solved in forward form. The reconstruction keeps the whole Laurent expansion, so those poles can cancel before evaluation. Only a bounded number of derivatives of the initial data is needed, with a bound determined by the fixed operator and independent of the quantum level.
 
-For the knots of the [net-twist theorem](actual_conway_net_twist_volume.md) and its [closure extension](actual_conway_arbitrary_closure_volume.md), this exact reconstruction has exponential growth equal to the knot complement volume. Every admitted knot is isotopic to a sufficiently long strict Conway knot. The closure extension also allows cap closures and zero sums, retaining the connected-sum factors until the hyperbolic input is shown to equal one strict factor. The proof transfers the invariant-volume theorem through an exact identity. For the covered circle-tree presentations, the [geometric longitude theorem](actual_all_circle_geometric_characteristic.md) also identifies the selected classical geometric factor. Other strict presentations and full quantum-module comparisons require further work.
+For the knots of the [net-twist theorem](actual_conway_net_twist_volume.md) and its [closure extension](actual_conway_arbitrary_closure_volume.md), this exact reconstruction has exponential growth equal to the knot complement volume. Every admitted knot is isotopic to a sufficiently long strict Conway knot. The closure extension also allows cap closures and zero sums, retaining the connected-sum factors until the hyperbolic input is shown to equal one strict factor. The proof transfers the invariant-volume theorem through an exact identity. The [strict-tree longitude theorem](actual_strict_tree_geometric_characteristic.md) also identifies the selected classical geometric factor for the covered strict presentations and their marked reductions. Comparison of the entire quantum module remains a further question.
 
 The same reconstruction and volume conclusion also apply to the
 [quantitative circle-tree theorem](actual_all_circle_quantitative_volume.md),
@@ -14,7 +14,7 @@ under its explicit condition
 \(\sum_vd_v/(d_v^2+n_v^2)\le2^{-25}\).
 Alternatively, the [local tree criterion](actual_all_circle_local_message_volume.md)
 \(\max_vd_v/(d_v^2+n_v^2)\le2^{-120}\) supplies the same conclusion.
-The exact operator identity is valid for every knot; the new theorem
+The [directed criterion](actual_all_circle_directed_volume.md), including its sufficient bound \(|n_v|\ge2^{27}\) at every vertex and its mixed degree alternative, supplies the same volume conclusion. The exact operator identity is valid for every knot; each volume theorem
 supplies its volume growth, including the short powers admitted by
 that criterion. No long-twist assumption is added in this application.
 
@@ -30,7 +30,7 @@ Fix a knot supplied by either reduction theorem. Its original construction is is
 \]
 
 For the quantitative application, use the original ordered circle
-tree and its powers satisfying either the summed or local criterion in place of the
+tree and its powers satisfying the summed, local or directed criterion in place of the
 long-twist presentation just described. The symbols \(K,V,q_N\) have
 the same meanings in (1), and all subsequent recurrence constructions
 are unchanged.
@@ -212,7 +212,7 @@ The same statement holds for the localized minimum-order generator. The scalar i
 The proof is the exact identity (11) followed by the strict Conway volume theorem on the reduced presentation. The tangle isotopy preserves the normalized invariant and the actual knot exterior, so the conclusion also holds for the original presentation. The identity retains the complete signed scalar at every sufficiently large level; the knot theorem supplies its nonzero asymptotic and its limit. No equality between operators computed from different presentations is required. This is an operator expression for the volume limit, obtained by reconstructing the selected invariant exactly.
 
 For the quantitative circle-tree class, apply its volume theorem
-directly to (11). This proves (14) under the summed criterion, with
+directly to (11). This proves (14) under the summed, local or directed criterion, with
 the same fixed operator, initial data and singular-step treatment.
 The peripheral formulas and determinant identity below are exact
 knot identities and continue to apply without a new twist hypothesis.
@@ -316,7 +316,7 @@ These are norm equalities for the selected periods. They do not identify an enti
 
 For the knots in the theorem, three objects are available: a genuine all-level ADO annihilator, fixed finite data selecting its solution, and an exact complete period with the knot-volume limit. The operator exists before the period is evaluated. Its initial jets contain no level-dependent exponential normalization, and (11) shows that a different invariant has not been substituted.
 
-The [full microscopic expansion](actual_main_meridian_filtered_characteristic.md), combined with the [geometric longitude theorem](actual_all_circle_geometric_characteristic.md), identifies the selected geometric factor for the covered circle trees. Comparing the entire pointed quantum module with the marked regulator germ remains a stronger problem. The crossing-circle deformation used to prove the volume theorem keeps the main meridian complete. It is not by itself a semiclassical theorem for varying that main-meridian ADO coordinate. Likewise, a rational root-state solution always gives a central monodromy eigenvalue \(1\); this does not identify its central spectral curve with the classical knot \(A\)-polynomial.
+The [full microscopic expansion](actual_main_meridian_filtered_characteristic.md), combined with the [strict-tree longitude theorem](actual_strict_tree_geometric_characteristic.md), identifies the selected geometric factor for the strict long-twist class and the previously established summed and local circle-tree classes. For the additional cases in the directed criterion, the exact operator reconstruction still gives the volume limit; the all-orders shifted-chart expansion needed for the factor conclusion is a separate requirement. Comparing the entire pointed quantum module with the marked regulator germ remains a stronger problem. The crossing-circle deformation used to prove the volume theorem keeps the main meridian complete. It is not by itself a semiclassical theorem for varying that main-meridian ADO coordinate. Likewise, a rational root-state solution always gives a central monodromy eigenvalue \(1\); this does not identify its central spectral curve with the classical knot \(A\)-polynomial.
 
 The [complete-meridian zero theorem](actual_ado_complete_meridian_zero_accumulation.md) gives an explicit restriction on that comparison. Exactly \(F_N(q_N)=1\), whereas \(F_N(1)=K_N(K)\) has positive volume growth. Actual zeros therefore approach \(M=1\) within \(O(1/N)\), and a uniform nonzero scalar branch for the unchanged state across completeness is impossible. The full modified state has a pole at \(M=q_N\).
 

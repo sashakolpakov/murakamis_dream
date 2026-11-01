@@ -2316,9 +2316,4 @@ It also asserts no fixed-\(M\ne1\) quantum asymptotic by substituting
 \(s\) of order \(N\), and no uniform nonvanishing through ordinary
 resonances.
 
-The all-order source theorem continues to cover strict presentations
-with bare product junctions. The geometric adapter proved here is
-for the ordered all-circle trees, so the new geometric-factor
-conclusion is restricted accordingly. The previously proved
-complete and moving volume results outside that geometric
-identification retain their existing scopes.
+This proof treats ordered circle trees. The [strict-tree extension](actual_strict_tree_geometric_characteristic.md) now handles product junctions without crossing circles by inserting a zero-crossing box and proving exact elimination after meridian filling. It therefore extends the geometric-factor conclusion to every strict presentation in the full-source theorem, and carries the intrinsic result through the covered net-twist and closure reductions. The additional volume cases in the directed criterion still require their own all-orders shifted-chart argument before they can be added to this operator statement.

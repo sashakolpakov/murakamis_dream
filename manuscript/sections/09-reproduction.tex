@@ -1,6 +1,6 @@
 \chapter{Checking the certificates and understanding the scope}\label{ch:reproduction}
 
-The two theorems combine written analytic and geometric arguments with finite checks of different kinds. The long-twist proof reduces two local inequalities to exact rational certificates supplied with the paper. The quantitative circle-tree proof establishes its uniform bounds analytically; separate finite checks verify its edge formulas, face identifications and peripheral identities. This chapter distinguishes those roles and records the scope of each theorem.
+The volume theorems combine written analytic and geometric arguments with finite checks of different kinds. The long-twist proof reduces two local inequalities to exact rational certificates supplied with the paper. The quantitative circle-tree proof establishes its uniform bounds analytically; separate finite checks verify its edge formulas, face identifications and peripheral identities. This chapter distinguishes those roles and records the scope of each theorem.
 
 \section{Three different kinds of evidence}
 The manuscript contains analytic proofs, exact finite certificates, and optional finite audits. They have different logical roles. The matrix identities, support and strictness arguments, geometric incidence, complex estimates and filling analysis are proved in the text. The rational certificates are finite parts of the proof: the continuum inequalities reduce to their exact feasibility, coverage and supporting-plane checks. Finite matrix or numerical asymptotic audits provide independent checks of formulas and normalizations, but do not establish a theorem by extrapolation.
@@ -34,6 +34,31 @@ The elementary edge equations and complex-strip estimates used by Chapter~\ref{c
 python3 repro/run_research_checks.py curvature-fillings
 \end{verbatim}
 The runner checks exact symbolic edge identities, finite samples of the stated complex inequality, labeled octahedral attachments and the full signed peripheral matrix words. Its output separates those computations from the uniform analytic and geometric proofs. Appendix~\ref{app:quantitative-sums} gives the full quantitative finite-sum proof, including both uniform Newton estimates, the weighted contraction and the charge-tail bounds. Appendix~\ref{app:quantitative-geometry} gives the complete ordered attachment, positive angular charts, primitive-period completion, volume calibration and preferred-cusp argument. The linked versions are optional separately available copies of those proofs. Such finite checks can detect sign or indexing errors; they do not replace the written proofs.
+
+\section{The directed criterion and unmarked junctions}
+
+The exact rational comparisons for
+Chapter~\ref{ch:directed-circle-messages} have one command:
+\begin{verbatim}
+python3 repro/run_research_checks.py directed-tree-fillings
+\end{verbatim}
+This program uses only Python's standard library. It verifies the
+constant inequalities for the uniform twist bound and the star with
+central power two, using rational enclosures of all quantities.
+The uniform conditional kernel estimate, induction over arbitrary
+fixed trees, noncancellation and geometric interpretation are written
+proofs in Appendix~\ref{app:directed-circle-messages}.
+
+For the local algebra of the unmarked-junction extension, run
+\begin{verbatim}
+python3 repro/run_research_checks.py strict-tree-geometry
+\end{verbatim}
+This program requires SymPy. It checks the white-map normalizations,
+primitive disk-longitude trace, incident radius formulas and the
+half-angle fold identity. Appendix~\ref{app:strict-tree-geometric-characteristic}
+proves the based boundary-map comparison, stationary elimination and
+full representation assembly. Those global statements are not
+deduced from the finite matrix checks.
 
 \section{Building the manuscript and illustrated guide}
 The TeX source is in \sourcefile{manuscript/}; its native illustrations are in \sourcefile{manuscript/figures/}. A TeX Live or MacTeX installation with \sourcefile{latexmk} builds the paper:

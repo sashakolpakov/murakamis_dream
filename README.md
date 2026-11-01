@@ -30,36 +30,42 @@ explains the groups, the closure condition, and the exact quantifiers.
 Another companion reconstructs the invariant from a quantum A-operator
 and initial data, giving the same volume limit in recurrence form.
 
-There is also an [explicit numerical theorem](https://sashakolpakov.github.io/murakamis_dream/notes/actual_all_circle_quantitative_volume.html)
-for ordered trees with a crossing circle at every junction. If $d_v$
-is the number of incident branches and $n_v$ its signed crossing
-power, then
+For an ordered tree with at least one edge and an integer
+two-strand braid at every junction, the [directed subtree theorem](https://sashakolpakov.github.io/murakamis_dream/notes/actual_all_circle_directed_volume.html)
+gives an explicit bound independent of the number of pieces:
+\[
+                         |n_v|\ge2^{27}
+\]
+at every vertex suffices. Here \(n_v\) is the signed number of
+half-twists. The original endpoint pairing must form one knot,
+with no component already closed inside an intermediate tangle.
+The theorem proves hyperbolicity and the volume limit through
+both even and odd quantum levels. Every tree and all its powers
+are fixed before the level tends to infinity.
 
-$$
-\sum_v\frac{d_v}{d_v^2+n_v^2}\le2^{-25}
-$$
+More generally, if \(d_v\) counts incident tree edges, each vertex
+may independently satisfy either
+\[
+                  |n_v|\ge2^{27}\quad\text{or}\quad d_v\ge2^{28}.
+\]
+Thus sufficiently large degree permits any fixed signed power,
+including zero. One can retain an arbitrary fixed core with a knot
+pairing and attach an even number \(B\ge2^{28}\) of terminal
+pieces at each core vertex, in the specified order, each with
+an odd power of magnitude at least \(2^{27}+1\). This preserves
+the endpoint pairing and gives a knot covered by the theorem;
+the added pieces generally change the knot itself.
 
-gives hyperbolicity and the volume limit whenever the original strand
-pairing gives a knot. For $E$ tree edges, requiring every
-$|n_v|\ge8192\sqrt E$ suffices. The sharper summed condition also
-allows short or zero powers at high-degree junctions. Its proof
-constructs the original knot complement from positive ideal cells
-and controls the full finite invariant. The constant is conservative.
-
-A [local alternative](https://sashakolpakov.github.io/murakamis_dream/notes/actual_all_circle_local_message_volume.html)
-removes the dependence on the number of tangles:
-$$
-              \max_v\frac{d_v}{d_v^2+n_v^2}\le2^{-120}.
-$$
-For this same construction, every $|n_v|\ge2^{119}$ suffices,
-regardless of the tree's size, depth or vertex degrees. The constant
-is deliberately very coarse. The conclusion is the actual knot
-volume equality, through both level parities; the whole diagram
-and its twists remain fixed as $N$ grows. The proof evaluates
-each subtree exactly and normalizes it by its own filled value,
-so the next error is compared with a change at one vertex.
-The earlier summed criterion remains an alternative with a better
-numerical constant.
+The [summed criterion](https://sashakolpakov.github.io/murakamis_dream/notes/actual_all_circle_quantitative_volume.html)
+remains a useful alternative:
+\[
+                  \sum_v\frac{d_v}{d_v^2+n_v^2}\le2^{-25}.
+\]
+For a tree with \(E\) edges, every \(|n_v|\ge8192\sqrt E\)
+suffices for that test. Either proof identifies the rate with the
+volume of the actual knot complement, using its original marked
+fillings. These constants are sufficient bounds, not sharp thresholds.
+The earlier local criterion is retained as an included theorem.
 
 The [closure extension](https://sashakolpakov.github.io/murakamis_dream/notes/actual_conway_arbitrary_closure_volume.html)
 also allows cap closures and exact cancellation of twist sums. Its
@@ -92,12 +98,19 @@ problem.
 
 The [full microscopic expansion](https://sashakolpakov.github.io/murakamis_dream/notes/actual_main_meridian_filtered_characteristic.html)
 also selects a classical curve in any genuine annihilating operator.
-For the circle-tree construction, the [geometric longitude theorem](https://sashakolpakov.github.io/murakamis_dream/notes/actual_all_circle_geometric_characteristic.html)
+The [strict-tree geometric longitude theorem](https://sashakolpakov.github.io/murakamis_dream/notes/actual_strict_tree_geometric_characteristic.html)
 identifies this curve with the preferred meridian--longitude deformation
-of the knot complement. Consequently its geometric irreducible factor
-divides the first nonzero classical symbol of every genuine all-level recurrence
-covered by the source theorem. This is a statement about that factor;
-it does not identify all factors or the entire recurrence ideal.
+for every covered strict long-filling construction, including junctions
+without crossing circles. The earlier summed circle-tree theorem
+and the local theorem with
+bound \(2^{-120}\) also supply the required full expansion and
+geometric identification. Consequently the selected
+geometric irreducible factor divides the first nonzero classical
+symbol of every genuine
+all-level annihilator of the reduced invariant. Marked ambient isotopy
+also carries this conclusion to the covered net-twist and closure inputs.
+The result does not identify all factors, their multiplicities, or the
+entire recurrence ideal.
 
 The general conjecture remains open. In particular, the theorem does not
 classify all arborescent knots or cover arbitrary short twist numbers.

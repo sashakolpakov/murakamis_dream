@@ -25,8 +25,13 @@ Its constant is fixed at the complete augmented exterior, which
 has two regular ideal octahedra per tree edge. This proves that
 the continued action is the actual hyperbolic volume. To obtain
 a quantum volume equality one also needs the finite-sum estimate;
-the [local theorem](../../notes/actual_all_circle_local_message_volume.md)
-supplies it under its stronger degree-and-twist condition.
+the [directed subtree theorem](../../notes/actual_all_circle_directed_volume.md)
+supplies it under its stronger finite numerical test. In particular,
+it suffices that every vertex independently satisfy
+\(|n_v|\ge2^{27}\) or \(d_v\ge2^{28}\), with the original knot
+pairing. This proves the actual complement-volume equality.
+The summed criterion remains a useful alternative. The geometric
+bound \(630\) alone is not a quantum estimate.
 
 ## The geometric objects and the required checks
 
@@ -100,6 +105,59 @@ Write the actual twist weight as \(n_i=\epsilon_i-2p_i\), with \(\epsilon_i\in\{
 
 The next sections give further details and explain the older constructions that supplied parts of this argument.
 
+## The full geometric longitude for strict trees
+
+A cusp-shape calculation determines the tangent of a peripheral
+curve, but the [strict-tree longitude theorem](../../notes/actual_strict_tree_geometric_characteristic.md)
+identifies the entire nearby curve for every covered strict
+long-filling construction. A meridian goes once around the
+knot. Its preferred longitude follows the knot once with zero
+linking number. Let \(M\) and \(L\) be their determinant-one
+holonomy eigenvalues on the same line.
+
+Write \(\mathcal E_T\) for the original physical quarter-turn
+edges, and let \(x_e(M)\) be their continued stationary indices.
+With \(X_e=e^{2\pi ix_e}\), the formula is
+\[
+ L(M)=-M^{-w(D)-\sum_i n_i}
+       \prod_{e\in\mathcal E_T}
+       \frac{M^2-X_e(M)}{1-M^2X_e(M)}.
+\]
+Here \(w(D)\) is the oriented writhe and \(n_i\) are the
+original signed crossing powers. The filling path fixes the
+logarithms and selects the branch; algebraic elimination
+without that marking would retain other representations.
+
+The extension to a junction without a crossing circle uses
+a literal identity box \(R^0\). Add a crossing circle around
+its two straight strands and fill the new circle's meridian.
+This returns the original tangle. The proof fixes a product
+collar, a basepoint and access paths before taking any
+representation, so both based puncture loops are preserved
+in order. It then compares the full boundary tuples of
+matrices. Agreement of one scalar trace would not suffice.
+
+![Meridian filling removes an added circle around a zero-crossing box while preserving the ordered based strand meridians.](../figures/zero-circle-junction.svg)
+
+At a bare product junction the new angular variable has a
+nondegenerate stationary point. Eliminating it returns the
+original product action and its Hessian. The full system
+remains regular when a physical edge has index one half;
+the proof does not assume that a folded quadratic equation
+has a simple root. The resulting representation factors
+through the original filled knot group and agrees with its
+marked geometric deformation.
+
+Combining this identification with the full filtered expansion
+gives the selected geometric factor of each genuine all-level
+annihilator for the covered strict long fillings. The original
+circle-tree operator theorem also applies under the earlier
+summed condition or the local bound \(2^{-120}\). No equality of the
+full A-polynomial or of recurrence ideals is asserted.
+Marked ambient isotopy carries the intrinsic curve and factor
+to the covered net-twist and arbitrary-closure inputs, even
+when their auxiliary augmented links differ.
+
 ## How the cells and the diagram are identified
 
 The [global Conway geometry theorem](../../notes/actual_positive_conway_hyperbolic_volume.md) supplies the face-pairing certificate for every cylindrical factor in its original positive seed-generated grammar. Here cylindrical closure joins each lower external strand to the corresponding upper strand; it differs from joining the two upper ends to each other and the two lower ends to each other. The later strict-mask theorem extends the geometric construction as described above. A leaf is an ideal quadrangular pyramid. A multiplication gate is a convex ideal triangular prism. Their volumes are exactly the source actions, and their ordered quadrilateral metrics are exponentials of the action derivatives.
@@ -125,7 +183,7 @@ For a fixed positive Conway expression \(E\) in that earlier seed-generated gram
 $$\lim_{N\to\infty}\frac{2\pi}{N}\log Z_{E,N}
 =R_{F_E}(B_E),\qquad B_E=\sum_j([z_j]-[\overline{z_j}])\in B(F_E)_{\mathbb Q}.$$
 
-Here \(z_j\) are the algebraic shapes, \(F_E=\mathbb Q(z_j,\overline{z_j})\) is the number field containing them and their conjugates, \(B(F_E)_{\mathbb Q}\) is the rational Bloch group, and \(R_{F_E}\) is its volume regulator at the specified complex embedding. For a retained cylindrical factor its value is now proved to be the actual complement volume. This geometric argument does not identify a generic main-meridian characteristic factor or prove arbitrary short-filling limits. Actual all-level quantum A-operators exist by a separate finite cut-state proof, and the pointed operator-period volume theorem is now established for the covered strict long-twist knots.
+Here \(z_j\) are the algebraic shapes, \(F_E=\mathbb Q(z_j,\overline{z_j})\) is the number field containing them and their conjugates, \(B(F_E)_{\mathbb Q}\) is the rational Bloch group, and \(R_{F_E}\) is its volume regulator at the specified complex embedding. For a retained cylindrical factor its value is now proved to be the actual complement volume. This regulator argument alone does not identify a generic main-meridian characteristic factor or prove arbitrary short-filling limits. The separate strict-tree longitude theorem above now identifies the selected factor for the covered long-filled knots. Actual all-level quantum A-operators exist by the finite cut-state proof, and the pointed operator-period theorem gives the same volume limit for those knots.
 
 Fixing an output index of an open tangle changes the maximization problem. The resulting function of the scaled output \(b\) is its boundary profile. The [boundary profile theorem](../../notes/actual_conway_boundary_volume_relation.md) also gives a full limit for every coefficient approaching any output $b\in[0,1]$. On $(0,1)$ its optimizer is unique and analytic, and its boundary conjugate is the actual quadrilateral modulus $\exp(-v'_E(b)/\pi)$. This is a geometric meaning for the source boundary relation; the variable is not yet the knot's peripheral holonomy.
 
