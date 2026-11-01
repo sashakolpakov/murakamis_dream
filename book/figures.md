@@ -69,6 +69,31 @@ also requires turns, summation over shared indices, and closure.
 [PDF](figures/moving-newton-products.pdf) ·
 [Reproduction script](../experiments/audit_main_meridian_newton_algebra.py)
 
+## A tree whose product junctions can be estimated
+
+![Two product junctions are connected through a third junction carrying the original crossing-circle operator p_0. Each connecting edge applies a quarter-turn.](figures/separated-product-junctions.png)
+
+The four lower boxes represent the tangle operators \(h_1,\ldots,h_4\).
+The left junction multiplies \(h_1h_2\), and the right junction multiplies
+\(h_3h_4\). Apply the indicated quarter-turn \(T\) to each result,
+multiply them with the original operator \(p_0\), and take the prescribed
+closing trace. The formulas below the drawing define each leaf and
+retain its half-twist and auxiliary-circle color.
+
+The two outer junctions carry no unturned crossing-circle operator;
+the central junction does. The [source growth theorem](../notes/actual_main_meridian_source_bounds.md)
+allows any fixed finite tree with this separation property: whenever
+two product junctions are adjacent, at least one carries such an
+original operator. Their degrees and the size of the tree may be
+arbitrary. The largest source value over the allowed colors and a
+small neighborhood of the complete main meridian has exponential
+growth equal to the volume of the augmented complement. The
+crossing circles remain unfilled in this statement.
+
+[Vector figure](figures/separated-product-junctions.svg) ·
+[PDF](figures/separated-product-junctions.pdf) ·
+[TikZ source](figures/separated-product-junctions.tex)
+
 ## The operations that build the knot diagram
 
 ![Three panels show the actual connections for stacking two four-ended tangles, rotating a tangle by a quarter-turn, and taking the cylindrical closure.](../manuscript/build/figures/tangle-construction.png)

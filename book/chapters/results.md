@@ -158,6 +158,31 @@ sum, but its hypotheses have not been established for general
 Conway main-meridian deformations. That extension is distinct
 from the complete-value volume theorems above.
 
+## Source growth near the complete main meridian
+
+There is also a moving-meridian theorem for a class of fixed Conway constructions. A product junction is a place where several tangle operators are multiplied without an intervening quarter-turn. Combine adjacent product junctions until every remaining internal edge carries a turn. Mark a junction when it contains an original crossing-circle operator without that outer turn. A junction with no such operator is called bare. Assume that **no two bare junctions are adjacent**. Their number and valence may be any fixed finite quantities; the original strictness and knot-component conditions still apply.
+
+Let \(Y^\epsilon\) be the augmented complement, with all its crossing circles left unfilled. Let \(\mathcal F_{N,\mathbf j}^{\epsilon}(M)\) be the reduced quantum scalar with those circles assigned colors \(\mathbf j=(j_1,\ldots,j_H)\), \(1\le j_i\le N\). The main meridian color has complete value \(M=1\). Put \(M=q_N^s\), \(q_N=e^{\pi i/N}\); bounded \(s\) therefore describes a meridian neighborhood of size \(O(1/N)\).
+
+The [source-growth theorem](../../notes/actual_main_meridian_source_bounds.md) proves, for every fixed \(0\le R<1\),
+
+\[
+\lim_{N\to\infty}\frac{2\pi}{N}
+ \log\sup_{\substack{|s|\le R\\\mathbf j\in\{1,\ldots,N\}^{H}}}
+ \bigl|\mathcal F_{N,\mathbf j}^{\epsilon}(q_N^s)\bigr|
+ =\operatorname{Vol}(Y^\epsilon).
+\]
+
+Both parities are included. The upper bound controls every color tuple and every meridian in the disk, with the original strand orientations and framing retained. The matching lower bound uses the known nonzero complete value \(s=0\), \(j_i=N\). Thus the supremum is essential: this is not a lower bound at each displaced meridian. For two original pieces, the theorem retains the knot-producing half-twist patterns and their pure-leaf condition.
+
+The [auxiliary-color gap theorem](../../notes/actual_main_meridian_auxiliary_color_gap.md) gives a further estimate for the same constructions. Fix \(0<\delta<1\). If any one original circle has color \(j_i\le(1-\delta)N\), the whole scalar is exponentially smaller than the augmented rate: it is bounded by \(\exp N(F_0-\gamma)\), where \(F_0=\operatorname{Vol}(Y^\epsilon)/(2\pi)\) and \(\gamma>0\). This bound is uniform over the other colors and both parities on every fixed disk \(|s|\le R<1/2\). The smaller radius belongs to this strict color-loss theorem; the source-growth bound above holds for \(R<1\).
+
+![Two bare product junctions are separated by a junction containing the original crossing-circle operator.](../figures/separated-product-junctions.svg)
+
+The picture is a tree of quantum operations. Each outer pair is multiplied, its result is turned, and the two results are multiplied with the original operator at the middle junction before closing. It illustrates why the bound can be iterated without replacing an arbitrary intermediate product by a basic leaf.
+
+This is a theorem about the source **before filling the crossing circles**. It does not replace the already established complete-meridian filled-knot volume equalities above, and it does not yet give their moving-meridian counterparts. A normalized meridian profile and the corresponding general estimate when bare junctions are adjacent remain separate problems.
+
 ## An exact calculation for oriented tangles at a varying meridian
 
 There is also a general finite result, independent of any
@@ -172,8 +197,8 @@ stays in a fixed compact set.
 The [quarter-turn theorem](../../notes/actual_main_meridian_turn_comparison.md)
 now computes the physical turn itself, with the dual strand colors
 and the braiding that identifies their two orders retained. In fixed
-polynomial coordinates it reverses the Newton coefficients and
-multiplies coefficient \(n\) by
+polynomial coordinates it sends the input Newton coefficient with
+index \(n\) to index \(N-1-n\), multiplied by
 \[
 \frac{W_n(s)}{H_N(s)},\qquad
 W_n(s)=\prod_{r=1}^n
@@ -201,12 +226,7 @@ multiplication by the Casimir changes by a single matrix entry.
 
 ![The index pairs below the line i+j=N give nonzero Newton products at completeness. Products on and above the line vanish there and can become nonzero when the meridian moves.](../figures/moving-newton-products.png)
 
-These are identities and estimates for the algebra used to
-calculate the invariant. The turn estimate preserves its
-input-dependent complete exponential norm; it does not supply a
-bound for the whole signed contraction at the geometric rate.
-In particular, polynomial control of all node derivatives does
-not automatically preserve their angular localization. The
+These local identities are inputs to the source-growth theorem just stated. That theorem also sums the signed contributions of an entire product junction before taking absolute values, and then follows the original geometric constants through the separated-junction tree. A turn norm by itself would not supply this whole-sum comparison, and polynomial control of node derivatives does not automatically preserve angular localization. The
 [operator criterion](../../notes/actual_main_meridian_finite_matrix_criterion.md)
 provides another precise sufficient condition: uniform bounds for
 the reconstruction frame and a lower singular-value bound for a

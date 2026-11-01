@@ -43,7 +43,26 @@ $$
 
 Here $\tau$ is the cusp shape computed from the preferred meridian and longitude. The proof obtains the coefficient directly from the finite sum; a separate matrix calculation fixes its geometric interpretation and sign.
 
-For a general Conway composition, the next step remains an estimate on the signed sum as the main meridian varies. The new note gives a sufficient condition: the sum of absolute weights must be controlled relative to the invariant, and the terms near the endpoints must be small under that same comparison. The figure-eight sum is positive and concentrated away from the endpoints, so both conditions hold. Bounds on individual factors in an arbitrary signed sum do not establish them. The existing Conway volume theorem leaves the main meridian parabolic; it does not yet give this more detailed profile.
+The figure-eight result identifies a normalized profile, which is stronger than an exponential upper bound. Its sufficient condition controls absolute weights relative to the actual invariant and controls the endpoint terms under that same comparison. Positivity and interior concentration establish those conditions for that finite sum. They have not been established for a general signed Conway source. The moving-meridian growth result below settles a different, precisely stated part of the problem.
+
+## The moving-meridian growth already established
+
+The [source-growth theorem](../../notes/actual_main_meridian_source_bounds.md) controls a whole class of signed tangle contractions. A product junction combines operators without an intervening quarter-turn. Mark a junction when one of its original crossing-circle operators occurs there without that outer turn; call an unmarked junction bare. The theorem assumes that no two bare junctions are adjacent, together with the original strictness and knot-component hypotheses. There may be arbitrarily many junctions of arbitrary fixed valence.
+
+Write \(Y^\epsilon\) for the augmented complement with its crossing circles still unfilled, and \(\mathcal F_{N,\mathbf j}^{\epsilon}(M)\) for its reduced scalar with auxiliary colors \(1\le j_i\le N\). For \(q_N=e^{\pi i/N}\) and every fixed \(0\le R<1\),
+
+\[
+\lim_{N\to\infty}\frac{2\pi}{N}
+ \log\sup_{\substack{|s|\le R\\\mathbf j\in\{1,\ldots,N\}^{H}}}
+ |\mathcal F_{N,\mathbf j}^{\epsilon}(q_N^s)|
+ =\operatorname{Vol}(Y^\epsilon).
+\]
+
+The estimate includes even and odd levels. The upper bound is uniform in the meridian disk and all auxiliary colors; the lower bound uses the known nonzero complete value at \(s=0\), \(j_i=N\). The [operation diagram](../figures/separated-product-junctions.svg) shows the separation condition. For two pieces, the original knot-pattern and pure-leaf qualifications are retained.
+
+The [auxiliary-color gap theorem](../../notes/actual_main_meridian_auxiliary_color_gap.md) also controls the region where an original circle color stays a fixed proportion below completeness. If some \(j_i\le(1-\delta)N\), with fixed \(0<\delta<1\), the whole scalar has a strictly smaller exponential rate than \(\operatorname{Vol}(Y^\epsilon)/(2\pi)\). It is uniform over all the other colors and both parities for \(|s|\le R<1/2\). Thus the color gap is established on these smaller disks, while the supremum-volume theorem holds for \(R<1\).
+
+Accordingly, both a whole-sum bound and a strict auxiliary-color loss near the complete meridian are established for this class. What remains is an estimate for adjacent bare junctions, a pointwise normalized profile, and control of the moving-meridian filling transform at the generally smaller filled-knot volume. The two source theorems do not by themselves give those conclusions. The complete-meridian long-twist knot-volume theorems remain proved independently of these further questions.
 
 ## What is now exact when the main meridian moves
 
@@ -69,8 +88,8 @@ subtraction remains necessary at its zeros.
 
 The [physical quarter-turn comparison](../../notes/actual_main_meridian_turn_comparison.md)
 now controls all six orientation types. With the complete Newton
-polynomials kept fixed, a turn is reversal followed by a paired
-sine-product multiplier. The multiplier and its inverse are
+polynomials kept fixed, a turn applies a paired sine-product
+multiplier and then reverses the coefficients. The multiplier and its inverse are
 uniformly bounded on every disk \(|s|\le R<1\). A positive kernel
 on the distinct Casimir nodes, combined with the exact trace
 pairing at the repeated nodes, also proves a full spectral-jet
@@ -97,15 +116,7 @@ Since \(\Delta'_0=0\), multiplication in these fixed coordinates has
 zero first derivative. Multiplication by the Casimir changes by
 one matrix entry, of magnitude \(|\Delta_s|/N^2\).
 This simplifies the algebraic deformation, and the turn now has
-the relative estimate just stated. The additional multiplication
-sectors still occur. The remaining task is to control their
-composition and the sum over internal indices at the original
-geometric exponential rate, with its signs and closing trace
-retained. Endpoint estimates are also needed. A radical polynomial
-whose node jets are supported at one end can acquire a jet of
-polynomial size at the other end under the paired multiplier.
-Thus localized node data alone do not imply the analytic
-localization required by a source theorem.
+the relative estimate just stated. The additional multiplication sectors still occur. For separated bare junctions, the source-growth theorem controls their signed sum at the original augmented geometric rate: it compares a whole junction with the complete positive trace, rather than bounding the new terms separately. Adjacent bare junctions require a further estimate for the intermediate boundary profile. The local norm estimate alone would not suffice: for a radical polynomial whose node derivatives are supported at one end, the second color derivative of the paired multiplier has a derivative of polynomial size at the other end. Localized node data alone therefore do not imply the analytic localization needed in the source proof.
 
 There is a second route through the recurrence. The
 [finite matrix criterion](../../notes/actual_main_meridian_finite_matrix_criterion.md)
@@ -123,10 +134,7 @@ disk in \(z\), hence on a meridian disk of radius \(O(1/N)\).
 For the covered knots, the right side would remain the volume of
 the same knot complement. The criterion is proved; its conditioning
 hypotheses have not been verified for a general Conway family.
-This gives two concrete next estimates: control the deformed tangle
-contraction, including the additional coefficients, or control this
-finite operator system. Neither estimate is supplied merely by the
-complete scalar volume theorem.
+The new supremum theorem does not verify these conditioning hypotheses: an exponential upper bound relative to augmented volume is not a lower singular-value estimate or a bound for the normalized regular profile of a filled knot. The next tasks are therefore to extend the source argument across adjacent bare junctions and obtain the additional profile or filling control, or to prove the stated conditioning bounds for the finite operator system.
 
 ## What the Fourier transform preserves
 
