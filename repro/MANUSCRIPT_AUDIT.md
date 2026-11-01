@@ -373,11 +373,19 @@ These are conditional mathematical proofs, not a dependency graph whose
 vertices are named after desired conclusions. Their analytic inputs are
 explicit: a nonzero central asymptotic, the upper rate of the full
 remainder, and elementary laws for modulus and a scaled logarithm.
-The current library has not instantiated those laws as complex modulus
-and the real function `log(x)/N`; that interpretation, the exact source
-identity, the analytic estimates and the geometric volume comparison
-remain written arguments. This boundary must accompany any description
-of the formal coverage.
+The optional [Mathlib package](../formal-real/README.md) now constructs
+those laws for the actual complex norm and `Real.log(x)/N`. It proves
+that the epsilon definition is ordinary convergence through all
+sufficiently large integer levels. It also derives the leading rate of
+`N^k a_N exp(N S_N)` from a fixed real exponent, a coefficient converging
+to a nonzero value, and a convergent complex action. Its final theorem
+proves eventual nonvanishing and the ordinary `2π/N` logarithmic limit.
+These elementary analytic steps are formalized. The exact source
+identity, the diagram-specific asymptotics, the whole-remainder estimate
+and the geometric volume comparison remain written arguments. The
+packet theorem assumes one coefficient limit; parity-dependent
+coefficients require separate parity arguments before their rates are
+combined.
 
 The dependency map now also records the recursive construction, the
 summed, local and directed tree criteria, and terminal decoration.

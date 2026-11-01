@@ -237,7 +237,7 @@ the recurrence conclusion. Lean verifies this coefficient calculation;
 the analytic existence of that expansion and the longitude identification
 remain written proofs.
 
-Together, the project now has 241 compiled declarations with inspected
+The Std-only project has 241 compiled declarations with inspected
 axiom dependencies. The count describes the formal statements,
 not how much of the volume proof has been verified. In particular,
 Appendix O's positive radius Hessian, complex cofactor estimates,
@@ -246,6 +246,19 @@ written arguments. The current analytic reading retains both level
 parities and independently sufficiently long fixed signed powers.
 Its nonzero central contribution still needs the separate full
 remainder estimate supplied by the applicable restricted-family theorem.
+
+The optional [real and complex realization](../../formal-real/README.md)
+adds the elementary analytic part of the final comparison. It uses the
+actual complex norm, the real logarithm and ordinary limits. For
+\(G_N=N^k a_N\exp(NS_N)\), it proves the exponential rate
+\(\operatorname{Re}A\) from \(a_N\to a\ne0\), \(S_N\to A\),
+and a fixed real \(k\). A strict upper-rate gap for the entire remainder
+then proves that the invariant is eventually nonzero and has that same
+rate. The equality \(2\pi\operatorname{Re}A=\operatorname{Vol}(S^3\setminus K)\)
+is an explicit geometric input. The package does not prove the saddle
+expansion or the remainder estimate for a knot. If the coefficient has
+different limits on the two parities, each parity must be treated before
+combining their rates.
 
 ## Joining certified diagrams
 
@@ -292,7 +305,7 @@ The case distinction concerns every label in the inserted piece.
 
 The nine new Lean declarations verify this scalar argument with its
 explicit hypotheses. They do not prove the conditional packing,
-extension of the witnesses, or hyperbolic completion. The current full
+extension of the witnesses, or hyperbolic completion. The Std-only
 Lean runner compiles 241 declarations and inspects their axiom
 dependencies; no admitted proofs are accepted.
 

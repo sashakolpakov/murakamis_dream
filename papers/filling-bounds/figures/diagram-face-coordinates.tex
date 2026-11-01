@@ -1,0 +1,49 @@
+\begin{tikzpicture}[x=1cm,y=1cm,>=Latex,
+  face/.style={text=blue!55!black,font=\small},
+  head/.style={font=\scriptsize},
+  incidence/.style={blue!45!black,densely dashed,line width=.6pt},
+  strand/.style={black,line width=.8pt}]
+  % White vertices record the dual faces; black curves are the two strands.
+  \begin{scope}
+    \coordinate (x) at (-1.9,0);
+    \coordinate (b) at (0,1.8);
+    \coordinate (y) at (1.9,0);
+    \coordinate (c) at (0,-1.8);
+    \draw[incidence] (x)--(b)--(y)--(c)--cycle;
+    \draw[incidence] (x)--(y);
+    \foreach \p in {x,b,y,c}{\fill[blue!55!black] (\p) circle(1.5pt);}
+    \node[face,left] at (x) {$x$};
+    \node[face,above] at (b) {$b$};
+    \node[face,right] at (y) {$y$};
+    \node[face,below] at (c) {$c$};
+    \draw[strand] (-.95,1.22)--(-.95,.4);
+    \draw[strand] (.95,1.22)--(.95,.4);
+    \draw[strand] (-.95,-.4)--(-.95,-1.22);
+    \draw[strand] (.95,-.4)--(.95,-1.22);
+    \draw[fill=white,rounded corners=2pt,line width=.7pt]
+       (-1.3,-.4) rectangle (1.3,.4);
+    \node at (0,0) {$f(\Omega)$};
+    \node[head,left] at (-.95,1.25) {$i$};
+    \node[head,right] at (.95,1.25) {$j$};
+    \node[head,left] at (-.95,-1.25) {$r$};
+    \node[head,right] at (.95,-1.25) {$s$};
+    \node[head,left] at (-1,.88) {$C_1$};
+    \node[head,right] at (1,.88) {$C_2$};
+    \node[head,left] at (-1,-.88) {$C_0$};
+    \node[head,right] at (1,-.88) {$C_3$};
+    \node[font=\small] at (0,-2.45) {$i+j=r+s$};
+  \end{scope}
+  \begin{scope}[shift={(6.05,0)}]
+    \draw[strand] (0,1.05)--(0,-.08);
+    \node[head,above] at (0,1.05) {$i$};
+    \node[face] at (-1.12,.48) {$L_x$};
+    \node[face] at (1.12,.48) {$L_b$};
+    \node[font=\small,fill=white,inner sep=3pt] at (0,-.55)
+      {$i-\dfrac d2=\lambda_x-\lambda_b$};
+    \node[font=\small,align=center] at (0,-1.55)
+      {$L_f=\exp(2\pi\mathrm i\lambda_f/N)$\\[5pt]
+       $Q^i=q^dL_x/L_b$};
+    \node[font=\small,align=center] at (0,-2.45)
+      {Centered head and face potentials};
+  \end{scope}
+\end{tikzpicture}

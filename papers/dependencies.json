@@ -236,6 +236,22 @@
       "statement": "The regular self-duality and generic pivot (-1)^H K specialize to the physical K^(1-N). Spherical trace equality and regular open-scalar specialization give reduced marked-edge independence without dividing by a zero root quantum dimension.",
       "sources": [
         {
+          "path": "papers/filling-bounds/sections/diagram-evaluation.tex",
+          "anchor": "\\label{de:J}"
+        },
+        {
+          "path": "papers/filling-bounds/sections/diagram-evaluation.tex",
+          "anchor": "\\label{de:pivot}"
+        },
+        {
+          "path": "papers/filling-bounds/sections/diagram-evaluation.tex",
+          "anchor": "\\label{de:root-turns}"
+        },
+        {
+          "path": "papers/filling-bounds/sections/diagram-evaluation.tex",
+          "anchor": "\\label{de:spherical-traces}"
+        },
+        {
           "path": "notes/research_arbitrary_main_edge_mark_transport.md",
           "anchor": "## 2. A regular generic pivotal lift which matches the root exactly"
         },
@@ -270,6 +286,22 @@
       "statement": "For level N ≥ 3, take a connected ordered matched spherical diagram in which each matched triangle pair is a quadrilateral with four distinct vertices. With the full polynomial operators, the prescribed turns and one reduced mark, the contraction equals the stated extraction of ordinary face powers after setting the two marked-face variables to zero. The proof retains integer degree bounds, parity shifts and winding numbers. Individual projected terms are not claimed to be invariant under changing the mark.",
       "sources": [
         {
+          "path": "papers/filling-bounds/sections/diagram-evaluation.tex",
+          "anchor": "\\label{de:coefficient-theorem}"
+        },
+        {
+          "path": "papers/filling-bounds/sections/diagram-evaluation.tex",
+          "anchor": "\\label{de:face-grid}"
+        },
+        {
+          "path": "papers/filling-bounds/sections/diagram-evaluation.tex",
+          "anchor": "\\label{de:unsupported-zero}"
+        },
+        {
+          "path": "papers/filling-bounds/sections/diagram-evaluation.tex",
+          "anchor": "\\label{de:marked-summand}"
+        },
+        {
           "path": "notes/research_matched_sphere_morse_source.md",
           "anchor": "## 1. Input, conclusion, and the local ordering"
         },
@@ -303,6 +335,14 @@
       "group": "diagram_evaluation",
       "statement": "The raw contraction with signed powers n_e is exactly (tensor_e L_N^(n_e)) S_N, where S_N is the same ordinary-face extraction of full local polynomial resolvents and has degree <=N-1 separately in each sigma_e. Ordered contraction is multilinear; different boxes need not commute.",
       "sources": [
+        {
+          "path": "papers/filling-bounds/sections/diagram-evaluation.tex",
+          "anchor": "\\label{de:shared-numerator}"
+        },
+        {
+          "path": "papers/filling-bounds/sections/diagram-evaluation.tex",
+          "anchor": "\\label{de:exact-filling}"
+        },
         {
           "path": "notes/research_matched_sphere_morse_source.md",
           "anchor": "## 6. Original signed filling powers and their whole spectral functional"
@@ -368,6 +408,18 @@
       "statement": "The raw one-mark contraction equals the chosen reduced zero-framed evaluation up to its recorded unit framing character, with the enhanced component sign retained. The alternative full one-cut modified convention has its single i^(N+3)/N; no factor is added per box or auxiliary component.",
       "sources": [
         {
+          "path": "papers/filling-bounds/sections/diagram-evaluation.tex",
+          "anchor": "\\label{de:invariant-normalization}"
+        },
+        {
+          "path": "papers/filling-bounds/sections/diagram-evaluation.tex",
+          "anchor": "\\label{de:simultaneous-braid-gauge}"
+        },
+        {
+          "path": "papers/filling-bounds/sections/diagram-evaluation.tex",
+          "anchor": "\\label{de:modified-dimension}"
+        },
+        {
           "path": "notes/actual_complete_augmented_source_normalization.md",
           "anchor": "## 1. Which scalar is raw, reduced, or modified"
         },
@@ -401,6 +453,10 @@
       "group": "diagram_evaluation",
       "statement": "For the exact full source S_N and any same-degree comparison C_N, the entire filled difference is at most product_e(1+|n_e|/2) times ||S_N-C_N|| on the real cube. Joint-grid vanishing permits the smaller tensor constant. This bounds the whole difference, not a chosen summand.",
       "sources": [
+        {
+          "path": "papers/filling-bounds/sections/diagram-evaluation.tex",
+          "anchor": "\\label{de:exact-filling}"
+        },
         {
           "path": "papers/filling-bounds/main.tex",
           "anchor": "\\label{fb:source-application}"
@@ -2423,10 +2479,18 @@
         {
           "path": "formal/VolumeLogic/VolumeTransfer.lean",
           "anchor": "theorem invariant_rate_transfer"
+        },
+        {
+          "path": "formal-real/RealTransfer.lean",
+          "anchor": "theorem complex_volume_transfer"
+        },
+        {
+          "path": "formal-real/RealTransfer.lean",
+          "anchor": "theorem complex_packet_volume_transfer"
         }
       ],
       "depends_on": [],
-      "coverage": "The conditional epsilon-limit implication has a Lean proof. Realization of the abstract modulus/logarithm interfaces and the analytic and geometric input estimates remain written arguments."
+      "coverage": "The epsilon-limit implication and its realization using the actual complex norm and real logarithm have Lean proofs. The optional pinned Mathlib package also derives the leading rate from a nonzero convergent amplitude, a fixed real level power and a convergent complex action. Exact diagram identities, diagram-specific asymptotics, whole-remainder estimates and the geometric volume equality remain written inputs."
     },
     {
       "id": "geo_morse_classical_filling_solution",

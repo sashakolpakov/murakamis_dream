@@ -2,7 +2,7 @@
 
 This directory contains Lean proofs of finite algebraic steps and of the
 implications that assemble the volume limit from explicit estimates.
-The library contains 241 proved declarations. The analytic estimates and
+This Std-only library contains 241 proved declarations. The analytic estimates and
 geometric constructions remain written proofs; the library does not yet
 give an end-to-end formal proof for a knot family.
 
@@ -13,6 +13,10 @@ python3 repro/check_proof_logic.py --output repro/results/proof-logic
 ```
 
 The project uses Lean's standard library and has no Mathlib dependency.
+The optional [real and complex realization](../formal-real/README.md)
+uses pinned Mathlib separately. It constructs the actual complex norm and
+real logarithmic rate and proves the resulting ordinary volume-limit
+implication, with the source estimates and geometric equality as inputs.
 The script first builds the library, then runs a separate inspection of
 every theorem's logical assumptions. It rejects compiler warnings,
 missing theorem reports, and axioms other than `propext`,
@@ -39,7 +43,7 @@ theorem is applied.
 | [FormalRegrading.lean](VolumeLogic/FormalRegrading.lean) | The coefficient substitution \(u=hs\), its inverse on the supported coefficient tables, injectivity, and the exact information retained through any finite order. A nonzero term invisible through a prescribed order is constructed. | The formal coefficient argument in Appendix M. The analytic expansion to every order, compatibility with the actual operator, and the geometric longitude remain separate proofs. |
 | [SourceAssembly.lean](VolumeLogic/SourceAssembly.lean) | Additivity preserves the entire finite sector decomposition. Bounds for every admissible sector and for the filling functional give a bound for the whole remainder. A common level threshold is constructed from the individual thresholds. | The original index list and its multiplicities are retained. The exact diagram identity, canonical degree restriction and analytic estimates are explicit premises. |
 | [LevelLimits.lean](VolumeLogic/LevelLimits.lean) | Epsilon limits, finite intersections of eventual estimates, union of the two parity subsequences, and common thresholds for independently long signed powers. | The diagram and filling tuple are fixed before taking the level limit. An odd-level result alone cannot supply the all-level conclusion. |
-| [VolumeTransfer.lean](VolumeLogic/VolumeTransfer.lean) | A strict upper-rate gap implies actual domination of the remainder, eventual nonvanishing and equality of exponential rates. Finite positive budgets, filling bounds and a scalar normalization are included. The volume transfer uses the same diagram and fixed filling throughout. | Source estimates, the nonzero central asymptotic and equality of its action with hyperbolic volume remain hypotheses. The modulus and logarithm satisfy explicit elementary laws; their realization for complex numbers is not yet formalized. |
+| [VolumeTransfer.lean](VolumeLogic/VolumeTransfer.lean) | A strict upper-rate gap implies actual domination of the remainder, eventual nonvanishing and equality of exponential rates. Finite positive budgets, filling bounds and a scalar normalization are included. The volume transfer uses the same diagram and fixed filling throughout. | Source estimates, the nonzero central asymptotic and equality of its action with hyperbolic volume remain hypotheses. The optional Mathlib package constructs the modulus and logarithm and proves their required elementary laws for actual complex and real numbers. |
 
 The algebraic declarations quantify over arbitrary commutative rings, or
 ordered commutative rings where an inequality is needed. The list

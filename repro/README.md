@@ -20,6 +20,21 @@ python3 repro/check_proof_logic.py --output repro/results/proof-logic
 This command does not replace the certificate checks below or formally
 prove an analytic or geometric theorem in the manuscript.
 
+The optional [Mathlib package](../formal-real/README.md) verifies the
+elementary real and complex analysis used by the final implication:
+actual norms and logarithms, a nonzero asymptotic contribution, and the
+strict-gap argument for the ordinary volume limit. With its pinned
+dependencies installed, run:
+
+```sh
+python3 repro/check_concrete_limits.py --output repro/results/concrete-limits
+```
+
+The exact state formula, its leading asymptotic, the whole-remainder
+estimate and the geometric volume equality are explicit inputs. The
+optional command is separate from the Std-only check above; it requires
+Mathlib and its substantially larger compiled library.
+
 The statement-level dependency map for the retained volume families has a separate
 standard-library command:
 

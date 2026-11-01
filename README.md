@@ -147,8 +147,8 @@ separate work.
 
 ## Reading and reproducing the work
 
-The [collection of research papers](papers/README.md) separates finite filling
-estimates from the long three-braid application, with a 30-page limit
+The [collection of research papers](papers/README.md) separates finite filling estimates
+and exact diagram evaluation from the long three-braid application, with a 30-page limit
 for each draft and explicit companion-theorem dependencies. The
 [reference manuscript](manuscript/README.md) retains the 374-page
 continuous account; it is no longer presented as a single journal paper.
@@ -170,7 +170,10 @@ of any fixed finite-order expansion, and the local sector
 comparisons and target cancellation for the triangular-sum construction.
 It also checks the ordinary-boundary comparison, including the
 different estimates for a wholly central piece and a piece containing
-any noncentral term.
+any noncentral term. A separate [Mathlib package](formal-real/README.md)
+constructs the actual complex norm and real logarithmic rate, derives the
+rate of a nonzero asymptotic contribution, and verifies the limit
+implication when the entire remainder has a strictly smaller rate.
 Appendix N explains why this
 remainder is unique and states exactly what would identify a candidate
 functional with its top coefficient. It also proves that the polynomial

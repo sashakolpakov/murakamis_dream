@@ -1,0 +1,225 @@
+{
+  "axioms": {
+    "VolumeLogic.RealModel.amplitude_hasRate_of_tendsto": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.RealModel.complexMagnitude": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.RealModel.complex_hasRate_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.RealModel.complex_hasUpperRate_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.RealModel.complex_invariant_rate_transfer": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.RealModel.complex_packet_volume_transfer": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.RealModel.complex_volume_transfer": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.RealModel.constant_div_nat_rate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.RealModel.eventually_physical_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.RealModel.exponential_action_hasRate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.RealModel.gaussian_packet_hasRate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.RealModel.level_power_hasRate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.RealModel.powered_gaussian_packet_hasRate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.RealModel.realLogScale": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.RealModel.real_rateLimit_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.RealModel.unit_norm_hasRate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "commands": [
+    [
+      "lake",
+      "build",
+      "VolumeLogic"
+    ],
+    [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/RealTransfer.olean",
+      "RealTransfer.lean"
+    ],
+    [
+      "lake",
+      "env",
+      "lean",
+      "AxiomAudit.lean"
+    ]
+  ],
+  "definitions": [
+    "VolumeLogic.RealModel.complexMagnitude",
+    "VolumeLogic.RealModel.realLogScale"
+  ],
+  "dependency_pins": {
+    "Cli": {
+      "rev": "88679d088c9720c27ebdf2ba4dafe17341747f94",
+      "tracked_sources_clean": true,
+      "url": "https://github.com/leanprover/lean4-cli"
+    },
+    "LeanSearchClient": {
+      "rev": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+      "tracked_sources_clean": true,
+      "url": "https://github.com/leanprover-community/LeanSearchClient"
+    },
+    "Qq": {
+      "rev": "38d591e778f100aec9762bb582f9c7f55f50e9dc",
+      "tracked_sources_clean": true,
+      "url": "https://github.com/leanprover-community/quote4"
+    },
+    "aesop": {
+      "rev": "a7dbf0c63b694e47f425f3dcddbc0e178bb432d3",
+      "tracked_sources_clean": true,
+      "url": "https://github.com/leanprover-community/aesop"
+    },
+    "batteries": {
+      "rev": "023ce7d62a0531e22a5331e20b587817a80d49ff",
+      "tracked_sources_clean": true,
+      "url": "https://github.com/leanprover-community/batteries"
+    },
+    "importGraph": {
+      "rev": "7e9612bf0b9ee66db3cb5b9988a35afc706f5a12",
+      "tracked_sources_clean": true,
+      "url": "https://github.com/leanprover-community/import-graph"
+    },
+    "mathlib": {
+      "rev": "905b95818eb32af7874a58b427f50c1711a5e96c",
+      "tracked_sources_clean": true,
+      "url": "https://github.com/leanprover-community/mathlib4.git"
+    },
+    "plausible": {
+      "rev": "e12c1910fe855cbfc38803cd4e55543906d5fa62",
+      "tracked_sources_clean": true,
+      "url": "https://github.com/leanprover-community/plausible"
+    },
+    "proofwidgets": {
+      "rev": "6e311e2a844da9b2cc3971187df2fe0066947b93",
+      "tracked_sources_clean": true,
+      "url": "https://github.com/leanprover-community/ProofWidgets4"
+    }
+  },
+  "explicit_inputs_remaining": [
+    "the actual invariant's exact finite source identity",
+    "the nonzero packet coefficient and finite-action convergence",
+    "a strict bound for the whole complementary remainder",
+    "the actual geometric action-volume equality"
+  ],
+  "local_dependency": {
+    "name": "volumeLogic",
+    "path": "../formal",
+    "sources_copied": false
+  },
+  "negative_controls": [
+    "changed_mathlib_revision",
+    "changed_batteries_revision",
+    "missing_transitive_dependency",
+    "duplicate_dependency",
+    "absolute_local_dependency",
+    "omitted_definition_audit",
+    "duplicate_declaration_audit",
+    "unexpected_logical_axiom"
+  ],
+  "result": "All optional declarations compiled; every definition and theorem has only the permitted foundational axioms.",
+  "scope": "Concrete complex modulus and real logarithmic level scale; equivalence with ordinary real convergence; unit phases, nonzero limiting amplitudes, finite complex actions and fixed real level powers; strict whole-remainder noncancellation and conditional 2*pi-scaled volume transfer.",
+  "source_sha256": {
+    "formal-real/.gitignore": "fde850d24186b6e99c8c0debd641fb3ab85198b109eb66f71a1fea02bd6ea1b3",
+    "formal-real/AxiomAudit.lean": "f703eae751054e2be60d7ee7b88c494f4e00a795760221960ee2931f493a2bdc",
+    "formal-real/README.md": "cbaf9c4370c419a707988daacfb921408faac0dd394fd8ac6a56db72874f3c6d",
+    "formal-real/RealTransfer.lean": "77d2bea00ce198fb7730862ec05986c815d1665cd2f20fd99e4a2d55d51a87ef",
+    "formal-real/lake-manifest.json": "e4b572de88e8c9a6bf79817a5b36f982d825c86725f6d161e65bad42aadd6b5b",
+    "formal-real/lakefile.toml": "22fab20fa38f079672b4830e81df36799723ffb08443ba88387f57c16ac42b46",
+    "formal-real/lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+    "formal/VolumeLogic.lean": "371d7a33df4ca8057e50a55fa32d7138df9f2d9aed566ac502f4e8f294f9934c",
+    "formal/VolumeLogic/FaceGridSupport.lean": "4baeeee58f794f7a610f880a5f465af13bb00beb6598f1041ac58fb9a74d8705",
+    "formal/VolumeLogic/FiniteAlgebra.lean": "da1f26ce23fdbc6a8fc22a7a61f46b916c45d8b4301914a35803f767a42bf400",
+    "formal/VolumeLogic/FiniteSupport.lean": "cd5e93e68a9c933708203700a523090809f094cd866aab04aa4833e072d7576e",
+    "formal/VolumeLogic/FormalRegrading.lean": "9fe0b604cfe2857cc26569442ee9c608c214307adb5fdfd666e154fcbadc7a2c",
+    "formal/VolumeLogic/LevelLimits.lean": "c5d2397692de9ed78a32871afef7a2f75c9b159393c6e80e6e2b65baf5d22439",
+    "formal/VolumeLogic/MonicLinearity.lean": "75b8cebc8e8bd4cd72257cff082ffe2d74f67391f90942df59f80782f6a8db2b",
+    "formal/VolumeLogic/MonicProduct.lean": "35bb1ca26172547f9bae61d2dd3161aeba8a84810768f87f29477568dd457b85",
+    "formal/VolumeLogic/MonicRemainder.lean": "f6781dba17c7677adcfe2aec41d31f8742004fc38a45be9732c24ce98b65dbfd",
+    "formal/VolumeLogic/MonicUniqueness.lean": "5b1923608c3117ba4875879310b51d56995b8548f1bc93e9491eda2238d4ab1c",
+    "formal/VolumeLogic/ProtectedSum.lean": "6083dc9764da8ffdee625f01bc2c6a8929cdddf6adc8bcfbce5fed188b37e60d",
+    "formal/VolumeLogic/RateComparison.lean": "837a19f87080465b55b8f9373d99eda56900829c166e98a8f16c1136ae06123b",
+    "formal/VolumeLogic/ResolventFunctional.lean": "3fd0e71216901b57867cefad3bbaa423c5b1c0196e7b48286ba09cea5f0df01f",
+    "formal/VolumeLogic/SourceAssembly.lean": "1bdfa50afa5619aa81dc2b79650e2133364a365b81bf29032f68848b70b665f4",
+    "formal/VolumeLogic/TriangularBoundary.lean": "4e28e5b0ea179f4abae23c4541e1dd29e0fc599e2637531807abd387dcfae02b",
+    "formal/VolumeLogic/VolumeTransfer.lean": "862e17ea64b46022fc830610c491c3f25dc0f09e6e6f7650f4b73e81f34401dc",
+    "formal/lake-manifest.json": "94a62178292dabc02ac925f33a78081a26da3b9fc9b5c3ea33e97e9a8dce25da",
+    "formal/lakefile.toml": "d4fbe5befdea32352528a400922442a9814ad56dd607ec3dbbff3639120d947b",
+    "formal/lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+    "repro/check_concrete_limits.py": "61f8d1a57044fa32f4ecae68bd15c393b114cd9a0da1ee216aeeba9a4b14397c"
+  },
+  "theorems": [
+    "VolumeLogic.RealModel.amplitude_hasRate_of_tendsto",
+    "VolumeLogic.RealModel.complex_hasRate_iff",
+    "VolumeLogic.RealModel.complex_hasUpperRate_iff",
+    "VolumeLogic.RealModel.complex_invariant_rate_transfer",
+    "VolumeLogic.RealModel.complex_packet_volume_transfer",
+    "VolumeLogic.RealModel.complex_volume_transfer",
+    "VolumeLogic.RealModel.constant_div_nat_rate",
+    "VolumeLogic.RealModel.eventually_physical_iff",
+    "VolumeLogic.RealModel.exponential_action_hasRate",
+    "VolumeLogic.RealModel.gaussian_packet_hasRate",
+    "VolumeLogic.RealModel.level_power_hasRate",
+    "VolumeLogic.RealModel.powered_gaussian_packet_hasRate",
+    "VolumeLogic.RealModel.real_rateLimit_iff",
+    "VolumeLogic.RealModel.unit_norm_hasRate"
+  ],
+  "toolchain": "leanprover/lean4:v4.32.2"
+}

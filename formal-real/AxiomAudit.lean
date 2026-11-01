@@ -1,0 +1,18 @@
+import RealTransfer
+
+#print axioms VolumeLogic.RealModel.complexMagnitude
+#print axioms VolumeLogic.RealModel.constant_div_nat_rate
+#print axioms VolumeLogic.RealModel.realLogScale
+#print axioms VolumeLogic.RealModel.eventually_physical_iff
+#print axioms VolumeLogic.RealModel.real_rateLimit_iff
+#print axioms VolumeLogic.RealModel.complex_hasRate_iff
+#print axioms VolumeLogic.RealModel.complex_hasUpperRate_iff
+#print axioms VolumeLogic.RealModel.complex_invariant_rate_transfer
+#print axioms VolumeLogic.RealModel.unit_norm_hasRate
+#print axioms VolumeLogic.RealModel.amplitude_hasRate_of_tendsto
+#print axioms VolumeLogic.RealModel.exponential_action_hasRate
+#print axioms VolumeLogic.RealModel.gaussian_packet_hasRate
+#print axioms VolumeLogic.RealModel.complex_volume_transfer
+#print axioms VolumeLogic.RealModel.level_power_hasRate
+#print axioms VolumeLogic.RealModel.powered_gaussian_packet_hasRate
+#print axioms VolumeLogic.RealModel.complex_packet_volume_transfer

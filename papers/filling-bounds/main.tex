@@ -4,6 +4,8 @@
 \usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,mathrsfs}
 \usepackage[margin=30mm]{geometry}
 \usepackage{enumitem,booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
 \usepackage[unicode,colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!55!black,citecolor=green!35!black]{hyperref}
 \usepackage{xcolor,xurl}
 \setlength{\emergencystretch}{2em}
@@ -14,7 +16,7 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
 \theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
-\title{Uniform bounds for finite Hermite filling functionals}
+\title{Finite spectral evaluation and uniform filling bounds}
 \author{}
 \date{}
 \begin{document}
@@ -34,9 +36,13 @@ construct a Fourier similarity between a concrete pair Casimir and its
 polynomial face operator, so the resolvent reproduction identity holds
 on the full matrix, including nilpotent parts. Regular confluent
 specialization identifies the Gaussian multiplier with powers of an
-explicit finite crossing matrix. A marked knot source still requires its separate
-exact contraction identity; no volume
-asymptotic is assumed or proved here.
+explicit finite crossing matrix. For a planar diagram obtained from a
+matched triangulated sphere, we prove that its reduced tensor evaluation
+is one coefficient of the product of its local face polynomials. The
+proof retains the actual cups, caps and marked cut, including the shifted
+face lattice at even levels. An explicit matrix calculation identifies
+the resulting knot evaluation with the reduced Kashaev invariant, up to
+its stated unit framing factor. No volume asymptotic is assumed or proved.
 \end{abstract}
 
 \section{Introduction and the main estimate}
@@ -47,7 +53,9 @@ operator. This elementary fact matters when a crossing power is inserted
 into a finite spectral source: a value-only sum would omit some of the
 original matrix entries. The purpose of this paper is to retain those
 entries while bounding the insertion by the supremum of the original
-polynomial on a real interval.
+polynomial on a real interval. We then prove the exact diagram identity
+needed to apply that bound: the face variables shared by different
+crossings are identified before taking the prescribed coefficient.
 
 Fix $N\ge2$, and write
 \[
@@ -138,8 +146,14 @@ quantum invariants and hyperbolic volume initiated by Kashaev
 \cite{Kashaev1997} and Murakami--Murakami \cite{MurakamiMurakami2001}.
 The present theorem is a finite estimate. It separates the cost of
 inserting fixed crossing powers from the harder problem of estimating
-a shared source polynomial. A short final section states this use as
-an implication with the exact source identity visible.
+a shared source polynomial. Section~\ref{de:section} proves the global
+coefficient identity, including the turns, the reduced mark and the face
+lattice. Section~\ref{de:normalization-section} compares its literal
+crossing matrices and normalization with the reduced Kashaev invariant.
+The last section states the remaining asymptotic implication: a nonzero
+leading contribution and a strict bound for the entire remainder give
+the rate of the full invariant. Those analytic estimates and the
+identification of their rate with hyperbolic volume are not proved here.
 
 \section{Polynomial reduction and resolvent reproduction}
 \label{uf:sec-canonical-reduction}
@@ -426,7 +440,11 @@ functions on the set of distinct roots. Section~\ref{fb:crossing} identifies $q^
 with an explicitly defined finite crossing. The norm proof itself
 requires only the displayed jets.
 
-Expanding \eqref{uf:eq-12}, with primes now in \(\phi\), gives \begin{equation}\label{uf:eq-15}
+For the next formula, write $f_k=f_n(2\cos\phi_k)$ and
+$P_k=P(\phi_k)$. Here $f_k'$ is the derivative of
+$\phi\mapsto f_n(2\cos\phi)$ at $\phi_k$, and
+$P_k'=P'(\phi_k)$. Expanding \eqref{uf:eq-12} gives
+\begin{equation}\label{uf:eq-15}
 \mathcal L_N^{n}H=-\frac1{N^2}\sum_{k=0}^{N-1}
        \bigl(\cos\phi_k f_kP_k+
         \sin\phi_k f_k'P_k+\sin\phi_k f_kP_k'\bigr).
@@ -910,6 +928,8 @@ grid without sharing a factor in any single coordinate. The subtraction
 of the all-evaluation term in \eqref{uf:eq-4} remains valid in that case.
 
 
+\input{sections/diagram-evaluation}
+
 \section{Application after a shared coefficient extraction}
 \label{fb:application}
 
@@ -956,14 +976,14 @@ homogeneous representation of
 where the fraction is polynomial division. The Fourier calculation in
 Section~\ref{uf:local-fourier} proves the local adapter and the
 annihilator needed by resolvent reproduction. Proposition~\ref{fb:crossing-polynomial} also identifies the defined
-finite crossing, including its repeated-root normals. A companion
-exact-source theorem must compare the diagram conventions with these
-matrices and prove that the original marked tensor contraction has the
-stated shared coefficient with its actual cups,
-caps, face grids, and framing scalar. Those are the hypotheses of
-\eqref{fb:source-hypothesis}, not consequences of a norm bound.
-The conditional formulation permits this finite paper to be used with
-any source for which that exact identity has been established.
+finite crossing, including its repeated-root derivatives.
+For the matched spherical diagrams of Section~\ref{de:section},
+Corollary~\ref{de:exact-filling} proves
+\eqref{fb:source-hypothesis} for the original marked contraction.
+Theorem~\ref{de:invariant-normalization} then gives its reduced Kashaev
+normalization when the main link is a knot. The conditional formulation
+of Corollary~\ref{fb:source-application} also permits its use with other
+sources whose exact evaluation has been established separately.
 
 Here is the resulting asymptotic implication, recorded to make clear
 which estimate an application must supply. It is an elementary

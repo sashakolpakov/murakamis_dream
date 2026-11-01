@@ -80,7 +80,7 @@ def main() -> None:
         "not_formalized": ["the actual Chebyshev root data and crossing-operator functional",
                            "the exact knot-diagram adapter", "uniform analytic estimates",
                            "geometric realization and filling",
-                           "realization of the abstract magnitude and logarithm interfaces as complex modulus and log(x)/N",
+                           "complex modulus and log(x)/N realization (checked separately by the optional formal-real Mathlib package)",
                            "verification of the analytic and geometric premises for each knot family"],
         "toolchain": (FORMAL / "lean-toolchain").read_text().strip(),
         "commands": [["lake", *command[1:]] for command in commands],

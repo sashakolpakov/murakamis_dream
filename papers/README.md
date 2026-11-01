@@ -7,9 +7,15 @@ citable independently of an asymptotic theorem; a geometric filling
 construction should state precisely the information needed to compare
 its volume with a quantum action.
 
-The 374-page reference account remains available while this division is
-prepared. The working limit of 30 pages per paper is an editorial
-constraint, not the principle for grouping results.
+The 374-page reference account contains 93 pages of main text, 266 pages
+of appendices, and 15 pages of front matter and references. The appendices
+collect several subjects: finite quantum algebra, geometric constructions,
+asymptotic estimates, sufficient conditions for different knot families,
+and meridian and longitude results. Those subjects accumulated in one
+file; the length does not show that one theorem requires 374 pages.
+The account remains available while this division is prepared. The working
+limit of 30 pages per paper is an editorial constraint, not the principle
+for grouping results.
 
 [Explore the dependency graph](../docs/papers/dependencies.html).
 Each statement lists the results it uses, the reason for each use, and
@@ -19,10 +25,10 @@ results; the detailed view retains the individual statements.
 
 The components are finer than the eventual papers. They are not a proposal
 for one paper per box. For example, finite spectral algebra and exact
-diagram evaluation are natural candidates for one article: the present
-15-page finite article has room for the global contraction argument if
-its full proof fits. The graph keeps them separate because the abstract
-norm theorem does not use that contraction argument.
+diagram evaluation now form one article, with the global contraction
+and normalization calculations included. The graph keeps them as
+separate components because the abstract norm theorem does not use
+that contraction argument.
 
 Three other distinctions determine the division. The classical filling
 construction does not need a nonzero quantum asymptotic; their comparison
@@ -35,17 +41,22 @@ ordinary insertion does not require the protected-gluing theorem.
 
 ## The first two drafts
 
-**Uniform bounds for finite Hermite filling functionals.**
+**Finite spectral evaluation and uniform filling bounds.**
 [TeX source](filling-bounds/main.tex) ·
 [PDF](../docs/papers/filling-bounds.pdf)
 
 This paper asks how a fixed twisting operation acts on a polynomial of
 degree less than the root-of-unity level. It defines the functional at
 simple and repeated spectral roots, proves its norm bound, and explains
-why the canonical polynomial representative matters. Its principal
-result is finite algebra and analysis. Interpreting that functional as
-the evaluation of a knot diagram requires a separate exact-source
-identity; the polynomial theorem alone is not a volume theorem.
+why the canonical polynomial representative matters. It then proves the
+exact coefficient formula for a marked planar diagram constructed from a
+matched triangulated sphere. The proof includes the face variables, the
+integer support, the shifted grids at even levels, the cups and caps,
+and the single reduced cut. A finite Fourier and matrix calculation
+compares the result with the reduced Kashaev invariant, including the
+framing factor. These results supply the finite formulas used by later
+papers. They do not estimate the large-level invariant or identify an
+exponential rate with volume.
 
 **Volume limits for long alternating-generator three-braids.**
 [TeX source](three-braids/main.tex) ·
@@ -67,9 +78,9 @@ its circle packing and the estimates that control the entire remainder.
 It imports three explicitly stated results: the exact source identity,
 the uniform local coefficient estimates, and the nonzero geometric
 filling contribution with its absolute volume calibration. Those
-dependencies are substantial. This draft must be read with their proofs,
-currently located in the reference manuscript and its cited technical
-notes, until the companion foundation papers are written.
+dependencies are substantial. The finite input is proved in the first
+paper above. The analytic and geometric inputs still have their complete
+accounts in the reference manuscript and its cited technical notes.
 
 ## What still needs its own paper
 
@@ -79,14 +90,13 @@ purposes:
 
 | Subject | Result to explain and prove | Dependencies that must remain visible |
 | --- | --- | --- |
-| Exact diagram evaluation | The original invariant equals a specified finite polynomial evaluation, with the full scalar and repeated-root derivatives | The invariant's definition and its cup, cap and crossing conventions |
 | Uniform local asymptotics | Bounds over the full allowed coefficient range, and a nonzero complex local approximation | Exact local formulas; estimates at the endpoints as well as in the interior |
 | The geometric filling contribution | A nonzero contribution survives the filling sum and has the volume rate of the same knot complement | Local asymptotics, primitive filling curves and an absolute volume comparison |
 | Sufficient conditions on planar compositions | Weak balance, decoration and joining operations control the full remainder | The source, analytic and geometric results above |
 | Ordered tangle trees | Explicit degree and twist conditions give the volume limit | The recursive finite evaluation and its geometric construction |
 | Geometric longitude and recurrences | All-order meridian expansions force the selected geometric factor to divide a classical symbol | The full expansion, its normalization and the geometric longitude |
 
-This is a proposed division, not a claim that six more finished papers
+This is a proposed division, not a claim that five more finished papers
 already exist. The geometric filling contribution may need separate
 analytic and geometric papers. Its short reference chapter cites proofs
 elsewhere; copying it would not make a self-contained paper. Each
@@ -97,7 +107,7 @@ For a citation between papers, the exporting paper must state a numbered
 theorem with its normalization, degree restrictions, level parity and
 uniformity assumptions. The importing paper must name that theorem and
 check those hypotheses. A reference to a folder of calculations is not
-a substitute. At present the two drafts below are written; several of
+a substitute. At present the two drafts above are written; several of
 their shared foundations still have their complete accounts in the
 reference manuscript and technical notes. The dependency graph makes
 that remaining editorial work visible.
