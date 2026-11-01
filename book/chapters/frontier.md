@@ -28,6 +28,38 @@ meridian; extending its full meridian family and operator consequences
 is also separate work.
 
 
+### What remains after the finite filling estimate
+
+The [uniform filling estimate](../../notes/actual_uniform_filling_supremum_bound.md)
+separates two parts of the calculation. After taking the common face
+coefficient, let \(S_N(\sigma_1,\ldots,\sigma_r)\) be the resulting
+spectral polynomial. Applying the original twist functionals gives
+\[
+ |Z_N(\boldsymbol n)|
+ \le \prod_{e=1}^r(1+|n_e|/2)\,
+                       \|S_N\|_{[-2,2]^r}.
+\]
+The diagram and twist powers are fixed, so this factor adds no
+exponential growth as \(N\) increases. The proof retains derivatives
+at double spectral roots and the simple endpoint at odd levels.
+
+For a term containing a one-sided local factor, that coordinate costs
+at most \((N-1)/N\), independently of its twist power. The full
+complementary polynomial vanishes on the product of the spectral
+node sets. This yields a bound without first taking the absolute
+value of each local path.
+
+The missing estimate concerns the supremum of that shared
+complementary polynomial: it must lie strictly below the augmented
+geometric rate. Such a gap would make it negligible beside a
+separately established nonzero geometric term for sufficiently long
+fixed fillings. The full spectral polynomial is independent of the
+twists; bounding it at the augmented volume alone cannot prove the
+smaller filled volume. Thus the finite norm result simplifies the
+remaining estimate without adding a new knot family to the volume
+theorems.
+
+
 The volume limit is proved for fixed ordered cylindrical tangle compositions whose reduced net twists are sufficiently long and whose closed diagram is a knot, with elementary two-strand braid closures excluded. The [results chapter](results.md#arbitrarily-many-tangles-with-sufficiently-long-net-twists) defines the reduction and its size condition. For this class, the theorem concerns the full invariant and the volume of the actual knot complement.
 
 The remaining questions include short net twists outside the explicit criteria below, knot families outside these constructions, and identification of the full recurrence ideal beyond the selected geometric factor. The alternative plat methods below have their own open hypotheses. Those hypotheses are not missing steps in the proved Conway theorem.

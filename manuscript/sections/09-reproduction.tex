@@ -109,3 +109,18 @@ and discriminant formulas. The topological gluing, boundary pairing,
 algebraic constants and regularity arguments remain the written proofs
 of Appendices~\ref{app:filtered-characteristic} and
 \ref{app:geometric-characteristic}.
+
+
+\section{Uniform bounds for inserting twists}
+Appendix~\ref{app:uniform-filling-bound} proves a level-independent
+bound for each original filling functional, measured against the
+supremum of the shared spectral polynomial. Its finite identities
+can be checked with one command:
+\begin{verbatim}
+python3 repro/run_research_checks.py filling-supremum
+\end{verbatim}
+This group requires SymPy and NumPy. It checks the derivative
+interpolation and Chebyshev residues exactly, then compares the
+functional with independently constructed signed crossing matrices
+over finite fields. The shared exponential estimate remains a
+separate hypothesis; these checks add no new volume class.

@@ -1,6 +1,22 @@
 # Reproducing the calculations
 
 
+## Uniform bounds for inserting twists
+
+With SymPy and NumPy installed, run:
+
+~~~sh
+python3 repro/run_research_checks.py filling-supremum
+~~~
+
+The program checks the finite derivative interpolation formula in
+cyclotomic fields, the repeated and simple Chebyshev residues, and the
+reconstruction of positive and negative powers of the original crossing
+matrices. It also checks the lower-block numerator derivatives against
+the corresponding spectral projectors. The [proof](../notes/actual_uniform_filling_supremum_bound.md)
+establishes the norm bounds for every level. The finite checks do not
+estimate a volume limit.
+
 ## Balanced terminal decorations
 
 ~~~sh
