@@ -15,6 +15,13 @@ Appendix N now proves the uniqueness of polynomial reduction and its
 independence of root order, including repeated roots. These statements
 also have Lean proofs. The separate geometric and analytic reviews
 record their hypotheses and the earlier results they use.
+The resolvent identity now proves how this coefficient functional
+recovers evaluation at one annihilating operator, including its
+nilpotent part. Appendix O also gives the exact root-grid coefficient
+selection and the complete circle-pattern Hessian calculation. The
+formal proofs cover the finite resolvent and exponent arguments;
+the original operator data, analytic estimates and metric construction
+remain written inputs.
 The product extension proves that factors may be reduced before each
 multiplication while retaining repeated-root derivatives. Appendix M
 also explains the formally checked coefficient recovery under

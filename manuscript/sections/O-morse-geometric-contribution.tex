@@ -839,6 +839,53 @@ endpoint support is imposed before the root reduction, so no coefficient
 is aliased into a wrong endpoint. This proves \eqref{mcg:eq-5} with its
 original phases at arbitrary Morse height and both level parities.
 
+The last step, from the grid sum to the coefficient, uses the total
+degree of the numerator. The following finite statement makes that
+requirement explicit. It allows arbitrary complex coefficients.
+
+\begin{proposition}[The unique monomial selected by the face grids]
+\label{mcg:face-grid-selection}
+Let \(N\ge2\), \(d=N-1\), and let \(P\) be a polynomial in
+\(R+2\) face variables, of total degree at most \(Rd\). Distinguish
+two variables \(L_u,L_v\) and call the remaining \(R\) variables
+ordinary. Put \(\omega=e^{2\pi i/N}\). For arbitrary nonzero
+\(\xi_f\in\mathbb C\), \(f\ne u\), set
+\(L_u=1\) and \(L_f=\xi_f\omega^{p_f}\). Then
+\[
+ \frac1{N^{R+1}}
+ \sum_{\boldsymbol p\in\{0,\ldots,N-1\}^{R+1}}
+ \frac{P(L)}{\prod_{f\ne u,v}L_f^d}
+ =
+ [\prod_{f\ne u,v}L_f^d]P\big|_{L_u=L_v=0}.
+\]
+In particular, translating any of the free grids by a nonzero factor
+does not change this average.
+\end{proposition}
+
+\begin{proof}
+By linearity it suffices to take a monomial with nonnegative exponents
+\(m_f\). The finite geometric sum in each ordinary variable vanishes
+unless \(m_f\equiv d\pmod N\); the grid at \(v\) also requires
+\(m_v\equiv0\pmod N\). Every ordinary exponent that survives is
+at least \(d\). Their sum is therefore at least \(Rd\), which
+exhausts the assumed total-degree bound. Hence every ordinary exponent
+equals \(d\) and \(m_u=m_v=0\). The remaining multiplier is
+\(\prod_{f\ne u,v}\xi_f^{m_f-d}\xi_v^{m_v}=1\).
+This monomial contributes its coefficient; every other monomial
+contributes zero. No sign or positivity condition on the coefficients
+was used.
+\end{proof}
+
+Each original \(H_e\) is homogeneous of degree \(d\), so their
+product meets this proposition with degree exactly \(Rd\). For the
+even-level physical grids take \(\xi_f=q^{t_f}\); the forced
+exponents show directly why their extra character is one. The six
+declarations in \sourcefile{formal/VolumeLogic/FaceGridSupport.lean}
+verify the exponent argument, including the conclusion for degree
+strictly below \(Rd\). Character orthogonality, the primitive
+physical grid and the original turn normalization remain the written
+steps described above.
+
 Replace each homogeneous factor in \eqref{mcg:eq-5} by its central
 cofactor factor and retain the physical spectral trace. Write
 \(C_N^{\mathrm{raw}}(\boldsymbol\delta)\) for the resulting entire
@@ -890,9 +937,46 @@ line incidences. Fix one horizontal translation. The marked line-line
 edge is automatic; the remaining system has \(3R-1\) equations and
 variables.
 
-Its complete Jacobian is invertible. The infinitesimal angle sums and
-the positive finite-face source Hessian first force all logarithmic
-radius variations to be one common scale. Each of the two triangles
+Its complete Jacobian is invertible.\label{mcg:complete-radius-hessian}
+Here is the needed radius calculation. Write \(w_i=1/r_i>0\)
+and \(q_i=\log w_i\) for an ordinary circle of radius \(r_i\).
+For a complete triangle \(t\), let \(I_t\) be its set of ordinary
+corners. Its normalized triangle potential is
+\[
+ F_t(q)=\frac1{2\pi}\max_{\substack{\theta_i\ge0\ (i\in I_t)\\
+                                  \sum_{i\in I_t}\theta_i=\pi}}
+       \left\{\mathcal V(\theta)+\sum_{i\in I_t}\theta_iq_i\right\},
+\]
+where \(\mathcal V\) is defined in \eqref{bl:G0} and the angles
+at protected corners are zero. When \(I_t\) has at least two
+members, put \(D_t^2=\sum_{\{i,j\}\subset I_t}w_iw_j\).
+The angle at ordinary corner \(i\) is
+\(\theta_i=2\arctan(w_i/D_t)\), and
+\(\partial_{q_i}F_t=\theta_i/(2\pi)\). Direct differentiation gives
+\[
+ \partial_{q_iq_j}F_t
+  =-\kappa_{ij}^{t},\qquad
+ \kappa_{ij}^{t}=\frac{w_iw_j}{2\pi D_t(w_i+w_j)}>0
+ \quad(i\ne j).
+\]
+For three corners the simplification is
+\(D_t^2+w_i^2=(w_i+w_j)(w_i+w_k)\); the two-corner case is its
+limit with \(w_k=0\). Logarithmic homogeneity gives zero row sums.
+Thus, for any real vector \(h\) of logarithmic-curvature variations,
+\[
+ h^{\mathsf T}\nabla^2F_t h
+   =\sum_{\{i,j\}\subset I_t}\kappa_{ij}^{t}(h_i-h_j)^2.
+\]
+A singleton triangle has zero Hessian. The ordinary graph obtained
+by deleting the adjacent protected vertices \(u,v\) is connected:
+reroute paths through the cyclic link of \(u\), then through the
+connected link of \(v\) with \(u\) removed. Every surviving edge has
+positive conductance in the displayed sum. Thus the full Hessian
+has exactly the constant kernel. The angle sums around finite
+centers have zero first variation for a linearized circle-pattern
+solution, so all logarithmic radius variations are one common scale.
+
+Each of the two triangles
 adjacent to \(uv\) contains a finite circle tangent to both fixed lines.
 Its radius is \(1/2\), so its scale variation is zero. All radius
 variations are therefore zero.
@@ -1273,7 +1357,8 @@ that, on the entire real spectral cube and the indicated thin strip, \begin{equa
  |\operatorname{Im}\delta_e|\le\tau_\eta .
 \end{gathered}
 \end{equation} Fixed derivatives satisfy the same type of bound on smaller domains.
-The local cofactor interpolation retains the odd simple-node derivative,
+The local cofactor interpolation retains the double-node derivatives
+and the odd simple-node value,
 while the shared angular estimate uses the connected ordinary graph and
 its primitive face-difference rows. The separated real-spectral estimate
 comes from the exact cofactor starting-row maximum. Its only monomial

@@ -27,7 +27,7 @@ python3 repro/check_manuscript_logic.py --output repro/results/manuscript-logic
 ```
 
 It checks the declared premise roles, retained assumptions, level scope,
-references and absence of cycles. Nine deliberately invalid maps must
+references and absence of cycles. Ten deliberately invalid maps must
 be rejected. The unrestricted matched-sphere route retains its open
 remainder requirement. This is a check of the dependency record, not a
 formal proof of the mathematical claims it records.

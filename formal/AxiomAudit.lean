@@ -187,3 +187,18 @@ import VolumeLogic
 #print axioms VolumeLogic.boundary_conditional_action_cancels
 #print axioms VolumeLogic.boundary_noncentral_block_margin
 #print axioms VolumeLogic.boundary_certified_rate
+
+#print axioms VolumeLogic.residue_target_lower
+#print axioms VolumeLogic.list_sum_lower
+#print axioms VolumeLogic.face_budget_saturation
+#print axioms VolumeLogic.face_grid_unique_exponents
+#print axioms VolumeLogic.face_grid_below_target
+#print axioms VolumeLogic.face_grid_selection_iff
+
+#print axioms VolumeLogic.monicPolynomial_length
+#print axioms VolumeLogic.polynomialResolvent_length
+#print axioms VolumeLogic.polynomialResolvent_identity
+#print axioms VolumeLogic.newtonFunctional_resolvent_one
+#print axioms VolumeLogic.polynomialResolvent_multiple
+#print axioms VolumeLogic.newtonFunctional_resolvent_shift
+#print axioms VolumeLogic.newtonFunctional_resolvent_reproduces

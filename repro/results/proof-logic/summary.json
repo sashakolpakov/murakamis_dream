@@ -1,5 +1,5 @@
 {
-  "scope": "Finite support, coefficientwise split-monic reduction and uniqueness, actual polynomial products and repeated-root product derivatives, root-permutation invariance, a conditional functional characterization, formal coefficient regrading and finite-jet limitations, tensor identities, protected-sum and ordinary-boundary comparisons, and scalar rate implications only.",
+  "scope": "Finite support, root-grid exponent selection under the total-degree bound, coefficientwise split-monic reduction and uniqueness, actual polynomial products and repeated-root product derivatives, resolvent reproduction at an annihilating element, root-permutation invariance, a conditional functional characterization, formal coefficient regrading and finite-jet limitations, tensor identities, protected-sum and ordinary-boundary comparisons, and scalar rate implications only.",
   "not_formalized": [
     "the actual Chebyshev root data and crossing-operator functional",
     "the exact knot-diagram adapter",
@@ -848,6 +848,65 @@
       "Classical.choice",
       "Quot.sound"
     ],
+    "VolumeLogic.residue_target_lower": [
+      "propext",
+      "Quot.sound"
+    ],
+    "VolumeLogic.list_sum_lower": [
+      "propext",
+      "Quot.sound"
+    ],
+    "VolumeLogic.face_budget_saturation": [
+      "propext",
+      "Quot.sound"
+    ],
+    "VolumeLogic.face_grid_unique_exponents": [
+      "propext",
+      "Quot.sound"
+    ],
+    "VolumeLogic.face_grid_below_target": [
+      "propext",
+      "Quot.sound"
+    ],
+    "VolumeLogic.face_grid_selection_iff": [
+      "propext",
+      "Quot.sound"
+    ],
+    "VolumeLogic.monicPolynomial_length": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.polynomialResolvent_length": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.polynomialResolvent_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.newtonFunctional_resolvent_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.polynomialResolvent_multiple": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.newtonFunctional_resolvent_shift": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.newtonFunctional_resolvent_reproduces": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
     "VolumeLogic.coeffEq_refl": [],
     "VolumeLogic.coeffEq_symm": [],
     "VolumeLogic.coeffEq_trans": [],
@@ -859,6 +918,7 @@
     "VolumeLogic.shift_congr": []
   },
   "source_sha256": {
+    "formal/VolumeLogic/FaceGridSupport.lean": "4baeeee58f794f7a610f880a5f465af13bb00beb6598f1041ac58fb9a74d8705",
     "formal/VolumeLogic/FiniteAlgebra.lean": "da1f26ce23fdbc6a8fc22a7a61f46b916c45d8b4301914a35803f767a42bf400",
     "formal/VolumeLogic/FiniteSupport.lean": "cd5e93e68a9c933708203700a523090809f094cd866aab04aa4833e072d7576e",
     "formal/VolumeLogic/FormalRegrading.lean": "9fe0b604cfe2857cc26569442ee9c608c214307adb5fdfd666e154fcbadc7a2c",
@@ -868,13 +928,14 @@
     "formal/VolumeLogic/MonicUniqueness.lean": "5b1923608c3117ba4875879310b51d56995b8548f1bc93e9491eda2238d4ab1c",
     "formal/VolumeLogic/ProtectedSum.lean": "6083dc9764da8ffdee625f01bc2c6a8929cdddf6adc8bcfbce5fed188b37e60d",
     "formal/VolumeLogic/RateComparison.lean": "837a19f87080465b55b8f9373d99eda56900829c166e98a8f16c1136ae06123b",
+    "formal/VolumeLogic/ResolventFunctional.lean": "3fd0e71216901b57867cefad3bbaa423c5b1c0196e7b48286ba09cea5f0df01f",
     "formal/VolumeLogic/TriangularBoundary.lean": "4e28e5b0ea179f4abae23c4541e1dd29e0fc599e2637531807abd387dcfae02b",
-    "formal/VolumeLogic.lean": "86990ba9efb1ce979ee8cf0ddc938e31e76468c3e11239c0ca44434a8e5823d9",
-    "formal/AxiomAudit.lean": "eb33cd08fcd9798660e45a249fd46260c986cb002ea620b10d8c0eef12ff5154",
+    "formal/VolumeLogic.lean": "f8a38167d4a8ece3b13855ba9edf0b96d37f6d801744060c629e0c3bfd1a59fd",
+    "formal/AxiomAudit.lean": "d121898500782c9552890263b274ddf359dcbec5157f2db20a6ea4e350b1370b",
     "formal/lakefile.toml": "d4fbe5befdea32352528a400922442a9814ad56dd607ec3dbbff3639120d947b",
     "formal/lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
     "formal/lake-manifest.json": "94a62178292dabc02ac925f33a78081a26da3b9fc9b5c3ea33e97e9a8dce25da",
-    "repro/check_proof_logic.py": "36febd5882f0b8f664f8ebe8a2d45daf17778eb9b7250e353892c2d548548a63"
+    "repro/check_proof_logic.py": "ce92129b5f801836b3053c078c9a504353c40fc308d529663aac21ebfca800b9"
   },
   "result": "All listed declarations compiled; only the permitted foundational axioms occur."
 }

@@ -63,17 +63,47 @@ with three finite circles is its nondegenerate Euclidean center triangle.
 For one marked line, the direction to its infinite center is the fixed
 outward vertical direction, and the two finite angles are the limits
 of the center-triangle angles. For two marked lines the two vertical
-directions are opposite: the finite angle is pi and the other two
+directions are opposite: the finite angle is \(\pi\) and the other two
 angles are zero. The side signs in (1b,c) are essential here.
 
 In the actual cyclic order around a finite face these direction angles
-sum to 2pi. Their first variation therefore vanishes. At complete
-tangency the already proved source gradient is theta/(2pi). The
-[positive finite-face Hessian and rank](actual_original_boundary_transverse_rank.md)
-thus force every logarithmic radius variation to be the same constant:
-only the scale kernel remains. This uses the limiting Hessian on the
-original finite-face gauge slice, not an assumed parametrization by
-off-critical flat representations.
+sum to \(2\pi\). Their first variation therefore vanishes. At complete
+tangency the already proved source gradient is \(\theta/(2\pi)\). The
+complete triangle Hessian can be computed directly. Let \(I_t\) be the
+ordinary corners of a triangle, put \(w_i=1/r_i>0\), \(q_i=\log w_i\) and
+\(D_t^2=\sum_{\{i,j\}\subset I_t}w_iw_j\), and let \(F_t\) be
+its normalized triangle potential: maximize the calibrated triangle
+entropy plus \(\sum_i\theta_iq_i\) over nonnegative angles of sum
+\(\pi\), with protected angles zero, and divide the result by
+\(2\pi\). The entropy is the function in Appendix L, equation
+\(\mathcal V(\theta)=2\sum_i[\Lambda(\theta_i/2)+
+\Lambda((\pi-\theta_i)/2)]\), where
+\(\Lambda(s)=-\int_0^s\log|2\sin t|\,dt\).
+For at least two ordinary corners and a real variation vector \(h\),
+\[
+ \partial_{q_iq_j}F_t
+ =-\frac{w_iw_j}{2\pi D_t(w_i+w_j)}=-\kappa^t_{ij}
+ \quad(i\ne j).
+\]
+Consequently,
+\[
+ h^{\mathsf T}\nabla^2F_t h
+ =\sum_{\{i,j\}\subset I_t}\kappa^t_{ij}(h_i-h_j)^2.
+\]
+Indeed the gradient is \(\pi^{-1}\arctan(w_i/D_t)\), and for
+three corners the derivative simplifies using
+\(D_t^2+w_i^2=(w_i+w_j)(w_i+w_k)\). The two-corner formula is
+the limit with \(w_k=0\). Logarithmic homogeneity gives zero row sums. A
+singleton triangle has potential \(q_i/2\) and zero Hessian.
+Deleting the two adjacent protected vertices leaves a connected
+ordinary graph: reroute paths through the first vertex's cyclic link,
+then through the second vertex's link with the first removed.
+Every surviving edge has strictly positive conductance in this sum.
+Consequently the full Hessian has exactly the constant kernel.
+The zero angle-sum variations force all logarithmic curvatures, and
+hence all logarithmic radii, to vary by one common scale. This is a
+calculation at the complete pattern, independent of a parametrization
+by off-critical representations.
 
 There are exactly two triangles containing the edge uv. In either,
 the finite circle is tangent to BOTH normalized lines, so r=1/2.

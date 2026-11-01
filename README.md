@@ -167,8 +167,17 @@ different estimates for a wholly central piece and a piece containing
 any noncentral term.
 Appendix N explains why this
 remainder is unique and states exactly what would identify a candidate
-functional with its top coefficient. The analytic estimates and geometric completion
+functional with its top coefficient. It also proves that the polynomial
+resolvent recovers evaluation at an annihilating operator. The face-grid
+argument in Appendix O makes explicit why the total degree excludes
+every unwanted monomial. The analytic estimates and geometric completion
 remain written proofs with their stated hypotheses.
+
+The scope of this research phase is frozen at these restricted families.
+Its [stopping criteria](repro/MANUSCRIPT_AUDIT.md#where-this-research-phase-ends)
+require a complete dependency chain for each retained conclusion and
+reproducible finite certificates. Broader families, smaller constants
+and the archived exploratory approaches are separate projects.
 
 The [illustrated guide](https://sashakolpakov.github.io/murakamis_dream/)
 also explains the approaches that remain incomplete. Its

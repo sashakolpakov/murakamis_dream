@@ -40,14 +40,20 @@ def check(data: dict, root: Path = ROOT) -> dict:
             raise LogicError(f"{identifier}: empty mathematical statement")
         if set(node["assumptions"]) - assumptions.keys():
             raise LogicError(f"{identifier}: unknown assumption")
-        location = node["location"]
-        path = root / location["path"]
-        if not path.is_file():
-            raise LogicError(f"{identifier}: missing source {path}")
-        content = path.read_text()
-        if location["anchor"] not in content:
-            raise LogicError(f"{identifier}: missing source anchor")
-        source_hashes[location["path"]] = hashlib.sha256(path.read_bytes()).hexdigest()
+        supporting = node.get("supporting_locations", [])
+        for location in supporting:
+            if not location.get("scope", "").strip():
+                raise LogicError(f"{identifier}: supporting reference needs its scope")
+        # These links expose internal finite steps without adding artificial
+        # premise nodes. Their presence is checked; their mathematics is not.
+        for location in [node["location"], *supporting]:
+            path = root / location["path"]
+            if not path.is_file():
+                raise LogicError(f"{identifier}: missing source {path}")
+            content = path.read_text()
+            if location["anchor"] not in content:
+                raise LogicError(f"{identifier}: missing source anchor in {location['path']}")
+            source_hashes[location["path"]] = hashlib.sha256(path.read_bytes()).hexdigest()
         for role, dependency in node["requires"].items():
             if dependency not in nodes:
                 raise LogicError(f"{identifier}: missing dependency {dependency}")
@@ -131,6 +137,9 @@ def negative_controls(data: dict) -> list[str]:
     broken = deepcopy(data)
     broken["nodes"]["ordinary_boundary_certificate"]["requires"]["conditional_disk_action"] = "central_contribution"
     cases.append(("central period substituted for conditional disk identity", broken))
+    broken = deepcopy(data)
+    broken["nodes"]["exact_source"]["supporting_locations"][0]["anchor"] = "nonexistent-finite-support-theorem"
+    cases.append(("missing finite-algebra supporting reference", broken))
     rejected = []
     for name, broken in cases:
         try:
