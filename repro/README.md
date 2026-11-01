@@ -235,6 +235,22 @@ The conclusion is that one proposed upper-bound method cannot prove a
 strict volume gap for this fixed source. It is not a lower bound for
 the quantum invariant and is not a counterexample to the volume conjecture.
 
+For the extension to the actual absolute sum of shared-array terms, run:
+
+```sh
+python3 repro/run_research_checks.py source-cancellation
+```
+
+This includes the preceding rational and topology certificates, then
+checks the protected endpoint formula, the odd central cofactor product,
+and exact integer load rounding at both parities. The new check uses only
+the standard library. Its result is saved in
+`repro/results/absolute-source-obstruction.json`. The
+[proof](../notes/research_absolute_source_cancellation_obstruction.md)
+supplies the all-level entropy lower bound and explains why no choice of
+positive diagonal Cauchy weights removes the excess. Cancellation in the
+signed shared sum remains a different quantity.
+
 ## Protected triangular sums
 
 With `python-flint` installed, run:

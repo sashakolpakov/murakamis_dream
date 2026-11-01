@@ -914,7 +914,18 @@ The [one-sided energy theorem](../../notes/actual_one_sided_relative_spectral_en
 
 ![The weighted Cauchy estimate and the shared entropy comparison that is still needed.](../figures/spectral-energy-rearrangement.png)
 
-The [shared-flow criterion](../../notes/general_endpoint_conditioned_source_energy.md) combines this energy bound $g$ with the endpoint entropy $h$ and an earlier envelope $h_{\mathrm{env}}$. It uses $h_{\mathrm{sharp}}=\min\{h_{\mathrm{env}},(h+g)/2\}$ on each common feasible flow. If the maximum of the sum of these bounds over the closed non-cross set is strictly below $\Phi_D$, the full long-filling theorem follows. This is a sufficient finite-dimensional condition, not a proved universal inequality. The [protected-outer result](../../notes/actual_protected_outer_spectral_energy.md) identifies the sharp local energy there; the unresolved issue is the global comparison with the original shared demands.
+The [shared-flow criterion](../../notes/general_endpoint_conditioned_source_energy.md) combines this energy bound $g$ with the endpoint entropy $h$ and an earlier envelope $h_{\mathrm{env}}$. It uses $h_{\mathrm{sharp}}=\min\{h_{\mathrm{env}},(h+g)/2\}$ on each common feasible flow. If the maximum of the sum of these bounds over the closed non-cross set is strictly below $\Phi_D$, the full long-filling theorem follows. This is a sufficient finite-dimensional condition. The [protected-outer result](../../notes/actual_protected_outer_spectral_energy.md) identifies the sharp local energy there.
+
+The condition is not universal for matched-sphere Morse diagrams. The
+[fifty-four-region obstruction](../../notes/research_absolute_source_cancellation_obstruction.md)
+provides a feasible original flow whose combined score exceeds
+\(\Phi_D+1/5\). More strongly, the exact absolute sum of the local
+coefficient products has this excess at one fixed spectral tuple,
+through both parities. Every positive diagonal Cauchy bound on those
+terms is at least their absolute sum. This result requires cancellation
+to be retained earlier in a general argument; it supplies no lower bound
+for the signed invariant. Membership of that example in the narrower
+flat-plat class is not asserted.
 
 ## A general finite cover of the source sectors
 

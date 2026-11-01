@@ -8,6 +8,17 @@ with the older one-sided envelope. A strict score gap proves the full
 long-filling limit. The universal geometric inequality for that score
 remains open; no independent local norm or endpoint concentration supplies it.
 
+The universal question here has the stated flat-plat scope. Its extension
+to all matched-sphere Morse diagrams is false. The
+[absolute-source obstruction](research_absolute_source_cancellation_obstruction.md)
+gives a feasible flow on the original fifty-four-region example for which
+the combined score in (23) exceeds the augmented-volume rate by more than
+\(1/5\). The same example obstructs the joint criterion (19). It does not
+disprove their conditional implications or establish that this diagram
+belongs to the narrower flat-plat class. At one fixed spectral tuple,
+the exact absolute sum already has the excess through both parities;
+arbitrary positive diagonal Cauchy weights cannot remove it.
+
 ## 1. Actual coefficients and both parity supports
 
 Fix the original certified flat plat \(D\), with \(R\) coupons, degree

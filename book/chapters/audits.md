@@ -738,3 +738,19 @@ strand pairing. The proof of nonzero support is written separately from
 the envelope inequality. The resulting obstruction concerns that
 particular coefficient bound; it gives no lower bound for the signed
 invariant. Both programs require only Python’s standard library.
+
+The stronger [absolute-source result](../../notes/research_absolute_source_cancellation_obstruction.md)
+also checks the actual endpoint coefficients at both parities:
+
+```sh
+python3 repro/run_research_checks.py source-cancellation
+```
+
+This group includes the two rational certificate checks above. Its third
+program evaluates the resolvent polynomial on the original face operator
+over finite fields and compares it with the protected one-path formula
+and the odd central cofactor product. It also constructs integer triangle
+loads at both parities, preserving every original target. The uniform
+coefficient limits, the all-level rounding argument and the optimized
+Cauchy identity are proved in the note. These finite checks do not prove
+an asymptotic by sampling levels.

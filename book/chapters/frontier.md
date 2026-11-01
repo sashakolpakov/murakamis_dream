@@ -719,7 +719,7 @@ The [mixed cycle criterion](../../notes/research_mixed_cross_window_cycle_packin
 
 A different route uses [one-sided relative energy](../../notes/actual_one_sided_relative_spectral_energy.md). For a coefficient $a_N(q;\sigma)$ and its positive endpoint reference $p_N(q)$, weighted Cauchy bounds the exponential rate of $|a_N|^2/p_N$ by a triangle entropy. The folded-angle rearrangement is uniform through both parities and degree boundaries. The [protected-outer theorem](../../notes/actual_protected_outer_spectral_energy.md) identifies its sharp local value.
 
-The [shared-flow criterion](../../notes/general_endpoint_conditioned_source_energy.md) combines this energy $g$ with endpoint entropy $h$ and another envelope $h_{\mathrm{env}}$, using $\min\{h_{\mathrm{env}},(h+g)/2\}$ on the same feasible flow. A strict maximum below $\Phi_D$ on the non-cross set implies the full filling theorem. The missing statement is the universal shared inequality; no new local asymptotic conjecture is needed for this criterion.
+The [shared-flow criterion](../../notes/general_endpoint_conditioned_source_energy.md) combines this energy $g$ with endpoint entropy $h$ and another envelope $h_{\mathrm{env}}$, using $\min\{h_{\mathrm{env}},(h+g)/2\}$ on the same feasible flow. A strict maximum below $\Phi_D$ on the non-cross set implies the full filling theorem. Its universal validity remains open in the original flat-plat class. The extension to every matched-sphere Morse diagram is false: the fifty-four-region example below also exceeds the volume rate for this refined score.
 
 ![A local energy estimate must still be combined with the shared face demands.](../figures/spectral-energy-rearrangement.png)
 
@@ -750,6 +750,23 @@ presentation, or a direct estimate after filling. It also does not
 place the example in the narrower original flat-plat class merely
 by realizing it as a Morse diagram. The general source estimate
 therefore remains a separate question.
+
+The [absolute-source obstruction](../../notes/research_absolute_source_cancellation_obstruction.md)
+shows that the loss survives replacement of these envelopes by the exact
+local coefficients. Set the selected spectral variable to \(+2\), and
+all the others to \(-2\). At both level parities, the sum of the
+absolute values of the original shared-array terms has exponential
+rate greater than \(\Phi_D+1/5\). The terms obey every original face
+demand. Optimizing arbitrary positive weights in Cauchy's inequality
+gives exactly that absolute sum, so changing those weights cannot
+recover the lost exponential accuracy.
+
+There is a corresponding positive result about cancellation. On the
+same odd levels and at the same spectral tuple, the previously proved
+signed cap estimate lies strictly below \(\Phi_D\). Thus summing with
+the signs retained removes an exponential amount. This estimate treats
+one noncentral region with its neighbors at their endpoint spectra;
+it does not control several such regions or the full filling transform.
 
 ![Refinement succeeds for the seventeen-region source shown above. The last panel concerns a different fifty-four-region simple-sphere source: one genuine nonzero sector already exceeds the geometric rate in this envelope method. Neither envelope comparison is a lower bound for a signed knot invariant.](../figures/sector-certificate-separation.png)
 
