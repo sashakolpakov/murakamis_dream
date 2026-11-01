@@ -2,7 +2,7 @@
 
 The first Fourier term of one filled crossing is not enough for a whole filled source. Its relative error has size \(e^{-cN/n^2}\), whereas other fillings can produce a much larger change from the complete positive exponent. The proof here retains every positive integer Fourier frequency, called a charge, until after the common wire variables have been integrated. It compares their joint critical actions, so it permits independently long and arbitrarily unequal fixed signed integers.
 
-The [grouped wire packet](actual_main_meridian_grouped_wire_packet.md) is an input stated precisely below and proved from the finite source. Its construction retains the original positive binary resolutions. The [direct crossing trace](actual_main_meridian_direct_crossing_trace.md) supplies the exact local contour, and the [component extension](actual_main_meridian_component_extension.md) supplies the grouped high-index error bound. Together these yield the [filled-volume theorem](actual_main_meridian_filled_volume.md) for the specified class. The moving filling functional here is the polynomial crossing power itself.
+The [grouped wire packet](actual_main_meridian_grouped_wire_packet.md) is an input stated precisely below and proved from the finite source. Its construction retains the original positive binary resolutions. The [direct crossing trace](actual_main_meridian_direct_crossing_trace.md) supplies the exact local contour, and the [general component theorem](actual_main_meridian_general_component_comparison.md) supplies the grouped error bound for arbitrary bare components. Together these yield the [filled-volume theorem](actual_main_meridian_filled_volume.md) for the specified class. The moving filling functional here is the polynomial crossing power itself.
 
 ## 1. The exact scalar to be transformed
 
@@ -63,7 +63,7 @@ The error in (5) is the already grouped high-state, off-window, and moving-bare-
        \le \operatorname{poly}(N)e^{N(F_0-\eta_0)}
  \tag{6}
 \]
-after the same harmless outer elementary factors are retained, for a fixed \(\eta_0>0\). Its exponential loss is independent of the sizes of the fixed \(n_v\); its prefactors can depend on them. The [source-bound induction](actual_main_meridian_source_bounds.md) and the [component extension](actual_main_meridian_component_extension.md), Section 6, supply (6). The fixed-power crossing bound replaces the old bounded half-twist/character operator at each decorated step.
+after the same harmless outer elementary factors are retained, for a fixed \(\eta_0>0\). Its exponential loss is independent of the sizes of the fixed \(n_v\); its prefactors can depend on them. The [source-bound induction](actual_main_meridian_source_bounds.md) and the [general component theorem](actual_main_meridian_general_component_comparison.md), Sections 6–9, supply (6). The fixed-power crossing bound replaces the old bounded half-twist/character operator at each decorated step.
 
 ## 2. The packet hypotheses
 
@@ -443,21 +443,9 @@ uniformly on such a disk, once the packet and global-error hypotheses of Section
 
 The analytical conclusion is conditional only on the explicit finite packet and grouped global-error statements, not on a conjectural moving full-twist coefficient expansion. The local operator \(R_s^{n_v}\), translated grid contours, all endpoint currents, and the first charge coefficient are exact.
 
-The [grouped wire packet](actual_main_meridian_grouped_wire_packet.md) supplies these interfaces for the strict separated-bare-junction class and for its [component-path enlargement](actual_main_meridian_component_extension.md). It constructs the exact primitive lattice and its positive resolutions, proves (2), (7), and (8) with the count \(\nu=3(1-m)/2\), and proves the fixed grouped error (6). Thus the application uses a specified finite source and its finite contour representation.
+The [grouped wire packet](actual_main_meridian_grouped_wire_packet.md), together with the [general component comparison](actual_main_meridian_general_component_comparison.md), supplies these interfaces for every fixed strict ordered Conway tree. It constructs the original primitive lattice and positive resolutions, proves (2), (7) and (8) with \(\nu=3(1-m)/2\), and proves the fixed grouped error (6).
 
-Concretely, every maximal bare component may be a singleton of arbitrary valence, or a component \(\mathcal U\) with at least five rigid boundary incidences \(b_v\) at each vertex and
-\[
- \max_{\mathcal P\text{ a simple path in }\mathcal U}
-       \sum_{v\in\mathcal P}\varepsilon_{b_v-1}<2G_0,
- \qquad
- \varepsilon_k=(k+1)
- \left[
- J\left(\frac14+\frac1{k+1}\right)
- +J\left(\frac14-\frac1{k+1}\right)
- -2J\left(\frac14\right)\right].
- \tag{42}
-\]
-Here \(J(x)=\int_0^x\log(2\sin\pi u)\,du\) and \(G_0=g(1/4)\), with \(g(x)=J(2x)-4J(x)\). The coarse condition \(b_v\ge\max(8,4|\mathcal U|)\) suffices. For a fixed strict original template in this class, and its fixed knot/parity pattern, (37) and (41) therefore hold for every independently sufficiently long fixed signed filling. The original marked geometric calibration identifies the volume; the nonzero quantum lower is supplied directly by (34), not imported from an old filled-invariant asymptotic.
+There is no additional valence, adjacency or path condition on the bare junctions. For the fixed original knot and parity pattern, (37) and (41) therefore hold for every independently sufficiently long fixed signed filling. The original marked geometric calibration identifies the volume. The nonzero quantum lower bound is supplied by (34). The turn deletions used to estimate correction terms do not change this packet, its scalar factors or its filling action.
 
 The lower bound on \(|n_v|\) is a single source-dependent constant. It can be maximized over the finitely many retained parity/sign conventions if the desired theorem quantifies over them. It is independent of the chosen fixed radius \(R<1\): the action, the wire and angular windows, the Gaussian constants in the exponent, and the structural high-state/bare-error margins come from the complete source. The radius enters only polynomial or bounded prefactors, the convergence of the geometric kernel tails for large \(N\), and the uniform remainder constants. Accordingly the threshold for \(N\), but not the threshold for the filling integers, may depend on \(\mathbf n\) and \(R\). There is no same-sign assumption, no bound on ratios of different \(|n_v|\), no prime-level restriction, and no limit in which the filling integers grow with \(N\).
 

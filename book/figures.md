@@ -69,7 +69,19 @@ also requires turns, summation over shared indices, and closure.
 [PDF](figures/moving-newton-products.pdf) ·
 [Reproduction script](../experiments/audit_main_meridian_newton_algebra.py)
 
-## A tree whose product junctions can be estimated
+## Reflecting an index and combining two product junctions
+
+![Three diagrams show a trace-difference bound, its reflected complete pairing, and the fused product junction with all five exterior branches retained.](figures/main-meridian-reflected-turn-fusion.png)
+
+The vertices represent multiplication and trace operations on tangle polynomials. In the left panel, a physical quarter-turn joins two equal indices \(h\). The left trace is the difference \(\delta\phi_s=\phi_s-\phi_0\) between its moving-meridian and complete values. The [Fourier estimate](../notes/actual_main_meridian_high_fourier_reflection.md) bounds this difference after replacing \(h\) at that endpoint by \(r=N-1-h\). All other branches, denoted collectively by \(F\) and \(G\), remain attached.
+
+The middle panel therefore has complementary labels \(r+h=N-1\). Summing this positive complete pairing gives exactly the single trace \(\phi_0(FG)\), shown on the right. The three branches from the first junction and two from the second give the five displayed branches. Their order is inherited from the original ordered products.
+
+The first arrow is an upper estimate; the second is an algebra identity. Deleting the turn in this comparison can change the represented link. The [pressure theorem](../notes/actual_main_meridian_component_pressure.md) proves that the new positive maximum is no larger than the original one, and a strict Fourier estimate controls the case of equal maxima. The invariant and the hyperbolic volume in the final theorem still belong to the original diagram. This comparison is what allows the [general component proof](../notes/actual_main_meridian_general_component_comparison.md) to treat junctions of arbitrary valence.
+
+[SVG](figures/main-meridian-reflected-turn-fusion.svg) · [PDF](figures/main-meridian-reflected-turn-fusion.pdf) · [TikZ source](figures/main-meridian-reflected-turn-fusion.tex)
+
+## A separated example of the product tree
 
 ![Two product junctions are connected through a third junction carrying the original crossing-circle operator p_0. Each connecting edge applies a quarter-turn.](figures/separated-product-junctions.png)
 
@@ -80,7 +92,7 @@ multiply them with the original operator \(p_0\), and take the prescribed
 closing trace. The formulas below the drawing define each leaf and
 retain its half-twist and auxiliary-circle color.
 
-The two outer junctions carry no unturned crossing-circle operator;
+This is a simple instance of the general theorem above. The two outer junctions carry no unturned crossing-circle operator;
 the central junction does. The [source growth theorem](../notes/actual_main_meridian_source_bounds.md)
 allows any fixed finite tree with this separation property: whenever
 two product junctions are adjacent, at least one carries such an
@@ -372,6 +384,6 @@ The blue vector is the image of the augmented longitude on the filled knot cusp.
 
 ![A path and a branching tree, each with degree three at every bare junction and with circle-operator attachments shown.](figures/trivalent-bare-components.svg)
 
-The open vertices are product junctions without a crossing-circle operator. Each has three incident branches, counting the attachments to the filled vertices. These graphs record tangle operations: consecutive unturned products have already been grouped, and every displayed edge is a physical quarter-turn. A fixed tree of any size is allowed by the [trivalent meridian theorem](../notes/actual_main_meridian_trivalent_filled_volume.md).
+The open vertices are product junctions without a crossing-circle operator. Each has three incident branches, counting the attachments to the filled vertices. These graphs record tangle operations: consecutive unturned products have already been grouped, and every displayed edge is a physical quarter-turn. A fixed tree of any size is allowed by the [trivalent meridian theorem](../notes/actual_main_meridian_trivalent_filled_volume.md). This is a retained special case: the [general component theorem](../notes/actual_main_meridian_general_component_comparison.md) now also permits arbitrary higher-valence junctions and arbitrary mixtures of these valences.
 
 [Vector drawing](figures/trivalent-bare-components.svg) · [PDF](figures/trivalent-bare-components.pdf) · [TikZ source](figures/trivalent-bare-components.tex)

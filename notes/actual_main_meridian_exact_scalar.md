@@ -61,7 +61,7 @@ For the standard positive checked braid convention, let \(o_i=+1\) when the two 
 \]
 Formula (4) retains the actual writhe and the actual \(R\)-exponents. Formula (5) is its form in the standard positive-braid convention. The integer \(a(D)\) is even and depends on this diagrammatic decomposition; it is not, by itself, a knot invariant. Every power of \(q\) means the exponential with \(\log q=\pi i/N\) fixed by the unrolled source.
 
-The scalar identity holds for every oriented Conway knot diagram to which the typed compiler applies. The moving-meridian asymptotic in Section 6 has narrower hypotheses. In particular the broader complete-value volume theorem for strict Conway trees does not, by itself, supply that moving profile.
+The scalar identity holds for every oriented Conway knot diagram to which the typed compiler applies. The moving-meridian asymptotic in Section 6 additionally requires a strict presentation and independently sufficiently long fixed signed twists. The exact scalar calculation itself requires neither a large-level limit nor the analytical estimates used to prove that profile.
 
 ## 2. Closing, the mark, and the absence of another monomial
 
@@ -287,7 +287,7 @@ In particular pure parallel fillings contribute \(4p_i\), whereas antiparallel f
 
 The scalar identity above requires no strict geometric saddle or long-twist assumption. To apply it to an asymptotic, impose the hypotheses of [the filled main-meridian theorem](actual_main_meridian_filled_volume.md), Section 1.
 
-Here is the distinction in terms of the tangle operations. Combine consecutive multiplications with no intervening turn into a product junction. A junction is marked if it contains an original crossing-circle operator and bare if it does not. The moving theorem includes singleton bare components of any allowed valence, arbitrary-size components whose vertices all have valence three, and components satisfying its explicit finite path inequality. The [trivalent extension](actual_main_meridian_trivalent_filled_volume.md) counts valence in the full original reduced tree. The knot pattern and its retained parity choices are fixed. The two-leaf case retains its stated pure-leaf qualification.
+The [general filled-meridian theorem](actual_main_meridian_filled_volume.md) uses this exact scalar for every fixed strict Conway knot presentation with independently sufficiently long signed twists. Its analytic proof now permits arbitrary bare components. The scalar identity itself follows from the finite crossing and duality calculation above.
 
 For this class there is one presentation-dependent threshold \(B\) such that the theorem holds for all fixed signed crossing powers \(n_i=\epsilon_i-2p_i\) with \(|n_i|\ge B\). The signs and magnitudes are independent; no ratio between the magnitudes is bounded. They are fixed before \(N\) tends to infinity. The threshold is independent of the subsequent fixed disk \(0\le R<1\). Both even and odd levels are included.
 

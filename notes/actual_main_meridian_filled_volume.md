@@ -2,7 +2,7 @@
 
 1 November 2026.
 
-This proof concerns the actual reduced ADO invariant of a filled knot, with its zero framing and its prescribed meridian coordinate. The meridian moves by an amount of order \(1/N\), while the quantum parameter remains at the exact \(2N\)-th root of unity. For the class of presentations described below, the invariant has a nonzero asymptotic on every fixed microscopic disk before the first ordinary-color resonance. Its logarithmic growth is the volume of the resulting knot complement.
+This proof concerns the actual reduced ADO invariant of a filled knot, with its zero framing and its prescribed meridian coordinate. The meridian moves by an amount of order \(1/N\), while the quantum parameter remains at the exact \(2N\)-th root of unity. For every fixed strict Conway presentation described below, the invariant has a nonzero asymptotic on every fixed microscopic disk before the first ordinary-color resonance. Its logarithmic growth is the volume of the resulting knot complement.
 
 The proof keeps the whole finite quantum sum. It obtains a nonzero leading term by treating the Fourier variables for all filled circles together. The geometric input is the original strict augmented geometry, its marked deformation and its smooth long fillings. The resulting volume is the volume of the knot complement after the auxiliary crossing circles have been filled; the knot cusp itself remains unfilled.
 
@@ -15,35 +15,22 @@ Start with one fixed literal closed Conway construction in ordered products, phy
 \]
 Only the forced final flat gate is deleted, with its exact complementary-index relation retained. The original geometric construction then gives a complete augmented exterior with a unique strict positive source optimizer. We retain the original knot/component qualifications; in particular the strict two-leaf knot case includes a pure leaf, rather than the two-odd-leaf link pattern.
 
-There is a useful graph description of the additional condition in this theorem. Collapse consecutive multiplications with no intervening turn into a product junction. Each edge of the resulting tree carries a physical quarter-turn. A junction is **marked by a circle operator** if it contains one original crossing-circle operator; an ordinary original leaf is such a vertex of valence one. A **bare junction** contains none. This is a tree of source operations, not a new knot diagram or a permission to commute arbitrary tangles.
+Group consecutive multiplications with no intervening turn into a product junction. Each edge of the resulting tree carries a physical quarter-turn. A junction containing an original crossing-circle operator is called a circle junction; a junction containing none is called bare. The theorem allows every finite connected group of bare junctions, with arbitrary valences at least three. There is no additional condition on their adjacency, number of attached branches, or path lengths.
 
-For each maximal connected component \(\mathcal U\) of bare junctions, require at least one of the following conditions:
-
-- It consists of one junction, of any allowed valence.
-- Every junction in it has valence three in the full reduced tree. Count both edges within the component and branches leading out of it. The number of junctions is any fixed finite number.
-- It satisfies the path inequality below.
-
-The second condition is proved by the [trivalent-component bound](actual_main_meridian_trivalent_component_bound.md) and its [global extension](actual_main_meridian_trivalent_filled_volume.md). It requires no lower bound on the number of outside branches. The vertices must be those of the actual reduced tree: splitting a higher-valence product into artificial binary products does not establish this condition.
-
-For the third condition, let \(b_v\) be the number of incident boundary branches at vertex \(v\), after the component's internal edges are removed. These are the branches supplied by the neighboring circle-marked parts of the tree. Require \(b_v\ge5\) and
+The [general component comparison](actual_main_meridian_general_component_comparison.md) proves the estimate that permits this scope. For a fixed component, let \(\Omega_{\mathcal U}\) be its positive complete action after closing its output with the norm comparison. Replacing its moving multiplication tensors by complete tensors leaves a remainder \(E_{\mathcal U,N}\) satisfying
 \[
- \max_{\mathcal P\text{ a simple path in }\mathcal U}
-       \sum_{v\in\mathcal P}\varepsilon_{b_v-1}<2G_0,
- \qquad
- \varepsilon_k=(k+1)
- \left[
- J\left(\frac14+\frac1{k+1}\right)
- +J\left(\frac14-\frac1{k+1}\right)-2J\left(\frac14\right)
- \right],
+ \|E_{\mathcal U,N}\|_{\mathcal J}
+   \le \exp\{N(\Omega_{\mathcal U}-\eta_{\mathcal U}+o(1))\},
+ \qquad \eta_{\mathcal U}>0.
  \tag{2}
 \]
-where
+Here \(\mathcal J\) measures both values and first derivatives at the complete polynomial roots. The estimate retains the deformed edge factors and boundary arrays. It is a conclusion of the component proof, not an extra hypothesis on the presentation. The positive action uses
 \[
  J(x)=\int_0^x\log(2\sin\pi u)\,du,\qquad
- g(x)=J(2x)-4J(x),\qquad G_0=g(1/4).
+ g(x)=J(2x)-4J(x).
  \tag{3}
 \]
-A simpler sufficient test for the third condition is \(b_v\ge\max(8,4|\mathcal U|)\) at every vertex. Condition (2) controls accumulated errors in these components. Entirely trivalent components use the second condition instead. All three alternatives concern the fixed finite presentation; they do not depend on the level \(N\) or on a filling slope.
+The proof of (2) compares whole finite contractions. Reflecting one index in an error term can remove a turn in a positive comparison tree, whose pressure is no larger than the original pressure. These comparison trees do not replace the original diagram in the invariant or the geometric volume calculation.
 
 At circle \(i\), retain the original parity representative \(\epsilon_i\in\{0,\pm1\}\) and fill that auxiliary cusp with the integer disk-filling coefficient \(p_i\). The remaining physical crossing power is exactly
 \[
@@ -101,7 +88,7 @@ Combining (7a) with the exact scalar above gives
                  +O_{\mathbf n,R}(N^{-2}).}
  \tag{7b}
 \]
-This is also the normalized profile of the full modified-trace invariant, by (12). The geometric proof of (7a) applies to the broader strict-tree class; the asymptotic (7b) retains the component condition of this theorem. Neither statement identifies a classical \(A\)-polynomial factor.
+This is also the normalized profile of the full modified-trace invariant, by (12). The geometric identity (7a) and the asymptotic (7b) now apply to the same strict-tree class under the stated long-twist hypotheses. Neither statement identifies a classical \(A\)-polynomial factor.
 
 ## 2. The actual invariant and its scalar factors
 
@@ -264,7 +251,9 @@ The same fixed complete Newton basis is used at the moving main meridian:
 \]
 Its first-normal coefficients at repeated Casimir roots are part of the algebra. They are not discarded when the main color moves. The exact metric remains \(\phi_s(e_a e_b)=\mathbf1_{a+b=d}\); a physical turn consequently gives the equal-label edge (13).
 
-The [component source theorem](actual_main_meridian_component_extension.md), §6, splits an outgoing branch into a clean low-index part, an internal error with a strict deficit in the entire coefficient profile, and an outgoing high-index part. An original decorated turn converts a spectral error into a full coefficient-profile deficit. A bare component is homogeneous in the constants of these profiles, so an inherited deficit crosses the component without another universal charge. For components satisfying (2), newly created errors use that path budget. For an entirely trivalent component, the [simultaneous comparison](actual_main_meridian_trivalent_component_bound.md) instead bounds every extra cubic trace term by a boundary state of the same complete positive source. That boundary has a strict gap below the original maximum. The clean part keeps every old-supported internal index, including indices above one half; only its effective boundary and output indices are restricted to the low range.
+The [general component theorem](actual_main_meridian_general_component_comparison.md), Sections 3–7, separates an outgoing branch into a contraction of complete tensors and a remainder with a strict loss in its full spectral norm. The complete contraction keeps the actual deformed edge factors, low boundary arrays and every internal index in the complete support. A decorated turn converts an incoming spectral error into the required low/high coefficient bounds. The component comparison then carries that loss through all internal turns by homogeneity in the boundary constants. It does not impose a new loss budget at each junction.
+
+The new local ingredient is the [reflected Fourier estimate](actual_main_meridian_high_fourier_reflection.md). In the difference between a moving and a complete trace, the first Fourier term cancels. With one high index, the remaining terms are bounded by a complete tensor with that index reflected. Exact fusion turns this into a positive comparison tree. With several high indices, the [half-boundary comparison](actual_main_meridian_component_pressure.md) supplies a complete boundary state instead. A strict Fourier or boundary loss controls every nonempty correction pattern.
 
 These estimates also apply when the circle operator is the actual fixed power \(R_s^{n_i}\). Every fixed power and its inverse have polynomial spectral norm on \(|s|\le R<1\), with constants depending on the fixed power. For a low product \(E=\prod e_{k_a}\), its raw shifted-grid trace satisfies
 \[
@@ -279,20 +268,20 @@ The comparison uses the complete pure circle tensor on the right, not an absolut
 \]
 The odd-level constant can be replaced by one. The even constant comes from the actual nearest-node ratio and is uniform up to the low endpoints. Holomorphic continuation of the whole trace includes its removable collisions.
 
-Let \(F_0\) be the maximum of the original complete positive source action; the augmented geometric calibration gives \(2\pi F_0=\operatorname{Vol}(Y)\) for the exterior \(Y\) with all crossing circles unfilled. The grouped component errors, high component-boundary contributions, and the complement of the original strict window have a fixed loss below \(F_0\). Internal edges of a trivalent bare component remain unrestricted within their old support. At the maximizing state their labels lie in \((0,1)\); they need not lie below one half. Circle-incident labels are in a compact subinterval of \((0,1/2)\).
+Let \(F_0\) be the maximum of the original complete positive action, so \(2\pi F_0=\operatorname{Vol}(Y)\) for the augmented exterior with crossing circles unfilled. The general component theorem controls the grouped corrections, high boundary contributions and the complement of the strict original window with a fixed loss below \(F_0\).
 
-At every new trivalent vertex the three old pair sums are at most \(d\), so the degree of \(e_i e_j e_k\) is less than \(2N-1\). Write that product as \(P_0Q+R_0\), with \(\deg Q\le N-2\). Replacing the relation \(P_0\) by \(P_0+\Delta_\sigma\) changes the remainder to \(R_0-\Delta_\sigma Q\), without changing its coefficient of degree \(N-1\). Its trace is therefore exactly the complete trace on the old support. This also holds when one internal label exceeds one half.
+The [complete-edge theorem](actual_main_meridian_component_pressure.md) puts every physical internal label of a bare component strictly below half, except when the entire component consists of two trivalent junctions with two rigid branches at each. Its one internal label is exactly half. Every circle-incident label is in a compact subinterval of \((0,1/2)\). Hidden unturned indices used to resolve products retain their full strict intervals.
 
-For the other allowed components, the regular window retains the original compact low labels and incident-sum condition. The [regular bare-tensor theorem](actual_main_meridian_regular_bare_trace.md) gives
+At a nonexceptional bare junction, the regular low trace theorem gives
 \[
-          \phi_\sigma\left(\prod e_{k_a}\right)
-       =\phi_0\left(\prod e_{k_a}\right)
-                               (1+O_R(e^{-\kappa N})).
+ \phi_\sigma\left(\prod e_{k_a}\right)
+ =\phi_0\left(\prod e_{k_a}\right)
+                   (1+O_R(e^{-\kappa N})).
  \tag{20}
 \]
-On those low windows, this is exact at valence at most four; at larger fixed valence it follows from strict Fourier-tail separation. At the new trivalent vertices the preceding polynomial division proves the exact equality on their full old support. Pre-existing higher-valence components retain their whole-hub majorant until this regular replacement; their moving trace is not prematurely expanded into individual errors.
+The incident labels are compactly inside the low range and their sum is greater than one. In the exceptional two-junction component, both tensors are cubic. On their old support the degree of \(e_i e_j e_k\) is less than \(2N-1\); division by \(P_0+\Delta_\sigma\) therefore leaves its top trace coefficient unchanged. Their moving and complete traces agree exactly, including indices crossing half in the retained neighborhood.
 
-Use (18) to multiply out the finitely many replacements (20), and then localize the positive binary-resolution variables. The result is one fixed source error
+The general component comparison includes the local replacements (20). Together with (18) and localization of the positive binary-resolution variables, it gives one fixed source error
 \[
                     O\!\left(N^C e^{N(F_0-\eta_0)}\right),
                          \qquad \eta_0>0.
@@ -523,18 +512,31 @@ The exact scalar contributes \(a(D)z^2/(8\pi iN)\). The [geometric longitude the
 
 ## 8. What this theorem does and does not extend
 
-The [earlier complete-value volume theorem](actual_conway_all_strict_tree_long_twist_volume.md) covers every strict literal Conway tree under its stated knot and long-filling hypotheses. The present theorem gives more information—an actual complex microscopic main-meridian profile and a uniform volume rate—but for the narrower class specified by the three bare-component alternatives in Section 1. It does not replace the broader complete-value theorem or reduce its scope.
+The [complete-value volume theorem](actual_conway_all_strict_tree_long_twist_volume.md) and the present moving-meridian theorem apply to the same fixed strict literal Conway trees, with their knot and long-filling hypotheses. The present result additionally gives a uniform complex profile, nonvanishing and the preferred-cusp correction. The earlier singleton, path and trivalent arguments remain valid special cases of the general component comparison.
 
 The disk restriction is essential. The present proof treats \(|s|\le R<1\); it does not cross the first ordinary-color resonances \(s=\pm1\), where the reduced ordinary-color anchor and the full modified dimension have different behavior. The removable same-color Casimir collisions within this disk are included by the full physical source. A zero-free microscopic disk is also not a fixed open disk in the \(M\)-plane.
 
-An entirely trivalent bare component is covered without (2). Components with more than one bare junction and at least one junction of valence greater than three remain outside the theorem unless they satisfy the stated path condition. No filling integer is allowed to grow with \(N\). No conclusion is drawn for the ordinary-color-subtracted regular remainder through its resonance divisors. Finally, the existence of an exact meridian annihilator and the pointed complete period is separate from identifying a selected classical main-meridian \(A\)-factor. The scalar profile and volume theorem here do not make that identification.
+There is no remaining bare-component valence or path restriction. The filling integers must still be fixed before \(N\) tends to infinity and sufficiently long in the stated strict presentation. The theorem does not extend the ordinary-color-subtracted remainder through its resonance divisors, or identify a selected classical main-meridian \(A\)-factor. Those are separate problems.
 
 ## 9. The proof route
 
 The [exact ADO normalization](kashaev_ado_pointing.md) fixes the invariant, the coordinate \(M=-qx\), and the modified dimension. The [oriented source compiler](actual_main_meridian_newton_compiler.md) and [physical quarter-turn theorem](actual_main_meridian_turn_comparison.md) give its polynomial coordinates, compatible reference maps, full normal coefficients and original closing trace.
 
-The global estimate begins with [source growth near the complete main meridian](actual_main_meridian_source_bounds.md). The [component extension](actual_main_meridian_component_extension.md) permits the adjacent bare junctions satisfying (2), and explains why inherited errors retain their original deficit. The [trivalent-component comparison](actual_main_meridian_trivalent_component_bound.md) covers arbitrary-size trivalent components. Its [global extension](actual_main_meridian_trivalent_filled_volume.md) traces the complete source and complex estimates while retaining their full internal labels. The [regular bare trace](actual_main_meridian_regular_bare_trace.md) supplies the other allowed components on their strict low windows.
+The global estimate uses [source growth near the complete main meridian](actual_main_meridian_source_bounds.md) for the physical leaf and decorated-turn inputs, and the [general component comparison](actual_main_meridian_general_component_comparison.md) for every connected group of bare junctions. Its [Fourier lemma](actual_main_meridian_high_fourier_reflection.md) and [positive-pressure lemmas](actual_main_meridian_component_pressure.md) control the complete correction patterns without discarding their internal correlations. The [regular bare trace](actual_main_meridian_regular_bare_trace.md) then applies on the original strict low windows, with exact cubic equality in the two-junction exception.
 
 The local circle operators and their marked analytic continuation are established in the [regular circle trace](actual_main_meridian_regular_circle_trace.md). The [direct crossing trace](actual_main_meridian_direct_crossing_trace.md) keeps the actual filled crossing power, rather than substituting a complete-color expansion. The [grouped wire packet](actual_main_meridian_grouped_wire_packet.md) supplies the exact finite lattice and its complex contour. The [joint filling transform](actual_main_meridian_joint_filling_transform.md) retains all Fourier charges until their common saddle has been compared; it supplies the nonzero lower bound used here.
 
 The [general core action](actual_conway_general_core_packet_and_gap.md) and [strict-mask complete geometry](actual_conway_general_strict_mask_geometry.md) provide the original strict optimizer and augmented metric. The [marked geometric deformation](actual_conway_general_mask_marked_filling.md), §§6–7, and [metric-completion theorem](general_source_regulator_hyperbolic_equality.md) identify the selected long-filling action with the volume of the actual knot complement. The earlier quantum volume limit is not used as an analytic lower-bound input in this route.
+
+
+## 10. Net twists and other Conway closures
+
+The same intrinsic conclusions hold for the presentations admitted by the [ordered net-twist reduction](actual_conway_net_twist_volume.md) and the [arbitrary-closure reduction](actual_conway_arbitrary_closure_volume.md). These reductions use actual ambient isotopies of the tangles, including the recorded endpoint orders and rotations. A net twist is the signed sum attached to one surviving block of the original twist boxes; large opposite signs in that block can cancel.
+
+For a fixed ordered cylindrical input, apply its deterministic reduction. If the output is a strict knot presentation and every surviving net twist is sufficiently long, the uniform volume limit (6), nonvanishing, and intrinsic cusp expansion (7b) hold for the input knot. For an input with either the cylindrical or cap closure, zero net weights may also be removed by the prescribed topological reduction. If the input is hyperbolic and every surviving strict factor has sufficiently long net twists, the reduction theorem shows that exactly one strict knot factor remains and all other factors are unknots. The input is ambient isotopic to that strict knot.
+
+Here is why this transfers the whole meridian family. Orient the strict knot by the transported orientation of the input, and use zero framing on both. The reduced ADO invariant is the same Laurent family \(F_N(M)\) under this ambient isotopy, not merely the same value at \(M=1\). Any ribbon twist introduced in a diagram calculation is canceled by the full twist scalar at color \(d+s\). The meridian and the preferred zero-linking longitude are transported as well. The complete hyperbolic volume and the preferred cusp shape therefore agree. Applying (6) and (7b) to the strict representative proves those same formulas for the input.
+
+There are finitely many reduced outputs for a fixed input expression, including its parity and zero-weight branches. Take the maximum of their strict-presentation thresholds and of the hyperbolicity thresholds used in the topological reduction. This gives one net-twist threshold independent of the later radius \(R<1\). All net weights and their zero relations stay fixed before \(N\) tends to infinity.
+
+The presentation-dependent scalar \(a(D)\) and the individual physical-edge cotangents may be computed on the strict representative. No equality between the raw scalar ledgers, auxiliary circle sources, or augmented complements of two different presentations is needed. The transferred statements use the zero-framed invariant and the intrinsic preferred-cusp formula (7b).

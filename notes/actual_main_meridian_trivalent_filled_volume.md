@@ -1,5 +1,7 @@
 # Meridian profiles and volume with arbitrary trivalent Conway regions
 
+This special-case argument is retained in full. The [general component theorem](actual_main_meridian_general_component_comparison.md) and [filled-meridian theorem](actual_main_meridian_filled_volume.md) now permit every fixed strict bare component, without an additional valence or path condition.
+
 1 November 2026.
 
 This theorem allows arbitrarily large connected regions of trivalent products in the moving-meridian calculation for a Conway knot. The construction is fixed; its twist integers can be chosen independently, with either sign, once their absolute values exceed a fixed threshold. The resulting reduced ADO invariant has a nonzero microscopic meridian profile, and its exponential growth is the volume of the actual knot complement after the auxiliary circles have been filled.

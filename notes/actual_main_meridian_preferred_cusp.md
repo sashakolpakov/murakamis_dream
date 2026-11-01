@@ -12,7 +12,7 @@ Write \(T\) for the actual quarter-turn and \(C\) for this cylindrical closure. 
 
 The [original ribbon cut](actual_conway_bowtie_projection_cut.md) identifies the two geometric balls and their face pairings with the augmented link exterior. The [marked deformation](actual_conway_general_mask_marked_filling.md) continues those maps, keeps the main meridian parabolic, and fixes the primitive auxiliary filling curves. We use those geometric inputs throughout. The proof below first adds the translations of a specified longitudinal path, then determines its framing by homology. In particular, it does not identify a preferred longitude solely from a parabolic trace or from a quantum asymptotic.
 
-The geometric result applies to the full strict class with one main knot component. Section 9 gives a quantum consequence for the narrower class in which a moving-meridian asymptotic has already been proved. The additional analytic hypothesis is stated there; the geometric proof does not require it.
+The geometric result applies to the full strict class with one main knot component. Section 9 gives the quantum consequence for these strict presentations when the fixed signed twists are independently sufficiently long. Those analytic hypotheses are stated there; the geometric calculation is proved directly from the marked representation.
 
 ## 1. Statement and conventions
 
@@ -382,7 +382,7 @@ This proves (3) and matches the separately derived exact scalar exponent. No can
 
 ## 8. Scope and analytic continuation
 
-The proof uses only the original ordered face maps, actual cusp paths, and homology of the specified disk fillings. It holds for the full small auxiliary deformation furnished by the marked geometric theorem, including arbitrary strict product/turn syntax and arbitrary retained half-twist patterns whose main strands form a knot. The cotangent identity itself does not require the separated-bare or component-path conditions used in the newer analytic source estimates.
+The proof uses only the original ordered face maps, actual cusp paths, and homology of the specified disk fillings. It holds for the full small auxiliary deformation furnished by the marked geometric theorem, including arbitrary strict product/turn syntax and arbitrary retained half-twist patterns whose main strands form a knot. The calculation uses no analytic source-growth assumption. The general source theorem now has the same strict-tree scope under its separate long-twist hypotheses.
 
 On a sufficiently long filled branch the representation is the actual complete hyperbolic knot holonomy by the existing marked metric completion. Substituting its original critical wire values gives the geometric cusp shape in (2). This is not an identification made from the volume asymptotic, nor a claim that the polynomial annihilator is the knot A-polynomial.
 
@@ -391,22 +391,9 @@ For multiple main components the additive calculation tracks each component with
 
 ## 9. The first quantum correction in the established moving class
 
-The preceding geometry applies to arbitrary fixed strict constructions satisfying the stated knot and marking hypotheses. To use a moving quantum asymptotic, impose the additional presentation condition of [the filled meridian-profile theorem](actual_main_meridian_filled_volume.md), Section 1. In the product-junction tree, a junction is bare when it contains no original crossing-circle operator. The theorem includes every presentation in which bare junctions are separated by circle-marked junctions. It also includes the following larger class.
+The geometry above and the [filled meridian-profile theorem](actual_main_meridian_filled_volume.md) apply to every fixed strict Conway construction under the stated knot, marking and long-twist hypotheses. The [general component comparison](actual_main_meridian_general_component_comparison.md) removes the former adjacency, valence and path restrictions from the analytic theorem.
 
-An entirely trivalent connected component is allowed at any fixed finite size, by the [trivalent extension](actual_main_meridian_trivalent_filled_volume.md). Valence counts both its internal edges and outside branches in the actual reduced tree. For a nonsingleton component \(\mathcal U\) that is not entirely trivalent, let \(b_v\) count the incidences at vertex \(v\) that leave that component. Require \(b_v\ge5\) and
-\[
- \max_{\mathcal P\text{ a simple path in }\mathcal U}
-       \sum_{v\in\mathcal P}\varepsilon_{b_v-1}<2G_0,
- \qquad
- \varepsilon_k=(k+1)\left[
- J\left(\frac14+\frac1{k+1}\right)
- +J\left(\frac14-\frac1{k+1}\right)-2J\left(\frac14\right)\right],
- \tag{43}
-\]
-where \(J(u)=\int_0^u\log(2\sin\pi t)\,dt\),
-\(g(u)=J(2u)-4J(u)\), and \(G_0=g(1/4)\). A singleton component may have any allowed valence. The simpler condition \(b_v\ge\max(8,4|\mathcal U|)\) suffices for a nonsingleton component. The [component estimate](actual_main_meridian_component_extension.md) proves this criterion. No claim that it classifies every adjacent bare component is needed here.
-
-Fix a presentation in this analytic class and its original knot and parity pattern. In the strict two-leaf knot case, retain the linked theorem’s pure-leaf qualification. Fix independently sufficiently long signed integers \(n_i=\epsilon_i-2p_i\), with no bound on their ratios. The source-dependent lower threshold is chosen once and is independent of the later radius \(R<1\). The presentation and the integers are fixed before the level \(N\) tends to infinity.
+Fix such a strict presentation and its original knot and parity pattern. In the strict two-leaf knot case, retain the linked theorem’s pure-leaf qualification. Fix independently sufficiently long signed integers \(n_i=\epsilon_i-2p_i\), with no bound on their ratios. The source-dependent lower threshold is chosen once and is independent of the later radius \(R<1\). The presentation and the integers are fixed before the level \(N\) tends to infinity.
 
 Let \(F_N(M)\) be its actual zero-framed reduced ADO invariant, with unknot value one and the marked coordinate \(M=q_N^s\), \(q_N=e^{\pi i/N}\). Its complete value \(F_N(1)\) is the reduced Kashaev invariant. The filled-profile theorem gives, uniformly on every fixed \(|s|\le R<1\),
 \[
@@ -450,7 +437,7 @@ The shape here is the preferred cusp shape of the actual filled knot complement.
 
 For the full modified-trace ADO invariant, the modified-dimension ratio is exactly \(1/\mathcal H_N(z)\). Its complete-normalized profile is therefore the left side of (46), with the same correction. The reduced invariant retains \(\mathcal H_N\). Neither statement crosses the first ordinary-color resonances \(z=\pm2\pi i\).
 
-The implication in this section uses two separate established inputs: the moving asymptotic for the stated analytic class, and the geometric translation identity proved here for the broader strict class. It does not extend the moving theorem to arbitrary bare components, identify a classical factor of a quantum annihilator, or infer cusp geometry from the logarithmic volume alone.
+The implication uses the moving asymptotic and the independent geometric translation identity proved above. The geometric proof determines the actual preferred cusp; the analytic proof determines the quantum correction. Neither statement identifies a classical factor of a quantum annihilator.
 
 ## 10. Exact finite reproduction
 

@@ -1,5 +1,7 @@
 # Controlling meridian deformations in trivalent Conway regions
 
+This special-case argument is retained in full. The [general component theorem](actual_main_meridian_general_component_comparison.md) and [filled-meridian theorem](actual_main_meridian_filled_volume.md) now permit every fixed strict bare component, without an additional valence or path condition.
+
 1 November 2026.
 
 A Conway construction joins two-string tangles by ordered products and physical quarter-turns. Consecutive products with no intervening turn can be collected into a single product junction. A junction is **bare** if it contains no original crossing-circle operator. A connected bare region can have many such junctions. This note proves a uniform source estimate when each junction in that region is **trivalent**, meaning that exactly three branches meet there, including branches attached to the rest of the construction.

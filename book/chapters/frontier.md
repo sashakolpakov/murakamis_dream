@@ -8,7 +8,7 @@ The remaining questions include short net twists, knot families outside these co
 
 The [net-twist theorem](../../notes/actual_conway_net_twist_volume.md) removes the requirement that the original written expression pass the strict type test. Its explicit isotopies bring integral twist boxes together, retaining the half-turns of intervening tangles. The resulting groups of twist numbers are fixed by the original expression. The output is either a strict template or an elementary braid closure. The large-twist hypothesis applies to the sums in those groups.
 
-The analytic input is still the [strict-tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md). Its positive probe bound, spectral propagation and geometric comparison control the full signed source for the reduced template. The new topological reduction transfers that theorem to the same filled knot in its original presentation. It also carries the meridian, preferred longitude and invariant normalization.
+The analytic inputs now include both the [complete-value strict-tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md) and the [moving-meridian theorem](../../notes/actual_main_meridian_filled_volume.md) for every fixed strict tree. The topological reduction transfers the whole zero-framed meridian family to the same filled knot in its original presentation. It carries the meridian and preferred longitude as well, so the intrinsic volume and cusp expansion transfer with the invariant. The lower bounds on twist length still apply to the surviving sums.
 
 A small nonzero surviving twist remains a limitation. Making the original written exponents large by inserting opposite twist pairs cannot remove it. Exact zero sums can be treated by a further topological reduction: the [closure extension](../../notes/actual_conway_arbitrary_closure_volume.md) permits cap closures and the resulting connected-sum factors. When the input is hyperbolic and every surviving strict weight is long, the input is isotopic to one covered strict knot. This strengthens the criterion for presentations; it adds no short-twist estimate. The threshold depends on the entire fixed construction, and no uniform bound over growing trees is proved. Nor does the reduction classify all presentations of a given knot.
 
@@ -43,7 +43,7 @@ $$
 
 Here $\tau$ is the cusp shape computed from the preferred meridian and longitude. The proof obtains the coefficient directly from the finite sum; a separate matrix calculation fixes its geometric interpretation and sign.
 
-The figure-eight result includes all fixed complex \(z\)-disks, including the ordinary-color resonances, and identifies its correction with the preferred cusp shape. For a class of Conway presentations, a separate argument now proves the actual reduced ADO profile on \(|s|\le R<1\), where \(M=q_N^s\). This disk stops before the first ordinary-color resonances.
+The figure-eight result includes all fixed complex \(z\)-disks, including the ordinary-color resonances, and identifies its correction with the preferred cusp shape. For every fixed strict Conway presentation with sufficiently long signed twists, a separate argument proves the actual reduced ADO profile on \(|s|\le R<1\), where \(M=q_N^s\). This disk stops before the first ordinary-color resonances.
 
 ## The filled moving-meridian theorem and its remaining limits
 
@@ -56,29 +56,34 @@ The [filled-meridian theorem](../../notes/actual_main_meridian_filled_volume.md)
 \qquad R<1,
 \]
 
-for fixed strict Conway constructions with sufficiently long signed twists, subject to a condition on their multiplication junctions. It includes singleton bare junctions of any allowed valence and arbitrary fixed trees of adjacent trivalent bare junctions. A bare junction is a product with no original crossing-circle operator at that vertex. Trivalence counts all three branches at a vertex of the actual reduced tree. The [trivalent theorem](../../notes/actual_main_meridian_trivalent_filled_volume.md) has no size or outside-branch requirement on such a component. The [component extension](../../notes/actual_main_meridian_component_extension.md) also allows adjacent bare junctions when an explicit path inequality holds. In particular, a component with \(m>1\) vertices passes if every vertex has at least \(\max(8,4m)\) incident branches leading out of the component.
+for every fixed strict Conway tree with independently sufficiently long fixed signed twists and the original knot and framing conditions. A bare junction is a product junction containing no crossing-circle operator. Its valence, adjacency to other bare junctions, and the size of its component impose no additional restriction. The [general component proof](../../notes/actual_main_meridian_general_component_comparison.md) controls the whole signed calculation. The earlier separated-junction, path and trivalent proofs remain valid special cases.
 
-The theorem keeps the actual strand colors and the zero-framing normalization. After division by the exact scalar factors prescribed by the finite tangle operations, the ratio to \(F_N(1)\) is
+The invariant is nonzero throughout the stated disk for sufficiently large $N$. If $A_N(s)$ is the exact crossing-and-framing scalar specified by the finite source, its normalized profile is
 
 \[
-\frac{\sin\pi s}{N\sin(\pi s/N)}\bigl(1+O(N^{-1})\bigr).
+\frac{F_N(q_N^s)}{F_N(1)A_N(s)}
+ =H_N(s)\bigl(1+O(N^{-1})\bigr),\qquad
+ H_N(s)=\frac{\sin\pi s}{N\sin(\pi s/N)}.
 \]
 
-It proves nonvanishing and a uniform logarithmic limit at each point of the disk. The lower bound comes from a nonzero term in a joint Fourier calculation. The proof compares all Fourier indices with the same filled critical action, so the fixed twist magnitudes can be independently large without a bound on their ratios.
+The lower bound comes from a nonzero term in the joint Fourier calculation. All Fourier indices are compared with the same filled critical action, so the fixed twist magnitudes need not be comparable. One presentation-dependent threshold works before choosing $R<1$; the starting quantum level may depend on the chosen twists and radius.
 
-The [longitude calculation](../../notes/actual_main_meridian_preferred_cusp.md) now identifies the first correction with the preferred cusp shape \(\tau_K\). After division by the displayed sine quotient, the normalized invariant equals
+The [longitude calculation](../../notes/actual_main_meridian_preferred_cusp.md) identifies the first correction with the preferred cusp shape $\tau_K$:
+
 \[
- 1+\frac{\pi i s^2\tau_K}{2N}+O(N^{-2}).
+ \frac{F_N(q_N^s)}{F_N(1)H_N(s)}
+ =1+\frac{\pi i s^2\tau_K}{2N}+O(N^{-2}).
 \]
-The [exact scalar calculation](../../notes/actual_main_meridian_exact_scalar.md) supplies the integer framing term; the geometric proof determines the same term from the longitude and the auxiliary surgery. The geometric identity holds for the broader strict-tree class. The asymptotic still requires the extra component condition, and its disk still shrinks like \(1/N\) in \(M\). The complete-value theorem retains its broader scope.
 
-The open extensions are the moving-meridian theorem for components with more than one bare junction and at least one junction of valence greater than three and failing the path test, continuation of the ordinary-color-subtracted state through its resonance divisors, and identification of the selected classical geometric factor of the recurrence. The filled theorem does not depend on these extensions.
+The [exact scalar calculation](../../notes/actual_main_meridian_exact_scalar.md) retains the integer framing term, and the geometric proof determines the preferred longitude after the auxiliary surgeries. Both the geometric identity and this asymptotic now cover the same strict-tree class. The [net-twist and closure corollary](../../notes/actual_main_meridian_filled_volume.md#net-twists-and-other-conway-closures) transfers the intrinsic formulas to their reduced-knot presentations under the stated hypotheses on twist length and topology. It uses ambient isotopy of the zero-framed knot and its preferred peripheral curves; it does not identify different augmented links.
+
+The remaining limits are substantial. The disk shrinks like $1/N$ in the meridian coordinate and stops before $s=\pm1$, the first ordinary-color resonances. The general ordinary-color-subtracted state has not been continued through those resonances with the asserted profile. Short surviving twists, trees or twist numbers growing with $N$, a classification of all arborescent knots under arbitrary presentation changes, and the selected classical geometric factor of the recurrence also remain outside this theorem. Arbitrary bare-component valence and adjacency are no longer open restrictions.
 
 ## The moving-meridian growth already established
 
-The [source-growth theorem](../../notes/actual_main_meridian_source_bounds.md) controls a whole class of signed tangle contractions. A product junction combines operators without an intervening quarter-turn. Mark a junction when one of its original crossing-circle operators occurs there without that outer turn; call an unmarked junction bare. The theorem assumes that no two bare junctions are adjacent, together with the original strictness and knot-component hypotheses. There may be arbitrarily many junctions of arbitrary fixed valence.
+The [source-growth theorem](../../notes/actual_main_meridian_source_bounds.md), extended by the [general component comparison](../../notes/actual_main_meridian_general_component_comparison.md), controls every fixed strict Conway tree before its auxiliary crossing circles are filled. It retains the full ranges of their independent colors and the original component hypotheses. Its early separated-junction examples illustrate one included case, not a current adjacency condition.
 
-Write \(Y^\epsilon\) for the augmented complement with its crossing circles still unfilled, and \(\mathcal F_{N,\mathbf j}^{\epsilon}(M)\) for its reduced scalar with auxiliary colors \(1\le j_i\le N\). For \(q_N=e^{\pi i/N}\) and every fixed \(0\le R<1\),
+Write $Y^\epsilon$ for the augmented complement with its crossing circles unfilled, and \(\mathcal F_{N,\mathbf j}^{\epsilon}(M)\) for its reduced scalar with auxiliary colors \(1\le j_i\le N\). For \(q_N=e^{\pi i/N}\) and every fixed \(0\le R<1\),
 
 \[
 \lim_{N\to\infty}\frac{2\pi}{N}
@@ -87,11 +92,11 @@ Write \(Y^\epsilon\) for the augmented complement with its crossing circles stil
  =\operatorname{Vol}(Y^\epsilon).
 \]
 
-The estimate includes even and odd levels. The upper bound is uniform in the meridian disk and all auxiliary colors; the lower bound uses the known nonzero complete value at \(s=0\), \(j_i=N\). The [operation diagram](../figures/separated-product-junctions.svg) shows the separation condition. For two pieces, the original knot-pattern and pure-leaf qualifications are retained.
+The upper bound is uniform in the meridian disk and all auxiliary colors. Its matching lower bound uses the nonzero complete value at \(s=0\), \(j_i=N\); it does not assert nonvanishing at every point of this color cube. Both even and odd levels are included. The two-piece case retains its original knot-pattern and pure-leaf qualifications.
 
-The [auxiliary-color gap theorem](../../notes/actual_main_meridian_auxiliary_color_gap.md) also controls the region where an original circle color stays a fixed proportion below completeness. If some \(j_i\le(1-\delta)N\), with fixed \(0<\delta<1\), the whole scalar has a strictly smaller exponential rate than \(\operatorname{Vol}(Y^\epsilon)/(2\pi)\). It is uniform over all the other colors and both parities for \(|s|\le R<1/2\). Thus the color gap is established on these smaller disks, while the supremum-volume theorem holds for \(R<1\).
+The [auxiliary-color gap](../../notes/actual_main_meridian_auxiliary_color_gap.md) also extends to every such tree. If some \(j_i\le(1-\delta)N\), with fixed \(0<\delta<1\), the scalar has a strictly smaller rate than \(\operatorname{Vol}(Y^\epsilon)/(2\pi)\), uniformly over the other colors and both parities on \(|s|\le R<1/2\). This smaller disk is the scope of that strict color estimate, while the source supremum theorem holds for \(R<1\).
 
-The [path theorem](../../notes/actual_main_meridian_component_extension.md) and [trivalent theorem](../../notes/actual_main_meridian_trivalent_filled_volume.md) extend both estimates to the additional component classes stated above. Their reference volume is still that of the augmented complement. The filled moving-meridian theorem needs the additional joint Fourier argument and the marked filling geometry; those steps produce the generally smaller knot-complement volume. The source bounds by themselves would not give that conclusion.
+The reference volume here is still the augmented volume. The filled theorem uses the additional joint Fourier argument and the marked filling geometry to obtain the volume of the original filled knot complement. An upper bound for the augmented source alone would not supply that conclusion.
 
 ## What is now exact when the main meridian moves
 
@@ -144,8 +149,7 @@ The relation defining the algebra then changes only by
 Since \(\Delta'_0=0\), multiplication in these fixed coordinates has
 zero first derivative. Multiplication by the Casimir changes by
 one matrix entry, of magnitude \(|\Delta_s|/N^2\).
-This simplifies the algebraic deformation, and the turn now has
-the relative estimate just stated. The additional multiplication sectors still occur. For separated bare junctions, the source-growth theorem controls their signed sum at the original augmented geometric rate by comparing a whole junction with the complete positive trace. The component theorem extends that comparison across adjacent bare junctions when its path inequality holds. The trivalent theorem covers arbitrary fixed trees of degree-three bare junctions by a simultaneous variational comparison, retaining all their old-supported internal indices. A local norm estimate alone would not suffice: for a radical polynomial whose node derivatives are supported at one end, the second color derivative of the paired multiplier has a derivative of polynomial size at the other end. Localized node data alone therefore do not imply the analytic localization needed in the source proof.
+This simplifies the algebraic deformation, but additional multiplication terms still occur. The general component proof estimates their signed whole traces. In a trace difference, the first Fourier term cancels; with one high index the remaining terms admit a reflected complete-tensor bound. Complementary pairing then fuses junctions in a positive comparison tree, whose maximum rate cannot exceed that of the original tree. A separate half-boundary argument handles several high indices. These are bounds on complete contractions, not isotopies, and the original geometric volume remains the target. A local norm estimate alone would not suffice: for a radical polynomial whose node derivatives are supported at one end, the second color derivative of the paired multiplier has a derivative of polynomial size at the other end. Localized node data alone therefore do not imply the analytic localization needed in the source proof.
 
 There is a second route through the recurrence. The
 [finite matrix criterion](../../notes/actual_main_meridian_finite_matrix_criterion.md)
@@ -163,7 +167,7 @@ disk in \(z\), hence on a meridian disk of radius \(O(1/N)\).
 For the covered knots, the right side would remain the volume of
 the same knot complement. The criterion is proved; its conditioning
 hypotheses have not been verified for a general Conway family.
-The filled-meridian theorem above reaches a uniform volume limit and normalized profile by a direct finite-sum argument. It does not establish the conditioning hypotheses of this alternative matrix criterion. Proving those hypotheses could give another route beyond the presently covered component class.
+The filled-meridian theorem above reaches a uniform volume limit and normalized profile by a direct finite-sum argument. It does not establish the conditioning hypotheses of this alternative matrix criterion. Proving those hypotheses would provide an operator-based proof and could address further meridian or knot regimes; it is not needed to remove a bare-component restriction from the finite-sum theorem.
 
 ## What the Fourier transform preserves
 

@@ -6,6 +6,18 @@ An exact symbolic calculation can establish an identity in formal variables. A r
 
 The current [strict Conway tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md) includes bounds for the full quantum sum, a nonzero selected contribution, the original normalization and the actual marked filling geometry. Its proof is not waiting for a theorem about all knots. The more specialized general-plat calculations catalogued below retain their own hypotheses and limitations.
 
+## Arbitrary multiplication regions
+
+The [general component theorem](../../notes/actual_main_meridian_general_component_comparison.md) permits connected groups of product junctions of any fixed size and valence. Its new finite identities can be checked with one command:
+
+```sh
+python3 repro/run_research_checks.py general-components
+```
+
+The program constructs each Newton polynomial over an exact cyclotomic number field. It compares its Laurent coefficients with the formula in the [Fourier reflection proof](../../notes/actual_main_meridian_high_fourier_reflection.md), and independently divides products by the deformed polynomial relation. Subtracting the complete trace must cancel the first Fourier term. A further calculation verifies fusion in the full quotient algebra, including inputs whose values at repeated roots vanish but whose derivative contributions remain nonzero.
+
+The [recorded results](../../experiments/high_fourier_reflection_results.json) cover levels two through twelve, including both parities: 36 high-index polynomials, 721 trace differences and 33 fusion identities. These are exact finite algebra checks. The uniform Fourier loss, comparison of positive maxima and passage to the filled knot complement are proved in the three companion notes; the finite checks do not establish those analytical or geometric conclusions.
+
 ## Trivalent multiplication regions
 
 The [component theorem](../../notes/actual_main_meridian_trivalent_component_bound.md) has one reproduction command:

@@ -1,6 +1,6 @@
 # Exponential loss for auxiliary colors below the complete color
 
-The [trivalent-component extension](actual_main_meridian_trivalent_filled_volume.md) extends this result to arbitrary-size connected components of trivalent bare junctions, together with the previously covered component classes. The proof below establishes the original separated-junction case; the extension retains its invariant and normalization.
+The [general component theorem](actual_main_meridian_general_component_comparison.md) extends this result to every fixed strict Conway tree. The proof below establishes the original separated-junction case and its physical input estimates. The general theorem retains the same invariant, normalization and radius restrictions.
 
 Consider a fixed ordered Conway construction with its original auxiliary crossing circles and half-twist choices. Its reduced multiplication tree is obtained by combining consecutive products with no intervening quarter-turn. A junction is flagged when it carries one original crossing-circle operator used without the outer quarter-turn; a junction with no such operator is bare. We assume the construction has a strict complete state and that no two bare junctions are adjacent. The [source-bound theorem](actual_main_meridian_source_bounds.md) defines this class and constructs its actual typed source.
 
@@ -414,7 +414,7 @@ Under the original strict marked geometry, \(2\pi F_0=\operatorname{Vol}(Y^\epsi
 
 The estimate is for the auxiliary-colored source before the filling transform, and its reference rate is the augmented complete action. It does not prove the filled knot's lower volume rate or the convergence of the normalized regular main-meridian profile. The radius is fixed below \(1/2\), as required by the chosen unwrapped crossing-root contour. Adjacent bare hubs remain outside this source induction.
 
-The [component extension](actual_main_meridian_component_extension.md) supplies the same argument for adjacent bare junctions satisfying its path condition. The separate [filled-meridian theorem](actual_main_meridian_filled_volume.md) proves the uniform filled-knot volume limit on \(|s|\le R<1\) by a joint crossing-power calculation. The smaller radius here belongs to this auxiliary-color estimate and is not the radius of that filled theorem.
+The [general component theorem](actual_main_meridian_general_component_comparison.md), Sections 6–8, supplies the same norm and angular interfaces for arbitrary adjacent bare junctions. The earlier [component extension](actual_main_meridian_component_extension.md) remains a special case. The separate [filled-meridian theorem](actual_main_meridian_filled_volume.md) proves the uniform filled-knot volume limit on \(|s|\le R<1\) by a joint crossing-power calculation. The smaller radius here belongs to this auxiliary-color estimate and is not the radius of that filled theorem.
 
 
 ## 6. Finite reproduction

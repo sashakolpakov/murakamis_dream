@@ -1,5 +1,7 @@
 # Adjacent product junctions in the main-meridian source bound
 
+This special-case argument is retained in full. The [general component theorem](actual_main_meridian_general_component_comparison.md) and [filled-meridian theorem](actual_main_meridian_filled_volume.md) now permit every fixed strict bare component, without an additional valence or path condition.
+
 1 November 2026.
 
 The [main-meridian source bound](actual_main_meridian_source_bounds.md) allows a product junction with no crossing-circle operator only when the neighboring product junctions carry such operators. This note gives a sufficient condition that permits several junctions without an operator to be adjacent. The condition counts the branches attached to each connected group of these junctions. More attached branches provide a quantitative margin that controls the error introduced by the next turn.

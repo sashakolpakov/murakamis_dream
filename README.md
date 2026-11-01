@@ -39,17 +39,23 @@ unknots. The original knot is therefore isotopic to a covered long-twist
 knot. This extends the criterion for presentations, without adding an
 estimate for short twists.
 
-A further result controls the invariant while the meridian moves within
-distance of order $1/N$ of completeness. It proves a uniform volume limit
-and an explicit normalized profile for long-twist presentations satisfying
-a condition on their multiplication junctions. It permits arbitrarily
-large fixed trees of junctions with three incident branches, as well as
-the other component classes stated in the theorem. The first
-correction is determined by the preferred cusp shape; a separate geometric
-calculation follows the longitude through the crossing-circle surgeries. The
-[moving-meridian section](https://sashakolpakov.github.io/murakamis_dream/guide/results.html#the-volume-limit-while-the-meridian-varies)
-states that condition and explains why this stronger conclusion currently
-has a narrower scope than the complete-value theorem.
+The [moving-meridian theorem](https://sashakolpakov.github.io/murakamis_dream/notes/actual_main_meridian_filled_volume.html)
+also controls the invariant within distance of order $1/N$ of completeness
+for every fixed strict Conway tree with independently sufficiently long
+signed twists. Product junctions may have arbitrary valence and adjacency.
+The theorem gives a uniform volume limit, a nonzero normalized profile,
+and a first correction determined by the preferred cusp shape. The
+[results chapter](https://sashakolpakov.github.io/murakamis_dream/guide/results.html#the-volume-limit-while-the-meridian-varies)
+explains the finite-sum comparison and its hypotheses.
+
+These intrinsic conclusions also pass through the net-twist and closure
+reductions when their stated hypotheses on twist length and the knot hold. The
+ambient isotopy preserves the whole zero-framed meridian family and the
+preferred peripheral curves. The comparison uses the volume and cusp of
+the original knot, even when its reduced presentation has a different
+auxiliary augmented link. The meridian disk stops before the first
+ordinary-color resonances; continuation through them remains a separate
+problem.
 
 ![Tangle reduction, the finite quantum evaluation, and the volume of the resulting knot complement](book/figures/research-map.png)
 
