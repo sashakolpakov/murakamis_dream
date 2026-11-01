@@ -2,6 +2,11 @@
 
 [Read the manuscript (PDF)](build/main.pdf).
 
+This is the 374-page reference account, retained while its results are
+rewritten as [papers organized by subject](../papers/README.md). Each new paper
+has its own theorem, notation and proof dependencies and must fit within
+30 pages. The reference PDF is frozen during that work.
+
 The manuscript contains completed proofs, including partial results with narrower conclusions. [The introduction](sections/01-introduction.tex) lists the statements and their hypotheses. The illustrated guide's [methods chapter](../book/chapters/methods.md) retains exploratory constructions and unsuccessful comparisons, with their definitions, references and limitations.
 
 The proofs retain their named dependencies on earlier finite-source and geometric lemmas. Those citations are part of the argument; the PDF does not reproduce every calculation in the technical library. [The proof-input map](../repro/PROOF_INPUTS.md) separates these written inputs from executable checks.
@@ -9,8 +14,9 @@ The proofs retain their named dependencies on earlier finite-source and geometri
 The [manuscript audit](../repro/MANUSCRIPT_AUDIT.md) records the current
 checks of those implications and the corrections they required. The
 reproduction chapter now states the final rate-transfer argument with
-all its hypotheses. A [small Lean project](../formal/README.md) checks
-finite algebraic steps; it does not formally verify the volume theorems.
+all its hypotheses. A [Lean project](../formal/README.md) checks
+finite algebra and the conditional implications from source bounds to
+the volume limit; the analytic and geometric premises remain written proofs.
 Appendix N now proves the uniqueness of polynomial reduction and its
 independence of root order, including repeated roots. These statements
 also have Lean proofs. The separate geometric and analytic reviews

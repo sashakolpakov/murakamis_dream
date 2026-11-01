@@ -344,13 +344,47 @@ The finite reproduction checks the explicit seventeen-region extension
 and the original restricted dual, with oriented small constructions as
 incidence checks. Nine new Lean declarations verify the scalar
 comparisons and their exact target correction. The full project now
-contains 193 compiled declarations with inspected axiom dependencies.
-The latest thirteen are the six face-support and seven resolvent
-declarations described above.
-The dependency map has 21 statement-level nodes and ten invalid-map
+contains 241 compiled declarations with inspected axiom dependencies.
+The additional source-assembly and limit declarations are described below.
+The dependency map has 49 statement-level nodes and fourteen invalid-map
 controls. These counts describe the checks, not the fraction of the
 manuscript formally verified. Its analytic and geometric arguments
 remain written proofs.
+
+## From the whole remainder to the volume limit
+
+The formal project now proves the final implication as an epsilon-limit
+statement. `SourceAssembly` constructs the sum over the entire retained
+sector list, preserves its multiplicities under an additive filling
+functional, and bounds it using the local estimates and the filling
+norm. The admissible degree class is explicit. No bound for arbitrary
+higher-degree polynomials is inferred.
+
+`LevelLimits` retains the level subsequence in every eventual estimate.
+It combines the two parity conclusions and constructs common thresholds
+for finitely many estimates and independently long fixed signed powers.
+`VolumeTransfer` derives actual modulus domination from a strict rate
+gap, then uses the triangle and reverse triangle inequalities to prove
+eventual nonvanishing and equality of rates. It restores the scalar
+normalization and transfers the geometric action to the volume attached
+to the same diagram and filling tuple.
+
+These are conditional mathematical proofs, not a dependency graph whose
+vertices are named after desired conclusions. Their analytic inputs are
+explicit: a nonzero central asymptotic, the upper rate of the full
+remainder, and elementary laws for modulus and a scaled logarithm.
+The current library has not instantiated those laws as complex modulus
+and the real function `log(x)/N`; that interpretation, the exact source
+identity, the analytic estimates and the geometric volume comparison
+remain written arguments. This boundary must accompany any description
+of the formal coverage.
+
+The dependency map now also records the recursive construction, the
+summed, local and directed tree criteria, and terminal decoration.
+Its checks reject substitution of a different family's source or period
+even when the two statements have the same level scope. This is a
+consistency check on the map, separate from the Lean implications and
+from the mathematical proofs of its premises.
 
 ## Where this research phase ends
 

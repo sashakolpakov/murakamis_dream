@@ -1,8 +1,9 @@
 {
-  "scope": "Statement-level interfaces used by Appendices N\u2013R. The graph does not enumerate every internal lemma or external source used in their written proofs.",
+  "scope": "Statement-level interfaces for the retained recursive, quantitative and directed tree, decorated planar, weak-balance, and certified-composition volume theorems. The graph records theorem assembly; it does not verify the written analytic and geometric assertions at its nodes.",
   "meaning": "Structural consistency of the declared proof map; not verification of its mathematical nodes.",
   "conclusions": {
     "weak_balance_volume": {
+      "context": "matched_sphere",
       "assumptions": [
         "fixed_data",
         "knot_pairing",
@@ -27,6 +28,7 @@
       ]
     },
     "protected_sum_volume": {
+      "context": "matched_sphere",
       "assumptions": [
         "fixed_data",
         "knot_pairing",
@@ -51,6 +53,7 @@
       ]
     },
     "general_geometric_rate": {
+      "context": "matched_sphere",
       "assumptions": [
         "fixed_data",
         "knot_pairing",
@@ -70,6 +73,7 @@
       ]
     },
     "general_volume": {
+      "context": "matched_sphere",
       "assumptions": [
         "fixed_data",
         "knot_pairing",
@@ -95,6 +99,7 @@
       ]
     },
     "ordinary_boundary_volume": {
+      "context": "matched_sphere",
       "assumptions": [
         "fixed_data",
         "knot_pairing",
@@ -118,9 +123,117 @@
         "rate_transfer",
         "specified_metric"
       ]
+    },
+    "recursive_volume": {
+      "context": "recursive",
+      "assumptions": [
+        "fixed_data",
+        "knot_pairing",
+        "long_twists",
+        "recursive_construction"
+      ],
+      "unresolved": [],
+      "odd_level_inputs": [],
+      "closure": [
+        "rate_transfer",
+        "recursive_absolute_volume",
+        "recursive_leading",
+        "recursive_metric",
+        "recursive_remainder",
+        "recursive_source",
+        "recursive_volume"
+      ]
+    },
+    "summed_tree_volume": {
+      "context": "circle_tree",
+      "assumptions": [
+        "fixed_data",
+        "knot_pairing",
+        "ordered_circle_tree",
+        "summed_tree_criterion"
+      ],
+      "unresolved": [],
+      "odd_level_inputs": [],
+      "closure": [
+        "circle_tree_source",
+        "rate_transfer",
+        "summed_tree_absolute_volume",
+        "summed_tree_leading",
+        "summed_tree_metric",
+        "summed_tree_path",
+        "summed_tree_remainder",
+        "summed_tree_volume"
+      ]
+    },
+    "local_tree_volume": {
+      "context": "circle_tree",
+      "assumptions": [
+        "fixed_data",
+        "knot_pairing",
+        "local_tree_criterion",
+        "ordered_circle_tree"
+      ],
+      "unresolved": [],
+      "odd_level_inputs": [],
+      "closure": [
+        "circle_tree_source",
+        "local_tree_absolute_volume",
+        "local_tree_leading",
+        "local_tree_metric",
+        "local_tree_path",
+        "local_tree_remainder",
+        "local_tree_volume",
+        "rate_transfer"
+      ]
+    },
+    "directed_tree_volume": {
+      "context": "circle_tree",
+      "assumptions": [
+        "directed_tree_criterion",
+        "fixed_data",
+        "knot_pairing",
+        "ordered_circle_tree"
+      ],
+      "unresolved": [],
+      "odd_level_inputs": [],
+      "closure": [
+        "circle_tree_source",
+        "directed_tree_absolute_volume",
+        "directed_tree_leading",
+        "directed_tree_metric",
+        "directed_tree_path",
+        "directed_tree_remainder",
+        "directed_tree_volume",
+        "rate_transfer"
+      ]
+    },
+    "decorated_volume": {
+      "context": "matched_sphere",
+      "assumptions": [
+        "fixed_data",
+        "knot_pairing",
+        "long_twists",
+        "marked_sphere",
+        "terminal_decoration"
+      ],
+      "unresolved": [],
+      "odd_level_inputs": [],
+      "closure": [
+        "absolute_volume",
+        "central_contribution",
+        "central_local_estimates",
+        "complete_packing",
+        "decorated_remainder",
+        "decorated_source_gap",
+        "decorated_volume",
+        "exact_source",
+        "filling_norm",
+        "rate_transfer",
+        "specified_metric"
+      ]
     }
   },
-  "nodes_checked": 21,
+  "nodes_checked": 49,
   "source_sha256": {
     "manuscript/sections/O-morse-geometric-contribution.tex": "cb6206d13e0dbeb13f8101c8488f0380367588e8d66beea0ca46574d2ffda3c0",
     "formal/VolumeLogic/FaceGridSupport.lean": "4baeeee58f794f7a610f880a5f465af13bb00beb6598f1041ac58fb9a74d8705",
@@ -131,8 +244,22 @@
     "manuscript/sections/Q-protected-triangular-sums.tex": "7b9336b24b0088760aa73db35e584fd089c62ee9f699a6a11e7c5d02cdced195",
     "manuscript/sections/09-reproduction.tex": "59702253e8df8be89f0264a5127326f018538ce5445551f1c186a9ca397e86a1",
     "manuscript/sections/R-triangular-boundary-insertion.tex": "46ac386f628b6f04776c309346cbb95c5cbe53d6aaec88e524ea39cddc1fd84b",
-    "repro/manuscript_logic.json": "6ddb7bed288b4700b843bb0b2d169e62401a9e6d44d8be0c3ed5a21d9b02c65e",
-    "repro/check_manuscript_logic.py": "151fd13efb8857d59f74e6726345daa1d83c574f537f8ff393ad76df3632acb0"
+    "manuscript/sections/02-finite-source.tex": "232936be01555db658f818b3ed0539c31fe4f2deb3386cc0ed8df5497d8b65e2",
+    "manuscript/sections/08-filling.tex": "263ba4a38c79c487cbe13136fe99414c6026159285a946968eeb6d4156ed7254",
+    "manuscript/sections/06-packet.tex": "8a5b6bd7b108cc357a9e602db49bfa3480f0c2d4b47decfacaed04c82e8a12d8",
+    "manuscript/sections/05-alias.tex": "66c05f5dcbbd66f22663c4628b96c74a49f70f9e718640679a7d7bae242991a0",
+    "manuscript/sections/B-analytic-estimates.tex": "0ae218413d4fac051613ec4da38fdcc7babe484c40c010c6dd83f79acc0428d5",
+    "manuscript/sections/D-marked-cell-calibration.tex": "e6c3270bd8c8e0e61d79cf0c036943e39d476197d4700a9a9ce19440c3959286",
+    "manuscript/sections/01-introduction.tex": "c89f2fe0fbd5676aa39bc03eeacefc6742cb9d59a20e3f749abffa07e458202c",
+    "manuscript/sections/E-quantitative-finite-sums.tex": "a8061a355a1426ca475df29455c8a06c16ead89322f49fe36f4e385ed71bea78",
+    "manuscript/sections/F-quantitative-octahedral-geometry.tex": "4348d40531fe83415223b88e26b1e3aedcb01daa9c6e17f030ae596000f8f268",
+    "manuscript/sections/08a-quantitative-circle-trees.tex": "cfd7fa0dafd66bdc0e0e5151f415b2bc6b28c49a63ad6d1e0a244829b1db70f0",
+    "manuscript/sections/G-local-tree-messages.tex": "9a169d6aeff06df5887952c18c22a0aef470bbcda9e18610d4f57f016e2dbdce",
+    "manuscript/sections/08b-local-circle-messages.tex": "2da3005f1eb4d974fb36a4da79635994baa5858ec9284570ec961f935916e7f3",
+    "manuscript/sections/K-directed-circle-messages.tex": "7eff3a7658079dff75802b8044d7213e040795eeff89c7795bb1476aee04c03a",
+    "manuscript/sections/L-balanced-terminal-fans.tex": "4c5b03317602d547a44028908a99e8cd449922f391c27ba80e8dafd5156f4775",
+    "repro/manuscript_logic.json": "296a906f6c4e3e94d03fc281628bba55a33c6a8e0b98c67619fbf21e5d411dab",
+    "repro/check_manuscript_logic.py": "aff876e81c4e1b16d0c81f49e8219a4e1e46a637bb2e88aba4a79533461fee3d"
   },
   "negative_controls_rejected": [
     "missing full-remainder premise",
@@ -144,6 +271,10 @@
     "missing geometric proof reference",
     "thin-boundary certificate hypotheses omitted",
     "central period substituted for conditional disk identity",
-    "missing finite-algebra supporting reference"
+    "missing finite-algebra supporting reference",
+    "matched-sphere period substituted into the recursive source",
+    "different exact construction substituted into the conclusion",
+    "directed outgoing and root conditions omitted",
+    "actual knot-changing decoration omitted"
   ]
 }

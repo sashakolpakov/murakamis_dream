@@ -1,5 +1,12 @@
 # A guide to the manuscript
 
+The current PDF is a 374-page reference account. Its results are being
+rewritten as [papers organized by subject](../../papers/README.md), each at
+most 30 pages including references. The first drafts separate the finite
+filling estimate from the long three-braid application. Their shared
+analytic and geometric dependencies are stated explicitly. The reference
+PDF remains frozen while this division is prepared.
+
 [Read the manuscript PDF](../../manuscript/build/main.pdf). The [editable sources and build instructions](../../manuscript/README.md) are available alongside it.
 
 The paper contains completed proofs of volume equalities for decorated

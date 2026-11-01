@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Compile the finite Lean proofs and audit every exported theorem's axioms.
+"""Compile the Lean proofs and audit every exported theorem's axioms.
 
-This checks the stated algebraic implications, not their analytic or geometric
-applications. The separate axiom inspection runs after a successful library
+This checks the stated algebraic and conditional limit implications, not the
+analytic or geometric premises of their applications. Axiom inspection follows a successful library
 build. Requires the pinned Lean toolchain; no external Lean packages are used.
 """
 from __future__ import annotations
@@ -76,10 +76,12 @@ def main() -> None:
                              "lean-toolchain", "lake-manifest.json")]
     inputs.append(Path(__file__).resolve())
     report = {
-        "scope": "Finite support, root-grid exponent selection under the total-degree bound, coefficientwise split-monic reduction and uniqueness, actual polynomial products and repeated-root product derivatives, resolvent reproduction at an annihilating element, root-permutation invariance, a conditional functional characterization, formal coefficient regrading and finite-jet limitations, tensor identities, protected-sum and ordinary-boundary comparisons, and scalar rate implications only.",
+        "scope": "Finite support, root-grid exponent selection, canonical polynomial reduction and products, resolvent reproduction, formal regrading, local composition comparisons, whole finite-sector filling bounds, epsilon limits with both parities, strict-gap noncancellation, scalar normalization, and conditional fixed-filling volume transfer for the same indexed invariant and diagram.",
         "not_formalized": ["the actual Chebyshev root data and crossing-operator functional",
                            "the exact knot-diagram adapter", "uniform analytic estimates",
-                           "geometric realization and filling", "the volume limit"],
+                           "geometric realization and filling",
+                           "realization of the abstract magnitude and logarithm interfaces as complex modulus and log(x)/N",
+                           "verification of the analytic and geometric premises for each knot family"],
         "toolchain": (FORMAL / "lean-toolchain").read_text().strip(),
         "commands": [["lake", *command[1:]] for command in commands],
         "theorems": axioms,

@@ -372,9 +372,18 @@
       "name": "source-cancellation",
       "description": "Original rational source certificate, both-parity cap identities and exact shared-load rounding. The asymptotic and cancellation conclusions are written proofs, not finite-level extrapolations.",
       "commands": [
-        ["python3", "experiments/verify_actual_singleton_sector_obstruction.py"],
-        ["python3", "experiments/verify_actual_singleton_sector_obstruction_topology.py"],
-        ["python3", "repro/check_absolute_source_obstruction.py"]
+        [
+          "python3",
+          "experiments/verify_actual_singleton_sector_obstruction.py"
+        ],
+        [
+          "python3",
+          "experiments/verify_actual_singleton_sector_obstruction_topology.py"
+        ],
+        [
+          "python3",
+          "repro/check_absolute_source_obstruction.py"
+        ]
       ]
     },
     {
@@ -388,6 +397,16 @@
         [
           "python3",
           "experiments/verify_actual_singleton_sector_obstruction_topology.py"
+        ]
+      ]
+    },
+    {
+      "name": "cyclic-source-constants",
+      "description": "Rational interval certificates for the fixed inequalities in the alternating-generator three-braid proof. This does not sample diagram sizes or prove a volume limit by computation.",
+      "commands": [
+        [
+          "python3",
+          "repro/check_cyclic_source_constants.py"
         ]
       ]
     }

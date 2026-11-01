@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Finite quantum invariants and hyperbolic volume · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/starting.html" class="">Start with the diagram</a><a href="../guide/manuscript.html" class="">The manuscript</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">How the proof works</a><a href="../guide/methods.html" class="">Methods and approaches</a><a href="../guide/algebraic.html" class="">Algebraic approaches</a><a href="../guide/geometry.html" class="">Hyperbolic geometry</a><a href="../guide/frontier.html" class="">Open questions</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing calculations</a><div class="nav-label">Explore the research</div><a href="../papers/index.html" class="active">Quantum invariants and volume</a><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 1 November 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Research papers</div><div class="reading-grid"><article class="content"><h1 id="finite-quantum-invariants-and-hyperbolic-volume">Finite quantum invariants and hyperbolic volume</h1>
+<p>The manuscripts are organized by the mathematical results they establish and the results they use. The dependency graph records those relations before assigning paper boundaries. A finite spectral theorem should be citable independently of an asymptotic theorem; a geometric filling construction should state precisely the information needed to compare its volume with a quantum action.</p>
+<p>The 374-page reference account remains available while this division is prepared. The working limit of 30 pages per paper is an editorial constraint, not the principle for grouping results.</p>
+<p><a href="dependencies.html">Explore the dependency graph</a>. Each statement lists the results it uses, the reason for each use, and the exact place where the statement or proof can be found. Arrows run from prerequisites to their consumers. The overview groups related results; the detailed view retains the individual statements.</p>
+<p>The components are finer than the eventual papers. They are not a proposal for one paper per box. For example, finite spectral algebra and exact diagram evaluation are natural candidates for one article: the present 15-page finite article has room for the global contraction argument if its full proof fits. The graph keeps them separate because the abstract norm theorem does not use that contraction argument.</p>
+<p>Three other distinctions determine the division. The classical filling construction does not need a nonzero quantum asymptotic; their comparison comes later, through the same marked critical equations. A nonzero geometric contribution does not bound the rest of the invariant. Finally, weak balance, protected triangular gluing, ordinary triangular insertion and the three-braid comparison provide different sufficient estimates for that remainder. Protected gluing does not require weak balance, and ordinary insertion does not require the protected-gluing theorem.</p>
+<h2 id="the-first-two-drafts">The first two drafts</h2>
+<p><strong>Uniform bounds for finite Hermite filling functionals.</strong> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/filling-bounds/main.tex">TeX source</a> · <a href="filling-bounds.pdf">PDF</a></p>
+<p>This paper asks how a fixed twisting operation acts on a polynomial of degree less than the root-of-unity level. It defines the functional at simple and repeated spectral roots, proves its norm bound, and explains why the canonical polynomial representative matters. Its principal result is finite algebra and analysis. Interpreting that functional as the evaluation of a knot diagram requires a separate exact-source identity; the polynomial theorem alone is not a volume theorem.</p>
+<p><strong>Volume limits for long alternating-generator three-braids.</strong> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/three-braids/main.tex">TeX source</a> · <a href="three-braids.pdf">PDF</a></p>
+<p>This application concerns the ordinary closure of</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>σ</mi><mn>2</mn><msub><mi>n</mi><mn>0</mn></msub></msubsup><msubsup><mi>σ</mi><mn>1</mn><msub><mi>n</mi><mn>1</mn></msub></msubsup><mi>⋯</mi><msubsup><mi>σ</mi><mn>2</mn><msub><mi>n</mi><mrow><mi>m</mi><mo>−</mo><mn>2</mn></mrow></msub></msubsup><msubsup><mi>σ</mi><mn>1</mn><msub><mi>n</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msub></msubsup><mo>,</mo><mspace width="2.0em"></mspace><mi>m</mi><mo>≥</mo><mn>6</mn><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> even</mtext></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \sigma_2^{n_0}\sigma_1^{n_1}\cdots
+ \sigma_2^{n_{m-2}}\sigma_1^{n_{m-1}},\qquad
+ m\ge6\text{ even}.
+</annotation></semantics></math></p>
+<p>For each fixed number of factors, the signed powers are independently sufficiently large in magnitude, and their permutation must give a knot. The generators alternate; the crossing signs need not alternate. The braid axis is not a component. The paper develops the diagram, its circle packing and the estimates that control the entire remainder. It imports three explicitly stated results: the exact source identity, the uniform local coefficient estimates, and the nonzero geometric filling contribution with its absolute volume calibration. Those dependencies are substantial. This draft must be read with their proofs, currently located in the reference manuscript and its cited technical notes, until the companion foundation papers are written.</p>
+<h2 id="what-still-needs-its-own-paper">What still needs its own paper</h2>
+<p>The division should follow results rather than cut the reference text into equal lengths. The following groups have different mathematical purposes:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Subject</th>
+<th>Result to explain and prove</th>
+<th>Dependencies that must remain visible</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exact diagram evaluation</td>
+<td>The original invariant equals a specified finite polynomial evaluation, with the full scalar and repeated-root derivatives</td>
+<td>The invariant’s definition and its cup, cap and crossing conventions</td>
+</tr>
+<tr>
+<td>Uniform local asymptotics</td>
+<td>Bounds over the full allowed coefficient range, and a nonzero complex local approximation</td>
+<td>Exact local formulas; estimates at the endpoints as well as in the interior</td>
+</tr>
+<tr>
+<td>The geometric filling contribution</td>
+<td>A nonzero contribution survives the filling sum and has the volume rate of the same knot complement</td>
+<td>Local asymptotics, primitive filling curves and an absolute volume comparison</td>
+</tr>
+<tr>
+<td>Sufficient conditions on planar compositions</td>
+<td>Weak balance, decoration and joining operations control the full remainder</td>
+<td>The source, analytic and geometric results above</td>
+</tr>
+<tr>
+<td>Ordered tangle trees</td>
+<td>Explicit degree and twist conditions give the volume limit</td>
+<td>The recursive finite evaluation and its geometric construction</td>
+</tr>
+<tr>
+<td>Geometric longitude and recurrences</td>
+<td>All-order meridian expansions force the selected geometric factor to divide a classical symbol</td>
+<td>The full expansion, its normalization and the geometric longitude</td>
+</tr>
+</tbody>
+</table>
+<p>This is a proposed division, not a claim that six more finished papers already exist. The geometric filling contribution may need separate analytic and geometric papers. Its short reference chapter cites proofs elsewhere; copying it would not make a self-contained paper. Each candidate needs a precise theorem, complete proofs of its own claims, defined notation, and an explicit list of imported theorems.</p>
+<p>For a citation between papers, the exporting paper must state a numbered theorem with its normalization, degree restrictions, level parity and uniformity assumptions. The importing paper must name that theorem and check those hypotheses. A reference to a folder of calculations is not a substitute. At present the two drafts below are written; several of their shared foundations still have their complete accounts in the reference manuscript and technical notes. The dependency graph makes that remaining editorial work visible.</p>
+<p>The illustrated guide retains the broader approaches and unsuccessful comparisons. The reference manuscript remains available for the existing full account. Exploratory research is separate from this editing work.</p>
+<h2 id="building-and-reproducing-the-papers">Building and reproducing the papers</h2>
+<p>With TeX Live or MacTeX, <code>latexmk</code>, Python and PyMuPDF installed, run from the repository root:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> tools/build_papers.py</span></code></pre></div>
+<p>Use a directory name to build just one paper, for example <code>python3 tools/build_papers.py filling-bounds</code>. The command checks the page limit, unresolved references and overfull boxes, then copies the PDFs and their source-hash records to <code>docs/papers/</code>. Add <code>--no-publish</code> to keep the outputs in each paper’s <code>build/</code> directory. These are typesetting checks, not mathematical verification.</p>
+<p>Rebuild the dependency graph with:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> tools/build_dependency_graph.py</span></code></pre></div>
+<p>Its source is <code>papers/dependencies.json</code>. The command verifies the named source locations, checks both statement and component graphs for cycles, and refuses a recorded completed result that imports an open result. It generates the interactive graph, vector overview and source-hash record in <code>docs/papers/</code>. These checks validate the declared dependency record, not the proofs at its nodes.</p>
+<p>The rational constants in the three-braid argument have a separate command:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> repro/check_cyclic_source_constants.py <span class="at">--output</span> repro/results/cyclic-source-constants.json</span></code></pre></div>
+<p>It uses outward rational bounds with explicit series remainders. The argument for every even number of factors is written in the paper; it is not inferred from computations for finitely many braid lengths.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/README.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-first-two-drafts">The first two drafts</a><a href="#what-still-needs-its-own-paper">What still needs its own paper</a><a href="#building-and-reproducing-the-papers">Building and reproducing the papers</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

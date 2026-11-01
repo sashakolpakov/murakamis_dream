@@ -3,7 +3,9 @@
 Kashaev invariants and the hyperbolic volumes of knot complements.
 
 **[Read the illustrated guide](https://sashakolpakov.github.io/murakamis_dream/)** ·
-[Manuscript and PDF](manuscript/README.md) ·
+[Research papers](papers/README.md) ·
+[Dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html) ·
+[Reference manuscript](manuscript/README.md) ·
 [Reproduction instructions](repro/README.md)
 
 For a fixed hyperbolic knot $K$, the volume conjecture predicts
@@ -145,7 +147,11 @@ separate work.
 
 ## Reading and reproducing the work
 
-The [manuscript](manuscript/README.md) is the continuous proof account.
+The [collection of research papers](papers/README.md) separates finite filling
+estimates from the long three-braid application, with a 30-page limit
+for each draft and explicit companion-theorem dependencies. The
+[reference manuscript](manuscript/README.md) retains the 374-page
+continuous account; it is no longer presented as a single journal paper.
 Chapter 1 separates full volume theorems from completed partial results:
 a finite filling estimate and a theorem about one geometric contribution
 do not assert the volume limit for an arbitrary original invariant.

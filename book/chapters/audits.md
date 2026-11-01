@@ -81,10 +81,10 @@ the separate spectral degree is \(N-1\). Its norm comparison applies
 to the reduced polynomial of degree less than \(N\). A higher-degree
 product is reduced before that comparison is used.
 
-## Checking finite implications in Lean
+## Checking the implications in Lean
 
 The current audit also records a machine-readable dependency map for
-Appendices N–R. Run:
+the recursive, tree, decorated and matched-sphere volume routes. Run:
 
 ~~~sh
 python3 repro/check_manuscript_logic.py --output repro/results/manuscript-logic
@@ -97,8 +97,9 @@ identity, and the final rate comparison. It records the packing or
 certificate assumption for each restricted family. The unrestricted
 matched-sphere route still has an open remainder premise.
 
-The checker detects missing premises, circular dependencies and changes
-of level scope. Ten deliberately invalid versions are also tested,
+The checker detects missing premises, circular dependencies, changes
+of level scope and substitutions between incompatible diagram families.
+Fourteen deliberately invalid versions are also tested,
 including a substitution of an odd-level bound into an all-level
 argument. This checks the consistency of the written dependency map;
 it does not verify the mathematical claims assigned to its vertices.
@@ -236,9 +237,8 @@ the recurrence conclusion. Lean verifies this coefficient calculation;
 the analytic existence of that expansion and the longitude identification
 remain written proofs.
 
-Together, the project now has 193 compiled declarations with inspected
-axiom dependencies: the latest additions are six face-support lemmas
-and seven resolvent lemmas. The count describes the formal statements,
+Together, the project now has 241 compiled declarations with inspected
+axiom dependencies. The count describes the formal statements,
 not how much of the volume proof has been verified. In particular,
 Appendix O's positive radius Hessian, complex cofactor estimates,
 charge comparison, paired endpoint currents and filled metric are
@@ -293,7 +293,7 @@ The case distinction concerns every label in the inserted piece.
 The nine new Lean declarations verify this scalar argument with its
 explicit hypotheses. They do not prove the conditional packing,
 extension of the witnesses, or hyperbolic completion. The current full
-Lean runner compiles 193 declarations and inspects their axiom
+Lean runner compiles 241 declarations and inspects their axiom
 dependencies; no admitted proofs are accepted.
 
 Run the explicit finite certificate with:

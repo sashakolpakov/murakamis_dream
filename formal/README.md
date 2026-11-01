@@ -1,10 +1,10 @@
-# Formal checks of finite proof steps
+# Formal checks of the proof implications
 
-This directory contains Lean proofs of several finite steps used by the
-manuscript. It is the beginning of a formalization, not a formal proof of
-the volume conjecture or of a complete theorem in the paper. The current
-library contains 193 proved declarations, including six face-grid support
-lemmas and seven polynomial-resolvent lemmas.
+This directory contains Lean proofs of finite algebraic steps and of the
+implications that assemble the volume limit from explicit estimates.
+The library contains 241 proved declarations. The analytic estimates and
+geometric constructions remain written proofs; the library does not yet
+give an end-to-end formal proof for a knot family.
 
 From the repository root, with Lean 4.32.2 installed, run:
 
@@ -37,6 +37,9 @@ theorem is applied.
 | [TriangularBoundary.lean](VolumeLogic/TriangularBoundary.lean) | The local comparison with three positive boundary weights, the exact duplicated target, and the two cases according to whether the entire inserted block is central. | Scalar part of Appendix R. The conditional disk minimum, extension of certificates to positive boundary weights, topology, and volume identity remain written proofs. |
 | [RateComparison.lean](VolumeLogic/RateComparison.lean) | A linear entropy gain exceeds a quadratic cost under the stated inequality; nonnegative additional losses cannot undo a strict sector gap; a sufficiently small filling-action drop preserves the gap. | Scalar implications in Appendix P, following the entropy, Hessian, and filling estimates. |
 | [FormalRegrading.lean](VolumeLogic/FormalRegrading.lean) | The coefficient substitution \(u=hs\), its inverse on the supported coefficient tables, injectivity, and the exact information retained through any finite order. A nonzero term invisible through a prescribed order is constructed. | The formal coefficient argument in Appendix M. The analytic expansion to every order, compatibility with the actual operator, and the geometric longitude remain separate proofs. |
+| [SourceAssembly.lean](VolumeLogic/SourceAssembly.lean) | Additivity preserves the entire finite sector decomposition. Bounds for every admissible sector and for the filling functional give a bound for the whole remainder. A common level threshold is constructed from the individual thresholds. | The original index list and its multiplicities are retained. The exact diagram identity, canonical degree restriction and analytic estimates are explicit premises. |
+| [LevelLimits.lean](VolumeLogic/LevelLimits.lean) | Epsilon limits, finite intersections of eventual estimates, union of the two parity subsequences, and common thresholds for independently long signed powers. | The diagram and filling tuple are fixed before taking the level limit. An odd-level result alone cannot supply the all-level conclusion. |
+| [VolumeTransfer.lean](VolumeLogic/VolumeTransfer.lean) | A strict upper-rate gap implies actual domination of the remainder, eventual nonvanishing and equality of exponential rates. Finite positive budgets, filling bounds and a scalar normalization are included. The volume transfer uses the same diagram and fixed filling throughout. | Source estimates, the nonzero central asymptotic and equality of its action with hyperbolic volume remain hypotheses. The modulus and logarithm satisfy explicit elementary laws; their realization for complex numbers is not yet formalized. |
 
 The algebraic declarations quantify over arbitrary commutative rings, or
 ordered commutative rings where an inequality is needed. The list

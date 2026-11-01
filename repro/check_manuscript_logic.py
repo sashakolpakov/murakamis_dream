@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check the declared proof dependencies for the matched-sphere volume theorems.
+"""Check the declared proof dependencies for the retained volume theorems.
 
 This checks references, premise roles, level scope, assumptions, and cycles.
 The mathematical assertions assigned to the nodes remain written proofs.
@@ -38,6 +38,9 @@ def check(data: dict, root: Path = ROOT) -> dict:
             raise LogicError(f"{identifier}: invalid level scope")
         if not node["statement"].strip():
             raise LogicError(f"{identifier}: empty mathematical statement")
+        context = node.get("context", "")
+        if not isinstance(context, str) or not context.strip():
+            raise LogicError(f"{identifier}: missing source-construction context")
         if set(node["assumptions"]) - assumptions.keys():
             raise LogicError(f"{identifier}: unknown assumption")
         supporting = node.get("supporting_locations", [])
@@ -59,8 +62,15 @@ def check(data: dict, root: Path = ROOT) -> dict:
                 raise LogicError(f"{identifier}: missing dependency {dependency}")
             if role not in nodes[dependency]["provides"]:
                 raise LogicError(f"{identifier}: {dependency} does not supply {role}")
+            dependency_context = nodes[dependency].get("context", "")
+            if dependency_context not in {"generic", context}:
+                raise LogicError(
+                    f"{identifier}: premise {dependency} belongs to the distinct "
+                    f"source construction {dependency_context}")
         if "volume_limit" in node["provides"] and set(node["requires"]) != VOLUME_ROLES:
             raise LogicError(f"{identifier}: a volume conclusion needs all six premise roles")
+        if "volume_limit" in node["provides"] and context == "generic":
+            raise LogicError(f"{identifier}: a knot-volume conclusion needs a specified construction")
 
     def visit(identifier: str, stack: tuple[str, ...] = ()) -> dict:
         if identifier in stack:
@@ -83,6 +93,7 @@ def check(data: dict, root: Path = ROOT) -> dict:
         if node["status"] == "written" and unresolved:
             raise LogicError(f"{identifier}: written conclusion uses open input {sorted(unresolved)}")
         report = {
+            "context": node["context"],
             "assumptions": sorted(inherited), "unresolved": sorted(unresolved),
             "odd_level_inputs": sorted(odd), "closure": sorted(closure),
         }
@@ -140,6 +151,18 @@ def negative_controls(data: dict) -> list[str]:
     broken = deepcopy(data)
     broken["nodes"]["exact_source"]["supporting_locations"][0]["anchor"] = "nonexistent-finite-support-theorem"
     cases.append(("missing finite-algebra supporting reference", broken))
+    broken = deepcopy(data)
+    broken["nodes"]["recursive_volume"]["requires"]["nonzero_contribution"] = "central_contribution"
+    cases.append(("matched-sphere period substituted into the recursive source", broken))
+    broken = deepcopy(data)
+    broken["nodes"]["recursive_volume"]["requires"]["exact_invariant"] = "circle_tree_source"
+    cases.append(("different exact construction substituted into the conclusion", broken))
+    broken = deepcopy(data)
+    broken["conclusions"]["directed_tree_volume"]["assumptions"].remove("directed_tree_criterion")
+    cases.append(("directed outgoing and root conditions omitted", broken))
+    broken = deepcopy(data)
+    broken["conclusions"]["decorated_volume"]["assumptions"].remove("terminal_decoration")
+    cases.append(("actual knot-changing decoration omitted", broken))
     rejected = []
     for name, broken in cases:
         try:

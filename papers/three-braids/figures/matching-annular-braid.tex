@@ -1,0 +1,76 @@
+\definecolor{ink}{HTML}{183444}
+\definecolor{north}{HTML}{1B6780}
+\definecolor{south}{HTML}{B56722}
+\begin{tikzpicture}[x=1cm,y=1cm,font=\small,text=ink,line cap=round,line join=round,
+ edge/.style={draw=ink!45,line width=.7pt},
+ markN/.style={draw=north,line width=2.1pt},
+ markS/.style={draw=south,line width=2.1pt},
+ dot/.style={circle,fill=ink,inner sep=1.3pt},
+ move/.style={-{Latex[length=2mm]},draw=ink,line width=.9pt}]
+\node[font=\bfseries] at (-4.15,3.05) {The matched white sphere ($m=6$)};
+% Opposite orientations on the two equatorial boundary circles.
+\foreach \name/\cx/\dir/\pole in {N/-6.35/1/N_0,S/-2.05/-1/S_0}{
+ \begin{scope}[shift={(\cx,0)}]
+  \fill[ink!3] (0,0) circle (1.65);
+  \draw[edge] (0,0) circle (1.65);
+  \foreach \j in {0,...,5}{
+   \pgfmathsetmacro{\a}{90+\dir*60*\j}
+   \coordinate (\name\j) at (\a:1.65);
+   \draw[edge] (0,0)--(\name\j);
+   \node[dot] at (\name\j) {};
+   \node at (\a:1.97) {$v_{\j}$};
+  }
+  \ifnum\dir=1
+   \foreach \j in {1,3,5}{
+    \draw[markN] (0,0)--(\name\j);
+    \path (0,0)--(\name\j) node[pos=.59,fill=white,inner sep=1.5pt,
+       text=north,font=\scriptsize] {$j=\j$};
+   }
+  \else
+   \foreach \j in {0,2,4}{
+    \draw[markS] (0,0)--(\name\j);
+    \path (0,0)--(\name\j) node[pos=.59,fill=white,inner sep=1.5pt,
+       text=south,font=\scriptsize] {$j=\j$};
+   }
+  \fi
+  \node[dot] at (0,0) {};
+  \node[fill=white,inner sep=1.5pt] at (.29,-.18) {$\pole$};
+ \end{scope}
+}
+\node[align=center,text=north] at (-6.35,-2.45) {North: match $N_0v_j$\\for odd $j$};
+\node[align=center,text=south] at (-2.05,-2.45) {South: match $S_0v_j$\\for even $j$};
+\node[align=center,font=\footnotesize] at (-4.2,-3.24)
+ {Glue equal rim labels; the two boundary orders are opposite.};
+\draw[move] (.15,0)--(1.15,0);
+% The tracks are closed; a box replaces exactly its two adjacent track arcs.
+\begin{scope}[shift={(4.55,0)}]
+ \node[font=\bfseries] at (0,3.05) {The same disks on three annular tracks};
+ \foreach \r in {1,1.75,2.5}{\draw[draw=ink,line width=1.1pt] (0,0) circle (\r);}
+ \foreach \j in {0,...,5}{
+  \pgfmathsetmacro{\a}{60*\j}
+  \pgfmathsetmacro{\textangle}{\a>90 && \a<270 ? \a-180 : \a}
+  \pgfmathtruncatemacro{\odd}{mod(\j,2)}
+  \ifnum\odd=1
+   \def\rc{1.375}\def\col{north}
+  \else
+   \def\rc{2.125}\def\col{south}
+  \fi
+  \begin{scope}[rotate=\a]
+   \draw[draw=\col,fill=white,line width=1pt,rounded corners=1.5pt]
+     (\rc-.54,-.25) rectangle (\rc+.54,.25);
+   \node[font=\footnotesize,text=\col,rotate=\textangle] at (\rc,0) {$R^{n_{\j}}$};
+  \end{scope}
+ }
+ \draw[move] (14:2.82) arc[start angle=14,end angle=42,radius=2.82];
+ \node[font=\scriptsize,align=left] at (3.12,1.64) {braid\\time};
+ \foreach \r/\i in {1/1,1.75/2,2.5/3}{
+  \node[fill=white,inner sep=1pt,font=\footnotesize] at (225:\r) {$\i$};
+ }
+ \node[align=center,font=\footnotesize] at (0,-3.24)
+  {Odd $j$: tracks $1,2$.\qquad Even $j$: tracks $2,3$.};
+\end{scope}
+\node[align=center,text width=16.3cm] at (-.75,-4.18)
+ {$\displaystyle
+ \beta_6=\sigma_2^{n_0}\sigma_1^{n_1}\sigma_2^{n_2}
+         \sigma_1^{n_3}\sigma_2^{n_4}\sigma_1^{n_5}.$};
+\end{tikzpicture}

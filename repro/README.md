@@ -9,7 +9,8 @@ The [manuscript audit](MANUSCRIPT_AUDIT.md) follows the implications from
 the exact invariant to the volume identity, records the corrections
 found in this review, and identifies the arguments still outside formal
 verification. The [Lean project](../formal/README.md) checks finite
-support, polynomial, tensor, and rate-comparison identities. Run it with
+support, polynomial and tensor identities, and conditional implications
+from whole-source estimates to a volume limit. Run it with
 the pinned Lean toolchain installed:
 
 ```sh
@@ -19,7 +20,7 @@ python3 repro/check_proof_logic.py --output repro/results/proof-logic
 This command does not replace the certificate checks below or formally
 prove an analytic or geometric theorem in the manuscript.
 
-The statement-level dependency map for Appendices N–R has a separate
+The statement-level dependency map for the retained volume families has a separate
 standard-library command:
 
 ```sh
@@ -27,7 +28,7 @@ python3 repro/check_manuscript_logic.py --output repro/results/manuscript-logic
 ```
 
 It checks the declared premise roles, retained assumptions, level scope,
-references and absence of cycles. Ten deliberately invalid maps must
+references and absence of cycles. Fourteen deliberately invalid maps must
 be rejected. The unrestricted matched-sphere route retains its open
 remainder requirement. This is a check of the dependency record, not a
 formal proof of the mathematical claims it records.

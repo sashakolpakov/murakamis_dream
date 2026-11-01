@@ -1,5 +1,10 @@
 # Murakami’s Dream
 
+The results are being rewritten as [papers organized by subject](../../papers/README.md),
+each at most 30 pages. The existing [reference manuscript](manuscript.md)
+remains available with its complete dependencies. This guide explains
+the results, their methods and the approaches that remain unfinished.
+
 ## The question and the knots under consideration
 
 For a knot $K$ and an integer $N\geq2$, Kashaev’s invariant $K_N(K)$ is a complex number obtained by evaluating a finite sum at a root of unity. We use the reduced normalization, in which the unknot has value one. If the knot complement admits a complete hyperbolic metric of finite volume, the volume conjecture predicts that

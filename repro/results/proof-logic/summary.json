@@ -1,11 +1,12 @@
 {
-  "scope": "Finite support, root-grid exponent selection under the total-degree bound, coefficientwise split-monic reduction and uniqueness, actual polynomial products and repeated-root product derivatives, resolvent reproduction at an annihilating element, root-permutation invariance, a conditional functional characterization, formal coefficient regrading and finite-jet limitations, tensor identities, protected-sum and ordinary-boundary comparisons, and scalar rate implications only.",
+  "scope": "Finite support, root-grid exponent selection, canonical polynomial reduction and products, resolvent reproduction, formal regrading, local composition comparisons, whole finite-sector filling bounds, epsilon limits with both parities, strict-gap noncancellation, scalar normalization, and conditional fixed-filling volume transfer for the same indexed invariant and diagram.",
   "not_formalized": [
     "the actual Chebyshev root data and crossing-operator functional",
     "the exact knot-diagram adapter",
     "uniform analytic estimates",
     "geometric realization and filling",
-    "the volume limit"
+    "realization of the abstract magnitude and logarithm interfaces as complex modulus and log(x)/N",
+    "verification of the analytic and geometric premises for each knot family"
   ],
   "toolchain": "leanprover/lean4:v4.32.2",
   "commands": [
@@ -907,6 +908,210 @@
       "Classical.choice",
       "Quot.sound"
     ],
+    "VolumeLogic.eventuallyOn_and": [
+      "propext",
+      "Quot.sound"
+    ],
+    "VolumeLogic.eventuallyOn_finite": [
+      "propext",
+      "Quot.sound"
+    ],
+    "VolumeLogic.eventuallyOn_both_parities": [
+      "propext",
+      "Quot.sound"
+    ],
+    "VolumeLogic.longEnough_mono": [
+      "propext",
+      "Quot.sound"
+    ],
+    "VolumeLogic.fixed_filling_finite_threshold": [
+      "propext",
+      "Quot.sound"
+    ],
+    "VolumeLogic.positive_quarter": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.rateLimit_const": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.rateLimit_congr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.rateLimit_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.rateLimit_both_parities": [
+      "propext",
+      "Quot.sound"
+    ],
+    "VolumeLogic.rateLimit_squeeze_error": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.rateLimit_scale_nonnegative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.filling_sector_sum": [
+      "propext"
+    ],
+    "VolumeLogic.filled_remainder_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.magnitude_sector_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.sector_sum_mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.sector_sum_common_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.finite_sector_filling_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.sector_threshold_dominates": [
+      "propext",
+      "Quot.sound"
+    ],
+    "VolumeLogic.simultaneous_sector_threshold": [
+      "propext",
+      "Quot.sound"
+    ],
+    "VolumeLogic.magnitude_positive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.magnitude_reverse_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.logScale_lt_reflects": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.hasRate_congr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.hasRate_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.strict_remainder_eventually_small": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.small_remainder_corridor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.hasRate_add_smaller": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.invariant_rate_transfer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.invariant_rate_of_source_gap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.budgetUpper_const": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.budgetUpper_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.budgetUpper_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.sector_sum_nonnegative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.budgetUpper_finite_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.finite_weighted_envelope_upperRate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.filling_bound_preserves_upperRate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.leading_rate_from_amplitude": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.hasRate_both_parities": [
+      "propext",
+      "Quot.sound"
+    ],
+    "VolumeLogic.calibrated_volume_rate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.fixed_filling_volume_transfer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.finite_source_rate_transfer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.long_filling_volume_transfer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
     "VolumeLogic.coeffEq_refl": [],
     "VolumeLogic.coeffEq_symm": [],
     "VolumeLogic.coeffEq_trans": [],
@@ -915,13 +1120,19 @@
     "VolumeLogic.diagonal_divided_difference": [],
     "VolumeLogic.coefficient_replicate_zero": [],
     "VolumeLogic.coeffEq_append_zeros": [],
-    "VolumeLogic.shift_congr": []
+    "VolumeLogic.shift_congr": [],
+    "VolumeLogic.eventuallyOn_of_forall": [],
+    "VolumeLogic.eventuallyOn_mono": [],
+    "VolumeLogic.eventuallyOn_restrict": [],
+    "VolumeLogic.rateLimit_restrict": [],
+    "VolumeLogic.budgetUpper_zero": []
   },
   "source_sha256": {
     "formal/VolumeLogic/FaceGridSupport.lean": "4baeeee58f794f7a610f880a5f465af13bb00beb6598f1041ac58fb9a74d8705",
     "formal/VolumeLogic/FiniteAlgebra.lean": "da1f26ce23fdbc6a8fc22a7a61f46b916c45d8b4301914a35803f767a42bf400",
     "formal/VolumeLogic/FiniteSupport.lean": "cd5e93e68a9c933708203700a523090809f094cd866aab04aa4833e072d7576e",
     "formal/VolumeLogic/FormalRegrading.lean": "9fe0b604cfe2857cc26569442ee9c608c214307adb5fdfd666e154fcbadc7a2c",
+    "formal/VolumeLogic/LevelLimits.lean": "c5d2397692de9ed78a32871afef7a2f75c9b159393c6e80e6e2b65baf5d22439",
     "formal/VolumeLogic/MonicLinearity.lean": "75b8cebc8e8bd4cd72257cff082ffe2d74f67391f90942df59f80782f6a8db2b",
     "formal/VolumeLogic/MonicProduct.lean": "35bb1ca26172547f9bae61d2dd3161aeba8a84810768f87f29477568dd457b85",
     "formal/VolumeLogic/MonicRemainder.lean": "f6781dba17c7677adcfe2aec41d31f8742004fc38a45be9732c24ce98b65dbfd",
@@ -929,13 +1140,15 @@
     "formal/VolumeLogic/ProtectedSum.lean": "6083dc9764da8ffdee625f01bc2c6a8929cdddf6adc8bcfbce5fed188b37e60d",
     "formal/VolumeLogic/RateComparison.lean": "837a19f87080465b55b8f9373d99eda56900829c166e98a8f16c1136ae06123b",
     "formal/VolumeLogic/ResolventFunctional.lean": "3fd0e71216901b57867cefad3bbaa423c5b1c0196e7b48286ba09cea5f0df01f",
+    "formal/VolumeLogic/SourceAssembly.lean": "1bdfa50afa5619aa81dc2b79650e2133364a365b81bf29032f68848b70b665f4",
     "formal/VolumeLogic/TriangularBoundary.lean": "4e28e5b0ea179f4abae23c4541e1dd29e0fc599e2637531807abd387dcfae02b",
-    "formal/VolumeLogic.lean": "f8a38167d4a8ece3b13855ba9edf0b96d37f6d801744060c629e0c3bfd1a59fd",
-    "formal/AxiomAudit.lean": "d121898500782c9552890263b274ddf359dcbec5157f2db20a6ea4e350b1370b",
+    "formal/VolumeLogic/VolumeTransfer.lean": "862e17ea64b46022fc830610c491c3f25dc0f09e6e6f7650f4b73e81f34401dc",
+    "formal/VolumeLogic.lean": "371d7a33df4ca8057e50a55fa32d7138df9f2d9aed566ac502f4e8f294f9934c",
+    "formal/AxiomAudit.lean": "a841c6a46feb787c4cb25025e68b1398e6af97d9f52437329a7697c6e0fc07b6",
     "formal/lakefile.toml": "d4fbe5befdea32352528a400922442a9814ad56dd607ec3dbbff3639120d947b",
     "formal/lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
     "formal/lake-manifest.json": "94a62178292dabc02ac925f33a78081a26da3b9fc9b5c3ea33e97e9a8dce25da",
-    "repro/check_proof_logic.py": "ce92129b5f801836b3053c078c9a504353c40fc308d529663aac21ebfca800b9"
+    "repro/check_proof_logic.py": "161c33cae8aa99484a1dc48e1ab77cc7cec50a8032f6eecc75240c341732b479"
   },
   "result": "All listed declarations compiled; only the permitted foundational axioms occur."
 }

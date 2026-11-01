@@ -1,0 +1,957 @@
+
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{graphicx,xcolor,booktabs,longtable,array,enumitem,tikz}
+\usetikzlibrary{arrows.meta,calc}
+\usepackage[unicode,colorlinks=true,linkcolor=blue!45!black,citecolor=green!35!black,urlcolor=blue!55!black]{hyperref}
+\usepackage{xurl}
+\setlength{\emergencystretch}{2em}
+\setlist{itemsep=3pt,topsep=5pt}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{foundation}{Companion theorem}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\title{Volume limits for long alternating-generator three-braids}
+\author{}
+\date{1 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Fix an even number \(m\ge6\) of syllables in a closed three-strand braid,
+with generators alternating between \(\sigma_2\) and \(\sigma_1\).
+For independently sufficiently long signed powers, whenever the closure
+is a knot, its reduced Kashaev invariant has exponential rate equal to
+the hyperbolic volume of the knot complement. The limit includes both
+parities and composite levels. We identify the original crossing disks
+with an explicitly matched bipyramid and compute its marked packing.
+Three shared choices of face weights give a uniform \(7/100\) loss for
+every complementary source sector, for every fixed even \(m\).
+The full all-size estimate and the fixed rational constant bounds are
+proved here. Exact finite source, local cofactor, and nonzero geometric
+filling results are stated explicitly as companion inputs; their
+analytic and geometric proofs are not reproduced in this paper.
+\end{abstract}
+
+The volume question originates with Kashaev~\cite{Kashaev} and its
+colored-Jones formulation with Murakami and Murakami~\cite{Murakami}.
+Here every diagram and every signed power is fixed before the quantum
+level tends to infinity. The phrase \emph{alternating generators}
+describes the braid word, not the crossing signs of its projection.
+Geometric volume estimates for closed three-braids appear in
+Futer--Kalfagianni--Purcell~\cite{FKP}; no geometric bound from that work
+is used as a substitute for the root-of-unity asymptotic below.
+
+The proof separates its three companion inputs from its new comparison.
+Companion Theorem~\ref{found:finite} identifies the original invariant
+with a shared coefficient and a bounded finite filling functional.
+Companion Theorem~\ref{found:envelopes} supplies phase-uniform local
+rates. Companion Theorem~\ref{found:period} evaluates the nonzero central
+contribution and identifies its action with the actual filled volume.
+The main work here is a shared, global bound for all the other terms;
+this is what permits the central contribution to determine the full
+invariant. A bound for isolated factors with unrelated face weights
+would not suffice.
+
+\section{The sphere and the
+theorem}\label{braid:sec-1}
+
+Throughout, fix an even integer \(m\ge6\). In the diagram source the
+quantum level is \(N\ge3\), and \(d=N-1\). Use poles \(N_0,S_0\),
+rim vertices \(v_0,\ldots,v_{m-1}\), and the
+oriented triangles \begin{equation}\label{braid:eq-1}
+(N_0,v_j,v_{j+1}),\qquad(S_0,v_{j+1},v_j),
+ \qquad j\in\mathbb Z/m.
+\end{equation} Match north triangles across \(N_0v_j\) for odd \(j\), and south
+triangles across \(S_0v_j\) for even \(j\). Every triangle belongs to
+exactly one matched pair. This is a simple triangulated sphere with
+\(m\) matched pairs and \(m+2\) white vertices.
+
+The cyclic quadrilateral order is \((x,b,y,c)\); the homogeneous source
+argument order is \((x,b,c,y)\). The original frames are \begin{equation}\label{braid:eq-2}
+\begin{array}{c|c|c}
+ & (x,b,c,y)&\text{matching edge}\\ \hline
+ j\text{ odd}&(N_0,v_{j-1},v_{j+1},v_j)&N_0v_j\\
+ j\text{ even}&(S_0,v_{j+1},v_{j-1},v_j)&S_0v_j .
+\end{array}
+\end{equation} The reversed south middle order is essential. Mark the unmatched edge
+\(v_0v_1\).
+
+Write \(R\) for the positive half-twist of the two strands in the
+original disk frame; \(R^n\) is its signed integral power. Add one
+crossing circle around each displayed box. Removing its full twists,
+while retaining the chosen signed half twist, gives the augmented
+exterior \(Y_m^\epsilon\) with these original disk markings.
+Retain a signed half twist \(\epsilon_j\in\{-1,0,1\}\) at each original
+crossing disk. Write \(\mu_j\) for its meridian and \(\lambda_j\) for
+the disk-framed primitive longitude, with the orientation convention of
+the original two-strand crossing. Filling kills \(\mu_j+p_j\lambda_j\).
+In this basis, filling parameter
+\(p_j\in\mathbb Z\) inserts the power \begin{equation}\label{braid:eq-3}
+n_j=\epsilon_j-2p_j.
+\end{equation} Let the braid generators use the same positive crossing as \(R\), and
+write factors in the order encountered by the strands.
+
+\begin{theorem}\label{thm:braids} The filled diagram is the ordinary closure of \begin{equation}\label{braid:eq-4}
+\beta_m(\mathbf n)=
+ \sigma_2^{n_0}\sigma_1^{n_1}\sigma_2^{n_2}\sigma_1^{n_3}
+       \cdots\sigma_2^{n_{m-2}}\sigma_1^{n_{m-1}}.
+\end{equation} Denote this closure by \(K_{m,\mathbf n}\). The \(m\)
+crossing disks are the disks surrounding those syllables.
+The braid axis is not a link component. The main link is a knot exactly
+when the permutation of \eqref{braid:eq-4} is a 3-cycle. In particular, exactly one odd
+north exponent and one odd south exponent, with every other exponent
+even, gives a knot for every \(m\).
+
+For each fixed \(m\), the estimates below and the companion filling
+results give a finite \(B_m\) such that, whenever the fixed integers
+satisfy \(\min_j|n_j|>B_m\) and the knot test, the closure is hyperbolic
+and \begin{equation}\label{braid:eq-5}
+\lim_{N\to\infty}\frac{2\pi}{N}
+       \log|K_N(\widehat{\beta_m(\mathbf n)})|
+  =\operatorname{Vol}(S^3\setminus\widehat{\beta_m(\mathbf n)}).
+\end{equation}
+\end{theorem}
+
+Here \(K_N\) is the zero-framed reduced Kashaev normalization with
+unknot value one. The signs and relative sizes of the fixed powers are
+unrestricted. There is no uniformity in growing \(m\), no growing-twist
+assertion, and no moving-color conclusion.
+
+\section{Exact strand maps and the three-strand
+braid}\label{braid:sec-2}
+
+Number the sides of a cyclic quadrilateral by \begin{equation}\label{braid:eq-6}
+0=xb,\quad1=by,\quad2=yc,\quad3=cx.
+\end{equation} These are the native cut corners \((C_1,C_2,C_3,C_0)\), respectively.
+The literal pure shaded map \(C_1\mapsto C_0,\ C_2\mapsto C_3\) gives
+main-strand pairs \((0,3),(1,2)\). Either signed odd half twist gives
+\((0,2),(1,3)\). The shaded grouping of corners is a different pairing
+and is not used to count main components.
+
+Embed the sphere with \(N_0\) inside the equator and \(S_0\) outside.
+The outside strips are exactly these:
+
+\begin{itemize}
+\tightlist
+\item
+  the edge \(v_jv_{j+1}\) joins boxes \(j,j+1\);
+\item
+  an unmatched north spoke, at even rim index \(j\), joins odd boxes
+  \(j-1,j+1\);
+\item
+  an unmatched south spoke, at odd rim index \(j\), joins even boxes
+  \(j-1,j+1\).
+\end{itemize}
+
+Under the pure pairing they form three nested planar circles: north,
+equator, south. There are no other strips. Straighten these three
+circles into concentric tracks while retaining the disjoint disk
+neighborhoods. Increasing angular coordinate is braid time; label the
+tracks from inside to outside by \(1,2,3\).
+
+The forward endpoints at each box are \begin{equation}\label{braid:eq-7}
+\begin{array}{c|c|c}
+ &\text{input, inner then outer}
+ &\text{output, inner then outer}\\ \hline
+ j\text{ odd}
+ &(N_0v_{j-1},v_{j-1}v_j)
+ &(N_0v_{j+1},v_jv_{j+1})\\
+ j\text{ even}
+ &(v_{j-1}v_j,S_0v_{j-1})
+ &(v_jv_{j+1},S_0v_{j+1}).
+\end{array}
+\end{equation} North boxes therefore act on tracks \(1,2\); south boxes act on
+tracks \(2,3\). The unused track simply passes the box through its
+outside strip.
+
+The north source frame already has increasing angular time and the
+inside track on its left. At a south box, both the time direction and
+the transverse order are reversed. Thus the change from its source frame
+to \eqref{braid:eq-7} is a planar half-turn. It is not a reflection or a one-head
+orientation reversal.
+
+For a single crossing a planar half-turn preserves each diagonal pair of
+endpoints and therefore preserves which diagonal is over. It retains the
+signed crossing \(R\). For \(R^n\) the order of the identical signed
+crossings is reversed, and the exponent is still \(n\). Reversing both
+strand orientations also preserves crossing writhe. This is a literal
+tangle isotopy with the ribbon normal transported; it is not the
+assertion \(T^2=I\) for typed quantum turns.
+
+Cut the annulus before box 0. Formula \eqref{braid:eq-7} gives \eqref{braid:eq-4} with no sign
+inversion at the south boxes. Closing the cut tracks gives the ordinary
+braid closure. The half-turn and straightening carry the original
+crossing circles and their disk collars along, so the identification
+preserves the designated twist regions rather than just the unmarked
+link.
+
+Components of a braid closure are the cycles of its strand permutation.
+With one odd box of each kind the permutation is a product of the two
+distinct transpositions \((12),(23)\), hence a 3-cycle, in either order.
+All even exponents give three components. All odd exponents give \begin{equation}\label{braid:eq-8}
+\#\text{main components}=\gcd(3,m/2).
+\end{equation} These statements hold for every \(m\) by \eqref{braid:eq-7}, not by a finite
+experiment. More general parity patterns are tested exactly by the
+permutation of \eqref{braid:eq-4}.
+
+The phrase ``alternating generators'' does not assert an alternating
+link diagram. For example, assigning opposite signs to the two generator
+types gives the usual alternating braid pattern; arbitrary signs need
+not.
+
+
+\begin{figure}[htbp]
+\centering
+\resizebox{\textwidth}{!}{\input{figures/matching-annular-braid}}
+\caption{The case \(m=6\). Equal rim labels on the two hemispheres are
+identified with opposite boundary orientations. A thick matching spoke
+pairs the two neighboring triangles and specifies one crossing disk.
+The right-hand picture uses those same disks: odd indices act on the
+inner two tracks, even indices on the outer two. Each box contains its
+original signed power. The picture illustrates the endpoint table
+\eqref{braid:eq-7}, whose proof applies to every even \(m\ge6\).}
+\label{fig:matching}
+\end{figure}
+
+\section{Complete packing and the marked
+curvatures}\label{braid:sec-3}
+
+Put \begin{equation}\label{braid:eq-9}
+\theta=\pi/m,\qquad a=\csc\theta.
+\end{equation} In the complex projection plane take the north disk \(|z|\le a-1\),
+the south \textbf{exterior} disk \(|z|\ge a+1\), and the unit disks \begin{equation}\label{braid:eq-10}
+v_j:\quad |z-ae^{2ij\theta}|\le1.
+\end{equation} Every rim disk is tangent to both pole disks. Rim centers at cyclic
+separation \(r\) have distance \(2a\sin(r\theta)\), which is 2 exactly
+for adjacent indices and strictly greater than 2 for every nonadjacent
+pair. The two pole disks are disjoint. Thus the contact graph, with its
+exterior south region, is exactly \eqref{braid:eq-1}; no extra edge is introduced.
+
+The marked contact of \(v_0,v_1\) is \[
+                  p=a\cos\theta\,e^{i\theta}.
+\] Use the holomorphic Möbius transformation \begin{equation}\label{braid:eq-11}
+w=\frac{2}{z-p}.
+\end{equation} A further rotation or translation puts the two protected circles into
+horizontal strip position without changing radii.
+
+Under \(z\mapsto1/(z-p)\), a circle of center \(c\) and radius \(r\) has
+new radius \(r/\bigl||c-p|^2-r^2\bigr|\). A zero denominator gives a
+line. For the north and south boundaries the denominators before taking
+absolute value are \(2(a-1)\) and \(-2(a+1)\). Both circles have
+inversion radius \(1/2\), and their oriented disks become bounded
+because \(p\) is outside both original disks. The factor 2 in \eqref{braid:eq-11} gives
+both new radii one.
+
+For rim circle \(j\), \[
+\begin{split}
+ |ae^{2ij\theta}-p|^2-1
+ &=2a^2\cos\theta
+       \{\cos\theta-\cos((2j-1)\theta)\}\\
+ &=4a^2\cos\theta\sin(j\theta)\sin((j-1)\theta).
+\end{split}
+\] It vanishes exactly at \(j=0,1\) and is positive elsewhere. Therefore
+the complete marked curvatures, meaning reciprocals of Euclidean circle
+radii, are \begin{equation}\label{braid:eq-12}
+L_{N_0}=L_{S_0}=1,\qquad
+ k_j=L_{v_j}
+ =\frac{\cos\theta}{\sin^2\theta}
+       \{\cos\theta-\cos((2j-1)\theta)\}.
+\end{equation} In particular, \begin{equation}\label{braid:eq-13}
+k_0=k_1=0,\quad
+ k_j>0\ (2\le j\le m-1),\quad
+ k_2=k_{m-1}=4\cos^2\theta.
+\end{equation} The two protected weights are exact zeros. They are never replaced by
+small positive curvatures.
+
+The strip width is 2, since the radius-one north circle is tangent to
+both parallel lines. If another source convention uses width 1, a common
+rescaling multiplies all ordinary curvatures by 2. The action is
+unchanged by common scaling because total numerator degree equals total
+ordinary target. Formula \eqref{braid:eq-12} is the normalization with pole curvatures
+one.
+
+The complete-geometry assertion used below has two ingredients. First,
+the simple-sphere construction of \cite[Sections 2--3]{Packing} turns
+this packing into the labeled right-angled ideal polyhedron: white
+faces correspond to the displayed circles and shaded triangles to the
+interstices. Its hypotheses hold because the contact graph just
+computed is the simple triangulated sphere \eqref{braid:eq-1}.
+Second, the original cut is determined by the matching. Cutting the
+annular diagram along the projection sphere and the original crossing
+half disks gives two balls with these labeled faces. White faces pair
+across the projection copies; shaded faces pair according to
+\eqref{braid:eq-2}, with the retained half twist exchanging their copies
+and punctures when prescribed. These are precisely the inverse-cut
+identifications of \cite[Section 2]{MorseGeometry}. Thus that construction
+applies to \(Y_m^\epsilon\), with its original disks and main strands.
+No change to a different shaded-face matching is made.
+
+\section{The exact source and what must be
+bounded}\label{source:sec-2}
+
+
+\begin{foundation}[Exact source and finite filling norm]\label{found:finite}
+For the original cut of a fixed connected marked simple matched sphere
+at \(N\ge3\), let \(d=N-1\), let \(\Omega\) be the complete-color two-strand Casimir,
+and form its polynomial numerator
+\(V_N(\sigma;\Omega)=(2T_N(\sigma/2)+2)(\sigma-\Omega)^{-1}\).
+The homogeneous face polynomial \(H_V(x,b,c,y;\sigma)\) is the Fourier
+transform of this original matrix numerator in the four boundary
+states, with the turn and crossing frames retained. It has total face
+degree \(d\) and spectral degree at most \(d\).
+Here \(T_N(\cos\phi)=\cos(N\phi)\). The full diagram source is its shared coefficient with target \(d\)
+at every ordinary face and target zero at the two faces incident to
+the marked strand edge. The raw filled evaluation is the tensor product
+of the original signed-power functionals \(\mathcal L_N^{n_e}\) applied
+to that polynomial, and differs from the zero-framed reduced invariant
+only by its prescribed unit-modulus character. For every complex
+polynomial \(H\) of degree at most \(d\),
+\[
+ |\mathcal L_N^n H|\le (1+|n|/2)\max_{-2\le\sigma\le2}|H(\sigma)|,
+ \qquad n\in\mathbb Z.
+\]
+The scalar polynomial norm also holds at \(N=2\); the diagram source
+is used only at \(N\ge3\). These statements hold for both level parities, with first normal data
+at every double spectral root and the value at the odd simple root.
+\end{foundation}
+
+This is a companion result, not a theorem proved anew here. The exact
+Morse coefficient and its face targets are \cite[Sections 4--6]{MorseSource};
+the matrix-to-face adapter and scalar norm are proved in
+\cite[Theorem 1.1 and Sections 2--7]{FillingPaper}, with the original
+diagram normalization recorded separately in
+\cite[Section 1]{FillingBound}. The finite functional theorem does not
+itself identify a knot diagram with a shared coefficient. That identity
+is the separately cited Morse source result. These inputs are also
+recorded in Appendix N of \cite{ProofCollection}. Their hypotheses will be checked
+on the explicit sphere below. The local decomposition into a central
+term and the two one-sided recurrence pieces is the one of
+\cite[Sections 1--3]{Cofactors}; no positive replacement of the full
+matrix numerator is made.
+
+Put \(q=e^{\pi i/N}\), \(d=N-1\), and \begin{equation}\label{source:eq-A6}
+\chi_N(z)=2T_N(z/2)+2,
+ \qquad V_N(z;\Omega)=\chi_N(z)(z-\Omega)^{-1}.
+\end{equation} Polynomial division defines the degree-at-most-\(d\) matrix
+polynomial in \eqref{source:eq-A6}, including at every spectral root. It is the original
+Casimir numerator, not the adjugate of an unrelated matrix. Let
+\(H_V(x,b,c,y;z)\) be its original homogeneous four-face polynomial.
+
+Writing the pole variables as \(A,B\) and the rim variables as \(z_j\),
+the full shared spectral polynomial is exactly \begin{equation}\label{source:eq-A7}
+\begin{split}
+ S_N(\boldsymbol\sigma)
+ ={}&[A^dB^d\prod_{j=2}^{m-1}z_j^d]\,
+ \left.\prod_{j\,\mathrm{odd}}
+ H_V(A,z_{j-1},z_{j+1},z_j;\sigma_j)
+ \prod_{j\,\mathrm{even}}
+ H_V(B,z_{j+1},z_{j-1},z_j;\sigma_j)
+ \right|_{z_0=z_1=0}.
+\end{split}
+\end{equation} Every local factor has total face degree \(d\) and spectral degree at
+most \(d\). To define its sectors, put \(h=\lfloor N/2\rfloor\).
+An original decreasing matrix path from row \(j\) to row \(i\) has
+middle monomial \(b^ic^{d-j}\). At even \(N=2h\), it is central when
+\(i\le h-1\) and \(j\ge h\); at odd \(N=2h+1\), it is central when
+\(i\le h\) and \(j\ge h\). The left sector has \(j<h\), and the
+right sector consists of the remaining paths entirely above the central
+cut. These three sets partition the original numerator paths. Let
+\(S_{N,\mathrm C}\) select the central part at every box by polynomial
+linearity, and set \begin{equation}\label{source:eq-A8}
+D_N=S_N-S_{N,\mathrm C}.
+\end{equation} The task is a strict real-cube bound on \eqref{source:eq-A8}. The complete drilled
+rate of \(S_N\) alone would not give the smaller fixed-filled rate.
+
+The general Morse compiler proves \eqref{source:eq-A7} on this diagram. In its proof
+each actual box has factor \(N^{-1}H_V/(bc)^{d/2}\); the physical cups,
+caps and unrestricted mark leave \(N^{-m-1}\). The primitive
+face-potential lattice has \(m+1\) independent \(N\)-point grids,
+canceling that factor. Endpoint support is imposed before specializing
+those grids. The total numerator degree \(md\) forces the unique
+nonnegative alias: the two marked targets are zero and every other
+target is \(d\). This retains all repeated-node normal channels.
+
+At even levels a literal integrated parity cochain is \begin{equation}\label{source:eq-A9}
+t(v_j)=j\pmod2,\qquad t(N_0)=1,\qquad t(S_0)=0.
+\end{equation} It agrees across matched spokes and differs across each strand edge;
+in particular the two protected endpoints differ. The integrated coset
+character at the unique supported target is one. No extra parity or
+power of \(N\) multiplies \eqref{source:eq-A7}.
+
+The raw filled contraction is \begin{equation}\label{source:eq-A10}
+Z_N(\mathbf n)=
+       \left(\bigotimes_{j=0}^{m-1}\mathcal L_N^{n_j}\right)S_N,
+\end{equation} where \(\mathcal L_N^n\) is the original full-Hermite functional for
+the signed power \(R^n\). Its crossing scalar and all first derivatives
+at double roots are part of its definition. Conversion from \eqref{source:eq-A10} to the
+specified zero-framed reduced invariant is the original unit-modulus
+complete-color framing/component character. The separate full one-cut
+modified convention retains \(i^{N+3}/N\); it also has zero exponential
+rate.
+
+These exact facts use
+\cite{MorseSource}, §§5--6, and
+\cite{FillingBound}, §1. They use the
+displayed Morse diagram itself, not an assumed flat-plat presentation or
+a scalar tree contraction.
+
+\section{The spectator envelope is exactly the union of the genuine
+rates}\label{source:sec-3}
+
+Use the source-normalized triangle potential \begin{equation}\label{source:eq-A11}
+\begin{aligned}
+Q(w_1,w_2,w_3)&=
+ \max_{\substack{\alpha_i\ge0\\\sum_i\alpha_i=1/2}}
+ \left\{\frac1\pi\sum_i
+ [\Lambda(\pi\alpha_i)+\Lambda(\pi/2-\pi\alpha_i)]
+       +\sum_i\alpha_i\log w_i\right\},\\
+ \Lambda(t)&=-\int_0^t\log|2\sin u|\,du.
+\end{aligned}
+\end{equation} At a zero weight restrict its load to zero and omit its
+logarithmic term from the sum. For one positive weight
+it is one half of its logarithm. It is symmetric, nondecreasing, and
+obeys \begin{equation}\label{source:eq-A12}
+Q(cw)=Q(w)+\tfrac12\log c,
+ \qquad Q(x,t,y)\ge\tfrac12\log t\quad(t>0).
+\end{equation} The second inequality follows by using the admissible vertex with
+load \(1/2\) on \(t\). Its entropy is zero since
+\(\Lambda(0)=\Lambda(\pi/2)=0\). This proves the bound also when either
+other coordinate is protected.
+
+For a fixed nonnegative face vector with \(x+y>0\), the genuine uniform
+local upper rates are \begin{equation}\label{source:eq-A13}
+\begin{split}
+ X&=Q_b+Q_c,\qquad Q_b=Q(x,b,y),\quad Q_c=Q(x,c,y),\\
+ A_{\mathrm L}&=\max(\log c,Q_b+\tfrac12\log c)\quad(c>0),\\
+ A_{\mathrm R}&=\max(\log b,Q_c+\tfrac12\log b)\quad(b>0).
+\end{split}
+\end{equation} An overloaded zero middle gives the zero one-sided polynomial and is
+omitted. From \eqref{source:eq-A12}, \begin{equation}\label{source:eq-A14}
+\begin{gathered}
+ Q_b+\tfrac12\log c\le X,\qquad
+ Q_c+\tfrac12\log b\le X,\\
+ \max(X,A_{\mathrm L},A_{\mathrm R})
+     =H:=\max(X,\{\log b:b>0\},\{\log c:c>0\}).
+\end{gathered}
+\end{equation} Thus the spectator \(H\) used by the three-vector proof is precisely
+the maximum of the genuine local rate bounds. No mixed term has been
+lost. This identity is already recorded in
+\cite{SectorCover}, equation
+(4), and in the final paragraph of the global LEFT theorem.
+
+
+\begin{foundation}[Uniform local sector bounds]\label{found:envelopes}
+Fix nonnegative face moduli \((x,b,c,y)\) with \(x+y>0\), keeping each
+protected modulus exactly zero. Write \(H_{V,s}\) for the original
+central or one-sided polynomial, where \(s\in\{\mathrm C,\mathrm L,\mathrm R\}\).
+On the face torus with these moduli, its real-spectral upper exponential
+rate is at most \(X,A_{\mathrm L},A_{\mathrm R}\), respectively, as
+defined in \eqref{source:eq-A13}. The bound is uniform on the entire
+spectral interval \([-2,2]\), includes both parities of \(N\), and
+does not depend on the face phases. A one-sided term whose overloaded
+middle has modulus zero is identically zero.
+\end{foundation}
+
+The proof is imported from \cite[Section 8]{Cofactors} and
+\cite[Sections 1--4]{LeftEnvelope}. The following explanation records
+which uniformity is required; the local recurrence and its global
+transfer estimate are not being replaced by a positivity assumption.
+Here ``uniform local upper rate'' means \begin{equation}\label{source:eq-A15}
+\limsup_{N\to\infty}\frac1N
+ \log\sup_{\substack{\sigma\in[-2,2]\\|L_f|=\rho_f}}
+ |H_{V,s}(L;\sigma)|\le A_s(\rho),\qquad s=\mathrm C,\mathrm L,\mathrm R.
+\end{equation} For CROSS this follows from the cleared-cofactor coefficientwise
+real-interval interpolation bound and the positive complete triangle
+factors. For LEFT the original omitted-half product and both unused
+spectral products remain. The normalized interval continuant has
+nonnegative face coefficients on \([-2,2\cos(\pi/N)]\); taking face
+moduli therefore preserves the signed-continuant upper action. Its
+complete endpoint optimization gives \eqref{source:eq-A13}. The remaining real cap has
+width \(O(N^{-2})\). Since the actual spectral degree is at most \(d\),
+polynomial exterior comparison costs only \begin{equation}\label{source:eq-A16}
+\exp\left[d\,\operatorname{arcosh}
+   \frac{6-2\cos(\pi/N)}{2+2\cos(\pi/N)}\right]=O(1).
+\end{equation} This applies to a polynomial with complex coefficients at each fixed
+face-phase tuple. RIGHT follows by the actual row/middle reversal, with
+\(b,c\) exchanged in its rate. These are the proofs of
+\cite{LeftEnvelope}, §§1--4,
+and \cite{Cofactors}, §8. They include
+both parity conventions and sampled spectral zeros. A polynomial
+coefficientwise LEFT bound against its complete value is neither
+asserted nor needed.
+
+In this family the outer pole is always positive, so \(x+y>0\) at every
+box and every one of the three proposed vectors. The zero-coordinate
+limits in \eqref{source:eq-A11}--\eqref{source:eq-A15} are therefore within the proved domain.
+
+\section{Complete packing and the three fixed shared
+vectors}\label{source:sec-4}
+
+Let \(\theta=\pi/m\). The complete packing has concentric pole
+boundaries of radii \(a_0-1,a_0+1\), where \(a_0=\csc\theta\), and unit
+rim disks centered at \(a_0e^{2ij\theta}\). The south disk is the
+exterior of its boundary. Adjacent rim disks are tangent and all other
+rim pairs are disjoint. Invert at the marked rim contact and multiply
+lengths by two. Both poles then have curvature one, the two protected
+faces become lines, and the remaining curvatures are \begin{equation}\label{source:eq-A17}
+k_j=\frac{\cos\theta}{\sin^2\theta}
+       [\cos\theta-\cos((2j-1)\theta)]
+ =\frac{2\cos\theta}{\sin^2\theta}
+              \sin(j\theta)\sin((j-1)\theta).
+\end{equation} Thus \(k_0=k_1=0\), all other \(k_j>0\), and
+\(k_2=k_{m-1}=4\cos^2\theta\).
+
+The labeled simple-sphere packing and its positive cut polyhedron
+identify the original augmented complement. The calibrated complete
+CROSS action is \begin{equation}\label{source:eq-A18}
+\Phi_m=2\sum_{j=0}^{m-1}Q(1,k_j,k_{j+1})
+              -\sum_{j=2}^{m-1}\log k_j
+        =\frac{\operatorname{Vol}(Y_m^\epsilon)}{2\pi}.
+\end{equation} The equality uses the original marked triangle calibration. It is not
+a full positive-endpoint source theorem. Deleting the two protected
+faces leaves a connected ordinary graph, since both poles meet every
+vertex of the surviving rim path. Thus its face Hessian has only the
+common-scale kernel, as required by the Morse CROSS theorem. Every
+matched edge has a positive outer and at least one nonmonomial triangle.
+
+Put \begin{equation}\label{source:eq-A19}
+a=\frac94,\quad C=\frac{27}4,\quad
+ \lambda=\frac{a}{k_2}=\frac9{16\cos^2\theta},\quad
+ w_j=\lambda k_j,
+ \qquad L_{N_0}=L_{S_0}=1.
+\end{equation} The whole vector \(W\) has \(w_2=w_{m-1}=a\) and \begin{equation}\label{source:eq-A20}
+c:=w_3=w_{m-2}=a(4\cos^2\theta-1)\in[9/2,C].
+\end{equation} Define \(W^{(1)}\) by replacing only \(w_2\) with 1, and \(W^{(0)}\)
+by replacing only \(w_{m-1}\) with 1. Each shared occurrence of that
+face is changed at once. Protected weights remain exactly zero.
+
+The surviving one-sided anchors at \(j=0,1\) are LEFT; those at
+\(j=2,m-1\) are RIGHT. Every other box has both possible one-sided
+anchors. This follows directly from \eqref{braid:eq-2}, not from a reflected physical
+coupon. Use \(W^{(1)}\) for \(1\mathrm L\), \(W^{(0)}\) for
+\(0\mathrm L\), and \(W\) for all other anchors.
+
+\section{Bounds for every even number of
+syllables}\label{source:sec-5}
+
+Write \(F(r)=Q(1,r,0)\). Scale only the ordinary rim coordinates by
+\(t\in(0,1]\), retaining pole weights one, and let \(P(t)\) denote the
+complete action at that vector. The pole angle in triangle \(j\) is \begin{equation}\label{source:eq-A21}
+\alpha_j(t)=\arctan\frac1{\sqrt{t(k_j+k_{j+1})+t^2k_jk_{j+1}}},
+ \qquad \alpha_0(t)=\frac\pi2.
+\end{equation} The complete star gives \(\sum_j\alpha_j(1)=\pi\). For every other
+triangle, with \(D^2=t(u+v)+t^2uv\), \begin{equation}\label{source:eq-A22}
+-\frac{d\alpha}{d\log t}
+ =\frac{t(u+v)+2t^2uv}{2D(1+D^2)}
+ \le\sin\alpha\cos\alpha\le\alpha.
+\end{equation} Hence \(\alpha_j(t)\le\alpha_j(1)/t\), and differentiation of the
+entire coupled action gives \[
+ \frac{dP}{d\log t}=2-\frac2\pi\sum_j\alpha_j(t)
+       \ge1-\frac1t.
+\] Integrating in the decreasing direction yields \begin{equation}\label{source:eq-A23}
+P(\lambda)-\Phi_m\le\lambda^{-1}-1+\log\lambda
+       \le D_0:=\frac{16}9-1+\log\frac9{16}<\frac{203}{1000}.
+\end{equation} The bound is independent of the number of triangles; it uses their
+original complete star, rather than summing independent local
+distortions.
+
+For \(3\le j\le m-2\), \eqref{source:eq-A17} gives \begin{equation}\label{source:eq-A24}
+\frac13\le\frac{w_{j-1}}{w_j}\le2,
+ \qquad \frac13\le\frac{w_{j+1}}{w_j}\le2.
+\end{equation} The first ratio is \(\sin((j-2)\theta)/\sin(j\theta)\), increasing
+with \(j\); the second is \(\sin((j+1)\theta)/\sin((j-1)\theta)\),
+decreasing. Their extremal bounds use \(\sin3\theta\le3\sin\theta\) and
+\(\sin4\theta/\sin2\theta=2\cos2\theta\le2\), valid also at \(m=6\).
+
+The logarithmic derivative of \(Q\) in a positive weight lies in
+\([0,1/2]\). Therefore \(F\) is increasing and \(F(r)-\log r\),
+\(F(r)-\tfrac12\log r\) are decreasing. Drop the positive pole, scale by
+the outer rim coordinate, and use \eqref{source:eq-A24}. At every interior box, \begin{equation}\label{source:eq-A25}
+\begin{split}
+ X_j-\log\max(w_{j-1},w_{j+1})
+ &\ge F(1/3)+F(2)-\log2=:B_{\mathrm{int}}>43/100,\\
+ Q(1,w_{j\pm1},w_j)-\tfrac12\log w_{j\pm1}
+ &\ge F(2)-\tfrac12\log2=:C_{\mathrm{int}}>21/50.
+\end{split}
+\end{equation} At boxes 2 and \(m-1\), the middle weights are \(0,c\) and the outer
+rim weight is \(a\). The same derivative bounds and \(c\le C\) give \begin{equation}\label{source:eq-A26}
+\begin{split}
+ X_j-\log c&\ge F(a)+Q(1,C,a)-\log C=:B_{\mathrm{near}}>7/25,\\
+ Q(1,c,a)-\tfrac12\log c
+       &\ge Q(1,C,a)-\tfrac12\log C=:C_{\mathrm{near}}>21/50.
+\end{split}
+\end{equation} At boxes 0 and 1, \(X=F(a)>\log a\). Thus every spectator has \(H=X\)
+at \(W\). An anchored LEFT loss is
+\(\min(X-\log c,Q_c-\tfrac12\log c)\), and the RIGHT formula is
+symmetric. Equations \eqref{source:eq-A25}--\eqref{source:eq-A26}, less \eqref{source:eq-A23}, give a net loss greater
+than \(7/100\) for every anchor other than \(0\mathrm L,1\mathrm L\). In
+particular even the weakest coarse comparison gives
+\(7/25-203/1000=77/1000>7/100\).
+
+For \(1\mathrm L\), use \(W^{(1)}\). Its actual anchored rate is now
+zero and its complete rate is \(F(1)\). The entire complete-action
+change from \(W\) is \begin{equation}\label{source:eq-A27}
+T(c)=2[F(1)-F(a)+Q(1,1,c)-Q(1,a,c)]+\log a.
+\end{equation} It increases in \(c\): the logarithmic derivative at \(c\) of the
+first \(Q\) is larger than that of the second. The only possible
+spectator excess is at box 2, \begin{equation}\label{source:eq-A28}
+E(c)=\max(0,\log c-F(1)-Q(1,1,c))\le E(C).
+\end{equation} At box 3, put \(z=w_4\). Here \(z\ge1\), \(z/c\le2\), and
+\(1/c\ge4/27\), so \begin{equation}\label{source:eq-A29}
+X_3-\log\max(1,z)
+ \ge F(4/27)+F(2)-\log2>8/25.
+\end{equation} Every other box is unchanged. Therefore the anchored cost at
+\(W^{(1)}\) is at most \begin{equation}\label{source:eq-A30}
+P(\lambda)+T(C)+E(C)-F(1),
+ \qquad S_0:=F(1)-T(C)-E(C)>37/100.
+\end{equation} Its saving beyond \(\Phi_m\) exceeds \(37/100-203/1000=167/1000\).
+Reflection of the scalar weight formulas by \(j\mapsto1-j\), accompanied
+by exchanging pole labels, proves the same estimate for \(0\mathrm L\)
+at \(W^{(0)}\). It does not change the ordered quantum data in \eqref{braid:eq-2}.
+
+The fixed constants in these comparisons have the rational enclosures
+proved in Appendix~\ref{app:constants}. The proof uses only finitely many
+fixed analytic constants; the estimates above hold for every even \(m\ge6\).
+
+We have proved, at every surviving anchor \((j,s)\), \begin{equation}\label{source:eq-A31}
+A_{j,s}(L^{j,s})+\sum_{i\ne j}H_i(L^{j,s})
+     -\sum_{f\,\mathrm{ordinary}}\log L_f^{j,s}
+                        <\Phi_m-7/100.
+\end{equation}
+
+\section{From the three vectors to the full shared
+remainder}\label{source:sec-6}
+
+Expand \eqref{source:eq-A8} into genuine label strings in
+\(\{\mathrm C,\mathrm L,\mathrm R\}^m\), omitting zero strings and the
+all-CROSS string. Each remaining string contains a surviving one-sided
+anchor. Assign it to one such anchor, and use that anchor's single whole
+face vector from Section~\ref{source:sec-4}.
+
+For fixed real spectra, apply the multivariate Cauchy coefficient
+estimate to \eqref{source:eq-A7} on the ordinary face torus of that vector. The
+protected variables are already zero and have no integration circle. The
+local estimates \eqref{source:eq-A15}, and the exact spectator identity \eqref{source:eq-A14}, give \begin{equation}\label{source:eq-A32}
+\frac1N\log\|D_{N,\text{string}}\|_{[-2,2]^m}
+ \le A_{j,s}+\sum_{i\ne j}H_i
+       -\frac dN\sum_{f\,\mathrm{ordinary}}\log L_f+o_m(1).
+\end{equation} The same face is used everywhere with its same weight. There is no
+independent local optimization, no exchange of a maximum and an infimum,
+and no relaxation of the shared demands.
+
+The target difference \(d/N-1=-1/N\) contributes only the fixed number
+\(N^{-1}\sum_f\log L_f\). For fixed \(m\) there are finitely many
+vectors and at most \(3^m-1\) strings. Thus summing their absolute
+values costs \(\log(3^m-1)/N=o_m(1)\), not an extra exponential rate.
+Equation \eqref{source:eq-A31} proves \begin{equation}\label{source:eq-A33}
+\limsup_{N\to\infty}\frac1N\log\|D_N\|_{[-2,2]^m}
+                    \le\Phi_m-7/100.
+\end{equation} In particular, for every \(0<\eta<7/100\), the norm is at most
+\(\exp[N(\Phi_m-\eta)+o_m(N)]\). This statement includes even and odd
+levels. It requires no phase positivity of the shared source and no
+strict gap for the all-CROSS term itself on this whole spectral cube.
+
+\section{Full Hermite insertion introduces no new exponential
+cost}\label{source:sec-7}
+
+For \(H\) of degree at most \(d\), the exact finite filling theorem
+states \begin{equation}\label{source:eq-A34}
+|\mathcal L_N^n H|\le(1+|n|/2)\|H\|_{[-2,2]}.
+\end{equation} Its proof is the original midpoint/full-Hermite formula with the
+physical crossing multiplier, followed by sharp trigonometric Bernstein.
+It retains value and derivative terms at double roots and the odd simple
+endpoint. It applies to negative as well as positive powers, without a
+square-root normalization or omitted Cartan factor.
+
+Both \(D_N\) and \(S_{N,\mathrm C}\) have degree at most \(d\) in each
+spectral variable. Applying \eqref{source:eq-A34} successively yields \begin{equation}\label{source:eq-A35}
+|Z_N-Z_{N,\mathrm C}|
+ \le\prod_{j=0}^{m-1}(1+|n_j|/2)\,
+                     \|D_N\|_{[-2,2]^m}.
+\end{equation} The polynomial need not factor and its shared targets are unchanged.
+The stronger bound exploiting product-node vanishing is optional. For
+each fixed tuple \(\mathbf n\), the product in \eqref{source:eq-A35} is independent of
+\(N\); hence \eqref{source:eq-A33} is the actual filled scalar remainder rate. No
+Fourier-tail argument is needed for this remainder.
+
+\section{The nonzero original Morse contribution and its filled
+volume}\label{source:sec-8}
+
+
+\begin{foundation}[The nonzero geometric filling contribution]\label{found:period}
+Consider the original general Morse diagram of a fixed connected simple
+matched sphere, with its cyclic orders, crossing-disk frames and marked
+strand edge. Assume its complete labeled packing is realized by the
+original positive ideal-cell cut, the ordinary face graph is connected,
+and each matched pair has a positive outer coordinate and at least one
+nonmonomial triangle. Retain the original coefficient targets, integer
+face lattice and full spectral numerator. Fix retained half twists
+\(\epsilon_e\), and fill the original disks by
+\(n_e=\epsilon_e-2p_e\). If the main strands form one knot, then for
+all independently sufficiently large \(|p_e|\), the actual all-central
+period has the nonzero asymptotic \eqref{source:eq-A36}. Its selected
+action obeys \eqref{source:eq-A37}--\eqref{source:eq-A39}; in particular
+it is the volume of the smoothly filled original knot exterior divided
+by \(2\pi\), and tends to the complete augmented action as all filling
+lengths tend to infinity. The main cusp remains complete. There is no
+condition on the relative sizes or signs of the fixed filling integers.
+\end{foundation}
+
+The analytic conclusion is \cite[Sections 1--8]{MorsePeriod}; the
+original topology, marked primitive words, smooth completion and absolute
+volume calibration are \cite[Sections 1--9]{MorseGeometry}, reproduced
+as the two parts of Appendix O in \cite{ProofCollection}. These are
+substantial companion proofs. They give the central contribution, not
+the full invariant. The missing complementary bound is proved in this
+paper. The complete simple-sphere geometry used in their hypotheses is
+constructed in \cite[Sections 2--3]{Packing}; the packing below also
+provides its explicit circle configuration.
+
+The simple sphere, positive labeled packing, connected ordinary graph,
+primitive rank-\(m-1\) face quotient, and nonmonomial triangle at each
+matching edge have been checked in Sections~\ref{braid:sec-1}--\ref{braid:sec-3} and~\ref{source:sec-4}. These are precisely the
+hypotheses of \cite{MorsePeriod} and
+\cite{MorseGeometry}. They concern the
+original all-CROSS projection \eqref{source:eq-A7}; they do not require complete-radius
+balance, a middle forest, a flat sweep or a full positive-endpoint
+source theorem.
+
+Choose retained \(\epsilon_j\in\{-1,0,1\}\) with the prescribed parities
+and write \(n_j=\epsilon_j-2p_j\). Let \(A_N(\delta)\) be the finite
+face-critical action in the companion period theorem: the shared face
+variables have been evaluated at their selected stationary point,
+with the original scalar removed as specified in that theorem. Define
+\[
+ \mathcal S_{N,\mathbf1}(\delta)
+ =A_N(\delta)+\pi i\sum_j n_j\delta_j^2+2\pi i\sum_j\delta_j.
+\]
+Let \(\delta_{N,\mathbf1}\) be its selected critical point and
+\(S_{N,\mathbf1}\) its critical value. Write \(H_N(\delta)\) for
+the face Hessian on the primitive common-scale quotient, and
+\(Q_{N,\mathbf1}=-\partial_\delta^2\mathcal S_{N,\mathbf1}
+(\delta_{N,\mathbf1})\) for the negative spectral Hessian. The face
+square root continues from the positive complete Hessian; the spectral
+square root is its Gaussian branch. The raw period has the nonzero
+asymptotic \begin{equation}\label{source:eq-A36}
+\begin{split}
+ Z_{N,\mathrm C}={}&q^{d^2\sum_jn_j/4}(-2i)^m\sqrt{2\pi}\,N^{m+1/2}\\
+ &\times\frac{\prod_j\sin(2\pi\delta_{N,\mathbf1,j})}
+ {\sqrt{\det H_N(\delta_{N,\mathbf1})}\sqrt{\det Q_{N,\mathbf1}}}
+ e^{N S_{N,\mathbf1}}
+ \left(1+O_{m,\mathbf n}(N^{-1})
+           +O_{m,\mathbf n}(e^{-c_{m,\mathbf n}N})\right).
+\end{split}
+\end{equation} The companion theorem proves \(A_N\to A_0\) with every
+fixed derivative, \(S_{N,\mathbf1}\to S_{\mathbf1}\), and convergence
+of the coefficient remaining after the explicit action and level
+factors are removed to a nonzero number. In particular that coefficient
+is subexponential. The sine
+factors and determinants do not vanish at the chosen fixed long filling.
+The first reflected charges have already been paired by the exact finite
+trace; nonzero amplitude does not follow merely from a formal even
+phase. The source factor \((-1)^{dm}\) and Fourier factor
+\((-1)^{(N+1)m}\) cancel exactly. Both level parities therefore have
+this same nonzero normalization.
+
+The limiting pure action \(A_0\) has \(A_0(0)=\Phi_m\), and the selected
+first-charge action is \begin{equation}\label{source:eq-A37}
+S_{\mathbf1}=A_0(\boldsymbol\delta)
+           +\pi i\sum_jn_j\delta_j^2+2\pi i\sum_j\delta_j.
+\end{equation} Let \(R_{0,j}\) be the similarity of the pure ordered
+shaded-side map before inserting the retained half twist. The original
+meridian threading follows its inverse, so its pure logarithm is
+\(-\operatorname{Log}R_{0,j}\), as in
+\cite[Section 5, equations (14)--(16)]{MorseGeometry}. Let
+\(U_j,V_j\) be the continuous logarithmic similarities of
+\(\mu_j,\lambda_j\), with their zero values at the complete augmented
+structure fixing the branches. The actual primitive logs satisfy \begin{equation}\label{source:eq-A38}
+U_j=-\operatorname{Log}R_{0,j}+2\pi i\epsilon_j\delta_j,
+ \quad V_j=-4\pi i\delta_j,
+ \quad U_j+p_jV_j=-2\pi i.
+\end{equation} They are original disk words with the signed half-twist correction
+once. The source differentiation and the marked regulator identity
+cancel the peripheral boundary term in \eqref{source:eq-A37}. The nearby framed
+representation, actual logarithmic link periods and the primitive
+equation in \eqref{source:eq-A38} give a smooth filling of those very circles; the main
+cusp remains complete. Consequently \begin{equation}\label{source:eq-A39}
+2\pi\operatorname{Re}S_{\mathbf1}
+       =\operatorname{Vol}(S^3\setminus K_{m,\mathbf n}),
+ \qquad \operatorname{Re}S_{\mathbf1}\longrightarrow\Phi_m
+ \quad\text{as all }|n_j|\to\infty.
+\end{equation} At the selected charge \(\operatorname{Im}\delta_j>0\),
+so \(\operatorname{Re}V_j>0\). The auxiliary longitude therefore has
+nonunit modulus. The small logarithmic periods of its two primitive
+generators are fixed before multiplying one by \(p_j\). Thus
+\eqref{source:eq-A38} is the actual angular period \(-2\pi i\), not
+only an equation after exponentiation. The companion metric completion
+fills these original solid tori and keeps the main cusp complete. Its
+absolute volume comparison uses the same ideal-cell chain and a
+boundary homotopy whose volume tends to zero at the cusp cutoff.
+This is the metric statement used in \eqref{source:eq-A39}; a regulator
+identity alone would not supply it. The continuation permits
+independently long signed powers, with no ratio condition.
+
+Fix \(0<\eta<7/100\). Increase the long-filling threshold until both
+Morse theorems apply and the action drop is less than \(\eta/2\).
+Equations \eqref{source:eq-A33}, \eqref{source:eq-A35} and the nonzero asymptotic \eqref{source:eq-A36} give \begin{equation}\label{source:eq-A40}
+\frac{Z_N-Z_{N,\mathrm C}}{Z_{N,\mathrm C}}
+       =O_{m,\mathbf n}(e^{-\kappa_{m,\mathbf n}N})
+       \quad\text{for some }\kappa_{m,\mathbf n}>0.
+\end{equation} The unit-modulus framing character and the optional single modified
+factor have no exponential rate. This proves \eqref{braid:eq-5}.
+
+There are finitely many retained half-twist patterns for fixed \(m\).
+Taking the maximum of their thresholds gives \(B_m\) for every
+knot-producing parity, not only the illustrative pattern with two odd
+boxes. Any signed odd \(n_j\) may, for example, be represented with
+\(\epsilon_j=1\) and integer \(p_j=(1-n_j)/2\); positivity of \(n_j\) is
+not presumed.
+
+
+\appendix
+\section{Exact enclosures for the fixed constants}\label{app:constants}
+
+The inequalities in the proof depend on fixed arguments of \(Q\),
+not on a sampled list of diagram sizes. For positive weights on their
+support, put \(D^2=\sum_{i<j}w_iw_j\) and
+\(a_i=\arctan(w_i/D)\). Strict concavity of the triangle entropy, or
+direct differentiation with its sum constraint, gives
+\begin{equation}\label{eq:Q-closed}
+ Q(w)=\frac1\pi\sum_{w_i>0}
+ \{\Lambda(a_i)+\Lambda(\pi/2-a_i)+a_i\log w_i\}.
+\end{equation}
+Indeed \(\sum a_i=\pi/2\), and these are the stationary loads
+\(\alpha_i=a_i/\pi\) in \eqref{source:eq-A11}.
+When the support consists of one weight, use \(Q(w)=\tfrac12\log w\)
+directly. All arguments of \(Q\) in the following table are rational.
+The symbols \(a,C,D_0,B_{\rm int},C_{\rm int},B_{\rm near},C_{\rm near},T,E,S_0\)
+are those in \eqref{source:eq-A19}--\eqref{source:eq-A30}.
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Fixed quantity & Rational enclosure sufficient for the proof\\
+\midrule
+\(D_0\) & \(D_0<203/1000\)\\
+\(F(a)-\log a\) & \(>0\)\\
+\(B_{\rm int}\) & \(>43/100\)\\
+\(C_{\rm int}\) & \(>21/50\)\\
+\(B_{\rm near}\) & \(>7/25\)\\
+\(C_{\rm near}\) & \(>21/50\)\\
+\(F(4/27)+F(2)-\log2\) & \(>8/25\)\\
+\(S_0=F(1)-T(C)-E(C)\) & \(>37/100\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Here is the enclosing arithmetic used to establish the table. Write
+\(J(t)=\int_0^t\log(2\sin\pi u)\,du\). For \(0<t<1/2\), the Euler
+sine product, followed by termwise integration of its positive
+absolutely convergent series, gives
+\begin{equation}\label{eq:J-series}
+ J(t)=t\log(2\pi t)-t-
+ \sum_{n=1}^{20}\frac{\zeta(2n)t^{2n+1}}{n(2n+1)}+R(t),
+ \quad -\frac{2t^{43}}{21\cdot43(1-t^2)}\le R(t)\le0.
+\end{equation}
+The tail follows from \(\zeta(2n)<2\) and
+\(n(2n+1)\ge21\cdot43\) for \(n\ge21\). The identity
+\(\Lambda(\pi t)/\pi=-J(t)\) then evaluates
+\eqref{eq:Q-closed} without quadrature.
+
+Every interval endpoint is an integer multiple of \(10^{-40}\).
+Addition is exact at this scale; products and quotients take the
+minimum and maximum endpoint combinations and round outwards.
+All divisors are first checked to exclude zero. Square roots use
+integer floor and ceiling square roots. Machin's identity
+\(\pi=16\arctan(1/5)-4\arctan(1/239)\) is enclosed by forty terms
+of each alternating series and its next-term error. For \(n\ge2\),
+\[
+ \sum_{k=1}^{64}k^{-2n}\le\zeta(2n)
+ \le\sum_{k=1}^{64}k^{-2n}
+       +\frac{1}{(2n-1)64^{2n-1}},
+ \qquad\zeta(2)=\pi^2/6.
+\]
+For logarithms, rescale by a power of two and use eighty terms of
+\(2\sum_{j\ge0}z^{2j+1}/(2j+1)\), where
+\(z=(x-1)/(x+1)\) and the enclosing interval satisfies \(0\le z<1/2\).
+After eighty terms its remaining value is between zero and
+\(2z^{161}/(161(1-z^2))\). For positive arctangents, iterate
+\(\arctan x=2\arctan(x/(1+\sqrt{1+x^2}))\) until the upper endpoint
+is at most \(1/2\), then use eighty alternating terms and the
+next-term error. Every normalized angle in \eqref{eq:Q-closed} is
+checked to lie strictly between zero and \(1/2\) before
+\eqref{eq:J-series} is applied.
+
+The portable verifier \cite{Constants} executes these rational rules
+and asserts the displayed comparisons. It also checks that the argument
+of the maximum defining \(E(C)\) is positive. Thus its selected branch
+is certified rather than inferred from a decimal approximation.
+The smallest certified value of
+\(B_{\rm near}-D_0\) exceeds \(817/10000\), while the weaker
+table already gives \(7/25-203/1000=77/1000>7/100\).
+No optimizer or loop over \(m\) appears in this finite calculation.
+The passage from these constants to every even \(m\ge6\) is the
+trigonometric and action argument in Section~\ref{source:sec-5}.
+
+\section*{Scope}
+The theorem concerns the original closed braid and its original crossing
+disks. No terminal tangles are inserted. The crossing powers may have
+arbitrary signs, but their magnitudes must exceed a threshold depending
+on the fixed number of syllables. The permutation test for one knot is
+essential. The proof gives no growing-diagram or moving-color statement,
+and makes no assertion that these knot types are disjoint from classes
+that admit another Conway presentation. Its external proof inputs are
+exactly the three companion results stated in the text.
+
+\begin{thebibliography}{20}
+\bibitem{Kashaev} R. M. Kashaev, \emph{The hyperbolic volume of knots
+from the quantum dilogarithm}, Lett. Math. Phys. 39 (1997), 269--275.
+\href{https://arxiv.org/abs/q-alg/9601025}{arXiv:q-alg/9601025}.
+\bibitem{Murakami} H. Murakami and J. Murakami, \emph{The colored
+Jones polynomials and the simplicial volume of a knot}, Acta Math.
+186 (2001), 85--104. \href{https://arxiv.org/abs/math/9905075}{arXiv:math/9905075}.
+\bibitem{FKP} D. Futer, E. Kalfagianni and J. S. Purcell,
+\emph{Cusp areas of Farey manifolds and applications to knot theory},
+Int. Math. Res. Not. 2010, 4434--4497.
+\href{https://arxiv.org/abs/0808.2716}{arXiv:0808.2716}.
+\bibitem{ProofCollection} \emph{Volume limits from planar tangles},
+completed-proof collection, Appendices N and O.
+\href{https://sashakolpakov.github.io/murakamis_dream/manuscript.pdf}{Proof collection}.
+\bibitem{MorseSource} \emph{A matched spherical triangulation has the
+original general Morse source}, Sections 4--6.
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/research_matched_sphere_morse_source.html}{Companion source proof}.
+\bibitem{FillingBound} \emph{The full finite Hermite functional has a
+level-independent real-interval bound}, Sections 1--9.
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_uniform_filling_supremum_bound.html}{Finite filling proof}.
+\bibitem{FillingPaper} \emph{Uniform bounds for finite Hermite filling
+functionals}, Theorem 1.1 (source label \texttt{fb:main}) and Sections 2--7.
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/filling-bounds.pdf}{Companion paper}.
+\bibitem{Cofactors} \emph{The actual crossing cofactor and its central
+factorization}, Sections 1--3 and 8.
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_cross_cofactor_factorization.html}{Cofactor proof}.
+\bibitem{LeftEnvelope} \emph{The global LEFT weighted spectral envelope},
+Sections 1--4.
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_global_left_weighted_spectral_envelope.html}{One-sided envelope proof}.
+\bibitem{SectorCover} \emph{Full-source volume from a cover of genuine
+sectors}.
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/general_actual_sector_cover_filling_volume.html}{Shared-sector conventions}.
+\bibitem{Packing} \emph{Balanced terminal decorations and volume limits
+beyond tangle-operation trees}, Sections 2--3.
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_balanced_terminal_fan_volume.html}{Original simple-sphere packing and cut}.
+\bibitem{MorsePeriod} \emph{The geometric contribution and all Fourier
+charges for matched spherical diagrams}, Sections 1--8.
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_morse_cross_filling_period.html}{Central-period proof}.
+\bibitem{MorseGeometry} \emph{The original complement and its geometric
+contribution}, Sections 1--9.
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_morse_geometric_contribution.html}{Primitive filling and absolute volume proof}.
+\bibitem{Constants} \emph{Rational enclosures for the fixed constants
+of the cyclic source proof}, portable verifier and rational output.
+\href{https://github.com/sashakolpakov/murakamis_dream/blob/main/repro/check_cyclic_source_constants.py}{Verifier};
+\href{https://github.com/sashakolpakov/murakamis_dream/blob/main/repro/results/cyclic-source-constants.json}{exact output}.
+\end{thebibliography}
+\end{document}

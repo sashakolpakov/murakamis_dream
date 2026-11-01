@@ -132,6 +132,7 @@ def page(url, title, body, active, source=None, topic="Research guide", status="
         for slug, label in CHAPTERS
     )
     nav += '<div class="nav-label">Explore the research</div>'
+    nav += f'<a href="{base}papers/index.html" class="{"active" if active == "papers" else ""}">Quantum invariants and volume</a>'
     nav += f'<a href="{base}library.html" class="{"active" if active == "library" else ""}">Research library</a>'
     nav += f'<a href="{base}figures.html" class="{"active" if active == "figures" else ""}">Figure gallery</a>'
     nav += f'<a href="{base}archive.html" class="{"active" if active == "archive" else ""}">Search the archive</a>'
@@ -181,6 +182,12 @@ def main():
     # Authored chapters may link to these generated navigation pages.
     mapping["book/library.html"] = "library.html"
     mapping["book/archive.html"] = "archive.html"
+    mapping["papers/README.md"] = "papers/index.html"
+    for name in ("dependencies.html", "dependencies.svg", "dependencies.json", "dependency-analysis.json"):
+        mapping[f"docs/papers/{name}"] = f"papers/{name}"
+    for entry in json.loads((ROOT / "papers/catalog.json").read_text())["papers"]:
+        name = entry["directory"]
+        mapping[f"docs/papers/{name}.pdf"] = f"papers/{name}.pdf"
     manuscript_pdf = ROOT / "manuscript/build/main.pdf"
     if manuscript_pdf.is_file():
         mapping["manuscript/build/main.pdf"] = "papers/conway-composition.pdf"
@@ -273,6 +280,9 @@ def main():
         body = rewrite(result.stdout, source, target)
         stem = Path(source).stem; is_guide = source.startswith("book/")
         topic, status = ("Research guide", "Guide") if is_guide else catalog.get(stem, ["Research archive", "See note"])
+        is_papers = source == "papers/README.md"
+        if is_papers:
+            topic, status = "Research papers", ""
         adjacent = None
         if is_guide and stem in {slug for slug, _ in CHAPTERS}:
             i = [s for s, _ in CHAPTERS].index(stem); adjacent = []
@@ -282,14 +292,14 @@ def main():
                     slug, label = CHAPTERS[j]; adjacent.append((mapping[f"book/chapters/{slug}.md"], ("← " if delta < 0 else "Next: ") + label))
                 else: adjacent.append(("", ""))
         title = title_of(text, stem)
-        html = page(target, title, body, stem if is_guide else "archive", source, topic, status, adjacent)
+        html = page(target, title, body, "papers" if is_papers else stem if is_guide else "archive", source, topic, status, adjacent)
         # Preserve explicit TeX spaces in MathML annotations without storing
         # trailing whitespace in generated HTML source lines.
         html = re.sub(r'(<annotation encoding="application/x-tex">)(.*?)(</annotation>)',
                       lambda m: m[1] + re.sub(r' +(?=\n)', lambda s: '&#32;' * len(s[0]), m[2]) + m[3],
                       html, flags=re.S)
         destination = OUT / target; destination.parent.mkdir(parents=True, exist_ok=True); destination.write_text(html)
-        return {"title": title, "url": target, "type": "Guide" if is_guide else "Note", "topic": topic, "status": status, "text": re.sub(r"\s+", " ", text).strip()}
+        return {"title": title, "url": target, "type": "Guide" if is_guide or is_papers else "Note", "topic": topic, "status": status, "text": re.sub(r"\s+", " ", text).strip()}
 
     with ThreadPoolExecutor(max_workers=min(8, os.cpu_count() or 2)) as executor:
         records.extend(executor.map(convert, md_sources))
