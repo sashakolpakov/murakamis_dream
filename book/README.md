@@ -2,9 +2,27 @@
 
 This directory contains the readable account of the results and their proofs. The guide starts with the knot invariant and the class of diagrams covered by the theorem, explains how the quantum estimates and hyperbolic geometry fit together, and separates those results from questions that remain open.
 
-The main theorem now applies to every fixed strict Conway composition tree with sufficiently long independent signed twist weights, provided its actual endpoint pairing gives a knot. For this class, estimates for the full quantum sum and a nonzero geometric contribution are proved. The resulting limit is the volume of the actual knot complement. A further corollary writes the same limit through a genuine quantum \(A\)-operator with fixed finite initial data, or through a positive determinant ratio. The guide does not assert a theorem for all knots, arbitrary short twists, or all arborescent presentations.
+The results have several distinct hypotheses. The planar theorem decorates
+a diagram encoded by a matched triangulated sphere before imposing long
+signed twists. The ordered-tree theorems instead use the stated recursive,
+summed, or local degree-and-twist conditions. All require the specified
+strand connections to give a knot. The diagram and powers are fixed
+before the level tends to infinity. The guide also presents partial
+results about finite sources and geometric contributions, with their
+more limited conclusions.
 
-Read the chapters in this order: [overview](chapters/index.md), [results](chapters/results.md), [how the proof works](chapters/mechanism.md), [methods and research approaches](chapters/methods.md), [the geometric volume](chapters/geometry.md), [remaining questions](chapters/frontier.md), [notation](chapters/notation.md), and [reproduction](chapters/audits.md). The methods chapter defines the techniques, explains what each can conclude, and gives literature references. The [research library](https://sashakolpakov.github.io/murakamis_dream/library.html) then provides reading routes into the detailed proofs. A link to a technical note identifies the precise statement used; the note remains authoritative for its hypotheses and conventions.
+Begin with [the knot diagram and its finite evaluation](chapters/starting.md).
+It defines tangles, twist counts, auxiliary filling, the finite
+contraction, coefficient extraction, and the order of limits. Continue
+with [the results and their hypotheses](chapters/results.md),
+[how the proofs work](chapters/mechanism.md), and
+[the geometric volume](chapters/geometry.md).
+The [methods chapter](chapters/methods.md) explains the broader approaches,
+their mathematical tools, and their literature references.
+[Remaining questions](chapters/frontier.md), [notation](chapters/notation.md),
+and [reproduction](chapters/audits.md) are reference chapters.
+The [research library](https://sashakolpakov.github.io/murakamis_dream/library.html)
+connects these explanations to the detailed arguments and historical notes.
 
 The manuscript contains completed proofs. The guide also preserves approaches with unresolved applications and explains their obstructions. Former Sphinx URLs redirect to this guide; there is no separate Sphinx source or build to maintain.
 
@@ -21,7 +39,13 @@ Reading the committed guide needs no build software. To rebuild it from the repo
     python3 tools/build_book.py
     python3 tools/check_book.py
 
-The build requires Pandoc. It converts the formulas to native MathML and copies the figure assets into the static site. The check examines local navigation, image assets and the technical-note index. It checks the publication structure, not the truth of the mathematical proofs.
+The build requires Pandoc. It converts the formulas to native MathML and
+copies the figure assets into the static site. The check examines local
+navigation, image assets, and the technical-note index. It also detects
+failed MathML conversion and common TeX commands left visible in prose,
+including malformed delimiters. Literal code examples are excluded.
+These are rendering and publication checks; they do not verify the
+mathematical proofs.
 
 When a TikZ figure changes, regenerate its PDF, SVG and PNG first:
 

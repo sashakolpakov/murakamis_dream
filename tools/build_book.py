@@ -21,7 +21,8 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "docs"
 REPO = "https://github.com/sashakolpakov/murakamis_dream"
 CHAPTERS = [
-    ("index", "Overview"), ("manuscript", "The manuscript"), ("results", "Equality results"),
+    ("index", "Overview"), ("starting", "Start with the diagram"),
+    ("manuscript", "The manuscript"), ("results", "Equality results"),
     ("mechanism", "The mechanism"), ("methods", "Methods and approaches"),
     ("geometry", "Actual geometry"),
     ("frontier", "Current frontier"), ("notation", "Notation"),
@@ -157,7 +158,7 @@ def page(url, title, body, active, source=None, topic="Research guide", status="
 <div class="mobile-bar"><a href="{base}index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
 <aside class="sidebar" id="sidebar"><a class="brand" href="{base}index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
 <button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation">{nav}</nav>
-<div class="sidebar-bottom">Research edition · 31 October 2026<br>General conjecture remains open.<a href="{REPO}">Repository ↗</a><a href="{REPO}/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<div class="sidebar-bottom">Research edition · 1 November 2026<br>General conjecture remains open.<a href="{REPO}">Repository ↗</a><a href="{REPO}/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
 <main id="main" class="layout"><div class="eyebrow">{escape(topic)}</div><div class="reading-grid"><article class="content">{context}{body}{chapter_nav}
 <footer class="page-footer">{source_link}<a href="{REPO}">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article>{toc}</div></main>
 <dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>

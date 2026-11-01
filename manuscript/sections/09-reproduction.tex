@@ -1,11 +1,11 @@
-\chapter{Checking the certificates and understanding the scope}\label{ch:reproduction}
+\chapter{Proof inputs and reproduction}\label{ch:reproduction}
 
 The volume theorems combine written analytic and geometric arguments with finite checks of different kinds. The long-twist proof reduces two local inequalities to exact rational certificates supplied with the paper. The quantitative circle-tree proof establishes its uniform bounds analytically; separate finite checks verify its edge formulas, face identifications and peripheral identities. This chapter distinguishes those roles and records the scope of each theorem.
 
 \section{Three different kinds of evidence}
-The manuscript contains analytic proofs, exact finite certificates, and optional finite audits. They have different logical roles. The matrix identities, support and strictness arguments, geometric incidence, complex estimates and filling analysis are proved in the text. The rational certificates are finite parts of the proof: the continuum inequalities reduce to their exact feasibility, coverage and supporting-plane checks. Finite matrix or numerical asymptotic audits provide independent checks of formulas and normalizations, but do not establish a theorem by extrapolation.
+The manuscript contains analytic proofs, exact finite certificates, and optional finite checks. They have different logical roles. The matrix identities, support and strictness arguments, geometric incidence, complex estimates and filling analysis are proved in the text. The rational certificates are finite parts of the proof: the continuum inequalities reduce to their exact feasibility, coverage and supporting-plane checks. Finite matrix computations and numerical asymptotic comparisons provide independent checks of formulas and normalizations, but do not establish a theorem by extrapolation.
 
-The proof is given in the chapters and appendices of this manuscript. The repository also supplies the exact certificate data and verification programs. Those programs check the finite inequalities described below; they do not formally verify the analytic or geometric arguments.
+The chapters and appendices give the proofs with their named dependencies on earlier finite-source and geometric lemmas. References to those technical companions remain proof inputs; the PDF does not reproduce every calculation in the research library. The repository also supplies the exact certificate data and verification programs. Those programs check the finite inequalities described below; they do not formally verify the analytic or geometric arguments.
 
 \section{Replaying the exact certificates}
 From the repository root, run
@@ -33,7 +33,18 @@ The elementary edge equations and complex-strip estimates used by Chapter~\ref{c
 \begin{verbatim}
 python3 repro/run_research_checks.py curvature-fillings
 \end{verbatim}
-The runner checks exact symbolic edge identities, finite samples of the stated complex inequality, labeled octahedral attachments and the full signed peripheral matrix words. Its output separates those computations from the uniform analytic and geometric proofs. Appendix~\ref{app:quantitative-sums} gives the full quantitative finite-sum proof, including both uniform Newton estimates, the weighted contraction and the charge-tail bounds. Appendix~\ref{app:quantitative-geometry} gives the complete ordered attachment, positive angular charts, primitive-period completion, volume calibration and preferred-cusp argument. The linked versions are optional separately available copies of those proofs. Such finite checks can detect sign or indexing errors; they do not replace the written proofs.
+The runner checks exact symbolic edge identities, finite samples of the stated complex inequality, labeled octahedral attachments and the full signed peripheral matrix words. Its output separates those computations from the uniform analytic and geometric proofs. Appendix~\ref{app:quantitative-sums} gives the full quantitative finite-sum proof, including both uniform Newton estimates, the weighted contraction and the charge-tail bounds. Appendix~\ref{app:quantitative-geometry} gives the complete ordered attachment, positive angular charts, primitive-period completion, volume calibration and preferred-cusp argument. The technical notes provide separately readable copies of those proofs. Such finite checks can detect sign or indexing errors; they do not replace the written proofs.
+
+The local subtree proof and its separate geometric criterion have the
+following finite checks:
+\begin{verbatim}
+python3 repro/run_research_checks.py local-tree-fillings
+\end{verbatim}
+They verify exact rational constant inequalities and compare the full
+finite subtree recurrence with independently evaluated contractions.
+Appendix~\ref{app:local-messages} proves the estimates at every level
+and the uniform induction on a fixed tree. A finite set of levels does
+not establish that induction.
 
 \section{The planar terminal decoration}
 The finite identities for Chapter~\ref{ch:balanced-terminal-fans} have one command:
@@ -86,16 +97,58 @@ The illustrated guide is built separately:
 python3 tools/build_book.py
 python3 tools/check_book.py
 \end{verbatim}
-It is written to \sourcefile{docs/} and links the same authored PDF. Documentation builds do not execute research scripts. The guide also links the broader research companions and states their hypotheses separately from the two theorem classes developed here.
+It is written to \sourcefile{docs/} and links the same authored PDF. Documentation builds do not execute research scripts. The guide includes the theorem statements, a notation chapter and a lecture-note account of the methods, including approaches that do not give a general theorem. Its links distinguish proved estimates from open comparisons. The manuscript retains the completed arguments and their stated consequences.
 
-\section{What has and has not been proved}
-Theorem~\ref{thm:main} is uniform in the level for each fixed finite completed expression and each fixed sufficiently long signed filling tuple. It includes both parity sequences and composite levels. Its threshold can depend on the expression, its complete geometry and its retained half-twist pattern, but imposes no bound on ratios between the long slopes.
+\section{The scope of the conclusions}
+Every volume theorem fixes the diagram, its endpoint order, disk
+framings, parity pattern and integer powers before $N$ tends to
+infinity. The limit includes both parity sequences and composite
+levels. Only auxiliary crossing circles are filled; the main knot
+cusp remains complete. The component test must give one knot without
+an internally closed extra main component.
 
-Theorem~\ref{thm:circle-quantitative} uses a different sufficient hypothesis: the literal ordered circle tree and the explicit sum $\sum_vd_v/(d_v^2+n_v^2)\le2^{-25}$. The full diagram, all degrees and all integer powers are fixed before the limit. The theorem gives actual hyperbolicity and volume equality, a uniform microscopic meridian profile with its exact scalar, and the preferred-cusp correction. It permits short coefficients under this condition; it does not prove a statement about arbitrary short or rational fillings.
+Theorem~\ref{thm:main} applies to the completed expressions of
+Definition~\ref{def:grammar}. Each signed filling integer must exceed
+a construction-dependent threshold in absolute value; there is no
+restriction on ratios between the large integers. The circle-tree
+results use their own sufficient conditions: the summed inequality of
+Theorem~\ref{thm:circle-quantitative}, the local inequality of
+Theorem~\ref{thm:local-circle-volume}, or the directed certificate of
+Chapter~\ref{ch:directed-circle-messages}. The mixed condition
+$d_v\ge2^{28}$ or $|n_v|\ge2^{27}$ at each vertex is a consequence
+of the last certificate. These are separate proofs, not relaxations
+of the completed-box hypothesis inside the first proof.
 
-Both results keep the original strand order, knot-pairing test, disk framings and unfilled main cusp. The octahedral attachment is proved by actual labeled cuts. A scalar equality in $\cH_N$ is not used as a tangle isotopy. The continued boundary word used for the preferred-cusp calculation becomes the preferred longitude of the smooth filled knot only at the endpoint of the geometric path.
+The planar theorem of Chapter~\ref{ch:balanced-terminal-fans} applies
+a specified finite decoration to a simple matched sphere before
+performing its independently long signed fillings. The decoration
+preserves the chosen endpoint pairing and can change the knot. It
+does not give the full volume theorem for every unchanged sphere.
+For unchanged diagrams, Appendix~\ref{app:morse-geometric-contribution}
+proves a narrower statement: the specified geometric contribution
+of the original exact invariant has a nonzero asymptotic at the
+actual filled volume rate. This contribution is not a separate
+topological invariant, and the theorem does not bound the remaining
+signed contribution.
 
-These are sufficient construction hypotheses, not a classification of all arborescent knots. The completed-box condition remains part of Theorem~\ref{thm:main}; the quarter-index states in circle trees are treated by the separate proof in Chapter~\ref{ch:quantitative-circle-trees}. More general strict ordered Conway trees have a long-twist theorem in the linked research companions, with their own full source and marked-geometry proofs. No general short-filling theorem follows merely from the existence of complete augmented cells or from an upper bound on the absolute values of a larger sum.
+The meridian-profile and preferred-longitude results retain their
+stated source classes. Chapter~\ref{ch:directed-all-orders} proves the
+full expansion required for the selected-factor conclusion for
+every directed certificate. That conclusion is an implication for
+an existing nonzero fixed all-level annihilator; it neither proves
+recurrence existence nor identifies the entire A-polynomial or
+recurrence ideal. Appendix~\ref{app:uniform-filling-bound} proves a
+finite functional estimate. Its application to an additional volume
+class requires a separate exponential source estimate.
+
+None of these sufficient conditions is a classification of all
+arborescent knots or all short fillings. Broader net-twist and closure
+statements in the linked companions keep their own reduction and
+long-surviving-weight hypotheses. The geometric arguments retain the
+original manifold: scalar equalities in $\cH_N$ are not used as tangle
+isotopies, and the continued main boundary word becomes the preferred
+longitude of the smooth filled knot at the endpoint of the specified
+geometric path.
 
 \section{The geometric longitude calculation}
 The symbolic identities in the geometric characteristic chapter have one

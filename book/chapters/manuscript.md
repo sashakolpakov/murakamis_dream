@@ -2,11 +2,24 @@
 
 [Read the manuscript PDF](../../manuscript/build/main.pdf). The [editable sources and build instructions](../../manuscript/README.md) are available alongside it.
 
-The paper proves volume equalities for decorated planar tangle diagrams and for several ordered-tree constructions. It explains the finite quantum invariant, the hyperbolic geometry, the estimates controlling cancellation, and the passage from an augmented link to the final knot complement. The families have different hypotheses; this page introduces them separately.
+The paper contains completed proofs of volume equalities for decorated
+planar diagrams and ordered-tree constructions, together with several
+completed theorems whose conclusions are narrower. It derives the finite
+quantum expression, constructs the labeled hyperbolic geometry, bounds
+competing terms and performs the specified auxiliary fillings.
+The families have different hypotheses, so the sections below introduce
+their constructions separately.
+
+Readers new to the source, meridian or tangle notation can begin with
+[the first-reading chapter](starting.md). The
+[results chapter](results.md) gives the complete family-by-family scope.
+The illustrated guide also retains alternative approaches and their
+obstructions; the manuscript presents the proved arguments and marks
+partial conclusions explicitly.
 
 ## The planar decoration chapter
 
-The broadest construction begins with a simple triangulation of the
+The planar construction begins with a simple triangulation of the
 sphere and a chosen pairing of its adjacent triangles. These finite data
 give a planar crossing-circle diagram in the three-sphere. The chapter
 constructs its circle packing and then inserts even terminal stacks on
@@ -31,15 +44,46 @@ introduction with the same figure.
 ## The directed full expansion
 
 The final analytic chapter proves every finite order of the microscopic
-meridian expansion for the directed tree criterion. It works on all
-fixed translated nonreal charts needed by a fixed recurrence. Exact
-normal channels and peripheral gauge factors are retained. The first
+meridian expansion for the directed tree criterion. Here the meridian
+is \(M=q_N^s\), with \(q_N=e^{\pi i/N}\) and \(s\) in a fixed
+parameter neighborhood, so \(M\) approaches completeness as \(N\) grows.
+The proof works on all fixed translated nonreal charts needed by a
+fixed recurrence. Derivatives at repeated spectral nodes and all
+crossing and framing scalar factors are retained. The first
 correction is the preferred cusp shape, and the highest-degree
 coefficients recover the full preferred longitude germ.
 
 This adds every directed certificate to the selected geometric-factor
 theorem. It does not identify the full A-polynomial or extend the
 moving-meridian theorem to the decorated planar class.
+
+## Completed results with narrower conclusions
+
+Appendix N proves a finite norm bound for inserting signed twists.
+Let \(S_N(\sigma_1,\ldots,\sigma_r)\) be the polynomial obtained
+after the common face coefficient has been taken, and let \(n_e\)
+be the fixed crossing powers. The bound is
+\[
+ |Z_N(\boldsymbol n)|
+ \le\prod_{e=1}^r(1+|n_e|/2)\,
+                         \|S_N\|_{[-2,2]^r}.
+\]
+Here \(Z_N\) is the original reduced ribbon contraction after
+inserting those powers; the prescribed framing correction has unit
+modulus. The bound's constant is independent of the level. It retains values and
+derivatives at the repeated spectral roots and gives stronger bounds
+when the polynomial vanishes at the nodes. A strict estimate for the
+shared norm remains a separate hypothesis; the finite bound alone
+is not a volume-limit theorem for a new diagram.
+
+Appendix O treats the unchanged diagrams determined by simple matched
+spheres. It proves a nonzero long-filling asymptotic for the central
+recurrence-path contribution, called CROSS in the finite formula.
+The leading rate is the volume of the original filled complement,
+with the correct primitive peripheral curves. This contribution is
+one specified part of the invariant. The appendix does not bound
+the complementary pieces for every such diagram and therefore makes
+no general full-invariant claim for the unchanged cores.
 
 ## The ordered tangle construction
 
@@ -72,7 +116,10 @@ $$
 
 Here $K$ is the resulting knot, $K_N(K)$ is the reduced Kashaev invariant at integer level $N$, and the right side is its hyperbolic complement volume. The limit includes even and odd levels and composite levels. The twist counts do not grow with $N$, and no restriction is imposed on their relative sizes. The threshold may depend on the entire construction.
 
-To analyze the geometry, the proof first places an auxiliary crossing circle around each twist region. The resulting augmented link has a convenient decomposition into ideal hyperbolic cells. Filling an auxiliary circle means attaching a solid torus along the prescribed meridian so as to insert the twists. In the knot theorem **all auxiliary circles are filled**. The cusp of the knot itself remains unfilled. Thus the conclusion is about the knot complement, not a closed three-manifold.
+To analyze the geometry, the proof first places an auxiliary crossing circle around each twist region. The resulting augmented link has a convenient decomposition into ideal hyperbolic cells. Filling an auxiliary circle means attaching a solid torus whose
+meridian is the prescribed primitive slope
+\(\mu_e+p_e\lambda_e\) on that boundary torus; this inserts the
+recorded twists. In the knot theorem **all auxiliary circles are filled**. The cusp of the knot itself remains unfilled. Thus the conclusion is about the knot complement, not a closed three-manifold.
 
 Two companion results extend the paper's recursive family. The [strict-tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md) proves the estimates for every expression passing a finite angle-feasibility test. The [net-twist theorem](../../notes/actual_conway_net_twist_volume.md) then reduces an arbitrary ordered cylindrical product closure to one of those expressions or to an elementary two-strand braid closure. In the former case, the size condition applies to the combined twist numbers produced by the reduction. The [results chapter](results.md) states that condition and gives an example. The earlier PDF chapters retain their own theorem and proof; the new quantitative chapter is described next.
 
@@ -175,20 +222,34 @@ net-twist and arbitrary-closure presentations.
 Together these results identify the selected complex geometric
 irreducible factor in the first nonzero classical symbol for
 every covered strict long-filling source, as well as the
-previously established circle-tree sources under the summed
-condition or the local bound \(2^{-120}\). The operator conclusion uses the full expansion and
-its shifted parameter neighborhoods; it does not follow just
-from the leading profile in a new numerical criterion.
+circle-tree sources under the summed condition, the local bound
+\(2^{-120}\), or any directed certificate. Appendix M supplies the
+full translated-chart expansion needed for the last extension.
+The implication starts with an existing fixed, nonzero all-level
+annihilator. It uses the full expansion and its shifted parameter
+neighborhoods, not just the leading meridian profile.
 No assertion identifies the entire A-polynomial, the
 multiplicities of its factors or the entire recurrence ideal.
 
 ## How to read the proof
 
-The first part fixes the invariant normalization and derives the finite algebra of the tangle operations. A color is an integer label in that finite calculation. It is not an additional component of the final knot. The source formula retains values and first derivatives at repeated spectral points, which explains the use of Hermite interpolation. Newton polynomials make the allowed integer indices at a product explicit. These support conditions are kept before taking a continuum limit.
+The first part fixes the invariant normalization and derives the finite algebra of the tangle operations. A color is an integer representation label in that finite
+calculation; a circle is a topological component carrying such a
+label. Summing colors changes the evaluation and filling changes the
+diagram, so the two operations must be distinguished. The source formula retains values and first derivatives at repeated spectral points, which explains the use of Hermite interpolation. Newton polynomials make the allowed integer indices at a product explicit. These support conditions are kept before taking a continuum limit.
 
 The geometric part associates normalized state variables with angles of ideal pyramids and prisms. An ideal vertex lies at infinity in hyperbolic space. Strict angle inequalities produce genuine cells, and the ordered endpoint data determine their face identifications. A strictly concave angle functional has a unique geometric maximum. The proof then follows actual paths on the cusps to identify the meridian and longitude used for filling.
 
-The source estimates address a different issue: a signed sum can be much smaller than the sum of the absolute values of its terms. The exact reflection formula separates a central contribution from extra terms called aliases. The paper bounds all of those terms while preserving their finite supports. Concavity and supporting tangents reduce two important estimates to finite rational certificates.
+The source estimates address a different issue: a signed sum can be much smaller than the sum of the absolute values of its terms. In the recursive tree proof, the exact reflection formula separates
+a principal contribution from extra terms called aliases. In the
+planar face-source proof, the three pieces instead refer to paths
+through or on either side of a central recurrence cut. These are
+different exact decompositions, with their own bounds. In each
+full-invariant theorem the complementary estimate preserves the finite
+supports. The recursive proof uses concavity and supporting tangents
+to reduce two important estimates to finite rational certificates.
+Appendix O deliberately evaluates only the central planar contribution,
+as described above.
 
 ![Supporting tangents used to control a single-piece attachment over its entire allowed state region.](../../manuscript/build/figures/attachment-tangents.png)
 
@@ -196,7 +257,7 @@ Near the geometric maximum, a complex asymptotic formula gives an exponential ac
 
 Finally, the filling transform is evaluated with all its Fourier modes and boundary terms. The marked meridian-longitude convention identifies the real part of its critical action with the volume after filling. This last normalization is what connects the finite invariant to the actual knot constructed at the beginning.
 
-The technical appendices supply the finite algebra, analytic interpolation estimates, certificate details and marked geometric calibration used in this chain. They are intended to make the proof readable without treating links to working notes as substitutes for arguments.
+The technical appendices supply the main finite algebra, analytic interpolation estimates, certificate details and marked geometric calibration used in this chain. Named earlier finite-source and geometric lemmas remain explicit proof dependencies; the PDF does not reproduce every calculation in the technical library. The [proof-input map](../../repro/PROOF_INPUTS.md) locates these written inputs separately from the executable checks.
 
 ## Reproduce the finite certificates
 

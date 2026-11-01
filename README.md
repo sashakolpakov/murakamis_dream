@@ -6,11 +6,24 @@ Kashaev invariants and the hyperbolic volumes of knot complements.
 [Manuscript and PDF](manuscript/README.md) ·
 [Reproduction instructions](repro/README.md)
 
-The volume conjecture predicts that the exponential growth of Kashaev’s
-root-of-unity invariant recovers the hyperbolic volume of the knot
-complement. This project proves that equality for specified families
-built from planar tangle diagrams. The diagram and all its twist numbers
-are fixed before the quantum level tends to infinity.
+For a fixed hyperbolic knot $K$, the volume conjecture predicts
+
+$$
+ \lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(K)|
+       =\operatorname{Vol}(S^3\setminus K).
+$$
+
+Here $K_N(K)$ is the reduced Kashaev invariant at level $N$, with
+unknot value one. This repository develops proofs for specified
+families built from planar tangle diagrams. The diagram and every
+twist number are fixed while $N$ tends to infinity.
+
+For a first reading, start with
+[the diagram, its finite evaluation, and the meaning of the limit](https://sashakolpakov.github.io/murakamis_dream/guide/starting.html).
+The guide defines its terms before using the source-polynomial and
+geometric constructions. The
+[results chapter](https://sashakolpakov.github.io/murakamis_dream/guide/results.html)
+states the precise hypotheses for each family.
 
 ## Planar constructions with arbitrarily many tangles
 
@@ -92,16 +105,21 @@ separate work.
 
 ## Reading and reproducing the work
 
+The [manuscript](manuscript/README.md) is the continuous proof account.
+Chapter 1 separates full volume theorems from completed partial results:
+a finite filling estimate and a theorem about one geometric contribution
+do not assert the volume limit for an arbitrary original invariant.
+New generalizations are included only when their arguments are complete.
+
 The [illustrated guide](https://sashakolpakov.github.io/murakamis_dream/)
-explains the results, definitions, and research methods. Its
+also explains the approaches that remain incomplete. Its
 [methods chapter](https://sashakolpakov.github.io/murakamis_dream/guide/methods.html)
 introduces the techniques, gives their literature references, and
 distinguishes completed arguments from proposed extensions. The
-[manuscript](manuscript/README.md) contains completed proofs with their
-exact hypotheses, including useful partial results. The
 [research library](https://sashakolpakov.github.io/murakamis_dream/library.html)
 retains the Fourier, torsor, weighted Cauchy, cube, and other approaches,
-including their obstructions and unfinished questions.
+including failed estimates and the reasons they failed. These historical
+notes are not additional premises of the manuscript's theorems.
 
 The illustrated guide is the maintained documentation. Former Sphinx
 addresses redirect to it; there is no second exposition to keep in sync.

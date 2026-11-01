@@ -1,5 +1,19 @@
 # Figure gallery
 
+## Summing the indices shared by two tangles
+
+![The lower map B acts first. Its two output indices i and j become the input indices of A and are summed together.](figures/finite-contraction.svg)
+
+Each box represents a linear map on \(V_N\otimes V_N\), where
+\(V_N\) has dimension \(N\). The outside indices \(a,b,c,d\) are fixed;
+the two internal indices \(i,j\) run from \(0\) to \(N-1\).
+Thus the drawing represents
+\((AB)^{ab}_{cd}=\sum_{i,j}A^{ab}_{ij}B^{ij}_{cd}\).
+The [introductory chapter](chapters/starting.md#what-the-finite-invariant-contains)
+explains how the crossing, cup, and cap matrices use this same rule.
+
+[Editable SVG](figures/finite-contraction.svg)
+
 ## The requirements of a volume proof
 
 ![An exact decomposition, a nonzero geometric contribution, a strict remainder bound, and an identification of the critical value with hyperbolic volume are separate parts of the proof.](figures/methods-proof-map.svg)

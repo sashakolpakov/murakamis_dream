@@ -91,11 +91,34 @@ Here \(c_0\) is a fixed vector of small-color Laurent polynomials, \(r_N\) is th
 
 The [pointed quantum \(A\)-volume corollary](../../notes/actual_conway_pointed_quantum_a_volume.md) proves that this exact signed scalar has the knot-volume limit above. It also gives a positive ratio of coefficients of Gram determinants, equal to a sum of squared color periods, with the corresponding volume limit. The signed scalar is not replaced by a matrix norm or by a sum of absolute values. The full ADO normalization is retained as a rational factor whose whole value at \(M=1\) is \(i^{N+3}/N\).
 
-The [strict-tree geometric longitude theorem](../../notes/actual_strict_tree_geometric_characteristic.md) identifies the selected curve with the preferred-longitude deformation for every covered strict long-filling presentation, including arbitrary product junctions without crossing circles. The full microscopic expansion then forces the selected geometric irreducible factor to divide the first nonzero classical symbol of every genuine all-level reduced annihilator. The corresponding earlier circle-tree theorem retains its summed condition or its local bound \(2^{-120}\). These operator conclusions require estimates for the whole expansion on shifted parameter neighborhoods; the leading profile of a new numerical criterion alone is not a substitute. Full quantum-module or recurrence-ideal equality remains a separate problem.
+The [strict-tree geometric longitude theorem](../../notes/actual_strict_tree_geometric_characteristic.md) identifies the selected curve with the preferred-longitude deformation for every covered strict long-filling presentation, including arbitrary product junctions without crossing circles. The full microscopic expansion then forces the selected geometric irreducible factor to divide the first nonzero classical symbol of every genuine all-level reduced annihilator.
+
+The [directed all-orders theorem](../../notes/actual_all_circle_directed_all_orders.md) proves the needed expansion separately for every presentation satisfying the directed criterion above. Define
+\[
+ H_N(s)=\frac{\sin(\pi s)}{N\sin(\pi s/N)},\qquad
+ \mathcal Z_N(s)=\frac{F_N(q_N^s)}{F_N(1)H_N(s)}.
+\]
+The removable value is \(H_N(0)=1\). For every fixed expansion order \(L\),
+\[
+ \log\mathcal Z_N(s)
+    =\sum_{r=1}^{L}N^{-r}p_r(s)+O(N^{-L-1}),
+       \qquad \deg p_r\le r+1.
+\]
+The estimate is uniform on each prescribed compact disk \(|s|\le R<1\), and on the fixed upper-half-plane compacts needed after shifting \(s\) by the finitely many integers in the operator. Constants may depend on the fixed diagram, powers, compact and order. Where lower coefficients differ by level parity, the expansion is taken on each parity subsequence; its highest-degree coefficients select the same action. This is an asymptotic expansion to every finite order, not a claim that the series converges or that bounded \(s\) can be replaced by a quantity of order \(N\).
+
+The degree bound retains the full local longitude germ, not only its cusp tangent. With the exact reduced/full gauge restored, the directed cases consequently have the same selected geometric-factor conclusion. The earlier summed and maximum-based criteria remain sufficient alternatives. None of these results identifies all classical factors and their multiplicities, or the entire quantum recurrence ideal.
+
+## A geometric contribution in a general Morse diagram
+
+The shared-face method has a broader statement with a different conclusion. A simple triangulated sphere with a perfect matching of its cubic dual gives ordered crossing regions: matching means that each dual vertex belongs to exactly one chosen dual edge. Retain the actual strand pairings, crossing disks and marked main edge. A **Morse presentation** arranges this diagram by height, so cups create two strands, caps remove two, and the number of strands can change between levels. The [general source theorem](../../notes/research_matched_sphere_morse_source.md) keeps those maps in the original coefficient formula; it does not require a fixed-width braid picture.
+
+The [geometric contribution theorem](../../notes/actual_morse_geometric_contribution.md) proves a nonzero asymptotic for the all-CROSS sector of that source, at both level parities, with the actual filled volume as its rate. CROSS is the central recurrence-path support defined in the [methods chapter](methods.md#exact-polynomials-and-shared-face-variables). The signed twist powers are fixed, independently sufficiently long, and have the original parity determining the main components. For a knot pairing, the geometric rate is the volume of that original knot complement.
+
+The theorem controls the entire Fourier filling of this sector, including all charges and endpoint currents. It requires neither terminal decoration nor a local balance condition. What remains open in this general unchanged diagram is the estimate on the other sectors of the full invariant. The balanced terminal-fan construction supplies such control for its decorated family, but adding those tangles generally changes the knot. This separates a proved geometric contribution from a full-invariant volume theorem.
 
 ## Other local tools, and their different scope
 
-The rest of this chapter explains methods developed for general augmented plat diagrams. A plat is a braid diagram closed by fixed cups and caps; its bridge width counts the chosen bridges. These results often hold at every fixed width, but some routes below still need a global estimate for unrestricted plats. This limitation concerns that route and class. It does not undo the complete proof just described.
+The rest of this chapter explains local methods developed for augmented plat diagrams. A plat is a braid diagram closed by fixed cups and caps; its bridge width counts the chosen bridges. Some later shared-source results also apply to the Morse diagrams just described, but each column or operator theorem keeps its own stated domain. These results often hold at every fixed width, while several routes below still need a global estimate for unrestricted plats. That limitation does not undo the complete tree and decorated-family theorems.
 
 A few recurring names have a concrete role. A **channel** is an intermediate representation label in a change of basis. A **Casimir matrix** is the operator whose eigenspaces label those channels. A **\(q\)-Hahn polynomial** is a finite polynomial appearing in an actual matrix column; its root locations can control cancellation. A **resolvent** is \((zI-\Omega)^{-1}\) for such a matrix \(\Omega\). A **Ward identity** is an exact relation between shifted or differentiated terms of the original sum. These objects are used to keep track of the full contraction, not to introduce another knot invariant.
 
@@ -155,7 +178,7 @@ The [completed-projector identity](../../notes/actual_matching_edge_completed_pr
 
 The resulting upper estimate is a positive scalar sum weighted by the native completed-projector and complementary-network costs. These costs are not assumed to be subexponential. This makes the remaining norm problem explicit without supplying a lower bound or changing the selected period.
 
-The [native-energy theorem](../../notes/actual_matching_edge_native_projector_energy.md) expresses the first of these costs through original columns and their exact bilinear measures. Every fixed derivative adds only a polynomial factor. The energy itself can grow exponentially: the degree-$t=m$ block of the simple midpoint projector at odd level $N=2m+1$ has rate $v_8/(2\pi)$. The full operator combines its physical degrees in one maximum or square sum; the wire constraints must remain shared when these operators are joined. This rules out dropping the energy as a normalization cost.
+The [native-energy theorem](../../notes/actual_matching_edge_native_projector_energy.md) expresses the first of these costs through original columns and their exact bilinear measures. Every fixed derivative adds only a polynomial factor. The energy itself can grow exponentially: the degree-$t=m$ block of the simple midpoint projector at odd level $N=2m+1$ has rate $v_8/(2\pi)$, where \(v_8\) is the volume of a regular ideal octahedron. The full operator combines its physical degrees in one maximum or square sum; the wire constraints must remain shared when these operators are joined. This rules out dropping the energy as a normalization cost.
 
 The [full matching-graph identity](../../notes/general_matching_graph_full_normal_source.md) is a complementary exact assembly tool: all folded sectors form one generic network with the original physical trace normal retained. It holds at both parities and uses the graph of the actual crossing-disk cut. No vanishing channel norm is inverted.
 
@@ -229,15 +252,19 @@ The [all-partner first-normal theorem](../../notes/actual_all_partner_first_norm
 
 ## Weighted Cauchy needs the right energy
 
-For a single complete physical column, write $C_j(t,u)$ for its entry at channel $j$, total degree $t$, and magnetic index $u=0,\ldots,t$. Let $\widehat f$ denote the finite Fourier transform specified by that column. The [exact Plancherel theorem](../../notes/actual_matching_edge_magnetic_energy_profile.md) now proves
+There are several different positive energies in this subject. Here the object is the norm of one physical matrix column, not the ordinary-color energy that isolates \(|K_N|^2\). Write \(d=N-1\), take a complete channel \(0\le j\le\lfloor d/2\rfloor\) and degree \(d-j\le t\le d\), and let \(C_j(t,u)\), \(0\le u\le t\), be its magnetic entries. The index \(u\) records a tensor weight within that column.
+
+In the following formula, \(\widehat f(u)\) is the specified terminating continuation of the column to noninteger \(u\); the hat does **not** mean the discrete Fourier transform. Its finite polynomial in \(q_N^{2u}\) is the object to which Fourier orthogonality is applied. The [exact Plancherel theorem](../../notes/actual_matching_edge_magnetic_energy_profile.md) proves
 
 $$\frac{N}{j+1}|\widehat f(t/2)|^2\leq\sum_{u=0}^t|C_j(t,u)|^2\leq N|\widehat f(t/2)|^2.$$
 
-The unused Fourier nodes vanish in the original polynomial, so the full discrete Fourier norm equals the actual physical norm. This works at both parities, including a half-integral midpoint. Combined with the exact bilinear measure, it gives the complete-channel energy profile and the full folded operator rate $5v_3/\pi$. Shared magnetic sums and phases remain when these operators are joined.
+The unused Fourier nodes vanish in the original polynomial, so the full discrete Fourier norm equals the actual physical norm. Its positive polynomial coefficients compare their square sum with the square of their sum, giving the two displayed bounds. This works at both parities, including a half-integral midpoint \(t/2\). Combined with the exact bilinear measure, it gives the complete-channel energy profile and the full folded operator rate \(5v_3/\pi\), where \(v_3\) is the volume of a regular ideal tetrahedron. Shared magnetic sums and phases remain when these operators are joined.
 
 The [shrinking-fold theorem](../../notes/actual_matching_edge_shrinking_fold_native_energy.md) extends that full real operator rate to every integer sequence $j/N\to1/2$. Fixed generic derivatives add only polynomial cost. This real norm statement permits a wider channel window than the separate complex-normal theorem; it supplies no complex confluent amplitude.
 
 There is also an exact [Fourier compiler for the complete-circle matching source](../../notes/actual_matching_graph_shared_cycle_fourier_compiler.md). Its matching magnetic indices are bounded integral Kirchhoff flows on the graph of physical cycles. The actual cups and caps make every cycle frequency even at both level parities, so its Fourier sums impose coupled congruences. The original mark supplies a one-unit charge. All source phases remain in this finite formula. Cauchy then gives a joint positive comparison of coherent cycle periods with the matching labels still shared.
+
+Here a Kirchhoff equation requires the signed sum of the incident integer flows to vanish at each vertex. A Fourier congruence requires a specified integer linear combination to equal the original charge modulo the transform length. These are restrictions on the same summation labels. They cannot be replaced by separate optimal choices at each crossing region. The mark is the original cut in the invariant; changing its charge without transporting the full finite source changes the evaluation.
 
 For a degree-$j$ polynomial $P(w)=\sum_k p_k w^k$ with the positive Fourier coefficients in question, the [coefficient-duality theorem](../../notes/actual_q_hahn_fourier_coefficient_variational.md) compares a coefficient with the best positive-radius bound. Their log-concavity gives
 

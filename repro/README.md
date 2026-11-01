@@ -101,7 +101,7 @@ spectral or first-derivative trace calculation in 48 finite cases,
 using 180 choices of root at 80-digit precision. The examples
 include both level parities, zero and signed powers, moving
 parameters, and constant channels with repeated spectral roots.
-All \(N\) edge indices are retained; removing the high indices
+All $N$ edge indices are retained; removing the high indices
 changes every tested value.
 
 These checks verify the constants and finite identities used by

@@ -1,4 +1,4 @@
-# Recovering the knot volume from a pointed quantum \(A\)-operator
+# Recovering the knot volume from a pointed quantum A-operator
 
 1 November 2026.
 

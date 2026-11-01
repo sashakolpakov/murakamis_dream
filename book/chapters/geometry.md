@@ -1,10 +1,55 @@
 # Why the limiting action is the actual knot volume
 
+The volume theorem has two geometric tasks. First, construct the
+hyperbolic metric on the complement of the link drawn by the specified
+diagram. Second, identify the normalized source action with that metric's
+volume. Face labels, orientations and peripheral curves enter both tasks.
+
+Throughout this chapter \(D\) is a fixed diagram. Its **augmented
+exterior** \(Y_D\) is obtained by surrounding each recorded twist region
+with an auxiliary crossing circle and retaining its specified half twist.
+Filling those auxiliary cusps with the recorded integer slopes restores
+the signed twist powers and produces the **filled exterior**
+\(S^3\setminus K_{\boldsymbol p}\) when the main strands form a knot.
+The knot cusp is left unfilled. The complete augmented action is
+\[
+             \Phi_D=\frac{\operatorname{Vol}(Y_D)}{2\pi}.
+\]
+A filled quantum asymptotic instead uses the generally smaller value
+\(\operatorname{Vol}(S^3\setminus K_{\boldsymbol p})/(2\pi)\).
+Here \(N\) denotes the quantum level; all diagram and filling data are
+fixed before \(N\) tends to infinity.
+
+For the [strict Conway tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md),
+the geometric construction, nonzero quantum contribution and bound on the
+remaining terms are all proved. The planar constructions below also
+establish their specified complements and marked deformations. For a
+general planar source, selecting the geometric contribution from the
+full quantum expression remains a separate estimate. The
+[results](results.md) and [frontier](frontier.md) chapters keep those
+scopes distinct.
+
+## The geometric objects and the required checks
+
+Start with the augmented diagram: each twist region has an auxiliary crossing circle around its two strands. Cutting along the projection sphere and the original crossing disks divides its exterior into pieces with labeled faces. The labels remember exactly how to glue the pieces back. They also remember which curves on each torus end are the original meridian and longitude.
+
+An **ideal vertex** lies at the boundary at infinity of hyperbolic space. A small horosphere about it cuts a Euclidean polygon from each adjacent cell. These polygons are the vertex links. In a complete link complement, the polygons around each end glue to a Euclidean torus. This torus is a cross-section of a **cusp**, the noncompact end of the manifold. Checking only that the dihedral angles sum to \(2\pi\) does not establish cusp completeness; the horospherical polygons must also match with the correct translations.
+
+An **angle structure** assigns positive dihedral angles to the proposed cells while satisfying their internal angle relations and the sum around every glued edge. Its volume is the sum of the cell volumes. The angles still retain the actual incidence equations: two copies of one manifold edge are not independent variables. At an interior maximum, variation in every allowed direction gives the shape-matching equations. The proof must then show that these equations produce the original face pairings and complete ends.
+
+A **marked** construction retains the chosen peripheral curves and their basepaths. This matters after filling. The equation that closes a meridian disk depends on a primitive pair of curves on the torus, not just on an unlabeled complex cusp shape. Replacing a primitive longitude by twice that curve would change the filling problem.
 
 ## The circle packing for a general planar core
 
+A **simple white triangulation** is a triangulation of the projection
+sphere with no loop or repeated edge. Its vertices label white faces of
+the cut diagram. A perfect matching of the cubic dual pairs its triangles
+into crossing disks; the cyclic orders record the four surrounding
+strand ends. This matching and the chosen half twists determine which
+main strands join, so the knot condition is a separate component test.
+
 The [planar decoration theorem](../../notes/actual_balanced_terminal_fan_volume.md)
-constructs its geometry from a simple triangulation of the sphere. Remove
+constructs the geometry of every such labeled simple sphere. Remove
 one triangle and prescribe three mutually tangent boundary circles.
 Maximize the concave angle function subject to angle sum \(\pi\) in
 each triangle and \(2\pi\) at each interior vertex. The proof establishes
@@ -26,18 +71,19 @@ the original sphere has separating triangles or the tangle connections
 have cycles. The two projection copies recover the actual augmented
 link, with the original crossing-disk face maps.
 
-The complete metric is the starting point for filling. The selected
-peripheral logarithms satisfy the actual primitive equation
+The complete metric is the starting point for filling. At circle \(e\),
+let \(\mu_e\) be the disk-framed meridian and \(\lambda_e\) its
+complementary primitive longitude. The logarithms \(U_e,V_e\) are
+logarithms of their projective similarity multipliers, with the branches
+continued from the complete structure. They are twice logarithms of
+the corresponding determinant-one eigenvalues. The selected
+peripheral logarithms satisfy the primitive equation
 \(U_e+p_eV_e=-2\pi i\). The logarithmic cusp development has angular
 period \(2\pi\), so its metric completion is a smooth solid torus on
 that slope. The main meridian and longitude remain parabolic and the
 knot cusp is complete. Thus the final volume is that of the knot
 complement; it is generally smaller than the augmented volume.
 
-
-A formula involving dilogarithms is not yet a geometric volume formula. To obtain the volume on the right side of the theorem, the proof must construct the intended manifold, verify its metric, and retain the meridian and longitude used for each filling. This chapter explains those steps and the different roles of the local geometric results.
-
-For the [strict Conway tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md), all of these steps are proved. The full quantum estimates and the nonzero local contribution are proved as well. The result concerns the actual resulting knot complement, with its main cusp left unfilled. The more general plat constructions discussed later have their own hypotheses; a missing estimate in one of those routes is not a gap in the strict-tree theorem.
 
 ## Filling conditions checked at individual circles
 
@@ -67,16 +113,6 @@ it suffices that every vertex independently satisfy
 pairing. This proves the actual complement-volume equality.
 The summed criterion remains a useful alternative. The geometric
 bound \(630\) alone is not a quantum estimate.
-
-## The geometric objects and the required checks
-
-Start with the augmented diagram: each twist region has an auxiliary crossing circle around its two strands. Cutting along the projection sphere and the original crossing disks divides its exterior into pieces with labeled faces. The labels remember exactly how to glue the pieces back. They also remember which curves on each torus end are the original meridian and longitude.
-
-An **ideal vertex** lies at the boundary at infinity of hyperbolic space. A small horosphere about it cuts a Euclidean polygon from each adjacent cell. These polygons are the vertex links. In a complete link complement, the polygons around each end glue to a Euclidean torus. This torus is a cross-section of a **cusp**, the noncompact end of the manifold. Checking only that the dihedral angles sum to \(2\pi\) does not establish cusp completeness; the horospherical polygons must also match with the correct translations.
-
-An **angle structure** assigns positive dihedral angles to the proposed cells while satisfying their internal angle relations and the sum around every glued edge. Its volume is the sum of the cell volumes. The angles still retain the actual incidence equations: two copies of one manifold edge are not independent variables. At an interior maximum, variation in every allowed direction gives the shape-matching equations. The proof must then show that these equations produce the original face pairings and complete ends.
-
-A **marked** construction retains the chosen peripheral curves and their basepaths. This matters after filling. The equation that closes a meridian disk depends on a primitive pair of curves on the torus, not just on an unlabeled complex cusp shape. Replacing a primitive longitude by twice that curve would change the filling problem.
 
 ## The geometric proof for the explicit degree-and-twist bound
 
@@ -138,6 +174,13 @@ The [marked deformation theorem for the full strict class](../../notes/actual_co
 
 Write the actual twist weight as \(n_i=\epsilon_i-2p_i\), with \(\epsilon_i\in\{0,\pm1\}\) recording a retained half twist. The filling equation uses the primitive basis of this actual half-twisted link. For every fixed choice of sufficiently large independent signed \(p_i\), the nearby solution gives a smooth filling of the auxiliary cusp. The main knot cusp is never filled. The action, with its boundary correction, equals the volume of that resulting knot complement. The quantum theorem uses exactly this solution and normalization.
 
+The peripheral deformation viewpoint has its classical foundation in
+[Neumann and Zagier, *Volumes of hyperbolic three-manifolds*](https://archive.mpim-bonn.mpg.de/id/eprint/1122/).
+The diagram-specific work here determines the primitive words,
+the factor of two between multipliers and eigenvalues, and the absolute
+constant of the source action. Those choices are retained when applying
+the filling equations.
+
 The next sections give further details and explain the older constructions that supplied parts of this argument.
 
 ## The full geometric longitude for strict trees
@@ -147,8 +190,11 @@ curve, but the [strict-tree longitude theorem](../../notes/actual_strict_tree_ge
 identifies the entire nearby curve for every covered strict
 long-filling construction. A meridian goes once around the
 knot. Its preferred longitude follows the knot once with zero
-linking number. Let \(M\) and \(L\) be their determinant-one
-holonomy eigenvalues on the same line.
+linking number. Choose a local lift of the holonomy to determinant-one matrices.
+Let \(M\) be the meridian eigenvalue and \(L\) the preferred-longitude
+eigenvalue on the same selected line. The complete lift used here has
+\((M,L)=(1,-1)\). These are eigenvalues, unlike the projective
+multipliers \(e^{U_e},e^{V_e}\) used at the auxiliary cusps.
 
 Write \(\mathcal E_T\) for the original physical quarter-turn
 edges, and let \(x_e(M)\) be their continued stationary indices.
@@ -162,6 +208,21 @@ Here \(w(D)\) is the oriented writhe and \(n_i\) are the
 original signed crossing powers. The filling path fixes the
 logarithms and selects the branch; algebraic elimination
 without that marking would retain other representations.
+
+The preferred longitude changes under auxiliary surgery even though the
+main torus is not filled. If \(\lambda_{\mathrm{aug}}\) denotes the
+image of the augmented longitude on the filled main torus, then
+\[
+ \lambda_{\mathrm{fill}}
+   =\lambda_{\mathrm{aug}}+
+        \left(\sum_e p_e\,\operatorname{lk}(K,C_e)^2\right)\mu_K
+\]
+in its peripheral homology, with the disk-framed signs of the theorem.
+This integral change of basis is one source of the framing exponent
+in the formula for \(L(M)\).
+
+![The two parallelograms use the same filled main-cusp lattice. The image of the augmented longitude is replaced by the preferred filled longitude after adding four meridians in the illustrated linking-two surgery.](../figures/main-cusp-longitude-shear.svg)
+
 
 The extension to a junction without a crossing circle uses
 a literal identity box \(R^0\). Add a crossing circle around
@@ -211,7 +272,14 @@ A cap closure joins the two upper endpoints to one another and the two lower end
 
 The [algebraic optimizer theorem](../../notes/positive_source_algebraic_volume_period.md) applies to every rational affine ideal-angle problem with positive rational weights. On the smallest face containing the maxima, flat atoms contribute zero. The remaining Hessian is definite after quotienting by the rational directions that leave all nonflat angles unchanged. Exponentiated stationarity then proves that the nonflat shapes are algebraic, including boundary and nonunique maxima.
 
-The Bloch group packages algebraic tetrahedron shapes together with the relations obtained by changing a triangulation. Its regulator evaluates those shape symbols by the oriented dilogarithm volume. The [Bloch regulator calculation](../../notes/actual_positive_source_bloch_regulator.md) proves that the conjugate-antisymmetrized shape sum is a rational Bloch class with regulator equal to the source maximum. For the retained cylindrical factors, the new actual cell realization supplies its geometric interpretation. The class comparison takes place after passing to a common finite conjugation-stable number field containing the source shapes and all glued ideal vertex coordinates. The two copies have opposite mirror orientations, producing precisely the shape symbols $[z]-[\overline z]$ of the geometric fundamental chain; no identification with the geometric trace field is claimed.
+The Bloch group packages algebraic tetrahedron shapes together with the relations obtained by changing a triangulation. Its regulator evaluates those shape symbols by the oriented dilogarithm volume. For a shape \(z\notin\{0,1\}\), the
+Bloch–Wigner dilogarithm gives the signed volume of the corresponding
+ideal tetrahedron. A sum of shape symbols records the tetrahedra with
+their orientations; the gluing relations remove its boundary.
+[Neumann's extended Bloch-group construction](https://arxiv.org/abs/math/0307092)
+also records logarithmic choices needed for the complex
+Cheeger–Chern–Simons invariant. Here the real volume regulator is
+calibrated on the specified geometric fundamental chain. The [Bloch regulator calculation](../../notes/actual_positive_source_bloch_regulator.md) proves that the conjugate-antisymmetrized shape sum is a rational Bloch class with regulator equal to the source maximum. For the retained cylindrical factors, the new actual cell realization supplies its geometric interpretation. The class comparison takes place after passing to a common finite conjugation-stable number field containing the source shapes and all glued ideal vertex coordinates. The two copies have opposite mirror orientations, producing precisely the shape symbols $[z]-[\overline z]$ of the geometric fundamental chain; no identification with the geometric trace field is claimed.
 
 For a fixed positive Conway expression \(E\) in that earlier seed-generated grammar, let \(Z_{E,N}\) be its complete quantum sum. Its statement is
 
@@ -238,7 +306,14 @@ The [odd-coupon deformation](../../notes/actual_odd_conway_marked_peripheral_def
 
 $$U_i^\epsilon=U_i^0-\frac{\epsilon_i}{2}V_i^0,\qquad V_i^\epsilon=V_i^0,\qquad G_\epsilon=G_0-\sum_i\frac{\epsilon_i}{8}(V_i^0)^2.$$
 
-These are also the exact derivatives and quadratic correction of the selected finite-source action. Write $M_i=e^{U_i}$ and $L_i=e^{V_i}$ for these auxiliary peripheral multipliers. On the marked double cover $\ell_i^2=L_i$, the half-longitude change becomes the integral monomial map $M_i^\epsilon=M_i^0\ell_i^{-\epsilon_i}$. The source selects the square root and its logarithm. The square root is part of the marked data. Changing it changes the logarithmic branch, so it cannot be discarded when comparing the source and the filling equation. This is the concrete peripheral data described as a torsor in the technical note.
+These are also the exact derivatives and quadratic correction of the selected finite-source action. Write $M_i=e^{U_i}$ and $L_i=e^{V_i}$ for these auxiliary peripheral multipliers. On the marked double cover $\ell_i^2=L_i$, the half-longitude change becomes the integral monomial map $M_i^\epsilon=M_i^0\ell_i^{-\epsilon_i}$. The source selects the square root and its logarithm. The square root is part of the marked data. Changing it changes the logarithmic branch, so it cannot be discarded when comparing the source and the filling equation. The two possible square roots form a two-point
+choice over a fixed nonzero \(L_i\); continuing a logarithm also records
+integer multiples of \(2\pi i\). The term *torsor* means that a group
+acts freely and transitively on such choices, without a distinguished
+choice until a reference is fixed. This square-root cover is different
+from the continuous freedom to rescale cusp horospheres, and from the
+local Casimir transport curve described in the
+[operator discussion](frontier.md#direct-twist-transport-and-the-classical-operator-question).
 
 ![Left: a primitive filling slope on a schematic cusp torus. Right: local sheets of the peripheral square-root cover, with the selected branch and integral shear.](../figures/peripheral-torsor.png)
 
@@ -284,13 +359,33 @@ The [source-volume certificate](../../notes/source_volume_casson_rivin_certifica
 
 ## A general certificate through volume maximization
 
+For an ideal tetrahedron, its three independent positive
+dihedral angles \(\alpha,\beta,\gamma\) have sum \(\pi\), and its
+volume is
+\[
+ \Lambda(\alpha)+\Lambda(\beta)+\Lambda(\gamma),\qquad
+ \Lambda(t)=-\int_0^t\log|2\sin u|\,du.
+\]
+An ideal triangulation imposes additional linear sums \(2\pi\) around
+the manifold edges. These equations define its angle polytope.
+Casson and Rivin's variational method recovers the nonlinear shape
+equations by differentiating the sum of these volumes.
+[Rivin's 1994 paper](https://annals.math.princeton.edu/1994/139-3/p02)
+is a primary source for the volume method; the
+[proof by Futer and Guéritaud](https://arxiv.org/abs/1004.0440)
+explains the completeness implication in terms of angle variations.
+
 For an actual marked ideal triangulation with torus vertex links, the [positive gluing criterion](../../notes/general_marked_positive_gluing_certificate.md) gives a direct proof of the Casson–Rivin equivalence: an interior critical point of the ideal-tetrahedron volume function is exactly a complete positive gluing. Strict concavity makes it the unique maximum, including over the closed angle polytope, and its value is the actual complement volume.
 
 The proof keeps the geometry explicit. Lagrange multipliers prescribe one truncated length for each global edge. These lengths determine compatible corner horospheres; the face maps then match them, giving complete flat cusp tori. Conversely, compatible horospheres make the geometric volume stationary under all allowed angle variations.
 
 There is a finite algebraic certificate using positive upper-half-plane phases and positive multiplier variables. The unique optimum has algebraic shapes. Neither its dilogarithm volume nor the original quantum period is asserted to be an algebraic number. Existence of an interior optimum on a proposed triangulation, and selection of its period by the quantum source, remain distinct questions.
 
-For fixed critical shapes, the positive multiplier solutions form a concrete torsor: one independent positive horosphere scale per cusp acts freely and transitively. This accounts for the decoration freedom in the algebraic certificate. It does not yet determine the quantum period, and extending the action to complex scalars requires retaining its sign kernels.
+For fixed critical shapes, choosing a horosphere at one cusp and then
+rescaling it changes the decoration but leaves the hyperbolic metric
+unchanged. With \(c\) cusps these independent choices form a torsor
+for \((\mathbb R_{>0})^c\): there is one and only one tuple of scales
+taking one decoration to another. This accounts for the decoration freedom in the algebraic certificate. It does not yet determine the quantum period, and extending the action to complex scalars requires retaining its sign kernels.
 
 For augmented plats, the [actual matching-graph construction](../../notes/general_augmented_plat_matching_geometry.md) is one way to supply this certificate: a positive labeled right-angled polyhedron gives the marked complete exterior and an explicit positive ideal triangulation. The general gluing criterion does not require that particular polyhedral decomposition or a bound on bridge width.
 

@@ -64,6 +64,18 @@ class FormulaRendering(unittest.TestCase):
         parser.feed('<math><merror><mtext>bad formula</mtext></merror></math>')
         self.assertTrue(parser.math_errors)
 
+    def test_malformed_delimiter_outside_math_span_is_detected(self):
+        parser = Links()
+        parser.feed(r"<p>The unsummed \(a)-sum is retained.</p>")
+        self.assertTrue(parser.math_errors)
+
+    def test_literal_tex_in_code_and_math_annotation_is_allowed(self):
+        parser = Links()
+        parser.feed(r'<code>\frac{x}{y}</code><math><mi>x</mi>'
+                    r'<annotation encoding="application/x-tex">\frac{x}{y}'
+                    r'</annotation></math>')
+        self.assertFalse(parser.math_errors)
+
 
 if __name__ == "__main__":
     unittest.main()

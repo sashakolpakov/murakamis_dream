@@ -2,6 +2,11 @@
 
 The calculations in this guide pass through three kinds of object: a finite quantum expression, a function describing its large-level growth, and a geometric structure on a specified link complement. A symbol does not acquire a geometric meaning merely because it occurs in a critical-point equation. The proof must identify the relevant matrix, path, or gluing map. This chapter gives the conventions needed to read those identifications and to compare the different approaches in the [mechanism](mechanism.md) and [geometry](geometry.md) chapters.
 
+For a first reading, [From a knot diagram to a volume limit](starting.md)
+defines the topological objects, writes out a finite contraction, and
+derives the coefficient estimate. This chapter is a reference for the
+notation used after those definitions.
+
 Letters are reused in the technical archive. In particular, a tangle turn, a crossing matrix, and a shift of a meridian variable are different operations. Local definitions take precedence when a note uses another convention.
 
 ## The invariant and the order of limits
@@ -11,7 +16,7 @@ Fix the diagram, its ordered tangle construction, its integer twist powers, and 
 | Symbol | Meaning |
 | --- | --- |
 | \(N\ge2\) | Quantum level. Unless a theorem states otherwise, the limit includes both parities and composite levels. |
-| \(q_N=e^{\pi i/N}\), \(Q_N=q_N^2\) | The chosen root and its square. In a fixed-level calculation, the subscripts are often omitted. |
+| \(q_N=e^{\pi i/N}\), \(Q_N=q_N^2\) | The chosen root and its square. The methods chapter also writes \(\zeta_N=Q_N\). In a fixed-level calculation, the subscripts are often omitted. |
 | \(d=N-1\) | Top index in the \(N\)-dimensional physical module. |
 | \(\zeta\) | A generic quantum parameter when a derivative is taken before root specialization. |
 | \([j]_\zeta=(\zeta^j-\zeta^{-j})/(\zeta-\zeta^{-1})\) | Symmetric quantum integer. |

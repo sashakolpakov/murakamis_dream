@@ -13,7 +13,7 @@ The left side measures exponential growth: a value of the form $N^a e^{NV/(2\pi)
 
 This project studies the conjecture by cutting knot diagrams into tangles and keeping their finite evaluations and geometric face identifications together. One construction starts from a planar diagram encoded by a simple triangulation of the sphere. Other results treat **Conway algebraic, or arborescent, knots**, built by joining and turning rational tangles. The planar construction gives broad families after a specified finite decoration; the tree results also give explicit degree and twist bounds.
 
-The [manuscript](manuscript.md) contains completed proofs with their exact scope. This guide also explains the research approaches that have not yet produced a general theorem. Start with [methods and approaches](methods.md) for the definitions, examples, and literature behind Fourier energy, weighted Cauchy, angle optimization, quantum recurrences, and torsors. The [notation chapter](notation.md) fixes the symbols and normalizations used throughout.
+The [manuscript](manuscript.md) contains completed proofs with their exact scope. This guide also explains the research approaches that have not yet produced a general theorem. Start with [the knot diagram and its finite evaluation](starting.md) for the definitions of tangles, filling, colors, and shared coefficients. Then [methods and approaches](methods.md) explains Fourier energy, weighted Cauchy, angle optimization, quantum recurrences, and torsors, with examples and literature references. The [notation chapter](notation.md) collects the symbols and normalizations.
 
 ## A general planar construction
 

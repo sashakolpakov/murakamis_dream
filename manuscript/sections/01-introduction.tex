@@ -1,12 +1,12 @@
 \chapter{The knots, the theorems, and their proofs}\label{ch:introduction}
 
 \section{What the theorem compares}
-The volume conjecture asks whether the growth of a sequence of finite knot invariants recovers hyperbolic volume. For each integer $N\ge2$, the invariant is evaluated at a root of unity and produces a complex number. For a hyperbolic knot, the complement carries a complete finite-volume hyperbolic metric. The proposed comparison is
+The volume conjecture asks whether the growth of a sequence of finite knot invariants recovers hyperbolic volume. For each integer $N\ge2$, set $q_N=e^{\pi\ii/N}$. Write $\langle K\rangle_N$ for the reduced Kashaev invariant of a knot $K$ at this level, normalized to equal one on the unknot. For a hyperbolic knot, the complement carries a complete finite-volume hyperbolic metric. The proposed comparison is
 \[
  \frac{2\pi}{N}\log|\langle K\rangle_N|
  \longrightarrow \Vol(S^3\setminus K).
 \]
-The normalization of $\langle K\rangle_N$ matters: throughout this paper the unknot has value one, and Chapter~\ref{ch:source} specifies the matrices and traces defining the invariant. Kashaev introduced the finite invariant in \cite{Kashaev1995} and the volume proposal in \cite{Kashaev1997}. Its relation with the root-of-unity colored Jones polynomial is described in \cite{MurakamiMurakami2001}.
+Chapter~\ref{ch:source} specifies its crossing matrices, traces and framing convention. Kashaev introduced the finite invariant in \cite{Kashaev1995} and the volume proposal in \cite{Kashaev1997}. Its relation with the root-of-unity colored Jones polynomial is described in \cite{MurakamiMurakami2001}.
 
 The first theorem proves this limit for the recursive family of knot diagrams constructed below, once every designated twist region has sufficiently many twists. The family permits arbitrary finite branching and nesting, subject to its precise construction rule. Chapters~\ref{ch:quantitative-circle-trees}, \ref{ch:local-circle-messages} and~\ref{ch:directed-circle-messages} treat ordered trees with one crossing-circle operator at every junction. They give explicit sufficient conditions involving degrees and signed crossing powers, both summed over vertices and imposed locally. The strongest simple local bound allows each vertex to have either sufficiently large degree or sufficiently many twists. We first explain the geometric operations and then state the construction scopes. Every construction records an actual diagram, including the order of its pieces and the positions where they are joined.
 
@@ -34,7 +34,7 @@ Decorated planar diagrams &
 The full invariant has the volume limit after the specified finite decoration and sufficiently long fillings of all original and added circles. The decoration can change the knot. &
 Chapter~\ref{ch:balanced-terminal-fans}; Appendix~\ref{app:balanced-terminal-fans}.\\[5pt]
 Preferred longitude and recurrence &
-The actual meridian expansion determines the selected geometric factor in the covered full-source classes. Equality of entire recurrence ideals is not asserted. &
+The preferred-longitude identity and full meridian expansion force one geometric factor in any existing all-level annihilator. No recurrence-ideal equality is asserted. &
 Chapter~\ref{gc:chapter}; Appendices~H--J and M.\\[5pt]
 Finite filling functionals &
 A level-independent norm bound for inserting each fixed twist power. This is a finite estimate, not a source-volume theorem. &
@@ -57,7 +57,7 @@ limit.
 \section{A planar construction beyond tangle trees}
 Chapter~\ref{ch:balanced-terminal-fans} starts from a finite simple triangulation of the sphere with at least four vertices. Pair adjacent triangles so that every triangle belongs to exactly one pair; equivalently choose a perfect matching in the cubic dual graph. The paired triangles specify crossing-circle boxes, and the remaining edges specify their strand connections. This constructs an augmented link in the three-sphere with its actual disk framings. The proof also gives a half-twist pattern for which the main strands form a knot.
 
-The construction adds an even number of terminal tangles on each side of each original crossing circle. Every added tangle has odd crossing parity. The required numbers are chosen by an explicit recurrence in the complete circle curvatures. After these finitely many additions, all original and added twist regions may be filled independently with sufficiently long signed powers. The resulting knot is hyperbolic and has the volume limit above. The threshold depends on the fixed decorated diagram. No tree decomposition, common sign, or comparison of twist magnitudes is required.
+The construction adds an even number of terminal tangles on each side of each original crossing circle. Every added tangle has odd crossing parity. The required numbers are chosen by an explicit recurrence in the complete packing curvatures: the curvature of a finite packing circle is the reciprocal of its radius, while the two protected lines have curvature zero. After these finitely many additions, all original and added twist regions may be filled independently with sufficiently long signed powers. The resulting knot is hyperbolic and has the volume limit above. The threshold depends on the fixed decorated diagram. No tree decomposition, common sign, or comparison of twist magnitudes is required.
 
 The added tangles preserve the chosen endpoint pairing but generally change the knot type. Thus this result constructs new covered knots from arbitrary cores in the stated combinatorial class; it does not assert the equality for the unchanged core. Its proof controls the full finite coefficient and all Fourier charges. Appendix~\ref{app:balanced-terminal-fans} includes the circle-packing construction, the exact source after insertion, the nonzero leading contribution, and the primitive metric completion. The earlier chapters develop the tree methods and their explicit bounds separately.
 
@@ -109,7 +109,7 @@ For example, $C((hh)(hh))$ uses four elementary pieces, with two in each of the 
 
 The last condition in Definition~\ref{def:grammar} is important: both boxes joined by the final cylindrical closure must be completed. The proof uses it to place every stationary leaf parameter strictly above $1/4$, as shown in Lemma~\ref{lem:port-bounds}. Chapters~\ref{ch:source}--\ref{ch:filling} retain this condition. The different class in Chapter~\ref{ch:quantitative-circle-trees} has its own finite-source estimates and geometric completion; it is not inserted into this recursive proof by changing the meaning of ``completed.''
 
-The filled elementary pieces in \eqref{eq:rational-leaf} are rational tangles. Ordered stacking and quarter-turns of rational tangles produce Conway algebraic, or arborescent, links. Thus the construction gives a specified family within that class; it is not a classification of all arborescent knots. The choice of $\eps$ must make the final diagram one component and create no closed main component inside a box. Section~\ref{sec:pairings} gives a finite endpoint-pairing test and proves that a suitable choice exists for every allowed construction. Changing $p_\ell$ adds full twists and therefore does not change this component test.
+The filled elementary pieces in \eqref{eq:rational-leaf} are rational tangles; see \cite{KauffmanLambropoulou2004} for their classification and fraction conventions. Our endpoint and crossing conventions are fixed above. Ordered stacking and quarter-turns of rational tangles produce Conway algebraic, or arborescent, links. Thus the construction gives a specified family within that class; it is not a classification of all arborescent knots. The choice of $\eps$ must make the final diagram one component and create no closed main component inside a box. Section~\ref{sec:pairings} gives a finite endpoint-pairing test and proves that a suitable choice exists for every allowed construction. Changing $p_\ell$ adds full twists and therefore does not change this component test.
 
 \section{The long-twist theorem}
 \begin{theorem}[Long-twist volume limit]\label{thm:main}
@@ -129,7 +129,7 @@ The reduced invariant $\langle\cdot\rangle_N$ has unknot value one. Chapter~\ref
 The isolated closures $C(h^s)$, $s\ge3$, form a separate inherited family; Section~\ref{sec:isolated} works out $C(h^3)$ explicitly. The isolated $C(hh)$ is excluded: its even-level evaluation vanishes and its odd-level contribution lies on a flat boundary. General closures with a single elementary piece on one side, such as $C(hE)$, are also outside Theorem~\ref{thm:main}. For instance, $C(h\Turn(h^s))$ places the inner complete leaf parameters at $1/4$, outside the interval used in the first proof. Such a circle-tree presentation can instead fall under Theorem~\ref{thm:circle-quantitative} when its explicit degree and twist condition holds. The exclusions in this paragraph concern Theorem~\ref{thm:main}.
 
 \section{An explicit criterion for circle trees}
-The second construction uses the same actual stacking, quarter-turn and closing operations. At each vertex of a finite ordered tree put one crossing box with signed power $n_v$; its augmented version retains that box's crossing circle. Each tree edge is a quarter-turn of a child tangle. There are no unmarked product junctions, and terminal crossing circles are vertices of degree one. The cyclic order and the position of the crossing box among its children remain part of the diagram. Section~\ref{sec:circle-the-knot-construction} gives the full recursion.
+The second construction uses the same actual stacking, quarter-turn and closing operations. At each vertex of a finite ordered tree with at least one edge put one crossing box with signed power $n_v$; its augmented version retains that box's crossing circle. Each tree edge is a quarter-turn of a child tangle. There are no unmarked product junctions, and terminal crossing circles are vertices of degree one. The cyclic order and the position of the crossing box among its children remain part of the diagram. Section~\ref{sec:circle-the-knot-construction} gives the full recursion.
 
 If $d_v$ is the degree of vertex $v$, Theorem~\ref{thm:circle-quantitative} proves hyperbolicity and the same volume limit under the explicit condition
 \[
@@ -170,15 +170,35 @@ every nonzero value of $M$ exclude all zeros and poles. The remaining
 monomial is fixed by the preferred framing; a Seifert surface fixes
 the determinant-one sign at the complete cusp.
 
-Appendix~\ref{app:filtered-characteristic} extracts a classical
-characteristic from the full asymptotic expansion of the actual
-invariant. Combining it with the geometric identity proves that the
-selected geometric factor divides the classical symbol of every
-fixed all-level annihilating operator under the stated source
-hypotheses. Appendix~\ref{app:geometric-characteristic} gives the
-circle-tree representation and algebraic proofs. Appendix~\ref{app:strict-tree-geometric-characteristic} treats the unmarked product junctions and transfers the intrinsic result through the net-twist and closure reductions. This factor statement
-does not identify the other factors of a recurrence or extend the
-volume limits to arbitrary short twists.
+Appendix~\ref{app:filtered-characteristic} uses the full asymptotic
+expansion of the actual invariant to constrain a quantum recurrence.
+Here an \emph{all-level annihilator} is a fixed nonzero operator
+\[
+ P(q,M,T)=\sum_{j=0}^r a_j(q,M)T^j,\qquad
+ a_j\in\CC(q,M),\qquad (TF)(M)=F(qM),
+\]
+which annihilates the actual zero-framed reduced state at every
+sufficiently large level $q=q_N$. After clearing denominators and
+removing the common order of vanishing at $q=1$, its first nonzero
+specialization is the \emph{classical symbol}, with the shift $T$
+replaced by a commuting longitude variable. The theorem assumes such
+an annihilator; it does not construct one.
+
+Combining the source expansion with the preferred-longitude identity
+shows that this symbol is divisible by the irreducible factor of the
+selected geometric meridian--longitude curve. The selected curve is
+the component containing the oriented discrete-faithful knot
+representation, with the preferred longitude lift fixed in
+Chapter~\ref{gc:chapter}. Appendix~\ref{app:geometric-characteristic}
+gives the circle-tree representation and algebraic proofs.
+Appendix~\ref{app:strict-tree-geometric-characteristic} treats unmarked
+product junctions and transfers the intrinsic result through the
+stated net-twist and closure reductions.
+Chapter~\ref{ch:directed-all-orders} and
+Appendix~\ref{app:directed-all-orders} supply the required expansion
+for every directed certificate. The result identifies one factor,
+not the entire A-polynomial or recurrence ideal, and it does not
+extend the volume limits to arbitrary short twists.
 
 \section{A guide to the proof and its terminology}\label{sec:proof-language}
 The long-twist proof first studies the augmented diagram, in which the auxiliary circles are still present, and then performs their fillings by an exact finite identity. A \emph{color} is the integer label specifying the representation assigned to an auxiliary circle. At level $N$ these labels range from $1$ to $N$. Before filling, the evaluation therefore depends on a tuple of colors. We call this finite, color-dependent evaluation the \emph{source}. The \emph{complete-color source} means that every auxiliary color equals $N$; the term is distinct from completeness of a hyperbolic metric.
@@ -241,4 +261,4 @@ chapters and appendices indicated above.
 \section{Conventions and verification}
 All logarithms on a positive real interval are real. Complex logarithms and square roots continue those values on the explicitly chosen neighborhoods. We use $\arccot X\in(0,\pi)$ for real $X$ and $\ii^2=-1$. Constants may depend on the fixed construction, its selected strict stationary point and a fixed analytic neighborhood, but not on $N$. A polynomial factor means a bound by $N^C$ with such a fixed exponent.
 
-The appendices give the finite identities and detailed analytic estimates for the long-twist argument. Chapter~\ref{ch:quantitative-circle-trees} gives the quantitative theorem and links its complete finite-sum, ordered-cut and geometric completion proofs. The certificate files contain rational candidate points and exact domain subdivisions; the verifier proves their supporting inequalities using outward rational bounds. Numerical optimization is not part of verification. Chapter~\ref{ch:reproduction} explains which claims are analytic proofs, which depend on these finite certificates, and which are merely checked by optional experiments.
+The appendices give the finite identities and detailed analytic estimates for the long-twist argument. Chapter~\ref{ch:quantitative-circle-trees} states the summed quantitative theorem; Appendices~\ref{app:quantitative-sums} and~\ref{app:quantitative-geometry} give its complete finite-sum, ordered-cut and geometric completion proofs. The local and directed extensions are proved in Appendices~\ref{app:local-messages} and~\ref{app:directed-circle-messages}. The certificate files contain rational candidate points and exact domain subdivisions; the verifier proves their supporting inequalities using outward rational bounds. Numerical optimization is not part of verification. Chapter~\ref{ch:reproduction} explains which claims are analytic proofs, which depend on these finite certificates, and which are merely checked by optional experiments.

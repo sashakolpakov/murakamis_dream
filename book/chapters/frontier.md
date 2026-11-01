@@ -1,5 +1,19 @@
 # What remains to be proved
 
+This chapter keeps completed constructions and exploratory methods in
+one place while recording what each method still needs. A geometric
+metric, an exact finite quantum formula and a bound selecting its leading
+contribution are three different inputs. When all three have been proved
+for a stated class, the volume limit is a theorem for that class even if
+another route to it remains incomplete.
+
+The first sections describe the covered knot families and their remaining
+parameter restrictions. The later sections follow alternative
+representations of the invariant: shared face coefficients, external
+colors, smoothing, Fourier periods and local operator curves.
+Each link leads to the precise hypotheses and normalization used by that
+approach. The [notation chapter](notation.md) fixes the level, color,
+meridian and twist conventions.
 
 ## The planar decoration result and the remaining general problem
 
@@ -226,6 +240,24 @@ the displayed criterion.
 
 ## What the full expansion now forces on the recurrence
 
+A knot-group representation assigns determinant-one complex matrices
+to based loops. Restricting it to the boundary torus gives commuting
+meridian and longitude matrices. Their eigenvalues on one common line
+are denoted \(M,L\). The algebraic curve obtained from these peripheral
+eigenvalues is the classical curve of
+[Cooper, Culler, Gillet, Long and Shalen](https://web.math.ucsb.edu/~cooper/14.pdf);
+the A-polynomial records its one-dimensional image in the chosen
+peripheral coordinates. A selected geometric factor refers to the
+irreducible component through the marked hyperbolic representation.
+
+An all-level annihilator is instead an operator identity for the quantum
+invariant as its color or meridian changes. Its shift and multiplication
+operators do not commute. The *first nonzero classical symbol* is the
+commutative polynomial obtained at the first nonvanishing order after
+the classical specialization. Proving that the geometric factor divides
+this polynomial is weaker than identifying the entire recurrence ideal,
+its multiplicities, or every component of the A-polynomial.
+
 The [filtered characteristic theorem](../../notes/actual_main_meridian_filtered_characteristic.md)
 uses the whole microscopic expansion, with estimates on the shifted
 parameter neighborhoods required by the recurrence. Its highest
@@ -245,8 +277,11 @@ There is also an explicit rational longitude expression:
  =-M^{a(D)}\prod_e\frac{M^2-E_e(M)}{1-M^2E_e(M)},
  \qquad E_e=e^{2\pi i x_e}.
 \]
-The \(x_e\) are the original physical edge variables, determined
-by the modified stationary equations in the theorem. For the
+Here the product runs over physical quarter-turn edges of the
+original tangle tree, and \(x_e\) is the corresponding scaled internal
+index. The integer \(a(D)=-w(D)-\sum_i n_i\) retains the oriented writhe
+and signed twist powers in the prescribed framing. The \(x_e\) are
+determined by the modified stationary equations in the theorem. For the
 circle trees the note writes those equations as a finite rational
 system. The denominator factors and the first-charge logarithms
 are retained.
@@ -617,14 +652,37 @@ The [peripheral volume-gap theorem](../../notes/general_representation_volume_pe
 
 The [direct-power identity](../../notes/actual_direct_long_power_source.md) keeps a signed twist power inside its original box. Two kernels on the same pair compose by one coefficient extraction. This retains repeated-node derivative data and avoids introducing an external-color expansion.
 
-The [Casimir conic theorem](../../notes/actual_crossing_casimir_torus.md) describes the resulting local characteristic. With outer weights fixed, $A=x+y$ and $P=xy$, it reads
+The local variables in the next formula are face coordinates, not
+the knot's meridian and longitude. Fix the two outer face weights
+\(x,y\), and let \(b,z\) be successive middle coordinates in a regular
+classical crossing layer. The pair \((b,z)\) is the positive-crossing
+companion chart; a negative crossing acts by its inverse, rather than
+using the same forward neighboring coordinate. Put \(A=x+y\) and
+\(P=xy\). The conserved
+parameter \(\sigma\) is the symbol of the original pair Casimir, the
+operator on the two representation factors meeting at that crossing.
+The [Casimir conic theorem](../../notes/actual_crossing_casimir_torus.md) derives
 
 $$
 \sigma=2+\frac{(b+z+A)^2}{P-bz},\qquad
 b_{j+1}+\sigma b_j+b_{j-1}+2A=0.
 $$
 
-On a regular generic fiber, the cover $\lambda^2+\sigma\lambda+1=0$ turns the transport into multiplication by $\lambda^n$ in a norm-one coordinate. At $\sigma=-2$ the transport is additive; at $\sigma=2$ the fiber is a nonreduced double line. The excluded divisors and choice of reference point matter. The word *torsor* in this route records that the multiplicative coordinate has no preferred origin until a reference is chosen.
+The denominator \(P-bz\) and the other source divisors in the
+theorem must be nonzero. On such a regular generic fiber, adjoining a
+root of \(\lambda^2+\sigma\lambda+1=0\) diagonalizes the companion
+transport on successive middle coordinates. In the resulting multiplicative coordinate, \(n\) crossings
+act by multiplication by \(\lambda^n\). Changing the reference point
+rescales that coordinate. This is the torsor structure: the group action
+is specified, but no point is designated as its identity before making
+a reference choice.
+
+At \(\sigma=-2\) the transport has an additive limit. At \(\sigma=2\)
+the conic becomes a double line, so its polynomial equation retains a
+nilpotent transverse direction. Treating either fiber as an ordinary
+generic torus would lose part of the finite source. Neither the symbol
+\(\lambda\) here nor a point on this conic is automatically the preferred
+longitude eigenvalue \(L\) of a closed knot.
 
 ![Generic multiplicative transport and its degenerate endpoint fibers, with the quantum Gaussian retained.](../figures/casimir-twist-transport.png)
 
@@ -645,7 +703,13 @@ The [even cross/one-sided reduction](../../notes/actual_fejer_cross_half_source_
 
 The earlier [matching-edge character relation](../../notes/actual_matching_edge_polynomial_geometric_action.md) and [continuant operator period](../../notes/actual_matching_edge_continuant_operator_period.md) remain exact inputs. The [retained alternating Newton equations](../../notes/actual_alternating_newton_peripheral_branch.md) match the primitive-collar trace relation after the specified elimination and rational change of variables. The [local action comparison](../../notes/actual_newton_complete_local_action.md) identifies the selected reciprocal logarithmic action with the complete-core action up to $\pi i$. Its continued critical point lies outside the terminating low-color range, so this germ identity does not select a contributing finite-sum cycle.
 
-These local comparisons do not themselves identify the classical geometric factor of the knot's quantum A-operator. That limitation coexists with the separately proved all-level operator and pointed-period theorem described at the start of this chapter. The [source and torsor library](../library.html) retains the different operator, regulator and relative-cycle approaches, including their counterexamples and corrections.
+For an unrestricted planar diagram, these local comparisons still
+need a proof that the ordered closed network selects the geometric
+peripheral curve. For the covered strict-tree and circle-tree classes,
+that additional identification is supplied by the geometric-longitude
+and filtered-characteristic theorems described above. Their proof
+retains the based peripheral words, the complete filled representation
+and the negative longitude lift. The [source and torsor library](../library.html) retains the different operator, regulator and relative-cycle approaches, including their counterexamples and corrections.
 
 ## How the alternatives fit together
 

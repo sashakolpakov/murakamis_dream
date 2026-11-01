@@ -62,6 +62,8 @@ For the marked spherical construction with \(r\) crossing regions, there are \(r
 \]
 The brackets mean coefficient extraction. The parameter \(\sigma_e\) is the spectral variable of crossing region \(e\). The two zero substitutions encode the original marked cut; they are not optional boundary conditions. The [finite source proof](../../notes/actual_homogeneous_casimir_face_source.md) and its [general Morse version](../../notes/research_matched_sphere_morse_source.md) establish this identity with the scalar and endpoint conventions.
 
+The terms **CROSS**, **LEFT**, and **RIGHT** describe supports of this local polynomial. With \(h=\lfloor d/2\rfloor\), CROSS retains monomials for which both middle-face exponents \(i,t\) are at most \(h\). LEFT and RIGHT retain the two possible one-sided alternatives. Since \(i+t\le d\), both exponents cannot exceed \(h\). Expanding the product of these local choices splits \(S_N\) into its all-CROSS part and its complement. These are sectors of one prescribed calculation, not new knot invariants. The [geometric contribution theorem](../../notes/actual_morse_geometric_contribution.md) estimates the original filling functional applied to the all-CROSS sector; a full-invariant theorem must also control the complementary sectors.
+
 For a simple illustration of why the variables must remain shared,
 \[
  [z^2](a+bz)(c+dz)=bd.
@@ -123,6 +125,14 @@ For one positively oriented ideal tetrahedron with angle triple \((\alpha,\beta,
 \]
 The total volume is strictly concave on the positive angle domain. This is the concavity used in the Casson–Rivin variational approach; the volume is not described as a convex function to be minimized. Stationarity in all allowed directions supplies the remaining length and gluing conditions. The peripheral equations and the actual face identifications still have to be retained. The [marked positive gluing proof](../../notes/general_marked_positive_gluing_certificate.md) carries out these steps for its stated triangulation certificate.
 
+One can see how the equations enter by differentiating:
+\[
+ dV(\dot{\boldsymbol\alpha})
+   =-\sum_{\text{tetrahedron angle slots }a}
+             \log(2\sin\alpha_a)\,\dot\alpha_a .
+\]
+An allowed variation \(\dot{\boldsymbol\alpha}\) satisfies the homogeneous versions of the tetrahedron and edge equations. Requiring this derivative to vanish for every such variation is a coupled condition. Maximizing each tetrahedron separately would instead assign it three angles \(\pi/3\); those independent choices need not satisfy the edge equations of the given triangulation. This explains why adding local maximum volumes is not the variational problem used in the proof.
+
 There are two logically different tasks here. One must find an interior critical point, and one must show that the cells and face pairings describe the intended manifold. Strict concavity proves uniqueness once those tasks have been met. It does not prove that every chosen triangulation has a positive solution. The [geometry chapter](geometry.md) explains the actual cells, cusp markings, and smooth fillings used in this project.
 
 For the precise standard criterion on an orientable manifold with torus boundary, see [Futer and Guéritaud, *From angled triangulations to hyperbolic structures*, Definition 3.1 and Theorem 1.2](https://arxiv.org/pdf/1004.0440). [Rivin's 1994 paper](https://annals.math.princeton.edu/1994/139-3/p02) gives the earlier variational setting. The marked gluing proof linked above establishes the version used by this source rather than inferring it from the appearance of a dilogarithm.
@@ -140,12 +150,25 @@ This is Cauchy–Schwarz applied to the vectors
 \((\sqrt{w_\alpha})_\alpha\) and
 \((a_\alpha/\sqrt{w_\alpha})_\alpha\). A useful choice of weights must make both factors estimable for the original contraction.
 
+Weights can redistribute a cost, but cannot recover a phase discarded by the inequality. Indeed the infimum of the displayed right-hand side over positive weights is \((\sum_\alpha|a_\alpha|)^2\), attained by \(w_\alpha=|a_\alpha|\) when no entry vanishes and approached otherwise. For \(a_1=1,a_2=-1\), the exact sum is zero while even this optimized bound is four. The application therefore needs structural information about the joined source, not just an optimized positive weight for every separate term.
+
 The matrix form says the same thing. If \(G\) is a positive definite Hermitian matrix, \(v\) is the source vector, and \(b\) is the row implementing the original closure, then
 \[
                    |bv|^2
                 \le (bG^{-1}b^*)(v^*Gv).
 \]
 The star denotes conjugate transpose. The first factor is the cost of the marked closure in the dual norm; the second is the source energy. Calling \(G\) a convenient inner product does not bound either cost.
+
+For a chain \(v_{j+1}=A_jv_j\), a concrete sufficient estimate is
+\[
+ A_j^*G_{j+1}A_j\le e^{2\varepsilon_j}G_j,\qquad G_j>0 .
+\]
+The matrix inequality means that its right-hand side minus its left-hand side is positive semidefinite. Iteration and the closure estimate give
+\[
+ |b\,v_m|^2\le
+ (bG_m^{-1}b^*)\,e^{2\sum_j\varepsilon_j}\,(v_0^*G_0v_0).
+\]
+Thus a useful varying norm must control the actual transport between successive norms and both endpoints. Making an intermediate matrix small by a change of basis can enlarge these endpoint factors. For a network, the analogous check must keep every shared boundary index and its measure.
 
 When two pieces share a boundary label \(j\), the contraction still has one common sum over \(j\). If its original measure is a positive number \(\theta_N(j)\), a useful exact form is
 \[
@@ -157,6 +180,15 @@ Set \(F_A(j)=Z_A(j)/\sqrt{\theta_N(j)}\), and define \(F_B\) likewise. Cauchy bo
 It gives no lower bound on their overlap: the two vectors can be orthogonal.
 
 The [whole-support boundary estimate](../../notes/actual_whole_support_boundary_gram_envelope.md) and [exact joining identity](../../notes/actual_nc_three_port_source_sewing.md) establish useful local inputs. For a reflected double, the two halves can be genuine complex conjugates in the specified pairing, giving a positive sum of squares. The [reflection-double theorem](../../notes/actual_planar_three_port_reflection_double.md) proves precisely that identity. Its internal half-evaluations still contain their original phases. The general problem is to transport the estimates through the whole diagram and prove that the required contribution survives.
+
+A second use of Cauchy's name concerns *coefficient estimates*. For a polynomial \(P(\boldsymbol L)\) with nonnegative coefficients, a target exponent vector \(\boldsymbol t\), and positive radii \(\boldsymbol\rho\),
+\[
+ [\boldsymbol L^{\boldsymbol t}]P
+       \le P(\boldsymbol\rho)\boldsymbol\rho^{-\boldsymbol t},
+ \qquad
+ \boldsymbol\rho^{\boldsymbol t}=\prod_f\rho_f^{t_f}.
+\]
+The inequality follows by retaining one term of the positive evaluation. Minimizing the right-hand side is often called a capacity bound. There must still be one radius for each shared face, with all its incident factors evaluated there. For signed coefficients, the analogous elementary bound uses the polynomial obtained by taking absolute values of the coefficients, not \(|P(\boldsymbol\rho)|\). For instance \(P(z)=1-z\) vanishes at \(z=1\) although its coefficient of \(z\) has modulus one. The [complete-source capacity obstruction](../../notes/actual_complete_source_cauchy_capacity_gap.md) shows that even optimizing all positive shared radii can overestimate the geometric rate in its stated source class. That obstruction concerns this comparison method, not the knot invariant itself.
 
 ## What Fourier transformation preserves
 
@@ -178,6 +210,8 @@ implies Parseval's identity
 \]
 Here \(\mathbf1\) is the indicator of the stated condition. This is an exact norm identity. It does not say that one Fourier coefficient equals the norm or that the phases of several contributions agree.
 
+For example, for even \(N\), the vector \(c_j=(-1)^j\) has energy \(N\), but its ordinary sum is zero: its Fourier energy lies at frequency \(N/2\), not at frequency zero. A Fourier transform can make the location of cancellation visible without making that cancellation disappear.
+
 For background on finite-group transforms and their normalization, see [Terras, *Fourier Analysis on Finite Groups and Applications*](https://doi.org/10.1017/CBO9780511626265).
 
 In the actual color transform, put \(c_0=K_N(K)\) and \(c_j=C_j(q_N)\) for \(1\le j<N\), where \(C_j\) is the original reduced, zero-framed ordinary-color evaluation. The [ordinary-color calculation](../../notes/ordinary_color_plancherel_bound_audit.md) identifies an energy
@@ -188,6 +222,20 @@ In the actual color transform, put \(c_0=K_N(K)\) and \(c_j=C_j(q_N)\) for \(1\l
 with constants \(C,B\) depending on the fixed presentation. The superscript distinguishes this ordinary-color remainder from the earlier geometric remainder \(R_N\). The identification and polynomial bound are additional source statements; they are not part of abstract Parseval. If \(\log E_N/N\to\lambda>0\), then the Kashaev volume rate is \(\pi\lambda\).
 
 In particular \(C_1=1\), explaining the lower bound on \(R_N^{\mathrm{ord}}\). The ordinary-color bound uses the actual reduced root evaluation and its finite unitary realization, including the normalization cost.
+
+More explicitly, for a fixed braid with \(b\) strands and one knot component, the source proof gives
+\[
+ |C_j(q_N)|\le [j]^{\,b-1},\qquad
+ [j]=\frac{\sin(\pi j/N)}{\sin(\pi/N)},\qquad 1\le j<N,
+\]
+and therefore
+\[
+ 1\le R_N^{\mathrm{ord}}
+       \le (N-1)(N/2)^{2b-2}.
+\]
+The reduction divides the ordinary quantum trace by its nonzero dimension \([j]\). At \(j=N\), that dimension is zero, so this argument gives no polynomial bound for \(K_N\). It also does not bound derivatives of the unreduced ADO state at an ordinary color. These distinctions are what make an exponentially growing complete-color value compatible with the polynomial ordinary-color remainder.
+
+The word *energy* is also used for a single magnetic column and for a Fourier sum on the matching graph. Those are different quantities. A column energy controls that column's entries. A graph energy retains common flow and charge constraints. Only the ordinary-color identity above isolates \(|K_N|^2\) with a proved polynomial remainder. The [mechanism chapter](mechanism.md#weighted-cauchy-needs-the-right-energy) spells out the other two constructions.
 
 The face-source approach also uses finite cosine polynomials in auxiliary color parameters. Reflection of the allowed frequencies, the odd zero-frequency term, and the actual color-to-frequency map must be specified before invoking Fourier orthogonality. The [shared-cycle Fourier construction](../../notes/actual_matching_graph_shared_cycle_fourier_compiler.md) retains the flow equations, congruences, and original marked charge. Its [positive partition bound](../../notes/actual_matching_graph_positive_fourier_partition.md) is an upper estimate. Discarding the remaining coefficient phases changes the quantity being estimated.
 
@@ -201,7 +249,22 @@ The face-source approach also uses finite cosine polynomials in auxiliary color 
 \]
 For convex \(f\), it implies \(\sum_i f(u_i)\le\sum_i f(v_i)\). For concave \(f\), the inequality is reversed. This is the majorization form of Karamata's inequality.
 
-For matrices, exterior powers give analogous partial-sum inequalities for logarithms of singular values of a product. They control the largest available growth directions at each step. They do not force an evolving vector to stay on one chosen eigenvalue branch. The [regulator-majorization note](../../notes/regulator_majorization_and_source_energy.md) proves the relevant inequalities and gives a stronger sufficient criterion. One crucial input is a bistochastic positive transport that fixes the regulator observable: it preserves both identity and trace, as well as that specified observable. The criterion also retains its action factorization and endpoint costs. These properties have not been established for the general knot connection.
+For example, \((1,1)\prec(2,0)\), so \(2e\le e^2+1\). The equal-total condition is essential. This comparison controls sums of a convex function; it does not identify which coordinate carries the original quantum state.
+
+For invertible matrices \(A_0,\ldots,A_{m-1}\), let \(s_1(A)\ge\cdots\ge s_d(A)>0\) be the singular values, the square roots of the eigenvalues of \(A^*A\). If \(P=A_{m-1}\cdots A_0\), then
+\[
+ \sum_{i=1}^r\log s_i(P)
+ \le\sum_{j=0}^{m-1}\sum_{i=1}^r\log s_i(A_j),
+ \qquad 1\le r\le d,
+\]
+with equality at \(r=d\). To see the inequality, apply the operator-norm product inequality to the \(r\)-th exterior power: its norm is the product of the largest \(r\) singular values. At \(r=d\), multiplicativity of the determinant gives equality. Karamata can now be applied to the resulting logarithmic vectors.
+
+This estimate uses the largest available directions at every step. It does not force an evolving state to follow one marked eigenvalue branch. The [regulator-majorization note](../../notes/regulator_majorization_and_source_energy.md) gives a stronger *conditional* transport criterion. Its elementary model is a doubly stochastic matrix \(C\): its entries are nonnegative and every row and column sums to one. For a real vector \(r\),
+\[
+ \sum_{i,k}C_{ik}(r_i-r_k)^2
+                  =2r\mathbin{\cdot}(r-Cr).
+\]
+If \(Cr=r\), mixing can occur only between equal entries of \(r\). Preserving just the total sum of \(r\) is much weaker. The operator version requires a positive transport preserving identity, trace, and the specified regulator observable, together with the actual action factorization and endpoint costs. Those additional properties have not been established for the general knot connection.
 
 The standard majorization definitions are developed in [Marshall, Olkin, and Arnold, *Inequalities: Theory of Majorization and Its Applications*](https://link.springer.com/book/10.1007/978-0-387-68276-1). The matrix product result goes back to [Horn, *On the singular values of a product of completely continuous operators*](https://doi.org/10.1073/pnas.36.7.374). [Tao, Jeong, and Gowda](https://userpages.umbc.edu/~gowda/papers/trGOW20-02.pdf) discuss that matrix statement before developing its Jordan-algebra analogues.
 
@@ -255,11 +318,29 @@ A quantum recurrence acts on a specified sequence or function. For example, on a
 \]
 This is an illustrative convention; squared meridian conventions replace \(q\) by \(q^2\). The operator, its coefficient ring, and its action must be stated together. A nonzero equation \(\widehat A f=0\) generally has several solutions. Finite initial data, normalization, and behavior at singular steps select the one representing the original invariant.
 
+Even the elementary recurrence
+\[
+ f_{j+2}-\tfrac52 f_{j+1}+f_j=0
+\]
+has solutions \(f_j=a\,2^j+b\,2^{-j}\). Their exponential growth depends on whether the initial data make \(a\) vanish. For the quantum recurrence, a coefficient of the forward shift can itself vanish at a specialized root. One must then continue the entire original expression through that step; dividing by the vanishing coefficient or resetting the solution changes the problem.
+
+There is also a distinction between a fixed-level equation and an equation for the whole family. On functions of \(M\), put \(Tf(M)=f(q_NM)\). Since \(q_N^{2N}=1\), every such function satisfies \((T^{2N}-1)f=0\). This identity contains no information about which knot is being evaluated. A genuine all-level annihilator has a fixed finite order and coefficients specified before \(N\) is chosen.
+
 This is the meaning of a **pointed recurrence** in the guide: the recurrence is accompanied by the data selecting its solution. The [pointed quantum A theorem](../../notes/actual_conway_pointed_quantum_a_volume.md) retains those data, including derivatives at singular steps, for its covered family. Expressing an already proved limit through that recurrence is different from proving that an arbitrary quantization of the classical \(A\)-polynomial has the same limit.
 
 Prior recurrence results include [Garoufalidis and Lê on colored-Jones q-holonomicity](https://arxiv.org/abs/math/0309214) and [Brown, Dimofte, Garoufalidis, and Geer on the ADO family](https://arxiv.org/abs/2005.08176). The latter's Theorem 4.4 retains an explicit framing and variable substitution. [Wilf and Zeilberger's multisum theory](https://sites.math.rutgers.edu/~zeilberg/mamarim/mamarimhtml/multiwz.html) provides the general creative-telescoping background. The local finite-source proof retains the actual boundary and root-normal data. These references do not supply a general identification of the classical geometric component. The proposed characteristic/deformation comparison is formulated in [Garoufalidis's 2004 paper](https://arxiv.org/abs/math/0306230).
 
+Here *q-holonomic* describes a finiteness property of a module of q-difference equations; in the present one-variable application it supplies a nonzero finite-order recurrence. Creative telescoping eliminates internal summation indices. Its basic mechanism is an identity
+\[
+ P\,a(j,k)=B(j,k+1)-B(j,k).
+\]
+Summing over a fixed finite interval \(k=r,\ldots,s\) leaves \(B(j,s+1)-B(j,r)\). These boundary terms vanish only when the actual summand or certificate makes them vanish. If the support depends on \(j\), shifting \(j\) also changes the summation endpoints. The [finite-source annihilator proof](../../notes/finite_sum_annihilator.md) retains those finite boundaries before specialization.
+
+The external results have different roles: Garoufalidis–Lê prove q-holonomicity from the colored-Jones state sum; Brown–Dimofte–Garoufalidis–Geer prove a level-independent ADO family statement in Theorem 4.3 and the specified comparison with colored-Jones recurrences in Theorem 4.4. Their §1.1 also explains why level-dependent periodic recurrences are insufficient. These are recurrence results, not volume or classical-factor conclusions for an arbitrary source.
+
 The [geometric-characteristic theorem](../../notes/actual_strict_tree_geometric_characteristic.md) proves a factor statement under its full asymptotic hypotheses: the selected geometric irreducible factor divides the first nonzero classical symbol of every genuine all-level annihilator. It does not identify every factor, multiplicity, or the complete annihilator ideal. The [moving-meridian argument](../../notes/actual_main_meridian_filled_volume.md) supplies the actual state on its specified shrinking meridian neighborhood. The domain and derivative control are essential when substituting an asymptotic expansion into a recurrence.
+
+To define that symbol, clear the operator's rational denominators and remove the common power of \(q-1\), then take the first nonzero coefficient as \(q\to1\); at this point the shift and multiplication variables commute. The exact changes between reduced and full states must be carried through before making this comparison. The [filtered expansion](../../notes/actual_main_meridian_filtered_characteristic.md) and its [directed-criterion extension](../../notes/actual_all_circle_directed_all_orders.md) provide more than a cusp tangent: they control every finite expansion order on the shifted parameter regions required by the operator, with a polynomial degree bound selecting the whole longitude germ. The factor is a selected complex irreducible component. Over rational coefficients, the theorem uses the rational polynomials vanishing on that component; their irreducible generator may split into several components over \(\mathbb C\). This conclusion is weaker than equality with the full classical A-polynomial or with a quantum operator ideal.
 
 ## Torsors, logarithms, and the absolute volume
 

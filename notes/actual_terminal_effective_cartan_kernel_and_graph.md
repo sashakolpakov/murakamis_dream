@@ -133,7 +133,7 @@ and (N)-th coefficients survive that orbit. In particular
 \]
 
 The second coefficient in (5) is not deleted outside this triangle.
-Nor may one find saddles of the unsummed \\(a\)-sum and regard all
+Nor may one find saddles of the unsummed \(a\)-sum and regard all
 of them as separate contributions: (5) already cancels all its
 nonconstant modes in (6).
 
@@ -207,7 +207,7 @@ They satisfy ((X+Y+Z)^2+XYZ=0). In these coordinates (9) is
 
 This is a nontrivial algebraic canonical action. Parseval matching of
 the recorded clocks in its two copies does not algebraically set
-\\(t=1\). On the true irreducible terminal \(R_{23}^2\)-cap
+\(t=1\). On the true irreducible terminal \(R_{23}^2\)-cap
 component one must impose
 
 \[

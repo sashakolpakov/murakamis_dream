@@ -4,15 +4,30 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 import json
+import re
+
+
+# A malformed delimiter can bypass Pandoc's math spans altogether. Check
+# visible prose as well; literal examples inside code and hidden MathML
+# annotations are intentionally excluded.
+RAW_TEX = re.compile(
+    r"\\(?:[()\[\]]|(?:frac|dfrac|tfrac|operatorname|mathrm|mathbb|mathcal|"
+    r"begin|end|sum|prod|lim|sqrt|alpha|beta|gamma|theta|lambda|sigma|"
+    r"Omega|Phi|ell|zeta)\b)"
+)
+LITERAL_ELEMENTS = {"math", "pre", "code", "script", "style"}
 
 
 class Links(HTMLParser):
     def __init__(self):
         super().__init__(); self.links = []; self.images = []
         self.math_stack = []; self.math_errors = []; self.ids = set()
+        self.literal_depth = 0
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag in LITERAL_ELEMENTS:
+            self.literal_depth += 1
         if attrs.get("id"):
             self.ids.add(attrs["id"])
         if tag == "a" and attrs.get("name"):
@@ -32,8 +47,12 @@ class Links(HTMLParser):
     def handle_data(self, data):
         if self.math_stack:
             self.math_stack[-1]["text"].append(data)
+        if not self.literal_depth and not self.math_stack and RAW_TEX.search(data):
+            self.math_errors.append("Literal TeX in prose: " + data.strip()[:180])
 
     def handle_endtag(self, tag):
+        if tag in LITERAL_ELEMENTS:
+            self.literal_depth -= 1
         if tag == "span" and self.math_stack:
             entry = self.math_stack[-1]
             entry["depth"] -= 1

@@ -7,9 +7,23 @@ $$
 =\operatorname{Vol}(S^3\setminus K).
 $$
 
-Here $K_N$ is the reduced Kashaev invariant in the normalization fixed in the proof. The knot is held fixed while the positive integer level $N$ grows. The statements below include both even and odd levels unless a smaller scope is explicitly stated.
+Here \(K_N\) is the reduced Kashaev invariant at
+\(q_N=e^{\pi i/N}\), with the unknot normalized to one and the framing
+convention fixed in the theorem. The knot is held fixed while the
+positive integer level \(N\) grows. The statements below include both even and odd levels unless a smaller scope is explicitly stated.
 
-The broadest construction below begins with a triangulated sphere and adds specified tangles to its planar diagram. Separate results give explicit twist and degree bounds for ordered tangle trees, as well as net-twist reductions preserving an existing knot. These hypotheses differ. Each section states the knot it constructs, the estimates it uses, and which parameters are held fixed.
+The planar construction below begins with a triangulated sphere and adds specified tangles to its planar diagram. Separate results give explicit twist and degree bounds for ordered tangle trees, as well as net-twist reductions preserving an existing knot. These hypotheses differ. Each section states the knot it constructs, the estimates it uses, and which parameters are held fixed.
+
+For the basic diagram, color and filling conventions, begin with
+[the first-reading chapter](starting.md). Three kinds of conclusions
+occur below. A **full filled-invariant theorem** proves the displayed
+limit for the resulting knot. An **augmented-link theorem** leaves its
+crossing circles present and computes that larger complement's rate.
+A **selected-contribution theorem** evaluates only the specified part
+of an exact finite formula. The latter can be a completed theorem even
+when the remaining part of the invariant has not been bounded.
+The local identities and conditional estimates near the end of this
+chapter are stated with those smaller conclusions.
 
 ## Decorating a planar diagram
 
@@ -70,7 +84,7 @@ seen from the retained crossing circle, by
 The original circles remain in place. The new circle has curvature
 \(b_1\); the new matching edge joins it to the old circle \(b\).
 
-![The old matched edge xy remains, while inserting w subdivides one triangle and creates the new matched edge bw.](../figures/balanced-terminal-fans.png)
+![Inserting w subdivides one triangle, retains the matched edge xy, and creates the matched edge bw. The two-sided drawing uses two insertions on each side; any even counts preserve the four-endpoint pairing.](../figures/balanced-terminal-fans.png)
 
 After \(j\) insertions on this side,
 \[
@@ -97,9 +111,37 @@ explicit sums. One gives the geometric contribution. The two others
 must be bounded on the entire spectral interval, including its
 endpoints.
 
-Write \(F(x,b,y)\) for the normalized logarithmic weight of one
-triangle. At a crossing circle the condition needed for those two
-other sums is
+The required weight is explicit. For nonnegative curvatures
+\(w=(w_1,w_2,w_3)=(x,b,y)\), with at least two positive entries, set
+\[
+ \Delta_w=\sqrt{w_1w_2+w_2w_3+w_3w_1},\qquad
+ \alpha_i=\arctan(w_i/\Delta_w),
+ \qquad
+ \Lambda(t)=-\int_0^t\log|2\sin u|\,du.
+\]
+The angles satisfy \(\sum_i\alpha_i=\pi/2\). The
+source-normalized triangle action is
+\[
+ F(w_1,w_2,w_3)=\frac1\pi\sum_{w_i>0}
+ \left\{\Lambda(\alpha_i)+
+        \Lambda\!\left(\frac\pi2-\alpha_i\right)
+        +\alpha_i\log w_i\right\}.
+\]
+If only one weight \(w_i\) is positive, define
+\(F(w)=\tfrac12\log w_i\). A triangle with all weights zero does not
+occur at a crossing region in this marked simple-sphere construction.
+This is the function denoted \(Q(w)=Q_b(0)\) in the
+[triangle-action theorem](../../notes/actual_triangle_entropy_algebraic_balance.md),
+§1, with the explicit evaluation in the
+[shared-radius theorem](../../notes/general_anchored_shared_radius_filling_volume.md),
+§5. It is the limiting logarithmic growth, divided by \(N\), of the
+positive triangle polynomial evaluated at these weights. In particular
+\(F(tw)=F(w)+\tfrac12\log t\); its additive constant is fixed by the
+finite source.
+
+The name *triangle action* refers to this weighted source expression,
+not to a separately inserted component of the link. At a crossing
+circle the condition needed for the two one-sided sums is
 \[
  F(x,b,y)+F(x,c,y)>\log b,\qquad
  F(x,b,y)+F(x,c,y)>\log c,
@@ -147,8 +189,10 @@ closed inside an intermediate tangle.
 Under these conditions the original knot complement is hyperbolic
 and its reduced Kashaev invariant has the volume limit at the top
 of this page, through both even and odd levels. The theorem also
-gives the normalized meridian profile on every fixed disk
-\(|s|\le R<1\). Fix the whole tree and every twist integer before
+gives the normalized meridian profile for
+\(M=e^{\pi i s/N}\) on every fixed parameter disk \(|s|\le R<1\).
+Thus the meridian itself moves on a scale \(1/N\); the full formula
+appears [below](#the-volume-limit-while-the-meridian-varies). Fix the whole tree and every twist integer before
 letting \(N\) tend to infinity. The theorem does not allow the
 diagram or its powers to grow with the quantum level.
 
@@ -356,7 +400,10 @@ The [strict-tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_v
 | H | $(1/2,1)$ |
 | A | $(0,1)$ |
 
-These state variables belong to the proof; they are not crossing numbers. Every basic piece starts with label L. A quarter-turn exchanges L and H and leaves A unchanged. At a stack, LL, LA and AA give A, while HL and HA give H; either input order is allowed. HH has no strict state. At the final closure the pair must be AA, AL, AH or LH, in either order. The compiler proves that these rules are equivalent to strict feasibility of the state constraints, rather than merely necessary tests.
+An output state is the limiting value of an internal Newton index
+divided by \(N\). Its interval describes the strictly feasible
+geometric states at the exposed boundary of the box. These indices
+are summed in the invariant; they are not crossing numbers. Every basic piece starts with label L. A quarter-turn exchanges L and H and leaves A unchanged. At a stack, LL, LA and AA give A, while HL and HA give H; either input order is allowed. HH has no strict state. At the final closure the pair must be AA, AL, AH or LH, in either order. The compiler proves that these rules are equivalent to strict feasibility of the state constraints, rather than merely necessary tests.
 
 For example, each stack of two basic pieces has label A, and closing two such stacks passes. Closing only $h_1h_2$ has root pair LL and fails. A failed test says that this theorem does not apply to that presentation; it is not a counterexample to the volume conjecture.
 
@@ -641,20 +688,64 @@ $$ (A+b)(A+c)\ge\max\{b^2,c^2\} $$
 
 at every region is sufficient for the [complete-radius filling theorem](../../notes/general_complete_radius_balance_filling_volume.md). The stronger test $|b-c|\le x+y$ is often easier. Every region must use the same complete packing; choosing unrelated local radii would not establish the hypothesis.
 
-The sharper form compares the triangle actions $Q_b(0)+Q_c(0)$ with $\log b$ and $\log c$ for positive middle curvatures. It is this sharper test, proved by the zero-middle lemma, that covers the explicit every-width family; the simpler product inequality can fail there.
+The sharper form uses
+\(Q_b(0)=F(x,b,y)\) and \(Q_c(0)=F(x,c,y)\), with \(F\) defined
+[above](#why-this-proves-an-equality-for-the-full-invariant).
+It compares their sum with \(\log b\) and \(\log c\) for positive
+middle curvatures. It is this sharper test, proved by the zero-middle lemma, that covers the explicit every-width family; the simpler product inequality can fail there.
 
 The proof first evaluates the [entire central filling sector](../../notes/general_all_cross_long_filling_volume.md), called the cross sector in the source decomposition. It then uses the [one-sided spectral estimate](../../notes/actual_global_left_weighted_spectral_envelope.md) to bound the complementary left and right sectors below it. All Fourier charges and endpoint terms are retained. Thus every passing fixed diagram has the full volume limit for independently sufficiently long signed twists. Universal validity of the geometric test is not asserted.
+
+## The geometric contribution for an unchanged planar core
+
+For a fixed diagram specified by a simple matched sphere, the
+[general Morse theorem](../../notes/actual_morse_cross_filling_period.md)
+evaluates the entire central recurrence-path contribution. Cups and
+caps may occur between crossing regions; no flat-plat sweep or added
+terminal tangle is assumed. Write \(I^{\mathrm C}_{N,\boldsymbol n}\)
+for this specified part of the original finite evaluation. For
+independently sufficiently long fixed signed powers of a knot-producing
+parity, it is nonzero at all sufficiently large levels and satisfies
+\[
+ \lim_{N\to\infty}\frac{2\pi}{N}
+       \log|I^{\mathrm C}_{N,\boldsymbol n}|
+       =\operatorname{Vol}(S^3\setminus K_{\boldsymbol p}).
+\]
+The [geometric companion](../../notes/actual_morse_geometric_contribution.md)
+constructs the labeled positive cells and follows the original primitive
+filling curves to identify this volume. All Fourier charges and both
+level parities are included in the asymptotic.
+
+This is a theorem about a contribution, not a new invariant.
+A full-invariant conclusion for an unchanged core still requires a
+strict bound on its complementary polynomial. The balance and finite
+shared-radius tests above and below are sufficient ways to provide
+such a bound in their stated classes.
 
 ## A global source upper bound and the classification of its maxima
 
 The remaining general-plat problem can be formulated on a finite-dimensional space of shared face loads. A *source* here means the exact finite polynomial or tensor expression for the invariant before its indices are summed. Each crossing-region factor supplies total normalized degree one; each ordinary face demands one, while the two marked faces demand zero. These shared constraints define a compact polytope $\mathcal P_D$ for the fixed diagram $D$.
 
-The [closed-domain majorant](../../notes/research_global_sharp_coefficient_limsup_majorant.md) assigns a continuous upper exponential rate $H_\delta(q)$ to a local load $q$ and real spectral parameter $\delta$. With $R$ crossing regions, set
+At region \(e\), write
+\(q_e=(q_{x_e},q_{b_e},q_{c_e},q_{y_e})\) for its nonnegative
+normalized exponents; their sum is one. The letter \(q_e\) here is a
+load vector, distinct from the root of unity \(q_N\). The spectral
+coordinate \(\delta_e\) means \(\sigma_e=-2\cos(2\pi\delta_e)\).
+The [closed-domain majorant](../../notes/research_global_sharp_coefficient_limsup_majorant.md)
+assigns a continuous upper exponential rate \(H_{\delta_e}(q_e)\)
+to that local coefficient. With \(R\) crossing regions, define the
+number \(M_D\) by
 
 $$M_D=\max_{q\in\mathcal P_D,\;\boldsymbol\delta\in[0,1/2]^R}
 \sum_e H_{\delta_e}(q_e).$$
 
-The full shared numerator satisfies $\sup_{\boldsymbol\delta}|S_N(\boldsymbol\delta)|\le e^{N(M_D+o(1))}$, uniformly through both parities and closed degree boundaries. This is an upper bound, not a matching lower asymptotic.
+Here \(M_D\) is a rate bound, not a meridian coordinate. The shared
+polynomial \(S_N\) is obtained by taking all ordinary face targets
+\(N-1\) and both protected targets zero in the product of local
+resolvent numerators. It satisfies
+\(\sup_{\boldsymbol\delta}|S_N(\boldsymbol\delta)|
+ \le e^{N(M_D+o(1))}\), uniformly through both parities and closed
+degree boundaries. This is an upper bound, not a matching lower asymptotic.
 
 On a diagram satisfying the geometric certificate, [boundary activation](../../notes/research_full_fiber_sharp_boundary_activation.md) and [stationary classification](../../notes/research_full_fiber_sharp_stationary_classification.md) restrict the possible maxima. The central, or cross, sector has both middle loads at most $1/2$. The left and right sectors overload one middle face. The remaining exceptional cap configurations meet the two marked zero faces. Common positive face weights are recovered at a maximum, and there are at most two such caps.
 
@@ -682,7 +773,35 @@ The [shared-flow criterion](../../notes/general_endpoint_conditioned_source_ener
 
 ## A general finite cover of the source sectors
 
-The [finite-sector cover theorem](../../notes/general_actual_sector_cover_filling_volume.md) proves the full limit whenever finitely many genuine source-sector branches admit strict shared-radius bounds. Each face has one weight wherever it occurs; different branches may use different common weight vectors. This extends the [anchored criterion](../../notes/general_anchored_shared_radius_filling_volume.md).
+Fix a marked plat with the labeled geometric hypotheses of the finite-sector
+cover theorem. A sector specifies which of the three disjoint recurrence-path
+pieces is used at each crossing region. The full complement consists
+of all sectors containing at least one one-sided piece. A finite cover
+groups these actual sectors into finitely many branches; it does not
+introduce a new decomposition of the knot.
+
+For a branch, choose one positive weight \(L_f\) for every ordinary
+face and keep the protected weights zero. If \(B_e(L)\) is a valid
+weighted exponential bound for the allowed local pieces at region
+\(e\), coefficient extraction gives the shared upper rate
+\[
+              \sum_e B_e(L)-\sum_{f\ \mathrm{ordinary}}\log L_f.
+\]
+The subtraction is the cost of the original face targets. The
+[finite-sector cover theorem](../../notes/general_actual_sector_cover_filling_volume.md)
+proves the full limit when every branch has a whole shared vector
+making this rate strictly less than
+\(\Phi_D=\operatorname{Vol}(Y_D)/(2\pi)\). Different branches may
+use different vectors, but a face must use the same value at all its
+occurrences within one bound. Since the cover is finite, its positive
+gaps have a positive minimum.
+
+The [anchored criterion](../../notes/general_anchored_shared_radius_filling_volume.md)
+is a simpler instance: specify one surviving one-sided region, use its
+sharper estimate, and allow every local piece at the other regions.
+At most twice the number of crossing regions need be tested.
+A finite cover can refine those branches when the anchored bounds
+are too large.
 
 The extension is strict for a specified seventeen-region marked plat. An exact rational flow makes every anchored bound exceed the geometric rate by more than $0.025$, whereas forty refined branches give a gap greater than $0.04$ below it. The [separation theorem and verifier](../../notes/actual_shared_radius_certificate_separation.md) establish both statements. A five-region example with word $(1,3,2,1,3)$ separately fails balance but passes six anchored witnesses. These compare certificates on fixed presentations; they do not classify all alternative presentations of the same knots.
 
@@ -697,7 +816,11 @@ An augmented link retains the auxiliary crossing circles rather than filling the
 $$\lim_{N\to\infty}\frac{2\pi}{N}\log|A_{D,N}^{\boldsymbol\epsilon}|
 =2\operatorname{Vol}(Q_D)=\operatorname{Vol}(Y_D^{\boldsymbol\epsilon}).$$
 
-Here $A_{D,N}^{\boldsymbol\epsilon}$ is the marked complete-circle source and $Y_D^{\boldsymbol\epsilon}$ the augmented exterior. The proof uses one shared radius per face, a nonzero coefficient saddle, and an explicit summation of the half-twist phases. The [untwisted proof](../../notes/general_untwisted_augmented_source_volume.md) is a shorter introduction to the positive part of this argument. The theorem requires its geometric certificate; it does not supply one for every plat. The [coverage comparison](../../notes/general_untwisted_augmented_source_literature_coverage.md) explains earlier overlaps and the parallel-belt parity obstruction.
+Here $A_{D,N}^{\boldsymbol\epsilon}$ is the marked complete-circle source and $Y_D^{\boldsymbol\epsilon}$ the augmented exterior. “Complete-circle” means that every
+auxiliary representation color equals the level \(N\); the auxiliary
+circles are still components of the link. The manifold in this
+formula therefore differs from the knot exterior obtained after
+filling them. The proof uses one shared radius per face, a nonzero coefficient saddle, and an explicit summation of the half-twist phases. The [untwisted proof](../../notes/general_untwisted_augmented_source_volume.md) is a shorter introduction to the positive part of this argument. The theorem requires its geometric certificate; it does not supply one for every plat. The [coverage comparison](../../notes/general_untwisted_augmented_source_literature_coverage.md) explains earlier overlaps and the parallel-belt parity obstruction.
 
 ## Earlier Conway, pretzel, belt and cap results
 
@@ -761,9 +884,14 @@ The [filtered characteristic theorem](../../notes/actual_main_meridian_filtered_
 applies to the proved strict long-filling sources and the
 circle-tree sources under the summed condition, the local bound
 \(2^{-120}\), or any directed certificate by the extension above.
-Given a genuine all-level
-annihilator, it proves that the full microscopic
-expansion selects an analytic curve in its classical symbol.
+An annihilator is a fixed, nonzero finite difference operator that
+kills the actual reduced sequence at all sufficiently large levels.
+Its multiplication and shift operators do not commute. After
+classical specialization, the first nonzero coefficient gives a
+commutative polynomial in meridian and longitude variables: its
+classical symbol. Given such an annihilator, the theorem proves
+that the full microscopic expansion selects an analytic curve
+in this polynomial's zero set.
 The selected factor is reciprocal and has an explicit rational
 peripheral expression. Its tangent is the preferred cusp shape.
 
