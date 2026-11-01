@@ -43,7 +43,32 @@ $$
 
 Here $\tau$ is the cusp shape computed from the preferred meridian and longitude. The proof obtains the coefficient directly from the finite sum; a separate matrix calculation fixes its geometric interpretation and sign.
 
-The figure-eight result identifies a normalized profile, which is stronger than an exponential upper bound. Its sufficient condition controls absolute weights relative to the actual invariant and controls the endpoint terms under that same comparison. Positivity and interior concentration establish those conditions for that finite sum. They have not been established for a general signed Conway source. The moving-meridian growth result below settles a different, precisely stated part of the problem.
+The figure-eight result includes all fixed complex \(z\)-disks, including the ordinary-color resonances, and identifies its correction with the preferred cusp shape. For a class of Conway presentations, a separate argument now proves the actual reduced ADO profile on \(|s|\le R<1\), where \(M=q_N^s\). This disk stops before the first ordinary-color resonances.
+
+## The filled moving-meridian theorem and its remaining limits
+
+The [filled-meridian theorem](../../notes/actual_main_meridian_filled_volume.md) proves
+
+\[
+\sup_{|s|\le R}
+\left|\frac{2\pi}{N}\log|F_N(q_N^s)|
+ -\operatorname{Vol}(S^3\setminus K)\right|\longrightarrow0,
+\qquad R<1,
+\]
+
+for fixed strict Conway constructions with sufficiently long signed twists, subject to a condition on their multiplication junctions. It includes all presentations in which no two bare junctions are adjacent. A bare junction is a product with no original crossing-circle operator at that vertex. The [component extension](../../notes/actual_main_meridian_component_extension.md) also allows adjacent bare junctions when an explicit path inequality holds. In particular, a component with \(m>1\) vertices passes if every vertex has at least \(\max(8,4m)\) incident branches leading out of the component.
+
+The theorem keeps the actual strand colors and the zero-framing normalization. After division by the exact scalar factors prescribed by the finite tangle operations, the ratio to \(F_N(1)\) is
+
+\[
+\frac{\sin\pi s}{N\sin(\pi s/N)}\bigl(1+O(N^{-1})\bigr).
+\]
+
+It proves nonvanishing and a uniform logarithmic limit at each point of the disk. The lower bound comes from a nonzero term in a joint Fourier calculation. The proof compares all Fourier indices with the same filled critical action, so the fixed twist magnitudes can be independently large without a bound on their ratios.
+
+Three distinctions remain essential. First, this stronger result has the extra component condition; the complete-value theorem at \(M=1\) retains its broader scope. Second, the disk shrinks like \(1/N\) in \(M\), so this does not contradict the nearby zeros described above. Third, the first correction is computed from the complex edge labels of the filled critical point, but has not been identified with the preferred main-cusp modulus.
+
+The open extensions are the moving-meridian theorem for bare components failing the path test, continuation of the ordinary-color-subtracted state through its resonance divisors, and identification of the selected classical geometric factor of the recurrence. The filled theorem does not depend on these extensions.
 
 ## The moving-meridian growth already established
 
@@ -62,7 +87,7 @@ The estimate includes even and odd levels. The upper bound is uniform in the mer
 
 The [auxiliary-color gap theorem](../../notes/actual_main_meridian_auxiliary_color_gap.md) also controls the region where an original circle color stays a fixed proportion below completeness. If some \(j_i\le(1-\delta)N\), with fixed \(0<\delta<1\), the whole scalar has a strictly smaller exponential rate than \(\operatorname{Vol}(Y^\epsilon)/(2\pi)\). It is uniform over all the other colors and both parities for \(|s|\le R<1/2\). Thus the color gap is established on these smaller disks, while the supremum-volume theorem holds for \(R<1\).
 
-Accordingly, both a whole-sum bound and a strict auxiliary-color loss near the complete meridian are established for this class. What remains is an estimate for adjacent bare junctions, a pointwise normalized profile, and control of the moving-meridian filling transform at the generally smaller filled-knot volume. The two source theorems do not by themselves give those conclusions. The complete-meridian long-twist knot-volume theorems remain proved independently of these further questions.
+The [component theorem](../../notes/actual_main_meridian_component_extension.md) extends both estimates to the path condition stated above. Their reference volume is still that of the augmented complement. The filled moving-meridian theorem needs the additional joint Fourier argument and the marked filling geometry; those steps produce the generally smaller knot-complement volume. The source bounds by themselves would not give that conclusion.
 
 ## What is now exact when the main meridian moves
 
@@ -116,7 +141,7 @@ Since \(\Delta'_0=0\), multiplication in these fixed coordinates has
 zero first derivative. Multiplication by the Casimir changes by
 one matrix entry, of magnitude \(|\Delta_s|/N^2\).
 This simplifies the algebraic deformation, and the turn now has
-the relative estimate just stated. The additional multiplication sectors still occur. For separated bare junctions, the source-growth theorem controls their signed sum at the original augmented geometric rate: it compares a whole junction with the complete positive trace, rather than bounding the new terms separately. Adjacent bare junctions require a further estimate for the intermediate boundary profile. The local norm estimate alone would not suffice: for a radical polynomial whose node derivatives are supported at one end, the second color derivative of the paired multiplier has a derivative of polynomial size at the other end. Localized node data alone therefore do not imply the analytic localization needed in the source proof.
+the relative estimate just stated. The additional multiplication sectors still occur. For separated bare junctions, the source-growth theorem controls their signed sum at the original augmented geometric rate by comparing a whole junction with the complete positive trace. The component theorem extends that comparison across adjacent bare junctions when its path inequality holds. A local norm estimate alone would not suffice: for a radical polynomial whose node derivatives are supported at one end, the second color derivative of the paired multiplier has a derivative of polynomial size at the other end. Localized node data alone therefore do not imply the analytic localization needed in the source proof.
 
 There is a second route through the recurrence. The
 [finite matrix criterion](../../notes/actual_main_meridian_finite_matrix_criterion.md)
@@ -134,7 +159,7 @@ disk in \(z\), hence on a meridian disk of radius \(O(1/N)\).
 For the covered knots, the right side would remain the volume of
 the same knot complement. The criterion is proved; its conditioning
 hypotheses have not been verified for a general Conway family.
-The new supremum theorem does not verify these conditioning hypotheses: an exponential upper bound relative to augmented volume is not a lower singular-value estimate or a bound for the normalized regular profile of a filled knot. The next tasks are therefore to extend the source argument across adjacent bare junctions and obtain the additional profile or filling control, or to prove the stated conditioning bounds for the finite operator system.
+The filled-meridian theorem above reaches a uniform volume limit and normalized profile by a direct finite-sum argument. It does not establish the conditioning hypotheses of this alternative matrix criterion. Proving those hypotheses could give another route beyond the presently covered component class.
 
 ## What the Fourier transform preserves
 

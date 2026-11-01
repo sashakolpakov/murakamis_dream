@@ -152,11 +152,48 @@ on every such compact set.
 
 ![The finite meridian profile and the error after ordinary-color subtraction, shown along the imaginary z-axis.](../figures/figure-eight-meridian-profile.png)
 
-This is a result for the figure-eight knot. The same note proves
-a criterion for passing local factor estimates through a signed
-sum, but its hypotheses have not been established for general
-Conway main-meridian deformations. That extension is distinct
-from the complete-value volume theorems above.
+The passage through ordinary-color resonances and the identification
+of the correction with the preferred cusp shape are results for the
+figure-eight knot. The Conway theorem below gives a moving-meridian
+profile on a smaller disk, before those resonances.
+
+## The volume limit while the meridian varies
+
+The reduced ADO invariant is a Laurent polynomial in a meridian parameter, with Kashaev's invariant as its value at completeness. Write this polynomial as \(F_N(M)\), in the zero-framing convention with unknot value one. Thus \(F_N(1)=K_N(K)\). The [moving-meridian theorem](../../notes/actual_main_meridian_filled_volume.md) proves a volume limit for every point in a shrinking neighborhood of \(M=1\), for the following class of long-twist Conway knots.
+
+First fix a strict tangle presentation, with its strand orientations and closing convention. Group multiplications that occur without an intervening quarter-turn into a single junction. Mark the junctions containing the operator of an original crossing circle. The remaining junctions are called bare. The theorem applies when no two bare junctions are joined by an edge. The number of pieces, their nesting depth, and their valences can be arbitrary fixed finite quantities.
+
+It also permits some connected groups of bare junctions. Here is a simple sufficient test. If such a group has \(m>1\) vertices, require at least \(\max(8,4m)\) branches leading out of the group at each vertex. The [component theorem](../../notes/actual_main_meridian_component_extension.md) gives a less restrictive test, stated as an explicit inequality along paths in that finite tree. These conditions control intermediate sums in the proof. They are additional conditions for the moving-meridian result; the earlier complete-value volume theorem has the broader scope stated above.
+
+Restore the twists by filling all auxiliary crossing circles. There is a threshold depending on the fixed presentation such that every choice of signed crossing powers \(n_i\) above that threshold in absolute value gives the following conclusion, provided the resulting diagram is a knot. The powers have their prescribed parities, may have either sign, and need not have comparable sizes. Fix them before taking the limit.
+
+Put \(q_N=e^{\pi i/N}\) and let \(M=q_N^s\). For every fixed \(R<1\),
+
+\[
+\sup_{|s|\le R}
+\left|
+ \frac{2\pi}{N}\log|F_N(q_N^s)|
+ -\operatorname{Vol}(S^3\setminus K)
+\right|\longrightarrow0.
+\]
+
+Both even and odd levels are included. This is uniform at every meridian in the indicated disk, and the invariant is nonzero there for all sufficiently large levels. The disk has radius of order \(1/N\) in the \(M\)-coordinate. The twist threshold does not depend on \(R\), although the required starting level may.
+
+The proof gives more than logarithmic growth. Let \(A_N(s)\) be the explicitly prescribed scalar obtained from the strand orientations, crossing powers, bends and zero-framing correction. It is calculated from those finite operations, before evaluating the invariant. Then
+
+\[
+\frac{F_N(q_N^s)}{F_N(1)A_N(s)}
+ =\frac{\sin\pi s}{N\sin(\pi s/N)}
+       \bigl(1+O(N^{-1})\bigr),
+\]
+
+with the value one assigned to the displayed quotient at \(s=0\). After this exact normalization, the profile tends to \(\sin(\pi s)/(\pi s)\). Section 2 of the theorem lists the scalar factors, including the different factors for the two orders of oppositely directed strands. Keeping them is necessary even though they do not change the logarithmic volume.
+
+The main analytic issue is cancellation after the twists are restored. The proof expresses the actual crossing powers by Fourier integrals and compares all Fourier indices at a common critical point. This matters when the twist sizes are very different: a small error controlled for one crossing cannot simply be compared with the total change in volume. The joint comparison proves that the first Fourier term has a nonzero coefficient and that all remaining terms have a smaller exponential rate. Thus it supplies the lower bound as well as the upper bound.
+
+The geometric calculation then identifies the critical action with the marked Dehn-filling action of the original augmented complement. The peripheral equation uses the primitive filling curve, with one full angular turn. The resulting solid tori fill the auxiliary crossing-circle cusps; the knot cusp remains complete and unfilled. The volume in the formula is therefore the volume of the actual knot complement.
+
+The theorem also computes the first correction after division by \(A_N(s)\) and the sine quotient. Its geometric interpretation as a preferred cusp shape has not been established for this class. Nor does the argument pass through \(s=\pm1\), the first ordinary-color resonances, or identify a classical geometric factor of the quantum recurrence.
 
 ## Source growth near the complete main meridian
 
@@ -181,7 +218,7 @@ The [auxiliary-color gap theorem](../../notes/actual_main_meridian_auxiliary_col
 
 The picture is a tree of quantum operations. Each outer pair is multiplied, its result is turned, and the two results are multiplied with the original operator at the middle junction before closing. It illustrates why the bound can be iterated without replacing an arbitrary intermediate product by a basic leaf.
 
-This is a theorem about the source **before filling the crossing circles**. It does not replace the already established complete-meridian filled-knot volume equalities above, and it does not yet give their moving-meridian counterparts. A normalized meridian profile and the corresponding general estimate when bare junctions are adjacent remain separate problems.
+These two estimates concern the source before filling the crossing circles. The [component extension](../../notes/actual_main_meridian_component_extension.md) proves them under the path condition described above as well. The filled-knot theorem uses further estimates: the exact crossing-power trace, a complex asymptotic for the finite wire sum, and the joint comparison of Fourier indices. The augmented source bound alone would not give the smaller filled-knot volume.
 
 ## An exact calculation for oriented tangles at a varying meridian
 

@@ -21,6 +21,16 @@ By default, logs go in a timestamped directory under the system temporary direct
 
 The runner uses the Python interpreter that launched it. Select another interpreter with the `--python` option if the chosen group needs a different environment. The manifest replaces the former long command block; it preserves those commands rather than silently adding them to every build.
 
+## The moving-meridian filling calculation
+
+The [moving-meridian theorem](../../notes/actual_main_meridian_filled_volume.md) has a focused reproduction group:
+
+    python3 repro/run_research_checks.py moving-meridian-fillings
+
+It compares 380 finite evaluations at 80-digit precision. One calculation raises the full crossing polynomial to its signed integer power in the quotient algebra. The other uses the root-grid trace, including the derivative term at repeated roots. The cases include both level parities, negative crossing powers, and displaced complex meridians. A separate exact rational calculation checks 18 quadratic Fourier comparisons with signed twist numbers of different sizes.
+
+The [recorded output](../../experiments/main_meridian_direct_fillings_results.json) gives the precision and errors. These calculations test finite identities and normalization choices. The uniform contour estimates, the nonzero leading term and the identification with knot-complement volume are proved in the linked notes. The optional profile scan in the individual script is a numerical diagnostic, not a proof of the limit.
+
 ## Where to start for the current theorem
 
 The proof has three kinds of inputs. Exact source identities retain every color, repeated-node derivative and scalar factor. Analytical estimates control the large-\(N\) limit uniformly on the domains used by the proof. Geometric constructions identify the cells, face maps, cusp markings and filling slopes of the actual complement. A finite algebra script can check an identity used in any of these arguments, but it cannot replace the uniform estimate or the topological construction.

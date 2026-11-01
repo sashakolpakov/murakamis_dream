@@ -977,6 +977,8 @@ For this same separated-junction class, the [auxiliary-color gap theorem](actual
 
 Both results concern the unsummed auxiliary-colored source at the complete augmented action. They do not supply a cancellation-preserving filling contour, a lower bound for a filled invariant, or a bound at the generally smaller filled-knot volume. They also do not prove convergence of the ordinary-color-subtracted microscopic meridian profile. Those conclusions require additional control of the signed filling transform or normalized profile.
 
+The subsequent [component theorem](actual_main_meridian_component_extension.md) provides the intermediate-profile estimate under an explicit condition on paths through adjacent bare junctions. The [filled-meridian theorem](actual_main_meridian_filled_volume.md) combines that estimate with a joint Fourier calculation and the original marked filling geometry. For the resulting class it proves a pointwise normalized profile and a uniform knot-complement volume limit on every \(|s|\le R<1\). These conclusions use those additional arguments, not just the supremum in (T33).
+
 
 ## 5. Finite reproduction
 

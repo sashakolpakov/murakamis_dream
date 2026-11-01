@@ -77,7 +77,9 @@ The [pointed quantum A-period theorem](../../notes/actual_conway_pointed_quantum
 
 A further question is how the classical polynomial obtained from the operator selects the geometric component of the knot’s peripheral character variety. That question remains separate from the exact recurrence reconstruction and its established limit. The [frontier chapter](frontier.md) explains the remaining step.
 
-The actual meridian state imposes a concrete constraint: its complete value has volume growth, but its value one quantum shift away is exactly one. The [nearby-zero theorem](../../notes/actual_ado_complete_meridian_zero_accumulation.md) proves that zeros approach completeness at distance $O(1/N)$. The next comparison therefore retains the ordinary-color subtraction and the operator's boundary factor; it cannot assume a nonvanishing scalar branch for the unchanged state on a fixed neighborhood.
+The actual meridian state imposes a concrete constraint: its complete value has volume growth, but its value one quantum shift away is exactly one. The [nearby-zero theorem](../../notes/actual_ado_complete_meridian_zero_accumulation.md) proves that zeros approach completeness at distance $O(1/N)$. A nonvanishing scalar asymptotic for the unchanged state therefore cannot hold on a fixed neighborhood.
+
+There is now a uniform volume limit on smaller disks of the form \(M=q_N^s\), \(|s|\le R<1\), for long-twist presentations satisfying an additional condition on their multiplication junctions. After the prescribed framing and orientation factors are removed, the ratio to the complete value tends to \(\sin(\pi s)/(\pi s)\). The [moving-meridian theorem](results.md#the-volume-limit-while-the-meridian-varies) explains the class and the proof. It stops before the ordinary-color resonances; extending the subtracted state through those resonances and identifying the selected classical geometric factor remain further questions.
 
 ## Reading and checking the arguments
 

@@ -412,6 +412,8 @@ Under the original strict marked geometry, \(2\pi F_0=\operatorname{Vol}(Y^\epsi
 
 The estimate is for the auxiliary-colored source before the filling transform, and its reference rate is the augmented complete action. It does not prove the filled knot's lower volume rate or the convergence of the normalized regular main-meridian profile. The radius is fixed below \(1/2\), as required by the chosen unwrapped crossing-root contour. Adjacent bare hubs remain outside this source induction.
 
+The [component extension](actual_main_meridian_component_extension.md) supplies the same argument for adjacent bare junctions satisfying its path condition. The separate [filled-meridian theorem](actual_main_meridian_filled_volume.md) proves the uniform filled-knot volume limit on \(|s|\le R<1\) by a joint crossing-power calculation. The smaller radius here belongs to this auxiliary-color estimate and is not the radius of that filled theorem.
+
 
 ## 6. Finite reproduction
 

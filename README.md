@@ -39,6 +39,14 @@ unknots. The original knot is therefore isotopic to a covered long-twist
 knot. This extends the criterion for presentations, without adding an
 estimate for short twists.
 
+A further result controls the invariant while the meridian moves within
+distance of order $1/N$ of completeness. It proves a uniform volume limit
+and an explicit normalized profile for long-twist presentations satisfying
+an additional condition on their multiplication junctions. The
+[moving-meridian section](https://sashakolpakov.github.io/murakamis_dream/guide/results.html#the-volume-limit-while-the-meridian-varies)
+states that condition and explains why this stronger conclusion currently
+has a narrower scope than the complete-value theorem.
+
 ![Tangle reduction, the finite quantum evaluation, and the volume of the resulting knot complement](book/figures/research-map.png)
 
 The general conjecture remains open. In particular, the theorem does not
