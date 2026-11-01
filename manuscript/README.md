@@ -19,9 +19,12 @@ The resolvent identity now proves how this coefficient functional
 recovers evaluation at one annihilating operator, including its
 nilpotent part. Appendix O also gives the exact root-grid coefficient
 selection and the complete circle-pattern Hessian calculation. The
-formal proofs cover the finite resolvent and exponent arguments;
-the original operator data, analytic estimates and metric construction
-remain written inputs.
+formal proofs cover the finite resolvent and exponent arguments.
+Appendix N now supplies a direct finite Fourier proof of the original
+Casimir's annihilating relation and the homogeneous face adapter,
+including its factor \(1/N\) and the even-level displacement phase.
+That calculation, the crossing comparison, analytic estimates and
+metric construction remain written proofs.
 The product extension proves that factors may be reduced before each
 multiplication while retaining repeated-root derivatives. Appendix M
 also explains the formally checked coefficient recovery under

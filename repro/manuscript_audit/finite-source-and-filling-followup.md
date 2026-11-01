@@ -348,7 +348,10 @@ The current integrated changes have been read for fidelity to the
 recorded calculations. This does not retroactively change the
 historical report hashes or enlarge their review scope. The
 snapshot also records the final source hashes supplied for this
-integration pass.
+integration pass, at commit 2301771b66296cb7f2331938f1bfe0855719dd3d.
+Later changes are not substituted for those historical inputs.
+The subsequent [local Casimir reading](local-casimir-source-followup.md)
+includes the direct Fourier adapter added after that commit.
 
 From the repository root, run:
 
@@ -356,6 +359,6 @@ From the repository root, run:
 
 This checks embedded historical report hashes, source versions
 against the pinned Git commit or retained intermediate text,
-current integration hashes, and the relative links in this
+the pinned integration hashes, and the relative links in this
 record. It does not run manuscript or guide builders, Lean,
 analytic tests, or finite certificate verifiers.

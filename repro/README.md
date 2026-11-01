@@ -89,6 +89,21 @@ remainder is covered by this certificate.
 
 ## Uniform bounds for inserting twists
 
+The local matrix-to-polynomial adapter has its own short check:
+
+~~~sh
+python3 repro/check_local_face_fourier.py
+~~~
+
+It constructs the physical Casimir from its coproduct and the face
+operator separately, then compares them in exact finite fields at
+levels 2 through 12. It also checks the homogeneous kernel for a
+polynomial of degree larger than the level and detects the incorrect
+even-level replacement of an integer displacement by its residue.
+The script uses only the Python standard library. These are finite
+checks of signs and normalization; Appendix N proves the identity
+for every complex root level.
+
 With SymPy and NumPy installed, run:
 
 ~~~sh

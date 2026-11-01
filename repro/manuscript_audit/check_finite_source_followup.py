@@ -36,9 +36,11 @@ def main():
             data = item["content"].encode()
         assert digest(data) == item["sha256"], item["path"]
     for item in snapshot["integration_sources"]:
-        path = root / item["path"]
-        assert path.is_file(), item["path"]
-        assert digest(path.read_bytes()) == item["sha256"], item["path"]
+        data = subprocess.check_output(
+            ["git", "show", snapshot["integration_commit"] + ":" + item["path"]],
+            cwd=root,
+        )
+        assert digest(data) == item["sha256"], item["path"]
     links = re.findall(r"(?<!!)\[[^\]]*\]\(([^)]+)\)", report.read_text())
     checked = 0
     for link in links:
@@ -51,6 +53,7 @@ def main():
         checked += 1
     print(json.dumps({
         "baseline_commit": snapshot["baseline_commit"],
+        "integration_commit": snapshot["integration_commit"],
         "historical_records": len(snapshot["historical_records"]),
         "audited_source_versions": len(snapshot["audited_source_versions"]),
         "integration_sources": len(snapshot["integration_sources"]),

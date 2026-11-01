@@ -168,7 +168,10 @@ any noncentral term.
 Appendix N explains why this
 remainder is unique and states exactly what would identify a candidate
 functional with its top coefficient. It also proves that the polynomial
-resolvent recovers evaluation at an annihilating operator. The face-grid
+resolvent recovers evaluation at an annihilating operator. An explicit
+finite Fourier transform derives the actual Casimir annihilator and
+the local face polynomial, including its scalar and endpoint conditions.
+The face-grid
 argument in Appendix O makes explicit why the total degree excludes
 every unwanted monomial. The analytic estimates and geometric completion
 remain written proofs with their stated hypotheses.

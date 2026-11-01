@@ -84,7 +84,7 @@ so alpha=d+u/Log q. The given modified dimension is
 \]
 
 Substitution, retaining both numerator and denominator, gives the
-ENTIRE specified local meridian function
+whole specified local meridian germ
 
 \[
  d_N(e^u)=i^{N+3}\frac{\sinh u}{\sinh(Nu)},\qquad

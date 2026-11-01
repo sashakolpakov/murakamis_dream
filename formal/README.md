@@ -138,12 +138,15 @@ At a double root, the reduced product retains
 The code constructs an associative multiplication on canonical lists;
 it does not declare a separate abstract quotient-ring type.
 
-The remaining source inputs include the actual Chebyshev factorization,
+Inputs outside these Lean modules include the actual Chebyshev factorization,
 the original Casimir annihilator, and the values and repeated-node
 derivatives of the crossing polynomial. The resolvent result below
 supplies the algebraic evaluation step once those inputs are known;
 it does not establish the diagram-to-operator correspondence or the
 analytic norm of the resulting functional.
+Appendix N supplies the annihilator and local face adapter by a written
+finite Fourier calculation on the original pair matrices; that
+calculation is not part of the formal project.
 
 ## Face-grid exponent selection
 
