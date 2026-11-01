@@ -97,3 +97,26 @@ import VolumeLogic
 #print axioms VolumeLogic.monicRemainder_permutation
 #print axioms VolumeLogic.newtonFunctional_permutation
 #print axioms VolumeLogic.newtonFunctional_characterization
+
+#print axioms VolumeLogic.protectedMax_le
+#print axioms VolumeLogic.protectedMax_ge_left
+#print axioms VolumeLogic.protectedMax_ge_right
+#print axioms VolumeLogic.protectedMin_le_left
+#print axioms VolumeLogic.protectedMin_le_right
+#print axioms VolumeLogic.protectedMin_positive
+#print axioms VolumeLogic.protected_sum_central
+#print axioms VolumeLogic.protected_sum_left
+#print axioms VolumeLogic.protected_sum_right
+#print axioms VolumeLogic.protected_sum_bridge
+#print axioms VolumeLogic.protected_sector_map_noncentral
+#print axioms VolumeLogic.protected_sum_target_cancellation
+#print axioms VolumeLogic.protected_sum_total_rate
+#print axioms VolumeLogic.protected_sum_central_total
+#print axioms VolumeLogic.protected_sum_common_gap
+#print axioms VolumeLogic.protected_sum_min_gap
+#print axioms VolumeLogic.protected_sum_strict_gap
+#print axioms VolumeLogic.protected_sum_sector_gap
+#print axioms VolumeLogic.protected_sum_certified_rate
+#print axioms VolumeLogic.protected_total_pair_bound
+#print axioms VolumeLogic.protected_total_pair_gap
+#print axioms VolumeLogic.protected_finite_assembly_gap

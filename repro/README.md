@@ -206,3 +206,21 @@ coefficient support at all sufficiently large even levels.
 The conclusion is that one proposed upper-bound method cannot prove a
 strict volume gap for this fixed source. It is not a lower bound for
 the quantum invariant and is not a counterexample to the volume conjecture.
+
+## Protected triangular sums
+
+With `python-flint` installed, run:
+
+```sh
+python3 repro/check_protected_sums.py --output repro/results/protected-sums
+```
+
+This replays both rational interval certificates for the seventeen-region
+input and checks eight exact tetrahedral attachments. Each resulting
+complex has connected cyclic vertex links, is a connected closed surface
+of Euler characteristic two, has the specified triangle matching, and
+retains the protected nonmatching edge and every ordinary target. The
+regions at which weak balance must fail remain unchanged. Use
+`--attachments` to change the finite number checked. Appendix Q proves
+the general closure theorem and its volume implication; these finite
+checks do not certify its analytic or geometric inputs.

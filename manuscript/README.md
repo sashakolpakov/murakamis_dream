@@ -121,3 +121,13 @@ python3 tools/check_book.py
 The guide is written to `docs/`, with the paper copied to `docs/papers/conway-composition.pdf`. Building it does not execute research scripts. Pandoc converts its mathematical displays to native MathML; the checker verifies the rendered formulas and local links.
 
 The illustrated guide is the maintained web text. The former Sphinx routes redirect to it; there is no separate Sphinx proof source to build.
+
+
+Appendix Q gives a further constructive closure theorem. Two marked
+spheres with certificates covering every locally allowed noncentral
+sector can be joined along triangles incident to their protected edges.
+The new source retains a strict gap. Repeating this operation gives an
+explicit sequence with \(17+r\) crossing regions outside weak balance at
+the retained mark. The argument, its inherited analytic and geometric
+inputs, and the finite reproduction command are recorded in the
+[protected-sum audit](../repro/manuscript_audit/protected-sum.md).

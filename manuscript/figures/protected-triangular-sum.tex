@@ -1,0 +1,53 @@
+\begin{tikzpicture}[x=1cm,y=1cm,font=\small,
+  line cap=round,line join=round,
+  vertex/.style={circle,fill=black,inner sep=1.3pt},
+  deleted/.style={draw=orange!70!black,dashed,fill=orange!8},
+  retainedc/.style={draw=blue!60!black,fill=blue!12},
+  retaineda/.style={draw=green!45!black,fill=green!10}]
+\begin{scope}
+  \coordinate (u) at (0,0); \coordinate (B) at (2,0);
+  \coordinate (v) at (1,1.65); \coordinate (c) at (1,-1.4);
+  \path[deleted] (u)--(v)--(B)--cycle;
+  \path[retainedc] (u)--(B)--(c)--cycle;
+  \draw[line width=1.6pt] (u)--(B);
+  \foreach \p/\lab/\where in {u/u/left,B/B/right,v/v/above,c/c/below}{
+    \node[vertex] at (\p) {}; \node[\where=3pt] at (\p) {$\lab$};
+  }
+  \node at (1,2.45) {First sphere};
+  \node[orange!65!black] at (1,.65) {remove};
+  \node at (1,-.5) {$Q_c$};
+  \node at (1,-2.25) {$C_1=\tfrac12 q_B+Q_c$};
+\end{scope}
+\begin{scope}[xshift=4.6cm]
+  \coordinate (u) at (0,0); \coordinate (B) at (2,0);
+  \coordinate (v) at (1,1.65); \coordinate (a) at (1,-1.4);
+  \path[deleted] (u)--(B)--(v)--cycle;
+  \path[retaineda] (u)--(a)--(B)--cycle;
+  \draw[line width=1.6pt] (u)--(B);
+  \foreach \p/\lab/\where in {u/u/left,B/B/right,v/v/above,a/a/below}{
+    \node[vertex] at (\p) {}; \node[\where=3pt] at (\p) {$\lab$};
+  }
+  \node at (1,2.45) {Second sphere};
+  \node[orange!65!black] at (1,.65) {remove};
+  \node at (1,-.5) {$Q_a$};
+  \node at (1,-2.25) {$C_2=Q_a+\tfrac12 q_B$};
+\end{scope}
+\draw[-{Latex[length=2mm]},thick] (7.25,0)--(8.25,0);
+\begin{scope}[xshift=9.1cm]
+  \coordinate (u) at (0,0); \coordinate (B) at (2,0);
+  \coordinate (a) at (1,1.65); \coordinate (c) at (1,-1.4);
+  \path[retaineda] (u)--(a)--(B)--cycle;
+  \path[retainedc] (u)--(B)--(c)--cycle;
+  \draw[line width=1.6pt] (u)--(B);
+  \foreach \p/\lab/\where in {u/u/left,B/B/right,a/a/above,c/c/below}{
+    \node[vertex] at (\p) {}; \node[\where=3pt] at (\p) {$\lab$};
+  }
+  \node at (1,2.45) {New matched pair};
+  \node at (1,.65) {$Q_a$};
+  \node at (1,-.5) {$Q_c$};
+  \node at (1,-2.25) {$X=Q_a+Q_c$};
+\end{scope}
+\node[align=center,text width=12.4cm] at (5.55,-3.35)
+  {The boundary triangles are identified with opposite orientations.\\
+   The thick edge $uB$ pairs the two retained triangles.};
+\end{tikzpicture}

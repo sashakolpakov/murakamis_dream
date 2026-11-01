@@ -52,6 +52,7 @@ large integer levels if the conclusion is to include both parities.
 | Quantitative, local and directed circle trees | Their own finite-sum or subtree estimates in Appendices E, G and K | The corresponding saddle analysis and marked geometric arguments in F and G | The summed, local or directed criterion of the particular theorem |
 | Planar terminal decoration | Appendix L's common-weight estimates after the specified finite insertion | Appendix L with the general central-contribution argument in O | All original and added twist powers sufficiently long; the insertion can change the knot |
 | Unchanged diagrams under weak balance | Appendix P's common perturbation of face weights and Appendix N's exact filling norm | Appendix O | The actual complete packing passes weak balance or P's quantified alternative |
+| Protected triangular sums | Appendix Q transports certificates covering every locally allowed noncentral string; N transfers the whole spectral bound | O applies to the new marked sphere | A fixed finite assembly of certified pieces, its own knot-component test and independently long fixed twists |
 | A general unchanged matched sphere | No general estimate is supplied | Appendix O gives the specified geometric contribution | The full-invariant volume conclusion is not asserted |
 
 The rows have different hypotheses. In particular, the last row is not
@@ -190,6 +191,7 @@ The detailed records are organized by the implication being checked:
 | [Directed asymptotics and coefficient functionals](manuscript_audit/directed-monic-logic-followup.md) | Fixed operator order and canonical-degree norm comparison; semantic reading of the three split-monic modules and the distinction between the unit functional, source trace and crossing multiplier |
 | [The geometric branch and longitude](manuscript_audit/directed-geometry.md) | I/M's marked reconstruction, preferred longitude and cusp conventions; the new local rigidity proof on the retained augmented triangulation |
 | [Source coverage and parity](manuscript_audit/source-coverage-followup.md) | The recursive complementary-color proof and the statement-level dependency order of N, O, L and P; separate all-level results from odd-level cap research |
+| [Protected triangular sums](manuscript_audit/protected-sum.md) | Three sector comparisons, duplicate target cancellation, the N/O import interface, exact input certificates, and the bounded scope of the new Lean declarations |
 | [Retained geometric cells](manuscript_audit/retained-geometry-followup.md) | Primitive logarithmic periods, absolute volume calibration, and the precise rank, positivity and decoration assumptions in the filled-germ argument |
 
 The detailed records cover the finite functional in Appendix N, the
@@ -230,3 +232,11 @@ The diagram adapter then needs to be proved for the literal marked
 tensors. Real and complex analysis, and the construction of the completed
 hyperbolic metric, are further stages; the present Lean files do not
 encompass them.
+
+The protected-sum follow-up also corrected a quantifier in the guide:
+the seventeen-region example defeats one required anchored bound for
+every choice of shared weights; it does not defeat every anchored bound.
+Its forty-branch certificate is unabridged in the precise sense needed
+for composition. Appendix Q now states its scaling law explicitly as
+logarithmic homogeneity, and gives the assembled diagram's full hypotheses
+before asserting its volume conclusion.

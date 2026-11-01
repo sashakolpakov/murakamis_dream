@@ -1,5 +1,5 @@
 {
-  "scope": "Finite support, coefficientwise split-monic reduction and uniqueness, invariance under root permutation, a conditional functional characterization, polynomial and tensor identities, and scalar rate implications only.",
+  "scope": "Finite support, coefficientwise split-monic reduction and uniqueness, invariance under root permutation, a conditional functional characterization, polynomial and tensor identities, protected-sum sector and target comparisons, and scalar rate implications only.",
   "not_formalized": [
     "the actual Chebyshev root data and crossing-operator functional",
     "the exact knot-diagram adapter",
@@ -438,6 +438,114 @@
       "Classical.choice",
       "Quot.sound"
     ],
+    "VolumeLogic.protectedMax_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.protectedMax_ge_left": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.protectedMax_ge_right": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.protectedMin_le_left": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.protectedMin_le_right": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.protectedMin_positive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.protected_sum_central": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.protected_sum_left": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.protected_sum_right": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.protected_sum_bridge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.protected_sector_map_noncentral": [
+      "propext"
+    ],
+    "VolumeLogic.protected_sum_target_cancellation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.protected_sum_total_rate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.protected_sum_central_total": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.protected_sum_common_gap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.protected_sum_min_gap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.protected_sum_strict_gap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.protected_sum_sector_gap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.protected_sum_certified_rate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.protected_total_pair_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.protected_total_pair_gap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.protected_finite_assembly_gap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
     "VolumeLogic.coeffEq_refl": [],
     "VolumeLogic.coeffEq_symm": [],
     "VolumeLogic.coeffEq_trans": [],
@@ -453,13 +561,14 @@
     "formal/VolumeLogic/MonicLinearity.lean": "75b8cebc8e8bd4cd72257cff082ffe2d74f67391f90942df59f80782f6a8db2b",
     "formal/VolumeLogic/MonicRemainder.lean": "f6781dba17c7677adcfe2aec41d31f8742004fc38a45be9732c24ce98b65dbfd",
     "formal/VolumeLogic/MonicUniqueness.lean": "5b1923608c3117ba4875879310b51d56995b8548f1bc93e9491eda2238d4ab1c",
+    "formal/VolumeLogic/ProtectedSum.lean": "6083dc9764da8ffdee625f01bc2c6a8929cdddf6adc8bcfbce5fed188b37e60d",
     "formal/VolumeLogic/RateComparison.lean": "837a19f87080465b55b8f9373d99eda56900829c166e98a8f16c1136ae06123b",
-    "formal/VolumeLogic.lean": "68bbfc5581880d2f94069eaaabf6f882fffe9136215af3374995331916b9390c",
-    "formal/AxiomAudit.lean": "dd16812c692f50b4ba22c27dcb7d13398289a41c995b3b0d485137f4ea4d7156",
+    "formal/VolumeLogic.lean": "455d6d1940a9976c5001305d56bad55e5f56e1ba86eb50294deb2416f1e9f8b8",
+    "formal/AxiomAudit.lean": "01fb261cdc41029d0dec2468b4104212626000a429d6a342fe77385a322347ba",
     "formal/lakefile.toml": "d4fbe5befdea32352528a400922442a9814ad56dd607ec3dbbff3639120d947b",
     "formal/lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
     "formal/lake-manifest.json": "94a62178292dabc02ac925f33a78081a26da3b9fc9b5c3ea33e97e9a8dce25da",
-    "repro/check_proof_logic.py": "42d87dcad820818dc225fbebd36b422e04d9ac6a2cfe954a2945e3595c80d6fa"
+    "repro/check_proof_logic.py": "e56a92fd511af620c9a59bff57c9062149e33bf3710126efa461fa326fccf188"
   },
   "result": "All listed declarations compiled; only the permitted foundational axioms occur."
 }

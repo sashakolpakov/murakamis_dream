@@ -1,5 +1,19 @@
 # Figure gallery
 
+## Joining two certified matched spheres
+
+![Two triangles incident to the protected edge are removed, and their former partners become one matched pair.](figures/protected-triangular-sum.svg)
+
+The vertices \(u,v\) have protected source variables zero. The ordinary
+vertices \(a,c,B\) carry positive weights. Only the two orange triangle
+interiors are removed; the rest of each sphere and the marked vertex
+\(v\) survive. Write \(q_B=\log B\), \(Q_a=Q(0,a,B)\), and
+\(Q_c=Q(0,c,B)\), where \(Q\) is the triangle potential. The new
+local rate loses \(q_B\), while the two old copies of the ordinary
+\(B\)-target become one. These changes cancel in the shared action.
+The [results chapter](chapters/results.md#joining-diagrams-with-a-shared-weight-certificate)
+explains the complementary sectors and the exact certificate requirement.
+
 ## Changing the interior triangulation of a bipyramid
 
 ![Two tetrahedra share the interior face ABC on the left; three share the interior edge PQ on the right.](figures/bipyramid-move.svg)

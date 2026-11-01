@@ -1,0 +1,605 @@
+\chapter{Protected triangular sums of certified diagrams}
+\label{app:protected-triangular-sums}
+
+This appendix proves a constructive closure theorem for full source
+certificates. The inputs are actual marked simple-sphere diagrams whose
+phase-uniform local envelopes admit an unabridged finite shared-radius
+certificate. The output is their literal protected triangular sum. Its
+full source has a strict complementary gap at both level parities, and
+its independently sufficiently long fixed signed fillings satisfy the
+volume limit for the actual new knot.
+
+A shared-radius certificate uses one positive weight for each ordinary
+white face, with the same weight at every occurrence of that face.
+The join below identifies one ordinary face of each input. Homogeneity
+lets us normalize both input certificates at that face, while an exact
+local inequality accounts for its single output coefficient target.
+If the inputs satisfy weak balance, the output does too. The more
+general certificate hypothesis also yields marked examples outside
+weak balance.
+
+\begin{theorem}[Closure under protected triangular sums]\label{pts:closure}
+Let $D_1,\ldots,D_k$, $k\ge2$, be marked matched spheres as defined in
+Section~\ref{pts:sec-1}. Suppose each satisfies the certificate
+hypothesis~\eqref{pts:eq-5}, with gap $\gamma_j>0$. Any fixed finite
+assembly using the operation of Section~\ref{pts:sec-2} has such a
+certificate with gap at least $\min_j\gamma_j$.
+
+Fix a half-twist pattern whose strand connections in the assembled
+diagram form one knot, with no additional closed main component.
+All independently sufficiently long fixed signed primitive fillings
+then satisfy the full reduced-invariant volume limit~\eqref{pts:eq-22}.
+The threshold may depend on this entire fixed diagram and pattern.
+Section~\ref{pts:sec-7} gives arbitrarily large examples whose marked
+complete packings fail weak balance, starting from a seventeen-region
+finite-cover certificate.
+\end{theorem}
+
+\section{The diagrams, local envelopes, and exact certificate
+hypothesis}\label{pts:sec-1}
+
+An input \(D\) is a fixed connected oriented simple triangulated white
+sphere, a perfect matching of its dual triangles, the literal
+inverse-cut diagram in \(S^3\), its cyclic crossing orders and disk
+framings, and a marked nonmatching edge \(uv\). The two protected face
+variables are exactly \(L_u=L_v=0\). Every other vertex has the original
+target \(d=N-1\). Write \(R_D\) for their number, which is also the
+number of matching regions.
+
+The white sphere is the combinatorial record of the two reflected
+polyhedral pieces obtained by cutting the augmented diagram. A matched
+pair of white triangles records one crossing circle and its
+twice-punctured disk. The inverse-cut construction retains the order of
+the four adjacent white faces and the disk framing; these are part of
+the data, not choices made after the gluing. Let \(Y_D\) denote the
+complete augmented exterior in \(S^3\), before filling its
+crossing-circle cusps and with the main strand components retained. Its
+positive convex cell realization is supplied by the simple-sphere
+construction in Appendix~\ref{app:balanced-terminal-fans}, equivalently \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_balanced_terminal_fan_volume.html}{the
+terminal-fan theorem, §§2--4}. The literal diagram realization and
+primitive disk curves are those of
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_morse_geometric_contribution.html}{the general Morse
+geometric theorem, §§1--2}, also given in Appendix~\ref{app:morse-geometric-contribution}.
+
+Use the source-normalized complete triangle potential \begin{equation}\label{pts:eq-1}
+Q(w_1,w_2,w_3)=
+ \max_{\substack{\alpha_i\ge0\\\sum\alpha_i=1/2\\
+                  \alpha_i=0\ \text{if}\ w_i=0}}
+ \left\{\sum_i f(\alpha_i)+\sum_{w_i>0}\alpha_i\log w_i\right\},
+ \quad
+ f(t)=\frac{\Lambda(\pi t)+\Lambda(\pi/2-\pi t)}{\pi}.
+\end{equation} Here \(\Lambda(s)=-\int_0^s\log|2\sin t|\,dt\) is the Lobachevsky
+function; only \(0\le t\le1/2\) occurs in \(f(t)\). Zero coordinates are
+deleted from the supported simplex. Thus, for example,
+\(Q(0,0,B)=\tfrac12\log B\) exactly. At an ordered quartet
+\((x,b,c,y)\), the input and output triangles are \((x,b,y)\) and
+\((x,y,c)\). Put \begin{equation}\label{pts:eq-2}
+\begin{split}
+ A_C&=Q(x,b,y)+Q(x,c,y),\\
+ A_L&=\max\{\log c,Q(x,b,y)+\tfrac12\log c\},\\
+ A_R&=\max\{\log b,Q(x,c,y)+\tfrac12\log b\}.
+ \end{split}
+\end{equation} left is absent when \(c\) is protected; right is absent when \(b\) is
+protected. These are the proved bounds for the actual local path pieces,
+uniform in their real spectral parameter and all face phases. central
+includes its original odd central row. The physical reflected order,
+rather than an arbitrary relabeling of a matrix, supplies right.
+
+For each locally allowed label string \(\omega\), define \begin{equation}\label{pts:eq-3}
+G_{D,\omega}(q)
+       =\sum_e A_{e,\omega_e}(e^q)-\sum_{f\ne u,v}q_f,
+ \qquad
+ \mathcal C_{D,\omega}=\inf_{q\in\mathbb R^{R_D}}G_{D,\omega}(q).
+\end{equation} Protected coordinates are kept zero in this notation. Complete
+simple-sphere geometry gives a finite positive stationary vector, modulo
+a common scale, and \begin{equation}\label{pts:eq-4}
+\mathcal C_{D,C}=\Phi_D
+        =\frac{\operatorname{Vol}(Y_D)}{2\pi}.
+\end{equation}
+
+\textbf{Certificate hypothesis.} There is \(\gamma_D>0\) such that for
+every locally allowed string \(\omega\ne C\), a positive shared ordinary
+vector \(L^{D,\omega}\) satisfies \begin{equation}\label{pts:eq-5}
+G_{D,\omega}(\log L^{D,\omega})
+                  \le\Phi_D-\gamma_D.
+\end{equation} Different strings may use different vectors. Each vector is shared by
+all incidences of its face; there is no independently chosen weight for
+a triangle corner or crossing incidence.
+
+A finite branch cover using maxima of the allowed local rates is
+sufficient for \eqref{pts:eq-5}, by assigning each string to a branch that covers it.
+There are finitely many strings for a fixed input. Conversely, one
+witness per string is a finite cover. This is a hypothesis about the
+original phase-uniform envelopes, not merely a bound for a signed
+coefficient at a selected spectrum.
+
+The cover must be unabridged: it covers every locally allowed noncentral
+string, including one whose final shared coefficient might vanish
+identically for a separate reason. A certificate that omits strings by a
+global support or cancellation argument is not automatically an input to
+this theorem. No transfer of such an omission is assumed.
+Protected-overloaded labels are the only automatic omissions used here.
+
+Multiplying all ordinary weights by \(t>0\) increases each triangle
+potential by \(\tfrac12\log t\), and each local rate by \(\log t\).
+Since there are \(R_D\) rates and \(R_D\) ordinary targets, every \(G_{D,\omega}\) is
+invariant under \(q\mapsto q+t\mathbf1\). Thus a whole witness may
+always be normalized at any specified ordinary face.
+
+\section{The oriented protected triangular
+sum}\label{pts:sec-2}
+
+Choose a triangle incident to the marked edge in each of two inputs.
+Identify their three boundary vertices so that the protected pair is
+\(u,v\), the ordinary third vertex is \(B\), and their matched boundary
+sides agree. Record the orientations as \begin{equation}\label{pts:eq-6}
+\begin{array}{c|c|c}
+ &\text{removed triangle}&\text{original quartet}\\ \hline
+ D_1&(u,v,B)&(u,v,c,B)\\
+ D_2&(u,B,v)&(u,a,v,B).
+ \end{array}
+\end{equation} The two removed faces have opposite orientations. The ordinary
+vertices \(a,c\) are distinct after relabeling the interiors. If a
+reflection of an entire input is needed to achieve these conventions,
+transport its complete cyclic orders, source labels and crossing signs
+with that reflection. The envelope functions and absolute volume are
+unchanged.
+
+Delete the two faces, glue their boundary triangles, remove their two
+matching pairs, and pair their former partners. The retained triangles
+are \[
+                  (u,a,B),\qquad(u,B,c),
+\] so the merged crossing has the exact quartet \begin{equation}\label{pts:eq-7}
+(u,a,c,B).
+\end{equation} Keep every other oriented face, matching edge and local order.
+
+The two punctured spheres are triangulated disks with disjoint interiors
+and no additional common vertices. Their union is a simple oriented
+triangulated sphere. The merged matching edge \(uB\) has four distinct
+incident vertices; all remaining matching pairs were already valid. The
+edge \(uv\) is retained and remains nonmatching. Every triangle is
+paired once. The count is \begin{equation}\label{pts:eq-8}
+R=R_1+R_2-1,\qquad
+ |V|=R+2,\quad |F|=2R,\quad |E|=3R.
+\end{equation} Only \(u,v,B\) are identified; every other ordinary coordinate in one
+input is distinct from every such coordinate in the other.
+
+The original inverse-cut construction therefore realizes the new data as
+an augmented link in \(S^3\), with its own primitive disk curves. This
+is an operation on recorded diagrams, not only an abstract tensor
+contraction. A knot-producing pattern can be obtained directly. The
+untwisted physical strands form projection circles, and a box joins the
+two circles that pass through its disk. Their adjacency graph is
+connected because the original four-valent diagram is connected. Choose
+a spanning tree, switch precisely its boxes to the odd terminal pairing,
+and leave all others even. Each tree edge joins two distinct current
+components; induction leaves a single main component. Either odd sign is
+allowed. This is the marked construction of
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/research_matched_sphere_morse_source.html}{the inverse-cut source
+theorem, §3}. The theorem permits any parity choice passing the
+new diagram's original one-component test, with no internally closed
+extra main component. It does not assert that arbitrary old parity
+choices can be merged without that test.
+
+\section{The complete action and the original target
+correction}\label{pts:sec-3}
+
+Put \(q_B=\log B\), \(Q_a=Q(0,a,B)\), and \(Q_c=Q(0,c,B)\). The two old
+complete bridge rates and the new one are \begin{equation}\label{pts:eq-9}
+C_1=\tfrac12q_B+Q_c,\qquad
+ C_2=Q_a+\tfrac12q_B,\qquad
+ X=Q_a+Q_c=C_1+C_2-q_B.
+\end{equation}
+
+\begin{figure}[htbp]
+\centering
+\input{figures/protected-triangular-sum}
+\caption{The local protected triangular sum. The vertices \(u,v\) are
+protected; \(B,a,c\) are ordinary. Only the two dashed triangle faces
+are removed: their boundary vertices and edges are identified, and
+\(v\) remains elsewhere in the assembled sphere. The thick side
+\(uB\) pairs the retained triangles. Here \(q_B=\log B\),
+\(Q_a=Q(0,a,B)\), and \(Q_c=Q(0,c,B)\). The local complete rate
+loses \(q_B\), exactly compensating for counting the ordinary
+\(B\)-target once rather than twice.}
+\label{fig:protected-triangular-sum}
+\end{figure}
+
+Every other complete triangle rate is retained. On the other hand,
+the combined ordinary target at \(B\) is counted once, rather than once
+in each input. Write \(P_i=G_{D_i,C}\) and
+\(P_{\mathrm{new}}=G_{\mathrm{new},C}\). Thus \begin{equation}\label{pts:eq-10}
+P_{\mathrm{new}}(q_1,q_2)
+                   =P_1(q_1)+P_2(q_2)
+\end{equation} whenever the two displayed vectors agree at \(B\). This is an
+identity of the full shared functions, not an inequality between
+separately optimized local terms.
+
+Normalize both complete minimizers by \(q_B=0\). They then combine to a
+minimizer of \eqref{pts:eq-10}; conversely \eqref{pts:eq-10} is bounded below by the sum of their
+minima. Hence \begin{equation}\label{pts:eq-11}
+\Phi=\Phi_1+\Phi_2.
+\end{equation} This also proves that the original complete curvatures on each piece
+are unchanged after their common rescaling. The complete simple-sphere
+theorem identifies \(2\pi\Phi\) with the actual new augmented volume. It
+does not identify independently filled input manifolds with the filled
+output manifold.
+
+\section{Every genuine sector at the merged
+crossing}\label{pts:sec-4}
+
+The variational formula \eqref{pts:eq-1}, using the simplex vertex at \(B\), gives \begin{equation}\label{pts:eq-12}
+Q_a,Q_c\ge\tfrac12q_B.
+\end{equation} They are strictly larger because \(a,c,B\) are ordinary and positive.
+No positivity of \(q_B\) itself is needed.
+
+At the old first crossing only left survives among the one-sided labels,
+and at the old second only right survives among them: \begin{equation}\label{pts:eq-13}
+L_1=\max\{q_c,\tfrac12q_B+\tfrac12q_c\},\qquad
+ R_2=\max\{q_a,\tfrac12q_B+\tfrac12q_a\}.
+\end{equation} The new local rates are \begin{equation}\label{pts:eq-14}
+L=\max\{q_c,Q_a+\tfrac12q_c\},\qquad
+ R=\max\{q_a,Q_c+\tfrac12q_a\}.
+\end{equation} Together \eqref{pts:eq-9} and \eqref{pts:eq-12} give all three required cases: \begin{equation}\label{pts:eq-15}
+\begin{array}{c|c|c}
+ \text{new label}&\text{input labels}&\text{rate comparison}\\ \hline
+ C&(C,C)&X=C_1+C_2-q_B\\
+ L&(L,C)&L\le L_1+C_2-q_B\\
+ R&(C,R)&R\le C_1+R_2-q_B .
+ \end{array}
+\end{equation} For example \[
+ L_1+C_2-q_B
+  =\max\{q_c+Q_a-\tfrac12q_B,\ Q_a+\tfrac12q_c\}
+  \ge\max\{q_c,Q_a+\tfrac12q_c\}=L.
+\] The right case is identical with \(a,c\) exchanged. The inequality
+retains the mixed branch of the genuine one-sided rate; it is not a
+replacement by a pure-middle monomial.
+
+For a whole output string \(\omega\), leave every other local label on
+its original input and use \eqref{pts:eq-15} at the merged crossing. This defines
+input strings \(\omega_1,\omega_2\). They are locally allowed; no
+protected-overloaded side was introduced. If the output is noncentral,
+at least one input string is noncentral. The one target correction in
+\eqref{pts:eq-10} now gives \begin{equation}\label{pts:eq-16}
+G_{\mathrm{new},\omega}(q_1,q_2)
+             \le G_{1,\omega_1}(q_1)+G_{2,\omega_2}(q_2),
+                    \qquad (q_1)_B=(q_2)_B.
+\end{equation}
+
+For a noncentral input choose its witness \eqref{pts:eq-5}; for a central input
+choose its complete minimizer. Rescale each whole vector to \(B=1\).
+Homogeneity changes none of these actions. The vectors now agree on
+every shared coordinate: \(u,v\) are zero and \(B=1\). Hence they form
+one legal shared Cauchy vector for the new source. Equations \eqref{pts:eq-11} and
+\eqref{pts:eq-16} prove \begin{equation}\label{pts:eq-17}
+G_{\mathrm{new},\omega}\le
+       \Phi-\min(\gamma_1,\gamma_2)
+                   \qquad(\omega\ne C).
+\end{equation} If both input strings are noncentral their losses add. Per-sector
+witnesses are essential to this simple statement: the other input can
+use its complete minimizer when its induced string is central. There is
+no claim that one input witness vector works for every case
+simultaneously.
+
+Equivalently, taking infima after the \(B=1\) normalization gives \begin{equation}\label{pts:eq-18}
+\mathcal C_{\mathrm{new},\omega}
+       \le\mathcal C_{1,\omega_1}+\mathcal C_{2,\omega_2}.
+\end{equation} No existence of a noncentral capacity minimizer is needed.
+
+\section{The full finite source and the volume
+limit}\label{pts:sec-5}
+
+Set \(q_N=e^{\pi i/N}\), \(d=N-1\). The local polynomial \(H_{V_N}\) is
+the original homogeneous face numerator of \begin{equation}\label{pts:eq-19a}
+V_N(\sigma;\Omega)=\chi_N(\sigma)(\sigma-\Omega)^{-1},
+ \qquad \chi_N(\sigma)=2T_N(\sigma/2)+2,
+\end{equation} where \(\Omega\) is the original two-strand Casimir and the right
+side denotes its degree-\(d\) polynomial numerator, including at the
+repeated roots. \(T_N\) is the Chebyshev polynomial. In its face
+expansion, a recurrence path from index \(j\) to \(i\) has middle powers
+\(b^ic^{d-j}\). If \(h=\lfloor d/2\rfloor\), central means \(i\le h\) and
+\(d-j\le h\), left means \(d-j>h\), and right means \(i>h\). These
+supports are disjoint and exhaustive. This fixes the source
+normalization and the meaning of every label used above.
+
+The original full numerator is \begin{equation}\label{pts:eq-19}
+S_{N,\mathrm{full}}(\boldsymbol\sigma)
+ =[\prod_{f\ne u,v}L_f^{N-1}]\,
+       \left.\prod_eH_{V_N}(L_x,L_b,L_c,L_y;\sigma_e)
+       \right|_{L_u=L_v=0}.
+\end{equation} The actual Morse identity includes the unrestricted physical mark,
+all cup and cap factors, the even coset and the face measure. No
+additional mark or factor \(N\) is introduced at the triangular sum.
+Each local polynomial has degree at most \(N-1\) in its spectral
+variable. The C/L/R partition and rates \eqref{pts:eq-2} are valid at both parities
+and uniformly over all face phases and \(\sigma_e\in[-2,2]\). The
+literal coefficient identity is
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/research_matched_sphere_morse_source.html}{the general Morse source
+theorem, §§5--6}; the phase-uniform estimates \eqref{pts:eq-2} are the cofactor
+bounds used in \href{https://sashakolpakov.github.io/murakamis_dream/notes/general_actual_sector_cover_filling_volume.html}{the
+finite-cover theorem} and \href{https://sashakolpakov.github.io/murakamis_dream/notes/general_weak_balance_volume.html}{weak
+balance, §§4--6}.
+
+Use the vector supplied by \eqref{pts:eq-17} for each genuine noncentral string.
+Cauchy's coefficient inequality, with the original targets \(N-1\),
+gives its rate at most \(\Phi-\gamma\), where
+\(\gamma=\min(\gamma_1,\gamma_2)>0\). Replacing the normalized targets
+by one costs only a fixed logarithmic term divided by \(N\). The finite
+number of factors, polynomial prefactors and local uniform errors
+contribute \(o(N)\) for the fixed new diagram. There are only finitely
+many strings. Therefore \begin{equation}\label{pts:eq-20}
+\limsup_{N\to\infty}\frac1N
+ \log\|S_{N,\mathrm{full}}-S_{N,C}\|_{[-2,2]^R}
+                    \le\Phi-\gamma.
+\end{equation} The limit superior includes even, odd and composite levels. This
+proves a bound for the entire complementary polynomial, not merely a
+fixed endpoint slice.
+
+Apply the finite Hermite functional of Appendix~\ref{app:uniform-filling-bound}, equivalently
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_uniform_filling_supremum_bound.html}{the uniform filling
+bound}, to \eqref{pts:eq-20}. It inserts the original power \(R^{n_e}\), including
+the normal data at double spectral roots. More precisely, the original
+reduced ribbon contraction is \begin{equation}\label{pts:eq-20a}
+Z_N(\boldsymbol n)=
+       \left(\bigotimes_e\mathcal L_N^{n_e}\right)S_{N,\mathrm{full}},
+ \qquad
+ \left\|\bigotimes_e\mathcal L_N^{n_e}\right\|
+       \le\prod_e(1+|n_e|/2).
+\end{equation} For fixed integer powers this bound has zero exponential rate, so the
+complementary filled contribution has rate at most \(\Phi-\gamma\).
+
+Appendix~\ref{app:morse-geometric-contribution}, equivalently \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_morse_cross_filling_period.html}{the
+Morse period theorem} and
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_morse_geometric_contribution.html}{its geometric
+identification}, supplies the nonzero full all-central period for this
+original matched sphere. Its selected action \(S_{\boldsymbol p}\) obeys
+\begin{equation}\label{pts:eq-21}
+\Re S_{\boldsymbol p}\longrightarrow\Phi
+ \quad\text{as every }|p_e|\longrightarrow\infty
+ \quad\text{independently},\qquad
+ 2\pi\Re S_{\boldsymbol p}
+       =\operatorname{Vol}(S^3\setminus K_{\boldsymbol p}).
+\end{equation} The latter equality uses the new diagram's complete positive cells,
+its original meridians and longitudes, the primitive equations
+\(U_e+p_eV_e=-2\pi i\), the main cusp left complete, and the same-chain
+volume calibration. It is not inferred from \eqref{pts:eq-11} or from a formal
+critical value.
+
+Choose the independent long-filling threshold so that the selected real
+action is larger than \(\Phi-\gamma/2\), and so that the original
+primitive completion and nonzero all-charge asymptotic apply. The
+complementary contribution is then exponentially smaller. The full
+reduced zero-framed invariant satisfies \begin{equation}\label{pts:eq-22}
+\boxed{\displaystyle
+ \lim_{N\to\infty}\frac{2\pi}{N}
+       \log|\langle K_{\boldsymbol p}\rangle_N|
+   =\operatorname{Vol}(S^3\setminus K_{\boldsymbol p}).}
+\end{equation} Here \(\langle K\rangle_N\) is the original reduced, zero-framed
+complete-color Kashaev invariant, with unknot value one. Conversion from
+\(Z_N\) retains the original framing/component character, which has
+modulus one at complete color; for a knot its enhanced component sign is
+one. The full one-cut modified convention retains its additional factor
+\(i^{N+3}/N\), whose exponential rate is zero. The knot pattern and
+every signed integer \(p_e\), with \(n_e=\epsilon_e-2p_e\), are fixed
+before \(N\) tends to infinity. No ratio bound between the large
+fillings or uniform threshold over growing diagrams is asserted.
+
+\section{Arbitrarily many blocks and weak balance as an
+input}\label{pts:sec-6}
+
+Take any finite number \(k\ge2\) of certified marked inputs. Repeatedly
+perform the operation of Section~\ref{pts:sec-2} at the retained common marked edge
+\(uv\), identifying the chosen ordinary third vertex of the next block
+with the ordinary third vertex on the selected incident triangle of the
+current sphere. The previous ordinary coordinates are retained; only the
+two chosen third vertices are identified. At each step use fresh
+interior vertices.
+
+After every step the sphere is simple and \(uv\) is still nonmatching,
+so it has two incident triangles available for the next step. Thus the
+construction has no upper bound on \(k\). Induction on \eqref{pts:eq-8}, \eqref{pts:eq-11} and
+\eqref{pts:eq-17} gives \begin{equation}\label{pts:eq-23}
+R_{\mathrm{new}}=\sum_{j=1}^kR_j-(k-1),\qquad
+ \Phi_{\mathrm{new}}=\sum_{j=1}^k\Phi_j,\qquad
+ \gamma_{\mathrm{new}}\ge\min_{1\le j\le k}\gamma_j.
+\end{equation} The exact witnesses are obtained recursively. At the next attachment
+one may rescale the entire previous witness to normalize its new joining
+face; protected zeros remain zero and all existing incidence
+identifications remain intact. One does not normalize already shared
+faces independently. The limiting statement always fixes this finite
+assembled diagram first.
+
+If each input packing is weak-balanced, the new complete packing retains
+all their unmerged local comparisons. At the new crossing, \begin{equation}\label{pts:eq-24}
+X=Q_a+Q_c\ge C_1\ge\log c,\qquad
+ X\ge C_2\ge\log a,
+\end{equation} where the first comparisons use \eqref{pts:eq-12}. They are in fact strict at this
+merged crossing. Thus protected triangular sums of weak-balanced inputs
+are themselves weak-balanced. The existing power-flattening theorem
+supplies their unabridged certificates. This gives a direct constructive
+family, with unrestricted finite numbers of certified pieces and
+arbitrary cycles already present inside those pieces.
+
+More generally the theorem uses \eqref{pts:eq-5}, which includes refined per-sector
+or finite-branch shared-radius certificates. It does not assert that the
+result lies outside all previously known knot presentations. Its
+contribution is the closure proof retaining the literal matching and the
+single original target at every face.
+
+\section{Arbitrarily large certified marked diagrams outside weak
+balance}\label{pts:sec-7}
+
+The closure is not confined to weak-balanced inputs. This statement
+concerns the recorded diagram and mark: a knot might have another
+presentation or mark satisfying a different criterion.
+
+First recall why weak balance implies an anchored witness at the same
+mark. At the complete vector \(q^*\), let
+\(P(q)=\sum_eX_e(q)-\sum_fq_f\), where \(X_e=A_C\), and put \begin{equation}\label{pts:eq-25}
+H_e=\max\{X_e,q_b,q_c\},
+\end{equation} omitting protected logarithms. The entropy proof of
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/general_weak_balance_volume.html}{weak balance, §§3--5} gives
+\(h_*>0\), a finite \(\mathcal E\ge0\), and, for \(q(t)=(1-t)q^*\),
+\(0<t<1\), \begin{equation}\label{pts:eq-26}
+P(q(t))\le\Phi+\tfrac12t^2\mathcal E,\qquad
+ X_e(q(t))-A_s(q(t))\ge t h_*
+                   \quad\text{for every surviving side }s.
+\end{equation} The positivity of \(h_*\) uses the overloaded triangle, which has at
+least two ordinary corners: the matched outer edge cannot be the
+protected nonmatching edge. Since \(A_L\ge q_c\) and \(A_R\ge q_b\),
+\eqref{pts:eq-26} implies \(H_e(q(t))=X_e(q(t))\). Thus every fixed surviving anchor
+satisfies \begin{equation}\label{pts:eq-27}
+A_{a,s}(q(t))+\sum_{e\ne a}H_e(q(t))-\sum_fq_f(t)
+ \le\Phi+\tfrac12t^2\mathcal E-t h_*<\Phi
+\end{equation} for a sufficiently small positive \(t\). This proves the anchored
+implication without treating equality in the original balance test as a
+strict loss.
+
+Now take the original width-three source with word \begin{equation}\label{pts:eq-28}
+(1,3,0,2,4,1,3,0,2,4,1,3,0,2,4,1,3),\qquad
+ \{u,v\}=\{0,16\}.
+\end{equation} Its construction and rational certificates are given in
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_shared_radius_certificate_separation.html}{the separation
+theorem}. The exact data are
+\href{https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_sector_cover_certificate.json}{the
+forty-branch certificate} and
+\href{https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_shared_radius_anchor_obstruction_certificate.json}{the
+anchor certificate}; their verifiers are
+\href{https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_sector_cover.py}{the cover verifier}
+and
+\href{https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_shared_radius_anchor_obstruction.py}{the
+anchor verifier}. They retain the original compiler, mark, local orders,
+and all ordinary targets.
+
+There are seventeen matching regions. Put \(J=\{2,4,7,12\}\). The first
+fifteen cover branches prescribe right on a nonempty subset of \(J\),
+allow central/left on its complement in \(J\), and allow all surviving
+labels elsewhere. In the remaining case no region in \(J\) is right;
+choose any surviving one-sided anchor, allow central/left at the other
+regions of \(J\), and all surviving labels elsewhere. There are
+twenty-five such anchor branches. Every locally allowed noncentral
+string is covered by this combinatorial division, whether or not its
+global coefficient vanishes. Thus this is exactly the unabridged
+hypothesis \eqref{pts:eq-5}. The rational bounds prove a uniform gap greater than
+\(0.04\).
+
+The same data locate a weak-balance failure away from a usable joining
+triangle. The obstructed anchor is right at crossing 12, whose quartet
+is \((0,11,16,14)\). Its dual rational flow mixes the complete and
+pure-middle rows only at spectators \(2,4,7\); all other spectators use
+their complete triangle rows. Consequently that very flow bounds the
+smaller function \begin{equation}\label{pts:eq-29}
+\widetilde G(q)=A_{12,R}(q)+
+      \sum_{e\in\{2,4,7\}}H_e(q)+
+      \sum_{e\notin J}X_e(q)-\sum_fq_f
+                  >\Phi_{17}+0.025
+            \quad\text{for every ordinary }q.
+\end{equation} Indeed the recorded rational row loads cancel every ordinary target.
+The mixed rows are bounded by \(H_e\), while each unmixed row is already
+bounded by \(X_e\); no replacement by \(H_e\) at an unmixed spectator is
+required. The certificate gives the flow entropy greater than
+\(19.95975965735\) and a complete-action upper bound less than
+\(19.92324700353\), which imply \eqref{pts:eq-29}.
+
+If all four crossings in \(J\) were weak-balanced at the complete
+vector, then \(H_e=X_e\) at \(2,4,7\), and \(A_{12,R}\le X_{12}\). The
+latter follows from \(X_{12}\ge q_{11}\) and \(Q(0,11,14)\ge q_{11}/2\).
+It would give \(\widetilde G(q^*)\le P(q^*)=\Phi_{17}\), contradicting
+\eqref{pts:eq-29}. Thus at least one crossing in \(J\) fails weak balance. This
+localization only needs the non-strict comparison at completeness; the
+flattening in \eqref{pts:eq-26}--\eqref{pts:eq-27} explains the broader anchored implication.
+
+The two marked-edge triangles belong to crossings 12 and 15. At crossing
+15 the quartet and its marked output triangle are \begin{equation}\label{pts:eq-30}
+(16,14,0,17),\qquad (16,17,0).
+\end{equation} Choose this latter triangle for the first sum. In \eqref{pts:eq-6} the
+seventeen-region input is \(D_2\), with \((u,v,B,a)=(16,0,17,14)\). None
+of the four crossings in \(J\) is removed or merged. Equation \eqref{pts:eq-10}
+preserves their complete curvatures up to a common scale on that input.
+Each difference \(X_e-q_b\) or \(X_e-q_c\) is invariant under this
+scale, so the failed comparison survives.
+
+For an explicit repeatable input take the tetrahedral sphere with
+oriented faces \begin{equation}\label{pts:eq-31}
+(u,v,B),\ (u,B,C),\ (B,v,C),\ (v,u,C)
+\end{equation} and matching edges \(uB,vC\), with \(uv\) protected and nonmatching.
+Its two quartets are \((u,v,C,B)\) and \((v,u,B,C)\). At \(B=C=1\), each
+ordinary face receives load \(1/2\) from one singleton triangle and
+\(1/4\) from each of the other two triangles. This is the complete
+stationary vector. Each local complete rate is \(2f(1/4)>0\), whereas
+its positive middle logarithm is zero. This input is strictly balanced
+and therefore has an unabridged certificate.
+
+Attach any fixed number \(r\ge1\) of these tetrahedral inputs, always
+continuing on the newly attached side of the retained marked edge. The
+matching side can be aligned by the recorded whole-input orientation
+choice in \eqref{pts:eq-6}. No later step touches the four original crossings in
+\(J\). The resulting sphere has \begin{equation}\label{pts:eq-32}
+R_r=17+r,\qquad
+              \Phi_r=\Phi_{17}+4r f(1/4).
+\end{equation} It satisfies \eqref{pts:eq-5} by the closure theorem and fails weak balance at its
+retained mark by \eqref{pts:eq-29}--\eqref{pts:eq-30}. Choose any knot-producing terminal parity
+pattern for this new sphere. For all independently sufficiently long
+fixed signed fillings, \eqref{pts:eq-22} is the volume limit for that new knot. This
+gives arbitrary finite sizes of certified marked diagrams outside weak
+balance at that mark; it does not classify their unmarked knots or their
+other possible presentations.
+
+\section{Scope and related
+constructions}\label{pts:sec-8}
+
+Belted sums and their volume behavior form part of the geometric
+background. Morgan and collaborators~\cite{MorganEtAlBeltedSums}
+study the geometric, combinatorial and diagrammatic classification of
+these decompositions. Van der Veen~\cite{VanDerVeenWhiteheadChains}
+proves the volume conjecture for the infinite family of Whitehead chains.
+No identification of the present ordered
+protected operation with those marked constructions is used here. In
+particular classical volume additivity itself is not claimed as a new
+phenomenon. The statement proved here is closure of the original
+phase-uniform source certificates, with every shared target retained,
+and its consequence for independently long fixed fillings of the recorded
+diagrams.
+
+An arbitrary block need not satisfy \eqref{pts:eq-5}: the
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_singleton_sector_envelope_obstruction.html}{fifty-four-region
+example} has a genuine fixed-sector envelope capacity exceeding its
+complete action by more than \(1/5\). The present proof does not assert
+an exact scalar factorization of finite spectral kernels. It proves an
+inequality for every genuine sector with its full real spectrum and all
+face phases, and therefore retains the normal data required by the
+finite filling functional.
+
+The certificate hypothesis cannot be weakened here to an arbitrary
+closed-source cancellation estimate, or to a cap estimate with other
+spectra fixed. Such estimates need not provide witnesses for \eqref{pts:eq-16}.
+Likewise globally omitted strings require an independent support
+transfer argument. The theorem changes diagrams by an explicit
+operation; it is not a claim that the original input knot type is
+preserved.
+
+
+\section{Reproduction and formal scope}
+
+The following command replays the two rational interval certificates
+used in Section~\ref{pts:sec-7} and constructs eight exact tetrahedral
+attachments:
+\begin{verbatim}
+python3 repro/check_protected_sums.py --output repro/results/protected-sums
+\end{verbatim}
+It requires Python with \sourcefile{python-flint}. The finite checks
+verify the original branch cover, triangle loads, strict interval
+bounds, and the new complexes' vertex links, matching and target
+counts. They check that all four possible failed balance regions remain
+unchanged. The induction in Section~\ref{pts:sec-6}, rather than the
+number of examples tested, proves the assertion for any fixed finite
+assembly.
+
+The module \sourcefile{formal/VolumeLogic/ProtectedSum.lean} proves
+\eqref{pts:eq-15} and the target cancellation as ordered-ring identities
+and inequalities after doubling every rate. It constructs the sector
+map and proves the positive-gap implication from the selected input
+bounds. The simplex inequalities, the existence and rescaling of the
+witnesses, the topological construction, and the analytic and geometric
+inputs remain the written arguments above. The formal check does not
+assert a formalization of the volume limit.

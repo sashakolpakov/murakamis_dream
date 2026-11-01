@@ -82,6 +82,17 @@ circle packing. [The statement and proof explanation](https://sashakolpakov.gith
 define all its quantities. Appendix P gives the proof and a quantified
 extension allowing small failures of the local inequalities.
 
+## Joining certified diagrams
+
+A [triangular-sum theorem](https://sashakolpakov.github.io/murakamis_dream/guide/results.html#joining-diagrams-with-a-shared-weight-certificate)
+preserves the full source estimate when certified matched spheres are
+joined along specified triangles. Any fixed finite number of certified
+pieces is allowed. An explicit sequence has $17+r$ crossing regions
+after $r$ attachments and retains a failure of weak balance at its mark.
+Its strict source certificates nevertheless give the volume limit after
+independently sufficiently long fixed fillings. Appendix Q defines the
+operation, its input certificates and its knot-component requirement.
+
 ## Ordered tangle trees and explicit bounds
 
 The paper also develops Conway’s algebraic, or arborescent, constructions
@@ -136,7 +147,9 @@ The [manuscript audit](repro/MANUSCRIPT_AUDIT.md) records the proof
 dependencies, corrections, and precise extent of the review. The
 [Lean project](formal/README.md) verifies finite algebraic steps,
 including polynomial reduction with repeated roots and independence
-of its representative and root ordering. Appendix N explains why this
+of its representative and root ordering. It also checks the local sector
+comparisons and target cancellation for the triangular-sum construction.
+Appendix N explains why this
 remainder is unique and states exactly what would identify a candidate
 functional with its top coefficient. The analytic estimates and geometric completion
 remain written proofs with their stated hypotheses.

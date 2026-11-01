@@ -979,7 +979,7 @@ The known examples distinguish three outcomes:
 | Fixed diagram | What the certificates establish |
 | --- | --- |
 | The five-region word \((1,3,2,1,3)\) | Complete-packing balance fails, but six anchored choices of shared weights suffice. |
-| A specified seventeen-region marked plat | Every anchored bound exceeds the geometric rate by more than \(0.025\), while forty refined groups lie below it by more than \(0.04\). |
+| A specified seventeen-region marked plat | One required anchored bound exceeds the geometric rate by more than \(0.025\), while forty refined groups lie below it by more than \(0.04\). |
 | A specified fifty-four-region matched spherical diagram | Even one fixed genuine sector has optimized envelope more than \(1/5\) above the complete action. Further refinement by the same three local labels cannot repair it. |
 
 The first two statements are in the
@@ -1013,6 +1013,111 @@ not refute the volume conjecture, nor does it exclude a sharper estimate
 retaining more phase information. It also makes no claim about every
 alternative mark or presentation of the same knot, or every member of
 the narrower flat-plat class.
+
+## Joining diagrams with a shared-weight certificate
+
+A strict coefficient bound can be carried through a particular geometric
+composition. This gives a way to construct larger examples from certified
+ones without solving a new optimization problem at every step. The
+[triangular-sum theorem](../../notes/general_protected_triangular_sum_volume.md)
+and Appendix Q give the proof.
+
+Start with two simple triangulated spheres, each with a pairing of its
+adjacent triangles. In each sphere the marked edge joins two protected
+vertices \(u,v\): their source variables are set to zero. Choose one of
+the two triangles incident to this edge, and call its third vertex
+\(B\). Remove the interior of that triangle from each sphere and identify
+the two triangular boundaries with opposite orientations. The remaining
+two triangles that had been paired with the removed ones are now paired
+with each other. The result is another matched triangulated sphere.
+
+![The two triangles containing the protected edge are removed. Their former partners become one matched pair. The joining vertex B now has one ordinary coefficient target.](../figures/protected-triangular-sum.svg)
+
+The drawing shows only the affected triangles. The rest of each sphere
+is retained, and \(v\) remains a vertex of the new sphere. The two
+protected variables are still zero. All other variables are positive
+weights used in a coefficient estimate; one weight is used at every
+occurrence of a given face. The ordinary joining vertex \(B\) has a
+single coefficient target \(N-1\) in the new source.
+
+Here is the hypothesis on each input. Every locally allowed string of
+central, left and right pieces, except the all-central string, must have
+a shared positive weight vector whose rate is strictly below the complete
+geometric rate. Different strings may use different vectors. A finite
+cover such as the forty branches above supplies exactly these data.
+The requirement includes strings whose final coefficient happens to
+vanish in the input diagram. A vanishing global coefficient is not an
+omission that this gluing proof automatically preserves.
+
+To see why the shared weights fit, use \(Q\) for the triangle potential
+(the function denoted \(F\) earlier in this chapter), and put
+\[
+ q_B=\log B,\qquad Q_a=Q(0,a,B),\qquad Q_c=Q(0,c,B).
+\]
+The two removed triangles each have only one positive coordinate, so
+their potentials are \(q_B/2\). The complete rates at the old affected
+crossings are
+\[
+ C_1=\tfrac12q_B+Q_c,\qquad
+ C_2=Q_a+\tfrac12q_B.
+\]
+The new complete crossing rate is therefore
+\[
+ X=Q_a+Q_c=C_1+C_2-q_B.
+\]
+The sum of the two old ordinary target terms counted \(q_B\) twice;
+the new target sum counts it once. These two changes cancel. The complete
+shared action is exactly the sum of the two input actions after their
+weight vectors agree at \(B\). A simultaneous rescaling of all ordinary
+weights in either input leaves its action unchanged, so both vectors can
+be normalized to \(B=1\).
+
+The complementary bounds fit the same construction. A new left piece is
+compared with left/central in the two inputs, and a new right piece with
+central/right. The variational inequality
+\(Q_a,Q_c\ge q_B/2\) gives the required comparison for both terms of
+each local maximum. Every noncentral output string has at least one
+noncentral input string. If the input gaps are \(\gamma_1,\gamma_2>0\),
+the new gap is at least \(\min(\gamma_1,\gamma_2)\).
+
+This is a bound on the whole real spectral cube at both level parities.
+Appendix N transfers the gap through the exact finite filling functional.
+Appendix O supplies the nonzero central contribution for the new diagram,
+with its primitive filling curves and actual hyperbolic volume. Once all
+fixed signed twists are sufficiently long, the full invariant has the
+volume rate of the new knot complement. The new diagram must pass its
+own one-component test. The theorem does not assert that the input knot
+types are preserved.
+
+The construction can be repeated any fixed finite number of times.
+For inputs with \(R_j\) crossing regions and complete rates \(\Phi_j\),
+\[
+ R=\sum_{j=1}^kR_j-(k-1),\qquad
+ \Phi=\sum_{j=1}^k\Phi_j.
+\]
+The additive identity concerns the augmented complements. After filling,
+the right side of the volume limit is the volume of the actual new knot
+complement; filled input volumes are not added. The twist threshold can
+depend on the assembled diagram.
+
+There is an explicit sequence outside weak balance at the retained mark.
+Start with the seventeen-region certificate above and attach tetrahedral
+spheres at region 15, then continue along the newly attached side. After
+\(r\) attachments there are \(17+r\) crossing regions. The anchor
+obstruction forces a balance failure in one of regions \(2,4,7,12\),
+and those four regions are untouched. Their complete weights change only
+by a common scale, which leaves the balance comparison unchanged.
+Nevertheless the full sector certificates persist by the theorem.
+Thus the construction gives arbitrarily large marked diagrams with a
+proved remainder gap even though weak balance fails. It makes no claim
+about other presentations of the same unmarked knots.
+
+Classical belted sums and their volume behavior form related geometric
+background; see [Morgan and collaborators](https://arxiv.org/abs/2311.13540).
+[Van der Veen's Whitehead-chain theorem](https://arxiv.org/abs/math/0611181)
+concerns another explicit infinite family. The argument here retains the
+particular source marking and shared coefficient targets; it does not
+assume an identification with those constructions.
 
 ## Complete signed augmented links at arbitrary width
 

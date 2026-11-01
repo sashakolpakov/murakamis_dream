@@ -28,6 +28,7 @@ theorem is applied.
 | [MonicRemainder.lean](VolumeLogic/MonicRemainder.lean) | Synthetic division and an explicit remainder modulo a split monic polynomial; coefficientwise reconstruction, the degree bound, and its top coefficient as an iterated divided difference. Repeated nodes are allowed. | Constructs the finite coefficient operation underlying Appendix N's Hermite functional. The actual Chebyshev polynomial and crossing-operator interpretation remain separate inputs. |
 | [MonicLinearity.lean](VolumeLogic/MonicLinearity.lean) | Linearity of that constructed remainder and its top-coefficient functional; invariance under coefficient-equivalent lists, arbitrary trailing zeros, and addition of a multiple of the modulus. | Establishes that polynomial representatives give the same functional. It does not identify that functional with the marked crossing matrix. |
 | [MonicUniqueness.lean](VolumeLogic/MonicUniqueness.lean) | Uniqueness of the remainder under a coefficientwise degree bound, including padded lists; idempotence; invariance under permutations of repeated or distinct roots; characterization of the functional by its values below the modulus degree and its vanishing on multiples. | Formalizes the canonical-remainder proposition in Appendix N. The characterization gives sufficient hypotheses for identifying a candidate functional; it does not prove those hypotheses for a crossing matrix. |
+| [ProtectedSum.lean](VolumeLogic/ProtectedSum.lean) | The three local sector comparisons for a protected triangular sum, cancellation of the duplicated face target, and preservation of a positive gap. The local maxima and the sector map are constructed explicitly. | Scalar part of Appendix Q. The triangle lower bounds, existence of shared witnesses, diagram construction, and analytic and geometric inputs remain written proofs. |
 | [RateComparison.lean](VolumeLogic/RateComparison.lean) | A linear entropy gain exceeds a quadratic cost under the stated inequality; nonnegative additional losses cannot undo a strict sector gap; a sufficiently small filling-action drop preserves the gap. | Scalar implications in Appendix P, following the entropy, Hessian, and filling estimates. |
 
 The algebraic declarations quantify over arbitrary commutative rings, or
@@ -117,12 +118,36 @@ trailing zeros make no difference. It also proves that
 \(f=g+pq\), interpreted coefficientwise with the constructed monic
 multiple \(pq\), implies equal remainders and equal functional values.
 These conclusions establish invariance under changing the polynomial
-representative modulo \(p\). An abstract quotient-ring type, invariance
-under reordering the roots, and the general confluent root-sum formula
-are not yet exported by the project.
+representative modulo \(p\). An abstract quotient-ring type and the general confluent root-sum
+formula are not yet exported by the project. Invariance under reordering
+the roots is proved in `MonicUniqueness`.
 
 The next algebraic step is to supply the actual Chebyshev factorization
 and prove that this finite functional evaluates the original crossing
 operator, including its nilpotent part. The general coefficient
 calculation does not establish that diagram-to-operator correspondence
 or the analytic norm of the resulting functional.
+
+## The protected triangular sum
+
+`ProtectedSum` doubles every rate, target and gap to avoid division.
+Its variable `b` is \(\log B\), while `qa` and `qc` are
+\(2Q(0,a,B)\) and \(2Q(0,c,B)\). The two inequalities
+`b ≤ qa` and `b ≤ qc` come from testing a vertex of the triangle
+allocation simplex. The module assumes these inequalities; it does not
+formalize that variational problem.
+
+The new crossing has three possibilities. Central maps to two central
+input pieces, left to left/central, and right to central/right. The
+module defines the corresponding maxima, proves their comparison, and
+subtracts the actual duplicated target \(2\log B\). Its main theorem,
+`protected_sum_certified_rate`, then selects an input certificate from
+the noncentral-sector map and proves that the output gap is at least
+the smaller input gap. The complete actions and gaps in that statement
+are doubled as well.
+
+The finite-list corollary assumes that the accumulated output cost is
+bounded by the sum of the selected input costs. It proves the remaining
+scalar implication; it does not construct a sequence of triangulated
+spheres or shared weight vectors. Those constructions, including the
+normalization at each joining face, are proved in Appendix Q.

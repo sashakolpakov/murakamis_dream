@@ -62,6 +62,24 @@ continues to have its narrower conclusion. The
 [worked explanation](results.md#an-unchanged-diagram-satisfying-weak-balance)
 states the constants and shows why the linear gain dominates.
 
+## Composing certified matched spheres
+
+Appendix Q proves that a full source certificate survives a specified
+triangular sum. It describes the actual gluing, explains why the
+ordinary joining face has one target, and treats all three local sector
+choices. It requires certificates for every locally allowed noncentral
+string, even when an input's final coefficient vanishes for another reason.
+
+The theorem permits any fixed finite number of certified pieces. A
+worked sequence starts with the seventeen-region rational certificate
+and repeatedly adds a tetrahedral sphere. The proof locates an original
+balance failure away from the attachment, so these marked diagrams remain
+outside weak balance while retaining a full source estimate. The volume
+conclusion uses the new diagram's own knot-component test and sufficiently
+long fixed signed fillings. The
+[illustrated explanation](results.md#joining-diagrams-with-a-shared-weight-certificate)
+defines the variables and follows the cancellation at the joining face.
+
 ## The directed full expansion
 
 The final analytic chapter proves every finite order of the microscopic

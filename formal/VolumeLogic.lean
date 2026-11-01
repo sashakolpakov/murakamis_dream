@@ -1,6 +1,7 @@
 import VolumeLogic.FiniteSupport
 import VolumeLogic.FiniteAlgebra
 import VolumeLogic.RateComparison
+import VolumeLogic.ProtectedSum
 import VolumeLogic.MonicRemainder
 import VolumeLogic.MonicLinearity
 import VolumeLogic.MonicUniqueness

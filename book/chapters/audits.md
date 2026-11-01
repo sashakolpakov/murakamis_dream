@@ -101,6 +101,39 @@ has the claimed degree and vanishes on the specified product grid is a
 separate part of Appendix N. This distinction is recorded in the formal
 project's explanation of every declaration.
 
+## Joining certified diagrams
+
+The protected triangular-sum argument has a separate
+[dependency audit](../../repro/manuscript_audit/protected-sum.md).
+Two removed triangles each contribute one half of the joining weight's
+logarithm. At the same time, their two copies of the ordinary coefficient
+target become one. Keeping both changes gives the exact cancellation
+needed to compare the full shared coefficient bounds.
+
+The new Lean module constructs the three local rate functions and the
+map from a new sector to its two input sectors. It proves the comparison
+for both branches of each maximum, the target cancellation, and the
+positive-gap implication. The written proof must still establish that
+the actual diagrams supply these functions and that their certificate
+vectors can be normalized to agree. In particular the input cover must
+include every locally allowed noncentral string; a string is not omitted
+just because its old global coefficient vanishes.
+
+A single reproduction command checks the two interval certificates for
+the seventeen-region input and constructs eight finite tetrahedral
+attachments:
+
+~~~sh
+python3 repro/check_protected_sums.py --output repro/results/protected-sums
+~~~
+
+This command requires `python-flint`. It verifies the input's full branch
+cover and rational loads, then checks the new spheres' incidence, cyclic
+vertex links, matchings and original target counts. It also checks that
+the four regions containing a possible balance failure are untouched.
+The argument for arbitrarily many attachments is the induction in
+Appendix Q. The finite examples do not replace that proof.
+
 ## The uniform cap estimate
 
 Run the exact topology, response, pressure and entropy certificates with:
