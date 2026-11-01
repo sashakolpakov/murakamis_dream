@@ -39,6 +39,28 @@ To analyze the geometry, the proof first places an auxiliary crossing circle aro
 
 Two companion results extend the paper's recursive family. The [strict-tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md) proves the estimates for every expression passing a finite angle-feasibility test. The [net-twist theorem](../../notes/actual_conway_net_twist_volume.md) then reduces an arbitrary ordered cylindrical product closure to one of those expressions or to an elementary two-strand braid closure. In the former case, the size condition applies to the combined twist numbers produced by the reduction. The [results chapter](results.md) states that condition and gives an example. The earlier PDF chapters retain their own theorem and proof; the new quantitative chapter is described next.
 
+## A bound independent of the tree size
+
+The new local chapter proves that one sufficient twist threshold
+works for every finite ordered circle tree. It starts with the
+exact polynomial obtained by evaluating a subtree while retaining
+its attaching variable. The proof then establishes its nonzero
+value at zero, its normalized real and complex bounds, and the
+nonzero leading term of the next trace. Each error is compared
+with the current vertex's filling, rather than the total change
+from all vertices.
+
+The hypothesis is
+\[
+                   \max_v\frac{d_v}{d_v^2+n_v^2}\le2^{-120}.
+\]
+Thus every \(|n_v|\ge2^{119}\) suffices, subject to the knot test,
+for any finite number of vertices. This explicit constant is
+deliberately coarse. The local chapter includes the full induction
+and the geometric path needed to identify its action with the
+original complement volume. The earlier summed theorem below
+remains a useful alternative with a better numerical constant.
+
 ## The quantitative circle-tree chapter
 
 A further chapter treats a different explicit description of the

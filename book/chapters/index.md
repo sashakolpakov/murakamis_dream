@@ -13,6 +13,16 @@ The left side measures exponential growth: a value of the form $N^a e^{NV/(2\pi)
 
 This project studies the conjecture by cutting knot diagrams into tangles and keeping track of how their finite evaluations compose. The main family consists of **Conway algebraic, or arborescent, knots**. These are built from rational tangles by joining and turning pieces. The results below give sufficient conditions on specified constructions in this family. One requires long net twists; another gives an explicit bound that can also permit short twists at junctions with many branches.
 
+For the specified construction with an integer braid at every
+vertex of an ordered tree, a [single twist threshold works for
+every finite tree](results.md#one-twist-threshold-for-arbitrarily-many-tangles).
+An explicit sufficient local condition is
+\(\max_v d_v/(d_v^2+n_v^2)\le2^{-120}\). Here \(d_v\) counts incident
+branches and \(n_v\) counts signed half-twists. It implies the
+volume equality whenever the actual strand pairing gives a knot.
+The constant is coarse, but does not deteriorate as the number
+of tangles increases.
+
 ## How the construction works
 
 A two-string tangle consists of two arcs in a ball, with four specified endpoints on its boundary. Draw the ball as a rectangle with two endpoints at the top and two at the bottom. There are two operations. To stack two tangles, put one above the other and join the adjacent pairs of endpoints without adding crossings. To turn a tangle, rotate its entire diagram through a quarter-turn. The order of the pieces matters.

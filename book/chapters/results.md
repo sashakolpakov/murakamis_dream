@@ -11,6 +11,71 @@ Here $K_N$ is the reduced Kashaev invariant in the normalization fixed in the pr
 
 There are two main ways to specify the proved families. The Conway construction builds a knot from two-strand tangles according to a finite tree. The plat construction starts with a braid and pairs its endpoints. The hypotheses for these constructions are different, so they are described separately. Later sections explain useful conditional theorems and local identities whose conclusions are smaller than a full knot-volume theorem.
 
+## One twist threshold for arbitrarily many tangles
+
+There is a stronger statement about the quantifiers for the ordered
+circle-tree construction described below. A single integer threshold
+works for every finite tree in that construction. It does not have
+to be increased when more tangle boxes are added or when their
+nesting becomes deeper.
+
+Let \(d_v\) be the number of tree edges incident to vertex \(v\),
+and let \(n_v\) be the signed number of half-twists in its braid.
+The [local theorem](../../notes/actual_all_circle_local_message_volume.md)
+assumes
+\[
+                 \max_v\frac{d_v}{d_v^2+n_v^2}\le2^{-120}.
+\]
+The actual strand pairing must give one knot, with no extra closed
+component inside a tangle. Under these conditions the knot complement
+is hyperbolic, and the Kashaev volume equality at the top of this page
+holds through both even and odd levels. The theorem also gives the
+uniform normalized meridian profile on \(|s|\le R<1\).
+
+For \(n\ne0\), the elementary inequality
+\[
+                 \frac{d}{d^2+n^2}\le\frac1{2|n|}
+\]
+shows that \(|n_v|\ge2^{119}\) at every vertex suffices. The huge
+number is an explicit sufficient threshold, not a proposed sharp
+bound. The assertion of interest is that it is independent of the
+number of tangles. Each tree and every twist count is still fixed
+before \(N\) grows. The theorem allows either twist sign and does
+not require the magnitudes at different vertices to be comparable.
+
+Here is the reason that a local condition is enough. Evaluate a
+subtree but leave its attaching edge variable \(u\) free. Its exact
+finite evaluation is a polynomial \(M_{v,N}(u)\). Only the attaching
+edge contains \(u\), so its trigonometric degree is at most \(N-1\),
+regardless of how many boxes lie below it. The proof shows that
+\(M_{v,N}(0)\ne0\) and controls the ratio
+\(M_{v,N}(u)/M_{v,N}(0)\). Factoring out this exact denominator
+preserves the contribution already obtained from the subtree.
+At the next vertex the error needs to be smaller only than the
+change caused by that vertex's filling. The proof supplies this
+comparison, including all high indices, repeated-root derivatives,
+and Fourier boundary contributions.
+
+![The complete edge kernel connects the parent angle u to the current angle t. The child subtree polynomials are multiplied before the crossing trace is taken.](../figures/tree-boundary-message.png)
+
+The triangles abbreviate subtrees of the construction. The angle
+\(u\) is retained; the trace acts on \(t\). The figure's denominator
+is the exact subtree value whose nonvanishing is proved in the
+induction.
+
+The critical point produced by this calculation solves the same
+equations as the positive deformation of the original octahedral
+pieces. Its primitive filling periods give cone angle \(2\pi\)
+at the endpoint, so the completed metric is smooth on the original
+knot complement. The volume constant is fixed by the complete
+augmented link. Thus the geometric identification and the
+noncancellation estimate are both proved for this class.
+
+The local and summed conditions below are alternative sufficient
+tests. The summed condition has a substantially better numerical
+constant; the local condition has no restriction on the total
+number of vertices. Neither includes every short-twist knot.
+
 ## An explicit bound that also permits some short twists
 
 There is a numerical criterion for a second, precisely specified
@@ -521,3 +586,19 @@ The cube calculation tests how local geometric contributions behave under sewing
 ![Four blue rung labels are summed; the eight orange cycle labels remain fixed in the proved calculation.](../figures/cube-channels.png)
 
 Removing the cycle restrictions, controlling the full cube invariant and treating its even-level growth remain open in this route. Numerical cube calculations do not establish dominance or cancellation control. The [frontier chapter](frontier.md) explains how these alternatives relate to the current general questions without treating them as missing steps in the strict-tree theorem.
+
+## A classical characteristic selected by the full expansion
+
+The [filtered characteristic theorem](../../notes/actual_main_meridian_filtered_characteristic.md)
+applies to the proved strict-tree and quantitative circle-tree
+source classes, including the local criterion above. Given a
+genuine all-level annihilator, it proves that the full microscopic
+expansion selects an analytic curve in its classical symbol.
+The selected factor is reciprocal and has an explicit rational
+peripheral expression. Its tangent is the preferred cusp shape.
+
+This result concerns the characteristic of the actual quantum
+state. Identifying its entire curve with the classical geometric
+longitude curve is a further statement, which is not asserted.
+The [frontier chapter](frontier.md#what-the-full-expansion-now-forces-on-the-recurrence)
+explains the distinction and the remaining geometric construction.

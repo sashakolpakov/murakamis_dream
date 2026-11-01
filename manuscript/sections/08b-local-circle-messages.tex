@@ -1,0 +1,324 @@
+\chapter{A local filling condition from subtree polynomials}
+\label{ch:local-circle-messages}
+
+The summed condition in Chapter~\ref{ch:quantitative-circle-trees}
+compares an error for the complete augmented diagram with the total
+change of action caused by filling. That comparison is useful when
+the sum of the changes is small. A tree also permits a different
+calculation. Evaluate a terminal subtree first, keep its value at
+zero exactly, and estimate the polynomial left on its one boundary.
+The next trace then needs to absorb only its own change of action.
+This chapter proves that this procedure gives a sufficient condition
+at each vertex, with no sum over the vertices.
+
+We keep exactly the ordered tangle construction of
+Section~\ref{sec:circle-the-knot-construction}. There is one crossing
+circle at every vertex of a finite tree, including its terminal
+vertices. The cyclic orders, positions of the crossing boxes,
+quarter-turns, disk framings and retained half twists are part of
+the diagram. Each tree edge is an actual quarter-turn. Write
+$d_v\ge1$ for a vertex degree and
+$n_v=\epsilon_v-2p_v$ for its signed crossing power. The component
+test must give one main knot, including no closed main component
+inside an intermediate tangle.
+
+\section{The local volume theorem}
+
+The reduced invariant, the root of unity, and the exact scalar
+factors have the same normalization as before:
+\begin{equation}\label{eq:local-normalizations}
+\begin{aligned}
+ q_N&=e^{\pi i/N},& K_N(K)&=F_N(1),\\
+ H_N(s)&=\frac{\sin\pi s}{N\sin(\pi s/N)},&
+ A_N(s)&=q_N^{a(D)s^2/2},\\
+ a(D)&=-w(D)-\sum_vn_v.
+\end{aligned}
+\end{equation}
+The removable value of $H_N$ at zero is one. The exponent $a(D)$
+uses the oriented writhe of the actual filled diagram and its
+original checked-crossing convention.
+
+\begin{theorem}[A local degree and twist condition]
+\label{thm:local-circle-volume}
+Fix the ordered tree, its strand frames, its knot parity pattern,
+and all its signed integer powers. Suppose
+\begin{equation}\label{eq:local-criterion}
+ \kappa=\max_v\frac{d_v}{d_v^2+n_v^2}\le2^{-120}.
+\end{equation}
+Then the actual filled knot complement is hyperbolic. For every
+fixed $0\le R<1$,
+\begin{equation}\label{eq:local-profile}
+ \frac{F_N(q_N^s)}{F_N(1)A_N(s)H_N(s)}
+       =1+O_{\mathcal T,\mathbf n,R}(N^{-1}),
+ \qquad |s|\le R,
+\end{equation}
+and
+\begin{equation}\label{eq:local-volume}
+ \frac{2\pi}{N}\log|F_N(q_N^s)|
+       \longrightarrow\Vol(S^3\setminus K)
+\end{equation}
+uniformly on that disk. These values are nonzero for all sufficiently
+large levels. The limit includes both parities and composite levels.
+The tree, the powers and the disk are fixed before $N$ tends to
+infinity.
+\end{theorem}
+
+The numerical test is independent of the number of vertices.
+Polynomial prefactors, error constants and starting levels can
+depend on the entire fixed tree and its powers. Thus the theorem
+does not assert a limit for a sequence of diagrams growing with $N$.
+The knot condition also retains the two-circle qualification from
+Chapter~\ref{ch:quantitative-circle-trees}: the two-odd pattern is
+not a knot, so an admissible two-circle knot has a pure leaf.
+
+The constants in the summed and local tests are different. Neither
+test is being used as an optimal characterization. Both remain
+sufficient results. A simple consequence of the local test is
+\[
+ \frac{d}{d^2+n^2}\le\frac1{2|n|}\quad(n\ne0):
+ \qquad |n_v|\ge2^{119}\ \text{for every }v
+ \quad\Longrightarrow\quad\eqref{eq:local-criterion}.
+\]
+This bound no longer grows with the number of edges. A zero power
+is permitted if its degree is at least $2^{120}$, provided the
+other vertices satisfy their own inequalities and the diagram is
+a knot. These large constants make the scope explicit; they are
+not estimates of the smallest admissible twists.
+
+\section{What a subtree leaves on its boundary}
+
+Choose a terminal root. A nonroot vertex has one edge toward its
+parent and a finite ordered list of child subtrees. After evaluating
+all the crossings and internal edges in those child subtrees,
+each child leaves a polynomial in the one variable at its boundary.
+Writing that variable as $-2\cos t$ is convenient for the exact
+root-of-unity trace. We denote the polynomial value by $M_{w,N}(t)$.
+It is even and periodic as a function of the angle $t$.
+
+The fixed Newton polynomials $e_k$ and their full pairing are
+defined in Section~\ref{sec:q-coordinates}. The full edge kernel is
+\begin{equation}\label{eq:local-kernel}
+ K_N(t,u;s)=\sum_{k=0}^{N-1}
+ e_k(-2\cos t)e_k(-2\cos u)\frac{H_N(s)}{W_k(s)}.
+\end{equation}
+Every Newton index is included. In particular the boundary
+polynomial is not obtained by discarding high indices before the
+subtree has been evaluated.
+
+Let $\mathcal D_{n_v,\sigma_v,N}^{(t)}$ be the actual trace after
+multiplication by the full crossing power at $v$. It acts in
+$-2\cos t$, takes the remainder in the prescribed Casimir quotient,
+and retains values and first derivatives at repeated roots.
+The orientation type determines $\sigma_v\in\{0,s,-s\}$. The edge
+orientation scalar $\gamma_{e_v}$ belongs to that edge once.
+The exact outgoing polynomial is
+\begin{equation}\label{eq:local-recursion}
+ M_{v,N}(u)=\gamma_{e_v}(s)\,
+ \mathcal D_{n_v,\sigma_v,N}^{(t)}
+ \left[K_N(t,u;s)\prod_{w\text{ child of }v}M_{w,N}(t)\right].
+\end{equation}
+Only $K_N$ depends on $u$. Hence $M_{v,N}(u)$ has trigonometric
+degree at most $N-1$, independently of the size or depth of the
+subtree. The trace may receive a polynomial of much larger degree
+in $-2\cos t$; its quotient operation handles that degree without
+changing the outgoing degree bound.
+
+\begin{figure}[ht]
+\centering
+\input{figures/tree-boundary-message}
+\caption{Evaluating a subtree of the original finite contraction.
+The blue edge retains the full Newton kernel. Each lower triangle
+denotes a child subtree with its existing polynomial boundary value.
+The trace at $v$ acts only on $t$, leaving an even trigonometric
+polynomial in the parent angle $u$. Its value at zero is factored
+out exactly before estimating the next trace.}
+\label{fig:tree-boundary-message}
+\end{figure}
+
+The last root trace acts on the product of its child polynomials.
+The original closing and framing factors, reference factors and
+one reduced cut factor are then restored. This is a change in the
+order of a finite tensor contraction. It does not commute tangles
+or change any physical quarter-turn.
+
+\section{Why the normalization is local}
+
+The induction proves that $M_{v,N}(0)$ is nonzero and that, near
+the origin,
+\begin{equation}\label{eq:local-message-expansion}
+ \frac{M_{v,N}(u)}{M_{v,N}(0)}
+ =\frac{\alpha_v(u)}{\alpha_v(0)}
+   e^{Nh_v(u)}(1+O(N^{-1})).
+\end{equation}
+Here $\alpha_v$ is holomorphic and nonzero,
+$h_v(0)=h'_v(0)=0$, and $h_v$ is even. The important uniform
+property is its curvature:
+\begin{equation}\label{eq:local-phase-class}
+ \left|h_v''(u)+\frac1{2\pi}\right|
+       \le\frac1{40\pi},\qquad |u|\le2^{-12}.
+\end{equation}
+It depends on the single edge joining the subtree to its parent.
+It does not grow with the number of vertices already evaluated.
+
+To see why this is possible, let $\psi(t,u)$ be the exact edge
+action of \eqref{eq:qe-9}--\eqref{eq:qe-12}. The conditional action
+at a vertex is
+\[
+ A_v(t,u)=\psi(t,u)+\sum_w h_w(t).
+\]
+Its $t$ curvature is close to $-d_v/(2\pi)$. After including the
+crossing chirp and the first Fourier charge, the stationary
+equation has the form
+\[
+ \left(\frac{d_v-in_v}{2\pi}\right)t=-i+E_{v,t}(t,u),
+ \qquad |E_{v,tt}|\le\frac{d_v}{40\pi}.
+\]
+The stationary value, with its value at $u=0$ subtracted, is the
+new phase $h_v$. Differentiating a stationary value gives a Schur
+complement:
+\[
+ h_v''=\psi_{uu}
+ -\frac{\psi_{ut}^2}{A_{v,tt}+in_v/(2\pi)}.
+\]
+The denominator grows with $d_v$ and $|n_v|$, whereas the two
+derivatives in the numerator come from one edge. The explicit
+edge bounds therefore preserve \eqref{eq:local-phase-class}.
+
+The exact denominator in \eqref{eq:local-message-expansion} is
+essential. On a smaller zero-free disk,
+\[
+ \frac1N\log\frac{M_{v,N}(u)}{M_{v,N}(0)}
+ =h_v(u)+\frac1N\log\frac{\alpha_v(u)}{\alpha_v(0)}
+       +O(N^{-2}).
+\]
+The next trace retains this entire expression. Its error changes
+an analytic amplitude; it does not add the difference between a
+subtree's complete and filled actions to each of its ancestors.
+
+\section{From a local saddle to the full finite trace}
+
+A local expansion alone cannot exclude a larger contribution far
+from the origin. The induction also proves a real angular envelope
+for the exact polynomial,
+\[
+ \left|\frac{M_{v,N}(u)}{M_{v,N}(0)}\right|
+ \le CN^A e^{-N2^{-18}(1-\cos u)},\qquad u\in[-\pi,\pi].
+\]
+The degree bound following \eqref{eq:local-recursion} converts this
+to a linear bound on complex strips by the subharmonic maximum
+principle. Near the origin the phase curvature gives a quadratic
+bound instead. Combining the two proves one fixed complex-strip
+estimate for every subtree.
+
+The exact crossing trace is then treated on its translated root
+grid. Its Fourier coefficients retain the Chebyshev factors
+$U_{\ell-1}(\cos2\pi\sigma_v)$, the parity signs and all endpoint
+currents. The first coefficient is exactly one. The conditional
+critical values are strictly ordered with the charge, and all
+large charges and contour connectors have a fixed conditional
+loss. Condition~\eqref{eq:local-criterion} makes the current
+vertex's first-charge action drop smaller than that loss.
+It does not compare this loss with a sum over descendants.
+
+Finally the real envelope is proved afresh from the actual trace:
+the full polynomial norm of a fixed crossing power, multiplication,
+quotient reduction and the closing functional cost only a polynomial
+in $N$. The edge kernel supplies angular decay at the outgoing
+variable. Dividing by the newly proved nonzero value at zero spends
+only the same local action drop. This closes the induction.
+Appendix~\ref{app:local-messages} gives all constants, finite
+contours, collision limits and normalizations.
+
+\section{A separate vertexwise metric criterion}
+
+The geometric completion requires less than the local quantum
+condition. The following result is useful independently.
+
+\begin{theorem}[Positive completion from vertexwise data]
+\label{thm:vertexwise-geometry}
+For the same actual ordered construction, suppose
+\begin{equation}\label{eq:vertexwise-criterion}
+ L_v=\sqrt{d_v^2+n_v^2}\ge630\qquad\text{for every }v.
+\end{equation}
+Then the charge equations
+\begin{equation}\label{eq:vertexwise-charge}
+ \Psi_v(\boldsymbol\tau)+\frac{in_v}{2\pi}\tau_v=ic,
+ \qquad \Psi=\sum_{vw}\psi(\tau_v,\tau_w),\qquad 0\le c\le1
+\end{equation}
+have a unique solution in $|\tau_v|\le10^{-2}$. It is holomorphic
+in $c$ near the closed unit disk and satisfies
+\begin{equation}\label{eq:vertexwise-size-sign}
+ |\tau_v(c)|\le
+ \frac{2\pi c}{L_v-d_v/39000},\qquad
+ \Im\tau_v(c)<0\quad(c>0).
+\end{equation}
+The actual cells complete to cone solid tori of angle $2\pi c$,
+and to smooth solid tori at $c=1$. The main cusp remains complete.
+When the component test gives a knot, the endpoint is its complete
+finite-volume hyperbolic complement.
+\end{theorem}
+
+The sign in \eqref{eq:vertexwise-size-sign} is proved, rather than
+inferred from the smallness of the parameters. Put
+\[
+ F(t,u)=2\operatorname{arsinh}(\tan(t/2)\cos(u/2)),\qquad E=F-t.
+\]
+On the radius $10^{-2}$ bidisk, the explicit derivatives give
+$|E_t|,|E_u|<1/39000$. Since $E(0,u)=0$, write $E=tH$
+with $H$ holomorphic and $|H|<1/39000$. The charge equation is
+\[
+ \left(d_v-in_v+\sum_{w\sim v}H(\tau_v,\tau_w)\right)\tau_v
+       =-2\pi ic.
+\]
+Its denominator has strictly positive real part. This gives the
+sign and a contraction whose row bound is $2/39000$, independent
+of the tree size. The proof, including a finite variant with
+different radii at different vertices, is in
+Section~\ref{sec:vg-derivatives}.
+
+The original primitive periods are
+\begin{equation}\label{eq:vertexwise-periods}
+ U_v=-2\pi\Psi_v-i\epsilon_v\tau_v,\qquad
+ V_v=2i\tau_v,\qquad U_v+p_vV_v=-2\pi ic.
+\end{equation}
+Appendix~\ref{app:quantitative-geometry} proves that these are
+actual logarithmic periods along a positive path. At the initial
+cusp their integral ambiguities vanish; continuity preserves that
+choice. At $c=1$ the primitive filling slope therefore makes one
+full turn. The conclusion concerns the original marked exterior,
+even if a total meridian logarithm has moved far from zero.
+
+\section{The original volume and the two sufficient tests}
+
+Back-substitution of the subtree stationary points gives the
+simultaneous equations \eqref{eq:vertexwise-charge} at $c=1$.
+The constants in the subtree phases cancel exactly, leaving
+\[
+ \mathcal C(c)=\operatorname*{stat}_{\boldsymbol\tau}
+ \left[\Psi+\frac{i}{4\pi}\sum_vn_v\tau_v^2
+                    -ic\sum_v\tau_v\right].
+\]
+The primitive-period calibration in
+Section~\ref{sec:fg-6} gives
+$\Vol_c=2\pi\Re\mathcal C(c)$. This identifies the action selected
+by the finite trace with the volume of the actual filled complement.
+It is the geometric step in Theorem~\ref{thm:local-circle-volume}.
+
+Each edge sum contributes $N^{-3/2}$, and each circle trace contributes
+$N^2$ times a nondegenerate one-dimensional Gaussian. A tree has one
+more vertex than edge, so the full leading power is $N^{3/2}$.
+Its amplitude is nonzero. The exact first Fourier coefficient,
+the one reduced cut factor and the original scalar ledger then
+give \eqref{eq:local-profile} and \eqref{eq:local-volume}.
+
+The geometric criterion~\eqref{eq:vertexwise-criterion} by itself
+does not prove a quantum volume limit. It can hold when neither
+the summed quantum condition nor the local quantum condition does.
+For example, on arbitrarily long paths with powers chosen from
+$630$ and $631$, it holds at every vertex while the sum
+$\sum_vd_v/(d_v^2+n_v^2)$ grows with the number of vertices.
+The appropriate knot parity still has to be selected.
+Theorem~\ref{thm:local-circle-volume} supplies a separate analytic
+criterion. The earlier summed criterion in
+Theorem~\ref{thm:circle-quantitative} remains useful, often with
+much smaller powers on a particular finite diagram.

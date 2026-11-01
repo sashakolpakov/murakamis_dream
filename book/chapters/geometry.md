@@ -4,6 +4,30 @@ A formula involving dilogarithms is not yet a geometric volume formula. To obtai
 
 For the [strict Conway tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md), all of these steps are proved. The full quantum estimates and the nonzero local contribution are proved as well. The result concerns the actual resulting knot complement, with its main cusp left unfilled. The more general plat constructions discussed later have their own hypotheses; a missing estimate in one of those routes is not a gap in the strict-tree theorem.
 
+## Filling conditions checked at individual circles
+
+For the ordered tree with one crossing circle at every vertex,
+let \(d_v\) count the incident octahedral pieces in one projection
+half and let \(n_v\) be the signed crossing power. The
+[geometric criterion](../../notes/actual_all_circle_vertexwise_geometry.md)
+\[
+                        \sqrt{d_v^2+n_v^2}\ge630
+\]
+at each vertex constructs a positive deformation through the full
+filling path. The contraction bound is independent of the number
+of vertices. The original primitive filling curve has logarithmic
+period \(-2\pi i c\), for \(0\le c\le1\). At \(c=1\) it makes
+exactly one full turn, and the endpoint is the smooth metric on
+the original knot complement. The main knot cusp remains complete.
+
+The volume decreases along this path by the Schläfli formula.
+Its constant is fixed at the complete augmented exterior, which
+has two regular ideal octahedra per tree edge. This proves that
+the continued action is the actual hyperbolic volume. To obtain
+a quantum volume equality one also needs the finite-sum estimate;
+the [local theorem](../../notes/actual_all_circle_local_message_volume.md)
+supplies it under its stronger degree-and-twist condition.
+
 ## The geometric objects and the required checks
 
 Start with the augmented diagram: each twist region has an auxiliary crossing circle around its two strands. Cutting along the projection sphere and the original crossing disks divides its exterior into pieces with labeled faces. The labels remember exactly how to glue the pieces back. They also remember which curves on each torus end are the original meridian and longitude.

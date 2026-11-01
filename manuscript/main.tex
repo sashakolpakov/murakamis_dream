@@ -47,7 +47,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\sourcefile}[1]{\texttt{\detokenize{#1}}}
 \tikzset{box/.style={draw,rounded corners,fill=blue!4,align=center,inner sep=7pt}, arr/.style={-{Latex[length=2mm]},thick}, port/.style={draw,fill=white,minimum size=4mm,circle,inner sep=0pt}}
-\title{\Huge Volume limits for arborescent knots\\[8pt]\Large Long twists and an explicit condition\\for ordered tangle trees\\[18pt]\large Finite knot invariants, hyperbolic filling,\\and the preferred cusp shape}
+\title{\Huge Volume limits for arborescent knots\\[8pt]\Large Long twists and explicit conditions\\for ordered tangle trees\\[18pt]\large Finite knot invariants, hyperbolic filling,\\and the preferred cusp shape}
 \author{}
 \date{1 November 2026}
 \begin{document}
@@ -59,15 +59,17 @@
 \chapter*{Abstract}
 We prove the volume conjecture for two specified classes of arborescent knot diagrams built by ordered stacking and quarter-turns of two-string tangles. The first is a recursive construction in which independently sufficiently large signed twist numbers give a hyperbolic knot and the volume limit. Its elementary pieces retain their original crossing circles, disk framings and endpoint order.
 
-The second result gives an explicit numerical condition for ordered trees with one crossing-circle operator at every vertex. If $d_v$ is the degree of a vertex and $n_v$ is its signed crossing power, then
+For ordered trees with one crossing-circle operator at every vertex, we give two explicit sufficient conditions. If $d_v$ is the degree of a vertex and $n_v$ is its signed crossing power, either
 \[
-                    \sum_v\frac{d_v}{d_v^2+n_v^2}\le2^{-25}
+ \sum_v\frac{d_v}{d_v^2+n_v^2}\le2^{-25},
+ \qquad\text{or}\qquad
+ \max_v\frac{d_v}{d_v^2+n_v^2}\le2^{-120}
 \]
-suffices whenever the original strand pairing gives a knot. This condition permits short or zero powers at sufficiently large-degree vertices. It also gives the explicit sufficient bound $|n_v|\ge8192\sqrt E$ for a tree with $E$ edges. Every diagram, parity choice and integer power is fixed before the root-of-unity level $N$ tends to infinity. The limits include both parities and composite levels, and only auxiliary circles are filled.
+suffices whenever the original strand pairing gives a knot. The first condition gives the explicit bound $|n_v|\ge8192\sqrt E$ for a tree with $E$ edges. The second removes the sum over vertices and permits the bound $|n_v|\ge2^{119}$ independently of the tree size. Both allow short or zero powers at sufficiently large-degree vertices. Every diagram, parity choice and integer power is fixed before the root-of-unity level $N$ tends to infinity. The limits include both parities and composite levels, and only auxiliary circles are filled.
 
-The proof starts with the finite matrices defining the invariant and retains their derivative data at repeated spectral roots. For the long-twist construction, positive multiplication coefficients and exact rational inequalities control the signed color terms. For the quantitative tree theorem, a literal projection cut gives two octahedra per edge. Positive deformations of these cells fit in the original cyclic order, and their actual primitive periods give smooth filling even when the total meridian logarithm has left a small neighborhood of zero. The full Fourier calculation keeps the charge tails and boundary contributions, identifies a nonzero leading term, and matches its calibrated action with the volume of the original knot complement.
+The proof starts with the finite matrices defining the invariant and retains their derivative data at repeated spectral roots. For the long-twist construction, positive multiplication coefficients and exact rational inequalities control the signed color terms. For the quantitative tree theorems, a literal projection cut gives two octahedra per edge. Positive deformations of these cells fit in the original cyclic order, and their actual primitive periods give smooth filling even when the total meridian logarithm has left a small neighborhood of zero. A separate metric condition, $\sqrt{d_v^2+n_v^2}\ge630$ at every vertex, constructs these geometric fillings without a summed condition. The local quantum argument evaluates each subtree as an exact polynomial and normalizes it by its own value at zero. The full Fourier calculation keeps the charge tails and boundary contributions, identifies a nonzero leading term, and matches its calibrated action with the volume of the original knot complement.
 
-For the quantitative class we also prove a uniform microscopic main-meridian profile for the zero-framed reduced ADO invariant. Its exact crossing and framing factor is retained, and its first correction is the preferred cusp shape of the filled knot. The construction hypotheses and the knot-pairing test are stated explicitly; the results do not classify all arborescent knots.
+Both quantitative theorems give a uniform microscopic main-meridian profile for the zero-framed reduced ADO invariant, with its exact crossing and framing factor retained. Under the summed criterion we also identify the first correction with the preferred cusp shape of the filled knot. The construction hypotheses and the knot-pairing test are stated explicitly; the results do not classify all arborescent knots.
 
 \tableofcontents
 \mainmatter
@@ -80,6 +82,7 @@ For the quantitative class we also prove a uniform microscopic main-meridian pro
 \input{sections/07-marked-geometry}
 \input{sections/08-filling}
 \input{sections/08a-quantitative-circle-trees}
+\input{sections/08b-local-circle-messages}
 \input{sections/09-reproduction}
 \appendix
 \input{sections/A-finite-identities}
@@ -88,6 +91,7 @@ For the quantitative class we also prove a uniform microscopic main-meridian pro
 \input{sections/D-marked-cell-calibration}
 \input{sections/E-quantitative-finite-sums}
 \input{sections/F-quantitative-octahedral-geometry}
+\input{sections/G-local-tree-messages}
 \backmatter
 \bibliographystyle{plain}
 \bibliography{references}

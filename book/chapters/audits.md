@@ -6,6 +6,30 @@ An exact symbolic calculation can establish an identity in formal variables. A r
 
 The current [strict Conway tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md) includes bounds for the full quantum sum, a nonzero selected contribution, the original normalization and the actual marked filling geometry. Its proof is not waiting for a theorem about all knots. The more specialized general-plat calculations catalogued below retain their own hypotheses and limitations.
 
+## Reproducing the local tree argument
+
+This group requires Python and mpmath. Run it using one command:
+
+~~~sh
+python3 repro/run_research_checks.py local-tree-fillings
+~~~
+
+The first two programs check 21 analytic and eight geometric
+constant comparisons by exact rational arithmetic. The third
+compares the polynomial subtree recursion with a separate
+spectral or first-derivative trace calculation in 48 finite cases,
+using 180 choices of root at 80-digit precision. The examples
+include both level parities, zero and signed powers, moving
+parameters, and constant channels with repeated spectral roots.
+All \(N\) edge indices are retained; removing the high indices
+changes every tested value.
+
+These checks verify the constants and finite identities used by
+the argument. The written proof supplies the induction for all
+finite trees, the contour bounds, noncancellation, and the metric
+completion. The scripts do not test the asymptotic conclusion
+by extrapolating finite levels.
+
 ## Checks for the quantitative volume theorem
 
 The [quantitative theorem](../../notes/actual_all_circle_quantitative_volume.md)

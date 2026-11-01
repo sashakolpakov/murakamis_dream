@@ -53,6 +53,30 @@ the original strand compiler; the induction proves the general case.
 The numerical Gaussian samples check formulas, while the written
 bounds control the whole complex domain.
 
+## Reproducing the local tree argument
+
+This group requires Python and mpmath. Run it using one command:
+
+~~~sh
+python3 repro/run_research_checks.py local-tree-fillings
+~~~
+
+The first two programs check 21 analytic and eight geometric
+constant comparisons by exact rational arithmetic. The third
+compares the polynomial subtree recursion with a separate
+spectral or first-derivative trace calculation in 48 finite cases,
+using 180 choices of root at 80-digit precision. The examples
+include both level parities, zero and signed powers, moving
+parameters, and constant channels with repeated spectral roots.
+All \(N\) edge indices are retained; removing the high indices
+changes every tested value.
+
+These checks verify the constants and finite identities used by
+the argument. The written proof supplies the induction for all
+finite trees, the contour bounds, noncancellation, and the metric
+completion. The scripts do not test the asymptotic conclusion
+by extrapolating finite levels.
+
 ## What a passing run does not replace
 
 The suite verifies the finite arithmetic in the source bounds. It does not mechanically verify the whole manuscript. In particular, the invariant normalization, the ordered tangle identities, the geometric gluing, the complex interpolation estimates and the filling-period argument require their written proofs. A passing result should not be reported as a computer proof of the volume conjecture for arbitrary knots.

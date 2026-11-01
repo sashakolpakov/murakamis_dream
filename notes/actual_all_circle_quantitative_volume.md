@@ -7,6 +7,13 @@ a small integer twist correspond to a long normalized filling slope.
 This gives a numerical sufficient condition for the volume conjecture
 in which some twist coefficients may be short or zero.
 
+The [local subtree theorem](actual_all_circle_local_message_volume.md)
+gives another sufficient condition for exactly this construction:
+\(\max_v d_v/(d_v^2+n_v^2)\le2^{-120}\). Its constant is smaller,
+but it has no sum over the vertices. In particular one universal
+twist threshold suffices for any finite tree. The summed criterion
+proved below remains a separate, often numerically better test.
+
 ## The knot construction
 
 A two-string tangle is drawn in a ball with four ordered boundary

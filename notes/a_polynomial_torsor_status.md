@@ -15,11 +15,25 @@ framing conditions. Their volume is the original knot-complement
 volume; the meridian profile and preferred-cusp correction are also
 proved.
 
-Identifying the geometric factor in the classical limit of the
-selected annihilator remains a further question. The shrinking
-meridian profile does not by itself settle it. The
-[current frontier](../book/chapters/frontier.md) states the distinction
-and the ordinary-color obstruction.
+The [local tree theorem](actual_all_circle_local_message_volume.md)
+adds the alternative condition
+\(\max_v d_v/(d_v^2+n_v^2)\le2^{-120}\). It gives a twist threshold
+independent of the number of vertices and the same exact pointed
+operator-period volume limit.
+
+The [full microscopic expansion](actual_main_meridian_filtered_characteristic.md)
+now determines an analytic curve \(M=e^u\),
+\(L=-e^{\mathcal S'(u)}\) that lies in the classical symbol of every
+specified genuine all-level annihilator. Its selected irreducible
+factor is reciprocal. The note gives a rational peripheral formula
+and, for the circle trees, explicit finite rational critical equations.
+
+The curve has the independently computed preferred cusp tangent.
+Its identification with the full geometric eigenvalue germ remains
+open: that requires a marked main-meridian deformation of the cells,
+or a comparison with the original geometric braid critical scheme.
+The finite-source volume equalities above do not depend on that
+remaining identification.
 
 ## Earlier torsor and full-source approaches, 28 October
 

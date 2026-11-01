@@ -46,6 +46,21 @@ allows short or zero powers at high-degree junctions. Its proof
 constructs the original knot complement from positive ideal cells
 and controls the full finite invariant. The constant is conservative.
 
+A [local alternative](https://sashakolpakov.github.io/murakamis_dream/notes/actual_all_circle_local_message_volume.html)
+removes the dependence on the number of tangles:
+$$
+              \max_v\frac{d_v}{d_v^2+n_v^2}\le2^{-120}.
+$$
+For this same construction, every $|n_v|\ge2^{119}$ suffices,
+regardless of the tree's size, depth or vertex degrees. The constant
+is deliberately very coarse. The conclusion is the actual knot
+volume equality, through both level parities; the whole diagram
+and its twists remain fixed as $N$ grows. The proof evaluates
+each subtree exactly and normalizes it by its own filled value,
+so the next error is compared with a change at one vertex.
+The earlier summed criterion remains an alternative with a better
+numerical constant.
+
 The [closure extension](https://sashakolpakov.github.io/murakamis_dream/notes/actual_conway_arbitrary_closure_volume.html)
 also allows cap closures and exact cancellation of twist sums. Its
 reduction can split the diagram into connected-sum factors. For a
@@ -74,6 +89,12 @@ ordinary-color resonances; continuation through them remains a separate
 problem.
 
 ![Tangle reduction, the finite quantum evaluation, and the volume of the resulting knot complement](book/figures/research-map.png)
+
+The [full microscopic expansion](https://sashakolpakov.github.io/murakamis_dream/notes/actual_main_meridian_filtered_characteristic.html)
+also selects a classical curve in any genuine annihilating operator.
+Its rational longitude expression and cusp tangent are determined.
+Identifying the whole curve with the geometric longitude deformation
+remains a separate step.
 
 The general conjecture remains open. In particular, the theorem does not
 classify all arborescent knots or cover arbitrary short twist numbers.

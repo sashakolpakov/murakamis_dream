@@ -12,6 +12,8 @@ The same reconstruction and volume conclusion also apply to the
 [quantitative circle-tree theorem](actual_all_circle_quantitative_volume.md),
 under its explicit condition
 \(\sum_vd_v/(d_v^2+n_v^2)\le2^{-25}\).
+Alternatively, the [local tree criterion](actual_all_circle_local_message_volume.md)
+\(\max_vd_v/(d_v^2+n_v^2)\le2^{-120}\) supplies the same conclusion.
 The exact operator identity is valid for every knot; the new theorem
 supplies its volume growth, including the short powers admitted by
 that criterion. No long-twist assumption is added in this application.
@@ -28,7 +30,7 @@ Fix a knot supplied by either reduction theorem. Its original construction is is
 \]
 
 For the quantitative application, use the original ordered circle
-tree and its powers satisfying the summed criterion in place of the
+tree and its powers satisfying either the summed or local criterion in place of the
 long-twist presentation just described. The symbols \(K,V,q_N\) have
 the same meanings in (1), and all subsequent recurrence constructions
 are unchanged.

@@ -62,3 +62,20 @@ The command `python3 repro/run_research_checks.py curvature-fillings`
 runs all three programs. Their finite checks supplement the uniform
 asymptotic and geometric proofs; they are not a test of the conjecture
 by extrapolating a list of knots.
+
+## The local tree theorem
+
+The complete induction is in
+[the local message volume theorem](../notes/actual_all_circle_local_message_volume.md).
+The [strip lemma](../notes/exact_tree_messages_and_strip_bounds.md)
+proves the exact degree bound and the complex continuation of a real
+polynomial envelope. The [geometric criterion](../notes/actual_all_circle_vertexwise_geometry.md)
+proves the positive filling path independently of the number of
+vertices. The previously established ordered cuts and primitive
+completion identify the actual knot complement and its volume.
+
+The group local-tree-fillings runs the finite comparisons and
+recursion examples described in the reproduction guide. Its
+21 analytic and eight geometric checks concern numerical constants.
+Its 48 high-precision examples compare different finite trace
+evaluations; they are not substitutes for the all-tree induction.

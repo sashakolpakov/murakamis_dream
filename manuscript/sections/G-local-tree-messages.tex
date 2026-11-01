@@ -1,0 +1,382 @@
+\chapter{Exact subtree polynomials and local filling estimates}
+\label{app:local-messages}
+
+This appendix proves Theorem~\ref{thm:local-circle-volume} and the
+separate metric criterion, Theorem~\ref{thm:vertexwise-geometry}.
+The tree, all cyclic orders, all strand frames, all signed powers
+and the knot pairing are fixed. Only the integer level \(N\) tends
+to infinity. We use
+\[
+ \kappa=\max_v\frac{d_v}{d_v^2+n_v^2}\le2^{-120}
+\]
+for the quantum induction. The last section replaces this condition
+by \(\sqrt{d_v^2+n_v^2}\ge630\) for geometric completion alone.
+
+The exact finite coordinates, pairing, crossing polynomial and
+translated-grid trace are those of Section~\ref{sec:q-coordinates}.
+Their finite edge-sum expansion on a radius \(1/4\) bidisk is proved
+in Section~\ref{sec:qe-5}; the global Newton product bounds are in
+Section~\ref{sec:qu-2}. In particular the input to the present proof
+is an asymptotic for an actual finite sum with its endpoint
+currents, not only a formal critical value.
+
+We call the polynomial left on the unique boundary of an evaluated
+subtree its boundary message. Its value at zero will be factored
+out exactly. The proof first establishes a class of limiting phases,
+then closes an induction for the finite polynomials themselves.
+Each step keeps all Newton indices and all repeated-root derivative
+coordinates.
+
+\section{The full finite kernel and exact recursion}\label{sec:lm-2}
+
+Put \(d=N-1\), \(c_j=2\cos((2j+1)\pi/N)\), and \begin{equation}\label{eq:lm-6}
+S_k=\prod_{r=1}^k2\sin(\pi r/N),\qquad
+ e_k(z)=S_k^{-2}\prod_{j<k}(c_j-z).
+\end{equation} The fixed pairing is \(\phi_\sigma(e_i e_j)=\mathbf1_{i+j=d}\). A physical turn, after lowering this pairing, identifies equal indices and retains \(\gamma_e(s)H_N(s)/W_k(s)\). Thus define \begin{equation}\label{eq:lm-7}
+K_N(t,u;s)=\sum_{k=0}^{N-1}
+       e_k(-2\cos t)e_k(-2\cos u)\frac{H_N(s)}{W_k(s)}.
+\end{equation} This is the full kernel, not the regular-window truncation. It is an even trigonometric polynomial of degree at most \(N-1\) in each variable. The paired factors and their inverses are bounded uniformly in \(k,N\) on every fixed disk \(R<1\).
+
+Choose a terminal root. For a nonroot vertex \(v\), its message to the parent angle \(u\) is the exact polynomial \begin{equation}\label{eq:lm-8}
+M_{v,N}(u)=
+ \gamma_{e_v}(s)\,
+ \mathcal D_{n_v,\sigma_v,N}^{(t)}
+ \left[K_N(t,u;s)\prod_{w\text{ child of }v}M_{w,N}(t)\right].
+\end{equation} The functional \(\mathcal D_{n,\sigma,N}(F)=\phi_\sigma(R_\sigma^nF)\) uses the full physical crossing polynomial, including its Cartan scalar. The polynomial representative and the trace are defined by the exact quotient in Section~\ref{sec:q-coordinates}. The actual \(\sigma_v\) is \(s,-s\), or \(0\), according to the ordered pair. The reference monodromy factors remain outside in the same ledger as Theorem~\ref{thm:circle-quantitative}. Formula \eqref{eq:lm-8} follows by expanding the original covariant contraction and doing finite sums in a different order. It does not commute physical tangles.
+
+At the root the final trace is \begin{equation}\label{eq:lm-9}
+Z_N=
+ \mathcal D_{n_0,\sigma_0,N}^{(t)}
+                   \left[\prod_{w\text{ child of }0}M_{w,N}(t)\right].
+\end{equation} The original closing/framing factor, prescribed reference factors, and one reduced cut factor \(H_N(s)\) multiply \eqref{eq:lm-9}. There is no discarded-source remainder in \eqref{eq:lm-8}--\eqref{eq:lm-9}. Every original normal channel and every \(0\le k<N\) is still present.
+
+In particular \(M_{v,N}\) is always an even trigonometric polynomial of degree at most \(N-1\) in its parent variable, regardless of the size of the subtree. This is seen directly from \eqref{eq:lm-7}: the trace and all child operations act only in \(t\).
+
+\section{Two full-kernel bounds}\label{sec:lm-3}
+
+Use the following constants: \begin{equation}\label{eq:lm-10}
+r=2^{-12},\quad c_K=2^{-16},\quad c=2^{-18},
+ \quad y_0=2^{-56},\quad \rho=2^{-14},\quad t_0=2^{-16}.
+\end{equation} All bounds allow polynomial factors in \(N\), depending on \(R\). Let \(G_0=g(1/4)\), and let \(\psi(t,u)\) be the edge action, with \(\psi(0,0)=2G_0\).
+
+First, for real \(t,u\in[-\pi,\pi]\), \begin{equation}\label{eq:lm-11}
+|K_N(t,u;s)|
+ \le C_RN^{A_R}
+ \exp N\{2G_0-c_K[(1-\cos t)+(1-\cos u)]\}.
+\end{equation} To prove this, split \eqref{eq:lm-7} into \(k/N\in I=[1/5,3/10]\) and its complement. On \(I\), the product bound in Section~\ref{sec:qu-2} gives a factor \(\exp[-\alpha N\sin^2(t/2)]\) at each end, with \(\alpha>1/250\). The positive endpoint sum has rate \(2G_0\) and a polynomial prefactor. Outside \(I\), full Hermite interpolation gives a real sup bound with the single-edge loss \(\eta_K=\pi/200\), including high indices. Since \(4c_K<\eta_K\) and \(c_K<\alpha/2\), both pieces satisfy \eqref{eq:lm-11}.
+
+Second, for complex \(|u|\le r\), real \(|t|\le\pi\), and \(|y|\le y_0\), \begin{equation}\label{eq:lm-12}
+|K_N(t+iy,u;s)|
+ \le C_RN^{A_R}
+ \exp N\{\Re\psi(0,u)-c_K(1-\cos t)+16y^2\}.
+\end{equation} This conditional normalization is essential. Replacing \(\Re\psi(0,u)\) by \(2G_0+O(r^2)\) would introduce an unnecessary error larger than some of the later local tail losses.
+
+Here are the details. The complementary kernel, by the polynomial ellipse bound at each end, is at most \begin{equation}\label{eq:lm-13}
+C_RN^{A_R}
+ \exp N\{2G_0-\eta_K+|y|+|\Im u|\}.
+\end{equation} Since \(|\psi(0,u)-2G_0|\le r^2\), its fixed gap absorbs the entire claimed angular loss in \eqref{eq:lm-12}, uniformly in \(t\). Indeed \(r+r^2+y_0+2c_K<\eta_K/2\).
+
+For the retained kernel and \(|t|\le1/8\), the finite edge-sum saddle of Section~\ref{sec:qe-5} is uniform on \(|t+iy|,|u|\le1/4\). The exact formula for \(\psi_{tt}\) gives \begin{equation}\label{eq:lm-14}
+|\psi_{tt}+1/(2\pi)|\le \frac1{50}\frac1{2\pi}.
+\end{equation} Separate evenness implies \(\psi_t(0,u)=0\). Integrating \eqref{eq:lm-14} on the segment from zero to \(t+iy\) proves a stronger version of the exponent in \eqref{eq:lm-12}. Its polynomial amplitude and its exponentially small lattice currents are retained. For \(|t|\ge1/8\), use the explicit global bound \begin{equation}\label{eq:lm-15}
+|e_k(-2\cos(t+iy))|
+ \le e^2e_k(-2)e^{N[-\alpha\sin^2(t/2)+11y^2]}.
+\end{equation} The product at the other end satisfies \(|e_k(-2\cos u)|\le e_k(-2)e^{Nr^2}\) on \(I\): the normalized product factors have denominators \(\cos^2((j+1/2)\pi/N)\ge1/3\), and \(|\sin(u/2)|^2<r^2/3\). The additional change from \(2G_0\) to \(\Re\psi(0,u)\) costs at most another \(r^2\). Now \begin{equation}\label{eq:lm-16}
+2r^2<\frac{\alpha}{2}\sin^2(1/16),\qquad
+                    c_K<\alpha/4.
+\end{equation} These inequalities prove \eqref{eq:lm-12} on the remaining real angles. The first follows already from \(\alpha>1/250\), \(\sin(1/16)>1/(8\pi)\), and \(\pi^2<10\). No quadratic complex bound for an individual high basis element has been used in this argument.
+
+On the small bidisk \(|t|,|u|\le r\), the full kernel also has the same nonzero analytic saddle expansion as its retained part. The complementary estimate \eqref{eq:lm-13} has a fixed gap there. In particular, \begin{equation}\label{eq:lm-17}
+K_N(t,u;s)=N^{-3/2}a_e(t,u)
+ e^{N\psi(t,u)}(1+O_R(N^{-1})),
+\end{equation} with the paired insertion included in the error and with the exact midpoint normalization of Section~\ref{sec:q-coordinates}. The leading \(a_e\) is holomorphic and nonzero on a slightly larger disk. The outside \(\gamma_e(s)\) in \eqref{eq:lm-8} is not included in \(a_e\).
+
+\section{A closed class of boundary phases}\label{sec:lm-4}
+
+Write \(a_0=1/(2\pi)\). A boundary phase \(h(u)\) will satisfy \begin{equation}\label{eq:lm-18}
+h(0)=h'(0)=0,\qquad h(-u)=h(u),\qquad
+                 |h''(u)+a_0|\le a_0/20,\quad |u|\le r.
+\end{equation} Assume the child phases have this property. At a nonroot vertex put \[
+ a_v=d_v/(2\pi),\quad b_v=n_v/(2\pi),\quad D_v=a_v-ib_v,
+\] \begin{equation}\label{eq:lm-19}
+A_v(t,u)=\psi(t,u)+\sum_w h_w(t),\qquad
+ C_{v,\ell}(u)=\operatorname{stat}_t
+ \{A_v(t,u)+ib_vt^2/2-i\ell t\}.
+\end{equation} There are exactly \(d_v\) incidences in the \(t\) variable. Consequently \begin{equation}\label{eq:lm-20}
+A_v(t,u)=\psi(0,u)-a_vt^2/2+E_v(t,u),\qquad
+ |E_{v,tt}|\le a_v/20,\quad |E_{v,t}/t|\le a_v/20.
+\end{equation} The last quotient is removable at zero, by evenness in \(t\). For \(0\le\ell\le L_v=\lfloor t_0|D_v|\rfloor\), the equation \begin{equation}\label{eq:lm-21}
+D_vt=-i\ell+E_{v,t}(t,u)
+\end{equation} is a contraction on \(|t|\le r\). Its Lipschitz constant is at most \(1/20\), and its image has radius \(t_0+r/20<r\). The solution has \begin{equation}\label{eq:lm-22}
+|t_\ell|\le\frac{\ell}{(1-1/20)|D_v|},\qquad
+ \frac{380}{441}\frac{\ell a_v}{|D_v|^2}
+ \le-\Im t_\ell\le
+ \frac{420}{361}\frac{\ell a_v}{|D_v|^2}.
+\end{equation} These inequalities hold also for complex \(u\). Indeed \(t_\ell=-i\ell/(D_v-Q_v)\), where \(|Q_v|\le a_v/20\); the real part of \(D_v-Q_v\) is positive. No reality assertion about a child phase is needed.
+
+The normalized outgoing phase is \begin{equation}\label{eq:lm-23}
+h_v(u)=C_{v,1}(u)-C_{v,1}(0).
+\end{equation} Stationarity gives the exact derivative \begin{equation}\label{eq:lm-24}
+h_v'(u)=\psi_u(t_1(u),u),\qquad
+ h_v''(u)=\psi_{uu}
+ -\frac{\psi_{ut}^2}{A_{v,tt}+ib_v}.
+\end{equation} The denominator has modulus at least \((19/20)|D_v|\). The explicit edge bounds on the radius \(1/4\) disk give \(|\psi_{uu}+a_0|\le a_0/50\) and \(|\psi_{ut}|\le a_0/50\). Since \(|D_v|\ge a_v\ge a_0\), the right side differs from \(-a_0\) by at most \begin{equation}\label{eq:lm-25}
+a_0\left(\frac1{50}+\frac{20}{19\cdot2500}\right)
+                      <a_0/20.
+\end{equation} Thus \eqref{eq:lm-18} closes without a depth or vertex-count constant. The same calculation starts the recursion when there are no children.
+
+Charge ordering and the current vertex's action drop follow directly from \(\partial_\ell\Re C_{v,\ell}=\Im t_\ell\): \begin{equation}\label{eq:lm-26}
+\Re C_{v,\ell}(u)\le\Re C_{v,1}(u)
+ -\frac{190}{441}\frac{a_v}{|D_v|^2}(\ell^2-1),
+\end{equation} \begin{equation}\label{eq:lm-27}
+0\le \Re\psi(0,u)-\Re C_{v,1}(u)
+ \le\frac{210}{361}\frac{a_v}{|D_v|^2}
+ =\frac{420\pi}{361}\frac{d_v}{d_v^2+n_v^2}<4\kappa .
+\end{equation} There is no sum over descendants in \eqref{eq:lm-27}.
+
+\section{The exact finite-message induction}\label{sec:lm-5}
+
+The inductive assertions are these, for all sufficiently large \(N\) depending on the fixed subtree, uniformly on each fixed main-parameter disk \(R<1\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(M_{v,N}(0)\ne0\), and on \(|u|\le r\), \begin{equation}\label{eq:lm-28}
+\frac{M_{v,N}(u)}{M_{v,N}(0)}
+    =\frac{\alpha_v(u)}{\alpha_v(0)}
+      e^{Nh_v(u)}(1+O(N^{-1})).
+\end{equation} The amplitude is holomorphic and nonzero; \eqref{eq:lm-18} holds.
+\item
+  For real \(|u|\le\pi\), \begin{equation}\label{eq:lm-29}
+\left|\frac{M_{v,N}(u)}{M_{v,N}(0)}\right|
+       \le C N^A e^{-Nc(1-\cos u)}.
+\end{equation}
+\item
+  For real \(|t|\le\pi\), \(|y|\le y_0\), \begin{equation}\label{eq:lm-30}
+\left|\frac{M_{v,N}(t+iy)}{M_{v,N}(0)}\right|
+   \le C N^A e^{N[-(c/2)(1-\cos t)+y^2]}.
+\end{equation}
+\end{enumerate}
+
+Only the phase bound and displayed exponential constants are uniform in the subtree. Amplitude bounds, polynomial powers and thresholds are allowed to depend on the fixed subtree.
+
+In \eqref{eq:lm-28} the normalization is the exact value \(M_{v,N}(0)\). It retains all \(N\)-dependent crossing, carrier and edge phases. More explicitly one may write \begin{equation}\label{eq:lm-28a}
+M_{v,N}(u)=\Omega_{v,N}(s,\boldsymbol\sigma)\,
+       \alpha_v(u)e^{N\mathcal F_v(u)}(1+O(N^{-1})).
+\end{equation} Here \(\Omega_{v,N}\) is the original nonzero scalar ledger for that subtree, including the full \(q^{n_v(d^2/4-\sigma_v^2/2)}\) factors. It need not converge as \(N\) varies. The ratio in \eqref{eq:lm-28} cancels it exactly. The leading normalized amplitude \(\alpha_v(u)/\alpha_v(0)\) is independent of the microscopic parameters: the first charge coefficient is one and the paired edge insertion has leading value one. The next coefficients may depend on them. No oscillatory scalar has been hidden in a claimed \(N\)-independent amplitude.
+
+To obtain \eqref{eq:lm-30} from \eqref{eq:lm-28}--\eqref{eq:lm-29}, use the exact degree bound following \eqref{eq:lm-9}. For a Laurent polynomial \(f\) of degree at most \(N-1\), the polynomial \(z^{N-1}f(z)\), and its reciprocal, give the elementary Poisson bound \begin{equation}\label{eq:lm-31}
+|f(t+iy)|\le CN^A
+ e^{N[-c(1-\cos t)+(1+c)|y|]}
+\end{equation} when its real bound is \eqref{eq:lm-29}. Here are the details of the maximum-principle step. Write \(f(t)=P(e^{it})\), where the Laurent polynomial \(P\) has powers between \(-m\) and \(m\), with \(m\le N-1\). On the unit circle the subharmonic function \(\log|z^mP(z)|\) is bounded by the harmonic function
+\[
+ \log(CN^A)-Nc+Nc\Re z.
+\]
+The same inequality holds inside the disk, including at zeros of the polynomial. For \(y\ge0\), substitute \(z=e^{-y+it}\) and divide by \(|z|^m\). This gives
+\[
+ |f(t+iy)|\le CN^A
+ \exp\{-Nc(1-e^{-y}\cos t)+my\}.
+\]
+For \(y\le0\), apply the same argument to \(z^mP(z^{-1})\). Finally \(1-e^{-|y|}\le|y|\) and \(m\le N\) give \eqref{eq:lm-31}. This argument needs no positivity or reality of the polynomial coefficients. For \(|t|\ge r/2\), our \(y_0\) satisfies \begin{equation}\label{eq:lm-32}
+(1+c)y_0<\frac c2(1-\cos(r/2)).
+\end{equation} For \(|t|<r/2\), use \eqref{eq:lm-28} and \eqref{eq:lm-18}: \begin{equation}\label{eq:lm-33}
+\Re h_v(t+iy)\le
+ -\frac{19a_0}{40}t^2+\frac{21a_0}{40}y^2.
+\end{equation} Since \(|t+iy|<r\), these two estimates prove \eqref{eq:lm-30}. The amplitude costs only a fixed polynomial factor.
+
+In applying the next trace, factor out the exact constants \(\prod_wM_{w,N}(0)\). Do not replace them by absolute complete-source bounds. On the local disk, the exact normalized child message has a holomorphic logarithm. More explicitly, \eqref{eq:lm-28} implies, on any fixed smaller disk, \begin{equation}\label{eq:lm-34}
+\frac1N\log\frac{M_{w,N}(t)}{M_{w,N}(0)}
+ =h_w(t)+\frac1N\log\frac{\alpha_w(t)}{\alpha_w(0)}
+                         +O(N^{-2}).
+\end{equation} The branches vanish at zero, and all fixed derivatives have the same orders by Cauchy. The thresholds in \eqref{eq:lm-34} may depend on the subtree. For a fixed vertex the sum of these corrections tends to zero. It therefore perturbs the local nondegenerate saddle by \(O(N^{-1})\), or equivalently is retained in its analytic amplitude. This is why inherited errors do not spend another exponential gap at every ancestor.
+
+\section{Conditional trace tails and connectors}\label{sec:lm-6}
+
+After extracting the exact child constants, \eqref{eq:lm-12} and \eqref{eq:lm-30} give the global bound for the actual input of the next trace: \begin{equation}\label{eq:lm-35}
+|K_N(t+iy,u)\prod_w M_{w,N}(t+iy)/M_{w,N}(0)|
+ \le CN^A e^{N[\Re\psi(0,u)-2^{-20}a_vt^2+128a_vy^2]}.
+\end{equation} Indeed \(1-\cos t\ge2t^2/\pi^2\), \(d_v=2\pi a_v\), and \(2\pi<8\). At a root with no outgoing edge, omit \(K_N\), replace \(\psi(0,u)\) by zero, and retain the same bound because there are \(d_v\) incoming messages.
+
+Set \begin{equation}\label{eq:lm-36}
+A_0=2^{-41},\qquad
+ y_v=A_0t_0a_v/|D_v|,\qquad L_v=\lfloor t_0|D_v|\rfloor.
+\end{equation} Condition \eqref{eq:local-criterion} gives \(L_v\ge1\), and \(y_v\le2^{-57}<y_0\). The exact trace formula retains \begin{equation}\label{eq:lm-37}
+c_{\ell,N}(\sigma)=
+ (-1)^{(N-1)(\ell-1)}U_{\ell-1}(\cos2\pi\sigma),
+                         \qquad c_{1,N}=1.
+\end{equation} For a charge \(\ell>L_v\), the chirp and \eqref{eq:lm-35}, maximized in \(t\), cost at most \begin{equation}\label{eq:lm-38}
+\left(128a_v+\frac{b_v^2}{4\cdot2^{-20}a_v}\right)y_v^2
+ \le2^{18}\frac{|D_v|^2}{a_v}y_v^2.
+\end{equation} The negative Fourier term is at least \(t_0|D_v|y_v\). Since \(2^{18}A_0<1/2\), the omitted tail has loss at least \begin{equation}\label{eq:lm-39}
+\frac12A_0t_0^2a_v=2^{-74}a_v>2^{-77}
+\end{equation} relative to \(\Re\psi(0,u)\). Each additional charge contributes \(e^{-N(\ell-L_v-1)y_v}\). For the fixed subtree, this dominates the exact coefficient growth \(\ell e^{2\pi R'(\ell-1)}\) for all sufficiently large \(N\).
+
+At the original real endpoints the Gaussian loss is \(2^{-20}\pi^2a_v\). The chirp and finite-charge connectors cost at most \(\pi A_0t_0a_v+A_0t_0^2a_v+128A_0^2t_0^2a_v\). Their sum is less than half the endpoint loss. The exact zero-mode current obeys that endpoint bound. Thus the original finite functional, including its endpoints and normals, is its finite charge sum plus a conditional error with loss \eqref{eq:lm-39}.
+
+For each retained charge, restrict the real integral to \([-\rho,\rho]\). Its complement loses at least \(2^{-20}a_v\rho^2>2^{-51}\). Translate the interval to \(\Im t_\ell\); its endpoints remain in \(|t|<r\). With \(\delta=1/20\), the same elementary Young inequality as in Section~\ref{sec:qe-8} gives, along the connectors, \begin{equation}\label{eq:lm-40}
+\Re\{A_v(t-iv,u)+ib_v(t-iv)^2/2-i\ell(t-iv)\}
+ \le \Re\psi(0,u)-\frac18a_vt^2
+ +\left[\frac{1+\delta}{2}a_v+
+ \frac{2b_v^2}{(3-4\delta)a_v}\right]v^2-\ell v.
+\end{equation} For \(0\le v\le-\Im t_\ell\), the last two terms are at most \(-\ell v/8\), since \begin{equation}\label{eq:lm-41}
+\frac{420}{361}
+ \max\left\{\frac{21}{40},\frac{2}{14/5}\right\}
+ =\frac{300}{361}<\frac78.
+\end{equation} Thus each connector has loss at least \(a_v\rho^2/8>2^{-34}\). The translated horizontal integral has a nondegenerate Gaussian with real quadratic part bounded above by \(-(19/20)a_v\). Its leading amplitude is nonzero: the edge amplitude, the child amplitudes and the actual \(\sin t_\ell\) are all nonzero.
+
+Combining these estimates, choose \begin{equation}\label{eq:lm-42}
+\eta=2^{-80}.
+\end{equation} Every nonminimal charge is its saddle term plus an absolute conditional error \(CN^Ae^{N(\Re\psi(0,u)-\eta)}\). It need not have a relative expansion at its own much lower action. But \eqref{eq:lm-27} and \eqref{eq:local-criterion} give \(4\kappa<\eta/2\). Consequently these errors are below the first conditional charge. Equation \eqref{eq:lm-26} orders all retained charges relative to that same charge. Its coefficient in \eqref{eq:lm-37} is exactly one, for both parities. This proves \eqref{eq:lm-28}, with a nonzero leading amplitude.
+
+The argument initially takes the formal grid parameters on circles avoiding \(\sin2\pi\sigma=0\). The entire physical trace and its first-charge approximation are holomorphic through all collisions inside \(|\sigma|<1\). Apply the maximum principle to their whole difference on a slightly larger parameter disk. The leading orientation/crossing factors are explicit and nonzero; no divided endpoint current is declared separately removable. This extends the estimate, and the eventual nonvanishing, to every actual \(\sigma=0,\pm s\) and both complete parity sequences.
+
+Finally, prove \eqref{eq:lm-29} freshly from the exact trace rather than from its local approximation. This step can use polynomial norms directly, so colliding-grid derivatives cause no additional assumption. The real sup norm of each canonical child polynomial, divided by \(|M_{w,N}(0)|\), is polynomial by \eqref{eq:lm-29}. For fixed real \(u\), \eqref{eq:lm-11} gives the real sup norm in \(t\) of the canonical kernel polynomial, retaining its factor \(\exp N[2G_0-c_K(1-\cos u)]\). Real sup and Chebyshev coefficient norms are polynomially equivalent at degree less than \(N\). The full crossing polynomial has polynomial norm. Multiply these polynomials, apply the exact Chebyshev folding bound in the correct \(P_{\sigma_v}\) quotient, and then its top-coefficient functional \eqref{eq:q-trace-definition}. All these are full polynomial identities and retain every normal channel. They give \begin{equation}\label{eq:lm-43}
+|M_{v,N}(u)|\le
+ CN^A\left|\prod_w M_{w,N}(0)\right|
+       e^{N[2G_0-c_K(1-\cos u)]}.
+\end{equation} The nonzero value just proved at \(u=0\) has the exponent \(2G_0-\Delta_v\), with \(0\le\Delta_v<4\kappa\). For \(|u|\ge r/2\), \begin{equation}\label{eq:lm-44}
+4\kappa<(c_K-c)(1-\cos(r/2));
+\end{equation} for \(|u|<r/2\), \eqref{eq:lm-28} and \eqref{eq:lm-33} give the stronger bound. Hence \eqref{eq:lm-29}, and then \eqref{eq:lm-30}, hold with the same constants for the outgoing message. This completes the induction. The proof is unchanged for a leaf, where the child product is empty.
+
+\section{Root assembly and the original filled action}\label{sec:lm-7}
+
+Apply the same local trace argument to \eqref{eq:lm-9}. Its normalized input has \(d_0\) incoming messages and no outgoing edge, so the only change to \eqref{eq:lm-19}--\eqref{eq:lm-43} is to omit \(\psi(t,u)\) and its constant. The current-vertex drop, charge ordering, tails and connector estimates have the same constants.
+
+Recover the subtree constants recursively rather than summing their upper bounds. The child envelope identity \eqref{eq:lm-24} shows that the selected angles satisfy, at every original vertex, \begin{equation}\label{eq:lm-45}
+\sum_{e\sim v}\psi_{e,\tau_v}
+                  +\frac{in_v\tau_v}{2\pi}=i.
+\end{equation} Their modulus is bounded by \(2\pi/[(19/20)\sqrt{d_v^2+n_v^2}]\), which is much less than the geometric chart radius. Substituting the recursive critical values makes all child constants telescope. The root action is exactly \begin{equation}\label{eq:lm-46}
+\mathcal C(\mathbf1)=\operatorname{stat}_{\boldsymbol\tau}
+ \left[\sum_e\psi_e+
+ \frac{i}{4\pi}\sum_vn_v\tau_v^2-i\sum_v\tau_v\right].
+\end{equation} It is the original filled action, not a sum of independently optimized cap actions. Its selected branch agrees with the unique small simultaneous solution, by the same weighted contraction used in \eqref{eq:lm-21}.
+
+For the geometric path replace the right side of \eqref{eq:lm-45} by \(ic\), \(0\le c\le1\). The explicit edge Hessian estimates in Section~\ref{sec:qe-5} give the simultaneous contraction on the radius \(1/4\) polydisk, with diagonal nonlinear bound \(a_v/50\) and row bound \(a_v/25\). Condition \eqref{eq:local-criterion} implies \(\sqrt{d_v^2+n_v^2}\ge\kappa^{-1/2}\). Consequently that solution has \begin{equation}\label{eq:lm-46a}
+|\tau_v(c)|\le
+ \frac{2\pi c}{(1-1/50)\sqrt{d_v^2+n_v^2}}<10^{-2},
+ \qquad \Im\tau_v(c)<0\quad(c>0).
+\end{equation} The same factorization of the nonlinear derivative by \(\tau_v\) proves the sign, just as in \eqref{eq:lm-22}. These are precisely the primitive-completion hypotheses of Section~\ref{sec:fg}. All original disk periods, half twists and the calibrated action are therefore retained along the actual positive path.
+
+Each edge sum contributes \(N^{-3/2}\); each actual circle trace contributes \(N^2\) times one nondegenerate one-dimensional Gaussian, hence \(N^{3/2}\). Since a tree has one more vertex than edge, the final power is \(N^{3/2}\). All its leading amplitudes are nonzero. The exact first coefficient \eqref{eq:lm-37}, rather than separate evenness alone, pairs the reflected Fourier modes.
+
+The edge insertion is still \(H_N/W_k\), with the original Gamma interpolation and physical offsets. Its leading value is one and its first correction is the same cotangent insertion as in Theorem~\ref{thm:circle-quantitative}. The exact scalar ledger is unchanged by finite summation order. Thus the complete result is \eqref{eq:local-profile}--\eqref{eq:local-normalizations}, and the same first correction can be obtained by the normalized insertion rule if desired.
+
+\section{A vertexwise geometric criterion}\label{sec:vg-derivatives}
+
+We now prove Theorem~\ref{thm:vertexwise-geometry}. All the original ordered cell maps and primitive markings remain those of Appendix~\ref{app:quantitative-geometry}. This part of the argument does not assume the local quantum condition.
+
+\subsection{Exact derivatives of the nonlinear error}\label{sec:vg-2}
+
+On the branches through zero define \begin{equation}\label{eq:vg-5}
+F(t,u)=2\operatorname{arsinh}\!
+          \left(\tan(t/2)\cos(u/2)\right),\qquad
+ E(t,u)=F(t,u)-t.
+\end{equation} The edge action satisfies \(-2\pi\psi_t=F\). Put \begin{equation}\label{eq:vg-6}
+Q(t,u)=\sqrt{1-\sin^2(t/2)\sin^2(u/2)},\qquad Q(0,0)=1.
+\end{equation} Differentiation gives exactly \begin{equation}\label{eq:vg-7}
+F_t=\frac{\cos(u/2)}{\cos(t/2)Q(t,u)},\qquad
+ F_u=-\frac{\sin(t/2)\sin(u/2)}{Q(t,u)}.
+\end{equation} Indeed \(1+\tan^2(t/2)\cos^2(u/2)=Q^2/\cos^2(t/2)\); the square roots agree at zero and hence throughout the small connected chart. This fixes the branches in \eqref{eq:vg-7}.
+
+For \(|t|,|u|\le10^{-2}\), let \begin{equation}\label{eq:vg-8}
+a=\frac1{79000},\qquad b=\frac1{199},\qquad
+ \omega=b^4,\qquad \delta=\frac1{39000}.
+\end{equation} The elementary series bounds with \(r=1/200\) give \begin{equation}\label{eq:vg-9}
+|\sin(t/2)|\le\frac{r}{1-r^2/6}<b,\qquad
+ |\cos(t/2)-1|
+       \le\frac{r^2}{2(1-r^2/12)}<a,
+\end{equation} and the same for \(u\). Thus \(|Q|^{-1}\le(1-\omega)^{-1}\) and \(|Q-1|\le\omega\). To see the latter estimate, use \((Q-1)(Q+1)=-\sin^2(t/2)\sin^2(u/2)\); the branch has \(\operatorname{Re}Q>0\), so \(|Q+1|\ge1\). Equation \eqref{eq:vg-7} now yields \begin{equation}\label{eq:vg-10}
+\begin{split}
+ |E_t|&\le
+       \frac{2a/(1-a)+\omega}{1-\omega}<\delta,\\
+ |E_u|&\le\frac{b^2}{1-\omega}<\delta.
+ \end{split}
+\end{equation} Both final inequalities are rational comparisons. In particular, \(E(0,u)=0\), and \begin{equation}\label{eq:vg-11}
+E(t,u)=tH(t,u),\qquad
+ H(t,u)=\int_0^1 E_t(\lambda t,u)\,d\lambda,\qquad
+ |H(t,u)|\le\delta.
+\end{equation} The function \(H\) is holomorphic also at \(t=0\). No division by a possibly vanishing unknown is needed to define it.
+
+\subsection{A contraction independent of the size of the tree}\label{sec:vg-3}
+
+Write \(L_v=\sqrt{d_v^2+n_v^2}=|d_v-in_v|\). Multiplying \eqref{eq:vertexwise-charge} by \(-2\pi\) and using \eqref{eq:vg-5} gives \begin{equation}\label{eq:vg-12}
+(d_v-in_v)\tau_v+
+       \sum_{w\sim v}E(\tau_v,\tau_w)=-2\pi ic.
+\end{equation} Define the fixed-point map \begin{equation}\label{eq:vg-13}
+\mathcal T_{c,v}(\boldsymbol\tau)=
+       -\frac{2\pi ic}{d_v-in_v}
+       -\frac{\sum_{w\sim v}E(\tau_v,\tau_w)}{d_v-in_v}.
+\end{equation} On the closed polydisk of radius \(\rho=10^{-2}\), \eqref{eq:vg-11} and \(d_v/L_v\le1\) give, uniformly for complex \(|c|\le1\), \begin{equation}\label{eq:vg-14}
+|\mathcal T_{c,v}|
+       \le\frac{2\pi}{630}+\delta\rho<\rho.
+\end{equation} For example the last strict inequality already follows from \(\pi<22/7\). The total row derivative is at most \begin{equation}\label{eq:vg-15}
+\frac{d_v\delta+d_v\delta}{L_v}\le2\delta<1.
+\end{equation} Hence \eqref{eq:vg-13} is a strict contraction in the ordinary maximum norm, with a constant independent of the graph size. It has exactly one fixed point in the polydisk. Iteration from zero converges uniformly in \(c\), so the fixed point is holomorphic for \(|c|<1\). The strict margin in \eqref{eq:vg-14} allows \(|c|\le1+\varepsilon\) for some positive \(\varepsilon\), proving the stated neighborhood assertion. The selected value at \(c=0\) is zero.
+
+The sign needed for geometric completion is not inferred from smallness. Equation \eqref{eq:vg-11} rewrites \eqref{eq:vg-12} as \begin{equation}\label{eq:vg-16}
+A_v(\boldsymbol\tau)\tau_v=-2\pi ic,\qquad
+ A_v=d_v-in_v+\sum_{w\sim v}H(\tau_v,\tau_w).
+\end{equation} For real \(c>0\), \begin{equation}\label{eq:vg-17}
+\operatorname{Re}A_v\ge(1-\delta)d_v>0,\qquad
+ \operatorname{Im}\tau_v
+       =-\frac{2\pi c\,\operatorname{Re}A_v}{|A_v|^2}<0.
+\end{equation} Moreover \(|A_v|\ge L_v-\delta d_v\), which proves \eqref{eq:vertexwise-size-sign}. Every \(\tau_v\) is nonzero for \(c>0\).
+
+This argument allows arbitrary signs of \(n_v\), and \(n_v=0\). It makes no assumption that neighboring powers are comparable. The same sign proof works even when a large degree makes the total meridian logarithm in \eqref{eq:vertexwise-periods} close to \(-2\pi i\).
+
+\subsection{Actual metric and absolute volume}\label{sec:vg-4}
+
+The octahedral chart depends only on the parameters at the ends of one physical edge. Conditions \eqref{eq:vertexwise-size-sign} and \eqref{eq:vg-14} keep every such pair in its proved positive disk. The actual ordered disk seams match their full complex ratios, including the single prescribed odd seam. The original cut proof retains every primitive meridian and longitude. Thus Section~\ref{sec:fg} applies to the path just constructed, rather than to an unrelated solution of exponentiated gluing equations.
+
+In particular, the actual logarithmic periods start at zero as \(c\downarrow0\): in a fixed complete peripheral frame the second fixed point escapes to infinity, and the increments of \(\log(z-q_v)\) along the fixed generator paths tend to zero. Their differences from \eqref{eq:vertexwise-periods} are continuous integers times \(2\pi i\), and hence vanish along the whole path. The slope in \eqref{eq:vertexwise-periods} makes one full primitive turn at \(c=1\). This is the winding information that exponentiated filling equations alone would not supply.
+
+Let \begin{equation}\label{eq:vg-18}
+\mathcal C(c)=\operatorname*{stat}_{\boldsymbol\tau}
+ \left[\Psi+\frac{i}{4\pi}\sum_vn_v\tau_v^2
+                         -ic\sum_v\tau_v\right].
+\end{equation} The same actual fundamental chain and primitive period calibration as in Section~\ref{sec:fg-6} give \begin{equation}\label{eq:vg-19}
+\operatorname{Vol}_c=2\pi\operatorname{Re}\mathcal C(c),
+ \qquad
+ \frac{d}{dc}\operatorname{Vol}_c
+                      =2\pi\sum_v\operatorname{Im}\tau_v(c).
+\end{equation} The complete anchor is the volume of two regular octahedra per tree edge. Every complementary primitive \(\lambda_v\) represents the core, of length \(\ell_v=-2\operatorname{Im}\tau_v\). The estimates above give the explicit bounds \begin{equation}\label{eq:vg-20}
+\frac{4\pi c(1-\delta)d_v}{(L_v+\delta d_v)^2}
+ \le\ell_v(c)\le
+ \frac{4\pi c(1+\delta)d_v}{(L_v-\delta d_v)^2}.
+\end{equation} If \(S=\sum_vd_v/L_v^2\), integration yields \begin{equation}\label{eq:vg-21}
+\frac{2\pi^2(1-\delta)}{(1+\delta)^2}S
+ \le\operatorname{Vol}_0-\operatorname{Vol}_1\le
+ \frac{2\pi^2(1+\delta)}{(1-\delta)^2}S.
+\end{equation} Here \(S\) is a useful bound on the volume change, not a hypothesis for existence or completion.
+
+When the main component is a knot, the geometric preferred-cusp continuation of Section~\ref{sec:fc} also applies. With the original oriented writhe \(w_{\mathbf n}\), it gives \begin{equation}\label{eq:vg-22}
+\tau_K=-w_{\mathbf n}-\sum_vn_v+
+       2i\sum_{vw}
+       \sqrt{1+\tan^2(\tau_v(1)/2)+\tan^2(\tau_w(1)/2)}.
+\end{equation} Its proof uses the actual marked representation and preferred longitude. Equation \eqref{eq:vg-22} is not inferred from a quantum correction.
+
+\subsection{A finite criterion with different radii at different vertices}\label{sec:vg-5}
+
+One can keep the local graph data instead of using the common threshold \eqref{eq:vertexwise-criterion}. Choose radii \(0<r_v\le10^{-2}\). Set \begin{equation}\label{eq:vg-23}
+s_v=\sinh(r_v/2),\qquad a_v=\cosh(r_v/2)-1,\qquad
+ \omega_{vw}=s_v^2s_w^2.
+\end{equation} The same derivative calculation gives \begin{equation}\label{eq:vg-24}
+\begin{split}
+ \alpha_{vw}
+ &=\frac{a_v+a_w}{(1-a_v)\sqrt{1-\omega_{vw}}}
+          +\frac1{\sqrt{1-\omega_{vw}}}-1,\\
+ \beta_{vw}
+ &=\frac{s_vs_w}{\sqrt{1-\omega_{vw}}},
+ \end{split}
+\end{equation} as bounds for \(|E_t|\) and \(|E_u|\) on the corresponding bidisk. Put \(h_v=\sum_{w\sim v}\alpha_{vw}\). The following finite inequalities suffice: \begin{equation}\label{eq:vg-25}
+\begin{split}
+ &2\pi+h_vr_v<L_vr_v,\qquad h_v<d_v,\\
+ &\max_v\left[
+       \frac{h_v}{L_v}
+       +\sum_{w\sim v}\frac{\beta_{vw}r_w}{L_vr_v}\right]<1.
+ \end{split}
+\end{equation} The first line makes \eqref{eq:vg-13} preserve the product of the vertex disks and gives the sign in \eqref{eq:vg-17}. The second is a contraction bound in the weighted norm \(\max_v|\tau_v|/r_v\). The proof of Sections~\ref{sec:vg-3}--\ref{sec:vg-4} applies unchanged, with \begin{equation}\label{eq:vg-26}
+|\tau_v(c)|\le\frac{2\pi c}{L_v-h_v}.
+\end{equation} This is a finite numerical certificate in the integer degrees and powers and the chosen positive radii. All quantities can be bounded by rational Taylor enclosures; it does not assume the existence of a saddle or a geometric representation.
+
+More generally, the second line of \eqref{eq:vg-25} can be replaced by a positive-vector certificate for the derivative matrix with diagonal entries \(h_v/L_v\) and off-diagonal entries \(\beta_{vw}/L_v\). If a positive vector \(q\) and a number \(\kappa<1\) satisfy \(Mq\le\kappa q\), contraction holds in the \(q\)-weighted norm. The invariant polydisk is still supplied separately by the first line of \eqref{eq:vg-25}. Thus choosing the contraction norm does not change the geometric parameter region.

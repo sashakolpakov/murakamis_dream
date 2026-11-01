@@ -5,6 +5,31 @@ The drawings below explain the constructions used in the guide. Some show actual
 The volume theorem applies to the stated ordered Conway compositions with sufficiently long net twists and to several separately certified plat families. A remaining question attached to a local method is not an unresolved step in those theorems. The diagrams below explain the proved constructions and their remaining scope.
 
 
+
+## Evaluating one subtree and keeping its attaching variable
+
+![The parent angle u is joined to the current vertex angle t by the complete edge kernel. Child subtrees have already been evaluated as polynomials in t; the crossing trace acts only on t.](figures/tree-boundary-message.png)
+
+The triangles stand for child subtrees of the construction tree,
+not for ideal tetrahedra. Their evaluations are the displayed
+functions \(M_{w_j,N}(t)\). Multiply these functions by the full
+kernel on the parent edge, then take the crossing trace at vertex
+\(v\). This leaves the parent angle \(u\) free and gives
+\(M_{v,N}(u)\).
+
+Only the edge kernel contains \(u\), so the result has trigonometric
+degree at most \(N-1\), however many vertices lie below \(v\).
+The [local volume proof](../notes/actual_all_circle_local_message_volume.md)
+shows that its value at \(u=0\) is nonzero. Dividing by that exact
+value keeps the child's completed contribution outside the next
+estimate. The crossing and orientation factors remain in this
+denominator; they are not discarded.
+
+[Vector drawing](figures/tree-boundary-message.svg) ·
+[PDF](figures/tree-boundary-message.pdf) ·
+[TikZ source](figures/tree-boundary-message.tex)
+
+
 ## Attaching an octahedron in the original tangle cut
 
 ![An octahedron attaches to a projection half along a shaded disk triangle. The parent and child circle vertices are O_v and O_w; the four equatorial vertices are the corresponding strand ends.](figures/octahedral-page-attachment.svg)

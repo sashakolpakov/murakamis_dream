@@ -79,6 +79,38 @@ The [exact scalar calculation](../../notes/actual_main_meridian_exact_scalar.md)
 
 The remaining limits are substantial. The disk shrinks like $1/N$ in the meridian coordinate and stops before $s=\pm1$, the first ordinary-color resonances. The general ordinary-color-subtracted state has not been continued through those resonances with the asserted profile. Short surviving twists outside the criterion below, trees or twist numbers growing with $N$, a classification of all arborescent knots under arbitrary presentation changes, and the selected classical geometric factor of the recurrence also remain outside this theorem. Arbitrary bare-component valence and adjacency are no longer open restrictions.
 
+## A local bound independent of the number of tangles
+
+For the ordered circle trees, the [subtree proof](../../notes/actual_all_circle_local_message_volume.md)
+now gives the full knot-volume equality under
+\[
+                \max_v\frac{d_v}{d_v^2+n_v^2}\le2^{-120}.
+\]
+This replaces the sum over vertices by a test at each vertex.
+Consequently the single sufficient threshold \(|n_v|\ge2^{119}\)
+works for all finite trees in this construction, subject to the
+original knot-component test. The constant is coarse. The graph
+and powers are fixed before taking the quantum limit.
+
+The proof constructs an exact polynomial for every subtree,
+proves its value at zero is nonzero, and estimates its normalized
+ratio. This avoids comparing a local discarded term with the
+accumulated volume change of every other filling. The selected
+critical action is the volume of the original knot complement,
+by the positive cell construction and primitive filling periods.
+
+A weaker [geometric condition](../../notes/actual_all_circle_vertexwise_geometry.md),
+\(\sqrt{d_v^2+n_v^2}\ge630\) at every vertex, already suffices for
+a positive path and smooth hyperbolic completion. That geometric
+condition alone does not prove the quantum volume limit.
+The remaining task is to extend the finite-sum comparison to more
+of this geometric region, to short twists beyond it, and to more
+general knot constructions. Cyclic interaction graphs and diagrams
+growing with \(N\) are not covered by the subtree proof.
+
+The earlier summed theorem remains useful for individual diagrams
+and is described next.
+
 ## Short twists covered by the quantitative theorem
 
 For the ordered tree construction in which every junction carries a
@@ -113,6 +145,41 @@ with cycles or growing trees. The selected classical geometric factor
 of the quantum recurrence also remains a separate problem. No missing
 global source theorem is being assumed for the knots that do satisfy
 the displayed criterion.
+
+## What the full expansion now forces on the recurrence
+
+The [filtered characteristic theorem](../../notes/actual_main_meridian_filtered_characteristic.md)
+uses the whole microscopic expansion, with estimates on the shifted
+parameter neighborhoods required by the recurrence. Its highest
+polynomial terms determine an analytic action \(\mathcal S(u)\),
+where \(u=\log M\). For any specified genuine all-level annihilator
+with first nonzero classical symbol \(P_0(M,L)\), it proves
+\[
+                   P_0(e^u,-e^{\mathcal S'(u)})=0.
+\]
+Thus the source selects a whole classical curve germ, rather than
+only a tangent at completeness. The selected irreducible factor is
+reciprocal under \((M,L)\mapsto(M^{-1},L^{-1})\).
+
+There is also an explicit rational longitude expression:
+\[
+ L_{\mathrm{eff}}(M)
+ =-M^{a(D)}\prod_e\frac{M^2-E_e(M)}{1-M^2E_e(M)},
+ \qquad E_e=e^{2\pi i x_e}.
+\]
+The \(x_e\) are the original physical edge variables, determined
+by the modified stationary equations in the theorem. For the
+circle trees the note writes those equations as a finite rational
+system. The denominator factors and the first-charge logarithms
+are retained.
+
+At \(M=1\), this curve has the preferred cusp tangent
+\(d\log(-L_{\mathrm{eff}})/d\log M=\tau_K\). Identifying the entire
+curve with the geometric preferred-longitude deformation remains
+open. The existing hyperbolic cells keep the main cusp parabolic;
+a construction with nonparabolic main meridian is still needed.
+The volume equalities for the covered knots are already proved
+independently of this additional identification.
 
 ## The moving-meridian growth already established
 
