@@ -1,0 +1,267 @@
+\chapter{All orders of the directed meridian profile}
+\label{ch:directed-all-orders}
+
+The directed criterion gives an expansion of the actual meridian state
+to every finite order. Its coefficients satisfy a degree bound that
+links the exact quantum recurrence to the preferred geometric
+longitude. This extends the geometric-factor conclusion to all the
+new directed cases, including the short-power examples permitted by
+large degree. The first correction is the cusp shape of the same
+filled knot complement.
+
+Throughout this chapter the ordered tree, its signed powers, endpoint
+frames, peripheral markings and directed certificate are fixed before
+the level tends to infinity. There is at least one edge. The original
+strand test must give one knot, with no component closed inside a
+tangle. Both level parities are retained. The full proof, including
+the translated parameter regions and the uniform remainders, is in
+Appendix~\ref{app:directed-all-orders}.
+
+\section{The expansion and its geometric consequences}
+\label{dao-ch:statement}
+
+Let the tree satisfy the finite directed inequalities of
+Appendix~\ref{app:directed-circle-messages}. This includes the
+vertexwise sufficient condition
+\begin{equation}\label{dao-ch:sufficient}
+ d_v\ge2^{28}\quad\text{or}\quad |n_v|\ge2^{27}
+                  \qquad\text{at every vertex}.
+\end{equation}
+The choice can differ from vertex to vertex. More general directed
+certificates, with different subtree budgets and a freely chosen
+final vertex, remain included.
+
+Write the actual zero-framed reduced state as
+\begin{equation}\label{dao-ch:state}
+ q_N=e^{\pi i/N},\qquad M=-q_Nx=q_N^s,\qquad
+ K_N=F_N(1),\qquad
+ H_N(s)=\frac{\sin\pi s}{N\sin(\pi s/N)}.
+\end{equation}
+Here $x$ is the original highest-weight parameter. The normalized
+full state is $\mathcal Z_N(s)=F_N(q_N^s)/(K_NH_N(s))$.
+The one factor $H_N$ is fixed by the reduced cut and modified trace;
+it is not an adjustable normalization.
+
+\begin{theorem}[All orders for a directed certificate]
+For every fixed compact $K$ in the open upper half-plane and every
+finite $L$,
+\begin{equation}\label{dao-ch:expansion}
+ \log\mathcal Z_N(s)
+  =\sum_{r=1}^{L}N^{-r}p_r(s)+O_{K,L}(N^{-L-1}),
+       \qquad \deg p_r\le r+1.
+\end{equation}
+The same polynomials give the expansion on every fixed disk
+$|s|\le R<1$. Fixed derivatives are controlled on smaller compacts.
+The logarithm is the branch tending to zero. Lower amplitudes may be
+organized separately by level parity; the selected leading action
+and its top polynomial degrees are the same.
+
+Let $\tau_K$ be the preferred cusp shape of the actual filled knot.
+Then
+\begin{equation}\label{dao-ch:cusp}
+ \frac{F_N(q_N^s)}{K_NH_N(s)}
+     =1+\frac{\pi i\tau_Ks^2}{2N}+O_K(N^{-2}).
+\end{equation}
+For every genuine fixed all-level reduced annihilator, its first
+nonzero classical symbol is divisible by the selected complex
+geometric meridian--longitude factor.
+\end{theorem}
+
+The constants and starting levels in the expansion may depend on
+the fixed tree, certificate, compact and requested order. The
+numerical directed criterion is unchanged. The volume already
+identified by that criterion is the volume of the original filled
+knot complement; no auxiliary comparison manifold replaces it here.
+
+\section{Why the actual source has every order}
+\label{dao-ch:source}
+
+After lowering the physical trace pairing, every original turn edge
+carries its exact paired weight. The full edge kernel is
+\begin{equation}\label{dao-ch:kernel}
+ \mathscr K_N(t,u;s)=\sum_{k=0}^{N-1}
+ e_k(-2\cos t)e_k(-2\cos u)\frac{H_N(s)}{W_k(s)},
+\end{equation}
+where $e_k$ is the fixed complete Newton polynomial and
+\[
+ W_k(s)=\prod_{r=1}^{k}
+       \left(1-\frac{\sin^2(\pi s/N)}{\sin^2(\pi r/N)}\right).
+\]
+The original six-type edge scalar is retained outside the kernel.
+Each exact subtree output is an even trigonometric polynomial of
+degree at most $N-1$ in its remaining angle. Choosing the last
+vertex changes the order of finite contractions, not the physical
+cut or the framing.
+
+The directed proof normalizes every child by its exact value at
+angle zero. It supplies a nonzero conditional first Fourier saddle,
+a holomorphic nonzero leading amplitude, and strict exponential
+bounds for the remaining charges and all endpoint currents. The
+outgoing real and strip estimates are estimates of the exact
+polynomial, including its high indices and repeated-node normals.
+
+These facts permit an induction to any prescribed finite order.
+At a local saddle, expand the canonical factorials and amplitude,
+integrate the finite Gaussian Taylor expansion, and divide by the
+corresponding expansion at parent angle zero. The integral of the
+absolute local Gaussian is bounded by a fixed multiple of the
+absolute leading integral. A uniform relative input remainder
+therefore remains a relative remainder of the same order. The
+constant can depend on the fixed subtree; no uniform condition
+number over all diagrams is asserted.
+
+Outside the local saddle, retain the exact child polynomials and
+their original real and strip bounds. A truncated expansion is not
+used there. The strict directed margins make the charge tails,
+original endpoints and connector terms smaller than every inverse
+power of $N$. Restoring all exact child constants recovers the
+original joint action and its nonzero amplitude. This proves higher
+orders from the finite source, rather than by differentiating its
+first-order estimate.
+
+An operator of order $d$ needs $s,s+1,\ldots,s+d$, so the proof must
+also cover translated regions. Euler's product expresses $W_k$ as
+a subset product of $1-s^2/m^2$ over distinct nonzero integers $m$.
+On a fixed nonreal compact both the product and its inverse are
+bounded uniformly in $k,N$. The full fixed-power crossing polynomial
+has the same polynomial norm bound there. Its common Cartan scalar
+and mixed reference factors remain in the exact scalar calculation.
+The constant opposite-color channel retains its separate full-normal
+limit.
+
+The translated grids move their endpoints by $O(N^{-1})$. The
+original endpoint currents and any wrapped grid entries are kept;
+the crossing chirp is not declared periodic. The exact charge
+coefficient is
+\[
+ (-1)^{(N-1)(\ell-1)}U_{\ell-1}(\cos2\pi\sigma),
+        \qquad \sigma=s,-s,0,
+\]
+whose first value is one. Its fixed-compact growth in $\ell$ is
+absorbed by the existing geometric tail. Thus the same conditional
+proof works on every required translated compact, with the same
+exponential margins. It asserts no uniform continuation across an
+ordinary-color resonance.
+
+\section{The polynomial filtration and the preferred cusp}
+\label{dao-ch:filtration}
+
+The degree bound in \eqref{dao-ch:expansion} comes from an exact
+insertion. Let $G_N$ be the canonical sine-factorial interpolation,
+with $G_N(k)=\prod_{r=1}^{k}2\sin(\pi r/N)$ and its fixed reflection
+normalization. On an original wire $x_e=k/N$,
+\begin{equation}\label{dao-ch:insertion}
+ \frac{H_N(s)}{W_k(s)}
+  =\frac{G_N(k)^2}{G_N(k-s)G_N(k+s)}.
+\end{equation}
+No periodic interpolation factor is allowed. The midpoint offsets
+from $N-1$ and the original integer wire offsets remain in its
+expansion.
+
+Let $\Phi(X)$ be the original joint first-charge phase, with $X$
+collecting the physical wire and circle-angle variables. Put
+\begin{equation}\label{dao-ch:phase}
+\begin{aligned}
+ \mathcal K(x,t)&=2J(x)-J(x+t)-J(x-t),\qquad
+ J'(x)=\log(2\sin\pi x),\\
+ \Phi_t(X)&=\Phi(X)+\sum_{e\in\mathcal E_T}\mathcal K(x_e,t)
+                   +\frac{\pi i a(D)}2t^2,\\
+ a(D)&=-w(D)-\sum_vn_v,\qquad S(t)=\Phi_t(X_*(t)).
+\end{aligned}
+\end{equation}
+Here $\mathcal E_T$ is the original physical turn-edge set. The
+critical point $X_*(t)$ is the analytic branch through the filled
+first-charge point. The Hessian is invertible because each original
+wire Hessian and each conditional angular Schur complement is
+invertible.
+
+The finite Stirling expansion of $G_N$, to arbitrary requested
+order, gives holomorphic functions $C_j$ with
+\begin{equation}\label{dao-ch:organized}
+ \log\mathcal Z_N(s)\sim
+ N\{S(s/N)-S(0)\}
+   +\sum_{j\ge0}N^{-j}\{C_j(s/N)-C_j(0)\}.
+\end{equation}
+This is proved using a local auxiliary family with independent
+$t$, then substituting $t=s/N$. It makes no physical asymptotic
+claim for $s$ of order $N$. At order $N^{-r}$ the phase contributes
+degree at most $r+1$ in $s$, while the lower amplitudes contribute
+degree at most $r$. This proves the filtration and identifies its
+top diagonal.
+
+Both the phase and the canonically interpolated amplitude are even
+in $t$. Normalization removes a constant at order $N^{-1}$ and
+evenness removes a possible linear term from $C_0$. Therefore
+$p_1(s)=S''(0)s^2/2$.
+
+The geometric identification uses the actual filled branch, not
+this derivative alone. The directed certificate places every
+restored angle in the common positive charge-path chart. Its
+primitive equations remain $U_v+p_vV_v=-2\pi i$ with
+$n_v=\epsilon_v-2p_v$. The reconstructed representation is the
+complete filled-knot representation, and its nondegenerate
+meridian continuation is the geometric germ. The preferred
+longitude theorem gives
+\begin{equation}\label{dao-ch:longitude}
+ L_{\mathrm{geom}}(M)
+ =-M^{a(D)}\prod_{e\in\mathcal E_T}
+            \frac{M^2-X_e(M)}{1-M^2X_e(M)},
+       \qquad X_e=e^{2\pi ix_e}.
+\end{equation}
+All factors refer to the original diagram and preferred framing.
+The negative lift is fixed at the actual complete filled knot.
+
+With $u=\log M$ and
+$\mathcal S(u)=\pi i\{S(u/(\pi i))-S(0)\}$,
+\eqref{dao-ch:phase} and the exact sine identity give
+$-e^{\mathcal S'(u)}=L_{\mathrm{geom}}(e^u)$.
+It follows that $S''(0)=\pi i\tau_K$, proving
+\eqref{dao-ch:cusp} with the exact framing restored.
+
+\section{The factor forced in a genuine classical symbol}
+\label{dao-ch:operator}
+
+Let $P=\sum_{j=0}^{d}a_j(q,M)T^j$, with $TM=qMT$, be a specified
+nonzero fixed rational-coefficient operator annihilating the whole
+reduced function $F_N(M)$ at every sufficiently large level.
+Clear fixed denominators and the common $q-1$ valuation, and denote
+its first nonzero classical symbol by $P_0(M,L)$. This is an
+all-level identity, not a recurrence fitted to complete values.
+
+The modified dimension is
+\[
+ d_N(M)=i^{N+3}\frac{M-M^{-1}}{M^N-M^{-N}},
+       \qquad \frac{d_N(q_N^s)}{d_N(1)}=H_N(s)^{-1}.
+\]
+For $f(M)=M-M^{-1}$, the normalized full state obeys the exact gauge
+\begin{equation}\label{dao-ch:gauge}
+ \widetilde P=\sum_{j=0}^{d}a_j(q,M)(-1)^j
+                 \frac{f(M)}{f(q^jM)}T^j.
+\end{equation}
+Clearing these additional denominators retains the first symbol
+$f(M)^dP_0(M,-L)$.
+
+Set $h=\log q$ and regrade by $u=hs$. The degree filtration gives
+$h^{-1}\mathcal S(u)+\sum_{j\ge0}h^jA_j(u)$ for the logarithm.
+A $j$-fold shift has formal leading ratio $e^{j\mathcal S'(u)}$.
+The exact equation and the expansions on all translated disks imply
+\begin{equation}\label{dao-ch:symbol}
+ f(e^u)^dP_0(e^u,-e^{\mathcal S'(u)})=0.
+\end{equation}
+The substitution $u\mapsto hs$ is injective on the formal two-variable
+series ring. Its domain property permits cancellation of the
+nonzero series $f(e^u)^d$ in this proved identity. The meridian
+factor has therefore been recorded before cancellation.
+
+Evaluation on the geometric germ defines a nonzero height-one
+prime of $\mathbb C[M^{\pm1},L^{\pm1}]$. Its irreducible generator
+$A_{\mathrm{geom},\mathbb C}$ divides $P_0$. Over
+$\mathbb Q(q,M)$, the conclusion is instead stated using the
+contraction of that prime to the rational Laurent ring; its
+complex factorization may include conjugate components. No chosen
+complex component is asserted to be defined over $\mathbb Q$.
+
+The conclusion determines a selected factor, not its multiplicity,
+the full A-polynomial or an equality of operator ideals. It adds no
+moving-main theorem for cyclic Morse sources and no fixed-meridian
+WKB limit. Those questions require additional source estimates.

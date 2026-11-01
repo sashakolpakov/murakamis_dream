@@ -1,5 +1,33 @@
 # Figure gallery
 
+
+## Adding terminal tangles on both sides
+
+![One stellar subdivision preserves the old matching edge xy and creates the new matching edge bw. The last panel shows two insertions on each side.](figures/balanced-terminal-fans.png)
+
+The vertices in this diagram label white projection regions. They also
+label circles in the complete packing; the drawing itself records their
+adjacencies, not their radii. The two triangles beside the blue edge
+\(xy\) specify the original crossing circle. Insert a new vertex \(w\)
+in the triangle \(xby\). The new triangles have cyclic orders
+\(xbw\), \(byw\), and \(yxw\). Pair the first two across the amber edge
+\(bw\); the old blue edge and its crossing circle remain.
+
+In the final panel, \(b_0=b\) and \(c_0=c\) are the original opposite
+vertices. The vertices \(b_1,b_2\) and \(c_1,c_2\) are the two successively
+inserted circles on each side. The blue triangles nearest \(xy\) belong
+to the retained crossing circle, and each amber edge specifies an added
+crossing circle. The general construction uses any suitable even counts
+\(j,k\), chosen by the curvature recurrence in the
+[results chapter](chapters/results.md#decorating-a-planar-diagram).
+Giving the new tangles odd crossing parity makes an even stack preserve
+the four outside endpoint connections.
+
+[SVG](figures/balanced-terminal-fans.svg) ·
+[PDF](figures/balanced-terminal-fans.pdf) ·
+[TikZ source](figures/balanced-terminal-fans.tex)
+
+
 The drawings below explain the constructions used in the guide. Some show actual circle configurations in the boundary plane of hyperbolic space. Others show only incidence, algebraic composition, or the sequence of a proof. Each caption states which kind of drawing it is, defines the important labels, and explains the result for which it is used.
 
 The volume theorem applies to the stated ordered Conway compositions with sufficiently long net twists and to several separately certified plat families. A remaining question attached to a local method is not an unresolved step in those theorems. The diagrams below explain the proved constructions and their remaining scope.

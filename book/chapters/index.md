@@ -11,7 +11,33 @@ For a knot $K$ and an integer $N\geq2$, Kashaev’s invariant $K_N(K)$ is a comp
 
 The left side measures exponential growth: a value of the form $N^a e^{NV/(2\pi)}$ has limit $V$, because the polynomial factor disappears after taking the logarithm and dividing by $N$. The right side is the volume of the knot complement. The knot remains removed from the three-sphere.
 
-This project studies the conjecture by cutting knot diagrams into tangles and keeping track of how their finite evaluations compose. The main family consists of **Conway algebraic, or arborescent, knots**. These are built from rational tangles by joining and turning pieces. The results below give sufficient conditions on specified constructions in this family. One requires long net twists; another gives an explicit bound that can also permit short twists at junctions with many branches.
+This project studies the conjecture by cutting knot diagrams into tangles and keeping their finite evaluations and geometric face identifications together. One construction starts from a planar diagram encoded by a simple triangulation of the sphere. Other results treat **Conway algebraic, or arborescent, knots**, built by joining and turning rational tangles. The planar construction gives broad families after a specified finite decoration; the tree results also give explicit degree and twist bounds.
+
+## A general planar construction
+
+Choose a finite simple triangulation of the sphere, and pair adjacent
+triangles so that each triangle occurs once. The pairs specify
+crossing-circle tangles and their strand connections in the three-sphere.
+There is an explicit procedure that adds finitely many tangles on both
+sides of each original crossing circle. The numbers added are even, and
+the new pieces have odd crossing parity, so a chosen knot pairing is
+preserved.
+
+For every resulting decorated diagram, independently sufficiently long
+positive or negative twists at all original and added regions give the
+volume equality above. No tree decomposition of the tangle operations is
+required. The added tangles generally change the knot; the theorem does
+not remove them from its conclusion.
+
+The [construction and proof](results.md#decorating-a-planar-diagram)
+explain how a common circle packing determines the decoration and how
+its inequalities bound the full finite invariant. The geometric part
+constructs the smooth fillings of the auxiliary cusps while leaving the
+main knot cusp complete.
+
+![A triangle is subdivided by an added circle, preserving the old matching edge and adding a new one.](../figures/balanced-terminal-fans.png)
+
+## The ordered-tree constructions
 
 For the specified construction with an integer braid at every
 vertex of an ordered tree with at least one edge, a [single twist threshold works for
@@ -26,7 +52,7 @@ the tree. A more flexible sufficient condition lets each vertex
 have either this twist magnitude or degree \(d_v\ge2^{28}\).
 The entire diagram is still fixed before the quantum level grows.
 
-## How the construction works
+## Stacking and turning the tree pieces
 
 A two-string tangle consists of two arcs in a ball, with four specified endpoints on its boundary. Draw the ball as a rectangle with two endpoints at the top and two at the bottom. There are two operations. To stack two tangles, put one above the other and join the adjacent pairs of endpoints without adding crossings. To turn a tangle, rotate its entire diagram through a quarter-turn. The order of the pieces matters.
 

@@ -1,5 +1,40 @@
 # Why the limiting action is the actual knot volume
 
+
+## The circle packing for a general planar core
+
+The [planar decoration theorem](../../notes/actual_balanced_terminal_fan_volume.md)
+constructs its geometry from a simple triangulation of the sphere. Remove
+one triangle and prescribe three mutually tangent boundary circles.
+Maximize the concave angle function subject to angle sum \(\pi\) in
+each triangle and \(2\pi\) at each interior vertex. The proof establishes
+strict feasibility by a finite counting argument, so the maximum has
+positive angles. Its multipliers give positive circle radii.
+
+Euclidean triangles with side lengths equal to sums of adjacent radii
+then develop into one embedded disk. Their angle sums remove interior
+holonomy, and the convex triangular boundary gives degree one. This
+proves that the circles have precisely the prescribed contacts.
+The white-circle planes and the circles through the three contact points
+of each triangle bound the required convex ideal right-angled polyhedron.
+
+A terminal insertion adds the circle in one triangular gap. All old
+circles remain fixed. Its three new supporting disks lie inside the old
+shaded supporting disk, so the attached octahedron respects every other
+face inequality. Repeating the insertion preserves convexity, even when
+the original sphere has separating triangles or the tangle connections
+have cycles. The two projection copies recover the actual augmented
+link, with the original crossing-disk face maps.
+
+The complete metric is the starting point for filling. The selected
+peripheral logarithms satisfy the actual primitive equation
+\(U_e+p_eV_e=-2\pi i\). The logarithmic cusp development has angular
+period \(2\pi\), so its metric completion is a smooth solid torus on
+that slope. The main meridian and longitude remain parabolic and the
+knot cusp is complete. Thus the final volume is that of the knot
+complement; it is generally smaller than the augmented volume.
+
+
 A formula involving dilogarithms is not yet a geometric volume formula. To obtain the volume on the right side of the theorem, the proof must construct the intended manifold, verify its metric, and retain the meridian and longitude used for each filling. This chapter explains those steps and the different roles of the local geometric results.
 
 For the [strict Conway tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md), all of these steps are proved. The full quantum estimates and the nonzero local contribution are proved as well. The result concerns the actual resulting knot complement, with its main cusp left unfilled. The more general plat constructions discussed later have their own hypotheses; a missing estimate in one of those routes is not a gap in the strict-tree theorem.

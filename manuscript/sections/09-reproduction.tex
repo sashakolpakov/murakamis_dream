@@ -35,6 +35,20 @@ python3 repro/run_research_checks.py curvature-fillings
 \end{verbatim}
 The runner checks exact symbolic edge identities, finite samples of the stated complex inequality, labeled octahedral attachments and the full signed peripheral matrix words. Its output separates those computations from the uniform analytic and geometric proofs. Appendix~\ref{app:quantitative-sums} gives the full quantitative finite-sum proof, including both uniform Newton estimates, the weighted contraction and the charge-tail bounds. Appendix~\ref{app:quantitative-geometry} gives the complete ordered attachment, positive angular charts, primitive-period completion, volume calibration and preferred-cusp argument. The linked versions are optional separately available copies of those proofs. Such finite checks can detect sign or indexing errors; they do not replace the written proofs.
 
+\section{The planar terminal decoration}
+The finite identities for Chapter~\ref{ch:balanced-terminal-fans} have one command:
+\begin{verbatim}
+python3 repro/run_research_checks.py balanced-terminal-fans
+\end{verbatim}
+The script uses exact integer and rational arithmetic. It checks the
+closed fan recurrence, the rational balance margin, the oriented
+triangle subdivision and its new ordered quadrilateral, the matching
+and even-level face parity, and the endpoint pairing of even stacks of
+odd terminal tangles. It does not infer an asymptotic theorem from
+sampled quantum values. Appendix~\ref{app:balanced-terminal-fans}
+proves the geometric realization, full finite source, uniform
+Fourier estimates and primitive completion.
+
 \section{The directed criterion and unmarked junctions}
 
 The exact rational comparisons for

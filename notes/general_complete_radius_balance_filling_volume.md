@@ -1,5 +1,7 @@
 # Full original long-filling volume under the actual complete-radius balance test
 
+The subsequent [planar decoration theorem](actual_balanced_terminal_fan_volume.md) constructs balanced diagrams from every simple triangulated sphere with a chosen dual matching. It includes the full general Morse source and independently long fillings. The theorem below retains its own original scope.
+
 conditional-class theorem, 31 October 2026. The condition below is imposed on the one actual complete marked circle packing. Its realization at arbitrary bridge width is not asserted. The proof controls the full original numerator and period for diagrams satisfying this condition, rather than only an all-CROSS contribution.
 
 ## 1. The finite geometric condition

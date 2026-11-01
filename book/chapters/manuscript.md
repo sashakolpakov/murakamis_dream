@@ -2,9 +2,46 @@
 
 [Read the manuscript PDF](../../manuscript/build/main.pdf). The [editable sources and build instructions](../../manuscript/README.md) are available alongside it.
 
-The paper proves the volume conjecture for a specified family of knots built by composing two-strand tangles. It explains the finite quantum invariant, the hyperbolic cells, the estimates needed to control cancellation, and the passage from an augmented link to the final knot complement. This page introduces the construction before giving a route through that proof.
+The paper proves volume equalities for decorated planar tangle diagrams and for several ordered-tree constructions. It explains the finite quantum invariant, the hyperbolic geometry, the estimates controlling cancellation, and the passage from an augmented link to the final knot complement. The families have different hypotheses; this page introduces them separately.
 
-## The knot construction, without the shorthand
+## The planar decoration chapter
+
+The broadest construction begins with a simple triangulation of the
+sphere and a chosen pairing of its adjacent triangles. These finite data
+give a planar crossing-circle diagram in the three-sphere. The chapter
+constructs its circle packing and then inserts even terminal stacks on
+both sides of each crossing circle. The number of insertions is chosen
+by an explicit curvature recurrence.
+
+After that finite decoration, independently sufficiently long signed
+twists at every old and new region give the full volume equality. A
+specified parity pattern makes the main strands one knot. The inserted
+tangles preserve this pairing and generally change the knot type. The
+theorem does not require a tree of tangle operations or compare the
+relative magnitudes of the long twists.
+
+The chapter explains the local construction and the inequality it
+establishes. Its appendix gives the full proof: the variational packing,
+the exact coefficient with its original mark and parity, the local
+geometric contribution, all Fourier tails and boundary terms, and
+completion to the actual smooth knot complement. The
+[results page](results.md#decorating-a-planar-diagram) gives a detailed
+introduction with the same figure.
+
+## The directed full expansion
+
+The final analytic chapter proves every finite order of the microscopic
+meridian expansion for the directed tree criterion. It works on all
+fixed translated nonreal charts needed by a fixed recurrence. Exact
+normal channels and peripheral gauge factors are retained. The first
+correction is the preferred cusp shape, and the highest-degree
+coefficients recover the full preferred longitude germ.
+
+This adds every directed certificate to the selected geometric-factor
+theorem. It does not identify the full A-polynomial or extend the
+moving-meridian theorem to the decorated planar class.
+
+## The ordered tangle construction
 
 Start with two strands in a box whose four endpoints are labeled and kept in order. Insert an integer number of signed half-twists. A positive and a negative count give opposite crossing directions. Turn the box through a quarter-turn; this is the basic piece used in the construction.
 

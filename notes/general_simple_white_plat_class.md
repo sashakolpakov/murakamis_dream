@@ -1,5 +1,7 @@
 # A combinatorial geometric certificate for actual plats at every fixed width
 
+The subsequent [planar decoration theorem](actual_balanced_terminal_fan_volume.md) constructs balanced diagrams from every simple triangulated sphere with a chosen dual matching. It includes the full general Morse source and independently long fillings. The theorem below retains its own original scope.
+
 31 October 2026. Combinatorial sufficient class and arbitrary-width construction. The main class
 is ALL actual flat plats with a simple white triangulated sphere. The
 explicit words below prove nonvacuity at every supplied width; they do

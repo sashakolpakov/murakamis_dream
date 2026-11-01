@@ -9,7 +9,125 @@ $$
 
 Here $K_N$ is the reduced Kashaev invariant in the normalization fixed in the proof. The knot is held fixed while the positive integer level $N$ grows. The statements below include both even and odd levels unless a smaller scope is explicitly stated.
 
-There are two main ways to specify the proved families. The Conway construction builds a knot from two-strand tangles according to a finite tree. The plat construction starts with a braid and pairs its endpoints. The hypotheses for these constructions are different, so they are described separately. Later sections explain useful conditional theorems and local identities whose conclusions are smaller than a full knot-volume theorem.
+The broadest construction below begins with a triangulated sphere and adds specified tangles to its planar diagram. Separate results give explicit twist and degree bounds for ordered tangle trees, as well as net-twist reductions preserving an existing knot. These hypotheses differ. Each section states the knot it constructs, the estimates it uses, and which parameters are held fixed.
+
+## Decorating a planar diagram
+
+The [planar decoration theorem](../../notes/actual_balanced_terminal_fan_volume.md)
+starts from a more general diagram than a tree of tangle operations.
+Its input can be given entirely by finite combinatorial data: take a
+simple triangulation of the sphere with at least four vertices, and pair
+its triangles across selected edges so that each triangle belongs to
+exactly one pair. “Simple” means that there are no loops or repeated
+edges. The cyclic orders belong to the sphere embedding.
+
+Each paired pair of triangles specifies a crossing-circle tangle.
+Contracting the pair gives a four-ended box; the other edges specify
+the connections between boxes. Drawing the prescribed strands and
+placing an auxiliary circle around each pair constructs an actual link
+in the three-sphere. The proof gives a parity choice for the crossings
+that makes the main strands one knot.
+
+The theorem then adds finitely many terminal tangles on both sides of
+each original box. Each side receives an even number, and the added
+pieces have odd crossing parity. These insertions preserve the chosen
+endpoint pairing and create no internal closed component. They usually
+change the knot itself.
+
+**Conclusion.** For each such decorated diagram there is a finite
+threshold \(T\). Choose every original and added filling integer
+\(p_e\) independently with \(|p_e|>T\), retaining the chosen half twist
+\(\epsilon_e\), so that the signed number of crossings is
+\(n_e=\epsilon_e-2p_e\). The resulting knot is hyperbolic and satisfies
+the volume limit at the top of this page. Both signs and arbitrarily
+different magnitudes are allowed. The diagram, decoration, and all
+integers are fixed before \(N\) tends to infinity.
+
+This covers arbitrarily large planar arrangements without a tree
+hypothesis. It does not cover the unchanged core knot, arbitrary short
+powers at the original boxes, or a diagram growing with \(N\). The
+threshold may depend on the decorated diagram.
+
+### How the number of added tangles is chosen
+
+The proof first constructs the complete circle packing of the original
+sphere by maximizing a strictly concave angle function. Normalize the
+two circles beside the marked strand to parallel lines. Their curvatures
+are zero; every other circle has positive curvature.
+
+At one crossing circle, the two triangles have vertices
+\((x,b,y)\) and \((x,c,y)\). Here the letters denote the curvatures of
+the corresponding circles. The edge \(xy\) is the selected pairing edge,
+and \(b,c\) are its opposite vertices. Put
+\[
+ A=x+y>0,\qquad P=xy.
+\]
+Inserting a circle in the first triangular gap replaces \(b\), as
+seen from the retained crossing circle, by
+\[
+ b_1=b+A+2\sqrt{Ab+P}.
+\]
+The original circles remain in place. The new circle has curvature
+\(b_1\); the new matching edge joins it to the old circle \(b\).
+
+![The old matched edge xy remains, while inserting w subdivides one triangle and creates the new matched edge bw.](../figures/balanced-terminal-fans.png)
+
+After \(j\) insertions on this side,
+\[
+ b_j=b+2j\sqrt{Ab+P}+j^2A.
+\]
+There is the same formula for \(c_k\) on the other side. Choose even
+nonnegative \(j,k\) so that
+\[
+ U=\frac{\sqrt{Ab+P}}A+j,\qquad
+ V=\frac{\sqrt{Ac+P}}A+k,\qquad
+ U,V\ge4,\quad |U-V|\le1.
+\]
+Such a choice always exists: even increments let the two numbers be
+brought within one, after which adding the same even increment makes
+both large enough. Repeating this finite procedure at every original
+crossing circle gives the required decoration.
+
+### Why this proves an equality for the full invariant
+
+The exact finite evaluation is a coefficient of a product of local
+polynomials. All factors use the same face variables and the original
+marked coefficient. The proof divides each local polynomial into three
+explicit sums. One gives the geometric contribution. The two others
+must be bounded on the entire spectral interval, including its
+endpoints.
+
+Write \(F(x,b,y)\) for the normalized logarithmic weight of one
+triangle. At a crossing circle the condition needed for those two
+other sums is
+\[
+ F(x,b,y)+F(x,c,y)>\log b,\qquad
+ F(x,b,y)+F(x,c,y)>\log c,
+\]
+with a condition omitted when its middle curvature is zero. At a zero
+middle the corresponding finite sum vanishes exactly.
+
+The two-sided construction proves these strict inequalities at every
+retained crossing circle. Every newly added circle satisfies them as
+well. Because the packing is shared by the entire diagram, the local
+losses combine into a bound for the original coefficient, including all
+its coupled summation variables. The complete Fourier calculation
+then retains all charges and boundary terms and proves a nonzero
+geometric leading term. The remainder is exponentially smaller for
+sufficiently long fixed twists.
+
+The value of that leading term is identified geometrically. Its
+peripheral equations use the actual crossing disks and their primitive
+meridians. The unit Fourier charge gives angular period \(2\pi\), so
+each auxiliary end completes to a smooth solid torus on the prescribed
+filling slope. The main cusp remains complete. The regulator’s
+boundary correction cancels the filling terms, leaving precisely
+\(\operatorname{Vol}(S^3\setminus K)\).
+
+The finite checks replay the recurrence, rational gap bound, oriented
+triangle subdivision, parity extension, and endpoint pairing. The
+written proof supplies the uniform estimates and metric completion;
+those conclusions are not inferred from numerical examples.
 
 ## One twist threshold for arbitrarily many tangles
 
@@ -613,12 +731,37 @@ The cube calculation tests how local geometric contributions behave under sewing
 
 Removing the cycle restrictions, controlling the full cube invariant and treating its even-level growth remain open in this route. Numerical cube calculations do not establish dominance or cancellation control. The [frontier chapter](frontier.md) explains how these alternatives relate to the current general questions without treating them as missing steps in the strict-tree theorem.
 
+## The full expansion for the directed criterion
+
+The [directed all-orders theorem](../../notes/actual_all_circle_directed_all_orders.md)
+extends the meridian expansion to every directed circle-tree certificate,
+including the alternative \(|n_v|\ge2^{27}\) or \(d_v\ge2^{28}\) at each
+vertex. It proves every finite order uniformly on fixed compact subsets
+of the nonreal translated charts needed by a fixed recurrence.
+
+With \(q_N=e^{\pi i/N}\), \(M=q_N^s\), and
+\(H_N(s)=\sin(\pi s)/(N\sin(\pi s/N))\), its first correction is
+\[
+ \frac{F_N(q_N^s)}{F_N(1)H_N(s)}
+ =1+\frac{\pi i\,\tau_K s^2}{2N}+O(N^{-2}).
+\]
+Here \(F_N\) is the actual zero-framed reduced state and \(\tau_K\) is
+the preferred cusp shape of the same knot complement. The proof keeps
+the exact crossing and framing scalars. Normalization removes a constant
+term, and evenness removes a possible linear term.
+
+The complete expansion, rather than this first correction alone, supplies
+the operator consequence described next. It does not give a fixed-\(M\)
+asymptotic away from completeness or a uniform continuation through
+ordinary-color resonances.
+
 ## A classical characteristic selected by the full expansion
 
 The [filtered characteristic theorem](../../notes/actual_main_meridian_filtered_characteristic.md)
 applies to the proved strict long-filling sources and the
-earlier circle-tree sources under the summed condition or
-the local bound \(2^{-120}\). Given a genuine all-level
+circle-tree sources under the summed condition, the local bound
+\(2^{-120}\), or any directed certificate by the extension above.
+Given a genuine all-level
 annihilator, it proves that the full microscopic
 expansion selects an analytic curve in its classical symbol.
 The selected factor is reciprocal and has an explicit rational
@@ -629,8 +772,9 @@ identifies the entire selected curve for every covered strict
 long-filling presentation, with no restriction on the valence or
 adjacency of bare product junctions. The earlier summed
 circle-tree theorem and the local theorem with bound
-\(2^{-120}\) also supply the required geometric theorem
-and full expansion. If \(n_v\) are the original crossing powers and \(w(D)\) is their oriented
+\(2^{-120}\) supply the required geometric theorem and full expansion;
+the directed all-orders extension establishes the same conclusion
+for every directed certificate. If \(n_v\) are the original crossing powers and \(w(D)\) is their oriented
 writhe, the preferred longitude is
 \[
  L(M)=-M^{-w(D)-\sum_v n_v}

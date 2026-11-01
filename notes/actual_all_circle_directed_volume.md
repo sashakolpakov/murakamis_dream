@@ -1,5 +1,7 @@
 # Volume limits from the degree and twist at each circle
 
+The [directed all-orders extension](actual_all_circle_directed_all_orders.md) proves the full expansion on the shifted microscopic meridian charts for every certificate below, identifies its preferred-cusp correction, and supplies the selected geometric-factor conclusion for genuine all-level annihilators.
+
 Start with a fixed finite ordered tree of two-strand integer braids, with
 at least one edge and one crossing circle at every vertex. Turn each child tangle through its
 specified quarter-turn before stacking it at the parent, and use the

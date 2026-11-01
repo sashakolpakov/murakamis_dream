@@ -1,5 +1,22 @@
 # Reproducing the calculations
 
+
+## Balanced terminal decorations
+
+~~~sh
+python3 repro/run_research_checks.py balanced-terminal-fans
+~~~
+
+This standard-library group checks exact polynomial recurrences, rational
+balance constants, oriented stellar subdivisions, the matching and face
+parity, and the actual endpoint pairing of even terminal stacks. Results
+are saved in the [result file](../experiments/actual_balanced_terminal_fans_results.json)
+and runner logs. The all-real choice of fan counts, the uniform source
+estimates, and hyperbolic completion are analytic proofs in the
+[theorem](../notes/actual_balanced_terminal_fan_volume.md); the checks do
+not replace those proofs or extrapolate from sampled quantum invariants.
+
+
 The manuscript proves inequalities on continuous regions of state variables. Some of those inequalities are reduced, by concavity and supporting tangent planes, to a finite set of rational comparisons. This directory provides the scripts and reference records for those comparisons. The quantitative circle-tree theorem also has a group of symbolic, geometric and finite numerical checks, described below.
 
 ## Run the checks

@@ -1,5 +1,33 @@
 # What remains to be proved
 
+
+## The planar decoration result and the remaining general problem
+
+The [balanced decoration theorem](../../notes/actual_balanced_terminal_fan_volume.md)
+now gives a full invariant equality for a class without a tangle-tree
+hypothesis. Start with any simple triangulated sphere and a chosen
+perfect matching of its dual. The proof constructs its actual augmented
+link, circle packing, and a finite two-sided terminal decoration. Every
+original and added region can then receive independently sufficiently
+long signed twists. With the chosen knot parity, the resulting knot has
+the hyperbolic volume limit through all integer levels.
+
+This settles the full complementary-source estimate for those decorated
+diagrams: one shared complete packing satisfies the strict local
+inequalities, which give an exponential bound for the entire remainder.
+The geometric leading term is nonzero, and primitive completion identifies
+its action with the actual knot-complement volume. The proof includes
+general Morse diagrams, where cups and caps may occur between boxes.
+
+The undecorated problem remains. A simple white sphere alone does not
+prove the required full-source bound for its original diagram, and adding
+tangles generally changes the knot. Arbitrary short fillings, cores with
+loops or repeated white edges, and the general volume conjecture remain
+outside this result. The new planar theorem is at the complete main
+meridian; extending its full meridian family and operator consequences
+is also separate work.
+
+
 The volume limit is proved for fixed ordered cylindrical tangle compositions whose reduced net twists are sufficiently long and whose closed diagram is a knot, with elementary two-strand braid closures excluded. The [results chapter](results.md#arbitrarily-many-tangles-with-sufficiently-long-net-twists) defines the reduction and its size condition. For this class, the theorem concerns the full invariant and the volume of the actual knot complement.
 
 The remaining questions include short net twists outside the explicit criteria below, knot families outside these constructions, and identification of the full recurrence ideal beyond the selected geometric factor. The alternative plat methods below have their own open hypotheses. Those hypotheses are not missing steps in the proved Conway theorem.
@@ -12,7 +40,7 @@ The analytic inputs now include both the [complete-value strict-tree theorem](..
 
 A small nonzero surviving twist remains outside this long-net-twist theorem; the quantitative circle-tree theorem below covers some such cases. Making the original written exponents large by inserting opposite twist pairs cannot remove it. Exact zero sums can be treated by a further topological reduction: the [closure extension](../../notes/actual_conway_arbitrary_closure_volume.md) permits cap closures and the resulting connected-sum factors. When the input is hyperbolic and every surviving strict weight is long, the input is isotopic to one covered strict knot. This strengthens the criterion for presentations; it adds no short-twist estimate. For this reduction theorem the threshold depends on the fixed construction. The separate circle-tree criterion below has a twist threshold independent of the tree, but still requires each diagram to be fixed before the quantum limit. Nor does the reduction classify all presentations of a given knot.
 
-There is also a precise operator question. A genuine all-level recurrence for the ADO invariant and finite initial data selecting its solution are already available. The [pointed quantum A-period theorem](../../notes/actual_conway_pointed_quantum_a_volume.md) reconstructs the Kashaev invariant from that data, including the derivatives required at singular steps, and gives its volume limit for the covered knots. The [selected classical geometric factor](../../notes/actual_strict_tree_geometric_characteristic.md) is now identified for every covered strict long-filling presentation, including its bare junctions, and for the earlier circle-tree sources under the summed condition or the local bound \(2^{-120}\). Identifying the full quantum module carrying the marked logarithmic regulator remains a further problem. A scalar limit at the complete meridian does not by itself control the invariant as that meridian varies.
+There is also a precise operator question. A genuine all-level recurrence for the ADO invariant and finite initial data selecting its solution are already available. The [pointed quantum A-period theorem](../../notes/actual_conway_pointed_quantum_a_volume.md) reconstructs the Kashaev invariant from that data, including the derivatives required at singular steps, and gives its volume limit for the covered knots. The [selected classical geometric factor](../../notes/actual_strict_tree_geometric_characteristic.md) is now identified for every covered strict long-filling presentation, including its bare junctions, and for the circle-tree sources under the summed condition, the local bound \(2^{-120}\), or any [directed certificate](../../notes/actual_all_circle_directed_all_orders.md). Identifying the full quantum module carrying the marked logarithmic regulator remains a further problem. A scalar limit at the complete meridian does not by itself control the invariant as that meridian varies.
 
 ## What the actual meridian state requires
 
@@ -120,11 +148,12 @@ does not prove the quantum volume limit.
 
 The outstanding analytic problem is to cover more of this
 geometric region and other short-twist constructions. Cyclic
-interaction graphs and diagrams growing with \(N\) are not
-covered by the subtree proof. Likewise, a leading meridian
-profile under a numerical test does not automatically supply
-the all-orders estimates on shifted neighborhoods needed for
-an operator-factor theorem.
+interaction graphs are handled by the planar decoration theorem only
+under its separate construction and long-filling hypotheses. Diagrams
+growing with \(N\) remain outside both proofs. The
+[directed all-orders extension](../../notes/actual_all_circle_directed_all_orders.md)
+now supplies the shifted-chart estimates for every directed certificate;
+a leading profile alone would not have supplied that conclusion.
 
 ## Short twists covered by the quantitative theorem
 
@@ -191,8 +220,9 @@ are retained.
 The [strict-tree geometric longitude theorem](../../notes/actual_strict_tree_geometric_characteristic.md)
 identifies this entire curve for covered strict long fillings,
 including bare product junctions. The circle-tree proof also
-applies under the earlier summed condition or the local
-bound \(2^{-120}\). The construction permits a nonparabolic
+applies under the earlier summed condition, the local
+bound \(2^{-120}\), and now every directed certificate by its full
+shifted-chart expansion. The construction permits a nonparabolic
 main meridian and retains the original puncture paths under
 half twists. Its proof rules out an
 extra rational function of \(M\), including at the trace-zero values
@@ -213,9 +243,7 @@ The conclusion passes through the covered marked net-twist
 and closure isotopies, which preserve the full invariant
 family and preferred peripheral curves. It does not identify
 the full A-polynomial, factor multiplicities or the entire
-quantum module. Extensions to knots outside these classes
-and all-orders operator consequences of additional numerical
-criteria require their own proofs.
+quantum module. Extensions to knots outside these classes, including the newly decorated planar families, require their own moving-meridian and operator proofs.
 
 ## The moving-meridian growth already established
 

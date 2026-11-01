@@ -47,7 +47,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\sourcefile}[1]{\texttt{\detokenize{#1}}}
 \tikzset{box/.style={draw,rounded corners,fill=blue!4,align=center,inner sep=7pt}, arr/.style={-{Latex[length=2mm]},thick}, port/.style={draw,fill=white,minimum size=4mm,circle,inner sep=0pt}}
-\title{\Huge Volume limits for arborescent knots\\[8pt]\Large Long twists and explicit conditions\\for ordered tangle trees\\[18pt]\large Finite knot invariants, hyperbolic filling,\\and the preferred cusp shape}
+\title{\Huge Volume limits from planar tangles\\[8pt]\Large Circle packings, long twists,\\and ordered tangle trees\\[18pt]\large Finite knot invariants, hyperbolic filling,\\and the preferred cusp shape}
 \author{}
 \date{1 November 2026}
 \begin{document}
@@ -57,7 +57,11 @@
 \hypersetup{pageanchor=true}
 \frontmatter
 \chapter*{Abstract}
-We prove the volume conjecture for two specified classes of arborescent knot diagrams built by ordered stacking and quarter-turns of two-string tangles. The first is a recursive construction in which independently sufficiently large signed twist numbers give a hyperbolic knot and the volume limit. Its elementary pieces retain their original crossing circles, disk framings and endpoint order.
+We prove the volume conjecture for knots obtained by a finite decoration of planar tangle diagrams, and give separate quantitative results for ordered tangle trees. The planar construction starts with a simple triangulation of the sphere and a perfect matching of its dual triangles. These data specify an augmented link in the three-sphere. A variational construction supplies its complete circle packing. At each matched pair, we add even terminal stacks on both sides until the packing satisfies explicit strict inequalities. The resulting diagram admits a knot parity pattern. Independently sufficiently long signed twists at every original and added crossing circle then give the Kashaev volume limit through all integer levels. No tree decomposition is required.
+
+The decoration preserves the chosen endpoint pairing and generally changes the knot. Its size and the filling threshold may depend on the original sphere. The proof retains the full finite source: the strict inequalities bound the two complementary local sums on one common face torus, while the geometric sum has a nonzero leading contribution after every Fourier charge and endpoint current is accounted for. The actual peripheral equations complete the auxiliary ends to smooth solid tori, leave the main cusp complete, and identify the action with the hyperbolic volume of the resulting knot complement.
+
+The tree chapters treat specified arborescent diagrams built by ordered stacking and quarter-turns of two-string tangles. A recursive class has a volume theorem under independently sufficiently long signed twists. Its elementary pieces retain their original crossing circles, disk framings and endpoint order.
 
 For ordered trees with one crossing-circle operator at every vertex, we give explicit sufficient conditions in the vertex degree $d_v$ and signed crossing power $n_v$. One condition is
 \[
@@ -71,9 +75,9 @@ Thus $|n_v|\ge2^{27}$ suffices independently of the number of tangles. The degre
 
 The proof begins with the finite matrices defining the invariant and retains their derivative data at repeated spectral roots. For the long-twist construction, positive multiplication coefficients and exact rational inequalities control the signed color terms. For the quantitative tree theorems, a cut of the actual augmented exterior gives two octahedra per edge. Their positive deformations and primitive peripheral periods construct the metric after filling. The quantum calculation evaluates subtrees as exact polynomials, keeps their values at zero, and bounds every Fourier contribution relative to the next conditional critical value. This proves noncancellation and identifies the limiting action with the volume of the original knot complement. Only auxiliary circles are filled; the main knot cusp remains complete.
 
-The same calculation gives a uniform microscopic main-meridian profile for the zero-framed reduced ADO invariant. The exact crossing and framing factors remain in the formula. The summed theorem also identifies the first correction with the preferred cusp shape. By attaching even stacks of sufficiently long terminal tangles to any fixed knot-paired circle-tree core, the degree alternative produces examples retaining arbitrarily many prescribed short-twist pieces. These attachments preserve the endpoint pairing and can change the knot.
+The same calculation gives a uniform microscopic main-meridian profile for the zero-framed reduced ADO invariant. The exact crossing and framing factors remain in the formula. The summed and directed theorems also identify the first correction with the preferred cusp shape. By attaching even stacks of sufficiently long terminal tangles to any fixed knot-paired circle-tree core, the degree alternative produces examples retaining arbitrarily many prescribed short-twist pieces. These attachments preserve the endpoint pairing and can change the knot.
 
-Finally, the full asymptotic source determines the preferred geometric longitude on the previously covered strict Conway branches, including product junctions without crossing circles. The proof first treats circle trees by explicit representations and algebraic rigidity. At an unmarked junction, inserting a zero-crossing box and an auxiliary circle preserves the original tangle after meridian filling; an exact stationary elimination and the based boundary maps extend the longitude identity. It follows that the selected geometric irreducible factor divides the first nonzero classical symbol of every genuine all-level annihilator under the stated full-source hypotheses. This is a statement about the selected factor, not the entire A-polynomial or recurrence ideal.
+Finally, the full asymptotic source determines the preferred geometric longitude on the covered strict Conway branches, including product junctions without crossing circles, and on every circle tree satisfying the directed criterion. The latter extension proves all orders on the translated microscopic charts required by a fixed quantum recurrence. The proof first treats circle trees by explicit representations and algebraic rigidity. At an unmarked junction, inserting a zero-crossing box and an auxiliary circle preserves the original tangle after meridian filling; an exact stationary elimination and the based boundary maps extend the longitude identity. It follows that the selected geometric irreducible factor divides the first nonzero classical symbol of every genuine all-level annihilator under the stated full-source hypotheses. This is a statement about the selected factor, not the entire A-polynomial or recurrence ideal.
 
 \tableofcontents
 \mainmatter
@@ -89,6 +93,8 @@ Finally, the full asymptotic source determines the preferred geometric longitude
 \input{sections/08b-local-circle-messages}
 \input{sections/08d-directed-circle-messages}
 \input{sections/08c-geometric-characteristic}
+\input{sections/08e-balanced-terminal-fans}
+\input{sections/08f-directed-all-orders}
 \input{sections/09-reproduction}
 \appendix
 \input{sections/A-finite-identities}
@@ -102,6 +108,8 @@ Finally, the full asymptotic source determines the preferred geometric longitude
 \input{sections/I-geometric-characteristic}
 \input{sections/J-strict-tree-geometric-characteristic}
 \input{sections/K-directed-circle-messages}
+\input{sections/L-balanced-terminal-fans}
+\input{sections/M-directed-all-orders}
 \backmatter
 \bibliographystyle{plain}
 \bibliography{references}

@@ -1,5 +1,28 @@
 # Checking the formulas and reproducing the calculations
 
+
+## The planar terminal decoration
+
+Run the finite checks with one command:
+
+~~~sh
+python3 repro/run_research_checks.py balanced-terminal-fans
+~~~
+
+The script uses integer and rational arithmetic. It verifies the closed
+curvature recurrence and the rational lower bound in the analytic balance
+proof. It also constructs oriented stellar subdivisions, derives their
+new ordered quadrilaterals, checks the matching and even-level parity
+extension, and follows the endpoint pairings of even stacks of odd
+terminal tangles.
+
+These checks do not estimate a quantum limit or certify a numerical
+packing. The [written theorem](../../notes/actual_balanced_terminal_fan_volume.md)
+proves the packing, the exact full coefficient, the uniform estimates
+and the smooth primitive metric completion. The script checks the finite
+identities used by that argument.
+
+
 The repository contains written proofs, exact finite certificates, numerical checks and recorded outputs. They answer different questions. This chapter explains which calculations support which steps, and how to rerun them without treating a successful sample as a theorem.
 
 An exact symbolic calculation can establish an identity in formal variables. A rigorously bounded interval calculation can establish an inequality over an entire stated parameter domain. A finite counterexample can disprove a proposed identity. By contrast, checking many quantum levels or plotting a growth rate does not prove a uniform limit as \(N\to\infty\). The scope of each script must be read together with the mathematical argument that uses it.
