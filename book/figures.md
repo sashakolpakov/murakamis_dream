@@ -1,5 +1,19 @@
 # Figure gallery
 
+## Changing the interior triangulation of a bipyramid
+
+![Two tetrahedra share the interior face ABC on the left; three share the interior edge PQ on the right.](figures/bipyramid-move.svg)
+
+The five vertices are \(P,Q,A,B,C\). Both drawings have the same six
+boundary triangles. The move replaces \(PABC,QABC\) by
+\(PQAB,PQBC,PQCA\); only the interior triangulation changes.
+The [algebraic approaches chapter](chapters/algebraic.md#a-positive-factorial-model-and-a-change-of-triangulation)
+uses this example to distinguish equality of volume rates from an
+exact identity of finite evaluations, with measures and boundary
+factors retained.
+
+[Editable SVG](figures/bipyramid-move.svg)
+
 ## Summing the indices shared by two tangles
 
 ![The lower map B acts first. Its two output indices i and j become the input indices of A and are summed together.](figures/finite-contraction.svg)

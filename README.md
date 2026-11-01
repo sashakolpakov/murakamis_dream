@@ -116,6 +116,10 @@ also explains the approaches that remain incomplete. Its
 [methods chapter](https://sashakolpakov.github.io/murakamis_dream/guide/methods.html)
 introduces the techniques, gives their literature references, and
 distinguishes completed arguments from proposed extensions. The
+[algebraic approaches chapter](https://sashakolpakov.github.io/murakamis_dream/guide/algebraic.html)
+defines the earlier torsor and gluing proposals, works out the
+factorial model's move test, and explains the remaining comparison
+problems. The
 [research library](https://sashakolpakov.github.io/murakamis_dream/library.html)
 retains the Fourier, torsor, weighted Cauchy, cube, and other approaches,
 including failed estimates and the reasons they failed. These historical

@@ -59,6 +59,23 @@ A **normal** is a derivative in a specified direction. At a repeated Casimir nod
 
 The [physical polynomial compiler](../../notes/actual_main_meridian_newton_compiler.md) records the finite Casimir algebra and its repeated-root data. The [homogeneous face source](../../notes/actual_homogeneous_casimir_face_source.md) records how its polynomials become original matrix entries. Root-only identities must not be differentiated in a generic parameter without that additional source calculation.
 
+For the complete Newton basis, the convention used in the moving-meridian bounds is
+\[
+ e_r(z)=\frac{\prod_{a=0}^{r-1}(c_a-z)}{S_r^2},
+ \qquad 0\le r\le d,\qquad e_0=1.
+\]
+“Low” means \(r\le\lfloor d/2\rfloor\), and “high” means \(r>\lfloor d/2\rfloor\). These are ranges of an internal polynomial index, not small or large physical colors. A high basis polynomial vanishes at the complete spectral nodes but may have nonzero derivatives there.
+
+For a polynomial \(F\), the coefficient trace in an equal-color channel with \(M=q_N^s\) is
+\[
+ \phi_s(F)=(-1)^dN^2[z^d]\operatorname{rem}_{P_s}F,\qquad
+ P_s(z)=\mathsf T_N(z)+2\cos(2\pi s),
+ \quad \mathsf T_N(u+u^{-1})=u^N+u^{-N}.
+\]
+Here \(\operatorname{rem}_{P_s}F\) is the unique remainder of degree less than \(N\) after polynomial division. This retains the full repeated-root data. The normalized polynomial \(\mathsf T_N(z)\) is \(2T_N(z/2)\) in the convention \(T_N(\cos\theta)=\cos(N\theta)\). Opposite-color channels use the constant quotient \(P_0\), with their original reference maps retained. The compiler fixes which channel occurs; one cannot move every quotient in a diagram indiscriminately.
+
+Changing coordinates, changing the quotient product, and applying a physical turn are three different operations. In particular, an entry of a moving multiplication tensor need not be bounded by its complete value at the same indices. The [same-index obstruction](../../notes/actual_main_meridian_same_index_obstruction.md) disproves that estimate. The [reflected-trace bound](../../notes/actual_main_meridian_high_fourier_reflection.md) compares the change in the tensor with a different index and keeps the neighboring source profiles. Neither statement concerns a counterexample to a knot-volume limit.
+
 ## Source polynomials, sectors and the invariant
 
 The **source** is the full prescribed expression: physical matrices, their index ranges, cups, caps, the marked cut, and every scalar factor. A **coupon** is one specified operator inserted in a tangle box. A source polynomial is a way of storing the matrix entries of such an operator or the coefficients of a whole contraction.
@@ -88,6 +105,8 @@ Several decompositions of the source are used:
 
 The capitalized sector names are finite-support labels; CROSS does not mean a physical crossing matrix. A color core and an all-CROSS projection arise from different decompositions and must not be identified by their names. A nonzero all-CROSS period with the correct geometric rate does not by itself prove the full invariant's rate: the other sectors might contribute or cancel it. The [cofactor theorem](../../notes/actual_cross_cofactor_factorization.md) defines that projection, and the [balanced planar theorem](../../notes/actual_balanced_terminal_fan_volume.md) explains a sufficient comparison with the remaining sectors.
 
+A **finite-sector cover** groups genuine CROSS/LEFT/RIGHT choices for estimates. A branch has one full shared face-weight vector; it does not assign unrelated weights to the two occurrences of a face. The maxima inside a scalar upper bound are comparison terms, not additional quantum sectors. This combinatorial use of “cover” is different from a covering space of a link complement. The [methods chapter](methods.md#refining-the-coefficient-estimate-by-genuine-sectors) gives the cost and the remaining coverage question.
+
 ## Tangles and geometric variables
 
 A tangle box has four ordered endpoints. A product stacks compatible boxes in their specified order. A **physical quarter-turn** bends an incoming strand into an outgoing one and changes the input/output presentation. Its evaluation includes the original duality maps. The cylindrical closure joins lower endpoints to upper endpoints outside the box; the cap closure joins the two upper endpoints and the two lower endpoints respectively. These closures can have different topology. The knot test counts both components formed at final closure and any circles already closed inside a tangle.
@@ -103,6 +122,8 @@ A geometric gluing face may be a quadrilateral with four ordered ideal vertices.
 ## Circle packings, shapes and geometric actions
 
 In the face-source geometry, a positive real \(L_f\) is the **curvature**, or inverse radius, of a finite white circle. A protected value \(L_u=0\) denotes a straight line, not a circle of radius zero. Sending the marked tangency to infinity gives two parallel protected lines. The remaining circles lie in their common strip. Shared positive radii used in a Cauchy estimate are choices of weights; only a separately proved stationary identification makes them the geometric packing.
+
+The **triangle potential** \(Q(x,b,y)\) is a real logarithmic growth function of three such weights, with the original half-degree normalization. It is not the quantum root \(Q_N\). The sum \(Q(x,b,y)+Q(x,c,y)\) is the complete two-triangle cost at a crossing region. A capacity then subtracts the logarithmic face-target cost and takes an infimum over shared positive weights. A stationary value at the complete packing and a bound at an arbitrary trial vector have different roles.
 
 A complex number \(z_\Delta\) attached to an ideal tetrahedron is its ordered cross-ratio shape. Its branch and orientation matter; a coordinate with positive imaginary part gives a positively oriented tetrahedron in the usual vertex convention. The same letter \(z\) can instead be a formal polynomial variable, a spectral variable, or the microscopic meridian coordinate below. These uses are unrelated.
 
@@ -226,7 +247,7 @@ A quantum \(A\)-operator is a specified finite difference operator
        P(q,M,T)=\sum_{j=0}^{r}a_j(q,M)T^j,\qquad
        (TF)(M)=F(qM),\qquad TM=qMT.
 \]
-Here \(r\) is the operator order, fixed independently of \(N\); it is not the top color index \(d\). The \(a_j\) are rational functions in the formal quantum and meridian variables. A **genuine all-level annihilator** comes from the original finite source before its values are evaluated. Choosing a new ratio of two values at each level is not such a construction.
+Here \(r\) is the operator order, fixed independently of \(N\); it is not the top color index \(d\). The \(a_j\) are fixed rational functions in the formal quantum and meridian variables. A **genuine all-level annihilator** satisfies \(P(q_N,M,T)F_N(M)=0\) as an identity of meridian functions at every sufficiently large root level, with the original state and normalization. The finite-source theorem constructs such operators; the selected-factor theorem applies to any operator satisfying these hypotheses. Choosing a new ratio of two evaluated values at each level does not meet them.
 
 An equation \(PF=0\) does not select its solution by itself. The **pointed period** also retains a fixed vector \(c_0(q)\) of small-color Laurent polynomials and the prescribed companion transport row \(r_N(q)\). At a root pole its value is
 \[
@@ -267,3 +288,5 @@ where \(\sigma\) is the prescribed cyclic field automorphism and \(v\) a central
 A third local example is the [Casimir transport conic](../../notes/actual_crossing_casimir_torus.md): after choosing a spectral sheet and a reference point, crossing powers act multiplicatively on its regular fibers. The endpoint fibers degenerate, and the original excluded divisors and boundary targets remain part of the problem. An abstract norm torus or a local conic does not by itself identify a knot's geometric longitude or prove a nonzero source asymptotic.
 
 These distinctions explain why the guide keeps the operator, regulator, relative-cycle, and full-source methods separate. Each technical route states which object is constructed and which comparison is still required.
+
+The [algebraic approaches chapter](algebraic.md) defines Hilbert 90 transport, Koszul differentials, cyclotomic root data and jets, and nilpotent groups with triangular transport. It distinguishes these algebraic structures from bounds on the original quantum state.

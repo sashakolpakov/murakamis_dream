@@ -19,6 +19,9 @@ with [the results and their hypotheses](chapters/results.md),
 [the geometric volume](chapters/geometry.md).
 The [methods chapter](chapters/methods.md) explains the broader approaches,
 their mathematical tools, and their literature references.
+The [algebraic approaches chapter](chapters/algebraic.md) works through
+the factorial move test, Hilbert 90, Koszul complexes, cyclotomic
+rigidity, Regge symmetries, and descent from a cover.
 [Remaining questions](chapters/frontier.md), [notation](chapters/notation.md),
 and [reproduction](chapters/audits.md) are reference chapters.
 The [research library](https://sashakolpakov.github.io/murakamis_dream/library.html)

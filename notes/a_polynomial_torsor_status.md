@@ -39,12 +39,19 @@ nonzero meridian value excludes further zeros or poles. The remaining
 monomial is fixed by the preferred framing; a Seifert surface fixes the
 negative complete lift.
 
-Thus the selected geometric irreducible factor divides the first
-nonzero classical symbol of every genuine all-level annihilator under
-the covered circle-tree source hypotheses. This does not identify the
-full A-polynomial, all quantum solutions or an entire recurrence ideal.
-Other strict presentations retain their volume and source-characteristic
-theorems; extending the new geometric identification to them is further work.
+The subsequent [strict-tree longitude proof](actual_strict_tree_geometric_characteristic.md)
+extends this identification to the covered strict long-filling
+presentations, including their bare product junctions. The
+[directed all-orders theorem](actual_all_circle_directed_all_orders.md)
+also supplies the expansion required for every covered directed
+circle-tree certificate.
+
+Under these respective hypotheses, the selected geometric irreducible
+factor divides the first nonzero classical symbol of every genuine
+all-level annihilator. This does not identify the full A-polynomial,
+all quantum solutions, or an entire recurrence ideal. In particular,
+the decorated planar volume theorem alone supplies no corresponding
+moving-meridian or selected-factor statement for that larger class.
 
 ## Earlier torsor and full-source approaches, 28 October
 

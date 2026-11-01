@@ -24,6 +24,7 @@ CHAPTERS = [
     ("index", "Overview"), ("starting", "Start with the diagram"),
     ("manuscript", "The manuscript"), ("results", "Equality results"),
     ("mechanism", "The mechanism"), ("methods", "Methods and approaches"),
+    ("algebraic", "Algebraic approaches"),
     ("geometry", "Actual geometry"),
     ("frontier", "Current frontier"), ("notation", "Notation"),
     ("audits", "Reproducing audits"),

@@ -85,6 +85,23 @@ The [finite filling estimate](../../notes/actual_uniform_filling_supremum_bound.
 \]
 Its proof uses the exact values and derivatives at the spectral nodes. Applying it after the shared coefficient extraction adds no exponential cost at fixed twists. It does not estimate the supremum on its right.
 
+There is a useful distinction between vanishing values and a vanishing functional. Write
+\(\chi_N(z)=2T_N(z/2)+2\), where \(T_N(\cos\theta)=\cos(N\theta)\).
+If \(H\) vanishes at every root of \(\chi_N\), including the odd-level simple root \(-2\), the same theorem gives
+\[
+ |\mathcal L_N^n H|\le\frac{N-1}{N}\|H\|_{[-2,2]}.
+\]
+The crossing-power factor disappears from this bound, but the derivatives of \(H\) at double roots can still contribute. For the shared difference
+\(\mathcal D_N=S_{N,\mathrm{full}}-S_{N,\mathrm{CROSS}}\), the degree is at most \(N-1\) in each spectral variable and values vanish on the product of the spectral node sets. This is weaker than vanishing whenever any single variable is a node. Expanding the full functional in all variables cancels exactly its term with no derivatives and yields
+\[
+ \left|\left(\bigotimes_{e=1}^{r}\mathcal L_N^{n_e}\right)\mathcal D_N\right|
+ \le
+ \left\{\prod_e(1+|n_e|/2)
+       -\prod_e(1/N+|n_e|/2)\right\}
+             \|\mathcal D_N\|_{[-2,2]^r}.
+\]
+The tensor product means that the functionals act successively on their respective spectral variables. This exact saving preserves the shared targets and both level parities. It leaves the size of the between-node polynomial as the remaining problem. The earlier [Fourier–Hermite Gram estimate](../../notes/actual_filling_fourier_hermite_gram.md) also has a level-independent filling cost, in a different positive Hilbert norm; the two estimates should not be identified.
+
 ## Positive sums, factorial asymptotics, and angle optimization
 
 The simplest variational argument applies to a positive sum. Suppose \(\mathcal X_N\) is a finite index set with \(|\mathcal X_N|\le N^c\), and the weights \(w_N(x)>0\) satisfy a uniform logarithmic estimate
@@ -189,6 +206,46 @@ A second use of Cauchy's name concerns *coefficient estimates*. For a polynomial
  \boldsymbol\rho^{\boldsymbol t}=\prod_f\rho_f^{t_f}.
 \]
 The inequality follows by retaining one term of the positive evaluation. Minimizing the right-hand side is often called a capacity bound. There must still be one radius for each shared face, with all its incident factors evaluated there. For signed coefficients, the analogous elementary bound uses the polynomial obtained by taking absolute values of the coefficients, not \(|P(\boldsymbol\rho)|\). For instance \(P(z)=1-z\) vanishes at \(z=1\) although its coefficient of \(z\) has modulus one. The [complete-source capacity obstruction](../../notes/actual_complete_source_cauchy_capacity_gap.md) shows that even optimizing all positive shared radii can overestimate the geometric rate in its stated source class. That obstruction concerns this comparison method, not the knot invariant itself.
+
+## Refining the coefficient estimate by genuine sectors
+
+A single positive comparison can be too coarse even when a more detailed finite comparison succeeds. The [sector-cover theorem](../../notes/general_actual_sector_cover_filling_volume.md) makes this precise for its original certified marked plats. It uses the actual CROSS, LEFT and RIGHT polynomials, not arbitrary pieces of an upper-bound formula.
+
+For nonnegative weights \(w_1,w_2,w_3\), not all zero, define the [source-normalized triangle potential](../../notes/actual_triangle_entropy_algebraic_balance.md) by
+\[
+\begin{aligned}
+ Q(w_1,w_2,w_3)
+ &=\max_{\substack{\alpha_j\ge0\\
+                   \alpha_1+\alpha_2+\alpha_3=1/2}}
+       \sum_{j=1}^{3}\bigl(f(\alpha_j)+\alpha_j\log w_j\bigr),\\
+ f(t)&=\frac{\Lambda(\pi t)+\Lambda(\pi/2-\pi t)}{\pi},
+       \qquad 0\le t\le\tfrac12 .
+\end{aligned}
+\]
+For an ordered face quartet \((x,b,c,y)\), the three weights in \(Q(x,b,y)\) are \(w_1=x,w_2=b,w_3=y\). If a weight is zero, restrict its \(\alpha_j\) to zero and assign its product \(\alpha_j\log w_j\) the value zero. The linked proof identifies this maximum with the limiting logarithm, divided by \(N\), of the original positive half-degree triangle polynomial. Thus this is a real function of face weights, not the root \(Q_N=q_N^2\), and no additive normalization is free: \(Q(x,0,0)=\tfrac12\log x\) for \(x>0\).
+The local bounds on the entire real spectral interval have rates
+\[
+\begin{aligned}
+ A_C&=Q(x,b,y)+Q(x,c,y),\\
+ A_L&=\max\{\log c,\ Q(x,b,y)+\tfrac12\log c\},\\
+ A_R&=\max\{\log b,\ Q(x,c,y)+\tfrac12\log b\}.
+\end{aligned}
+\]
+If the overloaded middle coordinate is protected, its one-sided polynomial is exactly zero and that label is omitted. A protected zero never becomes a small positive weight. These are bounds uniform in the phases on the face coefficient torus; they do not assert coefficientwise positivity of the one-sided polynomial.
+
+A branch \(B\) allows a specified subset \(S_{B,e}\) of genuine labels at each crossing region. For example, one branch can require LEFT at region 1, allow CROSS or RIGHT at region 2, and allow all labels elsewhere. It has the shared cost
+\[
+ G_B(\boldsymbol L)
+   =\sum_e\max_{a\in S_{B,e}}A_{e,a}(\boldsymbol L)
+                 -\sum_{f\ \mathrm{ordinary}}\log L_f.
+\]
+The target \(d=N-1\) accounts for the last sum at the leading exponential scale. Every face still has just one weight within this branch. Different branches may use different full vectors of weights.
+
+Choose finitely many branches covering every non-CROSS label string. If each has one fixed positive shared vector with \(G_B<\Phi_D\), where \(2\pi\Phi_D\) is the complete augmented volume, their finitely many strict gaps give a common bound on the full complementary polynomial. The original filling estimate transfers that bound to the complementary scalar. For independently sufficiently long fixed twists, the nonzero all-CROSS contribution has a rate closer to \(\Phi_D\) than this remainder does; multiplying that rate by \(2\pi\) gives the actual filled volume. When the original endpoint pairing gives a knot, this comparison proves its full volume limit under the certificate hypotheses.
+
+An **anchored** test requires one specified LEFT or RIGHT region and allows all labels at every other region. Refining that test splits its allowed strings into smaller branches. The [certificate-separation example](../../notes/actual_shared_radius_certificate_separation.md) proves that all positive weights fail one anchored test on a fixed original source, while forty refined branches pass. It refutes universal applicability of the anchored test, not the volume conjecture or the possibility of a finer certificate. Existence of a successful finite cover for every eligible plat remains open.
+
+This is a finite cover of a set of sector choices. It is unrelated to a finite covering space of a knot complement. The theorem also does not split the two scalar expressions inside \(A_L\) into separate physical sectors: both expressions bound the same LEFT polynomial.
 
 ## What Fourier transformation preserves
 
@@ -350,6 +407,8 @@ These examples are related bookkeeping problems, but they are not interchangeabl
 
 For torsors in algebraic families, one must also specify the base and the topology in which local sections exist; see [Stacks Project, §39.11](https://stacks.math.columbia.edu/tag/0497). The elementary examples above have explicit fibers and actions.
 
+The [algebraic approaches chapter](algebraic.md) explains the proposed Hilbert 90 and Koszul constructions, the precise role of cyclotomic data, Regge symmetry and nilpotent group transport, and descent from covering spaces. It also keeps the early positive factorial model and its failed exact move test separate from its valid asymptotic calculation.
+
 For an oriented ideal tetrahedron with shape \(z\in\mathbb C\setminus\{0,1\}\), the signed volume is its Bloch–Wigner dilogarithm
 \[
  D(z)=\operatorname{Im}\operatorname{Li}_2(z)
@@ -394,12 +453,13 @@ The table covers the organized research routes. Each route includes its exact re
 | [Finite source and transport](../library.html#source) | Preserves matrix entries, spectral derivatives, endpoint terms, and shared coefficient constraints. | Exact identities and several bounds; an identity alone is not a volume theorem. |
 | [Angle optimization and geometry](../library.html#geometry) | Constructs cells, gluing, peripheral holonomy, and smooth ends. | Actual volume identification under the stated geometric hypotheses. |
 | [A-structures and torsors](../library.html#torsors) | Retains the selected solution, algebraic branch, logarithms, and regulator normalization. | Pointed and selected-factor theorems in covered families; general period estimates remain open. |
+| [Algebraic proposals and their tests](algebraic.md) | Examines exact move identities, transport equations, finite complexes, root data, and descent. | Exact constructions and explicit obstructions; each proposed volume consequence requires its stated additional comparison. |
 | [Global maxima of the signed source](../library.html#sharp-source) | Keeps the common degree constraints while estimating possible competing regions. | Partial bounds and classifications; the unrestricted signed remainder comparison is open. |
 | [Fourier, Cauchy, and energy](../library.html#fourier) | Exact norm identities and weighted inequalities, with original boundary costs. | Completed local estimates and special-family arguments; no general lower bound follows from positivity. |
 | [Cube and shared-core calculations](../library.html#cube) | Tests joining formulas and the extra geometry carried by a non-tree core. | Proved projected statements; the full unprojected cube limit is not asserted. |
 | [Obstructions, transport, and alternative criteria](../library.html#frontier) | Records counterexamples to shortcuts, cross-level conditions, finite-cover questions, and remaining source estimates. | Research tools and precise open questions, rather than additional claimed knot families. |
 
-Finite covers also belong to the last two algebraic and transport routes. Hyperbolic volume multiplies by the degree of a finite covering map between complete hyperbolic manifolds. The original invariant has no automatic matching covering formula. The peripheral eigenvalue map and selected state would have to be transported and descended explicitly. A cover is therefore a possible construction tool, not an established reduction of the general conjecture.
+Finite covering spaces also occur in algebraic and transport proposals. Hyperbolic volume multiplies by the degree of a finite covering map between complete hyperbolic manifolds. The original invariant has no automatic matching covering formula. The peripheral eigenvalue map and selected state would have to be transported and descended explicitly. Such a cover is a possible construction tool, not an established reduction of the general conjecture; it is distinct from the proved finite-sector criterion above.
 
 ## Literature and what is borrowed from it
 

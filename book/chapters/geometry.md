@@ -24,8 +24,8 @@ For the [strict Conway tree theorem](../../notes/actual_conway_all_strict_tree_l
 the geometric construction, nonzero quantum contribution and bound on the
 remaining terms are all proved. The planar constructions below also
 establish their specified complements and marked deformations. For a
-general planar source, selecting the geometric contribution from the
-full quantum expression remains a separate estimate. The
+general planar source, proving that the complementary terms are
+smaller than the geometric contribution remains a separate estimate. The
 [results](results.md) and [frontier](frontier.md) chapters keep those
 scopes distinct.
 
@@ -71,7 +71,8 @@ the original sphere has separating triangles or the tangle connections
 have cycles. The two projection copies recover the actual augmented
 link, with the original crossing-disk face maps.
 
-The complete metric is the starting point for filling. At circle \(e\),
+For independently sufficiently long fixed fillings, the complete metric
+is the starting point for the deformation. At circle \(e\),
 let \(\mu_e\) be the disk-framed meridian and \(\lambda_e\) its
 complementary primitive longitude. The logarithms \(U_e,V_e\) are
 logarithms of their projective similarity multipliers, with the branches
