@@ -2968,5 +2968,53 @@
       "private_path_or_key_findings": 0
     },
     "manuscript_pdf_sha256": "18ccc920523a9df9cb305d01270b9983e9019b418692c0872c780f8101f82c27"
+  },
+  "meridian_turn_comparison_revision": {
+    "updated_utc": "2026-11-01T00:03:07.710652+00:00",
+    "base_commit": "9e288718d2cf939225805e5b6e6fe5cd645737b1",
+    "scope": "Exact physical quarter-turn comparison at a moving main meridian, with all six orientation types and complete repeated-node derivatives.",
+    "proved": [
+      "Fixed-polynomial turn is coefficient reversal with a paired sine product and the specified carrier scalar.",
+      "Uniform coefficient comparison on each fixed disk |s| <= R < 1; polynomial full spectral-jet comparison on |s| <= 1/16.",
+      "Exact positive value kernel and inverse-transpose formula for the repeated-node derivative block."
+    ],
+    "limits": "No new knot-volume class is asserted. Additional multiplication terms, whole signed contractions at the geometric rate, and the required endpoint localization remain to be controlled for a general varying-meridian Conway source.",
+    "source": "notes/actual_main_meridian_turn_comparison.md",
+    "reproduction_command": "python3 experiments/audit_main_meridian_turn_comparison.py",
+    "validation": {
+      "book": {
+        "status": "PASS",
+        "HTML_pages": 1028,
+        "local_resource_links": 26241,
+        "images_with_alt": 83,
+        "technical_notes_indexed": 1009,
+        "search_records": 2576,
+        "failures": []
+      },
+      "browser": {
+        "page_viewport_checks": 12,
+        "math_errors": 0,
+        "horizontal_overflow": 0
+      },
+      "reproduction": {
+        "record_equal": true,
+        "physical_matrix_identities": 159,
+        "physical_matrix_entries": 78033,
+        "exact_levels": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "decimal_digits": 80,
+        "largest_scaled_error": "2.74748848836e-76",
+        "scope": "Finite tests verify formulas and conventions; uniform bounds are proved analytically in the note."
+      },
+      "private_path_or_key_findings": 0
+    },
+    "manuscript_pdf_sha256": "18ccc920523a9df9cb305d01270b9983e9019b418692c0872c780f8101f82c27"
   }
 }

@@ -1,0 +1,1183 @@
+{
+  "description": "Independent full physical tensor tests and exact spectral-kernel checks",
+  "scope": "Finite reproduction only; not a proof of uniform bounds, asymptotics, or whole-knot estimates.",
+  "construction": "E,F,K -> coproduct Casimir; full transfer/Cartan/swap braid; direct currying indices; full-matrix carrier inverse",
+  "versions": {
+    "mpmath": "1.3.0",
+    "sympy": "1.14.0"
+  },
+  "script_sha256": "eb071767643fbe5d44878175125c435bfa140d6a359929f01bcb86b468e326db",
+  "numerical_parameters": {
+    "decimal_digits": 80,
+    "scaled_error_tolerance": "1.0e-55",
+    "maximum_level": 6
+  },
+  "numerical_physical_tensor_checks": [
+    {
+      "N": 2,
+      "s_real": "0.0",
+      "s_imag": "0.0",
+      "tensor_dimension": 4,
+      "matrix_identities": 10,
+      "matrix_entries_checked": 160,
+      "largest_scaled_error": "4.28667862594e-81",
+      "checks": [
+        {
+          "check": "mixed_braid_intertwines_E",
+          "index": null,
+          "absolute_error": "2.98178386171e-81",
+          "scaled_error": "2.98178386171e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_F",
+          "index": null,
+          "absolute_error": "1.49089193085e-81",
+          "scaled_error": "1.49089193085e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_K",
+          "index": null,
+          "absolute_error": "0.0",
+          "scaled_error": "0.0"
+        },
+        {
+          "check": "opposite_Casimir_relation",
+          "index": null,
+          "absolute_error": "8.57335725188e-81",
+          "scaled_error": "4.28667862594e-81"
+        },
+        {
+          "check": "equal_Casimir_relation",
+          "index": null,
+          "absolute_error": "8.57335725188e-81",
+          "scaled_error": "4.28667862594e-81"
+        },
+        {
+          "check": "complete_carrier_is_identity",
+          "index": null,
+          "absolute_error": "1.49089193085e-81",
+          "scaled_error": "1.49089193085e-81"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 0,
+          "absolute_error": "2.14333931297e-81",
+          "scaled_error": "2.14333931297e-81"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 0,
+          "absolute_error": "2.14333931297e-81",
+          "scaled_error": "2.14333931297e-81"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 1,
+          "absolute_error": "2.14333931297e-81",
+          "scaled_error": "2.14333931297e-81"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 1,
+          "absolute_error": "2.14333931297e-81",
+          "scaled_error": "2.14333931297e-81"
+        }
+      ]
+    },
+    {
+      "N": 2,
+      "s_real": "0.25",
+      "s_imag": "0.125",
+      "tensor_dimension": 4,
+      "matrix_identities": 9,
+      "matrix_entries_checked": 144,
+      "largest_scaled_error": "1.91746903918e-80",
+      "checks": [
+        {
+          "check": "mixed_braid_intertwines_E",
+          "index": null,
+          "absolute_error": "2.98178386171e-81",
+          "scaled_error": "2.469191156e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_F",
+          "index": null,
+          "absolute_error": "2.35730712333e-81",
+          "scaled_error": "1.84426899821e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_K",
+          "index": null,
+          "absolute_error": "4.34665956461e-81",
+          "scaled_error": "1.79971685623e-81"
+        },
+        {
+          "check": "opposite_Casimir_relation",
+          "index": null,
+          "absolute_error": "3.83493807836e-80",
+          "scaled_error": "1.91746903918e-80"
+        },
+        {
+          "check": "equal_Casimir_relation",
+          "index": null,
+          "absolute_error": "3.0815102839e-80",
+          "scaled_error": "1.77369246845e-80"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 0,
+          "absolute_error": "7.60208704808e-81",
+          "scaled_error": "4.8872821639e-81"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 0,
+          "absolute_error": "2.17332978231e-81",
+          "scaled_error": "2.17332978231e-81"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 1,
+          "absolute_error": "3.17362184004e-81",
+          "scaled_error": "3.17362184004e-81"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 1,
+          "absolute_error": "2.48637241217e-81",
+          "scaled_error": "2.48637241217e-81"
+        }
+      ]
+    },
+    {
+      "N": 3,
+      "s_real": "0.0",
+      "s_imag": "0.0",
+      "tensor_dimension": 9,
+      "matrix_identities": 12,
+      "matrix_entries_checked": 972,
+      "largest_scaled_error": "1.56573908911e-79",
+      "checks": [
+        {
+          "check": "mixed_braid_intertwines_E",
+          "index": null,
+          "absolute_error": "5.24737622423e-81",
+          "scaled_error": "2.62368811212e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_F",
+          "index": null,
+          "absolute_error": "6.66747140899e-81",
+          "scaled_error": "3.3337357045e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_K",
+          "index": null,
+          "absolute_error": "1.05421979432e-81",
+          "scaled_error": "3.51406598108e-82"
+        },
+        {
+          "check": "opposite_Casimir_relation",
+          "index": null,
+          "absolute_error": "3.13147817823e-79",
+          "scaled_error": "1.56573908911e-79"
+        },
+        {
+          "check": "equal_Casimir_relation",
+          "index": null,
+          "absolute_error": "3.13147817823e-79",
+          "scaled_error": "1.56573908911e-79"
+        },
+        {
+          "check": "complete_carrier_is_identity",
+          "index": null,
+          "absolute_error": "9.90283344976e-81",
+          "scaled_error": "9.90283344976e-81"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 0,
+          "absolute_error": "1.09008620926e-80",
+          "scaled_error": "1.09008620926e-80"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 0,
+          "absolute_error": "5.27130921624e-81",
+          "scaled_error": "5.27130921624e-81"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 1,
+          "absolute_error": "1.60905969526e-80",
+          "scaled_error": "8.04529847628e-81"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 1,
+          "absolute_error": "5.27866250272e-81",
+          "scaled_error": "2.63933125136e-81"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 2,
+          "absolute_error": "9.14243619686e-81",
+          "scaled_error": "9.14243619686e-81"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 2,
+          "absolute_error": "5.27130921624e-81",
+          "scaled_error": "5.27130921624e-81"
+        }
+      ]
+    },
+    {
+      "N": 3,
+      "s_real": "0.25",
+      "s_imag": "0.125",
+      "tensor_dimension": 9,
+      "matrix_identities": 11,
+      "matrix_entries_checked": 891,
+      "largest_scaled_error": "2.05901700791e-79",
+      "checks": [
+        {
+          "check": "mixed_braid_intertwines_E",
+          "index": null,
+          "absolute_error": "1.13542946707e-80",
+          "scaled_error": "5.00740491979e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_F",
+          "index": null,
+          "absolute_error": "1.31787769003e-80",
+          "scaled_error": "5.03520215381e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_K",
+          "index": null,
+          "absolute_error": "2.10843958865e-81",
+          "scaled_error": "5.60054040138e-82"
+        },
+        {
+          "check": "opposite_Casimir_relation",
+          "index": null,
+          "absolute_error": "3.17640465238e-79",
+          "scaled_error": "1.58820232619e-79"
+        },
+        {
+          "check": "equal_Casimir_relation",
+          "index": null,
+          "absolute_error": "3.57721656795e-79",
+          "scaled_error": "2.05901700791e-79"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 0,
+          "absolute_error": "1.414384274e-80",
+          "scaled_error": "8.10884700328e-81"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 0,
+          "absolute_error": "9.06874157372e-81",
+          "scaled_error": "9.06874157372e-81"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 1,
+          "absolute_error": "2.04692458161e-80",
+          "scaled_error": "8.91441116749e-81"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 1,
+          "absolute_error": "6.39222631988e-81",
+          "scaled_error": "3.73725942866e-81"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 2,
+          "absolute_error": "1.2695171312e-80",
+          "scaled_error": "1.2695171312e-80"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 2,
+          "absolute_error": "7.45445965427e-81",
+          "scaled_error": "7.45445965427e-81"
+        }
+      ]
+    },
+    {
+      "N": 3,
+      "s_real": "0.5",
+      "s_imag": "0.0",
+      "tensor_dimension": 9,
+      "matrix_identities": 11,
+      "matrix_entries_checked": 891,
+      "largest_scaled_error": "1.24469387738e-79",
+      "checks": [
+        {
+          "check": "mixed_braid_intertwines_E",
+          "index": null,
+          "absolute_error": "5.96356772342e-81",
+          "scaled_error": "2.98178386171e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_F",
+          "index": null,
+          "absolute_error": "1.05421979432e-80",
+          "scaled_error": "5.27109897162e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_K",
+          "index": null,
+          "absolute_error": "2.98178386171e-81",
+          "scaled_error": "1.49089193085e-81"
+        },
+        {
+          "check": "opposite_Casimir_relation",
+          "index": null,
+          "absolute_error": "2.48938775476e-79",
+          "scaled_error": "1.24469387738e-79"
+        },
+        {
+          "check": "equal_Casimir_relation",
+          "index": null,
+          "absolute_error": "1.63788085716e-79",
+          "scaled_error": "8.18940428578e-80"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 0,
+          "absolute_error": "2.1248479263e-80",
+          "scaled_error": "2.1248479263e-80"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 0,
+          "absolute_error": "9.5700488153e-81",
+          "scaled_error": "9.5700488153e-81"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 1,
+          "absolute_error": "1.53496719003e-80",
+          "scaled_error": "8.86213720358e-81"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 1,
+          "absolute_error": "8.49939170519e-81",
+          "scaled_error": "4.90712608894e-81"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 2,
+          "absolute_error": "7.8813506372e-81",
+          "scaled_error": "7.8813506372e-81"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 2,
+          "absolute_error": "6.02682165578e-81",
+          "scaled_error": "6.02682165578e-81"
+        }
+      ]
+    },
+    {
+      "N": 4,
+      "s_real": "0.0",
+      "s_imag": "0.0",
+      "tensor_dimension": 16,
+      "matrix_identities": 14,
+      "matrix_entries_checked": 3584,
+      "largest_scaled_error": "1.48555310052e-78",
+      "checks": [
+        {
+          "check": "mixed_braid_intertwines_E",
+          "index": null,
+          "absolute_error": "1.88584569867e-80",
+          "scaled_error": "4.21687917729e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_F",
+          "index": null,
+          "absolute_error": "1.35006006332e-80",
+          "scaled_error": "3.37515015831e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_K",
+          "index": null,
+          "absolute_error": "0.0",
+          "scaled_error": "0.0"
+        },
+        {
+          "check": "opposite_Casimir_relation",
+          "index": null,
+          "absolute_error": "2.97110620104e-78",
+          "scaled_error": "1.48555310052e-78"
+        },
+        {
+          "check": "equal_Casimir_relation",
+          "index": null,
+          "absolute_error": "2.97110620104e-78",
+          "scaled_error": "1.48555310052e-78"
+        },
+        {
+          "check": "complete_carrier_is_identity",
+          "index": null,
+          "absolute_error": "4.46294464247e-80",
+          "scaled_error": "4.46294464247e-80"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 0,
+          "absolute_error": "7.44326956592e-80",
+          "scaled_error": "7.44326956592e-80"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 0,
+          "absolute_error": "3.61675755902e-80",
+          "scaled_error": "3.61675755902e-80"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 1,
+          "absolute_error": "1.01590709187e-79",
+          "scaled_error": "3.38635697288e-80"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 1,
+          "absolute_error": "2.12026639148e-80",
+          "scaled_error": "7.06755463826e-81"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 2,
+          "absolute_error": "7.39149726109e-80",
+          "scaled_error": "2.46383242036e-80"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 2,
+          "absolute_error": "2.12026639148e-80",
+          "scaled_error": "7.06755463826e-81"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 3,
+          "absolute_error": "5.61782997513e-80",
+          "scaled_error": "5.61782997513e-80"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 3,
+          "absolute_error": "3.61675755902e-80",
+          "scaled_error": "3.61675755902e-80"
+        }
+      ]
+    },
+    {
+      "N": 4,
+      "s_real": "0.25",
+      "s_imag": "0.125",
+      "tensor_dimension": 16,
+      "matrix_identities": 13,
+      "matrix_entries_checked": 3328,
+      "largest_scaled_error": "1.69148900745e-78",
+      "checks": [
+        {
+          "check": "mixed_braid_intertwines_E",
+          "index": null,
+          "absolute_error": "3.97819585947e-80",
+          "scaled_error": "7.64647455032e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_F",
+          "index": null,
+          "absolute_error": "4.47391802999e-80",
+          "scaled_error": "9.23004385558e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_K",
+          "index": null,
+          "absolute_error": "5.96356772342e-81",
+          "scaled_error": "1.16359372099e-81"
+        },
+        {
+          "check": "opposite_Casimir_relation",
+          "index": null,
+          "absolute_error": "3.38297801491e-78",
+          "scaled_error": "1.69148900745e-78"
+        },
+        {
+          "check": "equal_Casimir_relation",
+          "index": null,
+          "absolute_error": "2.01848914379e-78",
+          "scaled_error": "1.16182607298e-78"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 0,
+          "absolute_error": "5.11731145401e-80",
+          "scaled_error": "2.7705251286e-80"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 0,
+          "absolute_error": "3.81572593634e-80",
+          "scaled_error": "3.81572593634e-80"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 1,
+          "absolute_error": "1.35990267283e-79",
+          "scaled_error": "3.45840789354e-80"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 1,
+          "absolute_error": "2.17332978231e-80",
+          "scaled_error": "8.38880795705e-81"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 2,
+          "absolute_error": "2.3448275081e-79",
+          "scaled_error": "6.67375517337e-80"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 2,
+          "absolute_error": "1.26616142259e-80",
+          "scaled_error": "4.49449767253e-81"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 3,
+          "absolute_error": "1.13299893693e-79",
+          "scaled_error": "1.13299893693e-79"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 3,
+          "absolute_error": "3.47902515125e-80",
+          "scaled_error": "3.47902515125e-80"
+        }
+      ]
+    },
+    {
+      "N": 4,
+      "s_real": "0.5",
+      "s_imag": "0.0",
+      "tensor_dimension": 16,
+      "matrix_identities": 13,
+      "matrix_entries_checked": 3328,
+      "largest_scaled_error": "1.39266863919e-78",
+      "checks": [
+        {
+          "check": "mixed_braid_intertwines_E",
+          "index": null,
+          "absolute_error": "2.15019492115e-80",
+          "scaled_error": "4.82010839478e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_F",
+          "index": null,
+          "absolute_error": "1.59532403234e-80",
+          "scaled_error": "4.67259590882e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_K",
+          "index": null,
+          "absolute_error": "2.10843958865e-81",
+          "scaled_error": "6.17547657792e-82"
+        },
+        {
+          "check": "opposite_Casimir_relation",
+          "index": null,
+          "absolute_error": "2.78533727839e-78",
+          "scaled_error": "1.39266863919e-78"
+        },
+        {
+          "check": "equal_Casimir_relation",
+          "index": null,
+          "absolute_error": "2.00384183809e-78",
+          "scaled_error": "1.00192091905e-78"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 0,
+          "absolute_error": "5.59134168259e-80",
+          "scaled_error": "5.59134168259e-80"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 0,
+          "absolute_error": "4.51133403773e-80",
+          "scaled_error": "4.51133403773e-80"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 1,
+          "absolute_error": "5.40024025329e-80",
+          "scaled_error": "1.71201297842e-80"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 1,
+          "absolute_error": "2.13202758957e-80",
+          "scaled_error": "6.75906762012e-81"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 2,
+          "absolute_error": "4.73812867805e-80",
+          "scaled_error": "1.62586872123e-80"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 2,
+          "absolute_error": "1.69154520589e-80",
+          "scaled_error": "5.80446549193e-81"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 3,
+          "absolute_error": "2.1938476029e-80",
+          "scaled_error": "2.1938476029e-80"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 3,
+          "absolute_error": "2.60843880931e-80",
+          "scaled_error": "2.60843880931e-80"
+        }
+      ]
+    },
+    {
+      "N": 5,
+      "s_real": "0.0",
+      "s_imag": "0.0",
+      "tensor_dimension": 25,
+      "matrix_identities": 16,
+      "matrix_entries_checked": 10000,
+      "largest_scaled_error": "5.56991478859e-78",
+      "checks": [
+        {
+          "check": "mixed_braid_intertwines_E",
+          "index": null,
+          "absolute_error": "6.1398687601e-80",
+          "scaled_error": "4.93732898468e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_F",
+          "index": null,
+          "absolute_error": "3.57814063405e-80",
+          "scaled_error": "4.94486873973e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_K",
+          "index": null,
+          "absolute_error": "8.43586772145e-81",
+          "scaled_error": "1.44101824158e-81"
+        },
+        {
+          "check": "opposite_Casimir_relation",
+          "index": null,
+          "absolute_error": "1.11398295772e-77",
+          "scaled_error": "5.56991478859e-78"
+        },
+        {
+          "check": "equal_Casimir_relation",
+          "index": null,
+          "absolute_error": "1.11398295772e-77",
+          "scaled_error": "5.56991478859e-78"
+        },
+        {
+          "check": "complete_carrier_is_identity",
+          "index": null,
+          "absolute_error": "1.63166650419e-79",
+          "scaled_error": "1.63166650419e-79"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 0,
+          "absolute_error": "1.16083913264e-79",
+          "scaled_error": "1.16083913264e-79"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 0,
+          "absolute_error": "8.69322468089e-80",
+          "scaled_error": "8.69322468089e-80"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 1,
+          "absolute_error": "5.90859865137e-79",
+          "scaled_error": "1.12844192947e-79"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 1,
+          "absolute_error": "5.85827577808e-80",
+          "scaled_error": "1.11883111588e-80"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 2,
+          "absolute_error": "7.57959838927e-79",
+          "scaled_error": "8.56055014745e-80"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 2,
+          "absolute_error": "5.06117269021e-80",
+          "scaled_error": "5.71618974968e-81"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 3,
+          "absolute_error": "3.87975801456e-79",
+          "scaled_error": "7.40967846718e-80"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 3,
+          "absolute_error": "5.07779494407e-80",
+          "scaled_error": "9.69772540366e-81"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 4,
+          "absolute_error": "1.90201068047e-79",
+          "scaled_error": "1.90201068047e-79"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 4,
+          "absolute_error": "8.69322468089e-80",
+          "scaled_error": "8.69322468089e-80"
+        }
+      ]
+    },
+    {
+      "N": 5,
+      "s_real": "0.25",
+      "s_imag": "0.125",
+      "tensor_dimension": 25,
+      "matrix_identities": 15,
+      "matrix_entries_checked": 9375,
+      "largest_scaled_error": "2.64901901724e-77",
+      "checks": [
+        {
+          "check": "mixed_braid_intertwines_E",
+          "index": null,
+          "absolute_error": "1.06679542544e-79",
+          "scaled_error": "7.49332940761e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_F",
+          "index": null,
+          "absolute_error": "4.92220178065e-80",
+          "scaled_error": "5.42832502116e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_K",
+          "index": null,
+          "absolute_error": "8.43375835458e-81",
+          "scaled_error": "1.13909888201e-81"
+        },
+        {
+          "check": "opposite_Casimir_relation",
+          "index": null,
+          "absolute_error": "3.97941291184e-77",
+          "scaled_error": "1.98970645592e-77"
+        },
+        {
+          "check": "equal_Casimir_relation",
+          "index": null,
+          "absolute_error": "4.60225179341e-77",
+          "scaled_error": "2.64901901724e-77"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 0,
+          "absolute_error": "3.90625066572e-79",
+          "scaled_error": "2.04341927538e-79"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 0,
+          "absolute_error": "1.89200148324e-79",
+          "scaled_error": "1.89200148324e-79"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 1,
+          "absolute_error": "1.58018323054e-78",
+          "scaled_error": "2.35969084094e-79"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 1,
+          "absolute_error": "9.16383247095e-80",
+          "scaled_error": "2.23567466083e-80"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 2,
+          "absolute_error": "2.84481558216e-78",
+          "scaled_error": "2.7417443281e-79"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 2,
+          "absolute_error": "5.52334715881e-80",
+          "scaled_error": "7.43258978233e-81"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 3,
+          "absolute_error": "1.85784158636e-78",
+          "scaled_error": "3.31307516946e-79"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 3,
+          "absolute_error": "1.25083429184e-79",
+          "scaled_error": "2.66175794149e-80"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 4,
+          "absolute_error": "4.00574737834e-79",
+          "scaled_error": "4.00574737834e-79"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 4,
+          "absolute_error": "2.55443180612e-79",
+          "scaled_error": "2.55443180612e-79"
+        }
+      ]
+    },
+    {
+      "N": 6,
+      "s_real": "0.0",
+      "s_imag": "0.0",
+      "tensor_dimension": 36,
+      "matrix_identities": 18,
+      "matrix_entries_checked": 23328,
+      "largest_scaled_error": "1.2786869764e-76",
+      "checks": [
+        {
+          "check": "mixed_braid_intertwines_E",
+          "index": null,
+          "absolute_error": "9.0834357366e-80",
+          "scaled_error": "3.30361363756e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_F",
+          "index": null,
+          "absolute_error": "3.79519125956e-80",
+          "scaled_error": "3.16265938297e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_K",
+          "index": null,
+          "absolute_error": "1.88584569867e-80",
+          "scaled_error": "1.81465586962e-81"
+        },
+        {
+          "check": "opposite_Casimir_relation",
+          "index": null,
+          "absolute_error": "2.55737395279e-76",
+          "scaled_error": "1.2786869764e-76"
+        },
+        {
+          "check": "equal_Casimir_relation",
+          "index": null,
+          "absolute_error": "2.55737395279e-76",
+          "scaled_error": "1.2786869764e-76"
+        },
+        {
+          "check": "complete_carrier_is_identity",
+          "index": null,
+          "absolute_error": "1.1253150866e-78",
+          "scaled_error": "1.1253150866e-78"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 0,
+          "absolute_error": "9.48290878614e-79",
+          "scaled_error": "9.48290878614e-79"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 0,
+          "absolute_error": "7.13820661427e-79",
+          "scaled_error": "7.13820661427e-79"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 1,
+          "absolute_error": "2.4146519943e-78",
+          "scaled_error": "3.449502849e-79"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 1,
+          "absolute_error": "1.29080593375e-79",
+          "scaled_error": "1.84400847679e-80"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 2,
+          "absolute_error": "5.99224911278e-78",
+          "scaled_error": "3.52485241928e-79"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 2,
+          "absolute_error": "7.79237225151e-80",
+          "scaled_error": "4.58374838324e-81"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 3,
+          "absolute_error": "9.48198443837e-78",
+          "scaled_error": "5.57763790492e-79"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 3,
+          "absolute_error": "1.02601098618e-79",
+          "scaled_error": "6.03535874222e-81"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 4,
+          "absolute_error": "6.81604752439e-78",
+          "scaled_error": "9.73721074914e-79"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 4,
+          "absolute_error": "1.25376831498e-79",
+          "scaled_error": "1.79109759282e-80"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 5,
+          "absolute_error": "1.59269442156e-78",
+          "scaled_error": "1.59269442156e-78"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 5,
+          "absolute_error": "7.13972669723e-79",
+          "scaled_error": "7.13972669723e-79"
+        }
+      ]
+    },
+    {
+      "N": 6,
+      "s_real": "0.25",
+      "s_imag": "0.125",
+      "tensor_dimension": 36,
+      "matrix_identities": 17,
+      "matrix_entries_checked": 22032,
+      "largest_scaled_error": "2.74748848836e-76",
+      "checks": [
+        {
+          "check": "mixed_braid_intertwines_E",
+          "index": null,
+          "absolute_error": "1.82450089154e-79",
+          "scaled_error": "5.61110764204e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_F",
+          "index": null,
+          "absolute_error": "5.73557577688e-80",
+          "scaled_error": "3.72888481937e-81"
+        },
+        {
+          "check": "mixed_braid_intertwines_K",
+          "index": null,
+          "absolute_error": "1.88584569867e-80",
+          "scaled_error": "1.40666810147e-81"
+        },
+        {
+          "check": "opposite_Casimir_relation",
+          "index": null,
+          "absolute_error": "5.49497697672e-76",
+          "scaled_error": "2.74748848836e-76"
+        },
+        {
+          "check": "equal_Casimir_relation",
+          "index": null,
+          "absolute_error": "2.66734485304e-76",
+          "scaled_error": "1.5353021865e-76"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 0,
+          "absolute_error": "2.41901982453e-78",
+          "scaled_error": "1.2367679634e-78"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 0,
+          "absolute_error": "5.59194429829e-79",
+          "scaled_error": "5.59194429829e-79"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 1,
+          "absolute_error": "8.77682394178e-78",
+          "scaled_error": "9.0421963993e-79"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 1,
+          "absolute_error": "1.31147654205e-79",
+          "scaled_error": "2.31845815459e-80"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 2,
+          "absolute_error": "2.82934430096e-77",
+          "scaled_error": "1.29229957004e-78"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 2,
+          "absolute_error": "7.54338279466e-80",
+          "scaled_error": "5.18676674994e-81"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 3,
+          "absolute_error": "4.27186536364e-77",
+          "scaled_error": "2.09655034445e-78"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 3,
+          "absolute_error": "9.83536785167e-80",
+          "scaled_error": "6.37503396413e-81"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 4,
+          "absolute_error": "2.70134873107e-77",
+          "scaled_error": "3.54831287341e-78"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 4,
+          "absolute_error": "2.03505383271e-79",
+          "scaled_error": "3.09722172804e-80"
+        },
+        {
+          "check": "fixed_equal_to_mixed_turn",
+          "index": 5,
+          "absolute_error": "4.50554019901e-78",
+          "scaled_error": "4.50554019901e-78"
+        },
+        {
+          "check": "opposite_endomorphism_turn",
+          "index": 5,
+          "absolute_error": "1.61312562771e-78",
+          "scaled_error": "1.61312562771e-78"
+        }
+      ]
+    }
+  ],
+  "exact_cyclotomic_checks": [
+    {
+      "N": 2,
+      "field": "Q[root]/Phi_4",
+      "xi": "1/7",
+      "shift_kernel_entries": 1,
+      "Frobenius_pairing_identities": 4,
+      "paired_reflection_identities": 2,
+      "full_jet_matrix_dimension": 2,
+      "radical_block_entries": 1,
+      "result": "all exact identities hold"
+    },
+    {
+      "N": 3,
+      "field": "Q[root]/Phi_6",
+      "xi": "1/7",
+      "shift_kernel_entries": 4,
+      "Frobenius_pairing_identities": 9,
+      "paired_reflection_identities": 3,
+      "full_jet_matrix_dimension": 3,
+      "radical_block_entries": 1,
+      "result": "all exact identities hold"
+    },
+    {
+      "N": 4,
+      "field": "Q[root]/Phi_8",
+      "xi": "1/7",
+      "shift_kernel_entries": 4,
+      "Frobenius_pairing_identities": 16,
+      "paired_reflection_identities": 4,
+      "full_jet_matrix_dimension": 4,
+      "radical_block_entries": 4,
+      "result": "all exact identities hold"
+    },
+    {
+      "N": 5,
+      "field": "Q[root]/Phi_10",
+      "xi": "1/7",
+      "shift_kernel_entries": 9,
+      "Frobenius_pairing_identities": 25,
+      "paired_reflection_identities": 5,
+      "full_jet_matrix_dimension": 5,
+      "radical_block_entries": 4,
+      "result": "all exact identities hold"
+    },
+    {
+      "N": 6,
+      "field": "Q[root]/Phi_12",
+      "xi": "1/7",
+      "shift_kernel_entries": 9,
+      "Frobenius_pairing_identities": 36,
+      "paired_reflection_identities": 6,
+      "full_jet_matrix_dimension": 6,
+      "radical_block_entries": 9,
+      "result": "all exact identities hold"
+    },
+    {
+      "N": 7,
+      "field": "Q[root]/Phi_14",
+      "xi": "1/7",
+      "shift_kernel_entries": 16,
+      "Frobenius_pairing_identities": 49,
+      "paired_reflection_identities": 7,
+      "full_jet_matrix_dimension": 7,
+      "radical_block_entries": 9,
+      "result": "all exact identities hold"
+    },
+    {
+      "N": 8,
+      "field": "Q[root]/Phi_16",
+      "xi": "1/7",
+      "shift_kernel_entries": 16,
+      "Frobenius_pairing_identities": 64,
+      "paired_reflection_identities": 8,
+      "full_jet_matrix_dimension": 8,
+      "radical_block_entries": 16,
+      "result": "all exact identities hold"
+    }
+  ],
+  "result": "all checks passed"
+}

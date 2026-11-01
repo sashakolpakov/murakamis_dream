@@ -4,7 +4,7 @@
 
 A two-strand tangle is a piece of a knot diagram inside a box, with four ordered boundary points. Its quantum operator can be encoded by a polynomial in the two-strand Casimir. Turning or joining boxes then becomes a finite calculation on polynomial coefficients. The main meridian parameter is the eigenvalue assigned to a small loop around the knot itself; it is distinct from any auxiliary crossing-circle color.
 
-There are two distinct operations in a main-meridian deformation: changing the polynomial coordinates of a coupon, and changing the multiplication and turn tensors of the physical source. The first operation has a uniform polynomial bound in the microscopic color. The second is not controlled by that bound: [products that vanish at completeness can acquire nonzero coefficients](actual_main_meridian_newton_multiplication.md). This note proves the basis statement, constructs an exact formal compiler for a fixed oriented Conway tree, and retains the actual primitive closing trace. Its scalar normalization supplies one factor \(H_N\), but does not force the remaining regular contraction to tend to one.
+There are two distinct operations in a main-meridian deformation: changing the polynomial coordinates of a coupon, and changing the multiplication and turn tensors of the physical source. A bound for the first operation does not by itself control the second: [products that vanish at completeness can acquire nonzero coefficients](actual_main_meridian_newton_multiplication.md). This note proves the polynomial basis bound, constructs an exact formal compiler for a fixed oriented Conway tree, and retains the actual primitive closing trace. The separate [quarter-turn comparison](actual_main_meridian_turn_comparison.md) now computes all six physical turn types in fixed polynomial coordinates and bounds them relative to the complete turn. The closing normalization still supplies only one factor \(H_N\); it does not force the remaining regular contraction to tend to one.
 
 ## 1. The moving Newton basis and its exact dual
 
@@ -330,7 +330,7 @@ f_r(M)=\frac{s_0}{s_x(M)}\,b_r(M),
 \]
 with \(b_r\) holomorphic at every nonzero ordinary-color point. Those zeros of \(s_x\) are simple. Thus every final Newton coordinate has at most a simple ordinary-color pole, irrespective of the apparent higher pole orders in the recursive calculation. The same holds for every fixed subtree. This is an exact cancellation identity, with no quantitative bound on \(b_r\) relative to the selected closing scalar.
 
-The polynomial basis estimate (11) applies to the changes between the Newton frames occurring here. It does not estimate the complete typed turn tensor (20), the actual crossing coordinates through a resonance, or the signed sum of the resulting tree.
+The polynomial basis estimate (11) applies to the changes between the Newton frames occurring here. A separate physical calculation now evaluates the turn tensor (20): in fixed complete polynomial coordinates it is coefficient reversal multiplied by the paired sine product \(W_n(s)/H_N(s)\) and a specified scalar \(1\) or \(q^{\pm s^2/2}\). The [quarter-turn theorem](actual_main_meridian_turn_comparison.md) bounds these factors and their inverses uniformly for \(|s|\le R<1\). On \(|s|\le1/16\), it also compares the full spectral-jet norm with the complete turn of the same polynomial, with factors at most \(CN^7\). This does not estimate actual crossing coordinates through a resonance or the signed sum of the resulting tree.
 
 ## 5. The primitive closing trace leaves one boundary factor
 
@@ -398,7 +398,7 @@ If \(i+j\ge N\), then the complete-basis product has a polynomial factorization
 e_i^0e_j^0\equiv-\Delta_s h_{ij}\pmod{P_s}.
 \tag{25}
 \]
-For fixed microscopic \(s\), \(\Delta_s\) is of order one, not of order \(N^{-1}\). A polynomially controlled basis change does not suppress this new term. If one insists on a constant opposite-color algebra at every step, the same issue is transported into the exact typed turns and carrier coefficients, rather than removed.
+For fixed microscopic \(s\), \(\Delta_s\) is of order one, not of order \(N^{-1}\). A polynomially controlled basis change does not suppress this new term. The exact turn comparison retains the distinction between equal-color and opposite-color objects; its fixed polynomial coordinates do not identify their multiplication algebras. The additional products in (25) therefore remain in the physical calculation.
 
 At first order there is a useful distinction: \(\Delta'_0=0\), so the multiplication of fixed degree-\(<N\) polynomials has zero first derivative at completeness. The moving Newton coefficients can nevertheless have nonzero first derivatives. The [multiplication note](actual_main_meridian_newton_multiplication.md) computes the exact connection derivative and shows that these first derivatives are precisely its basis-change contribution; they do not by themselves give a coordinate-independent first-order obstruction.
 
@@ -429,7 +429,7 @@ g(z)=H(z)a(z),\qquad H(z)=2\sinh(z/2)/z,\qquad a(0)=1.
 \]
 Boundedness and the boundary normalization do not force \(a=1\). Even reciprocal central multipliers with value one and vanishing first derivative at \(U=1\) can change this limiting function while preserving all root orbit values and the marked ramified normal fibre. They are not new actual knot sources; they show why the weaker data cannot imply the missing estimate or identification.
 
-The result is therefore an exact whole-tangle formal compiler with a polynomially controlled Newton basis deformation and a fully retained boundary factor. A general source theorem still needs control of the typed operation tensors and the resulting signed contraction, including the channels opened in (25), followed by a condition that identifies its normalized regular limit.
+The result is therefore an exact whole-tangle formal compiler with a polynomially controlled Newton basis deformation and a fully retained boundary factor. The physical turns now have the relative coefficient and spectral estimates stated above. A general source theorem still needs a bound for the resulting signed contraction at its original geometric rate, including the channels opened in (25) and the required endpoint localization, followed by a condition that identifies its normalized regular limit. Polynomial spectral stability of a turn does not automatically preserve an arbitrary localized jet profile.
 
 
 

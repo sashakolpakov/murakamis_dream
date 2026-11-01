@@ -67,6 +67,19 @@ The primitive closing trace supplies exactly
 \(H_N(z)=\sinh(z/2)/(N\sinh(z/(2N)))\). The prescribed ordinary-color
 subtraction remains necessary at its zeros.
 
+The [physical quarter-turn comparison](../../notes/actual_main_meridian_turn_comparison.md)
+now controls all six orientation types. With the complete Newton
+polynomials kept fixed, a turn is reversal followed by a paired
+sine-product multiplier. The multiplier and its inverse are
+uniformly bounded on every disk \(|s|\le R<1\). A positive kernel
+on the distinct Casimir nodes, combined with the exact trace
+pairing at the repeated nodes, also proves a full spectral-jet
+comparison on \(|s|\le1/16\): the deformed turn and the complete
+turn of the same polynomial differ in norm by at most polynomial
+factors in \(N\). The formula is exactly even in \(s\), with an
+explicit first \(N^{-1}\) correction for indices away from both
+ends.
+
 The [multiplication formula](../../notes/actual_main_meridian_newton_multiplication.md)
 shows exactly how this algebra changes. At completeness a product
 of Newton basis elements with indices \(i+j\ge N\) vanishes.
@@ -83,10 +96,16 @@ The relation defining the algebra then changes only by
 Since \(\Delta'_0=0\), multiplication in these fixed coordinates has
 zero first derivative. Multiplication by the Casimir changes by
 one matrix entry, of magnitude \(|\Delta_s|/N^2\).
-This simplifies the algebraic deformation, but does not yet bound
-the high-degree polynomials and turns used to calculate the knot.
-The sum over all internal indices, with its signs retained, still
-needs an estimate.
+This simplifies the algebraic deformation, and the turn now has
+the relative estimate just stated. The additional multiplication
+sectors still occur. The remaining task is to control their
+composition and the sum over internal indices at the original
+geometric exponential rate, with its signs and closing trace
+retained. Endpoint estimates are also needed. A radical polynomial
+whose node jets are supported at one end can acquire a jet of
+polynomial size at the other end under the paired multiplier.
+Thus localized node data alone do not imply the analytic
+localization required by a source theorem.
 
 There is a second route through the recurrence. The
 [finite matrix criterion](../../notes/actual_main_meridian_finite_matrix_criterion.md)

@@ -169,6 +169,26 @@ The Newton coordinate changes and their inverses have polynomial
 bounds in \(N\) when the displacement \(s\), defined by \(M=q_N^s\),
 stays in a fixed compact set.
 
+The [quarter-turn theorem](../../notes/actual_main_meridian_turn_comparison.md)
+now computes the physical turn itself, with the dual strand colors
+and the braiding that identifies their two orders retained. In fixed
+polynomial coordinates it reverses the Newton coefficients and
+multiplies coefficient \(n\) by
+\[
+\frac{W_n(s)}{H_N(s)},\qquad
+W_n(s)=\prod_{r=1}^n
+ \left(1-\frac{\sin^2(\pi s/N)}{\sin^2(\pi r/N)}\right),
+\qquad H_N(s)=\frac{\sin(\pi s)}{N\sin(\pi s/N)},
+\]
+with one additional scalar \(1\) or \(q_N^{\pm s^2/2}\), determined
+by the strand orientations. The factors and their inverses are
+uniformly bounded for every fixed \(|s|\le R<1\). On
+\(|s|\le1/16\), the norm recording all Casimir-node values and
+repeated-node first derivatives is comparable to that of the
+complete turn of the same input, with factors at most \(CN^7\).
+The proof includes the repeated channels and the normalization of
+the actual evaluation and coevaluation maps.
+
 The accompanying [multiplication theorem](../../notes/actual_main_meridian_newton_multiplication.md)
 gives every coefficient explicitly. It includes the products with
 \(i+j\ge N\), where \(i,j\) are Newton basis indices. These products
@@ -182,8 +202,12 @@ multiplication by the Casimir changes by a single matrix entry.
 ![The index pairs below the line i+j=N give nonzero Newton products at completeness. Products on and above the line vanish there and can become nonzero when the meridian moves.](../figures/moving-newton-products.png)
 
 These are identities and estimates for the algebra used to
-calculate the invariant. An asymptotic theorem for the resulting
-signed sum requires further control. The [operator criterion](../../notes/actual_main_meridian_finite_matrix_criterion.md)
+calculate the invariant. The turn estimate preserves its
+input-dependent complete exponential norm; it does not supply a
+bound for the whole signed contraction at the geometric rate.
+In particular, polynomial control of all node derivatives does
+not automatically preserve their angular localization. The
+[operator criterion](../../notes/actual_main_meridian_finite_matrix_criterion.md)
 provides another precise sufficient condition: uniform bounds for
 the reconstruction frame and a lower singular-value bound for a
 linear system of bounded size. Under those conditions, an already
