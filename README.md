@@ -132,6 +132,13 @@ Each full-invariant theorem names the estimate that bounds its remaining terms. 
 The open remainder estimate for unchanged general diagrams is not a
 premise of the restricted-family proofs.
 
+The [manuscript audit](repro/MANUSCRIPT_AUDIT.md) records the proof
+dependencies, corrections, and precise extent of the review. The
+[Lean project](formal/README.md) verifies finite algebraic steps,
+including polynomial reduction with repeated roots and independence
+of its representative. The analytic estimates and geometric completion
+remain written proofs with their stated hypotheses.
+
 The [illustrated guide](https://sashakolpakov.github.io/murakamis_dream/)
 also explains the approaches that remain incomplete. Its
 [methods chapter](https://sashakolpakov.github.io/murakamis_dream/guide/methods.html)

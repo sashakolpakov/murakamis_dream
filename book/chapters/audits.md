@@ -31,6 +31,22 @@ hypothesis explicit in the standalone tensor norm statement. The review
 does not certify every theorem in the manuscript; its scope and remaining
 dependencies are stated in that record.
 
+The later review follows the directed-tree induction and the all-orders
+recurrence argument separately. In the former, the child values used to
+normalize a subtree are exact complex numbers, and the bounds retain the
+whole remainder at both level parities. In the latter, the conclusion
+requires every finite expansion order on all parameter translates used
+by the operator. The coefficient substitution then gives a geometric
+factor of its classical symbol. It does not identify the full
+A-polynomial. Appendix F now also spells out why its regulator and its
+completed metric compute the volume of the same oriented cell chain.
+The geometric-germ argument in Appendix I now works directly on the
+retained positive augmented triangulation at the filling endpoint.
+Its primitive slope equations define the projective filled-group germ,
+with the main meridian as local coordinate. This avoids a separate
+existence theorem for a positive triangulation of the filled manifold
+in this part of the proof.
+
 ## Checking finite implications in Lean
 
 With the pinned Lean toolchain installed, run:
@@ -45,6 +61,9 @@ tensor subtraction, and scalar rate comparisons. It also constructs
 division by a split monic polynomial on coefficient lists and proves
 that the remainder's top coefficient is the iterated divided difference.
 Repeated roots are retained without division by their differences.
+The constructed operations are proved linear and independent of
+trailing zero coefficients. Adding a multiple of the monic modulus
+leaves the remainder and its top-coefficient functional unchanged.
 The runner compiles
 the proofs and separately checks their logical assumptions. It rejects
 admitted proof steps. These declarations retain their mathematical

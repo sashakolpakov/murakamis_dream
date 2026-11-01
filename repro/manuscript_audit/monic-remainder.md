@@ -72,9 +72,33 @@ values or multiplicities, the crossing matrix's annihilating polynomial,
 the prescribed normalization of its Hermite trace, or the passage from
 that matrix calculation to the marked knot invariant. It also proves no
 analytic norm, stationary-phase statement, or volume identity.
-It also does not yet export full linearity on an abstract quotient ring,
-the general confluent root-sum formula, or invariance of every operation
-under arbitrary padding of the coefficient lists.
+The later [linearity module](../../formal/VolumeLogic/MonicLinearity.lean)
+closes two of the original gaps: coefficient-equivalent padding and
+linearity of the constructed operations. Its proof first identifies
+each synthetic-quotient coefficient as the Horner value of the
+corresponding tail of the input list. Coefficient equality therefore
+passes through synthetic division. Induction over the root list gives
+literal equality of the reconstructed remainder lists. Addition and
+scalar multiplication then pass through the same recursion.
+
+Together with the existing theorem that a monic multiple reduces to
+zero, these results prove
+
+\[
+ f=g+pq\quad\Longrightarrow\quad
+ \operatorname{rem}_p f=\operatorname{rem}_p g,\qquad
+ \mathcal L_p(f)=\mathcal L_p(g),
+\]
+
+where \(\mathcal L_p\) is the top-coefficient functional already
+constructed. The equality in the hypothesis is coefficientwise, and
+\(pq\) is obtained by multiplying by the actual split monic factors.
+It is not a presumed quotient relation replacing the reduction proof.
+The module adds 24 declarations, including the supporting coefficient
+lemmas. They allow repeated and empty root lists and arbitrary
+commutative rings. It does not yet introduce an abstract quotient-ring
+type, prove invariance under root reordering, or give the general
+confluent root-sum formula.
 
 The reproduction runner inspects all theorem declarations, including
 ones with a `simp` attribute on the same line. A clean build alone is

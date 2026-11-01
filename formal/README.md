@@ -26,6 +26,7 @@ theorem is applied.
 | [FiniteSupport.lean](VolumeLogic/FiniteSupport.lean) | The central and two one-sided degree regions exhaust the stated support; the one-sided regions do not overlap. The exact endpoint cutoffs are checked separately at even and odd levels. | The decomposition in Appendix O, §3; the degree constraints retained in Appendix P. The extra moment-degree lemma records the cutoff for the separate protected moment calculation. |
 | [FiniteAlgebra.lean](VolumeLogic/FiniteAlgebra.lean) | A polynomial divided difference is defined without division. Its resolvent identity holds even at a repeated root. The double-root formula retains the first derivative. A finite product expansion removes precisely the all-evaluation term. | Algebra used in Appendix N. The Hermite identity is proved after clearing denominators; the nonzero denominator and the Chebyshev root data are separate inputs. |
 | [MonicRemainder.lean](VolumeLogic/MonicRemainder.lean) | Synthetic division and an explicit remainder modulo a split monic polynomial; coefficientwise reconstruction, the degree bound, and its top coefficient as an iterated divided difference. Repeated nodes are allowed. | Constructs the finite coefficient operation underlying Appendix N's Hermite functional. The actual Chebyshev polynomial and crossing-operator interpretation remain separate inputs. |
+| [MonicLinearity.lean](VolumeLogic/MonicLinearity.lean) | Linearity of that constructed remainder and its top-coefficient functional; invariance under coefficient-equivalent lists, arbitrary trailing zeros, and addition of a multiple of the modulus. | Establishes that polynomial representatives give the same functional. It does not identify that functional with the marked crossing matrix. |
 | [RateComparison.lean](VolumeLogic/RateComparison.lean) | A linear entropy gain exceeds a quadratic cost under the stated inequality; nonnegative additional losses cannot undo a strict sector gap; a sufficiently small filling-action drop preserves the gap. | Scalar implications in Appendix P, following the entropy, Hessian, and filling estimates. |
 
 The algebraic declarations quantify over arbitrary commutative rings, or
@@ -90,9 +91,17 @@ are not included in its definition.
 The empty root list has remainder zero and a zero Newton functional. In
 the intended application the root list has positive length and the
 coefficient ring is \(\mathbb C\).
-Full linearity as an abstract quotient-ring map, a general confluent
-root-sum formula, and invariance under arbitrary changes of coefficient
-list padding are not exported formal theorems in this module.
+The companion `MonicLinearity` module proves that the constructed
+remainder and functional are linear over the coefficient ring. If two
+lists have equal coefficients at every degree, they give literally the
+same remainder list and the same functional value. Thus arbitrary
+trailing zeros make no difference. It also proves that
+\(f=g+pq\), interpreted coefficientwise with the constructed monic
+multiple \(pq\), implies equal remainders and equal functional values.
+These conclusions establish invariance under changing the polynomial
+representative modulo \(p\). An abstract quotient-ring type, invariance
+under reordering the roots, and the general confluent root-sum formula
+are not yet exported by the project.
 
 The next algebraic step is to supply the actual Chebyshev factorization
 and prove that this finite functional evaluates the original crossing

@@ -332,6 +332,52 @@ Section 4 retains the actual period lifts. No volume period is
 reset. The positive tetrahedral volume sum also shows directly
 that the volume tends to \(2\pi F_0\) as \(c\downarrow0\).
 
+We now compare the representation volume in (16)
+with the volume of the metric just constructed. Both are computed from the same oriented cell chain:
+the eight positive tetrahedra at each original tree edge, with the
+face identifications of [the ordered cut construction](actual_all_circle_octahedral_decomposition.md). To make the comparison
+at an auxiliary end explicit, use the same finite boundary
+triangulation and send its two fixed points to zero and infinity.
+Here \(w\) ranges over a fixed fundamental cross section and
+\(Y\) is a height parameter tending to infinity. Write the ideal
+conical map as \((a(w),Yb(w))\), where \(a(w)\in\mathbb C\)
+and \(b(w)>0\). The logarithmic link coordinate
+(8) supplies a real function \(\eta\) whose deck increments
+are the real peripheral periods, so \((0,Ye^{\eta(w)})\) is an
+equivariant axis-valued comparison map. The homotopy
+\[
+ H_s(w,Y)=\left(sa(w),
+     Y\exp\bigl((1-s)\eta(w)+s\log b(w)\bigr)\right),
+                 \qquad 0\le s\le1,
+\]
+uses one shared assignment on every boundary face. It is equivariant
+because \(a,b,e^\eta\) transform respectively by the peripheral
+complex multiplier, its modulus, and its modulus. On the compact
+fundamental cross section its horizontal derivatives are bounded,
+its height is comparable to \(Y\), and its height derivatives are
+\(O(Y)\). Thus the hyperbolic volume form
+\(y^{-3}dx_1\wedge dx_2\wedge dy\) bounds the volume of this boundary
+homotopy by \(O(Y^{-2})\), which tends to zero.
+
+For each fixed \(0<c\le1\), the same comparison applies to the cone
+tube of Section 5. It compares the metric away from the
+axis, which contributes no three-dimensional volume; it does not
+assert smooth filling or descent to the filled group when \(c<1\). At \(c=1\), its meridian is the actual primitive curve
+\(\mu_v+p_v\lambda_v\), with period \(-2\pi i\). Its real period
+vanishes, so the axis assignment extends over that meridian disk;
+extend the same boundary triangulation through the solid torus
+with its added vertices on the axis. All added tetrahedra have zero
+volume. The main cusp is unchanged, and its horoball comparison
+also has vanishing boundary volume. Consequently the original representation chain and the completed
+metric have the same absolute volume:
+\[
+ \operatorname{Vol}(\rho)=\operatorname{Vol}_c.
+\tag{16a}
+\] This is the filling-chain comparison used in
+[the marked-cell calibration](../manuscript/sections/D-marked-cell-calibration.tex); it requires the primitive
+completion and the nonsingular links already proved here, rather
+than a small bound on the total peripheral logarithms.
+
 Define the stationary charge action
 \[
  \mathcal C(c)=\operatorname*{stat}_{\boldsymbol\tau}

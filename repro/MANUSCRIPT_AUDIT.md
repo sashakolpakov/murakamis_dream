@@ -1,15 +1,17 @@
 # The manuscript's proof dependencies
 
 The present review checks how the manuscript passes from its finite
-invariant to its volume conclusions. It has found omissions in the
-explanation of two necessary steps and one missing hypothesis in a
-supporting note. These have been corrected below. No counterexample to
+invariant to its volume conclusions. It has found omitted
+justifications and a missing degree hypothesis, and has replaced one
+indirect geometric dependency by a direct proof. The changes are
+described below. No counterexample to
 a stated volume theorem was found in this review. This is not an
 end-to-end formal verification of the manuscript.
 
 The review began with commit `c5d9c851c672b941bdbbec51da50d8f1a5c2cf12`.
 The detailed reading records refer to that snapshot unless they expressly
-discuss a correction. The current TeX includes those corrections. Source
+name a later one. The directed-tree and all-orders reviews began at
+`cfc8a9295dca45562634f6021415d0d80dc5f745`. The current TeX includes the corrections. Source
 hashes in the records distinguish the versions actually read.
 
 ## The five requirements of a volume proof
@@ -75,6 +77,30 @@ the solid torus adds only axis-valued tetrahedra, whose volumes vanish.
 The argument uses the primitive metric completion already proved in D
 and explicitly cites the existing filling-chain comparison.
 
+The same omitted comparison was found in Appendix F. Its proof now uses
+the original positive tetrahedra, the actual logarithmic link periods,
+and the same finite boundary triangulation to equate representation
+volume with metric volume. For an intermediate cone angle it compares
+the metric off its axis; smooth solid-torus completion is asserted only
+at the endpoint. This argument applies to F's vertexwise construction,
+including its permitted high-degree, small-power cases. It does not
+silently impose D's different small-global-log hypothesis.
+
+**The geometric meridian germ.** Appendix I previously invoked a
+local-rigidity result whose existence input was a positive triangulation
+of the filled manifold. The replacement proof uses the already
+constructed positive augmented triangulation at its incomplete filling
+endpoint. The main meridian and original primitive filling slopes give
+an invertible shape Jacobian by the real symplectic row identities and
+positivity. The shape/representation inverse is explicit, and the
+distinct auxiliary longitude eigenvalues turn the slope multiplier
+conditions into the projective filled-group relations. This gives the
+required one-dimensional decorated germ modulo conjugation. The
+determinant-one longitude sign is still fixed by the separate Seifert
+frame calculation. This replacement removes that triangulation-existence
+dependency for the retained-positive family, without making a claim
+about its other uses in the research library.
+
 **The complex strip in the Fourier estimate.** Appendix B previously
 explained persistence of the real Fourier gap by a bound on the physical
 Fourier support. Such a statement needs care because the real gap uses
@@ -96,6 +122,14 @@ now explicitly requires degree at most \(N-1\) in each spectral variable.
 Appendix N already included that hypothesis. Grid vanishing alone would
 not give the stated derivative bound for polynomials of arbitrary degree.
 
+**Formal coefficients and the recurrence.** Appendix M's regrading
+argument now gives the coefficient recovery formula explicitly. For a
+formal series \(B(h,u)=\sum B_{a,b}h^au^b\), substitution \(u=hs\)
+recovers \(B_{a,b}\) as \([h^{a+b}s^b]B(h,hs)\). Applied to the
+denominator-cleared operator identity, this explains why the microscopic
+expansion determines a whole formal longitude germ. It does not extend
+a bounded-\(s\) analytic estimate to \(s\) growing with the level.
+
 ## What has been checked formally
 
 The [Lean project](../formal/README.md) checks finite degree partitions at both parities,
@@ -105,7 +139,9 @@ entropy gains, quadratic costs and filling-action losses. It now also
 constructs division by a split monic polynomial, proves the remainder's
 degree bound, and identifies its top coefficient with an iterated divided
 difference. These are coefficientwise identities over a commutative ring;
-the list of nodes may contain repetitions. The
+the list of nodes may contain repetitions. The constructed remainder and
+functional are now also proved linear, unchanged by arbitrary zero
+padding, and unchanged on adding an actual monic multiple. The
 [runner](check_proof_logic.py) builds the library and then separately
 inspects every theorem's axioms. The
 [recorded result](results/proof-logic/summary.json) includes the source
@@ -131,6 +167,9 @@ The detailed records are organized by the implication being checked:
 | [Geometry used by weak balance](manuscript_audit/weak-balance-geometry.md) | The precise geometric inputs and implications from O to P |
 | [Meaning of the formal declarations](manuscript_audit/formal-semantics.md) | Whether the Lean statements express the finite mathematical steps claimed for them |
 | [Reduction at repeated roots](manuscript_audit/monic-remainder.md) | Constructive coefficientwise division, its top-coefficient functional, and the double-root remainder; the actual spectral data remain separate |
+| [Directed circle trees](manuscript_audit/directed-tree.md) | K's main criterion, the complete conditional remainder, the degree-or-twist implication, and the F/G metric-volume interface |
+| [All orders and recurrence factors](manuscript_audit/directed-all-orders.md) | Exact interpolation identities, the degree filtration, formal regrading and gauge, and the independent finite-sum existence proof |
+| [The geometric branch and longitude](manuscript_audit/directed-geometry.md) | I/M's marked reconstruction, preferred longitude and cusp conventions; the new local rigidity proof on the retained augmented triangulation |
 
 The detailed records cover the finite functional in Appendix N, the
 geometric interface from O to P, the recursive source estimates in
@@ -140,11 +179,13 @@ They identify the imported lemmas rather than treating their names or
 finite checks as proofs.
 
 The review has not reverified every certificate or every result in the
-333-page starting manuscript. In particular, the all-orders recurrence
-arguments in H–M and every constant in the quantitative tree extensions
-have not received a new complete review in this pass. The numerical
-checks of finitely many levels do not establish their uniform analytic
-claims. Their previous written arguments remain the proof inputs.
+333-page starting manuscript. K's main proof and M's all-orders implication
+now have separate reading records, with their imported results named.
+This does not constitute a new complete review of H–J, K's separate
+star example, every quantitative extension, or the original quantum
+tangle compiler. The numerical checks of finitely many levels do not
+establish uniform analytic claims. Those claims retain their written
+proofs and hypotheses.
 
 The two geometry records have portable symbolic checks, requiring SymPy:
 

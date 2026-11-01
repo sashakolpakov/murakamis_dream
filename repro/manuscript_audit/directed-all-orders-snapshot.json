@@ -1,0 +1,168 @@
+{
+  "scope": "Written audit and explicit dependency record, not machine verification of analytic or geometric claims.",
+  "read_commit": "cfc8a9295dca45562634f6021415d0d80dc5f745",
+  "sources": [
+    {
+      "path": "manuscript/sections/M-directed-all-orders.tex",
+      "read_snapshot_sha256": "ab7e22ea685c5009f15377f40c24c151b2a69063117e575fb882bb774355765e",
+      "scope": "Full appendix: exact interpolation identities, analytic proof dependencies, degree filtration and formal recurrence implication."
+    },
+    {
+      "path": "notes/finite_sum_annihilator.md",
+      "read_snapshot_sha256": "d6e973b5f43049d7e68b35bd32b6677871815c240c97e74b2a6bed3e00370ae3",
+      "scope": "Full note: finite lift, aligned factors, boundary strata, shift-span dimension count, exponential-moment elimination and root specialization."
+    },
+    {
+      "path": "notes/exact_factorial_interpolation_and_complex_contours.md",
+      "read_snapshot_sha256": "1f34f65437dfe0bfb4062a7a74840beae1676353cf13bb8a86f8849a8a36bc72",
+      "scope": "Named analytic input; not re-audited in full in this record."
+    },
+    {
+      "path": "notes/actual_main_meridian_direct_crossing_trace.md",
+      "read_snapshot_sha256": "901cc2ffaf5b98a848f3c0055e199a0626790ebf639307e6301131e413e77a04",
+      "scope": "Exact translated trace input; separately reviewed in the directed-tree record."
+    },
+    {
+      "path": "notes/actual_main_meridian_source_bounds.md",
+      "read_snapshot_sha256": "395ee1c2b782b602c376614ce6420c5234ffe14877e3d6908da369bdcc24058e",
+      "scope": "Full-normal polynomial norm input; separately reviewed in the directed-tree record."
+    },
+    {
+      "path": "notes/actual_main_meridian_exact_scalar.md",
+      "read_snapshot_sha256": "da6f6e96d6455c5038a5904974c0646604805525697aafa63b1d39fb8799533b",
+      "scope": "Named original scalar-normalization input; not re-audited in full in this record."
+    },
+    {
+      "path": "notes/actual_all_circle_geometric_characteristic.md",
+      "read_snapshot_sha256": "0d0b7bc490b37ce69e0ec41dfcc4a946df5f8ba2c427f0471cbecb8497aff4a5",
+      "scope": "Marked geometric reconstruction input; see the separate geometry review."
+    },
+    {
+      "path": "manuscript/sections/K-directed-circle-messages.tex",
+      "read_snapshot_sha256": "3d1fd0968715801d9ecbb30b7d7232e16a004b0587005acb682c2aa50c0b3598",
+      "scope": "Strict global remainder, conditional induction and normalization inputs; see directed-tree.md."
+    },
+    {
+      "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
+      "read_snapshot_sha256": "dde7ced3710b3479ff7021f5a867bf1fd52d163d953a293c3c43d08e33318122",
+      "scope": "Original positive metric and primitive completion input; see directed-tree.md."
+    },
+    {
+      "path": "manuscript/sections/G-local-tree-messages.tex",
+      "read_snapshot_sha256": "9a169d6aeff06df5887952c18c22a0aef470bbcda9e18610d4f57f016e2dbdce",
+      "scope": "Vertexwise geometric path input; see directed-tree.md."
+    }
+  ],
+  "dependency_nodes": [
+    {
+      "id": "diagram",
+      "claim": "One fixed ordered tree, knot endpoint pairing, powers and directed certificate",
+      "inputs": [],
+      "kind": "hypotheses"
+    },
+    {
+      "id": "exact_source",
+      "claim": "Literal all-color state, full normals, one reduced cut and framing scalar",
+      "inputs": [
+        "diagram"
+      ],
+      "kind": "imported source theorem"
+    },
+    {
+      "id": "global_gap",
+      "claim": "Nonzero conditional contributions and strict complete-source remainders on needed compacts",
+      "inputs": [
+        "diagram",
+        "exact_source"
+      ],
+      "kind": "K proof plus translated-compact argument in M.3"
+    },
+    {
+      "id": "factorial",
+      "claim": "Canonical factorial interpolation with exact reflection and midpoint identities",
+      "inputs": [],
+      "kind": "exact identities checked; analytic remainder input retained"
+    },
+    {
+      "id": "all_orders",
+      "claim": "Uniform expansion at every finite order with exact child normalization",
+      "inputs": [
+        "exact_source",
+        "global_gap",
+        "factorial"
+      ],
+      "kind": "M.4-5 written argument reviewed"
+    },
+    {
+      "id": "phase_filter",
+      "claim": "Same local analytic family yields degree at most r+1, with top diagonal given by joint phase",
+      "inputs": [
+        "all_orders"
+      ],
+      "kind": "M.6 written argument reviewed"
+    },
+    {
+      "id": "metric_anchor",
+      "claim": "The restored stationary point is the positive metric on the original knot complement",
+      "inputs": [
+        "diagram",
+        "global_gap"
+      ],
+      "kind": "F/G/K geometry input; same-chain comparison clarified"
+    },
+    {
+      "id": "longitude",
+      "claim": "Marked reconstruction and preferred longitude are -exp(S derivative)",
+      "inputs": [
+        "metric_anchor",
+        "phase_filter"
+      ],
+      "kind": "M.7 and geometric-characteristic input"
+    },
+    {
+      "id": "annihilator",
+      "claim": "Nonzero fixed all-level operator for actual full reduced state",
+      "inputs": [
+        "exact_source"
+      ],
+      "kind": "independent finite-sum proof reviewed"
+    },
+    {
+      "id": "gauge",
+      "claim": "Exact reduced-to-full gauge retains sign and meridian divisor",
+      "inputs": [
+        "annihilator",
+        "exact_source"
+      ],
+      "kind": "M.8 exact identity checked"
+    },
+    {
+      "id": "formal_identity",
+      "claim": "Every asymptotic coefficient vanishes; injective substitution lifts to a formal identity",
+      "inputs": [
+        "gauge",
+        "all_orders",
+        "phase_filter"
+      ],
+      "kind": "M.8 algebra checked"
+    },
+    {
+      "id": "factor",
+      "claim": "Selected complex geometric factor divides first classical symbol; rational version uses contracted prime",
+      "inputs": [
+        "formal_identity",
+        "longitude"
+      ],
+      "kind": "M.8 height-one-prime argument checked"
+    }
+  ],
+  "corrections": [
+    "Expanded coefficient substitution and recovery in M.8 and the paired standalone note."
+  ],
+  "excluded_conclusions": [
+    "Full A-polynomial equality or multiplicities",
+    "Equality of quantum recurrence ideals",
+    "Physical fixed-M asymptotics from bounded-s expansions",
+    "Unrestricted graphs or all hyperbolic knots"
+  ]
+}

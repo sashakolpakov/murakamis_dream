@@ -309,7 +309,7 @@ U_v+p_vV_v=-2\pi i,\qquad V_v=2\log Q_v,
 
 Along the continued charge path the constant on the right is \(-2\pi ic\). It is the linear term in \eqref{dao:eq-6}. The positive endpoint has \(\operatorname{Im}\tau_v<0\), so \(Q_v^2\ne1\). A filling word commutes with this semisimple longitude; its eigenvalue ratio is one by \eqref{dao:eq-24}, so it is projectively the identity. The representation therefore factors through the actual filled knot group on a neighborhood of the selected point.
 
-The \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_all_circle_geometric_characteristic.html}{local rational reconstruction and longitude theorem} are algebraic statements on the full source branch; they do not require the old summed or maximum-based analytic inequality. The new directed case supplies exactly their required anchor: the actual positive filled holonomy at \(M=1\), the continued primitive logarithms, and the nondegenerate source critical point. The implicit branch of \eqref{dao:eq-5} consequently reconstructs a meridian-varying branch of representations of the filled group. Marked geometric rigidity identifies that branch with the geometric meridian germ of the actual knot. The negative longitude lift at its complete point is fixed by the once-bordered Seifert-frame calculation, not by a cusp tangent or a quantum normalization guess.
+The \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_all_circle_geometric_characteristic.html}{local rational reconstruction and longitude theorem} are algebraic statements on the full source branch; they do not require the old summed or maximum-based analytic inequality. The new directed case supplies exactly their required anchor: the actual positive filled holonomy at \(M=1\), the continued primitive logarithms, and the nondegenerate source critical point. The implicit branch of \eqref{dao:eq-5} consequently reconstructs a meridian-varying branch of representations of the filled group. Section~\ref{gi:positive-augmented-filled-germ} proves the required local uniqueness on the retained positive augmented triangulation, using the main meridian and the original primitive filling slopes as peripheral coordinates. Its shape--representation inverse and the distinct auxiliary longitude eigenvalues identify the constrained germ with the actual filled-group germ. This identifies the source branch with the geometric meridian germ without a new triangulation of the filled manifold. The negative longitude lift at its complete point is fixed by the once-bordered Seifert-frame calculation, not by a cusp tangent or a quantum normalization guess.
 
 For this branch the exact identity is
 
@@ -403,7 +403,23 @@ Regrade the filtered series using \(u=hs\). The inequality \(\deg p_r\le r+1\) g
 
 with no other negative power of \(h\). The finite difference under \(u\mapsto u+jh\) has no negative power; its constant coefficient is \(j\mathcal S'(u)\). Thus the formal shift ratio has constant term \(e^{j\mathcal S'(u)}\).
 
-The substitution \(\mathbb C[[h,u]]\to\mathbb C[s][[h]]\), \(u\mapsto hs\), is injective: distinct monomials \(h^au^b\) have distinct images \(h^{a+b}s^b\). Lifting the exact coefficient identity before substitution and taking its constant \(h\)-coefficient yields
+Here this change of variables is a statement about formal coefficients,
+not an asymptotic estimate for an unbounded physical parameter. If
+\(B(h,u)=\sum_{a,b\ge0}B_{a,b}h^au^b\), then
+\[
+ [h^ns^b]B(h,hs)=
+ \begin{cases}
+ B_{n-b,b},&0\le b\le n,\\
+ 0,&b>n.
+ \end{cases}
+\]
+For each \(n\) only finitely many pairs \((a,b)\) occur. Moreover,
+\(B_{a,b}=[h^{a+b}s^b]B(h,hs)\), so substitution is injective.
+Apply this to the denominator-cleared operator expression built from
+\eqref{dao:eq-32} and its finite shift ratios. That expression belongs
+to \(\mathbb C[[h,u]]\), and its substitution is exactly the already
+vanishing coefficient series. It therefore vanishes before substitution.
+Taking its constant \(h\)-coefficient gives
 
 \begin{equation}\label{dao:eq-33}
 f(e^u)^dP_0(e^u,-e^{\mathcal S'(u)})=0.

@@ -353,6 +353,51 @@ Marked ambient isotopy carries the intrinsic curve and factor
 to the covered net-twist and arbitrary-closure inputs, even
 when their auxiliary augmented links differ.
 
+### Why the meridian selects a unique nearby geometric representation
+
+For the covered circle trees, this local uniqueness follows from the
+same ideal tetrahedra used to construct the filling. At the smooth
+endpoint the auxiliary ends of the augmented exterior are incomplete,
+but every tetrahedron still has a shape \(z_j\) with
+\(\operatorname{Im}z_j>0\). The original face pairings and peripheral
+curves are retained.
+
+Prescribe the main meridian and, on each auxiliary torus, the primitive
+curve \(\sigma_v=\mu_v+p_v\lambda_v\) that bounds the filling disk.
+Here \(\mu_v,\lambda_v\) are the original auxiliary meridian and
+longitude, and \(p_v\) is its fixed filling integer. The edge equations
+and these peripheral equations have an invertible derivative in the
+shape variables. The reason is positivity:
+
+\[
+ \operatorname{Im}\frac{z_j}{1-z_j}
+       =\frac{\operatorname{Im}z_j}{|1-z_j|^2}>0.
+\]
+
+The topological intersection identities make the linear equation rows
+isotropic for the standard alternating form. A nonzero infinitesimal
+shape change in their common kernel would then have both zero
+alternating pairing with its complex conjugate and a strictly positive
+sum \(\sum_j\operatorname{Im}(z_j/(1-z_j))|x_j|^2\), where \(x_j\)
+is its logarithmic shape change. This contradiction proves invertibility.
+
+The shape coordinates describe all nearby decorated representations:
+cross-ratios recover the tetrahedra from the selected peripheral fixed
+points, and the ordered face triples reconstruct the group matrices.
+Fixing one developed triple removes simultaneous conjugation. Each
+auxiliary longitude has distinct eigenvalues, so a commuting slope
+matrix with eigenvalue ratio one is scalar. The retained slope-logarithm
+equations therefore impose the projective filled-group relations.
+Once those equations are fixed, only the main meridian coordinate
+remains. The reconstructed source branch is the unique nearby branch
+with that coordinate and the prescribed eigenflag.
+
+The [full proof](../../notes/actual_all_circle_geometric_characteristic.md#local-rigidity-on-the-retained-augmented-triangulation)
+also treats infinitesimal deformations and keeps determinant-one lift
+signs separate from projective descent. It requires the positive
+augmented cells supplied by this family; it requires no new
+triangulation of the filled manifold.
+
 ## How the cells and the diagram are identified
 
 The [global Conway geometry theorem](../../notes/actual_positive_conway_hyperbolic_volume.md) supplies the face pairings for every cylindrical factor in its original positive construction. Cylindrical closure joins each lower external strand to the corresponding upper strand. The later strict-mask theorem extends this construction as described above.
