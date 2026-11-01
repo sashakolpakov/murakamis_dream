@@ -38,7 +38,11 @@ the same real part. Every rate uses the original level as denominator.
 It also proves the finite weighted-graph energy and Laplacian identities,
 including the constant kernel and strict positivity after fixing one
 vertex. Identifying that matrix with the geometric Hessian remains a
-written argument. The optional command is separate from the Std-only
+written argument. The real-calculus module also derives the quadratic
+action cost from actual second derivatives, the supporting-tangent
+entropy gain, and the resulting two-branch strict sector estimate.
+The geometric derivative and entropy formulas remain written inputs.
+The optional command is separate from the Std-only
 check above; it requires
 Mathlib and its substantially larger compiled library.
 
@@ -49,15 +53,23 @@ checks of their finite algebra and rational constants. Run them together:
 python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 ~~~
 
-The runner requires SymPy, saves each program's output and stops on a
-failed check. It checks polynomial resolvents and path partitions, the
-source's positive-matrix identities and parity-dependent anchors, the
-filling-sum normalization, and symbolic peripheral and metric-coordinate
-identities. The fifth program encloses the three-braid proof's fixed
-constants by outward rational arithmetic. Each paper-local `check.py`
-can also be run separately with `--output` naming its result file.
-These commands do not establish uniform large-level estimates, packing
-existence or metric completeness; those conclusions use the written proofs.
+The runner requires SymPy, python-flint and NumPy. It saves each program's
+output and stops on a failed check. Its seven groups cover polynomial
+resolvents and path partitions, positive-matrix identities and parity
+anchors, filling-sum normalization, symbolic peripheral coordinates,
+rational three-braid constants, the complete forty-branch planar
+certificate, and its forty-five-branch extension at ordinary boundaries.
+The last two groups use outward interval arithmetic with explicit
+Fourier tails. Their reports keep the finite assertions separate from
+the written all-length arguments.
+The [planar and insertion review](PLANAR_INSERTION_AUDIT.md) records
+which written arguments were examined and which results they import.
+
+The five algebra programs accept `--output` naming a JSON result file.
+The planar and triangular-insertion programs accept an output directory
+containing their summary and supporting records. The unified runner
+handles both conventions. These commands do not establish uniform
+large-level estimates, packing existence or metric completeness.
 
 The statement-level dependency map for the retained volume families has a separate
 standard-library command:

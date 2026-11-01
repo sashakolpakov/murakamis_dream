@@ -9,6 +9,9 @@ remain the written arguments of Appendix Q.
 """
 from __future__ import annotations
 
+if not __debug__:
+    raise SystemExit("Run without -O: the certificate checks require assertions.")
+
 import argparse
 from collections import defaultdict
 import hashlib
@@ -99,13 +102,14 @@ def main() -> None:
         parser.error("--attachments must be positive")
     out = args.output.resolve()
     out.mkdir(parents=True, exist_ok=True)
+    (out / "summary.json").unlink(missing_ok=True)
     jobs = [
         ("audit_actual_sector_cover.py", "sector-cover.json"),
         ("audit_actual_shared_radius_anchor_obstruction.py", "anchor-obstruction.json"),
     ]
     for script, result in jobs:
         completed = subprocess.run(
-            [sys.executable, str(EXPERIMENTS / script), "--output", str(out / result)],
+            [sys.executable, "-I", str(EXPERIMENTS / script), "--output", str(out / result)],
             cwd=ROOT, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         (out / (result + ".log")).write_text(completed.stdout)
         if completed.returncode:

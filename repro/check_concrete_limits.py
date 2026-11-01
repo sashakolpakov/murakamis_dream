@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check the optional Mathlib transfer and finite weighted-graph proofs.
+"""Check the optional Mathlib transfer, graph energy and flattening proofs.
 
 The Std-only package is a path dependency and remains independently usable.
 This checker never downloads dependencies or updates the manifest. Provision
@@ -27,6 +27,7 @@ TOOLCHAIN = "leanprover/lean4:v4.32.2"
 MODULE_NAMESPACES = {
     "RealTransfer": "VolumeLogic.RealModel",
     "WeightedGraph": "VolumeLogic.WeightedGraph",
+    "Flattening": "VolumeLogic.Flattening",
 }
 ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 # The complete expected Git dependency set, not merely the direct Mathlib pin.
@@ -167,12 +168,20 @@ def negative_controls(manifest: dict, names: dict[str, str], audit: str) -> list
     reject("duplicate_declaration_audit", validate_audit, names, audit + "\n#print axioms " + first + "\n")
     reject("unexpected_logical_axiom", parse_axioms, {first: names[first]},
            f"'{first}' depends on axioms: [sorryAx]\n")
-    reject("omitted_weighted_graph_module", declaration_inventory, [PACKAGE / "RealTransfer.lean"])
+    reject("omitted_weighted_graph_module", declaration_inventory,
+           [PACKAGE / (m + ".lean") for m in MODULE_NAMESPACES if m != "WeightedGraph"])
     graph_name = "VolumeLogic.WeightedGraph.grounded_energy_pos"
     if graph_name not in names:
         raise ValueError("The registered grounded-energy theorem is missing.")
     reject("omitted_grounded_energy_audit", validate_audit, names,
            audit.replace("#print axioms " + graph_name, ""))
+    reject("omitted_flattening_module", declaration_inventory,
+           [PACKAGE / (m + ".lean") for m in MODULE_NAMESPACES if m != "Flattening"])
+    cost_name = "VolumeLogic.Flattening.stationary_quadratic_cost"
+    if cost_name not in names:
+        raise ValueError("The registered quadratic-cost theorem is missing.")
+    reject("omitted_quadratic_cost_audit", validate_audit, names,
+           audit.replace("#print axioms " + cost_name, ""))
     return checks
 
 
@@ -257,8 +266,8 @@ def main() -> None:
             if any(sha256(ROOT / path) != digest for path, digest in hashes.items()):
                 raise ValueError("A recorded source changed during this replay; rerun on stable inputs.")
             report = {
-                "scope": "Concrete complex modulus and real logarithmic level scale; finite-residue packet assembly, whole-remainder noncancellation and conditional volume transfer; actual finite real weighted graph energy, positive-edge paths, constant kernel, grounded strict positivity and the explicit Laplacian quadratic identity.",
-                "explicit_inputs_remaining": ["the actual invariant's exact finite source identity", "the nonzero packet coefficient and finite-action convergence (a common limit, or a limit on every residue class with equal real action)", "a strict bound for the whole complementary remainder", "the actual geometric action-volume equality", "geometric Hessian differentiation, conductance signs, and identification of the connected ordinary-face graph"],
+                "scope": "Concrete complex modulus and real logarithmic level scale; finite-residue packet assembly, whole-remainder noncancellation and conditional volume transfer; actual finite real weighted graph energy, positive-edge paths, constant kernel, grounded strict positivity and the explicit Laplacian quadratic identity; actual one-variable derivative bounds imply stationary quadratic cost, convex supporting-tangent gains and a strict two-branch sector margin.",
+                "explicit_inputs_remaining": ["the actual invariant's exact finite source identity", "the nonzero packet coefficient and finite-action convergence (a common limit, or a limit on every residue class with equal real action)", "a strict bound for the whole complementary remainder", "the actual geometric action-volume equality", "geometric Hessian differentiation, conductance signs, and identification of the connected ordinary-face graph", "identification of the shared-weight path and its stationary point, directional second-derivative bound, triangle entropy and pure-corner inequalities, and the actual source envelopes"],
                 "residue_assembly": {"period": "any fixed positive natural number", "denominator": "original level N, including on N=p*n+r", "amplitudes": "each residue limit is nonzero; the complex limits may differ", "actions": "the complex residue limits may differ; their real parts agree", "unit_character": "may depend arbitrarily on N and need not converge", "conclusion": "ordinary all-integer-level convergence and eventual nonvanishing"},
                 "toolchain": TOOLCHAIN,
                 "dependency_pins": materialized,
@@ -281,7 +290,7 @@ def main() -> None:
         print(f"Checked {len(report['definitions'])} definitions and {len(report['theorems'])} optional concrete theorems.")
         print(f"Validated all {len(EXPECTED_GIT)} Git dependency pins and {len(controls)} negative controls.")
         print("The exact source, uniform analytic estimates and geometric calibration remain explicit inputs.")
-        print("The geometric Hessian identity and connected conductance graph remain written inputs.")
+        print("The geometric Hessian identity, connected conductance graph and source interpretation of flattening remain written inputs.")
         if args.output:
             print(f"Report: {output / 'summary.json'}")
 

@@ -1,0 +1,46 @@
+\begin{tikzpicture}[x=1cm,y=1cm,font=\small,line cap=round,line join=round,
+ dot/.style={circle,fill=black,inner sep=1.2pt},
+ removed/.style={draw=orange!70!black,dashed,fill=orange!7},
+ piecea/.style={draw=green!40!black,fill=green!9},
+ piecec/.style={draw=blue!65!black,fill=blue!9}]
+ \begin{scope}
+  \coordinate (u) at (0,0);\coordinate (B) at (2,0);
+  \coordinate (v) at (1,1.45);\coordinate (c) at (1,-1.25);
+  \path[removed] (u)--(v)--(B)--cycle;
+  \draw[orange!70!black,-{Latex[length=1.5mm]}]
+       ($(u)!.35!(v)$)--($(u)!.65!(v)$);
+  \path[piecec] (u)--(B)--(c)--cycle;
+  \draw[line width=1.6pt] (u)--(B);
+  \foreach \p/\lab/\pos in {u/u/left,B/B/right,v/v/above,c/c/below}{
+   \node[dot] at (\p) {};\node[\pos=3pt] at (\p) {$\lab$};}
+  \node at (1,.55) {$q_B/2$};\node at (1,-.45) {$Q_c$};
+  \node at (1,2.15) {$D_1$};
+ \end{scope}
+ \begin{scope}[xshift=4cm]
+  \coordinate (u) at (0,0);\coordinate (B) at (2,0);
+  \coordinate (v) at (1,1.45);\coordinate (a) at (1,-1.25);
+  \path[removed] (u)--(B)--(v)--cycle;
+  \draw[orange!70!black,-{Latex[length=1.5mm]}]
+       ($(v)!.35!(u)$)--($(v)!.65!(u)$);
+  \path[piecea] (u)--(a)--(B)--cycle;
+  \draw[line width=1.6pt] (u)--(B);
+  \foreach \p/\lab/\pos in {u/u/left,B/B/right,v/v/above,a/a/below}{
+   \node[dot] at (\p) {};\node[\pos=3pt] at (\p) {$\lab$};}
+  \node at (1,.55) {$q_B/2$};\node at (1,-.45) {$Q_a$};
+  \node at (1,2.15) {$D_2$};
+ \end{scope}
+ \draw[-{Latex[length=2mm]},thick] (6.6,0)--(7.4,0);
+ \begin{scope}[xshift=8cm]
+  \coordinate (u) at (0,0);\coordinate (B) at (2,0);
+  \coordinate (a) at (1,1.45);\coordinate (c) at (1,-1.25);
+  \path[piecea] (u)--(a)--(B)--cycle;
+  \path[piecec] (u)--(B)--(c)--cycle;
+  \draw[line width=1.6pt] (u)--(B);
+  \foreach \p/\lab/\pos in {u/u/left,B/B/right,a/a/above,c/c/below}{
+   \node[dot] at (\p) {};\node[\pos=3pt] at (\p) {$\lab$};}
+  \node at (1,.55) {$Q_a$};\node at (1,-.45) {$Q_c$};
+  \node at (1,2.15) {merged pair};
+ \end{scope}
+ \node at (5,-2.1) {$X=C_1+C_2-q_B,\qquad
+             (q_B+q_B)-q_B=q_B$};
+\end{tikzpicture}

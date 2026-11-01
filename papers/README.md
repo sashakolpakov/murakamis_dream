@@ -43,8 +43,9 @@ comes later, through the same marked critical equations. A nonzero
 geometric contribution does not bound the rest of the invariant. Finally,
 weak balance, protected triangular gluing, ordinary triangular insertion
 and the three-braid comparison provide different sufficient estimates
-for that remainder. Protected gluing does not require weak balance, and
-ordinary insertion does not require the protected-gluing theorem.
+for that remainder. Protected gluing does not require weak balance. The
+ordinary-insertion estimate has a separate proof; the construction of a
+common core for several inserted diagrams also uses protected gluing.
 
 ## The current drafts
 
@@ -127,6 +128,37 @@ it does not assume a quantum asymptotic. Two drawings explain the single
 disk pairing and the logarithmic torus periods. The final corollary
 states the exact action comparison used by the quantum applications.
 
+**Shared face estimates and triangular gluing for planar link diagrams.**
+[TeX source](planar-certificates/main.tex) ·
+[PDF](../docs/papers/planar-certificates.pdf)
+
+The first criterion bounds every noncentral sector using one weight for
+all occurrences of each face. At the complete packing, non-strict balance
+suffices: convexity gives a linear local gain under a common change of
+weights, while stationarity bounds the total action cost quadratically.
+The second theorem joins two marked triangular faces and transports a
+certificate for every locally allowed sector string. It counts the shared
+boundary target once. A fully specified seventeen-region example and
+rational certificates show that this gluing theorem applies beyond weak
+balance. The full volume conclusion imports the five numbered foundation
+results; the source estimates and their transport are proved here.
+
+**Triangular insertion and volume limits for augmented diagrams.**
+[TeX source](triangular-insertion/main.tex) ·
+[PDF](../docs/papers/triangular-insertion.pdf)
+
+This paper permits insertion at an ordinary triangular face, where all
+three boundary weights are positive. Its geometric theorem minimizes the
+disk action with those weights fixed and proves that the result is the
+removed triangle's potential plus a constant. It proves existence,
+uniqueness and the joint limit when two boundary weights vanish. The
+coefficient estimate then distinguishes a wholly central inserted piece
+from every other sector string, keeping each old face target once.
+Explicit circle chains supply small boundary ratios for any fixed finite
+list of certified inputs. The proof includes the exact recurrence and
+all-length inequalities; interval arithmetic checks the finitely many
+constants and certificate inequalities used in the example.
+
 **Volume limits for long alternating-generator three-braids.**
 [TeX source](three-braids/main.tex) ·
 [PDF](../docs/papers/three-braids.pdf)
@@ -163,9 +195,18 @@ purposes:
 
 | Subject | Result to explain and prove | Dependencies that must remain visible |
 | --- | --- | --- |
-| Sufficient conditions on planar compositions | Weak balance, decoration and joining operations control the full remainder | The source, analytic and geometric results above |
-| Ordered tangle trees | Explicit degree and twist conditions give the volume limit | The recursive finite evaluation and its geometric construction |
+| Terminal tangle decorations | Finite even insertions preserve endpoint pairings and enforce strict packing balance | The exact circle recurrence, literal insertion and shared-face criterion |
+| Recursive Conway constructions | The completed-root theorem and the broader strict-tree extension have different source arguments | Exact tangle evaluation, boundary profiles, core estimates and marked geometry |
+| Quantitative circle trees | Summed, local and directed degree-and-twist criteria give the volume limit | The exact tree kernel, analytic subtree estimates and positive geometric completion |
 | Geometric longitude and recurrences | All-order meridian expansions force the selected geometric factor to divide a classical symbol | The full expansion, its normalization and the geometric longitude |
+
+The frozen reference manuscript's first theorem uses its completed-root
+grammar. The research notes extend this to more general strict ordered
+trees, with extra normal-form, boundary-profile and spectral-propagation
+arguments. The dependency graph now records those extra steps separately.
+It does not treat the narrower manuscript chapters as proofs of the
+broader extension. The extension still needs its own paper and detailed
+review of those additional inputs.
 
 These remaining subjects still need their own complete accounts. Each
 candidate needs a precise theorem, complete proofs of its own claims,
@@ -175,8 +216,9 @@ For a citation between papers, the exporting paper must state a numbered
 theorem with its normalization, degree restrictions, level parity and
 uniformity assumptions. The importing paper must name that theorem and
 check those hypotheses. A reference to a folder of calculations is not
-a substitute. The six drafts above separate one application and its
-foundations. The other retained knot families and the longitude results
+a substitute. The eight drafts above separate the planar criteria, two kinds of
+triangular assembly, the three-braid application and their foundations.
+The other retained knot families and the longitude results
 still require the remaining editorial and proof review. The dependency
 graph keeps those obligations visible.
 
@@ -220,8 +262,10 @@ with one command, using Python and SymPy:
 python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 ```
 
-The runner saves a separate record and log for each check, and stops on
-failure. The constant verifier uses outward rational bounds with explicit
+The runner requires SymPy, python-flint and NumPy. It saves a separate
+record and log for each of seven checks, and stops on failure. The planar
+certificate groups retain their supporting interval records in separate
+subdirectories. The constant verifier uses outward rational bounds with explicit
 series remainders. The argument for every even number of factors is
 written in the paper; it is not inferred from computations for finitely
 many braid lengths. The finite checks complement the written proofs of

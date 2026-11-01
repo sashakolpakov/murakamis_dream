@@ -45,7 +45,7 @@
       "title": "Elementary rate comparison"
     },
     "finite_graph_energy": {
-      "title": "Finite weighted graph energy"
+      "title": "Real variational estimates"
     }
   },
   "nodes": [
@@ -1149,16 +1149,16 @@
       "statement": "For a fixed unchanged marked simple sphere, nonstrict complete X_e >= log of every positive middle implies an unabridged shared-radius certificate; power flattening gains linearly while the full complete action rises quadratically.",
       "sources": [
         {
-          "path": "manuscript/sections/P-weak-balance.tex",
-          "anchor": "\\label{wb:entropy-gain}"
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:side-loss}"
         },
         {
-          "path": "manuscript/sections/P-weak-balance.tex",
-          "anchor": "\\label{wb:criterion}"
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:weak-balance}"
         },
         {
-          "path": "manuscript/sections/P-weak-balance.tex",
-          "anchor": "\\label{wb:remainder}"
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:remainder}"
         }
       ],
       "depends_on": [
@@ -1169,6 +1169,10 @@
         {
           "id": "planar_sector_envelopes",
           "reason": "These are the actual phase-uniform C/L/R rates; protected overloaded labels are exactly zero."
+        },
+        {
+          "id": "analytic_convex_flattening",
+          "reason": "Supplies the one-dimensional calculus implication behind the common-weight cost and both local max branches. The actual Hessian and entropy inputs come from the triangle calculation."
         }
       ]
     },
@@ -1179,16 +1183,20 @@
       "statement": "Under the weak-balance or quantified small-defect hypotheses, every fixed knot-producing retained pattern and independently sufficiently long signed primitive fillings have the full all-level reduced-invariant volume limit.",
       "sources": [
         {
-          "path": "manuscript/sections/P-weak-balance.tex",
-          "anchor": "\\label{wb:volume}"
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:weak-balance}"
         },
         {
-          "path": "manuscript/sections/P-weak-balance.tex",
-          "anchor": "\\label{wb:transfer}"
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:cover}"
         },
         {
-          "path": "manuscript/sections/P-weak-balance.tex",
-          "anchor": "\\label{wb:filled-action}"
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:volume}"
+        },
+        {
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:central-import}"
         }
       ],
       "depends_on": [
@@ -1339,32 +1347,32 @@
       "statement": "Every fixed finite protected assembly retains a certificate with gap at least the minimum input gap. All locally allowed strings are required, even globally zero input extractions.",
       "sources": [
         {
-          "path": "manuscript/sections/Q-protected-triangular-sums.tex",
-          "anchor": "\\label{pts:closure}"
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:certificate}"
         },
         {
-          "path": "manuscript/sections/Q-protected-triangular-sums.tex",
-          "anchor": "\\label{pts:eq-5}"
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:joining}"
         },
         {
-          "path": "manuscript/sections/Q-protected-triangular-sums.tex",
-          "anchor": "\\label{pts:sec-2}"
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:counts}"
         },
         {
-          "path": "manuscript/sections/Q-protected-triangular-sums.tex",
-          "anchor": "\\label{pts:sec-3}"
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:action-sum}"
         },
         {
-          "path": "manuscript/sections/Q-protected-triangular-sums.tex",
-          "anchor": "\\label{pts:sec-4}"
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:merge}"
         },
         {
-          "path": "manuscript/sections/Q-protected-triangular-sums.tex",
-          "anchor": "\\label{pts:sec-5}"
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:gluing}"
         },
         {
-          "path": "manuscript/sections/Q-protected-triangular-sums.tex",
-          "anchor": "\\label{pts:sec-6}"
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:iteration}"
         }
       ],
       "depends_on": [
@@ -1381,12 +1389,20 @@
       "statement": "Given the unabridged strict shared-weight certificates required by the protected gluing theorem, any fixed finite assembly with a final knot-producing pattern has the original-complement volume limit under independently long signed fillings.",
       "sources": [
         {
-          "path": "manuscript/sections/Q-protected-triangular-sums.tex",
-          "anchor": "\\label{pts:sec-5}"
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:gluing}"
         },
         {
-          "path": "manuscript/sections/Q-protected-triangular-sums.tex",
-          "anchor": "\\label{pts:eq-22}"
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:cover}"
+        },
+        {
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:remainder}"
+        },
+        {
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:volume}"
         }
       ],
       "depends_on": [
@@ -1412,7 +1428,7 @@
         },
         {
           "id": "planar_sector_envelopes",
-          "reason": "The uniform local estimates turn the preserved numerical certificate into a bound for every actual noncentral term, before the filling functional is applied (Appendix Q, equation pts:eq-20)."
+          "reason": "The uniform local estimates turn the preserved numerical certificate into a bound for every actual noncentral term, before the filling functional is applied (papers/planar-certificates/main.tex, Lemma 3.3, pc:remainder)."
         },
         {
           "id": "elementary_rate_transfer",
@@ -1427,8 +1443,20 @@
       "statement": "The forty-branch rational certificate covers all locally allowed noncentral strings; the restricted anchor-12 dual forces a balance failure in regions {2,4,7,12}.",
       "sources": [
         {
-          "path": "manuscript/sections/Q-protected-triangular-sums.tex",
-          "anchor": "\\label{pts:sec-7}"
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:seed}"
+        },
+        {
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:seed-cover-values}"
+        },
+        {
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:restricted}"
+        },
+        {
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:seed-obstruction-values}"
         },
         {
           "path": "experiments/actual_sector_cover_certificate.json",
@@ -1461,8 +1489,12 @@
       "statement": "Attach tetrahedral pieces away from the four failed candidates; the original candidate ratios persist. These are certified marked diagrams outside weak balance, not a classification of unmarked knot types.",
       "sources": [
         {
-          "path": "manuscript/sections/Q-protected-triangular-sums.tex",
-          "anchor": "\\label{pts:sec-7}"
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:seed}"
+        },
+        {
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:example}"
         }
       ],
       "depends_on": [
@@ -1483,20 +1515,28 @@
       "statement": "For positive boundary u,v,b, inf of disk action over interior weights equals Q(u,v,b)+constant; supported Hall feasibility and recession give coercivity at u=v=0 and the limiting constant.",
       "sources": [
         {
-          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
-          "anchor": "\\label{tbi:eq-3}"
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:disk}"
         },
         {
-          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
-          "anchor": "\\label{tbi:sec-2}"
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:eq-3}"
         },
         {
-          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
-          "anchor": "\\label{tbi:sec-3}"
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:sec-2}"
         },
         {
-          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
-          "anchor": "\\label{tbi:sec-4}"
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:sec-3}"
+        },
+        {
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:sec-4}"
+        },
+        {
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:eq-13}"
         }
       ],
       "depends_on": [
@@ -1513,24 +1553,24 @@
       "statement": "Given fixed unabridged blocks, sufficiently small u/b and v/b at every selected core witness and at its complete vector yield a full certificate. Whole-block central/noncentral splitting absorbs the bridge defect Delta/2 and counts old u,v targets only once.",
       "sources": [
         {
-          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
-          "anchor": "\\label{tbi:main}"
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:main}"
         },
         {
-          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
-          "anchor": "\\label{tbi:eq-T1}"
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:eq-T1}"
         },
         {
-          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
-          "anchor": "\\label{tbi:eq-T2}"
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:eq-T2}"
         },
         {
-          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
-          "anchor": "\\label{tbi:sec-5}"
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:sec-5}"
         },
         {
-          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
-          "anchor": "\\label{tbi:sec-6}"
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:sec-6}"
         }
       ],
       "depends_on": [
@@ -1555,12 +1595,16 @@
       "statement": "Given the strict input certificates and the thin positive boundary conditions required for ordinary insertion, any fixed finite admissible assembly and knot-producing final pattern has the full all-level volume limit after independent long signed primitive fillings.",
       "sources": [
         {
-          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
-          "anchor": "\\label{tbi:sec-7}"
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:imports}"
         },
         {
-          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
-          "anchor": "\\label{tbi:eq-27}"
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:sec-7}"
+        },
+        {
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:eq-27}"
         }
       ],
       "depends_on": [
@@ -1597,11 +1641,15 @@
       "statement": "Even zigzag cores have arbitrarily thin ordinary faces. The n=2^20 certificate and written monotonicity give all larger even n; the surviving restricted dual yields marked diagrams outside weak balance.",
       "sources": [
         {
-          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
-          "anchor": "\\label{tbi:sec-8}"
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:sec-8}"
         },
         {
-          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:explicit}"
+        },
+        {
+          "path": "papers/triangular-insertion/main.tex",
           "anchor": "\\label{a-fully-specified-infinite-sequence}"
         },
         {
@@ -1620,7 +1668,11 @@
         },
         {
           "id": "planar_seed17_certificate",
-          "reason": "Provides the block input and localized failure; protected-sum closure itself is not required."
+          "reason": "Provides the seventeen-region block certificate and localized balance failure. The protected-gluing input for the separate finite-list core construction is recorded as its own prerequisite."
+        },
+        {
+          "id": "planar_protected_sum_certificate",
+          "reason": "The explicit finite-list core construction in papers/triangular-insertion/main.tex, Section 9, joins finitely many octahedral cores by protected triangular gluing while retaining each selected T_2,Z_2 pair and its common complete certificate vector. The single-core zigzag and the conditional ordinary-insertion transfer do not require this gluing theorem."
         }
       ]
     },
@@ -1645,34 +1697,23 @@
         {
           "path": "notes/actual_conway_all_strict_tree_long_twist_volume.md",
           "anchor": "## 5. Induction over the tree and all physical colors"
-        },
-        {
-          "path": "manuscript/sections/05-alias.tex",
-          "anchor": "\\section{Coefficient envelopes on the true support}"
-        },
-        {
-          "path": "manuscript/sections/05-alias.tex",
-          "anchor": "\\section{Why a block estimate is needed}"
-        },
-        {
-          "path": "manuscript/sections/05-alias.tex",
-          "anchor": "\\section{A leaf attached to an arbitrary completed child}"
-        },
-        {
-          "path": "manuscript/sections/05-alias.tex",
-          "anchor": "\\section{The whole-tree induction}"
         }
       ],
       "depends_on": [
         {
-          "id": "recursive_finite_source",
-          "reason": "Uses the exact ordered pair algebra, turns, full pairing and original support."
+          "id": "recursive_strict_normal_form",
+          "reason": "Decomposes the exact finite tensor into the two kinds of subtree step."
         },
         {
-          "id": "recursive_angle_geometry",
-          "reason": "Uses strict angle feasibility and the calibrated complete action, including proper branch responses."
+          "id": "recursive_strict_boundary_profiles",
+          "reason": "Identifies the sum of all propagated constants with the complete action of the original tree."
+        },
+        {
+          "id": "recursive_strict_component_bounds",
+          "reason": "Supplies norm, angular and physical-color loss for both induction steps, including the closing root character."
         }
-      ]
+      ],
+      "coverage": "Written extension in research notes. It is not the completed-root theorem of the frozen manuscript; its separate paper and detailed companion-level review remain to be completed."
     },
     {
       "id": "recursive_strict_volume",
@@ -1687,62 +1728,23 @@
         {
           "path": "notes/actual_conway_all_strict_tree_long_twist_volume.md",
           "anchor": "## 7. Identifying the exponent with the knot complement volume"
-        },
-        {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\section{Replacing the color sum by its controlled local part}"
-        },
-        {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\section{An exact Fourier bound away from zero frequency}"
-        },
-        {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\section{The total derivative and the zero-charge cancellation}"
-        },
-        {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\section{Uniform charge tails and their endpoint currents}"
-        },
-        {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\section{The central Fourier packet}"
-        },
-        {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\section{Local charges for independently signed slopes}"
-        },
-        {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\section{Noncancellation and the final action}"
-        },
-        {
-          "path": "manuscript/sections/D-marked-cell-calibration.tex",
-          "anchor": "\\section{Primitive logs, the absolute regulator, and filling}"
-        },
-        {
-          "path": "manuscript/sections/D-marked-cell-calibration.tex",
-          "anchor": "\\section{Smooth completion on the actual primitive filled topology}"
         }
       ],
       "depends_on": [
         {
-          "id": "recursive_strict_source_gap",
-          "reason": "Restores the selected local packet before the actual filling."
+          "id": "recursive_strict_filling_transfer",
+          "reason": "Supplies the nonzero full invariant asymptotic for the extended strict class."
         },
         {
-          "id": "recursive_local_packet_filling",
-          "reason": "Provides the nonzero full filling asymptotic and all-charge control."
-        },
-        {
-          "id": "recursive_marked_metric",
-          "reason": "Provides the original primitive slopes, actual smooth metric and absolute regulator calibration."
+          "id": "recursive_strict_marked_metric",
+          "reason": "Identifies the selected action with the same original knot complement and its absolute volume."
         },
         {
           "id": "elementary_rate_transfer",
-          "reason": "A bound for the entire remainder, the nonzero central contribution and the original scalar normalization are combined to obtain the rate of the invariant."
+          "reason": "Uses the whole remainder estimate and nonzero contribution with the retained scalar normalization."
         }
-      ]
+      ],
+      "coverage": "Written extension in research notes. It is not the completed-root theorem of the frozen manuscript; its separate paper and detailed companion-level review remain to be completed."
     },
     {
       "id": "recursive_net_twist_reduction",
@@ -2250,12 +2252,8 @@
           "reason": "Supplies the rational longitude identity before zero-circle elimination."
         },
         {
-          "id": "recursive_marked_metric",
-          "reason": "Identifies the old strict geometry and full ordered boundary tuples, rather than assuming positivity of the added zero-circle chart."
-        },
-        {
-          "id": "recursive_strict_volume",
-          "reason": "Supplies the long-filling anchor within the stated strict family."
+          "id": "recursive_strict_marked_metric",
+          "reason": "Appendix J explicitly imports the general marked-mask geometry for the original strict construction before zero-circle elimination."
         }
       ]
     },
@@ -2371,7 +2369,7 @@
     },
     {
       "id": "recursive_angle_geometry",
-      "title": "Strict recursive angle maximum and actual complete cell assembly",
+      "title": "Complete geometry of the completed-root construction",
       "group": "recursive_tangles",
       "statement": "The literal completed-root grammar has a nonempty strict angle polytope and unique interior maximum with the displayed boundary-parameter bounds. The stationary leaf pyramids and multiplication prisms glue by their ordered face maps to the actual augmented complement; cusp links are complete and its volume is 2pi times the complete action. The isolated three-leaf case retains its stated separate calibration.",
       "sources": [
@@ -2405,11 +2403,12 @@
           "id": "recursive_finite_source",
           "reason": "The exact Newton support and factorial weights give the leaf/gate action and primitive wire constraints whose stationary geometry is assembled."
         }
-      ]
+      ],
+      "coverage": "This node records the completed-root construction of Chapters 2–8, with its stated grammar. The broader strict-tree extension has separate nodes and additional inputs."
     },
     {
       "id": "recursive_local_packet_filling",
-      "title": "Recursive finite complex packet and whole filling asymptotic",
+      "title": "Local expansion and whole filling sum for the completed-root construction",
       "group": "recursive_tangles",
       "statement": "For a fixed completed-root expression, the exact finite color corridor has a relative holomorphic asymptotic with nonzero amplitude and fixed complex tube. Combining it with the full complementary-color gap and exact filling transform controls endpoints, connectors and all other charges. For independently sufficiently long fixed signed powers, the original invariant has the all-parity nonzero asymptotic of eq:final-asymptotic, including its level power and recorded phases.",
       "sources": [
@@ -2448,14 +2447,19 @@
           "reason": "Provides the unique strict saddle, nonsingular Hessian and boundary parameter window."
         },
         {
-          "id": "recursive_strict_source_gap",
+          "id": "recursive_completed_source_gap",
           "reason": "Removes the entire alias/complementary-color contribution, not only a selected term, before and after the local packet comparison."
+        },
+        {
+          "id": "recursive_local_leaf_estimates",
+          "reason": "Uses the finite high-index local expansions and global core estimates within the completed-root parameter ranges."
         }
-      ]
+      ],
+      "coverage": "This node records the completed-root construction of Chapters 2–8, with its stated grammar. The broader strict-tree extension has separate nodes and additional inputs."
     },
     {
       "id": "recursive_marked_metric",
-      "title": "Primitive recursive filling metric and absolute action calibration",
+      "title": "Primitive metric and volume for the completed-root construction",
       "group": "recursive_tangles",
       "statement": "The labeled recursive cells give the actual peripheral words and signed logarithms. On the nearby independently long filling branch the original primitive slopes complete smoothly, the main cusp stays complete, and the calibrated filled critical action has real part equal to actual hyperbolic volume divided by 2pi. A regulator differential alone is not the conclusion.",
       "sources": [
@@ -2493,7 +2497,8 @@
           "id": "geo_nearby_metric_completion",
           "reason": "Supplies the positive nearby compact-core/cusp and primitive solid-torus completion argument after the actual logarithmic slope equations are verified."
         }
-      ]
+      ],
+      "coverage": "This node records the completed-root construction of Chapters 2–8, with its stated grammar. The broader strict-tree extension has separate nodes and additional inputs."
     },
     {
       "id": "open_general_remainder",
@@ -3168,7 +3173,7 @@
         },
         {
           "id": "recursive_local_packet_filling",
-          "reason": "Only its nonzero local packet, fixed contours and whole charge/endpoint estimates are used for the strict case, not a volume identification or a leading limit alone."
+          "reason": "Supplies the local expansion and fixed-contour estimates for the completed-root alternative. The extended strict alternative uses the separately recorded general core and filling results."
         },
         {
           "id": "tree_exact_edge_kernel",
@@ -3181,6 +3186,14 @@
         {
           "id": "finite_invariant_normalization",
           "reason": "Keeps the exact reduced cut, full modified dimension and framing factors; their cancellation in Z_N is calculated, not postulated."
+        },
+        {
+          "id": "recursive_strict_core_packet",
+          "reason": "For the extended strict alternative, fixes the actual local interpolation and primitive stationary variables; the all-orders proof must additionally establish its translated parameter estimates."
+        },
+        {
+          "id": "recursive_strict_filling_transfer",
+          "reason": "For that alternative, supplies the whole-charge and endpoint estimates used before the separate all-orders refinement."
         }
       ]
     },
@@ -3410,6 +3423,457 @@
           "reason": "Supplies the actual banded operator and physical cofactor normalization."
         }
       ]
+    },
+    {
+      "id": "recursive_completed_source_gap",
+      "title": "The completed-root complementary-source estimate",
+      "group": "recursive_tangles",
+      "statement": "For the completed-root grammar stated in the reference manuscript, the exact two-leaf and single-attachment estimates propagate through the finite construction and give the whole physical-color bound and complementary-color gap.",
+      "sources": [
+        {
+          "path": "manuscript/sections/05-alias.tex",
+          "anchor": "\\section{Coefficient envelopes on the true support}"
+        },
+        {
+          "path": "manuscript/sections/05-alias.tex",
+          "anchor": "\\section{Why a block estimate is needed}"
+        },
+        {
+          "path": "manuscript/sections/05-alias.tex",
+          "anchor": "\\section{A leaf attached to an arbitrary completed child}"
+        },
+        {
+          "path": "manuscript/sections/05-alias.tex",
+          "anchor": "\\section{The whole-tree induction}"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_finite_source",
+          "reason": "Uses the actual Newton multiplication, turn and closing functional, with their full repeated-root data."
+        },
+        {
+          "id": "recursive_angle_geometry",
+          "reason": "The completed construction supplies the stationary shared-wire action and the proper local parameter ranges."
+        }
+      ],
+      "coverage": "This node records the completed-root construction of Chapters 2–8, with its stated grammar. The broader strict-tree extension has separate nodes and additional inputs."
+    },
+    {
+      "id": "recursive_completed_volume",
+      "title": "Long-twist volume for the completed-root construction",
+      "group": "recursive_tangles",
+      "statement": "The frozen manuscript proves the full volume limit for its completed-root tangle grammar, original knot test, and independently sufficiently long fixed signed powers.",
+      "sources": [
+        {
+          "path": "manuscript/sections/08-filling.tex",
+          "anchor": "\\section{Replacing the color sum by its controlled local part}"
+        },
+        {
+          "path": "manuscript/sections/08-filling.tex",
+          "anchor": "\\section{An exact Fourier bound away from zero frequency}"
+        },
+        {
+          "path": "manuscript/sections/08-filling.tex",
+          "anchor": "\\section{The total derivative and the zero-charge cancellation}"
+        },
+        {
+          "path": "manuscript/sections/08-filling.tex",
+          "anchor": "\\section{Uniform charge tails and their endpoint currents}"
+        },
+        {
+          "path": "manuscript/sections/08-filling.tex",
+          "anchor": "\\section{The central Fourier packet}"
+        },
+        {
+          "path": "manuscript/sections/08-filling.tex",
+          "anchor": "\\section{Local charges for independently signed slopes}"
+        },
+        {
+          "path": "manuscript/sections/08-filling.tex",
+          "anchor": "\\section{Noncancellation and the final action}"
+        },
+        {
+          "path": "manuscript/sections/D-marked-cell-calibration.tex",
+          "anchor": "\\section{Primitive logs, the absolute regulator, and filling}"
+        },
+        {
+          "path": "manuscript/sections/D-marked-cell-calibration.tex",
+          "anchor": "\\section{Smooth completion on the actual primitive filled topology}"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_completed_source_gap",
+          "reason": "Controls all complementary colors of this grammar."
+        },
+        {
+          "id": "recursive_local_packet_filling",
+          "reason": "Provides its actual nonzero whole filling asymptotic."
+        },
+        {
+          "id": "recursive_marked_metric",
+          "reason": "Provides the original primitive filled metric and its absolute volume."
+        },
+        {
+          "id": "elementary_rate_transfer",
+          "reason": "Combines the nonzero contribution with the strict full remainder bound."
+        }
+      ],
+      "coverage": "This node records the completed-root construction of Chapters 2–8, with its stated grammar. The broader strict-tree extension has separate nodes and additional inputs."
+    },
+    {
+      "id": "recursive_strict_normal_form",
+      "title": "The exact strict-tree compiler and reduced product junctions",
+      "group": "recursive_tangles",
+      "statement": "Arbitrary ordered product/turn syntax has a primitive wire lattice and a finite strictness test. Grouping adjacent products gives an exact tensor normal form; strictness permits at most one turned physical leaf at each reduced product junction. This algebraic regrouping is not used as an isotopy of tangles.",
+      "sources": [
+        {
+          "path": "notes/actual_conway_single_leaf_source_composition.md",
+          "anchor": "## 1. The literal compiler and an exact all-level support recursion"
+        },
+        {
+          "path": "notes/actual_conway_reduced_hub_source_normal_form.md",
+          "anchor": "## 2. An exact product-hub support lemma"
+        },
+        {
+          "path": "notes/actual_conway_reduced_hub_source_normal_form.md",
+          "anchor": "## 3. The reduced unrooted source and its sharp strictness criterion"
+        },
+        {
+          "path": "notes/actual_conway_reduced_hub_source_normal_form.md",
+          "anchor": "## 4. Exact recursive interface and the extent of grammar reduction"
+        },
+        {
+          "path": "notes/actual_conway_single_leaf_source_composition.md",
+          "anchor": "## 2. An exact strict-state classification, separate from finite support"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_finite_source",
+          "reason": "Supplies the exact tensor operations being regrouped, including spectral derivatives and the original closing target."
+        }
+      ],
+      "coverage": "Written extension in research notes. It is not the completed-root theorem of the frozen manuscript; its separate paper and detailed companion-level review remain to be completed."
+    },
+    {
+      "id": "recursive_strict_boundary_profiles",
+      "title": "Boundary profiles and absolute constants for mixed strict trees",
+      "group": "recursive_tangles",
+      "statement": "A turned-character subtree has boundary profile g plus the sum of its attached constants. Closing an unturned component against one reference leaf computes its intrinsic comparison constant. The exact unsquared boundary equations put every reference-leaf index in the certified parameter range.",
+      "sources": [
+        {
+          "path": "notes/actual_conway_rigid_spine_and_flagged_tree_geometry.md",
+          "anchor": "## 3. Harmonic parameter addition and absolute profile constants"
+        },
+        {
+          "path": "notes/actual_conway_unflagged_probe_geometry.md",
+          "anchor": "## 2. Every effective leaf is in the closed proper range"
+        },
+        {
+          "path": "notes/actual_conway_unflagged_probe_geometry.md",
+          "anchor": "## 4. Absolute constants and the original root action"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_strict_normal_form",
+          "reason": "Specifies the actual adjacent product components and their boundary modules."
+        },
+        {
+          "id": "recursive_strict_angle_geometry",
+          "reason": "Provides the unique strict optimizer and the actual local boundary geometry for this enlarged syntax; the subsequent profile or packet argument is a further step."
+        }
+      ],
+      "coverage": "Written extension in research notes. It is not the completed-root theorem of the frozen manuscript; its separate paper and detailed companion-level review remain to be completed."
+    },
+    {
+      "id": "recursive_strict_component_bounds",
+      "title": "Positive comparison and spectral loss through mixed strict trees",
+      "group": "recursive_tangles",
+      "statement": "A positive closing comparison bounds the full Hermite norm of an unturned component for arbitrary boundary coefficient arrays in the stated cone. Actual decorated-character turns and canonical polynomial representatives supply angular localization and physical-color loss, including all high-degree normal directions. These are the two induction steps for the mixed-tree source.",
+      "sources": [
+        {
+          "path": "notes/actual_conway_unflagged_core_probe_bound.md",
+          "anchor": "## 2. Why closing against the probe bounds the norm"
+        },
+        {
+          "path": "notes/actual_conway_unflagged_core_probe_bound.md",
+          "anchor": "## 3. Transferring the scalar inequalities to these arrays"
+        },
+        {
+          "path": "notes/actual_conway_mixed_core_spectral_propagation.md",
+          "anchor": "## 3. Canonical Gaussian localization at the actual pressure"
+        },
+        {
+          "path": "notes/actual_conway_mixed_core_spectral_propagation.md",
+          "anchor": "## 4. Physical-color deficits of effective L modules"
+        },
+        {
+          "path": "notes/actual_conway_decorated_character_spectral_closure.md",
+          "anchor": "## 3. A color away from complete causes a strict loss"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_completed_source_gap",
+          "reason": "Uses the exact two-leaf and single-attachment inequalities, extended to coefficient arrays with the same upper profiles and support; it does not assume the desired mixed-tree conclusion."
+        },
+        {
+          "id": "recursive_strict_boundary_profiles",
+          "reason": "Fixes each comparison exponent and the correct effective index, rather than assigning independent norm budgets."
+        },
+        {
+          "id": "recursive_finite_source",
+          "reason": "Retains all spectral values and first derivatives and the physical character/turn operations."
+        }
+      ],
+      "coverage": "Written extension in research notes. It is not the completed-root theorem of the frozen manuscript; its separate paper and detailed companion-level review remain to be completed."
+    },
+    {
+      "id": "recursive_strict_core_packet",
+      "title": "The actual local core expansion for arbitrary strict knot trees",
+      "group": "recursive_tangles",
+      "statement": "For the exact arbitrary strict wire polytope, every complete leaf lies at or above the quarter index. The retained gate Hessians control all primitive directions. The actual core sum has a nonzero holomorphic local expansion and a global core majorant; the whole-source alias bound remains a distinct input. The two-leaf knot case keeps its pure-leaf qualification.",
+      "sources": [
+        {
+          "path": "notes/actual_conway_general_core_packet_and_gap.md",
+          "anchor": "## 2. Every complete closed-tree leaf is at or above one quarter"
+        },
+        {
+          "path": "notes/actual_conway_general_core_packet_and_gap.md",
+          "anchor": "## 3. Gate curvature controls every primitive direction"
+        },
+        {
+          "path": "notes/actual_conway_general_core_packet_and_gap.md",
+          "anchor": "## 5. Uniform estimates for the literal complete core sum"
+        },
+        {
+          "path": "notes/actual_conway_general_core_packet_and_gap.md",
+          "anchor": "## 6. The exact local packet and the remaining alias obligation"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_strict_normal_form",
+          "reason": "Provides the exact strict syntax, primitive lattice and closing relation."
+        },
+        {
+          "id": "recursive_strict_angle_geometry",
+          "reason": "Provides the unique strict optimizer and the actual local boundary geometry for this enlarged syntax; the subsequent profile or packet argument is a further step."
+        },
+        {
+          "id": "recursive_finite_source",
+          "reason": "Supplies the actual high/quarter-index finite sources and their original offsets and parity conventions."
+        },
+        {
+          "id": "recursive_local_leaf_estimates",
+          "reason": "Supplies the strictly-high-index holomorphic leaf expansions and whole-color majorants. Equality at the quarter index uses the separately recorded local extension."
+        },
+        {
+          "id": "recursive_quarter_leaf_expansion",
+          "reason": "Covers equality in the complete leaf bound a_i≥1/4, which lies outside the fixed strictly-high-index charts."
+        }
+      ],
+      "coverage": "Written extension in research notes. It is not the completed-root theorem of the frozen manuscript; its separate paper and detailed companion-level review remain to be completed."
+    },
+    {
+      "id": "recursive_strict_marked_metric",
+      "title": "Original peripheral geometry for arbitrary strict mask trees",
+      "group": "recursive_tangles",
+      "statement": "The general strict-mask construction keeps every original face-pairing mask, including asymmetric high-type faces. Its full ordered maps identify primitive peripheral paths, construct smooth long fillings of the original knot complement, and fix the absolute volume action.",
+      "sources": [
+        {
+          "path": "notes/actual_conway_general_mask_marked_filling.md",
+          "anchor": "## 4. Actual and virtual white maps for every mask"
+        },
+        {
+          "path": "notes/actual_conway_general_mask_marked_filling.md",
+          "anchor": "## 5. Original shaded words and the actual group"
+        },
+        {
+          "path": "notes/actual_conway_general_mask_marked_filling.md",
+          "anchor": "## 6. Primitive auxiliary curves and the absolute action"
+        },
+        {
+          "path": "notes/actual_conway_general_mask_marked_filling.md",
+          "anchor": "## 7. Smooth actual fillings and knot pairing"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_strict_normal_form",
+          "reason": "Fixes the original syntax, actual turns and strict masks; the comparison circuit is not substituted for the knot."
+        },
+        {
+          "id": "recursive_strict_core_packet",
+          "reason": "Fixes the selected regular local action and quarter/high leaf ranges; the geometric construction does not infer completeness from an asymptotic amplitude."
+        },
+        {
+          "id": "geo_nearby_metric_completion",
+          "reason": "Supplies the local geometric completion principle with original primitive logarithmic periods."
+        },
+        {
+          "id": "recursive_strict_angle_geometry",
+          "reason": "Provides the original complete geometric anchor with the individual masks and terminal identifications."
+        }
+      ],
+      "coverage": "Written extension in research notes. It is not the completed-root theorem of the frozen manuscript; its separate paper and detailed companion-level review remain to be completed."
+    },
+    {
+      "id": "recursive_strict_filling_transfer",
+      "title": "Whole filling transform for the extended strict-tree source",
+      "group": "recursive_tangles",
+      "statement": "The all-core expansion is compared with the actual physical-color source using the whole-source gap. The conditional Fourier–Hermite transfer then proves a nonzero asymptotic for independently long fixed signed powers, retaining every endpoint current, Fourier charge and normalization.",
+      "sources": [
+        {
+          "path": "notes/actual_conway_all_strict_tree_long_twist_volume.md",
+          "anchor": "## 6. Restoring the selected packet and performing the fillings"
+        },
+        {
+          "path": "notes/general_original_source_long_filling_transfer.md",
+          "anchor": "## 1. Exact source and hypotheses"
+        },
+        {
+          "path": "notes/general_original_source_long_filling_transfer.md",
+          "anchor": "## 3. Exact filling, including every endpoint and normal term"
+        },
+        {
+          "path": "notes/general_original_source_long_filling_transfer.md",
+          "anchor": "## 4. The central packet and all nonminimal charges"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_strict_source_gap",
+          "reason": "Bounds the entire physical-color source and the actual aliases, rather than only artificial comparison bands."
+        },
+        {
+          "id": "recursive_strict_core_packet",
+          "reason": "Supplies the specified nonzero holomorphic interpolation with its fixed complex neighborhood."
+        },
+        {
+          "id": "finite_crossing",
+          "reason": "The full circle-basis identity inserts the original signed twists with all repeated-root terms."
+        }
+      ],
+      "coverage": "Written extension in research notes. It is not the completed-root theorem of the frozen manuscript; its separate paper and detailed companion-level review remain to be completed."
+    },
+    {
+      "id": "recursive_local_leaf_estimates",
+      "title": "High-index leaf expansions and global core bounds",
+      "group": "recursive_tangles",
+      "statement": "The exact signed finite leaf coefficients admit normalized holomorphic expansions on each compact high-index chart with a nonzero source-selected amplitude. Whole-color majorants and the original fixed integer offsets are retained. This is the local finite-source interface used in the completed-root construction.",
+      "sources": [
+        {
+          "path": "manuscript/sections/B1-high-index-packet.tex",
+          "anchor": "\\label{eq:b1-local-asymptotic}"
+        },
+        {
+          "path": "manuscript/sections/B2-global-core-envelope.tex",
+          "anchor": "\\label{eq:b2-far-color}"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_finite_source",
+          "reason": "Fixes the literal leaf coefficients, their Casimir data and the exact finite recurrences used in the estimates."
+        }
+      ],
+      "coverage": "These written high-index and global-envelope proofs are in the frozen manuscript. The quarter-index extension has a separate node because the completed-root argument does not need its enlarged chart."
+    },
+    {
+      "id": "recursive_strict_angle_geometry",
+      "title": "Strict-wire optimizer and complete geometry for the extended syntax",
+      "group": "recursive_tangles",
+      "statement": "The arbitrary strict compiler supplies a unique interior positive optimizer. The general geometric induction retains four individual edge masks, active terminal corners and the actual closed ribbon cut, establishing a complete augmented exterior for every strict mask pattern. It does not yet prove a signed-source bound.",
+      "sources": [
+        {
+          "path": "notes/actual_conway_single_leaf_source_composition.md",
+          "anchor": "## 3. Primitive lattice, unique strict optimizer, and complete source"
+        },
+        {
+          "path": "notes/actual_conway_general_strict_mask_geometry.md",
+          "anchor": "## 2. Exact type data, stationary cells and individual edge masks"
+        },
+        {
+          "path": "notes/actual_conway_general_strict_mask_geometry.md",
+          "anchor": "## 4. Exact terminal accounting: no transitive corner collapse"
+        },
+        {
+          "path": "notes/actual_conway_general_strict_mask_geometry.md",
+          "anchor": "## 5. The closed sphere and the exact oriented ribbon cut"
+        },
+        {
+          "path": "notes/actual_conway_general_strict_mask_geometry.md",
+          "anchor": "## 6. Nondegenerate cusp rectangles and four-step edge cycles"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_strict_normal_form",
+          "reason": "Provides the strict state classification and the original ordered wire constraints."
+        },
+        {
+          "id": "recursive_angle_geometry",
+          "reason": "Uses the original local ideal cells and their calibrated actions; the edge-mask and terminal-accounting extension is the additional argument in the cited notes."
+        }
+      ],
+      "coverage": "Written extension in research notes. It is not the completed-root theorem of the frozen manuscript; its separate paper and detailed companion-level review remain to be completed."
+    },
+    {
+      "id": "analytic_convex_flattening",
+      "title": "Quadratic action cost and supporting-tangent gain",
+      "group": "finite_graph_energy",
+      "statement": "Actual real derivative hypotheses 0≤g″≤E and g′(0)=0 imply 0≤g(t)−g(0)≤Et²/2. A differentiable convex triangle profile supplies its supporting-tangent bound at scale one. Applying it to both branches of the one-sided maximum gives the explicit balance-defect loss and strict sector comparison. Neither the cost nor the local gain is assumed as a premise.",
+      "sources": [
+        {
+          "path": "formal-real/Flattening.lean",
+          "anchor": "theorem stationary_quadratic_cost"
+        },
+        {
+          "path": "formal-real/Flattening.lean",
+          "anchor": "theorem convex_support_at_one"
+        },
+        {
+          "path": "formal-real/Flattening.lean",
+          "anchor": "theorem side_loss_from_convexity"
+        },
+        {
+          "path": "formal-real/Flattening.lean",
+          "anchor": "theorem weak_balance_sector_gap"
+        }
+      ],
+      "depends_on": [],
+      "coverage": "These real calculus implications have Lean proofs in the optional Mathlib package. Identifying the actual geometric functions, computing their Hessians and stationary point, and proving positive triangle entropy remain written inputs."
+    },
+    {
+      "id": "recursive_quarter_leaf_expansion",
+      "title": "Source-selected leaf expansion through the quarter index",
+      "group": "recursive_tangles",
+      "statement": "The quarter-index local theorem controls both finite recurrence channels from their actual source anchor, proves an exponentially accurate selected interpolation, and identifies its nonzero signed amplitude with the original leaf coefficient. It is an additional local estimate needed when an extended strict tree has a complete leaf at the quarter index.",
+      "sources": [
+        {
+          "path": "notes/actual_conway_quarter_index_color_packet.md",
+          "anchor": "## 4. Exact source anchor, both channels, and all conversion errors"
+        },
+        {
+          "path": "notes/actual_conway_quarter_index_color_packet.md",
+          "anchor": "## 7. Original signed Conway coefficients and the local wire packet"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_finite_source",
+          "reason": "Fixes the actual finite source, its two recurrence channels and the exact source anchor."
+        },
+        {
+          "id": "recursive_local_leaf_estimates",
+          "reason": "Supplies the shared high-index normalization and analytic finite-factorial machinery; the quarter-index channel control is the additional proof."
+        }
+      ],
+      "coverage": "Written extension in research notes. It is not the completed-root theorem of the frozen manuscript; its separate paper and detailed companion-level review remain to be completed."
     }
   ]
 }

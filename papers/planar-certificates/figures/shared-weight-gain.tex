@@ -1,0 +1,17 @@
+\begin{tikzpicture}[x=7cm,y=3.8cm,font=\small,
+  line cap=round,line join=round]
+ \fill[blue!7] (0,0)--plot[domain=0:1,samples=40](\x,\x)
+        --plot[domain=1:0,samples=40](\x,{.5*\x*\x})--cycle;
+ \draw[-{Latex[length=2mm]}] (0,0)--(1.12,0) node[right] {$t$};
+ \draw[-{Latex[length=2mm]}] (0,0)--(0,1.12) node[above] {rate};
+ \draw[blue!70!black,thick,domain=0:1,samples=2]
+        plot(\x,\x) node[right] {$t h_*$};
+ \draw[orange!80!black,thick,domain=0:1,samples=40]
+        plot(\x,{.5*\x*\x}) node[right] {$t^2\mathcal E/2$};
+ \draw[densely dashed] (.5,0)--(.5,.5);
+ \draw[<->] (.52,.125)--(.52,.5);
+ \node[anchor=west] at (.55,.42) {strict gain};
+ \node[below] at (0,0) {$0$};
+ \node[below] at (.5,0) {$t_0$};
+ \node[below] at (1,0) {$1$};
+\end{tikzpicture}

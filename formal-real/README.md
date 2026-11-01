@@ -1,4 +1,4 @@
-# Concrete analytic transfer and weighted graph energy
+# Concrete analytic transfer, graph energy and flattening
 
 This optional Lean package realizes the elementary analytic interfaces of
 [VolumeTransfer](../formal/VolumeLogic/VolumeTransfer.lean) using Mathlib's
@@ -6,7 +6,8 @@ complex numbers, complex modulus and real logarithm. It depends on the
 existing Std-only package by the relative path `../formal`; its sources are
 not copied. The ordinary Std-only check does not need this package or Mathlib.
 The package also proves the real finite quadratic-form implication used in
-the circle-pattern Hessian argument.
+the circle-pattern Hessian argument, and the one-variable calculus behind
+shared-weight flattening.
 
 ## What is proved
 
@@ -136,6 +137,83 @@ quadratic-form implication from those inputs is proved here. This module
 does not formalize circle-pattern existence, the rest of the geometric
 Jacobian argument, or an implicit function theorem.
 
+## Calculus of shared-weight flattening
+
+[Flattening.lean](Flattening.lean) contains one definition and nine theorems
+in `VolumeLogic.Flattening`. It supplies the calculus used in
+[Appendix P, Sections 2–4](../manuscript/sections/P-weak-balance.tex), rather
+than assuming the cost and gain inequalities as scalar premises.
+
+Let `g`, `dg`, and `ddg` be actual real functions. On the interval `[0,t]`,
+the hypotheses `HasDerivAt g (dg x) x` and `HasDerivAt dg (ddg x) x`
+identify their derivatives. If `t ≥ 0`, `dg 0 = 0`, and
+`0 ≤ ddg x ≤ E` throughout that interval, `stationary_quadratic_cost` proves
+
+\[
+0\le g(t)-g(0)\le \frac{Et^2}{2}.
+\]
+
+Nonnegative second derivative makes `g` convex. The constructed function
+`E*x²/2 − g x` also has nonnegative second derivative and is stationary at
+zero; its supporting line gives the upper estimate. Thus the theorem uses
+real differentiation and convexity, without an assumed Taylor remainder.
+The endpoint derivative hypotheses are slightly stronger than necessary,
+but any `C²` application on a neighborhood of the interval satisfies them;
+continuity of the second derivative is not needed by the proof.
+
+The definition `weightPath P q t = P (fun i => (1-t)*q i)` varies every
+ordinary logarithmic weight along the same path. Its index set excludes the
+protected zero coordinates. `weight_path_cost` applies the preceding
+estimate to this actual composition, with its directional derivatives
+explicitly identified by the hypotheses.
+
+For an actual convex real function `Q` on `[0,1]`, differentiable at `1`
+with derivative `dQ`, `convex_support_at_one` proves
+
+\[
+Q(\beta)\ge \beta Q(1)+(1-\beta)\bigl(Q(1)-dQ\bigr),
+\qquad 0\le\beta\le1.
+\]
+
+This is the supporting line at `1`. The application identifies the intercept
+`Q(1)-dQ` with triangle entropy. The theorem proves the inequality from
+convexity and differentiability; it does not assume an entropy gain.
+
+The last three theorems retain the actual maximum of the two one-sided
+branches. Write `Qk` for the retained triangle potential, `Qo` for the
+overloaded triangle potential, `z` for the overloaded corner's complete
+logarithmic weight, and `β=1-t`. The local loss is
+
+\[
+L(t)=Q_k(\beta)+Q_o(\beta)
+-\max\{\beta z,\ Q_k(\beta)+\beta z/2\}.
+\]
+
+From the convex supporting lines, nonnegative retained entropy and the
+pure-corner inequality `Qo(1) ≥ z/2`, `side_loss_from_convexity` derives
+
+\[
+L(t)\ge th-(1-t)\delta,\qquad
+h=Q_o(1)-Q_o'(1),\qquad
+\delta=\max\{0,z-Q_k(1)-Q_o(1)\}.
+\]
+
+Here the defect `δ` is constructed from the complete values; the loss bound
+is proved for both branches of the maximum. `flattening_sector_gap` combines
+it with the derived quadratic cost and an actual finite list of other
+nonnegative losses. If `Et²/2 < th-(1-t)δ`, the resulting sector rate is
+strictly below `g(0)`. In `weak_balance_sector_gap`, the complete balance
+inequality gives `δ=0`; `0<t≤1`, `h>0` and `tE≤h` discharge the strict
+margin using the existing Std-only `strict_weak_balance_gain` theorem.
+
+The remaining written inputs are the geometric differentiation identifying
+`P`, `Qk` and `Qo`, the stationary complete point, the directional Hessian
+bound `E`, the entropy and pure-corner identities, and the identification of
+these expressions with the actual shared source envelopes. This module does
+not formalize those geometric formulas, coefficient asymptotics, or the
+invariant's volume limit. It proves the intervening real-calculus and
+finite-sector implications.
+
 ## Pinned dependencies
 
 - Lean: `leanprover/lean4:v4.32.2`.
@@ -161,6 +239,7 @@ cd formal-real
 MATHLIB_NO_CACHE_ON_UPDATE=1 lake update volumeLogic mathlib
 lake exe cache get \
   Mathlib.Analysis.Complex.Basic \
+  Mathlib.Analysis.Convex.Deriv \
   Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic \
   Mathlib.Analysis.SpecialFunctions.Pow.Real \
   Mathlib.Analysis.SpecialFunctions.Log.Basic \
@@ -201,7 +280,7 @@ whose logs are removed afterward. `--lake` can select a Lake executable;
 the executed Lean version must still match the pin.
 
 The checker rebuilds the Std-only path dependency, compiles
-`RealTransfer.lean` and `WeightedGraph.lean`, and runs
+`RealTransfer.lean`, `WeightedGraph.lean` and `Flattening.lean`, and runs
 [AxiomAudit.lean](AxiomAudit.lean). Every
 definition and theorem must appear exactly once in the audit. Only Lean's
 standard foundational axioms `propext`, `Classical.choice` and `Quot.sound`
@@ -210,15 +289,17 @@ are permitted; placeholders and additional axioms fail the check.
 `summary.json` records every declaration, its axioms, all dependency pins,
 and the SHA-256 hashes of the optional package, checker and Std-only sources.
 It contains relative paths and omits timestamps so identical inputs produce
-the same summary. Ten negative controls check altered pins, missing or
+the same summary. Twelve negative controls check altered pins, missing or
 duplicate dependencies, an absolute local dependency, incomplete or
 duplicate declaration audits, an omitted graph module or grounded-energy
-audit entry, and an unexpected logical axiom. A failed run
+audit entry, an omitted flattening module or quadratic-cost audit entry,
+and an unexpected logical axiom. A failed run
 removes any old success summary in its output directory.
 
-The optional count is **nine definitions and forty-one theorems**, separate
+The optional count is **ten definitions and fifty theorems**, separate
 from the Std-only theorem count: `RealTransfer` has two definitions and
-twenty-two theorems, and `WeightedGraph` has seven definitions and nineteen
-theorems. The audit checks these proofs and the
+twenty-two theorems, `WeightedGraph` has seven definitions and nineteen
+theorems, and `Flattening` has one definition and nine theorems. The audit
+checks these proofs and the
 listed dependency pins; it does not certify that a particular knot family
 satisfies the remaining written analytic and geometric hypotheses.

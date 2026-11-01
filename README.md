@@ -147,10 +147,13 @@ separate work.
 
 ## Reading and reproducing the work
 
-The [collection of research papers](papers/README.md) separates finite
-spectral evaluation, uniform local coefficient bounds, the complete
-oscillatory filling sum, and the long three-braid application. Each draft
-has a 30-page limit and explicit companion-theorem dependencies. The
+The [collection of research papers](papers/README.md) now contains eight
+drafts, ranging from 11 to 28 pages. Five develop the finite algebra,
+local estimates, central asymptotics, oscillatory sums and geometric
+fillings. Three apply these results to shared-face criteria, triangular
+insertions and long three-braids. Each paper states the companion results
+it uses. The tree, terminal-decoration and longitude results still need
+separate papers. The
 [reference manuscript](manuscript/README.md) retains the 374-page
 continuous account; it is no longer presented as a single journal paper.
 Chapter 1 separates full volume theorems from completed partial results:

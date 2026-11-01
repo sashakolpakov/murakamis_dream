@@ -282,11 +282,29 @@ edges and loops are allowed.
 
 The geometric differentiation identifying the circle-pattern Hessian
 with this energy, the positivity of its particular weights and its
-graph connectivity remain written inputs. The optional package has
-nine definitions and forty-one theorems. Its axiom audit covers all
-fifty declarations, separately from the Std-only project. The saddle
-estimates, whole-source gap and geometric volume identity also remain
-written application inputs.
+graph connectivity remain written inputs.
+
+The [flattening module](../../formal-real/Flattening.lean) proves the
+calculus behind the common change of face weights. For actual real
+functions with $g'(0)=0$ and $0\le g''\le E$ on $[0,t]$, it derives
+
+\[
+0\le g(t)-g(0)\le \frac{Et^2}{2}.
+\]
+
+It obtains the upper bound by applying convexity to
+$Ex^2/2-g(x)$. A separate supporting-tangent argument gives the linear
+entropy gain, then bounds both branches of the one-sided maximum.
+The defect is the defined maximum of zero and the failed balance
+comparison. The strict sector theorem combines these derived bounds;
+it does not assume the quadratic cost or linear gain as premises.
+Identifying these functions and their derivatives with the geometric
+triangle potential remains a written calculation.
+
+The optional package has ten definitions and fifty theorems. Its axiom
+audit covers all sixty declarations, separately from the Std-only
+project. The saddle estimates, whole-source gap and geometric volume
+identity remain written application inputs.
 
 ## Joining certified diagrams
 

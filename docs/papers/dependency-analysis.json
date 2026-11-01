@@ -1,7 +1,7 @@
 {
   "scope": "Consistency and source-location checks on the declared mathematical dependency graph, not proof verification.",
-  "nodes": 93,
-  "edges": 217,
+  "nodes": 105,
+  "edges": 250,
   "component_edges": [
     [
       "action_volume",
@@ -104,6 +104,10 @@
       "marked_geometry"
     ],
     [
+      "finite_graph_energy",
+      "planar_criteria"
+    ],
+    [
       "finite_spectral",
       "central_period"
     ],
@@ -118,6 +122,10 @@
     [
       "finite_spectral",
       "local_asymptotics"
+    ],
+    [
+      "finite_spectral",
+      "recursive_tangles"
     ],
     [
       "finite_spectral",
@@ -178,6 +186,7 @@
   ],
   "topological_order": [
     "analytic_circle_charge_path",
+    "analytic_convex_flattening",
     "braid_literal_matched_sphere",
     "elementary_rate_transfer",
     "finite_bernstein",
@@ -248,9 +257,20 @@
     "planar_weak_balance_volume",
     "recursive_finite_source",
     "recursive_angle_geometry",
-    "recursive_strict_source_gap",
+    "recursive_completed_source_gap",
+    "recursive_local_leaf_estimates",
     "recursive_local_packet_filling",
     "recursive_marked_metric",
+    "recursive_completed_volume",
+    "recursive_quarter_leaf_expansion",
+    "recursive_strict_normal_form",
+    "recursive_strict_angle_geometry",
+    "recursive_strict_boundary_profiles",
+    "recursive_strict_component_bounds",
+    "recursive_strict_core_packet",
+    "recursive_strict_marked_metric",
+    "recursive_strict_source_gap",
+    "recursive_strict_filling_transfer",
     "recursive_strict_volume",
     "recursive_net_twist_reduction",
     "recursive_arbitrary_closure_reduction",
@@ -274,35 +294,39 @@
   "shared_prerequisites": [
     {
       "id": "finite_local_fourier",
-      "downstream": 54
+      "downstream": 65
     },
     {
       "id": "finite_remainder",
-      "downstream": 48
+      "downstream": 59
     },
     {
       "id": "finite_hermite",
-      "downstream": 46
+      "downstream": 57
     },
     {
       "id": "finite_crossing",
-      "downstream": 42
+      "downstream": 53
     },
     {
       "id": "finite_pivotal_mark",
-      "downstream": 41
+      "downstream": 52
     },
     {
       "id": "finite_global_source",
-      "downstream": 40
+      "downstream": 51
+    },
+    {
+      "id": "finite_invariant_normalization",
+      "downstream": 38
     },
     {
       "id": "geo_simple_sphere_packing",
       "downstream": 30
     },
     {
-      "id": "finite_invariant_normalization",
-      "downstream": 27
+      "id": "recursive_finite_source",
+      "downstream": 28
     },
     {
       "id": "analytic_signed_interval_transfer",
@@ -317,23 +341,35 @@
       "downstream": 19
     },
     {
-      "id": "recursive_finite_source",
-      "downstream": 17
+      "id": "recursive_angle_geometry",
+      "downstream": 19
     },
     {
       "id": "geo_nearby_metric_completion",
+      "downstream": 17
+    },
+    {
+      "id": "recursive_local_leaf_estimates",
       "downstream": 15
     },
     {
-      "id": "elementary_rate_transfer",
-      "downstream": 14
+      "id": "recursive_strict_normal_form",
+      "downstream": 15
     },
     {
       "id": "finite_cofactor_nodal_bounds",
       "downstream": 14
     },
     {
+      "id": "recursive_strict_angle_geometry",
+      "downstream": 14
+    },
+    {
       "id": "analytic_cofactor_angular_gap",
+      "downstream": 13
+    },
+    {
+      "id": "elementary_rate_transfer",
       "downstream": 13
     },
     {
@@ -342,6 +378,10 @@
     },
     {
       "id": "geo_morse_original_exterior",
+      "downstream": 13
+    },
+    {
+      "id": "recursive_completed_source_gap",
       "downstream": 13
     },
     {
@@ -385,7 +425,7 @@
       "downstream": 11
     },
     {
-      "id": "recursive_angle_geometry",
+      "id": "recursive_quarter_leaf_expansion",
       "downstream": 11
     },
     {
@@ -405,7 +445,11 @@
       "downstream": 10
     },
     {
-      "id": "recursive_strict_source_gap",
+      "id": "recursive_strict_boundary_profiles",
+      "downstream": 10
+    },
+    {
+      "id": "recursive_strict_core_packet",
       "downstream": 10
     },
     {
@@ -433,7 +477,7 @@
       "downstream": 9
     },
     {
-      "id": "recursive_local_packet_filling",
+      "id": "recursive_strict_component_bounds",
       "downstream": 9
     },
     {
@@ -450,6 +494,10 @@
     },
     {
       "id": "geo_morse_primitive_filling",
+      "downstream": 8
+    },
+    {
+      "id": "recursive_strict_source_gap",
       "downstream": 8
     },
     {
@@ -473,11 +521,19 @@
       "downstream": 7
     },
     {
+      "id": "recursive_strict_filling_transfer",
+      "downstream": 7
+    },
+    {
       "id": "geo_complete_marked_metric_identification",
       "downstream": 6
     },
     {
       "id": "geo_source_constant_field",
+      "downstream": 6
+    },
+    {
+      "id": "recursive_local_packet_filling",
       "downstream": 6
     },
     {
@@ -489,7 +545,7 @@
       "downstream": 5
     },
     {
-      "id": "recursive_marked_metric",
+      "id": "recursive_strict_marked_metric",
       "downstream": 5
     },
     {
@@ -509,10 +565,6 @@
       "downstream": 4
     },
     {
-      "id": "recursive_strict_volume",
-      "downstream": 4
-    },
-    {
       "id": "analytic_shifted_filtered_all_orders",
       "downstream": 3
     },
@@ -521,8 +573,16 @@
       "downstream": 3
     },
     {
+      "id": "planar_protected_sum_certificate",
+      "downstream": 3
+    },
+    {
       "id": "planar_triangular_disk_identity",
       "downstream": 3
+    },
+    {
+      "id": "analytic_convex_flattening",
+      "downstream": 2
     },
     {
       "id": "analytic_filtered_coefficient_regrading",
@@ -541,15 +601,15 @@
       "downstream": 2
     },
     {
-      "id": "planar_protected_sum_certificate",
-      "downstream": 2
-    },
-    {
       "id": "planar_seed17_certificate",
       "downstream": 2
     },
     {
       "id": "planar_terminal_fan_balance",
+      "downstream": 2
+    },
+    {
+      "id": "recursive_strict_volume",
       "downstream": 2
     },
     {
@@ -582,6 +642,10 @@
     },
     {
       "id": "planar_weak_balance_gap",
+      "downstream": 1
+    },
+    {
+      "id": "recursive_marked_metric",
       "downstream": 1
     },
     {
@@ -633,6 +697,10 @@
       "downstream": 0
     },
     {
+      "id": "recursive_completed_volume",
+      "downstream": 0
+    },
+    {
       "id": "tree_directed_volume",
       "downstream": 0
     },
@@ -662,19 +730,15 @@
     "notes/actual_positive_face_exponential_fold_interpolation.md": "e27e1144815025faa4ddd8e1c91c0c575ad2c6754e6a2671acdf43f95b16d1d1",
     "notes/actual_cross_cofactor_interpolant_rigidity.md": "85c5d2a0da2c504c0c8965b374f87b7b9405c2c7892ffb5204ff4c0307d10f5d",
     "papers/local-coefficients/main.tex": "86da78c17f6535c58d7d17d919f10914f8eb9452143a66c2fb2e2fa7b7b5965c",
-    "manuscript/sections/P-weak-balance.tex": "2fa93c0a481941f1075feef21a1fc05915457abc2c3d1a125b9508ab130130aa",
+    "papers/planar-certificates/main.tex": "375034a5db9443aa762a504b49f79f344b5f85cad4d70e228242cfa163afad39",
     "manuscript/sections/L-balanced-terminal-fans.tex": "4c5b03317602d547a44028908a99e8cd449922f391c27ba80e8dafd5156f4775",
-    "manuscript/sections/Q-protected-triangular-sums.tex": "7b9336b24b0088760aa73db35e584fd089c62ee9f699a6a11e7c5d02cdced195",
     "experiments/actual_sector_cover_certificate.json": "54f6087e25e9e6c48e123ea61497cab2a2bb2eb3e4d92a2eb3f9b6e76452eadb",
     "experiments/actual_shared_radius_anchor_obstruction_certificate.json": "8e9ca9b9baf9383449a54840a4204ac4008b20cd9a56684ffc9a0a45c65bba27",
-    "repro/check_protected_sums.py": "c66effa8c2f118482c49a651c94ca8ac2a9e84c49cd6a5de13e336c305ce7243",
-    "manuscript/sections/R-triangular-boundary-insertion.tex": "46ac386f628b6f04776c309346cbb95c5cbe53d6aaec88e524ea39cddc1fd84b",
+    "repro/check_protected_sums.py": "7d27a51862c83f55e0115798eef896f7eb8770c97c52864395e07a4abef8bc0e",
+    "papers/triangular-insertion/main.tex": "8cff26e709bc8037a75fa3efd6316a08ee9475d965eb23afbea76be2409fa352",
     "repro/check_triangular_boundary_certificate.py": "ab4466ba92075ea7f60319654a308a87a7cbd20d73fbf079949294a39dd00f04",
     "repro/triangular-boundary-insertion/summary.json": "dbad8be4f87d6b75a490829ea7a669b9179eaac80bb1229a306eaf239f822666",
     "notes/actual_conway_all_strict_tree_long_twist_volume.md": "eeadb625dc68bf563edc14610c4cb25dc2aa9b7ba536f606cd81d78fb1751773",
-    "manuscript/sections/05-alias.tex": "66c05f5dcbbd66f22663c4628b96c74a49f70f9e718640679a7d7bae242991a0",
-    "manuscript/sections/08-filling.tex": "263ba4a38c79c487cbe13136fe99414c6026159285a946968eeb6d4156ed7254",
-    "manuscript/sections/D-marked-cell-calibration.tex": "e6c3270bd8c8e0e61d79cf0c036943e39d476197d4700a9a9ce19440c3959286",
     "notes/actual_conway_net_twist_volume.md": "cd76d2d1f9b0ce2961308343d80098ec3336dd367248fbe36ee811e959fbcfa2",
     "notes/actual_conway_arbitrary_closure_volume.md": "4962c4945f286df0beff9624a433e98371a634fd9058f00d9260bcc7e1d8c954",
     "manuscript/sections/E-quantitative-finite-sums.tex": "a8061a355a1426ca475df29455c8a06c16ead89322f49fe36f4e385ed71bea78",
@@ -690,9 +754,11 @@
     "manuscript/sections/02-finite-source.tex": "232936be01555db658f818b3ed0539c31fe4f2deb3386cc0ed8df5497d8b65e2",
     "manuscript/sections/03-entropy.tex": "ae82af904a99907206b8756b2fa8c6a0448ff1af5af6dbae8a2cba6799599226",
     "manuscript/sections/04-geometry.tex": "56ff38ece93d261dbb8d431f4210b6174a8543de1741e6aa940a349604d29744",
+    "manuscript/sections/D-marked-cell-calibration.tex": "e6c3270bd8c8e0e61d79cf0c036943e39d476197d4700a9a9ce19440c3959286",
     "manuscript/sections/06-packet.tex": "8a5b6bd7b108cc357a9e602db49bfa3480f0c2d4b47decfacaed04c82e8a12d8",
     "manuscript/sections/B1-high-index-packet.tex": "d43d1ccf6ab9b25c466392ceb28476f7ed9cf507214ce5fc6caba7b78d7f1cc1",
     "manuscript/sections/B-analytic-estimates.tex": "0ae218413d4fac051613ec4da38fdcc7babe484c40c010c6dd83f79acc0428d5",
+    "manuscript/sections/08-filling.tex": "263ba4a38c79c487cbe13136fe99414c6026159285a946968eeb6d4156ed7254",
     "manuscript/sections/07-marked-geometry.tex": "a6527b76538e347f840a8add90ff02c98c7cf9957e039bb78c86f257e18df11b",
     "formal/VolumeLogic/VolumeTransfer.lean": "862e17ea64b46022fc830610c491c3f25dc0f09e6e6f7650f4b73e81f34401dc",
     "formal-real/RealTransfer.lean": "fd41a1469999ec0e455e64a08c5d81a947a38797054c8f850a3a2371023c545a",
@@ -703,6 +769,21 @@
     "manuscript/sections/H-filtered-characteristic.tex": "8e8eda6cf1412a08581be941ac3cd63f792786636dc32edbf3ed4b6ffecc61ec",
     "formal/VolumeLogic/FormalRegrading.lean": "9fe0b604cfe2857cc26569442ee9c608c214307adb5fdfd666e154fcbadc7a2c",
     "formal-real/WeightedGraph.lean": "3e3d77275515fcc861bc861ac8b5e4988e5c5d2775636931ee561db7ce56fecf",
-    "papers/dependencies.json": "0150841584296b63eb754ba37505bdd7b39774b8e82642b2e9947c85b1842844"
+    "manuscript/sections/05-alias.tex": "66c05f5dcbbd66f22663c4628b96c74a49f70f9e718640679a7d7bae242991a0",
+    "notes/actual_conway_single_leaf_source_composition.md": "168e8248607eaac62ce27d88e7bcbd56d5245eccfff5654c116cdce9018c3bc2",
+    "notes/actual_conway_reduced_hub_source_normal_form.md": "69eecde122111c541bb323ed96ecd0527632b2a805ca85c43d83807cf3a18067",
+    "notes/actual_conway_rigid_spine_and_flagged_tree_geometry.md": "e4b93ca45f0bd4a4a99b4ecddc37eff257adc41b2f82b488d11a0b98cdfdfb24",
+    "notes/actual_conway_unflagged_probe_geometry.md": "d866a871b4b2d2390b71285f4467ae78416501835d38f57115ad28bd7c233d64",
+    "notes/actual_conway_unflagged_core_probe_bound.md": "85454e2124d1e9d2b3108c072938576d98f3137020161e6da38eb781a434ae31",
+    "notes/actual_conway_mixed_core_spectral_propagation.md": "10e341a3957971d4b587accaec42c0e26489a6961c1385f98cd89657da5caed1",
+    "notes/actual_conway_decorated_character_spectral_closure.md": "db9dc5ebfa9c8f21bf1ea662ed8c8dbcee8ddf3e2041b1ebcf94cc21a4893851",
+    "notes/actual_conway_general_core_packet_and_gap.md": "11968f7f6856179322d49dcf8fe4bcf7200ae524231dced812661e5b1459c16b",
+    "notes/actual_conway_general_mask_marked_filling.md": "f3d0b91665c0bf62d26f71e4e0fa3368fe8714cdccab7d30b4e04272c61c209d",
+    "notes/general_original_source_long_filling_transfer.md": "b51fa1d6280e2c1027641d27561722ba0e9753c0a26f49c7d4c8e40ac8b47997",
+    "manuscript/sections/B2-global-core-envelope.tex": "4717743e7577bd3729673e27f718242f344d18a0fcb6d70ce9e5dab11eff5cc3",
+    "notes/actual_conway_general_strict_mask_geometry.md": "980413284c4d9bd6d383c97b07cba017b3f2d23a0e642148e30e53371e6f0f31",
+    "formal-real/Flattening.lean": "a15977f5e3234d9f56217aee2e875c3a6ec8542b4140bfdf74f78d0b35e0f9cc",
+    "notes/actual_conway_quarter_index_color_packet.md": "f9416e1fa09c040089c131d2dd4c5a8018f4fe7082e4a033d6bf4d9f50501aa4",
+    "papers/dependencies.json": "0a1b96aeaa8d537109ce77ecd4b5995955ee2366e2c952598efd5dc14717f6a8"
   }
 }

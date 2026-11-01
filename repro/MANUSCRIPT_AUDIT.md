@@ -14,6 +14,12 @@ name a later one. The directed-tree and all-orders reviews began at
 `cfc8a9295dca45562634f6021415d0d80dc5f745`. The current TeX includes the corrections. Source
 hashes in the records distinguish the versions actually read.
 
+The [planar and insertion paper review](PLANAR_INSERTION_AUDIT.md)
+records the later extraction of Appendices P--R, the corrected octahedral
+boundary weights, and the precise scope of the written, interval and
+Lean checks for those drafts. The reference manuscript stays frozen;
+its appendix locators remain useful for the earlier review below.
+
 ## The five requirements of a volume proof
 
 Fix the diagram, endpoint order, primitive peripheral curves, retained
@@ -406,10 +412,14 @@ positive support imply that the zero-energy functions are constant.
 Fixing one vertex then gives strict positivity for every nonzero
 variation. This is the linear-algebra implication used after the
 written geometric Hessian calculation, not a formal proof of that
-calculation or of circle-pattern existence. The package contains nine
-definitions and forty-one theorems, with all fifty declarations
+calculation or of circle-pattern existence. The real-calculus module additionally derives the quadratic cost from
+actual second derivatives and the local entropy gain from a supporting
+tangent. Its two-branch estimate constructs the balance defect before
+applying the strict sector comparison. The geometric formulas supplying
+those derivatives and entropies remain written inputs. The package
+contains ten definitions and fifty theorems, with all sixty declarations
 included in its axiom audit. Its replay checks nine pinned Git
-dependencies and ten negative controls. These counts are separate
+dependencies and twelve negative controls. These counts are separate
 from the 241 declarations in the Std-only project.
 
 The dependency map now also records the recursive construction, the
@@ -418,6 +428,24 @@ Its checks reject substitution of a different family's source or period
 even when the two statements have the same level scope. This is a
 consistency check on the map, separate from the Lean implications and
 from the mathematical proofs of its premises.
+
+## The completed-root theorem and the strict-tree extension
+
+The reference manuscript's first theorem retains its completed-root
+grammar. The research notes extend the source argument to general strict
+ordered trees by adding an exact junction normal form, absolute boundary
+profiles, positive closing comparisons and spectral loss propagation.
+They also need the quarter-index leaf expansion and the geometry with
+individual face masks. These are additional written arguments, not
+consequences of the narrower manuscript theorem alone.
+
+The dependency graph now records those inputs separately and distinguishes
+the completed-root source bound, filling theorem and metric from their
+strict-tree extensions. The geometric longitude argument in Appendix J
+uses the marked strict-tree geometry; it does not require the full quantum
+volume limit or its global alias estimate. The broader source notes still
+need their own companion paper and detailed review. Acyclicity and valid
+source locations do not establish those mathematical arguments.
 
 ## Where this research phase ends
 

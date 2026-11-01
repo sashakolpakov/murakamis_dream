@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Replay the finite algebra and rational constants used by the companion papers.
 
-Requires SymPy. These checks do not verify analytic uniformity, geometric
-existence, or a volume conjecture. Each result states its own finite scope.
+Requires SymPy, python-flint and NumPy. These checks do not verify analytic
+uniformity, geometric existence, or a volume conjecture. Each result states
+its own finite scope.
 The scripts run in isolated Python processes with assertions enabled.
 """
 from __future__ import annotations
@@ -22,7 +23,18 @@ CHECKS = {
     "oscillatory-fillings": "papers/oscillatory-fillings/check.py",
     "marked-fillings": "papers/marked-fillings/check.py",
     "cyclic-source-constants": "repro/check_cyclic_source_constants.py",
+    "planar-certificates": "papers/planar-certificates/check.py",
+    "triangular-insertion": "repro/check_triangular_boundary_certificate.py",
 }
+DIRECTORY_CHECKS = {"planar-certificates", "triangular-insertion"}
+CERTIFICATE_INPUTS = (
+    "repro/check_protected_sums.py",
+    "experiments/audit_actual_sector_cover.py",
+    "experiments/audit_actual_shared_radius_anchor_obstruction.py",
+    "experiments/audit_actual_original_marked_face_coefficient.py",
+    "experiments/actual_sector_cover_certificate.json",
+    "experiments/actual_shared_radius_anchor_obstruction_certificate.json",
+)
 
 
 def digest(path: Path) -> str:
@@ -36,14 +48,16 @@ def replay(output: Path) -> None:
     sources = [ROOT / script for script in CHECKS.values()]
     sources += sorted(p for p in (ROOT / "papers").rglob("*")
                       if p.suffix in {".tex", ".bib"} and "build" not in p.parts)
+    sources += [ROOT / path for path in CERTIFICATE_INPUTS]
     sources.append(Path(__file__).resolve())
     before = {str(p.relative_to(ROOT)): digest(p) for p in sources}
     records = []
     for name, script in CHECKS.items():
-        result_path = output / (name + ".json")
+        destination = output / name if name in DIRECTORY_CHECKS else output / (name + ".json")
+        result_path = destination / "summary.json" if name in DIRECTORY_CHECKS else destination
         result_path.unlink(missing_ok=True)
         command = [sys.executable, "-I", str(ROOT / script),
-                   "--output", str(result_path)]
+                   "--output", str(destination)]
         result = subprocess.run(command, cwd=ROOT, text=True,
                                 stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         (output / (name + ".log")).write_text(result.stdout)
@@ -54,7 +68,7 @@ def replay(output: Path) -> None:
             raise SystemExit(f"{name} returned without its result record.")
         json.loads(result_path.read_text())
         records.append({"name": name, "script": script,
-                        "result": result_path.name,
+                        "result": str(result_path.relative_to(output)),
                         "sha256": digest(result_path)})
         print(f"Completed {name}.", flush=True)
     if any(digest(ROOT / path) != value for path, value in before.items()):
@@ -65,7 +79,7 @@ def replay(output: Path) -> None:
         "checks": records,
         "source_sha256": before,
     }, indent=2, sort_keys=True) + "\n")
-    print(f"Five finite checks completed. Report: {summary}")
+    print(f"{len(CHECKS)} finite checks completed. Report: {summary}")
 
 
 def main() -> None:

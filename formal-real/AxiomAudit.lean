@@ -1,5 +1,6 @@
 import RealTransfer
 import WeightedGraph
+import Flattening
 
 #print axioms VolumeLogic.RealModel.complexMagnitude
 #print axioms VolumeLogic.RealModel.constant_div_nat_rate
@@ -52,3 +53,14 @@ import WeightedGraph
 #print axioms VolumeLogic.WeightedGraph.laplacian_form
 #print axioms VolumeLogic.WeightedGraph.laplacian_quadratic
 #print axioms VolumeLogic.WeightedGraph.grounded_laplacian_pos
+
+#print axioms VolumeLogic.Flattening.convex_on_Icc_of_second_nonneg
+#print axioms VolumeLogic.Flattening.stationary_convex_lower
+#print axioms VolumeLogic.Flattening.stationary_quadratic_cost
+#print axioms VolumeLogic.Flattening.weightPath
+#print axioms VolumeLogic.Flattening.weight_path_cost
+#print axioms VolumeLogic.Flattening.convex_support_at_one
+#print axioms VolumeLogic.Flattening.convex_flattening_gain
+#print axioms VolumeLogic.Flattening.side_loss_from_convexity
+#print axioms VolumeLogic.Flattening.flattening_sector_gap
+#print axioms VolumeLogic.Flattening.weak_balance_sector_gap

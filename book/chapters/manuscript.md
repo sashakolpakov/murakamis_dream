@@ -2,16 +2,19 @@
 
 The current PDF is a 374-page reference account. Its results are being
 rewritten as [papers organized by subject](../../papers/README.md), each at
-most 30 pages including references. Six drafts now separate finite
-spectral evaluation, uniform local coefficient bounds, holomorphic
-source asymptotics, the complete oscillatory filling sum, classical
-geometric filling, and the long three-braid application. The source
-paper proves the local expansion and shared spectral gap required by
-the filling-sum theorem; the geometric paper constructs the original
-smooth filling and calibrates its volume. The application checks these
-numbered inputs explicitly. The other retained families still need
-separate accounts. The reference PDF remains frozen while this division
-is prepared.
+most 30 pages including references. Eight drafts separate finite spectral
+evaluation, uniform local bounds, central source asymptotics, oscillatory
+fillings, geometric filling, shared-face criteria, ordinary triangular
+insertion, and the long three-braid application. Each application names
+the results it imports and checks their hypotheses. The terminal
+decoration, recursive Conway, quantitative circle-tree and longitude
+results still need separate accounts. The reference PDF remains frozen.
+
+The broader strict-tree extension in the research notes requires arguments
+beyond the manuscript's completed-root grammar. The dependency graph
+records its normal form, boundary profiles, spectral estimates and marked
+geometry separately. Those notes are not silently substituted for the
+narrower theorem or described as fully reviewed companion papers.
 
 [Read the manuscript PDF](../../manuscript/build/main.pdf). The [editable sources and build instructions](../../manuscript/README.md) are available alongside it.
 
