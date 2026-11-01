@@ -32,8 +32,26 @@ python3 repro/check_concrete_limits.py --output repro/results/concrete-limits
 
 The exact state formula, its leading asymptotic, the whole-remainder
 estimate and the geometric volume equality are explicit inputs. The
+package also assembles distinct nonzero limits on finitely many residue
+classes, including even and odd levels, when their action limits have
+the same real part. Every rate uses the original level as denominator.
+The
 optional command is separate from the Std-only check above; it requires
 Mathlib and its substantially larger compiled library.
+
+The separate [research papers](../papers/README.md) include bounded
+checks of their finite algebra:
+
+~~~sh
+python3 papers/local-coefficients/check.py --output repro/results/local-coefficients.json
+python3 papers/oscillatory-fillings/check.py --output repro/results/oscillatory-fillings.json
+~~~
+
+These require SymPy. The first compares polynomial resolvents, path
+partitions, cofactors and interpolation at specified small levels.
+The second checks the algebraic normalizations in the filling-sum proof.
+Neither command establishes a uniform large-level estimate or supplies
+the analytic hypotheses for a knot.
 
 The statement-level dependency map for the retained volume families has a separate
 standard-library command:

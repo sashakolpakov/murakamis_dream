@@ -378,6 +378,10 @@
       "statement": "The tensor Hermite functional equals the whole-domain Fourier integral with q^(d^2 sum n/4)(-i)^R, nonzero integer charges, their parity character and sine factors. Absolute convergence is only at each fixed N; no uniform tail estimate follows here.",
       "sources": [
         {
+          "path": "papers/oscillatory-fillings/main.tex",
+          "anchor": "\\label{of:finite-equality}"
+        },
+        {
           "path": "notes/actual_twist_circle_fourier_kernel.md",
           "anchor": "## 2. Exact Fourier-Hermite interpolation"
         },
@@ -653,6 +657,28 @@
       ]
     },
     {
+      "id": "analytic_signed_interval_transfer",
+      "title": "Signed interval recurrence and normalized triangle action",
+      "group": "local_asymptotics",
+      "statement": "For the explicit local banded source, the signed interval continuant has a uniform upper rate given by the integral of its limiting spectral radius, including coincident roots and the endpoint t=0. The complete triangle action equals the entropy maximum with its absolute constant fixed. This is an upper estimate, not a nonzero asymptotic.",
+      "sources": [
+        {
+          "path": "papers/local-coefficients/main.tex",
+          "anchor": "\\label{lc:slow-transfer}"
+        },
+        {
+          "path": "papers/local-coefficients/main.tex",
+          "anchor": "\\label{lc:action-identity}"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "finite_local_fourier",
+          "reason": "Identifies the exact physical banded operator to which the written recurrence argument is applied."
+        }
+      ]
+    },
+    {
       "id": "analytic_cross_spectral_gap",
       "title": "Separated real-spectral cofactor gap",
       "group": "local_asymptotics",
@@ -669,12 +695,16 @@
         {
           "path": "notes/actual_global_cross_spectral_gap.md",
           "anchor": "## 3. Strict local spectral decrease, with the monomial exception"
+        },
+        {
+          "path": "papers/local-coefficients/main.tex",
+          "anchor": "\\label{lc:cofactor-max}"
         }
       ],
       "depends_on": [
         {
-          "id": "finite_local_fourier",
-          "reason": "The local bound is derived from the actual cofactor recurrence and its spectral indexing, for the stated nonnegative face parameters; sewing and the nonmonomial graph condition are separate inputs to H2."
+          "id": "analytic_signed_interval_transfer",
+          "reason": "Supplies the uniform signed recurrence bound and normalized triangle action; the separated-gap argument additionally compares its spectral derivative and endpoint alternative."
         }
       ]
     },
@@ -713,11 +743,53 @@
       ]
     },
     {
+      "id": "analytic_conditional_filling",
+      "title": "Whole filling sum from a local expansion and a shared global gap",
+      "group": "central_period",
+      "statement": "For separately degree-at-most N-1 polynomials composed with -2 cos(2 pi delta), assume a nonzero holomorphic local expansion with negative diagonal complete Hessian and a strict shared gap on every separated real region and a thin complex strip. Independently long fixed signed twists give a nonzero full Fourier-Hermite asymptotic. All integer charges and original endpoints are retained. The source hypotheses and an action-volume equality are not conclusions of this theorem.",
+      "sources": [
+        {
+          "path": "papers/oscillatory-fillings/main.tex",
+          "anchor": "\\label{of:main}"
+        },
+        {
+          "path": "papers/oscillatory-fillings/main.tex",
+          "anchor": "\\label{of:Hlocal}"
+        },
+        {
+          "path": "papers/oscillatory-fillings/main.tex",
+          "anchor": "\\label{of:Hgap}"
+        },
+        {
+          "path": "papers/oscillatory-fillings/main.tex",
+          "anchor": "\\label{of:far}"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "finite_fourier_period",
+          "reason": "Identifies the whole integer-charge integral with the exact finite Hermite functional, including its phase and normalization."
+        }
+      ]
+    },
+    {
       "id": "analytic_morse_local_charge",
       "title": "Nonzero first-charge saddle for fixed signed fillings",
       "group": "central_period",
       "statement": "For all independently sufficiently long fixed signed powers, the actual outer local cube deforms to the charge saddle with coefficient +1 and smaller side currents. Positive charge magnitudes have Im(delta_e)>0 for either sign of the power. Differentiating the critical value gives a strict unit-versus-higher-charge comparison without a bound on power ratios.",
       "sources": [
+        {
+          "path": "papers/oscillatory-fillings/main.tex",
+          "anchor": "\\label{of:critical}"
+        },
+        {
+          "path": "papers/oscillatory-fillings/main.tex",
+          "anchor": "\\label{of:charge-gap}"
+        },
+        {
+          "path": "papers/oscillatory-fillings/main.tex",
+          "anchor": "\\label{of:local-integral}"
+        },
         {
           "path": "manuscript/sections/O-morse-geometric-contribution.tex",
           "anchor": "\\label{mca:sec-6}"
@@ -752,6 +824,10 @@
       "group": "central_period",
       "statement": "Three integrations by parts retain the second-derivative endpoint current and give summable weighted charge tails. Paired vertical sides, real spectator intervals, separate outer and inner cubes, and H2 control all far and bounded nonlocal charges below the first packet. The powers are fixed before the level tends to infinity.",
       "sources": [
+        {
+          "path": "papers/oscillatory-fillings/main.tex",
+          "anchor": "\\label{of:far}"
+        },
         {
           "path": "manuscript/sections/O-morse-geometric-contribution.tex",
           "anchor": "\\label{mca:sec-7}"
@@ -795,6 +871,10 @@
       "statement": "For the original simple-sphere Morse source and each fixed sufficiently long signed filling tuple satisfying the original knot qualification, the entire central Fourier-Hermite period has the displayed nonzero first-charge asymptotic, exact chirp and parity cancellation, Gaussian power N^(R+1/2), finite action and exponentially smaller other charges. This theorem alone concerns the central contribution, not the full invariant.",
       "sources": [
         {
+          "path": "papers/oscillatory-fillings/main.tex",
+          "anchor": "\\label{of:source-result}"
+        },
+        {
           "path": "manuscript/sections/O-morse-geometric-contribution.tex",
           "anchor": "\\label{mca:eq-4}"
         },
@@ -823,6 +903,18 @@
         {
           "id": "finite_invariant_normalization",
           "reason": "Identifies the original raw/reduced/enhanced scalar; its retained modulus does not change the exponential rate."
+        },
+        {
+          "id": "analytic_conditional_filling",
+          "reason": "Supplies the complete filling-sum implication once the actual central polynomial satisfies its two analytic hypotheses."
+        },
+        {
+          "id": "analytic_morse_h1",
+          "reason": "Verifies the required local holomorphic expansion, exact level power, nonzero limiting coefficient and finite action for this source."
+        },
+        {
+          "id": "analytic_morse_h2",
+          "reason": "Verifies the required shared global spectral gap; it is not inferred from local factor bounds."
         }
       ]
     },
@@ -2213,30 +2305,34 @@
       "statement": "For the actual C/L/R partition of the full degree-(N-1) local numerator, all phases and real spectral values obey the uniform exponential envelopes A_C=Q(x,b,y)+Q(x,c,y), A_L=max(log c,Q(x,b,y)+log c/2), and its b/c-reflected right version. All unused rows, odd skipping and closing-cap terms remain; a one-sided sector overloaded onto a protected zero is identically zero. These are polynomial-modulus upper bounds, not coefficientwise domination.",
       "sources": [
         {
-          "path": "notes/actual_cross_cofactor_factorization.md",
-          "anchor": "## 1. Actual polynomial block and cleared lower cofactors"
+          "path": "papers/local-coefficients/main.tex",
+          "anchor": "\\label{lc:main}"
         },
         {
-          "path": "notes/actual_global_left_weighted_spectral_envelope.md",
-          "anchor": "## 1. The original finite sector and its continuum upper envelope"
+          "path": "papers/local-coefficients/main.tex",
+          "anchor": "\\label{lc:central-comparison}"
         },
         {
-          "path": "notes/actual_global_left_weighted_spectral_envelope.md",
-          "anchor": "## 4. All face phases and the final spectral cap"
+          "path": "papers/local-coefficients/main.tex",
+          "anchor": "\\label{lc:left-maximum}"
         },
         {
-          "path": "notes/actual_global_cross_spectral_gap.md",
-          "anchor": "## 1. Original cofactors and a uniform slow-transfer upper bound"
+          "path": "papers/local-coefficients/main.tex",
+          "anchor": "\\label{lc:tail-positive}"
+        },
+        {
+          "path": "papers/local-coefficients/main.tex",
+          "anchor": "\\label{lc:last-cap}"
         }
       ],
       "depends_on": [
         {
           "id": "finite_local_fourier",
-          "reason": "The local face polynomial is the homogeneous representation of the actual Casimir resolvent, with exact degree and normalization."
+          "reason": "Supplies the exact face-polynomial adapter and full matrix resolvent, including repeated-root normals."
         },
         {
-          "id": "analytic_cross_spectral_gap",
-          "reason": "Supplies the uniform interval-transfer bound used for all central and one-sided intervals; the one-sided proof retains and estimates its unused rows separately."
+          "id": "analytic_signed_interval_transfer",
+          "reason": "Bounds the signed interval tails and fixes their triangle entropy normalization before optimizing the two actual unused products."
         }
       ]
     },
@@ -2487,6 +2583,14 @@
         {
           "path": "formal-real/RealTransfer.lean",
           "anchor": "theorem complex_packet_volume_transfer"
+        },
+        {
+          "path": "formal-real/RealTransfer.lean",
+          "anchor": "theorem complex_residue_packet_volume_transfer"
+        },
+        {
+          "path": "formal-real/RealTransfer.lean",
+          "anchor": "theorem complex_parity_packet_volume_transfer"
         }
       ],
       "depends_on": [],

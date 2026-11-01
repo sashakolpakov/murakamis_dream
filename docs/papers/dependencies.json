@@ -24,12 +24,12 @@
     },
     "local_asymptotics": {
       "title": "Uniform coefficient asymptotics",
-      "count": 8,
+      "count": 9,
       "open": false
     },
     "central_period": {
       "title": "The geometric filling contribution",
-      "count": 3,
+      "count": 4,
       "open": false
     },
     "action_volume": {
@@ -450,6 +450,11 @@
       "statement": "The tensor Hermite functional equals the whole-domain Fourier integral with q^(d^2 sum n/4)(-i)^R, nonzero integer charges, their parity character and sine factors. Absolute convergence is only at each fixed N; no uniform tail estimate follows here.",
       "sources": [
         {
+          "path": "papers/oscillatory-fillings/main.tex",
+          "anchor": "\\label{of:finite-equality}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/oscillatory-fillings/main.tex#L296"
+        },
+        {
           "path": "notes/actual_twist_circle_fourier_kernel.md",
           "anchor": "## 2. Exact Fourier-Hermite interpolation",
           "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_twist_circle_fourier_kernel.md#L48"
@@ -758,6 +763,30 @@
       ]
     },
     {
+      "id": "analytic_signed_interval_transfer",
+      "title": "Signed interval recurrence and normalized triangle action",
+      "group": "local_asymptotics",
+      "statement": "For the explicit local banded source, the signed interval continuant has a uniform upper rate given by the integral of its limiting spectral radius, including coincident roots and the endpoint t=0. The complete triangle action equals the entropy maximum with its absolute constant fixed. This is an upper estimate, not a nonzero asymptotic.",
+      "sources": [
+        {
+          "path": "papers/local-coefficients/main.tex",
+          "anchor": "\\label{lc:slow-transfer}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/local-coefficients/main.tex#L421"
+        },
+        {
+          "path": "papers/local-coefficients/main.tex",
+          "anchor": "\\label{lc:action-identity}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/local-coefficients/main.tex#L550"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "finite_local_fourier",
+          "reason": "Identifies the exact physical banded operator to which the written recurrence argument is applied."
+        }
+      ]
+    },
+    {
       "id": "analytic_cross_spectral_gap",
       "title": "Separated real-spectral cofactor gap",
       "group": "local_asymptotics",
@@ -777,12 +806,17 @@
           "path": "notes/actual_global_cross_spectral_gap.md",
           "anchor": "## 3. Strict local spectral decrease, with the monomial exception",
           "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_global_cross_spectral_gap.md#L215"
+        },
+        {
+          "path": "papers/local-coefficients/main.tex",
+          "anchor": "\\label{lc:cofactor-max}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/local-coefficients/main.tex#L641"
         }
       ],
       "depends_on": [
         {
-          "id": "finite_local_fourier",
-          "reason": "The local bound is derived from the actual cofactor recurrence and its spectral indexing, for the stated nonnegative face parameters; sewing and the nonmonomial graph condition are separate inputs to H2."
+          "id": "analytic_signed_interval_transfer",
+          "reason": "Supplies the uniform signed recurrence bound and normalized triangle action; the separated-gap argument additionally compares its spectral derivative and endpoint alternative."
         }
       ]
     },
@@ -824,11 +858,60 @@
       ]
     },
     {
+      "id": "analytic_conditional_filling",
+      "title": "Whole filling sum from a local expansion and a shared global gap",
+      "group": "central_period",
+      "statement": "For separately degree-at-most N-1 polynomials composed with -2 cos(2 pi delta), assume a nonzero holomorphic local expansion with negative diagonal complete Hessian and a strict shared gap on every separated real region and a thin complex strip. Independently long fixed signed twists give a nonzero full Fourier-Hermite asymptotic. All integer charges and original endpoints are retained. The source hypotheses and an action-volume equality are not conclusions of this theorem.",
+      "sources": [
+        {
+          "path": "papers/oscillatory-fillings/main.tex",
+          "anchor": "\\label{of:main}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/oscillatory-fillings/main.tex#L151"
+        },
+        {
+          "path": "papers/oscillatory-fillings/main.tex",
+          "anchor": "\\label{of:Hlocal}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/oscillatory-fillings/main.tex#L86"
+        },
+        {
+          "path": "papers/oscillatory-fillings/main.tex",
+          "anchor": "\\label{of:Hgap}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/oscillatory-fillings/main.tex#L107"
+        },
+        {
+          "path": "papers/oscillatory-fillings/main.tex",
+          "anchor": "\\label{of:far}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/oscillatory-fillings/main.tex#L657"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "finite_fourier_period",
+          "reason": "Identifies the whole integer-charge integral with the exact finite Hermite functional, including its phase and normalization."
+        }
+      ]
+    },
+    {
       "id": "analytic_morse_local_charge",
       "title": "Nonzero first-charge saddle for fixed signed fillings",
       "group": "central_period",
       "statement": "For all independently sufficiently long fixed signed powers, the actual outer local cube deforms to the charge saddle with coefficient +1 and smaller side currents. Positive charge magnitudes have Im(delta_e)>0 for either sign of the power. Differentiating the critical value gives a strict unit-versus-higher-charge comparison without a bound on power ratios.",
       "sources": [
+        {
+          "path": "papers/oscillatory-fillings/main.tex",
+          "anchor": "\\label{of:critical}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/oscillatory-fillings/main.tex#L393"
+        },
+        {
+          "path": "papers/oscillatory-fillings/main.tex",
+          "anchor": "\\label{of:charge-gap}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/oscillatory-fillings/main.tex#L438"
+        },
+        {
+          "path": "papers/oscillatory-fillings/main.tex",
+          "anchor": "\\label{of:local-integral}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/oscillatory-fillings/main.tex#L477"
+        },
         {
           "path": "manuscript/sections/O-morse-geometric-contribution.tex",
           "anchor": "\\label{mca:sec-6}",
@@ -867,6 +950,11 @@
       "group": "central_period",
       "statement": "Three integrations by parts retain the second-derivative endpoint current and give summable weighted charge tails. Paired vertical sides, real spectator intervals, separate outer and inner cubes, and H2 control all far and bounded nonlocal charges below the first packet. The powers are fixed before the level tends to infinity.",
       "sources": [
+        {
+          "path": "papers/oscillatory-fillings/main.tex",
+          "anchor": "\\label{of:far}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/oscillatory-fillings/main.tex#L657"
+        },
         {
           "path": "manuscript/sections/O-morse-geometric-contribution.tex",
           "anchor": "\\label{mca:sec-7}",
@@ -914,6 +1002,11 @@
       "statement": "For the original simple-sphere Morse source and each fixed sufficiently long signed filling tuple satisfying the original knot qualification, the entire central Fourier-Hermite period has the displayed nonzero first-charge asymptotic, exact chirp and parity cancellation, Gaussian power N^(R+1/2), finite action and exponentially smaller other charges. This theorem alone concerns the central contribution, not the full invariant.",
       "sources": [
         {
+          "path": "papers/oscillatory-fillings/main.tex",
+          "anchor": "\\label{of:source-result}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/oscillatory-fillings/main.tex#L784"
+        },
+        {
           "path": "manuscript/sections/O-morse-geometric-contribution.tex",
           "anchor": "\\label{mca:eq-4}",
           "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/O-morse-geometric-contribution.tex#L151"
@@ -946,6 +1039,18 @@
         {
           "id": "finite_invariant_normalization",
           "reason": "Identifies the original raw/reduced/enhanced scalar; its retained modulus does not change the exponential rate."
+        },
+        {
+          "id": "analytic_conditional_filling",
+          "reason": "Supplies the complete filling-sum implication once the actual central polynomial satisfies its two analytic hypotheses."
+        },
+        {
+          "id": "analytic_morse_h1",
+          "reason": "Verifies the required local holomorphic expansion, exact level power, nonzero limiting coefficient and finite action for this source."
+        },
+        {
+          "id": "analytic_morse_h2",
+          "reason": "Verifies the required shared global spectral gap; it is not inferred from local factor bounds."
         }
       ]
     },
@@ -2255,32 +2360,32 @@
         {
           "path": "papers/three-braids/main.tex",
           "anchor": "\\label{source:sec-4}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/three-braids/main.tex#L489"
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/three-braids/main.tex#L486"
         },
         {
           "path": "papers/three-braids/main.tex",
           "anchor": "\\label{source:sec-5}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/three-braids/main.tex#L536"
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/three-braids/main.tex#L533"
         },
         {
           "path": "papers/three-braids/main.tex",
           "anchor": "\\label{source:sec-6}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/three-braids/main.tex#L624"
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/three-braids/main.tex#L621"
         },
         {
           "path": "papers/three-braids/main.tex",
           "anchor": "\\label{source:eq-A31}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/three-braids/main.tex#L617"
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/three-braids/main.tex#L614"
         },
         {
           "path": "papers/three-braids/main.tex",
           "anchor": "\\label{source:eq-A33}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/three-braids/main.tex#L647"
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/three-braids/main.tex#L644"
         },
         {
           "path": "papers/three-braids/main.tex",
           "anchor": "\\label{app:constants}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/three-braids/main.tex#L813"
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/three-braids/main.tex#L814"
         },
         {
           "path": "repro/check_cyclic_source_constants.py",
@@ -2321,12 +2426,12 @@
         {
           "path": "papers/three-braids/main.tex",
           "anchor": "\\label{source:sec-7}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/three-braids/main.tex#L656"
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/three-braids/main.tex#L653"
         },
         {
           "path": "papers/three-braids/main.tex",
           "anchor": "\\label{source:sec-8}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/three-braids/main.tex#L679"
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/three-braids/main.tex#L676"
         }
       ],
       "depends_on": [
@@ -2494,34 +2599,39 @@
       "statement": "For the actual C/L/R partition of the full degree-(N-1) local numerator, all phases and real spectral values obey the uniform exponential envelopes A_C=Q(x,b,y)+Q(x,c,y), A_L=max(log c,Q(x,b,y)+log c/2), and its b/c-reflected right version. All unused rows, odd skipping and closing-cap terms remain; a one-sided sector overloaded onto a protected zero is identically zero. These are polynomial-modulus upper bounds, not coefficientwise domination.",
       "sources": [
         {
-          "path": "notes/actual_cross_cofactor_factorization.md",
-          "anchor": "## 1. Actual polynomial block and cleared lower cofactors",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_cross_cofactor_factorization.md#L14"
+          "path": "papers/local-coefficients/main.tex",
+          "anchor": "\\label{lc:main}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/local-coefficients/main.tex#L108"
         },
         {
-          "path": "notes/actual_global_left_weighted_spectral_envelope.md",
-          "anchor": "## 1. The original finite sector and its continuum upper envelope",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_global_left_weighted_spectral_envelope.md#L5"
+          "path": "papers/local-coefficients/main.tex",
+          "anchor": "\\label{lc:central-comparison}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/local-coefficients/main.tex#L372"
         },
         {
-          "path": "notes/actual_global_left_weighted_spectral_envelope.md",
-          "anchor": "## 4. All face phases and the final spectral cap",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_global_left_weighted_spectral_envelope.md#L179"
+          "path": "papers/local-coefficients/main.tex",
+          "anchor": "\\label{lc:left-maximum}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/local-coefficients/main.tex#L726"
         },
         {
-          "path": "notes/actual_global_cross_spectral_gap.md",
-          "anchor": "## 1. Original cofactors and a uniform slow-transfer upper bound",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_global_cross_spectral_gap.md#L9"
+          "path": "papers/local-coefficients/main.tex",
+          "anchor": "\\label{lc:tail-positive}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/local-coefficients/main.tex#L857"
+        },
+        {
+          "path": "papers/local-coefficients/main.tex",
+          "anchor": "\\label{lc:last-cap}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/local-coefficients/main.tex#L913"
         }
       ],
       "depends_on": [
         {
           "id": "finite_local_fourier",
-          "reason": "The local face polynomial is the homogeneous representation of the actual Casimir resolvent, with exact degree and normalization."
+          "reason": "Supplies the exact face-polynomial adapter and full matrix resolvent, including repeated-root normals."
         },
         {
-          "id": "analytic_cross_spectral_gap",
-          "reason": "Supplies the uniform interval-transfer bound used for all central and one-sided intervals; the one-sided proof retains and estimates its unused rows separately."
+          "id": "analytic_signed_interval_transfer",
+          "reason": "Bounds the signed interval tails and fixes their triangle entropy normalization before optimizing the two actual unused products."
         }
       ]
     },
@@ -2800,6 +2910,16 @@
           "path": "formal-real/RealTransfer.lean",
           "anchor": "theorem complex_packet_volume_transfer",
           "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/RealTransfer.lean#L254"
+        },
+        {
+          "path": "formal-real/RealTransfer.lean",
+          "anchor": "theorem complex_residue_packet_volume_transfer",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/RealTransfer.lean#L379"
+        },
+        {
+          "path": "formal-real/RealTransfer.lean",
+          "anchor": "theorem complex_parity_packet_volume_transfer",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/RealTransfer.lean#L403"
         }
       ],
       "depends_on": [],
@@ -3648,8 +3768,8 @@
   ],
   "analysis": {
     "scope": "Consistency and source-location checks on the declared mathematical dependency graph, not proof verification.",
-    "nodes": 88,
-    "edges": 207,
+    "nodes": 90,
+    "edges": 212,
     "component_edges": [
       [
         "action_volume",
@@ -3830,12 +3950,14 @@
       "elementary_rate_transfer",
       "finite_bernstein",
       "finite_local_fourier",
+      "analytic_signed_interval_transfer",
       "analytic_cross_spectral_gap",
       "finite_remainder",
       "finite_hermite",
       "finite_crossing",
       "finite_filling_norm",
       "finite_fourier_period",
+      "analytic_conditional_filling",
       "finite_pivotal_mark",
       "finite_global_source",
       "analytic_fold_interpolation",
@@ -3917,15 +4039,15 @@
     "shared_prerequisites": [
       {
         "id": "finite_local_fourier",
-        "downstream": 57
+        "downstream": 58
       },
       {
         "id": "finite_remainder",
-        "downstream": 54
+        "downstream": 55
       },
       {
         "id": "finite_hermite",
-        "downstream": 52
+        "downstream": 53
       },
       {
         "id": "finite_crossing",
@@ -3948,8 +4070,8 @@
         "downstream": 27
       },
       {
-        "id": "analytic_cross_spectral_gap",
-        "downstream": 19
+        "id": "analytic_signed_interval_transfer",
+        "downstream": 20
       },
       {
         "id": "geo_circle_ordered_cut",
@@ -3992,6 +4114,10 @@
         "downstream": 12
       },
       {
+        "id": "finite_fourier_period",
+        "downstream": 12
+      },
+      {
         "id": "geo_morse_deformed_pattern",
         "downstream": 12
       },
@@ -4000,11 +4126,11 @@
         "downstream": 12
       },
       {
-        "id": "analytic_morse_h1",
+        "id": "analytic_cross_spectral_gap",
         "downstream": 11
       },
       {
-        "id": "finite_fourier_period",
+        "id": "analytic_morse_h1",
         "downstream": 11
       },
       {
@@ -4046,6 +4172,10 @@
       {
         "id": "tree_positive_completion",
         "downstream": 10
+      },
+      {
+        "id": "analytic_conditional_filling",
+        "downstream": 9
       },
       {
         "id": "analytic_morse_charge_tails",
@@ -4274,6 +4404,7 @@
       "notes/research_arbitrary_main_edge_mark_transport.md": "7a7c9efdca1e9f7907dc5baf5dfe8ba12e2345ee5f2df2ed94240e95ee69112a",
       "notes/quantum_bridge_cap_source.md": "6f4d4847218954dc0eff16b2269ada870f36afbaaddd7e1708e8f9e05b5d896f",
       "notes/research_matched_sphere_morse_source.md": "8fdfde4a0d83220f3709048f00cd9373cfbc9d14b05943e9f16f58ab50777f4f",
+      "papers/oscillatory-fillings/main.tex": "275d76a8e12d963c6a4fc45bb828e0b7742761c94e4242272f15c64b56f3f203",
       "notes/actual_twist_circle_fourier_kernel.md": "1d93f6f13d271c56eee6e7ea8ddf5b9ea0eea92a2076ede7068df552bab94292",
       "notes/actual_filling_source_fourier_endpoint_gap.md": "1f03f69212b1fee6dceb6315b9582acb56aa647e4893ee3483113eff142ad982",
       "notes/general_localized_unit_charge_filling_period.md": "9f7e9edcbfd38ad823d52992e6bd682cfc9b21fe48e639a87280e8d0026dafc9",
@@ -4286,6 +4417,7 @@
       "notes/actual_positive_face_exponential_fold_interpolation.md": "e27e1144815025faa4ddd8e1c91c0c575ad2c6754e6a2671acdf43f95b16d1d1",
       "notes/actual_cross_cofactor_interpolant_rigidity.md": "85c5d2a0da2c504c0c8965b374f87b7b9405c2c7892ffb5204ff4c0307d10f5d",
       "notes/actual_cross_cofactor_global_angular_gap.md": "348c759eb32c13659248006daf0d6b44f0a5921f8107bc949bb511fc8ddfec4e",
+      "papers/local-coefficients/main.tex": "86da78c17f6535c58d7d17d919f10914f8eb9452143a66c2fb2e2fa7b7b5965c",
       "notes/actual_global_cross_spectral_gap.md": "841203d4a8343436c01a03228d1c7060a30c048e8e7c0cffbb471210dfac472d",
       "notes/actual_marked_deformed_circle_pattern.md": "3996e91ef00f4d0148307c103a5f8a81421b47cc9ece4f90fb908e677d4031e7",
       "notes/actual_deformed_circle_primitive_collar.md": "9463458a3a1da8efe8ff49080076d53ad256827eb43506e3f3e78ebfb3773463",
@@ -4309,13 +4441,11 @@
       "manuscript/sections/F-quantitative-octahedral-geometry.tex": "4348d40531fe83415223b88e26b1e3aedcb01daa9c6e17f030ae596000f8f268",
       "manuscript/sections/08a-quantitative-circle-trees.tex": "cfd7fa0dafd66bdc0e0e5151f415b2bc6b28c49a63ad6d1e0a244829b1db70f0",
       "manuscript/sections/K-directed-circle-messages.tex": "7eff3a7658079dff75802b8044d7213e040795eeff89c7795bb1476aee04c03a",
-      "papers/three-braids/main.tex": "5cf00eafea346a0db64b4a765d33cdedb87112c8391787d5db4911b6f977b8de",
+      "papers/three-braids/main.tex": "232ae8bd37ca6216d5ca67d2bdec3a14f12e00847dd33980dedac6851a106ffd",
       "repro/check_cyclic_source_constants.py": "302e25fa4a42784e67ecd502f004bfe98c9c08a1246c4ff64019bda46e5cee05",
       "manuscript/sections/I-geometric-characteristic.tex": "d6e7a10052866edca5369cce3aeb3a4b9758a7b9807386af2d08816da57313f2",
       "manuscript/sections/J-strict-tree-geometric-characteristic.tex": "a7abe912fbc16874f19818551fc737926375dcf0b4a3f8a8e9104e9e52a6642b",
       "notes/actual_global_diagonal_spectral_sector_gap.md": "fb8353e00968dedcf0e9563a6e1d6057a38162714e8aa1bbaf234d4042cac79f",
-      "notes/actual_cross_cofactor_factorization.md": "d0e8012d4627495c9fbdfb7ea0cfb1063d3fbfc24dc960ceec0bcdc0111b1727",
-      "notes/actual_global_left_weighted_spectral_envelope.md": "6b2a468c56e6a955443c5f4bb98f45ca0d6784834a1c56d2bb80d1e2d97010a3",
       "manuscript/sections/02-finite-source.tex": "232936be01555db658f818b3ed0539c31fe4f2deb3386cc0ed8df5497d8b65e2",
       "manuscript/sections/03-entropy.tex": "ae82af904a99907206b8756b2fa8c6a0448ff1af5af6dbae8a2cba6799599226",
       "manuscript/sections/04-geometry.tex": "56ff38ece93d261dbb8d431f4210b6174a8543de1741e6aa940a349604d29744",
@@ -4324,14 +4454,14 @@
       "manuscript/sections/B-analytic-estimates.tex": "0ae218413d4fac051613ec4da38fdcc7babe484c40c010c6dd83f79acc0428d5",
       "manuscript/sections/07-marked-geometry.tex": "a6527b76538e347f840a8add90ff02c98c7cf9957e039bb78c86f257e18df11b",
       "formal/VolumeLogic/VolumeTransfer.lean": "862e17ea64b46022fc830610c491c3f25dc0f09e6e6f7650f4b73e81f34401dc",
-      "formal-real/RealTransfer.lean": "77d2bea00ce198fb7730862ec05986c815d1665cd2f20fd99e4a2d55d51a87ef",
+      "formal-real/RealTransfer.lean": "fd41a1469999ec0e455e64a08c5d81a947a38797054c8f850a3a2371023c545a",
       "notes/general_marked_multicusp_gluing_rigidity.md": "f882d2c7d1f723590391d3cc03dcd9bba7a12d13c2e006c6dea570e1b4af1b42",
       "notes/actual_fejer_unique_geometric_maximizer.md": "231c22c5bd4f0c1527a84c4db92d83cc13b7f7b56627c47631644addb98f8ec4",
       "notes/actual_complete_core_geometric_deformation.md": "6b3be9bb1c1f79f2d3b4a679a8cfa5f6f5df37640354add9ab04fdb8f8c4f580",
       "manuscript/sections/M-directed-all-orders.tex": "90bde811854ea8d259b9086516703bde0684a6de7d07b99e92a56e0adab49986",
       "manuscript/sections/H-filtered-characteristic.tex": "8e8eda6cf1412a08581be941ac3cd63f792786636dc32edbf3ed4b6ffecc61ec",
       "formal/VolumeLogic/FormalRegrading.lean": "9fe0b604cfe2857cc26569442ee9c608c214307adb5fdfd666e154fcbadc7a2c",
-      "papers/dependencies.json": "c1112465f8403dc0795e5c9300936e1fd0706aa4e053e68e16ef0f570f319d31"
+      "papers/dependencies.json": "d198beba4d4a769d4da19c393002f6f54b74c898e92ffc805454150a4d10dd69"
     }
   }
 }

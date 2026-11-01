@@ -235,8 +235,9 @@ def main() -> None:
             if any(sha256(ROOT / path) != digest for path, digest in hashes.items()):
                 raise ValueError("A recorded source changed during this replay; rerun on stable inputs.")
             report = {
-                "scope": "Concrete complex modulus and real logarithmic level scale; equivalence with ordinary real convergence; unit phases, nonzero limiting amplitudes, finite complex actions and fixed real level powers; strict whole-remainder noncancellation and conditional 2*pi-scaled volume transfer.",
-                "explicit_inputs_remaining": ["the actual invariant's exact finite source identity", "the nonzero packet coefficient and finite-action convergence", "a strict bound for the whole complementary remainder", "the actual geometric action-volume equality"],
+                "scope": "Concrete complex modulus and real logarithmic level scale; equivalence with ordinary real convergence; unit phases, nonzero limiting amplitudes, finite complex actions and fixed real level powers; finite-residue and explicit even/odd packet assembly with the original level denominator; strict whole-remainder noncancellation and conditional 2*pi-scaled volume transfer.",
+                "explicit_inputs_remaining": ["the actual invariant's exact finite source identity", "the nonzero packet coefficient and finite-action convergence (a common limit, or a limit on every residue class with equal real action)", "a strict bound for the whole complementary remainder", "the actual geometric action-volume equality"],
+                "residue_assembly": {"period": "any fixed positive natural number", "denominator": "original level N, including on N=p*n+r", "amplitudes": "each residue limit is nonzero; the complex limits may differ", "actions": "the complex residue limits may differ; their real parts agree", "unit_character": "may depend arbitrarily on N and need not converge", "conclusion": "ordinary all-integer-level convergence and eventual nonvanishing"},
                 "toolchain": TOOLCHAIN,
                 "dependency_pins": materialized,
                 "local_dependency": {"name": "volumeLogic", "path": "../formal", "sources_copied": False},

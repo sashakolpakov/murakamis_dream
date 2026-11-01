@@ -8,7 +8,7 @@ not copied. The ordinary Std-only check does not need this package or Mathlib.
 
 ## What is proved
 
-[RealTransfer.lean](RealTransfer.lean) contains two definitions and fourteen
+[RealTransfer.lean](RealTransfer.lean) contains two definitions and twenty-two
 theorems, all in the namespace `VolumeLogic.RealModel`:
 
 - `complexMagnitude` is the actual complex norm. Its nonnegativity,
@@ -34,6 +34,8 @@ The main entry points are:
 | `complex_invariant_rate_transfer` | From the exact eventual identity `K_N = u_N (G_N + E_N)`, zero normalization rate, leading rate `a`, and a strictly smaller upper rate for the **whole** remainder `E_N`, derive eventual `K_N ≠ 0` and its rate `a`. |
 | `complex_volume_transfer` | From the same inputs and `2πa = volume`, derive the ordinary real limit `(2π/N) log ‖K_N‖ → volume`. |
 | `complex_packet_volume_transfer` | Derive the leading rate from the actual packet `N^k a_N exp(N S_N)`, where `k` is any fixed real number, `a_N → a ≠ 0` and `S_N → A`. Restore a unit framing character, use a strict whole-remainder upper rate below `Re A`, and conclude the volume limit from `2π Re A = volume`. |
+| `complex_residue_packet_volume_transfer` | Allow separate nonzero amplitude limits and complex action limits on every residue class modulo a fixed positive integer `p`. If all limiting actions have the same real part, derive the full integer-level volume limit under the same exact-source, whole-remainder and geometry hypotheses. |
+| `complex_parity_packet_volume_transfer` | Give the preceding conclusion directly from the actual subsequences `a_(2n)`, `a_(2n+1)`, `S_(2n)` and `S_(2n+1)`, with independently specified limits. |
 
 Thus the last theorem proves the packet's logarithmic rate rather than
 assuming it. The power `k` includes half-integral Gaussian powers. A relative
@@ -41,12 +43,34 @@ correction tending to one can remain inside `a_N`. The more general
 `complex_volume_transfer` permits a normalization of rate zero even when its
 modulus is not one.
 
-The packet theorem assumes a **common all-level** nonzero amplitude limit.
-If the written expansion instead has distinct even and odd amplitudes, that
-particular hypothesis has not been established. Prove the two parity rates
-and combine them with the existing level-scope union lemmas before applying
-the general transfer theorem. The concrete norm and logarithm interfaces
-themselves have no parity restriction.
+The original `complex_packet_volume_transfer` assumes a **common all-level**
+nonzero amplitude limit. The residue and parity theorems remove that
+requirement without changing the original theorem's API. They use the same
+actual sequence on every class. In particular, when `N = p*n+r`, the rate is
+`log ‖K_(p*n+r)‖ / (p*n+r)`, not a rate with denominator `n`.
+
+The new assembly proves three steps. First, finitely many residue thresholds
+combine into one threshold for all integers, using quotient and remainder.
+Second, convergence of each amplitude to its own nonzero value implies
+zero logarithmic rate on that class. Third, taking real parts turns the
+possibly different complex action limits into one common real limit, so
+the exponential packet has that rate at every sufficiently large level.
+The explicit even/odd corollary needs both parity hypotheses. The period
+`p`, real power `k`, diagram and filling data are fixed before the limit.
+The unit carrier `u_N` may vary arbitrarily with the level; no convergence
+or finite-period assumption is imposed on it.
+
+This is an application extension, not a correction to the written Morse
+period theorem. [Appendix O](../manuscript/sections/O-morse-geometric-contribution.tex),
+equations `mca:eq-3` and `mca:eq-4`, asserts a common finite-action and nonzero
+amplitude limit after its displayed level factors and `q` phase are removed;
+equation `mcg:eq-36` records the parity-sign cancellation. Likewise,
+[the recursive filling chapter](../manuscript/sections/08-filling.tex),
+equations `eq:final-asymptotic` and `eq:final-amplitude`, isolates the explicit
+unit factors and nonzero coefficient. Those exact common-limit statements
+can already use the original concrete theorem. Separately normalized
+parity packets can instead use the new theorem, provided their stated
+convergence hypotheses and common real rate are proved.
 
 These are conditional analytic transfer theorems, not a construction of the
 Kashaev or ADO invariant. The exact original source identity, convergence of
@@ -128,7 +152,7 @@ duplicate dependencies, an absolute local dependency, incomplete or
 duplicate declaration audits, and an unexpected logical axiom. A failed run
 removes any old success summary in its output directory.
 
-The optional count is **two definitions and fourteen theorems**, separate
+The optional count is **two definitions and twenty-two theorems**, separate
 from the Std-only theorem count. The audit checks these proofs and the
 listed dependency pins; it does not certify that a particular knot family
 satisfies the remaining written analytic and geometric hypotheses.

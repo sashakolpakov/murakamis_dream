@@ -16,3 +16,11 @@ import RealTransfer
 #print axioms VolumeLogic.RealModel.level_power_hasRate
 #print axioms VolumeLogic.RealModel.powered_gaussian_packet_hasRate
 #print axioms VolumeLogic.RealModel.complex_packet_volume_transfer
+#print axioms VolumeLogic.RealModel.residue_index_tendsto
+#print axioms VolumeLogic.RealModel.eventually_residue_iff
+#print axioms VolumeLogic.RealModel.tendsto_residue_iff
+#print axioms VolumeLogic.RealModel.amplitude_hasRate_of_residue_limits
+#print axioms VolumeLogic.RealModel.exponential_action_hasRate_of_residue_limits
+#print axioms VolumeLogic.RealModel.residue_gaussian_packet_hasRate
+#print axioms VolumeLogic.RealModel.complex_residue_packet_volume_transfer
+#print axioms VolumeLogic.RealModel.complex_parity_packet_volume_transfer

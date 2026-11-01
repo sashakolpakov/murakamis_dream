@@ -270,4 +270,186 @@ theorem complex_packet_volume_transfer
     (complex_hasRate_iff.mp (powered_gaussian_packet_hasRate k hamp ha hS))
     remainder gap geometry
 
+/-- Every progression with positive step reaches all sufficiently large
+thresholds. The actual level is p*n+r, not the progression index n. -/
+theorem residue_index_tendsto {p : Nat} (hp : 0 < p) (r : Nat) :
+    Tendsto (fun n : Nat => p*n+r) atTop atTop := by
+  apply tendsto_atTop.mpr
+  intro b
+  filter_upwards [eventually_ge_atTop b] with n hn
+  have hmul : n ≤ p*n := by
+    simpa using Nat.mul_le_mul_right n (show 1 ≤ p by omega)
+  omega
+
+/-- Finitely many residue thresholds combine into one all-integer threshold.
+No residue class, including composite levels, is discarded. -/
+theorem eventually_residue_iff {p : Nat} (hp : 0 < p) {P : Nat → Prop} :
+    (∀ r : Fin p, ∀ᶠ n in atTop, P (p*n+r.val)) ↔ ∀ᶠ N in atTop, P N := by
+  constructor
+  · intro h
+    have hall : ∀ᶠ n in atTop, ∀ r : Fin p, P (p*n+r.val) :=
+      Filter.eventually_all.mpr h
+    obtain ⟨k, hk⟩ := eventually_atTop.mp hall
+    apply eventually_atTop.mpr
+    refine ⟨p*k, fun N hN => ?_⟩
+    have hkn : k ≤ N/p := (Nat.le_div_iff_mul_le hp).mpr (by simpa [Nat.mul_comm] using hN)
+    have hvalue := hk (N/p) hkn ⟨N%p, Nat.mod_lt N hp⟩
+    simpa only [Nat.mul_div_cancel_left, Nat.div_add_mod] using hvalue
+  · intro h r
+    exact (residue_index_tendsto hp r.val).eventually h
+
+/-- Convergence on every residue class to the same limit is ordinary
+all-level convergence. This is used only after taking the real rate. -/
+theorem tendsto_residue_iff {X : Type*} {l : Filter X} {p : Nat}
+    (hp : 0 < p) {f : Nat → X} :
+    (∀ r : Fin p, Tendsto (fun n => f (p*n+r.val)) atTop l) ↔
+      Tendsto f atTop l := by
+  constructor
+  · intro h
+    rw [Filter.tendsto_def]
+    intro s hs
+    exact (eventually_residue_iff hp).mp (fun r => (h r).eventually hs)
+  · intro h r
+    exact h.comp (residue_index_tendsto hp r.val)
+
+/-- Distinct nonzero complex amplitude limits on a fixed finite set of
+residue classes still give zero rate with denominator equal to the level. -/
+theorem amplitude_hasRate_of_residue_limits {p : Nat} (hp : 0 < p)
+    {amp : Nat → ℂ} {a : Fin p → ℂ}
+    (hamp : ∀ r : Fin p, Tendsto (fun n => amp (p*n+r.val)) atTop (nhds (a r)))
+    (ha : ∀ r, a r ≠ 0) :
+    HasRate physicalLevels complexMagnitude realLogScale amp 0 := by
+  apply complex_hasRate_iff.mpr
+  constructor
+  · exact (eventually_residue_iff hp).mp
+      (fun r => (hamp r).eventually (eventually_ne_nhds (ha r)))
+  · apply (tendsto_residue_iff hp).mp
+    intro r
+    have hlog : Tendsto (fun n => Real.log ‖amp (p*n+r.val)‖)
+        atTop (nhds (Real.log ‖a r‖)) :=
+      (Real.continuousAt_log (norm_ne_zero_iff.mpr (ha r))).tendsto.comp (hamp r).norm
+    have hrec : Tendsto (fun n : Nat => (1 : ℝ) / ((p*n+r.val : Nat) : ℝ))
+        atTop (nhds 0) :=
+      (real_rateLimit_iff.mp (constant_div_nat_rate 1)).comp (residue_index_tendsto hp r.val)
+    simpa only [mul_zero, div_eq_mul_inv, one_mul] using hlog.mul hrec
+
+/-- The complex action may have different limits on different residue
+classes. Equality of their real parts suffices; their phases need not agree. -/
+theorem exponential_action_hasRate_of_residue_limits {p : Nat} (hp : 0 < p)
+    {S : Nat → ℂ} {A : Fin p → ℂ} {rate : ℝ}
+    (hS : ∀ r : Fin p, Tendsto (fun n => S (p*n+r.val)) atTop (nhds (A r)))
+    (hreal : ∀ r, (A r).re = rate) :
+    HasRate physicalLevels complexMagnitude realLogScale
+      (fun N => Complex.exp ((N : ℂ) * S N)) rate := by
+  apply complex_hasRate_iff.mpr
+  constructor
+  · exact Filter.Eventually.of_forall (fun N => Complex.exp_ne_zero _)
+  · have hre : Tendsto (fun N => (S N).re) atTop (nhds rate) := by
+      apply (tendsto_residue_iff hp).mp
+      intro r
+      simpa only [Function.comp_def, hreal r] using
+        Complex.continuous_re.continuousAt.tendsto.comp (hS r)
+    apply hre.congr'
+    filter_upwards [eventually_ge_atTop (1 : Nat)] with N hN
+    have hn : (N : ℝ) ≠ 0 := Nat.cast_ne_zero.mpr (by omega)
+    simp only [Complex.norm_exp, Real.log_exp, Complex.mul_re,
+      Complex.natCast_re, Complex.natCast_im, zero_mul, sub_zero]
+    exact (mul_div_cancel_left₀ (S N).re hn).symm
+
+/-- A residue-dependent packet has one all-level real rate. No common
+complex amplitude or common complex action limit is required. -/
+theorem residue_gaussian_packet_hasRate {p : Nat} (hp : 0 < p) (k : ℝ)
+    {amp S : Nat → ℂ} {a A : Fin p → ℂ} {rate : ℝ}
+    (hamp : ∀ r : Fin p, Tendsto (fun n => amp (p*n+r.val)) atTop (nhds (a r)))
+    (ha : ∀ r, a r ≠ 0)
+    (hS : ∀ r : Fin p, Tendsto (fun n => S (p*n+r.val)) atTop (nhds (A r)))
+    (hreal : ∀ r, (A r).re = rate) :
+    HasRate physicalLevels complexMagnitude realLogScale
+      (fun N => (((N : ℝ) ^ k : ℝ) : ℂ) *
+        (amp N * Complex.exp ((N : ℂ) * S N))) rate := by
+  have hampRate := amplitude_hasRate_of_residue_limits hp hamp ha
+  have haction := exponential_action_hasRate_of_residue_limits hp hS hreal
+  have h := hasRate_mul complexMagnitude realLogScale (level_power_hasRate k)
+    (hasRate_mul complexMagnitude realLogScale hampRate haction)
+  simpa only [zero_add] using h
+
+/-- Concrete transfer from a finite-residue packet to the full ordinary
+integer-level volume limit. The exact identity, unit character and strict
+bound for the WHOLE remainder concern the same actual sequences. -/
+theorem complex_residue_packet_volume_transfer {p : Nat} (hp : 0 < p) (k : ℝ)
+    {K u amp S E : Nat → ℂ} {a A : Fin p → ℂ} {rate b volume : ℝ}
+    (exactSource : ∀ᶠ N in atTop,
+      K N = u N * ((((N : ℝ) ^ k : ℝ) : ℂ) *
+        (amp N * Complex.exp ((N : ℂ) * S N)) + E N))
+    (unit : ∀ᶠ N in atTop, ‖u N‖ = 1)
+    (hamp : ∀ r : Fin p, Tendsto (fun n => amp (p*n+r.val)) atTop (nhds (a r)))
+    (ha : ∀ r, a r ≠ 0)
+    (hS : ∀ r : Fin p, Tendsto (fun n => S (p*n+r.val)) atTop (nhds (A r)))
+    (hreal : ∀ r, (A r).re = rate)
+    (remainder : ∀ ε > 0, ∀ᶠ N in atTop,
+      E N = 0 ∨ Real.log ‖E N‖ / (N : ℝ) ≤ b + ε)
+    (gap : b < rate) (geometry : 2 * Real.pi * rate = volume) :
+    (∀ᶠ N in atTop, K N ≠ 0) ∧
+      Tendsto (fun N => 2 * Real.pi * Real.log ‖K N‖ / (N : ℝ))
+        atTop (nhds volume) := by
+  exact complex_volume_transfer exactSource
+    (complex_hasRate_iff.mp (unit_norm_hasRate unit))
+    (complex_hasRate_iff.mp (residue_gaussian_packet_hasRate hp k hamp ha hS hreal))
+    remainder gap geometry
+
+/-- Explicit even/odd application: coefficients may tend to different
+nonzero complex values and actions may have different imaginary limits.
+The theorem concludes convergence through all integers, not a subsequence. -/
+theorem complex_parity_packet_volume_transfer (k : ℝ)
+    {K u amp S E : Nat → ℂ} {ae ao Ae Ao : ℂ} {b volume : ℝ}
+    (exactSource : ∀ᶠ N in atTop,
+      K N = u N * ((((N : ℝ) ^ k : ℝ) : ℂ) *
+        (amp N * Complex.exp ((N : ℂ) * S N)) + E N))
+    (unit : ∀ᶠ N in atTop, ‖u N‖ = 1)
+    (hampEven : Tendsto (fun n => amp (2*n)) atTop (nhds ae)) (hae : ae ≠ 0)
+    (hampOdd : Tendsto (fun n => amp (2*n+1)) atTop (nhds ao)) (hao : ao ≠ 0)
+    (hSEven : Tendsto (fun n => S (2*n)) atTop (nhds Ae))
+    (hSOdd : Tendsto (fun n => S (2*n+1)) atTop (nhds Ao))
+    (hreal : Ao.re = Ae.re)
+    (remainder : ∀ ε > 0, ∀ᶠ N in atTop,
+      E N = 0 ∨ Real.log ‖E N‖ / (N : ℝ) ≤ b + ε)
+    (gap : b < Ae.re) (geometry : 2 * Real.pi * Ae.re = volume) :
+    (∀ᶠ N in atTop, K N ≠ 0) ∧
+      Tendsto (fun N => 2 * Real.pi * Real.log ‖K N‖ / (N : ℝ))
+        atTop (nhds volume) := by
+  let a : Fin 2 → ℂ := fun r => if r.val = 0 then ae else ao
+  let A : Fin 2 → ℂ := fun r => if r.val = 0 then Ae else Ao
+  have hamp : ∀ r : Fin 2,
+      Tendsto (fun n => amp (2*n+r.val)) atTop (nhds (a r)) := by
+    intro r
+    have hr : r.val = 0 ∨ r.val = 1 := by omega
+    rcases hr with hr | hr
+    · dsimp only [a]
+      rw [hr]
+      simpa using hampEven
+    · dsimp only [a]
+      rw [hr]
+      simpa using hampOdd
+  have ha : ∀ r, a r ≠ 0 := by
+    intro r
+    dsimp [a]
+    split <;> assumption
+  have hS : ∀ r : Fin 2,
+      Tendsto (fun n => S (2*n+r.val)) atTop (nhds (A r)) := by
+    intro r
+    have hr : r.val = 0 ∨ r.val = 1 := by omega
+    rcases hr with hr | hr
+    · dsimp only [A]
+      rw [hr]
+      simpa using hSEven
+    · dsimp only [A]
+      rw [hr]
+      simpa using hSOdd
+  have hRe : ∀ r, (A r).re = Ae.re := by
+    intro r
+    dsimp [A]
+    split <;> simp_all
+  exact complex_residue_packet_volume_transfer (by decide : 0 < 2) k
+    exactSource unit hamp ha hS hRe remainder gap geometry
+
 end VolumeLogic.RealModel

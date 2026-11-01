@@ -147,9 +147,10 @@ separate work.
 
 ## Reading and reproducing the work
 
-The [collection of research papers](papers/README.md) separates finite filling estimates
-and exact diagram evaluation from the long three-braid application, with a 30-page limit
-for each draft and explicit companion-theorem dependencies. The
+The [collection of research papers](papers/README.md) separates finite
+spectral evaluation, uniform local coefficient bounds, the complete
+oscillatory filling sum, and the long three-braid application. Each draft
+has a 30-page limit and explicit companion-theorem dependencies. The
 [reference manuscript](manuscript/README.md) retains the 374-page
 continuous account; it is no longer presented as a single journal paper.
 Chapter 1 separates full volume theorems from completed partial results:

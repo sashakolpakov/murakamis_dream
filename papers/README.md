@@ -39,7 +39,7 @@ and the three-braid comparison provide different sufficient estimates
 for that remainder. Protected gluing does not require weak balance, and
 ordinary insertion does not require the protected-gluing theorem.
 
-## The first two drafts
+## The current drafts
 
 **Finite spectral evaluation and uniform filling bounds.**
 [TeX source](filling-bounds/main.tex) ·
@@ -57,6 +57,36 @@ compares the result with the reduced Kashaev invariant, including the
 framing factor. These results supply the finite formulas used by later
 papers. They do not estimate the large-level invariant or identify an
 exponential rate with volume.
+
+**Uniform spectral bounds for local Casimir sources.**
+[TeX source](local-coefficients/main.tex) ·
+[PDF](../docs/papers/local-coefficients.pdf)
+
+This paper proves the estimates needed before applying Cauchy's coefficient
+formula to a collection of tangles. It defines the local polynomial by an
+explicit banded matrix and partitions its paths into three degree regions.
+Theorem 1.1 bounds all three regions over the entire real spectral interval
+and for arbitrary phases of the face variables. The proof includes the
+signed recurrence, both unused spectral products, the endpoint optimization,
+both level parities and face variables fixed exactly at zero. It imports
+the finite operator identification from the preceding paper. It does not
+assume a geometric saddle or a volume identity.
+
+**Oscillatory filling sums with independently long twists.**
+[TeX source](oscillatory-fillings/main.tex) ·
+[PDF](../docs/papers/oscillatory-fillings.pdf)
+
+This paper addresses cancellation in the complete Fourier filling sum.
+Theorem 1.1 assumes a nonzero holomorphic expansion near the complete point
+and a strict bound for the shared source away from it. It then proves a
+nonzero asymptotic for the entire sum, including every nonzero integer
+Fourier charge and the original endpoints. The twist integers are fixed,
+independently signed and sufficiently large; their ratios are unrestricted.
+The proof estimates the infinite tail before localizing the remaining
+finitely many integrals. An elementary polynomial example verifies both
+hypotheses explicitly. For a knot source, construction of those hypotheses
+and identification of the critical action with volume remain separate
+theorems.
 
 **Volume limits for long alternating-generator three-braids.**
 [TeX source](three-braids/main.tex) ·
@@ -78,9 +108,12 @@ its circle packing and the estimates that control the entire remainder.
 It imports three explicitly stated results: the exact source identity,
 the uniform local coefficient estimates, and the nonzero geometric
 filling contribution with its absolute volume calibration. Those
-dependencies are substantial. The finite input is proved in the first
-paper above. The analytic and geometric inputs still have their complete
-accounts in the reference manuscript and its cited technical notes.
+dependencies are substantial. The finite input and local upper bounds are
+proved in the first two papers above. The filling-sum paper proves the
+analytic implication once its local expansion and global gap are supplied.
+The construction of that expansion and gap, and the marked geometric
+volume comparison, still have their complete accounts in the reference
+manuscript and its cited technical notes.
 
 ## What still needs its own paper
 
@@ -90,16 +123,17 @@ purposes:
 
 | Subject | Result to explain and prove | Dependencies that must remain visible |
 | --- | --- | --- |
-| Uniform local asymptotics | Bounds over the full allowed coefficient range, and a nonzero complex local approximation | Exact local formulas; estimates at the endpoints as well as in the interior |
-| The geometric filling contribution | A nonzero contribution survives the filling sum and has the volume rate of the same knot complement | Local asymptotics, primitive filling curves and an absolute volume comparison |
+| Holomorphic source asymptotics | A nonzero local expansion for the shared coefficient and a strict spectral gap away from it | Exact local formulas, the common face lattice and estimates outside the local chart |
+| Marked hyperbolic fillings | The classical critical action is the volume of the smoothly filled knot complement | The complete packing, deformed circle pattern, primitive peripheral curves and absolute volume normalization |
 | Sufficient conditions on planar compositions | Weak balance, decoration and joining operations control the full remainder | The source, analytic and geometric results above |
 | Ordered tangle trees | Explicit degree and twist conditions give the volume limit | The recursive finite evaluation and its geometric construction |
 | Geometric longitude and recurrences | All-order meridian expansions force the selected geometric factor to divide a classical symbol | The full expansion, its normalization and the geometric longitude |
 
 This is a proposed division, not a claim that five more finished papers
-already exist. The geometric filling contribution may need separate
-analytic and geometric papers. Its short reference chapter cites proofs
-elsewhere; copying it would not make a self-contained paper. Each
+already exist. The filling-sum theorem now has its own paper, but its
+source hypotheses and the classical geometry still need separate accounts.
+A short reference chapter that cites proofs elsewhere would not supply
+those accounts by itself. Each
 candidate needs a precise theorem, complete proofs of its own claims,
 defined notation, and an explicit list of imported theorems.
 
@@ -107,7 +141,7 @@ For a citation between papers, the exporting paper must state a numbered
 theorem with its normalization, degree restrictions, level parity and
 uniformity assumptions. The importing paper must name that theorem and
 check those hypotheses. A reference to a folder of calculations is not
-a substitute. At present the two drafts above are written; several of
+a substitute. At present the four drafts above are written; several of
 their shared foundations still have their complete accounts in the
 reference manuscript and technical notes. The dependency graph makes
 that remaining editorial work visible.
@@ -154,3 +188,15 @@ python3 repro/check_cyclic_source_constants.py --output repro/results/cyclic-sou
 It uses outward rational bounds with explicit series remainders. The
 argument for every even number of factors is written in the paper; it is
 not inferred from computations for finitely many braid lengths.
+
+The two analytic papers each have one additional reproduction command:
+
+~~~sh
+python3 papers/local-coefficients/check.py --output repro/results/local-coefficients.json
+python3 papers/oscillatory-fillings/check.py --output repro/results/oscillatory-fillings.json
+~~~
+
+These require SymPy. They check finite polynomial identities and algebraic
+normalizations, with their exact scope recorded in the output. They do not
+replace the written uniform estimates, contour arguments or asymptotic
+proofs.

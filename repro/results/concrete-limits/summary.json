@@ -1,5 +1,10 @@
 {
   "axioms": {
+    "VolumeLogic.RealModel.amplitude_hasRate_of_residue_limits": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
     "VolumeLogic.RealModel.amplitude_hasRate_of_tendsto": [
       "Classical.choice",
       "Quot.sound",
@@ -30,6 +35,16 @@
       "Quot.sound",
       "propext"
     ],
+    "VolumeLogic.RealModel.complex_parity_packet_volume_transfer": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.RealModel.complex_residue_packet_volume_transfer": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
     "VolumeLogic.RealModel.complex_volume_transfer": [
       "Classical.choice",
       "Quot.sound",
@@ -45,7 +60,17 @@
       "Quot.sound",
       "propext"
     ],
+    "VolumeLogic.RealModel.eventually_residue_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
     "VolumeLogic.RealModel.exponential_action_hasRate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.RealModel.exponential_action_hasRate_of_residue_limits": [
       "Classical.choice",
       "Quot.sound",
       "propext"
@@ -71,6 +96,20 @@
       "propext"
     ],
     "VolumeLogic.RealModel.real_rateLimit_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.RealModel.residue_gaussian_packet_hasRate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.RealModel.residue_index_tendsto": [
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.RealModel.tendsto_residue_iff": [
       "Classical.choice",
       "Quot.sound",
       "propext"
@@ -155,7 +194,7 @@
   },
   "explicit_inputs_remaining": [
     "the actual invariant's exact finite source identity",
-    "the nonzero packet coefficient and finite-action convergence",
+    "the nonzero packet coefficient and finite-action convergence (a common limit, or a limit on every residue class with equal real action)",
     "a strict bound for the whole complementary remainder",
     "the actual geometric action-volume equality"
   ],
@@ -174,13 +213,21 @@
     "duplicate_declaration_audit",
     "unexpected_logical_axiom"
   ],
+  "residue_assembly": {
+    "actions": "the complex residue limits may differ; their real parts agree",
+    "amplitudes": "each residue limit is nonzero; the complex limits may differ",
+    "conclusion": "ordinary all-integer-level convergence and eventual nonvanishing",
+    "denominator": "original level N, including on N=p*n+r",
+    "period": "any fixed positive natural number",
+    "unit_character": "may depend arbitrarily on N and need not converge"
+  },
   "result": "All optional declarations compiled; every definition and theorem has only the permitted foundational axioms.",
-  "scope": "Concrete complex modulus and real logarithmic level scale; equivalence with ordinary real convergence; unit phases, nonzero limiting amplitudes, finite complex actions and fixed real level powers; strict whole-remainder noncancellation and conditional 2*pi-scaled volume transfer.",
+  "scope": "Concrete complex modulus and real logarithmic level scale; equivalence with ordinary real convergence; unit phases, nonzero limiting amplitudes, finite complex actions and fixed real level powers; finite-residue and explicit even/odd packet assembly with the original level denominator; strict whole-remainder noncancellation and conditional 2*pi-scaled volume transfer.",
   "source_sha256": {
     "formal-real/.gitignore": "fde850d24186b6e99c8c0debd641fb3ab85198b109eb66f71a1fea02bd6ea1b3",
-    "formal-real/AxiomAudit.lean": "f703eae751054e2be60d7ee7b88c494f4e00a795760221960ee2931f493a2bdc",
-    "formal-real/README.md": "cbaf9c4370c419a707988daacfb921408faac0dd394fd8ac6a56db72874f3c6d",
-    "formal-real/RealTransfer.lean": "77d2bea00ce198fb7730862ec05986c815d1665cd2f20fd99e4a2d55d51a87ef",
+    "formal-real/AxiomAudit.lean": "6d1546a54c3aa71c894b551e39d871bba73301eba3e9db8c35be9933ffdf8dff",
+    "formal-real/README.md": "135a3108ddc09d21b4a379cdce396a60383f4467eb91a0265ab9800aac5fc90f",
+    "formal-real/RealTransfer.lean": "fd41a1469999ec0e455e64a08c5d81a947a38797054c8f850a3a2371023c545a",
     "formal-real/lake-manifest.json": "e4b572de88e8c9a6bf79817a5b36f982d825c86725f6d161e65bad42aadd6b5b",
     "formal-real/lakefile.toml": "22fab20fa38f079672b4830e81df36799723ffb08443ba88387f57c16ac42b46",
     "formal-real/lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
@@ -203,22 +250,30 @@
     "formal/lake-manifest.json": "94a62178292dabc02ac925f33a78081a26da3b9fc9b5c3ea33e97e9a8dce25da",
     "formal/lakefile.toml": "d4fbe5befdea32352528a400922442a9814ad56dd607ec3dbbff3639120d947b",
     "formal/lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
-    "repro/check_concrete_limits.py": "61f8d1a57044fa32f4ecae68bd15c393b114cd9a0da1ee216aeeba9a4b14397c"
+    "repro/check_concrete_limits.py": "ebfe1a58efe4edab03f4ffddf6642c899dda0483e521c3d183e50da6d6b8d3a5"
   },
   "theorems": [
+    "VolumeLogic.RealModel.amplitude_hasRate_of_residue_limits",
     "VolumeLogic.RealModel.amplitude_hasRate_of_tendsto",
     "VolumeLogic.RealModel.complex_hasRate_iff",
     "VolumeLogic.RealModel.complex_hasUpperRate_iff",
     "VolumeLogic.RealModel.complex_invariant_rate_transfer",
     "VolumeLogic.RealModel.complex_packet_volume_transfer",
+    "VolumeLogic.RealModel.complex_parity_packet_volume_transfer",
+    "VolumeLogic.RealModel.complex_residue_packet_volume_transfer",
     "VolumeLogic.RealModel.complex_volume_transfer",
     "VolumeLogic.RealModel.constant_div_nat_rate",
     "VolumeLogic.RealModel.eventually_physical_iff",
+    "VolumeLogic.RealModel.eventually_residue_iff",
     "VolumeLogic.RealModel.exponential_action_hasRate",
+    "VolumeLogic.RealModel.exponential_action_hasRate_of_residue_limits",
     "VolumeLogic.RealModel.gaussian_packet_hasRate",
     "VolumeLogic.RealModel.level_power_hasRate",
     "VolumeLogic.RealModel.powered_gaussian_packet_hasRate",
     "VolumeLogic.RealModel.real_rateLimit_iff",
+    "VolumeLogic.RealModel.residue_gaussian_packet_hasRate",
+    "VolumeLogic.RealModel.residue_index_tendsto",
+    "VolumeLogic.RealModel.tendsto_residue_iff",
     "VolumeLogic.RealModel.unit_norm_hasRate"
   ],
   "toolchain": "leanprover/lean4:v4.32.2"

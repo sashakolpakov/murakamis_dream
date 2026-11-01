@@ -329,7 +329,7 @@ grid and the actual cups, caps and single marked cut. We check the
 diagram hypotheses on the explicit sphere below.
 The local decomposition into a central
 term and the two one-sided recurrence pieces is the one of
-\cite[Sections 1--3]{Cofactors}; no positive replacement of the full
+\cite[Section 2]{LocalBounds}; no positive replacement of the full
 matrix numerator is made.
 
 Put \(q=e^{\pi i/N}\), \(d=N-1\), and \begin{equation}\label{source:eq-A6}
@@ -436,9 +436,8 @@ omitted. From \eqref{source:eq-A12}, \begin{equation}\label{source:eq-A14}
 \end{gathered}
 \end{equation} Thus the spectator \(H\) used by the three-vector proof is precisely
 the maximum of the genuine local rate bounds. No mixed term has been
-lost. This identity is already recorded in
-\cite{SectorCover}, equation
-(4), and in the final paragraph of the global LEFT theorem.
+lost. It is also the spectator identity in
+\cite[equation (1.4)]{LocalBounds}.
 
 
 \begin{foundation}[Uniform local sector bounds]\label{found:envelopes}
@@ -453,17 +452,16 @@ does not depend on the face phases. A one-sided term whose overloaded
 middle has modulus zero is identically zero.
 \end{foundation}
 
-The proof is imported from \cite[Section 8]{Cofactors} and
-\cite[Sections 1--4]{LeftEnvelope}. The following explanation records
+This is \cite[Theorem 1.1]{LocalBounds}. The following explanation records
 which uniformity is required; the local recurrence and its global
 transfer estimate are not being replaced by a positivity assumption.
 Here ``uniform local upper rate'' means \begin{equation}\label{source:eq-A15}
 \limsup_{N\to\infty}\frac1N
  \log\sup_{\substack{\sigma\in[-2,2]\\|L_f|=\rho_f}}
  |H_{V,s}(L;\sigma)|\le A_s(\rho),\qquad s=\mathrm C,\mathrm L,\mathrm R.
-\end{equation} For CROSS this follows from the cleared-cofactor coefficientwise
+\end{equation} For the central sector this follows from the cleared-cofactor coefficientwise
 real-interval interpolation bound and the positive complete triangle
-factors. For LEFT the original omitted-half product and both unused
+factors. For the left sector the original omitted-half product and both unused
 spectral products remain. The normalized interval continuant has
 nonnegative face coefficients on \([-2,2\cos(\pi/N)]\); taking face
 moduli therefore preserves the signed-continuant upper action. Its
@@ -473,12 +471,11 @@ polynomial exterior comparison costs only \begin{equation}\label{source:eq-A16}
 \exp\left[d\,\operatorname{arcosh}
    \frac{6-2\cos(\pi/N)}{2+2\cos(\pi/N)}\right]=O(1).
 \end{equation} This applies to a polynomial with complex coefficients at each fixed
-face-phase tuple. RIGHT follows by the actual row/middle reversal, with
-\(b,c\) exchanged in its rate. These are the proofs of
-\cite{LeftEnvelope}, §§1--4,
-and \cite{Cofactors}, §8. They include
-both parity conventions and sampled spectral zeros. A polynomial
-coefficientwise LEFT bound against its complete value is neither
+face-phase tuple. The right bound follows by row and middle-variable reversal, with
+\(b,c\) exchanged in its rate. The proofs in
+\cite[Sections 3--7]{LocalBounds} include both parity conventions and
+sampled spectral zeros. A coefficientwise bound for the left polynomial
+against its complete value is neither
 asserted nor needed.
 
 In this family the outer pole is always positive, so \(x+y>0\) at every
@@ -504,7 +501,7 @@ k_j=\frac{\cos\theta}{\sin^2\theta}
 
 The labeled simple-sphere packing and its positive cut polyhedron
 identify the original augmented complement. The calibrated complete
-CROSS action is \begin{equation}\label{source:eq-A18}
+central action is \begin{equation}\label{source:eq-A18}
 \Phi_m=2\sum_{j=0}^{m-1}Q(1,k_j,k_{j+1})
               -\sum_{j=2}^{m-1}\log k_j
         =\frac{\operatorname{Vol}(Y_m^\epsilon)}{2\pi}.
@@ -512,7 +509,7 @@ CROSS action is \begin{equation}\label{source:eq-A18}
 a full positive-endpoint source theorem. Deleting the two protected
 faces leaves a connected ordinary graph, since both poles meet every
 vertex of the surviving rim path. Thus its face Hessian has only the
-common-scale kernel, as required by the Morse CROSS theorem. Every
+common-scale kernel, as required by the central-contribution theorem. Every
 matched edge has a positive outer and at least one nonmonomial triangle.
 
 Put \begin{equation}\label{source:eq-A19}
@@ -526,8 +523,8 @@ c:=w_3=w_{m-2}=a(4\cos^2\theta-1)\in[9/2,C].
 by replacing only \(w_{m-1}\) with 1. Each shared occurrence of that
 face is changed at once. Protected weights remain exactly zero.
 
-The surviving one-sided anchors at \(j=0,1\) are LEFT; those at
-\(j=2,m-1\) are RIGHT. Every other box has both possible one-sided
+The surviving one-sided anchors at \(j=0,1\) belong to the left sector; those at
+\(j=2,m-1\) belong to the right sector. Every other box has both possible one-sided
 anchors. This follows directly from \eqref{braid:eq-2}, not from a reflected physical
 coupon. Use \(W^{(1)}\) for \(1\mathrm L\), \(W^{(0)}\) for
 \(0\mathrm L\), and \(W\) for all other anchors.
@@ -582,8 +579,8 @@ rim weight is \(a\). The same derivative bounds and \(c\le C\) give \begin{equat
        &\ge Q(1,C,a)-\tfrac12\log C=:C_{\mathrm{near}}>21/50.
 \end{split}
 \end{equation} At boxes 0 and 1, \(X=F(a)>\log a\). Thus every spectator has \(H=X\)
-at \(W\). An anchored LEFT loss is
-\(\min(X-\log c,Q_c-\tfrac12\log c)\), and the RIGHT formula is
+at \(W\). An anchored left-sector loss is
+\(\min(X-\log c,Q_c-\tfrac12\log c)\), and the right-sector formula is
 symmetric. Equations \eqref{source:eq-A25}--\eqref{source:eq-A26}, less \eqref{source:eq-A23}, give a net loss greater
 than \(7/100\) for every anchor other than \(0\mathrm L,1\mathrm L\). In
 particular even the weakest coarse comparison gives
@@ -625,7 +622,7 @@ remainder}\label{source:sec-6}
 
 Expand \eqref{source:eq-A8} into genuine label strings in
 \(\{\mathrm C,\mathrm L,\mathrm R\}^m\), omitting zero strings and the
-all-CROSS string. Each remaining string contains a surviving one-sided
+all-central string. Each remaining string contains a surviving one-sided
 anchor. Assign it to one such anchor, and use that anchor's single whole
 face vector from Section~\ref{source:sec-4}.
 
@@ -650,7 +647,7 @@ Equation \eqref{source:eq-A31} proves \begin{equation}\label{source:eq-A33}
 \end{equation} In particular, for every \(0<\eta<7/100\), the norm is at most
 \(\exp[N(\Phi_m-\eta)+o_m(N)]\). This statement includes even and odd
 levels. It requires no phase positivity of the shared source and no
-strict gap for the all-CROSS term itself on this whole spectral cube.
+strict gap for the all-central term itself on this whole spectral cube.
 
 \section{Full Hermite insertion introduces no new exponential
 cost}\label{source:sec-7}
@@ -698,7 +695,11 @@ lengths tend to infinity. The main cusp remains complete. There is no
 condition on the relative sizes or signs of the fixed filling integers.
 \end{foundation}
 
-The analytic conclusion is \cite[Sections 1--8]{MorsePeriod}; the
+The analytic conclusion is \cite[Sections 1--8]{MorsePeriod}. Its
+passage from the nonzero local expansion and the shared spectral gap to
+the entire filling sum is now stated separately in
+\cite[Theorem 1.1]{OscillatoryFillings}. The construction of those two
+source estimates remains in the former reference. The
 original topology, marked primitive words, smooth completion and absolute
 volume calibration are \cite[Sections 1--9]{MorseGeometry}, reproduced
 as the two parts of Appendix O in \cite{ProofCollection}. These are
@@ -713,7 +714,7 @@ primitive rank-\(m-1\) face quotient, and nonmonomial triangle at each
 matching edge have been checked in Sections~\ref{braid:sec-1}--\ref{braid:sec-3} and~\ref{source:sec-4}. These are precisely the
 hypotheses of \cite{MorsePeriod} and
 \cite{MorseGeometry}. They concern the
-original all-CROSS projection \eqref{source:eq-A7}; they do not require complete-radius
+original all-central projection \eqref{source:eq-A7}; they do not require complete-radius
 balance, a middle forest, a flat sweep or a full positive-endpoint
 source theorem.
 
@@ -921,12 +922,12 @@ completed-proof collection, Appendices N and O.
 \bibitem{FillingPaper} \emph{Finite spectral evaluation and uniform filling
 bounds}, Theorems 1.1, 9.1 and 10.1, and Corollary 9.2.
 \href{https://sashakolpakov.github.io/murakamis_dream/papers/filling-bounds.pdf}{Companion paper}.
-\bibitem{Cofactors} \emph{The actual crossing cofactor and its central
-factorization}, Sections 1--3 and 8.
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_cross_cofactor_factorization.html}{Cofactor proof}.
-\bibitem{LeftEnvelope} \emph{The global LEFT weighted spectral envelope},
-Sections 1--4.
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_global_left_weighted_spectral_envelope.html}{One-sided envelope proof}.
+\bibitem{LocalBounds} \emph{Uniform spectral bounds for local Casimir
+sources}, Theorem 1.1.
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/local-coefficients.pdf}{Companion paper}.
+\bibitem{OscillatoryFillings} \emph{Oscillatory filling sums with
+independently long twists}, Theorem 1.1.
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/oscillatory-fillings.pdf}{Companion paper}.
 \bibitem{SectorCover} \emph{Full-source volume from a cover of genuine
 sectors}.
 \href{https://sashakolpakov.github.io/murakamis_dream/notes/general_actual_sector_cover_filling_volume.html}{Shared-sector conventions}.

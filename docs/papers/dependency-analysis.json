@@ -1,7 +1,7 @@
 {
   "scope": "Consistency and source-location checks on the declared mathematical dependency graph, not proof verification.",
-  "nodes": 88,
-  "edges": 207,
+  "nodes": 90,
+  "edges": 212,
   "component_edges": [
     [
       "action_volume",
@@ -182,12 +182,14 @@
     "elementary_rate_transfer",
     "finite_bernstein",
     "finite_local_fourier",
+    "analytic_signed_interval_transfer",
     "analytic_cross_spectral_gap",
     "finite_remainder",
     "finite_hermite",
     "finite_crossing",
     "finite_filling_norm",
     "finite_fourier_period",
+    "analytic_conditional_filling",
     "finite_pivotal_mark",
     "finite_global_source",
     "analytic_fold_interpolation",
@@ -269,15 +271,15 @@
   "shared_prerequisites": [
     {
       "id": "finite_local_fourier",
-      "downstream": 57
+      "downstream": 58
     },
     {
       "id": "finite_remainder",
-      "downstream": 54
+      "downstream": 55
     },
     {
       "id": "finite_hermite",
-      "downstream": 52
+      "downstream": 53
     },
     {
       "id": "finite_crossing",
@@ -300,8 +302,8 @@
       "downstream": 27
     },
     {
-      "id": "analytic_cross_spectral_gap",
-      "downstream": 19
+      "id": "analytic_signed_interval_transfer",
+      "downstream": 20
     },
     {
       "id": "geo_circle_ordered_cut",
@@ -344,6 +346,10 @@
       "downstream": 12
     },
     {
+      "id": "finite_fourier_period",
+      "downstream": 12
+    },
+    {
       "id": "geo_morse_deformed_pattern",
       "downstream": 12
     },
@@ -352,11 +358,11 @@
       "downstream": 12
     },
     {
-      "id": "analytic_morse_h1",
+      "id": "analytic_cross_spectral_gap",
       "downstream": 11
     },
     {
-      "id": "finite_fourier_period",
+      "id": "analytic_morse_h1",
       "downstream": 11
     },
     {
@@ -398,6 +404,10 @@
     {
       "id": "tree_positive_completion",
       "downstream": 10
+    },
+    {
+      "id": "analytic_conditional_filling",
+      "downstream": 9
     },
     {
       "id": "analytic_morse_charge_tails",
@@ -626,6 +636,7 @@
     "notes/research_arbitrary_main_edge_mark_transport.md": "7a7c9efdca1e9f7907dc5baf5dfe8ba12e2345ee5f2df2ed94240e95ee69112a",
     "notes/quantum_bridge_cap_source.md": "6f4d4847218954dc0eff16b2269ada870f36afbaaddd7e1708e8f9e05b5d896f",
     "notes/research_matched_sphere_morse_source.md": "8fdfde4a0d83220f3709048f00cd9373cfbc9d14b05943e9f16f58ab50777f4f",
+    "papers/oscillatory-fillings/main.tex": "275d76a8e12d963c6a4fc45bb828e0b7742761c94e4242272f15c64b56f3f203",
     "notes/actual_twist_circle_fourier_kernel.md": "1d93f6f13d271c56eee6e7ea8ddf5b9ea0eea92a2076ede7068df552bab94292",
     "notes/actual_filling_source_fourier_endpoint_gap.md": "1f03f69212b1fee6dceb6315b9582acb56aa647e4893ee3483113eff142ad982",
     "notes/general_localized_unit_charge_filling_period.md": "9f7e9edcbfd38ad823d52992e6bd682cfc9b21fe48e639a87280e8d0026dafc9",
@@ -638,6 +649,7 @@
     "notes/actual_positive_face_exponential_fold_interpolation.md": "e27e1144815025faa4ddd8e1c91c0c575ad2c6754e6a2671acdf43f95b16d1d1",
     "notes/actual_cross_cofactor_interpolant_rigidity.md": "85c5d2a0da2c504c0c8965b374f87b7b9405c2c7892ffb5204ff4c0307d10f5d",
     "notes/actual_cross_cofactor_global_angular_gap.md": "348c759eb32c13659248006daf0d6b44f0a5921f8107bc949bb511fc8ddfec4e",
+    "papers/local-coefficients/main.tex": "86da78c17f6535c58d7d17d919f10914f8eb9452143a66c2fb2e2fa7b7b5965c",
     "notes/actual_global_cross_spectral_gap.md": "841203d4a8343436c01a03228d1c7060a30c048e8e7c0cffbb471210dfac472d",
     "notes/actual_marked_deformed_circle_pattern.md": "3996e91ef00f4d0148307c103a5f8a81421b47cc9ece4f90fb908e677d4031e7",
     "notes/actual_deformed_circle_primitive_collar.md": "9463458a3a1da8efe8ff49080076d53ad256827eb43506e3f3e78ebfb3773463",
@@ -661,13 +673,11 @@
     "manuscript/sections/F-quantitative-octahedral-geometry.tex": "4348d40531fe83415223b88e26b1e3aedcb01daa9c6e17f030ae596000f8f268",
     "manuscript/sections/08a-quantitative-circle-trees.tex": "cfd7fa0dafd66bdc0e0e5151f415b2bc6b28c49a63ad6d1e0a244829b1db70f0",
     "manuscript/sections/K-directed-circle-messages.tex": "7eff3a7658079dff75802b8044d7213e040795eeff89c7795bb1476aee04c03a",
-    "papers/three-braids/main.tex": "5cf00eafea346a0db64b4a765d33cdedb87112c8391787d5db4911b6f977b8de",
+    "papers/three-braids/main.tex": "232ae8bd37ca6216d5ca67d2bdec3a14f12e00847dd33980dedac6851a106ffd",
     "repro/check_cyclic_source_constants.py": "302e25fa4a42784e67ecd502f004bfe98c9c08a1246c4ff64019bda46e5cee05",
     "manuscript/sections/I-geometric-characteristic.tex": "d6e7a10052866edca5369cce3aeb3a4b9758a7b9807386af2d08816da57313f2",
     "manuscript/sections/J-strict-tree-geometric-characteristic.tex": "a7abe912fbc16874f19818551fc737926375dcf0b4a3f8a8e9104e9e52a6642b",
     "notes/actual_global_diagonal_spectral_sector_gap.md": "fb8353e00968dedcf0e9563a6e1d6057a38162714e8aa1bbaf234d4042cac79f",
-    "notes/actual_cross_cofactor_factorization.md": "d0e8012d4627495c9fbdfb7ea0cfb1063d3fbfc24dc960ceec0bcdc0111b1727",
-    "notes/actual_global_left_weighted_spectral_envelope.md": "6b2a468c56e6a955443c5f4bb98f45ca0d6784834a1c56d2bb80d1e2d97010a3",
     "manuscript/sections/02-finite-source.tex": "232936be01555db658f818b3ed0539c31fe4f2deb3386cc0ed8df5497d8b65e2",
     "manuscript/sections/03-entropy.tex": "ae82af904a99907206b8756b2fa8c6a0448ff1af5af6dbae8a2cba6799599226",
     "manuscript/sections/04-geometry.tex": "56ff38ece93d261dbb8d431f4210b6174a8543de1741e6aa940a349604d29744",
@@ -676,13 +686,13 @@
     "manuscript/sections/B-analytic-estimates.tex": "0ae218413d4fac051613ec4da38fdcc7babe484c40c010c6dd83f79acc0428d5",
     "manuscript/sections/07-marked-geometry.tex": "a6527b76538e347f840a8add90ff02c98c7cf9957e039bb78c86f257e18df11b",
     "formal/VolumeLogic/VolumeTransfer.lean": "862e17ea64b46022fc830610c491c3f25dc0f09e6e6f7650f4b73e81f34401dc",
-    "formal-real/RealTransfer.lean": "77d2bea00ce198fb7730862ec05986c815d1665cd2f20fd99e4a2d55d51a87ef",
+    "formal-real/RealTransfer.lean": "fd41a1469999ec0e455e64a08c5d81a947a38797054c8f850a3a2371023c545a",
     "notes/general_marked_multicusp_gluing_rigidity.md": "f882d2c7d1f723590391d3cc03dcd9bba7a12d13c2e006c6dea570e1b4af1b42",
     "notes/actual_fejer_unique_geometric_maximizer.md": "231c22c5bd4f0c1527a84c4db92d83cc13b7f7b56627c47631644addb98f8ec4",
     "notes/actual_complete_core_geometric_deformation.md": "6b3be9bb1c1f79f2d3b4a679a8cfa5f6f5df37640354add9ab04fdb8f8c4f580",
     "manuscript/sections/M-directed-all-orders.tex": "90bde811854ea8d259b9086516703bde0684a6de7d07b99e92a56e0adab49986",
     "manuscript/sections/H-filtered-characteristic.tex": "8e8eda6cf1412a08581be941ac3cd63f792786636dc32edbf3ed4b6ffecc61ec",
     "formal/VolumeLogic/FormalRegrading.lean": "9fe0b604cfe2857cc26569442ee9c608c214307adb5fdfd666e154fcbadc7a2c",
-    "papers/dependencies.json": "c1112465f8403dc0795e5c9300936e1fd0706aa4e053e68e16ef0f570f319d31"
+    "papers/dependencies.json": "d198beba4d4a769d4da19c393002f6f54b74c898e92ffc805454150a4d10dd69"
   }
 }

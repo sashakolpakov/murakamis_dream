@@ -256,9 +256,14 @@ and a fixed real \(k\). A strict upper-rate gap for the entire remainder
 then proves that the invariant is eventually nonzero and has that same
 rate. The equality \(2\pi\operatorname{Re}A=\operatorname{Vol}(S^3\setminus K)\)
 is an explicit geometric input. The package does not prove the saddle
-expansion or the remainder estimate for a knot. If the coefficient has
-different limits on the two parities, each parity must be treated before
-combining their rates.
+expansion or the remainder estimate for a knot. A further theorem handles
+different nonzero amplitude limits on even and odd levels. More generally,
+it handles every residue class modulo a fixed positive integer, provided
+the limiting actions have the same real part. Lean proves that the finitely
+many thresholds combine into one all-level estimate. The denominator
+remains the actual level \(N\) on every subsequence. The optional package
+now contains two definitions and twenty-two theorems; the saddle, source
+gap and geometric identity remain written application inputs.
 
 ## Joining certified diagrams
 
