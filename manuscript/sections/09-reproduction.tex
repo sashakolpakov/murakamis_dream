@@ -125,12 +125,12 @@ does not supply one threshold for every diagram or allow the diagram
 or filling integers to vary with $N$.
 
 The dependency map in \sourcefile{repro/manuscript_logic.json} records
-the interfaces used by Appendices N--Q. Each full-volume conclusion
+the interfaces used by Appendices N--R. Each full-volume conclusion
 must name its exact invariant, nonzero contribution, full remainder
 bound, specified completed metric, absolute action-volume identity,
 and final rate-transfer argument. The general unchanged-sphere route
 retains its unresolved remainder requirement. It is separate from the
-completed weak-balance and protected-sum routes.
+completed weak-balance, protected-sum and ordinary-boundary routes.
 
 The following command checks that the recorded premises have the right
 roles, retain their assumptions and level scope, refer to existing
@@ -139,7 +139,7 @@ statements, and contain no circular dependency:
 python3 repro/check_manuscript_logic.py \
   --output repro/results/manuscript-logic
 \end{verbatim}
-It also deliberately introduces seven defects and checks that each is
+It also deliberately introduces nine defects and checks that each is
 rejected. These include removing the remainder premise, replacing it
 by the central contribution, importing an open estimate, and using an
 odd-level estimate in an all-level conclusion. The map is supplied by
@@ -147,6 +147,16 @@ the author; its consistency is not a proof of the mathematics at its
 vertices. The recorded source hashes identify the texts used by the
 check. Internal analytic and geometric lemmas still require their
 written proofs.
+
+For ordinary-boundary insertion, the map additionally records the
+conditional disk minimum and the small-boundary certificate hypothesis.
+The scalar comparison in Appendix~\ref{app:triangular-boundary-insertion}
+has a Lean proof. It distinguishes a wholly central inserted block from
+a block with a central attaching label but noncentral terms elsewhere.
+The duplicated target is twice the boundary logarithm in the doubled
+Lean normalization; it is not twice the removed triangle potential.
+The conditional packing and the existence of the shared witnesses remain
+separate written inputs to those declarations.
 
 \section{Finite steps checked in Lean}
 

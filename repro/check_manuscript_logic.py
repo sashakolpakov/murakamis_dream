@@ -125,6 +125,12 @@ def negative_controls(data: dict) -> list[str]:
     broken = deepcopy(data)
     broken["nodes"]["specified_metric"]["location"]["anchor"] = "nonexistent-proof-anchor"
     cases.append(("missing geometric proof reference", broken))
+    broken = deepcopy(data)
+    broken["conclusions"]["ordinary_boundary_volume"]["assumptions"].remove("ordinary_boundary_inputs")
+    cases.append(("thin-boundary certificate hypotheses omitted", broken))
+    broken = deepcopy(data)
+    broken["nodes"]["ordinary_boundary_certificate"]["requires"]["conditional_disk_action"] = "central_contribution"
+    cases.append(("central period substituted for conditional disk identity", broken))
     rejected = []
     for name, broken in cases:
         try:
@@ -147,7 +153,7 @@ def main() -> None:
         report["source_sha256"][str(path.relative_to(ROOT))] = hashlib.sha256(path.read_bytes()).hexdigest()
     args.output.mkdir(parents=True, exist_ok=True)
     (args.output / "summary.json").write_text(json.dumps(report, indent=2) + "\n")
-    print(f"Checked {report['nodes_checked']} declared proof steps and seven invalid substitutions.")
+    print(f"Checked {report['nodes_checked']} declared proof steps and {len(report['negative_controls_rejected'])} invalid substitutions.")
     print("The general remainder remains open. The mathematical nodes retain their written proofs.")
 
 

@@ -309,6 +309,16 @@ Finally, the filling transform is evaluated with all its Fourier modes and bound
 
 The technical appendices supply the main finite algebra, analytic interpolation estimates, certificate details and marked geometric calibration used in this chain. Named earlier finite-source and geometric lemmas remain explicit proof dependencies; the PDF does not reproduce every calculation in the technical library. The [proof-input map](../../repro/PROOF_INPUTS.md) locates these written inputs separately from the executable checks.
 
+Appendix R extends the joining argument to a triangle with three positive
+boundary curvatures. It proves the conditional disk minimum, accounts for
+the original coefficient demands, and separates a wholly central inserted
+piece from one containing any noncentral term. Explicit even chains
+make the two required boundary ratios small. The
+[worked explanation](results.md#inserting-a-piece-at-an-ordinary-triangular-face)
+gives the notation, two diagrams, the finite certificate and the precise
+volume conclusion. The new scalar comparisons are formalized in Lean;
+the disk geometry and the analytic inputs remain written proofs.
+
 ## Reproduce the finite certificates
 
 The quantitative chapter uses `python3 repro/run_research_checks.py curvature-fillings`. The [checks chapter](audits.md#checks-for-the-quantitative-volume-theorem) describes its three programs and their finite scope.

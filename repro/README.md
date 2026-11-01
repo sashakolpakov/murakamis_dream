@@ -19,7 +19,7 @@ python3 repro/check_proof_logic.py --output repro/results/proof-logic
 This command does not replace the certificate checks below or formally
 prove an analytic or geometric theorem in the manuscript.
 
-The statement-level dependency map for Appendices N–Q has a separate
+The statement-level dependency map for Appendices N–R has a separate
 standard-library command:
 
 ```sh
@@ -27,7 +27,7 @@ python3 repro/check_manuscript_logic.py --output repro/results/manuscript-logic
 ```
 
 It checks the declared premise roles, retained assumptions, level scope,
-references and absence of cycles. Seven deliberately invalid maps must
+references and absence of cycles. Nine deliberately invalid maps must
 be rejected. The unrestricted matched-sphere route retains its open
 remainder requirement. This is a check of the dependency record, not a
 formal proof of the mathematical claims it records.
@@ -237,3 +237,29 @@ regions at which weak balance must fail remain unchanged. Use
 `--attachments` to change the finite number checked. Appendix Q proves
 the general closure theorem and its volume implication; these finite
 checks do not certify its analytic or geometric inputs.
+
+## Ordinary triangular insertion
+
+The explicit construction in Appendix R has a separate finite runner:
+
+```sh
+python3 repro/check_triangular_boundary_certificate.py --output repro/results/triangular-boundary
+```
+
+It requires `python-flint` and NumPy. The command checks the original
+seventeen-region source and its rational corner loads, the forty old
+branches and five new overload bounds, and the restricted dual inequality
+that retains a failure of weak balance. It also constructs the oriented
+cores and their insertions at lengths 2, 4, 8 and 16, checking the exact
+matching and coefficient targets. The reference calculation is stored
+in `repro/triangular-boundary-insertion/`; a fresh run writes separately
+to `repro/results/triangular-boundary/`.
+
+The rate certificate is evaluated at the boundary ratios for length
+`2**20`. It does not construct that many regions: the proof gives their
+curvatures and uniform inequalities explicitly. Monotonicity then extends
+the same witnesses to every larger even length. The all-length topology,
+conditional disk minimum, nonzero asymptotic, knot-component condition
+and identification with the completed metric remain written proofs.
+See the [audit of this argument](manuscript_audit/triangular-boundary.md)
+for the scope of the Lean and finite checks.

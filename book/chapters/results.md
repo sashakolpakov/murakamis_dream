@@ -34,6 +34,7 @@ sections define each construction and give its proof and restrictions.
 | Ordered circle trees | A summed, local, or directed degree-and-twist criterion | Full volume limit; the simple directed twist bound is independent of tree size |
 | Matched spherical diagrams after terminal insertions | The prescribed finite decoration, knot pairing, and long twists at every old and new circle | Full volume limit for the decorated knot |
 | Unchanged matched spherical diagrams | Knot pairing without extra main components, weak balance or its quantified variant, and long twists | Full volume limit for the unchanged diagram |
+| Insertion at ordinary triangular faces | A fixed finite list of certified pieces, sufficiently small positive boundary ratios at the core witnesses, and long twists | Full volume limit; explicit cores supply the required boundaries |
 | A general unchanged matched spherical diagram | The stated geometric construction and long twists | Nonzero geometric contribution with the actual volume rate; the remaining contribution still needs a separate estimate |
 | A genuine fixed quantum recurrence | The stated initial values, peripheral factors, and regularized evaluation | Exact reconstruction of the invariant; a volume limit follows in the covered knot classes |
 
@@ -1322,3 +1323,183 @@ from one of these neighboring results must supply the exact relation
 between those quantities and preserve the same peripheral filling.
 The comparison makes no claim that the listed papers exhaust the
 literature or that the constructions here are disjoint from theirs.
+
+## Inserting a piece at an ordinary triangular face
+
+Appendix R proves a second way to assemble diagrams whose full source
+estimates are already known. The attaching face may now be away from the
+two protected vertices. Its three circle curvatures are positive. The
+result allows any fixed finite list of certified pieces: an explicit
+construction supplies a suitable core and sufficiently small boundary
+ratios for each piece. As in the other planar theorems, the final strand
+connections must give one knot, and all final crossing powers must be
+independently sufficiently long. Everything is fixed before the quantum
+level tends to infinity.
+
+Here a *certified piece* means a matched triangulated sphere together
+with a strict bound for every locally allowed noncentral choice in its
+finite source. Each crossing region has three choices: the central
+term, a left one-sided term, or a right one-sided term. A choice of one
+term at every region is called a *string*. The certificate must cover
+every such noncentral string, even if its coefficient vanishes before
+insertion. Different strings may use different positive coefficient
+weights, but each shared face has one weight throughout a given string.
+This is the same input requirement as in the preceding protected sum.
+
+### The geometric operation and the boundary condition
+
+Remove one triangle from the core and one triangle incident to the
+piece's protected edge. Identify their boundary vertices in opposite
+cyclic orders. The two triangles formerly matched to the removed faces
+become one matched pair. All other pairs retain their original order.
+The new interiors are disjoint, so this again gives a simple
+triangulated sphere with a matching. Reversing the original projection
+cut then specifies its augmented link and the primitive crossing disks.
+
+![The core and the inserted piece share boundary vertices u, v and b. Two oppositely oriented triangles are removed and their retained partners are matched along ub. The core retains the only coefficient demands at u and v.](../../manuscript/build/figures/triangular-boundary-insertion.png)
+
+Write \(u,v,b\) for the three positive boundary curvatures, meaning
+reciprocals of circle radii. The inserted piece was originally estimated
+with \(u=v=0\); those zero curvatures represented its two protected
+lines. After insertion they become ordinary core circles. The theorem
+requires \(u/b\) and \(v/b\) to be sufficiently small. This condition
+must hold at the core's complete packing and at every weight vector
+selected for its noncentral strings. There are only finitely many such
+vectors for a fixed core. No condition on the quantum level is involved.
+
+Let \(B\) denote the inserted piece and \(I\) its interior vertices
+after its boundary face is removed. For a positive weight \(w_i\), put
+\(q_i=\log w_i\). The triangle potential is
+
+\[
+ Q(w_1,w_2,w_3)=
+ \max_{\alpha_i\ge0,\;\sum_i\alpha_i=1/2}
+ \left(\sum_i f(\alpha_i)+\sum_{w_i>0}\alpha_i\log w_i\right),
+ \qquad
+ f(t)=\frac{\Lambda(\pi t)+\Lambda(\pi/2-\pi t)}{\pi},
+\]
+
+where \(\Lambda(x)=-\int_0^x\log(2\sin s)\,ds\). At a zero
+weight its load \(\alpha_i\) is required to be zero. The number
+\(\Phi_B\) is the minimum of the complete action for the original
+protected piece; \(2\pi\Phi_B\) is its augmented exterior's volume.
+
+The fixed-boundary identity is
+
+\[
+ \min_{q_I}\left(\sum_{t\text{ in the disk}}Q_t-\sum_{i\in I}q_i\right)
+     =Q(u,v,b)+\Phi_B.
+\]
+
+Thus replacing the old triangle by the optimized disk changes the
+complete action by a constant. The identity includes the boundary
+normalization, which is essential for using it in a coefficient bound.
+
+The proof supplies existence as well as uniqueness. A finite transport
+argument gives strictly positive corner loads satisfying the interior
+demands. These loads prove that the action tends to infinity when the
+interior logarithmic weights escape to infinity with the boundary
+fixed. The Hessian is positive definite on those interior variables.
+At the resulting minimizer, the tangent-circle center triangles have
+angle sum \(2\pi\) at every interior vertex. Developing them gives
+the original boundary triangle once, so its three boundary angles are
+unchanged. The derivatives of the minimized disk action and of \(Q\)
+therefore agree. Taking \(u,v\) to zero determines the remaining
+constant as \(\Phi_B\). Appendix R proves the coercivity, development
+and zero-boundary limit separately.
+
+This is part of the established variational setting for circle
+packings and patterns; see [Rivin's paper](https://annals.math.princeton.edu/1994/139-3/p02)
+and [Bobenko–Springborn](https://arxiv.org/abs/math/0203250).
+The normalized identity and its application to the present coefficient
+demands are proved in the appendix. Those references do not supply the
+quantum remainder estimate.
+
+### Why the strict estimate survives insertion
+
+Put \(T=Q(u,v,b)\) and
+\(\Delta=2T-\log b\ge0\). In comparing the two old sources, the
+\(b\)-target is counted twice. The targets at \(u,v\) are supplied
+only by the core. After correcting that duplication, the assembled
+rate is bounded by the sum of the two old rates minus \(\Delta\),
+with a possible additional error of at most \(\Delta/2\).
+
+For a wholly central inserted piece, the conditional minimum is
+\(\Phi_B+\Delta\). Its circle at the attaching region is smaller
+than any boundary circle; the tangent-circle curvature formula proves
+this assertion. That comparison makes the attaching error zero, so
+\(+\Delta\) cancels \(-\Delta\) exactly.
+
+If the piece contains any noncentral label, its finite certificate
+extends by continuity to sufficiently small positive \(u,v\).
+Previously forbidden terms, overloaded at one of those two variables,
+have rates tending to minus infinity and are bounded separately.
+There is then a constant \(\gamma_B>0\) such that the piece's rate
+is at most \(\Phi_B-\gamma_B/2\). The remaining correction is at
+most \(-\Delta+\Delta/2\le0\), so the strict margin survives.
+A central attaching label with a noncentral term elsewhere belongs to
+this second case. Classifying only the attaching label would leave a
+gap in the proof.
+
+For any fixed finite number of insertions, the same argument applies
+piece by piece. Distinct insertions use distinct matching pairs, but
+may share boundary vertices. The shared weights are the actual core
+weights, and the target accounting still gives one demand per ordinary
+vertex. The new complete action is
+\(\Phi_D+\sum_j\Phi_{B_j}\), where \(D\) is the core. This is an
+identity for the augmented action; it does not say that volumes after
+filling add.
+
+### Explicit cores and a checked example
+
+Begin with an octahedral sphere. Inside one ordinary face, repeatedly
+insert the circle tangent to its three boundary circles and alternate
+the matching as shown. For every positive even length \(n\), the
+construction has \(n+4\) matched regions. Its complete packing satisfies
+strict balance, so that one weight vector controls every noncentral
+string.
+
+![Two successive subdivisions of an ordinary triangle, with the matching alternating between adjacent triangles. The terminal face has curvatures 2, 1 and b2.](../../manuscript/build/figures/ordinary-triangular-zigzag.png)
+
+The terminal face has curvatures \(2,1,b_n\), with the exact formula
+
+\[
+ b_n=3n^2+4\sqrt2\,n+2.
+\]
+
+Its boundary ratios \(2/b_n,1/b_n\) tend to zero. For several pieces,
+join finitely many octahedral cores by the earlier protected operation,
+and build a separate even chain at each selected ordinary face. Choose
+each length to meet the threshold for its assigned piece. This gives
+an explicit construction for any fixed finite list; it does not assume
+that an arbitrary supplied core already has sufficiently small ratios.
+
+For the seventeen-region piece used above, the finite certificate
+extends at \(n=2^{20}\). Its forty original branches and five newly
+allowed protected-overload bounds have margins exceeding \(0.02\).
+Every larger even \(n\) works with the same witnesses, by monotonicity
+in the two boundary weights. The bound is deliberately conservative;
+it is not a proposed optimal chain length or a twist threshold.
+
+Attaching this piece gives \(n+20\) final crossing regions. Its old
+rational lower certificate also proves that weak balance still fails
+at the complete packing. Moreover, in the one-core construction no
+separating three-cycle contains both global protected vertices. It
+therefore is not a nontrivial protected triangular sum at that recorded
+mark. This distinguishes the marked constructions; it does not rule
+out other presentations of their knots.
+
+The full invariant conclusion uses three earlier results on the final
+diagram: the exact filling-functional norm, the nonzero central
+asymptotic, and smooth completion along the original primitive slopes.
+The action comparison is with that same completed metric. Hence,
+after independently sufficiently long fixed signed fillings,
+
+\[
+ \lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(K)|
+       =\operatorname{Vol}(S^3\setminus K)
+\]
+
+through all integer levels. The main knot cusp remains complete. The
+finite source certificate is the extra premise supplying the full
+remainder bound; no unresolved general remainder theorem is used.

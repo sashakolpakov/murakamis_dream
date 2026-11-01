@@ -1,5 +1,5 @@
 {
-  "scope": "Finite support, coefficientwise split-monic reduction and uniqueness, actual polynomial products and repeated-root product derivatives, root-permutation invariance, a conditional functional characterization, formal coefficient regrading and finite-jet limitations, tensor identities, protected-sum comparisons, and scalar rate implications only.",
+  "scope": "Finite support, coefficientwise split-monic reduction and uniqueness, actual polynomial products and repeated-root product derivatives, root-permutation invariance, a conditional functional characterization, formal coefficient regrading and finite-jet limitations, tensor identities, protected-sum and ordinary-boundary comparisons, and scalar rate implications only.",
   "not_formalized": [
     "the actual Chebyshev root data and crossing-operator functional",
     "the exact knot-diagram adapter",
@@ -803,6 +803,51 @@
     "VolumeLogic.hidden_regrading_term_nonzero": [
       "propext"
     ],
+    "VolumeLogic.boundary_left_with_defect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.boundary_right_with_defect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.boundary_bridge_with_defect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.boundary_bridge_central_block": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.boundary_total_with_defect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.boundary_total_central_block": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.boundary_conditional_action_cancels": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.boundary_noncentral_block_margin": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.boundary_certified_rate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
     "VolumeLogic.coeffEq_refl": [],
     "VolumeLogic.coeffEq_symm": [],
     "VolumeLogic.coeffEq_trans": [],
@@ -823,12 +868,13 @@
     "formal/VolumeLogic/MonicUniqueness.lean": "5b1923608c3117ba4875879310b51d56995b8548f1bc93e9491eda2238d4ab1c",
     "formal/VolumeLogic/ProtectedSum.lean": "6083dc9764da8ffdee625f01bc2c6a8929cdddf6adc8bcfbce5fed188b37e60d",
     "formal/VolumeLogic/RateComparison.lean": "837a19f87080465b55b8f9373d99eda56900829c166e98a8f16c1136ae06123b",
-    "formal/VolumeLogic.lean": "cd8d34e9bb22ecac60840760fd019bf779343429a91e40b9de32eccfa60a785c",
-    "formal/AxiomAudit.lean": "7eac3e80bd9ab99d23bc85d963548af011edd2839e4696c48e70aac38fead07e",
+    "formal/VolumeLogic/TriangularBoundary.lean": "4e28e5b0ea179f4abae23c4541e1dd29e0fc599e2637531807abd387dcfae02b",
+    "formal/VolumeLogic.lean": "86990ba9efb1ce979ee8cf0ddc938e31e76468c3e11239c0ca44434a8e5823d9",
+    "formal/AxiomAudit.lean": "eb33cd08fcd9798660e45a249fd46260c986cb002ea620b10d8c0eef12ff5154",
     "formal/lakefile.toml": "d4fbe5befdea32352528a400922442a9814ad56dd607ec3dbbff3639120d947b",
     "formal/lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
     "formal/lake-manifest.json": "94a62178292dabc02ac925f33a78081a26da3b9fc9b5c3ea33e97e9a8dce25da",
-    "repro/check_proof_logic.py": "548c13215a0efdb74a0689f58ddf15d45fa619fd616f31fd003fa78b32d84c86"
+    "repro/check_proof_logic.py": "36febd5882f0b8f664f8ebe8a2d45daf17778eb9b7250e353892c2d548548a63"
   },
   "result": "All listed declarations compiled; only the permitted foundational axioms occur."
 }

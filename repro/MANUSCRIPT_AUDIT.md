@@ -53,6 +53,7 @@ large integer levels if the conclusion is to include both parities.
 | Planar terminal decoration | Appendix L's common-weight estimates after the specified finite insertion | Appendix L with the general central-contribution argument in O | All original and added twist powers sufficiently long; the insertion can change the knot |
 | Unchanged diagrams under weak balance | Appendix P's common perturbation of face weights and Appendix N's exact filling norm | Appendix O | The actual complete packing passes weak balance or P's quantified alternative |
 | Protected triangular sums | Appendix Q transports certificates covering every locally allowed noncentral string; N transfers the whole spectral bound | O applies to the new marked sphere | A fixed finite assembly of certified pieces, its own knot-component test and independently long fixed twists |
+| Ordinary triangular insertion | Appendix R extends the block certificates to positive boundary weights and absorbs the joining error; N transfers the full bound | R gives the complete action; O supplies the final nonzero period and actual completed metric | All chosen core witnesses have sufficiently small boundary ratios; the final knot pairing and long fixed twists are required |
 | A general unchanged matched sphere | No general estimate is supplied | Appendix O gives the specified geometric contribution | The full-invariant volume conclusion is not asserted |
 
 The rows have different hypotheses. In particular, the last row is not
@@ -87,10 +88,10 @@ asserting a constant limit away from the origin. Shrinking the fixed
 chart gives the positive real part needed in the proof. Neither
 correction changes the theorem's scope.
 
-The new statement-level map for N–Q can be checked with
+The statement-level map for N–R can be checked with
 `python3 repro/check_manuscript_logic.py --output repro/results/manuscript-logic`.
 It detects missing premise roles, lost hypotheses, level mismatches and
-cycles, and rejects seven deliberately invalid substitutions. It retains
+cycles, and rejects nine deliberately invalid substitutions. It retains
 the open general remainder. This is a consistency check of a declared
 proof map, not a verification of its mathematical assertions.
 
@@ -266,3 +267,58 @@ Its forty-branch certificate is unabridged in the precise sense needed
 for composition. Appendix Q now states its scaling law explicitly as
 logarithmic homogeneity, and gives the assembled diagram's full hypotheses
 before asserting its volume conclusion.
+
+
+## Ordinary triangular boundaries
+
+[The Appendix R audit](manuscript_audit/triangular-boundary.md) follows
+conditional disk minimization, boundary development, the zero-boundary
+limit, and the extension of finite source witnesses. The decisive
+comparison splits according to the entire inserted block. This removes
+extra middle-weight inequalities that are unnecessary once the block's
+strict certificate absorbs the joining error. The original boundary
+coefficient demands are retained throughout.
+
+The finite reproduction checks the explicit seventeen-region extension
+and the original restricted dual, with oriented small constructions as
+incidence checks. Nine new Lean declarations verify the scalar
+comparisons and their exact target correction. The full project now
+contains 180 compiled declarations with inspected axiom dependencies.
+The dependency map has 21 statement-level nodes and nine invalid-map
+controls. These counts describe the checks, not the fraction of the
+manuscript formally verified. Its analytic and geometric arguments
+remain written proofs.
+
+## Where this research phase ends
+
+The scope is now frozen at the stated restricted families, including
+ordinary triangular insertion. A broader knot class, a smaller explicit
+constant, or another proposed method is not a requirement for finishing
+this phase. The unrestricted matched-sphere volume conjecture remains
+open in this account.
+
+The stopping criterion is a reviewable proof, not the number of lemmas or
+successful computations. For each retained volume theorem, the record
+must locate the exact invariant identity, the nonzero leading term, the
+whole remainder estimate, the primitive metric completion, and the
+absolute volume comparison. Their hypotheses and level scope must agree,
+and the final rate transfer must use those statements without an open
+premise. A genuine missing argument must be repaired or the conclusion
+narrowed; it cannot be replaced by a numerical test or a consistency check
+of the dependency graph.
+
+The finite certificates must be reproducible from committed inputs, with
+explicit rounding or truncation bounds and checks of the original source
+and coefficient targets. The manuscript and guide must state the same
+quantifiers and limitations, define their notation and render their
+formulas and diagrams correctly. The review record must also say which
+imported proofs were read and which parts remain outside formal
+verification. It must not turn a bounded review into a claim of complete
+machine verification.
+
+Once these conditions are met for the release's stated claims, further
+research stops for this phase. Formalizing all of analysis and geometry,
+optimizing the chain length, enlarging the knot class, and pursuing the
+archived cap, transport and torsor proposals are separate projects.
+Finding a defect in the retained proof reopens only the affected
+argument and its dependent conclusions.

@@ -177,3 +177,13 @@ import VolumeLogic
 #print axioms VolumeLogic.regrade_finite_order_iff
 #print axioms VolumeLogic.hidden_regrading_term_truncates
 #print axioms VolumeLogic.hidden_regrading_term_nonzero
+
+#print axioms VolumeLogic.boundary_left_with_defect
+#print axioms VolumeLogic.boundary_right_with_defect
+#print axioms VolumeLogic.boundary_bridge_with_defect
+#print axioms VolumeLogic.boundary_bridge_central_block
+#print axioms VolumeLogic.boundary_total_with_defect
+#print axioms VolumeLogic.boundary_total_central_block
+#print axioms VolumeLogic.boundary_conditional_action_cancels
+#print axioms VolumeLogic.boundary_noncentral_block_margin
+#print axioms VolumeLogic.boundary_certified_rate

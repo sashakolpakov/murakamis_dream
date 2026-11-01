@@ -547,3 +547,35 @@ defines them from the complete packing and proves the bounds.
 
 [SVG](figures/weak-balance-gain.svg) · [PDF](figures/weak-balance-gain.pdf) ·
 [TikZ source](figures/weak-balance-gain.tex)
+
+## Inserting a disk at an ordinary triangular face
+
+![Two oppositely oriented attaching faces are removed; their retained partners form the new matched pair along ub.](../manuscript/build/figures/triangular-boundary-insertion.png)
+
+The boundary vertices are \(u,v,b\). The core's retained triangle has
+potential \(Q_c=Q(u,c,b)\), and the inserted disk's retained triangle
+has \(Q_a=Q(u,a,b)\). The removed face has potential \(T=Q(u,v,b)\).
+The final matched pair therefore has central rate \(Q_a+Q_c\).
+The disk's other triangles are suppressed in the drawing. The core
+retains the sole coefficient demands at \(u,v\); the proof accounts
+separately for the duplicated demand at \(b\).
+
+[The construction and proof](chapters/results.md#inserting-a-piece-at-an-ordinary-triangular-face) ·
+[Vector PDF](../manuscript/build/figures/triangular-boundary-insertion.pdf) ·
+[TikZ source](../manuscript/figures/triangular-boundary-insertion.tex)
+
+## An ordinary face with small curvature ratios
+
+![Two stellar subdivisions inside a triangle and the three matching edges in blue. The terminal face has vertices u, v and b2.](../manuscript/build/figures/ordinary-triangular-zigzag.png)
+
+The original boundary circles have curvatures \(u=2,v=1,b_0=2\).
+Insert \(b_1\), then \(b_2\), into the indicated successive faces.
+The labels \(A_j,B_j,F_j\) name triangles, while \(b_j\) names
+both a vertex and its curvature. The thick edges specify the pairs
+\(A_1\) with the old partner, \(B_1\) with \(B_2\), and
+\(F_2\) with \(A_2\). Repeating the construction at even length
+\(n\) gives \(b_n=3n^2+4\sqrt2\,n+2\), hence small terminal
+ratios \(u/b_n,v/b_n\). The protected mark lies outside this disk.
+
+[Vector PDF](../manuscript/build/figures/ordinary-triangular-zigzag.pdf) ·
+[TikZ source](../manuscript/figures/ordinary-triangular-zigzag.tex)

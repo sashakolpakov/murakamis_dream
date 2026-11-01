@@ -19,7 +19,7 @@ The product extension proves that factors may be reduced before each
 multiplication while retaining repeated-root derivatives. Appendix M
 also explains the formally checked coefficient recovery under
 \(u=hs\), and why it needs all expansion orders. The dependency check
-for Appendices N–Q keeps the full remainder premise distinct from the
+for Appendices N–R keeps the full remainder premise distinct from the
 geometric contribution; it does not certify the proofs at its vertices.
 
 The paper proves volume limits for finite decorations of planar tangle diagrams and for specified ordered-tree constructions. The planar theorem starts from a simple triangulated sphere with a chosen matching, constructs its complete circle packing, and adds terminal tangles until a strict shared-radius inequality holds. Independently sufficiently long signed twists at every original and added crossing circle then give the volume equality for the resulting knot. The tree theorems have separate explicit degree and twist bounds. Chapter 1 distinguishes these families and their quantifiers.
@@ -137,3 +137,15 @@ explicit sequence with \(17+r\) crossing regions outside weak balance at
 the retained mark. The argument, its inherited analytic and geometric
 inputs, and the finite reproduction command are recorded in the
 [protected-sum audit](../repro/manuscript_audit/protected-sum.md).
+
+Appendix R treats insertion along an ordinary triangular face. It proves
+the conditional disk minimum for every positive boundary triple,
+extends the finite source certificates to sufficiently small positive
+boundary ratios, and keeps the original coefficient targets when the
+pieces are joined. Explicit even chains provide suitable boundaries
+for any fixed finite list of certified pieces. The nine corresponding
+Lean declarations check the scalar comparison and the distinction
+between a wholly central block and a block with a noncentral term.
+The packing construction and the analytic and geometric inputs remain
+written proofs; their role is recorded in the
+[ordinary-boundary audit](../repro/manuscript_audit/triangular-boundary.md).

@@ -66,7 +66,7 @@ product is reduced before that comparison is used.
 ## Checking finite implications in Lean
 
 The current audit also records a machine-readable dependency map for
-Appendices N–Q. Run:
+Appendices N–R. Run:
 
 ~~~sh
 python3 repro/check_manuscript_logic.py --output repro/results/manuscript-logic
@@ -80,7 +80,7 @@ certificate assumption for each restricted family. The unrestricted
 matched-sphere route still has an open remainder premise.
 
 The checker detects missing premises, circular dependencies and changes
-of level scope. Seven deliberately invalid versions are also tested,
+of level scope. Nine deliberately invalid versions are also tested,
 including a substitution of an odd-level bound into an all-level
 argument. This checks the consistency of the written dependency map;
 it does not verify the mathematical claims assigned to its vertices.
@@ -193,6 +193,37 @@ vertex links, matchings and original target counts. It also checks that
 the four regions containing a possible balance failure are untouched.
 The argument for arbitrarily many attachments is the induction in
 Appendix Q. The finite examples do not replace that proof.
+
+## Checking insertion at an ordinary triangular face
+
+The [ordinary-boundary audit](../../repro/manuscript_audit/triangular-boundary.md)
+follows the new disk minimum and its coefficient targets separately.
+The comparison subtracts \(\Delta=2Q(u,v,b)-\log b\), where
+\(u,v,b\) are the attaching curvatures. A wholly central inserted
+piece contributes exactly that correction. A noncentral piece uses
+an absolute strict bound, which absorbs the possible bridge error.
+The case distinction concerns every label in the inserted piece.
+
+The nine new Lean declarations verify this scalar argument with its
+explicit hypotheses. They do not prove the conditional packing,
+extension of the witnesses, or hyperbolic completion. The current full
+Lean runner compiles 180 declarations and inspects their axiom
+dependencies; no admitted proofs are accepted.
+
+Run the explicit finite certificate with:
+
+~~~sh
+python3 repro/check_triangular_boundary_certificate.py --output repro/results/triangular-boundary
+~~~
+
+The command requires `python-flint` and NumPy. It replays the original
+seventeen-region cover and the newly allowed terms at the stated
+positive boundary weights. It also checks the finite oriented
+constructions and the rational obstruction used to retain a balance
+failure. The formulas for every even chain length, the conditional
+disk identity and the final volume transfer are proved in Appendix R.
+The program does not build or evaluate the invariant of the large
+explicit example.
 
 ## The uniform cap estimate
 

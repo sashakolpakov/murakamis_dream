@@ -1,12 +1,13 @@
 {
-  "scope": "Statement-level interfaces used by Appendices N–Q. The graph does not enumerate every internal lemma or external source used in their written proofs.",
+  "scope": "Statement-level interfaces used by Appendices N\u2013R. The graph does not enumerate every internal lemma or external source used in their written proofs.",
   "assumptions": {
     "marked_sphere": "A fixed finite simple triangulated sphere with at least four vertices, its actual perfect dual matching, and a nonmatching marked edge; retain cyclic orders and primitive crossing-disk framings.",
     "fixed_data": "The whole diagram, retained half twists and integer crossing powers are fixed before N tends to infinity. The invariant and framing use the recorded original normalization.",
     "long_twists": "The absolute value of each signed auxiliary filling integer exceeds a threshold depending on the fixed diagram and hypotheses. The signs are independent. This is not a bound uniform in a growing family of diagrams.",
     "knot_pairing": "The original strand connections give one knot, with no internally closed extra main component.",
     "weak_balance": "The actual complete packing satisfies every inequality in (wb:balance), or the separately quantified small-defect criterion.",
-    "protected_inputs": "A fixed finite protected triangular assembly as in Appendix Q. Every input has a strict shared-weight certificate for every locally allowed noncentral string, even if its old global coefficient vanishes."
+    "protected_inputs": "A fixed finite protected triangular assembly as in Appendix Q. Every input has a strict shared-weight certificate for every locally allowed noncentral string, even if its old global coefficient vanishes.",
+    "ordinary_boundary_inputs": "A fixed finite assembly as in Appendix R: unabridged block certificates, distinct selected core matching pairs with all-ordinary triangular boundaries, and positive boundary ratios sufficiently small at every selected core witness and at its complete vector."
   },
   "nodes": {
     "exact_source": {
@@ -317,6 +318,81 @@
         "full_remainder": "general_remainder"
       },
       "assumptions": []
+    },
+    "conditional_disk_action": {
+      "statement": "For every positive boundary triple, the interior action has a unique minimizer and equals the old triangle potential plus the protected complete action. The geometric development gives the conditional root-curvature comparison.",
+      "status": "written",
+      "levels": "independent",
+      "location": {
+        "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+        "anchor": "\\label{tbi:eq-14}"
+      },
+      "provides": [
+        "conditional_disk_action"
+      ],
+      "requires": {
+        "complete_packing": "complete_packing"
+      },
+      "assumptions": []
+    },
+    "ordinary_boundary_certificate": {
+      "statement": "At small positive boundary ratios the unabridged block certificate extends, including newly allowed sides. The whole-block case split and exact target correction give a strict shared-weight certificate for each noncentral assembled string.",
+      "status": "written",
+      "levels": "all",
+      "location": {
+        "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+        "anchor": "\\label{tbi:eq-23}"
+      },
+      "provides": [
+        "shared_certificate"
+      ],
+      "requires": {
+        "conditional_disk_action": "conditional_disk_action"
+      },
+      "assumptions": [
+        "ordinary_boundary_inputs",
+        "fixed_data"
+      ]
+    },
+    "ordinary_boundary_remainder": {
+      "statement": "The phase-uniform source bound covers every complementary string. The exact filling norm and a sufficiently small filled-action drop give a strict bound for the entire filled remainder.",
+      "status": "written",
+      "levels": "all",
+      "location": {
+        "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+        "anchor": "\\label{tbi:eq-27}"
+      },
+      "provides": [
+        "full_remainder"
+      ],
+      "requires": {
+        "shared_certificate": "ordinary_boundary_certificate",
+        "exact_invariant": "exact_source",
+        "filling_bound": "filling_norm",
+        "nonzero_contribution": "central_contribution"
+      },
+      "assumptions": []
+    },
+    "ordinary_boundary_volume": {
+      "statement": "All-level full-invariant volume limit for the fixed ordinary-boundary assembly and its own knot-component test. All sufficiently long final signed twist powers are fixed before the level limit.",
+      "status": "written",
+      "levels": "all",
+      "location": {
+        "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+        "anchor": "\\label{tbi:main}"
+      },
+      "provides": [
+        "volume_limit"
+      ],
+      "requires": {
+        "exact_invariant": "exact_source",
+        "nonzero_contribution": "central_contribution",
+        "specified_metric": "specified_metric",
+        "absolute_volume": "absolute_volume",
+        "rate_transfer": "rate_transfer",
+        "full_remainder": "ordinary_boundary_remainder"
+      },
+      "assumptions": []
     }
   },
   "conclusions": {
@@ -360,6 +436,16 @@
         "general_remainder",
         "general_volume"
       ]
+    },
+    "ordinary_boundary_volume": {
+      "assumptions": [
+        "marked_sphere",
+        "fixed_data",
+        "long_twists",
+        "knot_pairing",
+        "ordinary_boundary_inputs"
+      ],
+      "unresolved": []
     }
   }
 }

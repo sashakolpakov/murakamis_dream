@@ -18,12 +18,12 @@ weaker than the volume conjecture for a general knot. Each result retains its
 own construction and hypotheses. The following distinctions are useful when
 reading the later chapters.
 
-\begin{center}
-\small
-\begin{tabular}{@{}p{.24\textwidth}p{.46\textwidth}p{.22\textwidth}@{}}
+{\small
+\begin{longtable}{@{}p{.24\textwidth}p{.46\textwidth}p{.22\textwidth}@{}}
 \toprule
 Result & Conclusion and restriction & Proof location\\
 \midrule
+\endhead
 Recursive tangle construction &
 The full invariant has the knot-volume limit for the stated grammar and sufficiently long fixed signed twists. &
 Chapters~2--8; Appendices~A--D.\\[5pt]
@@ -39,6 +39,9 @@ Appendix~\ref{app:weak-balance}.\\[5pt]
 Protected triangular sums &
 A finite assembly of diagrams with certificates covering all locally allowed noncentral sectors has the full volume limit after sufficiently long fixed fillings. &
 Appendix~\ref{app:protected-triangular-sums}.\\[5pt]
+Ordinary triangular insertions &
+Certified pieces may be inserted at ordinary faces whose two smaller boundary weights are sufficiently small at all chosen core witnesses. Explicit cores meet this condition for any fixed finite list of pieces. &
+Appendix~\ref{app:triangular-boundary-insertion}.\\[5pt]
 Preferred longitude and recurrence &
 For the covered strict-tree and circle-tree classes, the preferred-longitude identity and full meridian expansion force one geometric factor in any existing all-level annihilator. No recurrence-ideal equality is asserted. &
 Chapter~\ref{gc:chapter}; Appendices~H--J and M.\\[5pt]
@@ -49,8 +52,8 @@ Undecorated matched spheres &
 The specified geometric contribution has a nonzero asymptotic with the actual filled volume. No general estimate for its complementary contribution is asserted. &
 Appendix~\ref{app:morse-geometric-contribution}.\\
 \bottomrule
-\end{tabular}
-\end{center}
+\end{longtable}
+}
 
 The finite filling estimate and the geometric-contribution theorem are included for their stated conclusions. They are not
 used as substitutes for the full-source estimates in the knot-volume theorems.
@@ -116,6 +119,26 @@ crossing regions and still fails weak balance at the retained mark.
 The coefficient estimates nevertheless remain strict. This is a
 construction from certified inputs, not an assertion that every
 possible tangle composition has such a certificate.
+
+Appendix~\ref{app:triangular-boundary-insertion} permits attachment at
+an ordinary triangular face, away from the protected edge. Write
+$(u,v,b)$ for its three positive circle curvatures. A certified piece
+can be inserted when $u/b$ and $v/b$ are sufficiently small at the
+complete core vector and at each coefficient witness used by the core.
+The proof first minimizes the inserted disk's action with these three
+weights fixed. The result is the old triangle potential plus the
+piece's protected complete action. For the remaining terms, a
+comparison using the entire inserted piece preserves the strict gap
+and accounts for each old boundary target once.
+
+Even chains inside an octahedral face have an explicit curvature
+recurrence making both boundary ratios tend to zero. They provide
+cores for any prescribed finite list of certified pieces. All final
+crossing powers are then chosen sufficiently long and held fixed
+before taking the quantum limit. This construction includes marked
+diagrams with a balance failure which are not nontrivial protected
+triangular sums at their recorded mark. It does not classify all
+presentations of the resulting knots.
 
 \section{Building the diagrams from four-ended tangles}\label{sec:geometric-construction}
 A \emph{two-string tangle} is a pair of arcs in a ball whose four endpoints are fixed on its boundary. We draw its ball as a box, with two endpoints at the bottom and two at the top. Closed curves may also be present inside a box. In the augmented diagrams used in the proof, some of those curves are distinguished auxiliary circles. Composition can create further closed main components, so the eventual requirement that the filled diagram be a knot must be checked rather than assumed.

@@ -93,6 +93,16 @@ Its strict source certificates nevertheless give the volume limit after
 independently sufficiently long fixed fillings. Appendix Q defines the
 operation, its input certificates and its knot-component requirement.
 
+Appendix R permits an insertion away from the protected edge. Its
+attaching triangle has three positive circle curvatures; two must be
+sufficiently small relative to the third at every coefficient witness
+used by the core. An explicit even chain makes these ratios as small
+as required. Consequently any fixed finite collection of certified
+pieces can be attached to a suitable core, followed by independently
+long fixed signed twists. The
+[construction and proof](https://sashakolpakov.github.io/murakamis_dream/guide/results.html#inserting-a-piece-at-an-ordinary-triangular-face)
+explain the boundary condition and the exact coefficient demands.
+
 ## Ordered tangle trees and explicit bounds
 
 The paper also develops Conway’s algebraic, or arborescent, constructions
@@ -152,6 +162,9 @@ and the first derivative of a product at a repeated root. It also checks
 formal coefficient recovery under \(u=hs\), including the limitation
 of any fixed finite-order expansion, and the local sector
 comparisons and target cancellation for the triangular-sum construction.
+It also checks the ordinary-boundary comparison, including the
+different estimates for a wholly central piece and a piece containing
+any noncentral term.
 Appendix N explains why this
 remainder is unique and states exactly what would identify a candidate
 functional with its top coefficient. The analytic estimates and geometric completion

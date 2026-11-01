@@ -30,6 +30,7 @@ theorem is applied.
 | [MonicUniqueness.lean](VolumeLogic/MonicUniqueness.lean) | Uniqueness of the remainder under a coefficientwise degree bound, including padded lists; idempotence; invariance under permutations of repeated or distinct roots; characterization of the functional by its values below the modulus degree and its vanishing on multiples. | Formalizes the canonical-remainder proposition in Appendix N. The characterization gives sufficient hypotheses for identifying a candidate functional; it does not prove those hypotheses for a crossing matrix. |
 | [MonicProduct.lean](VolumeLogic/MonicProduct.lean) | Constructs coefficient-list multiplication and proves its ring identities, closure of the explicit monic ideal under multiplication, associative canonical quotient multiplication, and reduction before every step of a finite product. The full value and first-normal product rules are retained at repeated roots. | Checks the polynomial-representative algebra used in Appendix M's canonical-degree restriction and Appendix N's repeated-root functional. It does not prove the Chebyshev folding norm, the crossing-operator identification, or any analytic bound. |
 | [ProtectedSum.lean](VolumeLogic/ProtectedSum.lean) | The three local sector comparisons for a protected triangular sum, cancellation of the duplicated face target, and preservation of a positive gap. The local maxima and the sector map are constructed explicitly. | Scalar part of Appendix Q. The triangle lower bounds, existence of shared witnesses, diagram construction, and analytic and geometric inputs remain written proofs. |
+| [TriangularBoundary.lean](VolumeLogic/TriangularBoundary.lean) | The local comparison with three positive boundary weights, the exact duplicated target, and the two cases according to whether the entire inserted block is central. | Scalar part of Appendix R. The conditional disk minimum, extension of certificates to positive boundary weights, topology, and volume identity remain written proofs. |
 | [RateComparison.lean](VolumeLogic/RateComparison.lean) | A linear entropy gain exceeds a quadratic cost under the stated inequality; nonnegative additional losses cannot undo a strict sector gap; a sufficiently small filling-action drop preserves the gap. | Scalar implications in Appendix P, following the entropy, Hessian, and filling estimates. |
 | [FormalRegrading.lean](VolumeLogic/FormalRegrading.lean) | The coefficient substitution \(u=hs\), its inverse on the supported coefficient tables, injectivity, and the exact information retained through any finite order. A nonzero term invisible through a prescribed order is constructed. | The formal coefficient argument in Appendix M. The analytic expansion to every order, compatibility with the actual operator, and the geometric longitude remain separate proofs. |
 
@@ -162,3 +163,29 @@ bounded by the sum of the selected input costs. It proves the remaining
 scalar implication; it does not construct a sequence of triangulated
 spheres or shared weight vectors. Those constructions, including the
 normalization at each joining face, are proved in Appendix Q.
+
+## Insertion at an ordinary triangular boundary
+
+`TriangularBoundary` uses the same three local rates as `ProtectedSum`.
+The two formerly zero weights may now be positive. In the notation of
+Appendix R, put \(T=Q(u,v,b)\) and
+\(\Delta=2T-\log b\). The Lean variable `t` is \(2T\), while
+`b` is \(\log b\); hence `t-b` is \(\Delta\). Costs, complete
+actions and certificate gaps are doubled. The duplicated coefficient
+target is \(2\log b\), not \(4T\).
+
+The general local comparison permits a defect of at most
+\(\Delta/2\) in undoubled rates. If the entire inserted block is
+central, only the central or left attaching label is possible. The
+conditional packing comparison \(Q(u,a,b)\ge T\) removes that
+defect. If any label of the block is noncentral, its absolute
+certificate absorbs the defect and retains its strict margin.
+`boundary_certified_rate` proves precisely this case split. Its
+Boolean input includes the labels away from the attaching region;
+a central attaching label alone does not put a block in the first case.
+
+These nine declarations do not construct the conditional packing or
+the finite weight witnesses. They prove the scalar conclusion after
+those hypotheses have been supplied. Appendix R proves those inputs
+and explains how different insertions can share boundary vertices
+without duplicating their coefficient demands.
