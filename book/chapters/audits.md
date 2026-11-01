@@ -6,6 +6,18 @@ An exact symbolic calculation can establish an identity in formal variables. A r
 
 The current [strict Conway tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md) includes bounds for the full quantum sum, a nonzero selected contribution, the original normalization and the actual marked filling geometry. Its proof is not waiting for a theorem about all knots. The more specialized general-plat calculations catalogued below retain their own hypotheses and limitations.
 
+## Trivalent multiplication regions
+
+The [component theorem](../../notes/actual_main_meridian_trivalent_component_bound.md) has one reproduction command:
+
+```sh
+python3 repro/run_research_checks.py trivalent-components
+```
+
+The script constructs the Newton polynomials and performs division by the deformed polynomial relation in exact cyclotomic fields. It checks every cubic index triple through level ten, using symmetry to avoid repeated calculations. This includes internal indices above one half, zero and half endpoints, both parities, and the actual turn types. It also checks the elementary identities used in the simultaneous boundary comparison.
+
+The script uses Python and SymPy and has no numerical approximations. It checks the finite algebra; the proof supplies the concavity argument, the uniform gap, and the complex estimates needed for the [filled-knot theorem](../../notes/actual_main_meridian_trivalent_filled_volume.md).
+
 ## The preferred cusp correction
 
 The exact crossing and framing calculation and the geometric longitude calculation can be reproduced together:

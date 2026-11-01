@@ -8,7 +8,7 @@ The crossing-circle traces are applied only after this common finite sum has bee
 
 Fix a [strict ordered Conway source](actual_conway_all_strict_tree_long_twist_volume.md), with the stated knot and absence-of-internal-component hypotheses whenever a knot volume is mentioned. Use its reduced tree of ordered product junctions and physical quarter-turn edges. A **circle vertex** contains one original operator belonging to a crossing circle; an ordinary original leaf is a circle vertex of valence one. A **bare vertex** is a product junction containing no such operator. Thus this tree has \(H\ge2\) circle vertices, \(J\ge0\) bare vertices, and \(E=H+J-1\) edges. Every bare vertex has valence at least three. We retain the original orders, orientation types, closing mark and framing.
 
-For the global source-to-window statement, a maximal bare component is either a singleton, or satisfies the path hypothesis of the [component extension](actual_main_meridian_component_extension.md). More explicitly, if \(b_v\) is its number of incident rigid boundary branches, assume \(b_v\ge5\) and
+For the global source-to-window statement, each maximal bare component is either a singleton, entirely trivalent in the full reduced tree, or satisfies the path hypothesis of the [component extension](actual_main_meridian_component_extension.md). The [trivalent extension](actual_main_meridian_trivalent_filled_volume.md) permits arbitrary fixed component size and retains all internal labels. For the path alternative, if \(b_v\) is the number of incident rigid boundary branches, require \(b_v\ge5\) and
 \[
  \eta_{\mathcal U}=2G_0-\max_{\mathcal P\subset\mathcal U}
         \sum_{v\in\mathcal P}\varepsilon_{b_v-1}>0,
@@ -20,9 +20,9 @@ For the global source-to-window statement, a maximal bare component is either a 
 The maximum is over simple component paths. Here
 \(J(x)=\int_0^x\log(2\sin\pi u)\,du\),
 \(g(x)=J(2x)-4J(x)\), and \(G_0=g(1/4)\).
-The sufficient condition \(b_v\ge\max(8,4|\mathcal U|)\) may be used. Singleton bare components use the existing arbitrary-valence theorem, not this sufficient numerical condition.
+The sufficient condition \(b_v\ge\max(8,4|\mathcal U|)\) may be used for the path alternative. Singleton and entirely trivalent components do not require this numerical condition. Trivalence counts all original incidences; an artificial binary resolution of a larger junction does not qualify.
 
-The global inputs are the [component extension](actual_main_meridian_component_extension.md), including its grouped-error argument in Section 6, and the [source-bound theorem](actual_main_meridian_source_bounds.md). The local inputs are the [regular bare trace](actual_main_meridian_regular_bare_trace.md), the [regular circle trace](actual_main_meridian_regular_circle_trace.md), and the all-low fixed-power comparison in the [direct crossing trace](actual_main_meridian_direct_crossing_trace.md), Section 7. Their uses are separated below: grouped errors are controlled before localization, and exact finite positive resolutions supply the wire coordinates and the saddle.
+The global inputs are the [component extension](actual_main_meridian_component_extension.md), including its grouped-error argument in Section 6, and the [source-bound theorem](actual_main_meridian_source_bounds.md). The new [trivalent comparison](actual_main_meridian_trivalent_component_bound.md) supplies the additional full-component bound and exact cubic trace replacement. The other local inputs are the [regular bare trace](actual_main_meridian_regular_bare_trace.md), the [regular circle trace](actual_main_meridian_regular_circle_trace.md), and the all-low fixed-power comparison in the [direct crossing trace](actual_main_meridian_direct_crossing_trace.md), Section 7. Their uses are separated below: grouped errors are controlled before localization, and exact finite positive resolutions supply the wire coordinates and the saddle.
 
 Put
 \[
@@ -141,7 +141,9 @@ This is the power of \(N\) in (5). Each basis evaluation has power \(N^{-1}\), e
 
 ## 3. Original action and the strict grouped optimizer
 
-All relevant complete retained edge labels are strictly in \((0,1/2)\). For separated bare vertices this is the original intrinsic-probe statement. For the additional components in (1), a bare–bare edge with label \(a\) contributes the original cut action \(f_A(1-a)+f_B(1-a)\). The product inequality \(f_A',f_B'\ge f_{hh}'\) makes it decrease when \(a>1/2\), and makes its derivative strictly negative at \(a=1/2\) when at least one adjacent product has at least three inputs. The boundary-count hypothesis ensures that strict case. The original strict state excludes \(a=0\). This uses the derivative inequality from the [probe geometry](actual_conway_unflagged_probe_geometry.md), Appendix A, and the original coupled profiles retained in the [component extension](actual_main_meridian_component_extension.md), Sections 2–4.
+There are two kinds of edge regularity. A circle-incident label is strictly in \((0,1/2)\), by the original intrinsic-probe statement and the leaf boundary barrier. An edge inside a trivalent bare component is strictly in \((0,1)\); its complete maximizing label may equal or exceed one half. The full old support of these internal edges is retained. The [global trivalent proof](actual_main_meridian_trivalent_filled_volume.md) explains why this distinction suffices for the complex packet.
+
+For separated bare vertices all retained labels are low. For components satisfying the path condition (1), a bare–bare edge with label \(a\) contributes the original cut action \(f_A(1-a)+f_B(1-a)\). The product inequality \(f_A',f_B'\ge f_{hh}'\) makes it decrease when \(a>1/2\), and makes its derivative strictly negative at \(a=1/2\) when at least one adjacent product has at least three inputs. The boundary-count hypothesis ensures that strict case. The original strict state excludes \(a=0\). This uses the derivative inequality from the [probe geometry](actual_conway_unflagged_probe_geometry.md), Appendix A, and the original coupled profiles retained in the [component extension](actual_main_meridian_component_extension.md), Sections 2–4.
 
 At a bare vertex, summing its strict binary inequalities gives
 \[
@@ -149,7 +151,7 @@ At a bare vertex, summing its strict binary inequalities gives
                 =\sum_{g\text{ at }v}(x_g+y_g-z_g)>0.
  \tag{13}
 \]
-Consequently a fixed sufficiently small retained edge neighborhood has \(x_e\in[\delta,1/2-\delta]\) and every bare incident sum at least \(1+\delta\), for some \(\delta>0\).
+A sufficiently small retained-edge neighborhood therefore has all labels in \([\delta,1-\delta]\), all circle-incident labels in \([\delta,1/2-\delta]\), and every bare incident sum at least \(1+\delta\), for some \(\delta>0\). Components using the old path estimate retain its stronger low internal window.
 
 Here is why the grouped wire action has exactly the original maximum, rather than an independently optimized upper budget. At completeness, for a product \(E=\prod_{a=1}^D e_{n_a}\) of low basis elements,
 \[
@@ -188,15 +190,15 @@ The grouped phase at zero angles is consequently
 \]
 It has the original maximum \(F_0\) and the projected original strict maximizer \(\mathbf y^*\). The exact positive expansion above also shows that its compact complement has a strict original-source gap. More directly, \(g''<0\) on \((0,1/2)\), and the retained gate action \(m\) has a negative definite three-variable Hessian in its strict domain. These facts are proved from the original volume atoms in the [general core packet theorem](actual_conway_general_core_packet_and_gap.md), Sections 1 and 3–5. Every circle-incident edge variable is covered by a \(g\) term; every remaining edge and every hidden bare variable is an argument of a retained \(m\). Hence the combined Hessian in the primitive coordinates is negative definite. Global concavity then gives uniqueness of the grouped maximum.
 
-Choose the rectangular box \(\mathcal W\) about \(\mathbf y^*\) so its closure is entirely strict. All affine factorial arguments in every bare gate lie in a fixed compact subinterval of \((0,1)\), every edge is regular low, and (13) holds throughout the box. For all sufficiently large \(N\), every point of the entire integer box is an actual supported state; no indicator changes there.
+Choose the rectangular box \(\mathcal W\) about \(\mathbf y^*\) so its closure is entirely strict. All affine factorial arguments in every bare gate lie in a fixed compact subinterval of \((0,1)\), circle-incident edges are regular low, bare–bare edges stay in the interior of \((0,1)\), and (13) holds throughout the box. For all sufficiently large \(N\), every point of the entire integer box is an actual supported state; no indicator changes there.
 
 ## 4. What is replaced before the packet is used
 
 The source-to-window reduction is an absolute error statement at the augmented exponent \(F_0\). It is not a relative error assertion at a filled critical action.
 
-First, the grouped component induction gives a fixed loss for the summed high-edge part. The proof applies to the actual fixed crossing \(R_s^n\) in place of \(R_s^{\epsilon}L_j\): a fixed power and its inverse have polynomial spectral norm on every \(|s|\le R<1\), and the exact coefficient extractor sends that bound into the same low/high cone. The old error recursion is multilinear and homogeneous in the boundary constants. Thus an inherited full-cone deficit crosses the next component without paying an extra \(2G_0\); newly created high errors use (1). This is the distinction proved in the [component extension](actual_main_meridian_component_extension.md), Section 6. The tree is fixed, so the finite minimum of the structural gaps is positive. Prefactors may depend on the fixed integers \(n_v\); the exponential deficits do not depend on their size.
+First, the grouped component induction gives a fixed loss for its error terms and for high component-boundary indices. In an entirely trivalent component, the error contains the extra cubic trace terms; the clean part retains all old-supported internal indices, including high ones. Thus no general loss is asserted for a high internal bare–bare edge. The proof applies to the actual fixed crossing \(R_s^n\) in place of \(R_s^{\epsilon}L_j\): a fixed power and its inverse have polynomial spectral norm on every \(|s|\le R<1\), and the exact coefficient extractor sends that bound into the same low/high cone. The old error recursion is multilinear and homogeneous in the boundary constants. Thus an inherited full-cone deficit crosses the next component without paying an extra \(2G_0\); new errors use (1) in the path class and the simultaneous comparison in the trivalent class. This is the distinction proved in the [component extension](actual_main_meridian_component_extension.md), Section 6. The tree is fixed, so the finite minimum of the structural gaps is positive. Prefactors may depend on the fixed integers \(n_v\); the exponential deficits do not depend on their size.
 
-For the low sector, no spectral norm is substituted for a coefficientwise majorant. At a circle vertex and for any low product \(E\), the actual fixed-power trace has the same-level bound
+For the remaining contraction, the component boundary indices are low. Trivalent bare tensors are already the positive complete tensors. Other allowed components use their whole-hub majorant before regular replacement. No spectral norm is substituted for that coefficientwise comparison. At a circle vertex and for any low product \(E\), the actual fixed-power trace has the same-level bound
 \[
        |\phi_\sigma(R_\sigma^nE)|
              \le C_{n,R,D}N\,\phi_0(L_NE),
@@ -205,9 +207,11 @@ For the low sector, no spectral norm is substituted for a coefficientwise majora
 \]
 One direct proof uses the exact shifted root sum for generic \(\sigma\), on a larger parameter circle where \(\sin2\pi\sigma\) is bounded away from zero. Each shifted root has angular imaginary height \(O(N^{-1})\). Positivity of the Laurent coefficients of \(E(-u-u^{-1})\) bounds its value by \(C E(-2)\); the fixed-power full chirp has bounded modulus on this grid. The root sum is at most \(C N^2E(-2)\). Divide by the lower bound (14), then apply the maximum principle to the whole holomorphic trace to include the collisions \(\sigma=0,\pm1/2\). This proves (18) with the full normal data. Constant opposite-color types have the same bound with their prescribed scalar retained.
 
-Complete bare tensors have the positive expansion (10). The all-parity whole-hub comparison and (18) therefore bound the low contraction by a polynomial times the **original** pure positive reference. A retained edge assignment outside the neighborhood in (13) misses the unique original optimizer and loses a fixed action amount. This proves the off-edge-window error before any circle contour is moved.
+Complete bare tensors have the positive expansion (10). The all-parity whole-hub comparison for the old component class, the exact old tensors in the trivalent class, and (18) therefore bound the remaining contraction by a polynomial times the original pure positive reference. A retained edge assignment outside the neighborhood in (13) misses the unique original optimizer and loses a fixed action amount. This proves the off-edge-window error before any circle contour is moved.
 
-Inside that neighborhood, the regular bare estimate is
+Inside that neighborhood, a trivalent bare trace is exactly unchanged. Indeed the old pair support gives \(i+j+k\le3d/2<2N-1\). In division by \(P_0\), the quotient has degree at most \(N-2\); the constant change \(P_0\mapsto P_0+\Delta_\sigma\) cannot change the remainder's coefficient of degree \(N-1\). Thus \(\phi_\sigma(e_i e_j e_k)=\phi_0(e_i e_j e_k)\), including the full internal label range.
+
+At the other allowed vertices, the regular bare estimate is
 \[
  \phi_\sigma\left(\prod_{e\sim v}e_{n_e}\right)
  =\phi_0\left(\prod_{e\sim v}e_{n_e}\right)
@@ -246,7 +250,7 @@ The positive real marks and their analytic continuations are those in [exact fac
 \]
 with uniform fixed derivatives and further uniform inverse-power expansions. The fixed integer \(c\) must be kept.
 
-Replace the factorials in (9) by (21), with their exact affine arguments. For \(u=N\tau/(2\pi)\), use
+Replace the factorials in (9) by (21), with their exact affine arguments. For the circle-incidence factors, put \(u=N\tau/(2\pi)\) and use
 \[
  \mathcal E_N(x,\tau)=
  \frac{G_N(d/2+u)G_N(d/2-u)}
@@ -353,7 +357,7 @@ On the compact real complement, the limiting numerator logarithmic integral is s
 
 Continuity of this logarithmic integral preserves half the loss on a sufficiently small complex strip. The uniform \(o(1)\) in the finite upper estimate is absorbed in another quarter of that loss for all sufficiently large \(N\). Reducing \(c\) so \(c\pi^2\) is smaller than the remaining loss proves (32) on the complement. This absorption is why a polynomial prefactor is legitimate in (32), although a global complete-core recurrence bound at arbitrary indices only has a uniform \(e^{No(1)}\) prefactor. No uniform polynomial core bound at collisions has been assumed.
 
-In (4) every edge index stays in one such compact interval. Apply (32) at every circle incidence. All bare coefficients in (4) are nonnegative, and the edge ratios are uniformly bounded. The zero-angle positive sum has rate \(F_0\) with a polynomial bound, either by (5) at zero or directly by the regular factorial expansion and fixed-dimensional Laplace estimate. Summing yields (7), with a strictly positive angular loss for every circle since every circle has an incident edge.
+In (4) every circle-incident edge index stays in one such compact interval. Apply (32) at every circle incidence. All bare coefficients in (4) are nonnegative, and the edge ratios are uniformly bounded. The zero-angle positive sum has rate \(F_0\) with a polynomial bound, either by (5) at zero or directly by the regular factorial expansion and fixed-dimensional Laplace estimate. Summing yields (7), with a strictly positive angular loss for every circle since every circle has an incident edge.
 
 The actual polynomial in each angle is periodic. Therefore replacing a real endpoint \(\pm\pi\) by \(\pm\pi+O(N^{-1})\) changes the relevant squared distance to the nearest multiple of \(2\pi\) by only \(O(N^{-1})\). This costs a bounded factor in (7). Complex translations of height \(O(N^{-1})\) are also permitted. Consequently endpoint currents with real spectator variables, or spectators on their physical translated grids, retain a fixed angular loss. No spectator is required to lie on a slope-dependent complex contour for this assertion. Cauchy's estimate on disks of radius \(1/N\), and on a slightly larger main-parameter disk, supplies the stated derivative bounds.
 
@@ -396,4 +400,4 @@ If that later transfer selects a nondegenerate joint first-charge saddle, the an
                          +O_R(N^{-2}).
  \tag{36}
 \]
-Here \(x_e^{\mathrm{fill}}\) denotes the generally complex wire value at that **filled** joint saddle. It must not be replaced by the complete value \(x_e^*\). This is a conditional Gaussian insertion corollary, not a cusp identification. The common first saddle coefficient cancels in the ratio; exponentially smaller charges and endpoint currents must first be controlled by the separate joint argument. No conclusion about a growing slope, adjacent bare components failing (1), or an arbitrary main-meridian ordinary-color subtraction follows from the packet theorem.
+Here \(x_e^{\mathrm{fill}}\) denotes the generally complex wire value at that **filled** joint saddle. It must not be replaced by the complete value \(x_e^*\). This is a conditional Gaussian insertion corollary, not a cusp identification. The common first saddle coefficient cancels in the ratio; exponentially smaller charges and endpoint currents must first be controlled by the separate joint argument. No conclusion about a growing slope, bare components outside the three alternatives in Section 1, or an arbitrary main-meridian ordinary-color subtraction follows from the packet theorem.

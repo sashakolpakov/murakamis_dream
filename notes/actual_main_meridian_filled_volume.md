@@ -17,7 +17,15 @@ Only the forced final flat gate is deleted, with its exact complementary-index r
 
 There is a useful graph description of the additional condition in this theorem. Collapse consecutive multiplications with no intervening turn into a product junction. Each edge of the resulting tree carries a physical quarter-turn. A junction is **marked by a circle operator** if it contains one original crossing-circle operator; an ordinary original leaf is such a vertex of valence one. A **bare junction** contains none. This is a tree of source operations, not a new knot diagram or a permission to commute arbitrary tangles.
 
-The theorem includes trees with no adjacent bare junctions. More generally, let \(\mathcal U\) be a maximal connected component of bare junctions. A singleton component may have any allowed valence. For every nonsingleton component, let \(b_v\) be the number of incident boundary branches at its vertex \(v\), after the component's internal edges are removed. These are the rigid branches supplied by the neighboring circle-marked parts of the tree. Require \(b_v\ge5\) and the finite path inequality
+For each maximal connected component \(\mathcal U\) of bare junctions, require at least one of the following conditions:
+
+- It consists of one junction, of any allowed valence.
+- Every junction in it has valence three in the full reduced tree. Count both edges within the component and branches leading out of it. The number of junctions is any fixed finite number.
+- It satisfies the path inequality below.
+
+The second condition is proved by the [trivalent-component bound](actual_main_meridian_trivalent_component_bound.md) and its [global extension](actual_main_meridian_trivalent_filled_volume.md). It requires no lower bound on the number of outside branches. The vertices must be those of the actual reduced tree: splitting a higher-valence product into artificial binary products does not establish this condition.
+
+For the third condition, let \(b_v\) be the number of incident boundary branches at vertex \(v\), after the component's internal edges are removed. These are the branches supplied by the neighboring circle-marked parts of the tree. Require \(b_v\ge5\) and
 \[
  \max_{\mathcal P\text{ a simple path in }\mathcal U}
        \sum_{v\in\mathcal P}\varepsilon_{b_v-1}<2G_0,
@@ -35,7 +43,7 @@ where
  g(x)=J(2x)-4J(x),\qquad G_0=g(1/4).
  \tag{3}
 \]
-A simpler sufficient condition is \(b_v\ge\max(8,4|\mathcal U|)\) at every vertex of each nonsingleton component. Condition (2) controls the loss accumulated when an error passes through adjacent bare products. It is a condition on the fixed finite presentation, not on the level \(N\) or on a filling slope.
+A simpler sufficient test for the third condition is \(b_v\ge\max(8,4|\mathcal U|)\) at every vertex. Condition (2) controls accumulated errors in these components. Entirely trivalent components use the second condition instead. All three alternatives concern the fixed finite presentation; they do not depend on the level \(N\) or on a filling slope.
 
 At circle \(i\), retain the original parity representative \(\epsilon_i\in\{0,\pm1\}\) and fill that auxiliary cusp with the integer disk-filling coefficient \(p_i\). The remaining physical crossing power is exactly
 \[
@@ -256,7 +264,7 @@ The same fixed complete Newton basis is used at the moving main meridian:
 \]
 Its first-normal coefficients at repeated Casimir roots are part of the algebra. They are not discarded when the main color moves. The exact metric remains \(\phi_s(e_a e_b)=\mathbf1_{a+b=d}\); a physical turn consequently gives the equal-label edge (13).
 
-The [component source theorem](actual_main_meridian_component_extension.md), §6, splits an outgoing branch into a clean low-index part, an internal error with a strict deficit in the entire coefficient profile, and an outgoing high-index part. An original decorated turn converts a spectral error into a full coefficient-profile deficit. A bare component is homogeneous in the constants of these profiles, so an inherited deficit crosses the component without another universal charge. New high-state errors consume only the component path budget (2). This is why the condition is componentwise rather than a sum of all losses over the tree.
+The [component source theorem](actual_main_meridian_component_extension.md), §6, splits an outgoing branch into a clean low-index part, an internal error with a strict deficit in the entire coefficient profile, and an outgoing high-index part. An original decorated turn converts a spectral error into a full coefficient-profile deficit. A bare component is homogeneous in the constants of these profiles, so an inherited deficit crosses the component without another universal charge. For components satisfying (2), newly created errors use that path budget. For an entirely trivalent component, the [simultaneous comparison](actual_main_meridian_trivalent_component_bound.md) instead bounds every extra cubic trace term by a boundary state of the same complete positive source. That boundary has a strict gap below the original maximum. The clean part keeps every old-supported internal index, including indices above one half; only its effective boundary and output indices are restricted to the low range.
 
 These estimates also apply when the circle operator is the actual fixed power \(R_s^{n_i}\). Every fixed power and its inverse have polynomial spectral norm on \(|s|\le R<1\), with constants depending on the fixed power. For a low product \(E=\prod e_{k_a}\), its raw shifted-grid trace satisfies
 \[
@@ -271,14 +279,18 @@ The comparison uses the complete pure circle tensor on the right, not an absolut
 \]
 The odd-level constant can be replaced by one. The even constant comes from the actual nearest-node ratio and is uniform up to the low endpoints. Holomorphic continuation of the whole trace includes its removable collisions.
 
-Let \(F_0\) be the maximum of the original complete positive source action; the augmented geometric calibration gives \(2\pi F_0=\operatorname{Vol}(Y)\) for the exterior \(Y\) with all crossing circles unfilled. The summed high-edge contribution and the complement of the original strict retained-edge window have a fixed loss below \(F_0\). The same statement holds after resolving complete bare vertices into their positive binary multiplication coefficients. On the regular retained window, every incident edge is in a fixed compact subinterval of \((0,1/2)\), and every bare vertex has incident sum greater than \(1+\delta\). The [regular bare-tensor theorem](actual_main_meridian_regular_bare_trace.md) therefore gives
+Let \(F_0\) be the maximum of the original complete positive source action; the augmented geometric calibration gives \(2\pi F_0=\operatorname{Vol}(Y)\) for the exterior \(Y\) with all crossing circles unfilled. The grouped component errors, high component-boundary contributions, and the complement of the original strict window have a fixed loss below \(F_0\). Internal edges of a trivalent bare component remain unrestricted within their old support. At the maximizing state their labels lie in \((0,1)\); they need not lie below one half. Circle-incident labels are in a compact subinterval of \((0,1/2)\).
+
+At every new trivalent vertex the three old pair sums are at most \(d\), so the degree of \(e_i e_j e_k\) is less than \(2N-1\). Write that product as \(P_0Q+R_0\), with \(\deg Q\le N-2\). Replacing the relation \(P_0\) by \(P_0+\Delta_\sigma\) changes the remainder to \(R_0-\Delta_\sigma Q\), without changing its coefficient of degree \(N-1\). Its trace is therefore exactly the complete trace on the old support. This also holds when one internal label exceeds one half.
+
+For the other allowed components, the regular window retains the original compact low labels and incident-sum condition. The [regular bare-tensor theorem](actual_main_meridian_regular_bare_trace.md) gives
 \[
           \phi_\sigma\left(\prod e_{k_a}\right)
        =\phi_0\left(\prod e_{k_a}\right)
                                (1+O_R(e^{-\kappa N})).
  \tag{20}
 \]
-This is exact at valence at most four. At larger fixed valence it follows from the strict Fourier-tail separation of regular low Newton products.
+On those low windows, this is exact at valence at most four; at larger fixed valence it follows from strict Fourier-tail separation. At the new trivalent vertices the preceding polynomial division proves the exact equality on their full old support. Pre-existing higher-valence components retain their whole-hub majorant until this regular replacement; their moving trace is not prematurely expanded into individual errors.
 
 Use (18) to multiply out the finitely many replacements (20), and then localize the positive binary-resolution variables. The result is one fixed source error
 \[
@@ -511,17 +523,17 @@ The exact scalar contributes \(a(D)z^2/(8\pi iN)\). The [geometric longitude the
 
 ## 8. What this theorem does and does not extend
 
-The [earlier complete-value volume theorem](actual_conway_all_strict_tree_long_twist_volume.md) covers every strict literal Conway tree under its stated knot and long-filling hypotheses. The present theorem gives more information—an actual complex microscopic main-meridian profile and a uniform volume rate—but for the narrower class specified by the bare-component condition (2). It does not replace the broader complete-value theorem or reduce its scope.
+The [earlier complete-value volume theorem](actual_conway_all_strict_tree_long_twist_volume.md) covers every strict literal Conway tree under its stated knot and long-filling hypotheses. The present theorem gives more information—an actual complex microscopic main-meridian profile and a uniform volume rate—but for the narrower class specified by the three bare-component alternatives in Section 1. It does not replace the broader complete-value theorem or reduce its scope.
 
 The disk restriction is essential. The present proof treats \(|s|\le R<1\); it does not cross the first ordinary-color resonances \(s=\pm1\), where the reduced ordinary-color anchor and the full modified dimension have different behavior. The removable same-color Casimir collisions within this disk are included by the full physical source. A zero-free microscopic disk is also not a fixed open disk in the \(M\)-plane.
 
-No theorem for arbitrary adjacent bare components failing (2) is obtained. No filling integer is allowed to grow with \(N\). No conclusion is drawn for the ordinary-color-subtracted regular remainder through its resonance divisors. Finally, the existence of an exact meridian annihilator and the pointed complete period is separate from identifying a selected classical main-meridian \(A\)-factor. The scalar profile and volume theorem here do not make that identification.
+An entirely trivalent bare component is covered without (2). Components with more than one bare junction and at least one junction of valence greater than three remain outside the theorem unless they satisfy the stated path condition. No filling integer is allowed to grow with \(N\). No conclusion is drawn for the ordinary-color-subtracted regular remainder through its resonance divisors. Finally, the existence of an exact meridian annihilator and the pointed complete period is separate from identifying a selected classical main-meridian \(A\)-factor. The scalar profile and volume theorem here do not make that identification.
 
 ## 9. The proof route
 
 The [exact ADO normalization](kashaev_ado_pointing.md) fixes the invariant, the coordinate \(M=-qx\), and the modified dimension. The [oriented source compiler](actual_main_meridian_newton_compiler.md) and [physical quarter-turn theorem](actual_main_meridian_turn_comparison.md) give its polynomial coordinates, compatible reference maps, full normal coefficients and original closing trace.
 
-The global estimate begins with [source growth near the complete main meridian](actual_main_meridian_source_bounds.md). The [component extension](actual_main_meridian_component_extension.md) permits the adjacent bare junctions satisfying (2), and explains why inherited errors retain their original deficit. The [regular bare trace](actual_main_meridian_regular_bare_trace.md) then replaces moving bare tensors by their complete tensors on the strict window.
+The global estimate begins with [source growth near the complete main meridian](actual_main_meridian_source_bounds.md). The [component extension](actual_main_meridian_component_extension.md) permits the adjacent bare junctions satisfying (2), and explains why inherited errors retain their original deficit. The [trivalent-component comparison](actual_main_meridian_trivalent_component_bound.md) covers arbitrary-size trivalent components. Its [global extension](actual_main_meridian_trivalent_filled_volume.md) traces the complete source and complex estimates while retaining their full internal labels. The [regular bare trace](actual_main_meridian_regular_bare_trace.md) supplies the other allowed components on their strict low windows.
 
 The local circle operators and their marked analytic continuation are established in the [regular circle trace](actual_main_meridian_regular_circle_trace.md). The [direct crossing trace](actual_main_meridian_direct_crossing_trace.md) keeps the actual filled crossing power, rather than substituting a complete-color expansion. The [grouped wire packet](actual_main_meridian_grouped_wire_packet.md) supplies the exact finite lattice and its complex contour. The [joint filling transform](actual_main_meridian_joint_filling_transform.md) retains all Fourier charges until their common saddle has been compared; it supplies the nonzero lower bound used here.
 

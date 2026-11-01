@@ -1,5 +1,7 @@
 # Source growth near the complete main meridian
 
+The [trivalent-component extension](actual_main_meridian_trivalent_filled_volume.md) extends this result to arbitrary-size connected components of trivalent bare junctions, together with the previously covered component classes. The proof below establishes the original separated-junction case; the extension retains its invariant and normalization.
+
 Fix a knot construction made by stacking and turning two-strand tangles, with \(H\ge2\) original pieces. Before inserting their long twists, keep the crossing circle around each piece. The resulting **augmented complement** is the complement with these crossing circles left unfilled. Their integer colors \(j_i\in\{1,\ldots,N\}\) label the ordinary representations used in the quantum calculation; they have not yet been summed with filling coefficients.
 
 A **product junction**, also called a hub below, is a place where several tangle operators are multiplied without intervening turns. Combine adjacent product junctions until every remaining internal edge carries a quarter-turn. Mark a junction when one of its original crossing-circle operators occurs there without that outer turn; such a junction is called flagged. A junction without this operator is called bare. We assume that **no two bare junctions are adjacent**. The number of junctions and their valences may be any fixed finite numbers.

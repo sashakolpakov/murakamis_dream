@@ -42,7 +42,9 @@ estimate for short twists.
 A further result controls the invariant while the meridian moves within
 distance of order $1/N$ of completeness. It proves a uniform volume limit
 and an explicit normalized profile for long-twist presentations satisfying
-an additional condition on their multiplication junctions. The first
+a condition on their multiplication junctions. It permits arbitrarily
+large fixed trees of junctions with three incident branches, as well as
+the other component classes stated in the theorem. The first
 correction is determined by the preferred cusp shape; a separate geometric
 calculation follows the longitude through the crossing-circle surgeries. The
 [moving-meridian section](https://sashakolpakov.github.io/murakamis_dream/guide/results.html#the-volume-limit-while-the-meridian-varies)

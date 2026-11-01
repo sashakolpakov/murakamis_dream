@@ -1,5 +1,7 @@
 # Exponential loss for auxiliary colors below the complete color
 
+The [trivalent-component extension](actual_main_meridian_trivalent_filled_volume.md) extends this result to arbitrary-size connected components of trivalent bare junctions, together with the previously covered component classes. The proof below establishes the original separated-junction case; the extension retains its invariant and normalization.
+
 Consider a fixed ordered Conway construction with its original auxiliary crossing circles and half-twist choices. Its reduced multiplication tree is obtained by combining consecutive products with no intervening quarter-turn. A junction is flagged when it carries one original crossing-circle operator used without the outer quarter-turn; a junction with no such operator is bare. We assume the construction has a strict complete state and that no two bare junctions are adjacent. The [source-bound theorem](actual_main_meridian_source_bounds.md) defines this class and constructs its actual typed source.
 
 Write \(Y^\epsilon\) for the complete augmented complement, with all auxiliary circles still unfilled. The exponential rate \(F_0\) from the original complete calculation is

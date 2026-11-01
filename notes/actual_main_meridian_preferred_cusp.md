@@ -393,7 +393,7 @@ For multiple main components the additive calculation tracks each component with
 
 The preceding geometry applies to arbitrary fixed strict constructions satisfying the stated knot and marking hypotheses. To use a moving quantum asymptotic, impose the additional presentation condition of [the filled meridian-profile theorem](actual_main_meridian_filled_volume.md), Section 1. In the product-junction tree, a junction is bare when it contains no original crossing-circle operator. The theorem includes every presentation in which bare junctions are separated by circle-marked junctions. It also includes the following larger class.
 
-For each nonsingleton connected component \(\mathcal U\) of bare junctions, let \(b_v\) count the incidences at vertex \(v\) that leave that component. Require \(b_v\ge5\) and
+An entirely trivalent connected component is allowed at any fixed finite size, by the [trivalent extension](actual_main_meridian_trivalent_filled_volume.md). Valence counts both its internal edges and outside branches in the actual reduced tree. For a nonsingleton component \(\mathcal U\) that is not entirely trivalent, let \(b_v\) count the incidences at vertex \(v\) that leave that component. Require \(b_v\ge5\) and
 \[
  \max_{\mathcal P\text{ a simple path in }\mathcal U}
        \sum_{v\in\mathcal P}\varepsilon_{b_v-1}<2G_0,

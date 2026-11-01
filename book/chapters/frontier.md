@@ -56,7 +56,7 @@ The [filled-meridian theorem](../../notes/actual_main_meridian_filled_volume.md)
 \qquad R<1,
 \]
 
-for fixed strict Conway constructions with sufficiently long signed twists, subject to a condition on their multiplication junctions. It includes all presentations in which no two bare junctions are adjacent. A bare junction is a product with no original crossing-circle operator at that vertex. The [component extension](../../notes/actual_main_meridian_component_extension.md) also allows adjacent bare junctions when an explicit path inequality holds. In particular, a component with \(m>1\) vertices passes if every vertex has at least \(\max(8,4m)\) incident branches leading out of the component.
+for fixed strict Conway constructions with sufficiently long signed twists, subject to a condition on their multiplication junctions. It includes singleton bare junctions of any allowed valence and arbitrary fixed trees of adjacent trivalent bare junctions. A bare junction is a product with no original crossing-circle operator at that vertex. Trivalence counts all three branches at a vertex of the actual reduced tree. The [trivalent theorem](../../notes/actual_main_meridian_trivalent_filled_volume.md) has no size or outside-branch requirement on such a component. The [component extension](../../notes/actual_main_meridian_component_extension.md) also allows adjacent bare junctions when an explicit path inequality holds. In particular, a component with \(m>1\) vertices passes if every vertex has at least \(\max(8,4m)\) incident branches leading out of the component.
 
 The theorem keeps the actual strand colors and the zero-framing normalization. After division by the exact scalar factors prescribed by the finite tangle operations, the ratio to \(F_N(1)\) is
 
@@ -72,7 +72,7 @@ The [longitude calculation](../../notes/actual_main_meridian_preferred_cusp.md) 
 \]
 The [exact scalar calculation](../../notes/actual_main_meridian_exact_scalar.md) supplies the integer framing term; the geometric proof determines the same term from the longitude and the auxiliary surgery. The geometric identity holds for the broader strict-tree class. The asymptotic still requires the extra component condition, and its disk still shrinks like \(1/N\) in \(M\). The complete-value theorem retains its broader scope.
 
-The open extensions are the moving-meridian theorem for bare components failing the path test, continuation of the ordinary-color-subtracted state through its resonance divisors, and identification of the selected classical geometric factor of the recurrence. The filled theorem does not depend on these extensions.
+The open extensions are the moving-meridian theorem for components with more than one bare junction and at least one junction of valence greater than three and failing the path test, continuation of the ordinary-color-subtracted state through its resonance divisors, and identification of the selected classical geometric factor of the recurrence. The filled theorem does not depend on these extensions.
 
 ## The moving-meridian growth already established
 
@@ -91,7 +91,7 @@ The estimate includes even and odd levels. The upper bound is uniform in the mer
 
 The [auxiliary-color gap theorem](../../notes/actual_main_meridian_auxiliary_color_gap.md) also controls the region where an original circle color stays a fixed proportion below completeness. If some \(j_i\le(1-\delta)N\), with fixed \(0<\delta<1\), the whole scalar has a strictly smaller exponential rate than \(\operatorname{Vol}(Y^\epsilon)/(2\pi)\). It is uniform over all the other colors and both parities for \(|s|\le R<1/2\). Thus the color gap is established on these smaller disks, while the supremum-volume theorem holds for \(R<1\).
 
-The [component theorem](../../notes/actual_main_meridian_component_extension.md) extends both estimates to the path condition stated above. Their reference volume is still that of the augmented complement. The filled moving-meridian theorem needs the additional joint Fourier argument and the marked filling geometry; those steps produce the generally smaller knot-complement volume. The source bounds by themselves would not give that conclusion.
+The [path theorem](../../notes/actual_main_meridian_component_extension.md) and [trivalent theorem](../../notes/actual_main_meridian_trivalent_filled_volume.md) extend both estimates to the additional component classes stated above. Their reference volume is still that of the augmented complement. The filled moving-meridian theorem needs the additional joint Fourier argument and the marked filling geometry; those steps produce the generally smaller knot-complement volume. The source bounds by themselves would not give that conclusion.
 
 ## What is now exact when the main meridian moves
 
@@ -145,7 +145,7 @@ Since \(\Delta'_0=0\), multiplication in these fixed coordinates has
 zero first derivative. Multiplication by the Casimir changes by
 one matrix entry, of magnitude \(|\Delta_s|/N^2\).
 This simplifies the algebraic deformation, and the turn now has
-the relative estimate just stated. The additional multiplication sectors still occur. For separated bare junctions, the source-growth theorem controls their signed sum at the original augmented geometric rate by comparing a whole junction with the complete positive trace. The component theorem extends that comparison across adjacent bare junctions when its path inequality holds. A local norm estimate alone would not suffice: for a radical polynomial whose node derivatives are supported at one end, the second color derivative of the paired multiplier has a derivative of polynomial size at the other end. Localized node data alone therefore do not imply the analytic localization needed in the source proof.
+the relative estimate just stated. The additional multiplication sectors still occur. For separated bare junctions, the source-growth theorem controls their signed sum at the original augmented geometric rate by comparing a whole junction with the complete positive trace. The component theorem extends that comparison across adjacent bare junctions when its path inequality holds. The trivalent theorem covers arbitrary fixed trees of degree-three bare junctions by a simultaneous variational comparison, retaining all their old-supported internal indices. A local norm estimate alone would not suffice: for a radical polynomial whose node derivatives are supported at one end, the second color derivative of the paired multiplier has a derivative of polynomial size at the other end. Localized node data alone therefore do not imply the analytic localization needed in the source proof.
 
 There is a second route through the recurrence. The
 [finite matrix criterion](../../notes/actual_main_meridian_finite_matrix_criterion.md)

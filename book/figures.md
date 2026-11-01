@@ -366,3 +366,12 @@ The norm \(\|Q_N\|_{\mathcal J}\) records values and first derivatives at the sp
 The blue vector is the image of the augmented longitude on the filled knot cusp. To obtain the preferred longitude, add \(\sum_i p_i\ell_i^2\) meridians, where \(p_i\) is the filling coefficient and \(\ell_i\) is the linking number with crossing circle \(i\). The drawing uses one coefficient \(p=1\) and \(|\ell|=2\), so the orange vector differs by four meridians. The [longitude proof](../notes/actual_main_meridian_preferred_cusp.md) derives this correction in the homology of the actual filled complement.
 
 [Vector drawing](figures/main-cusp-longitude-shear.svg) · [PDF](figures/main-cusp-longitude-shear.pdf) · [TikZ source](figures/main-cusp-longitude-shear.tex)
+
+
+## Connected trees of trivalent product junctions
+
+![A path and a branching tree, each with degree three at every bare junction and with circle-operator attachments shown.](figures/trivalent-bare-components.svg)
+
+The open vertices are product junctions without a crossing-circle operator. Each has three incident branches, counting the attachments to the filled vertices. These graphs record tangle operations: consecutive unturned products have already been grouped, and every displayed edge is a physical quarter-turn. A fixed tree of any size is allowed by the [trivalent meridian theorem](../notes/actual_main_meridian_trivalent_filled_volume.md).
+
+[Vector drawing](figures/trivalent-bare-components.svg) · [PDF](figures/trivalent-bare-components.pdf) · [TikZ source](figures/trivalent-bare-components.tex)
