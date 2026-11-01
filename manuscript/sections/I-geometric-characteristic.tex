@@ -950,41 +950,20 @@ This argument identifies the local auxiliary products for the
 pure tree. Sections~\ref{gi:boundary-isotropy-and-the-edge-differential}--\ref{gi:determining-the-monomial-and-the-preferred-framing} identify the preferred main longitude
 using the full boundary representation and its framing.
 
-\subsection{Why the old odd three-point maps cannot be inserted unchanged}\label{gi:why-the-old-odd-three-point-maps-cannot-be-inserted-unchanged}
+\subsection{The reference map at a parabolic main meridian}\label{gi:parabolic-reference-map}
 
-In the local chart keep the pure white maps \(W_j\) fixed.
-Let \(A_{\mathrm o}\) and \(B_{\mathrm o}\) be the unique
-three-point maps with the old odd permutations
-\[
- (A,\infty,1)\mapsto(a,S,0),\qquad
- (A,R,0)\mapsto(a,\infty,1).
-\]
-They are
-
+To fix the sign of the braid collar, we will compare it at \(m=1\)
+with the original marked three-point map. In the coordinates above,
+the map \((A,R,0)\mapsto(a,\infty,1)\) is represented by
 \begin{equation}\label{gi:S6}
-A_{\mathrm o}=
- \begin{pmatrix}S&-S\\1&S(A-1)/a-A\end{pmatrix},\qquad
  B_{\mathrm o}=
  \begin{pmatrix}(a(A-R)+R)/A&-R\\1&-R\end{pmatrix}.
 \end{equation}
-
-The first original odd edge return is not trivial:
-
-\begin{equation}\label{gi:S7}
-W_0^{-1}B_{\mathrm o}W_2^{-1}A_{\mathrm o}:
-             z\longmapsto m^{-2}z+(1-m^{-2})A.
-\end{equation}
-
-The second return is likewise nontrivial; the third,
-\(W_1^{-1}B_{\mathrm o}W_3^{-1}A_{\mathrm o}\), is
-projectively the identity. In particular the two defects vanish
-at \(M=1\), which is why the old parabolic calculation did not
-detect them.
-
-Equation \eqref{gi:S7} is an obstruction to keeping both the pure white
-charts and the old odd vertex assignment. It is not an
-obstruction to the half-twist homeomorphism. That homeomorphism
-must transport the puncture eigenflags and the adjacent charts.
+Direct substitution gives its three specified values. This reference
+map is used in \eqref{gi:S14} to calibrate the physical crossing at
+the parabolic main meridian. For the nonparabolic deformation we
+construct the braid action on the two puncture generators and
+transport their eigenflags and adjacent charts together.
 
 \subsection{A regular matrix implementing the actual positive braid collar}\label{gi:a-regular-matrix-implementing-the-actual-positive-braid-collar}
 
@@ -1059,7 +1038,7 @@ S_v^{-1}(P^{-1}-I)=W_0^{-1}B_{\mathrm o}
 The right side is the original physical positive-\(R\)
 meridian, by section 6 of
 \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_conway_general_mask_marked_filling.html}{the marked mask filling proof}.
-Its inverse crossing is the other old odd path.
+The inverse crossing follows the oppositely signed half-twist path.
 Equations \eqref{gi:S8} and \eqref{gi:S14} fix both the braid sign and the actual
 copy/collar marking; the sign has not been chosen from a desired
 source formula.
@@ -1209,8 +1188,8 @@ The same argument applies to the selected auxiliary eigenvalue
 Develop the original topological ideal triangulation from these
 global flags and the constructed representation. The map of
 each triangle is the unique map of its transported ordered
-triple. Adjacent white maps must be rebuilt in this way;
-\eqref{gi:S7} shows why they cannot generally be retained unchanged.
+triple. The adjacent white maps are defined from these transported
+triples as well, so they carry the same eigenflag choices.
 Equivariance gives every edge return. At the complete parameter,
 \eqref{gi:S14} and the original collar convention identify the actual odd
 development. Its positively oriented tetrahedra therefore remain
@@ -1329,7 +1308,7 @@ that endpoint, retaining \eqref{gi:A2}. The reconstructed matrices then give
 a branch of representations of the original filled group by the
 preceding semisimple argument. The geometric meridian coordinate
 is a local parameter at complete knot holonomy, by the
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_geometric_normal_period.html\#3-the-geometric-critical-scheme-is-smooth-with-two-framing-directions}{geometric knot-germ construction}
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_geometric_normal_period.html\#the-geometric-critical-scheme-is-smooth-with-two-framing-directions}{geometric knot-germ construction}
 and its marked gluing input. The
 \href{https://sashakolpakov.github.io/murakamis_dream/notes/general_marked_multicusp_gluing_rigidity.html}{multicusp version}
 supplies the corresponding representation and decoration comparison

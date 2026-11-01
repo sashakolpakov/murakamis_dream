@@ -22,7 +22,8 @@ OUT = ROOT / "docs"
 REPO = "https://github.com/sashakolpakov/murakamis_dream"
 CHAPTERS = [
     ("index", "Overview"), ("manuscript", "The manuscript"), ("results", "Equality results"),
-    ("mechanism", "The mechanism"), ("geometry", "Actual geometry"),
+    ("mechanism", "The mechanism"), ("methods", "Methods and approaches"),
+    ("geometry", "Actual geometry"),
     ("frontier", "Current frontier"), ("notation", "Notation"),
     ("audits", "Reproducing audits"),
 ]
@@ -333,7 +334,7 @@ def main():
                '<h2 id="complete-archive">The complete archive</h2><p>These routes are curated entry points. All technical notes, including uncatalogued and historical work, remain available in the <a href="archive.html">searchable archive</a>. A note’s audit and recorded output are linked beside its source when a matching pair exists.</p>')
     (OUT / "library.html").write_text(page("library.html", "Research library", library, "library", "book/collections.json"))
     fallback = ''.join(f'<li><a href="{escape(row["url"])}">{escape(row["title"])}</a></li>' for row in records if row['type'] == 'Note')
-    body = f'''<h1>Research archive</h1><p>Search the complete technical notes, audit scripts, and recorded data. For an organized starting point, <a href="library.html">browse the research library</a>. Archived notes retain their own hypotheses, dates, and corrections.</p><p><strong>“PASS” in an audit is not a general proof.</strong> Uncatalogued notes carry the neutral “See note” status. Notes are shown first; select another record type to browse scripts or data.</p>
+    body = f'''<h1>Research archive</h1><p>Search the complete technical notes, audit scripts, and recorded data. For an organized starting point, <a href="library.html">browse the research library</a>. Archived notes retain their own hypotheses, dates, and corrections.</p><p>Recorded computations check their stated finite identities; the mathematical arguments and hypotheses are given in the associated notes. Uncatalogued notes carry the neutral “See note” status. Notes are shown first; select another record type to browse scripts or data.</p>
 <div class="archive-controls"><input id="archive-query" type="search" aria-label="Search archive" placeholder="Search full notes or audit names…"><select id="archive-type" aria-label="Record type"><option value="">All types</option><option>Guide</option><option selected>Note</option><option>Audit script</option><option>Recorded data</option></select><select id="archive-topic" aria-label="Research topic"><option value="">All topics</option></select><button id="archive-reset" type="button">Reset filters</button></div><p id="archive-count" class="archive-count" role="status">Loading the index…</p><div id="archive-results"></div><button id="archive-more" class="more" hidden>Show more</button><noscript><h2>Technical notes</h2><p>Enable JavaScript for search and topic filtering.</p><ul>{fallback}</ul></noscript>'''
     (OUT / "archive.html").write_text(page("archive.html", "Research archive", body, "archive"))
     # Keep previously published companion URLs useful without maintaining a

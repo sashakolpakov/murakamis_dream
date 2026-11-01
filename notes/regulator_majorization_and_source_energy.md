@@ -241,6 +241,6 @@ quantum channels, exact pointed action telescoping, and the finite
 Gaussian phase-Plancherel distinction.
 
 Coverage only: product log-majorization is established matrix theory;
-see [Gowda, Some log and weak majorization inequalities](https://userpages.umbc.edu/~gowda/papers/trGOW20-02.pdf).
+see [Tao, Jeong, and Gowda, Some log and weak majorization inequalities in Euclidean Jordan algebras](https://userpages.umbc.edu/~gowda/papers/trGOW20-02.pdf).
 The exterior-power, convexity, channel and source calculations used
 here are proved above independently.

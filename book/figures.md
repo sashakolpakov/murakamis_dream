@@ -1,5 +1,19 @@
 # Figure gallery
 
+## The requirements of a volume proof
+
+![An exact decomposition, a nonzero geometric contribution, a strict remainder bound, and an identification of the critical value with hyperbolic volume are separate parts of the proof.](figures/methods-proof-map.svg)
+
+Here \(K_N\) is the original invariant, \(G_N\) is the selected contribution,
+and \(R_N\) is the remaining signed sum. The two analytic estimates determine
+the growth rate of \(K_N\). The geometric argument identifies that rate with
+the volume of the actual knot complement. The arrows record logical
+dependencies; they do not assert that all these steps hold for every knot.
+The [methods chapter](chapters/methods.md) defines the quantities and proves
+the elementary implication.
+
+[Editable SVG](figures/methods-proof-map.svg)
+
 
 ## Adding terminal tangles on both sides
 

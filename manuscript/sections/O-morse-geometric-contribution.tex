@@ -1,0 +1,1333 @@
+\chapter{The geometric contribution for matched spherical diagrams}
+\label{app:morse-geometric-contribution}
+
+This appendix proves a nonzero asymptotic for the geometric contribution
+selected from the exact finite source, and identifies its rate with the
+volume of the original filled complement. It does not assert that the
+complementary contribution is smaller for every undecorated diagram.
+The first part supplies the analytic estimate for the entire Fourier
+period; the second supplies the original topology, peripheral words,
+and metric completion. Both parts retain the finite normalization.
+
+\section{The geometric contribution and all Fourier
+charges}\label{mca:unit}
+
+For a fixed link diagram, the exact finite formula is a coefficient in
+face variables followed by a linear functional in each crossing
+variable. Its local polynomial splits into three specified pieces. The
+central piece, called CROSS in the source formulas, contains paths
+passing through the middle of the finite recurrence. The other two
+pieces contain paths restricted to one side. Selecting CROSS at every
+crossing region gives a contribution to the original invariant; it does
+not define another topological invariant.
+
+This part proves a nonzero asymptotic for that entire geometric
+contribution, including all Fourier charges, both level parities, the
+derivatives at repeated spectral nodes, and the original scalar factors.
+The diagram may have cups and caps between crossing regions: it need not
+be a flat plat. Its white triangulation must be a simple sphere with the
+specified matching and marked strand edge. The local balance
+inequalities used to bound the other two pieces are not needed here.
+
+The
+\hyperref[mcg:unit]{geometric
+companion} constructs the actual complement and identifies the selected
+action with its hyperbolic volume after sufficiently long fixed signed
+fillings. A strict estimate for the full contribution minus this
+geometric term remains a separate requirement for a full-invariant
+volume theorem.
+
+\subsection{Exact assumptions and statement}\label{mca:sec-1}
+
+Fix a finite connected Morse diagram whose actual white triangulation is
+a simple sphere, with its actual matching, cyclic orders, crossing-disk
+frames and marked MAIN edge. Let the marked edge join the two protected
+white faces \(u,v\). The diagram has \(R\) matching edges, \(R+2\) white
+faces, and \(R\) ordinary face targets. Assume the labeled positive
+convex right-angled certificate and its marked complete packing are
+supplied. Set the protected curvatures to zero and retain the same
+positive finite curvatures \(\rho_f\) at every occurrence of each other
+face. The geometric existence of this certificate is a separate input to
+the present analytic argument.
+
+The exact general Morse source identity is the one in
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/research_matched_sphere_morse_source.html}{A
+matched spherical triangulation has the original general Morse source},
+§§5--6, equivalently the finite-source part of
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_balanced_terminal_fan_volume.html}{Balanced
+terminal decorations and volume limits beyond tangle-operation trees},
+§5. In particular all physical cups, caps, the unrestricted marked row,
+the integrated even-level coset and the original component/framing
+factors are retained. With \(N\ge3\), \(d=N-1\), \(q=e^{\pi i/N}\),
+define \begin{equation}\label{mca:eq-1}
+\begin{split}
+ C_N(\boldsymbol\delta)
+ &=\left[\prod_{f\ne u,v}L_f^d\right]
+       \left.\prod_{e=1}^{R}
+       H_{V_N,\mathrm C}(L_{x_e},L_{b_e},L_{c_e},L_{y_e};\sigma_e)
+       \right|_{L_u=L_v=0},\\
+ \sigma_e&=-2\cos(2\pi\delta_e).
+ \end{split}
+\end{equation} Here CROSS means the literal central-cut path support. It is selected
+by polynomial linearity after the full physical source has been
+identified; it is not declared an independent covariant coupon. Write
+\(P_{\mathrm C}=(-1)^dH_{V_N,\mathrm C}\) for the positive endpoint
+convention. Thus \eqref{mca:eq-1} is the raw coefficient and contains
+\((-1)^{dR}\).
+
+For fixed nonzero signed crossing powers \(n_e=\epsilon_e-2p_e\), its
+exact all-CROSS period is \begin{equation}\label{mca:eq-2}
+\begin{split}
+ I_{N,\mathbf n}^{\mathrm C}
+ ={}&q^{d^2\sum_e n_e/4}(-i)^R
+ \sum_{\boldsymbol\ell\in(\mathbb Z\setminus\{0\})^R}
+       \left(\prod_e\ell_e\right)
+             (-1)^{(N+1)\sum_e\ell_e}\\
+ &\quad\times\int_{[-1/2,1/2]^R}
+       C_N(\boldsymbol\delta)\prod_e\sin(2\pi\delta_e)
+       \exp\left\{N\sum_e
+         (\pi i n_e\delta_e^2+2\pi i\ell_e\delta_e)\right\}
+                  d\boldsymbol\delta .
+ \end{split}
+\end{equation} No additional power of \(N\), modified dimension, or spectral
+square-root Jacobian appears. The displayed \(q\) power is the original
+unwrapped scalar \(\exp(\pi i d^2\sum n_e/(4N))\). An exterior
+framing/component character multiplies the raw contraction when
+converting to the specified invariant convention; it has modulus one at
+complete color. The full one-cut modified convention additionally
+retains its stated \(i^{N+3}/N\). These conventions are not changed by a
+CROSS projection.
+
+There is a fixed small complex polydisk and finite holomorphic actions
+\(A_N\), face Hessians \(H_N\), such that the following two source
+estimates hold: \begin{equation}\label{mca:eq-H1}
+C_N(\delta)=
+ \frac{(-1)^{dR}N^{2R}e^{NA_N(\delta)}}
+ {(2\pi N)^{(R-1)/2}\sqrt{\det H_N(\delta)}}
+                     (1+O(N^{-1})),
+\end{equation} uniformly and holomorphically on that polydisk, and, for every
+\(\eta>0\), \begin{equation}\label{mca:eq-H2}
+|C_N(\delta)|\le e^{N(\Phi-\gamma_\eta)}
+ \quad\text{if }\max_e|\operatorname{Re}\delta_e|\ge\eta,
+ \quad\operatorname{Re}\delta_e\in[-1/2,1/2],
+ \quad|\operatorname{Im}\delta_e|\le\tau_\eta,
+\end{equation} for some \(\gamma_\eta,\tau_\eta>0\) and all sufficiently large
+\(N\). All fixed derivatives satisfy the corresponding bound on smaller
+domains. Here \begin{equation}\label{mca:eq-3}
+A_N\longrightarrow A_0,\qquad A_0(0)=\Phi,\qquad
+ A_0''(0)=-2\operatorname{diag}(C_e),\quad C_e>0,
+\end{equation} with every fixed derivative; \(A_N\) is separately even and real on
+the real chart. The marked complete action satisfies
+\(2\pi\Phi=\operatorname{Vol}(Y_D)\) under the supplied geometric
+certificate and its calibrated source action.
+
+There is a diagram-dependent \(n_0\) such that, for every fixed
+independently signed vector with \(|n_e|\ge n_0\), the entire period
+\eqref{mca:eq-2} has the relative asymptotic \begin{equation}\label{mca:eq-4}
+\begin{split}
+ I_{N,\mathbf n}^{\mathrm C}
+ ={}&q^{d^2\sum_e n_e/4}(-2i)^R\sqrt{2\pi}\,N^{R+1/2}\\
+ &\times
+ \frac{\prod_e\sin(2\pi\delta_{N,\mathbf1,e})}
+ {\sqrt{\det H_N(\boldsymbol\delta_{N,\mathbf1})}
+       \sqrt{\det Q_{N,\mathbf1}}}
+ e^{NS_{N,\mathbf1}}
+ \left(1+O_{\mathbf n}(N^{-1})
+              +O_{\mathbf n}(e^{-\kappa_{\mathbf n}N})\right).
+ \end{split}
+\end{equation} The quantities in \eqref{mca:eq-4} are the finite critical point,
+critical value and negative Hessian of \begin{equation}\label{mca:eq-5}
+\Phi_{N,\boldsymbol\ell}(\delta)
+   =A_N(\delta)+\pi i\sum_e n_e\delta_e^2
+                         +2\pi i\sum_e\ell_e\delta_e.
+\end{equation} The face determinant root is continued from the positive complete
+Hessian. The spectral root is the Gaussian branch on matrices with
+positive real part. The coefficient in \eqref{mca:eq-4} tends to a
+nonzero number after the explicit level factors and action are removed.
+In particular the period is nonzero for all sufficiently large levels of
+either parity, and \begin{equation}\label{mca:eq-6}
+\lim_{N\to\infty}\frac{2\pi}{N}\log|I_{N,\mathbf n}^{\mathrm C}|
+                  =2\pi\operatorname{Re}S_{0,\mathbf1}.
+\end{equation} All powers are fixed before \(N\to\infty\); no bound on their ratios
+is required. There is no assertion here that the full invariant differs
+from \eqref{mca:eq-2} by a smaller term.
+
+\subsection{The graph facts replacing a flat-plat
+assumption}\label{mca:sec-2}
+
+Deleting \(u,v\) from a simple triangulated sphere leaves a connected
+ordinary graph. Indeed reroute a path around the first deleted vertex
+along its cyclic link, then around the second along its link with the
+first vertex removed. That remaining link is connected. Every surviving
+edge belongs to an original shaded triangle with two positive
+finite-face variables.
+
+No matching edge can have the protected pair as its endpoints: their
+unique sphere edge is the marked MAIN edge. Consequently every crossing
+circle has \(x+y>0\). At least one of its two triangles is nonmonomial.
+If both outers are positive, \(xy>0\); if one outer is protected, at
+most one middle can be the other protected face, so the other middle is
+positive. These facts also cover the smallest simple sphere. They
+require neither complete-radius balance nor a tree in the ordinary
+graph.
+
+At the actual complete packing, the circle-center angle sums make the
+common face action stationary. Its Hessian is positive on the
+common-scale quotient: each nonmonomial triangle detects the differences
+of its finite logarithmic face radii, and the connected ordinary graph
+leaves only common scaling in the kernel. The active rows are literal
+\(+1,-1\) differences. Thus the quotient lattice is primitive, has
+dimension \(R-1\), and has no additional angular aliases.
+
+This is the content needed from
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_positive_face_coefficient_saddle.html}{The
+positive face coefficient has one global saddle}, §§2--4, and
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_original_boundary_transverse_rank.html}{The
+original boundary source has exactly two flat face directions}, §2.
+Their proofs use the actual triangle graph and finite determinant
+matrices. Morse bends introduce no new face coordinate, while the exact
+source identity has already dealt with their cup/cap and mark factors.
+The old global theorem's phrase ``flat plat'' is therefore removed at
+this specific interface, rather than by an unproved equivalence of
+presentations.
+
+\subsection{Local analytic inputs, including the odd
+normal}\label{mca:sec-3}
+
+At each original crossing region let \(\mathcal B_{e,N}(\delta_e;L)\) be
+the exactly anchored even fold interpolation. It retains the actual
+maximal-channel factor, beta factors, forced products and half-index. In
+particular its anchor is at \(\delta_{\min}=0\) for odd levels and
+\(\delta_{\min}=1/(2N)\) for even levels. The local rigidity theorem
+gives \begin{equation}\label{mca:eq-7}
+P_{\mathrm C,e}(\delta_e;L)
+       =N^2\mathcal B_{e,N}(\delta_e;L)
+                          (1+O(e^{-cN}))
+\end{equation} on a fixed complex spectral and face neighborhood, with protected
+variables still exactly zero. This is
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_cross_cofactor_interpolant_rigidity.html}{Actual
+all-CROSS cofactors and the complete-fold interpolant}, §§1--4, based on
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_positive_face_exponential_fold_interpolation.html}{An
+exponentially accurate analytic interpolation of the actual fold
+factors} and the independent complex packets of the actual cofactors.
+
+For precision, the odd central formula has the form \begin{equation}\label{mca:eq-8}
+P_{\mathrm C}=G_bG_c+\omega s_ms_{m+1}xyD_bD_c,
+                    \qquad\omega=-4\sin^2(\pi\delta).
+\end{equation} The second term in \eqref{mca:eq-8}, including its derivative at
+\(\omega=0\), is retained. The even formula is its original sum of three
+central-cut products. Their central factors are analytic units near
+completeness. The proof of \eqref{mca:eq-7} uses the independently
+bounded complex cofactor ratios and a finite Cauchy--Lagrange formula on
+both parity grids; it does not differentiate a value-only interpolation.
+Thus all repeated-node normals and the odd simple node are already in
+\eqref{mca:eq-7}. There is no odd regularized surrogate in
+\eqref{mca:eq-1}.
+
+The local global-angular theorem applies to each terminal cofactor with
+row \(N/2+O(1)\). Two positive faces with separated circular phases give
+a fixed exponential loss, uniformly over the entire real spectral
+interval and a sufficiently thin complex strip. Its proof retains the
+exact original node adapter, positive nodal tails, all start rows and
+the polynomial cost of the finitely omitted terminal nodes. One-variable
+triangles are exact monomials and impose no angular condition. This
+local theorem has no global topology or Morse-order hypothesis.
+
+Every summand of the even or odd central formula contains a cofactor
+from both original triangles. Outside the common ordinary-face phase, a
+bounded-length path in the connected ordinary graph has a separated
+edge; one triangle at that edge supplies the exponential loss in every
+central summand at its crossing region. Every other cofactor has its
+polynomial endpoint majorant and the fixed strip growth
+\(e^{O(N|\operatorname{Im}\delta|)}\). There are finitely many crossing
+regions, so shrink the common strip to absorb the sum of those growth
+costs. This proves the shared angular complement bound, on the original
+common radii and with every central prefactor retained.
+
+\subsection{The local asymptotic from the actual face
+torus}\label{mca:sec-4}
+
+Fix one ordinary face as the scale reference, and write
+\(L_f=\rho_f e^{z_f}\) for the others. Define the finite phase \begin{equation}\label{mca:eq-9}
+\Psi_N(z,\delta)=\frac1N\sum_e\operatorname{Log}
+     \mathcal B_{e,N}(\delta_e;L(z))
+       -\frac dN\sum_{f\ne u,v}\operatorname{Log}L_f(z).
+\end{equation} Every finite anchor and any \(O(\log N)/N\) term remains in
+\eqref{mca:eq-9}; only the explicit \(N^{2R}\) in \eqref{mca:eq-7} lies
+outside. The local theorems give uniform convergence with derivatives to
+\begin{equation}\label{mca:eq-10}
+\Psi(z,\delta)=\sum_e
+       \bigl[Q_{b_e}(\delta_e;L)+Q_{c_e}(\delta_e;L)\bigr]
+                         -\sum_{f\ne u,v}\operatorname{Log}L_f.
+\end{equation} The logarithms are real on the positive complete chart. The positive
+face Hessian and the holomorphic implicit function theorem give the
+actual nearby finite saddle \(z_N(\delta)\), uniformly on one fixed
+polydisk. Put \(A_N=\Psi_N(z_N,\delta)\) and
+\(H_N=\partial_z^2\Psi_N(z_N,\delta)\).
+
+The exact homogeneous numerator degree is \(dR\), equal to the total
+ordinary target. Hence the common angular variable integrates to one,
+and the actual Cauchy measure on the quotient is
+\((2\pi)^{-(R-1)}d\theta\). The integration lattice is primitive by the
+general Morse face-potential identity; no additional multiplicity is
+chosen here.
+
+Use \eqref{mca:eq-7} near the saddle and the preceding angular gap on
+its complement. Translating the original Cauchy torus by the small
+vector \(z_N(\delta)\) crosses no pole: all finite faces remain in their
+annuli, the numerator is polynomial and the target is its original
+Laurent monomial. If the translation is localized, its side faces are
+retained in the fixed angular gap. Uniform positive real Hessian and
+bounded higher derivatives then give the Gaussian with coefficient one
+and the determinant in \eqref{mca:eq-H1}. Shrinking the spectral
+polydisk makes the absolute cost of its complex perturbation smaller
+than the exponential precision in \eqref{mca:eq-7}, so the relative
+error remains \(O(N^{-1})\), holomorphic with fixed derivative bounds.
+
+Uniqueness of this finite face saddle preserves separate evenness and
+reality. At zero, the mixed \(z,\delta\) derivatives vanish by evenness,
+so eliminating \(z\) does not change the diagonal spectral second
+derivative. Explicitly \begin{equation}\label{mca:eq-11}
+C_e=\frac{\pi(T_{b_e}+T_{c_e})}{x_e+y_e}>0,
+ \qquad T_t=\sqrt{(x_e+y_e)t+x_ey_e},
+\end{equation} at the actual complete packing.
+Section~\ref{mca:sec-2} ensures that at least one
+summand is positive. Thus \eqref{mca:eq-3} holds, and on a smaller fixed
+complex chart \(\operatorname{Re}A_N''\) is uniformly negative definite.
+This proves \eqref{mca:eq-H1} directly for CROSS. The full-numerator
+restoration in §4 of
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/general_full_spectral_numerator_geometric_packet.html}{The
+original full spectral numerator has the marked geometric packet} is not
+used.
+
+\subsection{The gap on the entire spectral cube}\label{mca:sec-5}
+
+The needed real-spectral estimate is a value bound, not coefficientwise
+domination at arbitrary spectral parameters. The exact cleared cofactor
+has the original start decomposition \begin{equation}\label{mca:eq-12}
+R_j(b,\delta)=\sum_{i=0}^{j}b^i
+     \prod_{r<i}\alpha_r(\delta)K_{i,j},\qquad
+ \alpha_r=4\cos^2\frac{(r+1/2)\pi}{N}-4\sin^2(\pi\delta).
+\end{equation} The normalized two-step tail transfer has limiting spectral radius \begin{equation}\label{mca:eq-13}
+\rho(t,\delta)=(x+y)\sin(\pi t)
+     +\sqrt{4xy\cos^2(\pi\delta)+(x-y)^2\sin^2(\pi t)},
+ \qquad\Lambda=2\sin(\pi t)\rho.
+\end{equation} The proof in
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_global_cross_spectral_gap.html}{Global
+real-spectral gap of the actual all-CROSS source}, §§1--2, handles the
+possible repeated transfer root by its Cayley--Hamilton power formula.
+It uses fixed finite blocks away from \(t=0\), a uniform
+\(O(\eta\log(1/\eta))\) endpoint allowance, and uniformly integrable
+truncated logarithms for the exact prefix. It therefore gives a uniform
+upper bound for every starting row, including in small fixed complex
+face neighborhoods and a thin spectral strip. No ill-conditioned
+eigenbasis or lower bound on distance to a physical node is assumed.
+
+The exact maximization of the resulting start action is \begin{equation}\label{mca:eq-14}
+\limsup\frac1N\log|R_j(b,\delta)|
+       \le\max\{Q_b(\delta),\tfrac12\log b\};
+\end{equation} for \(b=0\), only the first branch is present. This comes from its
+unique pre-sign-change maximum and the final start endpoint; the entire
+prefix integral is zero. For a nonmonomial triangle,
+\(Q_b(0)>\tfrac12\log b\) when that branch is present, and
+\(Q_b(\delta)<Q_b(0)\) for \(0<|\delta|\le1/2\). The derivative formula
+is strictly negative whenever \(b>0\) or \(xy>0\). The sole exception is
+the exact one-variable monomial, already excluded from any asserted
+local gap.
+
+Every crossing region has at least one nonmonomial triangle. Thus a
+separated \(\delta_e\) supplies a strict loss relative to that crossing
+region's complete rate; all other crossing regions have their complete
+upper rates with arbitrarily small prescribed errors. On the small
+common-face-phase region this estimate and its complex face extension
+control the original integrand. On the complementary face torus use the
+angular gap of Section~\ref{mca:sec-3}, which is uniform
+for all real spectral parameters. Combining the two regions on the same
+original radii proves \eqref{mca:eq-H2}. To make endpoint neighborhoods
+precise, first use separation \(\eta/2\), then shrink the strip.
+Cauchy's estimate gives the fixed derivative version. Neither the
+inequality comparing LEFT/RIGHT rates with complete radii nor a choice
+of different radii at separate crossing regions occurs in this proof.
+
+\subsection{The first packet, its phase, and charge
+comparison}\label{mca:sec-6}
+
+Write, by evenness, \begin{equation}\label{mca:eq-15}
+\partial_e A_N(\delta)=-2\delta_e B_{e,N}(\delta_1^2,\ldots,\delta_R^2),
+ \qquad B_{e,N}\longrightarrow B_e,\quad B_e(0)=C_e.
+\end{equation} Shrink the chart until \(|B_{e,N}-C_e|\le C_e/8\). Choose first a
+fixed outer real cube \(K_B=[-B,B]^R\) inside that chart. Choose the
+scaled charge cutoff \(a>0\) sufficiently small relative to \(B\).
+Finally choose a separate inner radius \(0<b<a/4\), to be used only for
+the bounded bad charges in Section~\ref{mca:sec-7}. All
+three constants are fixed from the source before the powers are chosen.
+For positive real charges with \(\ell_e/|n_e|\le a\), the critical
+equation is exactly \begin{equation}\label{mca:eq-16}
+\delta_e=-\frac{\ell_e/n_e}
+                  {1+i B_{e,N}(\delta^2)/(\pi n_e)}.
+\end{equation} Uniform contraction on a small polydisk gives its unique solution for
+all independent signed \(|n_e|\ge n_0\). In particular \begin{equation}\label{mca:eq-17}
+|\delta_e|\le2\ell_e/|n_e|,\qquad
+ \operatorname{Im}\delta_e=
+ \frac{\ell_e}{\pi n_e^2}
+ \frac{\operatorname{Re}B_{e,N}}
+ {|1+iB_{e,N}/(\pi n_e)|^2}>0.
+\end{equation} The imaginary part is positive for either sign of \(n_e\); all
+coordinates and all sine factors are nonzero.
+
+Translate the outer cube \(K_B\) to the horizontal plane through this
+critical point. Reality on the real chart gives
+\(\operatorname{Re}A_N(x+iv)\le A_N(0)-c|x|^2+C|v|^2\), with no linear
+imaginary cost. On each actual side face, one \(|x_j|=B\), while
+\(0\le v_e\le\operatorname{Im}\delta_e\). The quadratic chirps cost at
+most \(CB\sum_e\ell_e/|n_e|\), and the charge terms have nonpositive
+real part. The critical real value is at least
+\(A_N(0)-C\sum_e(\ell_e/|n_e|)^2\). The already chosen \(a\ll B\),
+followed by sufficiently large \(n_0\), therefore puts every side
+strictly below that value. Thus the original local contour on \(K_B\)
+has saddle coefficient \(+1\), with its side currents explicitly
+smaller. The inner radius \(b\) is not used for this local saddle
+contour.
+
+On the translated horizontal plane the real Hessian is
+\(\operatorname{Re}A_N''<0\). Hence the negative spectral Hessian
+\(Q_{N,\ell}\) has positive real part. The Gaussian determinant branch
+is fixed even for mixed signs. Applying the spectral Gaussian to
+\eqref{mca:eq-H1} contributes \((2\pi/N)^{R/2}\), and the two measures
+combine exactly as \begin{equation}\label{mca:eq-18}
+N^{2R}(2\pi N)^{-(R-1)/2}(2\pi/N)^{R/2}
+                     =\sqrt{2\pi}\,N^{R+1/2}.
+\end{equation} The holomorphic relative \eqref{mca:eq-H1} error remains
+\(O(N^{-1})\); the ordinary cubic Gaussian term integrates to zero,
+while its square and the quartic term have this same order. Constants
+may depend on the fixed charges and powers. The limiting prefactor is
+nonzero by \eqref{mca:eq-17} and the determinant units.
+
+Differentiation of the critical value, rather than comparison of
+independent saddle remainders, gives \begin{equation}\label{mca:eq-19}
+\partial_{\ell_e}\operatorname{Re}S_{N,\ell}
+ =-\frac{2\ell_e}{n_e^2}
+   \frac{\operatorname{Re}B_{e,N}}
+        {|1+iB_{e,N}/(\pi n_e)|^2}.
+\end{equation} Therefore, throughout the positive local charge box, \begin{equation}\label{mca:eq-20}
+\operatorname{Re}S_{N,\mathbf1}-\operatorname{Re}S_{N,\ell}
+       \ge\sum_e\frac{C_e}{2n_e^2}(\ell_e^2-1).
+\end{equation} This comparison is valid for arbitrarily unbalanced fixed powers.
+Separate evenness makes every sign choice of the same positive charge
+magnitudes contribute equally: reflecting a coordinate reverses both its
+sine integral and its charge factor. For the unit charges the raw sign
+cancels the parity character, \((-1)^{dR}(-1)^{(N+1)R}=1\), leaving the
+exact factor \((-2i)^R\) in \eqref{mca:eq-4}.
+
+\subsection{Whole-domain currents and every other
+charge}\label{mca:sec-7}
+
+For any entire polynomial in the \(\sigma_e\), multiply it by the
+original sines and quadratic chirps. In each variable the resulting
+\(B\) has zero endpoint values and equal first derivatives at
+\(\pm1/2\). This remains true after spectator derivatives. Three
+integrations by parts give exactly \begin{equation}\label{mca:eq-21}
+\int_{-1/2}^{1/2}B(t)e^{2\pi iN\ell t}\,dt
+ =(2\pi iN\ell)^{-3}
+ \left\{[B''(t)e^{2\pi iN\ell t}]_{-1/2}^{1/2}
+       -\int_{-1/2}^{1/2}B'''(t)e^{2\pi iN\ell t}\,dt\right\}.
+\end{equation} The second-derivative current is retained. With the original charge
+weight this yields summable \(|\ell|^{-2}\) at fixed \(N,\mathbf n\).
+Nothing about this step assumes a plat.
+
+\eqref{mca:eq-H1} and \eqref{mca:eq-H2} first imply the shared real
+supremum \(e^{N(\Phi+o(1))}\). Since the degree in each cosine variable
+is at most \(d\), the elementary polynomial exterior bound gives \begin{equation}\label{mca:eq-22}
+|C_N(\delta)|\le
+       e^{N(\Phi+o(1))+2\pi d\sum_e|\operatorname{Im}\delta_e|}.
+\end{equation} This is a bound for the whole shared coefficient. Source derivatives
+are estimated by Cauchy, while spectator chirps are differentiated on
+their real intervals, so no exponentially large spectator-slope cost is
+inserted.
+
+For a positive far charge in coordinate \(i\), shift its whole interval
+upward by a fixed small height \(\tau\). Both endpoint sides are kept
+together. Their exact difference, with spectator factors suppressed, is
+\begin{equation}\label{mca:eq-23}
+\begin{split}
+ B_i(1/2+iv)-B_i(-1/2+iv)
+ ={}&2i\sinh(2\pi v)\sinh(\pi n_iNv)\\
+ &\times e^{\pi i n_iN(1/4-v^2)}
+           C_N(1/2+iv,\delta_{\mathrm{other}}).
+ \end{split}
+\end{equation} The endpoint Fourier phase combined with the original parity is
+\((-1)^{\ell_i}\), of modulus one. \eqref{mca:eq-H2} gives a fixed gap
+at these separated endpoints. Applying \eqref{mca:eq-21} in all
+spectator coordinates bounds the weighted vertical term by \begin{equation}\label{mca:eq-24}
+C_{\mathbf n}|n_i|N\ell_i\,
+    e^{N(\Phi-\gamma_e)}\prod_{j\ne i}|\ell_j|^{-2}
+       \int_0^\tau v^2e^{-2\pi N(\ell_i-|n_i|/2)v}\,dv.
+\end{equation} For \(\ell_i>|n_i|/2+D\), its integral is bounded by
+\(C/[N^3(\ell_i-|n_i|/2)^3]\), and the resulting sum converges. The
+horizontal interval uses \eqref{mca:eq-22} and has exponential rate at
+most \(\Phi+o(1)+2\pi R\tau-2\pi\tau(\ell_i-|n_i|/2)\). Choose fixed
+\(D\) large enough to make this uniformly smaller than \(\Phi\). The
+union over any far coordinate, summed with all spectators on their
+entire real intervals, has a fixed exponential gap. Negative charges
+obey the same bound by reflection. No infinite series restricted to a
+sharp small cube has been introduced.
+
+The remaining charges satisfy \(|\ell_i|\le\lceil|n_i|/2+D\rceil\), a
+finite set after the powers are fixed. Consider first a bounded bad
+charge for which one ratio \(|\ell_i|/|n_i|>a\). Outside the inner cube
+\(K_b\), \eqref{mca:eq-H2} supplies a fixed gap. Inside \(K_b\), reflect
+the chosen charge to positive sign and shift only that coordinate by
+\(ib/|n_i|\). Since \(0<b<a/4\), the horizontal charge loss is at least
+\(2\pi b(a-b)>0\); the complex-source error is \(O(b^2/n_i^2)\). On each
+actual vertical side \(|x_i|=b\), the fixed real quadratic loss
+persists, and the chirp plus charge has nonpositive real part. This
+proves a fixed gap for these bounded bad charges, independently of power
+ratios.
+
+For the remaining finite local charge box, with all ratios at most
+\(a\), use \eqref{mca:eq-H2} outside the outer cube \(K_B\), and the
+actual translated \(K_B\) contour and comparison \eqref{mca:eq-20}
+inside. Every nonunit magnitude has a positive fixed-\(\mathbf n\) gap.
+The unit drop from \(\Phi\) is \(O_D(\sum_e n_e^{-2})\). Enlarge the
+common diagram-dependent threshold until this drop is smaller than the
+previously fixed endpoint, far-charge, bounded-bad and
+outer-cube-complement gaps. Also ensure \(a n_0\ge1\). All complementary
+contributions are then exponentially smaller than the nonzero unit
+packet. This proves \eqref{mca:eq-4}--\eqref{mca:eq-6} for the whole
+all-CROSS period.
+
+\subsection{The geometric interface and the precise remaining
+problem}\label{mca:sec-8}
+
+The analytic proof retains the untwisted selected action \(A_0\) and the
+original half twists exactly once. Put \begin{equation}\label{mca:eq-25}
+A_{\epsilon}=A_0+\pi i\sum_e\epsilon_e\delta_e^2,
+ \qquad U_{\epsilon,e}=\partial_{\delta_e}A_{\epsilon},
+ \qquad V_e=-4\pi i\delta_e.
+\end{equation} The actual stationary equation of \eqref{mca:eq-5}, with
+\(n_e=\epsilon_e-2p_e\), is \begin{equation}\label{mca:eq-26}
+U_{\epsilon,e}+p_eV_e=-2\pi i\ell_e.
+\end{equation} Once the original ordered Morse diagram has the marked
+action/primitive collar adapter and smooth long-filling completion, its
+regulator boundary term cancels the Gaussian terms at \(\ell_e=1\). Then
+\(2\pi\operatorname{Re}S_{0,\mathbf1}\) is the actual filled exterior's
+hyperbolic volume. This identifies the asymptotic of the sector
+\eqref{mca:eq-2}, not automatically that of the full invariant.
+
+The independent issue remains a bound or cancellation statement for the
+entire original LEFT/RIGHT remainder. Complete-radius balance is one
+sufficient mechanism in the terminal-fan theorem. The present proof does
+not assume it and supplies no replacement. In particular a nonzero
+sector with the correct geometric rate can still be canceled by another
+sector unless that remainder is controlled.
+
+\subsection{Proof dependencies and scope}\label{mca:sec-9}
+
+The following table records the inputs and the hypotheses used in each
+part of the proof.
+
+\begingroup
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Input
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Part used here
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Dependence on a flat plat or balance
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/research_matched_sphere_morse_source.html}{A
+matched spherical triangulation has the original general Morse source}
+§§5--6 & Exact coefficient, primitive integer face grid, both parity
+cosets, mark and whole Hermite functional & Proved for the actual
+general Morse construction; no balance \\
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_positive_face_exponential_fold_interpolation.html}{An
+exponentially accurate analytic interpolation of the actual fold
+factors} §§1--6 & Exact finite anchor and exponential interpolation in
+fixed complex face neighborhoods & Local actual triangles and
+protected-zero patterns only \\
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_cross_cofactor_interpolant_rigidity.html}{Actual
+all-CROSS cofactors and the complete-fold interpolant} §§1--4 & Actual
+off-node CROSS polynomial, including odd derivative term & Independent
+actual cofactor growth plus interpolation; local only \\
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_cross_cofactor_global_angular_gap.html}{A
+global angular gap for the actual cleared cross cofactors} §§1--4 &
+Whole real-spectral angular gap and omitted-terminal-node interpolation
+& Local positive finite matrices and physical recurrences only \\
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_positive_face_coefficient_saddle.html}{The
+positive face coefficient has one global saddle} §§2--4 & Positive
+Hessian, primitive phase constraints and coefficient Gaussian & Actual
+connected ordinary triangle graph; no flat gap forest \\
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_original_boundary_transverse_rank.html}{The
+original boundary source has exactly two flat face directions} §2 &
+Ordinary graph connectivity after the protected pair is removed & Simple
+sphere and marked MAIN edge \\
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_global_cross_spectral_gap.html}{Global
+real-spectral gap of the actual all-CROSS source} §§1--4 & Uniform
+start-row/tail estimates, strict real-spectral decrease and shared strip
+gap & Local recurrences plus the same ordinary graph and complete
+radii \\
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/general_full_spectral_numerator_geometric_packet.html}{The
+original full spectral numerator has the marked geometric packet} §§1--3
+& Finite phase, exact quotient measure and actual Cauchy contour &
+Reproved above with the Morse source; its full restoration §4 is
+unused \\
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/general_localized_unit_charge_filling_period.html}{The
+original localized spectral period has a nonzero unit-charge filling
+contribution} §§2--5 & Fixed independent signed saddle, actual side
+currents, nonzero first packet & H1 and exact scalar/evenness only; the
+old flat-plat opening is not used \\
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/general_all_cross_long_filling_volume.html}{The
+entire original all-CROSS Fourier period from its local packet and
+global spectral gap} §§2--5 & Whole-domain charge tails and finite
+bad-charge separation & H1, H2 and entire polynomial degree only \\
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_balanced_terminal_fan_volume.html}{Balanced
+terminal decorations and volume limits beyond tangle-operation trees}
+§§6--8 & Explicit existing Morse version of these same analytic steps &
+Balance is used in §9 for the omitted full remainder, not in §§6--8 \\
+\end{longtable}
+\endgroup
+
+No new analytic hypothesis is imposed on a certified simple-sphere Morse
+source beyond these literal inputs. The original presentation's physical
+normalization and its marked geometric applicability must still be
+supplied, as stated in Section~\ref{mca:sec-1}. There is
+no full undeformed simple-sphere volume theorem in this note.
+
+
+\section{The original complement and its geometric
+contribution}\label{mcg:unit}
+
+A simple triangulated sphere with a perfect matching of its cubic dual
+determines an actual augmented link diagram when the cyclic orders,
+strand pairings and crossing disks are retained. This note follows that
+diagram through its exact finite source, its geometric critical point,
+and the filling of its original auxiliary cusps.
+
+For independently sufficiently long fixed signed twists, the geometric
+contribution to the original invariant is nonzero and has the
+exponential rate of the actual filled hyperbolic volume. The proof keeps
+the primitive peripheral words, the finite scalar factors and both
+parities of the quantum level. No terminal tangles are inserted, and no
+local balance assumption is imposed.
+
+The name CROSS denotes the central recurrence-path piece of each
+original homogeneous numerator. Selecting it at every crossing region is
+an algebraic decomposition of the original evaluation, not a new
+invariant. The
+\hyperref[mca:unit]{analytic
+companion} proves its full Fourier asymptotic. To conclude the same
+limit for the full invariant of an undecorated diagram, one must
+additionally control the remaining pieces.
+
+\subsection{Precise diagram and filling scope}\label{mcg:sec-1}
+
+Let \(\mathcal T\) be a finite simple triangulated oriented sphere with
+at least four vertices. Choose a perfect matching of its cubic dual. The
+two triangles in each matched pair form a quadrilateral with four
+distinct white vertices. Record a cyclic order \((x_e,b_e,y_e,c_e)\);
+its common diagonal is \(x_ey_e\), its input middle is \(b_e\), and its
+output middle is \(c_e\). There are \(R\) matched pairs and \(R+2\)
+white vertices. Mark a nonmatching edge \(uv\). It is a strand edge in
+the link diagram.
+
+There are two equivalent permitted inputs:
+
+\begin{itemize}
+\item
+  an actual connected augmented diagram in \(S^3\), whose projection and
+  crossing-disk cut has exactly these labels and orders; or
+\item
+  the literal inverse-cut construction in
+  section~\ref{mcg:sec-2} below.
+\end{itemize}
+
+Fix the retained half twist \(\epsilon_e\in\{-1,0,1\}\) and its sign at
+every disk. Its auxiliary peripheral basis \((\mu_e,\lambda_e)\) is the
+original disk-framed primitive basis. The longitude \(\lambda_e\) is
+represented by the ordered two-head product \(P_e=B_eA_e\). Integer
+filling coordinate \(p_e\) means filling the slope
+\(\mu_e+p_e\lambda_e\); the main crossing power is \begin{equation}\label{mcg:eq-1}
+n_e=\epsilon_e-2p_e.
+\end{equation} The original outside terminal matching and the even/odd pairing at
+each disk determine the main components. When their terminal graph is
+connected, denote the filled knot by \(K_{\boldsymbol p}\). We keep this
+original parity test. We do not change the parity vector to obtain a
+different knot.
+
+A supplied labeled positive right-angled cut certificate is sufficient
+for everything below. In this simple-sphere class such a certificate
+also follows from the constructive packing theorem in
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_balanced_terminal_fan_volume.html}{the
+balanced-fan note, section 2}. That section constructs the packing
+\textbf{before any fan is inserted}. Only that initial geometric
+construction is used here.
+
+\textbf{Theorem.} For each fixed diagram and the recorded choices above
+there is a number \(T_D\) such that, for every fixed integer vector
+\(\boldsymbol p\) with \(\min_e|n_e|>T_D\), independently in sign and
+relative size, the following assertions hold.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Filling the specified auxiliary components gives a complete
+  finite-volume hyperbolic metric on the original filled link exterior,
+  with every main cusp unfilled. If the recorded component test is a
+  knot, it is \(S^3\setminus K_{\boldsymbol p}\).
+\item
+  The all-CROSS term of the original complete-color Morse contraction
+  has a nonzero relative first-charge asymptotic, at both parities of
+  the level \(N\). Its selected critical action \(S_{\boldsymbol 1}\)
+  satisfies \begin{equation}\label{mcg:eq-2}
+2\pi\operatorname{Re}S_{\boldsymbol 1}
+         =\operatorname{Vol}(S^3\setminus K_{\boldsymbol p})
+\end{equation} in the knot case, and the analogous original link-complement
+  identity otherwise.
+\item
+  In particular, for that all-CROSS contraction
+  \(\mathcal I_{N,\mathrm C}\), \begin{equation}\label{mcg:eq-3}
+\lim_{N\to\infty}\frac{2\pi}{N}
+           \log|\mathcal I_{N,\mathrm C}|
+         =\operatorname{Vol}(S^3\setminus K_{\boldsymbol p}).
+\end{equation} The exact raw phase is retained in
+  section~\ref{mcg:sec-3}. An ordinary zero-framing
+  phase does not change \eqref{mcg:eq-3}.
+\end{enumerate}
+
+The diagram, its matching, its signs, and all powers are fixed before
+\(N\). The threshold can depend on this entire finite diagram. There is
+no short-filling assertion and no uniformity in a growing sphere. The
+theorem does not yet assert \eqref{mcg:eq-3} for the full invariant:
+that requires a bound on the remaining sectors.
+
+\subsection{Why the manifold and its complete anchor are the original
+ones}\label{mcg:sec-2}
+
+Take disjoint small neighborhoods of the matched edges of the cubic
+dual. Each is a four-terminal disk. In cyclic terminal order
+\(0,1,2,3\), the two shaded halves group \((1,2)\) and \((3,0)\). Draw
+the physical untwisted strands instead with pairs \((0,1),(2,3)\), and
+connect outside terminals along the nonmatching dual edges. In the
+corresponding disjoint three-balls put the perpendicular crossing
+circles and their twice-punctured disks. This constructs a link in
+\(S^3\), not a manifold assigned to an abstract tensor graph. Retained
+odd half twists use the physical pairing \((0,2),(1,3)\), with their
+original signed collar paths.
+
+The two main pairings and the shaded grouping must not be confused. The
+graph of main components is the union of the outside terminal matching
+and these physical pairings. Every terminal has degree two. Its
+connectedness is exactly the knot test, and adding full twists does not
+change it.
+
+Cut along the projection sphere. In each projection ball a crossing
+circle semicircle is boundary parallel by its original half disk.
+Drilling that semicircle and opening that same half disk cancels the
+introduced handle. These operations occur in disjoint collars, so
+opening all of them leaves one ball in each projection copy. The
+boundary cellulation is the prescribed medial sphere. Thus cycles in the
+matched graph create no unidentified handle or extra gluing.
+
+Let \(Q\) be its positive ideal right-angled cut polyhedron. The even
+shaded pairing fixes the crossing-circle vertex and sends
+\(C_1\mapsto C_0,\ C_2\mapsto C_3\). An odd pairing exchanges the
+projection copies and the two punctures, using the literal signed
+half-twist collar. The two odd signs have the same corner permutation
+but different primitive paths. White faces pair by their original
+projection labels.
+
+At every ideal vertex, the link of \(Q\) is a rectangle. Normalize its
+opposite shaded sides to length one. Each shaded triangle map then
+preserves the canonical horocycles at all three corners, including the
+odd corner permutation. Each alternating white/shaded edge cycle has
+four right-angle pieces. It fixes both ideal endpoints, preserves the
+chosen horospheres there, and rotates by \(2\pi\), so its whole holonomy
+is the identity. The ideal links are the actual link's torus links and
+have no cone or dilation defect. Their horoball ends are complete. Hence
+\begin{equation}\label{mcg:eq-4}
+\operatorname{Vol}(Y_D)=2\operatorname{Vol}(Q),
+       \qquad \Phi_D=\frac{\operatorname{Vol}(Y_D)}{2\pi}.
+\end{equation} Here \(Y_D\) is the same augmented exterior, with the recorded half
+twists and peripheral bases.
+
+These are the local cut and gluing arguments in
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/general_augmented_plat_matching_geometry.html}{the
+matching-geometry proof, sections 4--6}. They use a sphere projection,
+disjoint half disks, and the prescribed corner maps. Moving cups and
+caps to a flat plat is not a premise. The inverse construction and its
+general Morse realization are spelled out in
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/research_matched_sphere_morse_source.html}{the
+matched-sphere source, sections 1--4}.
+
+For completeness, the initial simple-sphere packing theorem does not
+require the absence of separating triangles. Remove one triangular face
+and pool its three boundary angle demands. Strict Hall inequalities for
+every nonempty proper destination subset give a positive allocation of
+angles. The strictly concave calibrated triangle entropy has an interior
+maximizer, whose multipliers give positive radii. The center triangles
+have zero interior rotational and translational holonomy. Their boundary
+develops once around a convex triangle, so the degree argument makes the
+development injective. Vertex-disk sectors stop before opposite center
+edges; this proves disjointness, including across separating triangles.
+The contact circles and outward halfspaces therefore give the labeled
+strict support certificate. Sending the marked contact to infinity gives
+the two protected parallel lines. No radius-balance inequality enters
+this construction.
+
+\subsection{The exact source and the phases which remain outside the
+action}\label{mcg:sec-3}
+
+Put \(d=N-1\), \(q=e^{\pi i/N}\). In the recorded four-leg order the
+full local homogeneous numerator is
+\(H_e(L_{x_e},L_{b_e},L_{c_e},L_{y_e})\). The original reduced Morse
+contraction is \begin{equation}\label{mcg:eq-5}
+[\prod_{f\ne u,v}L_f^d]\,
+       \prod_e H_e(L_{x_e},L_{b_e},L_{c_e},L_{y_e})
+             \big|_{L_u=L_v=0}.
+\end{equation} This statement includes the complete root Hermite normals and the
+unrestricted physical mark.
+
+Here is the part of its proof that matters for changing the Morse height
+function. Each full coupon contributes \(N^{-1}H_e/(b_ec_e)^{d/2}\). If
+\(M_f\) counts middle passages and \(T_f\) counts outside minus inside
+turns, the actual boundary turning number gives \begin{equation}\label{mcg:eq-6}
+M_f-T_f=2 \quad(f\ne u),\qquad
+       M_u-T_u=-2.
+\end{equation} The ordinary caps and cups give the same powers as these winding
+numbers; replacing the exposed cap by the original reduced mark
+contributes \(N^{-1}(L_v/L_u)^d\). Thus the full summand is
+\(N^{-R-1}\prod H_e/\prod_{f\ne u,v}L_f^d\). The primitive
+face-potential lattice has \(R+1\) independent \(N\)-point grids after
+the exterior gauge is fixed. Their count cancels \(N^{-R-1}\). Exact
+endpoint support is imposed before the root reduction, so no coefficient
+is aliased into a wrong endpoint. This proves \eqref{mcg:eq-5} with its
+original phases at arbitrary Morse height and both level parities.
+
+Replace each homogeneous factor in \eqref{mcg:eq-5} by its CROSS
+cofactor factor and retain the physical spectral trace. Write
+\(C_N^{\mathrm{raw}}(\boldsymbol\delta)\) for the resulting entire
+spectral numerator, with each node \(-2\cos(2\pi\delta_e)\). It is even
+separately in every coordinate, has degree at most \(d\) in each node,
+and satisfies \(C_N^{\mathrm{raw}}=(-1)^{dR}C_N^+\) in the positive
+cofactor normalization. The exact original filling period is \begin{equation}\label{mcg:eq-7}
+\begin{split}
+\mathcal I_{N,\mathrm C}
+={}&q^{d^2\sum_e n_e/4}(-i)^R
+ \sum_{\boldsymbol\ell\in(\mathbb Z\setminus\{0\})^R}
+ \Bigl(\prod_e\ell_e\Bigr)(-1)^{(N+1)\sum_e\ell_e}\\
+&\quad\cdot
+ \int_{[-1/2,1/2]^R}
+  \Bigl(\prod_e\sin(2\pi\delta_e)\Bigr)
+  C_N^{\mathrm{raw}}(\boldsymbol\delta)
+  \exp\!\left[
+   N\sum_e\{\pi i n_e\delta_e^2+2\pi i\ell_e\delta_e\}
+       \right]\,d\boldsymbol\delta .
+\end{split}
+\end{equation} The sum is the original trace identity with its endpoint currents; it
+is not defined by an unqualified termwise Poisson rearrangement. The
+odd-level simple node and the double-node normals are included. The same
+finite proof is
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/research_matched_sphere_morse_source.html}{the
+matched-sphere source, sections 5--7}.
+
+No operation in \eqref{mcg:eq-5}--\eqref{mcg:eq-7} changes a disk, a
+strand pairing, or a peripheral curve. In particular the all-CROSS
+source for the original sphere exists before a fan construction, and its
+ordinary-face targets are still \(d\).
+
+\subsection{One marked circle pattern on the whole
+sphere}\label{mcg:sec-4}
+
+Normalize the complete protected white disks to
+\(\operatorname{Im}z\le0\) and \(\operatorname{Im}z\ge1\). For each
+finite face use center \((X_f,Y_f)\) and radius \(r_f\). At a strand
+edge set \(I_{fg}=1\); at matching edge \(e\) set
+\(I_{fg}=\cos(2\pi\delta_e)\). The equations are \begin{equation}\label{mcg:eq-8}
+\begin{aligned}
+(X_f-X_g)^2+(Y_f-Y_g)^2
+ &=r_f^2+r_g^2+2I_{fg}r_fr_g,\\
+Y_f&=r_fI_{fu},\qquad
+1-Y_f=r_fI_{fv},
+\end{aligned}
+\end{equation} where the last two equations are imposed at the appropriate marked
+line incidences. Fix one horizontal translation. The marked line-line
+edge is automatic; the remaining system has \(3R-1\) equations and
+variables.
+
+Its complete Jacobian is invertible. The infinitesimal angle sums and
+the positive finite-face source Hessian first force all logarithmic
+radius variations to be one common scale. Each of the two triangles
+adjacent to \(uv\) contains a finite circle tangent to both fixed lines.
+Its radius is \(1/2\), so its scale variation is zero. All radius
+variations are therefore zero.
+
+With radii fixed, each finite center triangle has one infinitesimal
+Euclidean motion. A one-line triangle has only a horizontal translation.
+Removing the two triangles at \(uv\) leaves a triangulated disk with
+connected triangle adjacency, containing all finite vertices and at
+least one one-line triangle. Two adjacent finite triangles agree at two
+distinct centers; two adjacent one-line triangles agree at their finite
+center. These comparisons propagate one horizontal translation through
+the disk, and the normalization removes it. The kernel is zero.
+
+The holomorphic implicit-function theorem now gives one circle pattern
+on a fixed polydisk in all \(\delta_e\). The variables \(X,Y,r\) are
+complexified independently, without conjugating parameters. The solution
+is real on real parameters and even in each \(\delta_e\).
+
+For one source triangle put \(x=1/r_x,\ b=1/r_b,\ y=1/r_y\), \begin{equation}\label{mcg:eq-9}
+\begin{aligned}
+A&=x+y,& s&=\sin(\pi\delta),\\
+D&=A^2-4xy s^2,&
+T_b&=\sqrt{bA+xy+b^2s^2},\\
+E_b&=A+2bs^2+2sT_b .
+\end{aligned}
+\end{equation} Use positive complete roots and their analytic continuations. The
+original determinant, beta, and forced-product rate \(Q_b\) obeys \begin{equation}\label{mcg:eq-10}
+\partial_\delta Q_b=-\operatorname{Log}(E_b/\sqrt D),
+\qquad
+\partial_{\log L_f}Q_b=\frac{\theta_f}{2\pi},
+\qquad Q_b(0)=F(x,b,y).
+\end{equation} The angles are those of \eqref{mcg:eq-8}, with their marked-line
+limits. Thus the developed angles sum to \(2\pi\) exactly when the
+finite-face source is stationary. Uniqueness of the finite-face critical
+point identifies these curvatures with the limiting source saddle.
+
+The common strip also handles a triangle containing both protected
+lines. If its finite radius is \(r\), its strip width is
+\(r(1+\cos(2\pi\delta))\). This shared width cannot be chosen
+independently at two triangles. The corresponding repeated scalar root
+does not remove the selected eigenflag: the noncentral complete
+parabolic has a nonzero off-diagonal matrix entry, and its eigenline for
+\begin{equation}\label{mcg:eq-11}
+J=-e^{-2\pi i\delta}
+\end{equation} continues holomorphically, including its collision at zero.
+
+This is the complete rank and face-identification mechanism in
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_marked_deformed_circle_pattern.html}{the
+marked-pattern proof}. No part of it refers to the number of strands at
+a Morse slice. Simplicity is important: in particular a matching edge
+cannot join the two protected faces, since their unique common edge is
+the marked strand edge. Hence \(A>0\) in every local formula.
+
+\subsection{Full group relations and the original primitive peripheral
+words}\label{mcg:sec-5}
+
+Choose the two holomorphic white-reflection matrices
+\(\mathcal R_f^\pm\), with \(\mathcal R_f^-\mathcal R_f^+=I\), from the
+one pattern. At a regular Morse slice with regions \(F_0,\ldots,F_k\),
+the original heads and prefixes are \begin{equation}\label{mcg:eq-12}
+H_j=\mathcal R_{F_j}^+\mathcal R_{F_{j-1}}^-,
+ \qquad
+ H_j\cdots H_1=\mathcal R_{F_j}^+\mathcal R_{F_0}^- .
+\end{equation} Their marked lifts give the original parabolic main meridians. Shared
+physical wire ends have the same adjacent region labels. At a cup or cap
+the consecutive regions are \(F,G,F\), so the inserted ordered pair has
+product \(I\), and all later prefixes are unchanged. This proves the
+relations also when \(k\) changes.
+
+At one crossing disk the ordered input pair is \begin{equation}\label{mcg:eq-13}
+A_{\mathrm{in}}=\mathcal R_b\mathcal R_x,\qquad
+ B_{\mathrm{in}}=\mathcal R_y\mathcal R_b,\qquad
+ P=B_{\mathrm{in}}A_{\mathrm{in}}=\mathcal R_y\mathcal R_x,
+\end{equation} and the output pair replaces \(b\) by \(c\). The labeled contact map
+of the disk, taking \(C_1\mapsto C_0,\ C_2\mapsto C_3\), is \begin{equation}\label{mcg:eq-14}
+R_0=\frac{E_bE_c}{D},\qquad
+ C=I+\frac{R_0-1}{J-J^{-1}}(P-J^{-1}I).
+\end{equation} It sends both input generators to their respective output generators
+by simultaneous conjugation and commutes with \(P\).
+
+The primitive normalization in \eqref{mcg:eq-14} is geometric. Sending
+the two outer intersection points to \(0,\infty\) makes the two shaded
+contact circles concentric, with radii \(\sqrt D/E_b\) and
+\(E_c/\sqrt D\). Their ordered corner map is multiplication by \(R_0\);
+the product of their reflections would instead give \(R_0^2\). The
+original threading word \([2,1,1,2]\) follows the inverse of the first
+map. At zero, \eqref{mcg:eq-14} retains the nontrivial parabolic
+divided-difference limit. Setting \(C=I\) merely because its eigenratio
+is one would give the wrong group representation.
+
+Marked lines are treated by one common Möbius regularization of the
+whole pattern. The input/output side signs are calibrated by the same
+complete cusp rectangle. Nonvanishing middle contributions have the
+original opposite signs; an exceptional two-line triangle has \(T_b=0\)
+and contributes ratio one. Its actual eigenflag still comes from
+\eqref{mcg:eq-8}. This proves \eqref{mcg:eq-14} with the correct labels
+at every zero pattern, not just at positive local curvatures.
+
+The positive crossing acts by \((A,B)\mapsto(A^{-1}BA,A)\), represented
+by \(P^{-1}-I\). For \(\epsilon\) equal to \(0,1,-1\), put \begin{equation}\label{mcg:eq-15}
+\begin{aligned}
+ U&=-\operatorname{Log}R_0-\epsilon\operatorname{Log}(-J),\\
+ V&=2\operatorname{Log}(-J)=-4\pi i\delta,\qquad
+ m=e^{U/2}.
+\end{aligned}
+\end{equation} All logarithms are the germs vanishing at the complete point. The
+actual determinant-one auxiliary meridian is \begin{equation}\label{mcg:eq-16}
+{\mathsf M}
+ =mR_0(J^{-1}-1)^{-\epsilon}
+        C^{-1}(P^{-1}-I)^\epsilon.
+\end{equation} Its selected eigenvalue is \(m\), and
+\(\det{\mathsf M}=m^2R_0(-J)^\epsilon=1\). The factor \(J^{-1}-1\) is a
+unit near completeness, including for negative \(\epsilon\). Formula
+\eqref{mcg:eq-16}, not just \eqref{mcg:eq-15}, verifies the original
+threading and signed Hurwitz relations.
+
+Equations \eqref{mcg:eq-12}--\eqref{mcg:eq-16} cover every shared wire,
+cup, cap, drilled box, and half twist in the actual Morse van Kampen
+presentation. There is no extra consistency equation at a cycle of the
+matched graph: all heads came from the same global reflections and all
+ordered box maps use those heads. The resulting family
+\(\rho_{\boldsymbol\delta}\) is an actual framed representation of
+\(\pi_1(Y_D)\). At zero it is the complete cut representation. Every
+main meridian remains noncentral parabolic; its commuting longitude has
+multiplier one. Thus every unfilled main peripheral group is parabolic.
+
+These are full matrix and based-word assertions from
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_deformed_circle_primitive_collar.html}{the
+primitive collar proof} and
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_complete_core_geometric_deformation.html}{the
+global assembly, section 2}. The latter's displayed \(2k\) head count is
+replaced event by event by the actual \(k(t)\) in \eqref{mcg:eq-12}. No
+other part of its proof changes.
+
+\subsection{Absolute action and the first-charge filling
+equations}\label{mcg:sec-6}
+
+Let \(A_0\) be the pure limiting face-critical value \begin{equation}\label{mcg:eq-17}
+A_0(\boldsymbol\delta)=
+ \operatorname{crit}_{L}
+ \left\{\sum_e(Q_{b_e}+Q_{c_e})
+                -\sum_{f\ne u,v}\operatorname{Log}L_f\right\}.
+\end{equation} It is separately even, real on real parameters, and anchored by
+\(A_0(0)=\Phi_D\). Put \[
+ A_\epsilon=A_0+\pi i\sum_e\epsilon_e\delta_e^2.
+\] Envelope differentiation of \eqref{mcg:eq-10}, retaining
+\eqref{mcg:eq-15}, gives \begin{equation}\label{mcg:eq-18}
+dA_\epsilon=\sum_e U_e\,d\delta_e,\qquad
+       d(2\pi i A_\epsilon)=-\frac12\sum_e U_e\,dV_e.
+\end{equation} This derivative identifies the actual primitive variables, including
+the half-twist shear; it is stronger than a cusp-Hessian match.
+
+The marked regulator boundary formula, in squared multiplier logs, is \begin{equation}\label{mcg:eq-19}
+d\operatorname{Vol}(\rho)
+   =\frac12\sum_e
+       \{\operatorname{Re}V_e\,d\operatorname{Im}U_e
+           -\operatorname{Re}U_e\,d\operatorname{Im}V_e\}.
+\end{equation} The main terms vanish. Equations \eqref{mcg:eq-18},\eqref{mcg:eq-19}
+have the same differential after the boundary correction, and
+\eqref{mcg:eq-4} fixes the real constant. Therefore on this one selected
+branch \begin{equation}\label{mcg:eq-20}
+2\pi\operatorname{Re}A_\epsilon
+   =\operatorname{Vol}(\rho)
+        -\frac12\sum_e
+                \operatorname{Im}U_e\,\operatorname{Re}V_e.
+\end{equation} The logarithms are not reset during continuation.
+
+For the positive unit charge in \eqref{mcg:eq-7}, the limiting phase is
+\begin{equation}\label{mcg:eq-21}
+S_{\boldsymbol1}(\boldsymbol\delta)
+    =A_0(\boldsymbol\delta)
+       +\pi i\sum_e n_e\delta_e^2+2\pi i\sum_e\delta_e
+    =A_\epsilon-2\pi i\sum_e p_e\delta_e^2
+                          +2\pi i\sum_e\delta_e .
+\end{equation} Its stationarity equation is exactly \begin{equation}\label{mcg:eq-22}
+U_e+p_eV_e=-2\pi i.
+\end{equation} For each fixed diagram, existence and uniqueness near zero hold for
+all independently long signed powers. Indeed \begin{equation}\label{mcg:eq-23}
+A_0''(0)=-2\operatorname{diag}(C_e),\qquad
+ C_e=\frac{\pi(T_{b_e}(0)+T_{c_e}(0))}{x_e+y_e}>0,
+\end{equation} and separate evenness makes \(\partial_e A_0=\delta_e B_e\). After
+multiplying the critical equations by \(1/n_e\), the derivative in
+\(\boldsymbol\delta\) at reciprocal slopes zero is the invertible
+diagonal \(2\pi i I\). The several-parameter implicit-function theorem
+gives \(\delta_e=O_D(1/|n_e|)\). It allows independently unbalanced
+signed \(n_e\); it does not compare a minimum error rate with a sum of
+unrelated filling losses.
+
+At a critical point, substitute \eqref{mcg:eq-22} into
+\eqref{mcg:eq-20}. Since \(V=-4\pi i\delta\), the real part of the two
+explicit added terms in \eqref{mcg:eq-21} is \begin{equation}\label{mcg:eq-24}
+\operatorname{Re}(-2\pi i p\delta^2+2\pi i\delta)
+       =\frac{1}{4\pi}\operatorname{Im}U\,\operatorname{Re}V .
+\end{equation} The boundary corrections cancel exactly: \begin{equation}\label{mcg:eq-25}
+2\pi\operatorname{Re}S_{\boldsymbol1}
+                        =\operatorname{Vol}(\rho).
+\end{equation} There is no omitted complex endpoint term. To replace the right side
+by the hyperbolic volume of the filled topology one still needs the
+following metric argument.
+
+\subsection{Completing the specified hyperbolic
+filling}\label{mcg:sec-7}
+
+The construction in
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/general_source_regulator_hyperbolic_equality.html}{the
+general metric completion theorem, sections 1--5} applies to any
+complete finite-volume exterior. Its neighborhood is a neighborhood of
+the \textbf{framed representation}, not only of the peripheral traces.
+We recall the points preventing an exponentiated filling equation from
+being mistaken for a metric.
+
+On a compact truncated core choose a finite lifted partition of unity
+\(\eta_{j,\gamma}\). In the future unit hyperboloid form \begin{equation}\label{mcg:eq-26}
+Y_\rho(x)=\sum_{j,\gamma}\eta_{j,\gamma}(x)
+                \rho(\gamma)\rho_0(\gamma)^{-1}x,\qquad
+ E_\rho(x)=\frac{Y_\rho(x)}
+                    {\sqrt{-\langle Y_\rho(x),Y_\rho(x)\rangle}} .
+\end{equation} The future cone is convex; this is defined and equivariant. On a
+compact fundamental part it is \(C^1\)-close to the identity, so is a
+positive local diffeomorphism.
+
+In a selected cusp frame the peripheral transformations are affine:
+\(A_\rho(\lambda)z=a_\lambda z+b_\lambda\), on the original translation
+lattice \(\Lambda\). A periodic partition of unity gives \begin{equation}\label{mcg:eq-27}
+\begin{aligned}
+d_\rho(w)&=\sum_{\lambda\in\Lambda}
+   \eta(w-\lambda)A_\rho(\lambda)(w-\lambda),\\
+F_\rho(w,t)&=(d_\rho(w),e^{t+\chi_\rho(w)}),
+\end{aligned}
+\end{equation} where \(\chi_\rho\) is the real-linear extension of
+\(\lambda\mapsto\log|a_\lambda|\). These maps are exactly equivariant.
+The first is a positive local diffeomorphism on a compact fundamental
+parallelogram, and by equivariance everywhere. The second has positive
+triangular differential on the entire tail. It can be joined to
+\eqref{mcg:eq-26} by a \(C^1\)-small equivariant interpolation on a
+fixed compact collar.
+
+At the selected unit-charge critical point, the limiting version of
+\eqref{mcg:eq-33} gives \(\operatorname{Im}\delta_e>0\) for either sign
+of \(n_e\), since the limiting \(B_{e,N}\) in \eqref{mcg:eq-33} has positive real part. Consequently
+\(\operatorname{Re}V_e=4\pi\operatorname{Im}\delta_e>0\), so the
+longitude multiplier has \(|e^{V_e}|>1\). This is a nonunit
+\textbf{modulus}, not merely the weaker assertion \(e^{V_e}\ne1\). The
+commuting affine maps therefore have a second common fixed point
+\(q=b/(1-a)\), using \(a=e^{V_e}\) for the longitude. As
+\(\rho\to\rho_0\), \(q\) escapes to infinity, whereas the developed
+fundamental parallelogram and its fixed generator paths remain bounded.
+They miss \(q\); equivariance makes the entire development miss it. On
+its simply connected cover set \(f=\log(d_\rho-q)\). The nonsingular
+invariant metric \(|df|^2\) descends to a compact flat torus and is
+complete. Consequently its development is the plane and its log periods
+are an injective rank-two lattice.
+
+For each fixed generator path of image length at most \(L\), in
+\(|d_\rho|\le R\), its logarithmic increment is at most \(L/(|q|-R)\),
+hence tends to zero. Its exponential is the corresponding similarity
+multiplier. The difference from the small prescribed log \(U\) or \(V\)
+is a multiple of \(2\pi i\) tending to zero, so is exactly zero. This
+proves the actual log periods \textbf{before} multiplying them by
+\(p_e\). One neighborhood works for all slopes.
+
+After moving \(q\) to zero, the tail contains a full epigraph
+\(y>A|d_\rho|\). With \[
+ R_{\mathrm{tube}}=\operatorname{arsinh}(|d_\rho|/y),\quad
+ \vartheta=\operatorname{Im}f,\quad
+ X=\operatorname{Re}f+\tfrac12\log(1+y^2/|d_\rho|^2),
+\] its metric becomes \begin{equation}\label{mcg:eq-28}
+dR_{\mathrm{tube}}^2+\cosh^2(R_{\mathrm{tube}})\,dX^2
+                   +\sinh^2(R_{\mathrm{tube}})\,d\vartheta^2 .
+\end{equation} The primitive slope in \eqref{mcg:eq-22} has angle \(-2\pi\) and zero
+axial period. A complementary primitive period has nonzero real part,
+because the lattice has rank two. Adding \(R_{\mathrm{tube}}=0\)
+therefore adds a smooth solid torus with precisely that meridian. Its
+holonomy fixes both \(q,\infty\) and has multiplier one, so is the
+identity; the representation descends to the filled group. This excludes
+the parabolic-slope defect which a bare equation \(\exp(U+pV)=1\) would
+permit.
+
+At every main cusp all multipliers are one, so \eqref{mcg:eq-27} gives a
+complete Euclidean torus link and a full horoball quotient. The
+resulting metric is complete and finite-volume. Its universal developing
+local isometry covers \(\mathbb H^3\), proving discrete faithful
+holonomy.
+
+The representation volume agrees with this filled metric's volume using
+the same finite boundary triangulation: compare its cusp map with the
+axis-valued map by the common conical boundary homotopy, whose volume
+tends to zero, and extend that triangulation through the solid torus
+with all vertices on the core axis, so every added tetrahedron has zero
+volume. This is the filling-chain comparison in
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/general_source_regulator_hyperbolic_equality.html}{the
+general regulator theorem, section 6}; it retains the same oriented
+fundamental class.
+
+Our family satisfies the neighborhood hypothesis: \eqref{mcg:eq-8},
+\eqref{mcg:eq-14}, \eqref{mcg:eq-16}, and their chosen flags are
+holomorphic at zero and converge to their original complete matrices as
+all \(|n_e|\to\infty\). The first-charge solution above therefore lies
+in this fixed neighborhood after one diagram-dependent threshold.
+Inserting \eqref{mcg:eq-25} now gives the volume of the actual filled
+manifold.
+
+Finally, filling a crossing circle along its recorded
+\(\mu_e+p_e\lambda_e\) is the local surgery in the original
+twice-punctured disk collar which inserts \(-2p_e\) crossings. The disks
+and collars are those constructed in \(S^3\) in
+section~\ref{mcg:sec-2}. Thus the filled topology is the
+original diagram with powers \eqref{mcg:eq-1}, not a comparison diagram,
+a tree replacement, or an unnamed representation component.
+
+\subsection{Analytic interface and the remaining full-source
+problem}\label{mcg:sec-8}
+
+The independent analytic verification is recorded in
+\hyperref[mca:unit]{the
+analytic packet and whole-period proof}. Its inputs are the exact source
+\eqref{mcg:eq-5}--\eqref{mcg:eq-7}, the positive complete radii and the
+original primitive face lattice. The relevant graph facts hold here:
+deleting the protected adjacent vertices from a simple triangulated
+sphere leaves its surviving ordinary graph connected; a matching outer
+pair is not the protected pair; every matching factor has \(x+y>0\) and
+at least one nonmonomial triangle. These give the ordinary Hessian rank
+and primitive angular differences used by the complex coefficient
+saddle. They do not require a flat gap forest.
+
+The companion proof establishes the local holomorphic packet and global
+complex-strip spectral gap, including all odd simple-node normals. It
+then applies the original contour proof to \eqref{mcg:eq-7}, with real
+spectators during infinite-tail removal, exact endpoint currents, and
+independent signed reciprocal slopes. That proof returns the nonzero
+first-charge asymptotic, not just an upper bound on its action.
+Section~\ref{mcg:sec-9} records its exact normalization.
+
+For an unchanged opposite-offset even bipyramid, its displayed circle
+packing is a positive certificate and its oriented top and bottom
+quartets are exactly the general Morse source \eqref{mcg:eq-5}.
+Consequently this theorem applies to its all-CROSS term at every fixed
+size, with the original parity/knot qualification. No Conway-tree
+decomposition or new plat presentation is required.
+
+What remains for its \textbf{full} invariant is a strict estimate of the
+signed contribution outside CROSS, for example \begin{equation}\label{mcg:eq-29}
+\bigl|\mathcal I_{N,\mathrm{full}}
+            -\mathcal I_{N,\mathrm C}\bigr|
+ \le \exp\!\left[
+       N\left\{\frac{\operatorname{Vol}(S^3\setminus K_{\boldsymbol p})}
+                       {2\pi}-\eta\right\}+o(N)\right].
+\end{equation} Failure of complete-radius balance at every mark neither invalidates
+the all-CROSS theorem nor proves \eqref{mcg:eq-29} false. It removes one
+known sufficient method of proving \eqref{mcg:eq-29}. The present result
+makes no claim of cancellation or domination for those remaining
+sectors.
+
+\subsection{The nonzero asymptotic with its finite
+normalization}\label{mcg:sec-9}
+
+Here is the analytic statement actually joined to the geometry, with the
+finite quantities retained. On one fixed complex polydisk there are even
+holomorphic face-critical actions \(A_N\) and face Hessians \(H_N\),
+converging with every fixed derivative to their limiting quantities,
+such that \begin{equation}\label{mcg:eq-30}
+C_N^{\mathrm{raw}}(\boldsymbol\delta)
+ =\frac{(-1)^{dR}N^{2R}\exp(NA_N(\boldsymbol\delta))}
+ {(2\pi N)^{(R-1)/2}\sqrt{\det H_N(\boldsymbol\delta)}}
+                      (1+O(N^{-1})).
+\end{equation} The action includes all finite anchors, sine and beta terms and any
+\((\log N)/N\) terms; only the displayed \(N^{2R}\) was removed. Its
+limit is \eqref{mcg:eq-17}. The square root in \eqref{mcg:eq-30} is
+continued from the positive complete face Hessian.
+
+For every fixed \(\eta>0\), there are \(\gamma_\eta,\tau_\eta>0\) such
+that, on the entire real spectral cube and the indicated thin strip, \begin{equation}\label{mcg:eq-31}
+\begin{gathered}
+ |C_N^{\mathrm{raw}}(\boldsymbol\delta)|
+       \le e^{N(\Phi_D-\gamma_\eta)},\\
+ \max_e|\operatorname{Re}\delta_e|\ge\eta,\quad
+ \operatorname{Re}\delta_e\in[-1/2,1/2],\quad
+ |\operatorname{Im}\delta_e|\le\tau_\eta .
+\end{gathered}
+\end{equation} Fixed derivatives satisfy the same type of bound on smaller domains.
+The local cofactor interpolation retains the odd simple-node derivative,
+while the shared angular estimate uses the connected ordinary graph and
+its primitive face-difference rows. The separated real-spectral estimate
+comes from the exact cofactor starting-row maximum. Its only monomial
+exception is harmless because every crossing factor has a nonmonomial
+triangle. These prove \eqref{mcg:eq-30},\eqref{mcg:eq-31} for the all-CROSS projection of the exact
+coefficient \eqref{mcg:eq-5}; they are not inferred from a value-only
+local recurrence.
+
+Let \(\boldsymbol\delta_{N,\boldsymbol1}\) be the finite critical point
+of \[
+ A_N(\boldsymbol\delta)
+       +\pi i\sum_e n_e\delta_e^2+2\pi i\sum_e\delta_e ,
+\] let \(S_{N,\boldsymbol1}\) be its critical value, and let
+\(Q_{N,\boldsymbol1}\) be its negative spectral Hessian. Then the
+\textbf{entire} period \eqref{mcg:eq-7} is \begin{equation}\label{mcg:eq-32}
+\begin{split}
+\mathcal I_{N,\mathrm C}
+={}&q^{d^2\sum_e n_e/4}(-2i)^R\sqrt{2\pi}\,N^{R+1/2}\\
+&\ \cdot
+\frac{\prod_e\sin(2\pi\delta_{N,\boldsymbol1,e})}
+ {\sqrt{\det H_N(\boldsymbol\delta_{N,\boldsymbol1})}
+      \sqrt{\det Q_{N,\boldsymbol1}}}
+\exp(NS_{N,\boldsymbol1})\\
+&\ \cdot
+\left(1+O_{\boldsymbol n}(N^{-1})
+                +O_{\boldsymbol n}(e^{-\kappa_{\boldsymbol n}N})\right).
+\end{split}
+\end{equation} The spectral determinant uses the Gaussian branch on the cone with
+positive real part. The sine and both determinant factors have a nonzero
+limiting product for fixed sufficiently long powers.
+
+For clarity, the charge proof has four logically separate parts.
+Separate evenness writes
+\(\partial_eA_N=-2\delta_e B_{e,N}(\boldsymbol\delta^2)\), where
+\(B_{e,N}\to C_e>0\). The critical equations for positive charge
+magnitudes give \begin{equation}\label{mcg:eq-33}
+\delta_e=-\frac{\ell_e/n_e}
+       {1+iB_{e,N}(\boldsymbol\delta^2)/(\pi n_e)},\qquad
+ \operatorname{Im}\delta_e
+  =\frac{\ell_e}{\pi n_e^2}
+      \frac{\operatorname{Re}B_{e,N}}
+          {|1+iB_{e,N}/(\pi n_e)|^2}>0.
+\end{equation} An actual outer local cube is shifted to this saddle, with every side
+current retained below the saddle value. Its negative Hessian has
+positive real part and its Gaussian coefficient is one. The face and
+spectral Gaussian powers combine to \begin{equation}\label{mcg:eq-34}
+N^{2R}(2\pi N)^{-(R-1)/2}(2\pi/N)^{R/2}
+                         =\sqrt{2\pi}\,N^{R+1/2}.
+\end{equation}
+
+Next, differentiating the critical value gives the joint comparison \begin{equation}\label{mcg:eq-35}
+\operatorname{Re}S_{N,\boldsymbol1}
+       -\operatorname{Re}S_{N,\boldsymbol\ell}
+   \ge\sum_e\frac{C_e}{2n_e^2}(\ell_e^2-1)
+\end{equation} on a fixed scaled local charge box. This is why unequal slopes cause
+no loss of the theorem: it compares the critical values in one joint
+family, rather than discarding local errors independently.
+
+Third, infinite far charges are removed on whole real intervals, with
+the other coordinates kept as real spectators. The sine factor gives
+zero endpoint values and equal first derivatives; three integrations by
+parts retain the second-derivative endpoint current. On the shifted
+contour the two vertical endpoints are paired before estimation. Their
+hyperbolic-sine difference and \eqref{mcg:eq-31} give a summable strict
+gap. The degree-\(d\) cosine bound controls the remaining horizontal
+interval. Only then is the remaining finite charge set divided into
+local and bounded-bad charges. A separate smaller cube, not the outer
+saddle cube, controls the latter by a one-coordinate shift. All
+connectors and all original endpoints are included.
+
+Finally, reflecting any charge sign changes both its sine integral and
+its charge weight, so all \(2^R\) unit signs agree. The raw parity sign
+cancels exactly: \begin{equation}\label{mcg:eq-36}
+(-1)^{dR}(-1)^{(N+1)R}=1 .
+\end{equation} This leaves the original \(q\) phase and the factor \((-2i)^R\) in
+\eqref{mcg:eq-32}. Neither the sign choice of a power nor the parity of
+\(N\) can force cancellation of that leading coefficient.
+
+Equations \eqref{mcg:eq-30}--\eqref{mcg:eq-36} give the nonzero lower as
+well as the upper asymptotic. Taking its logarithm and using
+\eqref{mcg:eq-25} and the metric construction proves
+\eqref{mcg:eq-2},\eqref{mcg:eq-3}. Thus the flat-plat wording in the
+older all-CROSS theorem is a limitation of its stated input, not a
+remaining mathematical restriction after these separate Morse source,
+analytic, and geometric arguments.

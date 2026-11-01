@@ -2,6 +2,8 @@
 
 [Read the manuscript (PDF)](build/main.pdf).
 
+The manuscript contains completed proofs, including partial results with narrower conclusions. Chapter 1 lists the statements and their hypotheses. Exploratory constructions and unsuccessful comparisons are retained in the illustrated guide's [methods chapter](../book/chapters/methods.md) and research library, rather than used as steps in the paper.
+
 The paper proves volume limits for finite decorations of planar tangle diagrams and for specified ordered-tree constructions. The planar theorem starts from a simple triangulated sphere with a chosen matching, constructs its complete circle packing, and adds terminal tangles until a strict shared-radius inequality holds. Independently sufficiently long signed twists at every original and added crossing circle then give the volume equality for the resulting knot. The tree theorems have separate explicit degree and twist bounds. Chapter 1 distinguishes these families and their quantifiers.
 
 The first theorem permits independently chosen positive or negative twist numbers beyond a construction-dependent threshold in a recursive tangle construction. For a finite ordered tree with a crossing circle at every vertex, the paper also proves explicit sufficient conditions. Write \(d_v\) for a vertex degree and \(n_v\) for its signed half-twist power. One such condition is
@@ -31,6 +33,8 @@ Chapter 12 identifies the preferred geometric longitude selected by the full asy
 Chapter 13 and Appendix L prove the planar decoration theorem. They include the packing construction, the corrected oriented finite source, the full Fourier estimate and smooth primitive filling. Chapter 14 and Appendix M give the directed all-orders extension. Chapter 15 explains reproduction. The linked notes provide separately readable versions of the proofs. The older local numerical condition remains in Chapter 10 as an intermediate theorem, with its improvement stated explicitly.
 
 The [net-twist companion theorem](../notes/actual_conway_net_twist_volume.md) treats a broader class of ordered tangle expressions using exact tangle reductions and the strict-tree estimates. Its hypothesis concerns the combined twist numbers left after reduction. The subsequent [closure theorem](../notes/actual_conway_arbitrary_closure_volume.md) also handles cap closures and exact zero sums under its long-surviving-weight condition. These companion results are described in the [results chapter](../book/chapters/results.md); they are distinct from the construction classes developed in this PDF.
+
+Appendix N proves a level-independent finite bound for inserting fixed twist powers. Appendix O proves that the specified geometric contribution for an unchanged matched spherical diagram is nonzero and has the volume rate of its actual long-filled complement. The latter is a partial theorem: a general bound on the complementary signed contribution is not asserted. These appendices do not enlarge the full-invariant claims beyond their stated hypotheses.
 
 ## Build the paper
 

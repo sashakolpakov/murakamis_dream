@@ -19,13 +19,15 @@ The geometric leading term is nonzero, and primitive completion identifies
 its action with the actual knot-complement volume. The proof includes
 general Morse diagrams, where cups and caps may occur between boxes.
 
-The undecorated problem remains. A simple white sphere alone does not
-prove the required full-source bound for its original diagram, and adding
-tangles generally changes the knot. Arbitrary short fillings, cores with
-loops or repeated white edges, and the general volume conjecture remain
-outside this result. The new planar theorem is at the complete main
-meridian; extending its full meridian family and operator consequences
-is also separate work.
+For the unchanged simple matched sphere, the [geometric contribution](../../notes/actual_morse_geometric_contribution.md) is now established directly from the original Morse source. Its [entire Fourier period](../../notes/actual_morse_cross_filling_period.md) is nonzero at sufficiently large levels of both parities, and its exponential rate is the volume of the original complement after independently sufficiently long fixed signed fillings. This statement concerns the central recurrence-path contribution, called CROSS in the finite formula; it is not a new invariant or a full-invariant volume theorem.
+
+The undecorated problem is the strict bound for the full source minus
+that geometric contribution. A simple white sphere alone does not yet
+supply this bound, and adding tangles generally changes the knot.
+Arbitrary short fillings, cores with loops or repeated white edges, and
+the general volume conjecture remain outside the planar result. This
+result is at the complete main meridian; extending its full meridian
+family and operator consequences is also separate work.
 
 
 ### What remains after the finite filling estimate

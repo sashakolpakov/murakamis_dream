@@ -19,7 +19,7 @@ In the last two cases \(d_v\) is the number of edges incident to vertex \(v\), a
 
 Those theorems supply an actual finite-sum representation with a nonzero, nondegenerate joint first Fourier contribution and fixed exponential bounds for all discarded terms. The proof here extends that representation to the finitely many translated microscopic regions needed by an arbitrary fixed-order recurrence, then uses every order of its canonical factorial expansion. A leading volume limit or a finite cusp jet alone would not suffice.
 
-\section{Exact finite inputs and the new issue}\label{fc:sec-1}
+\section{Exact finite inputs and the meridian action}\label{fc:sec-1}
 
 Write
 \begin{equation}\label{fc:eq-1}
@@ -281,11 +281,11 @@ Q_{\mathrm{sel}}(M^{-1},L^{-1})
 
 \section{Peripheral equations and their geometric interpretation}\label{fc:sec-7}
 
-Equations \eqref{fc:eq-13}, \eqref{fc:eq-21}, and \eqref{fc:eq-26} construct a complete analytic germ, not just its first cusp jet. The proof above does not yet establish that this germ is the marked preferred-longitude eigenvalue of a nonparabolic representation of the filled knot group. The published Conway face family keeps the main cusp parabolic; its preferred-cusp calculation proves \eqref{fc:eq-16}, not that additional nonparabolic identification.
+Equations \eqref{fc:eq-13}, \eqref{fc:eq-21}, and \eqref{fc:eq-26} construct a complete analytic germ. Identifying it with the preferred longitude requires the whole nonparabolic representation, rather than only its first cusp derivative. We give its rational peripheral equations below. Appendix~\ref{app:geometric-characteristic} constructs and identifies that representation for circle trees, and Appendix~\ref{app:strict-tree-geometric-characteristic} supplies the junction argument for the stated strict Conway class.
 
 \subsection{A finite rational peripheral map for the new action}\label{fc:sec-7-1}
 
-There is a concrete algebraic form of the proposed comparison. Retain the original logarithm of each sine near the selected filled wire, and put
+There is a concrete algebraic form of the peripheral comparison. Retain the original logarithm of each sine near the selected filled wire, and put
 \begin{equation}\label{fc:eq-28}
 E_e=e^{2\pi i x_e},\qquad M=e^{\pi i t}.
 \end{equation}
@@ -332,7 +332,7 @@ The inserted phase is even in \(t\), so uniqueness of the critical point gives \
    =2\frac{1+E_e(0)}{1-E_e(0)}
    =2i\cot(\pi x_e^{\mathrm{fill}}).
 \end{equation}
- Equation \eqref{fc:eq-32} recovers \(a(D)+2i\sum_e\cot(\pi x_e^{\mathrm{fill}})=\tau_K\), and also checks the orientation of the candidate longitude. Every higher derivative is specified by the coupled modified equations and \eqref{fc:eq-31}; none is supplied by this first-derivative check.
+ Equation \eqref{fc:eq-32} recovers \(a(D)+2i\sum_e\cot(\pi x_e^{\mathrm{fill}})=\tau_K\), and also checks the orientation of the longitude expression. Every higher derivative is specified by the coupled modified equations and \eqref{fc:eq-31}; none is supplied by this first-derivative check.
 
 \subsection{Explicit equations for an all-circle tree}\label{fc:sec-7-2}
 
@@ -408,14 +408,7 @@ The \hyperref[app:geometric-characteristic]{geometric longitude theorem} constru
 
 \subsection{Scope of the geometric identification}\label{fc:sec-7-3}
 
-The \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_conway_general_mask_marked_filling.html}{marked Conway deformation}, Section 3, has a leaf function
-\begin{equation}\label{fc:eq-40}
-g(x,t)=J(2x)-2J(x)-J(x-t)-J(x+t),
- \qquad K(x,t)=g(x,t)-g(x,0).
-\end{equation}
- That equality of scalar functions does not identify their peripheral uses. In the existing leaf construction \(t\) is the hidden auxiliary-circle parameter. Section 5 of that note proves that every actual main meridian remains parabolic identically: the two adjacent white maps have the same derivative at their common corner. The \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_deformed_circle_primitive_collar.html}{primitive collar calculation} likewise identifies an auxiliary meridian and disk longitude. The preferred-cusp theorem computes a translation in their parabolic main peripheral commutant. None of these statements gives a main meridian with eigenvalue \(e^{\pi it}\) simply by substituting this \(t\) into its existing cells.
-
-The original marked braid source supplies a different nonparabolic construction. The \href{https://sashakolpakov.github.io/murakamis_dream/notes/marked_braid_holonomy.html}{critical-correspondence theorem}, Sections 4--6, identifies its regular exponential critical scheme with framed knot representations with actual meridian eigenvalue \(M\). The \href{https://sashakolpakov.github.io/murakamis_dream/notes/quantum_longitude_and_regulator_action.html}{longitude-insertion theorem}, Sections 1--4, identifies its preferred longitude, full meridian gauge, and logarithmic action differential. The \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_geometric_normal_period.html}{actual geometric normal-period theorem}, Sections 3--5, constructs the local geometric formal block of that braid scheme. Those results do not yet identify the grouped modified equations \eqref{fc:eq-30} with that particular critical block.
+The geometric identification uses the original meridian eigenvalue and the preferred longitude throughout. Appendix~\ref{app:geometric-characteristic} constructs the nonparabolic representation of each circle-tree block, joins its ordered boundary groups, and identifies the rational expression \eqref{fc:eq-31} with that longitude. Agreement of the first derivative at completeness is a normalization check; the representation and algebraic rigidity argument prove the full identity.
 
 Appendix~\ref{app:strict-tree-geometric-characteristic} supplies the comparison at unmarked product junctions. It inserts a zero-crossing box with an auxiliary circle, proves stationary elimination including its constant, and checks the based boundary maps after meridian filling. The argument recovers the whole geometric representation, including possible half-angle folds; agreement of the cusp tangent alone would not suffice.
 

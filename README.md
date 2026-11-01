@@ -93,12 +93,18 @@ separate work.
 ## Reading and reproducing the work
 
 The [illustrated guide](https://sashakolpakov.github.io/murakamis_dream/)
-explains the results and their proofs. The
-[manuscript](manuscript/README.md) includes the detailed arguments and
-editable figures. The
+explains the results, definitions, and research methods. Its
+[methods chapter](https://sashakolpakov.github.io/murakamis_dream/guide/methods.html)
+introduces the techniques, gives their literature references, and
+distinguishes completed arguments from proposed extensions. The
+[manuscript](manuscript/README.md) contains completed proofs with their
+exact hypotheses, including useful partial results. The
 [research library](https://sashakolpakov.github.io/murakamis_dream/library.html)
 retains the Fourier, torsor, weighted Cauchy, cube, and other approaches,
 including their obstructions and unfinished questions.
+
+The illustrated guide is the maintained documentation. Former Sphinx
+addresses redirect to it; there is no second exposition to keep in sync.
 
 | Directory | Contents |
 | --- | --- |

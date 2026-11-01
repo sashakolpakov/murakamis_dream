@@ -12,6 +12,48 @@ The first theorem proves this limit for the recursive family of knot diagrams co
 
 All these theorems take the same quantum limit. Choose a finite construction and signed integer twist numbers satisfying the applicable hypothesis, and hold them fixed. Then let $N$ tend to infinity. Neither the diagram nor its twist numbers grow with $N$. In the first theorem the individual twists can have different signs and arbitrarily different large magnitudes. In the quantitative theorems their sizes and junction degrees enter the sum in Theorem~\ref{thm:circle-quantitative}, the maximum in Theorem~\ref{thm:local-circle-volume}, or the directed conditions in Theorem~\ref{thm:directed-degree-twist}.
 
+\section{The statements proved in this manuscript}
+The paper contains completed arguments, including results whose conclusion is
+weaker than the volume conjecture for a general knot. Each result retains its
+own construction and hypotheses. The following distinctions are useful when
+reading the later chapters.
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{.24\textwidth}p{.46\textwidth}p{.22\textwidth}@{}}
+\toprule
+Result & Conclusion and restriction & Proof location\\
+\midrule
+Recursive tangle construction &
+The full invariant has the knot-volume limit for the stated grammar and sufficiently long fixed signed twists. &
+Chapters~2--8; Appendices~A--D.\\[5pt]
+Ordered circle trees &
+The full invariant has the volume limit under the stated summed, local, or directed degree-and-twist condition. &
+Chapters~\ref{ch:quantitative-circle-trees}--\ref{ch:directed-circle-messages}; Appendices~E--G and K.\\[5pt]
+Decorated planar diagrams &
+The full invariant has the volume limit after the specified finite decoration and sufficiently long fillings of all original and added circles. The decoration can change the knot. &
+Chapter~\ref{ch:balanced-terminal-fans}; Appendix~\ref{app:balanced-terminal-fans}.\\[5pt]
+Preferred longitude and recurrence &
+The actual meridian expansion determines the selected geometric factor in the covered full-source classes. Equality of entire recurrence ideals is not asserted. &
+Chapter~\ref{gc:chapter}; Appendices~H--J and M.\\[5pt]
+Finite filling functionals &
+A level-independent norm bound for inserting each fixed twist power. This is a finite estimate, not a source-volume theorem. &
+Appendix~\ref{app:uniform-filling-bound}.\\[5pt]
+Undecorated matched spheres &
+The specified geometric contribution has a nonzero asymptotic with the actual filled volume. No general estimate for its complementary contribution is asserted. &
+Appendix~\ref{app:morse-geometric-contribution}.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The last two results are included for their proved conclusions. They are not
+used as substitutes for the full-source estimates in the knot-volume theorems.
+Exploratory transport constructions, unsuccessful face assignments, and
+unresolved general comparisons are kept in the illustrated research guide.
+Finite computations supplement the arguments or verify the explicitly stated
+rational certificates; a numerical agreement is never used as a proof of a
+limit.
+
 \section{A planar construction beyond tangle trees}
 Chapter~\ref{ch:balanced-terminal-fans} starts from a finite simple triangulation of the sphere with at least four vertices. Pair adjacent triangles so that every triangle belongs to exactly one pair; equivalently choose a perfect matching in the cubic dual graph. The paired triangles specify crossing-circle boxes, and the remaining edges specify their strand connections. This constructs an augmented link in the three-sphere with its actual disk framings. The proof also gives a half-twist pattern for which the main strands form a knot.
 
@@ -156,6 +198,45 @@ Finally, the filling identity sums the source over all colors with oscillatory c
 \input{figures/proof-architecture}
 \caption{The four comparisons in the proof. The last comparison analyzes the full oscillatory filling sum and identifies its critical action with the volume of the resulting knot complement.}\label{fig:architecture}
 \end{figure}
+
+\section{Background and the arguments used here}
+The variational geometry belongs to the Casson--Rivin approach.
+Rivin's volume methods appear in \cite{Rivin1994}; the precise
+critical-point criterion for positive angle structures on an orientable
+ideal triangulation with torus boundary is stated in
+\cite[Theorem~1.2]{FuterGueritaud2010}. In this paper the actual cells,
+face maps, peripheral curves, and end completion are constructed.
+Concavity alone is not used to identify a manifold or to prove
+noncancellation in a signed quantum sum.
+
+The peripheral volume potential and its logarithmic conventions have
+their standard setting in \cite{NeumannZagier1985}. Extended logarithmic
+regulator data are developed in \cite{Neumann2004}. Our comparison
+retains the primitive curves and fixes the additive constant at the
+complete structure. The metric arguments in the appendices identify
+the resulting volume with that of the original filled complement.
+
+The classical peripheral eigenvalue curve is defined in
+\cite{CooperEtAl1994}. Recurrence existence is a distinct question:
+multisum elimination has the general background
+\cite{WilfZeilberger1992}, colored-Jones q-holonomicity is treated in
+\cite{GaroufalidisLe2005}, and the ADO family in
+\cite{BrownEtAl2020}. The latter comparison keeps a framing and
+variable substitution. The recurrence statements here retain the
+specified state, initial data, and singular-step derivatives. The
+selected-factor conclusion follows from the full source expansion
+and its geometric longitude; no equality of complete recurrence
+ideals is imported from these references.
+
+Local Gaussian and stationary-phase estimates have standard analytic
+background \cite{Hormander2003}. The arguments below additionally
+specify the original finite lattice and measure, deform the actual
+contours with their boundary terms, and control every Fourier charge.
+These are the source-specific steps needed to turn a local critical
+point into the asymptotic of the original invariant. The references
+provide context and precise antecedents; the displayed estimates and
+geometric identifications used in the theorems are proved in the
+chapters and appendices indicated above.
 
 \section{Conventions and verification}
 All logarithms on a positive real interval are real. Complex logarithms and square roots continue those values on the explicitly chosen neighborhoods. We use $\arccot X\in(0,\pi)$ for real $X$ and $\ii^2=-1$. Constants may depend on the fixed construction, its selected strict stationary point and a fixed analytic neighborhood, but not on $N$. A polynomial factor means a bound by $N^C$ with such a fixed exponent.

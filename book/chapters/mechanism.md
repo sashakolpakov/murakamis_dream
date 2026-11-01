@@ -1,5 +1,7 @@
 # How the full quantum invariant acquires the knot volume
 
+This chapter follows the completed proof and then explains the local tools used in other presentations. The [methods chapter](methods.md) gives the definitions, elementary examples, and literature references for those tools. The [notation chapter](notation.md) records the conventions needed to compare their formulas.
+
 The main result concerns a particular, already defined knot invariant. For a knot \(K\) and an integer level \(N\), write \(K_N(K)\) for its reduced Kashaev invariant, normalized to be \(1\) on the unknot. The quantum parameter is \(q_N=e^{\pi i/N}\). A diagram computes \(K_N\) by multiplying crossing matrices, joining their indices along strands, and summing the remaining indices. Cups, caps and the marked cut specify how the strands close. In the technical notes, this entire prescribed expression is called the **source**. It includes its scalar factors and derivatives, not just the part that seems largest.
 
 The [strict Conway tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md) proves
