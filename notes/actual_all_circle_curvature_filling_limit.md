@@ -1,6 +1,13 @@
 # A quantitative quantum limit allowing short twists at large junctions
 
-The earlier filling theorem requires every surviving twist number to be large. Here the number of branches incident to a crossing circle can supply part of the required estimate. The result is a limit for the actual quantum invariant under an explicit inequality involving these two integers. Its limiting value is a specified complex critical action. A geometric completion argument is still needed to identify that value with the volume of the filled knot complement when the twist numbers fall outside the earlier theorem.
+The number of branches incident to a crossing circle can supply part of
+the estimate previously obtained by taking its twist number large.
+This note proves the finite-sum limit under an explicit inequality in
+those two integers. The [volume theorem](actual_all_circle_quantitative_volume.md)
+combines it with the ordered octahedral decomposition and positive
+filling path. The limiting action is therefore the volume of the
+original knot complement throughout the stated class, including the
+short coefficients permitted by the inequality.
 
 ## 1. Assertion and scope
 
@@ -8,8 +15,11 @@ Consider an actual reduced Conway operation tree in which every product
 junction carries an original crossing-circle operator. Include ordinary
 terminal crossing circles as degree-one vertices. The resulting circle
 graph \(\mathcal T\) is a finite tree, with physical quarter-turn edges
-and no bare junctions. Keep the original strictness, ordered branches,
-orientations, knot pattern, primitive cut and zero framing.
+and no bare junctions. Keep the ordered branches, orientations, knot pattern, primitive cut
+and zero framing. For the literal construction defined in the
+[volume theorem](actual_all_circle_quantitative_volume.md), the strict
+angle condition follows inductively from the product intervals; it is
+not a further restriction on these trees.
 
 Let \(d_v\ge1\) be the graph degree of circle \(v\), and let \(n_v\in
 \mathbb Z\) be its actual fixed crossing power. The graph degree \(d_v\)
@@ -30,10 +40,9 @@ The exponential rate is the real part of the explicitly continued
 first-charge action. Conditions (1)–(2) are quantitative finite-action
 conditions, not an assumption that this saddle dominates.
 
-Short, even zero, crossing powers are permitted by the trace algebra
-and this certificate. Actual volume identification still requires the
-separate finite geometric completion certificate in Section 11.
-No new unconditional short-twist volume theorem is asserted here.
+Short, even zero, crossing powers are permitted by this certificate.
+Section 11 explains how the companion geometric proofs identify the
+action with the actual knot volume under the same bound.
 The graph and all powers are fixed before \(N\) tends to infinity.
 
 The invariant in the conclusion is the reduced, zero-framed ADO polynomial \(F_N(M)\), normalized to one on the unknot. Its complete value is \(F_N(1)=K_N(K)\). Set \(q_N=e^{\pi i/N}\) and \(M=q_N^s\). The explicit elementary factors are
@@ -61,7 +70,7 @@ The dependencies are the current authoritative notes:
   identity for fixed integer powers.
 
 These are mathematical inputs, not numerical diagnostics.
-The earlier [the earlier source transfer theorem](general_original_source_long_filling_transfer.md) and
+The [earlier source transfer theorem](general_original_source_long_filling_transfer.md) and
 [the pretzel filling calculation](actual_pretzel_long_filling_charge_selection.md) use reciprocal-slope
 implicit functions; the geometric source-regulator theorem uses a
 neighborhood of the complete framed representation.
@@ -462,8 +471,8 @@ factors are retained exactly. The resulting reduced invariant has
 \]
 uniformly on the disk, and is nonzero there for sufficiently large
 levels. The edge insertion rule also gives its cotangent correction
-at this same continued wire saddle. This is not by itself a cusp
-or knot-volume identification.
+at this same continued wire saddle. Section 11 supplies its geometric
+volume and cusp interpretation.
 
 ## 10. Explicit analytic nonvacuity
 
@@ -516,28 +525,50 @@ fixed-outer-power belt-stack results; zero boxes may admit the
 already known topological reduction. The graph-wide analytic
 criterion does not use those reductions.
 
-## 11. What remains for actual volume equality
+## 11. Identification with the knot volume
 
-The stationary equations are the original marked primitive
-filling equations on the continued source branch. Small angular
-coordinates alone do not prove complete hyperbolic filling:
-a high-degree circle can accumulate a large peripheral log from
-many small local pieces.
+Small angular variables do not imply that the primitive meridian
+logarithms are small: a high-degree circle collects contributions from
+many edges. The geometric proof therefore follows the entire path of
+filling equations, with its logarithm branches retained.
 
-A sufficient geometric completion argument must retain positively oriented cells in the original exterior, verify the complete face-transition words and total angle \(2\pi\) at every interior edge, and compute the logarithmic periods on the original primitive cusp curves. Those are the geometric checks needed in the [marked completion argument](general_source_regulator_hyperbolic_equality.md). Near the complete structure they are already proved there. The short-twist condition of this note does not itself put the original peripheral logarithms in that neighborhood. If this certificate
-holds on the branch here, the unchanged regulator calibration gives
+The [ordered decomposition](actual_all_circle_octahedral_decomposition.md)
+cuts the original augmented exterior into two octahedra per tree edge.
+Its literal strand matchings retain every face pairing, half twist and
+primitive peripheral path. The [angular construction](actual_all_circle_angular_octahedra.md)
+subdivides these octahedra into eight positive tetrahedra per edge on
+the chart \(|\tau_v|<10^{-2}\). Section 7 places the whole path
+
 \[
-             2\pi\Re\mathcal C(\mathbf1)
-                               =\operatorname{Vol}(S^3\setminus K).
+ \Psi_{\tau_v}+\frac{i n_v\tau_v}{2\pi}=ic,\qquad 0\le c\le1,
+\]
+
+inside this chart. The [completion proof](actual_all_circle_geometric_completion.md)
+computes the actual periods
+
+\[
+ U_v=-2\pi\Psi_{\tau_v}-i\epsilon_v\tau_v,\qquad
+ V_v=2i\tau_v,\qquad U_v+p_vV_v=-2\pi ic.
+\]
+
+It verifies that the primitive slope bounds a tube of cone angle
+\(2\pi c\). At \(c=1\) the tube is smooth, the auxiliary fillings
+are precisely the original surgeries, and the main knot cusp remains
+complete. The same proof fixes the additive volume constant at the
+complete augmented link and integrates the boundary-corrected action.
+It gives
+
+\[
+ 2\pi\operatorname{Re}\mathcal C(\mathbf1)
+             =\operatorname{Vol}(S^3\setminus K).
  \tag{38}
 \]
-Then (36) is an actual uniform volume theorem, and the independent
-preferred-longitude calculation identifies its first correction.
-No genuinely new short-filling geometric family has been certified
-in this note. The analytic certificate is explicit; the equality
-criterion combines it with geometric completion, not with a
-postulated quantum saddle-dominance assertion.
 
+Thus the analytic conclusion above is an actual uniform volume theorem
+under (2). The [preferred-cusp continuation](actual_all_circle_preferred_cusp.md)
+also identifies the first correction geometrically. This establishes
+the summed criterion, not arbitrary short fillings or a criterion for
+graphs with cycles.
 
 ## Reproducing the edge calculations
 

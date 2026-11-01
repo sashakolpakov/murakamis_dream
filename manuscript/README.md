@@ -1,14 +1,20 @@
-# Long-twist volume limits for knots built from tangles
+# Volume limits for arborescent knots
 
 [Read the manuscript (PDF)](build/main.pdf).
 
-The paper proves the volume conjecture for a specified family of arborescent knots with sufficiently many twists in each designated region. Chapter 1 explains the construction geometrically: start with two-strand tangles surrounded by crossing circles, stack and turn the boxes, and join the final endpoints by a cylindrical closure. It then gives the precise recursive rule and the theorem. A native drawing shows the actual endpoint connections.
+The paper proves volume limits for two specified constructions of arborescent knots. Both use ordered stacking and quarter-turns of two-string tangles, with the original crossing circles and disk framings retained. Chapter 1 introduces the diagrams and the two theorem scopes; native drawings show the actual endpoint connections.
 
-The theorem fixes the finite construction and a parity pattern giving a knot. It permits independently chosen positive or negative filling integers beyond a construction-dependent threshold. These integers remain fixed while the root-of-unity level tends to infinity. All auxiliary circles are filled; the knot cusp remains unfilled. The conclusion is the volume of that knot complement. The paper does not classify all arborescent knot presentations.
+The first theorem permits independently chosen positive or negative twist numbers beyond a construction-dependent threshold in a recursive completed-box construction. The second gives an explicit condition for a finite ordered tree with a crossing circle at every vertex. If a vertex has degree $d_v$ and signed crossing power $n_v$, the condition is
 
-Chapters 2–3 define the finite invariant and derive its angle maximization problem. Chapter 4 constructs the complete augmented hyperbolic metric. Chapters 5–6 control the signed color terms and prove a holomorphic asymptotic for the finite sum. Chapters 7–8 identify the peripheral filling curves and evaluate the full oscillatory filling transform. Detailed algebraic, analytic, geometric and certificate arguments appear in the appendices. Technical terms such as color, source, core, alias and packet are defined in Chapter 1 and again where their formulas are introduced.
+$$
+\sum_v\frac{d_v}{d_v^2+n_v^2}\le 2^{-25}.
+$$
 
-The [net-twist companion theorem](../notes/actual_conway_net_twist_volume.md) treats a broader class of ordered tangle expressions. It uses exact tangle reductions and the later strict-tree estimates; its hypothesis concerns the combined twist numbers left after reduction. This extension is stated in the [results chapter](../book/chapters/results.md), separately from the theorem proved in this PDF. The subsequent [closure theorem](../notes/actual_conway_arbitrary_closure_volume.md) also handles cap closures and exact zero sums under its long-surviving-weight condition; it is another companion result, not an added theorem in this PDF.
+For a tree with $E$ edges, requiring every $|n_v|\ge8192\sqrt E$ suffices. The same test also permits short or zero powers at sufficiently large-degree vertices. In both theorems the strand pairings must give a knot, and the entire diagram and its integer powers remain fixed while the root-of-unity level tends to infinity. Only the auxiliary circles are filled. The limit is the volume of the original knot complement; the main knot cusp remains complete. Neither theorem classifies all arborescent knot presentations.
+
+Chapters 2–8 prove the first theorem: they define the finite invariant, construct the augmented metric, control signed color terms, identify the primitive filling curves and evaluate the oscillatory filling transform. Chapter 9 develops the quantitative tree theorem. Its geometric construction attaches two octahedra per tree edge in the original cyclic order and follows a positive deformation to smooth filling. It also gives the uniform main-meridian profile of the reduced ADO invariant, retains the exact framing factor, and identifies the first correction with the preferred cusp shape. Chapter 10 explains reproduction. Appendices A–D supply the detailed algebraic, analytic, geometric and rational-certificate arguments for the first theorem. Appendix E contains the complete quantitative finite-sum proof, with the uniform Newton estimates, complex contours and charge-tail bounds. Appendix F contains the full ordered octahedral construction, positive shape calculations, primitive-period completion, volume calibration and preferred-cusp proof. The linked notes provide separately available versions of these arguments.
+
+The [net-twist companion theorem](../notes/actual_conway_net_twist_volume.md) treats a broader class of ordered tangle expressions using exact tangle reductions and the strict-tree estimates. Its hypothesis concerns the combined twist numbers left after reduction. The subsequent [closure theorem](../notes/actual_conway_arbitrary_closure_volume.md) also handles cap closures and exact zero sums under its long-surviving-weight condition. These companion results are described in the [results chapter](../book/chapters/results.md); they are distinct from the two constructions developed in this PDF.
 
 ## Build the paper
 
@@ -29,6 +35,14 @@ python3 repro/verify.py --output repro/results
 ```
 
 The verifier checks the rational supporting inequalities and their exact domain coverage. It does not use numerical optimization or numerical sampling as a proof. See `repro/README.md` and `repro/PROOF_INPUTS.md` for the inputs and the separate role of optional finite audits. The continuum estimates and geometric arguments are proved in the manuscript.
+
+For the quantitative circle-tree result, run:
+
+```sh
+python3 repro/run_research_checks.py curvature-fillings
+```
+
+This group checks symbolic edge identities, finite complex-parameter bounds, and the labeled octahedron attachments and peripheral words. Its finite computations supplement the uniform estimates and topological proofs; they do not replace them.
 
 ## Build the illustrated guide
 

@@ -2,7 +2,26 @@
 
 The drawings below explain the constructions used in the guide. Some show actual circle configurations in the boundary plane of hyperbolic space. Others show only incidence, algebraic composition, or the sequence of a proof. Each caption states which kind of drawing it is, defines the important labels, and explains the result for which it is used.
 
-The volume theorem applies to the stated ordered Conway compositions with sufficiently long net twists and to several separately certified plat families. A remaining question attached to a local method is not an unresolved step in those theorems. The first diagram makes that distinction explicit.
+The volume theorem applies to the stated ordered Conway compositions with sufficiently long net twists and to several separately certified plat families. A remaining question attached to a local method is not an unresolved step in those theorems. The diagrams below explain the proved constructions and their remaining scope.
+
+
+## Attaching an octahedron in the original tangle cut
+
+![An octahedron attaches to a projection half along a shaded disk triangle. The parent and child circle vertices are O_v and O_w; the four equatorial vertices are the corresponding strand ends.](figures/octahedral-page-attachment.svg)
+
+The blue triangle on the left is a boundary face of the existing
+projection half. The blue triangle on the right is glued to it with
+the opposite boundary orientation. Equal labels specify the vertex
+identifications. The new vertex \(O_w\) belongs to the inserted child
+crossing circle, while \(O_v\) belongs to its parent. The other three
+crossing-disk triangles are listed in the
+[decomposition proof](../notes/actual_all_circle_octahedral_decomposition.md).
+The same attachment is made in the other projection half.
+
+This is the local attachment used in the induction over the tree. The [geometric chapter](chapters/geometry.md#the-geometric-proof-for-the-explicit-degree-and-twist-bound)
+explains the positive hyperbolic realization and the filling path.
+Download the [vector PDF](figures/octahedral-page-attachment.pdf) or
+the [TikZ source](figures/octahedral-page-attachment.tex).
 
 ## Established results and remaining scope
 

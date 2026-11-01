@@ -1,0 +1,50 @@
+% Native TikZ fragment: a labeled ideal-cell attachment.
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,
+  font=\small,vertex/.style={circle,fill=black,inner sep=1.25pt},
+  face/.style={fill=blue!15,draw=blue!65!black,line width=1pt},
+  dir/.style={-{Latex[length=1.7mm]},blue!70!black,line width=.85pt}]
+\coordinate (ov) at (-3.5,1.85);
+\coordinate (b) at (-2.45,.65);
+\coordinate (c) at (-4.65,.45);
+\coordinate (l) at (-5.7,-.55);
+\coordinate (ll) at (-4.85,-1.6);
+\coordinate (r) at (-2.85,-1.45);
+\fill[gray!7] (ov)--(b)--(r)--(ll)--(l)--(c)--cycle;
+\draw[gray!65] (ov)--(b)--(r)--(ll)--(l)--(c)--cycle;
+\draw[gray!55] (l)--(r) (ll)--(c) (c)--(r) (ov)--(l);
+\path[face] (ov)--(c)--(b)--cycle;
+\draw[dir] ($(ov)!.31!(c)$)--($(ov)!.66!(c)$);
+\draw[dir] ($(c)!.34!(b)$)--($(c)!.67!(b)$);
+\draw[dir] ($(b)!.30!(ov)$)--($(b)!.62!(ov)$);
+\foreach \p/\lab/\where in {ov/O_v/above,b/B/right,c/C/left}{
+ \node[vertex] at (\p) {};
+ \node[\where=3pt] at (\p) {$\lab$};
+}
+\node[align=center,text width=4.1cm] at (-4.05,-2.65)
+ {Existing projection ball\\shaded face $(O_v,C,B)$};
+\coordinate (nv) at (2.7,1.85);
+\coordinate (nw) at (2.7,-1.8);
+\coordinate (na) at (3.95,-.45);
+\coordinate (nb) at (3.45,.65);
+\coordinate (nc) at (1.45,.45);
+\coordinate (nd) at (1.95,-.65);
+\fill[gray!5] (nv)--(nb)--(na)--(nw)--(nd)--(nc)--cycle;
+\draw[gray!55,dashed] (nw)--(nb) (nb)--(na);
+\draw[gray!70] (nv)--(na)--(nw)--(nd)--(nv)
+ (nv)--(nb)--(nc)--(nv) (nc)--(nd) (nd)--(na) (nc)--(nw);
+\path[face] (nv)--(nb)--(nc)--cycle;
+\draw[dir] ($(nv)!.31!(nb)$)--($(nv)!.65!(nb)$);
+\draw[dir] ($(nb)!.32!(nc)$)--($(nb)!.66!(nc)$);
+\draw[dir] ($(nc)!.29!(nv)$)--($(nc)!.62!(nv)$);
+\foreach \p/\lab/\where in {nv/O_v/above,nw/O_w/right,na/A/right,nb/B/right,nc/C/left,nd/D/left}{
+ \node[vertex] at (\p) {};
+ \node[\where=3pt] at (\p) {$\lab$};
+}
+\node[align=center,text width=4.1cm] at (2.7,-2.85)
+ {\mbox{New octahedron}\\for edge $vw$\\shaded face $(O_v,B,C)$};
+\node[fill=white,inner sep=3pt,align=center,text width=2.3cm]
+ at (-.25,1.1) {Match equal labels;\\reverse face orientation};
+\node[align=center,text width=11.2cm] at (-.85,-3.8)
+ {The glued triangle becomes internal. The three other shaded faces of the
+ octahedron retain the circle $v$ and introduce the circle $w$.};
+\end{tikzpicture}

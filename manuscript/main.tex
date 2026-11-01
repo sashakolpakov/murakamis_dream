@@ -47,9 +47,9 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\sourcefile}[1]{\texttt{\detokenize{#1}}}
 \tikzset{box/.style={draw,rounded corners,fill=blue!4,align=center,inner sep=7pt}, arr/.style={-{Latex[length=2mm]},thick}, port/.style={draw,fill=white,minimum size=4mm,circle,inner sep=0pt}}
-\title{\Huge Long-twist volume limits\\[8pt]\Large for arborescent knots built by tangle composition\\[18pt]\large A specified construction class, its finite invariant,\\and the hyperbolic volume after filling}
+\title{\Huge Volume limits for arborescent knots\\[8pt]\Large Long twists and an explicit condition\\for ordered tangle trees\\[18pt]\large Finite knot invariants, hyperbolic filling,\\and the preferred cusp shape}
 \author{}
-\date{31 October 2026\\[8pt]\small Research manuscript with an executable certificate companion}
+\date{1 November 2026}
 \begin{document}
 \hypersetup{pageanchor=false}
 \maketitle
@@ -57,11 +57,17 @@
 \hypersetup{pageanchor=true}
 \frontmatter
 \chapter*{Abstract}
-We prove the volume conjecture for a specified recursive family of arborescent knot diagrams with sufficiently many twists in each designated region. The construction starts with two-strand tangles surrounded by auxiliary crossing circles. It uses vertical stacking, quarter-turns, and attachment of one new elementary tangle. Two boxes, each built from at least two elementary pieces by the stated rule, are joined by a cylindrical closure. We define these operations geometrically before introducing their notation. After choosing a parity pattern that gives one main component, filling the auxiliary circles produces the knots of the theorem.
+We prove the volume conjecture for two specified classes of arborescent knot diagrams built by ordered stacking and quarter-turns of two-string tangles. The first is a recursive construction in which independently sufficiently large signed twist numbers give a hyperbolic knot and the volume limit. Its elementary pieces retain their original crossing circles, disk framings and endpoint order.
 
-For each fixed construction, every sufficiently large tuple of independently signed filling integers gives a hyperbolic knot whose reduced Kashaev invariant has exponential growth equal to its knot complement volume. The integers are fixed before the root-of-unity level tends to infinity, and the limit includes both parities and composite levels. Only auxiliary circles are filled; the knot cusp remains unfilled.
+The second result gives an explicit numerical condition for ordered trees with one crossing-circle operator at every vertex. If $d_v$ is the degree of a vertex and $n_v$ is its signed crossing power, then
+\[
+                    \sum_v\frac{d_v}{d_v^2+n_v^2}\le2^{-25}
+\]
+suffices whenever the original strand pairing gives a knot. This condition permits short or zero powers at sufficiently large-degree vertices. It also gives the explicit sufficient bound $|n_v|\ge8192\sqrt E$ for a tree with $E$ edges. Every diagram, parity choice and integer power is fixed before the root-of-unity level $N$ tends to infinity. The limits include both parities and composite levels, and only auxiliary circles are filled.
 
-The proof starts from the finite matrices defining the invariant. Their polynomial algebra retains derivative data at repeated roots. Positive multiplication coefficients give an angle maximization problem, and explicit ideal hyperbolic cells realize its complete value on the actual augmented link. Rigorous rational inequalities control the signed complementary color terms throughout the recursive construction. A holomorphic asymptotic for the remaining finite sum is then inserted into the exact filling transform. The contour argument retains its boundary contributions and all Fourier modes, and its leading action is identified with the volume after filling. Detailed appendices and an executable certificate companion support the proof. The theorem concerns the stated construction class; it does not classify all arborescent knots.
+The proof starts with the finite matrices defining the invariant and retains their derivative data at repeated spectral roots. For the long-twist construction, positive multiplication coefficients and exact rational inequalities control the signed color terms. For the quantitative tree theorem, a literal projection cut gives two octahedra per edge. Positive deformations of these cells fit in the original cyclic order, and their actual primitive periods give smooth filling even when the total meridian logarithm has left a small neighborhood of zero. The full Fourier calculation keeps the charge tails and boundary contributions, identifies a nonzero leading term, and matches its calibrated action with the volume of the original knot complement.
+
+For the quantitative class we also prove a uniform microscopic main-meridian profile for the zero-framed reduced ADO invariant. Its exact crossing and framing factor is retained, and its first correction is the preferred cusp shape of the filled knot. The construction hypotheses and the knot-pairing test are stated explicitly; the results do not classify all arborescent knots.
 
 \tableofcontents
 \mainmatter
@@ -73,12 +79,15 @@ The proof starts from the finite matrices defining the invariant. Their polynomi
 \input{sections/06-packet}
 \input{sections/07-marked-geometry}
 \input{sections/08-filling}
+\input{sections/08a-quantitative-circle-trees}
 \input{sections/09-reproduction}
 \appendix
 \input{sections/A-finite-identities}
 \input{sections/B-analytic-estimates}
 \input{sections/C-certificate-arithmetic}
 \input{sections/D-marked-cell-calibration}
+\input{sections/E-quantitative-finite-sums}
+\input{sections/F-quantitative-octahedral-geometry}
 \backmatter
 \bibliographystyle{plain}
 \bibliography{references}

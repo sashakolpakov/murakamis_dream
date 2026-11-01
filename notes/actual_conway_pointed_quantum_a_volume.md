@@ -1,12 +1,20 @@
 # Recovering the knot volume from a pointed quantum \(A\)-operator
 
-31 October 2026.
+1 November 2026.
 
 A recurrence operator does not determine a knot invariant by itself: a recurrence usually has many solutions. It must be supplied with initial values selecting the knot's solution. In this note, **pointing** means fixing that initial data once and for all from finitely many ordinary colors. The resulting operator period is an exact reconstruction of the reduced Kashaev invariant.
 
 At a root of unity, some coefficients of the recurrence may have poles when solved in forward form. The reconstruction keeps the whole Laurent expansion, so those poles can cancel before evaluation. Only a bounded number of derivatives of the initial data is needed, with a bound determined by the fixed operator and independent of the quantum level.
 
 For the knots of the [net-twist theorem](actual_conway_net_twist_volume.md) and its [closure extension](actual_conway_arbitrary_closure_volume.md), this exact reconstruction has exponential growth equal to the knot complement volume. Every admitted knot is isotopic to a sufficiently long strict Conway knot. The closure extension also allows cap closures and zero sums, retaining the connected-sum factors until the hyperbolic input is shown to equal one strict factor. The proof transfers the invariant-volume theorem through an exact identity. The selected classical geometric factor remains a separate question.
+
+The same reconstruction and volume conclusion also apply to the
+[quantitative circle-tree theorem](actual_all_circle_quantitative_volume.md),
+under its explicit condition
+\(\sum_vd_v/(d_v^2+n_v^2)\le2^{-25}\).
+The exact operator identity is valid for every knot; the new theorem
+supplies its volume growth, including the short powers admitted by
+that criterion. No long-twist assumption is added in this application.
 
 ## 1. The knot and the two meridian coordinates
 
@@ -18,6 +26,12 @@ Fix a knot supplied by either reduction theorem. Its original construction is is
  q_N=\exp(\pi i/N).
 \tag{1}
 \]
+
+For the quantitative application, use the original ordered circle
+tree and its powers satisfying the summed criterion in place of the
+long-twist presentation just described. The symbols \(K,V,q_N\) have
+the same meanings in (1), and all subsequent recurrence constructions
+are unchanged.
 
 The expression and every integer weight remain fixed while \(N\) grows. All auxiliary crossing-circle cusps have been filled to insert these twists; the main knot cusp is unfilled. The theorem below includes all sufficiently large integer levels, both parities and composite levels.
 
@@ -194,6 +208,12 @@ The entries of \(J_k(N)\) are \(q_N^k C_j^{(k)}(q_N)/k!\), for finitely many fix
 The same statement holds for the localized minimum-order generator. The scalar inside the logarithm is nonzero for all sufficiently large \(N\).
 
 The proof is the exact identity (11) followed by the strict Conway volume theorem on the reduced presentation. The tangle isotopy preserves the normalized invariant and the actual knot exterior, so the conclusion also holds for the original presentation. The identity retains the complete signed scalar at every sufficiently large level; the knot theorem supplies its nonzero asymptotic and its limit. No equality between operators computed from different presentations is required. This is an operator expression for the volume limit, obtained by reconstructing the selected invariant exactly.
+
+For the quantitative circle-tree class, apply its volume theorem
+directly to (11). This proves (14) under the summed criterion, with
+the same fixed operator, initial data and singular-step treatment.
+The peripheral formulas and determinant identity below are exact
+knot identities and continue to apply without a new twist hypothesis.
 
 ### Restoring the full peripheral normalization
 

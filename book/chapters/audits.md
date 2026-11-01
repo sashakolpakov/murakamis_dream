@@ -6,15 +6,34 @@ An exact symbolic calculation can establish an identity in formal variables. A r
 
 The current [strict Conway tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md) includes bounds for the full quantum sum, a nonzero selected contribution, the original normalization and the actual marked filling geometry. Its proof is not waiting for a theorem about all knots. The more specialized general-plat calculations catalogued below retain their own hypotheses and limitations.
 
-## The quantitative short-twist estimate
+## Checks for the quantitative volume theorem
 
-The [analytic criterion](../../notes/actual_all_circle_curvature_filling_limit.md) uses an explicit two-variable action on every edge and a uniform estimate for Newton polynomials on a complex strip. Its focused checks run with:
+The [quantitative theorem](../../notes/actual_all_circle_quantitative_volume.md)
+has one reproduction command:
 
 ```sh
 python3 repro/run_research_checks.py curvature-fillings
 ```
 
-Python, SymPy and mpmath are required. The program verifies the wire critical equation, two derivatives of the selected action, and its Hessian determinant symbolically. It then checks 990 complex-strip samples at 70-digit precision, including even and odd levels from 160 to 256. The [saved results](../../experiments/all_circle_curvature_packet_results.json) also record the constants separating the first critical action from the discarded-state bounds. These samples check the formulas; the proof supplies their uniform validity. No test in this group certifies the topology or the hyperbolic volume of a short-filled knot.
+Python, SymPy and mpmath are required. The group runs three programs.
+The first checks four edge-action identities symbolically and 990
+complex Gaussian samples at 70-digit precision, at levels 160 through
+256. The second verifies 46 rational identities for the actual
+octahedra, including the odd half-twist face returns, and seven bounds
+used in the positive angular chart. The third compares the literal
+tangle strand compiler with an octahedral attachment construction on
+128 finite trees. It checks 448 left or right attachments, the
+resulting colored face cycles and signed disk pairings, and 28 symbolic
+peripheral and regulator identities.
+
+The saved outputs are the [analytic checks](../../experiments/all_circle_curvature_packet_results.json),
+[local geometric checks](../../experiments/two_octahedron_angular_edge_block_results.json)
+and [ordered attachment checks](../../experiments/ordered_octahedron_pages_results.json).
+Each records its finite scope. The arbitrary-tree induction, the
+metric completion and the uniform asymptotic estimates are written
+proofs; finite samples do not establish those conclusions. The
+[geometric chapter](geometry.md#the-geometric-proof-for-the-explicit-degree-and-twist-bound)
+explains how the proof identifies the original knot complement.
 
 ## Arbitrary multiplication regions
 

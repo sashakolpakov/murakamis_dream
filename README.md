@@ -30,6 +30,22 @@ explains the groups, the closure condition, and the exact quantifiers.
 Another companion reconstructs the invariant from a quantum A-operator
 and initial data, giving the same volume limit in recurrence form.
 
+There is also an [explicit numerical theorem](https://sashakolpakov.github.io/murakamis_dream/notes/actual_all_circle_quantitative_volume.html)
+for ordered trees with a crossing circle at every junction. If $d_v$
+is the number of incident branches and $n_v$ its signed crossing
+power, then
+
+$$
+\sum_v\frac{d_v}{d_v^2+n_v^2}\le2^{-25}
+$$
+
+gives hyperbolicity and the volume limit whenever the original strand
+pairing gives a knot. For $E$ tree edges, requiring every
+$|n_v|\ge8192\sqrt E$ suffices. The sharper summed condition also
+allows short or zero powers at high-degree junctions. Its proof
+constructs the original knot complement from positive ideal cells
+and controls the full finite invariant. The constant is conservative.
+
 The [closure extension](https://sashakolpakov.github.io/murakamis_dream/notes/actual_conway_arbitrary_closure_volume.html)
 also allows cap closures and exact cancellation of twist sums. Its
 reduction can split the diagram into connected-sum factors. For a

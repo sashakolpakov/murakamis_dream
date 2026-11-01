@@ -37,7 +37,37 @@ Here $K$ is the resulting knot, $K_N(K)$ is the reduced Kashaev invariant at int
 
 To analyze the geometry, the proof first places an auxiliary crossing circle around each twist region. The resulting augmented link has a convenient decomposition into ideal hyperbolic cells. Filling an auxiliary circle means attaching a solid torus along the prescribed meridian so as to insert the twists. In the knot theorem **all auxiliary circles are filled**. The cusp of the knot itself remains unfilled. Thus the conclusion is about the knot complement, not a closed three-manifold.
 
-Two companion results extend the paper's recursive family. The [strict-tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md) proves the estimates for every expression passing a finite angle-feasibility test. The [net-twist theorem](../../notes/actual_conway_net_twist_volume.md) then reduces an arbitrary ordered cylindrical product closure to one of those expressions or to an elementary two-strand braid closure. In the former case, the size condition applies to the combined twist numbers produced by the reduction. The [results chapter](results.md) states that condition and gives an example. The PDF retains its own theorem and proof.
+Two companion results extend the paper's recursive family. The [strict-tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md) proves the estimates for every expression passing a finite angle-feasibility test. The [net-twist theorem](../../notes/actual_conway_net_twist_volume.md) then reduces an arbitrary ordered cylindrical product closure to one of those expressions or to an elementary two-strand braid closure. In the former case, the size condition applies to the combined twist numbers produced by the reduction. The [results chapter](results.md) states that condition and gives an example. The earlier PDF chapters retain their own theorem and proof; the new quantitative chapter is described next.
+
+## The quantitative circle-tree chapter
+
+A further chapter treats a different explicit description of the
+tangle construction: every vertex of an ordered tree carries an
+integer braid, and each child tangle is turned before it is stacked
+on the prescribed side of its parent braid. A terminal root gives
+the cylindrical closure. The strand pairing must give one knot.
+
+For vertex degree \(d_v\) and crossing power \(n_v\), the condition
+
+\[
+ \sum_v\frac{d_v}{d_v^2+n_v^2}\le2^{-25}
+\]
+
+gives the volume limit. It also gives a uniform profile as the
+meridian moves by order \(1/N\), with its first correction expressed
+by the preferred cusp shape. The [full statement](../../notes/actual_all_circle_quantitative_volume.md)
+defines every framing factor and gives numerical sufficient bounds.
+Some short powers are allowed at sufficiently high-degree vertices;
+the earlier long-twist chapters retain their own construction class.
+
+The chapter illustrates an actual octahedral attachment and explains
+why it recovers the original exterior. Positive tetrahedra continue
+along the filling path until the primitive cone angle is \(2\pi\).
+This constructs the smooth knot complement whose volume appears in
+the quantum limit. Appendices E and F contain the full finite-sum, ordered-cut and
+geometric-completion proofs, including their face maps, peripheral
+words and uniform constants. The companion notes present the same
+calculations separately.
 
 ## How to read the proof
 
@@ -56,6 +86,8 @@ Finally, the filling transform is evaluated with all its Fourier modes and bound
 The technical appendices supply the finite algebra, analytic interpolation estimates, certificate details and marked geometric calibration used in this chain. They are intended to make the proof readable without treating links to working notes as substitutes for arguments.
 
 ## Reproduce the finite certificates
+
+The quantitative chapter uses `python3 repro/run_research_checks.py curvature-fillings`. The [checks chapter](audits.md#checks-for-the-quantitative-volume-theorem) describes its three programs and their finite scope.
 
 From the repository root, run:
 

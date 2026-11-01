@@ -11,6 +11,64 @@ Here $K_N$ is the reduced Kashaev invariant in the normalization fixed in the pr
 
 There are two main ways to specify the proved families. The Conway construction builds a knot from two-strand tangles according to a finite tree. The plat construction starts with a braid and pairs its endpoints. The hypotheses for these constructions are different, so they are described separately. Later sections explain useful conditional theorems and local identities whose conclusions are smaller than a full knot-volume theorem.
 
+## An explicit bound that also permits some short twists
+
+There is a numerical criterion for a second, precisely specified
+construction. Take any finite ordered tree with at least one edge.
+At each vertex place an integer two-strand braid. Stack the turned
+child tangles on their prescribed sides of that braid, and use a
+terminal vertex for the cylindrical closure. The order and turns are
+part of the diagram. Following all strands must give one knot, without
+an additional component closed inside a tangle.
+
+To describe its geometry, replace each integer braid by a crossing
+circle and retain its parity as a half twist. Every junction in this
+tree has such a circle. Let \(d_v\) be its number of incident tree
+edges and \(n_v\) its signed number of half-twists. The
+[quantitative theorem](../../notes/actual_all_circle_quantitative_volume.md)
+proves that
+
+\[
+ \sum_v\frac{d_v}{d_v^2+n_v^2}\le2^{-25}
+\]
+
+implies hyperbolicity and the Kashaev volume limit for the original
+knot complement. The whole tree and all integers are fixed before
+\(N\) tends to infinity. Both parities of \(N\) are included. The same
+theorem gives the uniform meridian profile on \(M=e^{\pi i s/N}\),
+\(|s|\le R<1\), with the first correction determined by the preferred
+cusp shape.
+
+This bound has two useful consequences. If the tree has \(E\) edges,
+then \(|n_v|\ge8192\sqrt E\) at every vertex suffices. Short powers are
+also possible: start with any ordered tree on \(m\) vertices, with any
+fixed powers, and attach \(B\) terminal circles to each vertex. If the
+added powers have magnitudes at least \(B\), the sum is less than
+\(2m/B\). Hence \(B\ge2^{26}m\) suffices, provided the resulting strand
+pairing is a knot. These very large constants make the result explicit;
+they are not proposed as sharp thresholds.
+
+A product junction without a braid can be represented by the identity
+braid \(R^0\). Adding its crossing circle changes the augmented link;
+filling it on the specified zero-twist slope recovers the original
+diagram. Its contribution to the criterion is \(1/d_v\). This can
+help at a high-degree junction, but does not give a free way to remove
+the numerical hypothesis.
+
+The volume identification is proved under the same inequality. The
+actual augmented exterior has two octahedra per tree edge. Their
+positive deformations keep the original primitive filling curves;
+the final cone angle is exactly \(2\pi\), so the filled metric is
+smooth. The boundary-corrected action equals its volume, with the
+constant fixed at the complete augmented link. The finite-sum proof
+then supplies the nonzero contribution and bounds every competing
+region. Neither of these two arguments is left as a hypothesis.
+
+This theorem does not cover arbitrary short-twist arborescent knots.
+The following long-net-twist theorem covers other presentations and
+allows junctions without crossing circles without the displayed
+degree condition.
+
 ## Arbitrarily many tangles with sufficiently long net twists
 
 Fix an ordered construction from two-strand twist boxes, quarter-turns and stacking, followed by the cylindrical closure of a product of two boxes. Each original twist box has its own integer $n_i$. The number of boxes and the depth of their nesting may be arbitrary, but remain fixed in the theorem.

@@ -1,6 +1,6 @@
 \chapter{Checking the certificates and understanding the scope}\label{ch:reproduction}
 
-The theorem has two kinds of proof obligations. Most are analytic or geometric arguments written in this manuscript. Two local inequalities are reduced to finite rational certificates supplied with the paper. This chapter explains how to inspect and replay those certificates, what a successful replay establishes, and what remains outside the theorem's construction class.
+The two theorems combine written analytic and geometric arguments with finite checks of different kinds. The long-twist proof reduces two local inequalities to exact rational certificates supplied with the paper. The quantitative circle-tree proof establishes its uniform bounds analytically; separate finite checks verify its edge formulas, face identifications and peripheral identities. This chapter distinguishes those roles and records the scope of each theorem.
 
 \section{Three different kinds of evidence}
 The manuscript contains analytic proofs, exact finite certificates, and optional finite audits. They have different logical roles. The matrix identities, support and strictness arguments, geometric incidence, complex estimates and filling analysis are proved in the text. The rational certificates are finite parts of the proof: the continuum inequalities reduce to their exact feasibility, coverage and supporting-plane checks. Finite matrix or numerical asymptotic audits provide independent checks of formulas and normalizations, but do not establish a theorem by extrapolation.
@@ -28,24 +28,32 @@ Endpoint certificate in the runner's manifest
 \end{center}
 All paths are resolved relative to the repository or script directory, rather than an author's temporary working directory. The runner's proof-input guide lists the written dependencies separately from executable checks.
 
-\section{Building the two reading views}
+\section{Checking the quantitative tree formulas}
+The elementary edge equations and complex-strip estimates used by Chapter~\ref{ch:quantitative-circle-trees} have a portable reproduction command:
+\begin{verbatim}
+python3 repro/run_research_checks.py curvature-fillings
+\end{verbatim}
+The runner checks exact symbolic edge identities, finite samples of the stated complex inequality, labeled octahedral attachments and the full signed peripheral matrix words. Its output separates those computations from the uniform analytic and geometric proofs. Appendix~\ref{app:quantitative-sums} gives the full quantitative finite-sum proof, including both uniform Newton estimates, the weighted contraction and the charge-tail bounds. Appendix~\ref{app:quantitative-geometry} gives the complete ordered attachment, positive angular charts, primitive-period completion, volume calibration and preferred-cusp argument. The linked versions are optional separately available copies of those proofs. Such finite checks can detect sign or indexing errors; they do not replace the written proofs.
+
+\section{Building the manuscript and illustrated guide}
 The TeX source is in \sourcefile{manuscript/}; its native illustrations are in \sourcefile{manuscript/figures/}. A TeX Live or MacTeX installation with \sourcefile{latexmk} builds the paper:
 \begin{verbatim}
 python3 tools/build_manuscript.py
 \end{verbatim}
 The output is \sourcefile{manuscript/build/main.pdf}. The build manifest records the hashes of all TeX and bibliography inputs and the generated PDF. It is a typesetting record, not a mathematical certificate.
 
-The Sphinx reading site and the existing Markdown book are built separately:
+The illustrated guide is built separately:
 \begin{verbatim}
-python3 tools/build_sphinx.py
 python3 tools/build_book.py
 python3 tools/check_book.py
 \end{verbatim}
-Sphinx is written to \sourcefile{docs/sphinx/}; the Markdown book remains in \sourcefile{docs/}. Documentation builds do not execute research scripts. The pinned Sphinx environment is described in \sourcefile{repro/requirements-docs.txt}. Both reading views link the same authored PDF and preserve the distinction between the main theorem and broader open questions.
+It is written to \sourcefile{docs/} and links the same authored PDF. Documentation builds do not execute research scripts. The guide also links the broader research companions and states their hypotheses separately from the two theorem classes developed here.
 
 \section{What has and has not been proved}
-The theorem is uniform in the level for each fixed finite completed expression and each fixed sufficiently long signed filling tuple. It includes both parity sequences and composite levels. The filling threshold is allowed to depend on the expression, its complete geometry and the half-twist pattern. It does not depend on a ratio between the sizes of the long slopes.
+Theorem~\ref{thm:main} is uniform in the level for each fixed finite completed expression and each fixed sufficiently long signed filling tuple. It includes both parity sequences and composite levels. Its threshold can depend on the expression, its complete geometry and its retained half-twist pattern, but imposes no bound on ratios between the long slopes.
 
-The theorem does not identify all arborescent knots with the completed grammar. It does not turn an equality in $\cH_N$ into a tangle isotopy. It does not prove a quantum theorem for arbitrary short or rational fillings, and it does not infer volume from an unsigned bound on a larger source envelope. The main knot cusp stays unfilled in the conclusion.
+Theorem~\ref{thm:circle-quantitative} uses a different sufficient hypothesis: the literal ordered circle tree and the explicit sum $\sum_vd_v/(d_v^2+n_v^2)\le2^{-25}$. The full diagram, all degrees and all integer powers are fixed before the limit. The theorem gives actual hyperbolicity and volume equality, a uniform microscopic meridian profile with its exact scalar, and the preferred-cusp correction. It permits short coefficients under this condition; it does not prove a statement about arbitrary short or rational fillings.
 
-The construction rule is a sufficient hypothesis used by this paper, not a characterization of arborescent knots. If one allows a single elementary piece on one side of the final closure, some complete stationary parameters can equal $1/4$. The recurrence analysis proved here assumes a compact interval strictly above that value. Likewise, a different rule for composing tangles requires new global bounds for its signed color terms, even if its complete ideal cells can be constructed. Such extensions need their own stated hypotheses and proofs. The theorem in this manuscript remains exactly Definition~\ref{def:grammar} and Theorem~\ref{thm:main}; no broader result is incorporated by an informal change of terminology.
+Both results keep the original strand order, knot-pairing test, disk framings and unfilled main cusp. The octahedral attachment is proved by actual labeled cuts. A scalar equality in $\cH_N$ is not used as a tangle isotopy. The continued boundary word used for the preferred-cusp calculation becomes the preferred longitude of the smooth filled knot only at the endpoint of the geometric path.
+
+These are sufficient construction hypotheses, not a classification of all arborescent knots. The completed-box condition remains part of Theorem~\ref{thm:main}; the quarter-index states in circle trees are treated by the separate proof in Chapter~\ref{ch:quantitative-circle-trees}. More general strict ordered Conway trees have a long-twist theorem in the linked research companions, with their own full source and marked-geometry proofs. No general short-filling theorem follows merely from the existence of complete augmented cells or from an upper bound on the absolute values of a larger sum.

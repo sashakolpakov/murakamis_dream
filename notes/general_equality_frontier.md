@@ -1,4 +1,26 @@
-# General equality: proved scope and the remaining original-source problem
+# General equality: proved families and the remaining problem
+
+The current results include a volume theorem for every fixed strict
+Conway tree with independently sufficiently long signed twists, and
+its marked net-twist and closure extensions. A second
+[quantitative theorem](actual_all_circle_quantitative_volume.md)
+covers the specified ordered circle trees under
+\(\sum_v d_v/(d_v^2+n_v^2)\le2^{-25}\).
+It constructs the original hyperbolic knot complement and proves the
+full invariant limit, uniform shrinking-meridian profile and preferred
+cusp correction. Its geometric completion is proved, including the
+short powers permitted by that bound.
+
+The remaining problem is to cover knots outside these sufficient
+conditions and to identify the selected classical geometric factor
+of the quantum recurrence. The [current guide](../book/chapters/frontier.md)
+separates those questions from the established results.
+
+## Earlier general-plat research, 28–30 October
+
+The dated entries below record the dependencies of the general-plat
+approach at that stage. An open step in that approach is not a missing
+hypothesis of the Conway theorems stated above.
 
 30 October 2026 update: the [complete signed augmented source](general_signed_augmented_source_volume.md) now has an all-level volume equality for every connected labeled right-angled certificate at arbitrary fixed width and every retained half-twist pattern. Its exact positive face coefficient, global saddle, all-channel bound, uniform relative signed Gaussian and absolute coning action close the complete-source contraction and cancellation problem in this scope. The external-color complex packet and whole complementary/alias estimate for independently long-filled knots remain open. The earlier routes below retain their own scopes; the [current guide](../book/chapters/frontier.md) gives the active dependency map.
 
@@ -21,7 +43,7 @@ retains every physical support zero. The
 separates forced zeros from a positive-root Jacobi determinant, and the
 [joint deficient packet](actual_q_hahn_joint_deficient_degree_packet.md)
 now proves a selected action and nonzero relative amplitude in a complex
-neighborhood of the ACTUAL geometric frame. Degree and magnetic
+neighborhood of the actual geometric frame. Degree and magnetic
 coordinates may vary together. This reaches the chamber beyond physical
 bandwidth at every fixed width under the marked geometric certificate.
 
@@ -31,7 +53,7 @@ factor and the moving scalar of the literal p/E operator. The
 [moving-period factorial](actual_moving_period_factorial_normals.md)
 supplies a specified continuation. Every fixed genuine derivative has
 subexponential relative cost when (N-1-2a) log N=o(N) on a slightly
-NONREAL geometric degree chart. These upper bounds do not prove a
+nonreal geometric degree chart. These upper bounds do not prove a
 nonzero leading normal amplitude. The large and small channels coincide
 at the root but their quantum normals differ.
 
@@ -47,7 +69,7 @@ transports the retained cotangent density too, including its double-pole
 corrections. These exact identities do not wrap the physical basis.
 The
 [degree-cycle boundary theorem](actual_matching_edge_degree_cycle_boundary.md)
-adds forbidden physical points as zero ORDERED PERIODS under its actual
+adds forbidden physical points as zero ordered periods under its actual
 free-lattice and complement-regularity hypotheses. It computes the
 channel residues, cotangent finite parts and original source-normal
 coefficients required when that enlarged cycle moves. A late-wall
@@ -58,12 +80,12 @@ The [absolute reflected regulator](actual_matching_edge_deficient_packet_regulat
 has no uncomputed constant. Exact source reflection has scalar one;
 the endpoint Bloch symbol preserves the actual diagram volume. Literal
 turn and degree-log characters must stay in the action and in its marked
-winding sectors. At FULL source-marked stationarity the critical action
+winding sectors. At full source-marked stationarity the critical action
 has real part Vol(Y_D)/(2pi).
 
 The [complete local marked-density theorem](actual_augmented_plat_local_marked_density.md)
 now proves nonzero fixed-channel source density and a nonzero local
-folded-channel Gaussian at BOTH level parities. It starts from the
+folded-channel Gaussian at both level parities. It starts from the
 actual unrestricted root mark, so the complete-circle paired normal
 is already included. This is a complete-color local result; it does
 not assert a nonzero individual q-normal coefficient. The transverse
@@ -165,7 +187,7 @@ now permit t and the magnetic coordinate to move together complexly
 on a fixed central domain, uniformly through the folded channel limit.
 The selected local sheet has an explicit principal-square-root test.
 The [full physical complex packet](actual_q_hahn_full_physical_complex_packet.md)
-now extends the ACTUAL selected action and nonzero amplitude to every
+now extends the actual selected action and nonzero amplitude to every
 fixed compact of the whole strict physical tube. Its Hermitian cone
 proof retains the necessary finite-level upper boundary correction.
 The channel remains discrete, with scaled value in a compact subset
@@ -362,7 +384,7 @@ and independently sufficiently long fixed signed integral fillings
 of any auxiliary subset. Every such expression admits a constructive
 one-main-component pattern; filling all its auxiliary circles gives
 knots with arbitrary allowed diagram branching and turn depth. Its
-rate is the ACTUAL filled hyperbolic volume, using the changed primitive
+rate is the actual filled hyperbolic volume, using the changed primitive
 meridians, full calibrated action, and smooth geometric completion.
 Isolated C(h^s) are also covered for s>=4. The minimal C(h^3),
 arbitrary short fillings, and arbitrary knot diagrams remain outside
@@ -370,7 +392,7 @@ this filling theorem. This enlarged grammar is an application, not
 a replacement for the arbitrary-plat target.
 
 The [all-partner first-normal theorem](actual_all_partner_first_normal_bound.md)
-now controls the ACTUAL generic first normal on every supported partner
+now controls the actual generic first normal on every supported partner
 branch, with uniform relative cost O(N^2(1+log N)). It also bounds the
 coherent retained tail by O(log N) times its positive core. The earlier
 Ward/Fourier two-current obstruction remains valid for those relations
@@ -410,7 +432,7 @@ now supply ALL quantum hypotheses of the general long-full-twist
 transfer for these retained factors. The resulting
 [full long-filling equality](actual_conway_long_filling_source_limit.md)
 has a nonzero selected complex critical action, now proved to equal
-the ACTUAL filled hyperbolic volume. The
+the actual filled hyperbolic volume. The
 [marked deformation theorem](actual_conway_marked_peripheral_deformation.md)
 constructs the original link-group representation, all pointwise edge
 returns, parabolic main cusps and primitive auxiliary logs. Its
@@ -534,7 +556,7 @@ The global lift requires the stated regulator and primitive $2\pi$ completion hy
 
 The [general geometric theorem](general_source_regulator_hyperbolic_equality.md)
 applies to every oriented complete finite-volume cusped hyperbolic base.
-It assumes an ACTUAL nearby framed representation, parabolic retained
+It assumes an actual nearby framed representation, parabolic retained
 cusps, and primitive filled log periods a_iU_i+b_iV_i=+/-2pi i.
 It constructs the nearby local metric explicitly by Lorentz averages
 on the compact core and affine averages on the cusp links. Compact
@@ -781,7 +803,7 @@ now completes the geometric side for that source. Its ordered marked
 diagram is exactly the s=3 retained-circle pretzel source. The reversible
 face cut gives four actual regular ideal octahedra and complete cusps,
 for every fixed signed edge-twist triple. The original enhanced
-one-cut evaluation therefore has limit 4v8, equal to the ACTUAL
+one-cut evaluation therefore has limit 4v8, equal to the actual
 hyperbolic volume. An explicit sixteen-tetrahedron positive angle
 slice realizes its entire contracted source action as V_angle=2pi E;
 only the maximizing point is asserted to solve all complete gluing
@@ -902,7 +924,7 @@ generic cup factorials and root normals are kept. The
 proves pi log(phi(h^4))/N -> Vol(Q_cube) along ALL odd levels by
 uniform sine factorials and a strictly concave real positive sum.
 An explicit fourteen-tetrahedron cone subdivision identifies this
-value with the ACTUAL core, rather than a numerically matched constant.
+value with the actual core, rather than a numerically matched constant.
 Thus this original central sector has the full geometric rate
 16v8+2Vol(Q_cube).
 

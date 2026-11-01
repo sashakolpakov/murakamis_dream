@@ -14,6 +14,50 @@ An **angle structure** assigns positive dihedral angles to the proposed cells wh
 
 A **marked** construction retains the chosen peripheral curves and their basepaths. This matters after filling. The equation that closes a meridian disk depends on a primitive pair of curves on the torus, not just on an unlabeled complex cusp shape. Replacing a primitive longitude by twice that curve would change the filling problem.
 
+## The geometric proof for the explicit degree-and-twist bound
+
+The [quantitative theorem](../../notes/actual_all_circle_quantitative_volume.md)
+uses a particularly simple decomposition of the actual exterior.
+Each vertex of its ordered tree is a crossing circle, and each tree
+edge supplies one octahedron in each projection half. Inserting a
+terminal child attaches an octahedron along a shaded crossing-disk
+triangle. Reading the four strand joins shows that its other three
+shaded faces are exactly the new disk faces. The adjacent white
+projection faces join in their original order.
+
+![One octahedron is attached along the shaded triangle of a projection half. Equal labels are identified with opposite boundary orientations. The two vertices O_v and O_w belong to the parent and child crossing circles; A, B, C and D are main-strand ends.](../figures/octahedral-page-attachment.svg)
+
+There are \(E\) octahedra in each half for a tree with \(E\) edges.
+The [ordered decomposition proof](../../notes/actual_all_circle_octahedral_decomposition.md)
+retains the left and right insertion order, the actual rotations of
+child balls, and the single original half twist at each circle. These
+data determine the original manifold and its primitive cusp curves.
+
+The [angular formulas](../../notes/actual_all_circle_angular_octahedra.md)
+subdivide the pair of octahedra into eight ideal tetrahedra. All shapes
+are \(i\) at the complete point and remain positively oriented for
+\(|\tau_v|<10^{-2}\). The numerical bound of the theorem puts the
+entire path of filling equations inside this chart. Along the path,
+the actual primitive slope has logarithmic period \(-2\pi i c\),
+with \(0\le c\le1\). Its angular period is therefore \(2\pi c\).
+
+The [completion argument](../../notes/actual_all_circle_geometric_completion.md)
+proves that each auxiliary end is a punctured metric tube with these
+periods. At \(c=1\), its core is smooth. Attaching these cores performs
+the original surgeries, while the main cusp remains complete. The
+boundary correction to the complex action cancels the filling term;
+the resulting real value is the volume of this knot complement.
+The constant is fixed by the complete augmented link, whose volume
+is \(2E\,v_8\), where \(v_8\) is the volume of a regular ideal
+octahedron.
+
+This argument allows the full meridian logarithm to accumulate one
+turn even when each angular variable is small. It is the step needed
+for the short powers permitted by the criterion. The
+[main-cusp continuation](../../notes/actual_all_circle_preferred_cusp.md)
+then compares the marked representations and follows the preferred
+longitude to the smooth endpoint.
+
 ## The strict-tree construction
 
 The [net-twist reduction](../../notes/actual_conway_net_twist_volume.md) extends the use of this construction. It combines specified twist boxes by actual isotopies, retaining any half-turn of an intervening tangle. When its output is a strict presentation with sufficiently large combined twists, the geometric theorem below gives the output knot exterior its complete metric. The isotopy identifies that exterior with the input knot exterior, so the metric and its volume transfer directly. This comparison is made after the twists are inserted; it does not identify the auxiliary crossing-circle cusps of two different augmented presentations.

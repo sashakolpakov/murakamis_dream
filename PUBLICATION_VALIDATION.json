@@ -120,7 +120,7 @@
     "canonical_graph_physical_gamma_N_retained": true,
     "localized_A_module_does_not_determine_normal_source": true
   },
-  "last_refresh_utc": "2026-11-01T04:20:37.597346+00:00",
+  "last_refresh_utc": "2026-11-01T05:03:58.435394+00:00",
   "scope_confirmation": {
     "general_volume_conjecture_open": true,
     "fixed_long_pretzel_scope_preserved": true,
@@ -3335,6 +3335,101 @@
     },
     "pyramid_caption": "Schematic hyperbolic pyramid. All five vertices are ideal. Quadrilateral gluing face.",
     "pyramid_png_sha256": "7e2ffa53ae95123be66e22bbc06144c5f0f3340bce27b72dd0ca393c02392e6a",
-    "manuscript_pdf_sha256": "18ccc920523a9df9cb305d01270b9983e9019b418692c0872c780f8101f82c27"
+    "manuscript_pdf_sha256": "18ccc920523a9df9cb305d01270b9983e9019b418692c0872c780f8101f82c27",
+    "historical_status": "Analytic-only stage, superseded for the stated circle-tree criterion by quantitative_volume_revision."
+  },
+  "quantitative_volume_revision": {
+    "updated_utc": "2026-11-01T05:03:58.435394+00:00",
+    "scope": "Every fixed literal ordered tree of two-string tangle compositions with a crossing circle at each vertex, at least one edge, original frames and the actual one-component knot test.",
+    "criterion": "S=sum_v d_v/(d_v^2+n_v^2)<=2^-25",
+    "conclusion": "The original knot complement is hyperbolic and the actual reduced Kashaev invariant has its volume limit through all integer levels. The same fixed diagram has a nonzero uniform microscopic ADO meridian profile on |s|<=R<1 and the preferred-cusp first correction.",
+    "operator_corollary": "The exact pointed quantum A-period reconstructs the same Kashaev invariant and therefore has the same volume limit, with finite initial data and singular-step derivatives retained. No classical geometric-factor identity is assumed.",
+    "geometric_identification": "The literal ordered projection cut gives two octahedra per edge. Positive tetrahedra and the full primitive logarithmic periods complete the original auxiliary surgeries at cone angle2*pi. The regulator and complete volume anchor identify the first-charge action with this knot-complement volume.",
+    "explicit_corollaries": [
+      "Every |n_v|>=8192*sqrt(E) suffices for E edges.",
+      "Attach B terminal circles per vertex to an m-vertex tree, with new powers of magnitude>=B. Then B>=2^26*m suffices subject to the actual knot/parity test. The additions change the knot.",
+      "Literal R^0 insertion preserves the filled diagram but changes the augmented exterior and contributes1/d to S."
+    ],
+    "limits": "No optimality or priority claim. The construction and powers remain fixed before N. Arbitrary short twists, graphs with cycles, all hyperbolic knots and the selected classical geometric A-factor remain outside this result. Previous broader strict-tree long-net-twist and closure theorems are preserved.",
+    "sources": [
+      "README.md",
+      "book/catalog.json",
+      "book/chapters/audits.md",
+      "book/chapters/frontier.md",
+      "book/chapters/geometry.md",
+      "book/chapters/index.md",
+      "book/chapters/manuscript.md",
+      "book/chapters/results.md",
+      "book/collections.json",
+      "book/figures.md",
+      "book/figures/octahedral-page-attachment.pdf",
+      "book/figures/octahedral-page-attachment.png",
+      "book/figures/octahedral-page-attachment.svg",
+      "book/figures/octahedral-page-attachment.tex",
+      "experiments/audit_ordered_octahedron_pages.py",
+      "experiments/audit_two_octahedron_angular_edge_block.py",
+      "experiments/ordered_octahedron_pages_results.json",
+      "experiments/two_octahedron_angular_edge_block_results.json",
+      "manuscript/README.md",
+      "manuscript/build/figures/attachment-tangents.pdf",
+      "manuscript/build/figures/leaf-pyramid.pdf",
+      "manuscript/build/figures/octahedral-page-attachment.pdf",
+      "manuscript/build/figures/octahedral-page-attachment.png",
+      "manuscript/build/figures/prism-boundary.pdf",
+      "manuscript/build/figures/proof-architecture.pdf",
+      "manuscript/build/figures/tangle-construction.pdf",
+      "manuscript/build/main.pdf",
+      "manuscript/figures/octahedral-page-attachment.tex",
+      "manuscript/main.tex",
+      "manuscript/sections/01-introduction.tex",
+      "manuscript/sections/08a-quantitative-circle-trees.tex",
+      "manuscript/sections/09-reproduction.tex",
+      "manuscript/sections/E-quantitative-finite-sums.tex",
+      "manuscript/sections/F-quantitative-octahedral-geometry.tex",
+      "notes/a_polynomial_torsor_status.md",
+      "notes/actual_all_circle_angular_octahedra.md",
+      "notes/actual_all_circle_curvature_filling_limit.md",
+      "notes/actual_all_circle_geometric_completion.md",
+      "notes/actual_all_circle_octahedral_decomposition.md",
+      "notes/actual_all_circle_preferred_cusp.md",
+      "notes/actual_all_circle_quantitative_volume.md",
+      "notes/actual_conway_pointed_quantum_a_volume.md",
+      "notes/general_equality_frontier.md",
+      "repro/PROOF_INPUTS.md",
+      "repro/README.md",
+      "repro/research_check_groups.json"
+    ],
+    "validation": {
+      "book": {
+        "status": "PASS",
+        "HTML_pages": 1052,
+        "local_resource_links": 27229,
+        "images_with_alt": 100,
+        "technical_notes_indexed": 1033,
+        "search_records": 2620,
+        "failures": []
+      },
+      "browser_page_checks": 28,
+      "browser_failures": [],
+      "manuscript_warnings": [],
+      "reproduction": {
+        "all_circle_curvature_packet": {
+          "script_sha256": "a561c2e08ff20518cbcf896523b1ef26e795d8062e25ef31fbd569a1e44554e8",
+          "results_sha256": "aedb5abc3cfd174cb46b81c16328ae5bf2e9944f825f10be53810c9a9593eab2"
+        },
+        "two_octahedron_angular_edge_block": {
+          "script_sha256": "ee58ec1a7efe8668fcd16320fe21ce65f3a4533deb917bc36c88bc211e324091",
+          "results_sha256": "ae239f8c56e58fb1e13706f59bef1eca9132d324b33fdd3298d3e1368957d3e7"
+        },
+        "ordered_octahedron_pages": {
+          "script_sha256": "8bda678aa124f30eaa9df55a50df12e6e5190fb76c47fab6a7f61a3486b42936",
+          "results_sha256": "f596ac2e3d1c8e9216a2ca842f6a029082a5eaea36f2deee86ea2340426986af"
+        }
+      },
+      "finite_check_scope": "4 exact edge identities and990 finite complex samples;46 local rational identities and7 bounds;128 tree cases with448 attachments and28 algebra identities. These supplement the written uniform, topological and geometric proofs."
+    },
+    "pyramid_caption": "Schematic hyperbolic pyramid. All five vertices are ideal. Quadrilateral gluing face.",
+    "pyramid_png_sha256": "7e2ffa53ae95123be66e22bbc06144c5f0f3340bce27b72dd0ca393c02392e6a",
+    "manuscript_pdf_sha256": "8ab525bc9435d06b10e2d5012d2d640eb9050903666e41ea890fac05b8a3ddcf"
   }
 }

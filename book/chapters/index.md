@@ -11,7 +11,7 @@ For a knot $K$ and an integer $N\geq2$, Kashaev’s invariant $K_N(K)$ is a comp
 
 The left side measures exponential growth: a value of the form $N^a e^{NV/(2\pi)}$ has limit $V$, because the polynomial factor disappears after taking the logarithm and dividing by $N$. The right side is the volume of the knot complement. The knot remains removed from the three-sphere.
 
-This project studies the conjecture by cutting knot diagrams into tangles and keeping track of how their finite evaluations compose. The main family consists of **Conway algebraic, or arborescent, knots**. These are built from rational tangles by joining and turning pieces. The theorem below applies to specified constructions in this family, with sufficiently many twists in each designated region.
+This project studies the conjecture by cutting knot diagrams into tangles and keeping track of how their finite evaluations compose. The main family consists of **Conway algebraic, or arborescent, knots**. These are built from rational tangles by joining and turning pieces. The results below give sufficient conditions on specified constructions in this family. One requires long net twists; another gives an explicit bound that can also permit short twists at junctions with many branches.
 
 ## How the construction works
 
@@ -51,9 +51,34 @@ The elementary output is the closure of a single two-strand braid, hence a torus
 
 Choose the entire construction and all twist integers first; then let $N$ grow through the positive integers. The threshold may depend on the construction, but is uniform over its finitely many parity choices. Neither the tree nor its weights grow with $N$.
 
-This covers arbitrarily large fixed compositions when their reduced twists satisfy the bound. It does not cover arbitrary short twists or classify every arborescent knot up to all possible presentation changes. The TeX manuscript proves an earlier included family; the companion strict-tree estimates and exact tangle reduction give the extension stated here. The [manuscript page](manuscript.md) distinguishes those scopes.
+This covers arbitrarily large fixed compositions when their reduced twists satisfy the bound. It does not cover arbitrary short twists or classify every arborescent knot up to all possible presentation changes. The earlier chapters of the TeX manuscript prove an included family; the companion strict-tree estimates and exact tangle reduction give this extension. A further manuscript chapter proves the quantitative circle-tree result below. The [manuscript page](manuscript.md) distinguishes those scopes.
 
 The [closure extension](../../notes/actual_conway_arbitrary_closure_volume.md) also permits cap closures, which join each upper and lower endpoint pair, and twist sums that vanish exactly. Removing these zero sums can split the diagram into connected-sum factors. If the input is hyperbolic and every surviving strict factor has long net twists, the proof shows that just one strict factor remains and all others are unknots. The original knot is isotopic to that covered factor. The [results chapter](results.md#cap-closures-and-exact-cancellations) gives the precise criterion, including a sufficient condition on the original subset sums.
+
+## A numerical condition for trees of crossing circles
+
+For an ordered tree with a crossing circle at every junction, let
+\(d_v\) count the branches at that circle and let \(n_v\) be its signed
+crossing power. The [quantitative theorem](../../notes/actual_all_circle_quantitative_volume.md)
+proves hyperbolicity and the same volume limit if the strand pairing
+is a knot and
+
+\[
+ \sum_v\frac{d_v}{d_v^2+n_v^2}\le2^{-25}.
+\]
+
+The [results chapter](results.md#an-explicit-bound-that-also-permits-some-short-twists)
+defines this tangle construction and gives explicit consequences.
+For a tree with \(E\) edges, twists of magnitude at least
+\(8192\sqrt E\) suffice. A circle with many incident branches can
+instead carry a short power. The bound is deliberately conservative,
+and the tree stays fixed while \(N\) grows.
+
+This theorem includes the geometric step: the limiting action is the
+volume of the original knot complement. The new manuscript chapter and its technical appendices
+explain the actual octahedral cut, its positive deformation and the
+primitive filling slopes. It also derives the first meridian correction
+from the preferred longitude of the knot.
 
 ## Why the proof has both an analytic and a geometric part
 

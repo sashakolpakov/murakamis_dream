@@ -1,6 +1,6 @@
-# Reproducing the Conway composition proof certificates
+# Reproducing the calculations
 
-The manuscript proves inequalities on continuous regions of state variables. Some of those inequalities are reduced, by concavity and supporting tangent planes, to a finite set of rational comparisons. This directory provides the scripts and reference records for those comparisons. It is a proof-certificate suite, rather than a numerical survey of knots.
+The manuscript proves inequalities on continuous regions of state variables. Some of those inequalities are reduced, by concavity and supporting tangent planes, to a finite set of rational comparisons. This directory provides the scripts and reference records for those comparisons. The quantitative circle-tree theorem also has a group of symbolic, geometric and finite numerical checks, described below.
 
 ## Run the checks
 
@@ -30,6 +30,28 @@ A *leaf* is one basic two-strand twist piece in the manuscript's tangle construc
 Here a *slope* is a derivative of an entropy function used in the source estimate. It is not a Dehn-filling slope. The interval engine bounds sine, logarithm, pi and the integrated log-sine function by rational series with explicit remainder estimates. It does not infer a continuum inequality from samples or call a numerical optimizer to certify a maximum.
 
 The written proof explains why concavity and affine parameter dependence reduce the continuum statement to these finite comparisons. The [proof-input map](PROOF_INPUTS.md) identifies those arguments and the exact records used by the runner.
+
+## The quantitative circle-tree theorem
+
+Run its three programs with one command:
+
+```sh
+python3 repro/run_research_checks.py curvature-fillings
+```
+
+This group requires Python, SymPy and mpmath. It checks four edge-action
+identities and 990 finite complex Gaussian samples; 46 rational
+octahedral identities and seven bounds; and 128 ordered trees with
+448 local attachments and 28 additional algebraic identities. The
+programs retain both half-twist signs and the original peripheral
+curves. Results record the exact source hashes.
+
+The [proof-input map](PROOF_INPUTS.md#the-quantitative-circle-tree-theorem)
+locates the uniform estimates, arbitrary-tree induction and geometric
+completion. The finite tree examples check the attachment code against
+the original strand compiler; the induction proves the general case.
+The numerical Gaussian samples check formulas, while the written
+bounds control the whole complex domain.
 
 ## What a passing run does not replace
 

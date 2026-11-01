@@ -1,5 +1,32 @@
 # A-polynomial volume limits and torsors: current status
 
+The [pointed quantum A-period theorem](actual_conway_pointed_quantum_a_volume.md)
+reconstructs the reduced Kashaev invariant exactly from its genuine
+all-level recurrence, finite initial values and the derivative data
+needed at singular steps. For the covered knot families its volume
+limit follows from the theorem for that same scalar invariant.
+
+The proved families now include the long-net-twist Conway
+constructions and the
+[quantitative ordered circle trees](actual_all_circle_quantitative_volume.md).
+The latter satisfy
+\(\sum_v d_v/(d_v^2+n_v^2)\le2^{-25}\), with the original knot and
+framing conditions. Their volume is the original knot-complement
+volume; the meridian profile and preferred-cusp correction are also
+proved.
+
+Identifying the geometric factor in the classical limit of the
+selected annihilator remains a further question. The shrinking
+meridian profile does not by itself settle it. The
+[current frontier](../book/chapters/frontier.md) states the distinction
+and the ordinary-color obstruction.
+
+## Earlier torsor and full-source approaches, 28 October
+
+The following dated record preserves the ideas and their original
+limitations. It is not the current list of missing steps for the
+proved Conway families.
+
 Active sharp-bound attack, 28 October: follow the
 [full-source plan](full_source_volume_bound_attack_plan.md).
 The new [two-anchor contour bound](actual_coefficient_minimax_upper.md)
@@ -21,7 +48,7 @@ statement, not the missing exponential overlap or regulator estimate.
 
 Latest forced-flow theorem, 28 October: the
 [actual critical graph equation](charged_critical_flow_and_chambers.md)
-and strict source-cut inequalities bound ALL regular anchor critical
+and strict source-cut inequalities bound all regular anchor critical
 radii in a residual core by a polynomial in N. Balance forces the
 critical points onto the original unit torus, and chamber concavity
 then supplies a genuine selected-coefficient theorem under a sign gap.
@@ -39,7 +66,7 @@ through arbitrary exteriors, with the original pivot substitutions.
 Balanced trivalent stars have an exact triangle replacement. Its
 [retained defect polynomial](charged_star_triangle_defect_jets.md)
 has subexponential normalized coefficient norm for every e=o(N),
-with the explicitly calibrated TWO-tetrahedron scalar rate.
+with the explicitly calibrated two-tetrahedron scalar rate.
 [Cut/flag jets](charged_source_cut_jets.md) give exact global boundary
 factorizations and canonical residual flow cores. The original
 [underclock feedback](actual_clock_feedback_normal_form.md) is also
@@ -54,7 +81,7 @@ Each event is a homogeneous degree-(N-1) form, each anchor has one
 terminal denominator, and every nonzero cyclic alias is excluded by
 total degree. All closure adapters, pivots and the original cut remain.
 Anchor contours can move through arbitrary finite radii in this
-POLYNOMIAL presentation, without finite full-Psi/Cauchy seams. This
+polynomial presentation, without finite full-Psi/Cauchy seams. This
 does not continue the remaining discrete clock variables.
 
 The [fixed-level source algebra](actual_charged_socle_and_fermat_source.md)
@@ -293,7 +320,7 @@ dilogarithm action must be retained.
 
 The [positive alias counterexample](positive_geometric_alias_volume_counterexample.md)
 is a decisive scope correction: even on a positive complete ideal
-triangulation of 5_2, a nonnegative angle locus of an ACTUAL integer
+triangulation of 5_2, a nonnegative angle locus of an actual integer
 alias, with the complete marked meridian retained, contains a point
 of volume 3.76403...>Vol(5_2)=2.82812.... Universal domination of such
 faces by Rivin's original maximum is false. This is not a counterexample
@@ -563,7 +590,7 @@ volume theorem is inferred from this unfolding.
 | Carry the actual finite head cut into the global Fr source | [Whole degree-elevation current map](degree_elevation_actual_head_ward_map.md) | The explicit full-matrix elevation preserves coherent symbols, trace, average cut and endpoints. Whole actual arrow gauges give a strict K/F cut-Ward map and an original co-source homotopy, including the ordered Hopf-F correction. It is not multiplicative, so full crossings, the second internal framing coordinate and mixed normal currents still need their actual transport. |
 | Retain the full ordered multiplication behind the cut map | [Minimal Clebsch memory extension](clebsch_memory_dilation_and_actual_r_excursions.md) | The multiplicative defect factors through a minimal N-1 dimensional lower channel. Retaining that channel gives an exact whole old-head-R word/source extension, including auxiliary clock offsets, pivot and peripheral factors. An actual inverse-crossing calculation proves lower excursions cannot be omitted. Equality with actual high-color R or its geometric pushforward is not inferred. |
 | Resolve the entire omitted cut-current complement | [Highest-spin Bockstein wall](degree_elevation_complement_bockstein_wall.md), [explicit residue and moments](degree_elevation_wall_residual_and_source_moments.md) | Its 2N+1 dimensional highest-spin Borel complex contracts, without wall division, to one two-term line with differential delta/(1-delta). The contraction has O(N) root norm. An actual charged first-normal R-current reaches it. The original source weight is 2^(-N), versus the uniform interval's 1/(N+1); their exponential ratio is retained, not removed by a cut homotopy. |
-| Contract the complete high-color source using actual quantum-group words | [Whole Ward grid contraction](whole_high_color_ward_grid_contraction.md) | K and the actual divided Cartan separate the full grid, while ordinary/divided F integrate a spanning tree. The explicit contraction and original-source homotopy are regular whole q-functions with O(N^(3/2)) root bound for r=N. This includes the memory wall in an enlarged ACTUAL Ward complex; it does not erase the Green/current endpoints or identify high/low normal families. |
+| Contract the complete high-color source using actual quantum-group words | [Whole Ward grid contraction](whole_high_color_ward_grid_contraction.md) | K and the actual divided Cartan separate the full grid, while ordinary/divided F integrate a spanning tree. The explicit contraction and original-source homotopy are regular whole q-functions with O(N^(3/2)) root bound for r=N. This includes the memory wall in an enlarged actual Ward complex; it does not erase the Green/current endpoints or identify high/low normal families. |
 | Transport all divided currents through weighted words and pivotal closure | [Actual all-braid current/cap map](actual_divided_ward_closure_and_green_caps.md) | Every integral divided generator has a finite coupling current, with exact lower-moment Green endpoints. The frozen pivot is chi^(-1)ptr_K M_(Z^J); all cap defects and their ordered mixed cancellation are retained. The actual whole divided Cartan gives a unit wall-extraction row; a sourced closed return first appears at normal order N. The geometric-current pushforward remains unconstructed. |
 | Retain source-compatible global closure of the old-head memory extension | [Auxiliary Ward homotopy and caps](clebsch_hopf_closure_and_auxiliary_wall_homotopy.md) | Full mixed Hopf rows, auxiliary trace1/2 and explicit auxiliary contraction make the represented old-head upper wall zero before scalarity or internal summation. This is distinct from the actual high-color binomial source or the internal geometric sector. |
 | Construct the whole coherent source as a specified norm-torsor trace | [Integral divided source/Fermat trace](whole_frobenius_source_fermat_trace.md) | Integral kN-th divided powers give an exact Gaussian source polynomial, its Kummer trace and slow-coordinate norm, marked norm-one factor, first-normal flag law and cap generating function. A root-identity pair gauge carries the original exponential-source coupons and operators. No growing-level norm or knot-regulator comparison is inferred from this source identity. |
