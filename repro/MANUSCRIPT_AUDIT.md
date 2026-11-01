@@ -69,6 +69,31 @@ one indivisible theorem.
 
 ## Corrections made during this review
 
+**The latest finite-algebra and interface reading.** Appendix N now
+includes a proved product-reduction proposition: factors may be reduced
+before multiplication, and both value and first derivative are retained
+at a repeated root. The corresponding Lean module constructs the product
+and proves its compatibility with reduction. A second module checks
+Appendix M's coefficient recovery under \(u=hs\), including the exact
+limitation of every finite-order truncation. The
+[reading record](manuscript_audit/products-and-regrading.md) states their
+scope and the further analytic and geometric inputs.
+
+The same reading corrected two expressions. Appendix Q now uses
+\(Q(0,e^{q_{11}},e^{q_{14}})\), distinguishing positive weights from
+face labels. Appendix O now states holomorphic convergence
+\(B_{e,N}\to B_{e,0}\), with \(B_{e,0}(0)=C_e>0\), instead of
+asserting a constant limit away from the origin. Shrinking the fixed
+chart gives the positive real part needed in the proof. Neither
+correction changes the theorem's scope.
+
+The new statement-level map for N–Q can be checked with
+`python3 repro/check_manuscript_logic.py --output repro/results/manuscript-logic`.
+It detects missing premise roles, lost hypotheses, level mismatches and
+cycles, and rejects seven deliberately invalid substitutions. It retains
+the open general remainder. This is a consistency check of a declared
+proof map, not a verification of its mathematical assertions.
+
 **The regulator and the filled metric.** Appendix D previously moved
 directly from the completed metric to its volume identity. It now
 compares the same finite boundary triangulation with an equivariant map
@@ -193,6 +218,7 @@ The detailed records are organized by the implication being checked:
 | [Source coverage and parity](manuscript_audit/source-coverage-followup.md) | The recursive complementary-color proof and the statement-level dependency order of N, O, L and P; separate all-level results from odd-level cap research |
 | [Protected triangular sums](manuscript_audit/protected-sum.md) | Three sector comparisons, duplicate target cancellation, the N/O import interface, exact input certificates, and the bounded scope of the new Lean declarations |
 | [Retained geometric cells](manuscript_audit/retained-geometry-followup.md) | Primitive logarithmic periods, absolute volume calibration, and the precise rank, positivity and decoration assumptions in the filled-germ argument |
+| [Products, formal coefficients and volume interfaces](manuscript_audit/products-and-regrading.md) | Actual canonical multiplication and repeated-root derivatives; regrading injectivity and finite-jet scope; O's complex cofactor inputs and the separate full remainders in P and Q |
 
 The detailed records cover the finite functional in Appendix N, the
 geometric interface from O to P, the recursive source estimates in

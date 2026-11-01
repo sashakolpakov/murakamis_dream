@@ -1,0 +1,365 @@
+{
+  "scope": "Statement-level interfaces used by Appendices N–Q. The graph does not enumerate every internal lemma or external source used in their written proofs.",
+  "assumptions": {
+    "marked_sphere": "A fixed finite simple triangulated sphere with at least four vertices, its actual perfect dual matching, and a nonmatching marked edge; retain cyclic orders and primitive crossing-disk framings.",
+    "fixed_data": "The whole diagram, retained half twists and integer crossing powers are fixed before N tends to infinity. The invariant and framing use the recorded original normalization.",
+    "long_twists": "The absolute value of each signed auxiliary filling integer exceeds a threshold depending on the fixed diagram and hypotheses. The signs are independent. This is not a bound uniform in a growing family of diagrams.",
+    "knot_pairing": "The original strand connections give one knot, with no internally closed extra main component.",
+    "weak_balance": "The actual complete packing satisfies every inequality in (wb:balance), or the separately quantified small-defect criterion.",
+    "protected_inputs": "A fixed finite protected triangular assembly as in Appendix Q. Every input has a strict shared-weight certificate for every locally allowed noncentral string, even if its old global coefficient vanishes."
+  },
+  "nodes": {
+    "exact_source": {
+      "statement": "The reduced marked contraction is the original invariant. Its source has degree at most N-1 in each spectral variable; the scalar and framing factors are retained.",
+      "status": "written",
+      "levels": "all",
+      "location": {
+        "path": "manuscript/sections/O-morse-geometric-contribution.tex",
+        "anchor": "\\label{mcg:eq-5}"
+      },
+      "provides": [
+        "exact_invariant"
+      ],
+      "requires": {},
+      "assumptions": [
+        "marked_sphere",
+        "fixed_data"
+      ]
+    },
+    "complete_packing": {
+      "statement": "The original augmented diagram has the labeled positive complete packing and its absolute source-volume anchor.",
+      "status": "written",
+      "levels": "all",
+      "location": {
+        "path": "manuscript/sections/O-morse-geometric-contribution.tex",
+        "anchor": "\\label{mcg:sec-2}"
+      },
+      "provides": [
+        "complete_packing"
+      ],
+      "requires": {},
+      "assumptions": [
+        "marked_sphere"
+      ]
+    },
+    "central_local_estimates": {
+      "statement": "The exact central source has the relative holomorphic estimate and the global central spectral gap, with odd normals and both native parity anchors retained.",
+      "status": "written",
+      "levels": "all",
+      "location": {
+        "path": "manuscript/sections/O-morse-geometric-contribution.tex",
+        "anchor": "\\label{mca:eq-7}"
+      },
+      "provides": [
+        "central_estimates"
+      ],
+      "requires": {
+        "exact_invariant": "exact_source",
+        "complete_packing": "complete_packing"
+      },
+      "assumptions": []
+    },
+    "central_contribution": {
+      "statement": "For independently sufficiently long fixed signed twists, the entire central Fourier period has a nonzero subexponential amplitude at the selected action. Its action tends to the complete action as the fixed twists lengthen.",
+      "status": "written",
+      "levels": "all",
+      "location": {
+        "path": "manuscript/sections/O-morse-geometric-contribution.tex",
+        "anchor": "\\label{mca:eq-4}"
+      },
+      "provides": [
+        "nonzero_contribution"
+      ],
+      "requires": {
+        "central_estimates": "central_local_estimates"
+      },
+      "assumptions": [
+        "long_twists"
+      ]
+    },
+    "specified_metric": {
+      "statement": "The original primitive auxiliary slopes complete smoothly to the complement of the specified filled knot; its main cusp remains complete.",
+      "status": "written",
+      "levels": "all",
+      "location": {
+        "path": "manuscript/sections/O-morse-geometric-contribution.tex",
+        "anchor": "\\label{mcg:sec-7}"
+      },
+      "provides": [
+        "specified_metric"
+      ],
+      "requires": {
+        "complete_packing": "complete_packing"
+      },
+      "assumptions": [
+        "knot_pairing",
+        "long_twists",
+        "fixed_data"
+      ]
+    },
+    "absolute_volume": {
+      "statement": "The calibrated action, including the filling boundary correction, equals the volume of the same oriented completed metric divided by 2 pi.",
+      "status": "written",
+      "levels": "all",
+      "location": {
+        "path": "manuscript/sections/O-morse-geometric-contribution.tex",
+        "anchor": "\\label{mcg:eq-25}"
+      },
+      "provides": [
+        "absolute_volume"
+      ],
+      "requires": {
+        "specified_metric": "specified_metric",
+        "nonzero_contribution": "central_contribution"
+      },
+      "assumptions": []
+    },
+    "filling_norm": {
+      "statement": "The exact filling functional has norm at most the product of 1+|n_e|/2 on the canonical polynomial of degree at most N-1 in each variable.",
+      "status": "written",
+      "levels": "all",
+      "location": {
+        "path": "manuscript/sections/N-uniform-filling-bound.tex",
+        "anchor": "\\label{uf:eq-3}"
+      },
+      "provides": [
+        "filling_bound"
+      ],
+      "requires": {
+        "exact_invariant": "exact_source"
+      },
+      "assumptions": []
+    },
+    "weak_balance_source_gap": {
+      "statement": "Under the actual complete-packing inequalities, one common perturbation of weights gives a strict rate gap for the entire complementary polynomial on the full spectral cube.",
+      "status": "written",
+      "levels": "all",
+      "location": {
+        "path": "manuscript/sections/P-weak-balance.tex",
+        "anchor": "\\label{wb:remainder}"
+      },
+      "provides": [
+        "source_gap"
+      ],
+      "requires": {
+        "exact_invariant": "exact_source",
+        "complete_packing": "complete_packing"
+      },
+      "assumptions": [
+        "weak_balance"
+      ]
+    },
+    "weak_balance_remainder": {
+      "statement": "Apply the finite filling norm to the whole complementary polynomial. Increase the long-twist threshold after fixing its positive source gap, so the filled-action drop is smaller than that gap.",
+      "status": "written",
+      "levels": "all",
+      "location": {
+        "path": "manuscript/sections/P-weak-balance.tex",
+        "anchor": "\\label{wb:transfer}"
+      },
+      "provides": [
+        "full_remainder"
+      ],
+      "requires": {
+        "source_gap": "weak_balance_source_gap",
+        "filling_bound": "filling_norm",
+        "nonzero_contribution": "central_contribution"
+      },
+      "assumptions": []
+    },
+    "protected_certificate": {
+      "statement": "The protected triangular sum transports certificates for every locally allowed noncentral sector, with one common set of weights per string and exact cancellation of the duplicated ordinary target.",
+      "status": "written",
+      "levels": "all",
+      "location": {
+        "path": "manuscript/sections/Q-protected-triangular-sums.tex",
+        "anchor": "\\label{pts:eq-17}"
+      },
+      "provides": [
+        "shared_certificate"
+      ],
+      "requires": {},
+      "assumptions": [
+        "protected_inputs",
+        "marked_sphere",
+        "fixed_data"
+      ]
+    },
+    "protected_remainder": {
+      "statement": "The finite unabridged sector cover bounds the entire complementary polynomial. The exact filling norm transfers the gap; the fixed twist threshold makes it larger than the filled-action drop.",
+      "status": "written",
+      "levels": "all",
+      "location": {
+        "path": "manuscript/sections/Q-protected-triangular-sums.tex",
+        "anchor": "\\label{pts:eq-20}"
+      },
+      "provides": [
+        "full_remainder"
+      ],
+      "requires": {
+        "shared_certificate": "protected_certificate",
+        "exact_invariant": "exact_source",
+        "filling_bound": "filling_norm",
+        "nonzero_contribution": "central_contribution"
+      },
+      "assumptions": []
+    },
+    "rate_transfer": {
+      "statement": "A nonzero leading term with subexponential scalar and amplitude cannot be cancelled by a full remainder with a strictly smaller exponential rate.",
+      "status": "written",
+      "levels": "independent",
+      "location": {
+        "path": "manuscript/sections/09-reproduction.tex",
+        "anchor": "\\label{prop:volume-rate-transfer}"
+      },
+      "provides": [
+        "rate_transfer"
+      ],
+      "requires": {},
+      "assumptions": []
+    },
+    "weak_balance_volume": {
+      "statement": "All-level volume limit for the unchanged knot under weak balance.",
+      "status": "written",
+      "levels": "all",
+      "location": {
+        "path": "manuscript/sections/P-weak-balance.tex",
+        "anchor": "\\label{wb:volume}"
+      },
+      "provides": [
+        "volume_limit"
+      ],
+      "requires": {
+        "exact_invariant": "exact_source",
+        "nonzero_contribution": "central_contribution",
+        "specified_metric": "specified_metric",
+        "absolute_volume": "absolute_volume",
+        "rate_transfer": "rate_transfer",
+        "full_remainder": "weak_balance_remainder"
+      },
+      "assumptions": []
+    },
+    "protected_sum_volume": {
+      "statement": "All-level volume limit for any fixed finite protected assembly with the unabridged input certificates and its own knot-component test.",
+      "status": "written",
+      "levels": "all",
+      "location": {
+        "path": "manuscript/sections/Q-protected-triangular-sums.tex",
+        "anchor": "\\label{pts:closure}"
+      },
+      "provides": [
+        "volume_limit"
+      ],
+      "requires": {
+        "exact_invariant": "exact_source",
+        "nonzero_contribution": "central_contribution",
+        "specified_metric": "specified_metric",
+        "absolute_volume": "absolute_volume",
+        "rate_transfer": "rate_transfer",
+        "full_remainder": "protected_remainder"
+      },
+      "assumptions": []
+    },
+    "general_geometric_rate": {
+      "statement": "The all-central contribution alone is nonzero and has the actual knot-complement volume rate; this statement does not bound the full invariant.",
+      "status": "written",
+      "levels": "all",
+      "location": {
+        "path": "manuscript/sections/O-morse-geometric-contribution.tex",
+        "anchor": "\\label{mcg:eq-3}"
+      },
+      "provides": [
+        "geometric_rate"
+      ],
+      "requires": {
+        "exact_invariant": "exact_source",
+        "nonzero_contribution": "central_contribution",
+        "specified_metric": "specified_metric",
+        "absolute_volume": "absolute_volume"
+      },
+      "assumptions": []
+    },
+    "general_remainder": {
+      "statement": "A strict bound for the entire noncentral filled contribution on a general unchanged matched sphere. Neither the central estimate nor a single-cap estimate supplies this.",
+      "status": "open",
+      "levels": "all",
+      "location": {
+        "path": "manuscript/sections/O-morse-geometric-contribution.tex",
+        "anchor": "\\label{mcg:eq-29}"
+      },
+      "provides": [
+        "full_remainder"
+      ],
+      "requires": {
+        "exact_invariant": "exact_source",
+        "filling_bound": "filling_norm",
+        "nonzero_contribution": "central_contribution"
+      },
+      "assumptions": []
+    },
+    "general_volume": {
+      "statement": "The full-invariant volume limit for every unchanged matched sphere in the stated geometric setup; this is a target with an unresolved remainder premise.",
+      "status": "open",
+      "levels": "all",
+      "location": {
+        "path": "manuscript/sections/O-morse-geometric-contribution.tex",
+        "anchor": "\\label{mcg:sec-8}"
+      },
+      "provides": [
+        "volume_limit"
+      ],
+      "requires": {
+        "exact_invariant": "exact_source",
+        "nonzero_contribution": "central_contribution",
+        "specified_metric": "specified_metric",
+        "absolute_volume": "absolute_volume",
+        "rate_transfer": "rate_transfer",
+        "full_remainder": "general_remainder"
+      },
+      "assumptions": []
+    }
+  },
+  "conclusions": {
+    "weak_balance_volume": {
+      "assumptions": [
+        "marked_sphere",
+        "fixed_data",
+        "long_twists",
+        "knot_pairing",
+        "weak_balance"
+      ],
+      "unresolved": []
+    },
+    "protected_sum_volume": {
+      "assumptions": [
+        "marked_sphere",
+        "fixed_data",
+        "long_twists",
+        "knot_pairing",
+        "protected_inputs"
+      ],
+      "unresolved": []
+    },
+    "general_geometric_rate": {
+      "assumptions": [
+        "marked_sphere",
+        "fixed_data",
+        "long_twists",
+        "knot_pairing"
+      ],
+      "unresolved": []
+    },
+    "general_volume": {
+      "assumptions": [
+        "marked_sphere",
+        "fixed_data",
+        "long_twists",
+        "knot_pairing"
+      ],
+      "unresolved": [
+        "general_remainder",
+        "general_volume"
+      ]
+    }
+  }
+}

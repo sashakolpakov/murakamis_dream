@@ -104,6 +104,50 @@ estimate under weak balance is proved separately in
 Appendix~\ref{app:weak-balance}. For a general unchanged matched sphere
 that estimate remains an additional requirement.
 
+\section{The scope of the dependency argument}
+
+For the weak-balance and protected-sum results, the order of the
+quantifiers is
+\[
+ \begin{gathered}
+ \text{fix an admissible diagram and half twists};\qquad
+ \exists T\ \forall\boldsymbol p,\\
+ \min_e|p_e|>T\quad\Longrightarrow\quad
+ \lim_{N\to\infty}\frac{2\pi}{N}\log|K_N|
+      =\Vol(S^3\setminus K_{\boldsymbol p}).
+ \end{gathered}
+\]
+The diagram must satisfy the particular theorem's packing or certificate
+hypothesis, and its strand connections must give one knot. Each tuple
+$\boldsymbol p$ is fixed inside the limit. In the protected-sum theorem
+the number of pieces is also fixed before $T$ is chosen. The assertion
+does not supply one threshold for every diagram or allow the diagram
+or filling integers to vary with $N$.
+
+The dependency map in \sourcefile{repro/manuscript_logic.json} records
+the interfaces used by Appendices N--Q. Each full-volume conclusion
+must name its exact invariant, nonzero contribution, full remainder
+bound, specified completed metric, absolute action-volume identity,
+and final rate-transfer argument. The general unchanged-sphere route
+retains its unresolved remainder requirement. It is separate from the
+completed weak-balance and protected-sum routes.
+
+The following command checks that the recorded premises have the right
+roles, retain their assumptions and level scope, refer to existing
+statements, and contain no circular dependency:
+\begin{verbatim}
+python3 repro/check_manuscript_logic.py \
+  --output repro/results/manuscript-logic
+\end{verbatim}
+It also deliberately introduces seven defects and checks that each is
+rejected. These include removing the remainder premise, replacing it
+by the central contribution, importing an open estimate, and using an
+odd-level estimate in an all-level conclusion. The map is supplied by
+the author; its consistency is not a proof of the mathematics at its
+vertices. The recorded source hashes identify the texts used by the
+check. Internal analytic and geometric lemmas still require their
+written proofs.
+
 \section{Finite steps checked in Lean}
 
 The directory \sourcefile{formal/} contains a small formalization using
@@ -124,6 +168,14 @@ the constructed monic polynomial leaves the remainder and functional
 unchanged. These statements establish independence of the polynomial
 representative; they do not yet identify the functional with the
 original crossing matrix.
+The product module constructs multiplication of the coefficient lists
+and proves that reducing either factor leaves the final remainder and
+functional unchanged. It derives associative reduced multiplication,
+reduction after every step of a finite product, and the product rule
+for the value and first derivative at a repeated root.
+Proposition~\ref{prop:canonical-remainder-products} states these facts
+in polynomial notation. In particular the multiplication is proved
+compatible with reduction; that compatibility is not a formal hypothesis.
 The next module proves uniqueness of the remainder among all
 representatives of the required degree, allowing arbitrary trailing
 zeros in the coefficient lists. It then proves invariance under every
@@ -141,6 +193,13 @@ the smaller input gap. Appendix~\ref{app:protected-triangular-sums}
 proves that the diagrams and their shared witnesses supply these
 formal hypotheses. The triangulations, analytic estimates, and volume
 identity themselves are not formalized.
+The formal regrading module checks the coefficient substitution
+$u=hs$ used in Appendix~\ref{app:directed-all-orders}. It recovers
+every coefficient from its new pair of exponents and proves
+injectivity. It also proves that agreement through order $h^L$
+recovers exactly the coefficients of total degree at most $L$.
+The all-orders expansion, its uniform analytic remainder, and the
+identification of the longitude remain separate inputs.
 It also checks the scalar inequalities that compare the entropy gain
 with its quadratic cost and preserve a remainder gap after a small
 decrease in the action. From the repository root, run

@@ -544,7 +544,10 @@ If all four crossings in \(J\) were weak-balanced at the complete
 vector, then \(H_e=X_e\) at \(2,4,7\), and
 \(A_{12,R}\le X_{12}\). The latter follows from
 \(X_{12}\ge q_{11}\) and
-\(Q(0,11,14)\ge q_{11}/2\).
+\(Q(0,e^{q_{11}},e^{q_{14}})\ge q_{11}/2\). Here \(11\) and \(14\)
+are face labels; their positive coefficient weights are
+\(e^{q_{11}}\) and \(e^{q_{14}}\). The latter inequality tests the
+simplex vertex at the weight \(e^{q_{11}}\).
 It would give \(\widetilde G(q^*)\le P(q^*)=\Phi_{17}\),
 contradicting (29). Thus at least one crossing in \(J\) fails
 weak balance. This localization only needs the non-strict

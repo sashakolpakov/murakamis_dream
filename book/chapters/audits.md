@@ -65,6 +65,35 @@ product is reduced before that comparison is used.
 
 ## Checking finite implications in Lean
 
+The current audit also records a machine-readable dependency map for
+Appendices N–Q. Run:
+
+~~~sh
+python3 repro/check_manuscript_logic.py --output repro/results/manuscript-logic
+~~~
+
+The map keeps six premises attached to each full volume conclusion:
+the exact invariant, a nonzero leading contribution, a bound for the
+whole remainder, the specified completed metric, the absolute volume
+identity, and the final rate comparison. It records the packing or
+certificate assumption for each restricted family. The unrestricted
+matched-sphere route still has an open remainder premise.
+
+The checker detects missing premises, circular dependencies and changes
+of level scope. Seven deliberately invalid versions are also tested,
+including a substitution of an odd-level bound into an all-level
+argument. This checks the consistency of the written dependency map;
+it does not verify the mathematical claims assigned to its vertices.
+The saved report identifies the current source files by their hashes.
+
+Two corrections from the latest reading concern the mathematical text.
+In Appendix Q, face labels \(11,14\) are now distinguished from their
+weights \(e^{q_{11}},e^{q_{14}}\) in the triangle potential. In Appendix O,
+the even-action coefficient converges to a holomorphic function
+\(B_{e,0}(\delta^2)\), with \(B_{e,0}(0)=C_e>0\). It need not converge
+to the constant \(C_e\) away from zero. Continuity on a smaller fixed
+chart gives the positive real part used in the charge estimate.
+
 With the pinned Lean toolchain installed, run:
 
 ~~~sh
@@ -100,6 +129,37 @@ as required at repeated spectral roots. Proving that the actual source
 has the claimed degree and vanishes on the specified product grid is a
 separate part of Appendix N. This distinction is recorded in the formal
 project's explanation of every declaration.
+
+The new product module proves
+
+\[
+ \operatorname{rem}_p(fg)=
+ \operatorname{rem}_p\bigl(\operatorname{rem}_p(f)
+                              \operatorname{rem}_p(g)\bigr).
+\]
+
+It constructs multiplication from coefficient lists and proves the
+identity, rather than assuming that multiplication respects reduction.
+Thus a long product may be reduced after each step. At a repeated root
+\(r\), it retains the derivative
+\(f'(r)g(r)+f(r)g'(r)\), including when the modulus has further roots.
+The scalar coefficient functional is not asserted to be multiplicative.
+
+A second module checks the formal substitution used in the recurrence
+argument. If \(B(h,u)=\sum B_{a,b}h^au^b\), then
+
+\[
+ B_{a,b}=[h^{a+b}s^b]B(h,hs).
+\]
+
+Every coefficient is recoverable, so equality after substitution implies
+equality before substitution. Agreement through order \(h^L\), however,
+only recovers coefficients with \(a+b\le L\). The module also constructs
+a nonzero series invisible through any prescribed finite order. This
+explains why the manuscript requires an expansion to every order for
+the recurrence conclusion. Lean verifies this coefficient calculation;
+the analytic existence of that expansion and the longitude identification
+remain written proofs.
 
 ## Joining certified diagrams
 

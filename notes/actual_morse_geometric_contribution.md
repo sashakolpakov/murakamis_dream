@@ -727,7 +727,11 @@ powers.
 For clarity, the charge proof has four logically separate parts.
 Separate evenness writes
 \(\partial_eA_N=-2\delta_e B_{e,N}(\boldsymbol\delta^2)\),
-where \(B_{e,N}\to C_e>0\). The critical equations for positive
+where \(B_{e,N}\to B_{e,0}\) holomorphically and
+\(B_{e,0}(0)=C_e>0\). Shrinking the fixed complex chart and then
+increasing the starting level gives \(\operatorname{Re}B_{e,N}>0\)
+throughout it. At a nonzero argument the limit need not be the constant
+\(C_e\). The critical equations for positive
 charge magnitudes give
 \[
  \delta_e=-\frac{\ell_e/n_e}

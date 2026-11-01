@@ -147,7 +147,10 @@ The [manuscript audit](repro/MANUSCRIPT_AUDIT.md) records the proof
 dependencies, corrections, and precise extent of the review. The
 [Lean project](formal/README.md) verifies finite algebraic steps,
 including polynomial reduction with repeated roots and independence
-of its representative and root ordering. It also checks the local sector
+of its representative and root ordering, reduction of finite products,
+and the first derivative of a product at a repeated root. It also checks
+formal coefficient recovery under \(u=hs\), including the limitation
+of any fixed finite-order expansion, and the local sector
 comparisons and target cancellation for the triangular-sum construction.
 Appendix N explains why this
 remainder is unique and states exactly what would identify a candidate

@@ -19,6 +19,19 @@ python3 repro/check_proof_logic.py --output repro/results/proof-logic
 This command does not replace the certificate checks below or formally
 prove an analytic or geometric theorem in the manuscript.
 
+The statement-level dependency map for Appendices N–Q has a separate
+standard-library command:
+
+```sh
+python3 repro/check_manuscript_logic.py --output repro/results/manuscript-logic
+```
+
+It checks the declared premise roles, retained assumptions, level scope,
+references and absence of cycles. Seven deliberately invalid maps must
+be rejected. The unrestricted matched-sphere route retains its open
+remainder requirement. This is a check of the dependency record, not a
+formal proof of the mathematical claims it records.
+
 The exact verifiers require Python 3.10 or later and only its standard library. From the repository root, run:
 
 ```sh

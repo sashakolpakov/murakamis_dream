@@ -15,6 +15,12 @@ Appendix N now proves the uniqueness of polynomial reduction and its
 independence of root order, including repeated roots. These statements
 also have Lean proofs. The separate geometric and analytic reviews
 record their hypotheses and the earlier results they use.
+The product extension proves that factors may be reduced before each
+multiplication while retaining repeated-root derivatives. Appendix M
+also explains the formally checked coefficient recovery under
+\(u=hs\), and why it needs all expansion orders. The dependency check
+for Appendices N–Q keeps the full remainder premise distinct from the
+geometric contribution; it does not certify the proofs at its vertices.
 
 The paper proves volume limits for finite decorations of planar tangle diagrams and for specified ordered-tree constructions. The planar theorem starts from a simple triangulated sphere with a chosen matching, constructs its complete circle packing, and adds terminal tangles until a strict shared-radius inequality holds. Independently sufficiently long signed twists at every original and added crossing circle then give the volume equality for the resulting knot. The tree theorems have separate explicit degree and twist bounds. Chapter 1 distinguishes these families and their quantifiers.
 

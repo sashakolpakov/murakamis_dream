@@ -197,6 +197,54 @@ The derivative is the formal polynomial derivative. Thus repeated
 roots retain derivative information; replacing them by a single
 evaluation changes the operation.
 
+\begin{proposition}[Products and repeated-root derivatives]
+\label{prop:canonical-remainder-products}
+For any $f,g\in R[X]$,
+\[
+ \mathcal R_p(fg)=
+ \mathcal R_p\bigl((\mathcal R_p f)(\mathcal R_p g)\bigr),
+ \qquad
+ \ell_p(fg)=\ell_p\bigl((\mathcal R_p f)(\mathcal R_p g)\bigr).
+\]
+Consequently a finite product may be reduced after each multiplication,
+with the same final remainder and coefficient functional. This reduced
+multiplication is associative. If $r$ occurs at least twice among the
+roots of $p$, the final remainder retains both $(fg)(r)$ and
+\[
+ (fg)'(r)=f'(r)g(r)+f(r)g'(r).
+\]
+For the modulus $(X-r)^2$ its full expression is
+\[
+ \mathcal R_{(X-r)^2}(fg)
+ =f(r)g(r)+\bigl(f'(r)g(r)+f(r)g'(r)\bigr)(X-r).
+\]
+No degree bound on the unreduced factors or their product is required.
+\end{proposition}
+
+\begin{proof}
+Write $f=\mathcal R_p f+pa$ and $g=\mathcal R_p g+pb$ using
+synthetic division. Their product differs from
+$(\mathcal R_p f)(\mathcal R_p g)$ by
+$p\{a\mathcal R_p g+b\mathcal R_p f+pab\}$. Uniqueness of the
+remainder proves the first equality; taking its top coefficient proves
+the second. Repeating the equality proves the finite-product statement.
+Either parenthesization of a product of three factors reduces the same
+polynomial $fgh$, which proves associativity.
+
+When $(X-r)^2$ divides $p$, the difference between any polynomial and its
+remainder has both value and formal derivative zero at $r$. The formal
+product rule gives the displayed derivative. The explicit degree-one
+remainder then follows from the double-root formula above.
+\end{proof}
+
+The coefficient functional is linear, but it is generally not
+multiplicative: $\ell_p(fg)$ need not equal $\ell_p(f)\ell_p(g)$.
+The product must be formed and reduced before its coefficient is taken.
+At a repeated spectral root the product rule also retains the first
+derivative of either factor; a list of values alone cannot replace it.
+This is the algebra needed when a product initially exceeds the
+canonical degree in Appendix~\ref{app:directed-all-orders}.
+
 These polynomial statements are checked in the Lean files described
 in Chapter~\ref{ch:reproduction}. The implementation uses coefficient
 lists and also proves invariance under arbitrary trailing zeros.

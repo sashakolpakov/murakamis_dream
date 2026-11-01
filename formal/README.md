@@ -28,8 +28,10 @@ theorem is applied.
 | [MonicRemainder.lean](VolumeLogic/MonicRemainder.lean) | Synthetic division and an explicit remainder modulo a split monic polynomial; coefficientwise reconstruction, the degree bound, and its top coefficient as an iterated divided difference. Repeated nodes are allowed. | Constructs the finite coefficient operation underlying Appendix N's Hermite functional. The actual Chebyshev polynomial and crossing-operator interpretation remain separate inputs. |
 | [MonicLinearity.lean](VolumeLogic/MonicLinearity.lean) | Linearity of that constructed remainder and its top-coefficient functional; invariance under coefficient-equivalent lists, arbitrary trailing zeros, and addition of a multiple of the modulus. | Establishes that polynomial representatives give the same functional. It does not identify that functional with the marked crossing matrix. |
 | [MonicUniqueness.lean](VolumeLogic/MonicUniqueness.lean) | Uniqueness of the remainder under a coefficientwise degree bound, including padded lists; idempotence; invariance under permutations of repeated or distinct roots; characterization of the functional by its values below the modulus degree and its vanishing on multiples. | Formalizes the canonical-remainder proposition in Appendix N. The characterization gives sufficient hypotheses for identifying a candidate functional; it does not prove those hypotheses for a crossing matrix. |
+| [MonicProduct.lean](VolumeLogic/MonicProduct.lean) | Constructs coefficient-list multiplication and proves its ring identities, closure of the explicit monic ideal under multiplication, associative canonical quotient multiplication, and reduction before every step of a finite product. The full value and first-normal product rules are retained at repeated roots. | Checks the polynomial-representative algebra used in Appendix M's canonical-degree restriction and Appendix N's repeated-root functional. It does not prove the Chebyshev folding norm, the crossing-operator identification, or any analytic bound. |
 | [ProtectedSum.lean](VolumeLogic/ProtectedSum.lean) | The three local sector comparisons for a protected triangular sum, cancellation of the duplicated face target, and preservation of a positive gap. The local maxima and the sector map are constructed explicitly. | Scalar part of Appendix Q. The triangle lower bounds, existence of shared witnesses, diagram construction, and analytic and geometric inputs remain written proofs. |
 | [RateComparison.lean](VolumeLogic/RateComparison.lean) | A linear entropy gain exceeds a quadratic cost under the stated inequality; nonnegative additional losses cannot undo a strict sector gap; a sufficiently small filling-action drop preserves the gap. | Scalar implications in Appendix P, following the entropy, Hessian, and filling estimates. |
+| [FormalRegrading.lean](VolumeLogic/FormalRegrading.lean) | The coefficient substitution \(u=hs\), its inverse on the supported coefficient tables, injectivity, and the exact information retained through any finite order. A nonzero term invisible through a prescribed order is constructed. | The formal coefficient argument in Appendix M. The analytic expansion to every order, compatibility with the actual operator, and the geometric longitude remain separate proofs. |
 
 The algebraic declarations quantify over arbitrary commutative rings, or
 ordered commutative rings where an inequality is needed. The list
@@ -121,6 +123,15 @@ These conclusions establish invariance under changing the polynomial
 representative modulo \(p\). An abstract quotient-ring type and the general confluent root-sum
 formula are not yet exported by the project. Invariance under reordering
 the roots is proved in `MonicUniqueness`.
+
+`MonicProduct` constructs multiplication of coefficient lists and proves
+\(\mathcal R_p(fg)=\mathcal R_p((\mathcal R_pf)(\mathcal R_pg))\).
+It also proves that reducing after each multiplication in a finite
+product gives the same final remainder and top-coefficient functional.
+At a double root, the reduced product retains
+\(f'(r)g(r)+f(r)g'(r)\), including when either value vanishes.
+The code constructs an associative multiplication on canonical lists;
+it does not declare a separate abstract quotient-ring type.
 
 The next algebraic step is to supply the actual Chebyshev factorization
 and prove that this finite functional evaluates the original crossing

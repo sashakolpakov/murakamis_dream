@@ -415,6 +415,17 @@ not an asymptotic estimate for an unbounded physical parameter. If
 \]
 For each \(n\) only finitely many pairs \((a,b)\) occur. Moreover,
 \(B_{a,b}=[h^{a+b}s^b]B(h,hs)\), so substitution is injective.
+
+This recovery uses every order. More precisely, two substituted series
+agree through order $h^L$ if and only if their original coefficients
+agree for every pair $a,b$ with $a+b\le L$. The forward implication
+reads the coefficient of $h^{a+b}s^b$; the reverse implication uses
+the displayed formula. For example, the nonzero series $h^{L+1}$ is
+invisible through order $h^L$. Thus no fixed finite jet would justify
+the following argument. The coefficient recovery, its injectivity,
+and this finite-order distinction are checked in
+\sourcefile{formal/VolumeLogic/FormalRegrading.lean}.
+
 Apply this to the denominator-cleared operator expression built from
 \eqref{dao:eq-32} and its finite shift ratios. That expression belongs
 to \(\mathbb C[[h,u]]\), and its substitution is exactly the already

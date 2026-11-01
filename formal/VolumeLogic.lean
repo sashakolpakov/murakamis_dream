@@ -5,3 +5,5 @@ import VolumeLogic.ProtectedSum
 import VolumeLogic.MonicRemainder
 import VolumeLogic.MonicLinearity
 import VolumeLogic.MonicUniqueness
+import VolumeLogic.MonicProduct
+import VolumeLogic.FormalRegrading

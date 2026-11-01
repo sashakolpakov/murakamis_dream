@@ -380,6 +380,14 @@ not an asymptotic estimate for an unbounded physical parameter. If
 \]
 For each \(n\) only finitely many pairs \((a,b)\) occur. Moreover,
 \(B_{a,b}=[h^{a+b}s^b]B(h,hs)\), so substitution is injective.
+
+This recovery uses every order. Agreement through order \(h^L\)
+recovers exactly the coefficients with \(a+b\le L\). For example,
+the nonzero series \(h^{L+1}\) is invisible through that order.
+The coefficient recovery, injectivity, and finite-order distinction are
+checked in `formal/VolumeLogic/FormalRegrading.lean`. The analytic
+existence of the expansion remains a separate input.
+
 Apply this to the denominator-cleared operator expression built from
 (32) and its finite shift ratios. That expression belongs
 to \(\mathbb C[[h,u]]\), and its substitution is exactly the already
