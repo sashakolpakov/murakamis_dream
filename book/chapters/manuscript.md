@@ -62,7 +62,9 @@ moving-meridian theorem to the decorated planar class.
 Appendix N proves a finite norm bound for inserting signed twists.
 Let \(S_N(\sigma_1,\ldots,\sigma_r)\) be the polynomial obtained
 after the common face coefficient has been taken, and let \(n_e\)
-be the fixed crossing powers. The bound is
+be the fixed crossing powers. The polynomial must have degree at most
+\(N-1\) in each spectral variable; the exact source construction
+establishes this hypothesis. The bound is
 \[
  |Z_N(\boldsymbol n)|
  \le\prod_{e=1}^r(1+|n_e|/2)\,
@@ -84,6 +86,15 @@ with the correct primitive peripheral curves. This contribution is
 one specified part of the invariant. The appendix does not bound
 the complementary pieces for every such diagram and therefore makes
 no general full-invariant claim for the unchanged cores.
+
+These two results can be proved without resolving the general remainder
+problem. To use them in a full volume proof, one must additionally
+bound the complementary polynomial and compare its rate with that of
+the nonzero geometric contribution. For the decorated planar family,
+the prescribed insertions supply the strict comparison. For the tree
+families, the recursive estimates supply it under their own hypotheses.
+The open comparison for an arbitrary unchanged diagram is therefore
+not an assumed step in those more restricted theorems.
 
 ## The ordered tangle construction
 

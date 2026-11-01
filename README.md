@@ -24,6 +24,9 @@ The guide defines its terms before using the source-polynomial and
 geometric constructions. The
 [results chapter](https://sashakolpakov.github.io/murakamis_dream/guide/results.html)
 states the precise hypotheses for each family.
+Its [literature comparison](https://sashakolpakov.github.io/murakamis_dream/guide/results.html#comparing-the-result-with-other-volume-statements)
+also distinguishes the Kashaev limit from Turaev–Viro volume statements,
+and records restrictions such as odd levels or a specified link family.
 
 ## Planar constructions with arbitrarily many tangles
 
@@ -110,6 +113,8 @@ Chapter 1 separates full volume theorems from completed partial results:
 a finite filling estimate and a theorem about one geometric contribution
 do not assert the volume limit for an arbitrary original invariant.
 New generalizations are included only when their arguments are complete.
+The open remainder estimate for unchanged general diagrams is not a
+premise of the restricted-family proofs.
 
 The [illustrated guide](https://sashakolpakov.github.io/murakamis_dream/)
 also explains the approaches that remain incomplete. Its

@@ -23,11 +23,11 @@ REPO = "https://github.com/sashakolpakov/murakamis_dream"
 CHAPTERS = [
     ("index", "Overview"), ("starting", "Start with the diagram"),
     ("manuscript", "The manuscript"), ("results", "Equality results"),
-    ("mechanism", "The mechanism"), ("methods", "Methods and approaches"),
+    ("mechanism", "How the proof works"), ("methods", "Methods and approaches"),
     ("algebraic", "Algebraic approaches"),
-    ("geometry", "Actual geometry"),
-    ("frontier", "Current frontier"), ("notation", "Notation"),
-    ("audits", "Reproducing audits"),
+    ("geometry", "Hyperbolic geometry"),
+    ("frontier", "Open questions"), ("notation", "Notation"),
+    ("audits", "Reproducing calculations"),
 ]
 COLLECTIONS = json.loads((ROOT / "book/collections.json").read_text())
 
@@ -93,7 +93,7 @@ def note_context(source, base, status):
             + (f' / {routes}' if routes else '')
             + f'<p><span class="badge">{escape(status)}</span> Technical research note. Exact scope and later corrections are stated in the text.</p>'
             + '<div class="note-resources">' + " ".join(links)
-            + f'<a href="{base}guide/frontier.html">Current frontier</a></div></div>')
+            + f'<a href="{base}guide/frontier.html">Open questions</a></div></div>')
 
 
 def title_of(text, fallback):

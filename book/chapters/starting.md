@@ -84,6 +84,18 @@ torus. This operation is Dehn filling. “Primitive” means that the
 curve represents an indivisible element of the integral first homology
 of the boundary torus.
 
+**Definition (meridian and longitude).** The meridian of a link
+component is an essential simple closed curve on its boundary torus
+that bounds a disk in the removed tubular neighborhood. Essential
+means that it does not contract to a point within the boundary torus.
+A longitude runs once parallel
+to the component. In the three-sphere, the preferred longitude is
+the parallel curve with linking number zero with that component.
+After orientations are chosen, the meridian and preferred longitude
+give a basis of the torus's first integral homology. A slope is then
+specified by a coprime integer pair in this basis; reversing both
+integers leaves the unoriented slope unchanged.
+
 For a crossing circle, choose the meridian \(\mu_e\) and disk longitude
 \(\lambda_e\) with the orientations used in the proof. The subscript
 \(e\) labels the twist region. In the manuscript's convention,

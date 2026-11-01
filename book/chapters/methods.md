@@ -440,7 +440,114 @@ The local \(6j\)-volume relation is established literature: see [Costantino, *6j
 
 For the general right-angled source, a common choice of frame cannot put all local factors in the same strict selected domain. The [frame obstruction](../../notes/actual_right_angled_selected_framing_obstruction.md) and [localization theorem](../../notes/actual_augmented_plat_selected_factor_localization.md) locate the exceptional pair and control the other factors under their stated hypotheses. Regrouping that pair gives an exact larger block. Its full operator norm and the remaining coherent contraction still have to be controlled. A favorable scalar coefficient is not a bound for that entire block.
 
-The cube calculations test a different issue: a network can contain a geometric region shared by several local pieces. The [four-rung cube result](../../notes/actual_cube_four_rung_positive_source.md) sums specified channels and proves a volume rate for that partially projected source. Other cycle channels remain fixed. Removing those projections and handling all levels is a separate problem. The [shared-core geometry](../../notes/actual_nc_graph_rectified_core_geometry.md) shows why simply adding local cell maxima can miss a genuine global volume term.
+### The cube: four channels summed, eight still fixed
+
+The cube calculations test a different issue: a network can contain a
+geometric region shared by several local pieces. The graph here is
+literally a cube, with eight trivalent vertices and twelve edges.
+Write its two four-cycles as \(t_0t_1t_2t_3t_0\) and
+\(b_0b_1b_2b_3b_0\); the four remaining edges join \(t_i\) to \(b_i\).
+These joining edges are called the *rungs*. The source retains the
+original cyclic order at each vertex and its exposed marked strand.
+The graph alone does not authorize changing those orders or replacing
+the marked contraction by an ordinary matrix trace.
+
+![The cube graph has four blue rung edges and eight amber cycle edges. The proved packet sums the rung channels and fixes the cycle channels. This is a graph schematic, not a link diagram.](../figures/cube-channels.svg)
+
+Take an odd level \(N=2m+1\ge3\), and set \(d=N-1=2m\).
+The internal Casimir channels are indexed by \(j=0,\ldots,m\).
+They are intermediate representation labels, distinct from the
+auxiliary circle colors, which remain the complete color \(N\).
+The channel \(j=m\) is the isolated Steinberg channel. In the
+Casimir coordinate of this calculation it is the simple node
+\(c_m=-2\); the other channels correspond to double nodes.
+
+What does fixing a channel mean at a double node? Let \(E_j\) be the
+projector onto the corresponding local summand of the full Casimir
+algebra, retaining both the value and first-derivative coordinates
+at every double node. If \(L_N\) is the complete-circle operator,
+its \(j\)-th sector is \(L_j=L_NE_j\). Replacing \(L_N\) by \(L_j\)
+is the projection used here. It does not discard the derivative
+coordinate or turn the root algebra into a list of distinct
+eigenvalues. Summing \(L_j\) over all \(j\) restores \(L_N\).
+
+The [four-rung theorem](../../notes/actual_cube_four_rung_positive_source.md)
+fixes \(j=m\) on all eight cycle edges and sums \(j_0,j_1,j_2,j_3\)
+independently from \(0\) to \(m\) on the rungs. Let
+\(Z_{\boldsymbol j}\) be the original marked contraction for this
+tuple, with zero rung twists and with any common cycle-twist phase
+removed. The exact positive Newton calculation proves
+\[
+ Z_{\boldsymbol j}>0
+       \ \Longleftrightarrow\ j_0+j_1+j_2+j_3\ge d,
+ \qquad
+ Z_{\boldsymbol j}=0
+       \quad\text{otherwise}.
+\]
+Every local vertex already has incident labels \(m,m,j_r\),
+whose sum is at least \(d\). The additional condition on the four
+rungs is therefore a constraint from the whole contraction.
+Checking the local vertex supports would miss it.
+
+Put \(Z_{\mathrm{St}}=Z_{(m,m,m,m)}\), and let
+\(Z_{\mathrm{four}}=\sum_{j_0,\ldots,j_3=0}^m Z_{\boldsymbol j}\).
+The proved finite comparison is
+\[
+ 0\le Z_{\boldsymbol j}\le16Z_{\mathrm{St}},
+ \qquad
+ Z_{\mathrm{St}}\le Z_{\mathrm{four}}
+                 \le16(m+1)^4Z_{\mathrm{St}}.
+\]
+It follows from positive coefficients after the actual cup-and-cap
+turn and the full source contraction. It is not an assumption that
+each root projector is positive in a Hermitian inner product.
+Some of the intermediate rung maps are nonzero maps whose squares
+vanish; the calculation retains them before proving positivity of
+the final scalar. The same proof gives a strict relative exponential
+loss when any \(m-j_r\) is at least a fixed positive multiple of
+\(N\).
+
+The polynomial factor \(16(m+1)^4\) disappears after taking
+\((2\pi/N)\log\). Thus the
+[central Newton period](../../notes/actual_positive_newton_cuboctahedral_period.md)
+and the finite comparison give
+\[
+ \lim_{\substack{N\to\infty\\N\ \mathrm{odd}}}
+       \frac{2\pi}{N}\log Z_{\mathrm{four}}
+       =16v_8+2\operatorname{Vol}(Q_{\mathrm{cube}}).
+\]
+Here \(v_8\) is the volume of a regular ideal octahedron.
+\(Q_{\mathrm{cube}}\) is the ideal right-angled cuboctahedron:
+its twelve vertices correspond to the cube edges, its eight
+triangular faces to the cube vertices, and its six square faces
+to the cube faces. This is the *shared core*. In the actual
+geometric decomposition, one attaches eight regular ideal
+octahedra to one copy of this core and then uses two copies of
+the resulting ball. The labeled face identifications produce
+the original augmented cube link complement. Its volume is
+therefore exactly the displayed
+\(16v_8+2\operatorname{Vol}(Q_{\mathrm{cube}})\), not merely the
+sum of twelve independently optimized edge contributions. The
+[shared-core construction](../../notes/actual_nc_graph_rectified_core_geometry.md)
+checks those face identifications and completeness.
+
+There are two substantial limits to this conclusion. First, it
+keeps all eight cycle projections, and it treats only odd levels.
+The finite comparison does not control the eight omitted sums.
+Second, nonzero rung twists introduce different phases into
+different summands. With \(q=e^{\pi i/N}\), the sector phase of
+a signed crossing power \(e\) is
+\[
+ \omega_j^e,\qquad
+ \omega_j=q^{d^2/2}(-1)^j q^{j(j+1)}.
+\]
+Cycle twists have a common phase because all their channels
+are fixed at \(m\); rung twists generally do not. The positivity
+argument above therefore proves the stated zero-rung-twist
+packet, not noncancellation of an arbitrary twisted rung sum.
+The volume is that of the complement with its crossing circles
+retained. Neither removal of all projections nor a full filled-knot
+volume limit follows from this result.
 
 ## Which approaches are retained, and where to read them
 
@@ -474,5 +581,12 @@ The citations beside the methods identify the relevant statement and its role. F
 5. **Recurrences:** Wilf–Zeilberger for multisum elimination, then the colored-Jones and ADO papers for the objects and conventions concerned. Keep the classical A-curve and the proposed characteristic comparison separate.
 6. **Regulators and peripheral geometry:** Neumann–Zagier for the local deformation potential, Neumann for logarithmic regulator data, and the explicit torsor definitions for any claimed group action.
 7. **Local asymptotics versus a whole knot period:** Costantino's \(6j\)-volume result and the Nahm-sum comparison illustrate related problems with different normalizations and limiting regimes. The complete-source estimates and contour arguments remain the additional work in this project.
+
+The [comparison of volume statements](results.md#comparing-the-result-with-other-volume-statements)
+separately records which invariant and knot or link family occur in
+related results. In particular, a theorem for a local recoupling
+coefficient, a partially projected source, or a different three-manifold
+invariant should not be read as the same assertion as a full Kashaev
+limit for the original knot.
 
 The literature search is a coverage and attribution check. It does not turn an external paper into an unchecked proof input, or turn a local calculation into a theorem about an arbitrary knot. The manuscript states the actual hypotheses and supplies the arguments used for its conclusions.

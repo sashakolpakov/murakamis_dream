@@ -957,3 +957,58 @@ No equality with the full A-polynomial, no factor multiplicity,
 and no identification of the entire recurrence ideal is claimed.
 Ordinary resonances and knots outside the covered classes remain
 separate questions.
+
+## Comparing the result with other volume statements
+
+The phrase “volume conjecture” is used for several different sequences
+of quantum invariants. A comparison must specify the invariant, the
+manifold, the allowed levels, and whether the diagram has been changed.
+The following papers provide relevant coverage. They are not additional
+proof assumptions for the theorems in this manuscript.
+
+**Whitehead chains.** In
+[van der Veen's paper, §1 and the main theorem](https://arxiv.org/pdf/math/0611181),
+the link \(W_{a,b,c,d}\) is obtained by composing signed twist tangles,
+\(b\ge1\) belt tangles, \(c\ge0\) clasps and \(d\ge0\) mirror clasps.
+The theorem concerns the normalized colored Jones evaluation at
+\(e^{2\pi i/N}\). Its distinction between levels is essential:
+the stated asymptotic holds through all levels when \(b=1\); for
+\(b\ge2\), it holds on odd levels and the even-level evaluations
+vanish. Thus a claim for all integer levels cannot be inferred merely
+from membership in a broadly named family of chain links.
+
+**Turaev–Viro invariants.** Write \(TV_r(X,q)\) for the
+Turaev–Viro state-sum invariant of a compact three-manifold \(X\),
+at integer level \(r\) and the specified root \(q\). Its definition
+sums representation labels on a triangulation. It is a different
+quantity from the single reduced knot evaluation \(K_N(K)\).
+In the convention stated in
+[Ibarra, McQuire and Purcell, Conjecture 1.1](https://arxiv.org/pdf/2506.09296),
+the proposed limit is
+\[
+ \lim_{\substack{r\to\infty\\r\ \mathrm{odd}}}
+       \frac{2\pi}{r}\log
+       \left|TV_r\bigl(X,e^{2\pi i/r}\bigr)\right|
+       =\operatorname{Vol}(X).
+\]
+For a link exterior, the volume on the right means the volume of
+its complete hyperbolic interior. Identifying two such interiors
+geometrically does not identify a Turaev–Viro state sum with a
+particular Kashaev evaluation.
+
+Three nearby statements illustrate the distinction:
+
+| Reference | Object and stated scope |
+| --- | --- |
+| [Kumar, *Fundamental shadow links realized as links in \(S^3\)*](https://arxiv.org/abs/2005.11447v3) | Constructs infinite families of links in the three-sphere whose complements satisfy the Turaev–Viro volume statement, using homeomorphisms with fundamental shadow-link exteriors. |
+| [Ibarra–McQuire–Purcell, *Augmented links, shadow links, and the TV volume conjecture*](https://arxiv.org/abs/2506.09296v1) | Gives a geometric comparison of octahedral fully augmented exteriors with shadow-link exteriors and a Turaev–Viro verification in the no-half-twist case. “Octahedral” is a restriction on the decomposition, not a synonym for every fully augmented link. |
+| [Shen, *The Chen–Yang volume conjecture for long integral fillings of fundamental shadow links*, version 3](https://arxiv.org/abs/2609.11839v3) | States a volume theorem for the \(SO(3)\) Turaev–Viro invariants of sufficiently long fixed integral fillings, through odd levels, with independent signs and magnitudes. |
+
+The last paper is a September 2026 preprint; this comparison records
+its stated scope, without importing its proof. The knot theorems in
+this repository instead retain the original reduced Kashaev scalar,
+its marked closure, and both level parities. Any proposed deduction
+from one of these neighboring results must supply the exact relation
+between those quantities and preserve the same peripheral filling.
+The comparison makes no claim that the listed papers exhaust the
+literature or that the constructions here are disjoint from theirs.

@@ -119,8 +119,18 @@ and control the sizes of that gauge and its inverse as \(N\) grows.
 
 There is an explicit warning within the original source calculations.
 The [primitive gauge calculation](../../notes/actual_hilbert90_gauge_dilogarithm_action.md)
-constructs a polynomial \(g_N(z)\) with constant term one, solving its
-specified cyclic transport equation. On \(|z|\le1/4\), it proves
+works in the nilpotent algebra \(\mathbb C[z]/(z^N)\). Put
+\(Q_N=e^{2\pi i/N}\). In that algebra it constructs the unique unit
+\(g_N\) with constant term one satisfying
+\[
+             \frac{g_N(Q_Nz)}{g_N(z)}
+                     =\frac1{(1-z)(1-Q_Nz)}.
+\]
+Both denominators are units because their constant terms are one.
+This is a concrete cyclic transport equation in a ring with
+nilpotents, not a direct application of the field theorem above.
+Choose the unique polynomial representative of degree less than
+\(N\). On \(|z|\le1/4\), the calculation proves
 \[
  g_N(z)=
  \exp\!\left(\frac{2\operatorname{Li}_2(z)}{h_N}
@@ -175,15 +185,22 @@ translation calculation. Let \(V\) have basis
  Te_j=e_{j+1}\quad(j<n-1),\qquad Te_{n-1}=H e_0.
 \]
 Then \(T^n=H I\). The cokernel of \(1-T\) identifies all the \(e_j\),
-and its final relation is \((1-H)e_0=0\). More precisely, changes
-of basis over \(R\), using no division, reduce \(1-T\) to
+and its final relation is \((1-H)e_0=0\). More precisely, separate
+changes of basis in the domain and codomain, using no division,
+reduce \(1-T\) to
 \[
                    \operatorname{diag}(1,\ldots,1,1-H).
 \]
 The [finite translation proof](../../notes/rational_period_pushforward.md#4-the-algebraic-gluing-support-is-a-koszul-reduction)
-gives those bases explicitly. For several commuting translations on
-separate tensor factors, tensoring these reductions gives the Koszul
-complex of the equations \(1-H_i\).
+gives those bases explicitly. This is a reduction of a linear map,
+not conjugation of \(T\) by one basis change. Each diagonal entry
+one gives a two-term complex \(R\xrightarrow{1}R\), whose homology
+is zero and which can be removed by an explicit chain homotopy.
+The remaining complex is \(R\xrightarrow{1-H}R\). For several
+commuting translations on separate tensor factors, tensoring these
+reductions gives a chain equivalence with the Koszul complex of
+the equations \(1-H_i\). It preserves homology without asserting
+that the original and reduced complexes have equal dimensions.
 
 A sequence is *regular* if its generated ideal is proper and each
 \(f_i\) is a non-zero-divisor after the preceding equations have been
@@ -220,6 +237,30 @@ Thus knowing the root values does not give their transverse
 derivatives. A *jet of order \(k\)* at a point means its Taylor
 coefficients through order \(k\), or equivalently its derivatives
 of orders \(0,\ldots,k\). Values are only jets of order zero.
+The cyclotomic polynomial \(\Phi_n(q)\) is the monic polynomial
+whose roots are the primitive \(n\)-th roots of unity. In
+characteristic zero, divisibility by \(\Phi_n(q)^{k+1}\) means
+vanishing of all these derivatives through order \(k\) at every
+primitive \(n\)-th root.
+
+There is also an established uniqueness theorem for a different,
+precisely specified class. Habiro's cyclotomic completion is
+\[
+ \widehat{\mathbb Z[q]}
+   =\underset{n}{\lim_{\leftarrow}}\mathbb Z[q]/I_n,\qquad
+ I_n=\bigl((1-q)(1-q^2)\cdots(1-q^n)\bigr).
+\]
+An element is a compatible system of polynomial residue classes,
+not an arbitrary list of values at different levels. Each root
+of unity gives an evaluation because the displayed product
+eventually vanishes there. The full Taylor series at one root
+determines an element of this completion; its values at all roots
+also determine it. These are injectivity statements in
+[Habiro, *Cyclotomic completions of polynomial rings*, Theorems 5.4 and 6.3](https://arxiv.org/abs/math/0209324).
+The integer coefficient ring and the specified completion matter.
+These statements neither put an arbitrary level-dependent state
+in that completion nor estimate its size. A proposed regulator
+comparison would first have to be constructed in the same class.
 
 The [whole algebraic comparison theorem](../../notes/whole_period_cyclotomic_rigidity.md)
 works with a fixed algebraic presentation, bounds on its possible
@@ -258,11 +299,22 @@ equations.
 
 ## Regge symmetry and nilpotent transport
 
-Regge symmetries are transformations of tetrahedral edge data that
-preserve specified geometric quantities. For their geometric setting,
-see [Akopyan and Izmestiev, *The Regge symmetry, confocal conics, and
-the Schläfli formula*](https://arxiv.org/abs/1903.04929).
-They are not arbitrary changes of a knot's triangulation.
+A Regge involution fixes a pair of opposite tetrahedral edges.
+If the other four edge lengths are \(a,b,c,d\), put
+\(s=(a+b+c+d)/2\) and replace them by
+\[
+                         s-a,\quad s-b,\quad s-c,\quad s-d.
+\]
+For a tetrahedron in Euclidean, spherical, or hyperbolic space,
+the geometric Regge theorem identifies the transformed dihedral
+angles and proves equality of volume; see
+[Akopyan and Izmestiev, *The Regge symmetry, confocal conics, and
+the Schläfli formula*, Theorem 1.1](https://arxiv.org/abs/1903.04929).
+This is a specific transformation of one tetrahedron, not an
+arbitrary change of a knot's triangulation. At ideal vertices the
+edge lengths are infinite, so the ideal discussion below uses
+angles and logarithmic shapes instead of substituting into this
+finite-length formula.
 
 For an ideal tetrahedron, opposite dihedral angles agree. The
 angle data are a triple \((\alpha,\beta,\gamma)\) with sum \(\pi\).
@@ -310,6 +362,26 @@ Two different kinds of cover occur. Labeling the vertices of a
 tetrahedron removes a finite ordering ambiguity in its shape.
 A finite covering map \(p:Y'\to Y\) of hyperbolic manifolds changes
 the manifold. These operations have different consequences.
+
+In the ideal-shape calculation, reordering four vertices gives
+six possible cross-ratios,
+\[
+ z,\quad\frac1{1-z},\quad\frac{z-1}{z},
+ \qquad
+ 1-z,\quad\frac1z,\quad\frac{z}{z-1}.
+\]
+The twenty-four vertex orderings give each cross-ratio four times.
+Away from shapes with a stabilizer, the six cross-ratios form a
+sixfold cover of the unordered shape space. At a symmetric shape,
+including the regular ideal tetrahedron, some of them coincide:
+the stabilizer and the chosen logarithmic data must still be
+recorded. Orientation matters even away from those points.
+The first three Bloch–Wigner values equal \(D(z)\), and the last
+three equal \(-D(z)\), so their unweighted sum is zero. Retaining
+the orientation sign is necessary to descend the volume; simply
+averaging over the orderings would erase it. The
+[explicit period calculation](../../notes/regge_period_covers_and_a_curves.md#2-the-explicit-twist-on-the-logarithmic-period)
+derives these signs and the logarithmic transformations.
 
 For an orientation-preserving manifold cover of degree \(D\),
 the pulled-back metric gives

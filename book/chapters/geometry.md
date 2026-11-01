@@ -29,6 +29,13 @@ smaller than the geometric contribution remains a separate estimate. The
 [results](results.md) and [frontier](frontier.md) chapters keep those
 scopes distinct.
 
+The [first-reading chapter](starting.md) defines the diagram, its
+twist boxes and the coefficient extracted from the finite source.
+Here the emphasis is on the geometric objects represented by those
+variables. A source action is the exponential rate of a specified
+coefficient or sum. Calling that action a volume requires both a
+geometric realization and its absolute normalization.
+
 ## The geometric objects and the required checks
 
 Start with the augmented diagram: each twist region has an auxiliary crossing circle around its two strands. Cutting along the projection sphere and the original crossing disks divides its exterior into pieces with labeled faces. The labels remember exactly how to glue the pieces back. They also remember which curves on each torus end are the original meridian and longitude.
@@ -47,6 +54,17 @@ the cut diagram. A perfect matching of the cubic dual pairs its triangles
 into crossing disks; the cyclic orders record the four surrounding
 strand ends. This matching and the chosen half twists determine which
 main strands join, so the knot condition is a separate component test.
+
+In these packing formulas, a face label also denotes its **curvature**:
+a finite circle of curvature \(a>0\) has radius \(1/a\), and a
+marked straight line has curvature zero. Equality of two curvatures
+does not identify their circles. For example, in the
+[symmetric comparison packing](../figures/symmetric-plat-balance-seed.svg),
+\(a_1=b_1\) and \(a_2=b_2\) describe distinct reflected disks.
+The labels \(a_3=b_3\) describe the single disk on the symmetry
+axis, while \(a_0=b_0\) describe the common upper line. The
+face-incidence data, rather than equality of numbers, specify
+which labels represent one face.
 
 The [planar decoration theorem](../../notes/actual_balanced_terminal_fan_volume.md)
 constructs the geometry of every such labeled simple sphere. Remove
@@ -167,7 +185,7 @@ A Conway expression is a recorded sequence of two operations on tangles: stack t
 
 The geometric pieces follow these operations. Each leaf contributes an ideal quadrangular pyramid, and each retained product contributes an ideal triangular prism. Their volumes agree with the local terms of the complete quantum action. Each quadrilateral gluing face has four ordered ideal vertices. The order specifies which vertex is identified with which when two cells are attached; it is part of the geometry, not just a label for a boundary variable. The metrics of these faces are determined by derivatives of the action. When the full action is stationary under the shared-index constraints, those metrics agree across the actual ordered product faces.
 
-The [general strict-mask geometry theorem](../../notes/actual_conway_general_strict_mask_geometry.md) proves that these pieces assemble with the original cyclic orders, including turns and the different boundary edge types. An edge type records whether its face is supplied directly by a leaf crossing disk or by the surrounding projection region. The bookkeeping is needed to prevent a formally matching quadrilateral from being attached to the wrong side. The proof rules out the vertex identifications that would collapse a shaded triangle, checks the edge cycles, and constructs positive rectangular cusp links.
+The [general strict-mask geometry theorem](../../notes/actual_conway_general_strict_mask_geometry.md) proves that these pieces assemble with the original cyclic orders. Its *mask* is a four-entry list attached to an ordered quadrilateral: an entry is one when the neighboring face is a shaded crossing-disk face and zero when it is a white projection face. A quarter-turn rotates that list along with the four corners. These entries determine which seams become flat and which remain right-angled after gluing. The proof rules out vertex identifications that would collapse a shaded triangle, checks the edge cycles, and constructs positive rectangular cusp links.
 
 The final identification with the diagram uses the [literal bowtie cut](../../notes/actual_conway_bowtie_projection_cut.md). A bowtie is the pair of triangular faces exposed by one crossing disk. Its four outer corners are joined by the actual main strands of the diagram. Reading those joins in their projection order determines every remaining face. Reversing the cut therefore recovers the original link exterior with its original auxiliary circles. Matching a count of vertices or a total volume would not suffice.
 
@@ -198,7 +216,10 @@ eigenvalue on the same selected line. The complete lift used here has
 multipliers \(e^{U_e},e^{V_e}\) used at the auxiliary cusps.
 
 Write \(\mathcal E_T\) for the original physical quarter-turn
-edges, and let \(x_e(M)\) be their continued stationary indices.
+edges in the tangle expression. If the summation index on such
+an edge is \(r_e\), its normalized limit is \(x_e=r_e/N\).
+The functions \(x_e(M)\) are the stationary values continued from
+the selected filled structure as the main meridian varies.
 With \(X_e=e^{2\pi ix_e}\), the formula is
 \[
  L(M)=-M^{-w(D)-\sum_i n_i}
@@ -247,27 +268,80 @@ marked geometric deformation.
 
 Combining this identification with the full filtered expansion
 gives the selected geometric factor of each genuine all-level
-annihilator for the covered strict long fillings. The original
-circle-tree operator theorem also applies under the earlier
-summed condition or the local bound \(2^{-120}\). No equality of the
-full A-polynomial or of recurrence ideals is asserted.
+annihilator for the covered strict long fillings. Here an
+annihilator is a nonzero fixed finite difference operator that
+annihilates the whole meridian invariant at every sufficiently
+large level; its shift sends \(M\) to \(q_NM\), where
+\(q_N=e^{\pi i/N}\).
+The corresponding circle-tree result holds under the summed,
+local and [directed all-orders hypotheses](../../notes/actual_all_circle_directed_all_orders.md).
+Its conclusion identifies the factor belonging to the geometric
+meridian–longitude branch. Equality of the full A-polynomial
+or of recurrence ideals is a stronger statement.
 Marked ambient isotopy carries the intrinsic curve and factor
 to the covered net-twist and arbitrary-closure inputs, even
 when their auxiliary augmented links differ.
 
 ## How the cells and the diagram are identified
 
-The [global Conway geometry theorem](../../notes/actual_positive_conway_hyperbolic_volume.md) supplies the face-pairing certificate for every cylindrical factor in its original positive seed-generated grammar. Here cylindrical closure joins each lower external strand to the corresponding upper strand; it differs from joining the two upper ends to each other and the two lower ends to each other. The later strict-mask theorem extends the geometric construction as described above. A leaf is an ideal quadrangular pyramid. A multiplication gate is a convex ideal triangular prism. Their volumes are exactly the source actions, and their ordered quadrilateral metrics are exponentials of the action derivatives.
+The [global Conway geometry theorem](../../notes/actual_positive_conway_hyperbolic_volume.md) supplies the face pairings for every cylindrical factor in its original positive construction. Cylindrical closure joins each lower external strand to the corresponding upper strand. The later strict-mask theorem extends this construction as described above.
 
-![The source's leaf pyramid and multiplication prism. Blue faces are quadrilateral gluing faces with ordered vertices; the shaded leaf triangles retain the actual crossing-disk pairing.](../figures/conway-cells.png)
+The local actions can be written explicitly. Put
+\[
+ J(t)=\int_0^t\log(2\sin\pi u)\,du,\qquad 0\le t\le1.
+\]
+For a leaf with normalized index \(0<x<1/2\), set
+\[
+ g(x)=-2J(x)-2J(1/2-x).
+\]
+Its ideal quadrangular pyramid has volume \(\pi g(x)\).
+For a product with two input indices \(x,y\) and output index \(z\),
+the strict domain is
+\(\max(x,y)<z<x+y<1\), and its action is
+\[
+\begin{aligned}
+ m(x,y,z)={}&J(x+y)+J(z)-J(x)-J(y)\\
+            &-J(z-x)-J(z-y)-J(x+y-z).
+\end{aligned}
+\]
+The multiplication prism has volume \(\pi m(x,y,z)\).
+These are the local terms of the original coefficient asymptotic.
+The [cell construction](../../notes/actual_newton_ideal_prism_and_associativity.md)
+gives the ordered ideal vertices and verifies these volume formulas.
+
+![An ideal hyperbolic leaf pyramid and multiplication prism. Each blue quadrilateral has the displayed ordered ideal vertices; the two shaded triangles of the leaf retain the crossing-disk pairing. The formulas above give their volumes.](../figures/conway-cells.svg)
+
+For four ideal vertices \(a,b,c,d\) in cyclic order on a circle,
+the positive real cross ratio
+\[
+ \kappa(a,b,c,d)=\frac{(a-b)(c-d)}{(a-d)(b-c)}
+\]
+determines the ideal quadrilateral up to isometry; use the limiting
+formula if a vertex is infinity. A one-step cyclic change of order
+replaces \(\kappa\) by its reciprocal. The leaf output satisfies
+\(\log\kappa=-g'(x)\), and the three prism faces satisfy
+\(\log\kappa(F_x)=-\partial_xm\),
+\(\log\kappa(F_y)=-\partial_ym\) and
+\(\log\kappa(F_z)=-\partial_zm\).
+At a shared variable, stationarity makes the child and parent
+derivatives sum to zero. The prescribed stacking map reverses the
+corresponding face order, so its isometry condition is precisely
+\(\kappa_{\mathrm{child}}\kappa_{\mathrm{parent}}=1\).
 
 Stationarity makes the shared quadrilateral gluing faces isometric under the literal stack maps. A boundary barrier proves that every unforced cell at the maximum is strict. The cells assemble into a convex ideal polyhedron; the actual cylindrical closure leaves only right-angled boundary edges. Reversing the projection and crossing-disk cuts reconstructs the original link. Four-step edge cycles give angle $2\pi$ with identity return, and matched rectangular horosphere links prove cusp completeness. Thus the two-copy volume is the volume of the actual complement.
 
-The [closed bowtie-cut proof](../../notes/actual_conway_bowtie_projection_cut.md) identifies every oriented white and shaded face from the literal original wires. It corrects an earlier overstatement about open cells: a quadrilateral gluing face alone is not half of the physical four-punctured tangle boundary. The closed reconstruction uses the entire labeled ribbon graph and reversible disk cut. It also gives each complete crossing-circle cusp its primitive shape $2i\cot(\pi x_i)$.
+The [closed bowtie-cut proof](../../notes/actual_conway_bowtie_projection_cut.md) identifies every oriented white and shaded face from the original wires. The reconstruction uses the entire labeled ribbon graph and reversible disk cut. In particular, one open quadrilateral face does not determine the four-punctured boundary of a physical tangle: the other faces and strand joins are also retained. At a leaf crossing circle, the proof gives the primitive cusp shape \(2i\cot(\pi x_i)\), where \(x_i\) is that leaf's complete stationary index.
 
 The final product gate is forced flat and is removed from the geometric cell list using its exact unit source coefficient. This does not delete a quantum contribution or a link component. The [local cell proof](../../notes/actual_newton_ideal_prism_and_associativity.md) also identifies source associativity with two triangulations of one actual ideal cube.
 
-A cap closure joins the two upper endpoints to one another and the two lower endpoints to one another. The [cap-sum reduction](../../notes/actual_conway_cap_sum_reduction.md) goes further: an actual two-punctured separating sphere splits every cap-closed product into componentwise connected sums. The quantum source factors and the angle polytope splits with it. This gives connected sums of theta links with strictly positive rate $4k v_8$, although the whole complement is not hyperbolic for $k\geq2$.
+A cap closure joins the two upper endpoints to one another and the two lower endpoints to one another. The [cap-sum reduction](../../notes/actual_conway_cap_sum_reduction.md) exhibits a two-punctured separating sphere that splits a cap-closed product into componentwise connected sums. The quantum source factors and the angle polytope splits with it. In its explicit family of \(k\) theta-link summands, the source \(Z_N\) satisfies
+\[
+ \lim_{N\to\infty}\frac{2\pi}{N}\log Z_N=4k\,v_8.
+\]
+For \(k\ge2\), this is the sum of the volumes of the hyperbolic
+summands; the whole complement has no complete finite-volume
+hyperbolic metric. A positive logarithmic growth rate alone
+therefore does not establish a knot-complement volume theorem.
 
 ## Algebraic shapes and their volume regulator
 
@@ -326,13 +400,73 @@ Smooth filling uses the primitive basis of the link with its retained half twist
 
 For a connected labeled right-angled augmented plat at any fixed bridge width, the [signed complete-source theorem](../../notes/general_signed_augmented_source_volume.md) identifies the original source rate with the actual complete volume. The [fixed complex core theorem](../../notes/actual_complete_core_complex_packet.md) now gives a nonzero analytic asymptotic for its complete-image external-color term. This construction is independent of the strict-tree recursion; the statements below retain their own hypotheses.
 
-A circle pattern represents the labeled boundary faces by circles or lines at infinity, with the prescribed tangencies. The [marked circle-pattern theorem](../../notes/actual_marked_deformed_circle_pattern.md) reconstructs the two exceptional boundary faces as parallel lines and solves simultaneously for all finite circle centers and radii. The original positive face Hessian, followed by elementary rigidity of the center triangles, proves that this system has an invertible Jacobian. Its unique nearby solution has exactly the stationary radii of the source action, with one shared strip width and the selected boundary eigenlines retained.
+A circle pattern represents the labeled boundary faces by circles or lines at infinity, with the prescribed tangencies. A circle bounds a hyperbolic plane in the upper-half-space model. The two white faces adjacent to the reduced mark are represented by parallel lines; their common strip width fixes the scale. The [marked circle-pattern theorem](../../notes/actual_marked_deformed_circle_pattern.md) solves simultaneously for the remaining centers and radii. The positive face Hessian, followed by rigidity of the triangles of centers, makes the Jacobian invertible. Thus the nearby pattern has exactly the stationary radii of the source action. The selected boundary eigenlines are continued with this pattern.
 
 ![The actual marked lines retain their shared width and the selected eigenlines as matching tangencies deform.](../figures/marked-circle-strip.png)
 
-The [primitive collar theorem](../../notes/actual_deformed_circle_primitive_collar.md) computes the actual side pairing, selected eigenflag and half-twist shear, including a common marked-line limit. The [global geometric assembly](../../notes/actual_complete_core_geometric_deformation.md) verifies the full original group presentation and identifies the core's limiting action with the marked geometric deformation. For complex meridian logs it retains the boundary correction $\tfrac12\sum_i\operatorname{Re}U_i\operatorname{Im}V_i$; for real external deficits this correction vanishes. For an unrestricted plat, these geometric and local core statements still need bounds on the remaining reflected-color terms before they imply a full filling theorem. Several separately certified plat families and the strict-tree class already have those bounds; see the [results](results.md) and [remaining scope](frontier.md).
+The **crossing-disk collar** is a small neighborhood of a disk
+pierced by two main strands. Cutting it exposes an input shaded
+triangle and an output shaded triangle. Let their white-circle
+curvatures be \((x,b,y)\) and \((x,c,y)\), respectively.
+The two outer circles \(x,y\) are shared. The four contacts are
+\[
+ C_1=x\cap b,\quad C_2=b\cap y,\qquad
+ C_0=x\cap c,\quad C_3=c\cap y.
+\]
+Each intersection here means the prescribed tangency point.
+The original untwisted disk pairs \(C_1\) with \(C_0\) and
+\(C_2\) with \(C_3\). Those ordered identifications specify the
+side map whose primitive multiplier we need.
 
-![The same crossing-disk collar in two coordinates. On the left, the ordered contact points lie on the input and output circles. A Möbius coordinate sends the two selected eigenpoints to zero and infinity; on the right, the actual side pairing is a dilation. The auxiliary meridian follows its inverse.](../figures/deformed-circle-collar.png)
+For a small real deformation parameter \(\delta>0\), the outer
+circles meet at two points \(P_+,P_-\). The coordinate
+\[
+ w=\frac{z-P_+}{z-P_-}
+\]
+sends them to straight lines through zero. The circles bounding
+the two shaded planes become concentric, with radii
+\(\rho_b,\rho_c>0\). Their ordered pairing is
+\[
+ C(w)=R_0w,\qquad R_0=\rho_c/\rho_b,
+\]
+\[
+ C_1\longmapsto C_0,\qquad C_2\longmapsto C_3.
+\]
+The radii \(\rho_b,\rho_c\) belong to the transformed shaded
+circles; they are different quantities from the original white
+radii \(1/b,1/c\).
+
+![The crossing-disk collar in the exact configuration x=y=b=c=1 and delta=1/10. Dashed circles bound the shaded planes and are orthogonal to the white circles on their side. The displayed Möbius coordinate turns the prescribed contact pairing into a dilation.](../figures/deformed-circle-collar.svg)
+
+The [primitive collar theorem](../../notes/actual_deformed_circle_primitive_collar.md)
+also follows the based meridian path through this map. The auxiliary
+meridian uses \(C^{-1}\), so its pure similarity logarithm is
+\(-\operatorname{Log}R_0\). The disk-longitude product selects the
+eigenpoint \(P_-\), with determinant-one eigenvalue
+\(J=-e^{-2\pi i\delta}\). A retained signed half twist
+\(\epsilon\in\{0,\pm1\}\) therefore gives
+\[
+ U=-\operatorname{Log}R_0+2\pi i\epsilon\delta,\qquad
+ V=-4\pi i\delta.
+\]
+The logarithms vanish at the complete point and are continued on
+the prescribed branch. At \(\delta=0\), \(R_0=1\) but the matrix
+limit of the side map is a nontrivial parabolic translation in
+the original coordinate. The theorem retains that limit and
+also treats the zero-curvature marked lines.
+
+The [global geometric assembly](../../notes/actual_complete_core_geometric_deformation.md)
+checks these maps against the full link-group relations, including
+their translations. It identifies the complete-image core's action
+with the marked geometric deformation. For complex peripheral
+parameters it retains the boundary correction
+\(\tfrac12\sum_i\operatorname{Re}U_i\operatorname{Im}V_i\);
+for real external deficits that correction vanishes. The local
+calculation and the group assembly establish the geometric
+contribution. Bounding the remaining reflected-color terms is
+the additional step needed for the full invariant; the
+[results](results.md) chapter states the families for which that
+step is proved.
 
 An identity smoothing replaces a specified crossing-disk coupon by the identity and retains the remaining face identifications. For such a diagram, the [block capacity theorem](../../notes/actual_smoothed_source_capacity_blocks.md) removes the need to assume an attained positive-radius minimum. Here capacity is the infimum of the positive weighted expression used for a coefficient bound. The theorem splits degenerate angle problems along two-edge cycles and constructs each simple block's actual polyhedron. The [block representation and volume theorem](../../notes/actual_smoothed_block_representation_volume.md) then retains the original face pairings and realizes their volume sum as a regulator of the original group. Its deleted meridians lie in the kernel, so the [strict-kernel theorem](../../notes/general_representation_volume_kernel_strictness.md) proves strict loss for every nonempty connected untwisted smoothing with finite capacity. Loop-infeasible cases already have an arbitrarily low capacity bound.
 
@@ -340,11 +474,30 @@ The chain argument uses a controlled finite degeneration: cut corners have a com
 
 ## A local tetrahedron is a genuine geometric result
 
-In the local theorem with four external representation labels, the exact half-shifted color coordinate is
+The [local hyperideal theorem](../../notes/actual_four_port_hyperideal_angle_volume.md)
+uses six internal representation labels \(j_e\), one for each edge
+of a tetrahedron. The exact half-shifted coordinates are
+\[
+ a_e=\frac{j_e+1/2}{N},\qquad
+ \alpha_e=\pi-2\pi a_e.
+\]
+In the strict geometric domain, \(0<a_e<1/2\) and the three
+\(a_e\)'s at each vertex sum to more than one. Equivalently, the
+three positive dihedral angles \(\alpha_e\) there sum to less
+than \(\pi\). Such a vertex is **hyperideal**: its polar plane
+cuts off the end and leaves a geodesic truncation triangle.
 
-$$a_e=\frac{j_e+1/2}{N},\qquad \alpha_e=\pi-2\pi a_e.$$
-
-The normalized scalar action is identified with the volume of the truncated hyperideal tetrahedron with these dihedral angles. The proof constructs the Gram matrix of the outward face normals in the Lorentz model of hyperbolic space, recovers edge lengths, checks the volume differential, and fixes the additive constant by an ideal calibration. Boundary values are continuous volume extensions.
+The source in this local statement is a positive Racah scalar
+\(W_N\) with its four face-normalization factors retained.
+If \(\Psi=\lim N^{-1}\log W_N\), the theorem proves
+\[
+                  \operatorname{Vol}(\text{tetrahedron})=\pi\Psi.
+\]
+Squaring \(W_N\) doubles its logarithmic action. The proof constructs
+the Gram matrix of outward face normals in Lorentz space,
+recovers the edge lengths, checks the volume differential and
+fixes the constant at an ideal configuration. Boundary values
+are continuous volume extensions.
 
 ![A truncated tetrahedron in a combinatorial projection. Blue triangles indicate polar truncation faces; the hyperbolic metric comes from the Gram matrix.](../figures/truncated-tetrahedron.png)
 
@@ -360,7 +513,7 @@ The [source-volume certificate](../../notes/source_volume_casson_rivin_certifica
 
 ## A general certificate through volume maximization
 
-For an ideal tetrahedron, its three independent positive
+For an ideal tetrahedron, its three positive
 dihedral angles \(\alpha,\beta,\gamma\) have sum \(\pi\), and its
 volume is
 \[

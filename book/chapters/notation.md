@@ -80,6 +80,31 @@ Changing coordinates, changing the quotient product, and applying a physical tur
 
 The **source** is the full prescribed expression: physical matrices, their index ranges, cups, caps, the marked cut, and every scalar factor. A **coupon** is one specified operator inserted in a tangle box. A source polynomial is a way of storing the matrix entries of such an operator or the coefficients of a whole contraction.
 
+The face construction uses three successive operations. First multiply
+the local polynomials, then extract one shared face coefficient, then
+apply the functionals that insert the prescribed twists. The variables
+have different roles at these stages:
+
+| Symbol | What varies, and what is done with it |
+| --- | --- |
+| \(L_f\) | A formal variable for projection face \(f\). Its prescribed coefficient is extracted once from the whole product. |
+| \(\rho_f>0\) | The radius of the integration circle \(\lvert L_f\rvert=\rho_f\) in a Cauchy coefficient estimate. It is a freely chosen weight for a bound. |
+| \(\sigma_e\) | A spectral variable retained at crossing region \(e\) after the face extraction. |
+| \(\mathcal L_N^{n_e}\) | A linear functional on the polynomial in \(\sigma_e\); it inserts the fixed signed crossing power \(n_e\). |
+| \(S_N(\boldsymbol\sigma)\) | The polynomial after the common face coefficient has been taken. It is not yet the filled scalar. |
+
+Thus the final step has the form
+\[
+ Z_N(\boldsymbol n)=
+ \left(\mathcal L_N^{n_1}\otimes\cdots\otimes
+       \mathcal L_N^{n_R}\right)S_N.
+\]
+Each functional acts on its own spectral variable. The exact source
+identity specifies the exterior and framing factors relating \(Z_N\)
+to \(K_N(K)\). A bound for a polynomial before coefficient extraction,
+a bound for \(S_N\), and a bound for \(Z_N\) are therefore three
+distinct statements.
+
 In the homogeneous face description, a box has ordered faces \((x,b,c,y)\): \(b,c\) are its middle faces and \(x,y\) its outer faces. Its polynomial \(H_e(x,b,c,y)\) has total degree \(d\). For a diagram with \(R\) boxes, the product has degree \(Rd\). With two protected faces \(u,v\), the original marked contraction is expressed by
 \[
  \left[\prod_{f\ne u,v}L_f^d\right]\!
@@ -123,8 +148,6 @@ A geometric gluing face may be a quadrilateral with four ordered ideal vertices.
 
 In the face-source geometry, a positive real \(L_f\) is the **curvature**, or inverse radius, of a finite white circle. A protected value \(L_u=0\) denotes a straight line, not a circle of radius zero. Sending the marked tangency to infinity gives two parallel protected lines. The remaining circles lie in their common strip. Shared positive radii used in a Cauchy estimate are choices of weights; only a separately proved stationary identification makes them the geometric packing.
 
-The **triangle potential** \(Q(x,b,y)\) is a real logarithmic growth function of three such weights, with the original half-degree normalization. It is not the quantum root \(Q_N\). The sum \(Q(x,b,y)+Q(x,c,y)\) is the complete two-triangle cost at a crossing region. A capacity then subtracts the logarithmic face-target cost and takes an infimum over shared positive weights. A stationary value at the complete packing and a bound at an arbitrary trial vector have different roles.
-
 A complex number \(z_\Delta\) attached to an ideal tetrahedron is its ordered cross-ratio shape. Its branch and orientation matter; a coordinate with positive imaginary part gives a positively oriented tetrahedron in the usual vertex convention. The same letter \(z\) can instead be a formal polynomial variable, a spectral variable, or the microscopic meridian coordinate below. These uses are unrelated.
 
 The real factorial rate uses
@@ -136,6 +159,35 @@ with the integrable endpoint limits. The Lobachevsky function is
  \Lambda(\theta)=-\int_0^\theta\log|2\sin u|\,du.
 \]
 Thus \(J(x)=-\Lambda(\pi x)/\pi\) on that real interval. Complex continuations require a specified logarithm and path; the absolute value in the real definition of \(\Lambda\) is not a holomorphic prescription.
+
+**Definition (triangle potential).** For three nonnegative weights
+\(w_1,w_2,w_3\), not all zero, put
+\[
+\begin{aligned}
+ f(t)&=\frac{\Lambda(\pi t)+\Lambda(\pi/2-\pi t)}{\pi},
+       &&0\le t\le\tfrac12,\\
+ Q(w_1,w_2,w_3)
+   &=\max_{\substack{\alpha_j\ge0\\\sum_j\alpha_j=1/2}}
+       \sum_{j=1}^{3}\bigl(f(\alpha_j)+\alpha_j\log w_j\bigr).
+\end{aligned}
+\]
+When \(w_j=0\), require \(\alpha_j=0\) and assign the corresponding
+product \(\alpha_j\log w_j\) the value zero. The \(\alpha_j\) are
+normalized angle variables in this maximization. This definition
+fixes the additive constant: for example,
+\(Q(w,0,0)=\tfrac12\log w\) for \(w>0\). Scaling all three weights
+by \(c>0\) adds \(\tfrac12\log c\), because their normalized angles
+sum to \(1/2\).
+
+The **complete local rate** at an ordered quartet \((x,b,c,y)\) is
+\(Q(x,b,y)+Q(x,c,y)\). A **capacity bound** sums these local rates,
+subtracts the logarithmic cost of the required face powers, and
+minimizes over one positive weight per ordinary face. Its value at
+the stationary packing and its value at arbitrary trial weights
+have different roles. The [methods chapter](methods.md#refining-the-coefficient-estimate-by-genuine-sectors)
+gives the one-sided rates and explains the strict comparison needed
+to control the remainder. The function \(Q\) is unrelated to the
+quantum root \(Q_N=q_N^2\).
 
 For a positive complete source, \(\Phi_D\) or \(F_0\) often denotes its maximal limiting action. Once the original geometry has been proved, its normalization is
 \[

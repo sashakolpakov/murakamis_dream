@@ -18,7 +18,19 @@ $-2\pi\ii(p_i z_i^2+m_i z_i)$. On this interval its derivative in the shift dire
 
 The two joining segments start at $z_i=\pm t_0/4$, where the real Fourier source already has a fixed loss. Choose their common height small enough that this source loss is preserved. On the remainder of the real interval the source Fourier gap applies directly, so it need not be displaced. This proves a strict nonlocal-charge loss. The other variables remain real at this stage; their chirps have modulus one. The finite number of charges depends on the fixed slopes but is independent of $N$.
 
-For a local charge, its critical point satisfies the separately even factorization in Chapter~\ref{ch:filling}. For real $\mathbf t,\mathbf e$, analyticity and the real complete coefficients give
+For a local charge put $t_i=m_i/p_i$ and $e_i=1/p_i$. Separate evenness gives $\partial_i\Psi(\mathbf z)=z_iQ_i(\mathbf z)$, where every $Q_i$ is holomorphic on one fixed neighborhood. The critical equation therefore gives the exact factorization
+\[
+ z_i=-\frac{t_i}{2\bigl(1-e_iQ_i(\mathbf z)/(4\pi\ii)\bigr)}.
+\]
+Choose $C_0\ge1$ bounding all $|Q_i|$ on that neighborhood, and increase the common slope threshold until $|e_i|C_0\le2\pi$ for every $i$. Then
+\[
+ \left|1-\frac{e_iQ_i(\mathbf z)}{4\pi\ii}\right|\ge\frac12,
+ \qquad
+ z_i+\frac{t_i}{2}
+ =-\frac{e_it_iQ_i(\mathbf z)}
+ {8\pi\ii\bigl(1-e_iQ_i(\mathbf z)/(4\pi\ii)\bigr)}.
+\]
+Thus $|z_i+t_i/2|\le C_0|e_it_i|/(4\pi)$. The coefficients of $Q_i$ need not be real when half twists are retained: boundedness and the displayed denominator estimate suffice. Since $\mathbf t,\mathbf e$ are real for the actual signed fillings, we obtain
 \[
  |\Im z_i(\mathbf t,\mathbf e)|\le C|e_i||t_i|,
  \qquad |\Re z_i+t_i/2|\le C|e_i||t_i|.
