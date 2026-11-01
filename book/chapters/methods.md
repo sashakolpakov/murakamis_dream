@@ -300,6 +300,134 @@ Rules*, §§1–2](https://www.ams.org/journals/mcom/1969-23-106/S0025-5718-69-9
 The source note separately proves that its particular moments and
 degree cutoff permit that construction.
 
+### Summing the exterior before estimating the cap
+
+There is a stronger use of the same idea. Remove the selected cap and
+extract the prescribed coefficient in **every** ordinary face variable
+except \(A,C\). At each of the other crossing regions keep the central
+polynomial at spectral value \(-2\). The result is a homogeneous binary
+polynomial
+\[
+ P_N(A,C)=\sum_{j=0}^{d}p_{N,j}A^jC^{d-j},\qquad d=N-1.
+\]
+Here \(p_{N,j}\) already includes all the other face sums. It is not the
+coefficient of one neighboring crossing. This order of operations preserves
+the interactions between neighbors that share a face.
+
+At odd levels, the exact central factors are determinants of positive
+Hermitian matrix pencils. They are *real stable*: a real polynomial is
+called real stable if it is nonzero whenever every argument has positive
+imaginary part. The determinant proof and coefficient extraction show
+that a nonzero \(P_N\) has the factorization
+\[
+ P_N(A,C)=P_N(1,1)\prod_{r=1}^{d}
+             \bigl((1-p_r)C+p_rA\bigr),\qquad 0\le p_r\le1.
+\]
+This is an identity for the original extracted polynomial. The
+[proof for this source](../../notes/research_cap_common_axis_bound.md)
+gives the matrix and extraction steps. For the general theory of stability
+preservers, see Borcea and Brändén's [*Multivariate Pólya–Schur
+classification problems in the Weyl algebra*](https://arxiv.org/abs/math/0606360).
+The new inequalities below are proved directly from the displayed factorization.
+
+Define
+\[
+ \nu_d=\frac1d\sum_r p_r,\qquad
+ \kappa_d=\frac1d\sum_r p_r(1-p_r).
+\]
+Equivalently these are the first and second derivatives at \(z=0\)
+of \(d^{-1}\log P_N(e^z,1)\). The second is the average variance of
+Bernoulli variables with parameters \(p_r\); it is not the variance of
+the list of parameters. Applying arithmetic–geometric mean to the squared
+linear factors, and then maximizing their common argument, gives
+\[
+ \max_{0\le t\le1}\bigl\{|P_N(-t,1)|,|P_N(-1,t)|\bigr\}
+ \le P_N(1,1)
+ \left(\max\{1-\nu_d-\kappa_d,\nu_d-\kappa_d,1-4\kappa_d\}\right)^{d/2}.
+\]
+The word “common” matters: every factor is evaluated at the same \(t\).
+Maximizing each factor separately would discard the cancellation being
+estimated.
+
+The original cap uses only the first \(M+1\) coefficients, with
+\(M=\lfloor N/2\rfloor-1\). It therefore requires control of the
+alternating partial sum
+\[
+ Q_M(t)=\sum_{j=0}^{M}(-1)^jp_{N,j}t^j,
+\]
+not just the full polynomial. The coefficients of the factorization are
+log-concave: \(p_{N,j}^2\ge p_{N,j-1}p_{N,j+1}\), and their nonzero
+indices form an interval. Consequently successive term ratios decrease.
+This gives one estimate while the omitted alternating tail decreases and
+another while the retained terms increase. The
+[finite truncation theorem](../../notes/research_cap_uniform_spectral_gap.md)
+proves both estimates, including zero coefficients and both parity cutoffs.
+It integrates them against the positive density
+\[
+ \frac{N\sin(\pi/N)}{\pi(1+t^N)}\,dt,\qquad t>0.
+\]
+Its moment matrix is the sine-Cauchy matrix
+\(C_{ij}=\sin(\pi/N)/\sin((i+j+1)\pi/N)\), for \(0\le i,j\le M\).
+The exact cap recurrence is self-adjoint in the inverse matrix, which
+bounds the cap functional uniformly for every real spectral value in
+\([-2,2]\). Only moments through degree \(2M\le N-2\) occur.
+
+The [companion norm theorem](../../notes/research_protected_cap_coupled_norm.md)
+also compares this matrix with the original cap moment matrix at
+polynomial cost. That comparison holds at both parities. Its application
+to a stable exterior still requires the odd-level factorization above.
+
+For the original diagram with 54 crossing regions, let \(S_N(\sigma)\)
+be the signed contribution with region 32 chosen as this cap and the other
+53 central spectral parameters fixed at \(-2\). The protected faces are
+29 and 50; the remaining two cap variables are \(A=L_{16},C=L_0\).
+The exact certificates and the truncation theorem give
+\[
+ \limsup_{\substack{N\to\infty\\N\text{ odd}}}
+ \frac1N\log\sup_{-2\le\sigma\le2}|S_N(\sigma)|
+ \le\Phi-\min\{0.003,\gamma_D\}<\Phi.
+\]
+Here \(\Phi\) is the augmented complement's volume divided by \(2\pi\).
+The positive number \(\gamma_D\) is the strict entropy loss for the
+omitted boundary coefficients; no numerical lower bound for it is claimed.
+The pressure and entropy comparisons are checked by
+`python3 repro/check_cap_response.py`. The written proof supplies
+stability, the limiting coefficient estimates, and the geometric meaning
+of \(\Phi\).
+
+A separate [response criterion](../../notes/research_cap_dirichlet_response_region.md)
+gives the same type of uniform odd-level cap gap for any exterior satisfying
+its hypotheses. Let
+\(F(z)=\lim N^{-1}\log P_N(e^z,1)\), and set
+\(\nu=F'(0)\), \(\kappa=F''(0)\). The criterion is
+\(0<\nu\le1/2\) and \(\nu+\kappa\ge1/2\), together with the stated
+strict feasibility and connectivity conditions. Its proof interprets
+\(F''\) as the minimum energy of a weighted graph with boundary potentials
+one and zero. This controls the pressure as the boundary weight varies.
+The 54-region example uses the more flexible two-pressure comparison;
+it does not satisfy this simpler response criterion.
+
+![The response graph has one vertex for each ordinary face variable. The two boundary potentials are fixed; all others minimize the weighted energy. The drawing illustrates the construction rather than the particular 54-region graph.](../figures/cap-dirichlet-response.svg)
+
+More precisely, write \(h_A=1,h_C=0\). For each interior vertex \(i\),
+\(h_i\) is the derivative of its minimizing logarithmic weight with respect
+to \(z\). If \(g_{ij}>0\) denotes an edge conductance from the triangle
+Hessian, then
+\[
+ F''(z)=\min_{h_A=1,\ h_C=0}\sum_{ij}g_{ij}(h_i-h_j)^2.
+\]
+The sum runs over unordered pairs, once for each triangle contribution.
+It retains multiplicities when several triangles contribute to the same pair. At an interior vertex the minimizing potential is the
+conductance-weighted average of its neighbors. It therefore lies between
+zero and one. The proof uses this maximum principle to control how each
+conductance changes as \(z\) varies; no flow on the knot strands is being
+postulated.
+
+These results control one signed term while one spectral parameter varies.
+The full remainder also includes other noncentral terms and simultaneous
+variation of all parameters. Those bounds, and the even-level exterior
+estimate, remain necessary for a general unchanged-diagram volume theorem.
+
 ### Cancellation after collecting every neighbor of a face
 
 An estimate can retain more cancellation by combining an entire

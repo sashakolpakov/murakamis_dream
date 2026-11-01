@@ -1,0 +1,15 @@
+{
+  "scope": "Negative controls on a disposable copy; no publication proof file was modified.",
+  "checks": [
+    {
+      "case": "Attributed theorem omitted from axiom list",
+      "rejected": true,
+      "reason": "AxiomAudit.lean must inspect every theorem exactly once."
+    },
+    {
+      "case": "Theorem uses an extra axiom",
+      "rejected": true,
+      "reason": "Unexpected logical assumptions: {\"VolumeLogic.forbidden_assumption_test\": [\"VolumeLogic.forbidden_audit_assumption\"]}"
+    }
+  ]
+}

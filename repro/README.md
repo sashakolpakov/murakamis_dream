@@ -46,6 +46,34 @@ Here a *slope* is a derivative of an entropy function used in the source estimat
 
 The written proof explains why concavity and affine parameter dependence reduce the continuum statement to these finite comparisons. The [proof-input map](PROOF_INPUTS.md) identifies those arguments and the exact records used by the runner.
 
+## A cap estimate uniform over its real spectrum
+
+The research notes give a strict bound for one signed contribution in the
+recorded 54-region diagram. The selected cap parameter may vary throughout
+\([-2,2]\); all other spectral parameters remain \(-2\), and the exterior
+factorization used in the proof requires odd levels. Run its certificates
+with one command:
+
+```sh
+python3 repro/check_cap_response.py --output repro/results/cap-response
+```
+
+This checks the original triangulated sphere and marking, localizes the
+positive exterior stationary point, bounds its first two responses, and
+compares two explicit pressure values with a complete feasible-flow
+entropy. The three numerical comparisons use outward rational intervals,
+not an optimizer. The response report is recomputed before it is passed to
+the tilted-pressure verifier. The same command checks the finite
+alternating-section inequalities on rational examples.
+
+With SymPy installed, append `--algebra` to check the original spectral
+products and their matrix divided differences in exact cyclotomic fields.
+These finite checks complement the [uniform cap proof](../notes/research_cap_uniform_spectral_gap.md)
+and its [stationary-point argument](../notes/research_cap_common_axis_bound.md).
+They do not replace the all-level analytic estimates or the geometric
+volume theorem. Neither the even-level exterior nor the full filled-knot
+remainder is covered by this certificate.
+
 ## Uniform bounds for inserting twists
 
 With SymPy and NumPy installed, run:

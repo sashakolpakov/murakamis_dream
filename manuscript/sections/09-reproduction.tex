@@ -111,6 +111,12 @@ Lean's standard library. It checks the exact even- and odd-level degree
 cutoffs, polynomial divided differences without division at a spectral
 root, the double-root Hermite identity after clearing denominators, and
 the finite tensor-product subtraction used when node values vanish.
+The formalization also constructs synthetic division on coefficient
+lists and the remainder modulo a split monic polynomial
+$p(X)=\prod_i(X-r_i)$. It proves the reconstruction identity
+coefficient by coefficient, the degree bound on the remainder, and
+the formula for its top coefficient as an iterated divided difference.
+Repeated nodes are allowed; no inverse of $r_i-r_j$ is introduced.
 It also checks the scalar inequalities that compare the entropy gain
 with its quadratic cost and preserve a remainder gap after a small
 decrease in the action. From the repository root, run
@@ -127,7 +133,9 @@ These are formal proofs of the stated finite implications. Their
 applications still require the hypotheses proved in the manuscript.
 For example, the scalar entropy comparison does not prove the Hessian
 formula, and the divided-difference identity does not identify the
-original knot operator. The exact diagram adapter, uniform analytic
+original knot operator. The monic-remainder calculation does not prove
+the Chebyshev factorization or its root multiplicities; these data must
+still be supplied for the actual spectral polynomial. The exact diagram adapter, uniform analytic
 estimates, geometric realization, primitive completion and
 Proposition~\ref{prop:volume-rate-transfer} remain written proofs.
 The file \sourcefile{repro/MANUSCRIPT_AUDIT.md} records the current

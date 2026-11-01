@@ -98,11 +98,14 @@ not give the stated derivative bound for polynomials of arbitrary degree.
 
 ## What has been checked formally
 
-The [Lean project](../formal/README.md) contains eighteen proved
-declarations. They check finite degree partitions at both parities,
+The [Lean project](../formal/README.md) checks finite degree partitions at both parities,
 polynomial divided differences, the algebra retaining the double-root
 derivative, the finite tensor subtraction, and scalar comparisons of
-entropy gains, quadratic costs and filling-action losses. The
+entropy gains, quadratic costs and filling-action losses. It now also
+constructs division by a split monic polynomial, proves the remainder's
+degree bound, and identifies its top coefficient with an iterated divided
+difference. These are coefficientwise identities over a commutative ring;
+the list of nodes may contain repetitions. The
 [runner](check_proof_logic.py) builds the library and then separately
 inspects every theorem's axioms. The
 [recorded result](results/proof-logic/summary.json) includes the source
@@ -127,6 +130,7 @@ The detailed records are organized by the implication being checked:
 | [Recursive geometry](manuscript_audit/recursive-geometry.md) | Chapters 4 and 7, Appendix D, primitive filling, and the added fundamental-chain comparison |
 | [Geometry used by weak balance](manuscript_audit/weak-balance-geometry.md) | The precise geometric inputs and implications from O to P |
 | [Meaning of the formal declarations](manuscript_audit/formal-semantics.md) | Whether the Lean statements express the finite mathematical steps claimed for them |
+| [Reduction at repeated roots](manuscript_audit/monic-remainder.md) | Constructive coefficientwise division, its top-coefficient functional, and the double-root remainder; the actual spectral data remain separate |
 
 The detailed records cover the finite functional in Appendix N, the
 geometric interface from O to P, the recursive source estimates in
@@ -155,9 +159,12 @@ prove the claims at its vertices. The fundamental-chain arguments and
 metric completeness remain written proofs even when their local formulas
 pass the symbolic checks.
 
-The next substantial formalization is the finite Hermite functional
-itself: the Chebyshev quotient algebra, its top-coefficient trace, the
-original crossing jets, and their scalar norm. The diagram adapter then
-needs to be proved for the literal marked tensors. Real and complex
-analysis, and the construction of the completed hyperbolic metric,
-are further stages; the present Lean files do not encompass them.
+The general monic-remainder calculation is a step toward the finite
+Hermite functional. Its application still needs the Chebyshev root data,
+the original crossing jets, and the scalar norm. In particular, a list
+of roots supplied to the algebraic theorem is not a proof that the
+actual spectral polynomial has those roots with those multiplicities.
+The diagram adapter then needs to be proved for the literal marked
+tensors. Real and complex analysis, and the construction of the completed
+hyperbolic metric, are further stages; the present Lean files do not
+encompass them.

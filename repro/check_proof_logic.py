@@ -35,8 +35,12 @@ def main() -> None:
     output.mkdir(parents=True, exist_ok=True)
 
     source_files = sorted((FORMAL / "VolumeLogic").glob("*.lean"))
+    # Attributes may precede a theorem on the same line. Such declarations
+    # need the same axiom inspection as unannotated public theorems.
+    declaration = re.compile(
+        r"^[ \t]*(?:@\[[^\n]*\][ \t]*)*theorem[ \t]+(\w+)", re.M)
     names = ["VolumeLogic." + name for path in source_files
-             for name in re.findall(r"^theorem\s+(\w+)", path.read_text(), re.M)]
+             for name in declaration.findall(path.read_text())]
     inspected = re.findall(r"^#print axioms (\S+)",
                            (FORMAL / "AxiomAudit.lean").read_text(), re.M)
     if len(names) != len(set(names)) or sorted(names) != sorted(inspected):
@@ -72,8 +76,9 @@ def main() -> None:
                              "lean-toolchain", "lake-manifest.json")]
     inputs.append(Path(__file__).resolve())
     report = {
-        "scope": "Finite support, polynomial and tensor identities, and scalar rate implications only.",
-        "not_formalized": ["the exact knot-diagram adapter", "uniform analytic estimates",
+        "scope": "Finite support, coefficientwise split-monic reduction, polynomial and tensor identities, and scalar rate implications only.",
+        "not_formalized": ["the actual Chebyshev root data and crossing-operator functional",
+                           "the exact knot-diagram adapter", "uniform analytic estimates",
                            "geometric realization and filling", "the volume limit"],
         "toolchain": (FORMAL / "lean-toolchain").read_text().strip(),
         "commands": [["lake", *command[1:]] for command in commands],

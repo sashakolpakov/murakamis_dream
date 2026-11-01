@@ -39,9 +39,13 @@ With the pinned Lean toolchain installed, run:
 python3 repro/check_proof_logic.py --output repro/results/proof-logic
 ~~~
 
-The [formal project](../../formal/README.md) proves eighteen finite
-lemmas about the exact parity cutoffs, polynomial and Hermite identities,
-tensor subtraction, and scalar rate comparisons. The runner compiles
+The [formal project](../../formal/README.md) proves finite lemmas about
+the exact parity cutoffs, polynomial and Hermite identities,
+tensor subtraction, and scalar rate comparisons. It also constructs
+division by a split monic polynomial on coefficient lists and proves
+that the remainder's top coefficient is the iterated divided difference.
+Repeated roots are retained without division by their differences.
+The runner compiles
 the proofs and separately checks their logical assumptions. It rejects
 admitted proof steps. These declarations retain their mathematical
 hypotheses: they do not formally prove the analytic source estimates,
@@ -53,6 +57,29 @@ as required at repeated spectral roots. Proving that the actual source
 has the claimed degree and vanishes on the specified product grid is a
 separate part of Appendix N. This distinction is recorded in the formal
 project's explanation of every declaration.
+
+## The uniform cap estimate
+
+Run the exact topology, response, pressure and entropy certificates with:
+
+~~~sh
+python3 repro/check_cap_response.py --output repro/results/cap-response
+~~~
+
+This standard-library command recomputes each input before using it in a
+later check. It verifies the 54-region sphere and its original marked
+coefficient problem, localizes the positive exterior stationary point,
+and proves the two pressure comparisons by rational intervals. It also
+checks the alternating partial-sum inequalities on finite rational examples.
+With SymPy installed, adding `--algebra` checks the spectral products and
+matrix divided differences in exact cyclotomic fields.
+
+The [written theorem](../../notes/research_cap_uniform_spectral_gap.md)
+provides the uniform estimate and its asymptotic consequences. The
+certificate controls one cap at odd levels, with all other spectra fixed.
+The geometric meaning of the complete action, the all-level limiting
+estimates, and the unresolved full remainder are listed separately in
+each result record.
 
 ## Uniform bounds for inserting twists
 

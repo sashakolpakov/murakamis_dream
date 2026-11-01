@@ -48,6 +48,19 @@ result is at the complete main meridian; extending its full meridian
 family and operator consequences is also separate work.
 
 
+One part of that spectral problem is now settled more broadly. After all
+other face coefficients have been extracted, the
+[uniform cap estimate](../../notes/research_cap_uniform_spectral_gap.md)
+controls one signed contribution for every value of its cap parameter in
+\([-2,2]\). For the recorded 54-region source, exact rational certificates
+put it strictly below the augmented volume rate. A
+[general response criterion](../../notes/research_cap_dirichlet_response_region.md)
+proves the same type of bound for exteriors satisfying its explicit
+inequality. Both results use odd levels and hold the other spectral
+parameters at \(-2\). Thus they settle a restricted term of the remainder;
+they do not supply the full supremum required below.
+
+
 ### What remains after the finite filling estimate
 
 The [uniform filling estimate](../../notes/actual_uniform_filling_supremum_bound.md)
