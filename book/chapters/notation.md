@@ -26,6 +26,13 @@ Fix the diagram, its ordered tangle construction, its integer twist powers, and 
 | \(\epsilon_i\in\{-1,0,1\}\), \(p_i\in\mathbb Z\) | Retained half twist and integral disk-filling parameter, with \(n_i=\epsilon_i-2p_i\). |
 | \(v_3,v_8\) | Volumes of a regular ideal tetrahedron and a regular ideal octahedron. |
 
+The manuscript's Chapter 2 writes \(s_r\) for the sine **product**
+that this guide calls \(S_r\). In formulas from that chapter, translate
+\(s_r^{\mathrm{manuscript}}=S_r^{\mathrm{guide}}
+=\prod_{a=1}^r2\sin(\pi a/N)\). The individual sine factor in this
+guide is \(s_r=2\sin(\pi r/N)\). These are different quantities,
+so a formula copied between the two conventions needs this translation.
+
 The volume statement uses the rate
 \[
  \frac{2\pi}{N}\log|K_N(K)|
@@ -405,7 +412,7 @@ and it does not identify the whole noncommutative annihilator
 ideal. Scalar gauges, denominator factors and the selected
 longitude lift are retained before making that comparison.
 
-In the geometric convention, \(M\) is the positive main meridian eigenvalue and \(L\) is the preferred-longitude eigenvalue on the same line. The source cut selects the \(M^{-1}\) line, so \(L\) is the inverse longitude eigenvalue there. At the complete filled knot, \(M=1\) and \(L=-1\). On the covered strict-tree germ,
+In the geometric convention, \(M\) is the eigenvalue of the positively oriented main meridian and \(L\) is the preferred-longitude eigenvalue on the same line. The word “positively” specifies the orientation of the curve; \(M\) is a nonzero complex number, not necessarily a positive real number. The source cut selects the \(M^{-1}\) line, so \(L\) is the inverse longitude eigenvalue there. At the complete filled knot, \(M=1\) and \(L=-1\). On the covered strict-tree germ,
 \[
  L_{\mathrm{geom}}(M)
    =-M^{a(D)}

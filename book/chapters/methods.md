@@ -62,7 +62,7 @@ For the marked spherical construction with \(r\) crossing regions, there are \(r
 \]
 The brackets mean coefficient extraction. The parameter \(\sigma_e\) is the spectral variable of crossing region \(e\). The two zero substitutions encode the original marked cut; they are not optional boundary conditions. The [finite source proof](../../notes/actual_homogeneous_casimir_face_source.md) and its [general Morse version](../../notes/research_matched_sphere_morse_source.md) establish this identity with the scalar and endpoint conventions.
 
-The terms **central**, **left**, and **right** describe supports of this local polynomial. With \(h=\lfloor d/2\rfloor\), central retains monomials for which both middle-face exponents \(i,t\) are at most \(h\). left and right retain the two possible one-sided alternatives. Since \(i+t\le d\), both exponents cannot exceed \(h\). Expanding the product of these local choices splits \(S_N\) into its all-central part and its complement. These are sectors of one prescribed calculation, not new knot invariants. The [geometric contribution theorem](../../notes/actual_morse_geometric_contribution.md) estimates the original filling functional applied to the all-central sector; a full-invariant theorem must also control the complementary sectors.
+The terms **central**, **left**, and **right** describe supports of this local polynomial. With \(h=\lfloor d/2\rfloor\), central retains monomials for which both middle-face exponents \(i,t\) are at most \(h\). The left piece has \(t>h\), overloading face \(c\); the right piece has \(i>h\), overloading face \(b\). Since \(i+t\le d\), both exponents cannot exceed \(h\). Expanding the product of these local choices splits \(S_N\) into its all-central part and its complement. These are sectors of one prescribed calculation, not new knot invariants. The [geometric contribution theorem](../../notes/actual_morse_geometric_contribution.md) estimates the original filling functional applied to the all-central sector; a full-invariant theorem must also control the complementary sectors.
 
 For a simple illustration of why the variables must remain shared,
 \[
@@ -487,13 +487,24 @@ For convex \(f\), it implies \(\sum_i f(u_i)\le\sum_i f(v_i)\). For concave \(f\
 
 For example, \((1,1)\prec(2,0)\), so \(2e\le e^2+1\). The equal-total condition is essential. This comparison controls sums of a convex function; it does not identify which coordinate carries the original quantum state.
 
-For invertible matrices \(A_0,\ldots,A_{m-1}\), let \(s_1(A)\ge\cdots\ge s_d(A)>0\) be the singular values, the square roots of the eigenvalues of \(A^*A\). If \(P=A_{m-1}\cdots A_0\), then
+For invertible matrices \(A_0,\ldots,A_{m-1}\) of the same size \(d\times d\), let \(s_1(A)\ge\cdots\ge s_d(A)>0\) be the singular values, the square roots of the eigenvalues of \(A^*A\). If \(P=A_{m-1}\cdots A_0\), then
 \[
  \sum_{i=1}^r\log s_i(P)
  \le\sum_{j=0}^{m-1}\sum_{i=1}^r\log s_i(A_j),
  \qquad 1\le r\le d,
 \]
 with equality at \(r=d\). To see the inequality, apply the operator-norm product inequality to the \(r\)-th exterior power: its norm is the product of the largest \(r\) singular values. At \(r=d\), multiplicativity of the determinant gives equality. Karamata can now be applied to the resulting logarithmic vectors.
+
+Here the exterior power \(\bigwedge^r A\) acts on alternating
+products of vectors by
+\[
+ (\bigwedge\nolimits^r A)(v_1\wedge\cdots\wedge v_r)
+                  =Av_1\wedge\cdots\wedge Av_r.
+\]
+In orthonormal singular-vector bases its diagonal entries are
+the products of \(r\) distinct singular values of \(A\).
+The largest such product is therefore its operator norm.
+This also explains why the \(r=d\) case is the absolute determinant.
 
 This estimate uses the largest available directions at every step. It does not force an evolving state to follow one marked eigenvalue branch. The [regulator-majorization note](../../notes/regulator_majorization_and_source_energy.md) gives a stronger *conditional* transport criterion. Its elementary model is a doubly stochastic matrix \(C\): its entries are nonnegative and every row and column sums to one. For a real vector \(r\),
 \[
@@ -518,7 +529,10 @@ a positive-measure Tauberian argument gives a cumulative law
  \sum_{2\le N\le x}e^{-\lambda N}E_N
        \sim \frac{C x^\alpha}{\Gamma(\alpha+1)}.
 \]
-Here \(\Gamma\) is the gamma function. The conclusion concerns a sum over levels, not each individual level.
+Here \(\Gamma(a)=\int_0^\infty u^{a-1}e^{-u}\,du\) for \(a>0\)
+is the [gamma function](https://dlmf.nist.gov/5.2#E1).
+The conclusion concerns a sum over levels,
+not each individual level.
 
 For example, the positive sequence \(E_N=e^{\lambda N}\) for even \(N\) and \(E_N=1\) for odd \(N\) has the corresponding cumulative exponential rate but no individual-level limit. This is an elementary sequence example, not a knot counterexample. The [Tauberian criterion](../../notes/actual_fourier_energy_tauberian_criterion.md) states a sufficient comparison between nearby levels and proves the implication. Neither that comparison nor the sharp Laplace singularity has been proved for the unrestricted knot source. The completed pretzel argument obtains its estimates directly and does not assume these missing Tauberian hypotheses.
 
@@ -526,7 +540,7 @@ For the positive-measure statement, see [Michael Taylor, *Karamata's Tauberian T
 
 ## Complex critical points and the contribution of the original contour
 
-An oscillatory integral or finite sum can have several complex critical points. If its phase is \(F(z)\), a critical point solves \(\nabla F(z)=0\). A local Gaussian calculation around a nondegenerate point involves the determinant of the Hessian matrix \(\partial^2F/\partial z_i\partial z_j\). The determinant's square root must follow the chosen contour and branch.
+An oscillatory integral or finite sum can have several complex critical points. If its phase is \(F(z)\), a critical point solves \(\nabla F(z)=0\). It is **nondegenerate** when the Hessian matrix \(\partial^2F/\partial z_i\partial z_j\) is invertible. A local Gaussian calculation then involves its determinant. The determinant's square root must follow the chosen contour and branch.
 
 The main issue is not just finding such a point. One must move the original contour to a neighborhood of it without losing boundary contributions, prove that the resulting coefficient is nonzero, and bound the complement. In the filling calculation, Fourier expansion produces integer indices \(\ell_e\), often called charges, in addition to the color variables. The original sum contains all those charges. A calculation for \(\ell_e=1\) alone does not establish the full asymptotic.
 

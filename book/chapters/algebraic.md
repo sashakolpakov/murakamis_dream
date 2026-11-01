@@ -90,8 +90,12 @@ objects.
 ## Hilbert 90 solves a transport equation
 
 Let \(E/F\) be a finite cyclic extension of fields, of degree \(r\),
-and let \(\sigma\) generate its Galois group. For \(a\in E^\times\),
-its norm is
+and let \(\sigma\) generate its Galois group. This means that the
+field automorphisms fixing \(F\) are
+\(1,\sigma,\ldots,\sigma^{r-1}\), that \(\sigma^r=1\), and that
+their common fixed field is \(F\). The notation \(E^\times\)
+means the nonzero elements of \(E\), under multiplication.
+For \(a\in E^\times\), its norm is
 \[
  \operatorname{Nm}_{E/F}(a)=\prod_{j=0}^{r-1}\sigma^j(a).
 \]
@@ -129,6 +133,9 @@ works in the nilpotent algebra \(\mathbb C[z]/(z^N)\). Put
 Both denominators are units because their constant terms are one.
 This is a concrete cyclic transport equation in a ring with
 nilpotents, not a direct application of the field theorem above.
+A unit is an element with a multiplicative inverse. A nilpotent
+element has a power equal to zero; here \(z^N=0\).
+In particular \((1-z)^{-1}=1+z+\cdots+z^{N-1}\) in this ring.
 Choose the unique polynomial representative of degree less than
 \(N\). On \(|z|\le1/4\), the calculation proves
 \[
@@ -158,6 +165,14 @@ Write \(f_i=1-H_i\). The quotient
 \(R/(f_1,\ldots,f_s)\) imposes these equations. A Koszul complex
 also records relations between the equations.
 
+A **chain complex** has modules \(C_i\) and maps
+\(d_i:C_i\to C_{i-1}\) with \(d_{i-1}d_i=0\). Its homology
+\(H_i(C)=\ker d_i/\operatorname{im}d_{i+1}\) records elements killed
+by one map, modulo those already supplied by the preceding map.
+An \(R\)-module allows addition and multiplication by coefficients
+in \(R\), as a vector space does over a field. Below \(R^k\)
+is the free module of \(k\)-tuples.
+
 For one equation its entire definition is the two-term sequence
 \[
                  0\longrightarrow R
@@ -175,7 +190,12 @@ The composite map is zero. Its degree-zero homology is
 \(f_1a+f_2b=0\), modulo the relations
 \((a,b)=(-f_2c,f_1c)\) already supplied by the first map.
 For \(s\) equations one takes the tensor product of the corresponding
-two-term complexes, with the usual alternating signs. This is the
+two-term complexes. The sign rule is
+\[
+ d(x\otimes y)=d(x)\otimes y+(-1)^p x\otimes d(y),
+                      \qquad x\in C_p.
+\]
+It makes the two mixed terms in \(d^2\) cancel. This is the
 [standard Koszul construction](https://stacks.math.columbia.edu/tag/0621).
 
 There is a particularly concrete reason for it in the finite
@@ -195,7 +215,11 @@ The [finite translation proof](../../notes/rational_period_pushforward.md#4-the-
 gives those bases explicitly. This is a reduction of a linear map,
 not conjugation of \(T\) by one basis change. Each diagonal entry
 one gives a two-term complex \(R\xrightarrow{1}R\), whose homology
-is zero and which can be removed by an explicit chain homotopy.
+is zero. It can be removed by an explicit **contracting homotopy**:
+send its degree-zero copy of \(R\) back to degree one by the identity
+map \(h\), and set \(h=0\) elsewhere. Then \(dh+hd=1\).
+This identity supplies the contraction, rather than merely observing
+that the quotient is zero.
 The remaining complex is \(R\xrightarrow{1-H}R\). For several
 commuting translations on separate tensor factors, tensoring these
 reductions gives a chain equivalence with the Koszul complex of
@@ -204,7 +228,9 @@ that the original and reduced complexes have equal dimensions.
 
 A sequence is *regular* if its generated ideal is proper and each
 \(f_i\) is a non-zero-divisor after the preceding equations have been
-imposed. For such a sequence the higher Koszul homology vanishes; see
+imposed: multiplication by \(f_i\) is injective on
+\(R/(f_1,\ldots,f_{i-1})\). For such a sequence the higher Koszul
+homology vanishes; see
 [Stacks Project, Lemma 15.31.2](https://stacks.math.columbia.edu/tag/062F).
 With redundant equations it can remain. For example, in
 \(R=\mathbb Q[x]\), the sequence \((x,x)\) has degree-one homology

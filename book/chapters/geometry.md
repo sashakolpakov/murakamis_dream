@@ -15,8 +15,15 @@ The knot cusp is left unfilled. The complete augmented action is
 \[
              \Phi_D=\frac{\operatorname{Vol}(Y_D)}{2\pi}.
 \]
-A filled quantum asymptotic instead uses the generally smaller value
-\(\operatorname{Vol}(S^3\setminus K_{\boldsymbol p})/(2\pi)\).
+A filled quantum contribution has the form \(a_Ne^{NS_{\mathrm{fill}}}\),
+where \(S_{\mathrm{fill}}\) is its complex critical action and the
+amplitude satisfies \(\log|a_N|=o(N)\). The geometric conclusion is
+\[
+ 2\pi\operatorname{Re}S_{\mathrm{fill}}
+       =\operatorname{Vol}(S^3\setminus K_{\boldsymbol p}).
+\]
+Thus the logarithmic growth rate is the filled volume divided by
+\(2\pi\), rather than the complete augmented value \(\Phi_D\).
 Here \(N\) denotes the quantum level; all diagram and filling data are
 fixed before \(N\) tends to infinity.
 
@@ -32,9 +39,10 @@ scopes distinct.
 The [first-reading chapter](starting.md) defines the diagram, its
 twist boxes and the coefficient extracted from the finite source.
 Here the emphasis is on the geometric objects represented by those
-variables. A source action is the exponential rate of a specified
-coefficient or sum. Calling that action a volume requires both a
-geometric realization and its absolute normalization.
+variables. The real part of a source action determines the exponential
+rate of the specified contribution once its amplitude is controlled.
+Interpreting that rate as volume requires the geometric realization
+and the factor \(2\pi\) in the displayed normalization.
 
 ## The geometric objects and the required checks
 
@@ -184,7 +192,8 @@ Here existence of the entire path comes from the explicit cell
 construction and its stated bound. Its volume constant is fixed
 at the complete augmented exterior, which
 has two regular ideal octahedra per tree edge. This proves that
-the continued action is the actual hyperbolic volume. To obtain
+\(2\pi\) times the real part of the continued critical action is
+the actual hyperbolic volume. To obtain
 a quantum volume equality one also needs the finite-sum estimate;
 the [directed subtree theorem](../../notes/actual_all_circle_directed_volume.md)
 supplies it under its stronger finite numerical test. In particular,
@@ -225,8 +234,9 @@ The [completion argument](../../notes/actual_all_circle_geometric_completion.md)
 proves that each auxiliary end is a punctured metric tube with these
 periods. At \(c=1\), its core is smooth. Attaching these cores performs
 the original surgeries, while the main cusp remains complete. The
-boundary correction to the complex action cancels the filling term;
-the resulting real value is the volume of this knot complement.
+boundary correction to the complex volume primitive gives
+\(\operatorname{Vol}=2\pi\operatorname{Re}S_{\mathrm{fill}}\)
+for this knot complement, in the source normalization above.
 The constant is fixed by the complete augmented link, whose volume
 is \(2E\,v_8\), where \(v_8\) is the volume of a regular ideal
 octahedron.
@@ -244,7 +254,7 @@ The [net-twist reduction](../../notes/actual_conway_net_twist_volume.md) extends
 
 A Conway expression is a recorded sequence of two operations on tangles: stack two boxes, or turn one box through a quarter-turn. Its leaves are the original twist regions. The finite strictness test in the theorem is a compatibility test for the positive angles of these operations. It is not a claim that any written tangle expression becomes hyperbolic when its displayed exponents are large.
 
-The geometric pieces follow these operations. Each leaf contributes an ideal quadrangular pyramid, and each retained product contributes an ideal triangular prism. Their volumes agree with the local terms of the complete quantum action. Each quadrilateral gluing face has four ordered ideal vertices. The order specifies which vertex is identified with which when two cells are attached; it is part of the geometry, not just a label for a boundary variable. The metrics of these faces are determined by derivatives of the action. When the full action is stationary under the shared-index constraints, those metrics agree across the actual ordered product faces.
+The geometric pieces follow these operations. Each leaf contributes an ideal quadrangular pyramid, and each retained product contributes an ideal triangular prism. Their volumes supply the local terms of the complete quantum action; the explicit cell formulas below account for the two copies in the exterior and the division by \(2\pi\). Each quadrilateral gluing face has four ordered ideal vertices. The order specifies which vertex is identified with which when two cells are attached; it is part of the geometry, not just a label for a boundary variable. The metrics of these faces are determined by derivatives of the action. When the full action is stationary under the shared-index constraints, those metrics agree across the actual ordered product faces.
 
 The [general strict-mask geometry theorem](../../notes/actual_conway_general_strict_mask_geometry.md) proves that these pieces assemble with the original cyclic orders. Its *mask* is a four-entry list attached to an ordered quadrilateral: an entry is one when the neighboring face is a shaded crossing-disk face and zero when it is a white projection face. A quarter-turn rotates that list along with the four corners. These entries determine which seams become flat and which remain right-angled after gluing. The proof rules out vertex identifications that would collapse a shaded triangle, checks the edge cycles, and constructs positive rectangular cusp links.
 
@@ -252,7 +262,7 @@ The final identification with the diagram uses the [literal bowtie cut](../../no
 
 The [marked deformation theorem for the full strict class](../../notes/actual_conway_general_mask_marked_filling.md) extends the complete construction to nearby complex auxiliary colors. Its face maps satisfy the original group relations, including their translational parts. Every main cusp remains parabolic. On an auxiliary cusp it supplies specified logarithms \(U_i,V_i\) of the peripheral multipliers. Here a logarithm includes its chosen branch, so it records a winding that a bare eigenvalue would forget.
 
-Write the actual twist weight as \(n_i=\epsilon_i-2p_i\), with \(\epsilon_i\in\{0,\pm1\}\) recording a retained half twist. The filling equation uses the primitive basis of this actual half-twisted link. For every fixed choice of sufficiently large independent signed \(p_i\), the nearby solution gives a smooth filling of the auxiliary cusp. The main knot cusp is never filled. The action, with its boundary correction, equals the volume of that resulting knot complement. The quantum theorem uses exactly this solution and normalization.
+Write the actual twist weight as \(n_i=\epsilon_i-2p_i\), with \(\epsilon_i\in\{0,\pm1\}\) recording a retained half twist. The filling equation uses the primitive basis of this actual half-twisted link. For every fixed choice of sufficiently large independent signed \(p_i\), the nearby solution gives a smooth filling of the auxiliary cusp. The main knot cusp is never filled. The boundary correction identifies \(2\pi\operatorname{Re}S_{\mathrm{fill}}\) with the volume of that resulting knot complement. The quantum theorem uses exactly this solution and normalization.
 
 The peripheral deformation viewpoint has its classical foundation in
 [Neumann and Zagier, *Volumes of hyperbolic three-manifolds*](https://archive.mpim-bonn.mpg.de/id/eprint/1122/).
