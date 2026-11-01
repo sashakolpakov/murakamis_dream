@@ -30,7 +30,7 @@ For \(r\) crossing regions, let \(S(\sigma_1,\ldots,\sigma_r)\) have degree at m
 \]
 In particular this applies to each term containing a specified lower or upper one-sided factor, with \(J\) its one-sided crossing regions. The case \(J=\varnothing\) is the full-source bound.
 
-There is also a bound for the whole complementary source without expanding it into sectors. If \(\mathcal D\) vanishes on the Cartesian product of all spectral node sets, then
+There is also a bound for the whole complementary source without expanding it into sectors. Let \(\mathcal D\) have degree at most \(d=N-1\) in each spectral variable. If it vanishes on the Cartesian product of all spectral node sets, then
 \[
  \left|\left(\bigotimes_{e=1}^r\mathcal L_N^{n_e}\right)\mathcal D\right|
  \le \left\{\prod_e\left(1+\frac{|n_e|}{2}\right)

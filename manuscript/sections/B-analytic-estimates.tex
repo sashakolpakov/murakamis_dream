@@ -7,7 +7,32 @@ The local and global estimates have different purposes. Section~\ref{app:selecte
 \section{Nonlocal filling charges and local contour connectors}\label{app:filling-contours}
 We give the additional contour details used after the infinite tails have been removed in Chapter~\ref{ch:filling}. All constants below are chosen from one fixed source neighborhood. They do not depend on the relative sizes of different filling slopes.
 
-The exact finite Fourier polynomial satisfies a strict real gap whenever one coordinate lies outside a fixed small interval about zero. Its fixed derivatives have the same property. This follows from the cotangent rectangle estimate \eqref{eq:noncentral-Fourier}; summing the other physical colors in absolute value costs powers of $N$ under the source Gaussian bound. The estimate persists in a small complex strip in that coordinate, since an imaginary displacement of height $v$ costs at most $e^{2\pi\delta N|v|}$ on the physical support.
+The exact finite Fourier polynomial and any fixed derivatives have a
+strict gap when the real part of one Fourier coordinate stays a fixed
+positive distance from the integers and all other Fourier coordinates
+are real. We also need this statement in a complex strip. Apply the cotangent rectangle estimate
+\eqref{eq:noncentral-Fourier} with a complex Fourier parameter. Write that coordinate
+as $z_i=x_i+\ii v$, so its Fourier parameter is
+$\phi+2\pi\ii v$, with $\phi=2\pi x_i$ reduced to
+$[\phi_0,2\pi-\phi_0]$. On the entire unscaled summation rectangle,
+$|\Re w|\le H_N+1/2\le\delta N+1/2$, and the additional factor satisfies
+\[
+ |e^{-2\pi v w}|\le
+ e^{2\pi(\delta N+1/2)|v|}.
+\]
+Consequently every horizontal, vertical and nonconstant-kernel estimate
+in the real-parameter proof retains its gap, reduced by at most
+$2\pi\delta|v|+O(N^{-1}|v|)$. Choose a fixed $v_0>0$ small enough
+that this loss is below half the real gap. The color contours used in
+this argument remain inside the fixed holomorphic tube of
+\eqref{eq:complex-gaussian-bound}. Summing the other physical colors
+costs only a polynomial in $N$, because their Fourier phases remain
+real and the source Gaussian bound is uniform in those colors.
+Inserting fixed powers of any color index proves the same assertion
+for fixed Fourier derivatives. Thus the resulting complex-strip gap is
+uniform for $|v|\le v_0$ and real spectator Fourier variables, with
+$v_0$ depending only on the fixed source and the excluded real interval,
+not on the filling slopes.
 
 Fix a sufficiently small local ratio radius $t_0$. For a finite charge with $|m_i/p_i|\ge t_0$, split the real interval in coordinate $i$ into $|z_i|\le t_0/4$ and its complement. In the first interval,
 \[
@@ -35,6 +60,49 @@ Thus $|z_i+t_i/2|\le C_0|e_it_i|/(4\pi)$. The coefficients of $Q_i$ need not be 
  |\Im z_i(\mathbf t,\mathbf e)|\le C|e_i||t_i|,
  \qquad |\Re z_i+t_i/2|\le C|e_i||t_i|.
 \]
-Translate a small real box to this critical point. On its real boundary the Fourier action has a quadratic loss relative to its critical value. The chirp's real change on a connector is bounded by a constant times $|p_i||\Im z_i|$ times the boundary displacement; the critical equation cancels the linear term at the saddle. Shrinking the fixed local ratio box first and then increasing the slope threshold leaves the quadratic boundary loss strict. The real part of the Hessian on the translated real tangent space is close to that of $\Psi''(0)$ and remains negative definite. Taylor expansion gives the Gaussian with its branch fixed by this translated contour. Odd cubic terms integrate to zero; the first relative correction is $O(N^{-1})$.
+Choose first an outer real box $[-a,a]^b$ whose fixed complex thickening
+lies inside the Fourier-packet domain and on which
+$\Re\Psi''$ is negative definite on real tangent vectors. Next choose
+the local ratio radius $t_0$ sufficiently small compared with $a$, and
+only then decrease the upper bound on every $|e_i|$. The bounds above
+give $|\Re z_{*,i}|\le C|t_i|$ and
+$|\Im z_{*,i}|\le C|e_it_i|$ for every local charge. The part of the original real cube outside this box has a strict
+Fourier gap; its chirps have modulus one. Estimate it on the real
+contour. Translate the box
+to $\mathbf z_*(\mathbf t,\mathbf e)+[-a,a]^b$, retaining all joining
+faces. On any such face, with $\mathbf z=\mathbf x+\ii\mathbf y$,
+some $|x_i|\ge a/2$, while $|y_i|\le C|e_it_i|$. The source bound and
+the exact real part of the filling phase imply
+\[
+ \Re T_{\mathbf m}(\mathbf x+\ii\mathbf y)
+ \le F_0-c\|\mathbf x\|^2
+       +C_1\|\mathbf x\|\|\mathbf t\|+C_2\|\mathbf t\|^2
+ \le F_0-g_a
+\]
+for a fixed $g_a>0$, after the stated choice of $t_0$. Indeed
+$|p_i y_i|\le C|t_i|$ and $|m_i y_i|\le C t_i^2$; no ratio of two
+different slopes occurs. Constants absorb the fixed dimension and the
+bounded source Hessian. The same bounds apply to the intermediate faces
+when the coordinates are translated successively.
+
+On the translated real box, the critical equation removes the linear
+term and the chirp Hessian has purely imaginary entries. Hence
+\[
+ \Re T_{\mathbf m}(\mathbf z_*+\mathbf u)
+ \le\Re T_{\mathbf m}(\mathbf z_*)-c_1\|\mathbf u\|^2,
+ \qquad \mathbf u\in[-a,a]^b,
+\]
+after shrinking the original source neighborhood. Gaussian integration
+on this contour gives its local saddle term with a relative
+$O_{\mathbf p}(N^{-1})$ error; the joining faces contribute the separate
+absolute error $\poly(N,\mathbf p)e^{N(F_0-g_a)}$. The holomorphic
+relative error in \eqref{eq:Fourier-packet} is carried through the same
+contours, with its derivatives bounded by Cauchy's estimate on the
+larger fixed domain. Only the first-charge integral needs a relative
+asymptotic for the final conclusion. Its real critical value tends to
+$F_0$ as all reciprocal slopes tend to zero, so increasing the common
+threshold places it above $F_0-g_a$. For other local charges, the
+saddle comparison \eqref{eq:charge-gap} and the same absolute connector
+error suffice.
 
 These connector estimates are applied only after the tails have been removed by the real-spectator telescoping argument. They therefore introduce no uncontrolled exponential factor from a larger slope at another cusp. Finally, the selected action tends to $F_0$ as all reciprocal slopes tend to zero. A single threshold absorbs the fixed source and contour losses. The proof never exchanges the limit $N\to\infty$ with a slope tending to infinity.

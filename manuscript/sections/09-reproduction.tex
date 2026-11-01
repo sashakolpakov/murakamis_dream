@@ -2,6 +2,137 @@
 
 The volume theorems combine written analytic and geometric arguments with finite checks of different kinds. The long-twist proof reduces two local inequalities to exact rational certificates supplied with the paper. The quantitative circle-tree proof establishes its uniform bounds analytically; separate finite checks verify its edge formulas, face identifications and peripheral identities. This chapter distinguishes those roles and records the scope of each theorem.
 
+\section{The implication that finishes a volume proof}\label{sec:proof-dependencies}
+
+It is useful to separate three questions. Does the exact invariant contain
+the contribution computed by stationary phase, with the stated scalar
+normalization? Is the sum of all its other contributions smaller at the
+exponential scale? Is the real part of the selected action the volume of
+the intended knot complement? An affirmative answer to one of these
+questions does not answer the other two.
+
+The final analytic step has the following precise form. Its hypotheses
+refer to the entire remainder, including all other charges and contour
+terms. Throughout this statement, the diagram and every filling integer
+are fixed. We use $\log 0=-\infty$ in an upper bound for a remainder.
+
+\begin{proposition}[Transfer from a contribution to the invariant]
+\label{prop:volume-rate-transfer}
+Suppose that for all sufficiently large integers $N$ the exact invariant
+has the decomposition
+\[
+ K_N=u_N(G_N+E_N),\qquad G_N=a_Ne^{N\mathcal A},
+\]
+where $\mathcal A\in\CC$ is independent of $N$, and $u_N,a_N$ are
+nonzero with
+\[
+ \frac1N\log|u_N|\longrightarrow0,\qquad
+ \frac1N\log|a_N|\longrightarrow0.
+\]
+Assume there are real numbers $\Phi$ and $\gamma>0$ such that
+\[
+ \limsup_{N\to\infty}\frac1N\log|E_N|\le\Phi-\gamma,
+ \qquad \Re\mathcal A>\Phi-\gamma.
+\]
+Then $K_N$ is nonzero for all sufficiently large $N$, and
+\[
+ \lim_{N\to\infty}\frac1N\log|K_N|=\Re\mathcal A.
+\]
+If a separate geometric argument proves
+$2\pi\Re\mathcal A=\Vol(S^3\setminus K)$ for this same knot,
+the volume conjecture follows for $K$.
+\end{proposition}
+
+\begin{proof}
+Put $\Delta=\Re\mathcal A-(\Phi-\gamma)>0$ and choose
+$0<\eta<\Delta/3$. The remainder bound and the limit for $a_N$
+give, for all sufficiently large $N$,
+\[
+ |E_N|\le e^{N(\Phi-\gamma+\eta)},\qquad
+ |G_N|\ge e^{N(\Re\mathcal A-\eta)}.
+\]
+Consequently $|E_N/G_N|\le e^{-N(\Delta-2\eta)}$. In particular
+this ratio is eventually smaller than $1/2$. The triangle and reverse
+triangle inequalities bound $|1+E_N/G_N|$ between
+$1-e^{-N(\Delta-2\eta)}$ and $1+e^{-N(\Delta-2\eta)}$.
+It is nonzero and its logarithm divided by $N$ tends to zero. Taking
+absolute values and logarithms in
+$K_N=u_Na_Ne^{N\mathcal A}(1+E_N/G_N)$ proves the assertion.
+The last conclusion uses the stated geometric identity, which is not
+an assumption needed for the preceding analytic limit.
+\end{proof}
+
+A relative correction such as $1+O(N^{-1})$ to the first saddle
+belongs to $a_N$. It is not put into $E_N$: such a correction has the
+same exponential rate as the first saddle. The strict remainder bound
+is reserved for the other contributions.
+
+The location of each hypothesis matters. For the recursive tangle
+theorem, Chapter~\ref{ch:source} gives the exact invariant and its
+normalization. Chapter~\ref{ch:alias} bounds the complementary color
+terms. Chapter~\ref{ch:packet} and Appendix~\ref{app:selected-source}
+construct the local holomorphic approximation. Chapter~\ref{ch:filling}
+and Section~\ref{app:filling-contours} control the rest of the Fourier
+period, prove that the leading coefficient is nonzero, and compare the
+charge actions. Chapter~\ref{ch:marked} and
+Appendix~\ref{app:marked-calibration} identify that action with the
+volume of the original primitive filling. The local approximation
+alone supplies neither the global remainder bound nor the metric
+identification.
+
+For weak balance, write the exact shared spectral polynomial as
+$S_N=C_N+D_N$, where $C_N$ uses the central contribution at every
+crossing region. Equation~\eqref{wb:remainder} bounds the supremum
+norm of $D_N$ on the full real spectral cube. Appendix~\ref{app:uniform-filling-bound}
+then bounds its image under the actual filling functional by
+\[
+ |E_N|\le\prod_e(1+|n_e|/2)\,\|D_N\|_{[-2,2]^R}.
+\]
+The product is independent of $N$. Appendix~\ref{app:morse-geometric-contribution}
+gives the nonzero asymptotic of the filled central contribution and
+its geometric action. Only after these two independent estimates have
+been established do we increase the fixed twist threshold so that
+the drop from $\Phi$ to $\Re\mathcal A$ is smaller than the remainder
+gap. Proposition~\ref{prop:volume-rate-transfer} then applies.
+
+There is no circular use of the planar decoration theorem here.
+Appendix~\ref{app:morse-geometric-contribution} uses the complete
+packing construction and finite Morse source from
+Appendix~\ref{app:balanced-terminal-fans}; it does not assume that
+appendix's full-invariant volume conclusion. The complementary-source
+estimate under weak balance is proved separately in
+Appendix~\ref{app:weak-balance}. For a general unchanged matched sphere
+that estimate remains an additional requirement.
+
+\section{Finite steps checked in Lean}
+
+The directory \sourcefile{formal/} contains a small formalization using
+Lean's standard library. It checks the exact even- and odd-level degree
+cutoffs, polynomial divided differences without division at a spectral
+root, the double-root Hermite identity after clearing denominators, and
+the finite tensor-product subtraction used when node values vanish.
+It also checks the scalar inequalities that compare the entropy gain
+with its quadratic cost and preserve a remainder gap after a small
+decrease in the action. From the repository root, run
+\begin{verbatim}
+python3 repro/check_proof_logic.py --output repro/results/proof-logic
+\end{verbatim}
+The project pins its Lean version. The runner compiles the declarations
+and then separately inspects every theorem's logical assumptions.
+The accepted foundational axioms are propositional extensionality,
+classical choice and quotient soundness; an admitted proof step is
+rejected.
+
+These are formal proofs of the stated finite implications. Their
+applications still require the hypotheses proved in the manuscript.
+For example, the scalar entropy comparison does not prove the Hessian
+formula, and the divided-difference identity does not identify the
+original knot operator. The exact diagram adapter, uniform analytic
+estimates, geometric realization, primitive completion and
+Proposition~\ref{prop:volume-rate-transfer} remain written proofs.
+The file \sourcefile{repro/MANUSCRIPT_AUDIT.md} records the current
+proof checks and the boundaries of this initial formalization.
+
 \section{Three different kinds of evidence}
 The manuscript contains analytic proofs, exact finite certificates, and optional finite checks. They have different logical roles. The matrix identities, support and strictness arguments, geometric incidence, complex estimates and filling analysis are proved in the text. The rational certificates are finite parts of the proof: the continuum inequalities reduce to their exact feasibility, coverage and supporting-plane checks. Finite matrix computations and numerical asymptotic comparisons provide independent checks of formulas and normalizations, but do not establish a theorem by extrapolation.
 

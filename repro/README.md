@@ -5,6 +5,20 @@ The manuscript proves inequalities on continuous regions of state variables. Som
 
 ## Run the checks
 
+The [manuscript audit](MANUSCRIPT_AUDIT.md) follows the implications from
+the exact invariant to the volume identity, records the corrections
+found in this review, and identifies the arguments still outside formal
+verification. The [Lean project](../formal/README.md) checks finite
+support, polynomial, tensor, and rate-comparison identities. Run it with
+the pinned Lean toolchain installed:
+
+```sh
+python3 repro/check_proof_logic.py --output repro/results/proof-logic
+```
+
+This command does not replace the certificate checks below or formally
+prove an analytic or geometric theorem in the manuscript.
+
 The exact verifiers require Python 3.10 or later and only its standard library. From the repository root, run:
 
 ```sh

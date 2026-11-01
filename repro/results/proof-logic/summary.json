@@ -1,0 +1,125 @@
+{
+  "scope": "Finite support, polynomial and tensor identities, and scalar rate implications only.",
+  "not_formalized": [
+    "the exact knot-diagram adapter",
+    "uniform analytic estimates",
+    "geometric realization and filling",
+    "the volume limit"
+  ],
+  "toolchain": "leanprover/lean4:v4.32.2",
+  "commands": [
+    [
+      "lake",
+      "build"
+    ],
+    [
+      "lake",
+      "env",
+      "lean",
+      "AxiomAudit.lean"
+    ]
+  ],
+  "theorems": {
+    "VolumeLogic.three_supports": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.left_endpoint_cutoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.central_endpoint_even": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.central_endpoint_odd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.protected_moment_degree": [
+      "propext",
+      "Quot.sound"
+    ],
+    "VolumeLogic.divided_difference_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.annihilating_root_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.double_root_jet_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.all_choices_product": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.tensor_grid_subtraction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.product_difference_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.doubled_flattening_gain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.strict_weak_balance_gain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.total_nonnegative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.nonempty_sector_gap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.sector_strictly_below": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.filled_rate_gap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.filled_remainder_strictly_below": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_sha256": {
+    "formal/VolumeLogic/FiniteAlgebra.lean": "da1f26ce23fdbc6a8fc22a7a61f46b916c45d8b4301914a35803f767a42bf400",
+    "formal/VolumeLogic/FiniteSupport.lean": "cd5e93e68a9c933708203700a523090809f094cd866aab04aa4833e072d7576e",
+    "formal/VolumeLogic/RateComparison.lean": "837a19f87080465b55b8f9373d99eda56900829c166e98a8f16c1136ae06123b",
+    "formal/VolumeLogic.lean": "7421723852cd9e934634c3bb812e6236565846869f0ae8ebb999ba2f0c93423e",
+    "formal/AxiomAudit.lean": "5dc7aae41f2e01923c2f1ad52e39cb5fd0b75ab076b7b86c25ad5eeeb422da21",
+    "formal/lakefile.toml": "d4fbe5befdea32352528a400922442a9814ad56dd607ec3dbbff3639120d947b",
+    "formal/lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+    "formal/lake-manifest.json": "94a62178292dabc02ac925f33a78081a26da3b9fc9b5c3ea33e97e9a8dce25da",
+    "repro/check_proof_logic.py": "fc92dc6fbde15af2e919d793827313d8552d25ee1e38017ff97c5a41a719bde6"
+  },
+  "result": "All listed declarations compiled; only the permitted foundational axioms occur."
+}

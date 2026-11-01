@@ -153,6 +153,7 @@ addresses redirect to it; there is no second exposition to keep in sync.
 | --- | --- |
 | `manuscript/` | TeX paper, bibliography, figures, and compiled PDF |
 | `repro/` | Check runner and the precise scope of its checks |
+| `formal/` | Lean proofs of finite steps, with their remaining hypotheses stated |
 | `book/` | Guide chapters and editable diagrams |
 | `docs/` | Published illustrated guide |
 | `notes/` | Detailed arguments and historical research notes |

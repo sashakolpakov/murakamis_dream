@@ -1,5 +1,58 @@
 # Checking the formulas and reproducing the calculations
 
+## Following the proof's dependencies
+
+The manuscript's final step is an explicit implication. Write the exact
+invariant as \(K_N=u_N(G_N+E_N)\), where \(u_N\) is the recorded
+normalization, \(G_N=a_Ne^{N\mathcal A}\) is the selected contribution,
+and \(E_N\) is everything else. To obtain the action as the growth rate,
+one needs
+
+\[
+ \frac{\log|u_N|}{N}\longrightarrow0,\qquad
+ \frac{\log|a_N|}{N}\longrightarrow0,\qquad
+ \limsup_{N\to\infty}\frac{\log|E_N|}{N}
+       <\operatorname{Re}\mathcal A.
+\]
+
+The reverse triangle inequality then prevents cancellation of the leading
+contribution. A separate geometric argument identifies
+\(2\pi\operatorname{Re}\mathcal A\) with the volume of the intended knot
+complement. The reproduction chapter gives the complete elementary
+argument and records which earlier results supply each hypothesis.
+A critical point, a norm bound, or a representation with the right
+peripheral equations supplies only part of this chain.
+
+The [manuscript audit](../../repro/MANUSCRIPT_AUDIT.md) records the
+current review. It led to an explicit comparison between the regulator's
+fundamental chain and the filled metric in Appendix D, and a more precise
+complex-contour estimate in Appendix B. It also made the multidegree
+hypothesis explicit in the standalone tensor norm statement. The review
+does not certify every theorem in the manuscript; its scope and remaining
+dependencies are stated in that record.
+
+## Checking finite implications in Lean
+
+With the pinned Lean toolchain installed, run:
+
+~~~sh
+python3 repro/check_proof_logic.py --output repro/results/proof-logic
+~~~
+
+The [formal project](../../formal/README.md) proves eighteen finite
+lemmas about the exact parity cutoffs, polynomial and Hermite identities,
+tensor subtraction, and scalar rate comparisons. The runner compiles
+the proofs and separately checks their logical assumptions. It rejects
+admitted proof steps. These declarations retain their mathematical
+hypotheses: they do not formally prove the analytic source estimates,
+the diagram-to-invariant identity, or hyperbolic completion.
+
+For example, the tensor identity subtracts the term that uses evaluation
+at every coordinate. It retains all terms with one or more derivatives,
+as required at repeated spectral roots. Proving that the actual source
+has the claimed degree and vanishes on the specified product grid is a
+separate part of Appendix N. This distinction is recorded in the formal
+project's explanation of every declaration.
 
 ## Uniform bounds for inserting twists
 

@@ -6,6 +6,12 @@ The manuscript contains completed proofs, including partial results with narrowe
 
 The proofs retain their named dependencies on earlier finite-source and geometric lemmas. Those citations are part of the argument; the PDF does not reproduce every calculation in the technical library. [The proof-input map](../repro/PROOF_INPUTS.md) separates these written inputs from executable checks.
 
+The [manuscript audit](../repro/MANUSCRIPT_AUDIT.md) records the current
+checks of those implications and the corrections they required. The
+reproduction chapter now states the final rate-transfer argument with
+all its hypotheses. A [small Lean project](../formal/README.md) checks
+finite algebraic steps; it does not formally verify the volume theorems.
+
 The paper proves volume limits for finite decorations of planar tangle diagrams and for specified ordered-tree constructions. The planar theorem starts from a simple triangulated sphere with a chosen matching, constructs its complete circle packing, and adds terminal tangles until a strict shared-radius inequality holds. Independently sufficiently long signed twists at every original and added crossing circle then give the volume equality for the resulting knot. The tree theorems have separate explicit degree and twist bounds. Chapter 1 distinguishes these families and their quantifiers.
 
 The recursive tangle theorem permits independently chosen positive or negative twist numbers beyond a construction-dependent threshold. For a finite ordered tree with at least one edge and a crossing circle at every vertex, the paper also proves explicit sufficient conditions. Write $d_v$ for a vertex degree and $n_v$ for its signed half-twist power. One such condition is
