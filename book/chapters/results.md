@@ -347,7 +347,7 @@ The [geometric proof](../../notes/actual_main_meridian_preferred_cusp.md) comput
 
 ![The preferred longitude on the filled cusp: the same Euclidean lattice with the augmented and surgery-corrected choices of longitude.](../figures/main-cusp-longitude-shear.svg)
 
-The geometric longitude identity and this asymptotic apply to the same strict-tree class under the stated long-twist hypotheses. Passage through $s=\pm1$, the first ordinary-color resonances, and identification of a classical geometric factor of the quantum recurrence remain open for this class. The construction and twists cannot grow with $N$, and small surviving twists are not covered.
+The geometric longitude identity and this asymptotic apply to the same strict-tree class under the stated long-twist hypotheses. Passage through $s=\pm1$, the first ordinary-color resonances, remains open for the general strict-tree profile. The selected classical geometric factor is identified for the covered trees of crossing circles; extending that identification to strict presentations with bare junctions remains open. The construction and twists cannot grow with $N$, and small surviving twists are not covered.
 
 The [intrinsic transfer under tangle reduction](../../notes/actual_main_meridian_filled_volume.md#net-twists-and-other-conway-closures) gives the same uniform volume limit, nonvanishing and preferred-cusp expansion for the net-twist and arbitrary-closure presentations described earlier. For a cylindrical input, its reduction must give a strict knot with sufficiently long surviving net twists. For either cylindrical or cap closure with zero sums, the input must satisfy the closure theorem: a hyperbolic input with sufficiently long surviving strict weights reduces to one strict knot factor and unknot factors. The reduction is an actual ambient isotopy after those unknot factors are removed.
 
@@ -597,8 +597,36 @@ expansion selects an analytic curve in its classical symbol.
 The selected factor is reciprocal and has an explicit rational
 peripheral expression. Its tangent is the preferred cusp shape.
 
-This result concerns the characteristic of the actual quantum
-state. Identifying its entire curve with the classical geometric
-longitude curve is a further statement, which is not asserted.
-The [frontier chapter](frontier.md#what-the-full-expansion-now-forces-on-the-recurrence)
-explains the distinction and the remaining geometric construction.
+For the circle-tree presentations, the [geometric longitude theorem](../../notes/actual_all_circle_geometric_characteristic.md)
+now identifies the entire selected curve with the knot's preferred
+meridian--longitude deformation. If \(n_v\) are the original crossing
+powers and \(w(D)\) is their oriented writhe, its longitude is
+\[
+ L(M)=-M^{-w(D)-\sum_v n_v}
+       \prod_e\frac{M^2-E_e(M)}{1-M^2E_e(M)}.
+\]
+The edge variables \(E_e\) solve the stated rational gluing equations
+on the branch obtained from the original filling path. This branch
+condition matters: elimination alone retains other representations.
+
+The proof first constructs the nonparabolic representations of the
+pieces and joins them along their labeled twice-punctured disks.
+It retains the changes of puncture eigenlines caused by a half twist.
+Compare the squared preferred-longitude eigenvalue with the square of
+the displayed edge product. The boundary pairing shows that their ratio
+has zero derivative when the auxiliary variables vary at fixed \(M\).
+The edge equations have no additional algebraic constants over
+\(\mathbb C(M)\), so this ratio is a rational function of \(M\).
+For every \(M\ne0\), auxiliary parameters can be chosen so that the
+representation and all edge factors are finite and nonzero. The ratio
+therefore has no zeros or poles on \(\mathbb C^*\), leaving only a
+constant times an integer power of \(M\). The marked complete cusp
+fixes that constant and exponent, and the Seifert-surface calculation
+fixes the remaining sign.
+
+Combining this result with the full quantum expansion proves that the
+selected geometric factor divides the first nonzero classical symbol
+of every genuine all-level annihilator in the covered circle-tree
+classes. The other factors of the symbol, the full recurrence ideal,
+and the extension to other strict presentations are separate questions.
+The existing volume theorems keep their broader stated scopes.

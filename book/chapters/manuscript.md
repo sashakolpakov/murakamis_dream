@@ -91,6 +91,24 @@ geometric-completion proofs, including their face maps, peripheral
 words and uniform constants. The companion notes present the same
 calculations separately.
 
+## The geometric longitude and the quantum recurrence
+
+A further chapter proves that the longitude selected by the circle-tree
+source is the preferred geometric longitude of the knot complement.
+The proof constructs nonparabolic representations of the two-octahedron
+pieces, keeps the puncture eigenlines through each half twist, and
+assembles the original boundary words. It then uses a rational-function
+argument: the auxiliary peripheral equations leave only a function of
+the main meridian, and regular reconstruction at every nonzero meridian
+value forces that function to be the known framing monomial.
+
+Appendix H gives the full expansion and its implication for a genuine
+all-level recurrence. Appendix I supplies the geometric construction,
+algebraic rigidity, and the sign fixed by a Seifert surface. Together
+they identify the geometric irreducible factor in the classical symbol
+for the covered circle-tree classes. They do not assert that this is
+the entire A-polynomial or the entire recurrence ideal.
+
 ## How to read the proof
 
 The first part fixes the invariant normalization and derives the finite algebra of the tangle operations. A color is an integer label in that finite calculation. It is not an additional component of the final knot. The source formula retains values and first derivatives at repeated spectral points, which explains the use of Hermite interpolation. Newton polynomials make the allowed integer indices at a product explicit. These support conditions are kept before taking a continuum limit.

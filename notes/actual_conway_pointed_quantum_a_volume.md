@@ -6,7 +6,7 @@ A recurrence operator does not determine a knot invariant by itself: a recurrenc
 
 At a root of unity, some coefficients of the recurrence may have poles when solved in forward form. The reconstruction keeps the whole Laurent expansion, so those poles can cancel before evaluation. Only a bounded number of derivatives of the initial data is needed, with a bound determined by the fixed operator and independent of the quantum level.
 
-For the knots of the [net-twist theorem](actual_conway_net_twist_volume.md) and its [closure extension](actual_conway_arbitrary_closure_volume.md), this exact reconstruction has exponential growth equal to the knot complement volume. Every admitted knot is isotopic to a sufficiently long strict Conway knot. The closure extension also allows cap closures and zero sums, retaining the connected-sum factors until the hyperbolic input is shown to equal one strict factor. The proof transfers the invariant-volume theorem through an exact identity. The selected classical geometric factor remains a separate question.
+For the knots of the [net-twist theorem](actual_conway_net_twist_volume.md) and its [closure extension](actual_conway_arbitrary_closure_volume.md), this exact reconstruction has exponential growth equal to the knot complement volume. Every admitted knot is isotopic to a sufficiently long strict Conway knot. The closure extension also allows cap closures and zero sums, retaining the connected-sum factors until the hyperbolic input is shown to equal one strict factor. The proof transfers the invariant-volume theorem through an exact identity. For the covered circle-tree presentations, the [geometric longitude theorem](actual_all_circle_geometric_characteristic.md) also identifies the selected classical geometric factor. Other strict presentations and full quantum-module comparisons require further work.
 
 The same reconstruction and volume conclusion also apply to the
 [quantitative circle-tree theorem](actual_all_circle_quantitative_volume.md),
@@ -312,11 +312,11 @@ The [marked regulator norm](intrinsic_quantum_a_norm_torsor.md) is normalized by
 
 These are norm equalities for the selected periods. They do not identify an entire unpointed space of solutions, or assert an isomorphism of quantum modules.
 
-## 6. The remaining classical question
+## 6. The selected geometric factor and the remaining questions
 
 For the knots in the theorem, three objects are available: a genuine all-level ADO annihilator, fixed finite data selecting its solution, and an exact complete period with the knot-volume limit. The operator exists before the period is evaluated. Its initial jets contain no level-dependent exponential normalization, and (11) shows that a different invariant has not been substituted.
 
-A stronger problem is to identify the selected geometric factor in the \(q\to1\) characteristic polynomial and compare its pointed quantum module with the marked regulator germ. The crossing-circle deformation used to prove the volume theorem keeps the main meridian complete. It is not by itself a semiclassical theorem for varying that main-meridian ADO coordinate. Likewise, a rational root-state solution always gives a central monodromy eigenvalue \(1\); this does not identify its central spectral curve with the classical knot \(A\)-polynomial.
+The [full microscopic expansion](actual_main_meridian_filtered_characteristic.md), combined with the [geometric longitude theorem](actual_all_circle_geometric_characteristic.md), identifies the selected geometric factor for the covered circle trees. Comparing the entire pointed quantum module with the marked regulator germ remains a stronger problem. The crossing-circle deformation used to prove the volume theorem keeps the main meridian complete. It is not by itself a semiclassical theorem for varying that main-meridian ADO coordinate. Likewise, a rational root-state solution always gives a central monodromy eigenvalue \(1\); this does not identify its central spectral curve with the classical knot \(A\)-polynomial.
 
 The [complete-meridian zero theorem](actual_ado_complete_meridian_zero_accumulation.md) gives an explicit restriction on that comparison. Exactly \(F_N(q_N)=1\), whereas \(F_N(1)=K_N(K)\) has positive volume growth. Actual zeros therefore approach \(M=1\) within \(O(1/N)\), and a uniform nonzero scalar branch for the unchanged state across completeness is impossible. The full modified state has a pole at \(M=q_N\).
 

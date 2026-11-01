@@ -30,6 +30,24 @@ finite trees, the contour bounds, noncancellation, and the metric
 completion. The scripts do not test the asymptotic conclusion
 by extrapolating finite levels.
 
+## Checking the geometric longitude formulas
+
+With Python and SymPy installed, run the four exact-algebra programs
+through one command:
+
+~~~sh
+python3 repro/run_research_checks.py geometric-characteristic
+~~~
+
+The programs check the nonparabolic face maps and peripheral words,
+the four-puncture character matrices, the two eigenline choices in a
+half twist, and the differential and discriminant identities used by
+the rigidity argument. They compare rational functions symbolically,
+rather than sampling hyperbolic knots. The written proof establishes
+the ordered gluing, boundary pairing, constant field and regularity
+over every nonzero main meridian value. Those global arguments are
+not replaced by the script results.
+
 ## Checks for the quantitative volume theorem
 
 The [quantitative theorem](../../notes/actual_all_circle_quantitative_volume.md)

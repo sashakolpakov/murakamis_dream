@@ -2,7 +2,7 @@
 
 The volume limit is proved for fixed ordered cylindrical tangle compositions whose reduced net twists are sufficiently long and whose closed diagram is a knot, with elementary two-strand braid closures excluded. The [results chapter](results.md#arbitrarily-many-tangles-with-sufficiently-long-net-twists) defines the reduction and its size condition. For this class, the theorem concerns the full invariant and the volume of the actual knot complement.
 
-The remaining questions include short net twists outside the explicit criterion below, knot families outside these constructions, and the selected classical geometric factor of the quantum recurrence. The alternative plat methods below have their own open hypotheses. Those hypotheses are not missing steps in the proved Conway theorem.
+The remaining questions include short net twists outside the explicit criterion below, knot families outside these constructions, and extension of the selected geometric-factor theorem beyond the circle-tree presentations. The alternative plat methods below have their own open hypotheses. Those hypotheses are not missing steps in the proved Conway theorem.
 
 ## The boundary of the current Conway theorem
 
@@ -12,7 +12,7 @@ The analytic inputs now include both the [complete-value strict-tree theorem](..
 
 A small nonzero surviving twist remains outside this long-net-twist theorem; the quantitative circle-tree theorem below covers some such cases. Making the original written exponents large by inserting opposite twist pairs cannot remove it. Exact zero sums can be treated by a further topological reduction: the [closure extension](../../notes/actual_conway_arbitrary_closure_volume.md) permits cap closures and the resulting connected-sum factors. When the input is hyperbolic and every surviving strict weight is long, the input is isotopic to one covered strict knot. This strengthens the criterion for presentations; it adds no short-twist estimate. The threshold depends on the entire fixed construction, and no uniform bound over growing trees is proved. Nor does the reduction classify all presentations of a given knot.
 
-There is also a precise operator question. A genuine all-level recurrence for the ADO invariant and finite initial data selecting its solution are already available. The [pointed quantum A-period theorem](../../notes/actual_conway_pointed_quantum_a_volume.md) reconstructs the Kashaev invariant from that data, including the derivatives required at singular steps, and gives its volume limit for the covered knots. Identifying the selected classical geometric factor and the quantum module carrying its marked logarithmic regulator remains a further problem. A scalar limit at the complete meridian does not by itself control the invariant as that meridian varies.
+There is also a precise operator question. A genuine all-level recurrence for the ADO invariant and finite initial data selecting its solution are already available. The [pointed quantum A-period theorem](../../notes/actual_conway_pointed_quantum_a_volume.md) reconstructs the Kashaev invariant from that data, including the derivatives required at singular steps, and gives its volume limit for the covered knots. The selected classical geometric factor is now identified for the covered circle-tree presentations. Identifying the full quantum module carrying the marked logarithmic regulator remains a further problem. A scalar limit at the complete meridian does not by itself control the invariant as that meridian varies.
 
 ## What the actual meridian state requires
 
@@ -77,7 +77,7 @@ The [longitude calculation](../../notes/actual_main_meridian_preferred_cusp.md) 
 
 The [exact scalar calculation](../../notes/actual_main_meridian_exact_scalar.md) retains the integer framing term, and the geometric proof determines the preferred longitude after the auxiliary surgeries. Both the geometric identity and this asymptotic now cover the same strict-tree class. The [net-twist and closure corollary](../../notes/actual_main_meridian_filled_volume.md#net-twists-and-other-conway-closures) transfers the intrinsic formulas to their reduced-knot presentations under the stated hypotheses on twist length and topology. It uses ambient isotopy of the zero-framed knot and its preferred peripheral curves; it does not identify different augmented links.
 
-The remaining limits are substantial. The disk shrinks like $1/N$ in the meridian coordinate and stops before $s=\pm1$, the first ordinary-color resonances. The general ordinary-color-subtracted state has not been continued through those resonances with the asserted profile. Short surviving twists outside the criterion below, trees or twist numbers growing with $N$, a classification of all arborescent knots under arbitrary presentation changes, and the selected classical geometric factor of the recurrence also remain outside this theorem. Arbitrary bare-component valence and adjacency are no longer open restrictions.
+The remaining limits are substantial. The disk shrinks like $1/N$ in the meridian coordinate and stops before $s=\pm1$, the first ordinary-color resonances. The general ordinary-color-subtracted state has not been continued through those resonances with the asserted profile. Short surviving twists outside the criterion below, trees or twist numbers growing with $N$, a classification of all arborescent knots under arbitrary presentation changes, and extension of the geometric-factor theorem to strict presentations with bare junctions remain outside the present results. Arbitrary bare-component valence and adjacency are no longer open restrictions.
 
 ## A local bound independent of the number of tangles
 
@@ -141,8 +141,8 @@ so the first meridian correction has the same geometric meaning.
 The remaining question is to enlarge this numerical region and the
 class of constructions. The bound is conservative, arbitrary short
 coefficients need not satisfy it, and the proof does not cover graphs
-with cycles or growing trees. The selected classical geometric factor
-of the quantum recurrence also remains a separate problem. No missing
+with cycles or growing trees. The selected classical geometric factor is now identified for these
+circle trees; comparison of the full quantum modules remains separate. No missing
 global source theorem is being assumed for the knots that do satisfy
 the displayed criterion.
 
@@ -173,13 +173,20 @@ circle trees the note writes those equations as a finite rational
 system. The denominator factors and the first-charge logarithms
 are retained.
 
-At \(M=1\), this curve has the preferred cusp tangent
-\(d\log(-L_{\mathrm{eff}})/d\log M=\tau_K\). Identifying the entire
-curve with the geometric preferred-longitude deformation remains
-open. The existing hyperbolic cells keep the main cusp parabolic;
-a construction with nonparabolic main meridian is still needed.
-The volume equalities for the covered knots are already proved
-independently of this additional identification.
+For the circle trees, this entire curve is now identified by the
+[geometric longitude theorem](../../notes/actual_all_circle_geometric_characteristic.md).
+The new construction permits a nonparabolic main meridian and retains
+the original puncture paths under half twists. Its proof rules out an
+extra rational function of \(M\), including at the trace-zero values
+\(M=\pm i\), before using the cusp tangent to fix the framing exponent.
+The complete negative longitude lift fixes the remaining sign.
+
+This supplies the selected geometric irreducible factor of the
+classical symbol for the covered circle-tree source classes. It does
+not assert equality of the entire symbol with the A-polynomial, or
+identify the full quantum module. Extending the geometric comparison
+to other strict presentations and to knots beyond these constructions
+remains open. The volume equalities retain their separately proved scopes.
 
 ## The moving-meridian growth already established
 

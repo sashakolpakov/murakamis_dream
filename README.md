@@ -92,9 +92,12 @@ problem.
 
 The [full microscopic expansion](https://sashakolpakov.github.io/murakamis_dream/notes/actual_main_meridian_filtered_characteristic.html)
 also selects a classical curve in any genuine annihilating operator.
-Its rational longitude expression and cusp tangent are determined.
-Identifying the whole curve with the geometric longitude deformation
-remains a separate step.
+For the circle-tree construction, the [geometric longitude theorem](https://sashakolpakov.github.io/murakamis_dream/notes/actual_all_circle_geometric_characteristic.html)
+identifies this curve with the preferred meridian--longitude deformation
+of the knot complement. Consequently its geometric irreducible factor
+divides the first nonzero classical symbol of every genuine all-level recurrence
+covered by the source theorem. This is a statement about that factor;
+it does not identify all factors or the entire recurrence ideal.
 
 The general conjecture remains open. In particular, the theorem does not
 classify all arborescent knots or cover arbitrary short twist numbers.

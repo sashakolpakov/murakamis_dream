@@ -60,8 +60,8 @@ Thus the complete color \(\alpha=N-1\) has \(M=1\), while a quotient color \(\al
 \]
 where \(C_j(q)\) is the ordinary reduced \(j\)-color period.
 
-In an equation \(P(q,M,T)F=0\), the shift is \((TF)(M)=F(qM)\), so \(TM=qMT\). A classical longitude variable is usually called \(L\). It is distinct from a complete-circle operator \(L_N\) and from a recoupling coefficient \(L_{G,E}\).
+In an equation \(P(q,M,T)F=0\), the shift is \((TF)(M)=F(qM)\), so \(TM=qMT\). In the geometric longitude theorem, \(M\) and \(L\) are the eigenvalues of the positive meridian and preferred zero-linking longitude on the same line. The source cut selects the \(M^{-1}\) line, so \(L\) is the inverse longitude eigenvalue there; at the complete filled knot, \(M=1\) and \(L=-1\). This longitude variable is distinct from a complete-circle operator \(L_N\) and from a recoupling coefficient \(L_{G,E}\).
 
 The selected operator period also needs its fixed initial-color data. When a companion matrix has a pole at a root level, the prescribed value is the constant term of the entire product's Laurent expansion. One does not evaluate numerator and denominator separately at zero. The full ADO state carries its exact modified-dimension factor; at the complete marked point its value is \(i^{N+3}K_N/N\).
 
-The [pointed operator theorem](../../notes/actual_conway_pointed_quantum_a_volume.md) proves the volume limit for this actual period on the covered strict long-twist knots. Identifying its selected classical main-meridian geometric factor remains a separate statement.
+The [pointed operator theorem](../../notes/actual_conway_pointed_quantum_a_volume.md) proves the volume limit for this actual period on the covered strict long-twist knots. The [geometric longitude theorem](../../notes/actual_all_circle_geometric_characteristic.md) identifies its selected classical geometric factor for the covered circle-tree presentations. This does not identify every factor of the operator.

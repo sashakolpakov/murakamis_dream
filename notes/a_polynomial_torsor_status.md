@@ -28,12 +28,23 @@ specified genuine all-level annihilator. Its selected irreducible
 factor is reciprocal. The note gives a rational peripheral formula
 and, for the circle trees, explicit finite rational critical equations.
 
-The curve has the independently computed preferred cusp tangent.
-Its identification with the full geometric eigenvalue germ remains
-open: that requires a marked main-meridian deformation of the cells,
-or a comparison with the original geometric braid critical scheme.
-The finite-source volume equalities above do not depend on that
-remaining identification.
+For the covered circle-tree presentations, the [geometric longitude theorem](actual_all_circle_geometric_characteristic.md)
+now identifies the whole curve with the preferred geometric eigenvalue
+germ. The proof constructs nonparabolic representations of the original
+pieces and retains the puncture eigenlines under half twists. The
+boundary pairing makes the residual longitude factor independent of
+the auxiliary parameters. The source field has no additional algebraic
+constants over the main meridian, and regular reconstruction at every
+nonzero meridian value excludes further zeros or poles. The remaining
+monomial is fixed by the preferred framing; a Seifert surface fixes the
+negative complete lift.
+
+Thus the selected geometric irreducible factor divides the first
+nonzero classical symbol of every genuine all-level annihilator under
+the covered circle-tree source hypotheses. This does not identify the
+full A-polynomial, all quantum solutions or an entire recurrence ideal.
+Other strict presentations retain their volume and source-characteristic
+theorems; extending the new geometric identification to them is further work.
 
 ## Earlier torsor and full-source approaches, 28 October
 

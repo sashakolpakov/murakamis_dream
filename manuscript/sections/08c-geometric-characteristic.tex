@@ -1,0 +1,280 @@
+\chapter{The geometric longitude selected by the finite source}
+\label{gc:chapter}
+
+The meridian profile contains more information than its first cusp
+correction. For the ordered trees of crossing circles, its full
+classical characteristic is the preferred-longitude curve of the
+original knot complement. This chapter states that identification
+and explains its geometric proof. Its consequence for a quantum
+recurrence uses the separate all-order source theorem; the geometric
+statement alone does not supply a new asymptotic estimate.
+
+\section{The marked equations and their geometric branch}
+\label{gc:equations}
+
+Keep the literal construction of
+Section~\ref{sec:circle-the-knot-construction}: one original crossing
+circle at every vertex of a fixed finite ordered tree, at least one
+edge, and an actual quarter-turn on every edge. The main strands must
+form one knot, with no additional component closed inside a tangle.
+All disk framings, endpoint orders and signed powers
+$n_v=\epsilon_v-2p_v$ are retained.
+
+Write $\mathcal E$ for the edge set. For an edge $e=vw$, let
+$E_e=e^{2\pi i x_e}$ be its complex wire parameter, and put
+$Q_v=e^{i\tau_v}$ at a crossing circle. These variables describe
+the original cells, rather than a new diagram obtained by changing
+the products. Let $M$ be the main meridian parameter. The selected
+source flag has meridian eigenvalue $M^{-1}$; throughout this
+chapter $L$ is the inverse eigenvalue of the preferred longitude
+on that same flag. Equivalently, $(M,L)$ is the eigenvalue pair
+on the other line of the determinant-one peripheral representation.
+
+The finite source gives the rational equations
+\begin{equation}\label{gc:edge}
+\begin{aligned}
+ &(E_e+Q_v)(E_e+Q_v^{-1})(E_e+Q_w)(E_e+Q_w^{-1})\\
+ &\hspace{12mm}=(E_e-1)^2(1-E_eM^2)(1-E_e/M^2),
+\end{aligned}
+\end{equation}
+\begin{equation}\label{gc:vertex}
+ \prod_{e\ni v}\rho_{v,e}=Q_v^{n_v},
+ \qquad
+ \rho_{v,e}=\frac{Q_v+E_e}{1+Q_vE_e}.
+\end{equation}
+We use the chart on which these denominators are nonzero and the
+selected critical point is nondegenerate, meaning that its Hessian
+is invertible. Exponentiation alone
+does not specify that point. To retain its logarithmic branch, put
+\[
+ b(x,\tau)=\int_0^x
+       \log(2\cos(2\pi r)+2\cos\tau)\,dr-2J(x),
+ \qquad J'(x)=\log(2\sin\pi x),
+\]
+with the original continued logarithms. The angular equations are
+\begin{equation}\label{gc:first-charge}
+ \sum_{e\ni v}b_\tau(x_e,\tau_v)
+            +\frac{i n_v\tau_v}{2\pi}-i=0.
+\end{equation}
+The term $-i$ is the first Fourier charge of the actual crossing
+trace. The positive charge path of the preceding geometric
+completion starts at the complete augmented structure and ends
+at this filled point. It identifies the source critical point
+with the actual complete knot representation. The implicit-function
+theorem then selects its continuation as $M$ varies near one.
+
+\begin{theorem}[The preferred eigenvalue on the regular branch]
+\label{gc:longitude-theorem}
+Fix the construction above and a regular geometric branch through
+an actual complete hyperbolic filling, with the logarithms selected
+by \eqref{gc:first-charge}. On its continued germ,
+\begin{equation}\label{gc:longitude}
+ \boxed{\displaystyle
+ L_{\mathrm{geom}}(M)
+   =-M^{a(D)}
+          \prod_{e\in\mathcal E}\frac{M^2-E_e(M)}
+                                      {1-M^2E_e(M)},\qquad
+ a(D)=-w(D)-\sum_vn_v .}
+\end{equation}
+Here $w(D)$ is the oriented writhe of the original filled diagram.
+The longitude is its preferred zero-linking longitude, and the
+representation is that of the original knot complement.
+\end{theorem}
+
+This theorem concerns a regular geometric branch. The long-filling
+and quantitative hypotheses in the preceding chapters provide such
+branches, with their stated knot and parity qualifications. They
+remain the hypotheses for the corresponding volume limits; the
+identification \eqref{gc:longitude} does not enlarge those analytic
+claims.
+
+\section{Why the equations describe the original exterior}
+\label{gc:actual-exterior}
+
+The attachment in Figure~\ref{fig:circle-octahedral-attachment}
+is the topological starting point. Each original tree edge supplies
+two octahedra. Their disk faces are sewn in the original cyclic
+order, retaining the distinguished odd seam at each circle.
+For a nonparabolic main meridian, both projection copies and their
+white-face maps must deform. Keeping the old parabolic white maps
+would give the wrong representation.
+
+The resulting marked edge block satisfies \eqref{gc:edge}.
+Its primitive auxiliary longitude has similarity $Q_v^2$,
+and its meridian contribution is $\rho_{v,e}$.
+The pure page identifications match both puncture generators.
+At a positive half twist the actual ordered pair changes by
+$(a,b)\mapsto(a^{-1}ba,a)$, preserving $ba$.
+The invertible matrix $(ba)^{-1}-I$ realizes that conjugacy
+near the geometric chart. The accompanying puncture flags must
+also be transported: the two native ideal flags can select
+opposite eigenvalues. The full generator matching, including
+this exchange, is what permits gluing the actual collar.
+
+Consequently the original primitive logarithms are
+\begin{equation}\label{gc:primitive}
+ U_v=\sum_{e\ni v}\log\rho_{v,e}-\epsilon_v\log Q_v,
+ \qquad V_v=2\log Q_v,\qquad U_v+p_vV_v=-2\pi i.
+\end{equation}
+The last equality follows from the marked equation
+\eqref{gc:first-charge}, since
+$\exp(-2\pi b_\tau)=\rho_{v,e}$.
+It retains the primitive period which disappears from
+\eqref{gc:vertex}. The same ordered face and collar relations therefore construct
+representations of the original augmented exterior. At the selected
+filled point, $\operatorname{Im}\tau_v<0$, so $Q_v^2\ne1$.
+The auxiliary longitude is noncentral and semisimple. Its commuting
+filling word has eigenvalue ratio one by \eqref{gc:vertex}, and is
+therefore projectively the identity. This proves descent to the
+prescribed filled knot group, also on a sufficiently small nearby
+germ. At $Q_v=\pm1$, an exponentiated slope equation alone would
+not exclude a nontrivial parabolic filling word.
+
+\section{From the peripheral differential to an exact identity}
+\label{gc:rigidity}
+
+There is a useful algebraic way to determine the entire longitude
+without inferring it from a tangent. Put
+$u=\log M$, $q_v=\log Q_v$, and
+$f_e=(M^2-E_e)/(1-M^2E_e)$.
+Differentiating the single edge equation gives
+\begin{equation}\label{gc:edge-differential}
+ du\wedge d\log f_e
+ +\frac12 d\log\rho_{v,e}\wedge dq_v
+ +\frac12 d\log\rho_{w,e}\wedge dq_w=0.
+\end{equation}
+The actual representation has the same boundary pairing:
+\[
+ du\wedge d\log L_{\mathrm{aug}}
+       +\frac12\sum_v dU_v\wedge dq_v=0.
+\]
+Here $L_{\mathrm{aug}}$ uses the preferred augmented longitude.
+This identity follows by pairing two infinitesimal representation
+cocycles with the invariant trace form and evaluating their cup
+product on the boundary of the exterior. The cochain Stokes
+identity makes the total boundary evaluation zero. The factor
+$1/2$ records that $U_v$ is a logarithm of an eigenvalue ratio.
+Subtracting \eqref{gc:edge-differential} over all edges removes
+the auxiliary terms in \eqref{gc:primitive}.
+
+It follows that the rational squared discrepancy
+\begin{equation}\label{gc:discrepancy}
+ R=\frac{L_{\mathrm{aug}}^2}{\prod_e f_e^2}
+\end{equation}
+has no infinitesimal dependence on the auxiliary variables.
+Two further facts turn that differential statement into an exact
+formula. First, the generic source field has no extra algebraic
+constants over $\mathbb C(M)$. Indeed its edge squareclasses are
+\[
+ (Q_v-1)^2(Q_w-1)^2
+                 -4(M+M^{-1})^2Q_vQ_w.
+\]
+Each is an irreducible prime involving its own pair of vertex
+variables. Their prime valuations make the squareclasses
+independent, even after algebraically closing $\mathbb C(M)$.
+Thus $R\in\mathbb C(M)$.
+
+Second, at every fixed $M_0\ne0$ the group matrices and their
+inverses admit a regular reconstruction for generic auxiliary
+variables. This includes $M_0=\pm i$, where a particular ideal
+subdivision degenerates but the character matrices remain regular.
+The peripheral eigenvalue ratio and every $f_e$ are nonzero
+there. Hence $R$ has neither a zero nor a pole on
+$\mathbb C^*$, and therefore
+\begin{equation}\label{gc:monomial}
+                         R=cM^k
+\end{equation}
+for a nonzero constant $c$ and an integer $k$.
+This regularity step is essential: a differential identity and a
+single cusp derivative would not exclude a general rational
+factor of $M$.
+
+At the complete main cusp, $R(1)=1$. The already marked cusp
+formula fixes $k=2a_{\mathrm{aug}}$, where
+$a_{\mathrm{aug}}=-\sum_v\epsilon_v-w_\epsilon$.
+The original surgery homology changes the preferred longitude by
+$\mu_K^{\sum_vp_v\ell_v^2}$, with
+$\ell_v\in\{0,\pm2\}$ the original circle linking numbers.
+Its exponent is
+\[
+ a_{\mathrm{aug}}+\sum_vp_v\ell_v^2
+             =-w(D)-\sum_vn_v=a(D).
+\]
+This proves the square of \eqref{gc:longitude}.
+
+The remaining sign has a topological determination. A spin cover
+is the double cover of oriented frames in which a full $2\pi$
+rotation changes the lift's sign. On a Seifert
+surface with one boundary component, a boundary-adapted tangent
+frame winds $1-2g$ times relative to a global tangent frame.
+The spin cover of that global frame has trivial boundary
+monodromy, because the boundary is nullhomologous on the surface.
+Thus the adapted frame lifts antiperiodically. At the straight
+preferred cusp longitude it is the translation-invariant
+horospherical frame; its positive unipotent lift therefore differs
+from the actual longitude lift by a minus sign.
+So $L_{\mathrm{geom}}(1)=-1$ at the complete filled point.
+The two-valued holomorphic ambiguity in the squared identity is
+constant, proving \eqref{gc:longitude}.
+Appendix~\ref{app:geometric-characteristic} gives the marked
+matrices, regularity argument and frame proof in full.
+
+\section{The resulting factor of a genuine quantum recurrence}
+\label{gc:operator}
+
+Now impose the all-order source hypotheses as well. For the present
+circle trees they are available under independently sufficiently
+long fixed signed powers, the summed condition
+$\sum_vd_v/(d_v^2+n_v^2)\le2^{-25}$, or the local condition
+$\max_vd_v/(d_v^2+n_v^2)\le2^{-120}$.
+All original qualifications remain, and no data grow with the level.
+
+Let $F_N(M)$ be the actual zero-framed reduced ADO state. A genuine
+all-level annihilator means a fixed nonzero operator
+\begin{equation}\label{gc:operator-definition}
+ P(q,M,T)=\sum_{j=0}^d a_j(q,M)T^j,\qquad
+ TM=qMT,\qquad
+ P(q_N,M,T)F_N(M)=0
+\end{equation}
+at every sufficiently large level, where
+$q_N=e^{\pi i/N}$ and $T$ shifts $M$ to $q_NM$.
+The coefficients $a_j$ belong to $\mathbb C(q,M)$.
+Clear its fixed rational denominators and remove the common
+$q-1$ order. Setting $q=1$ and replacing the shift by a
+commuting variable $L$ gives its first nonzero classical symbol
+$P_0(M,L)$.
+
+The all-order theorem in Appendix~\ref{app:filtered-characteristic}
+uses the actual source on the translated microscopic charts
+$s,s+1,\ldots,s+d$, away from ordinary resonances.
+Its filtered logarithm selects the critical-value germ
+$L_{\mathrm{eff}}=-e^{\mathcal S'(\log M)}$.
+The exact edge insertion gives the right side of
+\eqref{gc:longitude}, and \eqref{gc:first-charge} fixes the
+same filled branch. Theorem~\ref{gc:longitude-theorem} therefore
+identifies $L_{\mathrm{eff}}$ with $L_{\mathrm{geom}}$.
+
+The reduced/full conversion retains its meridian factor: before
+formal-domain cancellation the classical equation is
+\begin{equation}\label{gc:meridian-factor}
+ (M-M^{-1})^d P_0(M,L_{\mathrm{geom}}(M))=0.
+\end{equation}
+It follows that $P_0$ vanishes on the geometric germ.
+Let $A_{\mathrm{geom},\mathbb C}$ be the irreducible Laurent
+polynomial defining the smallest complex algebraic curve containing
+this geometric eigenvalue germ. Then
+\begin{equation}\label{gc:factor}
+                     A_{\mathrm{geom},\mathbb C}\mid P_0.
+\end{equation}
+If $a_j\in\mathbb Q(q,M)$, one instead contracts the prime of
+that germ to
+$\mathbb Q[M^{\pm1},L^{\pm1}]$; the chosen complex component
+need not itself be defined over $\mathbb Q$.
+
+This is a selected geometric factor of every specified annihilator
+under the source hypotheses. It does not identify the whole
+classical symbol, the full A-polynomial, or the entire annihilator
+ideal. Nor does it give a fixed-$M\ne1$ quantum asymptotic by
+substituting $s$ of order $N$. The full geometric germ is obtained
+from all orders on fixed microscopic charts and the separate
+marked representation argument above.

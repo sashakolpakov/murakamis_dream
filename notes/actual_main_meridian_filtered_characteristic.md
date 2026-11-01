@@ -2,7 +2,7 @@
 
 The reduced ADO invariant is a function of a marked meridian eigenvalue \(M\). Its exact quantum recurrence compares the values at \(M,qM,q^2M,\ldots\). We prove that, for the knot classes specified below, the complete asymptotic expansion on the scale \(M=q_N^s\) selects one analytic curve in the classical symbol of every such recurrence. The curve is determined by the actual finite invariant and its original normalization.
 
-The selected curve passes through \((M,L)=(1,-1)\), has the preferred cusp shape as its logarithmic tangent, and is invariant under \((M,L)\mapsto(M^{-1},L^{-1})\). We also give a rational formula for its longitude coordinate in the original internal variables. These conclusions do not yet identify the entire curve with the geometric component of the knot's classical A-polynomial. Section 7 states the remaining comparison with the actual nonparabolic representation equations.
+The selected curve passes through \((M,L)=(1,-1)\), has the preferred cusp shape as its logarithmic tangent, and is invariant under \((M,L)\mapsto(M^{-1},L^{-1})\). We also give a rational formula for its longitude coordinate in the original internal variables. For the all-circle trees, the [geometric longitude theorem](actual_all_circle_geometric_characteristic.md) now identifies this entire germ with the geometric meridian--longitude germ. Together with the proof below, it gives the selected geometric factor of every genuine classical symbol. The extension of that identification to all strict presentations with bare junctions remains a separate question.
 
 Fix a knot admitting one of the following presentations, with its original endpoint orders, orientations and peripheral markings:
 
@@ -304,7 +304,7 @@ Let \(Q_{\mathrm{sel}}(M,L)\) generate the height-one prime of this germ. Invers
 \]
 This is reciprocity of the irreducible factor selected by the actual state. It does not identify it with a geometric factor by imposing reciprocity as an extra condition.
 
-## 7. Exact remaining geometric identification and limitations
+## 7. Peripheral equations and their geometric interpretation
 
 Equations (13), (21), and (26) construct a complete analytic germ, not just its first cusp jet. The proof above does not yet establish that this germ is the marked preferred-longitude eigenvalue of a nonparabolic representation of the filled knot group. The published Conway face family keeps the main cusp parabolic; its preferred-cusp calculation proves (16), not that additional nonparabolic identification.
 
@@ -455,9 +455,9 @@ In obtaining (39), the additive term \(-2\pi i\) has exponent one. Equation (38)
 
 Equations (37), (39), and the longitude expression (31) are a finite rational system with parameter \(M\). Work on the original chart where their denominators are units, or equivalently clear denominators and saturate by those factors before taking the selected germ. The nondegenerate critical point and the continued logarithms choose one analytic solution through the original filled point. Exponentiation has other branches and cannot replace that choice. Eliminating the \(E_e,Q_v\) on this chosen germ gives the same \(L_{\mathrm{eff}}\) as (26), not a separately normalized polynomial curve.
 
-This explicit system is a concrete target for a main-meridian geometric construction: one would need actual marked nonparabolic edge blocks satisfying these equations and carrying (31) as their preferred longitude. The equations alone do not assert that such blocks have already been constructed.
+The [geometric longitude theorem](actual_all_circle_geometric_characteristic.md) constructs those nonparabolic blocks, glues their ordered boundary representations, and proves that (31) is the preferred longitude. Its algebraic rigidity argument rules out a residual meridian factor beyond the stated framing monomial. The first-charge logarithms still select the filled geometric branch among the algebraic solutions.
 
-### 7.3. What the existing geometric inputs actually provide
+### 7.3. Scope of the geometric identification
 
 The [marked Conway deformation](actual_conway_general_mask_marked_filling.md), Section 3, has a leaf function
 \[
@@ -469,8 +469,8 @@ That equality of scalar functions does not identify their peripheral uses. In th
 
 The original marked braid source supplies a different nonparabolic construction. The [critical-correspondence theorem](marked_braid_holonomy.md), Sections 4--6, identifies its regular exponential critical scheme with framed knot representations with actual meridian eigenvalue \(M\). The [longitude-insertion theorem](quantum_longitude_and_regulator_action.md), Sections 1--4, identifies its preferred longitude, full meridian gauge, and logarithmic action differential. The [actual geometric normal-period theorem](actual_geometric_normal_period.md), Sections 3--5, constructs the local geometric formal block of that braid scheme. Those results do not yet identify the grouped modified equations (30) with that particular critical block.
 
-A sufficient next step is an exact classical adapter: identify the stationary equations of (13), with \(t=u/(\pi i)\), with the original regular geometric critical scheme of the full marked braid source, retaining its cut flag, framing and preferred longitude insertion. The existing marked braid holonomy theorem identifies that latter scheme with framed knot representations and supplies its rational inverse. An identification of these equations on the complete geometric germ would therefore identify (26) with the geometric eigenvalue germ and prove the desired geometric factor by (25). Agreement of their tangent alone is not sufficient.
+For strict presentations not covered by the circle-tree theorem, a sufficient further step is an exact classical adapter: identify the stationary equations of (13), with \(t=u/(\pi i)\), with the original regular geometric critical scheme of the full marked braid source, retaining its cut flag, framing and preferred longitude insertion. The existing marked braid holonomy theorem identifies that latter scheme with framed knot representations and supplies its rational inverse. An identification of these equations on the complete geometric germ would therefore identify (26) with the geometric eigenvalue germ and prove the desired geometric factor by (25). Agreement of their tangent alone is not sufficient.
 
 The argument also does not claim a physical asymptotic formula for fixed \(M\ne1\), or for \(s\) growing with \(N\). The variable \(t\) in Section 4 is an auxiliary analytic parameter used to organize all fixed-\(s\) coefficients. The ordinary-color divisors remain in (2), (18)–(20). The translated charts in Section 2 stay away from those divisors; no uniform nonvanishing state across ordinary-color resonances has been asserted.
 
-The curve selected here is therefore a proved classical characteristic of the actual annihilator, with its reciprocal symmetry, explicit peripheral expression and geometric cusp tangent. Its identification with the entire classical geometric eigenvalue germ is the remaining statement.
+For the covered all-circle trees, the selected curve is therefore the geometric eigenvalue germ, and its irreducible Laurent factor divides the first nonzero classical symbol. The general strict-tree source theorem remains valid beyond this geometric identification; extending the latter to its other presentations requires an additional argument. No equality with the full A-polynomial or with an entire annihilator ideal is claimed.

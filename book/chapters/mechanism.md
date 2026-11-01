@@ -56,7 +56,7 @@ Here \(c_0\) is a fixed vector of small-color Laurent polynomials, \(r_N\) is th
 
 The [pointed quantum \(A\)-volume corollary](../../notes/actual_conway_pointed_quantum_a_volume.md) proves that this exact signed scalar has the knot-volume limit above. It also gives a positive ratio of coefficients of Gram determinants, equal to a sum of squared color periods, with the corresponding volume limit. The signed scalar is not replaced by a matrix norm or by a sum of absolute values. The full ADO normalization is retained as a rational factor whose whole value at \(M=1\) is \(i^{N+3}/N\).
 
-What remains open is stronger: identify the selected geometric factor of the classical main-meridian \(A\)-polynomial and the associated quantum module. The auxiliary-color deformation used for the volume proof holds the main meridian complete. It cannot simply be renamed as a generic main-meridian deformation.
+The [geometric longitude theorem](../../notes/actual_all_circle_geometric_characteristic.md) supplies a separate nonparabolic main-meridian construction for the circle trees. It identifies the selected curve with the preferred-longitude deformation. Combined with the full microscopic expansion, it identifies the selected geometric factor of the first nonzero classical symbol. The full quantum-module comparison and extension to other strict presentations remain open; the earlier auxiliary-color deformation alone does not provide those statements.
 
 ## Other local tools, and their different scope
 
