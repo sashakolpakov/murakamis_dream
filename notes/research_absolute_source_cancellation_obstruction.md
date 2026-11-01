@@ -43,7 +43,7 @@ shared coefficient extraction. At level \(N\ge2\), put
  \chi_N(\sigma)=2T_N(\sigma/2)+2,
  \qquad
  V_N(\sigma)=\chi_N(\sigma)(\sigma I-\Omega)^{-1}.
- \tag{1}
+ \qquad\text{(1)}
 \]
 Here \(T_N(\cos t)=\cos Nt\), and \(\Omega\) is the original Casimir
 matrix in its polynomial source representation. The last expression is
@@ -67,7 +67,7 @@ after the protected substitutions as
  H_{e,s_e}(\boldsymbol L;\sigma_e)
    =\sum_{\substack{v_e\ge0\\|v_e|=d}}
           a_{e,N}(v_e;\sigma_e)\boldsymbol L^{v_e}.
- \tag{2}
+ \qquad\text{(2)}
 \]
 Let \(\Gamma_{N,\boldsymbol s}\) consist of the arrays of local exponents
 whose sum at every ordinary face is exactly \(d\), with zero at both
@@ -83,7 +83,7 @@ protected faces. Unsupported coefficients in (2) are zero. Define
      &=\sum_{\boldsymbol v\in\Gamma_{N,\boldsymbol s}}
                     |A_{\boldsymbol v}(\boldsymbol\sigma)|.
  \end{aligned}
- \tag{3}
+ \qquad\text{(3)}
 \]
 The second line is the original signed source coefficient. The last
 line takes absolute values before the shared summation. All original
@@ -98,7 +98,7 @@ central. Write its ordered quartet as
 \[
              (x,b,z,y),\qquad
              b,y\text{ protected},\quad x,z\text{ ordinary}.
- \tag{4}
+ \qquad\text{(4)}
 \]
 Thus its retained left triangle has just the ordinary corner \(x\);
 the overloaded middle is \(z\).
@@ -113,7 +113,7 @@ There are \(2(R-1)\) spectator triangles. For each triangle \(t\), let
    +\left(1-\frac{\lambda}{2}\right)\mathbf1_{f=z}
        =1
        \quad(f\text{ ordinary}).
- \tag{5}
+ \qquad\text{(5)}
 \]
 Assume also that the graph on ordinary faces joining two faces whenever
 they occur in one spectator triangle is connected. These are conditions
@@ -129,7 +129,7 @@ Use the absolute triangle entropy
                    \quad(0\le a\le1/2),\\
  E_{\mathrm{tab}}&=\sum_t\sum_{f\in I_t}f(\alpha_{tf}).
  \end{aligned}
- \tag{6}
+ \qquad\text{(6)}
 \]
 A singleton row has load \(1/2\) and entropy zero.
 
@@ -137,7 +137,7 @@ A singleton row has load \(1/2\) and entropy zero.
 \[
                \sigma_{e_*}=+2,\qquad
                \sigma_e=-2\quad(e\ne e_*),
- \tag{7}
+ \qquad\text{(7)}
 \]
 the actual absolute-array sum satisfies
 \[
@@ -145,7 +145,7 @@ the actual absolute-array sum satisfies
        \liminf_{N\to\infty}\frac1N
           \log\mathcal A_{N,\boldsymbol s}(\boldsymbol\sigma)
                    \ \ge\ E_{\mathrm{tab}}.}
- \tag{8}
+ \qquad\text{(8)}
 \]
 The limit in (8) includes both parities. The diagram and table are fixed.
 The proof constructs one nonzero array at every sufficiently large
@@ -160,7 +160,7 @@ Put
  c_r=2\cos((2r+1)\theta),\qquad s_r=2\sin(r\theta),\qquad
  S_j=\prod_{r=1}^j s_r,\qquad
  T_j=\prod_{r=0}^j2\sin((r+1/2)\theta).
- \tag{9}
+ \qquad\text{(9)}
 \]
 Here \(S_0=1\). At (4), the protected factor \(L_b\) forces \(i=0\),
 and the protected outer variable removes every two-step path.
@@ -172,7 +172,7 @@ The only surviving path from \(j\) to zero uses \(j\) one-step
  U_{N,j}=S_j^2\prod_{r=j+1}^d(2-c_r)
         =4\frac{S_j^2}{T_j^2},
         \qquad 0\le j\le M.
- \tag{10}
+ \qquad\text{(10)}
 \]
 The unused-row product is the full numerator path formula. The last
 identity uses \(\prod_{r=0}^d(2-c_r)=\chi_N(2)=4\); every factor is
@@ -183,7 +183,7 @@ For \(1\le j\le M\),
  \frac{U_{N,j}}{U_{N,j-1}}
      =\frac{\sin^2(j\pi/N)}{\sin^2((j+1/2)\pi/N)}
      \le1.
- \tag{11}
+ \qquad\text{(11)}
 \]
 All these angles lie in the increasing half of sine. The standard finite
 sine products give the following endpoints:
@@ -193,7 +193,7 @@ sine products give the following endpoints:
  2m&m-1&m&2\\
  2m+1&m-1&N/[4\sin^2(m\pi/N)]&1 .
  \end{array}
- \tag{12}
+ \qquad\text{(12)}
 \]
 For clarity, at odd \(N\) the identity
 \(\prod_{r=1}^{N-1}2\sin(r\pi/N)=N\) pairs into \(S_m^2=N\).
@@ -205,7 +205,7 @@ Together with (11) and \(\sin t\ge2t/\pi\) on \([0,\pi/2]\), this proves
 \[
              N\le U_{N,j}\le
              U_{N,0}=\csc^2(\pi/(2N))\le N^2 .
- \tag{13}
+ \qquad\text{(13)}
 \]
 The protected coefficient therefore has zero exponential cost,
 uniformly over its full left range, at both parities. Its alternating
@@ -230,7 +230,7 @@ cleared lower cofactor, defined at level \(N\) by
        +s_j^2(x+y)R_{j-1}(x,b,y)
        +s_js_{j-1}a_{j-1}xyR_{j-2}(x,b,y).
  \end{aligned}
- \tag{14}
+ \qquad\text{(14)}
 \]
 Absent negative-index terms are zero. Every supported degree-\(M\)
 monomial has a positive coefficient. The central-cut factorization
@@ -239,7 +239,7 @@ contains the coefficientwise positive summand
  (-1)^dH_C(x,b,c,y;-2)
        \ \ge_{\mathrm{coef}}\
           4(x+y)R_M(x,b,y)R_M(x,c,y).
- \tag{15}
+ \qquad\text{(15)}
 \]
 The factor \(x+y\) has degree one and must be retained before the
 shared extraction.
@@ -251,7 +251,7 @@ reflecting the upper half proves the exact identity
  H_C(x,b,c,y;-2)
        =R_m(x,b,y)R_m(x,c,y)
        =N^2D_m(x,b,y)D_m(x,c,y),
- \tag{16}
+ \qquad\text{(16)}
 \]
 where \(R_m\) uses (14), and \(D_m=R_m/N\) is monic in its middle
 variable. Indeed
@@ -272,7 +272,7 @@ The local closed coefficient theorem gives the absolute rates
        &&(N=2m+1,\ |k_N|=m,\ k_N/N\to\alpha),
  \qquad \sum_{f\in I}\alpha_f=\tfrac12 .
  \end{aligned}
- \tag{17}
+ \qquad\text{(17)}
 \]
 The convergence holds uniformly on every closed supported triangle,
 including singleton and two-corner faces. These are local statements:
@@ -326,14 +326,14 @@ edge is unmatched in a simple sphere. In particular
 \(\sum_f c_f=R-1\). Put
 \[
  j_N=\lfloor M\lambda\rfloor,\qquad e_N=M\lambda-j_N\in[0,1).
- \tag{18}
+ \qquad\text{(18)}
 \]
 Choose the cap monomial \(L_x^{j_N}L_z^{d-j_N}\). The two cofactor
 rows per spectator must have row degree \(M\) and column totals
 \[
  b_{f,N}=d-c_f-j_N\mathbf1_{f=x}
                     -(d-j_N)\mathbf1_{f=z}.
- \tag{19}
+ \qquad\text{(19)}
 \]
 The initial table \(2M\alpha_{tf}\) has exact row sums \(M\).
 Its required column correction is
@@ -347,7 +347,7 @@ Its required column correction is
  \qquad
  \sum_f\delta_f=0,\qquad
  \sum_f|\delta_f|<2R+2 .
- \tag{20}
+ \qquad\text{(20)}
 \]
 Apply the tree correction and the rounding argument. The resulting
 supported integer table satisfies
@@ -355,7 +355,7 @@ supported integer table satisfies
  k_{tf,N}=2M\alpha_{tf}+O_D(1),\qquad
  \sum_f k_{tf,N}=M,\qquad
  \sum_t k_{tf,N}=b_{f,N}.
- \tag{21}
+ \qquad\text{(21)}
 \]
 Aggregating each pair of triangle monomials with its chosen outer unit
 gives one genuine central coefficient: each middle degree is at most
@@ -367,7 +367,7 @@ gives one genuine central coefficient: each middle degree is at most
 Let \(N=2m+1\), \(d=2m\), and put
 \[
  j_N=\lfloor m\lambda\rfloor,\qquad e_N=m\lambda-j_N\in[0,1).
- \tag{22}
+ \qquad\text{(22)}
 \]
 Since \(\lambda<1\), \(j_N\le m-1\), so this remains a genuine left
 coefficient. There is no outer unit to choose. Each spectator row has
@@ -375,14 +375,14 @@ degree \(m\), with required column totals
 \[
  b_{f,N}=d-j_N\mathbf1_{f=x}
                     -(d-j_N)\mathbf1_{f=z}.
- \tag{23}
+ \qquad\text{(23)}
 \]
 Scale the original table by \(d=2m\). Equation (5) shows that its
 column correction is just
 \[
                \delta_f=e_N\mathbf1_{f=x}
                               -e_N\mathbf1_{f=z}.
- \tag{24}
+ \qquad\text{(24)}
 \]
 It can be transported along one path from \(z\) to \(x\) in the
 spectator graph, using only original row supports. Rounding gives
@@ -390,7 +390,7 @@ spectator graph, using only original row supports. Rounding gives
  k_{tf,N}=d\alpha_{tf}+O_D(1),\qquad
  \sum_f k_{tf,N}=m,\qquad
  \sum_t k_{tf,N}=b_{f,N}.
- \tag{25}
+ \qquad\text{(25)}
 \]
 Both spectator middle degrees are at most \(m\), as required for the
 odd central piece. The cap's overloaded degree is at least \(m+1\).
@@ -408,7 +408,7 @@ array is at least
           [\boldsymbol L^{k_{t,N}}]D_{m,t},
                    &N=2m+1.
  \end{cases}
- \tag{26}
+ \qquad\text{(26)}
 \]
 The factor \(N\) comes from (13). Applying (17) to the fixed finite
 set of rows proves (8) on each parity, hence on the full sequence.
@@ -423,7 +423,7 @@ and the selected ordered quartet is
 \[
        e_*=32,\qquad (x,b,z,y)=(0,50,16,29),\qquad
        \lambda=\frac{548219162717}{10^{12}}.
- \tag{27}
+ \qquad\text{(27)}
 \]
 The [exact certificate](../experiments/actual_singleton_sector_obstruction_certificate.json)
 records all \(106\) spectator rows with their original face labels.
@@ -431,7 +431,7 @@ They satisfy (5) exactly, their ordinary support graph is connected,
 and their minimum supported corner load is
 \[
                    \frac{29141577}{40000000000}>0.
- \tag{28}
+ \qquad\text{(28)}
 \]
 The same certificate verifies an original knot-producing parity
 pattern. No terminal tangles or replacement diagram are involved.
@@ -440,7 +440,7 @@ Let \(Y_D\) be the actual complete augmented-link exterior supplied by
 these marked sphere data, and write
 \[
                        \Phi=\frac{\operatorname{Vol}(Y_D)}{2\pi}.
- \tag{29}
+ \qquad\text{(29)}
 \]
 The complete action and this absolute volume normalization are
 identified by [the original Morse geometry](actual_morse_geometric_contribution.md).
@@ -451,7 +451,7 @@ trial radius vector from above. It proves
  E_{\mathrm{tab}}>67.8938190642,\qquad
  \Phi<67.6882466366,\qquad
                   E_{\mathrm{tab}}-\Phi>\frac15.
- \tag{30}
+ \qquad\text{(30)}
 \]
 The second number is an upper bound for \(\Phi\), obtained by testing
 its minimizing action; it is not an assertion that the trial radii are
@@ -466,7 +466,7 @@ Combining (8) and (30), at the one fixed tuple (7),
  \liminf_{N\to\infty}\frac1N
     \log\mathcal A_{N,\boldsymbol s}(+2,-2,\ldots,-2)
        \ge E_{\mathrm{tab}}>\Phi+\frac15 .}
- \tag{31}
+ \qquad\text{(31)}
 \]
 The \(+2\) entry in this notation is region \(32\). This is a lower
 bound for actual absolute local-coefficient products, not only for a
@@ -480,7 +480,7 @@ For any finite complex array \((A_a)_{a\in I}\),
        \left(\sum_a w_a\right)^{1/2}
        \left(\sum_a\frac{|A_a|^2}{w_a}\right)^{1/2}
                   =\sum_a|A_a|.
- \tag{32}
+ \qquad\text{(32)}
 \]
 Cauchy's inequality gives the lower bound. If no entry is zero, equality
 holds for \(w_a=|A_a|\). Assign a positive weight tending to zero to
@@ -515,7 +515,7 @@ The protected variables remain zero. The finite identities are
  \mathcal A_{N,\boldsymbol s}(+2,-2,\ldots,-2)
        &=\sum_{j=0}^{M}U_{N,j}B_{N,j}.
  \end{aligned}
- \tag{33}
+ \qquad\text{(33)}
 \]
 The two lines use the same exterior and the same targets.
 
@@ -528,7 +528,7 @@ For the diagram in §6, the separate
        |S_{N,\boldsymbol s}(\sigma,-2,\ldots,-2)|
         \le\Phi-\eta,\qquad
  \eta=\min\{3/1000,\gamma_D\}>0.
- \tag{34}
+ \qquad\text{(34)}
 \]
 Here \(\gamma_D\) is the strict omitted-tail capacity gap for the same
 original exterior. Its hypotheses retain the actual odd factors
@@ -548,7 +548,7 @@ With \(\log0=-\infty\),
                 {\mathcal A_{N,\boldsymbol s}(+2,-2,\ldots,-2)}
    \le-\bigl(E_{\mathrm{tab}}-\Phi+\eta\bigr)
    <-\frac15-\eta .}
- \tag{35}
+ \qquad\text{(35)}
 \]
 The denominator is positive for every sufficiently large level by the
 constructed arrays. Equation (35) is cancellation on the same odd
@@ -582,7 +582,7 @@ entropy. The combined score uses
        =\min\{h_{\mathrm{env}}(\zeta),(h(\zeta)+g(\zeta))/2\}
                   \quad\text{on a one-sided load},
  \qquad h_{\mathrm{sharp}}=h_C\quad\text{on a central load}.
- \tag{36}
+ \qquad\text{(36)}
 \]
 Here \(h_C\) is the largest sum of the two triangle entropies over
 outer allocations giving that central four-incidence load.
@@ -595,7 +595,7 @@ On the protected left ray, the exact local formulas are
  g(\zeta(u))=f(u)+f(1/2-u)=2f(u),\\
  h_{\mathrm{env}}(\zeta(u))=h_{\mathrm{sharp}}(\zeta(u))=0 .
  \end{gathered}
- \tag{37}
+ \qquad\text{(37)}
 \]
 The reference and relative-energy identities are the protected case
 of [the exact coefficient energy](actual_protected_outer_spectral_energy.md),
@@ -612,7 +612,7 @@ its rows \(\alpha=(\alpha_x,\alpha_b,\alpha_y)\) and
 \[
       \zeta_e=(\alpha_x+\beta_x,\alpha_b,\beta_c,
                                       \alpha_y+\beta_y).
- \tag{38}
+ \qquad\text{(38)}
 \]
 Both middles are at most \(1/2\). The two original rows are a permitted
 outer split, so \(h_C(\zeta_e)\) is at least their combined entropy.
@@ -624,7 +624,7 @@ feasible flow in the 54-region example satisfies
  \qquad
  \sum_e(h(\zeta_e)+g(\zeta_e))
               \ge2E_{\mathrm{tab}}>2\Phi+\frac25 .
- \tag{39}
+ \qquad\text{(39)}
 \]
 Thus neither universal scalar score inequality holds on arbitrary
 matched simple-sphere Morse diagrams at their prescribed mark. This
@@ -641,7 +641,7 @@ spectator table would be
 \[
      1+(1/2-u+r)\quad\text{at }x,\qquad
      1-(1/2-u+r)\quad\text{at }z .
- \tag{40}
+ \qquad\text{(40)}
 \]
 Since \(u<1/2\) and \(r\ge0\), these fail the complete face equations.
 The feasible noncentral table is consequently not a complete angle
