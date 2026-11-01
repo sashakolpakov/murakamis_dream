@@ -136,7 +136,9 @@ The [manuscript audit](repro/MANUSCRIPT_AUDIT.md) records the proof
 dependencies, corrections, and precise extent of the review. The
 [Lean project](formal/README.md) verifies finite algebraic steps,
 including polynomial reduction with repeated roots and independence
-of its representative. The analytic estimates and geometric completion
+of its representative and root ordering. Appendix N explains why this
+remainder is unique and states exactly what would identify a candidate
+functional with its top coefficient. The analytic estimates and geometric completion
 remain written proofs with their stated hypotheses.
 
 The [illustrated guide](https://sashakolpakov.github.io/murakamis_dream/)

@@ -47,6 +47,22 @@ with the main meridian as local coordinate. This avoids a separate
 existence theorem for a positive triangulation of the filled manifold
 in this part of the proof.
 
+A further reading follows the restricted source estimates separately
+from the general central-contribution theorem. It found no circular
+use of the unresolved general remainder bound in the inspected
+restricted-family proofs. The [source coverage record](../../repro/manuscript_audit/source-coverage-followup.md)
+lists those dependencies and their parity restrictions. The
+[geometry record](../../repro/manuscript_audit/retained-geometry-followup.md)
+states the assumptions used to identify the filled metric and its
+deformation germ. These are bounded reading records, not a complete
+verification of every imported lemma.
+
+Two wording changes make the all-orders argument more precise. Its
+annihilator has fixed order \(r_P\), independent of the quantum level;
+the separate spectral degree is \(N-1\). Its norm comparison applies
+to the reduced polynomial of degree less than \(N\). A higher-degree
+product is reduced before that comparison is used.
+
 ## Checking finite implications in Lean
 
 With the pinned Lean toolchain installed, run:
@@ -64,6 +80,14 @@ Repeated roots are retained without division by their differences.
 The constructed operations are proved linear and independent of
 trailing zero coefficients. Adding a multiple of the monic modulus
 leaves the remainder and its top-coefficient functional unchanged.
+The remainder is also proved unique under its coefficientwise degree
+bound, and independent of the order of the roots. These statements
+allow repeated roots and padded coefficient lists. Appendix N now
+explains this construction before specializing to the spectral
+polynomial. A further formal theorem characterizes the functional by
+additivity, vanishing on multiples of the modulus, and its values in
+low degree. Applying it to the original crossing operator requires
+proof of each of these properties for that operator.
 The runner compiles
 the proofs and separately checks their logical assumptions. It rejects
 admitted proof steps. These declarations retain their mathematical

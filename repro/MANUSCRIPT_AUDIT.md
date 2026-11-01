@@ -130,6 +130,16 @@ denominator-cleared operator identity, this explains why the microscopic
 expansion determines a whole formal longitude germ. It does not extend
 a bounded-\(s\) analytic estimate to \(s\) growing with the level.
 
+**Degree and operator order.** The all-orders chapter and Appendix M
+now denote the fixed annihilator order by \(r_P\), keeping it distinct
+from the spectral degree \(d=N-1\). The required translates are
+\(s,s+1,\ldots,s+r_P\), a fixed finite collection. Appendix M also
+states that its Hermite, supremum and Chebyshev norm comparison is for
+the canonical representative of degree less than \(N\). Products of
+higher degree must first be reduced by the exact folding identity.
+Otherwise a nonzero multiple of the spectral polynomial would have
+zero Hermite data, and the asserted comparison would fail.
+
 ## What has been checked formally
 
 The [Lean project](../formal/README.md) checks finite degree partitions at both parities,
@@ -142,6 +152,13 @@ difference. These are coefficientwise identities over a commutative ring;
 the list of nodes may contain repetitions. The constructed remainder and
 functional are now also proved linear, unchanged by arbitrary zero
 padding, and unchanged on adding an actual monic multiple. The
+next module proves uniqueness under a coefficientwise degree bound,
+idempotence, and invariance under reordering the roots, including
+repeated roots. Its final theorem gives sufficient hypotheses for a
+candidate additive functional to equal the constructed one. Those
+hypotheses are part of the theorem and remain to be established for
+the actual crossing operator. Appendix N now states and proves the
+canonical-remainder result in ordinary polynomial notation. The
 [runner](check_proof_logic.py) builds the library and then separately
 inspects every theorem's axioms. The
 [recorded result](results/proof-logic/summary.json) includes the source
@@ -167,9 +184,13 @@ The detailed records are organized by the implication being checked:
 | [Geometry used by weak balance](manuscript_audit/weak-balance-geometry.md) | The precise geometric inputs and implications from O to P |
 | [Meaning of the formal declarations](manuscript_audit/formal-semantics.md) | Whether the Lean statements express the finite mathematical steps claimed for them |
 | [Reduction at repeated roots](manuscript_audit/monic-remainder.md) | Constructive coefficientwise division, its top-coefficient functional, and the double-root remainder; the actual spectral data remain separate |
+| [Uniqueness and root order](manuscript_audit/monic-uniqueness.md) | Canonical remainders, arbitrary zero padding, repeated-root permutations, and the precise hypotheses of the functional characterization |
 | [Directed circle trees](manuscript_audit/directed-tree.md) | K's main criterion, the complete conditional remainder, the degree-or-twist implication, and the F/G metric-volume interface |
 | [All orders and recurrence factors](manuscript_audit/directed-all-orders.md) | Exact interpolation identities, the degree filtration, formal regrading and gauge, and the independent finite-sum existence proof |
+| [Directed asymptotics and coefficient functionals](manuscript_audit/directed-monic-logic-followup.md) | Fixed operator order and canonical-degree norm comparison; semantic reading of the three split-monic modules and the distinction between the unit functional, source trace and crossing multiplier |
 | [The geometric branch and longitude](manuscript_audit/directed-geometry.md) | I/M's marked reconstruction, preferred longitude and cusp conventions; the new local rigidity proof on the retained augmented triangulation |
+| [Source coverage and parity](manuscript_audit/source-coverage-followup.md) | The recursive complementary-color proof and the statement-level dependency order of N, O, L and P; separate all-level results from odd-level cap research |
+| [Retained geometric cells](manuscript_audit/retained-geometry-followup.md) | Primitive logarithmic periods, absolute volume calibration, and the precise rank, positivity and decoration assumptions in the filled-germ argument |
 
 The detailed records cover the finite functional in Appendix N, the
 geometric interface from O to P, the recursive source estimates in

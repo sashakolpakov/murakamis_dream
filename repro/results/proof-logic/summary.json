@@ -1,5 +1,5 @@
 {
-  "scope": "Finite support, coefficientwise split-monic reduction, polynomial and tensor identities, and scalar rate implications only.",
+  "scope": "Finite support, coefficientwise split-monic reduction and uniqueness, invariance under root permutation, a conditional functional characterization, polynomial and tensor identities, and scalar rate implications only.",
   "not_formalized": [
     "the actual Chebyshev root data and crossing-operator functional",
     "the exact knot-diagram adapter",
@@ -363,6 +363,81 @@
       "Classical.choice",
       "Quot.sound"
     ],
+    "VolumeLogic.list_eq_of_coeffEq_of_length_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.coefficient_take_of_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.coeffEq_take_of_degree_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.monicRemainder_of_coeff_degree_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.monicRemainder_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.monicRemainder_unique_padded": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.monic_remainder_unique_between": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.newtonFunctional_from_remainder": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.monicRemainder_idempotent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.monicMultiple_congr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.timesLinear_commute": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.monicMultiple_permutation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.monicRemainder_permutation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.newtonFunctional_permutation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.newtonFunctional_characterization": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
     "VolumeLogic.coeffEq_refl": [],
     "VolumeLogic.coeffEq_symm": [],
     "VolumeLogic.coeffEq_trans": [],
@@ -377,13 +452,14 @@
     "formal/VolumeLogic/FiniteSupport.lean": "cd5e93e68a9c933708203700a523090809f094cd866aab04aa4833e072d7576e",
     "formal/VolumeLogic/MonicLinearity.lean": "75b8cebc8e8bd4cd72257cff082ffe2d74f67391f90942df59f80782f6a8db2b",
     "formal/VolumeLogic/MonicRemainder.lean": "f6781dba17c7677adcfe2aec41d31f8742004fc38a45be9732c24ce98b65dbfd",
+    "formal/VolumeLogic/MonicUniqueness.lean": "5b1923608c3117ba4875879310b51d56995b8548f1bc93e9491eda2238d4ab1c",
     "formal/VolumeLogic/RateComparison.lean": "837a19f87080465b55b8f9373d99eda56900829c166e98a8f16c1136ae06123b",
-    "formal/VolumeLogic.lean": "09415df9316112fad7aac62b45342b3730ee5ec66487b5cc15abbce4aecec49d",
-    "formal/AxiomAudit.lean": "90a0702980a9e5d6815f3997e468d61e01e18018ead53f509af5d92c38d53a95",
+    "formal/VolumeLogic.lean": "68bbfc5581880d2f94069eaaabf6f882fffe9136215af3374995331916b9390c",
+    "formal/AxiomAudit.lean": "dd16812c692f50b4ba22c27dcb7d13398289a41c995b3b0d485137f4ea4d7156",
     "formal/lakefile.toml": "d4fbe5befdea32352528a400922442a9814ad56dd607ec3dbbff3639120d947b",
     "formal/lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
     "formal/lake-manifest.json": "94a62178292dabc02ac925f33a78081a26da3b9fc9b5c3ea33e97e9a8dce25da",
-    "repro/check_proof_logic.py": "6afcd143099e9561fe131aa29a0069566e4dda2b2b60983f7dab4c9e7247ebf9"
+    "repro/check_proof_logic.py": "42d87dcad820818dc225fbebd36b422e04d9ac6a2cfe954a2945e3595c80d6fa"
   },
   "result": "All listed declarations compiled; only the permitted foundational axioms occur."
 }

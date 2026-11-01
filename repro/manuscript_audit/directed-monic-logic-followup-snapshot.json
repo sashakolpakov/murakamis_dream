@@ -1,0 +1,102 @@
+{
+  "description": "Bounded directed all-orders and split-monic semantic audit; exact source versions, not a theorem certificate.",
+  "date": "2026-11-01",
+  "head": "2cb9c0b2df1bff875eebeadcb75c3cdbaf6fc8de",
+  "status": "The three authorized source edits are frozen. Only the new report and snapshot were added afterward.",
+  "executed": {
+    "lean_compiler": false,
+    "axiom_audit": false,
+    "manuscript_build": false,
+    "guide_build": false,
+    "numerical_source_experiments": false,
+    "diff_and_control_checks": true
+  },
+  "changes": [
+    "Canonical Hermite/sup/Chebyshev norm comparison explicitly requires degree less than N; products are folded before comparison.",
+    "The fixed operator order is r_P throughout the operator formulas and translated charts, distinct from d=N-1."
+  ],
+  "pre_edit_source_hashes": {
+    "manuscript/sections/M-directed-all-orders.tex": "a0ad6d69090f6c254bda29ca62d8f9caab7380031ff8acd5b41ec48ed7659813",
+    "manuscript/sections/08f-directed-all-orders.tex": "9b7ea263d9662646502912705b103461bb4faf0e48def4d7f5f6222ca449c370",
+    "notes/actual_all_circle_directed_all_orders.md": "67e648ec3a0912c635399d78e026ed096dd94583b5168c849ac062e48c02050c"
+  },
+  "files": [
+    {
+      "path": "manuscript/sections/M-directed-all-orders.tex",
+      "sha256": "d8242961d59bc07240db47a4d432da450e6fe3d2c4d4b64d94048568d0d42a99",
+      "read_scope": "Read in full; canonical-degree and fixed-operator-order wording clarified."
+    },
+    {
+      "path": "manuscript/sections/08f-directed-all-orders.tex",
+      "sha256": "1926211c37d367e47ae6500a3273bae342a730d172c19f03a3471c7aa5abeb98",
+      "read_scope": "Read in full; matching fixed-operator-order notation clarified."
+    },
+    {
+      "path": "notes/actual_all_circle_directed_all_orders.md",
+      "sha256": "7bbb5528f8447e17b5702d15b223963aaf27d4b67f1a186fd156601894018faa",
+      "read_scope": "Read corresponding analytic, operator and dependency text; synchronized the two precision changes."
+    },
+    {
+      "path": "formal/VolumeLogic/MonicRemainder.lean",
+      "sha256": "f6781dba17c7677adcfe2aec41d31f8742004fc38a45be9732c24ce98b65dbfd",
+      "read_scope": "Read in full, semantic audit only; no compiler run."
+    },
+    {
+      "path": "formal/VolumeLogic/MonicLinearity.lean",
+      "sha256": "75b8cebc8e8bd4cd72257cff082ffe2d74f67391f90942df59f80782f6a8db2b",
+      "read_scope": "Read in full, semantic audit only; no compiler run."
+    },
+    {
+      "path": "formal/VolumeLogic/MonicUniqueness.lean",
+      "sha256": "5b1923608c3117ba4875879310b51d56995b8548f1bc93e9491eda2238d4ab1c",
+      "read_scope": "Read in full, including candidate-functional characterization; no compiler run."
+    },
+    {
+      "path": "formal/README.md",
+      "sha256": "54f07261ab34dafb5188770f25be33b86e93383f216b9132eba7d5aaed59a591",
+      "read_scope": "Read scope descriptions and polynomial/physical-functional separation."
+    },
+    {
+      "path": "manuscript/sections/N-uniform-filling-bound.tex",
+      "sha256": "abdbeac2178c0b99bd9b1376b5dc6b271d3accdccfd43c9bb0f68592b5e7dce0",
+      "read_scope": "Read canonical-remainder proposition and concrete root/multiplier formulas, lines 122-270; not a new full audit of Appendix N."
+    },
+    {
+      "path": "manuscript/sections/09-reproduction.tex",
+      "sha256": "e3b4809956d7ff94f76cd082b07709f8d8e3f787d0532ffc9ae2b8a91383d98a",
+      "read_scope": "Read formalization scope; not a reproduction run."
+    },
+    {
+      "path": "notes/actual_main_meridian_source_bounds.md",
+      "sha256": "395ee1c2b782b602c376614ce6420c5234ffe14877e3d6908da369bdcc24058e",
+      "read_scope": "Read D1-D16 and immediate mixed-carrier continuation, lines 38-157."
+    },
+    {
+      "path": "notes/finite_sum_annihilator.md",
+      "sha256": "d6e973b5f43049d7e68b35bd32b6677871815c240c97e74b2a6bed3e00370ae3",
+      "read_scope": "Read opening source, finite lift and pointing conventions through Sections 1-3; complete existence proof not reread."
+    },
+    {
+      "path": "repro/manuscript_audit/directed-all-orders.md",
+      "sha256": "3f15222aff7f565fa0d51b255f3f4d7c7a926e25521b41b11faa0dc5860cd69e",
+      "read_scope": "Earlier bounded report consulted as context; retained unchanged."
+    },
+    {
+      "path": "repro/manuscript_audit/directed-monic-logic-followup.md",
+      "sha256": "1916408068baa3c2dc91e546c2ced5a18d62230890a584b3ed21bba49278a903",
+      "read_scope": "New bounded follow-up report."
+    }
+  ],
+  "normalization_boundary": {
+    "abstract": "ell_p(F) is the coefficient of z^(degree(p)-1) in the monic remainder.",
+    "raw_source": "Source bounds D5: phi_sigma(F)=(-1)^(N-1) N^2 ell_(P_sigma)(F).",
+    "twisted": "L_N^f(H)=ell_chi_N(tilde_f H), where tilde_f matches actual crossing values and first normals. Scalar normalization alone does not establish this multiplier."
+  },
+  "limits": [
+    "No exhaustive audit of the full manuscript.",
+    "No fresh proof of every imported Appendix K contour estimate or Appendix I geometric result.",
+    "No new full read of the finite-sum annihilator existence proof.",
+    "Lean algebra does not identify the Chebyshev/Casimir or crossing operator by itself.",
+    "Historical audit records were not changed."
+  ]
+}

@@ -11,6 +11,10 @@ checks of those implications and the corrections they required. The
 reproduction chapter now states the final rate-transfer argument with
 all its hypotheses. A [small Lean project](../formal/README.md) checks
 finite algebraic steps; it does not formally verify the volume theorems.
+Appendix N now proves the uniqueness of polynomial reduction and its
+independence of root order, including repeated roots. These statements
+also have Lean proofs. The separate geometric and analytic reviews
+record their hypotheses and the earlier results they use.
 
 The paper proves volume limits for finite decorations of planar tangle diagrams and for specified ordered-tree constructions. The planar theorem starts from a simple triangulated sphere with a chosen matching, constructs its complete circle packing, and adds terminal tangles until a strict shared-radius inequality holds. Independently sufficiently long signed twists at every original and added crossing circle then give the volume equality for the resulting knot. The tree theorems have separate explicit degree and twist bounds. Chapter 1 distinguishes these families and their quantifiers.
 

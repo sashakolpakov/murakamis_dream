@@ -76,7 +76,7 @@ def main() -> None:
                              "lean-toolchain", "lake-manifest.json")]
     inputs.append(Path(__file__).resolve())
     report = {
-        "scope": "Finite support, coefficientwise split-monic reduction, polynomial and tensor identities, and scalar rate implications only.",
+        "scope": "Finite support, coefficientwise split-monic reduction and uniqueness, invariance under root permutation, a conditional functional characterization, polynomial and tensor identities, and scalar rate implications only.",
         "not_formalized": ["the actual Chebyshev root data and crossing-operator functional",
                            "the exact knot-diagram adapter", "uniform analytic estimates",
                            "geometric realization and filling", "the volume limit"],

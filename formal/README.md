@@ -27,6 +27,7 @@ theorem is applied.
 | [FiniteAlgebra.lean](VolumeLogic/FiniteAlgebra.lean) | A polynomial divided difference is defined without division. Its resolvent identity holds even at a repeated root. The double-root formula retains the first derivative. A finite product expansion removes precisely the all-evaluation term. | Algebra used in Appendix N. The Hermite identity is proved after clearing denominators; the nonzero denominator and the Chebyshev root data are separate inputs. |
 | [MonicRemainder.lean](VolumeLogic/MonicRemainder.lean) | Synthetic division and an explicit remainder modulo a split monic polynomial; coefficientwise reconstruction, the degree bound, and its top coefficient as an iterated divided difference. Repeated nodes are allowed. | Constructs the finite coefficient operation underlying Appendix N's Hermite functional. The actual Chebyshev polynomial and crossing-operator interpretation remain separate inputs. |
 | [MonicLinearity.lean](VolumeLogic/MonicLinearity.lean) | Linearity of that constructed remainder and its top-coefficient functional; invariance under coefficient-equivalent lists, arbitrary trailing zeros, and addition of a multiple of the modulus. | Establishes that polynomial representatives give the same functional. It does not identify that functional with the marked crossing matrix. |
+| [MonicUniqueness.lean](VolumeLogic/MonicUniqueness.lean) | Uniqueness of the remainder under a coefficientwise degree bound, including padded lists; idempotence; invariance under permutations of repeated or distinct roots; characterization of the functional by its values below the modulus degree and its vanishing on multiples. | Formalizes the canonical-remainder proposition in Appendix N. The characterization gives sufficient hypotheses for identifying a candidate functional; it does not prove those hypotheses for a crossing matrix. |
 | [RateComparison.lean](VolumeLogic/RateComparison.lean) | A linear entropy gain exceeds a quadratic cost under the stated inequality; nonnegative additional losses cannot undo a strict sector gap; a sufficiently small filling-action drop preserves the gap. | Scalar implications in Appendix P, following the entropy, Hessian, and filling estimates. |
 
 The algebraic declarations quantify over arbitrary commutative rings, or
@@ -61,6 +62,23 @@ curves, and equality with hyperbolic volume remain written arguments.
 Neither the Lean build nor the finite experimental checks certify those
 arguments. The [manuscript audit](../repro/MANUSCRIPT_AUDIT.md) records
 which parts have been read and where further formalization is needed.
+
+For the uniqueness result, suppose a polynomial has a coefficientwise
+decomposition \(f=pq+r\), where
+\(p(X)=\prod_{i=1}^m(X-r_i)\) and every coefficient of \(r\) in
+degree at least \(m\) is zero. The constructed remainder equals
+\(r\), coefficient by coefficient. This formulation allows any number
+of trailing zero entries. Permuting the roots gives the same modulus
+and hence the same remainder, even when some roots coincide. The proof
+does not divide by a root difference.
+
+The characterization theorem considers a candidate functional \(F\)
+on coefficient lists. If it respects coefficient equality, is additive,
+vanishes on every multiple of the modulus, and takes a polynomial of
+degree below \(m\) to its coefficient in degree \(m-1\), then it
+equals the constructed functional on every input. The four hypotheses
+are explicit Lean parameters. Proving them for the literal spectral
+functional remains part of the application.
 
 The monic-remainder module represents polynomials by their actual
 coefficient lists, allowing trailing zeros. Its main division theorem

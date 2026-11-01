@@ -97,8 +97,9 @@ It is not a presumed quotient relation replacing the reduction proof.
 The module adds 24 declarations, including the supporting coefficient
 lemmas. They allow repeated and empty root lists and arbitrary
 commutative rings. It does not yet introduce an abstract quotient-ring
-type, prove invariance under root reordering, or give the general
-confluent root-sum formula.
+type or give the general confluent root-sum formula. Root reordering
+and uniqueness are now handled by the subsequent
+[uniqueness module and its reading record](monic-uniqueness.md).
 
 The reproduction runner inspects all theorem declarations, including
 ones with a `simp` attribute on the same line. A clean build alone is

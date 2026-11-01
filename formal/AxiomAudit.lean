@@ -81,3 +81,19 @@ import VolumeLogic
 #print axioms VolumeLogic.coeffEq_append_zeros
 #print axioms VolumeLogic.monicRemainder_append_zeros
 #print axioms VolumeLogic.newtonFunctional_append_zeros
+
+#print axioms VolumeLogic.list_eq_of_coeffEq_of_length_eq
+#print axioms VolumeLogic.coefficient_take_of_lt
+#print axioms VolumeLogic.coeffEq_take_of_degree_lt
+#print axioms VolumeLogic.monicRemainder_of_coeff_degree_lt
+#print axioms VolumeLogic.monicRemainder_unique
+#print axioms VolumeLogic.monicRemainder_unique_padded
+#print axioms VolumeLogic.monic_remainder_unique_between
+#print axioms VolumeLogic.newtonFunctional_from_remainder
+#print axioms VolumeLogic.monicRemainder_idempotent
+#print axioms VolumeLogic.monicMultiple_congr
+#print axioms VolumeLogic.timesLinear_commute
+#print axioms VolumeLogic.monicMultiple_permutation
+#print axioms VolumeLogic.monicRemainder_permutation
+#print axioms VolumeLogic.newtonFunctional_permutation
+#print axioms VolumeLogic.newtonFunctional_characterization

@@ -119,6 +119,94 @@ source assumptions used here. The scalar inequalities \eqref{uf:eq-1}--\eqref{uf
 themselves hold for every polynomial of the indicated degree and every
 \(N\ge2\).
 
+\section{Why the polynomial reduction is well defined}
+\label{uf:sec-canonical-reduction}
+
+Before using the particular spectral roots, we record the algebraic
+fact behind reduction at repeated roots. It explains which parts of the
+calculation depend only on the polynomial and which still require the
+original crossing operator.
+
+Let \(R\) be a commutative ring with identity, and let
+\(r_1,\ldots,r_m\in R\), with \(m\ge1\). Repetitions are allowed.
+Put \(p(X)=\prod_{j=1}^m(X-r_j)\). Given \(f\in R[X]\), define
+\(f_0=f\) and successively define \(f_j\) by
+\[
+ f_{j-1}(X)=f_{j-1}(r_j)+(X-r_j)f_j(X),\qquad 1\le j\le m.
+\]
+Each \(f_j\) is obtained by synthetic division. This is a polynomial
+operation: it uses no inverse in \(R\), even if two roots coincide.
+Define
+\[
+ \mathcal R_p f(X)=
+ \sum_{j=1}^m f_{j-1}(r_j)\prod_{i<j}(X-r_i),
+ \qquad
+ \ell_p(f)=[X^{m-1}]\mathcal R_p f.
+\]
+Here \([X^k]\) means the coefficient of \(X^k\), and an empty
+product is one.
+
+\begin{proposition}[Canonical polynomial remainder]
+\label{prop:canonical-polynomial-remainder}
+The polynomial \(\mathcal R_p f\) is the unique polynomial of degree
+less than \(m\) for which \(f-\mathcal R_p f\) is a multiple of
+\(p\). Consequently it is independent of the ordering of the root
+list, including repeated entries. Both \(\mathcal R_p\) and
+\(\ell_p\) are \(R\)-linear, and adding a multiple of \(p\) to
+their input leaves their values unchanged. Moreover,
+\[
+ \ell_p(f)=f_{m-1}(r_m).
+\]
+Among additive functionals on \(R[X]\), \(\ell_p\) is uniquely
+specified by the two requirements
+\[
+ F(pq)=0\quad\text{for every }q\in R[X],\qquad
+ F(r)=[X^{m-1}]r\quad\text{whenever }\deg r<m.
+\]
+\end{proposition}
+
+\begin{proof}
+Substituting each synthetic-division identity into the preceding one
+gives \(f=p f_m+\mathcal R_p f\). Every summand in the displayed
+remainder has degree at most \(m-1\). If two such remainders existed,
+their difference would have degree less than \(m\) and would be a
+multiple of the monic polynomial \(p\). A nonzero multiple \(pq\)
+has degree \(m+\deg q\): its leading coefficient is the leading
+coefficient of \(q\), because that of \(p\) is one. This argument
+works even when \(R\) has zero divisors. The difference must therefore
+vanish.
+
+Uniqueness proves independence of root order, linearity and invariance
+under adding a multiple of \(p\). In the Newton expression for the
+remainder, only the last summand can contribute to \(X^{m-1}\);
+its product of linear factors is monic. This proves the formula for
+\(\ell_p\). Finally, any additive \(F\) with the two stated
+properties satisfies
+\[
+ F(f)=F(pf_m)+F(\mathcal R_p f)
+      =[X^{m-1}]\mathcal R_p f=\ell_p(f).
+\]
+\end{proof}
+
+For two equal roots this construction gives
+\[
+ \mathcal R_{(X-r)^2}f(X)=f(r)+f'(r)(X-r),
+ \qquad \ell_{(X-r)^2}(f)=f'(r).
+\]
+The derivative is the formal polynomial derivative. Thus repeated
+roots retain derivative information; replacing them by a single
+evaluation changes the operation.
+
+These polynomial statements are checked in the Lean files described
+in Chapter~\ref{ch:reproduction}. The implementation uses coefficient
+lists and also proves invariance under arbitrary trailing zeros.
+The characterization of \(\ell_p\) states sufficient conditions
+for identifying another functional with it; those conditions must
+still be proved for that functional. In this appendix the application
+requires the actual factorization of \(\chi_N\), the original
+Casimir relation, and the crossing values and derivatives. The next
+section supplies the root data and the corresponding explicit formula.
+
 \section{Repeated roots, the odd simple root, and the midpoint
 identity}\label{uf:sec-repeated-roots-the-odd-simple-root-and-the-midpoint-identity}
 

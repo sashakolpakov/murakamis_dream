@@ -139,7 +139,7 @@ On \(K\cup(-K)\), \(|U-U^{-1}|\) has a positive lower bound. The nodes lie in an
 
 For the constant channel \(\sigma=0\), use its original full trace, rather than evaluating an isolated singular summand of \eqref{dao:eq-10}. Equivalently carry a small independent formal \(\sigma\) around zero, prove the estimate on a fixed parameter circle avoiding collisions, and apply the maximum principle to the \textbf{whole finite trace minus its first-charge expression}. All Fourier coefficients are entire in \(\sigma\), and the original physical trace has the proved removable normal value. Cauchy's formula also retains any fixed normal derivative required by the actual channel. The edge parameter \(s\) remains independent of this formal normal parameter during this argument. Nothing identifies a constant opposite-color channel with a moving same-color one.
 
-The full complete Hermite norm is the maximum of the values at the distinct complete Casimir nodes and the first derivatives at their double nodes. At odd levels the final node \(-2\) is simple and has no derivative coordinate. This norm, the canonical polynomial sup norm and the Chebyshev coefficient norm differ by polynomial factors in the fixed degree range. Chebyshev folding involves a fixed number of folds at a vertex, and \(\cos(2\pi\sigma)\) is bounded on the chosen parameter compacts. Thus \eqref{dk:eq-43} and the real-envelope patch remain valid. Their powers of \(N\) and constants can increase, but their exponential terms do not.
+The full complete Hermite norm is the maximum of the values at the distinct complete Casimir nodes and the first derivatives at their double nodes. At odd levels the final node \(-2\) is simple and has no derivative coordinate. On canonical representatives of degree strictly less than \(N\), this norm, the sup norm on \([-2,2]\) and the Chebyshev coefficient norm differ by polynomial factors. Higher-degree products are first reduced by exact Chebyshev folding. The number of folds at a vertex is fixed by the diagram, and \(\cos(2\pi\sigma)\) is bounded on the chosen parameter compacts. Thus \eqref{dk:eq-43} and the real-envelope patch remain valid. Their powers of \(N\) and constants can increase, but their exponential terms do not.
 
 \subsection{Grid translations, endpoint currents and tails}\label{dao:sec-3.3}
 
@@ -361,10 +361,10 @@ This is uniform on each fixed compact used above and on each \(|s|\le R<1\), wit
 
 \section{Consequence for every genuine all-level annihilator}\label{dao:sec-8}
 
-Let
+Let \(r_P\) be a fixed nonnegative integer, independent of \(N\), and let
 
 \begin{equation}\label{dao:eq-28}
-P(q,M,T)=\sum_{j=0}^{d}a_j(q,M)T^j,
+P(q,M,T)=\sum_{j=0}^{r_P}a_j(q,M)T^j,
        \qquad TM=qMT,
 \end{equation}
 
@@ -380,19 +380,19 @@ d_N(M)=\eta_N\frac{M-M^{-1}}{M^N-M^{-N}},\qquad
 It satisfies \(d_N(q_N^s)/d_N(1)=H_N(s)^{-1}\). For \(f(M)=M-M^{-1}\), the exact reduced-to-full gauge is
 
 \begin{equation}\label{dao:eq-30}
-\widetilde P=\sum_{j=0}^{d}
+\widetilde P=\sum_{j=0}^{r_P}
  a_j(q,M)(-1)^j\frac{f(M)}{f(q^jM)}T^j.
 \end{equation}
 
-Indeed \(H_N(s+j)/H_N(s)=(-1)^j f(M)/f(q_N^jM)\). After multiplying on the left by \(\prod_{j=1}^{d}f(q^jM)\), its first classical symbol is
+Indeed \(H_N(s+j)/H_N(s)=(-1)^j f(M)/f(q_N^jM)\). After multiplying on the left by \(\prod_{j=1}^{r_P}f(q^jM)\), its first classical symbol is
 
 \begin{equation}\label{dao:eq-31}
-f(M)^dP_0(M,-L).
+f(M)^{r_P}P_0(M,-L).
 \end{equation}
 
 The meridian divisor and sign character remain in the calculation.
 
-Choose a small upper-half-plane disk \(D\) and apply \eqref{dao:eq-4} to the compact union of the required translates \(D,D+1,\ldots,D+d\), slightly enlarged for coefficient estimates. The exact root equation \eqref{dao:eq-30}, after division by the nonzero \(\mathcal Z_N\), makes every coefficient of its asymptotic expansion vanish on \(D\). Clearing denominators as above makes these coefficient identities polynomial in \(s\); they therefore hold identically.
+Choose a small upper-half-plane disk \(D\) and apply \eqref{dao:eq-4} to the compact union of the required translates \(D,D+1,\ldots,D+r_P\), slightly enlarged for coefficient estimates. The exact root equation \eqref{dao:eq-30}, after division by the nonzero \(\mathcal Z_N\), makes every coefficient of its asymptotic expansion vanish on \(D\). Clearing denominators as above makes these coefficient identities polynomial in \(s\); they therefore hold identically.
 
 Regrade the filtered series using \(u=hs\). The inequality \(\deg p_r\le r+1\) gives exactly
 
@@ -422,10 +422,10 @@ vanishing coefficient series. It therefore vanishes before substitution.
 Taking its constant \(h\)-coefficient gives
 
 \begin{equation}\label{dao:eq-33}
-f(e^u)^dP_0(e^u,-e^{\mathcal S'(u)})=0.
+f(e^u)^{r_P}P_0(e^u,-e^{\mathcal S'(u)})=0.
 \end{equation}
 
-The formal series ring is a domain and \(f(e^u)^d\) is nonzero, so it can be canceled in this proved identity. This does not discard a peripheral component from the original operator. Equations \eqref{dao:eq-25}--\eqref{dao:eq-27} identify the remaining germ as the actual geometric eigenvalue germ.
+The formal series ring is a domain and \(f(e^u)^{r_P}\) is nonzero, so it can be canceled in this proved identity. This does not discard a peripheral component from the original operator. Equations \eqref{dao:eq-25}--\eqref{dao:eq-27} identify the remaining germ as the actual geometric eigenvalue germ.
 
 Evaluation on that germ defines a nonzero prime in \(\mathbb C[M^{\pm1},L^{\pm1}]\), since it contains \(P_0\). It contains no nonzero polynomial in \(M\) alone because the meridian varies on an open disk. Hence it has height one and is generated by one irreducible Laurent polynomial \(A_{\mathrm{geom},\mathbb C}\). Consequently
 
